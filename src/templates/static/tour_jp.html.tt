@@ -8,12 +8,12 @@
         <p>
           [% l("{JAPAN ONLY}Our trading page provides an overall view of all the option contracts available to trade, showing the live buy and sell prices and providing quick selection and trading buttons.") %]
         </p>
-        <img class="responsive" src="//placehold.it/600x300" />
+        <img class="responsive" src="[% request.url_for('images/pages/tour-jp/trade.png') %]" />
         <p>
           [% l("{JAPAN ONLY}In the lower panel you can also choose to see your current portfolio with live valuations and quick access to sell-back. Alternatively you can view a live, customizable chart with many add-on features; or see more detailed explanations of the type of option selected; or examine recent settlement prices for expired options.") %]
         </p>
-        <img class="responsive" src="//placehold.it/600x300" />
-        <img class="responsive" src="//placehold.it/600x300" />
+        <img class="responsive" src="[% request.url_for('images/pages/tour-jp/portfolio.png') %]" />
+        <img class="responsive" src="[% request.url_for('images/pages/tour-jp/chart.png') %]" />
         <img class="responsive" src="//placehold.it/600x300" />
         <img class="responsive" src="//placehold.it/600x300" />
       </div>

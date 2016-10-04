@@ -8,7 +8,7 @@
             <div class="separator-line"></div>
         </div>
     </div>
-    <div class="center-text">
+    <div class="gr-1 gr-2-m gr-centered">
         <img class="responsive timeline" src="[% request.url_for('images/pages/regulation/timeline.svg') %]">
     </div>
     <div>
@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="gray-line"></div>
-    <div class="center-text">
+    <div class="gr-1 gr-2-m gr-centered">
         <img class="responsive timeline" src="[% request.url_for('images/pages/regulation/timeline.svg') %]">
     </div>
     <div class="background-gray center-text gr-padding-30 gr-12">
@@ -42,7 +42,7 @@
         </div>
     </div>
     <div class="gray-line"></div>
-    <div class="center-text">
+    <div class="gr-1 gr-2-m gr-centered">
         <img class="responsive timeline" src="[% request.url_for('images/pages/regulation/timeline.svg') %]">
     </div>
     <div>
@@ -53,7 +53,7 @@
                 <p><strong>[% l("Regulator:") %]</strong></p>
                 <div class="gr-4 gr-8-m gr-centered gr-padding-10">
                     <a href="http://mfsa.com.mt/" target="_blank">
-                        <img class="responsive" src="[% request.url_for('images/pages/about/mfsa-logo.svg') %]">
+                        <img class="responsive full-height" src="[% request.url_for('images/pages/about/mfsa-logo.svg') %]">
                     </a>
                 </div>
                 <div class="gr-padding-30 gr-12" id="accordion">
@@ -94,9 +94,9 @@
                             <div class="xquote border-dark-gray">
                                 <div class="gr-row">
                                     <div class="gr-3">
-                                        <img src="[% request.url_for('images/pages/regulation/pillar.svg') %]">
+                                        <img class="full-height" src="[% request.url_for('images/pages/regulation/pillar.svg') %]">
                                     </div>
-                                    <div class="gr-9 gr-centered center-text quote-text">
+                                    <div class="gr-9 align-start quote-text">
                                         <a download="[% true %]" href="[% request.url_for('/download/BIEL_Pillar_3_Report.pdf') %]" target="_blank">
                                             [% l("Pillar 3 disclosure report") %]
                                         </a>
@@ -112,9 +112,9 @@
                             <div class="xquote border-dark-gray">
                                 <div class="gr-row">
                                     <div class="gr-4">
-                                        <img src="[% request.url_for('images/pages/regulation/prospectus.svg') %]">
+                                        <img class="full-height" src="[% request.url_for('images/pages/regulation/prospectus.svg') %]">
                                     </div>
-                                    <div class="gr-6 gr-centered center-text quote-text">
+                                    <div class="gr-8 align-start quote-text">
                                         <a download="[% true %]" href="[% request.url_for('/download/BIEL_Prospectus.pdf') %]" target="_blank">
                                             [% l("Prospectus") %]
                                         </a>
@@ -128,7 +128,7 @@
         </div>
     </div>
     <div class="gray-line"></div>
-    <div class="center-text">
+    <div class="gr-1 gr-2-m gr-centered">
         <img class="responsive timeline" src="[% request.url_for('images/pages/regulation/timeline.svg') %]">
     </div>
     <div>
@@ -147,7 +147,7 @@
         </div>
     </div>
     <div class="gray-line"></div>
-    <div class="center-text">
+    <div class="gr-1 gr-2-m gr-centered">
         <img class="responsive timeline" src="[% request.url_for('images/pages/regulation/timeline.svg') %]">
     </div>
     <div>
@@ -166,7 +166,7 @@
         </div>
     </div>
     <div class="gray-line"></div>
-    <div class="center-text">
+    <div class="gr-1 gr-2-m gr-centered">
         <img class="responsive timeline" src="[% request.url_for('images/pages/regulation/timeline.svg') %]">
     </div>
     <div>
@@ -179,7 +179,7 @@
         </div>
     </div>
     <div class="gray-line"></div>
-    <div class="center-text">
+    <div class="gr-1 gr-2-m gr-centered">
         <img class="responsive timeline" src="[% request.url_for('images/pages/regulation/timeline.svg') %]">
     </div>
     <div class="background-gray center-text gr-padding-30 gr-12">
