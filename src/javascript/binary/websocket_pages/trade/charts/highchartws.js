@@ -1,5 +1,5 @@
 var Highchart = (function() {
-  var chart, options, chart_forget, responseID, contract, contract_ended, contracts_for_send, history_send, entry_tick_barrier_drawn, initialized, chart_delayed, chart_subscribed, request, min_point, max_point, start_time, purchase_time, now_time, end_time, entry_tick_time, is_sold, sell_time, sell_spot_time, is_settled, exit_tick_time, exit_time;
+  var chart, options, chart_forget, responseID, contract, contract_ended, contracts_for_send, history_send, entry_tick_barrier_drawn, initialized, chart_delayed, chart_subscribed, request, min_point, max_point, start_time, purchase_time, now_time, end_time, entry_tick_time, is_sold, sell_time, sell_spot_time, is_settleable, exit_tick_time, exit_time;
   function init_once() {
       chart = '';
       initialized = false;
@@ -204,7 +204,7 @@ var Highchart = (function() {
     is_sold         = contract.is_sold;
     sell_time       = parseInt(contract.sell_time);
     sell_spot_time  = parseInt(contract.sell_spot_time);
-    is_settled      = contract.is_settled;
+    is_settleable   = contract.is_settleable;
     exit_tick_time  = parseInt(contract.exit_tick_time);
     entry_spot      = contract.entry_spot;
     exit_time       = is_sold && sell_time < end_time ? sell_spot_time : exit_tick_time || end_time;
@@ -297,7 +297,7 @@ var Highchart = (function() {
             draw_line_x(end_time, '', 'textLeft', 'Dash');
           }
         }
-        if (is_sold || is_settled) {
+        if (is_sold || is_settleable) {
           reset_max();
           reselect_exit_time();
           end_contract();
@@ -332,7 +332,7 @@ var Highchart = (function() {
       } else if (entry_tick_time && chart) {
         select_entry_tick_barrier();
       }
-      if ((is_sold || is_settled) && chart) {
+      if ((is_sold || is_settleable) && chart) {
         reset_max();
         reselect_exit_time();
         end_contract();
@@ -376,7 +376,7 @@ var Highchart = (function() {
       request.style = 'candles';
     }
 
-    if(!is_settled && !sell_spot_time && (window.time.valueOf() / 1000) < end_time && !chart_subscribed) {
+    if(!is_settleable && !sell_spot_time && (window.time.valueOf() / 1000) < end_time && !chart_subscribed) {
         request.subscribe = 1;
     }
 
@@ -410,7 +410,7 @@ var Highchart = (function() {
 
   function handle_delay(feed_license) {
     if (feed_license !== 'realtime') {
-      if (!is_settled) {
+      if (!is_settleable) {
         request.end = 'latest';
       }
       delete request.subscribe;
@@ -498,7 +498,7 @@ var Highchart = (function() {
     if (sell_spot_time && sell_time < end_time) {end = sell_spot_time;}
     else if (exit_tick_time) {end = exit_tick_time;}
     else {end = end_time;}
-    if (response.history && response.history.times && (is_settled || is_sold)) {
+    if (response.history && response.history.times && (is_settleable || is_sold)) {
       for (i = response.history.times.length - 1; i >= 0; i--) {
           if (parseInt(response.history.times[i]) === parseInt(end)) {
               max_point = parseInt(response.history.times[i === response.history.times.length - 1 ? i : i+1]);
@@ -521,7 +521,7 @@ var Highchart = (function() {
   function get_max_candle(response) {
     if (sell_spot_time && sell_time < end_time) {end = sell_spot_time;}
     else {end = end_time;}
-    if (is_settled || is_sold) {
+    if (is_settleable || is_sold) {
       for (i = response.candles.length - 2; i >= 0; i--) {
           if (response.candles[i] && parseInt(response.candles[i].epoch) <= end && parseInt(response.candles[i+1].epoch) > end) {
               max_point = parseInt(response.candles[i+1].epoch);
@@ -575,7 +575,7 @@ var Highchart = (function() {
   }
 
   function forget_streams() {
-    if (chart && chart.series && chart.series[0].data.length >= 1 && !chart_forget && (is_sold || is_settled) && responseID) {
+    if (chart && chart.series && chart.series[0].data.length >= 1 && !chart_forget && (is_sold || is_settleable) && responseID) {
       var last = chart.series[0].data[chart.series[0].data.length - 1];
       if (parseInt(last.x) > end_time*1000 || parseInt(last.x) > sell_time*1000) {
         socketSend({'forget':responseID});
