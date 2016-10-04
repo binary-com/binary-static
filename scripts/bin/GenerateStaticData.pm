@@ -836,7 +836,11 @@ sub _texts {
         push @texts, localize('The server <a href="[_1]">endpoint</a> is: [_2]');
 
         my %as_hash = @texts;
-        $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
+        if ($task eq 'all') {
+            $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
+        } elsif ($task eq 'japan') {
+            $js .= "japan_text['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
+        }
     }
 
     return $js;
