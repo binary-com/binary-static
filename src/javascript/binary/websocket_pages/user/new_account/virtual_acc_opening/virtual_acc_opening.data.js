@@ -19,6 +19,12 @@ var VirtualAccOpeningData = (function(){
             req.affiliate_token = Cookies.getJSON('affiliate_tracking').t;
         }
 
+        /*if ($('#email_consent:checked').length > 0) {
+            req.email_consent = 1;
+        } else {
+            req.email_consent = 0;
+        }*/
+
         BinarySocket.send(req);
     }
 
