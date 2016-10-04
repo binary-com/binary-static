@@ -142,7 +142,7 @@
         [% l('{JAPAN ONLY}Please download our Options Basic Knowledge guides which cover all the essential concepts, terminalogy and required information:') %]
       </p>
       <div class="gr-row">
-          <div class="gr-6 gr-12-m">
+          <div class="gr-6 gr-12-m gr-12-p">
             <p class="center-text">
               <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_1.pdf' %]" download>
                 <span class="link-size-box">[% l('{JAPAN ONLY}Introduction to Binary Options') %]</span>
@@ -159,7 +159,7 @@
               </a>
             </p>
           </div>
-          <div class="gr-6 gr-12-m">
+          <div class="gr-6 gr-12-m gr-12-p">
             <p class="center-text">
               <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_4.pdf' %]" download>
                 <span class="link-size-box">[% l('{JAPAN ONLY}Trading & Hedging') %]</span>

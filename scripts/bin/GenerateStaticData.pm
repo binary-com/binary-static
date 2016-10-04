@@ -21,14 +21,35 @@ module.exports = {
     texts_json: texts_json,
 };
 END_EXPORTS
-    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts() . $exports);
 
+    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts('all') . $exports);
+    return;
+}
+
+sub generate_japan_data_files {
+    my $js_path = shift;
+
+    _make_nobody_dir($js_path);
+    print "\tGenerating $js_path/texts.js\n";
+
+    my $japan_exports = 'export default japan_text;';
+
+    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts('japan') . $japan_exports);
     return;
 }
 
 sub _texts {
-    my $js = "var texts_json = {};\n";
+    my $task = shift;
+    my $js = '';
+    if ($task eq 'all') {
+        $js = "var texts_json = {};\n";
+    } elsif ($task eq 'japan') {
+        $js = "const japan_text = {};\n";
+    }
     foreach my $language (BS::all_languages()) {
+        if ($task eq 'japan' and $language ne 'JA') {
+            next;
+        }
         BS::set_lang($language);
 
         my @texts;
