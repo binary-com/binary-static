@@ -62,7 +62,8 @@ sub all_languages {
 }
 
 sub rtl_languages {
-    return ('AR');
+#    return ('AR');
+    return ();
 }
 
 sub lang_display_name {
