@@ -1620,6 +1620,9 @@ msgstr "Perbandingan Grafik"
 msgid "Chart Indicators"
 msgstr "Indikator Grafik"
 
+msgid "Charting for this underlying is delayed"
+msgstr "Grafik untuk dasar pasar mengalami penundaan"
+
 msgid "Check out our commission rates below:"
 msgstr "Lihat persentasi komisi kami berikut ini:"
 
@@ -2406,6 +2409,9 @@ msgstr "Buku pedoman karyawan"
 msgid "End Time"
 msgstr "Waktu berakhir"
 
+msgid "End time"
+msgstr "Waktu end"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "Kontrak Berakhir Antara/Berakhir Keluar"
 
@@ -2962,6 +2968,11 @@ msgid "Hedging"
 msgstr "Hedging"
 
 msgid "High Barrier"
+msgstr "Batasan Tinggi"
+
+#, fuzzy
+#| msgid "High Barrier"
+msgid "High Barrier (%1)"
 msgstr "Batasan Tinggi"
 
 msgid "High barrier"
@@ -4161,6 +4172,11 @@ msgid "Loss"
 msgstr "Rugi"
 
 msgid "Low Barrier"
+msgstr "Batasan Rendah"
+
+#, fuzzy
+#| msgid "Low Barrier"
+msgid "Low Barrier (%1)"
 msgstr "Batasan Rendah"
 
 msgid "Low barrier"
@@ -5544,6 +5560,11 @@ msgstr "Jual kontrak pada harga pasar."
 
 msgid "Sell option"
 msgstr "Opsi jual"
+
+#, fuzzy
+#| msgid "Sell Time"
+msgid "Sell time"
+msgstr "Waktu Jual"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "Kirimkan surat penghantar dan lamaran yang menggambarkan keinginan karir Anda."
@@ -12827,9 +12848,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "Change"
 #~ msgstr "Perubahan"
 
-#~ msgid "Charting for this underlying is delayed"
-#~ msgstr "Grafik untuk dasar pasar mengalami penundaan"
-
 #~ msgid "Charting is not available for this underlying"
 #~ msgstr "Grafik tidak tersedia untuk pasar dasar ini"
 
@@ -13099,9 +13117,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Sell Spot"
 #~ msgstr "Spot Jual"
-
-#~ msgid "Sell Time"
-#~ msgstr "Waktu Jual"
 
 #~ msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 #~ msgstr "Terjadi error. Silahkan hubungi customer support jika masalah ini masih berlangsung."
@@ -18061,9 +18076,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "End"
 #~ msgstr "Akhir"
-
-#~ msgid "End time"
-#~ msgstr "Waktu end"
 
 #~ msgid "Entry"
 #~ msgstr "Masuk"

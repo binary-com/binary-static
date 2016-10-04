@@ -1624,6 +1624,9 @@ msgstr "Porównanie wykresów"
 msgid "Chart Indicators"
 msgstr "Wskaźniki wykresu"
 
+msgid "Charting for this underlying is delayed"
+msgstr "Dla tego rynku podstawowego wykresy są opóźnione"
+
 msgid "Check out our commission rates below:"
 msgstr "Poniżej wysokość prowizji:"
 
@@ -2410,6 +2413,9 @@ msgstr "Poradnik pracownika"
 msgid "End Time"
 msgstr "Zakończenie"
 
+msgid "End time"
+msgstr "Godzina zakończenia"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "Zakłady typu „zakończy się w/ zakończy się poza”"
 
@@ -2968,6 +2974,11 @@ msgid "Hedging"
 msgstr "Hedging"
 
 msgid "High Barrier"
+msgstr "Górny limit"
+
+#, fuzzy
+#| msgid "High Barrier"
+msgid "High Barrier (%1)"
 msgstr "Górny limit"
 
 msgid "High barrier"
@@ -4165,6 +4176,11 @@ msgid "Loss"
 msgstr "Strata"
 
 msgid "Low Barrier"
+msgstr "Dolny limit"
+
+#, fuzzy
+#| msgid "Low Barrier"
+msgid "Low Barrier (%1)"
 msgstr "Dolny limit"
 
 msgid "Low barrier"
@@ -5547,6 +5563,11 @@ msgstr "Odsprzedaj transakcje po cenach rynkowych."
 
 msgid "Sell option"
 msgstr "Sprzedaj opcję"
+
+#, fuzzy
+#| msgid "Sell Time"
+msgid "Sell time"
+msgstr "Godzina sprzedaży"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "Prześlij nam CV i list motywacyjny, w którym przedstawiasz swoje plany dot. rozwoju kariery."
@@ -12961,9 +12982,6 @@ msgstr "Akceptacja regulaminu"
 #~ msgid "Change"
 #~ msgstr "Zmiana"
 
-#~ msgid "Charting for this underlying is delayed"
-#~ msgstr "Dla tego rynku podstawowego wykresy są opóźnione"
-
 #~ msgid "Charting is not available for this underlying"
 #~ msgstr "Dla tego rynku podstawowego wykresy nie są dostępne"
 
@@ -13238,9 +13256,6 @@ msgstr "Akceptacja regulaminu"
 
 #~ msgid "Sell Spot"
 #~ msgstr "Punkt sprzedaży"
-
-#~ msgid "Sell Time"
-#~ msgstr "Godzina sprzedaży"
 
 #~ msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 #~ msgstr "Przepraszamy, wystąpił błąd. Jeśli problem będzie nadal występował, prosimy o kontakt z dziełem obsługi klienta."
@@ -18094,9 +18109,6 @@ msgstr "Akceptacja regulaminu"
 
 #~ msgid "End"
 #~ msgstr "Koniec"
-
-#~ msgid "End time"
-#~ msgstr "Godzina zakończenia"
 
 #~ msgid "Entry"
 #~ msgstr "Wpis"

@@ -1621,6 +1621,9 @@ msgstr "การเปรียบเทียบแผนภูมิ"
 msgid "Chart Indicators"
 msgstr "Chart Indicators"
 
+msgid "Charting for this underlying is delayed"
+msgstr "กราฟของผลิตภัณฑ์อ้างอิงนี้ล่าช้า"
+
 msgid "Check out our commission rates below:"
 msgstr "ตรวจสอบอัตราค่าคอมมิชชั่นของเราด้านล่าง:"
 
@@ -2407,6 +2410,11 @@ msgstr "คู่มือพนักงาน"
 msgid "End Time"
 msgstr "เวลาสิ้นสุด"
 
+#, fuzzy
+#| msgid "End Time"
+msgid "End time"
+msgstr "เวลาสิ้นสุด"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "สิ้นสุดระหว่าง/สิ้นสุดนอกขอบเขต"
 
@@ -2963,6 +2971,11 @@ msgid "Hedging"
 msgstr "เฮดจิ้ง"
 
 msgid "High Barrier"
+msgstr "Barrier สูง"
+
+#, fuzzy
+#| msgid "High Barrier"
+msgid "High Barrier (%1)"
 msgstr "Barrier สูง"
 
 msgid "High barrier"
@@ -4164,6 +4177,11 @@ msgid "Loss"
 msgstr "เสีย"
 
 msgid "Low Barrier"
+msgstr "Barrier ต่ำ"
+
+#, fuzzy
+#| msgid "Low Barrier"
+msgid "Low Barrier (%1)"
 msgstr "Barrier ต่ำ"
 
 msgid "Low barrier"
@@ -5551,6 +5569,11 @@ msgstr "ขายกลับไปที่ราคาตลาด"
 
 msgid "Sell option"
 msgstr "ขายออปชั่น"
+
+#, fuzzy
+#| msgid "Sell Time"
+msgid "Sell time"
+msgstr "เวลาที่ขาย"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "ส่งประวัติของท่านและจดหมายแนะนำตัวที่อธิบายความสนใจทางอาชีพของท่านมาให้เรา"
@@ -12692,9 +12715,6 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 #~ msgid "Change"
 #~ msgstr "การเปลี่ยนแปลง"
 
-#~ msgid "Charting for this underlying is delayed"
-#~ msgstr "กราฟของผลิตภัณฑ์อ้างอิงนี้ล่าช้า"
-
 #~ msgid "Charting is not available for this underlying"
 #~ msgstr "กราฟของผลิตภัณฑ์อ้างอิงนี้ไม่สามารถใช้งานได้"
 
@@ -12917,9 +12937,6 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 #~ msgid "Sell Spot"
 #~ msgstr "สปอตที่ขาย"
-
-#~ msgid "Sell Time"
-#~ msgstr "เวลาที่ขาย"
 
 #~ msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 #~ msgstr "ขออภัย มีความผิดพลาดเกิดขึ้น โปรดติดต่อเจ้าหน้าที่บริการลูกค้า หากท่านยังพบปัญหาในการใช้งาน"

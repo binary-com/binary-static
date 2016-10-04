@@ -1669,6 +1669,9 @@ msgstr "Aplicación de gráficos"
 msgid "Chart Indicators"
 msgstr "Indicador"
 
+msgid "Charting for this underlying is delayed"
+msgstr "Gráficos para este instrumento se muestran con retraso"
+
 msgid "Check out our commission rates below:"
 msgstr "Compruebe nuestras tarifas de comisión a continuación:"
 
@@ -2457,6 +2460,9 @@ msgstr "Manual del empleado"
 msgid "End Time"
 msgstr "Hora de finalización"
 
+msgid "End time"
+msgstr "Hora de finalización"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "Contratos Finaliza dentro/Finaliza fuera"
 
@@ -3023,6 +3029,11 @@ msgid "Hedging"
 msgstr "Cobertura"
 
 msgid "High Barrier"
+msgstr "Barrera Superior"
+
+#, fuzzy
+#| msgid "High Barrier"
+msgid "High Barrier (%1)"
 msgstr "Barrera Superior"
 
 msgid "High barrier"
@@ -4224,6 +4235,11 @@ msgid "Loss"
 msgstr "Pérdida"
 
 msgid "Low Barrier"
+msgstr "Barrera Inferior"
+
+#, fuzzy
+#| msgid "Low Barrier"
+msgid "Low Barrier (%1)"
 msgstr "Barrera Inferior"
 
 msgid "Low barrier"
@@ -5622,6 +5638,11 @@ msgstr "Revenda los contratos según los precios del mercado."
 
 msgid "Sell option"
 msgstr "Opción de venta"
+
+#, fuzzy
+#| msgid "Sell Time"
+msgid "Sell time"
+msgstr "Hora de venta"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "Envíenos su currículum y una carta de presentación que describa sus intereses profesionales."
@@ -12971,9 +12992,6 @@ msgstr "Acuerdo con los términos y condiciones"
 #~ msgid "Change"
 #~ msgstr "Cambio"
 
-#~ msgid "Charting for this underlying is delayed"
-#~ msgstr "Gráficos para este instrumento se muestran con retraso"
-
 #~ msgid "Charting is not available for this underlying"
 #~ msgstr "Gráficos para este instrumento no están disponibles"
 
@@ -13243,9 +13261,6 @@ msgstr "Acuerdo con los términos y condiciones"
 
 #~ msgid "Sell Spot"
 #~ msgstr "Precio de contado de venta"
-
-#~ msgid "Sell Time"
-#~ msgstr "Hora de venta"
 
 #~ msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 #~ msgstr "Lo sentimos, ha ocurrido un error. Póngase en contacto con el servicio de atención al cliente si el problema persiste."
@@ -18090,9 +18105,6 @@ msgstr "Acuerdo con los términos y condiciones"
 
 #~ msgid "End"
 #~ msgstr "Fin"
-
-#~ msgid "End time"
-#~ msgstr "Hora de finalización"
 
 #~ msgid "Entry"
 #~ msgstr "Entrada"

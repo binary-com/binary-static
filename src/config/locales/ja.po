@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-10-04 05:30+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1648,6 +1647,9 @@ msgstr "チャート比較"
 msgid "Chart Indicators"
 msgstr "チャート指標"
 
+msgid "Charting for this underlying is delayed"
+msgstr "この対象のチャート表示は不可能です"
+
 msgid "Check out our commission rates below:"
 msgstr "報酬の還元率をご確認下さい。"
 
@@ -2444,6 +2446,9 @@ msgstr "従業員便覧"
 msgid "End Time"
 msgstr "判定時刻"
 
+msgid "End time"
+msgstr "終了時間"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "END-IN/END-OUT トレード"
 
@@ -3000,6 +3005,11 @@ msgid "Hedging"
 msgstr "ヘッジ"
 
 msgid "High Barrier"
+msgstr "上限バリア"
+
+#, fuzzy
+#| msgid "High Barrier"
+msgid "High Barrier (%1)"
 msgstr "上限バリア"
 
 msgid "High barrier"
@@ -4223,6 +4233,11 @@ msgstr "損益"
 msgid "Low Barrier"
 msgstr "下限バリア"
 
+#, fuzzy
+#| msgid "Low Barrier"
+msgid "Low Barrier (%1)"
+msgstr "下限バリア"
+
 msgid "Low barrier"
 msgstr "下限バリア"
 
@@ -5237,9 +5252,7 @@ msgid "Publish your name and logo (with or without a link to your Application) o
 msgstr "お客さまのお名前及びロゴ（アプリケーションのリンクを含む）を当サイト、プレスリリース、販促資料において同意を伺うことなく公開します。"
 
 msgid "Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
-msgstr ""
-"ライブチャットは英語、インドネシア語、中国語、ポーランド語、ドイツ語、フランス語、スペイン語、ポルトガル語、イタリア語、ロシア語、タイ語の11ヵ国語で対応"
-"。（日本語は、現在対応しておりません。）"
+msgstr "ライブチャットは英語、インドネシア語、中国語、ポーランド語、ドイツ語、フランス語、スペイン語、ポルトガル語、イタリア語、ロシア語、タイ語の11ヵ国語で対応。（日本語は、現在対応しておりません。）"
 
 msgid "Purchase"
 msgstr "購入"
@@ -5615,6 +5628,11 @@ msgstr "市場価格で保有ポジションを売却"
 
 msgid "Sell option"
 msgstr "オプションの転売"
+
+#, fuzzy
+#| msgid "Sell Time"
+msgid "Sell time"
+msgstr "売却時間"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "履歴書とキャリアに関する興味を述べたカバレターをお送りください。"
@@ -8042,9 +8060,7 @@ msgid "is required. Current spread"
 msgstr "のご入金が必要です。現在のスプレッド"
 
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
-msgstr ""
-"当社は英語、スペイン語、フランス語、ドイツ語、ポルトガル語、中国語、日本語、イタリア語、タイ語、ポーランド語、ロシア語、インドネシア語での国際的なインター"
-"フェイスを有しています。"
+msgstr "当社は英語、スペイン語、フランス語、ドイツ語、ポルトガル語、中国語、日本語、イタリア語、タイ語、ポーランド語、ロシア語、インドネシア語での国際的なインターフェイスを有しています。"
 
 msgid "it is the leading binary option trading platform."
 msgstr "最高水準のバイナリーオプション取引プラットフォーム"
@@ -13105,9 +13121,6 @@ msgstr "利用規約の承認"
 #~ msgid "Change"
 #~ msgstr "変化値"
 
-#~ msgid "Charting for this underlying is delayed"
-#~ msgstr "この対象のチャート表示は不可能です"
-
 #~ msgid "Charting is not available for this underlying"
 #~ msgstr "この対象のチャート表示は不可能です"
 
@@ -13377,9 +13390,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "Sell Spot"
 #~ msgstr "売却スポット"
-
-#~ msgid "Sell Time"
-#~ msgstr "売却時間"
 
 #~ msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 #~ msgstr "申し訳ございませんが、エラーが発生しました。状況が改善されない場合はカスタマーサポートまでご連絡下さい。"
@@ -18073,9 +18083,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "End"
 #~ msgstr "終了"
-
-#~ msgid "End time"
-#~ msgstr "終了時間"
 
 #~ msgid "Entry"
 #~ msgstr "エントリー"
