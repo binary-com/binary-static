@@ -1616,6 +1616,9 @@ msgstr "图表比较"
 msgid "Chart Indicators"
 msgstr "图表指标"
 
+msgid "Charting for this underlying is delayed"
+msgstr "此标的资产的图表数据存在延迟"
+
 msgid "Check out our commission rates below:"
 msgstr "请查看下面的佣金费率："
 
@@ -2404,6 +2407,9 @@ msgstr "员工手册"
 msgid "End Time"
 msgstr "结束时间"
 
+msgid "End time"
+msgstr "结束时间"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "“收于范围之内/之外”的交易"
 
@@ -2960,6 +2966,11 @@ msgid "Hedging"
 msgstr "Hedging"
 
 msgid "High Barrier"
+msgstr "高障碍"
+
+#, fuzzy
+#| msgid "High Barrier"
+msgid "High Barrier (%1)"
 msgstr "高障碍"
 
 msgid "High barrier"
@@ -3971,6 +3982,11 @@ msgstr "七月"
 msgid "Jump To"
 msgstr "跳至"
 
+#, fuzzy
+#| msgid "Jump to"
+msgid "Jump to date:"
+msgstr "跳至"
+
 msgid "Jun"
 msgstr "六月"
 
@@ -4152,6 +4168,11 @@ msgid "Loss"
 msgstr "亏损"
 
 msgid "Low Barrier"
+msgstr "低障碍"
+
+#, fuzzy
+#| msgid "Low Barrier"
+msgid "Low Barrier (%1)"
 msgstr "低障碍"
 
 msgid "Low barrier"
@@ -5161,7 +5182,9 @@ msgstr "Public worker"
 msgid "Publish your name and logo (with or without a link to your Application) on our website, in press releases, and in promotional materials without additional consent;"
 msgstr "不必另外征求同意，将您的名称和徽标 （可包含应用程序链接，如需要）发布到我们网站、新闻发布和宣传材料;"
 
-msgid "Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
+#, fuzzy
+#| msgid "Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
+msgid "Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
 msgstr "以英语、日文、中文、波兰文、德文、法文、西班牙文、葡萄牙文、意大利文、俄文和泰文发布"
 
 msgid "Purchase"
@@ -5532,6 +5555,11 @@ msgstr "按市价回售交易。"
 
 msgid "Sell option"
 msgstr "卖出期权"
+
+#, fuzzy
+#| msgid "Sell Time"
+msgid "Sell time"
+msgstr "卖出时间"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "请将您的简历和求职信发送给我们。"
@@ -7804,7 +7832,9 @@ msgstr "iOS、Android"
 msgid "is required. Current spread"
 msgstr "必须。当前价差"
 
-msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
+#, fuzzy
+#| msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
+msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
 msgstr "提供国际化界面，支持的语言包括英语、西班牙语、法语、德语、葡萄牙语、中文、阿拉伯语、波兰语、俄语和印尼语。"
 
 msgid "it is the leading binary option trading platform."
@@ -12824,9 +12854,6 @@ msgstr "条款和条件审批"
 #~ msgid "Change"
 #~ msgstr "变动"
 
-#~ msgid "Charting for this underlying is delayed"
-#~ msgstr "此标的资产的图表数据存在延迟"
-
 #~ msgid "Charting is not available for this underlying"
 #~ msgstr "此标的资产的图表不可用"
 
@@ -13096,9 +13123,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Sell Spot"
 #~ msgstr "卖出现价"
-
-#~ msgid "Sell Time"
-#~ msgstr "卖出时间"
 
 #~ msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 #~ msgstr "对不起，发生错误。如果问题持续出现，请联系客服人员。"
@@ -14716,9 +14740,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "HighCharts"
 #~ msgstr "高图表"
-
-#~ msgid "Jump to"
-#~ msgstr "跳至"
 
 #~ msgid "Newer"
 #~ msgstr "较新"
@@ -17976,9 +17997,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "End"
 #~ msgstr "结束"
-
-#~ msgid "End time"
-#~ msgstr "结束时间"
 
 #~ msgid "Entry"
 #~ msgstr "进场"

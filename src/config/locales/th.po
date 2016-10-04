@@ -1621,6 +1621,9 @@ msgstr "การเปรียบเทียบแผนภูมิ"
 msgid "Chart Indicators"
 msgstr "Chart Indicators"
 
+msgid "Charting for this underlying is delayed"
+msgstr "กราฟของผลิตภัณฑ์อ้างอิงนี้ล่าช้า"
+
 msgid "Check out our commission rates below:"
 msgstr "ตรวจสอบอัตราค่าคอมมิชชั่นของเราด้านล่าง:"
 
@@ -2407,6 +2410,11 @@ msgstr "คู่มือพนักงาน"
 msgid "End Time"
 msgstr "เวลาสิ้นสุด"
 
+#, fuzzy
+#| msgid "End Time"
+msgid "End time"
+msgstr "เวลาสิ้นสุด"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "สิ้นสุดระหว่าง/สิ้นสุดนอกขอบเขต"
 
@@ -2963,6 +2971,11 @@ msgid "Hedging"
 msgstr "เฮดจิ้ง"
 
 msgid "High Barrier"
+msgstr "Barrier สูง"
+
+#, fuzzy
+#| msgid "High Barrier"
+msgid "High Barrier (%1)"
 msgstr "Barrier สูง"
 
 msgid "High barrier"
@@ -3977,6 +3990,11 @@ msgstr "กรกฎาคม"
 msgid "Jump To"
 msgstr "ข้ามไปที่"
 
+#, fuzzy
+#| msgid "Jump To"
+msgid "Jump to date:"
+msgstr "ข้ามไปที่"
+
 msgid "Jun"
 msgstr "มิ.ย."
 
@@ -4159,6 +4177,11 @@ msgid "Loss"
 msgstr "เสีย"
 
 msgid "Low Barrier"
+msgstr "Barrier ต่ำ"
+
+#, fuzzy
+#| msgid "Low Barrier"
+msgid "Low Barrier (%1)"
 msgstr "Barrier ต่ำ"
 
 msgid "Low barrier"
@@ -5172,7 +5195,9 @@ msgstr "พนักงานเอกชน"
 msgid "Publish your name and logo (with or without a link to your Application) on our website, in press releases, and in promotional materials without additional consent;"
 msgstr "เผยแพร่ชื่อและโลโก้ของท่าน (ประกอบกับมี หรือ ไม่มีลิงค์ไปยังแอพพลิเคชัน) ที่เว็บไซต์ของเรา ในช่องทางสื่อมวลชนต่างๆ และเอกสารการประชาสัมพันธ์โดยปราศจากความยินยอมเพิ่มเติม"
 
-msgid "Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
+#, fuzzy
+#| msgid "Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
+msgid "Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
 msgstr "เผยแพร่ด้วยภาษาอังกฤษภาษาญี่ปุ่น ภาษาจีน ภาษาโปแลนด์ ภาษาเยอรมัน ภาษาฝรั่งเศส ภาษาสเปน ภาษาโปรตุเกส ภาษาอิตาเลียน ภาษารัสเซีย และภาษาไทย"
 
 msgid "Purchase"
@@ -5544,6 +5569,11 @@ msgstr "ขายกลับไปที่ราคาตลาด"
 
 msgid "Sell option"
 msgstr "ขายออปชั่น"
+
+#, fuzzy
+#| msgid "Sell Time"
+msgid "Sell time"
+msgstr "เวลาที่ขาย"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "ส่งประวัติของท่านและจดหมายแนะนำตัวที่อธิบายความสนใจทางอาชีพของท่านมาให้เรา"
@@ -7929,7 +7959,9 @@ msgstr "ไอโอเอส เอนดรอย"
 msgid "is required. Current spread"
 msgstr "ต้องการสเปรดปัจจุบัน"
 
-msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
+#, fuzzy
+#| msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
+msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
 msgstr "ระบบรองรับความเป็นสากล ด้วยส่วนเชื่อมต่อการใช้งานในภาษาต่างๆ ได้แก่ ภาษาอังกฤษ ภาษาสเปน ภาษาฝรั่งเศา ภาษาเยอรมัน ภาษาโปรตุเกส ภาษาจีน ภาษาอารบิก ภาษาโปแลนด์ ภาษารัสเซีย และภาษาอินโดนีเซีย"
 
 msgid "it is the leading binary option trading platform."
@@ -12683,9 +12715,6 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 #~ msgid "Change"
 #~ msgstr "การเปลี่ยนแปลง"
 
-#~ msgid "Charting for this underlying is delayed"
-#~ msgstr "กราฟของผลิตภัณฑ์อ้างอิงนี้ล่าช้า"
-
 #~ msgid "Charting is not available for this underlying"
 #~ msgstr "กราฟของผลิตภัณฑ์อ้างอิงนี้ไม่สามารถใช้งานได้"
 
@@ -12908,9 +12937,6 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 #~ msgid "Sell Spot"
 #~ msgstr "สปอตที่ขาย"
-
-#~ msgid "Sell Time"
-#~ msgstr "เวลาที่ขาย"
 
 #~ msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 #~ msgstr "ขออภัย มีความผิดพลาดเกิดขึ้น โปรดติดต่อเจ้าหน้าที่บริการลูกค้า หากท่านยังพบปัญหาในการใช้งาน"

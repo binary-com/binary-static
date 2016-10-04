@@ -16,11 +16,11 @@ var Highchart = (function() {
   function init_chart(options) {
       var data = [];
       var type = '';
-      var lbl_start_time = '<div style="margin-bottom:3px;margin-left:10px;height:0;width:20px;border:0;border-bottom:2px;border-style:solid;border-color:#E98024;display:inline-block"></div> Start time ';
-      var lbl_entry_spot = '<div style="margin-left:10px;display:inline-block;border:3px solid orange;border-radius:6px;width:4px;height:4px;"></div> Entry spot ';
-      var lbl_exit_spot = '<div style="margin-left:10px;display:inline-block;background-color:orange;border-radius:6px;width:10px;height:10px;"></div> Exit spot ';
-      var lbl_end_time = '<div style="margin-bottom: 3px;margin-left:10px;height:0;width:20px;border:0;border-bottom:2px;border-style:dashed;border-color:#E98024;display:inline-block"></div> End time ';
-      var lbl_delay = '<span style="display:block;text-align:center;margin-bottom:0.2em;color:red">Charting for this underlying is delayed </span>';
+      var lbl_start_time = '<div style="margin-bottom:3px;margin-left:10px;height:0;width:20px;border:0;border-bottom:2px;border-style:solid;border-color:#E98024;display:inline-block"></div> ' + page.text.localize('Start time') + ' ';
+      var lbl_entry_spot = '<div style="margin-left:10px;display:inline-block;border:3px solid orange;border-radius:6px;width:4px;height:4px;"></div> ' + page.text.localize('Entry spot') + ' ';
+      var lbl_exit_spot = '<div style="margin-left:10px;display:inline-block;background-color:orange;border-radius:6px;width:10px;height:10px;"></div> ' + page.text.localize('Exit spot') + ' ';
+      var lbl_end_time = '<div style="margin-bottom: 3px;margin-left:10px;height:0;width:20px;border:0;border-bottom:2px;border-style:dashed;border-color:#E98024;display:inline-block"></div> ' + page.text.localize('End time') + ' ';
+      var lbl_delay = '<span style="display:block;text-align:center;margin-bottom:0.2em;color:red"> ' + page.text.localize('Charting for this underlying is delayed') + ' </span>';
       // options.history indicates line chart
       if(options.history){
         type = 'line';
@@ -49,7 +49,7 @@ var Highchart = (function() {
           return [c.epoch*1000, c.open*1, c.high*1, c.low*1, c.close*1];
         });
       }
-      var title = options.title;
+      var title = page.text.localize(options.title);
       // element where chart is to be displayed
       var el = document.getElementById('analysis_live_chart');
       if(!el) return;
@@ -166,7 +166,7 @@ var Highchart = (function() {
         var subtitle = chart.subtitle.element;
         var subtitle_length = chart.subtitle.element.childNodes.length;
         if (sell_time && sell_time < end_time) {
-          var textnode = document.createTextNode(" Sell time ");
+          var textnode = document.createTextNode(' '  + page.text.localize('Sell time') + ' ');
           for (i = 0; i < chart.subtitle.element.childNodes.length; i++) {
             if (/End time/.test(chart.subtitle.element.childNodes[i].nodeValue)) {
               var item = chart.subtitle.element.childNodes[i];
@@ -281,7 +281,7 @@ var Highchart = (function() {
           chart = init_chart(options);
           if(!chart) return;
 
-          if (purchase_time !== start_time) draw_line_x(purchase_time, 'Purchase Time', '', '', '#7cb5ec');
+          if (purchase_time !== start_time) draw_line_x(purchase_time, page.text.localize('Purchase Time'), '', '', '#7cb5ec');
 
           // second condition is used to make sure contracts that have purchase time
           // but are sold before the start time don't show start time
@@ -466,8 +466,8 @@ var Highchart = (function() {
       if (contract.barrier) {
           chart.addPlotLineY({id: 'barrier', value: contract.barrier*1, label: 'Barrier (' + contract.barrier + ')', dashStyle: 'Dot'});
       } else if (contract.high_barrier && contract.low_barrier) {
-          chart.addPlotLineY({id: 'high_barrier', value: contract.high_barrier*1, label: 'High Barrier (' + contract.high_barrier + ')', dashStyle: 'Dot'});
-          chart.addPlotLineY({id: 'low_barrier', value: contract.low_barrier*1, label: 'Low Barrier (' + contract.low_barrier + ')', dashStyle: 'Dot'});
+          chart.addPlotLineY({id: 'high_barrier', value: contract.high_barrier*1, label: page.text.localize('High Barrier ([_1])').replace('[_1]', contract.high_barrier), dashStyle: 'Dot'});
+          chart.addPlotLineY({id: 'low_barrier', value: contract.low_barrier*1, label: page.text.localize('Low Barrier ([_1])').replace('[_1]', contract.low_barrier), dashStyle: 'Dot'});
       }
     }
   }

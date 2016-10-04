@@ -126,21 +126,6 @@ body.FR {
     }
 }
 
-/*Arabic Language */
-body.AR {
-    .regulatory-logo {
-        display: none !important;
-    }
-    .ar-hide {
-        display: none;
-    }
-    .app-store-badge {
-        background-image: url('../images/pages/applications/appstore_ar.svg');
-    }
-    .google-play-badge {
-        background-image: url('../images/pages/applications/googleplay_ar.svg');
-    }
-}
 /*Indonesian Language */
 body.ID {
     .calls_recording {

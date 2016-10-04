@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-03 00:26+0000\n"
+"PO-Revision-Date: 2016-10-04 05:30+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -1647,6 +1647,9 @@ msgstr "チャート比較"
 msgid "Chart Indicators"
 msgstr "チャート指標"
 
+msgid "Charting for this underlying is delayed"
+msgstr "この対象のチャート表示は不可能です"
+
 msgid "Check out our commission rates below:"
 msgstr "報酬の還元率をご確認下さい。"
 
@@ -2443,6 +2446,9 @@ msgstr "従業員便覧"
 msgid "End Time"
 msgstr "判定時刻"
 
+msgid "End time"
+msgstr "終了時間"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "END-IN/END-OUT トレード"
 
@@ -2531,7 +2537,7 @@ msgid "Even/Odd contracts will be refunded at the purchase price if the contract
 msgstr "Even/Oddはトレードが5分以内で終了しない場合、購入金額が返金されます。"
 
 msgid "Everyone"
-msgstr ""
+msgstr "全員"
 
 msgid "Example:"
 msgstr "例："
@@ -2624,7 +2630,7 @@ msgid "Experience in the financial services industry is preferred"
 msgstr "金融サービス業界での経験があれば望ましい"
 
 msgid "Experience the future of our trading platform with the Next-Gen app."
-msgstr ""
+msgstr "Next-Gen アプリで取引プラットフォームの未来を経験しましょう"
 
 msgid "Experience with Git"
 msgstr "Gitの経験"
@@ -2999,6 +3005,11 @@ msgid "Hedging"
 msgstr "ヘッジ"
 
 msgid "High Barrier"
+msgstr "上限バリア"
+
+#, fuzzy
+#| msgid "High Barrier"
+msgid "High Barrier (%1)"
 msgstr "上限バリア"
 
 msgid "High barrier"
@@ -4034,6 +4045,9 @@ msgstr "７月"
 msgid "Jump To"
 msgstr "Xへ移動する"
 
+msgid "Jump to date:"
+msgstr "参照日："
+
 msgid "Jun"
 msgstr "6"
 
@@ -4115,7 +4129,7 @@ msgid "Learning to trade online?"
 msgstr "オンライントレードを学ぶ"
 
 msgid "Legal"
-msgstr "法律"
+msgstr "取引規定・約款"
 
 msgid "Legal & Regulatory Compliance"
 msgstr "法務・規制コンプライアンス"
@@ -4217,6 +4231,11 @@ msgid "Loss"
 msgstr "損益"
 
 msgid "Low Barrier"
+msgstr "下限バリア"
+
+#, fuzzy
+#| msgid "Low Barrier"
+msgid "Low Barrier (%1)"
 msgstr "下限バリア"
 
 msgid "Low barrier"
@@ -5215,7 +5234,7 @@ msgid "Proofreader"
 msgstr "校正者"
 
 msgid "Prospectus"
-msgstr "目論見書"
+msgstr "説明書"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "監査の基準、手続き、法律、規則および規制に関した実績ある知識があると好ましい"
@@ -5232,8 +5251,8 @@ msgstr "公務員"
 msgid "Publish your name and logo (with or without a link to your Application) on our website, in press releases, and in promotional materials without additional consent;"
 msgstr "お客さまのお名前及びロゴ（アプリケーションのリンクを含む）を当サイト、プレスリリース、販促資料において同意を伺うことなく公開します。"
 
-msgid "Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
-msgstr "ライブチャットは英語、中国語、ポーランド語、ドイツ語、フランス語、スペイン語、ポルトガル語、イタリア語、ロシア語、タイ語の10ヵ国語で対応。（日本語は、現在対応しておりません。）"
+msgid "Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
+msgstr "ライブチャットは英語、インドネシア語、中国語、ポーランド語、ドイツ語、フランス語、スペイン語、ポルトガル語、イタリア語、ロシア語、タイ語の11ヵ国語で対応。（日本語は、現在対応しておりません。）"
 
 msgid "Purchase"
 msgstr "購入"
@@ -5288,6 +5307,8 @@ msgstr "読む"
 
 msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
 msgstr ""
+"Binary Investments (Europe) Limited でのバイナリーオプションの機能、特徴、利点、リスクについて読む。\n"
+"バイナリーオプションの基礎をつかむのに役立つ、トレードタイプ別の投資例は「スケジュール」セクションに含まれています。"
 
 msgid "Read about the five types of trade offered by %1."
 msgstr "%1が提供する５種類のトレードについて"
@@ -5555,7 +5576,7 @@ msgid "Secret question"
 msgstr "秘密の質問"
 
 msgid "Security"
-msgstr "セキュリティ情報"
+msgstr "信託により区分管理"
 
 msgid "Security & Limits"
 msgstr "セキュリティ & 制限"
@@ -5607,6 +5628,11 @@ msgstr "市場価格で保有ポジションを売却"
 
 msgid "Sell option"
 msgstr "オプションの転売"
+
+#, fuzzy
+#| msgid "Sell Time"
+msgid "Sell time"
+msgstr "売却時間"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "履歴書とキャリアに関する興味を述べたカバレターをお送りください。"
@@ -6170,7 +6196,7 @@ msgid "The Payment Agent facility is currently not available in your country."
 msgstr "その決済サービスは、お客さまのお住まいの国では現在ご利用いただけません。"
 
 msgid "The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
-msgstr ""
+msgstr "Binary Investments (Europe) Limitedの第三の柱は、資本要件指令 IV と資本要件規制に基いて作成されています。市場参加者として我々がいかように市場の規則を遵守しているかご理解いただくためにも、当社の第三の柱をご一読ください。"
 
 msgid "The Program"
 msgstr "アフィリエイトプログラム"
@@ -6792,7 +6818,7 @@ msgid "Trade with ease with %1's wide range of deposit and withdrawal methods. Y
 msgstr "銀行振込による入出金が取引が可能。お客さまからお預かりした資金は、日証金信託銀行の信託口座にて当社の資産とは区分して管理されています。"
 
 msgid "Trade your way"
-msgstr "自由にトレード"
+msgstr "柔軟な取引"
 
 msgid "Trading"
 msgstr "トレード"
@@ -6874,7 +6900,7 @@ msgid "True"
 msgstr "正"
 
 msgid "Trust"
-msgstr "信頼性の証"
+msgstr "当社の実績について"
 
 msgid "Try Binary Bot"
 msgstr "Binary Botを試す"
@@ -7425,7 +7451,7 @@ msgid "Why limit yourself? Whatever your market view, %1 allows you to put your 
 msgstr "Binary.comならどのような相場の見通しを立てても、その投資戦略を実行に移すことができます。"
 
 msgid "Why pay more?"
-msgstr "優れた価格設定の秘密"
+msgstr "優れた価格設定"
 
 msgid "Why should I become a binary options trading affiliate?"
 msgstr "バイナリーオプションのアフィリエイトになるメリットを教えて下さい。"
@@ -7790,7 +7816,7 @@ msgid "You win the payout if the market price ends in the digit you have selecte
 msgstr "市場価格の末尾がご指定頂いた数値となった場合、ペイアウトを獲得いただけます。"
 
 msgid "You won't lose your shirt"
-msgstr "損益の管理について"
+msgstr "万全なリスク管理"
 
 msgid "You'll be surprised by the returns you can make."
 msgstr "収益性の高さに驚かれることでしょう。"
@@ -8033,8 +8059,8 @@ msgstr "iOS、Android"
 msgid "is required. Current spread"
 msgstr "のご入金が必要です。現在のスプレッド"
 
-msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
-msgstr "当社は英語、スペイン語、フランス語、ドイツ語、ポルトガル語、中国語、アラビア語、ポーランド語、ロシア語、インドネシア語での国際的なインターフェイスを有しています。"
+msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
+msgstr "当社は英語、スペイン語、フランス語、ドイツ語、ポルトガル語、中国語、日本語、イタリア語、タイ語、ポーランド語、ロシア語、インドネシア語での国際的なインターフェイスを有しています。"
 
 msgid "it is the leading binary option trading platform."
 msgstr "最高水準のバイナリーオプション取引プラットフォーム"
@@ -8052,10 +8078,10 @@ msgid "m"
 msgstr "男性"
 
 msgid "max: 100,000"
-msgstr "上限：100,000円"
+msgstr "上限：¥100,000"
 
 msgid "min: 1,000"
-msgstr "下限：1,000円"
+msgstr "下限：¥1,000"
 
 msgid "minimum available duration"
 msgstr "最短取引期間"
@@ -8535,7 +8561,7 @@ msgid "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior
 msgstr "判定時刻2分前までならいつでも売却取引によりロスカットや利益確定をすることができます"
 
 msgid "{JAPAN ONLY}Introduction to Binary Options"
-msgstr "バイナリーオプションの<br>概要"
+msgstr "バイナリーオプション<br>の概要"
 
 msgid "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
 msgstr "投資者に不利な方向に動いた場合には、バイナリーオプションが投資額を全額失うのに比べ、ＦＸは投資額の一部が残る場合があるので、一概にバイナリーオプションが有利とはいえない。"
@@ -8620,7 +8646,7 @@ msgid "{JAPAN ONLY}Options Basic Knowledge"
 msgstr "オプション取引の基本知識について"
 
 msgid "{JAPAN ONLY}Options Basics"
-msgstr "オプション取引の基本"
+msgstr "オプション取引<br>の基本"
 
 msgid "{JAPAN ONLY}Options are said to be leveraged products because in the case of large moves in the underlying asset price, the values of the options can increase by large amounts compared to the price paid for the option."
 msgstr "オプションのレバレッジ効果により、買い手はオプション料に比べ数倍の利益が得られる可能性があるが損失はオプション料に限られ、逆に売り手は利益がオプション料に限られるが損失はオプション料の数倍となる可能性がある。"
@@ -13095,9 +13121,6 @@ msgstr "利用規約の承認"
 #~ msgid "Change"
 #~ msgstr "変化値"
 
-#~ msgid "Charting for this underlying is delayed"
-#~ msgstr "この対象のチャート表示は不可能です"
-
 #~ msgid "Charting is not available for this underlying"
 #~ msgstr "この対象のチャート表示は不可能です"
 
@@ -13367,9 +13390,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "Sell Spot"
 #~ msgstr "売却スポット"
-
-#~ msgid "Sell Time"
-#~ msgstr "売却時間"
 
 #~ msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 #~ msgstr "申し訳ございませんが、エラーが発生しました。状況が改善されない場合はカスタマーサポートまでご連絡下さい。"
@@ -14916,9 +14936,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "HighCharts"
 #~ msgstr "HighCharts"
-
-#~ msgid "Jump to"
-#~ msgstr "参照先"
 
 #~ msgid "Newer"
 #~ msgstr "進む"
@@ -18066,9 +18083,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "End"
 #~ msgstr "終了"
-
-#~ msgid "End time"
-#~ msgstr "終了時間"
 
 #~ msgid "Entry"
 #~ msgstr "エントリー"

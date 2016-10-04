@@ -62,14 +62,14 @@ sub all_languages {
 }
 
 sub rtl_languages {
-    return ('AR');
+#    return ('AR');
+    return ();
 }
 
 sub lang_display_name {
     my $iso_code = shift;
 
     my %lang_code_name = (
-        # AR    => 'Arabic',
         DE    => 'Deutsch',
         ES    => 'Español',
         FR    => 'Français',
