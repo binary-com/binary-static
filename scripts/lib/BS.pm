@@ -69,7 +69,6 @@ sub lang_display_name {
     my $iso_code = shift;
 
     my %lang_code_name = (
-        # AR    => 'Arabic',
         DE    => 'Deutsch',
         ES    => 'Español',
         FR    => 'Français',
