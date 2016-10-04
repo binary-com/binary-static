@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-10-04 00:21+0000\n"
 "Last-Translator: Mark Tanser <mark@regentmarkets.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -4035,6 +4034,11 @@ msgstr "７月"
 msgid "Jump To"
 msgstr "Xへ移動する"
 
+#, fuzzy
+#| msgid "Jump to"
+msgid "Jump to date:"
+msgstr "参照先"
+
 msgid "Jun"
 msgstr "6"
 
@@ -5233,7 +5237,9 @@ msgstr "公務員"
 msgid "Publish your name and logo (with or without a link to your Application) on our website, in press releases, and in promotional materials without additional consent;"
 msgstr "お客さまのお名前及びロゴ（アプリケーションのリンクを含む）を当サイト、プレスリリース、販促資料において同意を伺うことなく公開します。"
 
-msgid "Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
+#, fuzzy
+#| msgid "Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
+msgid "Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
 msgstr "ライブチャットは英語、中国語、ポーランド語、ドイツ語、フランス語、スペイン語、ポルトガル語、イタリア語、ロシア語、タイ語の10ヵ国語で対応。（日本語は、現在対応しておりません。）"
 
 msgid "Purchase"
@@ -6173,9 +6179,7 @@ msgid "The Payment Agent facility is currently not available in your country."
 msgstr "その決済サービスは、お客さまのお住まいの国では現在ご利用いただけません。"
 
 msgid "The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
-msgstr ""
-"Binary Investments (Europe) Limitedの第三の柱は、資本要件指令 IV "
-"と資本要件規制に基いて作成されています。市場参加者として我々がいかように市場の規則を遵守しているかご理解いただくためにも、当社の第三の柱をご一読ください。"
+msgstr "Binary Investments (Europe) Limitedの第三の柱は、資本要件指令 IV と資本要件規制に基いて作成されています。市場参加者として我々がいかように市場の規則を遵守しているかご理解いただくためにも、当社の第三の柱をご一読ください。"
 
 msgid "The Program"
 msgstr "アフィリエイトプログラム"
@@ -8038,7 +8042,9 @@ msgstr "iOS、Android"
 msgid "is required. Current spread"
 msgstr "のご入金が必要です。現在のスプレッド"
 
-msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
+#, fuzzy
+#| msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
+msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
 msgstr "当社は英語、スペイン語、フランス語、ドイツ語、ポルトガル語、中国語、アラビア語、ポーランド語、ロシア語、インドネシア語での国際的なインターフェイスを有しています。"
 
 msgid "it is the leading binary option trading platform."
@@ -14921,9 +14927,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "HighCharts"
 #~ msgstr "HighCharts"
-
-#~ msgid "Jump to"
-#~ msgstr "参照先"
 
 #~ msgid "Newer"
 #~ msgstr "進む"
