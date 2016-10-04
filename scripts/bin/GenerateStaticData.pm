@@ -113,7 +113,9 @@ sub _texts {
         push @texts, localize('Start Time');
         push @texts, localize('Entry Spot');
         push @texts, localize('Low Barrier');
+        push @texts, localize('Low Barrier ([_1])');
         push @texts, localize('High Barrier');
+        push @texts, localize('High Barrier ([_1])');
         push @texts, localize('Next');
         push @texts, localize('Previous');
         push @texts, localize('Su');
@@ -147,6 +149,11 @@ sub _texts {
 
         # text used by websocket trading page javascript
         push @texts, localize('Start time');
+        push @texts, localize('Entry spot');
+        push @texts, localize('Exit spot');
+        push @texts, localize('End time');
+        push @texts, localize('Sell time');
+        push @texts, localize('Charting for this underlying is delayed');
         push @texts, localize('Spot');
         push @texts, localize('Barrier');
         push @texts, localize('Barrier offset');
