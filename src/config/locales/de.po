@@ -1664,6 +1664,9 @@ msgstr "Chartformat"
 msgid "Chart Indicators"
 msgstr "Indikator"
 
+msgid "Charting for this underlying is delayed"
+msgstr "Die grafische Darstellung für diesen Basiswert ist verzögert"
+
 msgid "Check out our commission rates below:"
 msgstr "Schauen Sie sich unsere nachstehenden Provisionssätze an:"
 
@@ -2454,6 +2457,9 @@ msgstr "Mitarbeiter-Handbuch"
 msgid "End Time"
 msgstr "Endzeit"
 
+msgid "End time"
+msgstr "Endzeit"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "Schließt zwischen/Schließt außerhalb Kontrakte"
 
@@ -3020,6 +3026,11 @@ msgid "Hedging"
 msgstr "Hedging"
 
 msgid "High Barrier"
+msgstr "Hohe Schwelle"
+
+#, fuzzy
+#| msgid "High Barrier"
+msgid "High Barrier (%1)"
 msgstr "Hohe Schwelle"
 
 msgid "High barrier"
@@ -4033,6 +4044,11 @@ msgstr "Juli"
 msgid "Jump To"
 msgstr "Springen zu"
 
+#, fuzzy
+#| msgid "Jump to"
+msgid "Jump to date:"
+msgstr "Springen Sie zu"
+
 msgid "Jun"
 msgstr "Jun"
 
@@ -4216,6 +4232,11 @@ msgid "Loss"
 msgstr "Verlust"
 
 msgid "Low Barrier"
+msgstr "Untere Schwelle"
+
+#, fuzzy
+#| msgid "Low Barrier"
+msgid "Low Barrier (%1)"
 msgstr "Untere Schwelle"
 
 msgid "Low barrier"
@@ -5239,7 +5260,7 @@ msgstr "Veröffentlichen Sie Ihren Namen und Ihr Logo (mit oder ohne Link auf Ih
 
 #, fuzzy
 #| msgid "Published in English, Japanese, Chinese, Arabic, Polish, German, French, Spanish, Portuguese, Italian and Russian"
-msgid "Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
+msgid "Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
 msgstr "In Englisch, Japanisch, Chinesisch, Arabisch, Polnisch, Deutsch, Französisch, Spanisch, Portugiesisch, Italienisch und Russisch herausgegeben"
 
 msgid "Purchase"
@@ -5612,6 +5633,11 @@ msgstr "Verkaufen Sie Kontrakte zu Börsenkursen."
 
 msgid "Sell option"
 msgstr "Verkaufsoption"
+
+#, fuzzy
+#| msgid "Sell Time"
+msgid "Sell time"
+msgstr "Verkaufszeit"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "Senden Sie uns einen Lebenslauf und ein Anschreiben, das Ihre Karriereziele beschreibt."
@@ -7917,7 +7943,9 @@ msgstr ""
 msgid "is required. Current spread"
 msgstr "ist erforderlich. Aktueller Spread"
 
-msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
+#, fuzzy
+#| msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
+msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
 msgstr "Sie hat mit Schnittstellen in Deutsch, Englisch, Spanisch, Französisch, Portugiesisch, Chinesisch, Arabisch, Polnisch, Russisch und Indonesisch eine international hohe Verbreitung."
 
 msgid "it is the leading binary option trading platform."
@@ -12934,9 +12962,6 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 #~ msgid "Change"
 #~ msgstr "Veränderung"
 
-#~ msgid "Charting for this underlying is delayed"
-#~ msgstr "Die grafische Darstellung für diesen Basiswert ist verzögert"
-
 #~ msgid "Charting is not available for this underlying"
 #~ msgstr "Für diesen Basiswert sind keine grafischen Darstellungen vorhanden"
 
@@ -13206,9 +13231,6 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 
 #~ msgid "Sell Spot"
 #~ msgstr "Verkaufsschlusskurs"
-
-#~ msgid "Sell Time"
-#~ msgstr "Verkaufszeit"
 
 #~ msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 #~ msgstr "Es tut uns leid, es ist ein Fehler aufgetreten. Sollte das Problem weiterhin bestehen, setzen Sie sich bitte mit unserer Kundenbetreuung in Verbindung."
@@ -14796,9 +14818,6 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 
 #~ msgid "HighCharts"
 #~ msgstr "HighCharts"
-
-#~ msgid "Jump to"
-#~ msgstr "Springen Sie zu"
 
 #~ msgid "Newer"
 #~ msgstr "Neuer"
@@ -17972,9 +17991,6 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 
 #~ msgid "End"
 #~ msgstr "Ende"
-
-#~ msgid "End time"
-#~ msgstr "Endzeit"
 
 #~ msgid "Entry"
 #~ msgstr "Eingabe"

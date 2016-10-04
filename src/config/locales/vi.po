@@ -1618,6 +1618,9 @@ msgstr "So sanh biểu đồ"
 msgid "Chart Indicators"
 msgstr "Các chỉ số biểu đồ"
 
+msgid "Charting for this underlying is delayed"
+msgstr "Biểu đồ cho tài sản cơ sở này bị hoãn"
+
 msgid "Check out our commission rates below:"
 msgstr "Xem xét tỉ lệ hoa hồng của chúng tôi dưới đây:"
 
@@ -2404,6 +2407,11 @@ msgstr "Sổ tay Nhân viên"
 msgid "End Time"
 msgstr "Thời gian Kết thúc"
 
+#, fuzzy
+#| msgid "End Time"
+msgid "End time"
+msgstr "Thời gian Kết thúc"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "Giao dịch Kết thúc ở Giữa/ Kết thúc bên ngoài"
 
@@ -2960,6 +2968,11 @@ msgid "Hedging"
 msgstr "Hedging"
 
 msgid "High Barrier"
+msgstr "Rào cản Cao"
+
+#, fuzzy
+#| msgid "High Barrier"
+msgid "High Barrier (%1)"
 msgstr "Rào cản Cao"
 
 msgid "High barrier"
@@ -3971,6 +3984,11 @@ msgstr "Tháng Bảy"
 msgid "Jump To"
 msgstr "Nhảy đến"
 
+#, fuzzy
+#| msgid "Jump to"
+msgid "Jump to date:"
+msgstr "Nhẩy vào"
+
 msgid "Jun"
 msgstr "Tháng Sáu"
 
@@ -4152,6 +4170,11 @@ msgid "Loss"
 msgstr "Thất thoát"
 
 msgid "Low Barrier"
+msgstr "Rào cản Thấp"
+
+#, fuzzy
+#| msgid "Low Barrier"
+msgid "Low Barrier (%1)"
 msgstr "Rào cản Thấp"
 
 msgid "Low barrier"
@@ -5159,7 +5182,9 @@ msgstr "Public worker"
 msgid "Publish your name and logo (with or without a link to your Application) on our website, in press releases, and in promotional materials without additional consent;"
 msgstr "Công bố tên và logo của bạn (có hoặc không có một liên kết đến Ứng dụng của bạn) trên trang web của chúng tôi, trong thông cáo báo chí, và trong các tài liệu quảng cáo nếu không đồng ý bổ sung;"
 
-msgid "Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
+#, fuzzy
+#| msgid "Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
+msgid "Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
 msgstr "Được xuất bản bằng tiếng Anh, tiếng Nhật, tiếng Trung, Ba Lan, Đức, Pháp, Tây Ban Nha, Bồ Đào Nha, Ý, Nga, và Thái"
 
 msgid "Purchase"
@@ -5530,6 +5555,11 @@ msgstr "Bán lại giao dịch với giá thị trường."
 
 msgid "Sell option"
 msgstr "Quyền chọn bán"
+
+#, fuzzy
+#| msgid "Sell Time"
+msgid "Sell time"
+msgstr "Thời gian Bán"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "Gửi chúng tôi CV và thư xin việc mô tả mối quan tâm nghề nghiệp của bạn."
@@ -7796,7 +7826,9 @@ msgstr "iOS, Android"
 msgid "is required. Current spread"
 msgstr "là bắt buộc. Giá chênh lệch hiện tại"
 
-msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
+#, fuzzy
+#| msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
+msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
 msgstr "Sàn giao dịch có một sức hấp dẫn quốc tế rộng, với giao diện bằng tiếng Anh, tiếng Tây Ban Nha, Pháp, Đức, Bồ Đào Nha, Trung Quốc, Ả Rập, Ba Lan, Nga và Indonesia."
 
 msgid "it is the leading binary option trading platform."
@@ -12814,9 +12846,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 #~ msgid "Change"
 #~ msgstr "Thay đổi"
 
-#~ msgid "Charting for this underlying is delayed"
-#~ msgstr "Biểu đồ cho tài sản cơ sở này bị hoãn"
-
 #~ msgid "Charting is not available for this underlying"
 #~ msgstr "Biểu đồ không có sẵn cho tài sản cơ sở này"
 
@@ -13083,9 +13112,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 #~ msgid "Sell Spot"
 #~ msgstr "Giá Bán giao ngay"
-
-#~ msgid "Sell Time"
-#~ msgstr "Thời gian Bán"
 
 #~ msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 #~ msgstr "Xin lỗi, có lỗi xảy ra. Vui lòng liên hệ với bộ phận chăm sóc khách hàng nếu lỗi này tái diễn."
@@ -14829,9 +14855,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 #~ msgid "HighCharts"
 #~ msgstr "Biểu đồ Cao"
-
-#~ msgid "Jump to"
-#~ msgstr "Nhẩy vào"
 
 #~ msgid "Newer"
 #~ msgstr "Mới hơn"

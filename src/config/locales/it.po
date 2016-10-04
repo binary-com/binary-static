@@ -1660,6 +1660,9 @@ msgstr ""
 msgid "Chart Indicators"
 msgstr "Indicatore"
 
+msgid "Charting for this underlying is delayed"
+msgstr "I grafici per questo strumento sono differiti"
+
 msgid "Check out our commission rates below:"
 msgstr "Dai uno sguardo qui sotto alle nostre commissioni:"
 
@@ -2450,6 +2453,11 @@ msgstr "Vademecum degli impiegati"
 msgid "End Time"
 msgstr "Orario di fine"
 
+#, fuzzy
+#| msgid "End Time"
+msgid "End time"
+msgstr "Orario di fine"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "Trade Ends Between (Finisce tra)/Ends Outside (Termina fuori)"
 
@@ -3014,6 +3022,11 @@ msgid "Hedging"
 msgstr "Hedging"
 
 msgid "High Barrier"
+msgstr "Barriera superiore"
+
+#, fuzzy
+#| msgid "High Barrier"
+msgid "High Barrier (%1)"
 msgstr "Barriera superiore"
 
 msgid "High barrier"
@@ -4031,6 +4044,11 @@ msgstr "Luglio"
 msgid "Jump To"
 msgstr "Salta a"
 
+#, fuzzy
+#| msgid "Jump to"
+msgid "Jump to date:"
+msgstr "Salta a"
+
 msgid "Jun"
 msgstr "Giu"
 
@@ -4214,6 +4232,11 @@ msgid "Loss"
 msgstr "Perdita"
 
 msgid "Low Barrier"
+msgstr "Barriera inferiore"
+
+#, fuzzy
+#| msgid "Low Barrier"
+msgid "Low Barrier (%1)"
 msgstr "Barriera inferiore"
 
 msgid "Low barrier"
@@ -5239,7 +5262,7 @@ msgstr "Pubblicare il tuo nome e logo (con o senza un link alla tua Applicazione
 
 #, fuzzy
 #| msgid "Published in English, Japanese, Chinese, Arabic, Polish, German, French, Spanish, Portuguese, Italian and Russian"
-msgid "Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
+msgid "Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
 msgstr "Pubblicato in inglese, giapponese, cinese, arabo, polacco, tedesco, francese, spagnolo, portoghese, italiano e russo"
 
 msgid "Purchase"
@@ -5618,6 +5641,11 @@ msgstr "Rivendi trade ai prezzi di mercato."
 
 msgid "Sell option"
 msgstr "Opzione di vendita"
+
+#, fuzzy
+#| msgid "Sell Time"
+msgid "Sell time"
+msgstr "Orario di vendita"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "Inviaci un CV e una lettera di presentazione in cui descrivi i tuoi interessi professionali."
@@ -7926,7 +7954,9 @@ msgstr ""
 msgid "is required. Current spread"
 msgstr "è richiesto. Spread attuale"
 
-msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
+#, fuzzy
+#| msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
+msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
 msgstr "ha un ampio appeal a livello internazionale, con un'interfaccia in inglese, spagnolo, francese, tedesco, portoghese, cinese, arabo, polacco, russo e indonesiano."
 
 msgid "it is the leading binary option trading platform."
@@ -12962,9 +12992,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 #~ msgid "Change"
 #~ msgstr "Cambio"
 
-#~ msgid "Charting for this underlying is delayed"
-#~ msgstr "I grafici per questo strumento sono differiti"
-
 #~ msgid "Charting is not available for this underlying"
 #~ msgstr "I grafici per questo strumento non sono disponibili"
 
@@ -13231,9 +13258,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 #~ msgid "Sell Spot"
 #~ msgstr "Spot di vendita"
-
-#~ msgid "Sell Time"
-#~ msgstr "Orario di vendita"
 
 #~ msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 #~ msgstr "Siamo spiacenti, si è verificato un errore. Nel caso in cui tale problema dovesse persistere, si prega di contattare l'assistenza clienti."
@@ -14803,9 +14827,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 #~ msgid "HighCharts"
 #~ msgstr "Grafici High"
-
-#~ msgid "Jump to"
-#~ msgstr "Salta a"
 
 #~ msgid "Newer"
 #~ msgstr "Più recente"

@@ -1622,6 +1622,9 @@ msgstr "Сравнение графиков"
 msgid "Chart Indicators"
 msgstr "Графические индикаторы"
 
+msgid "Charting for this underlying is delayed"
+msgstr "Графики для этого инструмента рисуются с задержкой"
+
 msgid "Check out our commission rates below:"
 msgstr "Посмотрите предлагаемые нами комиссии ниже:"
 
@@ -2408,6 +2411,9 @@ msgstr "Справочник для сотрудников"
 msgid "End Time"
 msgstr "Окончание"
 
+msgid "End time"
+msgstr "Окончание"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "Закончится между/Закончится вне"
 
@@ -2964,6 +2970,11 @@ msgid "Hedging"
 msgstr "Hedging"
 
 msgid "High Barrier"
+msgstr "Верхний барьер"
+
+#, fuzzy
+#| msgid "High Barrier"
+msgid "High Barrier (%1)"
 msgstr "Верхний барьер"
 
 msgid "High barrier"
@@ -3975,6 +3986,11 @@ msgstr "Июль"
 msgid "Jump To"
 msgstr "Перейти к"
 
+#, fuzzy
+#| msgid "Jump to"
+msgid "Jump to date:"
+msgstr "Перейти на"
+
 msgid "Jun"
 msgstr "Июн"
 
@@ -4156,6 +4172,11 @@ msgid "Loss"
 msgstr "Потери"
 
 msgid "Low Barrier"
+msgstr "Нижний Барьер"
+
+#, fuzzy
+#| msgid "Low Barrier"
+msgid "Low Barrier (%1)"
 msgstr "Нижний Барьер"
 
 msgid "Low barrier"
@@ -5166,7 +5187,9 @@ msgstr "Public worker"
 msgid "Publish your name and logo (with or without a link to your Application) on our website, in press releases, and in promotional materials without additional consent;"
 msgstr "публиковать Ваше имя и логотип (с или без ссылки на Ваше Приложение) на нашем вебсайте, в пресс-релизах, а также рекламных материалах без Вашего дополнительного согласия;"
 
-msgid "Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
+#, fuzzy
+#| msgid "Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
+msgid "Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
 msgstr "Сайт работает на английском, японском, китайском, польском, немецком, французском, испанском, португальском, итальянском, русском и тайском языках"
 
 msgid "Purchase"
@@ -5537,6 +5560,11 @@ msgstr "Продайте опционы досрочно по рыночной �
 
 msgid "Sell option"
 msgstr "Опция продажи"
+
+#, fuzzy
+#| msgid "Sell Time"
+msgid "Sell time"
+msgstr "Время продажи"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "Отправьте свое резюме и сопроводительное письмо с описанием Ваших карьерных стремлений."
@@ -7808,7 +7836,9 @@ msgstr "iOS, Android"
 msgid "is required. Current spread"
 msgstr "необходим. Текущий спред"
 
-msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
+#, fuzzy
+#| msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
+msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
 msgstr "платформа доступна и интересна клиентам из различных уголков мира, так как мы предлагаем интерфейс на английском, испанском, французском, немецком, португальском, китайском, арабском, польском, русском и индонезийском языках."
 
 msgid "it is the leading binary option trading platform."
@@ -12865,9 +12895,6 @@ msgstr "Согласие с правилами и условиями"
 #~ msgid "Change"
 #~ msgstr "Изменение"
 
-#~ msgid "Charting for this underlying is delayed"
-#~ msgstr "Графики для этого инструмента рисуются с задержкой"
-
 #~ msgid "Charting is not available for this underlying"
 #~ msgstr "Графики недоступны для этого инструмента"
 
@@ -13137,9 +13164,6 @@ msgstr "Согласие с правилами и условиями"
 
 #~ msgid "Sell Spot"
 #~ msgstr "Котировка продажи"
-
-#~ msgid "Sell Time"
-#~ msgstr "Время продажи"
 
 #~ msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 #~ msgstr "Произошла ошибка. Пожалуйста, свяжитесь со службой поддержки, если проблема повторится."
@@ -14707,9 +14731,6 @@ msgstr "Согласие с правилами и условиями"
 
 #~ msgid "HighCharts"
 #~ msgstr "HighCharts"
-
-#~ msgid "Jump to"
-#~ msgstr "Перейти на"
 
 #~ msgid "Newer"
 #~ msgstr "Позднее"
@@ -17947,9 +17968,6 @@ msgstr "Согласие с правилами и условиями"
 #~ msgstr "Проблема со связью: пожалуйста, смотрите развитие контракта в Вашем Портфолио."
 
 #~ msgid "End"
-#~ msgstr "Окончание"
-
-#~ msgid "End time"
 #~ msgstr "Окончание"
 
 #~ msgid "Entry"
