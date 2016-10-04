@@ -128,7 +128,7 @@ var PortfolioWS =  (function() {
         }
 
         // force to sell the expired contract, in order to remove from portfolio
-        if(proposal.is_settled == 1 && !proposal.is_sold) {
+        if(proposal.is_settleable == 1 && !proposal.is_sold) {
             BinarySocket.send({"sell_expired": 1});
         }
         var $td = $("#" + proposal.contract_id + " td.indicative");
