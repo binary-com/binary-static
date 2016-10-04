@@ -582,6 +582,7 @@ sub _texts {
         push @texts, localize('You need to finish all 20 questions.');
         push @texts, localize('Weekday');
         push @texts, localize('This contract can not be traded in the final 2 minutes before settlement');
+        push @texts, localize('All barriers in this trading window are expired');
         push @texts, localize('min: 1,000');
         push @texts, localize('max: 100,000');
 
