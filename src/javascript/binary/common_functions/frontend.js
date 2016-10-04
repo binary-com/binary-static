@@ -412,16 +412,16 @@ function handle_residence_state_ws(){
           var email_consent_parent = $('#email_consent').parent().parent();
           if (status.clients_country === 'jp' || japanese_client()) {
               if (!document.getElementById('japan-label')) $('#residence').parent().append('<label id="japan-label">' + page.text.localize('Japan') + '</label>');
-              email_consent_parent.removeClass('invisible');
+              //email_consent_parent.removeClass('invisible');
           } else {
               $('#residence').removeClass('invisible')
-                             .on('change', function() {
+                /*             .on('change', function() {
                                  if ($(this).val() === 'jp') {
                                      email_consent_parent.removeClass('invisible');
                                  } else {
                                      email_consent_parent.addClass('invisible');
                                  }
-                             });
+                             })*/;
           }
         }
         return;
