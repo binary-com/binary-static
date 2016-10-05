@@ -401,7 +401,7 @@
             </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset class="invisible">
             <legend>[% l('Preferences') %]</legend>
 
             <div class="gr-padding-10 gr-row clear">
@@ -414,7 +414,7 @@
             </div>
         </fieldset>
 
-        <fieldset class="formlayout settings sticky" id="formlayout">
+        <fieldset class="formlayout settings sticky hidden RealAcc JpAcc" id="formlayout">
             <div class="gr-row gr-padding-10">
                 <div class="gr-4"></div>
                 <div class="gr-8">
