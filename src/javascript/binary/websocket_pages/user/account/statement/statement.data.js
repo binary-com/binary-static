@@ -24,7 +24,7 @@ var StatementData = (function(){
             $.extend(true, req, opts);
         }
         if ($('#jump-to').val() !== '') {
-            req.date_to = (moment.utc($('#jump-to').val()).valueOf() / 1000) + (24*60*60);
+            req.date_to = Math.floor((moment.utc($('#jump-to').val()).valueOf() / 1000)) + (24*60*60);
             req.date_from = 0;
         }
 
