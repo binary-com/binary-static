@@ -56,7 +56,7 @@ var APITokenWS = (function() {
         return {
             scopes: [
                 function(v) {return dv.ok(v || []); },
-                customError(V2.required, 'Please select at least one scope'),
+                customError(V2.required, page.text.localize('Please select at least one scope')),
             ],
             name:   [
                 function(v) { return dv.ok(v.trim()); },
