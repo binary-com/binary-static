@@ -179,21 +179,22 @@ var SettingsDetailsWS = (function() {
         function trim(s) {
             return $(s).val().trim();
         }
-        setDetails(toJPSettings({
-            hedgeAssetAmount       : trim('#HedgeAssetAmount'),
-            annualIncome           : trim('#AnnualIncome'),
-            financialAsset         : trim('#FinancialAsset'),
-            occupation             : trim('#Occupation'),
-            equities               : trim('#Equities'),
-            commodities            : trim('#Commodities'),
-            foreignCurrencyDeposit : trim('#ForeignCurrencyDeposit'),
-            marginFX               : trim('#MarginFX'),
-            InvestmentTrust        : trim('#InvestmentTrust'),
-            publicCorporationBond  : trim('#PublicCorporationBond'),
-            derivativeTrading      : trim('#DerivativeTrading'),
-            purposeOfTrading       : trim('#PurposeOfTrading'),
-            hedgeAsset             : trim('#HedgeAsset')
-        }));
+        setDetails(page.client.is_virtual() ? data :
+            toJPSettings({
+                hedgeAssetAmount       : trim('#HedgeAssetAmount'),
+                annualIncome           : trim('#AnnualIncome'),
+                financialAsset         : trim('#FinancialAsset'),
+                occupation             : trim('#Occupation'),
+                equities               : trim('#Equities'),
+                commodities            : trim('#Commodities'),
+                foreignCurrencyDeposit : trim('#ForeignCurrencyDeposit'),
+                marginFX               : trim('#MarginFX'),
+                InvestmentTrust        : trim('#InvestmentTrust'),
+                publicCorporationBond  : trim('#PublicCorporationBond'),
+                derivativeTrading      : trim('#DerivativeTrading'),
+                purposeOfTrading       : trim('#PurposeOfTrading'),
+                hedgeAsset             : trim('#HedgeAsset')
+            }));
     }
 
     function getJPSchema(data) {
