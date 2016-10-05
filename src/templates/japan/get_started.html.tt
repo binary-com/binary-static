@@ -143,38 +143,38 @@
       </p>
       <div class="gr-row">
           <div class="gr-6 gr-12-m gr-12-p">
-            <p class="center-text">
+            <div class="center-text gr-padding-10">
               <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_1.pdf' %]" download>
                 <span class="link-size-box">[% l('{JAPAN ONLY}Introduction to Binary Options') %]</span>
               </a>
-            </p>
-            <p class="center-text">
+            </div>
+            <div class="center-text gr-padding-10">
               <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_2.pdf' %]" download>
                 <span class="link-size-box">[% l('{JAPAN ONLY}Purchase, Settlement & Resale') %]</span>
               </a>
-            </p>
-            <p class="center-text">
+            </div>
+            <div class="center-text gr-padding-10">
               <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_3.pdf' %]" download>
                 <span class="link-size-box">[% l('{JAPAN ONLY}Options Basics') %]</span>
               </a>
-            </p>
+            </div>
           </div>
           <div class="gr-6 gr-12-m gr-12-p">
-            <p class="center-text">
+            <div class="center-text gr-padding-10">
               <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_4.pdf' %]" download>
                 <span class="link-size-box">[% l('{JAPAN ONLY}Trading & Hedging') %]</span>
               </a>
-            </p>
-            <p class="center-text">
+            </div>
+            <div class="center-text gr-padding-10">
               <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_5.pdf' %]" download>
                 <span class="link-size-box">[% l('{JAPAN ONLY}Option Pricing') %]</span>
               </a>
-            </p>
-            <p class="center-text">
+            </div>
+            <div class="center-text gr-padding-10">
               <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_6.pdf' %]" download>
                 <span class="link-size-box">[% l('{JAPAN ONLY}Regulation & Tax') %]</span>
               </a>
-            </p>
+            </div>
           </div>
       </div>
     </div>
