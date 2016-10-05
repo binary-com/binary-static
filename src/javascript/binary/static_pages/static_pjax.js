@@ -140,3 +140,11 @@ pjax_config_page('/platforms', function() {
         }
     };
 });
+
+pjax_config_page_require_auth("/(deposit|withdraw)-jp", function(){
+    return {
+        onLoad: function() {
+            page.client.redirect_if_is_virtual();
+        }
+    };
+});

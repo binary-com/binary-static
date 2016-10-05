@@ -228,12 +228,14 @@ function BinarySocketClass() {
                                 break;
                             default: localStorage.setItem('jp_test_allowed', 0);
                         }
-
                         KnowledgeTest.showKnowledgeTestTopBarIfValid(jpStatus);
                     } else {
                         localStorage.removeItem('jp_test_allowed');
                     }
                     page.header.menu.check_payment_agent(response.get_settings.is_authenticated_payment_agent);
+                    if (/deposit-jp/.test(window.location.pathname)) {
+                        $('#name_id').text((response.get_settings.first_name || 'Joe Bloggs') + ' ' + (page.user.loginid || 'JP12345'));
+                    }
                 } else if (type === 'website_status') {
                     if(!response.hasOwnProperty('error')) {
                         LocalStore.set('website.tnc_version', response.website_status.terms_conditions_version);

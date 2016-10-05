@@ -58,6 +58,7 @@ sub all_pages {
         ['cashier/forwardws',            'cashier/deposit_withdraw_ws',               'default', 'Cashier'],
         ['cashier/deposit-jp',           'japan/cashier/deposit',                     'default', 'Deposit'],
         ['cashier/withdraw-jp',          'japan/cashier/withdraw',                    'default', 'Withdraw'],
+        ['cashier/submit-withdraw-jp',   'japan/cashier/submit',                      'default', 'Acknowledgement'],
         ['cashier/epg_forwardws',        'cashier/deposit_withdraw_ws',               'default', 'Cashier'],
         ['user/security/limitsws',       'user/security/limitsws',                    'default', 'Account Limits'],
         ['account/account_transferws',   'cashier/account_transferws',                'default', 'Account Transfer'],

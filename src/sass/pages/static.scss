@@ -54,3 +54,9 @@ ol.split li {
 ol.start {
     counter-reset: mycounter;
 }
+
+.deposit-jp-content {
+    #name_id_width {
+        max-width: 90px;
+    }
+}
