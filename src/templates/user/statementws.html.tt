@@ -4,11 +4,13 @@
         <br>
         <p class="notice-msg center-text invisible" id="err-msg"></p>
     </div>
-    <div id="download_csv" class="align-end invisible">[% l('[_1] rows displayed:', '<span id="rows_count"></span>') %] <a href="javascript:;">[% l('Download CSV') %]</a></div>
     <div class="gr-row gr-padding-10 invisible">
-        <div class="gr-12">
+        <div class="gr-6 gr-12-m">
             <label>[% l("Jump to date:") %]</label>
             <input type="text" maxlength="10" id="jump-to" size="10" readonly="readonly"></input>
+        </div>
+        <div class="gr-6 gr-12-m align-end">
+            <div id="download_csv" class="invisible">[% l('[_1] rows displayed:', '<span id="rows_count"></span>') %] <a href="javascript:;">[% l('Download CSV') %]</a></div>
         </div>
     </div>
 </div>
