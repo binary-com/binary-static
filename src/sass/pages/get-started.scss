@@ -117,8 +117,9 @@
     .link-size-box {
         display: table-cell;
         vertical-align: middle;
-        height: 35px;
-        width: 170px;
+        height: 36px;
+        min-width: 198px;
+        padding: 10px;
     }
     .section-header {
         min-height: 50px;

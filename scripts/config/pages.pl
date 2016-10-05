@@ -8,11 +8,15 @@ sub all_pages {
         # url pathname,                template file path,             layout,       title,        exclude languages
         ['home',                       'home/index',                   'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
         ['404',                        'static/404',                   'full_width', '404'],
-        ['why-us',                     'static/why_us',                'full_width', 'Why Us'],
+        ['why-us',                     'static/why_us',                'full_width', 'Why Us',              'ja'],
+        ['why-us-jp',                  'static/why_us_jp',             'full_width', 'Why Us'],
         ['tour',                       'static/tour',                  'full_width', 'Tour'],
+        ['tour-jp',                    'static/tour_jp',               'full_width', 'Tour'],
+        ['platforms',                  'static/platforms',             'default',    'Platforms',           'ja'],
         ['responsible-trading',        'static/responsible_trading',   'full_width', 'Responsible Trading', 'ja'],
         ['terms-and-conditions',       'legal/tac',                    'default',    'Terms and Conditions'],
         ['terms-and-conditions-jp',    'japan/legal/tacjp',            'default',    'Terms and Conditions'],
+        ['regulation',                 'legal/regulation',             'default',    'Regulation'],
         ['styles',                     'home/styles',                  'full_width', 'Styles'],
         ['affiliate/signup',           'affiliates/signup',            'default',    'Affiliate',           'ja'],
         ['user/browser-support',       'misc/logintrouble',            'default',    'Login trouble'],
@@ -22,7 +26,6 @@ sub all_pages {
         ['cashier/payment_methods',    'cashier/payment_methods',      'default',    'Payment Methods',     'ja'],
 
         ['about-us',                   'about/index',                  'full_width', 'About Us'],
-        ['group-information',          'about/group-information',      'default',    'Group Information'],
         ['group-history',              'about/group_history',          'full_width', 'Group History'],
         ['contact',                    'about/contact',                'full_width', 'Contact Us'],
         ['careers',                    'about/careers',                'full_width', 'Careers', 'ja'],
@@ -53,6 +56,7 @@ sub all_pages {
         ## ws
         ['user/authenticatews',          'user/authenticatews',                       'default', 'Authenticate', 'ja'],
         ['cashier/forwardws',            'cashier/deposit_withdraw_ws',               'default', 'Cashier'],
+        ['cashier/epg_forwardws',        'cashier/deposit_withdraw_ws',               'default', 'Cashier'],
         ['user/security/limitsws',       'user/security/limitsws',                    'default', 'Account Limits'],
         ['account/account_transferws',   'cashier/account_transferws',                'default', 'Account Transfer'],
         ['cashier/payment_agent_listws', 'cashier/payment_agent_listws',              'default', 'Payment Agent Deposit'],

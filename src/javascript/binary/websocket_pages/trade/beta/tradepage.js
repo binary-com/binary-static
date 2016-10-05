@@ -62,6 +62,7 @@ var TradePage_Beta = (function(){
     BinarySocket.clear();
     Defaults.clear();
     PortfolioWS.onUnload();
+    chartFrameCleanup();
   };
 
   return {

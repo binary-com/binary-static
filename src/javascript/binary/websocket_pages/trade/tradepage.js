@@ -60,6 +60,7 @@ var TradePage = (function(){
     forgetTradingStreams();
     BinarySocket.clear();
     Defaults.clear();
+    chartFrameCleanup();
   };
 
   return {

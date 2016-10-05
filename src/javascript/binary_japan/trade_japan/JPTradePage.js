@@ -36,10 +36,11 @@ var JPTradePage = (function() {
   };
 
   var onUnload = function() {
+    chartFrameCleanup();
     window.chartAllowed = false;
+    JapanPortfolio.hide();
     isJapan = false;
     JapanTrading.stop();
-    JapanPortfolio.hide();
   };
 
   return {

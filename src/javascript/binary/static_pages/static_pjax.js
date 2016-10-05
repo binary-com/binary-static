@@ -12,6 +12,11 @@ pjax_config_page('/home', function() {
 pjax_config_page('/why-us', function() {
     return {
         onLoad: function() {
+            if (!/why-us-jp/.test(window.location.pathname) && japanese_client()) {
+                window.location.href = page.url.url_for('why-us-jp');
+            } else if (/why-us-jp/.test(window.location.pathname) && !japanese_client()) {
+                window.location.href = page.url.url_for('why-us');
+            }
             sidebar_scroll($('.why-us'));
             hide_if_logged_in();
         },
@@ -59,13 +64,13 @@ pjax_config_page('/payment-agent', function() {
 pjax_config_page('/get-started', function() {
     return {
         onLoad: function() {
-            if (!/jp/.test(window.location.pathname) && japanese_client()) {
-              window.location.href = page.url.url_for('get-started-jp');
-            } else if (/jp/.test(window.location.pathname)) {
-              return;
-          } else {
-            get_started_behaviour();
-          }
+            if (!/get-started-jp/.test(window.location.pathname) && japanese_client()) {
+                window.location.href = page.url.url_for('get-started-jp');
+            } else if (/get-started-jp/.test(window.location.pathname)) {
+                return;
+            } else {
+                get_started_behaviour();
+            }
         },
         onUnload: function() {
             $(window).off('scroll');
@@ -161,6 +166,17 @@ pjax_config_page('/(us_patents|responsible-trading|partners)', function() {
             if (japanese_client()) {
                 window.location.href = page.url.url_for('/');
             }
+        }
+    };
+});
+
+pjax_config_page('/platforms', function() {
+    return {
+        onLoad: function() {
+            if (japanese_client()) {
+                window.location.href = page.url.url_for('/');
+            }
+            Platforms.init();
         }
     };
 });

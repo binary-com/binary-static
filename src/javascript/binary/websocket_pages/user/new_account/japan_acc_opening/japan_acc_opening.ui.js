@@ -51,7 +51,8 @@ var JapanAccOpeningUI = function () {
         sellback: document.getElementById('sellback-loss'),
         shortsell: document.getElementById('shortsell-loss'),
         profit: document.getElementById('company-profit'),
-        knowledge: document.getElementById('expert-knowledge')
+        knowledge: document.getElementById('expert-knowledge'),
+        pep: document.getElementById('not-pep')
     };
 
     var errorObj = {
@@ -93,7 +94,8 @@ var JapanAccOpeningUI = function () {
         sellback: document.getElementById('error-sellback-loss'),
         shortsell: document.getElementById('error-shortsell-loss'),
         profit: document.getElementById('error-company-profit'),
-        knowledge: document.getElementById('error-expert-knowledge')
+        knowledge: document.getElementById('error-expert-knowledge'),
+        pep: document.getElementById('error-not-pep')
     };
     var key;
     for (key in errorObj) {

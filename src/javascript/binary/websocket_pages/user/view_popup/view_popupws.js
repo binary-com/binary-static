@@ -379,7 +379,7 @@ var ViewPopupWS = (function() {
     var normalMakeTemplate = function() {
         $Container = $('<div/>').append($('<div/>', {id: wrapperID}));
 
-        var longcode = japanese_client() ? toJapanTimeIfNeeded(contract.expiry_date, '', contract.longcode) : contract.longcode;
+        var longcode = contract.longcode;
 
         $Container.prepend($('<div/>', {id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: longcode}));
         var $sections = $('<div/>').append($('<div class="gr-row container"><div id="sell_details_chart_wrapper" class="gr-8 gr-12-m"></div><div id="sell_details_table" class="gr-4 gr-12-m"></div></div>'));
@@ -619,10 +619,14 @@ var ViewPopupWS = (function() {
     var dispatch = function(response) {
         switch(response.msg_type) {
             case 'proposal_open_contract':
-                if(response.proposal_open_contract && response.proposal_open_contract.contract_id == contractID) {
-                    storeSubscriptionID(response.proposal_open_contract.id);
-                    responseContract(response);
-                } else if (!response.proposal_open_contract && response.echo_req.contract_id == contractID && response.error) {
+                if(response.proposal_open_contract) {
+                    if(response.proposal_open_contract.contract_id == contractID) {
+                        storeSubscriptionID(response.proposal_open_contract.id);
+                        responseContract(response);
+                    } else {
+                        BinarySocket.send({"forget": response.proposal_open_contract.id});
+                    }
+                } else if (response.echo_req.contract_id == contractID && response.error && response.error.code !== 'AlreadySubscribed') {
                     showErrorPopup(response, response.error.message);
                 }
                 break;
@@ -641,10 +645,12 @@ var ViewPopupWS = (function() {
                 }
                 break;
         }
-        showLocalTimeOnHover('#trade_details_start_date');
-        showLocalTimeOnHover('#trade_details_end_date');
-        showLocalTimeOnHover('#trade_details_current_date');
-        showLocalTimeOnHover('#trade_details_live_date');
+        var i,
+            dates = ['#trade_details_start_date', '#trade_details_end_date', '#trade_details_current_date', '#trade_details_live_date'];
+        for (i = 0; i < dates.length; i++) {
+            showLocalTimeOnHover(dates[i]);
+            $(dates[i]).attr('data-balloon-pos', 'left');
+        }
     };
 
     return {

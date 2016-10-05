@@ -3,5 +3,9 @@
     <p>
       [% l("Japan website Pre-contract Document Paragraph 1") %]
     </p>
-    [% l("Japan website Download Text for Pre-contract Document") %]
+    <p>
+        <a class="button" href="[% japan_docs_url _ '/documents/binary_maeshomen.pdf' %]" download target="_blank">
+            <span>[% l("Japan website Download Text for Pre-contract Document") %]</span>
+        </a>
+    </p>
 </div>

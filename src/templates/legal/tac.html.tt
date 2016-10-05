@@ -22,7 +22,7 @@
           </ul>
         </li>
         <li id="datafeed-tab" class="tm-li[% IF selected_tab == 'datafeed-tab' +%] active[% END +%]"><a href="#datafeed-tab" class="tm-a[% IF selected_tab == 'datafeed-tab' +%] a-active[% END +%]">[% l('Data Feed') %]</a></li>
-        <li id="privacy-tab" class="tm-li[% IF selected_tab == 'privacy-tab' +%] active[% END +%]"><a href="#privacy-tab" class="tm-a[% IF selected_tab == 'privacy-tab' +%] a-active[% END +%]">[% l('Privacy & Security') %]</a></li>
+        <li id="privacy-tab" class="tm-li[% IF selected_tab == 'privacy-tab' +%] active[% END +%]"><a href="#privacy-tab" class="tm-a[% IF selected_tab == 'privacy-tab' +%] a-active[% END +%]">[% l('Security and Privacy') %]</a></li>
         <li id="copyright-tab" class="tm-li[% IF selected_tab == 'copyright-tab' +%] active[% END +%]"><a href="#copyright-tab" class="tm-a[% IF selected_tab == 'copyright-tab' +%] a-active[% END +%]">[% l('Copyright') %]</a></li>
         <li id="risk-tab" class="tm-li[% IF selected_tab == 'risk-tab' +%] active[% END +%] last"><a href="#risk-tab" class="tm-a[% IF selected_tab == 'risk-tab' +%] a-active[% END +%]">[% l('Risk Disclaimer') %]</a></li>
         <li id="order-execution-tab" class="tm-li[% IF selected_tab == 'order-execution-tab' +%] active[% END +%] last"><a href="#order-execution-tab" class="tm-a[% IF selected_tab == 'order-execution-tab' +%] a-active[% END +%]">[% l('Order Execution') %]</a></li>

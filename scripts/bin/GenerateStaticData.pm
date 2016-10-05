@@ -21,14 +21,35 @@ module.exports = {
     texts_json: texts_json,
 };
 END_EXPORTS
-    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts() . $exports);
 
+    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts('all') . $exports);
+    return;
+}
+
+sub generate_japan_data_files {
+    my $js_path = shift;
+
+    _make_nobody_dir($js_path);
+    print "\tGenerating $js_path/texts.js\n";
+
+    my $japan_exports = 'export default japan_text;';
+
+    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts('japan') . $japan_exports);
     return;
 }
 
 sub _texts {
-    my $js = "var texts_json = {};\n";
+    my $task = shift;
+    my $js = '';
+    if ($task eq 'all') {
+        $js = "var texts_json = {};\n";
+    } elsif ($task eq 'japan') {
+        $js = "const japan_text = {};\n";
+    }
     foreach my $language (BS::all_languages()) {
+        if ($task eq 'japan' and $language ne 'JA') {
+            next;
+        }
         BS::set_lang($language);
 
         my @texts;
@@ -113,7 +134,9 @@ sub _texts {
         push @texts, localize('Start Time');
         push @texts, localize('Entry Spot');
         push @texts, localize('Low Barrier');
+        push @texts, localize('Low Barrier ([_1])');
         push @texts, localize('High Barrier');
+        push @texts, localize('High Barrier ([_1])');
         push @texts, localize('Next');
         push @texts, localize('Previous');
         push @texts, localize('Su');
@@ -147,6 +170,11 @@ sub _texts {
 
         # text used by websocket trading page javascript
         push @texts, localize('Start time');
+        push @texts, localize('Entry spot');
+        push @texts, localize('Exit spot');
+        push @texts, localize('End time');
+        push @texts, localize('Sell time');
+        push @texts, localize('Charting for this underlying is delayed');
         push @texts, localize('Spot');
         push @texts, localize('Barrier');
         push @texts, localize('Barrier offset');
@@ -398,6 +426,7 @@ sub _texts {
         #strings for profittable and statement
         push @texts, localize('Your account has no trading activity.');
         push @texts, localize('Withdrawal');
+        push @texts, localize('Virtual money credit to account');
 
         #strings for authenticate page
         push @texts, localize('To authenticate your account, kindly email the following to [_1]');
@@ -581,6 +610,7 @@ sub _texts {
         push @texts, localize('You need to finish all 20 questions.');
         push @texts, localize('Weekday');
         push @texts, localize('This contract can not be traded in the final 2 minutes before settlement');
+        push @texts, localize('All barriers in this trading window are expired');
         push @texts, localize('min: 1,000');
         push @texts, localize('max: 100,000');
 
@@ -802,8 +832,16 @@ sub _texts {
         push @texts, localize('Deposit [_1] [_2] virtual money into your account [_3]');
         push @texts, localize('Withdraw');
 
+        # strings for endpoint notification
+        push @texts, localize('This is a staging server - For testing purposes only');
+        push @texts, localize('The server <a href="[_1]">endpoint</a> is: [_2]');
+
         my %as_hash = @texts;
-        $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
+        if ($task eq 'all') {
+            $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
+        } elsif ($task eq 'japan') {
+            $js .= "japan_text['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
+        }
     }
 
     return $js;

@@ -40,6 +40,8 @@ var StatementWS = (function(){
 
         if (!tableExist()) {
             StatementUI.createEmptyStatementTable().appendTo("#statement-ws-container");
+            $('.act').addClass('nowrap');
+            Statement.attachDatePicker();
             StatementUI.updateStatementTable(getNextChunkStatement());
 
             // Show a message when the table is empty
@@ -51,8 +53,11 @@ var StatementWS = (function(){
                             )
                         )
                     );
-            } else if(page.language().toLowerCase() === 'ja') {
-                $('#download_csv').removeClass('invisible').find('a').click(function(){StatementUI.exportCSV();});
+            } else {
+                $('#jump-to').parent().parent().removeClass('invisible');
+                if(page.language().toLowerCase() === 'ja') {
+                    $('#download_csv').removeClass('invisible').find('a').click(function(){StatementUI.exportCSV();});
+                }
             }
         }
         showLocalTimeOnHover('td.date');

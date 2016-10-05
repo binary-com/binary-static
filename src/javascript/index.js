@@ -8,6 +8,7 @@ var exportAllFunctions = function exportAllFunctions(obj) {
 };
 
 window.$ = window.jQuery = require('jquery');
+window.EnjoyHint = require('./lib/guide.enjoyhint.js');
 require('./lib/highstock/highstock.js');
 require('./lib/highstock/highstock-exporting.js');
 require('./lib/highstock/export-csv.js');
@@ -72,10 +73,12 @@ exportAllFunctions(require('./binary/common_functions/validation'));
 exportAllFunctions(require('./binary/common_functions/validation_v2'));
 exportAllFunctions(require('./binary/static_pages/get_started_jp'));
 exportAllFunctions(require('./binary/static_pages/job_details'));
+exportAllFunctions(require('./binary/static_pages/platforms'));
 
 exportAllFunctions(require('./binary/websocket_pages/trade/content'));
 exportAllFunctions(require('./binary/websocket_pages/user/verify_email'));
 exportAllFunctions(require('./binary/static_pages/static_pjax'));
+exportAllFunctions(require('./binary/static_pages/regulation'));
 
 exportAllFunctions(require('./binary/validator'));
 exportAllFunctions(require('./binary/websocket_pages/cashier/account_transferws'));

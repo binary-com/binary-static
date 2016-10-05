@@ -15,8 +15,8 @@
                                 <li>
                                     <a class="pjaxload" href="[% request.url_for('about-us') %]">[% l('About Us') %]</a>
                                 </li>
-                                <li>
-                                    <a class="pjaxload id-hide ar-hide" href="[% request.url_for('group-information') %]">[% l('Group Information') %]</a>
+                                <li class="id-hide ar-hide">
+                                    <a class="pjaxload" href="[% request.url_for('/regulation') %]">[% l('Regulatory Information') %]</a>
                                 </li>
                                 <li>
                                     <a class="pjaxload" href="[% request.url_for('group-history') %]">[% l('Group History') %]</a>
@@ -35,8 +35,11 @@
                         <div class="gr-4">
                             <h4 class="secondary-color">[% l('Education') %]</h4>
                             <ul>
-                                <li>
+                                <li class="ja-hide">
                                     <a class="pjaxload" href="[% request.url_for('why-us') %]">[% l('Why Us?') %]</a>
+                                </li>
+                                <li class="all-hide ja-show-block">
+                                    <a class="pjaxload" href="[% request.url_for('why-us-jp') %]">[% l('Why Us?') %]</a>
                                 </li>
                                 <li class="ja-hide">
                                     <a class="pjaxload" href="[% request.url_for('get-started') %]">[% l('Getting Started') %]</a>
@@ -86,7 +89,7 @@
                 <div class="gr-6 gr-12-m gr-parent gr-no-gutter">
                     <div class="gr-row">
                         <div class="gr-4">
-                           <h4 class="secondary-color">[% l('Terms') %]</h4>
+                           <h4 class="secondary-color">[% l('Legal') %]</h4>
                            <ul>
                                <li class='ja-hide'>
                                    <a class="pjaxload" href="[% request.url_for('/terms-and-conditions') %]"[%
@@ -114,19 +117,16 @@
                                    <a class="pjaxload" href="[% request.url_for('responsible-trading') %]">[% l('Responsible Trading') %]</a>
                                </li>
                                <li class="ja-hide">
-                               <a class="pjaxload" href="[% request.url_for('/terms-and-conditions?selected_tab=complaints-disputes-tac-tab') %]">[% l('Complaints') %]</a>
-                               </li>
-                               <li class="ja-hide id-hide ru-hide">
-                                   <a href="[% request.url_for('/download/BIEL_Prospectus.pdf') %]" target="_blank">[% l('BIEL Prospectus') %]</a>
-                               </li>
-                               <li class="ja-hide id-hide ru-hide">
-                                   <a href="[% request.url_for('/download/BIEL_Pillar_3_Report.pdf') %]" target="_blank">[% l('BIEL Pillar III') %]</a>
+                                   <a class="pjaxload" href="[% request.url_for('/terms-and-conditions?selected_tab=complaints-disputes-tac-tab') %]">[% l('Complaints') %]</a>
                                </li>
                            </ul>
                        </div>
                        <div class="gr-4 ja-hide">
                            <h4 class="secondary-color">[% l('Apps') %]</h4>
                            <ul>
+                               <li>
+                                   <a class="pjaxload" href="[% request.url_for('/platforms') %]">[% l('Platforms') %]</a>
+                               </li>
                                <li>
                                    <a href="https://shop.binary.com/collections/applications/products/tick-trade-mobile-application" target="_blank">[% l('TickTrade App') %]</a>
                                </li>
@@ -224,6 +224,7 @@
             </div>
         </div>
     </div>
+    <div id="end-note" class="invisible"></div>
 </div>[% #closes div#page-wrapper %]
 
     </body>
