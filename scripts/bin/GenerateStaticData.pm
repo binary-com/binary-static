@@ -610,6 +610,7 @@ sub _texts {
         push @texts, localize('You need to finish all 20 questions.');
         push @texts, localize('Weekday');
         push @texts, localize('This contract can not be traded in the final 2 minutes before settlement');
+        push @texts, localize('All barriers in this trading window are expired');
         push @texts, localize('min: 1,000');
         push @texts, localize('max: 100,000');
 
@@ -836,7 +837,11 @@ sub _texts {
         push @texts, localize('The server <a href="[_1]">endpoint</a> is: [_2]');
 
         my %as_hash = @texts;
-        $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
+        if ($task eq 'all') {
+            $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
+        } elsif ($task eq 'japan') {
+            $js .= "japan_text['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
+        }
     }
 
     return $js;
