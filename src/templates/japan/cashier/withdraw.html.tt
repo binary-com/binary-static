@@ -32,6 +32,15 @@ var formrules=new Array(0);
 
 //-->
 </script>
+<script type="text/javascript"  src="//cdn-main.123contactform.com/includes/interactive123cf.js.minified.js?0d2e4dc"></script>
+
+<script type="text/javascript"  src="//www.123contactform.com/libraries/select2/select2.min.js.minified.js?0d2e4dc"></script>
+
+<script type="text/javascript"  src="//www.123contactform.com/libraries/select2/select2-simple.js?0d2e4dc"></script>
+
+<script type="text/javascript"  src="//www.123contactform.com/libraries/datepicker/bootstrap-datepicker.js.minified.js?0d2e4dc"></script>
+
+<script type="text/javascript"  src="//cdn-main.123contactform.com/modules/weebly/js/weebly.js.minified.js?0d2e4dc"></script>
 
 <style type='text/css'>
 
@@ -168,6 +177,10 @@ var formrules=new Array(0);
 	background-position: right 5px center;
 	background-size: 5px;
 }
+.maintable_centered {
+    margin-left: 0;
+    margin-right: 0;
+}
 </style>
 <script type="text/javascript">
 	var fid=2231594;
@@ -208,7 +221,7 @@ function InputActions(field,id) {
 <input type="hidden" size="30" name="viewformr" id="viewformr" value="cfr_1475718555.6252" />
 <input type="hidden" name="f_autoresponder" id="f_autoresponder" value="0"/>
 <input type="hidden" name="special_autoresponder" id="special_autoresponder" value=""/>
-<input type="hidden" id="language" name="language" value="en"/><input type="hidden" id="language-changed" name="languageChanged" value="no"/><div class="class123_maintable form-left-aligned container-normal" style="" >
+<input type="hidden" id="language" name="language" value="en"/><input type="hidden" id="language-changed" name="languageChanged" value="no"/><div class="class123_maintable maintable_centered form-left-aligned container-normal" style="" >
 <script type='text/javascript'>
 var  js_ctype_arr = new Array();
 var  js_cobject_arr = new Array();
@@ -252,7 +265,7 @@ js_cobject_arr['cid22598060']=0;
 <div class="row"><div class="subitem col-lg-12 col-md-12 col-sm-12"><div id="checkout_form_con"></div></div></div>
 <!-- Buttons begin here -->
 <div id="fieldcontainer4" class="fieldcontainer thebuttons" style="">
-<div class="row currentPage1 currentPageActive"><div class="rowright col-lg-12 col-md-12 col-sm-12 btn-row-right" align="left"><input type="hidden" name="go_back_and_edit" id="go_back_and_edit" value="0" /><button OnClick="  this.style.display='none'; insertPleaseWaitDiv(this,'Please wait...');  " type="submit" class="
+<div class="row currentPage1 currentPageActive"><div class="rowright col-lg-12 col-md-12 col-sm-12 btn-row-right" align="left"><input type="hidden" name="go_back_and_edit" id="go_back_and_edit" value="0" /><button OnClick="return CashierJP.error_handler()" type="submit" class="
 				 no-default-image btn submit-btn formdefaultbut"  style="" id="id123-button-send"  value="送信">送信</button>
 </div></div>
 <div class="clear"></div></div>
