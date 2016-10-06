@@ -76,7 +76,7 @@ foreach my $m (@m) {
 
     foreach my $lang (@langs) {
         if ($excludes) {
-            if ($excludes =~ /^all-/) {
+            if ($excludes =~ /^NOT-/) {
                 next if ($excludes !~ $lang); # exclude all languages except this
             } else {
                 next if ($excludes =~ $lang); # exclude this language

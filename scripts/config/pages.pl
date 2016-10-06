@@ -9,13 +9,13 @@ sub all_pages {
         ['home',                       'home/index',                   'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
         ['404',                        'static/404',                   'full_width', '404'],
         ['why-us',                     'static/why_us',                'full_width', 'Why Us',               'ja'],
-        ['why-us-jp',                  'static/why_us_jp',             'full_width', 'Why Us',               'all-ja'],
+        ['why-us-jp',                  'static/why_us_jp',             'full_width', 'Why Us',               'NOT-ja'],
         ['tour',                       'static/tour',                  'full_width', 'Tour',                 'ja'],
-        ['tour-jp',                    'static/tour_jp',               'full_width', 'Tour',                 'all-ja'],
+        ['tour-jp',                    'static/tour_jp',               'full_width', 'Tour',                 'NOT-ja'],
         ['platforms',                  'static/platforms',             'default',    'Platforms',            'ja'],
         ['responsible-trading',        'static/responsible_trading',   'full_width', 'Responsible Trading',  'ja'],
         ['terms-and-conditions',       'legal/tac',                    'default',    'Terms and Conditions', 'ja'],
-        ['terms-and-conditions-jp',    'japan/legal/tacjp',            'default',    'Terms and Conditions', 'all-ja'],
+        ['terms-and-conditions-jp',    'japan/legal/tacjp',            'default',    'Terms and Conditions', 'NOT-ja'],
         ['regulation',                 'legal/regulation',             'default',    'Regulation'],
         ['styles',                     'home/styles',                  'full_width', 'Styles'],
         ['affiliate/signup',           'affiliates/signup',            'default',    'Affiliate',            'ja'],
@@ -31,7 +31,7 @@ sub all_pages {
         ['careers',                    'about/careers',                'full_width', 'Careers',              'ja'],
         ['open-positions',             'about/job_descriptions',       'full_width', 'Open Positions'],
         ['open-positions/job-details', 'about/job_details',            'full_width', 'Job Details'],
-        ['company-profile',            'japan/company_profile',        'default',    'Company Profile',      'all-ja'],
+        ['company-profile',            'japan/company_profile',        'default',    'Company Profile',      'NOT-ja'],
 
         ['open-source-projects',       'partners/open_source_projects',  'full_width', 'Open-Source Projects'],
         ['partners',                   'partners/partners',              'full_width', 'Partners',           'ja'],
@@ -51,7 +51,7 @@ sub all_pages {
         ['get-started/beginners-faq',                'get_started/beginners_faq',                 'get_started', 'FAQ',                              'ja'],
         ['get-started/glossary',                     'get_started/glossary',                      'get_started', 'Glossary',                         'ja'],
 
-        ['get-started-jp', 'japan/get_started',  'default', 'Get Started', 'all-ja'],
+        ['get-started-jp', 'japan/get_started',  'default', 'Get Started', 'NOT-ja'],
 
         ## ws
         ['user/authenticatews',          'user/authenticatews',                       'default', 'Authenticate', 'ja'],
@@ -64,15 +64,15 @@ sub all_pages {
         ['paymentagent/transferws',      'cashier/paymentagent_transferws',           'default', 'Payment Agent Transfer'],
         ['paymentagent/withdrawws',      'cashier/paymentagent_withdrawws',           'default', 'Payment Agent Withdrawal'],
 
-        ['jptrading',    'bet/japan',       'default', 'Sharp Prices. Smart Trading.', 'all-ja,en'],
+        ['jptrading',    'bet/japan',       'default', 'Sharp Prices. Smart Trading.', 'NOT-ja,en'],
         ['trading',      'bet/static',      'default', 'Sharp Prices. Smart Trading.'],
         ['trading_beta', 'bet/beta/static', 'default', 'Sharp Prices. Smart Trading.', 'ja'],
 
         ['new_account/virtualws',        'new_account/virtualws',       'default', 'Create New Account'],
         ['new_account/realws',           'new_account/realws',          'default', 'Real Money Account Opening'],
-        ['new_account/japanws',          'new_account/japanws',         'default', 'Real Money Account Opening', 'all-ja,en'],
+        ['new_account/japanws',          'new_account/japanws',         'default', 'Real Money Account Opening', 'NOT-ja,en'],
         ['new_account/maltainvestws',    'new_account/maltainvestws',   'default', 'Financial Account Opening'],
-        ['new_account/knowledge_testws', 'japan/knowledge_test',        'default', 'Real Money Account Opening', 'all-ja,en'],
+        ['new_account/knowledge_testws', 'japan/knowledge_test',        'default', 'Real Money Account Opening', 'NOT-ja,en'],
 
         ['resources',                'resources/index',           'default', 'Resources',     'ja'],
         ['resources/asset_indexws',  'resources/asset_indexws',   'default', 'Asset Index',   'ja'],
