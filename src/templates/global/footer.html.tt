@@ -3,7 +3,7 @@
 [% END %]
 </div> [% # closes div#content %]
 </div>[% #closes div#content-holder %]
-<div id="footer">
+<div id="footer" class="no-print">
     <div id="footer-menu" class="primary-bg-color">
         <div class="container">
             <div class="gr-row gr-padding-10">

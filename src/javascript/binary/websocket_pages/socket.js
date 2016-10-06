@@ -233,9 +233,7 @@ function BinarySocketClass() {
                         localStorage.removeItem('jp_test_allowed');
                     }
                     page.header.menu.check_payment_agent(response.get_settings.is_authenticated_payment_agent);
-                    if (/deposit-jp/.test(window.location.pathname)) {
-                        $('#name_id').text((response.get_settings.first_name || 'Joe Bloggs') + ' ' + (page.user.loginid || 'JP12345'));
-                    }
+                    page.client.response_get_settings(response);
                 } else if (type === 'website_status') {
                     if(!response.hasOwnProperty('error')) {
                         LocalStore.set('website.tnc_version', response.website_status.terms_conditions_version);

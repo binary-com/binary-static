@@ -310,6 +310,15 @@ Client.prototype = {
         page.contents.activate_by_client_type();
         page.contents.activate_by_login();
     },
+    response_get_settings: function(response) {
+        page.user.first_name = response.get_settings.first_name;
+        this.set_name_id();
+    },
+    set_name_id: function() {
+        if (/deposit-jp/.test(window.location.pathname)) {
+            $('#name_id').text((page.user.first_name || 'Joe Bloggs') + ' ' + (page.user.loginid || 'JP12345'));
+        }
+    },
     check_tnc: function() {
         if (/user\/tnc_approvalws/.test(window.location.href) || /terms\-and\-conditions/.test(window.location.href)) return;
         if(!page.client.is_virtual() && new RegExp(page.client.loginid).test(sessionStorage.getItem('check_tnc'))) {
