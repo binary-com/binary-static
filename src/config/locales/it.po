@@ -719,12 +719,6 @@ msgstr "Un'opzione binaria è un contratto acquistato da un trader, in base al q
 msgid "A binary option is an option with a fixed payout that is determined at the start of the trade. If your prediction is correct, you receive an agreed payout. If not, you lose your initial stake, and no more. The options are called 'binary' because there can be only two outcomes - win or lose."
 msgstr "Un'opzione binaria è un'opzione con un payout (guadagno) fisso determinato all'inizio della negoziazione. Se la tua previsione è corretta, riceverai il payout stabilito. In caso contrario, perderai la puntata iniziale e null'altro. Le opzioni vengono chiamate 'binarie' perché hanno solo due risultati possibili: una vincita o una perdita."
 
-msgid "A board member of a Central Bank"
-msgstr ""
-
-msgid "A board member of a company subject to resolution or approval for its budget from a body equivalent to the Diet of Japan"
-msgstr ""
-
 msgid "A broad array of HR-related administrative tasks"
 msgstr "Una vasta gamma di attività amministrative correlate alle Risorse Umane"
 
@@ -1057,9 +1051,6 @@ msgstr ""
 
 msgid "Any changes in our privacy policy or security statement will be posted onto this website. In the event of material changes that directly affect the economic use of your personal information, we will request your prior authorisation in writing before effecting such change on your account."
 msgstr "Qualsiasi modifica alla nostra informativa sulla privacy o sulla sicurezza verrà pubblicata su questo sito. In caso di modifiche materiali tali da influire sull'utilizzo economico dei tuoi dati personali, richiederemo previamente la tua autorizzazione per iscritto prima che tale cambiamento possa avere effetto sul tuo account."
-
-msgid "Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
-msgstr ""
 
 msgid "Any disputes, controversy, or claims that arise out of or relating to this Agreement against the Company will be referred to and finally determined by an arbitration firm selected by the Company. The language to be used in the arbitral proceedings will be English. Judgement upon the award rendered by the arbitrator(s) may be entered in any court having jurisdiction thereof. You are also responsible for any and all costs related to such arbitration."
 msgstr "Qualsiasi disputa o controversia derivante dal presente Accordo nei confronti della Società verrà sottoposta e gestita da una società d'arbitrato selezionata dalla Società. La lingua da utilizzare nelle procedure d'arbitrato sarà l'inglese. Il giudizio pronunciato da parte dell'arbitro(i) potrà essere presentato in qualsiasi tribunale competente. Sei inoltre responsabile per qualsiasi costo connesso a tale arbitrato."
@@ -1776,7 +1767,9 @@ msgstr "I clienti provenienti dal resto del mondo (ad esclusione di alcuni paesi
 msgid "Clients may avail of this bonus only when a real money account is opened."
 msgstr "I clienti possono usufruire di questo bonus solo dopo aver aperto un account reale."
 
-msgid "Clients must be aware that underage gambling is an offence. If a client, upon age verification, is proven to be underage, will be deprived from any winnings and only deposits made shall be refunded."
+#, fuzzy
+#| msgid "Clients must be aware that underage gambling is an offence. If a client, upon age verification, is proven to be underage, will be deprived from any winnings and only deposits made shall be refunded."
+msgid "Clients must be aware that underage gambling is an offence. If a client, upon age verification, is proven to be underage, they will be deprived from any winnings and only deposits made shall be refunded. For clients registered with Binary (Europe) Ltd, all the funds from their MLT account will be transferred to the Malta Gaming Authority. In order to reclaim these funds, clients will need to contact the MGA directly."
 msgstr "I clienti devono essere consapevoli del fatto che il gioco d'azzardo da parte di minori, è un reato. Nel caso in cui si riscontri un cliente minorenne, dietro verifica dell'età, quest'ultimo verrà privato di qualsiasi vincita e gli saranno rimborsati soltanto i depositi effettuati."
 
 msgid "Clients must fill into the account opening form all requested details that establish their identity. Clients must give a valid identification, address, and contact email and personal telephone number."
@@ -2090,9 +2083,6 @@ msgstr "Livello attuale"
 
 msgid "Current Time"
 msgstr "Orario attuale"
-
-msgid "Current or former member of category 1) or 2)"
-msgstr ""
 
 msgid "Current password"
 msgstr "Password attuale"
@@ -2520,21 +2510,6 @@ msgstr ""
 msgid "Equities"
 msgstr "Equities"
 
-msgid "Equivalent to Ambassador, Envoy, Government delegate, or Plenipotentiary of Japan"
-msgstr ""
-
-msgid "Equivalent to Chairperson or Vice-Chairperson of the House of Representatives or the House of Councilors of Japan"
-msgstr ""
-
-msgid "Equivalent to Head of the Joint Staff, Vice Chief of Staff, Chief of Staff of Ground Self-Defense Force, Vice Chief of Staff of G.S.D.F., Chief of Staff of Maritime Self-Defense Force, Vice Chief of Staff of M.S.D.F., Chief of Staff Air Self-Defense Force, or Vice Chief of Staff of A.S.D.F. of Japan"
-msgstr ""
-
-msgid "Equivalent to Justice of the Supreme Court of Japan"
-msgstr ""
-
-msgid "Equivalent to Prime Minister, Minister of State, or Vice-Minister of State of Japan"
-msgstr ""
-
 msgid "Estimated Net Worth"
 msgstr "Valore netto stimato"
 
@@ -2712,9 +2687,6 @@ msgstr "Familiarità con Perl, DBI, Mason, Moose, Sereal, Plack/PSGI, nginx, Jav
 msgid "Familiarity with virtualization concepts (openvz / Xen / vmware)"
 msgstr "Familiarità con concetti di virtualizzazione (openvz / Xen / vmware)"
 
-msgid "Family members of categories 1) to 3)"
-msgstr ""
-
 msgid "Family name"
 msgstr "Cognome"
 
@@ -2828,12 +2800,6 @@ msgstr "Per i contratti a lungo termine, il livello d'ingresso è lo spot più m
 
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "Per il terzo anno consecutivo, BetOnMarkets.com è stato votato come il \"Miglior provider di opzioni finanziarie con probabilità fisse\" da parte di Shares Magazine UK. Questa sarà l'ultima volta che ci aggiudichiamo tale premio in quanto Shares Magazine smetterà di attribuire premi in questa categoria."
-
-msgid "Foreign Head of State"
-msgstr ""
-
-msgid "Foreign PEP Declaration"
-msgstr ""
 
 msgid "Foreign currency deposit"
 msgstr "Foreign currency deposit"
@@ -3342,9 +3308,6 @@ msgstr "Ad Aprile, <a target='_blank' href='http://www.betonmarkets.com'>Betonma
 
 msgid "In October 1999, Regent Markets receives US$ 2 million investment funding from Jim Mellon through his Regent Pacific Group, a Hong Kong based fund management company."
 msgstr "Nell'ottobre del 1999, Regent Markets riceve un finanziamento da $2 milioni di dollari da parte di Jim Mellon attraverso il suo Regent Pacific Group, una società di gestione di fondi con sede a Hong Kong."
-
-msgid "In a Government or Juridicial position such as:"
-msgstr ""
 
 msgid "In all circumstances, the Company reserves the right to make changes to these Terms and Conditions. If the Company elects to make any material changes to these Terms and Conditions, our clients will be notified in advance and shall either accept or decline to agree. Declining to agree shall result in a material breach of this agreement and the client's account maybe frozen, suspended or cancelled."
 msgstr "In tutti i casi, la Società si riserva il diritto di effettuare cambiamenti ai presenti Termini e Condizioni. Nel caso in cui la Società dovesse decidere di apportare cambiamenti consistenti ai presenti Termini e Condizioni, i nostri clienti verranno informati in anticipo e dovranno accettare o rifiutare l'accordo. In caso di rifiuto si avrà una violazione del presente accordo e l'account del cliente potrà essere congelato, sospeso o cancellato."
@@ -7149,9 +7112,6 @@ msgstr "In base alla nostra autorizzazione, siamo tenuti a informarti su cosa su
 msgid "We are required to take a number of factors into account when considering how to give you best execution. We have rated price as the most important followed by: (a) costs; (b) size, (c) liquidity of the underlying market, (d) speed and (e) likelihood of execution and settlement. The main way in which we will ensure that you obtain best execution is by ensuring that in our calculation of our bid/offer prices, we pay due consideration to the market price for the underlying reference product to which your Contract relates. We have access to a number of different data sources in order to ascertain the market price, which is our objective view of the bids and offers available to arms' length traders."
 msgstr "Siamo tenuti a considerare una serie di fattori quando si considera in che modo offrirti l'esecuzione migliore. Abbiamo valutato il prezzo come il fattore più importante seguito da: (a) costi; (b) volume, (c) liquidità del mercato sottostante, (d) velocità e (e) probabilità di esecuzione e liquidazione. Il modo principale in cui ti garantiamo l'ottenimento dell'esecuzione migliore è garantendoti che nel calcolo dei nostri prezzi di domanda/offerta, teniamo in dovuta considerazione il prezzo del mercato per il prodotto di riferimento sottostante cui è connesso il tuo Contratto. Abbiamo accesso a varie fonti di dati diverse al fine di determinare il prezzo di mercato, ossia la nostra visione obiettiva delle domande e delle offerte disponibili per i trader indipendenti."
 
-msgid "We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
-msgstr ""
-
 msgid "We do it again. BetOnMarkets.com follows up our 2007 award by being voted 'Best Fixed-Odds Financial Trading Provider' for 2008."
 msgstr "Ce l'abbiamo fatta ancora una volta. BetOnMarkets.com viene riconfermato, come nel 2007, \"Miglior provider di trading finanziario con probabilità fisse\" per il 2008."
 
@@ -8173,6 +8133,12 @@ msgstr "{JAPAN ONLY}A binary put option buyer will benefit from a correct predic
 msgid "{JAPAN ONLY}A binary put options buyer will benefit from a correct prediction that the asset price will rise above the strike price by the judgment time."
 msgstr "{JAPAN ONLY}A binary put options buyer will benefit from a correct prediction that the asset price will rise above the strike price by the judgment time."
 
+msgid "{JAPAN ONLY}A board member of a Central Bank"
+msgstr ""
+
+msgid "{JAPAN ONLY}A board member of a company subject to resolution or approval for its budget from a body equivalent to the Diet of Japan"
+msgstr ""
+
 msgid "{JAPAN ONLY}A bought or sold binary option may be closed-out before exercise time by selling or buying-back the option, or alternatively by cancelling."
 msgstr "{JAPAN ONLY}A bought or sold binary option may be closed-out before exercise time by selling or buying-back the option, or alternatively by cancelling."
 
@@ -8193,6 +8159,9 @@ msgstr "{JAPAN ONLY}An option holder must buy ( or sell ) the underlying asset a
 
 msgid "{JAPAN ONLY}An option price is the sum of the intrinsic-value and the time-value."
 msgstr "{JAPAN ONLY}An option price is the sum of the intrinsic-value and the time-value."
+
+msgid "{JAPAN ONLY}Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
+msgstr ""
 
 msgid "{JAPAN ONLY}As the exercise deadline approaches, the price of an in-the-money binary option will move towards the payout amount."
 msgstr "{JAPAN ONLY}As the exercise deadline approaches, the price of an in-the-money binary option will move towards the payout amount."
@@ -8248,6 +8217,9 @@ msgstr "{JAPAN ONLY}Company name in English"
 msgid "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
 msgstr "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
 
+msgid "{JAPAN ONLY}Current or former member of category 1) or 2)"
+msgstr ""
+
 msgid "{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until %1. Last test taken at %2."
 msgstr "{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until %1. Last test taken at %2."
 
@@ -8281,6 +8253,11 @@ msgstr ""
 msgid "{JAPAN ONLY}Download"
 msgstr "{JAPAN ONLY}Download"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}Download our latest report here"
+msgstr "{JAPAN ONLY}Download"
+
 msgid "{JAPAN ONLY}END-IN/END-OUT"
 msgstr "{JAPAN ONLY}END-IN/END-OUT"
 
@@ -8295,6 +8272,21 @@ msgstr "{JAPAN ONLY}Ends Outside"
 
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
+
+msgid "{JAPAN ONLY}Equivalent to Ambassador, Envoy, Government delegate, or Plenipotentiary of Japan"
+msgstr ""
+
+msgid "{JAPAN ONLY}Equivalent to Chairperson or Vice-Chairperson of the House of Representatives or the House of Councilors of Japan"
+msgstr ""
+
+msgid "{JAPAN ONLY}Equivalent to Head of the Joint Staff, Vice Chief of Staff, Chief of Staff of Ground Self-Defense Force, Vice Chief of Staff of G.S.D.F., Chief of Staff of Maritime Self-Defense Force, Vice Chief of Staff of M.S.D.F., Chief of Staff Air Self-Defense Force, or Vice Chief of Staff of A.S.D.F. of Japan"
+msgstr ""
+
+msgid "{JAPAN ONLY}Equivalent to Justice of the Supreme Court of Japan"
+msgstr ""
+
+msgid "{JAPAN ONLY}Equivalent to Prime Minister, Minister of State, or Vice-Minister of State of Japan"
+msgstr ""
 
 msgid "{JAPAN ONLY}Establishment"
 msgstr "{JAPAN ONLY}Establishment"
@@ -8315,6 +8307,9 @@ msgstr "{JAPAN ONLY}minutes"
 
 msgid "{JAPAN ONLY}FX Rate"
 msgstr "{JAPAN ONLY}FX Rate"
+
+msgid "{JAPAN ONLY}Family members of categories 1) to 3)"
+msgstr ""
 
 msgid "{JAPAN ONLY}Financial Condition"
 msgstr "{JAPAN ONLY}Financial Condition"
@@ -8363,6 +8358,16 @@ msgstr "{JAPAN ONLY}For both call and put options, if the underlying asset price
 
 msgid "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 msgstr "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}FX Rate"
+msgid "{JAPAN ONLY}Foreign Head of State"
+msgstr "{JAPAN ONLY}FX Rate"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 5: Calculation"
+msgid "{JAPAN ONLY}Foreign PEP Declaration"
+msgstr "{JAPAN ONLY}Section 5: Calculation"
 
 msgid "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
 msgstr ""
@@ -8448,6 +8453,9 @@ msgstr "{JAPAN ONLY}In Japan there are defined trading periods for binary option
 msgid "{JAPAN ONLY}In OTC currency binary options trading, if the exchange rate during the trading period moves by more than expected in one direction, and there are no longer any exercise prices which can continue to trade, it is possible under certain conditions to add further exercise prices. However, even when further exercise price have been added, the prices of the original options will not be affected."
 msgstr "{JAPAN ONLY}In OTC currency binary options trading, if the exchange rate during the trading period moves by more than expected in one direction, and there are no longer any exercise prices which can continue to trade, it is possible under certain conditions to add further exercise prices. However, even when further exercise price have been added, the prices of the original options will not be affected."
 
+msgid "{JAPAN ONLY}In a Government or Juridicial position such as:"
+msgstr ""
+
 msgid "{JAPAN ONLY}In case of the right to buy the underlying asset (call option), when the underlying asset price falls, the option price will increase."
 msgstr "{JAPAN ONLY}In case of the right to buy the underlying asset (call option), when the underlying asset price falls, the option price will increase."
 
@@ -8522,9 +8530,6 @@ msgstr "{JAPAN ONLY}Lower"
 
 msgid "{JAPAN ONLY}Main business"
 msgstr "{JAPAN ONLY}Main business"
-
-msgid "{JAPAN ONLY}March 2016"
-msgstr "{JAPAN ONLY}March 2016"
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}years"
@@ -8820,6 +8825,9 @@ msgstr "{JAPAN ONLY}Using binary options for hedging a position in the underlyin
 msgid "{JAPAN ONLY}We are required to request copies of your My Number Card as well as proof of registered address. Your details will be kept secure and only used for the specific purposes of verifying your credentials, as required by law."
 msgstr "{JAPAN ONLY}We are required to request copies of your My Number Card as well as proof of registered address. Your details will be kept secure and only used for the specific purposes of verifying your credentials, as required by law."
 
+msgid "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
+msgstr ""
+
 msgid "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 msgstr ""
 
@@ -9001,6 +9009,9 @@ msgstr "Dettagli dell'account"
 
 msgid "Terms and Conditions Approval"
 msgstr "Approvazione dei termini e delle condizioni"
+
+#~ msgid "{JAPAN ONLY}March 2016"
+#~ msgstr "{JAPAN ONLY}March 2016"
 
 #~ msgid "BIEL Pillar III"
 #~ msgstr "BIEL Pillar III"
