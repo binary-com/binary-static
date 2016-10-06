@@ -141,11 +141,21 @@ pjax_config_page('/platforms', function() {
     };
 });
 
-pjax_config_page_require_auth("/(deposit|withdraw)-jp", function(){
+pjax_config_page_require_auth("/cashier/deposit-jp", function(){
     return {
         onLoad: function() {
             page.client.redirect_if_is_virtual();
-            page.client.set_name_id();
+            CashierJP.set_name_id();
+        }
+    };
+});
+
+pjax_config_page_require_auth("/cashier/withdraw-jp", function(){
+    return {
+        onLoad: function() {
+            page.client.redirect_if_is_virtual();
+            CashierJP.set_email_id();
+            Content.populate();
         }
     };
 });
