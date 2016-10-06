@@ -7,14 +7,16 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-05 08:47+0000\n"
+"PO-Revision-Date: 2016-10-06 08:52+0000\n"
 "Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.9-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -4961,10 +4963,8 @@ msgstr "Пожалуйста, выберите платежного агента
 msgid "Please select a valid date"
 msgstr "Пожалуйста, выберите правильную дату"
 
-#, fuzzy
-#| msgid "Please select a valid date"
 msgid "Please select at least one scope"
-msgstr "Пожалуйста, выберите правильную дату"
+msgstr "Пожалуйста, выберите минимум один параметр"
 
 msgid "Please select your country of residence"
 msgstr "Пожалуйста, выберите страну проживания"
@@ -5026,10 +5026,8 @@ msgstr "Pre-contract Document"
 msgid "Predict the direction<br />and purchase"
 msgstr "Предскажите направление движения<br />и купите"
 
-#, fuzzy
-#| msgid "Reference ID"
 msgid "Preferences"
-msgstr "Номер"
+msgstr "Предпочтения"
 
 msgid "Premier binary options trading platform"
 msgstr "Ведущая платформа для торговли бинарными опционами"
@@ -5242,7 +5240,7 @@ msgid "Reap the rewards of trading binaries, knowing your funds are always safe.
 msgstr "Пожинайте плоды торговли на бинарных опционах с уверенностью, что Ваши средства всегда в безопасности."
 
 msgid "Receive news and special offers"
-msgstr ""
+msgstr "Получайте новости и спец. предложения"
 
 msgid "Ref."
 msgstr "Номер"
