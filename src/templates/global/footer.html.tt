@@ -125,6 +125,9 @@
                            <h4 class="secondary-color">[% l('Apps') %]</h4>
                            <ul>
                                <li>
+                                   <a class="pjaxload" href="[% request.url_for('/platforms') %]">[% l('Platforms') %]</a>
+                               </li>
+                               <li>
                                    <a href="https://shop.binary.com/collections/applications/products/tick-trade-mobile-application" target="_blank">[% l('TickTrade App') %]</a>
                                </li>
                                <li>
