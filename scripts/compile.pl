@@ -70,12 +70,17 @@ foreach my $m (@m) {
     my $tpl_path = $m->[1];
     my $layout   = $m->[2];
     my $title    = $m->[3];
+    my $excludes = $m->[4];
 
     $index++;
 
     foreach my $lang (@langs) {
-        if ($m->[4] and index($m->[4], $lang) > -1) {
-            next;
+        if ($excludes) {
+            if ($excludes =~ /^NOT-/) {
+                next if ($excludes !~ $lang); # exclude all languages except this
+            } else {
+                next if ($excludes =~ $lang); # exclude this language
+            }
         }
 
         my $save_as_file = "$dist_path/$lang/pjax/$save_as.html";
