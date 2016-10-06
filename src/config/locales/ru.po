@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-04 11:43+0000\n"
-"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
+"PO-Revision-Date: 2016-10-05 08:47+0000\n"
+"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -959,7 +959,7 @@ msgid "All affiliate activities must be conducted in a professional and proper m
 msgstr "Партнёрская программа должна проводиться должным образом и исключительно профессионально. От Вас ожидается корректное поведение, честность в отношениях с Вашими клиентами, а также действие в лучших интересах Ваших рефералов."
 
 msgid "All barriers in this trading window are expired"
-msgstr ""
+msgstr "Все барьеры в данном торговом окне истекли"
 
 msgid "All calls are recorded for training and monitoring purposes"
 msgstr "Все звонки записываются с целью обучения и мониторинга"
@@ -4893,6 +4893,9 @@ msgstr "Сравнение платформ"
 msgid "Platform Tour"
 msgstr "О платформе"
 
+msgid "Platforms"
+msgstr "Платформы"
+
 msgid "Please %1 to view this page"
 msgstr "Пожалуйста, %1, чтобы просмотреть данную страницу"
 
@@ -4993,6 +4996,11 @@ msgid "Please select a payment agent"
 msgstr "Пожалуйста, выберите платежного агента"
 
 msgid "Please select a valid date"
+msgstr "Пожалуйста, выберите правильную дату"
+
+#, fuzzy
+#| msgid "Please select a valid date"
+msgid "Please select at least one scope"
 msgstr "Пожалуйста, выберите правильную дату"
 
 msgid "Please select your country of residence"
@@ -8785,9 +8793,6 @@ msgstr "404"
 
 msgid "Why Us"
 msgstr "Почему мы"
-
-msgid "Platforms"
-msgstr "Платформы"
 
 msgid "Regulation"
 msgstr "Регулирование"

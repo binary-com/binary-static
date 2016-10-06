@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-04 03:00+0000\n"
+"PO-Revision-Date: 2016-10-05 03:22+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -959,7 +959,7 @@ msgid "All affiliate activities must be conducted in a professional and proper m
 msgstr "Semua kegiatan afiliasi harus dilakukan secara profesional dan tepat. Anda harus bertindak dengan itikad baik dan memiliki integritas dalam hubungan Anda dengan referral Anda, dan selalu bertindak untuk kepentingan terbaik bagi referral Anda."
 
 msgid "All barriers in this trading window are expired"
-msgstr ""
+msgstr "Semua batasan pada tampilan trading ini telah berakhir"
 
 msgid "All calls are recorded for training and monitoring purposes"
 msgstr "Panggilan adalah direkam untuk pelatihan dan pemantauan"
@@ -2973,10 +2973,8 @@ msgstr "Hedging"
 msgid "High Barrier"
 msgstr "Batasan Tinggi"
 
-#, fuzzy
-#| msgid "High Barrier"
 msgid "High Barrier (%1)"
-msgstr "Batasan Tinggi"
+msgstr "Batasan Tinggi (%1)"
 
 msgid "High barrier"
 msgstr "Batasan Tinggi"
@@ -3989,10 +3987,8 @@ msgstr "Juli"
 msgid "Jump To"
 msgstr "Lompat Ke"
 
-#, fuzzy
-#| msgid "Jump to"
 msgid "Jump to date:"
-msgstr "Langsung ke"
+msgstr "Lanjutkan ke tanggal:"
 
 msgid "Jun"
 msgstr "Juni"
@@ -4177,10 +4173,8 @@ msgstr "Rugi"
 msgid "Low Barrier"
 msgstr "Batasan Rendah"
 
-#, fuzzy
-#| msgid "Low Barrier"
 msgid "Low Barrier (%1)"
-msgstr "Batasan Rendah"
+msgstr "Batasan Rendah (%1)"
 
 msgid "Low barrier"
 msgstr "Batasan rendah"
@@ -4899,6 +4893,9 @@ msgstr "Perbandingan Platform"
 msgid "Platform Tour"
 msgstr "Panduan Platform"
 
+msgid "Platforms"
+msgstr "Berbagai Platform"
+
 msgid "Please %1 to view this page"
 msgstr "Silahkan %1 untuk melihat halaman ini"
 
@@ -5000,6 +4997,11 @@ msgstr "Silahkan pilih agen pembayaran"
 
 msgid "Please select a valid date"
 msgstr "Silahkan pilih tanggal"
+
+#, fuzzy
+#| msgid "Please select a residence type."
+msgid "Please select at least one scope"
+msgstr "Silahkan pilih tipe tempat tinggal."
 
 msgid "Please select your country of residence"
 msgstr "Silakan pilih negara domisili Anda"
@@ -5190,8 +5192,6 @@ msgstr "Public worker"
 msgid "Publish your name and logo (with or without a link to your Application) on our website, in press releases, and in promotional materials without additional consent;"
 msgstr "Mempublikasikan nama dan logo (dengan atau tanpa link ke Aplikasi Anda) pada website kami, dalam siaran pers, dan dalam materi promosi tanpa persetujuan tambahan."
 
-#, fuzzy
-#| msgid "Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
 msgid "Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
 msgstr "Diterbitkan dalam bahasa Indonesia"
 
@@ -5564,10 +5564,8 @@ msgstr "Jual kontrak pada harga pasar."
 msgid "Sell option"
 msgstr "Opsi jual"
 
-#, fuzzy
-#| msgid "Sell Time"
 msgid "Sell time"
-msgstr "Waktu Jual"
+msgstr "Waktu jual"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "Kirimkan surat penghantar dan lamaran yang menggambarkan keinginan karir Anda."
@@ -7839,10 +7837,8 @@ msgstr "iOS, Android"
 msgid "is required. Current spread"
 msgstr "dibutuhkan. Spread saat ini"
 
-#, fuzzy
-#| msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
-msgstr "memiliki daya tarik yang luas secara internasional, dengan antar muka dalam bahasa Inggris, Spanyol, Perancis, Jerman, Portugis, Cina, Arab, Polandia, Rusia dan Indonesia."
+msgstr "memiliki daya tarik yang luas secara internasional, dengan antar muka dalam bahasa Inggris, Spanyol, Perancis, Jerman, Portugis, Cina, Jepang, Italia, Thailand, Polandia, Rusia dan Indonesia."
 
 msgid "it is the leading binary option trading platform."
 msgstr "merupakan platform trading opsi binary terkemuka."
@@ -8797,9 +8793,6 @@ msgstr "404"
 
 msgid "Why Us"
 msgstr "Mengapa Kami"
-
-msgid "Platforms"
-msgstr "Berbagai Platform"
 
 msgid "Regulation"
 msgstr "Regulasi"
@@ -22750,9 +22743,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Please reload the website, or return to <a target=\"_top\" href=\"http://##HOMEWEBSITE##\">##HOMEWEBSITE##</a>"
 #~ msgstr "Silahkan reload situs web atau kembali ke <a target=_top href=\"http://www.betonmarkets.com\">www.BetOnMarkets.com</a>"
-
-#~ msgid "Please select a residence type."
-#~ msgstr "Silahkan pilih tipe tempat tinggal."
 
 #~ msgid "Please select bank country"
 #~ msgstr "Silakan pilih negara bank"

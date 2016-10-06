@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-04 08:32+0000\n"
+"PO-Revision-Date: 2016-10-05 06:04+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -966,7 +966,7 @@ msgid "All affiliate activities must be conducted in a professional and proper m
 msgstr "アフィリエイト活動は、専門的且つ適切な方法で実施するようにしてください。アフィリエイト会員は、獲得会員と信頼と誠意に基づく良好な関係を築かれることが期待されています。獲得会員に対し、販売行為や口約束を強要する行為は禁じられています。"
 
 msgid "All barriers in this trading window are expired"
-msgstr ""
+msgstr "この取引期間内のすべてのバリア価格は満期を迎えています"
 
 msgid "All calls are recorded for training and monitoring purposes"
 msgstr "全ての呼び出しはトレーニングと監視目的のため記録されます。"
@@ -3736,9 +3736,7 @@ msgstr ""
 "なお、お取引についてのトラブルなどは、以下のADR（注2）機関における苦情処理・紛争解決の枠組みの利用も可能です。"
 
 msgid "Japan website General Risk Warning Paragraph 1"
-msgstr ""
-"特定非営利活動法人　証券・金融商品あっせん相談センター\n"
-"　　　　　　　　　　電話番号　0120-64-5005（フリーダイヤル）"
+msgstr "特定非営利活動法人　証券・金融商品あっせん相談センター"
 
 msgid "Japan website General Risk Warning Paragraph 2"
 msgstr "電話番号 0120-64-5005（フリーダイヤル）"
@@ -3775,7 +3773,7 @@ msgid "Japan website Investment Solicitation Policy Bold list item 6"
 msgstr "知識技能の習得・研鑽"
 
 msgid "Japan website Investment Solicitation Policy Bold list item 7"
-msgstr "電話によるサポート体制"
+msgstr "サポート体制"
 
 msgid "Japan website Investment Solicitation Policy Bold list item 8"
 msgstr "個人情報の保護"
@@ -3808,7 +3806,7 @@ msgid "Japan website Investment Solicitation Policy Explanation of item 6"
 msgstr "当社の役職員は、お客さまの信頼と期待を裏切らないよう、常に知識技能の習得・研鑽に努めます。"
 
 msgid "Japan website Investment Solicitation Policy Explanation of item 7"
-msgstr "お客さまからのお電話は、お問い合わせのみカスタマーサポートにて対応しております。当社からお客さまへのご連絡は、サポートが必要と判断された時に限るものとし、当社から口座開設勧誘行為はいたしません。午後８時以降の夜間の時間帯には、特別の事情がある場合を除き、当社からお客さまへの電話は行いませんが、その他ご迷惑となる時間帯がございましたらその旨、お申し出ください。"
+msgstr "お客さまからのお問い合わせはeメールでカスタマーサポートが対応しております。当社からお客さまへのご連絡は、サポートが必要と判断された時に限るものとし、当社から口座開設勧誘行為はいたしません。午後８時以降の夜間の時間帯には、特別の事情がある場合を除き、当社からお客さまへの連絡は行いませんが、その他ご迷惑となる時間帯がございましたらその旨、お申し出ください。"
 
 msgid "Japan website Investment Solicitation Policy Explanation of item 8"
 msgstr "当社は、お客さまのプライバシーを尊重し、お客さまから取得した個人情報については、業務に必要な目的以外の利用および提供はいたしません。"
@@ -4959,6 +4957,9 @@ msgstr "プラットフォームを比較"
 msgid "Platform Tour"
 msgstr "ご利用ガイド"
 
+msgid "Platforms"
+msgstr "プラットフォーム"
+
 msgid "Please %1 to view this page"
 msgstr "ご利用頂くためには%1が必要です"
 
@@ -5059,6 +5060,11 @@ msgid "Please select a payment agent"
 msgstr "決済サービスを選択してください。"
 
 msgid "Please select a valid date"
+msgstr "有効な日付を選択してください"
+
+#, fuzzy
+#| msgid "Please select a valid date"
+msgid "Please select at least one scope"
 msgstr "有効な日付を選択してください"
 
 msgid "Please select your country of residence"
@@ -9029,9 +9035,6 @@ msgstr "404"
 
 msgid "Why Us"
 msgstr "サービス概要"
-
-msgid "Platforms"
-msgstr "プラットフォーム"
 
 msgid "Regulation"
 msgstr "規制"

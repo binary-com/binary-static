@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-01 04:15+0000\n"
+"PO-Revision-Date: 2016-10-05 09:48+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
@@ -955,7 +955,7 @@ msgid "All affiliate activities must be conducted in a professional and proper m
 msgstr "所有联盟活动必须以专业和适当的方式进行。您须与推介人保持善意和诚信关系并以推介人最大利益行事。"
 
 msgid "All barriers in this trading window are expired"
-msgstr ""
+msgstr "此交易窗口的所有障碍已过期"
 
 msgid "All calls are recorded for training and monitoring purposes"
 msgstr "为了利于培训和监控，所有通话将被录音"
@@ -2971,10 +2971,8 @@ msgstr "Hedging"
 msgid "High Barrier"
 msgstr "高障碍"
 
-#, fuzzy
-#| msgid "High Barrier"
 msgid "High Barrier (%1)"
-msgstr "高障碍"
+msgstr "高障碍(%1)"
 
 msgid "High barrier"
 msgstr "高障碍"
@@ -3985,10 +3983,8 @@ msgstr "七月"
 msgid "Jump To"
 msgstr "跳至"
 
-#, fuzzy
-#| msgid "Jump to"
 msgid "Jump to date:"
-msgstr "跳至"
+msgstr "跳至日期："
 
 msgid "Jun"
 msgstr "六月"
@@ -4173,10 +4169,8 @@ msgstr "亏损"
 msgid "Low Barrier"
 msgstr "低障碍"
 
-#, fuzzy
-#| msgid "Low Barrier"
 msgid "Low Barrier (%1)"
-msgstr "低障碍"
+msgstr "低障碍(%1)"
 
 msgid "Low barrier"
 msgstr "低障碍"
@@ -4894,6 +4888,9 @@ msgstr "平台比较"
 msgid "Platform Tour"
 msgstr "平台指南"
 
+msgid "Platforms"
+msgstr "平台"
+
 msgid "Please %1 to view this page"
 msgstr "要查看此页面请%1"
 
@@ -4995,6 +4992,11 @@ msgstr "请选择支付代理"
 
 msgid "Please select a valid date"
 msgstr "请选择ั有效日期"
+
+#, fuzzy
+#| msgid "Please select a residence type."
+msgid "Please select at least one scope"
+msgstr "请选择居住类型。"
 
 msgid "Please select your country of residence"
 msgstr "请选择您的居住国"
@@ -5185,10 +5187,8 @@ msgstr "Public worker"
 msgid "Publish your name and logo (with or without a link to your Application) on our website, in press releases, and in promotional materials without additional consent;"
 msgstr "不必另外征求同意，将您的名称和徽标 （可包含应用程序链接，如需要）发布到我们网站、新闻发布和宣传材料;"
 
-#, fuzzy
-#| msgid "Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
 msgid "Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
-msgstr "以英语、日文、中文、波兰文、德文、法文、西班牙文、葡萄牙文、意大利文、俄文和泰文发布"
+msgstr "以英语、印尼文、日文、中文、波兰文、德文、法文、西班牙文、葡萄牙文、意大利文、俄文和泰文发布"
 
 msgid "Purchase"
 msgstr "买入"
@@ -5559,8 +5559,6 @@ msgstr "按市价回售交易。"
 msgid "Sell option"
 msgstr "卖出期权"
 
-#, fuzzy
-#| msgid "Sell Time"
 msgid "Sell time"
 msgstr "卖出时间"
 
@@ -7835,10 +7833,8 @@ msgstr "iOS、Android"
 msgid "is required. Current spread"
 msgstr "必须。当前价差"
 
-#, fuzzy
-#| msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
-msgstr "提供国际化界面，支持的语言包括英语、西班牙语、法语、德语、葡萄牙语、中文、阿拉伯语、波兰语、俄语和印尼语。"
+msgstr "提供国际化界面，支持的语言包括英语、西班牙语、法语、德语、葡萄牙语、中文、日语、意大利语、泰语、波兰语、俄语和印尼语。"
 
 msgid "it is the leading binary option trading platform."
 msgstr "领先的二元期权交易平台。"
@@ -8794,9 +8790,6 @@ msgstr "404"
 
 msgid "Why Us"
 msgstr "为何选择我们"
-
-msgid "Platforms"
-msgstr "平台"
 
 msgid "Regulation"
 msgstr "规则"
@@ -22421,9 +22414,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Please reload the website, or return to <a target=\"_top\" href=\"http://##HOMEWEBSITE##\">##HOMEWEBSITE##</a>"
 #~ msgstr "请重新加载网站，或返回到 <a 目标值=\"_顶部\" href=\"http://##HOMEWEBSITE##\">##HOMEWEBSITE##</a>"
-
-#~ msgid "Please select a residence type."
-#~ msgstr "请选择居住类型。"
 
 #~ msgid "Please select bank country"
 #~ msgstr "请选择银行所在国家"
