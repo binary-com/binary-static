@@ -70,7 +70,7 @@ sub all_pages {
 
         ['new_account/virtualws',        'new_account/virtualws',       'default', 'Create New Account'],
         ['new_account/realws',           'new_account/realws',          'default', 'Real Money Account Opening'],
-        ['new_account/japanws',          'new_account/japanws',         'default', 'Real Money Account Opening', 'all-ja'],
+        ['new_account/japanws',          'new_account/japanws',         'default', 'Real Money Account Opening', 'all-ja,en'],
         ['new_account/maltainvestws',    'new_account/maltainvestws',   'default', 'Financial Account Opening'],
         ['new_account/knowledge_testws', 'japan/knowledge_test',        'default', 'Real Money Account Opening', 'all-ja,en'],
 
