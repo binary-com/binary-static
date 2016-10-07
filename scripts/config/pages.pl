@@ -54,9 +54,12 @@ sub all_pages {
         ['get-started-jp', 'japan/get_started',  'default', 'Get Started', 'NOT-ja'],
 
         ## ws
-        ['user/authenticatews',          'user/authenticatews',                       'default', 'Authenticate', 'ja'],
-        ['cashier/forwardws',            'cashier/deposit_withdraw_ws',               'default', 'Cashier'],
-        ['cashier/epg_forwardws',        'cashier/deposit_withdraw_ws',               'default', 'Cashier'],
+        ['user/authenticatews',          'user/authenticatews',                       'default', 'Authenticate',    'ja'],
+        ['cashier/forwardws',            'cashier/deposit_withdraw_ws',               'default', 'Cashier',         'ja'],
+        ['cashier/epg_forwardws',        'cashier/deposit_withdraw_ws',               'default', 'Cashier',         'ja'],
+        ['cashier/deposit-jp',           'japan/cashier/deposit',                     'default', 'Deposit',         'NOT-ja'],
+        ['cashier/withdraw-jp',          'japan/cashier/withdraw',                    'default', 'Withdraw',        'NOT-ja'],
+        ['cashier/submit-withdraw-jp',   'japan/cashier/submit',                      'default', 'Acknowledgement', 'NOT-ja'],
         ['user/security/limitsws',       'user/security/limitsws',                    'default', 'Account Limits'],
         ['account/account_transferws',   'cashier/account_transferws',                'default', 'Account Transfer'],
         ['cashier/payment_agent_listws', 'cashier/payment_agent_listws',              'default', 'Payment Agent Deposit'],

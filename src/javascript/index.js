@@ -48,12 +48,6 @@ exportAllFunctions(require('./binary/base/pjax'));
 exportAllFunctions(require('./binary/static_pages/endpoint'));
 exportAllFunctions(require('./binary/common_functions/traffic_source'));
 
-exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.data.js'));
-exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.init.js'));
-exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.ui.js'));
-exportAllFunctions(require('./binary_japan/trade_japan/JPTradePage.js'));
-exportAllFunctions(require('./binary_japan/trade_japan/portfolio.js'));
-exportAllFunctions(require('./binary_japan/trade_japan/pricing_details.js'));
 exportAllFunctions(require('./binary/common_functions/active_symbols'));
 exportAllFunctions(require('./binary/common_functions/attach_dom/button'));
 exportAllFunctions(require('./binary/common_functions/attach_dom/flextable'));
@@ -190,6 +184,7 @@ exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.data'))
 exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.init'));
 exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.ui'));
 exportAllFunctions(require('./binary_japan/knowledge_test'));
+exportAllFunctions(require('./binary_japan/cashier'));
 exportAllFunctions(require('./binary_japan/trade_japan/JPTradePage'));
 exportAllFunctions(require('./binary_japan/trade_japan/portfolio'));
 exportAllFunctions(require('./binary_japan/trade_japan/pricing_details'));
