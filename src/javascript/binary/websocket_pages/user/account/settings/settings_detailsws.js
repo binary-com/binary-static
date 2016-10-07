@@ -28,9 +28,10 @@ var SettingsDetailsWS = (function() {
 
     function initOk() {
         isInitialized = true;
+        var isVirtual = page.client.is_virtual();
         var isJP = page.client.residence === 'jp';
         bind_validation.simple($(formID)[0], {
-            schema: isJP ? getJPSchema() : getNonJPSchema(),
+            schema: isJP ? getJPSchema() : isVirtual ? {} : getNonJPSchema(),
             submit: function(ev, info) {
                 ev.preventDefault();
                 ev.stopPropagation();
@@ -43,7 +44,7 @@ var SettingsDetailsWS = (function() {
                 submitNonJP(info.values);
             },
         });
-        if (isJP) {
+        if (isJP && !isVirtual) {
             detect_hedging($('#PurposeOfTrading'), $('.hedge'));
         }
     }
@@ -56,6 +57,13 @@ var SettingsDetailsWS = (function() {
 
         $('#lblCountry').text(data.country || '-');
         $('#lblEmail').text(data.email);
+        /*if (data.email_consent) {
+            $('#email_consent').prop('checked', 'true');
+        }
+
+        $('#email_consent').on('change', function() {
+          changed = true;
+        });*/
 
         if (page.client.is_virtual()) { // Virtual Account
             $(RealAccElements).remove();
@@ -171,21 +179,22 @@ var SettingsDetailsWS = (function() {
         function trim(s) {
             return $(s).val().trim();
         }
-        setDetails(toJPSettings({
-            hedgeAssetAmount       : trim('#HedgeAssetAmount'),
-            annualIncome           : trim('#AnnualIncome'),
-            financialAsset         : trim('#FinancialAsset'),
-            occupation             : trim('#Occupation'),
-            equities               : trim('#Equities'),
-            commodities            : trim('#Commodities'),
-            foreignCurrencyDeposit : trim('#ForeignCurrencyDeposit'),
-            marginFX               : trim('#MarginFX'),
-            InvestmentTrust        : trim('#InvestmentTrust'),
-            publicCorporationBond  : trim('#PublicCorporationBond'),
-            derivativeTrading      : trim('#DerivativeTrading'),
-            purposeOfTrading       : trim('#PurposeOfTrading'),
-            hedgeAsset             : trim('#HedgeAsset')
-        }));
+        setDetails(page.client.is_virtual() ? data :
+            toJPSettings({
+                hedgeAssetAmount       : trim('#HedgeAssetAmount'),
+                annualIncome           : trim('#AnnualIncome'),
+                financialAsset         : trim('#FinancialAsset'),
+                occupation             : trim('#Occupation'),
+                equities               : trim('#Equities'),
+                commodities            : trim('#Commodities'),
+                foreignCurrencyDeposit : trim('#ForeignCurrencyDeposit'),
+                marginFX               : trim('#MarginFX'),
+                InvestmentTrust        : trim('#InvestmentTrust'),
+                publicCorporationBond  : trim('#PublicCorporationBond'),
+                derivativeTrading      : trim('#DerivativeTrading'),
+                purposeOfTrading       : trim('#PurposeOfTrading'),
+                hedgeAsset             : trim('#HedgeAsset')
+            }));
     }
 
     function getJPSchema(data) {
@@ -241,6 +250,11 @@ var SettingsDetailsWS = (function() {
         Object.keys(data).forEach(function(key) {
             req[key] = data[key];
         });
+        /*if ($('#email_consent:checked').length > 0) {
+            req.email_consent = 1;
+        } else {
+            req.email_consent = 0;
+        }*/
         BinarySocket.send(req);
     }
 

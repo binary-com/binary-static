@@ -12,11 +12,6 @@ pjax_config_page('/home', function() {
 pjax_config_page('/why-us', function() {
     return {
         onLoad: function() {
-            if (!/why-us-jp/.test(window.location.pathname) && japanese_client()) {
-                window.location.href = page.url.url_for('why-us-jp');
-            } else if (/why-us-jp/.test(window.location.pathname) && !japanese_client()) {
-                window.location.href = page.url.url_for('why-us');
-            }
             sidebar_scroll($('.why-us'));
             hide_if_logged_in();
         },
@@ -64,11 +59,7 @@ pjax_config_page('/payment-agent', function() {
 pjax_config_page('/get-started', function() {
     return {
         onLoad: function() {
-            if (!/get-started-jp/.test(window.location.pathname) && japanese_client()) {
-                window.location.href = page.url.url_for('get-started-jp');
-            } else if (/get-started-jp/.test(window.location.pathname)) {
-                return;
-            } else {
+            if (!/get-started-jp/.test(window.location.pathname)) {
                 get_started_behaviour();
             }
         },
@@ -91,9 +82,6 @@ pjax_config_page('/contact', function() {
 pjax_config_page('/careers', function() {
     return {
         onLoad: function() {
-            if (japanese_client()) {
-                window.location.href = page.url.url_for('/');
-            }
             display_career_email();
         },
     };
@@ -102,11 +90,6 @@ pjax_config_page('/careers', function() {
 pjax_config_page('/terms-and-conditions', function() {
     return {
         onLoad: function() {
-            if (japanese_client() && !/jp/.test(window.location.pathname)) {
-              window.location.href = page.url.url_for('terms-and-conditions-jp');
-            } else if (!japanese_client() && /jp/.test(window.location.pathname)) {
-              window.location.href = page.url.url_for('terms-and-conditions');
-            }
             var selected_tab = page.url.params_hash().selected_tab;
             if(selected_tab) {
               $('li#' + selected_tab + ' a').click();
@@ -150,32 +133,9 @@ pjax_config_page('/jptrading', function () {
     };
 });
 
-pjax_config_page('/affiliate/signup', function() {
-    return {
-        onLoad: function() {
-            if (japanese_client()) {
-                window.location.href = page.url.url_for('partners');
-            }
-        }
-    };
-});
-
-pjax_config_page('/(us_patents|responsible-trading|partners)', function() {
-    return {
-        onLoad: function() {
-            if (japanese_client()) {
-                window.location.href = page.url.url_for('/');
-            }
-        }
-    };
-});
-
 pjax_config_page('/platforms', function() {
     return {
         onLoad: function() {
-            if (japanese_client()) {
-                window.location.href = page.url.url_for('/');
-            }
             Platforms.init();
         }
     };

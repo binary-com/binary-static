@@ -83,7 +83,7 @@
     </p>
     <ul class="bullet">
         <li>
-            <a href="javascript:;" target="_blank">[% l("{JAPAN ONLY}March 2016") %]</a>
+            <a href="[% japan_docs_url _ '/documents/binary_report_capital_adequacy.pdf' %]" target="_blank">[% l("{JAPAN ONLY}Download our latest report here") %]</a>
         </li>
     </ul>
 </div>
@@ -95,7 +95,7 @@
     </p>
     <ul class="bullet">
         <li>
-            <a href="javascript:;" target="_blank">[% l("{JAPAN ONLY}March 2016") %]</a>
+            <a href="javascript:;" target="_blank">[% l("{JAPAN ONLY}Download our latest report here") %]</a>
         </li>
     </ul>
 </div>
