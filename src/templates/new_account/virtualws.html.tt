@@ -46,6 +46,14 @@
                 <select name="residence" id="residence" class="invisible"></select>
               </div>
             </div>
+            <div class="gr-padding-10 gr-row clear invisible">
+                <div class="gr-4 form_label">
+                    <label>[% l('Receive news and special offers') %]</label>
+                </div>
+                <div class="gr-8">
+                    <input type="checkbox" id="email_consent" checked="checked"></input>
+                </div>
+            </div>
           </fieldset>
           <fieldset class="center-text" id="formlayout">
             <span class="button ">

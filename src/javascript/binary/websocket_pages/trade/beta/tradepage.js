@@ -7,7 +7,7 @@ var TradePage_Beta = (function(){
     if(is_japanese_client && /\/trading(|_beta)\.html/i.test(window.location.pathname)) {
         window.location.href = page.url.url_for('jptrading');
         return;
-    } else if (!is_japanese_client && /jp/.test(window.location.pathname)) {
+    } else if (!is_japanese_client && /\/jptrading\.html/.test(window.location.pathname)) {
         window.location.href = page.url.url_for('trading');
         return;
     }

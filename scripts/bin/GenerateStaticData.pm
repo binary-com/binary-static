@@ -388,6 +388,7 @@ sub _texts {
         push @texts, localize('Never Used');
         push @texts, localize('Delete');
         push @texts, localize('Are you sure that you want to permanently delete token');
+        push @texts, localize('Please select at least one scope');
 
         #strings for Walkthrough Guide
         push @texts, localize('Walkthrough Guide');
