@@ -117,7 +117,7 @@
                   [% l("{JAPAN ONLY}Track your trade in real time:") %]
               </p>
               <div class="gr-padding-10">
-                  <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/track_trade.jpeg') %]" />
+                  <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/track_trade.png') %]" />
               </div>
               <ul class="checked">
                   <li>
@@ -162,7 +162,7 @@
                 </li>
               </ul>
               <div class="gr-padding-10">
-                  <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/portfolio.jpeg') %]" />
+                  <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/portfolio.png') %]" />
               </div>
             </div>
           </div>

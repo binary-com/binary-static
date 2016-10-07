@@ -56,8 +56,11 @@
                                 <li class="all-hide ja-show-inline-block">
                                   <a class="pjaxload" href="[% request.url_for('get-started-jp') %]">[% l("Get Started") %]</a>
                                 </li>
-                                <li>
+                                <li class="ja-hide">
                                     <a class="pjaxload" href="[% request.url_for('tour') %]">[% l('Tour') %]</a>
+                                </li>
+                                <li class="all-hide ja-show-inline-block">
+                                    <a class="pjaxload" href="[% request.url_for('tour-jp') %]">[% l('Tour') %]</a>
                                 </li>
                                 <li class="ja-hide" id="main-navigation-trading">
                                     <a class="pjaxload" href="[% request.url_for('trading') %]">[% l("Trade") %]</a>

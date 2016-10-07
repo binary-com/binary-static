@@ -14,8 +14,7 @@
         </p>
         <img class="responsive" src="[% request.url_for('images/pages/tour-jp/portfolio.png') %]" />
         <img class="responsive" src="[% request.url_for('images/pages/tour-jp/chart.png') %]" />
-        <img class="responsive" src="//placehold.it/600x300" />
-        <img class="responsive" src="//placehold.it/600x300" />
+        <img class="responsive" src="[% request.url_for('images/pages/tour-jp/descriptions.png') %]" />
       </div>
     </div>
   </div>
@@ -28,23 +27,23 @@
         <p>
           [% l("{JAPAN ONLY}To buy an option, simply click on the price button to execute the trade.") %]
         </p>
-        <img class="responsive" src="//placehold.it/600x300" />
+        <img class="responsive gr-5 gr-8-m gr-centered" src="[% request.url_for('images/pages/tour-jp/buy_buttons.png') %]" />
         <p>
           [% l("{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade.") %]
         </p>
-        <img class="responsive" src="//placehold.it/600x300" />
+        <img class="responsive gr-8 gr-12-m gr-centered" src="[% request.url_for('images/pages/tour-jp/tradeview.png') %]" />
         <p>
           [% l("{JAPAN ONLY}This popup window can also be activated from the portfolio panel, and portfolio page, by clicking the Trade View button.") %]
         </p>
-        <img class="responsive" src="//placehold.it/600x300" />
+        <img class="responsive gr-10 gr-12-m gr-centered" src="[% request.url_for('images/pages/tour-jp/trade_in_portfolio.png') %]" />
         <p>
           [% l("{JAPAN ONLY}You can then review the performance of the trade and then sell-back to close the position if you wish, by clicking the sell-back button.") %]
         </p>
-        <img class="responsive" src="//placehold.it/600x300" />
+        <img class="responsive gr-8 gr-12-m gr-centered" src="[% request.url_for('images/pages/tour-jp/sell_tradeview.png') %]" />
         <p>
           [% l("{JAPAN ONLY}The sell-back execution level will then be confirmed and the position will be closed.") %]
         </p>
-        <img class="responsive" src="//placehold.it/600x300" />
+        <img class="responsive gr-4 gr-8-m gr-centered" src="[% request.url_for('images/pages/tour-jp/sell_confirm.png') %]" />
         <p>
           [% l("{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href=\"mailto:[_1]\">[_1]</a>", "support@binary.com") %]
         </p>
