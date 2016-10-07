@@ -312,7 +312,10 @@ var ViewPopupWS = (function() {
         containerSetText('trade_details_spot_label'      , page.text.localize('Exit Spot'));
         containerSetText('trade_details_spottime_label'  , page.text.localize('Exit Spot Time'));
         containerSetText('trade_details_indicative_label', page.text.localize('Price'));
-        containerSetText('trade_details_message'         , '&nbsp;', {'epoch_time': ''});
+        // show validation error if contract is not settled yet
+        if (!(contract.is_settleable && !contract.is_sold)) {
+            containerSetText('trade_details_message'         , '&nbsp;');
+        }
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
     };
