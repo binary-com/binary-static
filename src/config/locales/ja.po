@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-05 06:04+0000\n"
+"PO-Revision-Date: 2016-10-07 01:50+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -137,7 +137,7 @@ msgid "%1 is one of the oldest and most respected names in online binary trading
 msgstr "%1 はオンラインバイナリーオプション取引業界の中でパイオニアであり、世界中の個人投資家にサービスを提供しています。"
 
 msgid "%1 is owned and operated by the Binary Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
-msgstr "Binary 株式会社は%1の子会社です。詳細は<a href='%2'>グループの沿革</a>よりご確認いただけます。"
+msgstr "Binary 株式会社はBinary Ltdの子会社です。詳細は<a href='%2'>グループの沿革</a>よりご確認いただけます。"
 
 msgid "%1 is seeking a junior to mid-career professional with exceptional administrative and organization skills to join its General Affairs Team."
 msgstr "当社では総務チームに参加できる特別な管理力と組織力のある未経験者からミドルキャリアの人材を募集しています。"
@@ -726,12 +726,6 @@ msgstr "バイナリーオプションとは、購入したトレードが勝っ
 msgid "A binary option is an option with a fixed payout that is determined at the start of the trade. If your prediction is correct, you receive an agreed payout. If not, you lose your initial stake, and no more. The options are called 'binary' because there can be only two outcomes - win or lose."
 msgstr "バイナリーオプションは、事前に定められたリターンを提供するオプション取引です。もし予想が正しければ、事前に定められたペイアウトを得ることが出来ます。予想が外れた場合は購入価格のみを失います。このオプション取引は、条件を満たすか、満たさないかのみ結果としてもたらされるので、「バイナリー」と呼ばれています。"
 
-msgid "A board member of a Central Bank"
-msgstr "中央銀行の役員"
-
-msgid "A board member of a company subject to resolution or approval for its budget from a body equivalent to the Diet of Japan"
-msgstr "予算について国会の議決を経、又は承認を受けなければならない法人の役員"
-
 msgid "A broad array of HR-related administrative tasks"
 msgstr "幅広いHR関連の管理作業"
 
@@ -966,7 +960,7 @@ msgid "All affiliate activities must be conducted in a professional and proper m
 msgstr "アフィリエイト活動は、専門的且つ適切な方法で実施するようにしてください。アフィリエイト会員は、獲得会員と信頼と誠意に基づく良好な関係を築かれることが期待されています。獲得会員に対し、販売行為や口約束を強要する行為は禁じられています。"
 
 msgid "All barriers in this trading window are expired"
-msgstr "この取引期間内のすべてのバリア価格は満期を迎えています"
+msgstr "この取引期間内のすべてのバリア価格は権利行使済みです"
 
 msgid "All calls are recorded for training and monitoring purposes"
 msgstr "全ての呼び出しはトレーニングと監視目的のため記録されます。"
@@ -1058,9 +1052,6 @@ msgstr "任意"
 
 msgid "Any changes in our privacy policy or security statement will be posted onto this website. In the event of material changes that directly affect the economic use of your personal information, we will request your prior authorisation in writing before effecting such change on your account."
 msgstr "個人情報のお取り扱いなどに関する変更点は全て当社サイトに掲載されます。お客さまの個人情報の経済的利用へ直接影響を与えるような変更が発生し得る場合は、当社はお客さまのご口座にそのような影響が発生する前に書面での事前認証を求めます。"
-
-msgid "Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
-msgstr "1〜4が実質的支配者である法人"
 
 msgid "Any disputes, controversy, or claims that arise out of or relating to this Agreement against the Company will be referred to and finally determined by an arbitration firm selected by the Company. The language to be used in the arbitral proceedings will be English. Judgement upon the award rendered by the arbitrator(s) may be entered in any court having jurisdiction thereof. You are also responsible for any and all costs related to such arbitration."
 msgstr "本契約外で生じた事案または本契約に関する事案での当社に対する紛争、論争、苦情は、当社が選択した仲裁機関によって最終的に決定されます。仲裁手続きにおいて使用する言語は英語です。仲裁人による裁定時の判決はその司法管轄権を持つ裁判所で行われます。また、仲裁に関する全費用はお客さまが負うものとします。"
@@ -1362,7 +1353,7 @@ msgstr ""
 
 msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495\" target=\"_blank\">view licence</a>."
 msgstr ""
-"また、Binary (Europe) Ltdもマルタ共和国でオンラインサービスの規制を受け監督されています。 \n"
+"Binary (Europe) Ltdもマルタ共和国でオンラインサービスの規制を受け監督されています。 \n"
 "EUの住居者（英国を除く）の口座開設は、この会社の下で開設されます。"
 
 msgid "Binary (IOM) Ltd"
@@ -1382,7 +1373,7 @@ msgstr "Binary (V) Ltd"
 msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">view licence</a>."
 msgstr ""
 "Binary (V) Ltd：Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu\n"
-"バヌアツ金融サービス委員会によってライセンスい認定され、監督下にあります。 - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">ライセンスを表示</a>"
+"バヌアツ金融サービス委員会によってライセンスが認定され、監督下にあります。 - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">ライセンスを表示</a>"
 
 msgid "Binary Bot"
 msgstr "Binary Bot"
@@ -1407,7 +1398,7 @@ msgid "Binary Group Services is searching for talented and motivated front-end d
 msgstr "Binaryグループサービスでは活躍の場を求める才能とやる気にあふれるフロントエンド開発者を探しています。"
 
 msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to Binary.com via EU passporting rights - freedom to provide cross border services."
-msgstr "Binary Investments (Europe) Limitedは、EUパスポーティング権を通して他のEU加盟国へサービスを提供する権利を有しています。国境を超えたサービスをご利用いただける、EUパスポーティング権を通して、Binary.comへアクセスできるEU国は以下のマップの通りです。"
+msgstr "Binary Investments (Europe) Limitedは、EU単一市場へのアクセス権を通して他のEU加盟国へサービスを提供する権利を有しています。国境を超えたサービスをご利用いただける、EU単一市場へのアクセス権を通して、Binary.comへアクセスできるEU加盟国は下記のマップの通りです。"
 
 msgid "Binary Investments (Europe) Ltd"
 msgstr "Binary Investments (Europe) Ltd"
@@ -1424,7 +1415,7 @@ msgstr "Binary K.K."
 msgid "Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590)."
 msgstr ""
 "バイナリー株式会社：〒150-0012 東京都 渋谷区 広尾 1−9−16 広尾宮田ビル 3F\n"
-"財務省関東財務局（KLFB）（ライセンス番号：2949）によってタイプ１金融商品ビジネスとしてライセンスが認定され、監督下にあり、金融先物取引業協会（FFAJ）の会員（会員番号：1590）でもあります。"
+"第一種金融商品取引業者として登録完了（関東財務局長(金商)第2949号）金融先物取引業協会に加入（会員番号1590号）"
 
 msgid "Binary KK granted Japan license"
 msgstr "第一種金融商品取引業者として登録"
@@ -1511,7 +1502,7 @@ msgid "Binary.com"
 msgstr "Binary.com"
 
 msgid "Binary.com is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements."
-msgstr "Binary.comは100万人を超える世界中のお客様に取引を提供する、ライセンス認可済の取引プラットフォームです。世界中の規制に準拠する複数のライセンスを保持しています。1999年以来、揺らぐことのない一定の整合性と信頼性でお客様へのサービスに尽力してまいりました。当社の規制要件に加えて、最高の倫理基準に基いて行動しています。"
+msgstr "Binary.comは、各国の監督局からライセンスを付与され、世界中のお客さまに取引を提供し100万口座以上を保持しています。1999年以来、揺らぐことのない一定の整合性と信頼性でお客さまへのサービスに尽力してまいりました。当社の規制要件に加えて、最高の倫理基準に基いて行動しています。"
 
 msgid "Binary.com is an active member of the Perl community and is in the process of uploading a number of its internal utility modules to <a target='_blank' href='%1'>CPAN</a>. If you are a Perl enthusiast, contribute by reviewing these modules, and submitting pull-requests on <a target='_blank' href='%2'>github</a>."
 msgstr "Binary.comはPerlコミュニティの活発なメンバーであり、<a target='_blank' href='%1'>CPAN</a>へ数多くの内部ユーティリティ・モジュールを投稿しています。Perlでの開発に熱意がある方は、これらのモジュールをご覧頂き、<a target='_blank' href='%2'>github</a>からプルリクエストを送信して下さい。"
@@ -1765,7 +1756,7 @@ msgstr "その他の国（アメリカ、日本、コスタリカ、香港など
 msgid "Clients may avail of this bonus only when a real money account is opened."
 msgstr "このボーナスは、リアル口座を開設された場合にのみ適用されます。"
 
-msgid "Clients must be aware that underage gambling is an offence. If a client, upon age verification, is proven to be underage, will be deprived from any winnings and only deposits made shall be refunded."
+msgid "Clients must be aware that underage gambling is an offence. If a client, upon age verification, is proven to be underage, they will be deprived from any winnings and only deposits made shall be refunded. For clients registered with Binary (Europe) Ltd, all the funds from their MLT account will be transferred to the Malta Gaming Authority. In order to reclaim these funds, clients will need to contact the MGA directly."
 msgstr "未成年のギャンブル行為は固く禁じられていることを留意して下さい。年齢確認の際に未成年と判明した場合は、利益は剥奪され入金金額のみ返金されます。"
 
 msgid "Clients must fill into the account opening form all requested details that establish their identity. Clients must give a valid identification, address, and contact email and personal telephone number."
@@ -2085,9 +2076,6 @@ msgstr "現在のレベル"
 
 msgid "Current Time"
 msgstr "現在時刻："
-
-msgid "Current or former member of category 1) or 2)"
-msgstr "過去に1又2であった者"
 
 msgid "Current password"
 msgstr "現在のパスワード"
@@ -2509,21 +2497,6 @@ msgstr "環境"
 msgid "Equities"
 msgstr "株式"
 
-msgid "Equivalent to Ambassador, Envoy, Government delegate, or Plenipotentiary of Japan"
-msgstr "我が国における特命全権大使、特命全権公使、特派大使、政府代表又は全権委員に相当する"
-
-msgid "Equivalent to Chairperson or Vice-Chairperson of the House of Representatives or the House of Councilors of Japan"
-msgstr "我が国における衆議院議長、衆議院副議長、参議院議長又は参議院副議長に相当する職"
-
-msgid "Equivalent to Head of the Joint Staff, Vice Chief of Staff, Chief of Staff of Ground Self-Defense Force, Vice Chief of Staff of G.S.D.F., Chief of Staff of Maritime Self-Defense Force, Vice Chief of Staff of M.S.D.F., Chief of Staff Air Self-Defense Force, or Vice Chief of Staff of A.S.D.F. of Japan"
-msgstr "我が国における統合幕僚長、統合幕僚副長、陸上幕僚長、陸上幕僚副長、海上幕僚長、海上幕僚副長、航空幕僚長又は航空幕僚副長に相当する職"
-
-msgid "Equivalent to Justice of the Supreme Court of Japan"
-msgstr "我が国における最高裁判所の裁判官に相当する職"
-
-msgid "Equivalent to Prime Minister, Minister of State, or Vice-Minister of State of Japan"
-msgstr "我が国における内閣総理大臣その他の国務大臣及び副大臣に相当する職"
-
 msgid "Estimated Net Worth"
 msgstr "推定純資産"
 
@@ -2701,9 +2674,6 @@ msgstr "Perl・DBI・Mason・Moose・Sereal・Plack/PSGI・nginx・Javascript・
 msgid "Familiarity with virtualization concepts (openvz / Xen / vmware)"
 msgstr "仮想化コンセプトを熟知している(openvz / Xen / vmware)"
 
-msgid "Family members of categories 1) to 3)"
-msgstr "1〜3の家族"
-
 msgid "Family name"
 msgstr "氏名(全角)"
 
@@ -2817,12 +2787,6 @@ msgstr "ロングトレードにおいて、エントリーレベルは値にス
 
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "３年連続でBetOnMarkets.comは、Shares Magazine UKから「最優秀な固定オッズ金融取引業者」を認定されてきましたが、同誌がこの分野への授与を中止したため、これが当社が同賞を受賞する最後の年になります。"
-
-msgid "Foreign Head of State"
-msgstr "外国の元首"
-
-msgid "Foreign PEP Declaration"
-msgstr "外国PEPs（重要な公的地位にある者（Politically Exposed Persons）との取引）"
 
 msgid "Foreign currency deposit"
 msgstr "外貨預金"
@@ -3324,9 +3288,6 @@ msgstr "４月に<a target='_blank' href='http://www.betonmarkets.com'>Betonmark
 msgid "In October 1999, Regent Markets receives US$ 2 million investment funding from Jim Mellon through his Regent Pacific Group, a Hong Kong based fund management company."
 msgstr "1999年10月、Regent Marketsは香港のファンドマネジメント企業のRegent Pacific Groupより2億USDの投資を受けました。"
 
-msgid "In a Government or Juridicial position such as:"
-msgstr "外国において下記の職にある者"
-
 msgid "In all circumstances, the Company reserves the right to make changes to these Terms and Conditions. If the Company elects to make any material changes to these Terms and Conditions, our clients will be notified in advance and shall either accept or decline to agree. Declining to agree shall result in a material breach of this agreement and the client's account maybe frozen, suspended or cancelled."
 msgstr "すべての状況において、当社はこれらの利用規約を変更する権利を留保します。当社がこれら利用規約のいずれかの項目を変更する場合、お客さまは事前に通知され、同意に承諾または辞退していただく必要がございます。同意を辞退されると、本契約の重大な違反につながり、お客さまの口座は凍結、一時停止、または削除させていただく場合がございます。"
 
@@ -3566,7 +3527,7 @@ msgid "Japan"
 msgstr "日本"
 
 msgid "Japan residents will have their account opened with Binary K.K. and will use our Japan trading platform, which is compliant with Japan rules and regulations."
-msgstr "日本の居住者はバイナリー株式会社を通して口座を開設いただき、日本の法令に準拠した当社の日本取引プラットフォームをご利用いただきます。"
+msgstr "日本の居住者はバイナリー株式会社を通して口座を開設いただき、日本の法令に準拠した当社の取引プラットフォームをご利用いただきます。"
 
 msgid "Japan website Download Text for Pre-contract Document"
 msgstr "「契約締結前交付書面」"
@@ -4805,10 +4766,10 @@ msgid "Over $500,001"
 msgstr "$500,001以上"
 
 msgid "Over 1 million registered accounts worldwide"
-msgstr "世界中での口座数は100万口座以上。"
+msgstr "世界中で100万口座以上"
 
 msgid "Over 100 million JPY"
-msgstr "1億を超える"
+msgstr "1億円を超える"
 
 msgid "Over 3 years"
 msgstr "3年以上"
@@ -5062,10 +5023,8 @@ msgstr "決済サービスを選択してください。"
 msgid "Please select a valid date"
 msgstr "有効な日付を選択してください"
 
-#, fuzzy
-#| msgid "Please select a valid date"
 msgid "Please select at least one scope"
-msgstr "有効な日付を選択してください"
+msgstr "範囲を1つ以上選択してください"
 
 msgid "Please select your country of residence"
 msgstr "居住国を選択して下さい"
@@ -5074,7 +5033,7 @@ msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "ご希望のリアリティチェック間隔を分単位で指定してください"
 
 msgid "Please submit a valid %1."
-msgstr "有効なメールアドレスを入力ください"
+msgstr "ワンタイムパスワードを入力ください"
 
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "<a href='mailto:%1'>%1</a>まで上記の情報をご提出ください。"
@@ -5126,6 +5085,9 @@ msgstr "契約締結前交付書面"
 
 msgid "Predict the direction<br />and purchase"
 msgstr "方向性<br />を予測して購入"
+
+msgid "Preferences"
+msgstr "設定"
 
 msgid "Premier binary options trading platform"
 msgstr "最高水準のバイナリーオプション取引プラットフォーム"
@@ -5338,6 +5300,9 @@ msgstr "リアリティチェック間隔："
 
 msgid "Reap the rewards of trading binaries, knowing your funds are always safe."
 msgstr "バイナリー取引を行うことで得られる様々なメリットがあり、お客さまの資金は万全の体制で守られています。"
+
+msgid "Receive news and special offers"
+msgstr "各種キャンペーン等に関するお知らせを受け取る"
 
 msgid "Ref."
 msgstr "約定番号"
@@ -5581,7 +5546,7 @@ msgid "Secret question"
 msgstr "秘密の質問"
 
 msgid "Security"
-msgstr "信託により区分管理"
+msgstr "セキュリティ情報"
 
 msgid "Security & Limits"
 msgstr "セキュリティ & 制限"
@@ -6199,7 +6164,7 @@ msgid "The Payment Agent facility is currently not available in your country."
 msgstr "その決済サービスは、お客さまのお住まいの国では現在ご利用いただけません。"
 
 msgid "The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
-msgstr "Binary Investments (Europe) Limitedの第三の柱は、資本要件指令 IV と資本要件規制に基いて作成されています。市場参加者として我々がいかように市場の規則を遵守しているかご理解いただくためにも、当社の第三の柱をご一読ください。"
+msgstr "Binary Investments (Europe) Limitedの開示レポート（第3の柱）は、資本要件指令 IV と資本要件規制に基いて作成されています。市場参加者として我々がいかように市場の規則を遵守しているかご理解いただくためにも、当社の開示レポート（第3の柱）をご一読ください。現在、英語のみの提供となっております。"
 
 msgid "The Program"
 msgstr "アフィリエイトプログラム"
@@ -7209,9 +7174,6 @@ msgstr "当社はライセンスにより、当社が保持しているお客さ
 
 msgid "We are required to take a number of factors into account when considering how to give you best execution. We have rated price as the most important followed by: (a) costs; (b) size, (c) liquidity of the underlying market, (d) speed and (e) likelihood of execution and settlement. The main way in which we will ensure that you obtain best execution is by ensuring that in our calculation of our bid/offer prices, we pay due consideration to the market price for the underlying reference product to which your Contract relates. We have access to a number of different data sources in order to ascertain the market price, which is our objective view of the bids and offers available to arms' length traders."
 msgstr "当社はお客さまへ最高執行をさせていただく方法を検討する際に、多くの要因を踏まえる必要があります。価格を見積もる上で最も重要となる項目は次の通りです。(a)費用 (b)サイズ (c)基礎となる市場の流動性 (d)スピード (e)実行と決済の見込み　お客さまが最良執行をお受け取りいただけることを保証できる主な方法は、お客さまの契約に関する基礎となる参照商品の市場価格に十分に考慮させていただいたビッド価格とオファー価格の計算の確実性です。一定の距離があるお客さまにご利用いただけるビッドとオファーの我々の客観的視点からみた市場価格を確認するために多くの異なるデータソースにアクセスします。"
-
-msgid "We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
-msgstr "2007年の犯罪による収益の移転防止に関する法律によって定義されている、海外における重要な公的地位を有する者の全アプリケーションは受け入れることはできません。次のカテゴリーに属する方が該当します。"
 
 msgid "We do it again. BetOnMarkets.com follows up our 2007 award by being voted 'Best Fixed-Odds Financial Trading Provider' for 2008."
 msgstr "BetOnMarkets.comは2007年度に引き続き、「最優秀固定オッズ金融取引業者」を受賞。"
@@ -8257,6 +8219,12 @@ msgstr "判定時刻に、原資産価格が権利行使価格よりも下落し
 msgid "{JAPAN ONLY}A binary put options buyer will benefit from a correct prediction that the asset price will rise above the strike price by the judgment time."
 msgstr "判定時刻に、原資産価格が権利行使価格よりも上昇していると予測し、バイナリープットオプションを購入した。"
 
+msgid "{JAPAN ONLY}A board member of a Central Bank"
+msgstr "中央銀行の役員"
+
+msgid "{JAPAN ONLY}A board member of a company subject to resolution or approval for its budget from a body equivalent to the Diet of Japan"
+msgstr "予算について国会の議決を経、又は承認を受けなければならない法人の役員"
+
 msgid "{JAPAN ONLY}A bought or sold binary option may be closed-out before exercise time by selling or buying-back the option, or alternatively by cancelling."
 msgstr "購入したバイナリーオプションは、反対売買（又は解約）により、判定時刻より前に決済することができる。"
 
@@ -8277,6 +8245,9 @@ msgstr "オプションとは、一定の期間内（又は特定の期日）に
 
 msgid "{JAPAN ONLY}An option price is the sum of the intrinsic-value and the time-value."
 msgstr "オプション価格は本源的価値に時間的価値を加えた値である。"
+
+msgid "{JAPAN ONLY}Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
+msgstr "1〜4が実質的支配者である法人"
 
 msgid "{JAPAN ONLY}As the exercise deadline approaches, the price of an in-the-money binary option will move towards the payout amount."
 msgstr "権利行使期限が近づくにつれて、インザマネーのバイナリーオプションの価格は、ペイアウトの金額に近づく。"
@@ -8332,6 +8303,9 @@ msgstr "英語表記"
 msgid "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
 msgstr "おめでとうございます。テストに合格されましたので、カスタマーサポートよりメールにて口座開設の次のステップについてご連絡させていただきます。"
 
+msgid "{JAPAN ONLY}Current or former member of category 1) or 2)"
+msgstr "過去に1又2であった者"
+
 msgid "{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until %1. Last test taken at %2."
 msgstr ""
 "お客さまへ\n"
@@ -8371,6 +8345,9 @@ msgstr "デモ口座にて擬似取引を行って頂き、操作方法等に慣
 msgid "{JAPAN ONLY}Download"
 msgstr "ダウンロード"
 
+msgid "{JAPAN ONLY}Download our latest report here"
+msgstr "最新のレポートをダウンロード"
+
 msgid "{JAPAN ONLY}END-IN/END-OUT"
 msgstr "END-IN/END-OUT"
 
@@ -8385,6 +8362,21 @@ msgstr "END-OUT"
 
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "お客さまの基本情報を記入して頂き交付書面等に同意後、口座開設ボタンをクリックしてください。"
+
+msgid "{JAPAN ONLY}Equivalent to Ambassador, Envoy, Government delegate, or Plenipotentiary of Japan"
+msgstr "我が国における特命全権大使、特命全権公使、特派大使、政府代表又は全権委員に相当する職"
+
+msgid "{JAPAN ONLY}Equivalent to Chairperson or Vice-Chairperson of the House of Representatives or the House of Councilors of Japan"
+msgstr "我が国における衆議院議長、衆議院副議長、参議院議長又は参議院副議長に相当する職"
+
+msgid "{JAPAN ONLY}Equivalent to Head of the Joint Staff, Vice Chief of Staff, Chief of Staff of Ground Self-Defense Force, Vice Chief of Staff of G.S.D.F., Chief of Staff of Maritime Self-Defense Force, Vice Chief of Staff of M.S.D.F., Chief of Staff Air Self-Defense Force, or Vice Chief of Staff of A.S.D.F. of Japan"
+msgstr "我が国における統合幕僚長、統合幕僚副長、陸上幕僚長、陸上幕僚副長、海上幕僚長、海上幕僚副長、航空幕僚長又は航空幕僚副長に相当する職"
+
+msgid "{JAPAN ONLY}Equivalent to Justice of the Supreme Court of Japan"
+msgstr "我が国における最高裁判所の裁判官に相当する職"
+
+msgid "{JAPAN ONLY}Equivalent to Prime Minister, Minister of State, or Vice-Minister of State of Japan"
+msgstr "我が国における内閣総理大臣その他の国務大臣及び副大臣に相当する職"
 
 msgid "{JAPAN ONLY}Establishment"
 msgstr "設立"
@@ -8403,6 +8395,9 @@ msgstr "取引方法"
 
 msgid "{JAPAN ONLY}FX Rate"
 msgstr "通貨ペア"
+
+msgid "{JAPAN ONLY}Family members of categories 1) to 3)"
+msgstr "1〜3の家族"
 
 msgid "{JAPAN ONLY}Financial Condition"
 msgstr "業務及び財産の状況に関する報告書"
@@ -8451,6 +8446,12 @@ msgstr "コールオプション、プットオプション共に、原資産の
 
 msgid "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 msgstr "確認書類の詳細に関しては次のガイドをダウンロードしてご確認いただけます。"
+
+msgid "{JAPAN ONLY}Foreign Head of State"
+msgstr "外国の元首"
+
+msgid "{JAPAN ONLY}Foreign PEP Declaration"
+msgstr "外国PEPs（重要な公的地位にある者（Politically Exposed Persons）との取引）"
 
 msgid "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
 msgstr "緑の購入ボタンをクリック後、約定済み通知画面が表示されます。約定済み通知画面上には、バリア価格を含んだリアルタイムタイムのチャートなど詳細な取引情報が表示されています。売却ボタンも表示されているので、売却取引を行うこともできます。"
@@ -8536,6 +8537,9 @@ msgstr "バイナリーオプションの取引期間（満期）は2時間以�
 msgid "{JAPAN ONLY}In OTC currency binary options trading, if the exchange rate during the trading period moves by more than expected in one direction, and there are no longer any exercise prices which can continue to trade, it is possible under certain conditions to add further exercise prices. However, even when further exercise price have been added, the prices of the original options will not be affected."
 msgstr "店頭通貨バイナリーオプション取引では、取引期間中の為替レートが一方向に想定以上に動き、アットザマネー周辺で適切な取引が継続できる権利行使価格が無くなった場合には、途中で権利行使価格を追加することがある。ただし、権利行使価格が追加された場合であっても、それまで利用した権利行使価格は引き続き取引を行い、またその取引価格が、権利行使価格の追加の影響を受けることはない。"
 
+msgid "{JAPAN ONLY}In a Government or Juridicial position such as:"
+msgstr "外国において下記の職にある者"
+
 msgid "{JAPAN ONLY}In case of the right to buy the underlying asset (call option), when the underlying asset price falls, the option price will increase."
 msgstr "原資産を買う権利（コールオプション）の場合、原資産価格が下落すると、オプションの価格は高くなる。"
 
@@ -8614,9 +8618,6 @@ msgstr "LOW"
 
 msgid "{JAPAN ONLY}Main business"
 msgstr "主な業務"
-
-msgid "{JAPAN ONLY}March 2016"
-msgstr "平成28年3月末"
 
 msgid "{JAPAN ONLY}Matters to attend:"
 msgstr "注意事項"
@@ -8904,6 +8905,9 @@ msgstr ""
 "新規口座開設して頂くお客さまには、本人確認書類と合わせてマイナンバー確認書類のご提出をお願いたします。\n"
 "当社で取得したお客さまのマイナンバーは、マイナンバーガイドに沿って適切に管理し特定の目的のためだけに使用させて頂きます。"
 
+msgid "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
+msgstr "2015年改正犯罪収益移転防止法政省令の犯罪により、外国PEPs（重要な公的地位を有する者）との取引に当該するお客さまは当社では口座開設を行うことができません。下記の者との取引する方が該当します。"
+
 msgid "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 msgstr "ラダー、タッチ、レンジと複数の種類のバイナリーオプションを提供"
 
@@ -9083,6 +9087,9 @@ msgstr "ご口座の詳細情報"
 
 msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
+
+#~ msgid "{JAPAN ONLY}March 2016"
+#~ msgstr "平成28年3月末"
 
 #~ msgid "BIEL Pillar III"
 #~ msgstr "BIELの3本柱"

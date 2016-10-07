@@ -409,49 +409,49 @@
                     </fieldset>
 
                     <fieldset>
-                      <legend id="foreign-pep-declaration">[% l('Foreign PEP Declaration') %]</legend>
+                      <legend id="foreign-pep-declaration">[% l('{JAPAN ONLY}Foreign PEP Declaration') %]</legend>
                       <div class="gr-12">
                           <p>
-                              [% l("We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:") %]
+                              [% l("{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:") %]
                           </p>
                           <ol>
                               <li>
-                                  [% l("Foreign Head of State") %]
+                                  [% l("{JAPAN ONLY}Foreign Head of State") %]
                               </li>
                               <li>
-                                  [% l("In a Government or Juridicial position such as:") %]
+                                  [% l("{JAPAN ONLY}In a Government or Juridicial position such as:") %]
                                   <ul>
                                       <li>
-                                          [% l("Equivalent to Prime Minister, Minister of State, or Vice-Minister of State of Japan") %]
+                                          [% l("{JAPAN ONLY}Equivalent to Prime Minister, Minister of State, or Vice-Minister of State of Japan") %]
                                       </li>
                                       <li>
-                                          [% l("Equivalent to Chairperson or Vice-Chairperson of the House of Representatives or the House of Councilors of Japan") %]
+                                          [% l("{JAPAN ONLY}Equivalent to Chairperson or Vice-Chairperson of the House of Representatives or the House of Councilors of Japan") %]
                                       </li>
                                       <li>
-                                          [% l("Equivalent to Justice of the Supreme Court of Japan") %]
+                                          [% l("{JAPAN ONLY}Equivalent to Justice of the Supreme Court of Japan") %]
                                       </li>
                                       <li>
-                                          [% l("Equivalent to Ambassador, Envoy, Government delegate, or Plenipotentiary of Japan") %]
+                                          [% l("{JAPAN ONLY}Equivalent to Ambassador, Envoy, Government delegate, or Plenipotentiary of Japan") %]
                                       </li>
                                       <li>
-                                          [% l("Equivalent to Head of the Joint Staff, Vice Chief of Staff, Chief of Staff of Ground Self-Defense Force, Vice Chief of Staff of G.S.D.F., Chief of Staff of Maritime Self-Defense Force, Vice Chief of Staff of M.S.D.F., Chief of Staff Air Self-Defense Force, or Vice Chief of Staff of A.S.D.F. of Japan") %]
+                                          [% l("{JAPAN ONLY}Equivalent to Head of the Joint Staff, Vice Chief of Staff, Chief of Staff of Ground Self-Defense Force, Vice Chief of Staff of G.S.D.F., Chief of Staff of Maritime Self-Defense Force, Vice Chief of Staff of M.S.D.F., Chief of Staff Air Self-Defense Force, or Vice Chief of Staff of A.S.D.F. of Japan") %]
                                       </li>
                                       <li>
-                                          [% l("A board member of a Central Bank") %]
+                                          [% l("{JAPAN ONLY}A board member of a Central Bank") %]
                                       </li>
                                       <li>
-                                          [% l("A board member of a company subject to resolution or approval for its budget from a body equivalent to the Diet of Japan") %]
+                                          [% l("{JAPAN ONLY}A board member of a company subject to resolution or approval for its budget from a body equivalent to the Diet of Japan") %]
                                       </li>
                                   </ul>
                               </li>
                               <li>
-                                  [% l("Current or former member of category 1) or 2)") %]
+                                  [% l("{JAPAN ONLY}Current or former member of category 1) or 2)") %]
                               </li>
                               <li>
-                                  [% l("Family members of categories 1) to 3)") %]
+                                  [% l("{JAPAN ONLY}Family members of categories 1) to 3)") %]
                               </li>
                               <li>
-                                  [% l("Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)") %]
+                                  [% l("{JAPAN ONLY}Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)") %]
                               </li>
                           </ol>
                       </div>
