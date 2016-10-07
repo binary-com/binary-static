@@ -42,7 +42,10 @@
         <p>
           [% l('Want to learn more?') %]
           <br/>
-          <a class="pjaxload" href="[% request.url_for('/tour') %]">
+          <a class="pjaxload ja-hide" href="[% request.url_for('/tour') %]">
+            [% l('View the Tour') %]
+          </a>
+          <a class="pjaxload hidden ja-show" href="[% request.url_for('/tour-jp') %]">
             [% l('View the Tour') %]
           </a>
         </p>
