@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-07 01:50+0000\n"
+"PO-Revision-Date: 2016-10-07 09:48+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -960,7 +961,7 @@ msgid "All affiliate activities must be conducted in a professional and proper m
 msgstr "アフィリエイト活動は、専門的且つ適切な方法で実施するようにしてください。アフィリエイト会員は、獲得会員と信頼と誠意に基づく良好な関係を築かれることが期待されています。獲得会員に対し、販売行為や口約束を強要する行為は禁じられています。"
 
 msgid "All barriers in this trading window are expired"
-msgstr "この取引期間内のすべてのバリア価格は権利行使済みです"
+msgstr "すべてのバリア価格は権利行使済みです"
 
 msgid "All calls are recorded for training and monitoring purposes"
 msgstr "全ての呼び出しはトレーニングと監視目的のため記録されます。"
@@ -4901,10 +4902,10 @@ msgid "Persons with insider knowledge of any financial market or instrument are 
 msgstr "金融市場や金融商品の内部情報を知る方による当ウェブサイトでのお取引は禁止されています。"
 
 msgid "Pillar 3 Disclosures"
-msgstr "第三の柱"
+msgstr "開示（第3の柱)"
 
 msgid "Pillar 3 disclosure report"
-msgstr "第三の柱に基づく報告"
+msgstr "開示レポート（第3の柱に基づく報告)"
 
 msgid "Pip"
 msgstr "Pip"
@@ -8061,7 +8062,7 @@ msgid "month"
 msgstr "月"
 
 msgid "months"
-msgstr "月"
+msgstr "ヶ月"
 
 msgid "not available"
 msgstr "利用不可"
@@ -8454,7 +8455,9 @@ msgid "{JAPAN ONLY}Foreign PEP Declaration"
 msgstr "外国PEPs（重要な公的地位にある者（Politically Exposed Persons）との取引）"
 
 msgid "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
-msgstr "緑の購入ボタンをクリック後、約定済み通知画面が表示されます。約定済み通知画面上には、バリア価格を含んだリアルタイムタイムのチャートなど詳細な取引情報が表示されています。売却ボタンも表示されているので、売却取引を行うこともできます。"
+msgstr ""
+"緑の購入ボタンをクリック後、約定済み通知画面が表示されます。約定済み通知画面上には、バリア価格を含んだリアルタイムのチャートなど詳細な取引情報が表示されて"
+"います。売却ボタンも表示されているので、売却取引を行うこともできます。"
 
 msgid "{JAPAN ONLY}Goes Outside"
 msgstr "BREAK-OUT"
@@ -8496,7 +8499,9 @@ msgid "{JAPAN ONLY}If the exercise prices and exercise times are the same for an
 msgstr "権利行使価格、権利行使期間が同一のヨーロピアンタイプとアメリカンタイプのオプションでは、アメリカンタイプの方がオプション価格は高い。"
 
 msgid "{JAPAN ONLY}If the market price has changed significantly it may not be possible to execute a trade at a delayed price displayed in a customer's browser. Alternatively you may pay a lower price for the option if the price has moved quickly in that direction. Please see our summary of specifications document for full details of our 'slippage' rules."
-msgstr "万が一、市場価格が急激に変動した際は、お客様のブラウザ上で表示されている発注価格では約定しない場合があります。その逆として、市場価格が急激に変動したことにより、発注価格より有利な価格で購入できる場合があります。詳しくは取引概要の「スリッページ」をご覧ください。"
+msgstr ""
+"万が一、市場価格が急激に変動した際は、お客様のブラウザ上で表示されている発注価格では約定しない場合があります。その逆として、市場価格が急激に変動したことに"
+"より、発注価格より有利な価格で購入できる場合があります。詳しくは契約締結前交付正面をご覧ください。"
 
 msgid "{JAPAN ONLY}If the probablility of a payout is 50% then when the potential payout is less than 100% of the price paid for the option, the expected return on the investment will be less than 100%."
 msgstr "ペイアウトを受け取る確率が50％、投資額に対するペイアウトの倍率が2倍を下回る場合の期待収益率は1倍を下回り、予測回収額は投資額を下回る。"
@@ -8562,7 +8567,10 @@ msgid "{JAPAN ONLY}In the event of our bankruptcy, your assets will be safeguard
 msgstr "区分管理必要額の算出は当社が行い、信託銀行は行いません。"
 
 msgid "{JAPAN ONLY}In the lower panel you can also choose to see your current portfolio with live valuations and quick access to sell-back. Alternatively you can view a live, customizable chart with many add-on features; or see more detailed explanations of the type of option selected; or examine recent settlement prices for expired options."
-msgstr "下部のポジション一覧のタブでは、お客さまの保有ポジションに対する評価価格の表示と売却取引が行える緑の「表示」を表示します。チャートのタブでは、テクニカル分析をしたりチャートのカスタマイズが可能です。（テクニカル分析の指標は英語標記のみです）また、取引概要のタブでは取引しているオプションの判定基準の説明、判定レートのタブでは過去の判定レートの一覧表を表示します。"
+msgstr ""
+"下部のポジション一覧のタブでは、お客さまの保有ポジションに対する評価価格を表示され、売却取引を行う場合は緑の「表示」ボタンをクリックしてください。チャート"
+"のタブでは、テクニカル分析をしたりチャートのカスタマイズが可能です。（テクニカル分析の指標は英語標記のみです）また、取引概要のタブでは取引しているオプショ"
+"ンの判定基準の説明、判定レートのタブでは過去の判定レートの一覧表を表示します。"
 
 msgid "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time"
 msgstr "判定時刻2分前までならいつでも売却取引によりロスカットや利益確定をすることができます"
@@ -8824,7 +8832,7 @@ msgid "{JAPAN ONLY}The price of an option can be affected by the underlying asse
 msgstr "オプションの価格は、原資産の価格、原資産の価格変動率、権利行使期限までの時間、金利のいずれの影響を受ける。"
 
 msgid "{JAPAN ONLY}The sell-back execution level will then be confirmed and the position will be closed."
-msgstr "「売却」ボタンをクリックすると、売却約定価格の通知が表示されます。"
+msgstr "「売却」ボタンをクリックすると約定済み通知画面上に決済の参照番号が表示されます。"
 
 msgid "{JAPAN ONLY}The seller of a vanilla option can not choose whether to exercise the option or not. His profit is limited to the price received for the option, whereas his potential loss is unlimited and could be substantial."
 msgstr "バニラオプションの売り手は、利益額はオプション料に限定される一方、原資産価格と権利行使価格の差が損失となるので、原資産価格が無限大とすれば、その損失額も無限大となる。"
@@ -8860,7 +8868,7 @@ msgid "{JAPAN ONLY}To avoid or hedge the future price of an underlying asset whi
 msgstr "保有する原資産の今後の価格下落を回避（ヘッジ）するため、原資産のコールオプションを取得した。"
 
 msgid "{JAPAN ONLY}To buy an option, simply click on the price button to execute the trade."
-msgstr "オプションを購入するには、緑の購入ボタンををクリック（注意：ワンクリック注文）"
+msgstr "オプションを購入するには、緑の購入ボタンをクリック（注意：ワンクリック注文）"
 
 msgid "{JAPAN ONLY}To compensate for any rise in the price of an underlying asset that you intend to buy in future, you should buy a call option."
 msgstr "将来取得する予定の原資産の値上がりを補うため、原資産のコールオプションを取得した。"
@@ -8957,7 +8965,9 @@ msgid "{JAPAN ONLY}You set your own personal daily loss limit"
 msgstr "1日損失限度額を設定できます"
 
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
-msgstr "お客さまは、権利行使できなければ1取引あたりの最大損失額は購入金額に限定されます。"
+msgstr ""
+"お客さまのバイナリーオプション取引では、購入金額を超えて損失が生じる可能性はありませんが、損失を限定するためのロスカットではありませんのご注意してください"
+"。"
 
 msgid "{JAPAN ONLY}Your funds are safe"
 msgstr "信託により区分管理"
