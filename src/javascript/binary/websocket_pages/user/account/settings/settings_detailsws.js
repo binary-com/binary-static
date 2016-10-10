@@ -45,6 +45,7 @@ var SettingsDetailsWS = (function() {
             },
         });
         if (isJP && !isVirtual) {
+            $('#fieldset_email_consent').removeClass('invisible');
             detect_hedging($('#PurposeOfTrading'), $('.hedge'));
         }
     }
