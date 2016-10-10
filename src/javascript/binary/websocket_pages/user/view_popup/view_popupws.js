@@ -108,7 +108,7 @@ var ViewPopupWS = (function() {
     };
 
     var spreadSetValues = function() {
-        contract.is_ended = contract.is_expired || contract.is_sold;
+        contract.is_ended = contract.is_settleable || contract.is_sold;
         contract.status   = page.text.localize(contract.is_ended ? 'Closed' : 'Open');
     };
 
@@ -195,7 +195,7 @@ var ViewPopupWS = (function() {
         var finalPrice       = contract.sell_price || contract.bid_price,
             is_started       = !contract.is_forward_starting || contract.current_spot_time > contract.date_start,
             user_sold        = contract.sell_time && contract.sell_time <= contract.date_expiry,
-            is_ended         = contract.is_expired || contract.is_sold || user_sold,
+            is_ended         = contract.is_settleable || contract.is_sold || user_sold,
             indicative_price = finalPrice && is_ended ? (contract.sell_price || contract.bid_price) : contract.bid_price ? contract.bid_price : null;
 
         if(contract.barrier_count > 1) {
@@ -264,7 +264,7 @@ var ViewPopupWS = (function() {
         }
         if(is_ended) {
             normalContractEnded(parseFloat(profit_loss) >= 0);
-            if(contract.is_valid_to_sell && contract.is_expired && !contract.is_sold && !isSellClicked) {
+            if(contract.is_valid_to_sell && contract.is_settleable && !contract.is_sold && !isSellClicked) {
                 ViewPopupUI.forget_streams();
                 sellExpired();
             }
@@ -283,7 +283,7 @@ var ViewPopupWS = (function() {
             showLocalTimeOnHover('#trade_details_live_date');
 
             var is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start,
-                is_ended   = contract.is_expired || contract.is_sold;
+                is_ended   = contract.is_settleable || contract.is_sold;
             if((!is_started || is_ended || now >= contract.date_expiry) && document.getElementById('trade_details_live_remaining')) {
                 containerSetText('trade_details_live_remaining', '-');
             } else {
@@ -312,7 +312,10 @@ var ViewPopupWS = (function() {
         containerSetText('trade_details_spot_label'      , page.text.localize('Exit Spot'));
         containerSetText('trade_details_spottime_label'  , page.text.localize('Exit Spot Time'));
         containerSetText('trade_details_indicative_label', page.text.localize('Price'));
-        containerSetText('trade_details_message'         , '&nbsp;', {'epoch_time': ''});
+        // show validation error if contract is not settled yet
+        if (!(contract.is_settleable && !contract.is_sold)) {
+            containerSetText('trade_details_message'         , '&nbsp;');
+        }
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
     };

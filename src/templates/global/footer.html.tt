@@ -47,8 +47,11 @@
                                 <li class="all-hide ja-show-block">
                                     <a class="pjaxload" href="[% request.url_for('get-started-jp') %]">[% l('Getting Started') %]</a>
                                 </li>
-                                <li>
+                                <li class="ja-hide">
                                     <a class="pjaxload" href="[% request.url_for('tour') %]">[% l('Platform Tour') %]</a>
+                                </li>
+                                <li class="hidden ja-show-black">
+                                    <a class="pjaxload" href="[% request.url_for('tour-jp') %]">[% l('Platform Tour') %]</a>
                                 </li>
                                 <li class="ja-hide id-hide">
                                     <a href="http://www.gamcare.org.uk/" target="_blank">[% l('GamCare') %]</a>
@@ -62,27 +65,19 @@
                             </ul>
                         </div>
                         <div class="gr-4">
-                            <h4 class="ja-hide secondary-color">[% l('Trading') %]</h4>
-                            <ul class="ja-hide">
+                            <h4 class="secondary-color">[% l('Banking') %]</h4>
+                            <ul>
+                                <li>
+                                    <a class="pjaxload" href="[% request.url_for('/cashier') %]"[% IF
+                                    target %]
+                                    target="[% target %]"[% END %]>[% l('Cashier') %]</a>
+                                </li>
                                 <li class="ja-hide">
-                                    <a class="pjaxload" href="[% request.url_for('/resources/asset_indexws') %]">[% l('Asset Index') %]</a>
+                                    <a class="pjaxload" href="[% request.url_for('/cashier/payment_methods') %]"[% IF
+                                    target %]
+                                    target="[% target %]"[% END %]>[% l('Payment Methods') %]</a>
                                 </li>
                             </ul>
-                            <div class='gr-padding-10 gr-no-gutter ja-no-padding'>
-                                <h4 class="secondary-color">[% l('Banking') %]</h4>
-                                <ul>
-                                    <li>
-                                        <a class="pjaxload" href="[% request.url_for('/cashier') %]"[% IF
-                                        target %]
-                                        target="[% target %]"[% END %]>[% l('Cashier') %]</a>
-                                    </li>
-                                    <li class="ja-hide">
-                                        <a class="pjaxload" href="[% request.url_for('/cashier/payment_methods') %]"[% IF
-                                        target %]
-                                        target="[% target %]"[% END %]>[% l('Payment Methods') %]</a>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -122,19 +117,13 @@
                            </ul>
                        </div>
                        <div class="gr-4 ja-hide">
-                           <h4 class="secondary-color">[% l('Apps') %]</h4>
+                           <h4 class="secondary-color">[% l('Trading') %]</h4>
                            <ul>
                                <li>
                                    <a class="pjaxload" href="[% request.url_for('/platforms') %]">[% l('Platforms') %]</a>
                                </li>
                                <li>
-                                   <a href="https://shop.binary.com/collections/applications/products/tick-trade-mobile-application" target="_blank">[% l('TickTrade App') %]</a>
-                               </li>
-                               <li>
-                                   <a href="https://shop.binary.com/collections/applications/products/webtrader" target="_blank">[% l('Webtrader') %]</a>
-                               </li>
-                               <li>
-                                   <a href="https://shop.binary.com/collections/applications/products/binary-com-tradingview-chart" target="_blank">[% l('TradingView') %]</a>
+                                   <a class="pjaxload" href="[% request.url_for('/resources/asset_indexws') %]">[% l('Asset Index') %]</a>
                                </li>
                            </ul>
                        </div>
@@ -180,7 +169,7 @@
                                 </a>
                             </div>
                             <div class="gr-2 center-text">
-                                <a href="https://www.authorisation.mga.org.mt/verification.aspx?lang=en&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40" target="_blank">
+                                <a href="https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1" target="_blank">
                                     <img id="lga_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/mga-logo-footer.svg') %]"/>
                                 </a>
                             </div>

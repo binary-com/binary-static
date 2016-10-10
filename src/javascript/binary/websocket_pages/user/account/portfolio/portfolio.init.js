@@ -29,8 +29,8 @@ var PortfolioWS =  (function() {
     };
 
     var createPortfolioRow = function(data, is_first) {
-        var longCode = typeof module !== 'undefined' ? 
-            data.longcode : 
+        var longCode = typeof module !== 'undefined' ?
+            data.longcode :
             (japanese_client() ? toJapanTimeIfNeeded(void 0, void 0, data.longcode) : data.longcode);
 
         var new_class = is_first ? '' : 'new';
@@ -128,7 +128,7 @@ var PortfolioWS =  (function() {
         }
 
         // force to sell the expired contract, in order to remove from portfolio
-        if(proposal.is_expired == 1 && !proposal.is_sold) {
+        if(proposal.is_settleable == 1 && !proposal.is_sold) {
             BinarySocket.send({"sell_expired": 1});
         }
         var $td = $("#" + proposal.contract_id + " td.indicative");

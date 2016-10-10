@@ -174,6 +174,24 @@ sub js_config {
 sub menu {
     my @menu;
 
+    push @menu,
+        {
+        id         => 'topMenuTrading',
+        class      => 'ja-hide',
+        url        => url_for('/trading'),
+        text       => localize('Trade'),
+        link_class => 'pjaxload',
+        };
+
+    push @menu,
+        {
+        id         => 'topMenuJPTrading',
+        class      => 'all-hide ja-show',
+        url        => url_for('/jptrading'),
+        text       => localize('Trade'),
+        link_class => 'pjaxload'
+        };
+
     # Portfolio
     push @menu,
         {

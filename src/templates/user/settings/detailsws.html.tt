@@ -401,7 +401,7 @@
             </div>
         </fieldset>
 
-        <fieldset class="invisible">
+        <fieldset id="fieldset_email_consent" class="invisible">
             <legend>[% l('Preferences') %]</legend>
 
             <div class="gr-padding-10 gr-row clear">
