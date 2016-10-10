@@ -309,6 +309,11 @@ Client.prototype = {
         this.check_storage_values();
         page.contents.activate_by_client_type();
         page.contents.activate_by_login();
+        CashierJP.set_email_id();
+    },
+    response_get_settings: function(response) {
+        page.user.first_name = response.get_settings.first_name;
+        CashierJP.set_name_id();
     },
     check_tnc: function() {
         if (/user\/tnc_approvalws/.test(window.location.href) || /terms\-and\-conditions/.test(window.location.href)) return;
