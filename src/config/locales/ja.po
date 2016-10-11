@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-11 06:53+0000\n"
-"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
+"PO-Revision-Date: 2016-10-11 07:48+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -8248,7 +8248,7 @@ msgid "{JAPAN ONLY}Account Type"
 msgstr "口座種類"
 
 msgid "{JAPAN ONLY}Acknowledgment"
-msgstr "出金指示の確認書"
+msgstr "出金依頼の確認書"
 
 msgid "{JAPAN ONLY}Activate your account by confirming your authorisation code which we will post to your registered address."
 msgstr "リアル口座開設完了後にお客さまへ簡易書留郵便で口座認証コードを郵送いたします。当社から送信したメールに口座認証コードを記載のうえ返信してください。"
@@ -8331,10 +8331,8 @@ msgstr "英語表記"
 msgid "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
 msgstr "おめでとうございます。テストに合格されましたので、カスタマーサポートよりメールにて口座開設の次のステップについてご連絡させていただきます。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Option Pricing"
 msgid "{JAPAN ONLY}Continue Trading"
-msgstr "オプション価格"
+msgstr "取引画面へ戻る"
 
 msgid "{JAPAN ONLY}Current or former member of category 1) or 2)"
 msgstr "過去に1又2であった者"
@@ -8555,7 +8553,7 @@ msgid "{JAPAN ONLY}If you buy a currency binary put option at a price of 500 yen
 msgstr "権利行使価格１ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションを500円で購入し、判定レートが１ドル９９円となり権利行使が行われ、1,000円のペイアウトを受け取った。"
 
 msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href=\"mailto:%1\">Customer Support</a>."
-msgstr "出金指示の取り消し、またはご質問等ありましたら、<a href=\"%1\">カスタマーサポート</a>までご連絡ください。"
+msgstr "出金依頼の取り消し、またはご質問等ありましたら、<a href=\"%1\">カスタマーサポート</a>までご連絡ください。"
 
 msgid "{JAPAN ONLY}If you sell a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
 msgstr "権利行使価格１ドル100円、ペイアウト1,000円のドル円のコールバイナリーオプションの購入代金500円を受け取り、判定レートが１ドル９９円となり権利行使が行われ、1,000円のペイアウトを支払った。"
@@ -8570,7 +8568,7 @@ msgid "{JAPAN ONLY}If you wish to change your designated account or you have any
 msgstr "出金先口座情報を変更をご希望の場合、カスタマーサポートまでご連絡ください。"
 
 msgid "{JAPAN ONLY}If your bank account details have changed, please contact Customer Support in order to verify your ID and new account details."
-msgstr ""
+msgstr "出金先口座情報に変更がある場合には、お客さまのIDと新規登録したい口座情報を確認する必要がありますので、カスタマーサポートまでご連絡ください。"
 
 msgid "{JAPAN ONLY}Implied volatility is a prediction of the future rate of change in the underlying asset."
 msgstr "インプライドボラティリティとは、原資産に対する将来の変動率を予測したボラティリティのことである。"
@@ -8721,10 +8719,10 @@ msgid "{JAPAN ONLY}Payout Amount"
 msgstr "ペイアウト金額"
 
 msgid "{JAPAN ONLY}Please allow up to 3 business days for the funds to be credited to your trading account."
-msgstr ""
+msgstr "お客さまから入金を確認後、当社のお客さま取引口座には3営業日以内に反映させて頂きます。"
 
 msgid "{JAPAN ONLY}Please allow up to 5 business days for the funds to be credited to your designated bank account."
-msgstr ""
+msgstr "支払処理は出金依頼日、または出金承認日から最大5営業日かかります。"
 
 msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
 msgstr "本人確認およびマイナンバー「個人番号カード」書類に関する詳細につきましては<a class=\"pjaxload\" href=\"#identification-documents\">こちらを</a> クリックしてください。"
@@ -8733,7 +8731,7 @@ msgid "{JAPAN ONLY}Please complete the following questions."
 msgstr "知識確認テスト用ディスクレーマー"
 
 msgid "{JAPAN ONLY}Please contact <a href=\"mailto:%1\">%1</a> if you need to withdraw more than the maximum amount, as further ID verification is required."
-msgstr ""
+msgstr "100万円以上の出金をご希望の場合、IDチェックが必要となりますのでお手数ですがカスタマーサポートまでご連絡してください。"
 
 msgid "{JAPAN ONLY}Please download our Full Trading Guide which describes in detail how to use our trading screens and other features of our website:"
 msgstr "取引画面の見方、購入方法や入出金方法など詳しい操作方法をご確認できます。ご利用の際は、操作マニュアルをダウンロードしてください。"
@@ -8748,25 +8746,25 @@ msgid "{JAPAN ONLY}Please download our Summary of Specifications which lists all
 msgstr "当社の取引タイプ、ルール、条件の全詳細が記載されている取引概要を十分読んでご理解の上ご利用ください。"
 
 msgid "{JAPAN ONLY}Please ensure you maintain sufficient balance in your trading account."
-msgstr ""
+msgstr "取引を行う際には、取引残高が十分あることを確認してください。"
 
 msgid "{JAPAN ONLY}Please input the amount you would like to withdraw and press the Request button."
-msgstr ""
+msgstr "出金依頼額を入力してリクエストボタンを押してください。"
 
 msgid "{JAPAN ONLY}Please make a bank transfer from your designated bank account to:"
-msgstr ""
+msgstr "当社の指定口座へ振込を行ってください。"
 
 msgid "{JAPAN ONLY}Please make sure you add your Binary.com account ID to the Remitter's account name, or it will delay crediting the funds to your account:"
-msgstr ""
+msgstr "JPで始まる取引口座番号を振込名義の後に必ず記載してください。記載がない場合、取引口座への反映が遅延が起こる可能性があります。"
 
 msgid "{JAPAN ONLY}Please note our maximum deposit limit for a single transaction is ¥1,000,000."
-msgstr ""
+msgstr "1回あたりの入金限度額は100万円となっております。"
 
 msgid "{JAPAN ONLY}Please note the maximum regular withdrawal amount is ¥1,000,000."
-msgstr ""
+msgstr "1日の出金可能額は100万円となっております。"
 
 msgid "{JAPAN ONLY}Please note we can only accept payments from your designated bank account and no other account in your name."
-msgstr ""
+msgstr "振込名義が取引口座名義と相違がある場合は、お客さまの取引口座へ振込が行えません。"
 
 msgid "{JAPAN ONLY}Please note:"
 msgstr "注意"
@@ -8865,7 +8863,7 @@ msgid "{JAPAN ONLY}Take our Knowledge Test to confirm your understanding of opti
 msgstr "バイナリーオプションへの理解をチェックするため知識確認テストを受けてください。"
 
 msgid "{JAPAN ONLY}Thank you for your withdrawal request."
-msgstr "ご出金指示を承りました。"
+msgstr "ご出金依頼を承りました。"
 
 msgid "{JAPAN ONLY}The Black-Scholes model is widely used to calculate theoretical option prices."
 msgstr "オプション価格の理論式として、ブラック・ショールズ・モデルが広く用いられている。"
@@ -9013,7 +9011,7 @@ msgid "{JAPAN ONLY}We will pass on any possible price improvements for orders in
 msgstr "判定時刻2分前までならいつでも決済取引を行うことができます"
 
 msgid "{JAPAN ONLY}We will process your request and transfer the funds to your designated bank account within 5 business days."
-msgstr ""
+msgstr "支払処理は出金依頼日、または出金承認日から最大5営業日をかかります。"
 
 msgid "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying."
 msgstr "コールオプションの買いでは、権利行使価格に原資産１単位当たりのオプション料を加算した価格が損益分岐点である。"
@@ -9034,7 +9032,7 @@ msgid "{JAPAN ONLY}You can protect your account value further by setting other l
 msgstr "お客さまご自身で過度の取引を防止するため設定機能があります"
 
 msgid "{JAPAN ONLY}You can request a funds transfer to your designated bank account at any time."
-msgstr ""
+msgstr "出金先口座へ出金依頼はいつでも行えます。"
 
 msgid "{JAPAN ONLY}You can see the real-time value of your portfolio and access the trade view and analysis screen from which you can then choose to close the position:"
 msgstr "保有ポジションの損益がリアルタイムで確認ができます。また、売却取引画面にアクセスし必要に応じてポジションを決済することもできます。"
@@ -9046,7 +9044,7 @@ msgid "{JAPAN ONLY}You can then review the performance of the trade and then sel
 msgstr "約定済み通知画面上では、保有ポジションの損益が確認でき、「売却」ボタンをクリックして決済をすることができます。"
 
 msgid "{JAPAN ONLY}You must have sufficient balance in your trading account at the time of transfer."
-msgstr ""
+msgstr "出金依頼を行う際、取引残高が十分あることをご確認して下さい。"
 
 msgid "{JAPAN ONLY}You set your own personal daily loss limit"
 msgstr "1日損失限度額を設定できます"
