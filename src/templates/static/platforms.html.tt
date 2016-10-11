@@ -105,6 +105,13 @@
                         <p>
                             [% l("Experience the future of our trading platform with the Next-Gen app.") %]
                             <div class="gr-row">
+                                <div class="gr-12">
+                                    <a class="button" href="https://app.binary.com" target="_blank">
+                                        <span>Try Next-Gen</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="gr-row gr-padding-10">
                                 <a class="gr-5 gr-6-m" href="https://itunes.apple.com/app/apple-store/id1134884301?pt=117911266&ct=platforms_page&mt=8" target="_blank">
                                     <div class="app-store-badge"></div>
                                 </a>
