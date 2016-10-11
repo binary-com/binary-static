@@ -177,7 +177,7 @@ sub menu {
     push @menu,
         {
         id         => 'topMenuTrading',
-        class      => 'ja-hide',
+        class      => 'ja-hide hide-tablet-mobile',
         url        => url_for('/trading'),
         text       => localize('Trade'),
         link_class => 'pjaxload',
@@ -186,7 +186,7 @@ sub menu {
     push @menu,
         {
         id         => 'topMenuJPTrading',
-        class      => 'all-hide ja-show',
+        class      => 'all-hide ja-show hide-tablet-mobile',
         url        => url_for('/jptrading'),
         text       => localize('Trade'),
         link_class => 'pjaxload'
