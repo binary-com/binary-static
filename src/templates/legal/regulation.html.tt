@@ -72,7 +72,7 @@
                             <area shape="rect" coords="26.61,343.62,198.93,375.33" href="[% request.url_for('download/regulation/Luxembourg.pdf') %]" alt="Luxembourg" target="_blank">
                             <area shape="rect" coords="53.76,378.81,198.93,410.52" href="[% request.url_for('download/regulation/France.pdf') %]" alt="France" target="_blank">
                             <area shape="rect" coords="2.82,432.81,147.99,464.52" href="http://www.cnmv.es/Portal/Consultas/ESI/ESISExtranjerasLP.aspx?numero=3944&tipo=CLP" alt="Spain" target="_blank">
-                            <area shape="rect" coords="2.82,468.96,147.99,500.67" href="http://web3.cmvm.pt/english/sdi/ifs/LPS/ei_lps_lista.cfm?pais=Malta#lo" alt="Portugal" target="_blank">
+                            <area shape="rect" coords="2.82,468.96,147.99,500.67" href="http://web3.cmvm.pt/english/sdi/ifs/LPS/lps_dtl.cfm?num_ent=%26%23%24WU%21-Q%3E%0A&tip_if=%24%3E%23%3A%3B%3C%20%20%20%0A" alt="Portugal" target="_blank">
                             <area shape="rect" coords="34.50,505.59,147.99,537.30" href="http://www.consob.it/mainen/documenti/english/intermediaries/albi/COM.html?symblink=/mainen/intermediares/investments_firms/com_lnk.html" alt="Italy" target="_blank">
                             <area shape="rect" coords="292.95,556.05,438.12,587.76" href="https://www.fma.gv.at/en/search-company-database/?cname=Binary+Investments&place=&bic=&category=&per_page=10&submitted=1" alt="Austria" target="_blank">
                             <area shape="rect" coords="498.57,665.88,643.74,697.59" href="[% request.url_for('download/regulation/Slovenia.pdf') %]" alt="Slovenia" target="_blank">
@@ -83,7 +83,7 @@
                             <area shape="rect" coords="708.69,334.14,900.00,365.85" href="https://apl.cnb.cz/apljerrsdad/JERRS.WEB10.VIZITKA?p_lang=en&p_SEQ_ID=10765086&p_VER_ID=1000&p_DATUM=28.07.2016&p_ROL_KOD=" alt="Czech Republic" target="_blank">
                             <area shape="rect" coords="765.87,287.94,900.03,319.65" href="https://www.knf.gov.pl/en/authorised_entities.jsp#searchedName=Binary%20Investments&ctype=&wybraneOPZ=&wybraneDT=&wybranePPZ=&companyCategoryName=" alt="Poland" target="_blank">
                             <area shape="rect" coords="765.87,222.12,900.03,253.83" href="http://www.fktk.lv/en/market/financial-instruments-market/service-providers-from-the-eea/freedom-to-provide-services.html" alt="Latvia" target="_blank">
-                            <area shape="rect" coords="765.87,185.97,900.03,217.68" href="https://www.fi.ee/index.php?id=2228" alt="Estonia" target="_blank">
+                            <area shape="rect" coords="765.87,185.97,900.03,217.68" href="https://www.fi.ee/index.php?id=2228&action=showentity&eid=97148" alt="Estonia" target="_blank">
                             <area shape="rect" coords="765.87,41.64,900.03,73.35" href="http://www.finanssivalvonta.fi/en/Authorisations/Notifications/Pages/notifications.aspx" alt="Finland" target="_blank">
                         </map>
                     </div>
