@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-05 21:17+0000\n"
+"PO-Revision-Date: 2016-10-11 17:06+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>"
+"\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.9-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -8290,10 +8292,8 @@ msgstr "{JAPAN ONLY}For both call and put options, if the underlying asset price
 msgid "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 msgstr "For full details of the documents we can accept please download the following guide:"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}FX Rate"
 msgid "{JAPAN ONLY}Foreign Head of State"
-msgstr "{JAPAN ONLY}FX Rate"
+msgstr "{JAPAN ONLY}Foreign Head of State"
 
 #, fuzzy
 #| msgid "Foreign PEP Declaration"
@@ -8397,10 +8397,8 @@ msgstr "In Japan there are defined trading periods for binary options must be 2 
 msgid "{JAPAN ONLY}In OTC currency binary options trading, if the exchange rate during the trading period moves by more than expected in one direction, and there are no longer any exercise prices which can continue to trade, it is possible under certain conditions to add further exercise prices. However, even when further exercise price have been added, the prices of the original options will not be affected."
 msgstr "In OTC currency binary options trading, if the exchange rate during the trading period moves by more than expected in one direction, and there are no longer any exercise prices which can continue to trade, it is possible under certain conditions to add further exercise prices. However, even when further exercise price have been added, the prices of the original options will not be affected."
 
-#, fuzzy
-#| msgid "In a Government or Juridicial position such as:"
 msgid "{JAPAN ONLY}In a Government or Juridicial position such as:"
-msgstr "W rządzie bądź na innym stanowisku sądowym takim jak:"
+msgstr "{JAPAN ONLY}In a Government or Juridicial position such as:"
 
 msgid "{JAPAN ONLY}In case of the right to buy the underlying asset (call option), when the underlying asset price falls, the option price will increase."
 msgstr "In case of the right to buy the underlying asset (call option), when the underlying asset price falls, the option price will increase."
