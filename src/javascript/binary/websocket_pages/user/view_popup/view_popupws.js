@@ -566,7 +566,7 @@ var ViewPopupWS = (function() {
 
     // ----- Sell Contract -----
     var sellContract = function() {
-        socketSend({"sell": contractID, "price": 0, passthrough: {}});
+        socketSend({"sell": contractID, "price": contract.bid_price, passthrough: {}});
     };
 
     var responseSell = function(response) {
