@@ -17,6 +17,8 @@
         width: 90px;
         height: 200px;
         text-align: left;
+        overflow-y: hidden;
+        overflow-x: auto;
     }
     .outer {
         position: relative;
