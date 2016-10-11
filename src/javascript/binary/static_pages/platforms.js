@@ -1,14 +1,15 @@
 var Platforms = (function () {
     var sections = [];
-    function showLoadingImage(container) {
-        container.append('<div id="std_loading_img"><p>' + page.text.localize('loading...') + '</p>' +
-            '<img src="' + page.url.url_for_static('images/common/hourglass_1.gif') + '" /></div>');
-    }
-    function hideLoadingImg() {
-        $('#std_loading_img').remove();
-    }
     function init() {
-        showLoadingImage($('.platforms-section'));
+        sections = ['more-tools', 'trading-platforms', 'platforms-comparison'];
+        var sidebarListItem = $('.sidebar-nav li');
+        sidebarListItem.click(function(e) {
+            sidebarListItem.removeClass('selected');
+            $(this).addClass('selected');
+        });
+        $(window).on('hashchange', function(){
+            showSelectedDiv();
+        });
         checkWidth();
         $(window).resize(checkWidth);
         $('.inner').scroll(checkScroll);
@@ -20,25 +21,13 @@ var Platforms = (function () {
             width = $elem.width(),
             scrollWidth = $elem.get(0).scrollWidth;
         if (scrollWidth - newScrollLeft - width === 0) {
-            $fade.css('left', '100%');
-        } else {
-            $fade.css('left', '85%');
+            $fade.css('opacity', '0');
         }
     }
     function checkWidth() {
         if ($('.sidebar-left').is(':visible')) {
-            sections = ['more-tools', 'trading-platforms', 'platforms-comparison'];
-            var sidebarListItem = $('.sidebar-nav li');
-            sidebarListItem.click(function(e) {
-                sidebarListItem.removeClass('selected');
-                $(this).addClass('selected');
-            });
-            $(window).on('hashchange', function(){
-                showSelectedDiv();
-            });
             showSelectedDiv();
         } else {
-            hideLoadingImg();
             $('.sections').removeClass('invisible');
         }
     }
@@ -49,8 +38,8 @@ var Platforms = (function () {
         );
     }
     function showSelectedDiv() {
+        if ($('.sections[id="' + get_hash().substring(1) + '"]').is(':visible')) return;
         $('.sections').addClass('invisible');
-        hideLoadingImg();
         $('.sections[id="' + get_hash().substring(1) + '"]').removeClass('invisible');
         $('.sidebar-nav a[href="' + get_hash() + '"]').parent().addClass('selected');
     }
