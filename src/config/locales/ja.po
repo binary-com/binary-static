@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-07 09:48+0000\n"
+"PO-Revision-Date: 2016-10-11 05:41+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -8138,10 +8139,8 @@ msgstr "ご利用規約を通読し同意し、金融トレードの売買をご
 msgid "you have sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and have done so without relying on any information contained in this site."
 msgstr "当社サービスを通じて金融トレードを購入するメリットとリスクを評価でき、かつ当社サイトに掲載されている情報に依存せずに金融トレードを行ったことのあるような金融トレードにおける十分な経験と知識があります。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}#1 Sales Division"
-msgstr "登録"
+msgstr "第一営業支店"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
 msgstr "%3のNO-TOUCHは、取引期間(%4)が終了するまでにバリア価格にタッチしないを予想"
@@ -8169,25 +8168,24 @@ msgstr "%3のTOUCHは、取引期間(%4)が終了するまでバリア価格に�
 
 msgid "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
 msgstr ""
-"店頭バイナリーオプション取引は、法令によりお客様から預託を受けた資産と会社の資産を区分して管理することが義務付けられております。弊社では、日証金信託銀行へ全額信託を実施しております。\n"
-"もし、弊社が破綻した場合、日証金信託銀行に信託保全されているお客様の資産は保全されます。この場合、日証金信託銀行から受益者代理人（乙）へ信託財産が交付され、当該財産の範囲内でお客様に帰属すべき預託金等の金銭が返還されます。\n"
-"弊社では、内部管理統括責任者を受益者代理人（甲）とし、毎営業日、区分管理必要額の確認を行っております。また、外部弁護士を受益者代理人（乙）とし、弊社が破綻した場合に日証金信託銀行からお客様の資産の返還にあたります。"
+"店頭バイナリーオプション取引は、法令によりお客様から預託を受けた資産と会社の資産を区分して管理することが義務付けられております。弊社では、関係法令に則り、"
+"日証金信託銀行へ全額信託を実施しております。\n"
+"もし、弊社が破綻した場合、日証金信託銀行に信託保全されているお客様の資産は保全されます。この場合、日証金信託銀行から受益者代理人（乙）へ信託財産が交付され"
+"、当該財産の範囲内でお客様に帰属すべき預託金等の金銭が返還されます。\n"
+"弊社では、内部管理統括責任者を受益者代理人（甲）とし、毎営業日、区分管理必要額の確認を行っております。また、外部弁護士を受益者代理人（乙）とし、弊社が破綻"
+"した場合に日証金信託銀行からお客様の資産の返還にあたります。"
 
 msgid "{JAPAN ONLY}%1 was one of the first active Binary Options brokers and has a proven track record of delivering first class service and maintaining an award winning trading platform, while delivering strong financial performance to our shareholders, for more than 15 years worldwide."
 msgstr "%1はオンライン上のオプション取引業界でのパイオニアであり世界中の個人投資家からサービスの評価を受けています。また、数々の受賞歴も保持し15年以上にわたり強い財務業績を維持しています。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}251"
-msgstr "日"
+msgstr "251"
 
 msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
 msgstr "60,100,000円（2016年7月1日現在）"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}7546677"
-msgstr "日"
+msgstr "7546677"
 
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 msgstr "円以外の通貨ペアを原資産とする差金決済型の通貨オプションであって、オプション料や権利行使時の決済が円により行われるものは、対象とする通貨ペアによる決済額を算出し、円転のための計算をして金額を確定する仕組みとなっている。"
@@ -8240,25 +8238,17 @@ msgstr "バイナリーオプションの理論価格計算には、ブラック
 msgid "{JAPAN ONLY}About OTC currency for binary options trading, summarizes the profit and loss result of all transactions that have been made between the customer, to publish the information in the company's home page, at any time while the customer is doing the transaction before the start, or the transaction, the information Make sure, for that you're willing to trade under the calm judgment, we are committed to a variety of environmental improvement."
 msgstr "店頭通貨バイナリーオプション取引については、顧客との間で行われた全取引の損益結果をまとめ、自社のホームページにおいて情報を公開し、顧客が取引開始前、あるいは取引を行っている間いつでも、その情報を確認し、冷静な判断の下にお取引いただけるための、様々な環境整備に努めている。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Company name"
 msgid "{JAPAN ONLY}Account Name"
-msgstr "会社名"
+msgstr "口座名"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}hour"
 msgid "{JAPAN ONLY}Account Number"
-msgstr "時間"
+msgstr "口座番号"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Option Type"
 msgid "{JAPAN ONLY}Account Type"
-msgstr "オプションタイプ"
+msgstr "口座種類"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Knowledge Test"
 msgid "{JAPAN ONLY}Acknowledgment"
-msgstr "知識確認テスト"
+msgstr "出金指示の確認書"
 
 msgid "{JAPAN ONLY}Activate your account by confirming your authorisation code which we will post to your registered address."
 msgstr "リアル口座開設完了後にお客さまへ簡易書留郵便で口座認証コードを郵送いたします。当社から送信したメールに口座認証コードを記載のうえ返信してください。"
@@ -8293,10 +8283,8 @@ msgstr "当社は日本で第一種金融商品取引業者として登録して
 msgid "{JAPAN ONLY}Association of join"
 msgstr "加入する協会"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}Bank"
-msgstr "日"
+msgstr "金融機関名"
 
 msgid "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 msgstr "権利行使により利益が得られる確率を踏まえれば、一概にオプション価格が安いものが有利とはいえない。"
@@ -8304,23 +8292,17 @@ msgstr "権利行使により利益が得られる確率を踏まえれば、一
 msgid "{JAPAN ONLY}Binary K. K."
 msgstr "Binary株式会社"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Binary K. K."
 msgid "{JAPAN ONLY}Binary K.K. Customer Account"
-msgstr "Binary株式会社"
+msgstr "Binary株式会社　顧客口"
 
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "バイナリーオプションは、売り手の損失が限定されており、バニラオプションに比べ、ローリスクハイリターンな取引といえる。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}month"
 msgid "{JAPAN ONLY}Branch"
-msgstr "月"
+msgstr "支店名"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Trading Guide"
 msgid "{JAPAN ONLY}Branch Code"
-msgstr "操作マニュアル"
+msgstr "支店番号"
 
 msgid "{JAPAN ONLY}By law we are required to manage the assets of our customers and our company separately"
 msgstr "信託保全は、当社が取り扱う店頭バイナリーオプション取引の元本を保証するものではありません。"
@@ -8385,7 +8367,9 @@ msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 msgstr "当社のバイナリーオプション取引の月次取引実績をお知らせします。"
 
 msgid "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
-msgstr "区分管理必要額は当社が毎日算出し、算出日から2営業日までに信託をします。この間も金融庁長官の指定する金融機関において、当社の資産とはして管理します。"
+msgstr ""
+"区分管理必要額は当社が毎日算出し、算出日から2営業日までに信託をします。この2営業日の間も金融庁長官の指定する金融機関において、当社の資産とは分別して管理"
+"します。"
 
 msgid "{JAPAN ONLY}Does Not Touch"
 msgstr "NO-TOUCH"
@@ -8570,10 +8554,8 @@ msgstr "ペイアウト1,000円のバイナリーコールオプションを500�
 msgid "{JAPAN ONLY}If you buy a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will receive a payout 1,000 yen from the seller of the option."
 msgstr "権利行使価格１ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションを500円で購入し、判定レートが１ドル９９円となり権利行使が行われ、1,000円のペイアウトを受け取った。"
 
-#, fuzzy
-#| msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href=\"mailto:%1\">Customer Support</a>."
-msgstr "上記のお客さま基本情報の変更をご希望される場合は<a href=\"%1\">カスタマーサポート</a>までご連絡ください。また、変更が生じた際は速やかにご連絡いただきますようお願いします。"
+msgstr "出金指示の取り消し、またはご質問等ありましたら、<a href=\"%1\">カスタマーサポート</a>までご連絡ください。"
 
 msgid "{JAPAN ONLY}If you sell a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
 msgstr "権利行使価格１ドル100円、ペイアウト1,000円のドル円のコールバイナリーオプションの購入代金500円を受け取り、判定レートが１ドル９９円となり権利行使が行われ、1,000円のペイアウトを支払った。"
@@ -8584,10 +8566,8 @@ msgstr "ペイアウト1,000円のバイナリーコールオプションを500�
 msgid "{JAPAN ONLY}If you sell a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
 msgstr "権利行使価格１ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションの購入代金500円を受け取り、判定レートが１ドル９９円となり権利行使が行われ、1,000円のペイアウトを支払った。"
 
-#, fuzzy
-#| msgid "To change your name, date of birth, country of residence, or email, please contact Customer Support."
 msgid "{JAPAN ONLY}If you wish to change your designated account or you have any other queries, then please contact Customer Support."
-msgstr "お客さま情報の変更をご希望される場合はカスタマーサポートまでご連絡下さい。また、変更が生じた際は速やかにご連絡願います。"
+msgstr "出金先口座情報を変更をご希望の場合、カスタマーサポートまでご連絡ください。"
 
 msgid "{JAPAN ONLY}If your bank account details have changed, please contact Customer Support in order to verify your ID and new account details."
 msgstr ""
@@ -8809,10 +8789,8 @@ msgstr "店頭通貨オプションの価格は、複数の要素に基づく計
 msgid "{JAPAN ONLY}Purchase, Settlement & Resale"
 msgstr "取引期間・バリア・決済"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}FX Rate"
 msgid "{JAPAN ONLY}Rakuten Bank"
-msgstr "通貨ペア"
+msgstr "楽天銀行"
 
 msgid "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
 msgstr "次の文章のうち、金融商品の店頭取引の価格について、金融商品取引業者が買値と売値（又は買戻取価格、解約価格）の２つの価格をお客さまに提示する場合、一般的には２つの価格には差（スプレッド）がある。このスプレッドはオプションの期限が近付くと広がる傾向がある。"
@@ -8826,18 +8804,14 @@ msgstr "規制と税金"
 msgid "{JAPAN ONLY}Remaining time"
 msgstr "残り時間"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Matters to attend:"
 msgid "{JAPAN ONLY}Remitter's Name:"
-msgstr "注意事項"
+msgstr "振込名義"
 
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "STAY-IN/BREAK-OUT"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}days"
 msgid "{JAPAN ONLY}Savings"
-msgstr "日"
+msgstr "普通"
 
 msgid "{JAPAN ONLY}Section 1: Structure"
 msgstr "第1章：構成"
@@ -8890,10 +8864,8 @@ msgstr "知識確認テストを受ける"
 msgid "{JAPAN ONLY}Take our Knowledge Test to confirm your understanding of options."
 msgstr "バイナリーオプションへの理解をチェックするため知識確認テストを受けてください。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Track your trade in real time:"
 msgid "{JAPAN ONLY}Thank you for your withdrawal request."
-msgstr "取引成立後の状況はリアルタイムで確認できます:"
+msgstr "ご出金指示を承りました。"
 
 msgid "{JAPAN ONLY}The Black-Scholes model is widely used to calculate theoretical option prices."
 msgstr "オプション価格の理論式として、ブラック・ショールズ・モデルが広く用いられている。"
@@ -9082,10 +9054,8 @@ msgstr "1日損失限度額を設定できます"
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 msgstr "お客さまのバイナリーオプション取引では、購入金額を超えて損失が生じる可能性はありませんが、損失を限定するためのロスカットではありませんのご注意してください。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}hours"
 msgid "{JAPAN ONLY}Your Funds"
-msgstr "時間"
+msgstr "信託により区分管理"
 
 msgid "{JAPAN ONLY}Your funds are safe"
 msgstr "信託により区分管理"
