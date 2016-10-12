@@ -96,6 +96,7 @@ var MarketTimesUI = (function() {
             // symbols of this submarket
             var symbols = submarkets[s].symbols;
             for(var sy = 0; sy < symbols.length; sy++) {
+                if (Object.keys(MarketTimes.getSymbolInfo(symbols[sy].symbol, activeSymbols)).length === 0) continue;
                 $submarketTable.find('tbody').append(createSubmarketTableRow(market.name, submarkets[s].name, symbols[sy]));
             }
 
