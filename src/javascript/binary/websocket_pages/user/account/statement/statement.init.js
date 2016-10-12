@@ -56,7 +56,7 @@ var StatementWS = (function(){
             } else {
                 $('#jump-to').parent().parent().removeClass('invisible');
                 if(page.language().toLowerCase() === 'ja') {
-                    $('#download_csv').removeClass('invisible').find('a').click(function(){StatementUI.exportCSV();});
+                    $('#download_csv').removeClass('invisible').find('a').unbind('click').click(function(){StatementUI.exportCSV();});
                 }
             }
         }
