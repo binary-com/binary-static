@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-12 04:14+0000\n"
+"PO-Revision-Date: 2016-10-12 10:29+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -224,10 +224,12 @@ msgstr "%1 ได้รับรางวัลชนะเลิศ ประ�
 msgid "%1 would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions."
 msgstr "%1 มีเครือข่ายตัวแทนการชำระเงินรูปแบบต่างๆ ทั่วโลก ดังนั้นพวกเราสามารถเสนอการบริการเพื่อชำระเงินผ่านช่องทางท้องถิ่นให้กับลูกค้าในภูมิภาคของเขา"
 
-#, fuzzy
-#| msgid "%1's Continuous Indices are the Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 25%, 50%, 75% and 100%."
 msgid "%1's Continuous Indices are the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75% and 100%."
-msgstr "ดัชนีต่อเนื่องของ %1 คือ ดัชนีผันผวน 25 ดัชนีผันผวน 50 ดัชนีผันผวน 75 และดัชนีผันผวน 100 ซึ่งดัชนีเหล่านี้สอดคล้องกับระดับความไม่แน่นอนของตลาดที่ 25% 50% 75% และ 100% ตามลำดับ"
+msgstr ""
+"ดัชนีต่อเนื่องของ %1 คือ ดัชนีผันผวน 10 ดัชนีผันผวน 25 ดัชนีผันผวน 50 ดัชนีผั"
+"นผวน 75 และดัชนีผันผวน 100 "
+"ซึ่งดัชนีเหล่านี้สอดคล้องกับระดับความไม่แน่นอนของตลาดที่ 10% 25% 50% 75% และ "
+"100% ตามลำดับ"
 
 msgid "%1's IT Operations Group is responsible for the design, development and operation of the company's high-traffic networks. Its responsibilities include hardware and software deployment, up-time and reliability testing, incident response reporting, network security, intrusion detection, and load balancing."
 msgstr "กลุ่มงานปฏิบัติการเทคโนโลยีสารสนเทศของ %1 รับผิดชอบในส่วนของการออกแบบ การพัฒนาระบบงาน และปฏิบัติการเครือข่ายขององค์กร ขอบเขตงานรวมถึงฮาร์ดแวร์ และการบริหารและใช้งานซอฟท์แวร์ การทดสอบระบบงานต่างๆ การจัดการและรายงานปัญหาด้านการใช้งานต่างๆ ความปลอดภัยของเครือข่าย การป้องกันการโจมตีระบบ และโหลดบาลานซ์"
@@ -846,7 +848,7 @@ msgid "Account Closure"
 msgstr "การปิดบัญชี"
 
 msgid "Account Management and Tracking"
-msgstr "การบริหารบัญชีและรายละเอียด"
+msgstr "การบริหารบัญชีและรายละเอียดบัญชี"
 
 msgid "Account Opening"
 msgstr "การเปิดบัญชี"
@@ -4875,10 +4877,11 @@ msgstr "โปรดยืนยันการซื้อขายตามส
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "โปรดยืนยันรายละเอียดของธุรกรรมเพื่อทำให้การโอนสมบูรณ์:"
 
-#, fuzzy
-#| msgid "Please contact us with whatever is on your mind at <a href=\"mailto:%1\">%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
-msgstr "โปรดให้เราได้รับฟังทุกข้อสงสัยของท่านที่ <a href=\"mailto:%1\">%1</a> พวกเรายินดีที่จะรับฟังและปรารถนาที่จะให้ความช่วยเหลือท่าน โปรดแสดงความคิดเห็นและข้อเสนอแนะของท่านให้เราทราบโดยไม่ต้องลังเล"
+msgstr ""
+"โปรดให้เราได้รับฟังทุกข้อสงสัยของท่านที่ <a href='mailto:%1'>%1</a> "
+"พวกเรายินดีที่จะรับฟังและปรารถนาที่จะให้ความช่วยเหลือท่าน "
+"โปรดแสดงความคิดเห็นและข้อเสนอแนะของท่านให้เราทราบโดยไม่ต้องลังเล"
 
 msgid "Please deposit before transfer to client."
 msgstr "โปรดฝากเงินก่อนทำการโอนให้ลูกค้า"
@@ -8319,10 +8322,10 @@ msgstr "{JAPAN ONLY}If you buy a currency binary option at a price of 500 yen, a
 msgid "{JAPAN ONLY}If you buy a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will receive a payout 1,000 yen from the seller of the option."
 msgstr "{JAPAN ONLY}If you buy a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will receive a payout 1,000 yen from the seller of the option."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href=\"mailto:%1\">Customer Support</a>."
 msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:%1'>Customer Support</a>."
-msgstr "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href=\"mailto:%1\">Customer Support</a>."
+msgstr ""
+"{JAPAN ONLY}If you have any queries or wish to cancel the request, please "
+"contact <a href='mailto:%1'>Customer Support</a>."
 
 msgid "{JAPAN ONLY}If you sell a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
 msgstr "{JAPAN ONLY}If you sell a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
@@ -8471,10 +8474,11 @@ msgstr "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to
 msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href=\"mailto:%1\">%1</a>"
 msgid "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href='mailto:%1'>%1</a>"
-msgstr "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href=\"mailto:%1\">%1</a>"
+msgstr ""
+"{JAPAN ONLY}Our customer support are available to help you if you are unsure "
+"about how to use our trading tools. Please email them at <a "
+"href='mailto:%1'>%1</a>"
 
 msgid "{JAPAN ONLY}Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must be held in the trust bank count every day"
 msgstr "{JAPAN ONLY}Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must be held in the trust bank count every day"
@@ -8497,10 +8501,11 @@ msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-do
 msgid "{JAPAN ONLY}Please complete the following questions."
 msgstr "{JAPAN ONLY}Please complete the following questions."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Please contact <a href=\"mailto:%1\">%1</a> if you need to withdraw more than the maximum amount, as further ID verification is required."
 msgid "{JAPAN ONLY}Please contact <a href='mailto:%1'>%1</a> if you need to withdraw more than the maximum amount, as further ID verification is required."
-msgstr "{JAPAN ONLY}Please contact <a href=\"mailto:%1\">%1</a> if you need to withdraw more than the maximum amount, as further ID verification is required."
+msgstr ""
+"{JAPAN ONLY}Please contact <a href='mailto:%1'>%1</a> if you need to "
+"withdraw more than the maximum amount, as further ID verification is "
+"required."
 
 msgid "{JAPAN ONLY}Please download our Full Trading Guide which describes in detail how to use our trading screens and other features of our website:"
 msgstr "{JAPAN ONLY}Please download our Full Trading Guide which describes in detail how to use our trading screens and other features of our website:"
