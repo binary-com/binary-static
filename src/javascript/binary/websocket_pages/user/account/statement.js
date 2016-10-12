@@ -54,6 +54,7 @@ var Statement = (function(){
             maxDate   : moment().toDate(),
             onSelect  : function() {
                 $('.table-container').remove();
+                StatementUI.clearTableContent();
                 StatementWS.init();
             }
         });

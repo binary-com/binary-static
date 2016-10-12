@@ -549,22 +549,14 @@ Menu.prototype = {
         this.hide_main_menu();
 
         var active = this.active_menu_top();
-        var trading = japanese_client() ? $('#main-navigation-jptrading') : $('#main-navigation-trading');
-        if(active) {
+        var trading = new RegExp(japanese_client() ? '\/jptrading\.html' : '\/trading\.html');
+        var trading_is_active = trading.test(window.location.pathname);
+        if (active) {
             active.addClass('active');
-            if(page.client.is_logged_in || trading.is(active)) {
-                this.show_main_menu();
-            }
-        } else {
-            var is_trading_submenu = /\/cashier|\/resources/.test(window.location.pathname);
-            if(!/\/home/.test(window.location.pathname)) {
-                if (!page.client.is_logged_in && is_trading_submenu) {
-                    trading.addClass('active');
-                    this.show_main_menu();
-                } else if (page.client.is_logged_in) {
-                    this.show_main_menu();
-                }
-            }
+        }
+        var is_trading_submenu = /\/cashier|\/resources/.test(window.location.pathname) || trading_is_active;
+        if(page.client.is_logged_in || trading_is_active || is_trading_submenu) {
+            this.show_main_menu();
         }
     },
     show_main_menu: function() {

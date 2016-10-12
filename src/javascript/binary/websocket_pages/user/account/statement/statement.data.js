@@ -1,5 +1,4 @@
 var StatementData = (function(){
-    var hasOlder = true;
 
     function initSocket(){
         BinarySocket.init({
@@ -34,7 +33,6 @@ var StatementData = (function(){
     return {
         initSocket: initSocket,
         getStatement: getStatement,
-        hasOlder: hasOlder
     };
 }());
 
