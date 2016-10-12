@@ -22,8 +22,9 @@ var StatementData = (function(){
         if(opts){
             $.extend(true, req, opts);
         }
-        if ($('#jump-to').val() !== '') {
-            req.date_to = Math.floor((moment.utc($('#jump-to').val()).valueOf() / 1000)) + (24*60*60);
+        if ($('#jump-to').val() !== '' && $('#jump-to').val() !== 'Today') {
+            req.date_to = Math.floor((moment.utc($('#jump-to').val()).valueOf() / 1000)) +
+                          ((japanese_client() ? 15 : 24) * (60*60));
             req.date_from = 0;
         }
 

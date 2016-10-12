@@ -6,7 +6,7 @@
     </div>
     <div class="gr-row gr-padding-10 invisible">
         <div class="gr-6 gr-12-m">
-            <label>[% l("Jump to date:") %]</label>
+            <label>[% l("Start from:") %]</label>
             <input type="text" maxlength="10" id="jump-to" size="10" readonly="readonly"></input>
         </div>
         <div class="gr-6 gr-12-m align-end">
