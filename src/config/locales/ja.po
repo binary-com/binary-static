@@ -7783,6 +7783,11 @@ msgstr "現在デモ口座を使用されています。"
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "お客さまの%1日の出金限度額は現在%2 %3です。限度額以上の出金額をご希望される場合、本人確認が必要となります。"
 
+#, fuzzy
+#| msgid "Your verification link has expired."
+msgid "Your Application is Being Processed."
+msgstr "認証コードの有効期限が切れています。"
+
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "あなたのクライアントに送金が処理されたことをお知らせする通知メールが届きます。"
 
@@ -8177,11 +8182,13 @@ msgstr "%1はオンライン上のオプション取引業界でのパイオニ�
 msgid "{JAPAN ONLY}251"
 msgstr "251"
 
-msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
-msgstr "60,100,000円（2016年7月1日現在）"
-
 msgid "{JAPAN ONLY}7546677"
 msgstr "7546677"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
+msgid "{JAPAN ONLY}80,100,000 JPY (as of September 20, 2016)"
+msgstr "60,100,000円（2016年7月1日現在）"
 
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 msgstr "円以外の通貨ペアを原資産とする差金決済型の通貨オプションであって、オプション料や権利行使時の決済が円により行われるものは、対象とする通貨ペアによる決済額を算出し、円転のための計算をして金額を確定する仕組みとなっている。"
@@ -13957,9 +13964,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "You shall indemnify on demand and hold the Company harmless from and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses and loss of profit, reasonable legal costs and expenses and VAT thereon if applicable) and liabilities suffered or incurred, directly or indirectly, by the Company in consequence of any breach by you of clause 3.3 or 3.4."
 #~ msgstr "アフィリエイト会員は要求に応じた賠償を行う必要があり、当社に対してあらゆる損失、要求、苦情、損害賠償や費用（重大な損失、利益の損失、法的対応の費用やそれにまつわる付加価値税）を求めることはありません。また、直接的であれ間接的であれ、3.3条または3.4条の違反行為の結果として生じた責任はアフィリエイト会員が負います。"
-
-#~ msgid "Your verification link has expired."
-#~ msgstr "認証コードの有効期限が切れています。"
 
 #~ msgid "%1 is seeking several highly skilled Marketing Executives to join its team of talented professionals."
 #~ msgstr "当社では才能あふれるプロフェッショナルなチームに参加していただく非常に熟練したマーケティング担当者を募集しています。"
