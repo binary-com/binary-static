@@ -90,7 +90,8 @@ var MarketTimesUI = (function() {
             var $submarketTable = createEmptyTable(market.name + '-' + s);
 
             // submarket name
-            $submarketTable.find('thead').prepend(createSubmarketHeader(submarkets[s].name));
+            $submarketTable.find('thead').prepend(createSubmarketHeader(submarkets[s].name))
+                           .find('th.opens, th.closes').addClass('nowrap');
 
             // symbols of this submarket
             var symbols = submarkets[s].symbols;
@@ -121,7 +122,6 @@ var MarketTimesUI = (function() {
             columns,
             "data"
         );
-
         $tableRow.children('.opens').html(symbol.times.open.join('<br />'));
         $tableRow.children('.closes').html(symbol.times.close.join('<br />'));
         $tableRow.children('.upcomingevents').html(createEventsText(symbol.events));
