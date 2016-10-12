@@ -43,7 +43,7 @@
         </p>
         <img class="responsive gr-4 gr-8-m gr-centered" src="[% request.url_for('images/pages/tour-jp/sell_confirm.png') %]" />
         <p>
-          [% l("{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href=\"mailto:[_1]\">[_1]</a>", "support@binary.com") %]
+          [% l("{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href='mailto:[_1]'>[_1]</a>", "support@binary.com") %]
         </p>
         <p>
           [% l("{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account.") %]
