@@ -2,7 +2,7 @@
 <p>[% l("{JAPAN ONLY}You can request a funds transfer to your designated bank account at any time.") %]</p>
 <p>[% l("{JAPAN ONLY}You must have sufficient balance in your trading account at the time of transfer.") %]</p>
 <p>[% l("{JAPAN ONLY}Please note the maximum regular withdrawal amount is ¥1,000,000.") %]</p>
-<p>[% l("{JAPAN ONLY}Please contact <a href=\"mailto:[_1]\">[_1]</a> if you need to withdraw more than the maximum amount, as further ID verification is required.", "support@binary.com") %]</p>
+<p>[% l("{JAPAN ONLY}Please contact <a href='mailto:[_1]'>[_1]</a> if you need to withdraw more than the maximum amount, as further ID verification is required.", "support@binary.com") %]</p>
 <p>[% l("{JAPAN ONLY}Please allow up to 5 business days for the funds to be credited to your designated bank account.") %]</p>
 <p>[% l("{JAPAN ONLY}If your bank account details have changed, please contact Customer Support in order to verify your ID and new account details.") %]</p>
 <p>[% l("{JAPAN ONLY}Please input the amount you would like to withdraw and press the Request button.") %]</p>
