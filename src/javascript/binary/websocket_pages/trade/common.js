@@ -923,7 +923,10 @@ function chartFrameCleanup() {
     /*
      * Prevent IE memory leak (http://stackoverflow.com/questions/8407946).
      */
-    document.getElementById('chart_frame').src = 'about:blank';
+    var chart_frame = document.getElementById('chart_frame');
+    if (chart_frame) {
+        chart_frame.src = 'about:blank';
+    }
 }
 
 function chartFrameSource() {
