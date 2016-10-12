@@ -12,9 +12,7 @@
         <p>
           [% l("{JAPAN ONLY}In the lower panel you can also choose to see your current portfolio with live valuations and quick access to sell-back. Alternatively you can view a live, customizable chart with many add-on features; or see more detailed explanations of the type of option selected; or examine recent settlement prices for expired options.") %]
         </p>
-        <img class="responsive" src="[% request.url_for('images/pages/tour-jp/portfolio.png') %]" />
-        <img class="responsive" src="[% request.url_for('images/pages/tour-jp/chart.png') %]" />
-        <img class="responsive" src="[% request.url_for('images/pages/tour-jp/descriptions.png') %]" />
+        <img class="responsive" src="[% request.url_for('images/pages/tour-jp/analysis.png') %]" />
       </div>
     </div>
   </div>
@@ -27,15 +25,15 @@
         <p>
           [% l("{JAPAN ONLY}To buy an option, simply click on the price button to execute the trade.") %]
         </p>
-        <img class="responsive gr-5 gr-8-m gr-centered" src="[% request.url_for('images/pages/tour-jp/buy_buttons.png') %]" />
+        <img class="responsive gr-5 gr-8-m gr-centered gr-padding-20" src="[% request.url_for('images/pages/tour-jp/buy_buttons.png') %]" />
         <p>
           [% l("{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade.") %]
         </p>
-        <img class="responsive gr-8 gr-12-m gr-centered" src="[% request.url_for('images/pages/tour-jp/tradeview.png') %]" />
+        <img class="responsive gr-8 gr-12-m gr-centered gr-padding-20 gr-parent" src="[% request.url_for('images/pages/tour-jp/tradeview.png') %]" />
         <p>
           [% l("{JAPAN ONLY}This popup window can also be activated from the portfolio panel, and portfolio page, by clicking the Trade View button.") %]
         </p>
-        <img class="responsive gr-10 gr-12-m gr-centered" src="[% request.url_for('images/pages/tour-jp/trade_in_portfolio.png') %]" />
+        <img class="responsive gr-8 gr-12-m gr-centered" src="[% request.url_for('images/pages/tour-jp/trade_in_portfolio.png') %]" />
         <p>
           [% l("{JAPAN ONLY}You can then review the performance of the trade and then sell-back to close the position if you wish, by clicking the sell-back button.") %]
         </p>

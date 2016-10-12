@@ -939,12 +939,13 @@ Contents.prototype = {
             if (page.client.is_virtual()) {
                 var show_upgrade_msg = true;
                 var show_virtual_msg = true;
+                var show_activation_msg = false;
                 if (localStorage.getItem('jp_test_allowed') === "1") {
-                    hide_upgrade();
                     show_virtual_msg = false;
                     show_upgrade_msg = false; // do not show upgrade for user that filled up form
                 } else if ($('.jp_activation_pending').length !== 0) {
                     show_upgrade_msg = false;
+                    show_activation_msg = true;
                 }
                 for (var i = 0; i < loginid_array.length; i++) {
                     if (loginid_array[i].real) {
@@ -964,6 +965,9 @@ Contents.prototype = {
                     }
                 } else if (show_virtual_msg) {
                     $upgrade_msg.removeClass(hiddenClass).find('> span').removeClass(hiddenClass + ' gr-hide-m');
+                    if (show_activation_msg && $('activation-message').length === 0) {
+                        $('#virtual-text').append(' ' + '<div class="activation-message">' + page.text.localize('Your Application is Being Processed.') + '</div>' );
+                    }
                 }
             } else {
                 var show_financial = false;

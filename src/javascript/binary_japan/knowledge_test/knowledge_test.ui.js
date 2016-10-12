@@ -102,13 +102,10 @@ var KnowledgeTestUI = (function () {
     function createKnowledgeTestLink() {
         // change topbar to knowledge test link
         var $topbarmsg = $('#topbar-msg');
-        if ($topbarmsg.length <= 0) {
-            return;         // topbar not exist, do nothing
-        }
 
         $topbarmsg.find('> span').removeClass('invisible');
         $topbarmsg.removeClass('invisible')
-            .find('a').removeClass('invisible').addClass('jp_activation_pending')
+            .find('a').removeClass('invisible')
                 .attr('href', page.url.url_for('/new_account/knowledge_testws')).html($('<span/>', {text: page.text.localize('{JAPAN ONLY}Take knowledge test')}));
     }
 
