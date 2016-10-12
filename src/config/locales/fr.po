@@ -7723,6 +7723,11 @@ msgstr "Vous utilisez un compte virtuel. "
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "Votre limite de retrait sur %1 jours est actuellement de %3 %2 (ou équivalent dans une autre devise)."
 
+#, fuzzy
+#| msgid "Your documents are expired"
+msgid "Your Application is Being Processed."
+msgstr "Vos documents sont expirés"
+
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "Votre Client va recevoir un émail de notification l'informant que le transfert a été effectué."
 
@@ -8102,13 +8107,15 @@ msgstr ""
 msgid "{JAPAN ONLY}251"
 msgstr "{JAPAN ONLY}day"
 
-msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
-msgstr "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
-
 #, fuzzy
 #| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}7546677"
 msgstr "{JAPAN ONLY}day"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
+msgid "{JAPAN ONLY}80,100,000 JPY (as of September 20, 2016)"
+msgstr "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
 
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 msgstr "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
@@ -13938,11 +13945,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "You shall indemnify on demand and hold the Company harmless from and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses and loss of profit, reasonable legal costs and expenses and VAT thereon if applicable) and liabilities suffered or incurred, directly or indirectly, by the Company in consequence of any breach by you of clause 3.3 or 3.4."
 #~ msgstr "Vous devez indemniser et mettre hors de cause en rapport à l'ensemble de pertes, d'exigences, de demandes d’indemnités, de dommages, de frais, de dépenses (incluant, sans s'y limiter, les pertes et les pertes de gains, les coûts et dépenses juridiques raisonnables et la TVA applicable s'il y a lieu) et les engagements financiers subis ou causés, directement ou indirectement, par la Société à cause d'une rupture de votre part de la clause 3.3 ou 3.4."
-
-#, fuzzy
-#~| msgid "Your documents are expired"
-#~ msgid "Your verification link has expired."
-#~ msgstr "Vos documents sont expirés"
 
 #~ msgid "A problem occurred"
 #~ msgstr "Un problème est survenu"

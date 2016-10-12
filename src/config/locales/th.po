@@ -7582,6 +7582,11 @@ msgstr "ท่านกำลังใช้บัญชีเสมือน �
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "วงเงินการถอนเงินต่อวันของท่าน %1 ในปัจจุบัน คือ %2 %3 (หรือเทียบเท่าในสกุลเงินอื่น)"
 
+#, fuzzy
+#| msgid "A verification email has been sent to %1."
+msgid "Your Application is Being Processed."
+msgstr "อีเมล์ได้ถูกส่งแล้วที่ %1."
+
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "ลูกค้าของท่านจะได้รับอีเมล์แจ้งให้ทราบว่า การโอนได้ถูกดำเนินการแล้ว"
 
@@ -7951,11 +7956,13 @@ msgstr "{JAPAN ONLY}%1 was one of the first active Binary Options brokers and ha
 msgid "{JAPAN ONLY}251"
 msgstr "{JAPAN ONLY}251"
 
-msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
-msgstr "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
-
 msgid "{JAPAN ONLY}7546677"
 msgstr "{JAPAN ONLY}7546677"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
+msgid "{JAPAN ONLY}80,100,000 JPY (as of September 20, 2016)"
+msgstr "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
 
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 msgstr "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
@@ -13246,11 +13253,6 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 #~ msgid "Promoting the %1 Site"
 #~ msgstr "ให้การส่งเสริมและโฆษณาเว็บไซต์ %1"
-
-#, fuzzy
-#~| msgid "A verification email has been sent to %1."
-#~ msgid "Your verification link has expired."
-#~ msgstr "อีเมล์ได้ถูกส่งแล้วที่ %1."
 
 #~ msgid "%1 is seeking several highly skilled Marketing Executives to join its team of talented professionals."
 #~ msgstr "%1 กำลังสรรหาบุคลากรทางการตลาด เจ้าหน้าที่การตลาด ที่มีทักษะในระดับสูงเพื่อร่วมทีมกับเรา"

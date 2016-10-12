@@ -7580,6 +7580,11 @@ msgstr "Вы находитесь на демо-счету."
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "Ваш дневной %1 лимит на вывод в настоящее время составляет %2 %3 (или эквивалентную сумму в другой валюте)."
 
+#, fuzzy
+#| msgid "Your verification link has expired."
+msgid "Your Application is Being Processed."
+msgstr "Срок действия Вашей проверочной ссылки истёк."
+
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "Ваш клиент получит по электронной почте уведомление о том, что перевод был выполнен."
 
@@ -7953,13 +7958,15 @@ msgstr "{JAPAN ONLY}%1 was one of the first active Binary Options brokers and ha
 msgid "{JAPAN ONLY}251"
 msgstr "{JAPAN ONLY}day"
 
-msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
-msgstr "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
-
 #, fuzzy
 #| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}7546677"
 msgstr "{JAPAN ONLY}day"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
+msgid "{JAPAN ONLY}80,100,000 JPY (as of September 20, 2016)"
+msgstr "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
 
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 msgstr "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
@@ -13768,9 +13775,6 @@ msgstr "Согласие с правилами и условиями"
 
 #~ msgid "You shall indemnify on demand and hold the Company harmless from and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses and loss of profit, reasonable legal costs and expenses and VAT thereon if applicable) and liabilities suffered or incurred, directly or indirectly, by the Company in consequence of any breach by you of clause 3.3 or 3.4."
 #~ msgstr "Вы обязуетесь возмещать убытки и оградить Компанию от любых потерь, вреда, исков, расходов (включая, но не ограничиваясь потерями вследствие Ваших действий и потерей прибыли, надлежащими юридическими расходами, затратами и НДС, если таковые применимы) и затрат, причиненных Компании напрямую или косвенно путем любого нарушения Вами пунктов 3.3 или 3.4."
-
-#~ msgid "Your verification link has expired."
-#~ msgstr "Срок действия Вашей проверочной ссылки истёк."
 
 #~ msgid "%1 is seeking several highly skilled Marketing Executives to join its team of talented professionals."
 #~ msgstr "%1 ищет несколько высококвалифицированных специалистов по маркетингу, которые присоединятся к нашей команде опытных профессионалов."

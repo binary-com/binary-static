@@ -7574,6 +7574,11 @@ msgstr "Você está usando uma conta virtual."
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "O seu limite de retiradas de %1 dia(s) é atualmente %2 %3 (ou equivalente em outra moeda)."
 
+#, fuzzy
+#| msgid "Your verification link has expired."
+msgid "Your Application is Being Processed."
+msgstr "O seu link de verificação já expirou."
+
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "O seu Cliente receberá uma notificação por e-mail com a informação de que a transferência foi processada."
 
@@ -7947,13 +7952,15 @@ msgstr "{JAPAN ONLY}%1 was one of the first active Binary Options brokers and ha
 msgid "{JAPAN ONLY}251"
 msgstr "{JAPAN ONLY}day"
 
-msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
-msgstr "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
-
 #, fuzzy
 #| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}7546677"
 msgstr "{JAPAN ONLY}day"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
+msgid "{JAPAN ONLY}80,100,000 JPY (as of September 20, 2016)"
+msgstr "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
 
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 msgstr "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
@@ -13743,9 +13750,6 @@ msgstr "Aprovação dos termos e condições"
 
 #~ msgid "You shall indemnify on demand and hold the Company harmless from and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses and loss of profit, reasonable legal costs and expenses and VAT thereon if applicable) and liabilities suffered or incurred, directly or indirectly, by the Company in consequence of any breach by you of clause 3.3 or 3.4."
 #~ msgstr "Você indemnizará a pedido, e isentará a Empresa de responsabilidades decorrentes e contra todas e quaisquer perdas, processos, reclamações, danos, custos, despesas, (includindo mas não exclusivamente as perdas consequenciais e a perda de lucros, custos e despesas legais razoáveis e IVA quando aplicável) e passivos sofridos ou incorridos, direta ou indiretamente, pela Empresa em consequência de alguma violação por sua da cláusula 3.3 ou 3.4."
-
-#~ msgid "Your verification link has expired."
-#~ msgstr "O seu link de verificação já expirou."
 
 #~ msgid "%1 is seeking several highly skilled Marketing Executives to join its team of talented professionals."
 #~ msgstr "A %1 procura vários executivos de marketing altamente qualificados para se juntarem à nossa equipe de profissionais talentosos."
