@@ -15,8 +15,12 @@ var MarketTimesData = (function() {
 
     var sendRequest = function(date, shouldRequestActiveSymbols) {
         initSocket();
+        var req = {"active_symbols": "brief"};
+        if (japanese_client()) {
+            req.landing_company = 'japan';
+        }
         if(shouldRequestActiveSymbols) {
-            BinarySocket.send({"active_symbols": "brief"});
+            BinarySocket.send(req);
         }
 
         BinarySocket.send({"trading_times": date || 'today'});

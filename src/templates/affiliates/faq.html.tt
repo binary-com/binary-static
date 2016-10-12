@@ -100,6 +100,6 @@
     <h2>[% l("Contact") %]</h2>
     <p>
     <h3>[% l("Where can I send my questions, comments and suggestions?") %]</h3>
-    <p>[% l("Please contact us with whatever is on your mind at <a href=\"mailto:[_1]\">[_1]</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us.", affiliate_email) %]</p>
+    <p>[% l("Please contact us with whatever is on your mind at <a href='mailto:[_1]'>[_1]</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us.", affiliate_email) %]</p>
 
 </div>

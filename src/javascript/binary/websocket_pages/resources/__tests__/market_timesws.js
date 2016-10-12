@@ -19,7 +19,7 @@ describe('Trading Times', function() {
     });
 
     it('Should have all functions that are being tested', function() {
-        expect(market_times).to.have.all.of.keys(['getSubmarketInfo']);
+        expect(market_times).to.have.all.of.keys(['getSubmarketInfo', 'getSymbolInfo']);
     });
 
     it('Should trading_times and getSubmarketInfo() have all expected data', function() {
