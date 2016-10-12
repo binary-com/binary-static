@@ -112,7 +112,7 @@
         [% l('{JAPAN ONLY}Our Customer Support staff will contact you at each stage to guide you through the process. Please also download our full guide to opening an account:') %]
       </p>
       <p class="center-text">
-        <a class="button" href="#">
+        <a class="button" href="[% japan_docs_url _ '/documents/binary_account_open_guide.pdf' %]" download target="_blank">
           <span>[% l('{JAPAN ONLY}Download') %]</span>
         </a>
       </p>
@@ -127,7 +127,7 @@
         [% l('{JAPAN ONLY}For full details of the documents we can accept please download the following guide:') %]
       </p>
       <p class="center-text">
-        <a class="button" href="[% japan_docs_url _ '/documents/binary_id_guide.pdf' %]" download>
+        <a class="button" href="[% japan_docs_url _ '/documents/binary_id_guide.pdf' %]" download target="_blank">
           <span>[% l('{JAPAN ONLY}Download') %]</span>
         </a>
       </p>
@@ -144,34 +144,34 @@
       <div class="gr-row">
           <div class="gr-6 gr-12-m gr-12-p">
             <div class="center-text gr-padding-10">
-              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_1.pdf' %]" download>
+              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_1.pdf' %]" download target="_blank">
                 <span class="link-size-box">[% l('{JAPAN ONLY}Introduction to Binary Options') %]</span>
               </a>
             </div>
             <div class="center-text gr-padding-10">
-              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_2.pdf' %]" download>
+              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_2.pdf' %]" download target="_blank">
                 <span class="link-size-box">[% l('{JAPAN ONLY}Purchase, Settlement & Resale') %]</span>
               </a>
             </div>
             <div class="center-text gr-padding-10">
-              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_3.pdf' %]" download>
+              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_3.pdf' %]" download target="_blank">
                 <span class="link-size-box">[% l('{JAPAN ONLY}Options Basics') %]</span>
               </a>
             </div>
           </div>
           <div class="gr-6 gr-12-m gr-12-p">
             <div class="center-text gr-padding-10">
-              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_4.pdf' %]" download>
+              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_4.pdf' %]" download target="_blank">
                 <span class="link-size-box">[% l('{JAPAN ONLY}Trading & Hedging') %]</span>
               </a>
             </div>
             <div class="center-text gr-padding-10">
-              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_5.pdf' %]" download>
+              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_5.pdf' %]" download target="_blank">
                 <span class="link-size-box">[% l('{JAPAN ONLY}Option Pricing') %]</span>
               </a>
             </div>
             <div class="center-text gr-padding-10">
-              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_6.pdf' %]" download>
+              <a class="button" href="[% japan_docs_url _ '/documents/binary_kihon_chishiki_6.pdf' %]" download target="_blank">
                 <span class="link-size-box">[% l('{JAPAN ONLY}Regulation & Tax') %]</span>
               </a>
             </div>
@@ -185,7 +185,7 @@
         [% l('{JAPAN ONLY}Please download our Full Trading Guide which describes in detail how to use our trading screens and other features of our website:') %]
       </p>
       <p class="center-text">
-        <a class="button" href="#">
+        <a class="button" href="[% japan_docs_url _ '/documents/binary_operation_manual.pdf' %]" download target="_blank">
           <span>[% l('{JAPAN ONLY}Download') %]</span>
         </a>
       </p>
@@ -197,7 +197,7 @@
         [% l('{JAPAN ONLY}Please download our Summary of Specifications which lists all the details of our trade types, rules and conditions for trading etc.') %]
       </p>
       <p class="center-text">
-        <a class="button" href="[% japan_docs_url _ '/documents/binary_torihiki_gaiyou.pdf' %]" download>
+        <a class="button" href="[% japan_docs_url _ '/documents/binary_torihiki_gaiyou.pdf' %]" download target="_blank">
           <span>[% l('{JAPAN ONLY}Download') %]</span>
         </a>
       </p>
