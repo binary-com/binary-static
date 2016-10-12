@@ -49,15 +49,17 @@ var Statement = (function(){
     };
 
     var attachDatePicker = function() {
-        $('#jump-to').datepicker({
-            dateFormat: 'yy-mm-dd',
-            maxDate   : moment().toDate(),
-            onSelect  : function() {
-                $('.table-container').remove();
-                StatementUI.clearTableContent();
-                StatementWS.init();
-            }
-        });
+        $('#jump-to').val(page.text.localize('Today'))
+            .datepicker({
+                dateFormat: 'yy-mm-dd',
+                maxDate   : moment().toDate(),
+                onSelect  : function() {
+                    $('#jump-to').val($(this));
+                    $('.table-container').remove();
+                    StatementUI.clearTableContent();
+                    StatementWS.init();
+                }
+            });
     };
 
     var external = {

@@ -13,6 +13,7 @@ pjax_config_page_require_auth("user/statement", function(){
     return {
         onLoad: function() {
             StatementWS.init();
+            Statement.attachDatePicker();
         },
         onUnload: function() {
             StatementWS.clean();
