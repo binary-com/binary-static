@@ -7,14 +7,16 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-12 10:30+0000\n"
+"PO-Revision-Date: 2016-10-13 08:24+0000\n"
 "Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.9-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -922,10 +924,8 @@ msgstr "Расширенная платформа для торговли кон
 msgid "Advanced Platforms"
 msgstr "Расширенные платформы"
 
-#, fuzzy
-#| msgid "Advanced binary options trading platform"
 msgid "Advanced binary options trading interface"
-msgstr "Расширенная платформа для торговли бинарными опционами"
+msgstr "Расширенный интерфейс для торговли бинарными опционами"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "Отличное знание принципов разработки программного обеспечения"
@@ -1281,10 +1281,8 @@ msgstr "Банки, хеджинговые фонды и профессиона�
 msgid "Barrier"
 msgstr "Барьер"
 
-#, fuzzy
-#| msgid "Low Barrier (%1)"
 msgid "Barrier (%1)"
-msgstr "Нижний Барьер (%1)"
+msgstr "Барьер (%1)"
 
 msgid "Barrier Change"
 msgstr "Изменение барьера"
