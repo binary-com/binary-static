@@ -922,11 +922,18 @@ msgstr "Расширенная платформа для торговли кон
 msgid "Advanced Platforms"
 msgstr "Расширенные платформы"
 
-msgid "Advanced binary options trading platform"
+#, fuzzy
+#| msgid "Advanced binary options trading platform"
+msgid "Advanced binary options trading interface"
 msgstr "Расширенная платформа для торговли бинарными опционами"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "Отличное знание принципов разработки программного обеспечения"
+
+#, fuzzy
+#| msgid "Advanced CFD trading platform"
+msgid "Advanced trading app for web and mobile"
+msgstr "Расширенная платформа для торговли контрактами на разницу"
 
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "Консультирование руководителей на переговорах о ставках заработной платы и вакансиях"
@@ -1273,6 +1280,11 @@ msgstr "Банки, хеджинговые фонды и профессиона�
 
 msgid "Barrier"
 msgstr "Барьер"
+
+#, fuzzy
+#| msgid "Low Barrier (%1)"
+msgid "Barrier (%1)"
+msgstr "Нижний Барьер (%1)"
 
 msgid "Barrier Change"
 msgstr "Изменение барьера"
@@ -2567,9 +2579,6 @@ msgstr "Опыт ценообразования экзотических опц�
 msgid "Experience in the financial services industry is preferred"
 msgstr "Опыт в индустрии предоставления финансовых услуг является предпочтительным"
 
-msgid "Experience the future of our trading platform with the Next-Gen app."
-msgstr "Загляните в будущее онлайн торговли через приложение Next-Gen."
-
 msgid "Experience with Git"
 msgstr "Опыт работы с Git"
 
@@ -2602,6 +2611,11 @@ msgstr "Цена при окончании"
 
 msgid "Explanation"
 msgstr "Объяснение"
+
+#, fuzzy
+#| msgid "Experience the future of our trading platform with the Next-Gen app."
+msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
+msgstr "Загляните в будущее онлайн торговли через приложение Next-Gen."
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Большой опыт применения принципов и стандартов усовершенствованного кодирования"
@@ -2818,9 +2832,6 @@ msgstr "Кроме того, при указанных выше или любы�
 
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgstr "Также Компания отказывается от любой ответственности за ненадлежащее функционирование, невозможность доступа или плохие возможности использования API %1, ввиду ненадлежащей работы оборудования, прерывания связи со стороны интернет-провайдеров, перегрузки интернет-сети, а также по любым другим причинам."
-
-msgid "Future of trading on Binary.com"
-msgstr "Будущее торговли на Binary.com"
 
 msgid "GBP"
 msgstr "GBP"
@@ -8943,6 +8954,9 @@ msgstr "Информация о счете"
 
 msgid "Terms and Conditions Approval"
 msgstr "Согласие с правилами и условиями"
+
+#~ msgid "Future of trading on Binary.com"
+#~ msgstr "Будущее торговли на Binary.com"
 
 #~ msgid "Apps"
 #~ msgstr "Приложения"

@@ -927,11 +927,16 @@ msgstr "Panneau Avancé"
 
 #, fuzzy
 #| msgid "it is the leading binary option trading platform."
-msgid "Advanced binary options trading platform"
+msgid "Advanced binary options trading interface"
 msgstr "une plate-forme de trading leader sur le marché des options binaires"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "Connaissance approfondie des principes de conception de logiciel"
+
+#, fuzzy
+#| msgid "main trading platform"
+msgid "Advanced trading app for web and mobile"
+msgstr "plate-forme principal de trade"
 
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "Conseiller les cadres supérieurs de la société concernant les négociations de salaire et les offres d'emploi"
@@ -1282,6 +1287,11 @@ msgstr "Les banques, les fonds spéculatifs et les investisseurs professionnels 
 
 msgid "Barrier"
 msgstr "Barrière"
+
+#, fuzzy
+#| msgid "Low Barrier"
+msgid "Barrier (%1)"
+msgstr "Barrière inférieure"
 
 msgid "Barrier Change"
 msgstr "Modification de barrière"
@@ -2610,9 +2620,6 @@ msgstr "Expérience dans les domaines des options exotiques, des prévisions de 
 msgid "Experience in the financial services industry is preferred"
 msgstr "Il est préférable d'avoir une expérience dans le secteur des services financiers"
 
-msgid "Experience the future of our trading platform with the Next-Gen app."
-msgstr ""
-
 msgid "Experience with Git"
 msgstr "Expérience du travail avec Git"
 
@@ -2645,6 +2652,9 @@ msgstr "Prix d'expiration"
 
 msgid "Explanation"
 msgstr "Explication"
+
+msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
+msgstr ""
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Solide expérience de la mise en application des principes et normes de programmation avancée."
@@ -2867,11 +2877,6 @@ msgstr "De plus, la Société, dans les circonstances décrites ci-dessus ou dan
 
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgstr "En outre, la Société décline toute responsabilité concernant tout type de dysfonctionnement, d'impossibilité d'accès, ou de mauvaises conditions d'utilisation de l'API %1 pouvant découler d'équipements inappropriés, de perturbations liées aux fournisseurs d'accès Internet, de la saturation du réseau Internet ou de toute autre situation."
-
-#, fuzzy
-#| msgid "Purpose of trading"
-msgid "Future of trading on Binary.com"
-msgstr "Purpose of trading"
 
 msgid "GBP"
 msgstr "GBP"
@@ -9166,6 +9171,11 @@ msgstr "Informations du compte"
 
 msgid "Terms and Conditions Approval"
 msgstr "Acceptation des conditions générales"
+
+#, fuzzy
+#~| msgid "Purpose of trading"
+#~ msgid "Future of trading on Binary.com"
+#~ msgstr "Purpose of trading"
 
 #~ msgid "Apps"
 #~ msgstr "Applications"

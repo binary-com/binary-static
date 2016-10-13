@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-10-13 06:55+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -230,9 +229,7 @@ msgid "%1 would like to team up with potential payment agents worldwide so we ca
 msgstr "当社はそれぞれの地域のお客さまに現地決済処理サービスを提供するために、世界中の潜在的な決済サービス会社と提携をしたいと考えています。"
 
 msgid "%1's Continuous Indices are the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75% and 100%."
-msgstr ""
-"当社の連続インデックスには、ボラティリティ10指数、ボラティリティ25指数、ボラティリティ75指数、ボラティリティ100指数があります。これらのインデック"
-"スは10%、25%、50%、75%、100%の一定のボラティリティがシミュレートされた市場に対応しています。"
+msgstr "当社の連続インデックスには、ボラティリティ10指数、ボラティリティ25指数、ボラティリティ75指数、ボラティリティ100指数があります。これらのインデックスは10%、25%、50%、75%、100%の一定のボラティリティがシミュレートされた市場に対応しています。"
 
 msgid "%1's IT Operations Group is responsible for the design, development and operation of the company's high-traffic networks. Its responsibilities include hardware and software deployment, up-time and reliability testing, incident response reporting, network security, intrusion detection, and load balancing."
 msgstr "IT運用グループでは当社の高トラフィックネットワークの設計、開発、運用を担当していただきます。ハードウェアとソフトウェアの導入、アップタイムと信頼性試験、インシデント対応の報告、ネットワークセキュリティ、侵入検知、ロードバランシングの作業を含みます。"
@@ -932,11 +929,18 @@ msgstr "高度なCFD取引プラットフォーム"
 msgid "Advanced Platforms"
 msgstr "最高水準のプラットフォーム"
 
-msgid "Advanced binary options trading platform"
+#, fuzzy
+#| msgid "Advanced binary options trading platform"
+msgid "Advanced binary options trading interface"
 msgstr "最高水準のバイナリーオプション取引プラットフォーム"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "ソフトウェア設計原則の高度な知識"
+
+#, fuzzy
+#| msgid "Advanced CFD trading platform"
+msgid "Advanced trading app for web and mobile"
+msgstr "高度なCFD取引プラットフォーム"
 
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "給料交渉や求人に関する上級管理者へのアドバイス"
@@ -1285,6 +1289,11 @@ msgstr "銀行、ヘッジファンド、プロ投資家の皆様はデリバテ
 
 msgid "Barrier"
 msgstr "バリア価格"
+
+#, fuzzy
+#| msgid "Low Barrier (%1)"
+msgid "Barrier (%1)"
+msgstr "下限バリア"
 
 msgid "Barrier Change"
 msgstr "バリア値の変更"
@@ -2603,9 +2612,6 @@ msgstr "エキゾチックオプションの価格設定、ボラティリティ
 msgid "Experience in the financial services industry is preferred"
 msgstr "金融サービス業界での経験があれば望ましい"
 
-msgid "Experience the future of our trading platform with the Next-Gen app."
-msgstr "Next-Gen アプリで取引プラットフォームの未来を経験しましょう"
-
 msgid "Experience with Git"
 msgstr "Gitの経験"
 
@@ -2638,6 +2644,11 @@ msgstr "終値"
 
 msgid "Explanation"
 msgstr "取引概要"
+
+#, fuzzy
+#| msgid "Experience the future of our trading platform with the Next-Gen app."
+msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
+msgstr "Next-Gen アプリで取引プラットフォームの未来を経験しましょう"
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "高度なコーディングの原則と標準の適用における豊富な経験"
@@ -2854,9 +2865,6 @@ msgstr "また、当社ではそのような状況、またはその他状況下
 
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgstr "また、いかなる誤動作、アクセス不能、不適切な装置の使用による%1 API使用への悪条件、またはインターネットサービスプロバイダーとインターネットネットワークの飽和、及びその他の理由が原因での障害において当社は一切の責任を負いません。"
-
-msgid "Future of trading on Binary.com"
-msgstr "%1での今後のお取引"
 
 msgid "GBP"
 msgstr "GBP"
@@ -4941,9 +4949,7 @@ msgid "Please confirm the transaction details in order to complete the transfer:
 msgstr "送金を完了するために、取引明細をご確認ください。"
 
 msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
-msgstr ""
-"ご不明な点がございましたら、<a href='mailto:%1'>%1</a>までお問い合わせください。喜んでサポートさせていただきます。ご希望、ご要望"
-"等ございましたらお気軽にご連絡ください。"
+msgstr "ご不明な点がございましたら、<a href='mailto:%1'>%1</a>までお問い合わせください。喜んでサポートさせていただきます。ご希望、ご要望等ございましたらお気軽にご連絡ください。"
 
 msgid "Please deposit before transfer to client."
 msgstr "お客さまへ送金される前にご入金をしてください。"
@@ -9194,6 +9200,9 @@ msgstr "ご口座の詳細情報"
 
 msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
+
+#~ msgid "Future of trading on Binary.com"
+#~ msgstr "%1での今後のお取引"
 
 #~ msgid "Apps"
 #~ msgstr "アプリケーション"
