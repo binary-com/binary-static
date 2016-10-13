@@ -918,11 +918,18 @@ msgstr "Piattaforma di trading CFD avanzata"
 msgid "Advanced Platforms"
 msgstr "Piattaforme avanzate"
 
-msgid "Advanced binary options trading platform"
+#, fuzzy
+#| msgid "Advanced binary options trading platform"
+msgid "Advanced binary options trading interface"
 msgstr "Piattaforma di trading avanzata in opzioni binarie"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "Conoscenza avanzata dei principi di progettazione dei software"
+
+#, fuzzy
+#| msgid "Advanced CFD trading platform"
+msgid "Advanced trading app for web and mobile"
+msgstr "Piattaforma di trading CFD avanzata"
 
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "Senior manager di consulenza per le negoziazioni degli stipendi e le offerte di lavoro"
@@ -1269,6 +1276,11 @@ msgstr "Le banche, i fondi speculativi e gli investitori professionisti negozian
 
 msgid "Barrier"
 msgstr "Barriera"
+
+#, fuzzy
+#| msgid "Low Barrier (%1)"
+msgid "Barrier (%1)"
+msgstr "Barriera inferiore (%1)"
 
 msgid "Barrier Change"
 msgstr "Modifica della barriera"
@@ -2565,9 +2577,6 @@ msgstr "Esperienza nel determinare i prezzi delle opzioni esotiche, con le previ
 msgid "Experience in the financial services industry is preferred"
 msgstr "È preferita un'esperienza nel settore dei servizi finanziari"
 
-msgid "Experience the future of our trading platform with the Next-Gen app."
-msgstr "Prova il futuro della nostra piattaforma di trading con l'app Next-Gen."
-
 msgid "Experience with Git"
 msgstr "Esperienza con Git"
 
@@ -2600,6 +2609,11 @@ msgstr "Prezzo di scadenza"
 
 msgid "Explanation"
 msgstr "Spiegazione"
+
+#, fuzzy
+#| msgid "Experience the future of our trading platform with the Next-Gen app."
+msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
+msgstr "Prova il futuro della nostra piattaforma di trading con l'app Next-Gen."
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Ampia esperienza nell'applicazione di principi di sviluppo e standard avanzati"
@@ -2816,11 +2830,6 @@ msgstr "Inoltre, la Società, in tali circostanze, o in qualsiasi altro caso, si
 
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgstr "Inoltre, la Società declina ogni responsabilità per qualsiasi malfunzionamento, impossibilità d'accesso o scarso uso delle condizioni dell'API di %1 dovute ad un'attrezzatura inadeguata, disturbi connessi ai provider di servizi di internet, alla saturazione della rete internet e per qualsiasi altra ragione."
-
-#, fuzzy
-#| msgid "The future of trading on %1"
-msgid "Future of trading on Binary.com"
-msgstr "Il futuro del trading su %1"
 
 msgid "GBP"
 msgstr "GBP"
@@ -9005,6 +9014,11 @@ msgstr "Dettagli dell'account"
 
 msgid "Terms and Conditions Approval"
 msgstr "Approvazione dei termini e delle condizioni"
+
+#, fuzzy
+#~| msgid "The future of trading on %1"
+#~ msgid "Future of trading on Binary.com"
+#~ msgstr "Il futuro del trading su %1"
 
 #~ msgid "Apps"
 #~ msgstr "App"
