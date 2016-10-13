@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-10 10:44+0000\n"
+"PO-Revision-Date: 2016-10-13 05:27+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -224,8 +224,8 @@ msgstr "%1 membawa pulang hadiah utama pada acara EGR Operator Awards 2015, yang
 msgid "%1 would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions."
 msgstr "%1 ingin bekerjasama dengan para exchanger yang memiliki potensi di seluruh dunia untuk menyediakan layanan metode pembayaran lokal kepada pelanggan di berbagai negara."
 
-msgid "%1's Continuous Indices are the Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 25%, 50%, 75% and 100%."
-msgstr "Indeks Berterusan %1  adalah Indeks Volatilitas 25, Indeks Volatilitas 50, Indeks Volatilitas 75 dan Indeks Volatilitas 100. Indeks ini sesuai dengan pasar yang disimulasikan menggunakan volatilitas konstan sebesar 25%, 50%, 75% dan 100%."
+msgid "%1's Continuous Indices are the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75% and 100%."
+msgstr "Indeks Berterusan %1  adalah Indeks Volatilitas 10, Indeks Volatilitas 25, Indeks Volatilitas 50, Indeks Volatilitas 75 dan Indeks Volatilitas 100. Indeks ini sesuai dengan pasar yang disimulasikan menggunakan volatilitas konstan sebesar  10%, 25%, 50%, 75% dan 100%."
 
 msgid "%1's IT Operations Group is responsible for the design, development and operation of the company's high-traffic networks. Its responsibilities include hardware and software deployment, up-time and reliability testing, incident response reporting, network security, intrusion detection, and load balancing."
 msgstr "Grup Operasi IT %1 bertanggung jawab dalam disain, pengembangan dan operasi jaringan trafik tinggi perusahaan. Tanggung jawab lain meliputi hardware dan software deployment, up-time dan uji reliabilitas, insiden pelaporan respon, keamanan jaringan, deteksi intrusi, dan load balancing."
@@ -4875,8 +4875,8 @@ msgstr "Mohon konfirmasikan kontrak pada bagian pernyataan sebelum melanjutkan."
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "Pastikan Anda telah memilih Agen Pembayaran yang benar, salah transfer adalah diluar tanggungjawab kami:"
 
-msgid "Please contact us with whatever is on your mind at <a href=\"mailto:%1\">%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
-msgstr "Silahkan hubungi kami kapan saja di <a href=\"mailto:%1\">%1</a>. Kami dengan senang hati akan membantu Anda. Jadi, jangan ragu untuk berbagi ide dan saran dengan kami."
+msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
+msgstr "Silahkan hubungi kami kapan saja di <a href='mailto:%1'>%1</a>. Kami dengan senang hati akan membantu Anda. Jadi, jangan ragu untuk berbagi ide dan saran dengan kami."
 
 msgid "Please deposit before transfer to client."
 msgstr "Silahkan deposit sebelum melakukan transfer ke klien."
@@ -7580,6 +7580,9 @@ msgstr "Anda menggunakan Akun Virtual."
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "Batas penarikan %1 hari Anda saat ini adalah %2 %3 (atau setara dengan mata uang lainnya)."
 
+msgid "Your Application is Being Processed."
+msgstr "Permohonan Anda Sudah Terproses."
+
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "Klien Anda akan menerima e-mail pemberitahuan bahwa transfer mereka telah diproses."
 
@@ -7949,11 +7952,11 @@ msgstr "{JAPAN ONLY}%1 was one of the first active Binary Options brokers and ha
 msgid "{JAPAN ONLY}251"
 msgstr "{JAPAN ONLY}251"
 
-msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
-msgstr "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
-
 msgid "{JAPAN ONLY}7546677"
 msgstr "{JAPAN ONLY}7546677"
+
+msgid "{JAPAN ONLY}80,100,000 JPY (as of September 20, 2016)"
+msgstr "{JAPAN ONLY}80,100,000 JPY (as of September 20, 2016)"
 
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 msgstr "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
@@ -8312,8 +8315,8 @@ msgstr "{JAPAN ONLY}If you buy a currency binary option at a price of 500 yen, a
 msgid "{JAPAN ONLY}If you buy a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will receive a payout 1,000 yen from the seller of the option."
 msgstr "{JAPAN ONLY}If you buy a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will receive a payout 1,000 yen from the seller of the option."
 
-msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href=\"mailto:%1\">Customer Support</a>."
-msgstr "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href=\"mailto:%1\">Customer Support</a>."
+msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:%1'>Customer Support</a>."
+msgstr "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:%1'>Customer Support</a>."
 
 msgid "{JAPAN ONLY}If you sell a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
 msgstr "{JAPAN ONLY}If you sell a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
@@ -8462,8 +8465,8 @@ msgstr "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to
 msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 
-msgid "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href=\"mailto:%1\">%1</a>"
-msgstr "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href=\"mailto:%1\">%1</a>"
+msgid "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href='mailto:%1'>%1</a>"
+msgstr "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href='mailto:%1'>%1</a>"
 
 msgid "{JAPAN ONLY}Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must be held in the trust bank count every day"
 msgstr "{JAPAN ONLY}Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must be held in the trust bank count every day"
@@ -8486,8 +8489,8 @@ msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-do
 msgid "{JAPAN ONLY}Please complete the following questions."
 msgstr "{JAPAN ONLY}Please complete the following questions."
 
-msgid "{JAPAN ONLY}Please contact <a href=\"mailto:%1\">%1</a> if you need to withdraw more than the maximum amount, as further ID verification is required."
-msgstr "{JAPAN ONLY}Please contact <a href=\"mailto:%1\">%1</a> if you need to withdraw more than the maximum amount, as further ID verification is required."
+msgid "{JAPAN ONLY}Please contact <a href='mailto:%1'>%1</a> if you need to withdraw more than the maximum amount, as further ID verification is required."
+msgstr "{JAPAN ONLY}Please contact <a href='mailto:%1'>%1</a> if you need to withdraw more than the maximum amount, as further ID verification is required."
 
 msgid "{JAPAN ONLY}Please download our Full Trading Guide which describes in detail how to use our trading screens and other features of our website:"
 msgstr "{JAPAN ONLY}Please download our Full Trading Guide which describes in detail how to use our trading screens and other features of our website:"
@@ -13683,9 +13686,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "You shall indemnify on demand and hold the Company harmless from and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses and loss of profit, reasonable legal costs and expenses and VAT thereon if applicable) and liabilities suffered or incurred, directly or indirectly, by the Company in consequence of any breach by you of clause 3.3 or 3.4."
 #~ msgstr "Anda harus mengganti kerugian pada permintaan dan mengecualikan Perusahaan dari dan terhadap setiap dan semua kerugian, tuntutan, klaim, kerusakan, biaya, pengeluaran (termasuk, namun tidak terbatas pada, kerugian konsekuensial dan kehilangan keuntungan, biaya hukum yang wajar dan pengeluaran dan PPN atasnya jika berlaku) dan kewajiban menderita atau dikeluarkan, secara langsung atau tidak langsung, oleh Perusahaan sebagai akibat dari pelanggaran apapun yang anda lakukan pada klausa 3.3 atau 3.4."
-
-#~ msgid "Your verification link has expired."
-#~ msgstr "Link verifikasi Anda telah berakhir."
 
 #~ msgid "%1 is seeking several highly skilled Marketing Executives to join its team of talented professionals."
 #~ msgstr "%1 sedang mencari beberapa Marketing Executive terampil untuk bergabung bersama tim profesional berbakat."

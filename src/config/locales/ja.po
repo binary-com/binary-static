@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-12 00:37+0000\n"
+"PO-Revision-Date: 2016-10-13 06:13+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -228,7 +228,9 @@ msgstr "ロンドンで開催された名誉あるEGRオペレーター賞授賞
 msgid "%1 would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions."
 msgstr "当社はそれぞれの地域のお客さまに現地決済処理サービスを提供するために、世界中の潜在的な決済サービス会社と提携をしたいと考えています。"
 
-msgid "%1's Continuous Indices are the Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 25%, 50%, 75% and 100%."
+#, fuzzy
+#| msgid "%1's Continuous Indices are the Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 25%, 50%, 75% and 100%."
+msgid "%1's Continuous Indices are the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75% and 100%."
 msgstr "当社の連続インデックスには、ボラティリティ25指数、ボラティリティ75指数、ボラティリティ100指数があります。これらのインデックスは25%、50%、75%、100%の一定のボラティリティがシミュレートされた市場に対応しています。"
 
 msgid "%1's IT Operations Group is responsible for the design, development and operation of the company's high-traffic networks. Its responsibilities include hardware and software deployment, up-time and reliability testing, incident response reporting, network security, intrusion detection, and load balancing."
@@ -975,7 +977,7 @@ msgid "All opinions, news, research, analysis, prices or other information conta
 msgstr "当社サイトに掲載されているご意見、ニュース、リサーチ、分析、価格などの情報は、一般的な市場に関するコメントであり、投資に関する助言ではありません。％1ではそのような情報の使用または依存から直接または間接的に生じる可能性がある利益の損失、損害についての責任を一切負いません。"
 
 msgid "All times are in GMT (Greenwich Mean Time)."
-msgstr "当社サイトの時間表示は全て、GMT（グリニッジ標準時）に基づきます。また、下記すべての通貨ペアを取り扱っておりませんので参考情報としてご利用ください。"
+msgstr "当社サイトの時間表示は全て、GMT（グリニッジ標準時）に基づきます。"
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "クライアントへ低い金額（現地通貨）での入金を許可する"
@@ -1410,9 +1412,7 @@ msgid "Binary K.K."
 msgstr "Binary K.K."
 
 msgid "Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590)."
-msgstr ""
-"バイナリー株式会社：〒150-0012 東京都 渋谷区 広尾 1−9−16 広尾宮田ビル 3F\n"
-"第一種金融商品取引業者として登録完了（関東財務局長(金商)第2949号）金融先物取引業協会に加入（会員番号1590号）"
+msgstr "バイナリー株式会社：〒150-0012 東京都 渋谷区 広尾 1−9−16 広尾宮田ビル 3F<br>第一種金融商品取引業者として登録完了（関東財務局長(金商)第2949号）金融先物取引業協会に加入（会員番号1590号）"
 
 msgid "Binary KK granted Japan license"
 msgstr "第一種金融商品取引業者として登録"
@@ -3067,7 +3067,7 @@ msgid "I have read and agree to the"
 msgstr "私は一読したうえで、同意します。"
 
 msgid "I hereby agree and accept that all documents such as pre-contract forms, all terms and conditions, trade reports and other legally required materials will be issued in electronic format only."
-msgstr "電子文書のみで発行される契約締結前文書や全ての利用規約、取引報告書、その他法的に必要な書類などの文書についてここに理解し、同意します。"
+msgstr "電子交付への同意：契約締結前交付書面、取引約款等の書類が電子交付されることに同意します。"
 
 msgid "I understand and agree that, with regard to over-the-counter binary option trading, I have read and understand the general conditions and mechanisms for trading the contract, including details of the underlying financial index, before committing to a transaction."
 msgstr "本取引により想定される損失額（中途売却または解約した場合の解約清算金（試算額）を含む。）を踏まえ、お客さまが許容できる損失額及びお客さまの資産の状況への影響に照らして、お客さま自身が取引できる契約内容であることを確認したこと。（契約締結前交付書面「序文」参照）"
@@ -3091,7 +3091,7 @@ msgid "If a customer holds a long position and the prediction goes wrong as of t
 msgstr "取引期間中のオプション価格は変動すること。（契約締結前交付書面「店頭バイナリーオプション取引のリスクについての説明」-④オプションの価格変動リスク参照）"
 
 msgid "If a customer holds a short position and the prediction is incorrect as of the judgment time, the customer is required to pay the payout amount, and as that will be greater than the trade price that the customer originally received, this will cause a net loss."
-msgstr "売付したバイナリーオプションについて、判定時刻において、予測が外れた場合にはペイアウト額を支払うこと、および支払うペイアウト額が受け取るオプション料以上の額になること。また、同オプションを判定時刻前に買戻し（または解約）した場合には、買戻し額が売付時に受け取るオプション料を上回り、損失が生じるおそれがあること。（参照先を後日、入力予定）"
+msgstr "売付したバイナリーオプションについて、判定時刻において、予測が外れた場合にはペイアウト額を支払うこと、および支払うペイアウト額が受け取るオプション料以上の額になること。また、同オプションを判定時刻前に買戻し（または解約）した場合には、買戻し額が売付時に受け取るオプション料を上回り、損失が生じるおそれがあること。"
 
 msgid "If a customer sells back a long option position before the determination time, then the sale price may be lower than the original purchase price, so there is a possibility of a net loss."
 msgstr "購入したバイナリーオプションについて、判定時刻において、予測が外れた場合には、投資元本がゼロになること。また、同オプションを判定時刻前に売却（または解約）した場合には、売却金額が購入金額を下回り、損失が生じるおそれがあること（契約締結前交付書面「店頭バイナリーオプション取引のリスク等重要事項について」-2及び8参照）"
@@ -4939,7 +4939,9 @@ msgstr "続行する前に、お客さまの取引明細書をご確認くださ
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "送金を完了するために、取引明細をご確認ください。"
 
-msgid "Please contact us with whatever is on your mind at <a href=\"mailto:%1\">%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
+#, fuzzy
+#| msgid "Please contact us with whatever is on your mind at <a href=\"mailto:%1\">%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
+msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgstr "ご不明な点がございましたら、<a href=\"mailto:%1\">%1</a>までお問い合わせください。喜んでサポートさせていただきます。ご希望、ご要望等ございましたらお気軽にご連絡ください。"
 
 msgid "Please deposit before transfer to client."
@@ -5299,7 +5301,7 @@ msgid "Reap the rewards of trading binaries, knowing your funds are always safe.
 msgstr "バイナリー取引を行うことで得られる様々なメリットがあり、お客さまの資金は万全の体制で守られています。"
 
 msgid "Receive news and special offers"
-msgstr "各種キャンペーン等に関するお知らせを受け取る"
+msgstr "各種キャンペーン等に関する<br>お知らせを受け取る"
 
 msgid "Ref."
 msgstr "約定番号"
@@ -7783,6 +7785,11 @@ msgstr "現在デモ口座を使用されています。"
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "お客さまの%1日の出金限度額は現在%2 %3です。限度額以上の出金額をご希望される場合、本人確認が必要となります。"
 
+#, fuzzy
+#| msgid "Your verification link has expired."
+msgid "Your Application is Being Processed."
+msgstr "認証コードの有効期限が切れています。"
+
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "あなたのクライアントに送金が処理されたことをお知らせする通知メールが届きます。"
 
@@ -8177,11 +8184,13 @@ msgstr "%1はオンライン上のオプション取引業界でのパイオニ�
 msgid "{JAPAN ONLY}251"
 msgstr "251"
 
-msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
-msgstr "60,100,000円（2016年7月1日現在）"
-
 msgid "{JAPAN ONLY}7546677"
 msgstr "7546677"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
+msgid "{JAPAN ONLY}80,100,000 JPY (as of September 20, 2016)"
+msgstr "60,100,000円（2016年7月1日現在）"
 
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 msgstr "円以外の通貨ペアを原資産とする差金決済型の通貨オプションであって、オプション料や権利行使時の決済が円により行われるものは、対象とする通貨ペアによる決済額を算出し、円転のための計算をして金額を確定する仕組みとなっている。"
@@ -8289,7 +8298,7 @@ msgid "{JAPAN ONLY}Binary K. K."
 msgstr "Binary株式会社"
 
 msgid "{JAPAN ONLY}Binary K.K. Customer Account"
-msgstr "Binary株式会社　顧客口"
+msgstr "バイナリー（カ）コキャクグチ"
 
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "バイナリーオプションは、売り手の損失が限定されており、バニラオプションに比べ、ローリスクハイリターンな取引といえる。"
@@ -8546,7 +8555,9 @@ msgstr "ペイアウト1,000円のバイナリーコールオプションを500�
 msgid "{JAPAN ONLY}If you buy a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will receive a payout 1,000 yen from the seller of the option."
 msgstr "権利行使価格１ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションを500円で購入し、判定レートが１ドル９９円となり権利行使が行われ、1,000円のペイアウトを受け取った。"
 
-msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href=\"mailto:%1\">Customer Support</a>."
+#, fuzzy
+#| msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href=\"mailto:%1\">Customer Support</a>."
+msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:%1'>Customer Support</a>."
 msgstr "出金依頼の取り消し、またはご質問等ありましたら、<a href=\"%1\">カスタマーサポート</a>までご連絡ください。"
 
 msgid "{JAPAN ONLY}If you sell a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
@@ -8559,7 +8570,7 @@ msgid "{JAPAN ONLY}If you sell a currency binary put option at a price of 500 ye
 msgstr "権利行使価格１ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションの購入代金500円を受け取り、判定レートが１ドル９９円となり権利行使が行われ、1,000円のペイアウトを支払った。"
 
 msgid "{JAPAN ONLY}If you wish to change your designated account or you have any other queries, then please contact Customer Support."
-msgstr "出金先口座情報を変更をご希望の場合、カスタマーサポートまでご連絡ください。"
+msgstr "出金先口座情報の変更をご希望の場合、カスタマーサポートまでご連絡ください。"
 
 msgid "{JAPAN ONLY}If your bank account details have changed, please contact Customer Support in order to verify your ID and new account details."
 msgstr "出金先口座情報に変更がある場合には、お客さまのIDと新規登録したい口座情報を確認する必要がありますので、カスタマーサポートまでご連絡ください。"
@@ -8598,7 +8609,7 @@ msgid "{JAPAN ONLY}In the event of our bankruptcy, your assets will be safeguard
 msgstr "区分管理必要額の算出は当社が行い、信託銀行は行いません。"
 
 msgid "{JAPAN ONLY}In the lower panel you can also choose to see your current portfolio with live valuations and quick access to sell-back. Alternatively you can view a live, customizable chart with many add-on features; or see more detailed explanations of the type of option selected; or examine recent settlement prices for expired options."
-msgstr "下部のポジション一覧のタブでは、お客さまの保有ポジションに対する評価価格を表示され、売却取引を行う場合は緑の「表示」ボタンをクリックしてください。チャートのタブでは、テクニカル分析をしたりチャートのカスタマイズが可能です。（テクニカル分析の指標は英語標記のみです）また、取引概要のタブでは取引しているオプションの判定基準の説明、判定レートのタブでは過去の判定レートの一覧表を表示します。"
+msgstr "下部のポジション一覧のタブでは、お客さまの保有ポジションに対する評価価格が表示され、売却取引を行う場合は緑の「表示」ボタンをクリックしてください。チャートのタブでは、テクニカル分析をしたりチャートのカスタマイズが可能です。（テクニカル分析の指標は英語標記のみです）また、取引概要のタブでは取引しているオプションの判定基準の説明、判定レートのタブでは過去の判定レートの一覧表を表示します。"
 
 msgid "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time"
 msgstr "判定時刻2分前までならいつでも売却取引によりロスカットや利益確定をすることができます"
@@ -8700,7 +8711,9 @@ msgstr "リアル口座開設の手続きを進める上で、ご不明な点等
 msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "リアル口座開設完了までの４ステップ:"
 
-msgid "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href=\"mailto:%1\">%1</a>"
+#, fuzzy
+#| msgid "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href=\"mailto:%1\">%1</a>"
+msgid "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href='mailto:%1'>%1</a>"
 msgstr "当社のカスタマーサポートでは取引画面の操作方法がご不明な場合、丁寧にご説明させて頂きます。サポートが必要な場合は%1までお問い合わせください。"
 
 msgid "{JAPAN ONLY}Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must be held in the trust bank count every day"
@@ -8724,7 +8737,9 @@ msgstr "本人確認およびマイナンバー「個人番号カード」書類
 msgid "{JAPAN ONLY}Please complete the following questions."
 msgstr "知識確認テスト用ディスクレーマー"
 
-msgid "{JAPAN ONLY}Please contact <a href=\"mailto:%1\">%1</a> if you need to withdraw more than the maximum amount, as further ID verification is required."
+#, fuzzy
+#| msgid "{JAPAN ONLY}Please contact <a href=\"mailto:%1\">%1</a> if you need to withdraw more than the maximum amount, as further ID verification is required."
+msgid "{JAPAN ONLY}Please contact <a href='mailto:%1'>%1</a> if you need to withdraw more than the maximum amount, as further ID verification is required."
 msgstr "100万円以上の出金をご希望の場合、IDチェックが必要となりますのでお手数ですがカスタマーサポートまでご連絡してください。"
 
 msgid "{JAPAN ONLY}Please download our Full Trading Guide which describes in detail how to use our trading screens and other features of our website:"
@@ -13957,9 +13972,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "You shall indemnify on demand and hold the Company harmless from and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses and loss of profit, reasonable legal costs and expenses and VAT thereon if applicable) and liabilities suffered or incurred, directly or indirectly, by the Company in consequence of any breach by you of clause 3.3 or 3.4."
 #~ msgstr "アフィリエイト会員は要求に応じた賠償を行う必要があり、当社に対してあらゆる損失、要求、苦情、損害賠償や費用（重大な損失、利益の損失、法的対応の費用やそれにまつわる付加価値税）を求めることはありません。また、直接的であれ間接的であれ、3.3条または3.4条の違反行為の結果として生じた責任はアフィリエイト会員が負います。"
-
-#~ msgid "Your verification link has expired."
-#~ msgstr "認証コードの有効期限が切れています。"
 
 #~ msgid "%1 is seeking several highly skilled Marketing Executives to join its team of talented professionals."
 #~ msgstr "当社では才能あふれるプロフェッショナルなチームに参加していただく非常に熟練したマーケティング担当者を募集しています。"
