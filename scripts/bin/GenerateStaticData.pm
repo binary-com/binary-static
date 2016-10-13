@@ -137,6 +137,7 @@ sub _texts {
         push @texts, localize('Low Barrier ([_1])');
         push @texts, localize('High Barrier');
         push @texts, localize('High Barrier ([_1])');
+        push @texts, localize('Barrier ([_1])');
         push @texts, localize('Next');
         push @texts, localize('Previous');
         push @texts, localize('Su');

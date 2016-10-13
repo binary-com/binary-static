@@ -464,7 +464,7 @@ var Highchart = (function() {
   function draw_barrier() {
     if (chart.yAxis[0].plotLinesAndBands.length === 0) {
       if (contract.barrier) {
-          chart.addPlotLineY({id: 'barrier', value: contract.barrier*1, label: 'Barrier (' + contract.barrier + ')', dashStyle: 'Dot'});
+          chart.addPlotLineY({id: 'barrier', value: contract.barrier*1, label: page.text.localize('Barrier ([_1])').replace('[_1]', contract.barrier), dashStyle: 'Dot'});
       } else if (contract.high_barrier && contract.low_barrier) {
           chart.addPlotLineY({id: 'high_barrier', value: contract.high_barrier*1, label: page.text.localize('High Barrier ([_1])').replace('[_1]', contract.high_barrier), dashStyle: 'Dot'});
           chart.addPlotLineY({id: 'low_barrier', value: contract.low_barrier*1, label: page.text.localize('Low Barrier ([_1])').replace('[_1]', contract.low_barrier), dashStyle: 'Dot'});
