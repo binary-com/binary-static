@@ -248,7 +248,7 @@ var Durations = (function(){
                     }
                     else{
                         var date = new Date(value);
-                        var today = window.time ? window.time.toDate() : new Date();
+                        var today = window.time ? window.time.valueOf() : new Date();
                         dayDiff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
                     }
                     amountElement.val(dayDiff);
@@ -261,7 +261,7 @@ var Durations = (function(){
 
         $('.pickadate').datepicker('destroy');
         $('.pickadate').datepicker({
-            minDate: window.time ? window.time.toDate() : new Date(),
+            minDate: window.time ? window.time.format('YYYY-MM-DD') : new Date(),
             dateFormat: 'yy-mm-dd'
         });
 
