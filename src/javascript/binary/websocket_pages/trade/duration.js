@@ -248,7 +248,7 @@ var Durations = (function(){
                     }
                     else{
                         var date = new Date(value);
-                        var today = window.time ? window.time.toDate() : new Date();
+                        var today = window.time ? window.time.valueOf() : new Date();
                         dayDiff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
                     }
                     amountElement.val(dayDiff);
@@ -261,7 +261,7 @@ var Durations = (function(){
 
         $('.pickadate').datepicker('destroy');
         $('.pickadate').datepicker({
-            minDate: window.time ? window.time.toDate() : new Date(),
+            minDate: window.time ? window.time.format('YYYY-MM-DD') : new Date(),
             dateFormat: 'yy-mm-dd'
         });
 
@@ -347,7 +347,7 @@ var Durations = (function(){
         var expiry_time = document.getElementById('expiry_time');
         $('#expiry_date').val(end_date);
         Defaults.set('expiry_date', end_date);
-        if (moment(end_date).isAfter(moment(window.time),'day')) {
+        if (moment(end_date).isAfter(window.time.format('YYYY-MM-DD HH:mm'), 'day')) {
             Durations.setTime('');
             Defaults.remove('expiry_time');
             StartDates.setNow();
