@@ -9,7 +9,7 @@
     td, th {
         vertical-align: top;
         padding: 10px;
-        width: 100px;
+        width: 120px;
     }
     th {
         position: absolute;
@@ -17,7 +17,7 @@
         width: 90px;
         height: 200px;
         text-align: left;
-        overflow-y: hidden;
+        overflow-y: visible;
         overflow-x: auto;
     }
     .outer {
