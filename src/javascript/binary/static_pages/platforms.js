@@ -20,7 +20,7 @@ var Platforms = (function () {
         var newScrollLeft = $elem.scrollLeft(),
             width = $elem.width(),
             scrollWidth = $elem.get(0).scrollWidth;
-        if (scrollWidth - newScrollLeft - width === 0) {
+        if (scrollWidth - newScrollLeft - width < 90) {
             $fade.css('opacity', '0');
         }
     }
