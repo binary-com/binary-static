@@ -75,7 +75,7 @@ var StatementUI = (function(){
     }
 
     function errorMessage(msg) {
-        var $err = $('#statement-ws-container #err-msg');
+        var $err = $('#statement-ws-container #error-msg');
         if(msg) {
             $err.removeClass('invisible').text(msg);
         } else {

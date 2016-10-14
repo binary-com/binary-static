@@ -25,12 +25,15 @@ var TradingEvents = (function () {
         $dateStartSelect.val(value);
 
         var make_price_request = 1;
-        if (value !== 'now' && $('expiry_type').val() === 'endtime') {
+        if (value !== 'now' && Defaults.get('expiry_type') === 'endtime') {
             make_price_request = -1;
-            var end_time = moment(value*1000).utc().add(15,'minutes');
-            Durations.setTime(Defaults.get('expiry_time') || end_time.format("hh:mm"));
-            Durations.selectEndDate(Defaults.get('expiry_date') || end_time.format("YYYY-MM-DD"));
+            var end_time = moment(parseInt(value)*1000).add(5,'minutes').utc();
+            Durations.setTime((timeIsValid($('#expiry_time')) && Defaults.get('expiry_time') ?
+                               Defaults.get('expiry_time') : end_time.format("HH:mm")));
+            Durations.selectEndDate((timeIsValid($('#expiry_time')) && Defaults.get('expiry_date') ?
+                                    Defaults.get('expiry_date') : end_time.format("YYYY-MM-DD")));
         }
+        timeIsValid($('#expiry_time'));
         Durations.display();
         return make_price_request;
     };
@@ -372,7 +375,7 @@ var TradingEvents = (function () {
         /*
          * attach event to close icon for purchase container
          */
-        $('#close_confirmation_container').on('click', function (e) {
+        $('#close_confirmation_container, #contract_purchase_new_trade').on('click', function (e) {
             if (e.target) {
                 e.preventDefault();
                 document.getElementById('contract_confirmation_container').style.display = 'none';

@@ -37,9 +37,9 @@ var CashierJP = (function() {
         }
     }
     function error_handler() {
-        $('.err-msg').remove();
+        $('.error-msg').remove();
         if (!/^([1-9][0-9]{0,5}|1000000)$/.test($('#id123-control22598145').val())) {
-            $('#id123-control22598145').parent().append('<p class="err-msg">' + Content.errorMessage('number_should_between', '¥1 - ¥1,000,000') + '</p>');
+            $('#id123-control22598145').parent().append('<p class="error-msg">' + Content.errorMessage('number_should_between', '¥1 - ¥1,000,000') + '</p>');
             return false;
         }
         return true;

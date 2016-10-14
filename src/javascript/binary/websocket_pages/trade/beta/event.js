@@ -25,12 +25,15 @@ var TradingEvents_Beta = (function () {
         $dateStartSelect.val(value);
 
         var make_price_request = 1;
-        if (value !== 'now' && $('expiry_type').val() === 'endtime') {
+        if (value !== 'now' && Defaults.get('expiry_type') === 'endtime') {
             make_price_request = -1;
-            var end_time = moment(value*1000).utc().add(15,'minutes');
-            Durations_Beta.setTime(Defaults.get('expiry_time') || end_time.format("hh:mm"));
-            Durations_Beta.selectEndDate(Defaults.get('expiry_date') || end_time.format("YYYY-MM-DD"));
+            var end_time = moment(parseInt(value)*1000).add(5,'minutes').utc();
+            Durations_Beta.setTime((timeIsValid($('#expiry_time')) && Defaults.get('expiry_time') ?
+                               Defaults.get('expiry_time') : end_time.format("HH:mm")));
+            Durations_Beta.selectEndDate((timeIsValid($('#expiry_time')) && Defaults.get('expiry_date') ?
+                                    Defaults.get('expiry_date') : end_time.format("YYYY-MM-DD")));
         }
+        timeIsValid($('#expiry_time'));
         Durations_Beta.display();
         return make_price_request;
     };
@@ -236,15 +239,21 @@ var TradingEvents_Beta = (function () {
             // need to use jquery as datepicker is used, if we switch to some other
             // datepicker we can move back to javascript
             $('#expiry_date').on('change input', function () {
-                Durations_Beta.selectEndDate(this.value);
+                //if start time is less than end time
+                if (timeIsValid($('#expiry_date'))) {
+                    Durations_Beta.selectEndDate(this.value);
+                }
             });
         }
 
         var endTimeElement = document.getElementById('expiry_time');
         if (endTimeElement) {
             $('#expiry_time').on('change input', function () {
-                Durations_Beta.setTime(endTimeElement.value);
-                processPriceRequest_Beta();
+                //if start time is less than end time
+                if (timeIsValid($('#expiry_time'))) {
+                    Durations_Beta.setTime(endTimeElement.value);
+                    processPriceRequest_Beta();
+                }
             });
         }
 
@@ -519,8 +528,17 @@ var TradingEvents_Beta = (function () {
             minDate: new Date(),
             dateFormat: "yy-mm-dd"
         });
-        var date = new Date();
-        $(".pickatime" ).timepicker({minTime:{hour: date.getUTCHours(), minute: date.getUTCMinutes()}});
+        $(".pickatime" ).on('focus', function() {
+            var date_start = document.getElementById('date_start').value;
+            var now = date_start === 'now';
+            var current_moment = moment((now ? window.time : parseInt(date_start) * 1000)).utc();
+            $(this).timepicker('destroy').timepicker({
+                minTime: {
+                    hour: current_moment.format('HH'),
+                    minute: current_moment.format('mm')
+                }
+            });
+        });
     };
 
     return {

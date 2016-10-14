@@ -63,6 +63,7 @@ sub _texts {
         push @texts, localize("(Bejing/CST -8 hours)");
         push @texts, localize('You must accept the terms and conditions to open an account.');
         push @texts, localize('We are not accepting accounts from residents of this country at the present time.');
+        push @texts, localize('End time must be after start time.');
         # top bar
         push @texts, localize('Upgrade to a Real Account');
         push @texts, localize('Upgrade to a Financial Account');

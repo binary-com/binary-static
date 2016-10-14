@@ -1138,6 +1138,25 @@ function moreTabsHandler($ul) {
     });
 }
 
+function timeIsValid($element) {
+    var endDateValue = document.getElementById('expiry_date').value,
+        startDateValue = document.getElementById('date_start').value,
+        endTimeValue = document.getElementById('expiry_time').value || "23:59:59";
+
+    startDateValue = startDateValue === 'now' ? Math.floor(window.time._i/1000) : startDateValue;
+    if (moment.utc(endDateValue + " " + endTimeValue).unix() <= startDateValue) {
+        $element.addClass('error-field');
+        if (!document.getElementById('end_time_validation')) {
+            $('#expiry_type_endtime').append('<p class="error-msg" id="end_time_validation">' + page.text.localize('End time must be after start time.') + '</p>');
+        }
+        return false;
+    } else {
+        $element.removeClass('error-field');
+        $('#end_time_validation').remove();
+        return true;
+    }
+}
+
 module.exports = {
     displayUnderlyings: displayUnderlyings,
     getFormNameBarrierCategory: getFormNameBarrierCategory,
@@ -1182,4 +1201,5 @@ module.exports = {
     label_value: label_value,
     adjustAnalysisColumnHeight: adjustAnalysisColumnHeight,
     moreTabsHandler: moreTabsHandler,
+    timeIsValid: timeIsValid
 };
