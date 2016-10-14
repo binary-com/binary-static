@@ -566,9 +566,9 @@ sub _texts {
         push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] does not touch Exercise price through close on [_4].');
         push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] touches Exercise price through close on [_4].');
         push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] ends on or between low and high values of Exercise price at close on [_4].');
-        push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] ends otside low and high values of Exercise price at close on [_4].');
+        push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] ends outside low and high values of Exercise price at close on [_4].');
         push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] stays between low and high values of Exercise price through close on [_4].');
-        push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] goes ouside of low and high values of Exercise price through close on [_4].');
+        push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] goes outside of low and high values of Exercise price through close on [_4].');
         push @texts, localize('{JAPAN ONLY}Even if all details of the binary options match perfectly, there may still be differences in the prices shown by different broking companies.');
         push @texts, localize('{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary.');
         push @texts, localize('{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time.');
