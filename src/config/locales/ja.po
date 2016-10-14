@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-13 06:13+0000\n"
+"PO-Revision-Date: 2016-10-13 07:24+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -228,10 +228,8 @@ msgstr "ロンドンで開催された名誉あるEGRオペレーター賞授賞
 msgid "%1 would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions."
 msgstr "当社はそれぞれの地域のお客さまに現地決済処理サービスを提供するために、世界中の潜在的な決済サービス会社と提携をしたいと考えています。"
 
-#, fuzzy
-#| msgid "%1's Continuous Indices are the Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 25%, 50%, 75% and 100%."
 msgid "%1's Continuous Indices are the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75% and 100%."
-msgstr "当社の連続インデックスには、ボラティリティ25指数、ボラティリティ75指数、ボラティリティ100指数があります。これらのインデックスは25%、50%、75%、100%の一定のボラティリティがシミュレートされた市場に対応しています。"
+msgstr "当社の連続インデックスには、ボラティリティ10指数、ボラティリティ25指数、ボラティリティ75指数、ボラティリティ100指数があります。これらのインデックスは10%、25%、50%、75%、100%の一定のボラティリティがシミュレートされた市場に対応しています。"
 
 msgid "%1's IT Operations Group is responsible for the design, development and operation of the company's high-traffic networks. Its responsibilities include hardware and software deployment, up-time and reliability testing, incident response reporting, network security, intrusion detection, and load balancing."
 msgstr "IT運用グループでは当社の高トラフィックネットワークの設計、開発、運用を担当していただきます。ハードウェアとソフトウェアの導入、アップタイムと信頼性試験、インシデント対応の報告、ネットワークセキュリティ、侵入検知、ロードバランシングの作業を含みます。"
@@ -931,11 +929,14 @@ msgstr "高度なCFD取引プラットフォーム"
 msgid "Advanced Platforms"
 msgstr "最高水準のプラットフォーム"
 
-msgid "Advanced binary options trading platform"
+msgid "Advanced binary options trading interface"
 msgstr "最高水準のバイナリーオプション取引プラットフォーム"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "ソフトウェア設計原則の高度な知識"
+
+msgid "Advanced trading app for web and mobile"
+msgstr "高度なCFD取引プラットフォーム"
 
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "給料交渉や求人に関する上級管理者へのアドバイス"
@@ -1283,6 +1284,9 @@ msgid "Banks, hedge funds and professional investors routinely trade binary opti
 msgstr "銀行、ヘッジファンド、プロ投資家の皆様はデリバティブ市場でバイナリーオプションを日常的に取引されています。当社の取引プラットフォームは多くのプロ投資家から信頼され、ご利用いただいております。"
 
 msgid "Barrier"
+msgstr "バリア価格"
+
+msgid "Barrier (%1)"
 msgstr "バリア価格"
 
 msgid "Barrier Change"
@@ -2602,9 +2606,6 @@ msgstr "エキゾチックオプションの価格設定、ボラティリティ
 msgid "Experience in the financial services industry is preferred"
 msgstr "金融サービス業界での経験があれば望ましい"
 
-msgid "Experience the future of our trading platform with the Next-Gen app."
-msgstr "Next-Gen アプリで取引プラットフォームの未来を経験しましょう"
-
 msgid "Experience with Git"
 msgstr "Gitの経験"
 
@@ -2637,6 +2638,9 @@ msgstr "終値"
 
 msgid "Explanation"
 msgstr "取引概要"
+
+msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
+msgstr "Next-Gen アプリで取引プラットフォームの未来を経験しましょう"
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "高度なコーディングの原則と標準の適用における豊富な経験"
@@ -2853,9 +2857,6 @@ msgstr "また、当社ではそのような状況、またはその他状況下
 
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgstr "また、いかなる誤動作、アクセス不能、不適切な装置の使用による%1 API使用への悪条件、またはインターネットサービスプロバイダーとインターネットネットワークの飽和、及びその他の理由が原因での障害において当社は一切の責任を負いません。"
-
-msgid "Future of trading on Binary.com"
-msgstr "%1での今後のお取引"
 
 msgid "GBP"
 msgstr "GBP"
@@ -4002,9 +4003,6 @@ msgstr "７月"
 msgid "Jump To"
 msgstr "Xへ移動する"
 
-msgid "Jump to date:"
-msgstr "参照日："
-
 msgid "Jun"
 msgstr "6"
 
@@ -4939,10 +4937,8 @@ msgstr "続行する前に、お客さまの取引明細書をご確認くださ
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "送金を完了するために、取引明細をご確認ください。"
 
-#, fuzzy
-#| msgid "Please contact us with whatever is on your mind at <a href=\"mailto:%1\">%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
-msgstr "ご不明な点がございましたら、<a href=\"mailto:%1\">%1</a>までお問い合わせください。喜んでサポートさせていただきます。ご希望、ご要望等ございましたらお気軽にご連絡ください。"
+msgstr "ご不明な点がございましたら、<a href='mailto:%1'>%1</a>までお問い合わせください。喜んでサポートさせていただきます。ご希望、ご要望等ございましたらお気軽にご連絡ください。"
 
 msgid "Please deposit before transfer to client."
 msgstr "お客さまへ送金される前にご入金をしてください。"
@@ -5783,6 +5779,11 @@ msgstr "取引時刻"
 
 msgid "Start Trading"
 msgstr "トレード開始"
+
+#, fuzzy
+#| msgid "Start Time"
+msgid "Start from:"
+msgstr "取引時刻"
 
 msgid "Start learning"
 msgstr "学習をはじめる"
@@ -6714,6 +6715,11 @@ msgstr "物理学、金融工学、数学の大学上級学位が必要となり
 
 msgid "To reset your password, enter the e-mail address you registered in the field below and click "
 msgstr "パスワードを再設定される場合は下記の入力欄に登録されたメールアドレスを入力し、「パスワード再設定」をクリックしてください。 "
+
+#, fuzzy
+#| msgid "today"
+msgid "Today"
+msgstr "本日"
 
 msgid "Token"
 msgstr "トークン"
@@ -7785,10 +7791,8 @@ msgstr "現在デモ口座を使用されています。"
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "お客さまの%1日の出金限度額は現在%2 %3です。限度額以上の出金額をご希望される場合、本人確認が必要となります。"
 
-#, fuzzy
-#| msgid "Your verification link has expired."
 msgid "Your Application is Being Processed."
-msgstr "認証コードの有効期限が切れています。"
+msgstr "あなたのアプリケーションを処理しています。"
 
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "あなたのクライアントに送金が処理されたことをお知らせする通知メールが届きます。"
@@ -8154,10 +8158,14 @@ msgstr "%3のNO-TOUCHは、取引期間(%4)が終了するまでにバリア価�
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgstr "%3のEND-INは、判定時刻(%4)の時点で上限バリア未満かつ下限バリア以上を予想"
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgstr "%3のEND-OUTは、判定時刻(%4)の時点で上限バリア以上もしくは下限バリア未満を予想"
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgstr "%3のBREAK-OUTは、取引期間中(%4)に上限バリア以上もしくは下限バリア以下を予想"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
@@ -8187,10 +8195,8 @@ msgstr "251"
 msgid "{JAPAN ONLY}7546677"
 msgstr "7546677"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
 msgid "{JAPAN ONLY}80,100,000 JPY (as of September 20, 2016)"
-msgstr "60,100,000円（2016年7月1日現在）"
+msgstr "80,100,000円（2016年9月20日現在）"
 
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 msgstr "円以外の通貨ペアを原資産とする差金決済型の通貨オプションであって、オプション料や権利行使時の決済が円により行われるものは、対象とする通貨ペアによる決済額を算出し、円転のための計算をして金額を確定する仕組みとなっている。"
@@ -8555,10 +8561,8 @@ msgstr "ペイアウト1,000円のバイナリーコールオプションを500�
 msgid "{JAPAN ONLY}If you buy a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will receive a payout 1,000 yen from the seller of the option."
 msgstr "権利行使価格１ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションを500円で購入し、判定レートが１ドル９９円となり権利行使が行われ、1,000円のペイアウトを受け取った。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href=\"mailto:%1\">Customer Support</a>."
 msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:%1'>Customer Support</a>."
-msgstr "出金依頼の取り消し、またはご質問等ありましたら、<a href=\"%1\">カスタマーサポート</a>までご連絡ください。"
+msgstr "出金依頼の取り消し、または出金に関するご質問等ありましたら、<a href=\"%1\">カスタマーサポート</a>までご連絡ください。"
 
 msgid "{JAPAN ONLY}If you sell a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
 msgstr "権利行使価格１ドル100円、ペイアウト1,000円のドル円のコールバイナリーオプションの購入代金500円を受け取り、判定レートが１ドル９９円となり権利行使が行われ、1,000円のペイアウトを支払った。"
@@ -8711,8 +8715,6 @@ msgstr "リアル口座開設の手続きを進める上で、ご不明な点等
 msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "リアル口座開設完了までの４ステップ:"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href=\"mailto:%1\">%1</a>"
 msgid "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href='mailto:%1'>%1</a>"
 msgstr "当社のカスタマーサポートでは取引画面の操作方法がご不明な場合、丁寧にご説明させて頂きます。サポートが必要な場合は%1までお問い合わせください。"
 
@@ -8737,8 +8739,6 @@ msgstr "本人確認およびマイナンバー「個人番号カード」書類
 msgid "{JAPAN ONLY}Please complete the following questions."
 msgstr "知識確認テスト用ディスクレーマー"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Please contact <a href=\"mailto:%1\">%1</a> if you need to withdraw more than the maximum amount, as further ID verification is required."
 msgid "{JAPAN ONLY}Please contact <a href='mailto:%1'>%1</a> if you need to withdraw more than the maximum amount, as further ID verification is required."
 msgstr "100万円以上の出金をご希望の場合、IDチェックが必要となりますのでお手数ですがカスタマーサポートまでご連絡してください。"
 
@@ -9195,6 +9195,12 @@ msgstr "ご口座の詳細情報"
 
 msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
+
+#~ msgid "Jump to date:"
+#~ msgstr "参照日："
+
+#~ msgid "Future of trading on Binary.com"
+#~ msgstr "%1での今後のお取引"
 
 #~ msgid "Apps"
 #~ msgstr "アプリケーション"
@@ -11444,9 +11450,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "plus"
 #~ msgstr "プラス"
-
-#~ msgid "today"
-#~ msgstr "本日"
 
 #~ msgid "USDZAR"
 #~ msgstr "USDZAR"

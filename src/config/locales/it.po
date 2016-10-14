@@ -918,11 +918,18 @@ msgstr "Piattaforma di trading CFD avanzata"
 msgid "Advanced Platforms"
 msgstr "Piattaforme avanzate"
 
-msgid "Advanced binary options trading platform"
+#, fuzzy
+#| msgid "Advanced binary options trading platform"
+msgid "Advanced binary options trading interface"
 msgstr "Piattaforma di trading avanzata in opzioni binarie"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "Conoscenza avanzata dei principi di progettazione dei software"
+
+#, fuzzy
+#| msgid "Advanced CFD trading platform"
+msgid "Advanced trading app for web and mobile"
+msgstr "Piattaforma di trading CFD avanzata"
 
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "Senior manager di consulenza per le negoziazioni degli stipendi e le offerte di lavoro"
@@ -1269,6 +1276,11 @@ msgstr "Le banche, i fondi speculativi e gli investitori professionisti negozian
 
 msgid "Barrier"
 msgstr "Barriera"
+
+#, fuzzy
+#| msgid "Low Barrier (%1)"
+msgid "Barrier (%1)"
+msgstr "Barriera inferiore (%1)"
 
 msgid "Barrier Change"
 msgstr "Modifica della barriera"
@@ -2565,9 +2577,6 @@ msgstr "Esperienza nel determinare i prezzi delle opzioni esotiche, con le previ
 msgid "Experience in the financial services industry is preferred"
 msgstr "È preferita un'esperienza nel settore dei servizi finanziari"
 
-msgid "Experience the future of our trading platform with the Next-Gen app."
-msgstr "Prova il futuro della nostra piattaforma di trading con l'app Next-Gen."
-
 msgid "Experience with Git"
 msgstr "Esperienza con Git"
 
@@ -2600,6 +2609,11 @@ msgstr "Prezzo di scadenza"
 
 msgid "Explanation"
 msgstr "Spiegazione"
+
+#, fuzzy
+#| msgid "Experience the future of our trading platform with the Next-Gen app."
+msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
+msgstr "Prova il futuro della nostra piattaforma di trading con l'app Next-Gen."
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Ampia esperienza nell'applicazione di principi di sviluppo e standard avanzati"
@@ -2816,11 +2830,6 @@ msgstr "Inoltre, la Società, in tali circostanze, o in qualsiasi altro caso, si
 
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgstr "Inoltre, la Società declina ogni responsabilità per qualsiasi malfunzionamento, impossibilità d'accesso o scarso uso delle condizioni dell'API di %1 dovute ad un'attrezzatura inadeguata, disturbi connessi ai provider di servizi di internet, alla saturazione della rete internet e per qualsiasi altra ragione."
-
-#, fuzzy
-#| msgid "The future of trading on %1"
-msgid "Future of trading on Binary.com"
-msgstr "Il futuro del trading su %1"
 
 msgid "GBP"
 msgstr "GBP"
@@ -3946,9 +3955,6 @@ msgstr "Luglio"
 
 msgid "Jump To"
 msgstr "Salta a"
-
-msgid "Jump to date:"
-msgstr "Salta alla data:"
 
 msgid "Jun"
 msgstr "Giu"
@@ -5725,6 +5731,11 @@ msgstr "Orario di inizio"
 msgid "Start Trading"
 msgstr "Inizia il trading"
 
+#, fuzzy
+#| msgid "Start Time"
+msgid "Start from:"
+msgstr "Orario di inizio"
+
 msgid "Start learning"
 msgstr "Inizia l'apprendimento"
 
@@ -6551,6 +6562,11 @@ msgstr "Per essere idoneo, dovrai avere una laurea in Fisica, Ingegneria finanzi
 
 msgid "To reset your password, enter the e-mail address you registered in the field below and click "
 msgstr "Per ripristinare la tua password, inserisci l'indirizzo email indicato in fase di registrazione nel campo sottostante e clicca "
+
+#, fuzzy
+#| msgid "today"
+msgid "Today"
+msgstr "oggi"
 
 msgid "Token"
 msgstr "Token"
@@ -7945,10 +7961,14 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through clo
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
@@ -9005,6 +9025,14 @@ msgstr "Dettagli dell'account"
 
 msgid "Terms and Conditions Approval"
 msgstr "Approvazione dei termini e delle condizioni"
+
+#~ msgid "Jump to date:"
+#~ msgstr "Salta alla data:"
+
+#, fuzzy
+#~| msgid "The future of trading on %1"
+#~ msgid "Future of trading on Binary.com"
+#~ msgstr "Il futuro del trading su %1"
 
 #~ msgid "Apps"
 #~ msgstr "App"
@@ -11227,9 +11255,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 #~ msgid "plus"
 #~ msgstr "più"
-
-#~ msgid "today"
-#~ msgstr "oggi"
 
 #~ msgid "USDZAR"
 #~ msgstr "USDZAR"

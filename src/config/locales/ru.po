@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-12 10:30+0000\n"
-"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
+"PO-Revision-Date: 2016-10-13 08:25+0000\n"
+"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -922,11 +922,16 @@ msgstr "Расширенная платформа для торговли кон
 msgid "Advanced Platforms"
 msgstr "Расширенные платформы"
 
-msgid "Advanced binary options trading platform"
-msgstr "Расширенная платформа для торговли бинарными опционами"
+msgid "Advanced binary options trading interface"
+msgstr "Расширенный интерфейс для торговли бинарными опционами"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "Отличное знание принципов разработки программного обеспечения"
+
+#, fuzzy
+#| msgid "Advanced CFD trading platform"
+msgid "Advanced trading app for web and mobile"
+msgstr "Расширенная платформа для торговли контрактами на разницу"
 
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "Консультирование руководителей на переговорах о ставках заработной платы и вакансиях"
@@ -1273,6 +1278,9 @@ msgstr "Банки, хеджинговые фонды и профессиона�
 
 msgid "Barrier"
 msgstr "Барьер"
+
+msgid "Barrier (%1)"
+msgstr "Барьер (%1)"
 
 msgid "Barrier Change"
 msgstr "Изменение барьера"
@@ -2567,9 +2575,6 @@ msgstr "Опыт ценообразования экзотических опц�
 msgid "Experience in the financial services industry is preferred"
 msgstr "Опыт в индустрии предоставления финансовых услуг является предпочтительным"
 
-msgid "Experience the future of our trading platform with the Next-Gen app."
-msgstr "Загляните в будущее онлайн торговли через приложение Next-Gen."
-
 msgid "Experience with Git"
 msgstr "Опыт работы с Git"
 
@@ -2602,6 +2607,11 @@ msgstr "Цена при окончании"
 
 msgid "Explanation"
 msgstr "Объяснение"
+
+#, fuzzy
+#| msgid "Experience the future of our trading platform with the Next-Gen app."
+msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
+msgstr "Загляните в будущее онлайн торговли через приложение Next-Gen."
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Большой опыт применения принципов и стандартов усовершенствованного кодирования"
@@ -2818,9 +2828,6 @@ msgstr "Кроме того, при указанных выше или любы�
 
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgstr "Также Компания отказывается от любой ответственности за ненадлежащее функционирование, невозможность доступа или плохие возможности использования API %1, ввиду ненадлежащей работы оборудования, прерывания связи со стороны интернет-провайдеров, перегрузки интернет-сети, а также по любым другим причинам."
-
-msgid "Future of trading on Binary.com"
-msgstr "Будущее торговли на Binary.com"
 
 msgid "GBP"
 msgstr "GBP"
@@ -3944,9 +3951,6 @@ msgstr "Июль"
 
 msgid "Jump To"
 msgstr "Перейти к"
-
-msgid "Jump to date:"
-msgstr "Перейти к дате:"
 
 msgid "Jun"
 msgstr "Июн"
@@ -5712,6 +5716,11 @@ msgstr "Время начала"
 msgid "Start Trading"
 msgstr "Начните торговлю"
 
+#, fuzzy
+#| msgid "Start Time"
+msgid "Start from:"
+msgstr "Время начала"
+
 msgid "Start learning"
 msgstr "Начните обучение"
 
@@ -6540,6 +6549,11 @@ msgstr "Чтобы претендовать на эту должность, вы
 
 msgid "To reset your password, enter the e-mail address you registered in the field below and click "
 msgstr "Чтобы изменить пароль, введите Ваш зарегистрированный эл. адрес в поле внизу и нажмите "
+
+#, fuzzy
+#| msgid "today"
+msgid "Today"
+msgstr "сегодня"
 
 msgid "Token"
 msgstr "Ключ"
@@ -7580,10 +7594,8 @@ msgstr "Вы находитесь на демо-счету."
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "Ваш дневной %1 лимит на вывод в настоящее время составляет %2 %3 (или эквивалентную сумму в другой валюте)."
 
-#, fuzzy
-#| msgid "Your verification link has expired."
 msgid "Your Application is Being Processed."
-msgstr "Срок действия Вашей проверочной ссылки истёк."
+msgstr "Ваша заявка обрабатывается."
 
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "Ваш клиент получит по электронной почте уведомление о том, что перевод был выполнен."
@@ -7927,10 +7939,14 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through clo
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
@@ -8943,6 +8959,12 @@ msgstr "Информация о счете"
 
 msgid "Terms and Conditions Approval"
 msgstr "Согласие с правилами и условиями"
+
+#~ msgid "Jump to date:"
+#~ msgstr "Перейти к дате:"
+
+#~ msgid "Future of trading on Binary.com"
+#~ msgstr "Будущее торговли на Binary.com"
 
 #~ msgid "Apps"
 #~ msgstr "Приложения"
@@ -11200,9 +11222,6 @@ msgstr "Согласие с правилами и условиями"
 
 #~ msgid "plus"
 #~ msgstr "плюс"
-
-#~ msgid "today"
-#~ msgstr "сегодня"
 
 #~ msgid "USDZAR"
 #~ msgstr "USDZAR"

@@ -916,11 +916,18 @@ msgstr "進階差價合約交易平台"
 msgid "Advanced Platforms"
 msgstr "進階平台"
 
-msgid "Advanced binary options trading platform"
+#, fuzzy
+#| msgid "Advanced binary options trading platform"
+msgid "Advanced binary options trading interface"
 msgstr "進階二元期權交易平台"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "先進的軟體設計原則知識"
+
+#, fuzzy
+#| msgid "Advanced CFD trading platform"
+msgid "Advanced trading app for web and mobile"
+msgstr "進階差價合約交易平台"
 
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "向高級管理人員提供關於薪金協商和錄取人員的建議"
@@ -1267,6 +1274,11 @@ msgstr "銀行、對沖基金及專業投資者經常在衍生品場外市場交
 
 msgid "Barrier"
 msgstr "障礙"
+
+#, fuzzy
+#| msgid "Low Barrier (%1)"
+msgid "Barrier (%1)"
+msgstr "低障礙 (%1)"
 
 msgid "Barrier Change"
 msgstr "障礙變更"
@@ -2559,9 +2571,6 @@ msgstr "擁有奇異性期權訂價、波動性預測、高頻交易與低效率
 msgid "Experience in the financial services industry is preferred"
 msgstr "有金融服務業工作經驗者優先考慮"
 
-msgid "Experience the future of our trading platform with the Next-Gen app."
-msgstr "使用「下一代」應用程式，體驗我們未來的交易平台。"
-
 msgid "Experience with Git"
 msgstr "有Git 經驗"
 
@@ -2594,6 +2603,11 @@ msgstr "到期價格"
 
 msgid "Explanation"
 msgstr "說明"
+
+#, fuzzy
+#| msgid "Experience the future of our trading platform with the Next-Gen app."
+msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
+msgstr "使用「下一代」應用程式，體驗我們未來的交易平台。"
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "有豐富的高階編碼原則和標準應用經驗"
@@ -2810,9 +2824,6 @@ msgstr "此外，在以上或其它任何情況下，如果發生交易中斷、
 
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgstr "此外，%1 API 由於不適當的設備、網路服務提供者干擾、網路飽和以及任何其他理由所造成的所有的任何故障、無法訪問、或不良的使用條件，本公司概不負責。"
-
-msgid "Future of trading on Binary.com"
-msgstr "Binary.com交易功能"
 
 msgid "GBP"
 msgstr "英鎊"
@@ -3936,9 +3947,6 @@ msgstr "七月"
 
 msgid "Jump To"
 msgstr "跳至"
-
-msgid "Jump to date:"
-msgstr "跳至日期:"
 
 msgid "Jun"
 msgstr "六月"
@@ -5701,6 +5709,11 @@ msgstr "開始時間"
 msgid "Start Trading"
 msgstr "開始交易"
 
+#, fuzzy
+#| msgid "Start Time"
+msgid "Start from:"
+msgstr "開始時間"
+
 msgid "Start learning"
 msgstr "開始學習"
 
@@ -6527,6 +6540,11 @@ msgstr "要獲得錄取資格，您必須擁有物理、金融工程或數學專
 
 msgid "To reset your password, enter the e-mail address you registered in the field below and click "
 msgstr "如要重新設定密碼，在下面的欄位中輸入您註冊的電子郵件地址並點選 "
+
+#, fuzzy
+#| msgid "today"
+msgid "Today"
+msgstr "今天"
 
 msgid "Token"
 msgstr "權杖"
@@ -7911,10 +7929,14 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through clo
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
@@ -8927,6 +8949,12 @@ msgstr "帳戶詳細資料"
 
 msgid "Terms and Conditions Approval"
 msgstr "條款和條件審批"
+
+#~ msgid "Jump to date:"
+#~ msgstr "跳至日期:"
+
+#~ msgid "Future of trading on Binary.com"
+#~ msgstr "Binary.com交易功能"
 
 #~ msgid "Apps"
 #~ msgstr "應用程式"
@@ -11136,9 +11164,6 @@ msgstr "條款和條件審批"
 
 #~ msgid "plus"
 #~ msgstr "加"
-
-#~ msgid "today"
-#~ msgstr "今天"
 
 #~ msgid "USDZAR"
 #~ msgstr "美元兌南非蘭特"
