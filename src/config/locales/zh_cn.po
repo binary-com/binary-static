@@ -3,9 +3,10 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-13 03:45+0000\n"
+"PO-Revision-Date: 2016-10-14 06:18+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) "
+"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -918,18 +919,14 @@ msgstr "高级差价合约交易平台"
 msgid "Advanced Platforms"
 msgstr "高级平台"
 
-#, fuzzy
-#| msgid "Advanced binary options trading platform"
 msgid "Advanced binary options trading interface"
-msgstr "高级二元期权交易平台"
+msgstr "高级二元期权交易界面"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "深入的软件设计原则知识"
 
-#, fuzzy
-#| msgid "Advanced CFD trading platform"
 msgid "Advanced trading app for web and mobile"
-msgstr "高级差价合约交易平台"
+msgstr "高级网站与移动交易应用"
 
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "向高级管理人员提供关于工资协商和录用的建议"
@@ -1277,10 +1274,8 @@ msgstr "银行、对冲基金及专业投资者经常在衍生品场外市场交
 msgid "Barrier"
 msgstr "障碍"
 
-#, fuzzy
-#| msgid "Low Barrier (%1)"
 msgid "Barrier (%1)"
-msgstr "低障碍(%1)"
+msgstr "障碍(%1)"
 
 msgid "Barrier Change"
 msgstr "障碍变更"
@@ -2608,10 +2603,8 @@ msgstr "到期价格"
 msgid "Explanation"
 msgstr "说明"
 
-#, fuzzy
-#| msgid "Experience the future of our trading platform with the Next-Gen app."
 msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
-msgstr "使用“下一代”应用程序，体验我们未来的交易平台。"
+msgstr "使用“下一代”网站与移动应用程序，探索高级交易功能。"
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "有丰富的先进编码原则和标准应用经验"
@@ -5715,10 +5708,8 @@ msgstr "开始时间"
 msgid "Start Trading"
 msgstr "开始交易"
 
-#, fuzzy
-#| msgid "Start Time"
 msgid "Start from:"
-msgstr "开始时间"
+msgstr "开始时间："
 
 msgid "Start learning"
 msgstr "开始学习"
@@ -6549,8 +6540,6 @@ msgstr "要获得录取资格，您必须拥有物理、金融工程或数学专
 msgid "To reset your password, enter the e-mail address you registered in the field below and click "
 msgstr "如要重新设置密码，在下面输入您注册的电子邮件并点击 "
 
-#, fuzzy
-#| msgid "today"
 msgid "Today"
 msgstr "今天"
 
@@ -7940,15 +7929,15 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through clo
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+msgstr ""
+"{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise "
+"price at close on %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
 msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+msgstr ""
+"{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of "
+"Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
