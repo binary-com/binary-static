@@ -429,6 +429,7 @@ sub _texts {
         push @texts, localize('Your account has no trading activity.');
         push @texts, localize('Withdrawal');
         push @texts, localize('Virtual money credit to account');
+        push @texts, localize('Today');
 
         #strings for authenticate page
         push @texts, localize('To authenticate your account, kindly email the following to [_1]');
