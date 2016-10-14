@@ -29,7 +29,7 @@
                         <option disabled="[% true %]">
                             [% l("Select Country") %]
                         </option>
-                        <option value="+61 (02) 8294 5448">
+                        <option value="[% l('[_1] (Toll Free)', '+61 (02) 8294 5448, 1800 093570') %]">
                             [% l("Australia") %]
                         </option>
                         <option value="+1 (450) 823 1002">
@@ -38,37 +38,27 @@
                         <option value="+49 0221 98259000">
                             [% l("Germany") %]
                         </option>
-                        <option value="+353 (0) 76 888 7500">
+                        <option value="[% l('[_1] (Toll Free)', '0018030113641') %]">
+                            [% l("Indonesia") %]
+                        </option>
+                        <option value="[% l('[_1] (Toll Free)', '+353 (0) 76 888 7500, 1800931084') %]">
                             [% l("Ireland") %]
                         </option>
                         <option value="+48 58 881 00 02">
                             [% l("Poland") %]
                         </option>
-                        <option selected="[% true %]" value="+44 (0) 1666 800042">
-                            [% l("United Kingdom") %]
-                        </option>
-                        <option disabled="[% true %]">
-                            [% l("== Toll Free ==") %]
-                        </option>
-                        <option value="1800 093570">
-                            [% l("Australia") %]
-                        </option>
-                        <option value="0018030113641">
-                            [% l("Indonesia") %]
-                        </option>
-                        <option value="1800931084">
-                            [% l("Ireland") %]
-                        </option>
-                        <option value="8 10 8002 8553011">
+                        <option value="[% l('[_1] (Toll Free)', '8 10 8002 8553011') %]">
                             [% l("Russia") %]
                         </option>
-                        <option value="0800 011 9847">
+                        <option selected="[% true %]" value="[% l('[_1] (Toll Free)', '+44 (0) 1666 800042, 0800 011 9847') %]">
                             [% l("United Kingdom") %]
                         </option>
                     </select>
                 </span>
-                <span class="gr-7 gr-prefix-4 gr-12-t gr-prefix-t-0 gr-padding-10 gr-12-m" id="display_cs_telephone">
+                <span class="gr-8 gr-prefix-4 gr-12-t gr-prefix-t-0 gr-padding-10 gr-12-m" id="display_cs_telephone">
                     [% "+44 (0) 1666 800042" %]
+                    <br />
+                    [% l("[_1] (Toll Free)", "0800 011 9847") %]
                 </span>
             </div>
             <div class="gr-padding-10">
