@@ -3952,9 +3952,6 @@ msgstr "七月"
 msgid "Jump To"
 msgstr "跳至"
 
-msgid "Jump to date:"
-msgstr "跳至日期："
-
 msgid "Jun"
 msgstr "六月"
 
@@ -5718,6 +5715,11 @@ msgstr "开始时间"
 msgid "Start Trading"
 msgstr "开始交易"
 
+#, fuzzy
+#| msgid "Start Time"
+msgid "Start from:"
+msgstr "开始时间"
+
 msgid "Start learning"
 msgstr "开始学习"
 
@@ -6546,6 +6548,11 @@ msgstr "要获得录取资格，您必须拥有物理、金融工程或数学专
 
 msgid "To reset your password, enter the e-mail address you registered in the field below and click "
 msgstr "如要重新设置密码，在下面输入您注册的电子邮件并点击 "
+
+#, fuzzy
+#| msgid "today"
+msgid "Today"
+msgstr "今天"
 
 msgid "Token"
 msgstr "令牌"
@@ -7933,10 +7940,14 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through clo
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
@@ -8949,6 +8960,9 @@ msgstr "账户详情"
 
 msgid "Terms and Conditions Approval"
 msgstr "条款和条件审批"
+
+#~ msgid "Jump to date:"
+#~ msgstr "跳至日期："
 
 #~ msgid "Future of trading on Binary.com"
 #~ msgstr "Binary.com交易功能"
@@ -11181,9 +11195,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "plus"
 #~ msgstr "加"
-
-#~ msgid "today"
-#~ msgstr "今天"
 
 #~ msgid "USDZAR"
 #~ msgstr "美元兑南非兰特"

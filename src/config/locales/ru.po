@@ -9,14 +9,12 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-10-13 08:25+0000\n"
 "Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
-"Language-Team: Russian "
-"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.9-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -3954,9 +3952,6 @@ msgstr "Июль"
 msgid "Jump To"
 msgstr "Перейти к"
 
-msgid "Jump to date:"
-msgstr "Перейти к дате:"
-
 msgid "Jun"
 msgstr "Июн"
 
@@ -5721,6 +5716,11 @@ msgstr "Время начала"
 msgid "Start Trading"
 msgstr "Начните торговлю"
 
+#, fuzzy
+#| msgid "Start Time"
+msgid "Start from:"
+msgstr "Время начала"
+
 msgid "Start learning"
 msgstr "Начните обучение"
 
@@ -6549,6 +6549,11 @@ msgstr "Чтобы претендовать на эту должность, вы
 
 msgid "To reset your password, enter the e-mail address you registered in the field below and click "
 msgstr "Чтобы изменить пароль, введите Ваш зарегистрированный эл. адрес в поле внизу и нажмите "
+
+#, fuzzy
+#| msgid "today"
+msgid "Today"
+msgstr "сегодня"
 
 msgid "Token"
 msgstr "Ключ"
@@ -7934,10 +7939,14 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through clo
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
@@ -8950,6 +8959,9 @@ msgstr "Информация о счете"
 
 msgid "Terms and Conditions Approval"
 msgstr "Согласие с правилами и условиями"
+
+#~ msgid "Jump to date:"
+#~ msgstr "Перейти к дате:"
 
 #~ msgid "Future of trading on Binary.com"
 #~ msgstr "Будущее торговли на Binary.com"
@@ -11210,9 +11222,6 @@ msgstr "Согласие с правилами и условиями"
 
 #~ msgid "plus"
 #~ msgstr "плюс"
-
-#~ msgid "today"
-#~ msgstr "сегодня"
 
 #~ msgid "USDZAR"
 #~ msgstr "USDZAR"

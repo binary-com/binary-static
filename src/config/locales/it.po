@@ -3956,9 +3956,6 @@ msgstr "Luglio"
 msgid "Jump To"
 msgstr "Salta a"
 
-msgid "Jump to date:"
-msgstr "Salta alla data:"
-
 msgid "Jun"
 msgstr "Giu"
 
@@ -5734,6 +5731,11 @@ msgstr "Orario di inizio"
 msgid "Start Trading"
 msgstr "Inizia il trading"
 
+#, fuzzy
+#| msgid "Start Time"
+msgid "Start from:"
+msgstr "Orario di inizio"
+
 msgid "Start learning"
 msgstr "Inizia l'apprendimento"
 
@@ -6560,6 +6562,11 @@ msgstr "Per essere idoneo, dovrai avere una laurea in Fisica, Ingegneria finanzi
 
 msgid "To reset your password, enter the e-mail address you registered in the field below and click "
 msgstr "Per ripristinare la tua password, inserisci l'indirizzo email indicato in fase di registrazione nel campo sottostante e clicca "
+
+#, fuzzy
+#| msgid "today"
+msgid "Today"
+msgstr "oggi"
 
 msgid "Token"
 msgstr "Token"
@@ -7954,10 +7961,14 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through clo
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
@@ -9014,6 +9025,9 @@ msgstr "Dettagli dell'account"
 
 msgid "Terms and Conditions Approval"
 msgstr "Approvazione dei termini e delle condizioni"
+
+#~ msgid "Jump to date:"
+#~ msgstr "Salta alla data:"
 
 #, fuzzy
 #~| msgid "The future of trading on %1"
@@ -11241,9 +11255,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 #~ msgid "plus"
 #~ msgstr "più"
-
-#~ msgid "today"
-#~ msgstr "oggi"
 
 #~ msgid "USDZAR"
 #~ msgstr "USDZAR"
