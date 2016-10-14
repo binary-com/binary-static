@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-13 07:24+0000\n"
+"PO-Revision-Date: 2016-10-14 04:15+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -5780,10 +5781,8 @@ msgstr "取引時刻"
 msgid "Start Trading"
 msgstr "トレード開始"
 
-#, fuzzy
-#| msgid "Start Time"
 msgid "Start from:"
-msgstr "取引時刻"
+msgstr "検索期間"
 
 msgid "Start learning"
 msgstr "学習をはじめる"
@@ -6716,8 +6715,6 @@ msgstr "物理学、金融工学、数学の大学上級学位が必要となり
 msgid "To reset your password, enter the e-mail address you registered in the field below and click "
 msgstr "パスワードを再設定される場合は下記の入力欄に登録されたメールアドレスを入力し、「パスワード再設定」をクリックしてください。 "
 
-#, fuzzy
-#| msgid "today"
 msgid "Today"
 msgstr "本日"
 
@@ -8158,13 +8155,9 @@ msgstr "%3のNO-TOUCHは、取引期間(%4)が終了するまでにバリア価�
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgstr "%3のEND-INは、判定時刻(%4)の時点で上限バリア未満かつ下限バリア以上を予想"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgstr "%3のEND-OUTは、判定時刻(%4)の時点で上限バリア以上もしくは下限バリア未満を予想"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
 msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgstr "%3のBREAK-OUTは、取引期間中(%4)に上限バリア以上もしくは下限バリア以下を予想"
 
