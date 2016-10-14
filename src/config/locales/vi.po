@@ -922,11 +922,18 @@ msgstr "Nền tảng giao dịch CFD cấp cao"
 msgid "Advanced Platforms"
 msgstr "Nền tảng cấp cao"
 
-msgid "Advanced binary options trading platform"
+#, fuzzy
+#| msgid "Advanced binary options trading platform"
+msgid "Advanced binary options trading interface"
 msgstr "Nền tảng giao dịch Tùy Chọn Nhị Phân cấp cao"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "Nắm vững kiến thức về nguyên tắc thiết kế phần mềm"
+
+#, fuzzy
+#| msgid "Advanced CFD trading platform"
+msgid "Advanced trading app for web and mobile"
+msgstr "Nền tảng giao dịch CFD cấp cao"
 
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "Nhà quản lý cấp cao liên quan đến đàm phán mức lương và yêu cầu công việc"
@@ -1273,6 +1280,11 @@ msgstr "Ngân hàng, quỹ đầu tư và những nhà đầu tư chuyên nghi�
 
 msgid "Barrier"
 msgstr "Rào cản"
+
+#, fuzzy
+#| msgid "Low Barrier"
+msgid "Barrier (%1)"
+msgstr "Rào cản Thấp"
 
 msgid "Barrier Change"
 msgstr "Giới hạn Thay đổi"
@@ -2569,9 +2581,6 @@ msgstr "Kinh nghiệm trong tùy chọn định giá, dự báo biến động, 
 msgid "Experience in the financial services industry is preferred"
 msgstr "Kinh nghiệm trong ngành công nghiệp dịch vụ tài chính là một lợi thế"
 
-msgid "Experience the future of our trading platform with the Next-Gen app."
-msgstr "Trải nghiệm tương lai của nền tảng giao dịch của chúng tôi với ứng dụng Next-Gen."
-
 msgid "Experience with Git"
 msgstr "Kinh nghiệm với Git"
 
@@ -2604,6 +2613,11 @@ msgstr "Giá hết hạn"
 
 msgid "Explanation"
 msgstr "Giải thích"
+
+#, fuzzy
+#| msgid "Experience the future of our trading platform with the Next-Gen app."
+msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
+msgstr "Trải nghiệm tương lai của nền tảng giao dịch của chúng tôi với ứng dụng Next-Gen."
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Giàu kinh nghiệm trong việc áp dụng nguyên tắc mã hóa tiên tiến và các tiêu chuẩn"
@@ -2820,9 +2834,6 @@ msgstr "Hơn nữa, Công ty trong trường hợp trên hoặc bất cứ trư�
 
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgstr "Hơn nữa, Công ty từ chối tất cả trách nhiệm với bất kỳ trục trặc, mục không thể truy cập hoặc điều kiện sử dụng %1 API không tốt do thiết bị không phù hợp, sự cố liên quan đến nhà cung cấp dịch vụ internet, nghẽn mạng internet, hoặc bất kỳ lý do nào khác."
-
-msgid "Future of trading on Binary.com"
-msgstr "Tương lai của giao dịch trên Binary.com"
 
 msgid "GBP"
 msgstr "GBP"
@@ -3948,11 +3959,6 @@ msgstr "Tháng Bảy"
 
 msgid "Jump To"
 msgstr "Nhảy đến"
-
-#, fuzzy
-#| msgid "Jump to"
-msgid "Jump to date:"
-msgstr "Nhẩy vào"
 
 msgid "Jun"
 msgstr "Tháng Sáu"
@@ -5727,6 +5733,11 @@ msgstr "Thời gian bắt đầu"
 msgid "Start Trading"
 msgstr "Bắt đầu Giao dịch"
 
+#, fuzzy
+#| msgid "Start Time"
+msgid "Start from:"
+msgstr "Thời gian bắt đầu"
+
 msgid "Start learning"
 msgstr "Bắt đầu học"
 
@@ -6549,6 +6560,11 @@ msgstr "Để đủ điều kiện, bạn cần phải tốt nghiệp với văn
 
 msgid "To reset your password, enter the e-mail address you registered in the field below and click "
 msgstr "Để thiết lập lại mật khẩu, nhập địa chỉ email bạn đã đăng kí vào ô dưới đây và nhấp chuột vào "
+
+#, fuzzy
+#| msgid "today"
+msgid "Today"
+msgstr "hôm nay"
 
 msgid "Token"
 msgstr "Mã Token"
@@ -7941,10 +7957,14 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through clo
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
@@ -9029,6 +9049,14 @@ msgstr "Chi tiết Tài khoản"
 
 msgid "Terms and Conditions Approval"
 msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
+
+#, fuzzy
+#~| msgid "Jump to"
+#~ msgid "Jump to date:"
+#~ msgstr "Nhẩy vào"
+
+#~ msgid "Future of trading on Binary.com"
+#~ msgstr "Tương lai của giao dịch trên Binary.com"
 
 #~ msgid "Apps"
 #~ msgstr "Ứng dụng"
@@ -11255,9 +11283,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 #~ msgid "plus"
 #~ msgstr "cộng"
-
-#~ msgid "today"
-#~ msgstr "hôm nay"
 
 #~ msgid "USDZAR"
 #~ msgstr "USD/ZAR"

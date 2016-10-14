@@ -140,7 +140,7 @@ var SettingsDetailsWS = (function() {
 
         $field.empty();
 
-        if (states.length > 0) {
+        if (states && states.length > 0) {
             states.forEach(function(state) {
                 $field.append($('<option/>', {value: state.value, text: state.text}));
             });

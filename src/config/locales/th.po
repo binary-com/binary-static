@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-12 10:29+0000\n"
+"PO-Revision-Date: 2016-10-13 15:18+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -921,11 +921,14 @@ msgstr "แพลตฟอร์มการซื้อขาย CFD ขั้�
 msgid "Advanced Platforms"
 msgstr "แพลตฟอร์มขั้นสูง"
 
-msgid "Advanced binary options trading platform"
-msgstr "แพลตฟอร์มซื้อขายไบนารีออปชั่นขั้นสูง"
+msgid "Advanced binary options trading interface"
+msgstr "ส่วนเชื่อมต่อการซื้อขายไบนารีออปชั่นขั้นสูง"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "มีความรู้ขั้นสูงในเรื่องหลักการออกแบบซอฟท์แวร์"
+
+msgid "Advanced trading app for web and mobile"
+msgstr "แอพการซื้อขาย CFD ขั้นสูงสำหรับเว็บและอุปกรณ์สื่อสารเคลื่อนที่"
 
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "ให้คำแนะนำผู้จัดการอาวุโสในเรื่องการต่อรองเงินเดือนและข้อเสนองานต่างๆ"
@@ -1272,6 +1275,9 @@ msgstr "ธนาคาร เฮดจ์ฟัน และนักลงท�
 
 msgid "Barrier"
 msgstr "Barrier"
+
+msgid "Barrier (%1)"
+msgstr "Barrier (%1)"
 
 msgid "Barrier Change"
 msgstr "ค่า Barrier เปลี่ยนแปลง"
@@ -2564,9 +2570,6 @@ msgstr "ประสบการณ์ในเรื่องราคาออ
 msgid "Experience in the financial services industry is preferred"
 msgstr "ต้องการผู้มีประสบการณ์ในสาขาผู้ให้บริการด้านการเงิน"
 
-msgid "Experience the future of our trading platform with the Next-Gen app."
-msgstr "สร้างประสบการณ์ไปกับแพลตฟอร์มของเราในอนาคตด้วยแอพ Next-Gen"
-
 msgid "Experience with Git"
 msgstr "ประสบการณ์ในการพัฒนา Git"
 
@@ -2599,6 +2602,9 @@ msgstr "ราคาที่หมดอายุ"
 
 msgid "Explanation"
 msgstr "คำอธิบาย"
+
+msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
+msgstr "สร้างประสบการณ์การซื้อขายขั้นสูงด้วยแอพ Next-Gen สำหรับเว็บและอุปกรณ์สื่อสารเคลื่อนที่"
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "มีประสบการณ์ ความรู้ความเข้าใจเกี่ยวกับมาตรฐานและหลักการพัฒนาโปรแกรมขั้นสูง"
@@ -2815,9 +2821,6 @@ msgstr "นอกจากนี้ บริษัทฯ สงวนสิท�
 
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgstr "นอกจากนี้ บริษัทฯ ขอสงวนสิทธิ์ในมูลหนี้ทั้งหมดสำหรับการใช้งานในทางที่ผิด การเข้าถึงแบบผิดวิธี หรือ การใช้เงื่อนไขที่ไม่ถูกต้องกับ API ของ %1 เนื่องจากอุปกรณ์ที่ไม่เหมาะสม ภาวะผิดปกติที่เกี่ยวข้องกับผู้ให้บริการอินเทอร์เน็ต การอิ่มตัวของเครือข่ายอินเทอร์เน็ต รวมสาเหตุอื่นๆ"
-
-msgid "Future of trading on Binary.com"
-msgstr "อนาคตของการซื้อขายกับ Binary.com"
 
 msgid "GBP"
 msgstr "GBP"
@@ -3943,9 +3946,6 @@ msgstr "กรกฎาคม"
 
 msgid "Jump To"
 msgstr "ข้ามไปที่"
-
-msgid "Jump to date:"
-msgstr "ข้ามไปวันที่:"
 
 msgid "Jun"
 msgstr "มิ.ย."
@@ -5710,6 +5710,11 @@ msgstr "เวลาเริ่ม"
 msgid "Start Trading"
 msgstr "เริ่มซื้อขาย"
 
+#, fuzzy
+#| msgid "Start Time"
+msgid "Start from:"
+msgstr "เวลาเริ่ม"
+
 msgid "Start learning"
 msgstr "เริ่มเรียนรู้"
 
@@ -6541,6 +6546,11 @@ msgstr "สำหรับตำแหน่งนี้ ท่านต้อ�
 
 msgid "To reset your password, enter the e-mail address you registered in the field below and click "
 msgstr "เพื่อตั้งค่ารหัสผ่านของท่านใหม่ ป้อนอีเมล์ที่ท่านลงทะเบียนไว้ในช่องว่างข้างล่างและคลิก "
+
+#, fuzzy
+#| msgid "today"
+msgid "Today"
+msgstr "วันนี้"
 
 msgid "Token"
 msgstr "โทเค่น"
@@ -7925,10 +7935,14 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through clo
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
@@ -8340,19 +8354,19 @@ msgid "{JAPAN ONLY}In Japan there are defined trading periods for binary options
 msgstr "{JAPAN ONLY}In Japan there are defined trading periods for binary options must be 2 hours or longer, and all trades must be conducted at the start of each trading period."
 
 msgid "{JAPAN ONLY}In OTC currency binary options trading, if the exchange rate during the trading period moves by more than expected in one direction, and there are no longer any exercise prices which can continue to trade, it is possible under certain conditions to add further exercise prices. However, even when further exercise price have been added, the prices of the original options will not be affected."
-msgstr "{ญี่ปุ่นเท่านั้น}In OTC currency binary options trading, if the exchange rate during the trading period moves by more than expected in one direction, and there are no longer any exercise prices which can continue to trade, it is possible under certain conditions to add further exercise prices. However, even when further exercise price have been added, the prices of the original options will not be affected."
+msgstr "{JAPAN ONLY}In OTC currency binary options trading, if the exchange rate during the trading period moves by more than expected in one direction, and there are no longer any exercise prices which can continue to trade, it is possible under certain conditions to add further exercise prices. However, even when further exercise price have been added, the prices of the original options will not be affected."
 
 msgid "{JAPAN ONLY}In a Government or Juridicial position such as:"
 msgstr "{JAPAN ONLY}In a Government or Juridicial position such as:"
 
 msgid "{JAPAN ONLY}In case of the right to buy the underlying asset (call option), when the underlying asset price falls, the option price will increase."
-msgstr "{ญี่ปุ่นเท่านั้น}In case of the right to buy the underlying asset (call option), when the underlying asset price falls, the option price will increase."
+msgstr "{JAPAN ONLY}In case of the right to buy the underlying asset (call option), when the underlying asset price falls, the option price will increase."
 
 msgid "{JAPAN ONLY}In case of the right to sell the underlying asset (put option), when the underlying asset price rises, the option price will increase."
-msgstr "{ญี่ปุ่นเท่านั้น}In case of the right to sell the underlying asset (put option), when the underlying asset price rises, the option price will increase."
+msgstr "{JAPAN ONLY}In case of the right to sell the underlying asset (put option), when the underlying asset price rises, the option price will increase."
 
 msgid "{JAPAN ONLY}In contrast to other types of FX options, short positions in FX Binary Options cannot be closed-out as they are not subject to loss-cut regulations."
-msgstr "{ญี่ปุ่นเท่านั้น}In contrast to other types of FX options, short positions in FX Binary Options cannot be closed-out as they are not subject to loss-cut regulations."
+msgstr "{JAPAN ONLY}In contrast to other types of FX options, short positions in FX Binary Options cannot be closed-out as they are not subject to loss-cut regulations."
 
 msgid "{JAPAN ONLY}In general a binary option price will not exceed the payout amount."
 msgstr "{JAPAN ONLY}In general a binary option price will not exceed the payout amount."
@@ -8941,6 +8955,12 @@ msgstr "รายละเอียดบัญชี"
 
 msgid "Terms and Conditions Approval"
 msgstr "การอนุมัติข้อตกลงและเงื่อนไข"
+
+#~ msgid "Jump to date:"
+#~ msgstr "ข้ามไปวันที่:"
+
+#~ msgid "Future of trading on Binary.com"
+#~ msgstr "อนาคตของการซื้อขายกับ Binary.com"
 
 #~ msgid "Apps"
 #~ msgstr "แอพ"
@@ -10889,9 +10909,6 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 #~ msgid "plus"
 #~ msgstr "บวก"
-
-#~ msgid "today"
-#~ msgstr "วันนี้"
 
 #~ msgid "USDZAR"
 #~ msgstr "USD/ZAR"
