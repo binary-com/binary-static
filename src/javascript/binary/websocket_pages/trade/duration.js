@@ -77,76 +77,34 @@ var Durations = (function(){
                 var min = durationContainer[duration]['min_contract_duration'],
                     textMapping = durationTextValueMappings(min);
 
-                var option, content;
                 if (duration === 'intraday') {
                     switch (textMapping['value']) {
                         case 's':
-                            option = document.createElement('option');
-                            content = document.createTextNode(textMapping['text']);
-                            option.setAttribute('value', textMapping['value']);
-                            option.setAttribute('data-minimum', textMapping['min']);
-                            option.appendChild(content);
-                            duration_list[textMapping['value']]=option;
-                            option = document.createElement('option');
-                            content = document.createTextNode(Content.localize().textDurationMinutes);
-                            option.setAttribute('value', 'm');
-                            option.setAttribute('data-minimum', 1);
-                            option.setAttribute('selected', 'selected');
-                            option.appendChild(content);
-                            duration_list['m']=option;
-                            option = document.createElement('option');
-                            content = document.createTextNode(Content.localize().textDurationHours);
-                            option.setAttribute('value', 'h');
-                            option.setAttribute('data-minimum', 1);
-                            option.appendChild(content);
-                            duration_list['h']=option;
+                            duration_list[textMapping['value']] =
+                                                 makeDurationOption(textMapping['text'],   textMapping['value'], textMapping['min']);
+                            duration_list['m'] = makeDurationOption(Content.localize().textDurationMinutes, 'm', 1, true);
+                            duration_list['h'] = makeDurationOption(Content.localize().textDurationHours,   'h', 1);
                             break;
                         case 'm':
-                            option = document.createElement('option');
-                            content = document.createTextNode(textMapping['text']);
-                            option.setAttribute('value', textMapping['value']);
-                            option.setAttribute('data-minimum', textMapping['min']);
-                            option.setAttribute('selected', 'selected');
-                            option.appendChild(content);
-                            duration_list[textMapping['value']]=option;
-                            option = document.createElement('option');
-                            content = document.createTextNode(Content.localize().textDurationHours);
-                            option.setAttribute('value', 'h');
-                            option.setAttribute('data-minimum', 1);
-                            option.appendChild(content);
-                            duration_list['h']=option;
+                            duration_list[textMapping['value']] =
+                                                 makeDurationOption(textMapping['text'], textMapping['value'], textMapping['min'], true);
+                            duration_list['h'] = makeDurationOption(Content.localize().textDurationHours, 'h', 1);
                             break;
                         case 'h':
-                            option = document.createElement('option');
-                            content = document.createTextNode(textMapping['text']);
-                            option.setAttribute('value', textMapping['value']);
-                            option.setAttribute('data-minimum', textMapping['min']);
-                            option.appendChild(content);
-                            duration_list[textMapping['value']]=option;
+                            duration_list[textMapping['value']] =
+                                makeDurationOption(textMapping['text'], textMapping['value'], textMapping['min']);
                             break;
                         default :
-                            option = document.createElement('option');
-                            content = document.createTextNode(textMapping['text']);
-                            option.setAttribute('value', textMapping['value']);
-                            option.setAttribute('data-minimum', textMapping['min']);
-                            option.appendChild(content);
-                            duration_list[textMapping['value']]=option;
+                            duration_list[textMapping['value']]=
+                                makeDurationOption(textMapping['text'], textMapping['value'], textMapping['min']);
                             break;
                     }
                 } else if (duration === 'daily') {
-                    option = document.createElement('option');
-                    content = document.createTextNode(textMapping['text']);
-                    option.setAttribute('value', textMapping['value']);
-                    option.setAttribute('data-minimum', textMapping['min']);
-                    option.appendChild(content);
-                    duration_list[textMapping['value']]=option;
+                    duration_list[textMapping['value']]=
+                        makeDurationOption(textMapping['text'], textMapping['value'], textMapping['min']);
                 } else if (duration === 'tick') {
-                    option = document.createElement('option');
-                    content = document.createTextNode(textMapping['text']);
-                    option.setAttribute('value', textMapping['value']);
-                    option.setAttribute('data-minimum', textMapping['min']);
-                    option.appendChild(content);
-                    duration_list[textMapping['value']]=option;
+                    duration_list[textMapping['value']]=
+                        makeDurationOption(textMapping['text'], textMapping['value'], textMapping['min']);
                 }
             }
         }
@@ -176,6 +134,18 @@ var Durations = (function(){
         }
 
         durationPopulate();
+    };
+
+    var makeDurationOption = function(text, value, min, isSelected){
+        var option = document.createElement('option'),
+            content = document.createTextNode(text);
+        option.setAttribute('value', value);
+        option.setAttribute('data-minimum', min);
+        if (isSelected) {
+            option.setAttribute('selected', 'selected');
+        }
+        option.appendChild(content);
+        return option;
     };
 
     var displayEndTime = function(){
