@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-10-14 09:07+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,6 +48,11 @@ msgstr "$250,000 - $1,000,000"
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2がデモ口座%3に付与されました"
+
+#, fuzzy
+#| msgid "== Toll Free =="
+msgid "%1 (Toll Free)"
+msgstr "==フリーダイヤル=="
 
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "当社アフィリエイトプログラム・ご利用規約"
@@ -695,9 +699,6 @@ msgstr "<ul><li><strong> メニューを開いて</strong> <strong>Preferences</
 
 msgid "<ul><li>Go to \"<strong>Chrome Menu (Customize and control Google Chrome)</strong>\" dropdown and select <strong>Settings</strong>.</li><li>Click on the <strong>Show advanced settings</strong>.</li><li>Click on the <strong>Content settings</strong> button under <strong>Privacy</strong> menu.</li><li>Select <strong>Allow local data to be set (recommended)</strong>.</li><li>Click on the <strong>Done</strong> button to save your settings.</li></ul>"
 msgstr "<ul><li>ブラウザの\"<strong>クロムメニュー</strong>\" のドロップダウンメニューから<strong>設定</strong>を選択して下さい。</li><li>そして<strong>詳細設定を表示</strong>をクリックして下さい。</li><li>次に<strong>プライバシー</strong> セクションの<strong>コンテンツ設定</strong>ボタンをクリックして下さい。</li><li><strong>ローカルへのデータ設定を許可する(推奨)</strong>を選択して下さい。</li><li>最後に<strong>終了</strong>ボタンをクリックし、設定を保存して下さい。</li></ul>"
-
-msgid "== Toll Free =="
-msgstr "==フリーダイヤル=="
 
 msgid "A Bachelor's degree in Computer Science, or an equivalent combination of technical education, training and work experience"
 msgstr "情報工学の学位または同種の技術教育、技術訓練、実務経験"

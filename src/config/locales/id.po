@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-10-14 03:10+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
-"Language-Team: Indonesian "
-"<https://hosted.weblate.org/projects/binary/static/id/>\n"
+"Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,6 +46,11 @@ msgstr "$250,000 - $1,000,000"
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 telah dikreditkan kedalam akun uang virtual Anda %3"
+
+#, fuzzy
+#| msgid "== Toll Free =="
+msgid "%1 (Toll Free)"
+msgstr "== Bebas Pulsa =="
 
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "Syarat dan Ketentuan Program Affiliasi %1"
@@ -690,9 +694,6 @@ msgstr "<ul><li><strong> Buka menu</strong> dan pilih <strong>Preferences</stron
 
 msgid "<ul><li>Go to \"<strong>Chrome Menu (Customize and control Google Chrome)</strong>\" dropdown and select <strong>Settings</strong>.</li><li>Click on the <strong>Show advanced settings</strong>.</li><li>Click on the <strong>Content settings</strong> button under <strong>Privacy</strong> menu.</li><li>Select <strong>Allow local data to be set (recommended)</strong>.</li><li>Click on the <strong>Done</strong> button to save your settings.</li></ul>"
 msgstr "<ul><li>Kunjungi \"<strong>Menu dropdown Chrome (Customize dan control Google Chrome)</strong>\" dan pilih <strong>Settings</strong>.</li><li>Klik pada <strong>Show advanced settings</strong>.</li><li>Klik pada tombol <strong>Content settings</strong> dibawah menu <strong>Privacy</strong>.</li><li>Pilih <strong>Allow local data to be set (direkomendasikan)</strong>.</li><li>Klik pada tombol <strong>Done</strong> untuk menyimpan settingan Anda.</li></ul>"
-
-msgid "== Toll Free =="
-msgstr "== Bebas Pulsa =="
 
 msgid "A Bachelor's degree in Computer Science, or an equivalent combination of technical education, training and work experience"
 msgstr "Bergelar Sarjana pada bidang Ilmu Komputer, atau memiliki kombinasi setara dengan antara pendidikan teknis, pelatihan dan pengalaman kerja"
@@ -2606,8 +2607,7 @@ msgid "Explanation"
 msgstr "Penjelasan"
 
 msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
-msgstr ""
-"Jelajahi fitur trading canggih dengan aplikasi Next-Gen untuk web dan mobile."
+msgstr "Jelajahi fitur trading canggih dengan aplikasi Next-Gen untuk web dan mobile."
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Berpengalaman luas dalam penerapan prinsip-prinsip coding canggih dan standar"
@@ -7934,14 +7934,10 @@ msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of 
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr ""
-"{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise "
-"price at close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgstr ""
-"{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of "
-"Exercise price through close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."

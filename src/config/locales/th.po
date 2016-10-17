@@ -47,6 +47,11 @@ msgstr "250,000 - 1,000,000 เหรียญสหรัฐ"
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 ถูกเพิ่มแล้วที่บัญชีเสมือนของท่าน %3"
 
+#, fuzzy
+#| msgid "== Toll Free =="
+msgid "%1 (Toll Free)"
+msgstr "== Toll Free =="
+
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "%1 ข้อตกลงและเงื่อนไขของโปรแกรมพันธมิตร (Affiliate Program)"
 
@@ -688,9 +693,6 @@ msgstr "<ul><li><strong> เปิดเมนู</strong> และเลือ
 
 msgid "<ul><li>Go to \"<strong>Chrome Menu (Customize and control Google Chrome)</strong>\" dropdown and select <strong>Settings</strong>.</li><li>Click on the <strong>Show advanced settings</strong>.</li><li>Click on the <strong>Content settings</strong> button under <strong>Privacy</strong> menu.</li><li>Select <strong>Allow local data to be set (recommended)</strong>.</li><li>Click on the <strong>Done</strong> button to save your settings.</li></ul>"
 msgstr "<ul><li>ไปที่ \"<strong>เมนู Chrome (Customize and control Google Chrome)</strong>\" มีรายการตัวเลือก และให้เลือก <strong>Settings</strong></li><li>คลิกที่ <strong>Show advanced settings</strong></li><li>คลิกที่ปุ่ม <strong>Content settings</strong> ที่อยู่ด้านล่างของเมนู <strong>Privacy</strong></li><li>เลือก <strong>Allow local data to be set (recommended)</strong></li><li>คลิกที่ปุ่ม <strong>Done</strong> เพื่อบันทึกการตั้งค่า</li></ul>"
-
-msgid "== Toll Free =="
-msgstr "== Toll Free =="
 
 msgid "A Bachelor's degree in Computer Science, or an equivalent combination of technical education, training and work experience"
 msgstr "สำเร็จการศึกษาสาขาวิทยาการคอมพิวเตอร์ หรือเทียบเท่า โดยมีทักษะเชิงเทคนิค อบรมหลักสูตรต่างๆ ที่เกี่ยวข้อง และประสบการณ์การทำงาน"
@@ -7932,14 +7934,10 @@ msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of 
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr ""
-"{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise "
-"price at close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgstr ""
-"{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of "
-"Exercise price through close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
