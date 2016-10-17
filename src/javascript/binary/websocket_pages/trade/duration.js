@@ -74,37 +74,36 @@ var Durations = (function(){
         var duration_list = {};
         for (var duration in durationContainer) {
             if(durationContainer.hasOwnProperty(duration)) {
-                var min = durationContainer[duration]['min_contract_duration'],
-                    textMapping = durationTextValueMappings(min);
+                var textMapping    = durationTextValueMappings(durationContainer[duration]['min_contract_duration']);
 
                 if (duration === 'intraday') {
-                    switch (textMapping['value']) {
+                    switch (textMapping['unit']) {
                         case 's':
-                            duration_list[textMapping['value']] =
-                                                 makeDurationOption(textMapping['text'],   textMapping['value'], textMapping['min']);
+                            duration_list[textMapping['unit']] =
+                                                 makeDurationOption(textMapping['text'],   textMapping['unit'], textMapping['value']);
                             duration_list['m'] = makeDurationOption(Content.localize().textDurationMinutes, 'm', 1, true);
                             duration_list['h'] = makeDurationOption(Content.localize().textDurationHours,   'h', 1);
                             break;
                         case 'm':
-                            duration_list[textMapping['value']] =
-                                                 makeDurationOption(textMapping['text'], textMapping['value'], textMapping['min'], true);
+                            duration_list[textMapping['unit']] =
+                                                 makeDurationOption(textMapping['text'], textMapping['unit'], textMapping['value'], true);
                             duration_list['h'] = makeDurationOption(Content.localize().textDurationHours, 'h', 1);
                             break;
                         case 'h':
-                            duration_list[textMapping['value']] =
-                                makeDurationOption(textMapping['text'], textMapping['value'], textMapping['min']);
+                            duration_list[textMapping['unit']] =
+                                makeDurationOption(textMapping['text'], textMapping['unit'], textMapping['value']);
                             break;
                         default :
-                            duration_list[textMapping['value']]=
-                                makeDurationOption(textMapping['text'], textMapping['value'], textMapping['min']);
+                            duration_list[textMapping['unit']]=
+                                makeDurationOption(textMapping['text'], textMapping['unit'], textMapping['value']);
                             break;
                     }
                 } else if (duration === 'daily') {
-                    duration_list[textMapping['value']]=
-                        makeDurationOption(textMapping['text'], textMapping['value'], textMapping['min']);
+                    duration_list[textMapping['unit']]=
+                        makeDurationOption(textMapping['text'], textMapping['unit'], textMapping['value']);
                 } else if (duration === 'tick') {
-                    duration_list[textMapping['value']]=
-                        makeDurationOption(textMapping['text'], textMapping['value'], textMapping['min']);
+                    duration_list[textMapping['unit']]=
+                        makeDurationOption(textMapping['text'], textMapping['unit'], textMapping['value']);
                 }
             }
         }
@@ -141,6 +140,7 @@ var Durations = (function(){
             content = document.createTextNode(text);
         option.setAttribute('value', value);
         option.setAttribute('data-minimum', min);
+        // option.setAttribute('data-maximum', max);
         if (isSelected) {
             option.setAttribute('selected', 'selected');
         }
@@ -174,13 +174,13 @@ var Durations = (function(){
             obj = {};
 
         if (arry.length > 1) {
-            obj['value'] = arry[1];
+            obj['unit'] = arry[1];
             obj['text'] = mapping[arry[1]];
-            obj['min'] = arry[0];
+            obj['value'] = arry[0];
         } else {
-            obj['value'] = 't';
+            obj['unit'] = 't';
             obj['text'] = mapping['t'];
-            obj['min'] = arry[0];
+            obj['value'] = arry[0];
         }
 
         return obj;
