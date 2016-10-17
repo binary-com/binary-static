@@ -1,7 +1,7 @@
 var CashierJP = (function() {
     function set_name_id() {
         if (/deposit-jp/.test(window.location.pathname)) {
-            $('#name_id').text((page.user.first_name || 'Joe Bloggs') + ' ' + (page.user.loginid || 'JP12345'));
+            $('#name_id').text((page.user.loginid || 'JP12345') + ' ' + (page.user.first_name || 'Joe Bloggs'));
         }
     }
     function set_email_id() {
