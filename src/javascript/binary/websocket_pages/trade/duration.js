@@ -135,7 +135,7 @@ var Durations = (function(){
         option.setAttribute('value', mapMin.unit);
         option.setAttribute('data-minimum', mapMin.value);
         if (mapMax.value && mapMax.unit) {
-            var max = calcMax(mapMax.value, mapMax.unit, mapMin.unit);
+            var max = convertDurationUnit(mapMax.value, mapMax.unit, mapMin.unit);
             if (max) {
                 option.setAttribute('data-maximum', max);
             }
@@ -147,16 +147,16 @@ var Durations = (function(){
         return option;
     };
 
-    var calcMax = function(value, unit, to_unit){
-        if (!value || !unit || !to_unit) return;
-        if (unit === to_unit) return value;
+    var convertDurationUnit = function(value, from_unit, to_unit){
+        if (!value || !from_unit || !to_unit) return;
+        if (from_unit === to_unit) return value;
         var seconds = {
             s: 1,
             m: 60,
             h: 3600,
             d: 3600 * 24,
         };
-        return (value * seconds[unit] / seconds[to_unit]);
+        return (value * seconds[from_unit] / seconds[to_unit]);
     };
 
     var displayEndTime = function(){
