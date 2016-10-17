@@ -4,8 +4,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-10-14 06:22+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) "
-"<https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
+"Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,6 +41,11 @@ msgstr "$250,000 - $1,000,000"
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr " %1 %2已記入您的虛擬資金帳戶 %3"
+
+#, fuzzy
+#| msgid "== Toll Free =="
+msgid "%1 (Toll Free)"
+msgstr "== 免費電話 =="
 
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "%1 聯盟計劃的條款和條件"
@@ -684,9 +688,6 @@ msgstr "<ul><li><strong>打開選單</strong>並選取<strong>最愛</strong>。
 
 msgid "<ul><li>Go to \"<strong>Chrome Menu (Customize and control Google Chrome)</strong>\" dropdown and select <strong>Settings</strong>.</li><li>Click on the <strong>Show advanced settings</strong>.</li><li>Click on the <strong>Content settings</strong> button under <strong>Privacy</strong> menu.</li><li>Select <strong>Allow local data to be set (recommended)</strong>.</li><li>Click on the <strong>Done</strong> button to save your settings.</li></ul>"
 msgstr "<ul><li>前往\"<strong>Chrome菜單(自訂與管理Google Chrome瀏覽器)</strong>\" 下拉列表並選擇<strong>設定</strong>。 </li><li>點選<strong>顯示高階設定</strong>標籤。 </li><li>點選<strong>隱私</strong> 菜單下方的<strong>內容設定</strong>按鈕。 </li><li>選擇<strong>允許設定本地資料（推薦）</strong>。 </li><li>點選<strong>完成</strong> 按鈕儲存您的設定。 </li></ul>"
-
-msgid "== Toll Free =="
-msgstr "== 免費電話 =="
 
 msgid "A Bachelor's degree in Computer Science, or an equivalent combination of technical education, training and work experience"
 msgstr "電腦科學系學士，或具備同等技術教育、培訓背景及工作經驗的人員"
@@ -7919,14 +7920,10 @@ msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of 
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr ""
-"{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise "
-"price at close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgstr ""
-"{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of "
-"Exercise price through close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
