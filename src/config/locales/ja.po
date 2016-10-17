@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-17 02:12+0000\n"
-"Last-Translator: Yasushi Takeishi <takeishi@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-10-17 09:05+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -2451,7 +2451,7 @@ msgid "Ends In/Out"
 msgstr "END-IN/END-OUT"
 
 msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "ご不明点等ありましたら、カスタマーサポートまでご連絡ください。"
+msgstr "ご不明な点等ありましたら、カスタマーサポートまでご連絡ください。"
 
 msgid "Engage in data mining using SQL databases, R/S-Plus, OLAP and other analytical tools"
 msgstr "SQLデータベース、R/ S-Plus、OLAP、その他分析ツールを使用してデータマイニングに従事"
@@ -2487,10 +2487,10 @@ msgid "Entry Level"
 msgstr "エントリーレベル"
 
 msgid "Entry Spot"
-msgstr "取引時レート"
+msgstr "取引時刻直後のテック"
 
 msgid "Entry spot"
-msgstr "取引時レート"
+msgstr "取引時刻直後のテック"
 
 msgid "Entry spot price"
 msgstr "取引時レート"
@@ -2994,7 +2994,7 @@ msgid "Higher/Lower"
 msgstr "ラダーHIGH/ラダーLOW"
 
 msgid "Higher/Lower contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "ご不明点等ありましたら、カスタマーサポートまでご連絡ください。"
+msgstr "ご不明な点等ありましたら、カスタマーサポートまでご連絡ください。"
 
 msgid "Higher/Lower trades"
 msgstr "HIGH/LOW・トレード"
@@ -4920,7 +4920,7 @@ msgid "Platforms"
 msgstr "プラットフォーム"
 
 msgid "Please %1 to view this page"
-msgstr "ご利用頂くためには%1が必要です"
+msgstr "現在、ログアウトの状態です。ご利用頂くためには再度%1が必要です。"
 
 msgid "Please check your email for the value of this token"
 msgstr "Eメールアドレスをご確認ください"
@@ -5817,7 +5817,7 @@ msgid "Stays In/Goes Out"
 msgstr "STAY-IN/BREAK-OUT"
 
 msgid "Stays In/Goes Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "ご不明点等ありましたら、カスタマーサポートまでご連絡ください。"
+msgstr "ご不明な点等ありましたら、カスタマーサポートまでご連絡ください。"
 
 msgid "Step"
 msgstr "ステップ"
@@ -6012,13 +6012,17 @@ msgid "The <strong>contract period</strong> is the period between the <strong>ne
 msgstr "<strong>取引期間</strong>は、<strong>取引開始時間直後</strong>の<strong>ティック</strong>から<strong>取引終了時間</strong>までとなります。"
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr "<strong>取引期間</strong>は、取引期間開始時から判定時刻までとなります。新規購入が可能な時間は<strong>判定時刻2分前</strong>までで、取引可能時間を過ぎると新規購入注文＆売却取引は行えません。"
+msgstr ""
+"<strong>取引期間</strong>は、取引期間開始時から判定時刻までとなります。購入・売却は<strong>判定時刻2分前</strong>まで可"
+"能です。判定時刻2分前から新規購入＆売却注文は行なえません。"
 
 msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr "<strong>取引期間</strong>は、取引期間開始時から判定時刻までとなります。新規購入が可能な時間は<strong>判定時刻2分前</strong>までで、取引可能時間を過ぎると新規購入注文＆売却取引は行えません。"
+msgstr ""
+"<strong>取引期間</strong>は、取引期間開始時から判定時刻までとなります。購入・売却は<strong>判定時刻2分前</strong>まで可"
+"能です。判定時刻2分前から新規購入＆売却注文は行えません。"
 
 msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
-msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>のスポット価格のことです。"
+msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>の市場価格のことです。"
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>取引開始時間</strong>とは回号の取引開始時刻のことです。各回号の詳細につきまして契約締結前交付書面をご確認ください。"
@@ -6518,7 +6522,7 @@ msgid "Therefore your current immediate maximum withdrawal (subject to your acco
 msgstr "そのため、現在即座にご出金いただける限度金額（ただし、ご口座残高が不足していない場合）は%1 %2までです。"
 
 msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2."
-msgstr "そのため、現在即座にご出金いただける限度額（口座残高が不足していない場合）は%1 %2までとなります。"
+msgstr "現在、出金可能な限度額（口座残高が不足していない場合）は¥ %2となります。"
 
 msgid "These ST&Cs are to be governed by and construed in accordance with Maltese law and the parties hereto agree to submit to the non exclusive jurisdiction of the Maltese courts."
 msgstr "これらST＆Cs（特別条件と事業条件）は、マルタ裁判所の非専属管轄権に服することに同意し、マルタの法律や当事者によって規制されることを解します。"
@@ -6739,7 +6743,7 @@ msgid "Touch/No Touch"
 msgstr "TOUCH/NO-TOUCH"
 
 msgid "Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "ご不明点等ありましたら、カスタマーサポートまでご連絡ください。"
+msgstr "ご不明な点等ありましたら、カスタマーサポートまでご連絡ください。"
 
 msgid "Touch/No touch trades"
 msgstr "TOUCH/NO-TOUCH トレード"
@@ -7927,7 +7931,8 @@ msgid "Your website request.url (if you have one)"
 msgstr "ウェブサイトリクエストURL（お持ちの場合）"
 
 msgid "Your withdrawal limit is %1 %2 (or equivalent in other currency)."
-msgstr "お客さまの出金限度額は %1 %2 です。限度額以上の出金額をご希望される場合は、本人確認が必要となりますのでカスタマーサポートへご連絡ください。"
+msgstr ""
+"お客さまの出金限度額は ¥ %2 です。限度額以上の出金額をご希望される場合は、本人確認が必要となりますのでカスタマーサポートへご連絡ください。"
 
 msgid "Your withdrawal limit is %1 %2."
 msgstr ""
