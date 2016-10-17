@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-13 08:25+0000\n"
-"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
+"PO-Revision-Date: 2016-10-16 20:58+0000\n"
+"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -46,6 +46,11 @@ msgstr "$250,000 - $1,000,000"
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 было зачислено на Ваш Демо-счет %3"
+
+#, fuzzy
+#| msgid "== Toll Free =="
+msgid "%1 (Toll Free)"
+msgstr "== Бесплатно =="
 
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "Правила и условия партнерской программы %1"
@@ -690,9 +695,6 @@ msgstr "<ul><li><strong> Откройте меню</strong> и выберите 
 msgid "<ul><li>Go to \"<strong>Chrome Menu (Customize and control Google Chrome)</strong>\" dropdown and select <strong>Settings</strong>.</li><li>Click on the <strong>Show advanced settings</strong>.</li><li>Click on the <strong>Content settings</strong> button under <strong>Privacy</strong> menu.</li><li>Select <strong>Allow local data to be set (recommended)</strong>.</li><li>Click on the <strong>Done</strong> button to save your settings.</li></ul>"
 msgstr "<ul><li>Зайдите в выпадающее \"<strong>Меню Chrome – Настройка и управление Google Chrome (Customize and control Google Chrome)</strong>\" и выберите <strong>Настройки (Settings)</strong>.</li><li>Нажмите <strong>Показать дополнительные настройки (Show advanced settings)</strong>. </li><li>Нажмите на кнопку <strong>Настройки контента (Content settings)</strong>.</li><li>Выберите <strong>Разрешать сохранение локальных данных (рекомендуется) – Allow local data to be set (recommended)</strong>. </li><li>Нажмите на кнопку <strong>Готово</strong>, чтобы сохранить настройки.</li></ul>"
 
-msgid "== Toll Free =="
-msgstr "== Бесплатно =="
-
 msgid "A Bachelor's degree in Computer Science, or an equivalent combination of technical education, training and work experience"
 msgstr "Степень бакалавра в области информатики или техническое образование, обучение и опыт работы в смежной области"
 
@@ -928,10 +930,8 @@ msgstr "Расширенный интерфейс для торговли бин
 msgid "Advanced knowledge of software design principles"
 msgstr "Отличное знание принципов разработки программного обеспечения"
 
-#, fuzzy
-#| msgid "Advanced CFD trading platform"
 msgid "Advanced trading app for web and mobile"
-msgstr "Расширенная платформа для торговли контрактами на разницу"
+msgstr "Расширенное приложение для торговли с компьютера и телефона"
 
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "Консультирование руководителей на переговорах о ставках заработной платы и вакансиях"
@@ -2608,10 +2608,8 @@ msgstr "Цена при окончании"
 msgid "Explanation"
 msgstr "Объяснение"
 
-#, fuzzy
-#| msgid "Experience the future of our trading platform with the Next-Gen app."
 msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
-msgstr "Загляните в будущее онлайн торговли через приложение Next-Gen."
+msgstr "Узнайте о новых торговых функциях приложения Next-Gen для компьютеров и телефона."
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Большой опыт применения принципов и стандартов усовершенствованного кодирования"
@@ -6550,10 +6548,8 @@ msgstr "Чтобы претендовать на эту должность, вы
 msgid "To reset your password, enter the e-mail address you registered in the field below and click "
 msgstr "Чтобы изменить пароль, введите Ваш зарегистрированный эл. адрес в поле внизу и нажмите "
 
-#, fuzzy
-#| msgid "today"
 msgid "Today"
-msgstr "сегодня"
+msgstr "Cегодня"
 
 msgid "Token"
 msgstr "Ключ"
@@ -7939,13 +7935,9 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through clo
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
 msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
 

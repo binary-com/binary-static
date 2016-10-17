@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-13 03:47+0000\n"
+"PO-Revision-Date: 2016-10-14 06:22+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -41,6 +41,11 @@ msgstr "$250,000 - $1,000,000"
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr " %1 %2已記入您的虛擬資金帳戶 %3"
+
+#, fuzzy
+#| msgid "== Toll Free =="
+msgid "%1 (Toll Free)"
+msgstr "== 免費電話 =="
 
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "%1 聯盟計劃的條款和條件"
@@ -684,9 +689,6 @@ msgstr "<ul><li><strong>打開選單</strong>並選取<strong>最愛</strong>。
 msgid "<ul><li>Go to \"<strong>Chrome Menu (Customize and control Google Chrome)</strong>\" dropdown and select <strong>Settings</strong>.</li><li>Click on the <strong>Show advanced settings</strong>.</li><li>Click on the <strong>Content settings</strong> button under <strong>Privacy</strong> menu.</li><li>Select <strong>Allow local data to be set (recommended)</strong>.</li><li>Click on the <strong>Done</strong> button to save your settings.</li></ul>"
 msgstr "<ul><li>前往\"<strong>Chrome菜單(自訂與管理Google Chrome瀏覽器)</strong>\" 下拉列表並選擇<strong>設定</strong>。 </li><li>點選<strong>顯示高階設定</strong>標籤。 </li><li>點選<strong>隱私</strong> 菜單下方的<strong>內容設定</strong>按鈕。 </li><li>選擇<strong>允許設定本地資料（推薦）</strong>。 </li><li>點選<strong>完成</strong> 按鈕儲存您的設定。 </li></ul>"
 
-msgid "== Toll Free =="
-msgstr "== 免費電話 =="
-
 msgid "A Bachelor's degree in Computer Science, or an equivalent combination of technical education, training and work experience"
 msgstr "電腦科學系學士，或具備同等技術教育、培訓背景及工作經驗的人員"
 
@@ -916,18 +918,14 @@ msgstr "進階差價合約交易平台"
 msgid "Advanced Platforms"
 msgstr "進階平台"
 
-#, fuzzy
-#| msgid "Advanced binary options trading platform"
 msgid "Advanced binary options trading interface"
-msgstr "進階二元期權交易平台"
+msgstr "進階二元期權交易介面"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "先進的軟體設計原則知識"
 
-#, fuzzy
-#| msgid "Advanced CFD trading platform"
 msgid "Advanced trading app for web and mobile"
-msgstr "進階差價合約交易平台"
+msgstr "進階網站與行動電話交易應用程式"
 
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "向高級管理人員提供關於薪金協商和錄取人員的建議"
@@ -1275,10 +1273,8 @@ msgstr "銀行、對沖基金及專業投資者經常在衍生品場外市場交
 msgid "Barrier"
 msgstr "障礙"
 
-#, fuzzy
-#| msgid "Low Barrier (%1)"
 msgid "Barrier (%1)"
-msgstr "低障礙 (%1)"
+msgstr "障礙 (%1)"
 
 msgid "Barrier Change"
 msgstr "障礙變更"
@@ -2604,10 +2600,8 @@ msgstr "到期價格"
 msgid "Explanation"
 msgstr "說明"
 
-#, fuzzy
-#| msgid "Experience the future of our trading platform with the Next-Gen app."
 msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
-msgstr "使用「下一代」應用程式，體驗我們未來的交易平台。"
+msgstr "使用「下一代」網站與行動電話應用程式，探索進階交易功能。"
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "有豐富的高階編碼原則和標準應用經驗"
@@ -5709,10 +5703,8 @@ msgstr "開始時間"
 msgid "Start Trading"
 msgstr "開始交易"
 
-#, fuzzy
-#| msgid "Start Time"
 msgid "Start from:"
-msgstr "開始時間"
+msgstr "開始時間:"
 
 msgid "Start learning"
 msgstr "開始學習"
@@ -6541,8 +6533,6 @@ msgstr "要獲得錄取資格，您必須擁有物理、金融工程或數學專
 msgid "To reset your password, enter the e-mail address you registered in the field below and click "
 msgstr "如要重新設定密碼，在下面的欄位中輸入您註冊的電子郵件地址並點選 "
 
-#, fuzzy
-#| msgid "today"
 msgid "Today"
 msgstr "今天"
 
@@ -7929,15 +7919,11 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through clo
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
 msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-13 05:27+0000\n"
+"PO-Revision-Date: 2016-10-14 03:10+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -46,6 +46,11 @@ msgstr "$250,000 - $1,000,000"
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 telah dikreditkan kedalam akun uang virtual Anda %3"
+
+#, fuzzy
+#| msgid "== Toll Free =="
+msgid "%1 (Toll Free)"
+msgstr "== Bebas Pulsa =="
 
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "Syarat dan Ketentuan Program Affiliasi %1"
@@ -690,9 +695,6 @@ msgstr "<ul><li><strong> Buka menu</strong> dan pilih <strong>Preferences</stron
 msgid "<ul><li>Go to \"<strong>Chrome Menu (Customize and control Google Chrome)</strong>\" dropdown and select <strong>Settings</strong>.</li><li>Click on the <strong>Show advanced settings</strong>.</li><li>Click on the <strong>Content settings</strong> button under <strong>Privacy</strong> menu.</li><li>Select <strong>Allow local data to be set (recommended)</strong>.</li><li>Click on the <strong>Done</strong> button to save your settings.</li></ul>"
 msgstr "<ul><li>Kunjungi \"<strong>Menu dropdown Chrome (Customize dan control Google Chrome)</strong>\" dan pilih <strong>Settings</strong>.</li><li>Klik pada <strong>Show advanced settings</strong>.</li><li>Klik pada tombol <strong>Content settings</strong> dibawah menu <strong>Privacy</strong>.</li><li>Pilih <strong>Allow local data to be set (direkomendasikan)</strong>.</li><li>Klik pada tombol <strong>Done</strong> untuk menyimpan settingan Anda.</li></ul>"
 
-msgid "== Toll Free =="
-msgstr "== Bebas Pulsa =="
-
 msgid "A Bachelor's degree in Computer Science, or an equivalent combination of technical education, training and work experience"
 msgstr "Bergelar Sarjana pada bidang Ilmu Komputer, atau memiliki kombinasi setara dengan antara pendidikan teknis, pelatihan dan pengalaman kerja"
 
@@ -922,18 +924,14 @@ msgstr "Platform trading CFD tingkat lanjut"
 msgid "Advanced Platforms"
 msgstr "Platform Tingkat Lanjut"
 
-#, fuzzy
-#| msgid "Advanced binary options trading platform"
 msgid "Advanced binary options trading interface"
-msgstr "Platform trading opsi binary tingkat lanjut"
+msgstr "Tampilan trading opsi binary tingkat lanjut"
 
 msgid "Advanced knowledge of software design principles"
 msgstr "Pengetahuan lebih maju mengenai prinsip-prinsip desain perangkat lunak"
 
-#, fuzzy
-#| msgid "Advanced CFD trading platform"
 msgid "Advanced trading app for web and mobile"
-msgstr "Platform trading CFD tingkat lanjut"
+msgstr "Applikasi trading tingkat lanjut untuk web dan mobile"
 
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "Memberi masukan kepada senior manajer mengenai negosiasi gaji dan tawaran pekerjaan"
@@ -1281,10 +1279,8 @@ msgstr "Banyak bank, pengelola dana dan investor profesional secara rutin bertra
 msgid "Barrier"
 msgstr "Batasan"
 
-#, fuzzy
-#| msgid "Low Barrier (%1)"
 msgid "Barrier (%1)"
-msgstr "Batasan Rendah (%1)"
+msgstr "Batasan (%1)"
 
 msgid "Barrier Change"
 msgstr "Perubahan Batasan"
@@ -2610,10 +2606,8 @@ msgstr "Harga akhir"
 msgid "Explanation"
 msgstr "Penjelasan"
 
-#, fuzzy
-#| msgid "Experience the future of our trading platform with the Next-Gen app."
 msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
-msgstr "Alami platform trading masa hadapan kami dengan aplikasi Next-Gen."
+msgstr "Jelajahi fitur trading canggih dengan aplikasi Next-Gen untuk web dan mobile."
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Berpengalaman luas dalam penerapan prinsip-prinsip coding canggih dan standar"
@@ -5720,10 +5714,8 @@ msgstr "Waktu Mulai"
 msgid "Start Trading"
 msgstr "Mulai Trading"
 
-#, fuzzy
-#| msgid "Start Time"
 msgid "Start from:"
-msgstr "Waktu Mulai"
+msgstr "Mulai dari:"
 
 msgid "Start learning"
 msgstr "Mulai Belajar"
@@ -6555,10 +6547,8 @@ msgstr "Untuk memenuhi syarat, Anda membutuhkan gelar sarjana pada bidang Fisika
 msgid "To reset your password, enter the e-mail address you registered in the field below and click "
 msgstr "Untuk mengatur ulang kata sandi, masukkan alamat email yang Anda daftarkan dan klik "
 
-#, fuzzy
-#| msgid "today"
 msgid "Today"
-msgstr "hari ini"
+msgstr "Hari ini"
 
 msgid "Token"
 msgstr "Token"
@@ -7943,15 +7933,11 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through clo
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
 msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
