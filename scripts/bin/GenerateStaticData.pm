@@ -178,6 +178,9 @@ sub _texts {
         push @texts, localize('Charting for this underlying is delayed');
         push @texts, localize('Spot');
         push @texts, localize('Barrier');
+        push @texts, localize('Target');
+        push @texts, localize('Equals');
+        push @texts, localize('Not');
         push @texts, localize('Barrier offset');
         push @texts, localize('High barrier');
         push @texts, localize('High barrier offset');
