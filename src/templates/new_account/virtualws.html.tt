@@ -47,7 +47,7 @@
               </div>
             </div>
             <div class="gr-padding-10 gr-row clear invisible">
-                <div class="gr-4 form_label">
+                <div class="gr-4 form_label" id="email_consent_label">
                     <label>[% l('Receive news and special offers') %]</label>
                 </div>
                 <div class="gr-8">
