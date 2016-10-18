@@ -202,7 +202,11 @@ var ViewPopupWS = (function() {
             containerSetText('trade_details_barrier'    , contract.high_barrier , '', true);
             containerSetText('trade_details_barrier_low', contract.low_barrier  , '', true);
         } else if(contract.barrier) {
-            containerSetText('trade_details_barrier'    , contract.entry_tick_time ? contract.barrier : '-', '', true);
+            containerSetText('trade_details_barrier'    , contract.entry_tick_time ?
+                            (contract.contract_type === 'DIGITMATCH' ? page.text.localize('Equals') + ' ' + contract.barrier :
+                            contract.contract_type === 'DIGITDIFF'  ? page.text.localize('Not') + ' ' + contract.barrier :
+                            contract.barrier) : '-',
+                            '', true);
         }
 
         var currentSpot     = !is_ended ? contract.current_spot      : (user_sold ? contract.sell_spot      : contract.exit_tick);
@@ -401,7 +405,8 @@ var ViewPopupWS = (function() {
                     (!contract.tick_count ? normalRow('End Time',       '', 'trade_details_end_date') +
                                             normalRow('Remaining Time', '', 'trade_details_live_remaining') : '') +
                     normalRow('Entry Spot',     '', 'trade_details_entry_spot') +
-                    normalRow(contract.barrier_count > 1 ? 'High Barrier' : 'Barrier', '', 'trade_details_barrier'    , true) +
+                    normalRow(contract.barrier_count > 1 ? 'High Barrier' :
+                              /^DIGIT(MATCH|DIFF)$/.test(contract.contract_type) ? 'Target' : 'Barrier', '', 'trade_details_barrier', true) +
                     (contract.barrier_count > 1 ? normalRow('Low Barrier',             '', 'trade_details_barrier_low', true) : '') +
                     normalRow('Potential Payout', '', 'trade_details_payout') +
                     normalRow('Purchase Price', '', 'trade_details_purchase_price') +
