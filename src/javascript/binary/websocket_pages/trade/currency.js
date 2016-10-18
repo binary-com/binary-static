@@ -19,21 +19,29 @@ function displayCurrencies(selected) {
         target.removeChild(target.firstChild);
     }
 
-    currencies.forEach(function (currency) {
-        var option = document.createElement('option'),
-            content = document.createTextNode(currency);
+    if (currencies.length > 1) {
+        currencies.forEach(function (currency) {
+            var option = document.createElement('option'),
+                content = document.createTextNode(currency);
 
-        option.setAttribute('value', currency);
-        if (selected && selected == key) {
-            option.setAttribute('selected', 'selected');
-        }
+            option.setAttribute('value', currency);
+            if (selected && selected == key) {
+                option.setAttribute('selected', 'selected');
+            }
 
-        option.appendChild(content);
-        fragment.appendChild(option);
-    });
+            option.appendChild(content);
+            fragment.appendChild(option);
+        });
 
-    target.appendChild(fragment);
-    Defaults.set('currency', target.value);
+        target.appendChild(fragment);
+        Defaults.set('currency', target.value);
+    } else {
+        $('#currency').replaceWith('<span id="' + target.getAttribute('id') +
+                                    '" class="' + target.getAttribute('class') +
+                                    '"value="' + currencies[0] + '">' +
+                                    format_currency(currencies[0]) + '</span>');
+        Defaults.set('currency', currencies[0]);
+    }
 }
 
 module.exports = {

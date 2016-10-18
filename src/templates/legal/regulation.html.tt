@@ -188,7 +188,7 @@
             <p>[% l("Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">view licence</a>.") %]</p>
             <p>[% l("Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. Binary.com is not available in the Republic of Vanuatu.") %]</p>
             <p><strong>[% l("Regulator:") %]</strong></p>
-            <div class="gr-3 gr-6-m gr-centered gr-padding-10">
+            <div class="gr-2 gr-4-m gr-centered gr-padding-10">
                 <a href="https://www.vfsc.vu/" target="_blank">
                     <img class="responsive" src="[% request.url_for('images/pages/regulation/vanuatu-logo.svg') %]">
                 </a>
