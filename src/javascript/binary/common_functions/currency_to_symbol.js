@@ -31,6 +31,10 @@ function format_money_jp(currency, amount) {
     return sign + symbol + updatedAmount;
 }
 
+function format_currency(currency) {
+    return format_money.map[currency];
+}
+
 
 // Taken with modifications from:
 //    https://github.com/bengourley/currency-symbol-map/blob/master/map.js
@@ -45,5 +49,6 @@ format_money.map = {
 
 module.exports = {
     format_money: format_money,
-    format_money_jp : format_money_jp,
+    format_money_jp: format_money_jp,
+    format_currency: format_currency
 };

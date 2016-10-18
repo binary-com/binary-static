@@ -35,6 +35,7 @@
         flex: 2 1 100px;
         padding-right: 20px;
         word-break: break-word;
+        min-width: 130px;
     }
     .act {
         flex: 0.8 1 35px;
@@ -45,5 +46,8 @@
     input {
         max-width: 100%;
         margin-left: 10px;
+    }
+    .padding-left {
+        padding-left: 10px !important;
     }
 }

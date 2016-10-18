@@ -57,7 +57,7 @@
                             [% l("Continuous Indices") %]
                         </h2>
                         <p>
-                            [% l("[_1]'s Continuous Indices are the Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 25%, 50%, 75% and 100%.", website_name) %]
+                            [% l("[_1]'s Continuous Indices are the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75% and 100%.", website_name) %]
                         </p>
                     </div>
                     <div id="volidx-indices-container">

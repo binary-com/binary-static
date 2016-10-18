@@ -16,7 +16,7 @@
             <li class="ja-hide">
                 <a class="pjaxload" href="[% request.url_for('tour') %]">[% l('Tour') %]</a>
             </li>
-            <li class="ja-hide ja-show-block">
+            <li class="all-hide ja-show-block">
                 <a class="pjaxload" href="[% request.url_for('tour-jp') %]">[% l('Tour') %]</a>
             </li>
             [%= FOREACH item IN menu=%]
@@ -34,7 +34,7 @@
             </li>
             [%= END =%]
             <li class="ja-hide">
-                <a class="pjaxload" href="[% request.url_for('trading') %]">[% l("Trade") %]</a>
+                <a class="pjaxload" href="[% request.url_for('platforms') %]">[% l("Platforms") %]</a>
             </li>
             <li class="all-hide ja-show-block">
                 <a class="pjaxload" href="[% request.url_for('jptrading') %]">[% l("Trade") %]</a>

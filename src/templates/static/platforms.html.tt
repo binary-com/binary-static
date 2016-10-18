@@ -1,5 +1,5 @@
 <div class="gr-row static_full">
-    <div class="gr-3 gr-hide-m">
+    <div class="gr-3 gr-hide-m gr-hide-p">
         <div class="sidebar-left">
             <ul class="sidebar-nav">
                 <li>
@@ -20,7 +20,7 @@
             <h2>[% l("Basic Platforms") %]</h2>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-12 gr-8-p">
+                    <div class="gr-12 gr-7-p gr-10-m">
                         <img class="responsive" src="[% request.url_for('images/pages/platforms/trading-page.png') %]" />
                     </div>
                     <div class="gr-padding-30">
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-8 gr-6-p">
+                    <div class="gr-8 gr-5-p gr-7-m">
                         <img class="responsive" src="[% request.url_for('images/pages/platforms/tick-trade.png') %]" />
                     </div>
                     <div class="gr-padding-30">
@@ -60,7 +60,7 @@
             <h2>[% l("Advanced Platforms") %]</h2>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-8 gr-6-p">
+                    <div class="gr-8 gr-5-p gr-7-m">
                         <img class="responsive" src="[% request.url_for('images/pages/platforms/metatrader.png') %]" />
                     </div>
                     <div class="gr-padding-30">
@@ -77,12 +77,12 @@
                     </div>
                 </div>
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-8 gr-6-p">
+                    <div class="gr-8 gr-5-p gr-7-m">
                         <img class="responsive" src="[% request.url_for('images/pages/platforms/webtrader.png') %]" />
                     </div>
                     <div class="gr-padding-30">
                         <h3>[% l("Binary Webtrader") %]</h3>
-                        <strong>[% l("Advanced binary options trading platform") %]</strong>
+                        <strong>[% l("Advanced binary options trading interface") %]</strong>
                         <p>
                             [% l("Monitor the movements of your favourite assets and markets at the same time.") %]
                             <p>
@@ -96,15 +96,22 @@
             </div>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-12 gr-8-p">
+                    <div class="gr-12 gr-7-p gr-10-m">
                         <img class="responsive" src="[% request.url_for('images/pages/platforms/nextgen.png') %]" />
                     </div>
                     <div class="gr-padding-30">
                         <h3>[% l("Binary Next-Gen") %]</h3>
-                        <strong>[% l("Future of trading on Binary.com") %]</strong>
+                        <strong>[% l("Advanced trading app for web and mobile") %]</strong>
                         <p>
-                            [% l("Experience the future of our trading platform with the Next-Gen app.") %]
+                            [% l("Explore advanced trading features with the Next-Gen app for web and mobile.") %]
                             <div class="gr-row">
+                                <div class="gr-12">
+                                    <a class="button" href="https://app.binary.com" target="_blank">
+                                        <span>Try Next-Gen</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="gr-row gr-padding-10">
                                 <a class="gr-5 gr-6-m" href="https://itunes.apple.com/app/apple-store/id1134884301?pt=117911266&ct=platforms_page&mt=8" target="_blank">
                                     <div class="app-store-badge"></div>
                                 </a>
@@ -116,7 +123,7 @@
                     </div>
                 </div>
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-10 gr-8-p">
+                    <div class="gr-10 gr-7-p gr-9-m">
                         <img class="responsive" src="[% request.url_for('images/pages/platforms/binarybot.png') %]" />
                     </div>
                     <div class="gr-padding-30">
@@ -270,6 +277,7 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <div class="fade-to-right"></div>
                     </div>
                 </div>
             </div>
@@ -278,7 +286,7 @@
             <h1>[% l("More Tools") %]</h1>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-10 gr-6-p">
+                    <div class="gr-10 gr-5-p gr-9-m">
                         <img class="responsive" src="[% request.url_for('images/pages/platforms/tradingview.png') %]" />
                     </div>
                     <div class="gr-padding-30">

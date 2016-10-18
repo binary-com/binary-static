@@ -40,8 +40,7 @@ var StatementWS = (function(){
 
         if (!tableExist()) {
             StatementUI.createEmptyStatementTable().appendTo("#statement-ws-container");
-            $('.act').addClass('nowrap');
-            Statement.attachDatePicker();
+            $('.act, .credit').addClass('nowrap');
             StatementUI.updateStatementTable(getNextChunkStatement());
 
             // Show a message when the table is empty
@@ -54,9 +53,9 @@ var StatementWS = (function(){
                         )
                     );
             } else {
-                $('#jump-to').parent().parent().removeClass('invisible');
+                $('#jump-to').parent().parent().parent().removeClass('invisible');
                 if(page.language().toLowerCase() === 'ja') {
-                    $('#download_csv').removeClass('invisible').find('a').click(function(){StatementUI.exportCSV();});
+                    $('#download_csv').removeClass('invisible').find('a').unbind('click').click(function(){StatementUI.exportCSV();});
                 }
             }
         }

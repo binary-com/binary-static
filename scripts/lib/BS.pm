@@ -174,6 +174,24 @@ sub js_config {
 sub menu {
     my @menu;
 
+    push @menu,
+        {
+        id         => 'topMenuTrading',
+        class      => 'ja-hide hide-tablet-mobile',
+        url        => url_for('/trading'),
+        text       => localize('Trade'),
+        link_class => 'pjaxload',
+        };
+
+    push @menu,
+        {
+        id         => 'topMenuJPTrading',
+        class      => 'all-hide ja-show hide-tablet-mobile',
+        url        => url_for('/jptrading'),
+        text       => localize('Trade'),
+        link_class => 'pjaxload'
+        };
+
     # Portfolio
     push @menu,
         {
@@ -214,7 +232,6 @@ sub menu {
     # resources
     my $resources_items_ref = {
         id         => 'topMenuResources',
-        class      => 'ja-hide',
         url        => url_for('/resources'),
         text       => localize('Resources'),
         link_class => 'pjaxload',

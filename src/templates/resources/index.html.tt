@@ -1,7 +1,7 @@
 <h1>[% l("Resources") %]</h1>
 <p>[% l("Do you want to learn more about the markets and how to trade them? Check out the resources below.") %]</p>
 <div class="gr-row">
-  <div class="gr-3 gr-8-m gr-parent">
+  <div class="gr-3 gr-8-m gr-parent ja-hide">
     <div class="gr-8 gr-padding-10">
       <a class="pjaxload" href="[% request.url_for('/resources/asset_indexws') %]" id="asset-index">
         <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/resources/asset-index.svg') %]"/>

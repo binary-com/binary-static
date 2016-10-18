@@ -149,10 +149,10 @@ function BinarySocketClass() {
                         if(!Login.is_login_pages()) {
                             page.client.response_authorize(response);
                             send({balance:1, subscribe: 1});
-                            if (Cookies.get('residence')) send({landing_company: Cookies.get('residence')});
                             send({get_settings: 1});
                             send({get_account_status: 1});
                             send({website_status: 1});
+                            if (Cookies.get('residence')) send({landing_company: Cookies.get('residence')});
                             if(!page.client.is_virtual()) {
                                 send({get_self_exclusion: 1});
                             } else {
@@ -217,23 +217,18 @@ function BinarySocketClass() {
                     var jpStatus = response.get_settings.jp_account_status;
                     if (jpStatus) {
                         switch (jpStatus.status) {
-                            case 'jp_knowledge_test_pending': localStorage.setItem('jp_test_allowed', 1);
-                                break;
+                            case 'jp_knowledge_test_pending':
                             case 'jp_knowledge_test_fail':
-                                if (Date.now() >= (jpStatus.next_test_epoch * 1000)) {
-                                    localStorage.setItem('jp_test_allowed', 1);
-                                } else {
-                                    localStorage.setItem('jp_test_allowed', 0);
-                                }
+                                localStorage.setItem('jp_test_allowed', 1);
                                 break;
                             default: localStorage.setItem('jp_test_allowed', 0);
                         }
-
                         KnowledgeTest.showKnowledgeTestTopBarIfValid(jpStatus);
                     } else {
                         localStorage.removeItem('jp_test_allowed');
                     }
                     page.header.menu.check_payment_agent(response.get_settings.is_authenticated_payment_agent);
+                    page.client.response_get_settings(response);
                 } else if (type === 'website_status') {
                     if(!response.hasOwnProperty('error')) {
                         LocalStore.set('website.tnc_version', response.website_status.terms_conditions_version);

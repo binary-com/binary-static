@@ -309,6 +309,11 @@ Client.prototype = {
         this.check_storage_values();
         page.contents.activate_by_client_type();
         page.contents.activate_by_login();
+        CashierJP.set_email_id();
+    },
+    response_get_settings: function(response) {
+        page.user.first_name = response.get_settings.first_name;
+        CashierJP.set_name_id();
     },
     check_tnc: function() {
         if (/user\/tnc_approvalws/.test(window.location.href) || /terms\-and\-conditions/.test(window.location.href)) return;
@@ -544,22 +549,14 @@ Menu.prototype = {
         this.hide_main_menu();
 
         var active = this.active_menu_top();
-        var trading = japanese_client() ? $('#main-navigation-jptrading') : $('#main-navigation-trading');
-        if(active) {
+        var trading = new RegExp(japanese_client() ? '\/jptrading\.html' : '\/trading\.html');
+        var trading_is_active = trading.test(window.location.pathname);
+        if (active) {
             active.addClass('active');
-            if(page.client.is_logged_in || trading.is(active)) {
-                this.show_main_menu();
-            }
-        } else {
-            var is_trading_submenu = /\/cashier|\/resources/.test(window.location.pathname);
-            if(!/\/home/.test(window.location.pathname)) {
-                if (!page.client.is_logged_in && is_trading_submenu) {
-                    trading.addClass('active');
-                    this.show_main_menu();
-                } else if (page.client.is_logged_in) {
-                    this.show_main_menu();
-                }
-            }
+        }
+        var is_trading_submenu = /\/cashier|\/resources/.test(window.location.pathname) || trading_is_active;
+        if(page.client.is_logged_in || trading_is_active || is_trading_submenu) {
+            this.show_main_menu();
         }
     },
     show_main_menu: function() {
@@ -942,12 +939,13 @@ Contents.prototype = {
             if (page.client.is_virtual()) {
                 var show_upgrade_msg = true;
                 var show_virtual_msg = true;
+                var show_activation_msg = false;
                 if (localStorage.getItem('jp_test_allowed') === "1") {
-                    hide_upgrade();
                     show_virtual_msg = false;
                     show_upgrade_msg = false; // do not show upgrade for user that filled up form
                 } else if ($('.jp_activation_pending').length !== 0) {
                     show_upgrade_msg = false;
+                    show_activation_msg = true;
                 }
                 for (var i = 0; i < loginid_array.length; i++) {
                     if (loginid_array[i].real) {
@@ -967,6 +965,9 @@ Contents.prototype = {
                     }
                 } else if (show_virtual_msg) {
                     $upgrade_msg.removeClass(hiddenClass).find('> span').removeClass(hiddenClass + ' gr-hide-m');
+                    if (show_activation_msg && $('activation-message').length === 0) {
+                        $('#virtual-text').append(' ' + '<div class="activation-message">' + page.text.localize('Your Application is Being Processed.') + '</div>' );
+                    }
                 }
             } else {
                 var show_financial = false;
