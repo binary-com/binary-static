@@ -8,6 +8,15 @@ var exportAllFunctions = function exportAllFunctions(obj) {
 };
 
 window.$ = window.jQuery = require('jquery');
+
+// Polyfills
+window.Promise = window.Promise || require('promise-polyfill');
+window.Symbol = window.Symbol || require('es6-symbol');
+require('./lib/polyfills/array.includes');
+require('./lib/polyfills/string.includes');
+require('./lib/polyfills/object.assign');
+
+window.EnjoyHint = require('./lib/guide.enjoyhint.js');
 require('./lib/highstock/highstock.js');
 require('./lib/highstock/highstock-exporting.js');
 require('./lib/highstock/export-csv.js');
@@ -47,12 +56,6 @@ exportAllFunctions(require('./binary/base/pjax'));
 exportAllFunctions(require('./binary/static_pages/endpoint'));
 exportAllFunctions(require('./binary/common_functions/traffic_source'));
 
-exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.data.js'));
-exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.init.js'));
-exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.ui.js'));
-exportAllFunctions(require('./binary_japan/trade_japan/JPTradePage.js'));
-exportAllFunctions(require('./binary_japan/trade_japan/portfolio.js'));
-exportAllFunctions(require('./binary_japan/trade_japan/pricing_details.js'));
 exportAllFunctions(require('./binary/common_functions/active_symbols'));
 exportAllFunctions(require('./binary/common_functions/attach_dom/button'));
 exportAllFunctions(require('./binary/common_functions/attach_dom/flextable'));
@@ -72,10 +75,12 @@ exportAllFunctions(require('./binary/common_functions/validation'));
 exportAllFunctions(require('./binary/common_functions/validation_v2'));
 exportAllFunctions(require('./binary/static_pages/get_started_jp'));
 exportAllFunctions(require('./binary/static_pages/job_details'));
+exportAllFunctions(require('./binary/static_pages/platforms'));
 
 exportAllFunctions(require('./binary/websocket_pages/trade/content'));
 exportAllFunctions(require('./binary/websocket_pages/user/verify_email'));
 exportAllFunctions(require('./binary/static_pages/static_pjax'));
+exportAllFunctions(require('./binary/static_pages/regulation'));
 
 exportAllFunctions(require('./binary/validator'));
 exportAllFunctions(require('./binary/websocket_pages/cashier/account_transferws'));
@@ -187,6 +192,7 @@ exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.data'))
 exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.init'));
 exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.ui'));
 exportAllFunctions(require('./binary_japan/knowledge_test'));
+exportAllFunctions(require('./binary_japan/cashier'));
 exportAllFunctions(require('./binary_japan/trade_japan/JPTradePage'));
 exportAllFunctions(require('./binary_japan/trade_japan/portfolio'));
 exportAllFunctions(require('./binary_japan/trade_japan/pricing_details'));

@@ -10,6 +10,14 @@ var PaymentAgentListWS = (function() {
 
 
     var init = function() {
+        $(function() {
+            $( "#accordion" ).accordion({
+              heightStyle: "content",
+              collapsible: true,
+              active: false
+            });
+        });
+
         hiddenClass = 'hidden';
         ddlCountriesID = '#target_country';
         $paListContainer = $('#pa_list');
@@ -25,7 +33,7 @@ var PaymentAgentListWS = (function() {
 
     var sendRequest = function(country, isList) {
         BinarySocket.send({
-            "paymentagent_list": country ? country : $(ddlCountriesID).val(), 
+            "paymentagent_list": country ? country : $(ddlCountriesID).val(),
             "passthrough": isList ? {"countries_list": "1"} : {}
         });
     };
@@ -97,12 +105,12 @@ var PaymentAgentListWS = (function() {
             if(agent.supported_banks && agent.supported_banks.length > 0) {
                 var banks = agent.supported_banks.split(',');
                 banks.map(function(bank){
-                    supported_banks += bank.length === 0 ? 
+                    supported_banks += bank.length === 0 ?
                         '' :
                         '<img src="' + page.url.url_for_static('images/pages/payment_agent/banks/' + bank.toLowerCase() + '.png') + '" alt="' + bank + '" title="' + bank + '" />';
                 });
             }
-        
+
             $accordion.append(
                 agentTemplate
                     .replace(/%name/g                   , agent.name)

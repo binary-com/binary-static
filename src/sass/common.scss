@@ -30,6 +30,10 @@ select, input, button, textarea {
     padding: 2px 3px;
 }
 
+select {
+    max-width: 100%;
+}
+
 button {
     vertical-align: top;
 }
@@ -331,4 +335,16 @@ p.no-para-margin {
 
 .separator-line-thin-gray {
     border-top: 1px solid $COLOR_GRAY;
+}
+
+.border-dark-gray {
+    border: 1px solid $COLOR_GRAY_SHADE;
+}
+
+.vertical-align-middle {
+    vertical-align: middle;
+}
+
+input[type=checkbox] {
+    margin-top: 5px;
 }

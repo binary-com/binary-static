@@ -15,6 +15,7 @@ var PortfolioWS =  (function() {
         currency = '';
         oauth_apps = {};
         hidden_class = 'invisible';
+        $("#portfolio-loading").show();
         showLoadingImage($("#portfolio-loading"));
         if (TUser.get().balance) {
             updateBalance();
@@ -28,19 +29,19 @@ var PortfolioWS =  (function() {
     };
 
     var createPortfolioRow = function(data, is_first) {
-        var longCode = typeof module !== 'undefined' ? 
-            data.longcode : 
+        var longCode = typeof module !== 'undefined' ?
+            data.longcode :
             (japanese_client() ? toJapanTimeIfNeeded(void 0, void 0, data.longcode) : data.longcode);
 
         var new_class = is_first ? '' : 'new';
         $('#portfolio-body').prepend(
             $('<tr class="tr-first ' + new_class + ' ' + data.contract_id + '" id="' + data.contract_id + '">' +
-                '<td class="ref"><span' + showTooltip(data.app_id, oauth_apps[data.app_id]) + '>' + data.transaction_id + '</span></td>' +
+                '<td class="ref"><span' + showTooltip(data.app_id, oauth_apps[data.app_id]) + ' data-balloon-pos="right">' + data.transaction_id + '</span></td>' +
                 '<td class="payout"><strong>' + format_money(data.currency, data.payout) + '</strong></td>' +
                 '<td class="details">' + longCode + '</td>' +
                 '<td class="purchase"><strong>' + format_money(data.currency, data.buy_price) + '</strong></td>' +
                 '<td class="indicative"><strong class="indicative_price">' + format_money(data.currency, '--.--') + '</strong></td>' +
-                '<td class="button"><button class="button open_contract_detailsws" contract_id="' + data.contract_id + '">' + page.text.localize('View') + '</button></td>' +
+                '<td class="button"><button class="button open_contract_detailsws nowrap" contract_id="' + data.contract_id + '">' + page.text.localize('View') + '</button></td>' +
             '</tr>' +
             '<tr class="tr-desc ' + new_class + ' ' + data.contract_id + '">' +
                 '<td colspan="6">' + longCode + '</td>' +
@@ -127,7 +128,7 @@ var PortfolioWS =  (function() {
         }
 
         // force to sell the expired contract, in order to remove from portfolio
-        if(proposal.is_expired == 1 && !proposal.is_sold) {
+        if(proposal.is_settleable == 1 && !proposal.is_sold) {
             BinarySocket.send({"sell_expired": 1});
         }
         var $td = $("#" + proposal.contract_id + " td.indicative");
@@ -222,6 +223,7 @@ var PortfolioWS =  (function() {
         BinarySocket.send({"forget_all": "proposal_open_contract"});
         BinarySocket.send({"forget_all": "transaction"});
         $('#portfolio-body').empty();
+        $("#portfolio-content").addClass(hidden_class);
         is_initialized = false;
     };
 

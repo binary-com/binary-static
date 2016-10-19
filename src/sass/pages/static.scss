@@ -40,3 +40,28 @@
         margin-bottom: 40px;
     }
 }
+
+ol.split li:before {
+    counter-increment: mycounter;
+    content: counter(mycounter) '.\00A0\00A0';
+}
+
+ol.split li {
+    text-indent: -1.1em;
+    list-style-type: none;
+}
+
+ol.start {
+    counter-reset: mycounter;
+}
+
+.deposit-jp-content {
+    #name_id_width {
+        max-width: 90px;
+    }
+    img.responsive {
+        width: 50%;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}

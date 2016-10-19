@@ -59,13 +59,9 @@ pjax_config_page('/payment-agent', function() {
 pjax_config_page('/get-started', function() {
     return {
         onLoad: function() {
-            if (!/jp/.test(window.location.pathname) && japanese_client()) {
-              window.location.href = page.url.url_for('get-started-jp');
-            } else if (/jp/.test(window.location.pathname)) {
-              return;
-          } else {
-            get_started_behaviour();
-          }
+            if (!/get-started-jp/.test(window.location.pathname)) {
+                get_started_behaviour();
+            }
         },
         onUnload: function() {
             $(window).off('scroll');
@@ -86,9 +82,6 @@ pjax_config_page('/contact', function() {
 pjax_config_page('/careers', function() {
     return {
         onLoad: function() {
-            if (japanese_client()) {
-                window.location.href = page.url.url_for('/');
-            }
             display_career_email();
         },
     };
@@ -97,11 +90,6 @@ pjax_config_page('/careers', function() {
 pjax_config_page('/terms-and-conditions', function() {
     return {
         onLoad: function() {
-            if (japanese_client() && !/jp/.test(window.location.pathname)) {
-              window.location.href = page.url.url_for('terms-and-conditions-jp');
-            } else if (!japanese_client() && /jp/.test(window.location.pathname)) {
-              window.location.href = page.url.url_for('terms-and-conditions');
-            }
             var selected_tab = page.url.params_hash().selected_tab;
             if(selected_tab) {
               $('li#' + selected_tab + ' a').click();
@@ -145,22 +133,29 @@ pjax_config_page('/jptrading', function () {
     };
 });
 
-pjax_config_page('/affiliate/signup', function() {
+pjax_config_page('/platforms', function() {
     return {
         onLoad: function() {
-            if (japanese_client()) {
-                window.location.href = page.url.url_for('partners');
-            }
+            Platforms.init();
         }
     };
 });
 
-pjax_config_page('/(us_patents|responsible-trading|partners)', function() {
+pjax_config_page_require_auth("/cashier/deposit-jp", function(){
     return {
         onLoad: function() {
-            if (japanese_client()) {
-                window.location.href = page.url.url_for('/');
-            }
+            page.client.redirect_if_is_virtual();
+            CashierJP.set_name_id();
+        }
+    };
+});
+
+pjax_config_page_require_auth("/cashier/withdraw-jp", function(){
+    return {
+        onLoad: function() {
+            page.client.redirect_if_is_virtual();
+            CashierJP.set_email_id();
+            Content.populate();
         }
     };
 });

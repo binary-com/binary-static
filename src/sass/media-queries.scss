@@ -40,6 +40,9 @@
     .table-container {
         overflow-x: auto;
     }
+    .hide-tablet-mobile {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -66,5 +69,11 @@
 @media screen and (max-width: 480px) {
     .empty-space {
         margin-top: 0;
+    }
+}
+
+@media print {
+    .no-print, .no-print * {
+        display: none !important;
     }
 }

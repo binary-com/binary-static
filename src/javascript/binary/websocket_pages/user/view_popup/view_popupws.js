@@ -108,7 +108,7 @@ var ViewPopupWS = (function() {
     };
 
     var spreadSetValues = function() {
-        contract.is_ended = contract.is_expired || contract.is_sold;
+        contract.is_ended = contract.is_settleable || contract.is_sold;
         contract.status   = page.text.localize(contract.is_ended ? 'Closed' : 'Open');
     };
 
@@ -195,14 +195,18 @@ var ViewPopupWS = (function() {
         var finalPrice       = contract.sell_price || contract.bid_price,
             is_started       = !contract.is_forward_starting || contract.current_spot_time > contract.date_start,
             user_sold        = contract.sell_time && contract.sell_time <= contract.date_expiry,
-            is_ended         = contract.is_expired || contract.is_sold || user_sold,
+            is_ended         = contract.is_settleable || contract.is_sold || user_sold,
             indicative_price = finalPrice && is_ended ? (contract.sell_price || contract.bid_price) : contract.bid_price ? contract.bid_price : null;
 
         if(contract.barrier_count > 1) {
             containerSetText('trade_details_barrier'    , contract.high_barrier , '', true);
             containerSetText('trade_details_barrier_low', contract.low_barrier  , '', true);
         } else if(contract.barrier) {
-            containerSetText('trade_details_barrier'    , contract.entry_tick_time ? contract.barrier : '-', '', true);
+            containerSetText('trade_details_barrier'    , contract.entry_tick_time ?
+                            (contract.contract_type === 'DIGITMATCH' ? page.text.localize('Equals') + ' ' + contract.barrier :
+                            contract.contract_type === 'DIGITDIFF'  ? page.text.localize('Not') + ' ' + contract.barrier :
+                            contract.barrier) : '-',
+                            '', true);
         }
 
         var currentSpot     = !is_ended ? contract.current_spot      : (user_sold ? contract.sell_spot      : contract.exit_tick);
@@ -264,7 +268,7 @@ var ViewPopupWS = (function() {
         }
         if(is_ended) {
             normalContractEnded(parseFloat(profit_loss) >= 0);
-            if(contract.is_valid_to_sell && contract.is_expired && !contract.is_sold && !isSellClicked) {
+            if(contract.is_valid_to_sell && contract.is_settleable && !contract.is_sold && !isSellClicked) {
                 ViewPopupUI.forget_streams();
                 sellExpired();
             }
@@ -283,7 +287,7 @@ var ViewPopupWS = (function() {
             showLocalTimeOnHover('#trade_details_live_date');
 
             var is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start,
-                is_ended   = contract.is_expired || contract.is_sold;
+                is_ended   = contract.is_settleable || contract.is_sold;
             if((!is_started || is_ended || now >= contract.date_expiry) && document.getElementById('trade_details_live_remaining')) {
                 containerSetText('trade_details_live_remaining', '-');
             } else {
@@ -312,7 +316,10 @@ var ViewPopupWS = (function() {
         containerSetText('trade_details_spot_label'      , page.text.localize('Exit Spot'));
         containerSetText('trade_details_spottime_label'  , page.text.localize('Exit Spot Time'));
         containerSetText('trade_details_indicative_label', page.text.localize('Price'));
-        containerSetText('trade_details_message'         , '&nbsp;', {'epoch_time': ''});
+        // show validation error if contract is not settled yet
+        if (!(contract.is_settleable && !contract.is_sold)) {
+            containerSetText('trade_details_message'         , '&nbsp;');
+        }
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
     };
@@ -379,7 +386,7 @@ var ViewPopupWS = (function() {
     var normalMakeTemplate = function() {
         $Container = $('<div/>').append($('<div/>', {id: wrapperID}));
 
-        var longcode = japanese_client() ? toJapanTimeIfNeeded(contract.expiry_date, '', contract.longcode) : contract.longcode;
+        var longcode = contract.longcode;
 
         $Container.prepend($('<div/>', {id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: longcode}));
         var $sections = $('<div/>').append($('<div class="gr-row container"><div id="sell_details_chart_wrapper" class="gr-8 gr-12-m"></div><div id="sell_details_table" class="gr-4 gr-12-m"></div></div>'));
@@ -393,7 +400,8 @@ var ViewPopupWS = (function() {
                     (!contract.tick_count ? normalRow('End Time',       '', 'trade_details_end_date') +
                                             normalRow('Remaining Time', '', 'trade_details_live_remaining') : '') +
                     normalRow('Entry Spot',     '', 'trade_details_entry_spot') +
-                    normalRow(contract.barrier_count > 1 ? 'High Barrier' : 'Barrier', '', 'trade_details_barrier'    , true) +
+                    normalRow(contract.barrier_count > 1 ? 'High Barrier' :
+                              /^DIGIT(MATCH|DIFF)$/.test(contract.contract_type) ? 'Target' : 'Barrier', '', 'trade_details_barrier', true) +
                     (contract.barrier_count > 1 ? normalRow('Low Barrier',             '', 'trade_details_barrier_low', true) : '') +
                     normalRow('Potential Payout', '', 'trade_details_payout') +
                     normalRow('Purchase Price', '', 'trade_details_purchase_price') +
@@ -619,10 +627,14 @@ var ViewPopupWS = (function() {
     var dispatch = function(response) {
         switch(response.msg_type) {
             case 'proposal_open_contract':
-                if(response.proposal_open_contract && response.proposal_open_contract.contract_id == contractID) {
-                    storeSubscriptionID(response.proposal_open_contract.id);
-                    responseContract(response);
-                } else if (!response.proposal_open_contract && response.echo_req.contract_id == contractID && response.error) {
+                if(response.proposal_open_contract) {
+                    if(response.proposal_open_contract.contract_id == contractID) {
+                        storeSubscriptionID(response.proposal_open_contract.id);
+                        responseContract(response);
+                    } else {
+                        BinarySocket.send({"forget": response.proposal_open_contract.id});
+                    }
+                } else if (response.echo_req.contract_id == contractID && response.error && response.error.code !== 'AlreadySubscribed') {
                     showErrorPopup(response, response.error.message);
                 }
                 break;
@@ -641,10 +653,12 @@ var ViewPopupWS = (function() {
                 }
                 break;
         }
-        showLocalTimeOnHover('#trade_details_start_date');
-        showLocalTimeOnHover('#trade_details_end_date');
-        showLocalTimeOnHover('#trade_details_current_date');
-        showLocalTimeOnHover('#trade_details_live_date');
+        var i,
+            dates = ['#trade_details_start_date', '#trade_details_end_date', '#trade_details_current_date', '#trade_details_live_date'];
+        for (i = 0; i < dates.length; i++) {
+            showLocalTimeOnHover(dates[i]);
+            $(dates[i]).attr('data-balloon-pos', 'left');
+        }
     };
 
     return {

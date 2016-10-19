@@ -131,7 +131,7 @@
             </div>
             <div class="gr-12 gr-6-p gr-centered">
                 <div class="gr-row gr-row-align-center gr-padding-10">
-                    <a class="button" href="https://blog.binary.com" target="_blank">
+                    <a class="button" href="https://academy.binary.com" target="_blank">
                         <span>
                             [% l("Start learning") %]
                         </span>
@@ -211,7 +211,7 @@
                 </p>
             </div>
             <div class="gr-9 gr-parent gr-centered">
-                <img class="responsive" src="[% request.url_for('images/pages/home/ja-trade.png') %]"/>
+                <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/trade_form.png') %]"/>
             </div>
         </div>
     </div>

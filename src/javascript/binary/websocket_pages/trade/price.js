@@ -55,8 +55,8 @@ var Price = (function() {
             proposal['contract_type'] = typeOfContract;
         }
 
-        if (currency && currency.value) {
-            proposal['currency'] = currency.value;
+        if (currency && (currency.value || currency.getAttribute('value'))) {
+            proposal['currency'] = currency.value || currency.getAttribute('value');
         }
 
         if (underlying && underlying.value) {
@@ -199,7 +199,7 @@ var Price = (function() {
                 } else {
                     $('.stake:hidden').show();
                     stake.textContent = page.text.localize('Stake') + ': ';
-                    amount.textContent = format_money(currency.value, (data['display_value']*1).toFixed(2));
+                    amount.textContent = format_money((currency.value || currency.getAttribute('value')), (data['display_value']*1).toFixed(2));
                 }
                 $('.stake_wrapper:hidden').show();
             } else {
@@ -208,7 +208,7 @@ var Price = (function() {
 
             if (data['payout']) {
               payout.textContent = (is_spread ? page.text.localize('Payout/point') : page.text.localize('Payout')) + ': ';
-              payoutAmount.textContent = format_money(currency.value, (data['payout']*1).toFixed(2));
+              payoutAmount.textContent = format_money((currency.value || currency.getAttribute('value')), (data['payout']*1).toFixed(2));
               $('.payout_wrapper:hidden').show();
             } else {
               $('.payout_wrapper:visible').hide();
@@ -233,9 +233,9 @@ var Price = (function() {
             comment.show();
             error.hide();
             if (is_spread) {
-                displayCommentSpreads(comment, currency.value, proposal['spread']);
+                displayCommentSpreads(comment, (currency.value || currency.getAttribute('value')), proposal['spread']);
             } else {
-                displayCommentPrice(comment, currency.value, proposal['ask_price'], proposal['payout']);
+                displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal['ask_price'], proposal['payout']);
             }
             var oldprice = purchase.getAttribute('data-display_value'),
                 oldpayout = purchase.getAttribute('data-payout');

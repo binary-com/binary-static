@@ -7,8 +7,17 @@ var MarketTimes = (function() {
         });
     };
 
+    var getSymbolInfo = function(qSymbol, activeSymbols) {
+        return activeSymbols.filter(function(sy, id) {
+            if(sy.symbol === qSymbol) {
+                return true;
+            }
+        });
+    };
+
     var external = {
         getSubmarketInfo: getSubmarketInfo,
+        getSymbolInfo: getSymbolInfo
     };
     return external;
 }());

@@ -1,5 +1,5 @@
 <div id='page-wrapper'>
-    <div id="topbar">
+    <div id="topbar" class="no-print">
         <div class="container">
             <div class="gr-row">
                 <div id="topbar-msg" class='gr-6 gr-5-t gr-12-p gr-12-m invisible upgrademessage'>
@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <div id="header">
+    <div id="header" class="no-print">
         <div class='container'>
             <div class='gr-12'>
                 <div class='gr-row gr-row-align-middle'>
@@ -44,22 +44,28 @@
                     <div class='gr-6 gr-hide-m gr-hide-p gr-padding-10'>
                         <div id='main-navigation'>
                             <ul id="menu-top">
-                                <li>
-                                    <a class="pjaxload" href="[% request.url_for('why-us') %]">[% l("Why Us?") %]</a>
+                                <li class="ja-hide">
+                                    <a class="pjaxload" href="[% request.url_for('why-us') %]">[% l('Why Us?') %]</a>
+                                </li>
+                                <li class="all-hide ja-show-inline-block">
+                                    <a class="pjaxload" href="[% request.url_for('why-us-jp') %]">[% l('Why Us?') %]</a>
                                 </li>
                                 <li class="ja-hide">
                                     <a class="pjaxload" href="[% request.url_for('get-started') %]">[% l("Get Started") %]</a>
                                 </li>
-                                <li class="all-hide ja-show-block">
+                                <li class="all-hide ja-show-inline-block">
                                   <a class="pjaxload" href="[% request.url_for('get-started-jp') %]">[% l("Get Started") %]</a>
                                 </li>
-                                <li>
-                                    <a class="pjaxload" href="[% request.url_for('tour') %]">[% l("Tour") %]</a>
+                                <li class="ja-hide">
+                                    <a class="pjaxload" href="[% request.url_for('tour') %]">[% l('Tour') %]</a>
+                                </li>
+                                <li class="all-hide ja-show-inline-block">
+                                    <a class="pjaxload" href="[% request.url_for('tour-jp') %]">[% l('Tour') %]</a>
                                 </li>
                                 <li class="ja-hide" id="main-navigation-trading">
-                                    <a class="pjaxload" href="[% request.url_for('trading') %]">[% l("Trade") %]</a>
+                                    <a class="pjaxload" href="[% request.url_for('platforms') %]">[% l("Platforms") %]</a>
                                 </li>
-                                <li class="all-hide ja-show-block" id="main-navigation-jptrading">
+                                <li class="all-hide ja-show-inline-block" id="main-navigation-jptrading">
                                     <a class="pjaxload" href="[% request.url_for('jptrading') %]">[% l("Trade") %]</a>
                                 </li>
                             </ul>

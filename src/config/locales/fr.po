@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: French (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-22 08:09+0000\n"
-"Last-Translator: Michal Čihař <michal@cihar.com>\n"
+"PO-Revision-Date: 2016-10-13 14:20+0000\n"
+"Last-Translator: Chloe Chevreton <chloe-che@hotmail.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/binary/static/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -42,6 +42,11 @@ msgstr "250 000 $ - 1 000 000 $"
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%2 %1 ont été crédités sur votre compte virtuel %3"
+
+#, fuzzy
+#| msgid "== Toll Free =="
+msgid "%1 (Toll Free)"
+msgstr "== Sans frais =="
 
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "Conditions générales du programme d'affiliation %1"
@@ -126,9 +131,6 @@ msgstr "%1 décroche le titre de « meilleure société de courtage d'options b
 
 msgid "%1 is looking to recruit highly skilled, experienced designers who are passionate about developing attractive visuals for both online and offline applications."
 msgstr "%1 recrute des graphistes hautement qualifiés et expérimentés, désireux de développer des contenus visuels attractifs pour des applications en ligne et hors ligne."
-
-msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
-msgstr "%1 n'est pas disponible au Costa Rica et n'est soumise à la réglementation ou à la supervision d'aucun organisme de réglementation dans le système financier du Costa Rica."
 
 msgid "%1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 est l'une des sociétés les plus anciennes et les plus respectées du secteur des options binaires."
@@ -223,8 +225,8 @@ msgstr "%1 remporte le premier prix récompensant les meilleurs services de cour
 msgid "%1 would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions."
 msgstr "%1 souhaiterait s'associer à des agents de paiement potentiels, basés dans le monde entier, pour pouvoir offrir à ses clients des services de paiement locaux, adaptés à leurs régions respectives."
 
-msgid "%1's Continuous Indices are the Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 25%, 50%, 75% and 100%."
-msgstr "Les indices continus de %1 sont les indices Volatility 25, Volatility 50, Volatility 75 et Volatility 100. Ces indices correspondent à des simulations de marché basées sur des taux de volatilité constants de 25 %, 50 %, 75 % et 100 %."
+msgid "%1's Continuous Indices are the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75% and 100%."
+msgstr "Les indices continus de %1 sont les indices Volatility 10, Volatility 25, Volatility 50, Volatility 75 et Volatility 100. Ces indices correspondent à des simulations de marché basées sur des taux de volatilité constants de 10%, 25 %, 50 %, 75 % et 100 %."
 
 msgid "%1's IT Operations Group is responsible for the design, development and operation of the company's high-traffic networks. Its responsibilities include hardware and software deployment, up-time and reliability testing, incident response reporting, network security, intrusion detection, and load balancing."
 msgstr "L'équipe de gestion des TI de Binary.com est responsable de la conception, du développement et de la gestion des réseaux à fort trafic de la société. Ses responsabilités comprennent le déploiement des matériels et logiciels informatiques, le contrôle du temps de disponibilité et de la fiabilité, la gestion des rapports d'incidents, la sécurité de réseau, la détection d'intrusion et la répartition de charge."
@@ -387,6 +389,12 @@ msgstr "4. Choisissez votre paiement"
 
 msgid "40 transactions or more in the past 12 months"
 msgstr "40 transactions ou plus au cours des  12 derniers mois"
+
+msgid "5 ticks to 1 year"
+msgstr "De 5 ticks à 1 an"
+
+msgid "5 to 10 ticks"
+msgstr "5 à 10 ticks"
 
 msgid "5-10 million JPY"
 msgstr "5-10 millions JPY"
@@ -680,9 +688,6 @@ msgstr "<ul><li><strong> Ouvrez le menu</strong> et sélectionnez <strong>Préf�
 msgid "<ul><li>Go to \"<strong>Chrome Menu (Customize and control Google Chrome)</strong>\" dropdown and select <strong>Settings</strong>.</li><li>Click on the <strong>Show advanced settings</strong>.</li><li>Click on the <strong>Content settings</strong> button under <strong>Privacy</strong> menu.</li><li>Select <strong>Allow local data to be set (recommended)</strong>.</li><li>Click on the <strong>Done</strong> button to save your settings.</li></ul>"
 msgstr "<ul><li>Ouvrez le « <strong>Menu déroulant Chrome (Personnaliser et contrôler Google Chrome)</strong> » et sélectionnez <strong>Paramètres</strong>.</li><li>Cliquez sur <strong>Afficher les paramètres avancés</strong>. </li><li>Cliquez sur le bouton <strong>Paramètres de contenu</strong> sous le menu <strong>Confidentialité</strong>. </li><li>Sélectionnez <strong>Autoriser le stockage des données locales (recommandé)</strong>. </li><li>Cliquez sur le bouton <strong>OK</strong> pour sauvegarder vos paramètres.</li></ul>"
 
-msgid "== Toll Free =="
-msgstr "== Sans frais =="
-
 msgid "A Bachelor's degree in Computer Science, or an equivalent combination of technical education, training and work experience"
 msgstr "Un niveau Bac+3 en informatique ou un niveau équivalent combinant formation technique et expérience professionnelle"
 
@@ -903,8 +908,23 @@ msgstr "Responsable administratif [H/F]"
 msgid "Administrator"
 msgstr "Administration"
 
+msgid "Advanced Automation"
+msgstr "Automatisation avancée"
+
+msgid "Advanced CFD trading platform"
+msgstr "Plateforme de trading sur CFD perfectionnée"
+
+msgid "Advanced Platforms"
+msgstr "Plateformes perfectionnées"
+
+msgid "Advanced binary options trading interface"
+msgstr "Interface perfectionnée dédiée aux trading d'options binaires"
+
 msgid "Advanced knowledge of software design principles"
 msgstr "Connaissance approfondie des principes de conception de logiciel"
+
+msgid "Advanced trading app for web and mobile"
+msgstr "Application de trading perfectionnée (Web et mobile)"
 
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "Conseiller les cadres supérieurs de la société concernant les négociations de salaire et les offres d'emploi"
@@ -930,6 +950,9 @@ msgstr "Toutes les options de partenariat"
 msgid "All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals."
 msgstr "Toutes les activités d'affiliation doivent être menées de façon professionnelle et appropriée. Vous êtes tenu(e) d'agir de bonne foi et avec intégrité dans vos relations avec les clients auxquels vous recommandez Binary.com, et de toujours agir dans leurs meilleurs intérêts."
 
+msgid "All barriers in this trading window are expired"
+msgstr "Toutes les barrières de cette fenêtre de trading sont expirées"
+
 msgid "All calls are recorded for training and monitoring purposes"
 msgstr "Tous les appels sont enregistrés à des fins de suivi et d'optimisation"
 
@@ -943,7 +966,7 @@ msgid "All opinions, news, research, analysis, prices or other information conta
 msgstr "Toutes les opinions, actualités, recherches, analyses, tarifications et autres informations diffusées sur ce site Web sont fournies dans le cadre d'une analyse générale du marché et ne constituent en aucun cas un quelconque conseil en investissement. %1 rejette toute responsabilité concernant toute forme de perte ou dommage, y compris, sans s'y limiter, toute perte de bénéfice découlant directement ou indirectement de l'utilisation ou de l'interprétation de telles informations ."
 
 msgid "All times are in GMT (Greenwich Mean Time)."
-msgstr "Tous les horaires sont indiqués en GMT (Greenwich Mean Time)"
+msgstr "Tous les horaires sont indiqués en GMT (Greenwich Mean Time)."
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "Autoriser les Clients à effectuer des dépôts pour des sommes inférieures (en devise locale)"
@@ -988,6 +1011,9 @@ msgstr "Une personnalité affirmée, axée sur la vente, capable de s'adapter ra
 msgid "An error occured."
 msgstr "Une erreur s'est produite."
 
+msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
+msgstr ""
+
 msgid "Analyze data regarding fraud, risk assessment, and anti-money laundering"
 msgstr "Analyse de données concernant les fraudes, l'évaluation du risque et la lutte contre le blanchiment d'argent"
 
@@ -1011,6 +1037,9 @@ msgstr "Répondez à la question secrète"
 
 msgid "Anti-Fraud Officer"
 msgstr "Responsable de la lutte anti-fraude [H/F]"
+
+msgid "Any"
+msgstr ""
 
 msgid "Any changes in our privacy policy or security statement will be posted onto this website. In the event of material changes that directly affect the economic use of your personal information, we will request your prior authorisation in writing before effecting such change on your account."
 msgstr "Toute modification concernant notre politique de confidentialité ou la sécurité sera diffusée sur ce site Web. Dans l'éventualité de modifications importantes directement liées à l'utilisation économique de vos informations personnelles, nous vous demanderons une autorisation écrite préalable avant de procéder à ce type de modification sur votre compte."
@@ -1059,9 +1088,6 @@ msgstr "Pertinence"
 
 msgid "Appropriateness Test"
 msgstr "Test de pertinence"
-
-msgid "Apps"
-msgstr "Applications"
 
 msgid "Apr"
 msgstr "avr."
@@ -1192,6 +1218,18 @@ msgstr "Autoriser votre compte."
 msgid "Authorised Applications"
 msgstr "Applications autorisées"
 
+msgid "Auto-trader programming tool"
+msgstr ""
+
+msgid "Automate your trading strategies with our simple, \"drag-and-drop\" bot creation tool."
+msgstr ""
+
+msgid "Available Markets"
+msgstr "Marchés disponibles"
+
+msgid "Available Products"
+msgstr "produits disponibles"
+
 msgid "Available payment methods"
 msgstr "Moyens de paiement disponibles"
 
@@ -1200,12 +1238,6 @@ msgstr "Évitez d'avoir à utiliser un service de paiement électronique"
 
 msgid "Award-winning, patented financial trading platform"
 msgstr "Plate-forme de trading financier primée et brevetée"
-
-msgid "BIEL Pillar III"
-msgstr "BIEL Pillar III"
-
-msgid "BIEL Prospectus"
-msgstr "Prospectus BIEL"
 
 msgid "BIEL Terms"
 msgstr "Conditions BIEL"
@@ -1240,6 +1272,9 @@ msgstr "Les banques, les fonds spéculatifs et les investisseurs professionnels 
 msgid "Barrier"
 msgstr "Barrière"
 
+msgid "Barrier (%1)"
+msgstr "Barrière (%1)"
+
 msgid "Barrier Change"
 msgstr "Modification de barrière"
 
@@ -1248,6 +1283,9 @@ msgstr "Marge de barrière"
 
 msgid "Barrier(s)"
 msgstr "Barrière(s)"
+
+msgid "Basic Platforms"
+msgstr ""
 
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr "Avant que nous puissions procéder à l'ouverture d'un compte pour vous permettre de négocier ou d'investir dans des Produits d'investissement par l'intermédiaire de BIEL, nous sommes dans l'obligation de déterminer si les Produits d'investissement ou les services que vous avez sélectionnés sont adaptés à votre situation, et de vous avertir, le cas échéant, du caractère inapproprié de tout produit ou service en fonction des informations que vous nous fournissez. La décision d'ouvrir un compte et d'utiliser nos produits ou services vous appartient. Il est de votre responsabilité de comprendre les risques qu'impliquent nos produits ou services."
@@ -1288,23 +1326,41 @@ msgstr "BetOnMarkets.com affiche un chiffre d'affaires de 1 million de dollars 
 msgid "Betting system and method"
 msgstr "Système et méthode de trading"
 
-msgid "Binary (C.R.) S.A., registered in Costa Rica."
-msgstr "Binary (C.R.) S.A., enregistrée au Costa Rica."
+msgid "Binary (C.R.) S.A."
+msgstr ""
+
+msgid "Binary (C.R.) S.A., registered in Costa Rica. Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
+msgstr "Binary (C.R.) S.A., enregistrée au Costa Rica. Les clients basés dans le reste du monde (sauf dans certains pays : États-Unis, Costa Rica, Hong-Kong) pourront ouvrir leur compte auprès de Binary (C.R.) S.A."
+
+msgid "Binary (Europe) Ltd"
+msgstr "Binary (Europe) Ltd"
 
 msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgstr "Binary (Europe) Ltd et Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
-msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
-msgstr "Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte. Société autorisée et réglementée (pour les produits d'investissement uniquement) par l'Autorité maltaise des jeux (licence n° MGA/CL2/118/2000), et pour les clients du Royaume-Uni - <a href='%1' target='_blank'>afficher la licence</a>."
+msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495\" target=\"_blank\">view licence</a>."
+msgstr "Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte. Société autorisée et réglementée (pour les produits d'investissement uniquement : indices de volatilité %1) par l'Autorité maltaise des jeux (licence n° MGA/CL2/118/2000), et pour les clients du Royaume-Uni, par la Commission des jeux du Royaume-Uni : <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495\" target=\"_blank\"> 1afficher la licence</a> 2."
+
+msgid "Binary (IOM) Ltd"
+msgstr ""
 
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 msgstr "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 
-msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licenced and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
-msgstr "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Société autorisée et réglementée par la Gambling Supervision Commission de l'île de Man (licence actuelle pour les services de jeux en ligne délivrée le 31 août 2012), et pour les clients du Royaume-Uni par la Commission des jeux du Royaume-Uni - <a href='%1' target='_blank'>afficher la licence</a>."
+msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172\" target=\"_blank\">view licence</a>."
+msgstr "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Société autorisée et réglementée par la Gambling Supervision Commission de l'île de Man (licence actuelle pour les services de jeux en ligne délivrée le 31 août 2012), et pour les clients du Royaume-Uni par la Commission des jeux du Royaume-Uni - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172\" target=\"_blank\"> 1afficher la licence</a> 2."
+
+msgid "Binary (V) Ltd"
+msgstr ""
+
+msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">view licence</a>."
+msgstr ""
+
+msgid "Binary Bot"
+msgstr "Binary Bot"
 
 msgid "Binary Bot released"
-msgstr "Lancement d'un robot dédié aux options binaires"
+msgstr "Lancement de Binary Bot"
 
 msgid "Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur"
 msgstr "Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur"
@@ -1318,11 +1374,23 @@ msgstr "Binary Group Services recrute des développeurs Perl talentueux et motiv
 msgid "Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel."
 msgstr "Binary Group Services recrute des développeurs front-end talentueux et motivés, désireux d'exceller dans leur domaine."
 
+msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to Binary.com via EU passporting rights - freedom to provide cross border services."
+msgstr ""
+
+msgid "Binary Investments (Europe) Ltd"
+msgstr ""
+
 msgid "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA and all other Binary Group members are sometimes referred to collectively as \"%1\", \"us\" or \"we\"."
 msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA et tous les autres membres de Binary Group sont parfois désignés collectivement par les termes « %1 » ou « nous »."
 
-msgid "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156)."
-msgstr "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malte. Société autorisée et réglementée par l'Autorité maltaise des services financiers en tant que fournisseur de services d'investissement de catégorie 3 (licence n° IS/70156)."
+msgid "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (licence no. IS/70156). European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
+msgstr "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte. Société autorisée et réglementée par l'Autorité maltaise des services financiers en tant que fournisseur de services d'investissement de catégorie 3 (licence n° IS/70156). Les résidents de l'Union européenne (sauf Royaume-Uni) souhaitant négocier des produits d'investissement pourront ouvrir leur compte auprès de Binary Investments (Europe) Ltd."
+
+msgid "Binary K.K."
+msgstr "Binary K.K."
+
+msgid "Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590)."
+msgstr ""
 
 msgid "Binary KK granted Japan license"
 msgstr "Binary KK obtient une licence au Japon"
@@ -1330,8 +1398,17 @@ msgstr "Binary KK obtient une licence au Japon"
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japon"
 
-msgid "Binary Ltd, with registered office address situated at <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, is the holding company for the Binary group."
-msgstr "Binary Ltd, dont l'antenne officielle se situe au <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, est la société holding du groupe Binary."
+msgid "Binary Ltd"
+msgstr "Binary Ltd"
+
+msgid "Binary Ltd, with registered office address situated at 47 Esplanade, St. Helier, Jersey, JE1 0BD Channel Islands, is the holding company for the Binary group."
+msgstr "Binary Ltd, dont l'antenne officielle se situe au 47 Esplanade, St. Helier, Jersey, JE1 0BD Channel Islands, est la société holding du groupe Binary."
+
+msgid "Binary Next-Gen"
+msgstr "Binary Next-Gen"
+
+msgid "Binary Options"
+msgstr "Options binaires"
 
 msgid "Binary Options Basics"
 msgstr "Les bases du trading d'options binaires"
@@ -1339,8 +1416,14 @@ msgstr "Les bases du trading d'options binaires"
 msgid "Binary Shop"
 msgstr "Boutique Binary.com"
 
+msgid "Binary Tick Trade App"
+msgstr "Application binaire Tick Trade"
+
 msgid "Binary Trading is simple to learn and to execute."
 msgstr "Les techniques du trading binaire sont faciles à apprendre et à mettre en pratique."
+
+msgid "Binary Webtrader"
+msgstr "Binary Webtrader"
 
 msgid "Binary granted Investment Services license"
 msgstr "Binary obtient une licence en tant que fournisseur de services d'investissement"
@@ -1386,17 +1469,26 @@ msgstr "Binary Investments (Europe), la filiale maltaise de Binary, obtient une 
 msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
 msgstr "La plateforme Binary traite en moyenne 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> par seconde, 24h/24 et 7j/7"
 
+msgid "Binary.com"
+msgstr "Binary.com"
+
+msgid "Binary.com is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements."
+msgstr ""
+
 msgid "Binary.com is an active member of the Perl community and is in the process of uploading a number of its internal utility modules to <a target='_blank' href='%1'>CPAN</a>. If you are a Perl enthusiast, contribute by reviewing these modules, and submitting pull-requests on <a target='_blank' href='%2'>github</a>."
 msgstr "Binary.com est un membre actif de la communauté Perl et archive actuellement un certain nombre de ses modules internes sur le site du <a target='_blank' href='%1'>CPAN</a>. Si vous êtes passionné de Perl, vous pouvez apporter votre contribution en révisant ces modules et en envoyant des demandes de tirage (pull requests) via <a target='_blank' href='%2'>GitHub</a>."
 
 msgid "Binary.com is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase."
 msgstr "Binary.com soutien activement le mouvement open source et autorise actuellement l'accès à certains éléments de son code base dans le cadre de projets open-source."
 
+msgid "Binary.com is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
+msgstr "Binary.com n'est pas disponible au Costa Rica et n'est soumise à la réglementation ou à la supervision d'aucun organisme de réglementation dans le système financier du Costa Rica."
+
 msgid "Binary.com open-source projects"
 msgstr "Projets open source Binary.com"
 
 msgid "Binary.com's CPAN contributions"
-msgstr "Contributions de Binary.com sur le CPAN "
+msgstr "Contributions de Binary.com sur le CPAN"
 
 msgid "Blog"
 msgstr "Blog"
@@ -1433,6 +1525,9 @@ msgstr "Mais attention, nous sommes exigeants. Nous ne sélectionnons que les ca
 
 msgid "Buy"
 msgstr "Acheter"
+
+msgid "Buy an App, or Build Your Own"
+msgstr ""
 
 msgid "By clicking <strong>Accept</strong> below and proceeding with the Account Opening you should note that you may be exposing yourself to risks (which may be significant, including the risk of loss of the entire sum invested) that you may not have the knowledge and experience to properly assess or mitigate."
 msgstr "Avant de cliquer sur <strong>Accepter</strong> ci-dessous et de procéder à l'ouverture du compte, vous devez savoir que vous pourriez vous exposer à des risques (qui peuvent être importants, notamment la perte de toute la somme d'investissement) que vos connaissances et votre expérience ne vous permettent pas forcément d'évaluer ou de réduire efficacement."
@@ -1508,6 +1603,15 @@ msgstr "Modifier votre mot de passe de connexion principal."
 
 msgid "Chart"
 msgstr "Graphique"
+
+msgid "Chart Comparison"
+msgstr "Comparaison graphique"
+
+msgid "Chart Indicators"
+msgstr "Indicateurs graphiques"
+
+msgid "Charting for this underlying is delayed"
+msgstr "Les graphiques sont retardés pour ce sous-jacent"
 
 msgid "Check out our commission rates below:"
 msgstr "Consultez nos taux de commission ci-dessous :"
@@ -1611,14 +1715,14 @@ msgstr "Responsabilité du Client"
 msgid "Clients agree to be fully and personally liable for the due settlement of every transaction entered into under their account with the Company. This includes any transactions entered into by members of the Client's family or entourage who have gained access to the account. Clients are responsible for ensuring that they alone control access to the account, and that no minors are granted access to trading on the website. In any case, Clients remains fully liable for any and all positions traded on their account, and for any credit card transactions entered into the site for their account. Each Client also indemnifies the Company in respect to all costs and losses of any kind, whatsoever as may be incurred by the Company as a result, direct or indirect, of the Client's failure to perform or settle such a transaction. Online Gambling debts are enforceable in law in the Isle of Man."
 msgstr "Les Clients sont personnellement et entièrement responsables pour le règlement de toute transaction entrée dans le cadre de leur compte avec la Société. Ceci inclut toute transaction entrée par les membres de la famille du Client ou son entourage, ayant obtenu l'accès au compte. Les Clients ont la responsabilité de veiller à être les seuls à contrôler l'accès au compte, et qu'aucun mineur ne puisse effectuer du trading sur le site web. En tous cas, les Clients restent entièrement responsables de toute position tradée sur leur compte, et de toute transaction entrée par carte bancaire sur le site pour son compte. Chaque Client est également dans l'obligation d'indemniser la Société pour l'ensemble de toutes sortes de coûts et de pertes ayant porté préjudice à la Société en conséquence directe ou indirecte d'un manquement du Client à effectuer ou à régler une telle transaction. Les dettes de jeu en ligne sont régies par la loi de l'Île de Man."
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Japan, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
-msgstr "Les clients basés dans le reste du monde (sauf dans certains pays : États-Unis, Japon, Costa Rica, Hong-Kong) pourront ouvrir leur compte auprès de Binary (C.R.) S.A."
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. Binary.com is not available in the Republic of Vanuatu."
+msgstr "Les clients basés dans le reste du monde (sauf dans certains pays : États-Unis, Costa Rica, Hong-Kong) pourront ouvrir leur compte MetaTrader 5 Forex et CFD auprès de Binary (V) Ltd. Binary.com n'est pas disponible au Vanuatu."
 
 msgid "Clients may avail of this bonus only when a real money account is opened."
 msgstr "Les clients peuvent utiliser ce bonus seulement après ouverture d'un compte réel est ouvert."
 
-msgid "Clients must be aware that underage gambling is an offence. If a client, upon age verification, is proven to be underage, will be deprived from any winnings and only deposits made shall be refunded."
-msgstr "Les Clients doivent être au courant que les mineurs sont interdits d'effectuer des paris. S'il est prouvé qu'un client est mineur, après la vérification d'âge, il perdra tous ses gains et seulement les dépôts effectués seront remboursés."
+msgid "Clients must be aware that underage gambling is an offence. If a client, upon age verification, is proven to be underage, they will be deprived from any winnings and only deposits made shall be refunded. For clients registered with Binary (Europe) Ltd, all the funds from their MLT account will be transferred to the Malta Gaming Authority. In order to reclaim these funds, clients will need to contact the MGA directly."
+msgstr "Nous rappelons à nos Clients que les jeux d'argent sont interdits aux mineurs. Si un client est déclaré mineur suite à un contrôle de son âge, celui-ci perdra tous ses gains et seul le montant des dépôts effectués sera remboursé. Pour les clients inscrits auprès de Binary (Europe) Ltd, tous les fonds issus de leur compte MLT seront transférés à l'Autorité maltaise des jeux. Pour récupérer ces fonds, les clients concernés devront contacter directement l'Autorité maltaise des jeux (Malta Gaming Authority)."
 
 msgid "Clients must fill into the account opening form all requested details that establish their identity. Clients must give a valid identification, address, and contact email and personal telephone number."
 msgstr "Les Clients doivent compléter tous les détails requis afin d'établir leur identité dans le formulaire d'ouverture de compte. Les Clients doivent donner une identification valide, une adresse et un mail de contact et numéro de téléphone personnel."
@@ -1691,6 +1795,9 @@ msgstr "Voyage d'affaires à Phuket, Thaïlande"
 
 msgid "Company's Right"
 msgstr "Droits de la Société"
+
+msgid "Compare all the trading platforms that we offer. Choose the ideal platform for your preferred trading strategy."
+msgstr ""
 
 msgid "Complaints"
 msgstr "Réclamations"
@@ -1811,6 +1918,9 @@ msgstr "Les contrats ne sont habituellement pas proposés à la dernière heure 
 
 msgid "Contracts bought"
 msgstr "Contrats achetés"
+
+msgid "Contracts for Difference (CFD)"
+msgstr ""
 
 msgid "Contracts may not expire on a weekend; therefore the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday."
 msgstr "Les contrats ne peuvent pas expirer le weekend ; par conséquent, la date d'expiration d'un contrat peut être reportée au lundi suivant lorsque la date d'expiration du contrat est prévue un samedi ou un dimanche."
@@ -2199,6 +2309,9 @@ msgstr "Ex. Legrand"
 msgid "EGR Operator Award "
 msgstr "    "
 
+msgid "EU Passport Rights"
+msgstr ""
+
 msgid "EUR"
 msgstr "EUR"
 
@@ -2283,6 +2396,9 @@ msgstr "Guide de l'employé"
 msgid "End Time"
 msgstr "Heure de fin"
 
+msgid "End time"
+msgstr "Moment de fin"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "Contrats « Termine dans/hors de la zone »"
 
@@ -2297,6 +2413,9 @@ msgstr "Exploration de données avec les bases de données SQL, R/S-Plus, le tra
 
 msgid "Enhance and proactively manage the company's social-media efforts, using a variety of channels to attract and nurture prospects, clients, partners, and recruits."
 msgstr "Optimisation et gestion proactive des efforts de communication de la société sur les réseaux sociaux, à travers différents canaux, afin de développer notre base de prospects, de clients, de partenaires et d'employés."
+
+msgid "Enjoy our fastest type of trading with our Tick Trade app, wherever you are."
+msgstr ""
 
 msgid "Ensure compliance with quality control standards governing website content"
 msgstr "Conformité aux normes de qualité régissant les contenus de notre site Web"
@@ -2331,6 +2450,12 @@ msgstr "Point d'entrée"
 msgid "Entry spot price"
 msgstr "Prix du point d'entrée"
 
+msgid "Environment"
+msgstr ""
+
+msgid "Equals"
+msgstr ""
+
 msgid "Equities"
 msgstr "Actions"
 
@@ -2343,14 +2468,14 @@ msgstr "Code d'éthique"
 msgid "European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd."
 msgstr "Les résidents de l'Union européenne (sauf Royaume-Uni) souhaitant négocier des produits relatifs aux jeux d'argent pourront ouvrir leur compte auprès de Binary (Europe) Ltd."
 
-msgid "European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
-msgstr "Les résidents de l'Union européenne (sauf Royaume-Uni) souhaitant négocier des produits d'investissement pourront ouvrir leur compte auprès de Binary Investments (Europe) Ltd."
-
 msgid "Even/Odd"
 msgstr "Pair/Impair"
 
 msgid "Even/Odd contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "Les contrats « Pair/Impair » seront remboursés à leur prix d'achat si le contrat n'arrive pas à échéance dans un délai de 5 minutes."
+
+msgid "Everyone"
+msgstr ""
 
 msgid "Example:"
 msgstr "Exemple :"
@@ -2474,6 +2599,9 @@ msgstr "Prix d'expiration"
 
 msgid "Explanation"
 msgstr "Explication"
+
+msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
+msgstr ""
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Solide expérience de la mise en application des principes et normes de programmation avancée."
@@ -2614,7 +2742,7 @@ msgid "For forex quotes the closing times are defined by the Company as shown in
 msgstr "Pour les cotations Forex, les horaires de fermeture sont définis par la Société comme indiqué dans la section « Horaires d'ouverture du marché » du site Web. En cas de litige concernant les valeurs de marché ou de règlement, la décision de la Société sera définitive et exécutoire. Les Clients sont priés de noter que certains marchés (notamment les actions et les indices boursiers) ne sont pas ouverts durant toute la journée et que les options de trading sont susceptibles d'être indisponibles lorsque les marchés sont fermés."
 
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
-msgstr "Concernant le Forex : le marché du Forex est un marché de gré à gré (ou « OTC », « over the counter ») dans lequel les banques et les autres institutions financières majeures négocient des devises entre elles, sans passer par une chambre de compensation centralisée. Par conséquent, il n'y a pas de source « officielle » pour les cotations Forex. Différents flux de données regroupent les cotations issues d'un sous-ensemble de banques internationales. Les prix peuvent donc différer d'un fournisseur de données à l'autre, en fonction des banques dont sont issues les cotations. "
+msgstr "Concernant le Forex : le marché du Forex est un marché de gré à gré (ou « OTC », « over the counter ») dans lequel les banques et les autres institutions financières majeures négocient des devises entre elles, sans passer par une chambre de compensation centralisée. Par conséquent, il n'y a pas de source « officielle » pour les cotations Forex. Différents flux de données regroupent les cotations issues d'un sous-ensemble de banques internationales. Les prix peuvent donc différer d'un fournisseur de données à l'autre, en fonction des banques dont sont issues les cotations."
 
 msgid "For long contracts, the entry level is the spot plus half spread and the exit level is spot minus half spread. For short contracts, the entry level is spot minus half spread and the exit level is spot plus half spread."
 msgstr "Pour les contrats longs, le niveau d'entrée correspond au prix spot (au comptant) plus la moitié du spread, tandis que le niveau de sortie correspond au prix spot moins la moitié du spread. Pour les contrats courts, le niveau d'entrée correspond au spot moins la moitié du spread, tandis que le niveau de sortie correspond au spot plus la moitié du spread."
@@ -2634,6 +2762,12 @@ msgstr "Expérience du trading sur le Forex"
 msgid "Forex trading frequency"
 msgstr "Fréquence de trading sur le Forex"
 
+msgid "Forex, Indices, Stocks, Commodities, Volatility Indices"
+msgstr "Forex, indices, actions, matières premières, indices de volatilité"
+
+msgid "Forex, Volatility Indices"
+msgstr "Forex, indices de volatilité"
+
 msgid "Format: yyyy-mm-dd (not required for virtual-money accounts)"
 msgstr "Format : aaaa-mm-jj (non requis pour les comptes virtuels)"
 
@@ -2642,6 +2776,9 @@ msgstr "ven."
 
 msgid "Fraud and Money Laundering"
 msgstr "Fraude et blanchiment d'argent"
+
+msgid "Free"
+msgstr "Gratuit"
 
 msgid "Free Bonus"
 msgstr "Bonus gratuit"
@@ -2766,6 +2903,9 @@ msgstr "Lois applicables et compétence"
 msgid "Governing law and jurisdiction"
 msgstr "Lois applicables et compétence"
 
+msgid "Grab a wide range of third-party apps for binary options trading in the <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Shop</a>."
+msgstr ""
+
 msgid "Graphic Designers"
 msgstr "Graphistes [H/F]"
 
@@ -2777,9 +2917,6 @@ msgstr "Gains importants. Gagnez jusqu'à 35%"
 
 msgid "Group History"
 msgstr "Histoire du groupe"
-
-msgid "Group Information"
-msgstr "Informations sur notre groupe"
 
 msgid "Hackerone - for IT security professionals"
 msgstr "Hackerone - pour les professionnels de la sécurité des TI"
@@ -2795,6 +2932,9 @@ msgstr "Opérations de couverture"
 
 msgid "High Barrier"
 msgstr "Barrière supérieure"
+
+msgid "High Barrier (%1)"
+msgstr "Barrière supérieure (%1)"
 
 msgid "High barrier"
 msgstr "Barrière supérieure"
@@ -2874,6 +3014,9 @@ msgstr "Je confirme que je négocierai les options binaires de gré à gré sur 
 msgid "I confirm my agreement to the contents of all the documents listed below:"
 msgstr "I confirm my agreement to the contents of all the documents listed below:"
 
+msgid "I declare I am not a Foreign Politically Exposed Person."
+msgstr ""
+
 msgid "I forgot my password, what should I do?"
 msgstr "J'ai oublié mon mot de passe, que dois-je faire ?"
 
@@ -2897,6 +3040,9 @@ msgstr "Adresse IP"
 
 msgid "IT audit experience is a plus"
 msgstr "Une expérience dans l'audit des technologies de l'information serait un plus"
+
+msgid "Ideal Users"
+msgstr ""
 
 msgid "Ideal for both pros and novices"
 msgstr "Idéal pour les pros et les débutants"
@@ -2971,7 +3117,7 @@ msgid "If you need assistance feel free to contact our %1Customer Support"
 msgstr "Si vous avez besoin d'aide, n'hésitez pas à contacter notre Service Clientèle %1"
 
 msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
-msgstr "Si vous avez besoin d'aide, n'hésitez pas à contacter notre <a class=\"pjaxload\" href=\"%1\">Service Clientèle</a>. "
+msgstr "Si vous avez besoin d'aide, n'hésitez pas à contacter notre <a class=\"pjaxload\" href=\"%1\">Service Clientèle</a>."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Si vous sélectionnez « Asiatique/baisse », vous gagnez si le <strong>dernier tick<strong> est <strong>inférieur<strong> à la <strong>moyenne<strong> des ticks."
@@ -3040,7 +3186,7 @@ msgid "If you select \"rises\", you win the payout if the market price is higher
 msgstr "Si vous sélectionnez « Hausse », vous gagnez si le prix du marché est supérieur au point d'entrée."
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
-msgstr "Si vous sélectionnez une <strong>heure de début</strong> ultérieure, l'opération débute à l'heure sélectionnée et le <strong>point d'entrée</strong> correspond au prix en vigueur à l'heure sélectionnée."
+msgstr "Si vous sélectionnez une <strong>heure de début</strong> ultérieure, l'opération <strong>débute</strong> à l'heure sélectionnée et le <strong>point d'entrée</strong> correspond au prix en vigueur à l'heure sélectionnée."
 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "Si vous sélectionnez une <strong>heure de début</strong> équivalente à « Maintenant », <strong>l'heure de fin</strong> correspondra au nombre sélectionné de minutes/heures après <strong>l'heure de début<strong> (si la durée est de moins d'un jour), ou à la fin de la séance boursière (si la durée est d'un jour ou plus)."
@@ -3142,8 +3288,8 @@ msgstr "Le cas échéant, la Société peut, à sa seule discrétion (avec ou sa
 msgid "In the 'Further Instructions' field please specify the payment method and account number to which the Agent will send the funds to."
 msgstr "Dans le champ \"Instructions Supplémentaires\", veuillez préciser le mode de paiement et le numéro de compte auquel l'Agent va envoyer les fonds."
 
-msgid "In the UK and Isle of Man, our clients trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
-msgstr "Au Royaume-Uni et sur l'île de Man, nos clients gèrent leurs opérations par l'intermédiaire de Binary (IOM) Ltd. Dans les pays de l'Union Européenne (sauf Royaume-Uni), ils gèrent leurs opérations par l'intermédiaire de Binary (Europe) Ltd et de Binary Investments (Europe) Ltd. Dans les autres pays du monde, ils gèrent leurs opérations par l'intermédiaire de Binary (C.R.) S.A."
+msgid "In the UK and Isle of Man, our clients trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
+msgstr "Au Royaume-Uni et sur l'île de Man, nos clients gèrent leurs opérations par l'intermédiaire de Binary (IOM) Ltd. Au Japon, ils dépendent de Binary KK. Dans les pays de l'Union Européenne (sauf Royaume-Uni), ils gèrent leurs opérations par l'intermédiaire de Binary (Europe) Ltd et de Binary Investments (Europe) Ltd. Dans les autres pays du monde, ils gèrent leurs opérations par l'intermédiaire de Binary (C.R.) S.A."
 
 msgid "In the case of single stock and stock index prices, the final closing price as reported by the relevant official Exchange shall apply for all settlements (this final settlement price may, at times, be reported by the relevant Exchange 30-90 minutes after the official closing time of the market, and may differ from the latest tick price that occurred at the closing time)."
 msgstr "Dans le cas d'une action individuelle et un indice d'actions, le prix à la clôture comme communiqué par la Bourse officielle appropriée sera appliqué pour tous les règlements (ce prix de règlements final peut, de temps en temps, être émis par la Bourse correspondante 30-90 minutes après l'heure de fermeture officielle du marché, et peut différer du dernier prix d'intervalle produit à l'heure de fermeture)."
@@ -3330,6 +3476,9 @@ msgstr "janvier"
 
 msgid "Japan"
 msgstr "Japon"
+
+msgid "Japan residents will have their account opened with Binary K.K. and will use our Japan trading platform, which is compliant with Japan rules and regulations."
+msgstr ""
 
 msgid "Japan website Download Text for Pre-contract Document"
 msgstr "Japan website Download Text for Pre-contract Document"
@@ -3871,6 +4020,9 @@ msgstr "S'initier au trading"
 msgid "Learning to trade online?"
 msgstr "S'initier au trading en ligne ?"
 
+msgid "Legal"
+msgstr ""
+
 msgid "Legal & Regulatory Compliance"
 msgstr "Conformité juridique et réglementaire"
 
@@ -3887,7 +4039,7 @@ msgid "Less than 1 million JPY"
 msgstr "Less than 1 million JPY"
 
 msgid "Less than 6 months"
-msgstr "Moins de 6 mois."
+msgstr "Moins de 6 mois"
 
 msgid "Level of Education"
 msgstr "Niveau de formation"
@@ -3901,8 +4053,8 @@ msgstr "Responsabilité"
 msgid "Liaise with banks and payment providers"
 msgstr "Liaison avec les banques et les prestataires de services de paiement"
 
-msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland"
-msgstr "Autorisée et réglementée à Malte, au Royaume-Uni, à l'île de Man et en Irlande"
+msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan"
+msgstr "Autorisée et réglementée à Malte, au Royaume-Uni, à l'île de Man, en Irlande et au Japon"
 
 msgid "Life-long career interest in the Accounting field"
 msgstr "Carrière dans le secteur de la comptabilité"
@@ -3973,6 +4125,9 @@ msgstr "Pertes"
 msgid "Low Barrier"
 msgstr "Barrière inférieure"
 
+msgid "Low Barrier (%1)"
+msgstr "Barrière inférieure (%1)"
+
 msgid "Low barrier"
 msgstr "Barrière inférieure"
 
@@ -4013,7 +4168,7 @@ msgid "Manage the company's cashier system"
 msgstr "Gestion du système de caisse de la société"
 
 msgid "Manage your authorised applications."
-msgstr "Gestion de vos applications autorisées"
+msgstr "Gestion de vos applications autorisées."
 
 msgid "Mar"
 msgstr "mars"
@@ -4099,6 +4254,9 @@ msgstr "Date mémorable"
 msgid "Memorable town/city"
 msgstr "Ville mémorable"
 
+msgid "MetaTrader 5"
+msgstr "MetaTrader 5"
+
 msgid "Method"
 msgstr "Moyen"
 
@@ -4141,6 +4299,9 @@ msgstr "Contrôle et optimisation de l'activité de trading sur le site Web"
 msgid "Monitor hardware and software deployment and manage our worldwide network of servers and office networks"
 msgstr "Contrôler le déploiement des matériels et logiciels informatiques et gérer notre réseau international de serveurs et de réseaux locaux"
 
+msgid "Monitor the movements of your favourite assets and markets at the same time."
+msgstr ""
+
 msgid "Monitor website trading activity and minimize abuse"
 msgstr "Contrôler l'activité de trading du site Web et prévenir les abus"
 
@@ -4152,6 +4313,9 @@ msgstr "Contrôle et révision de cette Politique"
 
 msgid "Month"
 msgstr "Mois"
+
+msgid "More Tools"
+msgstr ""
 
 msgid "More benefits"
 msgstr "Avantages supplémentaires"
@@ -4179,6 +4343,9 @@ msgstr "Une plateforme de trading maintes fois récompensée par différents pri
 
 msgid "Multi-lingual and multi-currency support"
 msgstr "Plateforme multilingue et devises multiples"
+
+msgid "Multiple Charts"
+msgstr "Graphiques multiples"
 
 msgid "My Account"
 msgstr "Mon compte"
@@ -4243,6 +4410,9 @@ msgstr "Suivant"
 msgid "Next Day"
 msgstr "Jour suivant"
 
+msgid "Next-Gen"
+msgstr "Next-Gen"
+
 msgid "No Advice"
 msgstr "Absence de conseils"
 
@@ -4288,6 +4458,11 @@ msgstr "sans aucun risque, avec un compte virtuel de 10 000 USD."
 msgid "No. There's no cost to sign up to the affiliate program."
 msgstr "Non. Votre inscription au programme d'affiliés ne vous coûtera rien."
 
+#, fuzzy
+#| msgid "Note"
+msgid "Not"
+msgstr "Remarque"
+
 msgid "Not FATCA*"
 msgstr "Not FATCA*"
 
@@ -4296,6 +4471,9 @@ msgstr "Remarque"
 
 msgid "Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars."
 msgstr "N.B. Les transferts par l'intermédiaire d'un Agent de paiement ne sont disponibles que pour les comptes enregistrés auprès de Binary (CR) SA. Les transactions ne sont acceptées qu'en USD."
+
+msgid "Note: Scroll the table to the right to see all platforms."
+msgstr ""
 
 msgid "Note: The company reserves the right to cancel affiliate commissions that remain unclaimed for more than 2 years. Please also read our affiliate terms and conditions."
 msgstr "N.B. La société se réserve le droit d'annuler les commissions non réclamées par ses affiliés au bout de 2 ans. Nous vous prions également de bien vouloir lire nos conditions générales d'affiliation."
@@ -4504,6 +4682,12 @@ msgstr "Notre site Web peut être filtré en utilisant un certain nombre de syst
 msgid "Our site does not charge any transfer fees."
 msgstr "Notre site ne facture aucuns frais de transfert."
 
+msgid "Our track-record"
+msgstr ""
+
+msgid "Our trading screen is simple to use:"
+msgstr ""
+
 msgid "Over $1,000,000"
 msgstr "Plus de 1 000 000 $"
 
@@ -4645,14 +4829,26 @@ msgstr "Informations personnelles"
 msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
 msgstr "Les personnes disposant de connaissances d'initiés relatives à tout marché ou instrument financier ne sont pas autorisées à effectuer des opérations de trading sur ce site Web."
 
+msgid "Pillar 3 Disclosures"
+msgstr ""
+
+msgid "Pillar 3 disclosure report"
+msgstr ""
+
 msgid "Pip"
 msgstr "Pip (« percentage in point »)"
 
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr "Le « pip » désigne une unité de variation du taux de change, généralement une unité de la quatrième décimale (c'est-à-dire 0,0001)."
 
+msgid "Platform Comparison"
+msgstr "Comparaison de plateforme"
+
 msgid "Platform Tour"
 msgstr "Aperçu de la plateforme"
+
+msgid "Platforms"
+msgstr "Plateformes"
 
 msgid "Please %1 to view this page"
 msgstr "Veuillez %1 pour afficher cette page"
@@ -4675,8 +4871,8 @@ msgstr "Veuillez confirmer l'opération sur votre relevé avant de continuer."
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "Veuillez confirmer les détails de la transaction afin de compléter le transfert:"
 
-msgid "Please contact us with whatever is on your mind at <a href=\"mailto:%1\">%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
-msgstr "Quelle que soit votre demande, n'hésitez pas à nous contacter à l'adresse <a href=\"mailto:%1\">%1</a>. Nous restons à votre disposition et serons ravis de vous aider. N'hésitez pas à nous faire part de vos idées et suggestions."
+msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
+msgstr "Quelle que soit votre demande, n'hésitez pas à nous contacter à l'adresse <a href='mailto:%1'> 1%1</a> 2. Nous restons à votre disposition et serons ravis de vous aider. N'hésitez pas à nous faire part de vos idées et suggestions."
 
 msgid "Please deposit before transfer to client."
 msgstr "Veuillez effectuer un dépôt avant de virer des fonds vers un compte client."
@@ -4756,6 +4952,9 @@ msgstr "Veuillez sélectionner une date valide"
 msgid "Please select a valid date"
 msgstr "Veuillez sélectionner une date valide"
 
+msgid "Please select at least one scope"
+msgstr "Veuillez sélectionner au moins un champ d'application"
+
 msgid "Please select your country of residence"
 msgstr "Veuillez sélectionner votre pays de résidence"
 
@@ -4807,11 +5006,20 @@ msgstr "Les profits et pertes potentiels sont limités respectivement aux niveau
 msgid "Power & simplicity"
 msgstr "Efficacité et simplicité"
 
+msgid "Powerful charting and technical analysis"
+msgstr ""
+
 msgid "Pre-contract Document"
 msgstr "Pre-contract Document"
 
 msgid "Predict the direction<br />and purchase"
 msgstr "Prédire la direction<br />et acheter"
+
+msgid "Preferences"
+msgstr "Préférences"
+
+msgid "Premier binary options trading platform"
+msgstr "La meilleure plateforme de trading d'options binaires"
 
 msgid "Prepare project requirements, as needed to clarify expectations and deliverables"
 msgstr "Définir les besoins et les objectifs relatifs à chaque projet"
@@ -4921,6 +5129,9 @@ msgstr "Relecture et correction des contenus diffusés sur le site Web et le blo
 msgid "Proofreader"
 msgstr "Relecteur [H/F]"
 
+msgid "Prospectus"
+msgstr "Prospectus"
+
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "La connaissance des normes, procédures, lois et réglementations applicables à l'audit constitue un avantage supplémentaire"
 
@@ -4936,8 +5147,8 @@ msgstr "Public worker"
 msgid "Publish your name and logo (with or without a link to your Application) on our website, in press releases, and in promotional materials without additional consent;"
 msgstr "publier votre nom et votre logo (avec ou sans lien vers votre Application) sur notre site Web, sur des communiqués de presse et sur des supports promotionnels sans autorisation supplémentaire ;"
 
-msgid "Published in English, Japanese, Chinese, Arabic, Polish, German, French, Spanish, Portuguese, Italian and Russian"
-msgstr "Publié en anglais, japonais, chinois, arabe, polonais, allemand, français, espagnol, portugais, italien et russe"
+msgid "Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
+msgstr "Publié en anglais, indonésien, japonais, chinois, polonais, allemand, français, espagnol, portugais, italien, russe et thaï"
 
 msgid "Purchase"
 msgstr "Achat"
@@ -4990,6 +5201,9 @@ msgstr "Saisissez à nouveau votre mot de passe"
 msgid "Read"
 msgstr "Lire"
 
+msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+msgstr ""
+
 msgid "Read about the five types of trade offered by %1."
 msgstr "Découvrez les cinq types d'option disponibles chez %1."
 
@@ -5013,6 +5227,9 @@ msgstr "Périodicité de l'avertissement de connexion prolongée :"
 
 msgid "Reap the rewards of trading binaries, knowing your funds are always safe."
 msgstr "Profitez des avantages du trades d'options binaires, en sachant que vos fonds sont toujours en sécurité."
+
+msgid "Receive news and special offers"
+msgstr ""
 
 msgid "Ref."
 msgstr "Réf."
@@ -5068,6 +5285,15 @@ msgstr "Inscription"
 msgid "Register to become a tester using the links below:"
 msgstr "Inscrivez-vous pour rejoindre notre groupe de testeurs en utilisant les liens ci-dessous :"
 
+msgid "Regulator:"
+msgstr ""
+
+msgid "Regulators:"
+msgstr ""
+
+msgid "Regulatory Information"
+msgstr "Informations réglementaires"
+
 msgid "Related experience in the financial services industry"
 msgstr "Expérience pertinente dans le secteur des services financiers"
 
@@ -5088,6 +5314,9 @@ msgstr "Représente le nombre maximal de contrats actifs dans votre portefeuille
 
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Représente le volume maximal de contrats que vous pouvez acheter au cours d'une journée de trading donnée."
+
+msgid "Resale not offered"
+msgstr "La revente n'est pas proposée"
 
 msgid "Resale price"
 msgstr "Prix de revente"
@@ -5293,6 +5522,9 @@ msgstr "Revendez vos options au prix du marché."
 msgid "Sell option"
 msgstr "Option de vente"
 
+msgid "Sell time"
+msgstr "Heure de vente"
+
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "Envoyez-nous un CV et une lettre de motivation décrivant vos intérêts professionnels."
 
@@ -5310,6 +5542,9 @@ msgstr "sep."
 
 msgid "September"
 msgstr "septembre"
+
+msgid "Serious traders"
+msgstr "Traders sérieux"
 
 msgid "Server"
 msgstr "Serveur"
@@ -5346,6 +5581,9 @@ msgstr "Boutique"
 
 msgid "Short"
 msgstr "Court"
+
+msgid "Short interval traders"
+msgstr "Traders à court terme"
 
 msgid "Should a disruption occur in the data feeds which cannot be readily rectified by the Company, the Company reserves the right to refund the contract purchase."
 msgstr "S'il devrait y avoir une interruption dans le flux des données qui ne peut pas être facilement rectifiée par la Société, la Société réserve le droit de rembourser l'achat de contrat."
@@ -5470,6 +5708,11 @@ msgstr "Heure de début"
 msgid "Start Trading"
 msgstr "Commencer le trading"
 
+#, fuzzy
+#| msgid "Start Time"
+msgid "Start from:"
+msgstr "Heure de début"
+
 msgid "Start learning"
 msgstr "Apprendre le trading"
 
@@ -5579,7 +5822,7 @@ msgid "Submit"
 msgstr "Envoyer"
 
 msgid "Submit your CV and Cover Letter"
-msgstr "Envoyez votre CV et votre lettre de motivation "
+msgstr "Envoyez votre CV et votre lettre de motivation"
 
 msgid "Successful"
 msgstr "Réussite"
@@ -5604,6 +5847,9 @@ msgstr "Répondre aux besoins de la société dans les domaines du recrutement i
 
 msgid "Talk to us"
 msgstr "Parlez-nous"
+
+msgid "Target"
+msgstr "Cible"
 
 msgid "Targeting medium-term / long-term profits"
 msgstr "Targeting medium-term / long-term profits"
@@ -5650,9 +5896,6 @@ msgstr "Résiliation motivée"
 msgid "Termination of this Agreement shall not prejudice any rights of any party which may have arisen on or before the date of termination."
 msgstr "La résiliation de cet Accord ne portera pas préjudice aux droits de l'une ou l'autre des parties tels qu'applicables à la date de résiliation ou avant celle-ci."
 
-msgid "Terms"
-msgstr "Conditions"
-
 msgid "Terms & Conditions"
 msgstr "Conditions générales"
 
@@ -5691,9 +5934,6 @@ msgstr "Les conditions générales de %1 ;"
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "Le site web %1 est protégé par certains droits d'auteur."
-
-msgid "The <span itemprop='brand'>%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 accounts since <span itemprop='foundingdate'>1999</span>."
-msgstr "Le <span itemprop='brand'>%1</span>service (anciennement BetOnMarkets.com) est détenu et exploité par Binary Ltd. Société entièrement autorisée sous licence et conforme aux réglementations en vigueur, %1 fournit des services de spéculation financière à plus de 1 000 000 clients basés dans le monde entier <span itemprop='foundingdate'>1999</span>"
 
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
 msgstr "La <strong>plateforme incontournable</strong> pour le trading d'options binaires"
@@ -5789,7 +6029,7 @@ msgid "The Company reserves the right to change any part of this Agreement at an
 msgstr "La Société se réserve le droit de modifier toute partie de cet Accord à tout moment. Nous nous efforcerons d'informer nos affiliés des modifications apportées à cet Accord. Cependant, en tout état de cause, il vous appartient de consulter régulièrement ces conditions générales. Votre participation à notre programme d'affiliation une fois les modifications effectuées constitue votre acceptation obligatoire de ces modifications."
 
 msgid "The Company reserves the right to suspend the operation of this site or sections thereof:"
-msgstr "La Société se réserve le droit de suspendre le fonctionnement de ce site ou de parties de celui-ci:"
+msgstr "La Société se réserve le droit de suspendre le fonctionnement de ce site ou de parties de celui-ci :"
 
 msgid "The Company reserves the right to void, delay, or withhold payment of commission fees to you in situations including a suspected breach of a law or a breach of the terms and conditions of this Agreement."
 msgstr "La Société se réserve le droit d'annuler, de reporter ou de différer le paiement de vos commissions dans certaines situations, notamment en cas de suspicion de violation d'une loi ou en cas de violation des conditions générales de cet Accord."
@@ -5844,6 +6084,9 @@ msgstr "L'indice GBP est un indice pondéré mesurant la valeur du de la livre s
 
 msgid "The Payment Agent facility is currently not available in your country."
 msgstr "L'option des Agents de Paiement n'est pas disponible pour le moment dans votre pays."
+
+msgid "The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
+msgstr ""
 
 msgid "The Program"
 msgstr "Le Programme"
@@ -5929,10 +6172,8 @@ msgstr "La commission que vous facturerez aux Clients sur les dépôts et retrai
 msgid "The company does not guarantee the ability to sell a contract prior to its expiration time."
 msgstr "La société ne garantit pas la capacité de vendre un contrat avant son expiration."
 
-#, fuzzy
-#| msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here:</a>"
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
-msgstr "La société dispose de plusieurs méthodes de dépôts, chacune avec sa propre durée pour dépôts, et certaines qui ne sont pas disponibles pour des retraits. Tous les détails des méthodes disponibles de dépôts et retraits, temps de règlements inclus, sont disponibles <a href='%1' class='pjaxload'>ici:</a>"
+msgstr "La société dispose de plusieurs méthodes de dépôts, chacune avec sa propre durée pour dépôts, et certaines qui ne sont pas disponibles pour des retraits. Tous les détails des méthodes disponibles de dépôts et retraits, temps de règlements inclus, sont disponibles <a href='%1' class='pjaxload'>ici.</a>"
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
 msgstr "La société détient les fonds du client dans des compte bancaire séparés des comptes opérationnels qui, en cas d'insolvabilité, ne font pas partie des biens de la Société. Ceci répond aux exigences de la Gambling Commission en ce qui concerne la séparation des fonds du client au niveau: <strong>protection moyenne</strong>."
@@ -6051,6 +6292,9 @@ msgstr "Le retour est l'argent réalisé lorsque le contrat expire (voir 'Gain')
 
 msgid "The right is also reserved to amend or change the rules and scope of this service from time to time. Any change to the rules made whilst the site is in operation will not apply retrospectively and will only apply to acquisitions of financial contracts made after such change. It is the Company's responsibility to notify Clients before any changes to its terms come into effect."
 msgstr "La Société se réserve également le droit d'amender ou de modifier les réglementations ou le champ d'application de ce service de temps à autre. Toute modification des réglementations effectuée alors que ce site est en cours d'utilisation ne s'appliquera pas rétrospectivement et s'appliquera uniquement aux acquisitions de contrats financiers effectuées après ces modifications. Il incombe à la Société de prévenir les Clients avant la prise d'effet de toute modification des conditions."
+
+msgid "The server <a href=\"%1\">endpoint</a> is: %2"
+msgstr ""
 
 msgid "The smoothing and filtering algorithms described above."
 msgstr "Les algorithmes de lissage et de filtrage décrits ci-dessus."
@@ -6201,7 +6445,10 @@ msgid "This feature is only relevant to payment agent accounts."
 msgstr "Cette fonction s'applique uniquement aux comptes des agents de paiement."
 
 msgid "This field is required."
-msgstr "Ce champ est requis"
+msgstr "Ce champ est requis."
+
+msgid "This is a staging server - For testing purposes only"
+msgstr ""
 
 msgid "This is another award we really savour. Trade2win is a portal for active traders seeking to profit from stocks, futures, options and forex, and these traders award us silver (we are just pipped for gold by Betfair). It means active traders worldwide rate our trading platform extremely highly."
 msgstr "Ceci est un autre prix que nous savourons vraiment. Trdae2win est un portail pour des traders actifs à la recherche de profits sur des actions, des futures, des options et forex. Ces traders nous donnent argent (Betfair nous a battu de peu pour l'or). Ceci veut dire que les traders actifs dans le monde entier valorisent beaucoup notre plate-forme de trading."
@@ -6233,10 +6480,8 @@ msgstr "Ce site web contient des liens vers d'autres sites web et peut contenir 
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "Ce site web ne collecte pas d'informations d'identification personnelle vous concernant, sauf celles que vous nous fournissez de manière spécifique et en toute connaissance de cause. Il existe une technologie dénommée \"cookies\" qui peut être utilisée pour fournir des informations sur mesure depuis un site web. Un cookie est un fichier de données qu'un site web peut envoyer à votre navigateur, qui peut ensuite le stocker sur votre système. Vous pouvez configurer votre navigateur pour vous avertir lorsque vous recevez un cookie, vous permettant alors de décider de l'accepter ou non. Si vous n'acceptez pas le cookie, vous serez dans l'obligation d'entrer à nouveau votre identifiant de connexion et mot de passe à chaque formulaire requis pour entrer dans le système. Il est conseillé de choisir cette option si vous avez des doutes quant à la sécurité de votre navigateur personnel ou de votre PC."
 
-#, fuzzy
-#| msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in the USA, Japan, Costa Rica or Hong Kong, or to persons under age 18."
 msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "Pour le Royaume-Uni et l'île de Man, les services proposés via ce site Web sont commercialisés par Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, British Isles, autorisés et réglementés par (1) la Gambling Supervision Commission de l'île de Man, îles britanniques (licence actuelle pour les services de jeux en ligne délivrée le 31 août 2012), et pour les clients du Royaume-Uni par (2) la Commission des jeux du Royaume-Uni <a href='%1' target='_blank'>afficher la licence</a>. Pour le reste de l'Europe, les services d'investissement proposés via ce site Web sont commercialisés par Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte, autorisés et réglementés par l'Autorité maltaise des services financiers conformément à la licence de « fournisseur de services d'investissement » de catégorie 3 (licence n° IS/70156). Les services de jeu en ligne sont commercialisés par Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte, autorisés et réglementés par (1) l'Autorité maltaise des jeux (licence n° MGA/CL2/118/2000 du 26 mai 2015), pour les clients du Royaume-Uni par (2) la Commission des jeux du Royaume-Uni <a href='%2' target='_blank'>afficher la licence</a>, et pour les clients basés en Irlande par (3) Revenue Commissioners (licence actuelle de bookmaker en ligne délivrée le 29 septembre 2015, licence n° 1010285).  Les services de ce site Web sont indisponibles aux États-Unis, au Japon, au Costa Rica et à Hong-Kong et ne sont pas accessibles aux personnes âgées de moins de 18 ans."
+msgstr "Pour le Royaume-Uni et l'île de Man, les services proposés via ce site Web sont commercialisés par Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, British Isles, autorisés et réglementés par (1) la Gambling Supervision Commission de l'île de Man, îles britanniques (licence actuelle pour les services de jeux en ligne délivrée le 31 août 2012), et pour les clients du Royaume-Uni par (2) la Commission des jeux du Royaume-Uni <a href='%1' target='_blank'>afficher la licence</a>. Pour le reste de l'Europe, les services d'investissement proposés via ce site Web sont commercialisés par Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte, autorisés et réglementés par l'Autorité maltaise des services financiers conformément à la licence de « fournisseur de services d'investissement » de catégorie 3 (licence n° IS/70156). Les services de jeu en ligne sont commercialisés par Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte, autorisés et réglementés par (1) l'Autorité maltaise des jeux (licence n° MGA/CL2/118/2000 du 26 mai 2015), pour les clients du Royaume-Uni par (2) la Commission des jeux du Royaume-Uni <a href='%2' target='_blank'>afficher la licence</a>, et pour les clients basés en Irlande par (3) Revenue Commissioners (licence actuelle de bookmaker en ligne délivrée le 29 septembre 2015, licence n° 1010285).  Les services de ce site Web sont indisponibles dans certains pays, notamment aux États-Unis, au Costa Rica et à Hong-Kong et ne sont pas accessibles aux personnes âgées de moins de 18 ans."
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr "Solide connaissance des scripts Bash et expérience des langages de script tels que Perl et PHP"
@@ -6247,8 +6492,8 @@ msgstr "jeudi"
 msgid "Tick"
 msgstr "Tick"
 
-msgid "TickTrade App"
-msgstr "Application TickTrade"
+msgid "Tick Trade"
+msgstr "Tick Trade"
 
 msgid "Tier"
 msgstr "Niveau"
@@ -6298,6 +6543,11 @@ msgstr "Un diplôme d'études supérieures en physique, en ingénierie financiè
 msgid "To reset your password, enter the e-mail address you registered in the field below and click "
 msgstr " "
 
+#, fuzzy
+#| msgid "today"
+msgid "Today"
+msgstr "aujourd'hui"
+
 msgid "Token"
 msgstr "Jeton"
 
@@ -6337,6 +6587,12 @@ msgstr "Trading"
 msgid "Trade <strong>24/7</strong>, even on weekends."
 msgstr "Exécutez vos opérations de trading <strong>24h/24 et 7j/7</strong>, même le week-end."
 
+msgid "Trade Durations"
+msgstr "Durées des opérations"
+
+msgid "Trade Now"
+msgstr "Lancez vos opérations dès maintenant"
+
 msgid "Trade all major currencies, indices, stocks, and commodities."
 msgstr "Négociez tous les types d'option : devises, indices, actions et matières premières."
 
@@ -6346,8 +6602,16 @@ msgstr "Tradez toutes les conditions de marché"
 msgid "Trade in the world's financial markets in a simple, user-friendly platform."
 msgstr "Accédez aux marchés financiers internationaux par le biais d'une plateforme simple et facile à utiliser."
 
+#, fuzzy
+#| msgid "Trade in the world's financial markets in a simple, user-friendly platform."
+msgid "Trade in the world’s financial markets with a simple and user-friendly online platform."
+msgstr "Accédez aux marchés financiers internationaux par le biais d'une plateforme simple et facile à utiliser."
+
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "Jouez uniquement l'argent que vous pouvez vous permettre de perdre. Ne jouez pas avec de l'argent emprunté."
+
+msgid "Trade with a powerful interface known as the global industry standard."
+msgstr "Gérez vos opérations de trading par le biais d'une interface puissante, reconnue comme la figure de proue du secteur."
 
 msgid "Trade with ease with %1's wide range of deposit and withdrawal methods. Your funds will be segregated and held in AAA-rated banks."
 msgstr "Tradez facilement avec le large choix de moyens de dépôt et de retrait de %1. Vos fonds seront déposés séparément dans des banques notées AAA."
@@ -6363,6 +6627,9 @@ msgstr "Expérience du trading"
 
 msgid "Trading Limits"
 msgstr "Limites de trading"
+
+msgid "Trading Platforms"
+msgstr "Plateformes de trading"
 
 msgid "Trading Rules"
 msgstr "Réglementations de trading"
@@ -6388,8 +6655,8 @@ msgstr "Trading manual"
 msgid "Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href=\"%1\">customer support</a>."
 msgstr "La spéculation financière peut s'avérer addictive. Veuillez remplir le formulaire ci-dessous pour limiter votre participation sur le site Web ou envoyer une lettre ou un fax signé à notre équipe du service clientèle. Une fois vos limites fixées, vous pourrez uniquement les restreindre. Elles ne pourront être supprimées ou élargies qu'au bout de 7 jours, sauf si une date d'auto-exclusion a été sélectionnée, laquelle ne peut être supprimée ou modifiée une fois confirmée. Pour supprimer ou augmenter vos limites, veuillez contacter le <a href=\"%1\">service clientèle</a>."
 
-msgid "TradingView"
-msgstr "TradingView"
+msgid "TradingView for Binary.com"
+msgstr ""
 
 msgid "Transact in"
 msgstr "Faire la transaction en"
@@ -6426,6 +6693,18 @@ msgstr "Vrai"
 
 msgid "Trust"
 msgstr "Confiance"
+
+msgid "Try Binary Bot"
+msgstr "Essayez Binary Bot"
+
+msgid "Try MetaTrader 5"
+msgstr "Essayez MetaTrader 5"
+
+msgid "Try TradingView"
+msgstr "Essayez TradingView"
+
+msgid "Try Webtrader"
+msgstr "Essayez Webtrader"
 
 msgid "Try adding more letters or numbers."
 msgstr "Essayez d'ajouter des lettres ou des chiffres."
@@ -6465,6 +6744,11 @@ msgstr "USD"
 
 msgid "UX / UI experience"
 msgstr "Expérience UX / UI"
+
+#, fuzzy
+#| msgid "Start trading"
+msgid "Ultra fast on-the-go trading"
+msgstr "Commencer le trading"
 
 msgid "Under no circumstances shall the Company or its directors or employees be liable under this agreement to you or any third party for any indirect, special, incidental, punitive or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability or any other theory), that are directly or indirectly attributable to the use of, or the inability to use, the %1 API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
 msgstr "en vertu de cet accord, la Société et ses membres dirigeants ou employés ne peuvent en aucun cas être tenus responsables, envers vous ou toute tierce partie, d'éventuels dommages indirects, spéciaux, accessoires, punitifs ou consécutifs, ou de toute autre forme de perte ou de dommage similaire, en vertu de quelque théorie de responsabilité que ce soit (qu'il s'agisse de responsabilité contractuelle, civile ou stricte ou de toute autre théorie), directement ou indirectement imputables à l'utilisation de, ou à l'incapacité d'utiliser, l'API %1 ou tout contenu de celle-ci, et ce même si la Société a été informée de cette possibilité."
@@ -6589,7 +6873,7 @@ msgid "View available payment methods"
 msgstr "Voir moyens de paiement disponibles"
 
 msgid "View open positions"
-msgstr "Voir les positions ouvertes."
+msgstr "Voir les positions ouvertes"
 
 msgid "View payment methods"
 msgstr "Voir les moyens de paiement"
@@ -6620,6 +6904,11 @@ msgstr "Afficher vos limites de trading et de retrait."
 
 msgid "Virtual Account"
 msgstr "Compte virtuel"
+
+#, fuzzy
+#| msgid "Virtual money account"
+msgid "Virtual money credit to account"
+msgstr "Compte d'argent virtuel"
 
 msgid "Volatility Index Markets"
 msgstr "Marchés d'indices de volatilité"
@@ -6775,8 +7064,17 @@ msgstr "La société obtient des brevets en tant que « Système de courtage en 
 msgid "We're really proud of this award. We're strongly committed to offering an ethical and customer-focused trading experience, and the award shows that BetOnMarkets is a trusted brand that listens and caters to customers, whether they are experienced traders or novices. We offer customer services in English, Indonesian, Russian, Chinese and Spanish."
 msgstr "Nous sommes très fiers de ce prix. Nous sommes fortement engagés à offrir une expérience de trading éthique et focalisée sur les clients, et le prix montre que BetOnMarkets est une marque fiable qui écoute et s'occupe de ses clients, si vous êtes des traders expérimentés ou des débutants. Nous offrons une équipe clientèle en anglais, en indonésien, en russe, en chinois et en espagnol."
 
+msgid "Web (Desktop Only)"
+msgstr ""
+
+msgid "Web (Including Mobile)"
+msgstr ""
+
 msgid "Web design / development experience"
 msgstr "Expérience de la conception et du développement Web"
+
+msgid "Web, iOS, Android"
+msgstr ""
 
 msgid "Webinars"
 msgstr "Webinaires"
@@ -6956,6 +7254,9 @@ msgstr " "
 msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a price target farther away from the current price."
 msgstr "Gagnez 10%-1000% sur votre mise si votre prédiction s'avère correcte. Augmentez votre retour gagnant en choisissant un prix-cible qui est plus éloigné du prix actuel."
 
+msgid "Windows, macOS, Linux"
+msgstr ""
+
 msgid "Winning the contract"
 msgstr "Remporter le contrat"
 
@@ -7036,7 +7337,7 @@ msgid "Work with senior staff to coordinate project delivery; develop and update
 msgstr "Coordonner la livraison des projets en collaboration avec les cadres supérieurs ; concevoir et mettre à jour les emplois du temps et les listes de tâches ; veiller au respect des objectifs fixés pour chaque membre de l'équipe"
 
 msgid "Working closely with the Head of Compliance to implement Know your Client (KYC), Anti-Money Laundering (AML), and data protection regulations"
-msgstr "En collaboration étroite avec notre directrice de la conformité, veiller à la mise en œuvre de nos procédures KYC (« know your client ») et anti-blanchiment d'argent, tout en assurant la conformité aux réglementations relatives à la protection des données "
+msgstr "En collaboration étroite avec notre directrice de la conformité, veiller à la mise en œuvre de nos procédures KYC (« know your client ») et anti-blanchiment d'argent, tout en assurant la conformité aux réglementations relatives à la protection des données"
 
 msgid "Written limits and self-exclusion"
 msgstr "Limites écrites et auto-exclusion"
@@ -7112,6 +7413,9 @@ msgstr "Vous pouvez choisir des gains de $1 à $100,000. Cette possibilité de g
 
 msgid "You can close your trade before expiry to lock in profits."
 msgstr "Vous pouvez clôturer votre position avant l'expiration pour protéger vos bénéfices."
+
+msgid "You can even build your own online trading sites, apps, and bots with our <a href=\"https://developers.binary.com\" target=\"_blank\">API and developer tools</a>."
+msgstr ""
 
 msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
 msgstr "You can request more virtual money if your virtual balance falls below JPY 100,000."
@@ -7315,10 +7619,15 @@ msgid "You'll be surprised by the returns you can make."
 msgstr "Vous serez surpris de découvrir les retours que vous pouvez générer."
 
 msgid "You're using a Virtual Account."
-msgstr "Vous utilisez un compte virtuel. "
+msgstr "Vous utilisez un compte virtuel."
 
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "Votre limite de retrait sur %1 jours est actuellement de %3 %2 (ou équivalent dans une autre devise)."
+
+#, fuzzy
+#| msgid "Your documents are expired"
+msgid "Your Application is Being Processed."
+msgstr "Vos documents sont expirés"
 
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "Votre Client va recevoir un émail de notification l'informant que le transfert a été effectué."
@@ -7363,7 +7672,7 @@ msgid "Your breach of any of %1's rights;"
 msgstr "Toute violation des droits de %1 de votre part ;"
 
 msgid "Your cashier is locked as per your request - to unlock it, please click %1here"
-msgstr "Votre caisse est verrouillée conformément à votre demande. Pour la déverrouiller, veuillez cliquer %1ici."
+msgstr "Votre caisse est verrouillée conformément à votre demande. Pour la déverrouiller, veuillez cliquer %1ici"
 
 msgid "Your cashier is locked as per your request - to unlock it, please click <a class=\"pjaxload\" href=\"%1\">here</a>."
 msgstr "Votre caisse est verrouillée conformément à votre demande - si vous souhaitez la déverrouiller, veuillez cliquer <a class=\"pjaxload\" href=\"%1\">ici</a>."
@@ -7524,10 +7833,15 @@ msgstr "heures"
 msgid "hyphen"
 msgstr "trait d'union"
 
+msgid "iOS, Android"
+msgstr ""
+
 msgid "is required. Current spread"
 msgstr "est requis. Spread actuel"
 
-msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
+#, fuzzy
+#| msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
+msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian."
 msgstr "un succès grandissant à l'international et une interface déclinée en anglais, espagnol, français, allemand, portugais, chinois, arabe, polonais, russe et indonésien"
 
 msgid "it is the leading binary option trading platform."
@@ -7546,9 +7860,12 @@ msgid "m"
 msgstr "m"
 
 #, fuzzy
-#| msgid "$25,000 - $100,000"
-msgid "min 1,000 and max 100,000"
-msgstr "25 000 $ - 100 000 $"
+#| msgid "Less than $100,000"
+msgid "max: 100,000"
+msgstr "Moins de 100 000 $"
+
+msgid "min: 1,000"
+msgstr ""
 
 msgid "minimum available duration"
 msgstr "durée minimale disponible"
@@ -7651,16 +7968,25 @@ msgstr "vous avez lu l'intégralité de la page des Conditions générales et vo
 msgid "you have sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and have done so without relying on any information contained in this site."
 msgstr "vous avez suffisamment d'expérience et de connaissances dans le domaine de la spéculation financière pour être en mesure d'évaluer les bénéfices et les risques liés à l'acquisition de contrats financiers par l'intermédiaire de ce site, et ceci sans vous baser sur de quelconques informations diffusées sur ce site."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Registration"
+msgid "{JAPAN ONLY}#1 Sales Division"
+msgstr "{JAPAN ONLY}Registration"
+
 msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
@@ -7675,7 +8001,25 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exer
 msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 
-msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
+msgid "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
+msgstr ""
+
+msgid "{JAPAN ONLY}%1 was one of the first active Binary Options brokers and has a proven track record of delivering first class service and maintaining an award winning trading platform, while delivering strong financial performance to our shareholders, for more than 15 years worldwide."
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}day"
+msgid "{JAPAN ONLY}251"
+msgstr "{JAPAN ONLY}day"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}day"
+msgid "{JAPAN ONLY}7546677"
+msgstr "{JAPAN ONLY}day"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
+msgid "{JAPAN ONLY}80,100,000 JPY (as of September 20, 2016)"
 msgstr "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
 
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
@@ -7714,6 +8058,12 @@ msgstr "{JAPAN ONLY}A binary put option buyer will benefit from a correct predic
 msgid "{JAPAN ONLY}A binary put options buyer will benefit from a correct prediction that the asset price will rise above the strike price by the judgment time."
 msgstr "{JAPAN ONLY}A binary put options buyer will benefit from a correct prediction that the asset price will rise above the strike price by the judgment time."
 
+msgid "{JAPAN ONLY}A board member of a Central Bank"
+msgstr ""
+
+msgid "{JAPAN ONLY}A board member of a company subject to resolution or approval for its budget from a body equivalent to the Diet of Japan"
+msgstr ""
+
 msgid "{JAPAN ONLY}A bought or sold binary option may be closed-out before exercise time by selling or buying-back the option, or alternatively by cancelling."
 msgstr "{JAPAN ONLY}A bought or sold binary option may be closed-out before exercise time by selling or buying-back the option, or alternatively by cancelling."
 
@@ -7722,6 +8072,26 @@ msgstr "{JAPAN ONLY}A modified version of the Black-Scholes model is widely used
 
 msgid "{JAPAN ONLY}About OTC currency for binary options trading, summarizes the profit and loss result of all transactions that have been made between the customer, to publish the information in the company's home page, at any time while the customer is doing the transaction before the start, or the transaction, the information Make sure, for that you're willing to trade under the calm judgment, we are committed to a variety of environmental improvement."
 msgstr "{JAPAN ONLY}About OTC currency for binary options trading, summarizes the profit and loss result of all transactions that have been made between the customer, to publish the information in the company's home page, at any time while the customer is doing the transaction before the start, or the transaction, the information Make sure, for that you're willing to trade under the calm judgment, we are committed to a variety of environmental improvement."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Company name"
+msgid "{JAPAN ONLY}Account Name"
+msgstr "{JAPAN ONLY}Company name"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}hour"
+msgid "{JAPAN ONLY}Account Number"
+msgstr "{JAPAN ONLY}hour"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Option Type"
+msgid "{JAPAN ONLY}Account Type"
+msgstr "{JAPAN ONLY}Option Type"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Knowledge Test"
+msgid "{JAPAN ONLY}Acknowledgment"
+msgstr "{JAPAN ONLY}Knowledge Test"
 
 msgid "{JAPAN ONLY}Activate your account by confirming your authorisation code which we will post to your registered address."
 msgstr "{JAPAN ONLY}Activate your account by confirming your authorisation code which we will post to your registered address."
@@ -7735,6 +8105,9 @@ msgstr "{JAPAN ONLY}An option holder must buy ( or sell ) the underlying asset a
 msgid "{JAPAN ONLY}An option price is the sum of the intrinsic-value and the time-value."
 msgstr "{JAPAN ONLY}An option price is the sum of the intrinsic-value and the time-value."
 
+msgid "{JAPAN ONLY}Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
+msgstr ""
+
 msgid "{JAPAN ONLY}As the exercise deadline approaches, the price of an in-the-money binary option will move towards the payout amount."
 msgstr "{JAPAN ONLY}As the exercise deadline approaches, the price of an in-the-money binary option will move towards the payout amount."
 
@@ -7747,8 +8120,16 @@ msgstr "{JAPAN ONLY}As the expected volatility of the underlying asset increases
 msgid "{JAPAN ONLY}As the time to the exercise point shortens, the time-value of a plain vanilla option decreases."
 msgstr "{JAPAN ONLY}As the time to the exercise point shortens, the time-value of a plain vanilla option decreases."
 
+msgid "{JAPAN ONLY}As well as our Japanese financial licence, we also operate in European jurisdictions with our Malta Financial Services Type 3 Licence, and under various gaming licences around the world."
+msgstr ""
+
 msgid "{JAPAN ONLY}Association of join"
 msgstr "{JAPAN ONLY}Association of join"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}day"
+msgid "{JAPAN ONLY}Bank"
+msgstr "{JAPAN ONLY}day"
 
 msgid "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 msgstr "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
@@ -7756,14 +8137,35 @@ msgstr "{JAPAN ONLY}Because option prices are determined by the probability of b
 msgid "{JAPAN ONLY}Binary K. K."
 msgstr "{JAPAN ONLY}Binary K. K."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Binary K. K."
+msgid "{JAPAN ONLY}Binary K.K. Customer Account"
+msgstr "{JAPAN ONLY}Binary K. K."
+
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}month"
+msgid "{JAPAN ONLY}Branch"
+msgstr "{JAPAN ONLY}month"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Guide"
+msgid "{JAPAN ONLY}Branch Code"
+msgstr "{JAPAN ONLY}Trading Guide"
+
+msgid "{JAPAN ONLY}By law we are required to manage the assets of our customers and our company separately"
+msgstr ""
 
 msgid "{JAPAN ONLY}Capital"
 msgstr "{JAPAN ONLY}Capital"
 
 msgid "{JAPAN ONLY}Capital Adequacy Ratio (CAR)"
 msgstr "{JAPAN ONLY}Capital Adequacy Ratio (CAR)"
+
+msgid "{JAPAN ONLY}Choose direction of the market and the exercise price you wish to target, and hit the green buy button to instantly trade"
+msgstr ""
 
 msgid "{JAPAN ONLY}Company Profile"
 msgstr "{JAPAN ONLY}Company Profile"
@@ -7779,6 +8181,14 @@ msgstr "{JAPAN ONLY}Company name in English"
 
 msgid "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
 msgstr "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Option Pricing"
+msgid "{JAPAN ONLY}Continue Trading"
+msgstr "{JAPAN ONLY}Option Pricing"
+
+msgid "{JAPAN ONLY}Current or former member of category 1) or 2)"
+msgstr ""
 
 msgid "{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until %1. Last test taken at %2."
 msgstr "{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until %1. Last test taken at %2."
@@ -7801,10 +8211,21 @@ msgstr "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
 msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 msgstr "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 
+msgid "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
+msgstr ""
+
 msgid "{JAPAN ONLY}Does Not Touch"
 msgstr "{JAPAN ONLY}Does Not Touch"
 
+msgid "{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account."
+msgstr ""
+
 msgid "{JAPAN ONLY}Download"
+msgstr "{JAPAN ONLY}Download"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}Download our latest report here"
 msgstr "{JAPAN ONLY}Download"
 
 msgid "{JAPAN ONLY}END-IN/END-OUT"
@@ -7822,6 +8243,21 @@ msgstr "{JAPAN ONLY}Ends Outside"
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 
+msgid "{JAPAN ONLY}Equivalent to Ambassador, Envoy, Government delegate, or Plenipotentiary of Japan"
+msgstr ""
+
+msgid "{JAPAN ONLY}Equivalent to Chairperson or Vice-Chairperson of the House of Representatives or the House of Councilors of Japan"
+msgstr ""
+
+msgid "{JAPAN ONLY}Equivalent to Head of the Joint Staff, Vice Chief of Staff, Chief of Staff of Ground Self-Defense Force, Vice Chief of Staff of G.S.D.F., Chief of Staff of Maritime Self-Defense Force, Vice Chief of Staff of M.S.D.F., Chief of Staff Air Self-Defense Force, or Vice Chief of Staff of A.S.D.F. of Japan"
+msgstr ""
+
+msgid "{JAPAN ONLY}Equivalent to Justice of the Supreme Court of Japan"
+msgstr ""
+
+msgid "{JAPAN ONLY}Equivalent to Prime Minister, Minister of State, or Vice-Minister of State of Japan"
+msgstr ""
+
 msgid "{JAPAN ONLY}Establishment"
 msgstr "{JAPAN ONLY}Establishment"
 
@@ -7834,8 +8270,16 @@ msgstr "{JAPAN ONLY}Even if the option is exercise or not exercised, the origina
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 msgstr "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}minutes"
+msgid "{JAPAN ONLY}Executing trades"
+msgstr "{JAPAN ONLY}minutes"
+
 msgid "{JAPAN ONLY}FX Rate"
 msgstr "{JAPAN ONLY}FX Rate"
+
+msgid "{JAPAN ONLY}Family members of categories 1) to 3)"
+msgstr ""
 
 msgid "{JAPAN ONLY}Financial Condition"
 msgstr "{JAPAN ONLY}Financial Condition"
@@ -7885,6 +8329,19 @@ msgstr "{JAPAN ONLY}For both call and put options, if the underlying asset price
 msgid "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 msgstr "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}FX Rate"
+msgid "{JAPAN ONLY}Foreign Head of State"
+msgstr "{JAPAN ONLY}FX Rate"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 5: Calculation"
+msgid "{JAPAN ONLY}Foreign PEP Declaration"
+msgstr "{JAPAN ONLY}Section 5: Calculation"
+
+msgid "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
+msgstr ""
+
 msgid "{JAPAN ONLY}Goes Outside"
 msgstr "{JAPAN ONLY}Goes Outside"
 
@@ -7924,6 +8381,9 @@ msgstr "{JAPAN ONLY}If the exercise period passes without the option being exerc
 msgid "{JAPAN ONLY}If the exercise prices and exercise times are the same for an American style and European style option, then the American style option will have a higher price."
 msgstr "{JAPAN ONLY}If the exercise prices and exercise times are the same for an American style and European style option, then the American style option will have a higher price."
 
+msgid "{JAPAN ONLY}If the market price has changed significantly it may not be possible to execute a trade at a delayed price displayed in a customer's browser. Alternatively you may pay a lower price for the option if the price has moved quickly in that direction. Please see our summary of specifications document for full details of our 'slippage' rules."
+msgstr ""
+
 msgid "{JAPAN ONLY}If the probablility of a payout is 50% then when the potential payout is less than 100% of the price paid for the option, the expected return on the investment will be less than 100%."
 msgstr "{JAPAN ONLY}If the probablility of a payout is 50% then when the potential payout is less than 100% of the price paid for the option, the expected return on the investment will be less than 100%."
 
@@ -7945,6 +8405,11 @@ msgstr "{JAPAN ONLY}If you buy a currency binary option at a price of 500 yen, a
 msgid "{JAPAN ONLY}If you buy a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will receive a payout 1,000 yen from the seller of the option."
 msgstr "{JAPAN ONLY}If you buy a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will receive a payout 1,000 yen from the seller of the option."
 
+#, fuzzy
+#| msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
+msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:%1'>Customer Support</a>."
+msgstr "Pour modifier vos nom, date de naissance, pays de résidence ou adresse e-mail, veuillez contacter le <a href=\"%1\">Service Clientèle</a>."
+
 msgid "{JAPAN ONLY}If you sell a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
 msgstr "{JAPAN ONLY}If you sell a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
 
@@ -7954,6 +8419,14 @@ msgstr "{JAPAN ONLY}If you sell a currency binary option at a price of 500 yen, 
 msgid "{JAPAN ONLY}If you sell a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
 msgstr "{JAPAN ONLY}If you sell a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
 
+#, fuzzy
+#| msgid "To change your name, date of birth, country of residence, or email, please contact Customer Support."
+msgid "{JAPAN ONLY}If you wish to change your designated account or you have any other queries, then please contact Customer Support."
+msgstr "Pour changer votre nom, date de naissance, pays de résidence, ou mail, veuillez contacter le Service Clientèle."
+
+msgid "{JAPAN ONLY}If your bank account details have changed, please contact Customer Support in order to verify your ID and new account details."
+msgstr ""
+
 msgid "{JAPAN ONLY}Implied volatility is a prediction of the future rate of change in the underlying asset."
 msgstr "{JAPAN ONLY}Implied volatility is a prediction of the future rate of change in the underlying asset."
 
@@ -7962,6 +8435,9 @@ msgstr "{JAPAN ONLY}In Japan there are defined trading periods for binary option
 
 msgid "{JAPAN ONLY}In OTC currency binary options trading, if the exchange rate during the trading period moves by more than expected in one direction, and there are no longer any exercise prices which can continue to trade, it is possible under certain conditions to add further exercise prices. However, even when further exercise price have been added, the prices of the original options will not be affected."
 msgstr "{JAPAN ONLY}In OTC currency binary options trading, if the exchange rate during the trading period moves by more than expected in one direction, and there are no longer any exercise prices which can continue to trade, it is possible under certain conditions to add further exercise prices. However, even when further exercise price have been added, the prices of the original options will not be affected."
+
+msgid "{JAPAN ONLY}In a Government or Juridicial position such as:"
+msgstr ""
 
 msgid "{JAPAN ONLY}In case of the right to buy the underlying asset (call option), when the underlying asset price falls, the option price will increase."
 msgstr "{JAPAN ONLY}In case of the right to buy the underlying asset (call option), when the underlying asset price falls, the option price will increase."
@@ -7980,6 +8456,15 @@ msgstr "{JAPAN ONLY}In general the price of a binary option will be lower than t
 
 msgid "{JAPAN ONLY}In order to open a trading account for you we will need to test your knowledge of options to ensure you have the necessary understanding of the products and risks of binary option trading."
 msgstr "{JAPAN ONLY}In order to open a trading account for you we will need to test your knowledge of options to ensure you have the necessary understanding of the products and risks of binary option trading."
+
+msgid "{JAPAN ONLY}In the event of our bankruptcy, your assets will be safeguarded by Japan Securities Finance Trust & Banking Company Ltd"
+msgstr ""
+
+msgid "{JAPAN ONLY}In the lower panel you can also choose to see your current portfolio with live valuations and quick access to sell-back. Alternatively you can view a live, customizable chart with many add-on features; or see more detailed explanations of the type of option selected; or examine recent settlement prices for expired options."
+msgstr ""
+
+msgid "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time"
+msgstr ""
 
 msgid "{JAPAN ONLY}Introduction to Binary Options"
 msgstr "{JAPAN ONLY}Introduction to Binary Options"
@@ -8020,14 +8505,22 @@ msgstr "{JAPAN ONLY}Knowledge test list item 4"
 msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "{JAPAN ONLY}Knowledge test list item 5"
 
+msgid "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
+msgstr ""
+
 msgid "{JAPAN ONLY}Lower"
 msgstr "{JAPAN ONLY}Lower"
 
 msgid "{JAPAN ONLY}Main business"
 msgstr "{JAPAN ONLY}Main business"
 
-msgid "{JAPAN ONLY}March 2016"
-msgstr "{JAPAN ONLY}March 2016"
+#, fuzzy
+#| msgid "{JAPAN ONLY}years"
+msgid "{JAPAN ONLY}Matters to attend:"
+msgstr "{JAPAN ONLY}years"
+
+msgid "{JAPAN ONLY}No fees, no commissions, you simply pay the price of the stated on the buy button."
+msgstr ""
 
 msgid "{JAPAN ONLY}No space between last name and first name"
 msgstr "{JAPAN ONLY}No space between last name and first name"
@@ -8068,14 +8561,32 @@ msgstr "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to
 msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 
+msgid "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href='mailto:%1'>%1</a>"
+msgstr ""
+
+msgid "{JAPAN ONLY}Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must be held in the trust bank count every day"
+msgstr ""
+
+msgid "{JAPAN ONLY}Our trading page provides an overall view of all the option contracts available to trade, showing the live buy and sell prices and providing quick selection and trading buttons."
+msgstr ""
+
 msgid "{JAPAN ONLY}Payout Amount"
 msgstr "{JAPAN ONLY}Payout Amount"
+
+msgid "{JAPAN ONLY}Please allow up to 3 business days for the funds to be credited to your trading account."
+msgstr ""
+
+msgid "{JAPAN ONLY}Please allow up to 5 business days for the funds to be credited to your designated bank account."
+msgstr ""
 
 msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
 msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
 
 msgid "{JAPAN ONLY}Please complete the following questions."
 msgstr "{JAPAN ONLY}Please complete the following questions."
+
+msgid "{JAPAN ONLY}Please contact <a href='mailto:%1'>%1</a> if you need to withdraw more than the maximum amount, as further ID verification is required."
+msgstr ""
 
 msgid "{JAPAN ONLY}Please download our Full Trading Guide which describes in detail how to use our trading screens and other features of our website:"
 msgstr "{JAPAN ONLY}Please download our Full Trading Guide which describes in detail how to use our trading screens and other features of our website:"
@@ -8088,6 +8599,32 @@ msgstr "{JAPAN ONLY}Please download our Pre-Contract Documents which you must co
 
 msgid "{JAPAN ONLY}Please download our Summary of Specifications which lists all the details of our trade types, rules and conditions for trading etc."
 msgstr "{JAPAN ONLY}Please download our Summary of Specifications which lists all the details of our trade types, rules and conditions for trading etc."
+
+msgid "{JAPAN ONLY}Please ensure you maintain sufficient balance in your trading account."
+msgstr ""
+
+msgid "{JAPAN ONLY}Please input the amount you would like to withdraw and press the Request button."
+msgstr ""
+
+msgid "{JAPAN ONLY}Please make a bank transfer from your designated bank account to:"
+msgstr ""
+
+msgid "{JAPAN ONLY}Please make sure you add your Binary.com account ID to the Remitter's account name, or it will delay crediting the funds to your account:"
+msgstr ""
+
+msgid "{JAPAN ONLY}Please note our maximum deposit limit for a single transaction is ¥1,000,000."
+msgstr ""
+
+msgid "{JAPAN ONLY}Please note the maximum regular withdrawal amount is ¥1,000,000."
+msgstr ""
+
+msgid "{JAPAN ONLY}Please note we can only accept payments from your designated bank account and no other account in your name."
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}years"
+msgid "{JAPAN ONLY}Please note:"
+msgstr "{JAPAN ONLY}years"
 
 msgid "{JAPAN ONLY}Pre-Contract Documents"
 msgstr "{JAPAN ONLY}Pre-Contract Documents"
@@ -8107,6 +8644,11 @@ msgstr "{JAPAN ONLY}Prices for currency options are calculated relative the valu
 msgid "{JAPAN ONLY}Purchase, Settlement & Resale"
 msgstr "{JAPAN ONLY}Purchase, Settlement & Resale"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}FX Rate"
+msgid "{JAPAN ONLY}Rakuten Bank"
+msgstr "{JAPAN ONLY}FX Rate"
+
 msgid "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
 msgstr "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
 
@@ -8119,8 +8661,18 @@ msgstr "{JAPAN ONLY}Regulation & Tax"
 msgid "{JAPAN ONLY}Remaining time"
 msgstr "{JAPAN ONLY}Remaining time"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}years"
+msgid "{JAPAN ONLY}Remitter's Name:"
+msgstr "{JAPAN ONLY}years"
+
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}days"
+msgid "{JAPAN ONLY}Savings"
+msgstr "{JAPAN ONLY}days"
 
 msgid "{JAPAN ONLY}Section 1: Structure"
 msgstr "{JAPAN ONLY}Section 1: Structure"
@@ -8136,6 +8688,29 @@ msgstr "{JAPAN ONLY}Section 4: Risk"
 
 msgid "{JAPAN ONLY}Section 5: Calculation"
 msgstr "{JAPAN ONLY}Section 5: Calculation"
+
+msgid "{JAPAN ONLY}Segregate all customers' money to a trust account"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Period"
+msgid "{JAPAN ONLY}Select a trading period"
+msgstr "{JAPAN ONLY}Trading Period"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}FX Rate"
+msgid "{JAPAN ONLY}Select an FX rate"
+msgstr "{JAPAN ONLY}FX Rate"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Option Type"
+msgid "{JAPAN ONLY}Select an option type"
+msgstr "{JAPAN ONLY}Option Type"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Goes Outside"
+msgid "{JAPAN ONLY}Select payout size"
+msgstr "{JAPAN ONLY}Goes Outside"
 
 msgid "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
 msgstr "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
@@ -8158,6 +8733,11 @@ msgstr "{JAPAN ONLY}Take knowledge test"
 msgid "{JAPAN ONLY}Take our Knowledge Test to confirm your understanding of options."
 msgstr "{JAPAN ONLY}Take our Knowledge Test to confirm your understanding of options."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Guide"
+msgid "{JAPAN ONLY}Thank you for your withdrawal request."
+msgstr "{JAPAN ONLY}Trading Guide"
+
 msgid "{JAPAN ONLY}The Black-Scholes model is widely used to calculate theoretical option prices."
 msgstr "{JAPAN ONLY}The Black-Scholes model is widely used to calculate theoretical option prices."
 
@@ -8169,6 +8749,9 @@ msgstr "{JAPAN ONLY}The Exit Price is the price that is observed at the judgment
 
 msgid "{JAPAN ONLY}The Financial Futures Association of Japan"
 msgstr "{JAPAN ONLY}The Financial Futures Association of Japan"
+
+msgid "{JAPAN ONLY}The beneficiary agent (B), who is an external lawyer, is bound to perform this function in the event that our Company is not able to return your funds directly"
+msgstr ""
 
 msgid "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
 msgstr "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
@@ -8197,6 +8780,9 @@ msgstr "{JAPAN ONLY}The price of a vanilla call option will be lower when price 
 msgid "{JAPAN ONLY}The price of an option can be affected by the underlying asset price, by the volatility rate of the underlying asset, or by the time remaining to the exercise time."
 msgstr "{JAPAN ONLY}The price of an option can be affected by the underlying asset price, by the volatility rate of the underlying asset, or by the time remaining to the exercise time."
 
+msgid "{JAPAN ONLY}The sell-back execution level will then be confirmed and the position will be closed."
+msgstr ""
+
 msgid "{JAPAN ONLY}The seller of a vanilla option can not choose whether to exercise the option or not. His profit is limited to the price received for the option, whereas his potential loss is unlimited and could be substantial."
 msgstr "{JAPAN ONLY}The seller of a vanilla option can not choose whether to exercise the option or not. His profit is limited to the price received for the option, whereas his potential loss is unlimited and could be substantial."
 
@@ -8221,11 +8807,17 @@ msgstr "{JAPAN ONLY}There are two types of option delivery: One requires exchang
 msgid "{JAPAN ONLY}This knowledge test is required by law. As we provide the test, we know customers better whether the customers are suitable investors to be carried out the binary options trading, and customers can start trading with us."
 msgstr "{JAPAN ONLY}This knowledge test is required by law. As we provide the test, we know customers better whether the customers are suitable investors to be carried out the binary options trading, and customers can start trading with us."
 
+msgid "{JAPAN ONLY}This popup window can also be activated from the portfolio panel, and portfolio page, by clicking the Trade View button."
+msgstr ""
+
 msgid "{JAPAN ONLY}This test is for the purpose of confirming if the customers have basic knowledge related to options trading ."
 msgstr "{JAPAN ONLY}This test is for the purpose of confirming if the customers have basic knowledge related to options trading ."
 
 msgid "{JAPAN ONLY}To avoid or hedge the future price of an underlying asset which you hold, you should buy a call option."
 msgstr "{JAPAN ONLY}To avoid or hedge the future price of an underlying asset which you hold, you should buy a call option."
+
+msgid "{JAPAN ONLY}To buy an option, simply click on the price button to execute the trade."
+msgstr ""
 
 msgid "{JAPAN ONLY}To compensate for any rise in the price of an underlying asset that you intend to buy in future, you should buy a call option."
 msgstr "{JAPAN ONLY}To compensate for any rise in the price of an underlying asset that you intend to buy in future, you should buy a call option."
@@ -8236,6 +8828,11 @@ msgstr "{JAPAN ONLY}To invest a binary options investment accurately, the custom
 msgid "{JAPAN ONLY}Touches"
 msgstr "{JAPAN ONLY}Touches"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Guide"
+msgid "{JAPAN ONLY}Track your trade in real time:"
+msgstr "{JAPAN ONLY}Trading Guide"
+
 msgid "{JAPAN ONLY}Trading & Hedging"
 msgstr "{JAPAN ONLY}Trading & Hedging"
 
@@ -8244,6 +8841,11 @@ msgstr "{JAPAN ONLY}Trading Guide"
 
 msgid "{JAPAN ONLY}Trading Period"
 msgstr "{JAPAN ONLY}Trading Period"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Guide"
+msgid "{JAPAN ONLY}Trading manual"
+msgstr "{JAPAN ONLY}Trading Guide"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 msgstr "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
@@ -8260,6 +8862,30 @@ msgstr "{JAPAN ONLY}Using binary options for hedging a position in the underlyin
 msgid "{JAPAN ONLY}We are required to request copies of your My Number Card as well as proof of registered address. Your details will be kept secure and only used for the specific purposes of verifying your credentials, as required by law."
 msgstr "{JAPAN ONLY}We are required to request copies of your My Number Card as well as proof of registered address. Your details will be kept secure and only used for the specific purposes of verifying your credentials, as required by law."
 
+msgid "{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
+msgstr ""
+
+msgid "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
+msgstr ""
+
+msgid "{JAPAN ONLY}We offer real time prices calculated from the same rates that bank and securities companies use."
+msgstr ""
+
+msgid "{JAPAN ONLY}We offer trading periods from as short as 2 hours to as long as one-year, in predefined contract series."
+msgstr ""
+
+msgid "{JAPAN ONLY}We offer transparent 2-way pricing, allowing equal chance to trade in either direction of the market."
+msgstr ""
+
+msgid "{JAPAN ONLY}We pride ourselves on our responsible trading and high ethical standards, and we only offer our service in jurisdictions where we hold the necessary licenses and legal registrations."
+msgstr ""
+
+msgid "{JAPAN ONLY}We will pass on any possible price improvements for orders in fast moving markets."
+msgstr ""
+
+msgid "{JAPAN ONLY}We will process your request and transfer the funds to your designated bank account within 5 business days."
+msgstr ""
+
 msgid "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying."
 msgstr "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying."
 
@@ -8274,6 +8900,43 @@ msgstr "{JAPAN ONLY}Win Loss Ratio"
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+msgid "{JAPAN ONLY}You can protect your account value further by setting other limits to encourage trading discipline"
+msgstr ""
+
+msgid "{JAPAN ONLY}You can request a funds transfer to your designated bank account at any time."
+msgstr ""
+
+msgid "{JAPAN ONLY}You can see the real-time value of your portfolio and access the trade view and analysis screen from which you can then choose to close the position:"
+msgstr ""
+
+msgid "{JAPAN ONLY}You can sell-back your position at any time until 2 minutes before expiry to either cut your losses, or take your profits early"
+msgstr ""
+
+msgid "{JAPAN ONLY}You can then review the performance of the trade and then sell-back to close the position if you wish, by clicking the sell-back button."
+msgstr ""
+
+msgid "{JAPAN ONLY}You must have sufficient balance in your trading account at the time of transfer."
+msgstr ""
+
+msgid "{JAPAN ONLY}You set your own personal daily loss limit"
+msgstr ""
+
+msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}hours"
+msgid "{JAPAN ONLY}Your Funds"
+msgstr "{JAPAN ONLY}hours"
+
+#, fuzzy
+#| msgid "Your funds are safe"
+msgid "{JAPAN ONLY}Your funds are safe"
+msgstr "Vos fonds sont sécurisés"
+
+msgid "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
+msgstr ""
 
 msgid "{JAPAN ONLY}day"
 msgstr "{JAPAN ONLY}day"
@@ -8350,6 +9013,11 @@ msgstr "404"
 msgid "Why Us"
 msgstr "Pourquoi nous ?"
 
+#, fuzzy
+#| msgid "Duration"
+msgid "Regulation"
+msgstr "Durée"
+
 msgid "Styles"
 msgstr "Styles"
 
@@ -8377,6 +9045,11 @@ msgstr "Comment négocier les options binaires ?"
 msgid "What Are OTC Indices and Stocks?"
 msgstr "Présentation des indices et actions de gré à gré (OTC)"
 
+#, fuzzy
+#| msgid "Acknowledgement of Money Transfer"
+msgid "Acknowledgement"
+msgstr "Attestation du transfert d'argent"
+
 msgid "Account Limits"
 msgstr "Limites du Compte"
 
@@ -8394,6 +9067,49 @@ msgstr "Informations du compte"
 
 msgid "Terms and Conditions Approval"
 msgstr "Acceptation des conditions générales"
+
+#~ msgid "Jump to date:"
+#~ msgstr "Aller à la date :"
+
+#, fuzzy
+#~| msgid "Purpose of trading"
+#~ msgid "Future of trading on Binary.com"
+#~ msgstr "Purpose of trading"
+
+#~ msgid "Apps"
+#~ msgstr "Applications"
+
+#~ msgid "TickTrade App"
+#~ msgstr "Application TickTrade"
+
+#~ msgid "TradingView"
+#~ msgstr "TradingView"
+
+#~ msgid "{JAPAN ONLY}March 2016"
+#~ msgstr "{JAPAN ONLY}March 2016"
+
+#~ msgid "BIEL Pillar III"
+#~ msgstr "BIEL Pillar III"
+
+#~ msgid "Binary (C.R.) S.A., registered in Costa Rica."
+#~ msgstr "Binary (C.R.) S.A., enregistrée au Costa Rica."
+
+#~ msgid "European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
+#~ msgstr "Les résidents de l'Union européenne (sauf Royaume-Uni) souhaitant négocier des produits d'investissement pourront ouvrir leur compte auprès de Binary Investments (Europe) Ltd."
+
+#~ msgid "Group Information"
+#~ msgstr "Informations sur notre groupe"
+
+#~ msgid "Terms"
+#~ msgstr "Conditions"
+
+#~ msgid "The <span itemprop='brand'>%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 accounts since <span itemprop='foundingdate'>1999</span>."
+#~ msgstr "Le <span itemprop='brand'>%1</span>service (anciennement BetOnMarkets.com) est détenu et exploité par Binary Ltd. Société entièrement autorisée sous licence et conforme aux réglementations en vigueur, %1 fournit des services de spéculation financière à plus de 1 000 000 clients basés dans le monde entier <span itemprop='foundingdate'>1999</span>"
+
+#, fuzzy
+#~| msgid "$25,000 - $100,000"
+#~ msgid "min 1,000 and max 100,000"
+#~ msgstr "25 000 $ - 100 000 $"
 
 #~ msgid "Version 41. Last modified 2016-06-27."
 #~ msgstr "Version 41. Dernière modification le 27/06/2016."
@@ -8537,11 +9253,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgstr "Votre compte a été débité de %1 %2"
 
 #, fuzzy
-#~| msgid "Webtrader"
-#~ msgid "MetaTrader"
-#~ msgstr "Webtrader"
-
-#, fuzzy
 #~| msgid "Chart"
 #~ msgid "Charts"
 #~ msgstr "Graphique"
@@ -8654,12 +9365,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgid "Account balance : %1 %2"
 #~ msgstr "Solde du compte : %1 %2"
 
-#~ msgid "Binary.com Property"
-#~ msgstr "Propriété de Binary.com"
-
-#~ msgid "Binary.com academy"
-#~ msgstr "Académie Binary.com"
-
 #~ msgid "Binary.com is the award-winning industry pioneer in online options trading."
 #~ msgstr "Régulièrement récompensée pour ses services, Binary.com est une société pionnière sur le marché du trading d'options binaires en ligne."
 
@@ -8750,11 +9455,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgstr "%1 offre une variété de graphiques pour vous aider à déterminer sur quels marchés vous voulez trader. Testez-les."
 
 #, fuzzy
-#~| msgid "Binary option"
-#~ msgid "Binary Next Gen"
-#~ msgstr "Option binaire"
-
-#, fuzzy
 #~| msgid "Binary.com open-source projects"
 #~ msgid "List of All Open-Source Projects"
 #~ msgstr "Binary.com projets open source"
@@ -8763,11 +9463,6 @@ msgstr "Acceptation des conditions générales"
 #~| msgid "Webtrader"
 #~ msgid "Next Gen on GitHub"
 #~ msgstr "Webtrader"
-
-#, fuzzy
-#~| msgid "Purpose of trading"
-#~ msgid "The future of trading on %1"
-#~ msgstr "Purpose of trading"
 
 #, fuzzy
 #~| msgid "Tick Trade Up/Down"
@@ -8783,11 +9478,6 @@ msgstr "Acceptation des conditions générales"
 #~| msgid "Try it now"
 #~ msgid "Try It"
 #~ msgstr "Essayez-le maintenant"
-
-#, fuzzy
-#~| msgid "Start trading"
-#~ msgid "Ultra-fast trading"
-#~ msgstr "Commencer le trading"
 
 #, fuzzy
 #~| msgid "Webtrader"
@@ -8974,9 +9664,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Accumulation/Distribution"
 #~ msgstr "Accumulation/Distribution"
-
-#~ msgid "Acknowledgement of Money Transfer"
-#~ msgstr "Attestation du transfert d'argent"
 
 #~ msgid "Acknowledgement of Withdrawal Request"
 #~ msgstr "Confirmation de la demande de retrait"
@@ -9540,9 +10227,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Incorrect email or password."
 #~ msgstr "Mail ou mot de passe incorrect."
-
-#~ msgid "Indicator"
-#~ msgstr "Indicateur"
 
 #~ msgid "Indicator that displays the width of Bollinger Bands."
 #~ msgstr "Indicateur affichant la largeur des Bandes de Bollinger."
@@ -10119,9 +10803,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgid "TRIX"
 #~ msgstr "TRIX"
 
-#~ msgid "Target"
-#~ msgstr "Cible"
-
 #~ msgid "Technical Indicator derived from subtracting Aroon Down from Aroon Up. As Aroon Up and Aroon Down oscillate between 0 and 100, the Aroon Oscillator oscillates between -100 and 100 with zero as the centre crossover line."
 #~ msgstr "Indicateur Technique dérivé de la soustraction de Aroon Down depuis Aroon Up. Etant donné qu'Aroon Up et Aroon Down oscillent entre 0 et 100, l'Oscillateur Aroon oscille entre -100 et 100, avec zéro en tant que ligne centrale transversale."
 
@@ -10674,9 +11355,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "plus"
 #~ msgstr "plus"
-
-#~ msgid "today"
-#~ msgstr "aujourd'hui"
 
 #~ msgid "USDZAR"
 #~ msgstr "USDZAR"
@@ -12476,9 +13154,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgid "Change"
 #~ msgstr "Variation"
 
-#~ msgid "Charting for this underlying is delayed"
-#~ msgstr "Les graphiques sont retardés pour ce sous-jacent"
-
 #~ msgid "Charting is not available for this underlying"
 #~ msgstr "Les graphiques ne sont pas disponibles pour ce sous-jacent"
 
@@ -12748,9 +13423,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Sell Spot"
 #~ msgstr "Point de Vente"
-
-#~ msgid "Sell Time"
-#~ msgstr "Heure de Vente"
 
 #~ msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 #~ msgstr "Désolé, une erreur est survenue. Veuillez contacter le service clientèle si le problème persiste."
@@ -13181,11 +13853,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgid "You shall indemnify on demand and hold the Company harmless from and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses and loss of profit, reasonable legal costs and expenses and VAT thereon if applicable) and liabilities suffered or incurred, directly or indirectly, by the Company in consequence of any breach by you of clause 3.3 or 3.4."
 #~ msgstr "Vous devez indemniser et mettre hors de cause en rapport à l'ensemble de pertes, d'exigences, de demandes d’indemnités, de dommages, de frais, de dépenses (incluant, sans s'y limiter, les pertes et les pertes de gains, les coûts et dépenses juridiques raisonnables et la TVA applicable s'il y a lieu) et les engagements financiers subis ou causés, directement ou indirectement, par la Société à cause d'une rupture de votre part de la clause 3.3 ou 3.4."
 
-#, fuzzy
-#~| msgid "Your documents are expired"
-#~ msgid "Your verification link has expired."
-#~ msgstr "Vos documents sont expirés"
-
 #~ msgid "A problem occurred"
 #~ msgstr "Un problème est survenu"
 
@@ -13377,9 +14044,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "There are no costs involved on the Binary.com side. However you will bear the costs of your own IT developers who develop the white-label for you."
 #~ msgstr "Il n'y a pas de frais du côté de Binary.com. Cependant vous assumerez les frais de vos propres développeurs IT qui développent l'étiquette-blanche pour vous."
-
-#~ msgid "This trade is not offered."
-#~ msgstr "Ce trade n'est pas proposé."
 
 #~ msgid "To create a White Label, first <a href=\"%1\">sign up as an affiliate</a>. This will allow you to earn commissions from clients of your White Label."
 #~ msgstr "Afin de créer une Étiquette Blanche, d'abord <a href=\"%1\">inscrivez-vous comme un affilié</a>. Ceci vous permettra de gagner de commissions des clients de votre Étiquette Blanche."
@@ -14249,9 +14913,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgid "HighCharts"
 #~ msgstr "GraphiquesÉlevés"
 
-#~ msgid "Jump to"
-#~ msgstr "Allez sur"
-
 #~ msgid "Newer"
 #~ msgstr "Plus nouveau"
 
@@ -14383,9 +15044,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgid "This page is unavailable."
 #~ msgstr "Cette page est indisponible."
 
-#~ msgid "To change your name, date of birth, country of residence, or email, please contact Customer Support."
-#~ msgstr "Pour changer votre nom, date de naissance, pays de résidence, ou mail, veuillez contacter le Service Clientèle."
-
 #~ msgid "To:"
 #~ msgstr "Pour:"
 
@@ -14439,9 +15097,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Horizontal"
 #~ msgstr "Horizontal"
-
-#~ msgid "Live Charts"
-#~ msgstr "Graphiques en direct"
 
 #~ msgid "Markets"
 #~ msgstr "Marchés"
@@ -14605,9 +15260,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgid "In / Out"
 #~ msgstr "Dans / Hors de"
 
-#~ msgid "In/out trades"
-#~ msgstr "Trades dans/hors de"
-
 #~ msgid "Service summary"
 #~ msgstr "Sommaire du service"
 
@@ -14643,9 +15295,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "See demo"
 #~ msgstr "Voir démo"
-
-#~ msgid "Chart Application"
-#~ msgstr "Application Graphique"
 
 #~ msgid "Click <a href=\"%1\" target=\"_blank\">here</a> to try the beta-release of the application. Kindly report issues found to <a href=\"mailto:%2\">%2</a>."
 #~ msgstr "Cliquez <a href=\"%1\" target=\"_blank\">ici</a> afin d'essayer la version beta de l'application. Veuillez rapporter des erreurs trouvées à <a href=\"mailto:%2\">%2</a>."
@@ -15468,9 +16117,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgid "View your <a href=\"%1\">withdrawal limits</a>."
 #~ msgstr "Consultez vos <a href=\"%1\">limites de retrait</a>."
 
-#~ msgid "Virtual money account"
-#~ msgstr "Compte d'argent virtuel"
-
 #~ msgid "Your password contains invalid characters"
 #~ msgstr "Votre mot de passe contient des caractères non valides"
 
@@ -15853,9 +16499,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "The most simple and exciting way to experience financial markets."
 #~ msgstr "Le moyen le plus simple et le plus excitant de connaître les marchés financiers."
-
-#~ msgid "Trade with confidence with the industry pioneer."
-#~ msgstr "Tradez en toute confiance avec le pionnier du secteur."
 
 #~ msgid "Under %1 for market-leading returns"
 #~ msgstr "Moins de %1 pour des retours de premier ordre"
@@ -16532,9 +17175,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgid "Download the Random Markets raw tick data here."
 #~ msgstr "Téléchargez les Marchés Aléatoires données brutes à intervalle ici."
 
-#~ msgid "Free gift"
-#~ msgstr "Cadeau gratuit"
-
 #~ msgid "Raw tick data"
 #~ msgstr "Les informations ponctuels brutes"
 
@@ -16871,9 +17511,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgid "Tick Trade Rise/Fall"
 #~ msgstr "Trade ponctuel Hausse/Baisse"
 
-#~ msgid "Tick trades"
-#~ msgstr "Trades ponctuels"
-
 #~ msgid "Trade on the market action during the next few seconds of trade."
 #~ msgstr "Tradez sur l'action du marché durant les prochaines secondes de trade."
 
@@ -17123,9 +17760,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Stake must be at least <strong>%1</strong>."
 #~ msgstr "Mise doit être au moins <strong>%1</strong>."
-
-#~ msgid "main trading platform"
-#~ msgstr "plate-forme principal de trade"
 
 #~ msgid "Accounts are available in dollars, pounds and euros."
 #~ msgstr "Les comptes sont disponibles en dollars, en livres et en euros."
@@ -17526,9 +18160,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgid "End"
 #~ msgstr "Fin"
 
-#~ msgid "End time"
-#~ msgstr "Moment de fin"
-
 #~ msgid "Entry"
 #~ msgstr "Entrer"
 
@@ -17899,9 +18530,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgid "Trades appear instantly on your Portfolio. Prices continue to update in realtime, allowing you to sell trades before expiry to lock in profits."
 #~ msgstr "Les trades apparaissent instantanément dans votre Portefeuille. Les prix continuent à être actualisés en temps réel, vous permettant de vendre les trades avant leur expiration pour verrouiller les bénéfices."
 
-#~ msgid "Ultra-short term trades..."
-#~ msgstr "Trades à ultra court terme..."
-
 #~ msgid "View the live trading interface"
 #~ msgstr "Voir l'interface en direct de trading"
 
@@ -17910,9 +18538,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Your trades, Your schedule"
 #~ msgstr "Vos trades, Votre planning"
-
-#~ msgid "Advanced Panel"
-#~ msgstr "Panneau Avancé"
 
 #~ msgid "Against"
 #~ msgstr "Contre"
@@ -18060,9 +18685,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "1. trade type"
 #~ msgstr "1. type de trade"
-
-#~ msgid "2. The Duration"
-#~ msgstr "2. La Durée"
 
 #~ msgid "2. underlying"
 #~ msgstr "2. sous-jacent"
@@ -18432,9 +19054,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "The primary tool of a Technical Analyst is the chart. For this reason, Technical analysts are sometimes referred to as 'chartists'. Various chart types exist, the most common being Line, Candlestick and Point & Figure Charts..."
 #~ msgstr "L'outil de choix pour un Analyste Technique est le graphique. Pour cette raison, les Analystes Techniques sont parfois désignés comme \"graphistes\". Différents types de graphique existent, les plus courants étant les Graphiques Linéaires, Chandelier et en Points et Figures..."
-
-#~ msgid "Trading Plans"
-#~ msgstr "Plans de Trading"
 
 #~ msgid "Withdraw: %1 to %2 working days"
 #~ msgstr "Retrait : %1 à %2 jours ouvrables"
@@ -19974,9 +20593,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Open a free virtual account or get started from just $5, with bonuses for larger deposits."
 #~ msgstr "Ouvrez un compte virtuel gratuit ou commencez avec seulement $5, avec des bonus pour les dépôts plus importants."
-
-#~ msgid "Trade on forex, indices, stocks, commodities and sector markets."
-#~ msgstr "Tradez sur les taux de change, les indices, les bourses, les matières premières et les marchés sectoriels."
 
 #~ msgid "Up to %1 return on rise/fall trades"
 #~ msgstr "Jusqu'à %1 de retour sur les trades rise/fall"

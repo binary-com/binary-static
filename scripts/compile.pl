@@ -70,12 +70,17 @@ foreach my $m (@m) {
     my $tpl_path = $m->[1];
     my $layout   = $m->[2];
     my $title    = $m->[3];
+    my $excludes = $m->[4];
 
     $index++;
 
     foreach my $lang (@langs) {
-        if ($m->[4] and index($m->[4], $lang) > -1) {
-            next;
+        if ($excludes) {
+            if ($excludes =~ /^NOT-/) {
+                next if ($excludes !~ $lang); # exclude all languages except this
+            } else {
+                next if ($excludes =~ $lang); # exclude this language
+            }
         }
 
         my $save_as_file = "$dist_path/$lang/pjax/$save_as.html";
@@ -99,7 +104,8 @@ foreach my $m (@m) {
             current_route   => $current_route,
             affiliate_email => 'affiliates@binary.com',
             full_width      => $layout && $layout eq 'full_width',
-            get_started     => $layout && $layout eq 'get_started'
+            get_started     => $layout && $layout eq 'get_started',
+            japan_docs_url  => 'https://japan-docs.binary.com'
         );
 
         if ($title) {

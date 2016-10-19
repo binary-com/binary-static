@@ -58,18 +58,18 @@ sub localize {
 }
 
 sub all_languages {
-    return ('EN', 'AR', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'VI', 'JA', 'ZH_CN', 'ZH_TW');
+    return ('EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'TH', 'VI', 'JA', 'ZH_CN', 'ZH_TW');
 }
 
 sub rtl_languages {
-    return ('AR');
+#    return ('AR');
+    return ();
 }
 
 sub lang_display_name {
     my $iso_code = shift;
 
     my %lang_code_name = (
-        AR    => 'Arabic',
         DE    => 'Deutsch',
         ES    => 'Español',
         FR    => 'Français',
@@ -79,6 +79,7 @@ sub lang_display_name {
         PL    => 'Polish',
         PT    => 'Português',
         RU    => 'Русский',
+        TH    => 'Thai',
         VI    => 'Vietnamese',
         ZH_CN => '简体中文',
         ZH_TW => '繁體中文',
@@ -173,6 +174,24 @@ sub js_config {
 sub menu {
     my @menu;
 
+    push @menu,
+        {
+        id         => 'topMenuTrading',
+        class      => 'ja-hide hide-tablet-mobile',
+        url        => url_for('/trading'),
+        text       => localize('Trade'),
+        link_class => 'pjaxload',
+        };
+
+    push @menu,
+        {
+        id         => 'topMenuJPTrading',
+        class      => 'all-hide ja-show hide-tablet-mobile',
+        url        => url_for('/jptrading'),
+        text       => localize('Trade'),
+        link_class => 'pjaxload'
+        };
+
     # Portfolio
     push @menu,
         {
@@ -213,7 +232,6 @@ sub menu {
     # resources
     my $resources_items_ref = {
         id         => 'topMenuResources',
-        class      => 'ja-hide',
         url        => url_for('/resources'),
         text       => localize('Resources'),
         link_class => 'pjaxload',

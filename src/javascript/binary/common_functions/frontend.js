@@ -127,8 +127,8 @@ var email_rot13 = function(str) {
 
 var display_cs_contacts = function () {
     $('.contact-content').on("change", '#cs_telephone_number', function () {
-        var val = $(this).val();
-        $('#display_cs_telephone').text(val);
+        var val = $(this).val().split(',');
+        $('#display_cs_telephone').html(val[0] + (val.length > 1 ? '<br />' + val[1] : ''));
     });
     $('#cs_contact_eaddress').html(email_rot13("<n uers=\"znvygb:fhccbeg@ovanel.pbz\" ery=\"absbyybj\">fhccbeg@ovanel.pbz</n>"));
 };
@@ -409,10 +409,19 @@ function handle_residence_state_ws(){
           if (!clientCountry.attr('disabled')) {
               clientCountry.prop('selected', true);
           }
+          var email_consent_parent = $('#email_consent').parent().parent();
           if (status.clients_country === 'jp' || japanese_client()) {
               if (!document.getElementById('japan-label')) $('#residence').parent().append('<label id="japan-label">' + page.text.localize('Japan') + '</label>');
+              email_consent_parent.removeClass('invisible');
           } else {
-              $('#residence').removeClass('invisible');
+              $('#residence').removeClass('invisible')
+                             .on('change', function() {
+                                 if ($(this).val() === 'jp') {
+                                     email_consent_parent.removeClass('invisible');
+                                 } else {
+                                     email_consent_parent.addClass('invisible');
+                                 }
+                             });
           }
         }
         return;
@@ -580,14 +589,6 @@ function show_residence_form() {
       return;
     });
 }
-
-$(function() {
-    $( "#accordion" ).accordion({
-      heightStyle: "content",
-      collapsible: true,
-      active: false
-    });
-});
 
 var $buoop = {
   vs: {i:10, f:39, o:30, s:5, c:39},

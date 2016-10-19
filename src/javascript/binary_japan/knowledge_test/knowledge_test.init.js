@@ -141,7 +141,9 @@ var KnowledgeTest = (function() {
                             showDisallowedMsg(jpStatus);
                         }
                             break;
-                        case 'jp_activation_pending': showCompletedMsg();
+                        case 'jp_activation_pending':
+                            showCompletedMsg();
+                            showActivationPending();
                             break;
                         default: {
                             console.warn('Unexpected jp status');
@@ -154,7 +156,6 @@ var KnowledgeTest = (function() {
                         $("html, body").animate({ scrollTop: 0 }, "slow");
 
                         $('#knowledgetest-link').addClass(hiddenClass);     // hide it anyway
-                        localStorage.setItem('jp_test_allowed', 0);
                     } else if (response.error.code === 'TestUnavailableNow') {
                         showMsgOnly('{JAPAN ONLY}The test is unavailable now, test can only be taken again on next business day with respect of most recent test.');
                     }
@@ -163,6 +164,13 @@ var KnowledgeTest = (function() {
         });
 
         BinarySocket.send({get_settings: 1, passthrough: {key: 'knowledgetest'}});
+    }
+
+    function showActivationPending() {
+        $('#topbar-msg').children('a').addClass(hiddenClass + ' jp_activation_pending');
+        if ($('.activation-message').length === 0) {
+            $('#virtual-text').append(' ' + '<div class="activation-message">' + page.text.localize('Your Application is Being Processed.') + '</div>' );
+        }
     }
 
     function showKnowledgeTestTopBarIfValid(jpStatus) {
@@ -175,7 +183,7 @@ var KnowledgeTest = (function() {
                 KnowledgeTestUI.createKnowledgeTestLink();
                 break;
             case 'jp_activation_pending':
-                $('#topbar-msg').children('a').addClass(hiddenClass + ' jp_activation_pending');
+                showActivationPending();
                 break;
             default: return;
         }

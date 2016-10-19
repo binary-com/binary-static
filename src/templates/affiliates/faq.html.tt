@@ -35,7 +35,7 @@
     <p>
     <ul class='checked'>
     <li>[% l("it is the leading binary option trading platform.") %]</li>
-    <li>[% l("it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian.") %]</li>
+    <li>[% l("it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian and Indonesian.") %]</li>
     <li>[% l("the platform is 100% web based making it instantly available for clients.") %]</li>
     <li>[% l("the platform is user friendly and accessible to all levels of traders.") %]</li>
     <li>[% l("the [_1] affiliate program is competitive and adaptive to your unique requirements.", broker_name) %]</li>
@@ -100,6 +100,6 @@
     <h2>[% l("Contact") %]</h2>
     <p>
     <h3>[% l("Where can I send my questions, comments and suggestions?") %]</h3>
-    <p>[% l("Please contact us with whatever is on your mind at <a href=\"mailto:[_1]\">[_1]</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us.", affiliate_email) %]</p>
+    <p>[% l("Please contact us with whatever is on your mind at <a href='mailto:[_1]'>[_1]</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us.", affiliate_email) %]</p>
 
 </div>

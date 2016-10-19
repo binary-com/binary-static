@@ -48,9 +48,23 @@ var Statement = (function(){
         return csv.join('\r\n');
     };
 
+    var attachDatePicker = function() {
+        $('#jump-to').val(page.text.localize('Today'))
+            .datepicker({
+                dateFormat: 'yy-mm-dd',
+                maxDate   : moment().toDate(),
+                onSelect  : function() {
+                    $('.table-container').remove();
+                    StatementUI.clearTableContent();
+                    StatementWS.init();
+                }
+            });
+    };
+
     var external = {
         getStatementData: getStatementData,
-        generateCSV: generateCSV
+        generateCSV: generateCSV,
+        attachDatePicker: attachDatePicker
     };
 
     return external;

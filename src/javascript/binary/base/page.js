@@ -309,6 +309,11 @@ Client.prototype = {
         this.check_storage_values();
         page.contents.activate_by_client_type();
         page.contents.activate_by_login();
+        CashierJP.set_email_id();
+    },
+    response_get_settings: function(response) {
+        page.user.first_name = response.get_settings.first_name;
+        CashierJP.set_name_id();
     },
     check_tnc: function() {
         if (/user\/tnc_approvalws/.test(window.location.href) || /terms\-and\-conditions/.test(window.location.href)) return;
@@ -544,22 +549,14 @@ Menu.prototype = {
         this.hide_main_menu();
 
         var active = this.active_menu_top();
-        var trading = japanese_client() ? $('#main-navigation-jptrading') : $('#main-navigation-trading');
-        if(active) {
+        var trading = new RegExp(japanese_client() ? '\/jptrading\.html' : '\/trading\.html');
+        var trading_is_active = trading.test(window.location.pathname);
+        if (active) {
             active.addClass('active');
-            if(page.client.is_logged_in || trading.is(active)) {
-                this.show_main_menu();
-            }
-        } else {
-            var is_trading_submenu = /\/cashier|\/resources/.test(window.location.pathname);
-            if(!/\/home/.test(window.location.pathname)) {
-                if (!page.client.is_logged_in && is_trading_submenu) {
-                    trading.addClass('active');
-                    this.show_main_menu();
-                } else if (page.client.is_logged_in) {
-                    this.show_main_menu();
-                }
-            }
+        }
+        var is_trading_submenu = /\/cashier|\/resources/.test(window.location.pathname) || trading_is_active;
+        if(page.client.is_logged_in || trading_is_active || is_trading_submenu) {
+            this.show_main_menu();
         }
     },
     show_main_menu: function() {
@@ -942,12 +939,13 @@ Contents.prototype = {
             if (page.client.is_virtual()) {
                 var show_upgrade_msg = true;
                 var show_virtual_msg = true;
+                var show_activation_msg = false;
                 if (localStorage.getItem('jp_test_allowed') === "1") {
-                    hide_upgrade();
                     show_virtual_msg = false;
                     show_upgrade_msg = false; // do not show upgrade for user that filled up form
                 } else if ($('.jp_activation_pending').length !== 0) {
                     show_upgrade_msg = false;
+                    show_activation_msg = true;
                 }
                 for (var i = 0; i < loginid_array.length; i++) {
                     if (loginid_array[i].real) {
@@ -966,7 +964,10 @@ Contents.prototype = {
                         show_upgrade('new_account/realws', 'Upgrade to a Real Account');
                     }
                 } else if (show_virtual_msg) {
-                    $upgrade_msg.removeClass(hiddenClass).find('> span').removeClass(hiddenClass);
+                    $upgrade_msg.removeClass(hiddenClass).find('> span').removeClass(hiddenClass + ' gr-hide-m');
+                    if (show_activation_msg && $('.activation-message').length === 0) {
+                        $('#virtual-text').append(' ' + '<div class="activation-message">' + page.text.localize('Your Application is Being Processed.') + '</div>' );
+                    }
                 }
             } else {
                 var show_financial = false;
@@ -1008,7 +1009,7 @@ var Page = function() {
 
 Page.prototype = {
     all_languages: function() {
-        return ['EN', 'AR', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'VI', 'JA', 'ZH_CN', 'ZH_TW'];
+        return ['EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'TH', 'VI', 'JA', 'ZH_CN', 'ZH_TW'];
     },
     language_from_url: function() {
         var regex = new RegExp('^(' + this.all_languages().join('|') + ')$', 'i');
@@ -1052,6 +1053,7 @@ Page.prototype = {
         }
         this.check_language();
         TrafficSource.setData();
+        this.endpoint_notification();
     },
     on_unload: function() {
         this.header.on_unload();
@@ -1175,10 +1177,21 @@ Page.prototype = {
         if (japanese_client()) {
             $('.ja-hide').addClass('invisible');
             $('.ja-show').attr('style', 'display: inline !important; visibility: visible;');
-            $('.ja-show-block').attr('style', 'display: inline-block !important; visibility: visible;');
+            $('.ja-show-block').attr('style', 'display: block !important; visibility: visible;');
+            $('.ja-show-inline-block').attr('style', 'display: inline-block !important; visibility: visible;');
             $('.ja-no-padding').attr('style', 'padding-top: 0; padding-bottom: 0;');
             $('#regulatory-text').removeClass('gr-9 gr-7-p')
                                  .addClass('gr-12 gr-12-p');
+        }
+    },
+    endpoint_notification: function() {
+        var server  = localStorage.getItem('config.server_url');
+        if (server && server.length > 0) {
+            var message = (/www\.binary\.com/i.test(window.location.hostname) ? '' :
+                page.text.localize('This is a staging server - For testing purposes only') + ' - ') +
+                page.text.localize('The server <a href="[_1]">endpoint</a> is: [_2]', [page.url.url_for('endpoint'), server]);
+            $('#end-note').html(message).removeClass('invisible');
+            $('#footer').css('padding-bottom', $('#end-note').height());
         }
     },
     // type can take one or more params, separated by comma

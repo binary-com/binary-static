@@ -6,7 +6,7 @@ var TradePage = (function(){
     if(japanese_client() && /\/trading\.html/i.test(window.location.pathname)) {
         window.location.href = page.url.url_for('jptrading');
         return;
-    } else if (!japanese_client() && /jp/.test(window.location.pathname)) {
+    } else if (!japanese_client() && /\/jptrading\.html/.test(window.location.pathname)) {
         window.location.href = page.url.url_for('trading');
         return;
     }
@@ -60,6 +60,7 @@ var TradePage = (function(){
     forgetTradingStreams();
     BinarySocket.clear();
     Defaults.clear();
+    chartFrameCleanup();
   };
 
   return {
