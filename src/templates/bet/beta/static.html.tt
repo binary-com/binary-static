@@ -150,9 +150,9 @@
                                             </div>
                                             <div class="big-col">
                                                 <input type="radio" name="stop_type" id="stop_type_points" value="point" checked/>
-                                                <label id="stop_type_points_label" class="radio_label"></label>
+                                                <label id="stop_type_points_label" class="radio_label" for="stop_type_points"></label>
                                                 <input type="radio" name="stop_type" id="stop_type_dollar" value="dollar" />
-                                                <label id="stop_type_dollar_label" class="radio_label"></label>
+                                                <label id="stop_type_dollar_label" class="radio_label" for="stop_type_dollar"></label>
                                             </div>
                                         </div>
                                         <div class="row">

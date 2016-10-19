@@ -168,7 +168,7 @@ var KnowledgeTest = (function() {
 
     function showActivationPending() {
         $('#topbar-msg').children('a').addClass(hiddenClass + ' jp_activation_pending');
-        if ($('activation-message').length === 0) {
+        if ($('.activation-message').length === 0) {
             $('#virtual-text').append(' ' + '<div class="activation-message">' + page.text.localize('Your Application is Being Processed.') + '</div>' );
         }
     }
