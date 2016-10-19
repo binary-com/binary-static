@@ -965,7 +965,7 @@ Contents.prototype = {
                     }
                 } else if (show_virtual_msg) {
                     $upgrade_msg.removeClass(hiddenClass).find('> span').removeClass(hiddenClass + ' gr-hide-m');
-                    if (show_activation_msg && $('activation-message').length === 0) {
+                    if (show_activation_msg && $('.activation-message').length === 0) {
                         $('#virtual-text').append(' ' + '<div class="activation-message">' + page.text.localize('Your Application is Being Processed.') + '</div>' );
                     }
                 }

@@ -8,6 +8,14 @@ var exportAllFunctions = function exportAllFunctions(obj) {
 };
 
 window.$ = window.jQuery = require('jquery');
+
+// Polyfills
+window.Promise = window.Promise || require('promise-polyfill');
+window.Symbol = window.Symbol || require('es6-symbol');
+require('./lib/polyfills/array.includes');
+require('./lib/polyfills/string.includes');
+require('./lib/polyfills/object.assign');
+
 window.EnjoyHint = require('./lib/guide.enjoyhint.js');
 require('./lib/highstock/highstock.js');
 require('./lib/highstock/highstock-exporting.js');
