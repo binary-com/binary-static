@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-18 14:22+0000\n"
+"PO-Revision-Date: 2016-10-19 14:19+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -8333,10 +8333,10 @@ msgstr "{JAPAN ONLY}If you buy a currency binary put option at a price of 500 ye
 msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:%1'>Customer Support</a>."
 msgstr "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:%1'>Customer Support</a>."
 
-#, fuzzy
-#| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
 msgid "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
-msgstr "หากท่านต้องการทราบข้อมูลเพิ่มเติมในการเป็นตัวแทนชำระเงิน โปรดติดต่อเราที่ <a href='mailto:%1'>%1</a>"
+msgstr ""
+"{JAPAN ONLY}If you need more information then please contact Customer "
+"Support at <a href='mailto:%1'>%1</a>)."
 
 msgid "{JAPAN ONLY}If you sell a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
 msgstr "{JAPAN ONLY}If you sell a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
@@ -8410,85 +8410,53 @@ msgstr "{JAPAN ONLY}It is possible to use two binary options to make a profit if
 msgid "{JAPAN ONLY}It prohibits the copying of the questions . In addition , You agree that you will not leak to third party"
 msgstr "{JAPAN ONLY}It prohibits the copying of the questions . In addition , You agree that you will not leak to third party"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}FX Rate"
 msgid "{JAPAN ONLY}JSA_Date_1"
-msgstr "{JAPAN ONLY}FX Rate"
+msgstr "{JAPAN ONLY}JSA_Date_1"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}FX Rate"
 msgid "{JAPAN ONLY}JSA_Date_2"
-msgstr "{JAPAN ONLY}FX Rate"
+msgstr "{JAPAN ONLY}JSA_Date_2"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}FX Rate"
 msgid "{JAPAN ONLY}JSA_Date_3"
-msgstr "{JAPAN ONLY}FX Rate"
+msgstr "{JAPAN ONLY}JSA_Date_3"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Savings"
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
-msgstr "{JAPAN ONLY}Savings"
+msgstr "{JAPAN ONLY}JSA_Explanation_1_1)"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Savings"
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
-msgstr "{JAPAN ONLY}Savings"
+msgstr "{JAPAN ONLY}JSA_Explanation_1_2)"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Savings"
 msgid "{JAPAN ONLY}JSA_Explanation_1_3)"
-msgstr "{JAPAN ONLY}Savings"
+msgstr "{JAPAN ONLY}JSA_Explanation_1_3)"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Download"
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
-msgstr "{JAPAN ONLY}Download"
+msgstr "{JAPAN ONLY}JSA_Explanation_2_1)"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Savings"
 msgid "{JAPAN ONLY}JSA_Explanation_2_2)"
-msgstr "{JAPAN ONLY}Savings"
+msgstr "{JAPAN ONLY}JSA_Explanation_2_2)"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Savings"
 msgid "{JAPAN ONLY}JSA_Explanation_2_3)"
-msgstr "{JAPAN ONLY}Savings"
+msgstr "{JAPAN ONLY}JSA_Explanation_2_3)"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Savings"
 msgid "{JAPAN ONLY}JSA_Explanation_3_1)"
-msgstr "{JAPAN ONLY}Savings"
+msgstr "{JAPAN ONLY}JSA_Explanation_3_1)"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Savings"
 msgid "{JAPAN ONLY}JSA_Explanation_3_2)"
-msgstr "{JAPAN ONLY}Savings"
+msgstr "{JAPAN ONLY}JSA_Explanation_3_2)"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Savings"
 msgid "{JAPAN ONLY}JSA_Explanation_3_3)"
-msgstr "{JAPAN ONLY}Savings"
+msgstr "{JAPAN ONLY}JSA_Explanation_3_3)"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}minute"
 msgid "{JAPAN ONLY}JSA_Title_1"
-msgstr "{JAPAN ONLY}minute"
+msgstr "{JAPAN ONLY}JSA_Title_1"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}minute"
 msgid "{JAPAN ONLY}JSA_Title_2"
-msgstr "{JAPAN ONLY}minute"
+msgstr "{JAPAN ONLY}JSA_Title_2"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}minute"
 msgid "{JAPAN ONLY}JSA_Title_3"
-msgstr "{JAPAN ONLY}minute"
+msgstr "{JAPAN ONLY}JSA_Title_3"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Pre-Contract Documents"
 msgid "{JAPAN ONLY}Japan Service Announcements"
-msgstr "{JAPAN ONLY}Pre-Contract Documents"
+msgstr "{JAPAN ONLY}Japan Service Announcements"
 
 msgid "{JAPAN ONLY}Knowledge Test"
 msgstr "{JAPAN ONLY}Knowledge Test"
@@ -8700,10 +8668,8 @@ msgstr "{JAPAN ONLY}Select an option type"
 msgid "{JAPAN ONLY}Select payout size"
 msgstr "{JAPAN ONLY}Select payout size"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Pre-Contract Documents"
 msgid "{JAPAN ONLY}Service Announcements"
-msgstr "{JAPAN ONLY}Pre-Contract Documents"
+msgstr "{JAPAN ONLY}Service Announcements"
 
 msgid "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
 msgstr "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
@@ -9012,7 +8978,7 @@ msgid "Company Profile"
 msgstr "ประวัติบริษัท"
 
 msgid "Service Announcements"
-msgstr ""
+msgstr "ประกาศบริการ"
 
 msgid "Open-Source Projects"
 msgstr "โครงการโอเพ่นซอส"
