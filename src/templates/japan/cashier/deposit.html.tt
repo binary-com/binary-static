@@ -1,3 +1,4 @@
+<div id="japan_cashier_container" class="invisible">
 <div class="gr-row">
     <h1 class="gr-11 gr-10-m">[% l("Deposit") %]</h1>
     <a class="gr-1 gr-2-m no-print align-end" href="javascript:window.print()">
@@ -46,3 +47,4 @@
 <p>[% l("{JAPAN ONLY}If you wish to change your designated account or you have any other queries, then please contact Customer Support.") %]</p>
 <p>[% l("{JAPAN ONLY}Please note our maximum deposit limit for a single transaction is ¥1,000,000.") %]</p>
 <p>[% l("{JAPAN ONLY}Please allow up to 3 business days for the funds to be credited to your trading account.") %]</p>
+</div>
