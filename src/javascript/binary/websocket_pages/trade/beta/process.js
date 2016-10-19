@@ -218,7 +218,7 @@ function displaySpreads_Beta() {
         amountPerPointLabel.show();
         amountPerPoint.show();
         spreadContainer.show();
-        stopTypeDollarLabel.textContent = document.getElementById('currency').value || TUser.get().currency;
+        stopTypeDollarLabel.textContent = document.getElementById('currency').value || Defaults.get('currency');
         if (Defaults.get('stop_type')) {
             var el = document.querySelectorAll('input[name="stop_type"][value="' + Defaults.get('stop_type') + '"]');
             if (el) {
