@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-20 02:01+0000\n"
+"PO-Revision-Date: 2016-10-20 08:23+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
@@ -2593,7 +2593,7 @@ msgid "Exit Spot"
 msgstr "判定レート"
 
 msgid "Exit Spot Time"
-msgstr "判定時間"
+msgstr "売却時間"
 
 msgid "Exit spot"
 msgstr "判定レート"
@@ -8643,85 +8643,55 @@ msgstr "２つのオプションを用い、権利行使価格の高いバイナ
 msgid "{JAPAN ONLY}It prohibits the copying of the questions . In addition , You agree that you will not leak to third party"
 msgstr "問題の複写を禁止します。また、第三者に漏えいしないことに同意いただくものとします。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}FX Rate"
 msgid "{JAPAN ONLY}JSA_Date_1"
-msgstr "通貨ペア"
+msgstr "2016/10/20"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}FX Rate"
 msgid "{JAPAN ONLY}JSA_Date_2"
-msgstr "通貨ペア"
+msgstr "-"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}FX Rate"
 msgid "{JAPAN ONLY}JSA_Date_3"
-msgstr "通貨ペア"
+msgstr "-"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Savings"
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
-msgstr "普通"
+msgstr ""
+"11月1日(水)に日銀政策発表が予定されており、政策発表前後の11:30〜13:30の間は、急激なマーケットの変動が予想されるため取引注文(新規購入及び売"
+"却)の受付を一時停止させて頂きます。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Savings"
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
-msgstr "普通"
+msgstr "万が一、取引注文の受付が予定停止時間より延長される場合、ホームページ上にバーナーを載せてお知らせ致します。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Savings"
 msgid "{JAPAN ONLY}JSA_Explanation_1_3)"
-msgstr "普通"
+msgstr "-"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}January 2016"
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
-msgstr "平成28年1月"
+msgstr "-"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Savings"
 msgid "{JAPAN ONLY}JSA_Explanation_2_2)"
-msgstr "普通"
+msgstr "-"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Savings"
 msgid "{JAPAN ONLY}JSA_Explanation_2_3)"
-msgstr "普通"
+msgstr "-"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Savings"
 msgid "{JAPAN ONLY}JSA_Explanation_3_1)"
-msgstr "普通"
+msgstr "-"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Savings"
 msgid "{JAPAN ONLY}JSA_Explanation_3_2)"
-msgstr "普通"
+msgstr "-"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Savings"
 msgid "{JAPAN ONLY}JSA_Explanation_3_3)"
-msgstr "普通"
+msgstr "-"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}minute"
 msgid "{JAPAN ONLY}JSA_Title_1"
-msgstr "分"
+msgstr "重要： 日銀政策発表に伴い11:30〜1:30は取引注文の受付停止"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}minute"
 msgid "{JAPAN ONLY}JSA_Title_2"
-msgstr "分"
+msgstr "-"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}minute"
 msgid "{JAPAN ONLY}JSA_Title_3"
-msgstr "分"
+msgstr "-"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Pre-Contract Documents"
 msgid "{JAPAN ONLY}Japan Service Announcements"
-msgstr "契約締結前交付書面"
+msgstr "お知らせ"
 
 msgid "{JAPAN ONLY}Knowledge Test"
 msgstr "知識確認テスト"
@@ -8937,10 +8907,8 @@ msgstr "オプションタイプの選択"
 msgid "{JAPAN ONLY}Select payout size"
 msgstr "ペイアウト金額を入力"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Pre-Contract Documents"
 msgid "{JAPAN ONLY}Service Announcements"
-msgstr "契約締結前交付書面"
+msgstr "お知らせ"
 
 msgid "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
 msgstr "通貨関連バイナリーオプションのショートポジションは、あらかじめ必要証拠金を業者に預託して取引を行い、取引成立後に証拠金が不足した場合には追加証拠金を業者に預託する必要がある。"
