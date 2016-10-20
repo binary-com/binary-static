@@ -173,6 +173,7 @@ function BinarySocketClass() {
                     page.contents.topbar_message_visibility(response.landing_company);
                     var company;
                     if (response.hasOwnProperty('error')) return;
+                    TUser.extend({'landing_company': response.landing_company});
                     for (var key in response.landing_company) {
                         if (TUser.get().landing_company_name === response.landing_company[key].shortcode) {
                             company = response.landing_company[key];
