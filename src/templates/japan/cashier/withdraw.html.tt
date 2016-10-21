@@ -1,3 +1,4 @@
+<div id="japan_cashier_container" class="invisible">
 <h1>[% l("Withdraw") %]</h1>
 <p>[% l("{JAPAN ONLY}You can request a funds transfer to your designated bank account at any time.") %]</p>
 <p>[% l("{JAPAN ONLY}You must have sufficient balance in your trading account at the time of transfer.") %]</p>
@@ -31,3 +32,4 @@
 	<button OnClick="return CashierJP.error_handler()" type="submit" style="margin-left: 16px; margin-top: -5px;">送信</button>
 </form>
 <!-- www.123contactform.com script ends here -->
+</div>

@@ -158,6 +158,10 @@ function BinarySocketClass() {
                             } else {
                                 Cashier.check_virtual_top_up();
                             }
+                            page.client.set_storage_value('landing_company_name', response.authorize.landing_company_fullname);
+                            if (/tnc_approvalws/.test(window.location.pathname)) {
+                                TNCApproval.showTNC();
+                            }
                         }
                         sendBufferedSends();
                     }
@@ -173,6 +177,7 @@ function BinarySocketClass() {
                     page.contents.topbar_message_visibility(response.landing_company);
                     var company;
                     if (response.hasOwnProperty('error')) return;
+                    TUser.extend({'landing_company': response.landing_company});
                     for (var key in response.landing_company) {
                         if (TUser.get().landing_company_name === response.landing_company[key].shortcode) {
                             company = response.landing_company[key];
@@ -181,10 +186,6 @@ function BinarySocketClass() {
                     }
 
                     if (company) {
-                        page.client.set_storage_value('landing_company_name', company.name);
-                        if (/tnc_approvalws/.test(window.location.pathname)) {
-                            TNCApproval.showTNC();
-                        }
                         if (company.has_reality_check) {
                             page.client.response_landing_company(company);
                             var currentData = TUser.get();
