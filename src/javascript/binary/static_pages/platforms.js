@@ -13,6 +13,15 @@ var Platforms = (function () {
         checkWidth();
         $(window).resize(checkWidth);
         $('.inner').scroll(checkScroll);
+        setHeights();
+    }
+    function setHeights() {
+        $('.inner tr').each(function() {
+            var $td = $(this).find('td:first'), $th = $(this).find('th');
+            if ($th.height() > $td.height()) {
+                $(this).find('td').height($th.height());
+            }
+        });
     }
     function checkScroll() {
         var $elem = $('.inner'),
@@ -20,7 +29,7 @@ var Platforms = (function () {
         var newScrollLeft = $elem.scrollLeft(),
             width = $elem.width(),
             scrollWidth = $elem.get(0).scrollWidth;
-        if (scrollWidth - newScrollLeft - width < 90) {
+        if (scrollWidth - newScrollLeft - width < 100) {
             $fade.css('opacity', '0');
         }
     }
@@ -30,6 +39,7 @@ var Platforms = (function () {
         } else {
             $('.sections').removeClass('invisible');
         }
+        $('.inner th').hide().fadeIn(1); // force to refresh in order to maintain correct positions
     }
     function get_hash() {
         return (

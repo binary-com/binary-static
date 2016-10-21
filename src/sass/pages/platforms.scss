@@ -14,22 +14,20 @@
     th {
         position: absolute;
         left: 0;
-        width: 90px;
-        height: 200px;
+        width: 100px;
         text-align: left;
-        overflow-y: visible;
-        overflow-x: auto;
+        word-wrap: break-word;
+        word-break: break-word;
     }
     .outer {
         position: relative;
+        background-color: $COLOR_LIGHT_GRAY;
     }
     .inner {
         overflow-x: scroll;
         overflow-y: visible;
-        margin-left: 110px;
-    }
-    .auto-height {
-        height: 32px;
+        margin-left: 120px;
+        background-color: $COLOR_WHITE;
     }
     tr:first-child td {
         line-height: 1.1em;
