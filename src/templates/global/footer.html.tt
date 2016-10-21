@@ -150,6 +150,9 @@
                                <li>
                                    <a class="pjaxload" href="[% request.url_for('/company-profile') %]">[% l("{JAPAN ONLY}Company Profile & Disclosure") %]</a>
                                </li>
+                               <li>
+                                   <a class="pjaxload" href="[% request.url_for('/service-announcements') %]">[% l("{JAPAN ONLY}Service Announcements") %]</a>
+                               </li>
                            </ul>
                        </div>
                     </div>
