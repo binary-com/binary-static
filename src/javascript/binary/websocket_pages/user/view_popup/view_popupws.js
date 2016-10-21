@@ -275,6 +275,10 @@ var ViewPopupWS = (function() {
             if (!contract.tick_count) Highchart.show_chart(contract, 'update');
         }
 
+        if (!contract.is_valid_to_sell) {
+            $Container.find('#errMsg').addClass(hiddenClass);
+        }
+
         sellSetVisibility(!isSellClicked && !isSold && !is_ended && +contract.is_valid_to_sell === 1);
         contract.chart_validation_error = contract.validation_error;
         contract.validation_error = '';
@@ -320,6 +324,7 @@ var ViewPopupWS = (function() {
         if (!(contract.is_settleable && !contract.is_sold)) {
             containerSetText('trade_details_message'         , '&nbsp;');
         }
+        $Container.find('#errMsg').addClass(hiddenClass);
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
     };
@@ -521,7 +526,6 @@ var ViewPopupWS = (function() {
             $Container.find('#' + sellButtonID).unbind('click').click(function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                ViewPopupUI.forget_streams();
                 isSellClicked = true;
                 sellSetVisibility(false);
                 sellContract();
@@ -571,7 +575,7 @@ var ViewPopupWS = (function() {
 
     // ----- Sell Contract -----
     var sellContract = function() {
-        socketSend({"sell": contractID, "price": 0, passthrough: {}});
+        socketSend({"sell": contractID, "price": contract.bid_price, passthrough: {}});
     };
 
     var responseSell = function(response) {
@@ -582,14 +586,17 @@ var ViewPopupWS = (function() {
             else {
                 $Container.find('#errMsg').text(response.error.message).removeClass(hiddenClass);
             }
+            sellSetVisibility(true);
+            isSellClicked = false;
             return;
         }
+        ViewPopupUI.forget_streams();
+        $Container.find('#errMsg').addClass(hiddenClass);
+        sellSetVisibility(false);
         if(contractType === 'spread') {
-            sellSetVisibility(false);
             getContract();
         }
         else if(contractType === 'normal') {
-            sellSetVisibility(false);
             if(isSellClicked) {
                 containerSetText('contract_sell_message',
                     page.text.localize('You have sold this contract at [_1] [_2]', [contract.currency, response.sell.sold_for]) +

@@ -1,4 +1,30 @@
 var CashierJP = (function() {
+    function init(action) {
+        if (objectNotEmpty(TUser.get())) {
+            var $container = $('#japan_cashier_container');
+            if (page.client.is_virtual()) {
+                $container.addClass('center-text').removeClass('invisible')
+                    .html($('<p/>', {class: 'notice-msg', html: page.text.localize('This feature is not relevant to virtual-money accounts.')}));
+                return;
+            }
+            $container.removeClass('invisible');
+            if (action === 'deposit') {
+                set_name_id();
+            } else if (action === 'withdraw') {
+                set_email_id();
+                Content.populate();
+            }
+        } else {
+            BinarySocket.init({
+                onmessage: function(msg){
+                    var response = JSON.parse(msg.data);
+                    if (response && response.msg_type === 'authorize') {
+                        CashierJP.init(action);
+                    }
+                }
+            });
+        }
+    }
     function set_name_id() {
         if (/deposit-jp/.test(window.location.pathname)) {
             $('#name_id').text((page.user.loginid || 'JP12345') + ' ' + (page.user.first_name || 'Joe Bloggs'));
@@ -19,6 +45,7 @@ var CashierJP = (function() {
         return true;
     }
     return {
+        init: init,
         set_name_id: set_name_id,
         set_email_id: set_email_id,
         error_handler: error_handler

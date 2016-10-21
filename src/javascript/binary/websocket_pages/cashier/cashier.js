@@ -27,7 +27,8 @@ var Cashier = (function() {
 
     var check_virtual_top_up = function() {
         if (TUser.get().is_virtual || page.client.is_virtual()) {
-            if ((TUser.get().residence !== 'jp' && TUser.get().balance > 1000) || (TUser.get().residence === 'jp' && TUser.get().balance > 100000)) {
+            if ((TUser.get().currency !== 'JPY' && TUser.get().balance > 1000) ||
+                (TUser.get().currency === 'JPY' && TUser.get().balance > 100000)) {
                 replace_with_disabled_button('#VRT_topup_link');
             }
         }
@@ -55,6 +56,7 @@ pjax_config_page("/cashier", function(){
           } else {
               Cashier.check_locked();
               Cashier.check_virtual_top_up();
+              page.contents.topbar_message_visibility(TUser.get().landing_company);
           }
         }
     };
