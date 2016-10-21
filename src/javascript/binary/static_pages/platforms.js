@@ -25,13 +25,13 @@ var Platforms = (function () {
     }
     function checkScroll() {
         var $elem = $('.inner'),
-            $fade = $('.fade-to-right');
+            $fadeL = $('.fade-to-left'),
+            $fadeR = $('.fade-to-right');
         var newScrollLeft = $elem.scrollLeft(),
             width = $elem.width(),
             scrollWidth = $elem.get(0).scrollWidth;
-        if (scrollWidth - newScrollLeft - width < 100) {
-            $fade.css('opacity', '0');
-        }
+        $fadeL.css('opacity', newScrollLeft === 0 ? '0' : '100');
+        $fadeR.css('opacity', scrollWidth === newScrollLeft + width ? '0' : '100');
     }
     function checkWidth() {
         if ($('.sidebar-left').is(':visible')) {

@@ -42,18 +42,24 @@
     .small-padding-top {
         padding-top: 4px;
     }
-    .fade-to-right {
+    .fade-to-right, .fade-to-left {
         position: absolute;
         z-index: 2;
         left: 85%;
         right: 0;
         top: 0;
         height: 100%;
+        width: 105px;
         background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 70%);
         background: -webkit-gradient(linear, right top, right bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(70%, rgba(255, 255, 255, 1)));
         background: -webkit-linear-gradient(right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 70%);
         background: -o-linear-gradient(right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 70%);
         background: -ms-linear-gradient(right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 70%);
         background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 70%);
+    }
+    .fade-to-left {
+        transform: rotate(180deg);
+        left: 120px;
+        opacity: 0;
     }
 }
