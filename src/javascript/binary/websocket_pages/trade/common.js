@@ -880,7 +880,7 @@ function updateWarmChart(){
         highlightLineColor: '#000000',
         spotRadius: 1.25
     };
-    if($chart){
+    if ($chart && typeof $chart.sparkline === 'function') {
         $chart.sparkline(spots, chart_config);
         if(spots.length){
             $chart.show();
