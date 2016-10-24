@@ -840,6 +840,7 @@ sub _texts {
         push @texts, localize('details');
         push @texts, localize('Deposit [_1] [_2] virtual money into your account [_3]');
         push @texts, localize('Withdraw');
+        push @texts, localize('Insufficient balance.');
 
         # strings for endpoint notification
         push @texts, localize('This is a staging server - For testing purposes only');
