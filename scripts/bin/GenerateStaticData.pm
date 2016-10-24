@@ -336,6 +336,7 @@ sub _texts {
         #strings for home and virtualws page
         push @texts, localize('verification token');
         push @texts, localize('Please submit a valid [_1].');
+        push @texts, localize('email address');
         push @texts, localize('password');
         push @texts, localize('The two passwords that you entered do not match.');
         push @texts, localize('Your token has expired. Please click <a class="pjaxload" href="[_1]">here</a> to restart the verification process.');
