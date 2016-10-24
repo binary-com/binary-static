@@ -9,7 +9,7 @@ var LostPassword = (function() {
         if (emailInput === '') {
             $("#email_error").removeClass(hiddenClass).text(page.text.localize('This field is required.'));
         } else if (!validateEmail(emailInput)){
-            $("#email_error").removeClass(hiddenClass).text(page.text.localize('Invalid email format'));
+            $("#email_error").removeClass(hiddenClass).text(Content.errorMessage('valid', page.text.localize('email address')));
         }
         else {
             BinarySocket.send({verify_email: emailInput, type: 'reset_password'});
@@ -22,7 +22,7 @@ var LostPassword = (function() {
             $("#email_error").addClass(hiddenClass);
         }
     }
-    
+
     function lostPasswordWSHandler(msg) {
         var response = JSON.parse(msg.data);
         var type = response.msg_type;
@@ -31,13 +31,14 @@ var LostPassword = (function() {
             if (response.verify_email === 1) {
                 load_with_pjax('reset_passwordws');
             } else if (response.error) {
-                $("#email_error").removeClass(hiddenClass).text(page.text.localize('Invalid email format'));
+                $("#email_error").removeClass(hiddenClass).text(Content.errorMessage('valid', page.text.localize('email address')));
                 $('#submit').prop('disabled', false);
             }
         }
     }
 
     function init() {
+        Content.populate();
         $('#lost_passwordws').removeClass('invisible');
         $('#submit:enabled').click(function() {
             submitEmail();
