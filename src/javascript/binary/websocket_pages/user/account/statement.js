@@ -30,10 +30,10 @@ var Statement = (function(){
         return statement_data;
     };
 
-    var generateCSV = function(allData){
+    var generateCSV = function(allData, jpClient){
         var columns = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'],
             header  = ['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit'].map(function(str){return page.text.localize(str);});
-        header.push(page.text.localize('Balance') + (TUser.get().currency ? ' (' + TUser.get().currency + ')' : ''));
+        header.push(page.text.localize('Balance') + (jpClient || !TUser.get().currency ? '' : ' (' + TUser.get().currency + ')'));
         var sep = ',',
             csv = [header.join(sep)];
         if (allData && allData.length > 0) {
