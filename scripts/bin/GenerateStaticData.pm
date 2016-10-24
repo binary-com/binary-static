@@ -617,6 +617,8 @@ sub _texts {
         push @texts, localize('Weekday');
         push @texts, localize('This contract can not be traded in the final 2 minutes before settlement');
         push @texts, localize('All barriers in this trading window are expired');
+        push @texts, localize('{JAPAN ONLY}¥');
+        push @texts, localize('{JAPAN ONLY},000');
         push @texts, localize('min: 1,000');
         push @texts, localize('max: 100,000');
         push @texts, localize('Your Application is Being Processed.');
