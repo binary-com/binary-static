@@ -522,8 +522,17 @@ var TradingEvents = (function () {
             minDate: new Date(),
             dateFormat: "yy-mm-dd"
         });
-        var date = new Date();
-        $(".pickatime" ).timepicker({minTime:{hour: date.getUTCHours(), minute: date.getUTCMinutes()}});
+        $(".pickatime" ).on('focus', function() {
+            var date_start = document.getElementById('date_start').value;
+            var now = date_start === 'now';
+            var current_moment = moment((now ? window.time : parseInt(date_start) * 1000)).utc();
+            $(this).timepicker('destroy').timepicker({
+                minTime: {
+                    hour: current_moment.format('HH'),
+                    minute: current_moment.format('mm')
+                }
+            });
+        });
     };
 
     return {
