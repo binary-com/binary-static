@@ -624,6 +624,8 @@ sub _texts {
         push @texts, localize('min: 1,000');
         push @texts, localize('max: 100,000');
         push @texts, localize('Your Application is Being Processed.');
+        push @texts, localize('Processing your request...');
+        push @texts, localize('Please check the above form for pending errors.');
 
         #strings for digit_infows
         push @texts, localize('Select market');
