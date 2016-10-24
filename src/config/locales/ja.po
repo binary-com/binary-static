@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-21 08:52+0000\n"
+"PO-Revision-Date: 2016-10-24 05:50+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
@@ -8332,7 +8332,7 @@ msgid "{JAPAN ONLY}Capital Adequacy Ratio (CAR)"
 msgstr "自己資本規制比率(CAR)"
 
 msgid "{JAPAN ONLY}Choose direction of the market and the exercise price you wish to target, and hit the green buy button to instantly trade"
-msgstr "相場の見通しを立ててバリア価格を決めて緑の購入金額のボタンをクリック(注意：ワンクリック注文)"
+msgstr "相場の見通しを立ててバリア価格を決めて緑の購入金額のボタンをクリック<br>(注意：ワンクリック注文)"
 
 msgid "{JAPAN ONLY}Company Profile"
 msgstr "会社概要"
@@ -8774,7 +8774,8 @@ msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "リアル口座開設完了までの４ステップ:"
 
 msgid "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href='mailto:%1'>%1</a>"
-msgstr "当社のカスタマーサポートでは取引画面の操作方法がご不明な場合、丁寧にご説明させて頂きます。サポートが必要な場合は%1までお問い合わせください。"
+msgstr ""
+"当社のカスタマーサポートでは取引画面の操作方法がご不明な場合、丁寧にご説明させて頂きます。<br>サポートが必要な場合は%1までお問い合わせください。"
 
 msgid "{JAPAN ONLY}Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must be held in the trust bank count every day"
 msgstr "当社は、区分管理の実施のため、または区分管理された金銭を配分するために必要があるとみなされた時は、お客様の個人情報を受益者代理人（乙）に提供することがあります。"
@@ -8816,13 +8817,13 @@ msgid "{JAPAN ONLY}Please ensure you maintain sufficient balance in your trading
 msgstr "取引を行う際には、取引残高が十分あることを確認してください。"
 
 msgid "{JAPAN ONLY}Please input the amount you would like to withdraw and press the Request button."
-msgstr "出金依頼額を入力してリクエストボタンを押してください。"
+msgstr "出金依頼額を入力して送信ボタンを押してください。"
 
 msgid "{JAPAN ONLY}Please make a bank transfer from your designated bank account to:"
 msgstr "当社の指定口座へ振込を行ってください。"
 
 msgid "{JAPAN ONLY}Please make sure you add your Binary.com account ID to the Remitter's account name, or it will delay crediting the funds to your account:"
-msgstr "JPで始まる取引口座番号を振込名義の後に必ず記載してください。記載がない場合、取引口座への反映が遅延が起こる可能性があります。"
+msgstr "JPで始まる取引口座番号を振込名義の前に必ず記載してください。記載がない場合、取引口座への反映が遅延が起こる可能性があります。"
 
 msgid "{JAPAN ONLY}Please note our maximum deposit limit for a single transaction is ¥1,000,000."
 msgstr "1回あたりの入金限度額は100万円となっております。"
@@ -8906,7 +8907,7 @@ msgid "{JAPAN ONLY}Select an option type"
 msgstr "オプションタイプの選択"
 
 msgid "{JAPAN ONLY}Select payout size"
-msgstr "ペイアウト金額を入力"
+msgstr "ロット数を入力　※マウスカーソルを当ててクリックして数量を入力"
 
 msgid "{JAPAN ONLY}Service Announcements"
 msgstr "お知らせ"
