@@ -107,7 +107,10 @@ function BinarySocketClass() {
             }
 
             if (isReady()) {
-                if (!Login.is_login_pages()) page.header.validate_cookies();
+                if (!Login.is_login_pages()) {
+                    page.header.validate_cookies();
+                    binarySocket.send(JSON.stringify({website_status: 1}));
+                }
                 if (!getClockStarted()) page.header.start_clock_ws();
             }
         };
@@ -151,7 +154,6 @@ function BinarySocketClass() {
                             send({balance:1, subscribe: 1});
                             send({get_settings: 1});
                             send({get_account_status: 1});
-                            send({website_status: 1});
                             if (Cookies.get('residence')) send({landing_company: Cookies.get('residence')});
                             if(!page.client.is_virtual()) {
                                 send({get_self_exclusion: 1});
