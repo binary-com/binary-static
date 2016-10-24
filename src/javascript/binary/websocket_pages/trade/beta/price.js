@@ -229,7 +229,11 @@ var Price_Beta = (function() {
             error.textContent = details['error']['message'];
         } else {
             setData(proposal);
-            purchase.show();
+            if ($('#websocket_form').find('.error-field').length > 0) {
+                purchase.hide();
+            } else {
+                purchase.show();
+            }
             comment.show();
             error.hide();
             if (is_spread) {
