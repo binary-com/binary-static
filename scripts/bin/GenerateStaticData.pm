@@ -372,6 +372,11 @@ sub _texts {
         push @texts, localize('Closes');
         push @texts, localize('Settles');
         push @texts, localize('Upcoming Events');
+        push @texts, localize('Closes early (at 21:00)');
+        push @texts, localize('Closes early (at 18:00)');
+        push @texts, localize("New Year's Day");
+        push @texts, localize('Christmas Day');
+        push @texts, localize('Fridays');
 
         #strings for paymentagent_withdrawws page
         push @texts, localize('You are not authorized for withdrawal via payment agent.');
