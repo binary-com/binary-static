@@ -29,7 +29,7 @@ var LostPassword = (function() {
 
         if (type === 'verify_email') {
             if (response.verify_email === 1) {
-                load_with_pjax('reset_passwordws');
+                load_with_pjax(page.url.url_for('user/reset_passwordws'));
             } else if (response.error) {
                 $("#email_error").removeClass(hiddenClass).text(Content.errorMessage('valid', page.text.localize('email address')));
                 $('#submit').prop('disabled', false);
