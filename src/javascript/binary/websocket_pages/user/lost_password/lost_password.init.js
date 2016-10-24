@@ -4,7 +4,7 @@ var LostPassword = (function() {
     var hiddenClass = 'invisible';
 
     function submitEmail() {
-        var emailInput = $('#lp_email').val();
+        var emailInput = ($('#lp_email').val() || '').trim();
 
         if (emailInput === '') {
             $("#email_error").removeClass(hiddenClass).text(page.text.localize('This field is required.'));
