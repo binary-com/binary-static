@@ -688,6 +688,7 @@
                         <span class="button ">
                             <button class="button " id="btn_submit" type="submit">[% l('Open Account') %]</button>
                         </span>
+                        <p id="submit-message"></p>
                     </fieldset>
                 </form>
                 <div class="errorbox rbox" id="client_message" style="display:none">
