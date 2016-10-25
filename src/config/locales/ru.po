@@ -7,14 +7,16 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-20 20:15+0000\n"
+"PO-Revision-Date: 2016-10-25 20:49+0000\n"
 "Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.9-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -1704,7 +1706,7 @@ msgid "Choose your own strike."
 msgstr "Выберите страйк-цену."
 
 msgid "Christmas Day"
-msgstr ""
+msgstr "Рождество"
 
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Гражданам Афганистана, Бельгии, Боснии и Герцеговины, Гайаны, Ирака, Лаоса, Сирии, Уганды, Вануату и Йемена запрещено открывать счета на сайте компании Binary Investments (Europe) Ltd."
@@ -1769,15 +1771,11 @@ msgstr "Закрыто"
 msgid "Closes"
 msgstr "Закрывается"
 
-#, fuzzy
-#| msgid "Closes early (at %1)"
 msgid "Closes early (at 18:00)"
-msgstr "Закрывается рано (в %1)"
+msgstr "Закрывается рано (в 18:00)"
 
-#, fuzzy
-#| msgid "Closes early (at %1)"
 msgid "Closes early (at 21:00)"
-msgstr "Закрывается рано (в %1)"
+msgstr "Закрывается рано (в 21:00)"
 
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
 msgstr "Совместная работа со специалистами нашей команды IT над инновационными улучшениями технических возможностей и работы нашего сайта"
@@ -2418,10 +2416,8 @@ msgstr "Окончание"
 msgid "End time"
 msgstr "Окончание"
 
-#, fuzzy
-#| msgid "Exclude time must be after today."
 msgid "End time must be after start time."
-msgstr "Время начала ограничения должно быть позднее сегодняшней даты."
+msgstr "Время окончания должно быть позднее времени начала."
 
 msgid "Ends Between/Ends Outside trades"
 msgstr "Закончится между/Закончится вне"
@@ -4431,7 +4427,7 @@ msgid "New Trade"
 msgstr "Новый контракт"
 
 msgid "New Year's Day"
-msgstr ""
+msgstr "Новый год"
 
 msgid "New password"
 msgstr "Новый пароль"
@@ -4706,10 +4702,13 @@ msgstr "Котировки на нашем сайте иногда могут с
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr "Наш быстрый рост дополняется приобретением клиентской базы BetsForTraders, одного из наших основных конкурентов."
 
-#, fuzzy
-#| msgid "%1's headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas and World Heritage sites. We also have an Operational Headquarters office in Cyberjaya, a high-tech precinct south of Kuala Lumpur, the capital of Malaysia, an equally exciting destination at the heart of Asia."
 msgid "Our headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas, and World Heritage sites. We also have two offices in Malaysia: our operational headquarters in the high-tech township of Cyberjaya, and a branch office at KL Sentral in the heart of the country’s capital, Kuala Lumpur."
-msgstr "Главный офис %1 находится на Мальте, любимом многими курорте с теплым климатом, отличной инфраструктурой и историческими памятниками. У нас также есть операционный офис в Киберджайя, районе новых технологий на юге Куала-Лумпура, столицы Малайзии, излюбленном путешественниками месте в центре Азии."
+msgstr ""
+"Наш главный офис находится на Мальте, любимом многими курорте с теплым "
+"климатом, отличной инфраструктурой и историческими памятниками. Также у нас "
+"есть два офиса в Малайзии: операционный офис в Киберджайя (районе новых "
+"технологий) и филиал в районе KL Sentral – самом сердце Куала-Лумпура, "
+"столицы Малайзии."
 
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "Наша политика в области безопасности и защиты данных входит в число лучших в индустрии."
