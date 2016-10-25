@@ -1692,6 +1692,9 @@ msgstr "Choisissez marché sous-jacent"
 msgid "Choose your own strike."
 msgstr "Définissez votre propre objectif."
 
+msgid "Christmas Day"
+msgstr ""
+
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Les citoyens des pays suivants ne sont pas autorisés à ouvrir un compte auprès de Binary Investments (Europe) Ltd : Afghanistan, Belgique, Bosnie-Herzégovine, Guyane, Laos, Syrie, Ouganda, Vanuatu et Yémen."
 
@@ -1754,6 +1757,16 @@ msgstr "Fermé"
 
 msgid "Closes"
 msgstr "Ferme"
+
+#, fuzzy
+#| msgid "Closes early (at %1)"
+msgid "Closes early (at 18:00)"
+msgstr "Ferme tôt (à %1)"
+
+#, fuzzy
+#| msgid "Closes early (at %1)"
+msgid "Closes early (at 21:00)"
+msgstr "Ferme tôt (à %1)"
 
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
 msgstr "Collaborer avec les membres de notre équipe de gestion des TI pour améliorer les capacités et les performances de notre site Web à travers des solutions innovantes"
@@ -2394,6 +2407,11 @@ msgstr "Heure de fin"
 msgid "End time"
 msgstr "Moment de fin"
 
+#, fuzzy
+#| msgid "Exclude time must be after today."
+msgid "End time must be after start time."
+msgstr "Le temps d'exclusion doit être ultérieur."
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "Contrats « Termine dans/hors de la zone »"
 
@@ -2795,6 +2813,9 @@ msgstr "Les jeunes diplômés satisfaisant nos exigences de base et souhaitant p
 
 msgid "Friday"
 msgstr "vendredi"
+
+msgid "Fridays"
+msgstr "Vendredis"
 
 msgid "From"
 msgstr "Des fonds"
@@ -3356,6 +3377,11 @@ msgid "Information of the previous performance of any underlying instrument or a
 msgstr "Information de la performance précédente de n'importe quel instrument ou actif sous-jacent ne garantit pas sa performance actuelle et/ou future. Une performance du passé n'est pas un indicateur fiable des résultats futurs."
 
 msgid "Insufficient balance"
+msgstr "Solde insuffisant"
+
+#, fuzzy
+#| msgid "Insufficient balance"
+msgid "Insufficient balance."
 msgstr "Solde insuffisant"
 
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
@@ -4390,6 +4416,9 @@ msgstr "Nouveau mot de passe"
 msgid "New Trade"
 msgstr "Nouvelle opération"
 
+msgid "New Year's Day"
+msgstr ""
+
 msgid "New password"
 msgstr "Nouveau mot de passe"
 
@@ -4851,6 +4880,9 @@ msgstr "Plateformes"
 msgid "Please %1 to view this page"
 msgstr "Veuillez %1 pour afficher cette page"
 
+msgid "Please check the above form for pending errors."
+msgstr ""
+
 msgid "Please check your email for the value of this token"
 msgstr "Veuillez consulter vos e-mails pour obtenir ce jeton."
 
@@ -5090,6 +5122,11 @@ msgstr "Traduction des contenus Web lorsque le traducteur à plein temps n'est p
 
 msgid "Processing Time"
 msgstr "Délai de traitement"
+
+#, fuzzy
+#| msgid "Unable to process your request"
+msgid "Processing your request..."
+msgstr "Impossible de traiter votre demande"
 
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "Création de contenus destinés à la diffusion sur le site Web et le blog de la société, sur les réseaux sociaux et dans le cadre de nos campagnes marketing"
@@ -7775,6 +7812,9 @@ msgstr "informations"
 msgid "e.g. blue.binaryws.com"
 msgstr "par ex. blue.binaryws.com"
 
+msgid "email address"
+msgstr "Adresse e-mail"
+
 msgid "f"
 msgstr "f"
 
@@ -9482,9 +9522,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgid "To continue using our cashier system, please try accessing it again:"
 #~ msgstr "Pour continuer à utiliser notre système de caisse, veuillez réessayer d'y accéder:"
 
-#~ msgid "Unable to process your request"
-#~ msgstr "Impossible de traiter votre demande"
-
 #~ msgid "Why us?"
 #~ msgstr "Pourquoi nous ?"
 
@@ -9754,9 +9791,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Close Location Value"
 #~ msgstr "Fermer la valeur de localisation"
-
-#~ msgid "Closes early (at %1)"
-#~ msgstr "Ferme tôt (à %1)"
 
 #~ msgid "Comment must not exceed %1 characters. Please resubmit."
 #~ msgstr "Le commentaire ne doit pas dépasser %1 caractères. Veuillez recommencer."
@@ -14299,9 +14333,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgid "contact us"
 #~ msgstr "contactez nous"
 
-#~ msgid "email address"
-#~ msgstr "Adresse e-mail"
-
 #, fuzzy
 #~| msgid "%1 %2 payout if %3 is strictly higher than %6 at %5."
 #~ msgid "%1 %2 payout if %3 is higher than or equal to %6 at %5."
@@ -15221,9 +15252,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Currency quotes are truncated to 5 digits and all contracts are purchased and settled based on 5-digit currency quotes."
 #~ msgstr "Les relevés de devise sont tronqués à 5 chiffres et tous les contrats sont achetés et réglés sur la base d'une valeur de devise à 5 décimales."
-
-#~ msgid "Fridays"
-#~ msgstr "Vendredis"
 
 #~ msgid "Notice: please only share your API token with third-parties which you trust."
 #~ msgstr "Remarque : veillez à ne partager votre token d'API qu'avec des tiers de confiance."
