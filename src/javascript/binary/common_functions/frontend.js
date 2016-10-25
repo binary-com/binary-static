@@ -237,12 +237,17 @@ function hide_if_logged_in() {
 
 // use function to generate elements and append them
 // e.g. element is select and element to append is option
-function appendTextValueChild(element, text, value, disabled){
+function appendTextValueChild(element, text, value, disabled, el_class){
     var option = document.createElement("option");
     option.text = text;
-    option.value = value;
+    if (value) {
+        option.value = value;
+    }
     if (disabled === 'disabled') {
       option.setAttribute('disabled', 'disabled');
+    }
+    if (el_class) {
+      option.className = el_class;
     }
     element.appendChild(option);
     return;
@@ -590,6 +595,29 @@ function show_residence_form() {
     });
 }
 
+function create_language_drop_down(languages) {
+    var language_select_element = document.getElementById('language_select');
+    languages.sort(function(a, b) {
+        if (a === 'EN' || a < b) {
+            return -1;
+        } else {
+            return 1;
+        }
+    });
+    for (var i = 0; i < languages.length; i++) {
+        if (languages[i] !== 'JA') {
+            appendTextValueChild(language_select_element, map_code_to_language(languages[i]), '', '', languages[i]);
+        }
+    }
+    $('#language_select .' + page.language()).attr('selected', 'selected');
+    $('#language_select').removeClass('invisible');
+}
+
+function map_code_to_language(code) {
+    var map = page.all_languages();
+    return map[code];
+}
+
 var $buoop = {
   vs: {i:10, f:39, o:30, s:5, c:39},
   l: page.language().toLowerCase(),
@@ -625,4 +653,5 @@ module.exports = {
     detect_hedging: detect_hedging,
     jqueryuiTabsToDropdown: jqueryuiTabsToDropdown,
     handle_account_opening_settings: handle_account_opening_settings,
+    create_language_drop_down: create_language_drop_down
 };
