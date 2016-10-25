@@ -7,10 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-21 01:46+0000\n"
+"PO-Revision-Date: 2016-10-24 05:50+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1422,7 +1421,7 @@ msgstr "第一種金融商品取引業者として登録"
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr ""
 "Binary株式会社\n"
-"所在地：150-0012　東京渋谷区広尾一丁目9-16　広尾宮田ビル3F"
+"所在地：150-0012　東京都渋谷区広尾1-9-16　広尾宮田ビル3F"
 
 msgid "Binary Ltd"
 msgstr "Binary Ltd"
@@ -1727,6 +1726,9 @@ msgstr "取引対象を選択"
 msgid "Choose your own strike."
 msgstr "バリア価格を設定"
 
+msgid "Christmas Day"
+msgstr ""
+
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr ""
 "アフガニスタン、ベルギー、ボスニア・ヘルツェゴビナ、ガイアナ、イラク、ラオス、シリア、ウガンダ、バヌアツ,\n"
@@ -1799,6 +1801,16 @@ msgstr "終了"
 
 msgid "Closes"
 msgstr "取引終了時間"
+
+#, fuzzy
+#| msgid "Closes early (at %1)"
+msgid "Closes early (at 18:00)"
+msgstr "早めに閉場（%1）"
+
+#, fuzzy
+#| msgid "Closes early (at %1)"
+msgid "Closes early (at 21:00)"
+msgstr "早めに閉場（%1）"
 
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
 msgstr "ウェブサイトの機能とパフォーマンスを向上させる革新的な方法を特定するために、ITグループのメンバーと共同で作業を行います"
@@ -2439,6 +2451,11 @@ msgstr "判定時刻"
 msgid "End time"
 msgstr "終了時間"
 
+#, fuzzy
+#| msgid "Exclude time must be after today."
+msgid "End time must be after start time."
+msgstr "制限時間は明日以降として設定して下さい。"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "END-IN/END-OUT トレード"
 
@@ -2839,6 +2856,9 @@ msgid "Fresh graduates who meet our basic requirements and are passionate about 
 msgstr "当社の基本要件を満たし、管理事務でのプロフェッショナルなキャリアを追求する情熱のある新卒者は大歓迎です。"
 
 msgid "Friday"
+msgstr "金曜日"
+
+msgid "Fridays"
 msgstr "金曜日"
 
 msgid "From"
@@ -3405,6 +3425,11 @@ msgid "Information of the previous performance of any underlying instrument or a
 msgstr "商品または原資産の以前の実績情報は現在および/または将来の業績を保証するものではありません。過去の実績は将来の成果を示すものではありません。"
 
 msgid "Insufficient balance"
+msgstr "口座残高が不足しています"
+
+#, fuzzy
+#| msgid "Insufficient balance"
+msgid "Insufficient balance."
 msgstr "口座残高が不足しています"
 
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
@@ -4461,6 +4486,9 @@ msgstr "新しいパスワード"
 msgid "New Trade"
 msgstr "新しいトレード"
 
+msgid "New Year's Day"
+msgstr ""
+
 msgid "New password"
 msgstr "新しいパスワード"
 
@@ -4741,9 +4769,7 @@ msgid "Our fast organic growth is supplemented by the acquisition of the client 
 msgstr "当社の競合相手であったBetsForTraders社の顧客を獲得し、組織として成長していきます。"
 
 msgid "Our headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas, and World Heritage sites. We also have two offices in Malaysia: our operational headquarters in the high-tech township of Cyberjaya, and a branch office at KL Sentral in the heart of the country’s capital, Kuala Lumpur."
-msgstr ""
-"Binary.comの本社は、温暖な気候、美しい保養地区、そして世界遺産といった環境に恵まれた観光地であるマルタ共和国に存在します。また、エキサイティング"
-"なアジアの中心部であるマレーシアの首都クアラルンプールの南部に位置する、ハイテク産業で有名なCyberjayaに業務部門を統括する本社が存在します。"
+msgstr "Binary.comの本社は、温暖な気候、美しい保養地区、そして世界遺産といった環境に恵まれた観光地であるマルタ共和国に存在します。また、エキサイティングなアジアの中心部であるマレーシアの首都クアラルンプールの南部に位置する、ハイテク産業で有名なCyberjayaに業務部門を統括する本社が存在します。"
 
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "当社の情報秘匿に関する取り決めは、アクセス管理とビジネスの継続性を考慮した業界にて最良の慣行に基づいております。"
@@ -4927,6 +4953,9 @@ msgstr "プラットフォーム"
 
 msgid "Please %1 to view this page"
 msgstr "現在、ログアウトの状態です。ご利用頂くためには再度%1が必要です。"
+
+msgid "Please check the above form for pending errors."
+msgstr ""
 
 msgid "Please check your email for the value of this token"
 msgstr "Eメールアドレスをご確認ください"
@@ -5167,6 +5196,11 @@ msgstr "フルタイムの翻訳者が不在の時にもウェブサイトのコ
 
 msgid "Processing Time"
 msgstr "決済所要時間"
+
+#, fuzzy
+#| msgid "Unable to process your request"
+msgid "Processing your request..."
+msgstr "お客さまのリクエストは受け付けられません"
 
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "当社のブログ、ソーシャルメディア、マーケティング資料のコンテンツ作成"
@@ -7601,7 +7635,7 @@ msgid "You can even build your own online trading sites, apps, and bots with our
 msgstr "ご自身の取引サイト、アプリケーション、ボットを当社の<a href=\"https://developers.binary.com\" target=\"_blank\">APIと開発ツール</a>で構築いただけます。"
 
 msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
-msgstr "お客様のバーチャルマネー残高が100,000円を下回る場合、バーチャルマネーの追加リクエストが可能です。"
+msgstr "バーチャルマネーの残高が100,000円を下回る場合、バーチャルマネーを追加することが可能です。"
 
 msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
 msgstr "お客様のバーチャルマネー残高がUSD 1,000.00を下回る場合、バーチャルマネーの追加リクエストが可能です。"
@@ -8016,6 +8050,9 @@ msgstr "詳細"
 msgid "e.g. blue.binaryws.com"
 msgstr "例：blue.binaryws.com"
 
+msgid "email address"
+msgstr "メールアドレス"
+
 msgid "f"
 msgstr "女性"
 
@@ -8056,7 +8093,7 @@ msgid "max: 100,000"
 msgstr "上限ロット：100ロット"
 
 msgid "min: 1,000"
-msgstr "ペイアウト：1,000円"
+msgstr "ペイアウト:¥1,000"
 
 msgid "minimum available duration"
 msgstr "最短取引期間"
@@ -8332,7 +8369,7 @@ msgid "{JAPAN ONLY}Capital Adequacy Ratio (CAR)"
 msgstr "自己資本規制比率(CAR)"
 
 msgid "{JAPAN ONLY}Choose direction of the market and the exercise price you wish to target, and hit the green buy button to instantly trade"
-msgstr "相場の見通しを立ててバリア価格を決めて緑の購入金額のボタンをクリック(注意：ワンクリック注文)"
+msgstr "相場の見通しを立ててバリア価格を決めて緑の購入金額のボタンをクリック<br>(注意：ワンクリック注文)"
 
 msgid "{JAPAN ONLY}Company Profile"
 msgstr "会社概要"
@@ -8515,7 +8552,7 @@ msgid "{JAPAN ONLY}Higher"
 msgstr "HIGH"
 
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
-msgstr "〒150-0012　東京渋谷区広尾一丁目9-16　広尾宮田ビル3F"
+msgstr "〒150-0012　東京都渋谷区広尾1-9-16　広尾宮田ビル3F"
 
 msgid "{JAPAN ONLY}Historical volatility is a prediction of the future rate of change in the underlying asset."
 msgstr "ヒストリカルボラティリティとは、原資産に対する将来の変動率を予測したボラティリティのことである。"
@@ -8683,7 +8720,7 @@ msgid "{JAPAN ONLY}JSA_Explanation_3_3)"
 msgstr "-"
 
 msgid "{JAPAN ONLY}JSA_Title_1"
-msgstr "重要： 日銀政策発表に伴い11:30〜1:30は取引注文の受付停止"
+msgstr "重要： 日銀政策発表に伴い11:30〜13:30は取引注文の受付停止"
 
 msgid "{JAPAN ONLY}JSA_Title_2"
 msgstr "-"
@@ -8774,7 +8811,7 @@ msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "リアル口座開設完了までの４ステップ:"
 
 msgid "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href='mailto:%1'>%1</a>"
-msgstr "当社のカスタマーサポートでは取引画面の操作方法がご不明な場合、丁寧にご説明させて頂きます。サポートが必要な場合は%1までお問い合わせください。"
+msgstr "当社のカスタマーサポートでは取引画面の操作方法がご不明な場合、丁寧にご説明させて頂きます。<br>サポートが必要な場合は%1までお問い合わせください。"
 
 msgid "{JAPAN ONLY}Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must be held in the trust bank count every day"
 msgstr "当社は、区分管理の実施のため、または区分管理された金銭を配分するために必要があるとみなされた時は、お客様の個人情報を受益者代理人（乙）に提供することがあります。"
@@ -8783,7 +8820,7 @@ msgid "{JAPAN ONLY}Our trading page provides an overall view of all the option c
 msgstr "当社の取引画面は、オプション取引条件の選択、取引価格（購入・売却）、取引ボタン等をシンプルに表示した取引プラットホームとなっております。"
 
 msgid "{JAPAN ONLY}Payout Amount"
-msgstr "取引数量（ロット✕1,000円）"
+msgstr "取引数量(ロット✕¥1,000)"
 
 msgid "{JAPAN ONLY}Please allow up to 3 business days for the funds to be credited to your trading account."
 msgstr "お客さまから入金を確認後、当社のお客さま取引口座には3営業日以内に反映させて頂きます。"
@@ -8816,13 +8853,13 @@ msgid "{JAPAN ONLY}Please ensure you maintain sufficient balance in your trading
 msgstr "取引を行う際には、取引残高が十分あることを確認してください。"
 
 msgid "{JAPAN ONLY}Please input the amount you would like to withdraw and press the Request button."
-msgstr "出金依頼額を入力してリクエストボタンを押してください。"
+msgstr "出金依頼額を入力して送信ボタンを押してください。"
 
 msgid "{JAPAN ONLY}Please make a bank transfer from your designated bank account to:"
 msgstr "当社の指定口座へ振込を行ってください。"
 
 msgid "{JAPAN ONLY}Please make sure you add your Binary.com account ID to the Remitter's account name, or it will delay crediting the funds to your account:"
-msgstr "JPで始まる取引口座番号を振込名義の後に必ず記載してください。記載がない場合、取引口座への反映が遅延が起こる可能性があります。"
+msgstr "JPで始まる取引口座番号を振込名義の前に必ず記載してください。記載がない場合、取引口座への反映が遅延が起こる可能性があります。"
 
 msgid "{JAPAN ONLY}Please note our maximum deposit limit for a single transaction is ¥1,000,000."
 msgstr "1回あたりの入金限度額は100万円となっております。"
@@ -8906,7 +8943,7 @@ msgid "{JAPAN ONLY}Select an option type"
 msgstr "オプションタイプの選択"
 
 msgid "{JAPAN ONLY}Select payout size"
-msgstr "ペイアウト金額を入力"
+msgstr "ロット数を入力　※マウスカーソルを当ててクリックして数量を入力"
 
 msgid "{JAPAN ONLY}Service Announcements"
 msgstr "お知らせ"
@@ -9792,9 +9829,6 @@ msgstr "利用規約の承認"
 #~ msgid "To continue using our cashier system, please try accessing it again:"
 #~ msgstr "入出金を引き続きご利用するには、また改めてアクセスして下さい："
 
-#~ msgid "Unable to process your request"
-#~ msgstr "お客さまのリクエストは受け付けられません"
-
 #~ msgid "Why us?"
 #~ msgstr "サービス概要"
 
@@ -10075,9 +10109,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "Close Location Value"
 #~ msgstr "Location Valueを閉じる"
-
-#~ msgid "Closes early (at %1)"
-#~ msgstr "早めに閉場（%1）"
 
 #~ msgid "Comment must not exceed %1 characters. Please resubmit."
 #~ msgstr "コメントは%1文字以内で送信して下さい。"
@@ -14591,9 +14622,6 @@ msgstr "利用規約の承認"
 #~ msgid "contact us"
 #~ msgstr "お問い合わせ"
 
-#~ msgid "email address"
-#~ msgstr "メールアドレス"
-
 #~ msgid "%1 %2 payout if %3 is higher than or equal to %6 at %5."
 #~ msgstr "%3が%5の時点で%6よりも高いかまたは同じ場合に%1 %2のペイアウトをお受け取りいただけます。"
 
@@ -15477,9 +15505,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "Currency quotes are truncated to 5 digits and all contracts are purchased and settled based on 5-digit currency quotes."
 #~ msgstr "当社では、最大で少数第５位までの価格データを採用しており、全てのトレードの最大で少数第５位までのデータに基づいて購入が可能であり、約定されます。"
-
-#~ msgid "Fridays"
-#~ msgstr "金曜日"
 
 #~ msgid "Notice: please only share your API token with third-parties which you trust."
 #~ msgstr "注意：信頼できる第三者にのみAPIトークンを共有するようにしてください。"

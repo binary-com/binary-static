@@ -133,7 +133,7 @@ var MarketTimesUI = (function() {
     var createEventsText = function(events) {
         var result = '';
         for(var i = 0; i < events.length; i++) {
-            result += (i > 0 ? '<br />' : '') + events[i].descrip + ': ' + events[i].dates;
+            result += (i > 0 ? '<br />' : '') + page.text.localize(events[i].descrip) + ': ' + page.text.localize(events[i].dates);
         }
         return result.length > 0 ? result : '--';
     };
