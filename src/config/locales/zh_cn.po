@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-10-21 02:11+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) "
-"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1698,6 +1697,9 @@ msgstr "选择标的资产"
 msgid "Choose your own strike."
 msgstr "选择您自己的行权价格。"
 
+msgid "Christmas Day"
+msgstr ""
+
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "阿富汗、比利时、波斯尼亚和黑塞哥维那、圭亚那、伊拉克、老挝人民民主共和国、叙利亚、乌干达、瓦努阿图或也门等国国民将受禁止于Binary Investments (Europe) Ltd开立账户。"
 
@@ -1762,6 +1764,16 @@ msgstr "收盘"
 
 msgid "Closes"
 msgstr "收盘"
+
+#, fuzzy
+#| msgid "Closes early (at %1)"
+msgid "Closes early (at 18:00)"
+msgstr "收盘提前（至%1）"
+
+#, fuzzy
+#| msgid "Closes early (at %1)"
+msgid "Closes early (at 21:00)"
+msgstr "收盘提前（至%1）"
 
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
 msgstr "与我们信息技术组成员协作，寻求提高网站功能和效率的创新方法"
@@ -2402,6 +2414,11 @@ msgstr "结束时间"
 msgid "End time"
 msgstr "结束时间"
 
+#, fuzzy
+#| msgid "Exclude time must be after today."
+msgid "End time must be after start time."
+msgstr "禁止时间必须在今日之后。"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "“收于范围之内/之外”的交易"
 
@@ -2802,6 +2819,9 @@ msgid "Fresh graduates who meet our basic requirements and are passionate about 
 msgstr "欢迎符合基本要求，并有热情从事行政工作的应届大学毕业生踊跃申请。"
 
 msgid "Friday"
+msgstr "星期五"
+
+msgid "Fridays"
 msgstr "星期五"
 
 msgid "From"
@@ -3364,6 +3384,11 @@ msgid "Information of the previous performance of any underlying instrument or a
 msgstr "任何标的工具或资产上一次的表现不可保证其当前或未来的表现。以前的表现并不能作为未来结果的可靠指标。"
 
 msgid "Insufficient balance"
+msgstr "余额不足"
+
+#, fuzzy
+#| msgid "Insufficient balance"
+msgid "Insufficient balance."
 msgstr "余额不足"
 
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
@@ -4400,6 +4425,9 @@ msgstr "新密码"
 msgid "New Trade"
 msgstr "新交易"
 
+msgid "New Year's Day"
+msgstr ""
+
 msgid "New password"
 msgstr "新密码"
 
@@ -4674,9 +4702,7 @@ msgid "Our fast organic growth is supplemented by the acquisition of the client 
 msgstr "我们获取了主要竞争对手之一BetsForTraders 的客户群，为公司快速的内生性增长提供支持。"
 
 msgid "Our headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas, and World Heritage sites. We also have two offices in Malaysia: our operational headquarters in the high-tech township of Cyberjaya, and a branch office at KL Sentral in the heart of the country’s capital, Kuala Lumpur."
-msgstr ""
-"我们总部设在马耳他，是个拥有温暖气候，美丽休闲区和世界遗产地的旅游胜地。我们也在马来西亚设了两个办事处：运营总部设于高科技特区 Cyberjaya， "
-"并在首都吉隆坡市中心KL Sentral设了分部办事处。"
+msgstr "我们总部设在马耳他，是个拥有温暖气候，美丽休闲区和世界遗产地的旅游胜地。我们也在马来西亚设了两个办事处：运营总部设于高科技特区 Cyberjaya， 并在首都吉隆坡市中心KL Sentral设了分部办事处。"
 
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "我们的信息安全政策基于访问控制和业务持续性的业内最佳实践。"
@@ -4860,6 +4886,9 @@ msgstr "平台"
 
 msgid "Please %1 to view this page"
 msgstr "要查看此页面请%1"
+
+msgid "Please check the above form for pending errors."
+msgstr ""
 
 msgid "Please check your email for the value of this token"
 msgstr "请检查您的电邮领取此令牌号"
@@ -5100,6 +5129,11 @@ msgstr "在全职译员无法工作时翻译网站内容"
 
 msgid "Processing Time"
 msgstr "处理时间"
+
+#, fuzzy
+#| msgid "Unable to process your request"
+msgid "Processing your request..."
+msgstr "无法处理您的请求"
 
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "为公司网站、博客、社交媒体渠道和营销材料创建内容"
@@ -7789,6 +7823,9 @@ msgstr "详情"
 msgid "e.g. blue.binaryws.com"
 msgstr "例如blue.binaryws.com"
 
+msgid "email address"
+msgstr "电子邮件地址"
+
 msgid "f"
 msgstr "f"
 
@@ -9551,9 +9588,6 @@ msgstr "条款和条件审批"
 #~ msgid "To continue using our cashier system, please try accessing it again:"
 #~ msgstr "如需继续使用我们的收银台系统，请尝试再次访问："
 
-#~ msgid "Unable to process your request"
-#~ msgstr "无法处理您的请求"
-
 #~ msgid "Why us?"
 #~ msgstr "为何选择我们？"
 
@@ -9814,9 +9848,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Close Location Value"
 #~ msgstr "关闭位置值"
-
-#~ msgid "Closes early (at %1)"
-#~ msgstr "收盘提前（至%1）"
 
 #~ msgid "Comment must not exceed %1 characters. Please resubmit."
 #~ msgstr "注释不能超过%1个字符。请重新提交。"
@@ -14321,9 +14352,6 @@ msgstr "条款和条件审批"
 #~ msgid "contact us"
 #~ msgstr "请与我们联系"
 
-#~ msgid "email address"
-#~ msgstr "电子邮件地址"
-
 #, fuzzy
 #~| msgid "%1 %2 payout if %3 is strictly higher than %6 at %5."
 #~ msgid "%1 %2 payout if %3 is higher than or equal to %6 at %5."
@@ -15289,9 +15317,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Currency quotes are truncated to 5 digits and all contracts are purchased and settled based on 5-digit currency quotes."
 #~ msgstr "外汇报价四舍五入到5位数，所有的合约均以5位数外汇报价进行购买和结算。"
-
-#~ msgid "Fridays"
-#~ msgstr "星期五"
 
 #~ msgid "Notice: please only share your API token with third-parties which you trust."
 #~ msgstr "通知：请仅将API令牌与您信赖的第三方分享。"
