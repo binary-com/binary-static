@@ -374,6 +374,11 @@ sub _texts {
         push @texts, localize('Closes');
         push @texts, localize('Settles');
         push @texts, localize('Upcoming Events');
+        push @texts, localize('Closes early (at 21:00)');
+        push @texts, localize('Closes early (at 18:00)');
+        push @texts, localize("New Year's Day");
+        push @texts, localize('Christmas Day');
+        push @texts, localize('Fridays');
 
         #strings for paymentagent_withdrawws page
         push @texts, localize('You are not authorized for withdrawal via payment agent.');
@@ -844,6 +849,7 @@ sub _texts {
         push @texts, localize('details');
         push @texts, localize('Deposit [_1] [_2] virtual money into your account [_3]');
         push @texts, localize('Withdraw');
+        push @texts, localize('Insufficient balance.');
 
         # strings for endpoint notification
         push @texts, localize('This is a staging server - For testing purposes only');
