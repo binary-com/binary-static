@@ -48,10 +48,10 @@ var Platforms = (function () {
         );
     }
     function showSelectedDiv() {
-        if ($('.sections[id="' + get_hash().substring(1) + '"]').is(':visible') &&
+        if ($('.sections.' + get_hash().substring(1)).is(':visible') &&
             $('.sections:visible').length === 1) return;
         $('.sections').addClass('invisible');
-        $('.sections[id="' + get_hash().substring(1) + '"]').removeClass('invisible');
+        $('.sections.' + get_hash().substring(1)).removeClass('invisible');
         $('.sidebar-nav a[href="' + get_hash() + '"]').parent().addClass('selected');
     }
     return {

@@ -1,5 +1,6 @@
 <dl>
-  <div class="gr-row">
+
+<div class="gr-row">
   <div class="gr-1"></div>
   <div class="list gr-5 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
     <div class="section fill-bg-color">
@@ -14,7 +15,7 @@
       </div>
     </div>
   </div>
-  <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
+  <div class="list gr-5 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
     <div class="section fill-bg-color">
       <a class="pjaxload" href="[% request.url_for('/get-started/types-of-trades') %]">
         <div id="types-of-trades"></div>
@@ -27,10 +28,12 @@
       </div>
     </div>
   </div>
+  <div class="gr-1"></div>
 </div>
 
 <div class="gr-row">
-  <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
+  <div class="gr-1"></div>
+  <div class="list gr-5 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
     <div class="section fill-bg-color">
       <a class="pjaxload" href="[% request.url_for('/get-started/binary-options-basics') %]">
         <div id="binary-options-basics"></div>
@@ -43,7 +46,7 @@
       </div>
     </div>
   </div>
-  <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
+  <div class="list gr-5 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
     <div class="section fill-bg-color">
       <a class="pjaxload" href="[% request.url_for('/get-started/benefits-of-trading-binaries') %]">
         <div id="benefits-of-trading-binaries"></div>
@@ -56,7 +59,11 @@
       </div>
     </div>
   </div>
+  <div class="gr-1"></div>
+</div>
 
+<div class="gr-row">
+  <div class="gr-1"></div>
   <div class="list gr-5 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
     <div class="section fill-bg-color">
       <a class="pjaxload" href="[% request.url_for('/get-started/how-to-trade-binaries') %]">
@@ -70,7 +77,7 @@
       </div>
     </div>
   </div>
-  <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
+  <div class="list gr-5 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
     <div class="section fill-bg-color">
       <a class="pjaxload" href="[% request.url_for('/get-started/beginners-faq') %]">
         <div id="beginners-faq"></div>
@@ -83,10 +90,12 @@
       </div>
     </div>
   </div>
+  <div class="gr-1"></div>
 </div>
 
 <div class="gr-row">
-  <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
+  <div class="gr-1"></div>
+  <div class="list gr-5 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
     <div class="section fill-bg-color ja-hide">
       <a class="pjaxload" href="[% request.url_for('/get-started/volidx-markets') %]">
         <div id="random-trades"></div>
@@ -99,7 +108,7 @@
       </div>
     </div>
   </div>
-  <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
+  <div class="list gr-5 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
     <div class="section fill-bg-color ja-hide">
       <a class="pjaxload" href="[% request.url_for('/get-started/smart-indices') %]">
         <div id="smart-indices"></div>
@@ -112,10 +121,12 @@
       </div>
     </div>
   </div>
+  <div class="gr-1"></div>
 </div>
 
 <div class="gr-row">
-  <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
+  <div class="gr-1"></div>
+  <div class="list gr-5 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
     <div class="section fill-bg-color">
       <a class="pjaxload" href="[% request.url_for('/get-started/glossary') %]">
         <div id="glossary"></div>
@@ -128,7 +139,7 @@
       </div>
     </div>
   </div>
-  <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
+  <div class="list gr-5 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
     <div class="section fill-bg-color ja-hide">
       <a class="pjaxload" href="[% request.url_for('/get-started/spread') %]">
         <div id="spread"></div>
@@ -141,6 +152,7 @@
       </div>
     </div>
   </div>
+  <div class="gr-1"></div>
 </div>
 
 </dl>

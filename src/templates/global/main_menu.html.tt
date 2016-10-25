@@ -1,6 +1,6 @@
-<div id="main-menu" class="tab-menu no-print fill-bg-color border-color">
+<div id="main-menu" class="tab-menu no-print fill-bg-color border-color gr-12 inner-padding">
     <div class="tab-menu-wrap gr-hide-m gr-hide-p">
-        <div class="gr-12 margin-32">
+        <div class="gr-12">
             <ul class="items">
             [%= FOREACH item IN menu=%]
                 <li id="[%= item.id =%]" class="item [%= item.class =%]">

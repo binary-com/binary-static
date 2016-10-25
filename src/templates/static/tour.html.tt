@@ -26,12 +26,12 @@
         </p>
       </div>
       <div class="gr-row">
-          <div class="gr-6 gr-12-m ja-hide">
+          <div class="gr-6 gr-12-m ja-hide align-end">
             <a class="pjaxload button" href="[% request.url_for('trading') %]">
               <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/tour/2-way-pricing_live.svg') %]"/>
             </a>
           </div>
-          <div class="gr-6 gr-12-m ja-hide">
+          <div class="gr-6 gr-12-m ja-hide align-start">
             <a class="pjaxload button" href="[% request.url_for('trading') %]">
               <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/tour/2-way-pricing_opposite.svg') %]"/>
             </a>

@@ -43,9 +43,9 @@
     .hide-tablet-mobile {
         display: none;
     }
-    .inner-margin {
-        margin-left: 16px;
-        margin-right: 16px;
+    .inner-padding {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
     }
 }
 
@@ -87,9 +87,9 @@
     #end-note {
         display: none;
     }
-    .inner-margin {
-        margin-left: 8px;
-        margin-right: 8px;
+    .inner-padding {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
     }
 }
 
@@ -100,7 +100,7 @@
 }
 
 @media screen and (min-width: 961px) {
-    .why-us, .tour, .cashier-content, .resources-content, #explanation_image, .group-information-content, .partners-content, #settingsContainer {
+    .why-us, .cashier-content, .resources-content, #explanation_image, .group-information-content, .partners-content, #settingsContainer {
         img.responsive {
             width: 80%;
         }

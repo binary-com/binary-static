@@ -14,8 +14,8 @@
             </ul>
         </div>
     </div>
-    <div class="gr-9 gr-12-m platforms-section">
-        <div id="trading-platforms" class="sections invisible">
+    <div class="gr-9 gr-12-m">
+        <div class="sections invisible trading-platforms">
             <h1>[% l("Trading Platforms") %]</h1>
             <h2>[% l("Basic Platforms") %]</h2>
             <div class="gr-row">
@@ -141,9 +141,38 @@
                 </div>
             </div>
         </div>
-        <div id="platforms-comparison" class="sections invisible">
+        <div class="sections invisible platforms-comparison">
             <h1>[% l("Platform Comparison") %]</h1>
             <p>[% l("Compare all the trading platforms that we offer. Choose the ideal platform for your preferred trading strategy.") %]</p>
+        </div>
+        <div class="sections invisible more-tools">
+            <h1>[% l("More Tools") %]</h1>
+            <div class="gr-row">
+                <div class="gr-6 gr-12-m gr-12-p">
+                    <div class="gr-8 gr-5-p gr-9-m">
+                        <img class="responsive" src="[% request.url_for('images/pages/platforms/tradingview.png') %]" />
+                    </div>
+                    <div class="gr-padding-30">
+                        <h3>[% l("TradingView for Binary.com") %]</h3>
+                        <strong>[% l("Powerful charting and technical analysis") %]</strong>
+                        <p>
+                            [% l("Analyse the markets with an extensive range of indicators, price bands, and overlays.") %]
+                            <p>
+                                <a class="button" href="https://tradingview.binary.com" target="_blank">
+                                    <span>[% l("Try TradingView") %]</span>
+                                </a>
+                            </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h2>[% l("Buy an App, or Build Your Own") %]</h2>
+            <p>[% l("Grab a wide range of third-party apps for binary options trading in the <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Shop</a>.") %]</p>
+            <p>[% l("You can even build your own online trading sites, apps, and bots with our <a href=\"https://developers.binary.com\" target=\"_blank\">API and developer tools</a>.") %]</p>
+        </div>
+    </div>
+    <div class="gr-12">
+        <div class="sections invisible platforms-comparison">
             <div class="gr-padding-30">
                 <p class="hint">[% l("Note: Scroll the table to the right to see all platforms.") %]</p>
                 <div class="outer">
@@ -282,31 +311,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="more-tools" class="sections invisible">
-            <h1>[% l("More Tools") %]</h1>
-            <div class="gr-row">
-                <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-8 gr-5-p gr-9-m">
-                        <img class="responsive" src="[% request.url_for('images/pages/platforms/tradingview.png') %]" />
-                    </div>
-                    <div class="gr-padding-30">
-                        <h3>[% l("TradingView for Binary.com") %]</h3>
-                        <strong>[% l("Powerful charting and technical analysis") %]</strong>
-                        <p>
-                            [% l("Analyse the markets with an extensive range of indicators, price bands, and overlays.") %]
-                            <p>
-                                <a class="button" href="https://tradingview.binary.com" target="_blank">
-                                    <span>[% l("Try TradingView") %]</span>
-                                </a>
-                            </p>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <h2>[% l("Buy an App, or Build Your Own") %]</h2>
-            <p>[% l("Grab a wide range of third-party apps for binary options trading in the <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Shop</a>.") %]</p>
-            <p>[% l("You can even build your own online trading sites, apps, and bots with our <a href=\"https://developers.binary.com\" target=\"_blank\">API and developer tools</a>.") %]</p>
         </div>
     </div>
 </div>

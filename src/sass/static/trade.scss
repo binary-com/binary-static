@@ -740,7 +740,7 @@
 }
 
 .trading-content .container {
-    width: 960px;
+    max-width: 960px;
 }
 
 @media all and (max-width: 640px) {
