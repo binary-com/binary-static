@@ -1,3 +1,6 @@
+var CommonData = require('../../../../common_functions/common_data').CommonData;
+var testPassword = require('../../../../common_functions/passwordmeter').testPassword;
+
 var SecurityWS = (function() {
     "use strict";
     var $form;

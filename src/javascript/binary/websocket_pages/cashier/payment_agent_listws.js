@@ -1,3 +1,5 @@
+var showLoadingImage = require('../../base/utility').showLoadingImage;
+
 var PaymentAgentListWS = (function() {
     "use strict";
 

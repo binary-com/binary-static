@@ -1,3 +1,10 @@
+var showLoadingImage = require('../../../../base/utility').showLoadingImage;
+var toJapanTimeIfNeeded = require('../../../../base/utility').toJapanTimeIfNeeded;
+var format_money = require('../../../../common_functions/currency_to_symbol').format_money;
+var buildOauthApps = require('../../../../common_functions/get_app_details').buildOauthApps;
+var addTooltip = require('../../../../common_functions/get_app_details').addTooltip;
+var showTooltip = require('../../../../common_functions/get_app_details').showTooltip;
+
 var PortfolioWS =  (function() {
     'use strict';
 

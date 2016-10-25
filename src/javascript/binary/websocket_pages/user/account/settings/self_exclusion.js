@@ -1,3 +1,6 @@
+var showLoadingImage = require('../../../../base/utility').showLoadingImage;
+var attach_time_picker = require('../../../../base/utility').attach_time_picker;
+
 var SelfExclusionWS = (function() {
     "use strict";
 

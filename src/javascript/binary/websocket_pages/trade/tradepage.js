@@ -1,3 +1,5 @@
+var Guide = require('../../common_functions/guide').Guide;
+
 var TradePage = (function(){
 
   var trading_page = 0, events_initialized = 0;

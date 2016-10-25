@@ -1,3 +1,6 @@
+var buildOauthApps = require('../../../../common_functions/get_app_details').buildOauthApps;
+var addTooltip = require('../../../../common_functions/get_app_details').addTooltip;
+
 var StatementData = (function(){
 
     function initSocket(){

@@ -1,3 +1,5 @@
+var onlyNumericOnKeypress = require('../../common_functions/event_handler').onlyNumericOnKeypress;
+
 /*
  * TradingEvents object contains all the event handler function required for
  * websocket trading page

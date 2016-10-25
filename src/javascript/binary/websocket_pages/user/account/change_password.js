@@ -1,3 +1,5 @@
+var testPassword = require('../../../common_functions/passwordmeter').testPassword;
+
 var PasswordWS = (function(){
     var $form, $result;
 

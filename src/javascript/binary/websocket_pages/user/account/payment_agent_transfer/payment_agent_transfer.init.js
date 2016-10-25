@@ -1,3 +1,5 @@
+var onlyNumericOnKeypress = require('../../../../common_functions/event_handler').onlyNumericOnKeypress;
+
 var PaymentAgentTransfer = (function () {
     var hiddenClass = 'invisible',
         paymentagent;

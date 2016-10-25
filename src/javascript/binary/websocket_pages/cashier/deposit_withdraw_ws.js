@@ -1,3 +1,5 @@
+var template = require('../../base/utility').template;
+
 var ForwardWS = (function() {
   function init() {
     Content.populate();
