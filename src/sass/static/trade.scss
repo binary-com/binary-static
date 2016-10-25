@@ -738,6 +738,11 @@
         margin-bottom: 20px;
     }
 }
+
+.trading-content .container {
+    width: 960px;
+}
+
 @media all and (max-width: 640px) {
     #trading_bottom_content {
         ul#betsBottomPage {

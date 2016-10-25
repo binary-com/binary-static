@@ -1,6 +1,6 @@
 <div id='page-wrapper'>
     <div id="topbar" class="no-print">
-        <div  class="gr-12 margin-32">
+        <div class="gr-12 inner-margin">
             <div class="gr-row">
                 <div id="topbar-msg" class='gr-6 gr-5-t gr-12-p gr-12-m invisible upgrademessage'>
                     <span class='gr-hide-m invisible'>
@@ -24,7 +24,7 @@
     </div>
 
     <div id="header" class="no-print">
-        <div class='gr-12 margin-32'>
+        <div class='gr-12 inner-margin'>
             <div class='gr-row gr-row-align-middle'>
                 <div class='gr-3 gr-2-m gr-2-p gr-padding-10'>
                     <a id="logo" href="javascript:;">
@@ -56,7 +56,7 @@
                             <li class="ja-hide">
                                 <a class="pjaxload" href="[% request.url_for('tour') %]">[% l('Tour') %]</a>
                             </li>
-                            <li class="hidden ja-show-inline-block">
+                            <li class="all-hide ja-show-inline-block">
                                 <a class="pjaxload" href="[% request.url_for('tour-jp') %]">[% l('Tour') %]</a>
                             </li>
                             <li class="ja-hide" id="main-navigation-trading">

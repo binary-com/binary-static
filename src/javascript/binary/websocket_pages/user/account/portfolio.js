@@ -20,7 +20,8 @@ var Portfolio = (function(){
                 toJapanTimeIfNeeded(void 0, void 0, c.longcode) : c.longcode),
             'currency'       : c.currency,
             'buy_price'      : c.buy_price,
-            'app_id'         : c.app_id
+            'app_id'         : c.app_id,
+            'expiry_time'    : c.expiry_time
         };
 
         return portfolio_data;

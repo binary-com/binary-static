@@ -27,6 +27,7 @@
                 <tr>
                     <th class="ref">[% l('Ref.') %]</th>
                     <th class="payout nowrap">[% l('Potential Payout') %]</th>
+                    <th class="expires">[% l('Expires') %]</th>
                     <th class="details">[% l('Contract Details') %]</th>
                     <th class="purchase">[% l('Purchase') %]</th>
                     <th class="indicative nowrap">[% l('Indicative') %]</th>
@@ -39,7 +40,7 @@
             <tfoot>
                 <tr>
                     <th>[% l("Total") %]</th>
-                    <th class="ref" colspan="2"></th>
+                    <th class="ref" colspan="3"></th>
                     <th class="cost" id="cost-of-open-positions"></th>
                     <th class="value" id="value-of-open-positions" colspan="2"></th>
                 </tr>

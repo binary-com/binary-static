@@ -54,6 +54,7 @@ var PortfolioWS =  (function() {
             $('<tr class="tr-first ' + new_class + ' ' + data.contract_id + '" id="' + data.contract_id + '">' +
                 '<td class="ref"><span' + showTooltip(data.app_id, oauth_apps[data.app_id]) + ' data-balloon-pos="right">' + data.transaction_id + '</span></td>' +
                 '<td class="payout"><strong>' + format_money(data.currency, data.payout) + '</strong></td>' +
+                '<td class="expires"><strong>' + toJapanTimeIfNeeded(data.expiry_time) + '</strong></td>' +
                 '<td class="details">' + longCode + '</td>' +
                 '<td class="purchase"><strong>' + format_money(data.currency, data.buy_price) + '</strong></td>' +
                 '<td class="indicative"><strong class="indicative_price">' + '--.--' + '</strong></td>' +
