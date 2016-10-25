@@ -86,7 +86,7 @@
     <div id="content-how-to-open-an-account">
       <h1>[% l('{JAPAN ONLY}How to Open an Account') %]</h1>
       <p>
-        [% l('{JAPAN ONLY}You can apply to open an account online. Simply click <a class="pjaxload" href="[_1]">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account.', request.url_for('/', {l => 'JA'})) %]
+        [% l('{JAPAN ONLY}You can apply to open an account online. Simply click <a class="pjaxload" href="[_1]">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account.', request.url_for('/')) %]
       </p>
       <p>
         [% l('{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:') %]
@@ -221,7 +221,7 @@
     <div class="sidebar-right">
       <div class="by_client_type client_logged_out invisible">
         <p>
-          <a class="pjaxload" href="[% request.url_for('/', {l => 'JA'}) %]">[% l('Try it now') %]</a>
+          <a class="pjaxload" href="[% request.url_for('/') %]">[% l('Try it now') %]</a>
           <br>
           [% l('No risk, $10K virtual money account') %]
         </p>
@@ -230,7 +230,7 @@
         <p>
           [% l('Want to learn more?') %]
           <br>
-          <a class="pjaxload" href="[% request.url_for('/tourjp', {l => 'JA'}) %]">[% l('View the Tour') %]</a>
+          <a class="pjaxload" href="[% request.url_for('/tour-jp') %]">[% l('View the Tour') %]</a>
         </p>
       </div>
     </div>

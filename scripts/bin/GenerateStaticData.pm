@@ -63,6 +63,7 @@ sub _texts {
         push @texts, localize("(Bejing/CST -8 hours)");
         push @texts, localize('You must accept the terms and conditions to open an account.');
         push @texts, localize('We are not accepting accounts from residents of this country at the present time.');
+        push @texts, localize('End time must be after start time.');
         # top bar
         push @texts, localize('Upgrade to a Real Account');
         push @texts, localize('Upgrade to a Financial Account');
@@ -335,6 +336,7 @@ sub _texts {
         #strings for home and virtualws page
         push @texts, localize('verification token');
         push @texts, localize('Please submit a valid [_1].');
+        push @texts, localize('email address');
         push @texts, localize('password');
         push @texts, localize('The two passwords that you entered do not match.');
         push @texts, localize('Your token has expired. Please click <a class="pjaxload" href="[_1]">here</a> to restart the verification process.');
@@ -627,6 +629,8 @@ sub _texts {
         push @texts, localize('min: 1,000');
         push @texts, localize('max: 100,000');
         push @texts, localize('Your Application is Being Processed.');
+        push @texts, localize('Processing your request...');
+        push @texts, localize('Please check the above form for pending errors.');
 
         #strings for digit_infows
         push @texts, localize('Select market');

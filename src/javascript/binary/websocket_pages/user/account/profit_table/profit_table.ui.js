@@ -110,7 +110,7 @@ var ProfitTableUI = (function(){
     }
 
     function errorMessage(msg) {
-        var $err = $('#profit-table-ws-container #err-msg');
+        var $err = $('#profit-table-ws-container #error-msg');
         if(msg) {
             $err.removeClass('invisible').text(msg);
         } else {

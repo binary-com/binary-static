@@ -19,7 +19,7 @@ var StatementUI = (function(){
 
         var jpClient = japanese_client();
 
-        header[6] = header[6] + (jpClient ? "" : (TUser.get().currency ? " (" + TUser.get().currency + ")" : ""));
+        header[6] = header[6] + (jpClient || !TUser.get().currency ? '' : ' (' + TUser.get().currency + ')');
 
         var metadata = {
             id: tableID,
@@ -42,7 +42,10 @@ var StatementUI = (function(){
 
     function createStatementRow(transaction){
         var statement_data = Statement.getStatementData(transaction, TUser.get().currency, japanese_client());
-        allData.push($.extend({}, statement_data, {action: page.text.localize(statement_data.action)}));
+        allData.push($.extend({}, statement_data, {
+            action: page.text.localize(statement_data.action),
+            desc  : page.text.localize(statement_data.desc),
+        }));
         var creditDebitType = (parseFloat(statement_data.amount) >= 0) ? "profit" : "loss";
 
         var $statementRow = Table.createFlexTableRow([
@@ -75,7 +78,7 @@ var StatementUI = (function(){
     }
 
     function errorMessage(msg) {
-        var $err = $('#statement-ws-container #err-msg');
+        var $err = $('#statement-ws-container #error-msg');
         if(msg) {
             $err.removeClass('invisible').text(msg);
         } else {
@@ -85,7 +88,7 @@ var StatementUI = (function(){
 
     function exportCSV() {
         downloadCSV(
-            Statement.generateCSV(allData),
+            Statement.generateCSV(allData, japanese_client()),
             'Statement_' + page.client.loginid + '_latest' + $('#rows_count').text() + '_' +
                 toJapanTimeIfNeeded(window.time).replace(/\s/g, '_').replace(/:/g, '') + '.csv'
         );
