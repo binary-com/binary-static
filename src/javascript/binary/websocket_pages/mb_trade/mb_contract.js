@@ -5,17 +5,25 @@
 var MBContract = (function() {
     'use strict';
 
+    var contracts_for_response;
+
     var getContracts = function(underlying) {
         BinarySocket.send({ contracts_for: underlying, currency: (TUser.get().currency || 'JPY'), region: 'japan' });
     };
 
     var durationText = function(dur) {
-        return dur.replace('m', page.text.localize('minutes'))
-                  .replace('h', page.text.localize('hours'))
-                  .replace('d', page.text.localize('days'))
-                  .replace('W', page.text.localize('{JAPAN ONLY}weeks')).replace('{JAPAN ONLY}', '')
-                  .replace('M', page.text.localize('months'))
-                  .replace('Y', page.text.localize('years'));
+        var durationMap = {
+            'm': 'minutes',
+            'h': 'hours',
+            'd': 'days',
+            'W': 'weeks',
+            'M': 'months',
+            'Y': 'years',
+        };
+        Object.keys(durationMap).forEach(function(key) {
+            dur = dur.replace(key, page.text.localize('{JAPAN ONLY}' + durationMap[key]).replace('{JAPAN ONLY}', ''));
+        });
+        return dur;
     };
 
     var PeriodText = function(trading_period) {
@@ -37,12 +45,12 @@ var MBContract = (function() {
         return;
     };
 
-    var populateDurations = function(contracts) {
-        if (!contracts) return;
+    var populatePeriods = function() {
+        if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return;
         var trading_period, start_end, trading_period_text,
             trading_period_array = [],
-            available_contracts = contracts.contracts_for.available,
-            selected_option = $('#category-select').val();
+            available_contracts = contracts_for_response.contracts_for.available,
+            selected_option = MBDefaults.get('category');
         if (!selected_option) return;
         loop1:
         for (var i = 0; i < available_contracts.length; i++) {
@@ -71,19 +79,19 @@ var MBContract = (function() {
                 return duration2 - duration1;
             }
         });
-        $('#durations').empty();
+        $('#period').empty();
         var default_value = MBDefaults.get('period');
         for (var j = 0; j < trading_period_array.length; j++) {
-            appendTextValueChild(document.getElementById('durations'), trading_period_array[j][0], trading_period_array[j][1], trading_period_array[j][1] == default_value);
+            appendTextValueChild(document.getElementById('period'), trading_period_array[j][0], trading_period_array[j][1], trading_period_array[j][1] == default_value);
         }
-        MBDefaults.set('period', $('#durations').val());
+        MBDefaults.set('period', $('#period').val());
         MBContract.displayDescriptions();
     };
 
-    var populateOptions = function(contracts) {
+    var populateOptions = function() {
         var category,
             contracts_array = [],
-            available_contracts = contracts.contracts_for.available;
+            available_contracts = contracts_for_response.contracts_for.available;
         var categoryNames = {
             callput: page.text.localize('{JAPAN ONLY}HIGH/LOW'),
             touchnotouch: page.text.localize('{JAPAN ONLY}TOUCH/NO-TOUCH'),
@@ -97,7 +105,7 @@ var MBContract = (function() {
             staysinout: 4
         };
         for (var i = 0; i < available_contracts.length; i++) {
-            category = contracts.contracts_for.available[i].contract_category;
+            category = contracts_for_response.contracts_for.available[i].contract_category;
             if (contracts_array.indexOf(category) < 0) {
                 contracts_array.push(category);
             }
@@ -105,20 +113,20 @@ var MBContract = (function() {
         contracts_array.sort(function(a, b){
             return categoryOrder[a] - categoryOrder[b];
         });
-        $('#category-select').empty();
+        $('#category').empty();
         var default_value = MBDefaults.get('category');
         for (var j = 0; j < contracts_array.length; j++) {
-            appendTextValueChild(document.getElementById('category-select'), categoryNames[contracts_array[j]].replace('{JAPAN ONLY}', ''), contracts_array[j], contracts_array[j] == default_value);
+            appendTextValueChild(document.getElementById('category'), categoryNames[contracts_array[j]].replace('{JAPAN ONLY}', ''), contracts_array[j], contracts_array[j] == default_value);
         }
-        MBDefaults.set('category', $('#category-select').val());
-        populateDurations(window.contracts_for);
+        MBDefaults.set('category', $('#category').val());
+        populatePeriods();
     };
 
     var getCurrentContracts = function() {
         var contracts = [],
             category  = MBDefaults.get('category'),
             periods   = MBDefaults.get('period').split('_');
-        window.contracts_for.contracts_for.available.forEach(function(c) {
+        contracts_for_response.contracts_for.available.forEach(function(c) {
             if (c.contract_category === category &&
                 c.trading_period.date_start.epoch  == periods[0] &&
                 c.trading_period.date_expiry.epoch == periods[1]) {
@@ -194,16 +202,18 @@ var MBContract = (function() {
                 template = getTemplate(contract_type),
                 $wrapper = $($desc_wrappers[template.order]);
             $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(page.text.localize(template.name));
-            $wrapper.find('.descr').text(page.text.localize(template.description, [currency, payout, display_name, date_expiry]));
+            $wrapper.find('.descr').text(page.text.localize('{JAPAN ONLY}' + template.description, [currency, payout, display_name, date_expiry]).replace('{JAPAN ONLY}', ''));
         });
     };
 
     return {
-        getContracts       : getContracts,
-        populateDurations  : populateDurations,
-        populateOptions    : populateOptions,
-        getCurrentContracts: getCurrentContracts,
-        displayDescriptions: displayDescriptions,
+        getContracts        : getContracts,
+        populatePeriods     : populatePeriods,
+        populateOptions     : populateOptions,
+        getCurrentContracts : getCurrentContracts,
+        displayDescriptions : displayDescriptions,
+        getContractsResponse: function() { return contracts_for_response; },
+        setContractsResponse: function(contracts_for) { contracts_for_response = contracts_for; },
     };
 })();
 

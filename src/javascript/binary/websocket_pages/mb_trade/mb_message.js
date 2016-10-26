@@ -16,7 +16,7 @@ var MBMessage = (function () {
             if (type === 'active_symbols') {
                 MBProcess.processActiveSymbols(response);
             } else if (type === 'contracts_for') {
-                window.contracts_for = response;
+                MBContract.setContractsResponse(response);
                 MBProcess.processContract(response);
             } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && (!response.echo_req.hasOwnProperty('passthrough') || !response.echo_req.passthrough.hasOwnProperty('handler'))) {
                 page.client.set_storage_value('currencies', response.payout_currencies);

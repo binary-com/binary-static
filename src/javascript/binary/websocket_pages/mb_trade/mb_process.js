@@ -61,7 +61,7 @@ var MBProcess = (function() {
      */
     function processTick(tick) {
         'use strict';
-        var symbol = $('#underlying').val();
+        var symbol = MBDefaults.get('underlying');
         if(tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)){
             MBTick.details(tick);
             MBTick.display();
@@ -99,14 +99,14 @@ var MBProcess = (function() {
         processForgetProposals();
         //showPriceOverlay();
         var available_contracts = MBContract.getCurrentContracts(),
-            durations = $('#durations').val().split('_');
+            durations = MBDefaults.get('period').split('_');
         var req = {
             proposal: 1,
-            amount: (parseInt($('.payout-select').val()) || 1) * 1000,
+            amount: (parseInt(MBDefaults.get('payout')) || 1) * 1000,
             basis: 'payout',
             currency: (TUser.get().currency || 'JPY'),
             subscribe: 1,
-            symbol: $('#underlying').val(),
+            symbol: MBDefaults.get('underlying'),
             date_expiry: durations[1],
             trading_period_start: durations[0],
         };

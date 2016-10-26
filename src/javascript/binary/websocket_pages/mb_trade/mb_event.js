@@ -37,39 +37,25 @@ var MBTradingEvents = (function () {
                     processForgetTicks();
                     // get ticks for current underlying
                     MBTick.request(underlying);
-                    MBProcess.processPriceRequest(window.contracts_for);
+                    MBProcess.processPriceRequest();
                 }
             });
         }
 
-        var categoryElement = document.getElementById('category-select');
+        var categoryElement = document.getElementById('category');
         if (categoryElement) {
             categoryElement.addEventListener('change', function(e) {
                 MBDefaults.set('category', e.target.value);
-                MBContract.populateDurations(window.contracts_for);
-                MBProcess.processPriceRequest(window.contracts_for);
+                MBContract.populatePeriods();
+                MBProcess.processPriceRequest();
             });
         }
 
-        var durationsElement = document.getElementById('durations');
-        if (durationsElement) {
-            durationsElement.addEventListener('change', function() {
-                MBProcess.processPriceRequest(window.contracts_for);
-            });
-        }
-
-        var payoutElement = document.getElementById('payout');
-        if (payoutElement) {
-            payoutElement.addEventListener('keypress', onlyNumericOnKeypress);
-            payoutElement.addEventListener('input', function() {
-                MBProcess.processPriceRequest(window.contracts_for);
-            });
-        }
-
-        var periodElement = document.getElementById('durations');
+        var periodElement = document.getElementById('period');
         if (periodElement) {
             periodElement.addEventListener('change', function(e) {
                 MBDefaults.set('period', e.target.value);
+                MBProcess.processPriceRequest();
             });
         }
 
@@ -79,6 +65,7 @@ var MBTradingEvents = (function () {
             payoutElement.addEventListener('input', debounce(function(e) {
                 // if (!e.target.value) e.target.value = MBDefaults.get('payout');
                 MBDefaults.set('payout', e.target.value);
+                MBProcess.processPriceRequest();
             }));
             if (!payoutElement.value) {
                 var payout = MBDefaults.get('payout') || 1;
@@ -87,19 +74,6 @@ var MBTradingEvents = (function () {
             }
         }
     };
-
-    function onlyNumericOnKeypress(ev) {
-        var key = ev.keyCode;
-        var char = String.fromCharCode(ev.which);
-        if(
-            (char === '.' && ev.target.value.indexOf(char) >= 0) ||
-            (!/[0-9\.]/.test(char) && [8, 37, 39, 46].indexOf(key) < 0) || // delete, backspace, arrow keys
-            /['%]/.test(char)) { // similarity to arrows key code in some browsers
-
-            ev.returnValue = false;
-            ev.preventDefault();
-        }
-    }
 
     return {
         init: initiate,
