@@ -29,11 +29,15 @@ var MBContract = (function() {
     };
 
     var populateDurations = function(contracts) {
+        if (!contracts) return;
         var trading_period, start_end, duration, trading_period_text,
             trading_period_array = [],
-            available_contracts = contracts.contracts_for.available;
+            available_contracts = contracts.contracts_for.available,
+            selected_option = $('#category-select').val();
+        if (!selected_option) return;
         loop1:
         for (var i = 0; i < available_contracts.length; i++) {
+            if (available_contracts[i].contract_category !== selected_option) continue;
             trading_period = available_contracts[i].trading_period;
             start_end = trading_period.date_start.epoch + '_' + trading_period.date_expiry.epoch;
             loop2:
@@ -62,6 +66,7 @@ var MBContract = (function() {
                 return duration2 - duration1;
             }
         });
+        $('#durations').empty();
         for (var j = 0; j < trading_period_array.length; j++) {
             appendTextValueChild(document.getElementById('durations'), trading_period_array[j][0], trading_period_array[j][1]);
         }
@@ -92,9 +97,11 @@ var MBContract = (function() {
         contracts_array.sort(function(a, b){
             return categoryOrder[a] - categoryOrder[b];
         });
+        $('#category-select').empty();
         for (var j = 0; j < contracts_array.length; j++) {
             appendTextValueChild(document.getElementById('category-select'), categoryNames[contracts_array[j]].replace('{JAPAN ONLY}', ''), contracts_array[j]);
         }
+        populateDurations(window.contracts_for);
     };
 
     return {
