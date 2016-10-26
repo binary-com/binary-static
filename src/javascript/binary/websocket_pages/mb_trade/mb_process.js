@@ -77,7 +77,7 @@ var MBProcess = (function() {
 
         window.chartAllowed = true;
         if (contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly') {
-          window.chartAllowed = false;
+            window.chartAllowed = false;
         }
 
         MBContract.populateOptions(contracts);

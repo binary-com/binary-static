@@ -43,7 +43,8 @@ var MBTradingEvents = (function () {
 
         var categoryElement = document.getElementById('category-select');
         if (categoryElement) {
-            categoryElement.addEventListener('change', function() {
+            categoryElement.addEventListener('change', function(e) {
+                MBDefaults.set('category', e.target.value);
                 MBContract.populateDurations(window.contracts_for);
             });
         }
