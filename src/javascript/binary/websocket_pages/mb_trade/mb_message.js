@@ -7,14 +7,14 @@ var MBMessage = (function () {
 
     var process = function (msg) {
         var response = JSON.parse(msg.data);
-        if(!TradePage.is_trading_page()){
+        if(!MBTradePage.is_trading_page()){
             forgetTradingStreams();
             return;
         }
         if (response) {
             var type = response.msg_type;
             if (type === 'active_symbols') {
-                processActiveSymbols(response);
+                MBProcess.activeSymbols(response);
             } else if (type === 'contracts_for') {
                 processContract(response);
                 window.contracts_for = response;
