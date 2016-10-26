@@ -53,10 +53,12 @@
                 <div class="gr-grow">
                     <div class="gr-row spot">
                         <div class="gr-adapt spot-value">
-                            <span class="spot-dyn"></span>
+                            <span>[% l('Spot:') %] </span>
+                            <span id="spot"></span>
+                            <span id="spot-dyn"></span>
                         </div>
                         <div class="gr-adapt">
-                            <svg viewBox="0 0 100 30" preserveAspectRatio="none" style="width: 100px; height: 30px;"></svg>
+                            <span id="trading_worm_chart"></span>
                         </div>
                     </div>
                 </div>

@@ -14,8 +14,8 @@ var MBTradePage = (function(){
     });
     //Price.clearFormId();
     if (events_initialized === 0) {
-        events_initialized = 1;
-    //    TradingEvents.init();
+      events_initialized = 1;
+      MBTradingEvents.init();
     }
     Content.populate();
 

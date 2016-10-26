@@ -21,20 +21,16 @@ var MBMessage = (function () {
             } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && (!response.echo_req.hasOwnProperty('passthrough') || !response.echo_req.passthrough.hasOwnProperty('handler'))) {
                 page.client.set_storage_value('currencies', response.payout_currencies);
                 displayCurrencies();
-                Symbols.getSymbols(1);
+                MBSymbols.getSymbols(1);
             } else if (type === 'proposal') {
                 processProposal(response);
             } else if (type === 'buy') {
                 Purchase.display(response);
                 GTM.push_purchase_data(response);
             } else if (type === 'tick') {
-                processTick(response);
+                MBProcess.processTick(response);
             } else if (type === 'history') {
-                var digit_info = TradingAnalysis.digit_info();
-                if(response.req_id === 1 || response.req_id === 2){
-                    digit_info.show_chart(response.echo_req.ticks_history, response.history.prices);
-                } else
-                    Tick.processHistory(response);
+                MBTick.processHistory(response);
             } else if (type === 'trading_times'){
                 processTradingTimes(response);
             } else if (type === 'error') {

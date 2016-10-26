@@ -7,24 +7,72 @@ var MBProcess = (function() {
         'use strict';
 
         // populate the Symbols object
-        Symbols.details(data);
+        MBSymbols.details(data);
 
-        var market = getDefaultMarket();
+        var market       = 'major_pairs',
+            symbols_list = MBSymbols.underlyings()[market],
+            symbol       = MBDefaults.get('underlying'),
+            update_page  = MBSymbols.need_page_update();
 
-        // store the market
-        Defaults.set('market', market);
+        if (update_page && (!symbol || !symbols_list[symbol])) {
+            symbol = undefined;
+        }
+        displayUnderlyings('underlying', symbols_list, symbol);
+        if (update_page) {
+            MBProcess.processMarketUnderlying();
+        }
+    }
 
-        displayMarkets('contract_markets', Symbols.markets(), market);
-        processMarket();
-        // setTimeout(function(){
-        // if(document.getElementById('underlying')){
-        //     Symbols.getSymbols(0);
-        // }
-        // }, 60*1000);
+    /*
+     * Function to call when underlying has changed
+     */
+    function processMarketUnderlying() {
+        'use strict';
+
+        var underlyingElement = document.getElementById('underlying');
+        if (!underlyingElement) {
+            return;
+        }
+
+        if(underlyingElement.selectedIndex < 0) {
+            underlyingElement.selectedIndex = 0;
+        }
+        var underlying = underlyingElement.value;
+        MBDefaults.set('underlying', underlying);
+
+        showFormOverlay();
+
+        // forget the old tick id i.e. close the old tick stream
+        processForgetTicks();
+        // get ticks for current underlying
+        MBTick.request(underlying);
+
+        MBTick.clean();
+
+        MBTick.updateWarmChart();
+
+        BinarySocket.clearTimeouts();
+
+        // Contract.getContracts(underlying);
+    }
+
+    /*
+     * Function to process ticks stream
+     */
+    function processTick(tick) {
+        'use strict';
+        var symbol = $('#underlying').val();
+        if(tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)){
+            MBTick.details(tick);
+            MBTick.display();
+            MBTick.updateWarmChart();
+        }
     }
 
     return {
         activeSymbols: activeSymbols,
+        processMarketUnderlying: processMarketUnderlying,
+        processTick: processTick,
     };
 })();
 
