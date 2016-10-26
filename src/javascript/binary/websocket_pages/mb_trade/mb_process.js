@@ -3,7 +3,7 @@ var MBProcess = (function() {
      * This function process the active symbols to get markets
      * and underlying list
      */
-    function activeSymbols(data) {
+    function processActiveSymbols(data) {
         'use strict';
 
         // populate the Symbols object
@@ -53,7 +53,7 @@ var MBProcess = (function() {
 
         BinarySocket.clearTimeouts();
 
-        // Contract.getContracts(underlying);
+        MBContract.getContracts(underlying);
     }
 
     /*
@@ -69,10 +69,26 @@ var MBProcess = (function() {
         }
     }
 
+    /*
+     * Function to display contract form for current underlying
+     */
+    function processContract(contracts) {
+        'use strict';
+
+        window.chartAllowed = true;
+        if (contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly') {
+          window.chartAllowed = false;
+        }
+
+        MBContract.populateDurations(contracts);
+        MBContract.populateOptions(contracts);
+    }
+
     return {
-        activeSymbols: activeSymbols,
+        processActiveSymbols: processActiveSymbols,
         processMarketUnderlying: processMarketUnderlying,
         processTick: processTick,
+        processContract: processContract,
     };
 })();
 

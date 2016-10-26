@@ -27,7 +27,7 @@
                     <div class="select-box">
                         <div class="padding-10">
                             <div class="select-heading">[% l('Trading Period') %]</div>
-                            <select class="select"></select>
+                            <select class="select" id="durations"></select>
                         </div>
                     </div>
                 </div>
