@@ -108,7 +108,7 @@ var MBContract = (function() {
         $('#category-select').empty();
         var default_value = MBDefaults.get('category');
         for (var j = 0; j < contracts_array.length; j++) {
-            appendTextValueChild(document.getElementById('category-select'), categoryNames[contracts_array[j]].replace('{JAPAN ONLY}', ''), contracts_array[j], contracts_array[j] = default_value);
+            appendTextValueChild(document.getElementById('category-select'), categoryNames[contracts_array[j]].replace('{JAPAN ONLY}', ''), contracts_array[j], contracts_array[j] == default_value);
         }
         MBDefaults.set('category', $('#category-select').val());
         populateDurations(window.contracts_for);

@@ -48,6 +48,27 @@ var MBTradingEvents = (function () {
                 MBContract.populateDurations(window.contracts_for);
             });
         }
+
+        var periodElement = document.getElementById('durations');
+        if (periodElement) {
+            periodElement.addEventListener('change', function(e) {
+                MBDefaults.set('period', e.target.value);
+            });
+        }
+
+        var payoutElement = document.getElementById('payout');
+        if (payoutElement) {
+            payoutElement.addEventListener('keypress', onlyNumericOnKeypress);
+            payoutElement.addEventListener('input', debounce(function(e) {
+                // if (!e.target.value) e.target.value = MBDefaults.get('payout');
+                MBDefaults.set('payout', e.target.value);
+            }));
+            if (!payoutElement.value) {
+                var payout = MBDefaults.get('payout') || 1;
+                payoutElement.value = payout;
+                MBDefaults.set('payout', payout);
+            }
+        }
     };
 
     return {
