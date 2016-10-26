@@ -81,6 +81,55 @@ var MBProcess = (function() {
         }
 
         MBContract.populateOptions(contracts);
+        processPriceRequest(contracts);
+    }
+
+    function processForgetProposals() {
+        'use strict';
+        //showPriceOverlay();
+        BinarySocket.send({
+            forget_all: "proposal"
+        });
+        //Price.clearMapping();
+    }
+
+    function processPriceRequest() {
+        'use strict';
+        //Price.incrFormId();
+        processForgetProposals();
+        //showPriceOverlay();
+        var available_contracts = MBContract.getCurrentContracts(),
+            durations = $('#durations').val().split('_');
+        var req = {
+            proposal: 1,
+            amount: (parseInt($('.payout-select').val()) || 1) * 1000,
+            basis: 'payout',
+            currency: (TUser.get().currency || 'JPY'),
+            subscribe: 1,
+            symbol: $('#underlying').val(),
+            date_expiry: durations[1],
+            trading_period_start: durations[0],
+        };
+        var barriers_array, i, j, barrier_count;
+        for (i = 0; i < available_contracts.length; i++) {
+            req.contract_type = available_contracts[i].contract_type;
+            barrier_count = available_contracts[i].barriers == 2 ? 2 : 1;
+            barriers_array = available_contracts[i].available_barriers;
+            for (j = 0; j < barriers_array.length; j++) {
+                if (available_contracts[i].barriers == 2) {
+                    req.barrier = barriers_array[j][0];
+                    req.barrier2 = barriers_array[j][1];
+                    if (available_contracts[i].expired_barriers.indexOf(req.barrier2) > -1) {
+                        continue;
+                    }
+                } else {
+                    req.barrier = barriers_array[j];
+                }
+                if (available_contracts[i].expired_barriers.indexOf(req.barrier) < 0) {
+                    BinarySocket.send(req);
+                }
+            }
+        }
     }
 
     return {
@@ -88,6 +137,7 @@ var MBProcess = (function() {
         processMarketUnderlying: processMarketUnderlying,
         processTick: processTick,
         processContract: processContract,
+        processPriceRequest: processPriceRequest
     };
 })();
 
