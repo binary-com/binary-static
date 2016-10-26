@@ -80,7 +80,6 @@ var MBProcess = (function() {
           window.chartAllowed = false;
         }
 
-        MBContract.populateDurations(contracts);
         MBContract.populateOptions(contracts);
     }
 

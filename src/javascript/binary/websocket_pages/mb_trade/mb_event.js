@@ -31,13 +31,20 @@ var MBTradingEvents = (function () {
 
                     updateWarmChart();
 
-                    // Contract.getContracts(underlying);
+                    MBContract.getContracts(underlying);
 
                     // forget the old tick id i.e. close the old tick stream
                     processForgetTicks();
                     // get ticks for current underlying
                     MBTick.request(underlying);
                 }
+            });
+        }
+
+        var categoryElement = document.getElementById('category-select');
+        if (categoryElement) {
+            categoryElement.addEventListener('change', function() {
+                MBContract.populateDurations(window.contracts_for);
             });
         }
     };
