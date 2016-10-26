@@ -81,7 +81,7 @@ var MBProcess = (function() {
         }
 
         MBContract.populateOptions(contracts);
-        processPriceRequest(contracts);
+        processPriceRequest();
     }
 
     function processForgetProposals() {
@@ -96,18 +96,20 @@ var MBProcess = (function() {
     function processPriceRequest() {
         'use strict';
         //Price.incrFormId();
+        MBPrice.increaseReqId();
         processForgetProposals();
         //showPriceOverlay();
         var available_contracts = MBContract.getCurrentContracts(),
             durations = MBDefaults.get('period').split('_');
         var req = {
-            proposal: 1,
-            amount: (parseInt(MBDefaults.get('payout')) || 1) * 1000,
-            basis: 'payout',
-            currency: (TUser.get().currency || 'JPY'),
-            subscribe: 1,
-            symbol: MBDefaults.get('underlying'),
+            proposal   : 1,
+            subscribe  : 1,
+            basis      : 'payout',
+            amount     : (parseInt(MBDefaults.get('payout')) || 1) * 1000,
+            currency   : (TUser.get().currency || 'JPY'),
+            symbol     : MBDefaults.get('underlying'),
             date_expiry: durations[1],
+            req_id     : MBPrice.getReqId(),
             trading_period_start: durations[0],
         };
         var barriers_array, i, j, barrier_count;
@@ -132,12 +134,23 @@ var MBProcess = (function() {
         }
     }
 
+    function processProposal(response) {
+        'use strict';
+        var req_id = MBPrice.getReqId();
+        if(response.echo_req && response.echo_req !== null && response.echo_req.passthrough && response.echo_req.req_id === req_id){
+            // hideOverlayContainer();
+            MBPrice.display(response);
+            // hidePriceOverlay();
+        }
+    }
+
     return {
         processActiveSymbols: processActiveSymbols,
         processMarketUnderlying: processMarketUnderlying,
         processTick: processTick,
         processContract: processContract,
-        processPriceRequest: processPriceRequest
+        processPriceRequest: processPriceRequest,
+        processProposal: processProposal,
     };
 })();
 

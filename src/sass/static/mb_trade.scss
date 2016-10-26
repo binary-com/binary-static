@@ -33,7 +33,7 @@
             &:nth-child(even) {
                 background: $COLOR_LIGHT_GRAY;
             }
-            .buy-prices, .sell-prices, .barriers {
+            .buy-price, .sell-price, .barrier {
                 flex-grow: 2;
                 white-space: nowrap;
                 line-height: 35px;
@@ -42,7 +42,7 @@
                 text-align: center;
             }
         }
-        .heading .sell-prices {
+        .heading .sell-price {
             padding-right: 20px;
         }
     }
