@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-25 20:51+0000\n"
-"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
+"PO-Revision-Date: 2016-10-26 05:59+0000\n"
+"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
 "Language-Team: Russian "
 "<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
@@ -3386,10 +3386,8 @@ msgstr "Информация о предыдущих результатах лю
 msgid "Insufficient balance"
 msgstr "Недостаточно баланса"
 
-#, fuzzy
-#| msgid "Insufficient balance"
 msgid "Insufficient balance."
-msgstr "Недостаточно баланса"
+msgstr "Недостаточно средств на счете."
 
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
 msgstr "Хотите узнать, что дальше? Если у Вас хороший послужной список на рынке и Вы можете предложить своим Клиентам конкретный метод расчета электронными деньгами или местный способ оплаты, ещё не представленный на %1, будем рады <a href='mailto:%2'>познакомиться!</a>"
@@ -4893,9 +4891,8 @@ msgstr "Платформы"
 msgid "Please %1 to view this page"
 msgstr "Пожалуйста, %1, чтобы просмотреть данную страницу"
 
-#, fuzzy
 msgid "Please check the above form for pending errors."
-msgstr ""
+msgstr "Пожалуйста, исправьте указанные ошибки в форме выше."
 
 msgid "Please check your email for the value of this token"
 msgstr "Пожалуйста, проверьте свой email; Вам должен прийти ключ"
