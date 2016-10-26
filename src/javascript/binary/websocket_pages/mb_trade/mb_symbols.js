@@ -14,7 +14,7 @@
  *
  */
 
-var Symbols = (function () {
+var MBSymbols = (function () {
     'use strict';
 
     var tradeMarkets = {}, tradeMarketsList = {}, tradeUnderlyings = {}, need_page_update = 1, names = {};
@@ -48,5 +48,5 @@ var Symbols = (function () {
 })();
 
 module.exports = {
-    Symbols: Symbols,
+    MBSymbols: MBSymbols,
 };

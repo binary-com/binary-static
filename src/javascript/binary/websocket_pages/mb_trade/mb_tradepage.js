@@ -4,31 +4,33 @@ var MBTradePage = (function(){
 
   var onLoad = function(){
     trading_page = 1;
-    if(sessionStorage.getItem('currencies')){
+    /*if(sessionStorage.getItem('currencies')){
       displayCurrencies();
-    }
+    }*/
     BinarySocket.init({
       onmessage: function(msg){
         MBMessage.process(msg);
       }
     });
-    Price.clearFormId();
+    //Price.clearFormId();
     if (events_initialized === 0) {
         events_initialized = 1;
-        TradingEvents.init();
+    //    TradingEvents.init();
     }
     Content.populate();
 
-    if (sessionStorage.getItem('currencies')){
+    /*if (sessionStorage.getItem('currencies')){
       displayCurrencies();
       Symbols.getSymbols(1);
     } else {
       BinarySocket.send({ payout_currencies: 1 });
-    }
+    }*/
 
-    if (document.getElementById('websocket_form')) {
+    /*if (document.getElementById('websocket_form')) {
         addEventListenerForm();
-    }
+    }*/
+
+    MBSymbols.getSymbols(1);
 
     TradingAnalysis.bindAnalysisTabEvent();
     $('#tab_portfolio a').text(page.text.localize('Portfolio'));
