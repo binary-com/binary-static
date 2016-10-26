@@ -14,9 +14,9 @@ var MBMessage = (function () {
         if (response) {
             var type = response.msg_type;
             if (type === 'active_symbols') {
-                MBProcess.activeSymbols(response);
+                MBProcess.processActiveSymbols(response);
             } else if (type === 'contracts_for') {
-                processContract(response);
+                MBProcess.processContract(response);
                 window.contracts_for = response;
             } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && (!response.echo_req.hasOwnProperty('passthrough') || !response.echo_req.passthrough.hasOwnProperty('handler'))) {
                 page.client.set_storage_value('currencies', response.payout_currencies);
