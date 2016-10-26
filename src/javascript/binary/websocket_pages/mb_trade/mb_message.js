@@ -7,7 +7,7 @@ var MBMessage = (function () {
 
     var process = function (msg) {
         var response = JSON.parse(msg.data);
-        if(!TradePage.is_trading_page()){
+        if(!MBTradePage.is_trading_page()){
             forgetTradingStreams();
             return;
         }

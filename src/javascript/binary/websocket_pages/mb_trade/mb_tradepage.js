@@ -4,7 +4,7 @@ var MBTradePage = (function(){
 
   var onLoad = function(){
     trading_page = 1;
-    if(sessionStorage.getItem('currencies')){
+    if (sessionStorage.getItem('currencies')) {
       displayCurrencies();
     }
     BinarySocket.init({
@@ -19,9 +19,9 @@ var MBTradePage = (function(){
     }
     Content.populate();
 
-    if (sessionStorage.getItem('currencies')){
+    if (sessionStorage.getItem('currencies')) {
       displayCurrencies();
-      Symbols.getSymbols(1);
+      MBSymbols.getSymbols(1);
     } else {
       BinarySocket.send({ payout_currencies: 1 });
     }
@@ -42,7 +42,7 @@ var MBTradePage = (function(){
     window.location.reload();
   };
 
-  var onUnload = function(){
+  var onUnload = function() {
     chartFrameCleanup();
     window.chartAllowed = false;
     trading_page = 0;
@@ -56,7 +56,7 @@ var MBTradePage = (function(){
     onLoad: onLoad,
     reload: reload,
     onUnload : onUnload,
-    is_trading_page: function(){return trading_page;}
+    is_trading_page: function() { return trading_page; }
   };
 })();
 

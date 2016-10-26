@@ -37,7 +37,8 @@
                             <div class="select-heading">[% l('Payout Amount') %]</div>
                             <div class="payout-input">
                                 <div class="float-left">
-                                    <input type="text" class="payout-select select" value="1" id="payout">
+                                    <span id="currency">[% l('¥') %]</span>
+                                    <input type="text" class="payout-select select" id="payout">
                                     <label class="payout-mult" for="payout">[% l(',000') %]</label>
                                 </div>
                                 <div class="float-left hint">[% l('min: 1,000') %]<br>[% l('max: 100,000') %]</div>
@@ -52,7 +53,7 @@
                 <div class="gr-grow">
                     <div class="gr-row spot">
                         <div class="gr-adapt spot-value">
-                            <span class="spot-dyn down"></span>
+                            <span class="spot-dyn"></span>
                         </div>
                         <div class="gr-adapt">
                             <svg viewBox="0 0 100 30" preserveAspectRatio="none" style="width: 100px; height: 30px;"></svg>
@@ -87,7 +88,7 @@
         <div class="prices-wrapper gr-6 gr-12-m gr-12-p gr-no-gutter-left">
             <div class="descr-wrapper">
                 <div class="background-gray row flex-box cols">
-                    <h1 class="PUT details-heading"></h1>
+                    <h1 class="details-heading"></h1>
                     <div class="descr"></div>
                 </div>
             </div>
