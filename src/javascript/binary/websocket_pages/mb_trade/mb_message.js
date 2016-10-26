@@ -22,8 +22,8 @@ var MBMessage = (function () {
                 page.client.set_storage_value('currencies', response.payout_currencies);
                 displayCurrencies();
                 MBSymbols.getSymbols(1);
-            } else if (type === 'proposal') {
-                processProposal(response);
+            /*} else if (type === 'proposal') {
+                processProposal(response);*/
             } else if (type === 'buy') {
                 Purchase.display(response);
                 GTM.push_purchase_data(response);
