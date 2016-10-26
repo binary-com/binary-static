@@ -37,6 +37,7 @@ var MBTradingEvents = (function () {
                     processForgetTicks();
                     // get ticks for current underlying
                     MBTick.request(underlying);
+                    MBProcess.processPriceRequest(window.contracts_for);
                 }
             });
         }
@@ -46,9 +47,38 @@ var MBTradingEvents = (function () {
             categoryElement.addEventListener('change', function(e) {
                 MBDefaults.set('category', e.target.value);
                 MBContract.populateDurations(window.contracts_for);
+                MBProcess.processPriceRequest(window.contracts_for);
+            });
+        }
+
+        var durationsElement = document.getElementById('durations');
+        if (durationsElement) {
+            durationsElement.addEventListener('change', function() {
+                MBProcess.processPriceRequest(window.contracts_for);
+            });
+        }
+
+        var payoutElement = document.getElementById('payout');
+        if (payoutElement) {
+            payoutElement.addEventListener('keypress', onlyNumericOnKeypress);
+            payoutElement.addEventListener('input', function() {
+                MBProcess.processPriceRequest(window.contracts_for);
             });
         }
     };
+
+    function onlyNumericOnKeypress(ev) {
+        var key = ev.keyCode;
+        var char = String.fromCharCode(ev.which);
+        if(
+            (char === '.' && ev.target.value.indexOf(char) >= 0) ||
+            (!/[0-9\.]/.test(char) && [8, 37, 39, 46].indexOf(key) < 0) || // delete, backspace, arrow keys
+            /['%]/.test(char)) { // similarity to arrows key code in some browsers
+
+            ev.returnValue = false;
+            ev.preventDefault();
+        }
+    }
 
     return {
         init: initiate,
