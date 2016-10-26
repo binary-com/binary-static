@@ -14,7 +14,7 @@ var MBMessage = (function () {
         if (response) {
             var type = response.msg_type;
             if (type === 'active_symbols') {
-                processActiveSymbols(response);
+                MBProcess.activeSymbols(response);
             } else if (type === 'contracts_for') {
                 processContract(response);
                 window.contracts_for = response;
