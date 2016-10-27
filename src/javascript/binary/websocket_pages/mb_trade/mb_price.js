@@ -102,6 +102,7 @@ var MBPrice = (function() {
         return {
             contract_type : contract_type,
             barrier       : barrier,
+            id            : !proposal.error ? proposal.proposal.id : undefined,
             is_active     : !proposal.error && proposal.proposal.ask_price,
             message       :  proposal.error && proposal.error.code !== 'RateLimit' ? proposal.error.message : '',
             ask_price     : getAskPrice(proposal),
@@ -124,6 +125,7 @@ var MBPrice = (function() {
                 '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
                 '<div class="gr-4 buy-price">' +
                     '<button class="price-button' + (!values.is_active ? ' inactive' : '') + '"' +
+                        (values.id ? ' onclick="MBProcess.processBuy(\'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
                         (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' + values.ask_price +
                         '<span class="dynamics">' + (values.ask_price_movement || '') + '</span>' +
                     '</button>' +
@@ -145,12 +147,34 @@ var MBPrice = (function() {
         $(price_selector).html('');
     };
 
+    var sendBuyRequest = function(barrier, contract_type) {
+        var proposal = prices[barrier][contract_type];
+        if (!proposal || proposal.error) return;
+
+        BinarySocket.send({
+            buy   : 1,
+            price : proposal.proposal.ask_price,
+            parameters: {
+                amount        : proposal.echo_req.amount,
+                barrier       : proposal.echo_req.barrier,
+                basis         : 'payout',
+                contract_type : proposal.echo_req.contract_type,
+                currency      : japanese_client() ? 'JPY' : TUser.get().currency,
+                symbol        : proposal.echo_req.symbol,
+                date_expiry   : proposal.echo_req.date_expiry,
+                trading_period_start  : proposal.echo_req.trading_period_start,
+                app_markup_percentage : '0',
+            }
+        });
+    };
+
     return {
-        display      : display,
-        addPriceObj  : addPriceObj,
-        cleanup      : cleanup,
-        getReqId     : function() { return req_id; },
-        increaseReqId: function() { req_id++; cleanup(); },
+        display        : display,
+        addPriceObj    : addPriceObj,
+        cleanup        : cleanup,
+        sendBuyRequest : sendBuyRequest,
+        getReqId       : function() { return req_id; },
+        increaseReqId  : function() { req_id++; cleanup(); },
     };
 })();
 

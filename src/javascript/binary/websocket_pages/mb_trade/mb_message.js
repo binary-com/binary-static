@@ -25,7 +25,7 @@ var MBMessage = (function () {
             } else if (type === 'proposal') {
                 MBProcess.processProposal(response);
             } else if (type === 'buy') {
-                Purchase.display(response);
+                MBPurchase.display(response);
                 GTM.push_purchase_data(response);
             } else if (type === 'tick') {
                 MBProcess.processTick(response);

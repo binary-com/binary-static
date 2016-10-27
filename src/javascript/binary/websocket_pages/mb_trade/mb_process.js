@@ -197,6 +197,14 @@ var MBProcess = (function() {
         $element.prepend('<p class="notice-msg center-text ' + (addClass ? addClass : '') + '">' + text + '</p>');
     }
 
+    function processBuy(barrier, contract_type) {
+        if (!barrier || !contract_type) return;
+        if (!page.client.is_logged_in) {
+            return showErrorMessage($('#content .container'), page.text.localize('Please log in.'));
+        }
+        MBPrice.sendBuyRequest(barrier, contract_type);
+    }
+
     return {
         processActiveSymbols   : processActiveSymbols,
         processMarketUnderlying: processMarketUnderlying,
@@ -206,6 +214,8 @@ var MBProcess = (function() {
         processProposal        : processProposal,
         processRemainingTime   : processRemainingTime,
         removeJapanOnlyText    : removeJapanOnlyText,
+        showErrorMessage       : showErrorMessage,
+        processBuy             : processBuy,
     };
 })();
 

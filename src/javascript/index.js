@@ -101,6 +101,7 @@ exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_event'));
 exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_message'));
 exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_price'));
 exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_process'));
+exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_purchase'));
 exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_symbols'));
 exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_tick'));
 exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_tradepage'));
