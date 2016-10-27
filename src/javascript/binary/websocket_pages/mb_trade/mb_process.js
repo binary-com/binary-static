@@ -145,6 +145,33 @@ var MBProcess = (function() {
         }
     }
 
+    function processRemainingTime() {
+        var timeLeft = parseInt($('#period').val().split('_')[1]) - window.time.unix();
+        if (timeLeft <= 0) {
+            location.reload();
+        } else if (timeLeft < 120) {
+            $('.countdown-timer').addClass('alert');
+        } else {
+            $('.countdown-timer').removeClass('alert');
+        }
+        var remainingTimeString = [],
+            duration = moment.duration(timeLeft * 1000);
+        var all_durations = {
+            months  : duration.months(),
+            days    : duration.days(),
+            hours   : duration.hours(),
+            minutes : duration.minutes(),
+            seconds : duration.seconds()
+        };
+        for (var key in all_durations) {
+            if (all_durations[key]) {
+                remainingTimeString.push(all_durations[key] + page.text.localize('{JAPAN ONLY}' + key));
+            }
+        }
+        $('#remaining-time').text(remainingTimeString.join(' ').replace(/\{JAPAN ONLY\}/g, ''));
+        setTimeout(processRemainingTime, 1000);
+    }
+
     return {
         processActiveSymbols: processActiveSymbols,
         processMarketUnderlying: processMarketUnderlying,
@@ -152,6 +179,7 @@ var MBProcess = (function() {
         processContract: processContract,
         processPriceRequest: processPriceRequest,
         processProposal: processProposal,
+        processRemainingTime: processRemainingTime
     };
 })();
 

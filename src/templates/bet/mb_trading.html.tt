@@ -63,7 +63,10 @@
                     </div>
                 </div>
                 <div class="gr-adapt">
-                    <div class="countdown-timer align-end"></div>
+                    <div class="countdown-timer align-end">
+                        <span>[% l("Remaining time") %]</span>
+                        <span id="remaining-time">...</span>
+                    </div>
                 </div>
             </div>
         </div>
