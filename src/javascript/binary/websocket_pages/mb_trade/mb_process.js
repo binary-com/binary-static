@@ -100,7 +100,7 @@ var MBProcess = (function() {
 
     function processForgetProposals() {
         'use strict';
-        //showPriceOverlay();
+        MBPrice.showPriceOverlay();
         BinarySocket.send({
             forget_all: "proposal"
         });
@@ -111,7 +111,7 @@ var MBProcess = (function() {
         'use strict';
         MBPrice.increaseReqId();
         processForgetProposals();
-        //showPriceOverlay();
+        MBPrice.showPriceOverlay();
         var available_contracts = MBContract.getCurrentContracts(),
             durations = MBDefaults.get('period').split('_');
         var req = {
@@ -153,7 +153,7 @@ var MBProcess = (function() {
         var req_id = MBPrice.getReqId();
         if(response.req_id === req_id){
             MBPrice.display(response);
-            // hidePriceOverlay();
+            MBPrice.hidePriceOverlay();
         }
     }
 
@@ -202,6 +202,7 @@ var MBProcess = (function() {
         if (!page.client.is_logged_in) {
             return showErrorMessage($('#content .container'), page.text.localize('Please log in.'));
         }
+        MBPrice.showPriceOverlay();
         MBPrice.sendBuyRequest(barrier, contract_type);
     }
 

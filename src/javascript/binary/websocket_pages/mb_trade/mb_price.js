@@ -168,13 +168,23 @@ var MBPrice = (function() {
         });
     };
 
+    var showPriceOverlay = function() {
+        $('#disable-overlay').removeClass('invisible');
+    };
+
+    var hidePriceOverlay = function() {
+        $('#disable-overlay').addClass('invisible');
+    };
+
     return {
-        display        : display,
-        addPriceObj    : addPriceObj,
-        cleanup        : cleanup,
-        sendBuyRequest : sendBuyRequest,
-        getReqId       : function() { return req_id; },
-        increaseReqId  : function() { req_id++; cleanup(); },
+        display          : display,
+        addPriceObj      : addPriceObj,
+        cleanup          : cleanup,
+        sendBuyRequest   : sendBuyRequest,
+        showPriceOverlay : showPriceOverlay,
+        hidePriceOverlay : hidePriceOverlay,
+        getReqId         : function() { return req_id; },
+        increaseReqId    : function() { req_id++; cleanup(); },
     };
 })();
 

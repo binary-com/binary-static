@@ -189,6 +189,7 @@ var ViewPopupWS = (function() {
         normalUpdateTimers();
         normalUpdate();
         ViewPopupUI.reposition_confirmation();
+        if (MBTradePage.is_trading_page()) MBPrice.hidePriceOverlay();
     };
 
     var normalUpdate = function() {
