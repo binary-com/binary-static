@@ -6,7 +6,7 @@ var MBProcess = (function() {
     function processActiveSymbols(data) {
         'use strict';
         if (data.hasOwnProperty('error')) {
-            showErrorMessage($('#content .container').empty(), data.error.message);
+            showErrorMessage($('#content .container .japan-ui'), data.error.message);
             return;
         }
 
@@ -84,7 +84,7 @@ var MBProcess = (function() {
         'use strict';
 
         if (contracts.hasOwnProperty('error')) {
-            showErrorMessage($('#content .container').empty(), contracts.error.message);
+            showErrorMessage($('#content .container .japan-ui'), contracts.error.message);
             return;
         }
 
@@ -200,7 +200,10 @@ var MBProcess = (function() {
     function processBuy(barrier, contract_type) {
         if (!barrier || !contract_type) return;
         if (!page.client.is_logged_in) {
-            return showErrorMessage($('.notifications-wrapper'), page.text.localize('Please log in.'));
+            if ($('.login-error').length === 0){
+                showErrorMessage($('.notifications-wrapper'), page.text.localize('Please log in.'), 'login-error');
+            }
+            return;
         }
         MBPrice.showPriceOverlay();
         MBPrice.sendBuyRequest(barrier, contract_type);

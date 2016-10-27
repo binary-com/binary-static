@@ -27,9 +27,17 @@ var MBContract = (function() {
     };
 
     var PeriodText = function(trading_period) {
-        return moment.utc(trading_period.date_expiry.epoch * 1000).zone(japanese_client() ? '+09:00' : '+00:00')
-                .format("MM[" + page.text.localize('month') + "] " + "DD[" + page.text.localize('day') + "] HH:mm [(" +
-                durationText(trading_period.duration.replace('0d', '1d')) + ")]");
+        var date_expiry, duration;
+        if (typeof(trading_period) === 'object') {
+            date_expiry = trading_period.date_expiry.epoch;
+            duration = trading_period.duration;
+        } else {
+            date_expiry = trading_period.split('_')[1];
+            duration = trading_period.split('_')[2];
+        }
+        return moment.utc(date_expiry * 1000).zone(japanese_client() ? '+09:00' : '+00:00')
+                     .format("MM[" + page.text.localize('month') + "] " + "DD[" + page.text.localize('day') + "] HH:mm [(" +
+                     durationText(duration.replace('0d', '1d')) + ")]").replace(/08:59/, '09:00«');
     };
 
     // use function to generate elements and append them
@@ -45,38 +53,76 @@ var MBContract = (function() {
         return;
     };
 
-    var populatePeriods = function() {
+    var populatePeriods = function(rebuild) {
         if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return;
         var trading_period, start_end, trading_period_text,
             trading_period_array = [],
             available_contracts = contracts_for_response.contracts_for.available,
-            selected_option = MBDefaults.get('category');
-        if (!selected_option) return;
-        loop1:
+            selected_option = MBDefaults.get('category'),
+            $periodElement = $('#period');
+        if (!selected_option || !available_contracts) return;
         for (var i = 0; i < available_contracts.length; i++) {
             if (available_contracts[i].contract_category !== selected_option) continue;
             trading_period = available_contracts[i].trading_period;
-            start_end = trading_period.date_start.epoch + '_' + trading_period.date_expiry.epoch;
-            loop2:
-            for (var k = 0; k < trading_period_array.length; k++) {
-                if (trading_period_array[k][1] === start_end) {
-                    continue loop1;
+            if (!trading_period) return;
+            start_end = trading_period.date_start.epoch + '_' + trading_period.date_expiry.epoch + '_' + trading_period.duration;
+            if (trading_period_array.indexOf(start_end) > -1) {
+                continue;
+            }
+            trading_period_array.push(start_end);
+        }
+        trading_period_array.sort(sortByExpiryTime);
+        if (rebuild) {
+            $periodElement.empty();
+        }
+        if ($periodElement.children().length === 0) {
+            var default_value = MBDefaults.get('period');
+            for (var j = 0; j < trading_period_array.length; j++) {
+                appendTextValueChild(document.getElementById('period'), PeriodText(trading_period_array[j]), trading_period_array[j], trading_period_array[j] == default_value);
+            }
+            MBDefaults.set('period', $periodElement.val());
+            MBContract.displayDescriptions();
+            MBProcess.processRemainingTime();
+        } else {
+            var existing_array = [],
+                missing_array = [];
+            $("#period option").each(function() {
+                existing_array.push($(this).val());
+            });
+            for (var l = 0; l < trading_period_array.length; l++) {
+                if (existing_array.indexOf(trading_period_array[l]) < 0) {
+                    missing_array.push(trading_period_array[l]);
                 }
             }
-            trading_period_text = PeriodText(available_contracts[i].trading_period).replace(/08:59/, '09:00«');
-            trading_period_array.push([trading_period_text, start_end]);
+            if (missing_array.length > 0) {
+                var newOption;
+                existing_array = existing_array.concat(missing_array).sort(sortByExpiryTime);
+                for (var m = 0; m < existing_array.length; m++) {
+                    if ($('#period option[value="' + existing_array[m] + '"]').length < 1) {
+                        newOption = '<option value="' + existing_array[m] + '">' + PeriodText(existing_array[m]) + '</option>';
+                        if (m < 1) {
+                            $(newOption).insertBefore($periodElement.children().eq(m));
+                        } else {
+                            $(newOption).insertAfter($periodElement.children().eq(m-1));
+                        }
+                    }
+                }
+            }
         }
-        trading_period_array.sort(function(a, b) {
-            return b[1].split('_')[1] < a[1].split('_')[1];
-        });
-        $('#period').empty();
-        var default_value = MBDefaults.get('period');
-        for (var j = 0; j < trading_period_array.length; j++) {
-            appendTextValueChild(document.getElementById('period'), trading_period_array[j][0], trading_period_array[j][1], trading_period_array[j][1] == default_value);
+    };
+
+    var sortByExpiryTime = function(a, b) {
+        var a0 = a.split('_')[0],
+            a1 = a.split('_')[1],
+            b0 = b.split('_')[0],
+            b1 = b.split('_')[1],
+            duration1 = a1 - a0,
+            duration2 = b1 - b0;
+        if (a1 === b1) {
+            return duration2 < duration1;
+        } else {
+            return b1 < a1;
         }
-        MBDefaults.set('period', $('#period').val());
-        MBContract.displayDescriptions();
-        MBProcess.processRemainingTime();
     };
 
     var populateOptions = function() {

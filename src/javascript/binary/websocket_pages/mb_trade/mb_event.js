@@ -45,7 +45,7 @@ var MBTradingEvents = (function () {
         if (categoryElement) {
             categoryElement.addEventListener('change', function(e) {
                 MBDefaults.set('category', e.target.value);
-                MBContract.populatePeriods();
+                MBContract.populatePeriods('rebuild');
                 MBProcess.processPriceRequest();
                 TradingAnalysis.request();
             });
