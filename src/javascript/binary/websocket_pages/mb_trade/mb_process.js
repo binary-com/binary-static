@@ -5,6 +5,10 @@ var MBProcess = (function() {
      */
     function processActiveSymbols(data) {
         'use strict';
+        if (data.hasOwnProperty('error')) {
+            showErrorMessage($('#content .container').empty(), data.error.message);
+            return;
+        }
 
         // populate the Symbols object
         MBSymbols.details(data);
@@ -61,6 +65,10 @@ var MBProcess = (function() {
      */
     function processTick(tick) {
         'use strict';
+        if (tick.hasOwnProperty('error')) {
+            showErrorMessage($('#content .container .japan-ui'), tick.error.message);
+            return;
+        }
         var symbol = MBDefaults.get('underlying');
         if(tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)){
             MBTick.details(tick);
@@ -75,6 +83,11 @@ var MBProcess = (function() {
     function processContract(contracts) {
         'use strict';
 
+        if (contracts.hasOwnProperty('error')) {
+            showErrorMessage($('#content .container').empty(), contracts.error.message);
+            return;
+        }
+
         window.chartAllowed = true;
         if (contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly') {
             window.chartAllowed = false;
@@ -82,6 +95,7 @@ var MBProcess = (function() {
 
         MBContract.populateOptions(contracts);
         processPriceRequest();
+        TradingAnalysis.request();
     }
 
     function processForgetProposals() {
@@ -143,6 +157,46 @@ var MBProcess = (function() {
         }
     }
 
+    var periodValue, $countDownTimer, remainingTimeElement;
+    function processRemainingTime(recalculate) {
+        if (typeof periodValue === 'undefined' || recalculate) {
+            periodValue = document.getElementById('period').value;
+            $countDownTimer = $('.countdown-timer');
+            remainingTimeElement = document.getElementById('remaining-time');
+        }
+        if (!periodValue) return;
+        var timeLeft = parseInt(periodValue.split('_')[1]) - window.time.unix();
+        if (timeLeft <= 0) {
+            location.reload();
+        } else if (timeLeft < 120) {
+            $countDownTimer.addClass('alert');
+        }
+        var remainingTimeString = [],
+            duration = moment.duration(timeLeft * 1000);
+        var all_durations = {
+            months  : duration.months(),
+            days    : duration.days(),
+            hours   : duration.hours(),
+            minutes : duration.minutes(),
+            seconds : duration.seconds()
+        };
+        for (var key in all_durations) {
+            if (all_durations[key]) {
+                remainingTimeString.push(all_durations[key] + removeJapanOnlyText(page.text.localize((key === 'seconds' ? '' : '{JAPAN ONLY}') + key)));
+            }
+        }
+        remainingTimeElement.innerHTML = removeJapanOnlyText(remainingTimeString.join(' '));
+        setTimeout(processRemainingTime, 1000);
+    }
+
+    function removeJapanOnlyText(string) {
+        return string.replace(/\{JAPAN ONLY\}/g, '');
+    }
+
+    function showErrorMessage($element, text, addClass) {
+        $element.prepend('<p class="notice-msg center-text ' + (addClass ? addClass : '') + '">' + text + '</p>');
+    }
+
     return {
         processActiveSymbols   : processActiveSymbols,
         processMarketUnderlying: processMarketUnderlying,
@@ -150,6 +204,8 @@ var MBProcess = (function() {
         processContract        : processContract,
         processPriceRequest    : processPriceRequest,
         processProposal        : processProposal,
+        processRemainingTime   : processRemainingTime,
+        removeJapanOnlyText    : removeJapanOnlyText,
     };
 })();
 

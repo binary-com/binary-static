@@ -25,7 +25,6 @@ var MBTradingEvents = (function () {
                     }
                     var underlying = e.target.value;
                     MBDefaults.set('underlying', underlying);
-                    TradingAnalysis.request();
 
                     MBTick.clean();
 
@@ -48,6 +47,7 @@ var MBTradingEvents = (function () {
                 MBDefaults.set('category', e.target.value);
                 MBContract.populatePeriods();
                 MBProcess.processPriceRequest();
+                TradingAnalysis.request();
             });
         }
 
@@ -56,22 +56,40 @@ var MBTradingEvents = (function () {
             periodElement.addEventListener('change', function(e) {
                 MBDefaults.set('period', e.target.value);
                 MBProcess.processPriceRequest();
+                $('.countdown-timer').removeClass('alert');
+                MBProcess.processRemainingTime('recalculate');
             });
         }
 
         var payoutElement = document.getElementById('payout');
         if (payoutElement) {
-            payoutElement.addEventListener('keypress', onlyNumericOnKeypress);
-            payoutElement.addEventListener('input', debounce(function(e) {
-                // if (!e.target.value) e.target.value = MBDefaults.get('payout');
-                MBDefaults.set('payout', e.target.value);
-                MBProcess.processPriceRequest();
-            }));
             if (!payoutElement.value) {
                 var payout = MBDefaults.get('payout') || 1;
                 payoutElement.value = payout;
                 MBDefaults.set('payout', payout);
             }
+            payoutElement.addEventListener('keypress', onlyNumericOnKeypress);
+            payoutElement.addEventListener('input', debounce(function(e) {
+                // if (!e.target.value) e.target.value = MBDefaults.get('payout');
+                var payout = e.target.value,
+                    payoutElement = document.getElementById('payout'),
+                    $payoutElement = $('#payout'),
+                    $tableElement = $('.japan-table');
+                if (payout < 1 || payout > 100) {
+                    $payoutElement.addClass('error-field');
+                    $tableElement.addClass('invisible');
+                    return false;
+                } else {
+                    $payoutElement.removeClass('error-field');
+                    $tableElement.removeClass('invisible');
+                }
+                MBDefaults.set('payout', payout);
+                MBProcess.processPriceRequest();
+                MBContract.displayDescriptions();
+            }));
+            payoutElement.addEventListener('click', function() {
+                this.select();
+            });
         }
     };
 
