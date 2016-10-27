@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-24 05:50+0000\n"
+"PO-Revision-Date: 2016-10-26 04:44+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -1727,7 +1727,7 @@ msgid "Choose your own strike."
 msgstr "バリア価格を設定"
 
 msgid "Christmas Day"
-msgstr ""
+msgstr "クリスマス"
 
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr ""
@@ -1802,15 +1802,11 @@ msgstr "終了"
 msgid "Closes"
 msgstr "取引終了時間"
 
-#, fuzzy
-#| msgid "Closes early (at %1)"
 msgid "Closes early (at 18:00)"
-msgstr "早めに閉場（%1）"
+msgstr "判定時間（%1）"
 
-#, fuzzy
-#| msgid "Closes early (at %1)"
 msgid "Closes early (at 21:00)"
-msgstr "早めに閉場（%1）"
+msgstr "判定時間（%1）"
 
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
 msgstr "ウェブサイトの機能とパフォーマンスを向上させる革新的な方法を特定するために、ITグループのメンバーと共同で作業を行います"
@@ -2451,10 +2447,8 @@ msgstr "判定時刻"
 msgid "End time"
 msgstr "終了時間"
 
-#, fuzzy
-#| msgid "Exclude time must be after today."
 msgid "End time must be after start time."
-msgstr "制限時間は明日以降として設定して下さい。"
+msgstr "取引終了時間は明日以降として設定して下さい。"
 
 msgid "Ends Between/Ends Outside trades"
 msgstr "END-IN/END-OUT トレード"
@@ -3427,8 +3421,6 @@ msgstr "商品または原資産の以前の実績情報は現在および/ま�
 msgid "Insufficient balance"
 msgstr "口座残高が不足しています"
 
-#, fuzzy
-#| msgid "Insufficient balance"
 msgid "Insufficient balance."
 msgstr "口座残高が不足しています"
 
@@ -4487,7 +4479,7 @@ msgid "New Trade"
 msgstr "新しいトレード"
 
 msgid "New Year's Day"
-msgstr ""
+msgstr "元旦"
 
 msgid "New password"
 msgstr "新しいパスワード"
@@ -4955,7 +4947,7 @@ msgid "Please %1 to view this page"
 msgstr "現在、ログアウトの状態です。ご利用頂くためには再度%1が必要です。"
 
 msgid "Please check the above form for pending errors."
-msgstr ""
+msgstr "未入力の項目がありますのでご確認ください"
 
 msgid "Please check your email for the value of this token"
 msgstr "Eメールアドレスをご確認ください"
@@ -5197,10 +5189,8 @@ msgstr "フルタイムの翻訳者が不在の時にもウェブサイトのコ
 msgid "Processing Time"
 msgstr "決済所要時間"
 
-#, fuzzy
-#| msgid "Unable to process your request"
 msgid "Processing your request..."
-msgstr "お客さまのリクエストは受け付けられません"
+msgstr "ただいま処理中です。しばらくお待ち下さい。"
 
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "当社のブログ、ソーシャルメディア、マーケティング資料のコンテンツ作成"
@@ -7008,7 +6998,7 @@ msgid "Up/Down trades"
 msgstr "ラダー トレード"
 
 msgid "Upcoming Events"
-msgstr "取引時間短縮日"
+msgstr "取引時間短縮日及び祝日"
 
 msgid "Update"
 msgstr "更新"
@@ -7733,7 +7723,7 @@ msgid "You must promptly report any security deficiencies in, or intrusions to, 
 msgstr "%1を発見するあなたのアプリケーションのセキュリティの欠損または侵入を%1に書き込んだり、当社の開発者向けサイトの一部である％2に記入、または%3でディスカッションスレッドを上げることによって報告しなければいけません。セキュリティの欠損を修正するためにあなたは%1と共同し、いかなる侵入や侵入者をすみやかに切断します。セキュリティの欠損またはアプリケーション、API、コンテンツへの侵入が起こった際、いかなる場合においても%1からの書面による事前の明示的な許可なしに、公式声明を発表しません。（例：報道、ブログ、ソーシャルメディア、掲示板など）"
 
 msgid "You need to finish all 20 questions."
-msgstr "まだ、未回答の問題があります。"
+msgstr "まだ、無解答の問題があります。"
 
 msgid "You only need to make four decisions to execute a binary contract."
 msgstr "バイナリー取引に必要なことは上記の４ステップだけです。"
@@ -8090,10 +8080,10 @@ msgid "m"
 msgstr "男性"
 
 msgid "max: 100,000"
-msgstr "上限ロット：100ロット"
+msgstr "上限ロット: x100"
 
 msgid "min: 1,000"
-msgstr "ペイアウト:¥1,000"
+msgstr "ペイアウト: ¥1,000"
 
 msgid "minimum available duration"
 msgstr "最短取引期間"
@@ -8943,7 +8933,7 @@ msgid "{JAPAN ONLY}Select an option type"
 msgstr "オプションタイプの選択"
 
 msgid "{JAPAN ONLY}Select payout size"
-msgstr "ロット数を入力　※マウスカーソルを当ててクリックして数量を入力"
+msgstr "ロット数を入力　※マウスカーソルで合わせてからクリックして数量を入力"
 
 msgid "{JAPAN ONLY}Service Announcements"
 msgstr "お知らせ"
@@ -9220,7 +9210,7 @@ msgid "{Japan Only}Live chart tools"
 msgstr "ライブチャート"
 
 msgid "{Japan Only}Payout from 1 to 10"
-msgstr "ペイアウト：1,000円〜100,000円"
+msgstr "ペイアウト: ¥1,000〜¥100,000"
 
 msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
 msgstr "日証金信託銀行にて全額信託されています"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-24 07:49+0000\n"
+"PO-Revision-Date: 2016-10-25 08:58+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -1702,7 +1702,7 @@ msgid "Choose your own strike."
 msgstr "Pilih modal Anda."
 
 msgid "Christmas Day"
-msgstr ""
+msgstr "Hari Natal"
 
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Warga Afghanistan, Belgia, Bosnia dan Herzegovina, Guyana, Irak, Lao PDR, Suriah, Uganda, Vanuatu atau Yaman tidak dapat mendaftar akun pada Binary Investments (Europe) Ltd."
@@ -1767,15 +1767,11 @@ msgstr "Tutup"
 msgid "Closes"
 msgstr "Ditutup"
 
-#, fuzzy
-#| msgid "Closes early (at %1)"
 msgid "Closes early (at 18:00)"
-msgstr "Ditutup awal (pada %1)"
+msgstr "Ditutup awal (pada 18:00)"
 
-#, fuzzy
-#| msgid "Closes early (at %1)"
 msgid "Closes early (at 21:00)"
-msgstr "Ditutup awal (pada %1)"
+msgstr "Ditutup awal (pada 21:00)"
 
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
 msgstr "Berkolaborasi dengan anggota grup IT kami dalam mengidentifikasi cara-cara inovatif untuk meningkatkan kemampuan dan prestasi website kami"
@@ -2416,10 +2412,8 @@ msgstr "Waktu berakhir"
 msgid "End time"
 msgstr "Waktu end"
 
-#, fuzzy
-#| msgid "Exclude time must be after today."
 msgid "End time must be after start time."
-msgstr "Waktu pengecualian harus setelah hari ini."
+msgstr "Waktu berakhir harus setelah waktu mulai."
 
 msgid "Ends Between/Ends Outside trades"
 msgstr "Kontrak Berakhir Antara/Berakhir Keluar"
@@ -3390,10 +3384,8 @@ msgstr "Informasi dari kinerja sebelumnya untuk setiap instrumen dasar atau aset
 msgid "Insufficient balance"
 msgstr "Saldo tidak mencukupi"
 
-#, fuzzy
-#| msgid "Insufficient balance"
 msgid "Insufficient balance."
-msgstr "Saldo tidak mencukupi"
+msgstr "Saldo tidak mencukupi."
 
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
 msgstr "Tertarik, bagaimana langkah selanjutnya? Jika Anda dapat menawarkan metode pembayaran tunai atau pembayaran lokal yang tidak disediakan oleh %1 dan Anda memiliki track record yang baik, maka kami ingin <a href='mailto:%2'>mendengar balasan Anda!</a>"
@@ -4431,7 +4423,7 @@ msgid "New Trade"
 msgstr "Trade Baru"
 
 msgid "New Year's Day"
-msgstr ""
+msgstr "Tahun Baru"
 
 msgid "New password"
 msgstr "Kata sandi baru"
@@ -4893,7 +4885,7 @@ msgid "Please %1 to view this page"
 msgstr "Silahkan %1 untuk melihat halaman ini"
 
 msgid "Please check the above form for pending errors."
-msgstr ""
+msgstr "Silahkan periksa formulir diatas untuk error yang masih tertunda."
 
 msgid "Please check your email for the value of this token"
 msgstr "Silahkan cek email Anda untuk melihat token ini"
@@ -5135,10 +5127,8 @@ msgstr "Memproses terjemahan konten website sepenuhnya jika penerjemah asli tida
 msgid "Processing Time"
 msgstr "Waktu Proses"
 
-#, fuzzy
-#| msgid "Unable to process your request"
 msgid "Processing your request..."
-msgstr "Tidak dapat memproses permohonan Anda"
+msgstr "Memproses permintaan Anda..."
 
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "Menghasilkan konten untuk website perusahaan, blog, media sosial, dan materi pemasaran"
