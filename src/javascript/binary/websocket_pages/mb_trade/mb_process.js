@@ -159,8 +159,8 @@ var MBProcess = (function() {
     }
 
     var periodValue, $countDownTimer, remainingTimeElement;
-    function processRemainingTime() {
-        if (typeof periodValue === 'undefined') {
+    function processRemainingTime(recalculate) {
+        if (typeof periodValue === 'undefined' || recalculate) {
             periodValue = document.getElementById('period').value;
             $countDownTimer = $('.countdown-timer');
             remainingTimeElement = document.getElementById('remaining-time');
@@ -183,7 +183,7 @@ var MBProcess = (function() {
         };
         for (var key in all_durations) {
             if (all_durations[key]) {
-                remainingTimeString.push(all_durations[key] + page.text.localize('{JAPAN ONLY}' + key));
+                remainingTimeString.push(all_durations[key] + page.text.localize((key === 'seconds' ? '' : '{JAPAN ONLY}') + key));
             }
         }
         remainingTimeElement.innerHTML = remainingTimeString.join(' ').replace(/\{JAPAN ONLY\}/g, '');
