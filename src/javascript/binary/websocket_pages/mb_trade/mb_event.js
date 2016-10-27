@@ -25,7 +25,6 @@ var MBTradingEvents = (function () {
                     }
                     var underlying = e.target.value;
                     MBDefaults.set('underlying', underlying);
-                    TradingAnalysis.request();
 
                     MBTick.clean();
 
@@ -48,6 +47,7 @@ var MBTradingEvents = (function () {
                 MBDefaults.set('category', e.target.value);
                 MBContract.populatePeriods();
                 MBProcess.processPriceRequest();
+                TradingAnalysis.request();
             });
         }
 
