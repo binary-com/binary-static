@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-21 02:11+0000\n"
+"PO-Revision-Date: 2016-10-25 06:24+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -1696,7 +1696,7 @@ msgid "Choose your own strike."
 msgstr "選擇您自己的履約價格。"
 
 msgid "Christmas Day"
-msgstr ""
+msgstr "聖誕節"
 
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "阿富汗、比利時、波士尼亞和黑塞哥維那、蓋亞納、伊拉克、老撾人民民主共和國、敘利亞、烏干達、瓦努阿圖或葉門等國國民將受禁止于Binary 投資（歐洲）Ltd開立帳戶。"
@@ -1761,15 +1761,11 @@ msgstr "已收盤"
 msgid "Closes"
 msgstr "收盤"
 
-#, fuzzy
-#| msgid "Closes early (at %1)"
 msgid "Closes early (at 18:00)"
-msgstr "收盤提前（至%1）"
+msgstr "收盤提前（至18:00）"
 
-#, fuzzy
-#| msgid "Closes early (at %1)"
 msgid "Closes early (at 21:00)"
-msgstr "收盤提前（至%1）"
+msgstr "收盤提前（至21:00）"
 
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
 msgstr "與我們資訊技術組成員協作，尋求提高網站功能和效率的創新方法"
@@ -2410,10 +2406,8 @@ msgstr "結束時間"
 msgid "End time"
 msgstr "結束時間"
 
-#, fuzzy
-#| msgid "Exclude time must be after today."
 msgid "End time must be after start time."
-msgstr "禁止時間必須在今日之後。"
+msgstr "結束時間必須開始時間之後。"
 
 msgid "Ends Between/Ends Outside trades"
 msgstr "「收於範圍之內/之外」的交易"
@@ -3382,10 +3376,8 @@ msgstr "任何標的工具或資產前次的效能資訊不可用於保證其目
 msgid "Insufficient balance"
 msgstr "餘額不足"
 
-#, fuzzy
-#| msgid "Insufficient balance"
 msgid "Insufficient balance."
-msgstr "餘額不足"
+msgstr "餘額不足。"
 
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
 msgstr "感興趣，接下來該怎麼做？如您可向我們的客戶提供特別電子貨幣支付方式或 %1目前還未提供之本地付款選項，且您在市場上有良好的紀錄，那麼我們非常樂意通過<a href='mailto:%2'>收到您的聯繫!</a>"
@@ -4420,7 +4412,7 @@ msgid "New Trade"
 msgstr "新交易"
 
 msgid "New Year's Day"
-msgstr ""
+msgstr "新年"
 
 msgid "New password"
 msgstr "新密碼"
@@ -4882,7 +4874,7 @@ msgid "Please %1 to view this page"
 msgstr "要查看此頁面，請 %1 t"
 
 msgid "Please check the above form for pending errors."
-msgstr ""
+msgstr "請檢查以上表格是否有待定錯誤。"
 
 msgid "Please check your email for the value of this token"
 msgstr "請檢查您的電郵領取此權杖編號"
@@ -5124,10 +5116,8 @@ msgstr "在全職譯員無法工作時翻譯網站內容"
 msgid "Processing Time"
 msgstr "處理時間"
 
-#, fuzzy
-#| msgid "Unable to process your request"
 msgid "Processing your request..."
-msgstr "無法處理您的要求"
+msgstr "您的要求在處理中..."
 
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "為公司網站、部落格、社交媒體管道和行銷材料新增內容"
@@ -7813,7 +7803,6 @@ msgstr "詳細資料"
 msgid "e.g. blue.binaryws.com"
 msgstr "例如blue.binaryws.com"
 
-#, fuzzy
 msgid "email address"
 msgstr "電子郵件地址"
 
