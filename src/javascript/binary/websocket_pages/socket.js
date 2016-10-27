@@ -107,7 +107,10 @@ function BinarySocketClass() {
             }
 
             if (isReady()) {
-                if (!Login.is_login_pages()) page.header.validate_cookies();
+                if (!Login.is_login_pages()) {
+                    page.header.validate_cookies();
+                    binarySocket.send(JSON.stringify({website_status: 1}));
+                }
                 if (!getClockStarted()) page.header.start_clock_ws();
             }
         };
@@ -151,7 +154,6 @@ function BinarySocketClass() {
                             send({balance:1, subscribe: 1});
                             send({get_settings: 1});
                             send({get_account_status: 1});
-                            send({website_status: 1});
                             if (Cookies.get('residence')) send({landing_company: Cookies.get('residence')});
                             if(!page.client.is_virtual()) {
                                 send({get_self_exclusion: 1});
@@ -232,6 +234,7 @@ function BinarySocketClass() {
                     page.client.response_get_settings(response);
                 } else if (type === 'website_status') {
                     if(!response.hasOwnProperty('error')) {
+                        create_language_drop_down(response.website_status.supported_languages);
                         LocalStore.set('website.tnc_version', response.website_status.terms_conditions_version);
                         if (!localStorage.getItem('risk_classification')) page.client.check_tnc();
                         if (response.website_status.hasOwnProperty('clients_country')) {

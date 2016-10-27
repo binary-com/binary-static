@@ -1009,10 +1009,25 @@ var Page = function() {
 
 Page.prototype = {
     all_languages: function() {
-        return ['EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'TH', 'VI', 'JA', 'ZH_CN', 'ZH_TW'];
+        return {
+            'EN': 'English',
+            'DE': 'Deutsch',
+            'ES': 'Español',
+            'FR': 'Français',
+            'ID': 'Bahasa Indonesia',
+            'IT': 'Italiano',
+            'JA': '日本語',
+            'PL': 'Polish',
+            'PT': 'Português',
+            'RU': 'Русский',
+            'TH': 'Thai',
+            'VI': 'Vietnamese',
+            'ZH_CN': '简体中文',
+            'ZH_TW': '繁體中文',
+        };
     },
     language_from_url: function() {
-        var regex = new RegExp('^(' + this.all_languages().join('|') + ')$', 'i');
+        var regex = new RegExp('^(' + Object.keys(this.all_languages()).join('|') + ')$', 'i');
         var langs = window.location.href.split('/').slice(3);
         for (var i = 0; i < langs.length; i++) {
             var lang = langs[i];
@@ -1054,6 +1069,7 @@ Page.prototype = {
         this.check_language();
         TrafficSource.setData();
         this.endpoint_notification();
+        BinarySocket.init();
     },
     on_unload: function() {
         this.header.on_unload();
@@ -1061,7 +1077,7 @@ Page.prototype = {
     },
     on_change_language: function() {
         var that = this;
-        $('#language_select').on('change', 'select', function() {
+        $('#language_select').on('change', function() {
             var language = $(this).find('option:selected').attr('class');
             var cookie = new CookieStorage('language');
             cookie.write(language);
