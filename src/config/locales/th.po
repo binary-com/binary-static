@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-24 15:26+0000\n"
+"PO-Revision-Date: 2016-10-27 12:37+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -1701,7 +1701,7 @@ msgid "Choose your own strike."
 msgstr "กำหนดราคาใช้สิทธิของท่าน"
 
 msgid "Christmas Day"
-msgstr ""
+msgstr "วันคริสต์มาส"
 
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "ลูกค้าในประเทศเหล่านี้ อัฟกานิสถาน เบลเยี่ยม บอสเนีย และ เฮอเซโกวินา กายอานา อิรัก สาธารณรัฐประชาชนลาว ซีเรีย ยูกานดา วาตูอานู หรือ เยเมน จะได้รับการดูแลและเปิดบัญชีจาก Binary Investments (Europe) Ltd."
@@ -1766,15 +1766,11 @@ msgstr "ปิด"
 msgid "Closes"
 msgstr "ปิด"
 
-#, fuzzy
-#| msgid "Closes early (at %1)"
 msgid "Closes early (at 18:00)"
-msgstr "ปิดก่อน (เมื่อ %1)"
+msgstr "ปิดก่อนเวลา (เมื่อเวลา 18.00 น.)"
 
-#, fuzzy
-#| msgid "Closes early (at %1)"
 msgid "Closes early (at 21:00)"
-msgstr "ปิดก่อน (เมื่อ %1)"
+msgstr "ปิดก่อนเวลา (เมื่อเวลา 21.00 น.)"
 
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
 msgstr "ประสานงานกับสมาชิกของแผนกไอทีของเราเพื่อออกแบบและกำหนดวิธีใหม่ในการปรับปรุงเว็บไซต์ของบริษัทฯ ในด้านศักยภาพและสมรรถนะของระบบ"
@@ -2415,10 +2411,8 @@ msgstr "เวลาสิ้นสุด"
 msgid "End time"
 msgstr "เวลาสิ้นสุด"
 
-#, fuzzy
-#| msgid "Exclude time must be after today."
 msgid "End time must be after start time."
-msgstr "เวลาพักต้องเริ่มพรุ่งนี้"
+msgstr "เวลาสิ้นสุดต้องเป็นเวลาภายหลังเวลาเริ่มต้น"
 
 msgid "Ends Between/Ends Outside trades"
 msgstr "สิ้นสุดระหว่าง/สิ้นสุดนอกขอบเขต"
@@ -2822,8 +2816,6 @@ msgstr "ยินดีต้อนรับนักศึกษาจบให
 msgid "Friday"
 msgstr "วันศุกร์"
 
-#, fuzzy
-#| msgid "Friday"
 msgid "Fridays"
 msgstr "วันศุกร์"
 
@@ -3391,8 +3383,6 @@ msgstr "ข้อมูลของการดำเนินงานก่อ
 msgid "Insufficient balance"
 msgstr "ยอดคงเหลือไม่เพียงพอ"
 
-#, fuzzy
-#| msgid "Insufficient balance"
 msgid "Insufficient balance."
 msgstr "ยอดคงเหลือไม่เพียงพอ"
 
@@ -4429,7 +4419,7 @@ msgid "New Trade"
 msgstr "เริ่มเทรด"
 
 msgid "New Year's Day"
-msgstr ""
+msgstr "วันปีใหม่"
 
 msgid "New password"
 msgstr "รหัสผ่านใหม่"
@@ -4893,7 +4883,7 @@ msgid "Please %1 to view this page"
 msgstr "โปรด %1 เพื่อเรียกดูหน้านี้"
 
 msgid "Please check the above form for pending errors."
-msgstr ""
+msgstr "โปรดตรวจสอบแบบฟอร์มข้างต้นสำหรับรายการข้อผิดพลาด"
 
 msgid "Please check your email for the value of this token"
 msgstr "โปรดตรวจสอบอีเมล์ของท่านเพื่อการใช้งานโทเค่นนี้"
@@ -5135,10 +5125,8 @@ msgstr "ช่วยแปลเนื้อหาของเว็บไซต
 msgid "Processing Time"
 msgstr "เวลาในการประมวลผล"
 
-#, fuzzy
-#| msgid "Unable to process your request"
 msgid "Processing your request..."
-msgstr "ไม่สามารถดำเนินการตามความประสงค์ของท่านได้"
+msgstr "กำลังดำเนินการตามความประสงค์ของท่าน"
 
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "รับผิดชอบในการผลิตเนื้อหาที่ใช้อยู่ในเว็บไซต์ บล็อก สื่อสังคมต่างๆ และสื่อการตลาดของบริษัทฯ"
@@ -7829,8 +7817,6 @@ msgstr "รายละเอียด"
 msgid "e.g. blue.binaryws.com"
 msgstr "เช่น blue.binaryws.com"
 
-#, fuzzy
-#| msgid "Email address"
 msgid "email address"
 msgstr "อีเมล์"
 
