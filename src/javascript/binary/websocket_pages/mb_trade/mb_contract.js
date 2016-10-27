@@ -21,7 +21,7 @@ var MBContract = (function() {
             'Y': 'years',
         };
         Object.keys(durationMap).forEach(function(key) {
-            dur = dur.replace(key, page.text.localize('{JAPAN ONLY}' + durationMap[key]).replace('{JAPAN ONLY}', ''));
+            dur = dur.replace(key, MBProcess.removeJapanOnlyText(page.text.localize('{JAPAN ONLY}' + durationMap[key])));
         });
         return dur;
     };
@@ -107,7 +107,7 @@ var MBContract = (function() {
         $('#category').empty();
         var default_value = MBDefaults.get('category');
         for (var j = 0; j < contracts_array.length; j++) {
-            appendTextValueChild(document.getElementById('category'), categoryNames[contracts_array[j]].replace('{JAPAN ONLY}', ''), contracts_array[j], contracts_array[j] == default_value);
+            appendTextValueChild(document.getElementById('category'), MBProcess.removeJapanOnlyText(categoryNames[contracts_array[j]]), contracts_array[j], contracts_array[j] == default_value);
         }
         MBDefaults.set('category', $('#category').val());
         populatePeriods();
@@ -193,7 +193,7 @@ var MBContract = (function() {
                 template = getTemplate(contract_type),
                 $wrapper = $($desc_wrappers[template.order]);
             $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(page.text.localize(template.name));
-            $wrapper.find('.descr').text(page.text.localize('{JAPAN ONLY}' + template.description, [currency, payout, display_name, date_expiry]).replace('{JAPAN ONLY}', ''));
+            $wrapper.find('.descr').text(MBProcess.removeJapanOnlyText(page.text.localize('{JAPAN ONLY}' + template.description, [currency, payout, display_name, date_expiry])));
         });
     };
 

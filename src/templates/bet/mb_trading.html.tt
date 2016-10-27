@@ -53,7 +53,7 @@
                 <div class="gr-grow">
                     <div class="gr-row spot">
                         <div class="gr-adapt spot-value">
-                            <span>[% l('Spot:') %] </span>
+                            <span>[% l('Spot') %]:</span>
                             <span id="spot"></span>
                             <span id="spot-dyn"></span>
                         </div>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="gr-adapt">
                     <div class="countdown-timer align-end">
-                        <span>[% l("Remaining time") %]</span>
+                        <span id="remaining-time-label"></span>
                         <span id="remaining-time">...</span>
                     </div>
                 </div>

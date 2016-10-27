@@ -56,8 +56,8 @@ var MBTradingEvents = (function () {
             periodElement.addEventListener('change', function(e) {
                 MBDefaults.set('period', e.target.value);
                 MBProcess.processPriceRequest();
-                MBProcess.processRemainingTime();
                 $('.countdown-timer').removeClass('alert');
+                MBProcess.processRemainingTime('recalculate');
             });
         }
 

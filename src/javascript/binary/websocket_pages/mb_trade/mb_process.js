@@ -159,8 +159,8 @@ var MBProcess = (function() {
     }
 
     var periodValue, $countDownTimer, remainingTimeElement;
-    function processRemainingTime() {
-        if (typeof periodValue === 'undefined') {
+    function processRemainingTime(recalculate) {
+        if (typeof periodValue === 'undefined' || recalculate) {
             periodValue = document.getElementById('period').value;
             $countDownTimer = $('.countdown-timer');
             remainingTimeElement = document.getElementById('remaining-time');
@@ -183,11 +183,15 @@ var MBProcess = (function() {
         };
         for (var key in all_durations) {
             if (all_durations[key]) {
-                remainingTimeString.push(all_durations[key] + page.text.localize('{JAPAN ONLY}' + key));
+                remainingTimeString.push(all_durations[key] + removeJapanOnlyText(page.text.localize((key === 'seconds' ? '' : '{JAPAN ONLY}') + key)));
             }
         }
-        remainingTimeElement.innerHTML = remainingTimeString.join(' ').replace(/\{JAPAN ONLY\}/g, '');
+        remainingTimeElement.innerHTML = removeJapanOnlyText(remainingTimeString.join(' '));
         setTimeout(processRemainingTime, 1000);
+    }
+
+    function removeJapanOnlyText(string) {
+        return string.replace(/\{JAPAN ONLY\}/g, '');
     }
 
     function showErrorMessage($element, text, addClass) {
@@ -202,6 +206,7 @@ var MBProcess = (function() {
         processPriceRequest: processPriceRequest,
         processProposal: processProposal,
         processRemainingTime: processRemainingTime,
+        removeJapanOnlyText: removeJapanOnlyText,
     };
 })();
 
