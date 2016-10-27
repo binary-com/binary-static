@@ -153,8 +153,14 @@
     .padding-10 {
         padding: 10px 10px 0;
     }
-    .gr-6.gr-no-gutter-left {
+    .padding-right-five {
         padding-right: 5px;
+    }
+    .padding-right-ten {
+        padding-right: 10px;
+    }
+    .no-padding-right {
+        padding-right: 0;
     }
     .select-box {
         float: left;
@@ -226,11 +232,15 @@
         &.alert {
             background: rgba(251, 228, 215, 0.7);
             padding-right: 5px;
+            margin-right: 0;
         }
     }
     @media screen and (max-width: 768px) {
         .gr-12-p {
             padding-bottom: 10px;
+        }
+        .padding-right-five, .no-padding-right {
+            padding-right: 10px;
         }
     }
 }

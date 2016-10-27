@@ -3,7 +3,7 @@
     <section class="japan-form gr-row">
         <div class="gr-6 gr-12-m gr-12-p gr-no-gutter-right">
             <div class="gr-row">
-                <div class="gr-6 gr-no-gutter-left">
+                <div class="gr-6 gr-no-gutter-left padding-right-five">
                     <div class="select-box">
                         <div class="padding-10">
                             <div class="select-heading">[% l('FX Rate') %]</div>
@@ -11,7 +11,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="gr-6 gr-no-gutter-left">
+                <div class="gr-6 gr-no-gutter-left padding-right-five">
                     <div class="select-box">
                         <div class="padding-10">
                             <div class="select-heading">[% l('Option Type') %]</div>
@@ -21,9 +21,9 @@
                 </div>
             </div>
         </div>
-        <div class="gr-6 gr-12-m gr-12-p gr-no-gutter-left">
+        <div class="gr-6 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m gr-no-gutter-right-p gr-no-gutter-right-m">
             <div class="gr-row">
-                <div class="gr-6 gr-no-gutter-left">
+                <div class="gr-6 gr-no-gutter-left padding-right-five">
                     <div class="select-box">
                         <div class="padding-10">
                             <div class="select-heading">[% l('Trading Period') %]</div>
@@ -31,13 +31,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="gr-6 gr-no-gutter-left">
+                <div class="gr-6 gr-no-gutter-left no-padding-right">
                     <div class="select-box">
                         <div class="padding-10">
                             <div class="select-heading">[% l('Payout Amount') %]</div>
                             <div class="payout-input">
                                 <div class="float-left">
-                                    <span id="currency">[% l('¥') %]</span>
+                                    <span id="currency">✕</span>
                                     <input type="text" class="payout-select select" id="payout">
                                     <label class="payout-mult" for="payout">[% l(',000') %]</label>
                                 </div>
@@ -74,7 +74,7 @@
 
     <div class="japan-table gr-row">
         <div id="disable-overlay" class="invisible"></div>
-        <div class="prices-wrapper gr-6 gr-12-m gr-12-p">
+        <div class="prices-wrapper gr-6 gr-12-m gr-12-p padding-right-five">
             <div class="descr-wrapper">
                 <div class="background-gray row flex-box cols">
                     <h1 class="details-heading"></h1>
@@ -90,7 +90,7 @@
                 <div class="gr-row price-row"></div>
             </div>
         </div>
-        <div class="prices-wrapper gr-6 gr-12-m gr-12-p gr-no-gutter-left">
+        <div class="prices-wrapper gr-6 gr-12-m gr-12-p gr-no-gutter-left padding-right-ten gr-gutter-left-p gr-gutter-left-m">
             <div class="descr-wrapper">
                 <div class="background-gray row flex-box cols">
                     <h1 class="details-heading"></h1>

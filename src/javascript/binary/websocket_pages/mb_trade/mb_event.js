@@ -57,6 +57,7 @@ var MBTradingEvents = (function () {
                 MBDefaults.set('period', e.target.value);
                 MBProcess.processPriceRequest();
                 MBProcess.processRemainingTime();
+                $('.countdown-timer').removeClass('alert');
             });
         }
 
