@@ -64,9 +64,24 @@ var MBTradingEvents = (function () {
             payoutElement.addEventListener('keypress', onlyNumericOnKeypress);
             payoutElement.addEventListener('input', debounce(function(e) {
                 // if (!e.target.value) e.target.value = MBDefaults.get('payout');
-                MBDefaults.set('payout', e.target.value);
+                var payout = e.target.value,
+                    payoutElement = document.getElementById('payout').value;
+                if (payout < 1) {
+                    if (payout !== 1) {
+                        payoutElement.value = 1;
+                    }
+                    return false;
+                }
+                if (payout > 100) {
+                    payoutElement.value = MBDefaults.get('payout') || 100;
+                    return false;
+                }
+                MBDefaults.set('payout', payout);
                 MBProcess.processPriceRequest();
             }));
+            payoutElement.addEventListener('click', function() {
+                this.select();
+            });
             if (!payoutElement.value) {
                 var payout = MBDefaults.get('payout') || 1;
                 payoutElement.value = payout;
