@@ -10,36 +10,147 @@
 var MBPrice = (function() {
     'use strict';
 
-    var prices = {},
-        req_id = 0;
+    var prices         = {},
+        contract_types = {},
+        barriers       = [],
+        req_id         = 0,
+        res_count      = 0,
+        is_displayed   = false,
+        price_selector = '.prices-wrapper .price-rows',
+        $tables;
 
-    var display = function() {
+    var addPriceObj = function(req) {
+        var barrier = makeBarrier(req);
+        if (!prices[barrier]) {
+            prices[barrier] = {};
+        }
+        prices[barrier][req.contract_type] = {};
+        if (!contract_types[req.contract_type]) {
+            contract_types[req.contract_type] = MBContract.getTemplate(req.contract_type);
+        }
     };
 
-    var updatePrice = function(id, barrier, buy_price, sell_price) {
-        var $priceRow = $('#' + id);
-        if (!$priceRow.length) return;
-        $priceRow.find('.barrier').text(barrier);
-        $priceRow.find('.buy-price').text(buy_price);
-        $priceRow.find('.sell-price').text(sell_price);
+    var makeBarrier = function(req) {
+        return (req.barrier2 ? req.barrier2 + '_' : '') + req.barrier;
     };
 
-    var getPriceTemplate = function(id, barrier, buy_price, sell_price) {
-        return '<div id="' + id + '" class="gr-row price-row">' +
-                '<div class="gr-4 barrier">' + barrier + '</div>' +
-                '<div class="gr-4 buy-price"><button class="price-button">' + buy_price  + '<span class="dynamics"></span></button></div>' +
-                '<div class="gr-4 sell-price"><span class="price-wrapper">' + sell_price + '<span class="dynamics"></span></span></div>' +
+    var display = function(response) {
+        var barrier = makeBarrier(response.echo_req),
+            contract_type = response.echo_req.contract_type,
+            prev_proposal = $.extend({}, prices[barrier][contract_type]);
+
+        if (!objectNotEmpty(prev_proposal)) {
+            res_count++;
+        }
+
+        prices[barrier][contract_type] = response;
+        // update previous ask_price to use in price movement
+        if (objectNotEmpty(prev_proposal) && !prev_proposal.error) {
+            prices[barrier][contract_type].prev_price = prev_proposal.proposal.ask_price;
+        }
+
+        // populate table if all proposals received
+        if (!is_displayed && res_count === Object.keys(prices).length * 2) {
+            populateTable();
+        } else {
+            updatePrice(prices[barrier][contract_type]);
+        }
+    };
+
+    var populateTable = function() {
+        if (!$tables) {
+            $tables = $(price_selector);
+        }
+        if (!barriers.length) {
+            barriers = Object.keys(prices).sort(function(a, b) {
+                return +(a.split('_')[1] || a) - (+(b.split('_')[1] || b));
+            });
+        }
+
+        var payout = MBDefaults.get('payout') * 1000;
+        barriers.forEach(function(barrier) {
+            Object.keys(contract_types).forEach(function(contract_type) {
+                $($tables[+contract_types[contract_type].order])
+                    .append(makePriceRow(getValues(prices[barrier][contract_type])));
+            });
+        });
+
+        is_displayed = true;
+    };
+
+    var updatePrice = function(proposal) {
+        var barrier     = makeBarrier(proposal.echo_req),
+            $price_rows = $(price_selector + ' div[data-barrier="' + barrier + '"]');
+
+        if (!$price_rows.length) return;
+
+        var contract_type     = proposal.echo_req.contract_type,
+            contract_info     = contract_types[contract_type],
+            contract_info_opp = contract_types[contract_info.opposite];
+        var values     = getValues(proposal),
+            values_opp = getValues(prices[barrier][contract_info.opposite]);
+
+        $($price_rows[+contract_info.order]).replaceWith(makePriceRow(values));
+        $($price_rows[+contract_info_opp.order]).replaceWith(makePriceRow(values_opp));
+    };
+
+    var getValues = function(proposal) {
+        var barrier       = makeBarrier(proposal.echo_req),
+            payout        = proposal.echo_req.amount,
+            contract_type = proposal.echo_req.contract_type,
+            proposal_opp  = prices[barrier][contract_types[contract_type].opposite];
+        return {
+            contract_type : contract_type,
+            barrier       : barrier,
+            is_active     : !proposal.error && proposal.proposal.ask_price,
+            message       :  proposal.error && proposal.error.code !== 'RateLimit' ? proposal.error.message : '',
+            ask_price     : getAskPrice(proposal),
+            sell_price    : payout - getAskPrice(proposal_opp),
+            ask_price_movement  : !proposal.error ? getMovementDirection(proposal.prev_price, proposal.proposal.ask_price) : '',
+            sell_price_movement : proposal_opp && !proposal_opp.error ? getMovementDirection(proposal_opp.proposal.ask_price, proposal_opp.prev_price) : '',
+        };
+    };
+
+    var getAskPrice = function(proposal) {
+        return proposal.error || +proposal.proposal.ask_price === 0 ? proposal.echo_req.amount : Math.round(proposal.proposal.ask_price);
+    };
+
+    var getMovementDirection = function(prev, current) {
+        return current > prev ? '⬆' : current < prev ? '⬇' : '';
+    };
+
+    var makePriceRow = function(values) {
+        return '<div data-barrier="' + values.barrier + '" class="gr-row price-row">' +
+                '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
+                '<div class="gr-4 buy-price">' +
+                    '<button class="price-button' + (!values.is_active ? ' inactive' : '') + '"' +
+                        (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' + values.ask_price +
+                        '<span class="dynamics">' + (values.ask_price_movement || '') + '</span>' +
+                    '</button>' +
+                '</div>' +
+                '<div class="gr-4 sell-price">' +
+                    '<span class="price-wrapper' + (!values.sell_price ? ' inactive' : '') + '">' + values.sell_price +
+                        '<span class="dynamics">' + (values.sell_price_movement || '') + '</span>' +
+                    '</span>' +
+                '</div>' +
             '</div>';
     };
 
     var cleanup = function() {
-        $('.prices-wrapper .price-row').html('');
+        prices         = {};
+        contract_types = {};
+        barriers       = [];
+        res_count      = 0;
+        is_displayed   = false;
+        $(price_selector).html('');
     };
 
     return {
         display      : display,
+        addPriceObj  : addPriceObj,
+        cleanup      : cleanup,
         getReqId     : function() { return req_id; },
-        increaseReqId: function() { req_id++; },
+        increaseReqId: function() { req_id++; cleanup(); },
     };
 })();
 

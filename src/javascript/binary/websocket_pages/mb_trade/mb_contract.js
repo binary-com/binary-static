@@ -205,6 +205,7 @@ var MBContract = (function() {
         populatePeriods     : populatePeriods,
         populateOptions     : populateOptions,
         getCurrentContracts : getCurrentContracts,
+        getTemplate         : getTemplate,
         displayDescriptions : displayDescriptions,
         getContractsResponse: function() { return contracts_for_response; },
         setContractsResponse: function(contracts_for) { contracts_for_response = contracts_for; },

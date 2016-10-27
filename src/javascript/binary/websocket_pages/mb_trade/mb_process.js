@@ -90,12 +90,11 @@ var MBProcess = (function() {
         BinarySocket.send({
             forget_all: "proposal"
         });
-        //Price.clearMapping();
+        MBPrice.cleanup();
     }
 
     function processPriceRequest() {
         'use strict';
-        //Price.incrFormId();
         MBPrice.increaseReqId();
         processForgetProposals();
         //showPriceOverlay();
@@ -108,8 +107,8 @@ var MBProcess = (function() {
             amount     : (parseInt(MBDefaults.get('payout')) || 1) * 1000,
             currency   : (TUser.get().currency || 'JPY'),
             symbol     : MBDefaults.get('underlying'),
-            date_expiry: durations[1],
             req_id     : MBPrice.getReqId(),
+            date_expiry: durations[1],
             trading_period_start: durations[0],
         };
         var barriers_array, i, j, barrier_count;
@@ -119,8 +118,8 @@ var MBProcess = (function() {
             barriers_array = available_contracts[i].available_barriers;
             for (j = 0; j < barriers_array.length; j++) {
                 if (available_contracts[i].barriers == 2) {
-                    req.barrier = barriers_array[j][0];
-                    req.barrier2 = barriers_array[j][1];
+                    req.barrier = barriers_array[j][1];
+                    req.barrier2 = barriers_array[j][0];
                     if (available_contracts[i].expired_barriers.indexOf(req.barrier2) > -1) {
                         continue;
                     }
@@ -128,6 +127,7 @@ var MBProcess = (function() {
                     req.barrier = barriers_array[j];
                 }
                 if (available_contracts[i].expired_barriers.indexOf(req.barrier) < 0) {
+                    MBPrice.addPriceObj(req);
                     BinarySocket.send(req);
                 }
             }
@@ -137,20 +137,19 @@ var MBProcess = (function() {
     function processProposal(response) {
         'use strict';
         var req_id = MBPrice.getReqId();
-        if(response.echo_req && response.echo_req !== null && response.echo_req.passthrough && response.echo_req.req_id === req_id){
-            // hideOverlayContainer();
+        if(response.req_id === req_id){
             MBPrice.display(response);
             // hidePriceOverlay();
         }
     }
 
     return {
-        processActiveSymbols: processActiveSymbols,
+        processActiveSymbols   : processActiveSymbols,
         processMarketUnderlying: processMarketUnderlying,
-        processTick: processTick,
-        processContract: processContract,
-        processPriceRequest: processPriceRequest,
-        processProposal: processProposal,
+        processTick            : processTick,
+        processContract        : processContract,
+        processPriceRequest    : processPriceRequest,
+        processProposal        : processProposal,
     };
 })();
 

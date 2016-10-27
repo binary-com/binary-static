@@ -30,9 +30,6 @@
     }
     .prices-wrapper {
         .price-row, .heading {
-            &:nth-child(even) {
-                background: $COLOR_LIGHT_GRAY;
-            }
             .buy-price, .sell-price, .barrier {
                 flex-grow: 2;
                 white-space: nowrap;
@@ -44,6 +41,9 @@
         }
         .heading .sell-price {
             padding-right: 20px;
+        }
+        .price-row:nth-child(odd) {
+            background: $COLOR_LIGHT_GRAY;
         }
     }
     .price-wrapper {
@@ -60,6 +60,9 @@
         cursor: pointer;
         font-size: 14px;
         border: 0;
+        &:hover {
+            background-color: $COLOR_DARK_GREEN;
+        }
     }
     .inactive {
         color: $COLOR_GRAY;
@@ -79,11 +82,16 @@
     .heading {
         font-weight: bold;
     }
-    .descr-wrapper .descr {
-        padding: 0 16px 0 0;
-        font-size: 16px;
-        max-width: 420px;
-        line-height: 1.4em;
+    .descr-wrapper {
+        & > div {
+            min-height: 66px;
+        }
+        .descr {
+            padding: 0 16px 0 0;
+            font-size: 16px;
+            max-width: 420px;
+            line-height: 1.4em;
+        }
     }
     .background-gray {
         padding-top: 10px;

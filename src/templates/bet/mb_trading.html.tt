@@ -84,7 +84,7 @@
                     <div class="gr-4 buy-price">[% l('Buy') %]</div>
                     <div class="gr-4 sell-price">[% l('Sell') %]</div>
                 </div>
-                <div class="gr-row price-row"></div>
+                <div class="price-rows"></div>
             </div>
         </div>
         <div class="prices-wrapper gr-6 gr-12-m gr-12-p gr-no-gutter-left">
@@ -100,7 +100,7 @@
                     <div class="gr-4 buy-price">[% l('Buy') %]</div>
                     <div class="gr-4 sell-price">[% l('Sell') %]</div>
                 </div>
-                <div class="gr-row price-row"></div>
+                <div class="price-rows"></div>
             </div>
         </div>
     </div>
