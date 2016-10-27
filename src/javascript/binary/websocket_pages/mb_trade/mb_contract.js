@@ -26,10 +26,6 @@ var MBContract = (function() {
         return dur;
     };
 
-    function japanese_client() {
-        return (page.language().toLowerCase() === 'ja' || (Cookies.get('residence') === 'jp') || localStorage.getItem('clients_country') === 'jp');
-    }
-
     var PeriodText = function(trading_period) {
         return moment.utc(trading_period.date_expiry.epoch * 1000).zone(japanese_client() ? '+09:00' : '+00:00')
                 .format("MM[" + page.text.localize('month') + "] " + "DD[" + page.text.localize('day') + "] HH:mm [(" +

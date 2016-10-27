@@ -82,6 +82,7 @@ var MBProcess = (function() {
 
         MBContract.populateOptions(contracts);
         processPriceRequest();
+        TradingAnalysis.request();
     }
 
     function processForgetProposals() {
