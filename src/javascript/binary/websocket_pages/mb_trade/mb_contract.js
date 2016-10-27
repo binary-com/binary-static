@@ -26,8 +26,12 @@ var MBContract = (function() {
         return dur;
     };
 
+    function japanese_client() {
+        return (page.language().toLowerCase() === 'ja' || (Cookies.get('residence') === 'jp') || localStorage.getItem('clients_country') === 'jp');
+    }
+
     var PeriodText = function(trading_period) {
-        return moment.utc(trading_period.date_expiry.epoch * 1000).zone('+09:00')
+        return moment.utc(trading_period.date_expiry.epoch * 1000).zone(japanese_client() ? '+09:00' : '+00:00')
                 .format("MM[" + page.text.localize('month') + "] " + "DD[" + page.text.localize('day') + "] HH:mm [(" +
                 durationText(trading_period.duration.replace('0d', '1d')) + ")]");
     };
@@ -67,17 +71,7 @@ var MBContract = (function() {
             trading_period_array.push([trading_period_text, start_end]);
         }
         trading_period_array.sort(function(a, b) {
-            var b0 = b[1].split('_')[0],
-                b1 = b[1].split('_')[1],
-                a0 = a[1].split('_')[0],
-                a1 = a[1].split('_')[1],
-                duration1 = a0 - a1,
-                duration2 = b0 - b1;
-            if (duration1 === duration2) {
-                return a0 - b0;
-            } else {
-                return duration2 - duration1;
-            }
+            return b[1].split('_')[1] < a[1].split('_')[1];
         });
         $('#period').empty();
         var default_value = MBDefaults.get('period');
