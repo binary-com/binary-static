@@ -158,17 +158,19 @@ var MBProcess = (function() {
         }
     }
 
+    var periodValue, $countDownTimer, remainingTimeElement;
     function processRemainingTime() {
-        var $periodValue = $('#period').val(),
+        if (typeof periodValue === 'undefined') {
+            periodValue = document.getElementById('period').value;
             $countDownTimer = $('.countdown-timer');
-        if (!$periodValue) return;
-        var timeLeft = parseInt($periodValue.split('_')[1]) - window.time.unix();
+            remainingTimeElement = document.getElementById('remaining-time');
+        }
+        if (!periodValue) return;
+        var timeLeft = parseInt(periodValue.split('_')[1]) - window.time.unix();
         if (timeLeft <= 0) {
             location.reload();
         } else if (timeLeft < 120) {
             $countDownTimer.addClass('alert');
-        } else {
-            $countDownTimer.removeClass('alert');
         }
         var remainingTimeString = [],
             duration = moment.duration(timeLeft * 1000);
@@ -184,7 +186,7 @@ var MBProcess = (function() {
                 remainingTimeString.push(all_durations[key] + page.text.localize('{JAPAN ONLY}' + key));
             }
         }
-        $('#remaining-time').text(remainingTimeString.join(' ').replace(/\{JAPAN ONLY\}/g, ''));
+        remainingTimeElement.innerHTML = remainingTimeString.join(' ').replace(/\{JAPAN ONLY\}/g, '');
         setTimeout(processRemainingTime, 1000);
     }
 
