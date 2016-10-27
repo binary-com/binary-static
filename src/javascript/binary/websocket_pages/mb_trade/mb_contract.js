@@ -76,6 +76,7 @@ var MBContract = (function() {
         }
         MBDefaults.set('period', $('#period').val());
         MBContract.displayDescriptions();
+        MBProcess.processRemainingTime();
     };
 
     var populateOptions = function() {

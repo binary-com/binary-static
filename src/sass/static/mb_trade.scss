@@ -163,6 +163,9 @@
             border: 1px solid $COLOR_LIGHT_GRAY;
             background: $COLOR_WHITE;
             border-radius: 3px;
+            &:focus {
+                outline: none;
+            }
         }
         .payout-input {
             position: relative;
