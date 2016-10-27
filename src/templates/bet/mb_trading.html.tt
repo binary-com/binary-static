@@ -1,7 +1,7 @@
 <div class="japan-ui">
     <div class="notifications-wrapper"></div>
     <section class="japan-form gr-row">
-        <div class="gr-6 gr-12-m gr-12-p gr-no-gutter">
+        <div class="gr-6 gr-12-m gr-12-p gr-no-gutter-right">
             <div class="gr-row">
                 <div class="gr-6 gr-no-gutter-left">
                     <div class="select-box">
@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <div class="gr-6 gr-12-m gr-12-p gr-no-gutter">
+        <div class="gr-6 gr-12-m gr-12-p gr-no-gutter-left">
             <div class="gr-row">
                 <div class="gr-6 gr-no-gutter-left">
                     <div class="select-box">
@@ -48,7 +48,7 @@
                 </div>
             </div>
         </div>
-        <div class="gr-12 gr-no-gutter">
+        <div class="gr-12">
             <div class="gr-row space-between">
                 <div class="gr-grow">
                     <div class="gr-row spot">
@@ -74,7 +74,7 @@
 
     <div class="japan-table gr-row">
         <div id="disable-overlay" class="invisible"></div>
-        <div class="prices-wrapper gr-6 gr-12-m gr-12-p gr-no-gutter-left">
+        <div class="prices-wrapper gr-6 gr-12-m gr-12-p">
             <div class="descr-wrapper">
                 <div class="background-gray row flex-box cols">
                     <h1 class="details-heading"></h1>

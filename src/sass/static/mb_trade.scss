@@ -79,11 +79,16 @@
     .heading {
         font-weight: bold;
     }
-    .descr-wrapper .descr {
-        padding: 0 16px 0 0;
-        font-size: 16px;
-        max-width: 420px;
-        line-height: 1.4em;
+    .descr-wrapper {
+        .descr {
+            padding: 0 16px 0 0;
+            font-size: 16px;
+            max-width: 420px;
+            line-height: 1.4em;
+        }
+        .background-gray {
+            min-height: 88px;
+        }
     }
     .background-gray {
         padding-top: 10px;
@@ -202,7 +207,7 @@
             padding: 0;
         }
         .gr-adapt {
-            padding: 0 0 0 10px;
+            padding: 0 0 0 15px;
         }
     }
     .spot div {
