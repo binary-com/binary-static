@@ -148,6 +148,7 @@
                 <p class="hint">[% l("Note: Scroll the table to the right to see all platforms.") %]</p>
                 <div class="outer">
                     <div class="inner">
+                        <div class="fade-to-left"></div>
                         <table>
                             <tbody>
                                 <tr>

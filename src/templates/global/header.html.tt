@@ -15,9 +15,7 @@
                             <a class="pjaxload" href="[% request.url_for('contact') %]">[% l("Contact Us") %]</a>
                         </div>
                         <div class='gr-4 gr-5-m'>
-                            <div class="[% language %]" id='language_select'>
-                                [% INCLUDE global/language_form.html.tt %]
-                            </div>
+                            <select class="[% language %] invisible" id='language_select'></select>
                         </div>
                     </div>
                 </div>

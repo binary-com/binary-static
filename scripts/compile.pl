@@ -11,7 +11,7 @@ use HTML::Entities qw( encode_entities );
 use Encode;
 use Term::ANSIColor;
 
-use BS qw/set_is_dev is_dev branch set_branch localize set_lang all_languages lang_display_name tt2 css_files js_config menu get_static_hash set_static_hash/;
+use BS qw/set_is_dev is_dev branch set_branch localize set_lang all_languages tt2 css_files js_config menu get_static_hash set_static_hash/;
 use BS::Request;
 
 require "config/pages.pl";
@@ -163,10 +163,7 @@ sub tt2_handle {
     $stash{menu}             = menu();
     $stash{is_japan}         = 1 if index($stash{current_path}, 'jptrading') > -1;
 
-    ## global/language_form.html.tt
-    $stash{language_options} = [
-        map { {code => $_, text => decode_utf8(lang_display_name($_)), value => uc($_), selected => uc($stash{iso639a_language}) eq uc($_) ? 1 : 0,} }
-            all_languages()];
+    $stash{language_options} = [all_languages()];
 
     my $output = '';
     $tt2->process($file, \%stash, \$output) or die $tt2->error(), "\n";
