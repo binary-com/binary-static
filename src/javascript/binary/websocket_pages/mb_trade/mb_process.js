@@ -5,6 +5,10 @@ var MBProcess = (function() {
      */
     function processActiveSymbols(data) {
         'use strict';
+        if (data.hasOwnProperty('error')) {
+            showErrorMessage($('#content .container').empty(), data.error.message);
+            return;
+        }
 
         // populate the Symbols object
         MBSymbols.details(data);
@@ -61,6 +65,10 @@ var MBProcess = (function() {
      */
     function processTick(tick) {
         'use strict';
+        if (tick.hasOwnProperty('error')) {
+            showErrorMessage($('#content .container .japan-ui'), tick.error.message);
+            return;
+        }
         var symbol = MBDefaults.get('underlying');
         if(tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)){
             MBTick.details(tick);
@@ -74,6 +82,11 @@ var MBProcess = (function() {
      */
     function processContract(contracts) {
         'use strict';
+
+        if (contracts.hasOwnProperty('error')) {
+            showErrorMessage($('#content .container').empty(), contracts.error.message);
+            return;
+        }
 
         window.chartAllowed = true;
         if (contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly') {
@@ -146,13 +159,16 @@ var MBProcess = (function() {
     }
 
     function processRemainingTime() {
-        var timeLeft = parseInt($('#period').val().split('_')[1]) - window.time.unix();
+        var $periodValue = $('#period').val(),
+            $countDownTimer = $('.countdown-timer');
+        if (!$periodValue) return;
+        var timeLeft = parseInt($periodValue.split('_')[1]) - window.time.unix();
         if (timeLeft <= 0) {
             location.reload();
         } else if (timeLeft < 120) {
-            $('.countdown-timer').addClass('alert');
+            $countDownTimer.addClass('alert');
         } else {
-            $('.countdown-timer').removeClass('alert');
+            $countDownTimer.removeClass('alert');
         }
         var remainingTimeString = [],
             duration = moment.duration(timeLeft * 1000);
@@ -172,6 +188,10 @@ var MBProcess = (function() {
         setTimeout(processRemainingTime, 1000);
     }
 
+    function showErrorMessage($element, text, addClass) {
+        $element.prepend('<p class="notice-msg center-text ' + (addClass ? addClass : '') + '">' + text + '</p>');
+    }
+
     return {
         processActiveSymbols: processActiveSymbols,
         processMarketUnderlying: processMarketUnderlying,
@@ -179,7 +199,7 @@ var MBProcess = (function() {
         processContract: processContract,
         processPriceRequest: processPriceRequest,
         processProposal: processProposal,
-        processRemainingTime: processRemainingTime
+        processRemainingTime: processRemainingTime,
     };
 })();
 
