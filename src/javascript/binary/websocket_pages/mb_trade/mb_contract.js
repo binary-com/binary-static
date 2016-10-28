@@ -8,7 +8,16 @@ var MBContract = (function() {
     var contracts_for_response;
 
     var getContracts = function(underlying) {
-        BinarySocket.send({ contracts_for: underlying, currency: (TUser.get().currency || 'JPY'), region: 'japan' });
+        var req = {
+            contracts_for: (underlying || MBDefaults.get('underlying')),
+            currency: (TUser.get().currency || 'JPY'),
+            region: 'japan'
+        };
+        if (!underlying) {
+            req.passthrough = {action: 'no-proposal'};
+        }
+        BinarySocket.send(req);
+        setTimeout(getContracts, 15000);
     };
 
     var durationText = function(dur) {

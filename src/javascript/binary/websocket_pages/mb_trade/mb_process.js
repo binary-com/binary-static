@@ -94,6 +94,11 @@ var MBProcess = (function() {
         }
 
         MBContract.populateOptions(contracts);
+        if (contracts.hasOwnProperty('passthrough') &&
+            contracts.passthrough.hasOwnProperty('action') &&
+            contracts.passthrough.action === 'no-proposal') {
+                return;
+            }
         processPriceRequest();
         TradingAnalysis.request();
     }
