@@ -45,7 +45,7 @@ var MBTradingEvents = (function () {
         if (categoryElement) {
             categoryElement.addEventListener('change', function(e) {
                 MBDefaults.set('category', e.target.value);
-                MBContract.populatePeriods();
+                MBContract.populatePeriods('rebuild');
                 MBProcess.processPriceRequest();
                 TradingAnalysis.request();
             });
@@ -89,6 +89,14 @@ var MBTradingEvents = (function () {
             }));
             payoutElement.addEventListener('click', function() {
                 this.select();
+            });
+        }
+
+        var currencyElement = document.getElementById('currency');
+        if (currencyElement) {
+            currencyElement.addEventListener('change', function(e) {
+                MBProcess.processPriceRequest();
+                MBContract.displayDescriptions();
             });
         }
     };

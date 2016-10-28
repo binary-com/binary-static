@@ -193,6 +193,10 @@
             .hint, span, label {
                 font-size: 10px;
             }
+            select#currency {
+                margin: 6px 0;
+                width: auto;
+            }
         }
         .payout-select {
             display: inline;
@@ -246,6 +250,11 @@
             padding-right: 10px;
         }
     }
+}
+
+.center-text .spinner {
+    width: 160px;
+    height: 160px;
 }
 
 #trading_bottom_content #tab_portfolio-content {

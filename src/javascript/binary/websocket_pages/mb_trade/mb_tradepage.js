@@ -4,9 +4,9 @@ var MBTradePage = (function(){
 
   var onLoad = function(){
     trading_page = 1;
-    /*if(sessionStorage.getItem('currencies')){
-      displayCurrencies();
-    }*/
+    if (sessionStorage.getItem('currencies')) {
+      displayCurrencies('', false);
+    }
     BinarySocket.init({
       onmessage: function(msg){
         MBMessage.process(msg);
@@ -19,12 +19,12 @@ var MBTradePage = (function(){
     }
     Content.populate();
 
-    /*if (sessionStorage.getItem('currencies')){
-      displayCurrencies();
+    if (sessionStorage.getItem('currencies')) {
+      displayCurrencies('', false);
       MBSymbols.getSymbols(1);
     } else {
       BinarySocket.send({ payout_currencies: 1 });
-    }*/
+    }
 
     /*if (document.getElementById('websocket_form')) {
         addEventListenerForm();
@@ -36,7 +36,7 @@ var MBTradePage = (function(){
     $('#tab_portfolio a').text(page.text.localize('Portfolio'));
     $('#tab_graph a').text(page.text.localize('Chart'));
     $('#tab_explanation a').text(page.text.localize('Explanation'));
-    document.getElementById('remaining-time-label').innerHTML = MBProcess.removeJapanOnlyText(page.text.localize('{JAPAN ONLY}Remaining time'));
+    $('#remaining-time-label').text(page.text.localize('Remaining time'));
     window.chartAllowed = true;
   };
 

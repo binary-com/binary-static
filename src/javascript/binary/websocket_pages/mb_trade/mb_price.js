@@ -10,13 +10,14 @@
 var MBPrice = (function() {
     'use strict';
 
-    var prices         = {},
-        contract_types = {},
-        barriers       = [],
-        req_id         = 0,
-        res_count      = 0,
-        is_displayed   = false,
-        price_selector = '.prices-wrapper .price-rows',
+    var prices            = {},
+        contract_types    = {},
+        barriers          = [],
+        req_id            = 0,
+        res_count         = 0,
+        is_displayed      = false,
+        price_selector    = '.prices-wrapper .price-rows',
+        proposal_response = {},
         $tables;
 
     var addPriceObj = function(req) {
@@ -75,6 +76,8 @@ var MBPrice = (function() {
             });
         });
 
+        MBPrice.hidePriceOverlay();
+        hideSpinnerShowTrading();
         is_displayed = true;
     };
 
@@ -151,7 +154,7 @@ var MBPrice = (function() {
         var proposal = prices[barrier][contract_type];
         if (!proposal || proposal.error) return;
 
-        BinarySocket.send({
+        var req = {
             buy   : 1,
             price : proposal.proposal.ask_price,
             parameters: {
@@ -159,13 +162,19 @@ var MBPrice = (function() {
                 barrier       : proposal.echo_req.barrier,
                 basis         : 'payout',
                 contract_type : proposal.echo_req.contract_type,
-                currency      : japanese_client() ? 'JPY' : TUser.get().currency,
+                currency      : MBContract.getCurrency(),
                 symbol        : proposal.echo_req.symbol,
                 date_expiry   : proposal.echo_req.date_expiry,
                 trading_period_start  : proposal.echo_req.trading_period_start,
                 app_markup_percentage : '0',
             }
-        });
+        };
+
+        if (proposal.echo_req.barrier2) {
+            req.parameters.barrier2 = proposal.echo_req.barrier2;
+        }
+
+        BinarySocket.send(req);
     };
 
     var showPriceOverlay = function() {
@@ -176,15 +185,34 @@ var MBPrice = (function() {
         $('#disable-overlay').addClass('invisible');
     };
 
+    var hideSpinnerShowTrading = function() {
+        $('.spinner').addClass('invisible');
+        $('.mb-trading-wrapper').removeClass('invisible');
+    };
+
+    var setProposalResponse = function(response) {
+        if (response.hasOwnProperty('error') || !response.proposal.id || !response.proposal.spot ||
+            !response.hasOwnProperty('echo_req') || !response.echo_req.hasOwnProperty('barrier')) return;
+        var barrier = makeBarrier(response.echo_req);
+        if (req_id !== response.req_id) {
+            proposal_response = {};
+        }
+        if (!proposal_response[barrier]) {
+            proposal_response[barrier] = response.proposal.id;
+        }
+    };
+
     return {
-        display          : display,
-        addPriceObj      : addPriceObj,
-        cleanup          : cleanup,
-        sendBuyRequest   : sendBuyRequest,
-        showPriceOverlay : showPriceOverlay,
-        hidePriceOverlay : hidePriceOverlay,
-        getReqId         : function() { return req_id; },
-        increaseReqId    : function() { req_id++; cleanup(); },
+        display             : display,
+        addPriceObj         : addPriceObj,
+        cleanup             : cleanup,
+        sendBuyRequest      : sendBuyRequest,
+        showPriceOverlay    : showPriceOverlay,
+        hidePriceOverlay    : hidePriceOverlay,
+        getReqId            : function() { return req_id; },
+        increaseReqId       : function() { req_id++; cleanup(); },
+        getProposalResponse : function() { return proposal_response; },
+        setProposalResponse : setProposalResponse,
     };
 })();
 

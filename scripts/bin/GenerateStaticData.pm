@@ -127,6 +127,8 @@ sub _texts {
         push @texts, localize('years');
         push @texts, localize('month');
         push @texts, localize('months');
+        push @texts, localize('weeks');
+        push @texts, localize('week');
         push @texts, localize('day');
         push @texts, localize('hour');
         push @texts, localize('minute');
@@ -263,6 +265,7 @@ sub _texts {
         push @texts, localize('Stays In/Goes Out');
         push @texts, localize('Waiting for entry tick.');
         push @texts, localize('Refresh page');
+        push @texts, localize('Please log in.');
 
         #strings for limitsws page
         push @texts, localize('Trading and Withdrawal Limits');
@@ -595,18 +598,6 @@ sub _texts {
         push @texts, localize('{JAPAN ONLY}TOUCH /NO-TOUCH');
         push @texts, localize('{JAPAN ONLY}END-IN/END-OUT');
         push @texts, localize('{JAPAN ONLY}STAY-IN/BREAK-OUT');
-        push @texts, localize('{JAPAN ONLY}minute');
-        push @texts, localize('{JAPAN ONLY}minutes');
-        push @texts, localize('{JAPAN ONLY}hour');
-        push @texts, localize('{JAPAN ONLY}hours');
-        push @texts, localize('{JAPAN ONLY}day');
-        push @texts, localize('{JAPAN ONLY}days');
-        push @texts, localize('{JAPAN ONLY}week');
-        push @texts, localize('{JAPAN ONLY}weeks');
-        push @texts, localize('{JAPAN ONLY}month');
-        push @texts, localize('{JAPAN ONLY}months');
-        push @texts, localize('{JAPAN ONLY}year');
-        push @texts, localize('{JAPAN ONLY}years');
         push @texts, localize('{JAPAN ONLY}Higher');
         push @texts, localize('{JAPAN ONLY}Lower');
         push @texts, localize('{JAPAN ONLY}Touches');
@@ -619,7 +610,7 @@ sub _texts {
         push @texts, localize('{JAPAN ONLY}Option Type');
         push @texts, localize('{JAPAN ONLY}Trading Period');
         push @texts, localize('{JAPAN ONLY}Payout Amount');
-        push @texts, localize('{JAPAN ONLY}Remaining time');
+        push @texts, localize('Remaining time');
         push @texts, localize('You need to finish all 20 questions.');
         push @texts, localize('Weekday');
         push @texts, localize('This contract can not be traded in the final 2 minutes before settlement');
