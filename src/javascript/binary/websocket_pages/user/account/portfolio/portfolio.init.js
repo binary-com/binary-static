@@ -182,7 +182,7 @@ var PortfolioWS =  (function() {
     };
 
     var errorMessage = function(msg) {
-        var $err = $('#portfolio #err-msg');
+        var $err = $('#portfolio #error-msg');
         if(msg) {
             $err.removeClass(hidden_class).text(msg);
         } else {

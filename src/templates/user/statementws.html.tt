@@ -2,7 +2,7 @@
     <div class="page-title" id="statement-title">
         <h1>[% l('Statement') %]</h1>
         <br>
-        <p class="notice-msg center-text invisible" id="err-msg"></p>
+        <p class="notice-msg center-text invisible" id="error-msg"></p>
     </div>
     <div class="gr-row gr-padding-10 invisible">
         <div class="gr-6 gr-12-m">

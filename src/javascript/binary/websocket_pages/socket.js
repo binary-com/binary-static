@@ -107,7 +107,10 @@ function BinarySocketClass() {
             }
 
             if (isReady()) {
-                if (!Login.is_login_pages()) page.header.validate_cookies();
+                if (!Login.is_login_pages()) {
+                    page.header.validate_cookies();
+                    binarySocket.send(JSON.stringify({website_status: 1}));
+                }
                 if (!getClockStarted()) page.header.start_clock_ws();
             }
         };
@@ -151,12 +154,15 @@ function BinarySocketClass() {
                             send({balance:1, subscribe: 1});
                             send({get_settings: 1});
                             send({get_account_status: 1});
-                            send({website_status: 1});
                             if (Cookies.get('residence')) send({landing_company: Cookies.get('residence')});
                             if(!page.client.is_virtual()) {
                                 send({get_self_exclusion: 1});
                             } else {
                                 Cashier.check_virtual_top_up();
+                            }
+                            page.client.set_storage_value('landing_company_name', response.authorize.landing_company_fullname);
+                            if (/tnc_approvalws/.test(window.location.pathname)) {
+                                TNCApproval.showTNC();
                             }
                         }
                         sendBufferedSends();
@@ -173,6 +179,7 @@ function BinarySocketClass() {
                     page.contents.topbar_message_visibility(response.landing_company);
                     var company;
                     if (response.hasOwnProperty('error')) return;
+                    TUser.extend({'landing_company': response.landing_company});
                     for (var key in response.landing_company) {
                         if (TUser.get().landing_company_name === response.landing_company[key].shortcode) {
                             company = response.landing_company[key];
@@ -181,10 +188,6 @@ function BinarySocketClass() {
                     }
 
                     if (company) {
-                        page.client.set_storage_value('landing_company_name', company.name);
-                        if (/tnc_approvalws/.test(window.location.pathname)) {
-                            TNCApproval.showTNC();
-                        }
                         if (company.has_reality_check) {
                             page.client.response_landing_company(company);
                             var currentData = TUser.get();
@@ -231,6 +234,7 @@ function BinarySocketClass() {
                     page.client.response_get_settings(response);
                 } else if (type === 'website_status') {
                     if(!response.hasOwnProperty('error')) {
+                        create_language_drop_down(response.website_status.supported_languages);
                         LocalStore.set('website.tnc_version', response.website_status.terms_conditions_version);
                         if (!localStorage.getItem('risk_classification')) page.client.check_tnc();
                         if (response.website_status.hasOwnProperty('clients_country')) {
