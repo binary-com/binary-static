@@ -200,7 +200,7 @@ var MBProcess = (function() {
     function processBuy(barrier, contract_type) {
         if (!barrier || !contract_type) return;
         if (!page.client.is_logged_in) {
-            return showErrorMessage($('#content .container'), page.text.localize('Please log in.'));
+            return showErrorMessage($('.notifications-wrapper'), page.text.localize('Please log in.'));
         }
         MBPrice.showPriceOverlay();
         MBPrice.sendBuyRequest(barrier, contract_type);

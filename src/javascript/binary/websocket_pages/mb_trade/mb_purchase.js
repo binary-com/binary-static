@@ -9,7 +9,7 @@ var MBPurchase = (function () {
     var display = function (response) {
         if (response.error) {
             MBPrice.hidePriceOverlay();
-            MBProcess.showErrorMessage($('#content .container'), response.error.message);
+            MBProcess.showErrorMessage($('.notifications-wrapper'), response.error.message);
         } else {
             ViewPopupWS.init($('<div />', { contract_id: response.buy.contract_id }).get(0));
         }
