@@ -187,25 +187,23 @@ var MBProcess = (function() {
             $countDownTimer.addClass('alert');
         }
         var remainingTimeString = [],
-            duration = moment.duration(timeLeft * 1000);
+            duration = moment.duration(timeLeft * 1000),
+            singlePeriod;
         var all_durations = {
-            months  : duration.months(),
-            days    : duration.days(),
-            hours   : duration.hours(),
-            minutes : duration.minutes(),
-            seconds : duration.seconds()
+            month  : duration.months(),
+            day    : duration.days(),
+            hour   : duration.hours(),
+            minute : duration.minutes(),
+            second : duration.seconds()
         };
         for (var key in all_durations) {
             if (all_durations[key]) {
-                remainingTimeString.push(all_durations[key] + removeJapanOnlyText(page.text.localize((key === 'seconds' ? '' : '{JAPAN ONLY}') + key)));
+                singlePeriod = all_durations[key] === 1;
+                remainingTimeString.push(all_durations[key] + page.text.localize((key + (singlePeriod ? '' : 's' ))));
             }
         }
-        remainingTimeElement.innerHTML = removeJapanOnlyText(remainingTimeString.join(' '));
+        remainingTimeElement.innerHTML = remainingTimeString.join(' ');
         setTimeout(processRemainingTime, 1000);
-    }
-
-    function removeJapanOnlyText(string) {
-        return string.replace(/\{JAPAN ONLY\}/g, '');
     }
 
     function showErrorMessage($element, text, addClass) {
@@ -272,7 +270,6 @@ var MBProcess = (function() {
         processPriceRequest    : processPriceRequest,
         processProposal        : processProposal,
         processRemainingTime   : processRemainingTime,
-        removeJapanOnlyText    : removeJapanOnlyText,
         showErrorMessage       : showErrorMessage,
         processBuy             : processBuy,
     };

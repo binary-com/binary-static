@@ -36,7 +36,7 @@ var MBTradePage = (function(){
     $('#tab_portfolio a').text(page.text.localize('Portfolio'));
     $('#tab_graph a').text(page.text.localize('Chart'));
     $('#tab_explanation a').text(page.text.localize('Explanation'));
-    document.getElementById('remaining-time-label').innerHTML = MBProcess.removeJapanOnlyText(page.text.localize('{JAPAN ONLY}Remaining time'));
+    $('#remaining-time-label').text(page.text.localize('Remaining time'));
     window.chartAllowed = true;
   };
 
