@@ -97,6 +97,7 @@ var MBProcess = (function() {
                         contracts.passthrough.action === 'no-proposal';
         MBContract.populateOptions((noRebuild ? null : 'rebuild'));
         if (noRebuild) {
+            processExpiredBarriers();
             return;
         }
         processPriceRequest();
@@ -139,17 +140,18 @@ var MBProcess = (function() {
                 if (available_contracts[i].barriers == 2) {
                     req.barrier = barriers_array[j][1];
                     req.barrier2 = barriers_array[j][0];
-                    if (available_contracts[i].expired_barriers.indexOf((req.barrier2).toString()) > -1) {
+                    if (barrierHasExpired(available_contracts[i].expired_barriers, req.barrier, req.barrier2)) {
                         continue;
                     }
                 } else {
                     req.barrier = barriers_array[j];
+                    if (barrierHasExpired(available_contracts[i].expired_barriers, req.barrier)) {
+                        continue;
+                    }
                 }
-                if (available_contracts[i].expired_barriers.indexOf((req.barrier).toString()) < 0) {
-                    all_expired = false;
-                    MBPrice.addPriceObj(req);
-                    BinarySocket.send(req);
-                }
+                all_expired = false;
+                MBPrice.addPriceObj(req);
+                BinarySocket.send(req);
             }
         }
         if (all_expired) {
@@ -221,6 +223,46 @@ var MBProcess = (function() {
         MBPrice.showPriceOverlay();
         MBPrice.sendBuyRequest(barrier, contract_type);
     }
+
+    var processExpiredBarriers = function() {
+        var contracts = MBContract.getCurrentContracts(),
+            i, expired_barrier, expired_barrier_element;
+        contracts.forEach(function(c) {
+            var expired_barriers = c.expired_barriers;
+            for (i = 0; i < c.expired_barriers.length; i++) {
+                if (c.barriers == 2) {
+                    $expired_barrier = c.expired_barriers[i][0] + '_' + c.expired_barriers[i][1];
+                } else {
+                    $expired_barrier = c.expired_barriers[i];
+                }
+                $expired_barrier_element = $('div [data-barrier="' + $expired_barrier + '"]');
+                if ($expired_barrier_element.length > 0) {
+                    processForgetProposal($expired_barrier);
+                    $expired_barrier_element.remove();
+                }
+            }
+        });
+    };
+
+    var barrierHasExpired = function(expired_barriers, barrier, barrier2) {
+        if (barrier2) {
+            return containsArray(expired_barriers, [[barrier2, barrier]]);
+        }
+        return (expired_barriers.indexOf((barrier).toString()) > -1);
+    };
+
+    function processForgetProposal(expired_barrier) {
+        var proposal = MBPrice.getProposalResponse();
+        BinarySocket.send({forget: proposal[expired_barrier]});
+    }
+
+    var containsArray = function(array, val) {
+        var hash = {};
+        for(var i = 0; i < array.length; i++) {
+            hash[array[i]] = i;
+        }
+        return hash.hasOwnProperty(val);
+    };
 
     return {
         processActiveSymbols   : processActiveSymbols,

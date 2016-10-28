@@ -23,6 +23,7 @@ var MBMessage = (function () {
                 displayCurrencies();
                 MBSymbols.getSymbols(1);
             } else if (type === 'proposal') {
+                MBPrice.setProposalResponse(response);
                 MBProcess.processProposal(response);
             } else if (type === 'buy') {
                 MBPurchase.display(response);

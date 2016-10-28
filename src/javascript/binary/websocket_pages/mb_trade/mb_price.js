@@ -10,13 +10,14 @@
 var MBPrice = (function() {
     'use strict';
 
-    var prices         = {},
-        contract_types = {},
-        barriers       = [],
-        req_id         = 0,
-        res_count      = 0,
-        is_displayed   = false,
-        price_selector = '.prices-wrapper .price-rows',
+    var prices            = {},
+        contract_types    = {},
+        barriers          = [],
+        req_id            = 0,
+        res_count         = 0,
+        is_displayed      = false,
+        price_selector    = '.prices-wrapper .price-rows',
+        proposal_response = {},
         $tables;
 
     var addPriceObj = function(req) {
@@ -182,15 +183,29 @@ var MBPrice = (function() {
         $('.mb-trading-wrapper').removeClass('invisible');
     };
 
+    var setProposalResponse = function(response) {
+        if (response.hasOwnProperty('error') || !response.proposal.id || !response.proposal.spot ||
+            !response.hasOwnProperty('echo_req') || !response.echo_req.hasOwnProperty('barrier')) return;
+        var barrier = makeBarrier(response.echo_req);
+        if (req_id !== response.req_id) {
+            proposal_response = {};
+        }
+        if (!proposal_response[barrier]) {
+            proposal_response[barrier] = response.proposal.id;
+        }
+    };
+
     return {
-        display          : display,
-        addPriceObj      : addPriceObj,
-        cleanup          : cleanup,
-        sendBuyRequest   : sendBuyRequest,
-        showPriceOverlay : showPriceOverlay,
-        hidePriceOverlay : hidePriceOverlay,
-        getReqId         : function() { return req_id; },
-        increaseReqId    : function() { req_id++; cleanup(); },
+        display             : display,
+        addPriceObj         : addPriceObj,
+        cleanup             : cleanup,
+        sendBuyRequest      : sendBuyRequest,
+        showPriceOverlay    : showPriceOverlay,
+        hidePriceOverlay    : hidePriceOverlay,
+        getReqId            : function() { return req_id; },
+        increaseReqId       : function() { req_id++; cleanup(); },
+        getProposalResponse : function() { return proposal_response; },
+        setProposalResponse : setProposalResponse,
     };
 })();
 
