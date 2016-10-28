@@ -134,10 +134,12 @@ var MBContract = (function() {
         }
     };
 
-    var populateOptions = function() {
+    var populateOptions = function(rebuild) {
+        if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return;
         var category,
             contracts_array = [],
-            available_contracts = contracts_for_response.contracts_for.available;
+            available_contracts = contracts_for_response.contracts_for.available,
+            $categoryElement = $('#category');
         var categoryNames = {
             callput: page.text.localize('{JAPAN ONLY}HIGH/LOW'),
             touchnotouch: page.text.localize('{JAPAN ONLY}TOUCH/NO-TOUCH'),
@@ -159,16 +161,21 @@ var MBContract = (function() {
         contracts_array.sort(function(a, b){
             return categoryOrder[a] - categoryOrder[b];
         });
-        $('#category').empty();
-        var default_value = MBDefaults.get('category');
-        for (var j = 0; j < contracts_array.length; j++) {
-            appendTextValueChild(document.getElementById('category'), MBProcess.removeJapanOnlyText(categoryNames[contracts_array[j]]), contracts_array[j], contracts_array[j] == default_value);
+        if (rebuild) {
+            $categoryElement.empty();
         }
-        MBDefaults.set('category', $('#category').val());
-        populatePeriods();
+        if ($categoryElement.children().length === 0) {
+            var default_value = MBDefaults.get('category');
+            for (var j = 0; j < contracts_array.length; j++) {
+                appendTextValueChild(document.getElementById('category'), MBProcess.removeJapanOnlyText(categoryNames[contracts_array[j]]), contracts_array[j], contracts_array[j] == default_value);
+            }
+            MBDefaults.set('category', $('#category').val());
+            populatePeriods();
+        }
     };
 
     var getCurrentContracts = function() {
+        if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return;
         var contracts = [],
             category  = MBDefaults.get('category'),
             periods   = MBDefaults.get('period').split('_');

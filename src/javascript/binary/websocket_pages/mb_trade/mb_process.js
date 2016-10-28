@@ -92,13 +92,13 @@ var MBProcess = (function() {
         if (contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly') {
             window.chartAllowed = false;
         }
-
-        MBContract.populateOptions(contracts);
-        if (contracts.hasOwnProperty('passthrough') &&
-            contracts.passthrough.hasOwnProperty('action') &&
-            contracts.passthrough.action === 'no-proposal') {
-                return;
-            }
+        var noRebuild = contracts.hasOwnProperty('passthrough') &&
+                        contracts.passthrough.hasOwnProperty('action') &&
+                        contracts.passthrough.action === 'no-proposal';
+        MBContract.populateOptions((noRebuild ? null : 'rebuild'));
+        if (noRebuild) {
+            return;
+        }
         processPriceRequest();
         TradingAnalysis.request();
     }
@@ -130,7 +130,7 @@ var MBProcess = (function() {
             date_expiry: durations[1],
             trading_period_start: durations[0],
         };
-        var barriers_array, i, j, barrier_count;
+        var barriers_array, i, j, barrier_count, all_expired = true;
         for (i = 0; i < available_contracts.length; i++) {
             req.contract_type = available_contracts[i].contract_type;
             barrier_count = available_contracts[i].barriers == 2 ? 2 : 1;
@@ -146,10 +146,18 @@ var MBProcess = (function() {
                     req.barrier = barriers_array[j];
                 }
                 if (available_contracts[i].expired_barriers.indexOf((req.barrier).toString()) < 0) {
+                    all_expired = false;
                     MBPrice.addPriceObj(req);
                     BinarySocket.send(req);
                 }
             }
+        }
+        if (all_expired) {
+            if ($('.all-expired-error').length === 0){
+                showErrorMessage($('.notifications-wrapper'), page.text.localize('All barriers in this trading window are expired') + '.', 'all-expired-error');
+            }
+        } else {
+            $('.all-expired-error').remove();
         }
     }
 

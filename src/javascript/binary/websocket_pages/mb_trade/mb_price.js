@@ -75,6 +75,7 @@ var MBPrice = (function() {
             });
         });
 
+        hideSpinnerShowTrading();
         is_displayed = true;
     };
 
@@ -174,6 +175,11 @@ var MBPrice = (function() {
 
     var hidePriceOverlay = function() {
         $('#disable-overlay').addClass('invisible');
+    };
+
+    var hideSpinnerShowTrading = function() {
+        $('.spinner').addClass('invisible');
+        $('.mb-trading-wrapper').removeClass('invisible');
     };
 
     return {
