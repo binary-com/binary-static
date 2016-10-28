@@ -76,6 +76,7 @@ var MBPrice = (function() {
             });
         });
 
+        MBPrice.hidePriceOverlay();
         hideSpinnerShowTrading();
         is_displayed = true;
     };
@@ -153,7 +154,7 @@ var MBPrice = (function() {
         var proposal = prices[barrier][contract_type];
         if (!proposal || proposal.error) return;
 
-        BinarySocket.send({
+        var req = {
             buy   : 1,
             price : proposal.proposal.ask_price,
             parameters: {
@@ -167,7 +168,13 @@ var MBPrice = (function() {
                 trading_period_start  : proposal.echo_req.trading_period_start,
                 app_markup_percentage : '0',
             }
-        });
+        };
+
+        if (proposal.echo_req.barrier2) {
+            req.parameters.barrier2 = proposal.echo_req.barrier2;
+        }
+
+        BinarySocket.send(req);
     };
 
     var showPriceOverlay = function() {

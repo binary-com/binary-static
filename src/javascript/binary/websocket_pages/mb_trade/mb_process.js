@@ -168,7 +168,7 @@ var MBProcess = (function() {
         var req_id = MBPrice.getReqId();
         if(response.req_id === req_id){
             MBPrice.display(response);
-            MBPrice.hidePriceOverlay();
+            //MBPrice.hidePriceOverlay();
         }
     }
 
