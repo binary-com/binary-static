@@ -63,7 +63,7 @@ var MBPrice = (function() {
         }
         if (!barriers.length) {
             barriers = Object.keys(prices).sort(function(a, b) {
-                return +(a.split('_')[1] || a) - (+(b.split('_')[1] || b));
+                return +b.split('_')[0] - (+a.split('_')[0]);
             });
         }
 
