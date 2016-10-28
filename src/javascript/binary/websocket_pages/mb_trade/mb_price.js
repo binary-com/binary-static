@@ -162,7 +162,7 @@ var MBPrice = (function() {
                 barrier       : proposal.echo_req.barrier,
                 basis         : 'payout',
                 contract_type : proposal.echo_req.contract_type,
-                currency      : japanese_client() ? 'JPY' : TUser.get().currency,
+                currency      : MBContract.getCurrency(),
                 symbol        : proposal.echo_req.symbol,
                 date_expiry   : proposal.echo_req.date_expiry,
                 trading_period_start  : proposal.echo_req.trading_period_start,

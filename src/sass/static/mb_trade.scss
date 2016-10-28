@@ -193,6 +193,10 @@
             .hint, span, label {
                 font-size: 10px;
             }
+            select#currency {
+                margin: 6px 0;
+                width: auto;
+            }
         }
         .payout-select {
             display: inline;

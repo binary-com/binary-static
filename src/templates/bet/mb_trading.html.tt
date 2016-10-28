@@ -41,11 +41,11 @@
                                 <div class="select-heading">[% l('Payout Amount') %]</div>
                                 <div class="payout-input">
                                     <div class="float-left">
-                                        <span id="currency">✕</span>
+                                        <select class="select" id="currency"></select>
                                         <input type="text" class="payout-select select" id="payout">
-                                        <label class="payout-mult" for="payout">[% l(',000') %]</label>
+                                        <label class="payout-mult all-hide ja-show" for="payout">[% l(',000') %]</label>
                                     </div>
-                                    <div class="float-left hint">[% l('min: 1,000') %]<br>[% l('max: 100,000') %]</div>
+                                    <div class="float-left hint all-hide ja-show">[% l('min: 1,000') %]<br>[% l('max: 100,000') %]</div>
                                 </div>
                             </div>
                         </div>

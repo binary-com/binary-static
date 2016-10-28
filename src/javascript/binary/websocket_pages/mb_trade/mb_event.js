@@ -91,6 +91,14 @@ var MBTradingEvents = (function () {
                 this.select();
             });
         }
+
+        var currencyElement = document.getElementById('currency');
+        if (currencyElement) {
+            currencyElement.addEventListener('change', function(e) {
+                MBProcess.processPriceRequest();
+                MBContract.displayDescriptions();
+            });
+        }
     };
 
     return {

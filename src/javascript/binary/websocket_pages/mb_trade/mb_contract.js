@@ -10,7 +10,7 @@ var MBContract = (function() {
     var getContracts = function(underlying) {
         var req = {
             contracts_for: (underlying || MBDefaults.get('underlying')),
-            currency: (TUser.get().currency || 'JPY'),
+            currency: getCurrency(),
             region: 'japan'
         };
         if (!underlying) {
@@ -247,8 +247,8 @@ var MBContract = (function() {
     var displayDescriptions = function() {
         var contracts = getCurrentContracts(),
             $desc_wrappers = $('.prices-wrapper'),
-            currency = '¥',
-            payout = Number(MBDefaults.get('payout') * 1000).toLocaleString(),
+            currency = (format_currency(TUser.get().currency) || format_currency(document.getElementById('currency').value) || '¥'),
+            payout = Number(MBDefaults.get('payout') * (japanese_client() ? 1000 : 1)).toLocaleString(),
             display_name = MBSymbols.getName(contracts[0].underlying_symbol),
             date_expiry = PeriodText(contracts[0].trading_period).replace(/\s\(.*\)/, '');
         contracts.forEach(function(c) {
@@ -256,8 +256,12 @@ var MBContract = (function() {
                 template = getTemplate(contract_type),
                 $wrapper = $($desc_wrappers[template.order]);
             $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(page.text.localize(template.name));
-            $wrapper.find('.descr').text(page.text.localize(template.description, [currency, payout, display_name, date_expiry]));
+            $wrapper.find('.descr').text(page.text.localize(template.description, [currency + payout, display_name, date_expiry]));
         });
+    };
+
+    var getCurrency = function() {
+         return (TUser.get().currency || document.getElementById('currency').value || 'JPY');
     };
 
     return {
@@ -269,6 +273,7 @@ var MBContract = (function() {
         displayDescriptions : displayDescriptions,
         getContractsResponse: function() { return contracts_for_response; },
         setContractsResponse: function(contracts_for) { contracts_for_response = contracts_for; },
+        getCurrency: getCurrency,
     };
 })();
 
