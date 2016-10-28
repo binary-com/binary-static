@@ -139,13 +139,13 @@ var MBProcess = (function() {
                 if (available_contracts[i].barriers == 2) {
                     req.barrier = barriers_array[j][1];
                     req.barrier2 = barriers_array[j][0];
-                    if (available_contracts[i].expired_barriers.indexOf(req.barrier2) > -1) {
+                    if (available_contracts[i].expired_barriers.indexOf((req.barrier2).toString()) > -1) {
                         continue;
                     }
                 } else {
                     req.barrier = barriers_array[j];
                 }
-                if (available_contracts[i].expired_barriers.indexOf(req.barrier) < 0) {
+                if (available_contracts[i].expired_barriers.indexOf((req.barrier).toString()) < 0) {
                     MBPrice.addPriceObj(req);
                     BinarySocket.send(req);
                 }
