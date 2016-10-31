@@ -172,6 +172,7 @@ var MBProcess = (function() {
         }
         if (all_expired) {
             MBNotifications.show({text: page.text.localize('All barriers in this trading window are expired') + '.', uid: 'ALL_EXPIRED'});
+            MBPrice.hidePriceOverlay();
         } else {
             MBNotifications.hide('ALL_EXPIRED');
         }
