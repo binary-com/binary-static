@@ -6,7 +6,7 @@ var MBProcess = (function() {
     function processActiveSymbols(data) {
         'use strict';
         if (data.hasOwnProperty('error')) {
-            showErrorMessage($('#content .container #mb_trading'), data.error.message);
+            MBNotifications.show({text: data.error.message, uid: 'ACTIVE_SYMBOLS'});
             return;
         }
 
@@ -66,7 +66,7 @@ var MBProcess = (function() {
     function processTick(tick) {
         'use strict';
         if (tick.hasOwnProperty('error')) {
-            showErrorMessage($('#content .container #mb_trading'), tick.error.message);
+            MBNotifications.show({text: tick.error.message, uid: 'TICK_ERROR'});
             return;
         }
         var symbol = MBDefaults.get('underlying');
@@ -84,7 +84,7 @@ var MBProcess = (function() {
         'use strict';
 
         if (contracts.hasOwnProperty('error')) {
-            showErrorMessage($('#content .container #mb_trading'), contracts.error.message, contracts.error.code);
+            MBNotifications.show({text: contracts.error.message, uid: contracts.error.code});
             return;
         }
 
@@ -155,9 +155,9 @@ var MBProcess = (function() {
             }
         }
         if (all_expired) {
-            showErrorMessage($('.notifications-wrapper'), page.text.localize('All barriers in this trading window are expired') + '.', 'all-expired-error');
+            MBNotifications.show({text: page.text.localize('All barriers in this trading window are expired') + '.', uid: 'ALL_EXPIRED'});
         } else {
-            $('.all-expired-error').remove();
+            MBNotifications.hide('ALL_EXPIRED');
         }
     }
 
@@ -204,16 +204,10 @@ var MBProcess = (function() {
         setTimeout(processRemainingTime, 1000);
     }
 
-    function showErrorMessage($element, text, addClass) {
-        if (addClass && $('.' + addClass).length !== 0) return;
-        $element.prepend('<p class="notice-msg center-text ' + (addClass ? addClass : '') + '">' + text + '</p>');
-        MBPrice.hideSpinnerShowTrading();
-    }
-
     function processBuy(barrier, contract_type) {
         if (!barrier || !contract_type) return;
         if (!page.client.is_logged_in) {
-            showErrorMessage($('.notifications-wrapper'), page.text.localize('Please log in.'), 'login-error');
+            MBNotifications.show({text: page.text.localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true});
             return;
         }
         MBPrice.showPriceOverlay();
@@ -268,7 +262,6 @@ var MBProcess = (function() {
         processPriceRequest    : processPriceRequest,
         processProposal        : processProposal,
         processRemainingTime   : processRemainingTime,
-        showErrorMessage       : showErrorMessage,
         processBuy             : processBuy,
     };
 })();
