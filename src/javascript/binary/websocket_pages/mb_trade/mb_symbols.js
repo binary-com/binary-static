@@ -1,16 +1,16 @@
 /*
- * Symbols object parses the active_symbols json that we get from socket.send({active_symbols: 'brief'}
+ * MBSymbols object parses the active_symbols json that we get from socket.send({active_symbols: 'brief'}
  * and outputs in usable form, it gives markets, underlyings
  *
  *
  * Usage:
  *
- * use `Symbols.details` to populate this object first
+ * use `MBSymbols.details` to populate this object first
  *
  * then use
  *
- * `Symbols.markets` to get markets like Forex, Random etc
- * `Symbols.underlyings` to get underlyings
+ * `MBSymbols.markets` to get markets like Forex
+ * `MBSymbols.underlyings` to get underlyings
  *
  */
 
