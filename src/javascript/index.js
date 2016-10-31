@@ -50,9 +50,6 @@ exportAllFunctions(require('./binary/static_pages/static_pjax'));
 
 exportAllFunctions(require('./binary/websocket_pages/trade/content'));
 exportAllFunctions(require('./binary/websocket_pages/user/verify_email'));
-exportAllFunctions(require('./binary/websocket_pages/cashier/cashier'));
-exportAllFunctions(require('./binary/websocket_pages/cashier/deposit_withdraw_ws'));
-exportAllFunctions(require('./binary/websocket_pages/cashier/payment_agent_listws'));
 exportAllFunctions(require('./binary/websocket_pages/cashier/payment_agent_withdrawws'));
 exportAllFunctions(require('./binary/websocket_pages/resources/asset_index/asset_indexws.data'));
 exportAllFunctions(require('./binary/websocket_pages/resources/asset_index/asset_indexws.ui'));
