@@ -221,13 +221,13 @@ var MBProcess = (function() {
             var expired_barriers = c.expired_barriers;
             for (i = 0; i < c.expired_barriers.length; i++) {
                 if (c.barriers == 2) {
-                    $expired_barrier = c.expired_barriers[i][0] + '_' + c.expired_barriers[i][1];
+                    expired_barrier = c.expired_barriers[i][0] + '_' + c.expired_barriers[i][1];
                 } else {
-                    $expired_barrier = c.expired_barriers[i];
+                    expired_barrier = c.expired_barriers[i];
                 }
-                $expired_barrier_element = $('div [data-barrier="' + $expired_barrier + '"]');
+                $expired_barrier_element = $('div [data-barrier="' + expired_barrier + '"]');
                 if ($expired_barrier_element.length > 0) {
-                    processForgetProposal($expired_barrier);
+                    processForgetProposal(expired_barrier);
                     $expired_barrier_element.remove();
                 }
             }
@@ -242,8 +242,12 @@ var MBProcess = (function() {
     };
 
     function processForgetProposal(expired_barrier) {
-        var proposal = MBPrice.getProposalResponse();
-        BinarySocket.send({forget: proposal[expired_barrier]});
+        var prices = MBPrice.getPrices();
+        Object.keys(prices[expired_barrier]).forEach(function(c) {
+            if (!prices[expired_barrier][c].hasOwnProperty('error')) {
+                BinarySocket.send({forget: prices[expired_barrier][c].proposal.id});
+            }
+        });
     }
 
     var containsArray = function(array, val) {

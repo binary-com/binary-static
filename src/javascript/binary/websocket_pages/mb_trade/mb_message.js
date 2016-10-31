@@ -23,7 +23,6 @@ var MBMessage = (function () {
                 MBDisplayCurrencies('', false);
                 MBSymbols.getSymbols(1);
             } else if (type === 'proposal') {
-                MBPrice.setProposalResponse(response);
                 MBProcess.processProposal(response);
             } else if (type === 'buy') {
                 MBPurchase.display(response);
@@ -34,8 +33,6 @@ var MBMessage = (function () {
                 MBTick.processHistory(response);
             } else if (type === 'trading_times'){
                 processTradingTimes(response);
-            } else if (type === 'error') {
-                $('.error-msg').text(response.error.message);
             } else if(type === 'portfolio'){
                 PortfolioWS.updatePortfolio(response);
             } else if(type === 'proposal_open_contract'){
@@ -43,8 +40,6 @@ var MBMessage = (function () {
             } else if(type === 'transaction'){
                 PortfolioWS.transactionResponseHandler(response);
             }
-        } else {
-            console.log('some error occured');
         }
     };
 

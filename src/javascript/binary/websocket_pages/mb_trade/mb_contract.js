@@ -21,17 +21,16 @@ var MBContract = (function() {
     };
 
     var durationText = function(dur) {
-        var singlePeriod = dur[0] == 1;
         var durationMap = {
-            'm': (singlePeriod ? 'minute' : 'minutes'),
-            'h': (singlePeriod ? 'hour' : 'hours'),
-            'd': (singlePeriod ? 'day' : 'days'),
-            'W': (singlePeriod ? 'week' : 'weeks'),
-            'M': (singlePeriod ? 'month' : 'months'),
-            'Y': (singlePeriod ? 'year' : 'years'),
+            'm': 'minute',
+            'h': 'hour',
+            'd': 'day',
+            'W': 'week',
+            'M': 'month',
+            'Y': 'year',
         };
         Object.keys(durationMap).forEach(function(key) {
-            dur = dur.replace(key, page.text.localize(durationMap[key]));
+            dur = dur.replace(key, page.text.localize(durationMap[key] + (dur[0] == 1 ? '' : 's')));
         });
         return dur;
     };
