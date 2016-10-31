@@ -597,6 +597,7 @@ function show_residence_form() {
 
 function create_language_drop_down(languages) {
     var language_select_element = document.getElementById('language_select');
+    if (!language_select_element) return;
     languages.sort(function(a, b) {
         if (a === 'EN' || a < b) {
             return -1;
