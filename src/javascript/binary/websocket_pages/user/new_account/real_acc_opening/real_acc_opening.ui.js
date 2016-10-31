@@ -1,3 +1,5 @@
+var ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
+
 var RealAccOpeningUI = (function(){
   "use strict";
 

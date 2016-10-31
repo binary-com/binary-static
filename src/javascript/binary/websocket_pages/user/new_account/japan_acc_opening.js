@@ -1,3 +1,5 @@
+var ValidAccountOpening = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
+
 pjax_config_page("new_account/japanws", function(){
   return {
     onLoad: function() {

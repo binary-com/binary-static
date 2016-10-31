@@ -1,8 +1,7 @@
-RiskClassification = (function() {
-  'use strict';
+var page = require('../base/page').page;
 
+var RiskClassification = (function() {
   var financial_assessment_url = page.url.url_for('user/settings/assessmentws');
-
   var renderRiskClassificationPopUp = function () {
       if (window.location.pathname === '/user/settings/assessmentws') {
         window.location.href = page.url.url_for('user/settingsws');
@@ -69,4 +68,4 @@ RiskClassification = (function() {
 
 module.exports = {
     RiskClassification: RiskClassification,
-}
+};

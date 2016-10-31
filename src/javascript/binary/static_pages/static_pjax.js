@@ -219,7 +219,7 @@ pjax_config_page('/open-positions/job-details', function() {
 pjax_config_page('/regulation', function() {
     return {
         onLoad: function() {
-            Regulation.init()
+            Regulation.init();
         }
     };
 });

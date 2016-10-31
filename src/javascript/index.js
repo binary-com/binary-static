@@ -45,7 +45,6 @@ exportAllFunctions(require('./binary/base/page'));
 exportAllFunctions(require('./binary/base/pjax'));
 
 exportAllFunctions(require('./binary/common_functions/frontend'));
-exportAllFunctions(require('./binary/common_functions/valid_account_opening'));
 exportAllFunctions(require('./binary/common_functions/validation'));
 exportAllFunctions(require('./binary/common_functions/validation_v2'));
 exportAllFunctions(require('./binary/static_pages/charity'));
