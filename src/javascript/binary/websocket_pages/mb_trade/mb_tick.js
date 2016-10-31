@@ -1,18 +1,18 @@
 /*
- * Tick object handles all the process/display related to tick streaming
+ * MBTick object handles all the process/display related to tick streaming
  *
  * We request tick stream for particular underlying to update current spot
  *
  *
  * Usage:
- * use `Tick.detail` to populate this object
+ * use `MBTick.detail` to populate this object
  *
  * then use
  *
- * `Tick.quote()` to get current spot quote
- * `Tick.id()` to get the unique for current stream
- * `Tick.epoch()` to get the tick epoch time
- * 'Tick.display()` to display current spot
+ * `MBTick.quote()` to get current spot quote
+ * `MBTick.id()` to get the unique for current stream
+ * `MBTick.epoch()` to get the tick epoch time
+ * 'MBTick.display()` to display current spot
  */
 var MBTick = (function() {
     'use strict';

@@ -12,7 +12,7 @@ var MBTradePage = (function(){
         MBMessage.process(msg);
       }
     });
-    //Price.clearFormId();
+
     if (events_initialized === 0) {
       events_initialized = 1;
       MBTradingEvents.init();
@@ -25,10 +25,6 @@ var MBTradePage = (function(){
     } else {
       BinarySocket.send({ payout_currencies: 1 });
     }
-
-    /*if (document.getElementById('websocket_form')) {
-        addEventListenerForm();
-    }*/
 
     MBSymbols.getSymbols(1);
 

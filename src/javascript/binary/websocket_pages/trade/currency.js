@@ -4,7 +4,7 @@
  * It process 'socket.send({payout_currencies:1})` response
  * and display them
  */
-function displayCurrencies(selected, showClass) {
+function displayCurrencies(selected) {
     'use strict';
 
     var target = document.getElementById('currency'),
@@ -37,7 +37,7 @@ function displayCurrencies(selected, showClass) {
         Defaults.set('currency', target.value);
     } else {
         $('#currency').replaceWith('<span id="' + target.getAttribute('id') +
-                                    '" class="' + (showClass ? target.getAttribute('class') : '') +
+                                    '" class="' + target.getAttribute('class') +
                                     '"value="' + currencies[0] + '">' +
                                     format_currency(currencies[0]) + '</span>');
         Defaults.set('currency', currencies[0]);

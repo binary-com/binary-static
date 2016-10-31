@@ -124,7 +124,8 @@ var MBProcess = (function() {
             proposal   : 1,
             subscribe  : 1,
             basis      : 'payout',
-            amount     : (parseInt(MBDefaults.get('payout')) || 1) * (japanese_client() ? 1000 : 1),
+            amount     : japanese_client() ? (parseInt(MBDefaults.get('payout')) || 1) * 1000 :
+                                              MBDefaults.get('payout'),
             currency   : MBContract.getCurrency(),
             symbol     : MBDefaults.get('underlying'),
             req_id     : MBPrice.getReqId(),
@@ -185,8 +186,7 @@ var MBProcess = (function() {
             $countDownTimer.addClass('alert');
         }
         var remainingTimeString = [],
-            duration = moment.duration(timeLeft * 1000),
-            singlePeriod;
+            duration = moment.duration(timeLeft * 1000);
         var all_durations = {
             month  : duration.months(),
             day    : duration.days(),
@@ -196,8 +196,7 @@ var MBProcess = (function() {
         };
         for (var key in all_durations) {
             if (all_durations[key]) {
-                singlePeriod = all_durations[key] === 1;
-                remainingTimeString.push(all_durations[key] + page.text.localize((key + (singlePeriod ? '' : 's' ))));
+                remainingTimeString.push(all_durations[key] + page.text.localize((key + (all_durations[key] == 1 ? '' : 's' ))));
             }
         }
         remainingTimeElement.innerHTML = remainingTimeString.join(' ');
