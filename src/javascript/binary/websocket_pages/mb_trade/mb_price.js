@@ -190,18 +190,6 @@ var MBPrice = (function() {
         $('.mb-trading-wrapper').removeClass('invisible');
     };
 
-    var setProposalResponse = function(response) {
-        if (response.hasOwnProperty('error') || !response.proposal.id || !response.proposal.spot ||
-            !response.hasOwnProperty('echo_req') || !response.echo_req.hasOwnProperty('barrier')) return;
-        var barrier = makeBarrier(response.echo_req);
-        if (req_id !== response.req_id) {
-            proposal_response = {};
-        }
-        if (!proposal_response[barrier]) {
-            proposal_response[barrier] = response.proposal.id;
-        }
-    };
-
     return {
         display                : display,
         addPriceObj            : addPriceObj,
@@ -211,9 +199,8 @@ var MBPrice = (function() {
         hidePriceOverlay       : hidePriceOverlay,
         getReqId               : function() { return req_id; },
         increaseReqId          : function() { req_id++; cleanup(); },
-        getProposalResponse    : function() { return proposal_response; },
-        setProposalResponse    : setProposalResponse,
         hideSpinnerShowTrading : hideSpinnerShowTrading,
+        getPrices              : function() { return prices; },
     };
 })();
 
