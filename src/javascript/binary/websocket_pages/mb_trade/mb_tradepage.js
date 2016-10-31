@@ -26,8 +26,6 @@ var MBTradePage = (function(){
       BinarySocket.send({ payout_currencies: 1 });
     }
 
-    MBSymbols.getSymbols(1);
-
     TradingAnalysis.bindAnalysisTabEvent();
     $('#tab_portfolio a').text(page.text.localize('Portfolio'));
     $('#tab_graph a').text(page.text.localize('Chart'));
