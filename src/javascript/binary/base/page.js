@@ -11,7 +11,6 @@ var InScriptStore = require('./storage').InScriptStore;
 var CookieStorage = require('./storage').CookieStorage;
 var Localizable = require('./storage').Localizable;
 var TrafficSource = require('../common_functions/traffic_source').TrafficSource;
-var RiskClassification = require('../common_functions/risk_classification').RiskClassification;
 var clock_started = false;
 
 var SessionStore, LocalStore;
@@ -779,8 +778,43 @@ Header.prototype = {
     check_risk_classification: function() {
       if (localStorage.getItem('risk_classification.response') === 'high' && localStorage.getItem('risk_classification') === 'high' &&
           this.qualify_for_risk_classification()) {
-            RiskClassification.renderRiskClassificationPopUp();
+            this.renderRiskClassificationPopUp();
       }
+    },
+    renderRiskClassificationPopUp: function () {
+        if (window.location.pathname === '/user/settings/assessmentws') {
+          window.location.href = page.url.url_for('user/settingsws');
+          return;
+        }
+        $.ajax({
+            url: page.url.url_for('user/settings/assessmentws'),
+            dataType: 'html',
+            method: 'GET',
+            success: function(riskClassificationText) {
+                if (riskClassificationText.includes('assessment_form')) {
+                    var payload = $(riskClassificationText);
+                    showRiskClassificationPopUp(payload.find('#assessment_form'));
+                    FinancialAssessmentws.LocalizeText();
+                    $('#risk_classification #assessment_form').removeClass('invisible')
+                                        .attr('style', 'text-align: left;');
+                    $('#risk_classification #high_risk_classification').removeClass('invisible');
+                    $('#risk_classification #heading_risk').removeClass('invisible');
+                    $("#risk_classification #assessment_form").on("submit",function(event) {
+                        event.preventDefault();
+                        FinancialAssessmentws.submitForm();
+                        return false;
+                    });
+                }
+            },
+            error: function(xhr) {
+                return;
+            }
+        });
+        $("#risk_classification #assessment_form").on("submit",function(event) {
+            event.preventDefault();
+            FinancialAssessmentws.submitForm();
+            return false;
+        });
     },
     qualify_for_risk_classification: function() {
       if (page.client.is_logged_in && !page.client.is_virtual() && page.client.residence !== 'jp' && !$('body').hasClass('BlueTopBack') && $('#assessment_form').length === 0 &&
