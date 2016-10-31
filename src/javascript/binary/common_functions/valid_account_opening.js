@@ -1,3 +1,5 @@
+var Validate = require('./validation').Validate;
+
 var ValidAccountOpening = (function(){
   var redirectCookie = function() {
     if (page.client.show_login_if_logout(true)) {

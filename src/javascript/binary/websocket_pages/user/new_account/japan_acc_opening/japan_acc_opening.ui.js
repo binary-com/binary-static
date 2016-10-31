@@ -1,4 +1,5 @@
 var ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
+var Validate = require('../../../../common_functions/validation').Validate;
 
 var JapanAccOpeningUI = function () {
   "use strict";

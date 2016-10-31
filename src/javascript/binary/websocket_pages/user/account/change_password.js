@@ -1,4 +1,5 @@
 var testPassword = require('../../../common_functions/passwordmeter').testPassword;
+var ValidateV2 = require('../../../common_functions/validation').ValidateV2;
 
 var PasswordWS = (function(){
     var $form, $result;

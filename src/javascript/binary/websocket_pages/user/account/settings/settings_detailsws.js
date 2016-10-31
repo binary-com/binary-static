@@ -1,3 +1,5 @@
+var ValidateV2 = require('../../../../common_functions/validation').ValidateV2;
+
 var SettingsDetailsWS = (function() {
     "use strict";
 

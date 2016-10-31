@@ -1,4 +1,5 @@
 var template = require('../../base/utility').template;
+var Validate = require('../../common_functions/validation').Validate;
 
 var ForwardWS = (function() {
   function init() {

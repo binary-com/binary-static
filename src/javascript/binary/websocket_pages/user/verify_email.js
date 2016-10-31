@@ -1,3 +1,5 @@
+var ValidateV2 = require('../../common_functions/validation').ValidateV2;
+
 function submit_email() {
     Content.populate();
     var form = $('#verify-email-form')[0];

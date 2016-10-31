@@ -1,5 +1,6 @@
 var showLoadingImage = require('../../../../base/utility').showLoadingImage;
 var attach_time_picker = require('../../../../base/utility').attach_time_picker;
+var ValidateV2 = require('../../../../common_functions/validation').ValidateV2;
 
 var SelfExclusionWS = (function() {
     "use strict";

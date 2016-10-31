@@ -1,5 +1,6 @@
 var CommonData = require('../../../../common_functions/common_data').CommonData;
 var testPassword = require('../../../../common_functions/passwordmeter').testPassword;
+var ValidateV2 = require('../../../../common_functions/validation').ValidateV2;
 
 var SecurityWS = (function() {
     "use strict";

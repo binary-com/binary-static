@@ -1,6 +1,7 @@
 var showLoadingImage = require('../../../../base/utility').showLoadingImage;
 var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
 var FlexTableUI = require('../../../../common_functions/attach_dom/flextable').FlexTableUI;
+var ValidateV2 = require('../../../../common_functions/validation').ValidateV2;
 
 var APITokenWS = (function() {
     "use strict";

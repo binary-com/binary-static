@@ -1,5 +1,6 @@
 var Login = require('../base/login').Login;
 var objectNotEmpty = require('../base/utility').objectNotEmpty;
+var Validate = require('../common_functions/validation').Validate;
 
 var sidebar_scroll = function(elm_selector) {
     elm_selector.on('click', '#sidebar-nav li', function() {
