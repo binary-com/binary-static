@@ -1,3 +1,5 @@
+var account_transferws = require('./cashier/account_transferws').account_transferws;
+
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
         onLoad: function() {
@@ -68,6 +70,25 @@ pjax_config_page_require_auth("user/security/cashier_passwordws", function() {
     return {
         onLoad: function() {
             SecurityWS.init();
+        }
+    };
+});
+
+pjax_config_page_require_auth("account/account_transferws", function() {
+    return {
+        onLoad: function() {
+            BinarySocket.init({
+                onmessage: function(msg){
+                    var response = JSON.parse(msg.data);
+                    if (response) {
+                        account_transferws.apiResponse(response);
+                    }
+                }
+            });
+
+            if(TUser.get().hasOwnProperty('is_virtual')) {
+                account_transferws.init();
+            }
         }
     };
 });

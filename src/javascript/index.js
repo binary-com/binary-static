@@ -40,19 +40,16 @@ window.dv = require('./lib/validation.js');
 require('./binary/components/trackjs_onerror');
 
 exportAllFunctions(require('./binary/base/onerror'));
-
 exportAllFunctions(require('./binary/base/page'));
 exportAllFunctions(require('./binary/base/pjax'));
 
 exportAllFunctions(require('./binary/common_functions/frontend'));
 exportAllFunctions(require('./binary/static_pages/charity'));
 
-exportAllFunctions(require('./binary/websocket_pages/trade/content'));
-exportAllFunctions(require('./binary/websocket_pages/user/verify_email'));
 exportAllFunctions(require('./binary/static_pages/static_pjax'));
 
-exportAllFunctions(require('./binary/validator'));
-exportAllFunctions(require('./binary/websocket_pages/cashier/account_transferws'));
+exportAllFunctions(require('./binary/websocket_pages/trade/content'));
+exportAllFunctions(require('./binary/websocket_pages/user/verify_email'));
 exportAllFunctions(require('./binary/websocket_pages/cashier/cashier'));
 exportAllFunctions(require('./binary/websocket_pages/cashier/deposit_withdraw_ws'));
 exportAllFunctions(require('./binary/websocket_pages/cashier/payment_agent_listws'));
@@ -141,7 +138,6 @@ exportAllFunctions(require('./binary/websocket_pages/user/account/statement/stat
 exportAllFunctions(require('./binary/websocket_pages/user/account/statement/statement.init'));
 exportAllFunctions(require('./binary/websocket_pages/user/account/statement/statement.ui'));
 
-exportAllFunctions(require('./binary/common_functions/string_util'));
 exportAllFunctions(require('./binary/websocket_pages/user/account/statement'));
 
 exportAllFunctions(require('./binary/websocket_pages/user/account/top_up_virtualws'));

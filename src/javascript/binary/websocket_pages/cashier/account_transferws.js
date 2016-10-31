@@ -258,25 +258,6 @@ var account_transferws = (function(){
 
 })();
 
-pjax_config_page_require_auth("account/account_transferws", function() {
-    return {
-        onLoad: function() {
-            BinarySocket.init({
-                onmessage: function(msg){
-                    var response = JSON.parse(msg.data);
-                    if (response) {
-                        account_transferws.apiResponse(response);
-                    }
-                }
-            });
-
-            if(TUser.get().hasOwnProperty('is_virtual')) {
-                account_transferws.init();
-            }
-        }
-    };
-});
-
 module.exports = {
     account_transferws: account_transferws,
 };

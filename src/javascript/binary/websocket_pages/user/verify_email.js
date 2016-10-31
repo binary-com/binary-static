@@ -1,4 +1,5 @@
 var ValidateV2 = require('../../common_functions/validation').ValidateV2;
+var bind_validation = require('../../validator').bind_validation;
 
 function submit_email() {
     Content.populate();
