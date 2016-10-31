@@ -96,6 +96,7 @@ exportAllFunctions(require('./binary/websocket_pages/resources/market_times/mark
 exportAllFunctions(require('./binary/websocket_pages/resources/market_timesws'));
 exportAllFunctions(require('./binary/websocket_pages/socket'));
 exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_contract'));
+exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_currency'));
 exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_defaults'));
 exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_event'));
 exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_message'));

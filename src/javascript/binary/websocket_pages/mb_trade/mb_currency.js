@@ -4,7 +4,7 @@
  * It process 'socket.send({payout_currencies:1})` response
  * and display them
  */
-function displayCurrencies(selected, showClass) {
+function MBDisplayCurrencies(selected, showClass) {
     'use strict';
 
     var target = document.getElementById('currency'),
@@ -34,16 +34,16 @@ function displayCurrencies(selected, showClass) {
         });
 
         target.appendChild(fragment);
-        Defaults.set('currency', target.value);
+        MBDefaults.set('currency', target.value);
     } else {
         $('#currency').replaceWith('<span id="' + target.getAttribute('id') +
                                     '" class="' + (showClass ? target.getAttribute('class') : '') +
                                     '"value="' + currencies[0] + '">' +
-                                    format_currency(currencies[0]) + '</span>');
-        Defaults.set('currency', currencies[0]);
+                                    (MBTradePage.is_trading_page() && japanese_client() ? '✕' : format_currency(currencies[0])) + '</span>');
+        MBDefaults.set('currency', currencies[0]);
     }
 }
 
 module.exports = {
-    displayCurrencies: displayCurrencies,
+    MBDisplayCurrencies: MBDisplayCurrencies,
 };

@@ -5,7 +5,7 @@ var MBTradePage = (function(){
   var onLoad = function(){
     trading_page = 1;
     if (sessionStorage.getItem('currencies')) {
-      displayCurrencies('', false);
+      MBDisplayCurrencies('', false);
     }
     BinarySocket.init({
       onmessage: function(msg){
@@ -20,7 +20,7 @@ var MBTradePage = (function(){
     Content.populate();
 
     if (sessionStorage.getItem('currencies')) {
-      displayCurrencies('', false);
+      MBDisplayCurrencies('', false);
       MBSymbols.getSymbols(1);
     } else {
       BinarySocket.send({ payout_currencies: 1 });
