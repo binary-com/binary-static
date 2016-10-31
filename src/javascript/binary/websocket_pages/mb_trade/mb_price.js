@@ -116,7 +116,7 @@ var MBPrice = (function() {
     };
 
     var getAskPrice = function(proposal) {
-        return proposal.error || +proposal.proposal.ask_price === 0 ? proposal.echo_req.amount : Math.round(proposal.proposal.ask_price);
+        return proposal.error || +proposal.proposal.ask_price === 0 ? proposal.echo_req.amount : proposal.proposal.ask_price;
     };
 
     var getMovementDirection = function(prev, current) {
@@ -129,16 +129,20 @@ var MBPrice = (function() {
                 '<div class="gr-4 buy-price">' +
                     '<button class="price-button' + (!values.is_active ? ' inactive' : '') + '"' +
                         (values.id ? ' onclick="MBProcess.processBuy(\'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
-                        (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' + values.ask_price +
+                        (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' + formatPrice(values.ask_price) +
                         '<span class="dynamics">' + (values.ask_price_movement || '') + '</span>' +
                     '</button>' +
                 '</div>' +
                 '<div class="gr-4 sell-price">' +
-                    '<span class="price-wrapper' + (!values.sell_price ? ' inactive' : '') + '">' + values.sell_price +
+                    '<span class="price-wrapper' + (!values.sell_price ? ' inactive' : '') + '">' + formatPrice(values.sell_price) +
                         '<span class="dynamics">' + (values.sell_price_movement || '') + '</span>' +
                     '</span>' +
                 '</div>' +
             '</div>';
+    };
+
+    var formatPrice = function(price) {
+        return addComma(price, japanese_client() ? '0' : 2);
     };
 
     var cleanup = function() {
