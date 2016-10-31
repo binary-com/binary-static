@@ -1,0 +1,117 @@
+<div class="center-text">
+    <img class="spinner" src="[% request.url_for('images/pages/binary-symbol-logo.svg') %]" alt="" />
+</div>
+<div class="mb-trading-wrapper invisible">
+    <div id="mb_trading">
+        <div id="notifications_wrapper"></div>
+        <section class="japan-form gr-row">
+            <div class="gr-6 gr-12-m gr-12-p gr-no-gutter-right">
+                <div class="gr-row">
+                    <div class="gr-6 gr-no-gutter-left padding-right-five">
+                        <div class="select-box">
+                            <div class="padding-10">
+                                <div class="select-heading">[% l('FX Rate') %]</div>
+                                <select class="select" id="underlying"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gr-6 gr-no-gutter-left padding-right-five">
+                        <div class="select-box">
+                            <div class="padding-10">
+                                <div class="select-heading">[% l('Option Type') %]</div>
+                                <select class="select" id="category"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gr-6 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m gr-no-gutter-right-p gr-no-gutter-right-m">
+                <div class="gr-row">
+                    <div class="gr-6 gr-no-gutter-left padding-right-five">
+                        <div class="select-box">
+                            <div class="padding-10">
+                                <div class="select-heading">[% l('Trading Period') %]</div>
+                                <select class="select" id="period"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gr-6 gr-no-gutter-left no-padding-right">
+                        <div class="select-box">
+                            <div class="padding-10">
+                                <div class="select-heading">[% l('Payout Amount') %]</div>
+                                <div class="payout-input">
+                                    <div class="float-left">
+                                        <select class="select" id="currency"></select>
+                                        <input type="text" class="payout-select select" id="payout" maxlength="10">
+                                        <label class="payout-mult all-hide ja-show" for="payout">[% l(',000') %]</label>
+                                    </div>
+                                    <div class="float-left hint all-hide ja-show">[% l('min: 1,000') %]<br>[% l('max: 100,000') %]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gr-12">
+                <div class="gr-row space-between">
+                    <div class="gr-grow">
+                        <div class="gr-row spot">
+                            <div class="gr-adapt spot-value">
+                                <span>[% l('Spot') %]:</span>
+                                <span id="spot"></span>
+                                <span id="spot-dyn"></span>
+                            </div>
+                            <div class="gr-adapt">
+                                <span id="trading_worm_chart"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gr-adapt">
+                        <div class="countdown-timer align-end">
+                            <span id="remaining-time-label"></span>
+                            <span id="remaining-time">...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="japan-table gr-row">
+            <div id="disable-overlay" class="invisible"></div>
+            <div class="prices-wrapper gr-6 gr-12-m gr-12-p padding-right-five">
+                <div class="descr-wrapper">
+                    <div class="background-gray row flex-box cols">
+                        <h1 class="details-heading"></h1>
+                        <div class="descr"></div>
+                    </div>
+                </div>
+                <div class="gr-12">
+                    <div class="gr-row heading">
+                        <div class="gr-4 barrier">[% l('Barrier') %]</div>
+                        <div class="gr-4 buy-price">[% l('Buy') %]</div>
+                        <div class="gr-4 sell-price">[% l('Sell') %]</div>
+                    </div>
+                    <div class="price-rows"></div>
+                </div>
+            </div>
+            <div class="prices-wrapper gr-6 gr-12-m gr-12-p gr-no-gutter-left padding-right-ten gr-gutter-left-p gr-gutter-left-m">
+                <div class="descr-wrapper">
+                    <div class="background-gray row flex-box cols">
+                        <h1 class="details-heading"></h1>
+                        <div class="descr"></div>
+                    </div>
+                </div>
+                <div class="gr-12">
+                    <div class="gr-row heading">
+                        <div class="gr-4 barrier">[% l('Barrier') %]</div>
+                        <div class="gr-4 buy-price">[% l('Buy') %]</div>
+                        <div class="gr-4 sell-price">[% l('Sell') %]</div>
+                    </div>
+                    <div class="price-rows"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    [% INCLUDE bet/analysis.html.tt %]
+    <div id="open_positions_container">[% INCLUDE user/portfoliows.html.tt %]</div>
+</div>
