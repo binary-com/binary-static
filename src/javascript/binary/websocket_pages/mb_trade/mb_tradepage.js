@@ -43,6 +43,7 @@ var MBTradePage = (function(){
     window.chartAllowed = false;
     trading_page = 0;
     events_initialized = 0;
+    MBContract.clearTimeout();
     JapanPortfolio.hide();
     forgetTradingStreams();
     BinarySocket.clear();

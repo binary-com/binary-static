@@ -5,7 +5,8 @@
 var MBContract = (function() {
     'use strict';
 
-    var contracts_for_response;
+    var contracts_for_response,
+        contract_timeout;
 
     var getContracts = function(underlying) {
         var req = {
@@ -17,7 +18,12 @@ var MBContract = (function() {
             req.passthrough = {action: 'no-proposal'};
         }
         BinarySocket.send(req);
-        setTimeout(getContracts, 15000);
+        clearTimeout();
+        contract_timeout = setTimeout(getContracts, 15000);
+    };
+
+    var clearContractTimeout = function() {
+        clearTimeout(contract_timeout);
     };
 
     var durationText = function(dur) {
@@ -270,9 +276,10 @@ var MBContract = (function() {
         getCurrentContracts : getCurrentContracts,
         getTemplate         : getTemplate,
         displayDescriptions : displayDescriptions,
+        getCurrency         : getCurrency,
+        clearTimeout        : clearContractTimeout,
         getContractsResponse: function() { return contracts_for_response; },
         setContractsResponse: function(contracts_for) { contracts_for_response = contracts_for; },
-        getCurrency: getCurrency,
     };
 })();
 
