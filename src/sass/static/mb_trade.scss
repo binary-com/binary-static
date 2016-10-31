@@ -195,16 +195,21 @@
             }
             select#currency {
                 margin: 6px 0;
-                width: auto;
+                width: 50%;
             }
         }
         .payout-select {
             display: inline;
-            width: 30px;
             height: 24px;
             line-height: 24px;
             text-align: right;
             margin: 6px 0 9px;
+        }
+        span + #payout {
+            width: 30px;
+        }
+        select + #payout {
+            width: 45%;
         }
         .payout-mult {
             font-size: 15px;

@@ -42,7 +42,7 @@
                                 <div class="payout-input">
                                     <div class="float-left">
                                         <select class="select" id="currency"></select>
-                                        <input type="text" class="payout-select select" id="payout">
+                                        <input type="text" class="payout-select select" id="payout" maxlength="10">
                                         <label class="payout-mult all-hide ja-show" for="payout">[% l(',000') %]</label>
                                     </div>
                                     <div class="float-left hint all-hide ja-show">[% l('min: 1,000') %]<br>[% l('max: 100,000') %]</div>

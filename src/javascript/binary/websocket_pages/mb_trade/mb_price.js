@@ -203,16 +203,17 @@ var MBPrice = (function() {
     };
 
     return {
-        display             : display,
-        addPriceObj         : addPriceObj,
-        cleanup             : cleanup,
-        sendBuyRequest      : sendBuyRequest,
-        showPriceOverlay    : showPriceOverlay,
-        hidePriceOverlay    : hidePriceOverlay,
-        getReqId            : function() { return req_id; },
-        increaseReqId       : function() { req_id++; cleanup(); },
-        getProposalResponse : function() { return proposal_response; },
-        setProposalResponse : setProposalResponse,
+        display                : display,
+        addPriceObj            : addPriceObj,
+        cleanup                : cleanup,
+        sendBuyRequest         : sendBuyRequest,
+        showPriceOverlay       : showPriceOverlay,
+        hidePriceOverlay       : hidePriceOverlay,
+        getReqId               : function() { return req_id; },
+        increaseReqId          : function() { req_id++; cleanup(); },
+        getProposalResponse    : function() { return proposal_response; },
+        setProposalResponse    : setProposalResponse,
+        hideSpinnerShowTrading : hideSpinnerShowTrading,
     };
 })();
 

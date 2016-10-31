@@ -84,7 +84,7 @@ var MBProcess = (function() {
         'use strict';
 
         if (contracts.hasOwnProperty('error')) {
-            showErrorMessage($('#content .container .japan-ui'), contracts.error.message);
+            showErrorMessage($('#content .container .japan-ui'), contracts.error.message, contracts.error.code);
             return;
         }
 
@@ -155,9 +155,7 @@ var MBProcess = (function() {
             }
         }
         if (all_expired) {
-            if ($('.all-expired-error').length === 0){
-                showErrorMessage($('.notifications-wrapper'), page.text.localize('All barriers in this trading window are expired') + '.', 'all-expired-error');
-            }
+            showErrorMessage($('.notifications-wrapper'), page.text.localize('All barriers in this trading window are expired') + '.', 'all-expired-error');
         } else {
             $('.all-expired-error').remove();
         }
@@ -207,15 +205,15 @@ var MBProcess = (function() {
     }
 
     function showErrorMessage($element, text, addClass) {
+        if (addClass && $('.' + addClass).length !== 0) return;
         $element.prepend('<p class="notice-msg center-text ' + (addClass ? addClass : '') + '">' + text + '</p>');
+        MBPrice.hideSpinnerShowTrading();
     }
 
     function processBuy(barrier, contract_type) {
         if (!barrier || !contract_type) return;
         if (!page.client.is_logged_in) {
-            if ($('.login-error').length === 0){
-                showErrorMessage($('.notifications-wrapper'), page.text.localize('Please log in.'), 'login-error');
-            }
+            showErrorMessage($('.notifications-wrapper'), page.text.localize('Please log in.'), 'login-error');
             return;
         }
         MBPrice.showPriceOverlay();
