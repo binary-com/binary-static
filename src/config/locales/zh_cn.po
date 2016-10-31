@@ -325,6 +325,9 @@ msgstr "一触即付交易"
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "*免税：交易所获之盈利在很多国家免税，但请务必咨询专业税务顾问。"
 
+msgid ",000"
+msgstr ""
+
 msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgstr "水电煤账单或银行月结单扫描件（日期不得超过3个月）。"
 
@@ -2629,6 +2632,9 @@ msgstr "有丰富的Javascript、HTML、CSS、AJAX、JSON编程经验"
 msgid "FAQ"
 msgstr "常见问题"
 
+msgid "FX Rate"
+msgstr ""
+
 msgid "Facility that allows you to set limits on your account."
 msgstr "可让您对帐户设置限制的设施。"
 
@@ -4025,6 +4031,9 @@ msgstr "我们将协助您提高交易技能"
 msgid "Learn more"
 msgstr "了解更多"
 
+msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
+msgstr ""
+
 msgid "Learn more about our corporate culture"
 msgstr "查看关于我们企业文化的详情"
 
@@ -4207,6 +4216,11 @@ msgstr "市场专业人士"
 
 msgid "Market exit price"
 msgstr "平仓价"
+
+#, fuzzy
+#| msgid "All markets are closed now. Please try again later."
+msgid "Market is closed. Please try again later."
+msgstr "所有市场现已关闭。请稍后重试。"
 
 msgid "Market prices are updated at most once per second.  For any given second, the market price will be updated to the first tick, if any, received in that particular second on the company datafeed."
 msgstr "市场价格最快每秒更新一次。对于任何给定的某一秒钟，市场价格都将更新至该秒从公司数据源接收到的第一价位（如有）。"
@@ -4633,6 +4647,11 @@ msgstr "开户"
 msgid "Opens"
 msgstr "开盘"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Option Type"
+msgid "Option Type"
+msgstr "{JAPAN ONLY}Option Type"
+
 msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
 msgstr "二元期权交易和其他类似活动一样，过于沉迷可能会上瘾。为了避免这种风险，我们会定期向您提供交易和财务的实况简报。"
 
@@ -4834,6 +4853,11 @@ msgstr "支付"
 msgid "Payout"
 msgstr "赔付"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Payout Amount"
+msgid "Payout Amount"
+msgstr "{JAPAN ONLY}Payout Amount"
+
 msgid "Pension"
 msgstr "养老金"
 
@@ -4947,6 +4971,9 @@ msgstr "请按照以下格式填写：3个数字，1个短划线，加上4个数
 
 msgid "Please input a valid date"
 msgstr "请输入有效日期"
+
+msgid "Please log in."
+msgstr "请登录。"
 
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "在提交请求前，请您确认同意代理的支付条款。"
@@ -5336,6 +5363,11 @@ msgid "Relevant work experience in a related field (financial services preferred
 msgstr "有相关领域工作经验 (金融服务业优先录取)"
 
 msgid "Remaining Time"
+msgstr "剩余时间"
+
+#, fuzzy
+#| msgid "Remaining Time"
+msgid "Remaining time"
 msgstr "剩余时间"
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
@@ -6506,6 +6538,9 @@ msgstr "本优惠不能和其他任何优惠一起使用。"
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "本促销活动仅适用于新客户。现有或以往客户不符合条件。每位客户仅能获得一次。"
 
+msgid "This symbol is not active. Please try another symbol."
+msgstr ""
+
 msgid "This website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and the advertisements thereof may submit cookies onto your web browser and as such are beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites, because their practices may differ from ours."
 msgstr "本网站包含其他网站链接，并可能含有第三方网站的横幅或图标广告。这些网站及广告可能会向您的网页浏览器写入cookies，因此不在我们的控制范围内。我们不对这些网站的隐私规范和内容负责。由于他们的隐私政策可能有所不同，我们建议您进行相关了解。"
 
@@ -6655,6 +6690,11 @@ msgstr "Trading Experience"
 
 msgid "Trading Limits"
 msgstr "交易限制"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Period"
+msgid "Trading Period"
+msgstr "{JAPAN ONLY}Trading Period"
 
 msgid "Trading Platforms"
 msgstr "交易平台"
@@ -7259,11 +7299,15 @@ msgstr "我为什么要成为 %1 的联盟会员？"
 msgid "Will I need to install any software?"
 msgstr "我需要安装任何软件吗？"
 
-msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
+#, fuzzy
+#| msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a "
+msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing 'Stays In' with a narrow price target."
 msgstr "如果您预测正确，即可获得投注额 10%-1000% 的回报。要获得较高回报，可选择 "
 
-msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a "
-msgstr "如果您预测正确，即可获得投注额 10%-1000% 的回报。要获得较高回报，可选择 "
+#, fuzzy
+#| msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
+msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a 'Touch' trade, with a price target farther away from the current price."
+msgstr "如果您预测正确，即可获得投注额 10%-1000% 的回报。选择目标价与当前价格距离比较远的 \"触及\" 交易，可提高回报率。"
 
 msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a price target farther away from the current price."
 msgstr "如果您预测正确，即可获得投注额 10%-1000% 的回报。选择与当前价格距离比较远的目标价，可提高回报率。"
@@ -7936,6 +7980,16 @@ msgstr "验证令牌"
 
 msgid "website"
 msgstr "网站"
+
+#, fuzzy
+#| msgid "1 week"
+msgid "week"
+msgstr "1 周"
+
+#, fuzzy
+#| msgid "Weeks"
+msgid "weeks"
+msgstr "周"
 
 msgid "year"
 msgstr "年"
@@ -8654,9 +8708,6 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
-msgid "{JAPAN ONLY}Remaining time"
-msgstr "{JAPAN ONLY}Remaining time"
-
 msgid "{JAPAN ONLY}Remitter's Name:"
 msgstr "{JAPAN ONLY}Remitter's Name:"
 
@@ -8915,42 +8966,6 @@ msgstr "{JAPAN ONLY}Your funds are safe"
 msgid "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 msgstr "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 
-msgid "{JAPAN ONLY}day"
-msgstr "{JAPAN ONLY}day"
-
-msgid "{JAPAN ONLY}days"
-msgstr "{JAPAN ONLY}days"
-
-msgid "{JAPAN ONLY}hour"
-msgstr "{JAPAN ONLY}hour"
-
-msgid "{JAPAN ONLY}hours"
-msgstr "{JAPAN ONLY}hours"
-
-msgid "{JAPAN ONLY}minute"
-msgstr "{JAPAN ONLY}minute"
-
-msgid "{JAPAN ONLY}minutes"
-msgstr "{JAPAN ONLY}minutes"
-
-msgid "{JAPAN ONLY}month"
-msgstr "{JAPAN ONLY}month"
-
-msgid "{JAPAN ONLY}months"
-msgstr "{JAPAN ONLY}months"
-
-msgid "{JAPAN ONLY}week"
-msgstr "{JAPAN ONLY}week"
-
-msgid "{JAPAN ONLY}weeks"
-msgstr "{JAPAN ONLY}weeks"
-
-msgid "{JAPAN ONLY}year"
-msgstr "{JAPAN ONLY}year"
-
-msgid "{JAPAN ONLY}years"
-msgstr "{JAPAN ONLY}years"
-
 msgid "{JAPAN ONLY}¥"
 msgstr "{JAPAN ONLY}¥"
 
@@ -9046,6 +9061,48 @@ msgstr "账户详情"
 
 msgid "Terms and Conditions Approval"
 msgstr "条款和条件审批"
+
+#~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
+#~ msgstr "如果您预测正确，即可获得投注额 10%-1000% 的回报。要获得较高回报，可选择 "
+
+#~ msgid "{JAPAN ONLY}Remaining time"
+#~ msgstr "{JAPAN ONLY}Remaining time"
+
+#~ msgid "{JAPAN ONLY}day"
+#~ msgstr "{JAPAN ONLY}day"
+
+#~ msgid "{JAPAN ONLY}days"
+#~ msgstr "{JAPAN ONLY}days"
+
+#~ msgid "{JAPAN ONLY}hour"
+#~ msgstr "{JAPAN ONLY}hour"
+
+#~ msgid "{JAPAN ONLY}hours"
+#~ msgstr "{JAPAN ONLY}hours"
+
+#~ msgid "{JAPAN ONLY}minute"
+#~ msgstr "{JAPAN ONLY}minute"
+
+#~ msgid "{JAPAN ONLY}minutes"
+#~ msgstr "{JAPAN ONLY}minutes"
+
+#~ msgid "{JAPAN ONLY}month"
+#~ msgstr "{JAPAN ONLY}month"
+
+#~ msgid "{JAPAN ONLY}months"
+#~ msgstr "{JAPAN ONLY}months"
+
+#~ msgid "{JAPAN ONLY}week"
+#~ msgstr "{JAPAN ONLY}week"
+
+#~ msgid "{JAPAN ONLY}weeks"
+#~ msgstr "{JAPAN ONLY}weeks"
+
+#~ msgid "{JAPAN ONLY}year"
+#~ msgstr "{JAPAN ONLY}year"
+
+#~ msgid "{JAPAN ONLY}years"
+#~ msgstr "{JAPAN ONLY}years"
 
 #~ msgid "Jump to date:"
 #~ msgstr "跳至日期："
@@ -9580,9 +9637,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Why us?"
 #~ msgstr "为何选择我们？"
-
-#~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
-#~ msgstr "如果您预测正确，即可获得投注额 10%-1000% 的回报。选择目标价与当前价格距离比较远的 \"触及\" 交易，可提高回报率。"
 
 #~ msgid "You have reached the rate limit of requests per second. To continue, please <a href='javascript:;' id='ratelimit-refresh-link'>refresh</a> the page."
 #~ msgstr "您已达每秒最大请求限额。请 <a href='javascript:;' id='ratelimit-refresh-link'>刷新</a>页面继续操作。"
@@ -10491,9 +10545,6 @@ msgstr "条款和条件审批"
 #~ msgid "Please enter your email address."
 #~ msgstr "请输入您的电邮地址。"
 
-#~ msgid "Please log in."
-#~ msgstr "请登录。"
-
 #~ msgid "Please note that your settings have been updated as follows:"
 #~ msgstr "请注意，您的设置已进行以下更新："
 
@@ -11058,9 +11109,6 @@ msgstr "条款和条件审批"
 #~ msgstr "网站禁止当前设置为 <strong>%1。</strong>"
 
 #~ msgid "Week"
-#~ msgstr "周"
-
-#~ msgid "Weeks"
 #~ msgstr "周"
 
 #~ msgid "Weighted Moving Average"
@@ -21548,9 +21596,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "1 day"
 #~ msgstr "1 天"
-
-#~ msgid "1 week"
-#~ msgstr "1 周"
 
 #~ msgid "10 M"
 #~ msgstr "10 M"
