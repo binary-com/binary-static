@@ -19,7 +19,7 @@ function MBDisplayCurrencies(selected, showClass) {
         target.removeChild(target.firstChild);
     }
 
-    if (currencies.length > 1) {
+    if (currencies.length > 1 && !japanese_client()) {
         currencies.forEach(function (currency) {
             var option = document.createElement('option'),
                 content = document.createTextNode(currency);
