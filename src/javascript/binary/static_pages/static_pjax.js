@@ -4,6 +4,7 @@ var GetStartedJP = require('./get_started_jp').GetStartedJP;
 var JobDetails = require('./job_details').JobDetails;
 var Platforms = require('./platforms').Platforms;
 var Regulation = require('./regulation').Regulation;
+var submit_email = require('../websocket_pages/user/verify_email').submit_email;
 
 pjax_config_page('/home', function() {
     return {
