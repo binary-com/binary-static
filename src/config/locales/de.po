@@ -328,6 +328,9 @@ msgstr "(Einmalige) Zielkontrakte"
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "* Steuerfrei: In vielen Ländern sind Gewinne aus dem Trading steuerfrei, aber Sie sollten sich dennoch immer bei einem fachlich versierten Steuerberater beraten lassen."
 
+msgid ",000"
+msgstr ""
+
 msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgstr "- Eine gescannte Kopie einer Abrechnung öffentlicher Versorgungsbetriebe oder eines Bankkontoauszuges (nicht älter als 3 Monate)."
 
@@ -2647,6 +2650,9 @@ msgstr "Umfassendes Wissen in Javascript, HTML, CSS, AJAX, JSON"
 msgid "FAQ"
 msgstr "FAQ"
 
+msgid "FX Rate"
+msgstr ""
+
 msgid "Facility that allows you to set limits on your account."
 msgstr "Einrichtung, mit der Sie Limits für Ihr Konto einrichten können."
 
@@ -4045,6 +4051,9 @@ msgstr "Lernen Sie von uns"
 msgid "Learn more"
 msgstr "Mehr erfahren"
 
+msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
+msgstr ""
+
 msgid "Learn more about our corporate culture"
 msgstr "Erfahren Sie mehr über unsere Unternehmenskultur"
 
@@ -4227,6 +4236,11 @@ msgstr "Marktprofis"
 
 msgid "Market exit price"
 msgstr "Kurs zum Vertragsende"
+
+#, fuzzy
+#| msgid "All markets are closed now. Please try again later."
+msgid "Market is closed. Please try again later."
+msgstr "Alle Börsen sind derzeit geschlossen. Bitte versuchen Sie es später erneut."
 
 msgid "Market prices are updated at most once per second.  For any given second, the market price will be updated to the first tick, if any, received in that particular second on the company datafeed."
 msgstr "Marktkurse werden bestenfalls einmal pro Sekunde aktualisiert. Der Marktkurs wird je Sekunde auf den ersten Tick aktualisiert, der - sofern vorhanden - in dieser bestimmten Sekunde per Datenübertragung beim Unternehmen empfangen wurde."
@@ -4653,6 +4667,11 @@ msgstr "Ein Konto eröffnen"
 msgid "Opens"
 msgstr "Öffnet"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Option Type"
+msgid "Option Type"
+msgstr "{JAPAN ONLY}Option Type"
+
 msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
 msgstr "Der Optionshandel kann zu einer wirklichen Abhängigkeit führen, so wie jede andere Aktivität, die bis zu ihren Grenzen ausgeübt wird. Um die Gefahr einer solchen Äbhängigkeit zu vermeiden, bieten wir einen Realitätscheck an, der Ihnen eine regelmäßige Zusammenfassung Ihrer Geschäfte und Konten gibt."
 
@@ -4856,6 +4875,11 @@ msgstr "Zahlungen"
 msgid "Payout"
 msgstr "Auszahlung"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Payout Amount"
+msgid "Payout Amount"
+msgstr "{JAPAN ONLY}Payout Amount"
+
 msgid "Pension"
 msgstr "Rente/Pension"
 
@@ -4971,6 +4995,9 @@ msgstr "Bitte befolgen Sie dieses Muster: 3 Zahlen, ein Bindestrich, gefolgt von
 
 msgid "Please input a valid date"
 msgstr "Bitte geben Sie ein gültiges Datum ein"
+
+msgid "Please log in."
+msgstr "Melden Sie sich bitte an."
 
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Bevor Sie Ihren Antrag absenden können, müssen Sie zuerst den Zahlungsbedingungen des Abwicklers zustimmen."
@@ -5362,6 +5389,11 @@ msgid "Relevant work experience in a related field (financial services preferred
 msgstr "Entsprechende Berufserfahrung in einem ähnlichen Bereich (Finanzdienstleistungen bevorzugt)"
 
 msgid "Remaining Time"
+msgstr "Verbleibende Zeit"
+
+#, fuzzy
+#| msgid "Remaining Time"
+msgid "Remaining time"
 msgstr "Verbleibende Zeit"
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
@@ -6532,6 +6564,9 @@ msgstr "Dieses Angebot kann nicht in Verbindung mit anderen Angeboten verwendet 
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "Diese Werbeaktion steht nur neuen Kunden zur Verfügung. Bereits vorhandene oder ehemalige Kunden sind nicht berechtigt. Sie ist nur einmal pro Kunde gültig."
 
+msgid "This symbol is not active. Please try another symbol."
+msgstr ""
+
 msgid "This website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and the advertisements thereof may submit cookies onto your web browser and as such are beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites, because their practices may differ from ours."
 msgstr "Diese Website enthält Links zu anderen Websites und kann Banner- oder Bildwerbungen von Websites Dritter enthalten. Diese Websites und Anzeigen können auf Ihrem Webbrowser Cookies hinterlegen, was nicht unserer Kontrolle unterliegt. Wir sind für die Datenschutzrichtlinien oder den Inhalt solcher Websites nicht verantwortlich. Wir raten Ihnen, die Datenschutzrichtlinien dieser Websites durchzulesen, da sie sich von unseren unterscheiden könnten."
 
@@ -6683,6 +6718,11 @@ msgstr "Trading Experience"
 
 msgid "Trading Limits"
 msgstr "Handelslimits"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Period"
+msgid "Trading Period"
+msgstr "{JAPAN ONLY}Trading Period"
 
 msgid "Trading Platforms"
 msgstr "Handelsplattformen"
@@ -7287,11 +7327,15 @@ msgstr "Warum sollte ich ein Geschäftspartner bei %1 werden?"
 msgid "Will I need to install any software?"
 msgstr "Muss ich eine Software installieren?"
 
-msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
+#, fuzzy
+#| msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a "
+msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing 'Stays In' with a narrow price target."
 msgstr "Gewinnen Sie 10-1000 % auf Ihren Einsatz, wenn Sie richtig liegen. Erhöhen Sie Ihre Gewinne mit der Auswahl von "
 
-msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a "
-msgstr "Gewinnen Sie 10-1000 % auf Ihren Einsatz, wenn Sie richtig liegen. Erhöhen Sie Ihre Gewinne mit der Auswahl von "
+#, fuzzy
+#| msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
+msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a 'Touch' trade, with a price target farther away from the current price."
+msgstr "Gewinnen Sie 10-1000 % auf Ihren Einsatz, wenn Sie Recht haben. Erhöhen Sie Ihre Gewinne indem Sie einen \"Erreicht\" Kontrakt mit einem Kursziel auswählen, das weiter vom aktuellen Kurs liegt."
 
 msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a price target farther away from the current price."
 msgstr "Gewinnen Sie 10-1000 % auf Ihren Einsatz, wenn Sie Recht haben. Erhöhen Sie Ihre Gewinne, indem Sie ein Kursziel wählen, das vom aktuellen Kurs weiter entfernt liegt."
@@ -7971,6 +8015,14 @@ msgstr "Verifikationstoken"
 
 msgid "website"
 msgstr "Website"
+
+msgid "week"
+msgstr ""
+
+#, fuzzy
+#| msgid "Weeks"
+msgid "weeks"
+msgstr "Wochen"
 
 msgid "year"
 msgstr "Jahr"
@@ -8763,9 +8815,6 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
-msgid "{JAPAN ONLY}Remaining time"
-msgstr "{JAPAN ONLY}Remaining time"
-
 #, fuzzy
 #| msgid "{JAPAN ONLY}Matters to attend:"
 msgid "{JAPAN ONLY}Remitter's Name:"
@@ -9034,42 +9083,6 @@ msgstr "{JAPAN ONLY}Your funds are safe"
 msgid "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 msgstr "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 
-msgid "{JAPAN ONLY}day"
-msgstr "{JAPAN ONLY}day"
-
-msgid "{JAPAN ONLY}days"
-msgstr "{JAPAN ONLY}days"
-
-msgid "{JAPAN ONLY}hour"
-msgstr "{JAPAN ONLY}hour"
-
-msgid "{JAPAN ONLY}hours"
-msgstr "{JAPAN ONLY}hours"
-
-msgid "{JAPAN ONLY}minute"
-msgstr "{JAPAN ONLY}minute"
-
-msgid "{JAPAN ONLY}minutes"
-msgstr "{JAPAN ONLY}minutes"
-
-msgid "{JAPAN ONLY}month"
-msgstr "{JAPAN ONLY}month"
-
-msgid "{JAPAN ONLY}months"
-msgstr "{JAPAN ONLY}months"
-
-msgid "{JAPAN ONLY}week"
-msgstr "{JAPAN ONLY}week"
-
-msgid "{JAPAN ONLY}weeks"
-msgstr "{JAPAN ONLY}weeks"
-
-msgid "{JAPAN ONLY}year"
-msgstr "{JAPAN ONLY}year"
-
-msgid "{JAPAN ONLY}years"
-msgstr "{JAPAN ONLY}years"
-
 #, fuzzy
 #| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}¥"
@@ -9169,6 +9182,48 @@ msgstr "Kontoangaben"
 
 msgid "Terms and Conditions Approval"
 msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
+
+#~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
+#~ msgstr "Gewinnen Sie 10-1000 % auf Ihren Einsatz, wenn Sie richtig liegen. Erhöhen Sie Ihre Gewinne mit der Auswahl von "
+
+#~ msgid "{JAPAN ONLY}Remaining time"
+#~ msgstr "{JAPAN ONLY}Remaining time"
+
+#~ msgid "{JAPAN ONLY}day"
+#~ msgstr "{JAPAN ONLY}day"
+
+#~ msgid "{JAPAN ONLY}days"
+#~ msgstr "{JAPAN ONLY}days"
+
+#~ msgid "{JAPAN ONLY}hour"
+#~ msgstr "{JAPAN ONLY}hour"
+
+#~ msgid "{JAPAN ONLY}hours"
+#~ msgstr "{JAPAN ONLY}hours"
+
+#~ msgid "{JAPAN ONLY}minute"
+#~ msgstr "{JAPAN ONLY}minute"
+
+#~ msgid "{JAPAN ONLY}minutes"
+#~ msgstr "{JAPAN ONLY}minutes"
+
+#~ msgid "{JAPAN ONLY}month"
+#~ msgstr "{JAPAN ONLY}month"
+
+#~ msgid "{JAPAN ONLY}months"
+#~ msgstr "{JAPAN ONLY}months"
+
+#~ msgid "{JAPAN ONLY}week"
+#~ msgstr "{JAPAN ONLY}week"
+
+#~ msgid "{JAPAN ONLY}weeks"
+#~ msgstr "{JAPAN ONLY}weeks"
+
+#~ msgid "{JAPAN ONLY}year"
+#~ msgstr "{JAPAN ONLY}year"
+
+#~ msgid "{JAPAN ONLY}years"
+#~ msgstr "{JAPAN ONLY}years"
 
 #~ msgid "Jump to date:"
 #~ msgstr "Springen Sie zum Datum:"
@@ -9639,9 +9694,6 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 
 #~ msgid "Why us?"
 #~ msgstr "Warum uns?"
-
-#~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
-#~ msgstr "Gewinnen Sie 10-1000 % auf Ihren Einsatz, wenn Sie Recht haben. Erhöhen Sie Ihre Gewinne indem Sie einen \"Erreicht\" Kontrakt mit einem Kursziel auswählen, das weiter vom aktuellen Kurs liegt."
 
 #~ msgid "You have reached the rate limit of requests per second. To continue, please <a href='javascript:;' id='ratelimit-refresh-link'>refresh</a> the page."
 #~ msgstr "Sie haben das Kurslimit für Anfragen je Sekunde erreicht. Bitte <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">aktualisieren</a> Sie die Seite, um fortzufahren."
@@ -10548,9 +10600,6 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 #~ msgid "Please enter your email address."
 #~ msgstr "Bitte geben Sie Ihre E-Mail Adresse ein."
 
-#~ msgid "Please log in."
-#~ msgstr "Melden Sie sich bitte an."
-
 #~ msgid "Please note that your settings have been updated as follows:"
 #~ msgstr "Bitte beachten Sie, dass Ihre Einstellungen wie folgt aktualisiert wurden:"
 
@@ -11114,9 +11163,6 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 
 #~ msgid "Week"
 #~ msgstr "Woche"
-
-#~ msgid "Weeks"
-#~ msgstr "Wochen"
 
 #~ msgid "Weighted Moving Average"
 #~ msgstr "Gewogener gleitender Mittelwert"

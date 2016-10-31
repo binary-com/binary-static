@@ -332,6 +332,9 @@ msgstr "(Một) giao dịch Chạm"
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "* Miễn Thuế: Lợi nhuận từ giao dịch là miễn thuế trên nhiều quốc gia nhưng bạn nên tham khảo người tư vấn thuế chuyên nghiệp."
 
+msgid ",000"
+msgstr ""
+
 msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgstr "Bản scan hóa đơn điện nước hoặc bản sao kê ngân hàng (không quá 3 tháng)."
 
@@ -2651,6 +2654,9 @@ msgstr "Có kiến thức, hiểu biết sâu về Javascript, HTML, CSS, AJAX, 
 msgid "FAQ"
 msgstr "Những câu hỏi thường gặp"
 
+msgid "FX Rate"
+msgstr ""
+
 msgid "Facility that allows you to set limits on your account."
 msgstr "Tiện ích cho phép bạn thiết lập giới hạn cho tài khoản của mình."
 
@@ -4051,6 +4057,9 @@ msgstr "Tìm hiểu về chúng tôi"
 msgid "Learn more"
 msgstr "Tìm hiểu thêm"
 
+msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
+msgstr ""
+
 msgid "Learn more about our corporate culture"
 msgstr "Tìm hiểu thêm về văn hóa của tập đoàn chúng tôi"
 
@@ -4235,6 +4244,11 @@ msgstr "Các chuyên gia về Thị trường"
 
 msgid "Market exit price"
 msgstr "Giá rút khỏi thị trường"
+
+#, fuzzy
+#| msgid "All markets are closed now. Please try again later."
+msgid "Market is closed. Please try again later."
+msgstr "Tất cả các thị trường đều đã đóng cửa. Vui lòng thử lại sau."
 
 msgid "Market prices are updated at most once per second.  For any given second, the market price will be updated to the first tick, if any, received in that particular second on the company datafeed."
 msgstr "Giá thị trường được cập nhật nhiều nhất một lần một giây. Đối với bất kì giây nào được đưa ra, giá thị trường sẽ được cập nhật từ biến động đầu tiên, nếu có thì sẽ nhận ngay trong giây cụ thể trên bảng thông báo dữ liệu của công ty."
@@ -4661,6 +4675,11 @@ msgstr "Đang mở tài khoản"
 msgid "Opens"
 msgstr "Mở"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Option Type"
+msgid "Option Type"
+msgstr "{JAPAN ONLY}Option Type"
+
 msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
 msgstr "Giao dịch quyền chọn có thể thực sự gây nghiện, và có thể thúc đẩy bạn chơi tới mức tới hạn của mình. Để tránh sự nguy hiểm của trường hợp nghiện này, chúng tôi cung cấp cho bạn một công cụ kiểm tra thực tế tổng hợp các giao dịch và tài khoản của mình một cách thường xuyên."
 
@@ -4864,6 +4883,11 @@ msgstr "Thanh toán"
 msgid "Payout"
 msgstr "Tiền thưởng"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Payout Amount"
+msgid "Payout Amount"
+msgstr "{JAPAN ONLY}Payout Amount"
+
 msgid "Pension"
 msgstr "Tiền phụ cấp"
 
@@ -4979,6 +5003,9 @@ msgstr "Vui lòng tuân theo cấu trúc 3 số, dấu gạch ngang, tiếp theo
 
 msgid "Please input a valid date"
 msgstr "Vui lòng nhập ngày hợp lệ"
+
+msgid "Please log in."
+msgstr "Vui lòng đăng nhập."
 
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Vui lòng chắc chắn rằng trước hết bạn đồng ý với Đại lý các điều khoản thanh toán trước khi gửi yêu cầu."
@@ -5376,6 +5403,11 @@ msgid "Relevant work experience in a related field (financial services preferred
 msgstr "Có kinh nghiệm làm việc thích hợp về một lĩnh vực liên quan (ưu tiên dịch vụ tài chính)"
 
 msgid "Remaining Time"
+msgstr "Thời gian còn lại"
+
+#, fuzzy
+#| msgid "Remaining Time"
+msgid "Remaining time"
 msgstr "Thời gian còn lại"
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
@@ -6544,6 +6576,9 @@ msgstr "Lời mời chào bán này không thể được dùng để kê
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "Khuyến mãi này chỉ dành cho những Khách hàng mới. Những Khách hàng hiện tại hoặc Khách hàng cũ không đủ điều kiện. Mỗi khách hàng chỉ có một lần được hưởng chương trình này."
 
+msgid "This symbol is not active. Please try another symbol."
+msgstr ""
+
 msgid "This website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and the advertisements thereof may submit cookies onto your web browser and as such are beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites, because their practices may differ from ours."
 msgstr "Trang web này chứa các đường dẫn đến các trang web khác và có thể chứa biểu ngữ hoặc biểu tượng quảng cáo liên quan đến các trang web của bên thứ ba. Những trang web và quảng cáo ở đó có thể gửi cookie trên trình duyệt web của bạn và những điều như vậy nằm ngoài tầm kiểm soát của chúng tôi. Chúng tôi không chịu trách nhiệm cho hoạt động bảo mật hoặc nội dung của trang web đó. Chúng tôi khuyến khích bạn đọc chính sách bảo mật của các trang web này, vì thực tế hoạt động của họ có thể khác với của chúng tôi."
 
@@ -6695,6 +6730,11 @@ msgstr "Trading Experience"
 
 msgid "Trading Limits"
 msgstr "Giới hạn Giao dịch"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Period"
+msgid "Trading Period"
+msgstr "{JAPAN ONLY}Trading Period"
 
 msgid "Trading Platforms"
 msgstr "Sàn giao dịch"
@@ -7299,11 +7339,15 @@ msgstr "Tại sao tôi nên trở thành một liên kết với %1?"
 msgid "Will I need to install any software?"
 msgstr "Tôi có cần thiết lập phần mền nào nữa không?"
 
-msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
-msgstr "Thắng từ 1- tới 1000% từ số tiền vốn của bạn nếu bạn đúng. Hãy làm tăng lợi nhuận bằng cách chọn "
-
-msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a "
+#, fuzzy
+#| msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a "
+msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing 'Stays In' with a narrow price target."
 msgstr "Thắng từ 1- tới 1000% từ số tiền vốn của bạn nếu bạn đúng. Hãy làm tăng lợi nhuận bằng cách chọn một "
+
+#, fuzzy
+#| msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
+msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a 'Touch' trade, with a price target farther away from the current price."
+msgstr "Với thắng lợi từ 10 tới 1000% từ số tiền vốn nếu bạn dùng. Hãy tăng lợi nhuận thắng lợi lên bằng cách chọn giao dịch \"Nhạy cảm\", với giá mục tiêu cách xa giá hiện tại."
 
 msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a price target farther away from the current price."
 msgstr "Với tỉ lệ thắng từ 10 tới 1000% trên tiền vốn của bạn nếu bạn đúng. Hãy tăng lợi nhuận thắng lợi bằng cách chọn giá mục tiêu cách xa giá hiện tại."
@@ -7979,6 +8023,14 @@ msgstr "chuỗi số xác minh"
 
 msgid "website"
 msgstr "trang web"
+
+msgid "week"
+msgstr ""
+
+#, fuzzy
+#| msgid "Weeks"
+msgid "weeks"
+msgstr "Tuần"
 
 msgid "year"
 msgstr "năm"
@@ -8799,9 +8851,6 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
-msgid "{JAPAN ONLY}Remaining time"
-msgstr "{JAPAN ONLY}Remaining time"
-
 #, fuzzy
 #| msgid "{JAPAN ONLY}Matters to attend:"
 msgid "{JAPAN ONLY}Remitter's Name:"
@@ -9072,42 +9121,6 @@ msgstr "{JAPAN ONLY}Your funds are safe"
 msgid "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 msgstr "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 
-msgid "{JAPAN ONLY}day"
-msgstr "{JAPAN ONLY}day"
-
-msgid "{JAPAN ONLY}days"
-msgstr "{JAPAN ONLY}days"
-
-msgid "{JAPAN ONLY}hour"
-msgstr "{JAPAN ONLY}hour"
-
-msgid "{JAPAN ONLY}hours"
-msgstr "{JAPAN ONLY}hours"
-
-msgid "{JAPAN ONLY}minute"
-msgstr "{JAPAN ONLY}minute"
-
-msgid "{JAPAN ONLY}minutes"
-msgstr "{JAPAN ONLY}minutes"
-
-msgid "{JAPAN ONLY}month"
-msgstr "{JAPAN ONLY}month"
-
-msgid "{JAPAN ONLY}months"
-msgstr "{JAPAN ONLY}months"
-
-msgid "{JAPAN ONLY}week"
-msgstr "{JAPAN ONLY}week"
-
-msgid "{JAPAN ONLY}weeks"
-msgstr "{JAPAN ONLY}weeks"
-
-msgid "{JAPAN ONLY}year"
-msgstr "{JAPAN ONLY}year"
-
-msgid "{JAPAN ONLY}years"
-msgstr "{JAPAN ONLY}years"
-
 #, fuzzy
 #| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}¥"
@@ -9207,6 +9220,48 @@ msgstr "Chi tiết Tài khoản"
 
 msgid "Terms and Conditions Approval"
 msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
+
+#~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
+#~ msgstr "Thắng từ 1- tới 1000% từ số tiền vốn của bạn nếu bạn đúng. Hãy làm tăng lợi nhuận bằng cách chọn "
+
+#~ msgid "{JAPAN ONLY}Remaining time"
+#~ msgstr "{JAPAN ONLY}Remaining time"
+
+#~ msgid "{JAPAN ONLY}day"
+#~ msgstr "{JAPAN ONLY}day"
+
+#~ msgid "{JAPAN ONLY}days"
+#~ msgstr "{JAPAN ONLY}days"
+
+#~ msgid "{JAPAN ONLY}hour"
+#~ msgstr "{JAPAN ONLY}hour"
+
+#~ msgid "{JAPAN ONLY}hours"
+#~ msgstr "{JAPAN ONLY}hours"
+
+#~ msgid "{JAPAN ONLY}minute"
+#~ msgstr "{JAPAN ONLY}minute"
+
+#~ msgid "{JAPAN ONLY}minutes"
+#~ msgstr "{JAPAN ONLY}minutes"
+
+#~ msgid "{JAPAN ONLY}month"
+#~ msgstr "{JAPAN ONLY}month"
+
+#~ msgid "{JAPAN ONLY}months"
+#~ msgstr "{JAPAN ONLY}months"
+
+#~ msgid "{JAPAN ONLY}week"
+#~ msgstr "{JAPAN ONLY}week"
+
+#~ msgid "{JAPAN ONLY}weeks"
+#~ msgstr "{JAPAN ONLY}weeks"
+
+#~ msgid "{JAPAN ONLY}year"
+#~ msgstr "{JAPAN ONLY}year"
+
+#~ msgid "{JAPAN ONLY}years"
+#~ msgstr "{JAPAN ONLY}years"
 
 #, fuzzy
 #~| msgid "Jump to"
@@ -9750,9 +9805,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 #~ msgid "Why us?"
 #~ msgstr "Lý do?"
-
-#~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
-#~ msgstr "Với thắng lợi từ 10 tới 1000% từ số tiền vốn nếu bạn dùng. Hãy tăng lợi nhuận thắng lợi lên bằng cách chọn giao dịch \"Nhạy cảm\", với giá mục tiêu cách xa giá hiện tại."
 
 #~ msgid "You have reached the rate limit of requests per second. To continue, please <a href='javascript:;' id='ratelimit-refresh-link'>refresh</a> the page."
 #~ msgstr "Bạn đã đạt đến yêu cầu giới hạn tốc độ mỗi giây. Để tiếp tục, vui lòng <a href='javascript:;' id='ratelimit-refresh-link'>làm mới</a> trang."
@@ -10657,9 +10709,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 #~ msgid "Please enter your email address."
 #~ msgstr "Vui lòng nhập địa chỉ email của bạn."
 
-#~ msgid "Please log in."
-#~ msgstr "Vui lòng đăng nhập."
-
 #~ msgid "Please note that your settings have been updated as follows:"
 #~ msgstr "Vui lòng chú ý rằng thiết lập của bạn đã được cập nhật như sau:"
 
@@ -11219,9 +11268,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 #~ msgstr "Loại trừ trang web hiện đang được thiết lập <strong>%1.</strong>"
 
 #~ msgid "Week"
-#~ msgstr "Tuần"
-
-#~ msgid "Weeks"
 #~ msgstr "Tuần"
 
 #~ msgid "Weighted Moving Average"
