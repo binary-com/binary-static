@@ -151,6 +151,10 @@ var MBPrice = (function() {
         barriers       = [];
         res_count      = 0;
         is_displayed   = false;
+        // display loading
+        if ($(price_selector).html()) {
+            $('#loading-overlay').height($(price_selector).height()).removeClass('invisible');
+        }
         $(price_selector).html('');
     };
 
@@ -186,7 +190,7 @@ var MBPrice = (function() {
     };
 
     var hidePriceOverlay = function() {
-        $('#disable-overlay').addClass('invisible');
+        $('#disable-overlay, #loading-overlay').addClass('invisible');
     };
 
     var hideSpinnerShowTrading = function() {

@@ -110,6 +110,7 @@
                     <div class="price-rows"></div>
                 </div>
             </div>
+            <div id="loading-overlay" class="invisible"></div>
         </div>
     </div>
     [% INCLUDE bet/analysis.html.tt %]

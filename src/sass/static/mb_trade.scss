@@ -27,6 +27,10 @@
             height: 100%;
             background-color: rgba(242, 242, 242, 0.5);
         }
+        #loading-overlay {
+            width: calc(100% - 5px);
+            background: $COLOR_WHITE url('../images/common/hourglass_1.gif') center 10px no-repeat;
+        }
     }
     .prices-wrapper {
         .price-row, .heading {
