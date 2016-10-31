@@ -6,7 +6,7 @@ var MBProcess = (function() {
     function processActiveSymbols(data) {
         'use strict';
         if (data.hasOwnProperty('error')) {
-            showErrorMessage($('#content .container .japan-ui'), data.error.message);
+            showErrorMessage($('#content .container #mb_trading'), data.error.message);
             return;
         }
 
@@ -66,7 +66,7 @@ var MBProcess = (function() {
     function processTick(tick) {
         'use strict';
         if (tick.hasOwnProperty('error')) {
-            showErrorMessage($('#content .container .japan-ui'), tick.error.message);
+            showErrorMessage($('#content .container #mb_trading'), tick.error.message);
             return;
         }
         var symbol = MBDefaults.get('underlying');
@@ -84,7 +84,7 @@ var MBProcess = (function() {
         'use strict';
 
         if (contracts.hasOwnProperty('error')) {
-            showErrorMessage($('#content .container .japan-ui'), contracts.error.message, contracts.error.code);
+            showErrorMessage($('#content .container #mb_trading'), contracts.error.message, contracts.error.code);
             return;
         }
 

@@ -2,7 +2,7 @@
     <img class="spinner" src="[% request.url_for('images/pages/binary-symbol-logo.svg') %]" alt="" />
 </div>
 <div class="mb-trading-wrapper invisible">
-    <div class="japan-ui">
+    <div id="mb_trading">
         <div class="notifications-wrapper"></div>
         <section class="japan-form gr-row">
             <div class="gr-6 gr-12-m gr-12-p gr-no-gutter-right">
