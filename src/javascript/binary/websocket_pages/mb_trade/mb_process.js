@@ -186,7 +186,7 @@ var MBProcess = (function() {
         }
     }
 
-    var periodValue, $countDownTimer, remainingTimeElement;
+    var periodValue, $countDownTimer, remainingTimeElement, remainingTimeout;
     function processRemainingTime(recalculate) {
         if (typeof periodValue === 'undefined' || recalculate) {
             periodValue = document.getElementById('period').value;
@@ -215,7 +215,12 @@ var MBProcess = (function() {
             }
         }
         remainingTimeElement.innerHTML = remainingTimeString.join(' ');
-        setTimeout(processRemainingTime, 1000);
+        clearRemainingTimeout();
+        remainingTimeout = setTimeout(processRemainingTime, 1000);
+    }
+
+    function clearRemainingTimeout() {
+        clearTimeout(remainingTimeout);
     }
 
     function processBuy(barrier, contract_type) {
@@ -281,6 +286,7 @@ var MBProcess = (function() {
         processProposal        : processProposal,
         processRemainingTime   : processRemainingTime,
         processBuy             : processBuy,
+        clearTimeout           : clearRemainingTimeout,
     };
 })();
 
