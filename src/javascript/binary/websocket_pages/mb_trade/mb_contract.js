@@ -126,17 +126,15 @@ var MBContract = (function() {
         }
     };
 
-    var sortByExpiryTime = function(a, b) {
-        var a0 = a.split('_')[0],
-            a1 = a.split('_')[1],
-            b0 = b.split('_')[0],
-            b1 = b.split('_')[1],
-            duration1 = a1 - a0,
-            duration2 = b1 - b0;
-        if (a1 === b1) {
-            return duration2 < duration1;
+    var sortByExpiryTime = function(first, second) {
+        var a = first.split('_'),
+            b = second.split('_'),
+            duration1 = a[1] - a[0],
+            duration2 = b[1] - b[0];
+        if (a[1] === b[1]) {
+            return duration1 - duration2;
         } else {
-            return b1 < a1;
+            return a[1] - b[1];
         }
     };
 
