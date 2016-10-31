@@ -21,9 +21,24 @@ var MBProcess = (function() {
         if (update_page && (!symbol || !symbols_list[symbol])) {
             symbol = undefined;
         }
-        displayUnderlyings('underlying', symbols_list, symbol);
-        if (update_page) {
-            MBProcess.processMarketUnderlying();
+        // check if all symbols are inactive
+        var is_market_closed = true;
+        Object.keys(symbols_list).forEach(function(s) {
+            if (symbols_list[s].is_active) {
+                is_market_closed = false;
+            }
+        });
+        if (is_market_closed) {
+            $('.japan-form, .japan-table, #trading_bottom_content').addClass('invisible');
+            MBNotifications.show({text: page.text.localize('Market is closed. Please try again later.'), uid: 'MARKET_CLOSED'});
+        } else {
+            displayUnderlyings('underlying', symbols_list, symbol);
+
+            if (symbol && !symbols_list[symbol].is_active) {
+                MBNotifications.show({text: page.text.localize('This symbol is not active. Please try another symbol.'), uid: 'SYMBOL_INACTIVE'});
+            } else if (update_page) {
+                MBProcess.processMarketUnderlying();
+            }
         }
     }
 

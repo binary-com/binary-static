@@ -25,6 +25,7 @@ var MBTradingEvents = (function () {
                     }
                     var underlying = e.target.value;
                     MBDefaults.set('underlying', underlying);
+                    MBNotifications.hide('SYMBOL_INACTIVE');
 
                     MBTick.clean();
 
