@@ -29,9 +29,11 @@ var Platforms = (function () {
             $fadeR = $('.fade-to-right');
         var newScrollLeft = $elem.scrollLeft(),
             width = $elem.width(),
-            scrollWidth = $elem.get(0).scrollWidth;
+            scrollWidth = $elem.get(0).scrollWidth,
+            doneScrolling = scrollWidth === newScrollLeft + width;
         $fadeL.css('opacity', newScrollLeft === 0 ? '0' : '100');
-        $fadeR.css('opacity', scrollWidth === newScrollLeft + width ? '0' : '100');
+        $fadeR.css('opacity', doneScrolling ? '0' : '100');
+        if (doneScrolling) refreshTable();
     }
     function checkWidth() {
         if ($('.sidebar-left').is(':visible')) {
@@ -39,6 +41,9 @@ var Platforms = (function () {
         } else {
             $('.sections').removeClass('invisible');
         }
+        refreshTable();
+    }
+    function refreshTable() {
         $('.inner th').hide().fadeIn(1); // force to refresh in order to maintain correct positions
     }
     function get_hash() {
