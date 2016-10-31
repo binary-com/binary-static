@@ -18,11 +18,11 @@ var MBTick = (function() {
     'use strict';
 
     var quote = '',
-        id = '',
+        id    = '',
         epoch = '',
-        errorMessage = '',
         spots = {},
-        keep_number = 20;
+        errorMessage = '',
+        keep_number  = 20;
 
     var details = function(data) {
         errorMessage = '';
@@ -33,7 +33,7 @@ var MBTick = (function() {
             } else {
                 var tick = data['tick'];
                 quote = tick['quote'];
-                id = tick['id'];
+                id    = tick['id'];
                 epoch = tick['epoch'];
 
                 spots[epoch] = quote;
@@ -90,17 +90,17 @@ var MBTick = (function() {
         var $chart = $('#trading_worm_chart');
         var spots =  Object.keys(MBTick.spots()).sort(function(a,b){return a-b;}).map(function(v){return MBTick.spots()[v];});
         var chart_config = {
-            type: 'line',
-            lineColor: '#606060',
-            fillColor: false,
-            spotColor: '#00f000',
-            minSpotColor: '#f00000',
-            maxSpotColor: '#0000f0',
+            type              : 'line',
+            lineColor         : '#606060',
+            fillColor         : false,
+            spotColor         : '#00f000',
+            minSpotColor      : '#f00000',
+            maxSpotColor      : '#0000f0',
             highlightSpotColor: '#ffff00',
             highlightLineColor: '#000000',
-            spotRadius: 1.25,
-            width: 100,
-            height: 25,
+            spotRadius        : 1.25,
+            width             : 100,
+            height            : 25,
         };
         if ($chart && typeof $chart.sparkline === 'function') {
             $chart.sparkline(spots, chart_config);
@@ -115,11 +115,11 @@ var MBTick = (function() {
 
     var request = function(symbol) {
         BinarySocket.send({
-            "ticks_history": symbol,
-            "style": "ticks",
-            "end": "latest",
-            "count": keep_number,
-            "subscribe": 1
+            'ticks_history': symbol,
+            'style'        : 'ticks',
+            'end'          : 'latest',
+            'count'        : keep_number,
+            'subscribe'    : 1
         });
     };
 
@@ -137,21 +137,19 @@ var MBTick = (function() {
     };
 
     return {
-        details: details,
-        display: display,
-        quote: function() {
-            return quote;
-        },
-        id: function() {
-            return id;
-        },
-        epoch: function() {
-            return epoch;
-        },
-        errorMessage: function() {
-            return errorMessage;
-        },
-        clean: function() {
+        details        : details,
+        display        : display,
+        updateWarmChart: updateWarmChart,
+        request        : request,
+        processHistory : processHistory,
+        displayPriceMovement: displayPriceMovement,
+        quote       : function() { return quote; },
+        id          : function() { return id; },
+        epoch       : function() { return epoch; },
+        errorMessage: function() { return errorMessage; },
+        spots       : function() { return spots; },
+        setQuote    : function(q) { quote = q; },
+        clean       : function() {
             spots = {};
             quote = '';
             $('#spot').fadeOut(200, function(){
@@ -159,16 +157,6 @@ var MBTick = (function() {
                 $('#spot-dyn').removeAttr('class').text('');
             });
         },
-        spots: function() {
-            return spots;
-        },
-        setQuote: function(q) {
-            quote = q;
-        },
-        displayPriceMovement: displayPriceMovement,
-        updateWarmChart: updateWarmChart,
-        request: request,
-        processHistory: processHistory
     };
 })();
 

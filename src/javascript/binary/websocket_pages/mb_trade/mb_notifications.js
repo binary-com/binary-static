@@ -9,7 +9,7 @@ var MBNotifications = (function() {
     /*
      * options: Object {
      *     text       : {string}  message text to display
-     *     uid        : {string}  uinique id to prevent duplicating the same message and also used to hide that message
+     *     uid        : {string}  unique id to prevent duplicating the same message and also used to hide the message
      *     dismissible: {boolean} dismissible messages can be hidden by client
      * }
      */

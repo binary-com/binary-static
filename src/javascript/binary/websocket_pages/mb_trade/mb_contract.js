@@ -11,8 +11,8 @@ var MBContract = (function() {
     var getContracts = function(underlying) {
         var req = {
             contracts_for: (underlying || MBDefaults.get('underlying')),
-            currency: getCurrency(),
-            region: 'japan'
+            currency     : getCurrency(),
+            region       : 'japan'
         };
         if (!underlying) {
             req.passthrough = {action: 'no-proposal'};
@@ -153,10 +153,10 @@ var MBContract = (function() {
             staysinout: page.text.localize('Stays In/Goes Out'),
         };
         var categoryOrder = {
-            callput: 1,
+            callput     : 1,
             touchnotouch: 2,
-            endsinout: 3,
-            staysinout: 4
+            endsinout   : 3,
+            staysinout  : 4
         };
         for (var i = 0; i < available_contracts.length; i++) {
             category = contracts_for_response.contracts_for.available[i].contract_category;
@@ -197,53 +197,53 @@ var MBContract = (function() {
 
     var getTemplate = function(contract_type) {
         var templates = {
-            "CALLE": {
-                "opposite": "PUT",
-                "order": 0,
-                "name": "Higher",
-                "description": "[_1] [_2] payout if [_3] is strictly higher or equal than Exercise price at close  on [_4]."
+            'CALLE': {
+                'opposite'   : 'PUT',
+                'order'      : 0,
+                'name'       : 'Higher',
+                'description': '[_1] [_2] payout if [_3] is strictly higher or equal than Exercise price at close  on [_4].'
             },
-            "PUT": {
-                "opposite": "CALLE",
-                "order": 1,
-                "name": "Lower",
-                "description": "[_1] [_2] payout if [_3] is strictly lower than Exercise price at close on [_4]."
+            'PUT': {
+                'opposite'   : 'CALLE',
+                'order'      : 1,
+                'name'       : 'Lower',
+                'description': '[_1] [_2] payout if [_3] is strictly lower than Exercise price at close on [_4].'
             },
-            "ONETOUCH": {
-                "opposite": "NOTOUCH",
-                "order": 0,
-                "name": "Touches",
-                "description": "[_1] [_2] payout if [_3] touches Exercise price through close on [_4]."
+            'ONETOUCH': {
+                'opposite'   : 'NOTOUCH',
+                'order'      : 0,
+                'name'       : 'Touches',
+                'description': '[_1] [_2] payout if [_3] touches Exercise price through close on [_4].'
             },
-            "NOTOUCH": {
-                "opposite": "ONETOUCH",
-                "order": 1,
-                "name": "Does Not Touch",
-                "description": "[_1] [_2] payout if [_3] does not touch Exercise price through close on [_4]."
+            'NOTOUCH': {
+                'opposite'   : 'ONETOUCH',
+                'order'      : 1,
+                'name'       : 'Does Not Touch',
+                'description': '[_1] [_2] payout if [_3] does not touch Exercise price through close on [_4].'
             },
-            "EXPIRYRANGEE": {
-                "opposite": "EXPIRYMISS",
-                "order": 0,
-                "name": "Ends Between",
-                "description": "[_1] [_2] payout if [_3] ends on or between low and high values of Exercise price at close on [_4]."
+            'EXPIRYRANGEE': {
+                'opposite'   : 'EXPIRYMISS',
+                'order'      : 0,
+                'name'       : 'Ends Between',
+                'description': '[_1] [_2] payout if [_3] ends on or between low and high values of Exercise price at close on [_4].'
             },
-            "EXPIRYMISS": {
-                "opposite": "EXPIRYRANGEE",
-                "order": 1,
-                "name": "Ends Outside",
-                "description": "[_1] [_2] payout if [_3] ends outside low and high values of Exercise price at close on [_4]."
+            'EXPIRYMISS': {
+                'opposite'   : 'EXPIRYRANGEE',
+                'order'      : 1,
+                'name'       : 'Ends Outside',
+                'description': '[_1] [_2] payout if [_3] ends outside low and high values of Exercise price at close on [_4].'
             },
-            "RANGE": {
-                "opposite": "UPORDOWN",
-                "order": 0,
-                "name": "Stays Between",
-                "description": "[_1] [_2] payout if [_3] stays between low and high values of Exercise price through close on [_4]."
+            'RANGE': {
+                'opposite'   : 'UPORDOWN',
+                'order'      : 0,
+                'name'       : 'Stays Between',
+                'description': '[_1] [_2] payout if [_3] stays between low and high values of Exercise price through close on [_4].'
             },
-            "UPORDOWN": {
-                "opposite": "RANGE",
-                "order": 1,
-                "name": "Goes Outside",
-                "description": "[_1] [_2] payout if [_3] goes outside of low and high values of Exercise price through close on [_4]."
+            'UPORDOWN': {
+                'opposite'   : 'RANGE',
+                'order'      : 1,
+                'name'       : 'Goes Outside',
+                'description': '[_1] [_2] payout if [_3] goes outside of low and high values of Exercise price through close on [_4].'
             },
         };
         return contract_type ? templates[contract_type] : templates;
