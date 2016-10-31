@@ -325,6 +325,9 @@ msgstr "Trade (One) Touch"
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "* Tax Free: in molti paesi i profitti generati dal trading sono esenti da imposte ma si consiglia sempre di consultare un consulente fiscale."
 
+msgid ",000"
+msgstr ""
+
 msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgstr "- Una copia scannerizzata di una bolletta o di un estratto conto (non antecedente i 3 mesi)."
 
@@ -2641,6 +2644,9 @@ msgstr "Ampia conoscenza di Javascript, HTML, CSS, AJAX, JSON"
 msgid "FAQ"
 msgstr "FAQ"
 
+msgid "FX Rate"
+msgstr ""
+
 msgid "Facility that allows you to set limits on your account."
 msgstr "Funzione che ti consente di impostare i limiti sul tuo account."
 
@@ -4041,6 +4047,9 @@ msgstr "Impara da noi"
 msgid "Learn more"
 msgstr "Per saperne di più"
 
+msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
+msgstr ""
+
 msgid "Learn more about our corporate culture"
 msgstr "Ulteriori informazioni sulla nostra cultura aziendale"
 
@@ -4223,6 +4232,11 @@ msgstr "Professionisti del mercato"
 
 msgid "Market exit price"
 msgstr "Prezzo d'uscita del mercato"
+
+#, fuzzy
+#| msgid "All markets are closed now. Please try again later."
+msgid "Market is closed. Please try again later."
+msgstr "Al momento tutti i mercati sono chiusi. Si prega di riprovare più tardi."
 
 msgid "Market prices are updated at most once per second.  For any given second, the market price will be updated to the first tick, if any, received in that particular second on the company datafeed."
 msgstr "I prezzi di mercato vengono aggiornati almeno una volta al secondo.  Per ogni dato secondo, il prezzo di mercato viene aggiornato al primo tick, se presente, ricevuto in quel dato secondo sul feed di dati della società."
@@ -4651,6 +4665,11 @@ msgstr "Apertura di un account"
 msgid "Opens"
 msgstr "Apre"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Option Type"
+msgid "Option Type"
+msgstr "{JAPAN ONLY}Option Type"
+
 msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
 msgstr "Il trading in opzioni può sviluppare una vera e propria dipendenza così come qualsiasi altra attività spinta al limite. Per evitare i danni di tale dipendenza, ti forniamo la possibilità di controllare la situazione reale dei tuoi trade e dei tuoi account su base regolare."
 
@@ -4854,6 +4873,11 @@ msgstr "Pagamenti"
 msgid "Payout"
 msgstr "Payout"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Payout Amount"
+msgid "Payout Amount"
+msgstr "{JAPAN ONLY}Payout Amount"
+
 msgid "Pension"
 msgstr "Pensione"
 
@@ -4971,6 +4995,9 @@ msgstr "Segui il modello con 3 numeri, un trattino e 4 numeri."
 
 msgid "Please input a valid date"
 msgstr "Inserisci una data valida"
+
+msgid "Please log in."
+msgstr "Effettua il login."
 
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Prima di inviare la tua richiesta, assicurati di essere d'accordo con l'Agente sui termini di pagamento."
@@ -5368,6 +5395,11 @@ msgid "Relevant work experience in a related field (financial services preferred
 msgstr "Esperienza lavorativa in un campo simile (preferenza per i servizi finanziari)"
 
 msgid "Remaining Time"
+msgstr "Tempo residuo"
+
+#, fuzzy
+#| msgid "Remaining Time"
+msgid "Remaining time"
 msgstr "Tempo residuo"
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
@@ -6538,6 +6570,9 @@ msgstr "Questa offerta non può essere utilizzata insieme a qualsiasi altra offe
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "Questa promozione è valida solo per i nuovi Clienti. I clienti già esistenti o antecedenti non ne hanno diritto. È disponibile solo una volta per ogni Cliente."
 
+msgid "This symbol is not active. Please try another symbol."
+msgstr ""
+
 msgid "This website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and the advertisements thereof may submit cookies onto your web browser and as such are beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites, because their practices may differ from ours."
 msgstr "Questo sito internet contiene link ad altri siti internet e può contenere banner o icone promozionali connessi a siti internet di terze parti. Tali siti internet e i relativi annunci pubblicitari possono inviare cookie sul tuo browser web e ciò non può essere controllato da parte nostra. Non siamo responsabili per le procedure relative alla privacy o per il contenuto di tali siti. Ti invitiamo a leggere le informative sulla privacy di tali siti internet poiché possono essere diverse dalla nostra."
 
@@ -6695,6 +6730,11 @@ msgstr "Trading Experience"
 
 msgid "Trading Limits"
 msgstr "Limiti del trading"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Period"
+msgid "Trading Period"
+msgstr "{JAPAN ONLY}Trading Period"
 
 msgid "Trading Platforms"
 msgstr "Piattaforme di trading"
@@ -7299,11 +7339,15 @@ msgstr "Perché dovrei diventare un affiliato di %1?"
 msgid "Will I need to install any software?"
 msgstr "Dovrò installare qualche software?"
 
-msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
-msgstr "Vinci dal 10 al 1000% della tua puntata, se la tua previsione è corretta. Aumenta il tuo rendimento vincente scegliendo "
-
-msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a "
+#, fuzzy
+#| msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a "
+msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing 'Stays In' with a narrow price target."
 msgstr "Vinci dal 10 al 1000% della tua puntata, se la tua previsione è corretta. Aumenta il tuo rendimento vincente scegliendo un "
+
+#, fuzzy
+#| msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
+msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a 'Touch' trade, with a price target farther away from the current price."
+msgstr "Vinci dal 10 al 1000% della tua puntata, se la tua previsione è corretta. Aumenta il tuo rendimento vincente scegliendo un trade \"Touch\" con un prezzo obiettivo più lontano rispetto al prezzo attuale."
 
 msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a price target farther away from the current price."
 msgstr "Vinci dal 10 al 1000% della tua puntata, se la tua previsione è corretta. Aumenta il tuo rendimento vincente scegliendo un prezzo obiettivo più lontano rispetto al prezzo attuale."
@@ -7975,6 +8019,14 @@ msgstr "token di verifica"
 
 msgid "website"
 msgstr "sito internet"
+
+msgid "week"
+msgstr ""
+
+#, fuzzy
+#| msgid "Weeks"
+msgid "weeks"
+msgstr "Settimane"
 
 msgid "year"
 msgstr "anno"
@@ -8743,9 +8795,6 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
-msgid "{JAPAN ONLY}Remaining time"
-msgstr "{JAPAN ONLY}Remaining time"
-
 msgid "{JAPAN ONLY}Remitter's Name:"
 msgstr "{JAPAN ONLY}Remitter's Name:"
 
@@ -9006,42 +9055,6 @@ msgstr "{JAPAN ONLY}Your funds are safe"
 msgid "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 msgstr "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 
-msgid "{JAPAN ONLY}day"
-msgstr "{JAPAN ONLY}day"
-
-msgid "{JAPAN ONLY}days"
-msgstr "{JAPAN ONLY}days"
-
-msgid "{JAPAN ONLY}hour"
-msgstr "{JAPAN ONLY}hour"
-
-msgid "{JAPAN ONLY}hours"
-msgstr "{JAPAN ONLY}hours"
-
-msgid "{JAPAN ONLY}minute"
-msgstr "{JAPAN ONLY}minute"
-
-msgid "{JAPAN ONLY}minutes"
-msgstr "{JAPAN ONLY}minutes"
-
-msgid "{JAPAN ONLY}month"
-msgstr "{JAPAN ONLY}month"
-
-msgid "{JAPAN ONLY}months"
-msgstr "{JAPAN ONLY}months"
-
-msgid "{JAPAN ONLY}week"
-msgstr "{JAPAN ONLY}week"
-
-msgid "{JAPAN ONLY}weeks"
-msgstr "{JAPAN ONLY}weeks"
-
-msgid "{JAPAN ONLY}year"
-msgstr "{JAPAN ONLY}year"
-
-msgid "{JAPAN ONLY}years"
-msgstr "{JAPAN ONLY}years"
-
 #, fuzzy
 #| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}¥"
@@ -9141,6 +9154,48 @@ msgstr "Dettagli dell'account"
 
 msgid "Terms and Conditions Approval"
 msgstr "Approvazione dei termini e delle condizioni"
+
+#~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
+#~ msgstr "Vinci dal 10 al 1000% della tua puntata, se la tua previsione è corretta. Aumenta il tuo rendimento vincente scegliendo "
+
+#~ msgid "{JAPAN ONLY}Remaining time"
+#~ msgstr "{JAPAN ONLY}Remaining time"
+
+#~ msgid "{JAPAN ONLY}day"
+#~ msgstr "{JAPAN ONLY}day"
+
+#~ msgid "{JAPAN ONLY}days"
+#~ msgstr "{JAPAN ONLY}days"
+
+#~ msgid "{JAPAN ONLY}hour"
+#~ msgstr "{JAPAN ONLY}hour"
+
+#~ msgid "{JAPAN ONLY}hours"
+#~ msgstr "{JAPAN ONLY}hours"
+
+#~ msgid "{JAPAN ONLY}minute"
+#~ msgstr "{JAPAN ONLY}minute"
+
+#~ msgid "{JAPAN ONLY}minutes"
+#~ msgstr "{JAPAN ONLY}minutes"
+
+#~ msgid "{JAPAN ONLY}month"
+#~ msgstr "{JAPAN ONLY}month"
+
+#~ msgid "{JAPAN ONLY}months"
+#~ msgstr "{JAPAN ONLY}months"
+
+#~ msgid "{JAPAN ONLY}week"
+#~ msgstr "{JAPAN ONLY}week"
+
+#~ msgid "{JAPAN ONLY}weeks"
+#~ msgstr "{JAPAN ONLY}weeks"
+
+#~ msgid "{JAPAN ONLY}year"
+#~ msgstr "{JAPAN ONLY}year"
+
+#~ msgid "{JAPAN ONLY}years"
+#~ msgstr "{JAPAN ONLY}years"
 
 #~ msgid "Jump to date:"
 #~ msgstr "Salta alla data:"
@@ -9680,9 +9735,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 #~ msgid "Why us?"
 #~ msgstr "Perché noi?"
-
-#~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
-#~ msgstr "Vinci dal 10 al 1000% della tua puntata, se la tua previsione è corretta. Aumenta il tuo rendimento vincente scegliendo un trade \"Touch\" con un prezzo obiettivo più lontano rispetto al prezzo attuale."
 
 #~ msgid "You have reached the rate limit of requests per second. To continue, please <a href='javascript:;' id='ratelimit-refresh-link'>refresh</a> the page."
 #~ msgstr "Hai raggiunto il limite di tasso delle richieste per secondo. Per continuare, <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">aggiorna</a> la pagina."
@@ -10587,9 +10639,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 #~ msgid "Please enter your email address."
 #~ msgstr "Inserisci il tuo indirizzo email."
 
-#~ msgid "Please log in."
-#~ msgstr "Effettua il login."
-
 #~ msgid "Please note that your settings have been updated as follows:"
 #~ msgstr "Si prega di notare che le tue impostazioni sono state aggiornate come segue:"
 
@@ -11150,9 +11199,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 #~ msgid "Week"
 #~ msgstr "Settimana"
-
-#~ msgid "Weeks"
-#~ msgstr "Settimane"
 
 #~ msgid "Weighted Moving Average"
 #~ msgstr "Media mobile ponderata"
