@@ -38,6 +38,7 @@ var MBTradingEvents = (function () {
                     // get ticks for current underlying
                     MBTick.request(underlying);
                     MBProcess.processPriceRequest();
+                    MBContract.displayDescriptions();
                 }
             });
         }
@@ -59,6 +60,7 @@ var MBTradingEvents = (function () {
                 MBProcess.processPriceRequest();
                 $('.countdown-timer').removeClass('alert');
                 MBProcess.processRemainingTime('recalculate');
+                MBContract.displayDescriptions();
             });
         }
 

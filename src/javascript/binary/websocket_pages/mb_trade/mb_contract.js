@@ -252,7 +252,7 @@ var MBContract = (function() {
             $desc_wrappers = $('.prices-wrapper'),
             currency = (format_currency(TUser.get().currency) || format_currency(document.getElementById('currency').value) || '¥'),
             payout = Number(MBDefaults.get('payout') * (japanese_client() ? 1000 : 1)).toLocaleString(),
-            display_name = MBSymbols.getName(contracts[0].underlying_symbol),
+            display_name = MBSymbols.getName(MBDefaults.get('underlying')),
             date_expiry = PeriodText(contracts[0].trading_period).replace(/\s\(.*\)/, '');
         contracts.forEach(function(c) {
             var contract_type = c.contract_type,
