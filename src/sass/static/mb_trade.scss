@@ -97,6 +97,8 @@
     .descr-wrapper {
         & > div {
             min-height: 88px;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
         .descr {
             padding: 0 16px 0 0;
@@ -104,10 +106,6 @@
             max-width: 420px;
             line-height: 1.4em;
         }
-    }
-    .background-gray {
-        padding-top: 10px;
-        padding-bottom: 10px;
     }
     .details-heading {
         padding: 45px 16px 0;
