@@ -27,7 +27,7 @@
   <div class="gr-6 gr-12-m gr-parent" id="index">
     <dl class="gr-row">
       <div class="gr-6 list">
-        <div class="section section-jp">
+        <div class="section fill-bg-color section-jp">
           <a class="pjaxload" href="#how-to-open-an-account">
             <div id="how-to-open-an-account-img"></div>
             <div class="section-header">
@@ -35,7 +35,7 @@
             </div>
           </a>
         </div>
-        <div class="section section-jp">
+        <div class="section fill-bg-color section-jp">
           <a class="pjaxload" href="#options-basic-knowledge">
             <div id="options-basic-knowledge-img"></div>
             <div class="section-header">
@@ -43,7 +43,7 @@
             </div>
           </a>
         </div>
-        <div class="section section-jp">
+        <div class="section fill-bg-color section-jp">
           <a class="pjaxload" href="#summary-of-specifications">
             <div id="summary-of-specifications-img"></div>
             <div class="section-header">
@@ -54,7 +54,7 @@
       </div>
 
       <div class="gr-6 list">
-        <div class="section section-jp">
+        <div class="section fill-bg-color section-jp">
           <a class="pjaxload" href="#identification-documents">
             <div id="identification-documents-img"></div>
             <div class="section-header">
@@ -62,7 +62,7 @@
             </div>
           </a>
         </div>
-        <div class="section section-jp">
+        <div class="section fill-bg-color section-jp">
           <a class="pjaxload" href="#trading-guide">
             <div id="trading-guide-img"></div>
             <div class="section-header">
@@ -70,7 +70,7 @@
             </div>
           </a>
         </div>
-        <div class="section section-jp">
+        <div class="section fill-bg-color section-jp">
           <a class="pjaxload" href="#pre-contract-documents">
             <div id="pre-contract-documents-img"></div>
             <div class="section-header">
@@ -219,14 +219,14 @@
 
   <div class="gr-3 gr-hide-m">
     <div class="sidebar-right">
-      <div class="by_client_type client_logged_out invisible">
+      <div class="by_client_type client_logged_out invisible fill-bg-color">
         <p>
           <a class="pjaxload" href="[% request.url_for('/') %]">[% l('Try it now') %]</a>
           <br>
           [% l('No risk, $10K virtual money account') %]
         </p>
       </div>
-      <div>
+      <div class="fill-bg-color">
         <p>
           [% l('Want to learn more?') %]
           <br>

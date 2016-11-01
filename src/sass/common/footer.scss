@@ -5,11 +5,6 @@
             font-size: 13px;
             font-weight: bold;
         }
-        a {
-            font-size: 13px;
-            font-weight: normal;
-            color: $COLOR_WHITE;
-        }
         li {
             line-height: 1;
         }
@@ -23,13 +18,11 @@
     #footer-regulatory {
         a {
             display: inline-block;
-            color: $COLOR_WHITE;
             text-decoration: underline;
         }
         #regulatory-text {
             line-height: 1.2em;
             text-align: justify;
-            color: $COLOR_WHITE;
             font-size: 10px;
         }
         #social-networks {
@@ -78,7 +71,6 @@
     }
     #footer-last {
         a {
-            color: $COLOR_WHITE;
             text-decoration: underline;
         }
         .gambling {
@@ -86,7 +78,6 @@
             text-align: justify;
             font-size: 13px;
             font-weight: 400;
-            color: $COLOR_WHITE;
             line-height: 110%;
         }
     }
