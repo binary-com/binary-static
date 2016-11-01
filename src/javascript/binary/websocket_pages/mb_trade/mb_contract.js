@@ -81,10 +81,9 @@ var MBContract = (function() {
             trading_period = available_contracts[i].trading_period;
             if (!trading_period) return;
             start_end = trading_period.date_start.epoch + '_' + trading_period.date_expiry.epoch + '_' + trading_period.duration;
-            if (trading_period_array.indexOf(start_end) > -1) {
-                continue;
+            if (trading_period_array.indexOf(start_end) < 0) {
+                trading_period_array.push(start_end);
             }
-            trading_period_array.push(start_end);
         }
         trading_period_array.sort(sortByExpiryTime);
         if (rebuild) {
@@ -101,7 +100,7 @@ var MBContract = (function() {
         } else {
             var existing_array = [],
                 missing_array = [];
-            $("#period option").each(function() {
+            $('#period option').each(function() {
                 existing_array.push($(this).val());
             });
             for (var l = 0; l < trading_period_array.length; l++) {
@@ -174,8 +173,8 @@ var MBContract = (function() {
                 appendTextValueChild(document.getElementById('category'), categoryNames[contracts_array[j]], contracts_array[j], contracts_array[j] == default_value);
             }
             MBDefaults.set('category', $('#category').val());
-            populatePeriods();
         }
+        populatePeriods();
     };
 
     var getCurrentContracts = function() {
