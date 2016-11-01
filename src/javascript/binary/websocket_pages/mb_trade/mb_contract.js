@@ -89,7 +89,7 @@ var MBContract = (function() {
         if (rebuild) {
             $periodElement.empty();
         }
-        if ($periodElement.children().length === 0) {
+        if ($periodElement.children().length === 0) { // populate for the first time
             var default_value = MBDefaults.get('period');
             for (var j = 0; j < trading_period_array.length; j++) {
                 appendTextValueChild(document.getElementById('period'), PeriodText(trading_period_array[j]), trading_period_array[j], trading_period_array[j] == default_value);
@@ -97,12 +97,14 @@ var MBContract = (function() {
             MBDefaults.set('period', $periodElement.val());
             MBContract.displayDescriptions();
             MBProcess.processRemainingTime();
-        } else {
+        } else { // update options
             var existing_array = [],
-                missing_array = [];
+                missing_array  = [];
             $('#period option').each(function() {
                 existing_array.push($(this).val());
             });
+
+            // add new periods to dropdown
             for (var l = 0; l < trading_period_array.length; l++) {
                 if (existing_array.indexOf(trading_period_array[l]) < 0) {
                     missing_array.push(trading_period_array[l]);
@@ -117,11 +119,18 @@ var MBContract = (function() {
                         if (m < 1) {
                             $(newOption).insertBefore($periodElement.children().eq(m));
                         } else {
-                            $(newOption).insertAfter($periodElement.children().eq(m-1));
+                            $(newOption).insertAfter($periodElement.children().eq(m - 1));
                         }
                     }
                 }
             }
+
+            // remove periods that no longer exist
+            existing_array.forEach(function(period) {
+                if (trading_period_array.indexOf(period) < 0) {
+                    $('#period option[value="' + period + '"]').remove();
+                }
+            });
         }
     };
 
