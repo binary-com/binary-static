@@ -18,7 +18,7 @@ var MBContract = (function() {
             req.passthrough = {action: 'no-proposal'};
         }
         BinarySocket.send(req);
-        clearTimeout();
+        clearContractTimeout();
         contract_timeout = setTimeout(getContracts, 15000);
     };
 
