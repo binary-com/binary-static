@@ -51,7 +51,10 @@
         }
     }
     .price-wrapper {
-        padding-right: 20px;
+        .dynamics {
+            display: inline-block;
+            width: 20px;
+        }
     }
     .price-button {
         width: 120px;
@@ -65,6 +68,10 @@
         font-size: 14px;
         border: 0;
         min-height: 34px;
+        position: relative;
+        .dynamics {
+            position: absolute;
+        }
         &:hover {
             background-color: $COLOR_DARK_GREEN;
         }
@@ -90,6 +97,8 @@
     .descr-wrapper {
         & > div {
             min-height: 88px;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
         .descr {
             padding: 0 16px 0 0;
@@ -97,10 +106,6 @@
             max-width: 420px;
             line-height: 1.4em;
         }
-    }
-    .background-gray {
-        padding-top: 10px;
-        padding-bottom: 10px;
     }
     .details-heading {
         padding: 45px 16px 0;
@@ -134,12 +139,6 @@
         }
         &.UPORDOWN {
             background-image: url('https://www.binary.com/images/pages/trade/stay-out_1.png');
-        }
-    }
-    .price-wrapper, .price-button {
-        position: relative;
-        .dynamics {
-            position: absolute;
         }
     }
     .select {
