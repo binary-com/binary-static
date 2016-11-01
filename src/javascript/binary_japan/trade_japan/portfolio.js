@@ -21,7 +21,7 @@ var JapanPortfolio = (function() {
   }
 
   function show() {
-    if (JPTradePage.isJapan() && !isPortfolioActive) {
+    if (isTradePage() && !isPortfolioActive) {
       PortfolioWS.onLoad();
       isPortfolioActive = true;
     }
@@ -30,18 +30,22 @@ var JapanPortfolio = (function() {
   }
 
   function isActive() {
-    if (page.client.is_logged_in && JPTradePage.isJapan()) {
+    if (page.client.is_logged_in && isTradePage()) {
       return true;
     }
   }
 
   function hide() {
-    if (JPTradePage.isJapan() && isPortfolioActive) {
+    if (isTradePage() && isPortfolioActive) {
       PortfolioWS.onUnload();
       isPortfolioActive = false;
     }
 
     return;
+  }
+
+  function isTradePage() {
+    return (JPTradePage.isJapan() || MBTradePage.is_trading_page());
   }
 
   return {

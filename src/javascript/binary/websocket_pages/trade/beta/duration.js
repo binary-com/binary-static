@@ -160,9 +160,17 @@ var Durations_Beta = (function(){
     };
 
     var displayEndTime = function(){
-        var current_moment = moment(window.time).add(5, 'minutes').utc();
+        var date_start = document.getElementById('date_start').value;
+        var now = date_start === 'now';
+        var current_moment = moment((now ? window.time : parseInt(date_start) * 1000)).add(5, 'minutes').utc();
         var expiry_date = Defaults.get('expiry_date') || current_moment.format('YYYY-MM-DD'),
             expiry_time = Defaults.get('expiry_time') || current_moment.format('HH:mm');
+
+        if (moment(expiry_date + " " + expiry_time).valueOf() < current_moment.valueOf()) {
+            expiry_date = current_moment.format('YYYY-MM-DD');
+            expiry_time = current_moment.format('HH:mm');
+        }
+
         document.getElementById('expiry_date').value = expiry_date;
         document.getElementById('expiry_time').value = expiry_time;
         Defaults.set('expiry_date', expiry_date);
@@ -185,13 +193,13 @@ var Durations_Beta = (function(){
             obj = {};
 
         if (arry.length > 1) {
-            obj['value'] = arry[1];
-            obj['text'] = mapping[arry[1]];
-            obj['min'] = arry[0];
+            obj['unit']  = arry[1];
+            obj['text']  = mapping[arry[1]];
+            obj['value'] = arry[0];
         } else {
-            obj['value'] = 't';
-            obj['text'] = mapping['t'];
-            obj['min'] = arry[0];
+            obj['unit']  = 't';
+            obj['text']  = mapping['t'];
+            obj['value'] = arry[0];
         }
 
         return obj;
@@ -231,7 +239,7 @@ var Durations_Beta = (function(){
                     }
                     else{
                         var date = new Date(value);
-                        var today = window.time ? window.time.toDate() : new Date();
+                        var today = window.time ? window.time.valueOf() : new Date();
                         dayDiff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
                     }
                     amountElement.val(dayDiff);
@@ -244,7 +252,7 @@ var Durations_Beta = (function(){
 
         $('.pickadate').datepicker('destroy');
         $('.pickadate').datepicker({
-            minDate: window.time ? window.time.toDate() : new Date(),
+            minDate: window.time ? window.time.format('YYYY-MM-DD') : new Date(),
             dateFormat: 'yy-mm-dd'
         });
 
@@ -330,7 +338,7 @@ var Durations_Beta = (function(){
         var expiry_time = document.getElementById('expiry_time');
         $('#expiry_date').val(end_date);
         Defaults.set('expiry_date', end_date);
-        if (moment(end_date).isAfter(moment(window.time),'day')) {
+        if (moment(end_date).isAfter(window.time.format('YYYY-MM-DD HH:mm'), 'day')) {
             Durations_Beta.setTime('');
             Defaults.remove('expiry_time');
             StartDates_Beta.setNow();

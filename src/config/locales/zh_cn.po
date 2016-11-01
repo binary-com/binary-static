@@ -3,10 +3,9 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-21 02:11+0000\n"
+"PO-Revision-Date: 2016-10-25 06:24+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) "
-"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -325,6 +324,9 @@ msgstr "一触即付交易"
 
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "*免税：交易所获之盈利在很多国家免税，但请务必咨询专业税务顾问。"
+
+msgid ",000"
+msgstr ""
 
 msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgstr "水电煤账单或银行月结单扫描件（日期不得超过3个月）。"
@@ -1698,6 +1700,9 @@ msgstr "选择标的资产"
 msgid "Choose your own strike."
 msgstr "选择您自己的行权价格。"
 
+msgid "Christmas Day"
+msgstr "圣诞节"
+
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "阿富汗、比利时、波斯尼亚和黑塞哥维那、圭亚那、伊拉克、老挝人民民主共和国、叙利亚、乌干达、瓦努阿图或也门等国国民将受禁止于Binary Investments (Europe) Ltd开立账户。"
 
@@ -1762,6 +1767,12 @@ msgstr "收盘"
 
 msgid "Closes"
 msgstr "收盘"
+
+msgid "Closes early (at 18:00)"
+msgstr "收盘提前（至18:00）"
+
+msgid "Closes early (at 21:00)"
+msgstr "收盘提前（至21:00）"
 
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
 msgstr "与我们信息技术组成员协作，寻求提高网站功能和效率的创新方法"
@@ -2402,6 +2413,9 @@ msgstr "结束时间"
 msgid "End time"
 msgstr "结束时间"
 
+msgid "End time must be after start time."
+msgstr "结束时间必须在开始时间之后。"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "“收于范围之内/之外”的交易"
 
@@ -2618,6 +2632,9 @@ msgstr "有丰富的Javascript、HTML、CSS、AJAX、JSON编程经验"
 msgid "FAQ"
 msgstr "常见问题"
 
+msgid "FX Rate"
+msgstr ""
+
 msgid "Facility that allows you to set limits on your account."
 msgstr "可让您对帐户设置限制的设施。"
 
@@ -2802,6 +2819,9 @@ msgid "Fresh graduates who meet our basic requirements and are passionate about 
 msgstr "欢迎符合基本要求，并有热情从事行政工作的应届大学毕业生踊跃申请。"
 
 msgid "Friday"
+msgstr "星期五"
+
+msgid "Fridays"
 msgstr "星期五"
 
 msgid "From"
@@ -3365,6 +3385,9 @@ msgstr "任何标的工具或资产上一次的表现不可保证其当前或未
 
 msgid "Insufficient balance"
 msgstr "余额不足"
+
+msgid "Insufficient balance."
+msgstr "余额不足。"
 
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
 msgstr "感兴趣，接下来该怎么做？如您可向我们的客户提供特殊的电子付款方式或 %1目前不支持的本地付款选项，且在市场上有良好的记录，我们非常乐意通过<a href='mailto:%2'>收到您的消息!</a>"
@@ -4008,6 +4031,9 @@ msgstr "我们将协助您提高交易技能"
 msgid "Learn more"
 msgstr "了解更多"
 
+msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
+msgstr ""
+
 msgid "Learn more about our corporate culture"
 msgstr "查看关于我们企业文化的详情"
 
@@ -4190,6 +4216,11 @@ msgstr "市场专业人士"
 
 msgid "Market exit price"
 msgstr "平仓价"
+
+#, fuzzy
+#| msgid "All markets are closed now. Please try again later."
+msgid "Market is closed. Please try again later."
+msgstr "所有市场现已关闭。请稍后重试。"
 
 msgid "Market prices are updated at most once per second.  For any given second, the market price will be updated to the first tick, if any, received in that particular second on the company datafeed."
 msgstr "市场价格最快每秒更新一次。对于任何给定的某一秒钟，市场价格都将更新至该秒从公司数据源接收到的第一价位（如有）。"
@@ -4399,6 +4430,9 @@ msgstr "新密码"
 
 msgid "New Trade"
 msgstr "新交易"
+
+msgid "New Year's Day"
+msgstr "元旦"
 
 msgid "New password"
 msgstr "新密码"
@@ -4613,6 +4647,11 @@ msgstr "开户"
 msgid "Opens"
 msgstr "开盘"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Option Type"
+msgid "Option Type"
+msgstr "{JAPAN ONLY}Option Type"
+
 msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
 msgstr "二元期权交易和其他类似活动一样，过于沉迷可能会上瘾。为了避免这种风险，我们会定期向您提供交易和财务的实况简报。"
 
@@ -4674,9 +4713,7 @@ msgid "Our fast organic growth is supplemented by the acquisition of the client 
 msgstr "我们获取了主要竞争对手之一BetsForTraders 的客户群，为公司快速的内生性增长提供支持。"
 
 msgid "Our headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas, and World Heritage sites. We also have two offices in Malaysia: our operational headquarters in the high-tech township of Cyberjaya, and a branch office at KL Sentral in the heart of the country’s capital, Kuala Lumpur."
-msgstr ""
-"我们总部设在马耳他，是个拥有温暖气候，美丽休闲区和世界遗产地的旅游胜地。我们也在马来西亚设了两个办事处：运营总部设于高科技特区 Cyberjaya， "
-"并在首都吉隆坡市中心KL Sentral设了分部办事处。"
+msgstr "我们总部设在马耳他，是个拥有温暖气候，美丽休闲区和世界遗产地的旅游胜地。我们也在马来西亚设了两个办事处：运营总部设于高科技特区 Cyberjaya， 并在首都吉隆坡市中心KL Sentral设了分部办事处。"
 
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "我们的信息安全政策基于访问控制和业务持续性的业内最佳实践。"
@@ -4816,6 +4853,11 @@ msgstr "支付"
 msgid "Payout"
 msgstr "赔付"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Payout Amount"
+msgid "Payout Amount"
+msgstr "{JAPAN ONLY}Payout Amount"
+
 msgid "Pension"
 msgstr "养老金"
 
@@ -4860,6 +4902,9 @@ msgstr "平台"
 
 msgid "Please %1 to view this page"
 msgstr "要查看此页面请%1"
+
+msgid "Please check the above form for pending errors."
+msgstr "请检查以上表格是否有待定错误。"
 
 msgid "Please check your email for the value of this token"
 msgstr "请检查您的电邮领取此令牌号"
@@ -4926,6 +4971,9 @@ msgstr "请按照以下格式填写：3个数字，1个短划线，加上4个数
 
 msgid "Please input a valid date"
 msgstr "请输入有效日期"
+
+msgid "Please log in."
+msgstr "请登录。"
 
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "在提交请求前，请您确认同意代理的支付条款。"
@@ -5100,6 +5148,9 @@ msgstr "在全职译员无法工作时翻译网站内容"
 
 msgid "Processing Time"
 msgstr "处理时间"
+
+msgid "Processing your request..."
+msgstr "您的请求在处理中..."
 
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "为公司网站、博客、社交媒体渠道和营销材料创建内容"
@@ -5312,6 +5363,11 @@ msgid "Relevant work experience in a related field (financial services preferred
 msgstr "有相关领域工作经验 (金融服务业优先录取)"
 
 msgid "Remaining Time"
+msgstr "剩余时间"
+
+#, fuzzy
+#| msgid "Remaining Time"
+msgid "Remaining time"
 msgstr "剩余时间"
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
@@ -6482,6 +6538,9 @@ msgstr "本优惠不能和其他任何优惠一起使用。"
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "本促销活动仅适用于新客户。现有或以往客户不符合条件。每位客户仅能获得一次。"
 
+msgid "This symbol is not active. Please try another symbol."
+msgstr ""
+
 msgid "This website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and the advertisements thereof may submit cookies onto your web browser and as such are beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites, because their practices may differ from ours."
 msgstr "本网站包含其他网站链接，并可能含有第三方网站的横幅或图标广告。这些网站及广告可能会向您的网页浏览器写入cookies，因此不在我们的控制范围内。我们不对这些网站的隐私规范和内容负责。由于他们的隐私政策可能有所不同，我们建议您进行相关了解。"
 
@@ -6631,6 +6690,11 @@ msgstr "Trading Experience"
 
 msgid "Trading Limits"
 msgstr "交易限制"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Period"
+msgid "Trading Period"
+msgstr "{JAPAN ONLY}Trading Period"
 
 msgid "Trading Platforms"
 msgstr "交易平台"
@@ -7235,11 +7299,15 @@ msgstr "我为什么要成为 %1 的联盟会员？"
 msgid "Will I need to install any software?"
 msgstr "我需要安装任何软件吗？"
 
-msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
+#, fuzzy
+#| msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a "
+msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing 'Stays In' with a narrow price target."
 msgstr "如果您预测正确，即可获得投注额 10%-1000% 的回报。要获得较高回报，可选择 "
 
-msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a "
-msgstr "如果您预测正确，即可获得投注额 10%-1000% 的回报。要获得较高回报，可选择 "
+#, fuzzy
+#| msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
+msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a 'Touch' trade, with a price target farther away from the current price."
+msgstr "如果您预测正确，即可获得投注额 10%-1000% 的回报。选择目标价与当前价格距离比较远的 \"触及\" 交易，可提高回报率。"
 
 msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a price target farther away from the current price."
 msgstr "如果您预测正确，即可获得投注额 10%-1000% 的回报。选择与当前价格距离比较远的目标价，可提高回报率。"
@@ -7789,6 +7857,9 @@ msgstr "详情"
 msgid "e.g. blue.binaryws.com"
 msgstr "例如blue.binaryws.com"
 
+msgid "email address"
+msgstr "电子邮件地址"
+
 msgid "f"
 msgstr "f"
 
@@ -7909,6 +7980,16 @@ msgstr "验证令牌"
 
 msgid "website"
 msgstr "网站"
+
+#, fuzzy
+#| msgid "1 week"
+msgid "week"
+msgstr "1 周"
+
+#, fuzzy
+#| msgid "Weeks"
+msgid "weeks"
+msgstr "周"
 
 msgid "year"
 msgstr "年"
@@ -8627,9 +8708,6 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
-msgid "{JAPAN ONLY}Remaining time"
-msgstr "{JAPAN ONLY}Remaining time"
-
 msgid "{JAPAN ONLY}Remitter's Name:"
 msgstr "{JAPAN ONLY}Remitter's Name:"
 
@@ -8888,42 +8966,6 @@ msgstr "{JAPAN ONLY}Your funds are safe"
 msgid "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 msgstr "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 
-msgid "{JAPAN ONLY}day"
-msgstr "{JAPAN ONLY}day"
-
-msgid "{JAPAN ONLY}days"
-msgstr "{JAPAN ONLY}days"
-
-msgid "{JAPAN ONLY}hour"
-msgstr "{JAPAN ONLY}hour"
-
-msgid "{JAPAN ONLY}hours"
-msgstr "{JAPAN ONLY}hours"
-
-msgid "{JAPAN ONLY}minute"
-msgstr "{JAPAN ONLY}minute"
-
-msgid "{JAPAN ONLY}minutes"
-msgstr "{JAPAN ONLY}minutes"
-
-msgid "{JAPAN ONLY}month"
-msgstr "{JAPAN ONLY}month"
-
-msgid "{JAPAN ONLY}months"
-msgstr "{JAPAN ONLY}months"
-
-msgid "{JAPAN ONLY}week"
-msgstr "{JAPAN ONLY}week"
-
-msgid "{JAPAN ONLY}weeks"
-msgstr "{JAPAN ONLY}weeks"
-
-msgid "{JAPAN ONLY}year"
-msgstr "{JAPAN ONLY}year"
-
-msgid "{JAPAN ONLY}years"
-msgstr "{JAPAN ONLY}years"
-
 msgid "{JAPAN ONLY}¥"
 msgstr "{JAPAN ONLY}¥"
 
@@ -9019,6 +9061,48 @@ msgstr "账户详情"
 
 msgid "Terms and Conditions Approval"
 msgstr "条款和条件审批"
+
+#~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
+#~ msgstr "如果您预测正确，即可获得投注额 10%-1000% 的回报。要获得较高回报，可选择 "
+
+#~ msgid "{JAPAN ONLY}Remaining time"
+#~ msgstr "{JAPAN ONLY}Remaining time"
+
+#~ msgid "{JAPAN ONLY}day"
+#~ msgstr "{JAPAN ONLY}day"
+
+#~ msgid "{JAPAN ONLY}days"
+#~ msgstr "{JAPAN ONLY}days"
+
+#~ msgid "{JAPAN ONLY}hour"
+#~ msgstr "{JAPAN ONLY}hour"
+
+#~ msgid "{JAPAN ONLY}hours"
+#~ msgstr "{JAPAN ONLY}hours"
+
+#~ msgid "{JAPAN ONLY}minute"
+#~ msgstr "{JAPAN ONLY}minute"
+
+#~ msgid "{JAPAN ONLY}minutes"
+#~ msgstr "{JAPAN ONLY}minutes"
+
+#~ msgid "{JAPAN ONLY}month"
+#~ msgstr "{JAPAN ONLY}month"
+
+#~ msgid "{JAPAN ONLY}months"
+#~ msgstr "{JAPAN ONLY}months"
+
+#~ msgid "{JAPAN ONLY}week"
+#~ msgstr "{JAPAN ONLY}week"
+
+#~ msgid "{JAPAN ONLY}weeks"
+#~ msgstr "{JAPAN ONLY}weeks"
+
+#~ msgid "{JAPAN ONLY}year"
+#~ msgstr "{JAPAN ONLY}year"
+
+#~ msgid "{JAPAN ONLY}years"
+#~ msgstr "{JAPAN ONLY}years"
 
 #~ msgid "Jump to date:"
 #~ msgstr "跳至日期："
@@ -9551,14 +9635,8 @@ msgstr "条款和条件审批"
 #~ msgid "To continue using our cashier system, please try accessing it again:"
 #~ msgstr "如需继续使用我们的收银台系统，请尝试再次访问："
 
-#~ msgid "Unable to process your request"
-#~ msgstr "无法处理您的请求"
-
 #~ msgid "Why us?"
 #~ msgstr "为何选择我们？"
-
-#~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
-#~ msgstr "如果您预测正确，即可获得投注额 10%-1000% 的回报。选择目标价与当前价格距离比较远的 \"触及\" 交易，可提高回报率。"
 
 #~ msgid "You have reached the rate limit of requests per second. To continue, please <a href='javascript:;' id='ratelimit-refresh-link'>refresh</a> the page."
 #~ msgstr "您已达每秒最大请求限额。请 <a href='javascript:;' id='ratelimit-refresh-link'>刷新</a>页面继续操作。"
@@ -9814,9 +9892,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Close Location Value"
 #~ msgstr "关闭位置值"
-
-#~ msgid "Closes early (at %1)"
-#~ msgstr "收盘提前（至%1）"
 
 #~ msgid "Comment must not exceed %1 characters. Please resubmit."
 #~ msgstr "注释不能超过%1个字符。请重新提交。"
@@ -10470,9 +10545,6 @@ msgstr "条款和条件审批"
 #~ msgid "Please enter your email address."
 #~ msgstr "请输入您的电邮地址。"
 
-#~ msgid "Please log in."
-#~ msgstr "请登录。"
-
 #~ msgid "Please note that your settings have been updated as follows:"
 #~ msgstr "请注意，您的设置已进行以下更新："
 
@@ -11037,9 +11109,6 @@ msgstr "条款和条件审批"
 #~ msgstr "网站禁止当前设置为 <strong>%1。</strong>"
 
 #~ msgid "Week"
-#~ msgstr "周"
-
-#~ msgid "Weeks"
 #~ msgstr "周"
 
 #~ msgid "Weighted Moving Average"
@@ -14321,9 +14390,6 @@ msgstr "条款和条件审批"
 #~ msgid "contact us"
 #~ msgstr "请与我们联系"
 
-#~ msgid "email address"
-#~ msgstr "电子邮件地址"
-
 #, fuzzy
 #~| msgid "%1 %2 payout if %3 is strictly higher than %6 at %5."
 #~ msgid "%1 %2 payout if %3 is higher than or equal to %6 at %5."
@@ -15289,9 +15355,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Currency quotes are truncated to 5 digits and all contracts are purchased and settled based on 5-digit currency quotes."
 #~ msgstr "外汇报价四舍五入到5位数，所有的合约均以5位数外汇报价进行购买和结算。"
-
-#~ msgid "Fridays"
-#~ msgstr "星期五"
 
 #~ msgid "Notice: please only share your API token with third-parties which you trust."
 #~ msgstr "通知：请仅将API令牌与您信赖的第三方分享。"
@@ -21533,9 +21596,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "1 day"
 #~ msgstr "1 天"
-
-#~ msgid "1 week"
-#~ msgstr "1 周"
 
 #~ msgid "10 M"
 #~ msgstr "10 M"

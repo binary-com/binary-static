@@ -63,6 +63,7 @@ sub _texts {
         push @texts, localize("(Bejing/CST -8 hours)");
         push @texts, localize('You must accept the terms and conditions to open an account.');
         push @texts, localize('We are not accepting accounts from residents of this country at the present time.');
+        push @texts, localize('End time must be after start time.');
         # top bar
         push @texts, localize('Upgrade to a Real Account');
         push @texts, localize('Upgrade to a Financial Account');
@@ -126,6 +127,8 @@ sub _texts {
         push @texts, localize('years');
         push @texts, localize('month');
         push @texts, localize('months');
+        push @texts, localize('weeks');
+        push @texts, localize('week');
         push @texts, localize('day');
         push @texts, localize('hour');
         push @texts, localize('minute');
@@ -262,6 +265,7 @@ sub _texts {
         push @texts, localize('Stays In/Goes Out');
         push @texts, localize('Waiting for entry tick.');
         push @texts, localize('Refresh page');
+        push @texts, localize('Please log in.');
 
         #strings for limitsws page
         push @texts, localize('Trading and Withdrawal Limits');
@@ -335,6 +339,7 @@ sub _texts {
         #strings for home and virtualws page
         push @texts, localize('verification token');
         push @texts, localize('Please submit a valid [_1].');
+        push @texts, localize('email address');
         push @texts, localize('password');
         push @texts, localize('The two passwords that you entered do not match.');
         push @texts, localize('Your token has expired. Please click <a class="pjaxload" href="[_1]">here</a> to restart the verification process.');
@@ -372,6 +377,11 @@ sub _texts {
         push @texts, localize('Closes');
         push @texts, localize('Settles');
         push @texts, localize('Upcoming Events');
+        push @texts, localize('Closes early (at 21:00)');
+        push @texts, localize('Closes early (at 18:00)');
+        push @texts, localize("New Year's Day");
+        push @texts, localize('Christmas Day');
+        push @texts, localize('Fridays');
 
         #strings for paymentagent_withdrawws page
         push @texts, localize('You are not authorized for withdrawal via payment agent.');
@@ -588,18 +598,6 @@ sub _texts {
         push @texts, localize('{JAPAN ONLY}TOUCH /NO-TOUCH');
         push @texts, localize('{JAPAN ONLY}END-IN/END-OUT');
         push @texts, localize('{JAPAN ONLY}STAY-IN/BREAK-OUT');
-        push @texts, localize('{JAPAN ONLY}minute');
-        push @texts, localize('{JAPAN ONLY}minutes');
-        push @texts, localize('{JAPAN ONLY}hour');
-        push @texts, localize('{JAPAN ONLY}hours');
-        push @texts, localize('{JAPAN ONLY}day');
-        push @texts, localize('{JAPAN ONLY}days');
-        push @texts, localize('{JAPAN ONLY}week');
-        push @texts, localize('{JAPAN ONLY}weeks');
-        push @texts, localize('{JAPAN ONLY}month');
-        push @texts, localize('{JAPAN ONLY}months');
-        push @texts, localize('{JAPAN ONLY}year');
-        push @texts, localize('{JAPAN ONLY}years');
         push @texts, localize('{JAPAN ONLY}Higher');
         push @texts, localize('{JAPAN ONLY}Lower');
         push @texts, localize('{JAPAN ONLY}Touches');
@@ -612,7 +610,7 @@ sub _texts {
         push @texts, localize('{JAPAN ONLY}Option Type');
         push @texts, localize('{JAPAN ONLY}Trading Period');
         push @texts, localize('{JAPAN ONLY}Payout Amount');
-        push @texts, localize('{JAPAN ONLY}Remaining time');
+        push @texts, localize('Remaining time');
         push @texts, localize('You need to finish all 20 questions.');
         push @texts, localize('Weekday');
         push @texts, localize('This contract can not be traded in the final 2 minutes before settlement');
@@ -622,6 +620,10 @@ sub _texts {
         push @texts, localize('min: 1,000');
         push @texts, localize('max: 100,000');
         push @texts, localize('Your Application is Being Processed.');
+        push @texts, localize('Processing your request...');
+        push @texts, localize('Please check the above form for pending errors.');
+        push @texts, localize('Market is closed. Please try again later.');
+        push @texts, localize('This symbol is not active. Please try another symbol.');
 
         #strings for digit_infows
         push @texts, localize('Select market');
@@ -840,6 +842,7 @@ sub _texts {
         push @texts, localize('details');
         push @texts, localize('Deposit [_1] [_2] virtual money into your account [_3]');
         push @texts, localize('Withdraw');
+        push @texts, localize('Insufficient balance.');
 
         # strings for endpoint notification
         push @texts, localize('This is a staging server - For testing purposes only');

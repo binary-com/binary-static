@@ -182,7 +182,7 @@ var PortfolioWS =  (function() {
     };
 
     var errorMessage = function(msg) {
-        var $err = $('#portfolio #err-msg');
+        var $err = $('#portfolio #error-msg');
         if(msg) {
             $err.removeClass(hidden_class).text(msg);
         } else {
@@ -191,7 +191,7 @@ var PortfolioWS =  (function() {
     };
 
     var onLoad = function() {
-        if (!TradePage.is_trading_page() && !TradePage_Beta.is_trading_page()) {
+        if (!TradePage.is_trading_page() && !TradePage_Beta.is_trading_page() && !MBTradePage.is_trading_page()) {
             BinarySocket.init({
                 onmessage: function(msg){
                     var response = JSON.parse(msg.data),

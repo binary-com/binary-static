@@ -160,9 +160,17 @@ var Durations = (function(){
     };
 
     var displayEndTime = function(){
-        var current_moment = moment(window.time).add(5, 'minutes').utc();
+        var date_start = document.getElementById('date_start').value;
+        var now = date_start === 'now';
+        var current_moment = moment((now ? window.time : parseInt(date_start) * 1000)).add(5, 'minutes').utc();
         var expiry_date = Defaults.get('expiry_date') || current_moment.format('YYYY-MM-DD'),
             expiry_time = Defaults.get('expiry_time') || current_moment.format('HH:mm');
+
+        if (moment(expiry_date + " " + expiry_time).valueOf() < current_moment.valueOf()) {
+            expiry_date = current_moment.format('YYYY-MM-DD');
+            expiry_time = current_moment.format('HH:mm');
+        }
+
         document.getElementById('expiry_date').value = expiry_date;
         document.getElementById('expiry_time').value = expiry_time;
         Defaults.set('expiry_date', expiry_date);
