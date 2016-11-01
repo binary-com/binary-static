@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-31 01:00+0000\n"
-"Last-Translator: Mark Tanser <mark@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-11-01 06:06+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -333,7 +333,7 @@ msgid "* Tax Free: Profits from trading are tax free in many countries but you s
 msgstr "* 非課税対象：多くの国では、当社でのお取引から得た利益は非課税対象となりますが、居住国の税理士とご相談下さい。"
 
 msgid ",000"
-msgstr ""
+msgstr ",000"
 
 msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgstr "公共料金の請求書または銀行明細書をスキャンしたコピー（発行３ヶ月以内のものに限ります）。"
@@ -1736,7 +1736,7 @@ msgstr ""
 "イエメンの方は、Binary Investments (Europe) Ltd.にて口座を開設いただきます。"
 
 msgid "Classification of assets requiring hedge"
-msgstr "ヘッジファンドを必要とする資産の分類"
+msgstr "ヘッジを必要とする資産の種類"
 
 msgid "Click here to retry"
 msgstr "再試行するにはこちらをクリックしてください"
@@ -2668,7 +2668,7 @@ msgid "FAQ"
 msgstr "FAQ"
 
 msgid "FX Rate"
-msgstr ""
+msgstr "為替レート"
 
 msgid "Facility that allows you to set limits on your account."
 msgstr "アカウントの制限をユーザー自身で設定していただける機能。"
@@ -4091,7 +4091,7 @@ msgid "Learn more"
 msgstr "詳細はこちら"
 
 msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
-msgstr ""
+msgstr "当社の企業理念や仕組みを見てみませんか。<a href='https://blog.binary.com/' target='_blank'>当社のブログ</a>から刺激あるストーリーやアイディアをご覧ください。"
 
 msgid "Learn more about our corporate culture"
 msgstr "当社の企業文化について詳しく見る"
@@ -4276,10 +4276,8 @@ msgstr "マーケットのプロ投資家"
 msgid "Market exit price"
 msgstr "市場出口価格"
 
-#, fuzzy
-#| msgid "All markets are closed now. Please try again later."
 msgid "Market is closed. Please try again later."
-msgstr "全ての市場は現在閉鎖しています。後ほどお試しください。"
+msgstr "市場は現在閉鎖しています。後ほどお試しください。"
 
 msgid "Market prices are updated at most once per second.  For any given second, the market price will be updated to the first tick, if any, received in that particular second on the company datafeed."
 msgstr "市場価格は最高で１秒に１回の頻度で更新されます。どの任意の秒数でも市場価格にはその最初のTickの値、または特定の秒数に当社のデータフィードに受信された値が更新されます。"
@@ -4712,8 +4710,6 @@ msgstr "口座開設"
 msgid "Opens"
 msgstr "取引開始時間"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Option Type"
 msgid "Option Type"
 msgstr "オプションタイプ"
 
@@ -4918,10 +4914,8 @@ msgstr "アフィリエイト報酬の支払いについて"
 msgid "Payout"
 msgstr "ペイアウト"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Payout Amount"
 msgid "Payout Amount"
-msgstr "取引数量(ロットx¥1,000)"
+msgstr "ペイアウト額"
 
 msgid "Pension"
 msgstr "年金"
@@ -5038,7 +5032,7 @@ msgid "Please input a valid date"
 msgstr "有効な日にちを入力して下さい。"
 
 msgid "Please log in."
-msgstr "ログインをしてください"
+msgstr "ログインをしてください。"
 
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "リクエストを送信される前に、お支払い条件に関してエージェントに同意をいただく必要があります。"
@@ -5432,8 +5426,6 @@ msgstr "関連分野（金融サービスが好ましい）での実務経験"
 msgid "Remaining Time"
 msgstr "残り時間"
 
-#, fuzzy
-#| msgid "Remaining Time"
 msgid "Remaining time"
 msgstr "残り時間"
 
@@ -5985,10 +5977,10 @@ msgid "Target"
 msgstr "ターゲット"
 
 msgid "Targeting medium-term / long-term profits"
-msgstr "中期利益/長期利益を目標にする"
+msgstr "中期保有/長期保有が目的"
 
 msgid "Targeting short-term profits"
-msgstr "短期利益を目標にする"
+msgstr "短期保有が目的"
 
 msgid "Tasked with writing robust, high-quality, production-ready code and contributing to the architecture that drives our high-traffic global website."
 msgstr "堅牢で高品質、量産可能なコードを書く役割を担い、当社の高トラフィックなサイトを駆動するアーキテクチャに貢献していただきます。"
@@ -6706,7 +6698,7 @@ msgid "This promotion is only available to new Clients. Existing or former Clien
 msgstr "このプロモーションは、新たなお客さまに限り有効です。すでにご口座をお持ちのお客さまには適用されません。"
 
 msgid "This symbol is not active. Please try another symbol."
-msgstr ""
+msgstr "このシンボルは現在ご利用いただけません。他のシンボルでお試しください。"
 
 msgid "This website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and the advertisements thereof may submit cookies onto your web browser and as such are beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites, because their practices may differ from ours."
 msgstr "当社サイトには他のウェブサイトへのリンクが含まれています。そのようなウェブサイトには、第三者のウェブサイトに関係するバナーや広告が含まれている可能性があります。そのようなウェブサイトや広告にはCookie（クッキー）をご利用中のブラウザーに送信する可能性がありますが、それから生じる損害に関しては当社では一切、責任を負うことができません。また、そのようなウェブサイトにおけるプライバシポリシーやコンテンツに関する責任を負うことは致しかねます。尚、そのようなウェブサイトのプライバシーポリシーを当社の取り決めとは異なる可能性がありますので、該当するウェブサイトのプライバシーポリシーをご確認されることをお勧めいたします。"
@@ -6864,8 +6856,6 @@ msgstr "投資経験"
 msgid "Trading Limits"
 msgstr "取引上限について"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Trading Period"
 msgid "Trading Period"
 msgstr "取引期間"
 
@@ -7496,13 +7486,9 @@ msgstr "%1のアフィリエイトになるメリットを教えて下さい。"
 msgid "Will I need to install any software?"
 msgstr "何か特別なソフトウェアをインストールする必要はありますか？"
 
-#, fuzzy
-#| msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a "
 msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing 'Stays In' with a narrow price target."
-msgstr "条件を満たすことで利益を確保することができます。xxxを設定することで、より高い利益を期待することができます。 "
+msgstr "条件を満たすことで利益を確保することができます。「STAY-IN」で狭い価格ターゲットを利用することで、より高い利益を期待することができます。"
 
-#, fuzzy
-#| msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
 msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a 'Touch' trade, with a price target farther away from the current price."
 msgstr "条件を満たすことで利益を確保することができます。現在の市場価格からより離れたバリア価格を設定することにより、より高い利益を期待することができます。"
 
@@ -8206,12 +8192,10 @@ msgid "website"
 msgstr "ウェブサイト"
 
 msgid "week"
-msgstr ""
+msgstr "週"
 
-#, fuzzy
-#| msgid "Weeks"
 msgid "weeks"
-msgstr "集"
+msgstr "週"
 
 msgid "year"
 msgstr "年"
