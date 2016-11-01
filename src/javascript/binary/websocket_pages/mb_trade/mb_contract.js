@@ -261,13 +261,14 @@ var MBContract = (function() {
             currency = (format_currency(TUser.get().currency) || format_currency(document.getElementById('currency').value) || '¥'),
             payout = Number(MBDefaults.get('payout') * (japanese_client() ? 1000 : 1)).toLocaleString(),
             display_name = MBSymbols.getName(MBDefaults.get('underlying')),
-            date_expiry = PeriodText(contracts[0].trading_period).replace(/\s\(.*\)/, '');
+            date_expiry = PeriodText(contracts[0].trading_period).replace(/\s\(.*\)/, ''),
+            preposition = page.language() === 'JA' ? '{JAPAN ONLY}' : '';
         contracts.forEach(function(c) {
             var contract_type = c.contract_type,
                 template = getTemplate(contract_type),
                 $wrapper = $($desc_wrappers[template.order]);
-            $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(page.text.localize(template.name));
-            $wrapper.find('.descr').text(page.text.localize(template.description, [currency + payout, display_name, date_expiry]));
+            $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(page.text.localize(preposition + template.name));
+            $wrapper.find('.descr').text(page.text.localize(preposition + template.description, [currency, payout, display_name, date_expiry]));
         });
     };
 
