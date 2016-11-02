@@ -82,10 +82,10 @@ var MBPrice = (function() {
     };
 
     var updatePrice = function(proposal) {
-        var barrier     = makeBarrier(proposal.echo_req),
-            $price_rows = $(price_selector + ' div[data-barrier="' + barrier + '"]');
+        var barrier    = makeBarrier(proposal.echo_req),
+            price_rows = document.querySelectorAll(price_selector + ' div[data-barrier="' + barrier + '"]');
 
-        if (!$price_rows.length) return;
+        if (!price_rows.length) return;
 
         var contract_type     = proposal.echo_req.contract_type,
             contract_info     = contract_types[contract_type],
@@ -93,8 +93,8 @@ var MBPrice = (function() {
         var values     = getValues(proposal),
             values_opp = getValues(prices[barrier][contract_info.opposite]);
 
-        $($price_rows[+contract_info.order]).replaceWith(makePriceRow(values));
-        $($price_rows[+contract_info_opp.order]).replaceWith(makePriceRow(values_opp));
+        price_rows[+contract_info.order    ].innerHTML = makePriceRow(values    , true);
+        price_rows[+contract_info_opp.order].innerHTML = makePriceRow(values_opp, true);
     };
 
     var getValues = function(proposal) {
@@ -123,8 +123,8 @@ var MBPrice = (function() {
         return current > prev ? '⬆' : current < prev ? '⬇' : '';
     };
 
-    var makePriceRow = function(values) {
-        return '<div data-barrier="' + values.barrier + '" class="gr-row price-row">' +
+    var makePriceRow = function(values, is_update) {
+        return (is_update ? '' : '<div data-barrier="' + values.barrier + '" class="gr-row price-row">') +
                 '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
                 '<div class="gr-4 buy-price">' +
                     '<button class="price-button' + (!values.is_active ? ' inactive' : '') + '"' +
@@ -138,7 +138,7 @@ var MBPrice = (function() {
                         '<span class="dynamics">' + (values.sell_price_movement || '') + '</span>' +
                     '</span>' +
                 '</div>' +
-            '</div>';
+            (is_update ? '' : '</div>');
     };
 
     var formatPrice = function(price) {

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-25 08:58+0000\n"
+"PO-Revision-Date: 2016-10-31 08:56+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -330,7 +330,7 @@ msgid "* Tax Free: Profits from trading are tax free in many countries but you s
 msgstr "* Bebas Pajak: Keuntungan trading pada umumnya adalah bebas pajak di banyak negara, silahkan konsultasikan dengan ahli pajak di negara Anda."
 
 msgid ",000"
-msgstr ""
+msgstr ",000"
 
 msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgstr "- Salinan scan dari tagihan utilitas atau rekening koran (tidak melebihi 3 bulan)."
@@ -2635,7 +2635,7 @@ msgid "FAQ"
 msgstr "Pertanyaan Umum"
 
 msgid "FX Rate"
-msgstr ""
+msgstr "Harga FX"
 
 msgid "Facility that allows you to set limits on your account."
 msgstr "Fasilitas yang memungkinkan Anda untuk menetapkan batasan akun."
@@ -4036,7 +4036,7 @@ msgid "Learn more"
 msgstr "Belajar lebih lanjut"
 
 msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
-msgstr ""
+msgstr "Pelajari lebih lanjut tentang bagaimana cara kami berpikir dan bekerja. Baca <a href='https://blog.binary.com/' target='_blank'>blog kami</a> untuk cerita dan ide-ide yang menginspirasi kami."
 
 msgid "Learn more about our corporate culture"
 msgstr "Pelajari lebih lanjut tentang budaya perusahaan kami"
@@ -4222,10 +4222,8 @@ msgstr "Pasar Profesional"
 msgid "Market exit price"
 msgstr "Harga akhir pasar"
 
-#, fuzzy
-#| msgid "All markets are closed now. Please try again later."
 msgid "Market is closed. Please try again later."
-msgstr "Semua pasar ditutup saat ini. Coba kembali nanti."
+msgstr "Pasar ditutup. Silakan coba kembali nanti."
 
 msgid "Market prices are updated at most once per second.  For any given second, the market price will be updated to the first tick, if any, received in that particular second on the company datafeed."
 msgstr "Harga pasar akan diperbarui setiap detik. Untuk harga setiap detik adalah menggunakan tik pertama yang diterima pada detik tersebut pada datafeed Perusahaan."
@@ -4652,10 +4650,8 @@ msgstr "Mendaftar akun"
 msgid "Opens"
 msgstr "Dibuka"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Option Type"
 msgid "Option Type"
-msgstr "{JAPAN ONLY}Option Type"
+msgstr "Jenis Opsi"
 
 msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
 msgstr "Trading opsi dapat menyebabkan ketagihan, sebagaimana kegiatan lain yang dilakukan di luar batas. Untuk menghidari bahaya ketagihan tersebut, kami menyediakan pengecekan yang memberikan ringkasan trading Anda secara teratur."
@@ -4858,10 +4854,8 @@ msgstr "Pembayaran"
 msgid "Payout"
 msgstr "Hasil"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Payout Amount"
 msgid "Payout Amount"
-msgstr "{JAPAN ONLY}Payout Amount"
+msgstr "Jumlah Hasil"
 
 msgid "Pension"
 msgstr "Pensiun"
@@ -5370,10 +5364,8 @@ msgstr "Memiliki pengalaman kerja yang sesuai pada bidang terkait (diutamakan ja
 msgid "Remaining Time"
 msgstr "Waktu Yang Tersisa"
 
-#, fuzzy
-#| msgid "Remaining Time"
 msgid "Remaining time"
-msgstr "Waktu Yang Tersisa"
+msgstr "Waktu yang tersisa"
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
 msgstr "Mewakili jumlah maksimum saldo tunai pada akun anda. Jika jumlah maksimum tercapai, maka anda perlu menarik dana anda."
@@ -6545,7 +6537,7 @@ msgid "This promotion is only available to new Clients. Existing or former Clien
 msgstr "Promosi ini hanya berlaku untuk pembukaan akun baru. Dan hanya dapat diperoleh sekali saja untuk setiap Pelanggan."
 
 msgid "This symbol is not active. Please try another symbol."
-msgstr ""
+msgstr "Simbol ini tidak aktif. Silakan coba simbol lain."
 
 msgid "This website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and the advertisements thereof may submit cookies onto your web browser and as such are beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites, because their practices may differ from ours."
 msgstr "Website ini berisikan berbagai link yang mengarah kepada website lain dan juga banner atau iklan layanan pihak ketiga. Website tersebut dan iklannya mungkin memberikan cookies pada browser Anda dan hal ini merupakan diluar kendali kami. Kami tidak bertnggung jawab jika kegiatan dan keberadaan website tersebut. Kami menyarankan Anda untuk membaca kegiatan website tersebut berhubung kegiatan mereka mungkin berbeda dari kami."
@@ -6697,10 +6689,8 @@ msgstr "Trading Experience"
 msgid "Trading Limits"
 msgstr "Batasan Trading"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Trading Period"
 msgid "Trading Period"
-msgstr "{JAPAN ONLY}Trading Period"
+msgstr "Periode Trading"
 
 msgid "Trading Platforms"
 msgstr "Trading Platform"
@@ -7305,15 +7295,11 @@ msgstr "Mengapa saya harus menjadi afiliasi dengan %1?"
 msgid "Will I need to install any software?"
 msgstr "Apakah saya perlu menginstal software?"
 
-#, fuzzy
-#| msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a "
 msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing 'Stays In' with a narrow price target."
-msgstr "Dapatkan laba 10-1000% dari modal jika Anda benar. Tingkatkan hasil dengan memilih "
+msgstr "Dapatkan laba 10-1000% dari modal jika Anda benar. Tingkatkan hasil dengan memilih 'Stays In' dengan target harga kecil."
 
-#, fuzzy
-#| msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
 msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a 'Touch' trade, with a price target farther away from the current price."
-msgstr "Laba 10-1000% dari modal jika analisa Anda tepat. Tingkatkan hasil dengan memilih kontrak \"Menyentuh\", dengan target harga yang jauh dari harga terkini."
+msgstr "Laba 10-1000% dari modal jika analisa Anda tepat. Tingkatkan hasil dengan memilih kontrak 'Touch', dengan target harga yang jauh dari harga terkini."
 
 msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a price target farther away from the current price."
 msgstr "Laba 10-1000% dari modal jika analisa Anda tepat. Tingkatkan hasil dengan memilih sebuah target harga lebih jauh dari harga terkini."
@@ -7984,15 +7970,11 @@ msgstr "token verifikasi"
 msgid "website"
 msgstr "situs web"
 
-#, fuzzy
-#| msgid "1 week"
 msgid "week"
-msgstr "1 minggu"
+msgstr "minggu"
 
-#, fuzzy
-#| msgid "Weeks"
 msgid "weeks"
-msgstr "Mingguan"
+msgstr "minggu"
 
 msgid "year"
 msgstr "tahun"
