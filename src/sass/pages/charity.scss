@@ -5,10 +5,34 @@
         display: block;
         overflow: hidden;
     }
-    .section-content {
+    .section-content:first-child {
         text-align: center;
-        h1 {
+    }
+    .section-content {
+        h1, .charity-country{
             margin: 35px 0 25px;
         }
-    } 
+        h3 {
+            text-align: center;
+            padding: 15px 0;
+            display: block;
+            background-color: #f2f2f2
+        }
+    }
+    .gallery {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+    .gallery img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 2s ease;
+    }
+    .gallery img:first-child {
+        position: relative;
+        opacity: 1;
+    }
 }

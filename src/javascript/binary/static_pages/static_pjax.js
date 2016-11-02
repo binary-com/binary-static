@@ -90,9 +90,8 @@ pjax_config_page('/careers', function() {
 
 pjax_config_page('/charity', function() {
     return {
-        onLoad: function() {
-            charity_roll();
-        },
+        onLoad: CharityPage.onLoad,
+        onUnload: CharityPage.onUnload
     };
 });
 

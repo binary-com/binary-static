@@ -1,13 +1,58 @@
-<div class="charity container">
-  <div class="section border-bottom">
+<div class="charity">
+  <div class="section">
     <div class="section-content">
       <div class="gr-12">
         <h1>
           [% l("Making a Positive Impact in Local Communities") %]
         </h1>
         <p>
-          [% l("When you start trading with Binary.com, you'll be directed to the trading screen, where you set your trading parameters, and choose what you want to trade, how and when.") %]
+          [% l("Binary.com’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities.") %]
         </p>
+      </div>
+      <div class="gallery">
+        <img class="responsive" src="[% request.url_for('/images/pages/charity/charity-1.jpg') %]"><img class="responsive" src="[% request.url_for('/images/pages/charity/charity-2.jpg') %]"><img class="responsive" src="[% request.url_for('/images/pages/charity/charity-3.jpg') %]">
+      </div>
+    </div>
+    <div class="section-content">
+      <div class="charity-country">
+        <h3>[% l("Indonesia") %]</h3>
+        <div class="gr-row">
+          <div class="gr-4"><p>Insert image here</p></div>
+          <div class="gr-8">
+            <p><strong>[% l("Lorem ipsum") %]</strong></p>
+            <p>[% l("Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") %]</p>
+          </div>
+        </div>
+      </div>
+      <div class="charity-country">
+        <h3>[% l("Malta") %]</h3>
+        <div class="gr-row">
+          <div class="gr-4"><p>Insert image here</p></div>
+          <div class="gr-8">
+            <p><strong>[% l("Lorem ipsum") %]</strong></p>
+            <p>[% l("Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") %]</p>
+          </div>
+        </div>
+      </div>
+      <div class="charity-country">
+        <h3>[% l("Malaysia") %]</h3>
+        <div class="gr-row">
+          <div class="gr-4"><p>Insert image here</p></div>
+          <div class="gr-8">
+            <p><strong>[% l("Lorem ipsum") %]</strong></p>
+            <p>[% l("Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") %]</p>
+          </div>
+        </div>
+      </div>
+      <div class="charity-country">
+        <h3>[% l("Ukraine") %]</h3>
+        <div class="gr-row">
+          <div class="gr-4"><p>Insert image here</p></div>
+          <div class="gr-8">
+            <p><strong>[% l("Lorem ipsum") %]</strong></p>
+            <p>[% l("Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") %]</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
