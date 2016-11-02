@@ -49,9 +49,6 @@ exportAllFunctions(require('./binary/static_pages/charity'));
 exportAllFunctions(require('./binary/static_pages/static_pjax'));
 
 exportAllFunctions(require('./binary/websocket_pages/trade/content'));
-exportAllFunctions(require('./binary/websocket_pages/resources/asset_index/asset_indexws.data'));
-exportAllFunctions(require('./binary/websocket_pages/resources/asset_index/asset_indexws.ui'));
-exportAllFunctions(require('./binary/websocket_pages/resources/asset_indexws'));
 exportAllFunctions(require('./binary/websocket_pages/resources/market_times/market_timesws.data'));
 exportAllFunctions(require('./binary/websocket_pages/resources/market_times/market_timesws.ui'));
 exportAllFunctions(require('./binary/websocket_pages/resources/market_timesws'));

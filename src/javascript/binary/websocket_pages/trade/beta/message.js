@@ -1,3 +1,5 @@
+var AssetIndexUI = require('../../resources/asset_index/asset_indexws.ui').AssetIndexUI;
+
 /*
  * This Message object process the response from server and fire
  * events based on type of response
