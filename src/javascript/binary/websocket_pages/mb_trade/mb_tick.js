@@ -22,7 +22,7 @@ var MBTick = (function() {
         epoch = '',
         spots = {},
         errorMessage = '',
-        keep_number  = 20;
+        keep_number  = 60;
 
     var details = function(data) {
         errorMessage = '';
@@ -99,7 +99,7 @@ var MBTick = (function() {
             highlightSpotColor: '#ffff00',
             highlightLineColor: '#000000',
             spotRadius        : 1.25,
-            width             : 100,
+            width             : 200,
             height            : 25,
         };
         if ($chart && typeof $chart.sparkline === 'function') {
