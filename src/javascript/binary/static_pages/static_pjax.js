@@ -87,6 +87,15 @@ pjax_config_page('/careers', function() {
     };
 });
 
+
+pjax_config_page('/charity', function() {
+    return {
+        onLoad: function() {
+            charity_roll();
+        },
+    };
+});
+
 pjax_config_page('/terms-and-conditions', function() {
     return {
         onLoad: function() {

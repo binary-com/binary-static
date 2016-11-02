@@ -32,7 +32,8 @@ sub all_pages {
         ['open-positions',             'about/job_descriptions',       'full_width', 'Open Positions'],
         ['open-positions/job-details', 'about/job_details',            'full_width', 'Job Details'],
         ['company-profile',            'japan/company_profile',        'default',    'Company Profile',      'NOT-ja,en'],
-        ['service-announcements',      'japan/service-announcements',   'default',   'Service Announcements',  'NOT-ja,en'],
+        ['service-announcements',      'japan/service-announcements',  'default',   'Service Announcements',  'NOT-ja,en'],
+        ['charity',                    'static/charity',               'full_width',   'Charity'],
 
         ['open-source-projects',       'partners/open_source_projects',  'full_width', 'Open-Source Projects'],
         ['partners',                   'partners/partners',              'full_width', 'Partners',           'ja'],
