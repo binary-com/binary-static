@@ -82,10 +82,10 @@ var MBPrice = (function() {
     };
 
     var updatePrice = function(proposal) {
-        var barrier     = makeBarrier(proposal.echo_req),
-            $price_rows = $(price_selector + ' div[data-barrier="' + barrier + '"]');
+        var barrier    = makeBarrier(proposal.echo_req),
+            price_rows = document.querySelectorAll(price_selector + ' div[data-barrier="' + barrier + '"]');
 
-        if (!$price_rows.length) return;
+        if (!price_rows.length) return;
 
         var contract_type     = proposal.echo_req.contract_type,
             contract_info     = contract_types[contract_type],
@@ -93,8 +93,8 @@ var MBPrice = (function() {
         var values     = getValues(proposal),
             values_opp = getValues(prices[barrier][contract_info.opposite]);
 
-        $($price_rows[+contract_info.order]).replaceWith(makePriceRow(values));
-        $($price_rows[+contract_info_opp.order]).replaceWith(makePriceRow(values_opp));
+        price_rows[+contract_info.order    ].innerHTML = makePriceRow(values    , true);
+        price_rows[+contract_info_opp.order].innerHTML = makePriceRow(values_opp, true);
     };
 
     var getValues = function(proposal) {
@@ -123,22 +123,30 @@ var MBPrice = (function() {
         return current > prev ? '⬆' : current < prev ? '⬇' : '';
     };
 
-    var makePriceRow = function(values) {
-        return '<div data-barrier="' + values.barrier + '" class="gr-row price-row">' +
+    var makePriceRow = function(values, is_update) {
+        var payout   = MBDefaults.get('payout'),
+            is_japan = japanese_client();
+        return (is_update ? '' : '<div data-barrier="' + values.barrier + '" class="gr-row price-row">') +
                 '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
                 '<div class="gr-4 buy-price">' +
                     '<button class="price-button' + (!values.is_active ? ' inactive' : '') + '"' +
                         (values.id ? ' onclick="MBProcess.processBuy(\'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
-                        (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' + formatPrice(values.ask_price) +
-                        '<span class="dynamics">' + (values.ask_price_movement || '') + '</span>' +
+                        (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' +
+                            '<span class="value-wrapper">' +
+                                '<span class="dynamics">' + (values.ask_price_movement || '') + '</span>' +
+                                formatPrice(values.ask_price) +
+                            '</span>' +
+                            (is_japan ? '<span class="base-value">(' + formatPrice(values.ask_price / payout) + ')</span>' : '') +
                     '</button>' +
                 '</div>' +
                 '<div class="gr-4 sell-price">' +
-                    '<span class="price-wrapper' + (!values.sell_price ? ' inactive' : '') + '">' + formatPrice(values.sell_price) +
+                    '<span class="price-wrapper' + (!values.sell_price ? ' inactive' : '') + '">' +
                         '<span class="dynamics">' + (values.sell_price_movement || '') + '</span>' +
+                        formatPrice(values.sell_price) +
+                        (is_japan ? '<span class="base-value">(' + formatPrice(values.sell_price / payout) + ')</span>' : '') +
                     '</span>' +
                 '</div>' +
-            '</div>';
+            (is_update ? '' : '</div>');
     };
 
     var formatPrice = function(price) {
@@ -209,6 +217,7 @@ var MBPrice = (function() {
         increaseReqId          : function() { req_id++; cleanup(); },
         hideSpinnerShowTrading : hideSpinnerShowTrading,
         getPrices              : function() { return prices; },
+        onUnload               : function() { cleanup(); req_id = 0; proposal_response = {}; $tables = undefined; },
     };
 })();
 

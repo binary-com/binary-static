@@ -187,43 +187,6 @@ var MBProcess = (function() {
         }
     }
 
-    var periodValue, $countDownTimer, remainingTimeElement, remainingTimeout;
-    function processRemainingTime(recalculate) {
-        if (typeof periodValue === 'undefined' || recalculate) {
-            periodValue = document.getElementById('period').value;
-            $countDownTimer = $('.countdown-timer');
-            remainingTimeElement = document.getElementById('remaining-time');
-        }
-        if (!periodValue) return;
-        var timeLeft = parseInt(periodValue.split('_')[1]) - window.time.unix();
-        if (timeLeft <= 0) {
-            location.reload();
-        } else if (timeLeft < 120) {
-            $countDownTimer.addClass('alert');
-        }
-        var remainingTimeString = [],
-            duration = moment.duration(timeLeft * 1000);
-        var all_durations = {
-            month  : duration.months(),
-            day    : duration.days(),
-            hour   : duration.hours(),
-            minute : duration.minutes(),
-            second : duration.seconds()
-        };
-        for (var key in all_durations) {
-            if (all_durations[key]) {
-                remainingTimeString.push(all_durations[key] + page.text.localize((key + (all_durations[key] == 1 ? '' : 's' ))));
-            }
-        }
-        remainingTimeElement.innerHTML = remainingTimeString.join(' ');
-        clearRemainingTimeout();
-        remainingTimeout = setTimeout(processRemainingTime, 1000);
-    }
-
-    function clearRemainingTimeout() {
-        clearTimeout(remainingTimeout);
-    }
-
     function processBuy(barrier, contract_type) {
         if (!barrier || !contract_type) return;
         if (!page.client.is_logged_in) {
@@ -285,9 +248,7 @@ var MBProcess = (function() {
         processContract        : processContract,
         processPriceRequest    : processPriceRequest,
         processProposal        : processProposal,
-        processRemainingTime   : processRemainingTime,
         processBuy             : processBuy,
-        clearTimeout           : clearRemainingTimeout,
     };
 })();
 

@@ -18,12 +18,17 @@ var MBContract = (function() {
             req.passthrough = {action: 'no-proposal'};
         }
         BinarySocket.send(req);
-        clearTimeout();
+        clearContractTimeout(contract_timeout);
         contract_timeout = setTimeout(getContracts, 15000);
     };
 
-    var clearContractTimeout = function() {
-        clearTimeout(contract_timeout);
+    var clearContractTimeout = function(timoutID) {
+        if (timoutID) {
+            clearTimeout(timoutID);
+        } else {
+            clearTimeout(contract_timeout);
+            clearTimeout(remainingTimeout);
+        }
     };
 
     var durationText = function(dur) {
@@ -81,29 +86,30 @@ var MBContract = (function() {
             trading_period = available_contracts[i].trading_period;
             if (!trading_period) return;
             start_end = trading_period.date_start.epoch + '_' + trading_period.date_expiry.epoch + '_' + trading_period.duration;
-            if (trading_period_array.indexOf(start_end) > -1) {
-                continue;
+            if (trading_period_array.indexOf(start_end) < 0) {
+                trading_period_array.push(start_end);
             }
-            trading_period_array.push(start_end);
         }
         trading_period_array.sort(sortByExpiryTime);
         if (rebuild) {
             $periodElement.empty();
         }
-        if ($periodElement.children().length === 0) {
+        if ($periodElement.children().length === 0) { // populate for the first time
             var default_value = MBDefaults.get('period');
             for (var j = 0; j < trading_period_array.length; j++) {
                 appendTextValueChild(document.getElementById('period'), PeriodText(trading_period_array[j]), trading_period_array[j], trading_period_array[j] == default_value);
             }
             MBDefaults.set('period', $periodElement.val());
             MBContract.displayDescriptions();
-            MBProcess.processRemainingTime();
-        } else {
+            MBContract.displayRemainingTime();
+        } else { // update options
             var existing_array = [],
-                missing_array = [];
-            $("#period option").each(function() {
+                missing_array  = [];
+            $('#period option').each(function() {
                 existing_array.push($(this).val());
             });
+
+            // add new periods to dropdown
             for (var l = 0; l < trading_period_array.length; l++) {
                 if (existing_array.indexOf(trading_period_array[l]) < 0) {
                     missing_array.push(trading_period_array[l]);
@@ -118,25 +124,63 @@ var MBContract = (function() {
                         if (m < 1) {
                             $(newOption).insertBefore($periodElement.children().eq(m));
                         } else {
-                            $(newOption).insertAfter($periodElement.children().eq(m-1));
+                            $(newOption).insertAfter($periodElement.children().eq(m - 1));
                         }
                     }
                 }
             }
+
+            // remove periods that no longer exist
+            existing_array.forEach(function(period) {
+                if (trading_period_array.indexOf(period) < 0) {
+                    $('#period option[value="' + period + '"]').remove();
+                }
+            });
         }
     };
 
-    var sortByExpiryTime = function(a, b) {
-        var a0 = a.split('_')[0],
-            a1 = a.split('_')[1],
-            b0 = b.split('_')[0],
-            b1 = b.split('_')[1],
-            duration1 = a1 - a0,
-            duration2 = b1 - b0;
-        if (a1 === b1) {
-            return duration2 < duration1;
+    var periodValue, $countDownTimer, remainingTimeElement, remainingTimeout;
+    var displayRemainingTime = function(recalculate) {
+        if (typeof periodValue === 'undefined' || recalculate) {
+            periodValue = document.getElementById('period').value;
+            $countDownTimer = $('.countdown-timer');
+            remainingTimeElement = document.getElementById('remaining-time');
+        }
+        if (!periodValue) return;
+        var timeLeft = parseInt(periodValue.split('_')[1]) - window.time.unix();
+        if (timeLeft <= 0) {
+            location.reload();
+        } else if (timeLeft < 120) {
+            $countDownTimer.addClass('alert');
+        }
+        var remainingTimeString = [],
+            duration = moment.duration(timeLeft * 1000);
+        var all_durations = {
+            month  : duration.months(),
+            day    : duration.days(),
+            hour   : duration.hours(),
+            minute : duration.minutes(),
+            second : duration.seconds()
+        };
+        for (var key in all_durations) {
+            if (all_durations[key]) {
+                remainingTimeString.push(all_durations[key] + page.text.localize((key + (all_durations[key] == 1 ? '' : 's' ))));
+            }
+        }
+        remainingTimeElement.innerHTML = remainingTimeString.join(' ');
+        clearContractTimeout(remainingTimeout);
+        remainingTimeout = setTimeout(displayRemainingTime, 1000);
+    };
+
+    var sortByExpiryTime = function(first, second) {
+        var a = first.split('_'),
+            b = second.split('_'),
+            duration1 = a[1] - a[0],
+            duration2 = b[1] - b[0];
+        if (a[1] === b[1]) {
+            return duration1 - duration2;
         } else {
-            return b1 < a1;
+            return a[1] - b[1];
         }
     };
 
@@ -176,8 +220,8 @@ var MBContract = (function() {
                 appendTextValueChild(document.getElementById('category'), categoryNames[contracts_array[j]], contracts_array[j], contracts_array[j] == default_value);
             }
             MBDefaults.set('category', $('#category').val());
-            populatePeriods();
         }
+        populatePeriods();
     };
 
     var getCurrentContracts = function() {
@@ -186,7 +230,7 @@ var MBContract = (function() {
             category  = MBDefaults.get('category'),
             periods   = MBDefaults.get('period').split('_');
         contracts_for_response.contracts_for.available.forEach(function(c) {
-            if (c.contract_category === category &&
+            if (c.contract_category === category && c.trading_period &&
                 c.trading_period.date_start.epoch  == periods[0] &&
                 c.trading_period.date_expiry.epoch == periods[1]) {
                    contracts.push(c);
@@ -254,14 +298,15 @@ var MBContract = (function() {
             $desc_wrappers = $('.prices-wrapper'),
             currency = (format_currency(TUser.get().currency) || format_currency(document.getElementById('currency').value) || '¥'),
             payout = Number(MBDefaults.get('payout') * (japanese_client() ? 1000 : 1)).toLocaleString(),
-            display_name = MBSymbols.getName(contracts[0].underlying_symbol),
-            date_expiry = PeriodText(contracts[0].trading_period).replace(/\s\(.*\)/, '');
+            display_name = MBSymbols.getName(MBDefaults.get('underlying')),
+            date_expiry = PeriodText(contracts[0].trading_period).replace(/\s\(.*\)/, ''),
+            preposition = page.language() === 'JA' ? '{JAPAN ONLY}' : '';
         contracts.forEach(function(c) {
             var contract_type = c.contract_type,
                 template = getTemplate(contract_type),
                 $wrapper = $($desc_wrappers[template.order]);
-            $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(page.text.localize(template.name));
-            $wrapper.find('.descr').text(page.text.localize(template.description, [currency + payout, display_name, date_expiry]));
+            $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(page.text.localize(preposition + template.name));
+            $wrapper.find('.descr').text(page.text.localize(preposition + template.description, [currency, payout, display_name, date_expiry]));
         });
     };
 
@@ -273,6 +318,7 @@ var MBContract = (function() {
         getContracts        : getContracts,
         populatePeriods     : populatePeriods,
         populateOptions     : populateOptions,
+        displayRemainingTime: displayRemainingTime,
         getCurrentContracts : getCurrentContracts,
         getTemplate         : getTemplate,
         displayDescriptions : displayDescriptions,
@@ -280,6 +326,7 @@ var MBContract = (function() {
         clearTimeout        : clearContractTimeout,
         getContractsResponse: function() { return contracts_for_response; },
         setContractsResponse: function(contracts_for) { contracts_for_response = contracts_for; },
+        onUnload            : function() { clearContractTimeout(); contracts_for_response = {}; periodValue = undefined; },
     };
 })();
 
