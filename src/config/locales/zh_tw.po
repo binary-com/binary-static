@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-25 06:24+0000\n"
+"PO-Revision-Date: 2016-11-02 07:42+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -324,7 +324,7 @@ msgid "* Tax Free: Profits from trading are tax free in many countries but you s
 msgstr "*免稅：交易所獲之盈利在很多國家免稅，但請務必諮詢專業稅務顧問。"
 
 msgid ",000"
-msgstr ""
+msgstr ",000"
 
 msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgstr "水電煤帳單或銀行月結單掃描件（日期不得超過3個月）。"
@@ -2629,7 +2629,7 @@ msgid "FAQ"
 msgstr "常見問題集"
 
 msgid "FX Rate"
-msgstr ""
+msgstr "外匯兌換率"
 
 msgid "Facility that allows you to set limits on your account."
 msgstr "可讓您對帳戶設定限制的設施。"
@@ -4028,7 +4028,7 @@ msgid "Learn more"
 msgstr "瞭解更多資訊"
 
 msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
-msgstr ""
+msgstr "了解更多關於我們的想法和運作方式詳情。參閱<a href='https://blog.binary.com/' target='_blank'>我們的部落格</a>，以便了解我們的概念來源和背景故事。"
 
 msgid "Learn more about our corporate culture"
 msgstr "查看關於我們企業文化的詳細資料"
@@ -4213,10 +4213,8 @@ msgstr "市場專業人士"
 msgid "Market exit price"
 msgstr "平倉價"
 
-#, fuzzy
-#| msgid "All markets are closed now. Please try again later."
 msgid "Market is closed. Please try again later."
-msgstr "所有市場現已關閉。請稍後重試。"
+msgstr "市場已關閉。請稍後重試。"
 
 msgid "Market prices are updated at most once per second.  For any given second, the market price will be updated to the first tick, if any, received in that particular second on the company datafeed."
 msgstr "市場價格最快每秒更新一次。對於任何給定的某一秒鐘，市場價格都將更新至該秒從公司資料源接收到的第一價位（如有）。"
@@ -4641,10 +4639,8 @@ msgstr "開戶"
 msgid "Opens"
 msgstr "開盤"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Option Type"
 msgid "Option Type"
-msgstr "{JAPAN ONLY}Option Type"
+msgstr "期權類型"
 
 msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
 msgstr "二元期權交易就像任何其他活動一樣，過於沉迷可能會上癮。為了避免發生此種過於入迷的風險，我們定期向您提供交易和財務的實況簡報。"
@@ -4847,10 +4843,8 @@ msgstr "支付"
 msgid "Payout"
 msgstr "賠付"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Payout Amount"
 msgid "Payout Amount"
-msgstr "{JAPAN ONLY}Payout Amount"
+msgstr "收益金額"
 
 msgid "Pension"
 msgstr "退休金"
@@ -5359,8 +5353,6 @@ msgstr "具有相關領域工作經驗 (金融服務業優先錄取)"
 msgid "Remaining Time"
 msgstr "剩餘時間"
 
-#, fuzzy
-#| msgid "Remaining Time"
 msgid "Remaining time"
 msgstr "剩餘時間"
 
@@ -6531,7 +6523,7 @@ msgid "This promotion is only available to new Clients. Existing or former Clien
 msgstr "本促銷活動僅適用於新客戶。目前或以往客戶不符合條件。每一客戶僅能獲得一次。"
 
 msgid "This symbol is not active. Please try another symbol."
-msgstr ""
+msgstr "這是個非活躍符號。請試用另一符號。"
 
 msgid "This website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and the advertisements thereof may submit cookies onto your web browser and as such are beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites, because their practices may differ from ours."
 msgstr "本網站含有其他網站連結，且可能含有第三方網站的橫幅或圖示廣告。這些網站及廣告可能會向您的網頁瀏覽器寫入 cookies，因此不在我們所能控制的範圍內。我們並不對這些網站的隱私規範和內容負責。由於他們的隱私政策可能與我們並不相同，所以我們建議您了解他們的隱私政策。"
@@ -6683,10 +6675,8 @@ msgstr "Trading Experience"
 msgid "Trading Limits"
 msgstr "交易限制"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Trading Period"
 msgid "Trading Period"
-msgstr "{JAPAN ONLY}Trading Guide"
+msgstr "交易期限"
 
 msgid "Trading Platforms"
 msgstr "交易平台"
@@ -7291,15 +7281,11 @@ msgstr "我為什麼要成為%1的聯盟會員？"
 msgid "Will I need to install any software?"
 msgstr "我需要安裝任何軟體嗎？"
 
-#, fuzzy
-#| msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a "
 msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing 'Stays In' with a narrow price target."
-msgstr "如果您預測正確，即可獲得投注額10%-1000% 的回報。要獲得較高回報，可選擇 "
+msgstr "如果您預測正確，即可獲得投注額10%-1000% 的回報。要獲得較高回報，可選擇目標價差距較小的'範圍內'投注。"
 
-#, fuzzy
-#| msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
 msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a 'Touch' trade, with a price target farther away from the current price."
-msgstr "如果您預測正確，即可獲得投注額10%-1000% 的回報。選擇目標價與當前價格距離比較遠的「觸及」交易，可提高回報率。"
+msgstr "如果您預測正確，即可獲得投注額10%-1000% 的回報。選擇目標價與當前價格距離比較遠的'觸及'交易，可提高回報率。"
 
 msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a price target farther away from the current price."
 msgstr "如果您預測正確，即可獲得投注額10%-1000% 的回報。選擇與當前價格距離比較遠的目標價，可提高回報率。"
@@ -7971,12 +7957,10 @@ msgid "website"
 msgstr "網站"
 
 msgid "week"
-msgstr ""
+msgstr "週"
 
-#, fuzzy
-#| msgid "Weeks"
 msgid "weeks"
-msgstr "週數"
+msgstr "週"
 
 msgid "year"
 msgstr "年"
