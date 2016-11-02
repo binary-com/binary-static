@@ -140,10 +140,10 @@ var AssetIndexUI = (function() {
     var responseHandler = function(response) {
         var msg_type = response.msg_type;
         if (msg_type === "asset_index") {
-            setAssetIndex(response);
+            AssetIndexUI.setAssetIndex(response);
         }
         else if (msg_type === "active_symbols") {
-            setActiveSymbols(response);
+            AssetIndexUI.setActiveSymbols(response);
         }
     };
 

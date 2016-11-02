@@ -4,6 +4,7 @@ var ForwardWS = require('./cashier/deposit_withdraw_ws').ForwardWS;
 var PaymentAgentListWS = require('./cashier/payment_agent_listws').PaymentAgentListWS;
 var PaymentAgentWithdrawWS = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
 var AssetIndexUI = require('./resources/asset_index/asset_indexws.ui').AssetIndexUI;
+var MarketTimesUI = require('./resources/market_times/market_timesws.ui').MarketTimesUI;
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
