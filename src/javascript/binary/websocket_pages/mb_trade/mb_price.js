@@ -217,6 +217,7 @@ var MBPrice = (function() {
         increaseReqId          : function() { req_id++; cleanup(); },
         hideSpinnerShowTrading : hideSpinnerShowTrading,
         getPrices              : function() { return prices; },
+        onUnload               : function() { cleanup(); req_id = 0; proposal_response = {}; $tables = undefined; },
     };
 })();
 

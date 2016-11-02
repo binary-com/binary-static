@@ -20,11 +20,11 @@
         position: relative;
         #disable-overlay {
             position: absolute;
-            top: 108px;
+            top: 84px;
             left: 10px;
             z-index: 1;
             width: calc(100% - 20px);
-            height: calc(100% - 108px);
+            height: calc(100% - 84px);
             background-color: rgba(242, 242, 242, 0.5);
         }
         #loading-overlay {
