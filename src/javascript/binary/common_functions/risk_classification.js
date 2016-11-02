@@ -24,7 +24,8 @@ var RiskClassification = (function() {
   };
 
   return {
-    cleanup: cleanup
+      showRiskClassificationPopUp: showRiskClassificationPopUp,
+      cleanup: cleanup,
   };
 }());
 

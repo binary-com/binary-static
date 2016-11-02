@@ -11,6 +11,7 @@ var InScriptStore = require('./storage').InScriptStore;
 var CookieStorage = require('./storage').CookieStorage;
 var Localizable = require('./storage').Localizable;
 var TrafficSource = require('../common_functions/traffic_source').TrafficSource;
+var RiskClassification = require('../common_functions/risk_classification').RiskClassification;
 var clock_started = false;
 
 var SessionStore, LocalStore;
@@ -794,7 +795,7 @@ Header.prototype = {
             success: function(riskClassificationText) {
                 if (riskClassificationText.includes('assessment_form')) {
                     var payload = $(riskClassificationText);
-                    showRiskClassificationPopUp(payload.find('#assessment_form'));
+                    RiskClassification.showRiskClassificationPopUp(payload.find('#assessment_form'));
                     FinancialAssessmentws.LocalizeText();
                     $('#risk_classification #assessment_form').removeClass('invisible')
                                         .attr('style', 'text-align: left;');

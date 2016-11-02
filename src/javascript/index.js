@@ -84,12 +84,7 @@ exportAllFunctions(require('./binary/websocket_pages/trade/beta/purchase'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/starttime'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/tick_trade'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/tradepage'));
-exportAllFunctions(require('./binary/websocket_pages/user/account/authenticate'));
-exportAllFunctions(require('./binary/websocket_pages/user/account/change_password'));
-exportAllFunctions(require('./binary/websocket_pages/user/account/payment_agent_transfer/payment_agent_transfer.data'));
-exportAllFunctions(require('./binary/websocket_pages/user/account/payment_agent_transfer/payment_agent_transfer.init'));
-exportAllFunctions(require('./binary/websocket_pages/user/account/payment_agent_transfer/payment_agent_transfer.ui'));
-exportAllFunctions(require('./binary/websocket_pages/user/account/payment_agent_transfer'));
+
 exportAllFunctions(require('./binary/websocket_pages/user/account/portfolio/portfolio.init'));
 exportAllFunctions(require('./binary/websocket_pages/user/account/portfolio'));
 exportAllFunctions(require('./binary/websocket_pages/user/account/profit_table/profit_table.data'));

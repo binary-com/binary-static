@@ -5,6 +5,9 @@ var PaymentAgentListWS = require('./cashier/payment_agent_listws').PaymentAgentL
 var PaymentAgentWithdrawWS = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
 var AssetIndexUI = require('./resources/asset_index/asset_indexws.ui').AssetIndexUI;
 var MarketTimesUI = require('./resources/market_times/market_timesws.ui').MarketTimesUI;
+var AuthenticateWS = require('./user/account/authenticate').AuthenticateWS;
+var PasswordWS = require('./user/account/change_password').PasswordWS;
+var PaymentAgentTransferSocket = require('./user/account/payment_agent_transfer').PaymentAgentTransferSocket;
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
@@ -159,6 +162,30 @@ pjax_config_page_require_auth("paymentagent/withdrawws", function() {
     return {
         onLoad: function() {
             PaymentAgentWithdrawWS.checkOnLoad();
+        }
+    };
+});
+
+pjax_config_page_require_auth("user/authenticatews", function(){
+    return {
+        onLoad: function() {
+            AuthenticateWS.init();
+        }
+    };
+});
+
+pjax_config_page_require_auth('user/security/change_password', function() {
+    return {
+        onLoad: function() {
+            PasswordWS.initSocket();
+        }
+    };
+});
+
+pjax_config_page_require_auth("paymentagent/transferws", function(){
+    return {
+        onLoad: function() {
+            PaymentAgentTransferSocket.initSocket();
         }
     };
 });

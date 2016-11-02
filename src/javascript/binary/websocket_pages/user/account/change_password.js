@@ -84,38 +84,35 @@ var PasswordWS = (function(){
         }, 5000);
     }
 
+    function initSocket() {
+        Content.populate();
+        if (isIE() === false) {
+            $('#new_password').on('input', function() {
+                $('#password-meter').attr('value', testPassword(this.value)[0]);
+            });
+        } else {
+            $('#password-meter').remove();
+        }
+
+        BinarySocket.init({
+            onmessage: function(msg){
+                var response = JSON.parse(msg.data);
+                if (!response) return;
+                var type = response.msg_type;
+                if (type === 'change_password' || (type === 'error' && 'change_password' in response.echo_req)) {
+                    PasswordWS.handler(response);
+                }
+            }
+        });
+        PasswordWS.init();
+    }
+
     return {
         init: init,
-        handler: handler
+        handler: handler,
+        initSocket: initSocket,
     };
 })();
-
-pjax_config_page_require_auth('user/security/change_password', function() {
-    return {
-        onLoad: function() {
-            Content.populate();
-            if (isIE() === false) {
-                $('#new_password').on('input', function() {
-                    $('#password-meter').attr('value', testPassword(this.value)[0]);
-                });
-            } else {
-                $('#password-meter').remove();
-            }
-
-            BinarySocket.init({
-                onmessage: function(msg){
-                    var response = JSON.parse(msg.data);
-                    if (!response) return;
-                    var type = response.msg_type;
-                    if (type === 'change_password' || (type === 'error' && 'change_password' in response.echo_req)) {
-                        PasswordWS.handler(response);
-                    }
-                }
-            });
-            PasswordWS.init();
-        }
-    };
-});
 
 module.exports = {
     PasswordWS: PasswordWS,
