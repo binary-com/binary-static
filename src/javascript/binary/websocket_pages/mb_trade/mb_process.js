@@ -1,3 +1,10 @@
+var MBContract = require('./mb_contract').MBContract;
+var MBDefaults = require('./mb_defaults').MBDefaults;
+var MBNotifications = require('./mb_notifications').MBNotifications;
+var MBPrice = require('./mb_price').MBPrice;
+var MBSymbols = require('./mb_symbols').MBSymbols;
+var MBTick = require('./mb_tick').MBTick;
+
 var MBProcess = (function() {
     /*
      * This function process the active symbols to get markets
@@ -187,16 +194,6 @@ var MBProcess = (function() {
         }
     }
 
-    function processBuy(barrier, contract_type) {
-        if (!barrier || !contract_type) return;
-        if (!page.client.is_logged_in) {
-            MBNotifications.show({text: page.text.localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true});
-            return;
-        }
-        MBPrice.showPriceOverlay();
-        MBPrice.sendBuyRequest(barrier, contract_type);
-    }
-
     var processExpiredBarriers = function() {
         var contracts = MBContract.getCurrentContracts(),
             i, expired_barrier, expired_barrier_element;
@@ -248,7 +245,6 @@ var MBProcess = (function() {
         processContract        : processContract,
         processPriceRequest    : processPriceRequest,
         processProposal        : processProposal,
-        processBuy             : processBuy,
     };
 })();
 

@@ -39,6 +39,7 @@ window.dv = require('./lib/validation.js');
 
 require('./binary/components/trackjs_onerror');
 
+exportAllFunctions(require('./binary/base/logged_in'));
 exportAllFunctions(require('./binary/base/onerror'));
 exportAllFunctions(require('./binary/base/page'));
 exportAllFunctions(require('./binary/base/pjax'));
@@ -50,18 +51,7 @@ exportAllFunctions(require('./binary/static_pages/static_pjax'));
 
 exportAllFunctions(require('./binary/websocket_pages/trade/content'));
 exportAllFunctions(require('./binary/websocket_pages/socket'));
-exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_contract'));
-exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_currency'));
-exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_defaults'));
-exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_event'));
-exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_message'));
-exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_notifications'));
 exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_price'));
-exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_process'));
-exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_purchase'));
-exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_symbols'));
-exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_tick'));
-exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_tradepage'));
 exportAllFunctions(require('./binary/websocket_pages/trade/analysis'));
 exportAllFunctions(require('./binary/websocket_pages/trade/barriers'));
 exportAllFunctions(require('./binary/websocket_pages/trade/charts/digit_infows'));

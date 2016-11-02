@@ -1,3 +1,6 @@
+var format_currency = require('../../common_functions/currency_to_symbol').format_currency;
+var MBDefaults = require('./mb_defaults').MBDefaults;
+
 /*
  * Handles currency display
  *
@@ -39,7 +42,7 @@ function MBDisplayCurrencies(selected, showClass) {
         $('#currency').replaceWith('<span id="' + target.getAttribute('id') +
                                     '" class="' + (showClass ? target.getAttribute('class') : '') +
                                     '"value="' + currencies[0] + '">' +
-                                    (MBTradePage.is_trading_page() && japanese_client() ? '✕' : format_currency(currencies[0])) + '</span>');
+                                    (/multi_barriers_trading/.test(window.location.pathname) && japanese_client() ? '✕' : format_currency(currencies[0])) + '</span>');
         MBDefaults.set('currency', currencies[0]);
     }
 }

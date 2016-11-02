@@ -5,6 +5,7 @@ var JobDetails = require('./job_details').JobDetails;
 var Platforms = require('./platforms').Platforms;
 var Regulation = require('./regulation').Regulation;
 var submit_email = require('../websocket_pages/user/verify_email').submit_email;
+var MBTradePage = require('../websocket_pages/mb_trade/mb_tradepage').MBTradePage;
 
 pjax_config_page('/home', function() {
     return {
