@@ -20,11 +20,11 @@
         position: relative;
         #disable-overlay {
             position: absolute;
-            top: 108px;
+            top: 84px;
             left: 10px;
             z-index: 1;
             width: calc(100% - 20px);
-            height: calc(100% - 108px);
+            height: calc(100% - 84px);
             background-color: rgba(242, 242, 242, 0.5);
         }
         #loading-overlay {
@@ -50,10 +50,17 @@
             background: $COLOR_LIGHT_GRAY;
         }
     }
+    .base-value {
+        font-size: 9px;
+    }
+    .dynamics {
+        display: inline-block;
+        width: 20px;
+    }
     .price-wrapper {
-        .dynamics {
+        .base-value {
             display: inline-block;
-            width: 20px;
+            margin-left: 5px;
         }
     }
     .price-button {
@@ -69,8 +76,13 @@
         border: 0;
         min-height: 34px;
         position: relative;
-        .dynamics {
+        .value-wrapper {
+            margin-left: -15px;
+        }
+        .base-value {
             position: absolute;
+            bottom: 1px;
+            right: 3px;
         }
         &:hover {
             background-color: $COLOR_DARK_GREEN;
@@ -96,13 +108,13 @@
     }
     .descr-wrapper {
         & > div {
-            min-height: 88px;
+            min-height: 64px;
             padding-top: 10px;
             padding-bottom: 10px;
         }
         .descr {
             padding: 0 16px 0 0;
-            font-size: 16px;
+            font-size: 14px;
             max-width: 420px;
             line-height: 1.4em;
         }
@@ -237,6 +249,10 @@
         display: block;
         &.spot-value {
             line-height: 30px;
+        }
+        #trading_worm_chart {
+            display: inline-block;
+            margin-top: 3px;
         }
     }
     .countdown-timer {
