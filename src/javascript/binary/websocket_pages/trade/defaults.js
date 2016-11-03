@@ -1,6 +1,8 @@
+var objectNotEmpty = require('../../base/utility').objectNotEmpty;
+
 /*
  * Handles trading page default values
- * 
+ *
  * Priorities:
  * 1. Client's input: on each change to form, it will reflect to both query string & session storage
  * 2. Query string parameters: will change session storage values

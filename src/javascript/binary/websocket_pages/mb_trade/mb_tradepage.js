@@ -1,3 +1,9 @@
+var MBContract = require('./mb_contract').MBContract;
+var MBDisplayCurrencies = require('./mb_currency').MBDisplayCurrencies;
+var MBTradingEvents = require('./mb_event').MBTradingEvents;
+var MBMessage = require('./mb_message').MBMessage;
+var MBSymbols = require('./mb_symbols').MBSymbols;
+
 var MBTradePage = (function(){
 
   var trading_page = 0, events_initialized = 0;

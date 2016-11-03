@@ -1,3 +1,5 @@
+var showLoadingImage = require('../../base/utility').showLoadingImage;
+
 var PaymentAgentListWS = (function() {
     "use strict";
 
@@ -143,31 +145,6 @@ var PaymentAgentListWS = (function() {
         responseHandler: responseHandler
     };
 }());
-
-
-
-pjax_config_page("payment_agent_listws", function() {
-    return {
-        onLoad: function() {
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
-                    if (response) {
-                        if (response.msg_type === "paymentagent_list") {
-                            PaymentAgentListWS.responseHandler(response);
-                        }
-                    }
-                    else {
-                        console.log('some error occured');
-                    }
-                }
-            });
-
-            Content.populate();
-            PaymentAgentListWS.init();
-        }
-    };
-});
 
 module.exports = {
     PaymentAgentListWS: PaymentAgentListWS,

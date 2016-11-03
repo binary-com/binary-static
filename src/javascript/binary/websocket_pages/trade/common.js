@@ -1,3 +1,6 @@
+var objectNotEmpty = require('../../base/utility').objectNotEmpty;
+var format_money = require('../../common_functions/currency_to_symbol').format_money;
+
 /*
  * This contains common functions we need for processing the response
  */

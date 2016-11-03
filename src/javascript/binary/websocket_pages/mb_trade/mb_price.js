@@ -1,3 +1,7 @@
+var MBContract = require('./mb_contract').MBContract;
+var objectNotEmpty = require('../../base/utility').objectNotEmpty;
+var MBDefaults = require('./mb_defaults').MBDefaults;
+
 /*
  * Price object handles all the functions we need to display prices
  *
@@ -130,7 +134,7 @@ var MBPrice = (function() {
                 '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
                 '<div class="gr-4 buy-price">' +
                     '<button class="price-button' + (!values.is_active ? ' inactive' : '') + '"' +
-                        (values.id ? ' onclick="MBProcess.processBuy(\'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
+                        (values.id ? ' onclick="MBPrice.processBuy(\'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
                         (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' +
                             '<span class="value-wrapper">' +
                                 '<span class="dynamics">' + (values.ask_price_movement || '') + '</span>' +
@@ -148,6 +152,16 @@ var MBPrice = (function() {
                 '</div>' +
             (is_update ? '' : '</div>');
     };
+
+    function processBuy(barrier, contract_type) {
+        if (!barrier || !contract_type) return;
+        if (!page.client.is_logged_in) {
+            MBNotifications.show({text: page.text.localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true});
+            return;
+        }
+        MBPrice.showPriceOverlay();
+        MBPrice.sendBuyRequest(barrier, contract_type);
+    }
 
     var formatPrice = function(price) {
         return addComma(price, japanese_client() ? '0' : 2);
@@ -209,6 +223,7 @@ var MBPrice = (function() {
     return {
         display                : display,
         addPriceObj            : addPriceObj,
+        processBuy             : processBuy,
         cleanup                : cleanup,
         sendBuyRequest         : sendBuyRequest,
         showPriceOverlay       : showPriceOverlay,

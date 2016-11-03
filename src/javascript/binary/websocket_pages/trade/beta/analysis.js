@@ -1,3 +1,6 @@
+var AssetIndexUI = require('../../resources/asset_index/asset_indexws.ui').AssetIndexUI;
+var MarketTimesUI = require('../../resources/market_times/market_timesws.ui').MarketTimesUI;
+
 /*
  * This file contains the code related to loading of trading page bottom analysis
  * content. It will contain jquery so as to compatible with old code and less rewrite

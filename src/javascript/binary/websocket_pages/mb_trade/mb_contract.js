@@ -1,3 +1,8 @@
+var objectNotEmpty = require('../../base/utility').objectNotEmpty;
+var format_currency = require('../../common_functions/currency_to_symbol').format_currency;
+var MBDefaults = require('./mb_defaults').MBDefaults;
+var MBSymbols = require('./mb_symbols').MBSymbols;
+
 /*
  * Contract object mocks the trading form we have on our website
  * It parses the contracts json we get from socket.send({contracts_for: 'R_50'})

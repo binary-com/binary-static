@@ -1,3 +1,5 @@
+var template = require('../base/utility').template;
+
 var buildOauthApps = function(data) {
     var oauth_apps = {};
     if (data) {

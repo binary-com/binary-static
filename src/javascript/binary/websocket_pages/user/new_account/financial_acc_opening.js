@@ -1,3 +1,5 @@
+var ValidAccountOpening = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
+
 pjax_config_page_require_auth("new_account/maltainvestws", function(){
   return {
     onLoad: function() {

@@ -1,3 +1,6 @@
+var ValidateV2 = require('../../../../common_functions/validation_v2').ValidateV2;
+var bind_validation = require('../../../../validator').bind_validation;
+
 var SettingsDetailsWS = (function() {
     "use strict";
 

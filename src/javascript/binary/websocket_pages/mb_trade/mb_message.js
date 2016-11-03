@@ -1,3 +1,10 @@
+var MBContract = require('./mb_contract').MBContract;
+var MBDisplayCurrencies = require('./mb_currency').MBDisplayCurrencies;
+var MBProcess = require('./mb_process').MBProcess;
+var MBPurchase = require('./mb_purchase').MBPurchase;
+var MBSymbols = require('./mb_symbols').MBSymbols;
+var MBTick = require('./mb_tick').MBTick;
+
 /*
  * This Message object process the response from server and fire
  * events based on type of response
@@ -7,7 +14,7 @@ var MBMessage = (function () {
 
     var process = function (msg) {
         var response = JSON.parse(msg.data);
-        if(!MBTradePage.is_trading_page()){
+        if(!/multi_barriers_trading/.test(window.location.pathname)){
             forgetTradingStreams();
             return;
         }

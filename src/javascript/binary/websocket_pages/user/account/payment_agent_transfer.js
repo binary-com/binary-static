@@ -1,20 +1,27 @@
-pjax_config_page_require_auth("paymentagent/transferws", function(){
-    return {
-        onLoad: function() {
-            BinarySocket.init({
-                onmessage: function(msg){
-                    var response = JSON.parse(msg.data);
+var PaymentAgentTransfer = require('./payment_agent_transfer/payment_agent_transfer.init').PaymentAgentTransfer;
 
-                    if (response) {
-                        PaymentAgentTransfer.handleResponse(response);
-                    }
+var PaymentAgentTransferSocket = (function() {
+    function initSocket() {
+        BinarySocket.init({
+            onmessage: function(msg){
+                var response = JSON.parse(msg.data);
+
+                if (response) {
+                    PaymentAgentTransfer.handleResponse(response);
                 }
-            });
-            Content.populate();
-            PaymentAgentTransfer.init_variable();
-            if (TUser.get().email) {
-                PaymentAgentTransfer.init();
             }
+        });
+        Content.populate();
+        PaymentAgentTransfer.init_variable();
+        if (TUser.get().email) {
+            PaymentAgentTransfer.init();
         }
+    }
+    return {
+        initSocket: initSocket,
     };
-});
+})();
+
+module.exports = {
+    PaymentAgentTransferSocket: PaymentAgentTransferSocket,
+};
