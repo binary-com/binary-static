@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-03 01:17+0000\n"
+"PO-Revision-Date: 2016-11-03 03:12+0000\n"
 "Last-Translator: Mark Tanser <mark@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -277,6 +277,9 @@ msgstr "Binary.comの沿革"
 
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "当システムは1日に100万件を超える取引（仮想アカウントを含む）を処理しています。"
+
+msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
+msgstr ""
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(最短期間, 例： 最短 15 秒）分"
@@ -1552,10 +1555,10 @@ msgid "But we're picky. We only select people with special qualities: serious pr
 msgstr "しかしながら、当社の人財に対する要求水準は高いです。当社は、高いプロ意識、高いモラル意識、実直、そして協力的な態度を有するような特別な人財のみ選抜します。"
 
 msgid "Buy"
-msgstr "購入金額（単価）"
+msgstr "購入"
 
 msgid "Buy Price"
-msgstr "購入価格"
+msgstr "購入金額（単価）"
 
 msgid "Buy an App, or Build Your Own"
 msgstr "アプリケーションを購入、または自作のものを構築することも"
@@ -4243,6 +4246,9 @@ msgstr "入金"
 msgid "Make your trade"
 msgstr "取引を実行しましょう。"
 
+msgid "Making a Positive Impact in Local Communities"
+msgstr ""
+
 msgid "Malaysia"
 msgstr "マレーシア"
 
@@ -5641,10 +5647,10 @@ msgid "Self-employed"
 msgstr "自営業"
 
 msgid "Sell"
-msgstr "売却金額（単価）"
+msgstr "売却"
 
 msgid "Sell Price"
-msgstr "決済価格"
+msgstr "売却金額（単価）"
 
 msgid "Sell at market"
 msgstr "売却"
@@ -6778,7 +6784,9 @@ msgstr "お客さまが当社とバイナリーオプション取引口座を開
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "物理学、金融工学、数学の大学上級学位が必要となります。"
 
-msgid "To reset your password, enter the e-mail address you registered in the field below and click "
+#, fuzzy
+#| msgid "To reset your password, enter the e-mail address you registered in the field below and click "
+msgid "To reset your password, enter the e-mail address you registered in the field below and click 'RESET PASSWORD'."
 msgstr "パスワードを再設定される場合は下記の入力欄に登録されたメールアドレスを入力し、「パスワード再設定」をクリックしてください。 "
 
 msgid "Today"
@@ -6985,6 +6993,9 @@ msgstr "USD"
 
 msgid "UX / UI experience"
 msgstr "UX / UI の経験"
+
+msgid "Ukraine"
+msgstr ""
 
 msgid "Ultra fast on-the-go trading"
 msgstr "出先でも超高速取引を"
@@ -9254,6 +9265,11 @@ msgstr "会社概要"
 
 msgid "Service Announcements"
 msgstr "サービス情報"
+
+#, fuzzy
+#| msgid "Chart"
+msgid "Charity"
+msgstr "チャート"
 
 msgid "Open-Source Projects"
 msgstr "オープンソースプロジェクト"
