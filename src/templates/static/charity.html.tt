@@ -6,7 +6,7 @@
           [% l("Making a Positive Impact in Local Communities") %]
         </h1>
         <p>
-          [% l("Binary.com’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities.") %]
+          [% l("[_1]’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities.", website_name) %]
         </p>
       </div>
       <div class="gallery">
