@@ -38,6 +38,7 @@ var MBTradingEvents = (function () {
                     // get ticks for current underlying
                     MBTick.request(underlying);
                     MBProcess.processPriceRequest();
+                    MBContract.displayDescriptions();
                 }
             });
         }
@@ -58,9 +59,32 @@ var MBTradingEvents = (function () {
                 MBDefaults.set('period', e.target.value);
                 MBProcess.processPriceRequest();
                 $('.countdown-timer').removeClass('alert');
-                MBProcess.processRemainingTime('recalculate');
+                MBContract.displayRemainingTime('recalculate');
+                MBContract.displayDescriptions();
             });
         }
+
+        var payoutOnKeypress = function(ev) {
+            var key  = ev.keyCode,
+                char = String.fromCharCode(ev.which),
+                isOK = true;
+            if ((char === '.' && ev.target.value.indexOf(char) >= 0) ||
+                (!/[0-9\.]/.test(char) && [8, 37, 39, 46].indexOf(key) < 0) || // delete, backspace, arrow keys
+                /['%]/.test(char)) { // similarity to arrows key code in some browsers
+                    isOK = false;
+            }
+            if (japanese_client()) {
+                var result = payoutElement.value.substring(0, ev.target.selectionStart) + char + payoutElement.value.substring(ev.target.selectionEnd);
+                if (char === '.' || result[0] === '0' || +result < 1 || +result > 100) {
+                    isOK = false;
+                }
+            }
+
+            if (!isOK) {
+                ev.returnValue = false;
+                ev.preventDefault();
+            }
+        };
 
         var payoutElement = document.getElementById('payout');
         if (payoutElement) {
@@ -69,15 +93,14 @@ var MBTradingEvents = (function () {
                 payoutElement.value = payout;
                 MBDefaults.set('payout', payout);
             }
-            payoutElement.addEventListener('keypress', onlyNumericOnKeypress);
+            payoutElement.addEventListener('keypress', payoutOnKeypress);
             payoutElement.addEventListener('input', debounce(function(e) {
-                // if (!e.target.value) e.target.value = MBDefaults.get('payout');
                 var payout = e.target.value;
                 if (japanese_client()) {
                     var payoutElement = document.getElementById('payout'),
                         $payoutElement = $('#payout'),
                         $tableElement = $('.japan-table');
-                    if (payout < 1 || payout > 100) {
+                    if (payout < 1 || payout > 100 || isNaN(payout)) {
                         $payoutElement.addClass('error-field');
                         $tableElement.addClass('invisible');
                         return false;
