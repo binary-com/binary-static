@@ -126,6 +126,13 @@ pjax_config_page('/trading_beta', function () {
     };
 });
 
+pjax_config_page('/multi_barriers_trading', function () {
+    return {
+        onLoad: function(){MBTradePage.onLoad();},
+        onUnload: function(){MBTradePage.onUnload();}
+    };
+});
+
 pjax_config_page('/jptrading', function () {
     return {
         onLoad: function(){JPTradePage.onLoad();},

@@ -29,7 +29,7 @@
   </div>
   <div class="gr-3 gr-hide-m">
     <div class="sidebar-right">
-      <div class="by_client_type client_logged_out">
+      <div class="by_client_type client_logged_out fill-bg-color">
         <p>
           <a class="pjaxload" href="[% request.url_for('/') %]">
             [% l('Try it now') %]
@@ -38,7 +38,7 @@
           [% l('No risk, $10K virtual money account') %]
         </p>
       </div>
-      <div>
+      <div class="fill-bg-color">
         <p>
           [% l('Want to learn more?') %]
           <br/>

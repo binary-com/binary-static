@@ -1,0 +1,311 @@
+#mb_trading {
+    font-family: roboto, sans-serif;
+    font-size: 14px;
+    .flex-box {
+        display: flex;
+        &.rows {
+            flex-direction: column;
+        }
+        &.cols {
+            flex-direction: row;
+        }
+        @media screen and (max-width: 620px) {
+            &.japan-table {
+                flex-direction: column;
+            }
+        }
+    }
+    .japan-table {
+        align-items: stretch;
+        position: relative;
+        #disable-overlay {
+            position: absolute;
+            top: 84px;
+            left: 10px;
+            z-index: 1;
+            width: calc(100% - 20px);
+            height: calc(100% - 84px);
+            background-color: rgba(242, 242, 242, 0.5);
+        }
+        #loading-overlay {
+            width: 100%;
+            background: $COLOR_WHITE url('../images/common/hourglass_1.gif') center 20px no-repeat;
+        }
+    }
+    .prices-wrapper {
+        .price-row, .heading {
+            .buy-price, .sell-price, .barrier {
+                flex-grow: 2;
+                white-space: nowrap;
+                line-height: 35px;
+                min-height: 35px;
+                padding: 3px 0;
+                text-align: center;
+            }
+        }
+        .heading .sell-price {
+            padding-right: 20px;
+        }
+        .price-row:nth-child(odd) {
+            background: $COLOR_LIGHT_GRAY;
+        }
+    }
+    .base-value {
+        font-size: 9px;
+    }
+    .dynamics {
+        display: inline-block;
+        width: 20px;
+    }
+    .price-wrapper {
+        .base-value {
+            display: inline-block;
+            margin-left: 5px;
+        }
+    }
+    .price-button {
+        width: 120px;
+        color: $COLOR_WHITE;
+        text-align: center;
+        line-height: 100%;
+        background: $COLOR_GREEN;
+        border-radius: 3px;
+        padding: 10px 0;
+        cursor: pointer;
+        font-size: 14px;
+        border: 0;
+        min-height: 34px;
+        position: relative;
+        .value-wrapper {
+            margin-left: -15px;
+        }
+        .base-value {
+            position: absolute;
+            bottom: 1px;
+            right: 3px;
+        }
+        &:hover {
+            background-color: $COLOR_DARK_GREEN;
+        }
+    }
+    .inactive {
+        color: $COLOR_GRAY;
+        &.price-button {
+            color: $COLOR_WHITE;
+            background: $COLOR_GRAY;
+            cursor: default;
+            overflow: visible;
+        }
+    }
+    .down {
+        color: $COLOR_RED;
+    }
+    .up {
+        color: $COLOR_GREEN;
+    }
+    .heading {
+        font-weight: bold;
+    }
+    .descr-wrapper {
+        & > div {
+            min-height: 64px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .descr {
+            padding: 0 16px 0 0;
+            font-size: 14px;
+            max-width: 420px;
+            line-height: 1.4em;
+        }
+    }
+    .details-heading {
+        padding: 45px 16px 0;
+        margin-bottom: 0;
+        background-repeat: no-repeat;
+        background-position: top center;
+        font-size: 18px;
+        text-align: center;
+        align-self: flex-start;
+        white-space: nowrap;
+        &.CALLE {
+            background-image: url('https://www.binary.com/images/pages/trade/rise_1.png');
+        }
+        &.PUT {
+            background-image: url('https://www.binary.com/images/pages/trade/fall_1.png');
+        }
+        &.ONETOUCH {
+            background-image: url('https://www.binary.com/images/pages/trade/touch_1.png');
+        }
+        &.NOTOUCH {
+            background-image: url('https://www.binary.com/images/pages/trade/no-touch_1.png');
+        }
+        &.EXPIRYRANGEE {
+            background-image: url('https://www.binary.com/images/pages/trade/ends-between_1.png');
+        }
+        &.EXPIRYMISS {
+            background-image: url('https://www.binary.com/images/pages/trade/ends-outside_1.png');
+        }
+        &.RANGE {
+            background-image: url('https://www.binary.com/images/pages/trade/stay-in-between_1.png');
+        }
+        &.UPORDOWN {
+            background-image: url('https://www.binary.com/images/pages/trade/stay-out_1.png');
+        }
+    }
+    .select {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        height: 30px;
+        line-height: 30px;
+    }
+    #spot-dyn {
+        width: 10px;
+        display: inline-block;
+        font-family: Arial;
+        padding-left: 3px;
+        &.still {
+            color: $COLOR_GRAY_SHADE;
+            padding-left: 6px;
+        }
+    }
+    .padding-10 {
+        padding: 10px 10px 0;
+    }
+    .padding-right-five {
+        padding-right: 5px;
+    }
+    .padding-right-ten {
+        padding-right: 10px;
+    }
+    .no-padding-right {
+        padding-right: 0;
+    }
+    .select-box {
+        float: left;
+        background: $COLOR_LIGHT_GRAY;
+        border-radius: 3px;
+        width: 100%;
+        .select, .payout-select {
+            width: 100%;
+            margin-top: 5px;
+            padding: 2px 3px;
+            border: 1px solid $COLOR_LIGHT_GRAY;
+            background: $COLOR_WHITE;
+            border-radius: 3px;
+            &:focus {
+                outline: none;
+            }
+        }
+        .payout-input {
+            position: relative;
+            white-space: nowrap;
+            .hint {
+                padding: 4px;
+                padding-right: 0;
+                margin-left: 5px;
+                line-height: 16px;
+            }
+            .hint, span, label {
+                font-size: 10px;
+            }
+            select#currency {
+                margin: 6px 0;
+                width: 50%;
+            }
+        }
+        .payout-select {
+            display: inline;
+            height: 24px;
+            line-height: 24px;
+            text-align: right;
+            margin: 6px 0 9px;
+        }
+        span + #payout {
+            width: 30px;
+        }
+        select + #payout {
+            width: 45%;
+        }
+        .payout-mult {
+            font-size: 15px;
+        }
+    }
+    .float-left {
+        float: left;
+    }
+    .space-between {
+        justify-content: space-between;
+        margin: 8px 0;
+        .gr-grow {
+            padding: 0;
+        }
+        .gr-adapt {
+            padding: 0 0 0 10px;
+        }
+    }
+    .spot div {
+        white-space: nowrap;
+        display: block;
+        &.spot-value {
+            line-height: 30px;
+        }
+        #trading_worm_chart {
+            display: inline-block;
+            margin-top: 3px;
+        }
+    }
+    .countdown-timer {
+        padding: 5px 0 5px 5px;
+        border-radius: 3px;
+        white-space: nowrap;
+        line-height: 22px;
+        &.alert {
+            background: rgba(251, 228, 215, 0.7);
+            padding-right: 5px;
+            margin-right: 0;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .gr-12-p {
+            padding-bottom: 10px;
+        }
+        .padding-right-five, .no-padding-right {
+            padding-right: 10px;
+        }
+    }
+    #notifications_wrapper {
+        .notice-msg {
+            margin-bottom: 5px;
+            padding: 10px 26px;
+            line-height: 25px;
+            position: relative;
+            &.dismissible {
+                cursor: pointer;
+            }
+            .notification-dismiss {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                color: $COLOR_BLUE;
+                width: 24px;
+                height: 24px;
+                line-height: 24px;
+                font-family: Arial;
+                font-size: 18px;
+            }
+            &:hover .notification-dismiss {
+                color: $COLOR_ORANGE;
+            }
+        }
+    }
+}
+
+.center-text .spinner {
+    width: 160px;
+    height: 160px;
+}
+
+#trading_bottom_content #tab_portfolio-content {
+    overflow-x: auto;
+}

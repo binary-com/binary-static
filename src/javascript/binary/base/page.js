@@ -530,7 +530,7 @@ URL.prototype = {
         return params;
     },
     default_redirect_url: function() {
-        return this.url_for(japanese_client() ? 'jptrading' : 'trading');
+        return this.url_for(japanese_client() ? 'multi_barriers_trading' : 'trading');
     },
 };
 
@@ -549,7 +549,7 @@ Menu.prototype = {
         this.hide_main_menu();
 
         var active = this.active_menu_top();
-        var trading = new RegExp(japanese_client() ? '\/jptrading\.html' : '\/trading\.html');
+        var trading = new RegExp('\/(jp|multi_barriers_|)trading\.html');
         var trading_is_active = trading.test(window.location.pathname);
         if (active) {
             active.addClass('active');
@@ -1003,7 +1003,7 @@ var Page = function() {
     this.contents = new Contents(this.client, this.user);
     this._lang = null;
     $('#logo').on('click', function() {
-        load_with_pjax(page.url.url_for(page.client.is_logged_in ? japanese_client() ? 'jptrading' : 'trading' : ''));
+        load_with_pjax(page.url.url_for(page.client.is_logged_in ? japanese_client() ? 'multi_barriers_trading' : 'trading' : ''));
     });
 };
 

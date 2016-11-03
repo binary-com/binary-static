@@ -69,7 +69,7 @@ var Highchart = (function() {
           enabled: false
         },
         tooltip: {
-          xDateFormat:'%A, %b %e, %H:%M:%S GMT'
+          xDateFormat: (japanese_client() ? '%Y/%m/%d, %H:%M:%S' : '%A, %b %e, %H:%M:%S GMT')
         },
         xAxis: {
           type: 'datetime',
