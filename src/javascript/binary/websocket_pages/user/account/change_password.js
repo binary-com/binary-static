@@ -1,5 +1,5 @@
 var testPassword = require('../../../common_functions/passwordmeter').testPassword;
-var ValidateV2 = require('../../../common_functions/validation').ValidateV2;
+var ValidateV2 = require('../../../common_functions/validation_v2').ValidateV2;
 var ValidationUI = require('../../../validator').ValidationUI;
 var customError = require('../../../validator').customError;
 var bind_validation = require('../../../validator').bind_validation;

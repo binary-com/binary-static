@@ -1,6 +1,6 @@
 var showLoadingImage = require('../../../../base/utility').showLoadingImage;
 var attach_time_picker = require('../../../../base/utility').attach_time_picker;
-var ValidateV2 = require('../../../../common_functions/validation').ValidateV2;
+var ValidateV2 = require('../../../../common_functions/validation_v2').ValidateV2;
 var ValidationUI = require('../../../../validator').ValidationUI;
 var validate_object = require('../../../../validator').validate_object;
 var bind_validation = require('../../../../validator').bind_validation;
