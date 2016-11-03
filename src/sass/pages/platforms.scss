@@ -45,7 +45,6 @@
     .fade-to-right, .fade-to-left {
         position: absolute;
         z-index: 2;
-        left: 85%;
         right: 0;
         top: 0;
         height: 100%;
@@ -61,5 +60,8 @@
         transform: rotate(180deg);
         left: 120px;
         opacity: 0;
+    }
+    .no-padding-bottom {
+        padding-bottom: 0;
     }
 }
