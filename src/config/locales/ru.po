@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-26 05:59+0000\n"
+"PO-Revision-Date: 2016-11-02 09:45+0000\n"
 "Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
@@ -329,7 +329,7 @@ msgid "* Tax Free: Profits from trading are tax free in many countries but you s
 msgstr "* Без налогов: Доход от торговли опционами не облагается налогами во многих странах, но Вы всегда должны консультироваться с квалифицированным налоговым советником."
 
 msgid ",000"
-msgstr ""
+msgstr ",000"
 
 msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgstr "- Отсканированная копия счета за коммунальные услуги или выписка из банка с адресом (датированные не ранее, чем 3 последние месяца)."
@@ -1533,6 +1533,9 @@ msgid "But we're picky. We only select people with special qualities: serious pr
 msgstr "Но мы придирчивы. Мы выбираем только людей с особыми качествами: серьезных профессионалов с высокими моральными стандартами, которые готовы работать и расти в честной и дружественной обстановке сотрудничества."
 
 msgid "Buy"
+msgstr "Покупка"
+
+msgid "Buy Price"
 msgstr "Покупка"
 
 msgid "Buy an App, or Build Your Own"
@@ -4221,10 +4224,8 @@ msgstr "Профессионалы рынка"
 msgid "Market exit price"
 msgstr "Выходная цена рынка"
 
-#, fuzzy
-#| msgid "All markets are closed now. Please try again later."
 msgid "Market is closed. Please try again later."
-msgstr "В данное время все рынки закрыты. Пожалуйста, попробуйте позже."
+msgstr "В данное время рынок закрыт. Пожалуйста, попробуйте позже."
 
 msgid "Market prices are updated at most once per second.  For any given second, the market price will be updated to the first tick, if any, received in that particular second on the company datafeed."
 msgstr "Рыночные цены обновляются не чаще одного раза в секунду. Каждую секунду рыночная цена будет обновляться на первом полученном от поставщика компании значении для этой секунды, если таковое вообще имеется."
@@ -5370,8 +5371,6 @@ msgstr "Соответствующий опыт работы в смежных �
 msgid "Remaining Time"
 msgstr "Оставшееся время"
 
-#, fuzzy
-#| msgid "Remaining Time"
 msgid "Remaining time"
 msgstr "Оставшееся время"
 
@@ -5581,6 +5580,9 @@ msgstr "Self-employed"
 
 msgid "Sell"
 msgstr "Продажа"
+
+msgid "Sell Price"
+msgstr "Цена прод."
 
 msgid "Sell at market"
 msgstr "Продать по текущей цене"
@@ -13136,9 +13138,6 @@ msgstr "Согласие с правилами и условиями"
 #~ msgid "Amount must be a positive number."
 #~ msgstr "Сумма должна быть положительным значением."
 
-#~ msgid "Buy Price"
-#~ msgstr "Покупка"
-
 #~ msgid "Caching Content for Performance"
 #~ msgstr "Кэширование контента для повышения эффективности"
 
@@ -13408,9 +13407,6 @@ msgstr "Согласие с правилами и условиями"
 
 #~ msgid "Purchase Spot"
 #~ msgstr "Спот-цена при покупке"
-
-#~ msgid "Sell Price"
-#~ msgstr "Цена прод."
 
 #~ msgid "Sell Spot"
 #~ msgstr "Котировка продажи"
