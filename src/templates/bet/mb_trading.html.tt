@@ -88,8 +88,8 @@
                 <div class="gr-12">
                     <div class="gr-row heading">
                         <div class="gr-4 barrier">[% l('Barrier') %]</div>
-                        <div class="gr-4 buy-price">[% l('Buy') %]</div>
-                        <div class="gr-4 sell-price">[% l('Sell') %]</div>
+                        <div class="gr-4 buy-price">[% l('Buy Price') %]</div>
+                        <div class="gr-4 sell-price">[% l('Sell Price') %]</div>
                     </div>
                     <div class="price-rows"></div>
                 </div>
@@ -104,8 +104,8 @@
                 <div class="gr-12">
                     <div class="gr-row heading">
                         <div class="gr-4 barrier">[% l('Barrier') %]</div>
-                        <div class="gr-4 buy-price">[% l('Buy') %]</div>
-                        <div class="gr-4 sell-price">[% l('Sell') %]</div>
+                        <div class="gr-4 buy-price">[% l('Buy Price') %]</div>
+                        <div class="gr-4 sell-price">[% l('Sell Price') %]</div>
                     </div>
                     <div class="price-rows"></div>
                 </div>
