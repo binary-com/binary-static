@@ -1,3 +1,5 @@
+var format_money = require('../../../common_functions/currency_to_symbol').format_money;
+
 /*
  * Price object handles all the functions we need to display prices
  *

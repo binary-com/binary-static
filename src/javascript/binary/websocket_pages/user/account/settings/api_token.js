@@ -1,3 +1,11 @@
+var showLoadingImage = require('../../../../base/utility').showLoadingImage;
+var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
+var FlexTableUI = require('../../../../common_functions/attach_dom/flextable').FlexTableUI;
+var ValidateV2 = require('../../../../common_functions/validation_v2').ValidateV2;
+var ValidationUI = require('../../../../validator').ValidationUI;
+var customError = require('../../../../validator').customError;
+var bind_validation = require('../../../../validator').bind_validation;
+
 var APITokenWS = (function() {
     "use strict";
 

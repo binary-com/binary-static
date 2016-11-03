@@ -1,3 +1,9 @@
+var MBContract = require('./mb_contract').MBContract;
+var MBDefaults = require('./mb_defaults').MBDefaults;
+var MBNotifications = require('./mb_notifications').MBNotifications;
+var MBProcess = require('./mb_process').MBProcess;
+var MBTick = require('./mb_tick').MBTick;
+
 /*
  * TradingEvents object contains all the event handler function required for
  * websocket trading page

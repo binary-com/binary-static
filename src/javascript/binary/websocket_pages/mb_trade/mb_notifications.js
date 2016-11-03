@@ -1,3 +1,5 @@
+var MBPrice = require('./mb_price').MBPrice;
+
 /*
  * Notifications manages various notification messages
  *

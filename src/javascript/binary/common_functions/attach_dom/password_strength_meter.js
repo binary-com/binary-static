@@ -1,3 +1,5 @@
+var testPassword = require('../passwordmeter').testPassword;
+
 var PasswordMeter = (function(){
     'use strict';
 

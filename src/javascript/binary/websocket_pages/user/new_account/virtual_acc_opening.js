@@ -1,3 +1,7 @@
+var template = require('../../../base/utility').template;
+var testPassword = require('../../../common_functions/passwordmeter').testPassword;
+var bind_validation = require('../../../validator').bind_validation;
+
 pjax_config_page("new_account/virtualws", function() {
     function onSuccess(res) {
         var new_account = res.new_account_virtual;

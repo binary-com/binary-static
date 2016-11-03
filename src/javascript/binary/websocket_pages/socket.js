@@ -1,5 +1,12 @@
 var getSocketURL = require('../../config').getSocketURL;
 var getAppId = require('../../config').getAppId;
+var Login = require('../base/login').Login;
+var objectNotEmpty = require('../base/utility').objectNotEmpty;
+var CommonData = require('../common_functions/common_data').CommonData;
+var SessionDurationLimit = require('../common_functions/session_duration_limit').SessionDurationLimit;
+var Cashier = require('../websocket_pages/cashier/cashier').Cashier;
+var PaymentAgentWithdrawWS = require('../websocket_pages/cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
+
 /*
  * It provides a abstraction layer over native javascript Websocket.
  *
