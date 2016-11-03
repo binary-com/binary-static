@@ -124,18 +124,26 @@ var MBPrice = (function() {
     };
 
     var makePriceRow = function(values, is_update) {
+        var payout   = MBDefaults.get('payout'),
+            is_japan = japanese_client();
         return (is_update ? '' : '<div data-barrier="' + values.barrier + '" class="gr-row price-row">') +
                 '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
                 '<div class="gr-4 buy-price">' +
                     '<button class="price-button' + (!values.is_active ? ' inactive' : '') + '"' +
                         (values.id ? ' onclick="MBProcess.processBuy(\'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
-                        (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' + formatPrice(values.ask_price) +
-                        '<span class="dynamics">' + (values.ask_price_movement || '') + '</span>' +
+                        (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' +
+                            '<span class="value-wrapper">' +
+                                '<span class="dynamics">' + (values.ask_price_movement || '') + '</span>' +
+                                formatPrice(values.ask_price) +
+                            '</span>' +
+                            (is_japan ? '<span class="base-value">(' + formatPrice(values.ask_price / payout) + ')</span>' : '') +
                     '</button>' +
                 '</div>' +
                 '<div class="gr-4 sell-price">' +
-                    '<span class="price-wrapper' + (!values.sell_price ? ' inactive' : '') + '">' + formatPrice(values.sell_price) +
+                    '<span class="price-wrapper' + (!values.sell_price ? ' inactive' : '') + '">' +
                         '<span class="dynamics">' + (values.sell_price_movement || '') + '</span>' +
+                        formatPrice(values.sell_price) +
+                        (is_japan ? '<span class="base-value">(' + formatPrice(values.sell_price / payout) + ')</span>' : '') +
                     '</span>' +
                 '</div>' +
             (is_update ? '' : '</div>');
@@ -209,6 +217,7 @@ var MBPrice = (function() {
         increaseReqId          : function() { req_id++; cleanup(); },
         hideSpinnerShowTrading : hideSpinnerShowTrading,
         getPrices              : function() { return prices; },
+        onUnload               : function() { cleanup(); req_id = 0; proposal_response = {}; $tables = undefined; },
     };
 })();
 

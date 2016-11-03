@@ -59,7 +59,7 @@ var MBTradingEvents = (function () {
                 MBDefaults.set('period', e.target.value);
                 MBProcess.processPriceRequest();
                 $('.countdown-timer').removeClass('alert');
-                MBProcess.processRemainingTime('recalculate');
+                MBContract.displayRemainingTime('recalculate');
                 MBContract.displayDescriptions();
             });
         }
