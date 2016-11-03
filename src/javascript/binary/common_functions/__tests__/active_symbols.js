@@ -72,7 +72,7 @@ describe('ActiveSymbols', function() {
         expect(names).to.be.an('Object')
             .and.to.have.property('frxEURUSD');
     });
-    it('Should getMarkets output match the market snapshot', function() {
+    it.skip('Should getMarkets output match the market snapshot', function() {
         var markets = activeSymbols.getMarkets(active_symbols);
         var deepDiff = deep(set_checks(markets), set_checks(JSON.parse(expected_markets_str)));
         if (deepDiff) {
