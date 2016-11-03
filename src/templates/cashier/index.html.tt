@@ -53,9 +53,11 @@
             <div class="gr-12">
                 <div class="gr-row">
                     <div class="gr-2 gr-4-m">
-                        <a class="pjaxload" href="[% request.url_for('/cashier/forwardws#deposit') %]" id="payment_methods">
-                            <img class="ja-hide responsive charting-page-icon" id="payment_methods_icon" src="[% request.url_for('images/pages/cashier/payment-methods.svg') %]" />
-                            <img class="all-hide ja-show responsive charting-page-icon" id="payment_methods_icon" src="[% request.url_for('images/pages/cashier/japan_cashier.svg') %]" />
+                        <a class="pjaxload ja-hide" href="[% request.url_for('/cashier/forwardws#deposit') %]" id="payment_methods">
+                            <img class="responsive charting-page-icon" id="payment_methods_icon" src="[% request.url_for('images/pages/cashier/payment-methods.svg') %]" />
+                        </a>
+                        <a class="pjaxload all-hide ja-show" href="[% request.url_for('/cashier/deposit-jp') %]" id="payment_methods">
+                            <img class="responsive charting-page-icon" id="payment_methods_icon" src="[% request.url_for('images/pages/cashier/japan_cashier.svg') %]" />
                         </a>
                     </div>
                     <div class="gr-5 gr-12-m">

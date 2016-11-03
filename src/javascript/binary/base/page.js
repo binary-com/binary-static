@@ -626,7 +626,7 @@ Menu.prototype = {
     },
     active_main_menu: function() {
         var page_url = this.page_url;
-        if(/cashier/i.test(page_url.location.href)) {
+        if(/cashier/i.test(page_url.location.href) && !(/cashier_password/.test(page_url.location.href))) {
             page_url = new URL($('#topMenuCashier a').attr('href'));
         }
 
