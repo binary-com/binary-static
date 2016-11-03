@@ -36,6 +36,7 @@ var SecurityWS = (function() {
     function makeAuthRequest() {
         BinarySocket.send({
             authorize: CommonData.getLoginToken(),
+            passthrough: {dispatch_to: 'cashier_password'},
         });
     }
 
