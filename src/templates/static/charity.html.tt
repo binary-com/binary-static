@@ -29,8 +29,9 @@
         <div class="gr-row">
           <div class="gr-4"><p>Insert image here</p></div>
           <div class="gr-8">
-            <p><strong>Lorem ipsum</strong></p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p><strong>[% l("Eurobasket Wolves") %]</strong></p>
+            <p>[% l("The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds.") %]</p>
+            <p><strong>[% l("Contact") %]: <a href="mailto:eubasket@hotmail.com">eubasket@hotmail.com</a></strong></p>
           </div>
         </div>
       </div>
@@ -39,8 +40,9 @@
         <div class="gr-row">
           <div class="gr-4"><p>Insert image here</p></div>
           <div class="gr-8">
-            <p><strong>Lorem ipsum</strong></p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p><strong>[% l("Shelter Home’s Shelter Community Learning Centre 3") %]</strong></p>
+            <p>[% l("The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future.") %]</p>
+            <p><strong>[% l("URL") %]: <a href="http://www.shelterhome.org">http://www.shelterhome.org</a></strong></p>
           </div>
         </div>
       </div>
