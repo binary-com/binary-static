@@ -21,3 +21,7 @@ var PaymentAgentTransferSocket = (function() {
         initSocket: initSocket,
     };
 })();
+
+module.exports = {
+    PaymentAgentTransferSocket: PaymentAgentTransferSocket,
+};
