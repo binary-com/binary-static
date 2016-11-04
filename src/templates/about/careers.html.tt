@@ -42,15 +42,29 @@
     </div>
     <div class="gr-12">
         <div class="gr-row">
-            <div class="gr-9 gr-12-m gr-6-p center-text gr-centered">
+            <div class="gr-6 gr-12-m gr-6-p">
               <div class="xquote">
                 <div>
                   <div class="picture">
-                    <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/blog.svg') %]"/>
+                    <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/corporate-culture.svg') %]"/>
+                  </div>
+                  <div class="text">
+                    <a href="https://my.wobb.co/users/companies/binary-com" target="_blank">
+                      [% l("Learn more about our corporate culture") %]
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="gr-6 gr-12-m gr-6-p">
+              <div class="xquote">
+                <div>
+                  <div class="picture">
+                    <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/handbook.svg') %]"/>
                   </div>
                   <div class="text">
                     <a download="[% true %]" href="[% request.url_for('/download/binary-employee-handbook.pdf') %]" target="_blank">
-                      [% l("Read our blog for the stories and ideas that inspire us") %]
+                      [% l("Employee handbook") %]
                     </a>
                   </div>
                 </div>
@@ -135,33 +149,18 @@
       </div>
   </div>
   <div class="gr-12 gr-hide-m">
-    <div class="separator-line border-bottom"></div>
   </div>
   <div class="gr-12">
       <div class="gr-row">
-          <div class="gr-6 gr-12-m gr-6-p">
+          <div class="gr-9 gr-12-m gr-6-p center-text gr-centered">
             <div class="xquote">
               <div>
                 <div class="picture">
-                  <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/corporate-culture.svg') %]"/>
-                </div>
-                <div class="text">
-                  <a href="https://my.wobb.co/users/companies/binary-com" target="_blank">
-                    [% l("Learn more about our corporate culture") %]
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="gr-6 gr-12-m gr-6-p">
-            <div class="xquote">
-              <div>
-                <div class="picture">
-                  <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/handbook.svg') %]"/>
+                  <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/blog.svg') %]"/>
                 </div>
                 <div class="text">
                   <a download="[% true %]" href="[% request.url_for('/download/binary-employee-handbook.pdf') %]" target="_blank">
-                    [% l("Employee handbook") %]
+                    [% l("Read our blog for the stories and ideas that inspire us") %]
                   </a>
                 </div>
               </div>
