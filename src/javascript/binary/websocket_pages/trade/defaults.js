@@ -64,7 +64,8 @@ var Defaults = (function(){
     };
 
     var updateURL = function() {
-        window.history.replaceState(null, null, window.location.pathname + '?' + page.url.params_hash_to_string(params));
+        var url = window.location.pathname + '?' + page.url.params_hash_to_string(params);
+        window.history.replaceState({'url': url}, null, url);
     };
 
     return {
