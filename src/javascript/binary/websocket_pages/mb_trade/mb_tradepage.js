@@ -47,11 +47,11 @@ var MBTradePage = (function(){
   var onUnload = function() {
     chartFrameCleanup();
     window.chartAllowed = false;
+    JapanPortfolio.hide();
     trading_page = 0;
     events_initialized = 0;
     MBContract.onUnload();
     MBPrice.onUnload();
-    JapanPortfolio.hide();
     forgetTradingStreams();
     BinarySocket.clear();
   };
