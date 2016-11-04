@@ -1,3 +1,8 @@
+var showLoadingImage = require('../../../base/utility').showLoadingImage;
+var Table = require('../../../common_functions/attach_dom/table').Table;
+var MarketTimesData = require('./market_timesws.data').MarketTimesData;
+var MarketTimes = require('../market_timesws').MarketTimes;
+
 var MarketTimesUI = (function() {
     "use strict";
 
@@ -20,7 +25,10 @@ var MarketTimesUI = (function() {
         showLoadingImage($container);
 
         isFramed = (config && config.framed);
-        if (!tradingTimes) MarketTimesData.sendRequest('today', !activeSymbols);
+        if (!tradingTimes) {
+            initSocket();
+            MarketTimesData.sendRequest('today', !activeSymbols);
+        }
 
         $date.val(moment.utc(new Date()).format('YYYY-MM-DD'));
         $date.datepicker({minDate: 0, maxDate: '+1y', dateFormat: 'yy-mm-dd', autoSize: true});
@@ -153,6 +161,28 @@ var MarketTimesUI = (function() {
         };
 
         return Table.createFlexTable([], metadata, header);
+    };
+
+    var initSocket = function() {
+        if (TradePage_Beta.is_trading_page()) return;
+        BinarySocket.init({
+            onmessage: function(msg) {
+                var response = JSON.parse(msg.data);
+                if (response) {
+                    responseHandler(response);
+                }
+            }
+        });
+    };
+
+    var responseHandler = function(response) {
+        var msg_type = response.msg_type;
+        if (msg_type === "trading_times") {
+            MarketTimesUI.setTradingTimes(response);
+        }
+        else if (msg_type === "active_symbols") {
+            MarketTimesUI.setActiveSymbols(response);
+        }
     };
 
     return {

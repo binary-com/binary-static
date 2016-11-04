@@ -195,12 +195,20 @@ body.ES {
 }
 
 body.RU {
-    #trading_socket_container #contract_form_name_nav {
+    #verify-email-form button {
         font-size: 80%;
     }
-    #trading_socket_container .contract_heading {
-        font-size: 95%;
-        padding-top: 2.7em;
+    #trading_socket_container {
+        #contract_form_name_nav {
+            font-size: 80%;
+        }
+        .contract_heading {
+            font-size: 95%;
+            padding-top: 2.7em;
+        }
+        #expiry_type {
+            max-width: 185px;
+        }
     }
     .calls_recording {
         display: inline !important;

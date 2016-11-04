@@ -1,3 +1,6 @@
+var format_money = require('../../../common_functions/currency_to_symbol').format_money;
+var StringUtil = require('../../../common_functions/string_util').StringUtil;
+
 /*
  * Purchase object that handles all the functions related to
  * contract purchase response

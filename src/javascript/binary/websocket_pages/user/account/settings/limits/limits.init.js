@@ -1,3 +1,5 @@
+var template = require('../../../../../base/utility').template;
+
 var LimitsWS = (function(){
     "use strict";
 

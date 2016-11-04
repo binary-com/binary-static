@@ -1,3 +1,5 @@
+var Guide = require('../../../common_functions/guide').Guide;
+
 var TradePage_Beta = (function(){
 
   var trading_page = 0, events_initialized = 0;
@@ -5,9 +7,9 @@ var TradePage_Beta = (function(){
   var onLoad = function(){
     var is_japanese_client = japanese_client();
     if(is_japanese_client && /\/trading(|_beta)\.html/i.test(window.location.pathname)) {
-        window.location.href = page.url.url_for('jptrading');
+        window.location.href = page.url.url_for('multi_barriers_trading');
         return;
-    } else if (!is_japanese_client && /\/jptrading\.html/.test(window.location.pathname)) {
+    } else if (!is_japanese_client && /\/multi_barriers_trading\.html/.test(window.location.pathname)) {
         window.location.href = page.url.url_for('trading');
         return;
     }

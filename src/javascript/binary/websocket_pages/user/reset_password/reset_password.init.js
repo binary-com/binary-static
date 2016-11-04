@@ -1,3 +1,8 @@
+var Login = require('../../../base/login').Login;
+var PasswordMeter = require('../../../common_functions/attach_dom/password_strength_meter').PasswordMeter;
+var passwordValid = require('../../../common_functions/validation').passwordValid;
+var showPasswordError = require('../../../common_functions/validation').showPasswordError;
+
 var ResetPassword = (function () {
     'use strict';
 

@@ -1,5 +1,12 @@
 var getSocketURL = require('../../config').getSocketURL;
 var getAppId = require('../../config').getAppId;
+var Login = require('../base/login').Login;
+var objectNotEmpty = require('../base/utility').objectNotEmpty;
+var CommonData = require('../common_functions/common_data').CommonData;
+var SessionDurationLimit = require('../common_functions/session_duration_limit').SessionDurationLimit;
+var Cashier = require('../websocket_pages/cashier/cashier').Cashier;
+var PaymentAgentWithdrawWS = require('../websocket_pages/cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
+
 /*
  * It provides a abstraction layer over native javascript Websocket.
  *
@@ -57,7 +64,7 @@ function BinarySocketClass() {
                 data.passthrough = {};
             }
             // temporary check
-            if((data.contracts_for || data.proposal) && !data.passthrough.hasOwnProperty('dispatch_to')){
+            if((data.contracts_for || data.proposal) && !data.passthrough.hasOwnProperty('dispatch_to') && !/multi_barriers_trading/.test(window.location.pathname)){
                 data.passthrough.req_number = ++req_number;
                 timeouts[req_number] = setTimeout(function(){
                     if(typeof reloadPage === 'function' && data.contracts_for){
@@ -144,12 +151,14 @@ function BinarySocketClass() {
                         page.client.send_logout_request(isActiveTab);
                     } else if (response.authorize.loginid !== page.client.loginid) {
                         page.client.send_logout_request(true);
-                    } else {
+                    } else if (!(response.hasOwnProperty('echo_req') && response.echo_req.hasOwnProperty('passthrough') &&
+                        response.echo_req.passthrough.hasOwnProperty('dispatch_to') &&
+                        response.echo_req.passthrough.dispatch_to === 'cashier_password')) {
                         authorized = true;
                         if(typeof events.onauth === 'function'){
                             events.onauth();
                         }
-                        if(!Login.is_login_pages()) {
+                        if (!Login.is_login_pages()) {
                             page.client.response_authorize(response);
                             send({balance:1, subscribe: 1});
                             send({get_settings: 1});

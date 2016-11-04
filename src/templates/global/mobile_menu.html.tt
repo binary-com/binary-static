@@ -37,7 +37,7 @@
                 <a class="pjaxload" href="[% request.url_for('platforms') %]">[% l("Platforms") %]</a>
             </li>
             <li class="all-hide ja-show-block">
-                <a class="pjaxload" href="[% request.url_for('jptrading') %]">[% l("Trade") %]</a>
+                <a class="pjaxload" href="[% request.url_for('multi_barriers_trading') %]">[% l("Trade") %]</a>
             </li>
         </ul>
     </div>

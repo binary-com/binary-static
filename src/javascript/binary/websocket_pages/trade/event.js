@@ -1,3 +1,5 @@
+var onlyNumericOnKeypress = require('../../common_functions/event_handler').onlyNumericOnKeypress;
+
 /*
  * TradingEvents object contains all the event handler function required for
  * websocket trading page
@@ -239,15 +241,19 @@ var TradingEvents = (function () {
             // need to use jquery as datepicker is used, if we switch to some other
             // datepicker we can move back to javascript
             $('#expiry_date').on('change input', function () {
-                Durations.selectEndDate(this.value);
+                if (timeIsValid($('#expiry_date'))) {
+                    Durations.selectEndDate(this.value);
+                }
             });
         }
 
         var endTimeElement = document.getElementById('expiry_time');
         if (endTimeElement) {
             $('#expiry_time').on('change input', function () {
-                Durations.setTime(endTimeElement.value);
-                processPriceRequest();
+                if (timeIsValid($('#expiry_time'))) {
+                    Durations.setTime(endTimeElement.value);
+                    processPriceRequest();
+                }
             });
         }
 

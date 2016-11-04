@@ -1,9 +1,7 @@
 var ActiveSymbols = (function () {
     'use strict';
 
-    var objectNotEmpty = typeof window === 'undefined' ?
-        require('../base/utility').objectNotEmpty :
-        window.objectNotEmpty;
+    var objectNotEmpty = require('../base/utility').objectNotEmpty;
 
     var groupBy = function(xs, key) {
         return xs.reduce(function(rv, x) {

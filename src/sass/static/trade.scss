@@ -364,9 +364,6 @@
         #contract_purchase_profit {
             border-left: 1px solid $COLOR_GRAY;
         }
-        .contract_error {
-            background-color: $COLOR_YELLOW;
-        }
         .contract_amount, .contract_payout, .payout, .stake {
             @include BIDIR_VALUE(padding, 3px, 3px);
             line-height: 1.5;
@@ -696,7 +693,7 @@
 }
 
 .error-field {
-    border-color: $COLOR_RED;
+    border-color: $COLOR_RED !important;
     color: $COLOR_RED;
 }
 

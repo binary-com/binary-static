@@ -1,3 +1,5 @@
+var DatePicker = require('../date_picker').DatePicker;
+
 DatePicker.SelectedDates = function(component_id, select_type) {
     this.component_id = component_id;
     this._super = new DatePicker(component_id, select_type);
