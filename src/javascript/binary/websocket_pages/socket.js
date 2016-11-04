@@ -292,7 +292,7 @@ function BinarySocketClass() {
                     if(response.error && response.error.code) {
                       if (response.error.code && (response.error.code === 'WrongResponse' || response.error.code === 'OutputValidationFailed')) {
                         $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (response.error.code === 'WrongResponse' && response.error.message ? response.error.message : page.text.localize('Sorry, an error occurred while processing your request.') )+ '</p></div>');
-                      } else if (response.error.code === 'RateLimit' && !/jptrading/i.test(window.location.pathname)) {
+                      } else if (response.error.code === 'RateLimit' && !/jp_trading/i.test(window.location.pathname)) {
                         $('#ratelimit-error-message')
                             .css('display', 'block')
                             .on('click', '#ratelimit-refresh-link', function () {
