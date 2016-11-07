@@ -16,6 +16,9 @@ var AuthorisedApps = require('./user/account/settings/authorised_apps').Authoris
 var FinancialAssessmentws = require('./user/account/settings/financial_assessment').FinancialAssessmentws;
 var IPHistoryWS = require('./user/account/settings/iphistory').IPHistoryWS;
 var Limits = require('./user/account/settings/limits').Limits;
+var SelfExclusionWS = require('./user/account/settings/self_exclusion').SelfExclusionWS;
+var SettingsDetailsWS = require('./user/account/settings/settings_detailsws').SettingsDetailsWS;
+var SecurityWS = require('./user/account/settings/settings_securityws').SecurityWS;
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
@@ -235,6 +238,14 @@ pjax_config_page_require_auth("limitsws", function(){
         },
         onUnload: function(){
             Limits.onUnload();
+        }
+    };
+});
+
+pjax_config_page_require_auth("settings/detailsws", function() {
+    return {
+        onLoad: function() {
+            SettingsDetailsWS.onLoad();
         }
     };
 });

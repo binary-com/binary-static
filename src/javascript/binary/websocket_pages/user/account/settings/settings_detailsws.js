@@ -281,56 +281,51 @@ var SettingsDetailsWS = (function() {
             'Your settings have been updated successfully.', !isError);
     }
 
+    function onLoad() {
+        BinarySocket.init({
+            onmessage: function(msg) {
+                var response = JSON.parse(msg.data);
+                if (!response) {
+                    console.log('some error occured');
+                    return;
+                }
+                var type = response.msg_type;
+                switch(type){
+                    case "authorize":
+                        SettingsDetailsWS.init();
+                        break;
+                    case "get_settings":
+                        if (response.req_id == 1) {
+                            SettingsDetailsWS.getDetailsResponse(response);
+                        }
+                        break;
+                    case "set_settings":
+                        SettingsDetailsWS.setDetailsResponse(response);
+                        break;
+                    case "states_list":
+                        SettingsDetailsWS.populateStates(response);
+                        break;
+                    case "error":
+                        $('#formMessage').attr('class', 'errorfield').text(response.error.message);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+        if (TUser.get().loginid) {
+            SettingsDetailsWS.init();
+        }
+    }
+
     return {
         init: init,
         getDetailsResponse: getDetailsResponse,
         setDetailsResponse: setDetailsResponse,
-        populateStates: populateStates
+        populateStates: populateStates,
+        onLoad: onLoad,
     };
 }());
-
-
-
-pjax_config_page_require_auth("settings/detailsws", function() {
-    return {
-        onLoad: function() {
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
-                    if (!response) {
-                        console.log('some error occured');
-                        return;
-                    }
-                    var type = response.msg_type;
-                    switch(type){
-                        case "authorize":
-                            SettingsDetailsWS.init();
-                            break;
-                        case "get_settings":
-                            if (response.req_id == 1) {
-                                SettingsDetailsWS.getDetailsResponse(response);
-                            }
-                            break;
-                        case "set_settings":
-                            SettingsDetailsWS.setDetailsResponse(response);
-                            break;
-                        case "states_list":
-                            SettingsDetailsWS.populateStates(response);
-                            break;
-                        case "error":
-                            $('#formMessage').attr('class', 'errorfield').text(response.error.message);
-                            break;
-                        default:
-                            break;
-                    }
-                }
-            });
-            if (TUser.get().loginid) {
-                SettingsDetailsWS.init();
-            }
-        }
-    };
-});
 
 module.exports = {
     SettingsDetailsWS: SettingsDetailsWS,
