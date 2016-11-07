@@ -21,15 +21,14 @@ const VirtualAccOpeningData = (function() {
         if (utm_data.utm_medium)   req.utm_medium   = utm_data.utm_medium;
         if (utm_data.utm_campaign) req.utm_campaign = utm_data.utm_campaign;
 
+        var gclid = page.url.params_hash().gclid;
+        if (gclid) req.gclid_url = gclid;
+
         if (Cookies.get('affiliate_tracking')) {
             req.affiliate_token = Cookies.getJSON('affiliate_tracking').t;
         }
 
-        if ($('#email_consent:checked').length > 0) {
-            req.email_consent = 1;
-        } else {
-            req.email_consent = 0;
-        }
+        req.email_consent = $('#email_consent:checked').length > 0 ? 1 : 0;
 
         BinarySocket.send(req);
     };
