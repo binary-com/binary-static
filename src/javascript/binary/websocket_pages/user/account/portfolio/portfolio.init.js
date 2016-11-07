@@ -6,6 +6,7 @@ var addTooltip = require('../../../../common_functions/get_app_details').addTool
 var showTooltip = require('../../../../common_functions/get_app_details').showTooltip;
 var japanese_client = require('../../../../common_functions/country_base').japanese_client;
 var MBTradePage = require('../../../../websocket_pages/mb_trade/mb_tradepage').MBTradePage;
+var Portfolio = require('../portfolio').Portfolio;
 
 var PortfolioWS =  (function() {
     'use strict';

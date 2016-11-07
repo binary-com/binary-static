@@ -4,6 +4,7 @@ var MBProcess = require('./mb_process').MBProcess;
 var MBPurchase = require('./mb_purchase').MBPurchase;
 var MBSymbols = require('./mb_symbols').MBSymbols;
 var MBTick = require('./mb_tick').MBTick;
+var PortfolioWS = require('../user/account/portfolio/portfolio.init').PortfolioWS;
 
 /*
  * This Message object process the response from server and fire

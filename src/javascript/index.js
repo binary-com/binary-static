@@ -44,8 +44,6 @@ exportAllFunctions(require('./binary/base/onerror'));
 exportAllFunctions(require('./binary/base/page'));
 exportAllFunctions(require('./binary/base/pjax'));
 
-exportAllFunctions(require('./binary/static_pages/charity'));
-
 exportAllFunctions(require('./binary/static_pages/static_pjax'));
 
 exportAllFunctions(require('./binary/websocket_pages/trade/content'));
@@ -84,8 +82,6 @@ exportAllFunctions(require('./binary/websocket_pages/trade/beta/starttime'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/tick_trade'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/tradepage'));
 
-exportAllFunctions(require('./binary/websocket_pages/user/account/portfolio/portfolio.init'));
-exportAllFunctions(require('./binary/websocket_pages/user/account/portfolio'));
 exportAllFunctions(require('./binary/websocket_pages/user/account/profit_table/profit_table.data'));
 exportAllFunctions(require('./binary/websocket_pages/user/account/profit_table/profit_table.init'));
 exportAllFunctions(require('./binary/websocket_pages/user/account/profit_table/profit_table.ui'));
