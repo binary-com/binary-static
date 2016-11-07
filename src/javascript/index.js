@@ -82,13 +82,6 @@ exportAllFunctions(require('./binary/websocket_pages/trade/beta/starttime'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/tick_trade'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/tradepage'));
 
-exportAllFunctions(require('./binary/websocket_pages/user/account/settings'));
-exportAllFunctions(require('./binary/websocket_pages/user/account/statement/statement.data'));
-exportAllFunctions(require('./binary/websocket_pages/user/account/statement/statement.init'));
-exportAllFunctions(require('./binary/websocket_pages/user/account/statement/statement.ui'));
-
-exportAllFunctions(require('./binary/websocket_pages/user/account/statement'));
-
 exportAllFunctions(require('./binary/websocket_pages/user/account/top_up_virtualws'));
 exportAllFunctions(require('./binary/websocket_pages/user/lost_password/lost_password.init'));
 exportAllFunctions(require('./binary/websocket_pages/user/lost_password'));

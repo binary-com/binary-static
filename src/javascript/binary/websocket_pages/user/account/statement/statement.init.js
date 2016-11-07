@@ -1,4 +1,5 @@
 var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
+var StatementUI = require('./statement.ui').StatementUI;
 
 var StatementWS = (function(){
     "use strict";
@@ -119,7 +120,7 @@ var StatementWS = (function(){
         StatementUI.clearTableContent();
     }
 
-    function initPage(){
+    function initPage() {
         batchSize = 200;
         chunkSize = batchSize/2;
         noMoreData = false;
@@ -137,10 +138,24 @@ var StatementWS = (function(){
         initTable();
     }
 
+    var attachDatePicker = function() {
+        $('#jump-to').val(page.text.localize('Today'))
+            .datepicker({
+                dateFormat: 'yy-mm-dd',
+                maxDate   : moment().toDate(),
+                onSelect  : function() {
+                    $('.table-container').remove();
+                    StatementUI.clearTableContent();
+                    StatementWS.init();
+                }
+            });
+    };
+
     return {
         init: initPage,
         statementHandler: statementHandler,
-        clean: cleanStatementPageState
+        clean: cleanStatementPageState,
+        attachDatePicker: attachDatePicker,
     };
 }());
 

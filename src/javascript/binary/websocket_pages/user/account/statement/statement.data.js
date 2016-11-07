@@ -1,6 +1,8 @@
 var buildOauthApps = require('../../../../common_functions/get_app_details').buildOauthApps;
 var addTooltip = require('../../../../common_functions/get_app_details').addTooltip;
 var japanese_client = require('../../../../common_functions/country_base').japanese_client;
+var StatementUI = require('./statement.ui').StatementUI;
+var StatementWS = require('./statement.init').StatementWS;
 
 var StatementData = (function(){
 

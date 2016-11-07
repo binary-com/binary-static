@@ -13,6 +13,7 @@ var GetStarted = (function() {
     };
 
     var get_started_behaviour = function() {
+        if (/get-started-jp/.test(window.location.pathname)) return;
         var update_active_subsection = function(to_show) {
             var fragment;
             var subsection = $('.subsection');

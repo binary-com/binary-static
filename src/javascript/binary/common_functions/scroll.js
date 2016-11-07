@@ -57,8 +57,24 @@ var Scroll = (function() {
             });
         }
     };
+
+    var goToHashSection = function() {
+        if (page.url.location.hash !== "") {
+          $('a[href="' + page.url.location.hash + '"]').click();
+        }
+    };
+
+    var scrollToHashSection = function() {
+        if (page.url.location.hash) {
+            $.scrollTo($(page.url.location.hash));
+        }
+    };
+
     return {
         sidebar_scroll: sidebar_scroll,
+        offScroll: function() { $(window).off('scroll'); },
+        goToHashSection: goToHashSection,
+        scrollToHashSection: scrollToHashSection,
     };
 })();
 

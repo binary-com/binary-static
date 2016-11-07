@@ -2,6 +2,7 @@ var AssetIndexUI = require('../../resources/asset_index/asset_indexws.ui').Asset
 var MarketTimesUI = require('../../resources/market_times/market_timesws.ui').MarketTimesUI;
 var PortfolioWS = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
 var ProfitTableWS = require('../../user/account/profit_table/profit_table.init').ProfitTableWS;
+var StatementWS = require('../../user/account/statement/statement.init').StatementWS;
 
 /*
  * This Message object process the response from server and fire
