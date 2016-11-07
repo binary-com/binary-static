@@ -562,7 +562,7 @@ Menu.prototype = {
         this.hide_main_menu();
 
         var active = this.active_menu_top();
-        var trading = new RegExp('\/(jp|multi_barriers_|)trading\.html');
+        var trading = new RegExp('\/(jp_|multi_barriers_|)trading\.html');
         var trading_is_active = trading.test(window.location.pathname);
         if (active) {
             active.addClass('active');
@@ -693,20 +693,19 @@ Header.prototype = {
     },
     show_or_hide_login_form: function() {
         if (!this.user.is_logged_in || !this.client.is_logged_in) return;
-        var all_accounts = $('#all-accounts');
-        function openCloseMenu(event) {
+        var all_accounts = $('#all-accounts'),
+            that = this;
+        $('.nav-menu').unbind('click').on('click', function(event) {
             event.stopPropagation();
             if (all_accounts.css('opacity') == 1 ) {
-                page.header.animate_disappear(all_accounts);
+                that.animate_disappear(all_accounts);
             } else {
-                page.header.animate_appear(all_accounts);
+                that.animate_appear(all_accounts);
             }
-        }
-        function closeMenu() {
-            page.header.animate_disappear(all_accounts);
-        }
-        $('.nav-menu').unbind('click', openCloseMenu).on('click', openCloseMenu);
-        $(document).unbind('click', closeMenu).on('click', closeMenu);
+        });
+        $(document).unbind('click').on('click', function() {
+            that.animate_disappear(all_accounts);
+        });
         var loginid_select = '';
         var loginid_array = this.user.loginid_array;
         for (var i=0; i < loginid_array.length; i++) {

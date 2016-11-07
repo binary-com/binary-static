@@ -151,12 +151,14 @@ function BinarySocketClass() {
                         page.client.send_logout_request(isActiveTab);
                     } else if (response.authorize.loginid !== page.client.loginid) {
                         page.client.send_logout_request(true);
-                    } else {
+                    } else if (!(response.hasOwnProperty('echo_req') && response.echo_req.hasOwnProperty('passthrough') &&
+                        response.echo_req.passthrough.hasOwnProperty('dispatch_to') &&
+                        response.echo_req.passthrough.dispatch_to === 'cashier_password')) {
                         authorized = true;
                         if(typeof events.onauth === 'function'){
                             events.onauth();
                         }
-                        if(!Login.is_login_pages()) {
+                        if (!Login.is_login_pages()) {
                             page.client.response_authorize(response);
                             send({balance:1, subscribe: 1});
                             send({get_settings: 1});
@@ -290,7 +292,7 @@ function BinarySocketClass() {
                     if(response.error && response.error.code) {
                       if (response.error.code && (response.error.code === 'WrongResponse' || response.error.code === 'OutputValidationFailed')) {
                         $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (response.error.code === 'WrongResponse' && response.error.message ? response.error.message : page.text.localize('Sorry, an error occurred while processing your request.') )+ '</p></div>');
-                      } else if (response.error.code === 'RateLimit' && !/jptrading/i.test(window.location.pathname)) {
+                      } else if (response.error.code === 'RateLimit' && !/jp_trading/i.test(window.location.pathname)) {
                         $('#ratelimit-error-message')
                             .css('display', 'block')
                             .on('click', '#ratelimit-refresh-link', function () {
