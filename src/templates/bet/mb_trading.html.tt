@@ -1,5 +1,5 @@
 <div class="center-text">
-    <img class="spinner" src="[% request.url_for('images/pages/binary-symbol-logo.svg') %]" alt="" />
+    [% INCLUDE global/loading.html.tt %]
 </div>
 <div class="mb-trading-wrapper invisible">
     <div id="mb_trading">
