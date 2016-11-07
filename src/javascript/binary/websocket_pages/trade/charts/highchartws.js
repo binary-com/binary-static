@@ -1,3 +1,6 @@
+var MBTradePage = require('../../mb_trade/mb_tradepage').MBTradePage;
+var MBContract  = require('../../mb_trade/mb_contract').MBContract;
+
 var Highchart = (function() {
   var chart, options, chart_forget, responseID, contract, contract_ended, contracts_for_send, history_send, entry_tick_barrier_drawn, initialized, chart_delayed, chart_subscribed, request, min_point, max_point, start_time, purchase_time, now_time, end_time, entry_tick_time, is_sold, sell_time, sell_spot_time, is_settleable, exit_tick_time, exit_time;
   function init_once() {
@@ -380,7 +383,7 @@ var Highchart = (function() {
         request.subscribe = 1;
     }
 
-    var contracts_response = window.contracts_for;
+    var contracts_response = MBTradePage.is_trading_page() ? MBContract.getContractsResponse() : window.contracts_for;
 
     if (contracts_response && contracts_response.echo_req.contracts_for === underlying) {
       if (contracts_response.contracts_for && contracts_response.contracts_for.feed_license) {

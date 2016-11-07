@@ -1,6 +1,7 @@
 var MBContract = require('./mb_contract').MBContract;
 var objectNotEmpty = require('../../base/utility').objectNotEmpty;
 var MBDefaults = require('./mb_defaults').MBDefaults;
+var MBNotifications = require('./mb_notifications').MBNotifications;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -81,7 +82,7 @@ var MBPrice = (function() {
         });
 
         MBPrice.hidePriceOverlay();
-        hideSpinnerShowTrading();
+        MBNotifications.hideSpinnerShowTrading();
         is_displayed = true;
     };
 
@@ -215,11 +216,6 @@ var MBPrice = (function() {
         $('#disable-overlay, #loading-overlay').addClass('invisible');
     };
 
-    var hideSpinnerShowTrading = function() {
-        $('.spinner').addClass('invisible');
-        $('.mb-trading-wrapper').removeClass('invisible');
-    };
-
     return {
         display                : display,
         addPriceObj            : addPriceObj,
@@ -230,7 +226,6 @@ var MBPrice = (function() {
         hidePriceOverlay       : hidePriceOverlay,
         getReqId               : function() { return req_id; },
         increaseReqId          : function() { req_id++; cleanup(); },
-        hideSpinnerShowTrading : hideSpinnerShowTrading,
         getPrices              : function() { return prices; },
         onUnload               : function() { cleanup(); req_id = 0; proposal_response = {}; $tables = undefined; },
     };
