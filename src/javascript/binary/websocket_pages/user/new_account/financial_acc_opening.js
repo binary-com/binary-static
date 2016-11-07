@@ -1,53 +1,60 @@
 var ValidAccountOpening = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
 var AccountOpening = require('../../../common_functions/account_opening').AccountOpening;
+var FinancialAccOpeningUI = require('./financial_acc_opening/financial_acc_opening.ui').FinancialAccOpeningUI;
 
-pjax_config_page_require_auth("new_account/maltainvestws", function(){
-  return {
-    onLoad: function() {
-      Content.populate();
-      for (i = 0; i < page.user.loginid_array.length; i++){
-        if (page.user.loginid_array[i].financial){
-          window.location.href = page.url.url_for('trading');
-          return;
-        } else if (page.user.loginid_array[i].non_financial){
-          $('.security').hide();
+var FinancialAccOpening = (function() {
+    var init = function() {
+        Content.populate();
+        for (i = 0; i < page.user.loginid_array.length; i++){
+          if (page.user.loginid_array[i].financial){
+            window.location.href = page.url.url_for('trading');
+            return;
+          } else if (page.user.loginid_array[i].non_financial){
+            $('.security').hide();
+          }
         }
-      }
-      AccountOpening.handle_residence_state_ws();
-      BinarySocket.send({residence_list:1});
-      BinarySocket.send({get_financial_assessment:1});
-      $('#financial-form').submit(function(evt) {
-        evt.preventDefault();
-        if (FinancialAccOpeningUI.checkValidity()){
-          BinarySocket.init({
-            onmessage: function(msg){
-              var response = JSON.parse(msg.data);
-              if (response) {
-                var error = response.error;
-                if (response.msg_type === 'new_account_maltainvest'){
-                  ValidAccountOpening.handler(response, response.new_account_maltainvest);
+        AccountOpening.handle_residence_state_ws();
+        BinarySocket.send({residence_list:1});
+        BinarySocket.send({get_financial_assessment:1});
+        $('#financial-form').submit(function(evt) {
+          evt.preventDefault();
+          if (FinancialAccOpeningUI.checkValidity()){
+            BinarySocket.init({
+              onmessage: function(msg){
+                var response = JSON.parse(msg.data);
+                if (response) {
+                  var error = response.error;
+                  if (response.msg_type === 'new_account_maltainvest'){
+                    ValidAccountOpening.handler(response, response.new_account_maltainvest);
+                  }
                 }
               }
-            }
-          });
-        }
-      });
-      $('#financial-risk').submit(function(evt) {
-        evt.preventDefault();
-        window.acceptRisk = true;
-        if (FinancialAccOpeningUI.checkValidity()){
-          BinarySocket.init({
-            onmessage: function(msg){
-              var response = JSON.parse(msg.data);
-              if (response) {
-                if (response.msg_type === 'new_account_maltainvest'){
-                  ValidAccountOpening.handler(response, response.new_account_maltainvest);
+            });
+          }
+        });
+        $('#financial-risk').submit(function(evt) {
+          evt.preventDefault();
+          window.acceptRisk = true;
+          if (FinancialAccOpeningUI.checkValidity()){
+            BinarySocket.init({
+              onmessage: function(msg){
+                var response = JSON.parse(msg.data);
+                if (response) {
+                  if (response.msg_type === 'new_account_maltainvest'){
+                    ValidAccountOpening.handler(response, response.new_account_maltainvest);
+                  }
                 }
               }
-            }
-          });
-        }
-      });
-    }
-  };
-});
+            });
+          }
+        });
+    };
+
+    return {
+        init: init,
+    };
+})();
+
+module.exports = {
+    FinancialAccOpening: FinancialAccOpening,
+};

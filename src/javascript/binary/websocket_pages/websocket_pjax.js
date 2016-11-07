@@ -20,6 +20,12 @@ var SettingsDetailsWS = require('./user/account/settings/settings_detailsws').Se
 var SecurityWS = require('./user/account/settings/settings_securityws').SecurityWS;
 var SettingsWS = require('./user/account/settings').SettingsWS;
 var StatementWS = require('./user/account/statement/statement.init').StatementWS;
+var TopUpVirtualWS = require('./user/account/top_up_virtualws').TopUpVirtualWS;
+var LostPasswordWS = require('./user/lost_password').LostPasswordWS;
+var FinancialAccOpening = require('./user/new_account/financial_acc_opening').FinancialAccOpening;
+var JapanAccOpening = require('./user/new_account/japan_acc_opening').JapanAccOpening;
+var RealAccOpening = require('./user/new_account/real_acc_opening').RealAccOpening;
+var VirtualAccOpening = require('./user/new_account/virtual_acc_opening').VirtualAccOpening;
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
@@ -220,6 +226,54 @@ pjax_config_page_require_auth("settingsws|securityws", function() {
     return {
         onLoad: function() {
             SettingsWS.onLoad();
+        }
+    };
+});
+
+pjax_config_page_require_auth("top_up_virtualws", function() {
+    return {
+        onLoad: function() {
+            TopUpVirtualWS.onLoad();
+        }
+    };
+});
+
+pjax_config_page('user/lost_passwordws', function() {
+    return {
+        onLoad: function() {
+            LostPasswordWS.onLoad();
+        }
+    };
+});
+
+pjax_config_page_require_auth("new_account/maltainvestws", function(){
+    return {
+        onLoad: function() {
+            FinancialAccOpening.init();
+        }
+    };
+});
+
+pjax_config_page("new_account/japanws", function(){
+    return {
+        onLoad: function() {
+            JapanAccOpening.init();
+        }
+    };
+});
+
+pjax_config_page("new_account/realws", function(){
+    return {
+        onLoad: function() {
+            RealAccOpening.init();
+        }
+    };
+});
+
+pjax_config_page("new_account/virtualws", function() {
+    return {
+        onLoad: function() {
+            VirtualAccOpening.onLoad();
         }
     };
 });
