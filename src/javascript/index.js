@@ -86,8 +86,6 @@ exportAllFunctions(require('./binary/websocket_pages/user/reality_check/reality_
 exportAllFunctions(require('./binary/websocket_pages/user/reality_check/reality_check.init'));
 exportAllFunctions(require('./binary/websocket_pages/user/reality_check/reality_check.ui'));
 
-exportAllFunctions(require('./binary/websocket_pages/user/view_popup/view_popup_ui'));
-exportAllFunctions(require('./binary/websocket_pages/user/view_popup/view_popupws'));
 exportAllFunctions(require('./binary/websocket_pages/user/viewbalance/viewbalance.init'));
 exportAllFunctions(require('./binary/websocket_pages/user/viewbalance/viewbalance.ui'));
 exportAllFunctions(require('./binary/websocket_pages/websocket_pjax'));

@@ -141,6 +141,20 @@ var ViewPopupUI = (function() {
             con.offset({left: x, top: y});
             ViewPopupUI.reposition_confirmation_ondrag();
         },
+        // ===== Dispatch =====
+        storeSubscriptionID: function(id, option) {
+            if(!window.stream_ids && !option) {
+                window.stream_ids = [];
+            }
+            if (!window.chart_stream_ids && option) {
+                window.chart_stream_ids = [];
+            }
+            if(!option && id && id.length > 0 && $.inArray(id, window.stream_ids) < 0) {
+                window.stream_ids.push(id);
+            } else if(option && id && id.length > 0 && $.inArray(id, window.chart_stream_ids) < 0) {
+                window.chart_stream_ids.push(id);
+            }
+        },
     };
 }());
 

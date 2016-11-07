@@ -1,6 +1,7 @@
 var MBTradePage = require('../../mb_trade/mb_tradepage').MBTradePage;
 var MBContract  = require('../../mb_trade/mb_contract').MBContract;
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
+var ViewPopupUI = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
 
 var Highchart = (function() {
   var chart, options, chart_forget, responseID, contract, contract_ended, contracts_for_send, history_send, entry_tick_barrier_drawn, initialized, chart_delayed, chart_subscribed, request, min_point, max_point, start_time, purchase_time, now_time, end_time, entry_tick_time, is_sold, sell_time, sell_spot_time, is_settleable, exit_tick_time, exit_time;
@@ -237,7 +238,7 @@ var Highchart = (function() {
     } else if ((type === 'history' || type === 'candles' || type === 'tick' || type === 'ohlc') && !error){
       responseID = response[type].id;
       // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
-      if (responseID) ViewPopupWS.storeSubscriptionID(responseID, 'chart');
+      if (responseID) ViewPopupUI.storeSubscriptionID(responseID, 'chart');
       options = { 'title' : contract.display_name };
       if (response.history || response.candles) {
         if (response.history) {

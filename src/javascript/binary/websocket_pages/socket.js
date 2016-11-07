@@ -10,6 +10,7 @@ var Cashier = require('../websocket_pages/cashier/cashier').Cashier;
 var PaymentAgentWithdrawWS = require('../websocket_pages/cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
 var create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
 var TNCApproval = require('../websocket_pages/user/tnc_approval').TNCApproval;
+var ViewPopupWS = require('../websocket_pages/user/view_popup/view_popupws').ViewPopupWS;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.

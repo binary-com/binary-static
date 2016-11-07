@@ -1,5 +1,6 @@
 var MBNotifications = require('./mb_notifications').MBNotifications;
 var MBPrice = require('./mb_price').MBPrice;
+var ViewPopupWS = require('../user/view_popup/view_popupws').ViewPopupWS;
 
 /*
  * Purchase object that handles all the functions related to
