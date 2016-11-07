@@ -82,10 +82,6 @@ exportAllFunctions(require('./binary/websocket_pages/trade/beta/starttime'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/tick_trade'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/tradepage'));
 
-exportAllFunctions(require('./binary/websocket_pages/user/account/profit_table/profit_table.data'));
-exportAllFunctions(require('./binary/websocket_pages/user/account/profit_table/profit_table.init'));
-exportAllFunctions(require('./binary/websocket_pages/user/account/profit_table/profit_table.ui'));
-exportAllFunctions(require('./binary/websocket_pages/user/account/profit_table'));
 exportAllFunctions(require('./binary/websocket_pages/user/account/settings/api_token'));
 exportAllFunctions(require('./binary/websocket_pages/user/account/settings/authorised_apps/authorised_apps.data'));
 exportAllFunctions(require('./binary/websocket_pages/user/account/settings/authorised_apps/authorised_apps.init'));
