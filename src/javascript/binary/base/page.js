@@ -14,6 +14,7 @@ var TrafficSource = require('../common_functions/traffic_source').TrafficSource;
 var RiskClassification = require('../common_functions/risk_classification').RiskClassification;
 var checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
 var japanese_client = require('../common_functions/country_base').japanese_client;
+var FinancialAssessmentws = require('../websocket_pages/user/account/settings/financial_assessment').FinancialAssessmentws;
 var clock_started = false;
 
 var SessionStore, LocalStore;

@@ -82,11 +82,6 @@ exportAllFunctions(require('./binary/websocket_pages/trade/beta/starttime'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/tick_trade'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/tradepage'));
 
-exportAllFunctions(require('./binary/websocket_pages/user/account/settings/authorised_apps/authorised_apps.data'));
-exportAllFunctions(require('./binary/websocket_pages/user/account/settings/authorised_apps/authorised_apps.init'));
-exportAllFunctions(require('./binary/websocket_pages/user/account/settings/authorised_apps/authorised_apps.ui'));
-exportAllFunctions(require('./binary/websocket_pages/user/account/settings/authorised_apps'));
-exportAllFunctions(require('./binary/websocket_pages/user/account/settings/financial_assessment'));
 exportAllFunctions(require('./binary/websocket_pages/user/account/settings/iphistory/iphistory.data'));
 exportAllFunctions(require('./binary/websocket_pages/user/account/settings/iphistory/iphistory.init'));
 exportAllFunctions(require('./binary/websocket_pages/user/account/settings/iphistory/iphistory.ui'));

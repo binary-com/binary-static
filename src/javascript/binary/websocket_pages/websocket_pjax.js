@@ -12,6 +12,8 @@ var japanese_client = require('../common_functions/country_base').japanese_clien
 var PortfolioWS = require('./user/account/portfolio/portfolio.init').PortfolioWS;
 var ProfitTableWS = require('./user/account/profit_table/profit_table.init').ProfitTableWS;
 var APITokenWS = require('./user/account/settings/api_token').APITokenWS;
+var AuthorisedApps = require('./user/account/settings/authorised_apps').AuthorisedApps;
+var FinancialAssessmentws = require('./user/account/settings/financial_assessment').FinancialAssessmentws;
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
@@ -190,6 +192,25 @@ pjax_config_page_require_auth("paymentagent/transferws", function(){
     return {
         onLoad: function() {
             PaymentAgentTransferSocket.initSocket();
+        }
+    };
+});
+
+pjax_config_page_require_auth("user/security/authorised_appsws", function(){
+    return {
+        onLoad: function() {
+            AuthorisedApps.onLoad();
+        },
+        onUnload: function(){
+            AuthorisedApps.onUnload();
+        }
+    };
+});
+
+pjax_config_page_require_auth("user/settings/assessmentws", function() {
+    return {
+        onLoad: function() {
+            FinancialAssessmentws.onLoad();
         }
     };
 });
