@@ -15,6 +15,7 @@ var RiskClassification = require('../common_functions/risk_classification').Risk
 var checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
 var japanese_client = require('../common_functions/country_base').japanese_client;
 var FinancialAssessmentws = require('../websocket_pages/user/account/settings/financial_assessment').FinancialAssessmentws;
+var ViewBalance = require('../websocket_pages/user/viewbalance/viewbalance.init').ViewBalance;
 var clock_started = false;
 
 var SessionStore, LocalStore;
