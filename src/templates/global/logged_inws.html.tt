@@ -33,13 +33,7 @@
     </div>
     <div id="login_loading">
         <a href="[% request.url_for('/') %]" id="loading_link">
-            <div class="barspinner dark">
-                <div class="rect1"></div>
-                <div class="rect2"></div>
-                <div class="rect3"></div>
-                <div class="rect4"></div>
-                <div class="rect5"></div>
-            </div>
+            [% INCLUDE global/loading.html.tt %]
         </a>
     </div>
 </body>

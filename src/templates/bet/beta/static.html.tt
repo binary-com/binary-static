@@ -321,11 +321,5 @@
 </div>
 <div id="all_prices"></div>
 <div id="trading_init_progress">
-    <div class="barspinner dark">
-        <div class="rect1"></div>
-        <div class="rect2"></div>
-        <div class="rect3"></div>
-        <div class="rect4"></div>
-        <div class="rect5"></div>
-    </div>
+    [% INCLUDE global/loading.html.tt %]
 </div>
