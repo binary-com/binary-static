@@ -44,7 +44,7 @@ var MBNotifications = (function() {
     };
 
     var hideSpinnerShowTrading = function() {
-        $('.spinner').addClass('invisible');
+        $('.barspinner').addClass('invisible');
         $('.mb-trading-wrapper').removeClass('invisible');
     };
 

@@ -20,11 +20,6 @@
     }
 }
 
-.spinner {
-    -webkit-animation: spinning 0.2s * 5 infinite linear;
-    animation: spinning 0.2s * 5 infinite linear;
-}
-
 @keyframes pulsing {
     0% {
         opacity: 1;
