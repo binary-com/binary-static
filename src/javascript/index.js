@@ -85,9 +85,7 @@ exportAllFunctions(require('./binary/websocket_pages/trade/beta/tradepage'));
 exportAllFunctions(require('./binary/websocket_pages/user/reality_check/reality_check.data'));
 exportAllFunctions(require('./binary/websocket_pages/user/reality_check/reality_check.init'));
 exportAllFunctions(require('./binary/websocket_pages/user/reality_check/reality_check.ui'));
-exportAllFunctions(require('./binary/websocket_pages/user/reset_password/reset_password.init'));
-exportAllFunctions(require('./binary/websocket_pages/user/reset_password'));
-exportAllFunctions(require('./binary/websocket_pages/user/tnc_approval'));
+
 exportAllFunctions(require('./binary/websocket_pages/user/view_popup/view_popup_ui'));
 exportAllFunctions(require('./binary/websocket_pages/user/view_popup/view_popupws'));
 exportAllFunctions(require('./binary/websocket_pages/user/viewbalance/viewbalance.init'));

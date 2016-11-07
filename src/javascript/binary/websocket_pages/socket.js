@@ -9,6 +9,7 @@ var checkClientsCountry = require('../common_functions/country_base').checkClien
 var Cashier = require('../websocket_pages/cashier/cashier').Cashier;
 var PaymentAgentWithdrawWS = require('../websocket_pages/cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
 var create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
+var TNCApproval = require('../websocket_pages/user/tnc_approval').TNCApproval;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.

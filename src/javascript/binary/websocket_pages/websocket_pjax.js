@@ -26,6 +26,8 @@ var FinancialAccOpening = require('./user/new_account/financial_acc_opening').Fi
 var JapanAccOpening = require('./user/new_account/japan_acc_opening').JapanAccOpening;
 var RealAccOpening = require('./user/new_account/real_acc_opening').RealAccOpening;
 var VirtualAccOpening = require('./user/new_account/virtual_acc_opening').VirtualAccOpening;
+var ResetPasswordWS = require('./user/reset_password').ResetPasswordWS;
+var TNCApproval = require('./user/tnc_approval').TNCApproval;
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
@@ -274,6 +276,22 @@ pjax_config_page("new_account/virtualws", function() {
     return {
         onLoad: function() {
             VirtualAccOpening.onLoad();
+        }
+    };
+});
+
+pjax_config_page('user/reset_passwordws', function() {
+    return {
+        onLoad: function() {
+            ResetPasswordWS.init();
+        }
+    };
+});
+
+pjax_config_page_require_auth("tnc_approvalws", function() {
+    return {
+        onLoad: function() {
+            TNCApproval.onLoad();
         }
     };
 });
