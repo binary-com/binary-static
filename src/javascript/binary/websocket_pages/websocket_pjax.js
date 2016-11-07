@@ -11,6 +11,7 @@ var PaymentAgentTransferSocket = require('./user/account/payment_agent_transfer'
 var japanese_client = require('../common_functions/country_base').japanese_client;
 var PortfolioWS = require('./user/account/portfolio/portfolio.init').PortfolioWS;
 var ProfitTableWS = require('./user/account/profit_table/profit_table.init').ProfitTableWS;
+var APITokenWS = require('./user/account/settings/api_token').APITokenWS;
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
