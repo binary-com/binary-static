@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-11-07 06:10+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2525,6 +2524,9 @@ msgstr "推定純資産"
 
 msgid "Ethics Code"
 msgstr "倫理コード"
+
+msgid "Eurobasket Wolves"
+msgstr ""
 
 msgid "European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd."
 msgstr "口座開設をご希望の欧州連合の居住者（英国を除く）は、Binary (Europe) Ltdの下で口座を開設されます。"
@@ -5718,6 +5720,9 @@ msgstr "分離条項"
 msgid "Sharp prices"
 msgstr "優れた価格設定"
 
+msgid "Shelter Home’s Shelter Community Learning Centre 3"
+msgstr ""
+
 msgid "Shop"
 msgstr "ショップ"
 
@@ -6222,6 +6227,9 @@ msgstr "個人情報保護に関する法律と規制により、お客さまの
 msgid "The EUR Index is a weighted Index, measuring the Euro's value against a basket of 5 global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%."
 msgstr "EURインデックスとは、5グローバル通貨(USD, AUD, GBP, JPY, CAD)のバスケットに対するユーロの価値を計る各荷重20％の荷重インデックスです。"
 
+msgid "The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds."
+msgstr ""
+
 msgid "The Financial Products that we offer to deal in are contracts entered into between you and us. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that you pay us, we promise to pay you a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that we hold on your behalf and neither benefit from clients' assets protection in the event of our insolvency. Similarly the premium or price that you pay to take out a trade is not held as clients' money but as consideration for our undertaking to pay."
 msgstr "当社が取り扱う金融商品は、お客さまと当社の間に締結した契約です。これら契約と関連する契約の特定条件の下、お客さまが当社にお支払いいただくプレミアムまたは価格を考慮して、対象資産と評価が特定の方法で行われた場合、一定の金額を支払うことをお約束致します。そのため、これら契約はそれに応じて当社がお客さまの代わりに保持する金融商品ではなく、当社が破産の場合に顧客の資産の保護からの恩恵は受けません。同様に、お取引を行うためにお支払いになるプレミアムと価格はクライアントマネーとして保持されず、事業費の対価として保持されます。"
 
@@ -6239,6 +6247,9 @@ msgstr "Binary Investments (Europe) Limitedの開示レポート（第3の柱）
 
 msgid "The Program"
 msgstr "アフィリエイトプログラム"
+
+msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
+msgstr ""
 
 msgid "The USD Index is a weighted Index, measuring the US Dollar's value against a basket of 5 global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%."
 msgstr "USDインデックスとは、5グローバル通貨(EUR, GBP, JPY, CAD, AUD)のバスケットに対するアメリカドルの価値を計る各荷重20％の荷重インデックスです。"
@@ -6787,7 +6798,9 @@ msgstr "お客さまが当社とバイナリーオプション取引口座を開
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "物理学、金融工学、数学の大学上級学位が必要となります。"
 
-msgid "To reset your password, enter the e-mail address you registered in the field below and click 'RESET PASSWORD'."
+#, fuzzy
+#| msgid "To reset your password, enter the e-mail address you registered in the field below and click 'RESET PASSWORD'."
+msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
 msgstr "パスワードを再設定される場合は下記の入力欄に登録されたメールアドレスを入力し、「パスワード再設定」をクリックしてください。"
 
 msgid "Today"
@@ -6985,6 +6998,11 @@ msgstr "イギリス及びマン島に居住のお客さまのご口座は
 
 msgid "UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
 msgstr "Binary (Europe) Ltdでご登録されたイギリス在住のお客さまは、ADR法人上の裁定フォームにご記入いただくことで、IBASの裁判外紛争解決法人に抵触内容をご提出いただけます。"
+
+#, fuzzy
+#| msgid "EUR"
+msgid "URL"
+msgstr "EUR"
 
 msgid "US Patents"
 msgstr "アメリカ合衆国での特許"
@@ -8285,23 +8303,16 @@ msgid "{JAPAN ONLY}80,100,000 JPY (as of September 20, 2016)"
 msgstr "80,100,000円（2016年9月20日現在）"
 
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
-msgstr ""
-"円以外の通貨ペアを原資産とする差金決済型の通貨オプションの場合、オプション料や権利行使時の決済は円により行われるため、対象となる通貨ペアは決済額を算出し、"
-"円転の計算をして金額を確定する仕組みとなっています。"
+msgstr "円以外の通貨ペアを原資産とする差金決済型の通貨オプションの場合、オプション料や権利行使時の決済は円により行われるため、対象となる通貨ペアは決済額を算出し、円転の計算をして金額を確定する仕組みとなっています。"
 
 msgid "{JAPAN ONLY}A Binary Option contains the right for the buyer to receive a certain fixed amount if the market price reaches the exercise price by the exercise time, but it does not contain any rights to sell or buy the underlying asset."
-msgstr ""
-"バイナリーオプションは、満期日に原資産価格がバリア価格に達した場合、あらかじめ定めた一定額のペイアウトを受け取ることのできる権利であり、対象となる原資産を"
-"売買する権利ではありません。"
+msgstr "バイナリーオプションは、満期日に原資産価格がバリア価格に達した場合、あらかじめ定めた一定額のペイアウトを受け取ることのできる権利であり、対象となる原資産を売買する権利ではありません。"
 
 msgid "{JAPAN ONLY}A Covered option position is where you hold an offsetting position in the underlying asset."
 msgstr "カバ－ド・オプションは、オプションの売りポジションをカバ－するような原資産を保有しながら、オプションを売ることであります。"
 
 msgid "{JAPAN ONLY}A Currency Binary Option is one where there is a target for a particular currency pair, so a strike price for the exchange rate is agreed, and a payout will be due if the judgment price meets the conditions of being over or under the target strike price, depending on the option type, by the exercise time."
-msgstr ""
-"通貨バイナリーオプションは、通貨ペアを対象とし、通貨ペアの交換レートをバリア価格として、権利行使時点で両通貨のレートがバリア価格を上回るか、下回るかにより"
-"、権利行使によるペイアウトの有無を判定し、決済するオプションことをいいます。たとえば、ドル円のコールバイナリーオプションは、ドルを基準とし、バリア価格に対"
-"して判定価格がドル高＝円安となればペイアウトとなり、判定価格がドル安＝円高となればペイアウトは発生しません。"
+msgstr "通貨バイナリーオプションは、通貨ペアを対象とし、通貨ペアの交換レートをバリア価格として、権利行使時点で両通貨のレートがバリア価格を上回るか、下回るかにより、権利行使によるペイアウトの有無を判定し、決済するオプションことをいいます。たとえば、ドル円のコールバイナリーオプションは、ドルを基準とし、バリア価格に対して判定価格がドル高＝円安となればペイアウトとなり、判定価格がドル安＝円高となればペイアウトは発生しません。"
 
 msgid "{JAPAN ONLY}A Currency Option confers the right to sell one currency in exchange for another currency as the underlying asset. For example, the right to sell Yen and buy Dollars is known as a Yen Put / Dollar Call Option, or just Yen Put for short; and the opposite right to buy Yen and sell Dollar is called a Yen Call / Dollar Put Option, or just Yen Call for short."
 msgstr "通貨オプションとは、通貨を原資産とし、一方の通貨を売って、他方の通貨を買う権利である。たとえば円とドルをペアとする場合、円を売ってドルを買うものを、円プット／ドルコールオプション、略してドルコールオプションと呼び、ドルを売って円を買うものを、円コール／ドルプットオプション、略してドルプットオプションと呼ぶ。"
@@ -8316,12 +8327,10 @@ msgid "{JAPAN ONLY}A binary option price cannot exceed the payout amount."
 msgstr "バイナリーオプションの価格はペイアウト額を上回ることはありません。"
 
 msgid "{JAPAN ONLY}A binary option which is in-the-money will have a higher value than an option that is out-of-the-money because there will be a higher probability of receiving the payout amount."
-msgstr ""
-"インザマネーのバイナリーオプションは、プレミアム（ペイアウト）を受け取る確率が高いため、アウトオブザマネーのバイナリーオプションよりも価格が高くなります。"
+msgstr "インザマネーのバイナリーオプションは、プレミアム（ペイアウト）を受け取る確率が高いため、アウトオブザマネーのバイナリーオプションよりも価格が高くなります。"
 
 msgid "{JAPAN ONLY}A binary option which is out-of-the-money will have a lower price than an option which is in-the-money because the probability of receiving the payout amount is lower."
-msgstr ""
-"アウトオブザマネーのバイナリーオプションは、プレミアム（ペイアウト）を受け取る確率が低いため、インザマネーのバイナリーオプションよりも価格が低くなります。"
+msgstr "アウトオブザマネーのバイナリーオプションは、プレミアム（ペイアウト）を受け取る確率が低いため、インザマネーのバイナリーオプションよりも価格が低くなります。"
 
 msgid "{JAPAN ONLY}A binary put option buyer will benefit from a correct prediction that the asset price will decline to below the strike price by the judgment time."
 msgstr "判定時刻に、原資産価格がバリア価格よりも下落していると予測し、バイナリープットオプションを購入しました。"
@@ -8342,9 +8351,7 @@ msgid "{JAPAN ONLY}A modified version of the Black-Scholes model is widely used 
 msgstr "バイナリーオプションの理論価格を算出する際には、ブラック・ショールズを修正した計算モデルが一般的に用いられています。"
 
 msgid "{JAPAN ONLY}About OTC currency for binary options trading, summarizes the profit and loss result of all transactions that have been made between the customer, to publish the information in the company's home page, at any time while the customer is doing the transaction before the start, or the transaction, the information Make sure, for that you're willing to trade under the calm judgment, we are committed to a variety of environmental improvement."
-msgstr ""
-"店頭通貨バイナリーオプション取引について、顧客との間で行われた全取引の損益結果をまとめ、自社のホームページ上で情報を公開し、顧客が取引開始前、もしくは取引"
-"を行っている間いつでも、その情報を確認し、冷静な判断の下にお取引いただけるための、様々な環境整備に努めています。"
+msgstr "店頭通貨バイナリーオプション取引について、顧客との間で行われた全取引の損益結果をまとめ、自社のホームページ上で情報を公開し、顧客が取引開始前、もしくは取引を行っている間いつでも、その情報を確認し、冷静な判断の下にお取引いただけるための、様々な環境整備に努めています。"
 
 msgid "{JAPAN ONLY}Account Name"
 msgstr "口座名"
@@ -8362,14 +8369,10 @@ msgid "{JAPAN ONLY}Activate your account by confirming your authorisation code w
 msgstr "リアル口座開設完了後にお客さまへ簡易書留郵便で口座認証コードを郵送いたします。当社から送信したメールに口座認証コードを記載のうえ返信してください。"
 
 msgid "{JAPAN ONLY}Although customers and brokers will set limits on customers trading losses, even if those losses are exceeded, it is the customer's responsibility to close the position and so mandatory loss-cuts will not be executed by the broker company."
-msgstr ""
-"日本国内でバイナリーオプションを提供している各業者はお客さまとの取引に限度額を定めているが、一定期間の取引額や損失額、お客さまが保有する建玉が基準を超えた"
-"場合であっても、お客さまとの取引を中断あるいは中止することはありません。"
+msgstr "日本国内でバイナリーオプションを提供している各業者はお客さまとの取引に限度額を定めているが、一定期間の取引額や損失額、お客さまが保有する建玉が基準を超えた場合であっても、お客さまとの取引を中断あるいは中止することはありません。"
 
 msgid "{JAPAN ONLY}An option holder must buy ( or sell ) the underlying asset at a predetermined price within a specified period ( or at a specific time )."
-msgstr ""
-"オプションとは、将来の特定の期日に、あらかじめ定めた価格によって原資産を買う（又は売る）ことができる権利のことをいいますが、オプションの所有者は、特定の期"
-"日には、あらかじめ定めた価格によって原資産を必ず買い取らなければ（又は売り渡さなければ）いけません。"
+msgstr "オプションとは、将来の特定の期日に、あらかじめ定めた価格によって原資産を買う（又は売る）ことができる権利のことをいいますが、オプションの所有者は、特定の期日には、あらかじめ定めた価格によって原資産を必ず買い取らなければ（又は売り渡さなければ）いけません。"
 
 msgid "{JAPAN ONLY}An option price is the sum of the intrinsic-value and the time-value."
 msgstr "本源的価値に時間的価値を加えた値はオプション価格になります。"
@@ -8531,8 +8534,7 @@ msgid "{JAPAN ONLY}Even if the option is exercise or not exercised, the original
 msgstr "権利行使期限が到来し権利行使が行われない場合、オプションの権利は消滅するが、売り手が受け取ったオプション料はそのまま売り手のものとなります。"
 
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
-msgstr ""
-"バイナリーオプションでは損失が限定的でありますが、投資家の資産などを踏まえ、過度の投機的な取引とならぬよう、節度ある取引を心がける必要があります。"
+msgstr "バイナリーオプションでは損失が限定的でありますが、投資家の資産などを踏まえ、過度の投機的な取引とならぬよう、節度ある取引を心がける必要があります。"
 
 msgid "{JAPAN ONLY}Executing trades"
 msgstr "取引方法"
@@ -8559,14 +8561,10 @@ msgid "{JAPAN ONLY}For a call option, if the price of the underlying asset is hi
 msgstr "コールオプションにおいて、原資産の価格が上昇してバリア価格を上回っている状態をアウトオブザマネーといいます。"
 
 msgid "{JAPAN ONLY}For a currency binary option which has the underlying exchange rate of dollars against yen, the right to receive a payout if the yen becomes weaker is known as a dollar-put binary option."
-msgstr ""
-"通貨バイナリーオプションのうち、例えばドル円を原資産とし、上昇して円安になった場合にペイアウトを受け取る権利のことをドル円のバイナリープットオプションと呼"
-"びます。"
+msgstr "通貨バイナリーオプションのうち、例えばドル円を原資産とし、上昇して円安になった場合にペイアウトを受け取る権利のことをドル円のバイナリープットオプションと呼びます。"
 
 msgid "{JAPAN ONLY}For a currency binary option with the underlying exchange rate of dollars against yen, the right to receive a payout if the yen becomes stronger is known as a dollar-put binary option."
-msgstr ""
-"通貨バイナリーオプションのうち、例えばドル円を原資産とし、下降して円高になった場合にペイアウトを受け取る権利のことを、ドル円のバイナリープットオプションと"
-"呼びます。"
+msgstr "通貨バイナリーオプションのうち、例えばドル円を原資産とし、下降して円高になった場合にペイアウトを受け取る権利のことを、ドル円のバイナリープットオプションと呼びます。"
 
 msgid "{JAPAN ONLY}For a plain vanilla option, as the time to the exercise point shortens, the price of the option will decrease."
 msgstr "オプション価格は、権利行使期限までの残り時間が短くなるほど、低くなります。"
@@ -8641,45 +8639,31 @@ msgid "{JAPAN ONLY}If the exercise period passes without the option being exerci
 msgstr "権利行使期限が到来し権利行使が行われない場合、オプションの権利は消滅するため、所有するオプションは価値がなくなります。"
 
 msgid "{JAPAN ONLY}If the exercise prices and exercise times are the same for an American style and European style option, then the American style option will have a higher price."
-msgstr ""
-"バリア価格と権利行使期間が同一のヨーロピアンタイプとアメリカンタイプのオプションが同じ場合、アメリカンタイプの方がオプション価格は高くなります。"
+msgstr "バリア価格と権利行使期間が同一のヨーロピアンタイプとアメリカンタイプのオプションが同じ場合、アメリカンタイプの方がオプション価格は高くなります。"
 
 msgid "{JAPAN ONLY}If the market price has changed significantly it may not be possible to execute a trade at a delayed price displayed in a customer's browser. Alternatively you may pay a lower price for the option if the price has moved quickly in that direction. Please see our summary of specifications document for full details of our 'slippage' rules."
 msgstr "万が一、市場価格が急激に変動した際は、お客様のブラウザ上で表示されている注文価格では約定しない場合があります。その逆として、市場価格が急激に変動したことにより、注文価格より有利な価格で購入できる場合があります。詳しくは契約締結前交付正面をご覧ください。"
 
 msgid "{JAPAN ONLY}If the probablility of a payout is 50% then when the potential payout is less than 100% of the price paid for the option, the expected return on the investment will be less than 100%."
-msgstr ""
-"投資額に対するペイアウトの倍率が2倍を下回り、ペイアウトを受け取る確率が50%の場合、期待収益率は1倍を下回り、予測回収額は投資額を下回ります。"
+msgstr "投資額に対するペイアウトの倍率が2倍を下回り、ペイアウトを受け取る確率が50%の場合、期待収益率は1倍を下回り、予測回収額は投資額を下回ります。"
 
 msgid "{JAPAN ONLY}If the underlying asset price is 100 yen, the exercise price is 80 yen, and the call option price is 45 yen, then it can be said that the option's intrinsic-value is 20 yen, and its time-value is 25 yen."
-msgstr ""
-"原資産価格100円、バリア価格80円、オプション価格45円のときのコールオプションの本源的価値と時間的価値は本源的価値＝20円、時間的価値＝25円となりま"
-"す。"
+msgstr "原資産価格100円、バリア価格80円、オプション価格45円のときのコールオプションの本源的価値と時間的価値は本源的価値＝20円、時間的価値＝25円となります。"
 
 msgid "{JAPAN ONLY}If you believe the underlying asset price will be only moderately volatile, you could still benefit by buying both a call and put option with exercise prices that are above and below the exercise price."
-msgstr ""
-"原資産価格が大きく騰落することを予測し、上昇、下落、いずれの方向に動いても利益を得るため、原資産価格よりバリア価格が高いコールオプションと原資産価格よりバ"
-"リア価格が低いプットオプションの２つのオプションを合わせて購入しました。"
+msgstr "原資産価格が大きく騰落することを予測し、上昇、下落、いずれの方向に動いても利益を得るため、原資産価格よりバリア価格が高いコールオプションと原資産価格よりバリア価格が低いプットオプションの２つのオプションを合わせて購入しました。"
 
 msgid "{JAPAN ONLY}If you believe the underlying asset price will move by a large amount in either direction, you can benefit by buying both a call and a put option, with the exercise prices set above and below the current underlying price."
-msgstr ""
-"原資産価格が大きく騰落することを予測し、上昇、下落、いずれの方向に動いても利益を得るため、原資産価格よりバリア価格が高いコールオプションと原資産価格よりバ"
-"リア価格が低いプットオプションの２つのオプションを合わせて購入しました。"
+msgstr "原資産価格が大きく騰落することを予測し、上昇、下落、いずれの方向に動いても利益を得るため、原資産価格よりバリア価格が高いコールオプションと原資産価格よりバリア価格が低いプットオプションの２つのオプションを合わせて購入しました。"
 
 msgid "{JAPAN ONLY}If you buy a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will receive a payout 1,000 yen from the seller of the option."
-msgstr ""
-"バリア価格１ドル100円、ペイアウト1,000円のドル円のコールバイナリーオプションを500円で購入し、判定レートが１ドル９９円となり権利行使が行われ、買"
-"い手は1,000円のペイアウトを受け取りました。"
+msgstr "バリア価格１ドル100円、ペイアウト1,000円のドル円のコールバイナリーオプションを500円で購入し、判定レートが１ドル９９円となり権利行使が行われ、買い手は1,000円のペイアウトを受け取りました。"
 
 msgid "{JAPAN ONLY}If you buy a currency binary option at a price of 500 yen, and the judgment price meets the conditions so you receive a payout of 1,000 yen, then your profit can be calculated 500 yen after subtracting the 500 yen that was paid as a fee to the option seller."
-msgstr ""
-"ペイアウト1,000円のバイナリーコールオプションを500円で購入し、権利行使条件が判定の結果、満たされた場合には、買い手は売り手からペイアウトとして1,"
-"000円を受け取り、したがって買い手の損益は、売り手に支払った500円のオプション料を差し引き500円の利益となります。"
+msgstr "ペイアウト1,000円のバイナリーコールオプションを500円で購入し、権利行使条件が判定の結果、満たされた場合には、買い手は売り手からペイアウトとして1,000円を受け取り、したがって買い手の損益は、売り手に支払った500円のオプション料を差し引き500円の利益となります。"
 
 msgid "{JAPAN ONLY}If you buy a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will receive a payout 1,000 yen from the seller of the option."
-msgstr ""
-"バリア価格１ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションを500円で購入し、判定レートが１ドル９９円となり権利行使が行われ、買"
-"い手は1,000円のペイアウトを受け取りました。"
+msgstr "バリア価格１ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションを500円で購入し、判定レートが１ドル９９円となり権利行使が行われ、買い手は1,000円のペイアウトを受け取りました。"
 
 msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:%1'>Customer Support</a>."
 msgstr "出金依頼の取り消し、または出金に関するご質問等ありましたら、<a href=\"%1\">カスタマーサポート</a>までご連絡ください。"
@@ -8688,19 +8672,13 @@ msgid "{JAPAN ONLY}If you need more information then please contact Customer Sup
 msgstr "詳細につきまして、カスタマーサポート<a href='mailto:%1'>%1</a>までご連絡ください"
 
 msgid "{JAPAN ONLY}If you sell a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
-msgstr ""
-"バリア価格１ドル100円、ペイアウト1,000円のドル円のコールバイナリーオプションの購入代金500円を受け取り、判定レートが１ドル９９円となり権利行使が"
-"行われ、売り手は買い手に1,000円のペイアウトを支払いました。"
+msgstr "バリア価格１ドル100円、ペイアウト1,000円のドル円のコールバイナリーオプションの購入代金500円を受け取り、判定レートが１ドル９９円となり権利行使が行われ、売り手は買い手に1,000円のペイアウトを支払いました。"
 
 msgid "{JAPAN ONLY}If you sell a currency binary option at a price of 500 yen, and the judgment price meets the conditions so you need to payout 1,000 yen, then your profit will be minus 500 yen after subtracting the 500 yen that was received as a fee from the option buyer."
-msgstr ""
-"ペイアウト1,000円のバイナリーコールオプションを500円で売却取引し、権利行使条件が判定の結果、満たされた場合には、売り手は買い手に対するペイアウトと"
-"して1,000円を支払わなければならず、したがって売り手の損益は、買い手から受け取った500円と差し引き500円の損失となります。"
+msgstr "ペイアウト1,000円のバイナリーコールオプションを500円で売却取引し、権利行使条件が判定の結果、満たされた場合には、売り手は買い手に対するペイアウトとして1,000円を支払わなければならず、したがって売り手の損益は、買い手から受け取った500円と差し引き500円の損失となります。"
 
 msgid "{JAPAN ONLY}If you sell a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
-msgstr ""
-"バリア価格１ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションの購入代金500円を受け取り、判定レートが１ドル９９円となり権利行使が"
-"行われ、売り手は買い手に1,000円のペイアウトを支払いました。"
+msgstr "バリア価格１ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションの購入代金500円を受け取り、判定レートが１ドル９９円となり権利行使が行われ、売り手は買い手に1,000円のペイアウトを支払いました。"
 
 msgid "{JAPAN ONLY}If you wish to change your designated account or you have any other queries, then please contact Customer Support."
 msgstr "出金先口座情報の変更をご希望の場合、カスタマーサポートまでご連絡ください。"
@@ -8712,15 +8690,10 @@ msgid "{JAPAN ONLY}Implied volatility is a prediction of the future rate of chan
 msgstr "原資産に対する将来の変動率を予測したボラティリティをインプライドボラティリティといます。"
 
 msgid "{JAPAN ONLY}In Japan there are defined trading periods for binary options must be 2 hours or longer, and all trades must be conducted at the start of each trading period."
-msgstr ""
-"バイナリーオプションの取引期間（満期）は2時間以上で、全ての取引は取引期間の開始時点で成立し、成立したポジションは、途中解約できず判定時刻の時点でのみ決済"
-"となります。"
+msgstr "バイナリーオプションの取引期間（満期）は2時間以上で、全ての取引は取引期間の開始時点で成立し、成立したポジションは、途中解約できず判定時刻の時点でのみ決済となります。"
 
 msgid "{JAPAN ONLY}In OTC currency binary options trading, if the exchange rate during the trading period moves by more than expected in one direction, and there are no longer any exercise prices which can continue to trade, it is possible under certain conditions to add further exercise prices. However, even when further exercise price have been added, the prices of the original options will not be affected."
-msgstr ""
-"店頭通貨バイナリーオプション取引では、取引期間中の為替レートが一方向に想定以上に動き、アットザマネー周辺で適切な取引が継続できるバリア価格が無くなった場合"
-"には、途中でバリア価格を追加することがありますが、ただし、バリア価格が追加された場合であっても、それまで利用したバリア価格は引き続き取引を行い、またその取"
-"引価格が、バリア価格の追加の影響を受けることはありません。"
+msgstr "店頭通貨バイナリーオプション取引では、取引期間中の為替レートが一方向に想定以上に動き、アットザマネー周辺で適切な取引が継続できるバリア価格が無くなった場合には、途中でバリア価格を追加することがありますが、ただし、バリア価格が追加された場合であっても、それまで利用したバリア価格は引き続き取引を行い、またその取引価格が、バリア価格の追加の影響を受けることはありません。"
 
 msgid "{JAPAN ONLY}In a Government or Juridicial position such as:"
 msgstr "外国において下記の職にある者"
@@ -8732,9 +8705,7 @@ msgid "{JAPAN ONLY}In case of the right to sell the underlying asset (put option
 msgstr "プットオプション（原資産を売る権利）の場合、原資産価格が上昇すると、オプションの価格は高くなります。"
 
 msgid "{JAPAN ONLY}In contrast to other types of FX options, short positions in FX Binary Options cannot be closed-out as they are not subject to loss-cut regulations."
-msgstr ""
-"通貨関連バイナリーオプションのショートポジションは、他の通貨関連オプションのショートポジションとは異なり、一般的にロスカット規制の対象となる金融商品ではな"
-"いため、ロスカットされることはありません。"
+msgstr "通貨関連バイナリーオプションのショートポジションは、他の通貨関連オプションのショートポジションとは異なり、一般的にロスカット規制の対象となる金融商品ではないため、ロスカットされることはありません。"
 
 msgid "{JAPAN ONLY}In general a binary option price will not exceed the payout amount."
 msgstr "インザマネーのバイナリーオプションの価格は、一般的にはペイアウト額を上回りません。"
@@ -8758,24 +8729,16 @@ msgid "{JAPAN ONLY}Introduction to Binary Options"
 msgstr "バイナリーオプション<br>の概要"
 
 msgid "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
-msgstr ""
-"バイナリーオプションでは、投資者に不利な方向に動いた場合には投資額を全額失うのに比べ、ＦＸは投資額の一部が残る場合があるので、一概にバイナリーオプションが"
-"有利とはいえません。"
+msgstr "バイナリーオプションでは、投資者に不利な方向に動いた場合には投資額を全額失うのに比べ、ＦＸは投資額の一部が残る場合があるので、一概にバイナリーオプションが有利とはいえません。"
 
 msgid "{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account."
 msgstr "本テストの結果により適正と判断し、取引を開始する場合は、その後当社との間に取引上のトラブルが生じたとしても、オプション取引に関わる知識が不足していたにも関わらず当社が取引を認めたことを訴因とはしないことに同意いただくものとします。"
 
 msgid "{JAPAN ONLY}It is possible to use two binary options to make a profit if the asset price settles inbetween the two strikes. It is also possible to buy a single range option that will achieve the same result."
-msgstr ""
-"２つのオプションを用い、バリア価格の高いバイナリープットオプションとバリア価格の低いバイナリーコールオプションを購入すれば、判定レートが２つのオプションの"
-"バリア価格の間となった場合に収益が得られ、判定レートが所定の価格帯の中であった場合にペイアウトとなるレンジバイナリーオプションに似た投資を行うことができま"
-"す。"
+msgstr "２つのオプションを用い、バリア価格の高いバイナリープットオプションとバリア価格の低いバイナリーコールオプションを購入すれば、判定レートが２つのオプションのバリア価格の間となった場合に収益が得られ、判定レートが所定の価格帯の中であった場合にペイアウトとなるレンジバイナリーオプションに似た投資を行うことができます。"
 
 msgid "{JAPAN ONLY}It is possible to use two binary options to make a profit if the asset price settles outside the two strikes. It is also possible to buy a single range option that will achieve the same result."
-msgstr ""
-"２つのオプションを用い、バリア価格の高いバイナリーコールオプションとバリア価格の低いバイナリープットオプションを購入すれば、判定レートが２つのオプションの"
-"バリア価格で作られた価格帯の外となった場合に収益が得られ、判定レートが所定の価格帯の外であった場合にペイアウトとなるレンジバイナリーオプションに似た投資を"
-"行うことができます。"
+msgstr "２つのオプションを用い、バリア価格の高いバイナリーコールオプションとバリア価格の低いバイナリープットオプションを購入すれば、判定レートが２つのオプションのバリア価格で作られた価格帯の外となった場合に収益が得られ、判定レートが所定の価格帯の外であった場合にペイアウトとなるレンジバイナリーオプションに似た投資を行うことができます。"
 
 msgid "{JAPAN ONLY}It prohibits the copying of the questions . In addition , You agree that you will not leak to third party"
 msgstr "問題の複写を禁止します。また、第三者に漏えいしないことに同意いただくものとします。"
@@ -8881,20 +8844,13 @@ msgid "{JAPAN ONLY}Option Type"
 msgstr "オプションタイプ"
 
 msgid "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
-msgstr ""
-"オプション価格を形成する要素には原資産価格、バリア価格、権利行使期限までの残り期間、ボラティリティ、金利があるが、バリア価格を除き、他の要素は常時変動し、"
-"オプション価格も変動する。したがってオプション取引のリスクを管理していくためには、それぞれの要素の変動とオプション価格の変動の関係を理解する必要があります"
-"。"
+msgstr "オプション価格を形成する要素には原資産価格、バリア価格、権利行使期限までの残り期間、ボラティリティ、金利があるが、バリア価格を除き、他の要素は常時変動し、オプション価格も変動する。したがってオプション取引のリスクを管理していくためには、それぞれの要素の変動とオプション価格の変動の関係を理解する必要があります。"
 
 msgid "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. However, when the remaining time to the exercise point is very short, there is no need to consider these when managing option trading risk, as all these elements are constant."
-msgstr ""
-"オプション価格を形成する要素には原資産価格、バリア価格、権利行使期限までの残り期間、変動率、金利があるが、権利行使期限までの期間が短いオプションの場合、そ"
-"れぞれの要素はオプションの権利行使期限まで一定であるので、オプション取引のリスクを管理するときには、特に考慮する必要はないです。"
+msgstr "オプション価格を形成する要素には原資産価格、バリア価格、権利行使期限までの残り期間、変動率、金利があるが、権利行使期限までの期間が短いオプションの場合、それぞれの要素はオプションの権利行使期限まで一定であるので、オプション取引のリスクを管理するときには、特に考慮する必要はないです。"
 
 msgid "{JAPAN ONLY}Option prices depend on the spot price, the time to expiry, the volatility of the spot rate and interest rates."
-msgstr ""
-"店頭バイナリーオプション取引において、万が一金融商品取引業者等が破たんした場合、オプションの条件がインザマネーになっていたとしても権利行使が行えない可能性"
-"があります。"
+msgstr "店頭バイナリーオプション取引において、万が一金融商品取引業者等が破たんした場合、オプションの条件がインザマネーになっていたとしても権利行使が行えない可能性があります。"
 
 msgid "{JAPAN ONLY}Options Basic Knowledge"
 msgstr "オプション取引の基本知識について"
@@ -8903,13 +8859,10 @@ msgid "{JAPAN ONLY}Options Basics"
 msgstr "オプション取引<br>の基本"
 
 msgid "{JAPAN ONLY}Options are said to be leveraged products because in the case of large moves in the underlying asset price, the values of the options can increase by large amounts compared to the price paid for the option."
-msgstr ""
-"買い手はオプションのレバレッジ効果により、オプション料に比べ数倍の利益が得られる可能性があるが損失はオプション料に限られます。一方で売り手は利益がオプショ"
-"ン料に限られるが損失はオプション料の数倍となる可能性があります。"
+msgstr "買い手はオプションのレバレッジ効果により、オプション料に比べ数倍の利益が得られる可能性があるが損失はオプション料に限られます。一方で売り手は利益がオプション料に限られるが損失はオプション料の数倍となる可能性があります。"
 
 msgid "{JAPAN ONLY}Options may be European or American style of exercise, and those which can be exercised at only one expiry time are the European style options."
-msgstr ""
-"オプション取引の種類は、ヨ－ロピアンタイプとアメリカンタイプの２種類がありますが、取引期間の満期時だけに権利行使できるものをヨーロピアンタイプとなります。"
+msgstr "オプション取引の種類は、ヨ－ロピアンタイプとアメリカンタイプの２種類がありますが、取引期間の満期時だけに権利行使できるものをヨーロピアンタイプとなります。"
 
 msgid "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to guide you through the process. Please also download our full guide to opening an account:"
 msgstr "リアル口座開設の手続きを進める上で、ご不明な点等がございましたら、当社カスタマーサポートまでご連絡ください。また、下記ダウンロードボタンをクリックして頂きリアル口座開設の手順を参照することができます。"
@@ -9053,9 +9006,7 @@ msgid "{JAPAN ONLY}Service Announcements"
 msgstr "お知らせ"
 
 msgid "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
-msgstr ""
-"通貨関連バイナリーオプションのショートポジションは、取引を行う前にあらかじめ必要証拠金を業者に預託し、取引成立後に証拠金が不足した場合には追加証拠金を業者"
-"に預託する必要があります。"
+msgstr "通貨関連バイナリーオプションのショートポジションは、取引を行う前にあらかじめ必要証拠金を業者に預託し、取引成立後に証拠金が不足した場合には追加証拠金を業者に預託する必要があります。"
 
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "残念ながら、合格点に達しませんでした。24時間以降（週末を除く）に再受験してください。"
@@ -9082,9 +9033,7 @@ msgid "{JAPAN ONLY}The Black-Scholes model is widely used to calculate theoretic
 msgstr "オプション価格を算出するモデルは、ブラック・ショールズが一般的に用いられています。"
 
 msgid "{JAPAN ONLY}The Exercise Price is the level at which the option buyer has the right to trade the underlying, and is also used for binary options to determine whether the buyer should receive a payout."
-msgstr ""
-"バリア価格とは、権利行使により原資産を購入または売却する価格であり、バイナリーオプションの場合には、ペイアウトの発生の有無を判断する基準価格ことをいいます"
-"。"
+msgstr "バリア価格とは、権利行使により原資産を購入または売却する価格であり、バイナリーオプションの場合には、ペイアウトの発生の有無を判断する基準価格ことをいいます。"
 
 msgid "{JAPAN ONLY}The Exit Price is the price that is observed at the judgment time, and is used to determine whether a payout should be made."
 msgstr "判定レートとは、権利行使時点の原資産価格であり、バリア価格と比較し、ペイアウトの有無を判断するための価格をいいます。"
@@ -9096,14 +9045,10 @@ msgid "{JAPAN ONLY}The beneficiary agent (B), who is an external lawyer, is boun
 msgstr "日証金信託銀行は、お客様の信託財産の返還を保証するものではありません。また、受益者代理人の運営及び管理責任を一切負いません。"
 
 msgid "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
-msgstr ""
-"プレーンオプションの買い手は、自分に不利なときには権利放棄するので、買い手の最大損失額はオプション料となります。利益額は原資産価格とバリア価格の差からオプ"
-"ション料を引いた額となり、原資産価格が無限大ならば、利益も無限大となります。"
+msgstr "プレーンオプションの買い手は、自分に不利なときには権利放棄するので、買い手の最大損失額はオプション料となります。利益額は原資産価格とバリア価格の差からオプション料を引いた額となり、原資産価格が無限大ならば、利益も無限大となります。"
 
 msgid "{JAPAN ONLY}The exit price is important in binary options. In case of handling the OTC currency-related binary options trading for private individuals, the broker company must perform inspections of the exit prices which have been used for determining option payout, and must check whether there is an error in the data in cases where that the company has used rated data provided by third company."
-msgstr ""
-"バイナリーオプション取引では、判定レートは重要であり、個人向け店頭通貨関連バイナリーオプション取引を取り扱う場合には、自社が決定する判定レートについて、ミ"
-"スや作為的な操作が行われていないか自ら点検するほか、第三者の提供するレートデータを用いる場合でも、データに誤りがないか点検しております。"
+msgstr "バイナリーオプション取引では、判定レートは重要であり、個人向け店頭通貨関連バイナリーオプション取引を取り扱う場合には、自社が決定する判定レートについて、ミスや作為的な操作が行われていないか自ら点検するほか、第三者の提供するレートデータを用いる場合でも、データに誤りがないか点検しております。"
 
 msgid "{JAPAN ONLY}The maximum loss for the buyer of an option is the price paid, and the maximium loss for the option seller will be the payout amount minus the opion price he received."
 msgstr "権利行使期限が到来し権利行使が行われない場合、オプションの権利は消滅するが、売り手が受け取ったオプション料はそのまま売り手のものとなります。"
@@ -9124,16 +9069,13 @@ msgid "{JAPAN ONLY}The price of a vanilla call option will be lower when price o
 msgstr "コールオプションの価格は原資産の金利が低下すると下降しますが、プットオプションの価格は、原資産の金利が低下なると上昇します。"
 
 msgid "{JAPAN ONLY}The price of an option can be affected by the underlying asset price, by the volatility rate of the underlying asset, or by the time remaining to the exercise time."
-msgstr ""
-"オプションの価格は、複数の要素により形成されているため、原資産の価格、原資産の価格変動率、権利行使期限までの時間、金利のいずれの影響を受けます。"
+msgstr "オプションの価格は、複数の要素により形成されているため、原資産の価格、原資産の価格変動率、権利行使期限までの時間、金利のいずれの影響を受けます。"
 
 msgid "{JAPAN ONLY}The sell-back execution level will then be confirmed and the position will be closed."
 msgstr "「売却」ボタンをクリックすると約定済み通知画面上に決済の参照番号が表示されます。"
 
 msgid "{JAPAN ONLY}The seller of a vanilla option can not choose whether to exercise the option or not. His profit is limited to the price received for the option, whereas his potential loss is unlimited and could be substantial."
-msgstr ""
-"プレーンオプションの売り手は、利益額はオプション料に限定されます。その一方で原資産価格と権利行使価格の差が損失となるので、原資産価格が無限大とすれば、その"
-"損失額も無限大となります。"
+msgstr "プレーンオプションの売り手は、利益額はオプション料に限定されます。その一方で原資産価格と権利行使価格の差が損失となるので、原資産価格が無限大とすれば、その損失額も無限大となります。"
 
 msgid "{JAPAN ONLY}The seller of an option should receive the option premium from the buyer, even if the buyer waives the right to exercise the option."
 msgstr "オプションの売り手は、買い手がオプションの権利を放棄した場合でも、買い手からオプション料を受け取ることができます。"
@@ -9145,18 +9087,13 @@ msgid "{JAPAN ONLY}The time-value of an option represents the expected value of 
 msgstr "時間的価値とは、オプションの残存期間を対象とした、将来の期待値であり、本源的価値がゼロであっても時間的価値はプラスとなります。"
 
 msgid "{JAPAN ONLY}There are many types of Binary Option, including some such as Range Binary Options and Touch or No-Touch Binary Options which do not always require automatic payment at Exercise Time and which will be settled earlier if certain conditions have been met. However, in all cases, for a payment to be required, the option must end In The Money."
-msgstr ""
-"バイナリーオプションには、単にオプションの満期を判定時刻として定め、判定時刻にインザマネーの場合に限り自動的に権利行使が行われ、オプションの買い手にペイア"
-"ウトが支払われる、一般的な内容のもののほか、レンジバイナリーオプションやタッチバイナリーオプション、ノータッチバイナリーオプションなどの複数の種類がありま"
-"す。"
+msgstr "バイナリーオプションには、単にオプションの満期を判定時刻として定め、判定時刻にインザマネーの場合に限り自動的に権利行使が行われ、オプションの買い手にペイアウトが支払われる、一般的な内容のもののほか、レンジバイナリーオプションやタッチバイナリーオプション、ノータッチバイナリーオプションなどの複数の種類があります。"
 
 msgid "{JAPAN ONLY}There are some types of Binary Option, such as Range Binary Options, Touch or No-Touch Binary Options, that are exceptions to the general rule where payment is made at a known exercise time. For these types of option a payment is made automatically at Exit Time when certain conditions have been met."
 msgstr "バイナリーオプションには、レンジバイナリーオプション、タッチバイナリーオプション、ノータッチバイナリーオプションなどの複数の種類があります。"
 
 msgid "{JAPAN ONLY}There are two types of option delivery: One requires exchanging the underlying asset, and the other requires a payment which depends on the difference between the fair market price and the exercise price. A Binary Option is the second type where if the fair market price meets certain conditions with respect to the exercise price, then an agreed fixed amount will be paid to the option buyer."
-msgstr ""
-"オプション取引には、権利行使によって、実際に原資産を受け渡すものと、原資産の時価と権利行使価格の差額を授受するものがあります。このうち、原資産の時価と権利"
-"行使価格が一定の条件を満たした場合には一定の金銭を支払うものをバイナリーオプションと呼びます。"
+msgstr "オプション取引には、権利行使によって、実際に原資産を受け渡すものと、原資産の時価と権利行使価格の差額を授受するものがあります。このうち、原資産の時価と権利行使価格が一定の条件を満たした場合には一定の金銭を支払うものをバイナリーオプションと呼びます。"
 
 msgid "{JAPAN ONLY}This knowledge test is required by law. As we provide the test, we know customers better whether the customers are suitable investors to be carried out the binary options trading, and customers can start trading with us."
 msgstr "この知識確認テストは、法令で義務付けられており、当社がお客様の事を知り、お客様がバイナリーオプション取引を行うことに適した投資者がどうかを判断したうえで、お客様との取引を開始するためのものです。"
@@ -9247,9 +9184,7 @@ msgid "{JAPAN ONLY}When buying a vanilla put option, the break-even price at the
 msgstr "プットオプションの買いの損益分岐点は、バリア価格に原資産1単位当たりのオプション料を減算した価格となります。"
 
 msgid "{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time."
-msgstr ""
-"金融商品の店頭取引の価格について、金融商品取引業者が買値と売値（又は買戻取価格、解約価格）の２つの価格をお客様に提示する場合、一般的には２つの価格には差（"
-"スプレッド）がありますが、このスプレッドはオプションの権利行使期限が近付くにつれて広がる傾向があります。"
+msgstr "金融商品の店頭取引の価格について、金融商品取引業者が買値と売値（又は買戻取価格、解約価格）の２つの価格をお客様に提示する場合、一般的には２つの価格には差（スプレッド）がありますが、このスプレッドはオプションの権利行使期限が近付くにつれて広がる傾向があります。"
 
 msgid "{JAPAN ONLY}Win Loss Ratio"
 msgstr "バイナリーオプション取引月次取引実績"
