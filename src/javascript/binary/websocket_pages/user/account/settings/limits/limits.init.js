@@ -1,4 +1,5 @@
 var template = require('../../../../../base/utility').template;
+var LimitsUI = require('./limits.ui').LimitsUI;
 
 var LimitsWS = (function(){
     "use strict";

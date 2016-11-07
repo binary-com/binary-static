@@ -15,6 +15,7 @@ var APITokenWS = require('./user/account/settings/api_token').APITokenWS;
 var AuthorisedApps = require('./user/account/settings/authorised_apps').AuthorisedApps;
 var FinancialAssessmentws = require('./user/account/settings/financial_assessment').FinancialAssessmentws;
 var IPHistoryWS = require('./user/account/settings/iphistory').IPHistoryWS;
+var Limits = require('./user/account/settings/limits').Limits;
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
@@ -223,6 +224,17 @@ pjax_config_page_require_auth("user/security/iphistoryws", function(){
         },
         onUnload: function() {
             IPHistoryWS.onUnload();
+        }
+    };
+});
+
+pjax_config_page_require_auth("limitsws", function(){
+    return {
+        onLoad: function() {
+            Limits.onLoad();
+        },
+        onUnload: function(){
+            Limits.onUnload();
         }
     };
 });
