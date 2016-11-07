@@ -1,11 +1,12 @@
 var ValidAccountOpening = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
+var AccountOpening = require('../../../common_functions/account_opening').AccountOpening;
 
 pjax_config_page("new_account/realws", function(){
   return {
     onLoad: function() {
       Content.populate();
       ValidAccountOpening.redirectCookie();
-      handle_residence_state_ws();
+      AccountOpening.handle_residence_state_ws();
       if (page.client.residence) {
         BinarySocket.send({landing_company: page.client.residence});
       }

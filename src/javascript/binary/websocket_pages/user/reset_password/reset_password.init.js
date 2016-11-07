@@ -2,6 +2,9 @@ var Login = require('../../../base/login').Login;
 var PasswordMeter = require('../../../common_functions/attach_dom/password_strength_meter').PasswordMeter;
 var passwordValid = require('../../../common_functions/validation').passwordValid;
 var showPasswordError = require('../../../common_functions/validation').showPasswordError;
+var japanese_client = require('../../../common_functions/country_base').japanese_client;
+var CommonFunctions = require('../../../common_functions/common_functions').CommonFunctions;
+var generateBirthDate = require('../../../common_functions/attach_dom/birth_date_dropdown').generateBirthDate;
 
 var ResetPassword = (function () {
     'use strict';
@@ -56,7 +59,7 @@ var ResetPassword = (function () {
         var dobEntered = dobdd && dobmm && dobyy;
         if (dobEntered) {
             var dob;
-            if (!isValidDate(dobdd, dobmm, dobyy)) {
+            if (!CommonFunctions.isValidDate(dobdd, dobmm, dobyy)) {
                 $('#dob-error').removeClass(hiddenClass).text(page.text.localize('Invalid format for date of birth.'));
                 return;
             }

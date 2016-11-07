@@ -8,6 +8,7 @@ var MarketTimesUI = require('./resources/market_times/market_timesws.ui').Market
 var AuthenticateWS = require('./user/account/authenticate').AuthenticateWS;
 var PasswordWS = require('./user/account/change_password').PasswordWS;
 var PaymentAgentTransferSocket = require('./user/account/payment_agent_transfer').PaymentAgentTransferSocket;
+var japanese_client = require('../common_functions/country_base').japanese_client;
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {

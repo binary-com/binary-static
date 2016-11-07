@@ -44,7 +44,6 @@ exportAllFunctions(require('./binary/base/onerror'));
 exportAllFunctions(require('./binary/base/page'));
 exportAllFunctions(require('./binary/base/pjax'));
 
-exportAllFunctions(require('./binary/common_functions/frontend'));
 exportAllFunctions(require('./binary/static_pages/charity'));
 
 exportAllFunctions(require('./binary/static_pages/static_pjax'));

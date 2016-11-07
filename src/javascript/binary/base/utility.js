@@ -1,3 +1,5 @@
+var japanese_client = require('../common_functions/country_base').japanese_client;
+
 //////////////////////////////////////////////////////////////////
 // Purpose: Write loading image to a container for ajax request
 // Parameters:

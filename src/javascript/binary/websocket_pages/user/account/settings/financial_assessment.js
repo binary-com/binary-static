@@ -1,5 +1,6 @@
 var showLoadingImage = require('../../../../base/utility').showLoadingImage;
 var RiskClassification = require('../../../../common_functions/risk_classification').RiskClassification;
+var japanese_client = require('../../../../common_functions/country_base').japanese_client;
 
 var FinancialAssessmentws = (function(){
    "use strict";

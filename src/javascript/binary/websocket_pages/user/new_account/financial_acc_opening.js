@@ -1,4 +1,5 @@
 var ValidAccountOpening = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
+var AccountOpening = require('../../../common_functions/account_opening').AccountOpening;
 
 pjax_config_page_require_auth("new_account/maltainvestws", function(){
   return {
@@ -12,7 +13,7 @@ pjax_config_page_require_auth("new_account/maltainvestws", function(){
           $('.security').hide();
         }
       }
-      handle_residence_state_ws();
+      AccountOpening.handle_residence_state_ws();
       BinarySocket.send({residence_list:1});
       BinarySocket.send({get_financial_assessment:1});
       $('#financial-form').submit(function(evt) {

@@ -1,5 +1,6 @@
 var AssetIndexUI = require('../../resources/asset_index/asset_indexws.ui').AssetIndexUI;
 var MarketTimesUI = require('../../resources/market_times/market_timesws.ui').MarketTimesUI;
+var japanese_client = require('../../../common_functions/country_base').japanese_client;
 
 /*
  * This file contains the code related to loading of trading page bottom analysis

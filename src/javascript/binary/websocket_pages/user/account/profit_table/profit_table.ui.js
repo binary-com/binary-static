@@ -4,6 +4,7 @@ var Table = require('../../../../common_functions/attach_dom/table').Table;
 var format_money = require('../../../../common_functions/currency_to_symbol').format_money;
 var format_money_jp = require('../../../../common_functions/currency_to_symbol').format_money_jp;
 var showTooltip = require('../../../../common_functions/get_app_details').showTooltip;
+var japanese_client = require('../../../../common_functions/country_base').japanese_client;
 
 var ProfitTableUI = (function(){
     "use strict";

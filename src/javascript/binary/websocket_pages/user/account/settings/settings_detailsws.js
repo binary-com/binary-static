@@ -1,4 +1,5 @@
 var ValidateV2 = require('../../../../common_functions/validation_v2').ValidateV2;
+var CommonFunctions = require('../../../../common_functions/common_functions').CommonFunctions;
 var bind_validation = require('../../../../validator').bind_validation;
 
 var SettingsDetailsWS = (function() {
@@ -49,7 +50,7 @@ var SettingsDetailsWS = (function() {
         });
         if (isJP && !isVirtual) {
             $('#fieldset_email_consent').removeClass('invisible');
-            detect_hedging($('#PurposeOfTrading'), $('.hedge'));
+            CommonFunctions.detect_hedging($('#PurposeOfTrading'), $('.hedge'));
         }
     }
 

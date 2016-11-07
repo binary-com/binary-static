@@ -1,6 +1,9 @@
 var template = require('../../../base/utility').template;
 var testPassword = require('../../../common_functions/passwordmeter').testPassword;
+var CommonFunctions = require('../../../common_functions/common_functions').CommonFunctions;
+var japanese_client = require('../../../common_functions/country_base').japanese_client;
 var bind_validation = require('../../../validator').bind_validation;
+var AccountOpening = require('../../../common_functions/account_opening').AccountOpening;
 
 pjax_config_page("new_account/virtualws", function() {
     function onSuccess(res) {
@@ -49,13 +52,13 @@ pjax_config_page("new_account/virtualws", function() {
 
     function init() {
         Content.populate();
-        handle_residence_state_ws();
+        AccountOpening.handle_residence_state_ws();
         BinarySocket.send({residence_list: 1});
         BinarySocket.send({website_status: 1});
 
         var form = $('#virtual-form')[0];
         if (!form) return;
-        if (!isIE()) {
+        if (!CommonFunctions.isIE()) {
             $('#password').on('input', function() {
                 $('#password-meter').attr('value', testPassword($('#password').val())[0]);
             });

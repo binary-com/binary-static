@@ -4,15 +4,19 @@ var GetStartedJP = require('./get_started_jp').GetStartedJP;
 var JobDetails = require('./job_details').JobDetails;
 var Platforms = require('./platforms').Platforms;
 var Regulation = require('./regulation').Regulation;
-var submit_email = require('../websocket_pages/user/verify_email').submit_email;
 var MBTradePage = require('../websocket_pages/mb_trade/mb_tradepage').MBTradePage;
+var Scroll = require('../common_functions/scroll').Scroll;
+var GetStarted = require('./get_started').GetStarted;
+var Contact = require('./contact').Contact;
+var Careers = require('./careers').Careers;
+var Home = require('./home').Home;
+var WhyUs = require('./why_us').WhyUs;
 
 pjax_config_page('/home', function() {
     return {
         onLoad: function() {
             if(!page.client.redirect_if_login()) {
-                check_login_hide_signup();
-                submit_email();
+                Home.init();
             }
         }
     };
@@ -21,8 +25,7 @@ pjax_config_page('/home', function() {
 pjax_config_page('/why-us', function() {
     return {
         onLoad: function() {
-            sidebar_scroll($('.why-us'));
-            hide_if_logged_in();
+            WhyUs.init();
         },
         onUnload: function() {
             $(window).off('scroll');
@@ -46,7 +49,7 @@ pjax_config_page('/volidx-markets', function() {
 pjax_config_page('/open-source-projects', function() {
     return {
         onLoad: function() {
-            sidebar_scroll($('.open-source-projects'));
+            Scroll.sidebar_scroll($('.open-source-projects'));
         },
         onUnload: function() {
             $(window).off('scroll');
@@ -57,7 +60,7 @@ pjax_config_page('/open-source-projects', function() {
 pjax_config_page('/payment-agent', function() {
     return {
         onLoad: function() {
-            sidebar_scroll($('.payment-agent'));
+            Scroll.sidebar_scroll($('.payment-agent'));
         },
         onUnload: function() {
             $(window).off('scroll');
@@ -69,7 +72,7 @@ pjax_config_page('/get-started', function() {
     return {
         onLoad: function() {
             if (!/get-started-jp/.test(window.location.pathname)) {
-                get_started_behaviour();
+                GetStarted.get_started_behaviour();
             }
         },
         onUnload: function() {
@@ -81,9 +84,7 @@ pjax_config_page('/get-started', function() {
 pjax_config_page('/contact', function() {
     return {
         onLoad: function() {
-            $('#faq_url').attr('href', 'https://binary.desk.com/customer/' + page.language() + "/portal/articles");
-            display_cs_contacts();
-            show_live_chat_icon();
+            Contact.init();
         },
     };
 });
@@ -91,7 +92,7 @@ pjax_config_page('/contact', function() {
 pjax_config_page('/careers', function() {
     return {
         onLoad: function() {
-            display_career_email();
+            Careers.display_career_email();
         },
     };
 });

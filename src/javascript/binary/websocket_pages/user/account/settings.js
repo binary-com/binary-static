@@ -1,3 +1,5 @@
+var japanese_client = require('../../../common_functions/country_base').japanese_client;
+
 var SettingsWS = (function() {
     "use strict";
 

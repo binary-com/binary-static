@@ -1,3 +1,5 @@
+var japanese_client = require('../../../../common_functions/country_base').japanese_client;
+
 pjax_config_page_require_auth("user/security/authorised_appsws", function(){
     return {
         onLoad: function() {
