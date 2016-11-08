@@ -21,6 +21,7 @@
             <p>[% l("No open positions.") %]</p>
         </div>
 
+        <div class="table-container">
         <table id="portfolio-table">
             <thead>
                 <tr>
@@ -44,5 +45,6 @@
                 </tr>
             </tfoot>
         </table>
+        </div>
     </div>
 </div>
