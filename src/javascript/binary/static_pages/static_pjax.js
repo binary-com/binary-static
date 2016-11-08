@@ -12,6 +12,7 @@ var Careers = require('./careers').Careers;
 var Home = require('./home').Home;
 var WhyUs = require('./why_us').WhyUs;
 var CharityPage = require('./charity').CharityPage;
+var TermsAndConditions = require('./tnc').TermsAndConditions;
 
 pjax_config_page('/home', function() {
     return {

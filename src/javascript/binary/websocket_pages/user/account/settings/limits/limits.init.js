@@ -58,7 +58,9 @@ var LimitsWS = (function(){
     }
 
     function initTable(){
-        document.getElementById('client_message').setAttribute('style', 'display:none');
+        var client_message = document.getElementById('client_message');
+        if (!client_message) return;
+        client_message.setAttribute('style', 'display:none');
         LimitsUI.clearTableContent();
     }
 

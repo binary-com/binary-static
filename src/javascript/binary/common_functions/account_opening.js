@@ -3,6 +3,7 @@ var objectNotEmpty = require('../base/utility').objectNotEmpty;
 var Validate = require('../common_functions/validation').Validate;
 var japanese_client = require('../common_functions/country_base').japanese_client;
 var CommonFunctions = require('../common_functions/common_functions').CommonFunctions;
+var generateBirthDate = require('./attach_dom/birth_date_dropdown').generateBirthDate;
 
 var AccountOpening = (function() {
     function handle_account_opening_settings(response) {
