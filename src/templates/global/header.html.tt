@@ -27,14 +27,14 @@
         <div class='container'>
             <div class='gr-12'>
                 <div class='gr-row gr-row-align-middle'>
-                    <div class='gr-3 gr-2-m gr-2-p gr-padding-10'>
+                    <div class='gr-3 gr-2-m gr-2-p'>
                         <a id="logo" href="javascript:;">
-                            <div class='gr-row'>
-                                <div class='gr-3 gr-12-m gr-12-p gr-no-gutter'>
-                                    <img class='responsive' src="[% request.url_for('images/pages/binary-symbol-logo.svg') %]" />
+                            <div class='gr-row logo-parent'>
+                                <div class='gr-3 gr-12-m gr-12-p gr-no-gutter logo'>
+                                    <img class='responsive' src="https://style.binary.com/images/logo/symbol.svg" />
                                 </div>
-                                <div class='gr-9 gr-hide-m gr-hide-p' id='binary-logo-text'>
-                                    <img class='responsive' src="[% request.url_for('images/pages/binary-type-logo.svg') %]" />
+                                <div class='gr-9 gr-hide-m gr-hide-p binary-logo-text'>
+                                    <img class='responsive' src="https://style.binary.com/images/logo/type.svg" />
                                 </div>
                             </div>
                         </a>
