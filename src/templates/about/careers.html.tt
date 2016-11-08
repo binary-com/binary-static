@@ -159,7 +159,7 @@
                   <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/blog.svg') %]"/>
                 </div>
                 <div class="text">
-                  <a download="[% true %]" href="[% request.url_for('/download/binary-employee-handbook.pdf') %]" target="_blank">
+                  <a href="https://blog.binary.com" target="_blank">
                     [% l("Read our blog for the stories and ideas that inspire us") %]
                   </a>
                 </div>
