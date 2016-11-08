@@ -22,11 +22,6 @@
         @keyframes spinning{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
         @-webkit-keyframes spinning{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
         #login_loading {text-align: center; padding-top: 90px;}
-        #login_loading .spinner {
-            width: 160px; height: 160px;
-            -webkit-animation: spinning 1s infinite linear;
-            animation: spinning 1s infinite linear;
-        }
     </style>
 </head>
 <body onload="LoggedInHandler.init();">
@@ -38,7 +33,7 @@
     </div>
     <div id="login_loading">
         <a href="[% request.url_for('/') %]" id="loading_link">
-            <img class="spinner" src="[% request.url_for('images/pages/binary-symbol-logo.svg') %]" alt="" />
+            [% INCLUDE global/loading.html.tt %]
         </a>
     </div>
 </body>

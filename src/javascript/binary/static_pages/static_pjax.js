@@ -131,8 +131,8 @@ pjax_config_page('\/login|\/loginid_switch', function() {
 
 pjax_config_page('/trading', function () {
     return {
-        onLoad: function(){if(/trading\.html/.test(window.location.pathname)) TradePage.onLoad();},
-        onUnload: function(){if(/trading\.html/.test(window.location.pathname)) TradePage.onUnload();}
+        onLoad: function(){if(/\/trading\.html/.test(window.location.pathname)) TradePage.onLoad();},
+        onUnload: function(){if(/\/trading\.html/.test(window.location.pathname)) TradePage.onUnload();}
     };
 });
 
@@ -150,7 +150,7 @@ pjax_config_page('/multi_barriers_trading', function () {
     };
 });
 
-pjax_config_page('/jptrading', function () {
+pjax_config_page('/jp_trading', function () {
     return {
         onLoad: function(){JPTradePage.onLoad();},
         onUnload: function(){JPTradePage.onUnload();}

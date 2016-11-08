@@ -562,7 +562,7 @@ Menu.prototype = {
         this.hide_main_menu();
 
         var active = this.active_menu_top();
-        var trading = new RegExp('\/(jp|multi_barriers_|)trading\.html');
+        var trading = new RegExp('\/(jp_|multi_barriers_|)trading\.html');
         var trading_is_active = trading.test(window.location.pathname);
         if (active) {
             active.addClass('active');

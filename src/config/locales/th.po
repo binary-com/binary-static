@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-31 16:37+0000\n"
+"PO-Revision-Date: 2016-11-04 04:29+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -275,7 +275,7 @@ msgid "%1's systems are now processing in excess of 1 million transactions/day (
 msgstr "ระบบต่างๆ ของ %1 ขณะนี้มีการประมวลผลมากกว่า 1 ล้านธุรกรรมต่อวัน (รวมประเภทบัญชีเสมือน หรือ บัญชีทดลองใช้)"
 
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
-msgstr ""
+msgstr "แนวคิดการบริจาคเพื่อการกุศลของ%1 มุ่งต่อองค์กรการกุศลขนาดเล็ก และองค์กรที่ไม่แสวงหากำไรทั่วโลกซึ่งสร้างสรรค์ความแตกต่างให้กับชุมชนของพวกเขา การบริจาคของเราเพื่อให้บังเกิดผลต่อหน่วยงานเล็กๆ เหล่านั้นโดยตรง ปราศจากภาระของค่าใช้จ่ายที่ใช้ในการดำเนินธุรกิจที่มีในองค์กรการกุศลใหญ่ๆ อื่นๆ"
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(ระยะเวลาที่ต่ำที่สุด, ตัวอย่าง ระยะที่ต่ำที่สุด 15 วินาที)นาที"
@@ -672,10 +672,10 @@ msgid "<strong>Volatile markets</strong> - choose the one-touch trade, the goes-
 msgstr "<strong>ตลาดผันผวน</strong> - ให้ใช้ One-Touch Trade ซึ่งอาจจะผันผวนออกนอกกรอบ หรือ สิ้นสุดนอกกรอบที่คาดไว้"
 
 msgid "<strong>Volatility Indices</strong> - trade %1's proprietary volatility indices."
-msgstr "<strong>ดัชนีผันผวน</strong> - เทรด %1 กับผลิตภัณฑ์ลิขสิทธิ์ดัชนีผันผวน"
+msgstr "<strong>ดัชนีผันผวน</strong> - เลือกทำกำไรกับผลิตภัณฑ์ลิขสิทธิ์ดัชนีผันผวนของ %1"
 
 msgid "<strong>Volatility indices</strong> - trade %1's own volatility indices, 24/7."
-msgstr "<strong>ดัชนีผันผวน</strong> - เทรด %1 กับผลิตภัณฑ์ลิขสิทธิ์ดัชนีผันผวน ตลอด 24 ชั่วโมง 7 วัน"
+msgstr "<strong>ดัชนีผันผวน</strong> - เลือกทำกำไรกับผลิตภัณฑ์ลิขสิทธิ์ดัชนีผันผวนของ %1 ตลอด 24 ชั่วโมง 7 วัน"
 
 msgid "<ul><li> Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>. </li><li> Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button. </li><li> Under the <strong>Cookies</strong> section, select the \"<strong>Don't block cookies</strong>\" option. </li><li> Click anywhere outside the menu to save and close. </li></ul>"
 msgstr "<ul><li> ไปที่เมนู <strong>More actions</strong> และเลือก <strong>Settings</strong></li><li> บริเวณข้างล่าง เลือกที่<strong>Advanced Settings</strong>, คลิกปุ่ม <strong>View advanced settings</strong></li><li> บริเวณข้างล่าง ส่วนที่เป็น <strong>Cookies</strong> เลือกค่า \"<strong>Don't block cookies</strong>\"</li><li> คลิกพื้นที่ข้างนอกของเมนูเพื่อบันทึกและปิด </li></ul>"
@@ -699,7 +699,7 @@ msgid "A Bachelor's degree in Computer Science, or an equivalent combination of 
 msgstr "สำเร็จการศึกษาสาขาวิทยาการคอมพิวเตอร์ หรือเทียบเท่า โดยมีทักษะเชิงเทคนิค อบรมหลักสูตรต่างๆ ที่เกี่ยวข้อง และประสบการณ์การทำงาน"
 
 msgid "A Bachelor's degree in Marketing, Business Administration, or related discipline"
-msgstr "สำเร็จการศึกษาในสาขาการตลาด สาขาบริหารธุรกิจ หรือสาขาเทียบเท่าที่เกี่ยวข้อง"
+msgstr "สำเร็จการศึกษาในสาขาการตลาด สาขาบริหารธุรกิจ หรือสาขาเทียบเท่าในหลักสูตรที่เกี่ยวข้อง"
 
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "ตัวแทนรับชำระเงินเป็นเหมือนตัวกลางแลกเปลี่ยนระหว่างลูกค้าและ %1 ตัวแทนรับชำระเงินอำนวยความสะดวกในการฝากเงินและถอนเงินให้กับลูกค้าที่ปรารถนาจะใช้ช่องทางเงินสดอิเล็กทรอนิกส์ หรือ สกุลเงินท้องถิ่น ที่ไม่ได้บริการโดย %1 โดยค่าธรรมเนียมการโอนเงินรับผิดชอบโดยลูกค้าผู้ทำธุรกรรม"
@@ -2489,6 +2489,9 @@ msgstr "ประมาณการมูลค่าสุทธิ"
 msgid "Ethics Code"
 msgstr "จรรยาบรรณ"
 
+msgid "Eurobasket Wolves"
+msgstr ""
+
 msgid "European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd."
 msgstr "สมาชิกในประชาคมยุโรปได้รับข้อยกเว้นเช่นเดียวกับประชาชนในสหราชอาณาจักร สำหรับผู้ที่เทรดผลิตภัณฑ์การพนันที่มีบัญชีที่เปิดกับบริษัท Binary (Europe) Ltd."
 
@@ -4191,7 +4194,7 @@ msgid "Make your trade"
 msgstr "ซื้อขาย"
 
 msgid "Making a Positive Impact in Local Communities"
-msgstr ""
+msgstr "การสร้างสรรค์ผลลัพธ์เชิงบวกให้กับชุมชนท้องถิ่นต่างๆ"
 
 msgid "Malaysia"
 msgstr "มาเลเซีย"
@@ -5647,6 +5650,9 @@ msgstr "การโมฆะเป็นบางส่วน"
 msgid "Sharp prices"
 msgstr "ราคาเฉียบ"
 
+msgid "Shelter Home’s Shelter Community Learning Centre 3"
+msgstr ""
+
 msgid "Shop"
 msgstr "ร้าน"
 
@@ -6142,6 +6148,9 @@ msgstr "กฎหมายการป้องกันข้อมูลแล
 msgid "The EUR Index is a weighted Index, measuring the Euro's value against a basket of 5 global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%."
 msgstr "EUR Index เป็นดัชนีถ่วงน้ำหนัก ที่ใช้แสดงมูลค่าของเงินยูโรกับ 5 สกุลเงินหลักของโลก (USD, AUD, GBP, JPY, CAD) โดยมีนำ้หนักแต่ละสกุลเงินที่ 20%"
 
+msgid "The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds."
+msgstr ""
+
 msgid "The Financial Products that we offer to deal in are contracts entered into between you and us. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that you pay us, we promise to pay you a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that we hold on your behalf and neither benefit from clients' assets protection in the event of our insolvency. Similarly the premium or price that you pay to take out a trade is not held as clients' money but as consideration for our undertaking to pay."
 msgstr "ผลิตภัณฑ์ทางการเงินที่พวกเรานำเสนอในการซื้อขายสัญญาระหว่างท่านและพวกเรา ในสัญญาต่างๆ นั้น ขึ้นกับข้อตกลงที่ระบุเจาะจงไว้ของสัญญาที่เกี่ยวข้อง ในการพิจารณาค่าบริการ หรือ ราคาที่ท่านชำระให้เรา พวกเราสัญญาที่จะชำระให้ท่านด้วยจำนวนที่ตกลงตามสินทรัพย์อ้างอิง หรือ ผลที่เกิดขึ้นในแต่ละกรณี สัญญาต่างๆ นั้นไม่ได้เป็นเครื่องมือที่พวกเราถือในนามของท่าน และไม่เป็นผลประโยชน์จากการป้องกันทรัพย์สินของลูกค้าในกรณีการล้มละลายของเรา ในทำนองเดียวกันค่าบริการ หรือ ราคาที่ท่านชำระให้เราไม่ถือเป็นเงินของลูกค้าแต่ถูกพิจารณาเป็นภาระหน้าที่ความรับผิดชอบในการชำระของเรา"
 
@@ -6159,6 +6168,9 @@ msgstr "Pillar 3 รายงานที่เปิดเผยข้อมู
 
 msgid "The Program"
 msgstr "โปรแกรม"
+
+msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
+msgstr ""
 
 msgid "The USD Index is a weighted Index, measuring the US Dollar's value against a basket of 5 global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%."
 msgstr "ดัชนี USD เป็นดัชนีถ่วงน้ำหนัก แสดงมูลค่าของค่าเงินดอลลาร์สหรัฐต่อ 5 สกุลเงินสากล (EUR, GBP, JPY, CAD, AUD) โดยใช้ร้อยละ 20 ในการถ่วงน้ำหนัก"
@@ -6618,9 +6630,9 @@ msgid "To qualify, you'll need an advanced university degree in Physics, Financi
 msgstr "สำหรับตำแหน่งนี้ ท่านต้องสำเร็จการศึกษาขั้นสูงในสาขา ฟิสิกส์ วิศวกรรมการเงิน หรือ คณิตศาสตร์"
 
 #, fuzzy
-#| msgid "To reset your password, enter the e-mail address you registered in the field below and click "
-msgid "To reset your password, enter the e-mail address you registered in the field below and click 'RESET PASSWORD'."
-msgstr "เพื่อตั้งค่ารหัสผ่านของท่านใหม่ ป้อนอีเมล์ที่ท่านลงทะเบียนไว้ในช่องว่างข้างล่างและคลิก "
+#| msgid "To reset your password, enter the e-mail address you registered in the field below and click 'RESET PASSWORD'."
+msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
+msgstr "เพื่อตั้งค่ารหัสผ่านของท่านใหม่ ป้อนอีเมล์ที่ท่านลงทะเบียนไว้ในช่องว่างข้างล่างและคลิก 'ตั้งรหัสผ่านใหม่'"
 
 msgid "Today"
 msgstr "วันนี้"
@@ -6814,6 +6826,11 @@ msgstr "ลูกค้าในสหราชอาณาจักร แล�
 msgid "UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
 msgstr "ลูกค้าในสหราชอาณาจักรที่ลงทะเบียนกับ Binary (Europe) Ltd สามารถส่งข้อร้องเรียนให้กับหน่วยงานทางเลือกที่รับข้อโต้แย้ง IBAS โดยกรอกแบบฟอร์ม Adjudication Formของ ADR"
 
+#, fuzzy
+#| msgid "EUR"
+msgid "URL"
+msgstr "EUR"
+
 msgid "US Patents"
 msgstr "สิทธิบัตร US"
 
@@ -6824,7 +6841,7 @@ msgid "UX / UI experience"
 msgstr "ประสบการณ์ในการออกแบบและพัฒนา UX / UI"
 
 msgid "Ukraine"
-msgstr ""
+msgstr "ยูเครน"
 
 msgid "Ultra fast on-the-go trading"
 msgstr "การซื้อขายที่เร็วยิ่งยวด"
@@ -9028,10 +9045,8 @@ msgstr "ประวัติบริษัท"
 msgid "Service Announcements"
 msgstr "ประกาศบริการ"
 
-#, fuzzy
-#| msgid "Chart"
 msgid "Charity"
-msgstr "แผนภูมิ"
+msgstr "การกุศล"
 
 msgid "Open-Source Projects"
 msgstr "โครงการโอเพ่นซอส"

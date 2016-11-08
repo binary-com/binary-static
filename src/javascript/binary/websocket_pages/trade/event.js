@@ -54,8 +54,8 @@ var TradingEvents = (function () {
                 make_price_request = -1;
             }
             Defaults.remove('duration_units', 'duration_amount');
-        }
-        else{
+        } else {
+            StartDates.enable();
             Durations.display();
             if(Defaults.get('duration_units')){
                 TradingEvents.onDurationUnitChange(Defaults.get('duration_units'));
