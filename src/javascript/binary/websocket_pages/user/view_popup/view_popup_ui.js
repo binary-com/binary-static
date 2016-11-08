@@ -70,6 +70,7 @@ var ViewPopupUI = (function() {
                 $('.popup_page_overlay').hide().remove();
                 this._container = null;
             }
+            $('html').removeClass('no-scroll');
         },
         disable_button: function (button) {
             $('.open_contract_detailsws[disabled]').each(function() {
@@ -95,6 +96,7 @@ var ViewPopupUI = (function() {
             con.css('position', 'fixed').css('z-index', get_highest_zindex() + 100);
             body.append(con);
             con.show();
+            $('html').addClass('no-scroll');
             $(document.body).append($('<div/>', {class: 'popup_page_overlay'}));
             $('.popup_page_overlay').click(function(){ViewPopupUI.container().find('a.close').click();});
             con.draggable({
