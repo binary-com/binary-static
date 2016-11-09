@@ -4042,9 +4042,6 @@ msgstr "Ucz się od nas"
 msgid "Learn more"
 msgstr "Dowiedz się więcej"
 
-msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
-msgstr "Dowiedz się więcej na temat sposobu naszej pracy. Przeczytaj treści na <a href='https://blog.binary.com/' target='_blank'>naszym blogu</a>, aby poznać historie i pomysły, które nas inspirują."
-
 msgid "Learn more about our corporate culture"
 msgstr "Dowiedz się więcej o naszej kulturze korporacyjnej"
 
@@ -5272,6 +5269,9 @@ msgstr "W poniższym prospekcie Binary Investments (Europe) Limited znajdziesz i
 msgid "Read about the five types of trade offered by %1."
 msgstr "Przeczytaj o pięciu rodzajach zakładów oferowanych na %1."
 
+msgid "Read our blog for the stories and ideas that inspire us"
+msgstr ""
+
 msgid "Read the answers to some common questions."
 msgstr "Przeczytaj odpowiedzi na często zadawane pytania."
 
@@ -6018,6 +6018,11 @@ msgstr "<strong>Godziną zakończenia</strong> jest wybrana liczba minut/godzin 
 
 msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>Godziną zakończenia</strong> jest wybrana liczba sekund/minut/godzin od <strong>godziny rozpoczęcia</strong> (jeśli trwa krócej niż 1 dzień) lub koniec dnia handlowego (jeśli trwa dłużej niż jeden dzień)."
+
+#, fuzzy
+#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
+msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
+msgstr "<strong>Cena wyjściowa</strong> to cena spot w <strong>momencie zakończenia</strong>."
 
 msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgstr "<strong>Cena wyjściowa</strong> to cena spot w <strong>momencie zakończenia</strong>."
@@ -9075,6 +9080,9 @@ msgstr "Dane konta"
 
 msgid "Terms and Conditions Approval"
 msgstr "Akceptacja regulaminu"
+
+#~ msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
+#~ msgstr "Dowiedz się więcej na temat sposobu naszej pracy. Przeczytaj treści na <a href='https://blog.binary.com/' target='_blank'>naszym blogu</a>, aby poznać historie i pomysły, które nas inspirują."
 
 #~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
 #~ msgstr "Wygraj od 10 do 1000% swojej stawki, jeśli Twoja prognoza się sprawdzi. Aby uzyskać wyższy zwrot, wybierz "

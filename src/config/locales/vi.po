@@ -4066,9 +4066,6 @@ msgstr "Tìm hiểu về chúng tôi"
 msgid "Learn more"
 msgstr "Tìm hiểu thêm"
 
-msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
-msgstr ""
-
 msgid "Learn more about our corporate culture"
 msgstr "Tìm hiểu thêm về văn hóa của tập đoàn chúng tôi"
 
@@ -5318,6 +5315,9 @@ msgstr "Đọc về các tính năng, đặc điểm, lợi ích và rủi ro c�
 msgid "Read about the five types of trade offered by %1."
 msgstr "Đọc về năm loại giao dịch được giới thiệu bởi %1."
 
+msgid "Read our blog for the stories and ideas that inspire us"
+msgstr ""
+
 msgid "Read the answers to some common questions."
 msgstr "Tìm hiểu câu trả lời của một số câu hỏi thường gặp."
 
@@ -6070,6 +6070,11 @@ msgstr "<strong>Thời gian kết thúc</strong> được lựa chọn là
 
 msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>Thời gian kết thúc</strong> được chọn là số giây,phút, giờ sau <strong>thời gian bắt đầu</strong> (nếu ít hơn một ngày trong khoảng thời gian), hoặc vào cuối ngày giao dịch (nếu một ngày hoặc nhiều hơn trong khoảng thời gian)."
+
+#, fuzzy
+#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
+msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
+msgstr "<strong>Giao ngay thoát ra</strong> là giá giao ngay tại <strong>thời gian kết thúc</strong>."
 
 msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgstr "<strong>Giao ngay thoát ra</strong> là giá giao ngay tại <strong>thời gian kết thúc</strong>."

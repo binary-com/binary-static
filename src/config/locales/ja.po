@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-07 06:10+0000\n"
+"PO-Revision-Date: 2016-11-08 05:22+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -395,7 +395,7 @@ msgid "30-day limit on losses"
 msgstr "30日間の損失制限"
 
 msgid "30-day turnover limit "
-msgstr "30日の取引数量限度額 "
+msgstr "30日の取引限度額 "
 
 msgid "4. Choose your Payout"
 msgstr "4. ペイアウトを選択"
@@ -425,7 +425,7 @@ msgid "7-day limit on losses"
 msgstr "7日間の損失制限"
 
 msgid "7-day turnover limit"
-msgstr "7日の取引数量限度額"
+msgstr "7日の取引限度額"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<<職務内容に戻る"
@@ -2121,7 +2121,7 @@ msgid "Daily limit on losses"
 msgstr "損失限度額（1日）"
 
 msgid "Daily turnover limit"
-msgstr "1日の取引数量限度額"
+msgstr "1日の取引限度額"
 
 msgid "Data Feed"
 msgstr "データフィード"
@@ -4101,9 +4101,6 @@ msgstr "トレードを学ぶ"
 msgid "Learn more"
 msgstr "詳細はこちら"
 
-msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
-msgstr "当社の企業理念や仕組みを見てみませんか。<a href='https://blog.binary.com/' target='_blank'>当社のブログ</a>から刺激あるストーリーやアイディアをご覧ください。"
-
 msgid "Learn more about our corporate culture"
 msgstr "当社の企業文化について詳しく見る"
 
@@ -4333,7 +4330,7 @@ msgid "Maximum aggregate contract purchases per day."
 msgstr "1日あたりの最大取引額(半角)"
 
 msgid "Maximum aggregate loss over a 30-day period."
-msgstr "30日間最大損失 (半角)"
+msgstr "30日間の最大損失 (半角)"
 
 msgid "Maximum aggregate loss over a 7-day period."
 msgstr "7日間の最大損失 (半角)"
@@ -4649,7 +4646,7 @@ msgid "Once the bonus is credited to your account, you may withdraw the bonus an
 msgstr "このタイプのボーナスが一旦付与されると、ボーナス自体、及びボーナスから得られた利益をいつでもご出金できます。"
 
 msgid "Once this limit is reached, you may no longer deposit."
-msgstr "上限額に達した場合、入金頂くことができません。"
+msgstr "上限額以上の入金はできません。"
 
 msgid "Once we receive your application, one of our affiliate managers will contact you to follow up with the next steps in the application process (this will include asking you to submit several documents)."
 msgstr "申請を受け取りましたら、申請プロセスの次のステップの案内をさせていただくために、当社アフィリエイトマネージャーがお客さまにご連絡をさせていただきます。（同時に書類の提出をお願いさせていただきます。）"
@@ -5341,6 +5338,9 @@ msgstr ""
 msgid "Read about the five types of trade offered by %1."
 msgstr "%1が提供する５種類のトレードについて"
 
+msgid "Read our blog for the stories and ideas that inspire us"
+msgstr ""
+
 msgid "Read the answers to some common questions."
 msgstr "よくあるご質問事項に対する回答はこちらから"
 
@@ -5571,7 +5571,7 @@ msgid "Sale Date"
 msgstr "売却/判定時刻"
 
 msgid "Sale Price"
-msgstr "決済価格"
+msgstr "転売価格（単価）"
 
 msgid "Saturday"
 msgstr "土曜日"
@@ -6091,6 +6091,11 @@ msgstr "<strong>取引期間</strong>は、取引期間開始時から判定時�
 
 msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>取引期間</strong>は、取引期間開始時から判定時刻までとなります。購入・売却は<strong>判定時刻2分前</strong>まで可能です。判定時刻2分前から新規購入＆売却注文は行えません。"
+
+#, fuzzy
+#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
+msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
+msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>の市場価格のことです。"
 
 msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>の市場価格のことです。"
@@ -6798,8 +6803,6 @@ msgstr "お客さまが当社とバイナリーオプション取引口座を開
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "物理学、金融工学、数学の大学上級学位が必要となります。"
 
-#, fuzzy
-#| msgid "To reset your password, enter the e-mail address you registered in the field below and click 'RESET PASSWORD'."
 msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
 msgstr "パスワードを再設定される場合は下記の入力欄に登録されたメールアドレスを入力し、「パスワード再設定」をクリックしてください。"
 
@@ -6999,10 +7002,8 @@ msgstr "イギリス及びマン島に居住のお客さまのご口座は
 msgid "UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
 msgstr "Binary (Europe) Ltdでご登録されたイギリス在住のお客さまは、ADR法人上の裁定フォームにご記入いただくことで、IBASの裁判外紛争解決法人に抵触内容をご提出いただけます。"
 
-#, fuzzy
-#| msgid "EUR"
 msgid "URL"
-msgstr "EUR"
+msgstr "URL"
 
 msgid "US Patents"
 msgstr "アメリカ合衆国での特許"
@@ -9323,6 +9324,9 @@ msgstr "ご口座の詳細情報"
 
 msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
+
+#~ msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
+#~ msgstr "当社の企業理念や仕組みを見てみませんか。<a href='https://blog.binary.com/' target='_blank'>当社のブログ</a>から刺激あるストーリーやアイディアをご覧ください。"
 
 #~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
 #~ msgstr "条件を満たすことで利益を確保することができます。設定によってはより高い利益を期待することができます。 "

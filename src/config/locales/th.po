@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-04 04:29+0000\n"
+"PO-Revision-Date: 2016-11-08 18:15+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.9-dev\n"
+"X-Generator: Weblate 2.9\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API ของ %1\" หมายถึง ระบบของ %1 ที่ประกอบด้วย ชุดคำสั่งต่างๆ โปรโตคอลต่างๆ เครื่องมือต่างๆ และทรัพยากรต่างๆ ที่ถูกพัฒนาขึ้นและดำเนินการโดย %1 ซึ่งท่านสามารถใช้งานแอพพลิเคชันได้เพื่อเชื่อมต่อกับแพลตฟอร์มการซื้อขายของ %1"
@@ -2490,7 +2490,7 @@ msgid "Ethics Code"
 msgstr "จรรยาบรรณ"
 
 msgid "Eurobasket Wolves"
-msgstr ""
+msgstr "ยูโรบาสเกต วูฟ (Eurobasket Wolves)"
 
 msgid "European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd."
 msgstr "สมาชิกในประชาคมยุโรปได้รับข้อยกเว้นเช่นเดียวกับประชาชนในสหราชอาณาจักร สำหรับผู้ที่เทรดผลิตภัณฑ์การพนันที่มีบัญชีที่เปิดกับบริษัท Binary (Europe) Ltd."
@@ -4043,9 +4043,6 @@ msgstr "เรียนรู้จากเรา"
 msgid "Learn more"
 msgstr "เรียนเพิ่มเติม"
 
-msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
-msgstr "มาดูว่าเราคิด และ ทำงานกันอย่างไร  อ่าน <a href='https://blog.binary.com/' target='_blank'>บล็อกของเรา</a> เพื่อศึกษาเรื่องราวและแนวคิดที่เป็นแรงบันดาลใจของเรา"
-
 msgid "Learn more about our corporate culture"
 msgstr "เรียนรู้เพิ่มเติมเกี่ยวกับวัฒนธรรมองค์กรของเรา"
 
@@ -5275,6 +5272,9 @@ msgstr "ศึกษาเพิ่มเติมเกี่ยวกับค
 msgid "Read about the five types of trade offered by %1."
 msgstr "อ่านเกี่ยวกับประเภทของการซื้อขาย 5 ประเภท โดย %1"
 
+msgid "Read our blog for the stories and ideas that inspire us"
+msgstr ""
+
 msgid "Read the answers to some common questions."
 msgstr "อ่านคำตอบของคำถามพื้นฐานต่างๆ"
 
@@ -5651,7 +5651,7 @@ msgid "Sharp prices"
 msgstr "ราคาเฉียบ"
 
 msgid "Shelter Home’s Shelter Community Learning Centre 3"
-msgstr ""
+msgstr "Shelter Home’s Shelter Community Learning Centre 3"
 
 msgid "Shop"
 msgstr "ร้าน"
@@ -6022,6 +6022,11 @@ msgstr "<strong>เวลาสิ้นสุด</strong> คือ กำห�
 msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>เวลาสิ้นสุด</strong> คือ กำหนดของชั่วโมง/นาที/วินาทีที่เลือกหลังจาก <strong>เวลาเริ่มต้น</strong> (หากเป็นช่วงเวลาที่น้อยกว่า 1 วัน) หรือ ณ สิ้นวันที่ทำการซื้อขาย (หากเป็นช่วงเวลา 1 วัน หรือมากกว่า)"
 
+#, fuzzy
+#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
+msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
+msgstr "<strong>สปอตสิ้นสุด</strong> เป็นสปอต<strong>เมื่อเวลาสิ้นสุด</strong>"
+
 msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgstr "<strong>สปอตสิ้นสุด</strong> เป็นสปอต<strong>เมื่อเวลาสิ้นสุด</strong>"
 
@@ -6149,7 +6154,7 @@ msgid "The EUR Index is a weighted Index, measuring the Euro's value against a b
 msgstr "EUR Index เป็นดัชนีถ่วงน้ำหนัก ที่ใช้แสดงมูลค่าของเงินยูโรกับ 5 สกุลเงินหลักของโลก (USD, AUD, GBP, JPY, CAD) โดยมีนำ้หนักแต่ละสกุลเงินที่ 20%"
 
 msgid "The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds."
-msgstr ""
+msgstr "Eurobasket Wolves คือ ชมรมบาสเกตบอลท้องถิ่นที่ก่อตั้งขึ้นเมื่อ พ.ศ. 2545 (ค.ศ. 2002) เป็นโครงการสอนบาสเกตบอลให้กับเยาวชนผ่านโปรแกรมของโรงเรียน โดยมีทีมระดับอายุ 8 ปี และ 10 ปี สำหรับเยาวชนผู้หญิง และ ผู้ชาย และระดับอายุ 14 ปี และ 16 ปี สำหรับเยาวชนทีมชาติหญิง นี้คือ ชมรมบาสเกตบอลแรกในประเทศมอลตาที่เกิดขึ้นเพื่อทำโปรแกรมอบรมบาสเกตบอลหลังเลิกเรียน และใช้พื้นที่ในโรงเรียนสำหรับฝึกฝนกีฬา"
 
 msgid "The Financial Products that we offer to deal in are contracts entered into between you and us. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that you pay us, we promise to pay you a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that we hold on your behalf and neither benefit from clients' assets protection in the event of our insolvency. Similarly the premium or price that you pay to take out a trade is not held as clients' money but as consideration for our undertaking to pay."
 msgstr "ผลิตภัณฑ์ทางการเงินที่พวกเรานำเสนอในการซื้อขายสัญญาระหว่างท่านและพวกเรา ในสัญญาต่างๆ นั้น ขึ้นกับข้อตกลงที่ระบุเจาะจงไว้ของสัญญาที่เกี่ยวข้อง ในการพิจารณาค่าบริการ หรือ ราคาที่ท่านชำระให้เรา พวกเราสัญญาที่จะชำระให้ท่านด้วยจำนวนที่ตกลงตามสินทรัพย์อ้างอิง หรือ ผลที่เกิดขึ้นในแต่ละกรณี สัญญาต่างๆ นั้นไม่ได้เป็นเครื่องมือที่พวกเราถือในนามของท่าน และไม่เป็นผลประโยชน์จากการป้องกันทรัพย์สินของลูกค้าในกรณีการล้มละลายของเรา ในทำนองเดียวกันค่าบริการ หรือ ราคาที่ท่านชำระให้เราไม่ถือเป็นเงินของลูกค้าแต่ถูกพิจารณาเป็นภาระหน้าที่ความรับผิดชอบในการชำระของเรา"
@@ -6170,7 +6175,7 @@ msgid "The Program"
 msgstr "โปรแกรม"
 
 msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
-msgstr ""
+msgstr "Shelter Community Learning Centre 3 คือ กลุ่มชุมชนโรงเรียนสำหรับเด็กๆ ผู้ลี้ภัยชาวพม่า ที่รอคอยการถูกส่งกลับประเทศเดิมกับครอบครัวของเขายังประเทศโลกที่ 3 โรงเรียนมีเป้าหมายเพื่อให้การศึกษากับกลุ่มเด็กเหล่านี้ ผู้ซึ่งด้อยโอกาส เพื่อให้เขามีแนวทางในการดำเนินชีวิตในอนาคต"
 
 msgid "The USD Index is a weighted Index, measuring the US Dollar's value against a basket of 5 global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%."
 msgstr "ดัชนี USD เป็นดัชนีถ่วงน้ำหนัก แสดงมูลค่าของค่าเงินดอลลาร์สหรัฐต่อ 5 สกุลเงินสากล (EUR, GBP, JPY, CAD, AUD) โดยใช้ร้อยละ 20 ในการถ่วงน้ำหนัก"
@@ -6629,8 +6634,6 @@ msgstr "ในการเปิดบัญชีซื้อขาย ลู�
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "สำหรับตำแหน่งนี้ ท่านต้องสำเร็จการศึกษาขั้นสูงในสาขา ฟิสิกส์ วิศวกรรมการเงิน หรือ คณิตศาสตร์"
 
-#, fuzzy
-#| msgid "To reset your password, enter the e-mail address you registered in the field below and click 'RESET PASSWORD'."
 msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
 msgstr "เพื่อตั้งค่ารหัสผ่านของท่านใหม่ ป้อนอีเมล์ที่ท่านลงทะเบียนไว้ในช่องว่างข้างล่างและคลิก 'ตั้งรหัสผ่านใหม่'"
 
@@ -6826,10 +6829,8 @@ msgstr "ลูกค้าในสหราชอาณาจักร แล�
 msgid "UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
 msgstr "ลูกค้าในสหราชอาณาจักรที่ลงทะเบียนกับ Binary (Europe) Ltd สามารถส่งข้อร้องเรียนให้กับหน่วยงานทางเลือกที่รับข้อโต้แย้ง IBAS โดยกรอกแบบฟอร์ม Adjudication Formของ ADR"
 
-#, fuzzy
-#| msgid "EUR"
 msgid "URL"
-msgstr "EUR"
+msgstr "URL"
 
 msgid "US Patents"
 msgstr "สิทธิบัตร US"
@@ -9083,6 +9084,9 @@ msgstr "รายละเอียดบัญชี"
 
 msgid "Terms and Conditions Approval"
 msgstr "การอนุมัติข้อตกลงและเงื่อนไข"
+
+#~ msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
+#~ msgstr "มาดูว่าเราคิด และ ทำงานกันอย่างไร  อ่าน <a href='https://blog.binary.com/' target='_blank'>บล็อกของเรา</a> เพื่อศึกษาเรื่องราวและแนวคิดที่เป็นแรงบันดาลใจของเรา"
 
 #~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
 #~ msgstr "ชนะ 10-1000% จากเงินที่ท่านวาง หากท่านทำนายได้ถูกต้อง การเพิ่มโอกาสในการชนะของท่านโดยการเลือก "
