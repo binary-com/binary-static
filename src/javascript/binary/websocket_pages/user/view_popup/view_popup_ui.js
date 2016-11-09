@@ -139,6 +139,7 @@ var ViewPopupUI = (function() {
                 if(y < win_.scrollTop()) {y = win_.scrollTop();}
             }
             con.offset({left: x, top: y});
+            ViewPopupUI.reposition_confirmation_ondrag();
         },
     };
 }());

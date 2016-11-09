@@ -1,7 +1,8 @@
 /* DO NOT include any rules for specific pages in this file. */
 /* theme elements */
 
-html {
+html, body {
+    width: 100%;
     height: 100%;
 }
 
@@ -10,15 +11,10 @@ body {
     position: relative;
     background-position: bottom;
     background-repeat: repeat-x;
+    overflow-x: hidden;
     .ui-widget {
         font-size: 0.9em;
     }
-}
-
-html, body {
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
 }
 
 h1, h2, h3 {
