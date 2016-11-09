@@ -4056,9 +4056,6 @@ msgstr "Impara da noi"
 msgid "Learn more"
 msgstr "Per saperne di più"
 
-msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
-msgstr ""
-
 msgid "Learn more about our corporate culture"
 msgstr "Ulteriori informazioni sulla nostra cultura aziendale"
 
@@ -5308,6 +5305,9 @@ msgstr ""
 msgid "Read about the five types of trade offered by %1."
 msgstr "Ulteriori informazioni sulle cinque tipologie di trade offerte da %1."
 
+msgid "Read our blog for the stories and ideas that inspire us"
+msgstr ""
+
 msgid "Read the answers to some common questions."
 msgstr "Leggi le risposte di alcune domande comuni."
 
@@ -6060,6 +6060,11 @@ msgstr "L'<strong>orario di fine</strong> è il numero di minuti/ore selezionati
 
 msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "L'<strong>orario di fine</strong> è il numero di secondi/minuti/ore selezionati successivi all'<strong>orario d'inizio</strong> (se inferiore a un giorno di durata), oppure alla fine del giorno di trading (nel caso di uno o più giorni di durata)."
+
+#, fuzzy
+#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
+msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
+msgstr "Lo <strong>spot d'uscita</strong> è lo spot all'<strong>orario di fine</strong>."
 
 msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgstr "Lo <strong>spot d'uscita</strong> è lo spot all'<strong>orario di fine</strong>."
