@@ -1,3 +1,6 @@
+var objectNotEmpty = require('../../../../../base/utility').objectNotEmpty;
+var Table = require('../../../../../common_functions/attach_dom/table').Table;
+
 var LimitsUI = (function(){
     "use strict";
 

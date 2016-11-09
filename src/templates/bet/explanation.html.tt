@@ -119,7 +119,7 @@
 
                 <div id="explain_endsinout" class="invisible">
                     <h3>[% l("Exit spot") %]</h3>
-                    <p>[% l("The <strong>exit spot</strong> is the spot at the <strong>end time</strong>.") %]</p>
+                    <p>[% l("The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>.") %]</p>
                     <p>[% l("The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration).") %]</p>
                     <p>[% l("The <strong>start time</strong> is when the contract is processed by our servers.") %]</p>
                     <p class="hint"><strong>[% l("Note") %]: </strong>[% l("Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times.") %]</p>
@@ -133,7 +133,7 @@
 
                 <div id="explain_higherlower" class="invisible">
                     <h3>[% l("Exit spot") %]</h3>
-                    <p>[% l("The <strong>exit spot</strong> is the spot at the <strong>end time</strong>.") %]</p>
+                    <p>[% l("The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>.") %]</p>
                     <p>[% l("The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration).") %]</p>
                     <p>[% l("The <strong>start time</strong> is when the contract is processed by our servers.") %]</p>
                     <p class="hint"><strong>[% l("Note") %]: </strong>[% l("Higher/Lower contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times.") %]</p>
@@ -155,7 +155,7 @@
                     <br />
                     <h3>[% l("Exit spot") %]</h3>
                     <p>
-                        [% l("The <strong>exit spot</strong> is the spot at the <strong>end time</strong>.") %]
+                        [% l("The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>.") %]
                         <br />
                         [% l("If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration).") %]
                         <br />

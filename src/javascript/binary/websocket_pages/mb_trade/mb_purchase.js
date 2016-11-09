@@ -1,3 +1,6 @@
+var MBNotifications = require('./mb_notifications').MBNotifications;
+var MBPrice = require('./mb_price').MBPrice;
+
 /*
  * Purchase object that handles all the functions related to
  * contract purchase response

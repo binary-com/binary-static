@@ -1,33 +1,4 @@
 #statement-ws-container {
-    #overlay_background {
-        position: absolute;
-        display: none;
-        z-index: 10;
-        width: 100%;
-        min-height: 50%;
-        background-color: $COLOR_WHITE;
-    }
-    #loading_in_progress {
-        cursor: pointer;
-        @extend .spinner;
-        background-image: url('../images/pages/binary-symbol-logo.png');
-        background-image: url('../images/pages/binary-symbol-logo.svg'), none;
-        background-size: contain;
-        width: 10rem;
-        height: 10rem;
-        position: absolute;
-        left: 50%;
-        top: 350px;
-        margin-left: -5rem;
-        display: none;
-        z-index: 11;
-    }
-    #date-nav-panel {
-        display: flex;
-        justify-content: space-around;
-        flex-direction: row;
-        align-items: stretch;
-    }
     #download_csv {
         line-height: 28px;
     }

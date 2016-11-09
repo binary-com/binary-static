@@ -1,3 +1,6 @@
+var AssetIndexUI = require('../../resources/asset_index/asset_indexws.ui').AssetIndexUI;
+var MarketTimesUI = require('../../resources/market_times/market_timesws.ui').MarketTimesUI;
+
 /*
  * This Message object process the response from server and fire
  * events based on type of response

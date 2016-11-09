@@ -342,11 +342,12 @@ var Durations_Beta = (function(){
             Durations_Beta.setTime('');
             Defaults.remove('expiry_time');
             StartDates_Beta.setNow();
+            StartDates.disable();
             expiry_time.hide();
             var date_start = StartDates_Beta.node();
             processTradingTimesRequest_Beta(end_date);
-        }
-        else{
+        } else {
+            StartDates.enable();
             if(!expiry_time.value) {
                 expiry_time.value = moment(window.time).add(5, 'minutes').utc().format('HH:mm');
             }

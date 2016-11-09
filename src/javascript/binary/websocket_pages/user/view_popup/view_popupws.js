@@ -1,3 +1,11 @@
+var showLocalTimeOnHover = require('../../../base/utility').showLocalTimeOnHover;
+var toJapanTimeIfNeeded = require('../../../base/utility').toJapanTimeIfNeeded;
+var objectNotEmpty = require('../../../base/utility').objectNotEmpty;
+var format_money = require('../../../common_functions/currency_to_symbol').format_money;
+var format_money_jp = require('../../../common_functions/currency_to_symbol').format_money_jp;
+var MBPrice = require('../../mb_trade/mb_price').MBPrice;
+var MBTradePage = require('../../mb_trade/mb_tradepage').MBTradePage;
+
 var ViewPopupWS = (function() {
     "use strict";
 

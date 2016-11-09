@@ -1,3 +1,12 @@
+var Login = require('../base/login').Login;
+var Endpoint = require('./endpoint').Endpoint;
+var GetStartedJP = require('./get_started_jp').GetStartedJP;
+var JobDetails = require('./job_details').JobDetails;
+var Platforms = require('./platforms').Platforms;
+var Regulation = require('./regulation').Regulation;
+var submit_email = require('../websocket_pages/user/verify_email').submit_email;
+var MBTradePage = require('../websocket_pages/mb_trade/mb_tradepage').MBTradePage;
+
 pjax_config_page('/home', function() {
     return {
         onLoad: function() {
@@ -87,6 +96,14 @@ pjax_config_page('/careers', function() {
     };
 });
 
+
+pjax_config_page('/charity', function() {
+    return {
+        onLoad: CharityPage.onLoad,
+        onUnload: CharityPage.onUnload
+    };
+});
+
 pjax_config_page('/terms-and-conditions', function() {
     return {
         onLoad: function() {
@@ -114,8 +131,8 @@ pjax_config_page('\/login|\/loginid_switch', function() {
 
 pjax_config_page('/trading', function () {
     return {
-        onLoad: function(){if(/trading\.html/.test(window.location.pathname)) TradePage.onLoad();},
-        onUnload: function(){if(/trading\.html/.test(window.location.pathname)) TradePage.onUnload();}
+        onLoad: function(){if(/\/trading\.html/.test(window.location.pathname)) TradePage.onLoad();},
+        onUnload: function(){if(/\/trading\.html/.test(window.location.pathname)) TradePage.onUnload();}
     };
 });
 
@@ -133,7 +150,7 @@ pjax_config_page('/multi_barriers_trading', function () {
     };
 });
 
-pjax_config_page('/jptrading', function () {
+pjax_config_page('/jp_trading', function () {
     return {
         onLoad: function(){JPTradePage.onLoad();},
         onUnload: function(){JPTradePage.onUnload();}
@@ -160,6 +177,51 @@ pjax_config_page_require_auth("/cashier/withdraw-jp", function(){
     return {
         onLoad: function() {
             CashierJP.init('withdraw');
+        }
+    };
+});
+
+pjax_config_page("/endpoint", function(){
+    return {
+        onLoad: function() {
+            Endpoint.init();
+        }
+    };
+});
+
+pjax_config_page('/get-started-jp', function() {
+    return {
+        onLoad: function() {
+            GetStartedJP.init();
+        }
+    };
+});
+
+pjax_config_page('/open-positions', function() {
+  return {
+      onLoad: function() {
+        if (document.getElementById('Information_Technology')) {
+          if (page.url.location.hash) {
+              $.scrollTo($(page.url.location.hash));
+          }
+        }
+      }
+  };
+});
+
+pjax_config_page('/open-positions/job-details', function() {
+    return {
+        onLoad: function() {
+            JobDetails.init();
+            JobDetails.addEventListeners();
+        }
+    };
+});
+
+pjax_config_page('/regulation', function() {
+    return {
+        onLoad: function() {
+            Regulation.init();
         }
     };
 });

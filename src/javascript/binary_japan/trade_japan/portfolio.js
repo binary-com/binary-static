@@ -1,3 +1,5 @@
+var MBTradePage = require('../../binary/websocket_pages/mb_trade/mb_tradepage').MBTradePage;
+
 var JapanPortfolio = (function() {
 
   var $portfolio;

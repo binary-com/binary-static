@@ -1,3 +1,9 @@
+var toJapanTimeIfNeeded = require('../../../../base/utility').toJapanTimeIfNeeded;
+var downloadCSV = require('../../../../base/utility').downloadCSV;
+var Button = require('../../../../common_functions/attach_dom/button').Button;
+var Table = require('../../../../common_functions/attach_dom/table').Table;
+var showTooltip = require('../../../../common_functions/get_app_details').showTooltip;
+
 var StatementUI = (function(){
     "use strict";
     var tableID = "statement-table";

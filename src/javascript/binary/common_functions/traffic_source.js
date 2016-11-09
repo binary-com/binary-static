@@ -1,6 +1,8 @@
+var CookieStorage = require('../base/storage').CookieStorage;
+
 /*
  * Handles utm parameters/referrer to use on signup
- * 
+ *
  * Priorities:
  * 1. Cookie having utm data (utm_source, utm_medium, utm_campaign) [Expires in 3 months]
  * 2. Query string utm parameters

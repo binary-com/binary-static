@@ -1,3 +1,5 @@
+var validateEmail = require('../../../common_functions/validation').validateEmail;
+
 var LostPassword = (function() {
     'use strict';
 

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-02 07:43+0000\n"
+"PO-Revision-Date: 2016-11-08 03:40+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.9-dev\n"
+"X-Generator: Weblate 2.9\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -270,6 +270,9 @@ msgstr "%1的辉煌发展历程"
 
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "%1 系统每天处理超过百万笔交易（包括虚拟账户）。"
+
+msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
+msgstr "%1的慈善活动侧重于捐助世界各地在当地社区有重大影响力的小型慈善机构和非营利组织。 我们的捐款使他们直接受惠，也不须像一些大型慈善机构那样支付庞大开销。"
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(minimum duration, for example minimum 15 seconds)分钟"
@@ -2485,6 +2488,9 @@ msgstr "估计净值"
 msgid "Ethics Code"
 msgstr "道德标准"
 
+msgid "Eurobasket Wolves"
+msgstr "Eurobasket Wolves"
+
 msgid "European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd."
 msgstr "想要进行产品博彩交易的除英国外的欧盟居民将在 Binary (Europe) Ltd 开设账户。"
 
@@ -4034,9 +4040,6 @@ msgstr "我们将协助您提高交易技能"
 msgid "Learn more"
 msgstr "了解更多"
 
-msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
-msgstr "了解更多关于我们的想法和运作方式详情。参阅<a href='https://blog.binary.com/' target='_blank'>我们的博客</a>，以便了解我们的概念来源和背景故事。"
-
 msgid "Learn more about our corporate culture"
 msgstr "查看关于我们企业文化的详情"
 
@@ -4183,6 +4186,9 @@ msgstr "存入资金"
 
 msgid "Make your trade"
 msgstr "执行交易"
+
+msgid "Making a Positive Impact in Local Communities"
+msgstr "直接影响当地社区"
 
 msgid "Malaysia"
 msgstr "马来西亚"
@@ -5263,6 +5269,9 @@ msgstr "请参阅以下Binary Investments (Europe) Limited 说明书中关于二
 msgid "Read about the five types of trade offered by %1."
 msgstr "查看 %1 提供的 5 种交易。"
 
+msgid "Read our blog for the stories and ideas that inspire us"
+msgstr ""
+
 msgid "Read the answers to some common questions."
 msgstr "查看一些常见问题的回答。"
 
@@ -5638,6 +5647,9 @@ msgstr "可分割性"
 msgid "Sharp prices"
 msgstr "精准报价"
 
+msgid "Shelter Home’s Shelter Community Learning Centre 3"
+msgstr "庇护所社区第3学习中心"
+
 msgid "Shop"
 msgstr "商店"
 
@@ -6009,6 +6021,11 @@ msgstr "合约<strong>结束时间</strong>是指合约<strong>开始时间</str
 msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>结束时间</strong>是在<strong>开始时间</strong>（如果期限小于一天）之后选定的秒数/分钟数/小时数，或是交易日结束（如果期限为一天或更长）。"
 
+#, fuzzy
+#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
+msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
+msgstr "<strong>退市现价</strong>为合约<strong>结束时间</strong>的现价。"
+
 msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgstr "<strong>退市现价</strong>为合约<strong>结束时间</strong>的现价。"
 
@@ -6135,6 +6152,9 @@ msgstr "数据保护法律和法规规定了个人信息使用者应承担的义
 msgid "The EUR Index is a weighted Index, measuring the Euro's value against a basket of 5 global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%."
 msgstr "欧元指数是加权指数，衡量欧元相对5种全球货币（美元、澳元、英镑、日元、加元）的价值，每种货币的权重均为 20%。"
 
+msgid "The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds."
+msgstr "Eurobasket Wolves 本地篮球俱乐部成立于2002年。它通过俱乐部和学校项目教导青年打篮球。它的U8、U10男女球队和U14、U16女子球队曾经参加国家级竞赛。它也是马耳他首家在学校场地成立课余篮球训练项目的篮球俱乐部。"
+
 msgid "The Financial Products that we offer to deal in are contracts entered into between you and us. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that you pay us, we promise to pay you a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that we hold on your behalf and neither benefit from clients' assets protection in the event of our insolvency. Similarly the premium or price that you pay to take out a trade is not held as clients' money but as consideration for our undertaking to pay."
 msgstr "我们所提供的金融产品交易为您我之间的合约。在这些合约和相关的特定条款约束下，由于您向我们支付了费用或价格，当相关资产或测量具备某些特定指标时，我们也承诺向您支付相应的金额。我们不会代替您拥有这些合约，如果我们破产，也不会从提供给客户的资产保护中获利。同样的，你所支付的交易费用或价格并不属于客户，而是对我们承诺支付的报酬。"
 
@@ -6152,6 +6172,9 @@ msgstr "Binary Investments (Europe) Limited 的第3支柱资料披露报告根�
 
 msgid "The Program"
 msgstr "计划"
+
+msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
+msgstr "庇护所社区第3学习中心是为正在缅甸等待与家人被遣至第三国的难民儿童成立的社区学校。 该学校旨在为这些处于最脆弱年龄的儿童提供教育，为他们的未来做好准备。"
 
 msgid "The USD Index is a weighted Index, measuring the US Dollar's value against a basket of 5 global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%."
 msgstr "美元指数是加权指数，衡量美元相对于5种全球货币（欧元、英镑、日元、加元、澳元）的价值，每种货币的权重均为20%。"
@@ -6605,8 +6628,8 @@ msgstr "To open a trading account, our customers must confirm they fully underst
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "要获得录取资格，您必须拥有物理、金融工程或数学专业的本科学历"
 
-msgid "To reset your password, enter the e-mail address you registered in the field below and click "
-msgstr "如要重新设置密码，在下面输入您注册的电子邮件并点击 "
+msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
+msgstr "如要重新设置密码，在下面输入您注册的电子邮件并点击“重设密码”。"
 
 msgid "Today"
 msgstr "今天"
@@ -6800,6 +6823,9 @@ msgstr "英国和马恩岛居民将在Binary (IOM) Ltd开户。"
 msgid "UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
 msgstr "在 Binary (Europe) Ltd 注册的英国客户可以在替代性纠纷解决机构 IBAS 填写仲裁表格并提交申诉"
 
+msgid "URL"
+msgstr "网址"
+
 msgid "US Patents"
 msgstr "美国专利"
 
@@ -6808,6 +6834,9 @@ msgstr "美元"
 
 msgid "UX / UI experience"
 msgstr "UX / UI 经验"
+
+msgid "Ukraine"
+msgstr "乌克兰"
 
 msgid "Ultra fast on-the-go trading"
 msgstr "超快旅途中交易服务"
@@ -9014,6 +9043,9 @@ msgstr "公司详细信息"
 msgid "Service Announcements"
 msgstr "服务公告"
 
+msgid "Charity"
+msgstr "慈善活动"
+
 msgid "Open-Source Projects"
 msgstr "开源项目"
 
@@ -9049,6 +9081,9 @@ msgstr "账户详情"
 
 msgid "Terms and Conditions Approval"
 msgstr "条款和条件审批"
+
+#~ msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
+#~ msgstr "了解更多关于我们的想法和运作方式详情。参阅<a href='https://blog.binary.com/' target='_blank'>我们的博客</a>，以便了解我们的概念来源和背景故事。"
 
 #~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
 #~ msgstr "如果您预测正确，即可获得投注额 10%-1000% 的回报。要获得较高回报，可选择 "

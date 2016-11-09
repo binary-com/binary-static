@@ -1,3 +1,5 @@
+var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
+
 var StatementWS = (function(){
     "use strict";
 

@@ -40,13 +40,8 @@
     }
 }
 
-.spinner {
-    animation: spinning 0.2s * 5 infinite linear;
-}
-
 #trading_init_progress {
     cursor: pointer;
-    @extend .spinner;
     /*background-image: url('../images/pages/binary-symbol-logo.png');
     background-image: url('../images/pages/binary-symbol-logo.svg'), none;
     background-size: contain;*/
