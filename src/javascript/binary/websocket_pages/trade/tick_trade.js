@@ -1,4 +1,5 @@
 var ViewPopupUI = require('../user/view_popup/view_popup_ui').ViewPopupUI;
+var moment = require('../../../lib/moment/moment');
 
 var TickDisplay = function() {
     return {

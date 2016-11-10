@@ -1,6 +1,7 @@
 var objectNotEmpty = require('../../base/utility').objectNotEmpty;
 var format_money = require('../../common_functions/currency_to_symbol').format_money;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
+var moment = require('../../../lib/moment/moment');
 
 /*
  * This contains common functions we need for processing the response

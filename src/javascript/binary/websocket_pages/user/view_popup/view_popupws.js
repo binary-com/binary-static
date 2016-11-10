@@ -6,6 +6,7 @@ var format_money_jp = require('../../../common_functions/currency_to_symbol').fo
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
 var MBPrice = require('../../mb_trade/mb_price').MBPrice;
 var ViewPopupUI = require('./view_popup_ui').ViewPopupUI;
+var moment = require('../../../../lib/moment/moment');
 
 var ViewPopupWS = (function() {
     "use strict";

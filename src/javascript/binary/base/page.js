@@ -17,6 +17,7 @@ var japanese_client = require('../common_functions/country_base').japanese_clien
 var FinancialAssessmentws = require('../websocket_pages/user/account/settings/financial_assessment').FinancialAssessmentws;
 var ViewBalance = require('../websocket_pages/user/viewbalance/viewbalance.init').ViewBalance;
 var Cookies = require('../../lib/js-cookie');
+var moment  = require('../../lib/moment/moment');
 
 
 var clock_started = false;

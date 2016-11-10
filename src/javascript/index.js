@@ -19,7 +19,6 @@ require('./lib/polyfills/object.assign');
 require('./lib/highstock/highstock.js');
 require('./lib/highstock/highstock-exporting.js');
 require('./lib/highstock/export-csv.js');
-window.moment = require('./lib/moment/moment');
 require('./lib/mmenu/jquery.mmenu.min.all.js');
 require('./lib/jquery-ui-timepicker/jquery.ui.timepicker.js');
 require('event-source-polyfill');

@@ -1,3 +1,5 @@
+var moment = require('../../../../lib/moment/moment');
+
 /*
  * Handles barrier processing and display
  *

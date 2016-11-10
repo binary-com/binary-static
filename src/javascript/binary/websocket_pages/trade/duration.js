@@ -1,3 +1,5 @@
+var moment = require('../../../lib/moment/moment');
+
 /*
  * Handles duration processing display
  *

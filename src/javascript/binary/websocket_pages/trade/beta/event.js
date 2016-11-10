@@ -1,4 +1,5 @@
 var onlyNumericOnKeypress = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
+var moment = require('../../../../lib/moment/moment');
 
 /*
  * TradingEvents object contains all the event handler function required for

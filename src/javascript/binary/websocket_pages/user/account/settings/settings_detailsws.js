@@ -2,6 +2,7 @@ var ValidateV2 = require('../../../../common_functions/validation_v2').ValidateV
 var CommonFunctions = require('../../../../common_functions/common_functions').CommonFunctions;
 var bind_validation = require('../../../../validator').bind_validation;
 var Cookies = require('../../../../../lib/js-cookie');
+var moment  = require('../../../../../lib/moment/moment');
 
 var SettingsDetailsWS = (function() {
     "use strict";
