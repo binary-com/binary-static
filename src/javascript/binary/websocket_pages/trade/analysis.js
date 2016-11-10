@@ -1,4 +1,5 @@
 var MBTradePage = require('../mb_trade/mb_tradepage').MBTradePage;
+var JapanPortfolio = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
 
 /*
  * This file contains the code related to loading of trading page bottom analysis

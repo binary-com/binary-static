@@ -3,6 +3,7 @@ var MBDisplayCurrencies = require('./mb_currency').MBDisplayCurrencies;
 var MBTradingEvents = require('./mb_event').MBTradingEvents;
 var MBMessage = require('./mb_message').MBMessage;
 var MBSymbols = require('./mb_symbols').MBSymbols;
+var JapanPortfolio = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
 
 var MBTradePage = (function(){
 

@@ -1,3 +1,5 @@
+var JapanPortfolio = require('./portfolio').JapanPortfolio;
+
 var JPTradePage = (function() {
 
   var scriptUrl = 'https://binary-com.github.io/japanui/bundle' + (/www\.binary\.com/i.test(window.location.hostname) ? '' : '_beta') + '.js';

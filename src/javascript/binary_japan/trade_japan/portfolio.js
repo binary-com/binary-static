@@ -1,4 +1,3 @@
-var MBTradePage = require('../../binary/websocket_pages/mb_trade/mb_tradepage').MBTradePage;
 var PortfolioWS = require('../../binary/websocket_pages/user/account/portfolio/portfolio.init').PortfolioWS;
 
 var JapanPortfolio = (function() {
@@ -48,7 +47,7 @@ var JapanPortfolio = (function() {
   }
 
   function isTradePage() {
-    return (JPTradePage.isJapan() || MBTradePage.is_trading_page());
+    return /(jp|multi_barriers)_trading/i.test(window.location.pathname);
   }
 
   return {
