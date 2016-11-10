@@ -58,7 +58,7 @@ sub all_pages {
         ## ws
         ['user/authenticatews',          'user/authenticatews',                       'default', 'Authenticate',    'ja'],
         ['cashier/forwardws',            'cashier/deposit_withdraw_ws',               'default', 'Cashier',         'ja'],
-        ['cashier/epg_forwardws',        'cashier/deposit_withdraw_ws',               'default', 'Cashier',         'ja'],
+        ['cashier/epg_forwardws',        'cashier/deposit_withdraw_ws',               'default', 'Cashier'],
         ['cashier/deposit-jp',           'japan/cashier/deposit',                     'default', 'Deposit',         'NOT-ja,en'],
         ['cashier/withdraw-jp',          'japan/cashier/withdraw',                    'default', 'Withdraw',        'NOT-ja,en'],
         ['cashier/submit-withdraw-jp',   'japan/cashier/submit',                      'default', 'Acknowledgement', 'NOT-ja,en'],
