@@ -19,6 +19,7 @@ var ViewBalance = require('../websocket_pages/user/viewbalance/viewbalance.init'
 var Cookies = require('../../lib/js-cookie');
 var moment  = require('../../lib/moment/moment');
 require('../../lib/polyfills/array.includes');
+require('../../lib/polyfills/string.includes');
 
 
 var clock_started = false;

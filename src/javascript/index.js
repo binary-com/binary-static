@@ -9,10 +9,9 @@ var exportAllFunctions = function exportAllFunctions(obj) {
 
 window.$ = window.jQuery = require('jquery');
 
-// Polyfills
+// Polyfills : needed only for japanui
 window.Promise = window.Promise || require('promise-polyfill');
 window.Symbol = window.Symbol || require('es6-symbol');
-require('./lib/polyfills/string.includes');
 require('./lib/polyfills/object.assign');
 
 require('./lib/highstock/highstock.js');
