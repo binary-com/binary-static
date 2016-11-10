@@ -1,3 +1,5 @@
+var done_typing = require('../lib/done-typing').done_typing;
+
 var ValidationUI = {
     clear: function() {
         $('.errorfield[data-is-error-field]').remove();
