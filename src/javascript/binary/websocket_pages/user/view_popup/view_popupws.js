@@ -3,8 +3,9 @@ var toJapanTimeIfNeeded = require('../../../base/utility').toJapanTimeIfNeeded;
 var objectNotEmpty = require('../../../base/utility').objectNotEmpty;
 var format_money = require('../../../common_functions/currency_to_symbol').format_money;
 var format_money_jp = require('../../../common_functions/currency_to_symbol').format_money_jp;
+var japanese_client = require('../../../common_functions/country_base').japanese_client;
 var MBPrice = require('../../mb_trade/mb_price').MBPrice;
-var MBTradePage = require('../../mb_trade/mb_tradepage').MBTradePage;
+var ViewPopupUI = require('./view_popup_ui').ViewPopupUI;
 
 var ViewPopupWS = (function() {
     "use strict";
@@ -197,7 +198,7 @@ var ViewPopupWS = (function() {
         normalUpdateTimers();
         normalUpdate();
         ViewPopupUI.reposition_confirmation();
-        if (MBTradePage.is_trading_page()) MBPrice.hidePriceOverlay();
+        if (/multi_barriers_trading\.html/.test(window.location.pathname)) MBPrice.hidePriceOverlay();
     };
 
     var normalUpdate = function() {
@@ -617,21 +618,6 @@ var ViewPopupWS = (function() {
         }
     };
 
-    // ===== Dispatch =====
-    var storeSubscriptionID = function(id, option) {
-        if(!window.stream_ids && !option) {
-            window.stream_ids = [];
-        }
-        if (!window.chart_stream_ids && option) {
-            window.chart_stream_ids = [];
-        }
-        if(!option && id && id.length > 0 && $.inArray(id, window.stream_ids) < 0) {
-            window.stream_ids.push(id);
-        } else if(option && id && id.length > 0 && $.inArray(id, window.chart_stream_ids) < 0) {
-            window.chart_stream_ids.push(id);
-        }
-    };
-
     var socketSend = function(req) {
         if(!req.hasOwnProperty('passthrough')) {
             req.passthrough = {};
@@ -645,7 +631,7 @@ var ViewPopupWS = (function() {
             case 'proposal_open_contract':
                 if(response.proposal_open_contract) {
                     if(response.proposal_open_contract.contract_id == contractID) {
-                        storeSubscriptionID(response.proposal_open_contract.id);
+                        ViewPopupUI.storeSubscriptionID(response.proposal_open_contract.id);
                         responseContract(response);
                     } else {
                         BinarySocket.send({"forget": response.proposal_open_contract.id});
@@ -682,7 +668,6 @@ var ViewPopupWS = (function() {
         dispatch            : dispatch,
         spreadUpdate        : spreadUpdate,
         normalUpdate        : normalUpdate,
-        storeSubscriptionID : storeSubscriptionID
     };
 }());
 

@@ -4,6 +4,7 @@ var MBNotifications = require('./mb_notifications').MBNotifications;
 var MBPrice = require('./mb_price').MBPrice;
 var MBSymbols = require('./mb_symbols').MBSymbols;
 var MBTick = require('./mb_tick').MBTick;
+var japanese_client = require('../../common_functions/country_base').japanese_client;
 
 var MBProcess = (function() {
     /*

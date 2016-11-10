@@ -2,6 +2,7 @@ var MBContract = require('./mb_contract').MBContract;
 var objectNotEmpty = require('../../base/utility').objectNotEmpty;
 var MBDefaults = require('./mb_defaults').MBDefaults;
 var MBNotifications = require('./mb_notifications').MBNotifications;
+var japanese_client = require('../../common_functions/country_base').japanese_client;
 
 /*
  * Price object handles all the functions we need to display prices

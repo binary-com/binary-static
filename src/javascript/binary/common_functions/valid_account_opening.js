@@ -1,4 +1,5 @@
 var Validate = require('./validation').Validate;
+var CommonFunctions = require('./common_functions').CommonFunctions;
 
 var ValidAccountOpening = (function(){
   var redirectCookie = function() {
@@ -55,7 +56,7 @@ var ValidAccountOpening = (function(){
   };
 
   var checkFname = function(fname, errorFname) {
-    if (Trim(fname.value).length < 2) {
+    if ((fname.value).trim().length < 2) {
       errorFname.innerHTML = Content.errorMessage('min', '2');
       Validate.displayErrorMessage(errorFname);
       window.accountErrorCounter++;
@@ -68,7 +69,7 @@ var ValidAccountOpening = (function(){
     return;
   };
   var checkLname = function(lname, errorLname) {
-    if (Trim(lname.value).length < 2) {
+    if ((lname.value).trim().length < 2) {
       errorLname.innerHTML = Content.errorMessage('min', '2');
       Validate.displayErrorMessage(errorLname);
       window.accountErrorCounter++;
@@ -81,7 +82,7 @@ var ValidAccountOpening = (function(){
     return;
   };
   var checkDate = function(dobdd, dobmm, dobyy, errorDob) {
-    if (!isValidDate(dobdd.value, dobmm.value, dobyy.value) || dobdd.value === '' || dobmm.value === '' || dobyy.value === '') {
+    if (!CommonFunctions.isValidDate(dobdd.value, dobmm.value, dobyy.value) || dobdd.value === '' || dobmm.value === '' || dobyy.value === '') {
       errorDob.innerHTML = Content.localize().textErrorBirthdate;
       Validate.displayErrorMessage(errorDob);
       window.accountErrorCounter++;

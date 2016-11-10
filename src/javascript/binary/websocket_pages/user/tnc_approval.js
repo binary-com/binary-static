@@ -88,32 +88,27 @@ var TNCApproval = (function() {
         }
     };
 
+    var onLoad = function() {
+        BinarySocket.init({
+            onmessage: function(msg) {
+                var response = JSON.parse(msg.data);
+                if (response) {
+                    TNCApproval.apiResponse(response);
+                }
+            }
+        });
+
+        Content.populate();
+        TNCApproval.init();
+    };
+
     return {
         init : init,
         apiResponse : apiResponse,
-        showTNC: showTNC
+        showTNC: showTNC,
+        onLoad: onLoad,
     };
 }());
-
-
-
-pjax_config_page_require_auth("tnc_approvalws", function() {
-    return {
-        onLoad: function() {
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
-                    if (response) {
-                        TNCApproval.apiResponse(response);
-                    }
-                }
-            });
-
-            Content.populate();
-            TNCApproval.init();
-        }
-    };
-});
 
 module.exports = {
     TNCApproval: TNCApproval,

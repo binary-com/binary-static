@@ -1,5 +1,6 @@
 var ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
 var Validate = require('../../../../common_functions/validation').Validate;
+var FinancialAccOpeningData = require('./financial_acc_opening.data').FinancialAccOpeningData;
 
 var FinancialAccOpeningUI = (function(){
   "use strict";
@@ -98,7 +99,7 @@ var FinancialAccOpeningUI = (function(){
     ValidAccountOpening.checkDate(elementObj['dobdd'], elementObj['dobmm'], elementObj['dobyy'], errorObj['dobdd']);
     ValidAccountOpening.checkPostcode(elementObj['postcode'], errorObj['postcode']);
 
-    if (elementObj['residence'].value === 'gb' && /^$/.test(Trim(elementObj['postcode'].value))){
+    if (elementObj['residence'].value === 'gb' && /^$/.test((elementObj['postcode'].value).trim())){
       errorPostcode.innerHTML = Content.errorMessage('req');
       Validate.displayErrorMessage(errorPostcode);
       window.accountErrorCounter++;
@@ -112,7 +113,7 @@ var FinancialAccOpeningUI = (function(){
 
     for (key in elementObj){
       if (elementObj[key].offsetParent !== null && key !== 'address2' && key !== 'postcode' && key !== 'state') {
-        if (/^$/.test(Trim(elementObj[key].value)) && elementObj[key].type !== 'checkbox'){
+        if (/^$/.test((elementObj[key].value).trim()) && elementObj[key].type !== 'checkbox'){
           errorObj[key].innerHTML = Content.errorMessage('req');
           Validate.displayErrorMessage(errorObj[key]);
           window.accountErrorCounter++;

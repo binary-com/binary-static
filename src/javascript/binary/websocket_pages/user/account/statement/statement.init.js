@@ -1,4 +1,8 @@
 var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
+var StatementUI = require('./statement.ui').StatementUI;
+var addTooltip = require('../../../../common_functions/get_app_details').addTooltip;
+var buildOauthApps = require('../../../../common_functions/get_app_details').buildOauthApps;
+var japanese_client = require('../../../../common_functions/country_base').japanese_client;
 
 var StatementWS = (function(){
     "use strict";
@@ -65,7 +69,7 @@ var StatementWS = (function(){
     }
 
     function getNextBatchStatement(){
-        StatementData.getStatement({offset: transactionsReceived, limit: batchSize});
+        getStatement({offset: transactionsReceived, limit: batchSize});
         pending = true;
     }
 
@@ -119,7 +123,7 @@ var StatementWS = (function(){
         StatementUI.clearTableContent();
     }
 
-    function initPage(){
+    function initPage() {
         batchSize = 200;
         chunkSize = batchSize/2;
         noMoreData = false;
@@ -127,7 +131,7 @@ var StatementWS = (function(){
         currentBatch = [];
         transactionsReceived = 0;
         transactionsConsumed = 0;
-        StatementData.initSocket();
+        initSocket();
         Content.populate();
         getNextBatchStatement();
         loadStatementChunkWhenScroll();
@@ -137,10 +141,56 @@ var StatementWS = (function(){
         initTable();
     }
 
+    var attachDatePicker = function() {
+        $('#jump-to').val(page.text.localize('Today'))
+            .datepicker({
+                dateFormat: 'yy-mm-dd',
+                maxDate   : moment().toDate(),
+                onSelect  : function() {
+                    $('.table-container').remove();
+                    StatementUI.clearTableContent();
+                    StatementWS.init();
+                }
+            });
+    };
+
+    function initSocket(){
+        BinarySocket.init({
+            onmessage: function(msg){
+                var response = JSON.parse(msg.data);
+                if (response) {
+                    var type = response.msg_type;
+                    if (type === 'statement'){
+                        StatementWS.statementHandler(response);
+                    } else if (type === 'oauth_apps') {
+                        addTooltip(StatementUI.setOauthApps(buildOauthApps(response.oauth_apps)));
+                    }
+                }
+            }
+        });
+        BinarySocket.send({'oauth_apps': 1});
+    }
+
+    function getStatement(opts){
+        var req = {statement: 1, description: 1};
+        if(opts){
+            $.extend(true, req, opts);
+        }
+        var jump_to = $('#jump-to').val();
+        if (jump_to !== '' && jump_to !== page.text.localize('Today')) {
+            req.date_to = Math.floor((moment.utc(jump_to).valueOf() / 1000)) +
+                          ((japanese_client() ? 15 : 24) * (60*60));
+            req.date_from = 0;
+        }
+
+        BinarySocket.send(req);
+    }
+
     return {
         init: initPage,
         statementHandler: statementHandler,
-        clean: cleanStatementPageState
+        clean: cleanStatementPageState,
+        attachDatePicker: attachDatePicker,
     };
 }());
 
