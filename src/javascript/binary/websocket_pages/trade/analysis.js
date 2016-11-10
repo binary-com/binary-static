@@ -1,4 +1,5 @@
 var MBTradePage = require('../mb_trade/mb_tradepage').MBTradePage;
+var JPTradePage    = require('../../../binary_japan/trade_japan/JPTradePage').JPTradePage;
 var JapanPortfolio = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
 
 /*

@@ -4,7 +4,6 @@ var GetStartedJP = require('./get_started_jp').GetStartedJP;
 var JobDetails = require('./job_details').JobDetails;
 var Platforms = require('./platforms').Platforms;
 var Regulation = require('./regulation').Regulation;
-var MBTradePage = require('../websocket_pages/mb_trade/mb_tradepage').MBTradePage;
 var Scroll = require('../common_functions/scroll').Scroll;
 var GetStarted = require('./get_started').GetStarted;
 var Contact = require('./contact').Contact;
@@ -107,34 +106,6 @@ pjax_config_page('/terms-and-conditions', function() {
         onLoad: function() {
             TermsAndConditions.init();
         },
-    };
-});
-
-pjax_config_page('/trading', function () {
-    return {
-        onLoad: function(){if(/\/trading\.html/.test(window.location.pathname)) TradePage.onLoad();},
-        onUnload: function(){if(/\/trading\.html/.test(window.location.pathname)) TradePage.onUnload();}
-    };
-});
-
-pjax_config_page('/trading_beta', function () {
-    return {
-        onLoad: function(){TradePage_Beta.onLoad();},
-        onUnload: function(){TradePage_Beta.onUnload();}
-    };
-});
-
-pjax_config_page('/multi_barriers_trading', function () {
-    return {
-        onLoad: function(){MBTradePage.onLoad();},
-        onUnload: function(){MBTradePage.onUnload();}
-    };
-});
-
-pjax_config_page('/jp_trading', function () {
-    return {
-        onLoad: function(){JPTradePage.onLoad();},
-        onUnload: function(){JPTradePage.onUnload();}
     };
 });
 
