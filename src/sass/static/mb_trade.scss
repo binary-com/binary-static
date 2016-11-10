@@ -55,9 +55,29 @@
     }
     .dynamics {
         display: inline-block;
-        width: 20px;
+        width: 10px;
+        height: 15px;
+        margin-right: 5px;
+        background-repeat: no-repeat;
+        vertical-align: middle;
     }
     .price-wrapper {
+        .dynamics {
+            &.up {
+                background-image: svg-icon('up', $COLOR_BLACK);
+            }
+            &.down {
+                background-image: svg-icon('down', $COLOR_BLACK);
+            }
+        }
+        &.inactive .dynamics {
+            &.up {
+                background-image: svg-icon('up', $COLOR_GRAY);
+            }
+            &.down {
+                background-image: svg-icon('down', $COLOR_GRAY);
+            }
+        }
         .base-value {
             display: inline-block;
             margin-left: 5px;
@@ -78,6 +98,14 @@
         position: relative;
         .value-wrapper {
             margin-left: -15px;
+            .dynamics {
+                &.up {
+                    background-image: svg-icon('up', $COLOR_WHITE);
+                }
+                &.down {
+                    background-image: svg-icon('down', $COLOR_WHITE);
+                }
+            }
         }
         .base-value {
             position: absolute;
@@ -96,12 +124,6 @@
             cursor: default;
             overflow: visible;
         }
-    }
-    .down {
-        color: $COLOR_RED;
-    }
-    .up {
-        color: $COLOR_GREEN;
     }
     .heading {
         font-weight: bold;
@@ -160,13 +182,14 @@
         line-height: 30px;
     }
     #spot-dyn {
-        width: 10px;
-        display: inline-block;
-        font-family: Arial;
-        padding-left: 3px;
+        &.down {
+            background-image: svg-icon('down', $COLOR_RED);
+        }
+        &.up {
+            background-image: svg-icon('up', $COLOR_GREEN);
+        }
         &.still {
-            color: $COLOR_GRAY_SHADE;
-            padding-left: 6px;
+            background-image: svg-icon('circle', $COLOR_GRAY_SHADE);
         }
     }
     .padding-10 {
@@ -249,6 +272,9 @@
         display: block;
         &.spot-value {
             line-height: 30px;
+            * {
+                vertical-align: middle;
+            }
         }
         #trading_worm_chart {
             display: inline-block;

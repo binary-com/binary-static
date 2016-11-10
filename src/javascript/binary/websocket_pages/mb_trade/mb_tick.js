@@ -72,18 +72,8 @@ var MBTick = (function() {
      * Display price/spot movement variation to depict price moved up or down
      */
     function displayPriceMovement(oldValue, currentValue) {
-        var dyn, className;
-        if (currentValue > oldValue) {
-            dyn = '⬆';
-            className = 'up';
-        } else if (currentValue < oldValue) {
-            dyn = '⬇';
-            className = 'down';
-        } else {
-            dyn = '●';
-            className = 'still';
-        }
-        $('#spot-dyn').attr('class', className).text(dyn);
+        var className = (currentValue > oldValue) ? 'up' : (currentValue < oldValue) ? 'down' : 'still';
+        $('#spot-dyn').attr('class', 'dynamics ' + className);
     }
 
     function updateWarmChart(){
