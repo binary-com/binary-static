@@ -1,4 +1,5 @@
 var showLoadingImage = require('../../base/utility').showLoadingImage;
+var Cookies = require('../../../lib/js-cookie');
 
 var PaymentAgentListWS = (function() {
     "use strict";

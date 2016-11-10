@@ -1,3 +1,5 @@
+var Cookies = require('../../../../../lib/js-cookie');
+
 var FinancialAccOpeningData = (function(){
     function getRealAcc(elementObj){
         var req = {

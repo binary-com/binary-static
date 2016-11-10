@@ -1,4 +1,5 @@
 var template = require('../../base/utility').template;
+var Cookies = require('../../../lib/js-cookie');
 
 var PaymentAgentWithdrawWS = (function() {
     "use strict";

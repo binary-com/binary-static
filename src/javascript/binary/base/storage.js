@@ -1,4 +1,5 @@
 var template = require('./utility').template;
+var Cookies  = require('../../lib/js-cookie');
 
 var isStorageSupported = function(storage) {
     if(typeof storage === 'undefined') {
