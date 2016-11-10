@@ -1,4 +1,5 @@
 var done_typing = require('../lib/done-typing').done_typing;
+var formToObj   = require('../lib/form-to-obj').formToObj;
 
 var ValidationUI = {
     clear: function() {

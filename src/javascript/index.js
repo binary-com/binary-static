@@ -23,7 +23,6 @@ require('./lib/highstock/export-csv.js');
 window.moment = require('./lib/moment/moment');
 require('./lib/mmenu/jquery.mmenu.min.all.js');
 require('./lib/jquery-ui-timepicker/jquery.ui.timepicker.js');
-exportAllFunctions(require('./lib/form-to-obj'));
 require('event-source-polyfill');
 require('./lib/jQuery.XDomainRequest.js');
 require('./lib/jquery-scrollto-1.4.3.1-min.js');
