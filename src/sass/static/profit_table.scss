@@ -17,8 +17,9 @@
     .contract {
         flex: 2 1 100px;
         padding-right: 20px;
+        min-width: 150px;
     }
     .new-width {
-        min-width: 120px;
+        min-width: 100px;
     }
 }
