@@ -79,5 +79,4 @@ exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.init'))
 exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.ui'));
 exportAllFunctions(require('./binary_japan/knowledge_test'));
 exportAllFunctions(require('./binary_japan/trade_japan/JPTradePage'));
-exportAllFunctions(require('./binary_japan/trade_japan/pricing_details'));
 exportAllFunctions(require('./config'));
