@@ -3,6 +3,7 @@ var MBDefaults = require('./mb_defaults').MBDefaults;
 var MBNotifications = require('./mb_notifications').MBNotifications;
 var MBProcess = require('./mb_process').MBProcess;
 var MBTick = require('./mb_tick').MBTick;
+var japanese_client = require('../../common_functions/country_base').japanese_client;
 
 /*
  * TradingEvents object contains all the event handler function required for

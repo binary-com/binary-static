@@ -1,3 +1,5 @@
+var japanese_client = require('../../../common_functions/country_base').japanese_client;
+
 var AuthenticateWS = (function() {
     function init() {
         if (japanese_client()) {

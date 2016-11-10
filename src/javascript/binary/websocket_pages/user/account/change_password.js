@@ -1,5 +1,6 @@
 var testPassword = require('../../../common_functions/passwordmeter').testPassword;
 var ValidateV2 = require('../../../common_functions/validation_v2').ValidateV2;
+var CommonFunctions = require('../../../common_functions/common_functions').CommonFunctions;
 var ValidationUI = require('../../../validator').ValidationUI;
 var customError = require('../../../validator').customError;
 var bind_validation = require('../../../validator').bind_validation;
@@ -86,7 +87,7 @@ var PasswordWS = (function(){
 
     function initSocket() {
         Content.populate();
-        if (isIE() === false) {
+        if (CommonFunctions.isIE() === false) {
             $('#new_password').on('input', function() {
                 $('#password-meter').attr('value', testPassword(this.value)[0]);
             });

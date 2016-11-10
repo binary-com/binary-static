@@ -1,3 +1,6 @@
+var IPHistoryUI = require('./iphistory.ui').IPHistoryUI;
+var IPHistoryData = require('./iphistory.data').IPHistoryData;
+
 var IPHistory = (function() {
     'use strict';
 
