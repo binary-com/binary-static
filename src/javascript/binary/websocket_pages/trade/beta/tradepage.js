@@ -1,6 +1,7 @@
 var Guide = require('../../../common_functions/guide').Guide;
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
 var PortfolioWS = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
+var ResizeSensor = require('../../../../lib/resize-sensor');
 
 var TradePage_Beta = (function(){
 

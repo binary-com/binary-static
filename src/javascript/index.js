@@ -26,7 +26,6 @@ require('./lib/jQuery.XDomainRequest.js');
 require('./lib/jquery-scrollto-1.4.3.1-min.js');
 require('./lib/jquery-ui.js');
 require('./lib/jquery.sparkline.js');
-window.ResizeSensor = require('./lib/resize-sensor.js');
 window.dv = require('./lib/validation.js');
 
 require('./binary/components/trackjs_onerror');
