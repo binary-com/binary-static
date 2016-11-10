@@ -1,3 +1,5 @@
+var EnjoyHint = require('../../lib/guide.enjoyhint');
+
 /*
  *  This is developed to simplify the usage of enjoyhint (https://github.com/xbsoftware/enjoyhint)
  *
