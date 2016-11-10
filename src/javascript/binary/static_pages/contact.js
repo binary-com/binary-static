@@ -1,4 +1,5 @@
 var CommonFunctions = require('../common_functions/common_functions').CommonFunctions;
+var loadCSS = require('../../lib/loadCSS').loadCSS;
 
 var Contact = (function(){
     var init = function() {
