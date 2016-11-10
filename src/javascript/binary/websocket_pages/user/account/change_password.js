@@ -4,6 +4,7 @@ var CommonFunctions = require('../../../common_functions/common_functions').Comm
 var ValidationUI = require('../../../validator').ValidationUI;
 var customError = require('../../../validator').customError;
 var bind_validation = require('../../../validator').bind_validation;
+var dv = require('../../../../lib/validation');
 
 var PasswordWS = (function(){
     var $form, $result;

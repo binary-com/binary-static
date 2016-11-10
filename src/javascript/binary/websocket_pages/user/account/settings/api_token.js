@@ -6,6 +6,7 @@ var japanese_client = require('../../../../common_functions/country_base').japan
 var ValidationUI = require('../../../../validator').ValidationUI;
 var customError = require('../../../../validator').customError;
 var bind_validation = require('../../../../validator').bind_validation;
+var dv = require('../../../../../lib/validation');
 
 var APITokenWS = (function() {
     "use strict";

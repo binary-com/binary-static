@@ -3,6 +3,7 @@ var CommonFunctions = require('../../../../common_functions/common_functions').C
 var bind_validation = require('../../../../validator').bind_validation;
 var Cookies = require('../../../../../lib/js-cookie');
 var moment  = require('../../../../../lib/moment/moment');
+var dv      = require('../../../../../lib/validation');
 
 var SettingsDetailsWS = (function() {
     "use strict";

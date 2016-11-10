@@ -5,6 +5,7 @@ var ValidationUI = require('../../../../validator').ValidationUI;
 var validate_object = require('../../../../validator').validate_object;
 var bind_validation = require('../../../../validator').bind_validation;
 var moment = require('../../../../../lib/moment/moment');
+var dv     = require('../../../../../lib/validation');
 
 var SelfExclusionWS = (function() {
     "use strict";
