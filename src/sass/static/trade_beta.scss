@@ -478,6 +478,9 @@
         display: none;
         background: transparent;
         z-index: 9;
+        .close {
+            z-index: 10;
+        }
         &#loading_container2 {
             opacity: 0.5;
             display: block;
