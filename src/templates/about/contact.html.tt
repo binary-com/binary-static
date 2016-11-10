@@ -22,38 +22,40 @@
             </div>
             <div class="gr-padding-10 ja-hide">
                 <span class="no-para-margin gr-row">
-                    <label class="gr-4 gr-12-t">
-                        [% l("Telephone:") %]
-                    </label>
-                    <select class="gr-7 gr-12-t" id="cs_telephone_number">
-                        <option disabled="[% true %]">
-                            [% l("Select Country") %]
-                        </option>
-                        <option value="[% l('[_1] (Toll Free)', '+61 (02) 8294 5448, 1800 093570') %]">
-                            [% l("Australia") %]
-                        </option>
-                        <option value="+1 (450) 823 1002">
-                            [% l("Canada") %]
-                        </option>
-                        <option value="+49 0221 98259000">
-                            [% l("Germany") %]
-                        </option>
-                        <option value="[% l('[_1] (Toll Free)', '0018030113641') %]">
-                            [% l("Indonesia") %]
-                        </option>
-                        <option value="[% l('[_1] (Toll Free)', '+353 (0) 76 888 7500, 1800931084') %]">
-                            [% l("Ireland") %]
-                        </option>
-                        <option value="+48 58 881 00 02">
-                            [% l("Poland") %]
-                        </option>
-                        <option value="[% l('[_1] (Toll Free)', '8 10 8002 8553011') %]">
-                            [% l("Russia") %]
-                        </option>
-                        <option selected="[% true %]" value="[% l('[_1] (Toll Free)', '+44 (0) 1666 800042, 0800 011 9847') %]">
-                            [% l("United Kingdom") %]
-                        </option>
-                    </select>
+                    <div class="gr-4 gr-12-t">
+                        <label>[% l("Telephone:") %]</label>
+                    </div>
+                    <div class="gr-7 gr-12-t gr-no-gutter">
+                        <select id="cs_telephone_number">
+                            <option disabled="[% true %]">
+                                [% l("Select Country") %]
+                            </option>
+                            <option value="[% l('[_1] (Toll Free)', '+61 (02) 8294 5448, 1800 093570') %]">
+                                [% l("Australia") %]
+                            </option>
+                            <option value="+1 (450) 823 1002">
+                                [% l("Canada") %]
+                            </option>
+                            <option value="+49 0221 98259000">
+                                [% l("Germany") %]
+                            </option>
+                            <option value="[% l('[_1] (Toll Free)', '0018030113641') %]">
+                                [% l("Indonesia") %]
+                            </option>
+                            <option value="[% l('[_1] (Toll Free)', '+353 (0) 76 888 7500, 1800931084') %]">
+                                [% l("Ireland") %]
+                            </option>
+                            <option value="+48 58 881 00 02">
+                                [% l("Poland") %]
+                            </option>
+                            <option value="[% l('[_1] (Toll Free)', '8 10 8002 8553011') %]">
+                                [% l("Russia") %]
+                            </option>
+                            <option selected="[% true %]" value="[% l('[_1] (Toll Free)', '+44 (0) 1666 800042, 0800 011 9847') %]">
+                                [% l("United Kingdom") %]
+                            </option>
+                        </select>
+                    </div>
                 </span>
                 <span class="gr-8 gr-prefix-4 gr-12-t gr-prefix-t-0 gr-padding-10 gr-12-m" id="display_cs_telephone">
                     [% "+44 (0) 1666 800042" %]
