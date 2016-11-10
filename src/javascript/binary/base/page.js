@@ -18,6 +18,7 @@ var FinancialAssessmentws = require('../websocket_pages/user/account/settings/fi
 var ViewBalance = require('../websocket_pages/user/viewbalance/viewbalance.init').ViewBalance;
 var Cookies = require('../../lib/js-cookie');
 var moment  = require('../../lib/moment/moment');
+require('../../lib/polyfills/array.includes');
 
 
 var clock_started = false;
