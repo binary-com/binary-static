@@ -10,7 +10,7 @@
                   <label for="server_url">[% l('Server') %]</label>
               </div>
               <div class="gr-8">
-                  <input type="text" class="text" id="server_url" maxlength="30"></input>
+                  <input type="text" class="text" id="server_url" maxlength="30" />
                   <p class="hint">
                     [% l('e.g. blue.binaryws.com') %]
                   </p>
@@ -22,7 +22,7 @@
                   <label for="app_id">[% l('OAuth App ID (Optional)') %]</label>
               </div>
               <div class="gr-8">
-                  <input type="text" class="text" id="app_id" maxlength="5"></input>
+                  <input type="text" class="text" id="app_id" maxlength="5" />
                   <p class="hint">
                     [% l('You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/.') %]
                   </p>
