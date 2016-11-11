@@ -4,6 +4,7 @@ var Contract_Beta        = require('./contract').Contract_Beta;
 var Durations_Beta       = require('./duration').Durations_Beta;
 var TradingEvents_Beta   = require('./event').TradingEvents_Beta;
 var Price_Beta           = require('./price').Price_Beta;
+var Purchase_Beta        = require('./purchase').Purchase_Beta;
 var Defaults = require('../defaults').Defaults;
 
 /*
