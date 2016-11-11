@@ -13,6 +13,7 @@ var TNCApproval = require('../websocket_pages/user/tnc_approval').TNCApproval;
 var ViewPopupWS = require('../websocket_pages/user/view_popup/view_popupws').ViewPopupWS;
 var ViewBalanceUI = require('../websocket_pages/user/viewbalance/viewbalance.ui').ViewBalanceUI;
 var Cookies = require('../../lib/js-cookie');
+var State = require('../base/storage').State;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
@@ -71,7 +72,7 @@ function BinarySocketClass() {
                 data.passthrough = {};
             }
             // temporary check
-            if((data.contracts_for || data.proposal) && !data.passthrough.hasOwnProperty('dispatch_to') && !/multi_barriers_trading/.test(window.location.pathname)){
+            if ((data.contracts_for || data.proposal) && !data.passthrough.hasOwnProperty('dispatch_to') && !State.get('is_mb_trading')) {
                 data.passthrough.req_number = ++req_number;
                 timeouts[req_number] = setTimeout(function(){
                     if(typeof reloadPage === 'function' && data.contracts_for){

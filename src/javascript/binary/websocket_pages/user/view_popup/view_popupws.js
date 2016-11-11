@@ -7,6 +7,7 @@ var japanese_client = require('../../../common_functions/country_base').japanese
 var MBPrice = require('../../mb_trade/mb_price').MBPrice;
 var ViewPopupUI = require('./view_popup_ui').ViewPopupUI;
 var moment = require('../../../../lib/moment/moment');
+var State = require('../../../base/storage').State;
 
 var ViewPopupWS = (function() {
     "use strict";
@@ -199,7 +200,7 @@ var ViewPopupWS = (function() {
         normalUpdateTimers();
         normalUpdate();
         ViewPopupUI.reposition_confirmation();
-        if (/multi_barriers_trading\.html/.test(window.location.pathname)) MBPrice.hidePriceOverlay();
+        if (State.get('is_mb_trading')) MBPrice.hidePriceOverlay();
     };
 
     var normalUpdate = function() {

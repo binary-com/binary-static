@@ -5,6 +5,7 @@ var MBPurchase = require('./mb_purchase').MBPurchase;
 var MBSymbols = require('./mb_symbols').MBSymbols;
 var MBTick = require('./mb_tick').MBTick;
 var PortfolioWS = require('../user/account/portfolio/portfolio.init').PortfolioWS;
+var State = require('../../base/storage').State;
 
 /*
  * This Message object process the response from server and fire
@@ -15,7 +16,7 @@ var MBMessage = (function () {
 
     var process = function (msg) {
         var response = JSON.parse(msg.data);
-        if(!/multi_barriers_trading/.test(window.location.pathname)){
+        if(!State.get('is_mb_trading')){
             forgetTradingStreams();
             return;
         }

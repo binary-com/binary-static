@@ -1,3 +1,5 @@
+var TradingAnalysis = require('./analysis').TradingAnalysis;
+
 /*
  * This function process the active symbols to get markets
  * and underlying list

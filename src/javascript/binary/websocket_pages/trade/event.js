@@ -1,3 +1,4 @@
+var TradingAnalysis = require('./analysis').TradingAnalysis;
 var onlyNumericOnKeypress = require('../../common_functions/event_handler').onlyNumericOnKeypress;
 var moment = require('../../../lib/moment/moment');
 

@@ -1,3 +1,4 @@
+var TradingAnalysis = require('./analysis').TradingAnalysis;
 var PortfolioWS = require('../user/account/portfolio/portfolio.init').PortfolioWS;
 var ProfitTableWS = require('../user/account/profit_table/profit_table.init').ProfitTableWS;
 var StatementWS = require('../user/account/statement/statement.init').StatementWS;

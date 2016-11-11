@@ -2,7 +2,7 @@ var AssetIndexUI = require('../../resources/asset_index/asset_indexws.ui').Asset
 var MarketTimesUI = require('../../resources/market_times/market_timesws.ui').MarketTimesUI;
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
 var PortfolioWS = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
-var JPTradePage = require('../../../../binary_japan/trade_japan/JPTradePage').JPTradePage;
+var State = require('../../../base/storage').State;
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -21,7 +21,7 @@ var TradingAnalysis_Beta = (function() {
 
     var requestTradeAnalysis = function() {
         var contentId = document.getElementById('trading_analysis_content');
-        var formName = JPTradePage.isJapan() ? $('#category-select').val() : $('#contract_form_name_nav').find('.a-active').attr('id');
+        var formName = State.get('is_jp_trading') ? $('#category-select').val() : $('#contract_form_name_nav').find('.a-active').attr('id');
         if (formName === 'matchdiff') {
           formName = 'digits';
         }
@@ -147,7 +147,7 @@ var TradingAnalysis_Beta = (function() {
      * get the current active tab if its visible i.e allowed for current parameters
      */
     var getActiveTab = function() {
-        var selectedTab = sessionStorage.getItem('currentAnalysisTab_Beta') || (JPTradePage.isJapan() ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation'),
+        var selectedTab = sessionStorage.getItem('currentAnalysisTab_Beta') || (State.get('is_jp_trading') ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation'),
             selectedElement = document.getElementById(selectedTab);
 
         if (selectedElement && selectedElement.classList.contains('invisible')) {

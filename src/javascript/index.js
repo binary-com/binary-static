@@ -9,10 +9,14 @@ var exportAllFunctions = function exportAllFunctions(obj) {
 
 window.$ = window.jQuery = require('jquery');
 
-// Polyfills : needed only for japanui
+// ----- needed only for japanui -----
+// Polyfills
 window.Promise = window.Promise || require('promise-polyfill');
 window.Symbol = window.Symbol || require('es6-symbol');
 require('./lib/polyfills/object.assign');
+
+exportAllFunctions(require('./binary/websocket_pages/trade/analysis'));
+// ----- end of japanui required modules -----
 
 require('./lib/highstock/highstock.js');
 require('./lib/highstock/highstock-exporting.js');
@@ -36,7 +40,6 @@ exportAllFunctions(require('./binary/static_pages/static_pjax'));
 exportAllFunctions(require('./binary/websocket_pages/trade/content'));
 exportAllFunctions(require('./binary/websocket_pages/socket'));
 exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_price'));
-exportAllFunctions(require('./binary/websocket_pages/trade/analysis'));
 exportAllFunctions(require('./binary/websocket_pages/trade/barriers'));
 exportAllFunctions(require('./binary/websocket_pages/trade/charts/digit_infows'));
 exportAllFunctions(require('./binary/websocket_pages/trade/charts/highchartws'));
