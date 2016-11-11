@@ -42,7 +42,6 @@ exportAllFunctions(require('./binary/websocket_pages/socket'));
 exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_price'));
 exportAllFunctions(require('./binary/websocket_pages/trade/common'));
 exportAllFunctions(require('./binary/websocket_pages/trade/process'));
-exportAllFunctions(require('./binary/websocket_pages/trade/purchase'));
 exportAllFunctions(require('./binary/websocket_pages/trade/starttime'));
 exportAllFunctions(require('./binary/websocket_pages/trade/symbols'));
 exportAllFunctions(require('./binary/websocket_pages/trade/tick'));

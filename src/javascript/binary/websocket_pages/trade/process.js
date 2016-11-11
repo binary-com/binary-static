@@ -4,6 +4,7 @@ var Contract        = require('./contract').Contract;
 var Defaults        = require('./defaults').Defaults;
 var Durations       = require('./duration').Durations;
 var Price           = require('./price').Price;
+var Purchase        = require('./purchase').Purchase;
 var TradingEvents   = require('./event').TradingEvents;
 
 /*
