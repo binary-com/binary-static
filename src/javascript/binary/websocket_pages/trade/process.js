@@ -1,6 +1,7 @@
 var TradingAnalysis = require('./analysis').TradingAnalysis;
 var Barriers        = require('./barriers').Barriers;
 var Contract        = require('./contract').Contract;
+var Defaults        = require('./defaults').Defaults;
 var Durations       = require('./duration').Durations;
 var TradingEvents   = require('./event').TradingEvents;
 

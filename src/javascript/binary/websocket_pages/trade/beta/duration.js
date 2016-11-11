@@ -1,5 +1,6 @@
 var Barriers_Beta = require('./barriers').Barriers_Beta;
 var Contract_Beta = require('./contract').Contract_Beta;
+var Defaults = require('../defaults').Defaults;
 var moment = require('../../../../lib/moment/moment');
 
 /*

@@ -3,6 +3,7 @@ var Barriers_Beta        = require('./barriers').Barriers_Beta;
 var Contract_Beta        = require('./contract').Contract_Beta;
 var Durations_Beta       = require('./duration').Durations_Beta;
 var TradingEvents_Beta   = require('./event').TradingEvents_Beta;
+var Defaults = require('../defaults').Defaults;
 
 /*
  * This function process the active symbols to get markets

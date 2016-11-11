@@ -1,5 +1,6 @@
 var TradingAnalysis   = require('./analysis').TradingAnalysis;
 var displayCurrencies = require('./currency').displayCurrencies;
+var Defaults          = require('./defaults').Defaults;
 var TradingEvents     = require('./event').TradingEvents;
 var Message           = require('./message').Message;
 var Guide = require('../../common_functions/guide').Guide;

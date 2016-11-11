@@ -1,4 +1,5 @@
 var Contract = require('./contract').Contract;
+var Defaults = require('./defaults').Defaults;
 var Contract_Beta = require('./beta/contract').Contract_Beta;
 var objectNotEmpty = require('../../base/utility').objectNotEmpty;
 var format_money = require('../../common_functions/currency_to_symbol').format_money;
