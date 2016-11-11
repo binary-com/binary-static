@@ -43,7 +43,6 @@ exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_price'));
 exportAllFunctions(require('./binary/websocket_pages/trade/common'));
 exportAllFunctions(require('./binary/websocket_pages/trade/currency'));
 exportAllFunctions(require('./binary/websocket_pages/trade/defaults'));
-exportAllFunctions(require('./binary/websocket_pages/trade/message'));
 exportAllFunctions(require('./binary/websocket_pages/trade/price'));
 exportAllFunctions(require('./binary/websocket_pages/trade/process'));
 exportAllFunctions(require('./binary/websocket_pages/trade/purchase'));
