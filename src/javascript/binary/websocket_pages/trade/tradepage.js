@@ -3,6 +3,7 @@ var displayCurrencies = require('./currency').displayCurrencies;
 var Defaults          = require('./defaults').Defaults;
 var TradingEvents     = require('./event').TradingEvents;
 var Message           = require('./message').Message;
+var Price             = require('./price').Price;
 var Guide = require('../../common_functions/guide').Guide;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
 
