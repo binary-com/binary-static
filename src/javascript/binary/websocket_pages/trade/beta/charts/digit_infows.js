@@ -1,5 +1,6 @@
 var MenuContent = require('../../../../base/menu_content').MenuContent;
 var template = require('../../../../base/utility').template;
+var TradingAnalysis_Beta = require('../analysis').TradingAnalysis_Beta;
 
 TradingAnalysis_Beta.DigitInfoWS = function() {
     this.chart_config = {

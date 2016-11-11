@@ -1,3 +1,4 @@
+var TradingAnalysis_Beta = require('./analysis').TradingAnalysis_Beta;
 var AssetIndexUI = require('../../resources/asset_index/asset_indexws.ui').AssetIndexUI;
 var MarketTimesUI = require('../../resources/market_times/market_timesws.ui').MarketTimesUI;
 var PortfolioWS = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
