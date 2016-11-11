@@ -51,7 +51,6 @@ exportAllFunctions(require('./binary/websocket_pages/trade/symbols'));
 exportAllFunctions(require('./binary/websocket_pages/trade/tick'));
 exportAllFunctions(require('./binary/websocket_pages/trade/tick_trade'));
 exportAllFunctions(require('./binary/websocket_pages/trade/tradepage'));
-exportAllFunctions(require('./binary/websocket_pages/trade/beta/message'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/price'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/process'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/purchase'));
