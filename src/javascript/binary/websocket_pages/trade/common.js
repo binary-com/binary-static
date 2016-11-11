@@ -1,3 +1,4 @@
+var Contract_Beta = require('./contract').Contract_Beta;
 var objectNotEmpty = require('../../base/utility').objectNotEmpty;
 var format_money = require('../../common_functions/currency_to_symbol').format_money;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
