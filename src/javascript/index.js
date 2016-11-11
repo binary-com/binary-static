@@ -41,7 +41,6 @@ exportAllFunctions(require('./binary/websocket_pages/trade/content'));
 exportAllFunctions(require('./binary/websocket_pages/socket'));
 exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_price'));
 exportAllFunctions(require('./binary/websocket_pages/trade/barriers'));
-exportAllFunctions(require('./binary/websocket_pages/trade/charts/highchartws'));
 exportAllFunctions(require('./binary/websocket_pages/trade/common'));
 exportAllFunctions(require('./binary/websocket_pages/trade/contract'));
 exportAllFunctions(require('./binary/websocket_pages/trade/currency'));

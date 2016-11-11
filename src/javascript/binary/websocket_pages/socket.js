@@ -14,6 +14,7 @@ var ViewPopupWS = require('../websocket_pages/user/view_popup/view_popupws').Vie
 var ViewBalanceUI = require('../websocket_pages/user/viewbalance/viewbalance.ui').ViewBalanceUI;
 var Cookies = require('../../lib/js-cookie');
 var State = require('../base/storage').State;
+var Highchart = require('./trade/charts/highchartws').Highchart;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
