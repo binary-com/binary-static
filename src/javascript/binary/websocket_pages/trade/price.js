@@ -1,3 +1,4 @@
+var Durations = require('./duration').Durations;
 var format_money = require('../../common_functions/currency_to_symbol').format_money;
 var moment = require('../../../lib/moment/moment');
 
