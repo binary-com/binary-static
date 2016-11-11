@@ -1,4 +1,5 @@
 var TradingAnalysis_Beta = require('./analysis').TradingAnalysis_Beta;
+var TradingEvents_Beta   = require('./event').TradingEvents_Beta;
 var Guide = require('../../../common_functions/guide').Guide;
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
 var PortfolioWS = require('../../user/account/portfolio/portfolio.init').PortfolioWS;

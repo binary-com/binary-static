@@ -1,4 +1,5 @@
-var Contract_Beta = require('./contract').Contract_Beta;
+var Contract_Beta      = require('./contract').Contract_Beta;
+var TradingEvents_Beta = require('./event').TradingEvents_Beta;
 var moment = require('../../../../lib/moment/moment');
 
 /*
