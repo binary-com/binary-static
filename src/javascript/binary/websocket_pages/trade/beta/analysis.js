@@ -1,6 +1,7 @@
 var AssetIndexUI = require('../../resources/asset_index/asset_indexws.ui').AssetIndexUI;
 var MarketTimesUI = require('../../resources/market_times/market_timesws.ui').MarketTimesUI;
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
+var DigitInfoWS_Beta = require('./charts/digit_infows').DigitInfoWS_Beta;
 var PortfolioWS = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
 var State = require('../../../base/storage').State;
 
@@ -17,7 +18,7 @@ var State = require('../../../base/storage').State;
  */
 
 var TradingAnalysis_Beta = (function() {
-    var trading_digit_info;
+    var trading_digit_info = new DigitInfoWS_Beta();
 
     var requestTradeAnalysis = function() {
         var contentId = document.getElementById('trading_analysis_content');
@@ -89,7 +90,6 @@ var TradingAnalysis_Beta = (function() {
             case 'tab_last_digit':
                 var underlying = $('[name=underlying] option:selected').val() || $('#underlying option:selected').val();
                 var tick = $('[name=tick_count]').val() || 100;
-                trading_digit_info = TradingAnalysis_Beta.tab_last_digitws;
                 BinarySocket.send({'ticks_history': underlying, 'end': 'latest', 'count': tick + '', 'req_id': 1});
                 break;
             case 'tab_asset_index':
@@ -130,7 +130,6 @@ var TradingAnalysis_Beta = (function() {
             analysisContainer = document.getElementById('analysis_content');
 
         if (analysisContainer) {
-            trading_digit_info = undefined;
             var childElements = analysisContainer.children,
                 currentTabElement = document.getElementById(currentTab + '-content'),
                 classes = currentTabElement.classList;
@@ -231,10 +230,6 @@ var TradingAnalysis_Beta = (function() {
         request: requestTradeAnalysis,
         digit_info: function() {
             return trading_digit_info;
-        },
-        // Should be removed with legacy trading.
-        set_digit_info: function(obj) {
-            trading_digit_info = obj;
         },
         tab_portfolio: function() {
             return tab_portfolio;

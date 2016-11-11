@@ -1,8 +1,7 @@
 var MenuContent = require('../../../../base/menu_content').MenuContent;
 var template = require('../../../../base/utility').template;
-var TradingAnalysis_Beta = require('../analysis').TradingAnalysis_Beta;
 
-TradingAnalysis_Beta.DigitInfoWS = function() {
+var DigitInfoWS_Beta = function() {
     this.chart_config = {
         chart: {
             renderTo:'last_digit_histo',
@@ -93,7 +92,7 @@ TradingAnalysis_Beta.DigitInfoWS = function() {
     this.prev_max_index = -1;
 };
 
-TradingAnalysis_Beta.DigitInfoWS.prototype = {
+DigitInfoWS_Beta.prototype = {
     add_content: function(underlying){
         var domain = document.domain.split('.').slice(-2).join('.'),
             underlyings =[];
@@ -281,4 +280,6 @@ TradingAnalysis_Beta.DigitInfoWS.prototype = {
     }
 };
 
-TradingAnalysis_Beta.tab_last_digitws = new TradingAnalysis_Beta.DigitInfoWS();
+module.exports = {
+    DigitInfoWS_Beta: DigitInfoWS_Beta,
+};
