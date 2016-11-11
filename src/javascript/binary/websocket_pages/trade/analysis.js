@@ -1,3 +1,4 @@
+var DigitInfoWS = require('./charts/digit_infows').DigitInfoWS;
 var JapanPortfolio = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
 var State = require('../../base/storage').State;
 
@@ -14,7 +15,7 @@ var State = require('../../base/storage').State;
  */
 
 var TradingAnalysis = (function() {
-    var trading_digit_info;
+    var trading_digit_info = new DigitInfoWS();
 
     var requestTradeAnalysis = function() {
         var contentId = document.getElementById('trading_bottom_content');
@@ -88,7 +89,6 @@ var TradingAnalysis = (function() {
                 if (currentTab == 'tab_last_digit') {
                     var underlying = $('[name=underlying] option:selected').val() || $('#underlying option:selected').val();
                     var tick = $('[name=tick_count]').val() || 100;
-                    trading_digit_info = TradingAnalysis.tab_last_digitws;
                     BinarySocket.send({
                         ticks_history: underlying,
                         count: tick + '',
@@ -127,7 +127,6 @@ var TradingAnalysis = (function() {
             analysisContainer = document.getElementById('bet_bottom_content');
 
         if (analysisContainer) {
-            trading_digit_info = undefined;
             var childElements = analysisContainer.children,
                 currentTabElement = document.getElementById(currentTab + '-content'),
                 classes = currentTabElement.classList;
@@ -229,10 +228,6 @@ var TradingAnalysis = (function() {
         request: requestTradeAnalysis,
         digit_info: function() {
             return trading_digit_info;
-        },
-        // Should be removed with legacy trading.
-        set_digit_info: function(obj) {
-            trading_digit_info = obj;
         },
         tab_portfolio: function() {
             return tab_portfolio;
