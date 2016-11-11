@@ -1,5 +1,6 @@
 var TradingAnalysis = require('./analysis').TradingAnalysis;
 var Barriers        = require('./barriers').Barriers;
+var Contract        = require('./contract').Contract;
 
 /*
  * This function process the active symbols to get markets

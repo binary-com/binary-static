@@ -1,4 +1,5 @@
 var Barriers = require('./barriers').Barriers;
+var Contract = require('./contract').Contract;
 var moment = require('../../../lib/moment/moment');
 
 /*

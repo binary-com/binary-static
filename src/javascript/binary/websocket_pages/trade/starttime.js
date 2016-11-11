@@ -1,3 +1,4 @@
+var Contract = require('./contract').Contract;
 var moment = require('../../../lib/moment/moment');
 
 /*

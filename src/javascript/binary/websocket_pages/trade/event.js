@@ -1,5 +1,6 @@
 var TradingAnalysis = require('./analysis').TradingAnalysis;
 var Barriers        = require('./barriers').Barriers;
+var Contract        = require('./contract').Contract;
 var onlyNumericOnKeypress = require('../../common_functions/event_handler').onlyNumericOnKeypress;
 var moment = require('../../../lib/moment/moment');
 

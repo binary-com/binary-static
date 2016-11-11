@@ -1,3 +1,5 @@
+var Contract = require('./contract').Contract;
+
 /*
  * Purchase object that handles all the functions related to
  * contract purchase response
