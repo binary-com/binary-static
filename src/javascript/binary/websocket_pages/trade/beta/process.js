@@ -1,4 +1,5 @@
 var TradingAnalysis_Beta = require('./analysis').TradingAnalysis_Beta;
+var Barriers_Beta        = require('./barriers').Barriers_Beta;
 
 /*
  * This function process the active symbols to get markets

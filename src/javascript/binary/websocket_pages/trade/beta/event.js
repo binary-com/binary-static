@@ -1,4 +1,5 @@
 var TradingAnalysis_Beta = require('./analysis').TradingAnalysis_Beta;
+var Barriers_Beta        = require('./barriers').Barriers_Beta;
 var onlyNumericOnKeypress = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
 var moment = require('../../../../lib/moment/moment');
 
