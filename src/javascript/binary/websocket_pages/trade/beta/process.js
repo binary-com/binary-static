@@ -3,6 +3,7 @@ var Barriers_Beta        = require('./barriers').Barriers_Beta;
 var Contract_Beta        = require('./contract').Contract_Beta;
 var Durations_Beta       = require('./duration').Durations_Beta;
 var TradingEvents_Beta   = require('./event').TradingEvents_Beta;
+var Price_Beta           = require('./price').Price_Beta;
 var Defaults = require('../defaults').Defaults;
 
 /*
