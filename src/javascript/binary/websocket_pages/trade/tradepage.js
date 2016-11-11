@@ -1,4 +1,5 @@
 var TradingAnalysis = require('./analysis').TradingAnalysis;
+var TradingEvents   = require('./event').TradingEvents;
 var Guide = require('../../common_functions/guide').Guide;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
 

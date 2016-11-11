@@ -1,4 +1,5 @@
-var Contract = require('./contract').Contract;
+var Contract      = require('./contract').Contract;
+var TradingEvents = require('./event').TradingEvents;
 var moment = require('../../../lib/moment/moment');
 
 /*
