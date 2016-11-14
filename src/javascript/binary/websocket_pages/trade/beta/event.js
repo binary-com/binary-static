@@ -3,6 +3,7 @@ var Barriers_Beta        = require('./barriers').Barriers_Beta;
 var Contract_Beta        = require('./contract').Contract_Beta;
 var Durations_Beta       = require('./duration').Durations_Beta;
 var Price_Beta           = require('./price').Price_Beta;
+var StartDates_Beta      = require('./starttime').StartDates_Beta;
 var Defaults = require('../defaults').Defaults;
 var Tick     = require('../tick').Tick;
 var onlyNumericOnKeypress = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
@@ -19,35 +20,6 @@ var moment = require('../../../../lib/moment/moment');
 var TradingEvents_Beta = (function () {
     'use strict';
 
-    var onStartDateChange = function(value){
-        var $dateStartSelect = $('#date_start');
-        if(!value || !$dateStartSelect.find('option[value='+value+']').length){
-            return 0;
-        }
-
-        var yellowBorder = 'light-yellow-background';
-        if (value !== 'now') {
-            $dateStartSelect.addClass(yellowBorder);
-        } else {
-            $dateStartSelect.removeClass(yellowBorder);
-        }
-
-        $dateStartSelect.val(value);
-
-        var make_price_request = 1;
-        if (value !== 'now' && Defaults.get('expiry_type') === 'endtime') {
-            make_price_request = -1;
-            var end_time = moment(parseInt(value)*1000).add(5,'minutes').utc();
-            Durations_Beta.setTime((timeIsValid($('#expiry_time')) && Defaults.get('expiry_time') ?
-                               Defaults.get('expiry_time') : end_time.format("HH:mm")));
-            Durations_Beta.selectEndDate((timeIsValid($('#expiry_time')) && Defaults.get('expiry_date') ?
-                                    Defaults.get('expiry_date') : end_time.format("YYYY-MM-DD")));
-        }
-        timeIsValid($('#expiry_time'));
-        Durations_Beta.display();
-        return make_price_request;
-    };
-
     var onExpiryTypeChange = function(value){
         if(!value || !$('#expiry_type').find('option[value='+value+']').length){
             value = 'duration';
@@ -63,7 +35,7 @@ var TradingEvents_Beta = (function () {
             }
             Defaults.remove('duration_units', 'duration_amount');
         } else {
-            StartDates.enable();
+            StartDates_Beta.enable();
             Durations_Beta.display();
             if(Defaults.get('duration_units')){
                 TradingEvents_Beta.onDurationUnitChange(Defaults.get('duration_units'));
@@ -294,7 +266,7 @@ var TradingEvents_Beta = (function () {
         if (dateStartElement) {
             dateStartElement.addEventListener('change', function (e) {
                 Defaults.set('date_start', e.target.value);
-                var r = onStartDateChange(e.target.value);
+                var r = Durations_Beta.onStartDateChange(e.target.value);
                 if(r>=0){
                     processPriceRequest_Beta();
                 }
@@ -553,8 +525,7 @@ var TradingEvents_Beta = (function () {
 
     return {
         init: initiate,
-        onStartDateChange: onStartDateChange,
-        onExpiryTypeChange: onExpiryTypeChange,
+        onExpiryTypeChange  : onExpiryTypeChange,
         onDurationUnitChange: onDurationUnitChange
     };
 })();

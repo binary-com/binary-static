@@ -42,7 +42,6 @@ exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_price'));
 exportAllFunctions(require('./binary/websocket_pages/trade/common'));
 exportAllFunctions(require('./binary/websocket_pages/trade/process'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/process'));
-exportAllFunctions(require('./binary/websocket_pages/trade/beta/starttime'));
 
 exportAllFunctions(require('./binary/websocket_pages/user/reality_check/reality_check.data'));
 exportAllFunctions(require('./binary/websocket_pages/user/reality_check/reality_check.init'));

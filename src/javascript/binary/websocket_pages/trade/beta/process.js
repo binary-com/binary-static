@@ -5,10 +5,12 @@ var Durations_Beta       = require('./duration').Durations_Beta;
 var TradingEvents_Beta   = require('./event').TradingEvents_Beta;
 var Price_Beta           = require('./price').Price_Beta;
 var Purchase_Beta        = require('./purchase').Purchase_Beta;
+var StartDates_Beta      = require('./starttime').StartDates_Beta;
 var WSTickDisplay_Beta   = require('./tick_trade').WSTickDisplay_Beta;
 var Defaults = require('../defaults').Defaults;
 var Symbols  = require('../symbols').Symbols;
 var Tick     = require('../tick').Tick;
+var State = require('../../../base/storage').State;
 
 /*
  * This function process the active symbols to get markets
@@ -171,8 +173,8 @@ function processContractForm_Beta() {
     displaySpreads_Beta();
 
     var r1;
-    if (StartDates_Beta.displayed() && Defaults.get('date_start') && Defaults.get('date_start') !== 'now') {
-        r1 = TradingEvents_Beta.onStartDateChange(Defaults.get('date_start'));
+    if (State.get('is_start_dates_displayed') && Defaults.get('date_start') && Defaults.get('date_start') !== 'now') {
+        r1 = Durations_Beta.onStartDateChange(Defaults.get('date_start'));
         if (!r1 || Defaults.get('expiry_type') === 'endtime') Durations_Beta.display();
     } else {
         Durations_Beta.display();
