@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-14 07:14+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-11-14 17:14+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.9\n"
+"X-Generator: Weblate 2.10-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」とは%1の取引プラットフォームとのインターフェースとして登録されたアプリケーションを使用できるよう、%1によって作成・管理されているプログラムのルーチン、プロトコル、ツール、リソースの独自のセットのことをいいます。"
@@ -1762,7 +1762,7 @@ msgstr ""
 "第16条　お客さまが当社に対して有する債権は、他に譲渡、質入れ、その他処分をすることができないものとします。"
 
 msgid "Clients agree to comply with the reasonable requests made by the Company for the purpose of verifying compliance with this term."
-msgstr ""
+msgstr "この条件の遵守を検証するために、クライアントは当社による合理的なリクエストを遵守することに同意します。"
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. Binary.com is not available in the Republic of Vanuatu."
 msgstr "その他の国（アメリカ、日本、コスタリカ、香港などの一部の国を除く）の居住者は、この会社の下で口座を開設されます。"
@@ -3145,6 +3145,8 @@ msgstr "本契約において法的効力が無い、または予見不可能で
 
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
 msgstr ""
+"当社が単独の裁量で顧客がこれらの条件を遵守していないと判断した場合、または顧客が当社からの合理的な要求を遵守しない場合、当社は顧客の口座を取り消し、 "
+"そこに蓄積された資金を保留することがあります。"
 
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "管轄裁判所または政府機関の命に従い、法律により当社は個人情報または財務情報を開示する必要があります。法的に禁止されない限り、適切とみなす情報への保護ができるよう迅速にその旨をユーザーに通知致します。このような必要な開示は、利用規約契約の違反とはなりません。"
@@ -3524,7 +3526,7 @@ msgid "Isle of Man"
 msgstr "マン島"
 
 msgid "It is a condition of using the website that:"
-msgstr ""
+msgstr "ウェブサイト使用条件："
 
 msgid "It is important that you monitor all of your positions closely. It is your responsibility to monitor your positions and during the period that you have any open Contracts, you should always have the ability to access your Accounts."
 msgstr "お客さまの全てのポジションをきちんとモニターすることが大切です。契約をオープンにしている間は、ポジションをモニターすることはお客さまの責任になります。口座に常にアクセスできるようにしておくことが必要です。"
@@ -6147,7 +6149,7 @@ msgid "The Company has and retains the right, to terminate any event or trade, i
 msgstr "上記のイベントの発生に限らず、あらゆるイベントまたは取引を終了させる権利を当社は保持しています。"
 
 msgid "The Company has the discretion to seek information from Clients to verify compliance with these terms."
-msgstr ""
+msgstr "当社はこれらの条件の遵守を検証するために、顧客から情報を求める権限を有します。"
 
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the %1 API, or any errors or omissions of the %1 API;"
 msgstr "%1 APIの情報、公開価格、設備の結果発生した事象または%1 APIのエラーまたは欠落による損失及び損害に関して当社は一切の責任を負いません。"
@@ -6177,7 +6179,7 @@ msgid "The Company may use or disclose (or choose not to use or disclose) such C
 msgstr "当社は世界中の媒体においていずれかの方法でいずれかの目的のためにコントリビューションを使用または開示（または使用と開示しないことを決定）することがあります。"
 
 msgid "The Company may withhold payment of funds accumulated in a Client’s account while it takes steps to verify compliance with these terms."
-msgstr ""
+msgstr "これらの条件遵守の検証段階において、当社はクライアントの口座に貯蓄された資金の支払いを保留することがあります。"
 
 msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
 msgstr "当社には場合に応じて、独自の判断で適切にな執行がする代わりに規制により必要な「Know Your Customer」（KYC）手順が必要であるため、お客さまに対して身分証明（パスポートの公証コピー、及び状況に応じて当社が必要と判断した身分証明資料など）を求める権利があり、個人情報、住所証明、資金源および/または富源などの十分な証明資料が提供されるまでご口座に制限を設ける権利を有します。Know Your Customerの提出文書はお客さまが口座に資金を入金する際に必要となります。Binary (Europe) Ltdで口座を開設される場合、お客さま認証が必要となる閾値は累計2,300ユーロの出金です。"
@@ -6205,7 +6207,7 @@ msgid "The Company reserves the right to change any part of this Agreement at an
 msgstr "当社は本契約のどの項目に対しても随時、変更を施す権利を有します。変更が施される場合は、ご登録済みのメールアドレスへ実施日の７日前に事前通達を行いますが、定期的な本契約の内容確認はアフィリエイト会員の義務です。変更が施される前に当プログラムにご参加された方に対しても、変更点は適用されます。"
 
 msgid "The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of, Clients who engage in any trading activity:"
-msgstr ""
+msgstr "当社はいかなる取引活動に従事するクライアントとの取引の拒否をする権利、取引を中止する権利、および取引を取り消す権利を留保します。"
 
 msgid "The Company reserves the right to suspend the operation of this site or sections thereof:"
 msgstr "当社は以下のような状況下ではサービスの提供を見合わせる権限を有します。："
@@ -8225,7 +8227,7 @@ msgid "terms and conditions"
 msgstr "利用規約"
 
 msgid "that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or"
-msgstr ""
+msgstr "為替、金融市場、金融規制環境の運営を統制するいかなる法律、規制、法律文書、条例または規則に反すること。；または"
 
 msgid "the %1 affiliate program is competitive and adaptive to your unique requirements."
 msgstr "%1アフィリエイトプログラムは、競争力があり、お客さまの要件に適用したものとなっています。"
