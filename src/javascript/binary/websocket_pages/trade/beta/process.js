@@ -5,6 +5,7 @@ var Durations_Beta       = require('./duration').Durations_Beta;
 var TradingEvents_Beta   = require('./event').TradingEvents_Beta;
 var Price_Beta           = require('./price').Price_Beta;
 var Purchase_Beta        = require('./purchase').Purchase_Beta;
+var WSTickDisplay_Beta   = require('./tick_trade').WSTickDisplay_Beta;
 var Defaults = require('../defaults').Defaults;
 var Symbols  = require('../symbols').Symbols;
 var Tick     = require('../tick').Tick;

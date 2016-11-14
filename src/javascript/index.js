@@ -46,7 +46,6 @@ exportAllFunctions(require('./binary/websocket_pages/trade/starttime'));
 exportAllFunctions(require('./binary/websocket_pages/trade/tradepage'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/process'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/starttime'));
-exportAllFunctions(require('./binary/websocket_pages/trade/beta/tick_trade'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/tradepage'));
 
 exportAllFunctions(require('./binary/websocket_pages/user/reality_check/reality_check.data'));
