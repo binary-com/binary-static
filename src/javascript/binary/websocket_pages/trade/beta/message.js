@@ -1,13 +1,14 @@
 var TradingAnalysis_Beta = require('./analysis').TradingAnalysis_Beta;
 var Purchase_Beta        = require('./purchase').Purchase_Beta;
-var Symbols = require('../symbols').Symbols;
-var Tick    = require('../tick').Tick;
 var displayCurrencies = require('../currency').displayCurrencies;
-var AssetIndexUI = require('../../resources/asset_index/asset_indexws.ui').AssetIndexUI;
+var Symbols           = require('../symbols').Symbols;
+var Tick              = require('../tick').Tick;
+var AssetIndexUI  = require('../../resources/asset_index/asset_indexws.ui').AssetIndexUI;
 var MarketTimesUI = require('../../resources/market_times/market_timesws.ui').MarketTimesUI;
-var PortfolioWS = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
+var PortfolioWS   = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
 var ProfitTableWS = require('../../user/account/profit_table/profit_table.init').ProfitTableWS;
-var StatementWS = require('../../user/account/statement/statement.init').StatementWS;
+var StatementWS   = require('../../user/account/statement/statement.init').StatementWS;
+var State = require('../../../base/storage').State;
 
 /*
  * This Message object process the response from server and fire
@@ -18,7 +19,7 @@ var Message_Beta = (function () {
 
     var process = function (msg) {
         var response = JSON.parse(msg.data);
-        if(!TradePage_Beta.is_trading_page()){
+        if(!State.get('is_beta_trading')){
             forgetTradingStreams_Beta();
             return;
         }

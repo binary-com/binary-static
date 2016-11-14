@@ -4,6 +4,7 @@ var CommonFunctions = require('../../../common_functions/common_functions').Comm
 var AssetIndexData = require('./asset_indexws.data').AssetIndexData;
 var AssetIndex = require('../asset_indexws').AssetIndex;
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
+var State = require('../../../base/storage').State;
 
 var AssetIndexUI = (function() {
     "use strict";
@@ -18,7 +19,7 @@ var AssetIndexUI = (function() {
 
     var init = function(config) {
         if (japanese_client()) {
-            if (!TradePage_Beta.is_trading_page()) {
+            if (!State.get('is_beta_trading')) {
                 window.location.href = page.url.url_for('resources');
             }
             return;
@@ -128,7 +129,7 @@ var AssetIndexUI = (function() {
     };
 
     var initSocket = function() {
-        if (TradePage_Beta.is_trading_page()) return;
+        if (State.get('is_beta_trading')) return;
         BinarySocket.init({
             onmessage: function(msg) {
                 var response = JSON.parse(msg.data);

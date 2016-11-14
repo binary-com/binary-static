@@ -16,7 +16,8 @@ var Cookies = require('../../lib/js-cookie');
 var State = require('../base/storage').State;
 var Highchart     = require('./trade/charts/highchartws').Highchart;
 var WSTickDisplay = require('./trade/tick_trade').WSTickDisplay;
-var TradePage     = require('./trade/tradepage').TradePage;
+var TradePage      = require('./trade/tradepage').TradePage;
+var TradePage_Beta = require('./trade/beta/tradepage').TradePage_Beta;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
@@ -332,7 +333,7 @@ function BinarySocketClass() {
             clearTimeouts();
 
             if(!manualClosed && wrongAppId !== getAppId()) {
-                if (State.get('is_trading') || TradePage_Beta.is_trading_page()) {
+                if (State.get('is_trading') || State.get('is_beta_trading')) {
                     showPriceOverlay();
                     showFormOverlay();
                     if (State.get('is_trading')) TradePage.onLoad();

@@ -5,6 +5,7 @@ var japanese_client = require('../../../common_functions/country_base').japanese
 var MarketTimesData = require('./market_timesws.data').MarketTimesData;
 var MarketTimes = require('../market_timesws').MarketTimes;
 var moment = require('../../../../lib/moment/moment');
+var State = require('../../../base/storage').State;
 
 var MarketTimesUI = (function() {
     "use strict";
@@ -167,7 +168,7 @@ var MarketTimesUI = (function() {
     };
 
     var initSocket = function() {
-        if (TradePage_Beta.is_trading_page()) return;
+        if (State.get('is_beta_trading')) return;
         BinarySocket.init({
             onmessage: function(msg) {
                 var response = JSON.parse(msg.data);

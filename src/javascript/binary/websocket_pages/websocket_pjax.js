@@ -28,9 +28,10 @@ var RealAccOpening = require('./user/new_account/real_acc_opening').RealAccOpeni
 var VirtualAccOpening = require('./user/new_account/virtual_acc_opening').VirtualAccOpening;
 var ResetPasswordWS = require('./user/reset_password').ResetPasswordWS;
 var TNCApproval = require('./user/tnc_approval').TNCApproval;
-var TradePage   = require('./trade/tradepage').TradePage;
-var MBTradePage = require('./mb_trade/mb_tradepage').MBTradePage;
-var JPTradePage = require('../../binary_japan/trade_japan/JPTradePage').JPTradePage;
+var TradePage      = require('./trade/tradepage').TradePage;
+var TradePage_Beta = require('./trade/beta/tradepage').TradePage_Beta;
+var MBTradePage    = require('./mb_trade/mb_tradepage').MBTradePage;
+var JPTradePage    = require('../../binary_japan/trade_japan/JPTradePage').JPTradePage;
 
 pjax_config_page('/trading', function () {
     return {

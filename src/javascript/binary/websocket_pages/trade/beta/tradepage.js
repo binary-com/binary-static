@@ -9,10 +9,12 @@ var Guide = require('../../../common_functions/guide').Guide;
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
 var PortfolioWS = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
 var ResizeSensor = require('../../../../lib/resize-sensor');
+var State = require('../../../base/storage').State;
 
 var TradePage_Beta = (function(){
 
-  var trading_page = 0, events_initialized = 0;
+  var events_initialized = 0;
+  State.remove('is_beta_trading');
 
   var onLoad = function(){
     var is_japanese_client = japanese_client();
@@ -23,7 +25,7 @@ var TradePage_Beta = (function(){
         window.location.href = page.url.url_for('trading');
         return;
     }
-    trading_page = 1;
+    State.set('is_beta_trading' , true);
     if(sessionStorage.getItem('currencies')){
       displayCurrencies();
     }
@@ -68,7 +70,7 @@ var TradePage_Beta = (function(){
   };
 
   var onUnload = function(){
-    trading_page = 0;
+    State.remove('is_beta_trading');
     events_initialized = 0;
     forgetTradingStreams_Beta();
     BinarySocket.clear();
@@ -81,7 +83,6 @@ var TradePage_Beta = (function(){
     onLoad: onLoad,
     reload: reload,
     onUnload : onUnload,
-    is_trading_page: function(){return trading_page;}
   };
 })();
 
