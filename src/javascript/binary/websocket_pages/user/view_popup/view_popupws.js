@@ -8,7 +8,8 @@ var MBPrice = require('../../mb_trade/mb_price').MBPrice;
 var ViewPopupUI = require('./view_popup_ui').ViewPopupUI;
 var moment = require('../../../../lib/moment/moment');
 var State = require('../../../base/storage').State;
-var Highchart = require('../../trade/charts/highchartws').Highchart;
+var Highchart     = require('../../trade/charts/highchartws').Highchart;
+var WSTickDisplay = require('../../trade/tick_trade').WSTickDisplay;
 
 var ViewPopupWS = (function() {
     "use strict";

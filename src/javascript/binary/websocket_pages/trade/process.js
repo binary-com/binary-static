@@ -8,6 +8,7 @@ var Price           = require('./price').Price;
 var Purchase        = require('./purchase').Purchase;
 var Symbols         = require('./symbols').Symbols;
 var Tick            = require('./tick').Tick;
+var WSTickDisplay   = require('./tick_trade').WSTickDisplay;
 
 /*
  * This function process the active symbols to get markets

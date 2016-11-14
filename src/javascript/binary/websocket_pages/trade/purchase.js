@@ -1,6 +1,7 @@
-var Contract = require('./contract').Contract;
-var Symbols  = require('./symbols').Symbols;
-var Tick     = require('./tick').Tick;
+var Contract      = require('./contract').Contract;
+var Symbols       = require('./symbols').Symbols;
+var Tick          = require('./tick').Tick;
+var WSTickDisplay = require('./tick_trade').WSTickDisplay;
 
 /*
  * Purchase object that handles all the functions related to
