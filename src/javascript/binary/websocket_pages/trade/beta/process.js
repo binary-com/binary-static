@@ -7,6 +7,7 @@ var Price_Beta           = require('./price').Price_Beta;
 var Purchase_Beta        = require('./purchase').Purchase_Beta;
 var Defaults = require('../defaults').Defaults;
 var Symbols  = require('../symbols').Symbols;
+var Tick     = require('../tick').Tick;
 
 /*
  * This function process the active symbols to get markets

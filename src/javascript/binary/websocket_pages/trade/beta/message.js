@@ -1,6 +1,7 @@
 var TradingAnalysis_Beta = require('./analysis').TradingAnalysis_Beta;
 var Purchase_Beta        = require('./purchase').Purchase_Beta;
 var Symbols = require('../symbols').Symbols;
+var Tick    = require('../tick').Tick;
 var displayCurrencies = require('../currency').displayCurrencies;
 var AssetIndexUI = require('../../resources/asset_index/asset_indexws.ui').AssetIndexUI;
 var MarketTimesUI = require('../../resources/market_times/market_timesws.ui').MarketTimesUI;

@@ -4,6 +4,7 @@ var Contract_Beta        = require('./contract').Contract_Beta;
 var Durations_Beta       = require('./duration').Durations_Beta;
 var Price_Beta           = require('./price').Price_Beta;
 var Defaults = require('../defaults').Defaults;
+var Tick     = require('../tick').Tick;
 var onlyNumericOnKeypress = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
 var moment = require('../../../../lib/moment/moment');
 

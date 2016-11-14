@@ -1,5 +1,6 @@
 var Contract = require('./contract').Contract;
 var Symbols  = require('./symbols').Symbols;
+var Tick     = require('./tick').Tick;
 
 /*
  * Purchase object that handles all the functions related to

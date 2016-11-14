@@ -4,6 +4,7 @@ var Contract        = require('./contract').Contract;
 var Defaults        = require('./defaults').Defaults;
 var Durations       = require('./duration').Durations;
 var Price           = require('./price').Price;
+var Tick            = require('./tick').Tick;
 var onlyNumericOnKeypress = require('../../common_functions/event_handler').onlyNumericOnKeypress;
 var moment = require('../../../lib/moment/moment');
 

@@ -1,5 +1,6 @@
 var Contract_Beta = require('./contract').Contract_Beta;
 var Defaults = require('../defaults').Defaults;
+var Tick     = require('../tick').Tick;
 var moment = require('../../../../lib/moment/moment');
 
 /*
