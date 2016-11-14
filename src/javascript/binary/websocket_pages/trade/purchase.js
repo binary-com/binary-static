@@ -2,6 +2,7 @@ var Contract      = require('./contract').Contract;
 var Symbols       = require('./symbols').Symbols;
 var Tick          = require('./tick').Tick;
 var WSTickDisplay = require('./tick_trade').WSTickDisplay;
+var Content = require('../../common_functions/content').Content;
 
 /*
  * Purchase object that handles all the functions related to

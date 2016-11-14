@@ -1,10 +1,11 @@
-var showLoadingImage = require('../../../../base/utility').showLoadingImage;
+var showLoadingImage     = require('../../../../base/utility').showLoadingImage;
 var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
-var FlexTableUI = require('../../../../common_functions/attach_dom/flextable').FlexTableUI;
-var ValidateV2 = require('../../../../common_functions/validation_v2').ValidateV2;
+var Content         = require('../../../../common_functions/content').Content;
+var FlexTableUI     = require('../../../../common_functions/attach_dom/flextable').FlexTableUI;
+var ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
 var japanese_client = require('../../../../common_functions/country_base').japanese_client;
-var ValidationUI = require('../../../../validator').ValidationUI;
-var customError = require('../../../../validator').customError;
+var ValidationUI    = require('../../../../validator').ValidationUI;
+var customError     = require('../../../../validator').customError;
 var bind_validation = require('../../../../validator').bind_validation;
 var dv = require('../../../../../lib/validation');
 

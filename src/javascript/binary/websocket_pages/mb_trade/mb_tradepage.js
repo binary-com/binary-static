@@ -6,6 +6,7 @@ var MBSymbols = require('./mb_symbols').MBSymbols;
 var TradingAnalysis = require('../trade/analysis').TradingAnalysis;
 var JapanPortfolio = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
 var State = require('../../base/storage').State;
+var Content = require('../../common_functions/content').Content;
 
 var MBTradePage = (function(){
 

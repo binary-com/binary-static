@@ -37,7 +37,6 @@ exportAllFunctions(require('./binary/base/pjax'));
 
 exportAllFunctions(require('./binary/static_pages/static_pjax'));
 
-exportAllFunctions(require('./binary/websocket_pages/trade/content'));
 exportAllFunctions(require('./binary/websocket_pages/socket'));
 exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_price'));
 exportAllFunctions(require('./binary/websocket_pages/trade/common'));

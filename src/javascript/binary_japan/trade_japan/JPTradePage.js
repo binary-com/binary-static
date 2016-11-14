@@ -1,6 +1,7 @@
 var JapanPortfolio = require('./portfolio').JapanPortfolio;
 var TradingAnalysis = require('../../binary/websocket_pages/trade/analysis').TradingAnalysis;
-var State = require('../../binary/base/storage').State;
+var Content = require('../../binary/common_functions/content').Content;
+var State   = require('../../binary/base/storage').State;
 
 var JPTradePage = (function() {
 

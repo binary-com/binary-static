@@ -1,6 +1,7 @@
 var Barriers = require('./barriers').Barriers;
 var Contract = require('./contract').Contract;
 var Defaults = require('./defaults').Defaults;
+var Content = require('../../common_functions/content').Content;
 var moment = require('../../../lib/moment/moment');
 
 /*

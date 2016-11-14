@@ -2,6 +2,7 @@ var Contract_Beta      = require('./contract').Contract_Beta;
 var TradingEvents_Beta = require('./event').TradingEvents_Beta;
 var Defaults = require('../defaults').Defaults;
 var moment = require('../../../../lib/moment/moment');
+var Content = require('../../../common_functions/content').Content;
 
 /*
  * Handles start time display

@@ -1,6 +1,7 @@
 var Tick = require('./tick').Tick;
-var ViewPopupUI = require('../user/view_popup/view_popup_ui').ViewPopupUI;
 var moment = require('../../../lib/moment/moment');
+var Content = require('../../common_functions/content').Content;
+var ViewPopupUI = require('../user/view_popup/view_popup_ui').ViewPopupUI;
 
 var TickDisplay = function() {
     return {

@@ -1,5 +1,6 @@
+var Content       = require('../../../../common_functions/content').Content;
 var TrafficSource = require('../../../../common_functions/traffic_source').TrafficSource;
-var ValidateV2 = require('../../../../common_functions/validation_v2').ValidateV2;
+var ValidateV2    = require('../../../../common_functions/validation_v2').ValidateV2;
 var Cookies = require('../../../../../lib/js-cookie');
 var dv      = require('../../../../../lib/validation');
 

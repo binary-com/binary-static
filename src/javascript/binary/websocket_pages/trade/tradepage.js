@@ -5,6 +5,7 @@ var TradingEvents     = require('./event').TradingEvents;
 var Message           = require('./message').Message;
 var Price             = require('./price').Price;
 var Symbols           = require('./symbols').Symbols;
+var Content         = require('../../common_functions/content').Content;
 var Guide           = require('../../common_functions/guide').Guide;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
 var State = require('../../base/storage').State;
