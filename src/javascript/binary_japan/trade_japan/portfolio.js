@@ -1,3 +1,4 @@
+var State = require('../../binary/base/storage').State;
 var PortfolioWS = require('../../binary/websocket_pages/user/account/portfolio/portfolio.init').PortfolioWS;
 
 var JapanPortfolio = (function() {
@@ -47,7 +48,7 @@ var JapanPortfolio = (function() {
   }
 
   function isTradePage() {
-    return /(jp|multi_barriers)_trading/i.test(window.location.pathname);
+    return State.get('is_jp_trading') || State.get('is_mb_trading');
   }
 
   return {
