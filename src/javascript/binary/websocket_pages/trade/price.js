@@ -1,4 +1,5 @@
-var Durations = require('./duration').Durations;
+var Durations  = require('./duration').Durations;
+var StartDates = require('./starttime').StartDates;
 var Content      = require('../../common_functions/content').Content;
 var format_money = require('../../common_functions/currency_to_symbol').format_money;
 var moment = require('../../../lib/moment/moment');
