@@ -1,6 +1,7 @@
 var TradingAnalysis   = require('./analysis').TradingAnalysis;
 var displayCurrencies = require('./currency').displayCurrencies;
 var Purchase          = require('./purchase').Purchase;
+var Symbols           = require('./symbols').Symbols;
 var PortfolioWS = require('../user/account/portfolio/portfolio.init').PortfolioWS;
 var ProfitTableWS = require('../user/account/profit_table/profit_table.init').ProfitTableWS;
 var StatementWS = require('../user/account/statement/statement.init').StatementWS;

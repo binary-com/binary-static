@@ -1,4 +1,5 @@
 var Contract_Beta = require('./contract').Contract_Beta;
+var Symbols = require('../symbols').Symbols;
 var format_money = require('../../../common_functions/currency_to_symbol').format_money;
 var StringUtil = require('../../../common_functions/string_util').StringUtil;
 

@@ -1,3 +1,4 @@
+var Symbols = require('../../symbols').Symbols;
 var MenuContent = require('../../../../base/menu_content').MenuContent;
 var template = require('../../../../base/utility').template;
 

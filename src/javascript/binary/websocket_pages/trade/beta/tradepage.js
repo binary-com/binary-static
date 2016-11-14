@@ -4,6 +4,7 @@ var Message_Beta         = require('./message').Message_Beta;
 var Price_Beta           = require('./price').Price_Beta;
 var displayCurrencies = require('../currency').displayCurrencies;
 var Defaults          = require('../defaults').Defaults;
+var Symbols           = require('../symbols').Symbols;
 var Guide = require('../../../common_functions/guide').Guide;
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
 var PortfolioWS = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
