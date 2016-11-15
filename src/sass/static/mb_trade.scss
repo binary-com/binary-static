@@ -300,6 +300,23 @@
             padding-right: 10px;
         }
     }
+    @media screen and (max-width: 480px) {
+        .japan-form .gr-row > div:first-child {
+            padding-bottom: 10px;
+        }
+        .japan-table .price-row {
+            .barrier, .price-button .value-wrapper, .sell-price {
+                font-size: 0.9em;
+            }
+            .price-button {
+                width: 80%;
+                margin-left: 15px;
+                .base-value {
+                    bottom: 0px;
+                }
+            }
+        }
+    }
     #notifications_wrapper {
         .notice-msg {
             margin-bottom: 5px;
