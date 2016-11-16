@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-11 22:05+0000\n"
-"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
+"PO-Revision-Date: 2016-11-16 21:39+0000\n"
+"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
 "Language-Team: Russian "
 "<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
 "4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.9\n"
+"X-Generator: Weblate 2.10-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API %1\" означает набор программ, протоколов, инструментов и ресурсов %1, созданных и поддерживаемых сайтом %1, а также позволяющих Вам пользоваться доступным приложением для работы на торговой платформе %1."
@@ -1758,6 +1758,8 @@ msgstr "Клиент соглашается нести полную личную
 
 msgid "Clients agree to comply with the reasonable requests made by the Company for the purpose of verifying compliance with this term."
 msgstr ""
+"Клиенты соглашаются выполнять разумные требования Компании, имеющие целью "
+"выяснить, соблюдают ли они данное условие."
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. Binary.com is not available in the Republic of Vanuatu."
 msgstr "Счета для торговли на Forex и контрактами на разницу на платформе Metatrader 5 для клиентов из других стран мира (за исключением США, Коста-Рики и Гонконга) будут открыты в компании Binary (V) Ltd. Услуги сайта Binary.com недоступны в Республике Вануату."
@@ -2672,7 +2674,7 @@ msgid "FAQ"
 msgstr "FAQ"
 
 msgid "FX Rate"
-msgstr "Курс FX"
+msgstr "Валютный курс"
 
 msgid "Facility that allows you to set limits on your account."
 msgstr "Функция, позволяющая устанавливать ограничения на Вашем счете."
@@ -3132,6 +3134,11 @@ msgstr "Если какой-либо из пунктов данного Согл
 
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
 msgstr ""
+"Если Компания (по своему усмотрению) не удовлетворена степенью соблюдения "
+"Клиентом данных условий, а также в случае, если Клиент не удовлетворил "
+"соответствующий запрос Компании на предоставление определённой информации, "
+"Компания имеет право закрыть счёт Клиента и удержать любые находящиеся на "
+"нём средства."
 
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "Если Компания по закону обязана раскрыть Вашу личную или финансовую информацию в соответствии с законом, распоряжением или приказом суда компетентной юрисдикции или правительственным органом, то Компания, если это не запрещено законом, незамедлительно уведомит Вас на этот счет для того, чтобы дать Вам возможность получить защиту информации, которую Компания сочтет целесообразной. Такое обязательное раскрытие не должно быть истолковано как нарушение Правил и Условий соглашения."
@@ -3507,7 +3514,7 @@ msgid "Isle of Man"
 msgstr "Остров Мэн"
 
 msgid "It is a condition of using the website that:"
-msgstr ""
+msgstr "Условия использования сайта:"
 
 msgid "It is important that you monitor all of your positions closely. It is your responsibility to monitor your positions and during the period that you have any open Contracts, you should always have the ability to access your Accounts."
 msgstr "Важно, чтобы Вы тщательно контролировали все свои позиции. Контроль позиций является Вашей ответственностью. Также Вы всегда должны иметь возможность доступа к своим счетам в период, когда у Вас есть открытые контракты."
@@ -5222,10 +5229,8 @@ msgstr "Плюс/Минус"
 msgid "Profit/Loss (points)"
 msgstr "Прибыль/убытки (пункты)"
 
-#, fuzzy
-#| msgid "Experienced Traders"
 msgid "Prohibited Trades"
-msgstr "Опытные трейдеры"
+msgstr "Запрещённые сделки"
 
 msgid "Proofread and correct the content appearing on the company's website, blog, social media outlets, and marketing materials, from English to the regional language and vice versa"
 msgstr "Вычитка и внесение правок в контент, отображаемый на сайте компании, в блоге, социальных сетях и маркетинговых материалах (в переводе с английского на региональные языки и наоборот)"
@@ -6063,10 +6068,10 @@ msgstr "<strong>Временем окончания</strong> является м
 msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>Временем окончания</strong> является момент по истечении выбранного количества секунд, минут или часов после <strong>начала контракта</strong> (если контракт меньше дня по продолжительности) или момент окончания торгового дня (если контракт дольше одного дня по продолжительности)."
 
-#, fuzzy
-#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
-msgstr "<strong>Выходной котировкой</strong> считается котировка, действительная на <strong>момент окончания</strong> контракта."
+msgstr ""
+"<strong>Выходной котировкой</strong> считается последний тик на момент или "
+"до <strong>момента окончания</strong> контракта."
 
 msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgstr "<strong>Выходной котировкой</strong> считается котировка, действительная на <strong>момент окончания</strong> контракта."
@@ -6103,6 +6108,8 @@ msgstr "Компания сохраняет за собой право оста�
 
 msgid "The Company has the discretion to seek information from Clients to verify compliance with these terms."
 msgstr ""
+"Компания имеет право запрашивать у Клиентов определённую информацию, чтобы "
+"проверить выполнение ими данных условий."
 
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the %1 API, or any errors or omissions of the %1 API;"
 msgstr "Компания не несёт ответственности за убыток или любой ущерб, возникающий по причине информации или цен, опубликованных или предоставленных посредством API %1, а также в связи с любыми ошибками или упущениями в API %1;"
@@ -6133,6 +6140,8 @@ msgstr "Компания может использовать, а также ра
 
 msgid "The Company may withhold payment of funds accumulated in a Client’s account while it takes steps to verify compliance with these terms."
 msgstr ""
+"Компания может удерживать средства, находящиеся на счету Клиента на время "
+"проверки выполнения им данных условий."
 
 msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
 msgstr "Время от времени, по своему усмотрению или в соответствии с положением о проведении процедур установления личности Клиента, Компания может запрашивать у Клиента удостоверение личности (например, заверенную копию паспорта или другой документ, который Компания сочтет необходимым при определенных обстоятельствах). Также Компания может по своему усмотрению временно закрыть счет, пока не будет предоставлена исчерпывающая информация, подтверждение личности и адреса Клиента, источника происхождения его средств и/или источника дохода. Документация для подтверждения личности и адреса будет запрошена при пополнении Клиентом своего счета. В случае открытия клиентом счета на Binary (Europe) Ltd, порог для проверки клиентов на суммарный вывод составляет 2300 EUR."
@@ -6157,6 +6166,9 @@ msgstr "Компания оставляет за собой право изме�
 
 msgid "The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of, Clients who engage in any trading activity:"
 msgstr ""
+"Компания оставляет за собой право отказаться от ведения бизнеса, а также "
+"прекратить любое сотрудничество и отменить транзакции Клиентов, занимающихся "
+"следующей деятельностью:"
 
 msgid "The Company reserves the right to suspend the operation of this site or sections thereof:"
 msgstr "Компания оставляет за собой право останавливать операции на данном сайте или в его отдельных разделах:"
@@ -6535,7 +6547,9 @@ msgid "These are trades where the trader selects a low and high barrier, and pre
 msgstr "Контракты, где трейдер выбирает нижний и верхний барьеры и делает прогноз, останется ли рынок между этими барьерами или выйдет за их пределы (см. также \"Контракты Останется между/Выйдет за пределы\")."
 
 msgid "These are trades where the trader selects a price target, and predicts that the market will never touch the target before the expiry of the trade."
-msgstr "Контракты, где трейдер выбирает ценовой барьер и делает прогноз, что рынок не коснется этого барьера за всю продолжительность контракта."
+msgstr ""
+"Контракты, где трейдер выбирает ценовой барьер и делает прогноз, что рынок "
+"не коснется этого барьера за всю длительность контракта."
 
 msgid "These are trades where the trader selects a price target, and predicts that the market will touch the target before the expiry of the trade."
 msgstr "Контракты, где трейдер выбирает ценовой барьер и делает прогноз, что рынок коснется данного барьера до завершения срока действия контракта."
@@ -8082,6 +8096,9 @@ msgstr "правилами и условиями"
 
 msgid "that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or"
 msgstr ""
+"нарушающей любые законы, нормы, противоречащей правилам инструментов, "
+"предписаниям, правилам работы любой биржи, финансового рынка или нормативно-"
+"правовой базе финансового сектора; а также"
 
 msgid "the %1 affiliate program is competitive and adaptive to your unique requirements."
 msgstr "партнерская программа %1 предлагает выгодные условия и адаптируется к Вашим уникальным требованиям."
@@ -8118,10 +8135,9 @@ msgstr "нед."
 msgid "weeks"
 msgstr "Нед."
 
-#, fuzzy
-#| msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
 msgid "with insider knowledge of any financial market or instrument."
-msgstr "Лица, имеющие доступ к внутренней информации о финансовых рынках или инструментах, не имеют права торговать на данном сайте."
+msgstr ""
+"имеющим доступ к внутренней информации о финансовых рынках или инструментах."
 
 msgid "year"
 msgstr "год(а)/лет"
