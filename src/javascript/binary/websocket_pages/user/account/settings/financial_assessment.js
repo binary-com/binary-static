@@ -5,6 +5,8 @@ var japanese_client = require('../../../../common_functions/country_base').japan
 var FinancialAssessmentws = (function(){
    "use strict";
 
+    var financial_assessment = {};
+
     var init = function(){
         if (checkIsVirtual()) return;
         LocalizeText();
@@ -36,14 +38,29 @@ var FinancialAssessmentws = (function(){
     };
 
     var submitForm = function(){
+        $('#submit').attr('disabled', 'disabled');
+
         if(!validateForm()){
+            setTimeout(function() { $('#submit').removeAttr('disabled'); }, 1000);
             return;
         }
-        $('#submit').attr('disabled', 'disabled');
+
+        var hasChanged = false;
+        Object.keys(financial_assessment).forEach(function(key) {
+            if ($('#' + key).length && $('#' + key).val() != financial_assessment[key]) {
+                hasChanged = true;
+            }
+        });
+        if (!hasChanged) {
+            showFormMessage('You did not change anything.', false);
+            setTimeout(function() { $('#submit').removeAttr('disabled'); }, 1000);
+            return;
+        }
+
         var data = {'set_financial_assessment' : 1};
         showLoadingImage($('#form_message'));
         $('#assessment_form select').each(function(){
-            data[$(this).attr("id")] = $(this).val();
+            financial_assessment[$(this).attr('id')] = data[$(this).attr('id')] = $(this).val();
         });
         BinarySocket.send(data);
         RiskClassification.cleanup();
@@ -82,6 +99,7 @@ var FinancialAssessmentws = (function(){
 
     var responseGetAssessment = function(response){
         hideLoadingImg();
+        financial_assessment = response.get_financial_assessment;
         for(var key in response.get_financial_assessment){
             if(key){
                 var val = response.get_financial_assessment[key];
