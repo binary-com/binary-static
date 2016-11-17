@@ -45,7 +45,6 @@ var FinancialAssessmentws = (function(){
         $('#assessment_form select').each(function(){
             data[$(this).attr("id")] = $(this).val();
         });
-        $('html, body').animate({ scrollTop: 0 }, 'fast');
         BinarySocket.send(data);
         RiskClassification.cleanup();
     };
@@ -106,9 +105,7 @@ var FinancialAssessmentws = (function(){
             }
         }
         hideLoadingImg();
-        $('html, body').animate({
-            scrollTop: $("#"+id).offset().top
-        }, 'fast');
+        $.scrollTo($('#' + id), 500);
     };
 
     var apiResponse = function(response){
