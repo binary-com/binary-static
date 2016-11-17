@@ -46,6 +46,11 @@ var ActiveSymbols = (function () {
                 return clone(this.markets);
             }
         },
+        clearData: function clearData() {
+            this.markets = {};
+            this.symbols = {};
+            this.submarkets = {};
+        },
         getSubmarketsForMarket: function getSubmarketsForMarket(activeSymbols, market) {
             if ( objectNotEmpty(market.submarkets) ) {
                 return clone(market.submarkets);
