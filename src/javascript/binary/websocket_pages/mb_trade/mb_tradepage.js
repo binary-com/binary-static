@@ -3,6 +3,7 @@ var MBDisplayCurrencies = require('./mb_currency').MBDisplayCurrencies;
 var MBTradingEvents = require('./mb_event').MBTradingEvents;
 var MBMessage = require('./mb_message').MBMessage;
 var MBSymbols = require('./mb_symbols').MBSymbols;
+var MBProcess = require('./mb_process').MBProcess;
 
 var MBTradePage = (function(){
 
@@ -52,6 +53,7 @@ var MBTradePage = (function(){
     events_initialized = 0;
     MBContract.onUnload();
     MBPrice.onUnload();
+    MBProcess.onUnload();
     forgetTradingStreams();
     BinarySocket.clear();
   };
