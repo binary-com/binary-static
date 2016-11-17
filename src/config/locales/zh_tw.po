@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-08 03:41+0000\n"
+"PO-Revision-Date: 2016-11-11 04:11+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -1726,7 +1726,7 @@ msgid "Clients agree to be fully and personally liable for the due settlement of
 msgstr "客戶同意對其在本公司開立帳戶內所有交易的結算承擔全部個人責任，包括有權存取該帳戶的客戶家庭成員或隨行人員進行的交易。客戶有責任確保他們對於帳戶存取權限的控制，不能向未成年人提供在網站上交易的權限。在任何情況下，客戶對其帳戶上的任何頭寸以及網站帳戶的任何信用卡交易承擔全部責任。所有客戶都應保護公司免受因客戶沒能執行或結算該交易而對公司造成的所有直接或間接成本或損失。根據曼島法律，線上博彩債務可予以強行執行。"
 
 msgid "Clients agree to comply with the reasonable requests made by the Company for the purpose of verifying compliance with this term."
-msgstr ""
+msgstr "客戶同意遵守本公司為驗證此條款是否合規而提出的合理要求。"
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. Binary.com is not available in the Republic of Vanuatu."
 msgstr "全球其他地區的客戶(不包括某些國家如美國、哥斯大黎加、香港)可在 Binary (V) Ltd.開設外匯和差價合約Metatrader 5帳戶。Binary.com在萬那杜不能使用。"
@@ -3100,7 +3100,7 @@ msgid "If any provision of this Agreement is held to be void or unenforceable in
 msgstr "如果本協議的任何條款被認定完全或部分無效或無法執行，該條款（或其部分）應視為從本協議中刪除，其餘條款（包括受影響條款的剩餘部分）仍然有效並適用。"
 
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
-msgstr ""
+msgstr "如果公司（自行決定）不確定客戶是否遵守這些條款，或者如客戶拒絕向公司提供所要求的合理資料，公司可以取消客戶的賬戶並扣留任何累積資金。"
 
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "如果公司根據法律和法規需求，或遵從具司法管轄權法庭或政府機構的規定，必須揭露您的個人或財務資訊，除非法律不允許，公司須及時通知您，使您有機會對相關資料尋求恰當的保護措施。該必要的揭露行為不可解釋為違反此協議條款和條件。"
@@ -3476,7 +3476,7 @@ msgid "Isle of Man"
 msgstr "曼島"
 
 msgid "It is a condition of using the website that:"
-msgstr ""
+msgstr "使用網站的條件如下:"
 
 msgid "It is important that you monitor all of your positions closely. It is your responsibility to monitor your positions and during the period that you have any open Contracts, you should always have the ability to access your Accounts."
 msgstr "至關重要的是您必須緊密監控所有頭寸。監控頭寸是您的責任，而且在您擁有任何未平倉合約期間，您必須能夠隨時存取您的帳戶。"
@@ -5188,10 +5188,8 @@ msgstr "利潤/虧損"
 msgid "Profit/Loss (points)"
 msgstr "利潤/虧損(點)"
 
-#, fuzzy
-#| msgid "Price the trade."
 msgid "Prohibited Trades"
-msgstr "對交易進行報價。"
+msgstr "違禁交易"
 
 msgid "Proofread and correct the content appearing on the company's website, blog, social media outlets, and marketing materials, from English to the regional language and vice versa"
 msgstr "校對並更正公司網站、部落格、社交媒體網站和行銷材料內容翻譯（從英語翻譯成各地區語言，或從各地區語言翻譯成英語）"
@@ -5278,7 +5276,7 @@ msgid "Read about the five types of trade offered by %1."
 msgstr "檢視 %1 提供的 5 種交易。"
 
 msgid "Read our blog for the stories and ideas that inspire us"
-msgstr ""
+msgstr "閱讀我們的部落格，了解激勵我們的故事和想法"
 
 msgid "Read the answers to some common questions."
 msgstr "檢視一些常見問題的回答。"
@@ -6027,10 +6025,8 @@ msgstr "合約<strong>結束時間</strong>是指合約<strong>開始時間</str
 msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>結束時間</strong>是指在<strong>開始時間</strong>（如果期限小於一天）之後選定的秒數/分鐘數/小時數，或是交易日結束之時（如果期限為一天或更長）。"
 
-#, fuzzy
-#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
-msgstr "<strong>退市現價</strong>為合約<strong>結束時間</strong>的現價。"
+msgstr "<strong>退市現價</strong>是合約<strong>結束時或之前的</strong>最後跳動價點。"
 
 msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgstr "<strong>退市現價</strong>為合約<strong>結束時間</strong>的現價。"
@@ -6066,7 +6062,7 @@ msgid "The Company has and retains the right, to terminate any event or trade, i
 msgstr "公司有權及保留權利停止任何活動或交易，包括但不限於以上所述之任何發生事件。"
 
 msgid "The Company has the discretion to seek information from Clients to verify compliance with these terms."
-msgstr ""
+msgstr "本公司有權向客戶要求資料，以驗證其是否符合這些條款。"
 
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the %1 API, or any errors or omissions of the %1 API;"
 msgstr "由%1 API所提供或發布的任何資料或價格所造成的任何類型的損失或損害，或其所造成的任何錯誤或遺漏，公司概不負責;"
@@ -6096,7 +6092,7 @@ msgid "The Company may use or disclose (or choose not to use or disclose) such C
 msgstr "公司可基於任何用途通過世界各地任何媒介以任何方式使用或披露 （或選擇不使用或披露）該貢獻 ;"
 
 msgid "The Company may withhold payment of funds accumulated in a Client’s account while it takes steps to verify compliance with these terms."
-msgstr ""
+msgstr "當公司採取步驟驗證是否符合這些條款時，公司可以扣留客戶賬戶的累積資金。"
 
 msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
 msgstr "公司有權不時自行或依據「了解你的客戶」法則的相關規定要求客戶提供身份證明（如經公證的護照複印件或其他公司在相關情形下認為必要的身份證明），也有權在得到滿意的身份證明資訊、身份與地址證明、基金來源和/或財富來源之前自行中止帳戶。當客戶將資金存入帳戶時必須提交「了解你的客戶」文件。如果客戶在 Binary（歐洲）有限公司開立帳戶，客戶驗證累計提款額門檻為2,300歐元。"
@@ -6120,7 +6116,7 @@ msgid "The Company reserves the right to change any part of this Agreement at an
 msgstr "公司有權隨時修改本協議的任何內容。我們會儘量把協議修改詳情通知聯盟成員，但是您承擔定期檢查本條款和條件的最終責任。該等修改公佈後，您繼續參加聯盟計劃的行為，將構成對該等修改的約束性接受。"
 
 msgid "The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of, Clients who engage in any trading activity:"
-msgstr ""
+msgstr "本公司保留拒絕與從事任何交易活動的客戶進行業務、停止業務運作以及撤銷交易的權利："
 
 msgid "The Company reserves the right to suspend the operation of this site or sections thereof:"
 msgstr "公司有權中止網站或其中某些區段的操作："
@@ -6961,10 +6957,8 @@ msgstr "驗證權杖"
 msgid "Verify new password"
 msgstr "驗證新密碼"
 
-#, fuzzy
-#| msgid "Version 42. Last modified 2016-09-14."
 msgid "Version 43. Last modified 2016-11-09."
-msgstr "版本42。最後修改時間為 2016年09月14日。"
+msgstr "版本43。最後修改時間為 2016年11月09日。"
 
 msgid "View"
 msgstr "檢視"
@@ -7855,7 +7849,7 @@ msgid "and"
 msgstr "以及"
 
 msgid "any Client that is employed in the banking and/or finance sector must only conduct trades through the website with the knowledge of his/her employer and in accordance with the employer’s policies; and that"
-msgstr ""
+msgstr "任何在銀行和/或金融行業工作的客戶只能通過其雇主已知悉並符合雇主政策的網站進行交易; 而且"
 
 msgid "any instance where the Company believes that person's activities at this site may be illegal in that person's country or state;"
 msgstr "本公司認為該人士在本網站的活動在其國家或州可能為非法時的任何情形；"
@@ -7993,7 +7987,7 @@ msgid "terms and conditions"
 msgstr "條款與條件"
 
 msgid "that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or"
-msgstr ""
+msgstr "違反任何管制任何交易所、金融市場或金融監管環境運作的法律、規例、文書、條例或規則; 或"
 
 msgid "the %1 affiliate program is competitive and adaptive to your unique requirements."
 msgstr "%1 聯盟計劃具競爭能力，可適應您的獨特需求。"
@@ -8028,10 +8022,8 @@ msgstr "週"
 msgid "weeks"
 msgstr "週"
 
-#, fuzzy
-#| msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
 msgid "with insider knowledge of any financial market or instrument."
-msgstr "本網站禁止對任何金融市場或工具具有內幕知識的人士進行交易。"
+msgstr "對任何金融市場或工具具有內幕知識。"
 
 msgid "year"
 msgstr "年"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-07 09:09+0000\n"
+"PO-Revision-Date: 2016-11-10 06:51+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -1732,7 +1732,7 @@ msgid "Clients agree to be fully and personally liable for the due settlement of
 msgstr "Para Klien setuju secara keseluruhan dan secara pribadi bertanggung jawab atas penyelesaian setiap transaksi yang masuk ke dalam akun Perusahaan. Ini termasuk transaksi-transaksi yang dilakukan oleh anggota keluarga atau rombongan nasabah yang telah memperoleh akses ke akun tersebut. Klien bertanggung jawab untuk memastikan bahwa dia sendiri yang mengontrol akses ke dalam akun dan memastikan bahwa tidak ada anak di bawah umur diberikan akses untuk melakukan trading pada website. Dalam kasus apapun, Klien tetap bertanggung jawab sepenuhnya untuk setiap dan semua posisi yang ditradingkan dan transaksi melalui kartu kredit pada akunnya. Setiap Klien juga membebaskan Perusahaan atas semua biaya dan kerugian dalam bentuk apapun, apapun yang mungkin dikeluarkan oleh Perusahaan sebagai akibat, langsung atau tidak langsung, kegagalan Nasabah untuk melakukan atau menyelesaikan transaksi tersebut. Hutang Trading Online adalah dilaksanakan sesuai dengan hukum yang berlaku di negara Isle of Man."
 
 msgid "Clients agree to comply with the reasonable requests made by the Company for the purpose of verifying compliance with this term."
-msgstr ""
+msgstr "Klien bersetuju untuk mematuhi permintaan wajar dari Perusahaan untuk memenuhi verifikasi compliance dalam hal ini."
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. Binary.com is not available in the Republic of Vanuatu."
 msgstr "Pelanggan dari seluruh dunia (kecuali Amerika Serikat, Costa Rica, Hong Kong) akan mendaftar akun  FX dan CFD Metatrader 5 dibawah Binary (V) Ltd. Binary.com tidak tersedia untuk warga Republik Vanuatu."
@@ -3108,7 +3108,7 @@ msgid "If any provision of this Agreement is held to be void or unenforceable in
 msgstr "Jika ketentuan apapun dalam Perjanjian ini dianggap tidak berlaku atau tidak dapat dilaksanakan secara keseluruhan atau sebagian, ketentuan impugned (atau bagian daripadanya) akan dianggap dihapus dari Perjanjian ini dan ketentuan lainnya (termasuk sisa ketentuan yang terkena) wajib tetap sah dan berlaku."
 
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
-msgstr ""
+msgstr "Jika Perusahaan (dengan kebijakannya sendiri) tidak puas meskipun Pelanggan sudah memenuhi persyaratan, atau Klien tidak mematuhi permintaan wajar mengenai informasi yang diperlukan oleh Perusahaan, maka Perusahaan dapat membatalkan akun Klien dan menahan saldo yang ada."
 
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "Jika Perusahaan diwajibkan secara hukum untuk menginformasikan data pribadi atau keuangan Anda oleh hukum, regulasi atau sesuai dengan perintah dari pengadilan yang berwenang atau badan pemerintah, Perusahaan harus, kecuali dilarang secara hukum, segera memberitahu Anda mengenai hal tersebut, untuk memberikan kesempatan kepada Anda dalam mencari perlindungan yang dianggap perlu. Pengungkapan yang diperlukan tersebut tidak dapat ditafsirkan sebagai pelanggaran Syarat dan Ketentuan Perjanjian ini."
@@ -3484,7 +3484,7 @@ msgid "Isle of Man"
 msgstr "Isle of Man"
 
 msgid "It is a condition of using the website that:"
-msgstr ""
+msgstr "Merupakan syarat penggunaan website dimana:"
 
 msgid "It is important that you monitor all of your positions closely. It is your responsibility to monitor your positions and during the period that you have any open Contracts, you should always have the ability to access your Accounts."
 msgstr "Adalah sangat penting bagi Anda untuk memantau semua posisi Anda secara rinci. Ini adalah tanggung jawab Anda untuk memantau posisi Anda dan selama periode Kontrak berjalan, Anda harus selalu dapat mengakses Akun Anda."
@@ -5199,10 +5199,8 @@ msgstr "Untung/Rugi"
 msgid "Profit/Loss (points)"
 msgstr "Untung/Rugi (poin)"
 
-#, fuzzy
-#| msgid "Experienced Traders"
 msgid "Prohibited Trades"
-msgstr "Trader Berpengalaman"
+msgstr "Trading Terlarang"
 
 msgid "Proofread and correct the content appearing on the company's website, blog, social media outlets, and marketing materials, from English to the regional language and vice versa"
 msgstr "Mengoreksi dan memperbaiki konten yang muncul pada website perusahaan, blog dan media sosial outlet, dan materi pemasaran dari bahasa Inggris ke bahasa lokal dan sebaliknya"
@@ -5289,7 +5287,7 @@ msgid "Read about the five types of trade offered by %1."
 msgstr "Baca tentang lima jenis kontrak yang ditawarkan %1."
 
 msgid "Read our blog for the stories and ideas that inspire us"
-msgstr ""
+msgstr "Baca blog kami untuk cerita dan ide-ide yang menginspirasi kami"
 
 msgid "Read the answers to some common questions."
 msgstr "Baca berbagai jawaban dari pertanyaan umum."
@@ -6041,10 +6039,8 @@ msgstr "<strong>Waktu akhir</strong> adalah menit/jam yang dipilih setelah <stro
 msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>Waktu akhir</strong> adalah detik/menit/jam yang dipilih setelah <strong>waktu mulai</strong> (jika durasi kurang dari satu hari), atau pada akhir hari trading (jika durasi lebih dari satu hari)."
 
-#, fuzzy
-#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
-msgstr "<strong>Spot akhir</strong> adalah harga spot pada <strong>waktu akhir</strong>."
+msgstr "<strong>Spot akhir</strong> adalah tik terakhir pada atau sebelum <strong>waktu akhir</strong>."
 
 msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgstr "<strong>Spot akhir</strong> adalah harga spot pada <strong>waktu akhir</strong>."
@@ -6080,7 +6076,7 @@ msgid "The Company has and retains the right, to terminate any event or trade, i
 msgstr "Perusahaan memiliki dan mempertahankan hak, untuk menghentikan setiap kegiatan atau trading dan termasuk peristiwa diatas."
 
 msgid "The Company has the discretion to seek information from Clients to verify compliance with these terms."
-msgstr ""
+msgstr "Perusahaan berhak untuk mencari informasi dari klien untuk memverifikasi kepatuhan dalam persyaratan ini."
 
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the %1 API, or any errors or omissions of the %1 API;"
 msgstr "Perusahaan tidak bertanggung jawab atas kehilangan atau kerusakan apapun apapun yang timbul sebagai akibat dari informasi atau harga diterbitkan pada atau dilengkapi melalui API %1, atau kesalahan atau kelalaian dari API %1;"
@@ -6110,7 +6106,7 @@ msgid "The Company may use or disclose (or choose not to use or disclose) such C
 msgstr "Perusahaan dapat menggunakan atau mengungkapkan (atau memilih untuk tidak menggunakan atau tidak menyingkap) tersebut untuk tujuan apa pun, dengan cara apapun, di media manapun di seluruh dunia."
 
 msgid "The Company may withhold payment of funds accumulated in a Client’s account while it takes steps to verify compliance with these terms."
-msgstr ""
+msgstr "Perusahaan dapat menahan saldo yang terdapat dalam akun Klien sementara waktu hingga verifikasi kepatuhan terpenuhi."
 
 msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
 msgstr "Perusahaan dapat, dari waktu ke waktu, dengan kebijakannya sendiri, atau berdasarkan peraturan dapat melakukan prosedur \"Know Your Customer\" dan memerlukan Pelanggan untuk memberikan bukti identitas (seperti copy diaktakan paspor atau lainnya cara verifikasi identitas dimana Perusahaan dianggap diperlukan dalam hal ini) dan mungkin atas kebijakannya sendiri menangguhkan proses identifikasi hingga informasi akun, bukti identitas dan alamat, sumber dana dan/atau sumber kekayaan telah diterima. Dokumentasi Know Your Customer akan diperlukan jika Klien mendeposit dana kedalam akun. Dalam hal klien mendaftar pada Binary (Europe) Ltd, batas untuk memverifikasi klien adalah pada penarikan kumulatif sebesar EUR 2,300 setara dengan USD10,000."
@@ -6134,7 +6130,7 @@ msgid "The Company reserves the right to change any part of this Agreement at an
 msgstr "Perusahaan berhak untuk mengubah setiap bagian dari perjanjian ini kapan saja. Kami akan berusaha untuk memastikan afiliasi telah mendapat informasi apabila perubahan telah dibuat pada Perjanjian ini, tapi pada akhirnya adalah merupakan tanggung jawab Anda untuk memeriksa syarat dan ketentuan ini secara berkala. Partisipasi Anda untuk tetap bergabung dalam program afiliasi kami setelah kami perubahan dilakukan merupakan penerimaan mutlak pada perubahan tersebut."
 
 msgid "The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of, Clients who engage in any trading activity:"
-msgstr ""
+msgstr "Perusahaan berhak untuk menolak untuk melakukan bisnis dengan, untuk menghentikan untuk melakukan bisnis dengan, dan untuk mengembalikan transaksi kepada Klien yang melakukan kegiatan trading:"
 
 msgid "The Company reserves the right to suspend the operation of this site or sections thereof:"
 msgstr "Perusahaan berhak untuk menangguhkan pengoperasian situs atau beberapa bagain lainnya:"
@@ -6975,10 +6971,8 @@ msgstr "Token verifikasi"
 msgid "Verify new password"
 msgstr "Verifikasi kata sandi baru"
 
-#, fuzzy
-#| msgid "Version 42. Last modified 2016-09-14."
 msgid "Version 43. Last modified 2016-11-09."
-msgstr "Versi 42. Diperbarui terakhir pada 14-09-2016."
+msgstr "Versi 43. Diperbarui terakhir pada 09-11-2016."
 
 msgid "View"
 msgstr "Lihat"
@@ -7869,7 +7863,7 @@ msgid "and"
 msgstr "dan"
 
 msgid "any Client that is employed in the banking and/or finance sector must only conduct trades through the website with the knowledge of his/her employer and in accordance with the employer’s policies; and that"
-msgstr ""
+msgstr "bagi Klien yang bekerja di bank dan/atau sektor keuangan hanya dapat melakukan trading melalui website dengan pengetahuan majikan dan sesuai dengan kebijakan majikan; dan itu"
 
 msgid "any instance where the Company believes that person's activities at this site may be illegal in that person's country or state;"
 msgstr "contohnya Perusahaan berkeyakinan bahwa kegiatan seseorang pada situs ini mungkin ilegal pada negara asal orang tersebut,"
@@ -8007,7 +8001,7 @@ msgid "terms and conditions"
 msgstr "Syarat dan ketentuan"
 
 msgid "that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or"
-msgstr ""
+msgstr "yang bertentangan hukum, peraturan, instrumen, tata cara atau aturan yang mengatur pengoperasian bursa, pasar keuangan, atau lingkungan peraturan keuangan; atau"
 
 msgid "the %1 affiliate program is competitive and adaptive to your unique requirements."
 msgstr "program affiliasi %1 sangat kompetitif dan adaptif terhadap kebutuhan unik Anda."
@@ -8042,10 +8036,8 @@ msgstr "minggu"
 msgid "weeks"
 msgstr "minggu"
 
-#, fuzzy
-#| msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
 msgid "with insider knowledge of any financial market or instrument."
-msgstr "Orang dengan pengetahuan mendalam mengenai pasar keuangan atau instrumen lainnya dilarang bertrading pada situs ini."
+msgstr "dengan pengetahuan dalam mengenai pasar keuangan atau instrumen."
 
 msgid "year"
 msgstr "tahun"
