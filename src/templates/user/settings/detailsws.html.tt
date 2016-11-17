@@ -396,7 +396,7 @@
                     <label>[% l('Amount of above assets') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input class="text" name="hedge_asset_amount" id="HedgeAssetAmount" maxlength="20" type="text"></input>
+                    <input class="text" name="hedge_asset_amount" id="HedgeAssetAmount" maxlength="20" type="text"/>
                 </div>
             </div>
         </fieldset>
@@ -409,7 +409,7 @@
                     <label>[% l('Receive news and special offers') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input type="checkbox" id="email_consent"></input>
+                    <input type="checkbox" id="email_consent"/>
                 </div>
             </div>
         </fieldset>

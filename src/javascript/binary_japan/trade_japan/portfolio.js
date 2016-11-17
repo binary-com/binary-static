@@ -1,4 +1,5 @@
 var MBTradePage = require('../../binary/websocket_pages/mb_trade/mb_tradepage').MBTradePage;
+var PortfolioWS = require('../../binary/websocket_pages/user/account/portfolio/portfolio.init').PortfolioWS;
 
 var JapanPortfolio = (function() {
 

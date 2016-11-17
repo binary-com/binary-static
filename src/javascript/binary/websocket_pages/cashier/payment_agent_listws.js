@@ -140,9 +140,25 @@ var PaymentAgentListWS = (function() {
         $('#no_paymentagent').removeClass(hiddenClass);
     };
 
+    var onLoad = function() {
+        BinarySocket.init({
+            onmessage: function(msg) {
+                var response = JSON.parse(msg.data);
+                if (response) {
+                    if (response.msg_type === "paymentagent_list") {
+                        PaymentAgentListWS.responseHandler(response);
+                    }
+                }
+            }
+        });
+        Content.populate();
+        PaymentAgentListWS.init();
+    };
+
     return {
         init: init,
-        responseHandler: responseHandler
+        responseHandler: responseHandler,
+        onLoad: onLoad,
     };
 }());
 

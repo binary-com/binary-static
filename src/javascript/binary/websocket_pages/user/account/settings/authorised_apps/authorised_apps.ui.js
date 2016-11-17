@@ -2,6 +2,7 @@ var showLoadingImage = require('../../../../../base/utility').showLoadingImage;
 var showLocalTimeOnHover = require('../../../../../base/utility').showLocalTimeOnHover;
 var Button = require('../../../../../common_functions/attach_dom/button').Button;
 var FlexTableUI = require('../../../../../common_functions/attach_dom/flextable').FlexTableUI;
+var ApplicationsData = require('./authorised_apps.data').ApplicationsData;
 
 var ApplicationsUI = (function(){
     'use strict';

@@ -1,4 +1,5 @@
 var template = require('../../../../../base/utility').template;
+var LimitsUI = require('./limits.ui').LimitsUI;
 
 var LimitsWS = (function(){
     "use strict";
@@ -57,7 +58,9 @@ var LimitsWS = (function(){
     }
 
     function initTable(){
-        document.getElementById('client_message').setAttribute('style', 'display:none');
+        var client_message = document.getElementById('client_message');
+        if (!client_message) return;
+        client_message.setAttribute('style', 'display:none');
         LimitsUI.clearTableContent();
     }
 
