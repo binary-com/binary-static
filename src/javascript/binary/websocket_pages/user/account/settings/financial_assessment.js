@@ -41,7 +41,7 @@ var FinancialAssessmentws = (function(){
         }
         $('#submit').attr('disabled', 'disabled');
         var data = {'set_financial_assessment' : 1};
-        showLoadingImg();
+        showLoadingImage($('#form_message'));
         $('#assessment_form select').each(function(){
             data[$(this).attr("id")] = $(this).val();
         });
@@ -53,10 +53,11 @@ var FinancialAssessmentws = (function(){
     var validateForm = function(){
         var isValid = true,
             errors = {};
+        clearErrors();
         $('#assessment_form select').each(function(){
             if(!$(this).val()){
                 isValid = false;
-                errors[$(this).attr("id")] = page.text.localize('Please select a value.');
+                errors[$(this).attr("id")] = page.text.localize('Please select a value');
             }
         });
         if(!isValid){
@@ -67,7 +68,7 @@ var FinancialAssessmentws = (function(){
     };
 
     var showLoadingImg = function(){
-        showLoadingImage($('<div/>', {id: 'loading'}).insertAfter('#heading'));
+        showLoadingImage($('<div/>', {id: 'loading', class: 'center-text'}).insertAfter('#heading'));
         $("#assessment_form").addClass('invisible');
     };
 
@@ -90,14 +91,18 @@ var FinancialAssessmentws = (function(){
         }
     };
 
+    var clearErrors = function() {
+        $('.errorfield').each(function() { $(this).text(''); });
+    };
+
     var displayErrors = function(errors){
         var id;
-        $(".errorfield").each(function(){$(this).text('');});
+        clearErrors();
         for(var key in errors){
             if(key){
                 var error = errors[key];
                 $("#error"+key).text(page.text.localize(error));
-                id = key;
+                if (!id) id = key;
             }
         }
         hideLoadingImg();
@@ -106,23 +111,18 @@ var FinancialAssessmentws = (function(){
         }, 'fast');
     };
 
-    var responseOnSuccess = function(){
-        $("#heading").hide();
-        hideLoadingImg(false);
-        $("#response_on_success").text(page.text.localize("Your details have been updated."))
-            .removeClass("invisible");
-    };
-
     var apiResponse = function(response){
         if (checkIsVirtual()) return;
-        if(response.msg_type === 'get_financial_assessment'){
+        if (response.msg_type === 'get_financial_assessment') {
             responseGetAssessment(response);
-        }
-        else if(response.msg_type === 'set_financial_assessment' && 'error' in response){
-            displayErrors(response.error.details);
-        }
-        else if(response.msg_type === 'set_financial_assessment'){
-            responseOnSuccess();
+        } else if (response.msg_type === 'set_financial_assessment') {
+            $('#submit').removeAttr('disabled');
+            if ('error' in response) {
+                showFormMessage('Sorry, an error occurred while processing your request.', false);
+                displayErrors(response.error.details);
+            } else {
+                showFormMessage('Your settings have been updated successfully.', true);
+            }
         }
     };
 
@@ -134,6 +134,15 @@ var FinancialAssessmentws = (function(){
             return true;
         }
         return false;
+    };
+
+    var showFormMessage = function(msg, isSuccess) {
+        $('#form_message')
+            .attr('class', isSuccess ? 'success-msg' : 'errorfield')
+            .html(isSuccess ? '<ul class="checked" style="display: inline-block;"><li>' + page.text.localize(msg) + '</li></ul>' : page.text.localize(msg))
+            .css('display', 'block')
+            .delay(5000)
+            .fadeOut(1000);
     };
 
     var onLoad = function() {
@@ -148,7 +157,7 @@ var FinancialAssessmentws = (function(){
                 }
             }
         });
-        showLoadingImage($('<div/>', {id: 'loading'}).insertAfter('#heading'));
+        showLoadingImage($('<div/>', {id: 'loading', class: 'center-text'}).insertAfter('#heading'));
         FinancialAssessmentws.init();
     };
 

@@ -278,9 +278,17 @@
             </div>
         </div>
         <fieldset class="center-text" id="formlayout">
-            <div class="gr-12"><span class=" gr-hide-m form_label"><label></label></span><span class=""><span class=" button"><button class=" button" id="submit">Update</button></span>
-                <p class="errorfield" id="invalidinputfound"></p>
-                </span>
+            <div class="gr-row">
+                <div class="gr-12">
+                    <div id="form_message"></div>
+                </div>
+            </div>
+            <div class="gr-row gr-padding-10">
+                <div class="gr-12">
+                    <span class="button">
+                        <button class="button" id="submit">Update</button>
+                    </span>
+                </div>
             </div>
         </fieldset>
     </form>
