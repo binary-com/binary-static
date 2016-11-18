@@ -25,7 +25,7 @@
                                 <label for="lname">[% l('Family name') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="lname" name="lname" maxlength="30"></input>
+                                <input type="text" class="text" id="lname" name="lname" maxlength="30"/>
                                 <p class="hint">
                                   [% l('{JAPAN ONLY}No space between last name and first name') %]
                                 </p>
@@ -37,7 +37,7 @@
                                 <label for="fname">[% l('First name') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="fname" name="fname" maxlength="30"></input>
+                                <input type="text" class="text" id="fname" name="fname" maxlength="30"/>
                                 <p class="hint">
                                   [% l('{JAPAN ONLY}No space between last name and first name') %]
                                 </p>
@@ -84,7 +84,7 @@
                                 <label for="address-postcode">[% l('Postal code/ZIP') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="address-postcode" name="address-postcode" maxlength="20"></input>
+                                <input type="text" class="text" id="address-postcode" name="address-postcode" maxlength="20"/>
                                 <p class="hint">
                                   [% l('E.g. 123-4567') %]
                                 </p>
@@ -105,7 +105,7 @@
                                 <label for="address-town">[% l('Town/City') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="address-town" name="address-town" maxlength="35"></input>
+                                <input type="text" class="text" id="address-town" name="address-town" maxlength="35"/>
                                 <p class="hint">
                                   [% l('E.g. Shibuya-ku') %]
                                 </p>
@@ -117,7 +117,7 @@
                                 <label for="address1">[% l('First line of home address') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="address1" name="address1" maxlength="70"></input>
+                                <input type="text" class="text" id="address1" name="address1" maxlength="70"/>
                                 <p class="hint">
                                   [% l('E.g. Hiroo') %]
                                 </p>
@@ -129,7 +129,7 @@
                                 <label for="address2">[% l('Second line of home address') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="address2" name="address2" maxlength="70"></input>
+                                <input type="text" class="text" id="address2" name="address2" maxlength="70"/>
                                 <p class="hint">
                                   [% l('E.g. Building name, apartment number etc (Optional)') %]
                                 </p>
@@ -141,7 +141,7 @@
                                 <label for="tel">[% l('Telephone') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="tel" name="tel" maxlength="35"></input>
+                                <input type="text" class="text" id="tel" name="tel" maxlength="35"/>
                                 <p class="hint">
                                   [% l('E.g. 03-1234-5678') %]
                                 </p>
@@ -175,7 +175,7 @@
                                 <label for="secret-answer">[% l('Answer to secret question') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="secret-answer" maxlength="50" autocomplete="off"></input>
+                                <input type="text" class="text" id="secret-answer" maxlength="50" autocomplete="off"/>
                                 <p class="errorfield" id="error-answer" style="display:none"></p>
                             </div>
                         </div>
@@ -188,7 +188,7 @@
                                 <label for="fatca">[% l('Not FATCA*') %]</label>
                             </div>
                             <div class="gr-8">
-                              <input id="fatca" type="checkbox"></input>
+                              <input id="fatca" type="checkbox"/>
                               <br />
                               <p class="hint">
                                 [% l('You must not be a USA resident, citizen, or have any tax reporting to the USA') %]
@@ -239,7 +239,7 @@
                                 <label for="daily-loss-limit">[% l('Daily limit on losses') %]</label>
                             </div>
                             <div class="gr-8">
-                              <input class="text" id="daily-loss-limit" type="text" maxlength="20"></input>
+                              <input class="text" id="daily-loss-limit" type="text" maxlength="20"/>
                               <br />
                               <p class="hint">[% l('Maximum aggregate loss per day.') %]</p>
                               <p class="errorfield" id="error-daily-loss-limit"></p>
@@ -402,7 +402,7 @@
                           <label for="hedge-asset-amount">[% l('Amount of above assets') %]</label>
                         </div>
                         <div class="gr-8">
-                          <input class="text" id="hedge-asset-amount" maxlength="20" type="text"></input>
+                          <input class="text" id="hedge-asset-amount" maxlength="20" type="text"/>
                           <p class="errorfield" id="error-hedge-asset-amount"></p>
                         </div>
                       </div>
@@ -459,7 +459,7 @@
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="not-pep" type="checkbox"></input>
+                                <input id="not-pep" type="checkbox"/>
                               </div>
                               <div class="gr-11">
                                 <span>
@@ -483,7 +483,7 @@
                         <div class="gr-12">
                             <div class="gr-row">
                                 <div class="gr-1">
-                                  <input id="use-electronic-doc" type="checkbox"></input>
+                                  <input id="use-electronic-doc" type="checkbox"/>
                                 </div>
                                 <div class="gr-11">
                                   <span>
@@ -504,7 +504,7 @@
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="warnings-and-policies" type="checkbox"></input>
+                                <input id="warnings-and-policies" type="checkbox"/>
                               </div>
                               <div class="gr-11">
                                 <span>
@@ -560,7 +560,7 @@
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="own-judgment" type="checkbox"></input>
+                                <input id="own-judgment" type="checkbox"/>
                               </div>
                               <div class="gr-11">
                                 <span>
@@ -575,7 +575,7 @@
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="trading-mechanism" type="checkbox"></input>
+                                <input id="trading-mechanism" type="checkbox"/>
                               </div>
                               <div class="gr-11">
                                 <span>
@@ -596,7 +596,7 @@
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="judgment-time" type="checkbox"></input>
+                                <input id="judgment-time" type="checkbox"/>
                               </div>
                               <div class="gr-11">
                                 <span>
@@ -611,7 +611,7 @@
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="total-loss" type="checkbox"></input>
+                                <input id="total-loss" type="checkbox"/>
                               </div>
                               <div class="gr-11">
                                 <span>
@@ -626,7 +626,7 @@
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="sellback-loss" type="checkbox"></input>
+                                <input id="sellback-loss" type="checkbox"/>
                               </div>
                               <div class="gr-11">
                                 <span>
@@ -641,7 +641,7 @@
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="shortsell-loss" type="checkbox"></input>
+                                <input id="shortsell-loss" type="checkbox"/>
                               </div>
                               <div class="gr-11">
                                 <span>
@@ -656,7 +656,7 @@
                         <div class="gr-12">
                           <div class="gr-row">
                             <div class="gr-1">
-                              <input id="company-profit" type="checkbox"></input>
+                              <input id="company-profit" type="checkbox"/>
                             </div>
                             <div class="gr-11">
                               <span>
@@ -671,7 +671,7 @@
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="expert-knowledge" type="checkbox"></input>
+                                <input id="expert-knowledge" type="checkbox"/>
                               </div>
                               <div class="gr-11">
                                 <span>

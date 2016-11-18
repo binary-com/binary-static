@@ -7,7 +7,7 @@
         <section class="japan-form gr-row">
             <div class="gr-6 gr-12-m gr-12-p gr-no-gutter-right">
                 <div class="gr-row">
-                    <div class="gr-6 gr-no-gutter-left padding-right-five">
+                    <div class="gr-6 gr-12-m gr-no-gutter-left padding-right-five">
                         <div class="select-box">
                             <div class="padding-10">
                                 <div class="select-heading">[% l('FX Rate') %]</div>
@@ -15,7 +15,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="gr-6 gr-no-gutter-left padding-right-five">
+                    <div class="gr-6 gr-12-m gr-no-gutter-left padding-right-five">
                         <div class="select-box">
                             <div class="padding-10">
                                 <div class="select-heading">[% l('Option Type') %]</div>
@@ -27,7 +27,7 @@
             </div>
             <div class="gr-6 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m gr-no-gutter-right-p gr-no-gutter-right-m">
                 <div class="gr-row">
-                    <div class="gr-6 gr-no-gutter-left padding-right-five">
+                    <div class="gr-6 gr-12-m gr-no-gutter-left padding-right-five">
                         <div class="select-box">
                             <div class="padding-10">
                                 <div class="select-heading">[% l('Trading Period') %]</div>
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="gr-6 gr-no-gutter-left no-padding-right">
+                    <div class="gr-6 gr-12-m gr-no-gutter-left no-padding-right">
                         <div class="select-box">
                             <div class="padding-10">
                                 <div class="select-heading">[% l('Payout Amount') %]</div>
@@ -54,7 +54,7 @@
             </div>
             <div class="gr-12">
                 <div class="gr-row space-between">
-                    <div class="gr-grow">
+                    <div class="gr-grow gr-12-m">
                         <div class="gr-row spot">
                             <div class="gr-adapt spot-value">
                                 <span>[% l('Spot') %]:</span>
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="gr-adapt">
+                    <div class="gr-adapt gr-12-m">
                         <div class="countdown-timer align-end">
                             <span id="remaining-time-label"></span>
                             <span id="remaining-time">...</span>

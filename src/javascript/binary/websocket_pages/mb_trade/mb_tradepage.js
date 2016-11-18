@@ -7,6 +7,7 @@ var TradingAnalysis = require('../trade/analysis').TradingAnalysis;
 var JapanPortfolio = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
 var State = require('../../base/storage').State;
 var Content = require('../../common_functions/content').Content;
+var MBProcess = require('./mb_process').MBProcess;
 
 var MBTradePage = (function(){
 
@@ -57,6 +58,7 @@ var MBTradePage = (function(){
     events_initialized = 0;
     MBContract.onUnload();
     MBPrice.onUnload();
+    MBProcess.onUnload();
     forgetTradingStreams();
     BinarySocket.clear();
   };

@@ -8,7 +8,7 @@
     </p>
     <p>
       [% l("Please specify your preferred reality-check interval in minutes") %]
-      <input id="realityDuration" interval="1" maxlength="4" min="1" size="6" type="number"></input>
+      <input id="realityDuration" interval="1" maxlength="4" min="1" size="6" type="number"/>
     </p>
     <p id="rc-err" class="error-msg invisible">
       [% l("Please enter a number greater than 0") %]

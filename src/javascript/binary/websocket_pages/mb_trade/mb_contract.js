@@ -25,7 +25,7 @@ var MBContract = (function() {
             req.passthrough = {action: 'no-proposal'};
         }
         BinarySocket.send(req);
-        clearContractTimeout(contract_timeout);
+        if (contract_timeout) clearContractTimeout(contract_timeout);
         contract_timeout = setTimeout(getContracts, 15000);
     };
 
@@ -175,7 +175,7 @@ var MBContract = (function() {
             }
         }
         remainingTimeElement.innerHTML = remainingTimeString.join(' ');
-        clearContractTimeout(remainingTimeout);
+        if (remainingTimeout) clearContractTimeout(remainingTimeout);
         remainingTimeout = setTimeout(displayRemainingTime, 1000);
     };
 
@@ -330,7 +330,6 @@ var MBContract = (function() {
         getTemplate         : getTemplate,
         displayDescriptions : displayDescriptions,
         getCurrency         : getCurrency,
-        clearTimeout        : clearContractTimeout,
         getContractsResponse: function() { return contracts_for_response; },
         setContractsResponse: function(contracts_for) { contracts_for_response = contracts_for; },
         onUnload            : function() { clearContractTimeout(); contracts_for_response = {}; periodValue = undefined; },

@@ -2,7 +2,7 @@ var CommonFunctions = require('../common_functions').CommonFunctions;
 
 function create_language_drop_down(languages) {
     var language_select_element = document.getElementById('language_select');
-    if (!language_select_element) return;
+    if (!language_select_element || language_select_element.children.length !== 0) return;
     languages.sort(function(a, b) {
         if (a === 'EN' || a < b) {
             return -1;

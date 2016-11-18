@@ -217,7 +217,8 @@
         </div>
     </div>
     <div id="end-note" class="invisible"></div>
-</div>[% #closes div#page-wrapper %]
+</div>[% #closes div#footer %]
 
+        </div>[% #closes div#page-wrapper %]
     </body>
 </html>
