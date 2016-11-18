@@ -801,6 +801,7 @@ sub _texts {
         push @texts, localize('Your details have been updated.');
         push @texts, localize('Please complete the following financial assessment form before continuing.');
         push @texts, localize('Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed.');
+        push @texts, localize('Please select a value');
 
         # Strings for authorised_appsws
         push @texts, localize('Applications');
