@@ -8,7 +8,7 @@ var Portfolio = (function(){
 
     function getBalance(balance, currency) {
         balance = parseFloat(balance);
-        return currency ? format_money(currency, addComma(balance)) : balance;
+        return currency ? format_money(currency, balance) : balance;
     }
 
     function getPortfolioData(c) {

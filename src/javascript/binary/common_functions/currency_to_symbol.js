@@ -1,40 +1,12 @@
-function format_money(currency, amount) {
-    var updatedAmount = amount;
-    if(currency === 'JPY') { // remove decimal points for JPY and add comma.
-        updatedAmount = updatedAmount.replace(/\.\d+$/, '').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-
-    var symbol = format_money.map[currency];
-    if (symbol === undefined) {
-        return currency + ' ' + updatedAmount;
-    }
-    return symbol + updatedAmount;
-}
-
-function format_money_jp(currency, amount) {
-    var sign = '';
-    var updatedAmount = amount;
-    if(currency === 'JPY') { // remove decimal points and add comma.
-
-        updatedAmount = updatedAmount.replace(/,/g,'');
-        if (Number(updatedAmount) < 0 ) {
-           sign = '-';
-        }
-
-        updatedAmount = updatedAmount.replace(/\.\d+$/, '').replace('-','').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-
-    var symbol = format_money.map[currency];
-    if (symbol === undefined) {
-        return currency + ' ' + updatedAmount;
-    }
-    return sign + symbol + updatedAmount;
+function format_money(currencyValue, amount) {
+    var options = { style: 'currency', currency: currencyValue },
+        language = typeof window !== 'undefined' && page.language().toLowerCase() ? page.language().toLowerCase() : 'en';
+    return (new Intl.NumberFormat(language, options).format(amount));
 }
 
 function format_currency(currency) {
     return format_money.map[currency];
 }
-
 
 // Taken with modifications from:
 //    https://github.com/bengourley/currency-symbol-map/blob/master/map.js
@@ -49,6 +21,5 @@ format_money.map = {
 
 module.exports = {
     format_money: format_money,
-    format_money_jp: format_money_jp,
     format_currency: format_currency
 };
