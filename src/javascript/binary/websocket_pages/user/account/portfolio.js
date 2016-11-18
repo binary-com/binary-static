@@ -20,7 +20,7 @@ var Portfolio = (function(){
                 c.longcode : (japanese_client() ?
                 toJapanTimeIfNeeded(void 0, void 0, c.longcode) : c.longcode),
             'currency'       : c.currency,
-            'buy_price'      : addComma(parseFloat(c.buy_price)),
+            'buy_price'      : c.buy_price,
             'app_id'         : c.app_id
         };
 
