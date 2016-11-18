@@ -1,3 +1,5 @@
+var get_highest_zindex = require('../../../base/utility').get_highest_zindex;
+
 var ViewPopupUI = (function() {
     var _container = null;
     return {
@@ -18,7 +20,7 @@ var ViewPopupUI = (function() {
                 var _on_close = function () {
                     that.cleanup(true);
                     chartUpdated = false;
-                    if (TradePage.is_trading_page() || TradePage_Beta.is_trading_page()) {
+                    if (/trading/.test(window.location.pathname)) {
                         // Re-subscribe the trading page's tick stream which was unsubscribed by popup's chart
                         BinarySocket.send({'ticks_history':$('#underlying').val(),'style':'ticks','end':'latest','count':20,'subscribe':1});
                     }
@@ -67,6 +69,7 @@ var ViewPopupUI = (function() {
                 $('.popup_page_overlay').hide().remove();
                 this._container = null;
             }
+            $('html').removeClass('no-scroll');
         },
         disable_button: function (button) {
             $('.open_contract_detailsws[disabled]').each(function() {
@@ -92,6 +95,7 @@ var ViewPopupUI = (function() {
             con.css('position', 'fixed').css('z-index', get_highest_zindex() + 100);
             body.append(con);
             con.show();
+            $('html').addClass('no-scroll');
             $(document.body).append($('<div/>', {class: 'popup_page_overlay'}));
             $('.popup_page_overlay').click(function(){ViewPopupUI.container().find('a.close').click();});
             con.draggable({
@@ -134,6 +138,21 @@ var ViewPopupUI = (function() {
                 if(y < win_.scrollTop()) {y = win_.scrollTop();}
             }
             con.offset({left: x, top: y});
+            ViewPopupUI.reposition_confirmation_ondrag();
+        },
+        // ===== Dispatch =====
+        storeSubscriptionID: function(id, option) {
+            if(!window.stream_ids && !option) {
+                window.stream_ids = [];
+            }
+            if (!window.chart_stream_ids && option) {
+                window.chart_stream_ids = [];
+            }
+            if(!option && id && id.length > 0 && $.inArray(id, window.stream_ids) < 0) {
+                window.stream_ids.push(id);
+            } else if(option && id && id.length > 0 && $.inArray(id, window.chart_stream_ids) < 0) {
+                window.chart_stream_ids.push(id);
+            }
         },
     };
 }());

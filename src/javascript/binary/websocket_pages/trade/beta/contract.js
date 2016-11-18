@@ -1,3 +1,4 @@
+var objectNotEmpty = require('../../../base/utility').objectNotEmpty;
 /*
  * Contract object mocks the trading form we have on our website
  * It parses the contracts json we get from socket.send({contracts_for: 'R_50'})

@@ -1,3 +1,5 @@
+var ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbols;
+
 /*
  * Symbols object parses the active_symbols json that we get from socket.send({active_symbols: 'brief'}
  * and outputs in usable form, it gives markets, underlyings

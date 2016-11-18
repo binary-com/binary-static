@@ -1,3 +1,5 @@
+var objectNotEmpty = require('./utility').objectNotEmpty;
+
 var LoggedInHandler = (function() {
     "use strict";
 

@@ -1,4 +1,14 @@
+var MBContract = require('./mb_contract').MBContract;
+var MBDefaults = require('./mb_defaults').MBDefaults;
+var MBNotifications = require('./mb_notifications').MBNotifications;
+var MBPrice = require('./mb_price').MBPrice;
+var MBSymbols = require('./mb_symbols').MBSymbols;
+var MBTick = require('./mb_tick').MBTick;
+var japanese_client = require('../../common_functions/country_base').japanese_client;
+
 var MBProcess = (function() {
+    var market_status = '',
+        symbols_timeout;
     /*
      * This function process the active symbols to get markets
      * and underlying list
@@ -28,10 +38,11 @@ var MBProcess = (function() {
                 is_market_closed = false;
             }
         });
+        clearSymbolTimeout();
         if (is_market_closed) {
-            $('.japan-form, .japan-table, #trading_bottom_content').addClass('invisible');
-            MBNotifications.show({text: page.text.localize('Market is closed. Please try again later.'), uid: 'MARKET_CLOSED'});
+            handleMarketClosed();
         } else {
+            handleMarketOpen();
             displayUnderlyings('underlying', symbols_list, symbol);
 
             if (symbol && !symbols_list[symbol].is_active) {
@@ -40,6 +51,21 @@ var MBProcess = (function() {
                 MBProcess.processMarketUnderlying();
             }
         }
+    }
+
+    function handleMarketClosed() {
+        $('.japan-form, .japan-table, #trading_bottom_content').addClass('invisible');
+        MBNotifications.show({text: page.text.localize('Market is closed. Please try again later.'), uid: 'MARKET_CLOSED'});
+        symbols_timeout = setTimeout(function() { MBSymbols.getSymbols(1); }, 30000);
+    }
+
+    function handleMarketOpen() {
+        $('.japan-form, .japan-table, #trading_bottom_content').removeClass('invisible');
+        MBNotifications.hide('MARKET_CLOSED');
+    }
+
+    function clearSymbolTimeout() {
+        clearTimeout(symbols_timeout);
     }
 
     /*
@@ -107,6 +133,9 @@ var MBProcess = (function() {
         if (contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly') {
             window.chartAllowed = false;
         }
+
+        checkMarketStatus(contracts.contracts_for.close);
+
         var noRebuild = contracts.hasOwnProperty('passthrough') &&
                         contracts.passthrough.hasOwnProperty('action') &&
                         contracts.passthrough.action === 'no-proposal';
@@ -117,6 +146,24 @@ var MBProcess = (function() {
         }
         processPriceRequest();
         TradingAnalysis.request();
+    }
+
+    function checkMarketStatus(close) {
+        var now = window.time.unix();
+
+        // if market is closed, else if market is open
+        if (now > close) {
+            if (market_status === 'open') {
+                handleMarketClosed();
+            }
+            market_status = 'closed';
+        } else {
+            if (market_status === 'closed') {
+                MBSymbols.getSymbols(1);
+                handleMarketOpen();
+            }
+            market_status = 'open';
+        }
     }
 
     function processForgetProposals() {
@@ -187,53 +234,6 @@ var MBProcess = (function() {
         }
     }
 
-    var periodValue, $countDownTimer, remainingTimeElement, remainingTimeout;
-    function processRemainingTime(recalculate) {
-        if (typeof periodValue === 'undefined' || recalculate) {
-            periodValue = document.getElementById('period').value;
-            $countDownTimer = $('.countdown-timer');
-            remainingTimeElement = document.getElementById('remaining-time');
-        }
-        if (!periodValue) return;
-        var timeLeft = parseInt(periodValue.split('_')[1]) - window.time.unix();
-        if (timeLeft <= 0) {
-            location.reload();
-        } else if (timeLeft < 120) {
-            $countDownTimer.addClass('alert');
-        }
-        var remainingTimeString = [],
-            duration = moment.duration(timeLeft * 1000);
-        var all_durations = {
-            month  : duration.months(),
-            day    : duration.days(),
-            hour   : duration.hours(),
-            minute : duration.minutes(),
-            second : duration.seconds()
-        };
-        for (var key in all_durations) {
-            if (all_durations[key]) {
-                remainingTimeString.push(all_durations[key] + page.text.localize((key + (all_durations[key] == 1 ? '' : 's' ))));
-            }
-        }
-        remainingTimeElement.innerHTML = remainingTimeString.join(' ');
-        clearRemainingTimeout();
-        remainingTimeout = setTimeout(processRemainingTime, 1000);
-    }
-
-    function clearRemainingTimeout() {
-        clearTimeout(remainingTimeout);
-    }
-
-    function processBuy(barrier, contract_type) {
-        if (!barrier || !contract_type) return;
-        if (!page.client.is_logged_in) {
-            MBNotifications.show({text: page.text.localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true});
-            return;
-        }
-        MBPrice.showPriceOverlay();
-        MBPrice.sendBuyRequest(barrier, contract_type);
-    }
-
     var processExpiredBarriers = function() {
         var contracts = MBContract.getCurrentContracts(),
             i, expired_barrier, expired_barrier_element;
@@ -285,9 +285,7 @@ var MBProcess = (function() {
         processContract        : processContract,
         processPriceRequest    : processPriceRequest,
         processProposal        : processProposal,
-        processRemainingTime   : processRemainingTime,
-        processBuy             : processBuy,
-        clearTimeout           : clearRemainingTimeout,
+        onUnload               : function() { clearSymbolTimeout(); },
     };
 })();
 

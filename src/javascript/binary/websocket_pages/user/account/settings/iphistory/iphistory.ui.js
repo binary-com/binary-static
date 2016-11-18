@@ -1,3 +1,6 @@
+var showLocalTimeOnHover = require('../../../../../base/utility').showLocalTimeOnHover;
+var FlexTableUI = require('../../../../../common_functions/attach_dom/flextable').FlexTableUI;
+
 var IPHistoryUI = (function() {
     'use strict';
 

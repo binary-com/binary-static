@@ -20,11 +20,11 @@
         position: relative;
         #disable-overlay {
             position: absolute;
-            top: 108px;
+            top: 84px;
             left: 10px;
             z-index: 1;
             width: calc(100% - 20px);
-            height: calc(100% - 108px);
+            height: calc(100% - 84px);
             background-color: rgba(242, 242, 242, 0.5);
         }
         #loading-overlay {
@@ -50,10 +50,37 @@
             background: $COLOR_LIGHT_GRAY;
         }
     }
+    .base-value {
+        font-size: 9px;
+    }
+    .dynamics {
+        display: inline-block;
+        width: 10px;
+        height: 15px;
+        margin-right: 5px;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+    }
     .price-wrapper {
         .dynamics {
+            &.up {
+                background-image: svg-icon('up', $COLOR_BLACK);
+            }
+            &.down {
+                background-image: svg-icon('down', $COLOR_BLACK);
+            }
+        }
+        &.inactive .dynamics {
+            &.up {
+                background-image: svg-icon('up', $COLOR_GRAY);
+            }
+            &.down {
+                background-image: svg-icon('down', $COLOR_GRAY);
+            }
+        }
+        .base-value {
             display: inline-block;
-            width: 20px;
+            margin-left: 5px;
         }
     }
     .price-button {
@@ -69,8 +96,21 @@
         border: 0;
         min-height: 34px;
         position: relative;
-        .dynamics {
+        .value-wrapper {
+            margin-left: -15px;
+            .dynamics {
+                &.up {
+                    background-image: svg-icon('up', $COLOR_WHITE);
+                }
+                &.down {
+                    background-image: svg-icon('down', $COLOR_WHITE);
+                }
+            }
+        }
+        .base-value {
             position: absolute;
+            bottom: 1px;
+            right: 3px;
         }
         &:hover {
             background-color: $COLOR_DARK_GREEN;
@@ -85,24 +125,18 @@
             overflow: visible;
         }
     }
-    .down {
-        color: $COLOR_RED;
-    }
-    .up {
-        color: $COLOR_GREEN;
-    }
     .heading {
         font-weight: bold;
     }
     .descr-wrapper {
         & > div {
-            min-height: 88px;
+            min-height: 64px;
             padding-top: 10px;
             padding-bottom: 10px;
         }
         .descr {
             padding: 0 16px 0 0;
-            font-size: 16px;
+            font-size: 14px;
             max-width: 420px;
             line-height: 1.4em;
         }
@@ -148,13 +182,14 @@
         line-height: 30px;
     }
     #spot-dyn {
-        width: 10px;
-        display: inline-block;
-        font-family: Arial;
-        padding-left: 3px;
+        &.down {
+            background-image: svg-icon('down', $COLOR_RED);
+        }
+        &.up {
+            background-image: svg-icon('up', $COLOR_GREEN);
+        }
         &.still {
-            color: $COLOR_GRAY_SHADE;
-            padding-left: 6px;
+            background-image: svg-icon('circle', $COLOR_GRAY_SHADE);
         }
     }
     .padding-10 {
@@ -237,6 +272,13 @@
         display: block;
         &.spot-value {
             line-height: 30px;
+            * {
+                vertical-align: middle;
+            }
+        }
+        #trading_worm_chart {
+            display: inline-block;
+            margin-top: 3px;
         }
     }
     .countdown-timer {
@@ -256,6 +298,23 @@
         }
         .padding-right-five, .no-padding-right {
             padding-right: 10px;
+        }
+    }
+    @media screen and (max-width: 480px) {
+        .japan-form .gr-row > div:first-child {
+            padding-bottom: 10px;
+        }
+        .japan-table .price-row {
+            .barrier, .price-button .value-wrapper, .sell-price {
+                font-size: 0.9em;
+            }
+            .price-button {
+                width: 80%;
+                margin-left: 15px;
+                .base-value {
+                    bottom: 0px;
+                }
+            }
         }
     }
     #notifications_wrapper {
@@ -283,11 +342,6 @@
             }
         }
     }
-}
-
-.center-text .spinner {
-    width: 160px;
-    height: 160px;
 }
 
 #trading_bottom_content #tab_portfolio-content {

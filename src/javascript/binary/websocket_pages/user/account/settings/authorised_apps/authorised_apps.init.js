@@ -1,3 +1,6 @@
+var ApplicationsUI = require('./authorised_apps.ui').ApplicationsUI;
+var ApplicationsData = require('./authorised_apps.data').ApplicationsData;
+
 var Applications = (function() {
     "use strict";
 

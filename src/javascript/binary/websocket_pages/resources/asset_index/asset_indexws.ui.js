@@ -1,3 +1,10 @@
+var showLoadingImage = require('../../../base/utility').showLoadingImage;
+var Table = require('../../../common_functions/attach_dom/table').Table;
+var CommonFunctions = require('../../../common_functions/common_functions').CommonFunctions;
+var AssetIndexData = require('./asset_indexws.data').AssetIndexData;
+var AssetIndex = require('../asset_indexws').AssetIndex;
+var japanese_client = require('../../../common_functions/country_base').japanese_client;
+
 var AssetIndexUI = (function() {
     "use strict";
 
@@ -26,7 +33,10 @@ var AssetIndexUI = (function() {
         showLoadingImage($container);
 
         isFramed = (config && config.framed);
-        if (!assetIndex) AssetIndexData.sendRequest(!activeSymbols);
+        if (!assetIndex) {
+            initSocket();
+            AssetIndexData.sendRequest(!activeSymbols);
+        }
     };
 
     var populateTable = function() {
@@ -58,7 +68,7 @@ var AssetIndexUI = (function() {
 
         if (isFramed) {
             $container.find('ul').hide();
-            $('<div/>', {class: 'center-text'}).append(jqueryuiTabsToDropdown($container)).prependTo($container);
+            $('<div/>', {class: 'center-text'}).append(CommonFunctions.jqueryuiTabsToDropdown($container)).prependTo($container);
         }
     };
 
@@ -115,6 +125,28 @@ var AssetIndexUI = (function() {
         $submarketTable.find('thead').prepend($submarketHeader);
 
         return $submarketTable;
+    };
+
+    var initSocket = function() {
+        if (TradePage_Beta.is_trading_page()) return;
+        BinarySocket.init({
+            onmessage: function(msg) {
+                var response = JSON.parse(msg.data);
+                if (response) {
+                    responseHandler(response);
+                }
+            }
+        });
+    };
+
+    var responseHandler = function(response) {
+        var msg_type = response.msg_type;
+        if (msg_type === "asset_index") {
+            AssetIndexUI.setAssetIndex(response);
+        }
+        else if (msg_type === "active_symbols") {
+            AssetIndexUI.setActiveSymbols(response);
+        }
     };
 
     return {

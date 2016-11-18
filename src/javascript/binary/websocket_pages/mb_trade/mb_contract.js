@@ -1,3 +1,9 @@
+var objectNotEmpty = require('../../base/utility').objectNotEmpty;
+var format_currency = require('../../common_functions/currency_to_symbol').format_currency;
+var japanese_client = require('../../common_functions/country_base').japanese_client;
+var MBDefaults = require('./mb_defaults').MBDefaults;
+var MBSymbols = require('./mb_symbols').MBSymbols;
+
 /*
  * Contract object mocks the trading form we have on our website
  * It parses the contracts json we get from socket.send({contracts_for: 'R_50'})
@@ -18,12 +24,17 @@ var MBContract = (function() {
             req.passthrough = {action: 'no-proposal'};
         }
         BinarySocket.send(req);
-        clearContractTimeout();
+        if (contract_timeout) clearContractTimeout(contract_timeout);
         contract_timeout = setTimeout(getContracts, 15000);
     };
 
-    var clearContractTimeout = function() {
-        clearTimeout(contract_timeout);
+    var clearContractTimeout = function(timoutID) {
+        if (timoutID) {
+            clearTimeout(timoutID);
+        } else {
+            clearTimeout(contract_timeout);
+            clearTimeout(remainingTimeout);
+        }
     };
 
     var durationText = function(dur) {
@@ -96,7 +107,7 @@ var MBContract = (function() {
             }
             MBDefaults.set('period', $periodElement.val());
             MBContract.displayDescriptions();
-            MBProcess.processRemainingTime();
+            MBContract.displayRemainingTime();
         } else { // update options
             var existing_array = [],
                 missing_array  = [];
@@ -132,6 +143,39 @@ var MBContract = (function() {
                 }
             });
         }
+    };
+
+    var periodValue, $countDownTimer, remainingTimeElement, remainingTimeout;
+    var displayRemainingTime = function(recalculate) {
+        if (typeof periodValue === 'undefined' || recalculate) {
+            periodValue = document.getElementById('period').value;
+            $countDownTimer = $('.countdown-timer');
+            remainingTimeElement = document.getElementById('remaining-time');
+        }
+        if (!periodValue) return;
+        var timeLeft = parseInt(periodValue.split('_')[1]) - window.time.unix();
+        if (timeLeft <= 0) {
+            location.reload();
+        } else if (timeLeft < 120) {
+            $countDownTimer.addClass('alert');
+        }
+        var remainingTimeString = [],
+            duration = moment.duration(timeLeft * 1000);
+        var all_durations = {
+            month  : duration.months(),
+            day    : duration.days(),
+            hour   : duration.hours(),
+            minute : duration.minutes(),
+            second : duration.seconds()
+        };
+        for (var key in all_durations) {
+            if (all_durations[key]) {
+                remainingTimeString.push(all_durations[key] + page.text.localize((key + (all_durations[key] == 1 ? '' : 's' ))));
+            }
+        }
+        remainingTimeElement.innerHTML = remainingTimeString.join(' ');
+        if (remainingTimeout) clearContractTimeout(remainingTimeout);
+        remainingTimeout = setTimeout(displayRemainingTime, 1000);
     };
 
     var sortByExpiryTime = function(first, second) {
@@ -280,13 +324,14 @@ var MBContract = (function() {
         getContracts        : getContracts,
         populatePeriods     : populatePeriods,
         populateOptions     : populateOptions,
+        displayRemainingTime: displayRemainingTime,
         getCurrentContracts : getCurrentContracts,
         getTemplate         : getTemplate,
         displayDescriptions : displayDescriptions,
         getCurrency         : getCurrency,
-        clearTimeout        : clearContractTimeout,
         getContractsResponse: function() { return contracts_for_response; },
         setContractsResponse: function(contracts_for) { contracts_for_response = contracts_for; },
+        onUnload            : function() { clearContractTimeout(); contracts_for_response = {}; periodValue = undefined; },
     };
 })();
 

@@ -1,3 +1,9 @@
+var MBContract = require('./mb_contract').MBContract;
+var objectNotEmpty = require('../../base/utility').objectNotEmpty;
+var MBDefaults = require('./mb_defaults').MBDefaults;
+var MBNotifications = require('./mb_notifications').MBNotifications;
+var japanese_client = require('../../common_functions/country_base').japanese_client;
+
 /*
  * Price object handles all the functions we need to display prices
  *
@@ -77,7 +83,7 @@ var MBPrice = (function() {
         });
 
         MBPrice.hidePriceOverlay();
-        hideSpinnerShowTrading();
+        MBNotifications.hideSpinnerShowTrading();
         is_displayed = true;
     };
 
@@ -120,26 +126,44 @@ var MBPrice = (function() {
     };
 
     var getMovementDirection = function(prev, current) {
-        return current > prev ? '⬆' : current < prev ? '⬇' : '';
+        return current > prev ? 'up' : current < prev ? 'down' : '';
     };
 
     var makePriceRow = function(values, is_update) {
+        var payout   = MBDefaults.get('payout'),
+            is_japan = japanese_client();
         return (is_update ? '' : '<div data-barrier="' + values.barrier + '" class="gr-row price-row">') +
                 '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
                 '<div class="gr-4 buy-price">' +
                     '<button class="price-button' + (!values.is_active ? ' inactive' : '') + '"' +
-                        (values.id ? ' onclick="MBProcess.processBuy(\'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
-                        (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' + formatPrice(values.ask_price) +
-                        '<span class="dynamics">' + (values.ask_price_movement || '') + '</span>' +
+                        (values.id ? ' onclick="MBPrice.processBuy(\'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
+                        (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' +
+                            '<span class="value-wrapper">' +
+                                '<span class="dynamics ' + (values.ask_price_movement || '') + '"></span>' +
+                                formatPrice(values.ask_price) +
+                            '</span>' +
+                            (is_japan ? '<span class="base-value">(' + formatPrice(values.ask_price / payout) + ')</span>' : '') +
                     '</button>' +
                 '</div>' +
                 '<div class="gr-4 sell-price">' +
-                    '<span class="price-wrapper' + (!values.sell_price ? ' inactive' : '') + '">' + formatPrice(values.sell_price) +
-                        '<span class="dynamics">' + (values.sell_price_movement || '') + '</span>' +
+                    '<span class="price-wrapper' + (!values.sell_price ? ' inactive' : '') + '">' +
+                        '<span class="dynamics ' + (values.sell_price_movement || '') + '"></span>' +
+                        formatPrice(values.sell_price) +
+                        (is_japan ? '<span class="base-value">(' + formatPrice(values.sell_price / payout) + ')</span>' : '') +
                     '</span>' +
                 '</div>' +
             (is_update ? '' : '</div>');
     };
+
+    function processBuy(barrier, contract_type) {
+        if (!barrier || !contract_type) return;
+        if (!page.client.is_logged_in) {
+            MBNotifications.show({text: page.text.localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true});
+            return;
+        }
+        MBPrice.showPriceOverlay();
+        MBPrice.sendBuyRequest(barrier, contract_type);
+    }
 
     var formatPrice = function(price) {
         return addComma(price, japanese_client() ? '0' : 2);
@@ -193,22 +217,18 @@ var MBPrice = (function() {
         $('#disable-overlay, #loading-overlay').addClass('invisible');
     };
 
-    var hideSpinnerShowTrading = function() {
-        $('.spinner').addClass('invisible');
-        $('.mb-trading-wrapper').removeClass('invisible');
-    };
-
     return {
         display                : display,
         addPriceObj            : addPriceObj,
+        processBuy             : processBuy,
         cleanup                : cleanup,
         sendBuyRequest         : sendBuyRequest,
         showPriceOverlay       : showPriceOverlay,
         hidePriceOverlay       : hidePriceOverlay,
         getReqId               : function() { return req_id; },
         increaseReqId          : function() { req_id++; cleanup(); },
-        hideSpinnerShowTrading : hideSpinnerShowTrading,
         getPrices              : function() { return prices; },
+        onUnload               : function() { cleanup(); req_id = 0; proposal_response = {}; $tables = undefined; },
     };
 })();
 

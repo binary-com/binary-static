@@ -1,3 +1,10 @@
+var MBContract = require('./mb_contract').MBContract;
+var MBDefaults = require('./mb_defaults').MBDefaults;
+var MBNotifications = require('./mb_notifications').MBNotifications;
+var MBProcess = require('./mb_process').MBProcess;
+var MBTick = require('./mb_tick').MBTick;
+var japanese_client = require('../../common_functions/country_base').japanese_client;
+
 /*
  * TradingEvents object contains all the event handler function required for
  * websocket trading page
@@ -59,7 +66,7 @@ var MBTradingEvents = (function () {
                 MBDefaults.set('period', e.target.value);
                 MBProcess.processPriceRequest();
                 $('.countdown-timer').removeClass('alert');
-                MBProcess.processRemainingTime('recalculate');
+                MBContract.displayRemainingTime('recalculate');
                 MBContract.displayDescriptions();
             });
         }

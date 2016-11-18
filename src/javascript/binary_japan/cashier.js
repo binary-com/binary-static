@@ -1,3 +1,5 @@
+var objectNotEmpty = require('../binary/base/utility').objectNotEmpty;
+
 var CashierJP = (function() {
     function init(action) {
         if (objectNotEmpty(TUser.get())) {

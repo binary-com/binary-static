@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-10-31 16:37+0000\n"
+"PO-Revision-Date: 2016-11-13 19:33+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.9-dev\n"
+"X-Generator: Weblate 2.9\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API ของ %1\" หมายถึง ระบบของ %1 ที่ประกอบด้วย ชุดคำสั่งต่างๆ โปรโตคอลต่างๆ เครื่องมือต่างๆ และทรัพยากรต่างๆ ที่ถูกพัฒนาขึ้นและดำเนินการโดย %1 ซึ่งท่านสามารถใช้งานแอพพลิเคชันได้เพื่อเชื่อมต่อกับแพลตฟอร์มการซื้อขายของ %1"
@@ -273,6 +273,9 @@ msgstr "ประวัติศาสตร์อันน่าจดจำข
 
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "ระบบต่างๆ ของ %1 ขณะนี้มีการประมวลผลมากกว่า 1 ล้านธุรกรรมต่อวัน (รวมประเภทบัญชีเสมือน หรือ บัญชีทดลองใช้)"
+
+msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
+msgstr "แนวคิดการบริจาคเพื่อการกุศลของ%1 มุ่งต่อองค์กรการกุศลขนาดเล็ก และองค์กรที่ไม่แสวงหากำไรทั่วโลกซึ่งสร้างสรรค์ความแตกต่างให้กับชุมชนของพวกเขา การบริจาคของเราเพื่อให้บังเกิดผลต่อหน่วยงานเล็กๆ เหล่านั้นโดยตรง ปราศจากภาระของค่าใช้จ่ายที่ใช้ในการดำเนินธุรกิจที่มีในองค์กรการกุศลใหญ่ๆ อื่นๆ"
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(ระยะเวลาที่ต่ำที่สุด, ตัวอย่าง ระยะที่ต่ำที่สุด 15 วินาที)นาที"
@@ -669,10 +672,10 @@ msgid "<strong>Volatile markets</strong> - choose the one-touch trade, the goes-
 msgstr "<strong>ตลาดผันผวน</strong> - ให้ใช้ One-Touch Trade ซึ่งอาจจะผันผวนออกนอกกรอบ หรือ สิ้นสุดนอกกรอบที่คาดไว้"
 
 msgid "<strong>Volatility Indices</strong> - trade %1's proprietary volatility indices."
-msgstr "<strong>ดัชนีผันผวน</strong> - เทรด %1 กับผลิตภัณฑ์ลิขสิทธิ์ดัชนีผันผวน"
+msgstr "<strong>ดัชนีผันผวน</strong> - เลือกทำกำไรกับผลิตภัณฑ์ลิขสิทธิ์ดัชนีผันผวนของ %1"
 
 msgid "<strong>Volatility indices</strong> - trade %1's own volatility indices, 24/7."
-msgstr "<strong>ดัชนีผันผวน</strong> - เทรด %1 กับผลิตภัณฑ์ลิขสิทธิ์ดัชนีผันผวน ตลอด 24 ชั่วโมง 7 วัน"
+msgstr "<strong>ดัชนีผันผวน</strong> - เลือกทำกำไรกับผลิตภัณฑ์ลิขสิทธิ์ดัชนีผันผวนของ %1 ตลอด 24 ชั่วโมง 7 วัน"
 
 msgid "<ul><li> Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>. </li><li> Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button. </li><li> Under the <strong>Cookies</strong> section, select the \"<strong>Don't block cookies</strong>\" option. </li><li> Click anywhere outside the menu to save and close. </li></ul>"
 msgstr "<ul><li> ไปที่เมนู <strong>More actions</strong> และเลือก <strong>Settings</strong></li><li> บริเวณข้างล่าง เลือกที่<strong>Advanced Settings</strong>, คลิกปุ่ม <strong>View advanced settings</strong></li><li> บริเวณข้างล่าง ส่วนที่เป็น <strong>Cookies</strong> เลือกค่า \"<strong>Don't block cookies</strong>\"</li><li> คลิกพื้นที่ข้างนอกของเมนูเพื่อบันทึกและปิด </li></ul>"
@@ -696,7 +699,7 @@ msgid "A Bachelor's degree in Computer Science, or an equivalent combination of 
 msgstr "สำเร็จการศึกษาสาขาวิทยาการคอมพิวเตอร์ หรือเทียบเท่า โดยมีทักษะเชิงเทคนิค อบรมหลักสูตรต่างๆ ที่เกี่ยวข้อง และประสบการณ์การทำงาน"
 
 msgid "A Bachelor's degree in Marketing, Business Administration, or related discipline"
-msgstr "สำเร็จการศึกษาในสาขาการตลาด สาขาบริหารธุรกิจ หรือสาขาเทียบเท่าที่เกี่ยวข้อง"
+msgstr "สำเร็จการศึกษาในสาขาการตลาด สาขาบริหารธุรกิจ หรือสาขาเทียบเท่าในหลักสูตรที่เกี่ยวข้อง"
 
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "ตัวแทนรับชำระเงินเป็นเหมือนตัวกลางแลกเปลี่ยนระหว่างลูกค้าและ %1 ตัวแทนรับชำระเงินอำนวยความสะดวกในการฝากเงินและถอนเงินให้กับลูกค้าที่ปรารถนาจะใช้ช่องทางเงินสดอิเล็กทรอนิกส์ หรือ สกุลเงินท้องถิ่น ที่ไม่ได้บริการโดย %1 โดยค่าธรรมเนียมการโอนเงินรับผิดชอบโดยลูกค้าผู้ทำธุรกรรม"
@@ -1532,6 +1535,9 @@ msgstr "แต่เราค่อนข้างช่างเลือกส
 msgid "Buy"
 msgstr "ซื้อ"
 
+msgid "Buy Price"
+msgstr "ราคาซื้อ"
+
 msgid "Buy an App, or Build Your Own"
 msgstr "ซื้อแอพ หรือ สร้างแอพของท่านเอง"
 
@@ -1723,6 +1729,9 @@ msgstr "หนี้สินของลูกค้า"
 
 msgid "Clients agree to be fully and personally liable for the due settlement of every transaction entered into under their account with the Company. This includes any transactions entered into by members of the Client's family or entourage who have gained access to the account. Clients are responsible for ensuring that they alone control access to the account, and that no minors are granted access to trading on the website. In any case, Clients remains fully liable for any and all positions traded on their account, and for any credit card transactions entered into the site for their account. Each Client also indemnifies the Company in respect to all costs and losses of any kind, whatsoever as may be incurred by the Company as a result, direct or indirect, of the Client's failure to perform or settle such a transaction. Online Gambling debts are enforceable in law in the Isle of Man."
 msgstr "ลูกค้ายินยอมรับผิดชอบมูลหนี้ส่วนตัวและมูลค่าที่เกิดขึ้นจากการครบกำหนดชำระเงินของทุกธุรกรรมที่เกิดขึ้นในบัญชีของเขา เหล่านี้รวมทุกรายการธุรกรรมที่ถูกส่งโดยสมาชิกในครอบครัวของลูกค้า หรือ ผู้ติดตามผู้ซึ่งมีสิทธิ์ในการเข้าใช้งานบัญชี ลูกค้ารับผิดชอบในการควบคุมการเข้าถึงบัญชี และการซื้อขายทางเว็บไซต์ ไม่วากรณีใดๆ ลูกค้ายังคงถือความรับผิดชอบต่อการกระทำที่เกิดขึ้นจากบัญชีของเขา และทุกธุรกรรมที่ดำเนินการด้วยบัตรเครดิตที่ผูกกับบัญชีของลูกค้า ลูกค้าแต่ละรายยินยอมในการชำระค่าปรับ หรือชดใช้ต่อค่าใช้จ่ายและความเสียหายไม่ว่าจะทางตรง หรือทางอ้อมที่เกิดจากการกระทำหรือการชำระเงินที่ไม่สำเร็จของลูกค้าในธุรกรรมต่างๆ ภาวะหนี้การพนันออนไลน์ถูกกำหนดและบังคับใช้ตามกฎหมายของเกาะ Isle of Man"
+
+msgid "Clients agree to comply with the reasonable requests made by the Company for the purpose of verifying compliance with this term."
+msgstr "ลูกค้ายินยอมที่จะดำเนินตามการร้องขอที่สมเหตุสมผลจากบริษัทฯ ตามจุดประสงค์ของการตรวจสอบเพื่อเป็นไปตามข้อกำหนด"
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. Binary.com is not available in the Republic of Vanuatu."
 msgstr "ลูกค้าอื่นๆ ทั่วโลก (ที่ไม่ได้อยู่ในประเทศเหล่านี้ ได้แก่ สหรัฐอเมริกา คอสตาริกา และฮ่องกง) จะเปิดบัญชี FX และ CFD Metatrader 5 ของเขากับบริษัท Binary (V) Ltd ทั้งนี้ Binary.com ไม่ได้เปิดบริการให้กับสาธารณรัฐวานูอาตู"
@@ -2483,6 +2492,9 @@ msgstr "ประมาณการมูลค่าสุทธิ"
 msgid "Ethics Code"
 msgstr "จรรยาบรรณ"
 
+msgid "Eurobasket Wolves"
+msgstr "ยูโรบาสเกต วูฟ (Eurobasket Wolves)"
+
 msgid "European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd."
 msgstr "สมาชิกในประชาคมยุโรปได้รับข้อยกเว้นเช่นเดียวกับประชาชนในสหราชอาณาจักร สำหรับผู้ที่เทรดผลิตภัณฑ์การพนันที่มีบัญชีที่เปิดกับบริษัท Binary (Europe) Ltd."
 
@@ -3092,6 +3104,9 @@ msgstr "หากข้อกำหนดของข้อตกลงเหล
 msgid "If any provision of this Agreement is held to be void or unenforceable in whole or part, the impugned provision (or part thereof) shall be deemed to be deleted from this Agreement and the remaining provisions (including the remainder of the affected provision) shall continue to be valid and applicable."
 msgstr "หากเงื่อนไขของข้อตกลงนี้ถูกยกเลิก หรือ ไม่สามารถบังคับใช้ได้ทั้งหมด หรือบางส่วน เงื่อนไขที่ขัดแย้ง (หรือ ส่วนนั้น) จะถือว่า ถูกลบจากข้อตกลงและเงื่อนไข และเงื่อนไขข้อตกลงที่เหลือ (รวมถึงเงื่อนไขที่มีผล) จะยังถูกต้องและสามารถใช้ได้ต่อไป"
 
+msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
+msgstr ""
+
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "หากบริษัทฯ แสดงความจำนงทางกฎหมายในการเปิดเผยข้อมูลส่วนบุคคล หรือ ข้อมูลทางการเงินของท่านตามกฎหมาย หลักเกณฑ์ หรือ การร้องขอตามคำสั่งศาล หรือ หน่วยงานภาครัฐ นั้น บริษัทฯ จะแจ้งเหตุดังกล่าวให้ท่านทราบทันที เพื่อให้ท่านมีโอกาสในการแสวงหาการป้องกันข้อมูลตามความเหมาะสม เว้นเสียแต่ว่า มีคำสั่งห้ามตามกฎหมาย การเปิดเผยข้อมูลดังกล่าว ไม่ถือว่าเป็นการฝ่าฝืน หรือผิดต่อข้อตกลงและเงื่อนไขนี้"
 
@@ -3466,6 +3481,9 @@ msgstr "มีค่าใช้จ่ายในการเข้าร่ว
 
 msgid "Isle of Man"
 msgstr "เกาะ Isle of Man"
+
+msgid "It is a condition of using the website that:"
+msgstr "เงื่อนไขหนึ่งของการใช้เว็บไซต์:"
 
 msgid "It is important that you monitor all of your positions closely. It is your responsibility to monitor your positions and during the period that you have any open Contracts, you should always have the ability to access your Accounts."
 msgstr "มันเป็นสิ่งสำคัญที่ท่านพึงสังเกตการณ์อย่างใกล้ชิด มันเป็นความรับผิดชอบในการดูแลหน้าที่ในระหว่างการเปิดสัญญาใดๆ ท่านควรจะหมั่นตรวจสอบบัญชีของท่าน"
@@ -4034,9 +4052,6 @@ msgstr "เรียนรู้จากเรา"
 msgid "Learn more"
 msgstr "เรียนเพิ่มเติม"
 
-msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
-msgstr "มาดูว่าเราคิด และ ทำงานกันอย่างไร  อ่าน <a href='https://blog.binary.com/' target='_blank'>บล็อกของเรา</a> เพื่อศึกษาเรื่องราวและแนวคิดที่เป็นแรงบันดาลใจของเรา"
-
 msgid "Learn more about our corporate culture"
 msgstr "เรียนรู้เพิ่มเติมเกี่ยวกับวัฒนธรรมองค์กรของเรา"
 
@@ -4183,6 +4198,9 @@ msgstr "ฝากเงิน"
 
 msgid "Make your trade"
 msgstr "ซื้อขาย"
+
+msgid "Making a Positive Impact in Local Communities"
+msgstr "การสร้างสรรค์ผลลัพธ์เชิงบวกให้กับชุมชนท้องถิ่นต่างๆ"
 
 msgid "Malaysia"
 msgstr "มาเลเซีย"
@@ -5005,6 +5023,11 @@ msgstr "โปรดระบุตัวแทนรับชำระเงิ
 msgid "Please select a valid date"
 msgstr "โปรดระบุวันที่ที่ถูกต้อง"
 
+#, fuzzy
+#| msgid "Please select a valid date"
+msgid "Please select a value"
+msgstr "โปรดระบุวันที่ที่ถูกต้อง"
+
 msgid "Please select at least one scope"
 msgstr "โปรดระบุค่าอย่างน้อยหนึ่งขอบเขต"
 
@@ -5179,6 +5202,9 @@ msgstr "กำไร/ขาดทุน"
 msgid "Profit/Loss (points)"
 msgstr "กำไร/ขาดทุน (จุด)"
 
+msgid "Prohibited Trades"
+msgstr "การซื้อขายต้องห้าม"
+
 msgid "Proofread and correct the content appearing on the company's website, blog, social media outlets, and marketing materials, from English to the regional language and vice versa"
 msgstr "พิสูจน์อักษรและแก้ไขความสละสลวยของเนื้อหาที่ปรากฏในเว็บไซต์ บล็อก สื่อสังคมต่างๆ และสื่อการตลาดต่างๆ ของบริษัทฯ จากภาษาอังกฤษไปเป็นภาษาที่ใช้ตามภูมิภาค"
 
@@ -5262,6 +5288,9 @@ msgstr "ศึกษาเพิ่มเติมเกี่ยวกับค
 
 msgid "Read about the five types of trade offered by %1."
 msgstr "อ่านเกี่ยวกับประเภทของการซื้อขาย 5 ประเภท โดย %1"
+
+msgid "Read our blog for the stories and ideas that inspire us"
+msgstr "อ่านบล็อกของเราสำหรับเรื่องต่างๆ และแนวคิดของเรา"
 
 msgid "Read the answers to some common questions."
 msgstr "อ่านคำตอบของคำถามพื้นฐานต่างๆ"
@@ -5572,6 +5601,9 @@ msgstr "อาชีพอิสระ"
 msgid "Sell"
 msgstr "ขาย"
 
+msgid "Sell Price"
+msgstr "ราคาขาย"
+
 msgid "Sell at market"
 msgstr "ขาย ณ ตลาด"
 
@@ -5634,6 +5666,9 @@ msgstr "การโมฆะเป็นบางส่วน"
 
 msgid "Sharp prices"
 msgstr "ราคาเฉียบ"
+
+msgid "Shelter Home’s Shelter Community Learning Centre 3"
+msgstr "Shelter Home’s Shelter Community Learning Centre 3"
 
 msgid "Shop"
 msgstr "ร้าน"
@@ -6004,6 +6039,9 @@ msgstr "<strong>เวลาสิ้นสุด</strong> คือ กำห�
 msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>เวลาสิ้นสุด</strong> คือ กำหนดของชั่วโมง/นาที/วินาทีที่เลือกหลังจาก <strong>เวลาเริ่มต้น</strong> (หากเป็นช่วงเวลาที่น้อยกว่า 1 วัน) หรือ ณ สิ้นวันที่ทำการซื้อขาย (หากเป็นช่วงเวลา 1 วัน หรือมากกว่า)"
 
+msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
+msgstr "<strong>สปอตสิ้นสุด</strong> เป็นสปอตสุดท้าย หรือ ก่อน<strong>เวลาสิ้นสุด</strong>"
+
 msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgstr "<strong>สปอตสิ้นสุด</strong> เป็นสปอต<strong>เมื่อเวลาสิ้นสุด</strong>"
 
@@ -6037,6 +6075,9 @@ msgstr "บริษัทฯ ไม่ได้เป็นผู้จัด�
 msgid "The Company has and retains the right, to terminate any event or trade, including but not limited to the occurrence of any of the above events."
 msgstr "บริษัทฯ มีสิทธิ์และทำหน้าที่ในการรักษาสิทธิ์ เพื่อการยุติพฤติการณ์ใดๆ หรือ การซื้อขาย รวมถึงเหตุการณ์ที่เกี่ยวข้อง"
 
+msgid "The Company has the discretion to seek information from Clients to verify compliance with these terms."
+msgstr "บริษัทฯ มีดุลยพินิจในการสืบค้นข้อมูลจากลูกค้าเพื่อตรวจสอบข้อมูลที่เป็นไปตามข้อกำหนดและเงื่อนไข"
+
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the %1 API, or any errors or omissions of the %1 API;"
 msgstr "บริษัทฯ ไม่รับผิดชอบความสูญเสีย หรือ ความเสียหายใดๆ อันอาจจะเกิดขึ้นจากข้อมูล หรือ ราคาที่เผยแพร่ หรือ เกิดขึ้นจาก API ของ %1 หรือ ข้อผิดพลาดใดๆ หรือ การละเว้นที่เกิดจาก API ของ %1"
 
@@ -6064,6 +6105,9 @@ msgstr "บริษัทฯ กำหนดวงเงินการซื�
 msgid "The Company may use or disclose (or choose not to use or disclose) such Contributions for any purpose, in any way, in any media worldwide;"
 msgstr "บริษัทฯ อาจจะใช้ หรือ เปิดเผย (หรือ พิจารณาที่จะไม่ใช้ หรือ เปิดเผย) ผลงานในกรณีใดๆ ในช่องทางใดๆ ในสื่อใดๆ ทั่วโลก;"
 
+msgid "The Company may withhold payment of funds accumulated in a Client’s account while it takes steps to verify compliance with these terms."
+msgstr "บริษัทฯ อาจจะระงับการชำระเงินของบัญชีลูกค้า ขณะอยู่ระหว่างการตรวจสอบบัญชีตามข้อกำหนดและเงื่อนไข"
+
 msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
 msgstr "บริษัทฯ อาจจะดำเนินการตามหลักเกณฑ์ในการสอบถามข้อมูลลูกค้า (Know Your Customer: KYC) และลูกค้าจำเป็นต้องให้ข้อมูลเกี่ยวกับอัตลักษณ์ของท่าน (เช่น รายละเอียดในหังสือเดินทาง หรือ การดำเนินการอื่นๆ เพื่อการตรวจสอบอัตลักษณ์ตามเงื่อนไข) การดำเนินการที่เกี่ยวข้องอาจจะทำให้บัญชีมีการระงับการใช้งาน จนกระทั่งการตรวจสอบและได้รับข้อมูลแล้วเสร็จ มีข้อมูลตามที่ร้องขอ มีข้อมูลที่อยู่ในการติดต่อ มีการระบุแหล่งเงินทุนที่ตรวจสอบได้ เอกสาร KYC ถูกกำหนดให้ดำเนินการเมื่อลูกค้าฝากเงินเข้าบัญชี ในกรณีเปิดบัญชีกับ Binary (Europe) Ltd จะมีการดำเนินการตรวจสอบเมื่อมียอดถอนสะสมเป็นจำนวนเงิน 2,300 ยูโร"
 
@@ -6084,6 +6128,9 @@ msgstr "บริษัทฯ สงวนสิทธิ์ในการย�
 
 msgid "The Company reserves the right to change any part of this Agreement at any time. We will endeavour to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate program after we have posted the changes will constitute binding acceptance of such changes."
 msgstr "บริษัทฯ สงวนสิทธิ์ในการเปลี่ยนแปลงใดๆ ในเงื่อนไขข้อตกลงนี้ พวกเราจะพยายามเพื่อให้แน่ใจว่า พันธมิตรจะได้รับการแจ้งให้ทราบเมื่อมีการเปลี่ยนแปลงในเงื่อนไขข้อตกลง แต่เหล่านี้เป็นความรับผิดชอบของท่านที่จะหมั่นตรวจสอบเงื่อนไขข้อตกลงอย่างสม่ำเสมอ การมีปฏิสัมพันธ์อย่างต่อเนื่องในโปรแกรมพันธมิตรหลังจากการเปลียนแปลงใดๆ จะเป็นส่วนที่ทำให้ทราบข้อกำหนดที่มีการเปลี่ยนแปลงเหล่านั้น"
+
+msgid "The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of, Clients who engage in any trading activity:"
+msgstr "บริษัทฯ สงวนสิทธิ์ในการปฏิเสธการดำเนินธุรกิจ การเพิกถอนการดำเนินธุรกิจ และการถอยกลับธุรกรรมของลูกค้าผู้ซึ่งดำเนินการซื้อขายต่อไปนี้:"
 
 msgid "The Company reserves the right to suspend the operation of this site or sections thereof:"
 msgstr "บริษัทฯ สงวนสิทธิ์ในการระงับการปฏิบัติการของเว็บไซต์นี้ หรือ ส่วนที่เกี่ยวข้อง:"
@@ -6130,6 +6177,9 @@ msgstr "กฎหมายการป้องกันข้อมูลแล
 msgid "The EUR Index is a weighted Index, measuring the Euro's value against a basket of 5 global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%."
 msgstr "EUR Index เป็นดัชนีถ่วงน้ำหนัก ที่ใช้แสดงมูลค่าของเงินยูโรกับ 5 สกุลเงินหลักของโลก (USD, AUD, GBP, JPY, CAD) โดยมีนำ้หนักแต่ละสกุลเงินที่ 20%"
 
+msgid "The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds."
+msgstr "Eurobasket Wolves คือ ชมรมบาสเกตบอลท้องถิ่นที่ก่อตั้งขึ้นเมื่อ พ.ศ. 2545 (ค.ศ. 2002) เป็นโครงการสอนบาสเกตบอลให้กับเยาวชนผ่านโปรแกรมของโรงเรียน โดยมีทีมระดับอายุ 8 ปี และ 10 ปี สำหรับเยาวชนผู้หญิง และ ผู้ชาย และระดับอายุ 14 ปี และ 16 ปี สำหรับเยาวชนทีมชาติหญิง นี้คือ ชมรมบาสเกตบอลแรกในประเทศมอลตาที่เกิดขึ้นเพื่อทำโปรแกรมอบรมบาสเกตบอลหลังเลิกเรียน และใช้พื้นที่ในโรงเรียนสำหรับฝึกฝนกีฬา"
+
 msgid "The Financial Products that we offer to deal in are contracts entered into between you and us. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that you pay us, we promise to pay you a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that we hold on your behalf and neither benefit from clients' assets protection in the event of our insolvency. Similarly the premium or price that you pay to take out a trade is not held as clients' money but as consideration for our undertaking to pay."
 msgstr "ผลิตภัณฑ์ทางการเงินที่พวกเรานำเสนอในการซื้อขายสัญญาระหว่างท่านและพวกเรา ในสัญญาต่างๆ นั้น ขึ้นกับข้อตกลงที่ระบุเจาะจงไว้ของสัญญาที่เกี่ยวข้อง ในการพิจารณาค่าบริการ หรือ ราคาที่ท่านชำระให้เรา พวกเราสัญญาที่จะชำระให้ท่านด้วยจำนวนที่ตกลงตามสินทรัพย์อ้างอิง หรือ ผลที่เกิดขึ้นในแต่ละกรณี สัญญาต่างๆ นั้นไม่ได้เป็นเครื่องมือที่พวกเราถือในนามของท่าน และไม่เป็นผลประโยชน์จากการป้องกันทรัพย์สินของลูกค้าในกรณีการล้มละลายของเรา ในทำนองเดียวกันค่าบริการ หรือ ราคาที่ท่านชำระให้เราไม่ถือเป็นเงินของลูกค้าแต่ถูกพิจารณาเป็นภาระหน้าที่ความรับผิดชอบในการชำระของเรา"
 
@@ -6147,6 +6197,9 @@ msgstr "Pillar 3 รายงานที่เปิดเผยข้อมู
 
 msgid "The Program"
 msgstr "โปรแกรม"
+
+msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
+msgstr "Shelter Community Learning Centre 3 คือ กลุ่มชุมชนโรงเรียนสำหรับเด็กๆ ผู้ลี้ภัยชาวพม่า ที่รอคอยการถูกส่งกลับประเทศเดิมกับครอบครัวของเขายังประเทศโลกที่ 3 โรงเรียนมีเป้าหมายเพื่อให้การศึกษากับกลุ่มเด็กเหล่านี้ ผู้ซึ่งด้อยโอกาส เพื่อให้เขามีแนวทางในการดำเนินชีวิตในอนาคต"
 
 msgid "The USD Index is a weighted Index, measuring the US Dollar's value against a basket of 5 global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%."
 msgstr "ดัชนี USD เป็นดัชนีถ่วงน้ำหนัก แสดงมูลค่าของค่าเงินดอลลาร์สหรัฐต่อ 5 สกุลเงินสากล (EUR, GBP, JPY, CAD, AUD) โดยใช้ร้อยละ 20 ในการถ่วงน้ำหนัก"
@@ -6605,8 +6658,8 @@ msgstr "ในการเปิดบัญชีซื้อขาย ลู�
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "สำหรับตำแหน่งนี้ ท่านต้องสำเร็จการศึกษาขั้นสูงในสาขา ฟิสิกส์ วิศวกรรมการเงิน หรือ คณิตศาสตร์"
 
-msgid "To reset your password, enter the e-mail address you registered in the field below and click "
-msgstr "เพื่อตั้งค่ารหัสผ่านของท่านใหม่ ป้อนอีเมล์ที่ท่านลงทะเบียนไว้ในช่องว่างข้างล่างและคลิก "
+msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
+msgstr "เพื่อตั้งค่ารหัสผ่านของท่านใหม่ ป้อนอีเมล์ที่ท่านลงทะเบียนไว้ในช่องว่างข้างล่างและคลิก 'ตั้งรหัสผ่านใหม่'"
 
 msgid "Today"
 msgstr "วันนี้"
@@ -6800,6 +6853,9 @@ msgstr "ลูกค้าในสหราชอาณาจักร แล�
 msgid "UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's"
 msgstr "ลูกค้าในสหราชอาณาจักรที่ลงทะเบียนกับ Binary (Europe) Ltd สามารถส่งข้อร้องเรียนให้กับหน่วยงานทางเลือกที่รับข้อโต้แย้ง IBAS โดยกรอกแบบฟอร์ม Adjudication Formของ ADR"
 
+msgid "URL"
+msgstr "URL"
+
 msgid "US Patents"
 msgstr "สิทธิบัตร US"
 
@@ -6808,6 +6864,9 @@ msgstr "USD"
 
 msgid "UX / UI experience"
 msgstr "ประสบการณ์ในการออกแบบและพัฒนา UX / UI"
+
+msgid "Ukraine"
+msgstr "ยูเครน"
 
 msgid "Ultra fast on-the-go trading"
 msgstr "การซื้อขายที่เร็วยิ่งยวด"
@@ -6917,8 +6976,8 @@ msgstr "โทเค่นเพื่อตรวจสอบ"
 msgid "Verify new password"
 msgstr "ตรวจสอบรหัสผ่านใหม่"
 
-msgid "Version 42. Last modified 2016-09-14."
-msgstr "เวอร์ชัน 42 แก้ไขล่าสุดเมื่อ 2016-09-14"
+msgid "Version 43. Last modified 2016-11-09."
+msgstr "เวอร์ชัน 43 แก้ไขล่าสุดเมื่อ 2016-11-09"
 
 msgid "View"
 msgstr "ดู"
@@ -7808,6 +7867,9 @@ msgstr "จำกัดระดับการขาดทุนที่อา
 msgid "and"
 msgstr "และ"
 
+msgid "any Client that is employed in the banking and/or finance sector must only conduct trades through the website with the knowledge of his/her employer and in accordance with the employer’s policies; and that"
+msgstr ""
+
 msgid "any instance where the Company believes that person's activities at this site may be illegal in that person's country or state;"
 msgstr "กรณีตัวอย่างใดๆ ซึ่งบริษัทฯ เชื่อว่า กิจกรรมต่างๆ ที่ได้กระทำในเว็บไซต์อาจจะไม่ชอบด้วยกฎหมายของประเทศ หรือ รัฐนั้นๆ"
 
@@ -7943,6 +8005,9 @@ msgstr "ใบอนุญาตย่อยใดๆ ที่ดำเนิ�
 msgid "terms and conditions"
 msgstr "ข้อตกลงและเงื่อนไข"
 
+msgid "that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or"
+msgstr ""
+
 msgid "the %1 affiliate program is competitive and adaptive to your unique requirements."
 msgstr "โปรแกรมพันธมิตรของ %1 มีผลสัมฤทธิ์และปรับใช้ได้กับความประสงค์ที่มีเอกลักษณ์ของท่าน"
 
@@ -7975,6 +8040,9 @@ msgstr "สัปดาห์"
 
 msgid "weeks"
 msgstr "สัปดาห์"
+
+msgid "with insider knowledge of any financial market or instrument."
+msgstr "ด้วยความรู้อันลึกซึ้งในตลาดการเงินใดๆ หรือ เครื่องมือทางการเงิน"
 
 msgid "year"
 msgstr "ปี"
@@ -9011,6 +9079,9 @@ msgstr "ประวัติบริษัท"
 msgid "Service Announcements"
 msgstr "ประกาศบริการ"
 
+msgid "Charity"
+msgstr "การกุศล"
+
 msgid "Open-Source Projects"
 msgstr "โครงการโอเพ่นซอส"
 
@@ -9046,6 +9117,9 @@ msgstr "รายละเอียดบัญชี"
 
 msgid "Terms and Conditions Approval"
 msgstr "การอนุมัติข้อตกลงและเงื่อนไข"
+
+#~ msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
+#~ msgstr "มาดูว่าเราคิด และ ทำงานกันอย่างไร  อ่าน <a href='https://blog.binary.com/' target='_blank'>บล็อกของเรา</a> เพื่อศึกษาเรื่องราวและแนวคิดที่เป็นแรงบันดาลใจของเรา"
 
 #~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
 #~ msgstr "ชนะ 10-1000% จากเงินที่ท่านวาง หากท่านทำนายได้ถูกต้อง การเพิ่มโอกาสในการชนะของท่านโดยการเลือก "
@@ -12820,9 +12894,6 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 #~ msgid "Amount must be a positive number."
 #~ msgstr "จำนวนต้องเป็นเลขไม่ติดลบ หรือ มากกว่าศูนย์"
 
-#~ msgid "Buy Price"
-#~ msgstr "ราคาซื้อ"
-
 #~ msgid "Caching Content for Performance"
 #~ msgstr "ออกแบบโครงสร้างของข้อมูลให้เข้าถึงได้รวดเร็วเพื่อประสิทธิภาพในการใช้งาน"
 
@@ -13045,9 +13116,6 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 #~ msgid "Purchase Spot"
 #~ msgstr "สปอตซื้อ"
-
-#~ msgid "Sell Price"
-#~ msgstr "ราคาขาย"
 
 #~ msgid "Sell Spot"
 #~ msgstr "สปอตที่ขาย"

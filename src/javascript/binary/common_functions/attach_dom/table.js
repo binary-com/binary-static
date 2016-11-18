@@ -125,7 +125,6 @@ var Table = (function(){
     return {
         createFlexTable: createFlexTable,
         createFlexTableRow: createFlexTableRow,
-        overwriteTableBody: overwriteTableBody,
         clearTableBody: clearTableBody,
         appendTableBody: appendTableBody
     };

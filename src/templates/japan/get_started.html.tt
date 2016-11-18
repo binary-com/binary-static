@@ -25,8 +25,9 @@
   </div>
 
   <div class="gr-6 gr-12-m gr-parent" id="index">
+
     <dl class="gr-row">
-      <div class="gr-6 list">
+      <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color section-jp">
           <a class="pjaxload" href="#how-to-open-an-account">
             <div id="how-to-open-an-account-img"></div>
@@ -35,6 +36,21 @@
             </div>
           </a>
         </div>
+      </div>
+      <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
+        <div class="section fill-bg-color section-jp">
+          <a class="pjaxload" href="#identification-documents">
+            <div id="identification-documents-img"></div>
+            <div class="section-header">
+              [% l('{JAPAN ONLY}Identification Documents') %]
+            </div>
+          </a>
+        </div>
+      </div>
+    </dl>
+
+    <dl class="gr-row">
+      <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color section-jp">
           <a class="pjaxload" href="#options-basic-knowledge">
             <div id="options-basic-knowledge-img"></div>
@@ -43,6 +59,21 @@
             </div>
           </a>
         </div>
+      </div>
+      <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
+        <div class="section fill-bg-color section-jp">
+          <a class="pjaxload" href="#trading-guide">
+            <div id="trading-guide-img"></div>
+            <div class="section-header">
+              [% l('{JAPAN ONLY}Trading Guide') %]
+            </div>
+          </a>
+        </div>
+      </div>
+    </dl>
+
+    <dl class="gr-row">
+      <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color section-jp">
           <a class="pjaxload" href="#summary-of-specifications">
             <div id="summary-of-specifications-img"></div>
@@ -52,24 +83,7 @@
           </a>
         </div>
       </div>
-
-      <div class="gr-6 list">
-        <div class="section fill-bg-color section-jp">
-          <a class="pjaxload" href="#identification-documents">
-            <div id="identification-documents-img"></div>
-            <div class="section-header">
-              [% l('{JAPAN ONLY}Identification Documents') %]
-            </div>
-          </a>
-        </div>
-        <div class="section fill-bg-color section-jp">
-          <a class="pjaxload" href="#trading-guide">
-            <div id="trading-guide-img"></div>
-            <div class="section-header">
-              [% l('{JAPAN ONLY}Trading Guide') %]
-            </div>
-          </a>
-        </div>
+      <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color section-jp">
           <a class="pjaxload" href="#pre-contract-documents">
             <div id="pre-contract-documents-img"></div>
@@ -80,6 +94,7 @@
         </div>
       </div>
     </dl>
+
   </div>
 
   <div class="gr-6 gr-12-m gr-parent contents" style="display:none">

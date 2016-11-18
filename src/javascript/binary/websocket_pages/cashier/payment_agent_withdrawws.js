@@ -1,3 +1,5 @@
+var template = require('../../base/utility').template;
+
 var PaymentAgentWithdrawWS = (function() {
     "use strict";
 
@@ -272,53 +274,45 @@ var PaymentAgentWithdrawWS = (function() {
       }
     };
 
+    var checkOnLoad = function() {
+        BinarySocket.init({
+            onmessage: function(msg) {
+                var response = JSON.parse(msg.data);
+                if (response) {
+                    var type = response.msg_type;
+                    switch(type){
+                        case "authorize":
+                            PaymentAgentWithdrawWS.init();
+                            break;
+                        case "paymentagent_list":
+                            PaymentAgentWithdrawWS.populateAgentsList(response);
+                            break;
+                        case "paymentagent_withdraw":
+                            PaymentAgentWithdrawWS.withdrawResponse(response);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        });
+
+        Content.populate();
+        if(TUser.get().hasOwnProperty('is_virtual') || page.client_status_detected('withdrawal_locked, cashier_locked', 'any')) {
+            PaymentAgentWithdrawWS.init();
+        } else if (sessionStorage.getItem('client_status') === null) {
+          BinarySocket.send({"get_account_status": "1", "passthrough":{"dispatch_to":"PaymentAgentWithdrawWS"}});
+        }
+    };
+
     return {
         init: init,
         populateAgentsList: populateAgentsList,
         withdrawResponse: withdrawResponse,
-        lock_withdrawal: lock_withdrawal
+        lock_withdrawal: lock_withdrawal,
+        checkOnLoad: checkOnLoad
     };
 }());
-
-
-
-pjax_config_page_require_auth("paymentagent/withdrawws", function() {
-    return {
-        onLoad: function() {
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
-                    if (response) {
-                        var type = response.msg_type;
-                        switch(type){
-                            case "authorize":
-                                PaymentAgentWithdrawWS.init();
-                                break;
-                            case "paymentagent_list":
-                                PaymentAgentWithdrawWS.populateAgentsList(response);
-                                break;
-                            case "paymentagent_withdraw":
-                                PaymentAgentWithdrawWS.withdrawResponse(response);
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                    else {
-                        console.log('some error occured');
-                    }
-                }
-            });
-
-            Content.populate();
-            if(TUser.get().hasOwnProperty('is_virtual') || page.client_status_detected('withdrawal_locked, cashier_locked', 'any')) {
-                PaymentAgentWithdrawWS.init();
-            } else if (sessionStorage.getItem('client_status') === null) {
-              BinarySocket.send({"get_account_status": "1", "passthrough":{"dispatch_to":"PaymentAgentWithdrawWS"}});
-            }
-        }
-    };
-});
 
 module.exports = {
     PaymentAgentWithdrawWS: PaymentAgentWithdrawWS,

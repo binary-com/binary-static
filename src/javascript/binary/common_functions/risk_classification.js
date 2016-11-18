@@ -1,43 +1,5 @@
-RiskClassification = (function() {
+var RiskClassification = (function() {
   'use strict';
-
-  var financial_assessment_url = page.url.url_for('user/settings/assessmentws');
-
-  var renderRiskClassificationPopUp = function () {
-      if (window.location.pathname === '/user/settings/assessmentws') {
-        window.location.href = page.url.url_for('user/settingsws');
-        return;
-      }
-      $.ajax({
-          url: financial_assessment_url,
-          dataType: 'html',
-          method: 'GET',
-          success: function(riskClassificationText) {
-              if (riskClassificationText.includes('assessment_form')) {
-                  var payload = $(riskClassificationText);
-                  showRiskClassificationPopUp(payload.find('#assessment_form'));
-                  FinancialAssessmentws.LocalizeText();
-                  $('#risk_classification #assessment_form').removeClass('invisible')
-                                      .attr('style', 'text-align: left;');
-                  $('#risk_classification #high_risk_classification').removeClass('invisible');
-                  $('#risk_classification #heading_risk').removeClass('invisible');
-                  $("#risk_classification #assessment_form").on("submit",function(event) {
-                      event.preventDefault();
-                      FinancialAssessmentws.submitForm();
-                      return false;
-                  });
-              }
-          },
-          error: function(xhr) {
-              return;
-          }
-      });
-      $("#risk_classification #assessment_form").on("submit",function(event) {
-          event.preventDefault();
-          FinancialAssessmentws.submitForm();
-          return false;
-      });
-  };
 
   var showRiskClassificationPopUp = function (content) {
     if ($('#risk_classification').length > 0) {
@@ -62,7 +24,11 @@ RiskClassification = (function() {
   };
 
   return {
-    renderRiskClassificationPopUp: renderRiskClassificationPopUp,
-    cleanup: cleanup
+      showRiskClassificationPopUp: showRiskClassificationPopUp,
+      cleanup: cleanup,
   };
 }());
+
+module.exports = {
+    RiskClassification: RiskClassification,
+};

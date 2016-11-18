@@ -67,7 +67,7 @@
           <label id="currencyType"></label>
         </div>
         <div class="gr-11">
-          <input id="acc_transfer_amount" name="amount" placeholder="[% l("Amount") %]" type="text"></input>
+          <input id="acc_transfer_amount" name="amount" placeholder="[% l("Amount") %]" type="text" />
           <p class="errorfield" id="invalid_amount"></p>
         </div>
       </div>

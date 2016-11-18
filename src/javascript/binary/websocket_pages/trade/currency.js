@@ -1,3 +1,5 @@
+var format_currency = require('../../common_functions/currency_to_symbol').format_currency;
+
 /*
  * Handles currency display
  *

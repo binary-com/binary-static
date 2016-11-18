@@ -5,6 +5,9 @@
     .hr-line {
         border-bottom: 1px solid $COLOR_GRAY;
     }
+    #cs_telephone_number {
+        width: 100%;
+    }
     @media screen and (max-width: 480px) {
         .grd-grid-2 {
             .grd-hide-mobile {

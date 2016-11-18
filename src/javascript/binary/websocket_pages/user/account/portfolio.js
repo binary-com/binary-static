@@ -3,7 +3,8 @@ var Portfolio = (function(){
 
     var addComma = require('../../../websocket_pages/trade/common').addComma,
         toJapanTimeIfNeeded = require('../../../base/utility').toJapanTimeIfNeeded,
-        format_money = require('../../../common_functions/currency_to_symbol').format_money;
+        format_money = require('../../../common_functions/currency_to_symbol').format_money,
+        japanese_client = require('../../../common_functions/country_base').japanese_client;
 
     function getBalance(balance, currency) {
         balance = parseFloat(balance);
@@ -15,8 +16,8 @@ var Portfolio = (function(){
             'transaction_id' : c.transaction_id,
             'contract_id'    : c.contract_id,
             'payout'         : parseFloat(c.payout).toFixed(2),
-            'longcode'       : typeof module !== 'undefined' ? 
-                c.longcode : (japanese_client() ? 
+            'longcode'       : typeof module !== 'undefined' ?
+                c.longcode : (japanese_client() ?
                 toJapanTimeIfNeeded(void 0, void 0, c.longcode) : c.longcode),
             'currency'       : c.currency,
             'buy_price'      : addComma(parseFloat(c.buy_price)),

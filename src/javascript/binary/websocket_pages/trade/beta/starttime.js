@@ -109,10 +109,12 @@ var StartDates_Beta = (function(){
     } ;
 
     return {
-        display: displayStartDates,
-        node: getElement,
-        setNow: setNow,
-        displayed: function(){ return displayed; }
+        display  : displayStartDates,
+        node     : getElement,
+        setNow   : setNow,
+        displayed: function() { return displayed; },
+        disable  : function() { getElement().setAttribute('disabled', 'disabled'); },
+        enable   : function() { getElement().removeAttribute('disabled'); },
     };
 
 })();

@@ -1,12 +1,12 @@
+var japanese_client = require('../common_functions/country_base').japanese_client;
+
 //////////////////////////////////////////////////////////////////
 // Purpose: Write loading image to a container for ajax request
 // Parameters:
 // 1) container - a jQuery object
 //////////////////////////////////////////////////////////////////
-function showLoadingImage(container)
-{
-    container.empty().append('<div id="std_loading_img"><p>' + page.text.localize('loading...') + '</p>' +
-        '<img src="' + page.url.url_for_static('images/common/hourglass_1.gif') + '" /></div>');
+function showLoadingImage(container) {
+    container.empty().append('<div class="barspinner dark"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div>');
 }
 
 /**

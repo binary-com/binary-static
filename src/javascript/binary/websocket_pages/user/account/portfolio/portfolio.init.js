@@ -1,3 +1,12 @@
+var showLoadingImage = require('../../../../base/utility').showLoadingImage;
+var toJapanTimeIfNeeded = require('../../../../base/utility').toJapanTimeIfNeeded;
+var format_money = require('../../../../common_functions/currency_to_symbol').format_money;
+var buildOauthApps = require('../../../../common_functions/get_app_details').buildOauthApps;
+var addTooltip = require('../../../../common_functions/get_app_details').addTooltip;
+var showTooltip = require('../../../../common_functions/get_app_details').showTooltip;
+var japanese_client = require('../../../../common_functions/country_base').japanese_client;
+var Portfolio = require('../portfolio').Portfolio;
+
 var PortfolioWS =  (function() {
     'use strict';
 
@@ -191,7 +200,7 @@ var PortfolioWS =  (function() {
     };
 
     var onLoad = function() {
-        if (!TradePage.is_trading_page() && !TradePage_Beta.is_trading_page() && !MBTradePage.is_trading_page()) {
+        if (!/trading\.html/.test(window.location.pathname)) {
             BinarySocket.init({
                 onmessage: function(msg){
                     var response = JSON.parse(msg.data),

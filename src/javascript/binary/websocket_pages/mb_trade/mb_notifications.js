@@ -16,14 +16,17 @@ var MBNotifications = (function() {
     var showErrorMessage = function(options) {
         var $note_wrapper = getContainer();
         if (!options.uid || $note_wrapper.find('#' + options.uid).length === 0) {
-            $note_wrapper.prepend('<div class="notice-msg center-text' + (options.dismissible ? ' dismissible' : '') + '"' +
-                (options.dismissible ? ' onclick="MBNotifications.dismiss(this)"' : '') +
+            var $message = $('<div class="notice-msg center-text' + (options.dismissible ? ' dismissible' : '') + '"' +
                 (options.uid ? ' id="' + options.uid + '"' : '') + '>' + options.text +
                     (options.dismissible ? '<div class="notification-dismiss">x</div>' : '') +
                 '</div>');
+            if (options.dismissible) {
+                $message.click(function() { dismissMessage(this); });
+            }
+            $note_wrapper.prepend($message);
         }
         $.scrollTo($note_wrapper, 500, {offset: -5});
-        MBPrice.hideSpinnerShowTrading();
+        hideSpinnerShowTrading();
     };
 
     var hideErrorMessage = function(uid) {
@@ -40,10 +43,15 @@ var MBNotifications = (function() {
         return $('#notifications_wrapper');
     };
 
+    var hideSpinnerShowTrading = function() {
+        $('.barspinner').addClass('invisible');
+        $('.mb-trading-wrapper').removeClass('invisible');
+    };
+
     return {
-        show    : showErrorMessage,
-        hide    : hideErrorMessage,
-        dismiss : dismissMessage,
+        show : showErrorMessage,
+        hide : hideErrorMessage,
+        hideSpinnerShowTrading : hideSpinnerShowTrading,
     };
 })();
 

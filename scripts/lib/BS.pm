@@ -163,7 +163,7 @@ sub menu {
         {
         id         => 'topMenuJPTrading',
         class      => 'all-hide ja-show hide-tablet-mobile',
-        url        => url_for('/jptrading'),
+        url        => url_for('/multi_barriers_trading'),
         text       => localize('Trade'),
         link_class => 'pjaxload'
         };

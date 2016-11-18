@@ -1,7 +1,7 @@
 <div class="gr-12">
     <h2>[% l("Terms and Conditions") %]</h2>
     <p>
-        <i>[% l("Version 42. Last modified 2016-09-14.") %]</i>
+        <i>[% l("Version 43. Last modified 2016-11-09.") %]</i>
     </p>
     <p>
         [% l("It is the responsibility of each Client to read and understand this legal notice and the terms and conditions pursuant to which an acquisition of financial contracts via this site is governed.") %]
@@ -76,7 +76,21 @@
     <p>
         [% l("Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account.") %]
     </p>
-    <h2>H. [% l("Fraud and Money Laundering") %]</h2>
+    <h2>H. [% l("Prohibited Trades") %]</h2>
+    <p>[% l("The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of, Clients who engage in any trading activity:") %]</p>
+    <ul class="bullet">
+        <li>[% l("that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or") %]</li>
+        <li>[% l("with insider knowledge of any financial market or instrument.") %]</li>
+    </ul>
+    <p>[% l("The Company has the discretion to seek information from Clients to verify compliance with these terms.") %]</p>
+    <p>[% l("It is a condition of using the website that:") %]</p>
+    <ul class="bullet">
+        <li>[% l("any Client that is employed in the banking and/or finance sector must only conduct trades through the website with the knowledge of his/her employer and in accordance with the employer’s policies; and that") %]</li>
+        <li>[% l("Clients agree to comply with the reasonable requests made by the Company for the purpose of verifying compliance with this term.") %]</li>
+    </ul>
+    <p>[% l("The Company may withhold payment of funds accumulated in a Client’s account while it takes steps to verify compliance with these terms.") %]</p>
+    <p>[% l("If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein.") %]</p>
+    <h2>I. [% l("Fraud and Money Laundering") %]</h2>
     <p>
         [% l("No person shall abuse this site for the purpose of money laundering. The Company employs best-practice anti-money laundering procedures. All transactions are checked to prevent money laundering which may have several effects on Clients. The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of, Clients who do not accept or adhere to these anti-money laundering processes. Acceptable funds should not originate from criminal activity. The Company is bound to report suspicious transactions to relevant authorities.") %]
     </p>
@@ -111,7 +125,7 @@
             </li>
         </ul>
     </p>
-    <h2>I. [% l("Company's Right") %]</h2>
+    <h2>J. [% l("Company's Right") %]</h2>
     <p>
         [% l("The Company reserves the right to suspend the operation of this site or sections thereof:") %]
         <ul class='bullet'>
@@ -153,19 +167,19 @@
     <p>
         [% l("The right is also reserved to amend or change the rules and scope of this service from time to time. Any change to the rules made whilst the site is in operation will not apply retrospectively and will only apply to acquisitions of financial contracts made after such change. It is the Company's responsibility to notify Clients before any changes to its terms come into effect.") %]
     </p>
-    <h2>J. [% l("Dormant and Inactive Accounts") %]</h2>
+    <h2>K. [% l("Dormant and Inactive Accounts") %]</h2>
     <p>
         [% l("The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client's account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts.") %]
     </p>
-    <h2>K. [% l("Liability") %]</h2>
+    <h2>L. [% l("Liability") %]</h2>
     <p>
         [% l("The Company will not be liable in any way to any persons in the event of force majeure, or for the act of any Government or legal authority or for the failure of or damage or destruction to, its computer systems, data or records or any part thereof, or for delays, losses, errors or omissions resulting from the failure or mismanagement of any telecommunications or computer equipment or software. The Company shall not be responsible for any damages or losses deemed or alleged to have resulted from or been caused by this site or its content. This includes any client's use or misuse of its content, the inability of any client to connect with or use the site, delay in operations or transmission, failure of communication lines, or any errors or omissions in content.") %]
     </p>
-    <h2>L. [% l("Marketing and Promotion") %]</h2>
+    <h2>M. [% l("Marketing and Promotion") %]</h2>
     <p>
         [% l("The Company may from time to time inform you about changes on the website, new services and promotions. If you, however, wish to opt out of such a service and do not wish to receive any direct marketing data you can either unsubscribe to the service or email our customer support team. If you decide to opt in again into receiving promotional material, you can also do so by contacting us.") %]
     </p>
-    <h2>M. [% l("Account Opening") %]</h2>
+    <h2>N. [% l("Account Opening") %]</h2>
     <p>
         [% l("You may only open an account at this site on condition that:") %]
         <ul class='bullet'>
@@ -186,7 +200,7 @@
             </li>
         </ul>
     </p>
-    <h2>N. [% l("Account Closure") %]</h2>
+    <h2>O. [% l("Account Closure") %]</h2>
     <p>
         [% l('You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested "Know Your Client" procedures to enable you to withdraw any pending funds in your account.') %]
     </p>

@@ -1,3 +1,5 @@
+var onlyNumericOnKeypress = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
+
 /*
  * TradingEvents object contains all the event handler function required for
  * websocket trading page
@@ -52,8 +54,8 @@ var TradingEvents_Beta = (function () {
                 make_price_request = -1;
             }
             Defaults.remove('duration_units', 'duration_amount');
-        }
-        else{
+        } else {
+            StartDates.enable();
             Durations_Beta.display();
             if(Defaults.get('duration_units')){
                 TradingEvents_Beta.onDurationUnitChange(Defaults.get('duration_units'));

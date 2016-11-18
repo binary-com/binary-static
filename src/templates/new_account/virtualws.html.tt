@@ -14,7 +14,7 @@
                 <label for="verification-code">[% l('Verification token') %]</label>
               </div>
               <div class="gr-8">
-                <input type="text" name="verification-code" id="verification-code" maxlength="48" autocomplete="off"></input>
+                <input type="text" name="verification-code" id="verification-code" maxlength="48" autocomplete="off"/>
                 <div class="hint">[% l('Please check your email for the value of this token') %]</div>
               </div>
             </div>
@@ -23,7 +23,7 @@
                 <label for="password">[% l('Choose a password') %]</label>
               </div>
               <div class="gr-8">
-                <input type="password" id="password" name="password" maxlength="25"></input>
+                <input type="password" id="password" name="password" maxlength="25"/>
                 <p style="margin:0px;height:0.5em;">
                   <meter id="password-meter" value="" max="50" min="0" high="20" low="10" optimum="50"></meter>
                 </p>
@@ -35,7 +35,7 @@
                 <label for="r-password">[% l('Re-enter password') %]</label>
               </div>
               <div class="gr-8">
-                <input type="password" id="r-password" name="r-password" maxlength="25"></input>
+                <input type="password" id="r-password" name="r-password" maxlength="25"/>
               </div>
             </div>
             <div class="gr-padding-10 gr-row clear">
@@ -51,7 +51,7 @@
                     <label>[% l('Receive news and special offers') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input type="checkbox" id="email_consent" checked="checked"></input>
+                    <input type="checkbox" id="email_consent" checked="checked"/>
                 </div>
             </div>
           </fieldset>

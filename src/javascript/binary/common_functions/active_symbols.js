@@ -1,9 +1,7 @@
 var ActiveSymbols = (function () {
     'use strict';
 
-    var objectNotEmpty = typeof window === 'undefined' ?
-        require('../base/utility').objectNotEmpty :
-        window.objectNotEmpty;
+    var objectNotEmpty = require('../base/utility').objectNotEmpty;
 
     var groupBy = function(xs, key) {
         return xs.reduce(function(rv, x) {
@@ -47,6 +45,11 @@ var ActiveSymbols = (function () {
                 });
                 return clone(this.markets);
             }
+        },
+        clearData: function clearData() {
+            this.markets = {};
+            this.symbols = {};
+            this.submarkets = {};
         },
         getSubmarketsForMarket: function getSubmarketsForMarket(activeSymbols, market) {
             if ( objectNotEmpty(market.submarkets) ) {

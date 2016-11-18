@@ -1,3 +1,5 @@
+var ViewPopupUI = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
+
 var TickDisplay_Beta = function() {
     return {
         initialize: function(data) {
@@ -348,7 +350,7 @@ WSTickDisplay_Beta.dispatch = function(data) {
   if (window.subscribe && data.tick && document.getElementById('sell_content_wrapper')) {
       if (data.echo_req.hasOwnProperty('passthrough') && data.echo_req.passthrough.dispatch_to === 'ViewChartWS') return;
       window.responseID = data.tick.id;
-      ViewPopupWS.storeSubscriptionID(window.responseID);
+      ViewPopupUI.storeSubscriptionID(window.responseID);
   }
 
   var epoches, spots2, display_decimals;

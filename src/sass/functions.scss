@@ -35,3 +35,19 @@
     }
     @return url("data:image/svg+xml;charset=utf8,#{$encoded}");
 }
+
+/*
+ * return svg url using specified color
+ */
+@function svg-icon($type, $color) {
+    $svg: '';
+    @if ($type == 'up') {
+        $svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 14" width="10" height="14"><g><polygon fill="__COLOR__" points="7 5 7 13 3 13 3 5 0 5 5 0 10 5 7 5"/></g></svg>';
+    } @else if ($type == 'down') {
+        $svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 14" width="10" height="14"><g><polygon fill="__COLOR__" points="7 8 7 0 3 0 3 8 0 8 5 13 10 8 7 8"/></g></svg>';
+    } @else if ($type == 'circle') {
+        $svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 14" width="10" height="14"><g><circle fill="__COLOR__" cx="5" cy="7" r="4"/></g></svg>';
+    }
+    $svg: str-replace($svg, '__COLOR__', #{rgba($color, 1)});
+    @return svg-url($svg);
+}

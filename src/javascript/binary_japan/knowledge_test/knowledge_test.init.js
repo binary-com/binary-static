@@ -1,3 +1,5 @@
+var toJapanTimeIfNeeded = require('../../binary/base/utility').toJapanTimeIfNeeded;
+
 var KnowledgeTest = (function() {
     "use strict";
 

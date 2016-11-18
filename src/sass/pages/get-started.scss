@@ -12,9 +12,11 @@
         text-align: center;
         .section {
             min-height: 224px;
+            height: calc(100% - 20px);
             margin: 0 10px 20px;
             &.section-jp {
                 min-height: 0;
+                background-color: $COLOR_BLACK;
             }
         }
         .section-header {

@@ -9,7 +9,7 @@ body {
         display: none !important;
     }
     ul.checked li {
-        @include BIDIR_VALUE(background-position, left, right);
+        @include BIDIR_VALUE(background-position, left top, right top);
         @include BIDIR_PROP(padding-left, padding-right, 35px);
     }
     .app-store-badge, .google-play-badge {

@@ -1,3 +1,6 @@
+var testPassword = require('../passwordmeter').testPassword;
+var CommonFunctions = require('../common_functions').CommonFunctions;
+
 var PasswordMeter = (function(){
     'use strict';
 
@@ -7,7 +10,7 @@ var PasswordMeter = (function(){
      * @param id               optional id for meter element
      */
     function attach($container) {
-        if (isIE()) return;
+        if (CommonFunctions.isIE()) return;
         var $meter = $('<meter></meter>', {id: 'password-meter', min: 0, max: 50, high: 20, low: 10, optimum: 50});
         $container
             .append($meter);

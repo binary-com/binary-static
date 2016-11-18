@@ -1,3 +1,5 @@
+var template = require('../../../base/utility').template;
+
 var RealityCheckData = (function () {
     'use strict';
 
@@ -24,7 +26,7 @@ var RealityCheckData = (function () {
     function triggerCloseEvent() {
         LocalStore.set('reality_check.keep_open', 0);
     }
-    
+
     function updateAck() {
         LocalStore.set('reality_check.ack', 1);
     }

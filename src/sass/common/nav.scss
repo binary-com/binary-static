@@ -172,3 +172,26 @@
         }
     }
 }
+
+/* mobile menu overrides */
+html {
+    .mm-menu.mm-right {
+        width: 50%;
+        min-width: 220px;
+    }
+    @media all and (min-width: 550px) {
+        .mm-menu.mm-right {
+            width: 250px;
+        }
+    }
+    &.mm-right.mm-opening body {
+        .mm-page, #mm-blocker, .mm-fixed-top, .mm-fixed-bottom {
+            right: 220px;
+        }
+        @media all and (min-width: 550px) {
+            .mm-page, #mm-blocker, .mm-fixed-top, .mm-fixed-bottom {
+                right: 250px;
+            }
+        }
+    }
+}

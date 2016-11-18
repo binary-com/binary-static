@@ -1,3 +1,5 @@
+var ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbols;
+
 /*
  * MBSymbols object parses the active_symbols json that we get from socket.send({active_symbols: 'brief'}
  * and outputs in usable form, it gives markets, underlyings
@@ -20,6 +22,7 @@ var MBSymbols = (function () {
     var tradeMarkets = {}, tradeMarketsList = {}, tradeUnderlyings = {}, need_page_update = 1, names = {};
 
     var details = function (data) {
+        ActiveSymbols.clearData();
         var allSymbols = data['active_symbols'];
         tradeMarkets     = ActiveSymbols.getMarkets(allSymbols);
         tradeMarketsList = ActiveSymbols.getMarketsList(allSymbols);

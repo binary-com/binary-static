@@ -1,3 +1,8 @@
+var MenuContent = require('./menu_content').MenuContent;
+var attach_date_picker = require('./utility').attach_date_picker;
+var attach_time_picker = require('./utility').attach_time_picker;
+var attach_tabs = require('./utility').attach_tabs;
+
 //For object shape coherence we create named objects to be inserted into the queue.
 var URLPjaxQueueElement = function(exec_function, url) {
     this.method = exec_function;

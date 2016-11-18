@@ -1,12 +1,15 @@
+var Guide = require('../../common_functions/guide').Guide;
+var japanese_client = require('../../common_functions/country_base').japanese_client;
+
 var TradePage = (function(){
 
   var trading_page = 0, events_initialized = 0;
 
   var onLoad = function(){
     if(japanese_client() && /\/trading\.html/i.test(window.location.pathname)) {
-        window.location.href = page.url.url_for('jptrading');
+        window.location.href = page.url.url_for('multi_barriers_trading');
         return;
-    } else if (!japanese_client() && /\/jptrading\.html/.test(window.location.pathname)) {
+    } else if (!japanese_client() && /\/multi_barriers_trading\.html/.test(window.location.pathname)) {
         window.location.href = page.url.url_for('trading');
         return;
     }
