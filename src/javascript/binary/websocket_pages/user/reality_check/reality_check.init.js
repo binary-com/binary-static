@@ -1,3 +1,5 @@
+var Content = require('../../../common_functions/content').Content;
+
 var RealityCheck = (function () {
     'use strict';
     var hiddenClass = 'invisible';

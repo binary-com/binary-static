@@ -1,3 +1,5 @@
+var Cookies = require('../../lib/js-cookie');
+
 function checkClientsCountry() {
   var clients_country = localStorage.getItem('clients_country');
   if (clients_country) {

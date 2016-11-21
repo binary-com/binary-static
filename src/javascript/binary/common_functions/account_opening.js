@@ -1,9 +1,12 @@
 var Login = require('../base/login').Login;
-var objectNotEmpty = require('../base/utility').objectNotEmpty;
-var Validate = require('../common_functions/validation').Validate;
+var objectNotEmpty  = require('../base/utility').objectNotEmpty;
+var Validate        = require('../common_functions/validation').Validate;
+var Content         = require('../common_functions/content').Content;
 var japanese_client = require('../common_functions/country_base').japanese_client;
 var CommonFunctions = require('../common_functions/common_functions').CommonFunctions;
 var generateBirthDate = require('./attach_dom/birth_date_dropdown').generateBirthDate;
+var Cookies = require('../../lib/js-cookie');
+var moment  = require('../../lib/moment/moment');
 
 var AccountOpening = (function() {
     function handle_account_opening_settings(response) {

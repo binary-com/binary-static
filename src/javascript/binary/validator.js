@@ -1,3 +1,7 @@
+var done_typing = require('../lib/done-typing').done_typing;
+var formToObj   = require('../lib/form-to-obj').formToObj;
+var dv          = require('../lib/validation');
+
 var ValidationUI = {
     clear: function() {
         $('.errorfield[data-is-error-field]').remove();

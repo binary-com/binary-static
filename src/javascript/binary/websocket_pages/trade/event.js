@@ -1,4 +1,13 @@
+var TradingAnalysis = require('./analysis').TradingAnalysis;
+var Barriers        = require('./barriers').Barriers;
+var Contract        = require('./contract').Contract;
+var Defaults        = require('./defaults').Defaults;
+var Durations       = require('./duration').Durations;
+var Price           = require('./price').Price;
+var StartDates      = require('./starttime').StartDates;
+var Tick            = require('./tick').Tick;
 var onlyNumericOnKeypress = require('../../common_functions/event_handler').onlyNumericOnKeypress;
+var moment = require('../../../lib/moment/moment');
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -10,35 +19,6 @@ var onlyNumericOnKeypress = require('../../common_functions/event_handler').only
  */
 var TradingEvents = (function () {
     'use strict';
-
-    var onStartDateChange = function(value){
-        var $dateStartSelect = $('#date_start');
-        if(!value || !$dateStartSelect.find('option[value='+value+']').length){
-            return 0;
-        }
-
-        var yellowBorder = 'light-yellow-background';
-        if (value !== 'now') {
-            $dateStartSelect.addClass(yellowBorder);
-        } else {
-            $dateStartSelect.removeClass(yellowBorder);
-        }
-
-        $dateStartSelect.val(value);
-
-        var make_price_request = 1;
-        if (value !== 'now' && Defaults.get('expiry_type') === 'endtime') {
-            make_price_request = -1;
-            var end_time = moment(parseInt(value)*1000).add(5,'minutes').utc();
-            Durations.setTime((timeIsValid($('#expiry_time')) && Defaults.get('expiry_time') ?
-                               Defaults.get('expiry_time') : end_time.format("HH:mm")));
-            Durations.selectEndDate((timeIsValid($('#expiry_time')) && Defaults.get('expiry_date') ?
-                                    Defaults.get('expiry_date') : end_time.format("YYYY-MM-DD")));
-        }
-        timeIsValid($('#expiry_time'));
-        Durations.display();
-        return make_price_request;
-    };
 
     var onExpiryTypeChange = function(value){
         if(!value || !$('#expiry_type').find('option[value='+value+']').length){
@@ -284,7 +264,7 @@ var TradingEvents = (function () {
         if (dateStartElement) {
             dateStartElement.addEventListener('change', function (e) {
                 Defaults.set('date_start', e.target.value);
-                var r = onStartDateChange(e.target.value);
+                var r = Durations.onStartDateChange(e.target.value);
                 if(r>=0){
                     processPriceRequest();
                 }
@@ -543,8 +523,7 @@ var TradingEvents = (function () {
 
     return {
         init: initiate,
-        onStartDateChange: onStartDateChange,
-        onExpiryTypeChange: onExpiryTypeChange,
+        onExpiryTypeChange  : onExpiryTypeChange,
         onDurationUnitChange: onDurationUnitChange
     };
 })();

@@ -1,4 +1,5 @@
 var template = require('./utility').template;
+var Cookies  = require('../../lib/js-cookie');
 
 var isStorageSupported = function(storage) {
     if(typeof storage === 'undefined') {
@@ -48,12 +49,20 @@ InScriptStore.prototype = {
         this.store[key] = value;
     },
     remove:  function(key) {
-        this.store[key] = undefined;
+        delete this.store[key];
     },
     clear: function() {
         this.store = {};
-    }
+    },
+    has: function(key) {
+        return this.get(key) !== undefined;
+    },
+    keys: function() {
+        return Object.keys(this.store);
+    },
 };
+
+var State = new InScriptStore();
 
 var CookieStorage = function (cookie_name, cookie_domain) {
     this.initialized = false;
@@ -126,4 +135,5 @@ module.exports = {
     InScriptStore: InScriptStore,
     CookieStorage: CookieStorage,
     Localizable: Localizable,
+    State: State,
 };

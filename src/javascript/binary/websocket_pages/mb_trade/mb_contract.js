@@ -3,6 +3,7 @@ var format_currency = require('../../common_functions/currency_to_symbol').forma
 var japanese_client = require('../../common_functions/country_base').japanese_client;
 var MBDefaults = require('./mb_defaults').MBDefaults;
 var MBSymbols = require('./mb_symbols').MBSymbols;
+var moment = require('../../../lib/moment/moment');
 
 /*
  * Contract object mocks the trading form we have on our website
