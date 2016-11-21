@@ -1,5 +1,4 @@
 var get_highest_zindex = require('../../../base/utility').get_highest_zindex;
-var MBTradePage = require('../../mb_trade/mb_tradepage').MBTradePage;
 
 var ViewPopupUI = (function() {
     var _container = null;
@@ -21,7 +20,7 @@ var ViewPopupUI = (function() {
                 var _on_close = function () {
                     that.cleanup(true);
                     chartUpdated = false;
-                    if (TradePage.is_trading_page() || TradePage_Beta.is_trading_page() || MBTradePage.is_trading_page()) {
+                    if (/trading/.test(window.location.pathname)) {
                         // Re-subscribe the trading page's tick stream which was unsubscribed by popup's chart
                         BinarySocket.send({'ticks_history':$('#underlying').val(),'style':'ticks','end':'latest','count':20,'subscribe':1});
                     }
@@ -140,6 +139,20 @@ var ViewPopupUI = (function() {
             }
             con.offset({left: x, top: y});
             ViewPopupUI.reposition_confirmation_ondrag();
+        },
+        // ===== Dispatch =====
+        storeSubscriptionID: function(id, option) {
+            if(!window.stream_ids && !option) {
+                window.stream_ids = [];
+            }
+            if (!window.chart_stream_ids && option) {
+                window.chart_stream_ids = [];
+            }
+            if(!option && id && id.length > 0 && $.inArray(id, window.stream_ids) < 0) {
+                window.stream_ids.push(id);
+            } else if(option && id && id.length > 0 && $.inArray(id, window.chart_stream_ids) < 0) {
+                window.chart_stream_ids.push(id);
+            }
         },
     };
 }());

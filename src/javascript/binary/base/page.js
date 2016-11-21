@@ -12,6 +12,10 @@ var CookieStorage = require('./storage').CookieStorage;
 var Localizable = require('./storage').Localizable;
 var TrafficSource = require('../common_functions/traffic_source').TrafficSource;
 var RiskClassification = require('../common_functions/risk_classification').RiskClassification;
+var checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
+var japanese_client = require('../common_functions/country_base').japanese_client;
+var FinancialAssessmentws = require('../websocket_pages/user/account/settings/financial_assessment').FinancialAssessmentws;
+var ViewBalance = require('../websocket_pages/user/viewbalance/viewbalance.init').ViewBalance;
 var clock_started = false;
 
 var SessionStore, LocalStore;
@@ -1118,6 +1122,7 @@ Page.prototype = {
         TrafficSource.setData();
         this.endpoint_notification();
         BinarySocket.init();
+        this.show_notification_outdated_browser();
     },
     on_unload: function() {
         this.header.on_unload();
@@ -1236,7 +1241,10 @@ Page.prototype = {
     },
     check_language: function() {
         if (page.language() === 'ID') {
-          change_blog_link('id');
+            var regex = new RegExp('id');
+            if (!regex.test($('.blog a').attr('href'))) {
+              $('.blog a').attr('href', $('.blog a').attr('href') + '/' + 'id' + '/');
+            }
         }
         if (japanese_client()) {
             $('.ja-hide').addClass('invisible');
@@ -1330,6 +1338,23 @@ Page.prototype = {
         var li1 = $('<li/>', {text: page.text.localize('A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date.')});
         var li2 = $('<li/>', {text: page.text.localize('A scanned copy of a utility bill or bank statement (no more than 3 months old)')});
         return span.append(ul.append(li1, li2));
+    },
+    show_notification_outdated_browser: function() {
+        var $buoop = {
+          vs: {i:10, f:39, o:30, s:5, c:39},
+          l: page.language().toLowerCase(),
+          url: 'https://whatbrowser.org/'
+        };
+        function $buo_f(){
+         var e = document.createElement("script");
+         e.src = "//browser-update.org/update.min.js";
+         document.body.appendChild(e);
+        }
+        try {
+          document.addEventListener("DOMContentLoaded", $buo_f,false);
+        } catch(e) {
+          window.attachEvent("onload", $buo_f);
+        }
     },
 };
 

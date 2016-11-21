@@ -4,7 +4,9 @@ var format_money = require('../../../../common_functions/currency_to_symbol').fo
 var buildOauthApps = require('../../../../common_functions/get_app_details').buildOauthApps;
 var addTooltip = require('../../../../common_functions/get_app_details').addTooltip;
 var showTooltip = require('../../../../common_functions/get_app_details').showTooltip;
-var MBTradePage = require('../../../../websocket_pages/mb_trade/mb_tradepage').MBTradePage;
+var japanese_client = require('../../../../common_functions/country_base').japanese_client;
+var Portfolio = require('../portfolio').Portfolio;
+var ViewPopupWS = require('../../view_popup/view_popupws').ViewPopupWS;
 
 var PortfolioWS =  (function() {
     'use strict';
@@ -34,6 +36,12 @@ var PortfolioWS =  (function() {
         BinarySocket.send({'transaction': 1, 'subscribe': 1});
         BinarySocket.send({'oauth_apps': 1});
         is_initialized = true;
+
+        // Display ViewPopup according to contract_id in query string
+        var contract_id = page.url.param('contract_id');
+        if (contract_id) {
+            ViewPopupWS.init($('<div />', { contract_id: contract_id }).get(0));
+        }
     };
 
     var createPortfolioRow = function(data, is_first) {
@@ -199,7 +207,7 @@ var PortfolioWS =  (function() {
     };
 
     var onLoad = function() {
-        if (!TradePage.is_trading_page() && !TradePage_Beta.is_trading_page() && !MBTradePage.is_trading_page()) {
+        if (!/trading\.html/.test(window.location.pathname)) {
             BinarySocket.init({
                 onmessage: function(msg){
                     var response = JSON.parse(msg.data),

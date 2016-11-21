@@ -1,5 +1,6 @@
 var ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
 var Validate = require('../../../../common_functions/validation').Validate;
+var JapanAccOpeningData = require('./japan_acc_opening.data').JapanAccOpeningData;
 
 var JapanAccOpeningUI = function () {
   "use strict";
@@ -107,13 +108,13 @@ var JapanAccOpeningUI = function () {
       }
     }
 
-    if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test(Trim(elementObj['fname'].value))) {
+    if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test((elementObj['fname'].value).trim())) {
       errorObj['fname'].innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);
       Validate.displayErrorMessage(errorObj['fname']);
       window.accountErrorCounter++;
     }
 
-    if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test(Trim(elementObj['lname'].value))) {
+    if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test((elementObj['lname'].value).trim())) {
       errorObj['lname'].innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);
       Validate.displayErrorMessage(errorObj['lname']);
       window.accountErrorCounter++;
@@ -151,7 +152,7 @@ var JapanAccOpeningUI = function () {
 
     for (key in elementObj) {
       if (elementObj[key].offsetParent !== null && key !== 'address2') {
-        if (/^$/.test(Trim(elementObj[key].value)) && elementObj[key].type !== 'checkbox') {
+        if (/^$/.test((elementObj[key].value).trim()) && elementObj[key].type !== 'checkbox') {
           errorObj[key].innerHTML = Content.errorMessage('req');
           Validate.displayErrorMessage(errorObj[key]);
           window.accountErrorCounter++;

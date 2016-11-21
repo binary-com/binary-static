@@ -1,3 +1,5 @@
+var japanese_client = require('../../../common_functions/country_base').japanese_client;
+
 var SettingsWS = (function() {
     "use strict";
 
@@ -16,31 +18,27 @@ var SettingsWS = (function() {
         $('#settingsContainer').removeClass(classHidden);
     };
 
-    return {
-        init: init
-    };
-}());
-
-
-pjax_config_page_require_auth("settingsws|securityws", function() {
-    return {
-        onLoad: function() {
-            if(page.client.get_storage_value('is_virtual').length === 0) {
-                BinarySocket.init({
-                    onmessage: function(msg) {
-                        var response = JSON.parse(msg.data);
-                        if (response && response.msg_type === 'authorize') {
-                            SettingsWS.init();
-                        }
+    var onLoad = function() {
+        if(page.client.get_storage_value('is_virtual').length === 0) {
+            BinarySocket.init({
+                onmessage: function(msg) {
+                    var response = JSON.parse(msg.data);
+                    if (response && response.msg_type === 'authorize') {
+                        SettingsWS.init();
                     }
-                });
-            }
-            else {
-                SettingsWS.init();
-            }
+                }
+            });
+        }
+        else {
+            SettingsWS.init();
         }
     };
-});
+
+    return {
+        init: init,
+        onLoad: onLoad,
+    };
+}());
 
 module.exports = {
     SettingsWS: SettingsWS,

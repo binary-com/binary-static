@@ -1,8 +1,12 @@
 var template = require('../../../base/utility').template;
 var testPassword = require('../../../common_functions/passwordmeter').testPassword;
+var CommonFunctions = require('../../../common_functions/common_functions').CommonFunctions;
+var japanese_client = require('../../../common_functions/country_base').japanese_client;
 var bind_validation = require('../../../validator').bind_validation;
+var AccountOpening = require('../../../common_functions/account_opening').AccountOpening;
+var VirtualAccOpeningData = require('./virtual_acc_opening/virtual_acc_opening.data').VirtualAccOpeningData;
 
-pjax_config_page("new_account/virtualws", function() {
+var VirtualAccOpening = (function(){
     function onSuccess(res) {
         var new_account = res.new_account_virtual;
         page.client.set_cookie('residence', res.echo_req.residence);
@@ -49,13 +53,13 @@ pjax_config_page("new_account/virtualws", function() {
 
     function init() {
         Content.populate();
-        handle_residence_state_ws();
+        AccountOpening.handle_residence_state_ws();
         BinarySocket.send({residence_list: 1});
         BinarySocket.send({website_status: 1});
 
         var form = $('#virtual-form')[0];
         if (!form) return;
-        if (!isIE()) {
+        if (!CommonFunctions.isIE()) {
             $('#password').on('input', function() {
                 $('#password-meter').attr('value', testPassword($('#password').val())[0]);
             });
@@ -81,13 +85,19 @@ pjax_config_page("new_account/virtualws", function() {
         });
     }
 
-    return {
-        onLoad: function() {
-            if (page.client.is_logged_in) {
-                window.location.href = page.url.url_for('home');
-                return;
-            }
-            init();
+    var onLoad = function() {
+        if (page.client.is_logged_in) {
+            window.location.href = page.url.url_for('home');
+            return;
         }
+        init();
     };
-});
+
+    return {
+        onLoad: onLoad,
+    };
+})();
+
+module.exports = {
+    VirtualAccOpening: VirtualAccOpening,
+};

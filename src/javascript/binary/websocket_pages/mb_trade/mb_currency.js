@@ -1,5 +1,6 @@
 var format_currency = require('../../common_functions/currency_to_symbol').format_currency;
 var MBDefaults = require('./mb_defaults').MBDefaults;
+var japanese_client = require('../../common_functions/country_base').japanese_client;
 
 /*
  * Handles currency display

@@ -1,3 +1,9 @@
+var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
+var buildOauthApps = require('../../../../common_functions/get_app_details').buildOauthApps;
+var addTooltip = require('../../../../common_functions/get_app_details').addTooltip;
+var ProfitTableUI = require('./profit_table.ui').ProfitTableUI;
+var ProfitTableData = require('./profit_table.data').ProfitTableData;
+
 var ProfitTableWS = (function () {
     var batchSize,
         chunkSize,
@@ -107,10 +113,29 @@ var ProfitTableWS = (function () {
         noMoreData = false;
         pending = false;
         currentBatch = [];
-        ProfitTableData.initSocket();
+        initSocket();
         Content.populate();
         getNextBatchTransactions();
         onScrollLoad();
+    }
+
+    function initSocket(){
+        BinarySocket.init({
+            onmessage: function(msg){
+                var response = JSON.parse(msg.data);
+
+                if (response) {
+                    var type = response.msg_type;
+                    if (type === 'profit_table'){
+                        ProfitTableWS.profitTableHandler(response);
+                        showLocalTimeOnHover('td.buy-date,td.sell-date');
+                    } else if (type === 'oauth_apps') {
+                        addTooltip(ProfitTableUI.setOauthApps(buildOauthApps(response.oauth_apps)));
+                    }
+                }
+            }
+        });
+        BinarySocket.send({'oauth_apps': 1});
     }
 
     return {

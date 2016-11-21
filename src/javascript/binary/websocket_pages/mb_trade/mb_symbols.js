@@ -22,6 +22,7 @@ var MBSymbols = (function () {
     var tradeMarkets = {}, tradeMarketsList = {}, tradeUnderlyings = {}, need_page_update = 1, names = {};
 
     var details = function (data) {
+        ActiveSymbols.clearData();
         var allSymbols = data['active_symbols'];
         tradeMarkets     = ActiveSymbols.getMarkets(allSymbols);
         tradeMarketsList = ActiveSymbols.getMarketsList(allSymbols);
