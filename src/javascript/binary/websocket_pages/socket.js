@@ -12,6 +12,12 @@ var create_language_drop_down = require('../common_functions/attach_dom/language
 var TNCApproval = require('../websocket_pages/user/tnc_approval').TNCApproval;
 var ViewPopupWS = require('../websocket_pages/user/view_popup/view_popupws').ViewPopupWS;
 var ViewBalanceUI = require('../websocket_pages/user/viewbalance/viewbalance.ui').ViewBalanceUI;
+var Cookies = require('../../lib/js-cookie');
+var State = require('../base/storage').State;
+var Highchart     = require('./trade/charts/highchartws').Highchart;
+var WSTickDisplay = require('./trade/tick_trade').WSTickDisplay;
+var TradePage      = require('./trade/tradepage').TradePage;
+var TradePage_Beta = require('./trade/beta/tradepage').TradePage_Beta;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
@@ -70,7 +76,7 @@ function BinarySocketClass() {
                 data.passthrough = {};
             }
             // temporary check
-            if((data.contracts_for || data.proposal) && !data.passthrough.hasOwnProperty('dispatch_to') && !/multi_barriers_trading/.test(window.location.pathname)){
+            if ((data.contracts_for || data.proposal) && !data.passthrough.hasOwnProperty('dispatch_to') && !State.get('is_mb_trading')) {
                 data.passthrough.req_number = ++req_number;
                 timeouts[req_number] = setTimeout(function(){
                     if(typeof reloadPage === 'function' && data.contracts_for){
@@ -327,10 +333,10 @@ function BinarySocketClass() {
             clearTimeouts();
 
             if(!manualClosed && wrongAppId !== getAppId()) {
-                if (TradePage.is_trading_page() || TradePage_Beta.is_trading_page()) {
+                if (State.get('is_trading') || State.get('is_beta_trading')) {
                     showPriceOverlay();
                     showFormOverlay();
-                    if (TradePage.is_trading_page()) TradePage.onLoad();
+                    if (State.get('is_trading')) TradePage.onLoad();
                     else TradePage_Beta.onLoad();
                 } else {
                     init(1);

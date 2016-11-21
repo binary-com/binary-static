@@ -1,3 +1,5 @@
+var moment = require('../../lib/moment/moment');
+
 var StringUtil = (function(){
     function toTitleCase(str){
         return str.replace(/\w[^\s\/\\]*/g, function(txt){

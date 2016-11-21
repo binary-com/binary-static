@@ -1,3 +1,4 @@
+var Content       = require('../../../common_functions/content').Content;
 var validateEmail = require('../../../common_functions/validation').validateEmail;
 
 var LostPassword = (function() {

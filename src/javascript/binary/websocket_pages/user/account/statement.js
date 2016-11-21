@@ -1,3 +1,5 @@
+var moment = require('../../../../lib/moment/moment');
+
 var Statement = (function(){
     'use strict';
     var moment = require('../../../../lib/moment/moment');

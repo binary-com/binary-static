@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var CircularDependencyPlugin = require('circular-dependency-plugin');
 
 module.exports = function (grunt) {
     return {
@@ -16,6 +17,9 @@ module.exports = function (grunt) {
                 filename: '[name]',
             },
             plugins: [
+                new CircularDependencyPlugin({
+                    failOnError: true,
+                }),
                 new webpack.optimize.UglifyJsPlugin({
                     include: /\.min\.js$/,
                     minimize: true,

@@ -1,4 +1,6 @@
-var MBTradePage = require('../mb_trade/mb_tradepage').MBTradePage;
+var DigitInfoWS = require('./charts/digit_infows').DigitInfoWS;
+var JapanPortfolio = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
+var State = require('../../base/storage').State;
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -13,13 +15,13 @@ var MBTradePage = require('../mb_trade/mb_tradepage').MBTradePage;
  */
 
 var TradingAnalysis = (function() {
-    var trading_digit_info;
+    var trading_digit_info = new DigitInfoWS();
 
     var requestTradeAnalysis = function() {
         var contentId = document.getElementById('trading_bottom_content');
-        var formName = JPTradePage.isJapan()         ? $('#category-select').val() :
-                       MBTradePage.is_trading_page() ? $('#category').val() :
-                                                       $('#contract_form_name_nav').find('.a-active').attr('id');
+        var formName = State.get('is_jp_trading') ? $('#category-select').val() :
+                       State.get('is_mb_trading') ? $('#category').val() :
+                                                    $('#contract_form_name_nav').find('.a-active').attr('id');
         if (formName === 'matchdiff') {
           formName = 'digits';
         }
@@ -87,7 +89,6 @@ var TradingAnalysis = (function() {
                 if (currentTab == 'tab_last_digit') {
                     var underlying = $('[name=underlying] option:selected').val() || $('#underlying option:selected').val();
                     var tick = $('[name=tick_count]').val() || 100;
-                    trading_digit_info = TradingAnalysis.tab_last_digitws;
                     BinarySocket.send({
                         ticks_history: underlying,
                         count: tick + '',
@@ -126,7 +127,6 @@ var TradingAnalysis = (function() {
             analysisContainer = document.getElementById('bet_bottom_content');
 
         if (analysisContainer) {
-            trading_digit_info = undefined;
             var childElements = analysisContainer.children,
                 currentTabElement = document.getElementById(currentTab + '-content'),
                 classes = currentTabElement.classList;
@@ -145,7 +145,7 @@ var TradingAnalysis = (function() {
      * get the current active tab if its visible i.e allowed for current parameters
      */
     var getActiveTab = function() {
-        var selectedTab = sessionStorage.getItem('currentAnalysisTab') || (JPTradePage.isJapan() || MBTradePage.is_trading_page() ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation'),
+        var selectedTab = sessionStorage.getItem('currentAnalysisTab') || (State.get('is_jp_trading') || State.get('is_mb_trading') ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation'),
             selectedElement = document.getElementById(selectedTab);
 
         if (selectedElement && selectedElement.classList.contains('invisible') &&
@@ -228,10 +228,6 @@ var TradingAnalysis = (function() {
         request: requestTradeAnalysis,
         digit_info: function() {
             return trading_digit_info;
-        },
-        // Should be removed with legacy trading.
-        set_digit_info: function(obj) {
-            trading_digit_info = obj;
         },
         tab_portfolio: function() {
             return tab_portfolio;

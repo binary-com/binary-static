@@ -1,7 +1,12 @@
+var JapanPortfolio = require('./portfolio').JapanPortfolio;
+var TradingAnalysis = require('../../binary/websocket_pages/trade/analysis').TradingAnalysis;
+var Content = require('../../binary/common_functions/content').Content;
+var State   = require('../../binary/base/storage').State;
+
 var JPTradePage = (function() {
 
   var scriptUrl = 'https://binary-com.github.io/japanui/bundle' + (/www\.binary\.com/i.test(window.location.hostname) ? '' : '_beta') + '.js';
-  var isJapan = false;
+  State.remove('is_jp_trading');
   var scriptReady = false;
 
   var getScript = function(cb) {
@@ -18,12 +23,14 @@ var JPTradePage = (function() {
   };
 
   var onLoad = function() {
-    isJapan = true;
-
-    getScript(function() { JapanTrading.start(); });
+    State.set('is_jp_trading', true);
 
     Content.populate();
-    TradingAnalysis.bindAnalysisTabEvent();
+    getScript(function() {
+      JapanTrading.start();
+      TradingAnalysis.bindAnalysisTabEvent();
+    });
+
     $('#tab_portfolio a').text(page.text.localize('Portfolio'));
     $('#tab_graph a').text(page.text.localize('Chart'));
     $('#tab_explanation a').text(page.text.localize('Explanation'));
@@ -39,7 +46,7 @@ var JPTradePage = (function() {
     chartFrameCleanup();
     window.chartAllowed = false;
     JapanPortfolio.hide();
-    isJapan = false;
+    State.remove('is_jp_trading');
     JapanTrading.stop();
   };
 
@@ -47,9 +54,6 @@ var JPTradePage = (function() {
     onLoad: onLoad,
     reload: reload,
     onUnload: onUnload,
-    isJapan: function() {
-      return isJapan;
-    }
   };
 })();
 

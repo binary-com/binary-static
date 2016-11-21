@@ -1,3 +1,5 @@
+var moment = require('../../lib/moment/moment');
+
 var KnowledgeTestUI = (function () {
     "use strict";
 

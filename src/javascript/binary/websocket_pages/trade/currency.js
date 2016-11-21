@@ -1,3 +1,4 @@
+var Defaults = require('./defaults').Defaults;
 var format_currency = require('../../common_functions/currency_to_symbol').format_currency;
 
 /*

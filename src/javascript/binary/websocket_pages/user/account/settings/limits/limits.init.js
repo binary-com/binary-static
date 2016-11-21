@@ -1,4 +1,5 @@
 var template = require('../../../../../base/utility').template;
+var Content  = require('../../../../../common_functions/content').Content;
 var LimitsUI = require('./limits.ui').LimitsUI;
 
 var LimitsWS = (function(){

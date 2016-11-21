@@ -1,4 +1,5 @@
 var objectNotEmpty = require('./utility').objectNotEmpty;
+var Cookies = require('../../lib/js-cookie');
 
 var LoggedInHandler = (function() {
     "use strict";

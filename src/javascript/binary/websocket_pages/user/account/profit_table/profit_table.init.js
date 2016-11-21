@@ -1,7 +1,8 @@
 var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
+var addTooltip     = require('../../../../common_functions/get_app_details').addTooltip;
 var buildOauthApps = require('../../../../common_functions/get_app_details').buildOauthApps;
-var addTooltip = require('../../../../common_functions/get_app_details').addTooltip;
-var ProfitTableUI = require('./profit_table.ui').ProfitTableUI;
+var Content        = require('../../../../common_functions/content').Content;
+var ProfitTableUI   = require('./profit_table.ui').ProfitTableUI;
 var ProfitTableData = require('./profit_table.data').ProfitTableData;
 
 var ProfitTableWS = (function () {

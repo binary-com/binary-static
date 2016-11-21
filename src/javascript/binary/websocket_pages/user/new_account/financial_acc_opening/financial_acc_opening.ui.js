@@ -1,5 +1,6 @@
+var Content             = require('../../../../common_functions/content').Content;
 var ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
-var Validate = require('../../../../common_functions/validation').Validate;
+var Validate            = require('../../../../common_functions/validation').Validate;
 var FinancialAccOpeningData = require('./financial_acc_opening.data').FinancialAccOpeningData;
 
 var FinancialAccOpeningUI = (function(){

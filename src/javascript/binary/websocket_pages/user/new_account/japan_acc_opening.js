@@ -1,6 +1,7 @@
+var AccountOpening      = require('../../../common_functions/account_opening').AccountOpening;
+var Content             = require('../../../common_functions/content').Content;
 var ValidAccountOpening = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
-var CommonFunctions = require('../../../common_functions/common_functions').CommonFunctions;
-var AccountOpening = require('../../../common_functions/account_opening').AccountOpening;
+var CommonFunctions     = require('../../../common_functions/common_functions').CommonFunctions;
 var JapanAccOpeningUI = require('./japan_acc_opening/japan_acc_opening.ui').JapanAccOpeningUI;
 
 var JapanAccOpening = (function() {

@@ -1,5 +1,7 @@
 var showLocalTimeOnHover = require('../../../base/utility').showLocalTimeOnHover;
 var onlyNumericOnKeypress = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
+require('../../../../lib/polyfills/array.includes');
+require('../../../../lib/polyfills/string.includes');
 
 var RealityCheckUI = (function () {
     'use strict';

@@ -1,4 +1,5 @@
 var template = require('../../../base/utility').template;
+var moment = require('../../../../lib/moment/moment');
 
 var RealityCheckData = (function () {
     'use strict';

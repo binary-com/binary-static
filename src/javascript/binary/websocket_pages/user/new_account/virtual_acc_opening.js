@@ -1,9 +1,10 @@
 var template = require('../../../base/utility').template;
-var testPassword = require('../../../common_functions/passwordmeter').testPassword;
+var AccountOpening  = require('../../../common_functions/account_opening').AccountOpening;
 var CommonFunctions = require('../../../common_functions/common_functions').CommonFunctions;
+var Content         = require('../../../common_functions/content').Content;
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
+var testPassword    = require('../../../common_functions/passwordmeter').testPassword;
 var bind_validation = require('../../../validator').bind_validation;
-var AccountOpening = require('../../../common_functions/account_opening').AccountOpening;
 var VirtualAccOpeningData = require('./virtual_acc_opening/virtual_acc_opening.data').VirtualAccOpeningData;
 
 var VirtualAccOpening = (function(){

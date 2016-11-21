@@ -1,3 +1,8 @@
+var Contract = require('./contract').Contract;
+var Defaults = require('./defaults').Defaults;
+var Tick     = require('./tick').Tick;
+var moment = require('../../../lib/moment/moment');
+
 /*
  * Handles barrier processing and display
  *

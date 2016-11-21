@@ -1,5 +1,10 @@
+var Contract_Beta      = require('./contract').Contract_Beta;
+var WSTickDisplay_Beta = require('./tick_trade').WSTickDisplay_Beta;
+var Symbols = require('../symbols').Symbols;
+var Tick    = require('../tick').Tick;
+var Content      = require('../../../common_functions/content').Content;
 var format_money = require('../../../common_functions/currency_to_symbol').format_money;
-var StringUtil = require('../../../common_functions/string_util').StringUtil;
+var StringUtil   = require('../../../common_functions/string_util').StringUtil;
 
 /*
  * Purchase object that handles all the functions related to

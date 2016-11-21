@@ -1,8 +1,9 @@
 var toJapanTimeIfNeeded = require('../../../../base/utility').toJapanTimeIfNeeded;
-var downloadCSV = require('../../../../base/utility').downloadCSV;
-var Button = require('../../../../common_functions/attach_dom/button').Button;
-var Table = require('../../../../common_functions/attach_dom/table').Table;
-var showTooltip = require('../../../../common_functions/get_app_details').showTooltip;
+var downloadCSV         = require('../../../../base/utility').downloadCSV;
+var Button          = require('../../../../common_functions/attach_dom/button').Button;
+var Content         = require('../../../../common_functions/content').Content;
+var Table           = require('../../../../common_functions/attach_dom/table').Table;
+var showTooltip     = require('../../../../common_functions/get_app_details').showTooltip;
 var japanese_client = require('../../../../common_functions/country_base').japanese_client;
 var Statement = require('../statement').Statement;
 
