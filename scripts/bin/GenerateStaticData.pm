@@ -625,6 +625,7 @@ sub _texts {
         push @texts, localize('Please check the above form for pending errors.');
         push @texts, localize('Market is closed. Please try again later.');
         push @texts, localize('This symbol is not active. Please try another symbol.');
+        push @texts, localize('Connection error: Please check your internet connection.');
 
         #strings for digit_infows
         push @texts, localize('Select market');

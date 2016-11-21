@@ -18,6 +18,7 @@ var Highchart     = require('./trade/charts/highchartws').Highchart;
 var WSTickDisplay = require('./trade/tick_trade').WSTickDisplay;
 var TradePage      = require('./trade/tradepage').TradePage;
 var TradePage_Beta = require('./trade/beta/tradepage').TradePage_Beta;
+var MBTradePage    = require('./mb_trade/mb_tradepage').MBTradePage;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
@@ -87,6 +88,11 @@ function BinarySocketClass() {
                         $('.price_container').hide();
                     }
                 }, 60*1000);
+            } else if (data.contracts_for && !data.passthrough.hasOwnProperty('dispatch_to') && State.get('is_mb_trading')) {
+                data.passthrough.req_number = ++req_number;
+                timeouts[req_number] = setTimeout(function() {
+                    MBTradePage.onDisconnect();
+                }, 10*1000);
             }
 
             binarySocket.send(JSON.stringify(data));
@@ -338,6 +344,10 @@ function BinarySocketClass() {
                     showFormOverlay();
                     if (State.get('is_trading')) TradePage.onLoad();
                     else TradePage_Beta.onLoad();
+                } else if (State.get('is_mb_trading')) {
+                    timeouts.error = setTimeout(function() {
+                        MBTradePage.onDisconnect();
+                    }, 10*1000);
                 } else {
                     init(1);
                 }
