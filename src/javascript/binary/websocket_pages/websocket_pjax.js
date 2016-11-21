@@ -32,6 +32,7 @@ var TradePage      = require('./trade/tradepage').TradePage;
 var TradePage_Beta = require('./trade/beta/tradepage').TradePage_Beta;
 var MBTradePage    = require('./mb_trade/mb_tradepage').MBTradePage;
 var JPTradePage    = require('../../binary_japan/trade_japan/JPTradePage').JPTradePage;
+var ViewPopupWS = require('./user/view_popup/view_popupws').ViewPopupWS;
 
 pjax_config_page('/trading', function () {
     return {
@@ -324,6 +325,18 @@ pjax_config_page_require_auth("tnc_approvalws", function() {
     return {
         onLoad: function() {
             TNCApproval.onLoad();
+        }
+    };
+});
+
+pjax_config_page("profit_tablews|statementws|portfoliows|trading", function() {
+    return {
+        onLoad: function() {
+            $('#profit-table-ws-container, #statement-ws-container, #portfolio-table, #contract_confirmation_container')
+                .on('click', '.open_contract_detailsws', function (e) {
+                    e.preventDefault();
+                    ViewPopupWS.init(this);
+                });
         }
     };
 });
