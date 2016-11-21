@@ -103,7 +103,7 @@ var Purchase_Beta = (function () {
                 // label_value(profit, Content.localize().textContractConfirmationProfit, addComma(profit_value));
             }
 
-            balance.textContent = Content.localize().textContractConfirmationBalance + ' ' + format_money(TUser.get().currency, Math.round(receipt['balance_after']*100)/100);
+            balance.textContent = Content.localize().textContractConfirmationBalance + ' ' + format_money(TUser.get().currency, receipt['balance_after']);
 
             if(show_chart){
                 chart.show();
