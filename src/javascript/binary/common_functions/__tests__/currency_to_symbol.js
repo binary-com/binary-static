@@ -13,6 +13,6 @@ describe('format_money', function() {
     });
 
     it('works for unexpected currencies', function() {
-        expect(format_money('WTV', '123.00')).to.eq('WTV 123.00');
+        expect(format_money('WTV', '123.00')).to.eq('WTV123.00');
     });
 });

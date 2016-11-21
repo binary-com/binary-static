@@ -31,6 +31,8 @@ function limitLanguage(lang) {
 }
 
 function japanese_client() {
+    // handle for test case
+    if (typeof window === 'undefined') return false;
     return (page.language().toLowerCase() === 'ja' || (Cookies.get('residence') === 'jp') || localStorage.getItem('clients_country') === 'jp');
 }
 
