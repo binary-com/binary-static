@@ -443,6 +443,7 @@ sub _texts {
         push @texts, localize('Withdrawal');
         push @texts, localize('Virtual money credit to account');
         push @texts, localize('Today');
+        push @texts, localize('today');
 
         #strings for authenticate page
         push @texts, localize('To authenticate your account, kindly email the following to [_1]');
