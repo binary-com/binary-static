@@ -266,6 +266,7 @@ sub _texts {
         push @texts, localize('Waiting for entry tick.');
         push @texts, localize('Refresh page');
         push @texts, localize('Please log in.');
+        push @texts, localize('All markets are closed now. Please try again later.');
 
         #strings for limitsws page
         push @texts, localize('Trading and Withdrawal Limits');
