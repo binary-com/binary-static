@@ -510,7 +510,7 @@ var TradingEvents = (function () {
         });
         $(".pickatime" ).on('focus', function() {
             var date_start = document.getElementById('date_start').value;
-            var now = date_start === 'now';
+            var now = !date_start || date_start === 'now';
             var current_moment = moment((now ? window.time : parseInt(date_start) * 1000)).utc();
             $(this).timepicker('destroy').timepicker({
                 minTime: {
