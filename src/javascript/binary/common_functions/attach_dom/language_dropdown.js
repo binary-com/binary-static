@@ -9,7 +9,7 @@ function create_language_drop_down(languages) {
     $languages = $('.languages');
     var selectLanguage = 'ul#select_language',
         $selectLanguage = $languages.find(selectLanguage);
-    if ($languages.length === 0 || $selectLanguage.find('li div.language').text() !== '') return;
+    if ($languages.length === 0 || $selectLanguage.find('li span.language').text() !== '') return;
     languages.sort(function(a, b) {
         if (a === 'EN' || a < b) {
             return -1;
@@ -39,7 +39,7 @@ function create_language_drop_down(languages) {
 function add_display_language(id) {
     $languages.find(id + ' li')
               .addClass(languageCode)
-              .find('div.language')
+              .find('span.language')
               .text(languageText);
 }
 
