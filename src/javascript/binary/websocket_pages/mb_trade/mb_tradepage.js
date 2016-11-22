@@ -68,16 +68,15 @@ var MBTradePage = (function(){
   };
 
   var onDisconnect = function() {
-    MBNotifications.show({text: page.text.localize('Connection error: Please check your internet connection.'), uid: 'CONNECTION_ERROR', dismissible: true});
     MBPrice.showPriceOverlay();
     onLoad();
   };
 
   return {
-    onLoad   : onLoad,
-    reload   : reload,
-    onUnload : onUnload,
-    onDisconnect : onDisconnect,
+    onLoad      : onLoad,
+    reload      : reload,
+    onUnload    : onUnload,
+    onDisconnect: onDisconnect,
   };
 })();
 

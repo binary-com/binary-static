@@ -1,4 +1,5 @@
 <div id="trading_socket_container" class="tab-menu-wrap">
+   <div id="notifications_wrapper"></div>
    <p id="markets_closed_msg" class="notice-msg center hidden">[% l('All markets are closed now. Please try again later.') %]</p>
    <div id="loading_container" class="overlay_container">
    </div>
