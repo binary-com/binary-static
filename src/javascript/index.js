@@ -27,6 +27,7 @@ require('event-source-polyfill');
 require('./lib/jQuery.XDomainRequest.js');
 require('./lib/jquery-ui.js');
 require('./lib/jquery.sparkline.js');
+require('jquery.scrollto');
 
 require('./binary/components/trackjs_onerror');
 

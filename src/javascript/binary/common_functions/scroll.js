@@ -1,5 +1,3 @@
-require('../../lib/jquery-scrollto-1.4.3.1-min');
-
 var Scroll = (function() {
     var sidebar_scroll = function(elm_selector) {
         elm_selector.on('click', '#sidebar-nav li', function() {
