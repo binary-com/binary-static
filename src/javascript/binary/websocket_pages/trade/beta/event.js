@@ -7,7 +7,7 @@ var StartDates_Beta      = require('./starttime').StartDates_Beta;
 var Defaults = require('../defaults').Defaults;
 var Tick     = require('../tick').Tick;
 var onlyNumericOnKeypress = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
-var moment = require('../../../../lib/moment/moment');
+var moment = require('moment');
 
 /*
  * TradingEvents object contains all the event handler function required for

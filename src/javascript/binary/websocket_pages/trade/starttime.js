@@ -1,7 +1,7 @@
 var Contract  = require('./contract').Contract;
 var Defaults  = require('./defaults').Defaults;
 var Durations = require('./duration').Durations;
-var moment = require('../../../lib/moment/moment');
+var moment = require('moment');
 var Content = require('../../common_functions/content').Content;
 var State = require('../../base/storage').State;
 

@@ -18,7 +18,7 @@ var FinancialAssessmentws = require('../websocket_pages/user/account/settings/fi
 var ViewBalance = require('../websocket_pages/user/viewbalance/viewbalance.init').ViewBalance;
 var CashierJP = require('../../binary_japan/cashier').CashierJP;
 var Cookies = require('../../lib/js-cookie');
-var moment  = require('../../lib/moment/moment');
+var moment  = require('moment');
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
 

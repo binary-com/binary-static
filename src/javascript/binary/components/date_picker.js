@@ -1,4 +1,4 @@
-var moment = require('../../lib/moment/moment');
+var moment = require('moment');
 
 DatePicker = function(component_id, select_type) {
     this.component_id = component_id;
