@@ -1,4 +1,3 @@
-var Login = require('../base/login').Login;
 var objectNotEmpty  = require('../base/utility').objectNotEmpty;
 var Validate        = require('../common_functions/validation').Validate;
 var Content         = require('../common_functions/content').Content;
