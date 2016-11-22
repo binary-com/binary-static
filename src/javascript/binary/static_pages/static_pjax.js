@@ -1,4 +1,3 @@
-var Login = require('../base/login').Login;
 var Endpoint = require('./endpoint').Endpoint;
 var GetStartedJP = require('./get_started_jp').GetStartedJP;
 var JobDetails = require('./job_details').JobDetails;
