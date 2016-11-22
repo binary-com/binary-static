@@ -1,3 +1,5 @@
+var Login = require('../base/login').Login;
+
 function checkClientsCountry() {
   var clients_country = localStorage.getItem('clients_country');
   if (clients_country) {
