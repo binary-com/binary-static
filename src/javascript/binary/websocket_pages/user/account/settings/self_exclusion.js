@@ -5,7 +5,7 @@ var ValidateV2 = require('../../../../common_functions/validation_v2').ValidateV
 var ValidationUI    = require('../../../../validator').ValidationUI;
 var validate_object = require('../../../../validator').validate_object;
 var bind_validation = require('../../../../validator').bind_validation;
-var moment = require('../../../../../lib/moment/moment');
+var moment = require('moment');
 var dv     = require('../../../../../lib/validation');
 
 var SelfExclusionWS = (function() {

@@ -7,7 +7,7 @@ var Price           = require('./price').Price;
 var StartDates      = require('./starttime').StartDates;
 var Tick            = require('./tick').Tick;
 var onlyNumericOnKeypress = require('../../common_functions/event_handler').onlyNumericOnKeypress;
-var moment = require('../../../lib/moment/moment');
+var moment = require('moment');
 
 /*
  * TradingEvents object contains all the event handler function required for

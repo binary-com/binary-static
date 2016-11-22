@@ -7,7 +7,7 @@ var objectNotEmpty = require('../../base/utility').objectNotEmpty;
 var Content         = require('../../common_functions/content').Content;
 var format_money    = require('../../common_functions/currency_to_symbol').format_money;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
-var moment = require('../../../lib/moment/moment');
+var moment = require('moment');
 
 /*
  * This contains common functions we need for processing the response
@@ -1149,7 +1149,7 @@ function moreTabsHandler($ul) {
 }
 
 function timeIsValid($element) {
-    var endDateValue = document.getElementById('expiry_date').value,
+    var endDateValue = document.getElementById('expiry_date').value || new moment().format('YYYY-MM-DD'),
         startDateValue = document.getElementById('date_start').value,
         endTimeValue = document.getElementById('expiry_time').value || "23:59:59";
 

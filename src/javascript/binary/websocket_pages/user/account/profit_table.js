@@ -1,4 +1,4 @@
-var moment = require('../../../../lib/moment/moment');
+var moment = require('moment');
 
 var ProfitTable = (function(){
     'use strict';

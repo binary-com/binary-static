@@ -1,8 +1,8 @@
-var moment = require('../../../../lib/moment/moment');
+var moment = require('moment');
 
 var Statement = (function(){
     'use strict';
-    var moment = require('../../../../lib/moment/moment');
+    var moment = require('moment');
     var StringUtil = require('../../../common_functions/string_util').StringUtil,
         addComma = require('../../../websocket_pages/trade/common').addComma,
         format_money = require('../../../common_functions/currency_to_symbol').format_money,
