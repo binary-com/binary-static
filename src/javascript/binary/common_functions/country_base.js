@@ -1,4 +1,5 @@
 var Cookies = require('../../lib/js-cookie');
+var Login = require('../base/login').Login;
 
 function checkClientsCountry() {
   var clients_country = localStorage.getItem('clients_country');
