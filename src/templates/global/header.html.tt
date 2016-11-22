@@ -10,12 +10,27 @@
                 </div>
                 <div class='gr-6 gr-7-t gr-12-p gr-12-m' id='topbar-info'>
                     <div class="gr-row">
-                        <div class='gr-5 gr-7-m no-underline' id="gmt-clock" data-balloon-pos="down"></div>
-                        <div class='gr-3 gr-hide-m' id='contact-us'>
+                        <div class='gr-5 gr-6-m no-underline' id="gmt-clock" data-balloon-pos="down"></div>
+                        <div class='gr-2 gr-hide-m' id='contact-us'>
                             <a class="pjaxload" href="[% request.url_for('contact') %]">[% l("Contact Us") %]</a>
                         </div>
-                        <div class='gr-4 gr-5-m'>
-                            <select class="[% language %] invisible" id='language_select'></select>
+                        <div class='gr-5 gr-6-m'>
+                            <div class="languages invisible">
+                                <ul id="display_language">
+                                    <li>
+                                        <span class="world world-white"></span>
+                                        <div class="language"></div>
+                                        <span class="nav-caret"></span>
+                                    </li>
+                                </ul>
+                                <ul id="select_language">
+                                    <li>
+                                        <span class="world world-black"></span>
+                                        <div class="language"></div>
+                                        <span class="nav-caret"></span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
