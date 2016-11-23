@@ -46,13 +46,11 @@ function BinarySocketClass() {
         wrongAppId = 0,
         socketUrl = getSocketURL() + '?app_id=' + getAppId() + (page.language() ? '&l=' + page.language() : '');
 
-    var clearTimeouts = function(){
-        for(var k in timeouts){
-            if(timeouts.hasOwnProperty(k)){
-                clearTimeout(timeouts[k]);
-                delete timeouts[k];
-            }
-        }
+    var clearTimeouts = function() {
+        Object.keys(timeouts).forEach(function(key) {
+            clearTimeout(timeouts[key]);
+            delete timeouts[key];
+        });
     };
 
     var isReady = function () {

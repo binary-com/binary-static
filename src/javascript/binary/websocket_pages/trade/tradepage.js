@@ -83,6 +83,7 @@ var TradePage = (function(){
   var onDisconnect = function() {
     showPriceOverlay();
     showFormOverlay();
+    chartFrameCleanup();
     onLoad();
   };
 

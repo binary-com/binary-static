@@ -69,6 +69,7 @@ var MBTradePage = (function(){
 
   var onDisconnect = function() {
     MBPrice.showPriceOverlay();
+    chartFrameCleanup();
     onLoad();
   };
 

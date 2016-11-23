@@ -87,6 +87,7 @@ var TradePage_Beta = (function(){
   var onDisconnect = function() {
     showPriceOverlay();
     showFormOverlay();
+    chartFrameCleanup();
     onLoad();
   };
 
