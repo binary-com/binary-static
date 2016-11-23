@@ -237,5 +237,5 @@ var TradingAnalysis = (function() {
 })();
 
 module.exports = {
-    TradingAnalysis: TradingAnalysis
+    TradingAnalysis: TradingAnalysis,
 };
