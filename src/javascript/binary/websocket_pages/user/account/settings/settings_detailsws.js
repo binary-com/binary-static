@@ -3,7 +3,7 @@ var Content         = require('../../../../common_functions/content').Content;
 var ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
 var bind_validation = require('../../../../validator').bind_validation;
 var Cookies = require('../../../../../lib/js-cookie');
-var moment  = require('../../../../../lib/moment/moment');
+var moment  = require('moment');
 var dv      = require('../../../../../lib/validation');
 
 var SettingsDetailsWS = (function() {

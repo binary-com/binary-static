@@ -1,13 +1,14 @@
-var Contract = require('./contract').Contract;
-var Defaults = require('./defaults').Defaults;
-var Symbols  = require('./symbols').Symbols;
-var Tick     = require('./tick').Tick;
+var Contract      = require('./contract').Contract;
+var Defaults      = require('./defaults').Defaults;
+var Notifications = require('./notifications').Notifications;
+var Symbols       = require('./symbols').Symbols;
+var Tick          = require('./tick').Tick;
 var Contract_Beta = require('./beta/contract').Contract_Beta;
 var objectNotEmpty = require('../../base/utility').objectNotEmpty;
 var Content         = require('../../common_functions/content').Content;
 var format_money    = require('../../common_functions/currency_to_symbol').format_money;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
-var moment = require('../../../lib/moment/moment');
+var moment = require('moment');
 
 /*
  * This contains common functions we need for processing the response
@@ -193,7 +194,7 @@ function displayMarkets(id, elements, selected) {
          }
 
          if(current.disabled) { // there is no open market
-            document.getElementById('markets_closed_msg').classList.remove('hidden');
+            Notifications.show({text: page.text.localize('All markets are closed now. Please try again later.'), uid: 'MARKETS_CLOSED'});
             document.getElementById('trading_init_progress').style.display = 'none';
          }
      }
@@ -1149,7 +1150,7 @@ function moreTabsHandler($ul) {
 }
 
 function timeIsValid($element) {
-    var endDateValue = document.getElementById('expiry_date').value,
+    var endDateValue = document.getElementById('expiry_date').value || new moment().format('YYYY-MM-DD'),
         startDateValue = document.getElementById('date_start').value,
         endTimeValue = document.getElementById('expiry_time').value || "23:59:59";
 

@@ -5,7 +5,7 @@ var Content          = require('../../../common_functions/content').Content;
 var japanese_client  = require('../../../common_functions/country_base').japanese_client;
 var MarketTimesData  = require('./market_timesws.data').MarketTimesData;
 var MarketTimes      = require('../market_timesws').MarketTimes;
-var moment = require('../../../../lib/moment/moment');
+var moment = require('moment');
 var State  = require('../../../base/storage').State;
 
 var MarketTimesUI = (function() {

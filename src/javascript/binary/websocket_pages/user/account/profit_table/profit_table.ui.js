@@ -6,7 +6,7 @@ var format_money    = require('../../../../common_functions/currency_to_symbol')
 var showTooltip     = require('../../../../common_functions/get_app_details').showTooltip;
 var japanese_client = require('../../../../common_functions/country_base').japanese_client;
 var ProfitTable = require('../profit_table').ProfitTable;
-var moment = require('../../../../../lib/moment/moment');
+var moment = require('moment');
 
 var ProfitTableUI = (function(){
     "use strict";

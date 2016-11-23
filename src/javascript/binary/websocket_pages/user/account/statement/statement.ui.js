@@ -55,7 +55,7 @@ var StatementUI = (function(){
             action: page.text.localize(statement_data.action),
             desc  : page.text.localize(statement_data.desc),
         }));
-        var creditDebitType = (parseFloat(statement_data.amount) >= 0) ? "profit" : "loss";
+        var creditDebitType = (parseFloat(transaction.amount) >= 0) ? "profit" : "loss";
 
         var $statementRow = Table.createFlexTableRow([
                 statement_data.date,

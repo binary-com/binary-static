@@ -3,7 +3,7 @@
  *
  */
 
-var MBNotifications = (function() {
+var Notifications = (function() {
     'use strict';
 
     /*
@@ -26,7 +26,6 @@ var MBNotifications = (function() {
             $note_wrapper.prepend($message);
         }
         $.scrollTo($note_wrapper, 500, {offset: -5});
-        hideSpinnerShowTrading();
     };
 
     var hideErrorMessage = function(uid) {
@@ -43,18 +42,12 @@ var MBNotifications = (function() {
         return $('#notifications_wrapper');
     };
 
-    var hideSpinnerShowTrading = function() {
-        $('.barspinner').addClass('invisible');
-        $('.mb-trading-wrapper').removeClass('invisible');
-    };
-
     return {
         show : showErrorMessage,
         hide : hideErrorMessage,
-        hideSpinnerShowTrading : hideSpinnerShowTrading,
     };
 })();
 
 module.exports = {
-    MBNotifications: MBNotifications,
+    Notifications: Notifications,
 };
