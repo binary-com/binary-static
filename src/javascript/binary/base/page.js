@@ -1097,7 +1097,7 @@ Page.prototype = {
             'PT': 'Português',
             'RU': 'Русский',
             'TH': 'Thai',
-            'VI': 'Vietnamese',
+            'VI': 'Tiếng Việt',
             'ZH_CN': '简体中文',
             'ZH_TW': '繁體中文',
         };
