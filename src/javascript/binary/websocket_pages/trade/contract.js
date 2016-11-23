@@ -1,4 +1,5 @@
 var objectNotEmpty = require('../../base/utility').objectNotEmpty;
+var Content = require('../../common_functions/content').Content;
 
 /*
  * Contract object mocks the trading form we have on our website

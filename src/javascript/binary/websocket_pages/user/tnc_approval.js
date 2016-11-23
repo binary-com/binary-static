@@ -1,5 +1,6 @@
 var showLoadingImage = require('../../base/utility').showLoadingImage;
 var template = require('../../base/utility').template;
+var Content = require('../../common_functions/content').Content;
 
 var TNCApproval = (function() {
     "use strict";

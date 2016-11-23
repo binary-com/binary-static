@@ -1,3 +1,5 @@
+var Cookies = require('./lib/js-cookie');
+
 /*
  * Configuration values needed in js codes
  *

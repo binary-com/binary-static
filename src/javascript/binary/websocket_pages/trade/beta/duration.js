@@ -1,3 +1,10 @@
+var Barriers_Beta = require('./barriers').Barriers_Beta;
+var Contract_Beta = require('./contract').Contract_Beta;
+var Defaults = require('../defaults').Defaults;
+var moment = require('moment');
+var Content = require('../../../common_functions/content').Content;
+var State = require('../../../base/storage').State;
+
 /*
  * Handles duration processing display
  *
@@ -18,7 +25,7 @@ var Durations_Beta = (function(){
 
     var displayDurations = function() {
         var startType;
-        if(Defaults.get('date_start') !== 'now' && StartDates_Beta.displayed() && moment(Defaults.get('date_start')*1000).isAfter(moment())) {
+        if(Defaults.get('date_start') !== 'now' && State.get('is_start_dates_displayed') && moment(Defaults.get('date_start')*1000).isAfter(moment())) {
             startType = 'forward';
         }
         else {
@@ -161,7 +168,7 @@ var Durations_Beta = (function(){
 
     var displayEndTime = function(){
         var date_start = document.getElementById('date_start').value;
-        var now = date_start === 'now';
+        var now = !date_start || date_start === 'now';
         var current_moment = moment((now ? window.time : parseInt(date_start) * 1000)).add(5, 'minutes').utc();
         var expiry_date = Defaults.get('expiry_date') || current_moment.format('YYYY-MM-DD'),
             expiry_time = Defaults.get('expiry_time') || current_moment.format('HH:mm');
@@ -335,19 +342,19 @@ var Durations_Beta = (function(){
     };
 
     var selectEndDate = function(end_date){
-        var expiry_time = document.getElementById('expiry_time');
+        var expiry_time = document.getElementById('expiry_time'),
+            date_start  = document.getElementById('date_start');
         $('#expiry_date').val(end_date);
         Defaults.set('expiry_date', end_date);
         if (moment(end_date).isAfter(window.time.format('YYYY-MM-DD HH:mm'), 'day')) {
             Durations_Beta.setTime('');
             Defaults.remove('expiry_time');
-            StartDates_Beta.setNow();
-            StartDates.disable();
+            setNow(); // start time
+            date_start.setAttribute('disabled', 'disabled');
             expiry_time.hide();
-            var date_start = StartDates_Beta.node();
             processTradingTimesRequest_Beta(end_date);
         } else {
-            StartDates.enable();
+            date_start.removeAttribute('disabled');
             if(!expiry_time.value) {
                 expiry_time.value = moment(window.time).add(5, 'minutes').utc().format('HH:mm');
             }
@@ -373,18 +380,55 @@ var Durations_Beta = (function(){
         }
     };
 
+    var onStartDateChange = function(value){
+        var $dateStartSelect = $('#date_start');
+        if(!value || !$dateStartSelect.find('option[value='+value+']').length){
+            return 0;
+        }
+
+        var yellowBorder = 'light-yellow-background';
+        if (value !== 'now') {
+            $dateStartSelect.addClass(yellowBorder);
+        } else {
+            $dateStartSelect.removeClass(yellowBorder);
+        }
+
+        $dateStartSelect.val(value);
+
+        var make_price_request = 1;
+        if (value !== 'now' && Defaults.get('expiry_type') === 'endtime') {
+            make_price_request = -1;
+            var end_time = moment(parseInt(value)*1000).add(5,'minutes').utc();
+            Durations_Beta.setTime((timeIsValid($('#expiry_time')) && Defaults.get('expiry_time') ?
+                               Defaults.get('expiry_time') : end_time.format("HH:mm")));
+            Durations_Beta.selectEndDate((timeIsValid($('#expiry_time')) && Defaults.get('expiry_date') ?
+                                    Defaults.get('expiry_date') : end_time.format("YYYY-MM-DD")));
+        }
+        timeIsValid($('#expiry_time'));
+        Durations_Beta.display();
+        return make_price_request;
+    };
+
+    var setNow = function() {
+        if ($('#date_start option[value="now"]').length) {
+            $('#date_start').val('now').removeClass('light-yellow-background');
+            Defaults.set('date_start', 'now');
+        }
+    };
+
     return {
-        display: displayDurations,
-        displayEndTime: displayEndTime,
-        populate: durationPopulate,
-        setTime: function(time){ $('#expiry_time').val(time); Defaults.set('expiry_time', time); expiry_time = time; },
-        getTime: function(){ return expiry_time; },
+        display                  : displayDurations,
+        displayEndTime           : displayEndTime,
+        populate                 : durationPopulate,
         processTradingTimesAnswer: processTradingTimesAnswer,
-        trading_times: function(){ return trading_times; },
-        select_amount: function(a){ selected_duration.amount = a; },
-        select_unit: function(u){ selected_duration.unit = u; } ,
-        selectEndDate: selectEndDate,
-        validateMinDurationAmount: validateMinDurationAmount
+        selectEndDate            : selectEndDate,
+        validateMinDurationAmount: validateMinDurationAmount,
+        onStartDateChange        : onStartDateChange,
+        setTime      : function(time) { $('#expiry_time').val(time); Defaults.set('expiry_time', time); expiry_time = time; },
+        getTime      : function() { return expiry_time; },
+        trading_times: function() { return trading_times; },
+        select_amount: function(a) { selected_duration.amount = a; },
+        select_unit  : function(u) { selected_duration.unit = u; },
     };
 })();
 

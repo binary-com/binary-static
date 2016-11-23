@@ -16,6 +16,13 @@ var checkClientsCountry = require('../common_functions/country_base').checkClien
 var japanese_client = require('../common_functions/country_base').japanese_client;
 var FinancialAssessmentws = require('../websocket_pages/user/account/settings/financial_assessment').FinancialAssessmentws;
 var ViewBalance = require('../websocket_pages/user/viewbalance/viewbalance.init').ViewBalance;
+var CashierJP = require('../../binary_japan/cashier').CashierJP;
+var Cookies = require('../../lib/js-cookie');
+var moment  = require('moment');
+require('../../lib/polyfills/array.includes');
+require('../../lib/polyfills/string.includes');
+
+
 var clock_started = false;
 
 var SessionStore, LocalStore;

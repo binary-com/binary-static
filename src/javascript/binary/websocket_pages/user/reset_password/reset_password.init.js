@@ -1,10 +1,11 @@
 var Login = require('../../../base/login').Login;
-var PasswordMeter = require('../../../common_functions/attach_dom/password_strength_meter').PasswordMeter;
-var passwordValid = require('../../../common_functions/validation').passwordValid;
-var showPasswordError = require('../../../common_functions/validation').showPasswordError;
-var japanese_client = require('../../../common_functions/country_base').japanese_client;
-var CommonFunctions = require('../../../common_functions/common_functions').CommonFunctions;
+var CommonFunctions   = require('../../../common_functions/common_functions').CommonFunctions;
+var Content           = require('../../../common_functions/content').Content;
 var generateBirthDate = require('../../../common_functions/attach_dom/birth_date_dropdown').generateBirthDate;
+var japanese_client   = require('../../../common_functions/country_base').japanese_client;
+var PasswordMeter     = require('../../../common_functions/attach_dom/password_strength_meter').PasswordMeter;
+var passwordValid     = require('../../../common_functions/validation').passwordValid;
+var showPasswordError = require('../../../common_functions/validation').showPasswordError;
 
 var ResetPassword = (function () {
     'use strict';

@@ -3,14 +3,19 @@ var MBDisplayCurrencies = require('./mb_currency').MBDisplayCurrencies;
 var MBTradingEvents = require('./mb_event').MBTradingEvents;
 var MBMessage = require('./mb_message').MBMessage;
 var MBSymbols = require('./mb_symbols').MBSymbols;
+var TradingAnalysis = require('../trade/analysis').TradingAnalysis;
+var JapanPortfolio = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
+var State = require('../../base/storage').State;
+var Content = require('../../common_functions/content').Content;
 var MBProcess = require('./mb_process').MBProcess;
 
 var MBTradePage = (function(){
 
-  var trading_page = 0, events_initialized = 0;
+  var events_initialized = 0;
+  State.remove('is_mb_trading');
 
   var onLoad = function(){
-    trading_page = 1;
+    State.set('is_mb_trading' , true);
     if (sessionStorage.getItem('currencies')) {
       MBDisplayCurrencies('', false);
     }
@@ -49,7 +54,7 @@ var MBTradePage = (function(){
     chartFrameCleanup();
     window.chartAllowed = false;
     JapanPortfolio.hide();
-    trading_page = 0;
+    State.remove('is_mb_trading');
     events_initialized = 0;
     MBContract.onUnload();
     MBPrice.onUnload();
@@ -62,7 +67,6 @@ var MBTradePage = (function(){
     onLoad   : onLoad,
     reload   : reload,
     onUnload : onUnload,
-    is_trading_page: function() { return trading_page; }
   };
 })();
 
