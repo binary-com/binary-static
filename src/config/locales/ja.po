@@ -7,10 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-18 01:23+0000\n"
+"PO-Revision-Date: 2016-11-22 02:56+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -48,7 +47,7 @@ msgid "$250,000 - $1,000,000"
 msgstr "$250,000 - $1,000,000"
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
-msgstr "%1 %2がデモ口座%3に付与されました"
+msgstr "%1 %2をデモ口座%3に付与されました"
 
 msgid "%1 (Toll Free)"
 msgstr "==フリーダイヤル=="
@@ -2953,7 +2952,7 @@ msgid "Getting Started"
 msgstr "はじめに"
 
 msgid "Give Me More Money!"
-msgstr "もっと利益を得たい！"
+msgstr "バーチャルマネーの入金！"
 
 msgid "Global Customer Service Representatives"
 msgstr "グローバル・カスタマーサポート担当"
@@ -4426,7 +4425,7 @@ msgid "Monitoring and review of this Policy"
 msgstr "本ポリシーのモニターと閲覧"
 
 msgid "Month"
-msgstr "ヶ月"
+msgstr "月"
 
 msgid "More Tools"
 msgstr "その他ツール"
@@ -5728,7 +5727,7 @@ msgid "Settings"
 msgstr "各種設定"
 
 msgid "Settles"
-msgstr "約定時間"
+msgstr "約定可能時間"
 
 msgid "Severability"
 msgstr "分離条項"
@@ -7197,7 +7196,7 @@ msgid "Virtual Account"
 msgstr "デモ口座番号"
 
 msgid "Virtual money credit to account"
-msgstr "デモ口座にバーチャルマネーを付与する"
+msgstr "バーチャルマネーを入金"
 
 msgid "Volatility Index Markets"
 msgstr "ボラティリティインデックス市場"
@@ -7713,7 +7712,7 @@ msgid "You can even build your own online trading sites, apps, and bots with our
 msgstr "ご自身の取引サイト、アプリケーション、ボットを当社の<a href=\"https://developers.binary.com\" target=\"_blank\">APIと開発ツール</a>で構築いただけます。"
 
 msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
-msgstr "バーチャルマネーの残高が100,000円を下回る場合、バーチャルマネーを追加することが可能です。"
+msgstr "バーチャルマネーの残高が100,000円を下回る場合、バーチャルマネーを追加入金することが可能です。"
 
 msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
 msgstr "お客様のバーチャルマネー残高がUSD 1,000.00を下回る場合、バーチャルマネーの追加リクエストが可能です。"
@@ -8186,7 +8185,7 @@ msgid "minutes"
 msgstr "分"
 
 msgid "month"
-msgstr "月"
+msgstr "ヶ月"
 
 msgid "months"
 msgstr "ヶ月"
@@ -8245,6 +8244,11 @@ msgstr "Tick"
 msgid "to your account."
 msgstr "アカウントへ"
 
+#, fuzzy
+#| msgid "Today"
+msgid "today"
+msgstr "本日"
+
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "これら規約で許可されている以上の%1 APIの使用または再現"
 
@@ -8258,7 +8262,7 @@ msgid "website"
 msgstr "ウェブサイト"
 
 msgid "week"
-msgstr "週"
+msgstr "週間"
 
 msgid "weeks"
 msgstr "週間"
@@ -8723,7 +8727,7 @@ msgid "{JAPAN ONLY}Implied volatility is a prediction of the future rate of chan
 msgstr "原資産に対する将来の変動率を予測したボラティリティをインプライドボラティリティといます。"
 
 msgid "{JAPAN ONLY}In Japan there are defined trading periods for binary options must be 2 hours or longer, and all trades must be conducted at the start of each trading period."
-msgstr "バイナリーオプションの取引期間（満期）は2時間以上で、全ての取引は取引期間の開始時点で成立し、成立したポジションは、途中解約できず判定時刻の時点でのみの決済となります。"
+msgstr "バイナリーオプションの取引期間（満期）は2時間以上で、全ての取引は取引期間の開始時点で成立し、成立したポジションは、途中解約できず判定時刻の時点でのみ決済となります。"
 
 msgid "{JAPAN ONLY}In OTC currency binary options trading, if the exchange rate during the trading period moves by more than expected in one direction, and there are no longer any exercise prices which can continue to trade, it is possible under certain conditions to add further exercise prices. However, even when further exercise price have been added, the prices of the original options will not be affected."
 msgstr "店頭通貨バイナリーオプション取引では、取引期間中の為替レートが一方向に想定以上に動き、アットザマネー周辺で適切な取引が継続できるバリア価格が無くなった場合には、途中でバリア価格を追加することがありますが、ただし、バリア価格が追加された場合であっても、それまで利用したバリア価格は引き続き取引を行い、またその取引価格が、バリア価格の追加の影響を受けることはありません。"
@@ -9308,6 +9312,9 @@ msgstr "スタイル"
 
 msgid "Endpoint"
 msgstr "ポイント"
+
+msgid "Careers For Americans"
+msgstr ""
 
 msgid "Job Details"
 msgstr "職務内容"
