@@ -122,16 +122,10 @@ var Purchase = (function () {
 
             //calculate number of decimals needed to display tick-chart according to the spot
             //value of the underlying
-            var decimal_points = 2;
-            var tick_spots = Tick.spots();
-            var tick_spot_epochs = Object.keys(tick_spots);
-            if ( tick_spot_epochs.length > 0 ) {
-                var last_quote = tick_spots[tick_spot_epochs[0]].toString();
 
-                if ( last_quote.indexOf(".") != -1 ) {
-                    decimal_points = last_quote.split('.')[1].length;
-                }
-            }
+            var tick_spots = Tick.spots();
+            var last_quote = tick_spots.length ? String(tick_spots[tick_spots.length-1].quote) : null;
+            var decimal_points = last_quote && last_quote.lastIndexOf('.') >= 0 ? last_quote.length - last_quote.lastIndexOf('.') -1 : 2;
 
             var barrier;
             if ( sessionStorage.getItem('formname') === 'higherlower' ) {
@@ -171,15 +165,9 @@ var Purchase = (function () {
 
         var spots = document.getElementById('contract_purchase_spots');
         var spots2 = Tick.spots();
-        var epoches = Object.keys(spots2).sort(function(a,b){return a-b;});
         if(spots) spots.textContent = '';
 
-        var replace = function(d){d1 = d; return '<b>'+d+'</b>';};
-        for(var s=0; s<epoches.length; s++){
-            var tick_d = {
-                epoch: epoches[s],
-                quote: spots2[epoches[s]]
-            };
+        spots2.forEach(function(tick_d) {
 
             if(isVisible(spots) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time){
                 var fragment = document.createElement('div');
@@ -200,7 +188,7 @@ var Purchase = (function () {
                 fragment.appendChild(el2);
 
                 var d1;
-                var tick = tick_d.quote.replace(/\d$/,replace);
+                var tick = tick_d.quote.replace(/\d$/,function(d){d1 = d; return '<b>'+d+'</b>';});
                 var el3 = document.createElement('div');
                 el3.classList.add('col');
                 el3.innerHTML = tick;
@@ -236,7 +224,7 @@ var Purchase = (function () {
                 }
             }
 
-        }
+        });
 
     };
 

@@ -314,13 +314,11 @@ WSTickDisplay.dispatch = function(data) {
       window.tick_init = 'initialized';
     }
   }
-  if (data.tick) {
-    spots2 = Tick.spots();
-    epoches = Object.keys(spots2).sort(function(a, b) {
-        return a - b;
-    });
-  } else if (data.history) {
-    epoches = data.history.times;
+  
+  if (data.history) {
+      ticks = Tick.history2ticks(data.history);
+  } else {
+      ticks = Tick.spots(20);
   }
 
   if ($self.applicable_ticks && $self.ticks_needed && $self.applicable_ticks.length >= $self.ticks_needed) {
@@ -328,22 +326,8 @@ WSTickDisplay.dispatch = function(data) {
       if (window.responseID) {
         BinarySocket.send({'forget':window.responseID});
       }
-      return;
   } else {
-      for (var d = 0; d < epoches.length; d++) {
-          var tick;
-          if (data.tick) {
-            tick = {
-                epoch: parseInt(epoches[d]),
-                quote: parseFloat(spots2[epoches[d]])
-            };
-          } else if (data.history) {
-            tick = {
-                epoch: parseInt(data.history.times[d]),
-                quote: parseFloat(data.history.prices[d])
-            };
-          }
-
+      ticks.forEach(function(tick) {
           if (tick.epoch > $self.contract_start_moment.unix() && !$self.spots_list[tick.epoch]) {
               if (!$self.chart) return;
               if (!$self.chart.series) return;
@@ -360,7 +344,7 @@ WSTickDisplay.dispatch = function(data) {
               $self.apply_chart_background_color(tick);
               $self.counter++;
           }
-      }
+      });
   }
 };
 WSTickDisplay.updateChart = function(data, contract) {
@@ -386,7 +370,6 @@ WSTickDisplay.updateChart = function(data, contract) {
         request.end = contract.date_expiry;
       }
       WSTickDisplay.socketSend(request);
-      return;
     } else {
       WSTickDisplay.dispatch(data);
     }

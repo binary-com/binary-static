@@ -14,15 +14,28 @@
  * `Tick.epoch()` to get the tick epoch time
  * 'Tick.display()` to display current spot
  */
+
 var Tick = (function() {
     'use strict';
 
-    var quote = '',
-        id = '',
+    var id = '',
+        quote = '',
         epoch = '',
+
         errorMessage = '',
-        spots = {},
-        keep_number = 20;
+        spots = [],
+        symbol = '',
+
+        keep_number = 100;
+
+    var clean = function() {
+        id = quote = epoch = symbol = '';
+        spots = [];
+        $('#spot').fadeOut(200, function(){
+            // resets spot movement coloring, will continue on the next tick responses
+            $(this).removeClass('price_moved_down price_moved_up').text('');
+        });
+    };
 
     var details = function(data) {
         errorMessage = '';
@@ -31,20 +44,45 @@ var Tick = (function() {
             if (data['error']) {
                 errorMessage = data['error']['message'];
             } else {
-                var tick = data['tick'];
-                quote = tick['quote'];
-                id = tick['id'];
-                epoch = tick['epoch'];
+                var tick = {
+                    id: data['tick'].id,
+                    quote: parseFloat(data['tick'].quote),
+                    epoch: parseInt(data['tick'].epoch)
+                };
 
-                spots[epoch] = quote;
-                var epoches = Object.keys(spots).sort(function(a, b) {
-                    return a - b;
-                });
-                if (epoches.length > keep_number) {
-                    delete spots[epoches[0]];
+                if (add_tick(tick)) {
+                    sort_spots();
+                    id = tick.id;
+                    quote = tick.quote;
+                    epoch = tick.epoch;
                 }
             }
         }
+    };
+
+    var add_tick = function(tick) {
+        // if tick exists
+        if (get_tick(tick.epoch)) {
+            return false;
+        }
+
+        spots.push(tick);
+        if (spots.length > keep_number) {
+            spots.shift();
+        }
+        return true;
+    };
+
+    var get_tick = function(epoch) {
+        return spots.find(function(spot) {
+            return spot.epoch === epoch;
+        });
+    };
+
+    var sort_spots = function() {
+        spots.sort(function(a, b) {
+            return a.epoch - b.epoch;
+        });
     };
 
     var display = function() {
@@ -80,16 +118,27 @@ var Tick = (function() {
     };
 
     var processHistory = function(res) {
+        var ticks;
+        clean();
         if (res.history && res.history.times && res.history.prices) {
-            for (var i = 0; i < res.history.times.length; i++) {
-                details({
-                    tick: {
-                        epoch: res.history.times[i],
-                        quote: res.history.prices[i]
-                    }
-                });
-            }
+            ticks = history2ticks(res.history);
+            ticks.forEach(function(tick) {
+               add_tick(tick);
+            });
+            sort_spots();
+            symbol = res.echo_req.ticks_history;
         }
+    };
+
+    var history2ticks = function(history) {
+        var result = [];
+        history.times.forEach(function(time, index) {
+            result.push({
+                epoch: parseInt(time),
+                quote: parseFloat(history.prices[index])
+            });
+        });
+        return result;
     };
 
     return {
@@ -107,25 +156,16 @@ var Tick = (function() {
         errorMessage: function() {
             return errorMessage;
         },
-        clean: function() {
-            spots = {};
-            quote = '';
-            $('#spot').fadeOut(200, function(){
-                // resets spot movement coloring, will continue on the next tick responses
-                $(this).removeClass('price_moved_down price_moved_up').text('');
-            });
-        },
-        spots: function() {
-            return spots;
-        },
-        setQuote: function(q) {
-            quote = q;
+        clean: clean,
+        spots: function(limit) {
+            return limit ? spots.slice(-limit) : spots;
         },
         request: request,
-        processHistory: processHistory
+        processHistory: processHistory,
+        history2ticks: history2ticks
     };
 })();
 
 module.exports = {
-    Tick: Tick,
+    Tick: Tick
 };

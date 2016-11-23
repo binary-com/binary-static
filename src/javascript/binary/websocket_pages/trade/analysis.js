@@ -84,35 +84,33 @@ var TradingAnalysis = (function() {
         } else {
             JapanPortfolio.hide();
             if (currentTab === 'tab_graph') {
-              showHighchart();
+                showHighchart();
+            } else if (currentTab == 'tab_last_digit') {
+                var underlying = $('[name=underlying] option:selected').val() || $('#underlying option:selected').val();
+                var tick = $('[name=tick_count]').val() || 100;
+                BinarySocket.send({
+                    ticks_history: underlying,
+                    count: String(tick),
+                    end: 'latest',
+                    req_id: 1
+                });
             } else {
-                if (currentTab == 'tab_last_digit') {
-                    var underlying = $('[name=underlying] option:selected').val() || $('#underlying option:selected').val();
-                    var tick = $('[name=tick_count]').val() || 100;
-                    BinarySocket.send({
-                        ticks_history: underlying,
-                        count: tick + '',
-                        end: 'latest',
-                        req_id: 1
-                    });
-                } else{
-                    var url = currentLink.getAttribute('href') ;
-                    $.ajax({
-                        method: 'GET',
-                        url: url,
-                    })
-                    .done(function(data) {
-                        contentId.innerHTML = data;
-                        if(currentTab === 'tab_explanation') {
-                            showExplanation(currentLink.href);
-                        } else if (currentTab == 'tab_last_digit') {
-                            trading_digit_info = new DigitInfo();
-                            trading_digit_info.on_latest();
-                            trading_digit_info.show_chart(sessionStorage.getItem('underlying'));
-                        }
+                var url = currentLink.getAttribute('href') ;
+                $.ajax({
+                    method: 'GET',
+                    url: url,
+                })
+                .done(function(data) {
+                    contentId.innerHTML = data;
+                    if(currentTab === 'tab_explanation') {
+                        showExplanation(currentLink.href);
+                    } else if (currentTab == 'tab_last_digit') {
+                        trading_digit_info = new DigitInfo();
+                        trading_digit_info.on_latest();
+                        trading_digit_info.show_chart(sessionStorage.getItem('underlying'));
+                    }
 
-                    });
-                }
+                });
             }
         }
 
@@ -239,5 +237,5 @@ var TradingAnalysis = (function() {
 })();
 
 module.exports = {
-    TradingAnalysis: TradingAnalysis,
+    TradingAnalysis: TradingAnalysis
 };
