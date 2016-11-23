@@ -19,14 +19,18 @@
                                 <ul id="display_language">
                                     <li>
                                         <span class="world world-white"></span>
-                                        <div class="language"></div>
+                                        <div class="language-wrapper">
+                                            <span class="language"></span>
+                                        </div>
                                         <span class="nav-caret"></span>
                                     </li>
                                 </ul>
                                 <ul id="select_language">
                                     <li>
                                         <span class="world world-black"></span>
-                                        <div class="language"></div>
+                                        <div class="language-wrapper">
+                                            <span class="language"></span>
+                                        </div>
                                         <span class="nav-caret"></span>
                                     </li>
                                 </ul>
