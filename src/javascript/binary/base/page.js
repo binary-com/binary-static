@@ -705,15 +705,20 @@ Header.prototype = {
     },
     show_or_hide_language: function() {
         var that = this;
-        var $el = $('#select_language');
+        var $el = $('#select_language'),
+            $all_accounts = $('#all-accounts');
         $('.languages').on('click', function(event) {
             event.stopPropagation();
-            that.animate_disappear($('#all-accounts'));
+            that.animate_disappear($all_accounts);
             if ($el.css('opacity') == 1 ) {
                 that.animate_disappear($el);
             } else {
                 that.animate_appear($el);
             }
+        });
+        $(document).unbind('click').on('click', function() {
+            that.animate_disappear($all_accounts);
+            that.animate_disappear($el);
         });
     },
     show_or_hide_login_form: function() {
@@ -729,10 +734,6 @@ Header.prototype = {
             } else {
                 that.animate_appear(all_accounts);
             }
-        });
-        $(document).unbind('click').on('click', function() {
-            that.animate_disappear(all_accounts);
-            that.animate_disappear(language);
         });
         var loginid_select = '';
         var loginid_array = this.user.loginid_array;
