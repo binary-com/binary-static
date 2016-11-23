@@ -13,9 +13,7 @@ var ViewBalanceUI = (function(){
         if (!currency) {
             return;
         }
-
-        var amount = addComma(parseFloat(balance.balance));
-        var view = format_money(currency, amount);
+        var view = format_money(currency, balance.balance);
 
         TUser.get().balance = balance.balance;
         updateContractBalance(balance.balance);

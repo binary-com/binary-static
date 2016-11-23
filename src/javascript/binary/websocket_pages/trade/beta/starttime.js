@@ -1,7 +1,7 @@
 var Contract_Beta      = require('./contract').Contract_Beta;
 var Durations_Beta     = require('./duration').Durations;
 var Defaults = require('../defaults').Defaults;
-var moment = require('../../../../lib/moment/moment');
+var moment = require('moment');
 var Content = require('../../../common_functions/content').Content;
 var State = require('../../../base/storage').State;
 
@@ -89,7 +89,7 @@ var StartDates_Beta = (function(){
                         }
                         option.appendChild(content);
                         fragment.appendChild(option);
-                    } 
+                    }
                     a.add(5, 'minutes');
                 }
             });

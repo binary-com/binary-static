@@ -56,7 +56,7 @@ var PortfolioWS =  (function() {
                 '<td class="payout"><strong>' + format_money(data.currency, data.payout) + '</strong></td>' +
                 '<td class="details">' + longCode + '</td>' +
                 '<td class="purchase"><strong>' + format_money(data.currency, data.buy_price) + '</strong></td>' +
-                '<td class="indicative"><strong class="indicative_price">' + format_money(data.currency, '--.--') + '</strong></td>' +
+                '<td class="indicative"><strong class="indicative_price">' + '--.--' + '</strong></td>' +
                 '<td class="button"><button class="button open_contract_detailsws nowrap" contract_id="' + data.contract_id + '">' + page.text.localize('View') + '</button></td>' +
             '</tr>' +
             '<tr class="tr-desc ' + new_class + ' ' + data.contract_id + '">' +
@@ -193,8 +193,8 @@ var PortfolioWS =  (function() {
     };
 
     var updateFooter = function() {
-        $("#cost-of-open-positions").text(format_money(currency, addComma(Portfolio.getSumPurchase(values))));
-        $("#value-of-open-positions").text(format_money(currency, addComma(Portfolio.getIndicativeSum(values))));
+        $("#cost-of-open-positions").text(format_money(currency, Portfolio.getSumPurchase(values)));
+        $("#value-of-open-positions").text(format_money(currency, Portfolio.getIndicativeSum(values)));
     };
 
     var errorMessage = function(msg) {

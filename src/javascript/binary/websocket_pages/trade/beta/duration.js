@@ -1,7 +1,7 @@
 var Barriers_Beta = require('./barriers').Barriers_Beta;
 var Contract_Beta = require('./contract').Contract_Beta;
 var Defaults = require('../defaults').Defaults;
-var moment = require('../../../../lib/moment/moment');
+var moment = require('moment');
 var Content = require('../../../common_functions/content').Content;
 var State = require('../../../base/storage').State;
 
@@ -168,7 +168,7 @@ var Durations_Beta = (function(){
 
     var displayEndTime = function(){
         var date_start = document.getElementById('date_start').value;
-        var now = date_start === 'now';
+        var now = !date_start || date_start === 'now';
         var current_moment = moment((now ? window.time : parseInt(date_start) * 1000)).add(5, 'minutes').utc();
         var expiry_date = Defaults.get('expiry_date') || current_moment.format('YYYY-MM-DD'),
             expiry_time = Defaults.get('expiry_time') || current_moment.format('HH:mm');

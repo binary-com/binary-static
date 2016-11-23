@@ -29,6 +29,7 @@ sub all_pages {
         ['group-history',              'about/group_history',          'full_width', 'Group History'],
         ['contact',                    'about/contact',                'full_width', 'Contact Us'],
         ['careers',                    'about/careers',                'full_width', 'Careers',              'ja'],
+        ['careers-for-americans',      'about/careers_for_americans',  'full_width', 'Careers For Americans','ja'],
         ['open-positions',             'about/job_descriptions',       'full_width', 'Open Positions'],
         ['open-positions/job-details', 'about/job_details',            'full_width', 'Job Details'],
         ['company-profile',            'japan/company_profile',        'default',    'Company Profile',      'NOT-ja,en'],

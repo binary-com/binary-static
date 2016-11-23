@@ -1,5 +1,5 @@
 var japanese_client = require('../common_functions/country_base').japanese_client;
-var moment = require('../../lib/moment/moment');
+var moment = require('moment');
 
 //////////////////////////////////////////////////////////////////
 // Purpose: Write loading image to a container for ajax request
@@ -254,7 +254,7 @@ function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode, hideSeconds){
         return;
     }
 
-    timeStr = time.zone(jp_client ? '+09:00' : '+00:00').format((hideSeconds ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD HH:mm:ss' ) + (showTimeZone && showTimeZone !== '' ? jp_client ? ' zZ' : ' Z' : ''));
+    timeStr = time.utcOffset(jp_client ? '+09:00' : '+00:00').format((hideSeconds ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD HH:mm:ss' ) + (showTimeZone && showTimeZone !== '' ? jp_client ? ' zZ' : ' Z' : ''));
 
     return (longcode ? longcode.replace(match[0], timeStr) : timeStr);
 }

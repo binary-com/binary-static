@@ -1,4 +1,4 @@
-var moment = require('../../../../../../lib/moment/moment');
+var moment = require('moment');
 
 var ApplicationsData = (function(){
     "use strict";

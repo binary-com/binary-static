@@ -2,7 +2,7 @@ var MenuContent = require('./menu_content').MenuContent;
 var attach_date_picker = require('./utility').attach_date_picker;
 var attach_time_picker = require('./utility').attach_time_picker;
 var attach_tabs = require('./utility').attach_tabs;
-var moment = require('../../lib/moment/moment');
+var moment = require('moment');
 var pjax   = require('../../lib/pjax-lib');
 
 //For object shape coherence we create named objects to be inserted into the queue.

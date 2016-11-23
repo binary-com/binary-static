@@ -3,12 +3,13 @@ var Content         = require('../../../../common_functions/content').Content;
 var testPassword    = require('../../../../common_functions/passwordmeter').testPassword;
 var ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
 var bind_validation = require('../../../../validator').bind_validation;
-var dv = require('../../../../../lib/validation');
+var dv              = require('../../../../../lib/validation');
 
 var SecurityWS = (function() {
     "use strict";
     var $form;
-    var current_state;
+    var current_state,
+        redirect_url;
     var STATE = {
         WAIT_AUTH:    'WAIT_AUTH',
         QUERY_LOCKED: 'QUERY_LOCKED',
@@ -151,7 +152,16 @@ var SecurityWS = (function() {
         $form.hide();
         clearErrors();
         $("#SecuritySuccessMsg").text(page.text.localize('Your settings have been updated successfully.'));
+        redirect_url = current_state === STATE.TRY_UNLOCK ? sessionStorage.getItem('cashier_lock_redirect') : '';
+        setTimeout(redirect, 2000);
         current_state = STATE.DONE;
+    }
+
+    function redirect() {
+        if (redirect_url) {
+            sessionStorage.removeItem('cashier_lock_redirect');
+            load_with_pjax(redirect_url);
+        }
     }
 
     function handler(msg) {

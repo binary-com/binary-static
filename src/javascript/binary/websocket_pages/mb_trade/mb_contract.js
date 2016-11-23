@@ -3,7 +3,7 @@ var format_currency = require('../../common_functions/currency_to_symbol').forma
 var japanese_client = require('../../common_functions/country_base').japanese_client;
 var MBDefaults = require('./mb_defaults').MBDefaults;
 var MBSymbols = require('./mb_symbols').MBSymbols;
-var moment = require('../../../lib/moment/moment');
+var moment = require('moment');
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -62,7 +62,7 @@ var MBContract = (function() {
             date_expiry = trading_period.split('_')[1];
             duration = trading_period.split('_')[2];
         }
-        return moment.utc(date_expiry * 1000).zone(japanese_client() ? '+09:00' : '+00:00')
+        return moment.utc(date_expiry * 1000).utcOffset(japanese_client() ? '+09:00' : '+00:00')
                      .format("MM[" + page.text.localize('month') + "] " + "DD[" + page.text.localize('day') + "] HH:mm [(" +
                      durationText(duration.replace('0d', '1d')) + ")]").replace(/08:59/, '09:00«');
     };

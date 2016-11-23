@@ -51,6 +51,7 @@ var FinancialAssessmentws = (function(){
                 hasChanged = true;
             }
         });
+        if (Object.keys(financial_assessment).length === 0) hasChanged = true;
         if (!hasChanged) {
             showFormMessage('You did not change anything.', false);
             setTimeout(function() { $('#submit').removeAttr('disabled'); }, 1000);

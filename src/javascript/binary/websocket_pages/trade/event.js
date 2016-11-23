@@ -7,7 +7,7 @@ var Price           = require('./price').Price;
 var StartDates      = require('./starttime').StartDates;
 var Tick            = require('./tick').Tick;
 var onlyNumericOnKeypress = require('../../common_functions/event_handler').onlyNumericOnKeypress;
-var moment = require('../../../lib/moment/moment');
+var moment = require('moment');
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -510,7 +510,7 @@ var TradingEvents = (function () {
         });
         $(".pickatime" ).on('focus', function() {
             var date_start = document.getElementById('date_start').value;
-            var now = date_start === 'now';
+            var now = !date_start || date_start === 'now';
             var current_moment = moment((now ? window.time : parseInt(date_start) * 1000)).utc();
             $(this).timepicker('destroy').timepicker({
                 minTime: {

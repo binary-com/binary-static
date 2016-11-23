@@ -1,4 +1,4 @@
-var moment = require('../../lib/moment/moment');
+var moment = require('moment');
 
 var StringUtil = (function(){
     function toTitleCase(str){

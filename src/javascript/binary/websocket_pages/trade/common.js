@@ -7,7 +7,7 @@ var objectNotEmpty = require('../../base/utility').objectNotEmpty;
 var Content         = require('../../common_functions/content').Content;
 var format_money    = require('../../common_functions/currency_to_symbol').format_money;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
-var moment = require('../../../lib/moment/moment');
+var moment = require('moment');
 
 /*
  * This contains common functions we need for processing the response
@@ -577,7 +577,7 @@ function displayCommentPrice(node, currency, type, payout) {
     if (node && type && payout) {
         var profit = payout - type,
             return_percent = (profit/type)*100,
-            comment = Content.localize().textNetProfit + ': ' + format_money(currency, profit.toFixed(2)) + ' | ' + Content.localize().textReturn + ' ' + return_percent.toFixed(1) + '%';
+            comment = Content.localize().textNetProfit + ': ' + format_money(currency, profit) + ' | ' + Content.localize().textReturn + ' ' + return_percent.toFixed(1) + '%';
 
         if (isNaN(profit) || isNaN(return_percent)) {
             node.hide();
@@ -608,7 +608,7 @@ function displayCommentSpreads(node, currency, point) {
             } else {
                 displayAmount = parseFloat(stopLoss);
             }
-            node.textContent = Content.localize().textSpreadDepositComment + " " + format_money(currency, displayAmount.toFixed(2)) + " " + Content.localize().textSpreadRequiredComment + ": " + point + " " + Content.localize().textSpreadPointsComment;
+            node.textContent = Content.localize().textSpreadDepositComment + " " + format_money(currency, displayAmount) + " " + Content.localize().textSpreadRequiredComment + ": " + point + " " + Content.localize().textSpreadPointsComment;
         }
     }
 }
@@ -872,8 +872,7 @@ function updatePurchaseStatus(final_price, pnl, contract_status){
 
 function updateContractBalance(balance) {
     $('#contract_purchase_balance').text(
-        Content.localize().textContractConfirmationBalance + ' ' +
-        format_money(TUser.get().currency, addComma(parseFloat(balance)))
+        Content.localize().textContractConfirmationBalance + ' ' + format_money(TUser.get().currency, balance)
     );
 }
 
@@ -1149,7 +1148,7 @@ function moreTabsHandler($ul) {
 }
 
 function timeIsValid($element) {
-    var endDateValue = document.getElementById('expiry_date').value,
+    var endDateValue = document.getElementById('expiry_date').value || new moment().format('YYYY-MM-DD'),
         startDateValue = document.getElementById('date_start').value,
         endTimeValue = document.getElementById('expiry_time').value || "23:59:59";
 
