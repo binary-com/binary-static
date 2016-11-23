@@ -1,4 +1,8 @@
+var Durations  = require('./duration').Durations;
+var StartDates = require('./starttime').StartDates;
+var Content      = require('../../common_functions/content').Content;
 var format_money = require('../../common_functions/currency_to_symbol').format_money;
+var moment = require('moment');
 
 /*
  * Price object handles all the functions we need to display prices
@@ -201,7 +205,7 @@ var Price = (function() {
                 } else {
                     $('.stake:hidden').show();
                     stake.textContent = page.text.localize('Stake') + ': ';
-                    amount.textContent = format_money((currency.value || currency.getAttribute('value')), (data['display_value']*1).toFixed(2));
+                    amount.textContent = format_money((currency.value || currency.getAttribute('value')), data['display_value']);
                 }
                 $('.stake_wrapper:hidden').show();
             } else {
@@ -210,7 +214,7 @@ var Price = (function() {
 
             if (data['payout']) {
               payout.textContent = (is_spread ? page.text.localize('Payout/point') : page.text.localize('Payout')) + ': ';
-              payoutAmount.textContent = format_money((currency.value || currency.getAttribute('value')), (data['payout']*1).toFixed(2));
+              payoutAmount.textContent = format_money((currency.value || currency.getAttribute('value')), data['payout']);
               $('.payout_wrapper:hidden').show();
             } else {
               $('.payout_wrapper:visible').hide();

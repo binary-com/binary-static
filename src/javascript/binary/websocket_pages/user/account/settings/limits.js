@@ -1,4 +1,5 @@
 var LimitsWS = require('./limits/limits.init').LimitsWS;
+var Content = require('../../../../common_functions/content').Content;
 
 var Limits = (function() {
     var onLoad = function() {

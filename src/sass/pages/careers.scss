@@ -21,3 +21,22 @@
         }
     }
 }
+
+.careers-for-americans {
+    img.responsive {
+        width: 50%;
+    }
+    .fill-bg-color img.responsive {
+        width: 15%;
+    }
+    h2 {
+        margin-bottom: 0;
+    }
+    .margin {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .border-bottom {
+        border-bottom: 1px solid $COLOR_GRAY;
+    }
+}

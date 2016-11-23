@@ -1,5 +1,7 @@
 var Validate = require('./validation').Validate;
 var CommonFunctions = require('./common_functions').CommonFunctions;
+var Content         = require('./content').Content;
+var Cookies = require('../../lib/js-cookie');
 
 var ValidAccountOpening = (function(){
   var redirectCookie = function() {

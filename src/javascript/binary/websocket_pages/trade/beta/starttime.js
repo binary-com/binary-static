@@ -1,3 +1,10 @@
+var Contract_Beta      = require('./contract').Contract_Beta;
+var Durations_Beta     = require('./duration').Durations;
+var Defaults = require('../defaults').Defaults;
+var moment = require('moment');
+var Content = require('../../../common_functions/content').Content;
+var State = require('../../../base/storage').State;
+
 /*
  * Handles start time display
  *
@@ -10,7 +17,7 @@ var StartDates_Beta = (function(){
     'use strict';
 
     var hasNow = 0;
-    var displayed = 0;
+    State.remove('is_start_dates_displayed');
 
     var compareStartDate = function(a,b) {
         if (a.date < b.date)
@@ -82,41 +89,29 @@ var StartDates_Beta = (function(){
                         }
                         option.appendChild(content);
                         fragment.appendChild(option);
-                    } 
+                    }
                     a.add(5, 'minutes');
                 }
             });
             target.appendChild(fragment);
             Defaults.set('date_start', target.value);
-            displayed = 1;
+            State.set('is_start_dates_displayed', true);
             if(first){
-                TradingEvents_Beta.onStartDateChange(first);            
+                Durations_Beta.onStartDateChange(first);
             }
         } else {
-            displayed = 0;
+            State.remove('is_start_dates_displayed');
             document.getElementById('date_start_row').style.display = 'none';
             Defaults.remove('date_start');
         }
     };
 
-    var setNow = function(){
-        if(hasNow){
-            var element = getElement();
-            element.value = 'now';
-            $('#date_start').removeClass('light-yellow-background');
-            Defaults.set('date_start', 'now');
-        }
-    } ;
-
     return {
-        display  : displayStartDates,
-        node     : getElement,
-        setNow   : setNow,
-        displayed: function() { return displayed; },
-        disable  : function() { getElement().setAttribute('disabled', 'disabled'); },
-        enable   : function() { getElement().removeAttribute('disabled'); },
+        display: displayStartDates,
+        node   : getElement,
+        disable: function() { getElement().setAttribute('disabled', 'disabled'); },
+        enable : function() { getElement().removeAttribute('disabled'); },
     };
-
 })();
 
 module.exports = {

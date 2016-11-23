@@ -1,4 +1,5 @@
 var generateBirthDate = require('./attach_dom/birth_date_dropdown').generateBirthDate;
+var Cookies = require('../../lib/js-cookie');
 
 var CommonFunctions = (function() {
     var email_rot13 = function(str) {

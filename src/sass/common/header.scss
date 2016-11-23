@@ -99,15 +99,6 @@
             }
         }
     }
-    .main-nav {
-        > li > ul {
-            margin: -20px -1px;
-        }
-        .nav-caret {
-            @include BIDIR_PROP(right, left, -68px);
-            @include BIDIR_PROP(left, right, initial);
-        }
-    }
     .topMenuBalance {
         visibility: hidden;
     }

@@ -1,4 +1,7 @@
 var template = require('../base/utility').template;
+var moment   = require('moment');
+var dv       = require('../../lib/validation');
+var Content  = require('./content').Content;
 
 var ValidateV2 = (function() {
     function err() {

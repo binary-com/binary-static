@@ -1,5 +1,6 @@
 var template = require('../../base/utility').template;
 var Validate = require('../../common_functions/validation').Validate;
+var Content  = require('../../common_functions/content').Content;
 
 var ForwardWS = (function() {
   function init() {
@@ -77,6 +78,7 @@ var ForwardWS = (function() {
                 ForwardWS.init();
                 if (response.cashier_password === 1) {
                   ForwardWS.showMessage('cashier-locked-message');
+                  sessionStorage.setItem('cashier_lock_redirect', window.location.href);
                 } else {
                   var cashier_type = ForwardWS.getCashierType();
                   if (cashier_type === 'withdraw') {

@@ -158,7 +158,6 @@ sub tt2_handle {
     $stash{javascript}       = js_config();
     $stash{css_files}        = [css_files()];
     $stash{iso639a_language} = $request->language;
-    $stash{icon_url}         = $request->url_for('images/common/favicon_1.ico');
     $stash{lang}             = $request->language;
     $stash{menu}             = menu();
     $stash{is_japan}         = 1 if index($stash{current_path}, 'jp_trading') > -1;

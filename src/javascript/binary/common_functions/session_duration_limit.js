@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 var SessionDurationLimit = (function() {
     'use strict';
 

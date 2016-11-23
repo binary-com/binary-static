@@ -1,3 +1,17 @@
+var TradingAnalysis = require('./analysis').TradingAnalysis;
+var Barriers        = require('./barriers').Barriers;
+var Contract        = require('./contract').Contract;
+var Defaults        = require('./defaults').Defaults;
+var Durations       = require('./duration').Durations;
+var TradingEvents   = require('./event').TradingEvents;
+var Price           = require('./price').Price;
+var Purchase        = require('./purchase').Purchase;
+var StartDates      = require('./starttime').StartDates;
+var Symbols         = require('./symbols').Symbols;
+var Tick            = require('./tick').Tick;
+var WSTickDisplay   = require('./tick_trade').WSTickDisplay;
+var State = require('../../base/storage').State;
+
 /*
  * This function process the active symbols to get markets
  * and underlying list
@@ -100,7 +114,7 @@ function processContract(contracts) {
         contracts_list.style.display = 'none';
         message_container.hide();
         confirmation_error.show();
-        confirmation_error.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="TradePage.reload();">' + page.text.localize('Please reload the page') + '</a>';
+        confirmation_error.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="sessionStorage.removeItem(\'underlying\'); window.location.reload();">' + page.text.localize('Please reload the page') + '</a>';
         return;
     }
 
@@ -158,8 +172,8 @@ function processContractForm() {
     displaySpreads();
 
     var r1;
-    if (StartDates.displayed() && Defaults.get('date_start') && Defaults.get('date_start') !== 'now') {
-        r1 = TradingEvents.onStartDateChange(Defaults.get('date_start'));
+    if (State.get('is_start_dates_displayed') && Defaults.get('date_start') && Defaults.get('date_start') !== 'now') {
+        r1 = Durations.onStartDateChange(Defaults.get('date_start'));
         if (!r1 || Defaults.get('expiry_type') === 'endtime') Durations.display();
     } else {
         Durations.display();
