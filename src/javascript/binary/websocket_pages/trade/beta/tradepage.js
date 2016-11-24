@@ -4,6 +4,7 @@ var Message_Beta         = require('./message').Message_Beta;
 var Price_Beta           = require('./price').Price_Beta;
 var displayCurrencies = require('../currency').displayCurrencies;
 var Defaults          = require('../defaults').Defaults;
+var Notifications     = require('../notifications').Notifications;
 var Symbols           = require('../symbols').Symbols;
 var Content         = require('../../../common_functions/content').Content;
 var Guide           = require('../../../common_functions/guide').Guide;
@@ -33,6 +34,9 @@ var TradePage_Beta = (function(){
     BinarySocket.init({
       onmessage: function(msg){
         Message_Beta.process(msg);
+      },
+      onopen: function() {
+        Notifications.hide('CONNECTION_ERROR');
       }
     });
     Price_Beta.clearFormId();
@@ -80,10 +84,18 @@ var TradePage_Beta = (function(){
     chartFrameCleanup();
   };
 
+  var onDisconnect = function() {
+    showPriceOverlay();
+    showFormOverlay();
+    chartFrameCleanup();
+    onLoad();
+  };
+
   return {
-    onLoad: onLoad,
-    reload: reload,
-    onUnload : onUnload,
+    onLoad      : onLoad,
+    reload      : reload,
+    onUnload    : onUnload,
+    onDisconnect: onDisconnect,
   };
 })();
 

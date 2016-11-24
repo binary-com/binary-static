@@ -8,6 +8,7 @@ var JapanPortfolio = require('../../../binary_japan/trade_japan/portfolio').Japa
 var State = require('../../base/storage').State;
 var Content = require('../../common_functions/content').Content;
 var MBProcess = require('./mb_process').MBProcess;
+var MBNotifications = require('./mb_notifications').MBNotifications;
 
 var MBTradePage = (function(){
 
@@ -22,6 +23,9 @@ var MBTradePage = (function(){
     BinarySocket.init({
       onmessage: function(msg){
         MBMessage.process(msg);
+      },
+      onopen: function() {
+        MBNotifications.hide('CONNECTION_ERROR');
       }
     });
 
@@ -63,10 +67,17 @@ var MBTradePage = (function(){
     BinarySocket.clear();
   };
 
+  var onDisconnect = function() {
+    MBPrice.showPriceOverlay();
+    chartFrameCleanup();
+    onLoad();
+  };
+
   return {
-    onLoad   : onLoad,
-    reload   : reload,
-    onUnload : onUnload,
+    onLoad      : onLoad,
+    reload      : reload,
+    onUnload    : onUnload,
+    onDisconnect: onDisconnect,
   };
 })();
 

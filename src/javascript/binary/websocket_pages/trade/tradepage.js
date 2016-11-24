@@ -3,6 +3,7 @@ var displayCurrencies = require('./currency').displayCurrencies;
 var Defaults          = require('./defaults').Defaults;
 var TradingEvents     = require('./event').TradingEvents;
 var Message           = require('./message').Message;
+var Notifications     = require('./notifications').Notifications;
 var Price             = require('./price').Price;
 var Symbols           = require('./symbols').Symbols;
 var Content         = require('../../common_functions/content').Content;
@@ -30,6 +31,9 @@ var TradePage = (function(){
     BinarySocket.init({
       onmessage: function(msg){
         Message.process(msg);
+      },
+      onopen: function() {
+        Notifications.hide('CONNECTION_ERROR');
       }
     });
     Price.clearFormId();
@@ -76,10 +80,18 @@ var TradePage = (function(){
     chartFrameCleanup();
   };
 
+  var onDisconnect = function() {
+    showPriceOverlay();
+    showFormOverlay();
+    chartFrameCleanup();
+    onLoad();
+  };
+
   return {
-    onLoad: onLoad,
-    reload: reload,
-    onUnload : onUnload,
+    onLoad      : onLoad,
+    reload      : reload,
+    onUnload    : onUnload,
+    onDisconnect: onDisconnect,
   };
 })();
 

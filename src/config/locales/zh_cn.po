@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-11 04:11+0000\n"
+"PO-Revision-Date: 2016-11-21 02:56+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.9\n"
+"X-Generator: Weblate 2.10-dev\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -5020,10 +5020,8 @@ msgstr "请选择支付代理"
 msgid "Please select a valid date"
 msgstr "请选择ั有效日期"
 
-#, fuzzy
-#| msgid "Please select a value."
 msgid "Please select a value"
-msgstr "请选择一个数值。"
+msgstr "请选择一个数值"
 
 msgid "Please select at least one scope"
 msgstr "请选择至少一个范围"
@@ -8020,6 +8018,11 @@ msgstr "跳动点"
 msgid "to your account."
 msgstr "入您的账户。"
 
+#, fuzzy
+#| msgid "Today"
+msgid "today"
+msgstr "今天"
+
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "使用或转载%1 API（除非这些条款允许）或"
 
@@ -9066,6 +9069,9 @@ msgstr "风格"
 
 msgid "Endpoint"
 msgstr "终结点"
+
+msgid "Careers For Americans"
+msgstr ""
 
 msgid "Job Details"
 msgstr "工作详情"

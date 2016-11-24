@@ -1,5 +1,3 @@
-require('../../../lib/jquery-scrollto-1.4.3.1-min');
-
 /*
  * Notifications manages various notification messages
  *
