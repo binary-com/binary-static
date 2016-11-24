@@ -286,7 +286,7 @@ WSTickDisplay.dispatch = function(data) {
       ViewPopupUI.storeSubscriptionID(window.responseID);
   }
 
-  var epoches, spots2, display_decimals;
+  var ticks, display_decimals;
   if (document.getElementById('sell_content_wrapper')) {
     if (data.tick && document.getElementById('sell_content_wrapper')) {
       Tick.details(data);
