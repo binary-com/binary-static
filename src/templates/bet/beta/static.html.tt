@@ -57,7 +57,7 @@
                                         </div>
                                         <div class="big-col">
                                             <div id="expiry_type_duration">
-                                                <input id="duration_amount" type="number" class="small_width_input" autocomplete="off" />
+                                                <input id="duration_amount" class="small_width_input" autocomplete="off" />
                                                 <label></label>
                                                 <select id="duration_units" class="medium_width_input"></select>
                                                 <span id="duration_tooltip_wrapper">
@@ -67,8 +67,8 @@
                                                 </span>
                                             </div>
                                             <div id="expiry_type_endtime">
-                                                <input id="expiry_date" readonly="readonly" type="text" class="pickadate" autocomplete="off" />
-                                                <input id="expiry_time" type="text" class="pickatime" autocomplete="off" />
+                                                <input id="expiry_date" readonly="readonly" type="text" autocomplete="off" />
+                                                <input id="expiry_time" readonly="readonly" type="text" autocomplete="off" />
                                             </div>
                                         </div>
                                     </div>

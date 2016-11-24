@@ -2,7 +2,7 @@ var Durations  = require('./duration').Durations;
 var StartDates = require('./starttime').StartDates;
 var Content      = require('../../common_functions/content').Content;
 var format_money = require('../../common_functions/currency_to_symbol').format_money;
-var moment = require('moment');
+var StringUtil = require('../../common_functions/string_util').StringUtil;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -78,7 +78,7 @@ var Price = (function() {
             proposal['duration_unit'] = durationUnit.value;
         } else if (expiryType && isVisible(expiryType) && expiryType.value === 'endtime') {
             var endDate2 = endDate.value;
-            var endTime2 = Durations.getTime();
+            var endTime2 = Durations.getTime() || '23:59:59';
             if (!endTime2) {
                 var trading_times = Durations.trading_times();
                 if (trading_times.hasOwnProperty(endDate2) && typeof trading_times[endDate2][underlying.value] === 'object' && trading_times[endDate2][underlying.value].length && trading_times[endDate2][underlying.value][0] !== '--') {
@@ -89,7 +89,7 @@ var Price = (function() {
                 }
             }
 
-            proposal['date_expiry'] = moment.utc(endDate2 + " " + endTime2).unix();
+            proposal['date_expiry'] = StringUtil.dateToUnixWithTime(endDate2, endTime2);
             // For stopping tick trade behaviour
             proposal['duration_unit'] = "m";
         }

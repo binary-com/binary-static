@@ -153,6 +153,10 @@ sub _texts {
         push @texts, localize('Th');
         push @texts, localize('Fr');
         push @texts, localize('Sa');
+        push @texts, localize('Hour');
+        push @texts, localize('Minute');
+        push @texts, localize('AM');
+        push @texts, localize('PM');
         push @texts, localize('This contract won');
         push @texts, localize('This contract lost');
         push @texts, localize('Loss');

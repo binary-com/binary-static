@@ -1,7 +1,7 @@
 var moment = require('moment');
 
-DatePicker = function(component_id, select_type) {
-    this.component_id = component_id;
+DatePicker = function(component_selector, select_type) {
+    this.component_selector = component_selector;
     this.select_type = (typeof select_type === "undefined") ? "date" : select_type;
 
     this.localizations = {};
@@ -11,22 +11,24 @@ DatePicker = function(component_id, select_type) {
 
     this.localizations.dayNames = [page.text.localize('Sunday'), page.text.localize('Monday'), page.text.localize('Tuesday'), page.text.localize('Wednesday'), page.text.localize('Thursday'), page.text.localize('Friday'), page.text.localize('Saturday')];
 
+    this.localizations.dayNamesMin = [page.text.localize('Su'), page.text.localize('Mo'), page.text.localize('Tu'), page.text.localize('We'), page.text.localize('Th'), page.text.localize('Fr'), page.text.localize('Sa')];
+
     this.localizations.nextText = page.text.localize('Next');
     this.localizations.prevText = page.text.localize('Previous');
 };
 
 DatePicker.prototype = {
-    show: function(max_days) {
-        this.create(this.config(max_days));
+    show: function(min_day, max_days, setValue) {
+        this.create(this.config(min_day, max_days, setValue));
     },
     hide: function() {
-        if($('#' + this.component_id + '.hasDatepicker').length > 0)
-            $('#' + this.component_id).datepicker('destroy');
-        $('#' + this.component_id).off('keydown');
+        if($(this.component_selector + '.hasDatepicker').length > 0)
+            $(this.component_selector).datepicker('destroy');
+        $(this.component_selector).off('keydown');
     },
     create: function(config) {
         var that = this;
-        $('#' + this.component_id).keydown(function(e) {
+        $(this.component_selector).keydown(function(e) {
                 if(e.which == 13) {
                     e.preventDefault();
                     e.stopPropagation();
@@ -45,22 +47,33 @@ DatePicker.prototype = {
         // from the DOM and use our own one.
         $('button.ui-datepicker-trigger').remove();
     },
-    config: function(max_days) {
-        max_days = (typeof max_days == "undefined") ? 365 : max_days;
+    config: function(min_day, max_days, setValue) {
         var today = new Date();
-        var next_year = new Date();
-        next_year.setDate(today.getDate() + max_days);
 
         var config = {
-            dateFormat: 'yy-mm-dd',
+            dateFormat: 'dd M, yy',
             monthNames: this.localizations.monthNames,
             monthNamesShort: this.localizations.monthNamesShort,
             dayNames: this.localizations.dayNames,
+            dayNamesMin: this.localizations.dayNamesMin,
             nextText: this.localizations.nextText,
             prevText: this.localizations.prevText,
-            minDate: today,
-            maxDate: next_year,
+            changeMonth: true,
+            changeYear: true,
         };
+
+        if (min_day) {
+            config.minDate = min_day === 'today' ? today : min_day;
+        }
+
+        if (max_days) {
+            max_days = (typeof max_days == "undefined") ? 365 : max_days;
+            var next_year = new Date();
+            next_year.setDate(today.getDate() + Number(max_days));
+            config.maxDate = next_year;
+        }
+
+        this.setValue = setValue;
 
         var that = this;
         config.onSelect = function(date_text) {
@@ -69,10 +82,15 @@ DatePicker.prototype = {
                 var selected_date = moment.utc(date_text + " 23:59:59");
                 var duration  = selected_date.diff(today, 'days');
                 $(this).val(duration);
-                $(that).trigger("change", [ duration ]);
+                $(that.component_selector).trigger("change", [ duration ]);
             } else if(that.select_type == "date") {
-                $(this).val(date_text);
-                $(that).trigger("change", [ date_text ]);
+                if (that.setValue == "attr") {
+                    $(this).attr('data-value', date_text);
+                    $(this).val('');
+                } else {
+                    $(this).val(date_text);
+                }
+                $(that.component_selector).trigger("change", [ date_text ]);
             }
         };
 

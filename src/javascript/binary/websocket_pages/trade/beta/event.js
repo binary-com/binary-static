@@ -1,13 +1,14 @@
-var TradingAnalysis_Beta = require('./analysis').TradingAnalysis_Beta;
-var Barriers_Beta        = require('./barriers').Barriers_Beta;
-var Contract_Beta        = require('./contract').Contract_Beta;
-var Durations_Beta       = require('./duration').Durations_Beta;
-var Price_Beta           = require('./price').Price_Beta;
-var StartDates_Beta      = require('./starttime').StartDates_Beta;
-var Defaults = require('../defaults').Defaults;
-var Tick     = require('../tick').Tick;
+var TradingAnalysis_Beta  = require('./analysis').TradingAnalysis_Beta;
+var Barriers_Beta         = require('./barriers').Barriers_Beta;
+var Contract_Beta         = require('./contract').Contract_Beta;
+var Durations_Beta        = require('./duration').Durations_Beta;
+var Price_Beta            = require('./price').Price_Beta;
+var StartDates_Beta       = require('./starttime').StartDates_Beta;
+var Defaults              = require('../defaults').Defaults;
+var Tick                  = require('../tick').Tick;
 var onlyNumericOnKeypress = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
-var moment = require('moment');
+var moment                = require('moment');
+var TimePicker            = require('../../../components/time_picker').TimePicker;
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -30,7 +31,7 @@ var TradingEvents_Beta = (function () {
         if(value === 'endtime'){
             Durations_Beta.displayEndTime();
             if(Defaults.get('expiry_date')){
-                Durations_Beta.selectEndDate(Defaults.get('expiry_date'));
+                Durations_Beta.selectEndDate(Defaults.get('expiry_date').replace(/%20/g, ' '));
                 make_price_request = -1;
             }
             Defaults.remove('duration_units', 'duration_amount');
@@ -506,22 +507,18 @@ var TradingEvents_Beta = (function () {
          * attach datepicker and timepicker to end time durations
          * have to use jquery
          */
-        $(".pickadate").datepicker({
-            minDate: new Date(),
-            dateFormat: "yy-mm-dd"
-        });
-        $(".pickatime" ).on('focus', function() {
-            var date_start = document.getElementById('date_start').value;
-            var now = !date_start || date_start === 'now';
-            var current_moment = moment((now ? window.time : parseInt(date_start) * 1000)).utc();
-            $(this).timepicker('destroy').timepicker({
-                minTime: {
-                    hour: current_moment.format('HH'),
-                    minute: current_moment.format('mm')
-                }
-            });
-        });
+         attachTimePicker();
+         $("#expiry_time").on('focus, click', attachTimePicker);
     };
+
+    function attachTimePicker() {
+        var timePickerInst = new TimePicker('#expiry_time');
+        var date_start = document.getElementById('date_start').value;
+        var now = !date_start || date_start === 'now';
+        var current_moment = now ? window.time : parseInt(date_start) * 1000;
+        timePickerInst.hide();
+        timePickerInst.show(current_moment);
+    }
 
     return {
         init: initiate,

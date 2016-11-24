@@ -11,6 +11,22 @@ var StringUtil = (function(){
         return [date.getDate(), date.getMonth()+1, date.getFullYear()].join("/");
     }
 
+    function dateToStringWithoutTimeDash(date){
+        date = new Date(date);
+        return [date.getFullYear(), ('0' + (date.getMonth()+1)).slice(-2), ('0' + date.getDate()).slice(-2)].join("-");
+    }
+
+    function dateToUnixWithTime(date, time){
+        date = new Date(date + ' ' + time);
+        var year = date.getFullYear(),
+            month = ('0' + date.getMonth()).slice(-2),
+            day = ('0' + date.getDate()).slice(-2),
+            hour = date.getHours(),
+            minute = date.getMinutes(),
+            second = date.getSeconds();
+        return (Date.UTC(year, month, day, hour, minute, second) / 1000).toFixed(0);
+    }
+
     //Time should be in SECOND !!!
     function timeStampToDateString(time){
         var dateObj = new Date(time * 1000);
@@ -37,7 +53,9 @@ var StringUtil = (function(){
         dateToStringWithoutTime: dateToStringWithoutTime,
         unixTimeToDateString: timeStampToDateString,
         unixTimeToTimeString: timeStampToTimeString,
-        unixTimeToDateTimeString: timeStampToDateTimeString
+        unixTimeToDateTimeString: timeStampToDateTimeString,
+        dateToStringWithoutTimeDash: dateToStringWithoutTimeDash,
+        dateToUnixWithTime: dateToUnixWithTime,
     };
 
     return external;

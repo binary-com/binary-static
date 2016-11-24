@@ -1,7 +1,4 @@
 var MenuContent = require('./menu_content').MenuContent;
-var attach_date_picker = require('./utility').attach_date_picker;
-var attach_time_picker = require('./utility').attach_time_picker;
-var attach_tabs = require('./utility').attach_tabs;
 var moment = require('moment');
 var pjax   = require('../../lib/pjax-lib');
 
@@ -211,12 +208,6 @@ onLoad.queue(function () {
         }
     }
 
-});
-
-onLoad.queue(function () {
-    attach_date_picker('.has-date-picker');
-    attach_time_picker('.has-time-picker');
-    attach_tabs('.has-tabs');
 });
 
 

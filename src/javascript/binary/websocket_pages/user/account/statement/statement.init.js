@@ -1,10 +1,11 @@
 var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
-var StatementUI = require('./statement.ui').StatementUI;
-var addTooltip      = require('../../../../common_functions/get_app_details').addTooltip;
-var buildOauthApps  = require('../../../../common_functions/get_app_details').buildOauthApps;
-var Content         = require('../../../../common_functions/content').Content;
-var japanese_client = require('../../../../common_functions/country_base').japanese_client;
-var moment = require('moment');
+var StatementUI          = require('./statement.ui').StatementUI;
+var addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;
+var buildOauthApps       = require('../../../../common_functions/get_app_details').buildOauthApps;
+var Content              = require('../../../../common_functions/content').Content;
+var japanese_client      = require('../../../../common_functions/country_base').japanese_client;
+var moment               = require('moment');
+var DatePicker           = require('../../../../components/date_picker').DatePicker;
 
 var StatementWS = (function(){
     "use strict";
@@ -144,16 +145,16 @@ var StatementWS = (function(){
     }
 
     var attachDatePicker = function() {
-        $('#jump-to').val(page.text.localize('Today'))
-            .datepicker({
-                dateFormat: 'yy-mm-dd',
-                maxDate   : moment().toDate(),
-                onSelect  : function() {
-                    $('.table-container').remove();
-                    StatementUI.clearTableContent();
-                    StatementWS.init();
-                }
-            });
+        var jumpTo = '#jump-to',
+            datePickerInst = new DatePicker(jumpTo);
+        datePickerInst.hide();
+        datePickerInst.show('', '0');
+        $(jumpTo).val(page.text.localize('Today'))
+                 .change(function() {
+                     $('.table-container').remove();
+                     StatementUI.clearTableContent();
+                     StatementWS.init();
+                 });
     };
 
     function initSocket(){
@@ -180,7 +181,7 @@ var StatementWS = (function(){
         }
         var jump_to = $('#jump-to').val();
         if (jump_to !== '' && jump_to !== page.text.localize('Today')) {
-            req.date_to = Math.floor((moment.utc(jump_to).valueOf() / 1000)) +
+            req.date_to = Math.floor((moment.utc(new Date(jump_to)).valueOf() / 1000)) +
                           ((japanese_client() ? 15 : 24) * (60*60));
             req.date_from = 0;
         }
