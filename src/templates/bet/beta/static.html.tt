@@ -1,6 +1,6 @@
 <div id="trading_socket_container_beta" class="tab-menu-wrap gr-row">
     <div class="gr-12">
-        <p id="markets_closed_msg" class="notice-msg center hidden">[% l('All markets are closed now. Please try again later.') %]</p>
+        <div id="notifications_wrapper"></div>
         <div id="loading_container" class="overlay_container"></div>
 
         <div class="gr-row" id="contract_symbol_container">

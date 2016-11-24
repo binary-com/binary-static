@@ -1,6 +1,7 @@
 var TradingAnalysis_Beta = require('./analysis').TradingAnalysis_Beta;
 var Purchase_Beta        = require('./purchase').Purchase_Beta;
 var displayCurrencies = require('../currency').displayCurrencies;
+var Notifications     = require('../notifications').Notifications;
 var Symbols           = require('../symbols').Symbols;
 var Tick              = require('../tick').Tick;
 var AssetIndexUI  = require('../../resources/asset_index/asset_indexws.ui').AssetIndexUI;
@@ -30,6 +31,7 @@ var Message_Beta = (function () {
                 AssetIndexUI.setActiveSymbols(response);
                 MarketTimesUI.setActiveSymbols(response);
             } else if (type === 'contracts_for') {
+                Notifications.hide('CONNECTION_ERROR');
                 processContract_Beta(response);
                 window.contracts_for = response;
             } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && (!response.echo_req.hasOwnProperty('passthrough') || !response.echo_req.passthrough.hasOwnProperty('handler'))) {
