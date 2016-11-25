@@ -74,9 +74,10 @@ var Tick = (function() {
     };
 
     var get_tick = function(epoch) {
-        return spots.find(function(spot) {
+        var result = spots.filter(function(spot) {
             return spot.epoch === epoch;
         });
+        return result.length > 0 ? result[0] : null;
     };
 
     var sort_spots = function() {
