@@ -17,7 +17,9 @@ var State = require('../base/storage').State;
 var Highchart     = require('./trade/charts/highchartws').Highchart;
 var WSTickDisplay = require('./trade/tick_trade').WSTickDisplay;
 var TradePage      = require('./trade/tradepage').TradePage;
+var Notifications  = require('./trade/notifications').Notifications;
 var TradePage_Beta = require('./trade/beta/tradepage').TradePage_Beta;
+var MBTradePage    = require('./mb_trade/mb_tradepage').MBTradePage;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
@@ -44,13 +46,11 @@ function BinarySocketClass() {
         wrongAppId = 0,
         socketUrl = getSocketURL() + '?app_id=' + getAppId() + (page.language() ? '&l=' + page.language() : '');
 
-    var clearTimeouts = function(){
-        for(var k in timeouts){
-            if(timeouts.hasOwnProperty(k)){
-                clearTimeout(timeouts[k]);
-                delete timeouts[k];
-            }
-        }
+    var clearTimeouts = function() {
+        Object.keys(timeouts).forEach(function(key) {
+            clearTimeout(timeouts[key]);
+            delete timeouts[key];
+        });
     };
 
     var isReady = function () {
@@ -87,6 +87,11 @@ function BinarySocketClass() {
                         $('.price_container').hide();
                     }
                 }, 60*1000);
+            } else if (data.contracts_for && !data.passthrough.hasOwnProperty('dispatch_to') && State.get('is_mb_trading')) {
+                data.passthrough.req_number = ++req_number;
+                timeouts[req_number] = setTimeout(function() {
+                    MBTradePage.onDisconnect();
+                }, 10*1000);
             }
 
             binarySocket.send(JSON.stringify(data));
@@ -333,11 +338,14 @@ function BinarySocketClass() {
             clearTimeouts();
 
             if(!manualClosed && wrongAppId !== getAppId()) {
-                if (State.get('is_trading') || State.get('is_beta_trading')) {
-                    showPriceOverlay();
-                    showFormOverlay();
-                    if (State.get('is_trading')) TradePage.onLoad();
-                    else TradePage_Beta.onLoad();
+                var toCall = State.get('is_trading')      ? TradePage.onDisconnect      :
+                             State.get('is_beta_trading') ? TradePage_Beta.onDisconnect :
+                             State.get('is_mb_trading')   ? MBTradePage.onDisconnect    : '';
+                if (toCall) {
+                    Notifications.show({text: page.text.localize('Connection error: Please check your internet connection.'), uid: 'CONNECTION_ERROR', dismissible: true});
+                    timeouts.error = setTimeout(function() {
+                        toCall();
+                    }, 10*1000);
                 } else {
                     init(1);
                 }

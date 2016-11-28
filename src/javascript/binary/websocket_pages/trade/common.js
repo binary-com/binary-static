@@ -1,7 +1,8 @@
-var Contract = require('./contract').Contract;
-var Defaults = require('./defaults').Defaults;
-var Symbols  = require('./symbols').Symbols;
-var Tick     = require('./tick').Tick;
+var Contract      = require('./contract').Contract;
+var Defaults      = require('./defaults').Defaults;
+var Notifications = require('./notifications').Notifications;
+var Symbols       = require('./symbols').Symbols;
+var Tick          = require('./tick').Tick;
 var Contract_Beta = require('./beta/contract').Contract_Beta;
 var objectNotEmpty = require('../../base/utility').objectNotEmpty;
 var Content         = require('../../common_functions/content').Content;
@@ -193,7 +194,7 @@ function displayMarkets(id, elements, selected) {
          }
 
          if(current.disabled) { // there is no open market
-            document.getElementById('markets_closed_msg').classList.remove('hidden');
+            Notifications.show({text: page.text.localize('All markets are closed now. Please try again later.'), uid: 'MARKETS_CLOSED'});
             document.getElementById('trading_init_progress').style.display = 'none';
          }
      }
