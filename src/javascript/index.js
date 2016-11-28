@@ -32,7 +32,6 @@ require('jquery.scrollto');
 require('./binary/components/trackjs_onerror');
 
 exportAllFunctions(require('./binary/base/logged_in'));
-exportAllFunctions(require('./binary/base/onerror'));
 exportAllFunctions(require('./binary/base/page'));
 exportAllFunctions(require('./binary/base/pjax'));
 
@@ -43,10 +42,6 @@ exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_price'));
 exportAllFunctions(require('./binary/websocket_pages/trade/common'));
 exportAllFunctions(require('./binary/websocket_pages/trade/process'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/process'));
-
-exportAllFunctions(require('./binary/websocket_pages/user/reality_check/reality_check.data'));
-exportAllFunctions(require('./binary/websocket_pages/user/reality_check/reality_check.init'));
-exportAllFunctions(require('./binary/websocket_pages/user/reality_check/reality_check.ui'));
 
 exportAllFunctions(require('./binary/websocket_pages/websocket_pjax'));
 exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.data'));

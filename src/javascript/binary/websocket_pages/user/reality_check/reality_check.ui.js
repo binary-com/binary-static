@@ -1,5 +1,6 @@
 var showLocalTimeOnHover = require('../../../base/utility').showLocalTimeOnHover;
 var onlyNumericOnKeypress = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
+var RealityCheckData = require('./reality_check.data').RealityCheckData;
 require('../../../../lib/polyfills/array.includes');
 require('../../../../lib/polyfills/string.includes');
 
@@ -41,14 +42,14 @@ var RealityCheckUI = (function () {
                     var payload = $(realityCheckText);
                     showPopUp(payload.find('#reality-check-content'));
                     showIntervalOnPopUp();
-                    $('#continue').click(RealityCheck.onContinueClick);
+                    $('#continue').click(RealityCheckUI.onContinueClick);
                 }
             },
             error: function(xhr) {
                 return;
             }
         });
-        $('#continue').click(RealityCheck.onContinueClick);
+        $('#continue').click(RealityCheckUI.onContinueClick);
     }
 
     function updateSummary(summary) {
@@ -82,8 +83,8 @@ var RealityCheckUI = (function () {
                     showPopUp(payload.find('#reality-check-content'));
                     updateSummary(summary);
                     showIntervalOnPopUp();
-                    $('#continue').click(RealityCheck.onContinueClick);
-                    $('button#btn_logout').click(RealityCheck.onLogoutClick);
+                    $('#continue').click(RealityCheckUI.onContinueClick);
+                    $('button#btn_logout').click(RealityCheckUI.onLogoutClick);
                 }
             },
             error: function(xhr) {
@@ -110,7 +111,48 @@ var RealityCheckUI = (function () {
 
     function closePopUp() {
         $('#reality-check').remove();
-        RealityCheck.sendAccountStatus();
+        RealityCheckUI.sendAccountStatus();
+    }
+
+    function onContinueClick() {
+        var intervalMinute = +($('#realityDuration').val());
+
+        if (!(Math.floor(intervalMinute) == intervalMinute && $.isNumeric(intervalMinute))) {
+            var shouldBeInteger = page.text.localize('Interval should be integer.');
+            $('#rc-err').text(shouldBeInteger);
+            $('#rc-err').removeClass(hiddenClass);
+            return;
+        }
+
+        if (intervalMinute < 10 || intervalMinute > 120) {
+            var minimumValueMsg = Content.errorMessage('number_should_between', '10 to 120');
+            $('#rc-err').text(minimumValueMsg);
+            $('#rc-err').removeClass(hiddenClass);
+            return;
+        }
+
+        var intervalMs = intervalMinute * 60 * 1000;
+        RealityCheckData.updateInterval(intervalMs);
+        RealityCheckData.triggerCloseEvent();
+        RealityCheckData.updateAck();
+        RealityCheckUI.closePopUp();
+        startSummaryTimer();
+        sendAccountStatus();
+    }
+
+    function onLogoutClick() {
+        logout();
+    }
+
+    function logout() {
+        BinarySocket.send({"logout": "1"});
+    }
+
+    function sendAccountStatus() {
+      if (!page.client.is_virtual() && page.client.residence !== 'jp' && !getAccountStatus) {
+        BinarySocket.send({get_account_status: 1});
+        getAccountStatus = true;
+      }
     }
 
     return {
@@ -118,7 +160,10 @@ var RealityCheckUI = (function () {
         summaryEventHandler: summaryEventHandler,
         renderFrequencyPopUp: renderFrequencyPopUp,
         renderSummaryPopUp: renderSummaryPopUp,
-        closePopUp: closePopUp
+        closePopUp: closePopUp,
+        onContinueClick: onContinueClick,
+        onLogoutClick: onLogoutClick,
+        sendAccountStatus: sendAccountStatus,
     };
 }());
 

@@ -1,4 +1,6 @@
 var Content = require('../../../common_functions/content').Content;
+var RealityCheckUI = require('./reality_check.ui').RealityCheckUI;
+var RealityCheckData = require('./reality_check.data').RealityCheckData;
 
 var RealityCheck = (function () {
     'use strict';
@@ -14,7 +16,7 @@ var RealityCheck = (function () {
         initializeValues();
         if ($.isEmptyObject(response.reality_check)) {
             // not required for reality check
-            sendAccountStatus();
+            RealityCheckUI.sendAccountStatus();
             return;
         }
 
@@ -48,52 +50,11 @@ var RealityCheck = (function () {
         }
     }
 
-    function onContinueClick() {
-        var intervalMinute = +($('#realityDuration').val());
-
-        if (!(Math.floor(intervalMinute) == intervalMinute && $.isNumeric(intervalMinute))) {
-            var shouldBeInteger = page.text.localize('Interval should be integer.');
-            $('#rc-err').text(shouldBeInteger);
-            $('#rc-err').removeClass(hiddenClass);
-            return;
-        }
-
-        if (intervalMinute < 10 || intervalMinute > 120) {
-            var minimumValueMsg = Content.errorMessage('number_should_between', '10 to 120');
-            $('#rc-err').text(minimumValueMsg);
-            $('#rc-err').removeClass(hiddenClass);
-            return;
-        }
-
-        var intervalMs = intervalMinute * 60 * 1000;
-        RealityCheckData.updateInterval(intervalMs);
-        RealityCheckData.triggerCloseEvent();
-        RealityCheckData.updateAck();
-        RealityCheckUI.closePopUp();
-        startSummaryTimer();
-        sendAccountStatus();
-    }
-
-    function sendAccountStatus() {
-      if (!page.client.is_virtual() && page.client.residence !== 'jp' && !getAccountStatus) {
-        BinarySocket.send({get_account_status: 1});
-        getAccountStatus = true;
-      }
-    }
-
-    function onLogoutClick() {
-        logout();
-    }
-
-    function logout() {
-        BinarySocket.send({"logout": "1"});
-    }
-
     function init() {
         initializeValues();
         if (!page.client.require_reality_check()) {
             RealityCheckData.setPreviousLoadLoginId();
-            sendAccountStatus();
+            RealityCheckUI.sendAccountStatus();
             return;
         }
 
@@ -116,15 +77,12 @@ var RealityCheck = (function () {
         }
 
         RealityCheckData.setPreviousLoadLoginId();
-        sendAccountStatus();
+        RealityCheckUI.sendAccountStatus();
     }
 
     return {
         init: init,
-        onContinueClick: onContinueClick,
-        onLogoutClick: onLogoutClick,
         realityCheckWSHandler: realityCheckWSHandler,
-        sendAccountStatus: sendAccountStatus
     };
 }());
 
