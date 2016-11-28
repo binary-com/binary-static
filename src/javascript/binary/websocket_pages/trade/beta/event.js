@@ -1,13 +1,13 @@
-var TradingAnalysis_Beta = require('./analysis').TradingAnalysis_Beta;
-var Barriers_Beta        = require('./barriers').Barriers_Beta;
-var Contract_Beta        = require('./contract').Contract_Beta;
-var Durations_Beta       = require('./duration').Durations_Beta;
-var Price_Beta           = require('./price').Price_Beta;
-var StartDates_Beta      = require('./starttime').StartDates_Beta;
-var Defaults = require('../defaults').Defaults;
-var Tick     = require('../tick').Tick;
+var TradingAnalysis_Beta  = require('./analysis').TradingAnalysis_Beta;
+var Barriers_Beta         = require('./barriers').Barriers_Beta;
+var Contract_Beta         = require('./contract').Contract_Beta;
+var Durations_Beta        = require('./duration').Durations_Beta;
+var Price_Beta            = require('./price').Price_Beta;
+var StartDates_Beta       = require('./starttime').StartDates_Beta;
+var Defaults              = require('../defaults').Defaults;
+var Tick                  = require('../tick').Tick;
 var onlyNumericOnKeypress = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
-var moment = require('moment');
+var moment                = require('moment');
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -498,7 +498,7 @@ var TradingEvents_Beta = (function () {
         if(init_logo){
             tip.addEventListener('click', debounce( function (e) {
                 var url = e.target.getAttribute('target');
-                load_with_pjax(url);
+                page.load_with_pjax(url);
             }));
         }
 

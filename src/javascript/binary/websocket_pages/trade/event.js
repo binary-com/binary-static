@@ -1,13 +1,13 @@
-var TradingAnalysis = require('./analysis').TradingAnalysis;
-var Barriers        = require('./barriers').Barriers;
-var Contract        = require('./contract').Contract;
-var Defaults        = require('./defaults').Defaults;
-var Durations       = require('./duration').Durations;
-var Price           = require('./price').Price;
-var StartDates      = require('./starttime').StartDates;
-var Tick            = require('./tick').Tick;
+var TradingAnalysis       = require('./analysis').TradingAnalysis;
+var Barriers              = require('./barriers').Barriers;
+var Contract              = require('./contract').Contract;
+var Defaults              = require('./defaults').Defaults;
+var Durations             = require('./duration').Durations;
+var Price                 = require('./price').Price;
+var StartDates            = require('./starttime').StartDates;
+var Tick                  = require('./tick').Tick;
 var onlyNumericOnKeypress = require('../../common_functions/event_handler').onlyNumericOnKeypress;
-var moment = require('moment');
+var moment                = require('moment');
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -496,7 +496,7 @@ var TradingEvents = (function () {
         if(init_logo){
             tip.addEventListener('click', debounce( function (e) {
                 var url = e.target.getAttribute('target');
-                load_with_pjax(url);
+                page.load_with_pjax(url);
             }));
         }
 
