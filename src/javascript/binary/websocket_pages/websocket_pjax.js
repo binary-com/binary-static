@@ -31,7 +31,6 @@ var TNCApproval = require('./user/tnc_approval').TNCApproval;
 var TradePage      = require('./trade/tradepage').TradePage;
 var TradePage_Beta = require('./trade/beta/tradepage').TradePage_Beta;
 var MBTradePage    = require('./mb_trade/mb_tradepage').MBTradePage;
-var JPTradePage    = require('../../binary_japan/trade_japan/JPTradePage').JPTradePage;
 var ViewPopupWS = require('./user/view_popup/view_popupws').ViewPopupWS;
 
 pjax_config_page('/trading', function () {
@@ -52,13 +51,6 @@ pjax_config_page('/multi_barriers_trading', function () {
     return {
         onLoad: function(){MBTradePage.onLoad();},
         onUnload: function(){MBTradePage.onUnload();}
-    };
-});
-
-pjax_config_page('/jp_trading', function () {
-    return {
-        onLoad: function(){JPTradePage.onLoad();},
-        onUnload: function(){JPTradePage.onUnload();}
     };
 });
 

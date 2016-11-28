@@ -9,15 +9,6 @@ var exportAllFunctions = function exportAllFunctions(obj) {
 
 window.$ = window.jQuery = require('jquery');
 
-// ----- needed only for japanui -----
-// Polyfills
-window.Promise = window.Promise || require('promise-polyfill');
-window.Symbol = window.Symbol || require('es6-symbol');
-require('./lib/polyfills/object.assign');
-
-exportAllFunctions(require('./binary/websocket_pages/trade/analysis'));
-// ----- end of japanui required modules -----
-
 require('./lib/highstock/highstock.js');
 require('./lib/highstock/highstock-exporting.js');
 require('./lib/highstock/export-csv.js');
