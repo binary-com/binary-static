@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-11-24 06:11+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) "
-"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1864,6 +1863,11 @@ msgstr "Confirmation and understandings"
 
 msgid "Conflicts Policy"
 msgstr "冲突政策"
+
+#, fuzzy
+#| msgid "Connection error: Please view the progress at your portfolio page."
+msgid "Connection error: Please check your internet connection."
+msgstr "连接错误：请在您的组合页面查看进度。"
 
 msgid "Construction"
 msgstr "建筑"
@@ -18280,9 +18284,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Code"
 #~ msgstr "代码"
-
-#~ msgid "Connection error: Please view the progress at your portfolio page."
-#~ msgstr "连接错误：请在您的组合页面查看进度。"
 
 #~ msgid "End"
 #~ msgstr "结束"
