@@ -9,14 +9,12 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-11-23 14:46+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>"
-"\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.10-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -1867,6 +1865,11 @@ msgstr "Confirmation and understandings"
 
 msgid "Conflicts Policy"
 msgstr "Polityka dot. sporów"
+
+#, fuzzy
+#| msgid "Connection error: Please view the progress at your portfolio page."
+msgid "Connection error: Please check your internet connection."
+msgstr "Błąd połączenia: prosimy sprawdzić postęp na stronie swojego portfolio."
 
 msgid "Construction"
 msgstr "Budownictwo"
@@ -18339,9 +18342,6 @@ msgstr "Akceptacja regulaminu"
 
 #~ msgid "Code"
 #~ msgstr "Kod"
-
-#~ msgid "Connection error: Please view the progress at your portfolio page."
-#~ msgstr "Błąd połączenia: prosimy sprawdzić postęp na stronie swojego portfolio."
 
 #~ msgid "End"
 #~ msgstr "Koniec"
