@@ -16,6 +16,13 @@ var checkClientsCountry = require('../common_functions/country_base').checkClien
 var japanese_client = require('../common_functions/country_base').japanese_client;
 var FinancialAssessmentws = require('../websocket_pages/user/account/settings/financial_assessment').FinancialAssessmentws;
 var ViewBalance = require('../websocket_pages/user/viewbalance/viewbalance.init').ViewBalance;
+var CashierJP = require('../../binary_japan/cashier').CashierJP;
+var Cookies = require('../../lib/js-cookie');
+var moment  = require('moment');
+require('../../lib/polyfills/array.includes');
+require('../../lib/polyfills/string.includes');
+
+
 var clock_started = false;
 
 var SessionStore, LocalStore;
@@ -1340,21 +1347,15 @@ Page.prototype = {
         return span.append(ul.append(li1, li2));
     },
     show_notification_outdated_browser: function() {
-        var $buoop = {
-          vs: {i:10, f:39, o:30, s:5, c:39},
-          l: page.language().toLowerCase(),
-          url: 'https://whatbrowser.org/'
+        window.$buoop = {
+            vs: {i:11, f:-4, o:-4, s:9, c:-4},
+            api: 4,
+            l: page.language().toLowerCase(),
+            url: 'https://whatbrowser.org/'
         };
-        function $buo_f(){
-         var e = document.createElement("script");
-         e.src = "//browser-update.org/update.min.js";
-         document.body.appendChild(e);
-        }
-        try {
-          document.addEventListener("DOMContentLoaded", $buo_f,false);
-        } catch(e) {
-          window.attachEvent("onload", $buo_f);
-        }
+        $(document).ready(function() {
+            $('body').append($('<script/>', {src: '//browser-update.org/update.min.js'}));
+        });
     },
 };
 

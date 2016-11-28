@@ -28,6 +28,39 @@ var RealAccOpening = require('./user/new_account/real_acc_opening').RealAccOpeni
 var VirtualAccOpening = require('./user/new_account/virtual_acc_opening').VirtualAccOpening;
 var ResetPasswordWS = require('./user/reset_password').ResetPasswordWS;
 var TNCApproval = require('./user/tnc_approval').TNCApproval;
+var TradePage      = require('./trade/tradepage').TradePage;
+var TradePage_Beta = require('./trade/beta/tradepage').TradePage_Beta;
+var MBTradePage    = require('./mb_trade/mb_tradepage').MBTradePage;
+var JPTradePage    = require('../../binary_japan/trade_japan/JPTradePage').JPTradePage;
+var ViewPopupWS = require('./user/view_popup/view_popupws').ViewPopupWS;
+
+pjax_config_page('/trading', function () {
+    return {
+        onLoad: function(){if(/\/trading\.html/.test(window.location.pathname)) TradePage.onLoad();},
+        onUnload: function(){if(/\/trading\.html/.test(window.location.pathname)) TradePage.onUnload();}
+    };
+});
+
+pjax_config_page('/trading_beta', function () {
+    return {
+        onLoad: function(){TradePage_Beta.onLoad();},
+        onUnload: function(){TradePage_Beta.onUnload();}
+    };
+});
+
+pjax_config_page('/multi_barriers_trading', function () {
+    return {
+        onLoad: function(){MBTradePage.onLoad();},
+        onUnload: function(){MBTradePage.onUnload();}
+    };
+});
+
+pjax_config_page('/jp_trading', function () {
+    return {
+        onLoad: function(){JPTradePage.onLoad();},
+        onUnload: function(){JPTradePage.onUnload();}
+    };
+});
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
@@ -292,6 +325,18 @@ pjax_config_page_require_auth("tnc_approvalws", function() {
     return {
         onLoad: function() {
             TNCApproval.onLoad();
+        }
+    };
+});
+
+pjax_config_page("profit_tablews|statementws|portfoliows|trading", function() {
+    return {
+        onLoad: function() {
+            $('#profit-table-ws-container, #statement-ws-container, #portfolio-table, #contract_confirmation_container')
+                .on('click', '.open_contract_detailsws', function (e) {
+                    e.preventDefault();
+                    ViewPopupWS.init(this);
+                });
         }
     };
 });

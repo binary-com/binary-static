@@ -1,4 +1,5 @@
 var DatePicker = require('../date_picker').DatePicker;
+var moment = require('moment');
 
 DatePicker.SelectedDates = function(component_id, select_type) {
     this.component_id = component_id;

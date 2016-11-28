@@ -26,8 +26,6 @@ function done_typing(elem, config) {
     elem.addEventListener('keyup', up);
 };
 
-if (typeof module !== 'undefined') {
-    module.exports = {
-        done_typing: done_typing,
-    };
-}
+module.exports = {
+    done_typing: done_typing,
+};

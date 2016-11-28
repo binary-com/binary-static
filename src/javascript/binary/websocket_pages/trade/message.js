@@ -1,6 +1,13 @@
+var TradingAnalysis   = require('./analysis').TradingAnalysis;
+var displayCurrencies = require('./currency').displayCurrencies;
+var Notifications     = require('./notifications').Notifications;
+var Purchase          = require('./purchase').Purchase;
+var Symbols           = require('./symbols').Symbols;
+var Tick              = require('./tick').Tick;
 var PortfolioWS = require('../user/account/portfolio/portfolio.init').PortfolioWS;
 var ProfitTableWS = require('../user/account/profit_table/profit_table.init').ProfitTableWS;
 var StatementWS = require('../user/account/statement/statement.init').StatementWS;
+var State = require('../../base/storage').State;
 
 /*
  * This Message object process the response from server and fire
@@ -11,7 +18,7 @@ var Message = (function () {
 
     var process = function (msg) {
         var response = JSON.parse(msg.data);
-        if(!TradePage.is_trading_page()){
+        if(!State.get('is_trading')){
             forgetTradingStreams();
             return;
         }
@@ -20,6 +27,7 @@ var Message = (function () {
             if (type === 'active_symbols') {
                 processActiveSymbols(response);
             } else if (type === 'contracts_for') {
+                Notifications.hide('CONNECTION_ERROR');
                 processContract(response);
                 window.contracts_for = response;
             } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && (!response.echo_req.hasOwnProperty('passthrough') || !response.echo_req.passthrough.hasOwnProperty('handler'))) {

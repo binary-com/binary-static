@@ -12,6 +12,14 @@ var create_language_drop_down = require('../common_functions/attach_dom/language
 var TNCApproval = require('../websocket_pages/user/tnc_approval').TNCApproval;
 var ViewPopupWS = require('../websocket_pages/user/view_popup/view_popupws').ViewPopupWS;
 var ViewBalanceUI = require('../websocket_pages/user/viewbalance/viewbalance.ui').ViewBalanceUI;
+var Cookies = require('../../lib/js-cookie');
+var State = require('../base/storage').State;
+var Highchart     = require('./trade/charts/highchartws').Highchart;
+var WSTickDisplay = require('./trade/tick_trade').WSTickDisplay;
+var TradePage      = require('./trade/tradepage').TradePage;
+var Notifications  = require('./trade/notifications').Notifications;
+var TradePage_Beta = require('./trade/beta/tradepage').TradePage_Beta;
+var MBTradePage    = require('./mb_trade/mb_tradepage').MBTradePage;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
@@ -38,13 +46,11 @@ function BinarySocketClass() {
         wrongAppId = 0,
         socketUrl = getSocketURL() + '?app_id=' + getAppId() + (page.language() ? '&l=' + page.language() : '');
 
-    var clearTimeouts = function(){
-        for(var k in timeouts){
-            if(timeouts.hasOwnProperty(k)){
-                clearTimeout(timeouts[k]);
-                delete timeouts[k];
-            }
-        }
+    var clearTimeouts = function() {
+        Object.keys(timeouts).forEach(function(key) {
+            clearTimeout(timeouts[key]);
+            delete timeouts[key];
+        });
     };
 
     var isReady = function () {
@@ -70,7 +76,7 @@ function BinarySocketClass() {
                 data.passthrough = {};
             }
             // temporary check
-            if((data.contracts_for || data.proposal) && !data.passthrough.hasOwnProperty('dispatch_to') && !/multi_barriers_trading/.test(window.location.pathname)){
+            if ((data.contracts_for || data.proposal) && !data.passthrough.hasOwnProperty('dispatch_to') && !State.get('is_mb_trading')) {
                 data.passthrough.req_number = ++req_number;
                 timeouts[req_number] = setTimeout(function(){
                     if(typeof reloadPage === 'function' && data.contracts_for){
@@ -81,6 +87,11 @@ function BinarySocketClass() {
                         $('.price_container').hide();
                     }
                 }, 60*1000);
+            } else if (data.contracts_for && !data.passthrough.hasOwnProperty('dispatch_to') && State.get('is_mb_trading')) {
+                data.passthrough.req_number = ++req_number;
+                timeouts[req_number] = setTimeout(function() {
+                    MBTradePage.onDisconnect();
+                }, 10*1000);
             }
 
             binarySocket.send(JSON.stringify(data));
@@ -327,11 +338,14 @@ function BinarySocketClass() {
             clearTimeouts();
 
             if(!manualClosed && wrongAppId !== getAppId()) {
-                if (TradePage.is_trading_page() || TradePage_Beta.is_trading_page()) {
-                    showPriceOverlay();
-                    showFormOverlay();
-                    if (TradePage.is_trading_page()) TradePage.onLoad();
-                    else TradePage_Beta.onLoad();
+                var toCall = State.get('is_trading')      ? TradePage.onDisconnect      :
+                             State.get('is_beta_trading') ? TradePage_Beta.onDisconnect :
+                             State.get('is_mb_trading')   ? MBTradePage.onDisconnect    : '';
+                if (toCall) {
+                    Notifications.show({text: page.text.localize('Connection error: Please check your internet connection.'), uid: 'CONNECTION_ERROR', dismissible: true});
+                    timeouts.error = setTimeout(function() {
+                        toCall();
+                    }, 10*1000);
                 } else {
                     init(1);
                 }

@@ -63,6 +63,4 @@ var dv = (function() {
   };
 })();
 
-if (typeof module !== 'undefined') {
-  module.exports = dv;
-}
+module.exports = dv;

@@ -1,9 +1,20 @@
-var Guide = require('../../common_functions/guide').Guide;
+var TradingAnalysis   = require('./analysis').TradingAnalysis;
+var displayCurrencies = require('./currency').displayCurrencies;
+var Defaults          = require('./defaults').Defaults;
+var TradingEvents     = require('./event').TradingEvents;
+var Message           = require('./message').Message;
+var Notifications     = require('./notifications').Notifications;
+var Price             = require('./price').Price;
+var Symbols           = require('./symbols').Symbols;
+var Content         = require('../../common_functions/content').Content;
+var Guide           = require('../../common_functions/guide').Guide;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
+var State = require('../../base/storage').State;
 
 var TradePage = (function(){
 
-  var trading_page = 0, events_initialized = 0;
+  var events_initialized = 0;
+  State.remove('is_trading');
 
   var onLoad = function(){
     if(japanese_client() && /\/trading\.html/i.test(window.location.pathname)) {
@@ -13,13 +24,16 @@ var TradePage = (function(){
         window.location.href = page.url.url_for('trading');
         return;
     }
-    trading_page = 1;
+    State.set('is_trading' , true);
     if(sessionStorage.getItem('currencies')){
       displayCurrencies();
     }
     BinarySocket.init({
       onmessage: function(msg){
         Message.process(msg);
+      },
+      onopen: function() {
+        Notifications.hide('CONNECTION_ERROR');
       }
     });
     Price.clearFormId();
@@ -58,7 +72,7 @@ var TradePage = (function(){
   };
 
   var onUnload = function(){
-    trading_page = 0;
+    State.remove('is_trading');
     events_initialized = 0;
     forgetTradingStreams();
     BinarySocket.clear();
@@ -66,11 +80,18 @@ var TradePage = (function(){
     chartFrameCleanup();
   };
 
+  var onDisconnect = function() {
+    showPriceOverlay();
+    showFormOverlay();
+    chartFrameCleanup();
+    onLoad();
+  };
+
   return {
-    onLoad: onLoad,
-    reload: reload,
-    onUnload : onUnload,
-    is_trading_page: function(){return trading_page;}
+    onLoad      : onLoad,
+    reload      : reload,
+    onUnload    : onUnload,
+    onDisconnect: onDisconnect,
   };
 })();
 

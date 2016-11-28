@@ -1,7 +1,7 @@
-var MBTradePage = require('../../mb_trade/mb_tradepage').MBTradePage;
 var MBContract  = require('../../mb_trade/mb_contract').MBContract;
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
 var ViewPopupUI = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
+var State = require('../../../base/storage').State;
 
 var Highchart = (function() {
   var chart, options, chart_forget, responseID, contract, contract_ended, contracts_for_send, history_send, entry_tick_barrier_drawn, initialized, chart_delayed, chart_subscribed, request, min_point, max_point, start_time, purchase_time, now_time, end_time, entry_tick_time, is_sold, sell_time, sell_spot_time, is_settleable, exit_tick_time, exit_time;
@@ -385,7 +385,7 @@ var Highchart = (function() {
         request.subscribe = 1;
     }
 
-    var contracts_response = MBTradePage.is_trading_page() ? MBContract.getContractsResponse() : window.contracts_for;
+    var contracts_response = State.get('is_mb_trading') ? MBContract.getContractsResponse() : window.contracts_for;
 
     if (contracts_response && contracts_response.echo_req.contracts_for === underlying) {
       if (contracts_response.contracts_for && contracts_response.contracts_for.feed_license) {

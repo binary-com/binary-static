@@ -1,3 +1,5 @@
+var Cookies = require('../../../../../lib/js-cookie');
+
 var RealAccOpeningData = (function(){
     function getRealAcc(elementObj){
         var req = {

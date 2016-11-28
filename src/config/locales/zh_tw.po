@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-11 04:11+0000\n"
+"PO-Revision-Date: 2016-11-21 02:57+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.9\n"
+"X-Generator: Weblate 2.10-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」是由%1建立和維護的編程例程、議定書、工具和資源集。您可通過%1交易平台使用已經註冊的應用程式介面。"
@@ -5014,10 +5014,8 @@ msgstr "請選擇付款代理"
 msgid "Please select a valid date"
 msgstr "請選擇有效日期"
 
-#, fuzzy
-#| msgid "Please select a value."
 msgid "Please select a value"
-msgstr "請選擇一個數值。"
+msgstr "請選擇一個數值"
 
 msgid "Please select at least one scope"
 msgstr "請選擇至少一個範圍"
@@ -8009,6 +8007,11 @@ msgstr "跳動點"
 msgid "to your account."
 msgstr "入您的帳戶。"
 
+#, fuzzy
+#| msgid "Today"
+msgid "today"
+msgstr "今天"
+
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "使用或轉載%1 API（除非這些條款允許）或"
 
@@ -9055,6 +9058,9 @@ msgstr "樣式"
 
 msgid "Endpoint"
 msgstr "端點"
+
+msgid "Careers For Americans"
+msgstr ""
 
 msgid "Job Details"
 msgstr "工作詳細資料"

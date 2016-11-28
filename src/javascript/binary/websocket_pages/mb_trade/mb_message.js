@@ -1,10 +1,12 @@
-var MBContract = require('./mb_contract').MBContract;
+var MBContract          = require('./mb_contract').MBContract;
 var MBDisplayCurrencies = require('./mb_currency').MBDisplayCurrencies;
-var MBProcess = require('./mb_process').MBProcess;
-var MBPurchase = require('./mb_purchase').MBPurchase;
-var MBSymbols = require('./mb_symbols').MBSymbols;
-var MBTick = require('./mb_tick').MBTick;
+var MBNotifications     = require('./mb_notifications').MBNotifications;
+var MBProcess           = require('./mb_process').MBProcess;
+var MBPurchase          = require('./mb_purchase').MBPurchase;
+var MBSymbols           = require('./mb_symbols').MBSymbols;
+var MBTick              = require('./mb_tick').MBTick;
 var PortfolioWS = require('../user/account/portfolio/portfolio.init').PortfolioWS;
+var State = require('../../base/storage').State;
 
 /*
  * This Message object process the response from server and fire
@@ -15,7 +17,7 @@ var MBMessage = (function () {
 
     var process = function (msg) {
         var response = JSON.parse(msg.data);
-        if(!/multi_barriers_trading/.test(window.location.pathname)){
+        if(!State.get('is_mb_trading')){
             forgetTradingStreams();
             return;
         }
@@ -24,6 +26,7 @@ var MBMessage = (function () {
             if (type === 'active_symbols') {
                 MBProcess.processActiveSymbols(response);
             } else if (type === 'contracts_for') {
+                MBNotifications.hide('CONNECTION_ERROR');
                 MBContract.setContractsResponse(response);
                 MBProcess.processContract(response);
             } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && (!response.echo_req.hasOwnProperty('passthrough') || !response.echo_req.passthrough.hasOwnProperty('handler'))) {

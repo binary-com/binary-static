@@ -1,3 +1,6 @@
+var EnjoyHint = require('../../lib/guide.enjoyhint');
+var Cookies   = require('../../lib/js-cookie');
+
 /*
  *  This is developed to simplify the usage of enjoyhint (https://github.com/xbsoftware/enjoyhint)
  *

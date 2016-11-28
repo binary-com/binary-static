@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 TimePicker = function(component_id) {
     this.component_id = component_id;
 };
