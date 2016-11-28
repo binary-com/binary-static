@@ -1,37 +1,38 @@
-var account_transferws = require('./cashier/account_transferws').account_transferws;
-var Cashier = require('./cashier/cashier').Cashier;
-var ForwardWS = require('./cashier/deposit_withdraw_ws').ForwardWS;
-var PaymentAgentListWS = require('./cashier/payment_agent_listws').PaymentAgentListWS;
-var PaymentAgentWithdrawWS = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
-var AssetIndexUI = require('./resources/asset_index/asset_indexws.ui').AssetIndexUI;
-var MarketTimesUI = require('./resources/market_times/market_timesws.ui').MarketTimesUI;
-var AuthenticateWS = require('./user/account/authenticate').AuthenticateWS;
-var PasswordWS = require('./user/account/change_password').PasswordWS;
+var account_transferws         = require('./cashier/account_transferws').account_transferws;
+var Cashier                    = require('./cashier/cashier').Cashier;
+var ForwardWS                  = require('./cashier/deposit_withdraw_ws').ForwardWS;
+var PaymentAgentListWS         = require('./cashier/payment_agent_listws').PaymentAgentListWS;
+var PaymentAgentWithdrawWS     = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
+var AssetIndexUI               = require('./resources/asset_index/asset_indexws.ui').AssetIndexUI;
+var MarketTimesUI              = require('./resources/market_times/market_timesws.ui').MarketTimesUI;
+var AuthenticateWS             = require('./user/account/authenticate').AuthenticateWS;
+var PasswordWS                 = require('./user/account/change_password').PasswordWS;
 var PaymentAgentTransferSocket = require('./user/account/payment_agent_transfer').PaymentAgentTransferSocket;
-var PortfolioWS = require('./user/account/portfolio/portfolio.init').PortfolioWS;
-var ProfitTableWS = require('./user/account/profit_table/profit_table.init').ProfitTableWS;
-var APITokenWS = require('./user/account/settings/api_token').APITokenWS;
-var AuthorisedApps = require('./user/account/settings/authorised_apps').AuthorisedApps;
-var FinancialAssessmentws = require('./user/account/settings/financial_assessment').FinancialAssessmentws;
-var IPHistoryWS = require('./user/account/settings/iphistory').IPHistoryWS;
-var Limits = require('./user/account/settings/limits').Limits;
-var SelfExclusionWS = require('./user/account/settings/self_exclusion').SelfExclusionWS;
-var SettingsDetailsWS = require('./user/account/settings/settings_detailsws').SettingsDetailsWS;
-var SecurityWS = require('./user/account/settings/settings_securityws').SecurityWS;
-var SettingsWS = require('./user/account/settings').SettingsWS;
-var StatementWS = require('./user/account/statement/statement.init').StatementWS;
-var TopUpVirtualWS = require('./user/account/top_up_virtualws').TopUpVirtualWS;
-var LostPasswordWS = require('./user/lost_password').LostPasswordWS;
-var FinancialAccOpening = require('./user/new_account/financial_acc_opening').FinancialAccOpening;
-var JapanAccOpening = require('./user/new_account/japan_acc_opening').JapanAccOpening;
-var RealAccOpening = require('./user/new_account/real_acc_opening').RealAccOpening;
-var VirtualAccOpening = require('./user/new_account/virtual_acc_opening').VirtualAccOpening;
-var ResetPasswordWS = require('./user/reset_password').ResetPasswordWS;
-var TNCApproval = require('./user/tnc_approval').TNCApproval;
-var TradePage      = require('./trade/tradepage').TradePage;
-var TradePage_Beta = require('./trade/beta/tradepage').TradePage_Beta;
-var MBTradePage    = require('./mb_trade/mb_tradepage').MBTradePage;
-var ViewPopupWS = require('./user/view_popup/view_popupws').ViewPopupWS;
+var PortfolioWS                = require('./user/account/portfolio/portfolio.init').PortfolioWS;
+var ProfitTableWS              = require('./user/account/profit_table/profit_table.init').ProfitTableWS;
+var APITokenWS                 = require('./user/account/settings/api_token').APITokenWS;
+var AuthorisedApps             = require('./user/account/settings/authorised_apps').AuthorisedApps;
+var FinancialAssessmentws      = require('./user/account/settings/financial_assessment').FinancialAssessmentws;
+var IPHistoryWS                = require('./user/account/settings/iphistory').IPHistoryWS;
+var Limits                     = require('./user/account/settings/limits').Limits;
+var SelfExclusionWS            = require('./user/account/settings/self_exclusion').SelfExclusionWS;
+var SettingsDetailsWS          = require('./user/account/settings/settings_detailsws').SettingsDetailsWS;
+var SecurityWS                 = require('./user/account/settings/settings_securityws').SecurityWS;
+var SettingsWS                 = require('./user/account/settings').SettingsWS;
+var StatementWS                = require('./user/account/statement/statement.init').StatementWS;
+var TopUpVirtualWS             = require('./user/account/top_up_virtualws').TopUpVirtualWS;
+var LostPasswordWS             = require('./user/lost_password').LostPasswordWS;
+var FinancialAccOpening        = require('./user/new_account/financial_acc_opening').FinancialAccOpening;
+var JapanAccOpening            = require('./user/new_account/japan_acc_opening').JapanAccOpening;
+var RealAccOpening             = require('./user/new_account/real_acc_opening').RealAccOpening;
+var VirtualAccOpening          = require('./user/new_account/virtual_acc_opening').VirtualAccOpening;
+var ResetPasswordWS            = require('./user/reset_password').ResetPasswordWS;
+var TNCApproval                = require('./user/tnc_approval').TNCApproval;
+var TradePage                  = require('./trade/tradepage').TradePage;
+var TradePage_Beta             = require('./trade/beta/tradepage').TradePage_Beta;
+var MBTradePage                = require('./mb_trade/mb_tradepage').MBTradePage;
+var ViewPopupWS                = require('./user/view_popup/view_popupws').ViewPopupWS;
+var KnowledgeTest              = require('../../binary_japan/knowledge_test/knowledge_test.init').KnowledgeTest;
 
 pjax_config_page('/trading', function () {
     return {
@@ -329,6 +330,14 @@ pjax_config_page("profit_tablews|statementws|portfoliows|trading", function() {
                     e.preventDefault();
                     ViewPopupWS.init(this);
                 });
+        }
+    };
+});
+
+pjax_config_page_require_auth("new_account/knowledge_testws", function(){
+    return {
+        onLoad: function() {
+            KnowledgeTest.init();
         }
     };
 });

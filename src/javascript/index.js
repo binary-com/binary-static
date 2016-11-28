@@ -35,8 +35,4 @@ exportAllFunctions(require('./binary/websocket_pages/trade/process'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/process'));
 
 exportAllFunctions(require('./binary/websocket_pages/websocket_pjax'));
-exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.data'));
-exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.init'));
-exportAllFunctions(require('./binary_japan/knowledge_test/knowledge_test.ui'));
-exportAllFunctions(require('./binary_japan/knowledge_test'));
 exportAllFunctions(require('./config'));

@@ -22,6 +22,7 @@ var TradePage_Beta            = require('./trade/beta/tradepage').TradePage_Beta
 var MBTradePage               = require('./mb_trade/mb_tradepage').MBTradePage;
 var RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
 var RealityCheckData          = require('./user/reality_check/reality_check.data').RealityCheckData;
+var KnowledgeTest             = require('../../binary_japan/knowledge_test/knowledge_test.init').KnowledgeTest;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
