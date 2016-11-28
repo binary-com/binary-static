@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-22 02:56+0000\n"
+"PO-Revision-Date: 2016-11-25 08:15+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -1901,6 +1901,11 @@ msgstr "確認事項"
 msgid "Conflicts Policy"
 msgstr "利益相反ポリシー"
 
+#, fuzzy
+#| msgid "Connection error: Please view the progress at your portfolio page."
+msgid "Connection error: Please check your internet connection."
+msgstr "接続エラー：資産情報ページにて進捗状況をご確認して下さい。"
+
 msgid "Construction"
 msgstr "設営"
 
@@ -2505,7 +2510,7 @@ msgid "Entry Level"
 msgstr "エントリーレベル"
 
 msgid "Entry Spot"
-msgstr "取引時刻直後のテック"
+msgstr "取引開始時刻直後のテック"
 
 msgid "Entry spot"
 msgstr "取引時刻直後のテック"
@@ -2616,7 +2621,7 @@ msgid "Exit Spot"
 msgstr "判定レート"
 
 msgid "Exit Spot Time"
-msgstr "売却時間"
+msgstr "売却/判定時刻"
 
 msgid "Exit spot"
 msgstr "判定レート"
@@ -2868,7 +2873,7 @@ msgid "Fresh graduates who meet our basic requirements and are passionate about 
 msgstr "当社の基本要件を満たし、管理事務でのプロフェッショナルなキャリアを追求する情熱のある新卒者は大歓迎です。"
 
 msgid "Friday"
-msgstr "金曜日"
+msgstr "金"
 
 msgid "Fridays"
 msgstr "金曜日"
@@ -4249,7 +4254,7 @@ msgid "Maintain adequate speed and volume of output"
 msgstr "十分な速度と出力量の維持"
 
 msgid "Major Pairs"
-msgstr "主要ペア"
+msgstr "主要通貨ペア"
 
 msgid "Make a Deposit"
 msgstr "入金"
@@ -4396,7 +4401,7 @@ msgid "Mo"
 msgstr "月曜日"
 
 msgid "Monday"
-msgstr "月曜日"
+msgstr "月"
 
 msgid "Money collected from Clients are not invested in any securities, futures, currencies, derivatives or other investments, on behalf of Clients."
 msgstr ""
@@ -5190,7 +5195,7 @@ msgid "Previous work experience in a client service and/or marketing role"
 msgstr "前職での顧客サービスおよび/またはマーケティング担当の経験"
 
 msgid "Price"
-msgstr "価格"
+msgstr "売却/ペイアウト金額"
 
 msgid "Price the trade."
 msgstr "バリア価格を決定します。"
@@ -5589,7 +5594,7 @@ msgid "Sale Price"
 msgstr "売却 / ペイアウト金額"
 
 msgid "Saturday"
-msgstr "土曜日"
+msgstr "土"
 
 msgid "Save as CSV"
 msgstr "CSVへ保存"
@@ -5727,7 +5732,7 @@ msgid "Settings"
 msgstr "各種設定"
 
 msgid "Settles"
-msgstr "約定可能時間"
+msgstr "決済時間"
 
 msgid "Severability"
 msgstr "分離条項"
@@ -5865,7 +5870,7 @@ msgid "Stake"
 msgstr "購入価格"
 
 msgid "Start Time"
-msgstr "取引時刻"
+msgstr "取引開始時刻"
 
 msgid "Start Trading"
 msgstr "トレード開始"
@@ -5997,7 +6002,7 @@ msgid "Summary:"
 msgstr "概要："
 
 msgid "Sunday"
-msgstr "日曜日"
+msgstr "日"
 
 msgid "Supplementary Terms and Conditions for Financial Products offered by Binary Investments (Europe) Ltd."
 msgstr "Binary Investments (Europe) Ltdが提供する金融商品の補助規約"
@@ -6772,7 +6777,7 @@ msgid "Thorough knowledge of bash scripting, as well as experience with scriptin
 msgstr "PerlやPHP などのスクリプト言語の経験とBashスクリプトの深い知識"
 
 msgid "Thursday"
-msgstr "木曜日"
+msgstr "木"
 
 msgid "Tick"
 msgstr "Tick"
@@ -7010,7 +7015,7 @@ msgid "Tu"
 msgstr "木曜日"
 
 msgid "Tuesday"
-msgstr "火曜日"
+msgstr "火"
 
 msgid "Turnover"
 msgstr "取引数量"
@@ -7390,7 +7395,7 @@ msgid "Webtrader"
 msgstr "ウェブトレーダー"
 
 msgid "Wednesday"
-msgstr "水曜日"
+msgstr "水"
 
 msgid "Week of"
 msgstr "週"
@@ -8244,8 +8249,6 @@ msgstr "Tick"
 msgid "to your account."
 msgstr "アカウントへ"
 
-#, fuzzy
-#| msgid "Today"
 msgid "today"
 msgstr "本日"
 
@@ -9287,7 +9290,7 @@ msgid "{Japan Only}Trade all binary option types"
 msgstr "4つすべてのバイナリーオプションタイプ取引可能"
 
 msgid "{Japan Only}Trade the major currencies"
-msgstr "主要ペア通貨の取引可能"
+msgstr "主要通貨ペアの取引可能"
 
 msgid "{Japan Only}Two-way pricing"
 msgstr "2ウェイ・プライス（買値・売値）"
@@ -18368,9 +18371,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "Code"
 #~ msgstr "対象"
-
-#~ msgid "Connection error: Please view the progress at your portfolio page."
-#~ msgstr "接続エラー：資産情報ページにて進捗状況をご確認して下さい。"
 
 #~ msgid "End"
 #~ msgstr "終了"
