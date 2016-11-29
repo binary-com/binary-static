@@ -60,9 +60,9 @@ var VirtualAccOpeningData = (function(){
             if (type !== 'error' && !error) return;
 
             switch (error.code) {
-                case 'InvalidToken':    return config.invalidToken(response);
-                case 'duplicate email': return config.duplicateEmail(response);
-                case 'PasswordError':   return config.passwordError(response);
+                case 'InvalidToken':    return config.invalidToken();
+                case 'duplicate email': return config.duplicateEmail();
+                case 'PasswordError':   return config.passwordError();
                 default: return;
             }
         };

@@ -1,6 +1,7 @@
 var objectNotEmpty = require('../../../../../base/utility').objectNotEmpty;
-var Content = require('../../../../../common_functions/content').Content;
-var Table   = require('../../../../../common_functions/attach_dom/table').Table;
+var Content        = require('../../../../../common_functions/content').Content;
+var Table          = require('../../../../../common_functions/attach_dom/table').Table;
+var addComma       = require('../../../../../common_functions/string_util').addComma;
 
 var LimitsUI = (function(){
     "use strict";

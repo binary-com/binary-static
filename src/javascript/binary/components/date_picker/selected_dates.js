@@ -37,7 +37,7 @@ DatePicker.SelectedDates.prototype = {
             return [0];
         };
 
-        config.beforeShow = function(input, inst) {
+        config.beforeShow = function() {
             return { defaultDate: $('#' + that.component_id).val()};
         };
 

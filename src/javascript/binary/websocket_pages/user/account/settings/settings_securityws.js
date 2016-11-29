@@ -1,4 +1,5 @@
-var CommonFunctions = require('../../../../common_functions/common_functions').CommonFunctions;
+var getLoginToken   = require('../../../../common_functions/common_functions').getLoginToken;
+var isIE            = require('../../../../common_functions/common_functions').isIE;
 var Content         = require('../../../../common_functions/content').Content;
 var testPassword    = require('../../../../common_functions/passwordmeter').testPassword;
 var ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
@@ -38,7 +39,7 @@ var SecurityWS = (function() {
 
     function makeAuthRequest() {
         BinarySocket.send({
-            authorize: CommonFunctions.getLoginToken(),
+            authorize: getLoginToken(),
             passthrough: {dispatch_to: 'cashier_password'},
         });
     }
@@ -71,7 +72,7 @@ var SecurityWS = (function() {
     function setupRepeatPasswordForm() {
         $("#repasswordrow").show();
         $('#password-meter-div').css({display: 'block'});
-        if (CommonFunctions.isIE()) {
+        if (isIE()) {
             $('#password-meter').remove();
             return;
         }

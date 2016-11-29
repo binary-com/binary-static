@@ -169,13 +169,13 @@ var Highchart = (function() {
            dashStyle: chartOptions.dashStyle || 'Solid'
         });
         var subtitle = chart.subtitle.element;
-        var subtitle_length = chart.subtitle.element.childNodes.length;
+        var subtitle_length = subtitle.childNodes.length;
         if (sell_time && sell_time < end_time) {
           var textnode = document.createTextNode(' '  + page.text.localize('Sell time') + ' ');
-          for (i = 0; i < chart.subtitle.element.childNodes.length; i++) {
-            if (/End time/.test(chart.subtitle.element.childNodes[i].nodeValue)) {
-              var item = chart.subtitle.element.childNodes[i];
-              chart.subtitle.element.replaceChild(textnode, item);
+          for (i = 0; i < subtitle_length; i++) {
+            if (/End time/.test(subtitle.childNodes[i].nodeValue)) {
+              var item = subtitle.childNodes[i];
+              subtitle.replaceChild(textnode, item);
             }
           }
         }
@@ -294,7 +294,7 @@ var Highchart = (function() {
             draw_line_x(start_time);
           }
 
-          var duration = calculate_granularity(end_time, now_time, purchase_time, start_time)[1];
+          //var duration = calculate_granularity(end_time, now_time, purchase_time, start_time)[1];
 
           // show end time before contract ends if duration of contract is less than one day
           // second OR condition is used so we don't draw end time again if there is sell time before

@@ -24,6 +24,7 @@ var attach_date_picker    = require('./utility').attach_date_picker;
 var attach_time_picker    = require('./utility').attach_time_picker;
 var attach_tabs           = require('./utility').attach_tabs;
 var pjax                  = require('../../lib/pjax-lib');
+var isVisible             = require('../common_functions/common_functions').isVisible;
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
 
@@ -823,7 +824,7 @@ Header.prototype = {
                     });
                 }
             },
-            error: function(xhr) {
+            error: function() {
                 return;
             }
         });
@@ -1552,7 +1553,7 @@ var pjax_config = function() {
             onLoad.fire();
             onUnload.reset();
         },
-        'error': function(event) {
+        'error': function() {
             var error_text = SessionStore.get('errors.500');
             if(error_text) {
                 $('#content').html(error_text);
@@ -1579,7 +1580,6 @@ var pjax_config = function() {
 };
 
 var init_pjax = function () {
-    var document_location = document.URL;
     if(!$('body').hasClass('BlueTopBack')) { //No Pjax for BO.
         pjax.connect(pjax_config());
     }

@@ -2,7 +2,7 @@ var getSocketURL              = require('../../config').getSocketURL;
 var getAppId                  = require('../../config').getAppId;
 var Login                     = require('../base/login').Login;
 var objectNotEmpty            = require('../base/utility').objectNotEmpty;
-var CommonFunctions           = require('../common_functions/common_functions').CommonFunctions;
+var getLoginToken             = require('../common_functions/common_functions').getLoginToken;
 var AccountOpening            = require('../common_functions/account_opening').AccountOpening;
 var SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
 var checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
@@ -19,6 +19,7 @@ var WSTickDisplay             = require('./trade/tick_trade').WSTickDisplay;
 var TradePage                 = require('./trade/tradepage').TradePage;
 var Notifications             = require('./trade/notifications').Notifications;
 var TradePage_Beta            = require('./trade/beta/tradepage').TradePage_Beta;
+var reloadPage                = require('./trade/common').reloadPage;
 var MBTradePage               = require('./mb_trade/mb_tradepage').MBTradePage;
 var RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
 var RealityCheckData          = require('./user/reality_check/reality_check.data').RealityCheckData;
@@ -122,7 +123,7 @@ function BinarySocketClass() {
         }
 
         binarySocket.onopen = function () {
-            var apiToken = CommonFunctions.getLoginToken();
+            var apiToken = getLoginToken();
             if (apiToken && !authorized && localStorage.getItem('client.tokens')) {
                 binarySocket.send(JSON.stringify({authorize: apiToken}));
             } else {
@@ -336,7 +337,7 @@ function BinarySocketClass() {
             }
         };
 
-        binarySocket.onclose = function (e) {
+        binarySocket.onclose = function () {
             authorized = false;
             clearTimeouts();
 

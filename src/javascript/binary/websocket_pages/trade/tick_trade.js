@@ -1,7 +1,9 @@
-var Tick = require('./tick').Tick;
-var moment = require('moment');
-var Content = require('../../common_functions/content').Content;
-var ViewPopupUI = require('../user/view_popup/view_popup_ui').ViewPopupUI;
+var Tick                 = require('./tick').Tick;
+var moment               = require('moment');
+var Content              = require('../../common_functions/content').Content;
+var ViewPopupUI          = require('../user/view_popup/view_popup_ui').ViewPopupUI;
+var isVisible            = require('../../common_functions/common_functions').isVisible;
+var updatePurchaseStatus = require('./common').updatePurchaseStatus;
 
 var TickDisplay = function() {
     return {
@@ -255,14 +257,13 @@ var TickDisplay = function() {
 }();
 
 var WSTickDisplay = Object.create(TickDisplay);
-WSTickDisplay.plot = function(plot_from, plot_to) {
+WSTickDisplay.plot = function() {
     var $self = this;
     $self.contract_start_moment = moment($self.contract_start_ms).utc();
     $self.counter = 0;
     $self.applicable_ticks = [];
 };
 WSTickDisplay.update_ui = function(final_price, pnl, contract_status) {
-    var $self = this;
     updatePurchaseStatus(final_price, final_price - pnl, contract_status);
 };
 WSTickDisplay.socketSend = function(req) {

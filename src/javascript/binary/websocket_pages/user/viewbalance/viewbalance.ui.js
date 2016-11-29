@@ -1,5 +1,6 @@
-var format_money = require('../../../common_functions/currency_to_symbol').format_money;
-var PortfolioWS = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
+var format_money           = require('../../../common_functions/currency_to_symbol').format_money;
+var PortfolioWS            = require('../account/portfolio/portfolio.init').PortfolioWS;
+var updateContractBalance  = require('../../trade/common').updateContractBalance;
 
 var ViewBalanceUI = (function(){
 

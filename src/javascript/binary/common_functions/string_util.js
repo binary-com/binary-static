@@ -1,48 +1,17 @@
-var moment = require('moment');
+var toTitleCase = function(str) {
+    return str.replace(/\w[^\s\/\\]*/g, function(txt){
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+};
 
-var StringUtil = (function(){
-    function toTitleCase(str){
-        return str.replace(/\w[^\s\/\\]*/g, function(txt){
-            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-        });
-    }
-
-    function dateToStringWithoutTime(date){
-        return [date.getDate(), date.getMonth()+1, date.getFullYear()].join("/");
-    }
-
-    //Time should be in SECOND !!!
-    function timeStampToDateString(time){
-        var dateObj = new Date(time * 1000);
-        var momentObj = moment.utc(dateObj);
-        return momentObj.format("YYYY-MM-DD");
-    }
-
-    //Time should be in SECOND !!!
-    function timeStampToTimeString(time){
-        var dateObj = new Date(time * 1000);
-        var momentObj = moment.utc(dateObj);
-        return momentObj.format("HH:mm:ss");
-    }
-
-    //Time should be in SECOND !!!
-    function timeStampToDateTimeString(time){
-        var dateObj = new Date(time * 1000);
-        var momentObj = moment.utc(dateObj);
-        return momentObj.toString();
-    }
-
-    var external = {
-        toTitleCase: toTitleCase,
-        dateToStringWithoutTime: dateToStringWithoutTime,
-        unixTimeToDateString: timeStampToDateString,
-        unixTimeToTimeString: timeStampToTimeString,
-        unixTimeToDateTimeString: timeStampToDateTimeString
-    };
-
-    return external;
-}());
+var addComma = function(num, decimal_points) {
+    num = String(num || 0).replace(/,/g, '') * 1;
+    return num.toFixed(decimal_points || 2).toString().replace(/(^|[^\w.])(\d{4,})/g, function($0, $1, $2) {
+        return $1 + $2.replace(/\d(?=(?:\d\d\d)+(?!\d))/g, "$&,");
+    });
+};
 
 module.exports = {
-    StringUtil: StringUtil,
+    toTitleCase: toTitleCase,
+    addComma: addComma,
 };

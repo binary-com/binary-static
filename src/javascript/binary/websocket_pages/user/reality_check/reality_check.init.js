@@ -1,10 +1,8 @@
-var Content = require('../../../common_functions/content').Content;
 var RealityCheckUI = require('./reality_check.ui').RealityCheckUI;
 var RealityCheckData = require('./reality_check.data').RealityCheckData;
 
 var RealityCheck = (function () {
     'use strict';
-    var hiddenClass = 'invisible';
     var loginTime;      // milliseconds
     var getAccountStatus;
 

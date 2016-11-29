@@ -1,7 +1,11 @@
-var Tick = require('../tick').Tick;
-var ViewPopupUI = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
-var moment = require('moment');
-var Content = require('../../../common_functions/content').Content;
+var Tick                      = require('../tick').Tick;
+var ViewPopupUI               = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
+var moment                    = require('moment');
+var Content                   = require('../../../common_functions/content').Content;
+var isVisible                 = require('../../../common_functions/common_functions').isVisible;
+var addComma                  = require('../../../common_functions/string_util').addComma;
+var updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
+var label_value               = require('../common').label_value;
 
 var TickDisplay_Beta = function() {
     return {
@@ -325,14 +329,13 @@ var TickDisplay_Beta = function() {
 }();
 
 var WSTickDisplay_Beta = Object.create(TickDisplay_Beta);
-WSTickDisplay_Beta.plot = function(plot_from, plot_to) {
+WSTickDisplay_Beta.plot = function() {
     var $self = this;
     $self.contract_start_moment = moment($self.contract_start_ms).utc();
     $self.counter = 0;
     $self.applicable_ticks = [];
 };
 WSTickDisplay_Beta.update_ui = function(final_price, pnl, contract_status) {
-    var $self = this;
     updatePurchaseStatus_Beta(final_price, final_price - pnl, contract_status);
 };
 WSTickDisplay_Beta.socketSend = function(req) {

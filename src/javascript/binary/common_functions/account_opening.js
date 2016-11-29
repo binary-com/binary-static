@@ -2,7 +2,7 @@ var objectNotEmpty  = require('../base/utility').objectNotEmpty;
 var Validate        = require('../common_functions/validation').Validate;
 var Content         = require('../common_functions/content').Content;
 var japanese_client = require('../common_functions/country_base').japanese_client;
-var CommonFunctions = require('../common_functions/common_functions').CommonFunctions;
+var appendTextValueChild = require('../common_functions/common_functions').appendTextValueChild;
 var generateBirthDate = require('./attach_dom/birth_date_dropdown').generateBirthDate;
 var Cookies = require('../../lib/js-cookie');
 var moment  = require('moment');
@@ -13,7 +13,7 @@ var AccountOpening = (function() {
         if (country && country !== null) {
           $('#real-form').show();
           page.client.residence = country;
-          generateBirthDate(country);
+          generateBirthDate();
           generateState();
           if (/maltainvestws/.test(window.location.pathname)) {
             var settings = response.get_settings;
@@ -75,7 +75,7 @@ var AccountOpening = (function() {
     function generateState() {
         var state = document.getElementById('address-state');
         if (state.length !== 0) return;
-        CommonFunctions.appendTextValueChild(state, Content.localize().textSelect, '');
+        appendTextValueChild(state, Content.localize().textSelect, '');
         if (page.client.residence !== "") {
           BinarySocket.send({ states_list: page.client.residence });
         }
@@ -116,7 +116,7 @@ var AccountOpening = (function() {
               residenceDisabled.insertAfter('#move-residence-back');
               $('#error-residence').insertAfter('#residence-disabled');
               residenceDisabled.attr('disabled', 'disabled');
-              generateBirthDate(page.client.residence);
+              generateBirthDate();
               generateState();
               $('#real-form').show();
               return;
@@ -125,7 +125,7 @@ var AccountOpening = (function() {
             select = document.getElementById('address-state');
             var states_list = response.states_list;
             for (i = 0; i < states_list.length; i++) {
-                CommonFunctions.appendTextValueChild(select, states_list[i].text, states_list[i].value);
+                appendTextValueChild(select, states_list[i].text, states_list[i].value);
             }
             select.parentNode.parentNode.show();
             if (window.state) {
@@ -141,7 +141,7 @@ var AccountOpening = (function() {
               for (i = 0; i < residence_list.length; i++) {
                 var residence = residence_list[i];
                 if (select) {
-                  CommonFunctions.appendTextValueChild(select, residence.text, residence.value, residence.disabled ? 'disabled' : undefined);
+                  appendTextValueChild(select, residence.text, residence.value, residence.disabled ? 'disabled' : undefined);
                 }
                 if (residenceValue !== 'jp' && phoneElement && phoneElement.value === '' && residence.phone_idd && residenceValue === residence.value) {
                   phoneElement.value = '+' + residence.phone_idd;

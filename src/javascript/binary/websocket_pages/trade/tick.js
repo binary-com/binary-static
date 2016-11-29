@@ -1,3 +1,7 @@
+var displayPriceMovement = require('./common_independent').displayPriceMovement;
+var countDecimalPlaces   = require('./common_independent').countDecimalPlaces;
+var isVisible            = require('../../common_functions/common_functions').isVisible;
+
 /*
  * Tick object handles all the process/display related to tick streaming
  *
@@ -15,8 +19,6 @@
  * 'Tick.display()` to display current spot
  */
 var Tick = (function() {
-    'use strict';
-
     var quote = '',
         id = '',
         epoch = '',
@@ -67,6 +69,43 @@ var Tick = (function() {
         }
 
         spotElement.textContent = message;
+    };
+
+    /*
+     * function to display indicative barrier
+     */
+    var displayIndicativeBarrier = function() {
+        'use strict';
+        var unit = document.getElementById('duration_units'),
+            currentTick = Tick.quote(),
+            indicativeBarrierTooltip = document.getElementById('indicative_barrier_tooltip'),
+            indicativeHighBarrierTooltip = document.getElementById('indicative_high_barrier_tooltip'),
+            indicativeLowBarrierTooltip = document.getElementById('indicative_low_barrier_tooltip'),
+            barrierElement = document.getElementById('barrier'),
+            highBarrierElement = document.getElementById('barrier_high'),
+            lowBarrierElement = document.getElementById('barrier_low');
+
+        if (unit && (!isVisible(unit) || unit.value !== 'd') && currentTick && !isNaN(currentTick)) {
+            var decimalPlaces = countDecimalPlaces(currentTick);
+            if (indicativeBarrierTooltip && isVisible(indicativeBarrierTooltip)) {
+                var barrierValue = isNaN(parseFloat(barrierElement.value))?0:parseFloat(barrierElement.value);
+                indicativeBarrierTooltip.textContent = (parseFloat(currentTick) + barrierValue).toFixed(decimalPlaces);
+            }
+
+            if (indicativeHighBarrierTooltip && isVisible(indicativeHighBarrierTooltip)) {
+                var highBarrierValue = isNaN(parseFloat(highBarrierElement.value))?0:parseFloat(highBarrierElement.value);
+                indicativeHighBarrierTooltip.textContent = (parseFloat(currentTick) + highBarrierValue).toFixed(decimalPlaces);
+            }
+
+            if (indicativeLowBarrierTooltip && isVisible(indicativeLowBarrierTooltip)) {
+                var lowBarrierValue = isNaN(parseFloat(lowBarrierElement.value))?0:parseFloat(lowBarrierElement.value);
+                indicativeLowBarrierTooltip.textContent = (parseFloat(currentTick) + lowBarrierValue).toFixed(decimalPlaces);
+            }
+        } else {
+            indicativeBarrierTooltip.textContent = '';
+            indicativeHighBarrierTooltip.textContent = '';
+            indicativeLowBarrierTooltip.textContent = '';
+        }
     };
 
     var request = function(symbol) {

@@ -24,7 +24,6 @@ var FinancialAccOpening = (function() {
               onmessage: function(msg){
                 var response = JSON.parse(msg.data);
                 if (response) {
-                  var error = response.error;
                   if (response.msg_type === 'new_account_maltainvest'){
                     ValidAccountOpening.handler(response, response.new_account_maltainvest);
                   }

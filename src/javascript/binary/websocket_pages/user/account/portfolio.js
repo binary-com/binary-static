@@ -1,8 +1,7 @@
 var Portfolio = (function(){
     'use strict';
 
-    var addComma = require('../../../websocket_pages/trade/common').addComma,
-        toJapanTimeIfNeeded = require('../../../base/utility').toJapanTimeIfNeeded,
+    var toJapanTimeIfNeeded = require('../../../base/utility').toJapanTimeIfNeeded,
         format_money = require('../../../common_functions/currency_to_symbol').format_money,
         japanese_client = require('../../../common_functions/country_base').japanese_client;
 

@@ -1,9 +1,11 @@
-var AssetIndexUI = require('../../resources/asset_index/asset_indexws.ui').AssetIndexUI;
-var MarketTimesUI = require('../../resources/market_times/market_timesws.ui').MarketTimesUI;
-var japanese_client = require('../../../common_functions/country_base').japanese_client;
-var DigitInfoWS_Beta = require('./charts/digit_infows').DigitInfoWS_Beta;
-var PortfolioWS = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
-var State = require('../../../base/storage').State;
+var AssetIndexUI                    = require('../../resources/asset_index/asset_indexws.ui').AssetIndexUI;
+var MarketTimesUI                   = require('../../resources/market_times/market_timesws.ui').MarketTimesUI;
+var japanese_client                 = require('../../../common_functions/country_base').japanese_client;
+var DigitInfoWS_Beta                = require('./charts/digit_infows').DigitInfoWS_Beta;
+var PortfolioWS                     = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
+var State                           = require('../../../base/storage').State;
+var showHighchart                   = require('../common').showHighchart;
+var toggleActiveNavMenuElement_Beta = require('../common').toggleActiveNavMenuElement_Beta;
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -21,7 +23,6 @@ var TradingAnalysis_Beta = (function() {
     var trading_digit_info = new DigitInfoWS_Beta();
 
     var requestTradeAnalysis = function() {
-        var contentId = document.getElementById('trading_analysis_content');
         var formName = State.get('is_mb_trading') ? $('#category').val() :
                                                     $('#contract_form_name_nav').find('.a-active').attr('id');
         if (formName === 'matchdiff') {

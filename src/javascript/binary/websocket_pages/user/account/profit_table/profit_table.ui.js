@@ -1,12 +1,13 @@
 var toJapanTimeIfNeeded = require('../../../../base/utility').toJapanTimeIfNeeded;
-var Button          = require('../../../../common_functions/attach_dom/button').Button;
-var Content         = require('../../../../common_functions/content').Content;
-var Table           = require('../../../../common_functions/attach_dom/table').Table;
-var format_money    = require('../../../../common_functions/currency_to_symbol').format_money;
-var showTooltip     = require('../../../../common_functions/get_app_details').showTooltip;
-var japanese_client = require('../../../../common_functions/country_base').japanese_client;
-var ProfitTable = require('../profit_table').ProfitTable;
-var moment = require('moment');
+var Button              = require('../../../../common_functions/attach_dom/button').Button;
+var Content             = require('../../../../common_functions/content').Content;
+var Table               = require('../../../../common_functions/attach_dom/table').Table;
+var format_money        = require('../../../../common_functions/currency_to_symbol').format_money;
+var showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
+var japanese_client     = require('../../../../common_functions/country_base').japanese_client;
+var addComma            = require('../../../../common_functions/string_util').addComma;
+var ProfitTable         = require('../profit_table').ProfitTable;
+var moment              = require('moment');
 
 var ProfitTableUI = (function(){
     "use strict";
@@ -41,11 +42,11 @@ var ProfitTableUI = (function(){
         };
         var $tableContainer = Table.createFlexTable(data, metadata, header, footer);
 
-        var $pltotal = $tableContainer.
-            children("table").
-            children("tfoot").
-            children("tr").
-            attr("id", "pl-day-total");
+        $tableContainer
+            .children("table")
+            .children("tfoot")
+            .children("tr")
+            .attr("id", "pl-day-total");
 
         return $tableContainer;
     }

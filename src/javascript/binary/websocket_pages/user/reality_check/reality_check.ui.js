@@ -9,6 +9,7 @@ var RealityCheckUI = (function () {
 
     var frequency_url = page.url.url_for('user/reality_check_frequencyws');
     var summary_url  = page.url.url_for('user/reality_check_summaryws');
+    var hiddenClass = 'invisible';
 
     function showPopUp(content) {
         if ($('#reality-check').length > 0) {
@@ -45,7 +46,7 @@ var RealityCheckUI = (function () {
                     $('#continue').click(RealityCheckUI.onContinueClick);
                 }
             },
-            error: function(xhr) {
+            error: function() {
                 return;
             }
         });
@@ -87,7 +88,7 @@ var RealityCheckUI = (function () {
                     $('button#btn_logout').click(RealityCheckUI.onLogoutClick);
                 }
             },
-            error: function(xhr) {
+            error: function() {
                 return;
             }
         });
