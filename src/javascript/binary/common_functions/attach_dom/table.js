@@ -111,17 +111,6 @@ var Table = (function(){
         tbody.appendChild(docFrag);
     }
 
-    /***
-     *
-     * @param {String} id table id
-     * @param {Object[]} data array of data to be transform to row
-     * @param {Function} rowGenerator takes in one arg, and convert it into row to be append to table body
-     *
-    function overwriteTableBody(id, data, rowGenerator){
-        clearTableBody(id);
-        appendTableBody(id, data, rowGenerator);
-    }*/
-
     return {
         createFlexTable: createFlexTable,
         createFlexTableRow: createFlexTableRow,

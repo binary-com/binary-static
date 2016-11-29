@@ -3,7 +3,7 @@ var getAppId                  = require('../../config').getAppId;
 var Login                     = require('../base/login').Login;
 var objectNotEmpty            = require('../base/utility').objectNotEmpty;
 var getLoginToken             = require('../common_functions/common_functions').getLoginToken;
-var AccountOpening            = require('../common_functions/account_opening').AccountOpening;
+var displayAcctSettings       = require('../common_functions/account_opening').displayAcctSettings;
 var SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
 var checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
 var Cashier                   = require('./cashier/cashier').Cashier;
@@ -242,7 +242,7 @@ function BinarySocketClass() {
                         page.contents.topbar_message_visibility('show_residence');
                     }
                     if (/realws|maltainvestws|japanws/.test(window.location.href)) {
-                        AccountOpening.handle_account_opening_settings(response);
+                        displayAcctSettings(response);
                     }
                     GTM.event_handler(response.get_settings);
                     page.client.set_storage_value('tnc_status', response.get_settings.client_tnc_status || '-');

@@ -1,4 +1,4 @@
-var account_transferws = (function(){
+var AccountTransferWS = (function(){
     "use strict";
     var $form ;
     var account_from , account_to ;
@@ -255,13 +255,13 @@ var account_transferws = (function(){
             onmessage: function(msg){
                 var response = JSON.parse(msg.data);
                 if (response) {
-                    account_transferws.apiResponse(response);
+                    AccountTransferWS.apiResponse(response);
                 }
             }
         });
 
         if(TUser.get().hasOwnProperty('is_virtual')) {
-            account_transferws.init();
+            AccountTransferWS.init();
         }
     };
 
@@ -274,5 +274,5 @@ var account_transferws = (function(){
 })();
 
 module.exports = {
-    account_transferws: account_transferws,
+    AccountTransferWS: AccountTransferWS,
 };

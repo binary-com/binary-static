@@ -84,8 +84,6 @@ var LimitsUI = (function(){
         $("#limits-title>tfoot").hide();
     }
 
-
-
     return {
         clearTableContent: clearTableContent,
         fillLimitsTable: fillLimitsTable

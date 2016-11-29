@@ -510,7 +510,7 @@ var TradingEvents_Beta = (function () {
         if(init_logo){
             tip.addEventListener('click', debounce( function (e) {
                 var url = e.target.getAttribute('target');
-                page.load_with_pjax(url);
+                load_with_pjax(url);
             }));
         }
 

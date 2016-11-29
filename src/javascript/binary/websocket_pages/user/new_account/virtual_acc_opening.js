@@ -1,5 +1,5 @@
 var template              = require('../../../base/utility').template;
-var AccountOpening        = require('../../../common_functions/account_opening').AccountOpening;
+var handleResidence       = require('../../../common_functions/account_opening').handleResidence;
 var isIE                  = require('../../../common_functions/common_functions').isIE;
 var Content               = require('../../../common_functions/content').Content;
 var japanese_client       = require('../../../common_functions/country_base').japanese_client;
@@ -54,7 +54,7 @@ var VirtualAccOpening = (function(){
 
     function init() {
         Content.populate();
-        AccountOpening.handle_residence_state_ws();
+        handleResidence();
         BinarySocket.send({residence_list: 1});
         BinarySocket.send({website_status: 1});
 

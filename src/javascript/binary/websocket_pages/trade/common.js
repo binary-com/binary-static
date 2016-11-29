@@ -325,7 +325,6 @@ function hidePriceOverlay() {
     if (elm) {
         elm.style.display = 'none';
     }
-
 }
 
 function hideFormOverlay(){

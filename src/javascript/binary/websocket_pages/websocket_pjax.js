@@ -1,4 +1,4 @@
-var account_transferws            = require('./cashier/account_transferws').account_transferws;
+var AccountTransferWS             = require('./cashier/account_transferws').AccountTransferWS;
 var Cashier                       = require('./cashier/cashier').Cashier;
 var ForwardWS                     = require('./cashier/deposit_withdraw_ws').ForwardWS;
 var PaymentAgentListWS            = require('./cashier/payment_agent_listws').PaymentAgentListWS;
@@ -134,7 +134,7 @@ pjax_config_page_require_auth("user/security/cashier_passwordws", function() {
 pjax_config_page_require_auth("account/account_transferws", function() {
     return {
         onLoad: function() {
-            account_transferws.onLoad();
+            AccountTransferWS.onLoad();
         }
     };
 });

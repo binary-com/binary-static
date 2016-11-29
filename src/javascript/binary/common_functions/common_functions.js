@@ -5,12 +5,12 @@ var email_rot13 = function(str) {
 };
 
 // returns true if internet explorer browser
-function isIE() {
+var isIE = function() {
   return /(msie|trident|edge)/i.test(window.navigator.userAgent) && !window.opera;
-}
+};
 
 //hide and show hedging value if trading purpose is set to hedging
-function detect_hedging($purpose, $hedging) {
+var detect_hedging = function($purpose, $hedging) {
     $purpose.change(function() {
       if ($purpose.val() === 'Hedging') {
         $hedging.removeClass('invisible');
@@ -20,9 +20,9 @@ function detect_hedging($purpose, $hedging) {
       }
       return;
     });
-}
+};
 
-function jqueryuiTabsToDropdown($container) {
+var jqueryuiTabsToDropdown = function($container) {
     var $ddl = $('<select/>');
     $container.find('li a').each(function() {
         $ddl.append($('<option/>', {text: $(this).text(), value: $(this).attr('href')}));
@@ -31,11 +31,11 @@ function jqueryuiTabsToDropdown($container) {
         $container.find('li a[href="' + $(this).val() + '"]').click();
     });
     return $ddl;
-}
+};
 
 // use function to generate elements and append them
 // element is select and element to append is option
-function appendTextValueChild(element, text, value, disabled, el_class){
+var appendTextValueChild = function(element, text, value, disabled, el_class){
     var option = document.createElement("option");
     option.text = text;
     if (value) {
@@ -49,9 +49,9 @@ function appendTextValueChild(element, text, value, disabled, el_class){
     }
     element.appendChild(option);
     return;
-}
+};
 
-function isValidDate(day, month, year){
+var isValidDate = function(day, month, year){
     // Assume not leap year by default (note zero index for Jan)
     var daysInMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
 
@@ -61,14 +61,14 @@ function isValidDate(day, month, year){
         daysInMonth[1] = 29;
     }
     return day <= daysInMonth[--month];
-}
+};
 
 /*
  * function to check if element is visible or not
  *
  * alternative to jquery $('#id').is(':visible')
  */
-function isVisible(elem) {
+var isVisible = function(elem) {
     'use strict';
     if (!elem) return;
     if (elem.offsetWidth === 0 && elem.offsetHeight === 0) {
@@ -76,7 +76,7 @@ function isVisible(elem) {
     } else {
         return true;
     }
-}
+};
 
 module.exports = {
     getLoginToken          : function() { return Cookies.get('login'); },

@@ -1,7 +1,7 @@
 /*
  * Display price/spot movement variation to depict price moved up or down
  */
-function displayPriceMovement(element, oldValue, currentValue) {
+var displayPriceMovement = function(element, oldValue, currentValue) {
     'use strict';
     element.classList.remove('price_moved_down');
     element.classList.remove('price_moved_up');
@@ -12,12 +12,12 @@ function displayPriceMovement(element, oldValue, currentValue) {
         element.classList.remove('price_moved_up');
         element.classList.add('price_moved_down');
     }
-}
+};
 
 /*
  * count number of decimal places in spot so that we can make barrier to same decimal places
  */
-function countDecimalPlaces(num) {
+var countDecimalPlaces = function(num) {
     'use strict';
     if (!isNaN(num)) {
         var str = num.toString();
@@ -27,7 +27,7 @@ function countDecimalPlaces(num) {
             return 0;
         }
     }
-}
+};
 
 module.exports = {
     displayPriceMovement: displayPriceMovement,

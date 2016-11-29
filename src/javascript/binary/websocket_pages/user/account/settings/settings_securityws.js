@@ -161,7 +161,7 @@ var SecurityWS = (function() {
     function redirect() {
         if (redirect_url) {
             sessionStorage.removeItem('cashier_lock_redirect');
-            page.load_with_pjax(redirect_url);
+            load_with_pjax(redirect_url);
         }
     }
 
