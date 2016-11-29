@@ -110,7 +110,10 @@ sub _texts {
         push @texts, localize('week');
         push @texts, localize('day');
         push @texts, localize('hour');
+        push @texts, localize('h');
         push @texts, localize('minute');
+        push @texts, localize('min');
+        push @texts, localize('mins');
         push @texts, localize('second');
         push @texts, localize('Purchase Time');
         push @texts, localize('Start Time');
