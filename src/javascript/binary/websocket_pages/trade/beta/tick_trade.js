@@ -6,6 +6,9 @@ var isVisible                 = require('../../../common_functions/common_functi
 var addComma                  = require('../../../common_functions/string_util').addComma;
 var updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
 var label_value               = require('../common').label_value;
+require('../../../../lib/highstock/highstock.js');
+require('../../../../lib/highstock/highstock-exporting.js');
+require('../../../../lib/highstock/export-csv.js');
 
 var TickDisplay_Beta = function() {
     return {

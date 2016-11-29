@@ -4,6 +4,9 @@ var Content              = require('../../common_functions/content').Content;
 var ViewPopupUI          = require('../user/view_popup/view_popup_ui').ViewPopupUI;
 var isVisible            = require('../../common_functions/common_functions').isVisible;
 var updatePurchaseStatus = require('./common').updatePurchaseStatus;
+require('../../../lib/highstock/highstock.js');
+require('../../../lib/highstock/highstock-exporting.js');
+require('../../../lib/highstock/export-csv.js');
 
 var TickDisplay = function() {
     return {

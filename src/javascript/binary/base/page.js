@@ -27,6 +27,7 @@ var pjax                  = require('../../lib/pjax-lib');
 var isVisible             = require('../common_functions/common_functions').isVisible;
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
+require('../../lib/mmenu/jquery.mmenu.min.all.js');
 
 
 var clock_started = false;

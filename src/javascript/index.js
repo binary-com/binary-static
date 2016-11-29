@@ -9,10 +9,6 @@ var exportAllFunctions = function exportAllFunctions(obj) {
 
 window.$ = window.jQuery = require('jquery');
 
-require('./lib/highstock/highstock.js');
-require('./lib/highstock/highstock-exporting.js');
-require('./lib/highstock/export-csv.js');
-require('./lib/mmenu/jquery.mmenu.min.all.js');
 require('./lib/jquery-ui-timepicker/jquery.ui.timepicker.js');
 require('event-source-polyfill');
 require('./lib/jQuery.XDomainRequest.js');
