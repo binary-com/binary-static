@@ -12,6 +12,7 @@ var WhyUs                         = require('./why_us').WhyUs;
 var CharityPage                   = require('./charity').CharityPage;
 var TermsAndConditions            = require('./tnc').TermsAndConditions;
 var CashierJP                     = require('../../binary_japan/cashier').CashierJP;
+var LoggedInHandler               = require('../base/logged_in').LoggedInHandler;
 var pjax_config_page_require_auth = require('../base/page').pjax_config_page_require_auth;
 var pjax_config_page              = require('../base/page').pjax_config_page;
 
@@ -169,6 +170,14 @@ pjax_config_page('/regulation', function() {
     return {
         onLoad: function() {
             Regulation.init();
+        }
+    };
+});
+
+pjax_config_page('/logged_inws', function() {
+    return {
+        onLoad: function() {
+            LoggedInHandler.init();
         }
     };
 });

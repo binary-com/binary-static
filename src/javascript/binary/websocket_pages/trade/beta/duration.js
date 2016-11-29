@@ -45,7 +45,8 @@ var Durations_Beta = (function(){
 
         var target = document.getElementById('duration_units'),
             formName = Contract_Beta.form(),
-            barrierCategory = Contract_Beta.barrier();
+            barrierCategory = Contract_Beta.barrier(),
+            durationContainer = {};
 
         while (target && target.firstChild) {
             target.removeChild(target.firstChild);
