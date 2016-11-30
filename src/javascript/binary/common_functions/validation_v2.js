@@ -63,7 +63,7 @@ var ValidateV2 = (function() {
     }
 
     function noSymbolsInPassword(value) {
-        return !/^[!-~]+$/.test(value);
+        return /^[!-~]+$/.test(value);
     }
 
     function validToken(value) {

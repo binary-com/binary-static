@@ -3,15 +3,9 @@ var RealityCheckData = require('./reality_check.data').RealityCheckData;
 
 var RealityCheck = (function () {
     'use strict';
-    var loginTime;      // milliseconds
-    var getAccountStatus;
-
-    function initializeValues() {
-      getAccountStatus = false;
-    }
 
     function realityCheckWSHandler(response) {
-        initializeValues();
+        RealityCheckUI.initializeValues();
         if ($.isEmptyObject(response.reality_check)) {
             // not required for reality check
             RealityCheckUI.sendAccountStatus();
@@ -22,41 +16,25 @@ var RealityCheck = (function () {
         RealityCheckUI.renderSummaryPopUp(summary);
     }
 
-    function computeIntervalForNextPopup(loginTime, interval) {
-        var currentTime = Date.now();
-        var timeLeft = interval - ((currentTime - loginTime) % interval);
-        return timeLeft;
-    }
-
-    function startSummaryTimer() {
-        var interval = RealityCheckData.getInterval();
-        var toWait = computeIntervalForNextPopup(loginTime, interval);
-
-        window.setTimeout(function () {
-            RealityCheckData.setOpenSummaryFlag();
-            RealityCheckData.getSummaryAsync();
-        }, toWait);
-    }
-
     function realityStorageEventHandler(ev) {
         if (ev.key === 'reality_check.ack' && ev.newValue === '1') {
             RealityCheckUI.closePopUp();
-            startSummaryTimer();
+            RealityCheckUI.startSummaryTimer();
         } else if (ev.key === 'reality_check.keep_open' && ev.newValue === '0') {
             RealityCheckUI.closePopUp();
-            startSummaryTimer();
+            RealityCheckUI.startSummaryTimer();
         }
     }
 
     function init() {
-        initializeValues();
+        RealityCheckUI.initializeValues();
         if (!page.client.require_reality_check()) {
             RealityCheckData.setPreviousLoadLoginId();
             RealityCheckUI.sendAccountStatus();
             return;
         }
 
-        loginTime = TUser.get().logintime * 1000;
+        RealityCheckUI.setLoginTime(TUser.get().logintime * 1000);
 
         window.addEventListener('storage', realityStorageEventHandler, false);
 
@@ -71,7 +49,7 @@ var RealityCheck = (function () {
         } else if (RealityCheckData.getOpenSummaryFlag() === '1') {
             RealityCheckData.getSummaryAsync();
         } else {
-            startSummaryTimer();
+            RealityCheckUI.startSummaryTimer();
         }
 
         RealityCheckData.setPreviousLoadLoginId();

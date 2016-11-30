@@ -1,5 +1,6 @@
 var showLocalTimeOnHover = require('../../../base/utility').showLocalTimeOnHover;
 var onlyNumericOnKeypress = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
+var Content = require('../../../common_functions/content').Content;
 var RealityCheckData = require('./reality_check.data').RealityCheckData;
 require('../../../../lib/polyfills/array.includes');
 require('../../../../lib/polyfills/string.includes');
@@ -10,6 +11,12 @@ var RealityCheckUI = (function () {
     var frequency_url = page.url.url_for('user/reality_check_frequencyws');
     var summary_url  = page.url.url_for('user/reality_check_summaryws');
     var hiddenClass = 'invisible';
+    var loginTime;      // milliseconds
+    var getAccountStatus;
+
+    function initializeValues() {
+      getAccountStatus = false;
+    }
 
     function showPopUp(content) {
         if ($('#reality-check').length > 0) {
@@ -126,6 +133,7 @@ var RealityCheckUI = (function () {
         }
 
         if (intervalMinute < 10 || intervalMinute > 120) {
+            Content.populate();
             var minimumValueMsg = Content.errorMessage('number_should_between', '10 to 120');
             $('#rc-err').text(minimumValueMsg);
             $('#rc-err').removeClass(hiddenClass);
@@ -156,6 +164,22 @@ var RealityCheckUI = (function () {
       }
     }
 
+    function computeIntervalForNextPopup(loginTime, interval) {
+        var currentTime = Date.now();
+        var timeLeft = interval - ((currentTime - loginTime) % interval);
+        return timeLeft;
+    }
+
+    function startSummaryTimer() {
+        var interval = RealityCheckData.getInterval();
+        var toWait = computeIntervalForNextPopup(loginTime, interval);
+
+        window.setTimeout(function () {
+            RealityCheckData.setOpenSummaryFlag();
+            RealityCheckData.getSummaryAsync();
+        }, toWait);
+    }
+
     return {
         frequencyEventHandler: frequencyEventHandler,
         summaryEventHandler: summaryEventHandler,
@@ -165,6 +189,9 @@ var RealityCheckUI = (function () {
         onContinueClick: onContinueClick,
         onLogoutClick: onLogoutClick,
         sendAccountStatus: sendAccountStatus,
+        initializeValues: initializeValues,
+        startSummaryTimer: startSummaryTimer,
+        setLoginTime: function(time) { loginTime = time; },
     };
 }());
 
