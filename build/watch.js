@@ -2,11 +2,11 @@ module.exports = function (grunt){
     return {
         css: {
             files: ['src/sass/**/*.scss'],
-            tasks: ['css']
+            tasks: ['stylelint', 'css']
         },
         js: {
             files: ['src/javascript/**/*.js'],
-            tasks: ['test', 'js']
+            tasks: ['jshint', 'mochaTest', 'js']
         },
         options: {
             spawn: false,
