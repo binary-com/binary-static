@@ -31,7 +31,7 @@ var TradingEvents = (function () {
         if(value === 'endtime'){
             Durations.displayEndTime();
             if(Defaults.get('expiry_date')){
-                Durations.selectEndDate(Defaults.get('expiry_date').replace(/%20/g, ' '));
+                Durations.selectEndDate(moment(Defaults.get('expiry_date')));
                 make_price_request = -1;
             }
             Defaults.remove('duration_units', 'duration_amount');
@@ -223,7 +223,7 @@ var TradingEvents = (function () {
             // datepicker we can move back to javascript
             $('#expiry_date').on('change input', function () {
                 if (timeIsValid($('#expiry_date'))) {
-                    Durations.selectEndDate(this.value);
+                    Durations.selectEndDate(moment(this.getAttribute('data-value')));
                 }
             });
         }

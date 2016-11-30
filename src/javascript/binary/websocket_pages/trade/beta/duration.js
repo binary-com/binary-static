@@ -5,6 +5,8 @@ var moment = require('moment');
 var Content = require('../../../common_functions/content').Content;
 var State = require('../../../base/storage').State;
 var DatePicker = require('../../../components/date_picker').DatePicker;
+var toReadableFormat = require('../../../common_functions/string_util').toReadableFormat;
+var toISOFormat = require('../../../common_functions/string_util').toISOFormat;
 
 /*
  * Handles duration processing display
@@ -171,17 +173,23 @@ var Durations_Beta = (function(){
         var date_start = document.getElementById('date_start').value;
         var now = !date_start || date_start === 'now';
         var current_moment = moment((now ? window.time : parseInt(date_start) * 1000)).add(5, 'minutes').utc();
-        var expiry_date = Defaults.get('expiry_date') ? Defaults.get('expiry_date').replace(/%20/g, ' ') : current_moment.format('DD MMM, YYYY'),
-            expiry_time = Defaults.get('expiry_time') || current_moment.format('HH:mm');
+        var expiry_date = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment,
+            expiry_time = Defaults.get('expiry_time') || current_moment.format('HH:mm'),
+            expiry_date_iso = toISOFormat(expiry_date);
 
-        if (new Date(expiry_date + " " + expiry_time).valueOf() < current_moment.valueOf()) {
-            expiry_date = current_moment.format('DD MMM, YYYY');
+        if (moment(expiry_date_iso + " " + expiry_time).valueOf() < current_moment.valueOf()) {
+            expiry_date = current_moment;
+            expiry_date_iso = toISOFormat(expiry_date);
             expiry_time = current_moment.format('HH:mm');
         }
 
-        document.getElementById('expiry_date').value = expiry_date;
+        var expiry_date_readable = toReadableFormat(expiry_date),
+            expiry_date_el = document.getElementById('expiry_date');
+
+        expiry_date_el.value = expiry_date_readable;
+        expiry_date_el.setAttribute('data-value', expiry_date_iso);
         document.getElementById('expiry_time').value = expiry_time;
-        Defaults.set('expiry_date', expiry_date);
+        Defaults.set('expiry_date', expiry_date_iso);
         Defaults.set('expiry_time', expiry_time);
         Durations_Beta.setTime(expiry_time);
 
@@ -239,7 +247,7 @@ var Durations_Beta = (function(){
         if (unit.value === 'd') {
             var tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
-            datePickerDur.show(tomorrow, '', 'attr');
+            datePickerDur.show(tomorrow, 364, 'attr');
             amountElement.change(function(value) {
                 var dayDiff;
                 if($('#duration_amount').val()){
@@ -258,7 +266,7 @@ var Durations_Beta = (function(){
         }
 
         datePickDate.hide();
-        datePickDate.show(window.time ? window.time.format('DD MMM, YYYY') : new Date());
+        datePickDate.show('today', 364);
 
         validateMinDurationAmount();
         // we need to call it here as for days we need to show absolute barriers
@@ -340,11 +348,13 @@ var Durations_Beta = (function(){
 
     var selectEndDate = function(end_date){
         var expiry_time = document.getElementById('expiry_time'),
-            date_start  = document.getElementById('date_start');
-        $('#expiry_date').val(end_date);
-        Defaults.set('expiry_date', end_date);
-        end_date = new Date(end_date);
-        if (moment(end_date).isAfter(window.time.format('YYYY-MM-DD HH:mm'), 'day')) {
+            date_start  = document.getElementById('date_start').
+            end_date_readable = toReadableFormat(end_date),
+            end_date_iso = toISOFormat(end_date);
+        $('#expiry_date').val(end_date_readable)
+                         .attr('data-val', end_date_iso);
+        Defaults.set('expiry_date', end_date_iso);
+        if (end_date.isAfter(window.time.format('YYYY-MM-DD HH:mm'), 'day')) {
             Durations_Beta.setTime('');
             Defaults.remove('expiry_time');
             setNow(); // start time
@@ -399,8 +409,7 @@ var Durations_Beta = (function(){
             var end_time = moment(parseInt(value)*1000).add(5,'minutes').utc();
             Durations_Beta.setTime((timeIsValid($('#expiry_time')) && Defaults.get('expiry_time') ?
                                Defaults.get('expiry_time') : end_time.format("HH:mm")));
-            Durations_Beta.selectEndDate((timeIsValid($('#expiry_time')) && Defaults.get('expiry_date') ?
-                                    Defaults.get('expiry_date').replace(/%20/g, ' ') : end_time.format("DD MMM, YYYY")));
+            Durations_Beta.selectEndDate((timeIsValid($('#expiry_time')) && (Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : end_time)));
         }
         timeIsValid($('#expiry_time'));
         Durations_Beta.display();

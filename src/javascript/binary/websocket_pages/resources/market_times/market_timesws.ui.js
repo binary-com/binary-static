@@ -5,10 +5,10 @@ var Content          = require('../../../common_functions/content').Content;
 var japanese_client  = require('../../../common_functions/country_base').japanese_client;
 var MarketTimesData  = require('./market_timesws.data').MarketTimesData;
 var MarketTimes      = require('../market_timesws').MarketTimes;
+var moment           = require('moment');
 var State            = require('../../../base/storage').State;
 var DatePicker       = require('../../../components/date_picker').DatePicker;
-var moment           = require('moment');
-var StringUtil       = require('../../../common_functions/string_util').StringUtil;
+var toReadableFormat = require('../../../common_functions/string_util').toReadableFormat;
 
 var MarketTimesUI = (function() {
     "use strict";
@@ -37,14 +37,14 @@ var MarketTimesUI = (function() {
             MarketTimesData.sendRequest('today', !activeSymbols);
         }
 
-        $date.val(moment.utc().format('DD MMM, YYYY'));
+        $date.val(toReadableFormat(moment.utc()));
         var datePickerInst = new DatePicker('#trading-date');
-        datePickerInst.show('today');
+        datePickerInst.show('today', 364);
         $date.change(function() {
             $container.empty();
             showLoadingImage($container);
             tradingTimes = null;
-            MarketTimesData.sendRequest(StringUtil.dateToStringWithoutTimeDash($date.val()), !activeSymbols);
+            MarketTimesData.sendRequest($date.attr('data-value'), !activeSymbols);
         });
 
         $container.tabs();

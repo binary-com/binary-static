@@ -1,8 +1,7 @@
-var template   = require('../base/utility').template;
-var moment     = require('moment');
-var dv         = require('../../lib/validation');
-var Content    = require('./content').Content;
-var StringUtil = require('./string_util').StringUtil;
+var template = require('../base/utility').template;
+var moment   = require('moment');
+var dv       = require('../../lib/validation');
+var Content  = require('./content').Content;
 
 var ValidateV2 = (function() {
     function err() {
@@ -107,9 +106,6 @@ var ValidateV2 = (function() {
 
     function momentFmt(format, error) {
         return function(str) {
-            if (format === 'YYYY-MM-DD') {
-                str = StringUtil.dateToStringWithoutTimeDash(str);
-            }
             var date = moment(str, format, true);
             return date.isValid() ?
                 dv.ok(date) :

@@ -1,14 +1,13 @@
-var showLoadingImage   = require('../../../../base/utility').showLoadingImage;
-var Content            = require('../../../../common_functions/content').Content;
-var ValidateV2         = require('../../../../common_functions/validation_v2').ValidateV2;
-var ValidationUI       = require('../../../../validator').ValidationUI;
-var validate_object    = require('../../../../validator').validate_object;
-var bind_validation    = require('../../../../validator').bind_validation;
-var moment             = require('moment');
-var dv                 = require('../../../../../lib/validation');
-var TimePicker         = require('../../../../components/time_picker').TimePicker;
-var DatePicker         = require('../../../../components/date_picker').DatePicker;
-var StringUtil         = require('../../../../common_functions/string_util').StringUtil;
+var showLoadingImage = require('../../../../base/utility').showLoadingImage;
+var Content          = require('../../../../common_functions/content').Content;
+var ValidateV2       = require('../../../../common_functions/validation_v2').ValidateV2;
+var ValidationUI     = require('../../../../validator').ValidationUI;
+var validate_object  = require('../../../../validator').validate_object;
+var bind_validation  = require('../../../../validator').bind_validation;
+var moment           = require('moment');
+var dv               = require('../../../../../lib/validation');
+var TimePicker       = require('../../../../components/time_picker').TimePicker;
+var DatePicker       = require('../../../../components/date_picker').DatePicker;
 
 var SelfExclusionWS = (function() {
     "use strict";
@@ -97,12 +96,10 @@ var SelfExclusionWS = (function() {
         timePickerInst.show();
 
         var datePickerTime = new DatePicker('#' + timeDateID);
-        // 6 weeks
-        datePickerTime.show('today', 6 * 7);
+        datePickerTime.show('today', moment().add(moment.duration(6, 'weeks')));
 
         var datePickerDate = new DatePicker('#' + dateID);
-        // 5 years
-        datePickerDate.show(moment().add(moment.duration(6, 'months')).toDate(), 5 * 365);
+        datePickerDate.show(moment().add(moment.duration(6, 'months')).toDate(), moment().add(moment.duration(5, 'years')));
     }
 
     // ----------------------
@@ -194,7 +191,6 @@ var SelfExclusionWS = (function() {
     }
 
     function validExclusionDate(date) {
-        date = moment(date);
         var six_months = moment().add(moment.duration(6, 'months'));
         var five_years = moment().add(moment.duration(5, 'years'));
         return (
@@ -202,6 +198,10 @@ var SelfExclusionWS = (function() {
             (date.isAfter(five_years)  && dv.fail('Exclude time cannot be for more than 5 years.')) ||
             dv.ok(date)
         );
+    }
+
+    function toDateString(date) {
+        return dv.ok(date.format('YYYY-MM-DD'));
     }
 
     function allowEmptyUnless(key) {
@@ -229,7 +229,7 @@ var SelfExclusionWS = (function() {
             max_open_bets:      [numericOrEmpty, againstField('max_open_bets')],
             max_turnover:       [numericOrEmpty, againstField('max_turnover')],
             session_duration_limit: [numericOrEmpty, againstField('session_duration_limit'), validSessionDuration],
-            exclude_until:          [allowEmpty, validDate, afterToday, validExclusionDate],
+            exclude_until:          [allowEmpty, validDate, afterToday, validExclusionDate, toDateString],
             // these two are combined.
             timeout_until_duration: [allowEmptyUnless('timeout_until'), validDate],
             timeout_until:          [allowEmpty, validTime],
@@ -238,6 +238,14 @@ var SelfExclusionWS = (function() {
     }
 
     function validate(data) {
+        if (data.exclude_until) {
+            delete data.exclude_until;
+            data.exclude_until = $('#' + dateID).attr('data-value');
+        }
+        if (data.timeout_until_duration) {
+            delete data.timeout_until_duration;
+            data.timeout_until_duration = $('#' + timeDateID).attr('data-value');
+        }
         var info = validate_object(data, getSchema());
         info.errors = info.errors.filter(function(e) {
             return e.err !== EMPTY;
@@ -283,9 +291,10 @@ var SelfExclusionWS = (function() {
         if (date) {
             // If we've gotten this far then there must *not*
             // be an error with the timeout date.
+            date = moment(date);
             var time = values.timeout_until || moment.duration({});
             var six_weeks = moment().add(moment.duration(6, 'weeks'));
-            date = moment(new Date(moment(date).format('YYYY-MM-DD') + ' ' + moment(time).format('HH:mm')));
+            date = date.add(time.format('HH'), 'hours').add(time.format('mm'), 'minutes');
             var res = dv.first(date, [
                 afterToday,
                 dv.check(function(d) { return !d.isAfter(six_weeks); }, 'Exclude time cannot be more than 6 weeks'),

@@ -77,6 +77,11 @@ DatePicker.prototype = {
 
         var that = this;
         config.onSelect = function(date_text) {
+            var day = date_text.split(' ')[0],
+                month = ('0' + (Number($('.ui-datepicker-month').val()) + 1)).slice(-2),
+                year = $('.ui-datepicker-year').val(),
+                date = year + '-' + month + '-' + day;
+            $(this).attr('data-value', date);
             if(that.select_type == "diff") {
                 var today = moment.utc();
                 var selected_date = moment.utc(date_text + " 23:59:59");
@@ -85,7 +90,6 @@ DatePicker.prototype = {
                 $(that.component_selector).trigger("change", [ duration ]);
             } else if(that.select_type == "date") {
                 if (that.setValue == "attr") {
-                    $(this).attr('data-value', date_text);
                     $(this).val('');
                 } else {
                     $(this).val(date_text);

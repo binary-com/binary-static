@@ -179,13 +179,11 @@ var StatementWS = (function(){
         if(opts){
             $.extend(true, req, opts);
         }
-        var jump_to = $('#jump-to').val();
-        if (jump_to !== '' && jump_to !== page.text.localize('Today')) {
-            req.date_to = Math.floor((moment.utc(new Date(jump_to)).valueOf() / 1000)) +
-                          ((japanese_client() ? 15 : 24) * (60*60));
+        var jumpToVal = $('#jump-to').attr('data-value');
+        if (jumpToVal && jumpToVal !== '') {
+            req.date_to = moment.utc(jumpToVal).unix() + ((japanese_client() ? 15 : 24) * (60*60));
             req.date_from = 0;
         }
-
         BinarySocket.send(req);
     }
 

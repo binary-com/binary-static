@@ -31,7 +31,7 @@ var TradingEvents_Beta = (function () {
         if(value === 'endtime'){
             Durations_Beta.displayEndTime();
             if(Defaults.get('expiry_date')){
-                Durations_Beta.selectEndDate(Defaults.get('expiry_date').replace(/%20/g, ' '));
+                Durations_Beta.selectEndDate(moment(Defaults.get('expiry_date')));
                 make_price_request = -1;
             }
             Defaults.remove('duration_units', 'duration_amount');
@@ -224,7 +224,7 @@ var TradingEvents_Beta = (function () {
             $('#expiry_date').on('change input', function () {
                 //if start time is less than end time
                 if (timeIsValid($('#expiry_date'))) {
-                    Durations_Beta.selectEndDate(this.value);
+                    Durations_Beta.selectEndDate(moment(this.getAttribute('data-value')));
                 }
             });
         }
