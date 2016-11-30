@@ -9,6 +9,14 @@ var exportAllFunctions = function exportAllFunctions(obj) {
 
 window.$ = window.jQuery = require('jquery');
 
+require('babel-polyfill');
+
+require('./lib/highstock/highstock.js');
+require('./lib/highstock/highstock-exporting.js');
+require('./lib/highstock/export-csv.js');
+exportAllFunctions(require('./binary/base/page'));
+exportAllFunctions(require('./binary/websocket_pages/socket'));
+
 // ----- needed only for japanui -----
 // Polyfills
 window.Promise = window.Promise || require('promise-polyfill');
@@ -18,9 +26,6 @@ require('./lib/polyfills/object.assign');
 exportAllFunctions(require('./binary/websocket_pages/trade/analysis'));
 // ----- end of japanui required modules -----
 
-require('./lib/highstock/highstock.js');
-require('./lib/highstock/highstock-exporting.js');
-require('./lib/highstock/export-csv.js');
 require('./lib/mmenu/jquery.mmenu.min.all.js');
 require('./lib/jquery-ui-timepicker/jquery.ui.timepicker.js');
 require('event-source-polyfill');
@@ -33,12 +38,10 @@ require('./binary/components/trackjs_onerror');
 
 exportAllFunctions(require('./binary/base/logged_in'));
 exportAllFunctions(require('./binary/base/onerror'));
-exportAllFunctions(require('./binary/base/page'));
 exportAllFunctions(require('./binary/base/pjax'));
 
 exportAllFunctions(require('./binary/static_pages/static_pjax'));
 
-exportAllFunctions(require('./binary/websocket_pages/socket'));
 exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_price'));
 exportAllFunctions(require('./binary/websocket_pages/trade/common'));
 exportAllFunctions(require('./binary/websocket_pages/trade/process'));

@@ -16,6 +16,19 @@ module.exports = function (grunt) {
                 path: global.dist + '/js/',
                 filename: '[name]',
             },
+            module: {
+                loaders: [
+                    {
+                        test: /\.js$/,
+                        exclude: /node_modules/,
+                        loader: 'babel-loader',
+                        query: {
+                            presets: ['es2015'],
+                            compact: false,
+                        }
+                    }
+                ]
+            },
             plugins: [
                 new CircularDependencyPlugin({
                     failOnError: true,
