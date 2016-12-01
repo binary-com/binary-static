@@ -47,6 +47,7 @@
 
     "validthis": false, // true: Tolerate using this in a non-constructor function
     "unused": true, // true: Require all defined variables be used
+    "undef": true, // true: Require all non-global variables to be declared (prevents global leaks)
 
 
     "globals": {
@@ -63,6 +64,5 @@
     // TODO: Options to enable later:
     // "curly": true, // true: Require {} for every new block or scope
     // "eqeqeq": true, // true: Require triple equals (===) for comparison
-    // "undef": true, // true: Require all non-global variables to be declared (prevents global leaks)
     // "strict": true, // true: Requires all functions run in ES5 Strict Mode
 }
