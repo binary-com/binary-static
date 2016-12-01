@@ -31,7 +31,7 @@ var displayAcctSettings = function(response) {
           dobdd.value = date.format('DD').replace(/^0/, '');
           dobmm.value = date.format('MM');
           dobyy.value = date.format('YYYY');
-          for (i = 0; i < inputs.length; i++) {
+          for (var i = 0; i < inputs.length; i++) {
               inputs[i].disabled = true;
           }
           document.getElementById('address1').value = settings.address_line_1;
@@ -41,8 +41,8 @@ var displayAcctSettings = function(response) {
           document.getElementById('address-postcode').value = settings.address_postcode;
           document.getElementById('tel').value = settings.phone;
         } else {
-          for (i = 0; i < inputs.length; i++) {
-              inputs[i].disabled = false;
+          for (var j = 0; j < inputs.length; j++) {
+              inputs[j].disabled = false;
           }
         }
       }
@@ -123,7 +123,7 @@ var handleResidence = function() {
       } else if (type === 'states_list') {
         select = document.getElementById('address-state');
         var states_list = response.states_list;
-        for (i = 0; i < states_list.length; i++) {
+        for (var i = 0; i < states_list.length; i++) {
             appendTextValueChild(select, states_list[i].text, states_list[i].value);
         }
         select.parentNode.parentNode.show();
@@ -137,8 +137,8 @@ var handleResidence = function() {
             residenceValue = page.client.residence,
             residence_list = response.residence_list;
         if (residence_list.length > 0){
-          for (i = 0; i < residence_list.length; i++) {
-            var residence = residence_list[i];
+          for (var j = 0; j < residence_list.length; j++) {
+            var residence = residence_list[j];
             if (select) {
               appendTextValueChild(select, residence.text, residence.value, residence.disabled ? 'disabled' : undefined);
             }

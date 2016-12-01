@@ -58,7 +58,34 @@
         "module": true,
         "TUser": true,
         "BinarySocket": true,
-        "console": true
+        "console": true,
+
+        "describe": true,
+        "it": true,
+        "before": true,
+        "LocalStore": true,
+        "load_with_pjax": true,
+        "Highcharts": true,
+
+        "global": true,
+        "GTM": true,
+        "dataLayer": true,
+        "trackJs": true,
+        "DESK": true,
+        "MBPrice": true,
+
+        "processActiveSymbols": true,
+        "processMarket": true,
+        "processContract": true,
+        "processContractForm": true,
+        "forgetTradingStreams": true,
+        "processForgetProposals": true,
+        "processPriceRequest": true,
+        "processForgetTicks": true,
+        "processTick": true,
+        "processProposal": true,
+        "processTradingTimesRequest": true,
+        "processTradingTimes": true
     }
 
     // TODO: Options to enable later:

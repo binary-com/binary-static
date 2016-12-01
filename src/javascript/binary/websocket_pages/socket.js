@@ -84,7 +84,7 @@ function BinarySocketClass() {
                 data.passthrough.req_number = ++req_number;
                 timeouts[req_number] = setTimeout(function(){
                     if(typeof reloadPage === 'function' && data.contracts_for){
-                        alert("The server didn't respond to the request:\n\n"+JSON.stringify(data)+"\n\n");
+                        window.alert("The server didn't respond to the request:\n\n"+JSON.stringify(data)+"\n\n");
                         reloadPage();
                     }
                     else{
@@ -166,7 +166,7 @@ function BinarySocketClass() {
                         var isActiveTab = sessionStorage.getItem('active_tab') === '1';
                         if(response.error.code === 'SelfExclusion' && isActiveTab) {
                             sessionStorage.removeItem('active_tab');
-                            alert(response.error.message);
+                            window.alert(response.error.message);
                         }
                         LocalStore.set('reality_check.ack', 0);
                         page.client.send_logout_request(isActiveTab);
@@ -327,7 +327,7 @@ function BinarySocketClass() {
                             page.client.send_logout_request();
                       } else if (response.error.code === 'InvalidAppID') {
                           wrongAppId = getAppId();
-                          alert(response.error.message);
+                          window.alert(response.error.message);
                       }
                     }
                 }
