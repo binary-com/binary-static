@@ -1,11 +1,13 @@
-var MBContract = require('./mb_contract').MBContract;
-var MBDefaults = require('./mb_defaults').MBDefaults;
-var MBNotifications = require('./mb_notifications').MBNotifications;
-var MBPrice = require('./mb_price').MBPrice;
-var MBSymbols = require('./mb_symbols').MBSymbols;
-var MBTick = require('./mb_tick').MBTick;
-var TradingAnalysis = require('../trade/analysis').TradingAnalysis;
-var japanese_client = require('../../common_functions/country_base').japanese_client;
+var MBContract         = require('./mb_contract').MBContract;
+var MBDefaults         = require('./mb_defaults').MBDefaults;
+var MBNotifications    = require('./mb_notifications').MBNotifications;
+var MBPrice            = require('./mb_price').MBPrice;
+var MBSymbols          = require('./mb_symbols').MBSymbols;
+var MBTick             = require('./mb_tick').MBTick;
+var TradingAnalysis    = require('../trade/analysis').TradingAnalysis;
+var japanese_client    = require('../../common_functions/country_base').japanese_client;
+var displayUnderlyings = require('../trade/common').displayUnderlyings;
+var showFormOverlay    = require('../trade/common').showFormOverlay;
 
 var MBProcess = (function() {
     var market_status = '',
@@ -240,11 +242,11 @@ var MBProcess = (function() {
             i, expired_barrier, $expired_barrier_element;
         contracts.forEach(function(c) {
             var expired_barriers = c.expired_barriers;
-            for (i = 0; i < c.expired_barriers.length; i++) {
+            for (i = 0; i < expired_barriers.length; i++) {
                 if (c.barriers == 2) {
-                    expired_barrier = c.expired_barriers[i][0] + '_' + c.expired_barriers[i][1];
+                    expired_barrier = expired_barriers[i][0] + '_' + expired_barriers[i][1];
                 } else {
-                    expired_barrier = c.expired_barriers[i];
+                    expired_barrier = expired_barriers[i];
                 }
                 $expired_barrier_element = $('div [data-barrier="' + expired_barrier + '"]');
                 if ($expired_barrier_element.length > 0) {

@@ -1,8 +1,9 @@
-var MBContract = require('./mb_contract').MBContract;
-var objectNotEmpty = require('../../base/utility').objectNotEmpty;
-var MBDefaults = require('./mb_defaults').MBDefaults;
+var MBContract      = require('./mb_contract').MBContract;
+var objectNotEmpty  = require('../../base/utility').objectNotEmpty;
+var MBDefaults      = require('./mb_defaults').MBDefaults;
 var MBNotifications = require('./mb_notifications').MBNotifications;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
+var addComma        = require('../../common_functions/string_util').addComma;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -74,7 +75,6 @@ var MBPrice = (function() {
             });
         }
 
-        var payout = MBDefaults.get('payout') * 1000;
         barriers.forEach(function(barrier) {
             Object.keys(contract_types).forEach(function(contract_type) {
                 $($tables[+contract_types[contract_type].order])

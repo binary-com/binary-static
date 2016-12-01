@@ -46,29 +46,18 @@
     "supernew": false, // true: Tolerate `new function () { ... };` and `new Object;`
 
     "validthis": false, // true: Tolerate using this in a non-constructor function
+    "unused": true, // true: Require all defined variables be used
 
 
     "globals": {
         "jQuery": true,
         "$": true,
-        "moment": true,
-        "pjax_config_page": true,
         "page": true,
         "require": true,
         "module": true,
         "TUser": true,
         "BinarySocket": true,
-        "Portfolio": true,
-        "PortfolioWS": true,
-        "addComma": true,
-        "addTooltip": true,
-        "buildOauthApps": true,
-        "console": true,
-        "format_money": true,
-        "japanese_client": true,
-        "showLoadingImage": true,
-        "showTooltip": true,
-        "toJapanTimeIfNeeded": true
+        "console": true
     }
 
     // TODO: Options to enable later:
@@ -76,5 +65,4 @@
     // "eqeqeq": true, // true: Require triple equals (===) for comparison
     // "undef": true, // true: Require all non-global variables to be declared (prevents global leaks)
     // "strict": true, // true: Requires all functions run in ES5 Strict Mode
-    // "unused": true, // true: Require all defined variables be used
 }

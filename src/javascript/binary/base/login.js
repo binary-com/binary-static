@@ -1,3 +1,5 @@
+var getAppId = require('../../config').getAppId;
+
 var Login = (function() {
     "use strict";
 

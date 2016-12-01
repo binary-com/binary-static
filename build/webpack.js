@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var CircularDependencyPlugin = require('circular-dependency-plugin');
+//var UnusedFilesWebpackPlugin = require('unused-files-webpack-plugin')["default"];
 
 module.exports = function (grunt) {
     var isProduction = grunt.cli.tasks[0] === 'release',
@@ -7,6 +8,12 @@ module.exports = function (grunt) {
             new CircularDependencyPlugin({
                 failOnError: true,
             }),
+            // new UnusedFilesWebpackPlugin({
+            //     pattern: 'src/javascript/**/*.*',
+            //     globOptions: {
+            //         ignore: 'src/javascript/**/__tests__/*.*',
+            //     }
+            // }),
         ];
     if (isProduction) {
         plugins.push(

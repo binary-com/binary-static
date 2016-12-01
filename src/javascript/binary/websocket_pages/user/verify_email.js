@@ -2,7 +2,7 @@ var Content    = require('../../common_functions/content').Content;
 var ValidateV2 = require('../../common_functions/validation_v2').ValidateV2;
 var bind_validation = require('../../validator').bind_validation;
 
-function submit_email() {
+function VerifyEmail() {
     Content.populate();
     var form = $('#verify-email-form')[0];
     if (!form) {
@@ -51,5 +51,5 @@ function submit_email() {
 }
 
 module.exports = {
-    submit_email: submit_email,
+    VerifyEmail: VerifyEmail,
 };

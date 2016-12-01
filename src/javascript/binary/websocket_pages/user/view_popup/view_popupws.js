@@ -1,14 +1,14 @@
 var showLocalTimeOnHover = require('../../../base/utility').showLocalTimeOnHover;
-var toJapanTimeIfNeeded = require('../../../base/utility').toJapanTimeIfNeeded;
-var objectNotEmpty = require('../../../base/utility').objectNotEmpty;
-var format_money = require('../../../common_functions/currency_to_symbol').format_money;
-var japanese_client = require('../../../common_functions/country_base').japanese_client;
-var MBPrice = require('../../mb_trade/mb_price').MBPrice;
-var ViewPopupUI = require('./view_popup_ui').ViewPopupUI;
-var moment = require('moment');
-var State = require('../../../base/storage').State;
-var Highchart     = require('../../trade/charts/highchartws').Highchart;
-var WSTickDisplay = require('../../trade/tick_trade').WSTickDisplay;
+var toJapanTimeIfNeeded  = require('../../../base/utility').toJapanTimeIfNeeded;
+var objectNotEmpty       = require('../../../base/utility').objectNotEmpty;
+var format_money         = require('../../../common_functions/currency_to_symbol').format_money;
+var japanese_client      = require('../../../common_functions/country_base').japanese_client;
+var MBPrice              = require('../../mb_trade/mb_price').MBPrice;
+var ViewPopupUI          = require('./view_popup_ui').ViewPopupUI;
+var moment               = require('moment');
+var State                = require('../../../base/storage').State;
+var Highchart            = require('../../trade/charts/highchartws').Highchart;
+var WSTickDisplay        = require('../../trade/tick_trade').WSTickDisplay;
 
 var ViewPopupWS = (function() {
     "use strict";
@@ -143,7 +143,8 @@ var ViewPopupWS = (function() {
         sellSetVisibility(!isSellClicked && !contract.is_ended);
     };
 
-    var spreadContractEnded = function(is_win) {
+    //var spreadContractEnded = function(is_win) {
+    var spreadContractEnded = function() {
         $Container.find('#sell_level').parent('tr').addClass(hiddenClass);
         $Container.find('#exit_level').text(contract.exit_level).parent('tr').removeClass(hiddenClass);
         sellSetVisibility(false);
@@ -328,7 +329,8 @@ var ViewPopupWS = (function() {
         window.ViewPopupTimerInterval = setInterval(update_time, 500);
     };
 
-    var normalContractEnded = function(is_win) {
+    //var normalContractEnded = function(is_win) {
+    var normalContractEnded = function() {
         containerSetText('trade_details_current_title'   , page.text.localize(contract.sell_spot_time < contract.date_expiry ? 'Contract Sold' : 'Contract Expiry'));
         containerSetText('trade_details_spot_label'      , page.text.localize('Exit Spot'));
         containerSetText('trade_details_spottime_label'  , page.text.localize('Exit Spot Time'));
@@ -454,12 +456,6 @@ var ViewPopupWS = (function() {
         return '<tr' + (isHidden ? ' class="' + hiddenClass + '"' : '') + '><td' + (label_id ? ' id="' + label_id + '"' : '') + '>' + page.text.localize(label) + '</td><td' + (value_id ? ' id="' + value_id + '"' : '') + '>' + (value ? value : '') + '</td></tr>';
     };
 
-    var normalSetVisibleRow = function(child_id, isVisible) {
-        var $row = $('#' + child_id).parent('tr');
-        if(isVisible) $row.removeClass(hiddenClass);
-        else $row.addClass(hiddenClass);
-    };
-
     var epochToDateTime = function(epoch) {
         return moment.utc(epoch * 1000).format('YYYY-MM-DD HH:mm:ss');
     };
@@ -478,13 +474,13 @@ var ViewPopupWS = (function() {
         }
     };
 
-    var showWinLossStatus = function(isWin) {
+    /*var showWinLossStatus = function(isWin) {
         containerSetText(
             winStatusID,
             page.text.localize('This contract has ' + (isWin ? 'WON' : 'LOST')),
             {class: isWin ? 'won' : 'lost'}
         );
-    };
+    };*/
 
     var setLoadingState = function(showLoading) {
         if(showLoading) {
@@ -582,7 +578,7 @@ var ViewPopupWS = (function() {
         socketSend({"sell_expired": 1, passthrough: {}});
     };
 
-    var responseSellExpired = function(response) {
+    var responseSellExpired = function() {
         getContract();
     };
 
@@ -647,7 +643,7 @@ var ViewPopupWS = (function() {
                 responseSell(response);
                 break;
             case 'sell_expired':
-                responseSellExpired(response);
+                responseSellExpired();
                 break;
             case 'get_corporate_actions':
                 if (objectNotEmpty(response.get_corporate_actions)) {

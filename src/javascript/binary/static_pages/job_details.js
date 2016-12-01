@@ -65,7 +65,7 @@ var JobDetails = (function() {
 
     function addEventListeners() {
         var sidebarListItem = $('#sidebar-nav li');
-        sidebarListItem.click(function(e) {
+        sidebarListItem.click(function() {
             sidebarListItem.removeClass('selected');
             $(this).addClass('selected');
         });

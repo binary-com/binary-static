@@ -1,4 +1,4 @@
-var testPassword = require('./passwordmeter').testPassword;
+//var testPassword = require('./passwordmeter').testPassword;
 var Content      = require('./content').Content;
 
 var Validate = (function(){
@@ -126,13 +126,13 @@ var Validate = (function(){
     return true;
   }
 
-  function passwordStrong(password, error){
+  /*function passwordStrong(password, error){
     if (testPassword(password)[0] < 20) {
       displayErrorMessage(error);
       return errorCounter++;
     }
     return true;
-  }
+  }*/
 
   //give error message for invalid password, needs value of password, repeat of password, and DOM element of error
   /**

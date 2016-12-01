@@ -1,9 +1,13 @@
-var Barriers = require('./barriers').Barriers;
-var Contract = require('./contract').Contract;
-var Defaults = require('./defaults').Defaults;
-var Content = require('../../common_functions/content').Content;
-var moment = require('moment');
-var State = require('../../base/storage').State;
+var Barriers      = require('./barriers').Barriers;
+var Contract      = require('./contract').Contract;
+var Defaults      = require('./defaults').Defaults;
+var Content       = require('../../common_functions/content').Content;
+var moment        = require('moment');
+var State         = require('../../base/storage').State;
+var isVisible     = require('../../common_functions/common_functions').isVisible;
+var durationOrder = require('./common').durationOrder;
+var selectOption  = require('./common').selectOption;
+var timeIsValid   = require('./common').timeIsValid;
 
 /*
  * Handles duration processing display
@@ -42,7 +46,7 @@ var Durations = (function(){
         var target = document.getElementById('duration_units'),
             formName = Contract.form(),
             barrierCategory = Contract.barrier(),
-            fragment = document.createDocumentFragment(), durationContainer = {};
+            durationContainer = {};
 
         while (target && target.firstChild) {
             target.removeChild(target.firstChild);
@@ -228,7 +232,7 @@ var Durations = (function(){
         }
         document.getElementById('duration_amount').value = unitValue;
         Defaults.set('duration_amount', unitValue);
-        displayExpiryType(unit.value);
+        displayExpiryType();
         Defaults.set('duration_units', unit.value);
 
         // jquery for datepicker
@@ -268,7 +272,7 @@ var Durations = (function(){
         Barriers.display();
     };
 
-    var displayExpiryType = function(unit) {
+    var displayExpiryType = function() {
         var target = document.getElementById('expiry_type'),
             fragment = document.createDocumentFragment();
 

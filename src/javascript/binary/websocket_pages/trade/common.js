@@ -1,14 +1,13 @@
-var Contract      = require('./contract').Contract;
-var Defaults      = require('./defaults').Defaults;
-var Notifications = require('./notifications').Notifications;
-var Symbols       = require('./symbols').Symbols;
-var Tick          = require('./tick').Tick;
-var Contract_Beta = require('./beta/contract').Contract_Beta;
-var objectNotEmpty = require('../../base/utility').objectNotEmpty;
+var Defaults        = require('./defaults').Defaults;
+var Notifications   = require('./notifications').Notifications;
+var Symbols         = require('./symbols').Symbols;
+var Tick            = require('./tick').Tick;
+var objectNotEmpty  = require('../../base/utility').objectNotEmpty;
 var Content         = require('../../common_functions/content').Content;
 var format_money    = require('../../common_functions/currency_to_symbol').format_money;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
-var moment = require('moment');
+var addComma        = require('../../common_functions/string_util').addComma;
+var moment          = require('moment');
 
 /*
  * This contains common functions we need for processing the response
@@ -41,8 +40,7 @@ function displayContractForms(id, elements, selected) {
      'use strict';
      if (!id || !elements || !selected) return;
      var target = document.getElementById(id),
-         fragment = document.createDocumentFragment(),
-         len = elements.length;
+         fragment = document.createDocumentFragment();
 
      target.innerHTML = '';
 
@@ -79,7 +77,6 @@ function displayContractForms(id, elements, selected) {
                          li2.classList.add('last');
                      }
 
-                     var span_class = '';
                      if (selected && selected === el2.toLowerCase()) {
                          li2.classList.add('active');
                          a2.classList.add('a-active');
@@ -199,33 +196,6 @@ function displayMarkets(id, elements, selected) {
          }
      }
  }
-/*
- * function to create `option` and append to select box with id `id`
- */
-function displayOptions(id, elements, selected) {
-    'use strict';
-    var target= document.getElementById(id),
-        fragment =  document.createDocumentFragment();
-
-    while (target && target.firstChild) {
-        target.removeChild(target.firstChild);
-    }
-
-    for (var key in elements) {
-        if (elements.hasOwnProperty(key)){
-            var option = document.createElement('option'), content = document.createTextNode(elements[key]);
-            option.setAttribute('value', key);
-            if (selected && selected === key) {
-                option.setAttribute('selected', 'selected');
-            }
-            option.appendChild(content);
-            fragment.appendChild(option);
-        }
-    }
-    if (target) {
-        target.appendChild(fragment);
-    }
-}
 
 /*
  * function to display underlyings
@@ -341,41 +311,6 @@ function contractTypeDisplayMapping(type) {
     return type ? obj[type] : 'top';
 }
 
-
-/*
- * function to check if element is visible or not
- *
- * alternative to jquery $('#id').is(':visible')
- */
-function isVisible(elem) {
-    'use strict';
-    if (!elem) return;
-    if (elem.offsetWidth === 0 && elem.offsetHeight === 0) {
-        return false;
-    } else {
-        return true;
-    }
-}
-
-/*
- * function to hide and display the loading icon for price container
- */
-function hideLoadingOverlay() {
-    'use strict';
-    var elm = document.getElementById('loading_container');
-    if (elm) {
-        elm.style.display = 'none';
-    }
-}
-
-function showLoadingOverlay() {
-    'use strict';
-    var elm = document.getElementById('loading_container');
-    if (elm) {
-        elm.style.display = 'block';
-    }
-}
-
 function showPriceOverlay() {
     'use strict';
     var elm = document.getElementById('loading_container2');
@@ -390,7 +325,6 @@ function hidePriceOverlay() {
     if (elm) {
         elm.style.display = 'none';
     }
-
 }
 
 function hideFormOverlay(){
@@ -422,28 +356,6 @@ function hideOverlayContainer() {
     if (elm2) {
         elm2.style.display = 'flex';
     }
-}
-
-/*
- * function to assign sorting to market list
- */
-function compareMarkets(a, b) {
-    'use strict';
-    var sortedMarkets = {
-        'forex': 0,
-        'indices': 1,
-        'stocks': 2,
-        'commodities': 3,
-        'volidx': 4
-    };
-
-    if (sortedMarkets[a.toLowerCase()] < sortedMarkets[b.toLowerCase()]) {
-        return -1;
-    }
-    if (sortedMarkets[a.toLowerCase()] > sortedMarkets[b.toLowerCase()]) {
-        return 1;
-    }
-    return 0;
 }
 
 function getContractCategoryTree(elements){
@@ -486,22 +398,6 @@ function getContractCategoryTree(elements){
         tree = tree.filter(function(v){ return v.length; });
     }
     return tree;
-}
-
-/*
- * Display price/spot movement variation to depict price moved up or down
- */
-function displayPriceMovement(element, oldValue, currentValue) {
-    'use strict';
-    element.classList.remove('price_moved_down');
-    element.classList.remove('price_moved_up');
-    if (parseFloat(currentValue) > parseFloat(oldValue)) {
-        element.classList.remove('price_moved_down');
-        element.classList.add('price_moved_up');
-    } else if (parseFloat(currentValue) < parseFloat(oldValue)) {
-        element.classList.remove('price_moved_up');
-        element.classList.add('price_moved_down');
-    }
 }
 
 /*
@@ -554,18 +450,6 @@ function toggleActiveCatMenuElement(nav, eventElementId) {
             eventElement = parent;
             i++;
         }
-    }
-}
-
-/*
- * function to set placeholder text based on current form, used for mobile menu
- */
-function setFormPlaceholderContent(name) {
-    'use strict';
-    var formPlaceholder = document.getElementById('contract_form_nav_placeholder');
-    if (formPlaceholder) {
-        name = name || Defaults.get('formname');
-        formPlaceholder.textContent = Contract.contractForms()[name];
     }
 }
 
@@ -693,43 +577,6 @@ function submitForm(form) {
 }
 
 /*
- * function to display indicative barrier
- */
-function displayIndicativeBarrier() {
-    'use strict';
-    var unit = document.getElementById('duration_units'),
-        currentTick = Tick.quote(),
-        indicativeBarrierTooltip = document.getElementById('indicative_barrier_tooltip'),
-        indicativeHighBarrierTooltip = document.getElementById('indicative_high_barrier_tooltip'),
-        indicativeLowBarrierTooltip = document.getElementById('indicative_low_barrier_tooltip'),
-        barrierElement = document.getElementById('barrier'),
-        highBarrierElement = document.getElementById('barrier_high'),
-        lowBarrierElement = document.getElementById('barrier_low');
-
-    if (unit && (!isVisible(unit) || unit.value !== 'd') && currentTick && !isNaN(currentTick)) {
-        var decimalPlaces = countDecimalPlaces(currentTick);
-        if (indicativeBarrierTooltip && isVisible(indicativeBarrierTooltip)) {
-            var barrierValue = isNaN(parseFloat(barrierElement.value))?0:parseFloat(barrierElement.value);
-            indicativeBarrierTooltip.textContent = (parseFloat(currentTick) + barrierValue).toFixed(decimalPlaces);
-        }
-
-        if (indicativeHighBarrierTooltip && isVisible(indicativeHighBarrierTooltip)) {
-            var highBarrierValue = isNaN(parseFloat(highBarrierElement.value))?0:parseFloat(highBarrierElement.value);
-            indicativeHighBarrierTooltip.textContent = (parseFloat(currentTick) + highBarrierValue).toFixed(decimalPlaces);
-        }
-
-        if (indicativeLowBarrierTooltip && isVisible(indicativeLowBarrierTooltip)) {
-            var lowBarrierValue = isNaN(parseFloat(lowBarrierElement.value))?0:parseFloat(lowBarrierElement.value);
-            indicativeLowBarrierTooltip.textContent = (parseFloat(currentTick) + lowBarrierValue).toFixed(decimalPlaces);
-        }
-    } else {
-        indicativeBarrierTooltip.textContent = '';
-        indicativeHighBarrierTooltip.textContent = '';
-        indicativeLowBarrierTooltip.textContent = '';
-    }
-}
-
-/*
  * function to sort the duration in ascending order
  */
 function durationOrder(duration){
@@ -821,21 +668,6 @@ function displayTooltip(market, symbol){
     }
 }
 
-/*
- * count number of decimal places in spot so that we can make barrier to same decimal places
- */
-function countDecimalPlaces(num) {
-    'use strict';
-    if (!isNaN(num)) {
-        var str = num.toString();
-        if (str.indexOf('.') !== -1) {
-            return str.split('.')[1].length;
-        } else {
-            return 0;
-        }
-    }
-}
-
 function selectOption(option, select){
     var options = select.getElementsByTagName('option');
     var contains = 0;
@@ -909,13 +741,6 @@ function reloadPage(){
     location.reload();
 }
 
-function addComma(num, decimal_points){
-    num = String(num || 0).replace(/,/g, '') * 1;
-    return num.toFixed(decimal_points || 2).toString().replace(/(^|[^\w.])(\d{4,})/g, function($0, $1, $2) {
-        return $1 + $2.replace(/\d(?=(?:\d\d\d)+(?!\d))/g, "$&,");
-    });
-}
-
 function showHighchart(){
   Content.populate();
 
@@ -979,26 +804,13 @@ function toggleActiveNavMenuElement_Beta(nav, eventElement) {
     }
 }
 
-/*
- * function to set placeholder text based on current form, used for mobile menu
- */
-function setFormPlaceholderContent_Beta(name) {
-    'use strict';
-    var formPlaceholder = document.getElementById('contract_form_nav_placeholder');
-    if (formPlaceholder) {
-        name = name || Defaults.get('formname');
-        formPlaceholder.textContent = Contract_Beta.contractForms()[name];
-    }
-}
-
 function updatePurchaseStatus_Beta(final_price, pnl, contract_status){
     final_price = String(final_price).replace(/,/g, '') * 1;
     pnl = String(pnl).replace(/,/g, '') * 1;
     $('#contract_purchase_heading').text(page.text.localize(contract_status));
     var payout  = document.getElementById('contract_purchase_payout'),
         cost    = document.getElementById('contract_purchase_cost'),
-        profit  = document.getElementById('contract_purchase_profit'),
-        currency = TUser.get().currency;
+        profit  = document.getElementById('contract_purchase_profit');
 
     label_value(cost  , Content.localize().textStake , addComma(Math.abs(pnl)));
     label_value(payout, Content.localize().textPayout, addComma(final_price));
@@ -1044,111 +856,6 @@ function label_value(label_elem, label, value, no_currency) {
     value_elem.setAttribute('value', String(value).replace(/,/g, ''));
 }
 
-function adjustAnalysisColumnHeight() {
-    var sumHeight = 0;
-    if (window.innerWidth > 767) {
-        $('.col-left').children().each(function() {
-            if ($(this).is(':visible')) sumHeight += $(this).outerHeight(true);
-        });
-    } else {
-        sumHeight = 'auto';
-    }
-    $('#trading_analysis_content').height(sumHeight);
-}
-
-function moreTabsHandler($ul) {
-    if (!$ul) $ul = $('#analysis_tabs');
-    var $visibleTabs  = $ul.find('>li:visible'),
-        seeMoreClass  = 'see-more',
-        moreTabsClass = 'more-tabs',
-        maxWidth      = $ul.outerWidth(),
-        totalWidth    = 0;
-
-    // add seeMore tab
-    var $seeMore = $ul.find('li.' + seeMoreClass);
-    if ($seeMore.length === 0) {
-        $seeMore = $('<li class="tm-li ' + seeMoreClass + '"><a class="tm-a" href="javascript:;"><span class="caret-down"></span></a></li>');
-        $ul.append($seeMore);
-    }
-    $seeMore.removeClass('active');
-
-    // add moreTabs container
-    var $moreTabs = $ul.find('.' + moreTabsClass);
-    if ($moreTabs.length === 0) {
-        $moreTabs = $('<div class="' + moreTabsClass + '" />').appendTo($seeMore);
-    } else {
-        $moreTabs.find('>li').each(function(index, tab) {
-            $(tab).insertBefore($seeMore);
-        });
-    }
-    $moreTabs.css('top', $ul.find('li:visible').outerHeight() - 1).unbind('click').click(function() { hideDropDown('fast'); });
-
-    // move additional tabs to moreTabs
-    $visibleTabs = $ul.find('>li:visible');
-    $visibleTabs.each(function(index, tab) {
-        totalWidth += $(tab).outerWidth(true);
-    });
-    var resultWidth = totalWidth;
-    while (resultWidth >= maxWidth) {
-        var $thisTab = $ul.find('>li:not(.' + seeMoreClass + '):visible').last();
-        resultWidth -= $thisTab.outerWidth(true);
-        $thisTab.prependTo($moreTabs);
-    }
-
-    if ($moreTabs.children().length === 0) {
-        $seeMore.hide();
-        return;
-    }
-
-    $seeMore.show();
-    if ($moreTabs.find('>li.active').length > 0) {
-        $seeMore.addClass('active');
-    }
-
-    // drop down behaviour
-    function showDropDown() {
-        $moreTabs.slideDown();
-        if ($seeMore.find('.over').length === 0) {
-            $('<div/>', {class: 'over'}).insertBefore($seeMore.find('>a'));
-            $seeMore.find('.over').width($seeMore.width());
-        }
-        $seeMore.addClass('open');
-    }
-    function hideDropDown(duration) {
-        $moreTabs.slideUp(duration || 400, function() {
-            $seeMore.removeClass('open');
-        });
-    }
-    var timeout;
-    $seeMore.find('>a').unbind('click').on('click', function(e) {
-        e.stopPropagation();
-        if($moreTabs.is(':visible')) {
-            hideDropDown();
-            clearTimeout(timeout);
-        } else {
-            clearTimeout(timeout);
-            showDropDown();
-            timeout = setTimeout(function() {
-                hideDropDown();
-                clearTimeout(timeout);
-            }, 3000);
-        }
-    });
-    $(document).unbind('click').on('click', function() { hideDropDown(); });
-
-    $moreTabs.mouseenter(function() {
-        clearTimeout(timeout);
-    });
-
-    $moreTabs.mouseleave(function() {
-        clearTimeout(timeout);
-        var $this = $(this);
-        timeout = setTimeout(function() {
-            hideDropDown();
-        }, 1000);
-    });
-}
-
 function timeIsValid($element) {
     var endDateValue = document.getElementById('expiry_date').value || new moment().format('YYYY-MM-DD'),
         startDateValue = document.getElementById('date_start').value,
@@ -1172,45 +879,36 @@ module.exports = {
     displayUnderlyings: displayUnderlyings,
     getFormNameBarrierCategory: getFormNameBarrierCategory,
     contractTypeDisplayMapping: contractTypeDisplayMapping,
-    isVisible: isVisible,
     showPriceOverlay: showPriceOverlay,
     hidePriceOverlay: hidePriceOverlay,
     hideFormOverlay: hideFormOverlay,
     showFormOverlay: showFormOverlay,
     hideOverlayContainer: hideOverlayContainer,
     getContractCategoryTree: getContractCategoryTree,
-    displayPriceMovement: displayPriceMovement,
     resetPriceMovement: resetPriceMovement,
     toggleActiveNavMenuElement: toggleActiveNavMenuElement,
     toggleActiveCatMenuElement: toggleActiveCatMenuElement,
-    setFormPlaceholderContent: setFormPlaceholderContent,
     displayCommentPrice: displayCommentPrice,
     displayCommentSpreads: displayCommentSpreads,
     debounce: debounce,
     getDefaultMarket: getDefaultMarket,
     addEventListenerForm: addEventListenerForm,
     submitForm: submitForm,
-    displayIndicativeBarrier: displayIndicativeBarrier,
     durationOrder: durationOrder,
     displayTooltip: displayTooltip,
-    countDecimalPlaces: countDecimalPlaces,
     selectOption: selectOption,
     updatePurchaseStatus: updatePurchaseStatus,
     updateContractBalance: updateContractBalance,
     updateWarmChart: updateWarmChart,
     reloadPage: reloadPage,
-    addComma: addComma,
     showHighchart: showHighchart,
     chartFrameCleanup: chartFrameCleanup,
     chartFrameSource: chartFrameSource,
     displayContractForms: displayContractForms,
     displayMarkets: displayMarkets,
     toggleActiveNavMenuElement_Beta: toggleActiveNavMenuElement_Beta,
-    setFormPlaceholderContent_Beta: setFormPlaceholderContent_Beta,
     updatePurchaseStatus_Beta: updatePurchaseStatus_Beta,
     displayTooltip_Beta: displayTooltip_Beta,
     label_value: label_value,
-    adjustAnalysisColumnHeight: adjustAnalysisColumnHeight,
-    moreTabsHandler: moreTabsHandler,
     timeIsValid: timeIsValid
 };

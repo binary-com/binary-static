@@ -1,10 +1,10 @@
-var submit_email = require('../websocket_pages/user/verify_email').submit_email;
+var VerifyEmail = require('../websocket_pages/user/verify_email').VerifyEmail;
 
 var Home = (function() {
     var init = function() {
         if (!page.client.redirect_if_login()) {
             check_login_hide_signup();
-            submit_email();
+            VerifyEmail();
         }
     };
     var check_login_hide_signup = function() {
