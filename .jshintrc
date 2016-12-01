@@ -1,5 +1,5 @@
 {
-    "es5":  true, // ECMAScript 5
+    "esversion": 6, // ECMAScript 6
     "browser": true, // Standard browser globals e.g. `window`, `document`.
     "sub": true, // Tolerate all forms of subscript notation besides dot notation e.g. `dict['key']` instead of `dict.key`.
     "bitwise": true, // true: Prohibit bitwise operators (&, |, ^, etc.)

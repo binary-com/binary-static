@@ -9,6 +9,12 @@ var exportAllFunctions = function exportAllFunctions(obj) {
 
 window.$ = window.jQuery = require('jquery');
 
+require('babel-polyfill');
+
+//needs refactoring
+exportAllFunctions(require('./binary/base/page'));
+exportAllFunctions(require('./binary/websocket_pages/socket'));
+
 require('./lib/jquery-ui-timepicker/jquery.ui.timepicker.js');
 require('event-source-polyfill');
 require('./lib/jQuery.XDomainRequest.js');
@@ -19,10 +25,6 @@ require('jquery.scrollto');
 require('./binary/components/trackjs_onerror');
 require('./binary/static_pages/static_pjax');
 require('./binary/websocket_pages/websocket_pjax');
-
-//needs refactoring
-exportAllFunctions(require('./binary/base/page'));
-exportAllFunctions(require('./binary/websocket_pages/socket'));
 
 //adding onClick function in javascript, find a work around
 exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_price'));
