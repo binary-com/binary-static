@@ -27,18 +27,20 @@ var MBPrice = (function() {
         $tables;
 
     var addPriceObj = function(req) {
-        var barrier = makeBarrier(req);
-        if (!prices[barrier]) {
-            prices[barrier] = {};
-        }
-        prices[barrier][req.contract_type] = {};
-        if (!contract_types[req.contract_type]) {
-            contract_types[req.contract_type] = MBContract.getTemplate(req.contract_type);
-        }
+        req.barriers.forEach(function(barrier_obj) {
+            var barrier = makeBarrier(barrier_obj);
+            if (!prices[barrier]) {
+                prices[barrier] = {};
+            }
+            prices[barrier][req.contract_type] = {};
+            if (!contract_types[req.contract_type]) {
+                contract_types[req.contract_type] = MBContract.getTemplate(req.contract_type);
+            }
+        });
     };
 
-    var makeBarrier = function(req) {
-        return (req.barrier2 ? req.barrier2 + '_' : '') + req.barrier;
+    var makeBarrier = function(barrier_obj) {
+        return (barrier_obj.barrier2 ? barrier_obj.barrier2 + '_' : '') + barrier_obj.barrier;
     };
 
     var display = function(response) {
