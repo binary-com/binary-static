@@ -28,6 +28,7 @@ deploy:
   - 'gh-pages'
 
 serve:
+  - 'webpack'
   - 'connect:livereload'
   - 'watch'
 

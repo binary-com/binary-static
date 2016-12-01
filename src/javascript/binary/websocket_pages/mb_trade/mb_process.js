@@ -237,7 +237,7 @@ var MBProcess = (function() {
 
     var processExpiredBarriers = function() {
         var contracts = MBContract.getCurrentContracts(),
-            i, expired_barrier, expired_barrier_element;
+            i, expired_barrier, $expired_barrier_element;
         contracts.forEach(function(c) {
             var expired_barriers = c.expired_barriers;
             for (i = 0; i < c.expired_barriers.length; i++) {

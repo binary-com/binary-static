@@ -4,10 +4,6 @@ module.exports = function (grunt){
             files: ['src/sass/**/*.scss'],
             tasks: ['stylelint', 'css']
         },
-        js: {
-            files: ['src/javascript/**/*.js'],
-            tasks: ['jshint', 'mochaTest', 'js']
-        },
         options: {
             spawn: false,
             interrupt: true,
