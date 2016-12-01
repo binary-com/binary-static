@@ -1054,7 +1054,6 @@ Contents.prototype = {
 
 var Page = function() {
     this.is_loaded_by_pjax = false;
-    config = typeof config !== 'undefined' ? config : {};
     this.user = new User();
     this.client = new Client();
     this.url = new URL();
