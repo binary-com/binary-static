@@ -1,6 +1,6 @@
 var moment = require('moment');
 
-DatePicker = function(component_selector, select_type) {
+var DatePicker = function(component_selector, select_type) {
     this.component_selector = component_selector;
     this.select_type = (typeof select_type === "undefined") ? "date" : select_type;
 

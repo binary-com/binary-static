@@ -318,9 +318,6 @@ Client.prototype = {
     response_payout_currencies: function(response) {
         if (!response.hasOwnProperty('error')) {
             this.set_storage_value('currencies', response.payout_currencies.join(','));
-            if(response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.origin === 'attributes.restore.currency') {
-                BetForm.attributes.restore.currency();
-            }
         }
     },
     response_landing_company: function(response) {
@@ -380,7 +377,7 @@ Client.prototype = {
         var token,
             tokens = page.client.get_storage_value('tokens');
         if(loginid && tokens) {
-            tokensObj = JSON.parse(tokens);
+            var tokensObj = JSON.parse(tokens);
             if(tokensObj.hasOwnProperty(loginid) && tokensObj[loginid]) {
                 token = tokensObj[loginid];
             }
@@ -1515,20 +1512,6 @@ PjaxExecQueue.prototype = {
     },
     loading: function () {
         this.reset();
-    },
-    count: function () {
-        return exec_queue.length;
-    },
-    show: function (for_url) {
-        for (var i=0; i < exec_queue.length; i++) {
-            if(for_url) {
-                if(exec_queue[i].url.test(for_url)) {
-                    console.log("" + exec_queue[i].method);
-                }
-            } else {
-                console.log(exec_queue[i].url + " : " + exec_queue[i].method);
-            }
-        }
     }
 };
 

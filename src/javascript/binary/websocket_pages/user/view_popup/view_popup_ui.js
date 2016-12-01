@@ -19,7 +19,6 @@ var ViewPopupUI = (function() {
                 con.hide();
                 var _on_close = function () {
                     that.cleanup(true);
-                    chartUpdated = false;
                     if (/trading/.test(window.location.pathname)) {
                         // Re-subscribe the trading page's tick stream which was unsubscribed by popup's chart
                         BinarySocket.send({'ticks_history':$('#underlying').val(),'style':'ticks','end':'latest','count':20,'subscribe':1});

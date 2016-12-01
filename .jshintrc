@@ -47,6 +47,7 @@
 
     "validthis": false, // true: Tolerate using this in a non-constructor function
     "unused": true, // true: Require all defined variables be used
+    "undef": true, // true: Require all non-global variables to be declared (prevents global leaks)
 
 
     "globals": {
@@ -57,12 +58,53 @@
         "module": true,
         "TUser": true,
         "BinarySocket": true,
-        "console": true
+        "console": true,
+
+        "describe": true,
+        "it": true,
+        "before": true,
+        "LocalStore": true,
+        "SessionStore": true,
+        "load_with_pjax": true,
+        "Highcharts": true,
+
+        "global": true,
+        "GTM": true,
+        "dataLayer": true,
+        "trackJs": true,
+        "DESK": true,
+        "getClockStarted": true,
+        "MBPrice": true,
+
+        "processActiveSymbols": true,
+        "processMarket": true,
+        "processContract": true,
+        "processContractForm": true,
+        "forgetTradingStreams": true,
+        "processForgetProposals": true,
+        "processPriceRequest": true,
+        "processForgetTicks": true,
+        "processTick": true,
+        "processProposal": true,
+        "processTradingTimesRequest": true,
+        "processTradingTimes": true,
+
+        "processActiveSymbols_Beta": true,
+        "processMarket_Beta": true,
+        "processContract_Beta": true,
+        "processContractForm_Beta": true,
+        "forgetTradingStreams_Beta": true,
+        "processForgetProposals_Beta": true,
+        "processPriceRequest_Beta": true,
+        "processForgetTicks_Beta": true,
+        "processTick_Beta": true,
+        "processProposal_Beta": true,
+        "processTradingTimesRequest_Beta": true,
+        "processTradingTimes_Beta": true
     }
 
     // TODO: Options to enable later:
     // "curly": true, // true: Require {} for every new block or scope
     // "eqeqeq": true, // true: Require triple equals (===) for comparison
-    // "undef": true, // true: Require all non-global variables to be declared (prevents global leaks)
     // "strict": true, // true: Requires all functions run in ES5 Strict Mode
 }

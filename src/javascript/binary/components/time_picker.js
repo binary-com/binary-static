@@ -1,6 +1,6 @@
 var moment = require('moment');
 
-TimePicker = function(component_selector) {
+var TimePicker = function(component_selector) {
     this.component_selector = component_selector;
 };
 

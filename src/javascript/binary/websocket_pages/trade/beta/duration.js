@@ -352,7 +352,7 @@ var Durations_Beta = (function(){
 
     var selectEndDate = function(end_date){
         var expiry_time = document.getElementById('expiry_time'),
-            date_start  = document.getElementById('date_start').
+            date_start  = document.getElementById('date_start'),
             end_date_readable = toReadableFormat(end_date),
             end_date_iso = toISOFormat(end_date);
         $('#expiry_date').val(end_date_readable)
