@@ -46,7 +46,7 @@ var JobDetails = (function() {
             var deptContent = $('#content-' + dept + ' div'),
                 section;
             $('#sidebar-nav li').slice(deptContent.length).hide();
-            for (i = 0; i < deptContent.length; i++) {
+            for (var i = 0; i < deptContent.length; i++) {
                 section = $('#' + dept + '-' + sections[i]);
                 section.insertAfter('.sections div:last-child');
                 if (section.attr('class')) {
