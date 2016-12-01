@@ -879,7 +879,7 @@ function updateContractBalance(balance) {
 
 function updateWarmChart(){
     var $chart = $('#trading_worm_chart');
-    var spots =  Object.keys(Tick.spots()).sort(function(a,b){return a-b;}).map(function(v){return Tick.spots()[v];});
+    var spots =  Tick.spots(20).map(function(spot) {return spot.quote;});
     var chart_config = {
         type: 'line',
         lineColor: '#606060',
@@ -926,7 +926,6 @@ function showHighchart(){
     $('#trade_live_chart').hide();
     $('#chart-error').text(page.text.localize('Chart is not available for this underlying.'))
                      .show();
-    return;
   }
 }
 
@@ -952,9 +951,9 @@ function chartFrameSource() {
 
 function setChartSource() {
     var ja = japanese_client();
-  document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + (page.language() || 'en').toLowerCase() +
-  '&hideOverlay=' + (ja ? 'true' : 'false') + '&hideShare=' + (ja ? 'true' : 'false') + '&timezone=GMT+' + (ja ? '9' : '0') +
-  '&hideFooter=' + (ja ? 'true' : 'false');
+    document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + (page.language() || 'en').toLowerCase() +
+    '&hideOverlay=' + (ja ? 'true' : 'false') + '&hideShare=' + (ja ? 'true' : 'false') + '&timezone=GMT+' + (ja ? '9' : '0') +
+    '&hideFooter=' + (ja ? 'true' : 'false');
 }
 
 // ============= Functions used in /trading_beta =============

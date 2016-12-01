@@ -342,9 +342,8 @@ function processTick(tick) {
             Barriers.setBarrierUpdate(true);
         }
         updateWarmChart();
-    } else {
-        if(digit_info)
-            digit_info.update_chart(tick);
+    } else if(digit_info) {
+        digit_info.update_chart(tick);
     }
 }
 
