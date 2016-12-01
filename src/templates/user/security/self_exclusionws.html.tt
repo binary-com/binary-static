@@ -104,7 +104,7 @@
 					<label for="timeout_until">[% l('Time out until') %]</label>
 				</div>
                 <div class="gr-3">
-					<input name="timeout_until_duration" id="timeout_until_duration" type="text" maxlength="10" autocomplete="off" />
+					<input name="timeout_until_duration" id="timeout_until_duration" type="text" maxlength="15" autocomplete="off" />
 					<div class="hint nowrap">[% l('Please enter date in the format DD MMM, YYYY HH:mm (local time).') %]</div>
 				</div>
 				<div class="gr-5">
@@ -117,7 +117,7 @@
 					<label for="exclude_until">[% l('Exclude me from the website until') %]</label>
 				</div>
 				<div class="gr-8">
-					<input name="exclude_until" id="exclude_until" type="text" maxlength="10" autocomplete="off" />
+					<input name="exclude_until" id="exclude_until" type="text" maxlength="15" autocomplete="off" />
 					<div class="hint">[% l('Please enter date in the format DD MMM, YYYY.') %]</div>
 				</div>
 			</div>
