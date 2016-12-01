@@ -1,4 +1,5 @@
 var Contract      = require('./contract').Contract;
+var Defaults      = require('./defaults').Contract;
 var Contract_Beta = require('./beta/contract').Contract_Beta;
 
 /*
