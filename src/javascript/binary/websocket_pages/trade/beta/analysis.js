@@ -110,12 +110,7 @@ var TradingAnalysis_Beta = (function() {
                     contentId.innerHTML = data;
                     if(currentTab === 'tab_explanation') {
                         showExplanation(currentLink.href);
-                    } else if (currentTab == 'tab_last_digit') {
-                        trading_digit_info = new DigitInfo();
-                        trading_digit_info.on_latest();
-                        trading_digit_info.show_chart(sessionStorage.getItem('underlying'));
                     }
-
                 });
                 break;
         }
@@ -230,9 +225,6 @@ var TradingAnalysis_Beta = (function() {
         request: requestTradeAnalysis,
         digit_info: function() {
             return trading_digit_info;
-        },
-        tab_portfolio: function() {
-            return tab_portfolio;
         },
         getActiveTab: getActiveTab,
         bindAnalysisTabEvent: bindAnalysisTabEvent
