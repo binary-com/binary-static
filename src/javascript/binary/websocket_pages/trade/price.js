@@ -235,7 +235,7 @@ var Price = (function() {
             error.textContent = details['error']['message'];
         } else {
             setData(proposal);
-            if ($('#websocket_form').find('.error-field').length > 0) {
+            if ($('#websocket_form').find('.error-field:visible').length > 0) {
                 purchase.hide();
             } else {
                 purchase.show();
