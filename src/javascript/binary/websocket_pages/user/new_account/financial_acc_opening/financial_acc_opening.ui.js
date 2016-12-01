@@ -94,8 +94,8 @@ var FinancialAccOpeningUI = (function(){
     ValidAccountOpening.checkPostcode(elementObj['postcode'], errorObj['postcode']);
 
     if (elementObj['residence'].value === 'gb' && /^$/.test((elementObj['postcode'].value).trim())){
-      errorPostcode.innerHTML = Content.errorMessage('req');
-      Validate.displayErrorMessage(errorPostcode);
+      errorObj['postcode'].innerHTML = Content.errorMessage('req');
+      Validate.displayErrorMessage(errorObj['postcode']);
       window.accountErrorCounter++;
     }
 

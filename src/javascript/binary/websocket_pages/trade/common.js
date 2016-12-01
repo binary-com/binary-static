@@ -688,9 +688,9 @@ function selectOption(option, select){
 
 function updatePurchaseStatus(final_price, pnl, contract_status){
     $('#contract_purchase_heading').text(page.text.localize(contract_status));
-    $payout = $('#contract_purchase_payout');
-    $cost = $('#contract_purchase_cost');
-    $profit = $('#contract_purchase_profit');
+    var $payout = $('#contract_purchase_payout'),
+        $cost = $('#contract_purchase_cost'),
+        $profit = $('#contract_purchase_profit');
 
     $payout.html(Content.localize().textBuyPrice + '<p>'+addComma(Math.abs(pnl))+'</p>');
     $cost.html(Content.localize().textFinalPrice + '<p>'+addComma(final_price)+'</p>');

@@ -7,7 +7,7 @@ require('../../../../lib/highstock/highstock-exporting.js');
 require('../../../../lib/highstock/export-csv.js');
 
 var Highchart = (function() {
-  var chart, options, chart_forget, responseID, contract, contract_ended, contracts_for_send, history_send, entry_tick_barrier_drawn, initialized, chart_delayed, chart_subscribed, request, min_point, max_point, start_time, purchase_time, now_time, end_time, entry_tick_time, is_sold, sell_time, sell_spot_time, is_settleable, exit_tick_time, exit_time;
+  var chart, options, chart_forget, responseID, contract, contract_ended, contracts_for_send, history_send, entry_tick_barrier_drawn, initialized, chart_delayed, chart_subscribed, request, min_point, max_point, start_time, purchase_time, now_time, end_time, entry_tick_time, is_sold, sell_time, sell_spot_time, is_settleable, exit_tick_time, entry_spot, exit_time, underlying, i;
   function init_once() {
       chart = '';
       initialized = false;
@@ -527,6 +527,7 @@ var Highchart = (function() {
 
   // calculate where to display the maximum value of the x-axis of the chart for candle
   function get_max_candle(response) {
+    var end;
     if (sell_spot_time && sell_time < end_time) {end = sell_spot_time;}
     else {end = end_time;}
     if (is_settleable || is_sold) {

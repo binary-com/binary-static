@@ -7,7 +7,6 @@ var showTooltip         = require('../../../../common_functions/get_app_details'
 var japanese_client     = require('../../../../common_functions/country_base').japanese_client;
 var addComma            = require('../../../../common_functions/string_util').addComma;
 var ProfitTable         = require('../profit_table').ProfitTable;
-var moment              = require('moment');
 
 var ProfitTableUI = (function(){
     "use strict";
@@ -111,10 +110,6 @@ var ProfitTableUI = (function(){
         return $row[0];
     }
 
-    function initDatepicker(){
-        DatepickerUtil.initDatepicker("profit-table-date", moment.utc(), null, 0);
-    }
-
     function clearTableContent(){
         Table.clearTableBody(profitTableID);
         $("#" + profitTableID + ">tfoot").hide();
@@ -132,7 +127,6 @@ var ProfitTableUI = (function(){
     return {
         createEmptyTable: createEmptyTable,
         updateProfitTable: updateProfitTable,
-        initDatepicker: initDatepicker,
         cleanTableContent: clearTableContent,
         errorMessage: errorMessage,
         setOauthApps: function(values) {

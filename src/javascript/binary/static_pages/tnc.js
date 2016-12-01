@@ -5,7 +5,7 @@ var TermsAndConditions = (function() {
           $('li#' + selected_tab + ' a').click();
         }
         var year = document.getElementsByClassName('currentYear');
-        for (i = 0; i < year.length; i++){
+        for (var i = 0; i < year.length; i++){
           year[i].innerHTML = new Date().getFullYear();
         }
     };
