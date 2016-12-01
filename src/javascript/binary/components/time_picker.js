@@ -49,7 +49,7 @@ TimePicker.prototype = {
             config.maxTime = {hour: parseInt(max_time.hour()), minute: parseInt(max_time.minute())};
         }
 
-        config.onSelect = function(time, inst) {
+        config.onSelect = function(time) {
             if (!time.match(/^(:?[0-3]\d):(:?[0-5]\d):(:?[0-5]\d)$/)) {
                 time_now = that.time_now();
                 var invalid = time.match(/([a-z0-9]*):([a-z0-9]*):?([a-z0-9]*)?/);

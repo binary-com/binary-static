@@ -37,30 +37,6 @@ function get_highest_zindex(selector) {
     return all.length ? Math.max.apply(Math, all) : null;
 }
 
-/**
- * in a jquery UI tabs object, finds out whitch tab is marked to be the
- * active tab by default.
- *
- * The default active tab is selected based on CSS classes of tab list items.
- *
- * @param element any jquery selector or DOM/jquery object that contains a jquery UI tab UL
- * @return int the index of active list item or 0 if none of the items were
- * marked as active.
- */
-function find_active_jqtab(el) {
-    var jqel = $(el);
-    var ul = jqel.children('ul');
-    if (!ul) throw new Error("Invalid parameter. element is not a jquery UI tab container");
-    ul = ul.filter(":first");
-    var items = ul.children('li');
-    for (var i = 0; i < items.length; i++) {
-        if ($(items[i]).hasClass('active')) {
-            return i;
-        }
-    }
-    return 0;
-}
-
 function showLocalTimeOnHover(s) {
     if (japanese_client()) return;
     $(s || '.date').each(function(idx, ele) {

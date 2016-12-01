@@ -1,9 +1,9 @@
-var objectNotEmpty = require('../../base/utility').objectNotEmpty;
+var objectNotEmpty  = require('../../base/utility').objectNotEmpty;
 var format_currency = require('../../common_functions/currency_to_symbol').format_currency;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
-var MBDefaults = require('./mb_defaults').MBDefaults;
-var MBSymbols = require('./mb_symbols').MBSymbols;
-var moment = require('moment');
+var MBDefaults      = require('./mb_defaults').MBDefaults;
+var MBSymbols       = require('./mb_symbols').MBSymbols;
+var moment          = require('moment');
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -85,7 +85,7 @@ var MBContract = (function() {
 
     var populatePeriods = function(rebuild) {
         if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return;
-        var trading_period, start_end, trading_period_text,
+        var trading_period, start_end,
             trading_period_array = [],
             available_contracts = contracts_for_response.contracts_for.available,
             selected_option = MBDefaults.get('category'),

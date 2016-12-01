@@ -1,7 +1,9 @@
-var Contract = require('./contract').Contract;
-var Defaults = require('./defaults').Defaults;
-var Tick     = require('./tick').Tick;
-var moment = require('moment');
+var Contract           = require('./contract').Contract;
+var Defaults           = require('./defaults').Defaults;
+var Tick               = require('./tick').Tick;
+var moment             = require('moment');
+var isVisible          = require('../../common_functions/common_functions').isVisible;
+var countDecimalPlaces = require('./common_independent').countDecimalPlaces;
 
 /*
  * Handles barrier processing and display
@@ -15,7 +17,7 @@ var Barriers = (function () {
 
     var isBarrierUpdated = false;
 
-    var display = function (barrierCategory) {
+    var display = function () {
         var barriers = Contract.barriers()[Defaults.get('underlying')],
             formName = Contract.form();
 

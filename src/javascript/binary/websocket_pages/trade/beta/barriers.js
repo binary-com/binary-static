@@ -1,7 +1,9 @@
-var Contract_Beta = require('./contract').Contract_Beta;
-var Defaults = require('../defaults').Defaults;
-var Tick     = require('../tick').Tick;
-var moment = require('moment');
+var Contract_Beta      = require('./contract').Contract_Beta;
+var Defaults           = require('../defaults').Defaults;
+var Tick               = require('../tick').Tick;
+var moment             = require('moment');
+var isVisible          = require('../../../common_functions/common_functions').isVisible;
+var countDecimalPlaces = require('../common_independent').countDecimalPlaces;
 
 /*
  * Handles barrier processing and display
@@ -15,7 +17,7 @@ var Barriers_Beta = (function () {
 
     var isBarrierUpdated = false;
 
-    var display = function (barrierCategory) {
+    var display = function () {
         var barriers = Contract_Beta.barriers()[Defaults.get('underlying')],
             formName = Contract_Beta.form();
 

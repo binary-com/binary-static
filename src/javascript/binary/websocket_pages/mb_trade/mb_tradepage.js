@@ -1,14 +1,15 @@
-var MBContract = require('./mb_contract').MBContract;
+var MBContract          = require('./mb_contract').MBContract;
 var MBDisplayCurrencies = require('./mb_currency').MBDisplayCurrencies;
-var MBTradingEvents = require('./mb_event').MBTradingEvents;
-var MBMessage = require('./mb_message').MBMessage;
-var MBSymbols = require('./mb_symbols').MBSymbols;
-var TradingAnalysis = require('../trade/analysis').TradingAnalysis;
-var JapanPortfolio = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
-var State = require('../../base/storage').State;
-var Content = require('../../common_functions/content').Content;
-var MBProcess = require('./mb_process').MBProcess;
-var MBNotifications = require('./mb_notifications').MBNotifications;
+var MBTradingEvents     = require('./mb_event').MBTradingEvents;
+var MBMessage           = require('./mb_message').MBMessage;
+var MBSymbols           = require('./mb_symbols').MBSymbols;
+var TradingAnalysis     = require('../trade/analysis').TradingAnalysis;
+var JapanPortfolio      = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
+var State               = require('../../base/storage').State;
+var Content             = require('../../common_functions/content').Content;
+var MBProcess           = require('./mb_process').MBProcess;
+var MBNotifications     = require('./mb_notifications').MBNotifications;
+var chartFrameCleanup   = require('../trade/common').chartFrameCleanup;
 
 var MBTradePage = (function(){
 

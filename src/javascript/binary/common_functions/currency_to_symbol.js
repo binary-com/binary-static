@@ -1,4 +1,5 @@
 var japanese_client = require('./country_base').japanese_client;
+var addComma        = require('./string_util').addComma;
 
 function format_money(currencyValue, amount) {
     var money;
@@ -16,7 +17,7 @@ function format_money(currencyValue, amount) {
         } else {
             updatedAmount = parseFloat(amount).toFixed(2);
         }
-        updatedAmount = typeof addComma === 'undefined' ? updatedAmount : addComma(updatedAmount);
+        updatedAmount = addComma(updatedAmount);
         var symbol = format_money.map[currencyValue];
         if (symbol === undefined) {
             money = currencyValue + ' ' + updatedAmount;

@@ -22,34 +22,13 @@ module.exports = {
 };
 END_EXPORTS
 
-    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts('all') . $exports);
-    return;
-}
-
-sub generate_japan_data_files {
-    my $js_path = shift;
-
-    _make_nobody_dir($js_path);
-    print "\tGenerating $js_path/texts.js\n";
-
-    my $japan_exports = 'export default japan_text;';
-
-    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts('japan') . $japan_exports);
+    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts() . $exports);
     return;
 }
 
 sub _texts {
-    my $task = shift;
-    my $js = '';
-    if ($task eq 'all') {
-        $js = "var texts_json = {};\n";
-    } elsif ($task eq 'japan') {
-        $js = "const japan_text = {};\n";
-    }
+    my $js = "var texts_json = {};\n";
     foreach my $language (BS::all_languages()) {
-        if ($task eq 'japan' and $language ne 'JA') {
-            next;
-        }
         BS::set_lang($language);
 
         my @texts;
@@ -860,11 +839,7 @@ sub _texts {
         push @texts, localize('The server <a href="[_1]">endpoint</a> is: [_2]');
 
         my %as_hash = @texts;
-        if ($task eq 'all') {
-            $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
-        } elsif ($task eq 'japan') {
-            $js .= "japan_text['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
-        }
+        $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
     }
 
     return $js;

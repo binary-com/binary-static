@@ -1,10 +1,10 @@
-var CommonFunctions = require('../../../../common_functions/common_functions').CommonFunctions;
+var detect_hedging  = require('../../../../common_functions/common_functions').detect_hedging;
 var Content         = require('../../../../common_functions/content').Content;
 var ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
 var bind_validation = require('../../../../validator').bind_validation;
-var Cookies = require('../../../../../lib/js-cookie');
-var moment  = require('moment');
-var dv      = require('../../../../../lib/validation');
+var Cookies         = require('../../../../../lib/js-cookie');
+var moment          = require('moment');
+var dv              = require('../../../../../lib/validation');
 
 var SettingsDetailsWS = (function() {
     "use strict";
@@ -54,7 +54,7 @@ var SettingsDetailsWS = (function() {
         });
         if (isJP && !isVirtual) {
             $('#fieldset_email_consent').removeClass('invisible');
-            CommonFunctions.detect_hedging($('#PurposeOfTrading'), $('.hedge'));
+            detect_hedging($('#PurposeOfTrading'), $('.hedge'));
         }
     }
 
@@ -206,7 +206,7 @@ var SettingsDetailsWS = (function() {
             }));
     }
 
-    function getJPSchema(data) {
+    function getJPSchema() {
         var V2 = ValidateV2;
         if (/Hedging/.test($('#PurposeOfTrading').val())) {
             return {
