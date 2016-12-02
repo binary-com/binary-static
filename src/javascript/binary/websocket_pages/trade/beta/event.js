@@ -7,6 +7,7 @@ var StartDates_Beta                = require('./starttime').StartDates_Beta;
 var Defaults                       = require('../defaults').Defaults;
 var Tick                           = require('../tick').Tick;
 var onlyNumericOnKeypress          = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
+var onlyNumericColonOnKeypress     = require('../../../common_functions/event_handler').onlyNumericColonOnKeypress;
 var moment                         = require('moment');
 var setFormPlaceholderContent_Beta = require('../common').setFormPlaceholderContent_Beta;
 var showPriceOverlay               = require('../common').showPriceOverlay;
@@ -243,13 +244,19 @@ var TradingEvents_Beta = (function () {
 
         var endTimeElement = document.getElementById('expiry_time');
         if (endTimeElement) {
-            $('#expiry_time').on('change input', function () {
-                //if start time is less than end time
-                if (timeIsValid($('#expiry_time'))) {
-                    Durations_Beta.setTime(endTimeElement.value);
-                    processPriceRequest_Beta();
-                }
-            });
+            $('#expiry_time')
+                .on('keypress', onlyNumericColonOnKeypress)
+                .on('change input', function (e) {
+                    var $expiry_time = $('#expiry_time'),
+                        oldVal = $expiry_time.attr('data-value'),
+                        newVal = e.target.value;
+                    if (oldVal && oldVal === newVal) return false;
+                    //if start time is less than end time
+                    if (timeIsValid($expiry_time)) {
+                        Durations_Beta.setTime(endTimeElement.value);
+                        processPriceRequest_Beta();
+                    }
+                });
         }
 
         /*

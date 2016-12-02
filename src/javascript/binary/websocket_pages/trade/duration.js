@@ -188,11 +188,13 @@ var Durations = (function(){
         }
 
         var expiry_date_readable = toReadableFormat(expiry_date),
-            expiry_date_el = document.getElementById('expiry_date');
+            expiry_date_el = document.getElementById('expiry_date'),
+            expiry_time_el = document.getElementById('expiry_time');
 
         expiry_date_el.value = expiry_date_readable;
         expiry_date_el.setAttribute('data-value', expiry_date_iso);
-        document.getElementById('expiry_time').value = expiry_time;
+        expiry_time_el.value = expiry_time;
+        expiry_time_el.setAttribute('data-value', expiry_time);
         Defaults.set('expiry_date', expiry_date_iso);
         Defaults.set('expiry_time', expiry_time);
         Durations.setTime(expiry_time);
@@ -356,7 +358,7 @@ var Durations = (function(){
             end_date_readable = toReadableFormat(end_date),
             end_date_iso = toISOFormat(end_date);
         $('#expiry_date').val(end_date_readable)
-                         .attr('data-val', end_date_iso);
+                         .attr('data-value', end_date_iso);
         Defaults.set('expiry_date', end_date_iso);
         if (end_date.isAfter(window.time.format('YYYY-MM-DD HH:mm'), 'day')) {
             Durations.setTime('');
@@ -368,7 +370,9 @@ var Durations = (function(){
         } else {
             date_start.removeAttribute('disabled');
             if(!expiry_time.value) {
-                expiry_time.value = moment(window.time).add(5, 'minutes').utc().format('HH:mm');
+                var new_time = moment(window.time).add(5, 'minutes').utc().format('HH:mm');
+                expiry_time.value = new_time;
+                expiry_time.setAttribute('data-value', new_time);
             }
             Durations.setTime(expiry_time.value);
             Defaults.set('expiry_time', Defaults.get('expiry_time') || expiry_time.value);

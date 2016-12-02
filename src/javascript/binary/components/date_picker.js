@@ -80,7 +80,11 @@ DatePicker.prototype = {
             var day = date_text.split(' ')[0],
                 month = ('0' + (Number($('.ui-datepicker-month').val()) + 1)).slice(-2),
                 year = $('.ui-datepicker-year').val(),
-                date = year + '-' + month + '-' + day;
+                date = year + '-' + month + '-' + day,
+                oldValue = $(this).attr('data-value');
+
+            if (oldValue && oldValue === date) return false;
+
             $(this).attr('data-value', date);
             if(that.select_type == "diff") {
                 var today = moment.utc();

@@ -7,6 +7,7 @@ var Price                      = require('./price').Price;
 var StartDates                 = require('./starttime').StartDates;
 var Tick                       = require('./tick').Tick;
 var onlyNumericOnKeypress      = require('../../common_functions/event_handler').onlyNumericOnKeypress;
+var onlyNumericColonOnKeypress = require('../../common_functions/event_handler').onlyNumericColonOnKeypress;
 var moment                     = require('moment');
 var setFormPlaceholderContent  = require('./set_values').setFormPlaceholderContent;
 var isVisible                  = require('../../common_functions/common_functions').isVisible;
@@ -242,12 +243,18 @@ var TradingEvents = (function () {
 
         var endTimeElement = document.getElementById('expiry_time');
         if (endTimeElement) {
-            $('#expiry_time').on('change input', function () {
-                if (timeIsValid($('#expiry_time'))) {
-                    Durations.setTime(endTimeElement.value);
-                    processPriceRequest();
-                }
-            });
+            $('#expiry_time')
+                .on('keypress', onlyNumericColonOnKeypress)
+                .on('change input', function (e) {
+                    var $expiry_time = $('#expiry_time'),
+                        oldVal = $expiry_time.attr('data-value'),
+                        newVal = e.target.value;
+                    if (oldVal && oldVal === newVal) return false;
+                    if (timeIsValid($expiry_time)) {
+                        Durations.setTime(endTimeElement.value);
+                        processPriceRequest();
+                    }
+                });
         }
 
         /*
@@ -518,7 +525,7 @@ var TradingEvents = (function () {
          * have to use jquery
          */
          attachTimePicker();
-         $("#expiry_time").on('focus, click', attachTimePicker);
+         $("#expiry_time").on('focus click', attachTimePicker);
     };
 
     function attachTimePicker() {

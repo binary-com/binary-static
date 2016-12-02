@@ -50,6 +50,7 @@ TimePicker.prototype = {
         }
 
         config.onSelect = function(time) {
+            var oldValue = $(that.component_selector).attr('data-value');
             if (!time.match(/^(:?[0-3]\d):(:?[0-5]\d):(:?[0-5]\d)$/)) {
                 time_now = that.time_now();
                 var invalid = time.match(/([a-z0-9]*):([a-z0-9]*):?([a-z0-9]*)?/);
@@ -76,11 +77,17 @@ TimePicker.prototype = {
                     }
                 }
 
-                var new_time = moment(time_now.format("YYYY-MM-DD") + ' ' + hour +':'+minute+':'+second);
-                $(this).val(new_time.format("HH:mm"));
-                $(that).trigger('change', [new_time.format("HH:mm")]);
+                var new_time = moment(time_now.format("YYYY-MM-DD") + ' ' + hour +':'+minute+':'+second).format("HH:mm");
+
+                if (oldValue && oldValue === new_time) return false;
+
+                $(this).val(new_time);
+                $(this).attr('data-value', new_time);
+                $(that.component_selector).trigger('change', [new_time]);
             } else {
-                $(that).trigger('change', [time]);
+                if (oldValue && oldValue === time) return false;
+                $(this).attr('data-value', time);
+                $(that.component_selector).trigger('change', [time]);
             }
         };
 

@@ -860,10 +860,22 @@ function label_value(label_elem, label, value, no_currency) {
 function timeIsValid($element) {
     var endDateValue = document.getElementById('expiry_date').getAttribute('data-value'),
         startDateValue = document.getElementById('date_start').value,
-        endTimeValue = document.getElementById('expiry_time').value || "23:59:59";
+        endTimeValue = document.getElementById('expiry_time').value;
+
+    if (endTimeValue && !/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(endTimeValue)) {
+        $element.addClass('error-field');
+        if ($('#invalid-time').length === 0) {
+            $('#expiry_type_endtime').parent().append($('<p>', {class: 'error-msg', id: 'invalid-time', text: page.text.localize('Time is in the wrong format.')}));
+        }
+        return false;
+    } else {
+        $element.removeClass('error-field');
+        $('#invalid-time').remove();
+    }
 
     endDateValue = endDateValue ? toISOFormat(moment(endDateValue)) : toISOFormat(new moment());
     startDateValue = startDateValue === 'now' ? Math.floor(window.time._i/1000) : startDateValue;
+    endTimeValue = endTimeValue || "23:59:59";
 
     if (moment.utc(endDateValue + " " + endTimeValue).unix() <= startDateValue) {
         $element.addClass('error-field');
