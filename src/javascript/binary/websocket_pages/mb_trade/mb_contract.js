@@ -107,7 +107,7 @@ var MBContract = (function() {
         if ($periodElement.children().length === 0) { // populate for the first time
             var default_value = MBDefaults.get('period');
             for (var j = 0; j < trading_period_array.length; j++) {
-                appendTextValueChild(document.getElementById('period'), PeriodText(trading_period_array[j]), trading_period_array[j], trading_period_array[j] == default_value);
+                appendTextValueChild('period', PeriodText(trading_period_array[j]), trading_period_array[j], trading_period_array[j] == default_value);
             }
             MBDefaults.set('period', $periodElement.val());
             MBContract.displayDescriptions();
@@ -227,7 +227,7 @@ var MBContract = (function() {
         if ($categoryElement.children().length === 0) {
             var default_value = MBDefaults.get('category');
             for (var j = 0; j < contracts_array.length; j++) {
-                appendTextValueChild(document.getElementById('category'), categoryNames[contracts_array[j]], contracts_array[j], contracts_array[j] == default_value);
+                appendTextValueChild('category', categoryNames[contracts_array[j]], contracts_array[j], contracts_array[j] == default_value);
             }
             MBDefaults.set('category', $('#category').val());
         }

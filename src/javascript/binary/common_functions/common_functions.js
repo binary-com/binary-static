@@ -36,6 +36,14 @@ var jqueryuiTabsToDropdown = function($container) {
 // use function to generate elements and append them
 // element is select and element to append is option
 var appendTextValueChild = function(element, text, value, disabled, el_class){
+    if (element && !element.nodeName) {
+        if (typeof element === 'string') {
+            element = document.getElementById(element);
+        } else {
+            element = undefined;
+        }
+    }
+    if (!element) return;
     var option = document.createElement("option");
     option.text = text;
     if (value) {
@@ -48,7 +56,6 @@ var appendTextValueChild = function(element, text, value, disabled, el_class){
       option.className = el_class;
     }
     element.appendChild(option);
-    return;
 };
 
 var isValidDate = function(day, month, year){
