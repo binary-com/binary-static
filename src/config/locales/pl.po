@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-10 20:58+0000\n"
+"PO-Revision-Date: 2016-11-23 14:46+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.9\n"
+"X-Generator: Weblate 2.10-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -1865,6 +1865,11 @@ msgstr "Confirmation and understandings"
 
 msgid "Conflicts Policy"
 msgstr "Polityka dot. sporów"
+
+#, fuzzy
+#| msgid "Connection error: Please view the progress at your portfolio page."
+msgid "Connection error: Please check your internet connection."
+msgstr "Błąd połączenia: prosimy sprawdzić postęp na stronie swojego portfolio."
 
 msgid "Construction"
 msgstr "Budownictwo"
@@ -5020,10 +5025,8 @@ msgstr "Proszę wybrać pośrednika płatności"
 msgid "Please select a valid date"
 msgstr "Proszę wybrać poprawną datę"
 
-#, fuzzy
-#| msgid "Please select a value."
 msgid "Please select a value"
-msgstr "Proszę wybrać wartość."
+msgstr "Proszę wybrać wartość"
 
 msgid "Please select at least one scope"
 msgstr "Proszę wybrać przynajmniej jeden zakres"
@@ -8015,10 +8018,8 @@ msgstr "zmiany ceny"
 msgid "to your account."
 msgstr "na swoje konto."
 
-#, fuzzy
-#| msgid "Today"
 msgid "today"
-msgstr "Dziś"
+msgstr "dziś"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "korzystanie z API %1 niezgodne z niniejszymi Warunkami lub"
@@ -9068,7 +9069,7 @@ msgid "Endpoint"
 msgstr "punkt końcowy"
 
 msgid "Careers For Americans"
-msgstr ""
+msgstr "Oferty pracy dla obywateli USA"
 
 msgid "Job Details"
 msgstr "Opis stanowiska"
@@ -18341,9 +18342,6 @@ msgstr "Akceptacja regulaminu"
 
 #~ msgid "Code"
 #~ msgstr "Kod"
-
-#~ msgid "Connection error: Please view the progress at your portfolio page."
-#~ msgstr "Błąd połączenia: prosimy sprawdzić postęp na stronie swojego portfolio."
 
 #~ msgid "End"
 #~ msgstr "Koniec"

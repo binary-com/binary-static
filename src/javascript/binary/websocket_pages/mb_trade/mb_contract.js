@@ -1,9 +1,9 @@
-var objectNotEmpty = require('../../base/utility').objectNotEmpty;
+var objectNotEmpty  = require('../../base/utility').objectNotEmpty;
 var format_currency = require('../../common_functions/currency_to_symbol').format_currency;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
-var MBDefaults = require('./mb_defaults').MBDefaults;
-var MBSymbols = require('./mb_symbols').MBSymbols;
-var moment = require('moment');
+var MBDefaults      = require('./mb_defaults').MBDefaults;
+var MBSymbols       = require('./mb_symbols').MBSymbols;
+var moment          = require('moment');
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -40,15 +40,16 @@ var MBContract = (function() {
 
     var durationText = function(dur) {
         var durationMap = {
-            'm': 'minute',
-            'h': 'hour',
+            'm': 'min',
+            'h': 'h',
             'd': 'day',
             'W': 'week',
             'M': 'month',
             'Y': 'year',
         };
         Object.keys(durationMap).forEach(function(key) {
-            dur = dur.replace(key, page.text.localize(durationMap[key] + (dur[0] == 1 ? '' : 's')));
+            dur = dur.replace(key, page.text.localize(durationMap[key] +
+                                                     (dur[0] == 1 || /h/.test(key) ? '' : 's')));
         });
         return dur;
     };
@@ -62,9 +63,11 @@ var MBContract = (function() {
             date_expiry = trading_period.split('_')[1];
             duration = trading_period.split('_')[2];
         }
-        return moment.utc(date_expiry * 1000).utcOffset(japanese_client() ? '+09:00' : '+00:00')
-                     .format("MM[" + page.text.localize('month') + "] " + "DD[" + page.text.localize('day') + "] HH:mm [(" +
-                     durationText(duration.replace('0d', '1d')) + ")]").replace(/08:59/, '09:00«');
+        return (moment(moment.utc(date_expiry * 1000))
+                    .utcOffset(japanese_client() ? '+09:00' : '+00:00')
+                    .locale(page.language().toLowerCase())
+                    .format('MMM Do, HH:mm').replace(/08:59/, '09:00«') +
+                 " (" + durationText(duration.replace('0d', '1d')) + ")");
     };
 
     // use function to generate elements and append them
@@ -82,7 +85,7 @@ var MBContract = (function() {
 
     var populatePeriods = function(rebuild) {
         if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return;
-        var trading_period, start_end, trading_period_text,
+        var trading_period, start_end,
             trading_period_array = [],
             available_contracts = contracts_for_response.contracts_for.available,
             selected_option = MBDefaults.get('category'),

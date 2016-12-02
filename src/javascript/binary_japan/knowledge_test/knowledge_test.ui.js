@@ -14,7 +14,7 @@ var KnowledgeTestUI = (function () {
             id: trueId,
             value: '1'
         });
-        var $trueLabel = $('<label></label>', {class: 'img-holder true', for: trueId, value: '1'});
+        //var $trueLabel = $('<label></label>', {class: 'img-holder true', for: trueId, value: '1'});
         var $trueTd = $('<td></td>').append($trueButton);
 
         var $falseButton = $('<input />', {
@@ -23,7 +23,7 @@ var KnowledgeTestUI = (function () {
             id: falseId,
             value: '0'
         });
-        var $falseLabel = $('<label></label>', {class: 'img-holder false', for: falseId, value: '0'});
+        //var $falseLabel = $('<label></label>', {class: 'img-holder false', for: falseId, value: '0'});
         var $falseTd = $('<td></td>').append($falseButton);
 
         if (showAnswer) {
@@ -80,7 +80,8 @@ var KnowledgeTestUI = (function () {
         return $tableContainer;
     }
 
-    function createResultUI(score, time) {
+    //function createResultUI(score, time) {
+    function createResultUI(score) {
 
         var $resultTable = $('<table></table>', { class: 'kv-pairs'});
         var $scoreRow = $('<tr></tr>').append($('<td>' + page.text.localize('Score') + '</td>')).append($('<td>'+ score + '</td>'));

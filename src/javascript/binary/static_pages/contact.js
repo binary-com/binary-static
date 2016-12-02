@@ -1,4 +1,4 @@
-var CommonFunctions = require('../common_functions/common_functions').CommonFunctions;
+var email_rot13 = require('../common_functions/common_functions').email_rot13;
 var loadCSS = require('../../lib/loadCSS').loadCSS;
 var loadJS  = require('../../lib/loadJS').loadJS;
 
@@ -14,7 +14,7 @@ var Contact = (function(){
             var val = $(this).val().split(',');
             $('#display_cs_telephone').html(val[0] + (val.length > 1 ? '<br />' + val[1] : ''));
         });
-        $('#cs_contact_eaddress').html(CommonFunctions.email_rot13("<n uers=\"znvygb:fhccbeg@ovanel.pbz\" ery=\"absbyybj\">fhccbeg@ovanel.pbz</n>"));
+        $('#cs_contact_eaddress').html(email_rot13("<n uers=\"znvygb:fhccbeg@ovanel.pbz\" ery=\"absbyybj\">fhccbeg@ovanel.pbz</n>"));
     };
 
     var show_live_chat_icon = function() {

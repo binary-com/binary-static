@@ -1,4 +1,4 @@
-var CommonFunctions = require('../common_functions').CommonFunctions;
+var appendTextValueChild = require('../common_functions').appendTextValueChild;
 
 var $languages,
     language,
@@ -26,9 +26,7 @@ function create_language_drop_down(languages) {
     add_display_language(selectLanguage);
     for (var i = 0; i < languages.length; i++) {
         if (languages[i] !== 'JA') {
-            $selectLanguage.append('<li class="' + languages[i] + '">' +
-                                    map_code_to_language(languages[i]) +
-                                    '</li>');
+            appendTextValueChild(language_select_element, map_code_to_language(languages[i]), '', '', languages[i]);
         }
     }
     $selectLanguage.find('li.' + language + ':eq(1)').addClass('invisible');

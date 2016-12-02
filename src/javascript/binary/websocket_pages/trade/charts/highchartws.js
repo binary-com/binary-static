@@ -2,9 +2,12 @@ var MBContract  = require('../../mb_trade/mb_contract').MBContract;
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
 var ViewPopupUI = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
 var State = require('../../../base/storage').State;
+require('../../../../lib/highstock/highstock.js');
+require('../../../../lib/highstock/highstock-exporting.js');
+require('../../../../lib/highstock/export-csv.js');
 
 var Highchart = (function() {
-  var chart, options, chart_forget, responseID, contract, contract_ended, contracts_for_send, history_send, entry_tick_barrier_drawn, initialized, chart_delayed, chart_subscribed, request, min_point, max_point, start_time, purchase_time, now_time, end_time, entry_tick_time, is_sold, sell_time, sell_spot_time, is_settleable, exit_tick_time, exit_time;
+  var chart, options, chart_forget, responseID, contract, contract_ended, contracts_for_send, history_send, entry_tick_barrier_drawn, initialized, chart_delayed, chart_subscribed, request, min_point, max_point, start_time, purchase_time, now_time, end_time, entry_tick_time, is_sold, sell_time, sell_spot_time, is_settleable, exit_tick_time, entry_spot, exit_time, underlying, i;
   function init_once() {
       chart = '';
       initialized = false;
@@ -169,13 +172,13 @@ var Highchart = (function() {
            dashStyle: chartOptions.dashStyle || 'Solid'
         });
         var subtitle = chart.subtitle.element;
-        var subtitle_length = chart.subtitle.element.childNodes.length;
+        var subtitle_length = subtitle.childNodes.length;
         if (sell_time && sell_time < end_time) {
           var textnode = document.createTextNode(' '  + page.text.localize('Sell time') + ' ');
-          for (i = 0; i < chart.subtitle.element.childNodes.length; i++) {
-            if (/End time/.test(chart.subtitle.element.childNodes[i].nodeValue)) {
-              var item = chart.subtitle.element.childNodes[i];
-              chart.subtitle.element.replaceChild(textnode, item);
+          for (i = 0; i < subtitle_length; i++) {
+            if (/End time/.test(subtitle.childNodes[i].nodeValue)) {
+              var item = subtitle.childNodes[i];
+              subtitle.replaceChild(textnode, item);
             }
           }
         }
@@ -294,7 +297,7 @@ var Highchart = (function() {
             draw_line_x(start_time);
           }
 
-          var duration = calculate_granularity(end_time, now_time, purchase_time, start_time)[1];
+          //var duration = calculate_granularity(end_time, now_time, purchase_time, start_time)[1];
 
           // show end time before contract ends if duration of contract is less than one day
           // second OR condition is used so we don't draw end time again if there is sell time before
@@ -524,6 +527,7 @@ var Highchart = (function() {
 
   // calculate where to display the maximum value of the x-axis of the chart for candle
   function get_max_candle(response) {
+    var end;
     if (sell_spot_time && sell_time < end_time) {end = sell_spot_time;}
     else {end = end_time;}
     if (is_settleable || is_sold) {

@@ -1,6 +1,6 @@
 var moment = require('moment');
 
-TimePicker = function(component_id) {
+var TimePicker = function(component_id) {
     this.component_id = component_id;
 };
 
@@ -43,7 +43,7 @@ TimePicker.prototype = {
             maxTime: {hour: parseInt(max_time.hour()), minute: parseInt(max_time.minute())},
         };
 
-        config.onSelect = function(time, inst) {
+        config.onSelect = function(time) {
             if (!time.match(/^(:?[0-3]\d):(:?[0-5]\d):(:?[0-5]\d)$/)) {
                 var invalid = time.match(/([a-z0-9]*):([a-z0-9]*):?([a-z0-9]*)?/);
                 var hour = that.time_now().format("hh");

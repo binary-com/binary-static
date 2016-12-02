@@ -1,7 +1,7 @@
-var Validate = require('./validation').Validate;
-var CommonFunctions = require('./common_functions').CommonFunctions;
-var Content         = require('./content').Content;
-var Cookies = require('../../lib/js-cookie');
+var Validate    = require('./validation').Validate;
+var isValidDate = require('./common_functions').isValidDate;
+var Content     = require('./content').Content;
+var Cookies     = require('../../lib/js-cookie');
 
 var ValidAccountOpening = (function(){
   var redirectCookie = function() {
@@ -84,7 +84,7 @@ var ValidAccountOpening = (function(){
     return;
   };
   var checkDate = function(dobdd, dobmm, dobyy, errorDob) {
-    if (!CommonFunctions.isValidDate(dobdd.value, dobmm.value, dobyy.value) || dobdd.value === '' || dobmm.value === '' || dobyy.value === '') {
+    if (!isValidDate(dobdd.value, dobmm.value, dobyy.value) || dobdd.value === '' || dobmm.value === '' || dobyy.value === '') {
       errorDob.innerHTML = Content.localize().textErrorBirthdate;
       Validate.displayErrorMessage(errorDob);
       window.accountErrorCounter++;
