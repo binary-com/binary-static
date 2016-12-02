@@ -26,7 +26,7 @@ TimePicker.prototype = {
         $(this.component_selector).off('keydown');
     },
     time_now: function() {
-        return moment.utc(page.header.time_now);
+        return moment.utc(window.time);
     },
     config: function(min_time, max_time) {
         var that = this,
