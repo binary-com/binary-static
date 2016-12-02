@@ -1,4 +1,5 @@
 var moment = require('moment');
+var checkInput = require('../common_functions/common_functions').checkInput;
 
 var TimePicker = function(component_selector) {
     this.component_selector = component_selector;
@@ -6,8 +7,15 @@ var TimePicker = function(component_selector) {
 
 TimePicker.prototype = {
     show: function(min_time, max_time) {
+        this.checkWidth(this.config(min_time, max_time), this.component_selector, this);
+    },
+    hide: function() {
+        if($(this.component_selector + '.hasTimepicker').length > 0)
+            $(this.component_selector).timepicker('destroy');
+        $(this.component_selector).off('keydown');
+    },
+    create: function(config) {
         var that = this;
-
         $(this.component_selector).keydown(function(e) {
                 if(e.which == 13) {
                     e.preventDefault();
@@ -18,12 +26,7 @@ TimePicker.prototype = {
                     $(that).trigger('enter_pressed');
                     return false;
                 }
-        }).timepicker(this.config(min_time, max_time));
-    },
-    hide: function() {
-        if($(this.component_selector + '.hasTimepicker').length > 0)
-            $(this.component_selector).timepicker('destroy');
-        $(this.component_selector).off('keydown');
+        }).timepicker(config);
     },
     time_now: function() {
         return moment.utc(window.time);
@@ -85,6 +88,24 @@ TimePicker.prototype = {
         };
 
         return config;
+    },
+    checkWidth: function(config, component_selector, that) {
+        var $selector = $(component_selector);
+        if ($(window).width() < 769 && checkInput('time', 'not-a-time')) {
+            that.hide($selector);
+            $selector.attr('type', 'time');
+            if (config.minTime) {
+                $selector.attr('min', config.minTime);
+            }
+            if (config.maxTime) {
+                $selector.attr('max', config.maxTime);
+            }
+        } else {
+            $selector.attr('type', 'text');
+            $selector.removeAttr('min');
+            $selector.removeAttr('max');
+            that.create(config);
+        }
     },
 };
 

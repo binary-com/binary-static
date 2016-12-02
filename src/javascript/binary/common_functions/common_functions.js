@@ -78,6 +78,18 @@ var isVisible = function(elem) {
     }
 };
 
+
+/*
+ * function to check if browser supports the type date/time
+ * send a wrong val in case browser 'pretends' to support
+ */
+function checkInput(type, wrongVal) {
+    var input = document.createElement('input');
+    input.setAttribute('type', type);
+    input.setAttribute('value', wrongVal);
+    return (input.value !== wrongVal);
+}
+
 module.exports = {
     getLoginToken          : function() { return Cookies.get('login'); },
     email_rot13            : email_rot13,
@@ -87,4 +99,5 @@ module.exports = {
     appendTextValueChild   : appendTextValueChild,
     isValidDate            : isValidDate,
     isVisible              : isVisible,
+    checkInput             : checkInput,
 };

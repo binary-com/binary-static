@@ -129,7 +129,7 @@ sub css_files {
     }
 
     # Binary-style
-    push @css, "https://style.binary.com/binary.css?$static_hash";
+    push @css, "https://negar-binary.github.io/binary-style/binary.css?$static_hash";
 
     return @css;
 }

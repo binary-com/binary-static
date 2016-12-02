@@ -1,4 +1,5 @@
 var moment = require('moment');
+var checkInput = require('../common_functions/common_functions').checkInput;
 
 var DatePicker = function(component_selector, select_type) {
     this.component_selector = component_selector;
@@ -19,7 +20,7 @@ var DatePicker = function(component_selector, select_type) {
 
 DatePicker.prototype = {
     show: function(min_day, max_days, setValue) {
-        this.create(this.config(min_day, max_days, setValue));
+        this.checkWidth(this.config(min_day, max_days, setValue), this.component_selector, this);
     },
     hide: function() {
         if($(this.component_selector + '.hasDatepicker').length > 0)
@@ -41,6 +42,7 @@ DatePicker.prototype = {
                     return false;
                 }
         }).datepicker(config);
+        $(window).resize(function() { that.checkWidth(config, that.component_selector, that); });
 
         // Not possible to tell datepicker where to put it's
         // trigger calendar icon on the page, so we remove it
@@ -99,6 +101,30 @@ DatePicker.prototype = {
         };
 
         return config;
+    },
+    getDate: function(date) {
+        var year = date.getFullYear(),
+            month = ('0' + date.getMonth()).slice(-2),
+            day = ('0' + date.getDate()).slice(-2);
+        return (year + '-' + month + '-' + day);
+    },
+    checkWidth: function(config, component_selector, that) {
+        var $selector = $(component_selector);
+        if ($(window).width() < 769 && checkInput('date', 'not-a-date')) {
+            that.hide($selector);
+            $selector.attr('type', 'date');
+            if (config.minDate) {
+                $selector.attr('min', that.getDate(config.minDate));
+            }
+            if (config.maxDate) {
+                $selector.attr('max', that.getDate(config.maxDate));
+            }
+        } else {
+            $selector.attr('type', 'text');
+            $selector.removeAttr('min');
+            $selector.removeAttr('max');
+            that.create(config);
+        }
     },
 };
 
