@@ -120,7 +120,7 @@
             showCloseButton: false,         // shows an OK button to confirm the edit
             showNowButton: false,           // Shows the 'now' button
             showDeselectButton: false,       // Shows the deselect time button
-            
+
             maxTime: {
                 hour: null,
                 minute: null
@@ -129,7 +129,7 @@
                 hour: null,
                 minute: null
             }
-			
+
         };
         $.extend(this._defaults, this.regional['']);
 
@@ -685,7 +685,7 @@
          */
         _generateHTMLMinutes: function (inst) {
 
-            var m, row, html = '',
+            var m, row, html, i = '',
                 rows = this._get(inst, 'rows'),
                 minutes = Array(),
                 minutes_options = this._get(inst, 'minutes'),
@@ -796,12 +796,12 @@
             if (onHourShow) {
             	enabled = onHourShow.apply((inst.input ? inst.input[0] : null), [hour]);
             }
-			
+
             if (enabled) {
                 if ( !isNaN(parseInt(maxTime.hour)) && hour > maxTime.hour ) enabled = false;
                 if ( !isNaN(parseInt(minTime.hour)) && hour < minTime.hour ) enabled = false;
             }
-			
+
             if (enabled) {
                 html = '<td class="ui-timepicker-hour-cell" data-timepicker-instance-id="#' + inst.id.replace(/\\\\/g,"\\") + '" data-hour="' + hour.toString() + '">' +
                    '<a class="ui-state-default ' +
@@ -846,7 +846,7 @@
                 if ( !isNaN(parseInt(maxTime.hour)) && !isNaN(parseInt(maxTime.minute)) && hour >= maxTime.hour && minute > maxTime.minute ) enabled = false;
                 if ( !isNaN(parseInt(minTime.hour)) && !isNaN(parseInt(minTime.minute)) && hour <= minTime.hour && minute < minTime.minute ) enabled = false;
             }
-			
+
              if (enabled) {
 	             html = '<td class="ui-timepicker-minute-cell" data-timepicker-instance-id="#' + inst.id.replace(/\\\\/g,"\\") + '" data-minute="' + minute.toString() + '" >' +
 	                   '<a class="ui-state-default ' +
@@ -1280,7 +1280,7 @@
                 maxTime = this._get(inst, 'maxTime'),
                 minTime = this._get(inst, 'minTime');
             if (onMinuteShow || maxTime.minute || minTime.minute) {
-                // this will trigger a callback on selected hour to make sure selected minute is allowed. 
+                // this will trigger a callback on selected hour to make sure selected minute is allowed.
                 this._updateMinuteDisplay(inst);
             }
 
