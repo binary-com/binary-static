@@ -862,7 +862,7 @@ function timeIsValid($element) {
         startDateValue = document.getElementById('date_start').value,
         endTimeValue = document.getElementById('expiry_time').value || "23:59:59";
 
-    endDateValue = endDateValue ? moment(endDateValue) : toISOFormat(new moment());
+    endDateValue = endDateValue ? toISOFormat(moment(endDateValue)) : toISOFormat(new moment());
     startDateValue = startDateValue === 'now' ? Math.floor(window.time._i/1000) : startDateValue;
 
     if (moment.utc(endDateValue + " " + endTimeValue).unix() <= startDateValue) {

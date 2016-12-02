@@ -94,12 +94,12 @@ var SelfExclusionWS = (function() {
     function initDatePicker() {
         var timePickerInst = new TimePicker('#' + timeID);
         timePickerInst.show();
-
+        // 6 weeks
         var datePickerTime = new DatePicker('#' + timeDateID);
-        datePickerTime.show('today', moment().add(moment.duration(6, 'weeks')));
-
+        datePickerTime.show('today', 6 * 7);
+        // 5 years
         var datePickerDate = new DatePicker('#' + dateID);
-        datePickerDate.show(moment().add(moment.duration(6, 'months')).toDate(), moment().add(moment.duration(5, 'years')));
+        datePickerDate.show(moment().add(moment.duration(6, 'months')).toDate(), 5 * 365);
     }
 
     // ----------------------
@@ -292,9 +292,11 @@ var SelfExclusionWS = (function() {
             // If we've gotten this far then there must *not*
             // be an error with the timeout date.
             date = moment(date);
-            var time = values.timeout_until || moment.duration({});
+            var time = values.timeout_until;
+            if (time) {
+                date = date.add(time.format('HH'), 'hours').add(time.format('mm'), 'minutes');
+            }
             var six_weeks = moment().add(moment.duration(6, 'weeks'));
-            date = date.add(time.format('HH'), 'hours').add(time.format('mm'), 'minutes');
             var res = dv.first(date, [
                 afterToday,
                 dv.check(function(d) { return !d.isAfter(six_weeks); }, 'Exclude time cannot be more than 6 weeks'),

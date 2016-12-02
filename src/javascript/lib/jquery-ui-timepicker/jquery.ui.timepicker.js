@@ -685,7 +685,7 @@
          */
         _generateHTMLMinutes: function (inst) {
 
-            var m, row, html, i = '',
+            var m, row, html = '',
                 rows = this._get(inst, 'rows'),
                 minutes = Array(),
                 minutes_options = this._get(inst, 'minutes'),
@@ -707,7 +707,7 @@
             for (m = minutes_options.starts; m <= minutes_options.ends; m += minutes_options.interval) {
                 minutes.push(m);
             }
-            for (i = 0; i < minutes_options.manual.length;i++) {
+            for (var i = 0; i < minutes_options.manual.length;i++) {
                 var currMin = minutes_options.manual[i];
 
                 // Validate & filter duplicates of manual minute input

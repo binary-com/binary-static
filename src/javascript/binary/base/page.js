@@ -1422,26 +1422,7 @@ $(document).ready(function () {
                 break;
         }
     });
-
     LocalStore.set('active_loginid', match);
-    var start_time;
-    var time_now;
-    var evt = (
-        (document.webkitHidden && 'webkitvisibilitychange') ||
-        (document.hidden && 'visibilitychange') ||
-        null
-    );
-    if (!evt || !document.addEventListener) return;
-    document.addEventListener(evt, function tabChanged() {
-        if (!clock_started) return;
-        if (document.hidden || document.webkitHidden) {
-            start_time = moment().valueOf();
-            time_now = page.header.time_now;
-        } else {
-            time_now = (time_now + (moment().valueOf() - start_time));
-            page.header.time_now = time_now;
-        }
-    });
 });
 
 //For object shape coherence we create named objects to be inserted into the queue.
@@ -1551,9 +1532,6 @@ var pjax_config = function() {
                     }
                 });
             }
-
-            $('#server_clock').html('GMT Time: ' + moment(page.header.time_now).utc().format("YYYY-MM-DD HH:mm"));
-
         },
         'useClass': 'pjaxload',
     };
