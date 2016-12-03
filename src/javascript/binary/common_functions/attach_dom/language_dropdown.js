@@ -1,7 +1,4 @@
-var appendTextValueChild = require('../common_functions').appendTextValueChild;
-
 var $languages,
-    language,
     languageCode,
     languageText;
 
@@ -18,15 +15,14 @@ function create_language_drop_down(languages) {
         }
     });
     var displayLanguage = 'ul#display_language',
-        $displayLanguage = $languages.find(displayLanguage);
-    language = page.language();
+        language = page.language();
     languageCode = language && language !== '' ? language : 'en';
     languageText = language && language !== '' ? map_code_to_language(language) : 'English';
     add_display_language(displayLanguage);
     add_display_language(selectLanguage);
     for (var i = 0; i < languages.length; i++) {
         if (languages[i] !== 'JA') {
-            appendTextValueChild(language_select_element, map_code_to_language(languages[i]), '', '', languages[i]);
+            $selectLanguage.append('<li class="' + languages[i] + '">' + map_code_to_language(languages[i]) + '</li>');
         }
     }
     $selectLanguage.find('li.' + language + ':eq(1)').addClass('invisible');
