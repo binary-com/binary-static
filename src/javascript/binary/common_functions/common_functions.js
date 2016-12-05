@@ -78,6 +78,32 @@ var isVisible = function(elem) {
     }
 };
 
+
+/*
+ * function to check if browser supports the type date/time
+ * send a wrong val in case browser 'pretends' to support
+ */
+function checkInput(type, wrongVal) {
+    var input = document.createElement('input');
+    input.setAttribute('type', type);
+    input.setAttribute('value', wrongVal);
+    return (input.value !== wrongVal);
+}
+
+/*
+ * function to check if new date is selected using native picker
+ * if yes, update the data-value. if no, return false.
+ */
+function dateValueChanged(element, type) {
+    if (element.getAttribute('type') === type) {
+        if (element.getAttribute('data-value') === element.value) {
+            return false;
+        }
+        element.setAttribute('data-value', element.value);
+    }
+    return true;
+}
+
 module.exports = {
     getLoginToken          : function() { return Cookies.get('login'); },
     email_rot13            : email_rot13,
@@ -87,4 +113,6 @@ module.exports = {
     appendTextValueChild   : appendTextValueChild,
     isValidDate            : isValidDate,
     isVisible              : isVisible,
+    checkInput             : checkInput,
+    dateValueChanged       : dateValueChanged,
 };

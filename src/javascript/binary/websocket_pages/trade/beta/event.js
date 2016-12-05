@@ -21,6 +21,7 @@ var chartFrameSource               = require('../common').chartFrameSource;
 var displayTooltip_Beta            = require('../common').displayTooltip_Beta;
 var timeIsValid                    = require('../common').timeIsValid;
 var isVisible                      = require('../../../common_functions/common_functions').isVisible;
+var dateValueChanged               = require('../../../common_functions/common_functions').dateValueChanged;
 var TimePicker                     = require('../../../components/time_picker').TimePicker;
 
 /*
@@ -235,6 +236,9 @@ var TradingEvents_Beta = (function () {
             // need to use jquery as datepicker is used, if we switch to some other
             // datepicker we can move back to javascript
             $('#expiry_date').on('change input', function () {
+                if (!dateValueChanged(this, 'date')) {
+                    return false;
+                }
                 //if start time is less than end time
                 if (timeIsValid($('#expiry_date'))) {
                     Durations_Beta.selectEndDate(moment(this.getAttribute('data-value')));
@@ -247,6 +251,9 @@ var TradingEvents_Beta = (function () {
             $('#expiry_time')
                 .on('keypress', onlyNumericColonOnKeypress)
                 .on('change input', function (e) {
+                    if (!dateValueChanged(this, 'time')) {
+                        return false;
+                    }
                     var $expiry_time = $('#expiry_time'),
                         oldVal = $expiry_time.attr('data-value'),
                         newVal = e.target.value;

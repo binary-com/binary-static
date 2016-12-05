@@ -366,7 +366,7 @@ var Durations_Beta = (function(){
             setNow(); // start time
             date_start.setAttribute('disabled', 'disabled');
             expiry_time.hide();
-            processTradingTimesRequest_Beta(end_date);
+            processTradingTimesRequest_Beta(end_date_iso);
         } else {
             date_start.removeAttribute('disabled');
             if(!expiry_time.value) {

@@ -862,7 +862,8 @@ function timeIsValid($element) {
         startDateValue = document.getElementById('date_start').value,
         endTimeValue = document.getElementById('expiry_time').value;
 
-    if (endTimeValue && !/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(endTimeValue)) {
+    if ($element.attr('id') === $('#expiry_time') && endTimeValue &&
+        !/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(endTimeValue)) {
         $element.addClass('error-field');
         if ($('#invalid-time').length === 0) {
             $('#expiry_type_endtime').parent().append($('<p>', {class: 'error-msg', id: 'invalid-time', text: page.text.localize('Time is in the wrong format.')}));

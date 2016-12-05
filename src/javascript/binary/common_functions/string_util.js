@@ -1,3 +1,5 @@
+var checkInput = require('./common_functions').checkInput;
+
 var toTitleCase = function(str) {
     return str.replace(/\w[^\s\/\\]*/g, function(txt){
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
@@ -11,9 +13,20 @@ var addComma = function(num, decimal_points) {
     });
 };
 
+var toISOFormat = function(date) {
+    return date.format('YYYY-MM-DD');
+};
+
+var toReadableFormat = function(date) {
+    if ($(window).width() < 770 && checkInput('date', 'not-a-date')) {
+        return toISOFormat(date);
+    }
+    return date.format('DD MMM, YYYY');
+};
+
 module.exports = {
-    toReadableFormat: function (date) { return date.format('DD MMM, YYYY'); },
-    toISOFormat: function (date) { return date.format('YYYY-MM-DD'); },
+    toISOFormat: toISOFormat,
+    toReadableFormat: toReadableFormat,
     toTitleCase: toTitleCase,
     addComma: addComma,
 };

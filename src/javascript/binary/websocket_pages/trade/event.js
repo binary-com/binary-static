@@ -22,6 +22,7 @@ var reloadPage                 = require('./common').reloadPage;
 var chartFrameSource           = require('./common').chartFrameSource;
 var timeIsValid                = require('./common').timeIsValid;
 var TimePicker                 = require('../../components/time_picker').TimePicker;
+var dateValueChanged           = require('../../common_functions/common_functions').dateValueChanged;
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -235,6 +236,9 @@ var TradingEvents = (function () {
             // need to use jquery as datepicker is used, if we switch to some other
             // datepicker we can move back to javascript
             $('#expiry_date').on('change input', function () {
+                if (!dateValueChanged(this, 'date')) {
+                    return false;
+                }
                 if (timeIsValid($('#expiry_date'))) {
                     Durations.selectEndDate(moment(this.getAttribute('data-value')));
                 }
@@ -246,6 +250,9 @@ var TradingEvents = (function () {
             $('#expiry_time')
                 .on('keypress', onlyNumericColonOnKeypress)
                 .on('change input', function (e) {
+                    if (!dateValueChanged(this, 'time')) {
+                        return false;
+                    }
                     var $expiry_time = $('#expiry_time'),
                         oldVal = $expiry_time.attr('data-value'),
                         newVal = e.target.value;

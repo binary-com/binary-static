@@ -8,6 +8,7 @@ var moment           = require('moment');
 var dv               = require('../../../../../lib/validation');
 var TimePicker       = require('../../../../components/time_picker').TimePicker;
 var DatePicker       = require('../../../../components/date_picker').DatePicker;
+var dateValueChanged = require('../../../../common_functions/common_functions').dateValueChanged;
 
 var SelfExclusionWS = (function() {
     "use strict";
@@ -100,6 +101,11 @@ var SelfExclusionWS = (function() {
         // 5 years
         var datePickerDate = new DatePicker('#' + dateID);
         datePickerDate.show(moment().add(moment.duration(6, 'months')).toDate(), 5 * 365);
+        $('#' + timeDateID + ', #' + dateID).change(function() {
+            if (!dateValueChanged(this, 'date')) {
+                return false;
+            }
+        });
     }
 
     // ----------------------

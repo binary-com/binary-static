@@ -366,7 +366,7 @@ var Durations = (function(){
             setNow(); // start time
             date_start.setAttribute('disabled', 'disabled');
             expiry_time.hide();
-            processTradingTimesRequest(end_date);
+            processTradingTimesRequest(end_date_iso);
         } else {
             date_start.removeAttribute('disabled');
             if(!expiry_time.value) {

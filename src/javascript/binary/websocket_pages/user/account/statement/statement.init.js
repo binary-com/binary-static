@@ -6,6 +6,8 @@ var Content              = require('../../../../common_functions/content').Conte
 var japanese_client      = require('../../../../common_functions/country_base').japanese_client;
 var moment               = require('moment');
 var DatePicker           = require('../../../../components/date_picker').DatePicker;
+var toISOFormat          = require('../../../../common_functions/string_util').toISOFormat;
+var dateValueChanged     = require('../../../../common_functions/common_functions').dateValueChanged;
 
 var StatementWS = (function(){
     "use strict";
@@ -150,7 +152,11 @@ var StatementWS = (function(){
         datePickerInst.hide();
         datePickerInst.show('', '0');
         $(jumpTo).val(page.text.localize('Today'))
+                 .attr('data-value', toISOFormat(moment()))
                  .change(function() {
+                     if (!dateValueChanged(this, 'date')) {
+                         return false;
+                     }
                      $('.table-container').remove();
                      StatementUI.clearTableContent();
                      StatementWS.init();
