@@ -1,6 +1,9 @@
 var Symbols = require('../../symbols').Symbols;
 var MenuContent = require('../../../../base/menu_content').MenuContent;
 var template = require('../../../../base/utility').template;
+require('../../../../../lib/highstock/highstock.js');
+require('../../../../../lib/highstock/highstock-exporting.js');
+require('../../../../../lib/highstock/export-csv.js');
 
 var DigitInfoWS_Beta = function() {
     this.chart_config = {
@@ -98,15 +101,14 @@ DigitInfoWS_Beta.prototype = {
         var domain = document.domain.split('.').slice(-2).join('.'),
             underlyings =[];
         var symbols = Symbols.getAllSymbols();
-        i=0;
-        for(var key in symbols){
+        for (var key in symbols){
             if(/^(R_|RD)/.test(key)){
-                underlyings[i++] = key;
+                underlyings.push(key);
             }
         }
         underlyings = underlyings.sort();
         var elem = '<select class="smallfont" name="underlying">';
-        for(i=0;i<underlyings.length;i++){
+        for (var i = 0; i < underlyings.length; i++) {
             elem = elem + '<option value="' + underlyings[i] + '">' + page.text.localize(symbols[underlyings[i]]) + '</option>';
         }
         elem = elem + '</select>';
@@ -161,7 +163,7 @@ DigitInfoWS_Beta.prototype = {
             return;
         }
         var dec = spots[0].split('.')[1].length;
-        for(i=0;i<spots.length;i++){
+        for(var i = 0; i < spots.length; i++) {
             var val = parseFloat(spots[i]).toFixed(dec);
             spots[i]=val.substr(val.length-1);
         }

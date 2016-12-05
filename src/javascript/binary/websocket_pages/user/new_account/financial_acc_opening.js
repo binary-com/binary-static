@@ -1,12 +1,12 @@
-var AccountOpening      = require('../../../common_functions/account_opening').AccountOpening;
-var Content             = require('../../../common_functions/content').Content;
-var ValidAccountOpening = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
+var handleResidence       = require('../../../common_functions/account_opening').handleResidence;
+var Content               = require('../../../common_functions/content').Content;
+var ValidAccountOpening   = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
 var FinancialAccOpeningUI = require('./financial_acc_opening/financial_acc_opening.ui').FinancialAccOpeningUI;
 
 var FinancialAccOpening = (function() {
     var init = function() {
         Content.populate();
-        for (i = 0; i < page.user.loginid_array.length; i++){
+        for (var i = 0; i < page.user.loginid_array.length; i++){
           if (page.user.loginid_array[i].financial){
             window.location.href = page.url.url_for('trading');
             return;
@@ -14,7 +14,7 @@ var FinancialAccOpening = (function() {
             $('.security').hide();
           }
         }
-        AccountOpening.handle_residence_state_ws();
+        handleResidence();
         BinarySocket.send({residence_list:1});
         BinarySocket.send({get_financial_assessment:1});
         $('#financial-form').submit(function(evt) {
@@ -24,7 +24,6 @@ var FinancialAccOpening = (function() {
               onmessage: function(msg){
                 var response = JSON.parse(msg.data);
                 if (response) {
-                  var error = response.error;
                   if (response.msg_type === 'new_account_maltainvest'){
                     ValidAccountOpening.handler(response, response.new_account_maltainvest);
                   }

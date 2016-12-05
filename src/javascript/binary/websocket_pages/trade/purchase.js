@@ -1,8 +1,11 @@
-var Contract      = require('./contract').Contract;
-var Symbols       = require('./symbols').Symbols;
-var Tick          = require('./tick').Tick;
-var WSTickDisplay = require('./tick_trade').WSTickDisplay;
-var Content = require('../../common_functions/content').Content;
+var Contract              = require('./contract').Contract;
+var Symbols               = require('./symbols').Symbols;
+var Tick                  = require('./tick').Tick;
+var WSTickDisplay         = require('./tick_trade').WSTickDisplay;
+var Content               = require('../../common_functions/content').Content;
+var isVisible             = require('../../common_functions/common_functions').isVisible;
+var updatePurchaseStatus  = require('./common').updatePurchaseStatus;
+var updateContractBalance = require('./common').updateContractBalance;
 
 /*
  * Purchase object that handles all the functions related to
@@ -157,7 +160,7 @@ var Purchase = (function () {
         }
     };
 
-    var update_spot_list = function(data){
+    var update_spot_list = function(){
 
         if($('#contract_purchase_spots:hidden').length){
             return;

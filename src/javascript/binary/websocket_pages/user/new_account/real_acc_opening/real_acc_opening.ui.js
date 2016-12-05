@@ -9,13 +9,6 @@ var RealAccOpeningUI = (function(){
   function checkValidity(){
     window.accountErrorCounter = 0;
 
-    var letters = Content.localize().textLetters,
-        numbers = Content.localize().textNumbers,
-        space   = Content.localize().textSpace,
-        hyphen  = Content.localize().textHyphen,
-        period  = Content.localize().textPeriod,
-        apost   = Content.localize().textApost;
-
     var elementObj = {
         title     : document.getElementById('title'),
         fname     : document.getElementById('fname'),

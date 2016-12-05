@@ -97,7 +97,7 @@ var SelfExclusionWS = (function() {
             dateFormat: 'yy-mm-dd',
             minDate   : moment().toDate(),
             maxDate   : moment().add(moment.duration(6, 'weeks')).toDate(),
-            onSelect  : function(dateText, inst) {
+            onSelect  : function(dateText) {
                 $(this).val(dateText);
             }
         });
@@ -106,7 +106,7 @@ var SelfExclusionWS = (function() {
             dateFormat: 'yy-mm-dd',
             minDate   : moment().add(moment.duration(6, 'months')).toDate(),
             maxDate   : moment().add(moment.duration(5, 'years')).toDate(),
-            onSelect  : function(dateText, inst) {
+            onSelect  : function(dateText) {
                 $(this).val(dateText);
             }
         });

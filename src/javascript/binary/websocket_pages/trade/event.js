@@ -1,13 +1,25 @@
-var TradingAnalysis = require('./analysis').TradingAnalysis;
-var Barriers        = require('./barriers').Barriers;
-var Contract        = require('./contract').Contract;
-var Defaults        = require('./defaults').Defaults;
-var Durations       = require('./duration').Durations;
-var Price           = require('./price').Price;
-var StartDates      = require('./starttime').StartDates;
-var Tick            = require('./tick').Tick;
-var onlyNumericOnKeypress = require('../../common_functions/event_handler').onlyNumericOnKeypress;
-var moment = require('moment');
+var TradingAnalysis            = require('./analysis').TradingAnalysis;
+var Barriers                   = require('./barriers').Barriers;
+var Contract                   = require('./contract').Contract;
+var Defaults                   = require('./defaults').Defaults;
+var Durations                  = require('./duration').Durations;
+var Price                      = require('./price').Price;
+var StartDates                 = require('./starttime').StartDates;
+var Tick                       = require('./tick').Tick;
+var onlyNumericOnKeypress      = require('../../common_functions/event_handler').onlyNumericOnKeypress;
+var moment                     = require('moment');
+var setFormPlaceholderContent  = require('./set_values').setFormPlaceholderContent;
+var isVisible                  = require('../../common_functions/common_functions').isVisible;
+var showPriceOverlay           = require('./common').showPriceOverlay;
+var showFormOverlay            = require('./common').showFormOverlay;
+var toggleActiveCatMenuElement = require('./common').toggleActiveCatMenuElement;
+var debounce                   = require('./common').debounce;
+var submitForm                 = require('./common').submitForm;
+var displayTooltip             = require('./common').displayTooltip;
+var updateWarmChart            = require('./common').updateWarmChart;
+var reloadPage                 = require('./common').reloadPage;
+var chartFrameSource           = require('./common').chartFrameSource;
+var timeIsValid                = require('./common').timeIsValid;
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -487,7 +499,7 @@ var TradingEvents = (function () {
 
         var init_logo = document.getElementById('trading_init_progress');
         if(init_logo){
-            init_logo.addEventListener('click', debounce( function (e) {
+            init_logo.addEventListener('click', debounce( function () {
                 reloadPage();
             }));
         }

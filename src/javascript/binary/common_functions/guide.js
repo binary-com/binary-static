@@ -91,7 +91,7 @@ var Guide = (function() {
      *  both buttons' click event
      */
     var setEvents = function() {
-        $(opt.guideBtnID + ' strong').click(function(e){
+        $(opt.guideBtnID + ' strong').click(function(){
             var enjoyhint_instance = null;
             enjoyhint_instance = new EnjoyHint({});
             enjoyhint_instance.setScript(getScript(opt.script));

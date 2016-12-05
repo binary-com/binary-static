@@ -1,16 +1,30 @@
-var TradingAnalysis = require('./analysis').TradingAnalysis;
-var Barriers        = require('./barriers').Barriers;
-var Contract        = require('./contract').Contract;
-var Defaults        = require('./defaults').Defaults;
-var Durations       = require('./duration').Durations;
-var TradingEvents   = require('./event').TradingEvents;
-var Price           = require('./price').Price;
-var Purchase        = require('./purchase').Purchase;
-var StartDates      = require('./starttime').StartDates;
-var Symbols         = require('./symbols').Symbols;
-var Tick            = require('./tick').Tick;
-var WSTickDisplay   = require('./tick_trade').WSTickDisplay;
-var State = require('../../base/storage').State;
+var TradingAnalysis           = require('./analysis').TradingAnalysis;
+var Barriers                  = require('./barriers').Barriers;
+var Contract                  = require('./contract').Contract;
+var Defaults                  = require('./defaults').Defaults;
+var Durations                 = require('./duration').Durations;
+var TradingEvents             = require('./event').TradingEvents;
+var Price                     = require('./price').Price;
+var Purchase                  = require('./purchase').Purchase;
+var StartDates                = require('./starttime').StartDates;
+var Symbols                   = require('./symbols').Symbols;
+var Tick                      = require('./tick').Tick;
+var WSTickDisplay             = require('./tick_trade').WSTickDisplay;
+var State                     = require('../../base/storage').State;
+var displayUnderlyings        = require('./common').displayUnderlyings;
+var showPriceOverlay          = require('./common').showPriceOverlay;
+var hidePriceOverlay          = require('./common').hidePriceOverlay;
+var hideFormOverlay           = require('./common').hideFormOverlay;
+var showFormOverlay           = require('./common').showFormOverlay;
+var hideOverlayContainer      = require('./common').hideOverlayContainer;
+var getContractCategoryTree   = require('./common').getContractCategoryTree;
+var getDefaultMarket          = require('./common').getDefaultMarket;
+var displayTooltip            = require('./common').displayTooltip;
+var selectOption              = require('./common').selectOption;
+var updateWarmChart           = require('./common').updateWarmChart;
+var displayContractForms      = require('./common').displayContractForms;
+var displayMarkets            = require('./common').displayMarkets;
+var setFormPlaceholderContent = require('./set_values').setFormPlaceholderContent;
 
 /*
  * This function process the active symbols to get markets
@@ -336,7 +350,7 @@ function processTick(tick) {
             digit_info.update_chart(tick);
         }
         WSTickDisplay.updateChart(tick);
-        Purchase.update_spot_list(tick);
+        Purchase.update_spot_list();
         if (!Barriers.isBarrierUpdated()) {
             Barriers.display();
             Barriers.setBarrierUpdate(true);
