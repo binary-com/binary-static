@@ -62,7 +62,7 @@
     'rules': {
         'array-callback-return': 0,
         'func-names':  ['error', 'never'],
-        'indent':      ['error', 4],
+        'indent':      ['error', 4, { 'SwitchCase': 1 }],
         'key-spacing': ['error', { align: 'colon' }],
         'max-len':     ['error', 120, 4, { ignoreUrls: true, ignoreComments: false, ignoreRegExpLiterals: true, ignoreStrings: true, ignoreTemplateLiterals: true }],
         'no-multi-spaces':       0,
@@ -70,6 +70,7 @@
         'no-new':                0,
         'no-param-reassign':     0,
         'no-plusplus':           0,
+        'no-restricted-properties': ['error', { object: 'arguments', property: 'callee', message: 'arguments.callee is deprecated' }],
         'no-underscore-dangle':  0,
         'no-use-before-define':  0,
         'no-useless-escape':     0,
