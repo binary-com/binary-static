@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-25 08:15+0000\n"
+"PO-Revision-Date: 2016-11-30 00:56+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -1901,10 +1901,8 @@ msgstr "確認事項"
 msgid "Conflicts Policy"
 msgstr "利益相反ポリシー"
 
-#, fuzzy
-#| msgid "Connection error: Please view the progress at your portfolio page."
 msgid "Connection error: Please check your internet connection."
-msgstr "接続エラー：資産情報ページにて進捗状況をご確認して下さい。"
+msgstr "接続エラー：インターネット接続状況をご確認ください。"
 
 msgid "Construction"
 msgstr "設営"
@@ -8004,7 +8002,7 @@ msgid "Your password has been changed. Please log in again."
 msgstr "パスワードを変更しました。再度ログインしてください。"
 
 msgid "Your password has been successfully reset. Please log into your account using your new password."
-msgstr "お客さまパスワードの再設定完了いたしました。新しいパスワードで口座にログインしてください。"
+msgstr "パスワードの再設定を完了しました。新しいパスワードでログインしてください。"
 
 msgid "Your personal information is used primarily as a way of authenticating you as the proper owner of your account and as the person to whom withdrawal payments may be made, and to process trades. We collect personal data relating to you directly from you when you fill in the account opening form. In the event of any doubt as to the authenticity of your account details or of any withdrawal request, the company reserves the right to request further authentication information as may be deemed appropriate under the circumstances."
 msgstr "お客さまの個人情報の利用の第一義は、当社サービスの口座保持者として適切かどうか認証させて頂くこと、及びご出金時と取引過程の身分確証にあります。当社はご口座開設時に個人情報をご入力して頂くことで、お客さまの個人情報をお客さま個人から直接入手します。尚、ご口座に関する詳細情報の認証時、またはご出金リクエスト時に、より詳細な個人情報のご提出を求める権利を当社は有しております。"
@@ -8141,6 +8139,11 @@ msgstr "メールアドレス"
 msgid "f"
 msgstr "女性"
 
+#, fuzzy
+#| msgid "Th"
+msgid "h"
+msgstr "木曜日"
+
 msgid "hour"
 msgstr "時間"
 
@@ -8177,11 +8180,17 @@ msgstr "男性"
 msgid "max: 100,000"
 msgstr "上限ロット: x100"
 
+msgid "min"
+msgstr "最小値"
+
 msgid "min: 1,000"
 msgstr "ペイアウト: ¥1,000"
 
 msgid "minimum available duration"
 msgstr "最短取引期間"
+
+msgid "mins"
+msgstr ""
 
 msgid "minute"
 msgstr "分"
@@ -8352,7 +8361,7 @@ msgid "{JAPAN ONLY}A Covered option position is where you hold an offsetting pos
 msgstr "カバ－ド・オプションは、オプションの売りポジションをカバ－するような原資産を保有しながら、オプションを売ることです。"
 
 msgid "{JAPAN ONLY}A Currency Binary Option is one where there is a target for a particular currency pair, so a strike price for the exchange rate is agreed, and a payout will be due if the judgment price meets the conditions of being over or under the target strike price, depending on the option type, by the exercise time."
-msgstr "通貨バイナリーオプションは、通貨ペアを対象とし、通貨ペアの交換レートをバリア価格として、権利行使時点で両通貨のレートがバリア価格を上回るか、下回るかにより、権利行使によるペイアウトの有無を判定し、決済するオプションことをいいます。たとえば、ドル円のコールバイナリーオプションは、ドルを基準とし、バリア価格に対して判定価格がドル高＝円安となればペイアウトとなり、判定価格がドル安＝円高となればペイアウトは発生しません。"
+msgstr "通貨バイナリーオプションは、通貨ペアを対象とし、通貨ペアの交換レートをバリア価格として、権利行使時点で両通貨のレートがバリア価格を上回るか、下回るかにより、権利行使によるペイアウトの有無を判定し、決済するオプションのことをいいます。たとえば、ドル円のコールバイナリーオプションは、ドルを基準とし、バリア価格に対して判定価格がドル高＝円安となればペイアウトとなり、判定価格がドル安＝円高となればペイアウトは発生しません。"
 
 msgid "{JAPAN ONLY}A Currency Option confers the right to sell one currency in exchange for another currency as the underlying asset. For example, the right to sell Yen and buy Dollars is known as a Yen Put / Dollar Call Option, or just Yen Put for short; and the opposite right to buy Yen and sell Dollar is called a Yen Call / Dollar Put Option, or just Yen Call for short."
 msgstr "通貨オプションとは、通貨を原資産とし、一方の通貨を売って、他方の通貨を買う権利のことをいい、たとえばドルと円をペアとする場合、ドルを買って円を売るものを、ドルコール/円プットオプション、略してドルコールオプションと呼び、ドルを売って円を買うものを、ドルプット/円コールオプション、略してドルプットオプションと呼びます。"
@@ -9317,7 +9326,7 @@ msgid "Endpoint"
 msgstr "ポイント"
 
 msgid "Careers For Americans"
-msgstr ""
+msgstr "採用情報（アメリカ出身の方）"
 
 msgid "Job Details"
 msgstr "職務内容"
@@ -13636,9 +13645,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "explanation"
 #~ msgstr "取引概要"
-
-#~ msgid "min"
-#~ msgstr "最小値"
 
 #~ msgid "or Email us at"
 #~ msgstr "またはメールでのご連絡："
