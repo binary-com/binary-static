@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-23 10:00+0000\n"
-"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
+"PO-Revision-Date: 2016-12-01 09:49+0000\n"
+"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -1868,10 +1868,8 @@ msgstr "Confirmation and understandings"
 msgid "Conflicts Policy"
 msgstr "Политика по конфликтам"
 
-#, fuzzy
-#| msgid "Connection error: Please view the progress at your portfolio page."
 msgid "Connection error: Please check your internet connection."
-msgstr "Проблема со связью: пожалуйста, смотрите развитие контракта в Вашем Портфолио."
+msgstr "Проблема со связью: пожалуйста, проверьте Ваше подключение к интернету."
 
 msgid "Construction"
 msgstr "Строительство"
@@ -7918,6 +7916,11 @@ msgstr "эл. адрес"
 msgid "f"
 msgstr "f"
 
+#, fuzzy
+#| msgid "Th"
+msgid "h"
+msgstr "Чт"
+
 msgid "hour"
 msgstr "час."
 
@@ -7954,11 +7957,17 @@ msgstr "m"
 msgid "max: 100,000"
 msgstr "максимум: 100,000"
 
+msgid "min"
+msgstr "мин."
+
 msgid "min: 1,000"
 msgstr "минимум: 1,000"
 
 msgid "minimum available duration"
 msgstr "мин. доступный период"
+
+msgid "mins"
+msgstr ""
 
 msgid "minute"
 msgstr "минут(ы)"
@@ -9077,7 +9086,7 @@ msgid "Endpoint"
 msgstr "Конечная точка"
 
 msgid "Careers For Americans"
-msgstr ""
+msgstr "Карьеры для жителей США"
 
 msgid "Job Details"
 msgstr "Описание вакансии"
@@ -13404,9 +13413,6 @@ msgstr "Согласие с правилами и условиями"
 
 #~ msgid "explanation"
 #~ msgstr "объяснение"
-
-#~ msgid "min"
-#~ msgstr "мин."
 
 #~ msgid "or Email us at"
 #~ msgstr "или вышлите нам сообщение на"

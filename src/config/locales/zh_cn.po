@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-24 06:11+0000\n"
+"PO-Revision-Date: 2016-12-02 08:06+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
@@ -1864,10 +1864,8 @@ msgstr "Confirmation and understandings"
 msgid "Conflicts Policy"
 msgstr "冲突政策"
 
-#, fuzzy
-#| msgid "Connection error: Please view the progress at your portfolio page."
 msgid "Connection error: Please check your internet connection."
-msgstr "连接错误：请在您的组合页面查看进度。"
+msgstr "连接错误：请检查您网络连接。"
 
 msgid "Construction"
 msgstr "建筑"
@@ -7914,6 +7912,11 @@ msgstr "电子邮件地址"
 msgid "f"
 msgstr "f"
 
+#, fuzzy
+#| msgid "Th"
+msgid "h"
+msgstr "星期四"
+
 msgid "hour"
 msgstr "小时"
 
@@ -7950,11 +7953,17 @@ msgstr "月"
 msgid "max: 100,000"
 msgstr "最大: 100,000"
 
+msgid "min"
+msgstr "最小"
+
 msgid "min: 1,000"
 msgstr "最小: 1,000"
 
 msgid "minimum available duration"
 msgstr "最短可用期限"
+
+msgid "mins"
+msgstr ""
 
 msgid "minute"
 msgstr "分钟"
@@ -13368,9 +13377,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "explanation"
 #~ msgstr "说明"
-
-#~ msgid "min"
-#~ msgstr "最小"
 
 #~ msgid "or Email us at"
 #~ msgstr "或发送电子邮件至"
