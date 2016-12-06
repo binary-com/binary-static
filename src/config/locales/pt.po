@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-12-03 18:41+0000\n"
 "Last-Translator: Alcino Jorge <alcino@binary.com>\n"
-"Language-Team: Portuguese "
-"<https://hosted.weblate.org/projects/binary/static/pt/>\n"
+"Language-Team: Portuguese <https://hosted.weblate.org/projects/binary/static/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -7911,6 +7910,11 @@ msgstr "endereço de e-mail"
 msgid "f"
 msgstr "f"
 
+#, fuzzy
+#| msgid "Th"
+msgid "h"
+msgstr "Qui"
+
 msgid "hour"
 msgstr "hora"
 
@@ -7947,11 +7951,17 @@ msgstr "m"
 msgid "max: 100,000"
 msgstr "máx: 100.000"
 
+msgid "min"
+msgstr "min"
+
 msgid "min: 1,000"
 msgstr "mín: 1.000"
 
 msgid "minimum available duration"
 msgstr "duração mínima disponível"
+
+msgid "mins"
+msgstr ""
 
 msgid "minute"
 msgstr "minuto"
@@ -13379,9 +13389,6 @@ msgstr "Aprovação dos termos e condições"
 
 #~ msgid "explanation"
 #~ msgstr "explicação"
-
-#~ msgid "min"
-#~ msgstr "min"
 
 #~ msgid "or Email us at"
 #~ msgstr "ou envie E-mail para"
