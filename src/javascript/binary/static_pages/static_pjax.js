@@ -20,7 +20,7 @@ pjax_config_page('/home', function() {
     return {
         onLoad: function() {
             Home.init();
-        }
+        },
     };
 });
 
@@ -31,7 +31,7 @@ pjax_config_page('/why-us', function() {
         },
         onUnload: function() {
             Scroll.offScroll();
-        }
+        },
     };
 });
 
@@ -42,7 +42,7 @@ pjax_config_page('/volidx-markets', function() {
         },
         onUnload: function() {
             Scroll.offScroll();
-        }
+        },
     };
 });
 
@@ -53,7 +53,7 @@ pjax_config_page('/open-source-projects', function() {
         },
         onUnload: function() {
             Scroll.offScroll();
-        }
+        },
     };
 });
 
@@ -64,7 +64,7 @@ pjax_config_page('/payment-agent', function() {
         },
         onUnload: function() {
             Scroll.offScroll();
-        }
+        },
     };
 });
 
@@ -98,8 +98,8 @@ pjax_config_page('/careers', function() {
 
 pjax_config_page('/charity', function() {
     return {
-        onLoad: CharityPage.onLoad,
-        onUnload: CharityPage.onUnload
+        onLoad  : CharityPage.onLoad,
+        onUnload: CharityPage.onUnload,
     };
 });
 
@@ -115,31 +115,31 @@ pjax_config_page('/platforms', function() {
     return {
         onLoad: function() {
             Platforms.init();
-        }
+        },
     };
 });
 
-pjax_config_page_require_auth("/cashier/deposit-jp", function(){
+pjax_config_page_require_auth('/cashier/deposit-jp', function() {
     return {
         onLoad: function() {
             CashierJP.init('deposit');
-        }
+        },
     };
 });
 
-pjax_config_page_require_auth("/cashier/withdraw-jp", function(){
+pjax_config_page_require_auth('/cashier/withdraw-jp', function() {
     return {
         onLoad: function() {
             CashierJP.init('withdraw');
-        }
+        },
     };
 });
 
-pjax_config_page("/endpoint", function(){
+pjax_config_page('/endpoint', function() {
     return {
         onLoad: function() {
             Endpoint.init();
-        }
+        },
     };
 });
 
@@ -147,14 +147,14 @@ pjax_config_page('/get-started-jp', function() {
     return {
         onLoad: function() {
             GetStartedJP.init();
-        }
+        },
     };
 });
 
 pjax_config_page('/open-positions', function() {
-  return {
-      onLoad: function() {if (/\/open-positions\.html/.test(window.location.pathname)) Scroll.scrollToHashSection();}
-  };
+    return {
+        onLoad: function() { if (/\/open-positions\.html/.test(window.location.pathname)) Scroll.scrollToHashSection(); },
+    };
 });
 
 pjax_config_page('/open-positions/job-details', function() {
@@ -162,7 +162,7 @@ pjax_config_page('/open-positions/job-details', function() {
         onLoad: function() {
             JobDetails.init();
             JobDetails.addEventListeners();
-        }
+        },
     };
 });
 
@@ -170,7 +170,7 @@ pjax_config_page('/regulation', function() {
     return {
         onLoad: function() {
             Regulation.init();
-        }
+        },
     };
 });
 
@@ -178,6 +178,6 @@ pjax_config_page('/logged_inws', function() {
     return {
         onLoad: function() {
             LoggedInHandler.init();
-        }
+        },
     };
 });
