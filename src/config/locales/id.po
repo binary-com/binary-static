@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-11-29 03:12+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
-"Language-Team: Indonesian "
-"<https://hosted.weblate.org/projects/binary/static/id/>\n"
+"Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -7917,6 +7916,11 @@ msgstr "alamat email"
 msgid "f"
 msgstr "f"
 
+#, fuzzy
+#| msgid "Th"
+msgid "h"
+msgstr "Kam"
+
 msgid "hour"
 msgstr "jam"
 
@@ -7953,11 +7957,17 @@ msgstr "m"
 msgid "max: 100,000"
 msgstr "mak: 100,000"
 
+msgid "min"
+msgstr "min"
+
 msgid "min: 1,000"
 msgstr "min: 1,000"
 
 msgid "minimum available duration"
 msgstr "durasi minimal yang tersedia"
+
+msgid "mins"
+msgstr ""
 
 msgid "minute"
 msgstr "menit"
@@ -13361,9 +13371,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "explanation"
 #~ msgstr "penjelasan"
-
-#~ msgid "min"
-#~ msgstr "min"
 
 #~ msgid "or Email us at"
 #~ msgstr "atau Email kami di"
