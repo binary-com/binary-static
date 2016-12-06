@@ -1,11 +1,9 @@
-var moment = require('moment');
-
 var Statement = (function(){
     'use strict';
-    var moment = require('moment');
-    var StringUtil = require('../../../common_functions/string_util').StringUtil,
-        addComma = require('../../../websocket_pages/trade/common').addComma,
-        format_money = require('../../../common_functions/currency_to_symbol').format_money,
+    var moment              = require('moment');
+    var toTitleCase         = require('../../../common_functions/string_util').toTitleCase,
+        addComma            = require('../../../common_functions/string_util').addComma,
+        format_money        = require('../../../common_functions/currency_to_symbol').format_money,
         toJapanTimeIfNeeded = require('../../../base/utility').toJapanTimeIfNeeded;
 
     var getStatementData = function(statement, currency, jpClient) {
@@ -21,7 +19,7 @@ var Statement = (function(){
             'date'    : jpClient ? toJapanTimeIfNeeded(statement["transaction_time"]) : dateStr + "\n" + timeStr,
             'ref'     : statement["transaction_id"],
             'payout'  : isNaN(payout) ? '-' : (jpClient ? format_money(currency, payout) : payout.toFixed(2)),
-            'action'  : StringUtil.toTitleCase(statement["action_type"]),
+            'action'  : toTitleCase(statement["action_type"]),
             'amount'  : isNaN(amount) ? '-' : (jpClient ? format_money(currency, amount) : addComma(amount)),
             'balance' : isNaN(balance) ? '-' : (jpClient ? format_money(currency, balance) : addComma(balance)),
             'desc'    : statement["longcode"].replace(/\n/g, '<br />'),

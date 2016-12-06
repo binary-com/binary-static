@@ -1,3 +1,5 @@
+var getAppId = require('../../config').getAppId;
+
 var Login = (function() {
     "use strict";
 
@@ -6,7 +8,7 @@ var Login = (function() {
             try {
                 sessionStorage.setItem('redirect_url', window.location.href);
             } catch(e) {
-                alert('The website needs features which are not enabled on private mode browsing. Please use normal mode.');
+                window.alert('The website needs features which are not enabled on private mode browsing. Please use normal mode.');
             }
             window.location.href = this.login_url();
         }

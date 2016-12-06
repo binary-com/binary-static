@@ -1,13 +1,25 @@
-var TradingAnalysis_Beta = require('./analysis').TradingAnalysis_Beta;
-var Barriers_Beta        = require('./barriers').Barriers_Beta;
-var Contract_Beta        = require('./contract').Contract_Beta;
-var Durations_Beta       = require('./duration').Durations_Beta;
-var Price_Beta           = require('./price').Price_Beta;
-var StartDates_Beta      = require('./starttime').StartDates_Beta;
-var Defaults = require('../defaults').Defaults;
-var Tick     = require('../tick').Tick;
-var onlyNumericOnKeypress = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
-var moment = require('moment');
+var TradingAnalysis_Beta           = require('./analysis').TradingAnalysis_Beta;
+var Barriers_Beta                  = require('./barriers').Barriers_Beta;
+var Contract_Beta                  = require('./contract').Contract_Beta;
+var Durations_Beta                 = require('./duration').Durations_Beta;
+var Price_Beta                     = require('./price').Price_Beta;
+var StartDates_Beta                = require('./starttime').StartDates_Beta;
+var Defaults                       = require('../defaults').Defaults;
+var Tick                           = require('../tick').Tick;
+var onlyNumericOnKeypress          = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
+var moment                         = require('moment');
+var setFormPlaceholderContent_Beta = require('../common').setFormPlaceholderContent_Beta;
+var showPriceOverlay               = require('../common').showPriceOverlay;
+var showFormOverlay                = require('../common').showFormOverlay;
+var toggleActiveCatMenuElement     = require('../common').toggleActiveCatMenuElement;
+var debounce                       = require('../common').debounce;
+var submitForm                     = require('../common').submitForm;
+var updateWarmChart                = require('../common').updateWarmChart;
+var reloadPage                     = require('../common').reloadPage;
+var chartFrameSource               = require('../common').chartFrameSource;
+var displayTooltip_Beta            = require('../common').displayTooltip_Beta;
+var timeIsValid                    = require('../common').timeIsValid;
+var isVisible                      = require('../../../common_functions/common_functions').isVisible;
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -489,7 +501,7 @@ var TradingEvents_Beta = (function () {
 
         var init_logo = document.getElementById('trading_init_progress');
         if(init_logo){
-            init_logo.addEventListener('click', debounce( function (e) {
+            init_logo.addEventListener('click', debounce( function () {
                 reloadPage();
             }));
         }

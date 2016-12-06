@@ -1,5 +1,6 @@
-var format_money = require('../../../common_functions/currency_to_symbol').format_money;
-var PortfolioWS = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
+var format_money           = require('../../../common_functions/currency_to_symbol').format_money;
+var PortfolioWS            = require('../account/portfolio/portfolio.init').PortfolioWS;
+var updateContractBalance  = require('../../trade/common').updateContractBalance;
 
 var ViewBalanceUI = (function(){
 
@@ -8,16 +9,15 @@ var ViewBalanceUI = (function(){
             console.log(response.error.message);
             return;
         }
-        var balance = response.balance;
-        var currency = balance.currency;
+        var balance = response.balance.balance;
+        TUser.get().balance = balance;
+        PortfolioWS.updateBalance();
+        var currency = response.balance.currency;
         if (!currency) {
             return;
         }
-        var view = format_money(currency, balance.balance);
-
-        TUser.get().balance = balance.balance;
-        updateContractBalance(balance.balance);
-        PortfolioWS.updateBalance();
+        var view = format_money(currency, balance);
+        updateContractBalance(balance);
         $(".topMenuBalance").text(view)
                      .css('visibility', 'visible');
     }

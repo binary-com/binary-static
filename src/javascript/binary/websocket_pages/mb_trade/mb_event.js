@@ -1,10 +1,11 @@
-var MBContract = require('./mb_contract').MBContract;
-var MBDefaults = require('./mb_defaults').MBDefaults;
+var MBContract      = require('./mb_contract').MBContract;
+var MBDefaults      = require('./mb_defaults').MBDefaults;
 var MBNotifications = require('./mb_notifications').MBNotifications;
-var MBProcess = require('./mb_process').MBProcess;
-var MBTick = require('./mb_tick').MBTick;
+var MBProcess       = require('./mb_process').MBProcess;
+var MBTick          = require('./mb_tick').MBTick;
 var TradingAnalysis = require('../trade/analysis').TradingAnalysis;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
+var debounce        = require('../trade/common').debounce;
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -37,7 +38,7 @@ var MBTradingEvents = (function () {
 
                     MBTick.clean();
 
-                    updateWarmChart();
+                    MBTick.updateWarmChart();
 
                     MBContract.getContracts(underlying);
 
@@ -105,8 +106,7 @@ var MBTradingEvents = (function () {
             payoutElement.addEventListener('input', debounce(function(e) {
                 var payout = e.target.value;
                 if (japanese_client()) {
-                    var payoutElement = document.getElementById('payout'),
-                        $payoutElement = $('#payout'),
+                    var $payoutElement = $('#payout'),
                         $tableElement = $('.japan-table');
                     if (payout < 1 || payout > 100 || isNaN(payout)) {
                         $payoutElement.addClass('error-field');
@@ -139,7 +139,7 @@ var MBTradingEvents = (function () {
 
         var currencyElement = document.getElementById('currency');
         if (currencyElement) {
-            currencyElement.addEventListener('change', function(e) {
+            currencyElement.addEventListener('change', function() {
                 MBProcess.processPriceRequest();
                 MBContract.displayDescriptions();
             });

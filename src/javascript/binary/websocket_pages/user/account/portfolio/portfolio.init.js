@@ -94,8 +94,7 @@ var PortfolioWS =  (function() {
              * User has at least one contract
             **/
             $("#portfolio-no-contract").hide();
-            var portfolio_data,
-                contracts = '';
+            var portfolio_data;
             $.each(data.portfolio.contracts, function(ci, c) {
                 if (!values.hasOwnProperty(c.contract_id)) {
                     values[c.contract_id] = {};

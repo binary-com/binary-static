@@ -1,8 +1,8 @@
-var AccountOpening      = require('../../../common_functions/account_opening').AccountOpening;
+var handleResidence     = require('../../../common_functions/account_opening').handleResidence;
 var Content             = require('../../../common_functions/content').Content;
 var ValidAccountOpening = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
-var CommonFunctions     = require('../../../common_functions/common_functions').CommonFunctions;
-var JapanAccOpeningUI = require('./japan_acc_opening/japan_acc_opening.ui').JapanAccOpeningUI;
+var detect_hedging      = require('../../../common_functions/common_functions').detect_hedging;
+var JapanAccOpeningUI   = require('./japan_acc_opening/japan_acc_opening.ui').JapanAccOpeningUI;
 
 var JapanAccOpening = (function() {
     var init = function() {
@@ -12,8 +12,8 @@ var JapanAccOpening = (function() {
           window.location.href = page.url.url_for('trading');
           return;
         }
-        AccountOpening.handle_residence_state_ws();
-        CommonFunctions.detect_hedging($('#trading-purpose'), $('.hedging-assets'));
+        handleResidence();
+        detect_hedging($('#trading-purpose'), $('.hedging-assets'));
         $('#japan-form').submit(function(evt) {
           evt.preventDefault();
           if (JapanAccOpeningUI.checkValidity()){
