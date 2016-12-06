@@ -249,15 +249,11 @@ var TradingEvents = (function () {
         if (endTimeElement) {
             $('#expiry_time')
                 .on('keypress', onlyNumericColonOnKeypress)
-                .on('change input', function (e) {
+                .on('change input blur', function () {
                     if (!dateValueChanged(this, 'time')) {
                         return false;
                     }
-                    var $expiry_time = $('#expiry_time'),
-                        oldVal = $expiry_time.attr('data-value'),
-                        newVal = e.target.value;
-                    if (oldVal && oldVal === newVal) return false;
-                    if (timeIsValid($expiry_time)) {
+                    if (timeIsValid($('#expiry_time'))) {
                         Durations.setTime(endTimeElement.value);
                         processPriceRequest();
                     }
@@ -539,7 +535,7 @@ var TradingEvents = (function () {
         var timePickerInst = new TimePicker('#expiry_time');
         var date_start = document.getElementById('date_start').value;
         var now = !date_start || date_start === 'now';
-        var current_moment = now ? window.time : parseInt(date_start) * 1000;
+        var current_moment = now ? (window.time ? window.time : moment.utc()) : parseInt(date_start) * 1000;
         timePickerInst.hide();
         timePickerInst.show(current_moment);
     }

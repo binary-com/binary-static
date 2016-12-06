@@ -20,8 +20,8 @@ var DatePicker = function(component_selector, select_type) {
 };
 
 DatePicker.prototype = {
-    show: function(min_day, max_days, setValue) {
-        this.checkWidth(this.config(min_day, max_days, setValue), this.component_selector, this);
+    show: function(min_day, max_days, setValue, noNative) {
+        this.checkWidth(this.config(min_day, max_days, setValue, noNative), this.component_selector, this);
         var that = this;
         $(window).resize(function() { that.checkWidth(that.config_data, that.component_selector, that); });
     },
@@ -53,7 +53,7 @@ DatePicker.prototype = {
         // from the DOM and use our own one.
         $('button.ui-datepicker-trigger').remove();
     },
-    config: function(min_day, max_days, setValue) {
+    config: function(min_day, max_days, setValue, noNative) {
         var today = new Date();
 
         var config = {
@@ -80,23 +80,23 @@ DatePicker.prototype = {
         }
 
         this.setValue = setValue;
+        this.noNative = noNative;
 
         var that = this;
         config.onSelect = function(date_text) {
             var day = date_text.split(' ')[0],
                 month = ('0' + (Number($('.ui-datepicker-month').val()) + 1)).slice(-2),
                 year = $('.ui-datepicker-year').val(),
-                date = year + '-' + month + '-' + day,
+                date = [year, month, day].join('-'),
                 oldValue = $(this).attr('data-value');
-
-            if (oldValue && oldValue === date) return false;
 
             $(this).attr('data-value', date);
             if(that.select_type == "diff") {
                 var today = moment.utc();
-                var selected_date = moment.utc(date_text + " 23:59:59");
+                var selected_date = moment.utc(date + " 23:59:59");
                 var duration  = selected_date.diff(today, 'days');
                 $(this).val(duration);
+                if (oldValue && oldValue === date) return false;
                 $(that.component_selector).trigger("change", [ duration ]);
             } else if(that.select_type == "date") {
                 if (that.setValue == "attr") {
@@ -104,6 +104,7 @@ DatePicker.prototype = {
                 } else {
                     $(this).val(date_text);
                 }
+                if (oldValue && oldValue === date) return false;
                 $(that.component_selector).trigger("change", [ date_text ]);
             }
         };
@@ -120,7 +121,14 @@ DatePicker.prototype = {
     },
     checkWidth: function(config, component_selector, that) {
         var $selector = $(component_selector);
-        if ($(window).width() < 770 && checkInput('date', 'not-a-date') && $selector.attr('data-picker') !== 'native') {
+        if ($(window).width() < 770 && that.noNative) {
+            that.hide($selector);
+            $selector.attr('type', 'number');
+        } else if ($(window).width() < 770 &&
+                    checkInput('date', 'not-a-date') &&
+                    $selector.attr('data-picker') !== 'native' &&
+                    !that.noNative) {
+
             that.hide($selector);
             $selector.attr({type: 'date', 'data-picker': 'native'})
                      .val($selector.attr('data-value'));
@@ -137,8 +145,8 @@ DatePicker.prototype = {
         } else if (($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery') ||
                     $(window).width() < 770 && !checkInput('date', 'not-a-date')) {
             var value = $selector.attr('data-value'),
-                format_value = value ? toReadableFormat(moment(value)) : $selector.val();
-            $selector.attr({type: 'text', 'data-picker': 'jquery'})
+                format_value = value && that.select_type === 'date' ? toReadableFormat(moment(value)) : $selector.val();
+            $selector.attr({'type': 'text', 'data-picker': 'jquery'})
                      .removeAttr('min')
                      .removeAttr('max')
                      .val(format_value);

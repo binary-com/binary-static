@@ -102,16 +102,24 @@ TimePicker.prototype = {
 
         return config;
     },
+    getTime: function(time) {
+        var hour = ('0' + time.hour).slice(-2),
+            minute = ('0' + time.minute).slice(-2),
+            second = '00';
+        return ([hour, minute, second].join(':'));
+    },
     checkWidth: function(config, component_selector, that) {
-        var $selector = $(component_selector);
+        var $selector = $(that.component_selector);
         if ($(window).width() < 770 && checkInput('time', 'not-a-time') && $selector.attr('data-picker') !== 'native') {
             that.hide($selector);
             $selector.attr({type: 'time', 'data-picker': 'native'});
-            if (config.minTime) {
-                $selector.attr('min', config.minTime);
+            var minTime = config.minTime;
+            if (minTime) {
+                $selector.attr('min', that.getTime(minTime));
             }
-            if (config.maxTime) {
-                $selector.attr('max', config.maxTime);
+            var maxTime = config.maxTime;
+            if (maxTime) {
+                $selector.attr('max', that.getTime(maxTime));
             }
         } else if (($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery') ||
                     $(window).width() < 770 && !checkInput('time', 'not-a-time')) {

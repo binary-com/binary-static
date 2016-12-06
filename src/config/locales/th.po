@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-13 19:33+0000\n"
+"PO-Revision-Date: 2016-12-05 06:26+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.9\n"
+"X-Generator: Weblate 2.10-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API ของ %1\" หมายถึง ระบบของ %1 ที่ประกอบด้วย ชุดคำสั่งต่างๆ โปรโตคอลต่างๆ เครื่องมือต่างๆ และทรัพยากรต่างๆ ที่ถูกพัฒนาขึ้นและดำเนินการโดย %1 ซึ่งท่านสามารถใช้งานแอพพลิเคชันได้เพื่อเชื่อมต่อกับแพลตฟอร์มการซื้อขายของ %1"
@@ -1866,7 +1866,7 @@ msgid "Conflicts Policy"
 msgstr "นโยบายการบริหารความขัดแย้ง"
 
 msgid "Connection error: Please check your internet connection."
-msgstr ""
+msgstr "การเชื่อมต่อมีความผิดพลาด: โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของท่าน"
 
 msgid "Construction"
 msgstr "การก่อสร้าง / สิ่งปลูกสร้าง / การคิดค้น"
@@ -3108,7 +3108,7 @@ msgid "If any provision of this Agreement is held to be void or unenforceable in
 msgstr "หากเงื่อนไขของข้อตกลงนี้ถูกยกเลิก หรือ ไม่สามารถบังคับใช้ได้ทั้งหมด หรือบางส่วน เงื่อนไขที่ขัดแย้ง (หรือ ส่วนนั้น) จะถือว่า ถูกลบจากข้อตกลงและเงื่อนไข และเงื่อนไขข้อตกลงที่เหลือ (รวมถึงเงื่อนไขที่มีผล) จะยังถูกต้องและสามารถใช้ได้ต่อไป"
 
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
-msgstr ""
+msgstr "หากบริษัทฯ (โดยดุลยพินิจของบริษัทฯ) พบว่า ลูกค้าไม่พึงปฏิบัติตาม หรือ ลูกค้าไม่ได้ให้ความร่วมมืในการให้ข้อมูลตามการร้องขอของบริษัทฯ บริษัทฯ สามารถบอกเลิกบัญชีของลูกค้า และระงับการชำระเงินที่เกี่ยวข้องทั้งหมด"
 
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "หากบริษัทฯ แสดงความจำนงทางกฎหมายในการเปิดเผยข้อมูลส่วนบุคคล หรือ ข้อมูลทางการเงินของท่านตามกฎหมาย หลักเกณฑ์ หรือ การร้องขอตามคำสั่งศาล หรือ หน่วยงานภาครัฐ นั้น บริษัทฯ จะแจ้งเหตุดังกล่าวให้ท่านทราบทันที เพื่อให้ท่านมีโอกาสในการแสวงหาการป้องกันข้อมูลตามความเหมาะสม เว้นเสียแต่ว่า มีคำสั่งห้ามตามกฎหมาย การเปิดเผยข้อมูลดังกล่าว ไม่ถือว่าเป็นการฝ่าฝืน หรือผิดต่อข้อตกลงและเงื่อนไขนี้"
@@ -5026,10 +5026,8 @@ msgstr "โปรดระบุตัวแทนรับชำระเงิ
 msgid "Please select a valid date"
 msgstr "โปรดระบุวันที่ที่ถูกต้อง"
 
-#, fuzzy
-#| msgid "Please select a valid date"
 msgid "Please select a value"
-msgstr "โปรดระบุวันที่ที่ถูกต้อง"
+msgstr "โปรดระบุค่า"
 
 msgid "Please select at least one scope"
 msgstr "โปรดระบุค่าอย่างน้อยหนึ่งขอบเขต"
@@ -7871,7 +7869,7 @@ msgid "and"
 msgstr "และ"
 
 msgid "any Client that is employed in the banking and/or finance sector must only conduct trades through the website with the knowledge of his/her employer and in accordance with the employer’s policies; and that"
-msgstr ""
+msgstr "ท่านลูกค้าที่เป็นพนักงานในหน่วยงานการธนาคาร และ/หรือ สถาบันการเงินกำหนดให้ซื้อขายผ่านทางเว็บไซต์ด้วยความความรู้ของหน่วยงานในสังกัดของเขา/เธอ ที่เป็นไปตามนโยบาย และ"
 
 msgid "any instance where the Company believes that person's activities at this site may be illegal in that person's country or state;"
 msgstr "กรณีตัวอย่างใดๆ ซึ่งบริษัทฯ เชื่อว่า กิจกรรมต่างๆ ที่ได้กระทำในเว็บไซต์อาจจะไม่ชอบด้วยกฎหมายของประเทศ หรือ รัฐนั้นๆ"
@@ -7918,6 +7916,11 @@ msgstr "อีเมล์"
 msgid "f"
 msgstr "ศ"
 
+#, fuzzy
+#| msgid "Th"
+msgid "h"
+msgstr "พฤ"
+
 msgid "hour"
 msgstr "ชั่วโมง"
 
@@ -7954,11 +7957,17 @@ msgstr "m"
 msgid "max: 100,000"
 msgstr "ค่าสูงสุด: 100,000"
 
+msgid "min"
+msgstr "ค่าต่ำสุด"
+
 msgid "min: 1,000"
 msgstr "ค่าต่ำสุด: 1,000"
 
 msgid "minimum available duration"
 msgstr "ช่วงเวลาต่ำสุด"
+
+msgid "mins"
+msgstr ""
 
 msgid "minute"
 msgstr "นาที"
@@ -8009,7 +8018,7 @@ msgid "terms and conditions"
 msgstr "ข้อตกลงและเงื่อนไข"
 
 msgid "that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or"
-msgstr ""
+msgstr "ซึ่งโต้แย้งกับกฎหมายใดๆ หลักเกณฑ์ใดๆ เครื่องมือใดๆ กฤษฎีกา หรือ กฎที่กำกับการปฏิบัติการใดๆ ในการแลกเปลี่ยน ตลาดการเงิน หรือ องค์ภาวะที่บังคับทางการเงิน หรือ"
 
 msgid "the %1 affiliate program is competitive and adaptive to your unique requirements."
 msgstr "โปรแกรมพันธมิตรของ %1 มีผลสัมฤทธิ์และปรับใช้ได้กับความประสงค์ที่มีเอกลักษณ์ของท่าน"
@@ -8026,8 +8035,6 @@ msgstr "ช่วงราคา"
 msgid "to your account."
 msgstr "ที่บัญชีของท่าน"
 
-#, fuzzy
-#| msgid "Today"
 msgid "today"
 msgstr "วันนี้"
 
@@ -9079,7 +9086,7 @@ msgid "Endpoint"
 msgstr "จุดสิ้นสุด"
 
 msgid "Careers For Americans"
-msgstr ""
+msgstr "ตำแหน่งงานสำหรับชาวอเมริกัน"
 
 msgid "Job Details"
 msgstr "รายละเอียดงาน"
@@ -13064,9 +13071,6 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 #~ msgid "explanation"
 #~ msgstr "คำอธิบาย"
-
-#~ msgid "min"
-#~ msgstr "ค่าต่ำสุด"
 
 #~ msgid "or Email us at"
 #~ msgstr "หรืออีเมล์หาเราที่"

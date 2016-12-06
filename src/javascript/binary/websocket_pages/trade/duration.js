@@ -248,12 +248,12 @@ var Durations = (function(){
 
         // jquery for datepicker
         var amountElement = $('#duration_amount'),
-            datePickerDur = new DatePicker('#duration_amount'),
+            datePickerDur = new DatePicker('#duration_amount', 'diff'),
             datePickDate = new DatePicker('#expiry_date');
         if (unit.value === 'd') {
             var tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
-            datePickerDur.show(tomorrow, 364, 'attr');
+            datePickerDur.show(tomorrow, 364, 'attr', 'noNative');
             amountElement.change(function(value) {
                 var dayDiff;
                 if($('#duration_amount').val()){
@@ -271,8 +271,10 @@ var Durations = (function(){
             datePickerDur.hide();
         }
 
-        datePickDate.hide();
-        datePickDate.show('today', 364);
+        if ($('#expiry_date').is(':visible')) {
+            datePickDate.hide();
+            datePickDate.show('today', 364);
+        }
 
         validateMinDurationAmount();
         // we need to call it here as for days we need to show absolute barriers
