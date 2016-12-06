@@ -64,7 +64,7 @@ function processMarket(flag) {
     var update_page = Symbols.need_page_update() || flag;
 
     // change to default market if query string contains an invalid market
-    if(!market || !Symbols.underlyings()[market]) {
+    if (!market || !Symbols.underlyings()[market]) {
         market = getDefaultMarket();
         Defaults.set('market', market);
     }
@@ -89,7 +89,7 @@ function processMarketUnderlying() {
         return;
     }
 
-    if(underlyingElement.selectedIndex < 0) {
+    if (underlyingElement.selectedIndex < 0) {
         underlyingElement.selectedIndex = 0;
     }
     var underlying = underlyingElement.value;
@@ -118,7 +118,8 @@ function processMarketUnderlying() {
  */
 function processContract(contracts) {
     'use strict';
-    if(contracts.hasOwnProperty('error') && contracts.error.code === 'InvalidSymbol') {
+
+    if (contracts.hasOwnProperty('error') && contracts.error.code === 'InvalidSymbol') {
         processForgetProposals();
         var container = document.getElementById('contract_confirmation_container'),
             message_container = document.getElementById('confirmation_message'),
@@ -134,12 +135,12 @@ function processContract(contracts) {
 
     window.chartAllowed = true;
     if (contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly') {
-      window.chartAllowed = false;
+        window.chartAllowed = false;
     }
 
     document.getElementById('trading_socket_container').classList.add('show');
     var init_logo = document.getElementById('trading_init_progress');
-    if(init_logo.style.display !== 'none') {
+    if (init_logo.style.display !== 'none') {
         init_logo.style.display = 'none';
         Defaults.update();
     }
@@ -194,9 +195,9 @@ function processContractForm() {
     }
 
     if (Defaults.get('amount')) $('#amount').val(Defaults.get('amount'));
-        else Defaults.set('amount', document.getElementById('amount').value);
+    else Defaults.set('amount', document.getElementById('amount').value);
     if (Defaults.get('amount_type')) selectOption(Defaults.get('amount_type'), document.getElementById('amount_type'));
-        else Defaults.set('amount_type', document.getElementById('amount_type').value);
+    else Defaults.set('amount_type', document.getElementById('amount_type').value);
     if (Defaults.get('currency')) selectOption(Defaults.get('currency'), document.getElementById('currency'));
 
     var expiry_type = Defaults.get('expiry_type') || 'duration';
@@ -206,7 +207,7 @@ function processContractForm() {
         processPriceRequest();
     }
 
-    if(Defaults.get('formname') === 'spreads') {
+    if (Defaults.get('formname') === 'spreads') {
         Defaults.remove('expiry_type', 'duration_amount', 'duration_units', 'expiry_date', 'expiry_time', 'amount', 'amount_type');
     } else {
         Defaults.remove('amount_per_point', 'stop_type', 'stop_loss', 'stop_profit');
@@ -219,8 +220,7 @@ function displayPrediction() {
         predictionElement.show();
         if (Defaults.get('prediction')) {
             selectOption(Defaults.get('prediction'), document.getElementById('prediction'));
-        }
-        else {
+        }        else {
             Defaults.set('prediction', document.getElementById('prediction').value);
         }
     } else {
@@ -255,11 +255,11 @@ function displaySpreads() {
             Defaults.set('stop_type', document.getElementById('stop_type_points').checked ? 'point' : 'dollar');
         }
         if (Defaults.get('amount_per_point')) amountPerPoint.value = Defaults.get('amount_per_point');
-            else Defaults.set('amount_per_point', amountPerPoint.value);
+        else Defaults.set('amount_per_point', amountPerPoint.value);
         if (Defaults.get('stop_loss')) document.getElementById('stop_loss').value = Defaults.get('stop_loss');
-            else Defaults.set('stop_loss', document.getElementById('stop_loss').value);
+        else Defaults.set('stop_loss', document.getElementById('stop_loss').value);
         if (Defaults.get('stop_profit')) document.getElementById('stop_profit').value = Defaults.get('stop_profit');
-            else Defaults.set('stop_profit', document.getElementById('stop_profit').value);
+        else Defaults.set('stop_profit', document.getElementById('stop_profit').value);
     } else {
         amountPerPointLabel.hide();
         amountPerPoint.hide();
@@ -279,9 +279,10 @@ function forgetTradingStreams() {
  */
 function processForgetProposals() {
     'use strict';
+
     showPriceOverlay();
     BinarySocket.send({
-        forget_all: "proposal"
+        forget_all: 'proposal',
     });
     Price.clearMapping();
 }
@@ -301,28 +302,31 @@ function processPriceRequest() {
         switch (sessionStorage.getItem('formname')) {
             case 'matchdiff':
                 types = {
-                    'DIGITMATCH': 1,
-                    'DIGITDIFF': 1
+                    DIGITMATCH: 1,
+                    DIGITDIFF : 1,
                 };
                 break;
             case 'evenodd':
                 types = {
-                    'DIGITEVEN': 1,
-                    'DIGITODD': 1
+                    DIGITEVEN: 1,
+                    DIGITODD : 1,
                 };
                 break;
             case 'overunder':
                 types = {
-                    'DIGITOVER': 1,
-                    'DIGITUNDER': 1
+                    DIGITOVER : 1,
+                    DIGITUNDER: 1,
                 };
+                break;
+            default:
+                break;
         }
     }
-    for (var typeOfContract in types) {
+    Object.keys(types).forEach(function(typeOfContract) {
         if (types.hasOwnProperty(typeOfContract)) {
             BinarySocket.send(Price.proposal(typeOfContract));
         }
-    }
+    });
 }
 
 /*
@@ -331,8 +335,9 @@ function processPriceRequest() {
  */
 function processForgetTicks() {
     'use strict';
+
     BinarySocket.send({
-        forget_all: 'ticks'
+        forget_all: 'ticks',
     });
 }
 
@@ -341,9 +346,10 @@ function processForgetTicks() {
  */
 function processTick(tick) {
     'use strict';
+
     var symbol = sessionStorage.getItem('underlying');
     var digit_info = TradingAnalysis.digit_info();
-    if(tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)){
+    if (tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)) {
         Tick.details(tick);
         Tick.display();
         if (digit_info && tick.tick) {
@@ -356,16 +362,17 @@ function processTick(tick) {
             Barriers.setBarrierUpdate(true);
         }
         updateWarmChart();
-    } else {
-        if(digit_info)
-            digit_info.update_chart(tick);
+    } else if (digit_info)            {
+        digit_info.update_chart(tick);
     }
 }
 
 function processProposal(response) {
     'use strict';
+
     var form_id = Price.getFormId();
-    if(response.echo_req && response.echo_req !== null && response.echo_req.passthrough && response.echo_req.passthrough.form_id === form_id){
+    if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
+        response.echo_req.passthrough.form_id === form_id) {
         hideOverlayContainer();
         Price.display(response, Contract.contractType()[Contract.form()]);
         hidePriceOverlay();
@@ -379,7 +386,7 @@ function processTradingTimesRequest(date) {
     } else {
         showPriceOverlay();
         BinarySocket.send({
-            trading_times: date
+            trading_times: date,
         });
     }
 }
@@ -391,16 +398,16 @@ function processTradingTimes(response) {
 }
 
 module.exports = {
-    processActiveSymbols: processActiveSymbols,
-    processMarket: processMarket,
-    processContract: processContract,
-    processContractForm: processContractForm,
-    forgetTradingStreams: forgetTradingStreams,
-    processForgetProposals: processForgetProposals,
-    processPriceRequest: processPriceRequest,
-    processForgetTicks: processForgetTicks,
-    processTick: processTick,
-    processProposal: processProposal,
+    processActiveSymbols      : processActiveSymbols,
+    processMarket             : processMarket,
+    processContract           : processContract,
+    processContractForm       : processContractForm,
+    forgetTradingStreams      : forgetTradingStreams,
+    processForgetProposals    : processForgetProposals,
+    processPriceRequest       : processPriceRequest,
+    processForgetTicks        : processForgetTicks,
+    processTick               : processTick,
+    processProposal           : processProposal,
     processTradingTimesRequest: processTradingTimesRequest,
-    processTradingTimes: processTradingTimes,
+    processTradingTimes       : processTradingTimes,
 };
