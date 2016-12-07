@@ -138,11 +138,11 @@ var PortfolioWS = (function() {
         var proposal = Portfolio.getProposalOpenContract(data.proposal_open_contract);
         // avoid updating 'values' before the new contract row added to the table
         if (!values.hasOwnProperty(proposal.contract_id)) {
-            return;                                       
+            return;
         }
 
         // force to sell the expired contract, in order to remove from portfolio
-        if (proposal.is_settleable === 1 && !proposal.is_sold) {
+        if (+proposal.is_settleable === 1 && !proposal.is_sold) {
             BinarySocket.send({ sell_expired: 1 });
         }
         var $td = $('#' + proposal.contract_id + ' td.indicative');
@@ -152,10 +152,10 @@ var PortfolioWS = (function() {
 
         var status_class = '',
             no_resale_html = '';
-        if (proposal.is_sold === 1) {
+        if (+proposal.is_sold === 1) {
             removeContract(proposal.contract_id);
         } else {
-            if (proposal.is_valid_to_sell !== 1) {
+            if (+proposal.is_valid_to_sell !== 1) {
                 no_resale_html = '<span>' + page.text.localize('Resale not offered') + '</span>';
                 $td.addClass('no_resale');
             } else {
