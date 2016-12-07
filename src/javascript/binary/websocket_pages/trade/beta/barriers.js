@@ -43,7 +43,7 @@ var Barriers_Beta = (function () {
                         tooltip = document.getElementById('barrier_tooltip'),
                         span = document.getElementById('barrier_span');
                     if ((unit && isVisible(unit) && unit.value === 'd') ||
-                        (end_time && isVisible(end_time) && moment(end_time.value).isAfter(moment(), 'day')) ||
+                        (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day')) ||
                         !String(barrier.barrier).match(/^[+-]/)) {
                         if (currentTick && !isNaN(currentTick) && String(barrier_def).match(/^[+-]/)) {
                             elm.value = (parseFloat(currentTick) + parseFloat(barrier_def)).toFixed(decimalPlaces);
@@ -93,7 +93,7 @@ var Barriers_Beta = (function () {
                         barrier_low  = defaults_barrier_low  && !isNaN(defaults_barrier_low) ?
                             defaults_barrier_low  : barrier.barrier1;
                     if ((unit && isVisible(unit) && unit.value === 'd') ||
-                        (end_time && isVisible(end_time) && moment(end_time.value).isAfter(moment(), 'day')) ||
+                        (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day')) ||
                         !String(barrier.barrier).match(/^[+-]/)) {
                         if (currentTick && !isNaN(currentTick) && String(barrier_high).match(/^[+-]/)) {
                             high_elm.value = (parseFloat(currentTick) +

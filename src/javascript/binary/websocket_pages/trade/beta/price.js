@@ -81,7 +81,7 @@ var Price_Beta = (function() {
             proposal.duration = parseInt(duration.value);
             proposal.duration_unit = durationUnit.value;
         } else if (expiryType && isVisible(expiryType) && expiryType.value === 'endtime') {
-            var endDate2 = endDate.value;
+            var endDate2 = endDate.getAttribute('data-value');
             var endTime2 = Durations_Beta.getTime();
             if (!endTime2) {
                 var trading_times = Durations_Beta.trading_times();

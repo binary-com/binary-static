@@ -547,9 +547,6 @@
         #contract_market_form_container {
             height: auto;
         }
-        #expiry_time {
-            width: 175px;
-        }
         #contract_form_content {
             margin-top: 0px;
         }
@@ -637,6 +634,9 @@
         }
         #contract_prices_container {
             margin-left: 0;
+        }
+        #expiry_time {
+            width: 175px;
         }
     }
 }

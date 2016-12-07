@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-23 14:46+0000\n"
-"Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
+"PO-Revision-Date: 2016-12-05 08:45+0000\n"
+"Last-Translator: Anna Płochocka <plochocka.anna@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -792,6 +792,9 @@ msgstr "Ukończone studia na kierunku Marketing lub Informatyka będą dodatkowy
 
 msgid "A university degree or accredited translation certification preferred"
 msgstr "Preferujemy osoby, które ukończyły studia tłumaczeniowe lub posiadają certyfikaty z tej dziedziny"
+
+msgid "AM"
+msgstr ""
 
 msgid "API"
 msgstr "API"
@@ -1866,10 +1869,8 @@ msgstr "Confirmation and understandings"
 msgid "Conflicts Policy"
 msgstr "Polityka dot. sporów"
 
-#, fuzzy
-#| msgid "Connection error: Please view the progress at your portfolio page."
 msgid "Connection error: Please check your internet connection."
-msgstr "Błąd połączenia: prosimy sprawdzić postęp na stronie swojego portfolio."
+msgstr "Błąd połączenia: sprawdż połączenie internetowe"
 
 msgid "Construction"
 msgstr "Budownictwo"
@@ -2811,7 +2812,7 @@ msgid "Format: yyyy-mm-dd (not required for virtual-money accounts)"
 msgstr "Format: rrrr-mm-dd (nie jest wymagany w przypadku kont wirtualnych)"
 
 msgid "Fr"
-msgstr "piątek"
+msgstr "Pt"
 
 msgid "Fraud and Money Laundering"
 msgstr "Oszustwa i pranie brudnych pieniędzy"
@@ -2998,6 +2999,9 @@ msgstr "Kwota zakupu kontraktu typu „wyższe/niższe” zostanie zwrócona, je
 
 msgid "Higher/Lower trades"
 msgstr "Zakłady wyższy/niższy"
+
+msgid "Hour"
+msgstr ""
 
 msgid "Housewife / Househusband"
 msgstr "Housewife / Househusband"
@@ -4335,11 +4339,16 @@ msgstr "Minimalna liczba znaków: %1."
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Minimum 6 małych i wielkich liter oraz cyfr"
 
+#, fuzzy
+#| msgid "Minutes"
+msgid "Minute"
+msgstr "Minuty"
+
 msgid "Miss"
 msgstr "Pani"
 
 msgid "Mo"
-msgstr "Poniedziałek"
+msgstr "Pn"
 
 msgid "Monday"
 msgstr "Poniedziałek"
@@ -4794,6 +4803,9 @@ msgstr "Treść strony internetowej %1 pozostaje własnością Firmy i nie zosta
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
 msgstr "Odpowiedzialność za własność, treść i wiarygodność stron partnerskich ponosi wyłącznie partner. Partner jest w pełni odpowiedzialny za kodowanie, działanie i utrzymanie swojej strony internetowej i wszystkich materiałów, jakie się na niej pojawiają. Partner nie będzie pociągał Firmy do odpowiedzialności w związku z jakimikolwiek roszczeniami, odszkodowaniami czy wydatkami (w tym kosztami postępowań sądowych) związanymi z kodowaniem, działaniem i utrzymaniem swojej strony, czy też jej zawartością."
 
+msgid "PM"
+msgstr ""
+
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "Udział w rynkach walutowych, towarowych i na giełdzie?"
 
@@ -4971,10 +4983,14 @@ msgstr "Wprowadź prawidłową kwotę."
 msgid "Please enter an integer value"
 msgstr "Wpisz liczbę całkowitą"
 
-msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr "Wpisz datę i godzinę w formacie RRRR-MM-DD GG:mm (czasu lokalnego)."
 
-msgid "Please enter date in the format YYYY-MM-DD."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD."
+msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "Wpisz datę w formacie RRRR-MM-DD."
 
 msgid "Please enter your current password."
@@ -5509,7 +5525,7 @@ msgid "Russia"
 msgstr "Rosja"
 
 msgid "Sa"
-msgstr "sobota"
+msgstr "So"
 
 msgid "Salaried Employee"
 msgstr "Pracownik etatowy"
@@ -5905,7 +5921,7 @@ msgid "Student"
 msgstr "Student"
 
 msgid "Su"
-msgstr "niedziela"
+msgstr "Nd"
 
 msgid "Subject to any specific instructions which may be provided by you, when executing client orders, we will take all reasonable steps to obtain the best possible results for you. The best possible results will be determined in terms of total consideration, that is, the price of the instrument and the costs related to execution which shall include all expenses incurred by you that are directly related to the execution of the order."
 msgstr "Z zastrzeżeniem jakichkolwiek przekazywanych przez Ciebie konkretnych instrukcji, realizując zlecenia klienta, podejmiemy wszelkie możliwe kroki, aby zapewnić Ci najlepszy możliwy wynik. Najlepsze możliwe wyniki będą określane w ujęciu całościowym z uwzględnieniem ceny instrumentu i kosztów związanych z realizacją, które powinny uwzględniać wszystkie wydatki poniesione przez Ciebie, będące bezpośrednio związane z realizacją zlecenia."
@@ -6004,7 +6020,7 @@ msgid "Test-run %1, and sharpen your trading skills, with a no-risk, no-commitme
 msgstr "Wypróbuj %1 i udoskonalaj swoje umiejętności handlowe, bez ryzyka czy zobowiązań, korzystając z konta wirtualnego."
 
 msgid "Th"
-msgstr "czwartek"
+msgstr "Cz"
 
 msgid "Thank you for signing up! Please check your email to retrieve the verification token."
 msgstr "Dziękujemy za rejestrację! Token weryfikujący został wysłany na Twój adres e-mail."
@@ -6614,6 +6630,11 @@ msgstr "Poziom"
 msgid "Time"
 msgstr "Godzina"
 
+#, fuzzy
+#| msgid "Start time is in the future."
+msgid "Time is in the wrong format."
+msgstr "Czas rozpoczęcia w przyszłości."
+
 msgid "Time out until"
 msgstr "Przekroczono limit czasu do"
 
@@ -6831,7 +6852,7 @@ msgid "Try it now"
 msgstr "Wypróbuj teraz"
 
 msgid "Tu"
-msgstr "Wtorek"
+msgstr "Wt"
 
 msgid "Tuesday"
 msgstr "Wtorek"
@@ -7053,7 +7074,7 @@ msgid "Warranty Disclaimer"
 msgstr "Wyłączenie gwarancji"
 
 msgid "We"
-msgstr "Środa"
+msgstr "Śr"
 
 msgid "We aim to establish and maintain and operate effective organisational and administrative arrangements with a view to taking all reasonable steps to prevent conflicts of interest from constituting or giving rise to a material risk of damage to the interests of our clients."
 msgstr "Naszym celem jest ustanowienie, utrzymanie i realizacja skutecznych rozwiązań organizacyjnych i administracyjnych, co wiąże się z podjęciem wszelkich uzasadnionych działań, aby zapobiec konfliktowi interesów związanemu z powstaniem materialnego ryzyka naruszenia interesów naszych klientów."
@@ -7910,6 +7931,11 @@ msgstr "adres e-mail"
 msgid "f"
 msgstr "f"
 
+#, fuzzy
+#| msgid "Th"
+msgid "h"
+msgstr "Cz"
+
 msgid "hour"
 msgstr "godzina"
 
@@ -7946,11 +7972,18 @@ msgstr "miesiąc"
 msgid "max: 100,000"
 msgstr "Maks.: 100 000"
 
+#, fuzzy
+msgid "min"
+msgstr "min."
+
 msgid "min: 1,000"
 msgstr "min.: 1 000"
 
 msgid "minimum available duration"
 msgstr "minimalny dostępny czas trwania"
+
+msgid "mins"
+msgstr ""
 
 msgid "minute"
 msgstr "min"
@@ -10810,9 +10843,6 @@ msgstr "Akceptacja regulaminu"
 #~ msgid "Start time %1 must be before end time %2"
 #~ msgstr "Czas rozpoczęcia %1 musi przypadać przed godziną zakończenia %2"
 
-#~ msgid "Start time is in the future."
-#~ msgstr "Czas rozpoczęcia w przyszłości."
-
 #~ msgid "Start time is in the past"
 #~ msgstr "Czas rozpoczęcia w przeszłości"
 
@@ -13444,10 +13474,6 @@ msgstr "Akceptacja regulaminu"
 
 #~ msgid "explanation"
 #~ msgstr "wyjaśnienie"
-
-#, fuzzy
-#~ msgid "min"
-#~ msgstr "min."
 
 #, fuzzy
 #~ msgid "or Email us at"
@@ -18764,9 +18790,6 @@ msgstr "Akceptacja regulaminu"
 
 #~ msgid "Majors"
 #~ msgstr "Główne"
-
-#~ msgid "Minutes"
-#~ msgstr "Minuty"
 
 #~ msgid "Normalize to 100"
 #~ msgstr "Normalizuj do 100"

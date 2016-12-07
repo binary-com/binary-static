@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-24 07:06+0000\n"
+"PO-Revision-Date: 2016-11-29 03:12+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -792,6 +792,9 @@ msgstr "Sarjana pemasaran atau ilmu komputer adalah nilai tambah"
 
 msgid "A university degree or accredited translation certification preferred"
 msgstr "Sarjana atau terjemahan sertifikasi terakreditasi lebih diutamakan"
+
+msgid "AM"
+msgstr ""
 
 msgid "API"
 msgstr "API"
@@ -1866,10 +1869,8 @@ msgstr "Konfirmasi dan pemahaman"
 msgid "Conflicts Policy"
 msgstr "Konflik Kebijakan"
 
-#, fuzzy
-#| msgid "Connection error: Please view the progress at your portfolio page."
 msgid "Connection error: Please check your internet connection."
-msgstr "Masalah pada koneksi:  Silakan lihat perkembangan selanjutnya pada halaman portopolio Anda."
+msgstr "Koneksi error: Silakan periksa koneksi internet Anda."
 
 msgid "Construction"
 msgstr "Konstruksi"
@@ -3000,6 +3001,9 @@ msgstr "Kontrak Higher/Lower akan mendapat pengembalian harga beli jika terdapat
 
 msgid "Higher/Lower trades"
 msgstr "Kontrak Higher/Lower"
+
+msgid "Hour"
+msgstr "Jam"
 
 msgid "Housewife / Househusband"
 msgstr "Ibu Rumah Tangga / Kepala Rumah Tangga"
@@ -4339,6 +4343,9 @@ msgstr "Minimal %1 karakter diperlukan."
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Minimal enam huruf kecil dan huruf besar beserta angka"
 
+msgid "Minute"
+msgstr "Menitan"
+
 msgid "Miss"
 msgstr "Nona"
 
@@ -4799,6 +4806,9 @@ msgstr "Kepemilikan dan isi dari situs %1 akan tetap menjadi milik kami dan tida
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
 msgstr "Kepemilikan, konten, dan kewajiban dari situs Afiliasi ini merupakan tanggung jawab dari Afiliasi. Anda akan bertanggung jawab untuk pengembangan, operasi, dan pemeliharaan website Anda dan untuk semua materi yang ditampilkan pada website Anda. Anda akan bertanggung jawab sepenuhnya dan melepaskan kami dari semua tuntutan, kerusakan, dan biaya (termasuk, namun tidak terbatas pada, biaya pengacara) yang berkaitan dengan pengembangan, operasi, pemeliharaan, dan isi dari website Anda."
 
+msgid "PM"
+msgstr ""
+
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "Berpartisipasi dalam pasar forex, saham atau komoditas?"
 
@@ -4976,10 +4986,14 @@ msgstr "Tolong masukan jumlah yang benar."
 msgid "Please enter an integer value"
 msgstr "Silahkan masukan nilai penuh"
 
-msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr "Silakan masukkan tanggal dalam format YYYY-MM-DD HH:mm (waktu lokal)."
 
-msgid "Please enter date in the format YYYY-MM-DD."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD."
+msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "Silakan masukkan tanggal dalam format YYY-MM-DD."
 
 msgid "Please enter your current password."
@@ -6622,6 +6636,11 @@ msgstr "Tingkat"
 msgid "Time"
 msgstr "Waktu"
 
+#, fuzzy
+#| msgid "Start time is in the future."
+msgid "Time is in the wrong format."
+msgstr "Mulai waktu di masa depan."
+
 msgid "Time out until"
 msgstr "Time out hingga"
 
@@ -7918,6 +7937,11 @@ msgstr "alamat email"
 msgid "f"
 msgstr "f"
 
+#, fuzzy
+#| msgid "Th"
+msgid "h"
+msgstr "Kam"
+
 msgid "hour"
 msgstr "jam"
 
@@ -7954,11 +7978,17 @@ msgstr "m"
 msgid "max: 100,000"
 msgstr "mak: 100,000"
 
+msgid "min"
+msgstr "min"
+
 msgid "min: 1,000"
 msgstr "min: 1,000"
 
 msgid "minimum available duration"
 msgstr "durasi minimal yang tersedia"
+
+msgid "mins"
+msgstr ""
 
 msgid "minute"
 msgstr "menit"
@@ -10810,9 +10840,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "Start time %1 must be before end time %2"
 #~ msgstr "Waktu mulai %1 harus berakhir sebelum waktu akhir %2"
 
-#~ msgid "Start time is in the future."
-#~ msgstr "Mulai waktu di masa depan."
-
 #~ msgid "Start time is in the past"
 #~ msgstr "Waktu mulai adalah dimasa lalu"
 
@@ -13362,9 +13389,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "explanation"
 #~ msgstr "penjelasan"
-
-#~ msgid "min"
-#~ msgstr "min"
 
 #~ msgid "or Email us at"
 #~ msgstr "atau Email kami di"
@@ -22516,9 +22540,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "Homemaker"
 #~ msgstr "Ibu rumah tangga"
 
-#~ msgid "Hour"
-#~ msgstr "Jam"
-
 #~ msgid "Hours"
 #~ msgstr "Jam"
 
@@ -22743,9 +22764,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Minimum deposit is %1."
 #~ msgstr "Minimum deposit adalah %1."
-
-#~ msgid "Minute"
-#~ msgstr "Menitan"
 
 #~ msgid "Mobile phone number"
 #~ msgstr "nomor handphone"

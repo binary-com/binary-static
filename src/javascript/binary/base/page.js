@@ -20,9 +20,6 @@ var CashierJP             = require('../../binary_japan/cashier').CashierJP;
 var Cookies               = require('../../lib/js-cookie');
 var moment                = require('moment');
 var MenuContent           = require('./menu_content').MenuContent;
-var attach_date_picker    = require('./utility').attach_date_picker;
-var attach_time_picker    = require('./utility').attach_time_picker;
-var attach_tabs           = require('./utility').attach_tabs;
 var pjax                  = require('../../lib/pjax-lib');
 var isVisible             = require('../common_functions/common_functions').isVisible;
 require('../../lib/polyfills/array.includes');
@@ -1421,26 +1418,7 @@ $(document).ready(function () {
             // no default
         }
     });
-
     LocalStore.set('active_loginid', match);
-    var start_time;
-    var time_now;
-    var evt = (
-        (document.webkitHidden && 'webkitvisibilitychange') ||
-        (document.hidden && 'visibilitychange') ||
-        null
-    );
-    if (!evt || !document.addEventListener) return;
-    document.addEventListener(evt, function() {
-        if (!clock_started) return;
-        if (document.hidden || document.webkitHidden) {
-            start_time = moment().valueOf();
-            time_now = page.header.time_now;
-        } else {
-            time_now += moment().valueOf() - start_time;
-            page.header.time_now = time_now;
-        }
-    });
 });
 
 // For object shape coherence we create named objects to be inserted into the queue.
@@ -1550,8 +1528,6 @@ var pjax_config = function() {
                     }
                 });
             }
-
-            $('#server_clock').html('GMT Time: ' + moment(page.header.time_now).utc().format('YYYY-MM-DD HH:mm'));
         },
         useClass: 'pjaxload',
     };
@@ -1631,12 +1607,6 @@ onLoad.queue(function () {
             break;
         }
     }
-});
-
-onLoad.queue(function () {
-    attach_date_picker('.has-date-picker');
-    attach_time_picker('.has-time-picker');
-    attach_tabs('.has-tabs');
 });
 
 module.exports = {

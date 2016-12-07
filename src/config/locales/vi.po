@@ -795,6 +795,9 @@ msgstr "Tốt nghiệp ngành khoa học máy tính hoặc tiếp thị là mộ
 msgid "A university degree or accredited translation certification preferred"
 msgstr "Tốt nghiệp đại học hoặc giấy chứng nhận dịch thuật"
 
+msgid "AM"
+msgstr ""
+
 msgid "API"
 msgstr "API"
 
@@ -3019,6 +3022,9 @@ msgstr "Hợp đồng giá trên/ dưới sẽ được hoàn lại bằng giá 
 msgid "Higher/Lower trades"
 msgstr "Giao dịch Cao hơn/Thấp hơn"
 
+msgid "Hour"
+msgstr ""
+
 msgid "Housewife / Househusband"
 msgstr "Housewife / Househusband"
 
@@ -4361,6 +4367,11 @@ msgstr "Tối thiểu %1 các kí tự cần thiết."
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Ít nhất 6 chữ thường và chữ hoa với những con số"
 
+#, fuzzy
+#| msgid "minute"
+msgid "Minute"
+msgstr "phút"
+
 msgid "Miss"
 msgstr "Cô"
 
@@ -4826,6 +4837,9 @@ msgstr "Quyền sở hữu và nội dung của trang web %1 vẫn là ta
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
 msgstr "Chi nhánh phải chịu trách nhiệm về quyền sở hữu, nội dung và trách nhiệm đối với trang web của mình. Bạn cũng sẽ phải hoàn toàn chịu trách nhiệm cho sự phát triển, hoạt động, bảo trì trang web của mình và cho mọi thứ xuất hiện trên trang web. Bạn sẽ phải chịu bồi thường và chúng tôi sẽ không chịu trách nhiệm với mọi khiếu nại, hư hại và chi phí liên quan tới sự phát triển, hoạt động, bảo trì và nội dung của trang web (bao gồm, và không giới hạn, phí ủy quyền)."
 
+msgid "PM"
+msgstr ""
+
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "Bạn muốn tham gia vào thị trường ngoại hối, thị trường chứng khoán và thị trường hàng hóa?"
 
@@ -5007,10 +5021,14 @@ msgstr "Vui lòng nhập số tiền hợp lệ."
 msgid "Please enter an integer value"
 msgstr "Vui lòng nhập giá trị số nguyên"
 
-msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr "Vui lòng nhập ngày với định dạng YYYY-MM-DD HH:mm (giờ địa phương)."
 
-msgid "Please enter date in the format YYYY-MM-DD."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD."
+msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "Vui lòng nhập ngày với định dạng YYYY-MM-DD."
 
 msgid "Please enter your current password."
@@ -6666,6 +6684,11 @@ msgstr "Lớp"
 msgid "Time"
 msgstr "Thời gian"
 
+#, fuzzy
+#| msgid "Start time is in the future."
+msgid "Time is in the wrong format."
+msgstr "Thời gian bắt đầu trong tương lai."
+
 msgid "Time out until"
 msgstr "Tạm ngưng cho đến khi"
 
@@ -7980,6 +8003,11 @@ msgstr "địa chỉ hòm thư"
 msgid "f"
 msgstr "f"
 
+#, fuzzy
+#| msgid "Th"
+msgid "h"
+msgstr "Th"
+
 msgid "hour"
 msgstr "giờ"
 
@@ -8018,11 +8046,17 @@ msgstr "m"
 msgid "max: 100,000"
 msgstr "tối đa: 100.000"
 
+msgid "min"
+msgstr "tối thiểu"
+
 msgid "min: 1,000"
 msgstr "tối thiểu: 1.000"
 
 msgid "minimum available duration"
 msgstr "khoảng thời gian có sẵn tối thiểu"
+
+msgid "mins"
+msgstr ""
 
 msgid "minute"
 msgstr "phút"
@@ -11009,9 +11043,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 #~ msgid "Start time %1 must be before end time %2"
 #~ msgstr "Thời gian bắt đầu %1 phải trước thời gian kết thúc %2"
 
-#~ msgid "Start time is in the future."
-#~ msgstr "Thời gian bắt đầu trong tương lai."
-
 #~ msgid "Start time is in the past"
 #~ msgstr "Thời gian bắt đầu trong quá khứ"
 
@@ -13554,9 +13585,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 #~ msgid "explanation"
 #~ msgstr "giải thích"
-
-#~ msgid "min"
-#~ msgstr "tối thiểu"
 
 #~ msgid "or Email us at"
 #~ msgstr "hoặc gửi Email cho chúng tôi tại"
