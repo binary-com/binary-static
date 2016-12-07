@@ -292,8 +292,7 @@ var Highchart = (function() {
                                  purchase_time &&
                                  start_time > parseInt(purchase_time) &&
                                  parseInt(response.history.times[i]) === parseInt(purchase_time)
-                                )
-                                ||
+                                ) ||
                                 (
                                  parseInt(response.history.times[i]) < parseInt(purchase_time) &&
                                  parseInt(response.history.times[
@@ -666,21 +665,14 @@ var Highchart = (function() {
     function calculate_granularity(end, now, purchase, start) {
         var duration = Math.min(end * 1, now) - (purchase || start);
         var granularity = 0;
-        if (duration <= 60 * 60) { // 1 hour
-            granularity = 0;
-        } else if (duration <= 2 * 60 * 60) { // 2 hours
-            granularity = 120;
-        } else if (duration <= 6 * 60 * 60) { // 6 hours
-            granularity = 600;
-        } else if (duration <= 24 * 60 * 60) { // 1 day
-            granularity = 900;
-        } else if (duration <= 24 * 5 * 60 * 60) { // 5 days
-            granularity = 3600;
-        } else if (duration <= 24 * 30 * 60 * 60) { // 30 days
-            granularity = 14400;
-        } else { // more than 30 days
-            granularity = 86400;
-        }
+        if (duration <= 60 * 60)                granularity = 0;     // 1 hour
+        else if (duration <= 2  * 60 * 60)      granularity = 120;   // 2 hours
+        else if (duration <= 6  * 60 * 60)      granularity = 600;   // 6 hours
+        else if (duration <= 24 * 60 * 60)      granularity = 900;   // 1 day
+        else if (duration <= 24 * 5 * 60 * 60)  granularity = 3600;  // 5 days
+        else if (duration <= 24 * 30 * 60 * 60) granularity = 14400; // 30 days
+        else granularity = 86400; // more than 30 days
+
         return [granularity, duration];
     }
 

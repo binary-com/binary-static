@@ -210,20 +210,17 @@ var Purchase = (function () {
                 if (d1 && duration === 1) {
                     var contract_status,
                         final_price,
-                        pnl;
+                        pnl,
+                        pass_contract_type = purchase_data.echo_req.passthrough.contract_type,
+                        pass_barrier       = purchase_data.echo_req.passthrough.barrier;
 
                     if  (
-                        (purchase_data.echo_req.passthrough.contract_type === 'DIGITMATCH' && d1 === purchase_data.echo_req.passthrough.barrier)
-                        ||
-                        (purchase_data.echo_req.passthrough.contract_type === 'DIGITDIFF' && d1 !== purchase_data.echo_req.passthrough.barrier)
-                        ||
-                        (purchase_data.echo_req.passthrough.contract_type === 'DIGITEVEN' && d1 % 2 === 0)
-                        ||
-                        (purchase_data.echo_req.passthrough.contract_type === 'DIGITODD' && d1 % 2)
-                        ||
-                        (purchase_data.echo_req.passthrough.contract_type === 'DIGITOVER' && d1 > purchase_data.echo_req.passthrough.barrier)
-                        ||
-                        (purchase_data.echo_req.passthrough.contract_type === 'DIGITUNDER' && d1 < purchase_data.echo_req.passthrough.barrier)
+                        (pass_contract_type === 'DIGITMATCH' && d1 === pass_barrier) ||
+                        (pass_contract_type === 'DIGITDIFF'  && d1 !== pass_barrier) ||
+                        (pass_contract_type === 'DIGITEVEN'  && d1 % 2 === 0) ||
+                        (pass_contract_type === 'DIGITODD'   && d1 % 2) ||
+                        (pass_contract_type === 'DIGITOVER'  && d1 > pass_barrier) ||
+                        (pass_contract_type === 'DIGITUNDER' && d1 < pass_barrier)
                     ) {
                         spots.className = 'won';
                         final_price = $('#contract_purchase_payout p').text();

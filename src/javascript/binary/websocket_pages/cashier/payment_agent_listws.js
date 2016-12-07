@@ -123,8 +123,7 @@ var PaymentAgentListWS = (function() {
                     .replace(/%email/g, agent.email)
                     .replace(/%telephone/g, agent.telephone)
                     .replace(/%further_information/g, agent.further_information)
-                    .replace(/%supported_banks/g, supported_banks),
-            );
+                    .replace(/%supported_banks/g, supported_banks));
         });
 
         $paListContainer.empty().append($accordion);

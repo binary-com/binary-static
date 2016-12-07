@@ -15,9 +15,8 @@ var toISOFormat     = require('../../common_functions/string_util').toISOFormat;
  */
 
 if (typeof window === 'undefined') {
-    /* jshint ignore:start */
-    Element = function() {}; // eslint-disable-line
-    /* jshint ignore:end */
+    // eslint-disable-next-line
+    Element = function() {}; // jshint ignore:line
 }
 
 Element.prototype.hide = function() {
@@ -726,8 +725,7 @@ function updatePurchaseStatus(final_price, pnl, contract_status) {
 
 function updateContractBalance(balance) {
     $('#contract_purchase_balance').text(
-        Content.localize().textContractConfirmationBalance + ' ' + format_money(TUser.get().currency, balance),
-    );
+        Content.localize().textContractConfirmationBalance + ' ' + format_money(TUser.get().currency, balance));
 }
 
 function updateWarmChart() {

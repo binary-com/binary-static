@@ -7,8 +7,7 @@ var FlexTableUI = function(config) {
         [],
         this.getMetadata(),
         config.header,
-        config.footer,
-    );
+        config.footer);
     // Table.appendTablebody expects the table to already
     // exist in the DOM, so we need to append first
     $tableContainer.appendTo(config.container);

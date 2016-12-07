@@ -211,8 +211,7 @@ var PaymentAgentWithdrawWS = (function() {
                             Cookies.get('loginid'),
                             formData.agentname,
                         ]) +
-                        '</li></ul>',
-                    );
+                        '</li></ul>');
                 break;
 
             default: // error

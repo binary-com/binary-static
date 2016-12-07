@@ -1,7 +1,7 @@
 var Table = (function() {
     'use strict';
 
-    /** *
+    /**
      *
      * @param {Array[]} data ordered data to pump into table body
      * @param {Object} metadata object containing metadata of table
@@ -34,7 +34,7 @@ var Table = (function() {
         return $tableContainer;
     }
 
-    /** *
+    /**
      *
      * @param {object[][]} data header strings
      * @param {String[]} metadata cols name
@@ -61,7 +61,7 @@ var Table = (function() {
         return $outer;
     }
 
-    /** *
+    /**
      *
      * @param {object[]} data
      * @param {String[]} metadata cols name
@@ -93,7 +93,7 @@ var Table = (function() {
         }
     }
 
-    /** *
+    /**
      *
      * @param {String} id table id
      * @param {Object[]} data array of data to be transform to row
