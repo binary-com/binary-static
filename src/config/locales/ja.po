@@ -800,6 +800,9 @@ msgstr "マーケティングまたは情報工学の大学学位があると好
 msgid "A university degree or accredited translation certification preferred"
 msgstr "大学の学位または公認の翻訳資格があると好ましい"
 
+msgid "AM"
+msgstr ""
+
 msgid "API"
 msgstr "API"
 
@@ -3032,6 +3035,9 @@ msgstr "ご不明な点等ありましたら、カスタマーサポートまで
 msgid "Higher/Lower trades"
 msgstr "HIGH/LOW・トレード"
 
+msgid "Hour"
+msgstr ""
+
 msgid "Housewife / Househusband"
 msgstr "主婦/主夫"
 
@@ -4392,6 +4398,11 @@ msgstr "%1文字以上でご入力ください。"
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "6文字以上の英数字（大文字と小文字を含む）"
 
+#, fuzzy
+#| msgid "Minutes"
+msgid "Minute"
+msgstr "分"
+
 msgid "Miss"
 msgstr "Miss"
 
@@ -4859,6 +4870,9 @@ msgstr "%1サイトの所有権とコンテンツは当社に属し、規約を�
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
 msgstr "アフィリエイト会員は、自身が保有するプロモーションサイトに関する所有権とコンテンツに責任を負います。プロモーションサイトの開発、オペレーション、維持、そしてサイト上に存在する全ての素材に対して責任があります。アフィリエイト会員は、開発、オペレーション、維持、そしてサイト上に存在する全ての素材に関係する請求、損害賠償や費用（訴訟費用など）を当社に対して求めないことを確証します。"
 
+msgid "PM"
+msgstr ""
+
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "外国為替市場でお取引"
 
@@ -5036,10 +5050,14 @@ msgstr "有効な値をご入力して下さい。"
 msgid "Please enter an integer value"
 msgstr "半角で数値をご入力して下さい"
 
-msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr "ご希望の日付を選択して下さい。"
 
-msgid "Please enter date in the format YYYY-MM-DD."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD."
+msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "ご希望の日付を選択して下さい。"
 
 msgid "Please enter your current password."
@@ -6788,6 +6806,11 @@ msgstr "レベル"
 
 msgid "Time"
 msgstr "日時"
+
+#, fuzzy
+#| msgid "Start time is in the future."
+msgid "Time is in the wrong format."
+msgstr "開始時間が未来の値になっています。"
 
 msgid "Time out until"
 msgstr "xxxまで利用禁止"
@@ -11089,9 +11112,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "Start time %1 must be before end time %2"
 #~ msgstr "開始時間%1は終了時間%2内である必要があります。"
-
-#~ msgid "Start time is in the future."
-#~ msgstr "開始時間が未来の値になっています。"
 
 #~ msgid "Start time is in the past"
 #~ msgstr "開始時間が過去に値になっています"
@@ -18772,9 +18792,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "Majors"
 #~ msgstr "Majors"
-
-#~ msgid "Minutes"
-#~ msgstr "分"
 
 #~ msgid "Normalize to 100"
 #~ msgstr "中心地を１００に換算して表示"
