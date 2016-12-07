@@ -22,34 +22,13 @@ module.exports = {
 };
 END_EXPORTS
 
-    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts('all') . $exports);
-    return;
-}
-
-sub generate_japan_data_files {
-    my $js_path = shift;
-
-    _make_nobody_dir($js_path);
-    print "\tGenerating $js_path/texts.js\n";
-
-    my $japan_exports = 'export default japan_text;';
-
-    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts('japan') . $japan_exports);
+    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts() . $exports);
     return;
 }
 
 sub _texts {
-    my $task = shift;
-    my $js = '';
-    if ($task eq 'all') {
-        $js = "var texts_json = {};\n";
-    } elsif ($task eq 'japan') {
-        $js = "const japan_text = {};\n";
-    }
+    my $js = "var texts_json = {};\n";
     foreach my $language (BS::all_languages()) {
-        if ($task eq 'japan' and $language ne 'JA') {
-            next;
-        }
         BS::set_lang($language);
 
         my @texts;
@@ -64,6 +43,7 @@ sub _texts {
         push @texts, localize('You must accept the terms and conditions to open an account.');
         push @texts, localize('We are not accepting accounts from residents of this country at the present time.');
         push @texts, localize('End time must be after start time.');
+        push @texts, localize('Time is in the wrong format.');
         # top bar
         push @texts, localize('Upgrade to a Real Account');
         push @texts, localize('Upgrade to a Financial Account');
@@ -131,7 +111,10 @@ sub _texts {
         push @texts, localize('week');
         push @texts, localize('day');
         push @texts, localize('hour');
+        push @texts, localize('h');
         push @texts, localize('minute');
+        push @texts, localize('min');
+        push @texts, localize('mins');
         push @texts, localize('second');
         push @texts, localize('Purchase Time');
         push @texts, localize('Start Time');
@@ -150,6 +133,10 @@ sub _texts {
         push @texts, localize('Th');
         push @texts, localize('Fr');
         push @texts, localize('Sa');
+        push @texts, localize('Hour');
+        push @texts, localize('Minute');
+        push @texts, localize('AM');
+        push @texts, localize('PM');
         push @texts, localize('This contract won');
         push @texts, localize('This contract lost');
         push @texts, localize('Loss');
@@ -853,11 +840,7 @@ sub _texts {
         push @texts, localize('The server <a href="[_1]">endpoint</a> is: [_2]');
 
         my %as_hash = @texts;
-        if ($task eq 'all') {
-            $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
-        } elsif ($task eq 'japan') {
-            $js .= "japan_text['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
-        }
+        $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
     }
 
     return $js;

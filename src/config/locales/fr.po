@@ -786,6 +786,9 @@ msgstr "Un diplôme universitaire dans le domaine du marketing ou de l'informati
 msgid "A university degree or accredited translation certification preferred"
 msgstr "Diplôme universitaire ou certification en traduction (de préférence)"
 
+msgid "AM"
+msgstr ""
+
 msgid "API"
 msgstr "API"
 
@@ -2990,6 +2993,9 @@ msgstr "Les contrats « Supérieur/Inférieur » seront remboursés à leur pr
 msgid "Higher/Lower trades"
 msgstr "Contrats Supérieur/Inférieur"
 
+msgid "Hour"
+msgstr ""
+
 msgid "Housewife / Househusband"
 msgstr "Au foyer"
 
@@ -4326,6 +4332,11 @@ msgstr "Un minimum de %1 caractères est requis."
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Minimum de six lettres minuscules et majuscules avec des chiffres"
 
+#, fuzzy
+#| msgid "Minutes"
+msgid "Minute"
+msgstr "Minutes"
+
 msgid "Miss"
 msgstr "Mlle"
 
@@ -4785,6 +4796,9 @@ msgstr "La propriété et le contenu du site %1 restent nos propriétés respect
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
 msgstr "La propriété, le contenu et la responsabilité des sites Web de l'Affilié relèvent de la seule responsabilité de l'Affilié. Vous assumerez l'entière responsabilité du développement, du fonctionnement et de la maintenance de votre site Web, ainsi que de l'ensemble des contenus apparaissant sur votre site Web. Vous devrez tenir la Société indemne et hors de cause quant à l'ensemble des réclamations, des dommages et des frais (y compris, sans s'y limiter, les honoraires d'avocat) relatifs au développement, au fonctionnement et à la maintenance de votre site Web."
 
+msgid "PM"
+msgstr ""
+
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "Participer aux marchés du Forex, des actions ou des matières premières ?"
 
@@ -4962,10 +4976,14 @@ msgstr "Veuillez entrer un montant valide."
 msgid "Please enter an integer value"
 msgstr "Veuillez saisir un nombre entier"
 
-msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr "Veuillez saisir la date au format AAAA-MM-JJ HH:mm (heure locale)."
 
-msgid "Please enter date in the format YYYY-MM-DD."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD."
+msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "Veuillez saisir la date au format AAAA-MM-JJ."
 
 msgid "Please enter your current password."
@@ -6609,6 +6627,11 @@ msgstr "Niveau"
 msgid "Time"
 msgstr "Heure"
 
+#, fuzzy
+#| msgid "Start time is in the past"
+msgid "Time is in the wrong format."
+msgstr "Le moment de début est dans le passé"
+
 msgid "Time out until"
 msgstr "Expiration jusqu'à"
 
@@ -7907,6 +7930,11 @@ msgstr "Adresse e-mail"
 msgid "f"
 msgstr "f"
 
+#, fuzzy
+#| msgid "Th"
+msgid "h"
+msgstr "Je"
+
 msgid "hour"
 msgstr "heure"
 
@@ -7943,11 +7971,17 @@ msgstr "m"
 msgid "max: 100,000"
 msgstr "max : 100 000"
 
+msgid "min"
+msgstr "min"
+
 msgid "min: 1,000"
 msgstr "min : 1000"
 
 msgid "minimum available duration"
 msgstr "durée minimale disponible"
+
+msgid "mins"
+msgstr ""
 
 msgid "minute"
 msgstr "minute"
@@ -10809,11 +10843,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgid "Start time %1 must be before end time %2"
 #~ msgstr "Le moment de début doit être antérieur au moment d'expiration."
 
-#, fuzzy
-#~| msgid "Start time is in the past"
-#~ msgid "Start time is in the future."
-#~ msgstr "Le moment de début est dans le passé"
-
 #~ msgid "Start time is in the past"
 #~ msgstr "Le moment de début est dans le passé"
 
@@ -13431,9 +13460,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "explanation"
 #~ msgstr "explication"
-
-#~ msgid "min"
-#~ msgstr "min"
 
 #~ msgid "or Email us at"
 #~ msgstr "ou envoyez un Mail à"
@@ -18651,9 +18677,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Majors"
 #~ msgstr "Majeurs"
-
-#~ msgid "Minutes"
-#~ msgstr "Minutes"
 
 #~ msgid "Normalize to 100"
 #~ msgstr "Normaliser à 100"

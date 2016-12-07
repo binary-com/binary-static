@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-24 06:13+0000\n"
+"PO-Revision-Date: 2016-12-06 07:30+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -786,6 +786,9 @@ msgstr "市場行銷或電腦科學大學學位尤佳"
 
 msgid "A university degree or accredited translation certification preferred"
 msgstr "擁有大學本科學位或權威翻譯資格認證者優先錄取"
+
+msgid "AM"
+msgstr ""
 
 msgid "API"
 msgstr "應用程式編程介面"
@@ -1861,7 +1864,7 @@ msgid "Conflicts Policy"
 msgstr "衝突政策"
 
 msgid "Connection error: Please check your internet connection."
-msgstr ""
+msgstr "連接錯誤:請檢查您的網絡連接。"
 
 msgid "Construction"
 msgstr "建構"
@@ -2990,6 +2993,9 @@ msgstr "如果開始和結束期間價格跳動次數少於2，「高於/低於�
 
 msgid "Higher/Lower trades"
 msgstr "「高於/低於」交易"
+
+msgid "Hour"
+msgstr ""
 
 msgid "Housewife / Househusband"
 msgstr "Housewife / Househusband"
@@ -4327,6 +4333,11 @@ msgstr "需至少%1 個字元。"
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "至少六個大小寫字母和數字"
 
+#, fuzzy
+#| msgid "minute"
+msgid "Minute"
+msgstr "分鐘"
+
 msgid "Miss"
 msgstr "遺漏"
 
@@ -4786,6 +4797,9 @@ msgstr "%1 網站的所有權和內容均為我們擁有，不可視為通過此
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
 msgstr "聯盟網站的所有權、內容和法律責任均由聯盟會員全權負責。您僅全權負責您的網站及其所顯示之全部材料的開發、運營和維護。有關您的網站開發、運營、維護和內容的一切索賠、損害賠償及開支（包括但不限於律師費），您將對公司進行賠償，並使其免害。"
 
+msgid "PM"
+msgstr ""
+
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "參與外匯、股票或商品市場?"
 
@@ -4963,10 +4977,14 @@ msgstr "請輸入有效金額。"
 msgid "Please enter an integer value"
 msgstr "請輸入整數"
 
-msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr "請輸入日期，格式為年-月-日 時:分(當地時間)。"
 
-msgid "Please enter date in the format YYYY-MM-DD."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD."
+msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "請輸入日期，格式為年-月-日。"
 
 msgid "Please enter your current password."
@@ -6606,6 +6624,11 @@ msgstr "階層"
 msgid "Time"
 msgstr "時間"
 
+#, fuzzy
+#| msgid "Start time is in the future."
+msgid "Time is in the wrong format."
+msgstr "開始時間是在未來。"
+
 msgid "Time out until"
 msgstr "時間已過。下次開啟時間為"
 
@@ -7902,6 +7925,9 @@ msgstr "電子郵件地址"
 msgid "f"
 msgstr "f"
 
+msgid "h"
+msgstr "小時"
+
 msgid "hour"
 msgstr "小時"
 
@@ -7938,11 +7964,17 @@ msgstr "月"
 msgid "max: 100,000"
 msgstr "最大: 100,000"
 
+msgid "min"
+msgstr "最小"
+
 msgid "min: 1,000"
 msgstr "最小: 1,000"
 
 msgid "minimum available duration"
 msgstr "最短可用期限"
+
+msgid "mins"
+msgstr "分鐘"
 
 msgid "minute"
 msgstr "分鐘"
@@ -10789,9 +10821,6 @@ msgstr "條款和條件審批"
 #~ msgid "Start time %1 must be before end time %2"
 #~ msgstr "開始時間%1必須早於到期時間%2"
 
-#~ msgid "Start time is in the future."
-#~ msgstr "開始時間是在未來。"
-
 #~ msgid "Start time is in the past"
 #~ msgstr "開始時間是在過去"
 
@@ -13334,9 +13363,6 @@ msgstr "條款和條件審批"
 
 #~ msgid "explanation"
 #~ msgstr "說明"
-
-#~ msgid "min"
-#~ msgstr "最小"
 
 #~ msgid "or Email us at"
 #~ msgstr "或傳送電子郵件至"

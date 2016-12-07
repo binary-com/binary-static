@@ -53,8 +53,6 @@ var Message = (function () {
                 StatementWS.statementHandler(response);
             } else if (type === 'profit_table'){
                 ProfitTableWS.profitTableHandler(response);
-            } else if (type === 'pricing_table'){
-                PricingTable.handleResponse(response);
             } else if (type === 'error') {
                 $(".error-msg").text(response.error.message);
             } else if(type === 'portfolio'){

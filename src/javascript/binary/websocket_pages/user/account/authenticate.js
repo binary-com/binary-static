@@ -16,7 +16,6 @@ var AuthenticateWS = (function() {
             }
             return page.client.is_virtual();
         }
-        var message = document.getElementById('authentication-message');
         if (!check_virtual()) {
             BinarySocket.init({
                 onmessage: function(msg){

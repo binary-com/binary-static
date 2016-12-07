@@ -1,13 +1,13 @@
-var AccountOpening      = require('../../../common_functions/account_opening').AccountOpening;
+var handleResidence     = require('../../../common_functions/account_opening').handleResidence;
 var Content             = require('../../../common_functions/content').Content;
 var ValidAccountOpening = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
-var RealAccOpeningUI = require('./real_acc_opening/real_acc_opening.ui').RealAccOpeningUI;
+var RealAccOpeningUI    = require('./real_acc_opening/real_acc_opening.ui').RealAccOpeningUI;
 
 var RealAccOpening = (function() {
     var init = function() {
         Content.populate();
         ValidAccountOpening.redirectCookie();
-        AccountOpening.handle_residence_state_ws();
+        handleResidence();
         if (page.client.residence) {
           BinarySocket.send({landing_company: page.client.residence});
         }

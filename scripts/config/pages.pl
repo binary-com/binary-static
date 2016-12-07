@@ -70,7 +70,6 @@ sub all_pages {
         ['paymentagent/transferws',      'cashier/paymentagent_transferws',           'default', 'Payment Agent Transfer'],
         ['paymentagent/withdrawws',      'cashier/paymentagent_withdrawws',           'default', 'Payment Agent Withdrawal'],
 
-        ['jp_trading',             'bet/japan',       'default', 'Sharp Prices. Smart Trading.', 'NOT-ja,en'],
         ['trading',                'bet/static',      'default', 'Sharp Prices. Smart Trading.'],
         ['trading_beta',           'bet/beta/static', 'default', 'Sharp Prices. Smart Trading.', 'ja'],
         ['multi_barriers_trading', 'bet/mb_trading',  'default', 'Sharp Prices. Smart Trading.'],

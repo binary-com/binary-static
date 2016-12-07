@@ -165,7 +165,7 @@ var PaymentAgentWithdrawWS = (function() {
         }
     };
 
-    var isCountError = function(fieldID, min, max) {
+    /*var isCountError = function(fieldID, min, max) {
         var fieldValue = $(fieldID).val().trim();
         if((fieldValue.length > 0 && fieldValue.length < min) || fieldValue.length > max) {
             showError(fieldID, Content.errorMessage('range', '(' + min + '-' + max + ')'));
@@ -173,7 +173,7 @@ var PaymentAgentWithdrawWS = (function() {
         } else {
             return false;
         }
-    };
+    };*/
 
     // ----------------------------
     // ----- Withdraw Process -----
