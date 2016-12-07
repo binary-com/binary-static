@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-23 14:46+0000\n"
-"Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
+"PO-Revision-Date: 2016-12-05 08:45+0000\n"
+"Last-Translator: Anna Płochocka <plochocka.anna@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -1866,10 +1866,8 @@ msgstr "Confirmation and understandings"
 msgid "Conflicts Policy"
 msgstr "Polityka dot. sporów"
 
-#, fuzzy
-#| msgid "Connection error: Please view the progress at your portfolio page."
 msgid "Connection error: Please check your internet connection."
-msgstr "Błąd połączenia: prosimy sprawdzić postęp na stronie swojego portfolio."
+msgstr "Błąd połączenia: sprawdż połączenie internetowe"
 
 msgid "Construction"
 msgstr "Budownictwo"
@@ -2811,7 +2809,7 @@ msgid "Format: yyyy-mm-dd (not required for virtual-money accounts)"
 msgstr "Format: rrrr-mm-dd (nie jest wymagany w przypadku kont wirtualnych)"
 
 msgid "Fr"
-msgstr "piątek"
+msgstr "Pt"
 
 msgid "Fraud and Money Laundering"
 msgstr "Oszustwa i pranie brudnych pieniędzy"
@@ -4339,7 +4337,7 @@ msgid "Miss"
 msgstr "Pani"
 
 msgid "Mo"
-msgstr "Poniedziałek"
+msgstr "Pn"
 
 msgid "Monday"
 msgstr "Poniedziałek"
@@ -5509,7 +5507,7 @@ msgid "Russia"
 msgstr "Rosja"
 
 msgid "Sa"
-msgstr "sobota"
+msgstr "So"
 
 msgid "Salaried Employee"
 msgstr "Pracownik etatowy"
@@ -5905,7 +5903,7 @@ msgid "Student"
 msgstr "Student"
 
 msgid "Su"
-msgstr "niedziela"
+msgstr "Nd"
 
 msgid "Subject to any specific instructions which may be provided by you, when executing client orders, we will take all reasonable steps to obtain the best possible results for you. The best possible results will be determined in terms of total consideration, that is, the price of the instrument and the costs related to execution which shall include all expenses incurred by you that are directly related to the execution of the order."
 msgstr "Z zastrzeżeniem jakichkolwiek przekazywanych przez Ciebie konkretnych instrukcji, realizując zlecenia klienta, podejmiemy wszelkie możliwe kroki, aby zapewnić Ci najlepszy możliwy wynik. Najlepsze możliwe wyniki będą określane w ujęciu całościowym z uwzględnieniem ceny instrumentu i kosztów związanych z realizacją, które powinny uwzględniać wszystkie wydatki poniesione przez Ciebie, będące bezpośrednio związane z realizacją zlecenia."
@@ -6004,7 +6002,7 @@ msgid "Test-run %1, and sharpen your trading skills, with a no-risk, no-commitme
 msgstr "Wypróbuj %1 i udoskonalaj swoje umiejętności handlowe, bez ryzyka czy zobowiązań, korzystając z konta wirtualnego."
 
 msgid "Th"
-msgstr "czwartek"
+msgstr "Cz"
 
 msgid "Thank you for signing up! Please check your email to retrieve the verification token."
 msgstr "Dziękujemy za rejestrację! Token weryfikujący został wysłany na Twój adres e-mail."
@@ -6831,7 +6829,7 @@ msgid "Try it now"
 msgstr "Wypróbuj teraz"
 
 msgid "Tu"
-msgstr "Wtorek"
+msgstr "Wt"
 
 msgid "Tuesday"
 msgstr "Wtorek"
@@ -7053,7 +7051,7 @@ msgid "Warranty Disclaimer"
 msgstr "Wyłączenie gwarancji"
 
 msgid "We"
-msgstr "Środa"
+msgstr "Śr"
 
 msgid "We aim to establish and maintain and operate effective organisational and administrative arrangements with a view to taking all reasonable steps to prevent conflicts of interest from constituting or giving rise to a material risk of damage to the interests of our clients."
 msgstr "Naszym celem jest ustanowienie, utrzymanie i realizacja skutecznych rozwiązań organizacyjnych i administracyjnych, co wiąże się z podjęciem wszelkich uzasadnionych działań, aby zapobiec konfliktowi interesów związanemu z powstaniem materialnego ryzyka naruszenia interesów naszych klientów."
@@ -7910,6 +7908,11 @@ msgstr "adres e-mail"
 msgid "f"
 msgstr "f"
 
+#, fuzzy
+#| msgid "Th"
+msgid "h"
+msgstr "Cz"
+
 msgid "hour"
 msgstr "godzina"
 
@@ -7946,11 +7949,18 @@ msgstr "miesiąc"
 msgid "max: 100,000"
 msgstr "Maks.: 100 000"
 
+#, fuzzy
+msgid "min"
+msgstr "min."
+
 msgid "min: 1,000"
 msgstr "min.: 1 000"
 
 msgid "minimum available duration"
 msgstr "minimalny dostępny czas trwania"
+
+msgid "mins"
+msgstr ""
 
 msgid "minute"
 msgstr "min"
@@ -13444,10 +13454,6 @@ msgstr "Akceptacja regulaminu"
 
 #~ msgid "explanation"
 #~ msgstr "wyjaśnienie"
-
-#, fuzzy
-#~ msgid "min"
-#~ msgstr "min."
 
 #, fuzzy
 #~ msgid "or Email us at"
