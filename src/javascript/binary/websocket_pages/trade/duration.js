@@ -1,13 +1,16 @@
-var Barriers      = require('./barriers').Barriers;
-var Contract      = require('./contract').Contract;
-var Defaults      = require('./defaults').Defaults;
-var Content       = require('../../common_functions/content').Content;
-var moment        = require('moment');
-var State         = require('../../base/storage').State;
-var isVisible     = require('../../common_functions/common_functions').isVisible;
-var durationOrder = require('./common').durationOrder;
-var selectOption  = require('./common').selectOption;
-var timeIsValid   = require('./common').timeIsValid;
+var Barriers         = require('./barriers').Barriers;
+var Contract         = require('./contract').Contract;
+var Defaults         = require('./defaults').Defaults;
+var Content          = require('../../common_functions/content').Content;
+var moment           = require('moment');
+var State            = require('../../base/storage').State;
+var isVisible        = require('../../common_functions/common_functions').isVisible;
+var durationOrder    = require('./common').durationOrder;
+var selectOption     = require('./common').selectOption;
+var timeIsValid      = require('./common').timeIsValid;
+var DatePicker       = require('../../components/date_picker').DatePicker;
+var toReadableFormat = require('../../common_functions/string_util').toReadableFormat;
+var toISOFormat      = require('../../common_functions/string_util').toISOFormat;
 
 /*
  * Handles duration processing display
@@ -162,17 +165,25 @@ var Durations = (function() {
         var date_start = document.getElementById('date_start').value;
         var now = !date_start || date_start === 'now';
         var current_moment = moment((now ? window.time : parseInt(date_start) * 1000)).add(5, 'minutes').utc();
-        var expiry_date = Defaults.get('expiry_date') || current_moment.format('YYYY-MM-DD'),
-            expiry_time = Defaults.get('expiry_time') || current_moment.format('HH:mm');
+        var expiry_date = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment,
+            expiry_time = Defaults.get('expiry_time') || current_moment.format('HH:mm'),
+            expiry_date_iso = toISOFormat(expiry_date);
 
-        if (moment(expiry_date + ' ' + expiry_time).valueOf() < current_moment.valueOf()) {
-            expiry_date = current_moment.format('YYYY-MM-DD');
+        if (moment(expiry_date_iso + ' ' + expiry_time).valueOf() < current_moment.valueOf()) {
+            expiry_date = current_moment;
+            expiry_date_iso = toISOFormat(expiry_date);
             expiry_time = current_moment.format('HH:mm');
         }
 
-        document.getElementById('expiry_date').value = expiry_date;
-        document.getElementById('expiry_time').value = expiry_time;
-        Defaults.set('expiry_date', expiry_date);
+        var expiry_date_readable = toReadableFormat(expiry_date),
+            expiry_date_el = document.getElementById('expiry_date'),
+            expiry_time_el = document.getElementById('expiry_time');
+
+        expiry_date_el.value = expiry_date_readable;
+        expiry_date_el.setAttribute('data-value', expiry_date_iso);
+        expiry_time_el.value = expiry_time;
+        expiry_time_el.setAttribute('data-value', expiry_time);
+        Defaults.set('expiry_date', expiry_date_iso);
         Defaults.set('expiry_time', expiry_time);
         Durations.setTime(expiry_time);
 
@@ -224,35 +235,33 @@ var Durations = (function() {
         Defaults.set('duration_units', unit.value);
 
         // jquery for datepicker
-        var amountElement = $('#duration_amount');
+        var amountElement = $('#duration_amount'),
+            datePickerDur = new DatePicker('#duration_amount', 'diff'),
+            datePickDate = new DatePicker('#expiry_date');
         if (unit.value === 'd') {
             var tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
-
-            amountElement.datepicker({
-                minDate : tomorrow,
-                onSelect: function(value) {
-                    var dayDiff;
-                    if ($('#duration_amount').val()) {
-                        dayDiff = $('#duration_amount').val();
-                    }                    else {
-                        var date = new Date(value);
-                        var today = window.time ? window.time.valueOf() : new Date();
-                        dayDiff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
-                    }
-                    amountElement.val(dayDiff);
-                    amountElement.trigger('change');
-                },
+            datePickerDur.show(tomorrow, 364, 'attr', 'noNative');
+            amountElement.change(function(value) {
+                var dayDiff;
+                if ($('#duration_amount').val()) {
+                    dayDiff = $('#duration_amount').val();
+                } else {
+                    value = value.target.getAttribute('data-value');
+                    var date = value ? new Date(value) : new Date();
+                    var today = window.time ? window.time.valueOf() : new Date();
+                    dayDiff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
+                }
+                amountElement.val(dayDiff);
             });
         } else {
-            amountElement.datepicker('destroy');
+            datePickerDur.hide();
         }
 
-        $('.pickadate').datepicker('destroy');
-        $('.pickadate').datepicker({
-            minDate   : window.time ? window.time.format('YYYY-MM-DD') : new Date(),
-            dateFormat: 'yy-mm-dd',
-        });
+        if ($('#expiry_date').is(':visible')) {
+            datePickDate.hide();
+            datePickDate.show('today', 364);
+        }
 
         validateMinDurationAmount();
         // we need to call it here as for days we need to show absolute barriers
@@ -334,20 +343,25 @@ var Durations = (function() {
 
     var selectEndDate = function(end_date) {
         var expiry_time = document.getElementById('expiry_time'),
-            date_start  = document.getElementById('date_start');
-        $('#expiry_date').val(end_date);
-        Defaults.set('expiry_date', end_date);
-        if (moment(end_date).isAfter(window.time.format('YYYY-MM-DD HH:mm'), 'day')) {
+            date_start  = document.getElementById('date_start'),
+            end_date_readable = toReadableFormat(end_date),
+            end_date_iso = toISOFormat(end_date);
+        $('#expiry_date').val(end_date_readable)
+                         .attr('data-value', end_date_iso);
+        Defaults.set('expiry_date', end_date_iso);
+        if (end_date.isAfter(window.time.format('YYYY-MM-DD HH:mm'), 'day')) {
             Durations.setTime('');
             Defaults.remove('expiry_time');
             setNow(); // start time
             date_start.setAttribute('disabled', 'disabled');
             expiry_time.hide();
-            processTradingTimesRequest(end_date);
+            processTradingTimesRequest(end_date_iso);
         } else {
             date_start.removeAttribute('disabled');
             if (!expiry_time.value) {
-                expiry_time.value = moment(window.time).add(5, 'minutes').utc().format('HH:mm');
+                var new_time = moment(window.time).add(5, 'minutes').utc().format('HH:mm');
+                expiry_time.value = new_time;
+                expiry_time.setAttribute('data-value', new_time);
             }
             Durations.setTime(expiry_time.value);
             Defaults.set('expiry_time', Defaults.get('expiry_time') || expiry_time.value);
@@ -392,8 +406,7 @@ var Durations = (function() {
             var end_time = moment(parseInt(value) * 1000).add(5, 'minutes').utc();
             Durations.setTime((timeIsValid($('#expiry_time')) && Defaults.get('expiry_time') ?
                                Defaults.get('expiry_time') : end_time.format('HH:mm')));
-            Durations.selectEndDate((timeIsValid($('#expiry_time')) && Defaults.get('expiry_date') ?
-                                    Defaults.get('expiry_date') : end_time.format('YYYY-MM-DD')));
+            Durations.selectEndDate((timeIsValid($('#expiry_time')) && (Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : end_time)));
         }
         timeIsValid($('#expiry_time'));
         Durations.display();

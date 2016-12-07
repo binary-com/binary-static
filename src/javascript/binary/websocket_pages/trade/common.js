@@ -8,13 +8,16 @@ var format_money    = require('../../common_functions/currency_to_symbol').forma
 var japanese_client = require('../../common_functions/country_base').japanese_client;
 var addComma        = require('../../common_functions/string_util').addComma;
 var Moment          = require('moment');
+var toISOFormat     = require('../../common_functions/string_util').toISOFormat;
 
 /*
  * This contains common functions we need for processing the response
  */
 
 if (typeof window === 'undefined') {
+    /* jshint ignore:start */
     Element = function() {}; // eslint-disable-line
+    /* jshint ignore:end */
 }
 
 Element.prototype.hide = function() {
@@ -54,7 +57,7 @@ function displayContractForms(id, elements, selected) {
             li.classList.add('tm-li');
             if (i === 0) {
                 li.classList.add('first');
-            }             else if (i === tree.length - 1) {
+            } else if (i === tree.length - 1) {
                 li.classList.add('last');
             }
 
@@ -72,7 +75,7 @@ function displayContractForms(id, elements, selected) {
                     if (j === 0) {
                         first = el2.toLowerCase();
                         li2.classList.add('first');
-                    }                     else if (j === el1[1].length - 1) {
+                    } else if (j === el1[1].length - 1) {
                         li2.classList.add('last');
                     }
 
@@ -110,7 +113,7 @@ function displayContractForms(id, elements, selected) {
                     li.appendChild(a);
                     li.appendChild(ul);
                 }
-            }             else {
+            } else {
                 var content3 = document.createTextNode(elements[el1]),
                     a3 = document.createElement('a');
 
@@ -398,7 +401,7 @@ function getContractCategoryTree(elements) {
                 if (!e[1].length) {
                     e = '';
                 }
-            }            else if (!elements[e]) {
+            } else if (!elements[e]) {
                 e = '';
             }
             return e;
@@ -715,7 +718,7 @@ function updatePurchaseStatus(final_price, pnl, contract_status) {
     $cost.html(Content.localize().textFinalPrice + '<p>' + addComma(final_price) + '</p>');
     if (!final_price) {
         $profit.html(Content.localize().textLoss + '<p>' + addComma(pnl) + '</p>');
-    }    else {
+    } else {
         $profit.html(Content.localize().textProfit + '<p>' + addComma(Math.round((final_price - pnl) * 100) / 100) + '</p>');
         updateContractBalance(TUser.get().balance);
     }
@@ -749,7 +752,7 @@ function updateWarmChart() {
         $chart.sparkline(spots, chart_config);
         if (spots.length) {
             $chart.show();
-        }        else {
+        } else {
             $chart.hide();
         }
     }
@@ -879,11 +882,26 @@ function label_value(label_elem, label, value, no_currency) {
 }
 
 function timeIsValid($element) {
-    var endDateValue = document.getElementById('expiry_date').value || new Moment().format('YYYY-MM-DD'),
+    var endDateValue = document.getElementById('expiry_date').getAttribute('data-value'),
         startDateValue = document.getElementById('date_start').value,
-        endTimeValue = document.getElementById('expiry_time').value || '23:59:59';
+        endTimeValue = document.getElementById('expiry_time').value;
 
+    if ($element.attr('id') === $('#expiry_time') && endTimeValue &&
+        !/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(endTimeValue)) {
+        $element.addClass('error-field');
+        if ($('#invalid-time').length === 0) {
+            $('#expiry_type_endtime').parent().append($('<p>', { class: 'error-msg', id: 'invalid-time', text: page.text.localize('Time is in the wrong format.') }));
+        }
+        return false;
+    }
+
+    $element.removeClass('error-field');
+    $('#invalid-time').remove();
+
+    endDateValue = endDateValue ? toISOFormat(Moment(endDateValue)) : toISOFormat(new Moment());
     startDateValue = startDateValue === 'now' ? Math.floor(window.time._i / 1000) : startDateValue;
+    endTimeValue = endTimeValue || '23:59:59';
+
     if (Moment.utc(endDateValue + ' ' + endTimeValue).unix() <= startDateValue) {
         $element.addClass('error-field');
         if (!document.getElementById('end_time_validation')) {

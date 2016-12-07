@@ -57,7 +57,7 @@ var StartDates = (function() {
                 option.appendChild(content);
                 fragment.appendChild(option);
                 hasNow = 1;
-            }            else {
+            } else {
                 hasNow = 0;
             }
 

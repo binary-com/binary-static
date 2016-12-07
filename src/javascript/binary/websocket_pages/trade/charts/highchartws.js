@@ -590,7 +590,7 @@ var Highchart = (function() {
     function get_max_candle(response) {
         var end,
             i;
-        if (sell_spot_time && sell_time < end_time) { end = sell_spot_time; }        else { end = end_time; }
+        if (sell_spot_time && sell_time < end_time) { end = sell_spot_time; } else { end = end_time; }
         if (is_settleable || is_sold) {
             for (i = response.candles.length - 2; i >= 0; i--) {
                 if (
@@ -698,7 +698,7 @@ var Highchart = (function() {
 
             if (last.x !== ohlc[0]) {
                 series.addPoint(ohlc, true, true);
-            }            else {
+            } else {
                 last.update(ohlc, true);
             }
         }

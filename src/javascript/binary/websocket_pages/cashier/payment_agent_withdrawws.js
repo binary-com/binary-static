@@ -79,7 +79,7 @@ var PaymentAgentWithdrawWS = (function() {
                 insertListOption($ddlAgents, paList[i].name, paList[i].paymentagent_loginid);
             }
             setActiveView(viewIDs.form);
-        }        else {
+        } else {
             showPageError(page.text.localize('The Payment Agent facility is currently not available in your country.'));
         }
     };
@@ -120,11 +120,11 @@ var PaymentAgentWithdrawWS = (function() {
         if (!isRequiredError(fieldIDs.txtAmount)) {
             if (!(/^\d+(\.\d+)?$/).test(amount) || !$.isNumeric(amount)) {
                 showError(fieldIDs.txtAmount, Content.errorMessage('reg', [numbers]));
-            }            else if (!(/^\d+(\.\d{1,2})?$/).test(amount)) {
+            } else if (!(/^\d+(\.\d{1,2})?$/).test(amount)) {
                 showError(fieldIDs.txtAmount, page.text.localize('Only 2 decimal points are allowed.'));
-            }            else if (amount < minAmount) {
+            } else if (amount < minAmount) {
                 showError(fieldIDs.txtAmount, page.text.localize('Invalid amount, minimum is') + ' ' + withdrawCurrency + ' ' + minAmount);
-            }            else if (amount > maxAmount) {
+            } else if (amount > maxAmount) {
                 showError(fieldIDs.txtAmount, page.text.localize('Invalid amount, maximum is') + ' ' + withdrawCurrency + ' ' + maxAmount);
             }
         }

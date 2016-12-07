@@ -49,7 +49,7 @@ var TradePage = (function() {
         if (sessionStorage.getItem('currencies')) {
             displayCurrencies();
             Symbols.getSymbols(1);
-        }        else {
+        } else {
             BinarySocket.send({ payout_currencies: 1 });
         }
 

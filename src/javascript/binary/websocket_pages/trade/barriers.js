@@ -44,7 +44,7 @@ var Barriers = (function () {
                         tooltip = document.getElementById('barrier_tooltip'),
                         span = document.getElementById('barrier_span');
                     if ((unit && isVisible(unit) && unit.value === 'd') ||
-                        (end_time && isVisible(end_time) && moment(end_time.value).isAfter(moment(), 'day')) ||
+                        (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day')) ||
                         !String(barrier.barrier).match(/^[+-]/)) {
                         if (currentTick && !isNaN(currentTick) && String(barrier_def).match(/^[+-]/)) {
                             value = (parseFloat(currentTick) + parseFloat(barrier_def)).toFixed(decimalPlaces);
@@ -91,7 +91,7 @@ var Barriers = (function () {
                     var barrier_high = defaults_high && !isNaN(defaults_high) ? defaults_high : barrier.barrier,
                         barrier_low  = defaults_low  && !isNaN(defaults_low)  ? defaults_low  : barrier.barrier1;
                     if ((unit && isVisible(unit) && unit.value === 'd') ||
-                        (end_time && isVisible(end_time) && moment(end_time.value).isAfter(moment(), 'day')) ||
+                        (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day')) ||
                         !String(barrier.barrier).match(/^[+-]/)) {
                         if (currentTick && !isNaN(currentTick) && String(barrier_high).match(/^[+-]/)) {
                             value = (parseFloat(currentTick) + parseFloat(barrier_high)).toFixed(decimalPlaces);

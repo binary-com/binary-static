@@ -95,7 +95,7 @@ var AccountTransferWS = (function() {
                 if ($('#transfer_account_transfer option').length > 0) {
                     $form.removeClass('invisible');
                     $form.find('#invalid_amount').text(page.text.localize(response.error.message));
-                }                    else {
+                } else {
                     $('#client_message').removeClass('invisible');
                     $('#client_message p').html(page.text.localize(response.error.message));
                     $('#success_form').addClass('invisible');
@@ -182,7 +182,7 @@ var AccountTransferWS = (function() {
 
                     if (value.balance <= 0) {
                         $form.find('#transfer_account_transfer option:last').remove();
-                    }                    else if (selectedIndex < 0) {
+                    } else if (selectedIndex < 0) {
                         selectedIndex =  index;
                     }
                 });

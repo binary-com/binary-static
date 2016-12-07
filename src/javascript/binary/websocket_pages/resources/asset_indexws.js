@@ -1,15 +1,16 @@
 var AssetIndex = (function() {
-    "use strict";
+    'use strict';
 
     var marketColumns;
 
     // Search and Remove (to decrease the next search count)
     var getSymbolInfo = function(qSymbol, activeSymbols) {
         return activeSymbols.filter(function(sy, id) {
-            if(sy.symbol === qSymbol) {
+            if (sy.symbol === qSymbol) {
                 activeSymbols.splice(id, 1);
                 return true;
             }
+            return false;
         });
     };
 
@@ -18,65 +19,66 @@ var AssetIndex = (function() {
      * should include headers existed in all assets of each market and its submarkets
      */
     var getAssetIndexData = function(assetIndex, activeSymbols) {
-        if(!assetIndex || !activeSymbols) return;
+        if (!assetIndex || !activeSymbols) return null;
 
         marketColumns = {};
 
         // index of items in asset_index response
         var idx = {
-            symbol: 0,
+            symbol     : 0,
             displayName: 1,
-            cells : 2,
-                cellName: 0,
+            cells      : 2,
+            symInfo    : 3,
+            values     : 4,
+            cellProps  : {
+                cellName       : 0,
                 cellDisplayName: 1,
-                cellFrom: 2,
-                cellTo  : 3,
-            symInfo: 3,
-            values : 4
+                cellFrom       : 2,
+                cellTo         : 3,
+            },
         };
 
-        for(var i = 0; i < assetIndex.length; i++) {
+        for (var i = 0; i < assetIndex.length; i++) {
             var assetItem = assetIndex[i];
             var symbolInfo = getSymbolInfo(assetItem[idx.symbol], activeSymbols)[0];
-            if(!symbolInfo) {
-                continue;
-            }
-            var market = symbolInfo.market;
+            if (symbolInfo) {
+                var market = symbolInfo.market;
 
-            assetItem.push(symbolInfo);
+                assetItem.push(symbolInfo);
 
-            // Generate market columns to use in all this market's submarket tables
-            if(!(market in marketColumns)) {
-                marketColumns[market] = {
-                    header : [''],
-                    columns: ['']
-                };
-            }
-
-            var assetCells = assetItem[idx.cells],
-                values = {};
-            for(var j = 0; j < assetCells.length; j++) {
-                var col  = assetCells[j][idx.cellName];
-
-                values[col] = assetCells[j][idx.cellFrom] + ' - ' + assetCells[j][idx.cellTo];
-
-                var marketCols = marketColumns[market];
-                if(marketCols.columns.indexOf(col) === -1) {
-                    marketCols.header.push(assetCells[j][idx.cellDisplayName]);
-                    marketCols.columns.push(col);
+                // Generate market columns to use in all this market's submarket tables
+                if (!(market in marketColumns)) {
+                    marketColumns[market] = {
+                        header : [''],
+                        columns: [''],
+                    };
                 }
+
+                var assetCells = assetItem[idx.cells],
+                    values = {};
+                for (var j = 0; j < assetCells.length; j++) {
+                    var col  = assetCells[j][idx.cellProps.cellName];
+
+                    values[col] = assetCells[j][idx.cellProps.cellFrom] + ' - ' + assetCells[j][idx.cellProps.cellTo];
+
+                    var marketCols = marketColumns[market];
+                    if (marketCols.columns.indexOf(col) === -1) {
+                        marketCols.header.push(assetCells[j][idx.cellProps.cellDisplayName]);
+                        marketCols.columns.push(col);
+                    }
+                }
+                assetItem.push(values);
             }
-            assetItem.push(values);
         }
         return assetIndex;
     };
 
     var external = {
         getAssetIndexData: getAssetIndexData,
-        getMarketColumns: function() {return marketColumns;}
+        getMarketColumns : function() { return marketColumns; },
     };
     return external;
-}());
+})();
 
 module.exports = {
     AssetIndex: AssetIndex,

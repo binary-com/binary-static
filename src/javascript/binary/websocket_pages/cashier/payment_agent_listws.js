@@ -45,7 +45,7 @@ var PaymentAgentListWS = (function() {
     var responseHandler = function(response) {
         if (response.echo_req.passthrough && response.echo_req.passthrough.countries_list === '1') {
             populateCountriesList(response);
-        }        else {
+        } else {
             populateAgentsList(response.paymentagent_list.list);
         }
     };
@@ -76,7 +76,7 @@ var PaymentAgentListWS = (function() {
         if (found) {
             $ddlCountries.val(requestedCountry);
             populateAgentsList(response.paymentagent_list.list);
-        }        else {
+        } else {
             sendRequest();
         }
 

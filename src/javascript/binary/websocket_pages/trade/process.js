@@ -220,7 +220,7 @@ function displayPrediction() {
         predictionElement.show();
         if (Defaults.get('prediction')) {
             selectOption(Defaults.get('prediction'), document.getElementById('prediction'));
-        }        else {
+        } else {
             Defaults.set('prediction', document.getElementById('prediction').value);
         }
     } else {

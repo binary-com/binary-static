@@ -164,7 +164,7 @@ var TickDisplay = (function() {
                     final_barrier = Number(Math.round(final_barrier + 'e' + $self.display_decimals) + 'e-' + $self.display_decimals);
 
                     barrier_tick.quote = final_barrier;
-                }                else if ($self.abs_barrier) {
+                } else if ($self.abs_barrier) {
                     barrier_tick.quote = parseFloat($self.abs_barrier);
                 }
 

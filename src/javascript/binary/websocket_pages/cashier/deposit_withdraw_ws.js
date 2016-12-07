@@ -144,7 +144,7 @@ var ForwardWS = (function() {
             });
             if (sessionStorage.getItem('client_status') === null) {
                 BinarySocket.send({ get_account_status: '1', passthrough: { dispatch_to: 'ForwardWS' } });
-            }          else if (
+            } else if (
             (!page.client_status_detected('cashier_locked, unwelcome', 'any') && /deposit/.test(window.location.hash)) ||
             (!page.client_status_detected('cashier_locked, withdrawal_locked', 'any') && /withdraw/.test(window.location.hash))
         ) {

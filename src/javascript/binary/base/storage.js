@@ -2,7 +2,7 @@ var template = require('./utility').template;
 var Cookies  = require('../../lib/js-cookie');
 
 var isStorageSupported = function(storage) {
-    if(typeof storage === 'undefined') {
+    if (typeof storage === 'undefined') {
         return false;
     }
 
@@ -11,7 +11,7 @@ var isStorageSupported = function(storage) {
         storage.setItem(testKey, '1');
         storage.removeItem(testKey);
         return true;
-    } catch(e) {
+    } catch (e) {
         return false;
     }
 };
@@ -21,20 +21,20 @@ var Store = function(storage) {
 };
 
 Store.prototype = {
-      get: function(key) {
-          return this.storage.getItem(key) || undefined;
-      },
-      set: function(key, value) {
-          if (typeof value != "undefined") {
-              this.storage.setItem(key, value);
-          }
-      },
-      remove: function(key) {
-          this.storage.removeItem(key);
-      },
-      clear: function() {
-          this.storage.clear();
-      },
+    get: function(key) {
+        return this.storage.getItem(key) || undefined;
+    },
+    set: function(key, value) {
+        if (typeof value !== 'undefined') {
+            this.storage.setItem(key, value);
+        }
+    },
+    remove: function(key) {
+        this.storage.removeItem(key);
+    },
+    clear: function() {
+        this.storage.clear();
+    },
 };
 
 var InScriptStore = function(object) {
@@ -42,24 +42,12 @@ var InScriptStore = function(object) {
 };
 
 InScriptStore.prototype = {
-    get: function(key) {
-        return this.store[key];
-    },
-    set: function(key, value) {
-        this.store[key] = value;
-    },
-    remove:  function(key) {
-        delete this.store[key];
-    },
-    clear: function() {
-        this.store = {};
-    },
-    has: function(key) {
-        return this.get(key) !== undefined;
-    },
-    keys: function() {
-        return Object.keys(this.store);
-    },
+    get   : function(key)        { return this.store[key]; },
+    set   : function(key, value) { this.store[key] = value; },
+    remove: function(key)        { delete this.store[key]; },
+    clear : function()           { this.store = {}; },
+    has   : function(key)        { return this.get(key) !== undefined; },
+    keys  : function()           { return Object.keys(this.store); },
 };
 
 var State = new InScriptStore();
@@ -87,7 +75,7 @@ CookieStorage.prototype = {
     write: function(value, expireDate, isSecure) {
         if (!this.initialized) this.read();
         this.value = value;
-        if(expireDate) this.expires = expireDate;
+        if (expireDate) this.expires = expireDate;
         Cookies.set(this.cookie_name, this.value, {
             expires: this.expires,
             path   : this.path,
@@ -110,14 +98,14 @@ CookieStorage.prototype = {
     },
     remove: function() {
         Cookies.remove(this.cookie_name, {
-            path   : this.path,
-            domain : this.domain,
+            path  : this.path,
+            domain: this.domain,
         });
-    }
+    },
 };
 
 var Localizable = function(hash) {
-    this.texts = typeof hash !== 'undefined'? hash : {};
+    this.texts = typeof hash !== 'undefined' ? hash : {};
 };
 
 Localizable.prototype = {
@@ -126,14 +114,14 @@ Localizable.prototype = {
         text = this.texts[index] || text;
         // only do templating when explicitly required
         return params ? template(text, params) : text;
-    }
+    },
 };
 
 module.exports = {
     isStorageSupported: isStorageSupported,
-    Store: Store,
-    InScriptStore: InScriptStore,
-    CookieStorage: CookieStorage,
-    Localizable: Localizable,
-    State: State,
+    Store             : Store,
+    InScriptStore     : InScriptStore,
+    CookieStorage     : CookieStorage,
+    Localizable       : Localizable,
+    State             : State,
 };
