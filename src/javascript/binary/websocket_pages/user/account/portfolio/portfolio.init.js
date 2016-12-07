@@ -1,14 +1,14 @@
-var showLoadingImage = require('../../../../base/utility').showLoadingImage;
+var showLoadingImage    = require('../../../../base/utility').showLoadingImage;
 var toJapanTimeIfNeeded = require('../../../../base/utility').toJapanTimeIfNeeded;
-var format_money = require('../../../../common_functions/currency_to_symbol').format_money;
-var buildOauthApps = require('../../../../common_functions/get_app_details').buildOauthApps;
-var addTooltip = require('../../../../common_functions/get_app_details').addTooltip;
-var showTooltip = require('../../../../common_functions/get_app_details').showTooltip;
-var japanese_client = require('../../../../common_functions/country_base').japanese_client;
-var Portfolio = require('../portfolio').Portfolio;
-var ViewPopupWS = require('../../view_popup/view_popupws').ViewPopupWS;
+var format_money        = require('../../../../common_functions/currency_to_symbol').format_money;
+var buildOauthApps      = require('../../../../common_functions/get_app_details').buildOauthApps;
+var addTooltip          = require('../../../../common_functions/get_app_details').addTooltip;
+var showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
+var japanese_client     = require('../../../../common_functions/country_base').japanese_client;
+var Portfolio           = require('../portfolio').Portfolio;
+var ViewPopupWS         = require('../../view_popup/view_popupws').ViewPopupWS;
 
-var PortfolioWS =  (function() {
+var PortfolioWS = (function() {
     'use strict';
 
     var values,
@@ -19,22 +19,22 @@ var PortfolioWS =  (function() {
         is_first_response;
 
     var init = function() {
-        if(is_initialized) return;
+        if (is_initialized) return;
 
         values = {};
         currency = '';
         oauth_apps = {};
         hidden_class = 'invisible';
-        $("#portfolio-loading").show();
-        showLoadingImage($("#portfolio-loading"));
+        $('#portfolio-loading').show();
+        showLoadingImage($('#portfolio-loading'));
         if (TUser.get().balance) {
             updateBalance();
         }
         is_first_response = true;
-        BinarySocket.send({"portfolio":1});
+        BinarySocket.send({ portfolio: 1 });
         // Subscribe to transactions to auto update new purchases
-        BinarySocket.send({'transaction': 1, 'subscribe': 1});
-        BinarySocket.send({'oauth_apps': 1});
+        BinarySocket.send({ transaction: 1, subscribe: 1 });
+        BinarySocket.send({ oauth_apps: 1 });
         is_initialized = true;
 
         // Display ViewPopup according to contract_id in query string
@@ -47,7 +47,7 @@ var PortfolioWS =  (function() {
     var createPortfolioRow = function(data, is_first) {
         var longCode = typeof module !== 'undefined' ?
             data.longcode :
-            (japanese_client() ? toJapanTimeIfNeeded(void 0, void 0, data.longcode) : data.longcode);
+            (japanese_client() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode);
 
         var new_class = is_first ? '' : 'new';
         $('#portfolio-body').prepend(
@@ -56,20 +56,19 @@ var PortfolioWS =  (function() {
                 '<td class="payout"><strong>' + format_money(data.currency, data.payout) + '</strong></td>' +
                 '<td class="details">' + longCode + '</td>' +
                 '<td class="purchase"><strong>' + format_money(data.currency, data.buy_price) + '</strong></td>' +
-                '<td class="indicative"><strong class="indicative_price">' + '--.--' + '</strong></td>' +
+                '<td class="indicative"><strong class="indicative_price">--.--</strong></td>' +
                 '<td class="button"><button class="button open_contract_detailsws nowrap" contract_id="' + data.contract_id + '">' + page.text.localize('View') + '</button></td>' +
-            '</tr>' +
-            '<tr class="tr-desc ' + new_class + ' ' + data.contract_id + '">' +
+                '</tr>' +
+                '<tr class="tr-desc ' + new_class + ' ' + data.contract_id + '">' +
                 '<td colspan="6">' + longCode + '</td>' +
-            '</tr>')
-        );
+                '</tr>'));
     };
 
     var updateBalance = function() {
-        if ($("#portfolio-balance").length === 0) return;
-        $("#portfolio-balance").text(Portfolio.getBalance(TUser.get().balance, TUser.get().currency));
+        if ($('#portfolio-balance').length === 0) return;
+        $('#portfolio-balance').text(Portfolio.getBalance(TUser.get().balance, TUser.get().currency));
         var $if_balance_zero = $('#if-balance-zero');
-        if(Portfolio.getBalance(TUser.get().balance) > 0 || page.client.is_virtual()) {
+        if (Portfolio.getBalance(TUser.get().balance) > 0 || page.client.is_virtual()) {
             $if_balance_zero.addClass(hidden_class);
         } else {
             $if_balance_zero.removeClass(hidden_class);
@@ -80,20 +79,20 @@ var PortfolioWS =  (function() {
     };
 
     var updatePortfolio = function(data) {
-        if(data.hasOwnProperty('error')) {
+        if (data.hasOwnProperty('error')) {
             errorMessage(data.error.message);
             return;
         }
 
         // no open contracts
-        if(data.portfolio.contracts.length === 0) {
-            $("#portfolio-no-contract").show();
-            $("#portfolio-table").addClass(hidden_class);
+        if (data.portfolio.contracts.length === 0) {
+            $('#portfolio-no-contract').show();
+            $('#portfolio-table').addClass(hidden_class);
         } else {
             /**
              * User has at least one contract
-            **/
-            $("#portfolio-no-contract").hide();
+             **/
+            $('#portfolio-no-contract').hide();
             var portfolio_data;
             $.each(data.portfolio.contracts, function(ci, c) {
                 if (!values.hasOwnProperty(c.contract_id)) {
@@ -107,62 +106,61 @@ var PortfolioWS =  (function() {
                     }, 1000);
                 }
             });
-            $("#portfolio-table").removeClass(hidden_class);
+            $('#portfolio-table').removeClass(hidden_class);
 
             // update footer area data
             updateFooter();
 
             // request "proposal_open_contract"
-            BinarySocket.send({"proposal_open_contract":1, "subscribe":1});
+            BinarySocket.send({ proposal_open_contract: 1, subscribe: 1 });
         }
         // ready to show portfolio table
-        $("#portfolio-loading").hide();
-        $("#portfolio-content").removeClass(hidden_class);
+        $('#portfolio-loading').hide();
+        $('#portfolio-content').removeClass(hidden_class);
         is_first_response = false;
     };
 
     var transactionResponseHandler = function(response) {
-        if(response.hasOwnProperty('error')) {
+        if (response.hasOwnProperty('error')) {
             errorMessage(response.error.message);
-            return;
-        } else if(response.transaction.action === 'buy') {
-            BinarySocket.send({'portfolio': 1});
-        } else if(response.transaction.action === 'sell') {
+        } else if (response.transaction.action === 'buy') {
+            BinarySocket.send({ portfolio: 1 });
+        } else if (response.transaction.action === 'sell') {
             removeContract(response.transaction.contract_id);
         }
     };
 
     var updateIndicative = function(data) {
-        if(data.hasOwnProperty('error') || !values) {
+        if (data.hasOwnProperty('error') || !values) {
             return;
         }
 
         var proposal = Portfolio.getProposalOpenContract(data.proposal_open_contract);
-        if(!values.hasOwnProperty(proposal.contract_id)) { // avoid updating 'values' before the new contract row added to the table
+        // avoid updating 'values' before the new contract row added to the table
+        if (!values.hasOwnProperty(proposal.contract_id)) {
             return;
         }
 
         // force to sell the expired contract, in order to remove from portfolio
-        if(proposal.is_settleable == 1 && !proposal.is_sold) {
-            BinarySocket.send({"sell_expired": 1});
+        if (+proposal.is_settleable === 1 && !proposal.is_sold) {
+            BinarySocket.send({ sell_expired: 1 });
         }
-        var $td = $("#" + proposal.contract_id + " td.indicative");
+        var $td = $('#' + proposal.contract_id + ' td.indicative');
 
         var old_indicative = values[proposal.contract_id].indicative || 0.00;
         values[proposal.contract_id].indicative = proposal.bid_price;
 
         var status_class = '',
             no_resale_html = '';
-        if(proposal.is_sold == 1) {
+        if (+proposal.is_sold === 1) {
             removeContract(proposal.contract_id);
         } else {
-            if(proposal.is_valid_to_sell != 1) {
+            if (+proposal.is_valid_to_sell !== 1) {
                 no_resale_html = '<span>' + page.text.localize('Resale not offered') + '</span>';
-                $td.addClass("no_resale");
-            }
-            else {
+                $td.addClass('no_resale');
+            } else {
                 status_class = values[proposal.contract_id].indicative < old_indicative ? ' price_moved_down' : (values[proposal.contract_id].indicative > old_indicative ? ' price_moved_up' : '');
-                $td.removeClass("no_resale");
+                $td.removeClass('no_resale');
             }
             $td.html('<strong class="indicative_price' + status_class + '"">' + format_money(proposal.currency, values[proposal.contract_id].indicative) + '</strong>' + no_resale_html);
         }
@@ -176,7 +174,7 @@ var PortfolioWS =  (function() {
     };
 
     var removeContract = function(contract_id) {
-        delete(values[contract_id]);
+        delete (values[contract_id]);
         $('tr.' + contract_id)
             .removeClass('new')
             .css('opacity', '0.5')
@@ -185,20 +183,20 @@ var PortfolioWS =  (function() {
                 if ($('#portfolio-body tr').length === 0) {
                     $('#portfolio-table').addClass(hidden_class);
                     $('#cost-of-open-positions, #value-of-open-positions').text('');
-                    $("#portfolio-no-contract").show();
+                    $('#portfolio-no-contract').show();
                 }
             });
         updateFooter();
     };
 
     var updateFooter = function() {
-        $("#cost-of-open-positions").text(format_money(currency, Portfolio.getSumPurchase(values)));
-        $("#value-of-open-positions").text(format_money(currency, Portfolio.getIndicativeSum(values)));
+        $('#cost-of-open-positions').text(format_money(currency, Portfolio.getSumPurchase(values)));
+        $('#value-of-open-positions').text(format_money(currency, Portfolio.getIndicativeSum(values)));
     };
 
     var errorMessage = function(msg) {
         var $err = $('#portfolio #error-msg');
-        if(msg) {
+        if (msg) {
             $err.removeClass(hidden_class).text(msg);
         } else {
             $err.addClass(hidden_class).text('');
@@ -208,51 +206,50 @@ var PortfolioWS =  (function() {
     var onLoad = function() {
         if (!/trading\.html/.test(window.location.pathname)) {
             BinarySocket.init({
-                onmessage: function(msg){
+                onmessage: function(msg) {
                     var response = JSON.parse(msg.data),
                         msg_type = response.msg_type;
 
-                    switch(msg_type) {
-                        case "portfolio":
+                    switch (msg_type) {
+                        case 'portfolio':
                             PortfolioWS.updatePortfolio(response);
                             break;
-                        case "transaction":
+                        case 'transaction':
                             PortfolioWS.transactionResponseHandler(response);
                             break;
-                        case "proposal_open_contract":
+                        case 'proposal_open_contract':
                             PortfolioWS.updateIndicative(response);
                             break;
-                        case "oauth_apps":
+                        case 'oauth_apps':
                             PortfolioWS.updateOAuthApps(response);
                             break;
                         default:
                             // msg_type is not what PortfolioWS handles, so ignore it.
                     }
-                }
+                },
             });
         }
         PortfolioWS.init();
     };
 
     var onUnload = function() {
-        BinarySocket.send({"forget_all": "proposal_open_contract"});
-        BinarySocket.send({"forget_all": "transaction"});
+        BinarySocket.send({ forget_all: 'proposal_open_contract' });
+        BinarySocket.send({ forget_all: 'transaction' });
         $('#portfolio-body').empty();
-        $("#portfolio-content").addClass(hidden_class);
+        $('#portfolio-content').addClass(hidden_class);
         is_initialized = false;
     };
 
     return {
-        init: init,
-        updateBalance: updateBalance,
-        updatePortfolio: updatePortfolio,
-        updateIndicative: updateIndicative,
-        updateOAuthApps: updateOAuthApps,
+        init                      : init,
+        updateBalance             : updateBalance,
+        updatePortfolio           : updatePortfolio,
+        updateIndicative          : updateIndicative,
+        updateOAuthApps           : updateOAuthApps,
         transactionResponseHandler: transactionResponseHandler,
-        onLoad: onLoad,
-        onUnload: onUnload
+        onLoad                    : onLoad,
+        onUnload                  : onUnload,
     };
-
 })();
 
 module.exports = {
