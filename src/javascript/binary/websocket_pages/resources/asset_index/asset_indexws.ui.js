@@ -8,7 +8,7 @@ var AssetIndex             = require('../asset_indexws').AssetIndex;
 var State                  = require('../../../base/storage').State;
 
 var AssetIndexUI = (function() {
-    "use strict";
+    'use strict';
 
     var $container,
         $tabs,
@@ -43,7 +43,7 @@ var AssetIndexUI = (function() {
     };
 
     var populateTable = function() {
-        if(!activeSymbols || !assetIndex) return;
+        if (!activeSymbols || !assetIndex) return;
 
         $('#errorMsg').addClass('hidden');
         assetIndex = AssetIndex.getAssetIndexData(assetIndex, activeSymbols);
@@ -51,27 +51,26 @@ var AssetIndexUI = (function() {
         $tabs = $('<ul/>');
         $contents = $('<div/>');
 
-        for(var i = 0; i < assetIndex.length; i++) {
+        for (var i = 0; i < assetIndex.length; i++) {
             var assetItem  = assetIndex[i];
             var symbolInfo = assetItem[3];
-            if(!symbolInfo) {
-                continue;
+            if (symbolInfo) {
+                var $submarketTable = getSubmarketTable(assetItem, symbolInfo);
+                $submarketTable.find('tbody').append(createSubmarketTableRow(assetItem, symbolInfo));
             }
-            var $submarketTable = getSubmarketTable(assetItem, symbolInfo);
-            $submarketTable.find('tbody').append(createSubmarketTableRow(assetItem, symbolInfo));
         }
 
         $container
             .empty()
             .append($tabs)
-            .append($('<div/>', {class: 'gr-padding-10'}))
+            .append($('<div/>', { class: 'gr-padding-10' }))
             .append($contents.children());
 
         $container.tabs('destroy').tabs();
 
         if (isFramed) {
             $container.find('ul').hide();
-            $('<div/>', {class: 'center-text'}).append(jqueryuiTabsToDropdown($container)).prependTo($container);
+            $('<div/>', { class: 'center-text' }).append(jqueryuiTabsToDropdown($container)).prependTo($container);
         }
     };
 
@@ -80,13 +79,13 @@ var AssetIndexUI = (function() {
         var submarketID = 'submarket-' + symbolInfo.submarket;
 
         var $table = $contents.find('#' + submarketID);
-        if($table.length === 0) {
+        if ($table.length === 0) {
             // Create the table for this submarket
             var $market = $contents.find('#' + marketID);
-            if($market.length === 0) {
+            if ($market.length === 0) {
                 // Create the market and tab elements
-                $market = $('<div/>', {id: marketID});
-                $tabs.append($('<li/>').append($('<a/>', {href: '#' + marketID, text: symbolInfo.market_display_name, id: 'outline'})));
+                $market = $('<div/>', { id: marketID });
+                $tabs.append($('<li/>').append($('<a/>', { href: '#' + marketID, text: symbolInfo.market_display_name, id: 'outline' })));
             }
             $table = createEmptyTable(assetItem, symbolInfo, submarketID);
             $market.append($table);
@@ -98,33 +97,33 @@ var AssetIndexUI = (function() {
 
     var createSubmarketTableRow = function(assetItem, symbolInfo) {
         var cells   = [symbolInfo.display_name],
-            columns = ["asset"];
+            columns = ['asset'];
 
         var marketCols = marketColumns[symbolInfo.market],
             assetCells = assetItem[4];
-        for(var i = 1; i < marketCols.columns.length; i++) {
+        for (var i = 1; i < marketCols.columns.length; i++) {
             var prop = marketCols.columns[i];
-            if(prop.length > 0) {
+            if (prop.length > 0) {
                 cells.push(prop in assetCells ? assetCells[prop] : '--');
                 columns.push(prop);
             }
         }
 
-        return Table.createFlexTableRow(cells, columns, "data");
+        return Table.createFlexTableRow(cells, columns, 'data');
     };
 
     var createEmptyTable = function(assetItem, symbolInfo, submarketID) {
         var market = symbolInfo.market;
 
         var metadata = {
-            id: submarketID,
-            cols: marketColumns[market].columns
+            id  : submarketID,
+            cols: marketColumns[market].columns,
         };
 
         var $submarketTable = Table.createFlexTable([], metadata, marketColumns[market].header);
 
-        var $submarketHeader = $('<tr/>', {class: 'flex-tr'})
-            .append($('<th/>', {class: 'flex-tr-child submarket-name', colspan: marketColumns[market].columns.length, text: symbolInfo.submarket_display_name}));
+        var $submarketHeader = $('<tr/>', { class: 'flex-tr' })
+            .append($('<th/>', { class: 'flex-tr-child submarket-name', colspan: marketColumns[market].columns.length, text: symbolInfo.submarket_display_name }));
         $submarketTable.find('thead').prepend($submarketHeader);
 
         return $submarketTable;
@@ -138,32 +137,31 @@ var AssetIndexUI = (function() {
                 if (response) {
                     responseHandler(response);
                 }
-            }
+            },
         });
     };
 
     var responseHandler = function(response) {
         var msg_type = response.msg_type;
-        if (msg_type === "asset_index") {
+        if (msg_type === 'asset_index') {
             AssetIndexUI.setAssetIndex(response);
-        }
-        else if (msg_type === "active_symbols") {
+        } else if (msg_type === 'active_symbols') {
             AssetIndexUI.setActiveSymbols(response);
         }
     };
 
     return {
-        init: init,
+        init            : init,
         setActiveSymbols: function(response) {
             activeSymbols = response.active_symbols;
-            if(assetIndex) populateTable();
+            if (assetIndex) populateTable();
         },
         setAssetIndex: function(response) {
             assetIndex = response.asset_index;
-            if(activeSymbols) populateTable();
-        }
+            if (activeSymbols) populateTable();
+        },
     };
-}());
+})();
 
 module.exports = {
     AssetIndexUI: AssetIndexUI,
