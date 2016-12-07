@@ -136,8 +136,9 @@ var PortfolioWS = (function() {
         }
 
         var proposal = Portfolio.getProposalOpenContract(data.proposal_open_contract);
-        if (!values.hasOwnProperty(proposal.contract_id)) { // avoid updating 'values'
-            return;                                         // before the new contract row added to the table
+        // avoid updating 'values' before the new contract row added to the table
+        if (!values.hasOwnProperty(proposal.contract_id)) {
+            return;                                       
         }
 
         // force to sell the expired contract, in order to remove from portfolio
