@@ -33,23 +33,23 @@ var ViewPopupWS = (function() {
         hiddenClass;
 
     var init = function(button) {
-        btnView = button;
-        contractID = $(btnView).attr('contract_id');
-        contractType = '';
-        contract = {};
-        isSold = false;
-        isSellClicked = false;
-        chartStarted = false;
-        tickForgotten = false;
-        candleForgotten = false;
-        chartUpdated = false;
+        btnView              = button;
+        contractID           = $(btnView).attr('contract_id');
+        contractType         = '';
+        contract             = {};
+        isSold               = false;
+        isSellClicked        = false;
+        chartStarted         = false;
+        tickForgotten        = false;
+        candleForgotten      = false;
+        chartUpdated         = false;
         corporateActionEvent = false;
-        corporateActionSent = false;
-        $Container = '';
-        popupboxID = 'inpage_popup_content_box';
-        wrapperID = 'sell_content_wrapper';
-        winStatusID = 'contract_win_status';
-        hiddenClass = 'hidden';
+        corporateActionSent  = false;
+        $Container           = '';
+        popupboxID           = 'inpage_popup_content_box';
+        wrapperID            = 'sell_content_wrapper';
+        winStatusID          = 'contract_win_status';
+        hiddenClass          = 'hidden';
 
         if (btnView) {
             ViewPopupUI.disable_button($(btnView));
@@ -121,11 +121,11 @@ var ViewPopupWS = (function() {
     var spreadUpdate = function() {
         spreadSetValues();
 
-        containerSetText('status', contract.status, { class: contract.is_ended ? 'loss' : 'profit' });
-        containerSetText('stop_loss_level', contract.stop_loss_level);
+        containerSetText('status',            contract.status, { class: contract.is_ended ? 'loss' : 'profit' });
+        containerSetText('stop_loss_level',   contract.stop_loss_level);
         containerSetText('stop_profit_level', contract.stop_profit_level);
-        containerSetText('pl_value', parseFloat(contract.current_value_in_dollar).toFixed(2), { class: contract.current_value_in_dollar * 1 >= 0 ? 'profit' : 'loss' });
-        containerSetText('pl_point', parseFloat(contract.current_value_in_point).toFixed(2));
+        containerSetText('pl_value',          parseFloat(contract.current_value_in_dollar).toFixed(2), { class: contract.current_value_in_dollar * 1 >= 0 ? 'profit' : 'loss' });
+        containerSetText('pl_point',          parseFloat(contract.current_value_in_point).toFixed(2));
 
         if (!contract.is_ended) {
             containerSetText('sell_level', contract.current_level);
@@ -149,14 +149,14 @@ var ViewPopupWS = (function() {
         $Container.prepend($('<div/>', { id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: page.text.localize('Contract Information') }));
 
         var $table = $('<table><tbody></tbody></table>');
-        var tbody = spreadRow('Status', 'status', (contract.is_ended ? 'loss' : 'profit')) +
-            spreadRow('Entry Level', 'entry_level') +
-            spreadRow('Exit Level', 'exit_level', '', '', !contract.is_ended) +
-            spreadRow('Stop Loss Level', 'stop_loss_level') +
+        var tbody = spreadRow('Status',    'status', (contract.is_ended ? 'loss' : 'profit')) +
+            spreadRow('Entry Level',       'entry_level') +
+            spreadRow('Exit Level',        'exit_level', '', '', !contract.is_ended) +
+            spreadRow('Stop Loss Level',   'stop_loss_level') +
             spreadRow('Stop Profit Level', 'stop_profit_level') +
-            spreadRow('Current Level', 'sell_level', '', '', contract.is_ended) +
-            spreadRow('Amount Per Point', 'per_point') +
-            spreadRow('Profit/Loss', 'pl_value', (contract.profit >= 0 ? 'profit' : 'loss'), ' (' + contract.currency + ')') +
+            spreadRow('Current Level',     'sell_level', '', '', contract.is_ended) +
+            spreadRow('Amount Per Point',  'per_point') +
+            spreadRow('Profit/Loss',       'pl_value', (contract.profit >= 0 ? 'profit' : 'loss'), ' (' + contract.currency + ')') +
             spreadRow('Profit/Loss (points)', 'pl_point');
 
         $table.find('tbody').append(tbody);
@@ -184,11 +184,11 @@ var ViewPopupWS = (function() {
             $Container = normalMakeTemplate();
         }
 
-        containerSetText('trade_details_contract_id', contract.contract_id);
+        containerSetText('trade_details_contract_id',    contract.contract_id);
 
-        containerSetText('trade_details_start_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_start)));
+        containerSetText('trade_details_start_date',     toJapanTimeIfNeeded(epochToDateTime(contract.date_start)));
         if (document.getElementById('trade_details_end_date')) containerSetText('trade_details_end_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_expiry)));
-        containerSetText('trade_details_payout', format_money(contract.currency, contract.payout));
+        containerSetText('trade_details_payout',         format_money(contract.currency, contract.payout));
         containerSetText('trade_details_purchase_price', format_money(contract.currency, contract.buy_price));
 
         normalUpdateTimers();
@@ -207,10 +207,10 @@ var ViewPopupWS = (function() {
                              contract.bid_price : null;
 
         if (contract.barrier_count > 1) {
-            containerSetText('trade_details_barrier', contract.high_barrier, '', true);
+            containerSetText('trade_details_barrier',     contract.high_barrier, '', true);
             containerSetText('trade_details_barrier_low', contract.low_barrier, '', true);
         } else if (contract.barrier) {
-            containerSetText('trade_details_barrier', contract.entry_tick_time ?
+            containerSetText('trade_details_barrier',     contract.entry_tick_time ?
                 (contract.contract_type === 'DIGITMATCH' ? page.text.localize('Equals') + ' ' + contract.barrier :
                     contract.contract_type === 'DIGITDIFF' ? page.text.localize('Not') + ' ' + contract.barrier :
                     contract.barrier) : '-',
@@ -221,9 +221,9 @@ var ViewPopupWS = (function() {
         var currentSpotTime = !is_ended ? contract.current_spot_time
                                         : (user_sold ? contract.sell_spot_time : contract.exit_tick_time);
 
-        containerSetText('trade_details_ref_id', contract.transaction_ids.buy + (contract.transaction_ids.sell ? ' - ' + contract.transaction_ids.sell : ''));
-        containerSetText('trade_details_current_date', toJapanTimeIfNeeded(epochToDateTime(currentSpotTime)));
-        containerSetText('trade_details_current_spot', currentSpot || page.text.localize('not available'));
+        containerSetText('trade_details_ref_id',           contract.transaction_ids.buy + (contract.transaction_ids.sell ? ' - ' + contract.transaction_ids.sell : ''));
+        containerSetText('trade_details_current_date',     toJapanTimeIfNeeded(epochToDateTime(currentSpotTime)));
+        containerSetText('trade_details_current_spot',     currentSpot || page.text.localize('not available'));
         containerSetText('trade_details_indicative_price', indicative_price ? format_money(contract.currency, indicative_price) : '-');
 
         var profit_loss;
@@ -326,9 +326,9 @@ var ViewPopupWS = (function() {
 
     // var normalContractEnded = function(is_win) {
     var normalContractEnded = function() {
-        containerSetText('trade_details_current_title', page.text.localize(contract.sell_spot_time < contract.date_expiry ? 'Contract Sold' : 'Contract Expiry'));
-        containerSetText('trade_details_spot_label', page.text.localize('Exit Spot'));
-        containerSetText('trade_details_spottime_label', page.text.localize('Exit Spot Time'));
+        containerSetText('trade_details_current_title',    page.text.localize(contract.sell_spot_time < contract.date_expiry ? 'Contract Sold' : 'Contract Expiry'));
+        containerSetText('trade_details_spot_label',       page.text.localize('Exit Spot'));
+        containerSetText('trade_details_spottime_label',   page.text.localize('Exit Spot Time'));
         containerSetText('trade_details_indicative_label', page.text.localize('Price'));
         // show validation error if contract is not settled yet
         if (!(contract.is_settleable && !contract.is_sold)) {
