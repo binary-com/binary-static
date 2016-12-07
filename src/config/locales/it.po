@@ -787,6 +787,9 @@ msgstr "Un diploma di laurea in Marketing o Informatica è un vantaggio"
 msgid "A university degree or accredited translation certification preferred"
 msgstr "Un diploma di laurea o certificazione accreditata per le traduzioni"
 
+msgid "AM"
+msgstr ""
+
 msgid "API"
 msgstr "API"
 
@@ -2993,6 +2996,9 @@ msgstr "I contratti Higher/Lower verranno rimborsati al prezzo d'acquisto nel ca
 msgid "Higher/Lower trades"
 msgstr "Trade High/Low"
 
+msgid "Hour"
+msgstr ""
+
 msgid "Housewife / Househusband"
 msgstr "Housewife / Househusband"
 
@@ -4329,6 +4335,11 @@ msgstr "Sono richiesti minimo %1 caratteri."
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Minimo sei lettere minuscole e maiuscole con numeri"
 
+#, fuzzy
+#| msgid "minute"
+msgid "Minute"
+msgstr "minuto"
+
 msgid "Miss"
 msgstr "Sig.ra"
 
@@ -4790,6 +4801,9 @@ msgstr "La proprietà e il contenuto del sito di %1 rimane nostra e non potrà e
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
 msgstr "La proprietà, il contenuto e la responsabilità per i siti affiliati sono di responsabilità esclusiva dell'affiliato. Sarai l'unico responsabile per lo sviluppo, funzionamento e manutenzione del tuo sito e di tutto il materiale in esso contenuto. Ci indennizzerai e ci terrai indenni da qualsiasi reclamo, danno e spesa (incluse, senza limitazioni, le spese legali) connesso allo sviluppo, al funzionamento, alla manutenzione e ai contenuti del tuo sito."
 
+msgid "PM"
+msgstr ""
+
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "Partecipare nei mercati Forex, azionari o in quelli di materie prime?"
 
@@ -4969,10 +4983,14 @@ msgstr "Inserisci un importo valido."
 msgid "Please enter an integer value"
 msgstr "Inserisci un numero intero"
 
-msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr "Inserisci la data nel formato ANNO-MESE-GIORNO HH:mm (orario locale)."
 
-msgid "Please enter date in the format YYYY-MM-DD."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD."
+msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "Inserisci la data nel formato ANNO-MESE-GIORNO."
 
 msgid "Please enter your current password."
@@ -6619,6 +6637,11 @@ msgstr "Livello"
 
 msgid "Time"
 msgstr "Orario"
+
+#, fuzzy
+#| msgid "Start time is in the future."
+msgid "Time is in the wrong format."
+msgstr "L'orario di inizio è nel futuro."
 
 msgid "Time out until"
 msgstr "Tempo scaduto fino a"
@@ -10835,9 +10858,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 #~ msgid "Start time %1 must be before end time %2"
 #~ msgstr "L'orario di inizio %1 deve essere antecedente all'orario di fine %2"
-
-#~ msgid "Start time is in the future."
-#~ msgstr "L'orario di inizio è nel futuro."
 
 #~ msgid "Start time is in the past"
 #~ msgstr "L'orario di inizio è già passato"
