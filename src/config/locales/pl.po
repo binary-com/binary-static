@@ -793,6 +793,9 @@ msgstr "Ukończone studia na kierunku Marketing lub Informatyka będą dodatkowy
 msgid "A university degree or accredited translation certification preferred"
 msgstr "Preferujemy osoby, które ukończyły studia tłumaczeniowe lub posiadają certyfikaty z tej dziedziny"
 
+msgid "AM"
+msgstr ""
+
 msgid "API"
 msgstr "API"
 
@@ -2997,6 +3000,9 @@ msgstr "Kwota zakupu kontraktu typu „wyższe/niższe” zostanie zwrócona, je
 msgid "Higher/Lower trades"
 msgstr "Zakłady wyższy/niższy"
 
+msgid "Hour"
+msgstr ""
+
 msgid "Housewife / Househusband"
 msgstr "Housewife / Househusband"
 
@@ -4333,6 +4339,11 @@ msgstr "Minimalna liczba znaków: %1."
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Minimum 6 małych i wielkich liter oraz cyfr"
 
+#, fuzzy
+#| msgid "Minutes"
+msgid "Minute"
+msgstr "Minuty"
+
 msgid "Miss"
 msgstr "Pani"
 
@@ -4792,6 +4803,9 @@ msgstr "Treść strony internetowej %1 pozostaje własnością Firmy i nie zosta
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
 msgstr "Odpowiedzialność za własność, treść i wiarygodność stron partnerskich ponosi wyłącznie partner. Partner jest w pełni odpowiedzialny za kodowanie, działanie i utrzymanie swojej strony internetowej i wszystkich materiałów, jakie się na niej pojawiają. Partner nie będzie pociągał Firmy do odpowiedzialności w związku z jakimikolwiek roszczeniami, odszkodowaniami czy wydatkami (w tym kosztami postępowań sądowych) związanymi z kodowaniem, działaniem i utrzymaniem swojej strony, czy też jej zawartością."
 
+msgid "PM"
+msgstr ""
+
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "Udział w rynkach walutowych, towarowych i na giełdzie?"
 
@@ -4969,10 +4983,14 @@ msgstr "Wprowadź prawidłową kwotę."
 msgid "Please enter an integer value"
 msgstr "Wpisz liczbę całkowitą"
 
-msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr "Wpisz datę i godzinę w formacie RRRR-MM-DD GG:mm (czasu lokalnego)."
 
-msgid "Please enter date in the format YYYY-MM-DD."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD."
+msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "Wpisz datę w formacie RRRR-MM-DD."
 
 msgid "Please enter your current password."
@@ -6611,6 +6629,11 @@ msgstr "Poziom"
 
 msgid "Time"
 msgstr "Godzina"
+
+#, fuzzy
+#| msgid "Start time is in the future."
+msgid "Time is in the wrong format."
+msgstr "Czas rozpoczęcia w przyszłości."
 
 msgid "Time out until"
 msgstr "Przekroczono limit czasu do"
@@ -10819,9 +10842,6 @@ msgstr "Akceptacja regulaminu"
 
 #~ msgid "Start time %1 must be before end time %2"
 #~ msgstr "Czas rozpoczęcia %1 musi przypadać przed godziną zakończenia %2"
-
-#~ msgid "Start time is in the future."
-#~ msgstr "Czas rozpoczęcia w przyszłości."
 
 #~ msgid "Start time is in the past"
 #~ msgstr "Czas rozpoczęcia w przeszłości"
@@ -18770,9 +18790,6 @@ msgstr "Akceptacja regulaminu"
 
 #~ msgid "Majors"
 #~ msgstr "Główne"
-
-#~ msgid "Minutes"
-#~ msgstr "Minuty"
 
 #~ msgid "Normalize to 100"
 #~ msgstr "Normalizuj do 100"
