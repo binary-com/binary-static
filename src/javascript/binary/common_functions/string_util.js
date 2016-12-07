@@ -25,8 +25,8 @@ var toReadableFormat = function(date) {
 };
 
 module.exports = {
-    toISOFormat: toISOFormat,
+    toISOFormat     : toISOFormat,
     toReadableFormat: toReadableFormat,
-    toTitleCase: toTitleCase,
-    addComma   : addComma,
+    toTitleCase     : toTitleCase,
+    addComma        : addComma,
 };
