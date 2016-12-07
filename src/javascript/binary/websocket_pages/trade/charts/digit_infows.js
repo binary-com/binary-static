@@ -27,11 +27,10 @@ var DigitInfoWS = function() {
         tooltip: {
             borderWidth: 1,
             formatter  : function() {
-                var that = this;
-                var total = $("select[name='tick_count']").val();
-                var percentage = (that.y / total) * 100;
-                return '<b>Digit:</b> ' + that.x + '<br/>' +
-                '<b>Percentage:</b> ' + percentage.toFixed(1) + ' %';
+                var that = this,
+                    total = $("select[name='tick_count']").val(),
+                    percentage = (that.y / total) * 100;
+                return '<b>Digit:</b> ' + that.x + '<br/><b>Percentage:</b> ' + percentage.toFixed(1) + ' %';
             },
         },
         plotOptions: {
@@ -107,7 +106,7 @@ DigitInfoWS.prototype = {
         underlyings = underlyings.sort();
         var elem = '<select class="smallfont" name="underlying">';
         for (var i = 0; i < underlyings.length; i++) {
-            elem = elem + '<option value="' + underlyings[i] + '">' + page.text.localize(symbols[underlyings[i]]) + '</option>';
+            elem += '<option value="' + underlyings[i] + '">' + page.text.localize(symbols[underlyings[i]]) + '</option>';
         }
         elem += '</select>';
         var contentId = document.getElementById('tab_last_digit-content'),
@@ -135,14 +134,16 @@ DigitInfoWS.prototype = {
 
         var get_latest = function() {
             var symbol = $('[name=underlying] option:selected').val();
-            var request = { ticks_history: symbol,
+            var request = {
+                ticks_history: symbol,
                 end          : 'latest',
                 count        : $('[name=tick_count]', form).val(),
-                req_id       : 2 };
+                req_id       : 2,
+            };
             if (that.chart.series[0].name !== symbol) {
                 if ($('#underlying option:selected').val() !== $('[name=underlying]', form).val()) {
                     request.subscribe = 1;
-                    request.style = 'ticks';
+                    request.style     = 'ticks';
                 }
                 if (that.stream_id !== null) {
                     BinarySocket.send({ forget: that.stream_id });
@@ -151,8 +152,8 @@ DigitInfoWS.prototype = {
             }
             BinarySocket.send(request);
         };
-        $('[name=underlying]', form).on('change',  get_latest).addClass('unbind_later');
-        $('[name=tick_count]', form).on('change',  get_latest).addClass('unbind_later');
+        $('[name=underlying]', form).on('change', get_latest).addClass('unbind_later');
+        $('[name=tick_count]', form).on('change', get_latest).addClass('unbind_later');
     },
     show_chart: function(underlying, spots) {
         if (typeof spots === 'undefined' || spots.length <= 0) {
@@ -186,7 +187,7 @@ DigitInfoWS.prototype = {
     },
     update: function(symbol, latest_spot) {
         if (typeof this.chart === 'undefined') {
-            return;
+            return null;
         }
 
         var series = this.chart.series[0]; // Where we put the final data.
@@ -203,7 +204,7 @@ DigitInfoWS.prototype = {
         // This is especially useful on first reuqest, but maybe in other ways.
         var filtered_spots = [];
         var digit = 10,
-            filterFunc = function (el) { return el === digit; };
+            filterFunc = function (el) { return +el === digit; };
         var min_max_counter = [];
         while (digit--) {
             var val = this.spots.filter(filterFunc).length;
@@ -223,9 +224,9 @@ DigitInfoWS.prototype = {
             if (this.prev_min_index === -1) {
                 this.prev_min_index = min_index;
             } else if (this.prev_min_index !== min_index) {
-                if (typeof (filtered_spots[this.prev_min_index]) === 'object') {
+                if (typeof filtered_spots[this.prev_min_index] === 'object') {
                     filtered_spots[this.prev_min_index] = { y: filtered_spots[this.prev_min_index].y, color: '#e1f0fb' };
-                } else                    {
+                } else {
                     filtered_spots[this.prev_min_index] = { y: filtered_spots[this.prev_min_index], color: '#e1f0fb' };
                 }
                 this.prev_min_index = min_index;
@@ -237,15 +238,15 @@ DigitInfoWS.prototype = {
             if (this.prev_max_index === -1) {
                 this.prev_max_index = max_index;
             } else if (this.prev_max_index !== max_index) {
-                if (typeof (filtered_spots[this.prev_max_index]) === 'object') {
+                if (typeof filtered_spots[this.prev_max_index] === 'object') {
                     filtered_spots[this.prev_max_index] = { y: filtered_spots[this.prev_max_index].y, color: '#e1f0fb' };
-                } else                    {
+                } else {
                     filtered_spots[this.prev_max_index] = { y: filtered_spots[this.prev_max_index], color: '#e1f0fb' };
                 }
                 this.prev_max_index = max_index;
             }
         }
-        series.setData(filtered_spots);
+        return series.setData(filtered_spots);
     },
     show_tab: function() {
         var tab_last_digit = $('#tab_last_digit');

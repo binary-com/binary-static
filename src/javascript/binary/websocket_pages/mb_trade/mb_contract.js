@@ -249,8 +249,8 @@ var MBContract = (function() {
             periods   = MBDefaults.get('period').split('_');
         contracts_for_response.contracts_for.available.forEach(function(c) {
             if (c.contract_category === category && c.trading_period &&
-                    c.trading_period.date_start.epoch  === periods[0] &&
-                    c.trading_period.date_expiry.epoch === periods[1]) {
+                    +c.trading_period.date_start.epoch  === +periods[0] &&
+                    +c.trading_period.date_expiry.epoch === +periods[1]) {
                 contracts.push(c);
             }
         });

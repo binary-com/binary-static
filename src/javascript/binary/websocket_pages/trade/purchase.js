@@ -21,21 +21,21 @@ var Purchase = (function () {
         purchase_data = details;
 
         var receipt = details.buy,
-            passthrough = details.echo_req.passthrough,
-            container = document.getElementById('contract_confirmation_container'),
-            message_container = document.getElementById('confirmation_message'),
-            heading = document.getElementById('contract_purchase_heading'),
-            descr = document.getElementById('contract_purchase_descr'),
-            barrier_element = document.getElementById('contract_purchase_barrier'),
-            reference = document.getElementById('contract_purchase_reference'),
-            chart = document.getElementById('tick_chart'),
-            payout = document.getElementById('contract_purchase_payout'),
-            cost = document.getElementById('contract_purchase_cost'),
-            profit = document.getElementById('contract_purchase_profit'),
-            spots = document.getElementById('contract_purchase_spots'),
+            passthrough        = details.echo_req.passthrough,
+            container          = document.getElementById('contract_confirmation_container'),
+            message_container  = document.getElementById('confirmation_message'),
+            heading            = document.getElementById('contract_purchase_heading'),
+            descr              = document.getElementById('contract_purchase_descr'),
+            barrier_element    = document.getElementById('contract_purchase_barrier'),
+            reference          = document.getElementById('contract_purchase_reference'),
+            chart              = document.getElementById('tick_chart'),
+            payout             = document.getElementById('contract_purchase_payout'),
+            cost               = document.getElementById('contract_purchase_cost'),
+            profit             = document.getElementById('contract_purchase_profit'),
+            spots              = document.getElementById('contract_purchase_spots'),
             confirmation_error = document.getElementById('confirmation_error'),
-            contracts_list = document.getElementById('contracts_list'),
-            button = document.getElementById('contract_purchase_button');
+            contracts_list     = document.getElementById('contracts_list'),
+            button             = document.getElementById('contract_purchase_button');
 
         var error = details.error;
         var show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian');
@@ -161,19 +161,20 @@ var Purchase = (function () {
             return;
         }
 
-        if (!(purchase_data.echo_req && purchase_data.echo_req.passthrough)) {
+        var duration = purchase_data.echo_req && purchase_data.echo_req.passthrough ?
+                        purchase_data.echo_req.passthrough.duration : null;
+
+        if (!duration) {
             return;
         }
-
-        var duration = purchase_data.echo_req.passthrough.duration;
 
         var spots = document.getElementById('contract_purchase_spots');
         var spots2 = Tick.spots();
         var epoches = Object.keys(spots2).sort(function(a, b) { return a - b; });
         if (spots) spots.textContent = '';
 
-        var d1;
-        var replace = function(d) { d1 = d; return '<b>' + d + '</b>'; };
+        var last_digit;
+        var replace = function(d) { last_digit = d; return '<b>' + d + '</b>'; };
         for (var s = 0; s < epoches.length; s++) {
             var tick_d = {
                 epoch: epoches[s],
@@ -207,20 +208,20 @@ var Purchase = (function () {
                 spots.appendChild(fragment);
                 spots.scrollTop = spots.scrollHeight;
 
-                if (d1 && duration === 1) {
+                if (last_digit && duration === 1) {
                     var contract_status,
                         final_price,
                         pnl,
                         pass_contract_type = purchase_data.echo_req.passthrough.contract_type,
                         pass_barrier       = purchase_data.echo_req.passthrough.barrier;
 
-                    if  (
-                        (pass_contract_type === 'DIGITMATCH' && d1 === pass_barrier) ||
-                        (pass_contract_type === 'DIGITDIFF'  && d1 !== pass_barrier) ||
-                        (pass_contract_type === 'DIGITEVEN'  && d1 % 2 === 0) ||
-                        (pass_contract_type === 'DIGITODD'   && d1 % 2) ||
-                        (pass_contract_type === 'DIGITOVER'  && d1 > pass_barrier) ||
-                        (pass_contract_type === 'DIGITUNDER' && d1 < pass_barrier)
+                    if (
+                        (pass_contract_type === 'DIGITMATCH' && +last_digit === +pass_barrier) ||
+                        (pass_contract_type === 'DIGITDIFF'  && +last_digit !== +pass_barrier) ||
+                        (pass_contract_type === 'DIGITEVEN'  && +last_digit % 2 === 0) ||
+                        (pass_contract_type === 'DIGITODD'   && +last_digit % 2) ||
+                        (pass_contract_type === 'DIGITOVER'  && +last_digit > pass_barrier) ||
+                        (pass_contract_type === 'DIGITUNDER' && +last_digit < pass_barrier)
                     ) {
                         spots.className = 'won';
                         final_price = $('#contract_purchase_payout p').text();

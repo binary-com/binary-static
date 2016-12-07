@@ -731,7 +731,7 @@ Header.prototype = {
                 type += ' Account';
 
                 // default account
-                if (+curr_id === +this.client.loginid) {
+                if (curr_id === this.client.loginid) {
                     $('.account-type').html(page.text.localize(type));
                     $('.account-id').html(curr_id);
                 } else {

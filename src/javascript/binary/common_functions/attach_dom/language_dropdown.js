@@ -4,11 +4,7 @@ function create_language_drop_down(languages) {
     var language_select_element = document.getElementById('language_select');
     if (!language_select_element || language_select_element.children.length !== 0) return;
     languages.sort(function(a, b) {
-        if (a === 'EN' || a < b) {
-            return -1;
-        }
-
-        return 1;
+        return (a === 'EN' || a < b) ? -1 : 1;
     });
     for (var i = 0; i < languages.length; i++) {
         if (languages[i] !== 'JA') {

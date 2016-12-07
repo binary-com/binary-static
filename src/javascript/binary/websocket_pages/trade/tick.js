@@ -60,7 +60,7 @@ var Tick = (function() {
             message = quote;
         }
 
-        if (parseFloat(message) !== message) {
+        if (parseFloat(message) !== +message) {
             spotElement.className = 'error';
         } else {
             spotElement.classList.remove('error');

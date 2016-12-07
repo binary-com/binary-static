@@ -22,7 +22,7 @@ var AccountTransferWS = (function() {
             e.preventDefault();
             e.stopPropagation();
 
-            if (validateForm() === false) {
+            if (!validateForm()) {
                 return;
             }
 
