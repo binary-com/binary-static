@@ -44,7 +44,7 @@ var TradingEvents = (function () {
         var make_price_request = 0;
         if (value === 'endtime') {
             Durations.displayEndTime();
-            if(Defaults.get('expiry_date')){
+            if (Defaults.get('expiry_date')) {
                 Durations.selectEndDate(moment(Defaults.get('expiry_date')));
                 make_price_request = -1;
             }
