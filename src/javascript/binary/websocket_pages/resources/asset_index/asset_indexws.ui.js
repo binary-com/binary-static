@@ -39,6 +39,7 @@ var AssetIndexUI = (function() {
             initSocket();
             AssetIndexData.sendRequest(!activeSymbols);
         }
+        $container.tabs();
     };
 
     var populateTable = function() {
