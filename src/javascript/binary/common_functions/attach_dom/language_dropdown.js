@@ -6,9 +6,9 @@ function create_language_drop_down(languages) {
     languages.sort(function(a, b) {
         if (a === 'EN' || a < b) {
             return -1;
-        } else {
-            return 1;
         }
+
+        return 1;
     });
     for (var i = 0; i < languages.length; i++) {
         if (languages[i] !== 'JA') {

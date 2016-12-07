@@ -3,7 +3,7 @@ var Cookies  = require('../../../lib/js-cookie');
 var Content  = require('../../common_functions/content').Content;
 
 var PaymentAgentWithdrawWS = (function() {
-    "use strict";
+    'use strict';
 
     var containerID,
         viewIDs,
@@ -25,16 +25,16 @@ var PaymentAgentWithdrawWS = (function() {
         errorClass  = 'errorfield';
         hiddenClass = 'hidden';
         viewIDs = {
-            error   : '#viewError',
-            success : '#viewSuccess',
-            confirm : '#viewConfirm',
-            form    : '#viewForm'
+            error  : '#viewError',
+            success: '#viewSuccess',
+            confirm: '#viewConfirm',
+            form   : '#viewForm',
         };
         fieldIDs = {
-            verificationCode : '#verification-code',
-            ddlAgents        : '#ddlAgents',
-            txtAmount        : '#txtAmount',
-            txtDesc          : '#txtDescription'
+            verificationCode: '#verification-code',
+            ddlAgents       : '#ddlAgents',
+            txtAmount       : '#txtAmount',
+            txtDesc         : '#txtDescription',
         };
         withdrawCurrency = 'USD';
         minAmount = 10;
@@ -42,9 +42,9 @@ var PaymentAgentWithdrawWS = (function() {
 
         $views.addClass(hiddenClass);
 
-        if(page.client.is_virtual()) { // Virtual Account
+        if (page.client.is_virtual()) { // Virtual Account
             showPageError(page.text.localize('You are not authorized for withdrawal via payment agent.'));
-            return false;
+            return;
         }
 
         var residence = Cookies.get('residence');
@@ -52,17 +52,14 @@ var PaymentAgentWithdrawWS = (function() {
         if (page.client_status_detected('withdrawal_locked, cashier_locked', 'any')) {
             lock_withdrawal('locked');
         } else {
-            BinarySocket.send({"paymentagent_list": residence});
+            BinarySocket.send({ paymentagent_list: residence });
         }
 
-        $(viewIDs.form + ' button').click(function(e){
+        $(viewIDs.form + ' button').click(function(e) {
             e.preventDefault();
             e.stopPropagation();
             formData = formValidate();
-            if(!formData) {
-                return false;
-            }
-            else {
+            if (formData) {
                 withdrawRequest(true);
             }
         });
@@ -75,21 +72,20 @@ var PaymentAgentWithdrawWS = (function() {
         var $ddlAgents = $(fieldIDs.ddlAgents);
         $ddlAgents.empty();
         var paList = response.paymentagent_list.list;
-        if(paList.length > 0) {
-            BinarySocket.send({verify_email: TUser.get().email, type:'paymentagent_withdraw'});
+        if (paList.length > 0) {
+            BinarySocket.send({ verify_email: TUser.get().email, type: 'paymentagent_withdraw' });
             insertListOption($ddlAgents, page.text.localize('Please select a payment agent'), '');
-            for(var i = 0; i < paList.length; i++){
+            for (var i = 0; i < paList.length; i++) {
                 insertListOption($ddlAgents, paList[i].name, paList[i].paymentagent_loginid);
             }
             setActiveView(viewIDs.form);
-        }
-        else {
+        } else {
             showPageError(page.text.localize('The Payment Agent facility is currently not available in your country.'));
         }
     };
 
     var insertListOption = function($ddlObject, itemText, itemValue) {
-        $ddlObject.append($('<option/>', {value: itemValue, text: itemText}));
+        $ddlObject.append($('<option/>', { value: itemValue, text: itemText }));
     };
 
     // ----------------------------
@@ -114,58 +110,52 @@ var PaymentAgentWithdrawWS = (function() {
         isRequiredError(fieldIDs.ddlAgents);
 
         // verification token
-        if(!isRequiredError(fieldIDs.verificationCode)){
-          if (token.length !== 48) {
-            showError(fieldIDs.verificationCode, Content.errorMessage('valid', page.text.localize('verification token')));
-          }
+        if (!isRequiredError(fieldIDs.verificationCode)) {
+            if (token.length !== 48) {
+                showError(fieldIDs.verificationCode, Content.errorMessage('valid', page.text.localize('verification token')));
+            }
         }
 
         // Amount
-        if(!isRequiredError(fieldIDs.txtAmount)){
-            if(!(/^\d+(\.\d+)?$/).test(amount) || !$.isNumeric(amount)) {
+        if (!isRequiredError(fieldIDs.txtAmount)) {
+            if (!(/^\d+(\.\d+)?$/).test(amount) || !$.isNumeric(amount)) {
                 showError(fieldIDs.txtAmount, Content.errorMessage('reg', [numbers]));
-            }
-            else if(!(/^\d+(\.\d{1,2})?$/).test(amount)) {
+            } else if (!(/^\d+(\.\d{1,2})?$/).test(amount)) {
                 showError(fieldIDs.txtAmount, page.text.localize('Only 2 decimal points are allowed.'));
-            }
-            else if(amount < minAmount) {
+            } else if (amount < minAmount) {
                 showError(fieldIDs.txtAmount, page.text.localize('Invalid amount, minimum is') + ' ' + withdrawCurrency + ' ' + minAmount);
-            }
-            else if(amount > maxAmount) {
+            } else if (amount > maxAmount) {
                 showError(fieldIDs.txtAmount, page.text.localize('Invalid amount, maximum is') + ' ' + withdrawCurrency + ' ' + maxAmount);
             }
         }
 
         // Description
-        if(!(/^[a-zA-Z0-9\s\.\,\-']*$/).test(desc)) {
+        if (!(/^[a-zA-Z0-9\s\.\,\-']*$/).test(desc)) {
             showError(fieldIDs.txtDesc, Content.errorMessage('reg', [letters, numbers, space, period, comma, '- \'']));
         }
 
-        if(isValid) {
-            return {
-                agent             : agent,
-                agentname         : $(fieldIDs.ddlAgents + ' option:selected').text(),
-                currency          : withdrawCurrency,
-                amount            : amount,
-                desc              : desc,
-                verificationCode : token
-            };
-        }
-        else {
+        if (!isValid) {
             return false;
         }
+        return {
+            agent           : agent,
+            agentname       : $(fieldIDs.ddlAgents + ' option:selected').text(),
+            currency        : withdrawCurrency,
+            amount          : amount,
+            desc            : desc,
+            verificationCode: token,
+        };
     };
 
     var isRequiredError = function(fieldID) {
-        if(!$(fieldID).val() || !(/.+/).test($(fieldID).val().trim())){
+        if (!$(fieldID).val() || !(/.+/).test($(fieldID).val().trim())) {
             showError(fieldID, Content.errorMessage('req'));
             return true;
-        } else {
-            return false;
         }
+        return false;
     };
 
-    /*var isCountError = function(fieldID, min, max) {
+    /* var isCountError = function(fieldID, min, max) {
         var fieldValue = $(fieldID).val().trim();
         if((fieldValue.length > 0 && fieldValue.length < min) || fieldValue.length > max) {
             showError(fieldID, Content.errorMessage('range', '(' + min + '-' + max + ')'));
@@ -181,19 +171,19 @@ var PaymentAgentWithdrawWS = (function() {
     var withdrawRequest = function(isDryRun) {
         var dry_run = isDryRun ? 1 : 0;
         BinarySocket.send({
-            "paymentagent_withdraw" : 1,
-            "paymentagent_loginid"  : formData.agent,
-            "currency"              : formData.currency,
-            "amount"                : formData.amount,
-            "description"           : formData.desc,
-            "dry_run"               : dry_run,
-            "verification_code"     : formData.verificationCode
+            paymentagent_withdraw: 1,
+            paymentagent_loginid : formData.agent,
+            currency             : formData.currency,
+            amount               : formData.amount,
+            description          : formData.desc,
+            dry_run              : dry_run,
+            verification_code    : formData.verificationCode,
         });
     };
 
     var withdrawResponse = function(response) {
         var responseCode = response.paymentagent_withdraw;
-        switch(responseCode){
+        switch (responseCode) {
             case 2: // dry_run success: showing the confirmation page
                 setActiveView(viewIDs.confirm);
 
@@ -201,10 +191,10 @@ var PaymentAgentWithdrawWS = (function() {
                 $('#lblCurrency').text(formData.currency);
                 $('#lblAmount').text(formData.amount);
 
-                $(viewIDs.confirm + ' #btnConfirm').click(function(){
+                $(viewIDs.confirm + ' #btnConfirm').click(function() {
                     withdrawRequest(false);
                 });
-                $(viewIDs.confirm + ' #btnBack').click(function(){
+                $(viewIDs.confirm + ' #btnBack').click(function() {
                     setActiveView(viewIDs.form);
                 });
                 break;
@@ -221,12 +211,12 @@ var PaymentAgentWithdrawWS = (function() {
                             Cookies.get('loginid'),
                             formData.agentname,
                         ]) +
-                        '</li></ul>'
+                        '</li></ul>',
                     );
                 break;
 
             default: // error
-                if(response.echo_req.dry_run === 1) {
+                if (response.echo_req.dry_run === 1) {
                     setActiveView(viewIDs.form);
                     $('#formMessage').css('display', '')
                         .attr('class', errorClass)
@@ -245,7 +235,7 @@ var PaymentAgentWithdrawWS = (function() {
     // -----------------------------
     var showPageError = function(errMsg, id) {
         $(viewIDs.error + ' > p').addClass(hiddenClass);
-        if(id) {
+        if (id) {
             $(viewIDs.error + ' #' + id).removeClass(hiddenClass);
         } else {
             $(viewIDs.error + ' #custom-error').html(errMsg).removeClass(hiddenClass);
@@ -254,12 +244,12 @@ var PaymentAgentWithdrawWS = (function() {
     };
 
     var showError = function(fieldID, errMsg) {
-        $(fieldID).parent().append($('<p/>', {class: errorClass, text: errMsg}));
+        $(fieldID).parent().append($('<p/>', { class: errorClass, text: errMsg }));
         isValid = false;
     };
 
     var clearError = function(fieldID) {
-        $(fieldID ? fieldID : viewIDs.form + ' .' + errorClass).remove();
+        $(fieldID || viewIDs.form + ' .' + errorClass).remove();
     };
 
     // ----- View Control -----
@@ -269,11 +259,11 @@ var PaymentAgentWithdrawWS = (function() {
     };
 
     var lock_withdrawal = function(withdrawal_locked) {
-      if (withdrawal_locked === 'locked') {
-        showPageError('', 'withdrawal-locked-error');
-      } else if (!page.client.is_virtual()) {
-        BinarySocket.send({"paymentagent_list": Cookies.get('residence')});
-      }
+        if (withdrawal_locked === 'locked') {
+            showPageError('', 'withdrawal-locked-error');
+        } else if (!page.client.is_virtual()) {
+            BinarySocket.send({ paymentagent_list: Cookies.get('residence') });
+        }
     };
 
     var checkOnLoad = function() {
@@ -282,39 +272,39 @@ var PaymentAgentWithdrawWS = (function() {
                 var response = JSON.parse(msg.data);
                 if (response) {
                     var type = response.msg_type;
-                    switch(type){
-                        case "authorize":
+                    switch (type) {
+                        case 'authorize':
                             PaymentAgentWithdrawWS.init();
                             break;
-                        case "paymentagent_list":
+                        case 'paymentagent_list':
                             PaymentAgentWithdrawWS.populateAgentsList(response);
                             break;
-                        case "paymentagent_withdraw":
+                        case 'paymentagent_withdraw':
                             PaymentAgentWithdrawWS.withdrawResponse(response);
                             break;
                         default:
                             break;
                     }
                 }
-            }
+            },
         });
 
         Content.populate();
-        if(TUser.get().hasOwnProperty('is_virtual') || page.client_status_detected('withdrawal_locked, cashier_locked', 'any')) {
+        if (TUser.get().hasOwnProperty('is_virtual') || page.client_status_detected('withdrawal_locked, cashier_locked', 'any')) {
             PaymentAgentWithdrawWS.init();
         } else if (sessionStorage.getItem('client_status') === null) {
-          BinarySocket.send({"get_account_status": "1", "passthrough":{"dispatch_to":"PaymentAgentWithdrawWS"}});
+            BinarySocket.send({ get_account_status: '1', passthrough: { dispatch_to: 'PaymentAgentWithdrawWS' } });
         }
     };
 
     return {
-        init: init,
+        init              : init,
         populateAgentsList: populateAgentsList,
-        withdrawResponse: withdrawResponse,
-        lock_withdrawal: lock_withdrawal,
-        checkOnLoad: checkOnLoad
+        withdrawResponse  : withdrawResponse,
+        lock_withdrawal   : lock_withdrawal,
+        checkOnLoad       : checkOnLoad,
     };
-}());
+})();
 
 module.exports = {
     PaymentAgentWithdrawWS: PaymentAgentWithdrawWS,

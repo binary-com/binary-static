@@ -25,7 +25,7 @@ var MBNotifications = (function() {
             }
             $note_wrapper.prepend($message);
         }
-        $.scrollTo($note_wrapper, 500, {offset: -5});
+        $.scrollTo($note_wrapper, 500, { offset: -5 });
         hideSpinnerShowTrading();
     };
 
@@ -49,9 +49,10 @@ var MBNotifications = (function() {
     };
 
     return {
-        show : showErrorMessage,
-        hide : hideErrorMessage,
-        hideSpinnerShowTrading : hideSpinnerShowTrading,
+        show: showErrorMessage,
+        hide: hideErrorMessage,
+
+        hideSpinnerShowTrading: hideSpinnerShowTrading,
     };
 })();
 

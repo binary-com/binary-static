@@ -7,7 +7,7 @@ var FlexTableUI = function(config) {
         [],
         this.getMetadata(),
         config.header,
-        config.footer
+        config.footer,
     );
     // Table.appendTablebody expects the table to already
     // exist in the DOM, so we need to append first
@@ -18,9 +18,9 @@ var FlexTableUI = function(config) {
 FlexTableUI.prototype = {
     getMetadata: function() {
         return {
-            id:         this.config.id,
+            id        : this.config.id,
             tableClass: this.config.class,
-            cols:       this.config.cols,
+            cols      : this.config.cols,
         };
     },
 
@@ -38,9 +38,9 @@ FlexTableUI.prototype = {
     },
 
     displayError: function(message, colspan) {
-        var $tr = $('<tr/>', {class: 'flex-tr'});
-        var $td = $('<td/>', {colspan: colspan});
-        var $p  = $('<p/>', {class: 'notice-msg center-text', text: message});
+        var $tr = $('<tr/>', { class: 'flex-tr' });
+        var $td = $('<td/>', { colspan: colspan });
+        var $p  = $('<p/>', { class: 'notice-msg center-text', text: message });
         return $('#' + this.id + ' tbody').append($tr.append($td.append($p)));
     },
 
@@ -52,7 +52,7 @@ FlexTableUI.prototype = {
     clear: function() {
         this.replace([]);
         $('#' + this.id + '> tfoot').hide();
-    }
+    },
 };
 
 module.exports = {

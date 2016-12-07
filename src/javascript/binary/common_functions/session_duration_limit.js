@@ -16,12 +16,12 @@ var SessionDurationLimit = (function() {
         var limit     = page.client.get_storage_value('session_duration_limit') * 1,
             now       = moment().unix(),
             start     = page.client.get_storage_value('session_start') * 1,
-            remained  = (limit + start - now) * 1000,
+            remained  = ((limit + start) - now) * 1000,
             mathLimit = Math.pow(2, 31) - 1;
         if (remained < 0) remained = warning;
         // limit of setTimeout is this number
         if (remained > mathLimit) {
-            remained = remained % mathLimit;
+            remained %= mathLimit;
             window.TimeOut_SessionLimitWarningBefore = setTimeout(init, remained);
         } else {
             setTimeOut();
@@ -39,7 +39,7 @@ var SessionDurationLimit = (function() {
         }
 
         var limit = response.get_self_exclusion.session_duration_limit * 60;
-        if(isNaN(limit) || limit <= 0) return;
+        if (isNaN(limit) || limit <= 0) return;
 
         page.client.set_storage_value('session_duration_limit', limit);
         window.addEventListener('storage', init, false);
@@ -47,25 +47,25 @@ var SessionDurationLimit = (function() {
         init();
     };
 
-    /*var realityStorageEventHandler = function(e) {
-        if (e.key === 'client.session_start' || e.key === 'client.session_duration_limit') {
-            init();
-        }
-    };*/
+    /* var realityStorageEventHandler = function(e) {
+     if (e.key === 'client.session_start' || e.key === 'client.session_duration_limit') {
+     init();
+     }
+     };*/
 
     var displayWarning = function() {
         $('body').append(
             $("<div id='session_limit' class='lightbox'><div><div><div class='limit_message'>" +
                 page.text.localize('Your session duration limit will end in [_1] seconds.', [warning]) +
-                "</div></div></div></div>")
+                '</div></div></div></div>'),
         );
-        $('#session_limit').click(function(){$(this).remove();});
+        $('#session_limit').click(function() { $(this).remove(); });
     };
 
     return {
         exclusionResponseHandler: exclusionResponseHandler,
     };
-}());
+})();
 
 module.exports = {
     SessionDurationLimit: SessionDurationLimit,

@@ -1,9 +1,21 @@
 function onlyNumericOnKeypress(ev) {
     var key = ev.keyCode;
     var char = String.fromCharCode(ev.which);
-    if(
+    if (
         (char === '.' && ev.target.value.indexOf(char) >= 0) ||
         (!/[0-9\.]/.test(char) && [8, 37, 39, 46].indexOf(key) < 0) || // delete, backspace, arrow keys
+        /['%]/.test(char)) { // similarity to arrows key code in some browsers
+        ev.returnValue = false;
+        ev.preventDefault();
+    }
+}
+
+function onlyNumericColonOnKeypress(ev) {
+    var key = ev.keyCode;
+    var char = String.fromCharCode(ev.which);
+    if(
+        (char === '.' && ev.target.value.indexOf(char) >= 0) ||
+        (!/[0-9\.]/.test(char) && [8, 37, 39, 46, 58].indexOf(key) < 0) || // delete, backspace, arrow keys, colon
         /['%]/.test(char)) { // similarity to arrows key code in some browsers
 
         ev.returnValue = false;
@@ -13,4 +25,5 @@ function onlyNumericOnKeypress(ev) {
 
 module.exports = {
     onlyNumericOnKeypress: onlyNumericOnKeypress,
+    onlyNumericColonOnKeypress: onlyNumericColonOnKeypress,
 };

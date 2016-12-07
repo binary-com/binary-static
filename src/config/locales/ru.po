@@ -793,6 +793,9 @@ msgstr "Высшее образование в области маркетинг
 msgid "A university degree or accredited translation certification preferred"
 msgstr "Высшее образование или сертификат в области перевода является предпочтительным"
 
+msgid "AM"
+msgstr ""
+
 msgid "API"
 msgstr "API"
 
@@ -2999,6 +3002,9 @@ msgstr "Цена покупки контрактов Выше/Ниже буде�
 msgid "Higher/Lower trades"
 msgstr "Контракты Выше/Ниже"
 
+msgid "Hour"
+msgstr ""
+
 msgid "Housewife / Househusband"
 msgstr "Housewife / Househusband"
 
@@ -4336,6 +4342,11 @@ msgstr "Необходимо минимум %1 знака(ов)."
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Минимум шесть заглавных и строчных букв с цифрами"
 
+#, fuzzy
+#| msgid "Minutes"
+msgid "Minute"
+msgstr "Минуты"
+
 msgid "Miss"
 msgstr "Госпожа"
 
@@ -4797,6 +4808,9 @@ msgstr "Сайт %1 и его содержание остаются нашей �
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
 msgstr "Партнер несет единоличную ответственностью за принадлежность, содержание и работу Партнерского сайта. Партнер несет эксклюзивную ответственность за развитие, работу и поддержку своего сайта, а также все материалы, опубликованные на сайте. Партнер обязуется освободить и оградить Binary Group от всех возможных убытков, претензий, вреда и расходов (включая, но не ограничиваясь юридическими расходами), имеющих отношение к развитию, работе, поддержке и содержанию сайта партнера."
 
+msgid "PM"
+msgstr ""
+
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "Хотите участвовать в торговле на рынках форекс, акций и сырьевых материалов?"
 
@@ -4974,10 +4988,14 @@ msgstr "Пожалуйста, введите правильную сумму."
 msgid "Please enter an integer value"
 msgstr "Пожалуйста, введите целое число"
 
-msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr "Пожалуйста, внесите дату в формате ГГГГ-ММ-ДД ЧЧ:мм (по местному времени)."
 
-msgid "Please enter date in the format YYYY-MM-DD."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD."
+msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "Пожалуйста, внесите дату в формате ГГГГ-ММ-ДД."
 
 msgid "Please enter your current password."
@@ -6618,6 +6636,11 @@ msgstr "Уровень"
 
 msgid "Time"
 msgstr "Время"
+
+#, fuzzy
+#| msgid "Start time is in the future."
+msgid "Time is in the wrong format."
+msgstr "Время начала находится в будущем."
 
 msgid "Time out until"
 msgstr "Перерыв до"
@@ -10846,9 +10869,6 @@ msgstr "Согласие с правилами и условиями"
 # 100%
 #~ msgid "Start time %1 must be before end time %2"
 #~ msgstr "Время начала %1 должно быть раньше времени окончания %2"
-
-#~ msgid "Start time is in the future."
-#~ msgstr "Время начала находится в будущем."
 
 #~ msgid "Start time is in the past"
 #~ msgstr "Время начала прошло"
@@ -18697,9 +18717,6 @@ msgstr "Согласие с правилами и условиями"
 
 #~ msgid "Majors"
 #~ msgstr "Большинство"
-
-#~ msgid "Minutes"
-#~ msgstr "Минуты"
 
 #~ msgid "Normalize to 100"
 #~ msgstr "Нормализовать до 100"

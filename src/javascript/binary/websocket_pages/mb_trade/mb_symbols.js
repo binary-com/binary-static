@@ -19,11 +19,15 @@ var ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbo
 var MBSymbols = (function () {
     'use strict';
 
-    var tradeMarkets = {}, tradeMarketsList = {}, tradeUnderlyings = {}, need_page_update = 1, names = {};
+    var tradeMarkets = {},
+        tradeMarketsList = {},
+        tradeUnderlyings = {},
+        need_page_update = 1,
+        names = {};
 
     var details = function (data) {
         ActiveSymbols.clearData();
-        var allSymbols = data['active_symbols'];
+        var allSymbols = data.active_symbols;
         tradeMarkets     = ActiveSymbols.getMarkets(allSymbols);
         tradeMarketsList = ActiveSymbols.getMarketsList(allSymbols);
         tradeUnderlyings = ActiveSymbols.getTradeUnderlyings(allSymbols);
@@ -41,13 +45,12 @@ var MBSymbols = (function () {
     return {
         details         : details,
         getSymbols      : getSymbols,
-        markets         : function (list) { return list ? tradeMarketsList : tradeMarkets; },
-        underlyings     : function () { return tradeUnderlyings; },
-        getName         : function(symbol){ return names[symbol]; },
-        need_page_update: function () { return need_page_update; },
-        getAllSymbols   : function(){return names;}
+        markets         : function (list)  { return list ? tradeMarketsList : tradeMarkets; },
+        underlyings     : function ()      { return tradeUnderlyings; },
+        getName         : function(symbol) { return names[symbol]; },
+        need_page_update: function ()      { return need_page_update; },
+        getAllSymbols   : function()       { return names; },
     };
-
 })();
 
 module.exports = {
