@@ -19,10 +19,14 @@ var ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbo
 var Symbols = (function () {
     'use strict';
 
-    var tradeMarkets = {}, tradeMarketsList = {}, tradeUnderlyings = {}, need_page_update = 1, names = {};
+    var tradeMarkets = {},
+        tradeMarketsList = {},
+        tradeUnderlyings = {},
+        need_page_update = 1,
+        names = {};
 
     var details = function (data) {
-        var allSymbols = data['active_symbols'];
+        var allSymbols = data.active_symbols;
         tradeMarkets = ActiveSymbols.getMarkets(allSymbols);
         tradeMarketsList = ActiveSymbols.getMarketsList(allSymbols);
         tradeUnderlyings = ActiveSymbols.getTradeUnderlyings(allSymbols);
@@ -31,22 +35,21 @@ var Symbols = (function () {
 
     var getSymbols = function (update) {
         var $args = {
-            active_symbols: "brief"
+            active_symbols: 'brief',
         };
         BinarySocket.send($args);
         need_page_update = update;
     };
 
     return {
-        details: details,
-        getSymbols: getSymbols,
-        markets: function (list) { return list ? tradeMarketsList : tradeMarkets; },
-        underlyings: function () { return tradeUnderlyings; },
-        getName: function(symbol){ return names[symbol]; },
+        details         : details,
+        getSymbols      : getSymbols,
+        markets         : function (list) { return list ? tradeMarketsList : tradeMarkets; },
+        underlyings     : function () { return tradeUnderlyings; },
+        getName         : function(symbol) { return names[symbol]; },
         need_page_update: function () { return need_page_update; },
-        getAllSymbols: function(){return names;}
+        getAllSymbols   : function() { return names; },
     };
-
 })();
 
 module.exports = {
