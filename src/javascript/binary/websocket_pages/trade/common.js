@@ -8,6 +8,7 @@ var format_money    = require('../../common_functions/currency_to_symbol').forma
 var japanese_client = require('../../common_functions/country_base').japanese_client;
 var addComma        = require('../../common_functions/string_util').addComma;
 var moment          = require('moment');
+var toISOFormat     = require('../../common_functions/string_util').toISOFormat;
 
 /*
  * This contains common functions we need for processing the response
@@ -857,11 +858,26 @@ function label_value(label_elem, label, value, no_currency) {
 }
 
 function timeIsValid($element) {
-    var endDateValue = document.getElementById('expiry_date').value || new moment().format('YYYY-MM-DD'),
+    var endDateValue = document.getElementById('expiry_date').getAttribute('data-value'),
         startDateValue = document.getElementById('date_start').value,
-        endTimeValue = document.getElementById('expiry_time').value || "23:59:59";
+        endTimeValue = document.getElementById('expiry_time').value;
 
+    if ($element.attr('id') === $('#expiry_time') && endTimeValue &&
+        !/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(endTimeValue)) {
+        $element.addClass('error-field');
+        if ($('#invalid-time').length === 0) {
+            $('#expiry_type_endtime').parent().append($('<p>', {class: 'error-msg', id: 'invalid-time', text: page.text.localize('Time is in the wrong format.')}));
+        }
+        return false;
+    } else {
+        $element.removeClass('error-field');
+        $('#invalid-time').remove();
+    }
+
+    endDateValue = endDateValue ? toISOFormat(moment(endDateValue)) : toISOFormat(new moment());
     startDateValue = startDateValue === 'now' ? Math.floor(window.time._i/1000) : startDateValue;
+    endTimeValue = endTimeValue || "23:59:59";
+
     if (moment.utc(endDateValue + " " + endTimeValue).unix() <= startDateValue) {
         $element.addClass('error-field');
         if (!document.getElementById('end_time_validation')) {
