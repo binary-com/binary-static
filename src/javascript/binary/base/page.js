@@ -1111,7 +1111,9 @@ Page.prototype = {
         this.record_affiliate_exposure();
         this.contents.on_load();
         this.on_click_acc_transfer();
-        this.show_authenticate_message();
+        if (this.is_loaded_by_pjax) {
+            this.show_authenticate_message();
+        }
         if (this.client.is_logged_in) {
             ViewBalance.init();
         } else {
