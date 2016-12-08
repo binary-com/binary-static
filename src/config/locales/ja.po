@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-07 06:14+0000\n"
-"Last-Translator: Yasushi Takeishi <takeishi@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-12-08 01:49+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -2713,7 +2713,7 @@ msgid "Familiarity with virtualization concepts (openvz / Xen / vmware)"
 msgstr "仮想化コンセプトを熟知している(openvz / Xen / vmware)"
 
 msgid "Family name"
-msgstr "氏名(全角)"
+msgstr "氏名 (全角)"
 
 msgid "Favourite artist"
 msgstr "好きなアーティスト名"
@@ -2776,7 +2776,7 @@ msgid "First line of home address"
 msgstr "番地"
 
 msgid "First name"
-msgstr "フリガナ（全角）"
+msgstr "フリガナ (全角)"
 
 msgid "First, define your position..."
 msgstr "まず、どのようなポジションを持つか決めましょう"
@@ -4399,8 +4399,6 @@ msgstr "%1文字以上でご入力ください。"
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "6文字以上の英数字（大文字と小文字を含む）"
 
-#, fuzzy
-#| msgid "Minutes"
 msgid "Minute"
 msgstr "分"
 
@@ -5051,13 +5049,9 @@ msgstr "有効な値をご入力して下さい。"
 msgid "Please enter an integer value"
 msgstr "半角で数値をご入力して下さい"
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
 msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr "ご希望の日付を選択して下さい。"
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD."
 msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "ご希望の日付を選択して下さい。"
 
@@ -6783,12 +6777,19 @@ msgstr "当社サイトではお客さまが具体的かつ能動的に提供さ
 
 msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
 msgstr ""
-"■店頭バイナリーオプション取引は金融商品取引法に規定される店頭デリバティブ取引であり、元本や利益が保証されていません。■店頭バイナリーオプション取引は、判定時刻に自動的に権利行使されるヨーロピアンタイプと、取引期間中に決められた条件に達すると権利が自動行使されるアメリカンタイプがあります。■店頭バイナリーオプションは、外国為替相場等の変動により投資元本の全てを失うおそれのあるリスクの高い金融商品です。■判定時刻及び取引期間中における一定の権利を、オプション料を支払って購入する期限がある取引のため、権利が消滅した場合には支払ったオプション料の全額を失います。■ペイアウトは1ロットあたり1,000円です。■購入価格と売却価格にはスプレッドがあり、相場情勢により拡大することがあります。■相場情勢により、お客様が希望した価格より不利な価格で取引が成立する場合があります。■店頭バイナリーオプションの取引上限は以下のとおりです。\n"
+"■店頭バイナリーオプション取引は金融商品取引法に規定される店頭デリバティブ取引であり、元本や利益が保証されていません。■店頭バイナリーオプション取引は、判"
+"定時刻に自動的に権利行使されるヨーロピアンタイプと、取引期間中に決められた条件に達すると権利が自動行使されるアメリカンタイプがあります。■店頭バイナリーオ"
+"プションは、外国為替相場等の変動により投資元本の全てを失うおそれのあるリスクの高い金融商品です。■判定時刻及び取引期間中における一定の権利を、オプション料"
+"を支払って購入する期限がある取引のため、権利が消滅した場合には支払ったオプション料の全額を失います。■ペイアウトは1ロットあたり1,000円です。■購入価"
+"格と売却価格にはスプレッドがあり、相場情勢により拡大することがあります。■相場情勢により、お客様が希望した価格より不利な価格で取引が成立する場合があります"
+"。■店頭バイナリーオプションの取引上限は以下のとおりです。\n"
 "1)1取引のペイアウト上限額は10万円。(100ロット分)\n"
-"2)1日の取引上限額及び利益上限額は500万円。\n"
-"3)1日の未実現利益上限額は100万円。\n"
-"　上記2)もしくは3)いずれかに達した時点で、お客さまはその日の取引ができなくなります。\n"
-"■取引手数料は無料ですが、12ヶ月間、新規又は決済の取引がなかった場合は口座維持管理料（年間2,500円）が発生します。■オプションの購入後の注文取り消しは行う事ができませんが、取引可能期間であれば売却は可能です。ただし、購入価格と売却価格にはスプレッドがあり、売却時に損失を被る可能性があります。■お取引を開始される前に、契約締結前交付書面を熟読の上、必ず約款及び取扱説明書に書かれてある取引の特徴、取引条件、仕組み及びリスクを十分確認いただき、ご自身の判断と責任において、自己の計算によりお取引ください。"
+"2)1日の取引上限額(金融資産額)は100万円〜300万円。\n"
+"　上記2)に達した時点で、お客さまはその日の取引ができなくなります。\n"
+"■取引手数料は無料ですが、12ヶ月間、新規又は決済の取引がなかった場合は口座維持管理料（年間2,500円）が発生します。■オプションの購入後の注文取り消し"
+"は行う事ができませんが、取引可能期間であれば売却は可能です。ただし、購入価格と売却価格にはスプレッドがあり、売却時に損失を被る可能性があります。■お取引を"
+"開始される前に、契約締結前交付書面を熟読の上、必ず約款及び取扱説明書に書かれてある取引の特徴、取引条件、仕組み及びリスクを十分確認いただき、ご自身の判断と"
+"責任において、自己の計算によりお取引ください。"
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr "PerlやPHP などのスクリプト言語の経験とBashスクリプトの深い知識"
@@ -6808,10 +6809,8 @@ msgstr "レベル"
 msgid "Time"
 msgstr "日時"
 
-#, fuzzy
-#| msgid "Start time is in the future."
 msgid "Time is in the wrong format."
-msgstr "開始時間が未来の値になっています。"
+msgstr "開始時間に間違った値になっております"
 
 msgid "Time out until"
 msgstr "xxxまで利用禁止"
@@ -8163,10 +8162,8 @@ msgstr "メールアドレス"
 msgid "f"
 msgstr "女性"
 
-#, fuzzy
-#| msgid "Th"
 msgid "h"
-msgstr "木曜日"
+msgstr "時"
 
 msgid "hour"
 msgstr "時間"
@@ -9287,7 +9284,9 @@ msgid "{JAPAN ONLY}You set your own personal daily loss limit"
 msgstr "1日損失限度額を設定できます"
 
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
-msgstr "お客さまのバイナリーオプション取引では、購入金額を超えて損失が生じる可能性はありませんが、損失を限定するためのロスカットではありませんのご注意してください。"
+msgstr ""
+"お客さまのバイナリーオプション取引では、購入金額を超えて損失が生じる可能性はありませんが、損失を限定するためのロスカットではありませんのでご注意してくださ"
+"い。"
 
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "信託により区分管理"
