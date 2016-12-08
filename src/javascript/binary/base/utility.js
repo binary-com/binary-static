@@ -34,7 +34,7 @@ function get_highest_zindex(selector) {
     };
     $(selector).each(_store_zindex);
 
-    return all.length ? Math.max.apply(...all) : null;
+    return all.length ? Math.max(...all) : null;
 }
 
 function showLocalTimeOnHover(s) {

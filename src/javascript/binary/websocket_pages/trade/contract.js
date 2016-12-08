@@ -32,12 +32,12 @@ var Contract = (function() {
         barrier;
 
     var populate_durations = function(currentContract) {
-        var currentCategory = currentContract.contract_category;
-        var expiry_type = currentContract.expiry_type,
+        var currentCategory  = currentContract.contract_category,
+            expiry_type      = currentContract.expiry_type,
             barrier_category = currentContract.barrier_category,
-            start_type = currentContract.start_type,
-            max_duration = currentContract.max_contract_duration,
-            min_duration = currentContract.min_contract_duration;
+            start_type       = currentContract.start_type,
+            max_duration     = currentContract.max_contract_duration,
+            min_duration     = currentContract.min_contract_duration;
 
         if (!durations[expiry_type]) {
             durations[expiry_type] = {};

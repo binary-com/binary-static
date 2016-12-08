@@ -32,28 +32,32 @@ var Contract_Beta = (function() {
         barrier;
 
     var populate_durations = function(currentContract) {
-        var currentCategory = currentContract.contract_category,
-            expiry_type = durations[currentContract.expiry_type];
-        if (!expiry_type) {
-            expiry_type = {};
+        var currentCategory  = currentContract.contract_category,
+            expiry_type      = currentContract.expiry_type,
+            barrier_category = currentContract.barrier_category,
+            start_type       = currentContract.start_type,
+            max_duration     = currentContract.max_contract_duration,
+            min_duration     = currentContract.min_contract_duration;
+
+        if (!durations[expiry_type]) {
+            durations[expiry_type] = {};
         }
 
-        if (!expiry_type[currentCategory]) {
-            expiry_type[currentCategory] = {};
+        if (!durations[expiry_type][currentCategory]) {
+            durations[expiry_type][currentCategory] = {};
         }
 
-        var barrier_category = expiry_type[currentCategory][currentContract.barrier_category];
-        if (!barrier_category) {
-            barrier_category = {};
+        if (!durations[expiry_type][currentCategory][barrier_category]) {
+            durations[expiry_type][currentCategory][barrier_category] = {};
         }
 
-        var start_type = barrier_category[currentContract.start_type];
-        if (!start_type) {
-            start_type = {};
+        if (!durations[expiry_type][currentCategory][barrier_category][start_type]) {
+            durations[expiry_type][currentCategory][barrier_category][start_type] = {};
         }
 
-        start_type.max_contract_duration = currentContract.max_contract_duration;
-        start_type.min_contract_duration = currentContract.min_contract_duration;
+        durations[expiry_type][currentCategory][barrier_category][start_type].max_contract_duration = max_duration;
+
+        durations[expiry_type][currentCategory][barrier_category][start_type].min_contract_duration = min_duration;
     };
 
     var details = function(formName) {

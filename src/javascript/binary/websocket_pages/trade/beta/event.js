@@ -367,7 +367,7 @@ var TradingEvents_Beta = (function () {
                 var id = this.getAttribute('data-purchase-id'),
                     askPrice = this.getAttribute('data-ask-price');
 
-                var params = { buy: id, price: askPrice, passthrough: { } };
+                var params = { buy: id, price: askPrice, passthrough: {} };
                 Object.keys(this.attributes).forEach(function(attr) {
                     if (attr && this.attributes[attr] && this.attributes[attr].name &&
                         !/data\-balloon/.test(this.attributes[attr].name)) { // do not send tooltip data
@@ -377,7 +377,7 @@ var TradingEvents_Beta = (function () {
                             params.passthrough[m[1]] = this.attributes[attr].value;
                         }
                     }
-                });
+                }, this);
                 if (id && askPrice) {
                     BinarySocket.send(params);
                     Price_Beta.incrFormId();

@@ -9,10 +9,7 @@ var MarketTimes = (function() {
 
     var getSymbolInfo = function(qSymbol, activeSymbols) {
         return activeSymbols.filter(function(sy) {
-            if (sy.symbol === qSymbol) {
-                return true;
-            }
-            return false;
+            return (sy.symbol === qSymbol);
         });
     };
 

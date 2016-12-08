@@ -7,6 +7,7 @@ var showTooltip         = require('../../../../common_functions/get_app_details'
 var japanese_client     = require('../../../../common_functions/country_base').japanese_client;
 var Portfolio           = require('../portfolio').Portfolio;
 var ViewPopupWS         = require('../../view_popup/view_popupws').ViewPopupWS;
+var State               = require('../../../../base/storage').State;
 
 var PortfolioWS = (function() {
     'use strict';
@@ -204,7 +205,7 @@ var PortfolioWS = (function() {
     };
 
     var onLoad = function() {
-        if (!/trading\.html/.test(window.location.pathname)) {
+        if (!State.get('is_beta_trading') && !State.get('is_mb_trading')) {
             BinarySocket.init({
                 onmessage: function(msg) {
                     var response = JSON.parse(msg.data),

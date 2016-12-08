@@ -26,7 +26,7 @@ var MarketTimesUI = (function() {
         $date      = $('#trading-date');
         $container = $('#trading-times');
         columns    = ['Asset', 'Opens', 'Closes', 'Settles', 'UpcomingEvents'];
-        activeSymbols = tradingTimes = undefined;
+        if (!State.get('is_beta_trading')) activeSymbols = tradingTimes = undefined;
 
         if ($container.contents().length) return;
 
@@ -36,7 +36,7 @@ var MarketTimesUI = (function() {
         isFramed = (config && config.framed);
         if (!tradingTimes) {
             initSocket();
-            MarketTimesData.sendRequest('today', !activeSymbols);
+            MarketTimesData.sendRequest('today', !(activeSymbols && activeSymbols.length));
         }
 
         var date = moment.utc();
@@ -209,7 +209,7 @@ var MarketTimesUI = (function() {
     return {
         init            : init,
         setActiveSymbols: function(response) {
-            activeSymbols = response.active_symbols;
+            activeSymbols = response.active_symbols.slice(0); // clone
             if (tradingTimes) populateTable();
         },
         setTradingTimes: function(response) {

@@ -27,7 +27,8 @@ var AssetIndexUI = (function() {
         }
 
         $container = $('#asset-index');
-        activeSymbols = assetIndex = marketColumns = undefined;
+        assetIndex = marketColumns = undefined;
+        if (!State.get('is_beta_trading')) activeSymbols = undefined;
 
         if ($container.contents().length) return;
 
@@ -153,7 +154,7 @@ var AssetIndexUI = (function() {
     return {
         init            : init,
         setActiveSymbols: function(response) {
-            activeSymbols = response.active_symbols;
+            activeSymbols = response.active_symbols.slice(0); // clone
             if (assetIndex) populateTable();
         },
         setAssetIndex: function(response) {
