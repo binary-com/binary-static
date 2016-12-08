@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-08 01:49+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-12-08 03:38+0000\n"
+"Last-Translator: Yasushi Takeishi <takeishi@regentmarkets.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -522,10 +522,10 @@ msgid "<strong>All markets</strong> - currencies, stock indices, and commodities
 msgstr "<strong>取引対象</strong>- 外国為替市場の主要通貨ペア"
 
 msgid "<strong>All payouts:</strong> from $1 to $50,000."
-msgstr "<strong>ペイアウト：</strong>1,000円〜100,000円"
+msgstr "<strong>ペイアウト：</strong>1ロット1,000円、最大100ロット"
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
-msgstr "<strong>ペイアウト</strong>：1,000円〜100,000円"
+msgstr "<strong>ペイアウト</strong>：1ロット1,000円、最大100ロット"
 
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>適正テスト: 警告:</strong>当サービスでは、どの所定の製品またはサービスがお客様に適しているか評価するためにお客さまの情報を必要とします。（関連するリスクを理解する経験や知識があるかどうかわかります。）"
@@ -1695,7 +1695,7 @@ msgid "Choose a password"
 msgstr "パスワード"
 
 msgid "Choose a payout from $1 to $50,000."
-msgstr "ペイアウトは1,000円から100,000円まで選択可能です"
+msgstr "ペイアウトは1ロット1,000円、最大100ロットまで選択可能です"
 
 msgid "Choose a trade type"
 msgstr "取引タイプを選択"
@@ -1716,19 +1716,19 @@ msgid "Choose the duration"
 msgstr "取引期間を選択"
 
 msgid "Choose the market, the price target, the time period, and how much you wish to win."
-msgstr "取引対象通貨ペア、バリア価格、取引期間、ペイアウトを決定しましょう。"
+msgstr "取引対象通貨ペア、バリア価格、取引期間、ロット数を決定しましょう。"
 
 msgid "Choose the market, the price targets, the time period, and how much you wish to win."
-msgstr "取引対象通貨ペア、バリア価格、取引期間、ペイアウトを決定しましょう。"
+msgstr "取引対象通貨ペア、バリア価格、取引期間、ロット数を決定しましょう。"
 
 msgid "Choose the market, the time period, and how much you wish to win."
-msgstr "取引対象通貨ペア、取引期間、ペイアウトを選択して下さい。"
+msgstr "取引対象通貨ペア、取引期間、ロット数を選択して下さい。"
 
 msgid "Choose the payment method you'd like to use."
 msgstr "ご希望のお支払い方法をご選択ください。"
 
 msgid "Choose the payout"
-msgstr "ペイアウトを選択"
+msgstr "ロット数を選択"
 
 msgid "Choose the specific type of API token that you need, based on the capabilities that you wish to make available."
 msgstr "ご希望の機能に基いた、必要なAPIトークンの種類を選択してください。"
@@ -9281,12 +9281,12 @@ msgid "{JAPAN ONLY}You must have sufficient balance in your trading account at t
 msgstr "出金依頼を行う際、取引残高が十分あることをご確認して下さい。"
 
 msgid "{JAPAN ONLY}You set your own personal daily loss limit"
-msgstr "1日損失限度額を設定できます"
+msgstr "ご自身で取引限度額、損失限度額を期間ごとに設定できます"
 
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 msgstr ""
-"お客さまのバイナリーオプション取引では、購入金額を超えて損失が生じる可能性はありませんが、損失を限定するためのロスカットではありませんのでご注意してくださ"
-"い。"
+"バイナリーオプション取引は、購入金額を超える損失が生じる可能性はありませんが、損失を限定するためのロスカットはありません。権利が消滅した場合、購入金額全額"
+"が損失となります。"
 
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "信託により区分管理"
@@ -9307,7 +9307,7 @@ msgid "{Japan Only}Binary option specialist for over 15 years "
 msgstr "15年以上のバイナリー業界の経験 "
 
 msgid "{Japan Only}Fully licenced in Japan"
-msgstr "第一種金融商品取引業者登録"
+msgstr "取引期間は2時間から1年まで"
 
 msgid "{Japan Only}Live chart tools"
 msgstr "ライブチャート"
@@ -9319,7 +9319,7 @@ msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
 msgstr "日証金信託銀行にて全額信託されています"
 
 msgid "{Japan Only}Trade all binary option types"
-msgstr "4つすべてのバイナリーオプションタイプ取引可能"
+msgstr "4タイプのバイナリーオプション取引が可能"
 
 msgid "{Japan Only}Trade the major currencies"
 msgstr "主要通貨ペアの取引可能"
