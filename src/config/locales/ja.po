@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-08 03:38+0000\n"
-"Last-Translator: Yasushi Takeishi <takeishi@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-12-08 09:12+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -399,7 +399,7 @@ msgid "30-day turnover limit "
 msgstr "30日の取引限度額 "
 
 msgid "4. Choose your Payout"
-msgstr "4. ペイアウトを選択"
+msgstr "4. ロット数を選択"
 
 msgid "40 transactions or more in the past 12 months"
 msgstr "過去12ヶ月で40以上のお取引"
@@ -802,7 +802,7 @@ msgid "A university degree or accredited translation certification preferred"
 msgstr "大学の学位または公認の翻訳資格があると好ましい"
 
 msgid "AM"
-msgstr ""
+msgstr "午前"
 
 msgid "API"
 msgstr "API"
@@ -2389,7 +2389,7 @@ msgid "Each binary option is a prediction on the future movement of an underlyin
 msgstr "バイナリーオプションは、原資産の将来の値動きを予測する取引です。"
 
 msgid "Each binary trade is for a pre-determined payout amount. You win the payout if your prediction is correct."
-msgstr "各バイナリーでのお取引は事前にペイアウトが確定しています。条件が満たされるとこの金額を獲得いただけます。"
+msgstr "各バイナリーでのお取引は事前にペイアウト金額が確定しています。条件が満たされるとこの金額を獲得いただけます。"
 
 msgid "Each option transaction has a specified expiry time and date, known as the judgment time."
 msgstr "本取引が期日のある取引であること。（契約締結前交付書面「店頭バイナリーオプション取引のリスク等重要事項について」-2参照）"
@@ -3037,7 +3037,7 @@ msgid "Higher/Lower trades"
 msgstr "HIGH/LOW・トレード"
 
 msgid "Hour"
-msgstr ""
+msgstr "時間"
 
 msgid "Housewife / Househusband"
 msgstr "主婦/主夫"
@@ -3252,7 +3252,9 @@ msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</str
 msgstr "「アップ」を選択された場合、<strong>終値</strong>が<strong>エントリー価格</strong>より正確に高くなるとペイアウトを獲得いただけます。同値は条件を満たしていないと判定されます。"
 
 msgid "If you select \"Stays Between\", you win the payout if the market stays between (does not touch) either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
-msgstr "「STAY-IN」を選択された場合、<strong>取引期間が終了するまで常に</strong>市場価格がバリアを設定した<strong>上下両方</strong>のバリア価格のレンジ内に留まること、すなわち<strong>バリア価格に１度もタッチしなければ</strong>ペイアウトを受け取れます。"
+msgstr ""
+"「STAY-IN」を選択された場合、<strong>取引期間が終了するまで常に</strong>市場価格がバリアを設定した<strong>上下両方</st"
+"rong>のバリア価格のレンジ内に留まること、すなわち<strong>バリア価格にタッチしたら</strong>ペイアウトを受け取れます。"
 
 msgid "If you select \"Touches\", you win the payout if the market touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "「TOUCH」を選択された場合、<strong>取引期間が終了するまで</strong>に市場価格が<strong>バリア</strong>設定した価格にタッチすればペイアウトを受け取れます。"
@@ -4870,7 +4872,7 @@ msgid "Ownership, content, and liability of the Affiliate's websites are the sol
 msgstr "アフィリエイト会員は、自身が保有するプロモーションサイトに関する所有権とコンテンツに責任を負います。プロモーションサイトの開発、オペレーション、維持、そしてサイト上に存在する全ての素材に対して責任があります。アフィリエイト会員は、開発、オペレーション、維持、そしてサイト上に存在する全ての素材に関係する請求、損害賠償や費用（訴訟費用など）を当社に対して求めないことを確証します。"
 
 msgid "PM"
-msgstr ""
+msgstr "午後"
 
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "外国為替市場でお取引"
@@ -5182,7 +5184,7 @@ msgid "Preparing the periodic and special reports required to ensure legal and r
 msgstr "当社事業内の法域における法律および規制の遵守を確保するために定期報告書または特別報告書の作成を行います"
 
 msgid "Presents the maximum aggregate payouts on outstanding contracts in your portfolio. If the maximum is attained, you may not purchase additional contracts without first closing out existing positions."
-msgstr "保有ポジションに対する未現実利益利益を示します。上限額に達した場合、保有ポジションを一部決済されるまで新規注文を行えません。"
+msgstr "保有ポジションに対する未現実利益利益を示します。上限額に達した場合、保有ポジションを一部決済するまで新規注文を行えません。"
 
 msgid "Previous"
 msgstr "戻る"
@@ -7597,7 +7599,9 @@ msgid "With %1 you can trade:"
 msgstr "当社では下記のお取引が可能です。"
 
 msgid "With %1 you're in control of how much you can win. You specify a fixed payout amount at the outset, and your stake - what you pay - is then calculated. %1 offers payouts from $1 to $50,000."
-msgstr "当システムではペイアウトを確実に管理することができます。取引内容を設定する際にペイアウトまたは購入金額を指定し、正確な算出結果を得ることができます。%1では1,000円から100,000円までのペイアウトを設定いただけます。"
+msgstr ""
+"当システムではペイアウトを確実に管理することができます。取引内容を設定する際にペイアウトまたは購入金額を指定し、正確な算出結果を得ることができます。%1で"
+"は1ロット1,000円から最大100ロットまで選択いただけます。"
 
 msgid "With %1's unique platform, there's no risk of 'slippage' or gapping markets. And no hidden fees."
 msgstr "当社の独自システムには、スリッページやギャッピングに関するリスクが存在しません。取引手数料は無料です。"
@@ -7729,7 +7733,7 @@ msgid "You can <a class='pjaxload' href='%1'>open an account</a>, deposit funds 
 msgstr "<a class='pjaxload' href='%1'>口座の開設</a>、および取引に必要な預託金のご入金は簡単にできます。"
 
 msgid "You can choose payouts from $1 to $50,000. This wide payout range is ideal for both small and large traders."
-msgstr "ペイアウトは1,000円から100,000円の間で指定できます。トレードが小額でも高額でも満足のいくお取引が可能です。"
+msgstr "1ロット1,000円から最大100ロットまで選択できます。トレードが小額でも高額でも満足のいくお取引が可能です。"
 
 msgid "You can close your trade before expiry to lock in profits."
 msgstr "お客さまの予測通りに相場が動いた場合、判定時刻前にポジションを売却をすることにより利益を確定ができます。"
@@ -8211,7 +8215,7 @@ msgid "minimum available duration"
 msgstr "最短取引期間"
 
 msgid "mins"
-msgstr ""
+msgstr "分"
 
 msgid "minute"
 msgstr "分"
@@ -8727,13 +8731,17 @@ msgid "{JAPAN ONLY}If you believe the underlying asset price will move by a larg
 msgstr "原資産価格が大きく騰落することを予測し、上昇、下落、いずれの方向に動いても利益を得るため、原資産価格よりバリア価格が高いコールオプションと原資産価格よりバリア価格が低いプットオプションの２つのオプションを合わせて購入しました。"
 
 msgid "{JAPAN ONLY}If you buy a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will receive a payout 1,000 yen from the seller of the option."
-msgstr "バリア価格１ドル100円、ペイアウト1,000円のドル円のコールバイナリーオプションを500円で購入し、判定レートが１ドル９９円となり権利行使が行われ、買い手は1,000円のペイアウトを受け取りました。"
+msgstr ""
+"バリア価格1ドル100円、ペイアウト1,000円のドル円のコールバイナリーオプションを500円で購入し、判定レートが1ドル99円となり権利行使が行われ、買"
+"い手は1,000円のペイアウトを受け取りました。"
 
 msgid "{JAPAN ONLY}If you buy a currency binary option at a price of 500 yen, and the judgment price meets the conditions so you receive a payout of 1,000 yen, then your profit can be calculated 500 yen after subtracting the 500 yen that was paid as a fee to the option seller."
 msgstr "ペイアウト1,000円のバイナリーコールオプションを500円で購入し、権利行使条件が判定の結果、満たされた場合には、買い手は売り手からペイアウトとして1,000円を受け取り、したがって買い手の損益は、売り手に支払った500円のオプション料を差し引き500円の利益となります。"
 
 msgid "{JAPAN ONLY}If you buy a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will receive a payout 1,000 yen from the seller of the option."
-msgstr "バリア価格１ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションを500円で購入し、判定レートが１ドル９９円となり権利行使が行われ、買い手は1,000円のペイアウトを受け取りました。"
+msgstr ""
+"バリア価格1ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションを500円で購入し、判定レートが１ドル99円となり権利行使が行われ、買"
+"い手は1,000円のペイアウトを受け取りました。"
 
 msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:%1'>Customer Support</a>."
 msgstr "出金依頼の取り消し、または出金に関するご質問等ありましたら、<a href=\"%1\">カスタマーサポート</a>までご連絡ください。"
@@ -8742,13 +8750,17 @@ msgid "{JAPAN ONLY}If you need more information then please contact Customer Sup
 msgstr "詳細につきまして、カスタマーサポート<a href='mailto:%1'>%1</a>までご連絡ください"
 
 msgid "{JAPAN ONLY}If you sell a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
-msgstr "バリア価格１ドル100円、ペイアウト1,000円のドル円のコールバイナリーオプションの購入代金500円を受け取り、判定レートが１ドル９９円となり権利行使が行われ、売り手は買い手に1,000円のペイアウトを支払いました。"
+msgstr ""
+"バリア価格1ドル100円、ペイアウト1,000円のドル円のコールバイナリーオプションの購入代金500円を受け取り、判定レートが１ドル99円となり権利行使が"
+"行われ、売り手は買い手に1,000円のペイアウトを支払いました。"
 
 msgid "{JAPAN ONLY}If you sell a currency binary option at a price of 500 yen, and the judgment price meets the conditions so you need to payout 1,000 yen, then your profit will be minus 500 yen after subtracting the 500 yen that was received as a fee from the option buyer."
 msgstr "ペイアウト1,000円のバイナリーコールオプションを500円で売却取引し、権利行使条件が判定の結果、満たされた場合には、売り手は買い手に対するペイアウトとして1,000円を支払わなければならず、したがって売り手の損益は、買い手から受け取った500円と差し引き500円の損失となります。"
 
 msgid "{JAPAN ONLY}If you sell a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
-msgstr "バリア価格１ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションの購入代金500円を受け取り、判定レートが１ドル９９円となり権利行使が行われ、売り手は買い手に1,000円のペイアウトを支払いました。"
+msgstr ""
+"バリア価格１ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションの購入代金500円を受け取り、判定レートが１ドル99円となり権利行使が"
+"行われ、売り手は買い手に1,000円のペイアウトを支払いました。"
 
 msgid "{JAPAN ONLY}If you wish to change your designated account or you have any other queries, then please contact Customer Support."
 msgstr "出金先口座情報の変更をご希望の場合、カスタマーサポートまでご連絡ください。"
@@ -9313,7 +9325,7 @@ msgid "{Japan Only}Live chart tools"
 msgstr "ライブチャート"
 
 msgid "{Japan Only}Payout from 1 to 10"
-msgstr "ペイアウト: ¥1,000〜¥100,000"
+msgstr "ペイアウト: 1ロット1,000から最大100ロット"
 
 msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
 msgstr "日証金信託銀行にて全額信託されています"
