@@ -355,20 +355,15 @@ var TradingEvents = (function () {
         /*
          * attach event to purchase buttons to buy the current contract
          */
-        if (page.client_status_detected('unwelcome')) {
-            $.each($('.purchase_button'), function() {
-                $(this).parent().addClass('button-disabled');
-            });
-        } else {
-            $('.purchase_button').on('click dblclick', function () {
-                if (isVisible(document.getElementById('confirmation_message_container'))) return;
+        $('.purchase_button').on('click dblclick', function () {
+            if (!page.client_status_detected('unwelcome') && !isVisible(document.getElementById('confirmation_message_container'))) {
                 var id = this.getAttribute('data-purchase-id'),
                     askPrice = this.getAttribute('data-ask-price');
 
                 var params = { buy: id, price: askPrice, passthrough: {} };
                 Object.keys(this.attributes).forEach(function(attr) {
                     if (attr && this.attributes[attr] && this.attributes[attr].name &&
-                        !/data\-balloon/.test(this.attributes[attr].name)) { // do not send tooltip data
+                            !/data\-balloon/.test(this.attributes[attr].name)) { // do not send tooltip data
                         var m = this.attributes[attr].name.match(/data\-(.+)/);
 
                         if (m && m[1] && m[1] !== 'purchase-id' && m[1] !== 'passthrough') {
@@ -381,8 +376,8 @@ var TradingEvents = (function () {
                     Price.incrFormId();
                     processForgetProposals();
                 }
-            });
-        }
+            }
+        });
 
         /*
          * attach event to close icon for purchase container
