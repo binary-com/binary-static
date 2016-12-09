@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-30 00:56+0000\n"
+"PO-Revision-Date: 2016-12-08 09:12+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -267,7 +267,7 @@ msgid "%1's Volatility Indices are based on a cryptographically secure random nu
 msgstr "当社のボラティリティ インデックスは、独立したサードパーティーによる公平性の監査のうえ、暗号化された安全な乱数ジェネレーターをベースにしています。"
 
 msgid "%1's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market."
-msgstr "%1の特許取得済みの価格設定テクノロジーにより、インターバンク市場でのトレードと同等のリターン率を提供します。"
+msgstr "%1の特許取得済みの価格設定テクノロジーにより、インターバンク市場でのトレードと同等の環境を提供します。"
 
 msgid "%1's principal Anti-Fraud Officer is responsible for the exercise of exceptional client relationship management skills applied to the prevention of fraudulent activities in payments processing and business transactions. He or she will be expected to partner with our payments and compliance teams in resolving payment queries; administering chargebacks; conducting anti-money laundering audits, and implement a broad array of fraud prevention measures."
 msgstr "不正対策本部は、支払処理やビジネス取引での不正行為防止に適用する例外的な顧客関係管理能力の行使をします。支払に関する問い合わせの解決（チャージバック管理、アンチマネーロンダリングの監査、幅広い詐欺防止対策への実施）において支払チームとコンプライアンスチームと協働することになります。"
@@ -398,7 +398,7 @@ msgid "30-day turnover limit "
 msgstr "30日の取引限度額 "
 
 msgid "4. Choose your Payout"
-msgstr "4. ペイアウトを選択"
+msgstr "4. ロット数を選択"
 
 msgid "40 transactions or more in the past 12 months"
 msgstr "過去12ヶ月で40以上のお取引"
@@ -521,10 +521,10 @@ msgid "<strong>All markets</strong> - currencies, stock indices, and commodities
 msgstr "<strong>取引対象</strong>- 外国為替市場の主要通貨ペア"
 
 msgid "<strong>All payouts:</strong> from $1 to $50,000."
-msgstr "<strong>ペイアウト：</strong>1,000円〜100,000円"
+msgstr "<strong>ペイアウト：</strong>1ロット1,000円、最大100ロット"
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
-msgstr "<strong>ペイアウト</strong>：1,000円〜100,000円"
+msgstr "<strong>ペイアウト</strong>：1ロット1,000円、最大100ロット"
 
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>適正テスト: 警告:</strong>当サービスでは、どの所定の製品またはサービスがお客様に適しているか評価するためにお客さまの情報を必要とします。（関連するリスクを理解する経験や知識があるかどうかわかります。）"
@@ -674,7 +674,7 @@ msgid "<strong>Trade your way</strong> - customize your trades to meet your need
 msgstr "<strong>お客さまのスタイルで</strong>：ニーズに合わせて取引をカスタマイズして頂けます。"
 
 msgid "<strong>Up to 100% returns on rise/fall trades</strong> - we challenge you to find better returns on any competing website."
-msgstr "<strong>「ラダー」では高いリターン率が期待</strong>：他社と比較しても遜色のない収益機会を提供します"
+msgstr "<strong>「ラダー」はバリア価格より上か下かを予測します</strong>：他社と比較しても遜色のない収益機会を提供します"
 
 msgid "<strong>Volatile markets</strong> - choose the one-touch trade, the goes-outside trade, or the ends outside trade."
 msgstr "<strong>荒れ相場の時</strong>：「TOUCH」、「END-OUT」または「BREAK-OUT」取引を試してみましょう。"
@@ -801,7 +801,7 @@ msgid "A university degree or accredited translation certification preferred"
 msgstr "大学の学位または公認の翻訳資格があると好ましい"
 
 msgid "AM"
-msgstr ""
+msgstr "午前"
 
 msgid "API"
 msgstr "API"
@@ -1694,7 +1694,7 @@ msgid "Choose a password"
 msgstr "パスワード"
 
 msgid "Choose a payout from $1 to $50,000."
-msgstr "ペイアウトは1,000円から100,000円まで選択可能です"
+msgstr "ペイアウトは1ロット1,000円、最大100ロットまで選択可能です"
 
 msgid "Choose a trade type"
 msgstr "取引タイプを選択"
@@ -1715,19 +1715,19 @@ msgid "Choose the duration"
 msgstr "取引期間を選択"
 
 msgid "Choose the market, the price target, the time period, and how much you wish to win."
-msgstr "取引対象通貨ペア、バリア価格、取引期間、ペイアウトを決定しましょう。"
+msgstr "取引対象通貨ペア、バリア価格、取引期間、ロット数を決定しましょう。"
 
 msgid "Choose the market, the price targets, the time period, and how much you wish to win."
-msgstr "取引対象通貨ペア、バリア価格、取引期間、ペイアウトを決定しましょう。"
+msgstr "取引対象通貨ペア、バリア価格、取引期間、ロット数を決定しましょう。"
 
 msgid "Choose the market, the time period, and how much you wish to win."
-msgstr "取引対象通貨ペア、取引期間、ペイアウトを選択して下さい。"
+msgstr "取引対象通貨ペア、取引期間、ロット数を選択して下さい。"
 
 msgid "Choose the payment method you'd like to use."
 msgstr "ご希望のお支払い方法をご選択ください。"
 
 msgid "Choose the payout"
-msgstr "ペイアウトを選択"
+msgstr "ロット数を選択"
 
 msgid "Choose the specific type of API token that you need, based on the capabilities that you wish to make available."
 msgstr "ご希望の機能に基いた、必要なAPIトークンの種類を選択してください。"
@@ -2388,7 +2388,7 @@ msgid "Each binary option is a prediction on the future movement of an underlyin
 msgstr "バイナリーオプションは、原資産の将来の値動きを予測する取引です。"
 
 msgid "Each binary trade is for a pre-determined payout amount. You win the payout if your prediction is correct."
-msgstr "各バイナリーでのお取引は事前にペイアウトが確定しています。条件が満たされるとこの金額を獲得いただけます。"
+msgstr "各バイナリーでのお取引は事前にペイアウト金額が確定しています。条件が満たされるとこの金額を獲得いただけます。"
 
 msgid "Each option transaction has a specified expiry time and date, known as the judgment time."
 msgstr "本取引が期日のある取引であること。（契約締結前交付書面「店頭バイナリーオプション取引のリスク等重要事項について」-2参照）"
@@ -2712,7 +2712,7 @@ msgid "Familiarity with virtualization concepts (openvz / Xen / vmware)"
 msgstr "仮想化コンセプトを熟知している(openvz / Xen / vmware)"
 
 msgid "Family name"
-msgstr "氏名(全角)"
+msgstr "氏名 (全角)"
 
 msgid "Favourite artist"
 msgstr "好きなアーティスト名"
@@ -2775,7 +2775,7 @@ msgid "First line of home address"
 msgstr "番地"
 
 msgid "First name"
-msgstr "フリガナ（全角）"
+msgstr "フリガナ (全角)"
 
 msgid "First, define your position..."
 msgstr "まず、どのようなポジションを持つか決めましょう"
@@ -3036,7 +3036,7 @@ msgid "Higher/Lower trades"
 msgstr "HIGH/LOW・トレード"
 
 msgid "Hour"
-msgstr ""
+msgstr "時間"
 
 msgid "Housewife / Househusband"
 msgstr "主婦/主夫"
@@ -3251,7 +3251,7 @@ msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</str
 msgstr "「アップ」を選択された場合、<strong>終値</strong>が<strong>エントリー価格</strong>より正確に高くなるとペイアウトを獲得いただけます。同値は条件を満たしていないと判定されます。"
 
 msgid "If you select \"Stays Between\", you win the payout if the market stays between (does not touch) either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
-msgstr "「STAY-IN」を選択された場合、<strong>取引期間が終了するまで常に</strong>市場価格がバリアを設定した<strong>上下両方</strong>のバリア価格のレンジ内に留まること、すなわち<strong>バリア価格に１度もタッチしなければ</strong>ペイアウトを受け取れます。"
+msgstr "「STAY-IN」を選択された場合、<strong>取引期間が終了するまで常に</strong>市場価格がバリアを設定した<strong>上下両方</strong>のバリア価格のレンジ内に留まること、すなわち<strong>バリア価格にタッチしたら</strong>ペイアウトを受け取れます。"
 
 msgid "If you select \"Touches\", you win the payout if the market touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "「TOUCH」を選択された場合、<strong>取引期間が終了するまで</strong>に市場価格が<strong>バリア</strong>設定した価格にタッチすればペイアウトを受け取れます。"
@@ -4398,8 +4398,6 @@ msgstr "%1文字以上でご入力ください。"
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "6文字以上の英数字（大文字と小文字を含む）"
 
-#, fuzzy
-#| msgid "Minutes"
 msgid "Minute"
 msgstr "分"
 
@@ -4871,7 +4869,7 @@ msgid "Ownership, content, and liability of the Affiliate's websites are the sol
 msgstr "アフィリエイト会員は、自身が保有するプロモーションサイトに関する所有権とコンテンツに責任を負います。プロモーションサイトの開発、オペレーション、維持、そしてサイト上に存在する全ての素材に対して責任があります。アフィリエイト会員は、開発、オペレーション、維持、そしてサイト上に存在する全ての素材に関係する請求、損害賠償や費用（訴訟費用など）を当社に対して求めないことを確証します。"
 
 msgid "PM"
-msgstr ""
+msgstr "午後"
 
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "外国為替市場でお取引"
@@ -5050,13 +5048,9 @@ msgstr "有効な値をご入力して下さい。"
 msgid "Please enter an integer value"
 msgstr "半角で数値をご入力して下さい"
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
 msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr "ご希望の日付を選択して下さい。"
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD."
 msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "ご希望の日付を選択して下さい。"
 
@@ -5187,7 +5181,7 @@ msgid "Preparing the periodic and special reports required to ensure legal and r
 msgstr "当社事業内の法域における法律および規制の遵守を確保するために定期報告書または特別報告書の作成を行います"
 
 msgid "Presents the maximum aggregate payouts on outstanding contracts in your portfolio. If the maximum is attained, you may not purchase additional contracts without first closing out existing positions."
-msgstr "保有ポジションに対する未現実利益利益を示します。上限額に達した場合、保有ポジションを一部決済されるまで新規注文を行えません。"
+msgstr "保有ポジションに対する未現実利益利益を示します。上限額に達した場合、保有ポジションを一部決済するまで新規注文を行えません。"
 
 msgid "Previous"
 msgstr "戻る"
@@ -6784,9 +6778,8 @@ msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., 
 msgstr ""
 "■店頭バイナリーオプション取引は金融商品取引法に規定される店頭デリバティブ取引であり、元本や利益が保証されていません。■店頭バイナリーオプション取引は、判定時刻に自動的に権利行使されるヨーロピアンタイプと、取引期間中に決められた条件に達すると権利が自動行使されるアメリカンタイプがあります。■店頭バイナリーオプションは、外国為替相場等の変動により投資元本の全てを失うおそれのあるリスクの高い金融商品です。■判定時刻及び取引期間中における一定の権利を、オプション料を支払って購入する期限がある取引のため、権利が消滅した場合には支払ったオプション料の全額を失います。■ペイアウトは1ロットあたり1,000円です。■購入価格と売却価格にはスプレッドがあり、相場情勢により拡大することがあります。■相場情勢により、お客様が希望した価格より不利な価格で取引が成立する場合があります。■店頭バイナリーオプションの取引上限は以下のとおりです。\n"
 "1)1取引のペイアウト上限額は10万円。(100ロット分)\n"
-"2)1日の取引上限額及び利益上限額は500万円。\n"
-"3)1日の未実現利益上限額は100万円。\n"
-"　上記2)もしくは3)いずれかに達した時点で、お客さまはその日の取引ができなくなります。\n"
+"2)1日の取引上限額(金融資産額)は100万円〜300万円。\n"
+"　上記2)に達した時点で、お客さまはその日の取引ができなくなります。\n"
 "■取引手数料は無料ですが、12ヶ月間、新規又は決済の取引がなかった場合は口座維持管理料（年間2,500円）が発生します。■オプションの購入後の注文取り消しは行う事ができませんが、取引可能期間であれば売却は可能です。ただし、購入価格と売却価格にはスプレッドがあり、売却時に損失を被る可能性があります。■お取引を開始される前に、契約締結前交付書面を熟読の上、必ず約款及び取扱説明書に書かれてある取引の特徴、取引条件、仕組み及びリスクを十分確認いただき、ご自身の判断と責任において、自己の計算によりお取引ください。"
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
@@ -6807,10 +6800,8 @@ msgstr "レベル"
 msgid "Time"
 msgstr "日時"
 
-#, fuzzy
-#| msgid "Start time is in the future."
 msgid "Time is in the wrong format."
-msgstr "開始時間が未来の値になっています。"
+msgstr "開始時間に間違った値になっております"
 
 msgid "Time out until"
 msgstr "xxxまで利用禁止"
@@ -7597,7 +7588,7 @@ msgid "With %1 you can trade:"
 msgstr "当社では下記のお取引が可能です。"
 
 msgid "With %1 you're in control of how much you can win. You specify a fixed payout amount at the outset, and your stake - what you pay - is then calculated. %1 offers payouts from $1 to $50,000."
-msgstr "当システムではペイアウトを確実に管理することができます。取引内容を設定する際にペイアウトまたは購入金額を指定し、正確な算出結果を得ることができます。%1では1,000円から100,000円までのペイアウトを設定いただけます。"
+msgstr "当システムではペイアウトを確実に管理することができます。取引内容を設定する際にペイアウトまたは購入金額を指定し、正確な算出結果を得ることができます。%1では1ロット1,000円から最大100ロットまで選択いただけます。"
 
 msgid "With %1's unique platform, there's no risk of 'slippage' or gapping markets. And no hidden fees."
 msgstr "当社の独自システムには、スリッページやギャッピングに関するリスクが存在しません。取引手数料は無料です。"
@@ -7729,7 +7720,7 @@ msgid "You can <a class='pjaxload' href='%1'>open an account</a>, deposit funds 
 msgstr "<a class='pjaxload' href='%1'>口座の開設</a>、および取引に必要な預託金のご入金は簡単にできます。"
 
 msgid "You can choose payouts from $1 to $50,000. This wide payout range is ideal for both small and large traders."
-msgstr "ペイアウトは1,000円から100,000円の間で指定できます。トレードが小額でも高額でも満足のいくお取引が可能です。"
+msgstr "1ロット1,000円から最大100ロットまで選択できます。トレードが小額でも高額でも満足のいくお取引が可能です。"
 
 msgid "You can close your trade before expiry to lock in profits."
 msgstr "お客さまの予測通りに相場が動いた場合、判定時刻前にポジションを売却をすることにより利益を確定ができます。"
@@ -8162,10 +8153,8 @@ msgstr "メールアドレス"
 msgid "f"
 msgstr "女性"
 
-#, fuzzy
-#| msgid "Th"
 msgid "h"
-msgstr "木曜日"
+msgstr "時"
 
 msgid "hour"
 msgstr "時間"
@@ -8213,7 +8202,7 @@ msgid "minimum available duration"
 msgstr "最短取引期間"
 
 msgid "mins"
-msgstr ""
+msgstr "分"
 
 msgid "minute"
 msgstr "分"
@@ -8729,13 +8718,13 @@ msgid "{JAPAN ONLY}If you believe the underlying asset price will move by a larg
 msgstr "原資産価格が大きく騰落することを予測し、上昇、下落、いずれの方向に動いても利益を得るため、原資産価格よりバリア価格が高いコールオプションと原資産価格よりバリア価格が低いプットオプションの２つのオプションを合わせて購入しました。"
 
 msgid "{JAPAN ONLY}If you buy a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will receive a payout 1,000 yen from the seller of the option."
-msgstr "バリア価格１ドル100円、ペイアウト1,000円のドル円のコールバイナリーオプションを500円で購入し、判定レートが１ドル９９円となり権利行使が行われ、買い手は1,000円のペイアウトを受け取りました。"
+msgstr "バリア価格1ドル100円、ペイアウト1,000円のドル円のコールバイナリーオプションを500円で購入し、判定レートが1ドル99円となり権利行使が行われ、買い手は1,000円のペイアウトを受け取りました。"
 
 msgid "{JAPAN ONLY}If you buy a currency binary option at a price of 500 yen, and the judgment price meets the conditions so you receive a payout of 1,000 yen, then your profit can be calculated 500 yen after subtracting the 500 yen that was paid as a fee to the option seller."
 msgstr "ペイアウト1,000円のバイナリーコールオプションを500円で購入し、権利行使条件が判定の結果、満たされた場合には、買い手は売り手からペイアウトとして1,000円を受け取り、したがって買い手の損益は、売り手に支払った500円のオプション料を差し引き500円の利益となります。"
 
 msgid "{JAPAN ONLY}If you buy a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will receive a payout 1,000 yen from the seller of the option."
-msgstr "バリア価格１ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションを500円で購入し、判定レートが１ドル９９円となり権利行使が行われ、買い手は1,000円のペイアウトを受け取りました。"
+msgstr "バリア価格1ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションを500円で購入し、判定レートが１ドル99円となり権利行使が行われ、買い手は1,000円のペイアウトを受け取りました。"
 
 msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:%1'>Customer Support</a>."
 msgstr "出金依頼の取り消し、または出金に関するご質問等ありましたら、<a href=\"%1\">カスタマーサポート</a>までご連絡ください。"
@@ -8744,13 +8733,13 @@ msgid "{JAPAN ONLY}If you need more information then please contact Customer Sup
 msgstr "詳細につきまして、カスタマーサポート<a href='mailto:%1'>%1</a>までご連絡ください"
 
 msgid "{JAPAN ONLY}If you sell a currency binary call option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
-msgstr "バリア価格１ドル100円、ペイアウト1,000円のドル円のコールバイナリーオプションの購入代金500円を受け取り、判定レートが１ドル９９円となり権利行使が行われ、売り手は買い手に1,000円のペイアウトを支払いました。"
+msgstr "バリア価格1ドル100円、ペイアウト1,000円のドル円のコールバイナリーオプションの購入代金500円を受け取り、判定レートが１ドル99円となり権利行使が行われ、売り手は買い手に1,000円のペイアウトを支払いました。"
 
 msgid "{JAPAN ONLY}If you sell a currency binary option at a price of 500 yen, and the judgment price meets the conditions so you need to payout 1,000 yen, then your profit will be minus 500 yen after subtracting the 500 yen that was received as a fee from the option buyer."
 msgstr "ペイアウト1,000円のバイナリーコールオプションを500円で売却取引し、権利行使条件が判定の結果、満たされた場合には、売り手は買い手に対するペイアウトとして1,000円を支払わなければならず、したがって売り手の損益は、買い手から受け取った500円と差し引き500円の損失となります。"
 
 msgid "{JAPAN ONLY}If you sell a currency binary put option at a price of 500 yen, with an underlying of dollar against yen, the payout is 1,000 yen, and the strike price is 100, then if the judgment price at exercise time is 99, you will need to payout 1,000 yen to the buyer of the option."
-msgstr "バリア価格１ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションの購入代金500円を受け取り、判定レートが１ドル９９円となり権利行使が行われ、売り手は買い手に1,000円のペイアウトを支払いました。"
+msgstr "バリア価格１ドル100円、ペイアウト1,000円のドル円のプットバイナリーオプションの購入代金500円を受け取り、判定レートが１ドル99円となり権利行使が行われ、売り手は買い手に1,000円のペイアウトを支払いました。"
 
 msgid "{JAPAN ONLY}If you wish to change your designated account or you have any other queries, then please contact Customer Support."
 msgstr "出金先口座情報の変更をご希望の場合、カスタマーサポートまでご連絡ください。"
@@ -9283,10 +9272,10 @@ msgid "{JAPAN ONLY}You must have sufficient balance in your trading account at t
 msgstr "出金依頼を行う際、取引残高が十分あることをご確認して下さい。"
 
 msgid "{JAPAN ONLY}You set your own personal daily loss limit"
-msgstr "1日損失限度額を設定できます"
+msgstr "ご自身で取引限度額、損失限度額を期間ごとに設定できます"
 
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
-msgstr "お客さまのバイナリーオプション取引では、購入金額を超えて損失が生じる可能性はありませんが、損失を限定するためのロスカットではありませんのご注意してください。"
+msgstr "バイナリーオプション取引は、購入金額を超える損失が生じる可能性はありませんが、損失を限定するためのロスカットはありません。権利が消滅した場合、購入金額全額が損失となります。"
 
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "信託により区分管理"
@@ -9307,19 +9296,19 @@ msgid "{Japan Only}Binary option specialist for over 15 years "
 msgstr "15年以上のバイナリー業界の経験 "
 
 msgid "{Japan Only}Fully licenced in Japan"
-msgstr "第一種金融商品取引業者登録"
+msgstr "取引期間は2時間から1年まで"
 
 msgid "{Japan Only}Live chart tools"
 msgstr "ライブチャート"
 
 msgid "{Japan Only}Payout from 1 to 10"
-msgstr "ペイアウト: ¥1,000〜¥100,000"
+msgstr "ペイアウト: 1ロット1,000から最大100ロット"
 
 msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
 msgstr "日証金信託銀行にて全額信託されています"
 
 msgid "{Japan Only}Trade all binary option types"
-msgstr "4つすべてのバイナリーオプションタイプ取引可能"
+msgstr "4タイプのバイナリーオプション取引が可能"
 
 msgid "{Japan Only}Trade the major currencies"
 msgstr "主要通貨ペアの取引可能"
