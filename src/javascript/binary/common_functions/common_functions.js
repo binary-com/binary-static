@@ -95,10 +95,10 @@ function checkInput(type, wrongVal) {
  * if yes, update the data-value. if no, return false.
  */
 function dateValueChanged(element, type) {
+    if (element.getAttribute('data-value') === element.value) {
+        return false;
+    }
     if (element.getAttribute('type') === type) {
-        if (element.getAttribute('data-value') === element.value) {
-            return false;
-        }
         element.setAttribute('data-value', element.value);
     }
     return true;

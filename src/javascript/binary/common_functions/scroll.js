@@ -39,8 +39,12 @@ var Scroll = (function() {
                 sticky_navigation();
 
                 for (var i = 0; i < length; i++) {
-                    var sectionOffset = $('.section:eq(' + i + ')').offset();
-                    if ($(window).scrollTop() === 0 || (sectionOffset && $(this).scrollTop() >= sectionOffset.top - 5)) {
+                    var section = $('.section:eq(' + i + ')');
+                    var sectionOffset = section.offset();
+                    if ($(window).scrollTop() === 0 ||
+                        (sectionOffset && $(this).scrollTop() >= sectionOffset.top - 5) &&
+                        section.css('display') !== 'none') { // ignore hidden elements
+
                         sidebar_nav.find('li').removeClass('selected');
 
                         if ($(window).scrollTop() === 0) {
