@@ -19,11 +19,11 @@ var ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbo
 var MBSymbols = (function () {
     'use strict';
 
-    var tradeMarkets = {},
+    var tradeMarkets     = {},
         tradeMarketsList = {},
         tradeUnderlyings = {},
         need_page_update = 1,
-        names = {};
+        names            = {};
 
     var details = function (data) {
         ActiveSymbols.clearData();

@@ -48,7 +48,7 @@ var MBContract = (function() {
             Y: 'year',
         };
         Object.keys(durationMap).forEach(function(key) {
-            dur = dur.replace(key, page.text.localize(durationMap[key] + (dur[0] === 1 || /h/.test(key) ? '' : 's')));
+            dur = dur.replace(key, page.text.localize(durationMap[key] + (+dur[0] === 1 || /h/.test(key) ? '' : 's')));
         });
         return dur;
     };
@@ -181,7 +181,9 @@ var MBContract = (function() {
             second: duration.seconds(),
         };
         Object.keys(all_durations).forEach(function(key) {
-            remainingTimeString.push(all_durations[key] + page.text.localize((key + (all_durations[key] === 1 ? '' : 's'))));
+            if (all_durations[key]) {
+                remainingTimeString.push(all_durations[key] + page.text.localize((key + (+all_durations[key] === 1 ? '' : 's'))));
+            }
         });
         remainingTimeElement.innerHTML = remainingTimeString.join(' ');
         if (remainingTimeout) clearContractTimeout(remainingTimeout);
@@ -193,10 +195,7 @@ var MBContract = (function() {
             b = second.split('_'),
             duration1 = a[1] - a[0],
             duration2 = b[1] - b[0];
-        if (a[1] === b[1]) {
-            return duration1 - duration2;
-        }
-        return a[1] - b[1];
+        return a[1] === b[1] ? duration1 - duration2 : a[1] - b[1];
     };
 
     var populateOptions = function(rebuild) {
@@ -235,7 +234,8 @@ var MBContract = (function() {
                 appendTextValueChild(
                     document.getElementById('category'),
                     categoryNames[contracts_array[j]],
-                    contracts_array[j], contracts_array[j] === default_value);
+                    contracts_array[j],
+                    contracts_array[j] === default_value);
             }
             MBDefaults.set('category', $('#category').val());
         }

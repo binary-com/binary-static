@@ -20,17 +20,18 @@ var PortfolioWS = (function() {
         is_first_response;
 
     var init = function() {
+        hidden_class = 'invisible';
+        if (TUser.get().balance) {
+            updateBalance();
+        }
+
         if (is_initialized) return;
 
         values = {};
         currency = '';
         oauth_apps = {};
-        hidden_class = 'invisible';
         $('#portfolio-loading').show();
         showLoadingImage($('#portfolio-loading'));
-        if (TUser.get().balance) {
-            updateBalance();
-        }
         is_first_response = true;
         BinarySocket.send({ portfolio: 1 });
         // Subscribe to transactions to auto update new purchases
@@ -69,7 +70,7 @@ var PortfolioWS = (function() {
         if ($('#portfolio-balance').length === 0) return;
         $('#portfolio-balance').text(Portfolio.getBalance(TUser.get().balance, TUser.get().currency));
         var $if_balance_zero = $('#if-balance-zero');
-        if (Portfolio.getBalance(TUser.get().balance) > 0 || page.client.is_virtual()) {
+        if (TUser.get().balance > 0 || page.client.is_virtual()) {
             $if_balance_zero.addClass(hidden_class);
         } else {
             $if_balance_zero.removeClass(hidden_class);

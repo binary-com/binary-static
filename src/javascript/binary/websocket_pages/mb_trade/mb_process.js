@@ -203,15 +203,13 @@ var MBProcess = (function() {
             trading_period_start: durations[0],
         };
         var barriers_array,
-            i,
-            j,
             all_expired = true;
-        for (i = 0; i < available_contracts.length; i++) {
+        for (var i = 0; i < available_contracts.length; i++) {
             req.contract_type = available_contracts[i].contract_type;
             barriers_array = available_contracts[i].available_barriers;
-            for (j = 0; j < barriers_array.length; j++) {
+            for (var j = 0; j < barriers_array.length; j++) {
                 if (+available_contracts[i].barriers === 2) {
-                    req.barrier = barriers_array[j][1];
+                    req.barrier  = barriers_array[j][1];
                     req.barrier2 = barriers_array[j][0];
                 } else {
                     req.barrier = barriers_array[j];

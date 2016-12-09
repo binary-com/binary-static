@@ -3,6 +3,7 @@ var addComma        = require('./string_util').addComma;
 
 function format_money(currencyValue, amount) {
     var money;
+    if (amount) amount = String(amount).replace(/,/g, '');
     if (typeof Intl !== 'undefined' && currencyValue && currencyValue !== '' && amount && amount !== '') {
         var options = { style: 'currency', currency: currencyValue },
             language = typeof window !== 'undefined' && page.language().toLowerCase() ? page.language().toLowerCase() : 'en';
