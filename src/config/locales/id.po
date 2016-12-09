@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-29 03:12+0000\n"
+"PO-Revision-Date: 2016-12-09 06:41+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -794,7 +794,7 @@ msgid "A university degree or accredited translation certification preferred"
 msgstr "Sarjana atau terjemahan sertifikasi terakreditasi lebih diutamakan"
 
 msgid "AM"
-msgstr ""
+msgstr "AM"
 
 msgid "API"
 msgstr "API"
@@ -4807,7 +4807,7 @@ msgid "Ownership, content, and liability of the Affiliate's websites are the sol
 msgstr "Kepemilikan, konten, dan kewajiban dari situs Afiliasi ini merupakan tanggung jawab dari Afiliasi. Anda akan bertanggung jawab untuk pengembangan, operasi, dan pemeliharaan website Anda dan untuk semua materi yang ditampilkan pada website Anda. Anda akan bertanggung jawab sepenuhnya dan melepaskan kami dari semua tuntutan, kerusakan, dan biaya (termasuk, namun tidak terbatas pada, biaya pengacara) yang berkaitan dengan pengembangan, operasi, pemeliharaan, dan isi dari website Anda."
 
 msgid "PM"
-msgstr ""
+msgstr "PM"
 
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "Berpartisipasi dalam pasar forex, saham atau komoditas?"
@@ -4986,15 +4986,11 @@ msgstr "Tolong masukan jumlah yang benar."
 msgid "Please enter an integer value"
 msgstr "Silahkan masukan nilai penuh"
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
 msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
-msgstr "Silakan masukkan tanggal dalam format YYYY-MM-DD HH:mm (waktu lokal)."
+msgstr "Masukkan tanggal dengan format HH BBB, TTTT JJ:mm (waktu lokal)."
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD."
 msgid "Please enter date in the format DD MMM, YYYY."
-msgstr "Silakan masukkan tanggal dalam format YYY-MM-DD."
+msgstr "Masukkan tanggal dalam format HH BBB, TTTT."
 
 msgid "Please enter your current password."
 msgstr "Silahkan masukkan kata sandi Anda."
@@ -6636,10 +6632,8 @@ msgstr "Tingkat"
 msgid "Time"
 msgstr "Waktu"
 
-#, fuzzy
-#| msgid "Start time is in the future."
 msgid "Time is in the wrong format."
-msgstr "Mulai waktu di masa depan."
+msgstr "Waktu dalam format salah."
 
 msgid "Time out until"
 msgstr "Time out hingga"
@@ -7937,10 +7931,8 @@ msgstr "alamat email"
 msgid "f"
 msgstr "f"
 
-#, fuzzy
-#| msgid "Th"
 msgid "h"
-msgstr "Kam"
+msgstr "j"
 
 msgid "hour"
 msgstr "jam"
@@ -7988,7 +7980,7 @@ msgid "minimum available duration"
 msgstr "durasi minimal yang tersedia"
 
 msgid "mins"
-msgstr ""
+msgstr "menit"
 
 msgid "minute"
 msgstr "menit"
