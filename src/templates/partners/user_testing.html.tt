@@ -12,24 +12,7 @@
         [% l("Register to become a tester using the links below:") %]
       </p>
       <div class="gr-row">
-        <div class="gr-6 gr-12-m gr-6-p">
-          <div class="xquote">
-            <div>
-              <div class="picture">
-                <img class="responsive" src="[% request.url_for('images/pages/user_testing/mycrowd-img.svg') %]"/>
-              </div>
-              <div class="text">
-                <a class="pjaxload" href="https://mycrowd.com/" target="_blank">
-                  [% l("Mycrowd - for Binary.com traders") %]
-                </a>
-                <br/>
-                <span>
-                  [% l("Sign up as a tester and look for Binary.com-related projects.") %]
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+
         <div class="gr-6 gr-12-m gr-6-p">
           <div class="xquote">
             <div>
