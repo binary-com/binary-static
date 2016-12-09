@@ -5,23 +5,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    #page-wrapper {
-        #content {
-            .page-section {
-                & > .tab-menu {
-                    ul.tm-ul {
-                        li {
-                            &.active {
-                                a {
-                                    background: none;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
     #sell_popup_container {
         padding: 0;
         width: 100%;
@@ -42,24 +25,6 @@
     }
     .hide-tablet-mobile {
         display: none;
-    }
-    ul.tm-ul-2 {
-        display: block !important;
-        top: 0 !important;
-        position: relative !important;
-    }
-    ul.tm-li-2 {
-        display: block !important;
-    }
-    li.tm-li.hover ul {
-        display: block;
-        position: relative !important;
-        left: 0px !important;
-        width: 99% !important;
-        z-index: 1 !important;
-        margin-top: 0px !important;
-        background: $COLOR_WHITE;
-        @include BIDIR_PROP(margin-left, margin-right, 1px);
     }
 }
 
