@@ -29,7 +29,7 @@
     <!-- fieldcontainer for email -->
     <input id="id123-control22598060" name="control22598060" type="hidden" />
     <!-- Buttons begin here -->
-	<button OnClick="return CashierJP.error_handler()" type="submit" style="margin-left: 16px; margin-top: -5px;">送信</button>
+	<button OnClick="return HandleClick('CashierJP')" type="submit" style="margin-left: 16px; margin-top: -5px;">送信</button>
 </form>
 <!-- www.123contactform.com script ends here -->
 </div>
