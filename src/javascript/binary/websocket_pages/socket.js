@@ -1,17 +1,29 @@
-var getSocketURL = require('../../config').getSocketURL;
-var getAppId = require('../../config').getAppId;
-var Login = require('../base/login').Login;
-var objectNotEmpty = require('../base/utility').objectNotEmpty;
-var CommonFunctions = require('../common_functions/common_functions').CommonFunctions;
-var AccountOpening = require('../common_functions/account_opening').AccountOpening;
-var SessionDurationLimit = require('../common_functions/session_duration_limit').SessionDurationLimit;
-var checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
-var Cashier = require('../websocket_pages/cashier/cashier').Cashier;
-var PaymentAgentWithdrawWS = require('../websocket_pages/cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
+var getSocketURL              = require('../../config').getSocketURL;
+var getAppId                  = require('../../config').getAppId;
+var Login                     = require('../base/login').Login;
+var objectNotEmpty            = require('../base/utility').objectNotEmpty;
+var getLoginToken             = require('../common_functions/common_functions').getLoginToken;
+var displayAcctSettings       = require('../common_functions/account_opening').displayAcctSettings;
+var SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
+var checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
+var Cashier                   = require('./cashier/cashier').Cashier;
+var PaymentAgentWithdrawWS    = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
 var create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
-var TNCApproval = require('../websocket_pages/user/tnc_approval').TNCApproval;
-var ViewPopupWS = require('../websocket_pages/user/view_popup/view_popupws').ViewPopupWS;
-var ViewBalanceUI = require('../websocket_pages/user/viewbalance/viewbalance.ui').ViewBalanceUI;
+var TNCApproval               = require('./user/tnc_approval').TNCApproval;
+var ViewPopupWS               = require('./user/view_popup/view_popupws').ViewPopupWS;
+var ViewBalanceUI             = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
+var Cookies                   = require('../../lib/js-cookie');
+var State                     = require('../base/storage').State;
+var Highchart                 = require('./trade/charts/highchartws').Highchart;
+var WSTickDisplay             = require('./trade/tick_trade').WSTickDisplay;
+var TradePage                 = require('./trade/tradepage').TradePage;
+var Notifications             = require('./trade/notifications').Notifications;
+var TradePage_Beta            = require('./trade/beta/tradepage').TradePage_Beta;
+var reloadPage                = require('./trade/common').reloadPage;
+var MBTradePage               = require('./mb_trade/mb_tradepage').MBTradePage;
+var RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
+var RealityCheckData          = require('./user/reality_check/reality_check.data').RealityCheckData;
+var KnowledgeTest             = require('../../binary_japan/knowledge_test/knowledge_test.init').KnowledgeTest;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
@@ -38,13 +50,11 @@ function BinarySocketClass() {
         wrongAppId = 0,
         socketUrl = getSocketURL() + '?app_id=' + getAppId() + (page.language() ? '&l=' + page.language() : '');
 
-    var clearTimeouts = function(){
-        for(var k in timeouts){
-            if(timeouts.hasOwnProperty(k)){
-                clearTimeout(timeouts[k]);
-                delete timeouts[k];
-            }
-        }
+    var clearTimeouts = function() {
+        Object.keys(timeouts).forEach(function(key) {
+            clearTimeout(timeouts[key]);
+            delete timeouts[key];
+        });
     };
 
     var isReady = function () {
@@ -70,17 +80,22 @@ function BinarySocketClass() {
                 data.passthrough = {};
             }
             // temporary check
-            if((data.contracts_for || data.proposal) && !data.passthrough.hasOwnProperty('dispatch_to') && !/multi_barriers_trading/.test(window.location.pathname)){
+            if ((data.contracts_for || data.proposal) && !data.passthrough.hasOwnProperty('dispatch_to') && !State.get('is_mb_trading')) {
                 data.passthrough.req_number = ++req_number;
                 timeouts[req_number] = setTimeout(function(){
                     if(typeof reloadPage === 'function' && data.contracts_for){
-                        alert("The server didn't respond to the request:\n\n"+JSON.stringify(data)+"\n\n");
+                        window.alert("The server didn't respond to the request:\n\n"+JSON.stringify(data)+"\n\n");
                         reloadPage();
                     }
                     else{
                         $('.price_container').hide();
                     }
                 }, 60*1000);
+            } else if (data.contracts_for && !data.passthrough.hasOwnProperty('dispatch_to') && State.get('is_mb_trading')) {
+                data.passthrough.req_number = ++req_number;
+                timeouts[req_number] = setTimeout(function() {
+                    MBTradePage.onDisconnect();
+                }, 10*1000);
             }
 
             binarySocket.send(JSON.stringify(data));
@@ -108,7 +123,7 @@ function BinarySocketClass() {
         }
 
         binarySocket.onopen = function () {
-            var apiToken = CommonFunctions.getLoginToken();
+            var apiToken = getLoginToken();
             if (apiToken && !authorized && localStorage.getItem('client.tokens')) {
                 binarySocket.send(JSON.stringify({authorize: apiToken}));
             } else {
@@ -151,7 +166,7 @@ function BinarySocketClass() {
                         var isActiveTab = sessionStorage.getItem('active_tab') === '1';
                         if(response.error.code === 'SelfExclusion' && isActiveTab) {
                             sessionStorage.removeItem('active_tab');
-                            alert(response.error.message);
+                            window.alert(response.error.message);
                         }
                         LocalStore.set('reality_check.ack', 0);
                         page.client.send_logout_request(isActiveTab);
@@ -227,7 +242,7 @@ function BinarySocketClass() {
                         page.contents.topbar_message_visibility('show_residence');
                     }
                     if (/realws|maltainvestws|japanws/.test(window.location.href)) {
-                        AccountOpening.handle_account_opening_settings(response);
+                        displayAcctSettings(response);
                     }
                     GTM.event_handler(response.get_settings);
                     page.client.set_storage_value('tnc_status', response.get_settings.client_tnc_status || '-');
@@ -312,7 +327,7 @@ function BinarySocketClass() {
                             page.client.send_logout_request();
                       } else if (response.error.code === 'InvalidAppID') {
                           wrongAppId = getAppId();
-                          alert(response.error.message);
+                          window.alert(response.error.message);
                       }
                     }
                 }
@@ -322,16 +337,19 @@ function BinarySocketClass() {
             }
         };
 
-        binarySocket.onclose = function (e) {
+        binarySocket.onclose = function () {
             authorized = false;
             clearTimeouts();
 
             if(!manualClosed && wrongAppId !== getAppId()) {
-                if (TradePage.is_trading_page() || TradePage_Beta.is_trading_page()) {
-                    showPriceOverlay();
-                    showFormOverlay();
-                    if (TradePage.is_trading_page()) TradePage.onLoad();
-                    else TradePage_Beta.onLoad();
+                var toCall = State.get('is_trading')      ? TradePage.onDisconnect      :
+                             State.get('is_beta_trading') ? TradePage_Beta.onDisconnect :
+                             State.get('is_mb_trading')   ? MBTradePage.onDisconnect    : '';
+                if (toCall) {
+                    Notifications.show({text: page.text.localize('Connection error: Please check your internet connection.'), uid: 'CONNECTION_ERROR', dismissible: true});
+                    timeouts.error = setTimeout(function() {
+                        toCall();
+                    }, 10*1000);
                 } else {
                     init(1);
                 }

@@ -1,4 +1,5 @@
 var objectNotEmpty = require('../../base/utility').objectNotEmpty;
+var isVisible      = require('../../common_functions/common_functions').isVisible;
 
 /*
  * Handles trading page default values

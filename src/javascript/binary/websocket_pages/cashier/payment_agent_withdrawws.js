@@ -1,4 +1,6 @@
 var template = require('../../base/utility').template;
+var Cookies  = require('../../../lib/js-cookie');
+var Content  = require('../../common_functions/content').Content;
 
 var PaymentAgentWithdrawWS = (function() {
     "use strict";
@@ -163,7 +165,7 @@ var PaymentAgentWithdrawWS = (function() {
         }
     };
 
-    var isCountError = function(fieldID, min, max) {
+    /*var isCountError = function(fieldID, min, max) {
         var fieldValue = $(fieldID).val().trim();
         if((fieldValue.length > 0 && fieldValue.length < min) || fieldValue.length > max) {
             showError(fieldID, Content.errorMessage('range', '(' + min + '-' + max + ')'));
@@ -171,7 +173,7 @@ var PaymentAgentWithdrawWS = (function() {
         } else {
             return false;
         }
-    };
+    };*/
 
     // ----------------------------
     // ----- Withdraw Process -----

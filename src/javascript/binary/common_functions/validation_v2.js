@@ -1,4 +1,7 @@
 var template = require('../base/utility').template;
+var moment   = require('moment');
+var dv       = require('../../lib/validation');
+var Content  = require('./content').Content;
 
 var ValidateV2 = (function() {
     function err() {
@@ -60,7 +63,7 @@ var ValidateV2 = (function() {
     }
 
     function noSymbolsInPassword(value) {
-        return !/^[!-~]+$/.test(password);
+        return /^[!-~]+$/.test(value);
     }
 
     function validToken(value) {

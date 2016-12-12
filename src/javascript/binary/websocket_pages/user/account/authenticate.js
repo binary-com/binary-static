@@ -1,3 +1,4 @@
+var Content         = require('../../../common_functions/content').Content;
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
 
 var AuthenticateWS = (function() {
@@ -15,7 +16,6 @@ var AuthenticateWS = (function() {
             }
             return page.client.is_virtual();
         }
-        var message = document.getElementById('authentication-message');
         if (!check_virtual()) {
             BinarySocket.init({
                 onmessage: function(msg){

@@ -1,4 +1,4 @@
-var CommonFunctions = require('../common_functions').CommonFunctions;
+var appendTextValueChild = require('../common_functions').appendTextValueChild;
 
 function create_language_drop_down(languages) {
     var language_select_element = document.getElementById('language_select');
@@ -12,7 +12,7 @@ function create_language_drop_down(languages) {
     });
     for (var i = 0; i < languages.length; i++) {
         if (languages[i] !== 'JA') {
-            CommonFunctions.appendTextValueChild(language_select_element, map_code_to_language(languages[i]), '', '', languages[i]);
+            appendTextValueChild(language_select_element, map_code_to_language(languages[i]), '', '', languages[i]);
         }
     }
     $('#language_select .' + page.language()).attr('selected', 'selected');

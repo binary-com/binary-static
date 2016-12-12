@@ -1,3 +1,4 @@
+var Content         = require('../../../../common_functions/content').Content;
 var japanese_client = require('../../../../common_functions/country_base').japanese_client;
 var IPHistory = require('./iphistory/iphistory.init').IPHistory;
 

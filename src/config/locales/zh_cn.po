@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-11 04:11+0000\n"
+"PO-Revision-Date: 2016-12-09 08:13+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.9\n"
+"X-Generator: Weblate 2.10-dev\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -788,6 +788,9 @@ msgstr "市场营销或计算机科学本科学位尤佳"
 
 msgid "A university degree or accredited translation certification preferred"
 msgstr "具大学本科学位或受认可的翻译认证者优先录取"
+
+msgid "AM"
+msgstr "上午"
 
 msgid "API"
 msgstr "应用程序编程界面"
@@ -1863,6 +1866,9 @@ msgstr "Confirmation and understandings"
 
 msgid "Conflicts Policy"
 msgstr "冲突政策"
+
+msgid "Connection error: Please check your internet connection."
+msgstr "连接错误：请检查您网络连接。"
 
 msgid "Construction"
 msgstr "建筑"
@@ -2991,6 +2997,9 @@ msgstr "如果开始和结束期间价格跳动次数少于2，高于/低于合�
 
 msgid "Higher/Lower trades"
 msgstr "“高于/低于”交易"
+
+msgid "Hour"
+msgstr "小时"
 
 msgid "Housewife / Househusband"
 msgstr "Housewife / Househusband"
@@ -4328,6 +4337,9 @@ msgstr "需至少%1 个字符。"
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "至少6个大小写字母和数字"
 
+msgid "Minute"
+msgstr "分钟"
+
 msgid "Miss"
 msgstr "遗漏"
 
@@ -4789,6 +4801,9 @@ msgstr "%1 网站的所有权和内容均为归我们，不得视为通过此协
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
 msgstr "联盟网站的所有权、内容和法律责任均由联盟会员全权负责。您仅全权负责您的网站及其显示的全部材料的开发、运营和维护。对于与您网站开发、运营、维护和内容相关的一切索赔、损害赔偿和开支（包括但不限于律师费），您有责任进行赔偿，并使公司免受侵害。"
 
+msgid "PM"
+msgstr "下午"
+
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "参与外汇、股票或商品市场？"
 
@@ -4966,11 +4981,11 @@ msgstr "请输入有效金额。"
 msgid "Please enter an integer value"
 msgstr "请输入整数"
 
-msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
-msgstr "请输入日期，格式为年-月-日 时：分（当地时间）。"
+msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
+msgstr "请输入日期，格式为日-月-年 时：分（当地时间）。"
 
-msgid "Please enter date in the format YYYY-MM-DD."
-msgstr "请输入日期，格式为年-月-日。"
+msgid "Please enter date in the format DD MMM, YYYY."
+msgstr "请输入日期，格式为日-月-年。"
 
 msgid "Please enter your current password."
 msgstr "请输入当前密码。"
@@ -5020,10 +5035,8 @@ msgstr "请选择支付代理"
 msgid "Please select a valid date"
 msgstr "请选择ั有效日期"
 
-#, fuzzy
-#| msgid "Please select a value."
 msgid "Please select a value"
-msgstr "请选择一个数值。"
+msgstr "请选择一个数值"
 
 msgid "Please select at least one scope"
 msgstr "请选择至少一个范围"
@@ -6613,6 +6626,9 @@ msgstr "层级"
 msgid "Time"
 msgstr "时间"
 
+msgid "Time is in the wrong format."
+msgstr "时间格式错误。"
+
 msgid "Time out until"
 msgstr "时间已过。下次开启时间为"
 
@@ -7911,6 +7927,9 @@ msgstr "电子邮件地址"
 msgid "f"
 msgstr "f"
 
+msgid "h"
+msgstr "小时"
+
 msgid "hour"
 msgstr "小时"
 
@@ -7947,11 +7966,17 @@ msgstr "月"
 msgid "max: 100,000"
 msgstr "最大: 100,000"
 
+msgid "min"
+msgstr "最小"
+
 msgid "min: 1,000"
 msgstr "最小: 1,000"
 
 msgid "minimum available duration"
 msgstr "最短可用期限"
+
+msgid "mins"
+msgstr "分钟"
 
 msgid "minute"
 msgstr "分钟"
@@ -8019,6 +8044,9 @@ msgstr "跳动点"
 
 msgid "to your account."
 msgstr "入您的账户。"
+
+msgid "today"
+msgstr "今天"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "使用或转载%1 API（除非这些条款允许）或"
@@ -9066,6 +9094,9 @@ msgstr "风格"
 
 msgid "Endpoint"
 msgstr "终结点"
+
+msgid "Careers For Americans"
+msgstr "美国居民的工作机会"
 
 msgid "Job Details"
 msgstr "工作详情"
@@ -10804,9 +10835,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Start time %1 must be before end time %2"
 #~ msgstr "开始时间 %1 必须早于到期时间%2"
-
-#~ msgid "Start time is in the future."
-#~ msgstr "开始时间是在未来。"
 
 #~ msgid "Start time is in the past"
 #~ msgstr "开始时间是在过去"
@@ -13359,9 +13387,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "explanation"
 #~ msgstr "说明"
-
-#~ msgid "min"
-#~ msgstr "最小"
 
 #~ msgid "or Email us at"
 #~ msgstr "或发送电子邮件至"
@@ -18276,9 +18301,6 @@ msgstr "条款和条件审批"
 #~ msgid "Code"
 #~ msgstr "代码"
 
-#~ msgid "Connection error: Please view the progress at your portfolio page."
-#~ msgstr "连接错误：请在您的组合页面查看进度。"
-
 #~ msgid "End"
 #~ msgstr "结束"
 
@@ -22181,9 +22203,6 @@ msgstr "条款和条件审批"
 #~ msgid "Homemaker"
 #~ msgstr "家庭主妇/主男"
 
-#~ msgid "Hour"
-#~ msgstr "小时"
-
 #~ msgid "Hours"
 #~ msgstr "小时"
 
@@ -22408,9 +22427,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Minimum deposit is %1."
 #~ msgstr "最低存款额为%1。"
-
-#~ msgid "Minute"
-#~ msgstr "分钟"
 
 #~ msgid "Mobile phone number"
 #~ msgstr "手机号"

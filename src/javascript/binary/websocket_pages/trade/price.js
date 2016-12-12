@@ -1,4 +1,14 @@
-var format_money = require('../../common_functions/currency_to_symbol').format_money;
+var Durations                  = require('./duration').Durations;
+var StartDates                 = require('./starttime').StartDates;
+var Content                    = require('../../common_functions/content').Content;
+var format_money               = require('../../common_functions/currency_to_symbol').format_money;
+var moment                     = require('moment');
+var contractTypeDisplayMapping = require('./common').contractTypeDisplayMapping;
+var resetPriceMovement         = require('./common').resetPriceMovement;
+var displayCommentPrice        = require('./common').displayCommentPrice;
+var displayCommentSpreads      = require('./common').displayCommentSpreads;
+var displayPriceMovement       = require('./common_independent').displayPriceMovement;
+var isVisible                  = require('../../common_functions/common_functions').isVisible;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -25,7 +35,6 @@ var Price = (function() {
             subscribe: 1
         };
         var underlying = document.getElementById('underlying'),
-            submarket = document.getElementById('submarket'),
             contractType = typeOfContract,
             amountType = document.getElementById('amount_type'),
             currency = document.getElementById('currency'),
@@ -35,7 +44,6 @@ var Price = (function() {
             duration = document.getElementById('duration_amount'),
             durationUnit = document.getElementById('duration_units'),
             endDate = document.getElementById('expiry_date'),
-            endTime = document.getElementById('expiry_time'),
             barrier = document.getElementById('barrier'),
             highBarrier = document.getElementById('barrier_high'),
             lowBarrier = document.getElementById('barrier_low'),
@@ -73,7 +81,7 @@ var Price = (function() {
             proposal['duration'] = parseInt(duration.value);
             proposal['duration_unit'] = durationUnit.value;
         } else if (expiryType && isVisible(expiryType) && expiryType.value === 'endtime') {
-            var endDate2 = endDate.value;
+            var endDate2 = endDate.getAttribute('data-value');
             var endTime2 = Durations.getTime();
             if (!endTime2) {
                 var trading_times = Durations.trading_times();
@@ -175,7 +183,6 @@ var Price = (function() {
             description = container.getElementsByClassName('contract_description')[0],
             comment = container.getElementsByClassName('price_comment')[0],
             error = container.getElementsByClassName('contract_error')[0],
-            price_wrapper = container.getElementsByClassName('price_wrapper')[0],
             currency = document.getElementById('currency');
 
         var display = type ? (contractType ? contractType[type] : '') : '';
@@ -201,7 +208,7 @@ var Price = (function() {
                 } else {
                     $('.stake:hidden').show();
                     stake.textContent = page.text.localize('Stake') + ': ';
-                    amount.textContent = format_money((currency.value || currency.getAttribute('value')), (data['display_value']*1).toFixed(2));
+                    amount.textContent = format_money((currency.value || currency.getAttribute('value')), data['display_value']);
                 }
                 $('.stake_wrapper:hidden').show();
             } else {
@@ -210,7 +217,7 @@ var Price = (function() {
 
             if (data['payout']) {
               payout.textContent = (is_spread ? page.text.localize('Payout/point') : page.text.localize('Payout')) + ': ';
-              payoutAmount.textContent = format_money((currency.value || currency.getAttribute('value')), (data['payout']*1).toFixed(2));
+              payoutAmount.textContent = format_money((currency.value || currency.getAttribute('value')), data['payout']);
               $('.payout_wrapper:hidden').show();
             } else {
               $('.payout_wrapper:visible').hide();
@@ -231,7 +238,7 @@ var Price = (function() {
             error.textContent = details['error']['message'];
         } else {
             setData(proposal);
-            if ($('#websocket_form').find('.error-field').length > 0) {
+            if ($('#websocket_form').find('.error-field:visible').length > 0) {
                 purchase.hide();
             } else {
                 purchase.show();

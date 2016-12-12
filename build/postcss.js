@@ -1,7 +1,7 @@
 module.exports = {
     options: {
         processors: [
-            require('autoprefixer-core')({browsers: ['last 2 version', 'last 5 iOS versions', 'last 3 Safari versions']})
+            require('autoprefixer')({browsers: ['last 2 version', 'last 5 iOS versions', 'last 3 Safari versions']})
         ]
     },
     dist: {

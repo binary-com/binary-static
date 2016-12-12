@@ -1,5 +1,6 @@
+var Content             = require('../../../../common_functions/content').Content;
 var ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
-var Validate = require('../../../../common_functions/validation').Validate;
+var Validate            = require('../../../../common_functions/validation').Validate;
 var RealAccOpeningData = require('./real_acc_opening.data').RealAccOpeningData;
 
 var RealAccOpeningUI = (function(){
@@ -7,13 +8,6 @@ var RealAccOpeningUI = (function(){
 
   function checkValidity(){
     window.accountErrorCounter = 0;
-
-    var letters = Content.localize().textLetters,
-        numbers = Content.localize().textNumbers,
-        space   = Content.localize().textSpace,
-        hyphen  = Content.localize().textHyphen,
-        period  = Content.localize().textPeriod,
-        apost   = Content.localize().textApost;
 
     var elementObj = {
         title     : document.getElementById('title'),

@@ -1,9 +1,10 @@
-var template = require('../../../base/utility').template;
-var testPassword = require('../../../common_functions/passwordmeter').testPassword;
-var CommonFunctions = require('../../../common_functions/common_functions').CommonFunctions;
-var japanese_client = require('../../../common_functions/country_base').japanese_client;
-var bind_validation = require('../../../validator').bind_validation;
-var AccountOpening = require('../../../common_functions/account_opening').AccountOpening;
+var template              = require('../../../base/utility').template;
+var handleResidence       = require('../../../common_functions/account_opening').handleResidence;
+var isIE                  = require('../../../common_functions/common_functions').isIE;
+var Content               = require('../../../common_functions/content').Content;
+var japanese_client       = require('../../../common_functions/country_base').japanese_client;
+var testPassword          = require('../../../common_functions/passwordmeter').testPassword;
+var bind_validation       = require('../../../validator').bind_validation;
 var VirtualAccOpeningData = require('./virtual_acc_opening/virtual_acc_opening.data').VirtualAccOpeningData;
 
 var VirtualAccOpening = (function(){
@@ -18,7 +19,7 @@ var VirtualAccOpening = (function(){
         );
     }
 
-    function onInvalidToken(res) {
+    function onInvalidToken() {
         $('.notice-message').remove();
         var $form = $('#virtual-form');
         $form.html($('<p/>', {
@@ -26,7 +27,7 @@ var VirtualAccOpening = (function(){
         }));
     }
 
-    function onDuplicateEmail(res) {
+    function onDuplicateEmail() {
         $('.notice-message').remove();
         var $form = $('#virtual-form');
         $form.html($('<p/>', {
@@ -34,7 +35,7 @@ var VirtualAccOpening = (function(){
         }));
     }
 
-    function onPasswordError(res) {
+    function onPasswordError() {
         var $error = $('#error-account-opening');
         $error.css({display: 'block'})
             .text(page.text.localize('Password is not strong enough.'));
@@ -53,13 +54,13 @@ var VirtualAccOpening = (function(){
 
     function init() {
         Content.populate();
-        AccountOpening.handle_residence_state_ws();
+        handleResidence();
         BinarySocket.send({residence_list: 1});
         BinarySocket.send({website_status: 1});
 
         var form = $('#virtual-form')[0];
         if (!form) return;
-        if (!CommonFunctions.isIE()) {
+        if (!isIE()) {
             $('#password').on('input', function() {
                 $('#password-meter').attr('value', testPassword($('#password').val())[0]);
             });

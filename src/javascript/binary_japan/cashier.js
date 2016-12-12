@@ -1,3 +1,4 @@
+var Content = require('../binary/common_functions/content').Content;
 var objectNotEmpty = require('../binary/base/utility').objectNotEmpty;
 
 var CashierJP = (function() {

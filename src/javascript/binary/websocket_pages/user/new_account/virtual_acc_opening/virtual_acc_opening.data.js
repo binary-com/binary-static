@@ -1,5 +1,8 @@
+var Content       = require('../../../../common_functions/content').Content;
 var TrafficSource = require('../../../../common_functions/traffic_source').TrafficSource;
-var ValidateV2 = require('../../../../common_functions/validation_v2').ValidateV2;
+var ValidateV2    = require('../../../../common_functions/validation_v2').ValidateV2;
+var Cookies = require('../../../../../lib/js-cookie');
+var dv      = require('../../../../../lib/validation');
 
 var VirtualAccOpeningData = (function(){
     "use strict";
@@ -57,9 +60,9 @@ var VirtualAccOpeningData = (function(){
             if (type !== 'error' && !error) return;
 
             switch (error.code) {
-                case 'InvalidToken':    return config.invalidToken(response);
-                case 'duplicate email': return config.duplicateEmail(response);
-                case 'PasswordError':   return config.passwordError(response);
+                case 'InvalidToken':    return config.invalidToken();
+                case 'duplicate email': return config.duplicateEmail();
+                case 'PasswordError':   return config.passwordError();
                 default: return;
             }
         };

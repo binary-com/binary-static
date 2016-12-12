@@ -8,8 +8,8 @@ var Regulation = (function() {
             });
         });
 
-        var coords = [];
-            $map_area = $('#planetmap area');
+        var coords = [],
+            $map_area = $('#planetmap area'),
             $selector = $('img[usemap="#planetmap"]');
         if (coords.length === 0) {
             $map_area.each(function(){

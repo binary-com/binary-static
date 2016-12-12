@@ -1,3 +1,7 @@
+var done_typing = require('../lib/done-typing').done_typing;
+var formToObj   = require('../lib/form-to-obj').formToObj;
+var dv          = require('../lib/validation');
+
 var ValidationUI = {
     clear: function() {
         $('.errorfield[data-is-error-field]').remove();
@@ -98,7 +102,7 @@ function bind_validation(form, config) {
         seen[stripTrailing(ev.target.name)] = true;
     }
 
-    function onStop(ev) {
+    function onStop() {
         var data = extract();
         var validation = validate(data);
         validation.errors = validation.errors.filter(function(err) {
@@ -116,7 +120,7 @@ function bind_validation(form, config) {
 
     form.addEventListener('change', function(ev) {
         onStart(ev);
-        onStop(ev);
+        onStop();
     });
     done_typing(form, {
         start: onStart,

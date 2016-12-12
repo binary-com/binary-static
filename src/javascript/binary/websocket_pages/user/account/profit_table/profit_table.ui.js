@@ -1,11 +1,12 @@
 var toJapanTimeIfNeeded = require('../../../../base/utility').toJapanTimeIfNeeded;
-var Button = require('../../../../common_functions/attach_dom/button').Button;
-var Table = require('../../../../common_functions/attach_dom/table').Table;
-var format_money = require('../../../../common_functions/currency_to_symbol').format_money;
-var format_money_jp = require('../../../../common_functions/currency_to_symbol').format_money_jp;
-var showTooltip = require('../../../../common_functions/get_app_details').showTooltip;
-var japanese_client = require('../../../../common_functions/country_base').japanese_client;
-var ProfitTable = require('../profit_table').ProfitTable;
+var Button              = require('../../../../common_functions/attach_dom/button').Button;
+var Content             = require('../../../../common_functions/content').Content;
+var Table               = require('../../../../common_functions/attach_dom/table').Table;
+var format_money        = require('../../../../common_functions/currency_to_symbol').format_money;
+var showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
+var japanese_client     = require('../../../../common_functions/country_base').japanese_client;
+var addComma            = require('../../../../common_functions/string_util').addComma;
+var ProfitTable         = require('../profit_table').ProfitTable;
 
 var ProfitTableUI = (function(){
     "use strict";
@@ -40,11 +41,11 @@ var ProfitTableUI = (function(){
         };
         var $tableContainer = Table.createFlexTable(data, metadata, header, footer);
 
-        var $pltotal = $tableContainer.
-            children("table").
-            children("tfoot").
-            children("tr").
-            attr("id", "pl-day-total");
+        $tableContainer
+            .children("table")
+            .children("tfoot")
+            .children("tr")
+            .attr("id", "pl-day-total");
 
         return $tableContainer;
     }
@@ -72,7 +73,7 @@ var ProfitTableUI = (function(){
 
         var jpClient = japanese_client();
 
-        $("#pl-day-total > .pl").text(jpClient ? format_money_jp(TUser.get().currency, total.toString()) : addComma(Number(total).toFixed(2)));
+        $("#pl-day-total > .pl").text(jpClient ? format_money(TUser.get().currency, total) : addComma(Number(total).toFixed(2)));
 
         var subTotalType = (total >= 0 ) ? "profit" : "loss";
         $("#pl-day-total > .pl").removeClass("profit").removeClass("loss");
@@ -85,7 +86,7 @@ var ProfitTableUI = (function(){
 
         var jpClient = japanese_client();
 
-        var data = [jpClient ? toJapanTimeIfNeeded(transaction.purchase_time) : profit_table_data.buyDate, '<span' + showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', jpClient ? format_money_jp(TUser.get().currency, profit_table_data.payout) : profit_table_data.payout , '', jpClient ? format_money_jp(TUser.get().currency, profit_table_data.buyPrice) : profit_table_data.buyPrice , (jpClient ? toJapanTimeIfNeeded(transaction.sell_time) : profit_table_data.sellDate), jpClient ? format_money_jp(TUser.get().currency, profit_table_data.sellPrice) : profit_table_data.sellPrice , jpClient ? format_money_jp(TUser.get().currency, profit_table_data.pl) : profit_table_data.pl , ''];
+        var data = [jpClient ? toJapanTimeIfNeeded(transaction.purchase_time) : profit_table_data.buyDate, '<span' + showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', jpClient ? format_money(TUser.get().currency, profit_table_data.payout) : profit_table_data.payout , '', jpClient ? format_money(TUser.get().currency, profit_table_data.buyPrice) : profit_table_data.buyPrice , (jpClient ? toJapanTimeIfNeeded(transaction.sell_time) : profit_table_data.sellDate), jpClient ? format_money(TUser.get().currency, profit_table_data.sellPrice) : profit_table_data.sellPrice , jpClient ? format_money(TUser.get().currency, profit_table_data.pl) : profit_table_data.pl , ''];
         var $row = Table.createFlexTableRow(data, cols, "data");
 
         $row.children(".pl").addClass(plType);
@@ -109,10 +110,6 @@ var ProfitTableUI = (function(){
         return $row[0];
     }
 
-    function initDatepicker(){
-        DatepickerUtil.initDatepicker("profit-table-date", moment.utc(), null, 0);
-    }
-
     function clearTableContent(){
         Table.clearTableBody(profitTableID);
         $("#" + profitTableID + ">tfoot").hide();
@@ -130,7 +127,6 @@ var ProfitTableUI = (function(){
     return {
         createEmptyTable: createEmptyTable,
         updateProfitTable: updateProfitTable,
-        initDatepicker: initDatepicker,
         cleanTableContent: clearTableContent,
         errorMessage: errorMessage,
         setOauthApps: function(values) {

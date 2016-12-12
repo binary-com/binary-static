@@ -120,7 +120,7 @@ describe('IPHistoryData.calls', function() {
             null,
         ].forEach(function(response) {
             var called = false;
-            var handler = IPHistoryData.calls(function(res) {
+            var handler = IPHistoryData.calls(function() {
                 called = true;
             });
             handler({data: JSON.stringify(response)});

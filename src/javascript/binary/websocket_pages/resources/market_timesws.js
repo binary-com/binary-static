@@ -8,7 +8,7 @@ var MarketTimes = (function() {
     };
 
     var getSymbolInfo = function(qSymbol, activeSymbols) {
-        return activeSymbols.filter(function(sy, id) {
+        return activeSymbols.filter(function(sy) {
             if(sy.symbol === qSymbol) {
                 return true;
             }

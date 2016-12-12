@@ -52,11 +52,10 @@
 
     <div class="gr-padding-10 fill-bg-color">
         <div class="container">
-            <div class="gr-12 gr-parent">
-                <h2 class="center-text gr-padding-10">
+            <div class="gr-12 gr-padding-20">
+                <h2 class="center-text">
                     [% l("Why choose us") %]
                 </h2>
-                <div class="separator-line border-bottom-color"></div>
                 <div class="gr-12 center-text">
                     <p>
                         [% l("[_1] is the award-winning industry pioneer in online options trading.", website_name) %]
@@ -100,11 +99,10 @@
     </div>
 
     <div class="container">
-        <div class="gr-12 gr-parent">
-            <h2 class="center-text gr-padding-10">
+        <div class="gr-12 gr-padding-30">
+            <h2 class="center-text">
                 [% l("[_1] academy", website_name) %]
             </h2>
-            <div class="separator-line border-bottom"></div>
             <div class="gr-12 gr-6-p center-text gr-centered">
                 <p>[% l("Improve your trading skills with our free educational & training resources.") %]</p>
             </div>
@@ -138,15 +136,15 @@
                     </a>
                 </div>
             </div>
+            <div class="separator-line border-bottom"></div>
         </div>
     </div>
 
     <div class="container">
-        <div class="gr-12 gr-parent">
-            <h2 class="center-text gr-padding-10">
+        <div class="gr-12 gr-padding-30 gr-parent">
+            <h2 class="center-text">
                 [% l("What our clients are saying") %]
             </h2>
-            <div class="separator-line border-bottom-color"></div>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-6-p">
                     <div class="xquote fill-bg-color">
@@ -167,15 +165,15 @@
                     </div>
                 </div>
             </div>
+            <div class="separator-line border-bottom"></div>
         </div>
     </div>
 
     <div class="container">
-        <div class="gr-12 gr-parent">
-            <h2 class="center-text gr-padding-10">
+        <div class="gr-12 gr-padding-30 gr-parent">
+            <h2 class="center-text">
                 [% l("Payment methods") %]
             </h2>
-            <div class="separator-line border-bottom-color"></div>
             <div class="gr-12">
                 <a class="pjaxload" href="[% request.url_for('/cashier/payment_methods') %]">
                     <div class="gr-row gr-row-align-center">
@@ -220,7 +218,6 @@
             <div class="gr-row">
                 <div class="gr-12">
                     <h2 class="center-text">[% l("Why choose us") %]</h2>
-                    <div class="separator-line border-bottom-color"></div>
                     <p class="center-text">
                         [% l("{Japan Only}Worldwide award-winning pioneer in FX binary options trading") %]
                     </p>

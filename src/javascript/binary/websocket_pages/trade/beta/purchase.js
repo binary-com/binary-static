@@ -1,5 +1,14 @@
-var format_money = require('../../../common_functions/currency_to_symbol').format_money;
-var StringUtil = require('../../../common_functions/string_util').StringUtil;
+var Contract_Beta             = require('./contract').Contract_Beta;
+var WSTickDisplay_Beta        = require('./tick_trade').WSTickDisplay_Beta;
+var Symbols                   = require('../symbols').Symbols;
+var Tick                      = require('../tick').Tick;
+var Content                   = require('../../../common_functions/content').Content;
+var format_money              = require('../../../common_functions/currency_to_symbol').format_money;
+var toTitleCase               = require('../../../common_functions/string_util').toTitleCase;
+var addComma                  = require('../../../common_functions/string_util').addComma;
+var isVisible                 = require('../../../common_functions/common_functions').isVisible;
+var updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
+var label_value               = require('../common').label_value;
 
 /*
  * Purchase object that handles all the functions related to
@@ -56,7 +65,7 @@ var Purchase_Beta = (function () {
                 $(this).text('').removeAttr('class', '');
             });
             brief.textContent = $('#underlying option:selected').text() + ' / ' +
-                StringUtil.toTitleCase(Contract_Beta.contractType()[Contract_Beta.form()][purchase_data.echo_req.passthrough.contract_type]) +
+                toTitleCase(Contract_Beta.contractType()[Contract_Beta.form()][purchase_data.echo_req.passthrough.contract_type]) +
                 (Contract_Beta.form() === 'digits' ? ' ' + purchase_data.echo_req.passthrough.barrier : '');
 
             var is_spread = (Contract_Beta.form() === 'spreads');
@@ -98,7 +107,7 @@ var Purchase_Beta = (function () {
                 // label_value(profit, Content.localize().textContractConfirmationProfit, addComma(profit_value));
             }
 
-            balance.textContent = Content.localize().textContractConfirmationBalance + ' ' + format_money(TUser.get().currency, Math.round(receipt['balance_after']*100)/100);
+            balance.textContent = Content.localize().textContractConfirmationBalance + ' ' + format_money(TUser.get().currency, receipt['balance_after']);
 
             if(show_chart){
                 chart.show();
@@ -169,7 +178,7 @@ var Purchase_Beta = (function () {
         }
     };
 
-    var update_spot_list = function(data){
+    var update_spot_list = function(){
         if($('#contract_purchase_spots:hidden').length){
             return;
         }

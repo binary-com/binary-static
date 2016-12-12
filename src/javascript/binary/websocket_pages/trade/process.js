@@ -1,3 +1,31 @@
+var TradingAnalysis           = require('./analysis').TradingAnalysis;
+var Barriers                  = require('./barriers').Barriers;
+var Contract                  = require('./contract').Contract;
+var Defaults                  = require('./defaults').Defaults;
+var Durations                 = require('./duration').Durations;
+var TradingEvents             = require('./event').TradingEvents;
+var Price                     = require('./price').Price;
+var Purchase                  = require('./purchase').Purchase;
+var StartDates                = require('./starttime').StartDates;
+var Symbols                   = require('./symbols').Symbols;
+var Tick                      = require('./tick').Tick;
+var WSTickDisplay             = require('./tick_trade').WSTickDisplay;
+var State                     = require('../../base/storage').State;
+var displayUnderlyings        = require('./common').displayUnderlyings;
+var showPriceOverlay          = require('./common').showPriceOverlay;
+var hidePriceOverlay          = require('./common').hidePriceOverlay;
+var hideFormOverlay           = require('./common').hideFormOverlay;
+var showFormOverlay           = require('./common').showFormOverlay;
+var hideOverlayContainer      = require('./common').hideOverlayContainer;
+var getContractCategoryTree   = require('./common').getContractCategoryTree;
+var getDefaultMarket          = require('./common').getDefaultMarket;
+var displayTooltip            = require('./common').displayTooltip;
+var selectOption              = require('./common').selectOption;
+var updateWarmChart           = require('./common').updateWarmChart;
+var displayContractForms      = require('./common').displayContractForms;
+var displayMarkets            = require('./common').displayMarkets;
+var setFormPlaceholderContent = require('./set_values').setFormPlaceholderContent;
+
 /*
  * This function process the active symbols to get markets
  * and underlying list
@@ -100,7 +128,7 @@ function processContract(contracts) {
         contracts_list.style.display = 'none';
         message_container.hide();
         confirmation_error.show();
-        confirmation_error.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="TradePage.reload();">' + page.text.localize('Please reload the page') + '</a>';
+        confirmation_error.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="sessionStorage.removeItem(\'underlying\'); window.location.reload();">' + page.text.localize('Please reload the page') + '</a>';
         return;
     }
 
@@ -158,8 +186,8 @@ function processContractForm() {
     displaySpreads();
 
     var r1;
-    if (StartDates.displayed() && Defaults.get('date_start') && Defaults.get('date_start') !== 'now') {
-        r1 = TradingEvents.onStartDateChange(Defaults.get('date_start'));
+    if (State.get('is_start_dates_displayed') && Defaults.get('date_start') && Defaults.get('date_start') !== 'now') {
+        r1 = Durations.onStartDateChange(Defaults.get('date_start'));
         if (!r1 || Defaults.get('expiry_type') === 'endtime') Durations.display();
     } else {
         Durations.display();
@@ -322,7 +350,7 @@ function processTick(tick) {
             digit_info.update_chart(tick);
         }
         WSTickDisplay.updateChart(tick);
-        Purchase.update_spot_list(tick);
+        Purchase.update_spot_list();
         if (!Barriers.isBarrierUpdated()) {
             Barriers.display();
             Barriers.setBarrierUpdate(true);

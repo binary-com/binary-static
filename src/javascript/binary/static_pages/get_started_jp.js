@@ -31,7 +31,7 @@ var GetStartedJP = (function() {
         $(window).on('hashchange', function(){
           showSelectedTab();
         });
-        $('.sidebar-left ul li').click(function(e) {
+        $('.sidebar-left ul li').click(function() {
           $('.sidebar-left ul li').removeClass('selected');
           $(this).addClass('selected');
         });

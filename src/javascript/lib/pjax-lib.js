@@ -30,7 +30,7 @@
 		var pjax_shell = {
 			"connect": function() { return; },
 			"invoke": function() {
-				var url = (arguments.length === 2) ? arguments[0] : arguments.url;
+				var url = (arguments.length === 2) ? arguments[0] : (arguments.url || arguments[0].url);
 				document.location = url;
 				return;
 			}

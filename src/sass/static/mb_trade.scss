@@ -1,5 +1,5 @@
 #mb_trading {
-    font-family: roboto, sans-serif;
+    font-family: $FONT-STACK;
     font-size: 14px;
     .flex-box {
         display: flex;
@@ -314,31 +314,6 @@
                 .base-value {
                     bottom: 0px;
                 }
-            }
-        }
-    }
-    #notifications_wrapper {
-        .notice-msg {
-            margin-bottom: 5px;
-            padding: 10px 26px;
-            line-height: 25px;
-            position: relative;
-            &.dismissible {
-                cursor: pointer;
-            }
-            .notification-dismiss {
-                position: absolute;
-                top: 0px;
-                right: 0px;
-                color: $COLOR_BLUE;
-                width: 24px;
-                height: 24px;
-                line-height: 24px;
-                font-family: Arial;
-                font-size: 18px;
-            }
-            &:hover .notification-dismiss {
-                color: $COLOR_ORANGE;
             }
         }
     }

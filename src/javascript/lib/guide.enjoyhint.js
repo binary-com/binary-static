@@ -1,7 +1,6 @@
 // https://github.com/xbsoftware/enjoyhint
 // (+ some custom changes for binary.com)
 
-global.window = global;
 var $ = require('jquery');
 var Kinetic = require('kinetic');
 

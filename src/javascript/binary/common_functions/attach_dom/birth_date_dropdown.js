@@ -1,4 +1,4 @@
-function generateBirthDate(country) {
+function generateBirthDate() {
     var days    = document.getElementById('dobdd'),
         months  = document.getElementById('dobmm'),
         year    = document.getElementById('dobyy'),

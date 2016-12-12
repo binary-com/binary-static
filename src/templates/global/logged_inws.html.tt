@@ -22,7 +22,7 @@
         #login_loading {text-align: center; padding-top: 90px;}
     </style>
 </head>
-<body onload="LoggedInHandler.init();">
+<body>
     <div id="header-binary">
         <a href="[% request.url_for('/') %]">
             <img id="symbol-logo" src="https://style.binary.com/images/logo/symbol.svg" alt="" />

@@ -1,4 +1,6 @@
-var objectNotEmpty = require('../../base/utility').objectNotEmpty;
+var objectNotEmpty             = require('../../base/utility').objectNotEmpty;
+var Content                    = require('../../common_functions/content').Content;
+var getFormNameBarrierCategory = require('./common').getFormNameBarrierCategory;
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -51,7 +53,6 @@ var Contract = (function() {
 
     var details = function(formName) {
         var contracts = Contract.contracts()['contracts_for'],
-            contractCategories = {},
             barrierCategory;
 
         if (!contracts) return;

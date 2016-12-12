@@ -1,4 +1,5 @@
 var DatePicker = require('../date_picker').DatePicker;
+var moment = require('moment');
 
 DatePicker.SelectedDates = function(component_id, select_type) {
     this.component_id = component_id;
@@ -36,7 +37,7 @@ DatePicker.SelectedDates.prototype = {
             return [0];
         };
 
-        config.beforeShow = function(input, inst) {
+        config.beforeShow = function() {
             return { defaultDate: $('#' + that.component_id).val()};
         };
 

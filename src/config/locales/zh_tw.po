@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-11 04:11+0000\n"
+"PO-Revision-Date: 2016-12-09 08:16+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.9\n"
+"X-Generator: Weblate 2.10-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」是由%1建立和維護的編程例程、議定書、工具和資源集。您可通過%1交易平台使用已經註冊的應用程式介面。"
@@ -786,6 +786,9 @@ msgstr "市場行銷或電腦科學大學學位尤佳"
 
 msgid "A university degree or accredited translation certification preferred"
 msgstr "擁有大學本科學位或權威翻譯資格認證者優先錄取"
+
+msgid "AM"
+msgstr "上午"
 
 msgid "API"
 msgstr "應用程式編程介面"
@@ -1859,6 +1862,9 @@ msgstr "Confirmation and understandings"
 
 msgid "Conflicts Policy"
 msgstr "衝突政策"
+
+msgid "Connection error: Please check your internet connection."
+msgstr "連接錯誤:請檢查您的網絡連接。"
 
 msgid "Construction"
 msgstr "建構"
@@ -2987,6 +2993,9 @@ msgstr "如果開始和結束期間價格跳動次數少於2，「高於/低於�
 
 msgid "Higher/Lower trades"
 msgstr "「高於/低於」交易"
+
+msgid "Hour"
+msgstr "小時"
 
 msgid "Housewife / Househusband"
 msgstr "Housewife / Househusband"
@@ -4324,6 +4333,9 @@ msgstr "需至少%1 個字元。"
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "至少六個大小寫字母和數字"
 
+msgid "Minute"
+msgstr "分鐘"
+
 msgid "Miss"
 msgstr "遺漏"
 
@@ -4783,6 +4795,9 @@ msgstr "%1 網站的所有權和內容均為我們擁有，不可視為通過此
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
 msgstr "聯盟網站的所有權、內容和法律責任均由聯盟會員全權負責。您僅全權負責您的網站及其所顯示之全部材料的開發、運營和維護。有關您的網站開發、運營、維護和內容的一切索賠、損害賠償及開支（包括但不限於律師費），您將對公司進行賠償，並使其免害。"
 
+msgid "PM"
+msgstr "下午"
+
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "參與外匯、股票或商品市場?"
 
@@ -4960,11 +4975,11 @@ msgstr "請輸入有效金額。"
 msgid "Please enter an integer value"
 msgstr "請輸入整數"
 
-msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
-msgstr "請輸入日期，格式為年-月-日 時:分(當地時間)。"
+msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
+msgstr "請輸入日期，格式為日-月-年 時:分(當地時間)。"
 
-msgid "Please enter date in the format YYYY-MM-DD."
-msgstr "請輸入日期，格式為年-月-日。"
+msgid "Please enter date in the format DD MMM, YYYY."
+msgstr "請輸入日期，格式為日-月-年。"
 
 msgid "Please enter your current password."
 msgstr "請輸入您目前密碼。"
@@ -5014,10 +5029,8 @@ msgstr "請選擇付款代理"
 msgid "Please select a valid date"
 msgstr "請選擇有效日期"
 
-#, fuzzy
-#| msgid "Please select a value."
 msgid "Please select a value"
-msgstr "請選擇一個數值。"
+msgstr "請選擇一個數值"
 
 msgid "Please select at least one scope"
 msgstr "請選擇至少一個範圍"
@@ -6605,6 +6618,9 @@ msgstr "階層"
 msgid "Time"
 msgstr "時間"
 
+msgid "Time is in the wrong format."
+msgstr "時間格式錯誤。"
+
 msgid "Time out until"
 msgstr "時間已過。下次開啟時間為"
 
@@ -7901,6 +7917,9 @@ msgstr "電子郵件地址"
 msgid "f"
 msgstr "f"
 
+msgid "h"
+msgstr "小時"
+
 msgid "hour"
 msgstr "小時"
 
@@ -7937,11 +7956,17 @@ msgstr "月"
 msgid "max: 100,000"
 msgstr "最大: 100,000"
 
+msgid "min"
+msgstr "最小"
+
 msgid "min: 1,000"
 msgstr "最小: 1,000"
 
 msgid "minimum available duration"
 msgstr "最短可用期限"
+
+msgid "mins"
+msgstr "分鐘"
 
 msgid "minute"
 msgstr "分鐘"
@@ -8008,6 +8033,9 @@ msgstr "跳動點"
 
 msgid "to your account."
 msgstr "入您的帳戶。"
+
+msgid "today"
+msgstr "今天"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "使用或轉載%1 API（除非這些條款允許）或"
@@ -9055,6 +9083,9 @@ msgstr "樣式"
 
 msgid "Endpoint"
 msgstr "端點"
+
+msgid "Careers For Americans"
+msgstr "美國居民的工作機會"
 
 msgid "Job Details"
 msgstr "工作詳細資料"
@@ -10781,9 +10812,6 @@ msgstr "條款和條件審批"
 
 #~ msgid "Start time %1 must be before end time %2"
 #~ msgstr "開始時間%1必須早於到期時間%2"
-
-#~ msgid "Start time is in the future."
-#~ msgstr "開始時間是在未來。"
 
 #~ msgid "Start time is in the past"
 #~ msgstr "開始時間是在過去"
@@ -13327,9 +13355,6 @@ msgstr "條款和條件審批"
 
 #~ msgid "explanation"
 #~ msgstr "說明"
-
-#~ msgid "min"
-#~ msgstr "最小"
 
 #~ msgid "or Email us at"
 #~ msgstr "或傳送電子郵件至"

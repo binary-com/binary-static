@@ -29,6 +29,7 @@ sub all_pages {
         ['group-history',              'about/group_history',          'full_width', 'Group History'],
         ['contact',                    'about/contact',                'full_width', 'Contact Us'],
         ['careers',                    'about/careers',                'full_width', 'Careers',              'ja'],
+        ['careers-for-americans',      'about/careers_for_americans',  'full_width', 'Careers For Americans','ja'],
         ['open-positions',             'about/job_descriptions',       'full_width', 'Open Positions'],
         ['open-positions/job-details', 'about/job_details',            'full_width', 'Job Details'],
         ['company-profile',            'japan/company_profile',        'default',    'Company Profile',      'NOT-ja,en'],
@@ -69,7 +70,6 @@ sub all_pages {
         ['paymentagent/transferws',      'cashier/paymentagent_transferws',           'default', 'Payment Agent Transfer'],
         ['paymentagent/withdrawws',      'cashier/paymentagent_withdrawws',           'default', 'Payment Agent Withdrawal'],
 
-        ['jp_trading',             'bet/japan',       'default', 'Sharp Prices. Smart Trading.', 'NOT-ja,en'],
         ['trading',                'bet/static',      'default', 'Sharp Prices. Smart Trading.'],
         ['trading_beta',           'bet/beta/static', 'default', 'Sharp Prices. Smart Trading.', 'ja'],
         ['multi_barriers_trading', 'bet/mb_trading',  'default', 'Sharp Prices. Smart Trading.'],

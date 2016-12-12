@@ -51,6 +51,7 @@ var FinancialAssessmentws = (function(){
                 hasChanged = true;
             }
         });
+        if (Object.keys(financial_assessment).length === 0) hasChanged = true;
         if (!hasChanged) {
             showFormMessage('You did not change anything.', false);
             setTimeout(function() { $('#submit').removeAttr('disabled'); }, 1000);
@@ -81,11 +82,6 @@ var FinancialAssessmentws = (function(){
         }
 
         return isValid;
-    };
-
-    var showLoadingImg = function(){
-        showLoadingImage($('<div/>', {id: 'loading', class: 'center-text'}).insertAfter('#heading'));
-        $("#assessment_form").addClass('invisible');
     };
 
     var hideLoadingImg = function(show_form){

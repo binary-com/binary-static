@@ -1,11 +1,14 @@
 var showLocalTimeOnHover = require('../../../base/utility').showLocalTimeOnHover;
-var toJapanTimeIfNeeded = require('../../../base/utility').toJapanTimeIfNeeded;
-var objectNotEmpty = require('../../../base/utility').objectNotEmpty;
-var format_money = require('../../../common_functions/currency_to_symbol').format_money;
-var format_money_jp = require('../../../common_functions/currency_to_symbol').format_money_jp;
-var japanese_client = require('../../../common_functions/country_base').japanese_client;
-var MBPrice = require('../../mb_trade/mb_price').MBPrice;
-var ViewPopupUI = require('./view_popup_ui').ViewPopupUI;
+var toJapanTimeIfNeeded  = require('../../../base/utility').toJapanTimeIfNeeded;
+var objectNotEmpty       = require('../../../base/utility').objectNotEmpty;
+var format_money         = require('../../../common_functions/currency_to_symbol').format_money;
+var japanese_client      = require('../../../common_functions/country_base').japanese_client;
+var MBPrice              = require('../../mb_trade/mb_price').MBPrice;
+var ViewPopupUI          = require('./view_popup_ui').ViewPopupUI;
+var moment               = require('moment');
+var State                = require('../../../base/storage').State;
+var Highchart            = require('../../trade/charts/highchartws').Highchart;
+var WSTickDisplay        = require('../../trade/tick_trade').WSTickDisplay;
 
 var ViewPopupWS = (function() {
     "use strict";
@@ -140,7 +143,8 @@ var ViewPopupWS = (function() {
         sellSetVisibility(!isSellClicked && !contract.is_ended);
     };
 
-    var spreadContractEnded = function(is_win) {
+    //var spreadContractEnded = function(is_win) {
+    var spreadContractEnded = function() {
         $Container.find('#sell_level').parent('tr').addClass(hiddenClass);
         $Container.find('#exit_level').text(contract.exit_level).parent('tr').removeClass(hiddenClass);
         sellSetVisibility(false);
@@ -192,13 +196,13 @@ var ViewPopupWS = (function() {
 
         containerSetText('trade_details_start_date'    , toJapanTimeIfNeeded(epochToDateTime(contract.date_start)));
         if (document.getElementById('trade_details_end_date')) containerSetText('trade_details_end_date'      , toJapanTimeIfNeeded(epochToDateTime(contract.date_expiry)));
-        containerSetText('trade_details_payout', format_money(contract.currency, parseFloat(contract.payout).toFixed(2)));
-        containerSetText('trade_details_purchase_price', format_money(contract.currency, parseFloat(contract.buy_price).toFixed(2)));
+        containerSetText('trade_details_payout', format_money(contract.currency, contract.payout));
+        containerSetText('trade_details_purchase_price', format_money(contract.currency, contract.buy_price));
 
         normalUpdateTimers();
         normalUpdate();
         ViewPopupUI.reposition_confirmation();
-        if (/multi_barriers_trading\.html/.test(window.location.pathname)) MBPrice.hidePriceOverlay();
+        if (State.get('is_mb_trading')) MBPrice.hidePriceOverlay();
     };
 
     var normalUpdate = function() {
@@ -225,7 +229,7 @@ var ViewPopupWS = (function() {
         containerSetText('trade_details_ref_id'          , contract.transaction_ids.buy + (contract.transaction_ids.sell ? ' - ' + contract.transaction_ids.sell : ''));
         containerSetText('trade_details_current_date'    , toJapanTimeIfNeeded(epochToDateTime(currentSpotTime)));
         containerSetText('trade_details_current_spot'    , currentSpot || page.text.localize('not available'));
-        containerSetText('trade_details_indicative_price', indicative_price ? format_money(contract.currency, parseFloat(indicative_price).toFixed(2)) : '-');
+        containerSetText('trade_details_indicative_price', indicative_price ? format_money(contract.currency, indicative_price) : '-');
 
         var profit_loss, percentage, jp_client;
         if (finalPrice) {
@@ -233,7 +237,7 @@ var ViewPopupWS = (function() {
             percentage  = (profit_loss * 100 / contract.buy_price).toFixed(2);
             jp_client   = japanese_client();
             containerSetText('trade_details_profit_loss',
-                (jp_client ? format_money_jp(contract.currency, parseFloat(profit_loss).toFixed(2)) : format_money(contract.currency, parseFloat(profit_loss).toFixed(2))) + '<span>(' + (percentage > 0 ? '+' : '') + percentage + '%' + ')</span>',
+                format_money(contract.currency, profit_loss) + '<span>(' + (percentage > 0 ? '+' : '') + percentage + '%' + ')</span>',
                 {'class': (profit_loss >= 0 ? 'profit' : 'loss')}
             );
         } else {
@@ -325,7 +329,8 @@ var ViewPopupWS = (function() {
         window.ViewPopupTimerInterval = setInterval(update_time, 500);
     };
 
-    var normalContractEnded = function(is_win) {
+    //var normalContractEnded = function(is_win) {
+    var normalContractEnded = function() {
         containerSetText('trade_details_current_title'   , page.text.localize(contract.sell_spot_time < contract.date_expiry ? 'Contract Sold' : 'Contract Expiry'));
         containerSetText('trade_details_spot_label'      , page.text.localize('Exit Spot'));
         containerSetText('trade_details_spottime_label'  , page.text.localize('Exit Spot Time'));
@@ -451,12 +456,6 @@ var ViewPopupWS = (function() {
         return '<tr' + (isHidden ? ' class="' + hiddenClass + '"' : '') + '><td' + (label_id ? ' id="' + label_id + '"' : '') + '>' + page.text.localize(label) + '</td><td' + (value_id ? ' id="' + value_id + '"' : '') + '>' + (value ? value : '') + '</td></tr>';
     };
 
-    var normalSetVisibleRow = function(child_id, isVisible) {
-        var $row = $('#' + child_id).parent('tr');
-        if(isVisible) $row.removeClass(hiddenClass);
-        else $row.addClass(hiddenClass);
-    };
-
     var epochToDateTime = function(epoch) {
         return moment.utc(epoch * 1000).format('YYYY-MM-DD HH:mm:ss');
     };
@@ -475,13 +474,13 @@ var ViewPopupWS = (function() {
         }
     };
 
-    var showWinLossStatus = function(isWin) {
+    /*var showWinLossStatus = function(isWin) {
         containerSetText(
             winStatusID,
             page.text.localize('This contract has ' + (isWin ? 'WON' : 'LOST')),
             {class: isWin ? 'won' : 'lost'}
         );
-    };
+    };*/
 
     var setLoadingState = function(showLoading) {
         if(showLoading) {
@@ -579,7 +578,7 @@ var ViewPopupWS = (function() {
         socketSend({"sell_expired": 1, passthrough: {}});
     };
 
-    var responseSellExpired = function(response) {
+    var responseSellExpired = function() {
         getContract();
     };
 
@@ -644,7 +643,7 @@ var ViewPopupWS = (function() {
                 responseSell(response);
                 break;
             case 'sell_expired':
-                responseSellExpired(response);
+                responseSellExpired();
                 break;
             case 'get_corporate_actions':
                 if (objectNotEmpty(response.get_corporate_actions)) {
@@ -670,19 +669,6 @@ var ViewPopupWS = (function() {
         normalUpdate        : normalUpdate,
     };
 }());
-
-
-pjax_config_page("profit_tablews|statementws|portfoliows|trading", function() {
-    return {
-        onLoad: function() {
-            $('#profit-table-ws-container, #statement-ws-container, #portfolio-table, #contract_confirmation_container')
-                .on('click', '.open_contract_detailsws', function (e) {
-                    e.preventDefault();
-                    ViewPopupWS.init(this);
-                });
-        }
-    };
-});
 
 module.exports = {
     ViewPopupWS: ViewPopupWS,

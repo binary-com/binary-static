@@ -1,3 +1,5 @@
+var Content = require('../../../common_functions/content').Content;
+
 var TopUpVirtualWS = (function() {
     "use strict";
 
@@ -26,7 +28,6 @@ var TopUpVirtualWS = (function() {
     };
 
     var responseHandler = function(response) {
-        var str, amt , currType;
         if ('error' in response) {
             if ('message' in response.error) {
                 showMessage(page.text.localize(response.error.message), false);

@@ -1,9 +1,9 @@
 var Statement = (function(){
     'use strict';
-    var moment = require('../../../../lib/moment/moment');
-    var StringUtil = require('../../../common_functions/string_util').StringUtil,
-        addComma = require('../../../websocket_pages/trade/common').addComma,
-        format_money_jp = require('../../../common_functions/currency_to_symbol').format_money_jp,
+    var moment              = require('moment');
+    var toTitleCase         = require('../../../common_functions/string_util').toTitleCase,
+        addComma            = require('../../../common_functions/string_util').addComma,
+        format_money        = require('../../../common_functions/currency_to_symbol').format_money,
         toJapanTimeIfNeeded = require('../../../base/utility').toJapanTimeIfNeeded;
 
     var getStatementData = function(statement, currency, jpClient) {
@@ -11,17 +11,17 @@ var Statement = (function(){
             momentObj = moment.utc(dateObj),
             dateStr = momentObj.format("YYYY-MM-DD"),
             timeStr = momentObj.format("HH:mm:ss") + ' GMT',
-            payout  = parseFloat(statement["payout"]).toFixed(2),
-            amount  = addComma(parseFloat(statement["amount"])),
-            balance = addComma(parseFloat(statement["balance_after"]));
+            payout  = parseFloat(statement["payout"]),
+            amount  = parseFloat(statement["amount"]),
+            balance = parseFloat(statement["balance_after"]);
 
         var statement_data = {
             'date'    : jpClient ? toJapanTimeIfNeeded(statement["transaction_time"]) : dateStr + "\n" + timeStr,
             'ref'     : statement["transaction_id"],
-            'payout'  : isNaN(payout) ? '-' : (jpClient ? format_money_jp(currency, payout) : payout),
-            'action'  : StringUtil.toTitleCase(statement["action_type"]),
-            'amount'  : jpClient ? format_money_jp(currency, amount) : amount,
-            'balance' : jpClient ? format_money_jp(currency, balance) : balance,
+            'payout'  : isNaN(payout) ? '-' : (jpClient ? format_money(currency, payout) : payout.toFixed(2)),
+            'action'  : toTitleCase(statement["action_type"]),
+            'amount'  : isNaN(amount) ? '-' : (jpClient ? format_money(currency, amount) : addComma(amount)),
+            'balance' : isNaN(balance) ? '-' : (jpClient ? format_money(currency, balance) : addComma(balance)),
             'desc'    : statement["longcode"].replace(/\n/g, '<br />'),
             'id'      : statement["contract_id"],
             'app_id'  : statement["app_id"]
