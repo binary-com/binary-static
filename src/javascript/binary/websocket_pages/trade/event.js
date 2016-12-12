@@ -352,13 +352,8 @@ var TradingEvents = (function () {
         /*
          * attach event to purchase buttons to buy the current contract
          */
-        if (page.client_status_detected('unwelcome')) {
-            $.each($('.purchase_button'), function(){
-              $(this).parent().addClass('button-disabled');
-            });
-        } else {
-            $('.purchase_button').on('click dblclick', function () {
-                if (isVisible(document.getElementById('confirmation_message_container'))) return;
+        $('.purchase_button').on('click dblclick', function () {
+            if (!page.client_status_detected('unwelcome') && !isVisible(document.getElementById('confirmation_message_container'))) {
                 var id = this.getAttribute('data-purchase-id'),
                     askPrice = this.getAttribute('data-ask-price');
 
@@ -378,8 +373,8 @@ var TradingEvents = (function () {
                     Price.incrFormId();
                     processForgetProposals();
                 }
-            });
-        }
+            }
+        });
 
         /*
          * attach event to close icon for purchase container
