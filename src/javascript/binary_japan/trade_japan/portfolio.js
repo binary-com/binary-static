@@ -48,7 +48,7 @@ var JapanPortfolio = (function() {
   }
 
   function isTradePage() {
-    return State.get('is_jp_trading') || State.get('is_mb_trading');
+    return State.get('is_mb_trading');
   }
 
   return {

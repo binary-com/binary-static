@@ -1,11 +1,11 @@
-var showLoadingImage = require('../../../base/utility').showLoadingImage;
-var Table            = require('../../../common_functions/attach_dom/table').Table;
-var CommonFunctions  = require('../../../common_functions/common_functions').CommonFunctions;
-var Content          = require('../../../common_functions/content').Content;
-var japanese_client  = require('../../../common_functions/country_base').japanese_client;
-var AssetIndexData   = require('./asset_indexws.data').AssetIndexData;
-var AssetIndex       = require('../asset_indexws').AssetIndex;
-var State = require('../../../base/storage').State;
+var showLoadingImage       = require('../../../base/utility').showLoadingImage;
+var Table                  = require('../../../common_functions/attach_dom/table').Table;
+var jqueryuiTabsToDropdown = require('../../../common_functions/common_functions').jqueryuiTabsToDropdown;
+var Content                = require('../../../common_functions/content').Content;
+var japanese_client        = require('../../../common_functions/country_base').japanese_client;
+var AssetIndexData         = require('./asset_indexws.data').AssetIndexData;
+var AssetIndex             = require('../asset_indexws').AssetIndex;
+var State                  = require('../../../base/storage').State;
 
 var AssetIndexUI = (function() {
     "use strict";
@@ -39,6 +39,7 @@ var AssetIndexUI = (function() {
             initSocket();
             AssetIndexData.sendRequest(!activeSymbols);
         }
+        $container.tabs();
     };
 
     var populateTable = function() {
@@ -70,7 +71,7 @@ var AssetIndexUI = (function() {
 
         if (isFramed) {
             $container.find('ul').hide();
-            $('<div/>', {class: 'center-text'}).append(CommonFunctions.jqueryuiTabsToDropdown($container)).prependTo($container);
+            $('<div/>', {class: 'center-text'}).append(jqueryuiTabsToDropdown($container)).prependTo($container);
         }
     };
 

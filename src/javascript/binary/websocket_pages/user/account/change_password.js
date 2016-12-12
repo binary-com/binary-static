@@ -1,11 +1,11 @@
-var CommonFunctions = require('../../../common_functions/common_functions').CommonFunctions;
+var isIE            = require('../../../common_functions/common_functions').isIE;
 var Content         = require('../../../common_functions/content').Content;
 var testPassword    = require('../../../common_functions/passwordmeter').testPassword;
 var ValidateV2      = require('../../../common_functions/validation_v2').ValidateV2;
 var ValidationUI    = require('../../../validator').ValidationUI;
 var customError     = require('../../../validator').customError;
 var bind_validation = require('../../../validator').bind_validation;
-var dv = require('../../../../lib/validation');
+var dv              = require('../../../../lib/validation');
 
 var PasswordWS = (function(){
     var $form, $result;
@@ -89,7 +89,7 @@ var PasswordWS = (function(){
 
     function initSocket() {
         Content.populate();
-        if (CommonFunctions.isIE() === false) {
+        if (isIE() === false) {
             $('#new_password').on('input', function() {
                 $('#password-meter').attr('value', testPassword(this.value)[0]);
             });

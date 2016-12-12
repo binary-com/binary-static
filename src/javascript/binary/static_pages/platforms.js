@@ -3,7 +3,7 @@ var Platforms = (function () {
     function init() {
         sections = ['more-tools', 'trading-platforms', 'platforms-comparison'];
         var sidebarListItem = $('.sidebar-nav li');
-        sidebarListItem.click(function(e) {
+        sidebarListItem.click(function() {
             sidebarListItem.removeClass('selected');
             $(this).addClass('selected');
         });

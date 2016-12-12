@@ -9,13 +9,6 @@ var FinancialAccOpeningUI = (function(){
   function checkValidity(){
     window.accountErrorCounter = 0;
 
-    var letters = Content.localize().textLetters,
-        numbers = Content.localize().textNumbers,
-        space   = Content.localize().textSpace,
-        hyphen  = Content.localize().textHyphen,
-        period  = Content.localize().textPeriod,
-        apost   = Content.localize().textApost;
-
     var elementObj = {
         title                    : document.getElementById('title'),
         fname                    : document.getElementById('fname'),
@@ -101,8 +94,8 @@ var FinancialAccOpeningUI = (function(){
     ValidAccountOpening.checkPostcode(elementObj['postcode'], errorObj['postcode']);
 
     if (elementObj['residence'].value === 'gb' && /^$/.test((elementObj['postcode'].value).trim())){
-      errorPostcode.innerHTML = Content.errorMessage('req');
-      Validate.displayErrorMessage(errorPostcode);
+      errorObj['postcode'].innerHTML = Content.errorMessage('req');
+      Validate.displayErrorMessage(errorObj['postcode']);
       window.accountErrorCounter++;
     }
 

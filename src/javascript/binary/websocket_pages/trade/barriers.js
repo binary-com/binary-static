@@ -1,7 +1,9 @@
-var Contract = require('./contract').Contract;
-var Defaults = require('./defaults').Defaults;
-var Tick     = require('./tick').Tick;
-var moment = require('moment');
+var Contract           = require('./contract').Contract;
+var Defaults           = require('./defaults').Defaults;
+var Tick               = require('./tick').Tick;
+var moment             = require('moment');
+var isVisible          = require('../../common_functions/common_functions').isVisible;
+var countDecimalPlaces = require('./common_independent').countDecimalPlaces;
 
 /*
  * Handles barrier processing and display
@@ -15,7 +17,7 @@ var Barriers = (function () {
 
     var isBarrierUpdated = false;
 
-    var display = function (barrierCategory) {
+    var display = function () {
         var barriers = Contract.barriers()[Defaults.get('underlying')],
             formName = Contract.form();
 
@@ -41,7 +43,7 @@ var Barriers = (function () {
                         tooltip = document.getElementById('barrier_tooltip'),
                         span = document.getElementById('barrier_span');
                     if ((unit && isVisible(unit) && unit.value === 'd') ||
-                        (end_time && isVisible(end_time) && moment(end_time.value).isAfter(moment(),'day')) ||
+                        (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(),'day')) ||
                         !String(barrier['barrier']).match(/^[+-]/)) {
                         if (currentTick && !isNaN(currentTick) && String(barrier_def).match(/^[+-]/)) {
                             elm.value = (parseFloat(currentTick) + parseFloat(barrier_def)).toFixed(decimalPlaces);
@@ -86,7 +88,7 @@ var Barriers = (function () {
                     var barrier_high = defaults_barrier_high && !isNaN(defaults_barrier_high) ? defaults_barrier_high : barrier['barrier'],
                         barrier_low  = defaults_barrier_low  && !isNaN(defaults_barrier_low)  ? defaults_barrier_low  : barrier['barrier1'];
                     if ((unit && isVisible(unit) && unit.value === 'd') ||
-                        (end_time && isVisible(end_time) && moment(end_time.value).isAfter(moment(),'day')) ||
+                        (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(),'day')) ||
                         !String(barrier['barrier']).match(/^[+-]/)) {
                         if (currentTick && !isNaN(currentTick) && String(barrier_high).match(/^[+-]/)) {
                             high_elm.value = (parseFloat(currentTick) + parseFloat(barrier_high)).toFixed(decimalPlaces);

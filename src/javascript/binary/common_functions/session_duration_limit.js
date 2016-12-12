@@ -47,11 +47,11 @@ var SessionDurationLimit = (function() {
         init();
     };
 
-    var realityStorageEventHandler = function(e) {
+    /*var realityStorageEventHandler = function(e) {
         if (e.key === 'client.session_start' || e.key === 'client.session_duration_limit') {
             init();
         }
-    };
+    };*/
 
     var displayWarning = function() {
         $('body').append(

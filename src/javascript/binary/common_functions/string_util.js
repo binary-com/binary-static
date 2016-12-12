@@ -1,48 +1,32 @@
-var moment = require('moment');
+var checkInput = require('./common_functions').checkInput;
 
-var StringUtil = (function(){
-    function toTitleCase(str){
-        return str.replace(/\w[^\s\/\\]*/g, function(txt){
-            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-        });
+var toTitleCase = function(str) {
+    return str.replace(/\w[^\s\/\\]*/g, function(txt){
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+};
+
+var addComma = function(num, decimal_points) {
+    num = String(num || 0).replace(/,/g, '') * 1;
+    return num.toFixed(decimal_points || 2).toString().replace(/(^|[^\w.])(\d{4,})/g, function($0, $1, $2) {
+        return $1 + $2.replace(/\d(?=(?:\d\d\d)+(?!\d))/g, "$&,");
+    });
+};
+
+var toISOFormat = function(date) {
+    return date.format('YYYY-MM-DD');
+};
+
+var toReadableFormat = function(date) {
+    if ($(window).width() < 770 && checkInput('date', 'not-a-date')) {
+        return toISOFormat(date);
     }
-
-    function dateToStringWithoutTime(date){
-        return [date.getDate(), date.getMonth()+1, date.getFullYear()].join("/");
-    }
-
-    //Time should be in SECOND !!!
-    function timeStampToDateString(time){
-        var dateObj = new Date(time * 1000);
-        var momentObj = moment.utc(dateObj);
-        return momentObj.format("YYYY-MM-DD");
-    }
-
-    //Time should be in SECOND !!!
-    function timeStampToTimeString(time){
-        var dateObj = new Date(time * 1000);
-        var momentObj = moment.utc(dateObj);
-        return momentObj.format("HH:mm:ss");
-    }
-
-    //Time should be in SECOND !!!
-    function timeStampToDateTimeString(time){
-        var dateObj = new Date(time * 1000);
-        var momentObj = moment.utc(dateObj);
-        return momentObj.toString();
-    }
-
-    var external = {
-        toTitleCase: toTitleCase,
-        dateToStringWithoutTime: dateToStringWithoutTime,
-        unixTimeToDateString: timeStampToDateString,
-        unixTimeToTimeString: timeStampToTimeString,
-        unixTimeToDateTimeString: timeStampToDateTimeString
-    };
-
-    return external;
-}());
+    return date.format('DD MMM, YYYY');
+};
 
 module.exports = {
-    StringUtil: StringUtil,
+    toISOFormat: toISOFormat,
+    toReadableFormat: toReadableFormat,
+    toTitleCase: toTitleCase,
+    addComma: addComma,
 };

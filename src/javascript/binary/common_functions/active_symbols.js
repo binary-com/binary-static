@@ -32,7 +32,6 @@ var ActiveSymbols = (function () {
             } else {
                 var that = this;
                 var markets = groupBy(activeSymbols, 'market');
-                var parsedMarkets = [];
                 Object.keys(markets).forEach(function(key){
                     var marketName = key;
                     var marketSymbols = markets[key];
@@ -58,7 +57,6 @@ var ActiveSymbols = (function () {
                 market.submarkets = {};
                 var that = this;
                 var submarkets = groupBy(activeSymbols, 'submarket');
-                var parsedSubmarkets = [];
                 Object.keys(submarkets).forEach(function(key){
                     var submarketName = key;
                     var submarketSymbols = submarkets[key];

@@ -7,7 +7,7 @@ var format_currency = require('../../common_functions/currency_to_symbol').forma
  * It process 'socket.send({payout_currencies:1})` response
  * and display them
  */
-function displayCurrencies(selected) {
+function displayCurrencies() {
     'use strict';
 
     var target = document.getElementById('currency'),
@@ -28,9 +28,6 @@ function displayCurrencies(selected) {
                 content = document.createTextNode(currency);
 
             option.setAttribute('value', currency);
-            if (selected && selected == key) {
-                option.setAttribute('selected', 'selected');
-            }
 
             option.appendChild(content);
             fragment.appendChild(option);

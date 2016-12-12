@@ -1,5 +1,5 @@
 window._trackJs = {
-    onError: function(payload, error) {
+    onError: function(payload) {
 
         function itemExistInList(item, list) {
             for (var i = 0; i < list.length; i++) {

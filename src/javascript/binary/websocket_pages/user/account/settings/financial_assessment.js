@@ -84,11 +84,6 @@ var FinancialAssessmentws = (function(){
         return isValid;
     };
 
-    var showLoadingImg = function(){
-        showLoadingImage($('<div/>', {id: 'loading', class: 'center-text'}).insertAfter('#heading'));
-        $("#assessment_form").addClass('invisible');
-    };
-
     var hideLoadingImg = function(show_form){
         $("#loading").remove();
         if(typeof show_form === 'undefined'){

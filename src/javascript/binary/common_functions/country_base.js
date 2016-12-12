@@ -4,7 +4,6 @@ var Login = require('../base/login').Login;
 function checkClientsCountry() {
   var clients_country = localStorage.getItem('clients_country');
   if (clients_country) {
-    var str;
     if (clients_country === 'jp') {
       limitLanguage('JA');
     } else if (clients_country === 'id') {

@@ -793,6 +793,9 @@ msgstr "Ein Universitätsabschluss in Marketing oder Computerwissenschaften ist 
 msgid "A university degree or accredited translation certification preferred"
 msgstr "Ein Universitätsabschluss oder akkreditierte Übersetzerzulassung bevorzugt"
 
+msgid "AM"
+msgstr ""
+
 msgid "API"
 msgstr "API"
 
@@ -3015,6 +3018,9 @@ msgstr "Höher/Tiefer Kontrakte werden zum Kaufkurs erstattet, wenn weniger als 
 msgid "Higher/Lower trades"
 msgstr "Höhere/Tiefere Stände"
 
+msgid "Hour"
+msgstr ""
+
 msgid "Housewife / Househusband"
 msgstr "Housewife / Househusband"
 
@@ -4355,6 +4361,11 @@ msgstr "Mindestens %1 Zeichen sind erforderlich."
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Mindestens sechs Klein- und Großbuchstaben mit Zahlen"
 
+#, fuzzy
+#| msgid "Minutes"
+msgid "Minute"
+msgstr "Minuten"
+
 msgid "Miss"
 msgstr "Verpasst"
 
@@ -4820,6 +4831,9 @@ msgstr "Das Eigentumsrecht an und der Inhalt der Website von %1 bleiben unser Ei
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
 msgstr "Eigentum, Inhalt und Haftung für die Partnersiten liegen in der alleinigen Verantwortung des Partners. Sie alleine sind für die Entwicklung, den Betrieb und die Pflege Ihrer Website und aller Materialien verantwortlich, die auf Ihrer Website veröffentlicht werden. Sie verpflichten sich, uns von allen Ansprüchen, Schäden und Kosten (unter anderem Anwaltshonoraren) hinsichtlich der Entwicklung, des Betriebs, der Pflege und der Inhalte Ihrer Website freizustellen und diese schadlos zu halten."
 
+msgid "PM"
+msgstr ""
+
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "Möchten Sie sich auf Forex-, Aktien- oder Rohstoffmärkten engagieren?"
 
@@ -5001,10 +5015,14 @@ msgstr "Bitte geben Sie einen gültigen Betrag ein."
 msgid "Please enter an integer value"
 msgstr "Bitte geben Sie einen ganzzahligen Wert ein"
 
-msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr "Bitte geben Sie das Datum im folgenden Format ein: JJJJ-MM-TT HH:mm (Ortszeit)."
 
-msgid "Please enter date in the format YYYY-MM-DD."
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD."
+msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "Bitte geben Sie das Datum im folgenden Format ein: JJJJ-MM-TT."
 
 msgid "Please enter your current password."
@@ -6656,6 +6674,11 @@ msgstr "Rang"
 msgid "Time"
 msgstr "Zeit"
 
+#, fuzzy
+#| msgid "Start time is in the future."
+msgid "Time is in the wrong format."
+msgstr "Die Startzeit liegt in der Zukunft."
+
 msgid "Time out until"
 msgstr "Timeout bis"
 
@@ -7976,6 +7999,11 @@ msgstr "E-Mail Adresse"
 msgid "f"
 msgstr "f"
 
+#, fuzzy
+#| msgid "Th"
+msgid "h"
+msgstr "Do"
+
 msgid "hour"
 msgstr "Stunde"
 
@@ -8012,11 +8040,17 @@ msgstr "M"
 msgid "max: 100,000"
 msgstr "Max: 100.000"
 
+msgid "min"
+msgstr "Min."
+
 msgid "min: 1,000"
 msgstr "Min: 1.000"
 
 msgid "minimum available duration"
 msgstr "kürzeste vorhandene Dauer"
+
+msgid "mins"
+msgstr ""
 
 msgid "minute"
 msgstr "Minute"
@@ -10902,9 +10936,6 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 #~ msgid "Start time %1 must be before end time %2"
 #~ msgstr "Die Startzeit %1 muss vor der Ablaufzeit %2 liegen"
 
-#~ msgid "Start time is in the future."
-#~ msgstr "Die Startzeit liegt in der Zukunft."
-
 #~ msgid "Start time is in the past"
 #~ msgstr "Die Startzeit liegt in der Vergangenheit"
 
@@ -13512,9 +13543,6 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 
 #~ msgid "explanation"
 #~ msgstr "Erklärung"
-
-#~ msgid "min"
-#~ msgstr "Min."
 
 #~ msgid "or Email us at"
 #~ msgstr "oder schreiben Sie uns eine E-Mail an"
@@ -18715,9 +18743,6 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 
 #~ msgid "Majors"
 #~ msgstr "Haupt"
-
-#~ msgid "Minutes"
-#~ msgstr "Minuten"
 
 #~ msgid "Normalize to 100"
 #~ msgstr "Auf 100 normalisieren"
