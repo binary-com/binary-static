@@ -15,6 +15,9 @@ require('babel-polyfill');
 exportAllFunctions(require('./binary/base/page'));
 exportAllFunctions(require('./binary/websocket_pages/socket'));
 
+// created for handling global onclick
+exportAllFunctions(require('./binary/common_functions/attach_dom/handle_click'));
+
 require('./lib/jquery-ui-timepicker/jquery.ui.timepicker.js');
 require('event-source-polyfill');
 require('./lib/jQuery.XDomainRequest.js');

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-05 06:26+0000\n"
+"PO-Revision-Date: 2016-12-07 17:32+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -793,7 +793,7 @@ msgid "A university degree or accredited translation certification preferred"
 msgstr "สำเร็จการศึกษาระดับปริญญาตรี หรือมีวุฒิบัตรด้านการแปลภาษาจะพิจารณาเป็นพิเศษ"
 
 msgid "AM"
-msgstr ""
+msgstr "น."
 
 msgid "API"
 msgstr "API"
@@ -3000,7 +3000,7 @@ msgid "Higher/Lower trades"
 msgstr "ซื้อขายสูงกว่า/ต่ำกว่า"
 
 msgid "Hour"
-msgstr ""
+msgstr "ชั่วโมง"
 
 msgid "Housewife / Househusband"
 msgstr "แม่บ้าน/พ่อบ้าน"
@@ -4340,8 +4340,6 @@ msgstr "จำนวนตัวอักขระน้อยที่สุด
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "จำนวนตัวอักขระน้อยที่สุดที่ต้องการ คือ 6 อักขระ ซึ่งเป็นอักษรตัวเล็ก ตัวใหญ่ และตัวเลข"
 
-#, fuzzy
-#| msgid "minute"
 msgid "Minute"
 msgstr "นาที"
 
@@ -4805,7 +4803,7 @@ msgid "Ownership, content, and liability of the Affiliate's websites are the sol
 msgstr "กรรมสิทธิ์ เนื้อหา และความรับผิดชอบของเว็บไซต์ของพันธมิตรเป็นความรับผิดชอบของพันธมิตร ท่านจะรับผิดชอบในการพัฒนา ปฏิบัติการ และดูแลปรับปรุงเว็บไซต์ของท่าน และเอกสารที่เกี่ยวข้องที่ปรากฎในเว็บไซต์ของท่าน ท่านจะรับประกันและดูแลเพื่อไม่ให้เกิดความเสียหาย ข้อเรียกร้อง และค่าใช้จ่ายใดๆ ที่เกี่ยวข้องกับการพัฒนา ปฏิบัติการ การดูแลปรับปรุงเว็บไซต์ และเนื้อหาในเว็บไซต์ของท่าน"
 
 msgid "PM"
-msgstr ""
+msgstr "น."
 
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "มีการซื้อขายในตลาดฟอเร็กซ์ หรือ ตลาดค้าสกุลเงิน หุ้น หรือ หลักทรัพย์ หรือ ตลาดสินค้าโภคภัณฑ์ ไหม?"
@@ -4986,15 +4984,11 @@ msgstr "โปรดป้อนตัวเลขที่ถูกต้อง
 msgid "Please enter an integer value"
 msgstr "โปรดป้อนจำนวนเต็ม"
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
 msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
-msgstr "โปรดป้อนวันที่ในรูปแบบ YYYY-MM-DD HH:mm (เวลาท้องถิ่น)"
+msgstr "โปรดป้อนวันที่ในรูปแบบ DD MMM, YYYY HH:mm (เวลาท้องถิ่น)"
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD."
 msgid "Please enter date in the format DD MMM, YYYY."
-msgstr "โปรดป้อนวันที่ในรูปแบบ YYYY-MM-DD"
+msgstr "โปรดป้อนวันที่ในรูปแบบ DD MMM, YYYY"
 
 msgid "Please enter your current password."
 msgstr "โปรดป้อนรหัสผ่านปัจจุบันของท่าน"
@@ -6638,10 +6632,8 @@ msgstr "ชั้น"
 msgid "Time"
 msgstr "เวลา"
 
-#, fuzzy
-#| msgid "Start time is in the future."
 msgid "Time is in the wrong format."
-msgstr "เวลาเริ่มต้นอยู่ในอนาคต"
+msgstr "เวลาอยู่ในรูปแบบที่ไม่ถูกต้อง"
 
 msgid "Time out until"
 msgstr "หมดเวลากระทั่ง"
@@ -7939,10 +7931,8 @@ msgstr "อีเมล์"
 msgid "f"
 msgstr "ศ"
 
-#, fuzzy
-#| msgid "Th"
 msgid "h"
-msgstr "พฤ"
+msgstr "ชม."
 
 msgid "hour"
 msgstr "ชั่วโมง"
@@ -7990,7 +7980,7 @@ msgid "minimum available duration"
 msgstr "ช่วงเวลาต่ำสุด"
 
 msgid "mins"
-msgstr ""
+msgstr "นาที"
 
 msgid "minute"
 msgstr "นาที"
