@@ -29,7 +29,38 @@ var countDecimalPlaces = function(num) {
     }
 };
 
+var trading_times = {};
+
+function processTradingTimesAnswer(response){
+    if(!trading_times.hasOwnProperty(response.echo_req.trading_times) && response.hasOwnProperty('trading_times') && response.trading_times.hasOwnProperty('markets')){
+        for(var i=0; i<response.trading_times.markets.length; i++){
+            var submarkets = response.trading_times.markets[i].submarkets;
+            if(submarkets){
+                for(var j=0; j<submarkets.length; j++){
+                    var symbols = submarkets[j].symbols;
+                    if(symbols){
+                        for(var k=0; k<symbols.length; k++){
+                            var symbol = symbols[k];
+                            if(!trading_times[response.echo_req.trading_times]){
+                                trading_times[response.echo_req.trading_times] = {};
+                            }
+                            trading_times[response.echo_req.trading_times][symbol.symbol] = symbol.times.close;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+var getElement = function(){
+    return document.getElementById('date_start');
+};
+
 module.exports = {
     displayPriceMovement: displayPriceMovement,
     countDecimalPlaces: countDecimalPlaces,
+    processTradingTimesAnswer: processTradingTimesAnswer,
+    getTradingTimes: function () { return trading_times; },
+    getStartDatenode : getElement,
 };

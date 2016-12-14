@@ -29,6 +29,5 @@ require('./binary/components/trackjs_onerror');
 require('./binary/static_pages/static_pjax');
 require('./binary/websocket_pages/websocket_pjax');
 
-//adding onClick function in javascript, find a work around
-exportAllFunctions(require('./binary/websocket_pages/trade/process'));
+// circular dependency
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/process'));

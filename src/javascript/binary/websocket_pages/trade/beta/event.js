@@ -223,7 +223,7 @@ var TradingEvents_Beta = (function () {
         if (durationUnitElement) {
             durationUnitElement.addEventListener('change', function (e) {
                 Defaults.remove('barrier', 'barrier_high', 'barrier_low');
-                onDurationUnitChange(e.target.value);
+                TradingEvents_Beta.onDurationUnitChange(e.target.value);
                 processPriceRequest_Beta();
             });
         }

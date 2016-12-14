@@ -6,6 +6,7 @@ var Message              = require('./message').Message;
 var Notifications        = require('./notifications').Notifications;
 var Price                = require('./price').Price;
 var Symbols              = require('./symbols').Symbols;
+var forgetTradingStreams = require('./process').forgetTradingStreams;
 var Content              = require('../../common_functions/content').Content;
 var Guide                = require('../../common_functions/guide').Guide;
 var japanese_client      = require('../../common_functions/country_base').japanese_client;

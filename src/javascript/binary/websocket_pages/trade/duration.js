@@ -1,6 +1,7 @@
 var Barriers         = require('./barriers').Barriers;
 var Contract         = require('./contract').Contract;
 var Defaults         = require('./defaults').Defaults;
+var Price            = require('./price').Price;
 var Content          = require('../../common_functions/content').Content;
 var moment           = require('moment');
 var State            = require('../../base/storage').State;
@@ -8,6 +9,8 @@ var isVisible        = require('../../common_functions/common_functions').isVisi
 var durationOrder    = require('./common').durationOrder;
 var selectOption     = require('./common').selectOption;
 var timeIsValid      = require('./common').timeIsValid;
+var showPriceOverlay = require('./common').showPriceOverlay;
+var getTradingTimes = require('./common_independent').getTradingTimes;
 var DatePicker       = require('../../components/date_picker').DatePicker;
 var toReadableFormat = require('../../common_functions/string_util').toReadableFormat;
 var toISOFormat      = require('../../common_functions/string_util').toISOFormat;
@@ -25,7 +28,6 @@ var toISOFormat      = require('../../common_functions/string_util').toISOFormat
 var Durations = (function(){
     'use strict';
 
-    var trading_times = {};
     var selected_duration = {};
     var expiry_time = '';
     var has_end_date = 0;
@@ -332,28 +334,6 @@ var Durations = (function(){
         target.appendChild(fragment);
     };
 
-    var processTradingTimesAnswer = function(response){
-        if(!trading_times.hasOwnProperty(response.echo_req.trading_times) && response.hasOwnProperty('trading_times') && response.trading_times.hasOwnProperty('markets')){
-            for(var i=0; i<response.trading_times.markets.length; i++){
-                var submarkets = response.trading_times.markets[i].submarkets;
-                if(submarkets){
-                    for(var j=0; j<submarkets.length; j++){
-                        var symbols = submarkets[j].symbols;
-                        if(symbols){
-                            for(var k=0; k<symbols.length; k++){
-                                var symbol = symbols[k];
-                                if(!trading_times[response.echo_req.trading_times]){
-                                    trading_times[response.echo_req.trading_times] = {};
-                                }
-                                trading_times[response.echo_req.trading_times][symbol.symbol] = symbol.times.close;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    };
-
     var selectEndDate = function(end_date){
         var expiry_time = document.getElementById('expiry_time'),
             date_start  = document.getElementById('date_start'),
@@ -379,10 +359,22 @@ var Durations = (function(){
             Durations.setTime(expiry_time.value);
             Defaults.set('expiry_time', Defaults.get('expiry_time') || expiry_time.value);
             expiry_time.show();
-            processPriceRequest();
+            Price.processPriceRequest();
         }
 
         Barriers.display();
+    };
+
+    var processTradingTimesRequest = function(date) {
+        var trading_times = getTradingTimes();
+        if (trading_times.hasOwnProperty(date)) {
+            Price.processPriceRequest();
+        } else {
+            showPriceOverlay();
+            BinarySocket.send({
+                trading_times: date
+            });
+        }
     };
 
     var validateMinDurationAmount = function(){
@@ -437,13 +429,10 @@ var Durations = (function(){
         display                  : displayDurations,
         displayEndTime           : displayEndTime,
         populate                 : durationPopulate,
-        processTradingTimesAnswer: processTradingTimesAnswer,
         selectEndDate            : selectEndDate,
         validateMinDurationAmount: validateMinDurationAmount,
         onStartDateChange        : onStartDateChange,
         setTime      : function(time) { $('#expiry_time').val(time); Defaults.set('expiry_time', time); expiry_time = time; },
-        getTime      : function() { return expiry_time; },
-        trading_times: function() { return trading_times; },
         select_amount: function(a) { selected_duration.amount = a; },
         select_unit  : function(u) { selected_duration.unit = u; },
     };

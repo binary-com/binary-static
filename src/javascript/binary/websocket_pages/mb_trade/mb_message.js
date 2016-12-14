@@ -7,6 +7,7 @@ var MBSymbols           = require('./mb_symbols').MBSymbols;
 var MBTick              = require('./mb_tick').MBTick;
 var PortfolioWS = require('../user/account/portfolio/portfolio.init').PortfolioWS;
 var State = require('../../base/storage').State;
+var processTradingTimes = require('../trade/process').processTradingTimes;
 
 /*
  * This Message object process the response from server and fire
