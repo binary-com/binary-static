@@ -30,6 +30,5 @@ require('./binary/static_pages/static_pjax');
 require('./binary/websocket_pages/websocket_pjax');
 
 //adding onClick function in javascript, find a work around
-exportAllFunctions(require('./binary/websocket_pages/mb_trade/mb_price'));
 exportAllFunctions(require('./binary/websocket_pages/trade/process'));
 exportAllFunctions(require('./binary/websocket_pages/trade/beta/process'));
