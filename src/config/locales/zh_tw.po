@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-06 07:30+0000\n"
+"PO-Revision-Date: 2016-12-09 08:16+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -788,7 +788,7 @@ msgid "A university degree or accredited translation certification preferred"
 msgstr "擁有大學本科學位或權威翻譯資格認證者優先錄取"
 
 msgid "AM"
-msgstr ""
+msgstr "上午"
 
 msgid "API"
 msgstr "應用程式編程介面"
@@ -2995,7 +2995,7 @@ msgid "Higher/Lower trades"
 msgstr "「高於/低於」交易"
 
 msgid "Hour"
-msgstr ""
+msgstr "小時"
 
 msgid "Housewife / Househusband"
 msgstr "Housewife / Househusband"
@@ -4333,8 +4333,6 @@ msgstr "需至少%1 個字元。"
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "至少六個大小寫字母和數字"
 
-#, fuzzy
-#| msgid "minute"
 msgid "Minute"
 msgstr "分鐘"
 
@@ -4798,7 +4796,7 @@ msgid "Ownership, content, and liability of the Affiliate's websites are the sol
 msgstr "聯盟網站的所有權、內容和法律責任均由聯盟會員全權負責。您僅全權負責您的網站及其所顯示之全部材料的開發、運營和維護。有關您的網站開發、運營、維護和內容的一切索賠、損害賠償及開支（包括但不限於律師費），您將對公司進行賠償，並使其免害。"
 
 msgid "PM"
-msgstr ""
+msgstr "下午"
 
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "參與外匯、股票或商品市場?"
@@ -4977,15 +4975,11 @@ msgstr "請輸入有效金額。"
 msgid "Please enter an integer value"
 msgstr "請輸入整數"
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
 msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
-msgstr "請輸入日期，格式為年-月-日 時:分(當地時間)。"
+msgstr "請輸入日期，格式為日-月-年 時:分(當地時間)。"
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD."
 msgid "Please enter date in the format DD MMM, YYYY."
-msgstr "請輸入日期，格式為年-月-日。"
+msgstr "請輸入日期，格式為日-月-年。"
 
 msgid "Please enter your current password."
 msgstr "請輸入您目前密碼。"
@@ -6624,10 +6618,8 @@ msgstr "階層"
 msgid "Time"
 msgstr "時間"
 
-#, fuzzy
-#| msgid "Start time is in the future."
 msgid "Time is in the wrong format."
-msgstr "開始時間是在未來。"
+msgstr "時間格式錯誤。"
 
 msgid "Time out until"
 msgstr "時間已過。下次開啟時間為"

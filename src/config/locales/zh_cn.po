@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-06 07:28+0000\n"
+"PO-Revision-Date: 2016-12-09 08:13+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
@@ -790,7 +790,7 @@ msgid "A university degree or accredited translation certification preferred"
 msgstr "具大学本科学位或受认可的翻译认证者优先录取"
 
 msgid "AM"
-msgstr ""
+msgstr "上午"
 
 msgid "API"
 msgstr "应用程序编程界面"
@@ -4802,7 +4802,7 @@ msgid "Ownership, content, and liability of the Affiliate's websites are the sol
 msgstr "联盟网站的所有权、内容和法律责任均由联盟会员全权负责。您仅全权负责您的网站及其显示的全部材料的开发、运营和维护。对于与您网站开发、运营、维护和内容相关的一切索赔、损害赔偿和开支（包括但不限于律师费），您有责任进行赔偿，并使公司免受侵害。"
 
 msgid "PM"
-msgstr ""
+msgstr "下午"
 
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "参与外汇、股票或商品市场？"
@@ -4981,15 +4981,11 @@ msgstr "请输入有效金额。"
 msgid "Please enter an integer value"
 msgstr "请输入整数"
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
 msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
-msgstr "请输入日期，格式为年-月-日 时：分（当地时间）。"
+msgstr "请输入日期，格式为日-月-年 时：分（当地时间）。"
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD."
 msgid "Please enter date in the format DD MMM, YYYY."
-msgstr "请输入日期，格式为年-月-日。"
+msgstr "请输入日期，格式为日-月-年。"
 
 msgid "Please enter your current password."
 msgstr "请输入当前密码。"
@@ -6630,10 +6626,8 @@ msgstr "层级"
 msgid "Time"
 msgstr "时间"
 
-#, fuzzy
-#| msgid "Start time is in the future."
 msgid "Time is in the wrong format."
-msgstr "开始时间是在未来。"
+msgstr "时间格式错误。"
 
 msgid "Time out until"
 msgstr "时间已过。下次开启时间为"
