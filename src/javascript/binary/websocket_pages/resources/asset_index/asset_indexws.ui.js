@@ -64,7 +64,6 @@ var AssetIndexUI = (function() {
         $container
             .empty()
             .append($tabs)
-            .append($('<div/>', {class: 'gr-padding-10'}))
             .append($contents.children());
 
         $container.tabs('destroy').tabs();
