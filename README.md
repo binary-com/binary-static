@@ -29,6 +29,9 @@ sudo carton install
 How to work with this project
 =============================
 
+### NOTE
+Make sure your ruby and node are updated
+
 ### Deploy to your gh-pages for the first time
 
 1. You need to have your own application registered at Binary.com because it should redirect client to your github pages after login. There is no UI for it yet, so you can send the following request for now (change *YOUR_APP_NAME* and *YOUR_GITHUB_USERNAME* as well):
