@@ -6,8 +6,8 @@ var Endpoint = (function() {
         $('#server_url').val(getSocketURL().split('/')[2]);
         $('#app_id').val(getAppId());
         $('#new_endpoint').on('click', function () {
-          var server_url = ($('#server_url').val() || '').trim().toLowerCase(),
-              app_id = ($('#app_id').val() || '').trim();
+          var server_url = (($('#server_url').val() || '').trim().toLowerCase()).replace(/[><()\"\']/g,'');
+          var app_id = ($('#app_id').val() || '').trim();
           if (server_url) {
             localStorage.setItem('config.server_url', server_url);
           }
