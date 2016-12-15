@@ -72,7 +72,7 @@ var GTM = (function() {
     "use strict";
 
     var gtm_applicable = function() {
-        return (getAppId() === '1');
+        return /^(1|1098)$/.test(getAppId());
     };
 
     var gtm_data_layer_info = function(data) {
