@@ -8,11 +8,7 @@ function create_language_drop_down(languages) {
         $selectLanguage = $languages.find(selectLanguage);
     if ($languages.length === 0 || $selectLanguage.find('li span.language').text() !== '') return;
     languages.sort(function(a, b) {
-        if (a === 'EN' || a < b) {
-            return -1;
-        } else {
-            return 1;
-        }
+        return (a === 'EN' || a < b) ? -1 : 1;
     });
     var displayLanguage = 'ul#display_language',
         language = page.language();

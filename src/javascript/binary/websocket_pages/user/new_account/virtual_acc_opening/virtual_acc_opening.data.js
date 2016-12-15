@@ -4,22 +4,22 @@ var ValidateV2    = require('../../../../common_functions/validation_v2').Valida
 var Cookies = require('../../../../../lib/js-cookie');
 var dv      = require('../../../../../lib/validation');
 
-var VirtualAccOpeningData = (function(){
-    "use strict";
+var VirtualAccOpeningData = (function() {
+    'use strict';
 
     function newAccount(config) {
         var req = {
             new_account_virtual: 1,
-            client_password: config.password,
-            residence:       config.residence,
-            verification_code: config.verification_code
+            client_password    : config.password,
+            residence          : config.residence,
+            verification_code  : config.verification_code,
         };
 
         // Add TrafficSource parameters
         var utm_data = TrafficSource.getData();
         req.utm_source = TrafficSource.getSource(utm_data);
-        if(utm_data.utm_medium)   req.utm_medium   = utm_data.utm_medium;
-        if(utm_data.utm_campaign) req.utm_campaign = utm_data.utm_campaign;
+        if (utm_data.utm_medium)   req.utm_medium   = utm_data.utm_medium;
+        if (utm_data.utm_campaign) req.utm_campaign = utm_data.utm_campaign;
 
         if (Cookies.get('affiliate_tracking')) {
             req.affiliate_token = Cookies.getJSON('affiliate_tracking').t;
@@ -41,39 +41,39 @@ var VirtualAccOpeningData = (function(){
             return value === data.password;
         }
         return {
-            residence: [V2.required],
-            password:  [V2.password],
+            residence          : [V2.required],
+            password           : [V2.password],
             'verification-code': [V2.required, V2.token],
-            'r-password': [dv.check(matches, err)],
+            'r-password'       : [dv.check(matches, err)],
         };
     }
 
     function handler(config) {
         return function(msg) {
             var response = JSON.parse(msg.data);
-            if (!response) return;
+            if (!response) return false;
 
             var type  = response.msg_type;
             var error = response.error;
 
             if (type === 'new_account_virtual' && !error) return config.success(response);
-            if (type !== 'error' && !error) return;
+            if (type !== 'error' && !error) return true;
 
             switch (error.code) {
                 case 'InvalidToken':    return config.invalidToken();
                 case 'duplicate email': return config.duplicateEmail();
                 case 'PasswordError':   return config.passwordError();
-                default: return;
+                default: return false;
             }
         };
     }
 
     return {
         newAccount: newAccount,
-        getSchema:  getSchema,
-        handler:    handler,
+        getSchema : getSchema,
+        handler   : handler,
     };
-}());
+})();
 
 module.exports = {
     VirtualAccOpeningData: VirtualAccOpeningData,

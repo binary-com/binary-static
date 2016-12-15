@@ -23,16 +23,16 @@ var TradingAnalysis = (function() {
         var formName = State.get('is_mb_trading') ? $('#category').val() :
                                                     $('#contract_form_name_nav').find('.a-active').attr('id');
         if (formName === 'matchdiff') {
-          formName = 'digits';
+            formName = 'digits';
         }
         if (formName === 'callput') {
-          formName = 'higherlower';
+            formName = 'higherlower';
         }
         $('#tab_explanation a').attr('href',  page.url.url_for('trade/bet_explanation', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
         if (formName === 'digits' || formName === 'overunder' || formName === 'evenodd') {
-            $('#tab_last_digit').removeClass("invisible");
+            $('#tab_last_digit').removeClass('invisible');
         } else {
-          $('#tab_last_digit').addClass("invisible");
+            $('#tab_last_digit').addClass('invisible');
         }
         sessionStorage.setItem('currentAnalysisTab', getActiveTab());
         loadAnalysisTab();
@@ -44,6 +44,7 @@ var TradingAnalysis = (function() {
      */
     var bindAnalysisTabEvent = function() {
         'use strict';
+
         var analysisNavElement = document.querySelector('#trading_bottom_content #betsBottomPage');
         if (analysisNavElement) {
             analysisNavElement.addEventListener('click', function(e) {
@@ -70,6 +71,7 @@ var TradingAnalysis = (function() {
      */
     var loadAnalysisTab = function() {
         'use strict';
+
         var currentTab = getActiveTab(),
             currentLink = document.querySelector('#' + currentTab + ' a'),
             contentId = document.getElementById(currentTab + '-content');
@@ -79,38 +81,35 @@ var TradingAnalysis = (function() {
         toggleActiveAnalysisTabs();
 
         JapanPortfolio.init();
-        if(currentTab === 'tab_portfolio'){
+        if (currentTab === 'tab_portfolio') {
             JapanPortfolio.show();
         } else {
             JapanPortfolio.hide();
             if (currentTab === 'tab_graph') {
-              showHighchart();
+                showHighchart();
+            } else if (currentTab === 'tab_last_digit') {
+                var underlying = $('[name=underlying] option:selected').val() || $('#underlying option:selected').val();
+                var tick = $('[name=tick_count]').val() || 100;
+                BinarySocket.send({
+                    ticks_history: underlying,
+                    count        : tick + '',
+                    end          : 'latest',
+                    req_id       : 1,
+                });
             } else {
-                if (currentTab == 'tab_last_digit') {
-                    var underlying = $('[name=underlying] option:selected').val() || $('#underlying option:selected').val();
-                    var tick = $('[name=tick_count]').val() || 100;
-                    BinarySocket.send({
-                        ticks_history: underlying,
-                        count: tick + '',
-                        end: 'latest',
-                        req_id: 1
-                    });
-                } else{
-                    var url = currentLink.getAttribute('href') ;
-                    $.ajax({
-                        method: 'GET',
-                        url: url,
-                    })
+                var url = currentLink.getAttribute('href');
+                $.ajax({
+                    method: 'GET',
+                    url   : url,
+                })
                     .done(function(data) {
                         contentId.innerHTML = data;
-                        if(currentTab === 'tab_explanation') {
+                        if (currentTab === 'tab_explanation') {
                             showExplanation(currentLink.href);
                         }
                     });
-                }
             }
         }
-
     };
 
     /*
@@ -118,6 +117,7 @@ var TradingAnalysis = (function() {
      */
     var toggleActiveAnalysisTabs = function() {
         'use strict';
+
         var currentTab = getActiveTab(),
             analysisContainer = document.getElementById('bet_bottom_content');
 
@@ -164,54 +164,54 @@ var TradingAnalysis = (function() {
             hidden_class = 'invisible',
             $Container   = $('#tab_explanation-content');
 
-        if(show_winning) {
+        if (show_winning) {
             $Container.find('#explanation_winning, #winning_' + form_name).removeClass(hidden_class);
         }
 
-        if(show_explain) {
+        if (show_explain) {
             $Container.find('#explanation_explain, #explain_' + form_name).removeClass(hidden_class);
         }
 
         var images = {
-            risefall : {
+            risefall: {
                 image1: 'rise-fall-1.svg',
                 image2: 'rise-fall-2.svg',
             },
-            higherlower : {
+            higherlower: {
                 image1: 'higher-lower-1.svg',
                 image2: 'higher-lower-2.svg',
             },
-            touchnotouch : {
+            touchnotouch: {
                 image1: 'touch-notouch-1.svg',
                 image2: 'touch-notouch-2.svg',
             },
-            endsinout : {
+            endsinout: {
                 image1: 'in-out-1.svg',
                 image2: 'in-out-2.svg',
             },
-            staysinout : {
+            staysinout: {
                 image1: 'in-out-3.svg',
                 image2: 'in-out-4.svg',
             },
-            updown : {
+            updown: {
                 image1: 'up-down-1.svg',
                 image2: 'up-down-2.svg',
             },
-            spreads : {
+            spreads: {
                 image1: 'spreads-1.svg',
                 image2: 'spreads-2.svg',
             },
-            evenodd : {
+            evenodd: {
                 image1: 'evenodd-1.svg',
                 image2: 'evenodd-2.svg',
             },
-            overunder : {
+            overunder: {
                 image1: 'overunder-1.svg',
                 image2: 'overunder-2.svg',
             },
         };
 
-        if(show_image && images.hasOwnProperty(form_name)) {
+        if (show_image && images.hasOwnProperty(form_name)) {
             var image_path = page.url.url_for_static('images/pages/trade-explanation/' + (page.language() === 'JA' ? 'ja/' : ''));
             $Container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $Container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
@@ -220,14 +220,13 @@ var TradingAnalysis = (function() {
     };
 
     return {
-        request: requestTradeAnalysis,
+        request   : requestTradeAnalysis,
         digit_info: function() {
             return trading_digit_info;
         },
-        getActiveTab: getActiveTab,
-        bindAnalysisTabEvent: bindAnalysisTabEvent
+        getActiveTab        : getActiveTab,
+        bindAnalysisTabEvent: bindAnalysisTabEvent,
     };
-
 })();
 
 module.exports = {

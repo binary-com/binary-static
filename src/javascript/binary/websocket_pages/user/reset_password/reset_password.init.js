@@ -14,7 +14,9 @@ var ResetPassword = (function () {
     var resetErrorTemplate = '[_1]' +
         ' Please click the link below to restart the password recovery process. ' +
         'If you require further assistance, please contact our Customer Support.';
-    var dobdd, dobmm, dobyy;
+    var dobdd,
+        dobmm,
+        dobyy;
 
     function submitResetPassword() {
         var token = $('#verification-code').val();
@@ -28,14 +30,14 @@ var ResetPassword = (function () {
 
         if (!pw1) {                                         // password not entered
             $('#password-error1').empty();
-            $('#password-error1').append('<p></p>', {class: 'errorfield'}).text(Content.localize().textMessageRequired);
+            $('#password-error1').append('<p></p>', { class: 'errorfield' }).text(Content.localize().textMessageRequired);
             $('#password-error1').removeClass(hiddenClass);
             return;
         } else if (!passwordValid(pw1)) {                   // password failed validation
             var errMsgs = showPasswordError(pw1);
             $('#password-error1').empty();
-            errMsgs.forEach(function(msg){
-                var $errP = $('<p></p>', {class: 'errorfield'}).text(msg);
+            errMsgs.forEach(function(msg) {
+                var $errP = $('<p></p>', { class: 'errorfield' }).text(msg);
                 $('#password-error1').append($errP);
             });
 
@@ -65,17 +67,17 @@ var ResetPassword = (function () {
             }
 
             BinarySocket.send({
-                reset_password: 1,
+                reset_password   : 1,
                 verification_code: token,
-                new_password: pw1,
-                date_of_birth: [dobyy, dobmm, dobdd].join('-'),
+                new_password     : pw1,
+                date_of_birth    : [dobyy, dobmm, dobdd].join('-'),
             });
             $('#reset').prop('disabled', true);
         } else {
             BinarySocket.send({
-                reset_password: 1,
+                reset_password   : 1,
                 verification_code: token,
-                new_password: pw1
+                new_password     : pw1,
             });
             $('#reset').prop('disabled', true);
         }
@@ -101,7 +103,7 @@ var ResetPassword = (function () {
                 var errMsg = page.text.localize(resetErrorTemplate, [
                     response.error.code === 'InputValidationFailed' ?
                         page.text.localize('Token has expired.') :
-                        page.text.localize(response.error.message)
+                        page.text.localize(response.error.message),
                 ]);
 
                 $('#reset-error-msg').text(errMsg);
@@ -124,13 +126,13 @@ var ResetPassword = (function () {
         dobyy = undefined;
 
         if (japanese_client()) {
-          $("#dobyy").val($("#dobyy option:first").val());
-          $("#dobmm").val($("#dobmm option:first").val());
-          $("#dobdd").val($("#dobdd option:first").val());
+            $('#dobyy').val($('#dobyy option:first').val());
+            $('#dobmm').val($('#dobmm option:first').val());
+            $('#dobdd').val($('#dobdd option:first').val());
         } else {
-          $('#dobdd').val('');
-          $('#dobmm').val('');
-          $('#dobyy').val('');
+            $('#dobdd').val('');
+            $('#dobmm').val('');
+            $('#dobyy').val('');
         }
 
         if (isChecked) {
@@ -156,8 +158,8 @@ var ResetPassword = (function () {
         $('#reset_passwordws').removeClass('invisible');
         Content.populate();
         if (japanese_client()) {
-          $('#dobmm').insertAfter('#dobyy');
-          $('#dobdd').insertAfter('#dobmm');
+            $('#dobmm').insertAfter('#dobyy');
+            $('#dobdd').insertAfter('#dobmm');
         }
         generateBirthDate();
         var $pmContainer = $('#password-meter-container');
@@ -189,9 +191,9 @@ var ResetPassword = (function () {
 
     return {
         resetPasswordWSHandler: resetPasswordWSHandler,
-        init: init
+        init                  : init,
     };
-}());
+})();
 
 module.exports = {
     ResetPassword: ResetPassword,
