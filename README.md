@@ -75,7 +75,7 @@ grunt deploy
 ```
 grunt dev --path=about-us
 ```
-### Run it on local host
+### Run it on localhost
 
 ```
 chown -R yourUserName
