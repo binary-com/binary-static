@@ -3,13 +3,13 @@
         <div class="sidebar-left">
             <ul class="sidebar-nav">
                 <li>
-                    <a href="#trading-platforms">[% l("Trading Platforms") %]</a>
+                    <a href="#trading-platforms">[% l("Trading platforms") %]</a>
                 </li>
                 <li>
-                    <a href="#platforms-comparison">[% l("Platform Comparison") %]</a>
+                    <a href="#platforms-comparison">[% l("Platform comparison") %]</a>
                 </li>
                 <li>
-                    <a href="#more-tools">[% l("More Tools") %]</a>
+                    <a href="#more-tools">[% l("More tools") %]</a>
                 </li>
             </ul>
         </div>
@@ -30,7 +30,7 @@
                             [% l("Trade in the world’s financial markets with a simple and user-friendly online platform.") %]
                             <p>
                                 <a class="button pjaxload" href="[% request.url_for('/trading') %]">
-                                    <span>[% l("Trade Now") %]</span>
+                                    <span>[% l("Trade now") %]</span>
                                 </a>
                             </p>
                         </p>
