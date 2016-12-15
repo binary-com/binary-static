@@ -22,7 +22,7 @@ sudo npm install -g grunt-cli
 curl -L https://cpanmin.us | sudo perl - App::cpanminus
 sudo cpanm Carton
 cd scripts
-carton install
+sudo carton install
 ```
 
 
@@ -72,7 +72,12 @@ grunt deploy
 ```
 grunt dev --path=about-us
 ```
+### Run it on local host
 
+```
+chown -R yourUserName
+npm run livereload
+```
 
 ### Using sub-folders
 There are times that you're working on various branches at the same time, and you want to deploy/test each branch separately on your gh-pages, you can simply use `--branch=branchname` for grunt commands:
