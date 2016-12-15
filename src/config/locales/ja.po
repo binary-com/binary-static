@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-09 08:40+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-12-13 23:13+0000\n"
+"Last-Translator: Yasushi Takeishi <takeishi@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -107,13 +107,13 @@ msgid "%1 has thousands of clients taking a variety of positions on the financia
 msgstr "当社では常時、たくさんのお客さまがバイナリーオプションをお取引されており、これらのお取引のスプレッドから利益を得ております。"
 
 msgid "%1 has updated its  <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
-msgstr "<a class=\"pjaxload\" href=\"%2\">取引規約</a>を改定いたします。当社でお取引されているお客さまにおいて、改定後の <a class=\"pjaxload\" href=\"%2\">取引規約</a>を必ずご確認いただく必要がございます。原則、改定後の書面の内容をご確認いただきOKボタンを押して頂くまで、お取引できなくなりますので、お取引の際ご注意ください。"
+msgstr "<a class=\"pjaxload\" href=\"%2\">取引約款</a>を改定いたします。当社でお取引されているお客さまにおいて、改定後の <a class=\"pjaxload\" href=\"%2\">取引約款</a>を必ずご確認いただく必要がございます。原則、改定後の書面の内容をご確認いただきOKボタンを押して頂くまで、お取引できなくなりますので、お取引の際ご注意ください。"
 
 msgid "%1 has updated its %2. By clicking OK, you confirm that you have read and accepted the updated %2."
 msgstr "%1が%2を改定いたします。当社でお取引なさっているお客さまにおいて、改定後の%2の内容を必ずご確認いただく必要がございます。原則、改定後の書面の内容をご確認いただきOKボタンを押して頂くまで、お取引できなくなりますので、お取引の際ご注意ください。"
 
 msgid "%1 has updated its <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
-msgstr "<a class=\"pjaxload\" href=\"%2\">取引規約</a>を改定いたします。当社でお取引なさっているお客さまにおいて、改定後の <a class=\"pjaxload\" href=\"%2\">取引規約</a>を必ずご確認いただく必要がございます。原則、改定後の書面の内容をご確認いただきOKボタンを押して頂くまで、お取引できなくなりますので、お取引の際ご注意ください。"
+msgstr "<a class=\"pjaxload\" href=\"%2\">取引約款</a>を改定いたします。当社でお取引なさっているお客さまにおいて、改定後の <a class=\"pjaxload\" href=\"%2\">取引約款</a>を必ずご確認いただく必要がございます。原則、改定後の書面の内容をご確認いただきOKボタンを押して頂くまで、お取引できなくなりますので、お取引の際ご注意ください。"
 
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr "口座数が100万口座を超え、社史に残る実績を達成、業界トップのポジションを確実なものにしました。"
@@ -2388,7 +2388,7 @@ msgid "Each binary option is a prediction on the future movement of an underlyin
 msgstr "バイナリーオプションは、原資産の将来の値動きを予測する取引です。"
 
 msgid "Each binary trade is for a pre-determined payout amount. You win the payout if your prediction is correct."
-msgstr "各バイナリーでのお取引は事前にペイアウト金額が確定しています。条件が満たされるとこの金額を獲得いただけます。"
+msgstr "各バイナリーでのお取引は事前にペイアウト金額が確定しています。条件が満たされるとこの金額を受け取りいただけます。"
 
 msgid "Each option transaction has a specified expiry time and date, known as the judgment time."
 msgstr "本取引が期日のある取引であること。（契約締結前交付書面「店頭バイナリーオプション取引のリスク等重要事項について」-2参照）"
@@ -2874,7 +2874,7 @@ msgid "Fresh graduates who meet our basic requirements and are passionate about 
 msgstr "当社の基本要件を満たし、管理事務でのプロフェッショナルなキャリアを追求する情熱のある新卒者は大歓迎です。"
 
 msgid "Friday"
-msgstr "金"
+msgstr "金曜日"
 
 msgid "Fridays"
 msgstr "金曜日"
@@ -2922,7 +2922,7 @@ msgid "General Provisions"
 msgstr "一般条項"
 
 msgid "General Risk Warning"
-msgstr "お取引にあたってのご注意喚起文書"
+msgstr "お取引にあたっての注意喚起文書"
 
 msgid "General Risks"
 msgstr "一般的なリスク"
@@ -3103,7 +3103,9 @@ msgstr "私は、犯罪収益移動防止法に規定されている外国人PEP
 msgid "I forgot my password, what should I do?"
 msgstr "パスワードを忘れてしまいました。再発行の方法について教えて下さい。"
 
-msgid "I have Real Money Account"
+#, fuzzy
+#| msgid "I have Real Money Account"
+msgid "I have a Real Money Account"
 msgstr "リアル口座を既に持っています"
 
 msgid "I have read and agree to the"
@@ -3971,7 +3973,7 @@ msgid "Japan website Privacy Policy list item 12 Paragraph 1.5"
 msgstr "メールアドレス　：support@binary.com"
 
 msgid "Japan website Risk For Binary Option Trading List item 1"
-msgstr "お客さまが行う店頭バイナリーオプション取引は、為替レートの変動によって、購入したオプションの価値やペイアウト金額（払い戻される額）が変動するため、利益を得られることや元本が保証されたものではありません。最大でオプション購入合計金額の損失が発生します。"
+msgstr "お客さまが行う店頭バイナリーオプション取引は、為替レートの変動によって購入したオプションの価値が変動するため、確実に利益を得られるもしくは元本が保証された取引ではありません。最大でオプション購入金額の損失が発生します。権利消滅時には購入金額が損失となります。"
 
 msgid "Japan website Risk For Binary Option Trading List item 10"
 msgstr "当社は、お客さまからお預かりした預託金については、日証金信託銀行の顧客区分管理信託口にて、当社の固有財産とは区分して管理しております。なお、預託金が信託口座へ入金されるまでの間は、かかる信託に基づく信託保全の保全対象とはなりませんが、その間も金融庁長官の指定する金融機関において、預託金であることがその名義により明らかな預金口座にて、当社の固有財産とは区分して管理しております。"
@@ -6072,13 +6074,13 @@ msgid "Termination of this Agreement shall not prejudice any rights of any party
 msgstr "本契約の破棄によって、全ての関係者に契約の破棄日の当日、又は以前に発生し得る権利に損害を与えることはありません。"
 
 msgid "Terms & Conditions"
-msgstr "取引規約"
+msgstr "取引約款＆契約締結前交付書面"
 
 msgid "Terms and Conditions"
 msgstr "店頭バイナリーオプション取引約款"
 
 msgid "Terms and conditions"
-msgstr "取引規約"
+msgstr "取引約款、契約締結前交付書面"
 
 msgid "Tertiary"
 msgstr "第三の"
@@ -7366,7 +7368,7 @@ msgid "We will monitor the effectiveness of our order execution arrangements and
 msgstr "当社は我々の注文執行手配と注文執行ポリシーの有効性を監視します。随時お客さまに代わって当社が一貫して最良執行が達成できる契約の価格設定を我々に一存する場であるか、執行手配の変更を必要とするかどうか評価します。価格を選択する場の1つという点または最良執行を達成し続ける当社の能力に影響を与える何かどちらかの重大な変更に関しても注文執行手配と注文執行ポリシーを検討します。当社注文執行手配または注文執行ポリシーに変更が生じた際は、お知らせ致します"
 
 msgid "We will provide all documents in electronic format. Please tick the box if you agree and go to the next step."
-msgstr "同意いただき、次のステップへ進まれる際は、当社からお客さまへ電子文書を送信させていただきます。"
+msgstr "口座開設には下記への同意が必要です。"
 
 msgid "We will provide you with all the tools you need to turn your traffic into a lucrative revenue stream"
 msgstr "サイト訪問数を収入に転化するツールを提供"
@@ -8698,7 +8700,7 @@ msgid "{JAPAN ONLY}If the exercise prices and exercise times are the same for an
 msgstr "バリア価格と権利行使期間がヨーロピアンタイプとアメリカンタイプのオプションで同じ場合、アメリカンタイプの方がオプション価格は高くなります。"
 
 msgid "{JAPAN ONLY}If the market price has changed significantly it may not be possible to execute a trade at a delayed price displayed in a customer's browser. Alternatively you may pay a lower price for the option if the price has moved quickly in that direction. Please see our summary of specifications document for full details of our 'slippage' rules."
-msgstr "万が一、市場価格が急激に変動した際は、お客様のブラウザ上で表示されている注文価格では約定しない場合があります。その逆として、市場価格が急激に変動したことにより、注文価格より有利な価格で購入できる場合があります。詳しくは契約締結前交付正面をご覧ください。"
+msgstr "万が一、市場価格が急激に変動した際は、お客様のブラウザ上で表示されている注文価格では約定しない場合があります。その逆として、市場価格が急激に変動したことにより、注文価格より有利な価格で購入できる場合があります。詳しくは契約締結前交付書面をご覧ください。"
 
 msgid "{JAPAN ONLY}If the probablility of a payout is 50% then when the potential payout is less than 100% of the price paid for the option, the expected return on the investment will be less than 100%."
 msgstr "投資額に対するペイアウトの倍率が2倍を下回り、ペイアウトを受け取る確率が50%の場合、期待収益率は1倍を下回り予測回収額は投資額を下回ります。"
@@ -8803,7 +8805,7 @@ msgid "{JAPAN ONLY}JSA_Date_1"
 msgstr "2016/10/20"
 
 msgid "{JAPAN ONLY}JSA_Date_2"
-msgstr "-"
+msgstr "2016/12/12"
 
 msgid "{JAPAN ONLY}JSA_Date_3"
 msgstr "-"
@@ -8818,13 +8820,13 @@ msgid "{JAPAN ONLY}JSA_Explanation_1_3)"
 msgstr "-"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
-msgstr "-"
+msgstr "年末年始における当社の入出金スケジュールのご案内を致します"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_2)"
-msgstr "-"
+msgstr "12月31日（土）から1月3日（火）の期間は、国内金融機関（店舗）が休業のため、入出金サービスをご利用頂けません。"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_3)"
-msgstr "-"
+msgstr "26日の銀行振込からのご入金は、翌日27日に口座へ反映されます<br>26日の出金依頼は、翌27日以降の着金となります<br>12月30日以降のご入金は2017年1月4日以降口座に反映されます<br>12月30日以降の出金依頼は2017年1月4日以降の着金となります"
 
 msgid "{JAPAN ONLY}JSA_Explanation_3_1)"
 msgstr "-"
@@ -9246,7 +9248,7 @@ msgid "{JAPAN ONLY}Win Loss Ratio"
 msgstr "バイナリーオプション取引月次取引実績"
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
-msgstr "リアル口座開設の流れについてご案内致します。まず、<a class=\"pjaxload\" href=\"%1\"> こちらを</a>クリックしてデモ口座を開設して頂く必要があります。デモ口座では、取引ツールの操作性及びバイナリーオプション取引への理解を高める上では非常にお役に立ちます。実際の取引への準備ができましたらリアル口座開設の手続きをしてください。"
+msgstr "リアル口座開設の流れについてご案内致します。まず、<a class=\"pjaxload\" href=\"%1\"> こちらを</a>クリックしてデモ口座を開設して頂く必要があります。デモ口座は、取引ツールの操作性及びバイナリーオプション取引の理解を高める上で非常にお役に立ちます。デモ取引をお試し後、実際の取引への準備ができましたらリアル口座開設の手続きをしてください。"
 
 msgid "{JAPAN ONLY}You can protect your account value further by setting other limits to encourage trading discipline"
 msgstr "お客さまご自身で、過度な取引を防止するための設定機能があります"
