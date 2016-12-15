@@ -267,10 +267,7 @@ var TradingEvents_Beta = (function () {
          */
         var amountElement = document.getElementById('amount');
         if (amountElement) {
-            amountElement.addEventListener('keypress', onlyNumericOnKeypress);
-
             amountElement.addEventListener('input', debounce( function(e) {
-                e.target.value = e.target.value.replace(/[^0-9.]/g, '');
                 if (isStandardFloat(e.target.value)) {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
