@@ -82,6 +82,7 @@ var generateState = function() {
 };
 
 var handleResidence = function() {
+  generateBirthDate();
   BinarySocket.init({
     onmessage: function(msg){
       var select;
@@ -115,7 +116,6 @@ var handleResidence = function() {
           residenceDisabled.insertAfter('#move-residence-back');
           $('#error-residence').insertAfter('#residence-disabled');
           residenceDisabled.attr('disabled', 'disabled');
-          generateBirthDate();
           generateState();
           $('#real-form').show();
           return;
