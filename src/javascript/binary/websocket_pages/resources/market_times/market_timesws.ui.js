@@ -84,11 +84,7 @@ var MarketTimesUI = (function() {
             $contents.append($market);
         }
 
-        $container
-            .empty()
-            .append($ul)
-            .append($('<div/>', { class: 'gr-padding-10' }))
-            .append($contents.children());
+        $container.empty().append($ul).append($contents.children());
 
         $container.tabs('destroy').tabs();
 

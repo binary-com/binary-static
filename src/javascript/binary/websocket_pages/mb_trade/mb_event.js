@@ -46,7 +46,6 @@ var MBTradingEvents = (function () {
                     processForgetTicks();
                     // get ticks for current underlying
                     MBTick.request(underlying);
-                    MBProcess.processPriceRequest();
                     MBContract.displayDescriptions();
                 }
             });
