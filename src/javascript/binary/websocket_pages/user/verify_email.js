@@ -1,5 +1,5 @@
-var Content    = require('../../common_functions/content').Content;
-var ValidateV2 = require('../../common_functions/validation_v2').ValidateV2;
+var Content         = require('../../common_functions/content').Content;
+var ValidateV2      = require('../../common_functions/validation_v2').ValidateV2;
 var bind_validation = require('../../validator').bind_validation;
 
 function VerifyEmail() {
@@ -11,13 +11,13 @@ function VerifyEmail() {
 
     bind_validation.simple(form, {
         schema: {
-            email: [ValidateV2.required, ValidateV2.email]
+            email: [ValidateV2.required, ValidateV2.email],
         },
         stop: function(info) {
             $('#signup_error').text('');
             info.errors.forEach(function(err) {
                 $('#signup_error')
-                    .css({display: 'block'})
+                    .css({ display: 'block' })
                     .text(err.err);
             });
         },
@@ -32,7 +32,7 @@ function VerifyEmail() {
         var response = JSON.parse(msg.data);
         if (!response) return;
 
-        var type  = response.msg_type;
+        var type = response.msg_type;
         var error = response.error;
         if (type === 'verify_email' && !error) {
             window.location.href = page.url.url_for('new_account/virtualws');
@@ -40,13 +40,13 @@ function VerifyEmail() {
         }
         if (!error || !error.message) return;
         $('#signup_error')
-            .css({display: 'inline-block'})
+            .css({ display: 'inline-block' })
             .text(error.message);
     }
 
     function openAccount(email) {
-        BinarySocket.init({onmessage: handler});
-        BinarySocket.send({verify_email: email, type: 'account_opening'});
+        BinarySocket.init({ onmessage: handler });
+        BinarySocket.send({ verify_email: email, type: 'account_opening' });
     }
 }
 

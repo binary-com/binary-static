@@ -7,14 +7,15 @@ var showTooltip     = require('../../../../common_functions/get_app_details').sh
 var japanese_client = require('../../../../common_functions/country_base').japanese_client;
 var Statement = require('../statement').Statement;
 
-var StatementUI = (function(){
-    "use strict";
-    var tableID = "statement-table";
-    var columns = ["date", "ref", "payout", "act", "desc", "credit", "bal", "details"];
+var StatementUI = (function() {
+    'use strict';
+
+    var tableID = 'statement-table';
+    var columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];
     var allData = [];
     var oauth_apps = {};
 
-    function createEmptyStatementTable(){
+    function createEmptyStatementTable() {
         var header = [
             Content.localize().textDate,
             Content.localize().textRef,
@@ -23,72 +24,72 @@ var StatementUI = (function(){
             Content.localize().textDescription,
             Content.localize().textCreditDebit,
             Content.localize().textBalance,
-            Content.localize().textDetails
+            Content.localize().textDetails,
         ];
 
         var jpClient = japanese_client();
 
-        header[6] = header[6] + (jpClient || !TUser.get().currency ? '' : ' (' + TUser.get().currency + ')');
+        header[6] += (jpClient || !TUser.get().currency ? '' : ' (' + TUser.get().currency + ')');
 
         var metadata = {
-            id: tableID,
-            cols: columns
+            id  : tableID,
+            cols: columns,
         };
         var data = [];
         var $tableContainer = Table.createFlexTable(data, metadata, header);
         return $tableContainer;
     }
 
-    function updateStatementTable(transactions){
+    function updateStatementTable(transactions) {
         Table.appendTableBody(tableID, transactions, createStatementRow);
     }
 
-    function clearTableContent(){
+    function clearTableContent() {
         Table.clearTableBody(tableID);
         allData = [];
-        $("#" + tableID +">tfoot").hide();
+        $('#' + tableID + '>tfoot').hide();
     }
 
-    function createStatementRow(transaction){
+    function createStatementRow(transaction) {
         var statement_data = Statement.getStatementData(transaction, TUser.get().currency, japanese_client());
         allData.push($.extend({}, statement_data, {
             action: page.text.localize(statement_data.action),
             desc  : page.text.localize(statement_data.desc),
         }));
-        var creditDebitType = (parseFloat(transaction.amount) >= 0) ? "profit" : "loss";
+        var creditDebitType = (parseFloat(transaction.amount) >= 0) ? 'profit' : 'loss';
 
         var $statementRow = Table.createFlexTableRow([
-                statement_data.date,
-                '<span' + showTooltip(statement_data.app_id, oauth_apps[statement_data.app_id]) + '>' + statement_data.ref + '</span>',
-                statement_data.payout,
-                page.text.localize(statement_data.action),
-                '',
-                statement_data.amount,
-                statement_data.balance,
-                ''
-            ], columns, "data");
+            statement_data.date,
+            '<span' + showTooltip(statement_data.app_id, oauth_apps[statement_data.app_id]) + '>' + statement_data.ref + '</span>',
+            statement_data.payout,
+            page.text.localize(statement_data.action),
+            '',
+            statement_data.amount,
+            statement_data.balance,
+            '',
+        ], columns, 'data');
 
-        $statementRow.children(".credit").addClass(creditDebitType);
-        $statementRow.children(".date").addClass("pre");
-        $statementRow.children(".desc").html(page.text.localize(statement_data.desc) + "<br>");
+        $statementRow.children('.credit').addClass(creditDebitType);
+        $statementRow.children('.date').addClass('pre');
+        $statementRow.children('.desc').html(page.text.localize(statement_data.desc) + '<br>');
 
-        //create view button and append
-        if (statement_data.action === "Sell" || statement_data.action === "Buy") {
+        // create view button and append
+        if (statement_data.action === 'Sell' || statement_data.action === 'Buy') {
             var $viewButtonSpan = Button.createBinaryStyledButton();
-            var $viewButton = $viewButtonSpan.children(".button").first();
-            $viewButton.text(page.text.localize("View"));
-            $viewButton.addClass("open_contract_detailsws");
-            $viewButton.attr("contract_id", statement_data.id);
+            var $viewButton = $viewButtonSpan.children('.button').first();
+            $viewButton.text(page.text.localize('View'));
+            $viewButton.addClass('open_contract_detailsws');
+            $viewButton.attr('contract_id', statement_data.id);
 
-            $statementRow.children(".desc,.details").append($viewButtonSpan);
+            $statementRow.children('.desc,.details').append($viewButtonSpan);
         }
 
-        return $statementRow[0];        //return DOM instead of jquery object
+        return $statementRow[0];        // return DOM instead of jquery object
     }
 
     function errorMessage(msg) {
         var $err = $('#statement-ws-container #error-msg');
-        if(msg) {
+        if (msg) {
             $err.removeClass('invisible').text(msg);
         } else {
             $err.addClass('invisible').text('');
@@ -99,19 +100,18 @@ var StatementUI = (function(){
         downloadCSV(
             Statement.generateCSV(allData, japanese_client()),
             'Statement_' + page.client.loginid + '_latest' + $('#rows_count').text() + '_' +
-                toJapanTimeIfNeeded(window.time).replace(/\s/g, '_').replace(/:/g, '') + '.csv'
-        );
+                toJapanTimeIfNeeded(window.time).replace(/\s/g, '_').replace(/:/g, '') + '.csv');
     }
 
     return {
-        clearTableContent: clearTableContent,
+        clearTableContent        : clearTableContent,
         createEmptyStatementTable: createEmptyStatementTable,
-        updateStatementTable: updateStatementTable,
-        errorMessage: errorMessage,
-        exportCSV: exportCSV,
-        setOauthApps: function(values) { return (oauth_apps = values); },
+        updateStatementTable     : updateStatementTable,
+        errorMessage             : errorMessage,
+        exportCSV                : exportCSV,
+        setOauthApps             : function(values) { return (oauth_apps = values); },
     };
-}());
+})();
 
 module.exports = {
     StatementUI: StatementUI,

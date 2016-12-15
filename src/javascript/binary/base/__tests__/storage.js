@@ -6,6 +6,7 @@ describe('text.localize', function() {
     var text = new storage.Localizable({
         key1: 'value',
         key2: 'value [_1]',
+
         'You_can_view_your_[_1]trading_limits_here_': 'Ihre [_1] Handelslimits sind hier ersichtlich.',
     });
     it('should try to return a string from the localised texts', function() {

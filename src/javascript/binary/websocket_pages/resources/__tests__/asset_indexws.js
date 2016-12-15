@@ -2,19 +2,21 @@ var expect = require('chai').expect;
 var asset_index = require('../asset_indexws').AssetIndex;
 var ws = require('ws');
 var LiveApi = require('binary-live-api').LiveApi;
+
 var api = new LiveApi({ websocket: ws });
 
 describe('Asset Index', function() {
-    var asset_index_res, active_symbols_res;
-    before(function(done){
+    var asset_index_res,
+        active_symbols_res;
+    before(function(done) {
         this.timeout(10000);
-        api.getAssetIndex().then(function(response){
+        api.getAssetIndex().then(function(response) {
             asset_index_res = response.asset_index;
-            if(active_symbols_res) done();
+            if (active_symbols_res) done();
         });
-        api.getActiveSymbolsBrief().then(function(response){
+        api.getActiveSymbolsBrief().then(function(response) {
             active_symbols_res = response.active_symbols;
-            if(asset_index_res) done();
+            if (asset_index_res) done();
         });
     });
 

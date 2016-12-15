@@ -1,27 +1,26 @@
-var objectNotEmpty = require('../../../../../base/utility').objectNotEmpty;
 var Content        = require('../../../../../common_functions/content').Content;
 var Table          = require('../../../../../common_functions/attach_dom/table').Table;
 var addComma       = require('../../../../../common_functions/string_util').addComma;
 
-var LimitsUI = (function(){
-    "use strict";
+var LimitsUI = (function() {
+    'use strict';
 
-    function fillLimitsTable(limits){
-        var open_positions = addComma(limits['open_positions']).split('.')[0];
-        var account_balance = addComma(limits['account_balance']).split('.')[0];
-        var payout = addComma(limits['payout']).split('.')[0];
+    function fillLimitsTable(limits) {
+        var open_positions = addComma(limits.open_positions).split('.')[0];
+        var account_balance = addComma(limits.account_balance).split('.')[0];
+        var payout = addComma(limits.payout).split('.')[0];
         var marketSpecific = limits.market_specific;
 
         document.getElementById('item').textContent = Content.localize().textItem;
 
         var currency = TUser.get().currency;
         var limit = document.getElementsByClassName('limit');
-        if (currency === "") {
+        if (currency === '') {
             limit[0].textContent = Content.localize().textLimit;
             limit[1].textContent = Content.localize().textLimit;
         } else {
-            limit[0].textContent = Content.localize().textLimit + " (" + currency + ")";
-            limit[1].textContent = Content.localize().textLimit + " (" + currency + ")";
+            limit[0].textContent = Content.localize().textLimit + ' (' + currency + ')';
+            limit[1].textContent = Content.localize().textLimit + ' (' + currency + ')';
         }
         $('#max-open-position').prepend(Content.localize().textMaxOpenPosition);
         document.getElementById('max-open-position-tooltip').setAttribute('data-balloon', Content.localize().textMaxOpenPositionTooltip);
@@ -38,38 +37,33 @@ var LimitsUI = (function(){
         document.getElementById('max-aggregate-tooltip').setAttribute('data-balloon', Content.localize().textMaxAggregateTooltip);
         document.getElementById('payout').textContent = payout;
 
-        if (marketSpecific && objectNotEmpty(marketSpecific)) {
-          var key;
-          for (key in marketSpecific) {
-            if (marketSpecific.hasOwnProperty(key)) {
-              var object = marketSpecific[key];
-              if (object.length && object.length > 0) {
+        Object.keys(marketSpecific).forEach(function (key) {
+            var object = marketSpecific[key];
+            if (object.length && object.length > 0) {
                 appendRowTable(page.text.localize(key.charAt(0).toUpperCase() + key.slice(1)), '', 'auto', 'bold');
-                for (key in object) {
-                  if (object.hasOwnProperty(key) && (page.client.residence !== 'jp' || /Major Pairs/.test(object[key].name))) {
-                    appendRowTable(page.text.localize(object[key].name), object[key].turnover_limit !== 'null' ? addComma(object[key].turnover_limit).split('.')[0] : 0, '25px', 'normal');
-                  }
-                }
-              } else {
+                Object.keys(object).forEach(function (c) {
+                    if (object.hasOwnProperty(c) && (page.client.residence !== 'jp' || /Major Pairs/.test(object[c].name))) {
+                        appendRowTable(page.text.localize(object[c].name), object[c].turnover_limit !== 'null' ? addComma(object[c].turnover_limit).split('.')[0] : 0, '25px', 'normal');
+                    }
+                });
+            } else {
                 appendRowTable(page.text.localize(object.name), object.turnover_limit !== 'null' ? addComma(object.turnover_limit).split('.')[0] : 0, 'auto', 'bold');
-              }
             }
-          }
-        }
+        });
         if (page.client.is_logged_in && !page.client.is_virtual()) {
             var loginId = page.client.loginid;
 
-            var tradingLimits = document.getElementById("trading-limits");
-            tradingLimits.textContent = loginId + " - " + page.text.localize('Trading Limits');
+            var tradingLimits = document.getElementById('trading-limits');
+            tradingLimits.textContent = loginId + ' - ' + page.text.localize('Trading Limits');
 
-            var withdrawalTitle = document.getElementById("withdrawal-title");
-            withdrawalTitle.textContent = loginId + " - " + page.text.localize('Withdrawal Limits');
+            var withdrawalTitle = document.getElementById('withdrawal-title');
+            withdrawalTitle.textContent = loginId + ' - ' + page.text.localize('Withdrawal Limits');
         }
         document.getElementById('client-limits').setAttribute('style', 'display:table');
     }
 
     function appendRowTable(name, turnover_limit, padding, font_weight) {
-      $('#client-limits').append('<tr class="flex-tr">' +
+        $('#client-limits').append('<tr class="flex-tr">' +
                             '<td class="flex-tr-child" style="padding-left: ' + padding + '; font-weight: ' + font_weight + ';">' +
                               page.text.localize(name) +
                             '</td>' +
@@ -79,16 +73,16 @@ var LimitsUI = (function(){
                           '</tr>');
     }
 
-    function clearTableContent(){
+    function clearTableContent() {
         Table.clearTableBody('client-limits');
-        $("#limits-title>tfoot").hide();
+        $('#limits-title>tfoot').hide();
     }
 
     return {
         clearTableContent: clearTableContent,
-        fillLimitsTable: fillLimitsTable
+        fillLimitsTable  : fillLimitsTable,
     };
-}());
+})();
 
 module.exports = {
     LimitsUI: LimitsUI,

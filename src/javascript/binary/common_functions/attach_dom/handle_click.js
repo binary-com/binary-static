@@ -6,6 +6,7 @@ var HandleClick = function (param) {
             return CashierJP.error_handler();
         // no default
     }
+    return null;
 };
 
 module.exports = {

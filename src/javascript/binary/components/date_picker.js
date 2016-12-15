@@ -4,10 +4,10 @@ var toReadableFormat = require('../common_functions/string_util').toReadableForm
 
 var DatePicker = function(component_selector, select_type) {
     this.component_selector = component_selector;
-    this.select_type = (typeof select_type === "undefined") ? "date" : select_type;
+    this.select_type = (typeof select_type === 'undefined') ? 'date' : select_type;
 
     this.localizations = {};
-    this.localizations.monthNames = [page.text.localize('January'), page.text.localize('February'), page.text.localize('March'), page.text.localize('April'), page.text.localize('May'), page.text.localize('June'),page.text.localize('July'), page.text.localize('August'), page.text.localize('September'), page.text.localize('October'), page.text.localize('November'), page.text.localize('December') ];
+    this.localizations.monthNames = [page.text.localize('January'), page.text.localize('February'), page.text.localize('March'), page.text.localize('April'), page.text.localize('May'), page.text.localize('June'), page.text.localize('July'), page.text.localize('August'), page.text.localize('September'), page.text.localize('October'), page.text.localize('November'), page.text.localize('December')];
 
     this.localizations.monthNamesShort = [page.text.localize('Jan'), page.text.localize('Feb'), page.text.localize('Mar'), page.text.localize('Apr'), page.text.localize('May'), page.text.localize('Jun'), page.text.localize('Jul'), page.text.localize('Aug'), page.text.localize('Sep'), page.text.localize('Oct'), page.text.localize('Nov'), page.text.localize('Dec')];
 
@@ -35,17 +35,18 @@ DatePicker.prototype = {
     create: function(config) {
         var that = this;
         $(this.component_selector).keydown(function(e) {
-                if(e.which == 13) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    if(that.select_type == "date") {
-                        $(this).datepicker('setDate', $(this).val());
-                    }
-                    $(this).datepicker('hide');
-                    $(this).blur();
-                    $(that).trigger('enter_pressed');
-                    return false;
+            if (e.which === 13) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (that.select_type === 'date') {
+                    $(this).datepicker('setDate', $(this).val());
                 }
+                $(this).datepicker('hide');
+                $(this).blur();
+                $(that).trigger('enter_pressed');
+                return false;
+            }
+            return true;
         }).datepicker(config);
 
         // Not possible to tell datepicker where to put it's
@@ -57,15 +58,15 @@ DatePicker.prototype = {
         var today = new Date();
 
         var config = {
-            dateFormat: 'dd M, yy',
-            monthNames: this.localizations.monthNames,
+            dateFormat     : 'dd M, yy',
+            monthNames     : this.localizations.monthNames,
             monthNamesShort: this.localizations.monthNamesShort,
-            dayNames: this.localizations.dayNames,
-            dayNamesMin: this.localizations.dayNamesMin,
-            nextText: this.localizations.nextText,
-            prevText: this.localizations.prevText,
-            changeMonth: true,
-            changeYear: true,
+            dayNames       : this.localizations.dayNames,
+            dayNamesMin    : this.localizations.dayNamesMin,
+            nextText       : this.localizations.nextText,
+            prevText       : this.localizations.prevText,
+            changeMonth    : true,
+            changeYear     : true,
         };
 
         if (min_day) {
@@ -73,7 +74,7 @@ DatePicker.prototype = {
         }
 
         if (max_days) {
-            max_days = (typeof max_days == "undefined") ? 365 : max_days;
+            max_days = (typeof max_days === 'undefined') ? 365 : max_days;
             var next_year = new Date();
             next_year.setDate(today.getDate() + Number(max_days));
             config.maxDate = next_year;
@@ -91,22 +92,23 @@ DatePicker.prototype = {
                 oldValue = $(this).attr('data-value');
 
             $(this).attr('data-value', date);
-            if(that.select_type == "diff") {
-                var today = moment.utc();
-                var selected_date = moment.utc(date + " 23:59:59");
-                var duration  = selected_date.diff(today, 'days');
+            if (that.select_type === 'diff') {
+                var today_utc = moment.utc();
+                var selected_date = moment.utc(date + ' 23:59:59');
+                var duration  = selected_date.diff(today_utc, 'days');
                 $(this).val(duration);
                 if (oldValue && oldValue === date) return false;
-                $(that.component_selector).trigger("change", [ duration ]);
-            } else if(that.select_type == "date") {
-                if (that.setValue == "attr") {
+                $(that.component_selector).trigger('change', [duration]);
+            } else if (that.select_type === 'date') {
+                if (that.setValue === 'attr') {
                     $(this).val('');
                 } else {
                     $(this).val(date_text);
                 }
                 if (oldValue && oldValue === date) return false;
-                $(that.component_selector).trigger("change", [ date_text ]);
+                $(that.component_selector).trigger('change', [date_text]);
             }
+            return true;
         };
 
         this.config_data = config;
@@ -128,9 +130,8 @@ DatePicker.prototype = {
                     checkInput('date', 'not-a-date') &&
                     $selector.attr('data-picker') !== 'native' &&
                     !that.noNative) {
-
             that.hide($selector);
-            $selector.attr({type: 'date', 'data-picker': 'native'})
+            $selector.attr({ type: 'date', 'data-picker': 'native' })
                      .val($selector.attr('data-value'));
             if ($selector.attr('readonly')) {
                 $selector.attr('data-readonly', 'readonly')
@@ -142,11 +143,13 @@ DatePicker.prototype = {
             if (config.maxDate) {
                 $selector.attr('max', that.getDate(config.maxDate));
             }
-        } else if (($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery') ||
-                    $(window).width() < 770 && !checkInput('date', 'not-a-date')) {
+        } else if (
+            ($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery') ||
+            ($(window).width() < 770 && !checkInput('date', 'not-a-date'))
+        ) {
             var value = $selector.attr('data-value'),
                 format_value = value && that.select_type === 'date' ? toReadableFormat(moment(value)) : $selector.val();
-            $selector.attr({'type': 'text', 'data-picker': 'jquery'})
+            $selector.attr({ type: 'text', 'data-picker': 'jquery' })
                      .removeAttr('min')
                      .removeAttr('max')
                      .val(format_value);

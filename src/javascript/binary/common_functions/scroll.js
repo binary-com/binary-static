@@ -21,15 +21,15 @@ var Scroll = (function() {
                 // if we've scrolled more than the navigation, change its position to fixed to stick to top,
                 // otherwise change it back to relative
                 if (scroll_top > sticky_navigation_offset_top && scroll_top + selector[0].offsetHeight < document.getElementById('footer').offsetTop) {
-                    selector.css({'position': 'fixed', 'top': 0, 'width': width});
+                    selector.css({ position: 'fixed', top: 0, width: width });
                 } else if (scroll_top + selector[0].offsetHeight > document.getElementById('footer').offsetTop) {
-                    selector.css({'position': 'absolute', 'bottom': document.getElementById('footer').offsetHeight + 'px', 'top': '', 'width': width});
+                    selector.css({ position: 'absolute', bottom: document.getElementById('footer').offsetHeight + 'px', top: '', width: width });
                 } else {
-                    selector.css({'position': 'relative'});
+                    selector.css({ position: 'relative' });
                 }
             };
 
-            //run our function on load
+            // run our function on load
             sticky_navigation();
 
             var sidebar_nav = selector.find('#sidebar-nav');
@@ -39,12 +39,10 @@ var Scroll = (function() {
                 sticky_navigation();
 
                 for (var i = 0; i < length; i++) {
-                    var section = $('.section:eq(' + i + ')');
-                    var sectionOffset = section.offset();
-                    if ($(window).scrollTop() === 0 ||
-                        (sectionOffset && $(this).scrollTop() >= sectionOffset.top - 5) &&
-                        section.css('display') !== 'none') { // ignore hidden elements
-
+                    var section = $('.section:eq(' + i + ')'),
+                        sectionOffset = section.offset(),
+                        isOffsetTop = sectionOffset && $(this).scrollTop() >= sectionOffset.top - 5;
+                    if (($(window).scrollTop() === 0 || isOffsetTop) && section.css('display') !== 'none') { // ignore hidden elements
                         sidebar_nav.find('li').removeClass('selected');
 
                         if ($(window).scrollTop() === 0) {
@@ -63,8 +61,8 @@ var Scroll = (function() {
     };
 
     var goToHashSection = function() {
-        if (page.url.location.hash !== "") {
-          $('a[href="' + page.url.location.hash + '"]').click();
+        if (page.url.location.hash !== '') {
+            $('a[href="' + page.url.location.hash + '"]').click();
         }
     };
 
@@ -75,9 +73,9 @@ var Scroll = (function() {
     };
 
     return {
-        sidebar_scroll: sidebar_scroll,
-        offScroll: function() { $(window).off('scroll'); },
-        goToHashSection: goToHashSection,
+        sidebar_scroll     : sidebar_scroll,
+        offScroll          : function() { $(window).off('scroll'); },
+        goToHashSection    : goToHashSection,
         scrollToHashSection: scrollToHashSection,
     };
 })();

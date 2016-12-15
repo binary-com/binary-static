@@ -1,11 +1,11 @@
 var japanese_client = require('../common_functions/country_base').japanese_client;
-var moment = require('moment');
+var moment          = require('moment');
 
-//////////////////////////////////////////////////////////////////
-// Purpose: Write loading image to a container for ajax request
-// Parameters:
-// 1) container - a jQuery object
-//////////////////////////////////////////////////////////////////
+/**
+ * Write loading image to a container for ajax request
+ *
+ * @param container: a jQuery object
+ */
 function showLoadingImage(container) {
     container.empty().append('<div class="barspinner dark"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div>');
 }
@@ -26,15 +26,15 @@ function get_highest_zindex(selector) {
     var all = [];
     var _store_zindex = function () {
         if ($(this).is(':visible')) {
-            var z = $(this).css("z-index");
-            if ( !isNaN(z) ) {
+            var z = $(this).css('z-index');
+            if (!isNaN(z)) {
                 all.push(z);
             }
         }
     };
     $(selector).each(_store_zindex);
 
-    return all.length ? Math.max.apply(Math, all) : null;
+    return all.length ? Math.max(...all) : null;
 }
 
 function showLocalTimeOnHover(s) {
@@ -51,30 +51,30 @@ function showLocalTimeOnHover(s) {
     });
 }
 
-function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode, hideSeconds){
+function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode, hideSeconds) {
     var match;
     if (longcode && longcode !== '') {
-      match = longcode.match(/((?:\d{4}-\d{2}-\d{2})\s?(\d{2}:\d{2}:\d{2})?(?:\sGMT)?)/);
-      if (!match) return longcode;
+        match = longcode.match(/((?:\d{4}-\d{2}-\d{2})\s?(\d{2}:\d{2}:\d{2})?(?:\sGMT)?)/);
+        if (!match) return longcode;
     }
 
     var jp_client = japanese_client(),
         timeStr = gmtTimeStr,
         time;
 
-    if(typeof gmtTimeStr === 'number'){
-        time = moment.utc(gmtTimeStr*1000);
-    } else if(gmtTimeStr){
+    if (typeof gmtTimeStr === 'number') {
+        time = moment.utc(gmtTimeStr * 1000);
+    } else if (gmtTimeStr) {
         time = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss');
     } else {
         time = moment.utc(match[0], 'YYYY-MM-DD HH:mm:ss');
     }
 
     if (!time.isValid()) {
-        return;
+        return null;
     }
 
-    timeStr = time.utcOffset(jp_client ? '+09:00' : '+00:00').format((hideSeconds ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD HH:mm:ss' ) + (showTimeZone && showTimeZone !== '' ? jp_client ? ' zZ' : ' Z' : ''));
+    timeStr = time.utcOffset(jp_client ? '+09:00' : '+00:00').format((hideSeconds ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD HH:mm:ss') + (showTimeZone && showTimeZone !== '' ? jp_client ? ' zZ' : ' Z' : ''));
 
     return (longcode ? longcode.replace(match[0], timeStr) : timeStr);
 }
@@ -82,7 +82,7 @@ function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode, hideSeconds){
 function downloadCSV(csvContents, filename) {
     filename = filename || 'data.csv';
     if (navigator.msSaveBlob) { // IE 10+
-        navigator.msSaveBlob(new Blob([csvContents], {type: 'text/csv;charset=utf-8;'}), filename);
+        navigator.msSaveBlob(new Blob([csvContents], { type: 'text/csv;charset=utf-8;' }), filename);
     } else { // Other browsers
         var csv = 'data:text/csv;charset=utf-8,' + csvContents;
         var downloadLink = document.createElement('a');
@@ -102,12 +102,13 @@ function template(string, content) {
 }
 
 function objectNotEmpty(obj) {
+    var isEmpty = true;
     if (obj && obj instanceof Object) {
-        for (var key in obj) {
-            if (obj.hasOwnProperty(key)) return true;
-        }
+        Object.keys(obj).forEach(function(key) {
+            if (obj.hasOwnProperty(key)) isEmpty = false;
+        });
     }
-    return false;
+    return !isEmpty;
 }
 
 function parseLoginIDList(string) {
@@ -116,22 +117,22 @@ function parseLoginIDList(string) {
         var items = str.split(':');
         var id = items[0];
         return {
-            id:        id,
-            real:      items[1] === 'R',
-            disabled:  items[2] === 'D',
-            financial: /^MF/.test(id),
+            id           : id,
+            real         : items[1] === 'R',
+            disabled     : items[2] === 'D',
+            financial    : /^MF/.test(id),
             non_financial: /^MLT/.test(id),
         };
     });
 }
 
 module.exports = {
-    showLoadingImage: showLoadingImage,
-    get_highest_zindex: get_highest_zindex,
+    showLoadingImage    : showLoadingImage,
+    get_highest_zindex  : get_highest_zindex,
     showLocalTimeOnHover: showLocalTimeOnHover,
-    toJapanTimeIfNeeded: toJapanTimeIfNeeded,
-    downloadCSV: downloadCSV,
-    template: template,
-    objectNotEmpty: objectNotEmpty,
-    parseLoginIDList: parseLoginIDList,
+    toJapanTimeIfNeeded : toJapanTimeIfNeeded,
+    downloadCSV         : downloadCSV,
+    template            : template,
+    objectNotEmpty      : objectNotEmpty,
+    parseLoginIDList    : parseLoginIDList,
 };

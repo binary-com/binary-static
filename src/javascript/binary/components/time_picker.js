@@ -21,15 +21,16 @@ TimePicker.prototype = {
     create: function(config) {
         var that = this;
         $(this.component_selector).keydown(function(e) {
-                if(e.which == 13) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    $(this).timepicker('setTime', $(this).val());
-                    $(this).timepicker('hide');
-                    $(this).blur();
-                    $(that).trigger('enter_pressed');
-                    return false;
-                }
+            if (e.which === 13) {
+                e.preventDefault();
+                e.stopPropagation();
+                $(this).timepicker('setTime', $(this).val());
+                $(this).timepicker('hide');
+                $(this).blur();
+                $(that).trigger('enter_pressed');
+                return false;
+            }
+            return true;
         }).timepicker(config);
     },
     time_now: function() {
@@ -40,20 +41,20 @@ TimePicker.prototype = {
             time_now = this.time_now();
 
         var config = {
-            hourText: page.text.localize("Hour"),
-            minuteText: page.text.localize("Minute"),
-            amPmText: [page.text.localize('AM'), page.text.localize('PM')],
+            hourText  : page.text.localize('Hour'),
+            minuteText: page.text.localize('Minute'),
+            amPmText  : [page.text.localize('AM'), page.text.localize('PM')],
         };
         if (min_time) {
             min_time = min_time === 'now' ? time_now : moment.utc(min_time);
             if (min_time.isBefore(time_now)) {
                 min_time = time_now;
             }
-            config.minTime = {hour: parseInt(min_time.hour()), minute: parseInt(min_time.minute())};
+            config.minTime = { hour: parseInt(min_time.hour()), minute: parseInt(min_time.minute()) };
         }
         if (max_time) {
             max_time = moment.utc(max_time);
-            config.maxTime = {hour: parseInt(max_time.hour()), minute: parseInt(max_time.minute())};
+            config.maxTime = { hour: parseInt(max_time.hour()), minute: parseInt(max_time.minute()) };
         }
 
         config.onSelect = function(time) {
@@ -61,30 +62,30 @@ TimePicker.prototype = {
             if (!time.match(/^(:?[0-3]\d):(:?[0-5]\d):(:?[0-5]\d)$/)) {
                 time_now = that.time_now();
                 var invalid = time.match(/([a-z0-9]*):([a-z0-9]*):?([a-z0-9]*)?/);
-                var hour = time_now.format("hh");
-                var minute = time_now.format("mm");
-                var second = time_now.format("ss");
+                var hour = time_now.format('hh');
+                var minute = time_now.format('mm');
+                var second = time_now.format('ss');
 
                 if (typeof invalid[1] !== 'undefined' && isFinite(invalid[1])) {
                     hour = parseInt(invalid[1]);
-                    if(hour < 10) {
-                        hour = "0" + hour;
+                    if (hour < 10) {
+                        hour = '0' + hour;
                     }
                 }
                 if (typeof invalid[2] !== 'undefined' && isFinite(invalid[2])) {
                     minute = parseInt(invalid[2]);
-                    if(parseInt(minute) < 10) {
-                        minute = "0" + minute;
+                    if (parseInt(minute) < 10) {
+                        minute = '0' + minute;
                     }
                 }
                 if (typeof invalid[3] !== 'undefined' && isFinite(invalid[3])) {
                     second = parseInt(invalid[3]);
-                    if(second < 10) {
-                        second = "0" + minute;
+                    if (second < 10) {
+                        second = '0' + minute;
                     }
                 }
 
-                var new_time = moment(time_now.format("YYYY-MM-DD") + ' ' + hour +':'+minute+':'+second).format("HH:mm");
+                var new_time = moment(time_now.format('YYYY-MM-DD') + ' ' + hour + ':' + minute + ':' + second).format('HH:mm');
 
                 if (oldValue && oldValue === new_time) return false;
 
@@ -96,6 +97,7 @@ TimePicker.prototype = {
                 $(this).attr('data-value', time);
                 $(that.component_selector).trigger('change', [time]);
             }
+            return true;
         };
 
         this.config_data = config;
@@ -112,7 +114,7 @@ TimePicker.prototype = {
         var $selector = $(that.component_selector);
         if ($(window).width() < 770 && checkInput('time', 'not-a-time') && $selector.attr('data-picker') !== 'native') {
             that.hide($selector);
-            $selector.attr({type: 'time', 'data-picker': 'native'});
+            $selector.attr({ type: 'time', 'data-picker': 'native' });
             var minTime = config.minTime;
             if (minTime) {
                 $selector.attr('min', that.getTime(minTime));
@@ -121,9 +123,11 @@ TimePicker.prototype = {
             if (maxTime) {
                 $selector.attr('max', that.getTime(maxTime));
             }
-        } else if (($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery') ||
-                    $(window).width() < 770 && !checkInput('time', 'not-a-time')) {
-            $selector.attr({type: 'text', 'data-picker': 'jquery'});
+        } else if (
+            ($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery') ||
+            ($(window).width() < 770 && !checkInput('time', 'not-a-time'))
+        ) {
+            $selector.attr({ type: 'text', 'data-picker': 'jquery' });
             $selector.removeAttr('min');
             $selector.removeAttr('max');
             that.create(config);

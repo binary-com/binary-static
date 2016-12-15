@@ -7,7 +7,7 @@ var Platforms = (function () {
             sidebarListItem.removeClass('selected');
             $(this).addClass('selected');
         });
-        $(window).on('hashchange', function(){
+        $(window).on('hashchange', function() {
             showSelectedDiv();
         });
         checkWidth();
@@ -17,7 +17,8 @@ var Platforms = (function () {
     }
     function setHeights() {
         $('.inner tr').each(function() {
-            var $td = $(this).find('td:first'), $th = $(this).find('th');
+            var $td = $(this).find('td:first');
+            var $th = $(this).find('th');
             if ($th.height() > $td.height()) {
                 $(this).find('td').height($th.height());
             }
@@ -55,7 +56,7 @@ var Platforms = (function () {
         $('.sidebar-nav a[href="' + get_hash() + '"]').parent().addClass('selected');
     }
     return {
-        init: init
+        init: init,
     };
 })();
 

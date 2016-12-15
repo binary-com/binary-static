@@ -1,7 +1,8 @@
 var PaymentAgentTransferUI = (function () {
-    "use strict";
+    'use strict';
+
     var hiddenClass = 'invisible';
-    
+
     function hideForm() {
         $('#paymentagent_transfer').addClass(hiddenClass);
     }
@@ -47,7 +48,7 @@ var PaymentAgentTransferUI = (function () {
     }
 
     function updateDoneView(fromID, toID, amount, currency) {
-        var templateString = "Your request to transfer [_1] [_2] from [_3] to [_4] has been successfully processed.";
+        var templateString = 'Your request to transfer [_1] [_2] from [_3] to [_4] has been successfully processed.';
         var confirmMsg = page.text.localize(templateString, [
             amount,
             currency,
@@ -60,20 +61,20 @@ var PaymentAgentTransferUI = (function () {
     }
 
     return {
-        hideForm: hideForm,
-        showForm: showForm,
-        hideConfirmation: hideConfirmation,
-        showConfirmation: showConfirmation,
-        hideDone: hideDone,
-        showDone: showDone,
-        hideNotes: hideNotes,
-        showNotes: showNotes,
+        hideForm         : hideForm,
+        showForm         : showForm,
+        hideConfirmation : hideConfirmation,
+        showConfirmation : showConfirmation,
+        hideDone         : hideDone,
+        showDone         : showDone,
+        hideNotes        : hideNotes,
+        showNotes        : showNotes,
         showTransferError: showTransferError,
-        updateFormView: updateFormView,
+        updateFormView   : updateFormView,
         updateConfirmView: updateConfirmView,
-        updateDoneView: updateDoneView
+        updateDoneView   : updateDoneView,
     };
-}());
+})();
 
 module.exports = {
     PaymentAgentTransferUI: PaymentAgentTransferUI,

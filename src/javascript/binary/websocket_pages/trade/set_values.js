@@ -7,6 +7,7 @@ var Contract_Beta = require('./beta/contract').Contract_Beta;
  */
 function setFormPlaceholderContent(name) {
     'use strict';
+
     var formPlaceholder = document.getElementById('contract_form_nav_placeholder');
     if (formPlaceholder) {
         name = name || Defaults.get('formname');
@@ -19,6 +20,7 @@ function setFormPlaceholderContent(name) {
  */
 function setFormPlaceholderContent_Beta(name) {
     'use strict';
+
     var formPlaceholder = document.getElementById('contract_form_nav_placeholder');
     if (formPlaceholder) {
         name = name || Defaults.get('formname');
@@ -27,6 +29,6 @@ function setFormPlaceholderContent_Beta(name) {
 }
 
 module.exports = {
-    setFormPlaceholderContent: setFormPlaceholderContent,
+    setFormPlaceholderContent     : setFormPlaceholderContent,
     setFormPlaceholderContent_Beta: setFormPlaceholderContent_Beta,
 };

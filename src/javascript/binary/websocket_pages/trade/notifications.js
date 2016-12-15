@@ -25,7 +25,7 @@ var Notifications = (function() {
             }
             $note_wrapper.prepend($message);
         }
-        $.scrollTo($note_wrapper, 500, {offset: -5});
+        $.scrollTo($note_wrapper, 500, { offset: -5 });
     };
 
     var hideErrorMessage = function(uid) {
@@ -43,8 +43,8 @@ var Notifications = (function() {
     };
 
     return {
-        show : showErrorMessage,
-        hide : hideErrorMessage,
+        show: showErrorMessage,
+        hide: hideErrorMessage,
     };
 })();
 

@@ -2,11 +2,11 @@ var ResetPassword = require('./reset_password/reset_password.init').ResetPasswor
 
 var ResetPasswordWS = (function() {
     var init = function() {
-        if(page.client.redirect_if_login()) {
+        if (page.client.redirect_if_login()) {
             return;
         }
         BinarySocket.init({
-            onmessage: ResetPassword.resetPasswordWSHandler
+            onmessage: ResetPassword.resetPasswordWSHandler,
         });
         ResetPassword.init();
     };

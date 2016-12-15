@@ -1,11 +1,15 @@
 /* Logo and top bar */
-#topbar {
+body #topbar {
     @include BIDIR_VALUE(text-align, right, left);
     #virtual-text {
         font-weight: 700;
     }
     #topbar-info {
         @include BIDIR_PROP(margin-left, margin-right, auto);
+        height: 23px;
+        > div {
+            height: 23px;
+        }
     }
     #gmt-clock, #contact-us, .upgrademessage {
         align-self: center;
@@ -24,17 +28,17 @@
         text-transform: none;
         @include BIDIR_VALUE(margin, 0 0 0 10px, 0 10px 0 0);
     }
-    #language_select {
-        select {
-            padding: 0px;
-            @include BIDIR_VALUE(float, right, left);
-            max-width: 100%;
-        }
-    }
     a {
         color: $COLOR_WHITE;
         white-space: nowrap;
         text-decoration: none;
+    }
+    #select_language {
+        right: 0px;
+        top: -23px;
+    }
+    #display_language li:first-child {
+        margin-top: 0;
     }
 }
 

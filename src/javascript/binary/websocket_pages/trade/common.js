@@ -7,7 +7,7 @@ var Content         = require('../../common_functions/content').Content;
 var format_money    = require('../../common_functions/currency_to_symbol').format_money;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
 var addComma        = require('../../common_functions/string_util').addComma;
-var moment          = require('moment');
+var Moment          = require('moment');
 var toISOFormat     = require('../../common_functions/string_util').toISOFormat;
 
 /*
@@ -15,16 +15,17 @@ var toISOFormat     = require('../../common_functions/string_util').toISOFormat;
  */
 
 if (typeof window === 'undefined') {
+    // eslint-disable-next-line
     Element = function() {}; // jshint ignore:line
 }
 
- Element.prototype.hide = function(){
-     this.style.display = 'none';
- };
+Element.prototype.hide = function() {
+    this.style.display = 'none';
+};
 
- Element.prototype.show = function(){
-     this.style.display = '';
- };
+Element.prototype.show = function() {
+    this.style.display = '';
+};
 
 if (!('remove' in Element.prototype)) {
     Element.prototype.remove = function() {
@@ -38,165 +39,165 @@ if (!('remove' in Element.prototype)) {
  * function to display contract form as element of ul
  */
 function displayContractForms(id, elements, selected) {
-     'use strict';
-     if (!id || !elements || !selected) return;
-     var target = document.getElementById(id),
-         fragment = document.createDocumentFragment();
+    'use strict';
 
-     target.innerHTML = '';
+    if (!id || !elements || !selected) return;
+    var target = document.getElementById(id),
+        fragment = document.createDocumentFragment();
 
-     if (elements) {
-         var tree = getContractCategoryTree(elements);
-         for(var i=0;i<tree.length;i++){
-             var el1 = tree[i];
-             var li = document.createElement('li');
+    target.innerHTML = '';
 
-             li.classList.add('tm-li');
-             if(i===0){
-                 li.classList.add('first');
-             }
-             else if(i===tree.length-1){
-                 li.classList.add('last');
-             }
+    if (elements) {
+        var tree = getContractCategoryTree(elements);
+        for (var i = 0; i < tree.length; i++) {
+            var el1 = tree[i];
+            var li = document.createElement('li');
 
-             if(typeof el1 === 'object'){
-                 var fragment2 = document.createDocumentFragment();
-                 var flag = 0;
-                 var first = '';
-                 for(var j=0; j<el1[1].length; j++){
-                     var el2 = el1[1][j];
-                     var li2 = document.createElement('li'),
-                         a2 = document.createElement('a'),
-                         content2 = document.createTextNode(elements[el2]);
-                     li2.classList.add('tm-li-2');
+            li.classList.add('tm-li');
+            if (i === 0) {
+                li.classList.add('first');
+            } else if (i === tree.length - 1) {
+                li.classList.add('last');
+            }
 
-                     if(j===0){
+            if (typeof el1 === 'object') {
+                var fragment2 = document.createDocumentFragment();
+                var flag = 0;
+                var first = '';
+                for (var j = 0; j < el1[1].length; j++) {
+                    var el2 = el1[1][j];
+                    var li2 = document.createElement('li'),
+                        a2 = document.createElement('a'),
+                        content2 = document.createTextNode(elements[el2]);
+                    li2.classList.add('tm-li-2');
+
+                    if (j === 0) {
                         first = el2.toLowerCase();
                         li2.classList.add('first');
-                     }
-                     else if(j===el1[1].length-1){
-                         li2.classList.add('last');
-                     }
+                    } else if (j === el1[1].length - 1) {
+                        li2.classList.add('last');
+                    }
 
-                     if (selected && selected === el2.toLowerCase()) {
-                         li2.classList.add('active');
-                         a2.classList.add('a-active');
-                         flag = 1;
-                     }
+                    if (selected && selected === el2.toLowerCase()) {
+                        li2.classList.add('active');
+                        a2.classList.add('a-active');
+                        flag = 1;
+                    }
 
-                     a2.classList.add('tm-a-2');
-                     a2.appendChild(content2);
-                     a2.setAttribute('menuitem',el2.toLowerCase());
-                     a2.setAttribute('id', el2.toLowerCase());
+                    a2.classList.add('tm-a-2');
+                    a2.appendChild(content2);
+                    a2.setAttribute('menuitem', el2.toLowerCase());
+                    a2.setAttribute('id', el2.toLowerCase());
 
-                     li2.appendChild(a2);
+                    li2.appendChild(a2);
 
-                     fragment2.appendChild(li2);
-                 }
-                 if(fragment2.hasChildNodes()){
-                     var ul = document.createElement('ul'),
-                         a = document.createElement('a'),
-                         content = document.createTextNode(elements[el1[0]]);
+                    fragment2.appendChild(li2);
+                }
+                if (fragment2.hasChildNodes()) {
+                    var ul = document.createElement('ul'),
+                        a = document.createElement('a'),
+                        content = document.createTextNode(elements[el1[0]]);
 
-                     a.appendChild(content);
-                     a.setAttribute('class', 'tm-a');
-                     a.setAttribute('menuitem',first);
-                     ul.appendChild(fragment2);
-                     ul.setAttribute('class', 'tm-ul-2');
-                     ul.setAttribute('id', el1[0]+'-submenu');
+                    a.appendChild(content);
+                    a.setAttribute('class', 'tm-a');
+                    a.setAttribute('menuitem', first);
+                    ul.appendChild(fragment2);
+                    ul.setAttribute('class', 'tm-ul-2');
+                    ul.setAttribute('id', el1[0] + '-submenu');
 
-                     if(flag){
+                    if (flag) {
                         li.classList.add('active');
-                     }
+                    }
 
-                     li.appendChild(a);
-                     li.appendChild(ul);
-                 }
-             }
-             else{
-                 var content3 = document.createTextNode(elements[el1]),
-                     a3 = document.createElement('a');
+                    li.appendChild(a);
+                    li.appendChild(ul);
+                }
+            } else {
+                var content3 = document.createTextNode(elements[el1]),
+                    a3 = document.createElement('a');
 
-                 if (selected && selected === el1.toLowerCase()) {
-                     a3.classList.add('a-active');
-                     li.classList.add('active');
-                 }
-                 a3.appendChild(content3);
-                 a3.classList.add('tm-a');
-                 a3.setAttribute('menuitem',el1);
-                 a3.setAttribute('id', el1.toLowerCase());
-                 li.appendChild(a3);
-             }
-             fragment.appendChild(li);
-         }
-         if (target) {
-             target.appendChild(fragment);
-             var list = target.getElementsByClassName('tm-li');
-             for(var k=0; k < list.length; k++){
-                 var li4 = list[k];
-                 li4.addEventListener("mouseover", function(){
-                     this.classList.add('hover');
-                 });
-                 li4.addEventListener("mouseout", function(){
-                     this.classList.remove('hover');
-                 });
-             }
-         }
-     }
- }
+                if (selected && selected === el1.toLowerCase()) {
+                    a3.classList.add('a-active');
+                    li.classList.add('active');
+                }
+                a3.appendChild(content3);
+                a3.classList.add('tm-a');
+                a3.setAttribute('menuitem', el1);
+                a3.setAttribute('id', el1.toLowerCase());
+                li.appendChild(a3);
+            }
+            fragment.appendChild(li);
+        }
+        if (target) {
+            target.appendChild(fragment);
+            var list = target.getElementsByClassName('tm-li');
+            for (var k = 0; k < list.length; k++) {
+                var li4 = list[k];
+                li4.addEventListener('mouseover', function() {
+                    this.classList.add('hover');
+                });
+                li4.addEventListener('mouseout', function() {
+                    this.classList.remove('hover');
+                });
+            }
+        }
+    }
+}
 
 
 function displayMarkets(id, elements, selected) {
-     'use strict';
-     var target= document.getElementById(id),
-         fragment =  document.createDocumentFragment();
+    'use strict';
 
-     while (target && target.firstChild) {
-         target.removeChild(target.firstChild);
-     }
+    var target = document.getElementById(id),
+        fragment =  document.createDocumentFragment();
 
-     var keys1 = Object.keys(elements).sort(marketSort);
-     for (var i=0; i<keys1.length; i++) {
-         var key = keys1[i];
-         var option = document.createElement('option'), content = document.createTextNode(elements[key].name);
-         option.setAttribute('value', key);
-         if (selected && selected === key) {
-             option.setAttribute('selected', 'selected');
-         }
-         option.appendChild(content);
-         fragment.appendChild(option);
+    while (target && target.firstChild) {
+        target.removeChild(target.firstChild);
+    }
 
-         if(elements[key].submarkets && objectNotEmpty(elements[key].submarkets)){
+    var keys1 = Object.keys(elements).sort(marketSort);
+    for (var i = 0; i < keys1.length; i++) {
+        var key = keys1[i];
+        var option = document.createElement('option'),
+            content = document.createTextNode(elements[key].name);
+        option.setAttribute('value', key);
+        if (selected && selected === key) {
+            option.setAttribute('selected', 'selected');
+        }
+        option.appendChild(content);
+        fragment.appendChild(option);
+
+        if (elements[key].submarkets && objectNotEmpty(elements[key].submarkets)) {
             var keys2 = Object.keys(elements[key].submarkets).sort(marketSort);
-            for (var j=0; j<keys2.length; j++) {
+            for (var j = 0; j < keys2.length; j++) {
                 var key2 = keys2[j];
                 option = document.createElement('option');
                 option.setAttribute('value', key2);
                 if (selected && selected === key2) {
                     option.setAttribute('selected', 'selected');
                 }
-                option.textContent = '\xA0\xA0\xA0\xA0'+elements[key].submarkets[key2].name;
+                option.textContent = '\xA0\xA0\xA0\xA0' + elements[key].submarkets[key2].name;
                 fragment.appendChild(option);
             }
-         }
-     }
-     if (target) {
-         target.appendChild(fragment);
+        }
+    }
+    if (target) {
+        target.appendChild(fragment);
 
-         if(target.selectedIndex < 0) {
+        if (target.selectedIndex < 0) {
             target.selectedIndex = 0;
-         }
-         var current = target.options[target.selectedIndex];
-         if(selected !== current.value) {
+        }
+        var current = target.options[target.selectedIndex];
+        if (selected !== current.value) {
             Defaults.set('market', current.value);
-         }
+        }
 
-         if(current.disabled) { // there is no open market
-            Notifications.show({text: page.text.localize('All markets are closed now. Please try again later.'), uid: 'MARKETS_CLOSED'});
+        if (current.disabled) { // there is no open market
+            Notifications.show({ text: page.text.localize('All markets are closed now. Please try again later.'), uid: 'MARKETS_CLOSED' });
             document.getElementById('trading_init_progress').style.display = 'none';
-         }
-     }
- }
+        }
+    }
+}
 
 /*
  * function to display underlyings
@@ -206,7 +207,8 @@ function displayMarkets(id, elements, selected) {
  */
 function displayUnderlyings(id, elements, selected) {
     'use strict';
-    var target= document.getElementById(id),
+
+    var target = document.getElementById(id),
         fragment =  document.createDocumentFragment();
 
     while (target && target.firstChild) {
@@ -215,20 +217,21 @@ function displayUnderlyings(id, elements, selected) {
 
     if (elements) {
         var keys = Object.keys(elements).sort(function(a, b) {
-            return elements[a]['display'].localeCompare(elements[b]['display']);
+            return elements[a].display.localeCompare(elements[b].display);
         });
         var submarkets = {};
-        for(var i=0; i<keys.length; i++){
-            if(!submarkets.hasOwnProperty(elements[keys[i]].submarket)){
+        for (var i = 0; i < keys.length; i++) {
+            if (!submarkets.hasOwnProperty(elements[keys[i]].submarket)) {
                 submarkets[elements[keys[i]].submarket] = [];
             }
             submarkets[elements[keys[i]].submarket].push(keys[i]);
         }
         var keys2 = Object.keys(submarkets).sort(marketSort);
-        for(var j=0; j<keys2.length; j++){
-            for(var k=0; k<submarkets[keys2[j]].length; k++){
+        for (var j = 0; j < keys2.length; j++) {
+            for (var k = 0; k < submarkets[keys2[j]].length; k++) {
                 var key = submarkets[keys2[j]][k];
-                var option = document.createElement('option'), content = document.createTextNode(page.text.localize(elements[key]['display']));
+                var option = document.createElement('option'),
+                    content = document.createTextNode(page.text.localize(elements[key].display));
                 option.setAttribute('value', key);
                 if (selected && selected === key) {
                     option.setAttribute('selected', 'selected');
@@ -250,27 +253,28 @@ function displayUnderlyings(id, elements, selected) {
  */
 function getFormNameBarrierCategory(displayFormName) {
     'use strict';
+
     var obj = {};
     if (displayFormName) {
-        if(displayFormName === 'risefall') {
-            obj['formName'] = 'callput';
-            obj['barrierCategory'] = 'euro_atm';
+        if (displayFormName === 'risefall') {
+            obj.formName = 'callput';
+            obj.barrierCategory = 'euro_atm';
         } else if (displayFormName === 'higherlower') {
-            obj['formName'] = 'callput';
-            obj['barrierCategory'] = 'euro_non_atm';
-        } else if (displayFormName === 'callput'){
-            obj['formName'] = displayFormName;
-            obj['barrierCategory'] = 'euro_atm';
-        } else if (displayFormName === 'overunder' || displayFormName === 'evenodd' || displayFormName === 'matchdiff'){
-            obj['formName'] = 'digits';
-            obj['barrierCategory'] = '';
+            obj.formName = 'callput';
+            obj.barrierCategory = 'euro_non_atm';
+        } else if (displayFormName === 'callput') {
+            obj.formName = displayFormName;
+            obj.barrierCategory = 'euro_atm';
+        } else if (displayFormName === 'overunder' || displayFormName === 'evenodd' || displayFormName === 'matchdiff') {
+            obj.formName = 'digits';
+            obj.barrierCategory = '';
         } else {
-            obj['formName'] = displayFormName;
-            obj['barrierCategory'] = '';
+            obj.formName = displayFormName;
+            obj.barrierCategory = '';
         }
     } else {
-        obj['formName'] = 'callput';
-        obj['barrierCategory'] = 'euro_atm';
+        obj.formName = 'callput';
+        obj.barrierCategory = 'euro_atm';
     }
     return obj;
 }
@@ -284,29 +288,30 @@ function getFormNameBarrierCategory(displayFormName) {
  */
 function contractTypeDisplayMapping(type) {
     'use strict';
+
     var obj = {
-        CALL: "top",
-        PUT: "bottom",
-        CALLE: "top",
-        PUTE: "bottom",
-        ASIANU: "top",
-        ASIAND: "bottom",
-        DIGITMATCH: "top",
-        DIGITDIFF: "bottom",
-        DIGITEVEN: "top",
-        DIGITODD: "bottom",
-        DIGITOVER: "top",
-        DIGITUNDER: "bottom",
-        EXPIRYRANGEE: "top",
-        EXPIRYMISSE: "bottom",
-        EXPIRYRANGE: "top",
-        EXPIRYMISS: "bottom",
-        RANGE: "top",
-        UPORDOWN: "bottom",
-        ONETOUCH: "top",
-        NOTOUCH: "bottom",
-        SPREADU: "top",
-        SPREADD: "bottom"
+        CALL        : 'top',
+        PUT         : 'bottom',
+        CALLE       : 'top',
+        PUTE        : 'bottom',
+        ASIANU      : 'top',
+        ASIAND      : 'bottom',
+        DIGITMATCH  : 'top',
+        DIGITDIFF   : 'bottom',
+        DIGITEVEN   : 'top',
+        DIGITODD    : 'bottom',
+        DIGITOVER   : 'top',
+        DIGITUNDER  : 'bottom',
+        EXPIRYRANGEE: 'top',
+        EXPIRYMISSE : 'bottom',
+        EXPIRYRANGE : 'top',
+        EXPIRYMISS  : 'bottom',
+        RANGE       : 'top',
+        UPORDOWN    : 'bottom',
+        ONETOUCH    : 'top',
+        NOTOUCH     : 'bottom',
+        SPREADU     : 'top',
+        SPREADD     : 'bottom',
     };
 
     return type ? obj[type] : 'top';
@@ -314,6 +319,7 @@ function contractTypeDisplayMapping(type) {
 
 function showPriceOverlay() {
     'use strict';
+
     var elm = document.getElementById('loading_container2');
     if (elm) {
         elm.style.display = 'block';
@@ -322,22 +328,25 @@ function showPriceOverlay() {
 
 function hidePriceOverlay() {
     'use strict';
+
     var elm = document.getElementById('loading_container2');
     if (elm) {
         elm.style.display = 'none';
     }
 }
 
-function hideFormOverlay(){
+function hideFormOverlay() {
     'use strict';
+
     var elm = document.getElementById('loading_container3');
     if (elm) {
         elm.style.display = 'none';
     }
 }
 
-function showFormOverlay(){
+function showFormOverlay() {
     'use strict';
+
     var elm = document.getElementById('loading_container3');
     if (elm) {
         elm.style.display = 'block';
@@ -349,6 +358,7 @@ function showFormOverlay(){
  */
 function hideOverlayContainer() {
     'use strict';
+
     var elm = document.getElementById('contract_confirmation_container');
     if (elm) {
         elm.style.display = 'none';
@@ -359,44 +369,43 @@ function hideOverlayContainer() {
     }
 }
 
-function getContractCategoryTree(elements){
+function getContractCategoryTree(elements) {
     'use strict';
 
     var tree = [
         ['updown',
             ['risefall',
-            'higherlower']
+                'higherlower'],
         ],
         'touchnotouch',
         ['inout',
             ['endsinout',
-            'staysinout']
+                'staysinout'],
         ],
         'asian',
         ['digits',
             ['matchdiff',
-            'evenodd',
-            'overunder']
+                'evenodd',
+                'overunder'],
         ],
-        'spreads'
+        'spreads',
     ];
 
-    if(elements){
-        tree = tree.map(function(e){
-            if(typeof e === 'object'){
-                e[1] = e[1].filter(function(e1){
+    if (elements) {
+        tree = tree.map(function(e) {
+            if (typeof e === 'object') {
+                e[1] = e[1].filter(function(e1) {
                     return elements[e1];
                 });
-                if(!e[1].length){
+                if (!e[1].length) {
                     e = '';
                 }
-            }
-            else if(!elements[e]){
+            } else if (!elements[e]) {
                 e = '';
             }
             return e;
         });
-        tree = tree.filter(function(v){ return v.length; });
+        tree = tree.filter(function(v) { return v.length; });
     }
     return tree;
 }
@@ -407,7 +416,7 @@ function getContractCategoryTree(elements){
  */
 function resetPriceMovement() {
     var btns = document.getElementsByClassName('purchase_button');
-    for(var i = 0; i < btns.length; i++) {
+    for (var i = 0; i < btns.length; i++) {
         btns[i].setAttribute('data-display_value', '');
         btns[i].setAttribute('data-payout', '');
     }
@@ -418,11 +427,12 @@ function resetPriceMovement() {
  */
 function toggleActiveNavMenuElement(nav, eventElement) {
     'use strict';
-    var liElements = nav.getElementsByTagName("li");
+
+    var liElements = nav.getElementsByTagName('li');
     var classes = eventElement.classList;
 
     if (!classes.contains('active')) {
-        for (var i = 0, len = liElements.length; i < len; i++){
+        for (var i = 0, len = liElements.length; i < len; i++) {
             liElements[i].classList.remove('active');
         }
         classes.add('active');
@@ -431,24 +441,27 @@ function toggleActiveNavMenuElement(nav, eventElement) {
 
 function toggleActiveCatMenuElement(nav, eventElementId) {
     'use strict';
+
     var eventElement = document.getElementById(eventElementId);
     var liElements = nav.querySelectorAll('.active, .a-active');
     var classes = eventElement.classList;
+    var i;
+    var len;
 
     if (!classes.contains('active')) {
-        for (var i = 0, len = liElements.length; i < len; i++){
+        for (i = 0, len = liElements.length; i < len; i++) {
             liElements[i].classList.remove('active');
             liElements[i].classList.remove('a-active');
         }
         classes.add('a-active');
 
         i = 0;
-        var parent;
-        while((parent = eventElement.parentElement) && parent.id !== nav.id && i < 10){
-            if(parent.tagName === 'LI'){
+        var parent = eventElement.parentElement;
+        while (parent && parent.id !== nav.id && i < 10) {
+            if (parent.tagName === 'LI') {
                 parent.classList.add('active');
             }
-            eventElement = parent;
+            parent = parent.parentElement;
             i++;
         }
     }
@@ -462,7 +475,7 @@ function displayCommentPrice(node, currency, type, payout) {
 
     if (node && type && payout) {
         var profit = payout - type,
-            return_percent = (profit/type)*100,
+            return_percent = (profit / type) * 100,
             comment = Content.localize().textNetProfit + ': ' + format_money(currency, profit) + ' | ' + Content.localize().textReturn + ' ' + return_percent.toFixed(1) + '%';
 
         if (isNaN(profit) || isNaN(return_percent)) {
@@ -494,7 +507,7 @@ function displayCommentSpreads(node, currency, point) {
             } else {
                 displayAmount = parseFloat(stopLoss);
             }
-            node.textContent = Content.localize().textSpreadDepositComment + " " + format_money(currency, displayAmount) + " " + Content.localize().textSpreadRequiredComment + ": " + point + " " + Content.localize().textSpreadPointsComment;
+            node.textContent = Content.localize().textSpreadDepositComment + ' ' + format_money(currency, displayAmount) + ' ' + Content.localize().textSpreadRequiredComment + ': ' + point + ' ' + Content.localize().textSpreadPointsComment;
         }
     }
 }
@@ -510,10 +523,12 @@ function displayCommentSpreads(node, currency, point) {
  */
 function debounce(func, wait, immediate) {
     'use strict';
+
     var timeout;
     var delay = wait || 500;
     return function() {
-        var context = this, args = arguments;
+        var context = this,
+            args = arguments;
         var later = function() {
             timeout = null;
             if (!immediate) func.apply(context, args);
@@ -530,10 +545,13 @@ function debounce(func, wait, immediate) {
  */
 function getDefaultMarket() {
     'use strict';
+
     var mkt = Defaults.get('market');
     var markets = Symbols.markets(1);
     if (!mkt || !markets[mkt]) {
-        var sorted_markets = Object.keys(Symbols.markets()).filter(function(v){return markets[v].is_active;}).sort(function(a, b) {
+        var sorted_markets = Object.keys(Symbols.markets()).filter(function(v) {
+            return markets[v].is_active;
+        }).sort(function(a, b) {
             return getMarketsOrder(a) - getMarketsOrder(b);
         });
         mkt = sorted_markets[0];
@@ -544,11 +562,11 @@ function getDefaultMarket() {
 // Order
 function getMarketsOrder(market) {
     var order = {
-        'forex': 1,
-        'volidx': 2,
-        'indices': 3,
-        'stocks': 4,
-        'commodities': 5
+        forex      : 1,
+        volidx     : 2,
+        indices    : 3,
+        stocks     : 4,
+        commodities: 5,
     };
     return order[market] ? order[market] : 100;
 }
@@ -556,9 +574,10 @@ function getMarketsOrder(market) {
 /*
  * this is invoked when submit button is clicked and prevents reloading of page
  */
-function addEventListenerForm(){
+function addEventListenerForm() {
     'use strict';
-    document.getElementById('websocket_form').addEventListener("submit", function(evt){
+
+    document.getElementById('websocket_form').addEventListener('submit', function(evt) {
         evt.currentTarget.classList.add('submitted');
         evt.preventDefault();
         return false;
@@ -570,6 +589,7 @@ function addEventListenerForm(){
  */
 function submitForm(form) {
     'use strict';
+
     var button = form.ownerDocument.createElement('input');
     button.style.display = 'none';
     button.type = 'submit';
@@ -580,180 +600,180 @@ function submitForm(form) {
 /*
  * function to sort the duration in ascending order
  */
-function durationOrder(duration){
+function durationOrder(duration) {
     'use strict';
+
     var order = {
-        t:1,
-        s:2,
-        m:3,
-        h:4,
-        d:5
+        t: 1,
+        s: 2,
+        m: 3,
+        h: 4,
+        d: 5,
     };
     return order[duration];
 }
 
-function marketOrder(market){
+function marketOrder(market) {
     'use strict';
+
     var order = {
-        forex:               0,
-            major_pairs:     1,
-            minor_pairs:     2,
-            smart_fx:        3,
-        indices:             4,
-            asia_oceania:    5,
-            europe_africa:   6,
-            americas:        7,
-            otc_index:       8,
-        stocks:              9,
-            au_otc_stock:    10,
-            ge_otc_stock:    11,
-            india_otc_stock: 12,
-            uk_otc_stock:    13,
-            us_otc_stock:    14,
-        commodities:         15,
-            metals:          16,
-            energy:          17,
-        volidx:              18,
-            random_index:    19,
-            random_daily:    20,
-            random_nightly:  21
+        forex          : 0,
+        major_pairs    : 1,
+        minor_pairs    : 2,
+        smart_fx       : 3,
+        indices        : 4,
+        asia_oceania   : 5,
+        europe_africa  : 6,
+        americas       : 7,
+        otc_index      : 8,
+        stocks         : 9,
+        au_otc_stock   : 10,
+        ge_otc_stock   : 11,
+        india_otc_stock: 12,
+        uk_otc_stock   : 13,
+        us_otc_stock   : 14,
+        commodities    : 15,
+        metals         : 16,
+        energy         : 17,
+        volidx         : 18,
+        random_index   : 19,
+        random_daily   : 20,
+        random_nightly : 21,
     };
     return order[market];
 }
 
-function marketSort(a,b){
-    if(marketOrder(a) > marketOrder(b)){
+function marketSort(a, b) {
+    if (marketOrder(a) > marketOrder(b)) {
         return 1;
-    }
-    else if(marketOrder(a) < marketOrder(b)){
+    } else if (marketOrder(a) < marketOrder(b)) {
         return -1;
     }
-    else{
-        return 0;
-    }
+
+    return 0;
 }
 
-function displayTooltip(market, symbol){
+function displayTooltip(market, symbol) {
     'use strict';
+
     var tip = document.getElementById('symbol_tip'),
         guide = document.getElementById('guideBtn'),
         app = document.getElementById('androidApp'),
         appstore = document.getElementById('appstore'),
         markets = document.getElementById('contract_markets').value;
     if (!market || !symbol) return;
-    if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)){
+    if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
         if (guide) guide.hide();
         tip.show();
         tip.setAttribute('target', page.url.url_for('/get-started/volidx-markets'));
         app.show();
         appstore.show();
     } else {
-      app.hide();
-      appstore.hide();
-      tip.hide();
-      if (guide) guide.show();
+        app.hide();
+        appstore.hide();
+        tip.hide();
+        if (guide) guide.show();
     }
-    if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/stock/) || markets.match(/stocks/)){
+    if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/stock/) || markets.match(/stocks/)) {
         tip.show();
         tip.setAttribute('target', page.url.url_for('/get-started/otc-indices-stocks'));
     }
-    if (market.match(/^random_index/) || symbol.match(/^R_/)){
+    if (market.match(/^random_index/) || symbol.match(/^R_/)) {
         tip.setAttribute('target', page.url.url_for('/get-started/volidx-markets', '#volidx-indices'));
     }
-    if (market.match(/^random_daily/) || symbol.match(/^RDB/) || symbol.match(/^RDMO/) || symbol.match(/^RDS/)){
+    if (market.match(/^random_daily/) || symbol.match(/^RDB/) || symbol.match(/^RDMO/) || symbol.match(/^RDS/)) {
         tip.setAttribute('target', page.url.url_for('/get-started/volidx-markets', '#volidx-quotidians'));
     }
-    if (market.match(/^smart_fx/) || symbol.match(/^WLD/)){
+    if (market.match(/^smart_fx/) || symbol.match(/^WLD/)) {
         tip.show();
         tip.setAttribute('target', page.url.url_for('/get-started/smart-indices', '#world-fx-indices'));
     }
 }
 
-function selectOption(option, select){
+function selectOption(option, select) {
     var options = select.getElementsByTagName('option');
     var contains = 0;
-    for(var i = 0; i < options.length; i++){
-        if(options[i].value==option && !options[i].hasAttribute('disabled')){
+    for (var i = 0; i < options.length; i++) {
+        if (options[i].value === option && !options[i].hasAttribute('disabled')) {
             contains = 1;
             break;
         }
     }
-    if(contains){
+    if (contains) {
         select.value = option;
         return true;
     }
-    else{
-        return false;
-    }
+
+    return false;
 }
 
-function updatePurchaseStatus(final_price, pnl, contract_status){
+function updatePurchaseStatus(final_price, pnl, contract_status) {
     $('#contract_purchase_heading').text(page.text.localize(contract_status));
     var $payout = $('#contract_purchase_payout'),
         $cost = $('#contract_purchase_cost'),
         $profit = $('#contract_purchase_profit');
 
-    $payout.html(Content.localize().textBuyPrice + '<p>'+addComma(Math.abs(pnl))+'</p>');
-    $cost.html(Content.localize().textFinalPrice + '<p>'+addComma(final_price)+'</p>');
-    if(!final_price){
-        $profit.html(Content.localize().textLoss + '<p>'+addComma(pnl)+'</p>');
-    }
-    else{
-        $profit.html(Content.localize().textProfit + '<p>'+addComma(Math.round((final_price-pnl)*100)/100)+'</p>');
+    $payout.html(Content.localize().textBuyPrice + '<p>' + addComma(Math.abs(pnl)) + '</p>');
+    $cost.html(Content.localize().textFinalPrice + '<p>' + addComma(final_price) + '</p>');
+    if (!final_price) {
+        $profit.html(Content.localize().textLoss + '<p>' + addComma(pnl) + '</p>');
+    } else {
+        $profit.html(Content.localize().textProfit + '<p>' + addComma(Math.round((final_price - pnl) * 100) / 100) + '</p>');
         updateContractBalance(TUser.get().balance);
     }
 }
 
 function updateContractBalance(balance) {
     $('#contract_purchase_balance').text(
-        Content.localize().textContractConfirmationBalance + ' ' + format_money(TUser.get().currency, balance)
-    );
+        Content.localize().textContractConfirmationBalance + ' ' + format_money(TUser.get().currency, balance));
 }
 
-function updateWarmChart(){
+function updateWarmChart() {
     var $chart = $('#trading_worm_chart');
-    var spots =  Object.keys(Tick.spots()).sort(function(a,b){return a-b;}).map(function(v){return Tick.spots()[v];});
+    var spots =  Object.keys(Tick.spots()).sort(function(a, b) {
+        return a - b;
+    }).map(function(v) {
+        return Tick.spots()[v];
+    });
     var chart_config = {
-        type: 'line',
-        lineColor: '#606060',
-        fillColor: false,
-        spotColor: '#00f000',
-        minSpotColor: '#f00000',
-        maxSpotColor: '#0000f0',
+        type              : 'line',
+        lineColor         : '#606060',
+        fillColor         : false,
+        spotColor         : '#00f000',
+        minSpotColor      : '#f00000',
+        maxSpotColor      : '#0000f0',
         highlightSpotColor: '#ffff00',
         highlightLineColor: '#000000',
-        spotRadius: 1.25
+        spotRadius        : 1.25,
     };
     if ($chart && typeof $chart.sparkline === 'function') {
         $chart.sparkline(spots, chart_config);
-        if(spots.length){
+        if (spots.length) {
             $chart.show();
-        }
-        else{
+        } else {
             $chart.hide();
         }
     }
 }
 
-function reloadPage(){
+function reloadPage() {
     Defaults.remove('market', 'underlying', 'formname',
-        'date_start','expiry_type', 'expiry_date', 'expirt_time', 'duration_units', 'diration_value',
+        'date_start', 'expiry_type', 'expiry_date', 'expirt_time', 'duration_units', 'diration_value',
         'amount', 'amount_type', 'currency', 'stop_loss', 'stop_type', 'stop_profit', 'amount_per_point', 'prediction');
     location.reload();
 }
 
-function showHighchart(){
-  Content.populate();
+function showHighchart() {
+    Content.populate();
 
-  if (window.chartAllowed) {
-    chartFrameSource();
-  } else {
-    chartFrameCleanup();
-    $('#trade_live_chart').hide();
-    $('#chart-error').text(page.text.localize('Chart is not available for this underlying.'))
+    if (window.chartAllowed) {
+        chartFrameSource();
+    } else {
+        chartFrameCleanup();
+        $('#trade_live_chart').hide();
+        $('#chart-error').text(page.text.localize('Chart is not available for this underlying.'))
                      .show();
-    return;
-  }
+    }
 }
 
 function chartFrameCleanup() {
@@ -767,18 +787,18 @@ function chartFrameCleanup() {
 }
 
 function chartFrameSource() {
-  if ($('#tab_graph').hasClass('active') && (sessionStorage.getItem('old_underlying') !== sessionStorage.getItem('underlying') || /^(|about:blank)$/.test($('#chart_frame').attr('src')))) {
-      chartFrameCleanup();
-      setChartSource();
-      sessionStorage.setItem('old_underlying', document.getElementById('underlying').value);
-  }
-  $('#chart-error').hide();
-  $('#trade_live_chart').show();
+    if ($('#tab_graph').hasClass('active') && (sessionStorage.getItem('old_underlying') !== sessionStorage.getItem('underlying') || /^(|about:blank)$/.test($('#chart_frame').attr('src')))) {
+        chartFrameCleanup();
+        setChartSource();
+        sessionStorage.setItem('old_underlying', document.getElementById('underlying').value);
+    }
+    $('#chart-error').hide();
+    $('#trade_live_chart').show();
 }
 
 function setChartSource() {
     var ja = japanese_client();
-  document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + (page.language() || 'en').toLowerCase() +
+    document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + (page.language() || 'en').toLowerCase() +
   '&hideOverlay=' + (ja ? 'true' : 'false') + '&hideShare=' + (ja ? 'true' : 'false') + '&timezone=GMT+' + (ja ? '9' : '0') +
   '&hideFooter=' + (ja ? 'true' : 'false');
 }
@@ -790,11 +810,12 @@ function setChartSource() {
  */
 function toggleActiveNavMenuElement_Beta(nav, eventElement) {
     'use strict';
-    var liElements = nav.getElementsByTagName("li");
+
+    var liElements = nav.getElementsByTagName('li');
     var classes = eventElement.classList;
 
     if (!classes.contains('active')) {
-        for (var i = 0, len = liElements.length; i < len; i++){
+        for (var i = 0, len = liElements.length; i < len; i++) {
             liElements[i].classList.remove('active');
         }
         classes.add('active');
@@ -805,7 +826,7 @@ function toggleActiveNavMenuElement_Beta(nav, eventElement) {
     }
 }
 
-function updatePurchaseStatus_Beta(final_price, pnl, contract_status){
+function updatePurchaseStatus_Beta(final_price, pnl, contract_status) {
     final_price = String(final_price).replace(/,/g, '') * 1;
     pnl = String(pnl).replace(/,/g, '') * 1;
     $('#contract_purchase_heading').text(page.text.localize(contract_status));
@@ -813,37 +834,38 @@ function updatePurchaseStatus_Beta(final_price, pnl, contract_status){
         cost    = document.getElementById('contract_purchase_cost'),
         profit  = document.getElementById('contract_purchase_profit');
 
-    label_value(cost  , Content.localize().textStake , addComma(Math.abs(pnl)));
+    label_value(cost, Content.localize().textStake, addComma(Math.abs(pnl)));
     label_value(payout, Content.localize().textPayout, addComma(final_price));
 
     var isWin = (final_price > 0);
     $('#contract_purchase_profit_value').attr('class', (isWin ? 'profit' : 'loss'));
     label_value(profit, isWin ? Content.localize().textProfit : Content.localize().textLoss,
-        addComma(isWin ? Math.round((final_price - pnl) * 100) / 100 : - Math.abs(pnl)));
+        addComma(isWin ? Math.round((final_price - pnl) * 100) / 100 : -Math.abs(pnl)));
 }
 
-function displayTooltip_Beta(market, symbol){
+function displayTooltip_Beta(market, symbol) {
     'use strict';
+
     var tip = document.getElementById('symbol_tip'),
         markets = document.getElementById('contract_markets').value;
     if (!market || !symbol) return;
-    if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)){
+    if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
         tip.show();
         tip.setAttribute('target', page.url.url_for('/get-started/volidx-markets'));
     } else {
-      tip.hide();
+        tip.hide();
     }
-    if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/stock/) || markets.match(/stocks/)){
+    if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/stock/) || markets.match(/stocks/)) {
         tip.show();
         tip.setAttribute('target', page.url.url_for('/get-started/otc-indices-stocks'));
     }
-    if (market.match(/^random_index/) || symbol.match(/^R_/)){
+    if (market.match(/^random_index/) || symbol.match(/^R_/)) {
         tip.setAttribute('target', page.url.url_for('/get-started/volidx-markets', '#volidx-indices'));
     }
-    if (market.match(/^random_daily/) || symbol.match(/^RDB/) || symbol.match(/^RDMO/) || symbol.match(/^RDS/)){
+    if (market.match(/^random_daily/) || symbol.match(/^RDB/) || symbol.match(/^RDMO/) || symbol.match(/^RDS/)) {
         tip.setAttribute('target', page.url.url_for('/get-started/volidx-markets', '#volidx-quotidians'));
     }
-    if (market.match(/^smart_fx/) || symbol.match(/^WLD/)){
+    if (market.match(/^smart_fx/) || symbol.match(/^WLD/)) {
         tip.show();
         tip.setAttribute('target', page.url.url_for('/get-started/smart-indices', '#world-fx-indices'));
     }
@@ -866,65 +888,65 @@ function timeIsValid($element) {
         !/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(endTimeValue)) {
         $element.addClass('error-field');
         if ($('#invalid-time').length === 0) {
-            $('#expiry_type_endtime').parent().append($('<p>', {class: 'error-msg', id: 'invalid-time', text: page.text.localize('Time is in the wrong format.')}));
+            $('#expiry_type_endtime').parent().append($('<p>', { class: 'error-msg', id: 'invalid-time', text: page.text.localize('Time is in the wrong format.') }));
         }
         return false;
-    } else {
-        $element.removeClass('error-field');
-        $('#invalid-time').remove();
     }
 
-    endDateValue = endDateValue ? toISOFormat(moment(endDateValue)) : toISOFormat(new moment());
-    startDateValue = startDateValue === 'now' ? Math.floor(window.time._i/1000) : startDateValue;
-    endTimeValue = endTimeValue || "23:59:59";
+    $element.removeClass('error-field');
+    $('#invalid-time').remove();
 
-    if (moment.utc(endDateValue + " " + endTimeValue).unix() <= startDateValue) {
+    endDateValue = endDateValue ? toISOFormat(Moment(endDateValue)) : toISOFormat(new Moment());
+    startDateValue = startDateValue === 'now' ? Math.floor(window.time._i / 1000) : startDateValue;
+    endTimeValue = endTimeValue || '23:59:59';
+
+    if (Moment.utc(endDateValue + ' ' + endTimeValue).unix() <= startDateValue) {
         $element.addClass('error-field');
         if (!document.getElementById('end_time_validation')) {
             $('#expiry_type_endtime').append('<p class="error-msg" id="end_time_validation">' + page.text.localize('End time must be after start time.') + '</p>');
         }
         return false;
-    } else {
-        $element.removeClass('error-field');
-        $('#end_time_validation').remove();
-        return true;
     }
+
+    $element.removeClass('error-field');
+    $('#end_time_validation').remove();
+    return true;
 }
 
 module.exports = {
-    displayUnderlyings: displayUnderlyings,
-    getFormNameBarrierCategory: getFormNameBarrierCategory,
-    contractTypeDisplayMapping: contractTypeDisplayMapping,
-    showPriceOverlay: showPriceOverlay,
-    hidePriceOverlay: hidePriceOverlay,
-    hideFormOverlay: hideFormOverlay,
-    showFormOverlay: showFormOverlay,
-    hideOverlayContainer: hideOverlayContainer,
-    getContractCategoryTree: getContractCategoryTree,
-    resetPriceMovement: resetPriceMovement,
-    toggleActiveNavMenuElement: toggleActiveNavMenuElement,
-    toggleActiveCatMenuElement: toggleActiveCatMenuElement,
-    displayCommentPrice: displayCommentPrice,
-    displayCommentSpreads: displayCommentSpreads,
-    debounce: debounce,
-    getDefaultMarket: getDefaultMarket,
-    addEventListenerForm: addEventListenerForm,
-    submitForm: submitForm,
-    durationOrder: durationOrder,
-    displayTooltip: displayTooltip,
-    selectOption: selectOption,
-    updatePurchaseStatus: updatePurchaseStatus,
-    updateContractBalance: updateContractBalance,
-    updateWarmChart: updateWarmChart,
-    reloadPage: reloadPage,
-    showHighchart: showHighchart,
-    chartFrameCleanup: chartFrameCleanup,
-    chartFrameSource: chartFrameSource,
-    displayContractForms: displayContractForms,
-    displayMarkets: displayMarkets,
+    displayUnderlyings             : displayUnderlyings,
+    getFormNameBarrierCategory     : getFormNameBarrierCategory,
+    contractTypeDisplayMapping     : contractTypeDisplayMapping,
+    showPriceOverlay               : showPriceOverlay,
+    hidePriceOverlay               : hidePriceOverlay,
+    hideFormOverlay                : hideFormOverlay,
+    showFormOverlay                : showFormOverlay,
+    hideOverlayContainer           : hideOverlayContainer,
+    getContractCategoryTree        : getContractCategoryTree,
+    resetPriceMovement             : resetPriceMovement,
+    toggleActiveNavMenuElement     : toggleActiveNavMenuElement,
+    toggleActiveCatMenuElement     : toggleActiveCatMenuElement,
+    displayCommentPrice            : displayCommentPrice,
+    displayCommentSpreads          : displayCommentSpreads,
+    debounce                       : debounce,
+    getDefaultMarket               : getDefaultMarket,
+    addEventListenerForm           : addEventListenerForm,
+    submitForm                     : submitForm,
+    durationOrder                  : durationOrder,
+    displayTooltip                 : displayTooltip,
+    selectOption                   : selectOption,
+    updatePurchaseStatus           : updatePurchaseStatus,
+    updateContractBalance          : updateContractBalance,
+    updateWarmChart                : updateWarmChart,
+    reloadPage                     : reloadPage,
+    showHighchart                  : showHighchart,
+    chartFrameCleanup              : chartFrameCleanup,
+    chartFrameSource               : chartFrameSource,
+    displayContractForms           : displayContractForms,
+    displayMarkets                 : displayMarkets,
     toggleActiveNavMenuElement_Beta: toggleActiveNavMenuElement_Beta,
-    updatePurchaseStatus_Beta: updatePurchaseStatus_Beta,
-    displayTooltip_Beta: displayTooltip_Beta,
-    label_value: label_value,
-    timeIsValid: timeIsValid
+    updatePurchaseStatus_Beta      : updatePurchaseStatus_Beta,
+    displayTooltip_Beta            : displayTooltip_Beta,
+    label_value                    : label_value,
+    timeIsValid                    : timeIsValid,
 };

@@ -3,6 +3,7 @@
  */
 var displayPriceMovement = function(element, oldValue, currentValue) {
     'use strict';
+
     element.classList.remove('price_moved_down');
     element.classList.remove('price_moved_up');
     if (parseFloat(currentValue) > parseFloat(oldValue)) {
@@ -19,17 +20,17 @@ var displayPriceMovement = function(element, oldValue, currentValue) {
  */
 var countDecimalPlaces = function(num) {
     'use strict';
+
     if (!isNaN(num)) {
         var str = num.toString();
         if (str.indexOf('.') !== -1) {
             return str.split('.')[1].length;
-        } else {
-            return 0;
         }
     }
+    return 0;
 };
 
 module.exports = {
     displayPriceMovement: displayPriceMovement,
-    countDecimalPlaces: countDecimalPlaces,
+    countDecimalPlaces  : countDecimalPlaces,
 };

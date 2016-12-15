@@ -20,7 +20,7 @@ var Message_Beta = (function () {
 
     var process = function (msg) {
         var response = JSON.parse(msg.data);
-        if(!State.get('is_beta_trading')){
+        if (!State.get('is_beta_trading')) {
             forgetTradingStreams_Beta();
             return;
         }
@@ -47,40 +47,39 @@ var Message_Beta = (function () {
                 processTick_Beta(response);
             } else if (type === 'history') {
                 var digit_info = TradingAnalysis_Beta.digit_info();
-                if(response.req_id === 1 || response.req_id === 2){
+                if (response.req_id === 1 || response.req_id === 2) {
                     digit_info.show_chart(response.echo_req.ticks_history, response.history.prices);
-                } else
+                } else {
                     Tick.processHistory(response);
-            } else if (type === 'asset_index'){
+                }
+            } else if (type === 'asset_index') {
                 AssetIndexUI.setAssetIndex(response);
-            } else if (type === 'trading_times'){
+            } else if (type === 'trading_times') {
                 processTradingTimes_Beta(response);
                 MarketTimesUI.setTradingTimes(response);
-            } else if (type === 'statement'){
+            } else if (type === 'statement') {
                 StatementWS.statementHandler(response);
-            } else if (type === 'profit_table'){
+            } else if (type === 'profit_table') {
                 ProfitTableWS.profitTableHandler(response);
             } else if (type === 'error') {
-                $(".error-msg").text(response.error.message);
-            } else if(type === 'portfolio'){
+                $('.error-msg').text(response.error.message);
+            } else if (type === 'portfolio') {
                 PortfolioWS.updatePortfolio(response);
-            } else if(type === 'proposal_open_contract'){
+            } else if (type === 'proposal_open_contract') {
                 PortfolioWS.updateIndicative(response);
-            } else if(type === 'transaction'){
+            } else if (type === 'transaction') {
                 PortfolioWS.transactionResponseHandler(response);
-            } else if(type === 'oauth_apps'){
+            } else if (type === 'oauth_apps') {
                 PortfolioWS.updateOAuthApps(response);
             }
         } else {
-
             console.log('some error occured');
         }
     };
 
     return {
-        process: process
+        process: process,
     };
-
 })();
 
 module.exports = {

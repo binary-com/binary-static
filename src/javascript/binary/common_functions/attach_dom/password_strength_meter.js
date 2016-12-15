@@ -1,7 +1,7 @@
 var testPassword = require('../passwordmeter').testPassword;
 var isIE         = require('../common_functions').isIE;
 
-var PasswordMeter = (function(){
+var PasswordMeter = (function() {
     'use strict';
 
     /**
@@ -11,7 +11,7 @@ var PasswordMeter = (function(){
      */
     function attach($container) {
         if (isIE()) return;
-        var $meter = $('<meter></meter>', {id: 'password-meter', min: 0, max: 50, high: 20, low: 10, optimum: 50});
+        var $meter = $('<meter></meter>', { id: 'password-meter', min: 0, max: 50, high: 20, low: 10, optimum: 50 });
         $container
             .append($meter);
     }
@@ -29,10 +29,10 @@ var PasswordMeter = (function(){
     }
 
     return {
-        attach: attach,
-        updateMeter: updateMeter
+        attach     : attach,
+        updateMeter: updateMeter,
     };
-}());
+})();
 
 module.exports = {
     PasswordMeter: PasswordMeter,

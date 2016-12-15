@@ -1,28 +1,28 @@
-var onlyNumericOnKeypress = require('../../../../common_functions/event_handler').onlyNumericOnKeypress;
+var onlyNumericOnKeypress    = require('../../../../common_functions/event_handler').onlyNumericOnKeypress;
 var PaymentAgentTransferData = require('./payment_agent_transfer.data').PaymentAgentTransferData;
-var PaymentAgentTransferUI = require('./payment_agent_transfer.ui').PaymentAgentTransferUI;
+var PaymentAgentTransferUI   = require('./payment_agent_transfer.ui').PaymentAgentTransferUI;
 
-var PaymentAgentTransfer = (function () {
+var PaymentAgentTransfer = (function() {
     var hiddenClass = 'invisible',
         paymentagent;
 
     function init_variable() {
-      paymentagent = false;
+        paymentagent = false;
     }
 
     function handleResponse(response) {
-      var type = response.msg_type;
-      if (type === 'get_settings') {
-        error_if_not_pa(response);
-      }
+        var type = response.msg_type;
+        if (type === 'get_settings') {
+            error_if_not_pa(response);
+        }
 
-      if (type === 'authorize' && paymentagent) {
-          PaymentAgentTransfer.init(true);
-      }
+        if (type === 'authorize' && paymentagent) {
+            PaymentAgentTransfer.init(true);
+        }
 
-      if (type === 'paymentagent_transfer'){
-          PaymentAgentTransfer.paymentAgentTransferHandler(response);
-      }
+        if (type === 'paymentagent_transfer') {
+            PaymentAgentTransfer.paymentAgentTransferHandler(response);
+        }
     }
 
     function paymentAgentTransferHandler(response) {
@@ -33,9 +33,8 @@ var PaymentAgentTransfer = (function () {
                 $('#transfer_error_client_id').removeClass(hiddenClass);
                 $('#transfer_error_client_id').text(response.error.message);
                 return;
-            } else {
-                PaymentAgentTransferUI.showTransferError(response.error.message);
             }
+            PaymentAgentTransferUI.showTransferError(response.error.message);
         }
 
         if (response.paymentagent_transfer === 2) {
@@ -70,11 +69,11 @@ var PaymentAgentTransfer = (function () {
             $pa_form.addClass(hiddenClass);
 
             return;
-        } else {
-            $('#no_balance_error').addClass(hiddenClass);
-            $pa_form.removeClass(hiddenClass);
-            $('#paymentagent_transfer_notes').removeClass('invisible');
         }
+
+        $('#no_balance_error').addClass(hiddenClass);
+        $pa_form.removeClass(hiddenClass);
+        $('#paymentagent_transfer_notes').removeClass('invisible');
 
         PaymentAgentTransferUI.updateFormView(currency);
 
@@ -125,7 +124,7 @@ var PaymentAgentTransfer = (function () {
         });
 
         $paConfirmTransferButton.click(function() {
-            $paConfirmTransferButton.attr('disabled','disabled');
+            $paConfirmTransferButton.attr('disabled', 'disabled');
             var clientID = $clientIDInput.val();
             var amount = $amountInput.val();
             PaymentAgentTransferData.transfer(clientID, currency, amount, false);
@@ -148,7 +147,7 @@ var PaymentAgentTransfer = (function () {
 
         $amountInput.keypress(onlyNumericOnKeypress);
 
-        $amountInput.keyup(function(ev){
+        $amountInput.keyup(function(ev) {
             $amountError.addClass(hiddenClass);
             $insufficientBalError.addClass(hiddenClass);
 
@@ -159,35 +158,31 @@ var PaymentAgentTransfer = (function () {
     }
 
     function error_if_virtual() {
-      if (page.client.is_virtual()) {
-        $('#virtual_error').removeClass('invisible');
-        return true;
-      }
-      return false;
+        if (page.client.is_virtual()) {
+            $('#virtual_error').removeClass('invisible');
+            return true;
+        }
+        return false;
     }
 
     function error_if_not_pa(response) {
-      if (response.get_settings.hasOwnProperty('is_authenticated_payment_agent') && response.get_settings.is_authenticated_payment_agent === 0) {
-        $('#not_pa_error').removeClass('invisible');
-        return;
-      } else if (error_if_virtual()) {
-        return;
-      } else if (response.get_settings.is_authenticated_payment_agent) {
-        $('#paymentagent_transfer').removeClass('invisible');
-        $('#paymentagent_transfer_notes').removeClass('invisible');
-        paymentagent = true;
-        PaymentAgentTransfer.init(true);
-        return;
-      }
+        if (response.get_settings.hasOwnProperty('is_authenticated_payment_agent') && response.get_settings.is_authenticated_payment_agent === 0) {
+            $('#not_pa_error').removeClass('invisible');
+        } else if (!error_if_virtual() && response.get_settings.is_authenticated_payment_agent) {
+            $('#paymentagent_transfer').removeClass('invisible');
+            $('#paymentagent_transfer_notes').removeClass('invisible');
+            paymentagent = true;
+            PaymentAgentTransfer.init(true);
+        }
     }
 
     return {
-        init: init,
-        init_variable: init_variable,
-        handleResponse: handleResponse,
-        paymentAgentTransferHandler: paymentAgentTransferHandler
+        init                       : init,
+        init_variable              : init_variable,
+        handleResponse             : handleResponse,
+        paymentAgentTransferHandler: paymentAgentTransferHandler,
     };
-}());
+})();
 
 module.exports = {
     PaymentAgentTransfer: PaymentAgentTransfer,

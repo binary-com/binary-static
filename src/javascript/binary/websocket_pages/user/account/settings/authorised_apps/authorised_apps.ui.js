@@ -4,13 +4,14 @@ var Button = require('../../../../../common_functions/attach_dom/button').Button
 var FlexTableUI = require('../../../../../common_functions/attach_dom/flextable').FlexTableUI;
 var ApplicationsData = require('./authorised_apps.data').ApplicationsData;
 
-var ApplicationsUI = (function(){
+var ApplicationsUI = (function() {
     'use strict';
+
     var containerSelector = '#applications-ws-container';
     var messages = {
-        no_apps: 'You have not granted access to any applications.',
+        no_apps       : 'You have not granted access to any applications.',
         revoke_confirm: 'Are you sure that you want to permanently revoke access to application',
-        revoke_access: 'Revoke access',
+        revoke_access : 'Revoke access',
     };
     var flexTable;
 
@@ -22,17 +23,17 @@ var ApplicationsUI = (function(){
         var columns = ['name', 'permissions', 'last_used', 'action'];
         flexTable = new FlexTableUI({
             container: containerSelector,
-            header: headers.map(function(s) { return page.text.localize(s); }),
-            id:     'applications-table',
-            cols:   columns,
-            data:   data,
-            style:  function($row, app) {
+            header   : headers.map(function(s) { return page.text.localize(s); }),
+            id       : 'applications-table',
+            cols     : columns,
+            data     : data,
+            style    : function($row, app) {
                 $row.children('.action').first()
                     .append(createRevokeButton($row, app));
             },
             formatter: formatApp,
         });
-        showLocalTimeOnHover('td.last_used');
+        return showLocalTimeOnHover('td.last_used');
     }
 
     function formatApp(app) {
@@ -50,7 +51,6 @@ var ApplicationsUI = (function(){
         createTable(apps);
         if (!apps.length) {
             flexTable.displayError(page.text.localize(messages.no_apps), 7);
-            return;
         }
     }
 
@@ -72,7 +72,7 @@ var ApplicationsUI = (function(){
     }
 
     function init() {
-        showLoadingImage($('<div/>', {id: 'loading'}).insertAfter('#applications-title'));
+        showLoadingImage($('<div/>', { id: 'loading' }).insertAfter('#applications-title'));
         var $title = $('#applications-title').children().first();
         var $desc  = $('#description');
         $title.text(page.text.localize($title.text()));
@@ -86,12 +86,12 @@ var ApplicationsUI = (function(){
     }
 
     return {
-        init: init,
-        clean: clean,
-        update: update,
+        init        : init,
+        clean       : clean,
+        update      : update,
         displayError: displayError,
     };
-}());
+})();
 
 module.exports = {
     ApplicationsUI: ApplicationsUI,

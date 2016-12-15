@@ -17,7 +17,7 @@ var MBMessage = (function () {
 
     var process = function (msg) {
         var response = JSON.parse(msg.data);
-        if(!State.get('is_mb_trading')){
+        if (!State.get('is_mb_trading')) {
             forgetTradingStreams();
             return;
         }
@@ -42,20 +42,20 @@ var MBMessage = (function () {
                 MBProcess.processTick(response);
             } else if (type === 'history') {
                 MBTick.processHistory(response);
-            } else if (type === 'trading_times'){
+            } else if (type === 'trading_times') {
                 processTradingTimes(response);
-            } else if(type === 'portfolio'){
+            } else if (type === 'portfolio') {
                 PortfolioWS.updatePortfolio(response);
-            } else if(type === 'proposal_open_contract'){
+            } else if (type === 'proposal_open_contract') {
                 PortfolioWS.updateIndicative(response);
-            } else if(type === 'transaction'){
+            } else if (type === 'transaction') {
                 PortfolioWS.transactionResponseHandler(response);
             }
         }
     };
 
     return {
-        process: process
+        process: process,
     };
 })();
 

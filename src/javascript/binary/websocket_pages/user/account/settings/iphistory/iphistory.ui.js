@@ -21,20 +21,20 @@ var IPHistoryUI = (function() {
         var headers = ['Date and Time', 'Action', 'Browser', 'IP Address', 'Status'];
         var columns = ['timestamp', 'action', 'browser', 'ip', 'status'];
         flexTable = new FlexTableUI({
-            id:        'login-history-table',
+            id       : 'login-history-table',
             container: containerSelector,
-            header:    headers.map(function(s) { return page.text.localize(s); }),
-            cols:      columns,
-            data:      history,
+            header   : headers.map(function(s) { return page.text.localize(s); }),
+            cols     : columns,
+            data     : history,
             formatter: formatRow,
-            style: function($row) {
+            style    : function($row) {
                 $row.children('.timestamp').addClass('pre');
             },
         });
         if (!history.length) {
             return flexTable.displayError(page.text.localize(no_messages_error), 6);
         }
-        showLocalTimeOnHover('td.timestamp');
+        return showLocalTimeOnHover('td.timestamp');
     }
 
     function formatRow(data) {
@@ -49,7 +49,7 @@ var IPHistoryUI = (function() {
             data.action,
             browserString,
             data.ip_addr,
-            status
+            status,
         ];
     }
 
@@ -64,12 +64,12 @@ var IPHistoryUI = (function() {
     }
 
     return {
-        init: init,
-        clean: clean,
-        update: update,
+        init        : init,
+        clean       : clean,
+        update      : update,
         displayError: displayError,
     };
-}());
+})();
 
 module.exports = {
     IPHistoryUI: IPHistoryUI,

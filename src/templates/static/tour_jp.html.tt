@@ -25,7 +25,7 @@
         <p>
           [% l("{JAPAN ONLY}To buy an option, simply click on the price button to execute the trade.") %]
         </p>
-        <img class="responsive gr-5 gr-8-m gr-centered" src="[% request.url_for('images/pages/tour-jp/buy_buttons.png') %]" />
+        <img class="responsive gr-5 gr-8-m gr-centered" src="[% request.url_for('images/pages/tour-jp/buy_buttons.jpg') %]" />
         <p>
           [% l("{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade.") %]
         </p>

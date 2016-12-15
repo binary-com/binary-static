@@ -7,19 +7,19 @@ var moment          = require('moment');
 var dv              = require('../../../../../lib/validation');
 
 var SettingsDetailsWS = (function() {
-    "use strict";
+    'use strict';
 
     var formID = '#frmPersonalDetails',
         RealAccElements = '.RealAcc',
         changed = false,
         isInitialized,
         fieldIDs = {
-            address1 : '#Address1',
-            address2 : '#Address2',
-            city     : '#City',
-            state    : '#State',
-            postcode : '#Postcode',
-            phone    : '#Phone'
+            address1: '#Address1',
+            address2: '#Address2',
+            city    : '#City',
+            state   : '#State',
+            postcode: '#Postcode',
+            phone   : '#Phone',
         };
 
     function init() {
@@ -31,7 +31,7 @@ var SettingsDetailsWS = (function() {
             isInitialized = false;
         }
 
-        BinarySocket.send({"get_settings": "1", "req_id": 1});
+        BinarySocket.send({ get_settings: '1', req_id: 1 });
     }
 
     function initOk() {
@@ -43,13 +43,12 @@ var SettingsDetailsWS = (function() {
             submit: function(ev, info) {
                 ev.preventDefault();
                 ev.stopPropagation();
-                if (info.errors.length > 0) return;
+                if (info.errors.length > 0) return false;
                 if (!changed) {
-                    showFormMessage('You did not change anything.', false);
-                    return;
+                    return showFormMessage('You did not change anything.', false);
                 }
                 if (isJP) return submitJP(info.values);
-                submitNonJP(info.values);
+                return submitNonJP(info.values);
             },
         });
         if (isJP && !isVirtual) {
@@ -71,7 +70,7 @@ var SettingsDetailsWS = (function() {
         }
 
         $('#email_consent').on('change', function() {
-          changed = true;
+            changed = true;
         });
 
         if (page.client.is_virtual()) { // Virtual Account
@@ -80,12 +79,12 @@ var SettingsDetailsWS = (function() {
             return;
         }
         // Real Account
-        var birthDate = data.date_of_birth ? moment.utc(new Date(data.date_of_birth * 1000)).format("YYYY-MM-DD") : '';
+        var birthDate = data.date_of_birth ? moment.utc(new Date(data.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
         $('#lblBirthDate').text(birthDate);
         // Generate states list
         var residence = Cookies.get('residence');
         if (residence) {
-            BinarySocket.send({"states_list": residence, "passthrough": {"value": data.address_state}});
+            BinarySocket.send({ states_list: residence, passthrough: { value: data.address_state } });
         }
         if (page.client.residence === 'jp') {
             var jpData = response.get_settings.jp_settings;
@@ -109,9 +108,9 @@ var SettingsDetailsWS = (function() {
             $('#DerivativeTrading').val(jpData.trading_experience_option_trading);
             $('#PurposeOfTrading').val(jpData.trading_purpose);
             if (jpData.hedge_asset !== null && jpData.hedge_asset_amount !== null) {
-              $('#HedgeAsset').val(jpData.hedge_asset);
-              $('#HedgeAssetAmount').val(jpData.hedge_asset_amount);
-              $('.hedge').removeClass('invisible');
+                $('#HedgeAsset').val(jpData.hedge_asset);
+                $('#HedgeAssetAmount').val(jpData.hedge_asset_amount);
+                $('.hedge').removeClass('invisible');
             }
             $('.JpAcc').removeClass('invisible')
                        .removeClass('hidden');
@@ -120,8 +119,8 @@ var SettingsDetailsWS = (function() {
                 '#ForeignCurrencyDeposit, #MarginFX, #InvestmentTrust, #PublicCorporationBond,' +
                 '#DerivativeTrading, #PurposeOfTrading, #HedgeAsset, #HedgeAssetAmount')
                 .on('change', function() {
-                changed = true;
-            });
+                    changed = true;
+                });
         } else {
             $('#lblName').text((data.salutation || '') + ' ' + (data.first_name || '') + ' ' + (data.last_name || ''));
             $(fieldIDs.address1).val(data.address_line_1);
@@ -132,7 +131,7 @@ var SettingsDetailsWS = (function() {
             $(fieldIDs.phone).val(data.phone);
 
             $('#Address1, #Address2, #City, #State, #Postcode, #Phone').on('change', function() {
-              changed = true;
+                changed = true;
             });
 
             $(RealAccElements).removeClass('hidden');
@@ -150,10 +149,10 @@ var SettingsDetailsWS = (function() {
 
         if (states && states.length > 0) {
             states.forEach(function(state) {
-                $field.append($('<option/>', {value: state.value, text: state.text}));
+                $field.append($('<option/>', { value: state.value, text: state.text }));
             });
         } else {
-            $field.replaceWith($('<input/>', {id: fieldIDs.state, name: 'address_state', type: 'text', maxlength: '35'}));
+            $field.replaceWith($('<input/>', { id: fieldIDs.state, name: 'address_state', type: 'text', maxlength: '35' }));
         }
 
         $field.val(defaultValue);
@@ -166,22 +165,22 @@ var SettingsDetailsWS = (function() {
     function toJPSettings(data) {
         var jp_settings = {};
         jp_settings = {};
-        jp_settings["annual_income"]                               = data.annualIncome;
-        jp_settings["financial_asset"]                             = data.financialAsset;
-        jp_settings["occupation"]                                  = data.occupation;
-        jp_settings["trading_experience_equities"]                 = data.equities;
-        jp_settings["trading_experience_commodities"]              = data.commodities;
-        jp_settings["trading_experience_foreign_currency_deposit"] = data.foreignCurrencyDeposit;
-        jp_settings["trading_experience_margin_fx"]                = data.marginFX;
-        jp_settings["trading_experience_investment_trust"]         = data.InvestmentTrust;
-        jp_settings["trading_experience_public_bond"]              = data.publicCorporationBond;
-        jp_settings["trading_experience_option_trading"]           = data.derivativeTrading;
-        jp_settings["trading_purpose"]                             = data.purposeOfTrading;
+        jp_settings.annual_income                               = data.annualIncome;
+        jp_settings.financial_asset                             = data.financialAsset;
+        jp_settings.occupation                                  = data.occupation;
+        jp_settings.trading_experience_equities                 = data.equities;
+        jp_settings.trading_experience_commodities              = data.commodities;
+        jp_settings.trading_experience_foreign_currency_deposit = data.foreignCurrencyDeposit;
+        jp_settings.trading_experience_margin_fx                = data.marginFX;
+        jp_settings.trading_experience_investment_trust         = data.InvestmentTrust;
+        jp_settings.trading_experience_public_bond              = data.publicCorporationBond;
+        jp_settings.trading_experience_option_trading           = data.derivativeTrading;
+        jp_settings.trading_purpose                             = data.purposeOfTrading;
         if (data.purposeOfTrading === 'Hedging') {
-            jp_settings["hedge_asset"]        = data.hedgeAsset;
-            jp_settings["hedge_asset_amount"] = data.hedgeAssetAmount;
+            jp_settings.hedge_asset        = data.hedgeAsset;
+            jp_settings.hedge_asset_amount = data.hedgeAssetAmount;
         }
-        return {jp_settings: jp_settings};
+        return { jp_settings: jp_settings };
     }
 
     function submitJP(data) {
@@ -190,19 +189,19 @@ var SettingsDetailsWS = (function() {
         }
         setDetails(page.client.is_virtual() ? data :
             toJPSettings({
-                hedgeAssetAmount       : trim('#HedgeAssetAmount'),
-                annualIncome           : trim('#AnnualIncome'),
-                financialAsset         : trim('#FinancialAsset'),
-                occupation             : trim('#Occupation'),
-                equities               : trim('#Equities'),
-                commodities            : trim('#Commodities'),
-                foreignCurrencyDeposit : trim('#ForeignCurrencyDeposit'),
-                marginFX               : trim('#MarginFX'),
-                InvestmentTrust        : trim('#InvestmentTrust'),
-                publicCorporationBond  : trim('#PublicCorporationBond'),
-                derivativeTrading      : trim('#DerivativeTrading'),
-                purposeOfTrading       : trim('#PurposeOfTrading'),
-                hedgeAsset             : trim('#HedgeAsset')
+                hedgeAssetAmount      : trim('#HedgeAssetAmount'),
+                annualIncome          : trim('#AnnualIncome'),
+                financialAsset        : trim('#FinancialAsset'),
+                occupation            : trim('#Occupation'),
+                equities              : trim('#Equities'),
+                commodities           : trim('#Commodities'),
+                foreignCurrencyDeposit: trim('#ForeignCurrencyDeposit'),
+                marginFX              : trim('#MarginFX'),
+                InvestmentTrust       : trim('#InvestmentTrust'),
+                publicCorporationBond : trim('#PublicCorporationBond'),
+                derivativeTrading     : trim('#DerivativeTrading'),
+                purposeOfTrading      : trim('#PurposeOfTrading'),
+                hedgeAsset            : trim('#HedgeAsset'),
             }));
     }
 
@@ -214,11 +213,11 @@ var SettingsDetailsWS = (function() {
                     function(v) { return dv.ok(v.trim()); },
                     V2.required,
                     V2.regex(/^\d+$/, [Content.localize().textNumbers]),
-                ]
+                ],
             };
-        } else {
-            return {}; // nothing to validate
         }
+        // else there is nothing to validate
+        return {};
     }
 
     function submitNonJP(data) {
@@ -245,17 +244,17 @@ var SettingsDetailsWS = (function() {
         }
 
         return {
-            address_line_1:   [V2.required, isAddress],
-            address_line_2:   [maybeEmptyAddress],
-            address_city:     [V2.required, isCity],
-            address_state:    [V2.required, isState],
+            address_line_1  : [V2.required, isAddress],
+            address_line_2  : [maybeEmptyAddress],
+            address_city    : [V2.required, isCity],
+            address_state   : [V2.required, isState],
             address_postcode: [V2.required, V2.lengthRange(1, 20), isPostcode],
-            phone:            [V2.lengthRange(6, 35), isPhoneNo],
+            phone           : [V2.lengthRange(6, 35), isPhoneNo],
         };
     }
 
     function setDetails(data) {
-        var req = {"set_settings" : 1};
+        var req = { set_settings: 1 };
         Object.keys(data).forEach(function(key) {
             req[key] = data[key];
         });
@@ -277,12 +276,11 @@ var SettingsDetailsWS = (function() {
     }
 
     function setDetailsResponse(response) {
-        var isError = response.set_settings !== 1;
         // allow user to resubmit the form on error.
-        changed = isError ? true : false;
-        showFormMessage(isError ?
+        changed = response.set_settings !== 1;
+        showFormMessage(changed ?
             'Sorry, an error occurred while processing your account.' :
-            'Your settings have been updated successfully.', !isError);
+            'Your settings have been updated successfully.', !changed);
     }
 
     function onLoad() {
@@ -294,28 +292,28 @@ var SettingsDetailsWS = (function() {
                     return;
                 }
                 var type = response.msg_type;
-                switch(type){
-                    case "authorize":
+                switch (type) {
+                    case 'authorize':
                         SettingsDetailsWS.init();
                         break;
-                    case "get_settings":
-                        if (response.req_id == 1) {
+                    case 'get_settings':
+                        if (response.req_id === 1) {
                             SettingsDetailsWS.getDetailsResponse(response);
                         }
                         break;
-                    case "set_settings":
+                    case 'set_settings':
                         SettingsDetailsWS.setDetailsResponse(response);
                         break;
-                    case "states_list":
+                    case 'states_list':
                         SettingsDetailsWS.populateStates(response);
                         break;
-                    case "error":
+                    case 'error':
                         $('#formMessage').attr('class', 'errorfield').text(response.error.message);
                         break;
                     default:
                         break;
                 }
-            }
+            },
         });
         if (TUser.get().loginid) {
             SettingsDetailsWS.init();
@@ -323,13 +321,13 @@ var SettingsDetailsWS = (function() {
     }
 
     return {
-        init: init,
+        init              : init,
         getDetailsResponse: getDetailsResponse,
         setDetailsResponse: setDetailsResponse,
-        populateStates: populateStates,
-        onLoad: onLoad,
+        populateStates    : populateStates,
+        onLoad            : onLoad,
     };
-}());
+})();
 
 module.exports = {
     SettingsDetailsWS: SettingsDetailsWS,

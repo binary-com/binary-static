@@ -1,6 +1,5 @@
 window._trackJs = {
     onError: function(payload) {
-
         function itemExistInList(item, list) {
             for (var i = 0; i < list.length; i++) {
                 if (item.indexOf(list[i]) > -1) {
@@ -12,16 +11,16 @@ window._trackJs = {
 
         var ignorableErrors = [
             // General script error, not actionable
-            "[object Event]",
+            '[object Event]',
             // General script error, not actionable
-            "Script error.",
+            'Script error.',
             // error when user  interrupts script loading, nothing to fix
-            "Error loading script",
+            'Error loading script',
             // an error caused by DealPly (http://www.dealply.com/) chrome extension
-            "DealPly",
+            'DealPly',
             // this error is reported when a post request returns error, i.e. html body
             // the details provided in this case are completely useless, thus discarded
-            "Unexpected token <"
+            'Unexpected token <',
         ];
 
         if (itemExistInList(payload.message, ignorableErrors)) {
@@ -29,9 +28,8 @@ window._trackJs = {
         }
 
         payload.network = payload.network.filter(function(item) {
-
             // ignore random errors from Intercom
-            if (item.statusCode === 403 && payload.message.indexOf("intercom") > -1) {
+            if (item.statusCode === 403 && payload.message.indexOf('intercom') > -1) {
                 return false;
             }
 
@@ -39,7 +37,7 @@ window._trackJs = {
         });
 
         return true;
-    }
+    },
 };
 
 // if Track:js is already loaded, we need to initialize it

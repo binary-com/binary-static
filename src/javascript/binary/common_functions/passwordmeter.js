@@ -63,92 +63,75 @@ NOTE: Instead of putting out all the logging information,
 ************************************************************ */
 function testPassword(passwd) {
     var intScore   = 0;
-    var strVerdict = "weak";
-    var strLog     = "";
+    var strVerdict = 'weak';
 
     // PASSWORD LENGTH
     // length 4 or less
     if (passwd.length < 5) {
-      intScore = (intScore + 3);
-      strLog   = strLog + "3 points for length (" + passwd.length + ")\n";
-    }
-    // length between 5 and 7
-    else if (passwd.length > 4 && passwd.length < 8) {
-      intScore = (intScore + 6);
-      strLog   = strLog + "6 points for length (" + passwd.length + ")\n";
-    }
-    // length between 8 and 15
-    else if (passwd.length > 7 && passwd.length < 16) {
-      intScore = (intScore + 12);
-      strLog   = strLog + "12 points for length (" + passwd.length + ")\n";
-    }
-    // length 16 or more
-    else if (passwd.length > 15) {
-      intScore = (intScore + 18);
-      strLog   = strLog + "18 point for length (" + passwd.length + ")\n";
+        intScore += 3;
+    } else if (passwd.length > 4 && passwd.length < 8) {
+        // length between 5 and 7
+        intScore += 6;
+    } else if (passwd.length > 7 && passwd.length < 16) {
+        // length between 8 and 15
+        intScore += 12;
+    } else if (passwd.length > 15) {
+        // length 16 or more
+        intScore += 18;
     }
 
     // LETTERS (Not exactly implemented as dictacted above because of my limited understanding of Regex)
     // [verified] at least one lower case letter
     if (passwd.match(/[a-z]/)) {
-      intScore = (intScore + 1);
-      strLog   = strLog + "1 point for at least one lower case char\n";
+        intScore += 1;
     }
     // [verified] at least one upper case letter
     if (passwd.match(/[A-Z]/)) {
-      intScore = (intScore + 5);
-      strLog   = strLog + "5 points for at least one upper case char\n";
+        intScore += 5;
     }
 
     // NUMBERS
     // [verified] at least one number
     if (passwd.match(/\d+/)) {
-      intScore = (intScore + 5);
-      strLog   = strLog + "5 points for at least one number\n";
+        intScore += 5;
     }
     // [verified] at least three numbers
     if (passwd.match(/(.*[0-9].*[0-9].*[0-9])/)) {
-      intScore = (intScore + 5);
-      strLog   = strLog + "5 points for at least three numbers\n";
+        intScore += 5;
     }
 
     // SPECIAL CHAR
     // [verified] at least one special character
     if (passwd.match(/.[!,@,#,$,%,^,&,*,?,_,~]/)) {
-      intScore = (intScore + 5);
-      strLog   = strLog + "5 points for at least one special char\n";
+        intScore += 5;
     }
     // [verified] at least two special characters
     if (passwd.match(/(.*[!,@,#,$,%,^,&,*,?,_,~].*[!,@,#,$,%,^,&,*,?,_,~])/)) {
-      intScore = (intScore + 5);
-      strLog   = strLog + "5 points for at least two special chars\n";
+        intScore += 5;
     }
 
     // COMBOS
     // [verified] both upper and lower case
     if (passwd.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
-      intScore = (intScore + 2);
-      strLog   = strLog + "2 combo points for upper and lower letters\n";
+        intScore += 2;
     }
     // [verified] both letters and numbers
     if (passwd.match(/([a-zA-Z])/) && passwd.match(/([0-9])/)) {
-      intScore = (intScore + 2);
-      strLog   = strLog + "2 combo points for letters and numbers\n";
+        intScore += 2;
     }
     // [verified] letters, numbers, and special characters
     if (passwd.match(/([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9])/)) {
-      intScore = (intScore + 2);
-      strLog   = strLog + "2 combo points for letters, numbers and special chars\n";
+        intScore += 2;
     }
 
     if (intScore < 10) {
-       strVerdict = page.text.localize("Password is weak");
+        strVerdict = page.text.localize('Password is weak');
     } else if (intScore > 9 && intScore < 20) {
-       strVerdict = page.text.localize("Password is moderate");
+        strVerdict = page.text.localize('Password is moderate');
     } else if (intScore > 19) {
-       strVerdict = page.text.localize("Password is strong");
+        strVerdict = page.text.localize('Password is strong');
     } else {
-       strVerdict = page.text.localize("Password is very strong");
+        strVerdict = page.text.localize('Password is very strong');
     }
 
     var array = [intScore, strVerdict];

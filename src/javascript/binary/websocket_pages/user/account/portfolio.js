@@ -1,9 +1,9 @@
-var Portfolio = (function(){
-    'use strict';
+var toJapanTimeIfNeeded = require('../../../base/utility').toJapanTimeIfNeeded;
+var format_money        = require('../../../common_functions/currency_to_symbol').format_money;
+var japanese_client     = require('../../../common_functions/country_base').japanese_client;
 
-    var toJapanTimeIfNeeded = require('../../../base/utility').toJapanTimeIfNeeded,
-        format_money = require('../../../common_functions/currency_to_symbol').format_money,
-        japanese_client = require('../../../common_functions/country_base').japanese_client;
+var Portfolio = (function() {
+    'use strict';
 
     function getBalance(balance, currency) {
         balance = parseFloat(balance);
@@ -12,15 +12,15 @@ var Portfolio = (function(){
 
     function getPortfolioData(c) {
         var portfolio_data = {
-            'transaction_id' : c.transaction_id,
-            'contract_id'    : c.contract_id,
-            'payout'         : parseFloat(c.payout).toFixed(2),
-            'longcode'       : typeof module !== 'undefined' ?
+            transaction_id: c.transaction_id,
+            contract_id   : c.contract_id,
+            payout        : parseFloat(c.payout).toFixed(2),
+            longcode      : typeof module !== 'undefined' ?
                 c.longcode : (japanese_client() ?
-                toJapanTimeIfNeeded(void 0, void 0, c.longcode) : c.longcode),
-            'currency'       : c.currency,
-            'buy_price'      : c.buy_price,
-            'app_id'         : c.app_id
+                    toJapanTimeIfNeeded(undefined, undefined, c.longcode) : c.longcode),
+            currency : c.currency,
+            buy_price: c.buy_price,
+            app_id   : c.app_id,
         };
 
         return portfolio_data;
@@ -28,11 +28,11 @@ var Portfolio = (function(){
 
     function getProposalOpenContract(proposal) {
         var proposal_data = {
-            'contract_id'      : proposal.contract_id,
-            'bid_price'        : parseFloat(proposal.bid_price || 0).toFixed(2),
-            'is_sold'          : proposal.is_sold,
-            'is_valid_to_sell' : proposal.is_valid_to_sell,
-            'currency'         : proposal.currency
+            contract_id     : proposal.contract_id,
+            bid_price       : parseFloat(proposal.bid_price || 0).toFixed(2),
+            is_sold         : proposal.is_sold,
+            is_valid_to_sell: proposal.is_valid_to_sell,
+            currency        : proposal.currency,
         };
 
         return proposal_data;
@@ -52,15 +52,15 @@ var Portfolio = (function(){
     }
 
     var external = {
-        getBalance: getBalance,
-        getPortfolioData: getPortfolioData,
+        getBalance             : getBalance,
+        getPortfolioData       : getPortfolioData,
         getProposalOpenContract: getProposalOpenContract,
-        getIndicativeSum: function(values) { return getSum(values, 'indicative'); },
-        getSumPurchase: function(values) { return getSum(values, 'buy_price'); },
+        getIndicativeSum       : function(values) { return getSum(values, 'indicative'); },
+        getSumPurchase         : function(values) { return getSum(values, 'buy_price'); },
     };
 
     return external;
-}());
+})();
 
 module.exports = {
     Portfolio: Portfolio,
