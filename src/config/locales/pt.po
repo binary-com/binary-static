@@ -3066,7 +3066,9 @@ msgstr "Eu declaro não ser uma pessoa politicamente exposta."
 msgid "I forgot my password, what should I do?"
 msgstr "Esqueci a minha senha, o que devo fazer?"
 
-msgid "I have Real Money Account"
+#, fuzzy
+#| msgid "I have Real Money Account"
+msgid "I have a Real Money Account"
 msgstr "Eu tenho uma conta de dinheiro real"
 
 msgid "I have read and agree to the"
@@ -7042,9 +7044,6 @@ msgstr "Ver os seus limites de negociação e de retirada de fundos."
 msgid "Virtual Account"
 msgstr "Conta Virtual"
 
-msgid "Virtual money credit to account"
-msgstr "Crédito de dinheiro virtual na conta"
-
 msgid "Volatility Index Markets"
 msgstr "Mercados \"Índice de volatilidade\""
 
@@ -8054,6 +8053,11 @@ msgstr "para a sua conta."
 
 msgid "today"
 msgstr "hoje"
+
+#, fuzzy
+#| msgid "Fridays"
+msgid "today, Fridays"
+msgstr "Sexta-feira"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "usar ou reproduzir a API %1 de outra forma que não seja permitida por estes termos ou"
@@ -9152,6 +9156,9 @@ msgstr "Detalhes da Conta"
 
 msgid "Terms and Conditions Approval"
 msgstr "Aprovação dos termos e condições"
+
+#~ msgid "Virtual money credit to account"
+#~ msgstr "Crédito de dinheiro virtual na conta"
 
 #~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
 #~ msgstr "Ganhe 10% a 1000% sobre a sua aposta se você estiver correto. Para ter um retorno mais alto, escolha "

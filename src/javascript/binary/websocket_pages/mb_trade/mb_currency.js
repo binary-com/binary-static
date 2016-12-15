@@ -30,7 +30,7 @@ function MBDisplayCurrencies(selected, showClass) {
                 content = document.createTextNode(currency);
 
             option.setAttribute('value', currency);
-            /*if (selected && selected == key) {
+            /* if (selected && selected == key) {
                 option.setAttribute('selected', 'selected');
             }*/
 

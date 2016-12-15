@@ -46,7 +46,7 @@ var TradingEvents = (function () {
          * and request for new Contract details to populate the form and request price accordingly
          */
         var marketNavElement = document.getElementById('contract_markets');
-        var onMarketChange = function(market){
+        var onMarketChange = function(market) {
             showPriceOverlay();
             Defaults.set('market', market);
 
@@ -107,7 +107,7 @@ var TradingEvents = (function () {
                     chartFrameSource();
                     showFormOverlay();
                     showPriceOverlay();
-                    if(e.target.selectedIndex < 0) {
+                    if (e.target.selectedIndex < 0) {
                         e.target.selectedIndex = 0;
                     }
                     var underlying = e.target.value;
@@ -133,8 +133,8 @@ var TradingEvents = (function () {
         /*
          * bind event to change in duration amount, request new price
          */
-        function triggerOnDurationChange(e){
-            if (e.target.value % 1 !== 0 ) {
+        function triggerOnDurationChange(e) {
+            if (e.target.value % 1 !== 0) {
                 e.target.value = Math.floor(e.target.value);
             }
             Defaults.set('duration_amount', e.target.value);
@@ -155,10 +155,11 @@ var TradingEvents = (function () {
             $('#duration_amount').on('change', debounce(function (e) {
                 // using Defaults, to update the value by datepicker if it was emptied by keyboard (delete)
                 Durations.validateMinDurationAmount();
-                if(inputEventTriggered === false || !Defaults.get('duration_amount'))
+                if (inputEventTriggered === false || !Defaults.get('duration_amount'))                    {
                     triggerOnDurationChange(e);
-                else
+                } else {
                     inputEventTriggered = false;
+                }
             }));
         }
 
@@ -201,6 +202,7 @@ var TradingEvents = (function () {
                 if (timeIsValid($('#expiry_date'))) {
                     Durations.selectEndDate(moment(this.getAttribute('data-value')));
                 }
+                return true;
             });
         }
 
@@ -216,6 +218,7 @@ var TradingEvents = (function () {
                         Durations.setTime(endTimeElement.value);
                         Price.processPriceRequest();
                     }
+                    return true;
                 });
         }
 
@@ -226,7 +229,7 @@ var TradingEvents = (function () {
         if (amountElement) {
             amountElement.addEventListener('keypress', onlyNumericOnKeypress);
 
-            amountElement.addEventListener('input', debounce( function(e) {
+            amountElement.addEventListener('input', debounce(function(e) {
                 e.target.value = e.target.value.replace(/[^0-9.]/g, '');
                 if (isStandardFloat(e.target.value)) {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
@@ -247,7 +250,7 @@ var TradingEvents = (function () {
             dateStartElement.addEventListener('change', function (e) {
                 Defaults.set('date_start', e.target.value);
                 var r = Durations.onStartDateChange(e.target.value);
-                if(r>=0){
+                if (r >= 0) {
                     Price.processPriceRequest();
                 }
             });
@@ -276,7 +279,7 @@ var TradingEvents = (function () {
                     var elem = document.getElementById('underlying');
                     var underlyings = elem.children;
 
-                    for (var i = 0, len = underlyings.length; i < len; i++ ) {
+                    for (var i = 0, len = underlyings.length; i < len; i++) {
                         if (e.target.value !== 'all' && e.target.value !== underlyings[i].className) {
                             underlyings[i].disabled = true;
                         } else {
@@ -316,17 +319,17 @@ var TradingEvents = (function () {
                 var id = this.getAttribute('data-purchase-id'),
                     askPrice = this.getAttribute('data-ask-price');
 
-                var params = {buy: id, price: askPrice, passthrough:{}};
-                for(var attr in this.attributes){
-                    if(attr && this.attributes[attr] && this.attributes[attr].name &&
-                        !/data\-balloon/.test(this.attributes[attr].name)){ // do not send tooltip data
+                var params = { buy: id, price: askPrice, passthrough: {} };
+                Object.keys(this.attributes).forEach(function(attr) {
+                    if (attr && this.attributes[attr] && this.attributes[attr].name &&
+                            !/data\-balloon/.test(this.attributes[attr].name)) { // do not send tooltip data
                         var m = this.attributes[attr].name.match(/data\-(.+)/);
 
-                        if(m && m[1] && m[1]!=="purchase-id" && m[1]!=="passthrough"){
+                        if (m && m[1] && m[1] !== 'purchase-id' && m[1] !== 'passthrough') {
                             params.passthrough[m[1]] = this.attributes[attr].value;
                         }
                     }
-                }
+                }, this);
                 if (id && askPrice) {
                     BinarySocket.send(params);
                     Price.incrFormId();
@@ -352,7 +355,7 @@ var TradingEvents = (function () {
          */
         var barrierElement = document.getElementById('barrier');
         if (barrierElement) {
-            barrierElement.addEventListener('input', debounce( function (e) {
+            barrierElement.addEventListener('input', debounce(function (e) {
                 Barriers.validateBarrier();
                 Defaults.set('barrier', e.target.value);
                 Price.processPriceRequest();
@@ -365,7 +368,7 @@ var TradingEvents = (function () {
          */
         var lowBarrierElement = document.getElementById('barrier_low');
         if (lowBarrierElement) {
-            lowBarrierElement.addEventListener('input', debounce( function (e) {
+            lowBarrierElement.addEventListener('input', debounce(function (e) {
                 Defaults.set('barrier_low', e.target.value);
                 Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
@@ -377,7 +380,7 @@ var TradingEvents = (function () {
          */
         var highBarrierElement = document.getElementById('barrier_high');
         if (highBarrierElement) {
-            highBarrierElement.addEventListener('input', debounce( function (e) {
+            highBarrierElement.addEventListener('input', debounce(function (e) {
                 Defaults.set('barrier_high', e.target.value);
                 Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
@@ -389,8 +392,7 @@ var TradingEvents = (function () {
          */
         var predictionElement = document.getElementById('prediction');
         if (predictionElement) {
-
-            predictionElement.addEventListener('change', debounce( function (e) {
+            predictionElement.addEventListener('change', debounce(function (e) {
                 Defaults.set('prediction', e.target.value);
                 Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
@@ -402,7 +404,7 @@ var TradingEvents = (function () {
          */
         var amountPerPointElement = document.getElementById('amount_per_point');
         if (amountPerPointElement) {
-            amountPerPointElement.addEventListener('input', debounce( function (e) {
+            amountPerPointElement.addEventListener('input', debounce(function (e) {
                 if (isStandardFloat(e.target.value)) {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
@@ -432,7 +434,7 @@ var TradingEvents = (function () {
          */
         var stopLossElement = document.getElementById('stop_loss');
         if (stopLossElement) {
-            stopLossElement.addEventListener('input', debounce( function (e) {
+            stopLossElement.addEventListener('input', debounce(function (e) {
                 if (isStandardFloat(e.target.value)) {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
@@ -447,7 +449,7 @@ var TradingEvents = (function () {
          */
         var stopProfitElement = document.getElementById('stop_profit');
         if (stopProfitElement) {
-            stopProfitElement.addEventListener('input', debounce( function (e) {
+            stopProfitElement.addEventListener('input', debounce(function (e) {
                 if (isStandardFloat(e.target.value)) {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
@@ -458,20 +460,20 @@ var TradingEvents = (function () {
         }
 
         // For verifying there are 2 digits after decimal
-        var isStandardFloat = (function(value){
-            return (!isNaN(value) && value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length>2);
+        var isStandardFloat = (function(value) {
+            return (!isNaN(value) && value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length > 2);
         });
 
         var init_logo = document.getElementById('trading_init_progress');
-        if(init_logo){
-            init_logo.addEventListener('click', debounce( function () {
+        if (init_logo) {
+            init_logo.addEventListener('click', debounce(function () {
                 reloadPage();
             }));
         }
 
         var tip = document.getElementById('symbol_tip');
-        if(init_logo){
-            tip.addEventListener('click', debounce( function (e) {
+        if (init_logo) {
+            tip.addEventListener('click', debounce(function (e) {
                 var url = e.target.getAttribute('target');
                 load_with_pjax(url);
             }));
@@ -481,8 +483,8 @@ var TradingEvents = (function () {
          * attach datepicker and timepicker to end time durations
          * have to use jquery
          */
-         attachTimePicker();
-         $("#expiry_time").on('focus click', attachTimePicker);
+        attachTimePicker();
+        $('#expiry_time').on('focus click', attachTimePicker);
     };
 
     function attachTimePicker() {

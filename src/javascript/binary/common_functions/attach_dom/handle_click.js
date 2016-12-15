@@ -9,6 +9,7 @@ var HandleClick = function (param, ...values) {
             return values && MBPrice.processBuy(values[0], values[1]);
         // no default
     }
+    return null;
 };
 
 module.exports = {

@@ -11,7 +11,7 @@ var DatePicker       = require('../../../../components/date_picker').DatePicker;
 var dateValueChanged = require('../../../../common_functions/common_functions').dateValueChanged;
 
 var SelfExclusionWS = (function() {
-    "use strict";
+    'use strict';
 
     var $form,
         $loading;
@@ -44,7 +44,7 @@ var SelfExclusionWS = (function() {
 
         bind_validation.simple($form[0], {
             validate: validate,
-            submit: submitForm,
+            submit  : submitForm,
         });
 
         initDatePicker();
@@ -54,13 +54,13 @@ var SelfExclusionWS = (function() {
     function init() {
         Content.populate();
         BinarySocket.init({
-            onmessage: function(msg){
+            onmessage: function(msg) {
                 var response = JSON.parse(msg.data);
                 var msg_type = response.msg_type;
                 if      (msg_type === 'authorize') reallyInit();
                 else if (msg_type === 'get_self_exclusion') getResponse(response);
                 else if (msg_type === 'set_self_exclusion') setResponse(response);
-            }
+            },
         });
         if ('is_virtual' in TUser.get()) {
             reallyInit();
@@ -71,7 +71,7 @@ var SelfExclusionWS = (function() {
     // ----- Get Values -----
     // ----------------------
     function getRequest() {
-        BinarySocket.send({get_self_exclusion: 1});
+        BinarySocket.send({ get_self_exclusion: 1 });
     }
 
     function getResponse(response) {
@@ -90,6 +90,7 @@ var SelfExclusionWS = (function() {
             fields[key] = value + '';
             $form.find('#' + key).val(value);
         });
+        return true;
     }
 
     function initDatePicker() {
@@ -105,6 +106,7 @@ var SelfExclusionWS = (function() {
             if (!dateValueChanged(this, 'date')) {
                 return false;
             }
+            return true;
         });
     }
 
@@ -121,7 +123,7 @@ var SelfExclusionWS = (function() {
             var errMsg = response.error.message;
             var field  = response.error.field;
             if (field) {
-                ValidationUI.draw('input[name='+field+']', errMsg);
+                ValidationUI.draw('input[name=' + field + ']', errMsg);
             } else {
                 showFormMessage(page.text.localize(errMsg), false);
             }
@@ -158,7 +160,7 @@ var SelfExclusionWS = (function() {
     function leftPadZeros(strint, zeroCount) {
         var result = strint;
         for (var i = 0; i < (zeroCount - strint.length); i++) {
-            result = "0" + result;
+            result = '0' + result;
         }
         return result;
     }
@@ -226,19 +228,19 @@ var SelfExclusionWS = (function() {
         var validDate = V2.momentFmt('YYYY-MM-DD', 'Please select a valid date');
 
         schema = {
-            max_7day_losses:    [numericOrEmpty, againstField('max_7day_losses')],
-            max_7day_turnover:  [numericOrEmpty, againstField('max_7day_turnover')],
-            max_30day_losses:   [numericOrEmpty, againstField('max_30day_losses')],
-            max_30day_turnover: [numericOrEmpty, againstField('max_30day_turnover')],
-            max_balance:        [numericOrEmpty, againstField('max_balance')],
-            max_losses:         [numericOrEmpty, againstField('max_losses')],
-            max_open_bets:      [numericOrEmpty, againstField('max_open_bets')],
-            max_turnover:       [numericOrEmpty, againstField('max_turnover')],
+            max_7day_losses       : [numericOrEmpty, againstField('max_7day_losses')],
+            max_7day_turnover     : [numericOrEmpty, againstField('max_7day_turnover')],
+            max_30day_losses      : [numericOrEmpty, againstField('max_30day_losses')],
+            max_30day_turnover    : [numericOrEmpty, againstField('max_30day_turnover')],
+            max_balance           : [numericOrEmpty, againstField('max_balance')],
+            max_losses            : [numericOrEmpty, againstField('max_losses')],
+            max_open_bets         : [numericOrEmpty, againstField('max_open_bets')],
+            max_turnover          : [numericOrEmpty, againstField('max_turnover')],
             session_duration_limit: [numericOrEmpty, againstField('session_duration_limit'), validSessionDuration],
-            exclude_until:          [allowEmpty, validDate, afterToday, validExclusionDate, toDateString],
+            exclude_until         : [allowEmpty, validDate, afterToday, validExclusionDate, toDateString],
             // these two are combined.
             timeout_until_duration: [allowEmptyUnless('timeout_until'), validDate],
-            timeout_until:          [allowEmpty, validTime],
+            timeout_until         : [allowEmpty, validTime],
         };
         return schema;
     }
@@ -310,8 +312,7 @@ var SelfExclusionWS = (function() {
             if (!res.isOk) {
                 ValidationUI.draw(
                     'input[name=timeout_until_duration]',
-                    res.value[0]
-                );
+                    res.value[0]);
                 valid = false;
             } else {
                 delete values.timeout_until_duration;
@@ -320,8 +321,8 @@ var SelfExclusionWS = (function() {
         }
 
         return {
-            data: values,
-            valid: valid,
+            data   : values,
+            valid  : valid,
             changed: valid && detectChange(validation.raw, fields),
         };
     }
@@ -358,7 +359,7 @@ var SelfExclusionWS = (function() {
     return {
         init: init,
     };
-}());
+})();
 
 module.exports = {
     SelfExclusionWS: SelfExclusionWS,
