@@ -1,16 +1,17 @@
-var expect = require('chai').expect;
+var expect    = require('chai').expect;
 var statement = require('../statement').Statement;
-var ws = require('ws');
-var LiveApi = require('binary-live-api').LiveApi;
+var ws        = require('ws');
+var LiveApi   = require('binary-live-api').LiveApi;
+
 var api = new LiveApi({ websocket: ws });
 
 describe('Statement', function() {
     var statement_ws;
-    before(function(done){
+    before(function(done) {
         this.timeout(10000);
-        //this is a read token, even if other people take it, won't be able to do any harm
-        api.authorize('hhh9bfrbq0G3dRf').then(function(){
-            api.getStatement({limit: 1, description: 1, offset: 0}).then(function(response){
+        // this is a read token, even if other people take it, won't be able to do any harm
+        api.authorize('hhh9bfrbq0G3dRf').then(function() {
+            api.getStatement({ limit: 1, description: 1, offset: 0 }).then(function(response) {
                 statement_ws = response.statement;
                 done();
             });

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-09 08:16+0000\n"
+"PO-Revision-Date: 2016-12-15 04:20+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -3060,8 +3060,6 @@ msgstr "I declare I am not a Foreign Politically Exposed Person."
 msgid "I forgot my password, what should I do?"
 msgstr "我忘記了密碼，該怎麼辦？"
 
-#, fuzzy
-#| msgid "I have Real Money Account"
 msgid "I have a Real Money Account"
 msgstr "我有真實資金帳戶"
 
@@ -7028,9 +7026,6 @@ msgstr "檢視您的交易和取款限額。"
 msgid "Virtual Account"
 msgstr "虛擬帳戶"
 
-msgid "Virtual money credit to account"
-msgstr "虛擬資金存入帳戶"
-
 msgid "Volatility Index Markets"
 msgstr "波動率指數市場"
 
@@ -8038,6 +8033,11 @@ msgstr "入您的帳戶。"
 
 msgid "today"
 msgstr "今天"
+
+#, fuzzy
+#| msgid "Fridays"
+msgid "today, Fridays"
+msgstr "星期五"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "使用或轉載%1 API（除非這些條款允許）或"
@@ -9136,6 +9136,9 @@ msgstr "帳戶詳細資料"
 
 msgid "Terms and Conditions Approval"
 msgstr "條款和條件審批"
+
+#~ msgid "Virtual money credit to account"
+#~ msgstr "虛擬資金存入帳戶"
 
 #~ msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
 #~ msgstr "了解更多關於我們的想法和運作方式詳情。參閱<a href='https://blog.binary.com/' target='_blank'>我們的部落格</a>，以便了解我們的概念來源和背景故事。"

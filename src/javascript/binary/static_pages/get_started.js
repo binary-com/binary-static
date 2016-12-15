@@ -1,15 +1,14 @@
 var GetStarted = (function() {
     var select_nav_element = function() {
-      var $navLink = $('.nav li a');
-      var $navList = $('.nav li');
-      $navList.removeClass('selected');
-      for (var i = 0; i < $navLink.length; i++) {
-        if ($navLink[i].href.match(window.location.pathname)) {
-          document.getElementsByClassName('nav')[0].getElementsByTagName('li')[i].setAttribute('class', 'selected');
-          break;
+        var $navLink = $('.nav li a');
+        var $navList = $('.nav li');
+        $navList.removeClass('selected');
+        for (var i = 0; i < $navLink.length; i++) {
+            if ($navLink[i].href.match(window.location.pathname)) {
+                document.getElementsByClassName('nav')[0].getElementsByTagName('li')[i].setAttribute('class', 'selected');
+                break;
+            }
         }
-      }
-      return;
     };
 
     var get_started_behaviour = function() {

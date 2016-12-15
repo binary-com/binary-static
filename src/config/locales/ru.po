@@ -7049,9 +7049,6 @@ msgstr "Лимиты на торговлю и вывод."
 msgid "Virtual Account"
 msgstr "Демо-счет"
 
-msgid "Virtual money credit to account"
-msgstr "Виртуальный кредит на счёт"
-
 msgid "Volatility Index Markets"
 msgstr "Рынки Индекса волатильности"
 
@@ -8062,6 +8059,11 @@ msgstr "на свой счет."
 
 msgid "today"
 msgstr "сегодня"
+
+#, fuzzy
+#| msgid "Fridays"
+msgid "today, Fridays"
+msgstr "пятница"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "использовать или воспроизводить API %1, за исключением случаев, разрешенных данными Правилами, а также"
@@ -9160,6 +9162,9 @@ msgstr "Информация о счете"
 
 msgid "Terms and Conditions Approval"
 msgstr "Согласие с правилами и условиями"
+
+#~ msgid "Virtual money credit to account"
+#~ msgstr "Виртуальный кредит на счёт"
 
 #~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
 #~ msgstr "Получите прибыль от 10% до 1000% от Вашей ставки, если прогноз правилен. Увеличьте свои шансы на более высокую прибыль, выбрав "

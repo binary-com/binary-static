@@ -11,17 +11,17 @@ var isVisible      = require('../../common_functions/common_functions').isVisibl
  *
  */
 
-var Defaults = (function(){
+var Defaults = (function() {
     'use strict';
 
     var params = {};
     var getDefault = function(key) {
         var pValue = params[key] || page.url.param(key),
             sValue = sessionStorage.getItem(key);
-        if(pValue && (!sValue || pValue != sValue)) {
+        if (pValue && (!sValue || pValue !== sValue)) {
             sessionStorage.setItem(key, pValue);
         }
-        if(!pValue && sValue) {
+        if (!pValue && sValue) {
             setDefault(key, sValue);
         }
         return pValue || sValue;
@@ -30,11 +30,11 @@ var Defaults = (function(){
     var setDefault = function(key, value) {
         if (!key) return;
         value = value || '';
-        if(!objectNotEmpty(params)) params = page.url.params_hash();
-        if(params[key] != value) {
+        if (!objectNotEmpty(params)) params = page.url.params_hash();
+        if (params[key] !== value) {
             params[key] = value;
             // to increase speed, do not set values when form is still loading
-            if(!isVisible(document.getElementById('trading_init_progress'))) {
+            if (!isVisible(document.getElementById('trading_init_progress'))) {
                 sessionStorage.setItem(key, value);
                 updateURL();
             }
@@ -42,31 +42,30 @@ var Defaults = (function(){
     };
 
     var removeDefault = function() {
-        if(!objectNotEmpty(params)) params = page.url.params_hash();
+        if (!objectNotEmpty(params)) params = page.url.params_hash();
         var isUpdated = false;
         for (var i = 0; i < arguments.length; i++) {
-            if(params.hasOwnProperty(arguments[i])) {
+            if (params.hasOwnProperty(arguments[i])) {
                 sessionStorage.removeItem(arguments[i]);
-                delete(params[arguments[i]]);
+                delete (params[arguments[i]]);
                 isUpdated = true;
             }
         }
-        if(isUpdated) {
+        if (isUpdated) {
             updateURL();
         }
     };
 
     var updateAll = function() {
-        for(var key in params)
-            if (params.hasOwnProperty(key)) {
-                sessionStorage.setItem(key, params[key]);
-            }
+        Object.keys(params).forEach(function(key) {
+            sessionStorage.setItem(key, params[key]);
+        });
         updateURL();
     };
 
     var updateURL = function() {
         var url = window.location.pathname + '?' + page.url.params_hash_to_string(params);
-        window.history.replaceState({'url': url}, null, url);
+        window.history.replaceState({ url: url }, null, url);
     };
 
     return {
@@ -74,7 +73,7 @@ var Defaults = (function(){
         set   : setDefault,
         update: updateAll,
         remove: removeDefault,
-        clear : function(){params = {};}
+        clear : function() { params = {}; },
     };
 })();
 

@@ -7209,9 +7209,6 @@ msgstr "取引上限と出金限度額を確認する"
 msgid "Virtual Account"
 msgstr "デモ口座番号"
 
-msgid "Virtual money credit to account"
-msgstr "バーチャルマネーを入金"
-
 msgid "Volatility Index Markets"
 msgstr "ボラティリティインデックス市場"
 
@@ -8269,6 +8266,11 @@ msgstr "アカウントへ"
 
 msgid "today"
 msgstr "本日"
+
+#, fuzzy
+#| msgid "Fridays"
+msgid "today, Fridays"
+msgstr "金曜日"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "これら規約で許可されている以上の%1 APIの使用または再現"
@@ -9384,6 +9386,9 @@ msgstr "ご口座の詳細情報"
 
 msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
+
+#~ msgid "Virtual money credit to account"
+#~ msgstr "バーチャルマネーを入金"
 
 #~ msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
 #~ msgstr "当社の企業理念や仕組みを見てみませんか。<a href='https://blog.binary.com/' target='_blank'>当社のブログ</a>から刺激あるストーリーやアイディアをご覧ください。"
