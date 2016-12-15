@@ -3065,7 +3065,9 @@ msgstr "ข้าพเจ้าแสดงเจตนารมณ์ ข้�
 msgid "I forgot my password, what should I do?"
 msgstr "ฉันลืมรหัสผ่าน ฉันจะทำอย่างไร?"
 
-msgid "I have Real Money Account"
+#, fuzzy
+#| msgid "I have Real Money Account"
+msgid "I have a Real Money Account"
 msgstr "ฉันมีบัญชีเงินจริง"
 
 msgid "I have read and agree to the"
@@ -7040,9 +7042,6 @@ msgstr "ดูวงเงินการซื้อขายและวงเ
 msgid "Virtual Account"
 msgstr "บัญชีทดลองใช้"
 
-msgid "Virtual money credit to account"
-msgstr "เครดิตเงินเสมือนไปยังบัญชี"
-
 msgid "Volatility Index Markets"
 msgstr "ตลาดดัชนีความผันผวน"
 
@@ -8050,6 +8049,11 @@ msgstr "ที่บัญชีของท่าน"
 
 msgid "today"
 msgstr "วันนี้"
+
+#, fuzzy
+#| msgid "Fridays"
+msgid "today, Fridays"
+msgstr "วันศุกร์"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "ใช้ หรือทำ API ของ %1 ใหม่ โดยได้รับอนุญาตภายใต้ข้อตกลงเหล่านี้ หรือ"
@@ -9148,6 +9152,9 @@ msgstr "รายละเอียดบัญชี"
 
 msgid "Terms and Conditions Approval"
 msgstr "การอนุมัติข้อตกลงและเงื่อนไข"
+
+#~ msgid "Virtual money credit to account"
+#~ msgstr "เครดิตเงินเสมือนไปยังบัญชี"
 
 #~ msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
 #~ msgstr "มาดูว่าเราคิด และ ทำงานกันอย่างไร  อ่าน <a href='https://blog.binary.com/' target='_blank'>บล็อกของเรา</a> เพื่อศึกษาเรื่องราวและแนวคิดที่เป็นแรงบันดาลใจของเรา"

@@ -17,14 +17,13 @@ var addComma        = require('../../common_functions/string_util').addComma;
 var MBPrice = (function() {
     'use strict';
 
-    var prices            = {},
-        contract_types    = {},
-        barriers          = [],
-        req_id            = 0,
-        res_count         = 0,
-        is_displayed      = false,
-        price_selector    = '.prices-wrapper .price-rows',
-        proposal_response = {},
+    var prices         = {},
+        contract_types = {},
+        barriers       = [],
+        req_id         = 0,
+        res_count      = 0,
+        is_displayed   = false,
+        price_selector = '.prices-wrapper .price-rows',
         $tables;
 
     var addPriceObj = function(req) {
@@ -50,7 +49,7 @@ var MBPrice = (function() {
         response.proposal_array.proposals.forEach(function(proposal) {
             var barrier = makeBarrier(proposal),
                 prev_proposal = $.extend({}, prices[barrier][contract_type]);
-            prices[barrier][contract_type] = $.extend({echo_req: response.echo_req}, proposal);
+            prices[barrier][contract_type] = $.extend({ echo_req: response.echo_req }, proposal);
 
             if (!objectNotEmpty(prev_proposal)) {
                 res_count++;
@@ -60,7 +59,6 @@ var MBPrice = (function() {
             if (objectNotEmpty(prev_proposal) && !prev_proposal.error) {
                 prices[barrier][contract_type].prev_price = prev_proposal.ask_price;
             }
-
         });
 
         // populate table if all proposals received
@@ -105,7 +103,7 @@ var MBPrice = (function() {
             var values     = getValues(proposal),
                 values_opp = getValues(prices[barrier][contract_info.opposite]);
 
-            price_rows[+contract_info.order    ].innerHTML = makePriceRow(values    , true);
+            price_rows[+contract_info.order].innerHTML     = makePriceRow(values,     true);
             price_rows[+contract_info_opp.order].innerHTML = makePriceRow(values_opp, true);
         });
     };
@@ -116,15 +114,15 @@ var MBPrice = (function() {
             contract_type = proposal.echo_req.contract_type,
             proposal_opp  = prices[barrier][contract_types[contract_type].opposite];
         return {
-            contract_type : contract_type,
-            barrier       : barrier,
-            id            : !proposal.error ? proposal.id : undefined,
-            is_active     : !proposal.error && proposal.ask_price,
-            message       :  proposal.error && proposal.error.code !== 'RateLimit' ? proposal.error.message : '',
-            ask_price     : getAskPrice(proposal),
-            sell_price    : payout - getAskPrice(proposal_opp),
-            ask_price_movement  : !proposal.error ? getMovementDirection(proposal.prev_price, proposal.ask_price) : '',
-            sell_price_movement : proposal_opp && !proposal_opp.error ? getMovementDirection(proposal_opp.ask_price, proposal_opp.prev_price) : '',
+            contract_type      : contract_type,
+            barrier            : barrier,
+            id                 : !proposal.error ? proposal.id : undefined,
+            is_active          : !proposal.error && proposal.ask_price,
+            message            : proposal.error && proposal.error.code !== 'RateLimit' ? proposal.error.message : '',
+            ask_price          : getAskPrice(proposal),
+            sell_price         : payout - getAskPrice(proposal_opp),
+            ask_price_movement : !proposal.error ? getMovementDirection(proposal.prev_price, proposal.ask_price) : '',
+            sell_price_movement: proposal_opp && !proposal_opp.error ? getMovementDirection(proposal_opp.ask_price, proposal_opp.prev_price) : '',
         };
     };
 
@@ -165,7 +163,7 @@ var MBPrice = (function() {
     function processBuy(barrier, contract_type) {
         if (!barrier || !contract_type) return;
         if (!page.client.is_logged_in) {
-            MBNotifications.show({text: page.text.localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true});
+            MBNotifications.show({ text: page.text.localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true });
             return;
         }
         MBPrice.showPriceOverlay();
@@ -194,19 +192,19 @@ var MBPrice = (function() {
         if (!proposal || proposal.error) return;
 
         var req = {
-            buy   : 1,
-            price : proposal.ask_price,
+            buy       : 1,
+            price     : proposal.ask_price,
             parameters: {
-                amount        : proposal.echo_req.amount,
-                barrier       : proposal.barrier,
-                basis         : 'payout',
-                contract_type : proposal.echo_req.contract_type,
-                currency      : MBContract.getCurrency(),
-                symbol        : proposal.echo_req.symbol,
-                date_expiry   : proposal.echo_req.date_expiry,
-                trading_period_start  : proposal.echo_req.trading_period_start,
-                app_markup_percentage : '0',
-            }
+                amount               : proposal.echo_req.amount,
+                barrier              : proposal.barrier,
+                basis                : 'payout',
+                contract_type        : proposal.echo_req.contract_type,
+                currency             : MBContract.getCurrency(),
+                symbol               : proposal.echo_req.symbol,
+                date_expiry          : proposal.echo_req.date_expiry,
+                trading_period_start : proposal.echo_req.trading_period_start,
+                app_markup_percentage: '0',
+            },
         };
 
         if (proposal.barrier2) {
@@ -225,17 +223,17 @@ var MBPrice = (function() {
     };
 
     return {
-        display                : display,
-        addPriceObj            : addPriceObj,
-        processBuy             : processBuy,
-        cleanup                : cleanup,
-        sendBuyRequest         : sendBuyRequest,
-        showPriceOverlay       : showPriceOverlay,
-        hidePriceOverlay       : hidePriceOverlay,
-        getReqId               : function() { return req_id; },
-        increaseReqId          : function() { req_id++; cleanup(); },
-        getPrices              : function() { return prices; },
-        onUnload               : function() { cleanup(); req_id = 0; proposal_response = {}; $tables = undefined; },
+        display         : display,
+        addPriceObj     : addPriceObj,
+        processBuy      : processBuy,
+        cleanup         : cleanup,
+        sendBuyRequest  : sendBuyRequest,
+        showPriceOverlay: showPriceOverlay,
+        hidePriceOverlay: hidePriceOverlay,
+        getReqId        : function() { return req_id; },
+        increaseReqId   : function() { req_id++; cleanup(); },
+        getPrices       : function() { return prices; },
+        onUnload        : function() { cleanup(); req_id = 0; $tables = undefined; },
     };
 })();
 

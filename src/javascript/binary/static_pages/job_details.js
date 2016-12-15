@@ -1,5 +1,7 @@
 var JobDetails = (function() {
-    var dept, depts, sections;
+    var dept;
+    var depts;
+    var sections;
 
     function showSelectedDiv() {
         if ($('.job-details').find('#title').text() === '') {
@@ -9,15 +11,16 @@ var JobDetails = (function() {
             $('.sections div[id=' + dept + '-' + page.url.location.hash.substring(1) + ']').show();
             $('.title-sections').html($('.sidebar li[class="selected"]').text());
             if (dept === 'Information_Technology' && page.url.location.hash.substring(1) === 'section-three') {
-              $('.senior_perl_message').removeClass('invisible');
+                $('.senior_perl_message').removeClass('invisible');
             } else if (!$('.senior_perl_message').hasClass('invisible')) {
-              $('.senior_perl_message').addClass('invisible');
+                $('.senior_perl_message').addClass('invisible');
             }
         }
     }
 
     function check_url() {
-        var replace_dept, replace_section;
+        var replace_dept;
+        var replace_section;
         if (!dept || $.inArray(dept, depts) === -1) {
             replace_dept = '?dept=Information_Technology';
         }
@@ -70,7 +73,7 @@ var JobDetails = (function() {
             $(this).addClass('selected');
         });
 
-        $(window).on('hashchange', function(){
+        $(window).on('hashchange', function() {
             if (JobDetails.check_url()) {
                 JobDetails.showSelectedDiv();
             }
@@ -78,9 +81,9 @@ var JobDetails = (function() {
     }
 
     return {
-        showSelectedDiv: showSelectedDiv,
-        check_url: check_url,
-        init: init,
+        showSelectedDiv  : showSelectedDiv,
+        check_url        : check_url,
+        init             : init,
         addEventListeners: addEventListeners,
     };
 })();
