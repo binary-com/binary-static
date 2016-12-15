@@ -1,25 +1,26 @@
 var japanese_client = require('../country_base').japanese_client;
 
 function generateBirthDate() {
-    var days    = document.getElementById('dobdd'),
-        months  = document.getElementById('dobmm'),
-        year    = document.getElementById('dobyy');
+    var days   = document.getElementById('dobdd'),
+        months = document.getElementById('dobmm'),
+        year   = document.getElementById('dobyy');
 
-    if (document.getElementById('dobdd').length > 1) return;
+    if (!days || document.getElementById('dobdd').length > 1) return;
 
     // days
     dropDownNumbers(days, 1, 31);
     // months
     dropDownMonths(months, 1, 12);
-    var currentYear = new Date().getFullYear();
-    var startYear = currentYear - 100;
-    var endYear = currentYear - 17;
     // years
+    var currentYear = new Date().getFullYear(),
+        startYear = currentYear - 100,
+        endYear   = currentYear - 17;
     dropDownNumbers(year, startYear, endYear);
+
     if (japanese_client()) {
-        days.options[0].innerHTML = page.text.localize('Day');
+        days.options[0].innerHTML   = page.text.localize('Day');
         months.options[0].innerHTML = page.text.localize('Month');
-        year.options[0].innerHTML = page.text.localize('Year');
+        year.options[0].innerHTML   = page.text.localize('Year');
     }
 }
 
