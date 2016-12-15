@@ -680,6 +680,7 @@ var Header = function(params) {
 Header.prototype = {
     on_load: function() {
         this.show_or_hide_login_form();
+        this.show_or_hide_language();
         this.logout_handler();
         this.check_risk_classification();
         if (!$('body').hasClass('BlueTopBack')) {
@@ -694,27 +695,44 @@ Header.prototype = {
     },
     animate_disappear: function(element) {
         element.animate({ opacity: 0 }, 100, function() {
-            element.css('visibility', 'hidden');
+            element.css({ visibility: 'hidden', display: 'none' });
         });
     },
     animate_appear: function(element) {
-        element.css('visibility', 'visible')
+        element.css({ visibility: 'visible', display: 'block' })
                .animate({ opacity: 1 }, 100);
+    },
+    show_or_hide_language: function() {
+        var that = this;
+        var $el = $('#select_language'),
+            $all_accounts = $('#all-accounts');
+        $('.languages').on('click', function(event) {
+            event.stopPropagation();
+            that.animate_disappear($all_accounts);
+            if (+$el.css('opacity') === 1) {
+                that.animate_disappear($el);
+            } else {
+                that.animate_appear($el);
+            }
+        });
+        $(document).unbind('click').on('click', function() {
+            that.animate_disappear($all_accounts);
+            that.animate_disappear($el);
+        });
     },
     show_or_hide_login_form: function() {
         if (!this.user.is_logged_in || !this.client.is_logged_in) return;
         var all_accounts = $('#all-accounts'),
+            language = $('#select_language'),
             that = this;
         $('.nav-menu').unbind('click').on('click', function(event) {
             event.stopPropagation();
+            that.animate_disappear(language);
             if (+all_accounts.css('opacity') === 1) {
                 that.animate_disappear(all_accounts);
             } else {
                 that.animate_appear(all_accounts);
             }
-        });
-        $(document).unbind('click').on('click', function() {
-            that.animate_disappear(all_accounts);
         });
         var loginid_select = '';
         var loginid_array = this.user.loginid_array;
@@ -1080,7 +1098,7 @@ Page.prototype = {
             PT   : 'Português',
             RU   : 'Русский',
             TH   : 'Thai',
-            VI   : 'Vietnamese',
+            VI   : 'Tiếng Việt',
             ZH_CN: '简体中文',
             ZH_TW: '繁體中文',
         };
@@ -1106,7 +1124,6 @@ Page.prototype = {
         this.url.reset();
         this.localize_for(this.language());
         this.header.on_load();
-        this.on_change_language();
         this.on_change_loginid();
         this.record_affiliate_exposure();
         this.contents.on_load();
@@ -1139,8 +1156,10 @@ Page.prototype = {
     },
     on_change_language: function() {
         var that = this;
-        $('#language_select').on('change', function() {
-            var language = $(this).find('option:selected').attr('class');
+        $('#select_language li').on('click', function() {
+            var language = $(this).attr('class');
+            if (page.language() === language) return;
+            $('#display_language .language').text($(this).text());
             var cookie = new CookieStorage('language');
             cookie.write(language);
             document.location = that.url_for_language(language);

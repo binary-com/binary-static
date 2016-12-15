@@ -9,7 +9,7 @@ function checkClientsCountry() {
         } else if (clients_country === 'id') {
             limitLanguage('ID');
         } else {
-            $('#language_select').show();
+            $('#languages').show();
         }
     } else {
         BinarySocket.init();
@@ -21,8 +21,8 @@ function limitLanguage(lang) {
     if (page.language() !== lang && !Login.is_login_pages()) {
         window.location.href = page.url_for_language(lang);
     }
-    if (document.getElementById('language_select')) {
-        $('#language_select').remove();
+    if (document.getElementById('select_language')) {
+        $('.languages').remove();
         $('#gmt-clock').removeClass();
         $('#gmt-clock').addClass('gr-6 gr-12-m');
         $('#contact-us').removeClass();
