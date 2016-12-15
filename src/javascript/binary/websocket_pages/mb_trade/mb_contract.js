@@ -231,7 +231,7 @@ var MBContract = (function() {
             }
             MBDefaults.set('category', $('#category').val());
         }
-        populatePeriods();
+        populatePeriods(rebuild);
     };
 
     var getCurrentContracts = function() {
