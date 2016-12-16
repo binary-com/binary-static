@@ -4,6 +4,7 @@ var MBTradingEvents     = require('./mb_event').MBTradingEvents;
 var MBMessage           = require('./mb_message').MBMessage;
 var MBSymbols           = require('./mb_symbols').MBSymbols;
 var TradingAnalysis     = require('../trade/analysis').TradingAnalysis;
+var forgetTradingStreams = require('../trade/process').forgetTradingStreams;
 var JapanPortfolio      = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
 var State               = require('../../base/storage').State;
 var Content             = require('../../common_functions/content').Content;
