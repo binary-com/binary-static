@@ -362,7 +362,7 @@ function onExpiryTypeChange(value) {
     return make_price_request;
 }
 
-var onDurationUnitChange = function(value) {
+function onDurationUnitChange(value) {
     if (!value || !$('#duration_units').find('option[value=' + value + ']').length) {
         return 0;
     }
@@ -374,7 +374,7 @@ var onDurationUnitChange = function(value) {
     Durations.populate();
 
     return 1;
-};
+}
 
 module.exports = {
     processActiveSymbols: processActiveSymbols,

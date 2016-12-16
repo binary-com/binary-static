@@ -1,7 +1,7 @@
 /*
  * Display price/spot movement variation to depict price moved up or down
  */
-var displayPriceMovement = function(element, oldValue, currentValue) {
+function displayPriceMovement(element, oldValue, currentValue) {
     'use strict';
 
     element.classList.remove('price_moved_down');
@@ -13,12 +13,12 @@ var displayPriceMovement = function(element, oldValue, currentValue) {
         element.classList.remove('price_moved_up');
         element.classList.add('price_moved_down');
     }
-};
+}
 
 /*
  * count number of decimal places in spot so that we can make barrier to same decimal places
  */
-var countDecimalPlaces = function(num) {
+function countDecimalPlaces(num) {
     'use strict';
 
     if (!isNaN(num)) {
@@ -28,7 +28,7 @@ var countDecimalPlaces = function(num) {
         }
     }
     return 0;
-};
+}
 
 var trading_times = {};
 
@@ -54,9 +54,9 @@ function processTradingTimesAnswer(response) {
     }
 }
 
-var getElement = function() {
+function getElement() {
     return document.getElementById('date_start');
-};
+}
 
 module.exports = {
     displayPriceMovement     : displayPriceMovement,

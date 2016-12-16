@@ -335,7 +335,7 @@ function processTradingTimes_Beta(response) {
     Price_Beta.processPriceRequest_Beta();
 }
 
-var onExpiryTypeChange = function(value) {
+function onExpiryTypeChange(value) {
     if (!value || !$('#expiry_type').find('option[value=' + value + ']').length) {
         value = 'duration';
     }
@@ -365,9 +365,9 @@ var onExpiryTypeChange = function(value) {
     }
 
     return make_price_request;
-};
+}
 
-var onDurationUnitChange = function(value) {
+function onDurationUnitChange(value) {
     if (!value || !$('#duration_units').find('option[value=' + value + ']').length) {
         return 0;
     }
@@ -379,7 +379,7 @@ var onDurationUnitChange = function(value) {
     Durations_Beta.populate();
 
     return 1;
-};
+}
 
 module.exports = {
     processActiveSymbols_Beta: processActiveSymbols_Beta,
