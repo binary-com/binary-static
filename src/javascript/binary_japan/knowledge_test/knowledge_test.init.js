@@ -32,12 +32,11 @@ var KnowledgeTest = (function() {
             $('#knowledge-test-msg')
                 .addClass('notice-msg')
                 .text(page.text.localize('You need to finish all 20 questions.'));
-            // $("html, body").animate({ scrollTop: 0 }, "slow");
 
             var unAnswered = randomPicks.reduce((a, b) => a.concat(b))
                                         .find(q => answeredQid.indexOf(q) === -1).id;
 
-            window.location.href = '#' + unAnswered;
+            $.scrollTo('a[name="' + unAnswered + '"]', 500, { offset: -10 });
             return;
         }
 

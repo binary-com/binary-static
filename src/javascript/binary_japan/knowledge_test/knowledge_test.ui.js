@@ -43,7 +43,7 @@ var KnowledgeTestUI = (function () {
         var $questionRow = $('<tr></tr>', { id: questionNo, class: 'question' });
         var $questionData = $('<td></td>').text(page.text.localize(question.question));
         var $questionLink = $('<a></a>', { name: question.id });
-        $questionData.append($questionLink);
+        $questionData.prepend($questionLink);
 
         var trueFalse = createTrueFalseBox(question, showAnswer);
 
