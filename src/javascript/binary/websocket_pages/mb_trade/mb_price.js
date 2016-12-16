@@ -116,7 +116,6 @@ var MBPrice = (function() {
         return {
             contract_type      : contract_type,
             barrier            : barrier,
-            id                 : !proposal.error ? proposal.id : undefined,
             is_active          : !proposal.error && proposal.ask_price,
             message            : proposal.error && proposal.error.code !== 'RateLimit' ? proposal.error.message : '',
             ask_price          : getAskPrice(proposal),
@@ -141,7 +140,7 @@ var MBPrice = (function() {
                 '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
                 '<div class="gr-4 buy-price">' +
                     '<button class="price-button' + (!values.is_active ? ' inactive' : '') + '"' +
-                        (values.id ? ' onclick="MBPrice.processBuy(\'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
+                        (values.is_active ? ' onclick="MBPrice.processBuy(\'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
                         (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' +
                             '<span class="value-wrapper">' +
                                 '<span class="dynamics ' + (values.ask_price_movement || '') + '"></span>' +
