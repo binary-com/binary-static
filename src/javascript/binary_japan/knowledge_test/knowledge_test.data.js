@@ -1,11 +1,11 @@
 var KnowledgeTestData = (function() {
     'use strict';
 
-    /* eslint-disable */
     var answers = {
-        1 : false,  2: true,   3: true,   4: true,   5: true,   6: true,   7: true,   8: true,   9: false,  10: true,
+        /* eslint-disable */
+         1: false,  2: true,   3: true,   4: true,   5: true,   6: true,   7: true,   8: true,   9: false,  10: true,
         11: false, 12: true,  13: false, 14: true,  15: true,  16: true,  17: false, 18: true,  19: true,   20: true,
-        21: false, 22: false, 23: false, 24: false, 25: true,  26: true,  27: true,  28: true,  29: true,   30: true,
+        21: true,  22: false, 23: true,  24: false, 25: false, 26: true,  27: true,  28: true,  29: true,   30: true,
         31: false, 32: true,  33: false, 34: true,  35: false, 36: true,  37: true,  38: false, 39: true,   40: false,
         41: false, 42: true,  43: true,  44: true,  45: true,  46: true,  47: true,  48: false, 49: false,  50: true,
         51: false, 52: true,  53: true,  54: false, 55: true,  56: true,  57: true,  58: true,  59: true,   60: true,
@@ -13,7 +13,8 @@ var KnowledgeTestData = (function() {
         71: true,  72: true,  73: true,  74: false, 75: false, 76: true,  77: false, 78: true,  79: true,   80: true,
         81: true,  82: true,  83: true,  84: true,  85: true,  86: true,  87: true,  88: false, 89: true,   90: true,
         91: true,  92: true,  93: true,  94: true,  95: false, 96: true,  97: true,  98: false, 99: true,  100: true,
-    };/* eslint-enable */
+        /* eslint-enable */
+    };
 
     function randomPick4(questionsObj) {
         var availables = Object.keys(questionsObj);
