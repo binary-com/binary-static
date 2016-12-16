@@ -1,7 +1,7 @@
 var Contract  = require('./contract').Contract;
 var Defaults  = require('./defaults').Defaults;
 var Durations = require('./duration').Durations;
-var getStartDatenode = require('./common_independent').getStartDatenode;
+var getStartDateNode = require('./common_independent').getStartDateNode;
 var moment = require('moment');
 var Content = require('../../common_functions/content').Content;
 var State = require('../../base/storage').State;
@@ -34,7 +34,7 @@ var StartDates = (function() {
         var startDates = Contract.startDates();
 
         if (startDates && startDates.list && startDates.list.length) {
-            var target = getStartDatenode(),
+            var target = getStartDateNode(),
                 fragment =  document.createDocumentFragment(),
                 row = document.getElementById('date_start_row'),
                 option,
@@ -106,8 +106,8 @@ var StartDates = (function() {
 
     return {
         display: displayStartDates,
-        disable: function() { getStartDatenode().setAttribute('disabled', 'disabled'); },
-        enable : function() { getStartDatenode().removeAttribute('disabled'); },
+        disable: function() { getStartDateNode().setAttribute('disabled', 'disabled'); },
+        enable : function() { getStartDateNode().removeAttribute('disabled'); },
     };
 })();
 

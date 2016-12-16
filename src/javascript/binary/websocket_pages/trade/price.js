@@ -1,4 +1,4 @@
-var getStartDatenode           = require('./common_independent').getStartDatenode;
+var getStartDateNode           = require('./common_independent').getStartDateNode;
 var Content                    = require('../../common_functions/content').Content;
 var format_money               = require('../../common_functions/currency_to_symbol').format_money;
 var moment                     = require('moment');
@@ -27,6 +27,8 @@ var isVisible                  = require('../../common_functions/common_function
  * `Price.display()` to display the price details returned from server
  */
 var Price = (function() {
+    'use strict';
+
     var typeDisplayIdMapping = {},
         form_id = 0;
 
@@ -40,7 +42,7 @@ var Price = (function() {
             amountType = document.getElementById('amount_type'),
             currency = document.getElementById('currency'),
             payout = document.getElementById('amount'),
-            startTime = getStartDatenode(),
+            startTime = getStartDateNode(),
             expiryType = document.getElementById('expiry_type'),
             duration = document.getElementById('duration_amount'),
             durationUnit = document.getElementById('duration_units'),
@@ -281,8 +283,6 @@ var Price = (function() {
      * Function to request for cancelling the current price proposal
      */
     function processForgetProposals() {
-        'use strict';
-
         showPriceOverlay();
         BinarySocket.send({
             forget_all: 'proposal',
@@ -295,8 +295,6 @@ var Price = (function() {
      * parameters or change in form parameters
      */
     function processPriceRequest() {
-        'use strict';
-
         Price.incrFormId();
         processForgetProposals();
         showPriceOverlay();

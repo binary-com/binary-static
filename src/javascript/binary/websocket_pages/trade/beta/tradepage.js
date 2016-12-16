@@ -2,6 +2,7 @@ var TradingAnalysis_Beta = require('./analysis').TradingAnalysis_Beta;
 var TradingEvents_Beta   = require('./event').TradingEvents_Beta;
 var Message_Beta         = require('./message').Message_Beta;
 var Price_Beta           = require('./price').Price_Beta;
+var forgetTradingStreams_Beta = require('./process').forgetTradingStreams_Beta;
 var displayCurrencies    = require('../currency').displayCurrencies;
 var Defaults             = require('../defaults').Defaults;
 var Notifications        = require('../notifications').Notifications;

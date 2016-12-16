@@ -4,7 +4,6 @@ var Contract                   = require('./contract').Contract;
 var Defaults                   = require('./defaults').Defaults;
 var Durations                  = require('./duration').Durations;
 var Price                      = require('./price').Price;
-var getStartDatenode           = require('./common_independent').getStartDatenode;
 var Tick                       = require('./tick').Tick;
 var processMarket              = require('./process').processMarket;
 var processContractForm        = require('./process').processContractForm;
@@ -26,6 +25,7 @@ var updateWarmChart            = require('./common').updateWarmChart;
 var reloadPage                 = require('./common').reloadPage;
 var chartFrameSource           = require('./common').chartFrameSource;
 var timeIsValid                = require('./common').timeIsValid;
+var getStartDateNode           = require('./common_independent').getStartDateNode;
 var TimePicker                 = require('../../components/time_picker').TimePicker;
 var dateValueChanged           = require('../../common_functions/common_functions').dateValueChanged;
 
@@ -245,7 +245,7 @@ var TradingEvents = (function () {
          * whether start time is forward starting or not and request
          * new price
          */
-        var dateStartElement = getStartDatenode();
+        var dateStartElement = getStartDateNode();
         if (dateStartElement) {
             dateStartElement.addEventListener('change', function (e) {
                 Defaults.set('date_start', e.target.value);

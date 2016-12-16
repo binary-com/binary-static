@@ -63,5 +63,5 @@ module.exports = {
     countDecimalPlaces       : countDecimalPlaces,
     processTradingTimesAnswer: processTradingTimesAnswer,
     getTradingTimes          : function () { return trading_times; },
-    getStartDatenode         : getElement,
+    getStartDateNode         : getElement,
 };
