@@ -1,6 +1,7 @@
 var objectNotEmpty = require('./utility').objectNotEmpty;
 var Cookies        = require('../../lib/js-cookie');
 var getLanguage    = require('./language').getLanguage;
+var GTM = require('./gtm').GTM;
 
 var LoggedInHandler = (function() {
     'use strict';

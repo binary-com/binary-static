@@ -26,6 +26,7 @@ var RealityCheckData          = require('./user/reality_check/reality_check.data
 var KnowledgeTest             = require('../../binary_japan/knowledge_test/knowledge_test.init').KnowledgeTest;
 var localize = require('../base/localize').localize;
 var getLanguage = require('../base/language').getLanguage;
+var GTM = require('../base/gtm').GTM;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
