@@ -5,6 +5,7 @@ var DigitInfoWS_Beta                = require('./charts/digit_infows').DigitInfo
 var PortfolioWS                     = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
 var State                           = require('../../../base/storage').State;
 var getLanguage                     = require('../../../base/language').getLanguage;
+var Url                             = require('../../../base/url').Url;
 var showHighchart                   = require('../common').showHighchart;
 var toggleActiveNavMenuElement_Beta = require('../common').toggleActiveNavMenuElement_Beta;
 
@@ -161,7 +162,7 @@ var TradingAnalysis_Beta = (function() {
      * handle the display of proper explanation based on parameters
      */
     var showExplanation = function(href) {
-        var options = new URL(href).params_hash();
+        var options = new Url(href).params_hash();
         var form_name    = options.form_name || 'risefall',
             show_image   = options.show_image   ? options.show_image   > 0 : true,
             show_winning = options.show_winning ? options.show_winning > 0 : true,

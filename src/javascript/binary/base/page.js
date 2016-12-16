@@ -12,6 +12,7 @@ var localize              = require('./localize').localize;
 var getLanguage           = require('./language').getLanguage;
 var setCookieLanguage     = require('./language').setCookieLanguage;
 var GTM                   = require('./gtm').GTM;
+var Url                   = require('./url').Url;
 var TrafficSource         = require('../common_functions/traffic_source').TrafficSource;
 var RiskClassification    = require('../common_functions/risk_classification').RiskClassification;
 var checkClientsCountry   = require('../common_functions/country_base').checkClientsCountry;
@@ -272,136 +273,6 @@ Client.prototype = {
     },
 };
 
-var URL = function (url) { // jshint ignore:line
-    this.is_valid = true;
-    this.history_supported = window.history && window.history.pushState;
-    if (typeof url !== 'undefined') {
-        this.location = $('<a>', { href: decodeURIComponent(url) })[0];
-    } else {
-        this.location = window.location;
-    }
-};
-
-URL.prototype = {
-    url_for: function(path, params) {
-        if (!path) {
-            path = '';
-        } else if (path.length > 0 && path[0] === '/') {
-            path = path.substr(1);
-        }
-        var lang = getLanguage().toLowerCase(),
-            url  = window.location.href;
-        return url.substring(0, url.indexOf('/' + lang + '/') + lang.length + 2) + (path || 'home') + '.html' + (params ? '?' + params : '');
-    },
-    url_for_static: function(path) {
-        if (!path) {
-            path = '';
-        } else if (path.length > 0 && path[0] === '/') {
-            path = path.substr(1);
-        }
-
-        var staticHost = window.staticHost;
-        if (!staticHost || staticHost.length === 0) {
-            staticHost = $('script[src*="binary.min.js"],script[src*="binary.js"]').attr('src');
-
-            if (staticHost && staticHost.length > 0) {
-                staticHost = staticHost.substr(0, staticHost.indexOf('/js/') + 1);
-            } else {
-                staticHost = 'https://www.binary.com/';
-            }
-
-            window.staticHost = staticHost;
-        }
-
-        return staticHost + path;
-    },
-    reset: function() {
-        this.location = window.location;
-        this._param_hash = undefined;
-        this.is_valid = true;
-        $(this).trigger('change', [this]);
-    },
-    invalidate: function() {
-        this.is_valid = false;
-    },
-    update: function(url) {
-        var state_info = { container: 'content', url: url, useClass: 'pjaxload' };
-        if (this.history_supported) {
-            history.pushState(state_info, '', url);
-            this.reset();
-        }
-        this.is_valid = true;
-    },
-    param: function(name) {
-        var param_hash = this.params_hash();
-        return param_hash[name];
-    },
-    replaceQueryParam: function (param, newval, search) {
-        var regex = new RegExp('([?;&])' + param + '[^&;]*[;&]?');
-        var query = search.replace(regex, '$1').replace(/&$/, '');
-        return (query.length > 2 ? query + '&' : '?') + (newval ? param + '=' + newval : '');
-    },
-    param_if_valid: function(name) {
-        if (this.is_valid) {
-            return this.param(name);
-        }
-        return null;
-    },
-    path_matches: function(url) {
-        var this_pathname = this.location.pathname,
-            url_pathname  = url.location.pathname;
-        return (this_pathname === url_pathname || '/' + this_pathname === url_pathname);
-    },
-    params_hash_to_string: function(params) {
-        return Object.keys(params)
-            .map(function(key) { return key + '=' + params[key]; })
-            .join('&');
-    },
-    is_in: function(url) {
-        if (this.path_matches(url)) {
-            var this_params = this.params();
-            var param_count = this_params.length;
-            var match_count = 0;
-            while (param_count--) {
-                if (url.param(this_params[param_count][0]) === this_params[param_count][1]) {
-                    match_count++;
-                }
-            }
-            if (match_count === this_params.length) {
-                return true;
-            }
-        }
-
-        return false;
-    },
-    params_hash: function() {
-        if (!this._param_hash) {
-            this._param_hash = {};
-            var params = this.params();
-            var param = params.length;
-            while (param--) {
-                if (params[param][0]) {
-                    this._param_hash[params[param][0]] = params[param][1];
-                }
-            }
-        }
-        return this._param_hash;
-    },
-    params: function() {
-        var params = [];
-        var parsed = this.location.search.substr(1).split('&');
-        var p_l = parsed.length;
-        while (p_l--) {
-            var param = parsed[p_l].split('=');
-            params.push(param);
-        }
-        return params;
-    },
-    default_redirect_url: function() {
-        return this.url_for(japanese_client() ? 'multi_barriers_trading' : 'trading');
-    },
-};
-
 var Menu = function(url) {
     this.page_url = url;
     var that = this;
@@ -481,7 +352,7 @@ Menu.prototype = {
     active_main_menu: function() {
         var page_url = this.page_url;
         if (/cashier/i.test(page_url.location.href) && !(/cashier_password/.test(page_url.location.href))) {
-            page_url = new URL($('#topMenuCashier a').attr('href'));
+            page_url = new Url($('#topMenuCashier a').attr('href'));
         }
 
         var item;
@@ -489,7 +360,7 @@ Menu.prototype = {
 
         // Is something selected in main items list
         $('#main-menu .items a').each(function () {
-            var url = new URL($(this).attr('href'));
+            var url = new Url($(this).attr('href'));
             if (url.is_in(page_url)) {
                 item = $(this).closest('.item');
             }
@@ -498,7 +369,7 @@ Menu.prototype = {
         $('#main-menu .sub_items a').each(function() {
             var link_href = $(this).attr('href');
             if (link_href) {
-                var url = new URL(link_href);
+                var url = new Url(link_href);
                 if (url.is_in(page_url)) {
                     item = $(this).closest('.item');
                     subitem = $(this);
@@ -919,7 +790,7 @@ var Page = function() {
     this.is_loaded_by_pjax = false;
     this.user = new User();
     this.client = new Client();
-    this.url = new URL();
+    this.url = new Url();
     this.header = new Header({ user: this.user, client: this.client, url: this.url });
     this.contents = new Contents(this.client, this.user);
     $('#logo').on('click', function() {
@@ -1329,7 +1200,7 @@ var init_pjax = function () {
 };
 
 var load_with_pjax = function(url) {
-    if (page.url.is_in(new URL(url))) {
+    if (page.url.is_in(new Url(url))) {
         return;
     }
 
@@ -1403,7 +1274,6 @@ module.exports = {
     page            : page,
     make_mobile_menu: make_mobile_menu,
     TUser           : TUser,
-    URL             : URL,
     SessionStore    : SessionStore,
     LocalStore      : LocalStore,
     load_with_pjax  : load_with_pjax,

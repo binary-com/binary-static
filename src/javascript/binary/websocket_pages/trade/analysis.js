@@ -4,6 +4,7 @@ var State                      = require('../../base/storage').State;
 var getLanguage                = require('../../base/language').getLanguage;
 var toggleActiveNavMenuElement = require('./common').toggleActiveNavMenuElement;
 var showHighchart              = require('./common').showHighchart;
+var Url = require('../../base/url').Url;
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -157,7 +158,7 @@ var TradingAnalysis = (function() {
      * handle the display of proper explanation based on parameters
      */
     var showExplanation = function(href) {
-        var options = new URL(href).params_hash();
+        var options = new Url(href).params_hash();
         var form_name    = options.form_name || 'risefall',
             show_image   = options.show_image   ? options.show_image   > 0 : true,
             show_winning = options.show_winning ? options.show_winning > 0 : true,

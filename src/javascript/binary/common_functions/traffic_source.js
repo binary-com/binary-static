@@ -1,4 +1,5 @@
 var CookieStorage = require('../base/storage').CookieStorage;
+var Url = require('../base/url').Url;
 
 /*
  * Handles utm parameters/referrer to use on signup
@@ -65,7 +66,7 @@ var TrafficSource = (function() {
             referrer = doc_ref;
         }
         if (referrer && !current_values.referrer && !params.utm_source && !current_values.utm_source) {
-            cookie.set('referrer', (new URL(referrer)).location.hostname);
+            cookie.set('referrer', (new Url(referrer)).location.hostname);
         }
     };
 
