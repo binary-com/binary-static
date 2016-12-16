@@ -1,3 +1,5 @@
+var text = require('../base/localize').text;
+
 /* ************************************************************
 Created: 20060120
 Author:  Steve Moitozo <god at zilla dot us> -- geekwisdom.com
@@ -125,13 +127,13 @@ function testPassword(passwd) {
     }
 
     if (intScore < 10) {
-        strVerdict = page.text.localize('Password is weak');
+        strVerdict = text.localize('Password is weak');
     } else if (intScore > 9 && intScore < 20) {
-        strVerdict = page.text.localize('Password is moderate');
+        strVerdict = text.localize('Password is moderate');
     } else if (intScore > 19) {
-        strVerdict = page.text.localize('Password is strong');
+        strVerdict = text.localize('Password is strong');
     } else {
-        strVerdict = page.text.localize('Password is very strong');
+        strVerdict = text.localize('Password is very strong');
     }
 
     var array = [intScore, strVerdict];

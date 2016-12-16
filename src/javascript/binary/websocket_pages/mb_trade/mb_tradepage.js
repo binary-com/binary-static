@@ -10,6 +10,7 @@ var Content             = require('../../common_functions/content').Content;
 var MBProcess           = require('./mb_process').MBProcess;
 var MBNotifications     = require('./mb_notifications').MBNotifications;
 var chartFrameCleanup   = require('../trade/common').chartFrameCleanup;
+var text = require('../../base/localize').text;
 
 var MBTradePage = (function() {
     var events_initialized = 0;
@@ -43,10 +44,10 @@ var MBTradePage = (function() {
         }
 
         TradingAnalysis.bindAnalysisTabEvent();
-        $('#tab_portfolio a').text(page.text.localize('Portfolio'));
-        $('#tab_graph a').text(page.text.localize('Chart'));
-        $('#tab_explanation a').text(page.text.localize('Explanation'));
-        $('#remaining-time-label').text(page.text.localize('Remaining time'));
+        $('#tab_portfolio a').text(text.localize('Portfolio'));
+        $('#tab_graph a').text(text.localize('Chart'));
+        $('#tab_explanation a').text(text.localize('Explanation'));
+        $('#remaining-time-label').text(text.localize('Remaining time'));
         window.chartAllowed = true;
     };
 

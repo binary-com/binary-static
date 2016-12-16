@@ -1,4 +1,5 @@
 var template = require('../base/utility').template;
+var text = require('../base/localize').text;
 
 var buildOauthApps = function(data) {
     var oauth_apps = {};
@@ -23,7 +24,7 @@ var addTooltip = function(oauth_apps) {
 var add_app_id_name = function(app_id, app_name) {
     var ref_string;
     if (app_id) {
-        ref_string = template(page.text.localize('Transaction performed by [_1] (App ID: [_2])'), [app_name || '', app_id]);
+        ref_string = template(text.localize('Transaction performed by [_1] (App ID: [_2])'), [app_name || '', app_id]);
     }
     return ref_string;
 };

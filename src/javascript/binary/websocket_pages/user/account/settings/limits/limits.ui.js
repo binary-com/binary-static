@@ -1,6 +1,7 @@
-var Content        = require('../../../../../common_functions/content').Content;
-var Table          = require('../../../../../common_functions/attach_dom/table').Table;
-var addComma       = require('../../../../../common_functions/string_util').addComma;
+var Content  = require('../../../../../common_functions/content').Content;
+var Table    = require('../../../../../common_functions/attach_dom/table').Table;
+var addComma = require('../../../../../common_functions/string_util').addComma;
+var text     = require('../../../../../base/localize').text;
 
 var LimitsUI = (function() {
     'use strict';
@@ -40,24 +41,24 @@ var LimitsUI = (function() {
         Object.keys(marketSpecific).forEach(function (key) {
             var object = marketSpecific[key];
             if (object.length && object.length > 0) {
-                appendRowTable(page.text.localize(key.charAt(0).toUpperCase() + key.slice(1)), '', 'auto', 'bold');
+                appendRowTable(text.localize(key.charAt(0).toUpperCase() + key.slice(1)), '', 'auto', 'bold');
                 Object.keys(object).forEach(function (c) {
                     if (object.hasOwnProperty(c) && (page.client.residence !== 'jp' || /Major Pairs/.test(object[c].name))) {
-                        appendRowTable(page.text.localize(object[c].name), object[c].turnover_limit !== 'null' ? addComma(object[c].turnover_limit).split('.')[0] : 0, '25px', 'normal');
+                        appendRowTable(text.localize(object[c].name), object[c].turnover_limit !== 'null' ? addComma(object[c].turnover_limit).split('.')[0] : 0, '25px', 'normal');
                     }
                 });
             } else {
-                appendRowTable(page.text.localize(object.name), object.turnover_limit !== 'null' ? addComma(object.turnover_limit).split('.')[0] : 0, 'auto', 'bold');
+                appendRowTable(text.localize(object.name), object.turnover_limit !== 'null' ? addComma(object.turnover_limit).split('.')[0] : 0, 'auto', 'bold');
             }
         });
         if (page.client.is_logged_in && !page.client.is_virtual()) {
             var loginId = page.client.loginid;
 
             var tradingLimits = document.getElementById('trading-limits');
-            tradingLimits.textContent = loginId + ' - ' + page.text.localize('Trading Limits');
+            tradingLimits.textContent = loginId + ' - ' + text.localize('Trading Limits');
 
             var withdrawalTitle = document.getElementById('withdrawal-title');
-            withdrawalTitle.textContent = loginId + ' - ' + page.text.localize('Withdrawal Limits');
+            withdrawalTitle.textContent = loginId + ' - ' + text.localize('Withdrawal Limits');
         }
         document.getElementById('client-limits').setAttribute('style', 'display:table');
     }
@@ -65,7 +66,7 @@ var LimitsUI = (function() {
     function appendRowTable(name, turnover_limit, padding, font_weight) {
         $('#client-limits').append('<tr class="flex-tr">' +
                             '<td class="flex-tr-child" style="padding-left: ' + padding + '; font-weight: ' + font_weight + ';">' +
-                              page.text.localize(name) +
+                              text.localize(name) +
                             '</td>' +
                             '<td>' +
                               turnover_limit +

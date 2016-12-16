@@ -1,6 +1,7 @@
 var Symbols = require('../symbols').Symbols;
 var MenuContent = require('../../../base/menu_content').MenuContent;
 var template = require('../../../base/utility').template;
+var text = require('../../../base/localize').text;
 require('../../../../lib/highstock/highstock.js');
 require('../../../../lib/highstock/highstock-exporting.js');
 require('../../../../lib/highstock/export-csv.js');
@@ -106,19 +107,19 @@ DigitInfoWS.prototype = {
         underlyings = underlyings.sort();
         var elem = '<select class="smallfont" name="underlying">';
         for (var i = 0; i < underlyings.length; i++) {
-            elem += '<option value="' + underlyings[i] + '">' + page.text.localize(symbols[underlyings[i]]) + '</option>';
+            elem += '<option value="' + underlyings[i] + '">' + text.localize(symbols[underlyings[i]]) + '</option>';
         }
         elem += '</select>';
         var contentId = document.getElementById('tab_last_digit-content'),
             content = '<div class="gr-parent">' +
                         '<div id="last_digit_histo_form" class="gr-8 gr-12-m gr-centered">' +
                         '<form class="smallfont gr-row" action="#" method="post">' +
-                        '<div class="gr-6 gr-12-m">' + page.text.localize('Select market') + ' : ' + elem + ' </div>' +
-                        '<div class="gr-6 gr-12-m">' + page.text.localize('Number of ticks') + ' : <select class="smallfont" name="tick_count"><option value="25">25</option><option value="50">50</option><option selected="selected" value="100">100</option><option value="500">500</option><option value="1000">1000</option></select></div>' +
+                        '<div class="gr-6 gr-12-m">' + text.localize('Select market') + ' : ' + elem + ' </div>' +
+                        '<div class="gr-6 gr-12-m">' + text.localize('Number of ticks') + ' : <select class="smallfont" name="tick_count"><option value="25">25</option><option value="50">50</option><option selected="selected" value="100">100</option><option value="500">500</option><option value="1000">1000</option></select></div>' +
                         '</form>' +
                         '</div>' +
                         '<div id="last_digit_histo" class="gr-8 gr-12-m gr-centered"></div>' +
-                        '<div id="last_digit_title" class="gr-hide">' + (domain.charAt(0).toUpperCase() + domain.slice(1)) + ' - ' + page.text.localize('Last digit stats for the latest [_1] ticks on [_2]') + '</div>' +
+                        '<div id="last_digit_title" class="gr-hide">' + (domain.charAt(0).toUpperCase() + domain.slice(1)) + ' - ' + text.localize('Last digit stats for the latest [_1] ticks on [_2]') + '</div>' +
                         '</div>';
         contentId.innerHTML = content;
         $('[name=underlying]').val(underlying);

@@ -6,6 +6,7 @@ var japanese_client   = require('../../../common_functions/country_base').japane
 var PasswordMeter     = require('../../../common_functions/attach_dom/password_strength_meter').PasswordMeter;
 var passwordValid     = require('../../../common_functions/validation').passwordValid;
 var showPasswordError = require('../../../common_functions/validation').showPasswordError;
+var text = require('../../../base/localize').text;
 
 var ResetPassword = (function () {
     'use strict';
@@ -24,7 +25,7 @@ var ResetPassword = (function () {
         var pw2 = $('#reset-password2').val();
 
         if (token.length < 48) {
-            $('#verification-error').removeClass(hiddenClass).text(page.text.localize('Verification code format incorrect.'));
+            $('#verification-error').removeClass(hiddenClass).text(text.localize('Verification code format incorrect.'));
             return;
         }
 
@@ -62,7 +63,7 @@ var ResetPassword = (function () {
         var dobEntered = dobdd && dobmm && dobyy;
         if (dobEntered) {
             if (!isValidDate(dobdd, dobmm, dobyy)) {
-                $('#dob-error').removeClass(hiddenClass).text(page.text.localize('Invalid format for date of birth.'));
+                $('#dob-error').removeClass(hiddenClass).text(text.localize('Invalid format for date of birth.'));
                 return;
             }
 
@@ -100,16 +101,16 @@ var ResetPassword = (function () {
                 $('#reset-error').removeClass(hiddenClass);
 
                 // special handling as backend return inconsistent format
-                var errMsg = page.text.localize(resetErrorTemplate, [
+                var errMsg = text.localize(resetErrorTemplate, [
                     response.error.code === 'InputValidationFailed' ?
-                        page.text.localize('Token has expired.') :
-                        page.text.localize(response.error.message),
+                        text.localize('Token has expired.') :
+                        text.localize(response.error.message),
                 ]);
 
                 $('#reset-error-msg').text(errMsg);
             } else {
                 $('p.notice-msg')
-                    .text(page.text.localize('Your password has been successfully reset. ' +
+                    .text(text.localize('Your password has been successfully reset. ' +
                         'Please log into your account using your new password.'));
                 window.setTimeout(function () {
                     Login.redirect_to_login();

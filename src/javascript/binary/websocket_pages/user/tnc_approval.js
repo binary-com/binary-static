@@ -1,6 +1,7 @@
 var showLoadingImage = require('../../base/utility').showLoadingImage;
 var template         = require('../../base/utility').template;
 var Content          = require('../../common_functions/content').Content;
+var text = require('../../base/localize').text;
 
 var TNCApproval = (function() {
     'use strict';
@@ -49,7 +50,7 @@ var TNCApproval = (function() {
             page.url.url_for('terms-and-conditions'),
         ]);
         $('#tnc-message').html(tnc_message).removeClass(hiddenClass);
-        $('#btn-accept').text(page.text.localize('OK'));
+        $('#btn-accept').text(text.localize('OK'));
     };
 
     var responseTNCApproval = function(response) {

@@ -1,6 +1,7 @@
 var showLoadingImage = require('../../../../base/utility').showLoadingImage;
 var RiskClassification = require('../../../../common_functions/risk_classification').RiskClassification;
 var japanese_client = require('../../../../common_functions/country_base').japanese_client;
+var text = require('../../../../base/localize').text;
 
 var FinancialAssessmentws = (function() {
     'use strict';
@@ -20,21 +21,21 @@ var FinancialAssessmentws = (function() {
 
     // For translating strings
     var LocalizeText = function() {
-        $('#heading').text(page.text.localize($('#heading').text()));
-        $('#heading_risk').text(page.text.localize($('#heading_risk').text()));
-        $('#high_risk_classification').text(page.text.localize($('#high_risk_classification').text()));
-        document.getElementsByTagName('legend')[0].innerHTML = page.text.localize(document.getElementsByTagName('legend')[0].innerHTML);
-        if (document.getElementsByTagName('legend')[1]) document.getElementsByTagName('legend')[1].innerHTML = page.text.localize(document.getElementsByTagName('legend')[1].innerHTML);
+        $('#heading').text(text.localize($('#heading').text()));
+        $('#heading_risk').text(text.localize($('#heading_risk').text()));
+        $('#high_risk_classification').text(text.localize($('#high_risk_classification').text()));
+        document.getElementsByTagName('legend')[0].innerHTML = text.localize(document.getElementsByTagName('legend')[0].innerHTML);
+        if (document.getElementsByTagName('legend')[1]) document.getElementsByTagName('legend')[1].innerHTML = text.localize(document.getElementsByTagName('legend')[1].innerHTML);
         $('#assessment_form label').each(function() {
             var ele = $(this);
-            ele.text(page.text.localize(ele.text()));
+            ele.text(text.localize(ele.text()));
         });
         $('#assessment_form option').each(function() {
             var ele = $(this);
-            ele.text(page.text.localize(ele.text()));
+            ele.text(text.localize(ele.text()));
         });
-        $('#warning').text(page.text.localize($('#warning').text()));
-        $('#submit').text(page.text.localize($('#submit').text()));
+        $('#warning').text(text.localize($('#warning').text()));
+        $('#submit').text(text.localize($('#submit').text()));
     };
 
     var submitForm = function() {
@@ -74,7 +75,7 @@ var FinancialAssessmentws = (function() {
         $('#assessment_form select').each(function() {
             if (!$(this).val()) {
                 isValid = false;
-                errors[$(this).attr('id')] = page.text.localize('Please select a value');
+                errors[$(this).attr('id')] = text.localize('Please select a value');
             }
         });
         if (!isValid) {
@@ -112,7 +113,7 @@ var FinancialAssessmentws = (function() {
         clearErrors();
         Object.keys(errors).forEach(function (key) {
             var error = errors[key];
-            $('#error' + key).text(page.text.localize(error));
+            $('#error' + key).text(text.localize(error));
             if (!id) id = key;
         });
         hideLoadingImg();
@@ -137,7 +138,7 @@ var FinancialAssessmentws = (function() {
     var checkIsVirtual = function() {
         if (page.client.is_virtual()) {
             $('#assessment_form').addClass('invisible');
-            $('#response_on_success').addClass('notice-msg center-text').removeClass('invisible').text(page.text.localize('This feature is not relevant to virtual-money accounts.'));
+            $('#response_on_success').addClass('notice-msg center-text').removeClass('invisible').text(text.localize('This feature is not relevant to virtual-money accounts.'));
             hideLoadingImg(false);
             return true;
         }
@@ -147,7 +148,7 @@ var FinancialAssessmentws = (function() {
     var showFormMessage = function(msg, isSuccess) {
         $('#form_message')
             .attr('class', isSuccess ? 'success-msg' : 'errorfield')
-            .html(isSuccess ? '<ul class="checked" style="display: inline-block;"><li>' + page.text.localize(msg) + '</li></ul>' : page.text.localize(msg))
+            .html(isSuccess ? '<ul class="checked" style="display: inline-block;"><li>' + text.localize(msg) + '</li></ul>' : text.localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);

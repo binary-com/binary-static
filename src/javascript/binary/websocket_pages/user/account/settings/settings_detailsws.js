@@ -1,10 +1,11 @@
 var detect_hedging  = require('../../../../common_functions/common_functions').detect_hedging;
-var Content         = require('../../../../common_functions/content').Content;
 var ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
 var bind_validation = require('../../../../validator').bind_validation;
-var Cookies         = require('../../../../../lib/js-cookie');
-var moment          = require('moment');
-var dv              = require('../../../../../lib/validation');
+var Content = require('../../../../common_functions/content').Content;
+var Cookies = require('../../../../../lib/js-cookie');
+var moment  = require('moment');
+var dv      = require('../../../../../lib/validation');
+var text    = require('../../../../base/localize').text;
 
 var SettingsDetailsWS = (function() {
     'use strict';
@@ -89,7 +90,7 @@ var SettingsDetailsWS = (function() {
         if (page.client.residence === 'jp') {
             var jpData = response.get_settings.jp_settings;
             $('#lblName').text((data.last_name || ''));
-            $('#lblGender').text(page.text.localize(jpData.gender) || '');
+            $('#lblGender').text(text.localize(jpData.gender) || '');
             $('#lblAddress1').text(data.address_line_1 || '');
             $('#lblAddress2').text(data.address_line_2 || '');
             $('#lblCity').text(data.address_city || '');
@@ -269,7 +270,7 @@ var SettingsDetailsWS = (function() {
     function showFormMessage(msg, isSuccess) {
         $('#formMessage')
             .attr('class', isSuccess ? 'success-msg' : 'errorfield')
-            .html(isSuccess ? '<ul class="checked"><li>' + page.text.localize(msg) + '</li></ul>' : page.text.localize(msg))
+            .html(isSuccess ? '<ul class="checked"><li>' + text.localize(msg) + '</li></ul>' : text.localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);

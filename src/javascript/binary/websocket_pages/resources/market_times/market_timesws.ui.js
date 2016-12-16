@@ -11,6 +11,7 @@ var DatePicker             = require('../../../components/date_picker').DatePick
 var toReadableFormat       = require('../../../common_functions/string_util').toReadableFormat;
 var toISOFormat            = require('../../../common_functions/string_util').toISOFormat;
 var dateValueChanged       = require('../../../common_functions/common_functions').dateValueChanged;
+var text = require('../../../base/localize').text;
 
 var MarketTimesUI = (function() {
     'use strict';
@@ -159,7 +160,7 @@ var MarketTimesUI = (function() {
     var createEventsText = function(events) {
         var result = '';
         for (var i = 0; i < events.length; i++) {
-            result += (i > 0 ? '<br />' : '') + page.text.localize(events[i].descrip) + ': ' + page.text.localize(events[i].dates);
+            result += (i > 0 ? '<br />' : '') + text.localize(events[i].descrip) + ': ' + text.localize(events[i].dates);
         }
         return result.length > 0 ? result : '--';
     };

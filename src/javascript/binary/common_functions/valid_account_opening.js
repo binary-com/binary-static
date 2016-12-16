@@ -2,6 +2,7 @@ var Validate    = require('./validation').Validate;
 var isValidDate = require('./common_functions').isValidDate;
 var Content     = require('./content').Content;
 var Cookies     = require('../../lib/js-cookie');
+var text = require('../base/localize').text;
 
 var ValidAccountOpening = (function() {
     var redirectCookie = function() {
@@ -36,7 +37,7 @@ var ValidAccountOpening = (function() {
                 $('#financial-risk').remove();
             }
             var error = document.getElementsByClassName('notice-msg')[0];
-            error.innerHTML = (response.msg_type === 'sanity_check') ? page.text.localize('There was some invalid character in an input field.') : errorMessage;
+            error.innerHTML = (response.msg_type === 'sanity_check') ? text.localize('There was some invalid character in an input field.') : errorMessage;
             error.parentNode.parentNode.parentNode.setAttribute('style', 'display:block');
         } else if (Cookies.get('residence') === 'jp') {
             window.location.href = page.url.url_for('new_account/knowledge_testws');

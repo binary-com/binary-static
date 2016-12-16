@@ -2,6 +2,7 @@ var showLocalTimeOnHover  = require('../../../base/utility').showLocalTimeOnHove
 var onlyNumericOnKeypress = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
 var Content               = require('../../../common_functions/content').Content;
 var RealityCheckData      = require('./reality_check.data').RealityCheckData;
+var text = require('../../../base/localize').text;
 require('../../../../lib/polyfills/array.includes');
 require('../../../../lib/polyfills/string.includes');
 
@@ -124,7 +125,7 @@ var RealityCheckUI = (function() {
         var intervalMinute = +($('#realityDuration').val());
 
         if (!(Math.floor(intervalMinute) === intervalMinute && $.isNumeric(intervalMinute))) {
-            var shouldBeInteger = page.text.localize('Interval should be integer.');
+            var shouldBeInteger = text.localize('Interval should be integer.');
             $('#rc-err').text(shouldBeInteger);
             $('#rc-err').removeClass(hiddenClass);
             return;

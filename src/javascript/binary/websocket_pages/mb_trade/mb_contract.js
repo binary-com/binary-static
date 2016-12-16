@@ -4,6 +4,7 @@ var japanese_client = require('../../common_functions/country_base').japanese_cl
 var MBDefaults      = require('./mb_defaults').MBDefaults;
 var MBSymbols       = require('./mb_symbols').MBSymbols;
 var moment          = require('moment');
+var text = require('../../base/localize').text;
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -48,7 +49,7 @@ var MBContract = (function() {
             Y: 'year',
         };
         Object.keys(durationMap).forEach(function(key) {
-            dur = dur.replace(key, page.text.localize(durationMap[key] + (+dur[0] === 1 || /h/.test(key) ? '' : 's')));
+            dur = dur.replace(key, text.localize(durationMap[key] + (+dur[0] === 1 || /h/.test(key) ? '' : 's')));
         });
         return dur;
     };
@@ -72,9 +73,9 @@ var MBContract = (function() {
 
     // use function to generate elements and append them
     // e.g. element is select and element to append is option
-    var appendTextValueChild = function(element, text, value, isSelected) {
+    var appendTextValueChild = function(element, string, value, isSelected) {
         var option = document.createElement('option');
-        option.text = text;
+        option.text = string;
         option.value = value;
         if (isSelected) {
             option.setAttribute('selected', 'selected');
@@ -182,7 +183,7 @@ var MBContract = (function() {
         };
         Object.keys(all_durations).forEach(function(key) {
             if (all_durations[key]) {
-                remainingTimeString.push(all_durations[key] + page.text.localize((key + (+all_durations[key] === 1 ? '' : 's'))));
+                remainingTimeString.push(all_durations[key] + text.localize((key + (+all_durations[key] === 1 ? '' : 's'))));
             }
         });
         remainingTimeElement.innerHTML = remainingTimeString.join(' ');
@@ -205,10 +206,10 @@ var MBContract = (function() {
             available_contracts = contracts_for_response.contracts_for.available,
             $categoryElement = $('#category');
         var categoryNames = {
-            callput     : page.text.localize('Higher/Lower'),
-            touchnotouch: page.text.localize('Touch/No Touch'),
-            endsinout   : page.text.localize('Ends In/Out'),
-            staysinout  : page.text.localize('Stays In/Goes Out'),
+            callput     : text.localize('Higher/Lower'),
+            touchnotouch: text.localize('Touch/No Touch'),
+            endsinout   : text.localize('Ends In/Out'),
+            staysinout  : text.localize('Stays In/Goes Out'),
         };
         var categoryOrder = {
             callput     : 1,
@@ -323,8 +324,8 @@ var MBContract = (function() {
             var contract_type = c.contract_type,
                 template = getTemplate(contract_type),
                 $wrapper = $($desc_wrappers[template.order]);
-            $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(page.text.localize(preposition + template.name));
-            $wrapper.find('.descr').text(page.text.localize(preposition + template.description, [currency, payout, display_name, date_expiry]));
+            $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(text.localize(preposition + template.name));
+            $wrapper.find('.descr').text(text.localize(preposition + template.description, [currency, payout, display_name, date_expiry]));
         });
     };
 

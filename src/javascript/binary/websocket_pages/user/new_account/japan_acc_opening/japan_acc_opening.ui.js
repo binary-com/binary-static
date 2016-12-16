@@ -2,6 +2,7 @@ var Content             = require('../../../../common_functions/content').Conten
 var ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
 var Validate            = require('../../../../common_functions/validation').Validate;
 var JapanAccOpeningData = require('./japan_acc_opening.data').JapanAccOpeningData;
+var text = require('../../../../base/localize').text;
 
 var JapanAccOpeningUI = (function () {
     'use strict';
@@ -123,7 +124,7 @@ var JapanAccOpeningUI = (function () {
         ValidAccountOpening.checkDate(elementObj.dobdd, elementObj.dobmm, elementObj.dobyy, errorObj.dobdd);
 
         if (!/^\d{3}-\d{4}$/.test(elementObj.postcode.value)) {
-            errorObj.postcode.innerHTML = page.text.localize('Please follow the pattern 3 numbers, a dash, followed by 4 numbers.');
+            errorObj.postcode.innerHTML = text.localize('Please follow the pattern 3 numbers, a dash, followed by 4 numbers.');
             Validate.displayErrorMessage(errorObj.postcode);
             window.accountErrorCounter++;
         }
@@ -171,11 +172,11 @@ var JapanAccOpeningUI = (function () {
                     errorObj[key].setAttribute('style', 'display:none');
                 }
             });
-            $('#submit-message').removeClass('errorfield').text(page.text.localize('Processing your request...'));
+            $('#submit-message').removeClass('errorfield').text(text.localize('Processing your request...'));
             return 1;
         }
         // else
-        $('#submit-message').addClass('errorfield').text(page.text.localize('Please check the above form for pending errors.'));
+        $('#submit-message').addClass('errorfield').text(text.localize('Please check the above form for pending errors.'));
         return 0;
     }
 

@@ -5,7 +5,8 @@ var ValidateV2      = require('../../../common_functions/validation_v2').Validat
 var ValidationUI    = require('../../../validator').ValidationUI;
 var customError     = require('../../../validator').customError;
 var bind_validation = require('../../../validator').bind_validation;
-var dv              = require('../../../../lib/validation');
+var dv   = require('../../../../lib/validation');
+var text = require('../../../base/localize').text;
 
 var PasswordWS = (function() {
     var $form;
@@ -73,7 +74,7 @@ var PasswordWS = (function() {
 
     function handler(response) {
         if ('error' in response) {
-            var errorMsg = page.text.localize('Old password is wrong.');
+            var errorMsg = text.localize('Old password is wrong.');
             if ('message' in response.error) {
                 if (response.error.message.indexOf('old_password') === -1) {
                     errorMsg = response.error.message;

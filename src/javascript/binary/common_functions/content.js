@@ -1,4 +1,5 @@
 var template = require('../base/utility').template;
+var text = require('../base/localize').text;
 
 var Content = (function() {
     'use strict';
@@ -135,7 +136,7 @@ var Content = (function() {
         };
 
         Object.keys(localize).forEach(function(key) {
-            localize[key] = page.text.localize(localize[key]);
+            localize[key] = text.localize(localize[key]);
         });
 
         var starTime = document.getElementById('start_time_label');

@@ -1,4 +1,5 @@
 var moment = require('moment');
+var text = require('../../binary/base/localize').text;
 
 var KnowledgeTestUI = (function () {
     'use strict';
@@ -41,7 +42,7 @@ var KnowledgeTestUI = (function () {
 
     function createQuestionRow(questionNo, question, showAnswer) {
         var $questionRow = $('<tr></tr>', { id: questionNo, class: 'question' });
-        var $questionData = $('<td></td>').text(page.text.localize(question.question));
+        var $questionData = $('<td></td>').text(text.localize(question.question));
         var $questionLink = $('<a></a>', { name: question.id });
         $questionData.append($questionLink);
 
@@ -56,13 +57,13 @@ var KnowledgeTestUI = (function () {
     function createQuestionTable(questions, showAnswer) {
         var $header = $('<tr></tr>');
         var $questionColHeader = $('<th></th>', { id: 'question-header', class: 'question-col' })
-            .text(page.text.localize('Questions'));
+            .text(text.localize('Questions'));
 
         var $trueColHeader = $('<th></th>', { id: 'true-header', class: 'true-col' })
-            .text(page.text.localize('True'));
+            .text(text.localize('True'));
 
         var $falseColHeader = $('<th></th>', { id: 'fasle-header', class: 'false-col' })
-            .text(page.text.localize('False'));
+            .text(text.localize('False'));
 
         $header
             .append($questionColHeader)
@@ -83,12 +84,12 @@ var KnowledgeTestUI = (function () {
     // function createResultUI(score, time) {
     function createResultUI(score) {
         var $resultTable = $('<table></table>', { class: 'kv-pairs' });
-        var $scoreRow = $('<tr></tr>').append($('<td>' + page.text.localize('Score') + '</td>')).append($('<td>' + score + '</td>'));
+        var $scoreRow = $('<tr></tr>').append($('<td>' + text.localize('Score') + '</td>')).append($('<td>' + score + '</td>'));
 
         var date = moment();
-        var submitDate = moment.utc(date).format('YYYY') + page.text.localize('Year') + moment.utc(date).format('MM') + page.text.localize('Month') + moment.utc(date).format('DD') + page.text.localize('Day') + ' (' + page.text.localize('Weekday') + ')';
+        var submitDate = moment.utc(date).format('YYYY') + text.localize('Year') + moment.utc(date).format('MM') + text.localize('Month') + moment.utc(date).format('DD') + text.localize('Day') + ' (' + text.localize('Weekday') + ')';
 
-        var $dateRow = $('<tr></tr>').append($('<td>' + page.text.localize('Date') + '</td>')).append($('<td>' + submitDate + '</td>'));
+        var $dateRow = $('<tr></tr>').append($('<td>' + text.localize('Date') + '</td>')).append($('<td>' + submitDate + '</td>'));
 
         $resultTable.append($scoreRow).append($dateRow);
 
@@ -97,7 +98,7 @@ var KnowledgeTestUI = (function () {
 
     function createAlreadyCompleteDiv() {
         var msg = "{JAPAN ONLY}Dear customer, you've already completed the knowledge test, please proceed to next step.";
-        var $completeDiv = $('<div></div>').text(page.text.localize(msg));
+        var $completeDiv = $('<div></div>').text(text.localize(msg));
         return $completeDiv;
     }
 
@@ -109,7 +110,7 @@ var KnowledgeTestUI = (function () {
         $topbarmsg.removeClass('invisible')
             .find('a').removeClass('invisible')
                 .attr('href', page.url.url_for('/new_account/knowledge_testws'))
-                .html($('<span/>', { text: page.text.localize('{JAPAN ONLY}Take knowledge test') }));
+                .html($('<span/>', { text: text.localize('{JAPAN ONLY}Take knowledge test') }));
     }
 
     return {

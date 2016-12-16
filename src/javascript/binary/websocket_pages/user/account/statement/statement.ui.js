@@ -6,6 +6,7 @@ var Table           = require('../../../../common_functions/attach_dom/table').T
 var showTooltip     = require('../../../../common_functions/get_app_details').showTooltip;
 var japanese_client = require('../../../../common_functions/country_base').japanese_client;
 var Statement = require('../statement').Statement;
+var text = require('../../../../base/localize').text;
 
 var StatementUI = (function() {
     'use strict';
@@ -19,7 +20,7 @@ var StatementUI = (function() {
         var header = [
             Content.localize().textDate,
             Content.localize().textRef,
-            page.text.localize('Potential Payout'),
+            text.localize('Potential Payout'),
             Content.localize().textAction,
             Content.localize().textDescription,
             Content.localize().textCreditDebit,
@@ -53,8 +54,8 @@ var StatementUI = (function() {
     function createStatementRow(transaction) {
         var statement_data = Statement.getStatementData(transaction, TUser.get().currency, japanese_client());
         allData.push($.extend({}, statement_data, {
-            action: page.text.localize(statement_data.action),
-            desc  : page.text.localize(statement_data.desc),
+            action: text.localize(statement_data.action),
+            desc  : text.localize(statement_data.desc),
         }));
         var creditDebitType = (parseFloat(transaction.amount) >= 0) ? 'profit' : 'loss';
 
@@ -62,7 +63,7 @@ var StatementUI = (function() {
             statement_data.date,
             '<span' + showTooltip(statement_data.app_id, oauth_apps[statement_data.app_id]) + '>' + statement_data.ref + '</span>',
             statement_data.payout,
-            page.text.localize(statement_data.action),
+            text.localize(statement_data.action),
             '',
             statement_data.amount,
             statement_data.balance,
@@ -71,13 +72,13 @@ var StatementUI = (function() {
 
         $statementRow.children('.credit').addClass(creditDebitType);
         $statementRow.children('.date').addClass('pre');
-        $statementRow.children('.desc').html(page.text.localize(statement_data.desc) + '<br>');
+        $statementRow.children('.desc').html(text.localize(statement_data.desc) + '<br>');
 
         // create view button and append
         if (statement_data.action === 'Sell' || statement_data.action === 'Buy') {
             var $viewButtonSpan = Button.createBinaryStyledButton();
             var $viewButton = $viewButtonSpan.children('.button').first();
-            $viewButton.text(page.text.localize('View'));
+            $viewButton.text(text.localize('View'));
             $viewButton.addClass('open_contract_detailsws');
             $viewButton.attr('contract_id', statement_data.id);
 

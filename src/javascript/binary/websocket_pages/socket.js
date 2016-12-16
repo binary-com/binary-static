@@ -24,6 +24,7 @@ var MBTradePage               = require('./mb_trade/mb_tradepage').MBTradePage;
 var RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
 var RealityCheckData          = require('./user/reality_check/reality_check.data').RealityCheckData;
 var KnowledgeTest             = require('../../binary_japan/knowledge_test/knowledge_test.init').KnowledgeTest;
+var text = require('../base/localize').text;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
@@ -309,7 +310,7 @@ function BinarySocketClass() {
                 if (response.hasOwnProperty('error')) {
                     if (response.error && response.error.code) {
                         if (response.error.code && (response.error.code === 'WrongResponse' || response.error.code === 'OutputValidationFailed')) {
-                            $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (response.error.code === 'WrongResponse' && response.error.message ? response.error.message : page.text.localize('Sorry, an error occurred while processing your request.')) + '</p></div>');
+                            $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (response.error.code === 'WrongResponse' && response.error.message ? response.error.message : text.localize('Sorry, an error occurred while processing your request.')) + '</p></div>');
                         } else if (response.error.code === 'RateLimit' && !/jp_trading/i.test(window.location.pathname)) {
                             $('#ratelimit-error-message')
                             .css('display', 'block')
@@ -343,7 +344,7 @@ function BinarySocketClass() {
                              State.get('is_beta_trading') ? TradePage_Beta.onDisconnect :
                              State.get('is_mb_trading')   ? MBTradePage.onDisconnect    : '';
                 if (toCall) {
-                    Notifications.show({ text: page.text.localize('Connection error: Please check your internet connection.'), uid: 'CONNECTION_ERROR', dismissible: true });
+                    Notifications.show({ text: text.localize('Connection error: Please check your internet connection.'), uid: 'CONNECTION_ERROR', dismissible: true });
                     timeouts.error = setTimeout(function() {
                         toCall();
                     }, 10 * 1000);

@@ -9,6 +9,7 @@ var dv               = require('../../../../../lib/validation');
 var TimePicker       = require('../../../../components/time_picker').TimePicker;
 var DatePicker       = require('../../../../components/date_picker').DatePicker;
 var dateValueChanged = require('../../../../common_functions/common_functions').dateValueChanged;
+var text = require('../../../../base/localize').text;
 
 var SelfExclusionWS = (function() {
     'use strict';
@@ -125,7 +126,7 @@ var SelfExclusionWS = (function() {
             if (field) {
                 ValidationUI.draw('input[name=' + field + ']', errMsg);
             } else {
-                showFormMessage(page.text.localize(errMsg), false);
+                showFormMessage(text.localize(errMsg), false);
             }
             return;
         }
@@ -180,7 +181,7 @@ var SelfExclusionWS = (function() {
     function againstField(key) {
         return function(value) {
             var old = fields[key];
-            var err = page.text.localize('Please enter a number between 0 and [_1]', [old]);
+            var err = text.localize('Please enter a number between 0 and [_1]', [old]);
             var hasOld = !!old;
             var isEmpty = value.length === 0;
             if (!hasOld) {
@@ -329,7 +330,7 @@ var SelfExclusionWS = (function() {
 
     function hasConfirmed() {
         var message = 'When you click "Ok" you will be excluded from trading on the site until the selected date.';
-        return window.confirm(page.text.localize(message));
+        return window.confirm(text.localize(message));
     }
 
     // -----------------------------
@@ -350,7 +351,7 @@ var SelfExclusionWS = (function() {
     function showFormMessage(msg, isSuccess) {
         $('#formMessage')
             .attr('class', isSuccess ? 'success-msg' : errorClass)
-            .html(isSuccess ? '<ul class="checked"><li>' + page.text.localize(msg) + '</li></ul>' : page.text.localize(msg))
+            .html(isSuccess ? '<ul class="checked"><li>' + text.localize(msg) + '</li></ul>' : text.localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);

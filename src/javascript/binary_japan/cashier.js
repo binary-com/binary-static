@@ -1,5 +1,6 @@
 var Content = require('../binary/common_functions/content').Content;
 var objectNotEmpty = require('../binary/base/utility').objectNotEmpty;
+var text = require('../binary/base/localize').text;
 
 var CashierJP = (function() {
     function init(action) {
@@ -7,7 +8,7 @@ var CashierJP = (function() {
             var $container = $('#japan_cashier_container');
             if (page.client.is_virtual()) {
                 $container.addClass('center-text').removeClass('invisible')
-                    .html($('<p/>', { class: 'notice-msg', html: page.text.localize('This feature is not relevant to virtual-money accounts.') }));
+                    .html($('<p/>', { class: 'notice-msg', html: text.localize('This feature is not relevant to virtual-money accounts.') }));
                 return;
             }
             $container.removeClass('invisible');
@@ -46,7 +47,7 @@ var CashierJP = (function() {
             $('#id123-control22598145').parent().append('<p class="error-msg">' + Content.errorMessage('number_should_between', '¥1 - ¥1,000,000') + '</p>');
             return false;
         } else if (parseInt(TUser.get().balance) < withdrawal_amount) {
-            $('#id123-control22598145').parent().append('<p class="error-msg">' + page.text.localize('Insufficient balance.') + '</p>');
+            $('#id123-control22598145').parent().append('<p class="error-msg">' + text.localize('Insufficient balance.') + '</p>');
             return false;
         }
         return true;

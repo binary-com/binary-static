@@ -1,5 +1,6 @@
 // var testPassword = require('./passwordmeter').testPassword;
-var Content      = require('./content').Content;
+var Content = require('./content').Content;
+var text = require('../base/localize').text;
 
 var Validate = (function() {
     var errorCounter = 0;
@@ -18,9 +19,9 @@ var Validate = (function() {
         }
     }
 
-    function handleError(error, text) {
+    function handleError(error, message) {
         var par = document.createElement('p'),
-            re = new RegExp(text),
+            re = new RegExp(message),
             allText = '';
         par.className = 'error-message-password';
         var parClass = $('.' + par.className);
@@ -29,10 +30,10 @@ var Validate = (function() {
                 allText += parClass[i].textContent;
             }
             if (!re.test(allText)) {
-                par.innerHTML = par.innerHTML + ' ' + text;
+                par.innerHTML = par.innerHTML + ' ' + message;
             }
         } else {
-            par.innerHTML = text;
+            par.innerHTML = message;
         }
         error.appendChild(par);
         displayErrorMessage(error);
@@ -53,7 +54,7 @@ var Validate = (function() {
             displayErrorMessage(error);
             return true;
         } else if (!validateEmail(email)) {
-            error.textContent = Content.errorMessage('valid', page.text.localize('email address'));
+            error.textContent = Content.errorMessage('valid', text.localize('email address'));
             displayErrorMessage(error);
             return true;
         }
@@ -68,7 +69,7 @@ var Validate = (function() {
             displayErrorMessage(error);
             return true;
         } else if (!validateToken(token)) {
-            error.textContent = Content.errorMessage('valid', page.text.localize('verification token'));
+            error.textContent = Content.errorMessage('valid', text.localize('verification token'));
             displayErrorMessage(error);
             return true;
         }
@@ -114,7 +115,7 @@ var Validate = (function() {
         if (/[0-9]+/.test(password) && /[A-Z]+/.test(password) && /[a-z]+/.test(password)) {
             return true;
         }
-        handleError(error, page.text.localize('Password should have lower and uppercase letters with numbers.'));
+        handleError(error, text.localize('Password should have lower and uppercase letters with numbers.'));
         return errorCounter++;
     }
 
@@ -216,7 +217,7 @@ function showPasswordError(password) {
 
     var hasUpperLowerDigitRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/;
     if (!hasUpperLowerDigitRegex.test(password)) {
-        errMsgs.push(page.text.localize('Password should have lower and uppercase letters with numbers.'));
+        errMsgs.push(text.localize('Password should have lower and uppercase letters with numbers.'));
     }
 
     return errMsgs;

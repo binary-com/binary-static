@@ -11,6 +11,7 @@ var Defaults                       = require('../defaults').Defaults;
 var Symbols                        = require('../symbols').Symbols;
 var Tick                           = require('../tick').Tick;
 var State                          = require('../../../base/storage').State;
+var text                           = require('../../../base/localize').text;
 var displayUnderlyings             = require('../common').displayUnderlyings;
 var setFormPlaceholderContent_Beta = require('../set_values').setFormPlaceholderContent_Beta;
 var showPriceOverlay               = require('../common').showPriceOverlay;
@@ -130,7 +131,7 @@ function processContract_Beta(contracts) {
         contracts_list.style.display = 'none';
         message_container.hide();
         confirmation_error.show();
-        confirmation_error_contents.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="sessionStorage.removeItem(\'underlying\'); window.location.reload();">' + page.text.localize('Please reload the page') + '</a>';
+        confirmation_error_contents.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="sessionStorage.removeItem(\'underlying\'); window.location.reload();">' + text.localize('Please reload the page') + '</a>';
         return;
     }
 

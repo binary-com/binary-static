@@ -4,6 +4,7 @@ var buildOauthApps       = require('../../../../common_functions/get_app_details
 var Content              = require('../../../../common_functions/content').Content;
 var ProfitTableUI        = require('./profit_table.ui').ProfitTableUI;
 var ProfitTableData      = require('./profit_table.data').ProfitTableData;
+var text = require('../../../../base/localize').text;
 
 var ProfitTableWS = (function() {
     var batchSize,
@@ -59,7 +60,7 @@ var ProfitTableWS = (function() {
                 $('#profit-table tbody')
                     .append($('<tr/>', { class: 'flex-tr' })
                         .append($('<td/>',  { colspan: 8 })
-                            .append($('<p/>', { class: 'notice-msg center-text', text: page.text.localize('Your account has no trading activity.') }))));
+                            .append($('<p/>', { class: 'notice-msg center-text', text: text.localize('Your account has no trading activity.') }))));
             }
         }
     }

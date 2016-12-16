@@ -1,3 +1,5 @@
+var text = require('../../base/localize').text;
+
 var AccountTransferWS = (function() {
     'use strict';
 
@@ -71,7 +73,7 @@ var AccountTransferWS = (function() {
         var isValid = true;
 
         if (amt.length <= 0) {
-            $form.find('#invalid_amount').text(page.text.localize('Invalid amount. Minimum transfer amount is 0.10, and up to 2 decimal places.'));
+            $form.find('#invalid_amount').text(text.localize('Invalid amount. Minimum transfer amount is 0.10, and up to 2 decimal places.'));
             isValid = false;
         }
 
@@ -94,10 +96,10 @@ var AccountTransferWS = (function() {
             if ('message' in response.error) {
                 if ($('#transfer_account_transfer option').length > 0) {
                     $form.removeClass('invisible');
-                    $form.find('#invalid_amount').text(page.text.localize(response.error.message));
+                    $form.find('#invalid_amount').text(text.localize(response.error.message));
                 } else {
                     $('#client_message').removeClass('invisible');
-                    $('#client_message p').html(page.text.localize(response.error.message));
+                    $('#client_message p').html(text.localize(response.error.message));
                     $('#success_form').addClass('invisible');
                     $form.addClass('invisible');
                 }
@@ -144,13 +146,13 @@ var AccountTransferWS = (function() {
                         availableCurr.push(currObj);
                     } else {
                         secondacct = value.loginid;
-                        str = page.text.localize('from account (' + firstacct + ') to account (' + secondacct + ')');
+                        str = text.localize('from account (' + firstacct + ') to account (' + secondacct + ')');
                         optionValue = firstacct + '_to_' + secondacct;
                         $form.find('#transfer_account_transfer')
                              .append($('<option></option>')
                              .attr('value', optionValue)
                              .text(str));
-                        str = page.text.localize('from account (' + secondacct + ') to account (' + firstacct + ')');
+                        str = text.localize('from account (' + secondacct + ') to account (' + firstacct + ')');
                         optionValue = secondacct + '_to_' + firstacct;
                         $form.find('#transfer_account_transfer')
                              .append($('<option></option>')
@@ -171,7 +173,7 @@ var AccountTransferWS = (function() {
                     }
 
                     if (($.isEmptyObject(firstacct) === false) && ($.isEmptyObject(secondacct) === false)) {
-                        str = page.text.localize('from account (' + secondacct + ') to account (' + firstacct + ')');
+                        str = text.localize('from account (' + secondacct + ') to account (' + firstacct + ')');
                         optionValue = secondacct + '_to_' + firstacct;
                         $form.find('#transfer_account_transfer')
                                  .append($('<option></option>')
@@ -205,7 +207,7 @@ var AccountTransferWS = (function() {
                     return false;
                 } else if (account_to === undefined || account_from === undefined || $.isEmptyObject(account_to)) {
                     $('#client_message').removeClass('invisible');
-                    $('#client_message p').html(page.text.localize('The account transfer is unavailable for your account.'));
+                    $('#client_message p').html(text.localize('The account transfer is unavailable for your account.'));
                     $('#success_form').addClass('invisible');
                     $form.addClass('invisible');
                     return false;
