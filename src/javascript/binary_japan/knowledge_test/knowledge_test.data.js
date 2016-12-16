@@ -56,9 +56,13 @@ var KnowledgeTestData = (function() {
         return picked_questions;
     }
 
-    function sendResult(results) {
-        var status = results >= 14 ? 'pass' : 'fail';
-        BinarySocket.send({ jp_knowledge_test: 1, score: results, status: status });
+    function sendResult(questions, resultScore) {
+        BinarySocket.send({
+            jp_knowledge_test: 1,
+            score            : resultScore,
+            status           : resultScore >= 14 ? 'pass' : 'fail',
+            questions        : questions,
+        });
     }
 
     return {

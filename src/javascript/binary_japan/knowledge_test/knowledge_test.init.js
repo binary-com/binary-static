@@ -10,7 +10,7 @@ var KnowledgeTest = (function() {
     var submitted = {};
     var submitCompleted = false;
     var randomPicks = [];
-    var randomPicksAnswer = {};
+    var randomPicksObj = {};
     var resultScore = 0;
 
     var passMsg = '{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly.';
@@ -42,10 +42,13 @@ var KnowledgeTest = (function() {
         }
 
         // compute score
+        var questions = [];
         Object.keys(submitted).forEach(function (k) {
-            resultScore += (submitted[k] === randomPicksAnswer[k] ? 1 : 0);
+            resultScore += (submitted[k] === randomPicksObj[k].answer ? 1 : 0);
+            randomPicksObj[k].client_answer = submitted[k];
+            questions.push(randomPicksObj[k]);
         });
-        KnowledgeTestData.sendResult(resultScore);
+        KnowledgeTestData.sendResult(questions, resultScore);
         submitCompleted = true;
     }
 
@@ -102,14 +105,8 @@ var KnowledgeTest = (function() {
 
     function populateQuestions() {
         randomPicks = KnowledgeTestData.randomPick20();
-        for (var i = 0; i < 5; i++) {
-            for (var k = 0; k < 4; k++) {
-                var qid = randomPicks[i][k].id;
-                var ans = randomPicks[i][k].answer;
-
-                randomPicksAnswer[qid] = ans;
-            }
-        }
+        randomPicks.reduce((a, b) => a.concat(b))
+                   .forEach((question) => { randomPicksObj[question.id] = question; });
 
         showQuestionsTable();
     }
