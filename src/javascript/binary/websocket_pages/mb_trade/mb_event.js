@@ -29,7 +29,7 @@ var MBTradingEvents = (function () {
                     // chartFrameSource();
                     // showFormOverlay();
                     // showPriceOverlay();
-                    if(e.target.selectedIndex < 0) {
+                    if (e.target.selectedIndex < 0) {
                         e.target.selectedIndex = 0;
                     }
                     var underlying = e.target.value;
@@ -77,12 +77,13 @@ var MBTradingEvents = (function () {
                 char = String.fromCharCode(ev.which),
                 isOK = true;
             if ((char === '.' && ev.target.value.indexOf(char) >= 0) ||
-                (!/[0-9\.]/.test(char) && [8, 37, 39, 46].indexOf(key) < 0) || // delete, backspace, arrow keys
-                /['%]/.test(char)) { // similarity to arrows key code in some browsers
-                    isOK = false;
+                    (!/[0-9\.]/.test(char) && [8, 37, 39, 46].indexOf(key) < 0) || // delete, backspace, arrow keys
+                    /['%]/.test(char)) { // similarity to arrows key code in some browsers
+                isOK = false;
             }
             if (japanese_client()) {
-                var result = payoutElement.value.substring(0, ev.target.selectionStart) + char + payoutElement.value.substring(ev.target.selectionEnd);
+                var result = payoutElement.value.substring(0, ev.target.selectionStart) + char +
+                                payoutElement.value.substring(ev.target.selectionEnd);
                 if (char === '.' || result[0] === '0' || +result < 1 || +result > 100) {
                     isOK = false;
                 }
@@ -97,9 +98,9 @@ var MBTradingEvents = (function () {
         var payoutElement = document.getElementById('payout');
         if (payoutElement) {
             if (!payoutElement.value) {
-                var payout = MBDefaults.get('payout') || (japanese_client() ? 1 : 10);
-                payoutElement.value = payout;
-                MBDefaults.set('payout', payout);
+                var payout_def = MBDefaults.get('payout') || (japanese_client() ? 1 : 10);
+                payoutElement.value = payout_def;
+                MBDefaults.set('payout', payout_def);
             }
             payoutElement.addEventListener('keypress', payoutOnKeypress);
             payoutElement.addEventListener('input', debounce(function(e) {
@@ -111,10 +112,9 @@ var MBTradingEvents = (function () {
                         $payoutElement.addClass('error-field');
                         $tableElement.addClass('invisible');
                         return false;
-                    } else {
-                        $payoutElement.removeClass('error-field');
-                        $tableElement.removeClass('invisible');
                     }
+                    $payoutElement.removeClass('error-field');
+                    $tableElement.removeClass('invisible');
                 } else {
                     payout = payout.replace(/[^0-9.]/g, '');
                     if (isStandardFloat(payout)) {
@@ -125,6 +125,7 @@ var MBTradingEvents = (function () {
                 MBDefaults.set('payout', payout);
                 MBProcess.processPriceRequest();
                 MBContract.displayDescriptions();
+                return true;
             }));
             payoutElement.addEventListener('click', function() {
                 this.select();
@@ -132,8 +133,8 @@ var MBTradingEvents = (function () {
         }
 
         // For verifying there are 2 digits after decimal
-        var isStandardFloat = (function(value){
-            return (!isNaN(value) && value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length>2);
+        var isStandardFloat = (function(value) {
+            return (!isNaN(value) && value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length > 2);
         });
 
         var currencyElement = document.getElementById('currency');

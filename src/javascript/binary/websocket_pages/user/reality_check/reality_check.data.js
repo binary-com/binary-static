@@ -1,7 +1,7 @@
 var template = require('../../../base/utility').template;
-var moment = require('moment');
+var moment   = require('moment');
 
-var RealityCheckData = (function () {
+var RealityCheckData = (function() {
     'use strict';
 
     var defaultInterval = 600000;
@@ -9,7 +9,7 @@ var RealityCheckData = (function () {
     var tradingTimeTemplate = 'Your trading statistics since [_1].';
 
     function getSummaryAsync() {
-        BinarySocket.send({reality_check: 1});
+        BinarySocket.send({ reality_check: 1 });
     }
 
     function getAck() {
@@ -87,36 +87,36 @@ var RealityCheckData = (function () {
         var startTimeString = template(tradingTimeTemplate, [startTime.format('YYYY-MM-DD HH:mm:ss') + ' GMT']);
         return {
             startTimeString: startTimeString,
-            loginTime: startTime.format('YYYY-MM-DD HH:mm:ss') + ' GMT',
-            currentTime: currentTime.format('YYYY-MM-DD HH:mm:ss') + ' GMT',
+            loginTime      : startTime.format('YYYY-MM-DD HH:mm:ss') + ' GMT',
+            currentTime    : currentTime.format('YYYY-MM-DD HH:mm:ss') + ' GMT',
             sessionDuration: durationString,
-            loginId: wsData.loginid,
-            currency: wsData.currency,
-            turnover: (+turnover).toFixed(2),
-            profitLoss: (+profitLoss).toFixed(2),
+            loginId        : wsData.loginid,
+            currency       : wsData.currency,
+            turnover       : (+turnover).toFixed(2),
+            profitLoss     : (+profitLoss).toFixed(2),
             contractsBought: wsData.buy_count,
-            contractsSold: wsData.sell_count,
-            openContracts: wsData.open_contract_count,
-            potentialProfit: (+(wsData.potential_profit)).toFixed(2)
+            contractsSold  : wsData.sell_count,
+            openContracts  : wsData.open_contract_count,
+            potentialProfit: (+(wsData.potential_profit)).toFixed(2),
         };
     }
 
     return {
-        getSummaryAsync: getSummaryAsync,
-        getAck: getAck,
-        setOpenSummaryFlag: setOpenSummaryFlag,
-        getOpenSummaryFlag: getOpenSummaryFlag,
+        getSummaryAsync       : getSummaryAsync,
+        getAck                : getAck,
+        setOpenSummaryFlag    : setOpenSummaryFlag,
+        getOpenSummaryFlag    : getOpenSummaryFlag,
         getPreviousLoadLoginId: getPreviousLoadLoginId,
         setPreviousLoadLoginId: setPreviousLoadLoginId,
-        updateAck: updateAck,
-        getInterval: getInterval,
-        updateInterval: updateInterval,
-        clear: clear,
-        resetInvalid: resetInvalid,
-        summaryData: summaryData,
-        triggerCloseEvent: triggerCloseEvent
+        updateAck             : updateAck,
+        getInterval           : getInterval,
+        updateInterval        : updateInterval,
+        clear                 : clear,
+        resetInvalid          : resetInvalid,
+        summaryData           : summaryData,
+        triggerCloseEvent     : triggerCloseEvent,
     };
-}());
+})();
 
 module.exports = {
     RealityCheckData: RealityCheckData,
