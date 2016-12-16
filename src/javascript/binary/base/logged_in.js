@@ -1,5 +1,6 @@
 var objectNotEmpty = require('./utility').objectNotEmpty;
 var Cookies        = require('../../lib/js-cookie');
+var getLanguage    = require('./language').getLanguage;
 
 var LoggedInHandler = (function() {
     'use strict';
@@ -45,9 +46,10 @@ var LoggedInHandler = (function() {
         }
         if (set_default) {
             redirect_url = page.url.default_redirect_url();
-            var lang_cookie = Cookies.get('language');
-            if (lang_cookie && lang_cookie !== page.language()) {
-                redirect_url = redirect_url.replace(new RegExp('\/' + page.language() + '\/', 'i'), '/' + lang_cookie.toLowerCase() + '/');
+            var lang_cookie = Cookies.get('language'),
+                language = getLanguage();
+            if (lang_cookie && lang_cookie !== language) {
+                redirect_url = redirect_url.replace(new RegExp('\/' + language + '\/', 'i'), '/' + lang_cookie.toLowerCase() + '/');
             }
         }
         document.getElementById('loading_link').setAttribute('href', redirect_url);

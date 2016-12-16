@@ -10,10 +10,13 @@ var InScriptStore         = require('./storage').InScriptStore;
 var CookieStorage         = require('./storage').CookieStorage;
 var localizeForLang       = require('./localize').localizeForLang;
 var localize              = require('./localize').localize;
+var getLanguage           = require('./language').getLanguage;
+var setCookieLanguage     = require('./language').setCookieLanguage;
 var TrafficSource         = require('../common_functions/traffic_source').TrafficSource;
 var RiskClassification    = require('../common_functions/risk_classification').RiskClassification;
 var checkClientsCountry   = require('../common_functions/country_base').checkClientsCountry;
 var japanese_client       = require('../common_functions/country_base').japanese_client;
+var checkLanguage         = require('../common_functions/country_base').checkLanguage;
 var FinancialAssessmentws = require('../websocket_pages/user/account/settings/financial_assessment').FinancialAssessmentws;
 var ViewBalance           = require('../websocket_pages/user/viewbalance/viewbalance.init').ViewBalance;
 var CashierJP             = require('../../binary_japan/cashier').CashierJP;
@@ -69,7 +72,7 @@ var GTM = (function() {
 
     var gtm_data_layer_info = function(data) {
         var data_layer_info = {
-            language : page.language(),
+            language : getLanguage(),
             pageTitle: page_title(),
             pjax     : page.is_loaded_by_pjax,
             url      : document.URL,
@@ -438,7 +441,7 @@ URL.prototype = {
         } else if (path.length > 0 && path[0] === '/') {
             path = path.substr(1);
         }
-        var lang = page.language().toLowerCase(),
+        var lang = getLanguage().toLowerCase(),
             url  = window.location.href;
         return url.substring(0, url.indexOf('/' + lang + '/') + lang.length + 2) + (path || 'home') + '.html' + (params ? '?' + params : '');
     },
@@ -1071,51 +1074,15 @@ var Page = function() {
     this.url = new URL();
     this.header = new Header({ user: this.user, client: this.client, url: this.url });
     this.contents = new Contents(this.client, this.user);
-    this._lang = null;
     $('#logo').on('click', function() {
         load_with_pjax(page.url.url_for(page.client.is_logged_in ? japanese_client() ? 'multi_barriers_trading' : 'trading' : ''));
     });
 };
 
 Page.prototype = {
-    all_languages: function() {
-        return {
-            EN   : 'English',
-            DE   : 'Deutsch',
-            ES   : 'Español',
-            FR   : 'Français',
-            ID   : 'Indonesia',
-            IT   : 'Italiano',
-            JA   : '日本語',
-            PL   : 'Polish',
-            PT   : 'Português',
-            RU   : 'Русский',
-            TH   : 'Thai',
-            VI   : 'Tiếng Việt',
-            ZH_CN: '简体中文',
-            ZH_TW: '繁體中文',
-        };
-    },
-    language_from_url: function() {
-        var regex = new RegExp('^(' + Object.keys(this.all_languages()).join('|') + ')$', 'i');
-        var langs = window.location.href.split('/').slice(3);
-        for (var i = 0; i < langs.length; i++) {
-            var lang = langs[i];
-            if (regex.test(lang)) return lang.toUpperCase();
-        }
-        return '';
-    },
-    language: function() {
-        var lang = this._lang;
-        if (!lang) {
-            lang = (this.language_from_url() || Cookies.get('language') || 'EN').toUpperCase();
-            this._lang = lang;
-        }
-        return lang;
-    },
     on_load: function() {
         this.url.reset();
-        localizeForLang(this.language());
+        localizeForLang(getLanguage());
         this.header.on_load();
         this.on_change_loginid();
         this.record_affiliate_exposure();
@@ -1129,15 +1096,12 @@ Page.prototype = {
         } else {
             LocalStore.set('reality_check.ack', 0);
         }
-        if (!Cookies.get('language')) {
-            var cookie = new CookieStorage('language');
-            cookie.write(this.language());
-        }
+        setCookieLanguage();
         if (sessionStorage.getItem('showLoginPage')) {
             sessionStorage.removeItem('showLoginPage');
             Login.redirect_to_login();
         }
-        this.check_language();
+        checkLanguage();
         TrafficSource.setData();
         this.endpoint_notification();
         BinarySocket.init();
@@ -1146,17 +1110,6 @@ Page.prototype = {
     on_unload: function() {
         this.header.on_unload();
         this.contents.on_unload();
-    },
-    on_change_language: function() {
-        var that = this;
-        $('#select_language li').on('click', function() {
-            var language = $(this).attr('class');
-            if (page.language() === language) return;
-            $('#display_language .language').text($(this).text());
-            var cookie = new CookieStorage('language');
-            cookie.write(language);
-            document.location = that.url_for_language(language);
-        });
     },
     on_change_loginid: function() {
         var that = this;
@@ -1200,11 +1153,6 @@ Page.prototype = {
             $('#acc_transfer_submit').submit();
             return true;
         });
-    },
-    url_for_language: function(lang) {
-        lang = lang.trim();
-        SessionStore.set('selected.language', lang.toUpperCase());
-        return window.location.href.replace(new RegExp('\/' + page.language() + '\/', 'i'), '/' + lang.toLowerCase() + '/');
     },
     record_affiliate_exposure: function() {
         var token = this.url.param('t');
@@ -1258,23 +1206,6 @@ Page.prototype = {
         };
         xhttp.open('GET', page.url.url_for_static() + 'version?' + Math.random().toString(36).slice(2), true);
         xhttp.send();
-    },
-    check_language: function() {
-        if (page.language() === 'ID') {
-            var regex = new RegExp('id');
-            if (!regex.test($('.blog a').attr('href'))) {
-                $('.blog a').attr('href', $('.blog a').attr('href') + '/id/');
-            }
-        }
-        if (japanese_client()) {
-            $('.ja-hide').addClass('invisible');
-            $('.ja-show').attr('style', 'display: inline !important; visibility: visible;');
-            $('.ja-show-block').attr('style', 'display: block !important; visibility: visible;');
-            $('.ja-show-inline-block').attr('style', 'display: inline-block !important; visibility: visible;');
-            $('.ja-no-padding').attr('style', 'padding-top: 0; padding-bottom: 0;');
-            $('#regulatory-text').removeClass('gr-9 gr-7-p')
-                                 .addClass('gr-12 gr-12-p');
-        }
     },
     endpoint_notification: function() {
         var server  = localStorage.getItem('config.server_url');
@@ -1355,7 +1286,7 @@ Page.prototype = {
         window.$buoop = {
             vs : { i: 11, f: -4, o: -4, s: 9, c: -4 },
             api: 4,
-            l  : page.language().toLowerCase(),
+            l  : getLanguage().toLowerCase(),
             url: 'https://whatbrowser.org/',
         };
         $(document).ready(function() {

@@ -9,6 +9,7 @@ var DatePicker           = require('../../../../components/date_picker').DatePic
 var toISOFormat          = require('../../../../common_functions/string_util').toISOFormat;
 var dateValueChanged     = require('../../../../common_functions/common_functions').dateValueChanged;
 var localize = require('../../../../base/localize').localize;
+var getLanguage = require('../../../../base/language').getLanguage;
 
 var StatementWS = (function() {
     'use strict';
@@ -64,7 +65,7 @@ var StatementWS = (function() {
             } else {
                 $('#jump-to').parent().parent().parent()
                              .removeClass('invisible');
-                if (page.language().toLowerCase() === 'ja') {
+                if (getLanguage() === 'JA') {
                     $('#download_csv').removeClass('invisible')
                                       .find('a')
                                       .unbind('click')

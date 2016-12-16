@@ -1,5 +1,7 @@
 var Cookies = require('../../lib/js-cookie');
 var Login = require('../base/login').Login;
+var getLanguage = require('../base/language').getLanguage;
+var URLForLanguage = require('../base/language').URLForLanguage;
 
 function checkClientsCountry() {
     var clients_country = localStorage.getItem('clients_country');
@@ -18,8 +20,8 @@ function checkClientsCountry() {
 }
 
 function limitLanguage(lang) {
-    if (page.language() !== lang && !Login.is_login_pages()) {
-        window.location.href = page.url_for_language(lang);
+    if (getLanguage() !== lang && !Login.is_login_pages()) {
+        window.location.href = URLForLanguage(lang);
     }
     if (document.getElementById('select_language')) {
         $('.languages').remove();
@@ -33,10 +35,32 @@ function limitLanguage(lang) {
 function japanese_client() {
     // handle for test case
     if (typeof window === 'undefined') return false;
-    return (page.language().toLowerCase() === 'ja' || (Cookies.get('residence') === 'jp') || localStorage.getItem('clients_country') === 'jp');
+    return (getLanguage() === 'JA' || (Cookies.get('residence') === 'jp') || localStorage.getItem('clients_country') === 'jp');
+}
+
+function checkLanguage() {
+    if (getLanguage() === 'ID') {
+        var regex = new RegExp('id'),
+            $blogLink = $('.blog a'),
+            $blogHREF = $blogLink.attr('href');
+        if (!regex.test($blogHREF)) {
+            $blogLink.attr('href', $blogHREF + '/id/');
+        }
+    }
+    if (japanese_client()) {
+        var visible = 'visibility: visible;';
+        $('.ja-hide').addClass('invisible');
+        $('.ja-show').attr('style', 'display: inline !important;' + visible);
+        $('.ja-show-block').attr('style', 'display: block !important;' + visible);
+        $('.ja-show-inline-block').attr('style', 'display: inline-block !important;' + visible);
+        $('.ja-no-padding').attr('style', 'padding-top: 0; padding-bottom: 0;');
+        $('#regulatory-text').removeClass('gr-9 gr-7-p')
+                             .addClass('gr-12 gr-12-p');
+    }
 }
 
 module.exports = {
     checkClientsCountry: checkClientsCountry,
     japanese_client    : japanese_client,
+    checkLanguage      : checkLanguage,
 };

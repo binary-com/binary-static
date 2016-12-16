@@ -1,4 +1,5 @@
 var getAppId = require('../../config').getAppId;
+var getLanguage = require('./language').getLanguage;
 
 var Login = (function() {
     'use strict';
@@ -17,8 +18,8 @@ var Login = (function() {
     var login_url = function() {
         var server_url = localStorage.getItem('config.server_url');
         return ((server_url && /qa/.test(server_url)) ?
-            'https://www.' + server_url.split('.')[1] + '.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + page.language() :
-            'https://oauth.binary.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + page.language()
+            'https://www.' + server_url.split('.')[1] + '.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + getLanguage() :
+            'https://oauth.binary.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + getLanguage()
         );
     };
 

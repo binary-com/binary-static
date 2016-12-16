@@ -1,10 +1,11 @@
 var email_rot13 = require('../common_functions/common_functions').email_rot13;
 var loadCSS     = require('../../lib/loadCSS').loadCSS;
 var loadJS      = require('../../lib/loadJS').loadJS;
+var getLanguage = require('../base/language').getLanguage;
 
 var Contact = (function() {
     var init = function() {
-        $('#faq_url').attr('href', 'https://binary.desk.com/customer/' + page.language() + '/portal/articles');
+        $('#faq_url').attr('href', 'https://binary.desk.com/customer/' + getLanguage() + '/portal/articles');
         display_cs_contacts();
         show_live_chat_icon();
     };

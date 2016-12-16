@@ -25,6 +25,7 @@ var RealityCheck              = require('./user/reality_check/reality_check.init
 var RealityCheckData          = require('./user/reality_check/reality_check.data').RealityCheckData;
 var KnowledgeTest             = require('../../binary_japan/knowledge_test/knowledge_test.init').KnowledgeTest;
 var localize = require('../base/localize').localize;
+var getLanguage = require('../base/language').getLanguage;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
@@ -49,7 +50,7 @@ function BinarySocketClass() {
         timeouts = {},
         req_number = 0,
         wrongAppId = 0,
-        socketUrl = getSocketURL() + '?app_id=' + getAppId() + (page.language() ? '&l=' + page.language() : '');
+        socketUrl = getSocketURL() + '?app_id=' + getAppId() + '&l=' + getLanguage();
 
     var clearTimeouts = function() {
         Object.keys(timeouts).forEach(function(key) {

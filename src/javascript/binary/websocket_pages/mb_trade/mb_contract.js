@@ -5,6 +5,7 @@ var MBDefaults      = require('./mb_defaults').MBDefaults;
 var MBSymbols       = require('./mb_symbols').MBSymbols;
 var moment          = require('moment');
 var localize = require('../../base/localize').localize;
+var getLanguage = require('../../base/language').getLanguage;
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -66,7 +67,7 @@ var MBContract = (function() {
         }
         return (moment(moment.utc(date_expiry * 1000))
                     .utcOffset(japanese_client() ? '+09:00' : '+00:00')
-                    .locale(page.language().toLowerCase())
+                    .locale(getLanguage().toLowerCase())
                     .format('MMM Do, HH:mm')
                     .replace(/08:59/, '09:00«') + ' (' + durationText(duration.replace('0d', '1d')) + ')');
     };
@@ -319,7 +320,7 @@ var MBContract = (function() {
             payout = Number(MBDefaults.get('payout') * (japanese_client() ? 1000 : 1)).toLocaleString(),
             display_name = MBSymbols.getName(MBDefaults.get('underlying')),
             date_expiry = PeriodText(contracts[0].trading_period).replace(/\s\(.*\)/, ''),
-            preposition = page.language() === 'JA' ? '{JAPAN ONLY}' : '';
+            preposition = getLanguage() === 'JA' ? '{JAPAN ONLY}' : '';
         contracts.forEach(function(c) {
             var contract_type = c.contract_type,
                 template = getTemplate(contract_type),

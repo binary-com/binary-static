@@ -1,6 +1,7 @@
 var DigitInfoWS                = require('./charts/digit_infows').DigitInfoWS;
 var JapanPortfolio             = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
 var State                      = require('../../base/storage').State;
+var getLanguage                = require('../../base/language').getLanguage;
 var toggleActiveNavMenuElement = require('./common').toggleActiveNavMenuElement;
 var showHighchart              = require('./common').showHighchart;
 
@@ -212,7 +213,7 @@ var TradingAnalysis = (function() {
         };
 
         if (show_image && images.hasOwnProperty(form_name)) {
-            var image_path = page.url.url_for_static('images/pages/trade-explanation/' + (page.language() === 'JA' ? 'ja/' : ''));
+            var image_path = page.url.url_for_static('images/pages/trade-explanation/' + (getLanguage() === 'JA' ? 'ja/' : ''));
             $Container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $Container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
             $Container.find('#explanation_image').removeClass(hidden_class);

@@ -10,6 +10,7 @@ var addComma        = require('../../common_functions/string_util').addComma;
 var Moment          = require('moment');
 var toISOFormat     = require('../../common_functions/string_util').toISOFormat;
 var localize = require('../../base/localize').localize;
+var getLanguage = require('../../base/language').getLanguage;
 
 /*
  * This contains common functions we need for processing the response
@@ -799,7 +800,7 @@ function chartFrameSource() {
 
 function setChartSource() {
     var ja = japanese_client();
-    document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + (page.language() || 'en').toLowerCase() +
+    document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + getLanguage().toLowerCase() +
   '&hideOverlay=' + (ja ? 'true' : 'false') + '&hideShare=' + (ja ? 'true' : 'false') + '&timezone=GMT+' + (ja ? '9' : '0') +
   '&hideFooter=' + (ja ? 'true' : 'false');
 }

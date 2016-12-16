@@ -2,6 +2,7 @@ var objectNotEmpty             = require('../../base/utility').objectNotEmpty;
 var Content                    = require('../../common_functions/content').Content;
 var getFormNameBarrierCategory = require('./common').getFormNameBarrierCategory;
 var localize = require('../../base/localize').localize;
+var getLanguage = require('../../base/language').getLanguage;
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -156,7 +157,7 @@ var Contract = (function() {
                     tradeContractForms[contractCategory] = localize(currentObj.contract_category_display);
                     if (contractCategory === 'digits') {
                         tradeContractForms.matchdiff = Content.localize().textFormMatchesDiffers;
-                        if (page.language() !== 'ID') {
+                        if (getLanguage() !== 'ID') {
                             tradeContractForms.evenodd = Content.localize().textFormEvenOdd;
                             tradeContractForms.overunder = Content.localize().textFormOverUnder;
                         }

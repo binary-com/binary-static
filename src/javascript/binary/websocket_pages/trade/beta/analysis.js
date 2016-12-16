@@ -4,6 +4,7 @@ var japanese_client                 = require('../../../common_functions/country
 var DigitInfoWS_Beta                = require('./charts/digit_infows').DigitInfoWS_Beta;
 var PortfolioWS                     = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
 var State                           = require('../../../base/storage').State;
+var getLanguage                     = require('../../../base/language').getLanguage;
 var showHighchart                   = require('../common').showHighchart;
 var toggleActiveNavMenuElement_Beta = require('../common').toggleActiveNavMenuElement_Beta;
 
@@ -216,7 +217,7 @@ var TradingAnalysis_Beta = (function() {
         };
 
         if (show_image && images.hasOwnProperty(form_name)) {
-            var image_path = page.url.url_for_static('images/pages/trade-explanation/' + (page.language() === 'JA' ? 'ja/' : ''));
+            var image_path = page.url.url_for_static('images/pages/trade-explanation/' + (getLanguage() === 'JA' ? 'ja/' : ''));
             $Container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $Container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
             $Container.find('#explanation_image').removeClass(hidden_class);
