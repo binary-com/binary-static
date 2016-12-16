@@ -1,4 +1,4 @@
-var text = require('../base/localize').text;
+var localize = require('../base/localize').localize;
 
 var JobDetails = (function() {
     var dept;
@@ -43,7 +43,7 @@ var JobDetails = (function() {
         depts = ['Information_Technology', 'Quality_Assurance', 'Quantitative_Analysis', 'Marketing', 'Accounting', 'Compliance', 'Customer_Support', 'Human_Resources', 'Administrator', 'Internal_Audit'];
         sections = ['section-one', 'section-two', 'section-three', 'section-four', 'section-five', 'section-six', 'section-seven', 'section-eight'];
         if (check_url()) {
-            $('.job-details').find('#title').html(text.localize(dept.replace(/_/g, ' ')));
+            $('.job-details').find('#title').html(localize(dept.replace(/_/g, ' ')));
             var deptImage = $('.dept-image'),
                 sourceImage = deptImage.attr('src').replace('Information_Technology', dept);
             deptImage.attr('src', sourceImage)
@@ -55,7 +55,7 @@ var JobDetails = (function() {
                 section = $('#' + dept + '-' + sections[i]);
                 section.insertAfter('.sections div:last-child');
                 if (section.attr('class')) {
-                    $('#sidebar-nav a[href="#' + sections[i] + '"]').html(text.localize(section.attr('class').replace(/_/g, ' ')));
+                    $('#sidebar-nav a[href="#' + sections[i] + '"]').html(localize(section.attr('class').replace(/_/g, ' ')));
                 }
             }
             $('.sidebar').show();

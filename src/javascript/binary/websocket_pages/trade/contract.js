@@ -1,7 +1,7 @@
 var objectNotEmpty             = require('../../base/utility').objectNotEmpty;
 var Content                    = require('../../common_functions/content').Content;
 var getFormNameBarrierCategory = require('./common').getFormNameBarrierCategory;
-var text = require('../../base/localize').text;
+var localize = require('../../base/localize').localize;
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -121,7 +121,7 @@ var Contract = (function() {
 
                 var type = currentObj.contract_type;
                 if (!contractType[contractCategory].hasOwnProperty(type)) {
-                    contractType[contractCategory][type] = text.localize(currentObj.contract_display);
+                    contractType[contractCategory][type] = localize(currentObj.contract_display);
                 }
             }
         });
@@ -153,7 +153,7 @@ var Contract = (function() {
                         tradeContractForms.higherlower = Content.localize().textFormHigherLower;
                     }
                 } else {
-                    tradeContractForms[contractCategory] = text.localize(currentObj.contract_category_display);
+                    tradeContractForms[contractCategory] = localize(currentObj.contract_category_display);
                     if (contractCategory === 'digits') {
                         tradeContractForms.matchdiff = Content.localize().textFormMatchesDiffers;
                         if (page.language() !== 'ID') {

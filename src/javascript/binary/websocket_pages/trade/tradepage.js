@@ -14,7 +14,7 @@ var showPriceOverlay     = require('./common').showPriceOverlay;
 var showFormOverlay      = require('./common').showFormOverlay;
 var addEventListenerForm = require('./common').addEventListenerForm;
 var chartFrameCleanup    = require('./common').chartFrameCleanup;
-var text = require('../../base/localize').text;
+var localize = require('../../base/localize').localize;
 
 var TradePage = (function() {
     var events_initialized = 0;
@@ -63,10 +63,10 @@ var TradePage = (function() {
             script: 'trading',
         });
         TradingAnalysis.bindAnalysisTabEvent();
-        $('#tab_portfolio a').text(text.localize('Portfolio'));
-        $('#tab_graph a').text(text.localize('Chart'));
-        $('#tab_explanation a').text(text.localize('Explanation'));
-        $('#tab_last_digit a').text(text.localize('Last Digit Stats'));
+        $('#tab_portfolio a').text(localize('Portfolio'));
+        $('#tab_graph a').text(localize('Chart'));
+        $('#tab_explanation a').text(localize('Explanation'));
+        $('#tab_last_digit a').text(localize('Last Digit Stats'));
     };
 
     var reload = function() {

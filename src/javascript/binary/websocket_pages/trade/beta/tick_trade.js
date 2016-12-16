@@ -6,7 +6,7 @@ var isVisible                 = require('../../../common_functions/common_functi
 var addComma                  = require('../../../common_functions/string_util').addComma;
 var updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
 var label_value               = require('../common').label_value;
-var text = require('../../../base/localize').text;
+var localize = require('../../../base/localize').localize;
 require('../../../../lib/highstock/highstock.js');
 require('../../../../lib/highstock/highstock-exporting.js');
 require('../../../../lib/highstock/export-csv.js');
@@ -122,7 +122,7 @@ var TickDisplay_Beta = (function() {
                         zIndex: 1,
                     },
                     title: {
-                        text: text.localize('Tick'),
+                        text: localize('Tick'),
                     },
                 },
                 yAxis: {
@@ -325,11 +325,11 @@ var TickDisplay_Beta = (function() {
             var $self = this;
 
             var profit = $self.payout - $self.price;
-            $self.update_ui($self.payout, profit, text.localize('This contract won'));
+            $self.update_ui($self.payout, profit, localize('This contract won'));
         },
         lose: function() {
             var $self = this;
-            $self.update_ui(0, -$self.price, text.localize('This contract lost'));
+            $self.update_ui(0, -$self.price, localize('This contract lost'));
         },
         to_monetary_format: function(number) {
             return number.toFixed(2);

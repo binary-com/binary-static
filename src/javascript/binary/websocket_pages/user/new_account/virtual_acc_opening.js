@@ -6,7 +6,7 @@ var japanese_client       = require('../../../common_functions/country_base').ja
 var testPassword          = require('../../../common_functions/passwordmeter').testPassword;
 var bind_validation       = require('../../../validator').bind_validation;
 var VirtualAccOpeningData = require('./virtual_acc_opening/virtual_acc_opening.data').VirtualAccOpeningData;
-var text = require('../../../base/localize').text;
+var localize = require('../../../base/localize').localize;
 
 var VirtualAccOpening = (function() {
     function onSuccess(res) {
@@ -38,7 +38,7 @@ var VirtualAccOpening = (function() {
     function onPasswordError() {
         var $error = $('#error-account-opening');
         $error.css({ display: 'block' })
-            .text(text.localize('Password is not strong enough.'));
+            .text(localize('Password is not strong enough.'));
     }
 
     function configureSocket() {

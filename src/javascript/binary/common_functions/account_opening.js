@@ -6,7 +6,7 @@ var appendTextValueChild = require('../common_functions/common_functions').appen
 var generateBirthDate    = require('./attach_dom/birth_date_dropdown').generateBirthDate;
 var Cookies              = require('../../lib/js-cookie');
 var moment               = require('moment');
-var text = require('../base/localize').text;
+var localize = require('../base/localize').localize;
 
 var displayAcctSettings = function(response) {
     var country = response.get_settings.country_code;
@@ -153,7 +153,7 @@ var handleResidence = function() {
                     }
                     var email_consent_parent = $('#email_consent').parent().parent();
                     if (status.clients_country === 'jp' || japanese_client()) {
-                        if (!document.getElementById('japan-label')) $('#residence').parent().append('<label id="japan-label">' + text.localize('Japan') + '</label>');
+                        if (!document.getElementById('japan-label')) $('#residence').parent().append('<label id="japan-label">' + localize('Japan') + '</label>');
                         email_consent_parent.removeClass('invisible');
                     } else {
                         $('#residence').removeClass('invisible')

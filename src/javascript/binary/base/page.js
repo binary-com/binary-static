@@ -9,7 +9,7 @@ var Store                 = require('./storage').Store;
 var InScriptStore         = require('./storage').InScriptStore;
 var CookieStorage         = require('./storage').CookieStorage;
 var localizeForLang       = require('./localize').localizeForLang;
-var text                  = require('./localize').text;
+var localize              = require('./localize').localize;
 var TrafficSource         = require('../common_functions/traffic_source').TrafficSource;
 var RiskClassification    = require('../common_functions/risk_classification').RiskClassification;
 var checkClientsCountry   = require('../common_functions/country_base').checkClientsCountry;
@@ -234,8 +234,8 @@ Client.prototype = {
             $('#content > .container').addClass('center-text')
                 .html($('<p/>', {
                     class: 'notice-msg',
-                    html : text.localize('Please [_1] to view this page',
-                        ['<a class="login_link" href="javascript:;">' + text.localize('login') + '</a>']),
+                    html : localize('Please [_1] to view this page',
+                        ['<a class="login_link" href="javascript:;">' + localize('login') + '</a>']),
                 }));
             $('.login_link').click(function() { Login.redirect_to_login(); });
         }
@@ -743,10 +743,10 @@ Header.prototype = {
 
                 // default account
                 if (curr_id === this.client.loginid) {
-                    $('.account-type').html(text.localize(type));
+                    $('.account-type').html(localize(type));
                     $('.account-id').html(curr_id);
                 } else {
-                    loginid_select += '<a href="#" value="' + curr_id + '"><li>' + text.localize(type) + '<div>' + curr_id + '</div>' +
+                    loginid_select += '<a href="#" value="' + curr_id + '"><li>' + localize(type) + '<div>' + curr_id + '</div>' +
                                       '</li></a><div class="separator-line-thin-gray"></div>';
                 }
             }
@@ -1004,7 +1004,7 @@ Contents.prototype = {
                 $upgrade_msg.removeClass(hiddenClass)
                     .find('a').removeClass(hiddenClass)
                         .attr('href', page.url.url_for(url))
-                        .html($('<span/>', { text: text.localize(msg) }));
+                        .html($('<span/>', { text: localize(msg) }));
             };
 
             if (page.client.is_virtual()) {
@@ -1037,7 +1037,7 @@ Contents.prototype = {
                 } else if (show_virtual_msg) {
                     $upgrade_msg.removeClass(hiddenClass).find('> span').removeClass(hiddenClass + ' gr-hide-m');
                     if (show_activation_msg && $('.activation-message').length === 0) {
-                        $('#virtual-text').append(' <div class="activation-message">' + text.localize('Your Application is Being Processed.') + '</div>');
+                        $('#virtual-text').append(' <div class="activation-message">' + localize('Your Application is Being Processed.') + '</div>');
                     }
                 }
             } else {
@@ -1280,8 +1280,8 @@ Page.prototype = {
         var server  = localStorage.getItem('config.server_url');
         if (server && server.length > 0) {
             var message = (/www\.binary\.com/i.test(window.location.hostname) ? '' :
-                text.localize('This is a staging server - For testing purposes only') + ' - ') +
-                text.localize('The server <a href="[_1]">endpoint</a> is: [_2]', [page.url.url_for('endpoint'), server]);
+                localize('This is a staging server - For testing purposes only') + ' - ') +
+                localize('The server <a href="[_1]">endpoint</a> is: [_2]', [page.url.url_for('endpoint'), server]);
             $('#end-note').html(message).removeClass('invisible');
             $('#footer').css('padding-bottom', $('#end-note').height());
         }
@@ -1328,15 +1328,15 @@ Page.prototype = {
         }
 
         if (this.client_status_detected('authenticated, unwelcome', 'all')) {
-            span = $('<span/>', { html: template(text.localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
+            span = $('<span/>', { html: template(localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
         } else if (this.client_status_detected('unwelcome')) {
             span = this.general_authentication_message();
         } else if (this.client_status_detected('authenticated, cashier_locked', 'all') && /cashier\.html/.test(window.location.href)) {
-            span = $('<span/>', { html: template(text.localize('Deposits and withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
+            span = $('<span/>', { html: template(localize('Deposits and withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
         } else if (this.client_status_detected('cashier_locked') && /cashier\.html/.test(window.location.href)) {
             span = this.general_authentication_message();
         } else if (this.client_status_detected('authenticated, withdrawal_locked', 'all') && /cashier\.html/.test(window.location.href)) {
-            span = $('<span/>', { html: template(text.localize('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
+            span = $('<span/>', { html: template(localize('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
         } else if (this.client_status_detected('withdrawal_locked') && /cashier\.html/.test(window.location.href)) {
             span = this.general_authentication_message();
         }
@@ -1345,10 +1345,10 @@ Page.prototype = {
         }
     },
     general_authentication_message: function() {
-        var span = $('<span/>', { html: template(text.localize('To authenticate your account, kindly email the following to [_1]:', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
+        var span = $('<span/>', { html: template(localize('To authenticate your account, kindly email the following to [_1]:', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
         var ul   = $('<ul/>',   { class: 'checked' });
-        var li1  = $('<li/>',   { text: text.localize('A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date.') });
-        var li2  = $('<li/>',   { text: text.localize('A scanned copy of a utility bill or bank statement (no more than 3 months old)') });
+        var li1  = $('<li/>',   { text: localize('A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date.') });
+        var li2  = $('<li/>',   { text: localize('A scanned copy of a utility bill or bank statement (no more than 3 months old)') });
         return span.append(ul.append(li1, li2));
     },
     show_notification_outdated_browser: function() {

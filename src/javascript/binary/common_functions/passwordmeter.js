@@ -1,4 +1,4 @@
-var text = require('../base/localize').text;
+var localize = require('../base/localize').localize;
 
 /* ************************************************************
 Created: 20060120
@@ -127,13 +127,13 @@ function testPassword(passwd) {
     }
 
     if (intScore < 10) {
-        strVerdict = text.localize('Password is weak');
+        strVerdict = localize('Password is weak');
     } else if (intScore > 9 && intScore < 20) {
-        strVerdict = text.localize('Password is moderate');
+        strVerdict = localize('Password is moderate');
     } else if (intScore > 19) {
-        strVerdict = text.localize('Password is strong');
+        strVerdict = localize('Password is strong');
     } else {
-        strVerdict = text.localize('Password is very strong');
+        strVerdict = localize('Password is very strong');
     }
 
     var array = [intScore, strVerdict];

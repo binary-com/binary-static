@@ -5,7 +5,7 @@ var testPassword    = require('../../../../common_functions/passwordmeter').test
 var ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
 var bind_validation = require('../../../../validator').bind_validation;
 var dv              = require('../../../../../lib/validation');
-var text = require('../../../../base/localize').text;
+var localize = require('../../../../base/localize').localize;
 
 var SecurityWS = (function() {
     'use strict';
@@ -64,11 +64,11 @@ var SecurityWS = (function() {
     }
 
     function updatePage(config) {
-        $('legend').text(text.localize(config.legend));
-        $('#lockInfo').text(text.localize(config.info));
+        $('legend').text(localize(config.legend));
+        $('#lockInfo').text(localize(config.info));
         $form.find('button')
             .attr('value', config.button)
-            .html(text.localize(config.button));
+            .html(localize(config.button));
     }
 
     function setupRepeatPasswordForm() {
@@ -149,12 +149,12 @@ var SecurityWS = (function() {
                 response.error.code === 'InputValidationFailed') {
                 message = 'Sorry, you have entered an incorrect cashier password';
             }
-            $('#invalidinputfound').text(text.localize(message));
+            $('#invalidinputfound').text(localize(message));
             return;
         }
         $form.hide();
         clearErrors();
-        $('#SecuritySuccessMsg').text(text.localize('Your settings have been updated successfully.'));
+        $('#SecuritySuccessMsg').text(localize('Your settings have been updated successfully.'));
         redirect_url = current_state === STATE.TRY_UNLOCK ? sessionStorage.getItem('cashier_lock_redirect') : '';
         setTimeout(redirect, 2000);
         current_state = STATE.DONE;

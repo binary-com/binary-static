@@ -6,7 +6,7 @@ var Content               = require('../../common_functions/content').Content;
 var isVisible             = require('../../common_functions/common_functions').isVisible;
 var updatePurchaseStatus  = require('./common').updatePurchaseStatus;
 var updateContractBalance = require('./common').updateContractBalance;
-var text = require('../../base/localize').text;
+var localize = require('../../base/localize').localize;
 
 /*
  * Purchase object that handles all the functions related to
@@ -47,7 +47,7 @@ var Purchase = (function () {
             container.style.display = 'block';
             message_container.hide();
             confirmation_error.show();
-            confirmation_error.innerHTML = (/ClientUnwelcome/.test(error.code) ? error.message + '<a class="pjaxload" href="' + page.url.url_for('user/authenticatews') + '"> ' + text.localize('Authorise your account.') + '</a>' : error.message);
+            confirmation_error.innerHTML = (/ClientUnwelcome/.test(error.code) ? error.message + '<a class="pjaxload" href="' + page.url.url_for('user/authenticatews') + '"> ' + localize('Authorise your account.') + '</a>' : error.message);
         } else {
             var guideBtn = document.getElementById('guideBtn');
             if (guideBtn) {

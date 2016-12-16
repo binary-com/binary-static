@@ -1,6 +1,6 @@
 var Content         = require('../../../common_functions/content').Content;
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
-var text = require('../../../base/localize').text;
+var localize = require('../../../base/localize').localize;
 
 var AuthenticateWS = (function() {
     function init() {
@@ -15,7 +15,7 @@ var AuthenticateWS = (function() {
 
         function check_virtual() {
             if (page.client.is_virtual()) {
-                show_error(text.localize('This feature is not relevant to virtual-money accounts.'));
+                show_error(localize('This feature is not relevant to virtual-money accounts.'));
             }
             return page.client.is_virtual();
         }

@@ -1,6 +1,6 @@
 // var testPassword = require('./passwordmeter').testPassword;
 var Content = require('./content').Content;
-var text = require('../base/localize').text;
+var localize = require('../base/localize').localize;
 
 var Validate = (function() {
     var errorCounter = 0;
@@ -54,7 +54,7 @@ var Validate = (function() {
             displayErrorMessage(error);
             return true;
         } else if (!validateEmail(email)) {
-            error.textContent = Content.errorMessage('valid', text.localize('email address'));
+            error.textContent = Content.errorMessage('valid', localize('email address'));
             displayErrorMessage(error);
             return true;
         }
@@ -69,7 +69,7 @@ var Validate = (function() {
             displayErrorMessage(error);
             return true;
         } else if (!validateToken(token)) {
-            error.textContent = Content.errorMessage('valid', text.localize('verification token'));
+            error.textContent = Content.errorMessage('valid', localize('verification token'));
             displayErrorMessage(error);
             return true;
         }
@@ -115,7 +115,7 @@ var Validate = (function() {
         if (/[0-9]+/.test(password) && /[A-Z]+/.test(password) && /[a-z]+/.test(password)) {
             return true;
         }
-        handleError(error, text.localize('Password should have lower and uppercase letters with numbers.'));
+        handleError(error, localize('Password should have lower and uppercase letters with numbers.'));
         return errorCounter++;
     }
 
@@ -217,7 +217,7 @@ function showPasswordError(password) {
 
     var hasUpperLowerDigitRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/;
     if (!hasUpperLowerDigitRegex.test(password)) {
-        errMsgs.push(text.localize('Password should have lower and uppercase letters with numbers.'));
+        errMsgs.push(localize('Password should have lower and uppercase letters with numbers.'));
     }
 
     return errMsgs;

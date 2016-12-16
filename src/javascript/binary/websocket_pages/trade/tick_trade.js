@@ -4,7 +4,7 @@ var Content              = require('../../common_functions/content').Content;
 var ViewPopupUI          = require('../user/view_popup/view_popup_ui').ViewPopupUI;
 var isVisible            = require('../../common_functions/common_functions').isVisible;
 var updatePurchaseStatus = require('./common').updatePurchaseStatus;
-var text = require('../../base/localize').text;
+var localize = require('../../base/localize').localize;
 require('../../../lib/highstock/highstock.js');
 require('../../../lib/highstock/highstock-exporting.js');
 require('../../../lib/highstock/export-csv.js');
@@ -248,11 +248,11 @@ var TickDisplay = (function() {
             var $self = this;
 
             var profit = $self.payout - $self.price;
-            $self.update_ui($self.payout, profit, text.localize('This contract won'));
+            $self.update_ui($self.payout, profit, localize('This contract won'));
         },
         lose: function() {
             var $self = this;
-            $self.update_ui(0, -$self.price, text.localize('This contract lost'));
+            $self.update_ui(0, -$self.price, localize('This contract lost'));
         },
         to_monetary_format: function(number) {
             return number.toFixed(2);

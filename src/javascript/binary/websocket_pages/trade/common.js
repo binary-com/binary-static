@@ -9,7 +9,7 @@ var japanese_client = require('../../common_functions/country_base').japanese_cl
 var addComma        = require('../../common_functions/string_util').addComma;
 var Moment          = require('moment');
 var toISOFormat     = require('../../common_functions/string_util').toISOFormat;
-var text = require('../../base/localize').text;
+var localize = require('../../base/localize').localize;
 
 /*
  * This contains common functions we need for processing the response
@@ -194,7 +194,7 @@ function displayMarkets(id, elements, selected) {
         }
 
         if (current.disabled) { // there is no open market
-            Notifications.show({ text: text.localize('All markets are closed now. Please try again later.'), uid: 'MARKETS_CLOSED' });
+            Notifications.show({ text: localize('All markets are closed now. Please try again later.'), uid: 'MARKETS_CLOSED' });
             document.getElementById('trading_init_progress').style.display = 'none';
         }
     }
@@ -232,7 +232,7 @@ function displayUnderlyings(id, elements, selected) {
             for (var k = 0; k < submarkets[keys2[j]].length; k++) {
                 var key = submarkets[keys2[j]][k];
                 var option = document.createElement('option'),
-                    content = document.createTextNode(text.localize(elements[key].display));
+                    content = document.createTextNode(localize(elements[key].display));
                 option.setAttribute('value', key);
                 if (selected && selected === key) {
                     option.setAttribute('selected', 'selected');
@@ -709,7 +709,7 @@ function selectOption(option, select) {
 }
 
 function updatePurchaseStatus(final_price, pnl, contract_status) {
-    $('#contract_purchase_heading').text(text.localize(contract_status));
+    $('#contract_purchase_heading').text(localize(contract_status));
     var $payout = $('#contract_purchase_payout'),
         $cost = $('#contract_purchase_cost'),
         $profit = $('#contract_purchase_profit');
@@ -772,7 +772,7 @@ function showHighchart() {
     } else {
         chartFrameCleanup();
         $('#trade_live_chart').hide();
-        $('#chart-error').text(text.localize('Chart is not available for this underlying.'))
+        $('#chart-error').text(localize('Chart is not available for this underlying.'))
                      .show();
     }
 }
@@ -830,7 +830,7 @@ function toggleActiveNavMenuElement_Beta(nav, eventElement) {
 function updatePurchaseStatus_Beta(final_price, pnl, contract_status) {
     final_price = String(final_price).replace(/,/g, '') * 1;
     pnl = String(pnl).replace(/,/g, '') * 1;
-    $('#contract_purchase_heading').text(text.localize(contract_status));
+    $('#contract_purchase_heading').text(localize(contract_status));
     var payout  = document.getElementById('contract_purchase_payout'),
         cost    = document.getElementById('contract_purchase_cost'),
         profit  = document.getElementById('contract_purchase_profit');
@@ -889,7 +889,7 @@ function timeIsValid($element) {
         !/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(endTimeValue)) {
         $element.addClass('error-field');
         if ($('#invalid-time').length === 0) {
-            $('#expiry_type_endtime').parent().append($('<p>', { class: 'error-msg', id: 'invalid-time', text: text.localize('Time is in the wrong format.') }));
+            $('#expiry_type_endtime').parent().append($('<p>', { class: 'error-msg', id: 'invalid-time', text: localize('Time is in the wrong format.') }));
         }
         return false;
     }
@@ -904,7 +904,7 @@ function timeIsValid($element) {
     if (Moment.utc(endDateValue + ' ' + endTimeValue).unix() <= startDateValue) {
         $element.addClass('error-field');
         if (!document.getElementById('end_time_validation')) {
-            $('#expiry_type_endtime').append('<p class="error-msg" id="end_time_validation">' + text.localize('End time must be after start time.') + '</p>');
+            $('#expiry_type_endtime').append('<p class="error-msg" id="end_time_validation">' + localize('End time must be after start time.') + '</p>');
         }
         return false;
     }

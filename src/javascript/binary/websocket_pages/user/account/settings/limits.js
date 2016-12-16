@@ -1,12 +1,12 @@
 var LimitsWS = require('./limits/limits.init').LimitsWS;
 var Content  = require('../../../../common_functions/content').Content;
-var text     = require('../../../../base/localize').text;
+var localize     = require('../../../../base/localize').localize;
 
 var Limits = (function() {
     var onLoad = function() {
         Content.populate();
         var titleElement = document.getElementById('limits-ws-container').firstElementChild;
-        titleElement.textContent = text.localize('Trading and Withdrawal Limits');
+        titleElement.textContent = localize('Trading and Withdrawal Limits');
         if (TUser.get().is_virtual) {
             LimitsWS.limitsError();
             return;

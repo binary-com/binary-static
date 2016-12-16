@@ -1,5 +1,5 @@
 var Content = require('../../../common_functions/content').Content;
-var text = require('../../../base/localize').text;
+var localize = require('../../../base/localize').localize;
 
 var TopUpVirtualWS = (function() {
     'use strict';
@@ -21,7 +21,7 @@ var TopUpVirtualWS = (function() {
         $views.addClass('hidden');
 
         if (!page.client.is_virtual()) {
-            showMessage(text.localize('Sorry, this feature is available to virtual accounts only.'), false);
+            showMessage(localize('Sorry, this feature is available to virtual accounts only.'), false);
         } else {
             BinarySocket.send({ topup_virtual: '1' });
         }
@@ -30,11 +30,11 @@ var TopUpVirtualWS = (function() {
     var responseHandler = function(response) {
         if ('error' in response) {
             if ('message' in response.error) {
-                showMessage(text.localize(response.error.message), false);
+                showMessage(localize(response.error.message), false);
             }
         } else {
             showMessage(
-                text.localize('[_1] [_2] has been credited to your Virtual money account [_3]', [
+                localize('[_1] [_2] has been credited to your Virtual money account [_3]', [
                     response.topup_virtual.currency,
                     response.topup_virtual.amount,
                     page.client.loginid,

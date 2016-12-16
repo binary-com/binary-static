@@ -25,7 +25,7 @@ var updateWarmChart           = require('./common').updateWarmChart;
 var displayContractForms      = require('./common').displayContractForms;
 var displayMarkets            = require('./common').displayMarkets;
 var setFormPlaceholderContent = require('./set_values').setFormPlaceholderContent;
-var text = require('../../base/localize').text;
+var localize = require('../../base/localize').localize;
 
 /*
  * This function process the active symbols to get markets
@@ -130,7 +130,7 @@ function processContract(contracts) {
         contracts_list.style.display = 'none';
         message_container.hide();
         confirmation_error.show();
-        confirmation_error.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="sessionStorage.removeItem(\'underlying\'); window.location.reload();">' + text.localize('Please reload the page') + '</a>';
+        confirmation_error.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="sessionStorage.removeItem(\'underlying\'); window.location.reload();">' + localize('Please reload the page') + '</a>';
         return;
     }
 

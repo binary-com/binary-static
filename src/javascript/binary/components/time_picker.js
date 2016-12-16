@@ -1,6 +1,6 @@
 var moment = require('moment');
 var checkInput = require('../common_functions/common_functions').checkInput;
-var text = require('../base/localize').text;
+var localize = require('../base/localize').localize;
 
 var TimePicker = function(component_selector) {
     this.component_selector = component_selector;
@@ -42,9 +42,9 @@ TimePicker.prototype = {
             time_now = this.time_now();
 
         var config = {
-            hourText  : text.localize('Hour'),
-            minuteText: text.localize('Minute'),
-            amPmText  : [text.localize('AM'), text.localize('PM')],
+            hourText  : localize('Hour'),
+            minuteText: localize('Minute'),
+            amPmText  : [localize('AM'), localize('PM')],
         };
         if (min_time) {
             min_time = min_time === 'now' ? time_now : moment.utc(min_time);

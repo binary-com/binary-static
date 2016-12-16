@@ -9,7 +9,7 @@ var displayCommentPrice        = require('./common').displayCommentPrice;
 var displayCommentSpreads      = require('./common').displayCommentSpreads;
 var displayPriceMovement       = require('./common_independent').displayPriceMovement;
 var isVisible                  = require('../../common_functions/common_functions').isVisible;
-var text = require('../../base/localize').text;
+var localize = require('../../base/localize').localize;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -209,7 +209,7 @@ var Price = (function() {
                     amount.textContent = data.display_value;
                 } else {
                     $('.stake:hidden').show();
-                    stake.textContent = text.localize('Stake') + ': ';
+                    stake.textContent = localize('Stake') + ': ';
                     amount.textContent = format_money((currency.value || currency.getAttribute('value')), data.display_value);
                 }
                 $('.stake_wrapper:hidden').show();
@@ -218,7 +218,7 @@ var Price = (function() {
             }
 
             if (data.payout) {
-                payout.textContent = (is_spread ? text.localize('Payout/point') : text.localize('Payout')) + ': ';
+                payout.textContent = (is_spread ? localize('Payout/point') : localize('Payout')) + ': ';
                 payoutAmount.textContent = format_money((currency.value || currency.getAttribute('value')), data.payout);
                 $('.payout_wrapper:hidden').show();
             } else {

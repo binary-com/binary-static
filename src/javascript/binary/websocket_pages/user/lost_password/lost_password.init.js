@@ -1,6 +1,6 @@
 var Content       = require('../../../common_functions/content').Content;
 var validateEmail = require('../../../common_functions/validation').validateEmail;
-var text = require('../../../base/localize').text;
+var localize = require('../../../base/localize').localize;
 
 var LostPassword = (function() {
     'use strict';
@@ -11,9 +11,9 @@ var LostPassword = (function() {
         var emailInput = ($('#lp_email').val() || '').trim();
 
         if (emailInput === '') {
-            $('#email_error').removeClass(hiddenClass).text(text.localize('This field is required.'));
+            $('#email_error').removeClass(hiddenClass).text(localize('This field is required.'));
         } else if (!validateEmail(emailInput)) {
-            $('#email_error').removeClass(hiddenClass).text(Content.errorMessage('valid', text.localize('email address')));
+            $('#email_error').removeClass(hiddenClass).text(Content.errorMessage('valid', localize('email address')));
         } else {
             BinarySocket.send({ verify_email: emailInput, type: 'reset_password' });
             $('#submit').prop('disabled', true);
@@ -34,7 +34,7 @@ var LostPassword = (function() {
             if (response.verify_email === 1) {
                 load_with_pjax(page.url.url_for('user/reset_passwordws'));
             } else if (response.error) {
-                $('#email_error').removeClass(hiddenClass).text(Content.errorMessage('valid', text.localize('email address')));
+                $('#email_error').removeClass(hiddenClass).text(Content.errorMessage('valid', localize('email address')));
                 $('#submit').prop('disabled', false);
             }
         }

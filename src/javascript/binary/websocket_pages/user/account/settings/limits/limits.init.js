@@ -2,7 +2,7 @@ var template = require('../../../../../base/utility').template;
 var Content  = require('../../../../../common_functions/content').Content;
 var addComma = require('../../../../../common_functions/string_util').addComma;
 var LimitsUI = require('./limits.ui').LimitsUI;
-var text     = require('../../../../../base/localize').text;
+var localize     = require('../../../../../base/localize').localize;
 
 var LimitsWS = (function() {
     'use strict';
@@ -51,11 +51,11 @@ var LimitsWS = (function() {
         document.getElementById('limits-title').setAttribute('style', 'display:none');
         var errorElement = document.getElementsByClassName('notice-msg')[0];
         if ((error && error.code === 'FeatureNotAvailable' && page.client.is_virtual()) || page.client.is_virtual()) {
-            errorElement.innerHTML = text.localize('This feature is not relevant to virtual-money accounts.');
+            errorElement.innerHTML = localize('This feature is not relevant to virtual-money accounts.');
         } else if (error && error.message) {
             errorElement.innerHTML = error.message;
         } else {
-            errorElement.innerHTML = text.localize('An error occured') + '.';
+            errorElement.innerHTML = localize('An error occured') + '.';
         }
         document.getElementById('client_message').setAttribute('style', 'display:block');
     }

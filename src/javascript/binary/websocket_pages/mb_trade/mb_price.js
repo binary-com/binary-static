@@ -4,7 +4,7 @@ var MBDefaults      = require('./mb_defaults').MBDefaults;
 var MBNotifications = require('./mb_notifications').MBNotifications;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
 var addComma        = require('../../common_functions/string_util').addComma;
-var text = require('../../base/localize').text;
+var localize = require('../../base/localize').localize;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -159,7 +159,7 @@ var MBPrice = (function() {
     function processBuy(barrier, contract_type) {
         if (!barrier || !contract_type) return;
         if (!page.client.is_logged_in) {
-            MBNotifications.show({ text: text.localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true });
+            MBNotifications.show({ text: localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true });
             return;
         }
         MBPrice.showPriceOverlay();

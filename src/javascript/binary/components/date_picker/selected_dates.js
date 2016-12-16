@@ -1,6 +1,6 @@
 var DatePicker = require('../date_picker').DatePicker;
 var moment = require('moment');
-// var text = require('../../base/localize').text;
+// var localize = require('../../base/localize').localize;
 
 DatePicker.SelectedDates = function(component_id, select_type) {
     this.component_id = component_id;
@@ -110,25 +110,25 @@ DatePicker.SelectedDates.prototype = {
 //    localizations: function() {
 //        var localizations = {};
 //
-//        localizations.monthNames = [text.localize('January'), text.localize('February'),
-//          text.localize('March'), text.localize('April'), text.localize('May'),
-//          text.localize('June'),text.localize('July'), text.localize('August'),
-//          text.localize('September'), text.localize('October'), text.localize('November'),
-//          text.localize('December') ];
+//        localizations.monthNames = [localize('January'), localize('February'),
+//          localize('March'), localize('April'), localize('May'),
+//          localize('June'),localize('July'), localize('August'),
+//          localize('September'), localize('October'), localize('November'),
+//          localize('December') ];
 //
-//        localizations.monthNamesShort = [text.localize('Jan'), text.localize('Feb'),
-//          text.localize('Mar'), text.localize('Apr'), text.localize('May'),
-//          text.localize('Jun'), text.localize('Jul'), text.localize('Aug'),
-//          text.localize('Sep'), text.localize('Oct'), text.localize('Nov'),
-//          text.localize('Dec')];
+//        localizations.monthNamesShort = [localize('Jan'), localize('Feb'),
+//          localize('Mar'), localize('Apr'), localize('May'),
+//          localize('Jun'), localize('Jul'), localize('Aug'),
+//          localize('Sep'), localize('Oct'), localize('Nov'),
+//          localize('Dec')];
 //
-//        localizations.dayNames = [text.localize('Sunday'), text.localize('Monday'),
-//          text.localize('Tuesday'), text.localize('Wednesday'),
-//          text.localize('Thursday'), text.localize('Friday'),
-//          text.localize('Saturday')];
+//        localizations.dayNames = [localize('Sunday'), localize('Monday'),
+//          localize('Tuesday'), localize('Wednesday'),
+//          localize('Thursday'), localize('Friday'),
+//          localize('Saturday')];
 //
-//        localizations.nextText = text.localize('Next');
-//        localizations.prevText = text.localize('Previous');
+//        localizations.nextText = localize('Next');
+//        localizations.prevText = localize('Previous');
 //
 //        return localizations;
 //    },

@@ -7,7 +7,7 @@ var showTooltip         = require('../../../../common_functions/get_app_details'
 var japanese_client     = require('../../../../common_functions/country_base').japanese_client;
 var addComma            = require('../../../../common_functions/string_util').addComma;
 var ProfitTable         = require('../profit_table').ProfitTable;
-var text = require('../../../../base/localize').text;
+var localize = require('../../../../base/localize').localize;
 
 var ProfitTableUI = (function() {
     'use strict';
@@ -20,7 +20,7 @@ var ProfitTableUI = (function() {
         var header = [
             Content.localize().textDate,
             Content.localize().textRef,
-            text.localize('Potential Payout'),
+            localize('Potential Payout'),
             Content.localize().textContract,
             Content.localize().textPurchasePrice,
             Content.localize().textSaleDate,
@@ -102,7 +102,7 @@ var ProfitTableUI = (function() {
         // create view button and append
         var $viewButtonSpan = Button.createBinaryStyledButton();
         var $viewButton = $viewButtonSpan.children('.button').first();
-        $viewButton.text(text.localize('View'));
+        $viewButton.text(localize('View'));
         $viewButton.addClass('open_contract_detailsws');
         $viewButton.attr('contract_id', profit_table_data.id);
 
