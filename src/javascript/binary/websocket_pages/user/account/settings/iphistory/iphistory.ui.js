@@ -44,12 +44,18 @@ var IPHistoryUI = (function() {
         var browserString = browser ?
             browser.name + ' v' + browser.version :
             'Unknown';
+        var patt = (/(opera|chrome|safari|firefox|IE|Edge|SeaMonkey|Chromium) v[0-9.]+/gi);
+        if((patt.test(browserString)) === false) {
+            if(browserString !== 'Unknown'){
+            browserString = 'error';
+            }
+        }
         return [
             timestamp,
             data.action,
             browserString,
             data.ip_addr,
-            status,
+            status
         ];
     }
 
