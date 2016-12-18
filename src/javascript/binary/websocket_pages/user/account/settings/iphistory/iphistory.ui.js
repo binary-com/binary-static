@@ -47,7 +47,7 @@ var IPHistoryUI = (function() {
         var patt = (/(opera|chrome|safari|firefox|IE|Edge|SeaMonkey|Chromium) v[0-9.]+/gi);
         if((patt.test(browserString)) === false) {
             if(browserString !== 'Unknown'){
-            browserString = 'error';
+            browserString = 'Unknown';
             }
         }
         return [
