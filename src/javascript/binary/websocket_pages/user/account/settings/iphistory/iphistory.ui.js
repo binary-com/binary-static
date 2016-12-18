@@ -55,7 +55,7 @@ var IPHistoryUI = (function() {
             data.action,
             browserString,
             data.ip_addr,
-            status
+            status,
         ];
     }
 
