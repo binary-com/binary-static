@@ -25,7 +25,7 @@ var Notifications = (function() {
             }
             $note_wrapper.prepend($message);
         } else {
-            var $current_message = $note_wrapper.find('#' + options.uid + ' .notice-msg');
+            var $current_message = $note_wrapper.find('#' + options.uid);
             if ($current_message.html() !== options.text) $current_message.html(options.text);
         }
         $.scrollTo($note_wrapper, 500, { offset: -5 });
