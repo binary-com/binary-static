@@ -268,7 +268,7 @@ var Page = function() {
     this.client = new Client();
     this.url = new Url();
     this.header = new Header({ user: this.user, client: this.client, url: this.url });
-    this.contents = new Contents(this.client, this.user);
+    Contents.init(this.client, this.user);
     $('#logo').on('click', function() {
         load_with_pjax(page.url.url_for(page.client.is_logged_in ? japanese_client() ? 'multi_barriers_trading' : 'trading' : ''));
     });
@@ -281,7 +281,7 @@ Page.prototype = {
         this.header.on_load();
         this.on_change_loginid();
         this.record_affiliate_exposure();
-        this.contents.on_load();
+        Contents.on_load();
         this.on_click_acc_transfer();
         if (this.is_loaded_by_pjax) {
             this.show_authenticate_message();
@@ -304,7 +304,7 @@ Page.prototype = {
     },
     on_unload: function() {
         this.header.on_unload();
-        this.contents.on_unload();
+        Contents.on_unload();
     },
     on_change_loginid: function() {
         var that = this;
@@ -491,16 +491,6 @@ Page.prototype = {
 };
 
 var page = new Page();
-
-// for IE (before 10) we use a jquery plugin called jQuery.XDomainRequest. Explained here,
-// http://stackoverflow.com/questions/11487216/cors-with-jquery-and-xdomainrequest-in-ie8-9
-//
-$(function() {
-    $(document).ajaxSuccess(function () {
-        var contents = new Contents(page.client, page.user);
-        contents.on_load();
-    });
-});
 
 // LocalStorage can be used as a means of communication among
 // different windows. The problem that is solved here is what
