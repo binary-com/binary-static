@@ -51,7 +51,7 @@ var KnowledgeTest = (function() {
                 category: questionInfo.category,
                 id      : questionInfo.id,
                 question: questionInfo.question,
-                answer  : questionInfo.answer,
+                answer  : questionInfo.answer ? 1 : 0,
                 pass    : score,
             });
         });
