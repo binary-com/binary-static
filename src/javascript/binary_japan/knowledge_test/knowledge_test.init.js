@@ -34,7 +34,7 @@ var KnowledgeTest = (function() {
                 .text(page.text.localize('You need to finish all 20 questions.'));
 
             var unAnswered = randomPicks.reduce((a, b) => a.concat(b))
-                                        .find(q => answeredQid.indexOf(q) === -1).id;
+                                        .find(q => answeredQid.indexOf(q.id) === -1).id;
 
             $.scrollTo('a[name="' + unAnswered + '"]', 500, { offset: -10 });
             return;
