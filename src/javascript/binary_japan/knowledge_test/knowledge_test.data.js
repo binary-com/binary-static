@@ -41,10 +41,11 @@ var KnowledgeTestData = (function() {
             $(this).find('> div').each(function() { // questions
                 var question_id = +$(this).attr('data-question-id');
                 questions['section' + section_id].push({
-                    section_id: section_id,
-                    id        : question_id,
-                    question  : $(this).text(),
-                    answer    : answers[question_id],
+                    section_id        : section_id,
+                    id                : question_id,
+                    question          : $(this).attr('data-question-en'),
+                    question_localized: $(this).text(),
+                    answer            : answers[question_id],
                 });
             });
         });

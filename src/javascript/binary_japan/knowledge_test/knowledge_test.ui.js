@@ -41,7 +41,7 @@ var KnowledgeTestUI = (function () {
 
     function createQuestionRow(questionNo, question, showAnswer) {
         var $questionRow = $('<tr></tr>', { id: questionNo, class: 'question' });
-        var $questionData = $('<td></td>').text(page.text.localize(question.question));
+        var $questionData = $('<td></td>').text(page.text.localize(question.question_localized));
         var $questionLink = $('<a></a>', { name: question.id });
         $questionData.prepend($questionLink);
 
