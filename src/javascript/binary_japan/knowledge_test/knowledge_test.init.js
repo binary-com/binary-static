@@ -43,11 +43,17 @@ var KnowledgeTest = (function() {
         // compute score
         var questions = [];
         Object.keys(submitted).forEach(function (k) {
-            resultScore += (submitted[k] === randomPicksObj[k].answer ? 1 : 0);
-            randomPicksObj[k].client_answer = submitted[k];
-            var questionInfo = $.extend({}, randomPicksObj[k]);
-            delete questionInfo.question_localized;
-            questions.push(questionInfo);
+            var questionInfo = randomPicksObj[k],
+                score = submitted[k] === questionInfo.correct_answer ? 1 : 0;
+            resultScore += score;
+            questionInfo.answer = submitted[k];
+            questions.push({
+                category: questionInfo.category,
+                id      : questionInfo.id,
+                question: questionInfo.question,
+                answer  : questionInfo.answer,
+                pass    : score,
+            });
         });
         KnowledgeTestData.sendResult(questions, resultScore);
         submitCompleted = true;

@@ -27,7 +27,7 @@ var KnowledgeTestUI = (function () {
         var $falseTd = $('<td></td>').append($falseButton);
 
         if (showAnswer) {
-            if (question.answer) {
+            if (question.correct_answer) {
                 $trueButton.prop('checked', true);
             } else {
                 $falseButton.prop('checked', true);

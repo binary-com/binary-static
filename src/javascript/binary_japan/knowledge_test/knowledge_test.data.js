@@ -35,17 +35,17 @@ var KnowledgeTestData = (function() {
         var questions = {};
         // retrieve questions text from html
         $('#data-questions > div').each(function() { // sections
-            var section_id = +$(this).attr('data-section-id');
-            questions['section' + section_id] = [];
+            var category = +$(this).attr('data-section-id');
+            questions['section' + category] = [];
 
             $(this).find('> div').each(function() { // questions
                 var question_id = +$(this).attr('data-question-id');
-                questions['section' + section_id].push({
-                    section_id        : section_id,
+                questions['section' + category].push({
+                    category          : category,
                     id                : question_id,
                     question          : $(this).attr('data-question-en'),
                     question_localized: $(this).text(),
-                    answer            : answers[question_id],
+                    correct_answer    : answers[question_id],
                 });
             });
         });
