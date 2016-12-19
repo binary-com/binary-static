@@ -103,11 +103,6 @@ Menu.prototype = {
 
         return { item: item, subitem: subitem };
     },
-    check_payment_agent: function(is_authenticated_payment_agent) {
-        if (is_authenticated_payment_agent) {
-            $('#topMenuPaymentAgent').removeClass('invisible');
-        }
-    },
 };
 
 module.exports = {

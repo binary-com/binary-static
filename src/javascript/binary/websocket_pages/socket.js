@@ -24,9 +24,14 @@ var MBTradePage               = require('./mb_trade/mb_tradepage').MBTradePage;
 var RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
 var RealityCheckData          = require('./user/reality_check/reality_check.data').RealityCheckData;
 var KnowledgeTest             = require('../../binary_japan/knowledge_test/knowledge_test.init').KnowledgeTest;
-var localize = require('../base/localize').localize;
-var getLanguage = require('../base/language').getLanguage;
-var GTM = require('../base/gtm').GTM;
+var localize         = require('../base/localize').localize;
+var getLanguage      = require('../base/language').getLanguage;
+var validate_loginid = require('../base/client').validate_loginid;
+var GTM    = require('../base/gtm').GTM;
+var Clock  = require('../base/clock').Clock;
+var Header = require('../base/header').Header;
+var check_risk_classification       = require('../common_functions/check_risk_classification').check_risk_classification;
+var qualify_for_risk_classification = require('../common_functions/check_risk_classification').qualify_for_risk_classification;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
@@ -138,10 +143,10 @@ function BinarySocketClass() {
 
             if (isReady()) {
                 if (!Login.is_login_pages()) {
-                    page.header.validate_cookies();
+                    validate_loginid();
                     binarySocket.send(JSON.stringify({ website_status: 1 }));
                 }
-                if (!getClockStarted()) page.header.start_clock_ws();
+                if (!Clock.getClockStarted()) Clock.start_clock_ws();
             }
         };
 
@@ -202,11 +207,11 @@ function BinarySocketClass() {
                 } else if (type === 'balance') {
                     ViewBalanceUI.updateBalances(response);
                 } else if (type === 'time') {
-                    page.header.time_counter(response);
+                    Clock.time_counter(response);
                 } else if (type === 'logout') {
                     localStorage.removeItem('jp_test_allowed');
                     RealityCheckData.clear();
-                    page.header.do_logout(response);
+                    Header.do_logout(response);
                 } else if (type === 'landing_company') {
                     page.contents.topbar_message_visibility(response.landing_company);
                     var company;
@@ -260,7 +265,9 @@ function BinarySocketClass() {
                     } else {
                         localStorage.removeItem('jp_test_allowed');
                     }
-                    page.header.menu.check_payment_agent(response.get_settings.is_authenticated_payment_agent);
+                    if (response.get_settings.is_authenticated_payment_agent) {
+                        $('#topMenuPaymentAgent').removeClass('invisible');
+                    }
                     page.client.response_get_settings(response);
                 } else if (type === 'website_status') {
                     if (!response.hasOwnProperty('error')) {
@@ -277,7 +284,7 @@ function BinarySocketClass() {
                 } else if (type === 'reality_check') {
                     RealityCheck.realityCheckWSHandler(response);
                 } else if (type === 'get_account_status' && response.get_account_status) {
-                    if (response.get_account_status.risk_classification === 'high' && page.header.qualify_for_risk_classification()) {
+                    if (response.get_account_status.risk_classification === 'high' && qualify_for_risk_classification()) {
                         send({ get_financial_assessment: 1 });
                     } else {
                         localStorage.removeItem('risk_classification');
@@ -299,9 +306,9 @@ function BinarySocketClass() {
                     }
                 } else if (type === 'get_financial_assessment' && !response.hasOwnProperty('error')) {
                     if (!objectNotEmpty(response.get_financial_assessment)) {
-                        if (page.header.qualify_for_risk_classification() && localStorage.getItem('risk_classification.response') === 'high') {
+                        if (qualify_for_risk_classification() && localStorage.getItem('risk_classification.response') === 'high') {
                             localStorage.setItem('risk_classification', 'high');
-                            page.header.check_risk_classification();
+                            check_risk_classification();
                         }
                     } else if ((localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval')) && localStorage.getItem('risk_classification') !== 'high') {
                         localStorage.removeItem('risk_classification');

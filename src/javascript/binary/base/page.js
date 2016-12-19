@@ -1,6 +1,4 @@
 var Login                 = require('./login').Login;
-var showLocalTimeOnHover  = require('./utility').showLocalTimeOnHover;
-var toJapanTimeIfNeeded   = require('./utility').toJapanTimeIfNeeded;
 var template              = require('./utility').template;
 var parseLoginIDList      = require('./utility').parseLoginIDList;
 var isStorageSupported    = require('./storage').isStorageSupported;
@@ -13,13 +11,10 @@ var getLanguage           = require('./language').getLanguage;
 var setCookieLanguage     = require('./language').setCookieLanguage;
 var GTM                   = require('./gtm').GTM;
 var Url                   = require('./url').Url;
-var Menu                  = require('./menu').Menu;
+var Header                = require('./header').Header;
 var TrafficSource         = require('../common_functions/traffic_source').TrafficSource;
-var RiskClassification    = require('../common_functions/risk_classification').RiskClassification;
-var checkClientsCountry   = require('../common_functions/country_base').checkClientsCountry;
 var japanese_client       = require('../common_functions/country_base').japanese_client;
 var checkLanguage         = require('../common_functions/country_base').checkLanguage;
-var FinancialAssessmentws = require('../websocket_pages/user/account/settings/financial_assessment').FinancialAssessmentws;
 var ViewBalance           = require('../websocket_pages/user/viewbalance/viewbalance.init').ViewBalance;
 var CashierJP             = require('../../binary_japan/cashier').CashierJP;
 var Cookies               = require('../../lib/js-cookie');
@@ -29,9 +24,6 @@ var pjax                  = require('../../lib/pjax-lib');
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
 require('../../lib/mmenu/jquery.mmenu.min.all.js');
-
-
-var clock_started = false;
 
 var SessionStore,
     LocalStore;
@@ -267,246 +259,6 @@ Client.prototype = {
     },
     can_upgrade_virtual_to_japan: function(data) {
         return (data.hasOwnProperty('financial_company') && !data.hasOwnProperty('gaming_company') && data.financial_company.shortcode === 'japan');
-    },
-};
-
-var Header = function(params) {
-    this.user = params.user;
-    this.client = params.client;
-    this.menu = new Menu(params.url);
-};
-
-Header.prototype = {
-    on_load: function() {
-        this.show_or_hide_login_form();
-        this.show_or_hide_language();
-        this.logout_handler();
-        this.check_risk_classification();
-        if (!$('body').hasClass('BlueTopBack')) {
-            checkClientsCountry();
-        }
-        if (page.client.is_logged_in) {
-            $('ul#menu-top').addClass('smaller-font');
-        }
-    },
-    on_unload: function() {
-        this.menu.reset();
-    },
-    animate_disappear: function(element) {
-        element.animate({ opacity: 0 }, 100, function() {
-            element.css({ visibility: 'hidden', display: 'none' });
-        });
-    },
-    animate_appear: function(element) {
-        element.css({ visibility: 'visible', display: 'block' })
-               .animate({ opacity: 1 }, 100);
-    },
-    show_or_hide_language: function() {
-        var that = this;
-        var $el = $('#select_language'),
-            $all_accounts = $('#all-accounts');
-        $('.languages').on('click', function(event) {
-            event.stopPropagation();
-            that.animate_disappear($all_accounts);
-            if (+$el.css('opacity') === 1) {
-                that.animate_disappear($el);
-            } else {
-                that.animate_appear($el);
-            }
-        });
-        $(document).unbind('click').on('click', function() {
-            that.animate_disappear($all_accounts);
-            that.animate_disappear($el);
-        });
-    },
-    show_or_hide_login_form: function() {
-        if (!this.user.is_logged_in || !this.client.is_logged_in) return;
-        var all_accounts = $('#all-accounts'),
-            language = $('#select_language'),
-            that = this;
-        $('.nav-menu').unbind('click').on('click', function(event) {
-            event.stopPropagation();
-            that.animate_disappear(language);
-            if (+all_accounts.css('opacity') === 1) {
-                that.animate_disappear(all_accounts);
-            } else {
-                that.animate_appear(all_accounts);
-            }
-        });
-        var loginid_select = '';
-        var loginid_array = this.user.loginid_array;
-        for (var i = 0; i < loginid_array.length; i++) {
-            var login = loginid_array[i];
-            if (!login.disabled) {
-                var curr_id = login.id;
-                var type = 'Virtual';
-                if (login.real) {
-                    if (login.financial)          type = 'Investment';
-                    else if (login.non_financial) type = 'Gaming';
-                    else                          type = 'Real';
-                }
-                type += ' Account';
-
-                // default account
-                if (curr_id === this.client.loginid) {
-                    $('.account-type').html(localize(type));
-                    $('.account-id').html(curr_id);
-                } else {
-                    loginid_select += '<a href="#" value="' + curr_id + '"><li>' + localize(type) + '<div>' + curr_id + '</div>' +
-                                      '</li></a><div class="separator-line-thin-gray"></div>';
-                }
-            }
-        }
-        $('.login-id-list').html(loginid_select);
-    },
-    start_clock_ws: function() {
-        function getTime() {
-            clock_started = true;
-            BinarySocket.send({ time: 1, passthrough: { client_time: moment().valueOf() } });
-        }
-        this.run = function() {
-            setInterval(getTime, 30000);
-        };
-
-        this.run();
-        getTime();
-    },
-    time_counter: function(response) {
-        if (isNaN(response.echo_req.passthrough.client_time) || response.error) {
-            page.header.start_clock_ws();
-            return;
-        }
-        clearTimeout(window.HeaderTimeUpdateTimeOutRef);
-        var that = this;
-        var clock = $('#gmt-clock');
-        var start_timestamp = response.time;
-        var pass = response.echo_req.passthrough.client_time;
-
-        that.client_time_at_response = moment().valueOf();
-        that.server_time_at_response = ((start_timestamp * 1000) + (that.client_time_at_response - pass));
-        var update_time = function() {
-            window.time = moment((that.server_time_at_response + moment().valueOf()) -
-                that.client_time_at_response).utc();
-            var timeStr = window.time.format('YYYY-MM-DD HH:mm') + ' GMT';
-            if (japanese_client()) {
-                clock.html(toJapanTimeIfNeeded(timeStr, 1, '', 1));
-            } else {
-                clock.html(timeStr);
-                showLocalTimeOnHover('#gmt-clock');
-            }
-            window.HeaderTimeUpdateTimeOutRef = setTimeout(update_time, 1000);
-        };
-        update_time();
-    },
-    logout_handler: function() {
-        $('a.logout').unbind('click').click(function() {
-            page.client.send_logout_request();
-        });
-    },
-    check_risk_classification: function() {
-        if (localStorage.getItem('risk_classification.response') === 'high' &&
-            localStorage.getItem('risk_classification') === 'high' && this.qualify_for_risk_classification()) {
-            this.renderRiskClassificationPopUp();
-        }
-    },
-    renderRiskClassificationPopUp: function () {
-        if (window.location.pathname === '/user/settings/assessmentws') {
-            window.location.href = page.url.url_for('user/settingsws');
-            return;
-        }
-        $.ajax({
-            url     : page.url.url_for('user/settings/assessmentws'),
-            dataType: 'html',
-            method  : 'GET',
-            success : function(riskClassificationText) {
-                if (riskClassificationText.includes('assessment_form')) {
-                    var payload = $(riskClassificationText);
-                    RiskClassification.showRiskClassificationPopUp(payload.find('#assessment_form'));
-                    FinancialAssessmentws.LocalizeText();
-                    $('#risk_classification #assessment_form').removeClass('invisible')
-                                        .attr('style', 'text-align: left;');
-                    $('#risk_classification #high_risk_classification').removeClass('invisible');
-                    $('#risk_classification #heading_risk').removeClass('invisible');
-                    $('#risk_classification #assessment_form').on('submit', function(event) {
-                        event.preventDefault();
-                        FinancialAssessmentws.submitForm();
-                        return false;
-                    });
-                }
-            },
-            error: function() {
-                return false;
-            },
-        });
-        $('#risk_classification #assessment_form').on('submit', function(event) {
-            event.preventDefault();
-            FinancialAssessmentws.submitForm();
-            return false;
-        });
-    },
-    qualify_for_risk_classification: function() {
-        if (page.client.is_logged_in && !page.client.is_virtual() &&
-            page.client.residence !== 'jp' && !$('body').hasClass('BlueTopBack') && $('#assessment_form').length === 0 &&
-            (localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval'))) {
-            return true;
-        }
-        return false;
-    },
-    validate_cookies: function() {
-        var loginid_list = Cookies.get('loginid_list');
-        var loginid      = Cookies.get('loginid');
-        if (!loginid || !loginid_list) return;
-
-        var accIds = loginid_list.split('+');
-        var valid_loginids = new RegExp('^(MX|MF|VRTC|MLT|CR|FOG|VRTJ|JP)[0-9]+$', 'i');
-
-        function is_loginid_valid(login_id) {
-            return login_id ?
-                valid_loginids.test(login_id) :
-                true;
-        }
-
-        if (!is_loginid_valid(loginid)) {
-            page.client.send_logout_request();
-        }
-
-        accIds.forEach(function(acc_id) {
-            if (!is_loginid_valid(acc_id.split(':')[0])) {
-                page.client.send_logout_request();
-            }
-        });
-    },
-    do_logout: function(response) {
-        if (response.logout !== 1) return;
-        page.client.clear_storage_values();
-        LocalStore.remove('client.tokens');
-        LocalStore.set('reality_check.ack', 0);
-        sessionStorage.removeItem('client_status');
-        var cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence'];
-        var domains = [
-            '.' + document.domain.split('.').slice(-2).join('.'),
-            '.' + document.domain,
-        ];
-
-        var parent_path = window.location.pathname.split('/', 2)[1];
-        if (parent_path !== '') {
-            parent_path = '/' + parent_path;
-        }
-
-        cookies.forEach(function(c) {
-            var regex = new RegExp(c);
-            Cookies.remove(c, { path: '/', domain: domains[0] });
-            Cookies.remove(c, { path: '/', domain: domains[1] });
-            Cookies.remove(c);
-            if (regex.test(document.cookie) && parent_path) {
-                Cookies.remove(c, { path: parent_path, domain: domains[0] });
-                Cookies.remove(c, { path: parent_path, domain: domains[1] });
-                Cookies.remove(c, { path: parent_path });
-            }
-        });
-        localStorage.removeItem('risk_classification');
-        localStorage.removeItem('risk_classification.response');
-        page.reload();
     },
 };
 
@@ -1154,7 +906,6 @@ onLoad.queue(function () {
 });
 
 module.exports = {
-    getClockStarted : function() { return clock_started; },
     page            : page,
     make_mobile_menu: make_mobile_menu,
     TUser           : TUser,

@@ -8,7 +8,7 @@ var PortfolioWS = require('../user/account/portfolio/portfolio.init').PortfolioW
 var ProfitTableWS = require('../user/account/profit_table/profit_table.init').ProfitTableWS;
 var StatementWS = require('../user/account/statement/statement.init').StatementWS;
 var State = require('../../base/storage').State;
-var GTM = require('../../base/storage').GTM;
+var GTM = require('../../base/gtm').GTM;
 
 /*
  * This Message object process the response from server and fire
