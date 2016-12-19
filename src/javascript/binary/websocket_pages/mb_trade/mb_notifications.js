@@ -24,6 +24,9 @@ var MBNotifications = (function() {
                 $message.click(function() { dismissMessage(this); });
             }
             $note_wrapper.prepend($message);
+        } else {
+            var $current_message = $note_wrapper.find('#' + options.uid + ' .notice-msg');
+            if ($current_message.html() !== options.text) $current_message.html(options.text);
         }
         $.scrollTo($note_wrapper, 500, { offset: -5 });
         hideSpinnerShowTrading();
