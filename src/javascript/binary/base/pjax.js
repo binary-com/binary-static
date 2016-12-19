@@ -1,7 +1,8 @@
-var MenuContent = require('./menu_content').MenuContent;
-var pjax        = require('../../lib/pjax-lib');
-var Url         = require('./url').Url;
-var GTM         = require('./gtm').GTM;
+var MenuContent  = require('./menu_content').MenuContent;
+var pjax         = require('../../lib/pjax-lib');
+var Url          = require('./url').Url;
+var GTM          = require('./gtm').GTM;
+var SessionStore = require('./storage').SessionStore;
 
 var make_mobile_menu = function () {
     if ($('#mobile-menu-container').is(':visible')) {

@@ -1,10 +1,8 @@
 var Login              = require('./login').Login;
 var template           = require('./utility').template;
 var parseLoginIDList   = require('./utility').parseLoginIDList;
-var isStorageSupported = require('./storage').isStorageSupported;
-var Store              = require('./storage').Store;
-var InScriptStore      = require('./storage').InScriptStore;
 var CookieStorage      = require('./storage').CookieStorage;
+var LocalStore         = require('./storage').LocalStore;
 var localizeForLang    = require('./localize').localizeForLang;
 var localize           = require('./localize').localize;
 var getLanguage        = require('./language').getLanguage;
@@ -24,28 +22,6 @@ var moment             = require('moment');
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
 require('../../lib/mmenu/jquery.mmenu.min.all.js');
-
-var SessionStore,
-    LocalStore;
-if (isStorageSupported(window.localStorage)) {
-    LocalStore = new Store(window.localStorage);
-}
-
-if (isStorageSupported(window.sessionStorage)) {
-    if (!LocalStore) {
-        LocalStore = new Store(window.sessionStorage);
-    }
-    SessionStore = new Store(window.sessionStorage);
-}
-
-if (!SessionStore || !LocalStore) {
-    if (!LocalStore) {
-        LocalStore = new InScriptStore();
-    }
-    if (!SessionStore) {
-        SessionStore = new InScriptStore();
-    }
-}
 
 var TUser = (function () {
     var data = {};
@@ -532,8 +508,6 @@ $(document).ready(function () {
 });
 
 module.exports = {
-    page        : page,
-    TUser       : TUser,
-    SessionStore: SessionStore,
-    LocalStore  : LocalStore,
+    page : page,
+    TUser: TUser,
 };

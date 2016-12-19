@@ -1,5 +1,4 @@
 var Symbols = require('../symbols').Symbols;
-var MenuContent = require('../../../base/menu_content').MenuContent;
 var template = require('../../../base/utility').template;
 var localize = require('../../../base/localize').localize;
 require('../../../../lib/highstock/highstock.js');
@@ -248,25 +247,6 @@ DigitInfoWS.prototype = {
             }
         }
         return series.setData(filtered_spots);
-    },
-    show_tab: function() {
-        var tab_last_digit = $('#tab_last_digit');
-        MenuContent.show_tab(tab_last_digit);
-        var saved_anaysis_tab = SessionStore.get('bet_page.selected_analysis_tab');
-        if (saved_anaysis_tab === 'tab_last_digit') {
-            MenuContent.trigger({
-                tab_id: saved_anaysis_tab,
-            });
-        }
-    },
-    hide_tab: function() {
-        var tab_last_digit = $('#tab_last_digit');
-        MenuContent.hide_tab(tab_last_digit);
-        if (typeof this.chart !== 'undefined') {
-            this.chart.destroy();
-        }
-        this.chart = undefined;
-        this.spots = [];
     },
     update_chart: function(tick) {
         if (tick.req_id === 2) {

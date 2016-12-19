@@ -1,4 +1,5 @@
 var Menu                      = require('./menu').Menu;
+var LocalStore                = require('./storage').LocalStore;
 var checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
 var localize                  = require('./localize').localize;
 var Cookies                   = require('../../lib/js-cookie');

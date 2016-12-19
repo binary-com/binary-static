@@ -80,34 +80,6 @@ var MenuContent = (function () {
                 listeners_events[i](info);
             }
         },
-        listen_click: function (callback) {
-            if (typeof callback !== 'function') {
-                return false;
-            }
-
-            listeners_events.push(callback);
-            return true;
-        },
-        find_selected_tab: function (menu_id) {
-            var menu         = $('#' + menu_id),
-                selected_tab = menu.find('.a-active').parents('.tm-li');
-
-            if (!selected_tab.length) {
-                selected_tab = menu.find('.active');
-            }
-
-            return selected_tab;
-        },
-        is_tab_selected: function (tab) {
-            return tab.hasClass('active');
-        },
-        hide_tab: function (tab) {
-            tab.addClass('invisible').find('.menu-wrap-a .tm-a').unwrap().unwrap();
-            $('#' + tab.attr('id') + '-content').addClass('invisible');
-        },
-        show_tab: function (tab) {
-            tab.removeClass('invisible');
-        },
         trigger: function (id) {
             var tab_id     = id.tab_id,
                 content_id = id.content_id;

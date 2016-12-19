@@ -1,4 +1,5 @@
 var template = require('../../../base/utility').template;
+var LocalStore = require('../../../base/storage').LocalStore;
 var moment   = require('moment');
 
 var RealityCheckData = (function() {

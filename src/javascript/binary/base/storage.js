@@ -103,10 +103,34 @@ CookieStorage.prototype = {
     },
 };
 
+var SessionStore,
+    LocalStore;
+if (typeof window !== 'undefined' && isStorageSupported(window.localStorage)) {
+    LocalStore = new Store(window.localStorage);
+}
+
+if (typeof window !== 'undefined' && isStorageSupported(window.sessionStorage)) {
+    if (!LocalStore) {
+        LocalStore = new Store(window.sessionStorage);
+    }
+    SessionStore = new Store(window.sessionStorage);
+}
+
+if (!SessionStore || !LocalStore) {
+    if (!LocalStore) {
+        LocalStore = new InScriptStore();
+    }
+    if (!SessionStore) {
+        SessionStore = new InScriptStore();
+    }
+}
+
 module.exports = {
     isStorageSupported: isStorageSupported,
     Store             : Store,
     InScriptStore     : InScriptStore,
     CookieStorage     : CookieStorage,
     State             : State,
+    SessionStore      : SessionStore,
+    LocalStore        : LocalStore,
 };
