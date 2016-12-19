@@ -8,6 +8,10 @@
     #cs_telephone_number {
         width: 100%;
     }
+    .center-align {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
     @media screen and (max-width: 480px) {
         .grd-grid-2 {
             .grd-hide-mobile {

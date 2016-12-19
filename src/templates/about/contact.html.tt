@@ -1,138 +1,158 @@
 <div class="container">
-    <div class="gr-row gr-parent static_full">
+    <div class="gr-row gr-parent static_full border-bottom gr-padding-30">
         <div class="gr-2 gr-hide-m ja-hide">
             <img class="responsive" src="[% request.url_for('images/pages/contact/contact-us-icon.svg') %]"/>
         </div>
-        <div class="gr-5 gr-12-m">
-            <div class="gr-padding-10">
-                <h1>
-                    [% l("Contact us") %]
-                </h1>
-            </div>
-            <div class="gr-padding-10">
-                <span class="hidden ja-show no-para-margin">
-                    [% l("JAPAN ONLY CONTACT TEXT") %]
-                </span>
-            </div>
-            <div class="gr-padding-10 gr-row">
-                <span class="gr-4 gr-12-t">
-                    [% l("Email: ") %]
-                </span>
-                <span class="gr-7 gr-12-t" id="cs_contact_eaddress"></span>
-            </div>
-            <div class="gr-padding-10 ja-hide">
-                <span class="no-para-margin gr-row">
-                    <div class="gr-4 gr-12-t">
-                        <label>[% l("Telephone:") %]</label>
+        <div class="gr-10 gr-12-m gr-padding-10 gr-parent">
+            <h1>
+                [% l("Contact us") %]
+            </h1>
+            <div class="gr-row">
+                <div class="gr-6 gr-12-t gr-12-p gr-12-m">
+                    <div class="gr-padding-10 hidden ja-show-block gr-parent">
+                        [% l("JAPAN ONLY CONTACT TEXT") %]
                     </div>
-                    <div class="gr-7 gr-12-t gr-no-gutter">
-                        <select id="cs_telephone_number">
-                            <option disabled="[% true %]">
-                                [% l("Select Country") %]
-                            </option>
-                            <option value="[% l('[_1] (Toll Free)', '+61 (02) 8294 5448, 1800 093570') %]">
-                                [% l("Australia") %]
-                            </option>
-                            <option value="+1 (450) 823 1002">
-                                [% l("Canada") %]
-                            </option>
-                            <option value="+49 0221 98259000">
-                                [% l("Germany") %]
-                            </option>
-                            <option value="[% l('[_1] (Toll Free)', '0018030113641') %]">
-                                [% l("Indonesia") %]
-                            </option>
-                            <option value="[% l('[_1] (Toll Free)', '+353 (0) 76 888 7500, 1800931084') %]">
-                                [% l("Ireland") %]
-                            </option>
-                            <option value="+48 58 881 00 02">
-                                [% l("Poland") %]
-                            </option>
-                            <option value="[% l('[_1] (Toll Free)', '8 10 8002 8553011') %]">
-                                [% l("Russia") %]
-                            </option>
-                            <option selected="[% true %]" value="[% l('[_1] (Toll Free)', '+44 (0) 1666 800042, 0800 011 9847') %]">
-                                [% l("United Kingdom") %]
-                            </option>
-                        </select>
+                    <div class="gr-padding-10 ja-hide gr-parent">
+                        <span class="no-para-margin gr-row">
+                            <div class="gr-4">
+                                <label>[% l("Telephone:") %]</label>
+                            </div>
+                            <div class="gr-7 gr-no-gutter">
+                                <select id="cs_telephone_number">
+                                    <option value="[% l('[_1] (Toll Free)', '+61 (02) 8294 5448, 1800 093570') %]">
+                                        [% l("Australia") %]
+                                    </option>
+                                    <option value="+1 (450) 823 1002">
+                                        [% l("Canada") %]
+                                    </option>
+                                    <option value="+49 0221 98259000">
+                                        [% l("Germany") %]
+                                    </option>
+                                    <option value="[% l('[_1] (Toll Free)', '0018030113641') %]">
+                                        [% l("Indonesia") %]
+                                    </option>
+                                    <option value="[% l('[_1] (Toll Free)', '+353 (0) 76 888 7500, 1800931084') %]">
+                                        [% l("Ireland") %]
+                                    </option>
+                                    <option value="+48 58 881 00 02">
+                                        [% l("Poland") %]
+                                    </option>
+                                    <option value="[% l('[_1] (Toll Free)', '8 10 8002 8553011') %]">
+                                        [% l("Russia") %]
+                                    </option>
+                                    <option selected="selected" value="[% l('[_1] (Toll Free)', '+44 (0) 1666 800042, 0800 011 9847') %]">
+                                        [% l("United Kingdom") %]
+                                    </option>
+                                </select>
+                            </div>
+                        </span>
+                        <span class="gr-8 gr-prefix-4 gr-12-t gr-12-p gr-padding-10 gr-12-m" id="display_cs_telephone">
+                            [% "+44 (0) 1666 800042" %]
+                            <br />
+                            [% l("[_1] (Toll Free)", "0800 011 9847") %]
+                        </span>
                     </div>
-                </span>
-                <span class="gr-8 gr-prefix-4 gr-12-t gr-prefix-t-0 gr-padding-10 gr-12-m" id="display_cs_telephone">
-                    [% "+44 (0) 1666 800042" %]
-                    <br />
-                    [% l("[_1] (Toll Free)", "0800 011 9847") %]
-                </span>
-            </div>
-            <div class="gr-padding-10">
-                <span class="no-para-margin calls_recording gr-12-m">
-                    [% l("All calls are recorded for training and monitoring purposes") %]
-                </span>
-            </div>
-            <div class="gr-padding-10">
-                <div class="gr-row gr-parent ja-hide" id="live-chat-container">
-                    <label class="gr-4">
-                        [% l("Live chat:") %]
-                    </label>
-                    <div class="gr-8">
-                        <span id="live-chat-icon"></span>
+                    <div class="gr-8 gr-prefix-4 gr-12-t gr-12-p gr-prefix-0-t gr-prefix-0-p gr-prefix-0-m gr-padding-10 gr-12-m notice-msg calls_recording">
+                        [% l("All calls are recorded for training and monitoring purposes") %]
+                    </div>
+                </div>
+                <div class="gr-padding-10 gr-12-t gr-12-p gr-hide gr-show-t gr-show-p gr-show-m"></div>
+                <div class="gr-6 gr-12-t gr-12-p gr-12-m">
+                    <div class="gr-padding-10 gr-parent">
+                        <span class="gr-row">
+                            <label class="gr-4">[% l("Email: ") %]</label>
+                            <label class="gr-7" id="cs_contact_eaddress"></label>
+                        </span>
+                    </div>
+                    <div class="gr-padding-10">
+                        <div class="gr-row gr-parent ja-hide" id="live-chat-container">
+                            <label class="gr-4 center-align">
+                                [% l("Live chat:") %]
+                            </label>
+                            <div class="gr-8">
+                                <span id="live-chat-icon"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="gr-5 gr-12-m">
-            <div class="gr-padding-10">
-                <h1>
-                    [% l("Company addresses") %]
-                </h1>
+    </div>
+    <div class="gr-padding-30">
+        <div class="gr-padding-20 center-text gr-parent">
+            <h1>
+                [% l("Company addresses") %]
+            </h1>
+        </div>
+        <div class="gr-row">
+            <div class="gr-4 gr-12-p gr-12-m">
+                <div class="border-bottom">
+                    <div class="fill-bg-color gr-padding-10">
+                        <h3 class="margin">[% l("Malta") %]</h3>
+                    </div>
+                    <p class="margin gr-parent gr-padding-10">
+                        [% l("Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825") %]
+                    </p>
+                </div>
             </div>
-            <div class="gr-padding-10">
-                <h2>
-                    [% l("Malta") %]
-                </h2>
-                <p class="no-para-margin">
-                    [% l("Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825") %]
-                </p>
+            <div class="gr-4 gr-12-p gr-12-m">
+                <div class="border-bottom">
+                    <div class="fill-bg-color gr-padding-10">
+                        <h3 class="margin">[% l("Malaysia") %]</h3>
+                    </div>
+                    <div class="margin gr-padding-10">
+                        [% l("Cyberjaya Office") %]
+                    </div>
+                    <p class="margin gr-parent gr-padding-10 no-para-margin">
+                        [% l("Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan") %]
+                    </p>
+                </div>
             </div>
-            <div class="gr-padding-10">
-                <h2>
-                    [% l("Isle of Man") %]
-                </h2>
-                <p class="no-para-margin">
-                    [% l("Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW") %]
-                </p>
+            <div class="gr-4 gr-12-p gr-12-m">
+                <div class="border-bottom">
+                    <div class="fill-bg-color gr-padding-10">
+                        <h3 class="margin">[% l("Malaysia") %]</h3>
+                    </div>
+                    <div class="margin gr-padding-10">
+                        [% l("Kuala Lumpur Office") %]
+                    </div>
+                    <p class="margin gr-parent gr-padding-30 no-para-margin">
+                        [% l("Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur") %]
+                    </p>
+                </div>
             </div>
-            <div class="gr-padding-10">
-                <h2>
-                    [% l("Malaysia") %]
-                </h2>
-                <h3>
-                    [% l("Cyberjaya Office") %]
-                </h3>
-                <p class="no-para-margin gr-padding-10 gr-parent">
-                    [% l("Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan") %]
-                </p>
-                <h3>
-                    [% l("Kuala Lumpur Office") %]
-                </h3>
-                <p class="no-para-margin">
-                    [% l("Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur") %]
-                </p>
+        </div>
+        <div class="gr-hide-p gr-hide-m gr-padding-20"></div>
+        <div class="gr-row">
+            <div class="gr-4 gr-12-p gr-12-m">
+                <div class="border-bottom">
+                    <div class="fill-bg-color gr-padding-10">
+                        <h3 class="margin">[% l("Isle of Man") %]</h3>
+                    </div>
+                    <p class="margin gr-parent gr-padding-10">
+                        [% l("Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW") %]
+                    </p>
+                </div>
             </div>
-            <div class="gr-padding-10">
-                <h2>
-                    [% l("Japan") %]
-                </h2>
-                <p class="no-para-margin">
-                    [% l("Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan") %]
-                </p>
+            <div class="gr-4 gr-12-p gr-12-m">
+                <div class="border-bottom">
+                    <div class="fill-bg-color gr-padding-10">
+                        <h3 class="margin">[% l("Japan") %]</h3>
+                    </div>
+                    <p class="margin gr-parent gr-padding-10">
+                        [% l("Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan") %]
+                    </p>
+                </div>
             </div>
-            <div class="gr-padding-10">
-                <h2>
-                    [% l("Germany") %]
-                </h2>
-                <p class="no-para-margin">
-                    [% l("Binary Group Services Sdn Bhd, Zweigstelle Berlin, Friedrichstraße 68, 10117 Berlin") %]
-                </p>
+            <div class="gr-4 gr-12-p gr-12-m">
+                <div class="border-bottom">
+                    <div class="fill-bg-color gr-padding-10">
+                        <h3 class="margin">[% l("Germany") %]</h3>
+                    </div>
+                    <p class="margin gr-parent gr-padding-10">
+                        [% l("Binary Group Services Sdn Bhd, Zweigstelle Berlin, Friedrichstraße 68, 10117 Berlin") %]
+                    </p>
+                </div>
             </div>
         </div>
     </div>
