@@ -13,6 +13,7 @@ var setFormPlaceholderContent  = require('./set_values').setFormPlaceholderConte
 var isVisible                  = require('../../common_functions/common_functions').isVisible;
 var showPriceOverlay           = require('./common').showPriceOverlay;
 var showFormOverlay            = require('./common').showFormOverlay;
+var hideOverlayContainer       = require('./common').hideOverlayContainer;
 var toggleActiveCatMenuElement = require('./common').toggleActiveCatMenuElement;
 var debounce                   = require('./common').debounce;
 var submitForm                 = require('./common').submitForm;
@@ -372,6 +373,7 @@ var TradingEvents = (function () {
                     }
                 }, this);
                 if (id && askPrice) {
+                    $('.purchase_button').css('visibility', 'hidden');
                     BinarySocket.send(params);
                     Price.incrFormId();
                     processForgetProposals();
@@ -385,8 +387,7 @@ var TradingEvents = (function () {
         $('#close_confirmation_container, #contract_purchase_new_trade').on('click', function (e) {
             if (e.target) {
                 e.preventDefault();
-                document.getElementById('contract_confirmation_container').style.display = 'none';
-                document.getElementById('contracts_list').style.display = 'flex';
+                hideOverlayContainer();
                 processPriceRequest();
             }
         });

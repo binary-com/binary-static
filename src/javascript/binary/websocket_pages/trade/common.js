@@ -367,6 +367,7 @@ function hideOverlayContainer() {
     if (elm2) {
         elm2.style.display = 'flex';
     }
+    $('.purchase_button').css('visibility', '');
 }
 
 function getContractCategoryTree(elements) {
