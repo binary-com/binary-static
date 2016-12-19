@@ -33,8 +33,8 @@ var TradePage_Beta                = require('./trade/beta/tradepage').TradePage_
 var MBTradePage                   = require('./mb_trade/mb_tradepage').MBTradePage;
 var ViewPopupWS                   = require('./user/view_popup/view_popupws').ViewPopupWS;
 var KnowledgeTest                 = require('../../binary_japan/knowledge_test/knowledge_test.init').KnowledgeTest;
-var pjax_config_page_require_auth = require('../base/page').pjax_config_page_require_auth;
-var pjax_config_page              = require('../base/page').pjax_config_page;
+var pjax_config_page_require_auth = require('../base/pjax').pjax_config_page_require_auth;
+var pjax_config_page              = require('../base/pjax').pjax_config_page;
 
 pjax_config_page('/trading', function () {
     return {

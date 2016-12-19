@@ -27,9 +27,10 @@ var KnowledgeTest             = require('../../binary_japan/knowledge_test/knowl
 var localize         = require('../base/localize').localize;
 var getLanguage      = require('../base/language').getLanguage;
 var validate_loginid = require('../base/client').validate_loginid;
-var GTM    = require('../base/gtm').GTM;
-var Clock  = require('../base/clock').Clock;
-var Header = require('../base/header').Header;
+var GTM      = require('../base/gtm').GTM;
+var Clock    = require('../base/clock').Clock;
+var Header   = require('../base/header').Header;
+var Contents = require('../base/header').Contents;
 var check_risk_classification       = require('../common_functions/check_risk_classification').check_risk_classification;
 var qualify_for_risk_classification = require('../common_functions/check_risk_classification').qualify_for_risk_classification;
 
@@ -213,7 +214,7 @@ function BinarySocketClass() {
                     RealityCheckData.clear();
                     Header.do_logout(response);
                 } else if (type === 'landing_company') {
-                    page.contents.topbar_message_visibility(response.landing_company);
+                    Contents.topbar_message_visibility(response.landing_company);
                     var company;
                     if (response.hasOwnProperty('error')) return;
                     TUser.extend({ landing_company: response.landing_company });
@@ -244,7 +245,7 @@ function BinarySocketClass() {
                             send({ landing_company: country_code });
                         }
                     } else if (country_code === null && response.get_settings.country === null) {
-                        page.contents.topbar_message_visibility('show_residence');
+                        Contents.topbar_message_visibility('show_residence');
                     }
                     if (/realws|maltainvestws|japanws/.test(window.location.href)) {
                         displayAcctSettings(response);

@@ -5,7 +5,8 @@ var testPassword    = require('../../../../common_functions/passwordmeter').test
 var ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
 var bind_validation = require('../../../../validator').bind_validation;
 var dv              = require('../../../../../lib/validation');
-var localize = require('../../../../base/localize').localize;
+var localize        = require('../../../../base/localize').localize;
+var load_with_pjax  = require('../../../../base/pjax').load_with_pjax;
 
 var SecurityWS = (function() {
     'use strict';

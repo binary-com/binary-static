@@ -1,26 +1,26 @@
-var Login                 = require('./login').Login;
-var template              = require('./utility').template;
-var parseLoginIDList      = require('./utility').parseLoginIDList;
-var isStorageSupported    = require('./storage').isStorageSupported;
-var Store                 = require('./storage').Store;
-var InScriptStore         = require('./storage').InScriptStore;
-var CookieStorage         = require('./storage').CookieStorage;
-var localizeForLang       = require('./localize').localizeForLang;
-var localize              = require('./localize').localize;
-var getLanguage           = require('./language').getLanguage;
-var setCookieLanguage     = require('./language').setCookieLanguage;
-var GTM                   = require('./gtm').GTM;
-var Url                   = require('./url').Url;
-var Header                = require('./header').Header;
-var TrafficSource         = require('../common_functions/traffic_source').TrafficSource;
-var japanese_client       = require('../common_functions/country_base').japanese_client;
-var checkLanguage         = require('../common_functions/country_base').checkLanguage;
-var ViewBalance           = require('../websocket_pages/user/viewbalance/viewbalance.init').ViewBalance;
-var CashierJP             = require('../../binary_japan/cashier').CashierJP;
-var Cookies               = require('../../lib/js-cookie');
-var moment                = require('moment');
-var MenuContent           = require('./menu_content').MenuContent;
-var pjax                  = require('../../lib/pjax-lib');
+var Login              = require('./login').Login;
+var template           = require('./utility').template;
+var parseLoginIDList   = require('./utility').parseLoginIDList;
+var isStorageSupported = require('./storage').isStorageSupported;
+var Store              = require('./storage').Store;
+var InScriptStore      = require('./storage').InScriptStore;
+var CookieStorage      = require('./storage').CookieStorage;
+var localizeForLang    = require('./localize').localizeForLang;
+var localize           = require('./localize').localize;
+var getLanguage        = require('./language').getLanguage;
+var setCookieLanguage  = require('./language').setCookieLanguage;
+var GTM                = require('./gtm').GTM;
+var Url                = require('./url').Url;
+var Header             = require('./header').Header;
+var Contents           = require('./contents').Contents;
+var load_with_pjax     = require('./pjax').load_with_pjax;
+var TrafficSource      = require('../common_functions/traffic_source').TrafficSource;
+var japanese_client    = require('../common_functions/country_base').japanese_client;
+var checkLanguage      = require('../common_functions/country_base').checkLanguage;
+var ViewBalance        = require('../websocket_pages/user/viewbalance/viewbalance.init').ViewBalance;
+var CashierJP          = require('../../binary_japan/cashier').CashierJP;
+var Cookies            = require('../../lib/js-cookie');
+var moment             = require('moment');
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
 require('../../lib/mmenu/jquery.mmenu.min.all.js');
@@ -171,8 +171,8 @@ Client.prototype = {
         if (!Cookies.get('email')) this.set_cookie('email', response.authorize.email);
         this.set_storage_value('is_virtual', TUser.get().is_virtual);
         this.check_storage_values();
-        page.contents.activate_by_client_type();
-        page.contents.activate_by_login();
+        Contents.activate_by_client_type();
+        Contents.activate_by_login();
         CashierJP.set_email_id();
     },
     response_get_settings: function(response) {
@@ -259,166 +259,6 @@ Client.prototype = {
     },
     can_upgrade_virtual_to_japan: function(data) {
         return (data.hasOwnProperty('financial_company') && !data.hasOwnProperty('gaming_company') && data.financial_company.shortcode === 'japan');
-    },
-};
-
-var Contents = function(client, user) {
-    this.client = client;
-    this.user = user;
-};
-
-Contents.prototype = {
-    on_load: function() {
-        this.activate_by_client_type();
-        this.activate_by_login();
-        this.update_content_class();
-        this.init_draggable();
-    },
-    on_unload: function() {
-        if ($('.unbind_later').length > 0) {
-            $('.unbind_later').off();
-        }
-    },
-    has_gaming_financial_enabled: function() {
-        var has_financial = false,
-            has_gaming = false,
-            user;
-        for (var i = 0; i < page.user.loginid_array.length; i++) {
-            user = page.user.loginid_array[i];
-            if (user.financial && !user.disabled && !user.non_financial) {
-                has_financial = true;
-            } else if (!user.financial && !user.disabled && user.non_financial) {
-                has_gaming = true;
-            }
-        }
-        return has_gaming && has_financial;
-    },
-    activate_by_client_type: function() {
-        $('.by_client_type').addClass('invisible');
-        if (this.client.is_logged_in) {
-            if (page.client.get_storage_value('is_virtual').length === 0) {
-                return;
-            }
-            $('#client-logged-in').addClass('gr-centered');
-            if (!page.client.is_virtual()) {
-                // control-class is a fake class, only used to counteract ja-hide class
-                $('.by_client_type.client_real').not((japanese_client() ? '.ja-hide' : '.control-class')).removeClass('invisible');
-                $('.by_client_type.client_real').show();
-
-                $('#topbar').addClass('primary-color-dark');
-                $('#topbar').removeClass('secondary-bg-color');
-
-                if (!/^CR/.test(this.client.loginid)) {
-                    $('#payment-agent-section').addClass('invisible');
-                    $('#payment-agent-section').hide();
-                }
-
-                if (this.has_gaming_financial_enabled()) {
-                    $('#account-transfer-section').removeClass('invisible');
-                }
-            } else {
-                $('.by_client_type.client_virtual').removeClass('invisible');
-                $('.by_client_type.client_virtual').show();
-
-                $('#topbar').addClass('secondary-bg-color');
-                $('#topbar').removeClass('primary-color-dark');
-            }
-        } else {
-            $('#btn_login').unbind('click').click(function(e) { e.preventDefault(); Login.redirect_to_login(); });
-
-            $('.by_client_type.client_logged_out').removeClass('invisible');
-            $('.by_client_type.client_logged_out').show();
-
-            $('#topbar').removeClass('secondary-bg-color');
-            $('#topbar').addClass('primary-color-dark');
-        }
-    },
-    activate_by_login: function() {
-        if (this.client.is_logged_in) {
-            $('.client_logged_in').removeClass('invisible');
-        }
-    },
-    update_content_class: function() {
-        // This is required for our css to work.
-        $('#content').removeClass();
-        $('#content').addClass($('#content_class').html());
-    },
-    init_draggable: function() {
-        $('.draggable').draggable();
-    },
-    topbar_message_visibility: function(c_config) {
-        if (this.client.is_logged_in) {
-            if (page.client.get_storage_value('is_virtual').length === 0 || !c_config) {
-                return;
-            }
-            var loginid_array = this.user.loginid_array;
-
-            var $upgrade_msg = $('.upgrademessage'),
-                hiddenClass  = 'invisible';
-            var hide_upgrade = function() {
-                $upgrade_msg.addClass(hiddenClass);
-            };
-            var show_upgrade = function(url, msg) {
-                $upgrade_msg.removeClass(hiddenClass)
-                    .find('a').removeClass(hiddenClass)
-                        .attr('href', page.url.url_for(url))
-                        .html($('<span/>', { text: localize(msg) }));
-            };
-
-            if (page.client.is_virtual()) {
-                var show_upgrade_msg = true;
-                var show_virtual_msg = true;
-                var show_activation_msg = false;
-                if (localStorage.getItem('jp_test_allowed') === '1') {
-                    show_virtual_msg = false;
-                    show_upgrade_msg = false; // do not show upgrade for user that filled up form
-                } else if ($('.jp_activation_pending').length !== 0) {
-                    show_upgrade_msg = false;
-                    show_activation_msg = true;
-                }
-                for (var i = 0; i < loginid_array.length; i++) {
-                    if (loginid_array[i].real) {
-                        hide_upgrade();
-                        show_upgrade_msg = false;
-                        break;
-                    }
-                }
-                if (show_upgrade_msg) {
-                    $upgrade_msg.find('> span').removeClass(hiddenClass);
-                    if (page.client.can_upgrade_virtual_to_financial(c_config)) {
-                        show_upgrade('new_account/maltainvestws', 'Upgrade to a Financial Account');
-                    } else if (page.client.can_upgrade_virtual_to_japan(c_config)) {
-                        show_upgrade('new_account/japanws', 'Upgrade to a Real Account');
-                    } else {
-                        show_upgrade('new_account/realws', 'Upgrade to a Real Account');
-                    }
-                } else if (show_virtual_msg) {
-                    $upgrade_msg.removeClass(hiddenClass).find('> span').removeClass(hiddenClass + ' gr-hide-m');
-                    if (show_activation_msg && $('.activation-message').length === 0) {
-                        $('#virtual-text').append(' <div class="activation-message">' + localize('Your Application is Being Processed.') + '</div>');
-                    }
-                }
-            } else {
-                var show_financial = false;
-
-                // also allow UK MLT client to open MF account
-                if (page.client.can_upgrade_gaming_to_financial(c_config) || (this.client.residence === 'gb' && /^MLT/.test(this.client.loginid))) {
-                    show_financial = true;
-                    for (var j = 0; j < loginid_array.length; j++) {
-                        if (loginid_array[j].financial) {
-                            show_financial = false;
-                            break;
-                        }
-                    }
-                }
-                if (show_financial) {
-                    $('#virtual-text').parent().addClass('invisible');
-                    show_upgrade('new_account/maltainvestws', 'Open a Financial Account');
-                } else {
-                    hide_upgrade();
-                }
-            }
-        }
     },
 };
 
@@ -662,22 +502,6 @@ $(function() {
     });
 });
 
-var make_mobile_menu = function () {
-    if ($('#mobile-menu-container').is(':visible')) {
-        $('#mobile-menu').mmenu({
-            position       : 'right',
-            zposition      : 'front',
-            slidingSubmenus: false,
-            searchfield    : true,
-            onClick        : {
-                close: true,
-            },
-        }, {
-            selectedClass: 'active',
-        });
-    }
-};
-
 // LocalStorage can be used as a means of communication among
 // different windows. The problem that is solved here is what
 // happens if the user logs out or switches loginid in one
@@ -717,202 +541,9 @@ $(document).ready(function () {
     LocalStore.set('active_loginid', match);
 });
 
-// For object shape coherence we create named objects to be inserted into the queue.
-var URLPjaxQueueElement = function(exec_function, url) {
-    this.method = exec_function;
-    if (url) {
-        this.url = new RegExp(url);
-    } else {
-        this.url = /.*/;
-    }
-};
-
-URLPjaxQueueElement.prototype = {
-    fire: function(in_url) {
-        if (this.url.test(in_url)) {
-            this.method();
-        }
-    },
-};
-
-var IDPjaxQueueElement = function(exec_function, id) {
-    this.method = exec_function;
-    this.sel = '#' + id;
-};
-
-IDPjaxQueueElement.prototype = {
-    fire: function() {
-        if ($(this.sel).length > 0) {
-            this.method();
-        }
-    },
-};
-
-var PjaxExecQueue = function () {
-    this.url_exec_queue = [];
-    this.id_exec_queue = [];
-    this.fired = false;
-    this.content = $('#content');
-};
-
-PjaxExecQueue.prototype = {
-    queue: function (exec_function) {
-        this.url_exec_queue.unshift(new URLPjaxQueueElement(exec_function));
-    },
-    queue_for_url: function (exec_function, url_pattern) {
-        this.url_exec_queue.unshift(new URLPjaxQueueElement(exec_function, url_pattern));
-    },
-    queue_if_id_present: function(exec_function, id) {
-        this.id_exec_queue.unshift(new IDPjaxQueueElement(exec_function, id));
-    },
-    fire: function () {
-        if (!this.fired) {
-            var match_loc = window.location.href;
-            var i = this.url_exec_queue.length;
-            while (i--) {
-                this.url_exec_queue[i].fire(match_loc);
-            }
-
-            i = this.id_exec_queue.length;
-            while (i--) {
-                this.id_exec_queue[i].fire(match_loc);
-            }
-        }
-        this.fired = true;
-    },
-    reset: function() {
-        this.fired = false;
-    },
-    loading: function () {
-        this.reset();
-    },
-};
-
-var pjax_config_page = function(url, exec_functions) {
-    var functions = exec_functions();
-    if (functions.onLoad) onLoad.queue_for_url(functions.onLoad, url);
-    if (functions.onUnload) onUnload.queue_for_url(functions.onUnload, url);
-};
-
-var pjax_config = function() {
-    return {
-        container : 'content',
-        beforeSend: function() {
-            onLoad.loading();
-            onUnload.fire();
-        },
-        complete: function() {
-            page.is_loaded_by_pjax = true;
-            onLoad.fire();
-            onUnload.reset();
-        },
-        error: function() {
-            var error_text = SessionStore.get('errors.500');
-            if (error_text) {
-                $('#content').html(error_text);
-            } else {
-                $.get('/errors/500.html').always(function(content) {
-                    var tmp = document.createElement('div');
-                    tmp.innerHTML = content;
-                    var tmpNodes = tmp.getElementsByTagName('div');
-                    for (var i = 0, l = tmpNodes.length; i < l; i++) {
-                        if (tmpNodes[i].id === 'content') {
-                            SessionStore.set('errors.500', tmpNodes[i].innerHTML);
-                            $('#content').html(tmpNodes[i].innerHTML);
-                            break;
-                        }
-                    }
-                });
-            }
-        },
-        useClass: 'pjaxload',
-    };
-};
-
-var init_pjax = function () {
-    if (!$('body').hasClass('BlueTopBack')) { // No Pjax for BO.
-        pjax.connect(pjax_config());
-    }
-};
-
-var load_with_pjax = function(url) {
-    if (page.url.is_in(new Url(url))) {
-        return;
-    }
-
-    var config = pjax_config();
-    config.url = url;
-    config.update_url = url;
-    config.history = true;
-    pjax.invoke(config);
-};
-
-// Reduce duplication as required Auth is a common pattern
-var pjax_config_page_require_auth = function(url, exec) {
-    var oldOnLoad = exec().onLoad;
-    var newOnLoad = function() {
-        if (!page.client.show_login_if_logout(true)) {
-            oldOnLoad();
-        }
-    };
-
-    var newExecFn = function() {
-        return {
-            onLoad  : newOnLoad,
-            onUnload: exec().onUnload,
-        };
-    };
-    pjax_config_page(url, newExecFn);
-};
-
-var onLoad = new PjaxExecQueue();
-var onUnload = new PjaxExecQueue();
-
-init_pjax(); // Pjax-standalone will wait for on load event before attaching.
-$(function() { onLoad.fire(); });
-
-onLoad.queue(GTM.push_data_layer);
-
-onLoad.queue(function () {
-    page.on_load();
-});
-
-onUnload.queue(function () {
-    page.on_unload();
-});
-
-onLoad.queue(function () {
-    $('.tm-ul > li').hover(
-        function () {
-            $(this).addClass('hover');
-        },
-        function () {
-            $(this).removeClass('hover');
-        });
-
-    MenuContent.init($('.content-tab-container').find('.tm-ul'));
-
-    make_mobile_menu();
-
-    var i = window.location.href.split('#');
-    if (i.length !== 2) return;
-    var o = document.getElementsByTagName('a');
-    for (var t = 0; t < o.length; t++) {
-        if (o[t].href.substr(o[t].href.length - i[1].length - 1) === '#' + i[1]) {
-            o[t].click();
-            break;
-        }
-    }
-});
-
 module.exports = {
-    page            : page,
-    make_mobile_menu: make_mobile_menu,
-    TUser           : TUser,
-    SessionStore    : SessionStore,
-    LocalStore      : LocalStore,
-    load_with_pjax  : load_with_pjax,
-    pjax_config_page: pjax_config_page,
-
-    pjax_config_page_require_auth: pjax_config_page_require_auth,
+    page        : page,
+    TUser       : TUser,
+    SessionStore: SessionStore,
+    LocalStore  : LocalStore,
 };

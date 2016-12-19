@@ -23,6 +23,7 @@ var chartFrameSource           = require('./common').chartFrameSource;
 var timeIsValid                = require('./common').timeIsValid;
 var TimePicker                 = require('../../components/time_picker').TimePicker;
 var dateValueChanged           = require('../../common_functions/common_functions').dateValueChanged;
+var load_with_pjax             = require('../../base/pjax').load_with_pjax;
 
 /*
  * TradingEvents object contains all the event handler function required for

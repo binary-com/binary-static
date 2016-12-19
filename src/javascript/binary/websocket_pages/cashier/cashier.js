@@ -1,4 +1,5 @@
 var japanese_client = require('../../common_functions/country_base').japanese_client;
+var Contents = require('../../base/contents').Contents;
 
 var Cashier = (function() {
     'use strict';
@@ -44,7 +45,7 @@ var Cashier = (function() {
         if (/\/cashier\.html/.test(window.location.pathname) && page.client.is_logged_in) {
             Cashier.check_locked();
             Cashier.check_virtual_top_up();
-            page.contents.topbar_message_visibility(TUser.get().landing_company);
+            Contents.topbar_message_visibility(TUser.get().landing_company);
         }
     };
 

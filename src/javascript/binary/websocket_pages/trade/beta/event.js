@@ -23,6 +23,7 @@ var timeIsValid                    = require('../common').timeIsValid;
 var isVisible                      = require('../../../common_functions/common_functions').isVisible;
 var dateValueChanged               = require('../../../common_functions/common_functions').dateValueChanged;
 var TimePicker                     = require('../../../components/time_picker').TimePicker;
+var load_with_pjax                 = require('../../../base/pjax').load_with_pjax;
 
 /*
  * TradingEvents object contains all the event handler function required for

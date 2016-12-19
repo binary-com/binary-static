@@ -1,6 +1,7 @@
-var Content       = require('../../../common_functions/content').Content;
-var validateEmail = require('../../../common_functions/validation').validateEmail;
-var localize = require('../../../base/localize').localize;
+var Content        = require('../../../common_functions/content').Content;
+var validateEmail  = require('../../../common_functions/validation').validateEmail;
+var localize       = require('../../../base/localize').localize;
+var load_with_pjax = require('../../../base/pjax').load_with_pjax;
 
 var LostPassword = (function() {
     'use strict';
