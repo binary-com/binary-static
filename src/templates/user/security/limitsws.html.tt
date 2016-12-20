@@ -42,6 +42,9 @@
                     <tr class="flex-tr">
                         <td class="flex-tr-child">
                             [% l("Maximum aggregate payouts on open positions per symbol and contract type") %]
+                            <a href="#" data-balloon-length="xlarge" class="no-underline" data-balloon="[% l('Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position.') %]">
+                                <img src="[% request.url_for('images/common/question_1.png') %]">
+                            </a>
                         </td>
                         <td class="flex-tr-child" id="payout-per-symbol-and-contract-type"></td>
                     </tr>
