@@ -3,7 +3,7 @@ var Cookies = require('../../../lib/js-cookie');
 var Content = require('../../common_functions/content').Content;
 
 var PaymentAgentListWS = (function() {
-    "use strict";
+    'use strict';
 
     var hiddenClass,
         ddlCountriesID,
@@ -15,10 +15,10 @@ var PaymentAgentListWS = (function() {
 
     var init = function() {
         $(function() {
-            $( "#accordion" ).accordion({
-              heightStyle: "content",
-              collapsible: true,
-              active: false
+            $('#accordion').accordion({
+                heightStyle: 'content',
+                collapsible: true,
+                active     : false,
             });
         });
 
@@ -37,16 +37,15 @@ var PaymentAgentListWS = (function() {
 
     var sendRequest = function(country, isList) {
         BinarySocket.send({
-            "paymentagent_list": country ? country : $(ddlCountriesID).val(),
-            "passthrough": isList ? {"countries_list": "1"} : {}
+            paymentagent_list: country || $(ddlCountriesID).val(),
+            passthrough      : isList ? { countries_list: '1' } : {},
         });
     };
 
     var responseHandler = function(response) {
-        if(response.echo_req.passthrough && response.echo_req.passthrough.countries_list === '1') {
+        if (response.echo_req.passthrough && response.echo_req.passthrough.countries_list === '1') {
             populateCountriesList(response);
-        }
-        else {
+        } else {
             populateAgentsList(response.paymentagent_list.list);
         }
     };
@@ -59,7 +58,7 @@ var PaymentAgentListWS = (function() {
         $ddlCountries.empty();
 
         var cList = response.paymentagent_list.available_countries;
-        if(cList.length === 0) {
+        if (cList.length === 0) {
             $ddlCountries.parent().addClass(hiddenClass);
             showEmptyListMsg();
             return;
@@ -68,17 +67,16 @@ var PaymentAgentListWS = (function() {
         var requestedCountry = response.echo_req.paymentagent_list;
         var found = false;
         cList.map(function(country) {
-            if(country === requestedCountry) {
+            if (country === requestedCountry) {
                 found = true;
             }
             insertListOption($ddlCountries, country[1], country[0]);
         });
 
-        if(found) {
+        if (found) {
             $ddlCountries.val(requestedCountry);
             populateAgentsList(response.paymentagent_list.list);
-        }
-        else {
+        } else {
             sendRequest();
         }
 
@@ -88,27 +86,27 @@ var PaymentAgentListWS = (function() {
     };
 
     var insertListOption = function($ddlObject, itemText, itemValue) {
-        $ddlObject.append($('<option/>', {value: itemValue, text: itemText}));
+        $ddlObject.append($('<option/>', { value: itemValue, text: itemText }));
     };
 
     // -----------------------
     // ----- Agents List -----
     // -----------------------
     var populateAgentsList = function(list) {
-        if(!list || list.length === 0) {
+        if (!list || list.length === 0) {
             showEmptyListMsg();
             return;
         }
 
         showLoadingImage($paListContainer);
 
-        var $accordion = $('<div/>', {id: 'accordion'});
+        var $accordion = $('<div/>', { id: 'accordion' });
 
-        list.map(function(agent){
+        list.map(function(agent) {
             var supported_banks = '';
-            if(agent.supported_banks && agent.supported_banks.length > 0) {
+            if (agent.supported_banks && agent.supported_banks.length > 0) {
                 var banks = agent.supported_banks.split(',');
-                banks.map(function(bank){
+                banks.map(function(bank) {
                     supported_banks += bank.length === 0 ?
                         '' :
                         '<img src="' + page.url.url_for_static('images/pages/payment_agent/banks/' + bank.toLowerCase() + '.png') + '" alt="' + bank + '" title="' + bank + '" />';
@@ -117,24 +115,23 @@ var PaymentAgentListWS = (function() {
 
             $accordion.append(
                 agentTemplate
-                    .replace(/%name/g                   , agent.name)
-                    .replace(/%summary/g                , agent.summary)
-                    .replace(/%deposit_commission/g     , agent.deposit_commission)
-                    .replace(/%withdrawal_commission/g  , agent.withdrawal_commission)
-                    .replace(/%url/g                    , agent.url)
-                    .replace(/%email/g                  , agent.email)
-                    .replace(/%telephone/g              , agent.telephone)
-                    .replace(/%further_information/g    , agent.further_information)
-                    .replace(/%supported_banks/g        , supported_banks)
-            );
+                    .replace(/%name/g, agent.name)
+                    .replace(/%summary/g, agent.summary)
+                    .replace(/%deposit_commission/g, agent.deposit_commission)
+                    .replace(/%withdrawal_commission/g, agent.withdrawal_commission)
+                    .replace(/%url/g, agent.url)
+                    .replace(/%email/g, agent.email)
+                    .replace(/%telephone/g, agent.telephone)
+                    .replace(/%further_information/g, agent.further_information)
+                    .replace(/%supported_banks/g, supported_banks));
         });
 
         $paListContainer.empty().append($accordion);
 
         $('#accordion').accordion({
-            heightStyle : 'content',
-            collapsible : true,
-            active      : false
+            heightStyle: 'content',
+            collapsible: true,
+            active     : false,
         });
     };
 
@@ -147,22 +144,22 @@ var PaymentAgentListWS = (function() {
             onmessage: function(msg) {
                 var response = JSON.parse(msg.data);
                 if (response) {
-                    if (response.msg_type === "paymentagent_list") {
+                    if (response.msg_type === 'paymentagent_list') {
                         PaymentAgentListWS.responseHandler(response);
                     }
                 }
-            }
+            },
         });
         Content.populate();
         PaymentAgentListWS.init();
     };
 
     return {
-        init: init,
+        init           : init,
         responseHandler: responseHandler,
-        onLoad: onLoad,
+        onLoad         : onLoad,
     };
-}());
+})();
 
 module.exports = {
     PaymentAgentListWS: PaymentAgentListWS,

@@ -16,7 +16,7 @@ var AuthorisedApps = (function() {
     };
 
     return {
-        onLoad: onLoad,
+        onLoad  : onLoad,
         onUnload: onUnload,
     };
 })();

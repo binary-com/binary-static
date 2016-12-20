@@ -7,7 +7,7 @@ var CashierJP = (function() {
             var $container = $('#japan_cashier_container');
             if (page.client.is_virtual()) {
                 $container.addClass('center-text').removeClass('invisible')
-                    .html($('<p/>', {class: 'notice-msg', html: page.text.localize('This feature is not relevant to virtual-money accounts.')}));
+                    .html($('<p/>', { class: 'notice-msg', html: page.text.localize('This feature is not relevant to virtual-money accounts.') }));
                 return;
             }
             $container.removeClass('invisible');
@@ -19,12 +19,12 @@ var CashierJP = (function() {
             }
         } else {
             BinarySocket.init({
-                onmessage: function(msg){
+                onmessage: function(msg) {
                     var response = JSON.parse(msg.data);
                     if (response && response.msg_type === 'authorize') {
                         CashierJP.init(action);
                     }
-                }
+                },
             });
         }
     }
@@ -52,10 +52,10 @@ var CashierJP = (function() {
         return true;
     }
     return {
-        init: init,
-        set_name_id: set_name_id,
-        set_email_id: set_email_id,
-        error_handler: error_handler
+        init         : init,
+        set_name_id  : set_name_id,
+        set_email_id : set_email_id,
+        error_handler: error_handler,
     };
 })();
 
