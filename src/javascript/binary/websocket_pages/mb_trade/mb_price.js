@@ -140,7 +140,7 @@ var MBPrice = (function() {
                 '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
                 '<div class="gr-4 buy-price">' +
                     '<button class="price-button' + (!values.is_active ? ' inactive' : '') + '"' +
-                        (values.is_active ? ' onclick="MBPrice.processBuy(\'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
+                        (values.is_active ? ' onclick="return HandleClick(\'MBPrice\', \'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
                         (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' +
                             '<span class="value-wrapper">' +
                                 '<span class="dynamics ' + (values.ask_price_movement || '') + '"></span>' +
@@ -159,7 +159,7 @@ var MBPrice = (function() {
             (is_update ? '' : '</div>');
     };
 
-    function processBuy(barrier, contract_type) {
+    var processBuy = function(barrier, contract_type) {
         if (!barrier || !contract_type) return;
         if (!page.client.is_logged_in) {
             MBNotifications.show({ text: page.text.localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true });
@@ -167,7 +167,7 @@ var MBPrice = (function() {
         }
         MBPrice.showPriceOverlay();
         MBPrice.sendBuyRequest(barrier, contract_type);
-    }
+    };
 
     var formatPrice = function(price) {
         return addComma(price, japanese_client() ? '0' : 2);
