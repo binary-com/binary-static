@@ -1,8 +1,9 @@
-var showLocalTimeOnHover  = require('../../../base/utility').showLocalTimeOnHover;
+var showLocalTimeOnHover  = require('../../../base/clock').showLocalTimeOnHover;
 var onlyNumericOnKeypress = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
 var Content               = require('../../../common_functions/content').Content;
 var RealityCheckData      = require('./reality_check.data').RealityCheckData;
 var localize = require('../../../base/localize').localize;
+var Client   = require('../../../base/client').Client;
 require('../../../../lib/polyfills/array.includes');
 require('../../../../lib/polyfills/string.includes');
 
@@ -157,7 +158,7 @@ var RealityCheckUI = (function() {
     }
 
     function sendAccountStatus() {
-        if (!page.client.is_virtual() && page.client.residence !== 'jp' && !getAccountStatus) {
+        if (!Client.is_virtual() && Client.get_value('residence') !== 'jp' && !getAccountStatus) {
             BinarySocket.send({ get_account_status: 1 });
             getAccountStatus = true;
         }

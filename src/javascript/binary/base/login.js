@@ -1,11 +1,12 @@
-var getAppId = require('../../config').getAppId;
+var getAppId    = require('../../config').getAppId;
 var getLanguage = require('./language').getLanguage;
+var Client      = require('./client').Client;
 
 var Login = (function() {
     'use strict';
 
     var redirect_to_login = function() {
-        if (!page.client.is_logged_in && !is_login_pages()) {
+        if (!Client.get_value('is_logged_in') && !is_login_pages()) {
             try {
                 sessionStorage.setItem('redirect_url', window.location.href);
             } catch (e) {

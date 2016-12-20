@@ -1,4 +1,5 @@
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
+var Client          = require('../../../base/client').Client;
 
 var SettingsWS = (function() {
     'use strict';
@@ -7,7 +8,7 @@ var SettingsWS = (function() {
         var classHidden = 'invisible',
             classReal   = '.real';
 
-        if (!page.client.is_virtual()) {
+        if (!Client.is_virtual()) {
             // control-class is a fake class, only used to counteract ja-hide class
             $(classReal).not((japanese_client() ? '.ja-hide' : '.control-class')).removeClass(classHidden);
         } else {
@@ -18,7 +19,7 @@ var SettingsWS = (function() {
     };
 
     var onLoad = function() {
-        if (page.client.get_storage_value('is_virtual').length === 0) {
+        if (Client.get_value('is_virtual').length === 0) {
             BinarySocket.init({
                 onmessage: function(msg) {
                     var response = JSON.parse(msg.data);

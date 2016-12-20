@@ -1,8 +1,9 @@
-var getAppId = require('../../config').getAppId;
-var isVisible = require('../common_functions/common_functions').isVisible;
+var getAppId    = require('../../config').getAppId;
+var isVisible   = require('../common_functions/common_functions').isVisible;
 var getLanguage = require('./language').getLanguage;
-var Cookies = require('../../lib/js-cookie');
-var moment = require('moment');
+var Client      = require('./client').Client;
+var Cookies     = require('../../lib/js-cookie');
+var moment      = require('moment');
 
 var GTM = (function() {
     'use strict';
@@ -19,8 +20,8 @@ var GTM = (function() {
             url      : document.URL,
             event    : 'page_load',
         };
-        if (page.client.is_logged_in) {
-            data_layer_info.visitorId = page.client.loginid;
+        if (Client.get_value('is_logged_in')) {
+            data_layer_info.visitorId = Client.get_value('loginid');
         }
 
         $.extend(true, data_layer_info, data);
@@ -66,7 +67,7 @@ var GTM = (function() {
         }
 
         var data = {
-            visitorId  : page.client.loginid,
+            visitorId  : Client.get_value('loginid'),
             bom_country: get_settings.country,
             bom_email  : get_settings.email,
             url        : window.location.href,
@@ -76,7 +77,7 @@ var GTM = (function() {
         if (is_newaccount) {
             data.bom_date_joined = data.bom_today;
         }
-        if (!page.client.is_virtual()) {
+        if (!Client.is_virtual()) {
             data.bom_age       = parseInt((moment().unix() - get_settings.date_of_birth) / 31557600);
             data.bom_firstname = get_settings.first_name;
             data.bom_lastname  = get_settings.last_name;
@@ -86,13 +87,13 @@ var GTM = (function() {
     };
 
     var push_purchase_data = function(response) {
-        if (!gtm_applicable() || page.client.is_virtual()) return;
+        if (!gtm_applicable() || Client.is_virtual()) return;
         var req = response.echo_req.passthrough,
             buy = response.buy;
         if (!buy) return;
         var data = {
             event             : 'buy_contract',
-            visitorId         : page.client.loginid,
+            visitorId         : Client.get_value('loginid'),
             bom_symbol        : req.symbol,
             bom_market        : document.getElementById('contract_markets').value,
             bom_currency      : req.currency,

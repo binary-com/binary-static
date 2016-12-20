@@ -1,6 +1,7 @@
 var Content         = require('../../../common_functions/content').Content;
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
 var localize = require('../../../base/localize').localize;
+var Client   = require('../../../base/client').Client;
 
 var AuthenticateWS = (function() {
     function init() {
@@ -11,13 +12,11 @@ var AuthenticateWS = (function() {
 
         function show_error(error) {
             $('#error_message').removeClass('invisible').text(error);
+            return true;
         }
 
         function check_virtual() {
-            if (page.client.is_virtual()) {
-                show_error(localize('This feature is not relevant to virtual-money accounts.'));
-            }
-            return page.client.is_virtual();
+            return Client.is_virtual() && show_error(localize('This feature is not relevant to virtual-money accounts.'));
         }
         if (!check_virtual()) {
             BinarySocket.init({

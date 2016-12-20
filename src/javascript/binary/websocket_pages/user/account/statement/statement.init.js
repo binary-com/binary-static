@@ -1,4 +1,4 @@
-var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
+var showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 var StatementUI          = require('./statement.ui').StatementUI;
 var addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;
 var buildOauthApps       = require('../../../../common_functions/get_app_details').buildOauthApps;

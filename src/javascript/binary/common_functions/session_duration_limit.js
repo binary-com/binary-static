@@ -1,5 +1,6 @@
-var moment = require('moment');
+var moment   = require('moment');
 var localize = require('../base/localize').localize;
+var Client   = require('../base/client').Client;
 
 var SessionDurationLimit = (function() {
     'use strict';
@@ -14,9 +15,9 @@ var SessionDurationLimit = (function() {
 
         warning = 10 * 1000; // milliseconds before limit to display the warning message
 
-        var limit     = page.client.get_storage_value('session_duration_limit') * 1,
+        var limit     = Client.get_value('session_duration_limit') * 1,
             now       = moment().unix(),
-            start     = page.client.get_storage_value('session_start') * 1,
+            start     = Client.get_value('session_start') * 1,
             remained  = ((limit + start) - now) * 1000,
             mathLimit = Math.pow(2, 31) - 1;
         if (remained < 0) remained = warning;
@@ -30,7 +31,7 @@ var SessionDurationLimit = (function() {
 
         function setTimeOut() {
             window.TimeOut_SessionLimitWarning = setTimeout(displayWarning, remained - warning);
-            window.TimeOut_SessionLimitLogout  = setTimeout(page.client.send_logout_request, remained);
+            window.TimeOut_SessionLimitLogout  = setTimeout(Client.send_logout_request, remained);
         }
     };
 
@@ -42,7 +43,7 @@ var SessionDurationLimit = (function() {
         var limit = response.get_self_exclusion.session_duration_limit * 60;
         if (isNaN(limit) || limit <= 0) return;
 
-        page.client.set_storage_value('session_duration_limit', limit);
+        Client.set_value('session_duration_limit', limit);
         window.addEventListener('storage', init, false);
 
         init();

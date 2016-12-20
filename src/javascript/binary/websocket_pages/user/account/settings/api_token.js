@@ -1,5 +1,5 @@
 var showLoadingImage     = require('../../../../base/utility').showLoadingImage;
-var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
+var showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 var Content         = require('../../../../common_functions/content').Content;
 var FlexTableUI     = require('../../../../common_functions/attach_dom/flextable').FlexTableUI;
 var ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;

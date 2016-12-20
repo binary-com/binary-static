@@ -5,8 +5,9 @@ var ValidateV2      = require('../../../common_functions/validation_v2').Validat
 var ValidationUI    = require('../../../validator').ValidationUI;
 var customError     = require('../../../validator').customError;
 var bind_validation = require('../../../validator').bind_validation;
-var dv   = require('../../../../lib/validation');
+var dv       = require('../../../../lib/validation');
 var localize = require('../../../base/localize').localize;
+var Client   = require('../../../base/client').Client;
 
 var PasswordWS = (function() {
     var $form;
@@ -87,7 +88,7 @@ var PasswordWS = (function() {
         $form.addClass('hidden');
         $result.removeClass('hidden');
         setTimeout(function() {
-            page.client.send_logout_request(true);
+            Client.send_logout_request(true);
         }, 5000);
     }
 

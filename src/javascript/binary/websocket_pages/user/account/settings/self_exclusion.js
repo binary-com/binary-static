@@ -9,7 +9,8 @@ var dv               = require('../../../../../lib/validation');
 var TimePicker       = require('../../../../components/time_picker').TimePicker;
 var DatePicker       = require('../../../../components/date_picker').DatePicker;
 var dateValueChanged = require('../../../../common_functions/common_functions').dateValueChanged;
-var localize = require('../../../../base/localize').localize;
+var localize         = require('../../../../base/localize').localize;
+var Client           = require('../../../../base/client').Client;
 
 var SelfExclusionWS = (function() {
     'use strict';
@@ -31,7 +32,7 @@ var SelfExclusionWS = (function() {
         // for error messages to show properly
         $('#' + timeID).attr('style', 'margin-bottom:10px');
 
-        if (page.client.is_virtual()) {
+        if (Client.is_virtual()) {
             $('#selfExclusionDesc').addClass(hiddenClass);
             showPageError(Content.localize().textFeatureUnavailable, true);
             return;
@@ -63,7 +64,7 @@ var SelfExclusionWS = (function() {
                 else if (msg_type === 'set_self_exclusion') setResponse(response);
             },
         });
-        if ('is_virtual' in TUser.get()) {
+        if (Client.is_virtual()) {
             reallyInit();
         }
     }
@@ -78,7 +79,7 @@ var SelfExclusionWS = (function() {
     function getResponse(response) {
         if (response.error) {
             if (response.error.code === 'ClientSelfExclusion') {
-                page.client.send_logout_request();
+                Client.send_logout_request();
             }
             if (response.error.message) {
                 showPageError(response.error.message, true);
@@ -131,7 +132,7 @@ var SelfExclusionWS = (function() {
             return;
         }
         showFormMessage('Your changes have been updated.', true);
-        page.client.set_storage_value('session_start', moment().unix()); // used to handle session duration limit
+        Client.set_value('session_start', moment().unix()); // used to handle session duration limit
         getRequest();
     }
 

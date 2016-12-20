@@ -6,6 +6,7 @@ var PortfolioWS                     = require('../../user/account/portfolio/port
 var State                           = require('../../../base/storage').State;
 var getLanguage                     = require('../../../base/language').getLanguage;
 var Url                             = require('../../../base/url').Url;
+var Client                          = require('../../../base/client').Client;
 var showHighchart                   = require('../common').showHighchart;
 var toggleActiveNavMenuElement_Beta = require('../common').toggleActiveNavMenuElement_Beta;
 
@@ -47,7 +48,7 @@ var TradingAnalysis_Beta = (function() {
     var bindAnalysisTabEvent = function() {
         'use strict';
 
-        if (page.client.is_logged_in) {
+        if (Client.get_value('is_logged_in')) {
             $('#tab_portfolio').removeClass('invisible');
         }
         if (!japanese_client()) {

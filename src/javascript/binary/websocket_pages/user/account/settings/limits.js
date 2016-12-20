@@ -1,13 +1,14 @@
 var LimitsWS = require('./limits/limits.init').LimitsWS;
 var Content  = require('../../../../common_functions/content').Content;
-var localize     = require('../../../../base/localize').localize;
+var localize = require('../../../../base/localize').localize;
+var Client   = require('../../../../base/client').Client;
 
 var Limits = (function() {
     var onLoad = function() {
         Content.populate();
         var titleElement = document.getElementById('limits-ws-container').firstElementChild;
         titleElement.textContent = localize('Trading and Withdrawal Limits');
-        if (TUser.get().is_virtual) {
+        if (Client().is_virtual()) {
             LimitsWS.limitsError();
             return;
         }
@@ -19,7 +20,7 @@ var Limits = (function() {
                     var type = response.msg_type;
                     var error = response.error;
 
-                    if (type === 'authorize' && TUser.get().is_virtual) {
+                    if (type === 'authorize' && Client().is_virtual()) {
                         LimitsWS.limitsError(error);
                     } else if (type === 'get_limits' && !error) {
                         LimitsWS.limitsHandler(response);

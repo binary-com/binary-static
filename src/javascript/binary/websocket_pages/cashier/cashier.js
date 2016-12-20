@@ -1,5 +1,6 @@
 var japanese_client = require('../../common_functions/country_base').japanese_client;
 var Contents = require('../../base/contents').Contents;
+var Client   = require('../../base/client').Client;
 
 var Cashier = (function() {
     'use strict';
@@ -13,7 +14,7 @@ var Cashier = (function() {
     };
 
     var check_locked = function() {
-        if (TUser.get().is_virtual || page.client.is_virtual()) return;
+        if (Client.is_virtual()) return;
         if (page.client_status_detected('cashier_locked')) {
             lock_cashier('locked', 'deposit, .withdraw');
         } else if (page.client_status_detected('withdrawal_locked')) {
@@ -26,9 +27,9 @@ var Cashier = (function() {
     };
 
     var check_virtual_top_up = function() {
-        if (TUser.get().is_virtual || page.client.is_virtual()) {
-            if ((TUser.get().currency !== 'JPY' && TUser.get().balance > 1000) ||
-                (TUser.get().currency === 'JPY' && TUser.get().balance > 100000)) {
+        if (Client.is_virtual()) {
+            if ((Client.get_value('currency') !== 'JPY' && Client.get_value('balance') > 1000) ||
+                (Client.get_value('currency') === 'JPY' && Client.get_value('balance') > 100000)) {
                 replace_with_disabled_button('#VRT_topup_link');
             }
         }
@@ -42,10 +43,10 @@ var Cashier = (function() {
     };
 
     var onLoad = function() {
-        if (/\/cashier\.html/.test(window.location.pathname) && page.client.is_logged_in) {
+        if (/\/cashier\.html/.test(window.location.pathname) && Client.get_value('is_logged_in')) {
             Cashier.check_locked();
             Cashier.check_virtual_top_up();
-            Contents.topbar_message_visibility(TUser.get().landing_company);
+            Contents.topbar_message_visibility(Client.get_value('landing_company'));
         }
     };
 
@@ -53,7 +54,7 @@ var Cashier = (function() {
         if (japanese_client()) {
             window.location.href = page.url.url_for('/');
         }
-        if (page.client.is_logged_in && !page.client.is_virtual()) {
+        if (Client.get_value('is_logged_in') && !Client.is_virtual()) {
             Cashier.check_locked();
         }
     };

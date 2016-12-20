@@ -2,19 +2,21 @@ var Validate    = require('./validation').Validate;
 var isValidDate = require('./common_functions').isValidDate;
 var Content     = require('./content').Content;
 var Cookies     = require('../../lib/js-cookie');
-var localize = require('../base/localize').localize;
+var localize    = require('../base/localize').localize;
+var Client      = require('../base/client').Client;
 
 var ValidAccountOpening = (function() {
     var redirectCookie = function() {
-        if (page.client.show_login_if_logout(true)) {
+        if (Client.show_login_if_logout(true)) {
             return;
         }
-        if (!page.client.is_virtual()) {
+        if (!Client.is_virtual()) {
             window.location.href = page.url.url_for('trading');
             return;
         }
-        for (var i = 0; i < page.user.loginid_array.length; i++) {
-            if (page.user.loginid_array[i].real === true) {
+        var client_loginid_array = Client.loginid_array();
+        for (var i = 0; i < client_loginid_array.length; i++) {
+            if (client_loginid_array[i].real === true) {
                 window.location.href = page.url.url_for('trading');
                 return;
             }
@@ -43,7 +45,7 @@ var ValidAccountOpening = (function() {
             window.location.href = page.url.url_for('new_account/knowledge_testws');
             $('#topbar-msg').children('a').addClass('invisible');
         } else {     // jp account require more steps to have real account
-            page.client.process_new_account(Cookies.get('email'), message.client_id, message.oauth_token, false);
+            Client.process_new_account(Cookies.get('email'), message.client_id, message.oauth_token, false);
         }
     };
     var letters,
@@ -94,7 +96,7 @@ var ValidAccountOpening = (function() {
         }
     };
     var checkPostcode = function(postcode, errorPostcode) {
-        if ((postcode.value !== '' || page.client.residence === 'gb') && !/^[a-zA-Z\d-]+$/.test(postcode.value)) {
+        if ((postcode.value !== '' || Client.get_value('residence') === 'gb') && !/^[a-zA-Z\d-]+$/.test(postcode.value)) {
             initializeValues();
             errorPostcode.innerHTML = Content.errorMessage('reg', [letters, numbers, hyphen]);
             Validate.displayErrorMessage(errorPostcode);

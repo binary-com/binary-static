@@ -10,6 +10,7 @@ var isVisible                 = require('../../../common_functions/common_functi
 var updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
 var label_value               = require('../common').label_value;
 var localize = require('../../../base/localize').localize;
+var Client   = require('../../../base/client').Client;
 
 /*
  * Purchase object that handles all the functions related to
@@ -107,7 +108,7 @@ var Purchase_Beta = (function () {
                 label_value(cost,   Content.localize().textStake,  addComma(cost_value));
             }
 
-            balance.textContent = Content.localize().textContractConfirmationBalance + ' ' + format_money(TUser.get().currency, receipt.balance_after);
+            balance.textContent = Content.localize().textContractConfirmationBalance + ' ' + format_money(Client.get_value('currency'), receipt.balance_after);
 
             if (show_chart) {
                 chart.show();

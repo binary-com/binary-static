@@ -1,6 +1,5 @@
-var Cookies = require('../../lib/js-cookie');
-var Login = require('../base/login').Login;
-var getLanguage = require('../base/language').getLanguage;
+var Cookies        = require('../../lib/js-cookie');
+var getLanguage    = require('../base/language').getLanguage;
 var URLForLanguage = require('../base/language').URLForLanguage;
 
 function checkClientsCountry() {
@@ -20,7 +19,7 @@ function checkClientsCountry() {
 }
 
 function limitLanguage(lang) {
-    if (getLanguage() !== lang && !Login.is_login_pages()) {
+    if (getLanguage() !== lang) {
         window.location.href = URLForLanguage(lang);
     }
     if (document.getElementById('select_language')) {

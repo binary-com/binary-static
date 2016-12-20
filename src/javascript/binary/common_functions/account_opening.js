@@ -7,12 +7,13 @@ var generateBirthDate    = require('./attach_dom/birth_date_dropdown').generateB
 var Cookies              = require('../../lib/js-cookie');
 var moment               = require('moment');
 var localize = require('../base/localize').localize;
+var Client   = require('../base/client').Client;
 
 var displayAcctSettings = function(response) {
     var country = response.get_settings.country_code;
     if (country && country !== null) {
         $('#real-form').show();
-        page.client.residence = country;
+        Client.set_value('residence', country);
         generateBirthDate();
         generateState();
         if (/maltainvestws/.test(window.location.pathname)) {
@@ -61,10 +62,11 @@ var show_residence_form = function() {
     residenceForm.show();
     residenceForm.submit(function(evt) {
         evt.preventDefault();
-        if (Validate.fieldNotEmpty(residenceDisabled.val(), document.getElementById('error-residence'))) {
-            page.client.set_cookie('residence', residenceDisabled.val());
-            page.client.residence = residenceDisabled.val();
-            BinarySocket.send({ set_settings: 1, residence: page.client.residence });
+        var residence_value = residenceDisabled.val();
+        if (Validate.fieldNotEmpty(residence_value, document.getElementById('error-residence'))) {
+            Client.set_cookie('residence', residence_value);
+            Client.set_value('residence', residence_value);
+            BinarySocket.send({ set_settings: 1, residence: residence_value });
         }
     });
 };
@@ -73,8 +75,8 @@ var generateState = function() {
     var state = document.getElementById('address-state');
     if (state.length !== 0) return;
     appendTextValueChild(state, Content.localize().textSelect, '');
-    if (page.client.residence !== '') {
-        BinarySocket.send({ states_list: page.client.residence });
+    if (Client.get_value('residence') !== '') {
+        BinarySocket.send({ states_list: Client.get_value('residence') });
     }
 };
 
@@ -95,13 +97,13 @@ var handleResidence = function() {
                     }
                 } else {
                     errorElement.setAttribute('style', 'display:none');
-                    BinarySocket.send({ landing_company: page.client.residence });
+                    BinarySocket.send({ landing_company: Client.get_value('residence') });
                 }
             } else if (type === 'landing_company') {
-                Cookies.set('residence', page.client.residence, { domain: '.' + document.domain.split('.').slice(-2).join('.'), path: '/' });
-                if (((page.client.can_upgrade_gaming_to_financial(response.landing_company) && !page.client.is_virtual()) || page.client.can_upgrade_virtual_to_financial(response.landing_company)) && !/maltainvestws/.test(window.location.href)) {
+                Cookies.set('residence', Client.get_value('residence'), { domain: '.' + document.domain.split('.').slice(-2).join('.'), path: '/' });
+                if (((Client.can_upgrade_gaming_to_financial(response.landing_company) && !Client.is_virtual()) || Client.can_upgrade_virtual_to_financial(response.landing_company)) && !/maltainvestws/.test(window.location.href)) {
                     window.location.href = page.url.url_for('new_account/maltainvestws');
-                } else if (page.client.can_upgrade_virtual_to_japan(response.landing_company) && page.client.is_virtual() && !/japanws/.test(window.location.href)) {
+                } else if (Client.can_upgrade_virtual_to_japan(response.landing_company) && Client.is_virtual() && !/japanws/.test(window.location.href)) {
                     window.location.href = page.url.url_for('new_account/japanws');
                 } else if (!$('#real-form').is(':visible')) {
                     BinarySocket.send({ residence_list: 1 });
@@ -125,7 +127,7 @@ var handleResidence = function() {
             } else if (type === 'residence_list') {
                 select = document.getElementById('residence-disabled') || document.getElementById('residence');
                 var phoneElement   = document.getElementById('tel'),
-                    residenceValue = page.client.residence,
+                    residenceValue = Client.get_value('residence'),
                     residence_list = response.residence_list;
                 if (residence_list.length > 0) {
                     for (var j = 0; j < residence_list.length; j++) {

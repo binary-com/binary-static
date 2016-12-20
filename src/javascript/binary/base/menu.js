@@ -1,4 +1,5 @@
-var Url = require('./url').Url;
+var Url    = require('./url').Url;
+var Client = require('./client').Client;
 
 var Menu = function(url) {
     this.page_url = url;
@@ -18,7 +19,7 @@ Menu.prototype = {
             active.addClass('active');
         }
         var is_trading_submenu = /\/cashier|\/resources/.test(window.location.pathname) || trading_is_active;
-        if (page.client.is_logged_in || trading_is_active || is_trading_submenu) {
+        if (Client.get_value('is_logged_in') || trading_is_active || is_trading_submenu) {
             this.show_main_menu();
         }
     },

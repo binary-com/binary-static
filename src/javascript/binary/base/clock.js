@@ -1,7 +1,5 @@
-var showLocalTimeOnHover = require('./utility').showLocalTimeOnHover;
-var toJapanTimeIfNeeded  = require('./utility').toJapanTimeIfNeeded;
-var moment               = require('moment');
-var japanese_client      = require('../common_functions/country_base').japanese_client;
+var moment          = require('moment');
+var japanese_client = require('../common_functions/country_base').japanese_client;
 
 var Clock = (function () {
     var clock_started = false;
@@ -45,10 +43,55 @@ var Clock = (function () {
         update_time();
     };
 
+    var showLocalTimeOnHover = function(s) {
+        if (japanese_client()) return;
+        $(s || '.date').each(function(idx, ele) {
+            var gmtTimeStr = ele.textContent.replace('\n', ' ');
+            var localTime  = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss').local();
+            if (!localTime.isValid()) {
+                return;
+            }
+
+            var localTimeStr = localTime.format('YYYY-MM-DD HH:mm:ss Z');
+            $(ele).attr('data-balloon', localTimeStr);
+        });
+    };
+
+    var toJapanTimeIfNeeded = function(gmtTimeStr, showTimeZone, longcode, hideSeconds) {
+        var match;
+        if (longcode && longcode !== '') {
+            match = longcode.match(/((?:\d{4}-\d{2}-\d{2})\s?(\d{2}:\d{2}:\d{2})?(?:\sGMT)?)/);
+            if (!match) return longcode;
+        }
+
+        var jp_client = japanese_client(),
+            timeStr,
+            time;
+
+        if (typeof gmtTimeStr === 'number') {
+            time = moment.utc(gmtTimeStr * 1000);
+        } else if (gmtTimeStr) {
+            time = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss');
+        } else {
+            time = moment.utc(match[0], 'YYYY-MM-DD HH:mm:ss');
+        }
+
+        if (!time.isValid()) {
+            return null;
+        }
+
+        timeStr = time.utcOffset(jp_client ? '+09:00' : '+00:00').format((hideSeconds ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD HH:mm:ss') + (showTimeZone && showTimeZone !== '' ? jp_client ? ' zZ' : ' Z' : ''));
+
+        return (longcode ? longcode.replace(match[0], timeStr) : timeStr);
+    };
+
     return {
         start_clock_ws : start_clock_ws,
         time_counter   : time_counter,
         getClockStarted: function () { return clock_started; },
+
+        showLocalTimeOnHover: showLocalTimeOnHover,
+        toJapanTimeIfNeeded : toJapanTimeIfNeeded,
     };
 })();
 

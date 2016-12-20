@@ -9,8 +9,9 @@ var japanese_client = require('../../common_functions/country_base').japanese_cl
 var addComma        = require('../../common_functions/string_util').addComma;
 var Moment          = require('moment');
 var toISOFormat     = require('../../common_functions/string_util').toISOFormat;
-var localize = require('../../base/localize').localize;
+var localize    = require('../../base/localize').localize;
 var getLanguage = require('../../base/language').getLanguage;
+var Client      = require('../../base/client').Client;
 
 /*
  * This contains common functions we need for processing the response
@@ -721,13 +722,13 @@ function updatePurchaseStatus(final_price, pnl, contract_status) {
         $profit.html(Content.localize().textLoss + '<p>' + addComma(pnl) + '</p>');
     } else {
         $profit.html(Content.localize().textProfit + '<p>' + addComma(Math.round((final_price - pnl) * 100) / 100) + '</p>');
-        updateContractBalance(TUser.get().balance);
+        updateContractBalance(Client.get_value('balance'));
     }
 }
 
 function updateContractBalance(balance) {
     $('#contract_purchase_balance').text(
-        Content.localize().textContractConfirmationBalance + ' ' + format_money(TUser.get().currency, balance));
+        Content.localize().textContractConfirmationBalance + ' ' + format_money(Client.get_value('currency'), balance));
 }
 
 function updateWarmChart() {
@@ -874,7 +875,7 @@ function displayTooltip_Beta(market, symbol) {
 }
 
 function label_value(label_elem, label, value, no_currency) {
-    var currency = TUser.get().currency;
+    var currency = Client.get_value('currency');
     label_elem.innerHTML = label;
     var value_elem = document.getElementById(label_elem.id + '_value');
     value_elem.innerHTML = no_currency ? value : format_money(currency, value);

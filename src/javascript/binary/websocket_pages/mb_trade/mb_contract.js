@@ -1,11 +1,12 @@
 var objectNotEmpty  = require('../../base/utility').objectNotEmpty;
+var localize        = require('../../base/localize').localize;
+var getLanguage     = require('../../base/language').getLanguage;
+var Client          = require('../../base/client').Client;
 var format_currency = require('../../common_functions/currency_to_symbol').format_currency;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
 var MBDefaults      = require('./mb_defaults').MBDefaults;
 var MBSymbols       = require('./mb_symbols').MBSymbols;
 var moment          = require('moment');
-var localize = require('../../base/localize').localize;
-var getLanguage = require('../../base/language').getLanguage;
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -316,7 +317,7 @@ var MBContract = (function() {
     var displayDescriptions = function() {
         var contracts = getCurrentContracts(),
             $desc_wrappers = $('.prices-wrapper'),
-            currency = (format_currency(TUser.get().currency) || format_currency(document.getElementById('currency').value) || '¥'),
+            currency = (format_currency(Client.get_value('currency')) || format_currency(document.getElementById('currency').value) || '¥'),
             payout = Number(MBDefaults.get('payout') * (japanese_client() ? 1000 : 1)).toLocaleString(),
             display_name = MBSymbols.getName(MBDefaults.get('underlying')),
             date_expiry = PeriodText(contracts[0].trading_period).replace(/\s\(.*\)/, ''),
@@ -331,7 +332,7 @@ var MBContract = (function() {
     };
 
     var getCurrency = function() {
-        return (TUser.get().currency || document.getElementById('currency').value || 'JPY');
+        return (Client.get_value('currency') || document.getElementById('currency').value || 'JPY');
     };
 
     return {

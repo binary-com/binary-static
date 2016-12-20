@@ -1,7 +1,8 @@
-var showLoadingImage = require('../../../../base/utility').showLoadingImage;
 var RiskClassification = require('../../../../common_functions/risk_classification').RiskClassification;
-var japanese_client = require('../../../../common_functions/country_base').japanese_client;
-var localize = require('../../../../base/localize').localize;
+var japanese_client    = require('../../../../common_functions/country_base').japanese_client;
+var showLoadingImage   = require('../../../../base/utility').showLoadingImage;
+var localize           = require('../../../../base/localize').localize;
+var Client             = require('../../../../base/client').Client;
 
 var FinancialAssessmentws = (function() {
     'use strict';
@@ -136,7 +137,7 @@ var FinancialAssessmentws = (function() {
     };
 
     var checkIsVirtual = function() {
-        if (page.client.is_virtual()) {
+        if (Client.is_virtual()) {
             $('#assessment_form').addClass('invisible');
             $('#response_on_success').addClass('notice-msg center-text').removeClass('invisible').text(localize('This feature is not relevant to virtual-money accounts.'));
             hideLoadingImg(false);

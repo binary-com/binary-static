@@ -7,12 +7,13 @@ var testPassword          = require('../../../common_functions/passwordmeter').t
 var bind_validation       = require('../../../validator').bind_validation;
 var VirtualAccOpeningData = require('./virtual_acc_opening/virtual_acc_opening.data').VirtualAccOpeningData;
 var localize = require('../../../base/localize').localize;
+var Client   = require('../../../base/client').Client;
 
 var VirtualAccOpening = (function() {
     function onSuccess(res) {
         var new_account = res.new_account_virtual;
-        page.client.set_cookie('residence', res.echo_req.residence);
-        page.client.process_new_account(
+        Client.set_cookie('residence', res.echo_req.residence);
+        Client.process_new_account(
             new_account.email,
             new_account.client_id,
             new_account.oauth_token,
@@ -87,7 +88,7 @@ var VirtualAccOpening = (function() {
     }
 
     var onLoad = function() {
-        if (page.client.is_logged_in) {
+        if (Client.get_value('is_logged_in')) {
             window.location.href = page.url.url_for('home');
             return;
         }

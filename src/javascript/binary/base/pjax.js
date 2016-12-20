@@ -3,6 +3,7 @@ var pjax         = require('../../lib/pjax-lib');
 var Url          = require('./url').Url;
 var GTM          = require('./gtm').GTM;
 var SessionStore = require('./storage').SessionStore;
+var Client       = require('./client').Client;
 
 var make_mobile_menu = function () {
     if ($('#mobile-menu-container').is(':visible')) {
@@ -154,7 +155,7 @@ var load_with_pjax = function(url) {
 var pjax_config_page_require_auth = function(url, exec) {
     var oldOnLoad = exec().onLoad;
     var newOnLoad = function() {
-        if (!page.client.show_login_if_logout(true)) {
+        if (!Client.show_login_if_logout(true)) {
             oldOnLoad();
         }
     };

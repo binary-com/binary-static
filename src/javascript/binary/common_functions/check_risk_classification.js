@@ -1,5 +1,6 @@
 var RiskClassification    = require('../common_functions/risk_classification').RiskClassification;
 var FinancialAssessmentws = require('../websocket_pages/user/account/settings/financial_assessment').FinancialAssessmentws;
+var Client = require('../base/client').Client;
 
 function check_risk_classification() {
     if (localStorage.getItem('risk_classification.response') === 'high' &&
@@ -46,8 +47,8 @@ function renderRiskClassificationPopUp() {
 }
 
 function qualify_for_risk_classification() {
-    if (page.client.is_logged_in && !page.client.is_virtual() &&
-        page.client.residence !== 'jp' && !$('body').hasClass('BlueTopBack') && $('#assessment_form').length === 0 &&
+    if (Client.get_value('is_logged_in') && !Client.is_virtual() &&
+        Client.get_value('residence') !== 'jp' && !$('body').hasClass('BlueTopBack') && $('#assessment_form').length === 0 &&
         (localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval'))) {
         return true;
     }

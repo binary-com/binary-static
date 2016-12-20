@@ -1,14 +1,14 @@
 var Menu                      = require('./menu').Menu;
 var LocalStore                = require('./storage').LocalStore;
+var Client                    = require('./client').Client;
 var checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
 var localize                  = require('./localize').localize;
 var Cookies                   = require('../../lib/js-cookie');
 var check_risk_classification = require('../common_functions/check_risk_classification').check_risk_classification;
+var Login                     = require('./login').Login;
 
-var Header = function(params) {
-    this.user = params.user;
-    this.client = params.client;
-    this.menu = new Menu(params.url);
+var Header = function(url) {
+    this.menu = new Menu(url);
 };
 
 Header.prototype = {
@@ -17,10 +17,10 @@ Header.prototype = {
         this.show_or_hide_language();
         this.logout_handler();
         check_risk_classification();
-        if (!$('body').hasClass('BlueTopBack')) {
+        if (!$('body').hasClass('BlueTopBack') && !Login.is_login_pages()) {
             checkClientsCountry();
         }
-        if (page.client.is_logged_in) {
+        if (Client.get_value('is_logged_in')) {
             $('ul#menu-top').addClass('smaller-font');
         }
     },
@@ -55,7 +55,7 @@ Header.prototype = {
         });
     },
     show_or_hide_login_form: function() {
-        if (!this.user.is_logged_in || !this.client.is_logged_in) return;
+        if (!Client.get_value('is_logged_in')) return;
         var all_accounts = $('#all-accounts'),
             language = $('#select_language'),
             that = this;
@@ -69,7 +69,7 @@ Header.prototype = {
             }
         });
         var loginid_select = '';
-        var loginid_array = this.user.loginid_array;
+        var loginid_array = Client.loginid_array();
         for (var i = 0; i < loginid_array.length; i++) {
             var login = loginid_array[i];
             if (!login.disabled) {
@@ -83,7 +83,7 @@ Header.prototype = {
                 type += ' Account';
 
                 // default account
-                if (curr_id === this.client.loginid) {
+                if (curr_id === Client.get_value('loginid')) {
                     $('.account-type').html(localize(type));
                     $('.account-id').html(curr_id);
                 } else {
@@ -96,12 +96,12 @@ Header.prototype = {
     },
     logout_handler: function() {
         $('a.logout').unbind('click').click(function() {
-            page.client.send_logout_request();
+            Client.send_logout_request();
         });
     },
     do_logout: function(response) {
         if (response.logout !== 1) return;
-        page.client.clear_storage_values();
+        Client.clear_storage_values();
         LocalStore.remove('client.tokens');
         LocalStore.set('reality_check.ack', 0);
         sessionStorage.removeItem('client_status');
@@ -130,6 +130,18 @@ Header.prototype = {
         localStorage.removeItem('risk_classification');
         localStorage.removeItem('risk_classification.response');
         page.reload();
+    },
+    show_login_if_logout: function(shouldReplacePageContents) {
+        if (!Client.get_value('is_logged_in') && shouldReplacePageContents) {
+            $('#content > .container').addClass('center-text')
+                .html($('<p/>', {
+                    class: 'notice-msg',
+                    html : localize('Please [_1] to view this page',
+                        ['<a class="login_link" href="javascript:;">' + localize('login') + '</a>']),
+                }));
+            $('.login_link').click(function() { Login.redirect_to_login(); });
+        }
+        return !Client.get_value('is_logged_in');
     },
 };
 

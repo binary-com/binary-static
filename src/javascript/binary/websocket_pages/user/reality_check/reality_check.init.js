@@ -1,5 +1,6 @@
 var RealityCheckUI   = require('./reality_check.ui').RealityCheckUI;
 var RealityCheckData = require('./reality_check.data').RealityCheckData;
+var Client           = require('../../../base/client').Client;
 
 var RealityCheck = (function() {
     'use strict';
@@ -28,17 +29,17 @@ var RealityCheck = (function() {
 
     function init() {
         RealityCheckUI.initializeValues();
-        if (!page.client.require_reality_check()) {
+        if (!Client.require_reality_check()) {
             RealityCheckData.setPreviousLoadLoginId();
             RealityCheckUI.sendAccountStatus();
             return;
         }
 
-        RealityCheckUI.setLoginTime(TUser.get().logintime * 1000);
+        RealityCheckUI.setLoginTime(Client.get_value('session_start') * 1000);
 
         window.addEventListener('storage', realityStorageEventHandler, false);
 
-        if (TUser.get().loginid !== RealityCheckData.getPreviousLoadLoginId()) {
+        if (Client.get_value('loginid') !== RealityCheckData.getPreviousLoadLoginId()) {
             RealityCheckData.clear();
         }
 

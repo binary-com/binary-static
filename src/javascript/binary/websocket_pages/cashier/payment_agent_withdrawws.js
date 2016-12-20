@@ -2,6 +2,7 @@ var template = require('../../base/utility').template;
 var Cookies  = require('../../../lib/js-cookie');
 var Content  = require('../../common_functions/content').Content;
 var localize = require('../../base/localize').localize;
+var Client   = require('../../base/client').Client;
 
 var PaymentAgentWithdrawWS = (function() {
     'use strict';
@@ -43,7 +44,7 @@ var PaymentAgentWithdrawWS = (function() {
 
         $views.addClass(hiddenClass);
 
-        if (page.client.is_virtual()) { // Virtual Account
+        if (Client.is_virtual()) { // Virtual Account
             showPageError(localize('You are not authorized for withdrawal via payment agent.'));
             return;
         }
@@ -74,7 +75,7 @@ var PaymentAgentWithdrawWS = (function() {
         $ddlAgents.empty();
         var paList = response.paymentagent_list.list;
         if (paList.length > 0) {
-            BinarySocket.send({ verify_email: TUser.get().email, type: 'paymentagent_withdraw' });
+            BinarySocket.send({ verify_email: Client.get_value('email'), type: 'paymentagent_withdraw' });
             insertListOption($ddlAgents, localize('Please select a payment agent'), '');
             for (var i = 0; i < paList.length; i++) {
                 insertListOption($ddlAgents, paList[i].name, paList[i].paymentagent_loginid);
@@ -261,7 +262,7 @@ var PaymentAgentWithdrawWS = (function() {
     var lock_withdrawal = function(withdrawal_locked) {
         if (withdrawal_locked === 'locked') {
             showPageError('', 'withdrawal-locked-error');
-        } else if (!page.client.is_virtual()) {
+        } else if (!Client.is_virtual()) {
             BinarySocket.send({ paymentagent_list: Cookies.get('residence') });
         }
     };
@@ -290,7 +291,7 @@ var PaymentAgentWithdrawWS = (function() {
         });
 
         Content.populate();
-        if (TUser.get().hasOwnProperty('is_virtual') || page.client_status_detected('withdrawal_locked, cashier_locked', 'any')) {
+        if (Client.is_virtual() || page.client_status_detected('withdrawal_locked, cashier_locked', 'any')) {
             PaymentAgentWithdrawWS.init();
         } else if (sessionStorage.getItem('client_status') === null) {
             BinarySocket.send({ get_account_status: '1', passthrough: { dispatch_to: 'PaymentAgentWithdrawWS' } });

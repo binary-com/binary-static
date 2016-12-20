@@ -2,6 +2,7 @@ var template = require('../../base/utility').template;
 var Validate = require('../../common_functions/validation').Validate;
 var Content  = require('../../common_functions/content').Content;
 var localize = require('../../base/localize').localize;
+var Client   = require('../../base/client').Client;
 
 var ForwardWS = (function() {
     function init() {
@@ -63,10 +64,10 @@ var ForwardWS = (function() {
     }
     function checkOnLoad() {
         function check_virtual() {
-            if (page.client.is_virtual()) {
+            if (Client.is_virtual()) {
                 ForwardWS.showError(localize('This feature is not relevant to virtual-money accounts.'));
             }
-            return page.client.is_virtual();
+            return Client.is_virtual();
         }
         if (!check_virtual()) {
             BinarySocket.init({
@@ -83,11 +84,11 @@ var ForwardWS = (function() {
                             } else {
                                 var cashier_type = ForwardWS.getCashierType();
                                 if (cashier_type === 'withdraw') {
-                                    BinarySocket.send({ verify_email: TUser.get().email, type: 'payment_withdraw' });
+                                    BinarySocket.send({ verify_email: Client.get_value('email'), type: 'payment_withdraw' });
                                     ForwardWS.showMessage('check-email-message');
                                     $('#withdraw-form').show();
                                 } else if (cashier_type === 'deposit') {
-                                    if (TUser.get().currency !== '') {
+                                    if (Client.get_value('currency')) {
                                         ForwardWS.getCashierURL();
                                     } else {
                                         ForwardWS.showMessage('choose-currency-message');

@@ -1,7 +1,8 @@
 var objectNotEmpty = require('./utility').objectNotEmpty;
 var Cookies        = require('../../lib/js-cookie');
 var getLanguage    = require('./language').getLanguage;
-var GTM = require('./gtm').GTM;
+var GTM    = require('./gtm').GTM;
+var Client = require('./client').Client;
 
 var LoggedInHandler = (function() {
     'use strict';
@@ -21,10 +22,10 @@ var LoggedInHandler = (function() {
                 });
                 loginid = loginids[0];
                 // set cookies
-                page.client.set_cookie('loginid',      loginid);
-                page.client.set_cookie('loginid_list', loginid_list);
+                Client.set_cookie('loginid',      loginid);
+                Client.set_cookie('loginid_list', loginid_list);
             }
-            page.client.set_cookie('login', tokens[loginid]);
+            Client.set_cookie('login', tokens[loginid]);
 
             // set flags
             if (!$('body').hasClass('BlueTopBack')) localStorage.setItem('risk_classification', 'check');
@@ -69,7 +70,7 @@ var LoggedInHandler = (function() {
             }
         }
         if (objectNotEmpty(tokens)) {
-            page.client.set_storage_value('tokens', JSON.stringify(tokens));
+            Client.set_value('tokens', JSON.stringify(tokens));
         }
         return tokens;
     };

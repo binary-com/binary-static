@@ -1,6 +1,7 @@
-var template = require('../../../base/utility').template;
+var template   = require('../../../base/utility').template;
 var LocalStore = require('../../../base/storage').LocalStore;
-var moment   = require('moment');
+var Client     = require('../../../base/client').Client;
+var moment     = require('moment');
 
 var RealityCheckData = (function() {
     'use strict';
@@ -42,7 +43,7 @@ var RealityCheckData = (function() {
     }
 
     function setPreviousLoadLoginId() {
-        var id = TUser.get().loginid;
+        var id = Client.get_value('loginid');
         LocalStore.set('reality_check.loginid', id);
     }
 

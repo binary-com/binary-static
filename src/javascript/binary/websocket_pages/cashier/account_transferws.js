@@ -1,4 +1,5 @@
 var localize = require('../../base/localize').localize;
+var Client   = require('../../base/client').Client;
 
 var AccountTransferWS = (function() {
     'use strict';
@@ -11,7 +12,7 @@ var AccountTransferWS = (function() {
     var availableCurr = [];
 
     var init = function() {
-        if (page.client.redirect_if_is_virtual()) {
+        if (Client.redirect_if_is_virtual()) {
             return;
         }
 
@@ -234,7 +235,7 @@ var AccountTransferWS = (function() {
             },
         });
 
-        if (TUser.get().hasOwnProperty('is_virtual')) {
+        if (Client.is_virtual()) {
             AccountTransferWS.init();
         }
     };

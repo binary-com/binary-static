@@ -1,7 +1,8 @@
 var Content  = require('../../../../../common_functions/content').Content;
 var Table    = require('../../../../../common_functions/attach_dom/table').Table;
 var addComma = require('../../../../../common_functions/string_util').addComma;
-var localize     = require('../../../../../base/localize').localize;
+var localize = require('../../../../../base/localize').localize;
+var Client   = require('../../../../../base/client').Client;
 
 var LimitsUI = (function() {
     'use strict';
@@ -14,7 +15,7 @@ var LimitsUI = (function() {
 
         document.getElementById('item').textContent = Content.localize().textItem;
 
-        var currency = TUser.get().currency;
+        var currency = Client.get_value('currency');
         var limit = document.getElementsByClassName('limit');
         if (currency === '') {
             limit[0].textContent = Content.localize().textLimit;
@@ -43,7 +44,7 @@ var LimitsUI = (function() {
             if (object.length && object.length > 0) {
                 appendRowTable(localize(key.charAt(0).toUpperCase() + key.slice(1)), '', 'auto', 'bold');
                 Object.keys(object).forEach(function (c) {
-                    if (object.hasOwnProperty(c) && (page.client.residence !== 'jp' || /Major Pairs/.test(object[c].name))) {
+                    if (object.hasOwnProperty(c) && (Client.get_value('residence') !== 'jp' || /Major Pairs/.test(object[c].name))) {
                         appendRowTable(localize(object[c].name), object[c].turnover_limit !== 'null' ? addComma(object[c].turnover_limit).split('.')[0] : 0, '25px', 'normal');
                     }
                 });
@@ -51,8 +52,8 @@ var LimitsUI = (function() {
                 appendRowTable(localize(object.name), object.turnover_limit !== 'null' ? addComma(object.turnover_limit).split('.')[0] : 0, 'auto', 'bold');
             }
         });
-        if (page.client.is_logged_in && !page.client.is_virtual()) {
-            var loginId = page.client.loginid;
+        if (Client.get_value('is_logged_in') && !Client.is_virtual()) {
+            var loginId = Client.get_value('loginid');
 
             var tradingLimits = document.getElementById('trading-limits');
             tradingLimits.textContent = loginId + ' - ' + localize('Trading Limits');

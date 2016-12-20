@@ -1,4 +1,5 @@
 var Scroll = require('../common_functions/scroll').Scroll;
+var Client = require('../base/client').Client;
 
 var WhyUs = (function() {
     var init = function() {
@@ -7,7 +8,7 @@ var WhyUs = (function() {
     };
 
     var hide_if_logged_in = function() {
-        if (page.client.is_logged_in) {
+        if (Client.get_value('is_logged_in')) {
             $('.client_logged_out').remove();
         }
     };

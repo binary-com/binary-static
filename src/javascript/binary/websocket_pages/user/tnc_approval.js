@@ -1,7 +1,8 @@
 var showLoadingImage = require('../../base/utility').showLoadingImage;
 var template         = require('../../base/utility').template;
+var localize         = require('../../base/localize').localize;
+var Client           = require('../../base/client').Client;
 var Content          = require('../../common_functions/content').Content;
-var localize = require('../../base/localize').localize;
 
 var TNCApproval = (function() {
     'use strict';
@@ -31,7 +32,7 @@ var TNCApproval = (function() {
     };
 
     var showTNC = function() {
-        if (!terms_conditions_version || !client_tnc_status || !page.client.get_storage_value('landing_company_name')) {
+        if (!terms_conditions_version || !client_tnc_status || !Client.get_value('landing_company_fullname')) {
             return;
         }
 
@@ -44,8 +45,8 @@ var TNCApproval = (function() {
         $('#tnc_image').attr('src', page.url.url_for_static('images/pages/cashier/protection-icon.svg'));
         $('#tnc_approval').removeClass(hiddenClass);
         var tnc_message = template($('#tnc-message').html(), [
-            page.client.get_storage_value('landing_company_name'),
-            page.client.residence === 'jp' ?
+            Client.get_value('landing_company_fullname'),
+            Client.get_value('residence') === 'jp' ?
             page.url.url_for('terms-and-conditions-jp') :
             page.url.url_for('terms-and-conditions'),
         ]);
@@ -55,7 +56,7 @@ var TNCApproval = (function() {
 
     var responseTNCApproval = function(response) {
         if (!response.hasOwnProperty('error')) {
-            sessionStorage.setItem('check_tnc', (sessionStorage.getItem('check_tnc') || '').split(page.client.loginid).join());
+            sessionStorage.setItem('check_tnc', (sessionStorage.getItem('check_tnc') || '').split(Client.get_value('loginid')).join());
             redirectBack();
         } else {
             $('#err_message').html(response.error.message).removeClass(hiddenClass);
@@ -67,7 +68,7 @@ var TNCApproval = (function() {
     };
 
     var apiResponse = function(response) {
-        isReal = !TUser.get().is_virtual;
+        isReal = !Client().is_virtual();
         if (!isReal) {
             redirectBack();
         }

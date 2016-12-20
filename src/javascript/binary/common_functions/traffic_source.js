@@ -1,5 +1,6 @@
 var CookieStorage = require('../base/storage').CookieStorage;
-var Url = require('../base/url').Url;
+var Url    = require('../base/url').Url;
+var Client = require('../base/client').Client;
 
 /*
  * Handles utm parameters/referrer to use on signup
@@ -42,7 +43,7 @@ var TrafficSource = (function() {
     };
 
     var setData = function() {
-        if (page.client.is_logged_in) {
+        if (Client.get_value('is_logged_in')) {
             clearData();
             return;
         }

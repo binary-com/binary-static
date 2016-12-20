@@ -1,7 +1,8 @@
 var format_currency = require('../../common_functions/currency_to_symbol').format_currency;
 var MBDefaults = require('./mb_defaults').MBDefaults;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
-var State = require('../../base/storage').State;
+var State  = require('../../base/storage').State;
+var Client = require('../../base/client').Client;
 
 /*
  * Handles currency display
@@ -14,7 +15,7 @@ function MBDisplayCurrencies(selected, showClass) {
 
     var target = document.getElementById('currency'),
         fragment =  document.createDocumentFragment(),
-        currencies = page.client.get_storage_value('currencies').split(',');
+        currencies = Client.get_value('currencies').split(',');
 
     if (!target) {
         return;

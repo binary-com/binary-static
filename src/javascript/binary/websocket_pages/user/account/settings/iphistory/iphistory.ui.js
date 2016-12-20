@@ -1,4 +1,4 @@
-var showLocalTimeOnHover = require('../../../../../base/utility').showLocalTimeOnHover;
+var showLocalTimeOnHover = require('../../../../../base/clock').showLocalTimeOnHover;
 var FlexTableUI = require('../../../../../common_functions/attach_dom/flextable').FlexTableUI;
 var moment = require('moment');
 var localize   = require('../../../../../base/localize').localize;

@@ -7,6 +7,7 @@ var bind_validation = require('../../../../validator').bind_validation;
 var dv              = require('../../../../../lib/validation');
 var localize        = require('../../../../base/localize').localize;
 var load_with_pjax  = require('../../../../base/pjax').load_with_pjax;
+var Client          = require('../../../../base/client').Client;
 
 var SecurityWS = (function() {
     'use strict';
@@ -30,7 +31,7 @@ var SecurityWS = (function() {
     }
 
     function checkIsVirtual() {
-        if (!page.client.is_virtual()) {
+        if (!Client.is_virtual()) {
             return false;
         }
         $form.hide();
