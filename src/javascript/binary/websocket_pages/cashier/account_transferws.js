@@ -1,178 +1,160 @@
-var AccountTransferWS = (function(){
-    "use strict";
-    var $form ;
-    var account_from , account_to ;
-    var currType,account_bal;
-    var availableCurr= [] ;
-    var payoutCurr = [];
+var AccountTransferWS = (function() {
+    'use strict';
 
-    var init = function(){
-        if(page.client.redirect_if_is_virtual()) {
+    var $form;
+    var account_from,
+        account_to;
+    var currType,
+        account_bal;
+    var availableCurr = [];
+
+    var init = function() {
+        if (page.client.redirect_if_is_virtual()) {
             return;
         }
 
         $form = $('#account_transfer');
         account_bal = 0;
 
-        BinarySocket.send({ "transfer_between_accounts": "1","req_id" : 4 });
+        BinarySocket.send({ transfer_between_accounts: '1', req_id: 4 });
 
-        $form.find("button").on("click", function(e){
+        $form.find('button').on('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
 
-            if(validateForm() === false){
-                return false;
+            if (!validateForm()) {
+                return;
             }
 
-            var amt = $form.find("#acc_transfer_amount").val();
+            var amt = $form.find('#acc_transfer_amount').val();
             BinarySocket.send({
-                        "transfer_between_accounts": "1",
-                        "account_from": account_from,
-                        "account_to": account_to,
-                        "currency": currType,
-                        "amount": amt
+                transfer_between_accounts: '1',
+                account_from             : account_from,
+                account_to               : account_to,
+                currency                 : currType,
+                amount                   : amt,
             });
-
         });
 
-        $form.find("#transfer_account_transfer").on("change",function(){
+        $form.find('#transfer_account_transfer').on('change', function() {
+            $form.find('#invalid_amount').text('');
+            set_account_from_to();
 
-           $form.find("#invalid_amount").text("");
-           set_account_from_to();
-
-           BinarySocket.send({"payout_currencies": "1"});
-
+            BinarySocket.send({ payout_currencies: '1' });
         });
     };
-    var set_account_from_to = function(){
-
-        var accounts = $("#transfer_account_transfer option:selected").text();
+    var set_account_from_to = function() {
+        var accounts = $('#transfer_account_transfer option:selected').text();
         var matches = accounts
                         .split('(')
-                        .filter(function(v){
-                            return v.indexOf(')') > -1;})
-                        .map( function(value) {
+                        .filter(function(v) {
+                            return v.indexOf(')') > -1;
+                        })
+                        .map(function(value) {
                             return value.split(')')[0];
-                    });
+                        });
 
         account_from = matches[0];
         account_to = matches[1];
 
-        $.each(availableCurr,function(index,value){
-            if(value.account == account_from){
+        $.each(availableCurr, function(index, value) {
+            if (value.account === account_from) {
                 currType = value.currency;
                 account_bal = value.balance;
             }
         });
 
-        $form.find("#currencyType").html(currType);
+        $form.find('#currencyType').html(currType);
     };
-    var validateForm =function(){
-
-        var amt = $form.find("#acc_transfer_amount").val();
+    var validateForm = function() {
+        var amt = $form.find('#acc_transfer_amount').val();
         var isValid = true;
 
-        if(amt.length <=0 ){
-            $form.find("#invalid_amount").text(page.text.localize("Invalid amount. Minimum transfer amount is 0.10, and up to 2 decimal places."));
+        if (amt.length <= 0) {
+            $form.find('#invalid_amount').text(page.text.localize('Invalid amount. Minimum transfer amount is 0.10, and up to 2 decimal places.'));
             isValid = false;
         }
 
         return isValid;
     };
 
-    var apiResponse = function(response){
+    var apiResponse = function(response) {
         var type = response.msg_type;
-        if (type === "authorize") {
+        if (type === 'authorize') {
             init();
-        }
-        else if (type === "transfer_between_accounts" || (type === "error" && "transfer_between_accounts" in response.echo_req)) {
-           responseMessage(response);
-        }
-        else if(type === "payout_currencies" || (type === "error" && "payout_currencies" in response.echo_req)) {
+        } else if (type === 'transfer_between_accounts' || (type === 'error' && 'transfer_between_accounts' in response.echo_req)) {
+            responseMessage(response);
+        } else if (type === 'payout_currencies' || (type === 'error' && 'payout_currencies' in response.echo_req)) {
             responseMessage(response);
         }
     };
 
     var responseMessage = function(response) {
-        if("error" in response) {
-                if("message" in response.error) {
-
-                    if($('#transfer_account_transfer option').length > 0 ){
-                        $form.removeClass('invisible');
-                        $form.find("#invalid_amount").text(page.text.localize(response.error.message));
-                    }
-                    else{
-                        $("#client_message").removeClass('invisible');
-                        $("#client_message p").html(page.text.localize(response.error.message));
-                        $("#success_form").addClass('invisible');
-                        $form.addClass('invisible');
-
-                    }
-                    return false;
-                }
-
-                return false;
-        }
-        else if("payout_currencies" in response){
-
-            payoutCurr = response.payout_currencies;
-        }
-        else if ("transfer_between_accounts" in response){
-
-            if(response.req_id === 5){
-
-                $.each(response.accounts,function(key,value){
+        if ('error' in response) {
+            if ('message' in response.error) {
+                if ($('#transfer_account_transfer option').length > 0) {
+                    $form.removeClass('invisible');
+                    $form.find('#invalid_amount').text(page.text.localize(response.error.message));
+                } else {
+                    $('#client_message').removeClass('invisible');
+                    $('#client_message p').html(page.text.localize(response.error.message));
+                    $('#success_form').addClass('invisible');
                     $form.addClass('invisible');
-                    $("#success_form").removeClass('invisible');
-                    $("#client_message").addClass('invisible');
+                }
+                return false;
+            }
 
-                    if(value.loginid == account_from){
-                        $("#loginid_1").html(value.loginid);
-                        $("#balance_1").html(value.balance);
-                    }
-                    else if(value.loginid == account_to){
-                        $("#loginid_2").html(value.loginid);
-                        $("#balance_2").html(value.balance);
+            return false;
+        } else if ('transfer_between_accounts' in response) {
+            if (response.req_id === 5) {
+                $.each(response.accounts, function(key, value) {
+                    $form.addClass('invisible');
+                    $('#success_form').removeClass('invisible');
+                    $('#client_message').addClass('invisible');
 
+                    if (value.loginid === account_from) {
+                        $('#loginid_1').html(value.loginid);
+                        $('#balance_1').html(value.balance);
+                    } else if (value.loginid === account_to) {
+                        $('#loginid_2').html(value.loginid);
+                        $('#balance_2').html(value.balance);
                     }
                 });
-            }
-            else if(response.req_id === 4){
+            } else if (response.req_id === 4) {
                 $form.removeClass('invisible');
-                var secondacct, firstacct,str,optionValue;
+                var secondacct,
+                    firstacct,
+                    str,
+                    optionValue;
                 var selectedIndex = -1;
 
-                $.each(response.accounts, function(index,value){
+                $.each(response.accounts, function(index, value) {
                     var currObj = {};
 
-                    if($.isEmptyObject(firstacct))
-                    {
+                    if ($.isEmptyObject(firstacct)) {
                         firstacct = value.loginid;
                         currObj.account = value.loginid;
                         currObj.currency = value.currency;
                         currObj.balance = value.balance;
 
-                        if(value.balance > 0 && selectedIndex < 0)
-                        {
+                        if (value.balance > 0 && selectedIndex < 0) {
                             selectedIndex = index;
                         }
 
                         availableCurr.push(currObj);
-                    }
-                    else
-                    {
+                    } else {
                         secondacct = value.loginid;
-                        str = page.text.localize("from account (" + firstacct + ") to account (" + secondacct + ")");
-                        optionValue = firstacct + "_to_" + secondacct;
-                        $form.find("#transfer_account_transfer")
-                             .append($("<option></option>")
-                             .attr("value",optionValue)
+                        str = page.text.localize('from account (' + firstacct + ') to account (' + secondacct + ')');
+                        optionValue = firstacct + '_to_' + secondacct;
+                        $form.find('#transfer_account_transfer')
+                             .append($('<option></option>')
+                             .attr('value', optionValue)
                              .text(str));
-                        str = page.text.localize("from account (" + secondacct + ") to account (" + firstacct + ")");
-                        optionValue = secondacct + "_to_" + firstacct;
-                        $form.find("#transfer_account_transfer")
-                             .append($("<option></option>")
-                             .attr("value",optionValue)
+                        str = page.text.localize('from account (' + secondacct + ') to account (' + firstacct + ')');
+                        optionValue = secondacct + '_to_' + firstacct;
+                        $form.find('#transfer_account_transfer')
+                             .append($('<option></option>')
+                             .attr('value', optionValue)
                              .text(str));
 
                         currObj.account = value.loginid;
@@ -183,94 +165,83 @@ var AccountTransferWS = (function(){
 
                         firstacct = {};
 
-                        if(selectedIndex < 0 && value.balance){
+                        if (selectedIndex < 0 && value.balance) {
                             selectedIndex =  index;
                         }
                     }
 
-                    if(($.isEmptyObject(firstacct) === false) && ($.isEmptyObject(secondacct) === false))
-                    {
-                        str = page.text.localize("from account (" + secondacct + ") to account (" + firstacct + ")");
-                        optionValue = secondacct + "_to_" + firstacct;
-                        $form.find("#transfer_account_transfer")
-                                 .append($("<option></option>")
-                                 .attr("value",optionValue)
+                    if (($.isEmptyObject(firstacct) === false) && ($.isEmptyObject(secondacct) === false)) {
+                        str = page.text.localize('from account (' + secondacct + ') to account (' + firstacct + ')');
+                        optionValue = secondacct + '_to_' + firstacct;
+                        $form.find('#transfer_account_transfer')
+                                 .append($('<option></option>')
+                                 .attr('value', optionValue)
                                  .text(str));
                     }
                     secondacct = {};
 
-                    if(value.balance <= 0){
-                        $form.find("#transfer_account_transfer option:last").remove();
+                    if (value.balance <= 0) {
+                        $form.find('#transfer_account_transfer option:last').remove();
+                    } else if (selectedIndex < 0) {
+                        selectedIndex =  index;
                     }
-                    else{
-                        if(selectedIndex < 0 ){
-                            selectedIndex =  index;
-                        }
-                    }
-
-
                 });
 
-                for(var i = 0; i < selectedIndex; i++){
-                    $form.find("#transfer_account_transfer option").eq(i).remove();
+                for (var i = 0; i < selectedIndex; i++) {
+                    $form.find('#transfer_account_transfer option').eq(i).remove();
                 }
 
-                if(selectedIndex >=0){
-                    $form.find("#transfer_account_transfer option").eq(selectedIndex).attr('selected', 'selected');
+                if (selectedIndex >= 0) {
+                    $form.find('#transfer_account_transfer option').eq(selectedIndex).attr('selected', 'selected');
                 }
 
 
                 set_account_from_to();
 
-                if((account_bal <=0) && (response.accounts.length > 1) ){
-                    $("#client_message").removeClass('invisible');
-                    $("#success_form").addClass('invisible');
+                if ((account_bal <= 0) && (response.accounts.length > 1)) {
+                    $('#client_message').removeClass('invisible');
+                    $('#success_form').addClass('invisible');
                     $form.addClass('invisible');
                     return false;
-                }
-                else if(account_to === undefined || account_from === undefined || $.isEmptyObject(account_to))
-                {
-                    $("#client_message").removeClass('invisible');
-                    $("#client_message p").html(page.text.localize("The account transfer is unavailable for your account."));
-                    $("#success_form").addClass('invisible');
+                } else if (account_to === undefined || account_from === undefined || $.isEmptyObject(account_to)) {
+                    $('#client_message').removeClass('invisible');
+                    $('#client_message p').html(page.text.localize('The account transfer is unavailable for your account.'));
+                    $('#success_form').addClass('invisible');
                     $form.addClass('invisible');
                     return false;
                 }
 
-                BinarySocket.send({"payout_currencies": "1"});
-            }
-            else{
+                BinarySocket.send({ payout_currencies: '1' });
+            } else {
                 BinarySocket.send({
-                    "transfer_between_accounts": "1",
-                    "req_id" : 5
+                    transfer_between_accounts: '1',
+                    req_id                   : 5,
                 });
-
             }
         }
-
+        return true;
     };
 
     var onLoad = function() {
         BinarySocket.init({
-            onmessage: function(msg){
+            onmessage: function(msg) {
                 var response = JSON.parse(msg.data);
                 if (response) {
                     AccountTransferWS.apiResponse(response);
                 }
-            }
+            },
         });
 
-        if(TUser.get().hasOwnProperty('is_virtual')) {
+        if (TUser.get().hasOwnProperty('is_virtual')) {
             AccountTransferWS.init();
         }
     };
 
     return {
-        init : init,
-        apiResponse : apiResponse,
-        onLoad: onLoad,
+        init       : init,
+        apiResponse: apiResponse,
+        onLoad     : onLoad,
     };
-
 })();
 
 module.exports = {
