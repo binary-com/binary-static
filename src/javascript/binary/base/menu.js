@@ -1,18 +1,19 @@
 var Url    = require('./url').Url;
 var Client = require('./client').Client;
 
-var Menu = function(url) {
-    this.page_url = url;
-    var that = this;
-    $(this.page_url).on('change', function() { that.activate(); });
-};
+var Menu = (function() {
+    var page_url;
 
-Menu.prototype = {
-    activate: function() {
+    var init = function (url) {
+        page_url = url;
+        $(page_url).on('change', function() { activate(); });
+    };
+
+    var activate = function() {
         $('#menu-top li').removeClass('active');
-        this.hide_main_menu();
+        hide_main_menu();
 
-        var active = this.active_menu_top();
+        var active = active_menu_top();
         var trading = new RegExp('\/(jp_|multi_barriers_|)trading\.html');
         var trading_is_active = trading.test(window.location.pathname);
         if (active) {
@@ -20,23 +21,26 @@ Menu.prototype = {
         }
         var is_trading_submenu = /\/cashier|\/resources/.test(window.location.pathname) || trading_is_active;
         if (Client.get_value('is_logged_in') || trading_is_active || is_trading_submenu) {
-            this.show_main_menu();
+            show_main_menu();
         }
-    },
-    show_main_menu: function() {
+    };
+
+    var show_main_menu = function() {
         $('#main-menu').removeClass('hidden');
-        this.activate_main_menu();
-    },
-    hide_main_menu: function() {
+        activate_main_menu();
+    };
+
+    var hide_main_menu = function() {
         $('#main-menu').addClass('hidden');
-    },
-    activate_main_menu: function() {
+    };
+
+    var activate_main_menu = function() {
         // First unset everything.
         $('#main-menu li.item').removeClass('active');
         $('#main-menu li.item').removeClass('hover');
         $('#main-menu li.sub_item a').removeClass('a-active');
 
-        var active = this.active_main_menu();
+        var active = active_main_menu();
         if (active.subitem) {
             active.subitem.addClass('a-active');
         }
@@ -46,13 +50,15 @@ Menu.prototype = {
             active.item.addClass('hover');
         }
 
-        this.on_mouse_hover(active.item);
-    },
-    reset: function() {
+        on_mouse_hover(active.item);
+    };
+
+    var on_unload = function() {
         $('#main-menu .item').unbind();
         $('#main-menu').unbind();
-    },
-    on_mouse_hover: function(active_item) {
+    };
+
+    var on_mouse_hover = function(active_item) {
         $('#main-menu .item').on('mouseenter', function() {
             $('#main-menu li.item').removeClass('hover');
             $(this).addClass('hover');
@@ -62,8 +68,9 @@ Menu.prototype = {
             $('#main-menu li.item').removeClass('hover');
             if (active_item) active_item.addClass('hover');
         });
-    },
-    active_menu_top: function() {
+    };
+
+    var active_menu_top = function() {
         var active = '';
         var path = window.location.pathname;
         $('#menu-top li a').each(function() {
@@ -73,11 +80,12 @@ Menu.prototype = {
         });
 
         return active;
-    },
-    active_main_menu: function() {
-        var page_url = this.page_url;
-        if (/cashier/i.test(page_url.location.href) && !(/cashier_password/.test(page_url.location.href))) {
-            page_url = new Url($('#topMenuCashier a').attr('href'));
+    };
+
+    var active_main_menu = function() {
+        var new_url = page_url;
+        if (/cashier/i.test(new_url.location.href) && !(/cashier_password/.test(new_url.location.href))) {
+            new_url = new Url($('#topMenuCashier a').attr('href'));
         }
 
         var item = '';
@@ -86,7 +94,7 @@ Menu.prototype = {
         // Is something selected in main items list
         $('#main-menu .items a').each(function () {
             var url = new Url($(this).attr('href'));
-            if (url.is_in(page_url)) {
+            if (url.is_in(new_url)) {
                 item = $(this).closest('.item');
             }
         });
@@ -95,7 +103,7 @@ Menu.prototype = {
             var link_href = $(this).attr('href');
             if (link_href) {
                 var url = new Url(link_href);
-                if (url.is_in(page_url)) {
+                if (url.is_in(new_url)) {
                     item = $(this).closest('.item');
                     subitem = $(this);
                 }
@@ -103,8 +111,13 @@ Menu.prototype = {
         });
 
         return { item: item, subitem: subitem };
-    },
-};
+    };
+
+    return {
+        init     : init,
+        on_unload: on_unload,
+    };
+})();
 
 module.exports = {
     Menu: Menu,

@@ -1,4 +1,3 @@
-var Menu                      = require('./menu').Menu;
 var LocalStore                = require('./storage').LocalStore;
 var Client                    = require('./client').Client;
 var checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
@@ -8,12 +7,6 @@ var check_risk_classification = require('../common_functions/check_risk_classifi
 var Login                     = require('./login').Login;
 
 var Header = (function() {
-    var menu;
-
-    var init = function (url) {
-        menu = new Menu(url);
-    };
-
     var on_load = function() {
         show_or_hide_login_form();
         show_or_hide_language();
@@ -25,10 +18,6 @@ var Header = (function() {
         if (Client.get_value('is_logged_in')) {
             $('ul#menu-top').addClass('smaller-font');
         }
-    };
-
-    var on_unload = function() {
-        menu.reset();
     };
 
     var animate_disappear = function(element) {
@@ -153,10 +142,8 @@ var Header = (function() {
     };
 
     return {
-        init     : init,
         do_logout: do_logout,
         on_load  : on_load,
-        on_unload: on_unload,
 
         show_login_if_logout: show_login_if_logout,
     };

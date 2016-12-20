@@ -146,9 +146,9 @@ var Client = (function () {
         set_storage_value('landing_company_fullname', authorize.landing_company_fullname);
         set_storage_value('currency', authorize.currency);
         check_storage_values();
+        values_set = true;
         activate_by_client_type();
         activate_by_login();
-        values_set = true;
     };
 
     var check_tnc = function() {

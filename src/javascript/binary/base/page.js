@@ -9,6 +9,7 @@ var GTM               = require('./gtm').GTM;
 var Url               = require('./url').Url;
 var Client            = require('./client').Client;
 var Header            = require('./header').Header;
+var Menu              = require('./menu').Menu;
 var Contents          = require('./contents').Contents;
 var load_with_pjax    = require('./pjax').load_with_pjax;
 var TrafficSource     = require('../common_functions/traffic_source').TrafficSource;
@@ -25,7 +26,7 @@ var Page = function() {
     this.is_loaded_by_pjax = false;
     Client.init();
     this.url = new Url();
-    Header.init(this.url);
+    Menu.init(this.url);
     $('#logo').on('click', function() {
         load_with_pjax(page.url.url_for(Client.get_value('is_logged_in') ? japanese_client() ? 'multi_barriers_trading' : 'trading' : ''));
     });
@@ -63,7 +64,7 @@ Page.prototype = {
         this.show_notification_outdated_browser();
     },
     on_unload: function() {
-        Header.on_unload();
+        Menu.on_unload();
         Contents.on_unload();
     },
     on_change_loginid: function() {
