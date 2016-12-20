@@ -1,6 +1,7 @@
 var Contract_Beta      = require('./contract').Contract_Beta;
 var Durations_Beta     = require('./duration').Durations;
 var Defaults = require('../defaults').Defaults;
+var getStartDateNode = require('../common_independent').getStartDateNode;
 var moment = require('moment');
 var Content = require('../../../common_functions/content').Content;
 var State = require('../../../base/storage').State;
@@ -23,15 +24,11 @@ var StartDates_Beta = (function() {
         return (a.date < b.date) ? -1 : (a.date > b.date ? 1 : 0);
     };
 
-    var getElement = function() {
-        return document.getElementById('date_start');
-    };
-
     var displayStartDates = function() {
         var startDates = Contract_Beta.startDates();
 
         if (startDates && startDates.list && startDates.list.length) {
-            var target   = getElement(),
+            var target   = getStartDateNode(),
                 fragment =  document.createDocumentFragment(),
                 row      = document.getElementById('date_start_row'),
                 option,
@@ -103,9 +100,8 @@ var StartDates_Beta = (function() {
 
     return {
         display: displayStartDates,
-        node   : getElement,
-        disable: function() { getElement().setAttribute('disabled', 'disabled'); },
-        enable : function() { getElement().removeAttribute('disabled'); },
+        disable: function() { getStartDateNode().setAttribute('disabled', 'disabled'); },
+        enable : function() { getStartDateNode().removeAttribute('disabled'); },
     };
 })();
 

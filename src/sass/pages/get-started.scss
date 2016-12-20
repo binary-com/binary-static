@@ -88,27 +88,33 @@
             }
             &#how-to-open-an-account-img {
                 height: 80px;
-                background: url('../images/pages/get-started-jp/open_acc.svg') no-repeat;
+                background: url('../images/pages/get-started-jp/open_acc.svg') no-repeat center;
+                background-size: cover;
             }
             &#options-basic-knowledge-img {
                 height: 80px;
-                background: url('../images/pages/get-started-jp/knowledge.svg') no-repeat;
+                background: url('../images/pages/get-started-jp/knowledge.svg') no-repeat center;
+                background-size: cover;
             }
             &#summary-of-specifications-img {
                 height: 80px;
-                background: url('../images/pages/get-started-jp/summary.svg') no-repeat;
+                background: url('../images/pages/get-started-jp/summary.svg') no-repeat center;
+                background-size: cover;
             }
             &#identification-documents-img {
                 height: 80px;
-                background: url('../images/pages/get-started-jp/id.svg') no-repeat;
+                background: url('../images/pages/get-started-jp/id.svg') no-repeat center;
+                background-size: cover;
             }
             &#trading-guide-img {
                 height: 80px;
-                background: url('../images/pages/get-started-jp/guide.svg') no-repeat;
+                background: url('../images/pages/get-started-jp/guide.svg') no-repeat center;
+                background-size: cover;
             }
             &#pre-contract-documents-img {
                 height: 80px;
-                background: url('../images/pages/get-started-jp/contract.svg') no-repeat;
+                background: url('../images/pages/get-started-jp/contract.svg') no-repeat center;
+                background-size: cover;
             }
         }
     }
@@ -123,6 +129,6 @@
         padding: 10px;
     }
     .section-header {
-        min-height: 50px;
+        min-height: 75px;
     }
 }
