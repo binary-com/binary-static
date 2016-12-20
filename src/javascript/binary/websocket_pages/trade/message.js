@@ -4,9 +4,15 @@ var Notifications     = require('./notifications').Notifications;
 var Purchase          = require('./purchase').Purchase;
 var Symbols           = require('./symbols').Symbols;
 var Tick              = require('./tick').Tick;
-var PortfolioWS = require('../user/account/portfolio/portfolio.init').PortfolioWS;
+var processActiveSymbols = require('./process').processActiveSymbols;
+var processContract      = require('./process').processContract;
+var forgetTradingStreams = require('./process').forgetTradingStreams;
+var processTick          = require('./process').processTick;
+var processProposal      = require('./process').processProposal;
+var processTradingTimes  = require('./process').processTradingTimes;
+var PortfolioWS   = require('../user/account/portfolio/portfolio.init').PortfolioWS;
 var ProfitTableWS = require('../user/account/profit_table/profit_table.init').ProfitTableWS;
-var StatementWS = require('../user/account/statement/statement.init').StatementWS;
+var StatementWS   = require('../user/account/statement/statement.init').StatementWS;
 var State = require('../../base/storage').State;
 
 /*
