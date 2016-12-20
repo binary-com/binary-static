@@ -271,6 +271,12 @@ body.ZH_TW {
     }
 }
 
+body.ZH_CN, body.ZH_TW {
+    .contact-content .border-bottom {
+        min-height: 215px;
+    }
+}
+
 body.PT {
     .app-store-badge {
         background-image: url('../images/pages/applications/appstore_pt.svg');
