@@ -1091,7 +1091,7 @@ Page.prototype = {
             DE   : 'Deutsch',
             ES   : 'Español',
             FR   : 'Français',
-            ID   : 'Bahasa Indonesia',
+            ID   : 'Indonesia',
             IT   : 'Italiano',
             JA   : '日本語',
             PL   : 'Polish',

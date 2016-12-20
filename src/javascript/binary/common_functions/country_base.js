@@ -9,7 +9,7 @@ function checkClientsCountry() {
         } else if (clients_country === 'id') {
             limitLanguage('ID');
         } else {
-            $('#languages').show();
+            $('.languages').show();
         }
     } else {
         BinarySocket.init();
