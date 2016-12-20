@@ -31,7 +31,6 @@ var validate_loginid = require('../base/client').validate_loginid;
 var GTM      = require('../base/gtm').GTM;
 var Clock    = require('../base/clock').Clock;
 var Header   = require('../base/header').Header;
-var Contents = require('../base/contents').Contents;
 var LocalStore = require('../base/storage').LocalStore;
 var Client     = require('../base/client').Client;
 var check_risk_classification       = require('../common_functions/check_risk_classification').check_risk_classification;
@@ -214,9 +213,9 @@ function BinarySocketClass() {
                 } else if (type === 'logout') {
                     localStorage.removeItem('jp_test_allowed');
                     RealityCheckData.clear();
-                    Header.do_logout(response);
+                    Client.do_logout(response);
                 } else if (type === 'landing_company') {
-                    Contents.topbar_message_visibility(response.landing_company);
+                    Header.topbar_message_visibility(response.landing_company);
                     var company;
                     if (response.hasOwnProperty('error')) return;
                     Object.keys(response.landing_company).forEach(function(key) {
@@ -233,8 +232,8 @@ function BinarySocketClass() {
                     }
                 } else if (type === 'get_self_exclusion') {
                     SessionDurationLimit.exclusionResponseHandler(response);
-                } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.handler === 'page.client') {
-                    Client.response_payout_currencies(response);
+                } else if (type === 'payout_currencies') {
+                    Client.set_value('currencies', response.payout_currencies.join(','));
                 } else if (type === 'get_settings' && response.get_settings) {
                     var country_code = response.get_settings.country_code;
                     if (country_code) {
@@ -244,7 +243,7 @@ function BinarySocketClass() {
                             send({ landing_company: country_code });
                         }
                     } else if (country_code === null && response.get_settings.country === null) {
-                        Contents.topbar_message_visibility('show_residence');
+                        Header.topbar_message_visibility('show_residence');
                     }
                     if (/realws|maltainvestws|japanws/.test(window.location.href)) {
                         displayAcctSettings(response);
@@ -303,7 +302,7 @@ function BinarySocketClass() {
                         } else if (response.echo_req.passthrough.dispatch_to === 'Cashier') {
                             Cashier.check_locked();
                         } else if (response.echo_req.passthrough.dispatch_to === 'PaymentAgentWithdrawWS') {
-                            PaymentAgentWithdrawWS.lock_withdrawal(page.client_status_detected('withdrawal_locked, cashier_locked', 'any') ? 'locked' : 'unlocked');
+                            PaymentAgentWithdrawWS.lock_withdrawal(Client.status_detected('withdrawal_locked, cashier_locked', 'any') ? 'locked' : 'unlocked');
                         }
                     }
                 } else if (type === 'get_financial_assessment' && !response.hasOwnProperty('error')) {

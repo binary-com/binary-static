@@ -29,7 +29,7 @@ var RealityCheck = (function() {
 
     function init() {
         RealityCheckUI.initializeValues();
-        if (!Client.require_reality_check()) {
+        if (!Client.get_value('has_reality_check')) {
             RealityCheckData.setPreviousLoadLoginId();
             RealityCheckUI.sendAccountStatus();
             return;

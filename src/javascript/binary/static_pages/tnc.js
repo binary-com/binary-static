@@ -1,6 +1,8 @@
+var url = require('../base/url').url;
+
 var TermsAndConditions = (function() {
     var init = function() {
-        var selected_tab = page.url.params_hash().selected_tab;
+        var selected_tab = url.params_hash().selected_tab;
         if (selected_tab) {
             $('li#' + selected_tab + ' a').click();
         }

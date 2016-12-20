@@ -1,17 +1,18 @@
-var showLocalTimeOnHover  = require('../../../base/clock').showLocalTimeOnHover;
+var showLocalTimeOnHover  = require('../../../base/clock').Clock.showLocalTimeOnHover;
 var onlyNumericOnKeypress = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
 var Content               = require('../../../common_functions/content').Content;
 var RealityCheckData      = require('./reality_check.data').RealityCheckData;
 var localize = require('../../../base/localize').localize;
 var Client   = require('../../../base/client').Client;
+var url_for  = require('../../../base/url').url_for;
 require('../../../../lib/polyfills/array.includes');
 require('../../../../lib/polyfills/string.includes');
 
 var RealityCheckUI = (function() {
     'use strict';
 
-    var frequency_url = page.url.url_for('user/reality_check_frequencyws');
-    var summary_url = page.url.url_for('user/reality_check_summaryws');
+    var frequency_url = url_for('user/reality_check_frequencyws');
+    var summary_url = url_for('user/reality_check_summaryws');
     var hiddenClass = 'invisible';
     var loginTime; // milliseconds
     var getAccountStatus;

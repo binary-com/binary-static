@@ -3,6 +3,7 @@ var Cookies  = require('../../../lib/js-cookie');
 var Content  = require('../../common_functions/content').Content;
 var localize = require('../../base/localize').localize;
 var Client   = require('../../base/client').Client;
+var url_for  = require('../../base/url').url_for;
 
 var PaymentAgentWithdrawWS = (function() {
     'use strict';
@@ -51,7 +52,7 @@ var PaymentAgentWithdrawWS = (function() {
 
         var residence = Cookies.get('residence');
 
-        if (page.client_status_detected('withdrawal_locked, cashier_locked', 'any')) {
+        if (Client.status_detected('withdrawal_locked, cashier_locked', 'any')) {
             lock_withdrawal('locked');
         } else {
             BinarySocket.send({ paymentagent_list: residence });
@@ -223,7 +224,7 @@ var PaymentAgentWithdrawWS = (function() {
                         .attr('class', errorClass)
                         .html(response.error.message);
                 } else if (response.error.code === 'InvalidToken') {
-                    showPageError(template(Content.localize().textClickHereToRestart, [page.url.url_for('paymentagent/withdrawws')]));
+                    showPageError(template(Content.localize().textClickHereToRestart, [url_for('paymentagent/withdrawws')]));
                 } else {
                     showPageError(response.error.message);
                 }
@@ -291,7 +292,7 @@ var PaymentAgentWithdrawWS = (function() {
         });
 
         Content.populate();
-        if (Client.is_virtual() || page.client_status_detected('withdrawal_locked, cashier_locked', 'any')) {
+        if (Client.is_virtual() || Client.status_detected('withdrawal_locked, cashier_locked', 'any')) {
             PaymentAgentWithdrawWS.init();
         } else if (sessionStorage.getItem('client_status') === null) {
             BinarySocket.send({ get_account_status: '1', passthrough: { dispatch_to: 'PaymentAgentWithdrawWS' } });

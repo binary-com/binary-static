@@ -12,7 +12,8 @@ var getTradingTimes            = require('../common_independent').getTradingTime
 var getStartDateNode           = require('../common_independent').getStartDateNode;
 var Defaults                   = require('../defaults').Defaults;
 var isVisible                  = require('../../../common_functions/common_functions').isVisible;
-var localize = require('../../../base/localize').localize;
+var localize                   = require('../../../base/localize').localize;
+var Client                     = require('../../../base/client').Client;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -228,7 +229,7 @@ var Price_Beta = (function() {
                 $('.payout_wrapper:visible').hide();
             }
 
-            if (data.longcode && window.innerWidth > 500 && !page.client_status_detected('unwelcome')) {
+            if (data.longcode && window.innerWidth > 500 && !Client.status_detected('unwelcome')) {
                 description.setAttribute('data-balloon', data.longcode);
             } else {
                 description.removeAttribute('data-balloon');

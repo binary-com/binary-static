@@ -3,6 +3,7 @@ var Validate = require('../../common_functions/validation').Validate;
 var Content  = require('../../common_functions/content').Content;
 var localize = require('../../base/localize').localize;
 var Client   = require('../../base/client').Client;
+var url_for  = require('../../base/url').url_for;
 
 var ForwardWS = (function() {
     function init() {
@@ -107,7 +108,7 @@ var ForwardWS = (function() {
                             ForwardWS.hideAll();
                             $('#deposit-withdraw-message').hide();
                             if (error.code && error.code === 'ASK_TNC_APPROVAL') {
-                                window.location.href = page.url.url_for('user/tnc_approvalws');
+                                window.location.href = url_for('user/tnc_approvalws');
                             } else if (error.code && error.code === 'ASK_FIX_DETAILS') {
                                 var msgID = 'personal-details-message',
                                     errorFields;
@@ -147,8 +148,8 @@ var ForwardWS = (function() {
             if (sessionStorage.getItem('client_status') === null) {
                 BinarySocket.send({ get_account_status: '1', passthrough: { dispatch_to: 'ForwardWS' } });
             } else if (
-            (!page.client_status_detected('cashier_locked, unwelcome', 'any') && /deposit/.test(window.location.hash)) ||
-            (!page.client_status_detected('cashier_locked, withdrawal_locked', 'any') && /withdraw/.test(window.location.hash))
+            (!Client.status_detected('cashier_locked, unwelcome', 'any') && /deposit/.test(window.location.hash)) ||
+            (!Client.status_detected('cashier_locked, withdrawal_locked', 'any') && /withdraw/.test(window.location.hash))
         ) {
                 BinarySocket.send({ cashier_password: '1' });
             }

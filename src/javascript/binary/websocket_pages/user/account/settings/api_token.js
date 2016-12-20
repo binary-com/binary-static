@@ -1,5 +1,5 @@
 var showLoadingImage     = require('../../../../base/utility').showLoadingImage;
-var showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
+var showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
 var Content         = require('../../../../common_functions/content').Content;
 var FlexTableUI     = require('../../../../common_functions/attach_dom/flextable').FlexTableUI;
 var ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
@@ -7,8 +7,9 @@ var japanese_client = require('../../../../common_functions/country_base').japan
 var ValidationUI    = require('../../../../validator').ValidationUI;
 var customError     = require('../../../../validator').customError;
 var bind_validation = require('../../../../validator').bind_validation;
-var dv = require('../../../../../lib/validation');
+var dv       = require('../../../../../lib/validation');
 var localize = require('../../../../base/localize').localize;
+var url_for  = require('../../../../base/url').url_for;
 
 var APITokenWS = (function() {
     'use strict';
@@ -28,7 +29,7 @@ var APITokenWS = (function() {
 
     function init() {
         if (japanese_client()) {
-            window.location.href = page.url.url_for('user/settingsws');
+            window.location.href = url_for('user/settingsws');
             return;
         }
 

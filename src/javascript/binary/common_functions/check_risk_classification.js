@@ -1,6 +1,7 @@
 var RiskClassification    = require('../common_functions/risk_classification').RiskClassification;
 var FinancialAssessmentws = require('../websocket_pages/user/account/settings/financial_assessment').FinancialAssessmentws;
-var Client = require('../base/client').Client;
+var Client  = require('../base/client').Client;
+var url_for = require('../base/url').url_for;
 
 function check_risk_classification() {
     if (localStorage.getItem('risk_classification.response') === 'high' &&
@@ -12,11 +13,11 @@ function check_risk_classification() {
 
 function renderRiskClassificationPopUp() {
     if (window.location.pathname === '/user/settings/assessmentws') {
-        window.location.href = page.url.url_for('user/settingsws');
+        window.location.href = url_for('user/settingsws');
         return;
     }
     $.ajax({
-        url     : page.url.url_for('user/settings/assessmentws'),
+        url     : url_for('user/settings/assessmentws'),
         dataType: 'html',
         method  : 'GET',
         success : function(riskClassificationText) {

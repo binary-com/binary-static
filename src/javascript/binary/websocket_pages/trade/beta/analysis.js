@@ -6,6 +6,8 @@ var PortfolioWS                     = require('../../user/account/portfolio/port
 var State                           = require('../../../base/storage').State;
 var getLanguage                     = require('../../../base/language').getLanguage;
 var Url                             = require('../../../base/url').Url;
+var url_for                         = require('../../../base/url').url_for;
+var url_for_static                  = require('../../../base/url').url_for_static;
 var Client                          = require('../../../base/client').Client;
 var showHighchart                   = require('../common').showHighchart;
 var toggleActiveNavMenuElement_Beta = require('../common').toggleActiveNavMenuElement_Beta;
@@ -31,7 +33,7 @@ var TradingAnalysis_Beta = (function() {
         if (formName === 'matchdiff') {
             formName = 'digits';
         }
-        $('#tab_explanation a').attr('href',  page.url.url_for('trade/bet_explanation_beta', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
+        $('#tab_explanation a').attr('href',  url_for('trade/bet_explanation_beta', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
         if (formName === 'digits' || formName === 'overunder' || formName === 'evenodd') {
             $('#tab_last_digit').removeClass('invisible');
         } else {
@@ -219,7 +221,7 @@ var TradingAnalysis_Beta = (function() {
         };
 
         if (show_image && images.hasOwnProperty(form_name)) {
-            var image_path = page.url.url_for_static('images/pages/trade-explanation/' + (getLanguage() === 'JA' ? 'ja/' : ''));
+            var image_path = url_for_static('images/pages/trade-explanation/' + (getLanguage() === 'JA' ? 'ja/' : ''));
             $Container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $Container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
             $Container.find('#explanation_image').removeClass(hidden_class);

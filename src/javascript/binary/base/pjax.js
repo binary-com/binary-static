@@ -1,9 +1,11 @@
 var MenuContent  = require('./menu_content').MenuContent;
 var pjax         = require('../../lib/pjax-lib');
 var Url          = require('./url').Url;
+var url          = require('./url').url;
 var GTM          = require('./gtm').GTM;
 var SessionStore = require('./storage').SessionStore;
-var Header       = require('./header').Header;
+var State        = require('./storage').State;
+var Contents     = require('./contents').Contents;
 
 var make_mobile_menu = function () {
     if ($('#mobile-menu-container').is(':visible')) {
@@ -22,10 +24,10 @@ var make_mobile_menu = function () {
 };
 
 // For object shape coherence we create named objects to be inserted into the queue.
-var URLPjaxQueueElement = function(exec_function, url) {
+var URLPjaxQueueElement = function(exec_function, new_url) {
     this.method = exec_function;
-    if (url) {
-        this.url = new RegExp(url);
+    if (new_url) {
+        this.url = new RegExp(new_url);
     } else {
         this.url = /.*/;
     }
@@ -66,9 +68,6 @@ PjaxExecQueue.prototype = {
     queue_for_url: function (exec_function, url_pattern) {
         this.url_exec_queue.unshift(new URLPjaxQueueElement(exec_function, url_pattern));
     },
-    queue_if_id_present: function(exec_function, id) {
-        this.id_exec_queue.unshift(new IDPjaxQueueElement(exec_function, id));
-    },
     fire: function () {
         if (!this.fired) {
             var match_loc = window.location.href;
@@ -92,10 +91,10 @@ PjaxExecQueue.prototype = {
     },
 };
 
-var pjax_config_page = function(url, exec_functions) {
+var pjax_config_page = function(new_url, exec_functions) {
     var functions = exec_functions();
-    if (functions.onLoad) onLoad.queue_for_url(functions.onLoad, url);
-    if (functions.onUnload) onUnload.queue_for_url(functions.onUnload, url);
+    if (functions.onLoad) onLoad.queue_for_url(functions.onLoad, new_url);
+    if (functions.onUnload) onUnload.queue_for_url(functions.onUnload, new_url);
 };
 
 var pjax_config = function() {
@@ -106,7 +105,7 @@ var pjax_config = function() {
             onUnload.fire();
         },
         complete: function() {
-            page.is_loaded_by_pjax = true;
+            State.set('is_loaded_by_pjax', true);
             onLoad.fire();
             onUnload.reset();
         },
@@ -139,23 +138,23 @@ var init_pjax = function () {
     }
 };
 
-var load_with_pjax = function(url) {
-    if (page.url.is_in(new Url(url))) {
+var load_with_pjax = function(new_url) {
+    if (url.is_in(new Url(new_url))) {
         return;
     }
 
     var config = pjax_config();
-    config.url = url;
-    config.update_url = url;
+    config.url = new_url;
+    config.update_url = new_url;
     config.history = true;
     pjax.invoke(config);
 };
 
 // Reduce duplication as required Auth is a common pattern
-var pjax_config_page_require_auth = function(url, exec) {
+var pjax_config_page_require_auth = function(new_url, exec) {
     var oldOnLoad = exec().onLoad;
     var newOnLoad = function() {
-        if (!Header.show_login_if_logout(true)) {
+        if (!Contents.show_login_if_logout(true)) {
             oldOnLoad();
         }
     };
@@ -166,7 +165,7 @@ var pjax_config_page_require_auth = function(url, exec) {
             onUnload: exec().onUnload,
         };
     };
-    pjax_config_page(url, newExecFn);
+    pjax_config_page(new_url, newExecFn);
 };
 
 var onLoad = new PjaxExecQueue();

@@ -88,7 +88,7 @@ DatePicker.SelectedDates.prototype = {
 //        if (typeof this.cache[cache_key] === 'undefined') {
 //            var that = this;
 //            $.ajax({
-//                url: page.url.url_for('trade_get.cgi'),
+//                url: url_for('trade_get.cgi'),
 //                data: { controller_action: 'trading_days',
 //                        underlying_symbol: underlying_symbol,
 //                        form_name: form_name

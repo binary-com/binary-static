@@ -1,8 +1,10 @@
 var objectNotEmpty = require('./utility').objectNotEmpty;
 var Cookies        = require('../../lib/js-cookie');
 var getLanguage    = require('./language').getLanguage;
-var GTM    = require('./gtm').GTM;
-var Client = require('./client').Client;
+var GTM     = require('./gtm').GTM;
+var Client  = require('./client').Client;
+var url_for = require('./url').url_for;
+var default_redirect_url = require('./url').default_redirect_url;
 
 var LoggedInHandler = (function() {
     'use strict';
@@ -42,12 +44,12 @@ var LoggedInHandler = (function() {
         if (redirect_url) {
             var do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home'];
             var reg = new RegExp(do_not_redirect.join('|'), 'i');
-            if (!reg.test(redirect_url) && page.url.url_for('') !== redirect_url) {
+            if (!reg.test(redirect_url) && url_for('') !== redirect_url) {
                 set_default = false;
             }
         }
         if (set_default) {
-            redirect_url = page.url.default_redirect_url();
+            redirect_url = default_redirect_url();
             var lang_cookie = Cookies.get('language'),
                 language = getLanguage();
             if (lang_cookie && lang_cookie !== language) {

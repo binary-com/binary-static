@@ -1,6 +1,7 @@
 var japanese_client = require('../../common_functions/country_base').japanese_client;
-var Contents = require('../../base/contents').Contents;
+var Header   = require('../../base/header').Header;
 var Client   = require('../../base/client').Client;
+var url_for  = require('../../base/url').url_for;
 
 var Cashier = (function() {
     'use strict';
@@ -15,11 +16,11 @@ var Cashier = (function() {
 
     var check_locked = function() {
         if (Client.is_virtual()) return;
-        if (page.client_status_detected('cashier_locked')) {
+        if (Client.status_detected('cashier_locked')) {
             lock_cashier('locked', 'deposit, .withdraw');
-        } else if (page.client_status_detected('withdrawal_locked')) {
+        } else if (Client.status_detected('withdrawal_locked')) {
             lock_cashier('locked', 'withdraw');
-        } else if (page.client_status_detected('unwelcome')) {
+        } else if (Client.status_detected('unwelcome')) {
             lock_cashier('locked', 'deposit');
         } else if (sessionStorage.getItem('client_status') === null) {
             BinarySocket.send({ get_account_status: '1', passthrough: { dispatch_to: 'Cashier' } });
@@ -46,13 +47,13 @@ var Cashier = (function() {
         if (/\/cashier\.html/.test(window.location.pathname) && Client.get_value('is_logged_in')) {
             Cashier.check_locked();
             Cashier.check_virtual_top_up();
-            Contents.topbar_message_visibility(Client.get_value('landing_company'));
+            Header.topbar_message_visibility(Client.get_value('landing_company'));
         }
     };
 
     var onLoadPaymentMethods = function() {
         if (japanese_client()) {
-            window.location.href = page.url.url_for('/');
+            window.location.href = url_for('/');
         }
         if (Client.get_value('is_logged_in') && !Client.is_virtual()) {
             Cashier.check_locked();

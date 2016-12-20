@@ -2,7 +2,7 @@ var moment              = require('moment');
 var toTitleCase         = require('../../../common_functions/string_util').toTitleCase,
     addComma            = require('../../../common_functions/string_util').addComma,
     format_money        = require('../../../common_functions/currency_to_symbol').format_money,
-    toJapanTimeIfNeeded = require('../../../base/clock').toJapanTimeIfNeeded;
+    toJapanTimeIfNeeded = require('../../../base/clock').Clock.toJapanTimeIfNeeded;
 var localize = require('../../../base/localize').localize;
 var Client   = require('../../../base/client').Client;
 

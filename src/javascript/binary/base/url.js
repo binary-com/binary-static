@@ -2,49 +2,19 @@ var getLanguage = require('./language').getLanguage;
 var japanese_client = require('../common_functions/country_base').japanese_client;
 
 var Url = function (url) {
-    this.history_supported = window.history && window.history.pushState;
+    this.history_supported = typeof window !== 'undefined' && window.history && window.history.pushState;
     if (typeof url !== 'undefined') {
         this.location = $('<a>', { href: decodeURIComponent(url) })[0];
-    } else {
+    } else if (typeof window !== 'undefined') {
         this.location = window.location;
     }
 };
 
 Url.prototype = {
-    url_for: function(path, params) {
-        if (!path) {
-            path = '';
-        } else if (path.length > 0 && path[0] === '/') {
-            path = path.substr(1);
-        }
-        var lang = getLanguage().toLowerCase(),
-            url  = window.location.href;
-        return url.substring(0, url.indexOf('/' + lang + '/') + lang.length + 2) + (path || 'home') + '.html' + (params ? '?' + params : '');
-    },
-    url_for_static: function(path) {
-        if (!path) {
-            path = '';
-        } else if (path.length > 0 && path[0] === '/') {
-            path = path.substr(1);
-        }
-
-        var staticHost = window.staticHost;
-        if (!staticHost || staticHost.length === 0) {
-            staticHost = $('script[src*="binary.min.js"],script[src*="binary.js"]').attr('src');
-
-            if (staticHost && staticHost.length > 0) {
-                staticHost = staticHost.substr(0, staticHost.indexOf('/js/') + 1);
-            } else {
-                staticHost = 'https://www.binary.com/';
-            }
-
-            window.staticHost = staticHost;
-        }
-
-        return staticHost + path;
-    },
     reset: function() {
-        this.location = window.location;
+        if (typeof window !== 'undefined') {
+            this.location = window.location;
+        }
         this._param_hash = undefined;
         $(this).trigger('change', [this]);
     },
@@ -109,11 +79,60 @@ Url.prototype = {
         }
         return params;
     },
-    default_redirect_url: function() {
-        return this.url_for(japanese_client() ? 'multi_barriers_trading' : 'trading');
-    },
 };
 
+var url_for = function(path, params) {
+    if (!path) {
+        path = '';
+    } else if (path.length > 0 && path[0] === '/') {
+        path = path.substr(1);
+    }
+    var lang = getLanguage().toLowerCase(),
+        url = '';
+    if (typeof window !== 'undefined') {
+        url  = window.location.href;
+    }
+    return url.substring(0, url.indexOf('/' + lang + '/') + lang.length + 2) + (path || 'home') + '.html' + (params ? '?' + params : '');
+};
+
+var url_for_static = function(path) {
+    if (!path) {
+        path = '';
+    } else if (path.length > 0 && path[0] === '/') {
+        path = path.substr(1);
+    }
+
+    var staticHost;
+    if (typeof window !== 'undefined') {
+        staticHost = window.staticHost;
+    }
+    if (!staticHost || staticHost.length === 0) {
+        staticHost = $('script[src*="binary.min.js"],script[src*="binary.js"]').attr('src');
+
+        if (staticHost && staticHost.length > 0) {
+            staticHost = staticHost.substr(0, staticHost.indexOf('/js/') + 1);
+        } else {
+            staticHost = 'https://www.binary.com/';
+        }
+
+        if (typeof window !== 'undefined') {
+            window.staticHost = staticHost;
+        }
+    }
+
+    return staticHost + path;
+};
+
+var default_redirect_url = function() {
+    return url_for(japanese_client() ? 'multi_barriers_trading' : 'trading');
+};
+
+var url = new Url();
+
 module.exports = {
-    Url: Url,
+    Url                 : Url,
+    url_for             : url_for,
+    url_for_static      : url_for_static,
+    default_redirect_url: default_redirect_url,
+    url                 : url,
 };

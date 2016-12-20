@@ -1,3 +1,5 @@
+var url = require('../base/url').url;
+
 var Platforms = (function () {
     var sections = [];
     function init() {
@@ -44,8 +46,8 @@ var Platforms = (function () {
     }
     function get_hash() {
         return (
-            page.url.location.hash && $.inArray(page.url.location.hash.substring(1), sections) !== -1 ?
-            page.url.location.hash : '#trading-platforms'
+            url.location.hash && $.inArray(url.location.hash.substring(1), sections) !== -1 ?
+            url.location.hash : '#trading-platforms'
         );
     }
     function showSelectedDiv() {

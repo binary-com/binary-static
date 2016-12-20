@@ -8,6 +8,7 @@ var Cookies              = require('../../lib/js-cookie');
 var moment               = require('moment');
 var localize = require('../base/localize').localize;
 var Client   = require('../base/client').Client;
+var url_for  = require('../base/url').url_for;
 
 var displayAcctSettings = function(response) {
     var country = response.get_settings.country_code;
@@ -102,9 +103,9 @@ var handleResidence = function() {
             } else if (type === 'landing_company') {
                 Cookies.set('residence', Client.get_value('residence'), { domain: '.' + document.domain.split('.').slice(-2).join('.'), path: '/' });
                 if (((Client.can_upgrade_gaming_to_financial(response.landing_company) && !Client.is_virtual()) || Client.can_upgrade_virtual_to_financial(response.landing_company)) && !/maltainvestws/.test(window.location.href)) {
-                    window.location.href = page.url.url_for('new_account/maltainvestws');
+                    window.location.href = url_for('new_account/maltainvestws');
                 } else if (Client.can_upgrade_virtual_to_japan(response.landing_company) && Client.is_virtual() && !/japanws/.test(window.location.href)) {
-                    window.location.href = page.url.url_for('new_account/japanws');
+                    window.location.href = url_for('new_account/japanws');
                 } else if (!$('#real-form').is(':visible')) {
                     BinarySocket.send({ residence_list: 1 });
                     $('#residence-form').hide();

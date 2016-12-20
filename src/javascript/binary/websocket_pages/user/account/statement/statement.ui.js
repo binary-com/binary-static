@@ -1,4 +1,4 @@
-var toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
+var toJapanTimeIfNeeded = require('../../../../base/clock').Clock.toJapanTimeIfNeeded;
 var downloadCSV         = require('../../../../base/utility').downloadCSV;
 var Button          = require('../../../../common_functions/attach_dom/button').Button;
 var Content         = require('../../../../common_functions/content').Content;

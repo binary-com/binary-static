@@ -8,6 +8,7 @@ var bind_validation       = require('../../../validator').bind_validation;
 var VirtualAccOpeningData = require('./virtual_acc_opening/virtual_acc_opening.data').VirtualAccOpeningData;
 var localize = require('../../../base/localize').localize;
 var Client   = require('../../../base/client').Client;
+var url_for  = require('../../../base/url').url_for;
 
 var VirtualAccOpening = (function() {
     function onSuccess(res) {
@@ -24,7 +25,7 @@ var VirtualAccOpening = (function() {
         $('.notice-message').remove();
         var $form = $('#virtual-form');
         $form.html($('<p/>', {
-            html: template(Content.localize().textClickHereToRestart, [page.url.url_for('')]),
+            html: template(Content.localize().textClickHereToRestart, [url_for('')]),
         }));
     }
 
@@ -32,7 +33,7 @@ var VirtualAccOpening = (function() {
         $('.notice-message').remove();
         var $form = $('#virtual-form');
         $form.html($('<p/>', {
-            html: template(Content.localize().textDuplicatedEmail, [page.url.url_for('user/lost_passwordws')]),
+            html: template(Content.localize().textDuplicatedEmail, [url_for('user/lost_passwordws')]),
         }));
     }
 
@@ -89,7 +90,7 @@ var VirtualAccOpening = (function() {
 
     var onLoad = function() {
         if (Client.get_value('is_logged_in')) {
-            window.location.href = page.url.url_for('home');
+            window.location.href = url_for('home');
             return;
         }
         init();

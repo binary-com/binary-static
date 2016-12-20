@@ -1,4 +1,6 @@
 var localize = require('../base/localize').localize;
+var url_for  = require('../base/url').url_for;
+var url      = require('../base/url').url;
 
 var JobDetails = (function() {
     var dept;
@@ -10,9 +12,9 @@ var JobDetails = (function() {
             init();
         } else {
             $('.sections div').hide();
-            $('.sections div[id=' + dept + '-' + page.url.location.hash.substring(1) + ']').show();
+            $('.sections div[id=' + dept + '-' + url.location.hash.substring(1) + ']').show();
             $('.title-sections').html($('.sidebar li[class="selected"]').text());
-            if (dept === 'Information_Technology' && page.url.location.hash.substring(1) === 'section-three') {
+            if (dept === 'Information_Technology' && url.location.hash.substring(1) === 'section-three') {
                 $('.senior_perl_message').removeClass('invisible');
             } else if (!$('.senior_perl_message').hasClass('invisible')) {
                 $('.senior_perl_message').addClass('invisible');
@@ -26,20 +28,20 @@ var JobDetails = (function() {
         if (!dept || $.inArray(dept, depts) === -1) {
             replace_dept = '?dept=Information_Technology';
         }
-        if (!page.url.location.hash || $.inArray(page.url.location.hash.substring(1), sections) === -1) {
+        if (!url.location.hash || $.inArray(url.location.hash.substring(1), sections) === -1) {
             replace_section = '#section-one';
         }
         if (replace_dept || replace_section) {
-            window.location = replace_dept && replace_section ? page.url.url_for('open-positions/job-details') + replace_dept + replace_section :
-                              replace_dept ? page.url.url_for('open-positions/job-details') + replace_dept + page.url.location.hash :
-                              page.url.url_for('open-positions/job-details') + '?dept=' + dept + replace_section;
+            window.location = replace_dept && replace_section ? url_for('open-positions/job-details') + replace_dept + replace_section :
+                              replace_dept ? url_for('open-positions/job-details') + replace_dept + url.location.hash :
+                              url_for('open-positions/job-details') + '?dept=' + dept + replace_section;
             return false;
         }
         return true;
     }
 
     function init() {
-        dept = page.url.params_hash().dept;
+        dept = url.params_hash().dept;
         depts = ['Information_Technology', 'Quality_Assurance', 'Quantitative_Analysis', 'Marketing', 'Accounting', 'Compliance', 'Customer_Support', 'Human_Resources', 'Administrator', 'Internal_Audit'];
         sections = ['section-one', 'section-two', 'section-three', 'section-four', 'section-five', 'section-six', 'section-seven', 'section-eight'];
         if (check_url()) {
@@ -62,9 +64,9 @@ var JobDetails = (function() {
             if ($('.sidebar li:visible').length === 1) {
                 $('.sidebar').hide();
             }
-            $('#' + page.url.location.hash.substring(9)).addClass('selected');
+            $('#' + url.location.hash.substring(9)).addClass('selected');
             showSelectedDiv();
-            $('#back-button').attr('href', page.url.url_for('open-positions') + '#' + dept);
+            $('#back-button').attr('href', url_for('open-positions') + '#' + dept);
         }
     }
 

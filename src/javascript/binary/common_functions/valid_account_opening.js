@@ -4,21 +4,22 @@ var Content     = require('./content').Content;
 var Cookies     = require('../../lib/js-cookie');
 var localize    = require('../base/localize').localize;
 var Client      = require('../base/client').Client;
-var Header      = require('../base/header').Header;
+var Contents    = require('../base/contents').Contents;
+var url_for     = require('../base/url').url_for;
 
 var ValidAccountOpening = (function() {
     var redirectCookie = function() {
-        if (Header.show_login_if_logout(true)) {
+        if (Contents.show_login_if_logout(true)) {
             return;
         }
         if (!Client.is_virtual()) {
-            window.location.href = page.url.url_for('trading');
+            window.location.href = url_for('trading');
             return;
         }
         var client_loginid_array = Client.loginid_array();
         for (var i = 0; i < client_loginid_array.length; i++) {
             if (client_loginid_array[i].real === true) {
-                window.location.href = page.url.url_for('trading');
+                window.location.href = url_for('trading');
                 return;
             }
         }
@@ -43,7 +44,7 @@ var ValidAccountOpening = (function() {
             error.innerHTML = (response.msg_type === 'sanity_check') ? localize('There was some invalid character in an input field.') : errorMessage;
             error.parentNode.parentNode.parentNode.setAttribute('style', 'display:block');
         } else if (Cookies.get('residence') === 'jp') {
-            window.location.href = page.url.url_for('new_account/knowledge_testws');
+            window.location.href = url_for('new_account/knowledge_testws');
             $('#topbar-msg').children('a').addClass('invisible');
         } else {     // jp account require more steps to have real account
             Client.process_new_account(Cookies.get('email'), message.client_id, message.oauth_token, false);

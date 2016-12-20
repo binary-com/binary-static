@@ -2,6 +2,7 @@ var getAppId    = require('../../config').getAppId;
 var isVisible   = require('../common_functions/common_functions').isVisible;
 var getLanguage = require('./language').getLanguage;
 var Client      = require('./client').Client;
+var State       = require('./storage').State;
 var Cookies     = require('../../lib/js-cookie');
 var moment      = require('moment');
 
@@ -16,7 +17,7 @@ var GTM = (function() {
         var data_layer_info = {
             language : getLanguage(),
             pageTitle: page_title(),
-            pjax     : page.is_loaded_by_pjax,
+            pjax     : State.get('is_loaded_by_pjax'),
             url      : document.URL,
             event    : 'page_load',
         };
@@ -142,17 +143,11 @@ var GTM = (function() {
         localStorage.setItem('GTM_login', '1');
     };
 
-    var set_newaccount_flag = function() {
-        if (!gtm_applicable()) return;
-        localStorage.setItem('GTM_newaccount', '1');
-    };
-
     return {
-        push_data_layer    : push_data_layer,
-        event_handler      : event_handler,
-        push_purchase_data : push_purchase_data,
-        set_login_flag     : set_login_flag,
-        set_newaccount_flag: set_newaccount_flag,
+        push_data_layer   : push_data_layer,
+        event_handler     : event_handler,
+        push_purchase_data: push_purchase_data,
+        set_login_flag    : set_login_flag,
     };
 })();
 

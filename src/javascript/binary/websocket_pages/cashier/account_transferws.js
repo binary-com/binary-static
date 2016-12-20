@@ -45,6 +45,17 @@ var AccountTransferWS = (function() {
 
             BinarySocket.send({ payout_currencies: '1' });
         });
+
+        $form.find('#acc_transfer_submit').on('click', function() {
+            var amount = $('#acc_transfer_amount').val();
+            if (!/^[0-9]+\.?[0-9]{0,2}$/.test(amount) || amount < 0.1) {
+                $('#invalid_amount').removeClass('invisible');
+                $('#invalid_amount').show();
+                return false;
+            }
+            $('#acc_transfer_submit').submit();
+            return true;
+        });
     };
     var set_account_from_to = function() {
         var accounts = $('#transfer_account_transfer option:selected').text();

@@ -1,4 +1,4 @@
-var toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
+var toJapanTimeIfNeeded = require('../../../../base/clock').Clock.toJapanTimeIfNeeded;
 var localize            = require('../../../../base/localize').localize;
 var Client              = require('../../../../base/client').Client;
 var Button              = require('../../../../common_functions/attach_dom/button').Button;

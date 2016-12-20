@@ -1,5 +1,6 @@
 var CookieStorage = require('../base/storage').CookieStorage;
 var Url    = require('../base/url').Url;
+var url    = require('../base/url').url;
 var Client = require('../base/client').Client;
 
 /*
@@ -49,7 +50,7 @@ var TrafficSource = (function() {
         }
 
         var current_values = getData(),
-            params = page.url.params_hash(),
+            params = url.params_hash(),
             param_keys = ['utm_source', 'utm_medium', 'utm_campaign'];
 
         if (params.utm_source) { // url params can be stored only if utm_source is available

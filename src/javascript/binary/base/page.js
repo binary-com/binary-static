@@ -1,12 +1,14 @@
 var Login             = require('./login').Login;
 var template          = require('./utility').template;
 var LocalStore        = require('./storage').LocalStore;
+var State             = require('./storage').State;
 var localizeForLang   = require('./localize').localizeForLang;
 var localize          = require('./localize').localize;
 var getLanguage       = require('./language').getLanguage;
 var setCookieLanguage = require('./language').setCookieLanguage;
-var GTM               = require('./gtm').GTM;
 var Url               = require('./url').Url;
+var url_for           = require('./url').url_for;
+var url_for_static    = require('./url').url_for_static;
 var Client            = require('./client').Client;
 var Header            = require('./header').Header;
 var Menu              = require('./menu').Menu;
@@ -23,15 +25,16 @@ require('../../lib/polyfills/string.includes');
 require('../../lib/mmenu/jquery.mmenu.min.all.js');
 
 var Page = function() {
-    this.is_loaded_by_pjax = false;
+    State.set('is_loaded_by_pjax', false);
     Client.init();
     this.url = new Url();
     Menu.init(this.url);
     $('#logo').on('click', function() {
-        load_with_pjax(page.url.url_for(Client.get_value('is_logged_in') ? japanese_client() ? 'multi_barriers_trading' : 'trading' : ''));
+        load_with_pjax(url_for(Client.get_value('is_logged_in') ? japanese_client() ? 'multi_barriers_trading' : 'trading' : ''));
     });
     $('#btn_login').on('click', function(e) {
-        e.preventDefault(); Login.redirect_to_login();
+        e.preventDefault();
+        Login.redirect_to_login();
     });
 };
 
@@ -40,11 +43,9 @@ Page.prototype = {
         this.url.reset();
         localizeForLang(getLanguage());
         Header.on_load();
-        this.on_change_loginid();
         this.record_affiliate_exposure();
         Contents.on_load();
-        this.on_click_acc_transfer();
-        if (this.is_loaded_by_pjax) {
+        if (State.get('is_loaded_by_pjax')) {
             this.show_authenticate_message();
         }
         if (Client.get_value('is_logged_in')) {
@@ -66,49 +67,6 @@ Page.prototype = {
     on_unload: function() {
         Menu.on_unload();
         Contents.on_unload();
-    },
-    on_change_loginid: function() {
-        var that = this;
-        $('.login-id-list a').on('click', function(e) {
-            e.preventDefault();
-            $(this).attr('disabled', 'disabled');
-            that.switch_loginid($(this).attr('value'));
-        });
-    },
-    switch_loginid: function(loginid) {
-        if (!loginid || loginid.length === 0) {
-            return;
-        }
-        var token = Client.get_token(loginid);
-        if (!token || token.length === 0) {
-            Client.send_logout_request(true);
-            return;
-        }
-
-        // cleaning the previous values
-        Client.clear_storage_values();
-        sessionStorage.setItem('active_tab', '1');
-        sessionStorage.removeItem('client_status');
-        // set cookies: loginid, login
-        Client.set_cookie('loginid', loginid);
-        Client.set_cookie('login',   token);
-        // set local storage
-        GTM.set_login_flag();
-        localStorage.setItem('active_loginid', loginid);
-        $('.login-id-list a').removeAttr('disabled');
-        page.reload();
-    },
-    on_click_acc_transfer: function() {
-        $('#acc_transfer_submit').on('click', function() {
-            var amount = $('#acc_transfer_amount').val();
-            if (!/^[0-9]+\.?[0-9]{0,2}$/.test(amount) || amount < 0.1) {
-                $('#invalid_amount').removeClass('invisible');
-                $('#invalid_amount').show();
-                return false;
-            }
-            $('#acc_transfer_submit').submit();
-            return true;
-        });
     },
     record_affiliate_exposure: function() {
         var token = this.url.param('t');
@@ -160,7 +118,7 @@ Page.prototype = {
                 }
             }
         };
-        xhttp.open('GET', page.url.url_for_static() + 'version?' + Math.random().toString(36).slice(2), true);
+        xhttp.open('GET', url_for_static() + 'version?' + Math.random().toString(36).slice(2), true);
         xhttp.send();
     },
     endpoint_notification: function() {
@@ -168,28 +126,10 @@ Page.prototype = {
         if (server && server.length > 0) {
             var message = (/www\.binary\.com/i.test(window.location.hostname) ? '' :
                 localize('This is a staging server - For testing purposes only') + ' - ') +
-                localize('The server <a href="[_1]">endpoint</a> is: [_2]', [page.url.url_for('endpoint'), server]);
+                localize('The server <a href="[_1]">endpoint</a> is: [_2]', [url_for('endpoint'), server]);
             $('#end-note').html(message).removeClass('invisible');
             $('#footer').css('padding-bottom', $('#end-note').height());
         }
-    },
-    // type can take one or more params, separated by comma
-    // e.g. one param = 'authenticated', two params = 'unwelcome, authenticated'
-    // match_type can be `any` `all`, by default is `any`
-    // should be passed when more than one param in type.
-    // `any` will return true if any of the params in type are found in client status
-    // `all` will return true if all of the params in type are found in client status
-    client_status_detected: function(type, match_type) {
-        var client_status = sessionStorage.getItem('client_status');
-        if (!client_status || client_status.length === 0) return false;
-        var require_auth = /\,/.test(type) ? type.split(/, */) : [type];
-        client_status = client_status.split(',');
-        match_type = match_type && match_type === 'all' ? 'all' : 'any';
-        for (var i = 0; i < require_auth.length; i++) {
-            if (match_type === 'any' && (client_status.indexOf(require_auth[i]) > -1)) return true;
-            if (match_type === 'all' && (client_status.indexOf(require_auth[i]) < 0)) return false;
-        }
-        return (match_type !== 'any');
     },
     show_authenticate_message: function() {
         if ($('.authenticate-msg').length !== 0) return;
@@ -197,7 +137,7 @@ Page.prototype = {
         var p = $('<p/>', { class: 'authenticate-msg notice-msg' }),
             span;
 
-        if (this.client_status_detected('unwelcome')) {
+        if (Client.status_detected('unwelcome')) {
             var purchase_button = $('.purchase_button');
             if (purchase_button.length > 0 && !purchase_button.parent().hasClass('button-disabled')) {
                 $.each(purchase_button, function() {
@@ -207,24 +147,24 @@ Page.prototype = {
             }
         }
 
-        if (this.client_status_detected('unwelcome, cashier_locked', 'any')) {
+        if (Client.status_detected('unwelcome, cashier_locked', 'any')) {
             var if_balance_zero = $('#if-balance-zero');
             if (if_balance_zero.length > 0 && !if_balance_zero.hasClass('button-disabled')) {
                 if_balance_zero.removeAttr('href').addClass('button-disabled');
             }
         }
 
-        if (this.client_status_detected('authenticated, unwelcome', 'all')) {
+        if (Client.status_detected('authenticated, unwelcome', 'all')) {
             span = $('<span/>', { html: template(localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
-        } else if (this.client_status_detected('unwelcome')) {
+        } else if (Client.status_detected('unwelcome')) {
             span = this.general_authentication_message();
-        } else if (this.client_status_detected('authenticated, cashier_locked', 'all') && /cashier\.html/.test(window.location.href)) {
+        } else if (Client.status_detected('authenticated, cashier_locked', 'all') && /cashier\.html/.test(window.location.href)) {
             span = $('<span/>', { html: template(localize('Deposits and withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
-        } else if (this.client_status_detected('cashier_locked') && /cashier\.html/.test(window.location.href)) {
+        } else if (Client.status_detected('cashier_locked') && /cashier\.html/.test(window.location.href)) {
             span = this.general_authentication_message();
-        } else if (this.client_status_detected('authenticated, withdrawal_locked', 'all') && /cashier\.html/.test(window.location.href)) {
+        } else if (Client.status_detected('authenticated, withdrawal_locked', 'all') && /cashier\.html/.test(window.location.href)) {
             span = $('<span/>', { html: template(localize('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
-        } else if (this.client_status_detected('withdrawal_locked') && /cashier\.html/.test(window.location.href)) {
+        } else if (Client.status_detected('withdrawal_locked') && /cashier\.html/.test(window.location.href)) {
             span = this.general_authentication_message();
         }
         if (span) {

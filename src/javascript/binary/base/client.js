@@ -1,6 +1,8 @@
 var Cookies          = require('../../lib/js-cookie');
 var CookieStorage    = require('./storage').CookieStorage;
 var LocalStore       = require('./storage').LocalStore;
+var url_for          = require('./url').url_for;
+var default_redirect_url = require('./url').default_redirect_url;
 var moment           = require('moment');
 var japanese_client  = require('../common_functions/country_base').japanese_client;
 
@@ -36,6 +38,7 @@ var Client = (function () {
         );
         set_storage_value('is_logged_in', is_logged_in);
         set_storage_value('residence', Cookies.get('residence'));
+        on_change_loginid();
     };
 
     var validate_loginid = function() {
@@ -60,24 +63,20 @@ var Client = (function () {
     var redirect_if_is_virtual = function(redirectPage) {
         var is_virtual = is_virtual();
         if (is_virtual) {
-            window.location.href = page.url.url_for(redirectPage || '');
+            window.location.href = url_for(redirectPage || '');
         }
         return is_virtual;
     };
 
     var redirect_if_login = function() {
         if (get_storage_value('is_logged_in')) {
-            window.location.href = page.url.default_redirect_url();
+            window.location.href = default_redirect_url();
         }
         return get_storage_value('is_logged_in');
     };
 
     var is_virtual = function() {
         return get_storage_value('is_virtual') === '1';
-    };
-
-    var require_reality_check = function() {
-        return get_storage_value('has_reality_check') === '1';
     };
 
     var get_storage_value = function(key) {
@@ -96,7 +95,7 @@ var Client = (function () {
             BinarySocket.send({
                 payout_currencies: 1,
                 passthrough      : {
-                    handler: 'page.client',
+                    handler: 'client',
                     origin : origin || '',
                 },
             });
@@ -112,7 +111,7 @@ var Client = (function () {
                 BinarySocket.send({
                     landing_company: Cookies.get('residence'),
                     passthrough    : {
-                        handler: 'page.client',
+                        handler: 'client',
                         origin : origin || '',
                     },
                 });
@@ -126,12 +125,6 @@ var Client = (function () {
         }
 
         return is_ok;
-    };
-
-    var response_payout_currencies = function(response) {
-        if (!response.hasOwnProperty('error')) {
-            set_storage_value('currencies', response.payout_currencies.join(','));
-        }
     };
 
     var response_authorize = function(response) {
@@ -148,7 +141,6 @@ var Client = (function () {
         check_storage_values();
         values_set = true;
         activate_by_client_type();
-        activate_by_login();
     };
 
     var check_tnc = function() {
@@ -159,7 +151,7 @@ var Client = (function () {
             if (client_tnc_status && website_tnc_version) {
                 if (client_tnc_status !== website_tnc_version) {
                     sessionStorage.setItem('tnc_redirect', window.location.href);
-                    window.location.href = page.url.url_for('user/tnc_approvalws');
+                    window.location.href = url_for('user/tnc_approvalws');
                 }
             }
         }
@@ -173,13 +165,6 @@ var Client = (function () {
         });
         localStorage.removeItem('website.tnc_version');
         sessionStorage.setItem('currencies', '');
-    };
-
-    var send_logout_request = function(showLoginPage) {
-        if (showLoginPage) {
-            sessionStorage.setItem('showLoginPage', 1);
-        }
-        BinarySocket.send({ logout: '1' });
     };
 
     var get_token = function(client_loginid) {
@@ -224,9 +209,9 @@ var Client = (function () {
         set_cookie('loginid',      client_loginid);
         set_cookie('loginid_list', client_is_virtual ? client_loginid + ':V:E' : client_loginid + ':R:E+' + Cookies.get('loginid_list'));
         // set local storage
-        GTM.set_newaccount_flag();
+        localStorage.setItem('GTM_newaccount', '1');
         localStorage.setItem('active_loginid', client_loginid);
-        window.location.href = page.url.default_redirect_url();
+        window.location.href = default_redirect_url();
     };
 
     var can_upgrade_gaming_to_financial = function(data) {
@@ -263,6 +248,7 @@ var Client = (function () {
                 return;
             }
             $('#client-logged-in').addClass('gr-centered');
+            $('.client_logged_in').removeClass('invisible');
             if (!is_virtual()) {
                 // control-class is a fake class, only used to counteract ja-hide class
                 $('.by_client_type.client_real').not((japanese_client() ? '.ja-hide' : '.control-class')).removeClass('invisible');
@@ -295,40 +281,125 @@ var Client = (function () {
         }
     };
 
-    var activate_by_login = function() {
-        if (get_storage_value('is_logged_in')) {
-            $('.client_logged_in').removeClass('invisible');
+    var send_logout_request = function(showLoginPage) {
+        if (showLoginPage) {
+            sessionStorage.setItem('showLoginPage', 1);
         }
+        BinarySocket.send({ logout: '1' });
+    };
+
+    var do_logout = function(response) {
+        if (response.logout !== 1) return;
+        Client.clear_storage_values();
+        LocalStore.remove('client.tokens');
+        LocalStore.set('reality_check.ack', 0);
+        sessionStorage.removeItem('client_status');
+        var cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence'];
+        var domains = [
+            '.' + document.domain.split('.').slice(-2).join('.'),
+            '.' + document.domain,
+        ];
+
+        var parent_path = window.location.pathname.split('/', 2)[1];
+        if (parent_path !== '') {
+            parent_path = '/' + parent_path;
+        }
+
+        cookies.forEach(function(c) {
+            var regex = new RegExp(c);
+            Cookies.remove(c, { path: '/', domain: domains[0] });
+            Cookies.remove(c, { path: '/', domain: domains[1] });
+            Cookies.remove(c);
+            if (regex.test(document.cookie) && parent_path) {
+                Cookies.remove(c, { path: parent_path, domain: domains[0] });
+                Cookies.remove(c, { path: parent_path, domain: domains[1] });
+                Cookies.remove(c, { path: parent_path });
+            }
+        });
+        localStorage.removeItem('risk_classification');
+        localStorage.removeItem('risk_classification.response');
+        page.reload();
+    };
+
+    var on_change_loginid = function() {
+        $('.login-id-list a').on('click', function(e) {
+            e.preventDefault();
+            $(this).attr('disabled', 'disabled');
+            switch_loginid($(this).attr('value'));
+        });
+    };
+
+    var switch_loginid = function(loginid) {
+        if (!loginid || loginid.length === 0) {
+            return;
+        }
+        var token = Client.get_token(loginid);
+        if (!token || token.length === 0) {
+            Client.send_logout_request(true);
+            return;
+        }
+
+        // cleaning the previous values
+        Client.clear_storage_values();
+        sessionStorage.setItem('active_tab', '1');
+        sessionStorage.removeItem('client_status');
+        // set cookies: loginid, login
+        Client.set_cookie('loginid', loginid);
+        Client.set_cookie('login',   token);
+        // set local storage
+        GTM.set_login_flag();
+        localStorage.setItem('active_loginid', loginid);
+        $('.login-id-list a').removeAttr('disabled');
+        page.reload();
+    };
+
+    // type can take one or more params, separated by comma
+    // e.g. one param = 'authenticated', two params = 'unwelcome, authenticated'
+    // match_type can be `any` `all`, by default is `any`
+    // should be passed when more than one param in type.
+    // `any` will return true if any of the params in type are found in client status
+    // `all` will return true if all of the params in type are found in client status
+    var status_detected = function(type, match_type) {
+        var client_status = sessionStorage.getItem('client_status');
+        if (!client_status || client_status.length === 0) return false;
+        var require_auth = /\,/.test(type) ? type.split(/, */) : [type];
+        client_status = client_status.split(',');
+        match_type = match_type && match_type === 'all' ? 'all' : 'any';
+        for (var i = 0; i < require_auth.length; i++) {
+            if (match_type === 'any' && (client_status.indexOf(require_auth[i]) > -1)) return true;
+            if (match_type === 'all' && (client_status.indexOf(require_auth[i]) < 0)) return false;
+        }
+        return (match_type !== 'any');
     };
 
     return {
-        init                      : init,
-        validate_loginid          : validate_loginid,
-        redirect_if_is_virtual    : redirect_if_is_virtual,
-        redirect_if_login         : redirect_if_login,
-        is_virtual                : is_virtual,
-        require_reality_check     : require_reality_check,
-        get_value                 : get_storage_value,
-        set_value                 : set_storage_value,
-        check_storage_values      : check_storage_values,
-        response_payout_currencies: response_payout_currencies,
-        response_authorize        : response_authorize,
-        check_tnc                 : check_tnc,
-        clear_storage_values      : clear_storage_values,
-        send_logout_request       : send_logout_request,
-        get_token                 : get_token,
-        add_token                 : add_token,
-        set_cookie                : set_cookie,
-        process_new_account       : process_new_account,
+        init                  : init,
+        validate_loginid      : validate_loginid,
+        redirect_if_is_virtual: redirect_if_is_virtual,
+        redirect_if_login     : redirect_if_login,
+        is_virtual            : is_virtual,
+        get_value             : get_storage_value,
+        set_value             : set_storage_value,
+        check_storage_values  : check_storage_values,
+        response_authorize    : response_authorize,
+        check_tnc             : check_tnc,
+        clear_storage_values  : clear_storage_values,
+        get_token             : get_token,
+        add_token             : add_token,
+        set_cookie            : set_cookie,
+        process_new_account   : process_new_account,
 
         can_upgrade_gaming_to_financial : can_upgrade_gaming_to_financial,
         can_upgrade_virtual_to_financial: can_upgrade_virtual_to_financial,
         can_upgrade_virtual_to_japan    : can_upgrade_virtual_to_japan,
         activate_by_client_type         : activate_by_client_type,
-        activate_by_login               : activate_by_login,
 
         values_set   : function () { return values_set; },
         loginid_array: function () { return loginid_array; },
+
+        send_logout_request: send_logout_request,
+        do_logout          : do_logout,
+        status_detected    : status_detected,
     };
 })();
 

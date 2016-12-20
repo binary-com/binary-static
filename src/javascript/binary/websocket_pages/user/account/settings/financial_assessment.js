@@ -3,6 +3,7 @@ var japanese_client    = require('../../../../common_functions/country_base').ja
 var showLoadingImage   = require('../../../../base/utility').showLoadingImage;
 var localize           = require('../../../../base/localize').localize;
 var Client             = require('../../../../base/client').Client;
+var url_for            = require('../../../../base/url').url_for;
 
 var FinancialAssessmentws = (function() {
     'use strict';
@@ -157,7 +158,7 @@ var FinancialAssessmentws = (function() {
 
     var onLoad = function() {
         if (japanese_client()) {
-            window.location.href = page.url.url_for('user/settingsws');
+            window.location.href = url_for('user/settingsws');
         }
         BinarySocket.init({
             onmessage: function(msg) {
