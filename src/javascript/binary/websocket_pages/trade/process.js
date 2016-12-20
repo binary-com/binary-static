@@ -3,7 +3,6 @@ var Barriers                  = require('./barriers').Barriers;
 var Contract                  = require('./contract').Contract;
 var Defaults                  = require('./defaults').Defaults;
 var Durations                 = require('./duration').Durations;
-var TradingEvents             = require('./event').TradingEvents;
 var Price                     = require('./price').Price;
 var Purchase                  = require('./purchase').Purchase;
 var StartDates                = require('./starttime').StartDates;
@@ -12,7 +11,6 @@ var Tick                      = require('./tick').Tick;
 var WSTickDisplay             = require('./tick_trade').WSTickDisplay;
 var State                     = require('../../base/storage').State;
 var displayUnderlyings        = require('./common').displayUnderlyings;
-var showPriceOverlay          = require('./common').showPriceOverlay;
 var hidePriceOverlay          = require('./common').hidePriceOverlay;
 var hideFormOverlay           = require('./common').hideFormOverlay;
 var showFormOverlay           = require('./common').showFormOverlay;
@@ -24,8 +22,10 @@ var selectOption              = require('./common').selectOption;
 var updateWarmChart           = require('./common').updateWarmChart;
 var displayContractForms      = require('./common').displayContractForms;
 var displayMarkets            = require('./common').displayMarkets;
+var processTradingTimesAnswer = require('./common_independent').processTradingTimesAnswer;
 var setFormPlaceholderContent = require('./set_values').setFormPlaceholderContent;
 var localize = require('../../base/localize').localize;
+var moment   = require('moment');
 
 /*
  * This function process the active symbols to get markets
@@ -121,7 +121,7 @@ function processContract(contracts) {
     'use strict';
 
     if (contracts.hasOwnProperty('error') && contracts.error.code === 'InvalidSymbol') {
-        processForgetProposals();
+        Price.processForgetProposals();
         var container = document.getElementById('contract_confirmation_container'),
             message_container = document.getElementById('confirmation_message'),
             confirmation_error = document.getElementById('confirmation_error'),
@@ -202,10 +202,10 @@ function processContractForm() {
     if (Defaults.get('currency')) selectOption(Defaults.get('currency'), document.getElementById('currency'));
 
     var expiry_type = Defaults.get('expiry_type') || 'duration';
-    var make_price_request = TradingEvents.onExpiryTypeChange(expiry_type);
+    var make_price_request = onExpiryTypeChange(expiry_type);
 
     if (make_price_request >= 0) {
-        processPriceRequest();
+        Price.processPriceRequest();
     }
 
     if (Defaults.get('formname') === 'spreads') {
@@ -272,62 +272,8 @@ function displaySpreads() {
 }
 
 function forgetTradingStreams() {
-    processForgetProposals();
+    Price.processForgetProposals();
     processForgetTicks();
-}
-/*
- * Function to request for cancelling the current price proposal
- */
-function processForgetProposals() {
-    'use strict';
-
-    showPriceOverlay();
-    BinarySocket.send({
-        forget_all: 'proposal',
-    });
-    Price.clearMapping();
-}
-
-/*
- * Function to process and calculate price based on current form
- * parameters or change in form parameters
- */
-function processPriceRequest() {
-    'use strict';
-
-    Price.incrFormId();
-    processForgetProposals();
-    showPriceOverlay();
-    var types = Contract.contractType()[Contract.form()];
-    if (Contract.form() === 'digits') {
-        switch (sessionStorage.getItem('formname')) {
-            case 'matchdiff':
-                types = {
-                    DIGITMATCH: 1,
-                    DIGITDIFF : 1,
-                };
-                break;
-            case 'evenodd':
-                types = {
-                    DIGITEVEN: 1,
-                    DIGITODD : 1,
-                };
-                break;
-            case 'overunder':
-                types = {
-                    DIGITOVER : 1,
-                    DIGITUNDER: 1,
-                };
-                break;
-            default:
-                break;
-        }
-    }
-    Object.keys(types).forEach(function(typeOfContract) {
-        if (types.hasOwnProperty(typeOfContract)) {
-            BinarySocket.send(Price.proposal(typeOfContract));
-        }
-    });
 }
 
 /*
@@ -380,35 +326,67 @@ function processProposal(response) {
     }
 }
 
-function processTradingTimesRequest(date) {
-    var trading_times = Durations.trading_times();
-    if (trading_times.hasOwnProperty(date)) {
-        processPriceRequest();
-    } else {
-        showPriceOverlay();
-        BinarySocket.send({
-            trading_times: date,
-        });
-    }
+function processTradingTimes(response) {
+    processTradingTimesAnswer(response);
+    Price.processPriceRequest();
 }
 
-function processTradingTimes(response) {
-    Durations.processTradingTimesAnswer(response);
+function onExpiryTypeChange(value) {
+    if (!value || !$('#expiry_type').find('option[value=' + value + ']').length) {
+        value = 'duration';
+    }
+    $('#expiry_type').val(value);
 
-    processPriceRequest();
+    var make_price_request = 0;
+    if (value === 'endtime') {
+        Durations.displayEndTime();
+        if (Defaults.get('expiry_date')) {
+            Durations.selectEndDate(moment(Defaults.get('expiry_date')));
+            make_price_request = -1;
+        }
+        Defaults.remove('duration_units', 'duration_amount');
+    } else {
+        StartDates.enable();
+        Durations.display();
+        if (Defaults.get('duration_units')) {
+            onDurationUnitChange(Defaults.get('duration_units'));
+        }
+        var duration_amount = Defaults.get('duration_amount');
+        if (duration_amount && duration_amount > $('#duration_minimum').text()) {
+            $('#duration_amount').val(duration_amount);
+        }
+        make_price_request = 1;
+        Defaults.remove('expiry_date', 'expiry_time', 'end_date');
+        Durations.validateMinDurationAmount();
+    }
+
+    return make_price_request;
+}
+
+function onDurationUnitChange(value) {
+    if (!value || !$('#duration_units').find('option[value=' + value + ']').length) {
+        return 0;
+    }
+
+    $('#duration_units').val(value);
+    Defaults.set('duration_units', value);
+
+    Durations.select_unit(value);
+    Durations.populate();
+
+    return 1;
 }
 
 module.exports = {
-    processActiveSymbols      : processActiveSymbols,
-    processMarket             : processMarket,
-    processContract           : processContract,
-    processContractForm       : processContractForm,
-    forgetTradingStreams      : forgetTradingStreams,
-    processForgetProposals    : processForgetProposals,
-    processPriceRequest       : processPriceRequest,
-    processForgetTicks        : processForgetTicks,
-    processTick               : processTick,
-    processProposal           : processProposal,
-    processTradingTimesRequest: processTradingTimesRequest,
-    processTradingTimes       : processTradingTimes,
+    processActiveSymbols: processActiveSymbols,
+    processMarket       : processMarket,
+    processContract     : processContract,
+    processContractForm : processContractForm,
+    forgetTradingStreams: forgetTradingStreams,
+    processForgetTicks  : processForgetTicks,
+    processTick         : processTick,
+    processProposal     : processProposal,
+    processTradingTimes : processTradingTimes,
+    onExpiryTypeChange  : onExpiryTypeChange,
+    onDurationUnitChange: onDurationUnitChange,
 };

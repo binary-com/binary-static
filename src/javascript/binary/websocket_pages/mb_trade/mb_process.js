@@ -8,7 +8,8 @@ var TradingAnalysis    = require('../trade/analysis').TradingAnalysis;
 var japanese_client    = require('../../common_functions/country_base').japanese_client;
 var displayUnderlyings = require('../trade/common').displayUnderlyings;
 var showFormOverlay    = require('../trade/common').showFormOverlay;
-var localize = require('../../base/localize').localize;
+var processForgetTicks = require('../trade/process').processForgetTicks;
+var localize           = require('../../base/localize').localize;
 
 var MBProcess = (function() {
     var market_status = '',

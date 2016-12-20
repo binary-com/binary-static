@@ -9,6 +9,8 @@ var PortfolioWS = require('../user/account/portfolio/portfolio.init').PortfolioW
 var State  = require('../../base/storage').State;
 var GTM    = require('../../base/gtm').GTM;
 var Client = require('../../base/client').Client;
+var processTradingTimes  = require('../trade/process').processTradingTimes;
+var forgetTradingStreams = require('../trade/process').forgetTradingStreams;
 
 /*
  * This Message object process the response from server and fire
