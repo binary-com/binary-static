@@ -318,7 +318,7 @@ var Client = (function () {
         });
         localStorage.removeItem('risk_classification');
         localStorage.removeItem('risk_classification.response');
-        page.reload();
+        window.location.reload();
     };
 
     var on_change_loginid = function() {
@@ -350,7 +350,7 @@ var Client = (function () {
         GTM.set_login_flag();
         localStorage.setItem('active_loginid', loginid);
         $('.login-id-list a').removeAttr('disabled');
-        page.reload();
+        window.location.reload();
     };
 
     // type can take one or more params, separated by comma

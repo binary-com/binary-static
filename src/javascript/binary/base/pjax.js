@@ -6,6 +6,11 @@ var GTM          = require('./gtm').GTM;
 var SessionStore = require('./storage').SessionStore;
 var State        = require('./storage').State;
 var Contents     = require('./contents').Contents;
+var japanese_client = require('../common_functions/country_base').japanese_client;
+var url_for = require('./url').url_for;
+var Client = require('./client').Client;
+var Login = require('./login').Login;
+var page = require('./page').page;
 
 var make_mobile_menu = function () {
     if ($('#mobile-menu-container').is(':visible')) {
@@ -178,6 +183,13 @@ onLoad.queue(GTM.push_data_layer);
 
 onLoad.queue(function () {
     page.on_load();
+    $('#logo').on('click', function() {
+        load_with_pjax(url_for(Client.get_value('is_logged_in') ? japanese_client() ? 'multi_barriers_trading' : 'trading' : ''));
+    });
+    $('#btn_login').on('click', function(e) {
+        e.preventDefault();
+        Login.redirect_to_login();
+    });
 });
 
 onUnload.queue(function () {

@@ -33,6 +33,7 @@ var Clock    = require('../base/clock').Clock;
 var Header   = require('../base/header').Header;
 var LocalStore = require('../base/storage').LocalStore;
 var Client     = require('../base/client').Client;
+var page       = require('../base/page').page;
 var check_risk_classification       = require('../common_functions/check_risk_classification').check_risk_classification;
 var qualify_for_risk_classification = require('../common_functions/check_risk_classification').qualify_for_risk_classification;
 
