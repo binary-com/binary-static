@@ -1,5 +1,4 @@
-var Durations_Beta             = require('./duration').Durations_Beta;
-var StartDates_Beta            = require('./starttime').StartDates_Beta;
+var Contract_Beta              = require('./contract').Contract_Beta;
 var Content                    = require('../../../common_functions/content').Content;
 var format_money               = require('../../../common_functions/currency_to_symbol').format_money;
 var moment                     = require('moment');
@@ -7,7 +6,11 @@ var contractTypeDisplayMapping = require('../common').contractTypeDisplayMapping
 var resetPriceMovement         = require('../common').resetPriceMovement;
 var displayCommentPrice        = require('../common').displayCommentPrice;
 var displayCommentSpreads      = require('../common').displayCommentSpreads;
+var showPriceOverlay           = require('../common').showPriceOverlay;
 var displayPriceMovement       = require('../common_independent').displayPriceMovement;
+var getTradingTimes            = require('../common_independent').getTradingTimes;
+var getStartDateNode           = require('../common_independent').getStartDateNode;
+var Defaults                   = require('../defaults').Defaults;
 var isVisible                  = require('../../../common_functions/common_functions').isVisible;
 
 /*
@@ -31,15 +34,15 @@ var Price_Beta = (function() {
 
     var createProposal = function(typeOfContract) {
         var proposal = {
-            proposal: 1,
-            subscribe: 1
+            proposal : 1,
+            subscribe: 1,
         };
         var underlying = document.getElementById('underlying'),
             contractType = typeOfContract,
             amountType = document.getElementById('amount_type'),
             currency = document.getElementById('currency'),
             payout = document.getElementById('amount'),
-            startTime = StartDates_Beta.node(),
+            startTime = getStartDateNode(),
             expiryType = document.getElementById('expiry_type'),
             duration = document.getElementById('duration_amount'),
             durationUnit = document.getElementById('duration_units'),
@@ -54,88 +57,89 @@ var Price_Beta = (function() {
             stopProfit = document.getElementById('stop_profit');
 
         if (payout && isVisible(payout) && payout.value) {
-            proposal['amount'] = parseFloat(payout.value);
+            proposal.amount = parseFloat(payout.value);
         }
 
         if (amountType && isVisible(amountType) && amountType.value) {
-            proposal['basis'] = amountType.value;
+            proposal.basis = amountType.value;
         }
 
         if (contractType) {
-            proposal['contract_type'] = typeOfContract;
+            proposal.contract_type = typeOfContract;
         }
 
         if (currency && (currency.value || currency.getAttribute('value'))) {
-            proposal['currency'] = currency.value || currency.getAttribute('value');
+            proposal.currency = currency.value || currency.getAttribute('value');
         }
 
         if (underlying && underlying.value) {
-            proposal['symbol'] = underlying.value;
+            proposal.symbol = underlying.value;
         }
 
         if (startTime && isVisible(startTime) && startTime.value !== 'now') {
-            proposal['date_start'] = startTime.value;
+            proposal.date_start = startTime.value;
         }
 
         if (expiryType && isVisible(expiryType) && expiryType.value === 'duration') {
-            proposal['duration'] = parseInt(duration.value);
-            proposal['duration_unit'] = durationUnit.value;
+            proposal.duration = parseInt(duration.value);
+            proposal.duration_unit = durationUnit.value;
         } else if (expiryType && isVisible(expiryType) && expiryType.value === 'endtime') {
             var endDate2 = endDate.getAttribute('data-value');
-            var endTime2 = Durations_Beta.getTime();
+            var endTime2 = Defaults.get('expiry_time');
             if (!endTime2) {
-                var trading_times = Durations_Beta.trading_times();
+                var trading_times = getTradingTimes();
                 if (trading_times.hasOwnProperty(endDate2) && typeof trading_times[endDate2][underlying.value] === 'object' && trading_times[endDate2][underlying.value].length && trading_times[endDate2][underlying.value][0] !== '--') {
-                    if( trading_times[endDate2][underlying.value].length>1)
+                    if (trading_times[endDate2][underlying.value].length > 1) {
                         endTime2 = trading_times[endDate2][underlying.value][1];
-                    else
-                         endTime2=trading_times[endDate2][underlying.value];
+                    } else {
+                        endTime2 = trading_times[endDate2][underlying.value];
+                    }
                 }
             }
 
-            proposal['date_expiry'] = moment.utc(endDate2 + " " + endTime2).unix();
+            proposal.date_expiry = moment.utc(endDate2 + ' ' + endTime2).unix();
             // For stopping tick trade behaviour
-            proposal['duration_unit'] = "m";
+            proposal.duration_unit = 'm';
         }
 
         if (barrier && isVisible(barrier) && barrier.value) {
-            proposal['barrier'] = barrier.value;
+            proposal.barrier = barrier.value;
         }
 
         if (highBarrier && isVisible(highBarrier) && highBarrier.value) {
-            proposal['barrier'] = highBarrier.value;
+            proposal.barrier = highBarrier.value;
         }
 
         if (lowBarrier && isVisible(lowBarrier) && lowBarrier.value) {
-            proposal['barrier2'] = lowBarrier.value;
+            proposal.barrier2 = lowBarrier.value;
         }
 
         if (prediction && isVisible(prediction)) {
-            proposal['barrier'] = parseInt(prediction.value);
+            proposal.barrier = parseInt(prediction.value);
         }
 
         if (amountPerPoint && isVisible(amountPerPoint)) {
-            proposal['amount_per_point'] = parseFloat(amountPerPoint.value);
+            proposal.amount_per_point = parseFloat(amountPerPoint.value);
         }
 
         if (stopType && isVisible(stopType)) {
-            proposal['stop_type'] = stopType.value;
+            proposal.stop_type = stopType.value;
         }
 
         if (stopLoss && isVisible(stopLoss)) {
-            proposal['stop_loss'] = parseFloat(stopLoss.value);
+            proposal.stop_loss = parseFloat(stopLoss.value);
         }
 
         if (stopProfit && isVisible(stopProfit)) {
-            proposal['stop_profit'] = parseFloat(stopProfit.value);
+            proposal.stop_profit = parseFloat(stopProfit.value);
         }
 
         if (contractType) {
-            proposal['contract_type'] = typeOfContract;
+            proposal.contract_type = typeOfContract;
         }
 
-        proposal['passthrough'] = {
-            form_id: form_id
+        proposal.passthrough = {
+            form_id: form_id,
         };
 
         resetPriceMovement();
@@ -144,11 +148,11 @@ var Price_Beta = (function() {
     };
 
     var display = function(details, contractType) {
-        var proposal = details['proposal'];
-        var id = proposal ? proposal['id'] : '';
-        var params = details['echo_req'];
+        var proposal = details.proposal;
+        var id = proposal ? proposal.id : '';
+        var params = details.echo_req;
 
-        var type = params['contract_type'];
+        var type = params.contract_type;
         if (id && !type) {
             type = typeDisplayIdMapping[id];
         }
@@ -170,8 +174,8 @@ var Price_Beta = (function() {
 
         var container = document.getElementById('price_container_' + position);
         if (!container) return;
-        if (!$(container).is(":visible")) {
-            $(container).fadeIn(200, function(){ $(container).css('display', 'flex'); });
+        if (!$(container).is(':visible')) {
+            $(container).fadeIn(200, function() { $(container).css('display', 'flex'); });
         }
 
         var h4 = container.getElementsByClassName('contract_heading')[0],
@@ -185,57 +189,57 @@ var Price_Beta = (function() {
             error = container.getElementsByClassName('contract_error')[0],
             currency = document.getElementById('currency');
 
-        var display = type ? (contractType ? contractType[type] : '') : '';
-        if (display) {
+        var display_type = type ? (contractType ? contractType[type] : '') : '';
+        if (display_type) {
             h4.setAttribute('class', 'contract_heading ' + type);
             if (is_spread) {
-                if (position === "top") {
+                if (position === 'top') {
                     h4.textContent = Content.localize().textSpreadTypeLong;
                 } else {
                     h4.textContent = Content.localize().textSpreadTypeShort;
                 }
             } else {
-                h4.textContent = display;
+                h4.textContent = display_type;
             }
         }
 
         var setData = function(data) {
             if (!data) return;
-            if (data['display_value']) {
+            if (data.display_value) {
                 if (is_spread) {
                     $('.stake:visible').hide();
-                    amount.textContent = data['display_value'];
+                    amount.textContent = data.display_value;
                 } else {
                     $('.stake:hidden').show();
                     stake.textContent = page.text.localize('Stake') + ': ';
-                    amount.textContent = format_money((currency.value || currency.getAttribute('value')), data['display_value']);
+                    amount.textContent = format_money((currency.value || currency.getAttribute('value')), data.display_value);
                 }
                 $('.stake_wrapper:hidden').show();
             } else {
                 $('.stake_wrapper:visible').hide();
             }
 
-            if (data['payout']) {
-              payout.textContent = (is_spread ? page.text.localize('Payout/point') : page.text.localize('Payout')) + ': ';
-              payoutAmount.textContent = format_money((currency.value || currency.getAttribute('value')), data['payout']*1);
-              $('.payout_wrapper:hidden').show();
+            if (data.payout) {
+                payout.textContent = (is_spread ? page.text.localize('Payout/point') : page.text.localize('Payout')) + ': ';
+                payoutAmount.textContent = format_money((currency.value || currency.getAttribute('value')), +data.payout);
+                $('.payout_wrapper:hidden').show();
             } else {
-              $('.payout_wrapper:visible').hide();
+                $('.payout_wrapper:visible').hide();
             }
 
-            if (data['longcode'] && window.innerWidth > 500 && !page.client_status_detected('unwelcome')) {
-                description.setAttribute('data-balloon', data['longcode']);
+            if (data.longcode && window.innerWidth > 500 && !page.client_status_detected('unwelcome')) {
+                description.setAttribute('data-balloon', data.longcode);
             } else {
                 description.removeAttribute('data-balloon');
             }
         };
 
-        if (details['error']) {
+        if (details.error) {
             purchase.hide();
             comment.hide();
-            setData(details['error']['details']);
+            setData(details.error.details);
             error.show();
-            error.textContent = details['error']['message'];
+            error.textContent = details.error.message;
         } else {
             setData(proposal);
             if ($('#websocket_form').find('.error-field').length > 0) {
@@ -246,24 +250,24 @@ var Price_Beta = (function() {
             comment.show();
             error.hide();
             if (is_spread) {
-                displayCommentSpreads(comment, (currency.value || currency.getAttribute('value')), proposal['spread']);
+                displayCommentSpreads(comment, (currency.value || currency.getAttribute('value')), proposal.spread);
             } else {
-                displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal['ask_price'], proposal['payout']);
+                displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
             }
             var oldprice = purchase.getAttribute('data-display_value'),
                 oldpayout = purchase.getAttribute('data-payout');
-            displayPriceMovement(amount, oldprice, proposal['display_value']);
-            displayPriceMovement(payoutAmount, oldpayout, proposal['payout']);
+            displayPriceMovement(amount, oldprice, proposal.display_value);
+            displayPriceMovement(payoutAmount, oldpayout, proposal.payout);
             purchase.setAttribute('data-purchase-id', id);
-            purchase.setAttribute('data-ask-price', proposal['ask_price']);
-            purchase.setAttribute('data-display_value', proposal['display_value']);
-            purchase.setAttribute('data-payout', proposal['payout']);
+            purchase.setAttribute('data-ask-price', proposal.ask_price);
+            purchase.setAttribute('data-display_value', proposal.display_value);
+            purchase.setAttribute('data-payout', proposal.payout);
             purchase.setAttribute('data-symbol', id);
-            for (var key in params) {
+            Object.keys(params).forEach(function(key) {
                 if (key && key !== 'proposal') {
                     purchase.setAttribute('data-' + key, params[key]);
                 }
-            }
+            });
         }
     };
 
@@ -275,22 +279,65 @@ var Price_Beta = (function() {
         form_id = 0;
     };
 
-    return {
-        proposal: createProposal,
-        display: display,
-        clearMapping: clearMapping,
-        idDisplayMapping: function() {
-            return typeDisplayIdMapping;
-        },
-        getFormId: function() {
-            return form_id;
-        },
-        incrFormId: function() {
-            form_id++;
-        },
-        clearFormId: clearFormId
-    };
+    /*
+     * Function to request for cancelling the current price proposal
+     */
+    function processForgetProposals_Beta() {
+        showPriceOverlay();
+        BinarySocket.send({
+            forget_all: 'proposal',
+        });
+        Price_Beta.clearMapping();
+    }
 
+    /*
+     * Function to process and calculate price based on current form
+     * parameters or change in form parameters
+     */
+    function processPriceRequest_Beta() {
+        Price_Beta.incrFormId();
+        processForgetProposals_Beta();
+        showPriceOverlay();
+        var types = Contract_Beta.contractType()[Contract_Beta.form()];
+        if (Contract_Beta.form() === 'digits') {
+            switch (sessionStorage.getItem('formname')) {
+                case 'matchdiff':
+                    types = {
+                        DIGITMATCH: 1,
+                        DIGITDIFF : 1,
+                    };
+                    break;
+                case 'evenodd':
+                    types = {
+                        DIGITEVEN: 1,
+                        DIGITODD : 1,
+                    };
+                    break;
+                case 'overunder':
+                    types = {
+                        DIGITOVER : 1,
+                        DIGITUNDER: 1,
+                    };
+                // no default
+            }
+        }
+        Object.keys(types).forEach(function(typeOfContract) {
+            BinarySocket.send(Price_Beta.proposal(typeOfContract));
+        });
+    }
+
+    return {
+        proposal        : createProposal,
+        display         : display,
+        clearMapping    : clearMapping,
+        clearFormId     : clearFormId,
+        idDisplayMapping: function() { return typeDisplayIdMapping; },
+        getFormId       : function() { return form_id; },
+        incrFormId      : function() { form_id++; },
+
+        processForgetProposals_Beta: processForgetProposals_Beta,
+        processPriceRequest_Beta   : processPriceRequest_Beta,
+    };
 })();
 
 module.exports = {

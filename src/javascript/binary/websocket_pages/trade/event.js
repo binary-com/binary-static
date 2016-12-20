@@ -4,8 +4,12 @@ var Contract                   = require('./contract').Contract;
 var Defaults                   = require('./defaults').Defaults;
 var Durations                  = require('./duration').Durations;
 var Price                      = require('./price').Price;
-var StartDates                 = require('./starttime').StartDates;
 var Tick                       = require('./tick').Tick;
+var processMarket              = require('./process').processMarket;
+var processContractForm        = require('./process').processContractForm;
+var processForgetTicks         = require('./process').processForgetTicks;
+var onExpiryTypeChange         = require('./process').onExpiryTypeChange;
+var onDurationUnitChange       = require('./process').onDurationUnitChange;
 var onlyNumericOnKeypress      = require('../../common_functions/event_handler').onlyNumericOnKeypress;
 var onlyNumericColonOnKeypress = require('../../common_functions/event_handler').onlyNumericColonOnKeypress;
 var moment                     = require('moment');
@@ -13,6 +17,7 @@ var setFormPlaceholderContent  = require('./set_values').setFormPlaceholderConte
 var isVisible                  = require('../../common_functions/common_functions').isVisible;
 var showPriceOverlay           = require('./common').showPriceOverlay;
 var showFormOverlay            = require('./common').showFormOverlay;
+var hideOverlayContainer       = require('./common').hideOverlayContainer;
 var toggleActiveCatMenuElement = require('./common').toggleActiveCatMenuElement;
 var debounce                   = require('./common').debounce;
 var submitForm                 = require('./common').submitForm;
@@ -21,6 +26,7 @@ var updateWarmChart            = require('./common').updateWarmChart;
 var reloadPage                 = require('./common').reloadPage;
 var chartFrameSource           = require('./common').chartFrameSource;
 var timeIsValid                = require('./common').timeIsValid;
+var getStartDateNode           = require('./common_independent').getStartDateNode;
 var TimePicker                 = require('../../components/time_picker').TimePicker;
 var dateValueChanged           = require('../../common_functions/common_functions').dateValueChanged;
 
@@ -35,59 +41,13 @@ var dateValueChanged           = require('../../common_functions/common_function
 var TradingEvents = (function () {
     'use strict';
 
-    var onExpiryTypeChange = function(value){
-        if(!value || !$('#expiry_type').find('option[value='+value+']').length){
-            value = 'duration';
-        }
-        $('#expiry_type').val(value);
-
-        var make_price_request = 0;
-        if(value === 'endtime'){
-            Durations.displayEndTime();
-            if(Defaults.get('expiry_date')){
-                Durations.selectEndDate(moment(Defaults.get('expiry_date')));
-                make_price_request = -1;
-            }
-            Defaults.remove('duration_units', 'duration_amount');
-        } else {
-            StartDates.enable();
-            Durations.display();
-            if(Defaults.get('duration_units')){
-                TradingEvents.onDurationUnitChange(Defaults.get('duration_units'));
-            }
-            var duration_amount = Defaults.get('duration_amount');
-            if(duration_amount && duration_amount > $('#duration_minimum').text()){
-                $('#duration_amount').val(duration_amount);
-            }
-            make_price_request = 1;
-            Defaults.remove('expiry_date', 'expiry_time', 'end_date');
-            Durations.validateMinDurationAmount();
-        }
-
-        return make_price_request;
-    };
-
-    var onDurationUnitChange = function(value){
-        if(!value || !$('#duration_units').find('option[value='+value+']').length){
-            return 0;
-        }
-
-        $('#duration_units').val(value);
-        Defaults.set('duration_units', value);
-
-        Durations.select_unit(value);
-        Durations.populate();
-
-        return 1;
-    };
-
     var initiate = function () {
         /*
          * attach event to market list, so when client change market we need to update undelryings
          * and request for new Contract details to populate the form and request price accordingly
          */
         var marketNavElement = document.getElementById('contract_markets');
-        var onMarketChange = function(market){
+        var onMarketChange = function(market) {
             showPriceOverlay();
             Defaults.set('market', market);
 
@@ -148,7 +108,7 @@ var TradingEvents = (function () {
                     chartFrameSource();
                     showFormOverlay();
                     showPriceOverlay();
-                    if(e.target.selectedIndex < 0) {
+                    if (e.target.selectedIndex < 0) {
                         e.target.selectedIndex = 0;
                     }
                     var underlying = e.target.value;
@@ -174,13 +134,13 @@ var TradingEvents = (function () {
         /*
          * bind event to change in duration amount, request new price
          */
-        function triggerOnDurationChange(e){
-            if (e.target.value % 1 !== 0 ) {
+        function triggerOnDurationChange(e) {
+            if (e.target.value % 1 !== 0) {
                 e.target.value = Math.floor(e.target.value);
             }
             Defaults.set('duration_amount', e.target.value);
             Durations.select_amount(e.target.value);
-            processPriceRequest();
+            Price.processPriceRequest();
             submitForm(document.getElementById('websocket_form'));
         }
         var durationAmountElement = document.getElementById('duration_amount'),
@@ -196,10 +156,11 @@ var TradingEvents = (function () {
             $('#duration_amount').on('change', debounce(function (e) {
                 // using Defaults, to update the value by datepicker if it was emptied by keyboard (delete)
                 Durations.validateMinDurationAmount();
-                if(inputEventTriggered === false || !Defaults.get('duration_amount'))
+                if (inputEventTriggered === false || !Defaults.get('duration_amount'))                    {
                     triggerOnDurationChange(e);
-                else
+                } else {
                     inputEventTriggered = false;
+                }
             }));
         }
 
@@ -212,7 +173,7 @@ var TradingEvents = (function () {
             expiryTypeElement.addEventListener('change', function(e) {
                 Defaults.set('expiry_type', e.target.value);
                 onExpiryTypeChange(e.target.value);
-                if (expiryTypeElement.value !== 'endtime') processPriceRequest();
+                if (expiryTypeElement.value !== 'endtime') Price.processPriceRequest();
             });
         }
 
@@ -224,7 +185,7 @@ var TradingEvents = (function () {
             durationUnitElement.addEventListener('change', function (e) {
                 Defaults.remove('barrier', 'barrier_high', 'barrier_low');
                 onDurationUnitChange(e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
             });
         }
 
@@ -242,6 +203,7 @@ var TradingEvents = (function () {
                 if (timeIsValid($('#expiry_date'))) {
                     Durations.selectEndDate(moment(this.getAttribute('data-value')));
                 }
+                return true;
             });
         }
 
@@ -255,8 +217,9 @@ var TradingEvents = (function () {
                     }
                     if (timeIsValid($('#expiry_time'))) {
                         Durations.setTime(endTimeElement.value);
-                        processPriceRequest();
+                        Price.processPriceRequest();
                     }
+                    return true;
                 });
         }
 
@@ -267,13 +230,13 @@ var TradingEvents = (function () {
         if (amountElement) {
             amountElement.addEventListener('keypress', onlyNumericOnKeypress);
 
-            amountElement.addEventListener('input', debounce( function(e) {
+            amountElement.addEventListener('input', debounce(function(e) {
                 e.target.value = e.target.value.replace(/[^0-9.]/g, '');
                 if (isStandardFloat(e.target.value)) {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
                 Defaults.set('amount', e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -283,13 +246,13 @@ var TradingEvents = (function () {
          * whether start time is forward starting or not and request
          * new price
          */
-        var dateStartElement = StartDates.node();
+        var dateStartElement = getStartDateNode();
         if (dateStartElement) {
             dateStartElement.addEventListener('change', function (e) {
                 Defaults.set('date_start', e.target.value);
                 var r = Durations.onStartDateChange(e.target.value);
-                if(r>=0){
-                    processPriceRequest();
+                if (r >= 0) {
+                    Price.processPriceRequest();
                 }
             });
         }
@@ -302,7 +265,7 @@ var TradingEvents = (function () {
         if (amountTypeElement) {
             amountTypeElement.addEventListener('change', function (e) {
                 Defaults.set('amount_type', e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
             });
         }
 
@@ -317,7 +280,7 @@ var TradingEvents = (function () {
                     var elem = document.getElementById('underlying');
                     var underlyings = elem.children;
 
-                    for (var i = 0, len = underlyings.length; i < len; i++ ) {
+                    for (var i = 0, len = underlyings.length; i < len; i++) {
                         if (e.target.value !== 'all' && e.target.value !== underlyings[i].className) {
                             underlyings[i].disabled = true;
                         } else {
@@ -345,7 +308,7 @@ var TradingEvents = (function () {
                 if (stopTypeDollarLabel && isVisible(stopTypeDollarLabel)) {
                     stopTypeDollarLabel.textContent = e.target.value;
                 }
-                processPriceRequest();
+                Price.processPriceRequest();
             });
         }
 
@@ -357,21 +320,22 @@ var TradingEvents = (function () {
                 var id = this.getAttribute('data-purchase-id'),
                     askPrice = this.getAttribute('data-ask-price');
 
-                var params = {buy: id, price: askPrice, passthrough:{}};
-                for(var attr in this.attributes){
-                    if(attr && this.attributes[attr] && this.attributes[attr].name &&
-                        !/data\-balloon/.test(this.attributes[attr].name)){ // do not send tooltip data
+                var params = { buy: id, price: askPrice, passthrough: {} };
+                Object.keys(this.attributes).forEach(function(attr) {
+                    if (attr && this.attributes[attr] && this.attributes[attr].name &&
+                            !/data\-balloon/.test(this.attributes[attr].name)) { // do not send tooltip data
                         var m = this.attributes[attr].name.match(/data\-(.+)/);
 
-                        if(m && m[1] && m[1]!=="purchase-id" && m[1]!=="passthrough"){
+                        if (m && m[1] && m[1] !== 'purchase-id' && m[1] !== 'passthrough') {
                             params.passthrough[m[1]] = this.attributes[attr].value;
                         }
                     }
-                }
+                }, this);
                 if (id && askPrice) {
+                    $('.purchase_button').css('visibility', 'hidden');
                     BinarySocket.send(params);
                     Price.incrFormId();
-                    processForgetProposals();
+                    Price.processForgetProposals();
                 }
             }
         });
@@ -382,9 +346,8 @@ var TradingEvents = (function () {
         $('#close_confirmation_container, #contract_purchase_new_trade').on('click', function (e) {
             if (e.target) {
                 e.preventDefault();
-                document.getElementById('contract_confirmation_container').style.display = 'none';
-                document.getElementById('contracts_list').style.display = 'flex';
-                processPriceRequest();
+                hideOverlayContainer();
+                Price.processPriceRequest();
             }
         });
 
@@ -393,10 +356,10 @@ var TradingEvents = (function () {
          */
         var barrierElement = document.getElementById('barrier');
         if (barrierElement) {
-            barrierElement.addEventListener('input', debounce( function (e) {
+            barrierElement.addEventListener('input', debounce(function (e) {
                 Barriers.validateBarrier();
                 Defaults.set('barrier', e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }, 1000));
         }
@@ -406,9 +369,9 @@ var TradingEvents = (function () {
          */
         var lowBarrierElement = document.getElementById('barrier_low');
         if (lowBarrierElement) {
-            lowBarrierElement.addEventListener('input', debounce( function (e) {
+            lowBarrierElement.addEventListener('input', debounce(function (e) {
                 Defaults.set('barrier_low', e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -418,9 +381,9 @@ var TradingEvents = (function () {
          */
         var highBarrierElement = document.getElementById('barrier_high');
         if (highBarrierElement) {
-            highBarrierElement.addEventListener('input', debounce( function (e) {
+            highBarrierElement.addEventListener('input', debounce(function (e) {
                 Defaults.set('barrier_high', e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -430,10 +393,9 @@ var TradingEvents = (function () {
          */
         var predictionElement = document.getElementById('prediction');
         if (predictionElement) {
-
-            predictionElement.addEventListener('change', debounce( function (e) {
+            predictionElement.addEventListener('change', debounce(function (e) {
                 Defaults.set('prediction', e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -443,12 +405,12 @@ var TradingEvents = (function () {
          */
         var amountPerPointElement = document.getElementById('amount_per_point');
         if (amountPerPointElement) {
-            amountPerPointElement.addEventListener('input', debounce( function (e) {
+            amountPerPointElement.addEventListener('input', debounce(function (e) {
                 if (isStandardFloat(e.target.value)) {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
                 Defaults.set('amount_per_point', e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -458,7 +420,7 @@ var TradingEvents = (function () {
          */
         var stopTypeEvent = function (e) {
             Defaults.set('stop_type', e.target.value);
-            processPriceRequest();
+            Price.processPriceRequest();
         };
 
         var stopTypeElement = document.querySelectorAll('input[name="stop_type"]');
@@ -473,12 +435,12 @@ var TradingEvents = (function () {
          */
         var stopLossElement = document.getElementById('stop_loss');
         if (stopLossElement) {
-            stopLossElement.addEventListener('input', debounce( function (e) {
+            stopLossElement.addEventListener('input', debounce(function (e) {
                 if (isStandardFloat(e.target.value)) {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
                 Defaults.set('stop_loss', e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -488,31 +450,31 @@ var TradingEvents = (function () {
          */
         var stopProfitElement = document.getElementById('stop_profit');
         if (stopProfitElement) {
-            stopProfitElement.addEventListener('input', debounce( function (e) {
+            stopProfitElement.addEventListener('input', debounce(function (e) {
                 if (isStandardFloat(e.target.value)) {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
                 Defaults.set('stop_profit', e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
 
         // For verifying there are 2 digits after decimal
-        var isStandardFloat = (function(value){
-            return (!isNaN(value) && value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length>2);
+        var isStandardFloat = (function(value) {
+            return (!isNaN(value) && value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length > 2);
         });
 
         var init_logo = document.getElementById('trading_init_progress');
-        if(init_logo){
-            init_logo.addEventListener('click', debounce( function () {
+        if (init_logo) {
+            init_logo.addEventListener('click', debounce(function () {
                 reloadPage();
             }));
         }
 
         var tip = document.getElementById('symbol_tip');
-        if(init_logo){
-            tip.addEventListener('click', debounce( function (e) {
+        if (init_logo) {
+            tip.addEventListener('click', debounce(function (e) {
                 var url = e.target.getAttribute('target');
                 load_with_pjax(url);
             }));
@@ -522,8 +484,8 @@ var TradingEvents = (function () {
          * attach datepicker and timepicker to end time durations
          * have to use jquery
          */
-         attachTimePicker();
-         $("#expiry_time").on('focus click', attachTimePicker);
+        attachTimePicker();
+        $('#expiry_time').on('focus click', attachTimePicker);
     };
 
     function attachTimePicker() {
@@ -537,8 +499,6 @@ var TradingEvents = (function () {
 
     return {
         init: initiate,
-        onExpiryTypeChange  : onExpiryTypeChange,
-        onDurationUnitChange: onDurationUnitChange
     };
 })();
 

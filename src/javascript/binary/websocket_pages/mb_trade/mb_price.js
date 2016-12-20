@@ -17,14 +17,13 @@ var addComma        = require('../../common_functions/string_util').addComma;
 var MBPrice = (function() {
     'use strict';
 
-    var prices            = {},
-        contract_types    = {},
-        barriers          = [],
-        req_id            = 0,
-        res_count         = 0,
-        is_displayed      = false,
-        price_selector    = '.prices-wrapper .price-rows',
-        proposal_response = {},
+    var prices         = {},
+        contract_types = {},
+        barriers       = [],
+        req_id         = 0,
+        res_count      = 0,
+        is_displayed   = false,
+        price_selector = '.prices-wrapper .price-rows',
         $tables;
 
     var addPriceObj = function(req) {
@@ -99,7 +98,7 @@ var MBPrice = (function() {
         var values     = getValues(proposal),
             values_opp = getValues(prices[barrier][contract_info.opposite]);
 
-        price_rows[+contract_info.order    ].innerHTML = makePriceRow(values    , true);
+        price_rows[+contract_info.order].innerHTML     = makePriceRow(values,     true);
         price_rows[+contract_info_opp.order].innerHTML = makePriceRow(values_opp, true);
     };
 
@@ -109,20 +108,21 @@ var MBPrice = (function() {
             contract_type = proposal.echo_req.contract_type,
             proposal_opp  = prices[barrier][contract_types[contract_type].opposite];
         return {
-            contract_type : contract_type,
-            barrier       : barrier,
-            id            : !proposal.error ? proposal.proposal.id : undefined,
-            is_active     : !proposal.error && proposal.proposal.ask_price,
-            message       :  proposal.error && proposal.error.code !== 'RateLimit' ? proposal.error.message : '',
-            ask_price     : getAskPrice(proposal),
-            sell_price    : payout - getAskPrice(proposal_opp),
-            ask_price_movement  : !proposal.error ? getMovementDirection(proposal.prev_price, proposal.proposal.ask_price) : '',
-            sell_price_movement : proposal_opp && !proposal_opp.error ? getMovementDirection(proposal_opp.proposal.ask_price, proposal_opp.prev_price) : '',
+            contract_type      : contract_type,
+            barrier            : barrier,
+            id                 : !proposal.error ? proposal.proposal.id : undefined,
+            is_active          : !proposal.error && proposal.proposal.ask_price,
+            message            : proposal.error && proposal.error.code !== 'RateLimit' ? proposal.error.message : '',
+            ask_price          : getAskPrice(proposal),
+            sell_price         : payout - getAskPrice(proposal_opp),
+            ask_price_movement : !proposal.error ? getMovementDirection(proposal.prev_price, proposal.proposal.ask_price) : '',
+            sell_price_movement: proposal_opp && !proposal_opp.error ? getMovementDirection(proposal_opp.proposal.ask_price, proposal_opp.prev_price) : '',
         };
     };
 
     var getAskPrice = function(proposal) {
-        return proposal.error || +proposal.proposal.ask_price === 0 ? proposal.echo_req.amount : proposal.proposal.ask_price;
+        return (proposal.error || +proposal.proposal.ask_price === 0) ?
+                proposal.echo_req.amount : proposal.proposal.ask_price;
     };
 
     var getMovementDirection = function(prev, current) {
@@ -136,7 +136,7 @@ var MBPrice = (function() {
                 '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
                 '<div class="gr-4 buy-price">' +
                     '<button class="price-button' + (!values.is_active ? ' inactive' : '') + '"' +
-                        (values.id ? ' onclick="MBPrice.processBuy(\'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
+                        (values.id ? ' onclick="return HandleClick(\'MBPrice\', \'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
                         (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' +
                             '<span class="value-wrapper">' +
                                 '<span class="dynamics ' + (values.ask_price_movement || '') + '"></span>' +
@@ -158,7 +158,7 @@ var MBPrice = (function() {
     function processBuy(barrier, contract_type) {
         if (!barrier || !contract_type) return;
         if (!page.client.is_logged_in) {
-            MBNotifications.show({text: page.text.localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true});
+            MBNotifications.show({ text: page.text.localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true });
             return;
         }
         MBPrice.showPriceOverlay();
@@ -187,19 +187,19 @@ var MBPrice = (function() {
         if (!proposal || proposal.error) return;
 
         var req = {
-            buy   : 1,
-            price : proposal.proposal.ask_price,
+            buy       : 1,
+            price     : proposal.proposal.ask_price,
             parameters: {
-                amount        : proposal.echo_req.amount,
-                barrier       : proposal.echo_req.barrier,
-                basis         : 'payout',
-                contract_type : proposal.echo_req.contract_type,
-                currency      : MBContract.getCurrency(),
-                symbol        : proposal.echo_req.symbol,
-                date_expiry   : proposal.echo_req.date_expiry,
-                trading_period_start  : proposal.echo_req.trading_period_start,
-                app_markup_percentage : '0',
-            }
+                amount               : proposal.echo_req.amount,
+                barrier              : proposal.echo_req.barrier,
+                basis                : 'payout',
+                contract_type        : proposal.echo_req.contract_type,
+                currency             : MBContract.getCurrency(),
+                symbol               : proposal.echo_req.symbol,
+                date_expiry          : proposal.echo_req.date_expiry,
+                trading_period_start : proposal.echo_req.trading_period_start,
+                app_markup_percentage: '0',
+            },
         };
 
         if (proposal.echo_req.barrier2) {
@@ -218,17 +218,17 @@ var MBPrice = (function() {
     };
 
     return {
-        display                : display,
-        addPriceObj            : addPriceObj,
-        processBuy             : processBuy,
-        cleanup                : cleanup,
-        sendBuyRequest         : sendBuyRequest,
-        showPriceOverlay       : showPriceOverlay,
-        hidePriceOverlay       : hidePriceOverlay,
-        getReqId               : function() { return req_id; },
-        increaseReqId          : function() { req_id++; cleanup(); },
-        getPrices              : function() { return prices; },
-        onUnload               : function() { cleanup(); req_id = 0; proposal_response = {}; $tables = undefined; },
+        display         : display,
+        addPriceObj     : addPriceObj,
+        processBuy      : processBuy,
+        cleanup         : cleanup,
+        sendBuyRequest  : sendBuyRequest,
+        showPriceOverlay: showPriceOverlay,
+        hidePriceOverlay: hidePriceOverlay,
+        getReqId        : function() { return req_id; },
+        increaseReqId   : function() { req_id++; cleanup(); },
+        getPrices       : function() { return prices; },
+        onUnload        : function() { cleanup(); req_id = 0; $tables = undefined; },
     };
 })();
 
