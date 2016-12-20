@@ -25,7 +25,7 @@ var Page = function() {
     this.is_loaded_by_pjax = false;
     Client.init();
     this.url = new Url();
-    this.header = new Header(this.url);
+    Header.init(this.url);
     $('#logo').on('click', function() {
         load_with_pjax(page.url.url_for(Client.get_value('is_logged_in') ? japanese_client() ? 'multi_barriers_trading' : 'trading' : ''));
     });
@@ -38,7 +38,7 @@ Page.prototype = {
     on_load: function() {
         this.url.reset();
         localizeForLang(getLanguage());
-        this.header.on_load();
+        Header.on_load();
         this.on_change_loginid();
         this.record_affiliate_exposure();
         Contents.on_load();
@@ -63,7 +63,7 @@ Page.prototype = {
         this.show_notification_outdated_browser();
     },
     on_unload: function() {
-        this.header.on_unload();
+        Header.on_unload();
         Contents.on_unload();
     },
     on_change_loginid: function() {

@@ -4,10 +4,11 @@ var Content     = require('./content').Content;
 var Cookies     = require('../../lib/js-cookie');
 var localize    = require('../base/localize').localize;
 var Client      = require('../base/client').Client;
+var Header      = require('../base/header').Header;
 
 var ValidAccountOpening = (function() {
     var redirectCookie = function() {
-        if (Client.show_login_if_logout(true)) {
+        if (Header.show_login_if_logout(true)) {
             return;
         }
         if (!Client.is_virtual()) {

@@ -7,15 +7,17 @@ var Cookies                   = require('../../lib/js-cookie');
 var check_risk_classification = require('../common_functions/check_risk_classification').check_risk_classification;
 var Login                     = require('./login').Login;
 
-var Header = function(url) {
-    this.menu = new Menu(url);
-};
+var Header = (function() {
+    var menu;
 
-Header.prototype = {
-    on_load: function() {
-        this.show_or_hide_login_form();
-        this.show_or_hide_language();
-        this.logout_handler();
+    var init = function (url) {
+        menu = new Menu(url);
+    };
+
+    var on_load = function() {
+        show_or_hide_login_form();
+        show_or_hide_language();
+        logout_handler();
         check_risk_classification();
         if (!$('body').hasClass('BlueTopBack') && !Login.is_login_pages()) {
             checkClientsCountry();
@@ -23,49 +25,52 @@ Header.prototype = {
         if (Client.get_value('is_logged_in')) {
             $('ul#menu-top').addClass('smaller-font');
         }
-    },
-    on_unload: function() {
-        this.menu.reset();
-    },
-    animate_disappear: function(element) {
+    };
+
+    var on_unload = function() {
+        menu.reset();
+    };
+
+    var animate_disappear = function(element) {
         element.animate({ opacity: 0 }, 100, function() {
             element.css({ visibility: 'hidden', display: 'none' });
         });
-    },
-    animate_appear: function(element) {
+    };
+
+    var animate_appear = function(element) {
         element.css({ visibility: 'visible', display: 'block' })
             .animate({ opacity: 1 }, 100);
-    },
-    show_or_hide_language: function() {
-        var that = this;
+    };
+
+    var show_or_hide_language = function() {
         var $el = $('#select_language'),
             $all_accounts = $('#all-accounts');
         $('.languages').on('click', function(event) {
             event.stopPropagation();
-            that.animate_disappear($all_accounts);
+            animate_disappear($all_accounts);
             if (+$el.css('opacity') === 1) {
-                that.animate_disappear($el);
+                animate_disappear($el);
             } else {
-                that.animate_appear($el);
+                animate_appear($el);
             }
         });
         $(document).unbind('click').on('click', function() {
-            that.animate_disappear($all_accounts);
-            that.animate_disappear($el);
+            animate_disappear($all_accounts);
+            animate_disappear($el);
         });
-    },
-    show_or_hide_login_form: function() {
+    };
+
+    var show_or_hide_login_form = function() {
         if (!Client.get_value('is_logged_in')) return;
         var all_accounts = $('#all-accounts'),
-            language = $('#select_language'),
-            that = this;
+            language = $('#select_language');
         $('.nav-menu').unbind('click').on('click', function(event) {
             event.stopPropagation();
-            that.animate_disappear(language);
+            animate_disappear(language);
             if (+all_accounts.css('opacity') === 1) {
-                that.animate_disappear(all_accounts);
+                animate_disappear(all_accounts);
             } else {
-                that.animate_appear(all_accounts);
+                animate_appear(all_accounts);
             }
         });
         var loginid_select = '';
@@ -93,13 +98,15 @@ Header.prototype = {
             }
         }
         $('.login-id-list').html(loginid_select);
-    },
-    logout_handler: function() {
+    };
+
+    var logout_handler = function() {
         $('a.logout').unbind('click').click(function() {
             Client.send_logout_request();
         });
-    },
-    do_logout: function(response) {
+    };
+
+    var do_logout = function(response) {
         if (response.logout !== 1) return;
         Client.clear_storage_values();
         LocalStore.remove('client.tokens');
@@ -130,8 +137,9 @@ Header.prototype = {
         localStorage.removeItem('risk_classification');
         localStorage.removeItem('risk_classification.response');
         page.reload();
-    },
-    show_login_if_logout: function(shouldReplacePageContents) {
+    };
+
+    var show_login_if_logout = function(shouldReplacePageContents) {
         if (!Client.get_value('is_logged_in') && shouldReplacePageContents) {
             $('#content > .container').addClass('center-text')
                 .html($('<p/>', {
@@ -142,8 +150,17 @@ Header.prototype = {
             $('.login_link').click(function() { Login.redirect_to_login(); });
         }
         return !Client.get_value('is_logged_in');
-    },
-};
+    };
+
+    return {
+        init     : init,
+        do_logout: do_logout,
+        on_load  : on_load,
+        on_unload: on_unload,
+
+        show_login_if_logout: show_login_if_logout,
+    };
+})();
 
 module.exports = {
     Header: Header,
