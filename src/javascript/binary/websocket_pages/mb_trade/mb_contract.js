@@ -73,6 +73,14 @@ var MBContract = (function() {
     // use function to generate elements and append them
     // e.g. element is select and element to append is option
     var appendTextValueChild = function(element, text, value, isSelected) {
+        if (element && !element.nodeName) {
+            if (typeof element === 'string') {
+                element = document.getElementById(element);
+            } else {
+                element = undefined;
+            }
+        }
+        if (!element) return;
         var option = document.createElement('option');
         option.text = text;
         option.value = value;

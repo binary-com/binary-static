@@ -149,10 +149,11 @@ var ForwardWS = (function() {
 
     function checkOnLoad() {
         function clientIsVirtual() {
-            return (
-                page.client.is_virtual() &&
-                ForwardWS.showError(page.text.localize('This feature is not relevant to virtual-money accounts.'))
-            );
+            var is_virtual = page.client.is_virtual();
+            if (is_virtual) {
+                ForwardWS.showError(page.text.localize('This feature is not relevant to virtual-money accounts.'));
+            }
+            return is_virtual;
         }
         if (clientIsVirtual()) return;
         BinarySocket.init({
