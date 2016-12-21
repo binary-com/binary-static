@@ -3,7 +3,6 @@ var isValidDate       = require('../../../common_functions/common_functions').is
 var Content           = require('../../../common_functions/content').Content;
 var generateBirthDate = require('../../../common_functions/attach_dom/birth_date_dropdown').generateBirthDate;
 var japanese_client   = require('../../../common_functions/country_base').japanese_client;
-var PasswordMeter     = require('../../../common_functions/attach_dom/password_strength_meter').PasswordMeter;
 var passwordValid     = require('../../../common_functions/validation').passwordValid;
 var showPasswordError = require('../../../common_functions/validation').showPasswordError;
 
@@ -162,15 +161,10 @@ var ResetPassword = (function () {
             $('#dobdd').insertAfter('#dobmm');
         }
         generateBirthDate();
-        var $pmContainer = $('#password-meter-container');
 
         $('input').keypress(function (e) {
             hideError();
             onEnterKey(e);
-        });
-
-        $('#reset-password1').keyup(function (ev) {
-            PasswordMeter.updateMeter($pmContainer, ev.target.value);
         });
 
         $('#reset:enabled').click(function () {
@@ -185,8 +179,6 @@ var ResetPassword = (function () {
             hideError();
             onDOBChange();
         });
-
-        PasswordMeter.attach($pmContainer);
     }
 
     return {
