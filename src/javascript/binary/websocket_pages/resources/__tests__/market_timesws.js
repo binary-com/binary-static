@@ -2,19 +2,21 @@ var expect = require('chai').expect;
 var market_times = require('../market_timesws').MarketTimes;
 var ws = require('ws');
 var LiveApi = require('binary-live-api').LiveApi;
+
 var api = new LiveApi({ websocket: ws });
 
 describe('Trading Times', function() {
-    var trading_times_res, active_symbols_res;
-    before(function(done){
+    var trading_times_res,
+        active_symbols_res;
+    before(function(done) {
         this.timeout(10000);
-        api.getTradingTimes(new Date()).then(function(response){
+        api.getTradingTimes(new Date()).then(function(response) {
             trading_times_res = response.trading_times;
-            if(active_symbols_res) done();
+            if (active_symbols_res) done();
         });
-        api.getActiveSymbolsBrief().then(function(response){
+        api.getActiveSymbolsBrief().then(function(response) {
             active_symbols_res = response.active_symbols;
-            if(trading_times_res) done();
+            if (trading_times_res) done();
         });
     });
 

@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 var CircularDependencyPlugin = require('circular-dependency-plugin');
-//var UnusedFilesWebpackPlugin = require('unused-files-webpack-plugin')["default"];
+// var UnusedFilesWebpackPlugin = require('unused-files-webpack-plugin')["default"];
 
 module.exports = function (grunt) {
     var isProduction = grunt.cli.tasks[0] === 'release',
@@ -18,45 +18,55 @@ module.exports = function (grunt) {
     if (isProduction) {
         plugins.push(
             new webpack.optimize.UglifyJsPlugin({
-                include: /\.min\.js$/,
-                minimize: true,
+                include  : /\.min\.js$/,
+                minimize : true,
                 sourceMap: true,
-                compress: {
+                compress : {
                     warnings: false,
                 },
             })
+        );
+    } else {
+        plugins.push(
+            function() {
+                this.plugin('watch-run', function(watching, callback) {
+                    console.log('');
+                    grunt.log.ok('Compile started at ' + new Date());
+                    callback();
+                });
+            }
         );
     }
 
     return {
         all: {
             node: {
-                fs: "empty"
+                fs: 'empty',
             },
             devtool: isProduction ? 'source-map' : 'cheap-source-map',
-            watch: !isProduction,
-            entry: {
-                'binary.js': './src/javascript',
+            watch  : !isProduction,
+            entry  : {
+                'binary.js'    : './src/javascript',
                 'binary.min.js': './src/javascript',
             },
             output: {
-                path: global.dist + '/js/',
+                path    : global.dist + '/js/',
                 filename: '[name]',
             },
             module: {
                 loaders: [
                     {
-                        test: /\.js$/,
+                        test   : /\.js$/,
                         exclude: /node_modules/,
-                        loader: 'babel',
-                        query: {
+                        loader : 'babel',
+                        query  : {
                             presets: ['es2015'],
                             compact: false,
-                        }
-                    }
-                ]
+                        },
+                    },
+                ],
             },
             plugins: plugins,
-        }
-    }
+        },
+    };
 };

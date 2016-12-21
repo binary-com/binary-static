@@ -221,7 +221,9 @@ msgstr "%1 busca un Ejecutivo de Medios de Comunicación Sociales para mejorar y
 msgid "%1 seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world."
 msgstr "%1 busca un Redactor con experiencia para producir contenido que haga participar activamente a los clientes potenciales y a los clientes actuales en todo el mundo."
 
-msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
+#, fuzzy
+#| msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
+msgid "%1 supports the <a target='_blank' href='http://about.gambleaware.org/'>GambleAware</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgstr "%1 apoya a <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) que es la organización benéfica líder en Gran Bretaña que se compromete a reducir al mínimo los daños relacionados con los juegos de azar. RGT ofrece fondos para la educación, prevención y tratamientos, y también apoya las investigaciones para ayudar a entender más los daños relacionados con los juegos de azar. También tiene una línea telefónica nacional para ofrecer asesoramiento confidencial y apoyo emocional a las personas que buscan ayuda para su adicción al juego."
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
@@ -1375,7 +1377,9 @@ msgstr "Binary (IOM) Ltd, Primera Planta, Casa Millennium, Victoria Road, Dougla
 msgid "Binary (V) Ltd"
 msgstr "Binary (V) Ltd"
 
-msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">view licence</a>."
+#, fuzzy
+#| msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">view licence</a>."
+msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016.pdf\" target=\"_blank\">view licence</a>."
 msgstr "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, República de Vanuatu. Autorizada y regulada por la Comisión de servicios financieros de Vanuatu - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">ver licencia</a>."
 
 msgid "Binary Bot"
@@ -1389,6 +1393,9 @@ msgstr "Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2,
 
 msgid "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgstr "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
+
+msgid "Binary Group Services Sdn Bhd, Zweigstelle Berlin, Friedrichstraße 68, 10117 Berlin"
+msgstr ""
 
 msgid "Binary Group Services is searching for talented and motivated Perl developers who are looking for a chance to excel. If you have the skill set we seek, you'll become a valued member of a highly competent back-end development team engaged in driving our binary options trading systems to new heights."
 msgstr "Servicios de Binary Group está buscando desarrolladores de Perl con talento y motivación interesados en una oportunidad de sobresalir. Si usted tiene el conjunto de habilidades que buscamos, se convertirá en un valioso miembro del equipo de desarrollo de servicios del servidor muy competente que se ocupa de llevar nuestros sistemas de comercio de opciones binarias a nuevas alturas."
@@ -3123,7 +3130,9 @@ msgstr ""
 msgid "I forgot my password, what should I do?"
 msgstr "Olvidé mi contraseña, ¿qué debo hacer?"
 
-msgid "I have Real Money Account"
+#, fuzzy
+#| msgid "I have Real Money Account"
+msgid "I have a Real Money Account"
 msgstr "Tengo una Cuenta de Dinero Real"
 
 msgid "I have read and agree to the"
@@ -5698,9 +5707,6 @@ msgstr "Declaración de seguridad"
 msgid "Security and Privacy"
 msgstr "Seguridad/privacidad"
 
-msgid "Select Country"
-msgstr "Seleccionar país"
-
 msgid "Select market"
 msgstr "Seleccione mercado"
 
@@ -7193,11 +7199,6 @@ msgstr "Vea sus límites de operar y retirar."
 msgid "Virtual Account"
 msgstr "Cuenta virtual"
 
-#, fuzzy
-#| msgid "Virtual money account"
-msgid "Virtual money credit to account"
-msgstr "Cuenta de dinero virtual"
-
 msgid "Volatility Index Markets"
 msgstr "Mercados de Índices de Volatilidad"
 
@@ -8221,6 +8222,11 @@ msgstr "a su cuenta."
 #| msgid "today"
 msgid "today"
 msgstr "hoy"
+
+#, fuzzy
+#| msgid "Fridays"
+msgid "today, Fridays"
+msgstr "Viernes"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "usar o reproducir la API de %1 de una forma diferente a la permitida por estos Términos o"
@@ -9445,6 +9451,14 @@ msgstr "Detalles de la cuenta"
 
 msgid "Terms and Conditions Approval"
 msgstr "Acuerdo con los términos y condiciones"
+
+#~ msgid "Select Country"
+#~ msgstr "Seleccionar país"
+
+#, fuzzy
+#~| msgid "Virtual money account"
+#~ msgid "Virtual money credit to account"
+#~ msgstr "Cuenta de dinero virtual"
 
 #~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
 #~ msgstr "Obtenga una ganancia desde el 10% hasta el 1000% de su inversión si acierta. Para obtener una mayor ganancia escoja "

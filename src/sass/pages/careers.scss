@@ -32,11 +32,17 @@
     h2 {
         margin-bottom: 0;
     }
+    .border-bottom {
+        border-bottom: 1px solid $COLOR_GRAY;
+    }
+}
+
+.careers-for-americans, .contact-content {
     .margin {
         margin-left: 10px;
         margin-right: 10px;
     }
-    .border-bottom {
-        border-bottom: 1px solid $COLOR_GRAY;
+    h3.margin {
+        margin-bottom: 0;
     }
 }
