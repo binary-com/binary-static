@@ -8,13 +8,13 @@ var DatePicker = function(component_selector, select_type) {
     this.select_type = (typeof select_type === 'undefined') ? 'date' : select_type;
 
     this.localizations = {};
-    this.localizations.monthNames = [localize('January'), localize('February'), localize('March'), localize('April'), localize('May'), localize('June'), localize('July'), localize('August'), localize('September'), localize('October'), localize('November'), localize('December')];
+    this.localizations.monthNames = localize(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']);
 
-    this.localizations.monthNamesShort = [localize('Jan'), localize('Feb'), localize('Mar'), localize('Apr'), localize('May'), localize('Jun'), localize('Jul'), localize('Aug'), localize('Sep'), localize('Oct'), localize('Nov'), localize('Dec')];
+    this.localizations.monthNamesShort = localize(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
 
-    this.localizations.dayNames = [localize('Sunday'), localize('Monday'), localize('Tuesday'), localize('Wednesday'), localize('Thursday'), localize('Friday'), localize('Saturday')];
+    this.localizations.dayNames = localize(['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']);
 
-    this.localizations.dayNamesMin = [localize('Su'), localize('Mo'), localize('Tu'), localize('We'), localize('Th'), localize('Fr'), localize('Sa')];
+    this.localizations.dayNamesMin = localize(['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']);
 
     this.localizations.nextText = localize('Next');
     this.localizations.prevText = localize('Previous');

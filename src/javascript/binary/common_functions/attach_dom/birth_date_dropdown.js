@@ -38,20 +38,7 @@ function dropDownNumbers(select, startNum, endNum) {
 }
 
 function dropDownMonths(select, startNum, endNum) {
-    var months = [
-        localize('Jan'),
-        localize('Feb'),
-        localize('Mar'),
-        localize('Apr'),
-        localize('May'),
-        localize('Jun'),
-        localize('Jul'),
-        localize('Aug'),
-        localize('Sep'),
-        localize('Oct'),
-        localize('Nov'),
-        localize('Dec'),
-    ];
+    var months = localize(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
     select.appendChild(document.createElement('option'));
     for (var i = startNum; i <= endNum; i++) {
         var option = document.createElement('option');

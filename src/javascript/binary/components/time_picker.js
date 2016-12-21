@@ -44,7 +44,7 @@ TimePicker.prototype = {
         var config = {
             hourText  : localize('Hour'),
             minuteText: localize('Minute'),
-            amPmText  : [localize('AM'), localize('PM')],
+            amPmText  : localize(['AM', 'PM']),
         };
         if (min_time) {
             min_time = min_time === 'now' ? time_now : moment.utc(min_time);

@@ -18,11 +18,19 @@ var Localize = (function () {
         moment.locale(lang.toLowerCase());
     };
 
-    var localize = function(text, params) {
+    var do_localize = function(text, params) {
         var index = text.replace(/[\s|.]/g, '_');
         text = localizedTexts[index] || text;
         // only do templating when explicitly required
         return params ? template(text, params) : text;
+    };
+
+    var localize = function (text, params) {
+        if (Array.isArray(text)) {
+            return text.map(function(t) { return do_localize(t, params); });
+        }
+        // else
+        return do_localize(text, params);
     };
 
     return {
