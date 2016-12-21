@@ -92,13 +92,6 @@ var PasswordWS = (function() {
 
     function initSocket() {
         Content.populate();
-        // if (isIE() === false) {
-        //     $('#new_password').on('input', function() {
-        //         $('#password-meter').attr('value', testPassword(this.value)[0]);
-        //     });
-        // } else {
-        //     $('#password-meter').remove();
-        // }
 
         BinarySocket.init({
             onmessage: function(msg) {
