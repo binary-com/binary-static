@@ -44,7 +44,7 @@ var Cashier = (function() {
     };
 
     var onLoad = function() {
-        if (/\/cashier\.html/.test(window.location.pathname) && Client.get_value('is_logged_in')) {
+        if (/\/cashier\.html/.test(window.location.pathname) && Client.get_boolean('is_logged_in')) {
             Cashier.check_locked();
             Cashier.check_virtual_top_up();
             Header.topbar_message_visibility(Client.get_value('landing_company'));
@@ -55,7 +55,7 @@ var Cashier = (function() {
         if (japanese_client()) {
             window.location.href = url_for('/');
         }
-        if (Client.get_value('is_logged_in') && !Client.is_virtual()) {
+        if (Client.get_boolean('is_logged_in') && !Client.is_virtual()) {
             Cashier.check_locked();
         }
     };

@@ -37,7 +37,7 @@ Page.prototype = {
         if (State.get('is_loaded_by_pjax')) {
             this.show_authenticate_message();
         }
-        if (Client.get_value('is_logged_in')) {
+        if (Client.get_boolean('is_logged_in')) {
             ViewBalance.init();
         } else {
             LocalStore.set('reality_check.ack', 0);

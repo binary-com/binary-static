@@ -7,8 +7,7 @@ var moment           = require('moment');
 var japanese_client  = require('../common_functions/country_base').japanese_client;
 
 var Client = (function () {
-    var values_set,
-        loginid_array;
+    var client_object = {};
 
     var parseLoginIDList = function(string) {
         if (!string) return [];
@@ -27,18 +26,17 @@ var Client = (function () {
 
     var init = function () {
         var loginid = Cookies.get('loginid');
-
-        loginid_array = parseLoginIDList(Cookies.get('loginid_list') || '');
-        set_storage_value('email', Cookies.get('email'));
-        set_storage_value('loginid', loginid);
+        client_object.loginid_array = parseLoginIDList(Cookies.get('loginid_list') || '');
         var is_logged_in = !!(
             loginid &&
-            loginid_array.length > 0 &&
+            client_object.loginid_array.length > 0 &&
             get_storage_value('tokens')
         );
+
+        set_storage_value('email', Cookies.get('email'));
+        set_storage_value('loginid', loginid);
         set_storage_value('is_logged_in', is_logged_in);
         set_storage_value('residence', Cookies.get('residence'));
-        on_change_loginid();
     };
 
     var validate_loginid = function() {
@@ -61,7 +59,7 @@ var Client = (function () {
     };
 
     var redirect_if_is_virtual = function(redirectPage) {
-        var is_virtual = is_virtual();
+        var is_virtual = client_is_virtual();
         if (is_virtual) {
             window.location.href = url_for(redirectPage || '');
         }
@@ -69,22 +67,29 @@ var Client = (function () {
     };
 
     var redirect_if_login = function() {
-        if (get_storage_value('is_logged_in')) {
+        if (get_boolean('is_logged_in')) {
             window.location.href = default_redirect_url();
         }
-        return get_storage_value('is_logged_in');
+        return get_boolean('is_logged_in');
     };
 
-    var is_virtual = function() {
-        return get_storage_value('is_virtual') === '1';
-    };
-
-    var get_storage_value = function(key) {
-        return LocalStore.get('client.' + key) || '';
+    var client_is_virtual = function() {
+        return client_object.is_virtual || get_boolean('is_virtual');
     };
 
     var set_storage_value = function(key, value) {
+        client_object[key] = value;
         return LocalStore.set('client.' + key, value);
+    };
+
+    // use this function to get variables that have values
+    var get_storage_value = function(key) {
+        return client_object[key] || LocalStore.get('client.' + key) || '';
+    };
+
+    // use this function to get variables that are a boolean
+    var get_boolean = function(value) {
+        return JSON.parse(get_storage_value(value) || false);
     };
 
     var check_storage_values = function(origin) {
@@ -102,11 +107,11 @@ var Client = (function () {
             is_ok = false;
         }
 
-        if (get_storage_value('is_logged_in')) {
+        if (get_boolean('is_logged_in')) {
             if (
-                !get_storage_value('is_virtual') &&
+                !get_boolean('is_virtual') &&
                 Cookies.get('residence') &&
-                !get_storage_value('has_reality_check')
+                !get_boolean('has_reality_check')
             ) {
                 BinarySocket.send({
                     landing_company: Cookies.get('residence'),
@@ -139,13 +144,13 @@ var Client = (function () {
         set_storage_value('landing_company_fullname', authorize.landing_company_fullname);
         set_storage_value('currency', authorize.currency);
         check_storage_values();
-        values_set = true;
+        client_object.values_set = true;
         activate_by_client_type();
     };
 
     var check_tnc = function() {
         if (/user\/tnc_approvalws/.test(window.location.href) || /terms\-and\-conditions/.test(window.location.href)) return;
-        if (!is_virtual() && new RegExp(get_storage_value('loginid')).test(sessionStorage.getItem('check_tnc'))) {
+        if (!client_is_virtual() && new RegExp(get_storage_value('loginid')).test(sessionStorage.getItem('check_tnc'))) {
             var client_tnc_status   = get_storage_value('tnc_status'),
                 website_tnc_version = LocalStore.get('website.tnc_version');
             if (client_tnc_status && website_tnc_version) {
@@ -197,7 +202,7 @@ var Client = (function () {
         cookie.write(Value, cookie_expire, true);
     };
 
-    var process_new_account = function(client_email, client_loginid, token, client_is_virtual) {
+    var process_new_account = function(client_email, client_loginid, token, virtual_client) {
         if (!client_email || !client_loginid || !token) {
             return;
         }
@@ -207,7 +212,7 @@ var Client = (function () {
         set_cookie('email',        client_email);
         set_cookie('login',        token);
         set_cookie('loginid',      client_loginid);
-        set_cookie('loginid_list', client_is_virtual ? client_loginid + ':V:E' : client_loginid + ':R:E+' + Cookies.get('loginid_list'));
+        set_cookie('loginid_list', virtual_client ? client_loginid + ':V:E' : client_loginid + ':R:E+' + Cookies.get('loginid_list'));
         // set local storage
         localStorage.setItem('GTM_newaccount', '1');
         localStorage.setItem('active_loginid', client_loginid);
@@ -230,8 +235,8 @@ var Client = (function () {
         var has_financial = false,
             has_gaming = false,
             looping_user;
-        for (var i = 0; i < loginid_array.length; i++) {
-            looping_user = loginid_array[i];
+        for (var i = 0; i < client_object.loginid_array.length; i++) {
+            looping_user = client_object.loginid_array[i];
             if (looping_user.financial && !looping_user.disabled && !looping_user.non_financial) {
                 has_financial = true;
             } else if (!looping_user.financial && !looping_user.disabled && looping_user.non_financial) {
@@ -243,13 +248,13 @@ var Client = (function () {
 
     var activate_by_client_type = function() {
         $('.by_client_type').addClass('invisible');
-        if (get_storage_value('is_logged_in')) {
-            if (!values_set) {
+        if (get_boolean('is_logged_in')) {
+            if (!client_object.values_set) {
                 return;
             }
             $('#client-logged-in').addClass('gr-centered');
             $('.client_logged_in').removeClass('invisible');
-            if (!is_virtual()) {
+            if (!client_is_virtual()) {
                 // control-class is a fake class, only used to counteract ja-hide class
                 $('.by_client_type.client_real').not((japanese_client() ? '.ja-hide' : '.control-class')).removeClass('invisible');
                 $('.by_client_type.client_real').show();
@@ -321,38 +326,6 @@ var Client = (function () {
         window.location.reload();
     };
 
-    var on_change_loginid = function() {
-        $('.login-id-list a').on('click', function(e) {
-            e.preventDefault();
-            $(this).attr('disabled', 'disabled');
-            switch_loginid($(this).attr('value'));
-        });
-    };
-
-    var switch_loginid = function(loginid) {
-        if (!loginid || loginid.length === 0) {
-            return;
-        }
-        var token = Client.get_token(loginid);
-        if (!token || token.length === 0) {
-            Client.send_logout_request(true);
-            return;
-        }
-
-        // cleaning the previous values
-        Client.clear_storage_values();
-        sessionStorage.setItem('active_tab', '1');
-        sessionStorage.removeItem('client_status');
-        // set cookies: loginid, login
-        Client.set_cookie('loginid', loginid);
-        Client.set_cookie('login',   token);
-        // set local storage
-        GTM.set_login_flag();
-        localStorage.setItem('active_loginid', loginid);
-        $('.login-id-list a').removeAttr('disabled');
-        window.location.reload();
-    };
-
     // type can take one or more params, separated by comma
     // e.g. one param = 'authenticated', two params = 'unwelcome, authenticated'
     // match_type can be `any` `all`, by default is `any`
@@ -377,9 +350,10 @@ var Client = (function () {
         validate_loginid      : validate_loginid,
         redirect_if_is_virtual: redirect_if_is_virtual,
         redirect_if_login     : redirect_if_login,
-        is_virtual            : is_virtual,
-        get_value             : get_storage_value,
+        is_virtual            : client_is_virtual,
         set_value             : set_storage_value,
+        get_value             : get_storage_value,
+        get_boolean           : get_boolean,
         check_storage_values  : check_storage_values,
         response_authorize    : response_authorize,
         check_tnc             : check_tnc,
@@ -393,9 +367,6 @@ var Client = (function () {
         can_upgrade_virtual_to_financial: can_upgrade_virtual_to_financial,
         can_upgrade_virtual_to_japan    : can_upgrade_virtual_to_japan,
         activate_by_client_type         : activate_by_client_type,
-
-        values_set   : function () { return values_set; },
-        loginid_array: function () { return loginid_array; },
 
         send_logout_request: send_logout_request,
         do_logout          : do_logout,

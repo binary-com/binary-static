@@ -8,7 +8,7 @@ var WhyUs = (function() {
     };
 
     var hide_if_logged_in = function() {
-        if (Client.get_value('is_logged_in')) {
+        if (Client.get_boolean('is_logged_in')) {
             $('.client_logged_out').remove();
         }
     };

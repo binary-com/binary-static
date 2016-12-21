@@ -8,7 +8,7 @@ var Limits = (function() {
         Content.populate();
         var titleElement = document.getElementById('limits-ws-container').firstElementChild;
         titleElement.textContent = localize('Trading and Withdrawal Limits');
-        if (Client().is_virtual()) {
+        if (Client.get_boolean('is_virtual')) {
             LimitsWS.limitsError();
             return;
         }
@@ -20,7 +20,7 @@ var Limits = (function() {
                     var type = response.msg_type;
                     var error = response.error;
 
-                    if (type === 'authorize' && Client().is_virtual()) {
+                    if (type === 'authorize' && Client.get_boolean('is_virtual')) {
                         LimitsWS.limitsError(error);
                     } else if (type === 'get_limits' && !error) {
                         LimitsWS.limitsHandler(response);

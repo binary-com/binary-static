@@ -16,7 +16,7 @@ var ValidAccountOpening = (function() {
             window.location.href = url_for('trading');
             return;
         }
-        var client_loginid_array = Client.loginid_array();
+        var client_loginid_array = Client.get_value('loginid_array');
         for (var i = 0; i < client_loginid_array.length; i++) {
             if (client_loginid_array[i].real === true) {
                 window.location.href = url_for('trading');

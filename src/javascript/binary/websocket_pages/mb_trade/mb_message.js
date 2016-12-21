@@ -34,7 +34,7 @@ var MBMessage = (function () {
                 MBContract.setContractsResponse(response);
                 MBProcess.processContract(response);
             } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && (!response.echo_req.hasOwnProperty('passthrough') || !response.echo_req.passthrough.hasOwnProperty('handler'))) {
-                Client.set_value('currencies', response.payout_currencies);
+                Client.set_value('currencies', response.payout_currencies.join(','));
                 MBDisplayCurrencies('', false);
                 MBSymbols.getSymbols(1);
             } else if (type === 'proposal') {

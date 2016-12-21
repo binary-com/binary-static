@@ -6,7 +6,7 @@ var Login = (function() {
     'use strict';
 
     var redirect_to_login = function() {
-        if (!Client.get_value('is_logged_in') && !is_login_pages()) {
+        if (!Client.get_boolean('is_logged_in') && !is_login_pages()) {
             try {
                 sessionStorage.setItem('redirect_url', window.location.href);
             } catch (e) {

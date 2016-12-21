@@ -4,6 +4,7 @@ var localize                  = require('./localize').localize;
 var check_risk_classification = require('../common_functions/check_risk_classification').check_risk_classification;
 var Login                     = require('./login').Login;
 var url_for                   = require('./url').url_for;
+var GTM                       = require('./gtm').GTM;
 
 var Header = (function() {
     var on_load = function() {
@@ -14,7 +15,7 @@ var Header = (function() {
         if (!$('body').hasClass('BlueTopBack') && !Login.is_login_pages()) {
             checkClientsCountry();
         }
-        if (Client.get_value('is_logged_in')) {
+        if (Client.get_boolean('is_logged_in')) {
             $('ul#menu-top').addClass('smaller-font');
         }
     };
@@ -55,7 +56,7 @@ var Header = (function() {
     };
 
     var show_or_hide_login_form = function() {
-        if (!Client.get_value('is_logged_in')) return;
+        if (!Client.get_boolean('is_logged_in')) return;
         var all_accounts = $('#all-accounts'),
             language = $('#select_language');
         $('.nav-menu').unbind('click').on('click', function(event) {
@@ -68,7 +69,7 @@ var Header = (function() {
             }
         });
         var loginid_select = '';
-        var loginid_array = Client.loginid_array();
+        var loginid_array = Client.get_value('loginid_array');
         for (var i = 0; i < loginid_array.length; i++) {
             var login = loginid_array[i];
             if (!login.disabled) {
@@ -92,14 +93,43 @@ var Header = (function() {
             }
         }
         $('.login-id-list').html(loginid_select);
+        $('.login-id-list a').off('click').on('click', function(e) {
+            e.preventDefault();
+            $(this).attr('disabled', 'disabled');
+            switch_loginid($(this).attr('value'));
+        });
+    };
+
+    var switch_loginid = function(loginid) {
+        if (!loginid || loginid.length === 0) {
+            return;
+        }
+        var token = Client.get_token(loginid);
+        if (!token || token.length === 0) {
+            Client.send_logout_request(true);
+            return;
+        }
+
+        // cleaning the previous values
+        Client.clear_storage_values();
+        sessionStorage.setItem('active_tab', '1');
+        sessionStorage.removeItem('client_status');
+        // set cookies: loginid, login
+        Client.set_cookie('loginid', loginid);
+        Client.set_cookie('login',   token);
+        // set local storage
+        GTM.set_login_flag();
+        localStorage.setItem('active_loginid', loginid);
+        $('.login-id-list a').removeAttr('disabled');
+        window.location.reload();
     };
 
     var topbar_message_visibility = function(c_config) {
-        if (Client.get_value('is_logged_in')) {
+        if (Client.get_boolean('is_logged_in')) {
             if (Client.is_virtual() || !c_config) {
                 return;
             }
-            var loginid_array = Client.loginid_array();
+            var loginid_array = Client.get_value('loginid_array');
 
             var $upgrade_msg = $('.upgrademessage'),
                 hiddenClass  = 'invisible';

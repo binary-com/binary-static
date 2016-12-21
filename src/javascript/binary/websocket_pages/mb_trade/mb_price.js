@@ -159,7 +159,7 @@ var MBPrice = (function() {
 
     function processBuy(barrier, contract_type) {
         if (!barrier || !contract_type) return;
-        if (!Client.get_value('is_logged_in')) {
+        if (!Client.get_boolean('is_logged_in')) {
             MBNotifications.show({ text: localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true });
             return;
         }

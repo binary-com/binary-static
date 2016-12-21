@@ -71,7 +71,7 @@ var TNCApproval = (function() {
     };
 
     var apiResponse = function(response) {
-        isReal = !Client().is_virtual();
+        isReal = !Client.get_boolean('is_virtual');
         if (!isReal) {
             redirectBack();
         }

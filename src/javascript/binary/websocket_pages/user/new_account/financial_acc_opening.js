@@ -8,7 +8,7 @@ var FinancialAccOpeningUI = require('./financial_acc_opening/financial_acc_openi
 var FinancialAccOpening = (function() {
     var init = function() {
         Content.populate();
-        var client_loginid_array = Client.loginid_array();
+        var client_loginid_array = Client.get_value('loginid_array');
         for (var i = 0; i < client_loginid_array.length; i++) {
             if (client_loginid_array[i].financial) {
                 window.location.href = url_for('trading');

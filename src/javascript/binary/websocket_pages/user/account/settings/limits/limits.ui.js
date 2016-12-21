@@ -52,7 +52,7 @@ var LimitsUI = (function() {
                 appendRowTable(localize(object.name), object.turnover_limit !== 'null' ? addComma(object.turnover_limit).split('.')[0] : 0, 'auto', 'bold');
             }
         });
-        if (Client.get_value('is_logged_in') && !Client.is_virtual()) {
+        if (Client.get_boolean('is_logged_in') && !Client.is_virtual()) {
             var loginId = Client.get_value('loginid');
 
             var tradingLimits = document.getElementById('trading-limits');

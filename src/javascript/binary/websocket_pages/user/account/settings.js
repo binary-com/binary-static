@@ -19,7 +19,7 @@ var SettingsWS = (function() {
     };
 
     var onLoad = function() {
-        if (Client.get_value('is_virtual').length === 0) {
+        if (!Client.get_boolean('values_set')) {
             BinarySocket.init({
                 onmessage: function(msg) {
                     var response = JSON.parse(msg.data);

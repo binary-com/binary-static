@@ -20,7 +20,7 @@ var Menu = (function() {
             active.addClass('active');
         }
         var is_trading_submenu = /\/cashier|\/resources/.test(window.location.pathname) || trading_is_active;
-        if (Client.get_value('is_logged_in') || trading_is_active || is_trading_submenu) {
+        if (Client.get_boolean('is_logged_in') || trading_is_active || is_trading_submenu) {
             show_main_menu();
         }
     };

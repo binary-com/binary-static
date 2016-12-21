@@ -50,7 +50,7 @@ var TradingAnalysis_Beta = (function() {
     var bindAnalysisTabEvent = function() {
         'use strict';
 
-        if (Client.get_value('is_logged_in')) {
+        if (Client.get_boolean('is_logged_in')) {
             $('#tab_portfolio').removeClass('invisible');
         }
         if (!japanese_client()) {

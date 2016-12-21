@@ -89,7 +89,7 @@ var VirtualAccOpening = (function() {
     }
 
     var onLoad = function() {
-        if (Client.get_value('is_logged_in')) {
+        if (Client.get_boolean('is_logged_in')) {
             window.location.href = url_for('home');
             return;
         }
