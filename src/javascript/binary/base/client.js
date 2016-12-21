@@ -163,10 +163,11 @@ var Client = (function () {
     };
 
     var clear_storage_values = function() {
-        var items = ['currency', 'currencies', 'landing_company_name', 'landing_company_fullname', 'is_virtual',
-            'has_reality_check', 'tnc_status', 'session_duration_limit', 'session_start'];
-        items.forEach(function(item) {
-            set_storage_value(item, '');
+        // clear all client values from local storage
+        Object.keys(localStorage).forEach(function(c) {
+            if (/client\./.test(c)) {
+                LocalStore.set(c, '');
+            }
         });
         localStorage.removeItem('website.tnc_version');
         sessionStorage.setItem('currencies', '');
