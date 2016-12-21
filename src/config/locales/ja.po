@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-19 03:16+0000\n"
+"PO-Revision-Date: 2016-12-21 01:05+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
@@ -2506,7 +2506,7 @@ msgid "Enter the barrier in terms of the difference from the spot price. If you 
 msgstr "スポット価格に差異を付加する目的でバリア値を設定しましょう。もしバリア値として+0.005を設定した場合はスポット価格より0.005高値のバリアが設定されたトレードを購入することになります。尚、スポット価格は注文を受けた次のTickが採用されます。"
 
 msgid "Enter your email"
-msgstr "メールアドレスを入力"
+msgstr "メールアドレスを入力してデモ口座を開設"
 
 msgid "Entry Level"
 msgstr "エントリーレベル"
@@ -6112,7 +6112,7 @@ msgid "The %1 website is protected by certain copyrights."
 msgstr "%1のウェブサイトは特定の著作権で保護されています。"
 
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
-msgstr "<strong>最高水準</strong> の取引環境"
+msgstr "<strong>最高水準</strong> のFXバイナリーオプション取引環境を提供"
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
 msgstr "<strong>取引期間</strong>は、<strong>取引開始時間直後</strong>の<strong>ティック</strong>から<strong>取引終了時間</strong>までとなります。"
@@ -6437,7 +6437,7 @@ msgid "The duration is the length of a purchased trade (see 'contract period')."
 msgstr "購入したトレードの取引期間のことです（「取引期間」の項目を参照して下さい）。"
 
 msgid "The easiest way to get started in the financial markets"
-msgstr "金融市場取引にアクセスする近道"
+msgstr "業界最多の9通貨ペアとラダー、タッチ、レンジにより多数の取引機会"
 
 msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
 msgstr "ロングトレードのエントリーレベルが1001（始値 + スプレッドの半分）の場合、判定の際に値が1100であるとロングトレードの判定レベルは1099です。（終値 - スプレッドの半分）"
@@ -6881,7 +6881,7 @@ msgid "Trade"
 msgstr "トレード"
 
 msgid "Trade <strong>24/7</strong>, even on weekends."
-msgstr "<strong>平日24時間</strong>トレードが可能"
+msgstr "1ロットあたりの取引価格は<strong>約35円から999円</strong>"
 
 msgid "Trade Durations"
 msgstr "取引期間"
