@@ -1,5 +1,4 @@
 var japanese_client = require('../../common_functions/country_base').japanese_client;
-var Header   = require('../../base/header').Header;
 var Client   = require('../../base/client').Client;
 var url_for  = require('../../base/url').url_for;
 
@@ -47,7 +46,6 @@ var Cashier = (function() {
         if (/\/cashier\.html/.test(window.location.pathname) && Client.get_boolean('is_logged_in')) {
             Cashier.check_locked();
             Cashier.check_virtual_top_up();
-            Header.topbar_message_visibility(Client.get_value('landing_company'));
         }
     };
 

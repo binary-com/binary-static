@@ -216,12 +216,13 @@ function BinarySocketClass() {
                     RealityCheckData.clear();
                     Client.do_logout(response);
                 } else if (type === 'landing_company') {
-                    Header.topbar_message_visibility(response.landing_company);
+                    var landing_company = response.landing_company;
+                    Header.topbar_message_visibility(landing_company);
                     var company;
                     if (response.hasOwnProperty('error')) return;
-                    Object.keys(response.landing_company).forEach(function(key) {
-                        if (Client.get_value('landing_company_name') === response.landing_company[key].shortcode) {
-                            company = response.landing_company[key];
+                    Object.keys(landing_company).forEach(function(key) {
+                        if (Client.get_value('landing_company_name') === landing_company[key].shortcode) {
+                            company = landing_company[key];
                         }
                     });
                     if (company) {
