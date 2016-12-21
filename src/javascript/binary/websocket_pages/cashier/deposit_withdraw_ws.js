@@ -65,10 +65,10 @@ var ForwardWS = (function() {
     }
     function checkOnLoad() {
         function check_virtual() {
-            if (Client.is_virtual()) {
+            if (Client.get_boolean('is_virtual')) {
                 ForwardWS.showError(localize('This feature is not relevant to virtual-money accounts.'));
             }
-            return Client.is_virtual();
+            return Client.get_boolean('is_virtual');
         }
         if (!check_virtual()) {
             BinarySocket.init({

@@ -138,7 +138,7 @@ var FinancialAssessmentws = (function() {
     };
 
     var checkIsVirtual = function() {
-        if (Client.is_virtual()) {
+        if (Client.get_boolean('is_virtual')) {
             $('#assessment_form').addClass('invisible');
             $('#response_on_success').addClass('notice-msg center-text').removeClass('invisible').text(localize('This feature is not relevant to virtual-money accounts.'));
             hideLoadingImg(false);

@@ -12,7 +12,7 @@ var ValidAccountOpening = (function() {
         if (Contents.show_login_if_logout(true)) {
             return;
         }
-        if (!Client.is_virtual()) {
+        if (!Client.get_boolean('is_virtual')) {
             window.location.href = url_for('trading');
             return;
         }

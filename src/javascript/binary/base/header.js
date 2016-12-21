@@ -126,7 +126,7 @@ var Header = (function() {
 
     var topbar_message_visibility = function(c_config) {
         if (Client.get_boolean('is_logged_in')) {
-            if (Client.is_virtual() || !c_config) {
+            if (Client.get_boolean('is_virtual') || !c_config) {
                 return;
             }
             var loginid_array = Client.get_value('loginid_array');
@@ -143,7 +143,7 @@ var Header = (function() {
                     .html($('<span/>', { text: localize(msg) }));
             };
 
-            if (Client.is_virtual()) {
+            if (Client.get_boolean('is_virtual')) {
                 var show_upgrade_msg = true;
                 var show_virtual_msg = true;
                 var show_activation_msg = false;

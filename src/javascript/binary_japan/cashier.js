@@ -6,7 +6,7 @@ var CashierJP = (function() {
     function init(action) {
         if (Client.values_set()) {
             var $container = $('#japan_cashier_container');
-            if (Client.is_virtual()) {
+            if (Client.get_boolean('is_virtual')) {
                 $container.addClass('center-text').removeClass('invisible')
                     .html($('<p/>', { class: 'notice-msg', html: localize('This feature is not relevant to virtual-money accounts.') }));
                 return;

@@ -21,7 +21,7 @@ var TopUpVirtualWS = (function() {
 
         $views.addClass('hidden');
 
-        if (!Client.is_virtual()) {
+        if (!Client.get_boolean('is_virtual')) {
             showMessage(localize('Sorry, this feature is available to virtual accounts only.'), false);
         } else {
             BinarySocket.send({ topup_virtual: '1' });
@@ -69,7 +69,7 @@ var TopUpVirtualWS = (function() {
             },
         });
         Content.populate();
-        if (Client.is_virtual()) {
+        if (Client.get_boolean('is_virtual')) {
             TopUpVirtualWS.init();
         }
     };

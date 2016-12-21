@@ -159,7 +159,7 @@ var PaymentAgentTransfer = (function() {
     }
 
     function error_if_virtual() {
-        if (Client.is_virtual()) {
+        if (Client.get_boolean('is_virtual')) {
             $('#virtual_error').removeClass('invisible');
             return true;
         }

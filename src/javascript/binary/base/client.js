@@ -59,7 +59,7 @@ var Client = (function () {
     };
 
     var redirect_if_is_virtual = function(redirectPage) {
-        var is_virtual = client_is_virtual();
+        var is_virtual = get_boolean('is_virtual');
         if (is_virtual) {
             window.location.href = url_for(redirectPage || '');
         }
@@ -71,10 +71,6 @@ var Client = (function () {
             window.location.href = default_redirect_url();
         }
         return get_boolean('is_logged_in');
-    };
-
-    var client_is_virtual = function() {
-        return client_object.is_virtual || get_boolean('is_virtual');
     };
 
     var set_storage_value = function(key, value) {
@@ -150,7 +146,7 @@ var Client = (function () {
 
     var check_tnc = function() {
         if (/user\/tnc_approvalws/.test(window.location.href) || /terms\-and\-conditions/.test(window.location.href)) return;
-        if (!client_is_virtual() && new RegExp(get_storage_value('loginid')).test(sessionStorage.getItem('check_tnc'))) {
+        if (!get_boolean('is_virtual') && new RegExp(get_storage_value('loginid')).test(sessionStorage.getItem('check_tnc'))) {
             var client_tnc_status   = get_storage_value('tnc_status'),
                 website_tnc_version = LocalStore.get('website.tnc_version');
             if (client_tnc_status && website_tnc_version) {
@@ -255,7 +251,7 @@ var Client = (function () {
             }
             $('#client-logged-in').addClass('gr-centered');
             $('.client_logged_in').removeClass('invisible');
-            if (!client_is_virtual()) {
+            if (!get_boolean('is_virtual')) {
                 // control-class is a fake class, only used to counteract ja-hide class
                 $('.by_client_type.client_real').not((japanese_client() ? '.ja-hide' : '.control-class')).removeClass('invisible');
                 $('.by_client_type.client_real').show();
@@ -351,7 +347,6 @@ var Client = (function () {
         validate_loginid      : validate_loginid,
         redirect_if_is_virtual: redirect_if_is_virtual,
         redirect_if_login     : redirect_if_login,
-        is_virtual            : client_is_virtual,
         set_value             : set_storage_value,
         get_value             : get_storage_value,
         get_boolean           : get_boolean,

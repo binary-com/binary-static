@@ -32,7 +32,7 @@ var SelfExclusionWS = (function() {
         // for error messages to show properly
         $('#' + timeID).attr('style', 'margin-bottom:10px');
 
-        if (Client.is_virtual()) {
+        if (Client.get_boolean('is_virtual')) {
             $('#selfExclusionDesc').addClass(hiddenClass);
             showPageError(Content.localize().textFeatureUnavailable, true);
             return;
@@ -64,7 +64,7 @@ var SelfExclusionWS = (function() {
                 else if (msg_type === 'set_self_exclusion') setResponse(response);
             },
         });
-        if (Client.is_virtual()) {
+        if (Client.get_boolean('is_virtual')) {
             reallyInit();
         }
     }

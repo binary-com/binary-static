@@ -45,7 +45,7 @@ var PaymentAgentWithdrawWS = (function() {
 
         $views.addClass(hiddenClass);
 
-        if (Client.is_virtual()) { // Virtual Account
+        if (Client.get_boolean('is_virtual')) { // Virtual Account
             showPageError(localize('You are not authorized for withdrawal via payment agent.'));
             return;
         }
@@ -263,7 +263,7 @@ var PaymentAgentWithdrawWS = (function() {
     var lock_withdrawal = function(withdrawal_locked) {
         if (withdrawal_locked === 'locked') {
             showPageError('', 'withdrawal-locked-error');
-        } else if (!Client.is_virtual()) {
+        } else if (!Client.get_boolean('is_virtual')) {
             BinarySocket.send({ paymentagent_list: Cookies.get('residence') });
         }
     };
@@ -292,7 +292,7 @@ var PaymentAgentWithdrawWS = (function() {
         });
 
         Content.populate();
-        if (Client.is_virtual() || Client.status_detected('withdrawal_locked, cashier_locked', 'any')) {
+        if (Client.get_boolean('is_virtual') || Client.status_detected('withdrawal_locked, cashier_locked', 'any')) {
             PaymentAgentWithdrawWS.init();
         } else if (sessionStorage.getItem('client_status') === null) {
             BinarySocket.send({ get_account_status: '1', passthrough: { dispatch_to: 'PaymentAgentWithdrawWS' } });

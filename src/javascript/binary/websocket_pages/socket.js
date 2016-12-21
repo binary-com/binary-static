@@ -196,7 +196,7 @@ function BinarySocketClass() {
                             send({ get_settings: 1 });
                             send({ get_account_status: 1 });
                             if (Cookies.get('residence')) send({ landing_company: Cookies.get('residence') });
-                            if (!Client.is_virtual()) {
+                            if (!Client.get_boolean('is_virtual')) {
                                 send({ get_self_exclusion: 1 });
                             } else {
                                 Cashier.check_virtual_top_up();

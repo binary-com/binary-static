@@ -73,7 +73,7 @@ var PortfolioWS = (function() {
         if ($('#portfolio-balance').length === 0) return;
         $('#portfolio-balance').text(Portfolio.getBalance(Client.get_value('balance'), Client.get_value('currency')));
         var $if_balance_zero = $('#if-balance-zero');
-        if (Client.get_value('balance') > 0 || Client.is_virtual()) {
+        if (Client.get_value('balance') > 0 || Client.get_boolean('is_virtual')) {
             $if_balance_zero.addClass(hidden_class);
         } else {
             $if_balance_zero.removeClass(hidden_class);

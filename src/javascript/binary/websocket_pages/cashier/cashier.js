@@ -14,7 +14,7 @@ var Cashier = (function() {
     };
 
     var check_locked = function() {
-        if (Client.is_virtual()) return;
+        if (Client.get_boolean('is_virtual')) return;
         if (Client.status_detected('cashier_locked')) {
             lock_cashier('locked', 'deposit, .withdraw');
         } else if (Client.status_detected('withdrawal_locked')) {
@@ -27,7 +27,7 @@ var Cashier = (function() {
     };
 
     var check_virtual_top_up = function() {
-        if (Client.is_virtual()) {
+        if (Client.get_boolean('is_virtual')) {
             if ((Client.get_value('currency') !== 'JPY' && Client.get_value('balance') > 1000) ||
                 (Client.get_value('currency') === 'JPY' && Client.get_value('balance') > 100000)) {
                 replace_with_disabled_button('#VRT_topup_link');
@@ -53,7 +53,7 @@ var Cashier = (function() {
         if (japanese_client()) {
             window.location.href = url_for('/');
         }
-        if (Client.get_boolean('is_logged_in') && !Client.is_virtual()) {
+        if (Client.get_boolean('is_logged_in') && !Client.get_boolean('is_virtual')) {
             Cashier.check_locked();
         }
     };

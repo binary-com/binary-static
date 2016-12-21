@@ -78,7 +78,7 @@ var GTM = (function() {
         if (is_newaccount) {
             data.bom_date_joined = data.bom_today;
         }
-        if (!Client.is_virtual()) {
+        if (!Client.get_boolean('is_virtual')) {
             data.bom_age       = parseInt((moment().unix() - get_settings.date_of_birth) / 31557600);
             data.bom_firstname = get_settings.first_name;
             data.bom_lastname  = get_settings.last_name;
@@ -88,7 +88,7 @@ var GTM = (function() {
     };
 
     var push_purchase_data = function(response) {
-        if (!gtm_applicable() || Client.is_virtual()) return;
+        if (!gtm_applicable() || Client.get_boolean('is_virtual')) return;
         var req = response.echo_req.passthrough,
             buy = response.buy;
         if (!buy) return;

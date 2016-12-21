@@ -17,7 +17,7 @@ var AuthenticateWS = (function() {
         }
 
         function check_virtual() {
-            return Client.is_virtual() && show_error(localize('This feature is not relevant to virtual-money accounts.'));
+            return Client.get_boolean('is_virtual') && show_error(localize('This feature is not relevant to virtual-money accounts.'));
         }
         if (!check_virtual()) {
             BinarySocket.init({

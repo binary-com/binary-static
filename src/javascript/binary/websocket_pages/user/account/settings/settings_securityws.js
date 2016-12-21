@@ -31,7 +31,7 @@ var SecurityWS = (function() {
     }
 
     function checkIsVirtual() {
-        if (!Client.is_virtual()) {
+        if (!Client.get_boolean('is_virtual')) {
             return false;
         }
         $form.hide();

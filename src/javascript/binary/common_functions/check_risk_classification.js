@@ -48,7 +48,7 @@ function renderRiskClassificationPopUp() {
 }
 
 function qualify_for_risk_classification() {
-    if (Client.get_boolean('is_logged_in') && !Client.is_virtual() &&
+    if (Client.get_boolean('is_logged_in') && !Client.get_boolean('is_virtual') &&
         Client.get_value('residence') !== 'jp' && !$('body').hasClass('BlueTopBack') && $('#assessment_form').length === 0 &&
         (localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval'))) {
         return true;
