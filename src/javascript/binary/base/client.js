@@ -161,7 +161,7 @@ var Client = (function () {
     var clear_storage_values = function() {
         // clear all client values from local storage
         Object.keys(localStorage).forEach(function(c) {
-            if (/client\./.test(c)) {
+            if (/^client\.(?!(tokens$))/.test(c)) {
                 LocalStore.set(c, '');
             }
         });
