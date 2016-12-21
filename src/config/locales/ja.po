@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-13 23:13+0000\n"
-"Last-Translator: Yasushi Takeishi <takeishi@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-12-21 01:05+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.10-dev\n"
+"X-Generator: Weblate 2.10\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」とは%1の取引プラットフォームとのインターフェースとして登録されたアプリケーションを使用できるよう、%1によって作成・管理されているプログラムのルーチン、プロトコル、ツール、リソースの独自のセットのことをいいます。"
@@ -222,7 +222,9 @@ msgstr "ソーシャルメディアへの取り組みの強化と積極的な管
 msgid "%1 seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world."
 msgstr "当社では、世界中の顧客と潜在顧客との良好な関係を積極的に構築するコンテンツの制作に感覚の鋭いコピーライターを必要としています。"
 
-msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
+#, fuzzy
+#| msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
+msgid "%1 supports the <a target='_blank' href='http://about.gambleaware.org/'>GambleAware</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgstr "%1は、ギャンブルに関連する害を最小限にすることを約束している英国の大手慈善団体<a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>「責任ある賭博基金」(RGT, Responsible Gambling Trust)</a>をサポートしています。RGT資金教育、予防と治療のサービスや手数料の調査は、ギャンブルに関する害についてより理解するのに役立ちます。また、機密なアドバイスや感情的なサポートをしている全国ギャンブルヘルプラインも提供しています。"
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
@@ -2505,7 +2507,7 @@ msgid "Enter the barrier in terms of the difference from the spot price. If you 
 msgstr "スポット価格に差異を付加する目的でバリア値を設定しましょう。もしバリア値として+0.005を設定した場合はスポット価格より0.005高値のバリアが設定されたトレードを購入することになります。尚、スポット価格は注文を受けた次のTickが採用されます。"
 
 msgid "Enter your email"
-msgstr "メールアドレスを入力"
+msgstr "メールアドレスを入力してデモ口座を開設"
 
 msgid "Entry Level"
 msgstr "エントリーレベル"
@@ -3103,8 +3105,6 @@ msgstr "私は、犯罪収益移動防止法に規定されている外国人PEP
 msgid "I forgot my password, what should I do?"
 msgstr "パスワードを忘れてしまいました。再発行の方法について教えて下さい。"
 
-#, fuzzy
-#| msgid "I have Real Money Account"
 msgid "I have a Real Money Account"
 msgstr "リアル口座を既に持っています"
 
@@ -6113,7 +6113,7 @@ msgid "The %1 website is protected by certain copyrights."
 msgstr "%1のウェブサイトは特定の著作権で保護されています。"
 
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
-msgstr "<strong>最高水準</strong> の取引環境"
+msgstr "<strong>最高水準</strong> のFXバイナリーオプション取引環境を提供"
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
 msgstr "<strong>取引期間</strong>は、<strong>取引開始時間直後</strong>の<strong>ティック</strong>から<strong>取引終了時間</strong>までとなります。"
@@ -6438,7 +6438,7 @@ msgid "The duration is the length of a purchased trade (see 'contract period')."
 msgstr "購入したトレードの取引期間のことです（「取引期間」の項目を参照して下さい）。"
 
 msgid "The easiest way to get started in the financial markets"
-msgstr "金融市場取引にアクセスする近道"
+msgstr "業界最多の9通貨ペアとラダー、タッチ、レンジにより多数の取引機会"
 
 msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
 msgstr "ロングトレードのエントリーレベルが1001（始値 + スプレッドの半分）の場合、判定の際に値が1100であるとロングトレードの判定レベルは1099です。（終値 - スプレッドの半分）"
@@ -6882,7 +6882,7 @@ msgid "Trade"
 msgstr "トレード"
 
 msgid "Trade <strong>24/7</strong>, even on weekends."
-msgstr "<strong>平日24時間</strong>トレードが可能"
+msgstr "1ロットあたりの取引価格は<strong>約35円から999円</strong>"
 
 msgid "Trade Durations"
 msgstr "取引期間"
@@ -8267,10 +8267,8 @@ msgstr "アカウントへ"
 msgid "today"
 msgstr "本日"
 
-#, fuzzy
-#| msgid "Fridays"
 msgid "today, Fridays"
-msgstr "金曜日"
+msgstr "本日：金曜日"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "これら規約で許可されている以上の%1 APIの使用または再現"
@@ -8804,31 +8802,31 @@ msgid "{JAPAN ONLY}It prohibits the copying of the questions . In addition , You
 msgstr "問題の複写を禁止します。また、第三者に漏えいしないことに同意いただくものとします。"
 
 msgid "{JAPAN ONLY}JSA_Date_1"
-msgstr "2016/10/20"
+msgstr "2016/12/20"
 
 msgid "{JAPAN ONLY}JSA_Date_2"
-msgstr "2016/12/12"
+msgstr "2016/12/20"
 
 msgid "{JAPAN ONLY}JSA_Date_3"
 msgstr "-"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
-msgstr "11月1日(水)に日銀政策発表が予定されており、政策発表前後の11:30〜13:30の間は、急激なマーケットの変動が想定されるため取引注文(新規購入及び売却)の受付を一時停止させて頂きます。"
+msgstr "12月23日(金)、1月2日（月）は入出金及びカスタマーサポートの対応を終日お休みさせて頂きます"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
-msgstr "万が一、取引注文の受付が予定停止時間より延長される場合、ホームページ上にバーナーを載せてお知らせ致します。"
+msgstr "12月30日（金）最終営業の入出金及びカスタマーサポートの受付時間は15時までとさせて頂きます"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_3)"
 msgstr "-"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
-msgstr "年末年始における当社の入出金スケジュールのご案内を致します"
+msgstr "26日の銀行振込からのご入金は、翌日27日に口座へ反映されます<br>26日の出金依頼は、翌27日以降の着金となります"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_2)"
-msgstr "12月31日（土）から1月3日（火）の期間は、国内金融機関（店舗）が休業のため、入出金サービスをご利用頂けません。"
+msgstr "12月30日以降のご入金は2017年1月4日以降口座に反映されます<br>12月30日以降の出金依頼は2017年1月4日以降の着金となります"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_3)"
-msgstr "26日の銀行振込からのご入金は、翌日27日に口座へ反映されます<br>26日の出金依頼は、翌27日以降の着金となります<br>12月30日以降のご入金は2017年1月4日以降口座に反映されます<br>12月30日以降の出金依頼は2017年1月4日以降の着金となります"
+msgstr "12月31日（土）から1月3日（火）の期間は、国内金融機関（店舗）が休業のため、入出金サービスをご利用頂けません"
 
 msgid "{JAPAN ONLY}JSA_Explanation_3_1)"
 msgstr "-"
@@ -8840,10 +8838,10 @@ msgid "{JAPAN ONLY}JSA_Explanation_3_3)"
 msgstr "-"
 
 msgid "{JAPAN ONLY}JSA_Title_1"
-msgstr "重要： 日銀政策発表に伴い11:30〜13:30は取引注文の受付停止"
+msgstr "重要：年末年始の営業スケジュールに関するご案内"
 
 msgid "{JAPAN ONLY}JSA_Title_2"
-msgstr "-"
+msgstr "重要： 年末年始の入出金スケジュールに関するご案内"
 
 msgid "{JAPAN ONLY}JSA_Title_3"
 msgstr "-"

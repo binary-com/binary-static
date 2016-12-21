@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-09 06:41+0000\n"
+"PO-Revision-Date: 2016-12-16 02:30+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.10-dev\n"
+"X-Generator: Weblate 2.10\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" adalah set eksklusif dari rutinitas program %1, protokol, alat dan sumber daya yang diciptakan dan dikelola oleh %1 yang dapat memberi Anda fasilitas untuk menggunakan aplikasi terdaftar pada platform trading %1."
@@ -218,7 +218,9 @@ msgstr "%1 sedang mencari Social Media Executive untuk meningkatkan dan secara p
 msgid "%1 seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world."
 msgstr "%1 mencari copywriter terbaik untuk menghasilkan konten yang secara aktif terlibat prospek baru dan pelanggan saat ini di seluruh dunia."
 
-msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
+#, fuzzy
+#| msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
+msgid "%1 supports the <a target='_blank' href='http://about.gambleaware.org/'>GambleAware</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgstr " "
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
@@ -3068,8 +3070,6 @@ msgstr "Saya menyatakan bahwa saya bukan Anggota Politik Luar Negeri."
 msgid "I forgot my password, what should I do?"
 msgstr "Saya lupa kata sandi, apa yang harus saya lakukan?"
 
-#, fuzzy
-#| msgid "I have Real Money Account"
 msgid "I have a Real Money Account"
 msgstr "Saya memiliki Akun Uang Riil"
 
@@ -8050,10 +8050,8 @@ msgstr "kedalam akun Anda."
 msgid "today"
 msgstr "hari ini"
 
-#, fuzzy
-#| msgid "Fridays"
 msgid "today, Fridays"
-msgstr "Jum'at"
+msgstr "hari ini, Jumat"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "menggunakan atau mereproduksi API %1 selain yang diizinkan oleh Syarat atau"

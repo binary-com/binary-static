@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-07 08:33+0000\n"
+"PO-Revision-Date: 2016-12-17 23:20+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.10-dev\n"
+"X-Generator: Weblate 2.10\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -219,7 +219,9 @@ msgstr "%1 zatrudni kierownika ds. mediów społecznościowych, którego zadanie
 msgid "%1 seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world."
 msgstr "%1 zatrudni zdolnego copywritera, którego zadaniem będzie tworzenie treści atrakcyjnych dla potencjalnych i obecnych klientów z całego świata."
 
-msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
+#, fuzzy
+#| msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
+msgid "%1 supports the <a target='_blank' href='http://about.gambleaware.org/'>GambleAware</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgstr "%1 wspiera fundację <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT), która jest najpopularniejszą organizacją charytatywną w Wielkiej Brytanii skupiającą się na minimalizowaniu szkód związanych z hazardem. RGT zajmuje się sponsorowaniem kształcenia dot. problemów związanych z hazardem oraz usług mających na celu zapobieganie tym problemom i zwalczanie ich. Zleca również różnego rodzaju badania, aby pomóc ludziom zrozumieć szkody, jaki może wyrządzić hazard. Prowadzi także krajowy telefon zaufania dla osób szukających pomocy w związku z problemami z hazardem, oferując poufne porady i wsparcie emocjonalne."
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
@@ -794,7 +796,7 @@ msgid "A university degree or accredited translation certification preferred"
 msgstr "Preferujemy osoby, które ukończyły studia tłumaczeniowe lub posiadają certyfikaty z tej dziedziny"
 
 msgid "AM"
-msgstr ""
+msgstr "AM"
 
 msgid "API"
 msgstr "API"
@@ -3001,7 +3003,7 @@ msgid "Higher/Lower trades"
 msgstr "Zakłady wyższy/niższy"
 
 msgid "Hour"
-msgstr ""
+msgstr "Godzina"
 
 msgid "Housewife / Househusband"
 msgstr "Housewife / Househusband"
@@ -3066,8 +3068,6 @@ msgstr "Oświadczam, że nie jestem osobą z zagranicy zajmującą eksponowane s
 msgid "I forgot my password, what should I do?"
 msgstr "Nie pamiętam swojego hasła, co mam zrobić?"
 
-#, fuzzy
-#| msgid "I have Real Money Account"
 msgid "I have a Real Money Account"
 msgstr "Mam konto z prawdziwymi pieniędzmi"
 
@@ -4341,10 +4341,8 @@ msgstr "Minimalna liczba znaków: %1."
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Minimum 6 małych i wielkich liter oraz cyfr"
 
-#, fuzzy
-#| msgid "Minutes"
 msgid "Minute"
-msgstr "Minuty"
+msgstr "Minuta"
 
 msgid "Miss"
 msgstr "Pani"
@@ -4806,7 +4804,7 @@ msgid "Ownership, content, and liability of the Affiliate's websites are the sol
 msgstr "Odpowiedzialność za własność, treść i wiarygodność stron partnerskich ponosi wyłącznie partner. Partner jest w pełni odpowiedzialny za kodowanie, działanie i utrzymanie swojej strony internetowej i wszystkich materiałów, jakie się na niej pojawiają. Partner nie będzie pociągał Firmy do odpowiedzialności w związku z jakimikolwiek roszczeniami, odszkodowaniami czy wydatkami (w tym kosztami postępowań sądowych) związanymi z kodowaniem, działaniem i utrzymaniem swojej strony, czy też jej zawartością."
 
 msgid "PM"
-msgstr ""
+msgstr "PM"
 
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "Udział w rynkach walutowych, towarowych i na giełdzie?"
@@ -4985,15 +4983,11 @@ msgstr "Wprowadź prawidłową kwotę."
 msgid "Please enter an integer value"
 msgstr "Wpisz liczbę całkowitą"
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
 msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
-msgstr "Wpisz datę i godzinę w formacie RRRR-MM-DD GG:mm (czasu lokalnego)."
+msgstr "Wpisz datę i godzinę w formacie DD MMM, YYYY GG:mm (czasu lokalnego)."
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD."
 msgid "Please enter date in the format DD MMM, YYYY."
-msgstr "Wpisz datę w formacie RRRR-MM-DD."
+msgstr "Wpisz datę w formacie DD MMM, YYYY."
 
 msgid "Please enter your current password."
 msgstr "Proszę podać swoje aktualne hasło."
@@ -6632,10 +6626,8 @@ msgstr "Poziom"
 msgid "Time"
 msgstr "Godzina"
 
-#, fuzzy
-#| msgid "Start time is in the future."
 msgid "Time is in the wrong format."
-msgstr "Czas rozpoczęcia w przyszłości."
+msgstr "Czas został podany w nieprawidłowym formacie."
 
 msgid "Time out until"
 msgstr "Przekroczono limit czasu do"
@@ -7930,10 +7922,8 @@ msgstr "adres e-mail"
 msgid "f"
 msgstr "f"
 
-#, fuzzy
-#| msgid "Th"
 msgid "h"
-msgstr "Cz"
+msgstr "godz."
 
 msgid "hour"
 msgstr "godzina"
@@ -7971,7 +7961,6 @@ msgstr "miesiąc"
 msgid "max: 100,000"
 msgstr "Maks.: 100 000"
 
-#, fuzzy
 msgid "min"
 msgstr "min."
 
@@ -7982,7 +7971,7 @@ msgid "minimum available duration"
 msgstr "minimalny dostępny czas trwania"
 
 msgid "mins"
-msgstr ""
+msgstr "min."
 
 msgid "minute"
 msgstr "min"
@@ -8053,10 +8042,8 @@ msgstr "na swoje konto."
 msgid "today"
 msgstr "dziś"
 
-#, fuzzy
-#| msgid "Fridays"
 msgid "today, Fridays"
-msgstr "piątki"
+msgstr "dziś, piątki"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "korzystanie z API %1 niezgodne z niniejszymi Warunkami lub"
