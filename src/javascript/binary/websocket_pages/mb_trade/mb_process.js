@@ -191,11 +191,12 @@ var MBProcess = (function() {
         var available_contracts = MBContract.getCurrentContracts(),
             durations = MBDefaults.get('period').split('_');
         var req = {
-            proposal : 1,
-            subscribe: 1,
-            basis    : 'payout',
-            amount   : japanese_client() ? (parseInt(MBDefaults.get('payout')) || 1) * 1000 :
-                                            MBDefaults.get('payout'),
+            proposal    : 1,
+            subscribe   : 1,
+            product_type: 'multi_barrier',
+            basis       : 'payout',
+            amount      : japanese_client() ? (parseInt(MBDefaults.get('payout')) || 1) * 1000 :
+                                              MBDefaults.get('payout'),
             currency   : MBContract.getCurrency(),
             symbol     : MBDefaults.get('underlying'),
             req_id     : MBPrice.getReqId(),

@@ -19,7 +19,7 @@ var MBContract = (function() {
         var req = {
             contracts_for: (underlying || MBDefaults.get('underlying')),
             currency     : getCurrency(),
-            region       : 'japan',
+            product_type : 'multi_barrier',
         };
         if (!underlying) {
             req.passthrough = { action: 'no-proposal' };
