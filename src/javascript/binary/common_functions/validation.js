@@ -1,4 +1,3 @@
-// var testPassword = require('./passwordmeter').testPassword;
 var Content      = require('./content').Content;
 
 var Validate = (function() {
