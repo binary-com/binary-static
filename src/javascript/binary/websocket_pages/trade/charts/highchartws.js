@@ -2,7 +2,7 @@ var japanese_client = require('../../../common_functions/country_base').japanese
 var MBContract  = require('../../mb_trade/mb_contract').MBContract;
 var ViewPopupUI = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
 var State       = require('../../../base/storage').State;
-var Highcharts  = require('highcharts');
+var Highcharts  = require('highcharts/highstock');
 require('highcharts/modules/exporting')(Highcharts);
 
 var Highchart = (function() {
@@ -186,7 +186,8 @@ var Highchart = (function() {
         }
 
         if (!el) return null;
-        var new_chart = new Highcharts.Chart(chartOptions);
+        // eslint-disable-next-line new-cap
+        var new_chart = new Highcharts.stockChart(chartOptions);
         initialized = true;
 
       // this is used to draw lines such as start and end times
