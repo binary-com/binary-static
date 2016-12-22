@@ -1,12 +1,13 @@
-var CharityPage = (function(){
+var CharityPage = (function() {
     var timeout = 5000;
     var interval = null;
-    var gallery, images;
+    var gallery;
+    var images;
     var onLoad = function() {
         function switchPicture() {
             images = gallery.find('img');
-            if(images.length > 1) {
-                images.eq(images.length-1).prependTo(gallery);
+            if (images.length > 1) {
+                images.eq(images.length - 1).prependTo(gallery);
             }
         }
         gallery = $('.gallery');
@@ -19,11 +20,11 @@ var CharityPage = (function(){
         }
     };
     return {
-        onLoad: onLoad,
-        onUnload: onUnload
+        onLoad  : onLoad,
+        onUnload: onUnload,
     };
 })();
 
 module.exports = {
-    CharityPage: CharityPage
+    CharityPage: CharityPage,
 };

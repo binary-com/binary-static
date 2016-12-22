@@ -9,13 +9,13 @@ var IPHistory = (function() {
             return IPHistoryUI.displayError(response.error.message);
         }
         var parsed = response.login_history.map(IPHistoryData.parse);
-        IPHistoryUI.update(parsed);
+        return IPHistoryUI.update(parsed);
     }
 
     function init() {
         IPHistoryUI.init();
         BinarySocket.init({
-            onmessage: IPHistoryData.calls(responseHandler)
+            onmessage: IPHistoryData.calls(responseHandler),
         });
         IPHistoryData.get(50);
     }
@@ -25,7 +25,7 @@ var IPHistory = (function() {
     }
 
     return {
-        init: init,
+        init : init,
         clean: clean,
     };
 })();

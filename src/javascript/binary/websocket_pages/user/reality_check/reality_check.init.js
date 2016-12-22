@@ -1,7 +1,7 @@
-var RealityCheckUI = require('./reality_check.ui').RealityCheckUI;
+var RealityCheckUI   = require('./reality_check.ui').RealityCheckUI;
 var RealityCheckData = require('./reality_check.data').RealityCheckData;
 
-var RealityCheck = (function () {
+var RealityCheck = (function() {
     'use strict';
 
     function realityCheckWSHandler(response) {
@@ -42,7 +42,7 @@ var RealityCheck = (function () {
             RealityCheckData.clear();
         }
 
-        RealityCheckData.resetInvalid();            // need to reset after clear
+        RealityCheckData.resetInvalid(); // need to reset after clear
 
         if (RealityCheckData.getAck() !== '1') {
             RealityCheckUI.renderFrequencyPopUp();
@@ -57,10 +57,10 @@ var RealityCheck = (function () {
     }
 
     return {
-        init: init,
+        init                 : init,
         realityCheckWSHandler: realityCheckWSHandler,
     };
-}());
+})();
 
 module.exports = {
     RealityCheck: RealityCheck,

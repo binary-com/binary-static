@@ -9,13 +9,13 @@ var DatePicker           = require('../../../../components/date_picker').DatePic
 var toISOFormat          = require('../../../../common_functions/string_util').toISOFormat;
 var dateValueChanged     = require('../../../../common_functions/common_functions').dateValueChanged;
 
-var StatementWS = (function(){
-    "use strict";
+var StatementWS = (function() {
+    'use strict';
 
-    //Batch refer to number of data get from ws service per request
-    //chunk refer to number of data populate to ui for each append
-    //receive means receive from ws service
-    //consume means consume by UI and displayed to page
+    // Batch refer to number of data get from ws service per request
+    // chunk refer to number of data populate to ui for each append
+    // receive means receive from ws service
+    // consume means consume by UI and displayed to page
 
     var batchSize,
         chunkSize,
@@ -25,16 +25,16 @@ var StatementWS = (function(){
         transactionsReceived,
         transactionsConsumed;
 
-    var tableExist = function(){
-        return document.getElementById("statement-table");
+    var tableExist = function() {
+        return document.getElementById('statement-table');
     };
 
-    var finishedConsumed = function(){
+    var finishedConsumed = function() {
         return transactionsConsumed === transactionsReceived;
     };
 
-    function statementHandler(response){
-        if(response.hasOwnProperty('error')) {
+    function statementHandler(response) {
+        if (response.hasOwnProperty('error')) {
             StatementUI.errorMessage(response.error.message);
             return;
         }
@@ -45,57 +45,57 @@ var StatementWS = (function(){
         currentBatch = statement.transactions;
         transactionsReceived += currentBatch.length;
 
-        if (currentBatch.length < batchSize){
+        if (currentBatch.length < batchSize) {
             noMoreData = true;
         }
 
         if (!tableExist()) {
-            StatementUI.createEmptyStatementTable().appendTo("#statement-ws-container");
+            StatementUI.createEmptyStatementTable().appendTo('#statement-ws-container');
             $('.act, .credit').addClass('nowrap');
             StatementUI.updateStatementTable(getNextChunkStatement());
 
             // Show a message when the table is empty
             if ((transactionsReceived === 0) && (currentBatch.length === 0)) {
                 $('#statement-table tbody')
-                    .append($('<tr/>', {class: "flex-tr"})
-                        .append($('<td/>', {colspan: 7})
-                            .append($('<p/>', {class: "notice-msg center-text", text: page.text.localize("Your account has no trading activity.")})
-                            )
-                        )
-                    );
+                    .append($('<tr/>', { class: 'flex-tr' })
+                        .append($('<td/>', { colspan: 7 })
+                            .append($('<p/>', { class: 'notice-msg center-text', text: page.text.localize('Your account has no trading activity.') }))));
             } else {
-                $('#jump-to').parent().parent().parent().removeClass('invisible');
-                if(page.language().toLowerCase() === 'ja') {
-                    $('#download_csv').removeClass('invisible').find('a').unbind('click').click(function(){StatementUI.exportCSV();});
+                $('#jump-to').parent().parent().parent()
+                             .removeClass('invisible');
+                if (page.language().toLowerCase() === 'ja') {
+                    $('#download_csv').removeClass('invisible')
+                                      .find('a')
+                                      .unbind('click')
+                                      .click(function() { StatementUI.exportCSV(); });
                 }
             }
         }
         showLocalTimeOnHover('td.date');
     }
 
-    function getNextBatchStatement(){
-        getStatement({offset: transactionsReceived, limit: batchSize});
+    function getNextBatchStatement() {
+        getStatement({ offset: transactionsReceived, limit: batchSize });
         pending = true;
     }
 
-    function getNextChunkStatement(){
+    function getNextChunkStatement() {
         var chunk = currentBatch.splice(0, chunkSize);
         transactionsConsumed += chunk.length;
         $('#rows_count').text(transactionsConsumed);
         return chunk;
     }
 
-    function loadStatementChunkWhenScroll(){
-        $(document).scroll(function(){
-
-            function hidableHeight(percentage){
+    function loadStatementChunkWhenScroll() {
+        $(document).scroll(function() {
+            function hidableHeight(percentage) {
                 var totalHidable = $(document).height() - $(window).height();
-                return Math.floor(totalHidable * percentage / 100);
+                return Math.floor((totalHidable * percentage) / 100);
             }
 
             var pFromTop = $(document).scrollTop();
 
-            if (!tableExist()){
+            if (!tableExist()) {
                 return;
             }
 
@@ -108,13 +108,13 @@ var StatementWS = (function(){
                 return;
             }
 
-            if (!finishedConsumed()){
+            if (!finishedConsumed()) {
                 StatementUI.updateStatementTable(getNextChunkStatement());
             }
         });
     }
 
-    function initTable(){
+    function initTable() {
         pending = false;
         noMoreData = false;
 
@@ -130,9 +130,9 @@ var StatementWS = (function(){
 
     function initPage() {
         batchSize = 200;
-        chunkSize = batchSize/2;
+        chunkSize = batchSize / 2;
         noMoreData = false;
-        pending = false;            //serve as a lock to prevent ws request is sequential
+        pending = false;            // serve as a lock to prevent ws request is sequential
         currentBatch = [];
         transactionsReceived = 0;
         transactionsConsumed = 0;
@@ -142,7 +142,7 @@ var StatementWS = (function(){
         loadStatementChunkWhenScroll();
     }
 
-    function cleanStatementPageState(){
+    function cleanStatementPageState() {
         initTable();
     }
 
@@ -160,46 +160,47 @@ var StatementWS = (function(){
                      $('.table-container').remove();
                      StatementUI.clearTableContent();
                      StatementWS.init();
+                     return true;
                  });
     };
 
-    function initSocket(){
+    function initSocket() {
         BinarySocket.init({
-            onmessage: function(msg){
+            onmessage: function(msg) {
                 var response = JSON.parse(msg.data);
                 if (response) {
                     var type = response.msg_type;
-                    if (type === 'statement'){
+                    if (type === 'statement') {
                         StatementWS.statementHandler(response);
                     } else if (type === 'oauth_apps') {
                         addTooltip(StatementUI.setOauthApps(buildOauthApps(response.oauth_apps)));
                     }
                 }
-            }
+            },
         });
-        BinarySocket.send({'oauth_apps': 1});
+        BinarySocket.send({ oauth_apps: 1 });
     }
 
-    function getStatement(opts){
-        var req = {statement: 1, description: 1};
-        if(opts){
+    function getStatement(opts) {
+        var req = { statement: 1, description: 1 };
+        if (opts) {
             $.extend(true, req, opts);
         }
         var jumpToVal = $('#jump-to').attr('data-value');
         if (jumpToVal && jumpToVal !== '') {
-            req.date_to = moment.utc(jumpToVal).unix() + ((japanese_client() ? 15 : 24) * (60*60));
+            req.date_to = moment.utc(jumpToVal).unix() + ((japanese_client() ? 15 : 24) * (60 * 60));
             req.date_from = 0;
         }
         BinarySocket.send(req);
     }
 
     return {
-        init: initPage,
+        init            : initPage,
         statementHandler: statementHandler,
-        clean: cleanStatementPageState,
+        clean           : cleanStatementPageState,
         attachDatePicker: attachDatePicker,
     };
-}());
+})();
 
 module.exports = {
     StatementWS: StatementWS,
