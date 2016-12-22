@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-22 03:45+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-12-22 04:35+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -223,10 +223,12 @@ msgstr "ソーシャルメディアへの取り組みの強化と積極的な管
 msgid "%1 seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world."
 msgstr "当社では、世界中の顧客と潜在顧客との良好な関係を積極的に構築するコンテンツの制作に感覚の鋭いコピーライターを必要としています。"
 
-#, fuzzy
-#| msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgid "%1 supports the <a target='_blank' href='http://about.gambleaware.org/'>GambleAware</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
-msgstr "%1は、ギャンブルに関連する害を最小限にすることを約束している英国の大手慈善団体<a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>「責任ある賭博基金」(RGT, Responsible Gambling Trust)</a>をサポートしています。RGT資金教育、予防と治療のサービスや手数料の調査は、ギャンブルに関する害についてより理解するのに役立ちます。また、機密なアドバイスや感情的なサポートをしている全国ギャンブルヘルプラインも提供しています。"
+msgstr ""
+"%1は、ギャンブルに関連する害を最小限にすることを約束している英国の大手慈善団体<a target='_blank' "
+"href='http://about.gambleaware.org/'>「責任ある賭博基金」(RGT, Responsible Gambling Tru"
+"st)</a>をサポートしています。RGT資金教育、予防と治療のサービスや手数料の調査は、ギャンブルに関する害についてより理解するのに役立ちます。また、機"
+"密なアドバイスや感情的なサポートをしている全国ギャンブルヘルプラインも提供しています。"
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "ロンドンで開催された名誉あるEGRオペレーター賞授賞式にて金融ベッティングオペレーター部門で最優秀賞を受賞しました。"
@@ -1384,12 +1386,13 @@ msgstr "Binary (IOM) Ltd はマン島のライセンス当局GSCによってラ�
 msgid "Binary (V) Ltd"
 msgstr "Binary (V) Ltd"
 
-#, fuzzy
-#| msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">view licence</a>."
 msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016.pdf\" target=\"_blank\">view licence</a>."
 msgstr ""
-"Binary (V) Ltd：Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu\n"
-"バヌアツ金融サービス委員会によってライセンスが認定され、監督下にあります。 - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">ライセンスを表示</a>"
+"Binary (V) Ltd：Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of "
+"Vanuatu\n"
+"バヌアツ金融サービス委員会によってライセンスが認定され、監督下にあります。 - <a href=\"https://www.vfsc.vu/wp-"
+"content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-"
+"Licensing-Act-CAP-70-18.11.2016.pdf\" target=\"_blank\">ライセンスを表示</a>"
 
 msgid "Binary Bot"
 msgstr "Binary Bot"
@@ -4371,7 +4374,7 @@ msgid "Maximum aggregate payouts on open positions per symbol and contract type"
 msgstr "未現実利益限度額"
 
 msgid "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
-msgstr ""
+msgstr "オープンポジションがない場合、未現実利益限度額がペイアウト限度額まで超えることがあります。"
 
 msgid "Maximum daily turnover"
 msgstr "１日の取引数量限度額"
