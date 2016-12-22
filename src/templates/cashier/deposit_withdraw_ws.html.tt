@@ -28,7 +28,7 @@
         <p id="cashier-locked-error" class="error_messages">
             [% l('Cashier is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
         </p>
-      <p id="custom-error" class="error_messages"></p>
+      <p id="custom-error" class="error_messages error-virtual"></p>
     </div>
 
   </div>

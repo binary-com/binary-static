@@ -4,7 +4,6 @@ var Content  = require('../../common_functions/content').Content;
 
 var ForwardWS = (function() {
     function init() {
-        Content.populate();
         var verification_error = document.getElementById('verification-error');
         $('#submit-currency').click(function() {
             $('#submit-currency').attr('disabled', 'disabled');
@@ -63,7 +62,9 @@ var ForwardWS = (function() {
     function checkOnLoad() {
         function check_virtual() {
             if (page.client.is_virtual()) {
-                ForwardWS.showError(page.text.localize('This feature is not relevant to virtual-money accounts.'));
+                Content.populate();
+                $('.error-virtual').addClass('notice-msg center-text');
+                ForwardWS.showError(Content.localize().textFeatureUnavailableVirtual);
             }
             return page.client.is_virtual();
         }
