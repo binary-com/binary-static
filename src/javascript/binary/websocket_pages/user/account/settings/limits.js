@@ -1,13 +1,10 @@
 var LimitsWS = require('./limits/limits.init').LimitsWS;
 var Content  = require('../../../../common_functions/content').Content;
-var localize = require('../../../../base/localize').localize;
 var Client   = require('../../../../base/client').Client;
 
 var Limits = (function() {
     var onLoad = function() {
         Content.populate();
-        var titleElement = document.getElementById('limits-ws-container').firstElementChild;
-        titleElement.textContent = localize('Trading and Withdrawal Limits');
         if (Client.get_boolean('is_virtual')) {
             LimitsWS.limitsError();
             return;
