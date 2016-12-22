@@ -4305,6 +4305,14 @@ msgstr "Perdita totale massima al giorno."
 msgid "Maximum aggregate payouts on open positions"
 msgstr "Payout totali massimi su posizioni aperte"
 
+#, fuzzy
+#| msgid "Maximum aggregate payouts on open positions"
+msgid "Maximum aggregate payouts on open positions per symbol and contract type"
+msgstr "Payout totali massimi su posizioni aperte"
+
+msgid "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
+msgstr ""
+
 msgid "Maximum daily turnover"
 msgstr "Turnover massimo giornaliero"
 

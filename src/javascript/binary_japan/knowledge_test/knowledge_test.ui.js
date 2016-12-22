@@ -27,7 +27,7 @@ var KnowledgeTestUI = (function () {
         var $falseTd = $('<td></td>').append($falseButton);
 
         if (showAnswer) {
-            if (question.answer) {
+            if (question.correct_answer) {
                 $trueButton.prop('checked', true);
             } else {
                 $falseButton.prop('checked', true);
@@ -41,9 +41,9 @@ var KnowledgeTestUI = (function () {
 
     function createQuestionRow(questionNo, question, showAnswer) {
         var $questionRow = $('<tr></tr>', { id: questionNo, class: 'question' });
-        var $questionData = $('<td></td>').text(page.text.localize(question.question));
+        var $questionData = $('<td></td>').text(page.text.localize(question.question_localized));
         var $questionLink = $('<a></a>', { name: question.id });
-        $questionData.append($questionLink);
+        $questionData.prepend($questionLink);
 
         var trueFalse = createTrueFalseBox(question, showAnswer);
 
