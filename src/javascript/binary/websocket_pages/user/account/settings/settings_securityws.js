@@ -1,7 +1,5 @@
 var getLoginToken   = require('../../../../common_functions/common_functions').getLoginToken;
-var isIE            = require('../../../../common_functions/common_functions').isIE;
 var Content         = require('../../../../common_functions/content').Content;
-var testPassword    = require('../../../../common_functions/passwordmeter').testPassword;
 var ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
 var bind_validation = require('../../../../validator').bind_validation;
 var dv              = require('../../../../../lib/validation');
@@ -75,14 +73,6 @@ var SecurityWS = (function() {
 
     function setupRepeatPasswordForm() {
         $('#repasswordrow').show();
-        $('#password-meter-div').css({ display: 'block' });
-        if (isIE()) {
-            $('#password-meter').remove();
-            return;
-        }
-        $('#cashierlockpassword1').on('input', function() {
-            $('#password-meter').attr('value', testPassword($('#cashierlockpassword1').val())[0]);
-        });
     }
 
     function lockedStatus(response) {

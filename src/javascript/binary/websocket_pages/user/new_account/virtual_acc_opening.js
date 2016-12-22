@@ -1,9 +1,7 @@
 var template              = require('../../../base/utility').template;
 var handleResidence       = require('../../../common_functions/account_opening').handleResidence;
-var isIE                  = require('../../../common_functions/common_functions').isIE;
 var Content               = require('../../../common_functions/content').Content;
 var japanese_client       = require('../../../common_functions/country_base').japanese_client;
-var testPassword          = require('../../../common_functions/passwordmeter').testPassword;
 var bind_validation       = require('../../../validator').bind_validation;
 var VirtualAccOpeningData = require('./virtual_acc_opening/virtual_acc_opening.data').VirtualAccOpeningData;
 var localize = require('../../../base/localize').localize;
@@ -62,13 +60,6 @@ var VirtualAccOpening = (function() {
 
         var form = $('#virtual-form')[0];
         if (!form) return;
-        if (!isIE()) {
-            $('#password').on('input', function() {
-                $('#password-meter').attr('value', testPassword($('#password').val())[0]);
-            });
-        } else {
-            $('#password-meter').remove();
-        }
 
         bind_validation.simple(form, {
             schema: VirtualAccOpeningData.getSchema(),
