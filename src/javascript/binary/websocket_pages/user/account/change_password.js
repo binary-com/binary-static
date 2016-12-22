@@ -1,6 +1,4 @@
-var isIE            = require('../../../common_functions/common_functions').isIE;
 var Content         = require('../../../common_functions/content').Content;
-var testPassword    = require('../../../common_functions/passwordmeter').testPassword;
 var ValidateV2      = require('../../../common_functions/validation_v2').ValidateV2;
 var ValidationUI    = require('../../../validator').ValidationUI;
 var customError     = require('../../../validator').customError;
@@ -92,13 +90,6 @@ var PasswordWS = (function() {
 
     function initSocket() {
         Content.populate();
-        if (isIE() === false) {
-            $('#new_password').on('input', function() {
-                $('#password-meter').attr('value', testPassword(this.value)[0]);
-            });
-        } else {
-            $('#password-meter').remove();
-        }
 
         BinarySocket.init({
             onmessage: function(msg) {

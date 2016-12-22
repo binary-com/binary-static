@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-21 04:34+0000\n"
+"PO-Revision-Date: 2016-12-21 09:21+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -89,7 +89,7 @@ msgid "%1 earns a return from the difference between the total amount of all cus
 msgstr "バイナリーオプション取引について、当社と取引する顧客全体が当社に支払う金額と顧客全体が当社から受け取る金額の差額が当社の収益の源泉となっていること。（契約締結前交付書面「店頭バイナリーオプション取引のリスク等重要事項について」-9参照）"
 
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
-msgstr "当社では、皆様に多様なトレードの機会を提供します。主要通貨ペアを1,000円からお取引頂けます。"
+msgstr "最高水準 のFXバイナリーオプション取引環境を提供し、又、業界最多の9通貨ペアとラダー、タッチ、レンジにより多数の取引機会を提供します。"
 
 msgid "%1 has created Volatility Indices that you can trade 24/7. You can trade these on all types of contract:"
 msgstr "当社では平日24時間お取引いただけるボラティリティインデックスを作成しました。全タイプのトレードでお取引が可能です。"
@@ -4366,6 +4366,14 @@ msgstr "1日あたりの最大損失 (半角)"
 msgid "Maximum aggregate payouts on open positions"
 msgstr "未現実利益限度額"
 
+#, fuzzy
+#| msgid "Maximum aggregate payouts on open positions"
+msgid "Maximum aggregate payouts on open positions per symbol and contract type"
+msgstr "未現実利益限度額"
+
+msgid "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
+msgstr ""
+
 msgid "Maximum daily turnover"
 msgstr "１日の取引数量限度額"
 
@@ -6115,7 +6123,7 @@ msgid "The %1 website is protected by certain copyrights."
 msgstr "%1のウェブサイトは特定の著作権で保護されています。"
 
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
-msgstr "<strong>最高水準</strong> のFXバイナリーオプション取引環境を提供"
+msgstr "最高水準のFXバイナリーオプション取引環境を提供"
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
 msgstr "<strong>取引期間</strong>は、<strong>取引開始時間直後</strong>の<strong>ティック</strong>から<strong>取引終了時間</strong>までとなります。"
@@ -6537,7 +6545,7 @@ msgstr "お客さまから提供された個人情報によりご口座へのサ
 msgid "The premier platform for trading binary options in the world's financial markets"
 msgstr ""
 "世界の金融市場において\n"
-"最高水準のバイナリー取引プラットフォーム"
+"最高水準のFXバイナリーオプション取引プラットフォーム"
 
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
 msgstr "勝ちトレードの払い戻し金額と購入金額の差額が利益になります。"
@@ -6884,7 +6892,7 @@ msgid "Trade"
 msgstr "トレード"
 
 msgid "Trade <strong>24/7</strong>, even on weekends."
-msgstr "Binaryグループの子会社として<strong>第一種金融商品取引業者に登録</strong>"
+msgstr "Binaryグループの子会社として第一種金融商品取引業者に登録"
 
 msgid "Trade Durations"
 msgstr "取引期間"
@@ -8813,10 +8821,10 @@ msgid "{JAPAN ONLY}JSA_Date_3"
 msgstr "-"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
-msgstr "12月23日(金)、1月2日（月）は入出金及びカスタマーサポートの対応を終日お休みさせて頂きます"
+msgstr "12月23日(金)、1月2日(月)は入出金及びカスタマーサポートの対応を終日お休みさせて頂きます"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
-msgstr "12月30日（金）最終営業の入出金及びカスタマーサポートの受付時間は15時までとさせて頂きます"
+msgstr "12月30日(金)最終営業の入出金及びカスタマーサポートの受付時間は15時までとさせて頂きます"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_3)"
 msgstr "-"
@@ -8828,7 +8836,7 @@ msgid "{JAPAN ONLY}JSA_Explanation_2_2)"
 msgstr "12月30日以降のご入金は2017年1月4日以降口座に反映されます<br>12月30日以降の出金依頼は2017年1月4日以降の着金となります"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_3)"
-msgstr "12月31日（土）から1月3日（火）の期間は、国内金融機関（店舗）が休業のため、入出金サービスをご利用頂けません"
+msgstr "12月31日(土)から1月3日(火)の期間は、国内金融機関（店舗）が休業のため、入出金サービスをご利用頂けません"
 
 msgid "{JAPAN ONLY}JSA_Explanation_3_1)"
 msgstr "-"
@@ -8843,7 +8851,7 @@ msgid "{JAPAN ONLY}JSA_Title_1"
 msgstr "重要：年末年始の営業スケジュールに関するご案内"
 
 msgid "{JAPAN ONLY}JSA_Title_2"
-msgstr "重要： 年末年始の入出金スケジュールに関するご案内"
+msgstr "重要：年末年始の入出金スケジュールに関するご案内"
 
 msgid "{JAPAN ONLY}JSA_Title_3"
 msgstr "-"

@@ -4337,6 +4337,14 @@ msgstr "Tập hợp thua lỗ tối đa trên một ngày."
 msgid "Maximum aggregate payouts on open positions"
 msgstr "Tập hợp tiền thưởng tối đa trên vị thế mở"
 
+#, fuzzy
+#| msgid "Maximum aggregate payouts on open positions"
+msgid "Maximum aggregate payouts on open positions per symbol and contract type"
+msgstr "Tập hợp tiền thưởng tối đa trên vị thế mở"
+
+msgid "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
+msgstr ""
+
 msgid "Maximum daily turnover"
 msgstr "Thu nhập hàng ngày tối đa"
 

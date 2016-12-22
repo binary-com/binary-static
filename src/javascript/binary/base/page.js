@@ -342,16 +342,24 @@ Client.prototype = {
         CashierJP.set_name_id();
     },
     check_tnc: function() {
-        if (/user\/tnc_approvalws/.test(window.location.href) || /terms\-and\-conditions/.test(window.location.href)) return;
-        if (!page.client.is_virtual() && new RegExp(page.client.loginid).test(sessionStorage.getItem('check_tnc'))) {
-            var client_tnc_status   = this.get_storage_value('tnc_status'),
-                website_tnc_version = LocalStore.get('website.tnc_version');
-            if (client_tnc_status && website_tnc_version) {
-                if (client_tnc_status !== website_tnc_version) {
-                    sessionStorage.setItem('tnc_redirect', window.location.href);
-                    window.location.href = page.url.url_for('user/tnc_approvalws');
-                }
-            }
+        if (/user\/tnc_approvalws/.test(window.location.href) ||
+            /terms\-and\-conditions/.test(window.location.href) ||
+            page.client.is_virtual() ||
+            sessionStorage.getItem('check_tnc') !== 'check') {
+            return;
+        }
+        var client_tnc_status   = this.get_storage_value('tnc_status'),
+            website_tnc_version = LocalStore.get('website.tnc_version');
+        if (client_tnc_status && website_tnc_version && client_tnc_status !== website_tnc_version) {
+            sessionStorage.setItem('tnc_redirect', window.location.href);
+            window.location.href = page.url.url_for('user/tnc_approvalws');
+        }
+    },
+    set_check_tnc: function () {
+        if (!$('body').hasClass('BlueTopBack')) {
+            sessionStorage.setItem('check_tnc', 'check');
+            localStorage.removeItem('client.tnc_status');
+            localStorage.removeItem('website.tnc_version');
         }
     },
     clear_storage_values: function() {
@@ -361,7 +369,7 @@ Client.prototype = {
         items.forEach(function(item) {
             that.set_storage_value(item, '');
         });
-        localStorage.removeItem('website.tnc_version');
+        this.set_check_tnc();
         sessionStorage.setItem('currencies', '');
     },
     update_storage_values: function() {
@@ -1121,6 +1129,7 @@ Page.prototype = {
         return lang;
     },
     on_load: function() {
+        this.client.set_check_tnc();
         this.url.reset();
         this.localize_for(this.language());
         this.header.on_load();

@@ -10,7 +10,7 @@ var KnowledgeTest = (function() {
     var submitted = {};
     var submitCompleted = false;
     var randomPicks = [];
-    var randomPicksAnswer = {};
+    var randomPicksObj = {};
     var resultScore = 0;
 
     var passMsg = '{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly.';
@@ -32,20 +32,30 @@ var KnowledgeTest = (function() {
             $('#knowledge-test-msg')
                 .addClass('notice-msg')
                 .text(page.text.localize('You need to finish all 20 questions.'));
-            // $("html, body").animate({ scrollTop: 0 }, "slow");
 
             var unAnswered = randomPicks.reduce((a, b) => a.concat(b))
-                                        .find(q => answeredQid.indexOf(q) === -1).id;
+                                        .find(q => answeredQid.indexOf(q.id) === -1).id;
 
-            window.location.href = '#' + unAnswered;
+            $.scrollTo('a[name="' + unAnswered + '"]', 500, { offset: -10 });
             return;
         }
 
         // compute score
+        var questions = [];
         Object.keys(submitted).forEach(function (k) {
-            resultScore += (submitted[k] === randomPicksAnswer[k] ? 1 : 0);
+            var questionInfo = randomPicksObj[k],
+                score = submitted[k] === questionInfo.correct_answer ? 1 : 0;
+            resultScore += score;
+            questionInfo.answer = submitted[k];
+            questions.push({
+                category: questionInfo.category,
+                id      : questionInfo.id,
+                question: questionInfo.question,
+                answer  : questionInfo.answer ? 1 : 0,
+                pass    : score,
+            });
         });
-        KnowledgeTestData.sendResult(resultScore);
+        KnowledgeTestData.sendResult(questions, resultScore);
         submitCompleted = true;
     }
 
@@ -102,14 +112,8 @@ var KnowledgeTest = (function() {
 
     function populateQuestions() {
         randomPicks = KnowledgeTestData.randomPick20();
-        for (var i = 0; i < 5; i++) {
-            for (var k = 0; k < 4; k++) {
-                var qid = randomPicks[i][k].id;
-                var ans = randomPicks[i][k].answer;
-
-                randomPicksAnswer[qid] = ans;
-            }
-        }
+        randomPicks.reduce((a, b) => a.concat(b))
+                   .forEach((question) => { randomPicksObj[question.id] = question; });
 
         showQuestionsTable();
     }
