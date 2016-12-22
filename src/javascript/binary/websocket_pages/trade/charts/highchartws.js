@@ -1,10 +1,9 @@
-var MBContract  = require('../../mb_trade/mb_contract').MBContract;
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
+var MBContract  = require('../../mb_trade/mb_contract').MBContract;
 var ViewPopupUI = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
-var State = require('../../../base/storage').State;
-require('../../../../lib/highstock/highstock.js');
-require('../../../../lib/highstock/highstock-exporting.js');
-require('../../../../lib/highstock/export-csv.js');
+var State       = require('../../../base/storage').State;
+var Highcharts  = require('highcharts');
+require('highcharts/modules/exporting')(Highcharts);
 
 var Highchart = (function() {
     var chart,

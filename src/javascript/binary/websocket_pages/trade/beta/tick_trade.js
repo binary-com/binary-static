@@ -6,9 +6,8 @@ var isVisible                 = require('../../../common_functions/common_functi
 var addComma                  = require('../../../common_functions/string_util').addComma;
 var updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
 var label_value               = require('../common').label_value;
-require('../../../../lib/highstock/highstock.js');
-require('../../../../lib/highstock/highstock-exporting.js');
-require('../../../../lib/highstock/export-csv.js');
+var Highcharts                = require('highcharts');
+require('highcharts/modules/exporting')(Highcharts);
 
 var TickDisplay_Beta = (function() {
     return {
@@ -494,29 +493,27 @@ WSTickDisplay_Beta.updateChart = function(data, contract) {
 };
 
 // add tooltip events to highcharts
-(function (Highcharts) {
-    Highcharts.wrap(Highcharts.Tooltip.prototype, 'hide', function (proceed) {
-        var tooltip = this.chart.options.tooltip;
+Highcharts.wrap(Highcharts.Tooltip.prototype, 'hide', function (proceed) {
+    var tooltip = this.chart.options.tooltip;
 
-        // Run the original proceed method
-        proceed.apply(this, Array.prototype.slice.call(arguments, 1));
+    // Run the original proceed method
+    proceed.apply(this, Array.prototype.slice.call(arguments, 1));
 
-        if (!this.isHidden && tooltip.events && tooltip.events.hide) {
-            tooltip.events.hide();
-        }
-    });
+    if (!this.isHidden && tooltip.events && tooltip.events.hide) {
+        tooltip.events.hide();
+    }
+});
 
-    Highcharts.wrap(Highcharts.Tooltip.prototype, 'refresh', function (proceed) {
-        var tooltip = this.chart.options.tooltip;
+Highcharts.wrap(Highcharts.Tooltip.prototype, 'refresh', function (proceed) {
+    var tooltip = this.chart.options.tooltip;
 
-        // Run the original proceed method
-        proceed.apply(this, Array.prototype.slice.call(arguments, 1));
+    // Run the original proceed method
+    proceed.apply(this, Array.prototype.slice.call(arguments, 1));
 
-        if (tooltip.events && tooltip.events.show) {
-            tooltip.events.show(this.chart.hoverPoints);
-        }
-    });
-})(Highcharts);
+    if (tooltip.events && tooltip.events.show) {
+        tooltip.events.show(this.chart.hoverPoints);
+    }
+});
 
 module.exports = {
     WSTickDisplay_Beta: WSTickDisplay_Beta,
