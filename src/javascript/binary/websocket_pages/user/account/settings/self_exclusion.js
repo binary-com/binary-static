@@ -64,7 +64,7 @@ var SelfExclusionWS = (function() {
                 else if (msg_type === 'set_self_exclusion') setResponse(response);
             },
         });
-        if (Client.get_boolean('is_virtual')) {
+        if (Client.get_boolean('values_set')) {
             reallyInit();
         }
     }

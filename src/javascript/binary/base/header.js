@@ -126,7 +126,7 @@ var Header = (function() {
 
     var topbar_message_visibility = function(c_config) {
         if (Client.get_boolean('is_logged_in')) {
-            if (Client.get_boolean('is_virtual') || !c_config) {
+            if (!Client.get_boolean('values_set') || !c_config) {
                 return;
             }
             var loginid_array = Client.get_value('loginid_array');
