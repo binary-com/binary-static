@@ -4311,6 +4311,14 @@ msgstr "Maksimum rata-rata kerugian per hari."
 msgid "Maximum aggregate payouts on open positions"
 msgstr "Jumlah maksimal hasil rata-rata pada posisi terbuka"
 
+#, fuzzy
+#| msgid "Maximum aggregate payouts on open positions"
+msgid "Maximum aggregate payouts on open positions per symbol and contract type"
+msgstr "Jumlah maksimal hasil rata-rata pada posisi terbuka"
+
+msgid "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
+msgstr ""
+
 msgid "Maximum daily turnover"
 msgstr "Maksimum turnover harian"
 

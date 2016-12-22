@@ -4311,6 +4311,14 @@ msgstr "Максимальная общая проигранная сумма в
 msgid "Maximum aggregate payouts on open positions"
 msgstr "Максимальная совокупная выплата по открытым позициям"
 
+#, fuzzy
+#| msgid "Maximum aggregate payouts on open positions"
+msgid "Maximum aggregate payouts on open positions per symbol and contract type"
+msgstr "Максимальная совокупная выплата по открытым позициям"
+
+msgid "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
+msgstr ""
+
 msgid "Maximum daily turnover"
 msgstr "Максимальный дневной объём покупок"
 
