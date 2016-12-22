@@ -3,7 +3,6 @@
 body {
     .calls_recording {
         display: none;
-        font-style: italic;
     }
     .all-hide {
         display: none !important;
@@ -21,7 +20,7 @@ body {
 
 body.EN {
     .calls_recording {
-        display: inline !important;
+        display: block !important;
     }
     .app-store-badge {
         background-image: url('../images/pages/applications/appstore_en.svg');
@@ -132,7 +131,7 @@ body.FR {
 /*Indonesian Language */
 body.ID {
     .calls_recording {
-        display: inline !important;
+        display: block !important;
     }
     .regulatory-logo {
         display: none !important;
@@ -211,7 +210,7 @@ body.RU {
         }
     }
     .calls_recording {
-        display: inline !important;
+        display: block !important;
     }
     .ru-hide {
         display: none !important;
@@ -269,6 +268,12 @@ body.ZH_TW {
     }
     .google-play-badge {
         background-image: url('../images/pages/applications/googleplay_zh_tw.svg');
+    }
+}
+
+body.ZH_CN, body.ZH_TW {
+    .contact-content .border-bottom {
+        min-height: 215px;
     }
 }
 
