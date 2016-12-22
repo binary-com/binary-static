@@ -145,16 +145,25 @@ var Client = (function () {
     };
 
     var check_tnc = function() {
-        if (/user\/tnc_approvalws/.test(window.location.href) || /terms\-and\-conditions/.test(window.location.href)) return;
-        if (!get_boolean('is_virtual') && new RegExp(get_storage_value('loginid')).test(sessionStorage.getItem('check_tnc'))) {
-            var client_tnc_status   = get_storage_value('tnc_status'),
-                website_tnc_version = LocalStore.get('website.tnc_version');
-            if (client_tnc_status && website_tnc_version) {
-                if (client_tnc_status !== website_tnc_version) {
-                    sessionStorage.setItem('tnc_redirect', window.location.href);
-                    window.location.href = url_for('user/tnc_approvalws');
-                }
-            }
+        if (/user\/tnc_approvalws/.test(window.location.href) ||
+            /terms\-and\-conditions/.test(window.location.href) ||
+            get_boolean('is_virtual') ||
+            sessionStorage.getItem('check_tnc') !== 'check') {
+            return;
+        }
+        var client_tnc_status   = get_storage_value('tnc_status'),
+            website_tnc_version = LocalStore.get('website.tnc_version');
+        if (client_tnc_status && website_tnc_version && client_tnc_status !== website_tnc_version) {
+            sessionStorage.setItem('tnc_redirect', window.location.href);
+            window.location.href = url_for('user/tnc_approvalws');
+        }
+    };
+
+    var set_check_tnc = function () {
+        if (!$('body').hasClass('BlueTopBack')) {
+            sessionStorage.setItem('check_tnc', 'check');
+            localStorage.removeItem('client.tnc_status');
+            localStorage.removeItem('website.tnc_version');
         }
     };
 
@@ -165,7 +174,7 @@ var Client = (function () {
                 LocalStore.set(c, '');
             }
         });
-        localStorage.removeItem('website.tnc_version');
+        set_check_tnc();
         sessionStorage.setItem('currencies', '');
     };
 
@@ -353,6 +362,7 @@ var Client = (function () {
         check_storage_values  : check_storage_values,
         response_authorize    : response_authorize,
         check_tnc             : check_tnc,
+        set_check_tnc         : set_check_tnc,
         clear_storage_values  : clear_storage_values,
         get_token             : get_token,
         add_token             : add_token,

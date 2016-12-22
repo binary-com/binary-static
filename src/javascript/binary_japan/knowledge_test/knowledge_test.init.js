@@ -1,7 +1,8 @@
-var toJapanTimeIfNeeded = require('../../binary/base/clock').toJapanTimeIfNeeded;
+var toJapanTimeIfNeeded = require('../../binary/base/clock').Clock.toJapanTimeIfNeeded;
 var KnowledgeTestUI     = require('./knowledge_test.ui').KnowledgeTestUI;
 var KnowledgeTestData   = require('./knowledge_test.data').KnowledgeTestData;
 var localize = require('../../binary/base/localize').localize;
+var url_for  = require('../../binary/base/url').url_for;
 
 var KnowledgeTest = (function() {
     'use strict';
@@ -131,7 +132,7 @@ var KnowledgeTest = (function() {
                     var jpStatus = response.get_settings.jp_account_status;
 
                     if (!jpStatus) {
-                        window.location.href = page.url.url_for('/');
+                        window.location.href = url_for('/');
                         return;
                     }
 
@@ -151,7 +152,7 @@ var KnowledgeTest = (function() {
                             break;
                         default: {
                             console.warn('Unexpected jp status');
-                            window.location.href = page.url.url_for('/');
+                            window.location.href = url_for('/');
                         }
                     }
                 } else if (type === 'jp_knowledge_test') {

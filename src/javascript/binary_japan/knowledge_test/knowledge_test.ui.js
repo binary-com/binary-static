@@ -1,5 +1,6 @@
-var moment = require('moment');
+var moment   = require('moment');
 var localize = require('../../binary/base/localize').localize;
+var url_for = require('../../binary/base/url').url_for;
 
 var KnowledgeTestUI = (function () {
     'use strict';
@@ -109,7 +110,7 @@ var KnowledgeTestUI = (function () {
         $topbarmsg.find('> span').removeClass('invisible');
         $topbarmsg.removeClass('invisible')
             .find('a').removeClass('invisible')
-                .attr('href', page.url.url_for('/new_account/knowledge_testws'))
+                .attr('href', url_for('/new_account/knowledge_testws'))
                 .html($('<span/>', { text: localize('{JAPAN ONLY}Take knowledge test') }));
     }
 

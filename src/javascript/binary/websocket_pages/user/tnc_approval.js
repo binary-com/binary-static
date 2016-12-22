@@ -59,7 +59,7 @@ var TNCApproval = (function() {
 
     var responseTNCApproval = function(response) {
         if (!response.hasOwnProperty('error')) {
-            sessionStorage.setItem('check_tnc', (sessionStorage.getItem('check_tnc') || '').split(Client.get_value('loginid')).join());
+            sessionStorage.setItem('check_tnc', 'checked');
             redirectBack();
         } else {
             $('#err_message').html(response.error.message).removeClass(hiddenClass);

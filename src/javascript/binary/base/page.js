@@ -29,6 +29,7 @@ var Page = function() {
 
 Page.prototype = {
     on_load: function() {
+        Client.set_check_tnc();
         this.url.reset();
         localizeForLang(getLanguage());
         Header.on_load();
