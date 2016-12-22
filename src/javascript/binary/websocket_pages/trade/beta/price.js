@@ -1,5 +1,4 @@
-var Durations_Beta             = require('./duration').Durations_Beta;
-var StartDates_Beta            = require('./starttime').StartDates_Beta;
+var Contract_Beta              = require('./contract').Contract_Beta;
 var Content                    = require('../../../common_functions/content').Content;
 var format_money               = require('../../../common_functions/currency_to_symbol').format_money;
 var moment                     = require('moment');
@@ -7,7 +6,11 @@ var contractTypeDisplayMapping = require('../common').contractTypeDisplayMapping
 var resetPriceMovement         = require('../common').resetPriceMovement;
 var displayCommentPrice        = require('../common').displayCommentPrice;
 var displayCommentSpreads      = require('../common').displayCommentSpreads;
+var showPriceOverlay           = require('../common').showPriceOverlay;
 var displayPriceMovement       = require('../common_independent').displayPriceMovement;
+var getTradingTimes            = require('../common_independent').getTradingTimes;
+var getStartDateNode           = require('../common_independent').getStartDateNode;
+var Defaults                   = require('../defaults').Defaults;
 var isVisible                  = require('../../../common_functions/common_functions').isVisible;
 
 /*
@@ -39,7 +42,7 @@ var Price_Beta = (function() {
             amountType = document.getElementById('amount_type'),
             currency = document.getElementById('currency'),
             payout = document.getElementById('amount'),
-            startTime = StartDates_Beta.node(),
+            startTime = getStartDateNode(),
             expiryType = document.getElementById('expiry_type'),
             duration = document.getElementById('duration_amount'),
             durationUnit = document.getElementById('duration_units'),
@@ -82,9 +85,9 @@ var Price_Beta = (function() {
             proposal.duration_unit = durationUnit.value;
         } else if (expiryType && isVisible(expiryType) && expiryType.value === 'endtime') {
             var endDate2 = endDate.getAttribute('data-value');
-            var endTime2 = Durations_Beta.getTime();
+            var endTime2 = Defaults.get('expiry_time');
             if (!endTime2) {
-                var trading_times = Durations_Beta.trading_times();
+                var trading_times = getTradingTimes();
                 if (trading_times.hasOwnProperty(endDate2) && typeof trading_times[endDate2][underlying.value] === 'object' && trading_times[endDate2][underlying.value].length && trading_times[endDate2][underlying.value][0] !== '--') {
                     if (trading_times[endDate2][underlying.value].length > 1) {
                         endTime2 = trading_times[endDate2][underlying.value][1];
@@ -276,6 +279,53 @@ var Price_Beta = (function() {
         form_id = 0;
     };
 
+    /*
+     * Function to request for cancelling the current price proposal
+     */
+    function processForgetProposals_Beta() {
+        showPriceOverlay();
+        BinarySocket.send({
+            forget_all: 'proposal',
+        });
+        Price_Beta.clearMapping();
+    }
+
+    /*
+     * Function to process and calculate price based on current form
+     * parameters or change in form parameters
+     */
+    function processPriceRequest_Beta() {
+        Price_Beta.incrFormId();
+        processForgetProposals_Beta();
+        showPriceOverlay();
+        var types = Contract_Beta.contractType()[Contract_Beta.form()];
+        if (Contract_Beta.form() === 'digits') {
+            switch (sessionStorage.getItem('formname')) {
+                case 'matchdiff':
+                    types = {
+                        DIGITMATCH: 1,
+                        DIGITDIFF : 1,
+                    };
+                    break;
+                case 'evenodd':
+                    types = {
+                        DIGITEVEN: 1,
+                        DIGITODD : 1,
+                    };
+                    break;
+                case 'overunder':
+                    types = {
+                        DIGITOVER : 1,
+                        DIGITUNDER: 1,
+                    };
+                // no default
+            }
+        }
+        Object.keys(types).forEach(function(typeOfContract) {
+            BinarySocket.send(Price_Beta.proposal(typeOfContract));
+        });
+    }
+
     return {
         proposal        : createProposal,
         display         : display,
@@ -284,6 +334,9 @@ var Price_Beta = (function() {
         idDisplayMapping: function() { return typeDisplayIdMapping; },
         getFormId       : function() { return form_id; },
         incrFormId      : function() { form_id++; },
+
+        processForgetProposals_Beta: processForgetProposals_Beta,
+        processPriceRequest_Beta   : processPriceRequest_Beta,
     };
 })();
 

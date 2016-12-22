@@ -6,6 +6,7 @@ var MBTick          = require('./mb_tick').MBTick;
 var TradingAnalysis = require('../trade/analysis').TradingAnalysis;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
 var debounce        = require('../trade/common').debounce;
+var processForgetTicks = require('../trade/process').processForgetTicks;
 
 /*
  * TradingEvents object contains all the event handler function required for
