@@ -1,9 +1,8 @@
-var Symbols = require('../../symbols').Symbols;
-var template = require('../../../../base/utility').template;
-var localize = require('../../../../base/localize').localize;
-require('../../../../../lib/highstock/highstock.js');
-require('../../../../../lib/highstock/highstock-exporting.js');
-require('../../../../../lib/highstock/export-csv.js');
+var Symbols     = require('../../symbols').Symbols;
+var template    = require('../../../../base/utility').template;
+var localize    = require('../../../../base/localize').localize;
+var Highcharts  = require('highcharts');
+require('highcharts/modules/exporting')(Highcharts);
 
 var DigitInfoWS_Beta = function() {
     this.chart_config = {
