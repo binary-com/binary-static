@@ -4,7 +4,7 @@ var Client   = require('../binary/base/client').Client;
 
 var CashierJP = (function() {
     function init(action) {
-        if (Client.values_set()) {
+        if (Client.get_boolean('values_set')) {
             var $container = $('#japan_cashier_container');
             if (Client.get_boolean('is_virtual')) {
                 $container.addClass('center-text').removeClass('invisible')

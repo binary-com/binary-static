@@ -292,7 +292,7 @@ var PaymentAgentWithdrawWS = (function() {
         });
 
         Content.populate();
-        if (Client.get_boolean('is_virtual') || Client.status_detected('withdrawal_locked, cashier_locked', 'any')) {
+        if (Client.get_boolean('values_set') || Client.status_detected('withdrawal_locked, cashier_locked', 'any')) {
             PaymentAgentWithdrawWS.init();
         } else if (sessionStorage.getItem('client_status') === null) {
             BinarySocket.send({ get_account_status: '1', passthrough: { dispatch_to: 'PaymentAgentWithdrawWS' } });
