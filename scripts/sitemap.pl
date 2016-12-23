@@ -10,45 +10,55 @@ use Term::ANSIColor;
 
 use BS qw/all_languages/;
 
-my @langs = map { lc $_ } grep {$_ ne 'JA'} all_languages(); # exclude JA language from sitemap
+my @langs = map { lc $_ } all_languages();
 my @urls = (
-    # path (without .html) , changefreq, priority, exclude languages
-    ['home'                , 'monthly', '1.00'],
-    ['why-us'              , 'monthly', '0.80'],
-    ['tour'                , 'monthly', '0.80'],
-    ['platforms'           , 'monthly', '0.80'],
-    ['trading'             , 'monthly', '0.80'],
-    ['contact'             , 'monthly', '0.80'],
-    ['about-us'            , 'monthly', '0.80'],
-    ['partners'            , 'monthly', '0.80'],
-    ['cashier'             , 'monthly', '0.80'],
-    ['careers'             , 'monthly', '0.80'],
-    ['user-testing'        , 'monthly', '0.80'],
-    ['open-positions'      , 'monthly', '0.80'],
-    ['payment-agent'       , 'monthly', '0.80'],
-    ['group-history'       , 'monthly', '0.80'],
-    ['regulation'          , 'monthly', '0.80' , 'ar,id'],
-    ['affiliate/signup'    , 'monthly', '0.80'],
-    ['responsible-trading' , 'monthly', '0.80'],
-    ['terms-and-conditions', 'monthly', '0.80'],
-    ['open-source-projects', 'monthly', '0.80'],
+    # path (without .html)    , changefreq, priority, exclude languages
+    ['home'                   , 'monthly', '1.00'],
+    ['why-us'                 , 'monthly', '0.80' , 'ja'],
+    ['why-us-jp'              , 'monthly', '0.80' , 'NOT-ja'],
+    ['tour'                   , 'monthly', '0.80' , 'ja'],
+    ['tour-jp'                , 'monthly', '0.80' , 'NOT-ja'],
+    ['platforms'              , 'monthly', '0.80' , 'ja'],
+    ['trading'                , 'monthly', '0.80' , 'ja'],
+    ['multi_barriers_trading' , 'monthly', '0.80'],
+    ['contact'                , 'monthly', '0.80'],
+    ['about-us'               , 'monthly', '0.80'],
+    ['partners'               , 'monthly', '0.80' , 'ja'],
+    ['cashier'                , 'monthly', '0.80'],
+    ['careers'                , 'monthly', '0.80' , 'ja'],
+    ['user-testing'           , 'monthly', '0.80'],
+    ['open-positions'         , 'monthly', '0.80'],
+    ['payment-agent'          , 'monthly', '0.80'],
+    ['group-history'          , 'monthly', '0.80'],
+    ['regulation'             , 'monthly', '0.80' , 'id'],
+    ['affiliate/signup'       , 'monthly', '0.80' , 'ja'],
+    ['responsible-trading'    , 'monthly', '0.80' , 'ja'],
+    ['terms-and-conditions'   , 'monthly', '0.80' , 'ja'],
+    ['terms-and-conditions-jp', 'monthly', '0.80' , 'NOT-ja'],
+    ['open-source-projects'   , 'monthly', '0.80' , 'ja'],
 
-    ['cashier/payment_methods' , 'monthly', '0.80'],
-    ['resources/asset_indexws' , 'monthly', '0.80'],
+    ['cashier/payment_methods' , 'monthly', '0.80', 'ja'],
+    ['cashier/deposit-jp'      , 'monthly', '0.80', 'NOT-ja'],
+    ['cashier/withdraw-jp'     , 'monthly', '0.80', 'NOT-ja'],
+    ['resources/asset_indexws' , 'monthly', '0.80', 'ja'],
     ['resources/market_timesws', 'monthly', '0.80'],
 
-    ['get-started'                             , 'monthly', '0.80'],
-    ['get-started/what-is-binary-trading'      , 'monthly', '0.80'],
-    ['get-started/types-of-trades'             , 'monthly', '0.80'],
-    ['get-started/binary-options-basics'       , 'monthly', '0.80'],
-    ['get-started/benefits-of-trading-binaries', 'monthly', '0.80'],
-    ['get-started/how-to-trade-binaries'       , 'monthly', '0.80'],
-    ['get-started/volidx-markets'              , 'monthly', '0.80'],
-    ['get-started/spread'                      , 'monthly', '0.80'],
-    ['get-started/smart-indices'               , 'monthly', '0.80'],
-    ['get-started/otc-indices-stocks'          , 'monthly', '0.80'],
-    ['get-started/beginners-faq'               , 'monthly', '0.80'],
-    ['get-started/glossary'                    , 'monthly', '0.80'],
+    ['get-started'                             , 'monthly', '0.80', 'ja'],
+    ['get-started/what-is-binary-trading'      , 'monthly', '0.80', 'ja'],
+    ['get-started/types-of-trades'             , 'monthly', '0.80', 'ja'],
+    ['get-started/binary-options-basics'       , 'monthly', '0.80', 'ja'],
+    ['get-started/benefits-of-trading-binaries', 'monthly', '0.80', 'ja'],
+    ['get-started/how-to-trade-binaries'       , 'monthly', '0.80', 'ja'],
+    ['get-started/volidx-markets'              , 'monthly', '0.80', 'ja'],
+    ['get-started/spread'                      , 'monthly', '0.80', 'ja'],
+    ['get-started/smart-indices'               , 'monthly', '0.80', 'ja'],
+    ['get-started/otc-indices-stocks'          , 'monthly', '0.80', 'ja'],
+    ['get-started/beginners-faq'               , 'monthly', '0.80', 'ja'],
+    ['get-started/glossary'                    , 'monthly', '0.80', 'ja'],
+
+    ['get-started-jp'                          , 'monthly', '0.80', 'NOT-ja'],
+    ['company-profile'                         , 'monthly', '0.80', 'NOT-ja'],
+    ['service-announcements'                   , 'monthly', '0.80', 'NOT-ja'],
 );
 
 
@@ -68,9 +78,13 @@ my $excluded = 0;
 
 foreach my $lang (@langs) {
     foreach my $url (@urls) {
-        if ($url->[3] and index($url->[3], $lang) > -1) {
-            $excluded++;
-            next;
+        if ($url->[3]) {
+            my $exclude = $url->[3];
+            if (($exclude =~ /^NOT-/ & $exclude !~ $lang) or
+                ($exclude !~ /^NOT-/ & $exclude =~ $lang)) {
+                $excluded++;
+                next;
+            }
         }
 
         $writer->startTag('url');
