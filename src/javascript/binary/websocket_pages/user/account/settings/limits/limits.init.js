@@ -50,7 +50,8 @@ var LimitsWS = (function() {
         document.getElementById('limits-title').setAttribute('style', 'display:none');
         var errorElement = document.getElementsByClassName('notice-msg')[0];
         if ((error && error.code === 'FeatureNotAvailable' && page.client.is_virtual()) || page.client.is_virtual()) {
-            errorElement.innerHTML = page.text.localize('This feature is not relevant to virtual-money accounts.');
+            $(errorElement).addClass('notice-msg center-text')
+            .text(Content.localize().textFeatureUnavailableVirtual);
         } else if (error && error.message) {
             errorElement.innerHTML = error.message;
         } else {

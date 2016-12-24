@@ -119,6 +119,7 @@ var Content = (function() {
             textUnavailableReal               : 'Sorry, account opening is unavailable.',
             textMessageMinRequired            : 'Minimum of [_1] characters required.',
             textFeatureUnavailable            : 'Sorry, this feature is not available.',
+            textFeatureUnavailableVirtual     : 'This feature is not relevant to virtual-money accounts.',
             textMessagePasswordScore          : 'Password score is: [_1]. Passing score is: 20.',
             textShouldNotLessThan             : 'Please enter a number greater or equal to [_1].',
             textNumberLimit                   : 'Please enter a number between [_1].', // [_1] should be a range

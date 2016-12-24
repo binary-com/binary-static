@@ -32,7 +32,7 @@ var SecurityWS = (function() {
         $form.hide();
         $('#SecuritySuccessMsg')
             .addClass('notice-msg center-text')
-            .text(Content.localize().textFeatureUnavailable);
+            .text(Content.localize().textFeatureUnavailableVirtual);
         return true;
     }
 

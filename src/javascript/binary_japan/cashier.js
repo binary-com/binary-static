@@ -3,11 +3,12 @@ var objectNotEmpty = require('../binary/base/utility').objectNotEmpty;
 
 var CashierJP = (function() {
     function init(action) {
+        Content.populate();
         if (objectNotEmpty(TUser.get())) {
             var $container = $('#japan_cashier_container');
             if (page.client.is_virtual()) {
-                $container.addClass('center-text').removeClass('invisible')
-                    .html($('<p/>', { class: 'notice-msg', html: page.text.localize('This feature is not relevant to virtual-money accounts.') }));
+                $container.addClass('notice-msg center-text').removeClass('invisible')
+                    .text(Content.localize().textFeatureUnavailableVirtual);
                 return;
             }
             $container.removeClass('invisible');
