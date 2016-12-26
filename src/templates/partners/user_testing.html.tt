@@ -1,19 +1,28 @@
 <div class="user_testing container">
   <div class="gr-no-gutter static_full">
-    <h1>[% l("Sign Up to Test Our Platform") %]</h1>
+    <h1>[% l("Security testing opportunities") %]</h1>
     <div>
       <p>
-        [% l("At [_1], we consider the strength and security of our trading platform to be critically important.", website_name) %]
+        [% l("Want to help us enhance the strength and security of our platform?") %]
       </p>
       <p>
-        [% l("This is why we're now recruiting additional testers for each new release, to ensure that our platform remains stable and secure with every enhancement deployed.") %]
+        [% l("Test our products and services for security vulnerabilities. In the process, you’ll earn a monetary reward for any verifiable issues that you find, courtesy of our bug bounty programme.") %]
       </p>
-      <p>
-        [% l("Register to become a tester using the links below:") %]
-      </p>
+      <h2>[% l("Benefits") %]</h2>
+      <ul class="bullet">
+        <li>[% l("Hone your security testing skills.") %]</li>
+        <li>[% l("Increase your HackerOne reputation to build up credibility and profile visibility.") %]</li>
+        <li>[% l("Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities.") %]</li>
+      </ul>
+      <h2>[% l("Getting started") %]</h2>
+      <ul class="bullet">
+        <li>[% l("Read and understand our HackerOne bug bounty programme policy.") %]</li>
+        <li>[% l("Analyse and test our website for bugs and potential security issues.") %]</li>
+        <li>[% l("Submit a report on HackerOne, or a pull-request in GitHub with a suggested fix.") %]</li>
+      </ul>
       <div class="gr-row">
 
-        <div class="gr-6 gr-12-m gr-6-p">
+        <div class="gr-6 gr-12-m gr-6-p gr-centered">
           <div class="xquote">
             <div>
               <div class="picture">
@@ -21,7 +30,7 @@
               </div>
               <div class="text">
                 <a class="pjaxload" href="https://hackerone.com/binary" target="_blank">
-                  [% l("Hackerone - for IT security professionals") %]
+                  [% l("Explore our HackerOne bounty programme") %]
                 </a>
               </div>
             </div>
@@ -29,7 +38,7 @@
         </div>
       </div>
       <p>
-        [% l("Earn money for any verifiable errors that you find.") %]
+        [% l("Earn up to USD 1,000 for finding high-risk security vulnerabilities.") %]
       </p>
     </div>
   </div>
