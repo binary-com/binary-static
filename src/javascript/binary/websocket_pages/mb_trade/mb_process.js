@@ -8,6 +8,7 @@ var TradingAnalysis    = require('../trade/analysis').TradingAnalysis;
 var japanese_client    = require('../../common_functions/country_base').japanese_client;
 var displayUnderlyings = require('../trade/common').displayUnderlyings;
 var showFormOverlay    = require('../trade/common').showFormOverlay;
+var processForgetTicks = require('../trade/process').processForgetTicks;
 
 var MBProcess = (function() {
     var market_status = '',
@@ -18,8 +19,9 @@ var MBProcess = (function() {
      */
     function processActiveSymbols(data) {
         'use strict';
+
         if (data.hasOwnProperty('error')) {
-            MBNotifications.show({text: data.error.message, uid: 'ACTIVE_SYMBOLS'});
+            MBNotifications.show({ text: data.error.message, uid: 'ACTIVE_SYMBOLS' });
             return;
         }
 
@@ -49,7 +51,7 @@ var MBProcess = (function() {
             displayUnderlyings('underlying', symbols_list, symbol);
 
             if (symbol && !symbols_list[symbol].is_active) {
-                MBNotifications.show({text: page.text.localize('This symbol is not active. Please try another symbol.'), uid: 'SYMBOL_INACTIVE'});
+                MBNotifications.show({ text: page.text.localize('This symbol is not active. Please try another symbol.'), uid: 'SYMBOL_INACTIVE' });
             } else if (update_page) {
                 MBProcess.processMarketUnderlying();
             }
@@ -58,7 +60,7 @@ var MBProcess = (function() {
 
     function handleMarketClosed() {
         $('.japan-form, .japan-table, #trading_bottom_content').addClass('invisible');
-        MBNotifications.show({text: page.text.localize('Market is closed. Please try again later.'), uid: 'MARKET_CLOSED'});
+        MBNotifications.show({ text: page.text.localize('Market is closed. Please try again later.'), uid: 'MARKET_CLOSED' });
         symbols_timeout = setTimeout(function() { MBSymbols.getSymbols(1); }, 30000);
     }
 
@@ -82,7 +84,7 @@ var MBProcess = (function() {
             return;
         }
 
-        if(underlyingElement.selectedIndex < 0) {
+        if (underlyingElement.selectedIndex < 0) {
             underlyingElement.selectedIndex = 0;
         }
         var underlying = underlyingElement.value;
@@ -109,12 +111,13 @@ var MBProcess = (function() {
      */
     function processTick(tick) {
         'use strict';
+
         if (tick.hasOwnProperty('error')) {
-            MBNotifications.show({text: tick.error.message, uid: 'TICK_ERROR'});
+            MBNotifications.show({ text: tick.error.message, uid: 'TICK_ERROR' });
             return;
         }
         var symbol = MBDefaults.get('underlying');
-        if(tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)){
+        if (tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)) {
             MBTick.details(tick);
             MBTick.display();
             MBTick.updateWarmChart();
@@ -128,7 +131,7 @@ var MBProcess = (function() {
         'use strict';
 
         if (contracts.hasOwnProperty('error')) {
-            MBNotifications.show({text: contracts.error.message, uid: contracts.error.code});
+            MBNotifications.show({ text: contracts.error.message, uid: contracts.error.code });
             return;
         }
 
@@ -171,57 +174,61 @@ var MBProcess = (function() {
 
     function processForgetProposals() {
         'use strict';
+
         MBPrice.showPriceOverlay();
         BinarySocket.send({
-            forget_all: "proposal"
+            forget_all: 'proposal',
         });
         MBPrice.cleanup();
     }
 
     function processPriceRequest() {
         'use strict';
+
         MBPrice.increaseReqId();
         processForgetProposals();
         MBPrice.showPriceOverlay();
         var available_contracts = MBContract.getCurrentContracts(),
             durations = MBDefaults.get('period').split('_');
         var req = {
-            proposal   : 1,
-            subscribe  : 1,
-            basis      : 'payout',
-            amount     : japanese_client() ? (parseInt(MBDefaults.get('payout')) || 1) * 1000 :
-                                              MBDefaults.get('payout'),
-            currency   : MBContract.getCurrency(),
-            symbol     : MBDefaults.get('underlying'),
-            req_id     : MBPrice.getReqId(),
-            date_expiry: durations[1],
+            proposal_array: 1,
+            subscribe     : 1,
+            basis         : 'payout',
+            amount        : japanese_client() ? (parseInt(MBDefaults.get('payout')) || 1) * 1000 : MBDefaults.get('payout'),
+            currency      : MBContract.getCurrency(),
+            symbol        : MBDefaults.get('underlying'),
+            req_id        : MBPrice.getReqId(),
+            date_expiry   : durations[1],
+
             trading_period_start: durations[0],
         };
-        var barriers_array, i, j, barrier_count, all_expired = true;
-        for (i = 0; i < available_contracts.length; i++) {
+        var barriers_array,
+            all_expired = true;
+        for (var i = 0; i < available_contracts.length; i++) {
+            req.barriers = [];
             req.contract_type = available_contracts[i].contract_type;
-            barrier_count = available_contracts[i].barriers == 2 ? 2 : 1;
             barriers_array = available_contracts[i].available_barriers;
-            for (j = 0; j < barriers_array.length; j++) {
-                if (available_contracts[i].barriers == 2) {
-                    req.barrier = barriers_array[j][1];
-                    req.barrier2 = barriers_array[j][0];
-                    if (barrierHasExpired(available_contracts[i].expired_barriers, req.barrier, req.barrier2)) {
-                        continue;
-                    }
+            for (var j = 0; j < barriers_array.length; j++) {
+                var barrier_item = {};
+                if (+available_contracts[i].barriers === 2) {
+                    barrier_item.barrier  = barriers_array[j][1];
+                    barrier_item.barrier2 = barriers_array[j][0];
                 } else {
-                    req.barrier = barriers_array[j];
-                    if (barrierHasExpired(available_contracts[i].expired_barriers, req.barrier)) {
-                        continue;
-                    }
+                    barrier_item.barrier = barriers_array[j];
                 }
-                all_expired = false;
+                if (!barrierHasExpired(available_contracts[i].expired_barriers,
+                        barrier_item.barrier, barrier_item.barrier2)) {
+                    all_expired = false;
+                    req.barriers.push(barrier_item);
+                }
+            }
+            if (req.barriers.length) {
                 MBPrice.addPriceObj(req);
                 BinarySocket.send(req);
             }
         }
         if (all_expired) {
-            MBNotifications.show({text: page.text.localize('All barriers in this trading window are expired') + '.', uid: 'ALL_EXPIRED'});
+            MBNotifications.show({ text: page.text.localize('All barriers in this trading window are expired') + '.', uid: 'ALL_EXPIRED' });
             MBPrice.hidePriceOverlay();
         } else {
             MBNotifications.hide('ALL_EXPIRED');
@@ -230,20 +237,23 @@ var MBProcess = (function() {
 
     function processProposal(response) {
         'use strict';
+
         var req_id = MBPrice.getReqId();
-        if(response.req_id === req_id){
+        if (response.req_id === req_id) {
             MBPrice.display(response);
-            //MBPrice.hidePriceOverlay();
+            // MBPrice.hidePriceOverlay();
         }
     }
 
     var processExpiredBarriers = function() {
         var contracts = MBContract.getCurrentContracts(),
-            i, expired_barrier, $expired_barrier_element;
+            i,
+            expired_barrier,
+            $expired_barrier_element;
         contracts.forEach(function(c) {
             var expired_barriers = c.expired_barriers;
             for (i = 0; i < expired_barriers.length; i++) {
-                if (c.barriers == 2) {
+                if (+c.barriers === 2) {
                     expired_barrier = expired_barriers[i][0] + '_' + expired_barriers[i][1];
                 } else {
                     expired_barrier = expired_barriers[i];
@@ -268,14 +278,14 @@ var MBProcess = (function() {
         var prices = MBPrice.getPrices();
         Object.keys(prices[expired_barrier]).forEach(function(c) {
             if (!prices[expired_barrier][c].hasOwnProperty('error')) {
-                BinarySocket.send({forget: prices[expired_barrier][c].proposal.id});
+                BinarySocket.send({ forget: prices[expired_barrier][c].proposal.id });
             }
         });
     }
 
     var containsArray = function(array, val) {
         var hash = {};
-        for(var i = 0; i < array.length; i++) {
+        for (var i = 0; i < array.length; i++) {
             hash[array[i]] = i;
         }
         return hash.hasOwnProperty(val);

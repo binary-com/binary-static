@@ -3,7 +3,6 @@ var Barriers                  = require('./barriers').Barriers;
 var Contract                  = require('./contract').Contract;
 var Defaults                  = require('./defaults').Defaults;
 var Durations                 = require('./duration').Durations;
-var TradingEvents             = require('./event').TradingEvents;
 var Price                     = require('./price').Price;
 var Purchase                  = require('./purchase').Purchase;
 var StartDates                = require('./starttime').StartDates;
@@ -12,7 +11,6 @@ var Tick                      = require('./tick').Tick;
 var WSTickDisplay             = require('./tick_trade').WSTickDisplay;
 var State                     = require('../../base/storage').State;
 var displayUnderlyings        = require('./common').displayUnderlyings;
-var showPriceOverlay          = require('./common').showPriceOverlay;
 var hidePriceOverlay          = require('./common').hidePriceOverlay;
 var hideFormOverlay           = require('./common').hideFormOverlay;
 var showFormOverlay           = require('./common').showFormOverlay;
@@ -24,7 +22,9 @@ var selectOption              = require('./common').selectOption;
 var updateWarmChart           = require('./common').updateWarmChart;
 var displayContractForms      = require('./common').displayContractForms;
 var displayMarkets            = require('./common').displayMarkets;
+var processTradingTimesAnswer = require('./common_independent').processTradingTimesAnswer;
 var setFormPlaceholderContent = require('./set_values').setFormPlaceholderContent;
+var moment = require('moment');
 
 /*
  * This function process the active symbols to get markets
@@ -64,7 +64,7 @@ function processMarket(flag) {
     var update_page = Symbols.need_page_update() || flag;
 
     // change to default market if query string contains an invalid market
-    if(!market || !Symbols.underlyings()[market]) {
+    if (!market || !Symbols.underlyings()[market]) {
         market = getDefaultMarket();
         Defaults.set('market', market);
     }
@@ -89,7 +89,7 @@ function processMarketUnderlying() {
         return;
     }
 
-    if(underlyingElement.selectedIndex < 0) {
+    if (underlyingElement.selectedIndex < 0) {
         underlyingElement.selectedIndex = 0;
     }
     var underlying = underlyingElement.value;
@@ -118,8 +118,9 @@ function processMarketUnderlying() {
  */
 function processContract(contracts) {
     'use strict';
-    if(contracts.hasOwnProperty('error') && contracts.error.code === 'InvalidSymbol') {
-        processForgetProposals();
+
+    if (contracts.hasOwnProperty('error') && contracts.error.code === 'InvalidSymbol') {
+        Price.processForgetProposals();
         var container = document.getElementById('contract_confirmation_container'),
             message_container = document.getElementById('confirmation_message'),
             confirmation_error = document.getElementById('confirmation_error'),
@@ -134,12 +135,12 @@ function processContract(contracts) {
 
     window.chartAllowed = true;
     if (contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly') {
-      window.chartAllowed = false;
+        window.chartAllowed = false;
     }
 
     document.getElementById('trading_socket_container').classList.add('show');
     var init_logo = document.getElementById('trading_init_progress');
-    if(init_logo.style.display !== 'none') {
+    if (init_logo.style.display !== 'none') {
         init_logo.style.display = 'none';
         Defaults.update();
     }
@@ -194,19 +195,19 @@ function processContractForm() {
     }
 
     if (Defaults.get('amount')) $('#amount').val(Defaults.get('amount'));
-        else Defaults.set('amount', document.getElementById('amount').value);
+    else Defaults.set('amount', document.getElementById('amount').value);
     if (Defaults.get('amount_type')) selectOption(Defaults.get('amount_type'), document.getElementById('amount_type'));
-        else Defaults.set('amount_type', document.getElementById('amount_type').value);
+    else Defaults.set('amount_type', document.getElementById('amount_type').value);
     if (Defaults.get('currency')) selectOption(Defaults.get('currency'), document.getElementById('currency'));
 
     var expiry_type = Defaults.get('expiry_type') || 'duration';
-    var make_price_request = TradingEvents.onExpiryTypeChange(expiry_type);
+    var make_price_request = onExpiryTypeChange(expiry_type);
 
     if (make_price_request >= 0) {
-        processPriceRequest();
+        Price.processPriceRequest();
     }
 
-    if(Defaults.get('formname') === 'spreads') {
+    if (Defaults.get('formname') === 'spreads') {
         Defaults.remove('expiry_type', 'duration_amount', 'duration_units', 'expiry_date', 'expiry_time', 'amount', 'amount_type');
     } else {
         Defaults.remove('amount_per_point', 'stop_type', 'stop_loss', 'stop_profit');
@@ -219,8 +220,7 @@ function displayPrediction() {
         predictionElement.show();
         if (Defaults.get('prediction')) {
             selectOption(Defaults.get('prediction'), document.getElementById('prediction'));
-        }
-        else {
+        } else {
             Defaults.set('prediction', document.getElementById('prediction').value);
         }
     } else {
@@ -255,11 +255,11 @@ function displaySpreads() {
             Defaults.set('stop_type', document.getElementById('stop_type_points').checked ? 'point' : 'dollar');
         }
         if (Defaults.get('amount_per_point')) amountPerPoint.value = Defaults.get('amount_per_point');
-            else Defaults.set('amount_per_point', amountPerPoint.value);
+        else Defaults.set('amount_per_point', amountPerPoint.value);
         if (Defaults.get('stop_loss')) document.getElementById('stop_loss').value = Defaults.get('stop_loss');
-            else Defaults.set('stop_loss', document.getElementById('stop_loss').value);
+        else Defaults.set('stop_loss', document.getElementById('stop_loss').value);
         if (Defaults.get('stop_profit')) document.getElementById('stop_profit').value = Defaults.get('stop_profit');
-            else Defaults.set('stop_profit', document.getElementById('stop_profit').value);
+        else Defaults.set('stop_profit', document.getElementById('stop_profit').value);
     } else {
         amountPerPointLabel.hide();
         amountPerPoint.hide();
@@ -271,58 +271,8 @@ function displaySpreads() {
 }
 
 function forgetTradingStreams() {
-    processForgetProposals();
+    Price.processForgetProposals();
     processForgetTicks();
-}
-/*
- * Function to request for cancelling the current price proposal
- */
-function processForgetProposals() {
-    'use strict';
-    showPriceOverlay();
-    BinarySocket.send({
-        forget_all: "proposal"
-    });
-    Price.clearMapping();
-}
-
-/*
- * Function to process and calculate price based on current form
- * parameters or change in form parameters
- */
-function processPriceRequest() {
-    'use strict';
-
-    Price.incrFormId();
-    processForgetProposals();
-    showPriceOverlay();
-    var types = Contract.contractType()[Contract.form()];
-    if (Contract.form() === 'digits') {
-        switch (sessionStorage.getItem('formname')) {
-            case 'matchdiff':
-                types = {
-                    'DIGITMATCH': 1,
-                    'DIGITDIFF': 1
-                };
-                break;
-            case 'evenodd':
-                types = {
-                    'DIGITEVEN': 1,
-                    'DIGITODD': 1
-                };
-                break;
-            case 'overunder':
-                types = {
-                    'DIGITOVER': 1,
-                    'DIGITUNDER': 1
-                };
-        }
-    }
-    for (var typeOfContract in types) {
-        if (types.hasOwnProperty(typeOfContract)) {
-            BinarySocket.send(Price.proposal(typeOfContract));
-        }
-    }
 }
 
 /*
@@ -331,8 +281,9 @@ function processPriceRequest() {
  */
 function processForgetTicks() {
     'use strict';
+
     BinarySocket.send({
-        forget_all: 'ticks'
+        forget_all: 'ticks',
     });
 }
 
@@ -341,9 +292,10 @@ function processForgetTicks() {
  */
 function processTick(tick) {
     'use strict';
+
     var symbol = sessionStorage.getItem('underlying');
     var digit_info = TradingAnalysis.digit_info();
-    if(tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)){
+    if (tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)) {
         Tick.details(tick);
         Tick.display();
         if (digit_info && tick.tick) {
@@ -356,51 +308,84 @@ function processTick(tick) {
             Barriers.setBarrierUpdate(true);
         }
         updateWarmChart();
-    } else {
-        if(digit_info)
-            digit_info.update_chart(tick);
+    } else if (digit_info)            {
+        digit_info.update_chart(tick);
     }
 }
 
 function processProposal(response) {
     'use strict';
+
     var form_id = Price.getFormId();
-    if(response.echo_req && response.echo_req !== null && response.echo_req.passthrough && response.echo_req.passthrough.form_id === form_id){
+    if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
+        response.echo_req.passthrough.form_id === form_id) {
         hideOverlayContainer();
         Price.display(response, Contract.contractType()[Contract.form()]);
         hidePriceOverlay();
     }
 }
 
-function processTradingTimesRequest(date) {
-    var trading_times = Durations.trading_times();
-    if (trading_times.hasOwnProperty(date)) {
-        processPriceRequest();
-    } else {
-        showPriceOverlay();
-        BinarySocket.send({
-            trading_times: date
-        });
-    }
+function processTradingTimes(response) {
+    processTradingTimesAnswer(response);
+    Price.processPriceRequest();
 }
 
-function processTradingTimes(response) {
-    Durations.processTradingTimesAnswer(response);
+function onExpiryTypeChange(value) {
+    if (!value || !$('#expiry_type').find('option[value=' + value + ']').length) {
+        value = 'duration';
+    }
+    $('#expiry_type').val(value);
 
-    processPriceRequest();
+    var make_price_request = 0;
+    if (value === 'endtime') {
+        Durations.displayEndTime();
+        if (Defaults.get('expiry_date')) {
+            Durations.selectEndDate(moment(Defaults.get('expiry_date')));
+            make_price_request = -1;
+        }
+        Defaults.remove('duration_units', 'duration_amount');
+    } else {
+        StartDates.enable();
+        Durations.display();
+        if (Defaults.get('duration_units')) {
+            onDurationUnitChange(Defaults.get('duration_units'));
+        }
+        var duration_amount = Defaults.get('duration_amount');
+        if (duration_amount && duration_amount > $('#duration_minimum').text()) {
+            $('#duration_amount').val(duration_amount);
+        }
+        make_price_request = 1;
+        Defaults.remove('expiry_date', 'expiry_time', 'end_date');
+        Durations.validateMinDurationAmount();
+    }
+
+    return make_price_request;
+}
+
+function onDurationUnitChange(value) {
+    if (!value || !$('#duration_units').find('option[value=' + value + ']').length) {
+        return 0;
+    }
+
+    $('#duration_units').val(value);
+    Defaults.set('duration_units', value);
+
+    Durations.select_unit(value);
+    Durations.populate();
+
+    return 1;
 }
 
 module.exports = {
     processActiveSymbols: processActiveSymbols,
-    processMarket: processMarket,
-    processContract: processContract,
-    processContractForm: processContractForm,
+    processMarket       : processMarket,
+    processContract     : processContract,
+    processContractForm : processContractForm,
     forgetTradingStreams: forgetTradingStreams,
-    processForgetProposals: processForgetProposals,
-    processPriceRequest: processPriceRequest,
-    processForgetTicks: processForgetTicks,
-    processTick: processTick,
-    processProposal: processProposal,
-    processTradingTimesRequest: processTradingTimesRequest,
-    processTradingTimes: processTradingTimes,
+    processForgetTicks  : processForgetTicks,
+    processTick         : processTick,
+    processProposal     : processProposal,
+    processTradingTimes : processTradingTimes,
+    onExpiryTypeChange  : onExpiryTypeChange,
+    onDurationUnitChange: onDurationUnitChange,
 };

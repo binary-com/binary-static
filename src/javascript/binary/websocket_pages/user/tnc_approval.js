@@ -1,9 +1,9 @@
 var showLoadingImage = require('../../base/utility').showLoadingImage;
-var template = require('../../base/utility').template;
-var Content = require('../../common_functions/content').Content;
+var template         = require('../../base/utility').template;
+var Content          = require('../../common_functions/content').Content;
 
 var TNCApproval = (function() {
-    "use strict";
+    'use strict';
 
     var terms_conditions_version,
         client_tnc_status,
@@ -19,22 +19,22 @@ var TNCApproval = (function() {
         redirectUrl = sessionStorage.getItem('tnc_redirect');
         sessionStorage.removeItem('tnc_redirect');
 
-        BinarySocket.send({"get_settings"   : "1"});
-        BinarySocket.send({"website_status" : "1"});
+        BinarySocket.send({ get_settings: '1' });
+        BinarySocket.send({ website_status: '1' });
 
         $('#btn-accept').click(function(e) {
             e.preventDefault();
             e.stopPropagation();
-            BinarySocket.send({"tnc_approval" : "1"});
+            BinarySocket.send({ tnc_approval: '1' });
         });
     };
 
     var showTNC = function() {
-        if(!terms_conditions_version || !client_tnc_status || !page.client.get_storage_value('landing_company_name')) {
+        if (!terms_conditions_version || !client_tnc_status || !page.client.get_storage_value('landing_company_name')) {
             return;
         }
 
-        if(terms_conditions_version === client_tnc_status) {
+        if (terms_conditions_version === client_tnc_status) {
             redirectBack();
             return;
         }
@@ -45,19 +45,18 @@ var TNCApproval = (function() {
         var tnc_message = template($('#tnc-message').html(), [
             page.client.get_storage_value('landing_company_name'),
             page.client.residence === 'jp' ?
-                page.url.url_for('terms-and-conditions-jp') :
-                page.url.url_for('terms-and-conditions')
+            page.url.url_for('terms-and-conditions-jp') :
+            page.url.url_for('terms-and-conditions'),
         ]);
         $('#tnc-message').html(tnc_message).removeClass(hiddenClass);
         $('#btn-accept').text(page.text.localize('OK'));
     };
 
     var responseTNCApproval = function(response) {
-        if(!response.hasOwnProperty('error')) {
-            sessionStorage.setItem('check_tnc', (sessionStorage.getItem('check_tnc') || '').split(page.client.loginid).join());
+        if (!response.hasOwnProperty('error')) {
+            sessionStorage.setItem('check_tnc', 'checked');
             redirectBack();
-        }
-        else {
+        } else {
             $('#err_message').html(response.error.message).removeClass(hiddenClass);
         }
     };
@@ -68,11 +67,11 @@ var TNCApproval = (function() {
 
     var apiResponse = function(response) {
         isReal = !TUser.get().is_virtual;
-        if(!isReal) {
+        if (!isReal) {
             redirectBack();
         }
 
-        switch(response.msg_type) {
+        switch (response.msg_type) {
             case 'website_status':
                 terms_conditions_version = response.website_status.terms_conditions_version;
                 showTNC();
@@ -96,7 +95,7 @@ var TNCApproval = (function() {
                 if (response) {
                     TNCApproval.apiResponse(response);
                 }
-            }
+            },
         });
 
         Content.populate();
@@ -104,12 +103,12 @@ var TNCApproval = (function() {
     };
 
     return {
-        init : init,
-        apiResponse : apiResponse,
-        showTNC: showTNC,
-        onLoad: onLoad,
+        init       : init,
+        apiResponse: apiResponse,
+        showTNC    : showTNC,
+        onLoad     : onLoad,
     };
-}());
+})();
 
 module.exports = {
     TNCApproval: TNCApproval,

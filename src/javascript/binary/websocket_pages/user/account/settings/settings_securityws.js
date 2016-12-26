@@ -1,29 +1,28 @@
 var getLoginToken   = require('../../../../common_functions/common_functions').getLoginToken;
-var isIE            = require('../../../../common_functions/common_functions').isIE;
 var Content         = require('../../../../common_functions/content').Content;
-var testPassword    = require('../../../../common_functions/passwordmeter').testPassword;
 var ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
 var bind_validation = require('../../../../validator').bind_validation;
 var dv              = require('../../../../../lib/validation');
 
 var SecurityWS = (function() {
-    "use strict";
+    'use strict';
+
     var $form;
     var current_state,
         redirect_url;
     var STATE = {
-        WAIT_AUTH:    'WAIT_AUTH',
+        WAIT_AUTH   : 'WAIT_AUTH',
         QUERY_LOCKED: 'QUERY_LOCKED',
-        LOCKED:       'LOCKED',
-        UNLOCKED:     'UNLOCKED',
-        TRY_UNLOCK:   'TRY_UNLOCK',
-        TRY_LOCK:     'TRY_LOCK',
-        DONE:         'DONE',
+        LOCKED      : 'LOCKED',
+        UNLOCKED    : 'UNLOCKED',
+        TRY_UNLOCK  : 'TRY_UNLOCK',
+        TRY_LOCK    : 'TRY_LOCK',
+        DONE        : 'DONE',
     };
 
     function clearErrors() {
-        $("#SecuritySuccessMsg").text('');
-        $("#invalidinputfound").text('');
+        $('#SecuritySuccessMsg').text('');
+        $('#invalidinputfound').text('');
     }
 
     function checkIsVirtual() {
@@ -39,25 +38,25 @@ var SecurityWS = (function() {
 
     function makeAuthRequest() {
         BinarySocket.send({
-            authorize: getLoginToken(),
-            passthrough: {dispatch_to: 'cashier_password'},
+            authorize  : getLoginToken(),
+            passthrough: { dispatch_to: 'cashier_password' },
         });
     }
 
     function init() {
         Content.populate();
-        $form = $("#changeCashierLock");
+        $form = $('#changeCashierLock');
         if (checkIsVirtual()) return;
 
         current_state = STATE.WAIT_AUTH;
-        BinarySocket.init({onmessage: handler});
+        BinarySocket.init({ onmessage: handler });
         makeAuthRequest();
     }
 
     function authorised() {
         current_state = STATE.QUERY_LOCKED;
         BinarySocket.send({
-            cashier_password: "1",
+            cashier_password: '1',
         });
     }
 
@@ -70,15 +69,7 @@ var SecurityWS = (function() {
     }
 
     function setupRepeatPasswordForm() {
-        $("#repasswordrow").show();
-        $('#password-meter-div').css({display: 'block'});
-        if (isIE()) {
-            $('#password-meter').remove();
-            return;
-        }
-        $('#cashierlockpassword1').on('input', function() {
-            $('#password-meter').attr('value', testPassword($('#cashierlockpassword1').val())[0]);
-        });
+        $('#repasswordrow').show();
     }
 
     function lockedStatus(response) {
@@ -86,14 +77,14 @@ var SecurityWS = (function() {
         if (locked) {
             updatePage({
                 legend: 'Unlock Cashier',
-                info:   'Your cashier is locked as per your request - to unlock it, please enter the password.',
+                info  : 'Your cashier is locked as per your request - to unlock it, please enter the password.',
                 button: 'Unlock Cashier',
             });
-            $("#repasswordrow").hide();
+            $('#repasswordrow').hide();
         } else {
             updatePage({
                 legend: 'Lock Cashier',
-                info:   'An additional password can be used to restrict access to the cashier.',
+                info  : 'An additional password can be used to restrict access to the cashier.',
                 button: 'Update',
             });
             setupRepeatPasswordForm();
@@ -132,7 +123,7 @@ var SecurityWS = (function() {
         var key = current_state === STATE.TRY_UNLOCK ?
             'unlock_password' :
             'lock_password';
-        var params  = {cashier_password: '1'};
+        var params  = { cashier_password: '1' };
         params[key] = $('#cashierlockpassword1').val();
         BinarySocket.send(params);
     }
@@ -147,12 +138,12 @@ var SecurityWS = (function() {
                 response.error.code === 'InputValidationFailed') {
                 message = 'Sorry, you have entered an incorrect cashier password';
             }
-            $("#invalidinputfound").text(page.text.localize(message));
+            $('#invalidinputfound').text(page.text.localize(message));
             return;
         }
         $form.hide();
         clearErrors();
-        $("#SecuritySuccessMsg").text(page.text.localize('Your settings have been updated successfully.'));
+        $('#SecuritySuccessMsg').text(page.text.localize('Your settings have been updated successfully.'));
         redirect_url = current_state === STATE.TRY_UNLOCK ? sessionStorage.getItem('cashier_lock_redirect') : '';
         setTimeout(redirect, 2000);
         current_state = STATE.DONE;

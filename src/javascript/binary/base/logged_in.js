@@ -1,11 +1,11 @@
 var objectNotEmpty = require('./utility').objectNotEmpty;
-var Cookies = require('../../lib/js-cookie');
+var Cookies        = require('../../lib/js-cookie');
 
 var LoggedInHandler = (function() {
-    "use strict";
+    'use strict';
 
     var init = function() {
-        parent.window['is_logging_in'] = 1; // this flag is used in base.js to prevent auto-reloading this page
+        parent.window.is_logging_in = 1; // this flag is used in base.js to prevent auto-reloading this page
         var redirect_url;
         try {
             var tokens  = storeTokens(),
@@ -19,31 +19,31 @@ var LoggedInHandler = (function() {
                 });
                 loginid = loginids[0];
                 // set cookies
-                page.client.set_cookie('loginid'     , loginid);
+                page.client.set_cookie('loginid',      loginid);
                 page.client.set_cookie('loginid_list', loginid_list);
             }
             page.client.set_cookie('login', tokens[loginid]);
 
             // set flags
             if (!$('body').hasClass('BlueTopBack')) localStorage.setItem('risk_classification', 'check');
-            if (!$('body').hasClass('BlueTopBack')) sessionStorage.setItem('check_tnc', Cookies.get('loginid_list'));
+            page.client.set_check_tnc();
             GTM.set_login_flag();
 
             // redirect url
             redirect_url = sessionStorage.getItem('redirect_url');
             sessionStorage.removeItem('redirect_url');
-        } catch(e) {console.log('storage is not supported');}
+        } catch (e) { console.log('storage is not supported'); }
 
         // redirect back
         var set_default = true;
-        if(redirect_url) {
+        if (redirect_url) {
             var do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home'];
             var reg = new RegExp(do_not_redirect.join('|'), 'i');
-            if(!reg.test(redirect_url) && page.url.url_for('') !== redirect_url) {
+            if (!reg.test(redirect_url) && page.url.url_for('') !== redirect_url) {
                 set_default = false;
             }
         }
-        if(set_default) {
+        if (set_default) {
             redirect_url = page.url.default_redirect_url();
             var lang_cookie = Cookies.get('language');
             if (lang_cookie && lang_cookie !== page.language()) {
@@ -58,14 +58,14 @@ var LoggedInHandler = (function() {
         // Parse hash for loginids and tokens returned by OAuth
         var hash = (/acct1/i.test(window.location.hash) ? window.location.hash : window.location.search).substr(1).split('&'); // to maintain compatibility till backend change released
         var tokens = {};
-        for(var i = 0; i < hash.length; i += 2) {
-            var loginid = getHashValue(hash[i], 'acct');
-            var token = getHashValue(hash[i+1], 'token');
-            if(loginid && token) {
+        for (var i = 0; i < hash.length; i += 2) {
+            var loginid = getHashValue(hash[i], 'acct'),
+                token   = getHashValue(hash[i + 1], 'token');
+            if (loginid && token) {
                 tokens[loginid] = token;
             }
         }
-        if(objectNotEmpty(tokens)) {
+        if (objectNotEmpty(tokens)) {
             page.client.set_storage_value('tokens', JSON.stringify(tokens));
         }
         return tokens;
@@ -79,7 +79,7 @@ var LoggedInHandler = (function() {
     return {
         init: init,
     };
-}());
+})();
 
 module.exports = {
     LoggedInHandler: LoggedInHandler,

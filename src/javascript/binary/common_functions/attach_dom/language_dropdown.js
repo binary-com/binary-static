@@ -1,22 +1,34 @@
-var appendTextValueChild = require('../common_functions').appendTextValueChild;
+var $languages,
+    languageCode,
+    languageText;
 
 function create_language_drop_down(languages) {
-    var language_select_element = document.getElementById('language_select');
-    if (!language_select_element || language_select_element.children.length !== 0) return;
+    $languages = $('.languages');
+    var selectLanguage = 'ul#select_language',
+        $selectLanguage = $languages.find(selectLanguage);
+    if ($languages.length === 0 || $selectLanguage.find('li span.language').text() !== '') return;
     languages.sort(function(a, b) {
-        if (a === 'EN' || a < b) {
-            return -1;
-        } else {
-            return 1;
-        }
+        return (a === 'EN' || a < b) ? -1 : 1;
     });
+    var displayLanguage = 'ul#display_language',
+        language = page.language();
+    languageCode = language && language !== '' ? language : 'en';
+    languageText = language && language !== '' ? map_code_to_language(language) : 'English';
+    add_display_language(displayLanguage);
+    add_display_language(selectLanguage);
     for (var i = 0; i < languages.length; i++) {
-        if (languages[i] !== 'JA') {
-            appendTextValueChild(language_select_element, map_code_to_language(languages[i]), '', '', languages[i]);
-        }
+        $selectLanguage.append('<li class="' + languages[i] + '">' + map_code_to_language(languages[i]) + '</li>');
     }
-    $('#language_select .' + page.language()).attr('selected', 'selected');
-    $('#language_select').removeClass('invisible');
+    $selectLanguage.find('li.' + language + ':eq(1)').addClass('invisible');
+    page.on_change_language();
+    $('.languages').removeClass('invisible');
+}
+
+function add_display_language(id) {
+    $languages.find(id + ' li')
+              .addClass(languageCode)
+              .find('span.language')
+              .text(languageText);
 }
 
 function map_code_to_language(code) {

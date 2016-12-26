@@ -3,14 +3,14 @@ var KnowledgeTestUI     = require('./knowledge_test.ui').KnowledgeTestUI;
 var KnowledgeTestData   = require('./knowledge_test.data').KnowledgeTestData;
 
 var KnowledgeTest = (function() {
-    "use strict";
+    'use strict';
 
     var hiddenClass = 'invisible';
 
     var submitted = {};
     var submitCompleted = false;
     var randomPicks = [];
-    var randomPicksAnswer = {};
+    var randomPicksObj = {};
     var resultScore = 0;
 
     var passMsg = '{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly.';
@@ -26,36 +26,41 @@ var KnowledgeTest = (function() {
         if (submitCompleted) {
             return;
         }
-        var answeredQid = Object.keys(submitted).map(function(k) {return +k;});
+        var answeredQid = Object.keys(submitted).map(function(k) { return +k; });
         if (answeredQid.length !== 20) {
             $('#knowledge-test-instructions').addClass('invisible');
             $('#knowledge-test-msg')
                 .addClass('notice-msg')
                 .text(page.text.localize('You need to finish all 20 questions.'));
-            // $("html, body").animate({ scrollTop: 0 }, "slow");
 
-            var allQid = [].concat.apply([], randomPicks).map(function(q) {
-                return q.id;
-            });
-            var unAnswered = allQid.find(function(q){
-                return answeredQid.indexOf(q) === -1;
-            });
-            window.location.href = '#' + unAnswered;
+            var unAnswered = randomPicks.reduce((a, b) => a.concat(b))
+                                        .find(q => answeredQid.indexOf(q.id) === -1).id;
+
+            $.scrollTo('a[name="' + unAnswered + '"]', 500, { offset: -10 });
             return;
         }
 
         // compute score
-        for (var k in submitted) {
-            if (submitted.hasOwnProperty(k)) {
-                resultScore += (submitted[k] === randomPicksAnswer[k] ? 1 : 0);
-            }
-        }
-        KnowledgeTestData.sendResult(resultScore);
+        var questions = [];
+        Object.keys(submitted).forEach(function (k) {
+            var questionInfo = randomPicksObj[k],
+                score = submitted[k] === questionInfo.correct_answer ? 1 : 0;
+            resultScore += score;
+            questionInfo.answer = submitted[k];
+            questions.push({
+                category: questionInfo.category,
+                id      : questionInfo.id,
+                question: questionInfo.question,
+                answer  : questionInfo.answer ? 1 : 0,
+                pass    : score,
+            });
+        });
+        KnowledgeTestData.sendResult(questions, resultScore);
         submitCompleted = true;
     }
 
     function showQuestionsTable() {
-        for (var j = 0 ; j < randomPicks.length ; j ++) {
+        for (var j = 0; j < randomPicks.length; j++) {
             var table = KnowledgeTestUI.createQuestionTable(randomPicks[j]);
             $('#section' + (j + 1) + '-question').append(table);
         }
@@ -94,8 +99,8 @@ var KnowledgeTest = (function() {
 
         var msg = page.text.localize(msgTemplate, [
             toJapanTimeIfNeeded(jpStatus.next_test_epoch),
-            toJapanTimeIfNeeded(jpStatus.last_test_epoch)
-            ]);
+            toJapanTimeIfNeeded(jpStatus.last_test_epoch),
+        ]);
 
         showMsgOnly(msg);
     }
@@ -107,14 +112,8 @@ var KnowledgeTest = (function() {
 
     function populateQuestions() {
         randomPicks = KnowledgeTestData.randomPick20();
-        for (var i = 0 ; i < 5 ; i ++) {
-            for ( var k = 0 ; k < 4 ; k++) {
-                var qid = randomPicks[i][k].id;
-                var ans = randomPicks[i][k].answer;
-
-                randomPicksAnswer[qid] = ans;
-            }
-        }
+        randomPicks.reduce((a, b) => a.concat(b))
+                   .forEach((question) => { randomPicksObj[question.id] = question; });
 
         showQuestionsTable();
     }
@@ -135,7 +134,7 @@ var KnowledgeTest = (function() {
                         return;
                     }
 
-                    switch(jpStatus.status) {
+                    switch (jpStatus.status) {
                         case 'jp_knowledge_test_pending': populateQuestions();
                             break;
                         case 'jp_knowledge_test_fail': if (Date.now() >= (jpStatus.next_test_epoch * 1000)) {
@@ -157,23 +156,23 @@ var KnowledgeTest = (function() {
                 } else if (type === 'jp_knowledge_test') {
                     if (!response.error) {
                         showResult(resultScore, response.jp_knowledge_test.test_taken_epoch * 1000);
-                        $("html, body").animate({ scrollTop: 0 }, "slow");
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
 
                         $('#knowledgetest-link').addClass(hiddenClass);     // hide it anyway
                     } else if (response.error.code === 'TestUnavailableNow') {
                         showMsgOnly('{JAPAN ONLY}The test is unavailable now, test can only be taken again on next business day with respect of most recent test.');
                     }
                 }
-            }
+            },
         });
 
-        BinarySocket.send({get_settings: 1, passthrough: {key: 'knowledgetest'}});
+        BinarySocket.send({ get_settings: 1, passthrough: { key: 'knowledgetest' } });
     }
 
     function showActivationPending() {
         $('#topbar-msg').children('a').addClass(hiddenClass + ' jp_activation_pending');
         if ($('.activation-message').length === 0) {
-            $('#virtual-text').append(' ' + '<div class="activation-message">' + page.text.localize('Your Application is Being Processed.') + '</div>' );
+            $('#virtual-text').append(' <div class="activation-message">' + page.text.localize('Your Application is Being Processed.') + '</div>');
         }
     }
 
@@ -189,15 +188,15 @@ var KnowledgeTest = (function() {
             case 'jp_activation_pending':
                 showActivationPending();
                 break;
-            default: return;
+            default:
         }
     }
 
     return {
-        init: init,
-        showKnowledgeTestTopBarIfValid: showKnowledgeTestTopBarIfValid
+        init                          : init,
+        showKnowledgeTestTopBarIfValid: showKnowledgeTestTopBarIfValid,
     };
-}());
+})();
 
 module.exports = {
     KnowledgeTest: KnowledgeTest,
