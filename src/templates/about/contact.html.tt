@@ -52,7 +52,7 @@
                             [% l("[_1] (Toll Free)", "0800 011 9847") %]
                         </span>
                     </div>
-                    <div class="gr-8 gr-prefix-4 gr-12-t gr-12-p gr-prefix-0-t gr-prefix-0-p gr-prefix-0-m gr-padding-10 gr-12-m notice-msg calls_recording">
+                    <div class="gr-padding-10 hint calls_recording">
                         [% l("All calls are recorded for training and monitoring purposes") %]
                     </div>
                 </div>
