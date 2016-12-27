@@ -251,6 +251,7 @@ sub _texts {
         push @texts, localize('Touch/No Touch');
         push @texts, localize('Stays In/Goes Out');
         push @texts, localize('Waiting for entry tick.');
+        push @texts, localize('Waiting for exit tick.');
         push @texts, localize('Refresh page');
         push @texts, localize('Please log in.');
         push @texts, localize('All markets are closed now. Please try again later.');

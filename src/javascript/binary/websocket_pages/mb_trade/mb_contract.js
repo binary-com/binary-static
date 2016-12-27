@@ -73,6 +73,14 @@ var MBContract = (function() {
     // use function to generate elements and append them
     // e.g. element is select and element to append is option
     var appendTextValueChild = function(element, text, value, isSelected) {
+        if (element && !element.nodeName) {
+            if (typeof element === 'string') {
+                element = document.getElementById(element);
+            } else {
+                element = undefined;
+            }
+        }
+        if (!element) return;
         var option = document.createElement('option');
         option.text = text;
         option.value = value;
@@ -109,7 +117,7 @@ var MBContract = (function() {
             var default_value = MBDefaults.get('period');
             for (var j = 0; j < trading_period_array.length; j++) {
                 appendTextValueChild(
-                    document.getElementById('period'),
+                    'period',
                     PeriodText(trading_period_array[j]),
                     trading_period_array[j],
                     trading_period_array[j] === default_value);
@@ -232,7 +240,7 @@ var MBContract = (function() {
             var default_value = MBDefaults.get('category');
             for (var j = 0; j < contracts_array.length; j++) {
                 appendTextValueChild(
-                    document.getElementById('category'),
+                    'category',
                     categoryNames[contracts_array[j]],
                     contracts_array[j],
                     contracts_array[j] === default_value);
