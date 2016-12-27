@@ -37,11 +37,20 @@ var jqueryuiTabsToDropdown = function($container) {
 // use function to generate elements and append them
 // element is select and element to append is option
 var appendTextValueChild = function(element, text, value, disabled, el_class) {
+    if (element && !element.nodeName) {
+        if (typeof element === 'string') {
+            element = document.getElementById(element);
+        } else {
+            element = undefined;
+        }
+    }
+    if (!element) return;
     var option = document.createElement('option');
     option.text = text;
-    if (value) {
-        option.value = value;
-    }
+    // setting null value helps with detecting required error
+    // on 'Please select' options
+    // that have no value of their own
+    option.value = value || '';
     if (disabled === 'disabled') {
         option.setAttribute('disabled', 'disabled');
     }

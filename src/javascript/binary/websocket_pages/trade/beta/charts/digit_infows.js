@@ -1,9 +1,8 @@
-var Symbols = require('../../symbols').Symbols;
+var Symbols     = require('../../symbols').Symbols;
 var MenuContent = require('../../../../base/menu_content').MenuContent;
-var template = require('../../../../base/utility').template;
-require('../../../../../lib/highstock/highstock.js');
-require('../../../../../lib/highstock/highstock-exporting.js');
-require('../../../../../lib/highstock/export-csv.js');
+var template    = require('../../../../base/utility').template;
+var Highcharts  = require('highcharts');
+require('highcharts/modules/exporting')(Highcharts);
 
 var DigitInfoWS_Beta = function() {
     this.chart_config = {

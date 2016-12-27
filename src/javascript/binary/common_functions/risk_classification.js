@@ -18,9 +18,7 @@ var RiskClassification = (function() {
         localStorage.removeItem('risk_classification');
         localStorage.removeItem('risk_classification.response');
         $('#risk_classification').remove();
-        if (sessionStorage.getItem('check_tnc')) {
-            page.client.check_tnc();
-        }
+        page.client.check_tnc();
     };
 
     return {
