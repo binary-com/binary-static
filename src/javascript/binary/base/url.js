@@ -57,7 +57,7 @@ Url.prototype = {
         return false;
     },
     params_hash: function() {
-        if (!this._param_hash) {
+        if (!this._param_hash || (this._param_hash && Object.keys(this._param_hash).length === 0)) {
             this._param_hash = {};
             var params = this.params();
             var param = params.length;
