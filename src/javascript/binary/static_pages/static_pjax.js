@@ -116,6 +116,9 @@ pjax_config_page('/platforms', function() {
         onLoad: function() {
             Platforms.init();
         },
+        onUnload: function () {
+            Platforms.unload();
+        },
     };
 });
 
