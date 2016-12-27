@@ -111,7 +111,9 @@ var ForwardWS = (function() {
         if (id) {
             $deposit_withdraw_error.find('#' + id).removeClass('invisible');
         } else {
-            $('#custom-error').html(error + ' ' + template(page.text.localize('Please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.'), page.url.url_for('/contact')) || page.text.localize('Sorry, an error occurred while processing your request.'))
+            $('#custom-error').html(error ?
+                error + ', ' + template(page.text.localize('please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.'), [page.url.url_for('/contact')]) :
+                page.text.localize('Sorry, an error occurred while processing your request.'))
                 .removeClass('invisible');
         }
         $deposit_withdraw_error.removeClass('invisible');

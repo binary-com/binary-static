@@ -257,19 +257,6 @@ sub _texts {
         push @texts, localize('All markets are closed now. Please try again later.');
 
         #strings for limitsws page
-        push @texts, localize('Trading and Withdrawal Limits');
-        push @texts, localize('Item');
-        push @texts, localize('Limit');
-        push @texts, localize('Maximum number of open positions');
-        push @texts, localize('Represents the maximum number of outstanding contracts in your portfolio. Each line in your portfolio counts for one open position. Once the maximum is reached, you will not be able to open new positions without closing an existing position first.');
-        push @texts, localize('Maximum account cash balance');
-        push @texts, localize('Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds.');
-        push @texts, localize('Maximum daily turnover');
-        push @texts, localize('Represents the maximum volume of contracts that you may purchase in any given trading day.');
-        push @texts, localize('Maximum aggregate payouts on open positions');
-        push @texts, localize('Presents the maximum aggregate payouts on outstanding contracts in your portfolio. If the maximum is attained, you may not purchase additional contracts without first closing out existing positions.');
-        push @texts, localize('Trading Limits');
-        push @texts, localize('Withdrawal Limits');
         push @texts, localize('Your account is fully authenticated and your withdrawal limits have been lifted.');
         push @texts, localize('Your withdrawal limit is [_1] [_2].');
         push @texts, localize('Your withdrawal limit is [_1] [_2] (or equivalent in other currency).');
@@ -730,7 +717,7 @@ sub _texts {
         push @texts, localize('Deposit [_1] [_2] virtual money into your account [_3]');
         push @texts, localize('Withdraw');
         push @texts, localize('Insufficient balance.');
-        push @texts, localize('Please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.');
+        push @texts, localize('please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.');
 
         # strings for endpoint notification
         push @texts, localize('This is a staging server - For testing purposes only');
