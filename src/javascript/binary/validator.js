@@ -149,7 +149,7 @@ bind_validation.simple = function(form, opts) {
         stop    : opts.stop     || function(validation) {
             ValidationUI.clear();
             validation.errors.forEach(function(err) {
-                var sel = 'input[name=' + stripTrailing(err.ctx) + ']';
+                var sel = '[name=' + stripTrailing(err.ctx) + ']';
                 ValidationUI.draw(sel, err.err);
             });
         },

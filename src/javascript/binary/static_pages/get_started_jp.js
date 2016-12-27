@@ -36,8 +36,13 @@ var GetStartedJP = (function() {
         });
     };
 
+    var unload = function() {
+        $(window).off('hashchange');
+    };
+
     return {
-        init: init,
+        init  : init,
+        unload: unload,
     };
 })();
 
