@@ -730,6 +730,7 @@ sub _texts {
         push @texts, localize('Deposit [_1] [_2] virtual money into your account [_3]');
         push @texts, localize('Withdraw');
         push @texts, localize('Insufficient balance.');
+        push @texts, localize('Please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.');
 
         # strings for endpoint notification
         push @texts, localize('This is a staging server - For testing purposes only');
