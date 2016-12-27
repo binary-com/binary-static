@@ -148,6 +148,9 @@ pjax_config_page('/get-started-jp', function() {
         onLoad: function() {
             GetStartedJP.init();
         },
+        onUnload: function () {
+            GetStartedJP.unload();
+        },
     };
 });
 
@@ -162,6 +165,9 @@ pjax_config_page('/open-positions/job-details', function() {
         onLoad: function() {
             JobDetails.init();
             JobDetails.addEventListeners();
+        },
+        onUnload: function () {
+            JobDetails.removeEventListeners();
         },
     };
 });
