@@ -3,7 +3,7 @@ var url = require('../base/url').url;
 var Platforms = (function () {
     var sections = [];
     function init() {
-        sections = ['more-tools', 'trading-platforms', 'platforms-comparison'];
+        sections = ['more-tools', 'trading-platforms'];
         var sidebarListItem = $('.sidebar-nav li');
         sidebarListItem.click(function() {
             sidebarListItem.removeClass('selected');
@@ -57,8 +57,13 @@ var Platforms = (function () {
         $('.sections[id="' + get_hash().substring(1) + '"]').removeClass('invisible');
         $('.sidebar-nav a[href="' + get_hash() + '"]').parent().addClass('selected');
     }
+    function unload() {
+        $(window).off('resize');
+        $(window).off('hashchange');
+    }
     return {
-        init: init,
+        init  : init,
+        unload: unload,
     };
 })();
 

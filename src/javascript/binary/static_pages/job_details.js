@@ -84,11 +84,17 @@ var JobDetails = (function() {
         });
     }
 
+    function removeEventListeners() {
+        $(window).off('hashchange');
+    }
+
     return {
-        showSelectedDiv  : showSelectedDiv,
-        check_url        : check_url,
-        init             : init,
-        addEventListeners: addEventListeners,
+        showSelectedDiv: showSelectedDiv,
+        check_url      : check_url,
+        init           : init,
+
+        addEventListeners   : addEventListeners,
+        removeEventListeners: removeEventListeners,
     };
 })();
 
