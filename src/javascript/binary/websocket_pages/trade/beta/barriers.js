@@ -3,6 +3,7 @@ var Defaults           = require('../defaults').Defaults;
 var Tick               = require('../tick').Tick;
 var moment             = require('moment');
 var isVisible          = require('../../../common_functions/common_functions').isVisible;
+var elementTextContent = require('../../../common_functions/common_functions').elementTextContent;
 var countDecimalPlaces = require('../common_independent').countDecimalPlaces;
 
 /*
@@ -54,17 +55,17 @@ var Barriers_Beta = (function () {
                         tooltip.style.display = 'none';
                         span.style.display = 'inherit';
                         // no need to display indicative barrier in case of absolute barrier
-                        indicativeBarrierTooltip.textContent = '';
+                        elementTextContent(indicativeBarrierTooltip, '');
                     } else {
                         if (!String(barrier_def).match(/^[+-]/)) barrier_def = barrier.barrier; // override Defaults value, because it's changing from absolute to relative barrier
                         value = barrier_def;
                         span.style.display = 'none';
                         tooltip.style.display = 'inherit';
                         if (currentTick && !isNaN(currentTick)) {
-                            indicativeBarrierTooltip.textContent = (parseFloat(currentTick) +
-                                parseFloat(barrier_def)).toFixed(decimalPlaces);
+                            elementTextContent(indicativeBarrierTooltip, (parseFloat(currentTick) +
+                              parseFloat(barrier_def)).toFixed(decimalPlaces));
                         } else {
-                            indicativeBarrierTooltip.textContent = '';
+                            elementTextContent(indicativeBarrierTooltip, '');
                         }
                     }
                     elm.value = elm.textContent = value;
@@ -108,8 +109,8 @@ var Barriers_Beta = (function () {
                         low_tooltip.style.display = 'none';
                         low_span.style.display = 'inherit';
 
-                        indicativeHighBarrierTooltip.textContent = '';
-                        indicativeLowBarrierTooltip.textContent  = '';
+                        elementTextContent(indicativeHighBarrierTooltip, '');
+                        elementTextContent(indicativeLowBarrierTooltip, '');
                     } else {
                         // override Defaults value, if it's changing from absolute to relative barrier
                         if (!String(barrier_high).match(/^[+-]/) || !String(barrier_low).match(/^[+-]/)) {
@@ -125,13 +126,13 @@ var Barriers_Beta = (function () {
                         low_tooltip.style.display = 'inherit';
 
                         if (currentTick && !isNaN(currentTick)) {
-                            indicativeHighBarrierTooltip.textContent = (parseFloat(currentTick) +
-                                parseFloat(barrier_high)).toFixed(decimalPlaces);
-                            indicativeLowBarrierTooltip.textContent = (parseFloat(currentTick) +
-                                parseFloat(barrier_low)).toFixed(decimalPlaces);
+                            elementTextContent(indicativeHighBarrierTooltip, (parseFloat(currentTick) +
+                                parseFloat(barrier_high)).toFixed(decimalPlaces));
+                            elementTextContent(indicativeLowBarrierTooltip, (parseFloat(currentTick) +
+                                parseFloat(barrier_low)).toFixed(decimalPlaces));
                         } else {
-                            indicativeHighBarrierTooltip.textContent = '';
-                            indicativeLowBarrierTooltip.textContent = '';
+                            elementTextContent(indicativeHighBarrierTooltip, '');
+                            elementTextContent(indicativeLowBarrierTooltip, '');
                         }
                     }
                     high_elm.value = high_elm.textContent = value_high;

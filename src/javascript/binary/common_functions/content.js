@@ -1,4 +1,5 @@
 var template = require('../base/utility').template;
+var selectorExists = require('../common_functions/common_functions').selectorExists;
 
 var Content = (function() {
     'use strict';
@@ -129,134 +130,134 @@ var Content = (function() {
         });
 
         var starTime = document.getElementById('start_time_label');
-        if (starTime) {
+        if (selectorExists(starTime)) {
             starTime.textContent = localize.textStartTime;
         }
 
         var minDurationTooltip = document.getElementById('duration_tooltip');
-        if (minDurationTooltip) {
+        if (selectorExists(minDurationTooltip)) {
             minDurationTooltip.textContent = localize.textMinDuration;
             minDurationTooltip.setAttribute('data-balloon', localize.textMinDurationTooltip);
         }
 
         var spotLabel = document.getElementById('spot_label');
-        if (spotLabel) {
+        if (selectorExists(spotLabel)) {
             spotLabel.textContent = localize.textSpot;
         }
 
         var barrierTooltip = document.getElementById('barrier_tooltip');
-        if (barrierTooltip) {
+        if (selectorExists(barrierTooltip)) {
             barrierTooltip.textContent = localize.textBarrierOffset;
             barrierTooltip.setAttribute('data-balloon', localize.textBarrierOffsetTooltip);
         }
 
         var barrierSpan = document.getElementById('barrier_span');
-        if (barrierSpan) {
+        if (selectorExists(barrierSpan)) {
             barrierSpan.textContent = localize.textBarrier;
         }
 
         var barrierHighTooltip = document.getElementById('barrier_high_tooltip');
-        if (barrierHighTooltip) {
+        if (selectorExists(barrierHighTooltip)) {
             barrierHighTooltip.textContent = localize.textHighBarrierOffset;
             barrierHighTooltip.setAttribute('data-balloon', localize.textBarrierOffsetTooltip);
         }
         var barrierHighSpan = document.getElementById('barrier_high_span');
-        if (barrierHighSpan) {
+        if (selectorExists(barrierHighSpan)) {
             barrierHighSpan.textContent = localize.textHighBarrier;
         }
 
         var barrierLowTooltip = document.getElementById('barrier_low_tooltip');
-        if (barrierLowTooltip) {
+        if (selectorExists(barrierLowTooltip)) {
             barrierLowTooltip.textContent = localize.textLowBarrierOffset;
             barrierLowTooltip.setAttribute('data-balloon', localize.textBarrierOffsetTooltip);
         }
         var barrierLowSpan = document.getElementById('barrier_low_span');
-        if (barrierLowSpan) {
+        if (selectorExists(barrierLowSpan)) {
             barrierLowSpan.textContent = localize.textLowBarrier;
         }
 
         var predictionLabel = document.getElementById('prediction_label');
-        if (predictionLabel) {
+        if (selectorExists(predictionLabel)) {
             predictionLabel.textContent = localize.textPredictionLabel;
         }
 
         var payoutOption = document.getElementById('payout_option');
-        if (payoutOption) {
+        if (selectorExists(payoutOption)) {
             payoutOption.textContent = localize.textPayout;
         }
 
         var stakeOption = document.getElementById('stake_option');
-        if (stakeOption) {
+        if (selectorExists(stakeOption)) {
             stakeOption.textContent = localize.textStake;
         }
 
         var purchaseButtonTop = document.getElementById('purchase_button_top');
-        if (purchaseButtonTop) {
+        if (selectorExists(purchaseButtonTop)) {
             purchaseButtonTop.textContent = localize.textPurchase;
         }
 
         var purchaseButtonBottom = document.getElementById('purchase_button_bottom');
-        if (purchaseButtonBottom) {
+        if (selectorExists(purchaseButtonBottom)) {
             purchaseButtonBottom.textContent = localize.textPurchase;
         }
 
         var period_label = document.getElementById('period_label');
-        if (period_label) {
+        if (selectorExists(period_label)) {
             period_label.textContent = localize.textContractPeriod;
         }
 
         var amount_per_point_label = document.getElementById('amount_per_point_label');
-        if (amount_per_point_label) {
+        if (selectorExists(amount_per_point_label)) {
             amount_per_point_label.textContent = localize.textAmountPerPoint;
         }
 
         var stop_loss_label = document.getElementById('stop_loss_label');
-        if (stop_loss_label) {
+        if (selectorExists(stop_loss_label)) {
             stop_loss_label.textContent = localize.textStopLoss;
         }
 
         var stop_profit_label = document.getElementById('stop_profit_label');
-        if (stop_profit_label) {
+        if (selectorExists(stop_profit_label)) {
             stop_profit_label.textContent = localize.textStopProfit;
         }
 
         var stop_type_label = document.getElementById('stop_type_label');
-        if (stop_type_label) {
+        if (selectorExists(stop_type_label)) {
             stop_type_label.textContent = localize.textStopType;
         }
 
         var stop_type_points = document.getElementById('stop_type_points_label');
-        if (stop_type_points) {
+        if (selectorExists(stop_type_points)) {
             stop_type_points.textContent = localize.textStopTypePoints;
         }
 
         var indicative_barrier_tooltip = document.getElementById('indicative_barrier_tooltip');
-        if (indicative_barrier_tooltip) {
+        if (selectorExists(indicative_barrier_tooltip)) {
             indicative_barrier_tooltip.setAttribute('data-balloon', localize.textIndicativeBarrierTooltip);
         }
 
         var indicative_high_barrier_tooltip = document.getElementById('indicative_high_barrier_tooltip');
-        if (indicative_high_barrier_tooltip) {
+        if (selectorExists(indicative_high_barrier_tooltip)) {
             indicative_high_barrier_tooltip.setAttribute('data-balloon', localize.textIndicativeBarrierTooltip);
         }
 
         var indicative_low_barrier_tooltip = document.getElementById('indicative_low_barrier_tooltip');
-        if (indicative_low_barrier_tooltip) {
+        if (selectorExists(indicative_low_barrier_tooltip)) {
             indicative_low_barrier_tooltip.setAttribute('data-balloon', localize.textIndicativeBarrierTooltip);
         }
 
         var jpbarrier_label = document.getElementById('jbarrier_label');
-        if (jpbarrier_label) {
+        if (selectorExists(jpbarrier_label)) {
             jpbarrier_label.textContent = localize.textExercisePrice;
         }
 
         var jpbarrier_high_label = document.getElementById('jbarrier_high_label');
-        if (jpbarrier_high_label) {
+        if (selectorExists(jpbarrier_high_label)) {
             jpbarrier_high_label.textContent = localize.textHighBarrier;
         }
 
         var jpbarrier_low_label = document.getElementById('jbarrier_low_label');
-        if (jpbarrier_low_label) {
+        if (selectorExists(jpbarrier_low_label)) {
             jpbarrier_low_label.textContent = localize.textLowBarrier;
         }
     };

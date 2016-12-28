@@ -1,5 +1,6 @@
 var Table          = require('../../../../../common_functions/attach_dom/table').Table;
 var addComma       = require('../../../../../common_functions/string_util').addComma;
+var elementTextContent  = require('../../../../../common_functions/common_functions').elementTextContent;
 
 var LimitsUI = (function() {
     'use strict';
@@ -17,10 +18,10 @@ var LimitsUI = (function() {
             payout         = document.getElementById('payout'),
             payoutPer      = document.getElementById('payout-per-symbol-and-contract-type');
 
-        openPosition.textContent   = addComma(limits.open_positions).split('.')[0];
-        accountBalance.textContent = addComma(limits.account_balance).split('.')[0];
-        payout.textContent         = addComma(limits.payout).split('.')[0];
-        payoutPer.textContent      = addComma(limits.payout_per_symbol_and_contract_type).split('.')[0];
+        elementTextContent(openPosition, addComma(limits.open_positions).split('.')[0]);
+        elementTextContent(accountBalance, addComma(limits.account_balance).split('.')[0]);
+        elementTextContent(payout, addComma(limits.payout).split('.')[0]);
+        elementTextContent(payoutPer, addComma(limits.payout_per_symbol_and_contract_type).split('.')[0]);
 
         var marketSpecific = limits.market_specific;
         clientLimits = $('#client-limits');

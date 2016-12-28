@@ -1,6 +1,7 @@
 var template = require('../../../../../base/utility').template;
 var Content  = require('../../../../../common_functions/content').Content;
 var addComma = require('../../../../../common_functions/string_util').addComma;
+var elementTextContent  = require('../../../../../common_functions/common_functions').elementTextContent;
 var LimitsUI = require('./limits.ui').LimitsUI;
 
 var LimitsWS = (function() {
@@ -15,7 +16,7 @@ var LimitsWS = (function() {
         var elWithdrawLimitAgg = document.getElementById('withdrawal-limit-aggregate');
 
         if (limits.lifetime_limit === 99999999 && limits.num_of_days_limit === 99999999) {
-            elWithdrawLimit.textContent = Content.localize().textAuthenticatedWithdrawal;
+            elementTextContent(elWithdrawLimit, Content.localize().textAuthenticatedWithdrawal);
         } else {
             var txtWithdrawLim            = Content.localize().textWithdrawalLimitsEquivalant;
             var txtWithdrawAmt             = Content.localize().textWithrawalAmountEquivalant;
@@ -29,8 +30,9 @@ var LimitsWS = (function() {
             if ((/^(iom)$/i).test(TUser.get().landing_company_name)) { // MX
                 txtWithdrawLim = Content.localize().textWithdrawalLimitsEquivalantDay;
                 txtWithdrawAmt  = Content.localize().textWithrawalAmountEquivalantDay;
-                elWithdrawLimit.textContent  = template(txtWithdrawLim, [limits.num_of_days, currency, daysLimit]);
-                elWithdrawn.textContent      = template(txtWithdrawAmt,  [currency, withdrawn, limits.num_of_days]);
+                elementTextContent(elWithdrawLimit
+                  , template(txtWithdrawLim, [limits.num_of_days, currency, daysLimit]));
+                elementTextContent(elWithdrawn, template(txtWithdrawAmt,  [currency, withdrawn, limits.num_of_days]));
             } else {
                 if ((/^(costarica|japan)$/i).test(TUser.get().landing_company_name)) { // CR , JP
                     txtWithdrawLim            = Content.localize().textWithdrawalLimits;
@@ -38,10 +40,10 @@ var LimitsWS = (function() {
                     text_CurrentMaxWithdrawal = Content.localize().textCurrentMaxWithdrawal;
                     currency                  = TUser.get().currency || page.client.get_storage_value('currencies');
                 }
-                elWithdrawLimit.textContent  = template(txtWithdrawLim, [currency, daysLimit]);
-                elWithdrawn.textContent      = template(txtWithdrawAmt,  [currency, withdrawn]);
+                elementTextContent(elWithdrawLimit, template(txtWithdrawLim, [currency, daysLimit]));
+                elementTextContent(elWithdrawn, template(txtWithdrawAmt,  [currency, withdrawn]));
             }
-            elWithdrawLimitAgg.textContent = template(text_CurrentMaxWithdrawal, [currency, remainder]);
+            elementTextContent(elWithdrawLimitAgg, template(text_CurrentMaxWithdrawal, [currency, remainder]));
         }
     }
 

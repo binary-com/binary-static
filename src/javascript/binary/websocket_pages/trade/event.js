@@ -29,6 +29,7 @@ var timeIsValid                = require('./common').timeIsValid;
 var getStartDateNode           = require('./common_independent').getStartDateNode;
 var TimePicker                 = require('../../components/time_picker').TimePicker;
 var dateValueChanged           = require('../../common_functions/common_functions').dateValueChanged;
+var elementTextContent         = require('../../common_functions/common_functions').elementTextContent;
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -306,7 +307,7 @@ var TradingEvents = (function () {
                 Defaults.set('currency', e.target.value);
                 var stopTypeDollarLabel = document.getElementById('stop_type_dollar_label');
                 if (stopTypeDollarLabel && isVisible(stopTypeDollarLabel)) {
-                    stopTypeDollarLabel.textContent = e.target.value;
+                    elementTextContent(stopTypeDollarLabel, e.target.value);
                 }
                 Price.processPriceRequest();
             });

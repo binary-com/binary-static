@@ -1,4 +1,5 @@
 var japanese_client = require('../common_functions/country_base').japanese_client;
+var selectorExists  = require('../common_functions/common_functions').selectorExists;
 var moment          = require('moment');
 
 /**
@@ -40,14 +41,15 @@ function get_highest_zindex(selector) {
 function showLocalTimeOnHover(s) {
     if (japanese_client()) return;
     $(s || '.date').each(function(idx, ele) {
-        var gmtTimeStr = ele.textContent.replace('\n', ' ');
-        var localTime  = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss').local();
-        if (!localTime.isValid()) {
-            return;
+        if (selectorExists(ele)) {
+            var gmtTimeStr = ele.textContent.replace('\n', ' ');
+            var localTime  = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss').local();
+            if (!localTime.isValid()) {
+                return;
+            }
+            var localTimeStr = localTime.format('YYYY-MM-DD HH:mm:ss Z');
+            $(ele).attr('data-balloon', localTimeStr);
         }
-
-        var localTimeStr = localTime.format('YYYY-MM-DD HH:mm:ss Z');
-        $(ele).attr('data-balloon', localTimeStr);
     });
 }
 

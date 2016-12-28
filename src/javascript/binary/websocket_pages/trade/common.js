@@ -9,6 +9,7 @@ var japanese_client = require('../../common_functions/country_base').japanese_cl
 var addComma        = require('../../common_functions/string_util').addComma;
 var Moment          = require('moment');
 var toISOFormat     = require('../../common_functions/string_util').toISOFormat;
+var elementTextContent  = require('../../common_functions/common_functions').elementTextContent;
 
 /*
  * This contains common functions we need for processing the response
@@ -176,7 +177,7 @@ function displayMarkets(id, elements, selected) {
                 if (selected && selected === key2) {
                     option.setAttribute('selected', 'selected');
                 }
-                option.textContent = '\xA0\xA0\xA0\xA0' + elements[key].submarkets[key2].name;
+                elementTextContent(option, '\xA0\xA0\xA0\xA0' + elements[key].submarkets[key2].name);
                 fragment.appendChild(option);
             }
         }
@@ -483,7 +484,7 @@ function displayCommentPrice(node, currency, type, payout) {
             node.hide();
         } else {
             node.show();
-            node.textContent = comment;
+            elementTextContent(node, comment);
         }
     }
 }
@@ -508,7 +509,7 @@ function displayCommentSpreads(node, currency, point) {
             } else {
                 displayAmount = parseFloat(stopLoss);
             }
-            node.textContent = Content.localize().textSpreadDepositComment + ' ' + format_money(currency, displayAmount) + ' ' + Content.localize().textSpreadRequiredComment + ': ' + point + ' ' + Content.localize().textSpreadPointsComment;
+            elementTextContent(node, Content.localize().textSpreadDepositComment + ' ' + format_money(currency, displayAmount) + ' ' + Content.localize().textSpreadRequiredComment + ': ' + point + ' ' + Content.localize().textSpreadPointsComment);
         }
     }
 }

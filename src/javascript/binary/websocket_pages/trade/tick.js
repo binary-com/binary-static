@@ -1,6 +1,7 @@
 var displayPriceMovement = require('./common_independent').displayPriceMovement;
 var countDecimalPlaces   = require('./common_independent').countDecimalPlaces;
 var isVisible            = require('../../common_functions/common_functions').isVisible;
+var elementTextContent   = require('../../common_functions/common_functions').elementTextContent;
 
 /*
  * Tick object handles all the process/display related to tick streaming
@@ -64,11 +65,11 @@ var Tick = (function() {
             spotElement.className = 'error';
         } else {
             spotElement.classList.remove('error');
-            displayPriceMovement(spotElement, spotElement.textContent, message);
+            displayPriceMovement(spotElement, elementTextContent(spotElement), message);
             displayIndicativeBarrier();
         }
 
-        spotElement.textContent = message;
+        elementTextContent(spotElement, message);
     };
 
     /*
@@ -106,9 +107,9 @@ var Tick = (function() {
                 indicativeLowBarrierTooltip.textContent = (parseFloat(currentTick) + value).toFixed(decimalPlaces);
             }
         } else {
-            indicativeBarrierTooltip.textContent = '';
-            indicativeHighBarrierTooltip.textContent = '';
-            indicativeLowBarrierTooltip.textContent = '';
+            elementTextContent(indicativeBarrierTooltip, '');
+            elementTextContent(indicativeHighBarrierTooltip, '');
+            elementTextContent(indicativeLowBarrierTooltip, '');
         }
     };
 

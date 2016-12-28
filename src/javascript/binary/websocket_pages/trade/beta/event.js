@@ -26,6 +26,7 @@ var displayTooltip_Beta            = require('../common').displayTooltip_Beta;
 var timeIsValid                    = require('../common').timeIsValid;
 var getStartDateNode               = require('../common_independent').getStartDateNode;
 var isVisible                      = require('../../../common_functions/common_functions').isVisible;
+var elementTextContent             = require('../../../common_functions/common_functions').elementTextContent;
 var dateValueChanged               = require('../../../common_functions/common_functions').dateValueChanged;
 var TimePicker                     = require('../../../components/time_picker').TimePicker;
 
@@ -307,7 +308,7 @@ var TradingEvents_Beta = (function () {
                 Defaults.set('currency', e.target.value);
                 var stopTypeDollarLabel = document.getElementById('stop_type_dollar_label');
                 if (stopTypeDollarLabel && isVisible(stopTypeDollarLabel)) {
-                    stopTypeDollarLabel.textContent = e.target.value;
+                    elementTextContent(stopTypeDollarLabel, e.target.value);
                 }
                 Price_Beta.processPriceRequest_Beta();
             });

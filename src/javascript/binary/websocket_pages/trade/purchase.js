@@ -4,6 +4,7 @@ var Tick                  = require('./tick').Tick;
 var WSTickDisplay         = require('./tick_trade').WSTickDisplay;
 var Content               = require('../../common_functions/content').Content;
 var isVisible             = require('../../common_functions/common_functions').isVisible;
+var elementTextContent    = require('../../common_functions/common_functions').elementTextContent;
 var updatePurchaseStatus  = require('./common').updatePurchaseStatus;
 var updateContractBalance = require('./common').updateContractBalance;
 
@@ -56,10 +57,10 @@ var Purchase = (function () {
             message_container.show();
             confirmation_error.hide();
 
-            heading.textContent = Content.localize().textContractConfirmationHeading;
-            descr.textContent = receipt.longcode;
+            elementTextContent(heading, Content.localize().textContractConfirmationHeading);
+            elementTextContent(descr, receipt.longcode);
             if (barrier_element) barrier_element.textContent = '';
-            reference.textContent = Content.localize().textContractConfirmationReference + ' ' + receipt.transaction_id;
+            elementTextContent(reference, Content.localize().textContractConfirmationReference + ' ' + receipt.transaction_id);
 
             var payout_value,
                 cost_value,
@@ -93,7 +94,7 @@ var Purchase = (function () {
             }
 
             if (Contract.form() === 'digits') {
-                spots.textContent = '';
+                elementTextContent(spots, '');
                 spots.className = '';
                 spots.show();
             } else {
@@ -101,7 +102,7 @@ var Purchase = (function () {
             }
 
             if (Contract.form() !== 'digits' && !show_chart) {
-                button.textContent = Content.localize().textContractConfirmationButton;
+                elementTextContent(button, Content.localize().textContractConfirmationButton);
                 button.setAttribute('contract_id', receipt.contract_id);
                 button.show();
                 $('.open_contract_detailsws').attr('contract_id', receipt.contract_id).removeClass('invisible');
@@ -187,7 +188,7 @@ var Purchase = (function () {
 
                 var el1 = document.createElement('div');
                 el1.classList.add('col');
-                el1.textContent = Content.localize().textTickResultLabel + ' ' + (spots.getElementsByClassName('row').length + 1);
+                elementTextContent(el1, Content.localize().textTickResultLabel + ' ' + (spots.getElementsByClassName('row').length + 1));
                 fragment.appendChild(el1);
 
                 var el2 = document.createElement('div');
@@ -196,7 +197,7 @@ var Purchase = (function () {
                 var hours = date.getUTCHours() < 10 ? '0' + date.getUTCHours() : date.getUTCHours();
                 var minutes = date.getUTCMinutes() < 10 ? '0' + date.getUTCMinutes() : date.getUTCMinutes();
                 var seconds = date.getUTCSeconds() < 10 ? '0' + date.getUTCSeconds() : date.getUTCSeconds();
-                el2.textContent = hours + ':' + minutes + ':' + seconds;
+                elementTextContent(el2, hours + ':' + minutes + ':' + seconds);
                 fragment.appendChild(el2);
 
                 var tick = tick_d.quote.replace(/\d$/, replace);

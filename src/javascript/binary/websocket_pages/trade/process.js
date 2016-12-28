@@ -22,6 +22,7 @@ var selectOption              = require('./common').selectOption;
 var updateWarmChart           = require('./common').updateWarmChart;
 var displayContractForms      = require('./common').displayContractForms;
 var displayMarkets            = require('./common').displayMarkets;
+var elementTextContent        = require('../../common_functions/common_functions').elementTextContent;
 var processTradingTimesAnswer = require('./common_independent').processTradingTimesAnswer;
 var setFormPlaceholderContent = require('./set_values').setFormPlaceholderContent;
 var moment = require('moment');
@@ -245,7 +246,7 @@ function displaySpreads() {
         amountPerPointLabel.show();
         amountPerPoint.show();
         spreadContainer.show();
-        stopTypeDollarLabel.textContent = document.getElementById('currency').value || Defaults.get('currency');
+        elementTextContent(stopTypeDollarLabel, document.getElementById('currency').value || Defaults.get('currency'));
         if (Defaults.get('stop_type')) {
             var el = document.querySelectorAll('input[name="stop_type"][value="' + Defaults.get('stop_type') + '"]');
             if (el) {

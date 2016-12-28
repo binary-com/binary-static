@@ -24,6 +24,7 @@ var displayContractForms           = require('../common').displayContractForms;
 var displayMarkets                 = require('../common').displayMarkets;
 var displayTooltip_Beta            = require('../common').displayTooltip_Beta;
 var processTradingTimesAnswer      = require('../common_independent').processTradingTimesAnswer;
+var elementTextContent             = require('../../../common_functions/common_functions').elementTextContent;
 var moment = require('moment');
 
 /*
@@ -248,7 +249,7 @@ function displaySpreads_Beta() {
         amountPerPointLabel.show();
         amountPerPoint.show();
         spreadContainer.show();
-        stopTypeDollarLabel.textContent = document.getElementById('currency').value || Defaults.get('currency');
+        elementTextContent(stopTypeDollarLabel, document.getElementById('currency').value || Defaults.get('currency'));
         if (Defaults.get('stop_type')) {
             var el = document.querySelectorAll('input[name="stop_type"][value="' + Defaults.get('stop_type') + '"]');
             if (el) {
