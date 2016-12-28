@@ -66,7 +66,6 @@ var Validate = (function() {
     function errorMessageToken(token, error) {
         if (token === '') {
             elementTextContent(error, Content.errorMessage('req'));
-            error.textContent = Content.errorMessage('req');
             displayErrorMessage(error);
             return true;
         } else if (!validateToken(token)) {
