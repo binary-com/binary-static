@@ -31,8 +31,8 @@ var LimitsWS = (function() {
             if ((/^(iom)$/i).test(TUser.get().landing_company_name)) { // MX
                 txtWithdrawLim = Content.localize().textWithdrawalLimitsEquivalantDay;
                 txtWithdrawAmt  = Content.localize().textWithrawalAmountEquivalantDay;
-                elementTextContent(elWithdrawLimit
-                  , template(txtWithdrawLim, [limits.num_of_days, currency, daysLimit]));
+                elementTextContent(elWithdrawLimit,
+                   template(txtWithdrawLim, [limits.num_of_days, currency, daysLimit]));
                 elementTextContent(elWithdrawn, template(txtWithdrawAmt,  [currency, withdrawn, limits.num_of_days]));
             } else {
                 if ((/^(costarica|japan)$/i).test(TUser.get().landing_company_name)) { // CR , JP

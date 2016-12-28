@@ -114,20 +114,20 @@ function dateValueChanged(element, type) {
 }
 
 function selectorExists(element) {
-    if (typeof (element) !== 'undefined' && element != null) {
+    if (typeof (element) !== 'undefined' && element !== null) {
         return true;
     }
     return false;
 }
 
-function elementTextContent(element, text) {
+function elementTextContent(element, text) { // eslint-disable-line consistent-return
     if (selectorExists(element)) {
         if (text) element.textContent = text;
         else return element.textContent;
     }
 }
 
-function elementInnerHtml(element, text) {
+function elementInnerHtml(element, text) { // eslint-disable-line consistent-return
     if (selectorExists(element)) {
         if (text) element.innerHTML = text;
         else return element.innerHTML;
