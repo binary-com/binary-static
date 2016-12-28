@@ -28,8 +28,8 @@ var MBProcess = (function() {
         // populate the Symbols object
         MBSymbols.details(data);
 
-        var market       = 'major_pairs',
-            symbols_list = MBSymbols.underlyings()[market],
+        var symbols_list = japanese_client() || !page.client.is_logged_in ?
+                MBSymbols.underlyings().major_pairs : MBSymbols.getAllSymbols(),
             symbol       = MBDefaults.get('underlying'),
             update_page  = MBSymbols.need_page_update();
 
