@@ -35,6 +35,7 @@ var MBProcess = (function() {
 
         if (update_page && (!symbol || !symbols_list[symbol])) {
             symbol = undefined;
+            MBDefaults.remove('underlying');
         }
         // check if all symbols are inactive
         var is_market_closed = true;
