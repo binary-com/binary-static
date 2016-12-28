@@ -211,7 +211,9 @@ function displayUnderlyings(id, elements, selected) {
     var target = document.getElementById(id),
         fragment =  document.createDocumentFragment();
 
-    while (target && target.firstChild) {
+    if (!target) return;
+
+    while (target.firstChild) {
         target.removeChild(target.firstChild);
     }
 
@@ -240,8 +242,6 @@ function displayUnderlyings(id, elements, selected) {
                 fragment.appendChild(option);
             }
         }
-    }
-    if (target) {
         target.appendChild(fragment);
     }
 }
