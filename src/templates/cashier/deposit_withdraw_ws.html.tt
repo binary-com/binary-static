@@ -25,6 +25,18 @@
             <p id="cashier-locked-error" class="error_messages">
                 [% l('Cashier is locked, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
+            <p id="financial-risk-error" class="error_messages">
+                [% l('Financial Risk approval is required. Please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
+            </p>
+            <p id="knowledge-test-error" class="error_messages">
+                [% l('You must complete the knowledge test to activate this account. Please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
+            </p>
+            <p id="activation-error" class="error_messages">
+                [% l('Account not activated, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
+            </p>
+            <p id="age-error" class="error_messages">
+                [% l('Account needs age verification, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
+            </p>
             <p id="custom-error" class="error_messages"></p>
         </div>
     </div>

@@ -106,21 +106,23 @@ var ForwardWS = (function() {
 
     function showError(error, id) {
         hideAll();
-        var $deposit_withdraw_error = $('#deposit-withdraw-error');
-        $deposit_withdraw_error.find('.error_messages').addClass('invisible');
-        if (id) {
-            $deposit_withdraw_error.find('#' + id).removeClass('invisible');
-        } else {
-            $('#custom-error').html(error ?
-                error + ', ' + template(page.text.localize('please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.'), [page.url.url_for('/contact')]) :
-                page.text.localize('Sorry, an error occurred while processing your request.'))
-                .removeClass('invisible');
+        if (!id) {
+            $('#custom-error').html(error || page.text.localize('Sorry, an error occurred while processing your request.'));
         }
-        $deposit_withdraw_error.removeClass('invisible');
+        hideParentShowChild('#deposit-withdraw-error', '.error_messages', id || 'custom-error');
+    }
+
+    function showErrorMessage(id) {
+        hideAll();
+        hideParentShowChild('#deposit-withdraw-error', '.error_messages', id);
     }
 
     function showMessage(id) {
-        $('#deposit-withdraw-message').find('.messages').addClass('invisible').end()
+        hideParentShowChild('#deposit-withdraw-message', '.messages', id);
+    }
+
+    function hideParentShowChild(parent, children, id) {
+        $(parent).find(children).addClass('invisible').end()
             .find('#' + id)
             .removeClass('invisible')
             .end()
@@ -184,6 +186,18 @@ var ForwardWS = (function() {
                                         break;
                                     case 'ASK_AUTHENTICATE':
                                         ForwardWS.showMessage('not-authenticated-message');
+                                        break;
+                                    case 'ASK_FINANCIAL_RISK_APPROVAL':
+                                        showErrorMessage('financial-risk-error');
+                                        break;
+                                    case 'ASK_JP_KNOWLEDGE_TEST':
+                                        showErrorMessage('knowledge-test-error');
+                                        break;
+                                    case 'JP_NOT_ACTIVATION':
+                                        showErrorMessage('activation-error');
+                                        break;
+                                    case 'ASK_AGE_VERIFICATION':
+                                        showErrorMessage('age-error');
                                         break;
                                     default:
                                         ForwardWS.showError(error.message);
