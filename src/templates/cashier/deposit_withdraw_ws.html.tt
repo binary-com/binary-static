@@ -1,8 +1,7 @@
 <div class='gr-12 gr-padding-10'>
     <h1 id="deposit-withdraw-heading"></h1>
     <div>
-
-        <div id="deposit-withdraw-message" style="display:none">
+        <div id="deposit-withdraw-message" class="invisible">
             <p id="cashier-locked-message" class="messages">
                 [% l('Your cashier is locked as per your request - to unlock it, please click <a class="pjaxload" href="[_1]">here</a>.', request.url_for('/user/security/cashier_passwordws')) %]
             </p>
@@ -16,22 +15,32 @@
                 [% l('Your account is not fully authenticated. Please visit the <a class="pjaxload" href="[_1]">authentication</a> page for more information.', request.url_for('/user/authenticatews')) %]
             </p>
         </div>
-
-        <div id="deposit-withdraw-error" class="error-msg" style="display:none">
+        <div id="deposit-withdraw-error" class="center-text notice-msg invisible">
             <p id="withdrawal-locked-error" class="error_messages">
-                [% l('Withdrawal is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
+                [% l('Withdrawal is locked, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
             <p id="deposit-locked-error" class="error_messages">
-                [% l('Deposit is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
+                [% l('Deposit is locked, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
             <p id="cashier-locked-error" class="error_messages">
-                [% l('Cashier is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
+                [% l('Cashier is locked, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
+            </p>
+            <p id="financial-risk-error" class="error_messages">
+                [% l('Financial Risk approval is required. Please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
+            </p>
+            <p id="knowledge-test-error" class="error_messages">
+                [% l('You must complete the knowledge test to activate this account. Please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
+            </p>
+            <p id="activation-error" class="error_messages">
+                [% l('Account not activated, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
+            </p>
+            <p id="age-error" class="error_messages">
+                [% l('Account needs age verification, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
             <p id="custom-error" class="error_messages"></p>
         </div>
-
     </div>
-    <div class="container" id="deposit-withdraw-iframe-container" style="display:none">
+    <div class="container invisible" id="deposit-withdraw-iframe-container">
         <script data-cfasync="false" type="text/javascript">
             function receiveCmd(e) {
                 if (e.origin !== "https://cashier.binary.com") return;
@@ -49,7 +58,7 @@
         </script>
         <iframe src="" frameborder="0" width="100%" height="1500" id="cashiercont" scrolling="auto" style="padding:0px;margin:0px;"></iframe>
     </div>
-    <div id="ukgc-funds-protection" class="gr-row gr-parent" style="display:none">
+    <div id="ukgc-funds-protection" class="gr-row gr-parent invisible">
         <div class="gr-2 gr-6-m gr-centered-m">
             <p>
                 <img class="responsive" src="[% request.url_for('images/pages/cashier/protection-icon.svg') %]" />
@@ -71,7 +80,7 @@
             </div>
         </div>
     </div>
-    <div id="currency-form" style="display:none">
+    <div id="currency-form" class="invisible">
         <div class="rbox-wrap">
             <fieldset>
                 <div class="gr-padding-10 gr-row clear">
@@ -92,7 +101,7 @@
             </fieldset>
         </div>
     </div>
-    <div id="withdraw-form" style="display:none">
+    <div id="withdraw-form" class="invisible">
         <fieldset>
             <div class="gr-row gr-parent gr-padding-10">
                 <div class="form_label gr-4">
@@ -101,13 +110,13 @@
                 <div class="gr-8">
                     <input id="verification-token" type="text" maxlength="48" autocomplete="off" />
                     <div class="hint">[% l("Please check your email for the value of this token") %]</div>
-                    <p class="errorfield" id="verification-error" style="display:none"></p>
+                    <p class="errorfield invisible" id="verification-error"></p>
                 </div>
             </div>
             <div class="gr-12 gr-parent gr-centered center-text">
                 <span class="button">
-          <button class="button" id="submit-verification" type="button">[% l("Submit") %]</button>
-        </span>
+                    <button class="button" id="submit-verification" type="button">[% l("Submit") %]</button>
+                </span>
             </div>
         </fieldset>
     </div>
