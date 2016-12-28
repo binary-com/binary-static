@@ -6,6 +6,8 @@ var format_money        = require('../../../../common_functions/currency_to_symb
 var showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
 var japanese_client     = require('../../../../common_functions/country_base').japanese_client;
 var addComma            = require('../../../../common_functions/string_util').addComma;
+var elementTextContent      = require('../../../../common_functions/common_functions').elementTextContent;
+var elementInnerHtml      = require('../../../../common_functions/common_functions').elementInnerHtml;
 var ProfitTable         = require('../profit_table').ProfitTable;
 
 var ProfitTableUI = (function() {
@@ -56,10 +58,12 @@ var ProfitTableUI = (function() {
     }
 
     function updateFooter(transactions) {
-        var accTotal = document.querySelector('#pl-day-total > .pl').textContent;
-        accTotal = parseFloat(accTotal.replace(/,/g, ''));
-        if (isNaN(accTotal)) {
-            accTotal = 0;
+        var accTotal = elementTextContent(document.querySelector('#pl-day-total > .pl'));
+        if(accTotal){
+          accTotal = parseFloat(accTotal.replace(/,/g, ''));
+          if (isNaN(accTotal)) {
+              accTotal = 0;
+          }
         }
 
         var currentTotal = transactions.reduce(function(previous, current) {
