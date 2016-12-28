@@ -1,4 +1,5 @@
 var japanese_client = require('../country_base').japanese_client;
+var elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
 
 function generateBirthDate() {
     var days   = document.getElementById('dobdd'),
@@ -18,9 +19,9 @@ function generateBirthDate() {
     dropDownNumbers(year, startYear, endYear);
 
     if (japanese_client()) {
-        days.options[0].innerHTML   = page.text.localize('Day');
-        months.options[0].innerHTML = page.text.localize('Month');
-        year.options[0].innerHTML   = page.text.localize('Year');
+        elementInnerHtml(days.options[0], page.text.localize('Day'));
+        elementInnerHtml(months.options[0], page.text.localize('Month'));
+        elementInnerHtml(year.options[0], page.text.localize('Year'));
     }
 }
 
