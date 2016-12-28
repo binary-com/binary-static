@@ -12,7 +12,7 @@
                 <br /> [% l('If you need assistance feel free to contact our <a class="pjaxload" href="[_1]">Customer Support</a>.', request.url_for('/contact')) %]
             </p>
             <p id="not-authenticated-message" class="messages">
-                [% l('Your account is not fully authenticated. Please visit the <a class="pjaxload" href="[_1]">authentication</a> page for more information.', request.url_for('/user/authenticatews')) %]
+                [% l('Your account is not fully authenticated.') %]
             </p>
         </div>
         <div id="deposit-withdraw-error" class="center-text notice-msg invisible">

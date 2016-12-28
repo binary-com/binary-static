@@ -712,7 +712,7 @@ sub _texts {
         push @texts, localize('Please choose which currency you would like to transact in.');
         push @texts, localize('There was a problem validating your personal details. Please fix the fields [_1]here');
         push @texts, localize('If you need assistance feel free to contact our [_1]Customer Support');
-        push @texts, localize('Your account is not fully authenticated. Please visit the <a href="[_1]">authentication</a> page for more information.');
+        push @texts, localize('Your account is not fully authenticated.');
         push @texts, localize('details');
         push @texts, localize('Deposit [_1] [_2] virtual money into your account [_3]');
         push @texts, localize('Withdraw');

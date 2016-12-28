@@ -16,7 +16,7 @@
                     </div>
                     <div class="gr-5 gr-12-m">
                         <span class="ja-hide">[% l('You can request more virtual money if your virtual balance falls below USD 1,000.00.') %]</span>
-                        <p class="all-hide ja-show">[% l('You can request more virtual money if your virtual balance falls below JPY 100,000.') %]</span>
+                        <span class="all-hide ja-show">[% l('You can request more virtual money if your virtual balance falls below JPY 100,000.') %]</span>
                     </div>
                     <div class="gr-5 gr-12-m">
                         <div class="gr-padding-10 by_client_type client_virtual with_login_cookies invisible">
@@ -41,11 +41,6 @@
                 [% l('Withdrawal is locked, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
         </div>
-        <p class="center-text invisible" id="authenticate_button">
-            <a class="button pjaxload" href="[% request.url_for('/user/authenticatews') %]">
-                <span>[% l('Authenticate your account') %]</span>
-            </a>
-        </p>
         <div class="gr-padding-10">
             <h3>[% l('Bank-wire, credit card, e-cash wallet') %]</h3>
         </div>
