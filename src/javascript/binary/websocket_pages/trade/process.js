@@ -23,6 +23,7 @@ var updateWarmChart           = require('./common').updateWarmChart;
 var displayContractForms      = require('./common').displayContractForms;
 var displayMarkets            = require('./common').displayMarkets;
 var elementTextContent        = require('../../common_functions/common_functions').elementTextContent;
+var elementInnerHtml          = require('../../common_functions/common_functions').elementInnerHtml;
 var processTradingTimesAnswer = require('./common_independent').processTradingTimesAnswer;
 var setFormPlaceholderContent = require('./set_values').setFormPlaceholderContent;
 var moment = require('moment');
@@ -130,7 +131,7 @@ function processContract(contracts) {
         contracts_list.style.display = 'none';
         message_container.hide();
         confirmation_error.show();
-        confirmation_error.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="sessionStorage.removeItem(\'underlying\'); window.location.reload();">' + page.text.localize('Please reload the page') + '</a>';
+        elementInnerHtml(confirmation_error, contracts.error.message + ' <a href="javascript:;" onclick="sessionStorage.removeItem(\'underlying\'); window.location.reload();">' + page.text.localize('Please reload the page') + '</a>');
         return;
     }
 

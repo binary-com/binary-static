@@ -2,6 +2,7 @@ var Symbols     = require('../symbols').Symbols;
 var MenuContent = require('../../../base/menu_content').MenuContent;
 var template    = require('../../../base/utility').template;
 var Highcharts  = require('highcharts');
+var elementInnerHtml = require('../../../common_functions/common_functions').elementInnerHtml;
 require('highcharts/modules/exporting')(Highcharts);
 
 var DigitInfoWS = function() {
@@ -119,7 +120,7 @@ DigitInfoWS.prototype = {
                         '<div id="last_digit_histo" class="gr-8 gr-12-m gr-centered"></div>' +
                         '<div id="last_digit_title" class="gr-hide">' + (domain.charAt(0).toUpperCase() + domain.slice(1)) + ' - ' + page.text.localize('Last digit stats for the latest [_1] ticks on [_2]') + '</div>' +
                         '</div>';
-        contentId.innerHTML = content;
+        elementInnerHtml(contentId, content);
         $('[name=underlying]').val(underlying);
     },
     on_latest: function() {

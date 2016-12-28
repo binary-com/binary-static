@@ -22,6 +22,7 @@ var moment                = require('moment');
 var MenuContent           = require('./menu_content').MenuContent;
 var pjax                  = require('../../lib/pjax-lib');
 var isVisible             = require('../common_functions/common_functions').isVisible;
+var elementInnerHtml      = require('../common_functions/common_functions').elementInnerHtml;
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
 require('../../lib/mmenu/jquery.mmenu.min.all.js');
@@ -1547,12 +1548,12 @@ var pjax_config = function() {
             } else {
                 $.get('/errors/500.html').always(function(content) {
                     var tmp = document.createElement('div');
-                    tmp.innerHTML = content;
+                    elementInnerHtml(tmp, content);
                     var tmpNodes = tmp.getElementsByTagName('div');
                     for (var i = 0, l = tmpNodes.length; i < l; i++) {
                         if (tmpNodes[i].id === 'content') {
-                            SessionStore.set('errors.500', tmpNodes[i].innerHTML);
-                            $('#content').html(tmpNodes[i].innerHTML);
+                            SessionStore.set('errors.500', elementInnerHtml(tmpNodes[i]));
+                            $('#content').html(elementInnerHtml(tmpNodes[i]));
                             break;
                         }
                     }

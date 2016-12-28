@@ -1,6 +1,7 @@
 var Content             = require('../../../../common_functions/content').Content;
 var ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
 var Validate            = require('../../../../common_functions/validation').Validate;
+var selectorExists    = require('../../../../common_functions/common_functions').selectorExists;
 var FinancialAccOpeningData = require('./financial_acc_opening.data').FinancialAccOpeningData;
 
 var FinancialAccOpeningUI = (function() {
@@ -93,8 +94,10 @@ var FinancialAccOpeningUI = (function() {
         ValidAccountOpening.checkPostcode(elementObj.postcode, errorObj.postcode);
 
         if (elementObj.residence.value === 'gb' && /^$/.test((elementObj.postcode.value).trim())) {
-            errorObj.postcode.innerHTML = Content.errorMessage('req');
-            Validate.displayErrorMessage(errorObj.postcode);
+            if (selectorExists(errorObj.postcode)) {
+                errorObj.postcode.innerHTML = Content.errorMessage('req');
+                Validate.displayErrorMessage(errorObj.postcode);
+            }
             window.accountErrorCounter++;
         }
 

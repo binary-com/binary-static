@@ -5,6 +5,7 @@ var WSTickDisplay         = require('./tick_trade').WSTickDisplay;
 var Content               = require('../../common_functions/content').Content;
 var isVisible             = require('../../common_functions/common_functions').isVisible;
 var elementTextContent    = require('../../common_functions/common_functions').elementTextContent;
+var elementInnerHtml      = require('../../common_functions/common_functions').elementInnerHtml;
 var updatePurchaseStatus  = require('./common').updatePurchaseStatus;
 var updateContractBalance = require('./common').updateContractBalance;
 
@@ -47,7 +48,7 @@ var Purchase = (function () {
             container.style.display = 'block';
             message_container.hide();
             confirmation_error.show();
-            confirmation_error.innerHTML = (/ClientUnwelcome/.test(error.code) ? error.message + '<a class="pjaxload" href="' + page.url.url_for('user/authenticatews') + '"> ' + page.text.localize('Authorise your account.') + '</a>' : error.message);
+            elementInnerHtml(confirmation_error, (/ClientUnwelcome/.test(error.code) ? error.message + '<a class="pjaxload" href="' + page.url.url_for('user/authenticatews') + '"> ' + page.text.localize('Authorise your account.') + '</a>' : error.message));
         } else {
             var guideBtn = document.getElementById('guideBtn');
             if (guideBtn) {
@@ -76,13 +77,13 @@ var Purchase = (function () {
             profit_value = Math.round((payout_value - cost_value) * 100) / 100;
 
             if (sessionStorage.getItem('formname') === 'spreads') {
-                payout.innerHTML = Content.localize().textStopLoss + ' <p>' + receipt.stop_loss_level + '</p>';
-                cost.innerHTML = Content.localize().textAmountPerPoint + ' <p>' + receipt.amount_per_point + '</p>';
-                profit.innerHTML = Content.localize().textStopProfit + ' <p>' + receipt.stop_profit_level + '</p>';
+                elementInnerHtml(payout, Content.localize().textStopLoss + ' <p>' + receipt.stop_loss_level + '</p>');
+                elementInnerHtml(cost, Content.localize().textAmountPerPoint + ' <p>' + receipt.amount_per_point + '</p>');
+                elementInnerHtml(profit, Content.localize().textStopProfit + ' <p>' + receipt.stop_profit_level + '</p>');
             } else {
-                payout.innerHTML = Content.localize().textContractConfirmationPayout + ' <p>' + payout_value + '</p>';
-                cost.innerHTML = Content.localize().textContractConfirmationCost + ' <p>' + cost_value + '</p>';
-                profit.innerHTML = Content.localize().textContractConfirmationProfit + ' <p>' + profit_value + '</p>';
+                elementInnerHtml(payout, Content.localize().textContractConfirmationPayout + ' <p>' + payout_value + '</p>');
+                elementInnerHtml(cost, Content.localize().textContractConfirmationCost + ' <p>' + cost_value + '</p>');
+                elementInnerHtml(profit, Content.localize().textContractConfirmationProfit + ' <p>' + profit_value + '</p>');
             }
 
             updateContractBalance(receipt.balance_after);
@@ -203,7 +204,7 @@ var Purchase = (function () {
                 var tick = tick_d.quote.replace(/\d$/, replace);
                 var el3 = document.createElement('div');
                 el3.classList.add('col');
-                el3.innerHTML = tick;
+                elementInnerHtml(el3, tick);
                 fragment.appendChild(el3);
 
                 spots.appendChild(fragment);

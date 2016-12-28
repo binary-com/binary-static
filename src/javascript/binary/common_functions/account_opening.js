@@ -3,6 +3,7 @@ var Validate             = require('../common_functions/validation').Validate;
 var Content              = require('../common_functions/content').Content;
 var japanese_client      = require('../common_functions/country_base').japanese_client;
 var appendTextValueChild = require('../common_functions/common_functions').appendTextValueChild;
+var elementInnerHtml     = require('../common_functions/common_functions').elementInnerHtml;
 var generateBirthDate    = require('./attach_dom/birth_date_dropdown').generateBirthDate;
 var Cookies              = require('../../lib/js-cookie');
 var moment               = require('moment');
@@ -89,7 +90,7 @@ var handleResidence = function() {
                 var errorElement = document.getElementById('error-residence');
                 if (response.hasOwnProperty('error')) {
                     if (response.error.message) {
-                        errorElement.innerHTML = response.error.message;
+                        elementInnerHtml(errorElement, response.error.message);
                         errorElement.setAttribute('style', 'display:block');
                     }
                 } else {

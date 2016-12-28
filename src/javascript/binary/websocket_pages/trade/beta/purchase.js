@@ -10,6 +10,7 @@ var isVisible                 = require('../../../common_functions/common_functi
 var updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
 var label_value               = require('../common').label_value;
 var elementTextContent        = require('../../../common_functions/common_functions').elementTextContent;
+var elementInnerHtml          = require('../../../common_functions/common_functions').elementInnerHtml;
 
 /*
  * Purchase object that handles all the functions related to
@@ -52,7 +53,7 @@ var Purchase_Beta = (function () {
             container.style.display = 'block';
             message_container.hide();
             confirmation_error.show();
-            confirmation_error_contents.innerHTML = (/ClientUnwelcome/.test(error.code) ? error.message + '<a class="pjaxload" href="' + page.url.url_for('user/authenticatews') + '"> ' + page.text.localize('Authorise your account.') + '</a>' : error.message);
+            elementInnerHtml(confirmation_error_contents, (/ClientUnwelcome/.test(error.code) ? error.message + '<a class="pjaxload" href="' + page.url.url_for('user/authenticatews') + '"> ' + page.text.localize('Authorise your account.') + '</a>' : error.message));
         } else {
             var guideBtn = document.getElementById('guideBtn');
             if (guideBtn) {
@@ -114,7 +115,7 @@ var Purchase_Beta = (function () {
             }
 
             if (Contract_Beta.form() === 'digits') {
-                [].forEach.call(spots.childNodes, function(child) { child.innerHTML = '&nbsp;'; });
+                [].forEach.call(spots.childNodes, function(child) { elementInnerHtml(child, '&nbsp;'); });
                 spots.show();
             }
 
@@ -202,12 +203,12 @@ var Purchase_Beta = (function () {
             var digit_elem = document.createElement('div');
             digit_elem.classList.add('digit');
             digit_elem.id = 'tick_digit_' + i;
-            digit_elem.innerHTML = '&nbsp;';
+            elementInnerHtml(digit_elem, '&nbsp;');
             fragment.appendChild(digit_elem);
 
             var number_elem = document.createElement('div');
             number_elem.classList.add('number');
-            number_elem.innerHTML = i;
+            elementInnerHtml(number_elem, i);
             fragment.appendChild(number_elem);
 
             list_elem.appendChild(fragment);
@@ -242,7 +243,7 @@ var Purchase_Beta = (function () {
                 tick_number++;
 
                 elementTextContent(tick_elem, Content.localize().textTickResultLabel + ' ' + tick_number);
-                spot_elem.innerHTML = tick_d.quote.replace(/\d$/, replace);
+                elementInnerHtml(spot_elem, tick_d.quote.replace(/\d$/, replace));
 
                 var this_digit_elem = document.getElementById('tick_digit_' + tick_number);
                 this_digit_elem.classList.add(is_win(last_digit) ? 'profit' : 'loss');

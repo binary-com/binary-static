@@ -3,6 +3,8 @@ var JapanPortfolio             = require('../../../binary_japan/trade_japan/port
 var State                      = require('../../base/storage').State;
 var toggleActiveNavMenuElement = require('./common').toggleActiveNavMenuElement;
 var showHighchart              = require('./common').showHighchart;
+var elementInnerHtml           = require('../../common_functions/common_functions').elementInnerHtml;
+
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -103,7 +105,7 @@ var TradingAnalysis = (function() {
                     url   : url,
                 })
                     .done(function(data) {
-                        contentId.innerHTML = data;
+                        elementInnerHtml(contentId, data);
                         if (currentTab === 'tab_explanation') {
                             showExplanation(currentLink.href);
                         }

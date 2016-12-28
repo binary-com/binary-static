@@ -6,6 +6,7 @@ var PortfolioWS                     = require('../../user/account/portfolio/port
 var State                           = require('../../../base/storage').State;
 var showHighchart                   = require('../common').showHighchart;
 var toggleActiveNavMenuElement_Beta = require('../common').toggleActiveNavMenuElement_Beta;
+var elementInnerHtml                = require('../../../common_functions/common_functions').elementInnerHtml;
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -108,7 +109,7 @@ var TradingAnalysis_Beta = (function() {
                     url   : url,
                 })
                 .done(function(data) {
-                    contentId.innerHTML = data;
+                    elementInnerHtml(contentId, data);
                     if (currentTab === 'tab_explanation') {
                         showExplanation(currentLink.href);
                     }

@@ -1,6 +1,7 @@
 var objectNotEmpty  = require('../../base/utility').objectNotEmpty;
 var format_currency = require('../../common_functions/currency_to_symbol').format_currency;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
+var elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
 var MBDefaults      = require('./mb_defaults').MBDefaults;
 var MBSymbols       = require('./mb_symbols').MBSymbols;
 var moment          = require('moment');
@@ -193,7 +194,7 @@ var MBContract = (function() {
                 remainingTimeString.push(all_durations[key] + page.text.localize((key + (+all_durations[key] === 1 ? '' : 's'))));
             }
         });
-        remainingTimeElement.innerHTML = remainingTimeString.join(' ');
+        elementInnerHtml(remainingTimeElement, remainingTimeString.join(' '));
         if (remainingTimeout) clearContractTimeout(remainingTimeout);
         remainingTimeout = setTimeout(displayRemainingTime, 1000);
     };

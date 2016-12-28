@@ -1,6 +1,7 @@
 var showLoadingImage = require('../../../../base/utility').showLoadingImage;
 var RiskClassification = require('../../../../common_functions/risk_classification').RiskClassification;
 var japanese_client = require('../../../../common_functions/country_base').japanese_client;
+var selectorExists     = require('../../../../common_functions/common_functions').selectorExists;
 
 var FinancialAssessmentws = (function() {
     'use strict';
@@ -23,8 +24,14 @@ var FinancialAssessmentws = (function() {
         $('#heading').text(page.text.localize($('#heading').text()));
         $('#heading_risk').text(page.text.localize($('#heading_risk').text()));
         $('#high_risk_classification').text(page.text.localize($('#high_risk_classification').text()));
-        document.getElementsByTagName('legend')[0].innerHTML = page.text.localize(document.getElementsByTagName('legend')[0].innerHTML);
-        if (document.getElementsByTagName('legend')[1]) document.getElementsByTagName('legend')[1].innerHTML = page.text.localize(document.getElementsByTagName('legend')[1].innerHTML);
+        var legend_0 = document.getElementsByTagName('legend')[0];
+        var legend_1 = document.getElementsByTagName('legend')[1];
+        if (selectorExists(legend_0)) {
+            legend_0.innerHTML = page.text.localize(legend_0.innerHTML);
+        }
+        if (selectorExists(legend_1)) {
+            legend_1.innerHTML = page.text.localize(legend_1.innerHTML);
+        }
         $('#assessment_form label').each(function() {
             var ele = $(this);
             ele.text(page.text.localize(ele.text()));

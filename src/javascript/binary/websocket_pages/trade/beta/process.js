@@ -25,6 +25,7 @@ var displayMarkets                 = require('../common').displayMarkets;
 var displayTooltip_Beta            = require('../common').displayTooltip_Beta;
 var processTradingTimesAnswer      = require('../common_independent').processTradingTimesAnswer;
 var elementTextContent             = require('../../../common_functions/common_functions').elementTextContent;
+var elementInnerHtml               = require('../../../common_functions/common_functions').elementInnerHtml;
 var moment = require('moment');
 
 /*
@@ -131,7 +132,7 @@ function processContract_Beta(contracts) {
         contracts_list.style.display = 'none';
         message_container.hide();
         confirmation_error.show();
-        confirmation_error_contents.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="sessionStorage.removeItem(\'underlying\'); window.location.reload();">' + page.text.localize('Please reload the page') + '</a>';
+        elementInnerHtml(confirmation_error_contents, contracts.error.message + ' <a href="javascript:;" onclick="sessionStorage.removeItem(\'underlying\'); window.location.reload();">' + page.text.localize('Please reload the page') + '</a>');
         return;
     }
 

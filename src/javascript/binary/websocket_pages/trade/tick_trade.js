@@ -6,6 +6,7 @@ var isVisible            = require('../../common_functions/common_functions').is
 var updatePurchaseStatus = require('./common').updatePurchaseStatus;
 var Highcharts           = require('highcharts');
 require('highcharts/modules/exporting')(Highcharts);
+var elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
 
 var TickDisplay = (function() {
     return {
@@ -203,7 +204,7 @@ var TickDisplay = (function() {
             }
             var barrier = document.getElementById('contract_purchase_barrier');
             if ($self.contract_barrier && barrier) {
-                barrier.innerHTML = Content.localize().textBarrier + ': ' + $self.contract_barrier;
+                elementInnerHtml(barrier, Content.localize().textBarrier + ': ' + $self.contract_barrier);
             }
         },
         add: function(indicator) {

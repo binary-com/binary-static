@@ -10,6 +10,7 @@ var addComma        = require('../../common_functions/string_util').addComma;
 var Moment          = require('moment');
 var toISOFormat     = require('../../common_functions/string_util').toISOFormat;
 var elementTextContent  = require('../../common_functions/common_functions').elementTextContent;
+var elementInnerHtml  = require('../../common_functions/common_functions').elementInnerHtml;
 
 /*
  * This contains common functions we need for processing the response
@@ -46,7 +47,7 @@ function displayContractForms(id, elements, selected) {
     var target = document.getElementById(id),
         fragment = document.createDocumentFragment();
 
-    target.innerHTML = '';
+    elementInnerHtml(target, '');
 
     if (elements) {
         var tree = getContractCategoryTree(elements);
@@ -875,9 +876,9 @@ function displayTooltip_Beta(market, symbol) {
 
 function label_value(label_elem, label, value, no_currency) {
     var currency = TUser.get().currency;
-    label_elem.innerHTML = label;
+    elementInnerHtml(label_elem, label);
     var value_elem = document.getElementById(label_elem.id + '_value');
-    value_elem.innerHTML = no_currency ? value : format_money(currency, value);
+    elementInnerHtml(value_elem, no_currency ? value : format_money(currency, value));
     value_elem.setAttribute('value', String(value).replace(/,/g, ''));
 }
 

@@ -2,6 +2,7 @@ var template = require('../../../../../base/utility').template;
 var Content  = require('../../../../../common_functions/content').Content;
 var addComma = require('../../../../../common_functions/string_util').addComma;
 var elementTextContent  = require('../../../../../common_functions/common_functions').elementTextContent;
+var elementInnerHtml    = require('../../../../../common_functions/common_functions').elementInnerHtml;
 var LimitsUI = require('./limits.ui').LimitsUI;
 
 var LimitsWS = (function() {
@@ -52,11 +53,11 @@ var LimitsWS = (function() {
         document.getElementById('limits-title').setAttribute('style', 'display:none');
         var errorElement = document.getElementsByClassName('notice-msg')[0];
         if ((error && error.code === 'FeatureNotAvailable' && page.client.is_virtual()) || page.client.is_virtual()) {
-            errorElement.innerHTML = page.text.localize('This feature is not relevant to virtual-money accounts.');
+            elementInnerHtml(errorElement, page.text.localize('This feature is not relevant to virtual-money accounts.'));
         } else if (error && error.message) {
-            errorElement.innerHTML = error.message;
+            elementInnerHtml(errorElement, error.message);
         } else {
-            errorElement.innerHTML = page.text.localize('An error occured') + '.';
+            elementInnerHtml(errorElement, page.text.localize('An error occured') + '.');
         }
         document.getElementById('client_message').setAttribute('style', 'display:block');
     }

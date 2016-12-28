@@ -2,6 +2,7 @@ var template = require('../../base/utility').template;
 var Validate = require('../../common_functions/validation').Validate;
 var Content  = require('../../common_functions/content').Content;
 var appendTextValueChild = require('../../common_functions/common_functions').appendTextValueChild;
+var elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
 
 var ForwardWS = (function() {
     function init(cashier_password) {
@@ -82,10 +83,10 @@ var ForwardWS = (function() {
             hash_value = window.location.hash;
         if (/withdraw/.test(hash_value)) {
             cashier_type = 'withdraw';
-            deposit_withdraw_heading.innerHTML = page.text.localize('Withdraw');
+            elementInnerHtml(deposit_withdraw_heading, page.text.localize('Withdraw'));
         } else if (/deposit/.test(hash_value)) {
             cashier_type = 'deposit';
-            deposit_withdraw_heading.innerHTML = page.text.localize('Deposit');
+            elementInnerHtml(deposit_withdraw_heading, page.text.localize('Deposit'));
         }
         return cashier_type;
     }

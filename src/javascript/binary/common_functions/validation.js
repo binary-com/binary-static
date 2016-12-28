@@ -1,4 +1,6 @@
 var Content      = require('./content').Content;
+var elementTextContent = require('../common_functions/common_functions').elementTextContent;
+var elementInnerHtml = require('../common_functions/common_functions').elementInnerHtml;
 
 var Validate = (function() {
     var errorCounter = 0;
@@ -28,10 +30,10 @@ var Validate = (function() {
                 allText += parClass[i].textContent;
             }
             if (!re.test(allText)) {
-                par.innerHTML = par.innerHTML + ' ' + text;
+                elementInnerHtml(par.innerHTML + ' ' + text);
             }
         } else {
-            par.innerHTML = text;
+            elementInnerHtml(par.innerHTML, text);
         }
         error.appendChild(par);
         displayErrorMessage(error);
@@ -48,11 +50,11 @@ var Validate = (function() {
   // give error message for invalid email, needs DOM element of error and value of email
     function errorMessageEmail(email, error) {
         if (email === '') {
-            error.textContent = Content.errorMessage('req');
+            elementTextContent(error, Content.errorMessage('req'));
             displayErrorMessage(error);
             return true;
         } else if (!validateEmail(email)) {
-            error.textContent = Content.errorMessage('valid', page.text.localize('email address'));
+            elementTextContent(error, Content.errorMessage('valid', page.text.localize('email address')));
             displayErrorMessage(error);
             return true;
         }
@@ -63,11 +65,12 @@ var Validate = (function() {
   // give error message for invalid verification token, needs DOM element of error and value of verification token
     function errorMessageToken(token, error) {
         if (token === '') {
+            elementTextContent(error, Content.errorMessage('req'));
             error.textContent = Content.errorMessage('req');
             displayErrorMessage(error);
             return true;
         } else if (!validateToken(token)) {
-            error.textContent = Content.errorMessage('valid', page.text.localize('verification token'));
+            elementTextContent(error, Content.errorMessage('valid', page.text.localize('verification token')));
             displayErrorMessage(error);
             return true;
         }
@@ -85,7 +88,7 @@ var Validate = (function() {
 
     function fieldNotEmpty(field, error) {
         if (!/^.+$/.test(field)) {
-            error.textContent = Content.errorMessage('req');
+            elementTextContent(error, Content.errorMessage('req'));
             displayErrorMessage(error);
             return errorCounter++;
         }
@@ -94,7 +97,7 @@ var Validate = (function() {
 
     function passwordMatching(password, rPassword, rError) {
         if (password !== rPassword) {
-            rError.textContent = Content.localize().textPasswordsNotMatching;
+            elementTextContent(rError, Content.localize().textPasswordsNotMatching);
             displayErrorMessage(rError);
             return errorCounter++;
         }
@@ -167,7 +170,7 @@ var Validate = (function() {
     function errorMessageResidence(residence, error) {
         hideErrorMessage(error);
         if (residence === '') {
-            error.textContent = Content.errorMessage('req');
+            elementTextContent(error, Content.errorMessage('req'));
             displayErrorMessage(error);
             return true;
         }

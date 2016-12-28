@@ -4,6 +4,7 @@ var MBDefaults      = require('./mb_defaults').MBDefaults;
 var MBNotifications = require('./mb_notifications').MBNotifications;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
 var addComma        = require('../../common_functions/string_util').addComma;
+var elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -103,8 +104,8 @@ var MBPrice = (function() {
             var values     = getValues(proposal),
                 values_opp = getValues(prices[barrier][contract_info.opposite]);
 
-            price_rows[+contract_info.order].innerHTML     = makePriceRow(values,     true);
-            price_rows[+contract_info_opp.order].innerHTML = makePriceRow(values_opp, true);
+            elementInnerHtml(price_rows[+contract_info.order], makePriceRow(values,     true));
+            elementInnerHtml(price_rows[+contract_info_opp.order], makePriceRow(values_opp, true));
         });
     };
 
