@@ -104,7 +104,7 @@ Page.prototype = {
         }
     },
     show_authenticate_message: function() {
-        if ($('.authenticate-msg').length !== 0) return;
+        if ($('.authenticate-msg').length !== 0 || /authenticatews\.html/.test(window.location.pathname)) return;
 
         var p = $('<p/>', { class: 'authenticate-msg notice-msg' }),
             span;

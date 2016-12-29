@@ -6,8 +6,6 @@ var Content               = require('../../common_functions/content').Content;
 var isVisible             = require('../../common_functions/common_functions').isVisible;
 var updatePurchaseStatus  = require('./common').updatePurchaseStatus;
 var updateContractBalance = require('./common').updateContractBalance;
-var localize = require('../../base/localize').localize;
-var url_for  = require('../../base/url').url_for;
 
 /*
  * Purchase object that handles all the functions related to
@@ -48,7 +46,7 @@ var Purchase = (function () {
             container.style.display = 'block';
             message_container.hide();
             confirmation_error.show();
-            confirmation_error.innerHTML = (/ClientUnwelcome/.test(error.code) ? error.message + '<a class="pjaxload" href="' + url_for('user/authenticatews') + '"> ' + localize('Authorise your account.') + '</a>' : error.message);
+            confirmation_error.innerHTML = error.message;
         } else {
             var guideBtn = document.getElementById('guideBtn');
             if (guideBtn) {

@@ -639,28 +639,22 @@ var Highchart = (function() {
                 draw_line_x(end_time, '', 'textLeft', 'Dash');
             }
             if (sell_spot_time && sell_spot_time < end_time && sell_spot_time >= start_time) {
-                remove_message('waiting_exit_tick');
                 select_exit_tick(sell_spot_time);
             } else if (exit_tick_time) {
-                remove_message('waiting_exit_tick');
                 select_exit_tick(exit_tick_time);
+            }
+            if (!contract.sell_spot && !contract.exit_tick) {
+                if ($('#waiting_exit_tick').length === 0) {
+                    $('#trade_details_message').append('<div id="waiting_exit_tick">' + localize('Waiting for exit tick.') + '</div>');
+                }
             } else {
-                show_message('Waiting for exit tick.');
+                $('#waiting_exit_tick').remove();
             }
         }
         if (!contract_ended) {
             forget_streams();
             contract_ended = true;
         }
-    }
-
-    function remove_message(id) {
-        $('#' + id).remove();
-    }
-
-    function show_message(message) {
-        if ($('#waiting_exit_tick').length !== 0) return;
-        $('#trade_details_message').append('<div id="waiting_exit_tick">' + localize(message) + '</div>');
     }
 
     function forget_streams() {

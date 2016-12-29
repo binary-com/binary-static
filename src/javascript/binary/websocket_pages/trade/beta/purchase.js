@@ -9,9 +9,7 @@ var addComma                  = require('../../../common_functions/string_util')
 var isVisible                 = require('../../../common_functions/common_functions').isVisible;
 var updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
 var label_value               = require('../common').label_value;
-var localize = require('../../../base/localize').localize;
-var Client   = require('../../../base/client').Client;
-var url_for  = require('../../../base/url').url_for;
+var Client                    = require('../../../base/client').Client;
 
 /*
  * Purchase object that handles all the functions related to
@@ -54,7 +52,7 @@ var Purchase_Beta = (function () {
             container.style.display = 'block';
             message_container.hide();
             confirmation_error.show();
-            confirmation_error_contents.innerHTML = (/ClientUnwelcome/.test(error.code) ? error.message + '<a class="pjaxload" href="' + url_for('user/authenticatews') + '"> ' + localize('Authorise your account.') + '</a>' : error.message);
+            confirmation_error_contents.innerHTML = error.message;
         } else {
             var guideBtn = document.getElementById('guideBtn');
             if (guideBtn) {

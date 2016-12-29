@@ -59,7 +59,7 @@ var ForwardWS = (function() {
             type        : 'payment_withdraw',
         });
         ForwardWS.showMessage('check-email-message');
-        $('#withdraw-form').show();
+        $('#withdraw-form').removeClass('invisible');
     }
 
     function initDepositForm() {
@@ -76,7 +76,7 @@ var ForwardWS = (function() {
             appendTextValueChild('select-currency', c, c);
         });
         ForwardWS.showMessage('choose-currency-message');
-        $('#currency-form').show();
+        $('#currency-form').removeClass('invisible');
     }
 
     function getCashierType() {
@@ -101,34 +101,35 @@ var ForwardWS = (function() {
     }
 
     function hideAll(option) {
-        $('#withdraw-form').hide();
-        $('#currency-form').hide();
-        $('#ukgc-funds-protection').hide();
-        $('#deposit-withdraw-error').hide();
+        $('#withdraw-form, #currency-form, #ukgc-funds-protection, #deposit-withdraw-error').addClass('invisible');
         if (option) {
-            $(option).hide();
+            $(option).addClass('invisible');
         }
     }
 
     function showError(error, id) {
         hideAll();
-        var $deposit_withdraw_error = $('#deposit-withdraw-error');
-        $deposit_withdraw_error.find('.error_messages').hide();
-        if (id) {
-            $deposit_withdraw_error.find('#' + id).show();
-        } else {
-            $('#custom-error').html(error || localize('Sorry, an error occurred while processing your request.'))
-                .show();
+        if (!id) {
+            $('#custom-error').html(error || localize('Sorry, an error occurred while processing your request.'));
         }
-        $deposit_withdraw_error.show();
+        hideParentShowChild('#deposit-withdraw-error', '.error_messages', id || 'custom-error');
+    }
+
+    function showErrorMessage(id) {
+        hideAll();
+        hideParentShowChild('#deposit-withdraw-error', '.error_messages', id);
     }
 
     function showMessage(id) {
-        $('#deposit-withdraw-message').find('.messages').hide().end()
+        hideParentShowChild('#deposit-withdraw-message', '.messages', id);
+    }
+
+    function hideParentShowChild(parent, children, id) {
+        $(parent).find(children).addClass('invisible').end()
             .find('#' + id)
-            .show()
+            .removeClass('invisible')
             .end()
-            .show();
+            .removeClass('invisible');
     }
 
     function showPersonalDetailsError(details) {
@@ -184,10 +185,22 @@ var ForwardWS = (function() {
                                         ForwardWS.showPersonalDetailsError(error.details);
                                         break;
                                     case 'ASK_UK_FUNDS_PROTECTION':
-                                        $('#ukgc-funds-protection').show();
+                                        $('#ukgc-funds-protection').removeClass('invisible');
                                         break;
                                     case 'ASK_AUTHENTICATE':
                                         ForwardWS.showMessage('not-authenticated-message');
+                                        break;
+                                    case 'ASK_FINANCIAL_RISK_APPROVAL':
+                                        showErrorMessage('financial-risk-error');
+                                        break;
+                                    case 'ASK_JP_KNOWLEDGE_TEST':
+                                        showErrorMessage('knowledge-test-error');
+                                        break;
+                                    case 'JP_NOT_ACTIVATION':
+                                        showErrorMessage('activation-error');
+                                        break;
+                                    case 'ASK_AGE_VERIFICATION':
+                                        showErrorMessage('age-error');
                                         break;
                                     default:
                                         ForwardWS.showError(error.message);
@@ -209,7 +222,7 @@ var ForwardWS = (function() {
                     case 'cashier':
                         ForwardWS.hideAll('#deposit-withdraw-message');
                         $('#deposit-withdraw-iframe-container').find('iframe').attr('src', response.cashier).end()
-                            .show();
+                            .removeClass('invisible');
                         break;
                     case 'set_account_currency':
                     case 'tnc_approval':
