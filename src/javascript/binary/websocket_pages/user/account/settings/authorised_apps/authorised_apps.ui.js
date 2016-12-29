@@ -1,8 +1,9 @@
 var showLoadingImage = require('../../../../../base/utility').showLoadingImage;
-var showLocalTimeOnHover = require('../../../../../base/utility').showLocalTimeOnHover;
+var showLocalTimeOnHover = require('../../../../../base/clock').Clock.showLocalTimeOnHover;
 var Button = require('../../../../../common_functions/attach_dom/button').Button;
 var FlexTableUI = require('../../../../../common_functions/attach_dom/flextable').FlexTableUI;
 var ApplicationsData = require('./authorised_apps.data').ApplicationsData;
+var localize = require('../../../../../base/localize').localize;
 
 var ApplicationsUI = (function() {
     'use strict';
@@ -23,7 +24,7 @@ var ApplicationsUI = (function() {
         var columns = ['name', 'permissions', 'last_used', 'action'];
         flexTable = new FlexTableUI({
             container: containerSelector,
-            header   : headers.map(function(s) { return page.text.localize(s); }),
+            header   : headers.map(function(s) { return localize(s); }),
             id       : 'applications-table',
             cols     : columns,
             data     : data,
@@ -37,7 +38,7 @@ var ApplicationsUI = (function() {
     }
 
     function formatApp(app) {
-        var last_used = app.last_used ? app.last_used.format('YYYY-MM-DD HH:mm:ss') : page.text.localize('Never');
+        var last_used = app.last_used ? app.last_used.format('YYYY-MM-DD HH:mm:ss') : localize('Never');
         return [
             app.name,
             app.scopes.join(', '),
@@ -50,16 +51,16 @@ var ApplicationsUI = (function() {
         $('#loading').remove();
         createTable(apps);
         if (!apps.length) {
-            flexTable.displayError(page.text.localize(messages.no_apps), 7);
+            flexTable.displayError(localize(messages.no_apps), 7);
         }
     }
 
     function createRevokeButton(container, app) {
         var $buttonSpan = Button.createBinaryStyledButton();
         var $button = $buttonSpan.children('.button').first();
-        $button.text(page.text.localize(messages.revoke_access));
+        $button.text(localize(messages.revoke_access));
         $button.on('click', function() {
-            if (window.confirm(page.text.localize(messages.revoke_confirm) + ": '" + app.name + "'?")) {
+            if (window.confirm(localize(messages.revoke_confirm) + ": '" + app.name + "'?")) {
                 ApplicationsData.revoke(app.id);
                 container.css({ opacity: 0.5 });
             }
@@ -75,8 +76,8 @@ var ApplicationsUI = (function() {
         showLoadingImage($('<div/>', { id: 'loading' }).insertAfter('#applications-title'));
         var $title = $('#applications-title').children().first();
         var $desc  = $('#description');
-        $title.text(page.text.localize($title.text()));
-        $desc.text(page.text.localize($desc.text()));
+        $title.text(localize($title.text()));
+        $desc.text(localize($desc.text()));
     }
 
     function clean() {

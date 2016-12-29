@@ -2,7 +2,9 @@ var moment              = require('moment');
 var toTitleCase         = require('../../../common_functions/string_util').toTitleCase,
     addComma            = require('../../../common_functions/string_util').addComma,
     format_money        = require('../../../common_functions/currency_to_symbol').format_money,
-    toJapanTimeIfNeeded = require('../../../base/utility').toJapanTimeIfNeeded;
+    toJapanTimeIfNeeded = require('../../../base/clock').Clock.toJapanTimeIfNeeded;
+var localize = require('../../../base/localize').localize;
+var Client   = require('../../../base/client').Client;
 
 var Statement = (function() {
     'use strict';
@@ -32,9 +34,10 @@ var Statement = (function() {
     };
 
     var generateCSV = function(allData, jpClient) {
-        var columns = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'],
-            header  = ['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit'].map(function(str) { return page.text.localize(str); });
-        header.push(page.text.localize('Balance') + (jpClient || !TUser.get().currency ? '' : ' (' + TUser.get().currency + ')'));
+        var columns  = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'],
+            header   = ['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit'].map(function(str) { return localize(str); }),
+            currency = Client.get_value('currency');
+        header.push(localize('Balance') + (jpClient || !currency ? '' : ' (' + currency + ')'));
         var sep = ',',
             csv = [header.join(sep)];
         if (allData && allData.length > 0) {

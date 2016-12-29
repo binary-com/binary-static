@@ -13,8 +13,8 @@ var CharityPage                   = require('./charity').CharityPage;
 var TermsAndConditions            = require('./tnc').TermsAndConditions;
 var CashierJP                     = require('../../binary_japan/cashier').CashierJP;
 var LoggedInHandler               = require('../base/logged_in').LoggedInHandler;
-var pjax_config_page_require_auth = require('../base/page').pjax_config_page_require_auth;
-var pjax_config_page              = require('../base/page').pjax_config_page;
+var pjax_config_page_require_auth = require('../base/pjax').pjax_config_page_require_auth;
+var pjax_config_page              = require('../base/pjax').pjax_config_page;
 
 pjax_config_page('/home', function() {
     return {
@@ -116,6 +116,9 @@ pjax_config_page('/platforms', function() {
         onLoad: function() {
             Platforms.init();
         },
+        onUnload: function () {
+            Platforms.unload();
+        },
     };
 });
 
@@ -148,6 +151,9 @@ pjax_config_page('/get-started-jp', function() {
         onLoad: function() {
             GetStartedJP.init();
         },
+        onUnload: function () {
+            GetStartedJP.unload();
+        },
     };
 });
 
@@ -162,6 +168,9 @@ pjax_config_page('/open-positions/job-details', function() {
         onLoad: function() {
             JobDetails.init();
             JobDetails.addEventListeners();
+        },
+        onUnload: function () {
+            JobDetails.removeEventListeners();
         },
     };
 });

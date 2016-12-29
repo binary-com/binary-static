@@ -1,7 +1,9 @@
+var url = require('../base/url').url;
+
 var Platforms = (function () {
     var sections = [];
     function init() {
-        sections = ['more-tools', 'trading-platforms', 'platforms-comparison'];
+        sections = ['more-tools', 'trading-platforms'];
         var sidebarListItem = $('.sidebar-nav li');
         sidebarListItem.click(function() {
             sidebarListItem.removeClass('selected');
@@ -44,8 +46,8 @@ var Platforms = (function () {
     }
     function get_hash() {
         return (
-            page.url.location.hash && $.inArray(page.url.location.hash.substring(1), sections) !== -1 ?
-            page.url.location.hash : '#trading-platforms'
+            url.location.hash && $.inArray(url.location.hash.substring(1), sections) !== -1 ?
+            url.location.hash : '#trading-platforms'
         );
     }
     function showSelectedDiv() {
@@ -55,8 +57,13 @@ var Platforms = (function () {
         $('.sections[id="' + get_hash().substring(1) + '"]').removeClass('invisible');
         $('.sidebar-nav a[href="' + get_hash() + '"]').parent().addClass('selected');
     }
+    function unload() {
+        $(window).off('resize');
+        $(window).off('hashchange');
+    }
     return {
-        init: init,
+        init  : init,
+        unload: unload,
     };
 })();
 

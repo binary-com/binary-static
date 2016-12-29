@@ -1,6 +1,7 @@
 var done_typing = require('../lib/done-typing').done_typing;
 var formToObj   = require('../lib/form-to-obj').formToObj;
 var dv          = require('../lib/validation');
+var localize = require('./base/localize').localize;
 
 var ValidationUI = {
     clear: function() {
@@ -10,7 +11,7 @@ var ValidationUI = {
         var $parent = $(selector).parent();
         var $p = $('<p/>', {
             class: 'errorfield',
-            text : page.text.localize(message),
+            text : localize(message),
         });
         $p.attr('data-is-error-field', true);
         $parent.append($p);
@@ -149,7 +150,7 @@ bind_validation.simple = function(form, opts) {
         stop    : opts.stop     || function(validation) {
             ValidationUI.clear();
             validation.errors.forEach(function(err) {
-                var sel = 'input[name=' + stripTrailing(err.ctx) + ']';
+                var sel = '[name=' + stripTrailing(err.ctx) + ']';
                 ValidationUI.draw(sel, err.err);
             });
         },

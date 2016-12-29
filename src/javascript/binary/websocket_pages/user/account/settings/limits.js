@@ -1,10 +1,11 @@
 var LimitsWS = require('./limits/limits.init').LimitsWS;
-var Content = require('../../../../common_functions/content').Content;
+var Content  = require('../../../../common_functions/content').Content;
+var Client   = require('../../../../base/client').Client;
 
 var Limits = (function() {
     var onLoad = function() {
         Content.populate();
-        if (TUser.get().is_virtual) {
+        if (Client.get_boolean('is_virtual')) {
             LimitsWS.limitsError();
             return;
         }
@@ -16,7 +17,7 @@ var Limits = (function() {
                     var type = response.msg_type;
                     var error = response.error;
 
-                    if (type === 'authorize' && TUser.get().is_virtual) {
+                    if (type === 'authorize' && Client.get_boolean('is_virtual')) {
                         LimitsWS.limitsError(error);
                     } else if (type === 'get_limits' && !error) {
                         LimitsWS.limitsHandler(response);

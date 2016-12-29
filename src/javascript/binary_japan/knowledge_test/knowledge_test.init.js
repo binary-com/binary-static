@@ -1,6 +1,8 @@
-var toJapanTimeIfNeeded = require('../../binary/base/utility').toJapanTimeIfNeeded;
+var toJapanTimeIfNeeded = require('../../binary/base/clock').Clock.toJapanTimeIfNeeded;
 var KnowledgeTestUI     = require('./knowledge_test.ui').KnowledgeTestUI;
 var KnowledgeTestData   = require('./knowledge_test.data').KnowledgeTestData;
+var localize = require('../../binary/base/localize').localize;
+var url_for  = require('../../binary/base/url').url_for;
 
 var KnowledgeTest = (function() {
     'use strict';
@@ -31,7 +33,7 @@ var KnowledgeTest = (function() {
             $('#knowledge-test-instructions').addClass('invisible');
             $('#knowledge-test-msg')
                 .addClass('notice-msg')
-                .text(page.text.localize('You need to finish all 20 questions.'));
+                .text(localize('You need to finish all 20 questions.'));
 
             var unAnswered = randomPicks.reduce((a, b) => a.concat(b))
                                         .find(q => answeredQid.indexOf(q.id) === -1).id;
@@ -68,17 +70,17 @@ var KnowledgeTest = (function() {
         $('#knowledge-test-questions input[type=radio]').click(questionAnswerHandler);
         $('#knowledge-test-submit').click(submitHandler);
         $('#knowledge-test-questions').removeClass(hiddenClass);
-        $('#knowledge-test-msg').text(page.text.localize('{JAPAN ONLY}Please complete the following questions.'));
+        $('#knowledge-test-msg').text(localize('{JAPAN ONLY}Please complete the following questions.'));
         $('#knowledge-test-instructions').removeClass('invisible');
     }
 
     function showResult(score, time) {
         $('#knowledge-test-instructions').addClass('invisible');
-        $('#knowledge-test-header').text(page.text.localize('{JAPAN ONLY}Knowledge Test Result'));
+        $('#knowledge-test-header').text(localize('{JAPAN ONLY}Knowledge Test Result'));
         if (score >= 14) {
-            $('#knowledge-test-msg').text(page.text.localize(passMsg));
+            $('#knowledge-test-msg').text(localize(passMsg));
         } else {
-            $('#knowledge-test-msg').text(page.text.localize(failMsg));
+            $('#knowledge-test-msg').text(localize(failMsg));
         }
 
         var $resultTable = KnowledgeTestUI.createResultUI(score, time);
@@ -89,7 +91,7 @@ var KnowledgeTest = (function() {
 
     function showMsgOnly(msg) {
         $('#knowledge-test-questions').addClass(hiddenClass);
-        $('#knowledge-test-msg').text(page.text.localize(msg));
+        $('#knowledge-test-msg').text(localize(msg));
         $('#knowledge-test-instructions').addClass('invisible');
     }
 
@@ -97,7 +99,7 @@ var KnowledgeTest = (function() {
         var msgTemplate =
             '{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until [_1]. Last test taken at [_2].';
 
-        var msg = page.text.localize(msgTemplate, [
+        var msg = localize(msgTemplate, [
             toJapanTimeIfNeeded(jpStatus.next_test_epoch),
             toJapanTimeIfNeeded(jpStatus.last_test_epoch),
         ]);
@@ -130,7 +132,7 @@ var KnowledgeTest = (function() {
                     var jpStatus = response.get_settings.jp_account_status;
 
                     if (!jpStatus) {
-                        window.location.href = page.url.url_for('/');
+                        window.location.href = url_for('/');
                         return;
                     }
 
@@ -150,7 +152,7 @@ var KnowledgeTest = (function() {
                             break;
                         default: {
                             console.warn('Unexpected jp status');
-                            window.location.href = page.url.url_for('/');
+                            window.location.href = url_for('/');
                         }
                     }
                 } else if (type === 'jp_knowledge_test') {
@@ -172,7 +174,7 @@ var KnowledgeTest = (function() {
     function showActivationPending() {
         $('#topbar-msg').children('a').addClass(hiddenClass + ' jp_activation_pending');
         if ($('.activation-message').length === 0) {
-            $('#virtual-text').append(' <div class="activation-message">' + page.text.localize('Your Application is Being Processed.') + '</div>');
+            $('#virtual-text').append(' <div class="activation-message">' + localize('Your Application is Being Processed.') + '</div>');
         }
     }
 

@@ -1,4 +1,3 @@
-var template = require('./utility').template;
 var Cookies  = require('../../lib/js-cookie');
 
 var isStorageSupported = function(storage) {
@@ -104,24 +103,34 @@ CookieStorage.prototype = {
     },
 };
 
-var Localizable = function(hash) {
-    this.texts = typeof hash !== 'undefined' ? hash : {};
-};
+var SessionStore,
+    LocalStore;
+if (typeof window !== 'undefined' && isStorageSupported(window.localStorage)) {
+    LocalStore = new Store(window.localStorage);
+}
 
-Localizable.prototype = {
-    localize: function(text, params) {
-        var index = text.replace(/[\s|.]/g, '_');
-        text = this.texts[index] || text;
-        // only do templating when explicitly required
-        return params ? template(text, params) : text;
-    },
-};
+if (typeof window !== 'undefined' && isStorageSupported(window.sessionStorage)) {
+    if (!LocalStore) {
+        LocalStore = new Store(window.sessionStorage);
+    }
+    SessionStore = new Store(window.sessionStorage);
+}
+
+if (!SessionStore || !LocalStore) {
+    if (!LocalStore) {
+        LocalStore = new InScriptStore();
+    }
+    if (!SessionStore) {
+        SessionStore = new InScriptStore();
+    }
+}
 
 module.exports = {
     isStorageSupported: isStorageSupported,
     Store             : Store,
     InScriptStore     : InScriptStore,
     CookieStorage     : CookieStorage,
-    Localizable       : Localizable,
     State             : State,
+    SessionStore      : SessionStore,
+    LocalStore        : LocalStore,
 };

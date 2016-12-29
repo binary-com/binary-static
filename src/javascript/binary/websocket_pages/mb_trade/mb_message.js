@@ -6,7 +6,9 @@ var MBPurchase          = require('./mb_purchase').MBPurchase;
 var MBSymbols           = require('./mb_symbols').MBSymbols;
 var MBTick              = require('./mb_tick').MBTick;
 var PortfolioWS = require('../user/account/portfolio/portfolio.init').PortfolioWS;
-var State = require('../../base/storage').State;
+var State  = require('../../base/storage').State;
+var GTM    = require('../../base/gtm').GTM;
+var Client = require('../../base/client').Client;
 var processTradingTimes  = require('../trade/process').processTradingTimes;
 var forgetTradingStreams = require('../trade/process').forgetTradingStreams;
 
@@ -32,7 +34,7 @@ var MBMessage = (function () {
                 MBContract.setContractsResponse(response);
                 MBProcess.processContract(response);
             } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && (!response.echo_req.hasOwnProperty('passthrough') || !response.echo_req.passthrough.hasOwnProperty('handler'))) {
-                page.client.set_storage_value('currencies', response.payout_currencies);
+                Client.set_value('currencies', response.payout_currencies.join(','));
                 MBDisplayCurrencies('', false);
                 MBSymbols.getSymbols(1);
             } else if (type === 'proposal_array') {

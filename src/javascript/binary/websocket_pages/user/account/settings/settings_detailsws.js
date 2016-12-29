@@ -1,10 +1,12 @@
 var detect_hedging  = require('../../../../common_functions/common_functions').detect_hedging;
-var Content         = require('../../../../common_functions/content').Content;
 var ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
 var bind_validation = require('../../../../validator').bind_validation;
-var Cookies         = require('../../../../../lib/js-cookie');
-var moment          = require('moment');
-var dv              = require('../../../../../lib/validation');
+var Content  = require('../../../../common_functions/content').Content;
+var Cookies  = require('../../../../../lib/js-cookie');
+var moment   = require('moment');
+var dv       = require('../../../../../lib/validation');
+var localize = require('../../../../base/localize').localize;
+var Client   = require('../../../../base/client').Client;
 
 var SettingsDetailsWS = (function() {
     'use strict';
@@ -25,7 +27,7 @@ var SettingsDetailsWS = (function() {
     function init() {
         Content.populate();
 
-        if (page.client.is_virtual() || page.client.residence) {
+        if (Client.get_boolean('is_virtual') || Client.get_value('residence')) {
             initOk();
         } else {
             isInitialized = false;
@@ -36,8 +38,8 @@ var SettingsDetailsWS = (function() {
 
     function initOk() {
         isInitialized = true;
-        var isVirtual = page.client.is_virtual();
-        var isJP = page.client.residence === 'jp';
+        var isVirtual = Client.get_boolean('is_virtual');
+        var isJP = Client.get_value('residence') === 'jp';
         bind_validation.simple($(formID)[0], {
             schema: isJP ? getJPSchema() : isVirtual ? {} : getNonJPSchema(),
             submit: function(ev, info) {
@@ -73,7 +75,7 @@ var SettingsDetailsWS = (function() {
             changed = true;
         });
 
-        if (page.client.is_virtual()) { // Virtual Account
+        if (Client.get_boolean('is_virtual')) { // Virtual Account
             $(RealAccElements).remove();
             $(formID).removeClass('hidden');
             return;
@@ -86,10 +88,10 @@ var SettingsDetailsWS = (function() {
         if (residence) {
             BinarySocket.send({ states_list: residence, passthrough: { value: data.address_state } });
         }
-        if (page.client.residence === 'jp') {
+        if (Client.get_value('residence') === 'jp') {
             var jpData = response.get_settings.jp_settings;
             $('#lblName').text((data.last_name || ''));
-            $('#lblGender').text(page.text.localize(jpData.gender) || '');
+            $('#lblGender').text(localize(jpData.gender) || '');
             $('#lblAddress1').text(data.address_line_1 || '');
             $('#lblAddress2').text(data.address_line_2 || '');
             $('#lblCity').text(data.address_city || '');
@@ -187,7 +189,7 @@ var SettingsDetailsWS = (function() {
         function trim(s) {
             return $(s).val().trim();
         }
-        setDetails(page.client.is_virtual() ? data :
+        setDetails(Client.get_boolean('is_virtual') ? data :
             toJPSettings({
                 hedgeAssetAmount      : trim('#HedgeAssetAmount'),
                 annualIncome          : trim('#AnnualIncome'),
@@ -269,7 +271,7 @@ var SettingsDetailsWS = (function() {
     function showFormMessage(msg, isSuccess) {
         $('#formMessage')
             .attr('class', isSuccess ? 'success-msg' : 'errorfield')
-            .html(isSuccess ? '<ul class="checked"><li>' + page.text.localize(msg) + '</li></ul>' : page.text.localize(msg))
+            .html(isSuccess ? '<ul class="checked"><li>' + localize(msg) + '</li></ul>' : localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);
@@ -315,7 +317,7 @@ var SettingsDetailsWS = (function() {
                 }
             },
         });
-        if (TUser.get().loginid) {
+        if (Client.get_value('loginid')) {
             SettingsDetailsWS.init();
         }
     }

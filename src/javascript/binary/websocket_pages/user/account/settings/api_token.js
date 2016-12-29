@@ -1,5 +1,5 @@
 var showLoadingImage     = require('../../../../base/utility').showLoadingImage;
-var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
+var showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
 var Content         = require('../../../../common_functions/content').Content;
 var FlexTableUI     = require('../../../../common_functions/attach_dom/flextable').FlexTableUI;
 var ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
@@ -7,7 +7,9 @@ var japanese_client = require('../../../../common_functions/country_base').japan
 var ValidationUI    = require('../../../../validator').ValidationUI;
 var customError     = require('../../../../validator').customError;
 var bind_validation = require('../../../../validator').bind_validation;
-var dv = require('../../../../../lib/validation');
+var dv       = require('../../../../../lib/validation');
+var localize = require('../../../../base/localize').localize;
+var url_for  = require('../../../../base/url').url_for;
 
 var APITokenWS = (function() {
     'use strict';
@@ -27,7 +29,7 @@ var APITokenWS = (function() {
 
     function init() {
         if (japanese_client()) {
-            window.location.href = page.url.url_for('user/settingsws');
+            window.location.href = url_for('user/settingsws');
             return;
         }
 
@@ -67,7 +69,7 @@ var APITokenWS = (function() {
         return {
             scopes: [
                 function(v) { return dv.ok(v || []); },
-                customError(V2.required, page.text.localize('Please select at least one scope')),
+                customError(V2.required, localize('Please select at least one scope')),
             ],
             name: [
                 function(v) { return dv.ok(v.trim()); },
@@ -92,7 +94,7 @@ var APITokenWS = (function() {
 
         if (tokens.length >= maxTokens) {
             hideForm();
-            showErrorMessage(page.text.localize('The maximum number of tokens ([_1]) has been reached.', [maxTokens]));
+            showErrorMessage(localize('The maximum number of tokens ([_1]) has been reached.', [maxTokens]));
         } else {
             showForm();
         }
@@ -133,7 +135,7 @@ var APITokenWS = (function() {
         new FlexTableUI({
             id       : 'tokens_table',
             container: tableContainer,
-            header   : headers.map(function(s) { return page.text.localize(s); }),
+            header   : headers.map(function(s) { return localize(s); }),
             cols     : columns,
             data     : tokens,
             formatter: formatToken,
@@ -149,8 +151,8 @@ var APITokenWS = (function() {
     }
 
     function createDeleteButton($row, token) {
-        var message = page.text.localize('Are you sure that you want to permanently delete token');
-        var $button = $('<button/>', { class: 'button btnDelete', text: page.text.localize('Delete') });
+        var message = localize('Are you sure that you want to permanently delete token');
+        var $button = $('<button/>', { class: 'button btnDelete', text: localize('Delete') });
         $button.click(function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -169,7 +171,7 @@ var APITokenWS = (function() {
     }
 
     function formatToken(token) {
-        var lastUsed = (token.last_used ? token.last_used + ' GMT' : page.text.localize('Never Used'));
+        var lastUsed = (token.last_used ? token.last_used + ' GMT' : localize('Never Used'));
         var scopes = token.scopes.map(capitalise);
         return [
             token.display_name,
@@ -214,13 +216,13 @@ var APITokenWS = (function() {
         $('#token_message').removeClass(hideClass)
             .find('p')
             .attr('class', errorClass)
-            .html(page.text.localize(msg));
+            .html(localize(msg));
     }
 
     function showSubmitSuccess(msg) {
         $('#formMessage')
             .attr('class', 'success-msg')
-            .html('<ul class="checked"><li>' + page.text.localize(msg) + '</li></ul>')
+            .html('<ul class="checked"><li>' + localize(msg) + '</li></ul>')
             .css('display', 'block')
             .delay(3000)
             .fadeOut(1000);

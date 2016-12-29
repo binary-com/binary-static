@@ -1,6 +1,7 @@
 var format_money          = require('../../../common_functions/currency_to_symbol').format_money;
 var PortfolioWS           = require('../account/portfolio/portfolio.init').PortfolioWS;
 var updateContractBalance = require('../../trade/common').updateContractBalance;
+var Client                = require('../../../base/client').Client;
 
 var ViewBalanceUI = (function() {
     function updateBalances(response) {
@@ -9,7 +10,7 @@ var ViewBalanceUI = (function() {
             return;
         }
         var balance = response.balance.balance;
-        TUser.get().balance = balance;
+        Client.set_value('balance', balance);
         PortfolioWS.updateBalance();
         var currency = response.balance.currency;
         if (!currency) {

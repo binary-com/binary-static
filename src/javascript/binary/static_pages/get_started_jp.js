@@ -1,9 +1,10 @@
 var japanese_client = require('../common_functions/country_base').japanese_client;
+var url_for         = require('../base/url').url_for;
 
 var GetStartedJP = (function() {
     var init = function() {
         if (!japanese_client()) {
-            window.location.href = page.url.url_for('get-started');
+            window.location.href = url_for('get-started');
         }
         var tab = window.location.hash;
         if (tab && tab !== '') {
@@ -36,8 +37,13 @@ var GetStartedJP = (function() {
         });
     };
 
+    var unload = function() {
+        $(window).off('hashchange');
+    };
+
     return {
-        init: init,
+        init  : init,
+        unload: unload,
     };
 })();
 

@@ -2,6 +2,7 @@ var template = require('../base/utility').template;
 var moment   = require('moment');
 var dv       = require('../../lib/validation');
 var Content  = require('./content').Content;
+var localize = require('../base/localize').localize;
 
 var ValidateV2 = (function() {
     function err() {
@@ -20,7 +21,7 @@ var ValidateV2 = (function() {
     }
 
     function local(value) {
-        return { unwrap: function() { return page.text.localize(value); } };
+        return { unwrap: function() { return localize(value); } };
     }
 
     function localKey(value) {
