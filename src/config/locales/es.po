@@ -872,6 +872,16 @@ msgstr "Transferencia de cuenta"
 msgid "Account balance: "
 msgstr "Saldo de la cuenta: "
 
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "Depósito bloqueado, por favor <a class=\"pjaxload\" href=\"%1\">póngase en contacto con nosotros</a> para más información."
+
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "Depósito bloqueado, por favor <a class=\"pjaxload\" href=\"%1\">póngase en contacto con nosotros</a> para más información."
+
 msgid "Accounting"
 msgstr "Contabilidad"
 
@@ -1226,9 +1236,6 @@ msgstr "Australia"
 
 msgid "Authenticate"
 msgstr "Autenticar"
-
-msgid "Authenticate your account"
-msgstr "Autenticar su cuenta"
 
 msgid "Authentication"
 msgstr "Autenticación"
@@ -1638,7 +1645,9 @@ msgstr "Cajero"
 msgid "Cashier Password"
 msgstr "Contraseña de Cajero"
 
-msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#, fuzzy
+#| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr "El cajero está bloqueado, por favor <a class=\"pjaxload\" href=\"%1\">póngase en contacto con nosotros</a> para más información."
 
 msgid "Cashier password"
@@ -2219,7 +2228,9 @@ msgstr "Deposite %1 %2 de dinero virtual en su cuenta %3"
 msgid "Deposit Bonus"
 msgstr "Bono de depósito"
 
-msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr "Depósito bloqueado, por favor <a class=\"pjaxload\" href=\"%1\">póngase en contacto con nosotros</a> para más información."
 
 msgid "Deposit of"
@@ -2783,6 +2794,11 @@ msgstr "Activo financiero"
 
 msgid "Financial Information"
 msgstr "Información financiera"
+
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 
 msgid "Financial Security"
 msgstr "Seguridad financiera"
@@ -7622,7 +7638,9 @@ msgstr "Límites de retiro"
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "No se permiten las retiradas de su cuenta en este momento. Por favor, póngase en contacto con %1 para desbloquearla."
 
-msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
@@ -7811,6 +7829,11 @@ msgstr "Usted puede retirar el monto de la bonificación una vez que el valor de
 msgid "You must accept the terms and conditions to open an account."
 msgstr "Usted debe aceptar los términos y condiciones para abrir una cuenta."
 
+#, fuzzy
+#| msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
+msgid "You must complete the knowledge test to activate this account. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "Su cuenta no está completamente autenticada. Por favor visite la página de <a class=\"pjaxload\" href=\"%1\">autenticación</a> para obtener más información."
+
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "Usted debe cumplir con estos Términos para poder utilizar la API de %1."
 
@@ -7948,11 +7971,10 @@ msgstr "Su cuenta está totalmente autenticada y su límite de retirada ha sido 
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "Su cuenta está totalmente autenticada. Usted puede ver sus límites de operaciones <a class=\"pjaxload\" href=\"%1\">aquí</a>."
 
-msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
-msgstr "Su cuenta no está completamente autenticada. Por favor visite la página de <a class=\"pjaxload\" href=\"%1\">autenticación</a> para obtener más información."
-
-msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
-msgstr "Su cuenta no está completamente autenticada. Por favor visite la página de <a href=\"%1\"> autenticación</a> para obtener más información."
+#, fuzzy
+#| msgid "Client is not fully authenticated."
+msgid "Your account is not fully authenticated."
+msgstr "El cliente no se ha autenticado completamente."
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Su cuenta no debe ser utilizada como un banco, y los depósitos deben hacerse con el único fin de utilizar los recursos para comprar contratos. La Compañía no es una institución financiera, los clientes no reciben intereses sobre los depósitos. En caso de hacer depósitos y retiros repetidos sin adquirir contratos, nos reservamos el derecho a transmitir a sus cuentas, sin previo aviso, los gastos bancarios en los que hemos incurrido antes de cerrar la cuenta."
@@ -9170,6 +9192,12 @@ msgstr "Detalles de la cuenta"
 msgid "Terms and Conditions Approval"
 msgstr "Acuerdo con los términos y condiciones"
 
+#~ msgid "Authenticate your account"
+#~ msgstr "Autenticar su cuenta"
+
+#~ msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
+#~ msgstr "Su cuenta no está completamente autenticada. Por favor visite la página de <a href=\"%1\"> autenticación</a> para obtener más información."
+
 #~ msgid "AUD"
 #~ msgstr "AUD"
 
@@ -10334,9 +10362,6 @@ msgstr "Acuerdo con los términos y condiciones"
 
 #~ msgid "Client email not set."
 #~ msgstr "Correo electrónico del cliente no enviado."
-
-#~ msgid "Client is not fully authenticated."
-#~ msgstr "El cliente no se ha autenticado completamente."
 
 #~ msgid "Close"
 #~ msgstr "Cierre"
