@@ -867,6 +867,16 @@ msgstr "Transfer Akun"
 msgid "Account balance: "
 msgstr "Saldo akun Anda: "
 
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "Deposit terkunci, silahkan <a class=\"pjaxload\" href=\"%1\">hubungi kami</a> untuk info lebih lanjut."
+
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "Deposit terkunci, silahkan <a class=\"pjaxload\" href=\"%1\">hubungi kami</a> untuk info lebih lanjut."
+
 msgid "Accounting"
 msgstr "Akuntansi"
 
@@ -1215,9 +1225,6 @@ msgstr "AUSTRALIA"
 
 msgid "Authenticate"
 msgstr "Pembuktian"
-
-msgid "Authenticate your account"
-msgstr "Buktikan akun Anda"
 
 msgid "Authentication"
 msgstr "Pembuktian"
@@ -1603,7 +1610,9 @@ msgstr "Kasir"
 msgid "Cashier Password"
 msgstr "Kata Sandi Kasir"
 
-msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#, fuzzy
+#| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr "Bagian kasir terkunci, silahkan <a class=\"pjaxload\" href=\"%1\">hubungi kami</a> untuk info lebih lanjut."
 
 msgid "Cashier password"
@@ -2170,7 +2179,9 @@ msgstr "Tambahkan Deposit %1 %2 dana virtual kedalam akun %3 Anda"
 msgid "Deposit Bonus"
 msgstr "Bonus Deposit"
 
-msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr "Deposit terkunci, silahkan <a class=\"pjaxload\" href=\"%1\">hubungi kami</a> untuk info lebih lanjut."
 
 msgid "Deposit of"
@@ -2730,6 +2741,11 @@ msgstr "Aset Finansial"
 
 msgid "Financial Information"
 msgstr "Informasi Keuangan"
+
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "Penarikan terkunci, silahkan <a class=\"pjaxload\" href=\"%1\">hubungi kami</a> untuk info lebih lanjut."
 
 msgid "Financial Security"
 msgstr "Keamanan Financial"
@@ -7455,7 +7471,9 @@ msgstr "Batas Penarikan"
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "Penarikan untuk akun Anda tidak dapat dilanjutkan untuk saat ini. Silahkan hubungi %1 untuk pengaktifan."
 
-msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr "Penarikan terkunci, silahkan <a class=\"pjaxload\" href=\"%1\">hubungi kami</a> untuk info lebih lanjut."
 
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
@@ -7644,6 +7662,11 @@ msgstr "Bonus hanya dapat dicairkan jika Anda telah melebihi total pembelian kon
 msgid "You must accept the terms and conditions to open an account."
 msgstr "Anda harus menyetujui syarat dan ketentuan untuk mendaftar akun."
 
+#, fuzzy
+#| msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
+msgid "You must complete the knowledge test to activate this account. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "Akun Anda belum dikonfirmasi sepenuhnya. Silahkan kunjungi halaman <a class=\"pjaxload\" href=\"%1\">otentikasi</a> untuk informasi lebih lanjut."
+
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "Anda harus mematuhi Persyaratan ini untuk menggunakan API %1."
 
@@ -7779,11 +7802,10 @@ msgstr "Akun Anda telah terbukti dan batasan penarikan Anda telah dihapuskan."
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "Akun Anda telah terbukti. Anda dapat melihat <a class=\"pjaxload\" href=\"%1\">batasan trading disini</a>."
 
-msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
-msgstr "Akun Anda belum dikonfirmasi sepenuhnya. Silahkan kunjungi halaman <a class=\"pjaxload\" href=\"%1\">otentikasi</a> untuk informasi lebih lanjut."
-
-msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
-msgstr "Akun Anda belum dikonfirmasi sepenuhnya. Silahkan kunjungi halaman <a href=\"%1\">otentikasi</a> untuk informasi lebih lanjut."
+#, fuzzy
+#| msgid "Client is not fully authenticated."
+msgid "Your account is not fully authenticated."
+msgstr "Klien tidak sepenuhnya terkonfirmasi."
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Akun Anda tidak boleh digunakan sebagai fasilitas perbankan dan deposito hanya boleh dilakukan dengan tujuan untuk menggunakan dana untuk membeli kontrak. Perusahaan ini bukan lembaga keuangan, Klien tidak akan menerima bunga deposito. Jika Anda melakukan deposit berulang dan penarikan tanpa melakukan pembelian kontrak maka kami berhak untuk mengembalikan saldo dana pada akun Anda tanpa pemberitahuan termasuk biaya transfer sebelum melakukan penutupan akun."
@@ -8864,6 +8886,12 @@ msgstr "Keterangan rekening"
 
 msgid "Terms and Conditions Approval"
 msgstr "Syarat dan Ketentuan Persetujuan"
+
+#~ msgid "Authenticate your account"
+#~ msgstr "Buktikan akun Anda"
+
+#~ msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
+#~ msgstr "Akun Anda belum dikonfirmasi sepenuhnya. Silahkan kunjungi halaman <a href=\"%1\">otentikasi</a> untuk informasi lebih lanjut."
 
 #~ msgid "AUD"
 #~ msgstr "AUD"
@@ -10024,9 +10052,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Client email not set."
 #~ msgstr "Email klien tidak diatur."
-
-#~ msgid "Client is not fully authenticated."
-#~ msgstr "Klien tidak sepenuhnya terkonfirmasi."
 
 #~ msgid "Close"
 #~ msgstr "Tutup"

@@ -871,6 +871,16 @@ msgstr "Chuyển Tài khoản"
 msgid "Account balance: "
 msgstr "Số dư tài khoản: "
 
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "Tiền gửi bị khóa, xin vui lòng <a class=\"pjaxload\" href=\"%1\"> liên hệ với chúng tôi</a> để biết thêm thông tin."
+
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "Tiền gửi bị khóa, xin vui lòng <a class=\"pjaxload\" href=\"%1\"> liên hệ với chúng tôi</a> để biết thêm thông tin."
+
 msgid "Accounting"
 msgstr "Kế toán"
 
@@ -1223,9 +1233,6 @@ msgstr "Úc"
 
 msgid "Authenticate"
 msgstr "Xác thực"
-
-msgid "Authenticate your account"
-msgstr "Xác thực tài khoản của bạn"
 
 msgid "Authentication"
 msgstr "Xác thực"
@@ -1615,7 +1622,9 @@ msgstr "Thu ngân"
 msgid "Cashier Password"
 msgstr "Mật khẩu Thu ngân"
 
-msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#, fuzzy
+#| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr "Thu ngân bị khóa, xin vui lòng <a class=\"pjaxload\" href=\"%1\"> liên hệ với chúng tôi</a> để biết thêm thông tin."
 
 msgid "Cashier password"
@@ -2188,7 +2197,9 @@ msgstr "Gửi %1 %2 tiền ảo vào tài khoản %3 của bạn"
 msgid "Deposit Bonus"
 msgstr "Tiền thưởng Ký quỹ"
 
-msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr "Tiền gửi bị khóa, xin vui lòng <a class=\"pjaxload\" href=\"%1\"> liên hệ với chúng tôi</a> để biết thêm thông tin."
 
 msgid "Deposit of"
@@ -2754,6 +2765,11 @@ msgstr "Financial Asset"
 
 msgid "Financial Information"
 msgstr "Thông tin Tài chính"
+
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "Không thể rút tiền, vui lòng liên lạc với chúng tôi <a class=\"pjaxload\" href=\"%1\"></a> để có thêm thông tin."
 
 msgid "Financial Security"
 msgstr "Chứng khoán Tài chính"
@@ -7531,7 +7547,9 @@ msgstr "Giới hạn Rút tiền"
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "Rút tiền tại tài khoản của bạn không được phép tại thời điểm này. Xin vui lòng liên hệ với %1 để mở khóa."
 
-msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr "Không thể rút tiền, vui lòng liên lạc với chúng tôi <a class=\"pjaxload\" href=\"%1\"></a> để có thêm thông tin."
 
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
@@ -7720,6 +7738,11 @@ msgstr "Bạn có thể rút số tiền thưởng khi vốn luân chuyển củ
 msgid "You must accept the terms and conditions to open an account."
 msgstr "Bạn phải chấp nhận các điều khoản và điều kiện để mở tài khoản."
 
+#, fuzzy
+#| msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
+msgid "You must complete the knowledge test to activate this account. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "Tài khoản của bạn không được chứng thực đầy đủ. Vui lòng tuy cập trang <a class=\"pjaxload\" href=\"%1\">xác thực</a> để biết thêm thông tin."
+
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "Bạn phải tuân thủ những Điều khoản này để có thể sử dụng %1 API."
 
@@ -7859,11 +7882,10 @@ msgstr "Tài khoản của bạn được xác thực đầy đủ và mư
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "Tài khoản của bạn được xác thực hoàn toàn. Bạn có thể xem <a class=\"pjaxload\" href=\"%1\">hạn mức giao dịch của bạn ở đây</a>."
 
-msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
-msgstr "Tài khoản của bạn không được chứng thực đầy đủ. Vui lòng tuy cập trang <a class=\"pjaxload\" href=\"%1\">xác thực</a> để biết thêm thông tin."
-
-msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
-msgstr "Tài khoản của bạn không được chứng thực đầy đủ. Vui lòng tuy cập trang <a href=\"%1\">xác thực</a> để biết thêm thông tin."
+#, fuzzy
+#| msgid "Client is not fully authenticated."
+msgid "Your account is not fully authenticated."
+msgstr "Khách hàng chưa hoàn toàn được xác thực."
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Tài khoản của bạn không nên được sử dụng như một thiết bị ngân hàng và bạn chỉ nên gửi tiền với mục đích sử dụng nó để đặt hợp đồng. Công ty không phải là tổ chức tài chính, Khách hàng cũng không nhận được lãi suất từ tiền gửi. Nếu bạn gửi tiền và rút tiền nhiều lần mà không đặt hợp đồng tương xứng, chúng tôi có quyền thu hồi tài khoản của bạn, mà không cần thông báo trước, bất kỳ khoản phí ngân hàng nào chúng tôi sẽ thu của bạn trước khi đóng tài khoản."
@@ -9077,6 +9099,12 @@ msgstr "Chi tiết Tài khoản"
 msgid "Terms and Conditions Approval"
 msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
+#~ msgid "Authenticate your account"
+#~ msgstr "Xác thực tài khoản của bạn"
+
+#~ msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
+#~ msgstr "Tài khoản của bạn không được chứng thực đầy đủ. Vui lòng tuy cập trang <a href=\"%1\">xác thực</a> để biết thêm thông tin."
+
 #~ msgid "AUD"
 #~ msgstr "AUD"
 
@@ -10247,9 +10275,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 #~ msgid "Client email not set."
 #~ msgstr "Email của khách hàng chưa được thiết lập."
-
-#~ msgid "Client is not fully authenticated."
-#~ msgstr "Khách hàng chưa hoàn toàn được xác thực."
 
 #~ msgid "Close"
 #~ msgstr "Đóng"
