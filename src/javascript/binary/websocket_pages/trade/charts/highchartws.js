@@ -166,6 +166,10 @@ var Highchart = (function() {
             rangeSelector: { enabled: false },
         };
 
+        if (user_sold()) {
+            chartOptions.series[0].zones.pop();
+        }
+
         // display comma after every three digits instead of space
         Highcharts.setOptions({
             global: {
@@ -507,7 +511,7 @@ var Highchart = (function() {
 
     // update color zone of exit time
     function reselect_exit_time() {
-        if (chart && exit_time) {
+        if (chart && exit_time && !user_sold()) {
             chart.series[0].zones[1].value = parseInt(exit_time) * 1000;
             // force to redraw:
             chart.isDirty = true;
