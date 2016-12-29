@@ -1,4 +1,6 @@
 var japanese_client = require('../../common_functions/country_base').japanese_client;
+var Client   = require('../../base/client').Client;
+var url_for  = require('../../base/url').url_for;
 
 var Cashier = (function() {
     'use strict';
@@ -12,12 +14,12 @@ var Cashier = (function() {
     };
 
     var check_locked = function() {
-        if (TUser.get().is_virtual || page.client.is_virtual()) return;
-        if (page.client_status_detected('cashier_locked')) {
+        if (Client.get_boolean('is_virtual')) return;
+        if (Client.status_detected('cashier_locked')) {
             lock_cashier('locked', 'deposit, .withdraw');
-        } else if (page.client_status_detected('withdrawal_locked')) {
+        } else if (Client.status_detected('withdrawal_locked')) {
             lock_cashier('locked', 'withdraw');
-        } else if (page.client_status_detected('unwelcome')) {
+        } else if (Client.status_detected('unwelcome')) {
             lock_cashier('locked', 'deposit');
         } else if (sessionStorage.getItem('client_status') === null) {
             BinarySocket.send({ get_account_status: '1', passthrough: { dispatch_to: 'Cashier' } });
@@ -25,9 +27,9 @@ var Cashier = (function() {
     };
 
     var check_virtual_top_up = function() {
-        if (TUser.get().is_virtual || page.client.is_virtual()) {
-            if ((TUser.get().currency !== 'JPY' && TUser.get().balance > 1000) ||
-                (TUser.get().currency === 'JPY' && TUser.get().balance > 100000)) {
+        if (Client.get_boolean('is_virtual')) {
+            if ((Client.get_value('currency') !== 'JPY' && Client.get_value('balance') > 1000) ||
+                (Client.get_value('currency') === 'JPY' && Client.get_value('balance') > 100000)) {
                 replace_with_disabled_button('#VRT_topup_link');
             }
         }
@@ -41,18 +43,17 @@ var Cashier = (function() {
     };
 
     var onLoad = function() {
-        if (/\/cashier\.html/.test(window.location.pathname) && page.client.is_logged_in) {
+        if (/\/cashier\.html/.test(window.location.pathname) && Client.get_boolean('is_logged_in')) {
             Cashier.check_locked();
             Cashier.check_virtual_top_up();
-            page.contents.topbar_message_visibility(TUser.get().landing_company);
         }
     };
 
     var onLoadPaymentMethods = function() {
         if (japanese_client()) {
-            window.location.href = page.url.url_for('/');
+            window.location.href = url_for('/');
         }
-        if (page.client.is_logged_in && !page.client.is_virtual()) {
+        if (Client.get_boolean('is_logged_in') && !Client.get_boolean('is_virtual')) {
             Cashier.check_locked();
         }
     };

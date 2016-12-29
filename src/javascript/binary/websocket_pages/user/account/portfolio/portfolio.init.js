@@ -1,5 +1,5 @@
 var showLoadingImage    = require('../../../../base/utility').showLoadingImage;
-var toJapanTimeIfNeeded = require('../../../../base/utility').toJapanTimeIfNeeded;
+var toJapanTimeIfNeeded = require('../../../../base/clock').Clock.toJapanTimeIfNeeded;
 var format_money        = require('../../../../common_functions/currency_to_symbol').format_money;
 var buildOauthApps      = require('../../../../common_functions/get_app_details').buildOauthApps;
 var addTooltip          = require('../../../../common_functions/get_app_details').addTooltip;
@@ -8,6 +8,9 @@ var japanese_client     = require('../../../../common_functions/country_base').j
 var Portfolio           = require('../portfolio').Portfolio;
 var ViewPopupWS         = require('../../view_popup/view_popupws').ViewPopupWS;
 var State               = require('../../../../base/storage').State;
+var localize = require('../../../../base/localize').localize;
+var Client   = require('../../../../base/client').Client;
+var url      = require('../../../../base/url').url;
 
 var PortfolioWS = (function() {
     'use strict';
@@ -21,7 +24,7 @@ var PortfolioWS = (function() {
 
     var init = function() {
         hidden_class = 'invisible';
-        if (TUser.get().balance) {
+        if (Client.get_value('balance')) {
             updateBalance();
         }
 
@@ -40,7 +43,7 @@ var PortfolioWS = (function() {
         is_initialized = true;
 
         // Display ViewPopup according to contract_id in query string
-        var contract_id = page.url.param('contract_id');
+        var contract_id = url.param('contract_id');
         if (contract_id) {
             ViewPopupWS.init($('<div />', { contract_id: contract_id }).get(0));
         }
@@ -59,7 +62,7 @@ var PortfolioWS = (function() {
                 '<td class="details">' + longCode + '</td>' +
                 '<td class="purchase"><strong>' + format_money(data.currency, data.buy_price) + '</strong></td>' +
                 '<td class="indicative"><strong class="indicative_price">--.--</strong></td>' +
-                '<td class="button"><button class="button open_contract_detailsws nowrap" contract_id="' + data.contract_id + '">' + page.text.localize('View') + '</button></td>' +
+                '<td class="button"><button class="button open_contract_detailsws nowrap" contract_id="' + data.contract_id + '">' + localize('View') + '</button></td>' +
                 '</tr>' +
                 '<tr class="tr-desc ' + new_class + ' ' + data.contract_id + '">' +
                 '<td colspan="6">' + longCode + '</td>' +
@@ -68,13 +71,13 @@ var PortfolioWS = (function() {
 
     var updateBalance = function() {
         if ($('#portfolio-balance').length === 0) return;
-        $('#portfolio-balance').text(Portfolio.getBalance(TUser.get().balance, TUser.get().currency));
+        $('#portfolio-balance').text(Portfolio.getBalance(Client.get_value('balance'), Client.get_value('currency')));
         var $if_balance_zero = $('#if-balance-zero');
-        if (TUser.get().balance > 0 || page.client.is_virtual()) {
+        if (Client.get_value('balance') > 0 || Client.get_boolean('is_virtual')) {
             $if_balance_zero.addClass(hidden_class);
         } else {
             $if_balance_zero.removeClass(hidden_class);
-            if (page.client_status_detected('unwelcome, cashier_locked', 'any')) {
+            if (Client.status_detected('unwelcome, cashier_locked', 'any')) {
                 $if_balance_zero.removeAttr('href').addClass('button-disabled');
             }
         }
@@ -158,7 +161,7 @@ var PortfolioWS = (function() {
             removeContract(proposal.contract_id);
         } else {
             if (+proposal.is_valid_to_sell !== 1) {
-                no_resale_html = '<span>' + page.text.localize('Resale not offered') + '</span>';
+                no_resale_html = '<span>' + localize('Resale not offered') + '</span>';
                 $td.addClass('no_resale');
             } else {
                 status_class = values[proposal.contract_id].indicative < old_indicative ? ' price_moved_down' : (values[proposal.contract_id].indicative > old_indicative ? ' price_moved_up' : '');

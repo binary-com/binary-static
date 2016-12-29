@@ -1,8 +1,9 @@
 var LostPassword = require('./lost_password/lost_password.init').LostPassword;
+var Client       = require('../../base/client').Client;
 
 var LostPasswordWS = (function() {
     var onLoad = function() {
-        if (page.client.redirect_if_login()) {
+        if (Client.redirect_if_login()) {
             return;
         }
         BinarySocket.init({

@@ -1,15 +1,18 @@
-var showLocalTimeOnHover  = require('../../../base/utility').showLocalTimeOnHover;
+var showLocalTimeOnHover  = require('../../../base/clock').Clock.showLocalTimeOnHover;
 var onlyNumericOnKeypress = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
 var Content               = require('../../../common_functions/content').Content;
 var RealityCheckData      = require('./reality_check.data').RealityCheckData;
+var localize = require('../../../base/localize').localize;
+var Client   = require('../../../base/client').Client;
+var url_for  = require('../../../base/url').url_for;
 require('../../../../lib/polyfills/array.includes');
 require('../../../../lib/polyfills/string.includes');
 
 var RealityCheckUI = (function() {
     'use strict';
 
-    var frequency_url = page.url.url_for('user/reality_check_frequencyws');
-    var summary_url = page.url.url_for('user/reality_check_summaryws');
+    var frequency_url = url_for('user/reality_check_frequencyws');
+    var summary_url = url_for('user/reality_check_summaryws');
     var hiddenClass = 'invisible';
     var loginTime; // milliseconds
     var getAccountStatus;
@@ -124,7 +127,7 @@ var RealityCheckUI = (function() {
         var intervalMinute = +($('#realityDuration').val());
 
         if (!(Math.floor(intervalMinute) === intervalMinute && $.isNumeric(intervalMinute))) {
-            var shouldBeInteger = page.text.localize('Interval should be integer.');
+            var shouldBeInteger = localize('Interval should be integer.');
             $('#rc-err').text(shouldBeInteger);
             $('#rc-err').removeClass(hiddenClass);
             return;
@@ -156,7 +159,7 @@ var RealityCheckUI = (function() {
     }
 
     function sendAccountStatus() {
-        if (!page.client.is_virtual() && page.client.residence !== 'jp' && !getAccountStatus) {
+        if (!Client.get_boolean('is_virtual') && Client.get_value('residence') !== 'jp' && !getAccountStatus) {
             BinarySocket.send({ get_account_status: 1 });
             getAccountStatus = true;
         }

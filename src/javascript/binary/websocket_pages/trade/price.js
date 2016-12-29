@@ -12,6 +12,8 @@ var getTradingTimes            = require('./common_independent').getTradingTimes
 var Contract                   = require('./contract').Contract;
 var Defaults                   = require('./defaults').Defaults;
 var isVisible                  = require('../../common_functions/common_functions').isVisible;
+var localize                   = require('../../base/localize').localize;
+var Client                     = require('../../base/client').Client;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -211,7 +213,7 @@ var Price = (function() {
                     amount.textContent = data.display_value;
                 } else {
                     $('.stake:hidden').show();
-                    stake.textContent = page.text.localize('Stake') + ': ';
+                    stake.textContent = localize('Stake') + ': ';
                     amount.textContent = format_money((currency.value || currency.getAttribute('value')), data.display_value);
                 }
                 $('.stake_wrapper:hidden').show();
@@ -220,14 +222,14 @@ var Price = (function() {
             }
 
             if (data.payout) {
-                payout.textContent = (is_spread ? page.text.localize('Payout/point') : page.text.localize('Payout')) + ': ';
+                payout.textContent = (is_spread ? localize('Payout/point') : localize('Payout')) + ': ';
                 payoutAmount.textContent = format_money((currency.value || currency.getAttribute('value')), data.payout);
                 $('.payout_wrapper:hidden').show();
             } else {
                 $('.payout_wrapper:visible').hide();
             }
 
-            if (data.longcode && window.innerWidth > 500 && !page.client_status_detected('unwelcome')) {
+            if (data.longcode && window.innerWidth > 500 && !Client.status_detected('unwelcome')) {
                 description.setAttribute('data-balloon', data.longcode);
             } else {
                 description.removeAttribute('data-balloon');

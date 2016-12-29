@@ -1,22 +1,23 @@
 var moment      = require('moment');
 var checkInput  = require('../common_functions/common_functions').checkInput;
 var toReadableFormat = require('../common_functions/string_util').toReadableFormat;
+var localize = require('../base/localize').localize;
 
 var DatePicker = function(component_selector, select_type) {
     this.component_selector = component_selector;
     this.select_type = (typeof select_type === 'undefined') ? 'date' : select_type;
 
     this.localizations = {};
-    this.localizations.monthNames = [page.text.localize('January'), page.text.localize('February'), page.text.localize('March'), page.text.localize('April'), page.text.localize('May'), page.text.localize('June'), page.text.localize('July'), page.text.localize('August'), page.text.localize('September'), page.text.localize('October'), page.text.localize('November'), page.text.localize('December')];
+    this.localizations.monthNames = localize(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']);
 
-    this.localizations.monthNamesShort = [page.text.localize('Jan'), page.text.localize('Feb'), page.text.localize('Mar'), page.text.localize('Apr'), page.text.localize('May'), page.text.localize('Jun'), page.text.localize('Jul'), page.text.localize('Aug'), page.text.localize('Sep'), page.text.localize('Oct'), page.text.localize('Nov'), page.text.localize('Dec')];
+    this.localizations.monthNamesShort = localize(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
 
-    this.localizations.dayNames = [page.text.localize('Sunday'), page.text.localize('Monday'), page.text.localize('Tuesday'), page.text.localize('Wednesday'), page.text.localize('Thursday'), page.text.localize('Friday'), page.text.localize('Saturday')];
+    this.localizations.dayNames = localize(['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']);
 
-    this.localizations.dayNamesMin = [page.text.localize('Su'), page.text.localize('Mo'), page.text.localize('Tu'), page.text.localize('We'), page.text.localize('Th'), page.text.localize('Fr'), page.text.localize('Sa')];
+    this.localizations.dayNamesMin = localize(['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']);
 
-    this.localizations.nextText = page.text.localize('Next');
-    this.localizations.prevText = page.text.localize('Previous');
+    this.localizations.nextText = localize('Next');
+    this.localizations.prevText = localize('Previous');
 };
 
 DatePicker.prototype = {

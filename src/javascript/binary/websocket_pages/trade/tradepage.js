@@ -15,6 +15,8 @@ var showPriceOverlay     = require('./common').showPriceOverlay;
 var showFormOverlay      = require('./common').showFormOverlay;
 var addEventListenerForm = require('./common').addEventListenerForm;
 var chartFrameCleanup    = require('./common').chartFrameCleanup;
+var localize = require('../../base/localize').localize;
+var url_for  = require('../../base/url').url_for;
 
 var TradePage = (function() {
     var events_initialized = 0;
@@ -22,10 +24,10 @@ var TradePage = (function() {
 
     var onLoad = function() {
         if (japanese_client() && /\/trading\.html/i.test(window.location.pathname)) {
-            window.location.href = page.url.url_for('multi_barriers_trading');
+            window.location.href = url_for('multi_barriers_trading');
             return;
         } else if (!japanese_client() && /\/multi_barriers_trading\.html/.test(window.location.pathname)) {
-            window.location.href = page.url.url_for('trading');
+            window.location.href = url_for('trading');
             return;
         }
         State.set('is_trading', true);
@@ -63,10 +65,10 @@ var TradePage = (function() {
             script: 'trading',
         });
         TradingAnalysis.bindAnalysisTabEvent();
-        $('#tab_portfolio a').text(page.text.localize('Portfolio'));
-        $('#tab_graph a').text(page.text.localize('Chart'));
-        $('#tab_explanation a').text(page.text.localize('Explanation'));
-        $('#tab_last_digit a').text(page.text.localize('Last Digit Stats'));
+        $('#tab_portfolio a').text(localize('Portfolio'));
+        $('#tab_graph a').text(localize('Chart'));
+        $('#tab_explanation a').text(localize('Explanation'));
+        $('#tab_last_digit a').text(localize('Last Digit Stats'));
     };
 
     var reload = function() {

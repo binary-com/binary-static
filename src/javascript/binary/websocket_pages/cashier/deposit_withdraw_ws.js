@@ -1,6 +1,9 @@
 var template = require('../../base/utility').template;
 var Validate = require('../../common_functions/validation').Validate;
 var Content  = require('../../common_functions/content').Content;
+var localize = require('../../base/localize').localize;
+var Client   = require('../../base/client').Client;
+var url_for  = require('../../base/url').url_for;
 var appendTextValueChild = require('../../common_functions/common_functions').appendTextValueChild;
 
 var ForwardWS = (function() {
@@ -52,7 +55,7 @@ var ForwardWS = (function() {
 
     function initWithdrawForm() {
         BinarySocket.send({
-            verify_email: TUser.get().email,
+            verify_email: Client.get_value('email'),
             type        : 'payment_withdraw',
         });
         ForwardWS.showMessage('check-email-message');
@@ -60,7 +63,7 @@ var ForwardWS = (function() {
     }
 
     function initDepositForm() {
-        if (TUser.get().currency) {
+        if (Client.get_value('currency')) {
             ForwardWS.getCashierURL();
         } else {
             ForwardWS.showCurrency();
@@ -68,7 +71,7 @@ var ForwardWS = (function() {
     }
 
     function showCurrency() {
-        var currencies = page.client.get_storage_value('currencies').split(',');
+        var currencies = Client.get_value('currencies').split(',');
         currencies.forEach(function(c) {
             appendTextValueChild('select-currency', c, c);
         });
@@ -82,10 +85,10 @@ var ForwardWS = (function() {
             hash_value = window.location.hash;
         if (/withdraw/.test(hash_value)) {
             cashier_type = 'withdraw';
-            deposit_withdraw_heading.innerHTML = page.text.localize('Withdraw');
+            deposit_withdraw_heading.innerHTML = localize('Withdraw');
         } else if (/deposit/.test(hash_value)) {
             cashier_type = 'deposit';
-            deposit_withdraw_heading.innerHTML = page.text.localize('Deposit');
+            deposit_withdraw_heading.innerHTML = localize('Deposit');
         }
         return cashier_type;
     }
@@ -107,7 +110,7 @@ var ForwardWS = (function() {
     function showError(error, id) {
         hideAll();
         if (!id) {
-            $('#custom-error').html(error || page.text.localize('Sorry, an error occurred while processing your request.'));
+            $('#custom-error').html(error || localize('Sorry, an error occurred while processing your request.'));
         }
         hideParentShowChild('#deposit-withdraw-error', '.error_messages', id || 'custom-error');
     }
@@ -143,16 +146,16 @@ var ForwardWS = (function() {
                 email   : 'Email address',
             };
         }
-        var errMsg = template($('#' + msgID).html(), [page.text.localize(details ? errorFields[details] : 'details')]);
+        var errMsg = template($('#' + msgID).html(), [localize(details ? errorFields[details] : 'details')]);
         $('#' + msgID).html(errMsg);
         ForwardWS.showMessage(msgID);
     }
 
     function checkOnLoad() {
         function clientIsVirtual() {
-            var is_virtual = page.client.is_virtual();
+            var is_virtual = Client.get_boolean('is_virtual');
             if (is_virtual) {
-                ForwardWS.showError(page.text.localize('This feature is not relevant to virtual-money accounts.'));
+                ForwardWS.showError(localize('This feature is not relevant to virtual-money accounts.'));
             }
             return is_virtual;
         }
@@ -176,7 +179,7 @@ var ForwardWS = (function() {
                             if (error.code) {
                                 switch (error.code) {
                                     case 'ASK_TNC_APPROVAL':
-                                        window.location.href = page.url.url_for('user/tnc_approvalws');
+                                        window.location.href = url_for('user/tnc_approvalws');
                                         break;
                                     case 'ASK_FIX_DETAILS':
                                         ForwardWS.showPersonalDetailsError(error.details);
@@ -236,9 +239,9 @@ var ForwardWS = (function() {
                 passthrough       : { dispatch_to: 'ForwardWS' },
             });
         } else if (
-            (!page.client_status_detected('cashier_locked, unwelcome', 'any') &&
+            (!Client.status_detected('cashier_locked, unwelcome', 'any') &&
             /deposit/.test(window.location.hash)) ||
-            (!page.client_status_detected('cashier_locked, withdrawal_locked', 'any') &&
+            (!Client.status_detected('cashier_locked, withdrawal_locked', 'any') &&
             /withdraw/.test(window.location.hash))
         ) {
             BinarySocket.send({ cashier_password: 1 });

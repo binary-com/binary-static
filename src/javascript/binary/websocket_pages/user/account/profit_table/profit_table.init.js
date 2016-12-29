@@ -1,9 +1,10 @@
-var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
+var showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
 var addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;
 var buildOauthApps       = require('../../../../common_functions/get_app_details').buildOauthApps;
 var Content              = require('../../../../common_functions/content').Content;
 var ProfitTableUI        = require('./profit_table.ui').ProfitTableUI;
 var ProfitTableData      = require('./profit_table.data').ProfitTableData;
+var localize = require('../../../../base/localize').localize;
 
 var ProfitTableWS = (function() {
     var batchSize,
@@ -59,7 +60,7 @@ var ProfitTableWS = (function() {
                 $('#profit-table tbody')
                     .append($('<tr/>', { class: 'flex-tr' })
                         .append($('<td/>',  { colspan: 8 })
-                            .append($('<p/>', { class: 'notice-msg center-text', text: page.text.localize('Your account has no trading activity.') }))));
+                            .append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
             }
         }
     }

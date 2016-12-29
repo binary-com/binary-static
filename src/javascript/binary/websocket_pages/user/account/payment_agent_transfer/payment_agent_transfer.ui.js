@@ -1,3 +1,5 @@
+var localize = require('../../../../base/localize').localize;
+
 var PaymentAgentTransferUI = (function () {
     'use strict';
 
@@ -32,7 +34,7 @@ var PaymentAgentTransferUI = (function () {
         $('#paymentagent_transfer_notes').removeClass(hiddenClass);
     }
     function updateFormView(currency) {
-        $('#paymentagent_transfer label[for="amount"]').text(page.text.localize('Amount') + ' ' + currency);
+        $('#paymentagent_transfer label[for="amount"]').text(localize('Amount') + ' ' + currency);
     }
 
     function updateConfirmView(username, loginid, amount, currency) {
@@ -44,12 +46,12 @@ var PaymentAgentTransferUI = (function () {
     function showTransferError(err) {
         $('#pa_confirm_transfer .errorfield')
             .removeClass(hiddenClass)
-            .text(page.text.localize(err));
+            .text(localize(err));
     }
 
     function updateDoneView(fromID, toID, amount, currency) {
         var templateString = 'Your request to transfer [_1] [_2] from [_3] to [_4] has been successfully processed.';
-        var confirmMsg = page.text.localize(templateString, [
+        var confirmMsg = localize(templateString, [
             amount,
             currency,
             fromID,

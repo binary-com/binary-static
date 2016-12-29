@@ -1,5 +1,6 @@
 var PaymentAgentTransfer = require('./payment_agent_transfer/payment_agent_transfer.init').PaymentAgentTransfer;
 var Content              = require('../../../common_functions/content').Content;
+var Client               = require('../../../base/client').Client;
 
 var PaymentAgentTransferSocket = (function() {
     function initSocket() {
@@ -14,7 +15,7 @@ var PaymentAgentTransferSocket = (function() {
         });
         Content.populate();
         PaymentAgentTransfer.init_variable();
-        if (TUser.get().email) {
+        if (Client.get_value('email')) {
             PaymentAgentTransfer.init();
         }
     }

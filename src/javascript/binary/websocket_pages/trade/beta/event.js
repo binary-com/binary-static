@@ -28,6 +28,8 @@ var getStartDateNode               = require('../common_independent').getStartDa
 var isVisible                      = require('../../../common_functions/common_functions').isVisible;
 var dateValueChanged               = require('../../../common_functions/common_functions').dateValueChanged;
 var TimePicker                     = require('../../../components/time_picker').TimePicker;
+var load_with_pjax                 = require('../../../base/pjax').load_with_pjax;
+var Client                         = require('../../../base/client').Client;
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -317,7 +319,7 @@ var TradingEvents_Beta = (function () {
          * attach event to purchase buttons to buy the current contract
          */
         $('.purchase_button').on('click dblclick', function () {
-            if (!page.client_status_detected('unwelcome') && !isVisible(document.getElementById('confirmation_message_container'))) {
+            if (!Client.status_detected('unwelcome') && !isVisible(document.getElementById('confirmation_message_container'))) {
                 var id = this.getAttribute('data-purchase-id'),
                     askPrice = this.getAttribute('data-ask-price');
 
