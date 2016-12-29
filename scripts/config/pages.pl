@@ -39,7 +39,7 @@ sub all_pages {
         ['open-source-projects',       'partners/open_source_projects',  'full_width', 'Open-Source Projects'],
         ['partners',                   'partners/partners',              'full_width', 'Partners',           'ja'],
         ['payment-agent',              'partners/payment_agent',         'full_width', 'Payment Agents'],
-        ['security-testing',               'partners/security_testing',          'full_width', 'Sign Up to Test Our Platform'],
+        ['security-testing',           'partners/security_testing',      'full_width', 'Security Testing'],
 
         ['get-started',                              'get_started/index',                         'get_started', 'Get Started',                      'ja'],
         ['get-started/what-is-binary-trading',       'get_started/what_is_binary_trading',        'get_started', 'Why Choose Binary Trading?',       'ja'],
