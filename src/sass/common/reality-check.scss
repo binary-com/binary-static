@@ -50,9 +50,9 @@
 
 #reality-check-nav, #balances-nav {
     margin-top: 1em;
-    span:nth-child(2) {
+    span:nth-child(2n) {
         display: inline-block;
-        width: 5em;
+        width: 2em;
     }
 }
 
