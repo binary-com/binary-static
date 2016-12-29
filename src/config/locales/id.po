@@ -7,15 +7,16 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-22 05:30+0000\n"
+"PO-Revision-Date: 2016-12-29 08:40+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
-"Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
+"Language-Team: Indonesian "
+"<https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.10\n"
+"X-Generator: Weblate 2.11-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" adalah set eksklusif dari rutinitas program %1, protokol, alat dan sumber daya yang diciptakan dan dikelola oleh %1 yang dapat memberi Anda fasilitas untuk menggunakan aplikasi terdaftar pada platform trading %1."
@@ -332,10 +333,8 @@ msgstr "Kontrak (Sekali) Sentuh"
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "* Bebas Pajak: Keuntungan trading pada umumnya adalah bebas pajak di banyak negara, silahkan konsultasikan dengan ahli pajak di negara Anda."
 
-#, fuzzy
-#| msgid "All calls are recorded for training and monitoring purposes"
 msgid "*All calls are recorded for training and monitoring purposes"
-msgstr "Panggilan adalah direkam untuk pelatihan dan pemantauan"
+msgstr "*Semua percakapan direkam untuk pelatihan dan pemantauan"
 
 msgid ",000"
 msgstr ",000"
@@ -867,15 +866,15 @@ msgstr "Transfer Akun"
 msgid "Account balance: "
 msgstr "Saldo akun Anda: "
 
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Deposit terkunci, silahkan <a class=\"pjaxload\" href=\"%1\">hubungi kami</a> untuk info lebih lanjut."
+msgstr ""
+"Akun perlu melengkapi pembuktian umur, silahkan hubungi <a class=\"pjaxload\""
+" href=\"%1\">customer support</a> untuk informasi lebih lanjut."
 
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Deposit terkunci, silahkan <a class=\"pjaxload\" href=\"%1\">hubungi kami</a> untuk info lebih lanjut."
+msgstr ""
+"Akun belum diaktifkan, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">"
+"customer support</a> untuk informasi lebih lanjut."
 
 msgid "Accounting"
 msgstr "Akuntansi"
@@ -1032,7 +1031,7 @@ msgid "An error occured."
 msgstr "Terjadi error."
 
 msgid "Analyse and test our website for bugs and potential security issues."
-msgstr ""
+msgstr "Analisa dan tes website kami untuk berbagai bug dan masalah keamanan."
 
 msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
 msgstr "Analisa pasar dengan berbagai pilihan indikator, price band dan overlay."
@@ -1307,10 +1306,8 @@ msgstr "Platform Dasar"
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr "Sebelum kami mendaftarkan Anda pada BIEL, kami perlu melakukan penilaian apakah produk atau layanan yang telah Anda pilih sesuai untuk Anda, dan untuk mengingatkan Anda mengenai informasi dasar yang telah Anda berikan jika produk atau layanan kami tidak sesuai. Keputusan untuk mendaftar akun dan menggunakan produk atau layanan kami adalah sepenuhnya ditangan Anda. Merupakan tanggung jawab Anda untuk memahami risiko yang terlibat pada produk atau layanan kami."
 
-#, fuzzy
-#| msgid "More benefits"
 msgid "Benefits"
-msgstr "Manfaat lainnya"
+msgstr "Manfaat"
 
 msgid "Benefits of being a Payment Agent"
 msgstr "Manfaat menjadi Agen Pembayaran"
@@ -1610,10 +1607,10 @@ msgstr "Kasir"
 msgid "Cashier Password"
 msgstr "Kata Sandi Kasir"
 
-#, fuzzy
-#| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Bagian kasir terkunci, silahkan <a class=\"pjaxload\" href=\"%1\">hubungi kami</a> untuk info lebih lanjut."
+msgstr ""
+"Kasir terblokir, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">customer "
+"support</a> untuk informasi lebih lanjut."
 
 msgid "Cashier password"
 msgstr "Kata sandi Kasir"
@@ -2179,10 +2176,10 @@ msgstr "Tambahkan Deposit %1 %2 dana virtual kedalam akun %3 Anda"
 msgid "Deposit Bonus"
 msgstr "Bonus Deposit"
 
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Deposit terkunci, silahkan <a class=\"pjaxload\" href=\"%1\">hubungi kami</a> untuk info lebih lanjut."
+msgstr ""
+"Deposit terblokir, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">"
+"customer support</a> untuk informasi lebih lanjut."
 
 msgid "Deposit of"
 msgstr "Deposit dari"
@@ -2378,6 +2375,8 @@ msgstr "Masing-masing pihak pada Perjanjian ini akan mewakili dan menjamin kepad
 
 msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
 msgstr ""
+"Dapatkan bayaran dari masalah yang Anda temukan, dengan ganjaran hingga USD "
+"1,000 bagi rentan keamanan dengan resiko tinggi."
 
 msgid "Earn commissions by introducing new customers to %1."
 msgstr "Dapatkan komisi dengan memperkenalkan klien baru ke %1."
@@ -2659,7 +2658,7 @@ msgid "Explore advanced trading features with the Next-Gen app for web and mobil
 msgstr "Jelajahi fitur trading canggih dengan aplikasi Next-Gen untuk web dan mobile."
 
 msgid "Explore our HackerOne bounty programme"
-msgstr ""
+msgstr "Jelajahi program HackerOne yang kami sediakan"
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Berpengalaman luas dalam penerapan prinsip-prinsip coding canggih dan standar"
@@ -2742,10 +2741,10 @@ msgstr "Aset Finansial"
 msgid "Financial Information"
 msgstr "Informasi Keuangan"
 
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Penarikan terkunci, silahkan <a class=\"pjaxload\" href=\"%1\">hubungi kami</a> untuk info lebih lanjut."
+msgstr ""
+"Persetujuan pada risiko keuangan diperlukan. Silahkan hubungi <a class=\""
+"pjaxload\" href=\"%1\">customer support</a> untuk informasi lebih lanjut."
 
 msgid "Financial Security"
 msgstr "Keamanan Financial"
@@ -2945,10 +2944,8 @@ msgstr "Dapatkan harga"
 msgid "Getting Started"
 msgstr "Langkah Memulai"
 
-#, fuzzy
-#| msgid "Getting Started"
 msgid "Getting started"
-msgstr "Langkah Memulai"
+msgstr "Langkah memulai"
 
 msgid "Give Me More Money!"
 msgstr "Berikan saya uang lebih banyak lagi!"
@@ -3027,10 +3024,8 @@ msgstr "Kontrak Higher/Lower akan mendapat pengembalian harga beli jika terdapat
 msgid "Higher/Lower trades"
 msgstr "Kontrak Higher/Lower"
 
-#, fuzzy
-#| msgid "Hackerone - for IT security professionals"
 msgid "Hone your security testing skills."
-msgstr "Hackerone - untuk keamanan profesional IT"
+msgstr "Asah keterampilan menguji Anda."
 
 msgid "Hour"
 msgstr "Jam"
@@ -3404,6 +3399,8 @@ msgstr "Sumber Penghasilan"
 
 msgid "Increase your HackerOne reputation to build up credibility and profile visibility."
 msgstr ""
+"Kembangkan reputasi HackerOne Anda untuk membangun kredibilitas dan "
+"visibilitas profil."
 
 msgid "Indemnification"
 msgstr "Penggantian rugi"
@@ -5341,7 +5338,7 @@ msgid "Read about the five types of trade offered by %1."
 msgstr "Baca tentang lima jenis kontrak yang ditawarkan %1."
 
 msgid "Read and understand our HackerOne bug bounty programme policy."
-msgstr ""
+msgstr "Baca dan pahami peraturan program HackerOne yang kami miliki."
 
 msgid "Read our blog for the stories and ideas that inspire us"
 msgstr "Baca blog kami untuk cerita dan ide-ide yang menginspirasi kami"
@@ -5623,7 +5620,7 @@ msgid "Security and Privacy"
 msgstr "Keamanan dan Privasi"
 
 msgid "Security testing opportunities"
-msgstr ""
+msgstr "Kesempatan menguji keamanan"
 
 msgid "Select market"
 msgstr "Pilih pasar"
@@ -5961,6 +5958,8 @@ msgstr "Mengajukan"
 
 msgid "Submit a report on HackerOne, or a pull-request in GitHub with a suggested fix."
 msgstr ""
+"Ajukan laporan HackerOne, atau dapatkan permohonan pada GitHub dengan "
+"perbaikan yang telah disarankan."
 
 msgid "Submit your CV and Cover Letter"
 msgstr "Kirim CV dan Cover Letter Anda"
@@ -6051,6 +6050,9 @@ msgstr "Tersier"
 
 msgid "Test our products and services for security vulnerabilities. In the process, you’ll earn a monetary reward for any verifiable issues that you find, courtesy of our bug bounty programme."
 msgstr ""
+"Uji produk dan layanan kami dengan rentas keamanan. Dalam proses ini, Anda "
+"akan mendapatkan hadiah uang untuk setiap masalah terverifikasi yang Anda "
+"temukan, budi baik dari program bug kami."
 
 msgid "Test-run %1, and sharpen your trading skills, with a no-risk, no-commitment, virtual account."
 msgstr "Coba %1, dan asah keterampilan trading Anda, tanpa risiko, tanpa komitmen, akun virtual."
@@ -6339,12 +6341,16 @@ msgstr "Perusahaan tidak menjamin keberhasilan penjualan awal kontrak sebelum wa
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
 msgstr "Perusahaan menyediakan berbagai jenis metode deposit, setiap deposit memiliki waktu proses masing-masing begitu juga dengan penarikan. Informasi lengkap mengenai metode deposit dan penarikan termasuk waktu proses tersedia <a href='%1' class='pjaxload'>disini.</a>"
 
-#, fuzzy
-#| msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
 msgid ""
 "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer\n"
 "                funds at the level: <strong>medium protection</strong>."
-msgstr "Perusahaan menyimpan dana Pelanggan pada rekening bank terpisah dari rekening bank untuk urusan operasional dimana tidak akan, meskipun dalam keadaan pailit menjadi bagian dari aset Perusahaan. Hal ini memenuhi persyaratan Komisi Trading dalam pemisahan dana nasabah di tingkat: <strong>perlindungan menengah</strong>."
+msgstr ""
+"Perusahaan menyimpan dana Pelanggan pada rekening bank terpisah dari "
+"rekening bank untuk urusan operasional dimana tidak akan, meskipun dalam "
+"keadaan pailit menjadi bagian dari aset Perusahaan. Hal ini memenuhi "
+"persyaratan Komisi Trading dalam pemisahan\n"
+"                dana nasabah di tingkat: <strong>perlindungan "
+"menengah</strong>."
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: medium protection."
 msgstr "Perusahaan memegang dana Pelanggan pada rekening bank terpisah dari rekening bank untuk urusan operasional dimana hal ini adalah untuk memastikan aset pada akun Pelanggan mencukupi jika terjadi peristiwa pailit pada Perusahaan. Hal ini untuk memenuhi persyaratan Komisi Trading dalam pemisahan dana nasabah di tingkat: perlindungan menengah."
@@ -7089,18 +7095,14 @@ msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl
 msgid "Waiting for entry tick."
 msgstr "Menunggu tik masuk..."
 
-#, fuzzy
-#| msgid "Waiting for entry tick."
 msgid "Waiting for exit tick."
-msgstr "Menunggu tik masuk..."
+msgstr "Menunggu tik akhir."
 
 msgid "Walkthrough Guide"
 msgstr "Panduan Langsung"
 
-#, fuzzy
-#| msgid "At %1, we consider the strength and security of our trading platform to be critically important."
 msgid "Want to help us enhance the strength and security of our platform?"
-msgstr "Di %1, kami berpendapat bahwa kekuatan dan keamanan platform trading kami merupakan hal yang sangat penting."
+msgstr "Ingin membantu kami meningkatkan kekuatan dan keamanan platform?"
 
 msgid "Want to learn more?"
 msgstr "Ingin mempelajari lebih lanjut?"
@@ -7471,10 +7473,10 @@ msgstr "Batas Penarikan"
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "Penarikan untuk akun Anda tidak dapat dilanjutkan untuk saat ini. Silahkan hubungi %1 untuk pengaktifan."
 
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Penarikan terkunci, silahkan <a class=\"pjaxload\" href=\"%1\">hubungi kami</a> untuk info lebih lanjut."
+msgstr ""
+"Penarikan terblokir, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">"
+"customer support</a> untuk informasi lebih lanjut."
 
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr "Bekerja sama dengan anggota tim lain untuk membangun software yang akan mengoperasikan harga pada platform trading kami"
@@ -7662,10 +7664,11 @@ msgstr "Bonus hanya dapat dicairkan jika Anda telah melebihi total pembelian kon
 msgid "You must accept the terms and conditions to open an account."
 msgstr "Anda harus menyetujui syarat dan ketentuan untuk mendaftar akun."
 
-#, fuzzy
-#| msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
 msgid "You must complete the knowledge test to activate this account. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Akun Anda belum dikonfirmasi sepenuhnya. Silahkan kunjungi halaman <a class=\"pjaxload\" href=\"%1\">otentikasi</a> untuk informasi lebih lanjut."
+msgstr ""
+"Anda harus menyelesaikan tes pengetahuan untuk mengaktifkan akun ini. "
+"Silahkan hubungi <a class=\"pjaxload\" href=\"%1\">customer support</a> "
+"untuk informasi lebih lanjut."
 
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "Anda harus mematuhi Persyaratan ini untuk menggunakan API %1."
@@ -7802,10 +7805,8 @@ msgstr "Akun Anda telah terbukti dan batasan penarikan Anda telah dihapuskan."
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "Akun Anda telah terbukti. Anda dapat melihat <a class=\"pjaxload\" href=\"%1\">batasan trading disini</a>."
 
-#, fuzzy
-#| msgid "Client is not fully authenticated."
 msgid "Your account is not fully authenticated."
-msgstr "Klien tidak sepenuhnya terkonfirmasi."
+msgstr "Akun Anda belum diverifikasi sepenuhnya."
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Akun Anda tidak boleh digunakan sebagai fasilitas perbankan dan deposito hanya boleh dilakukan dengan tujuan untuk menggunakan dana untuk membeli kontrak. Perusahaan ini bukan lembaga keuangan, Klien tidak akan menerima bunga deposito. Jika Anda melakukan deposit berulang dan penarikan tanpa melakukan pembelian kontrak maka kami berhak untuk mengembalikan saldo dana pada akun Anda tanpa pemberitahuan termasuk biaya transfer sebelum melakukan penutupan akun."
