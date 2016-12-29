@@ -211,7 +211,7 @@ var Highchart = (function() {
             width    : params.width || 2,
             dashStyle: params.dashStyle || 'Solid',
         });
-        if (sell_time && sell_time < end_time) {
+        if (user_sold()) {
             var subtitle = chart.subtitle.element,
                 subtitle_length = subtitle.childNodes.length,
                 textnode = document.createTextNode(' '  + localize('Sell time') + ' '),
@@ -365,7 +365,7 @@ var Highchart = (function() {
                     // second OR condition is used so we don't draw end time again if there is sell time before
                     if (
                         end_time - (start_time || purchase_time) <= 24 * 60 * 60 &&
-                        (!is_sold || (is_sold && sell_time && sell_time >= end_time))
+                        (!is_sold || (is_sold && !user_sold()))
                     ) {
                         draw_line_x(end_time, '', 'textLeft', 'Dash');
                     }
@@ -556,7 +556,7 @@ var Highchart = (function() {
     }
 
     function reset_max() {
-        if (sell_time && sell_time < end_time && chart) {
+        if (user_sold() && chart) {
             chart.xAxis[0].setExtremes(min_point ? min_point * 1000 : null, (parseInt(sell_time) + 3) * 1000);
         }
     }
@@ -633,14 +633,12 @@ var Highchart = (function() {
     // also sets the exit tick
     function end_contract() {
         if (chart) {
-            if (sell_time && sell_time < end_time) {
+            if (user_sold()) {
                 draw_line_x(sell_time, '', 'textLeft', 'Dash');
-            } else if (sell_time && sell_time >= end_time) {
+            } else {
                 draw_line_x(end_time, '', 'textLeft', 'Dash');
             }
-            if (sell_spot_time && sell_spot_time < end_time && sell_spot_time >= start_time) {
-                select_exit_tick(sell_spot_time);
-            } else if (exit_tick_time) {
+            if (exit_tick_time) {
                 select_exit_tick(exit_tick_time);
             }
             if (!contract.sell_spot && !contract.exit_tick) {
@@ -723,6 +721,10 @@ var Highchart = (function() {
         if (!match_found) {
             sessionStorage.setItem('license.' + save_contract, license);
         }
+    }
+
+    function user_sold() {
+        return sell_time && sell_time < end_time;
     }
 
     return {

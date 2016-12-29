@@ -218,13 +218,12 @@ var ViewPopupWS = (function() {
                 '', true);
         }
 
-        var currentSpot = !is_ended ? contract.current_spot : (user_sold ? contract.sell_spot : contract.exit_tick);
-        var currentSpotTime = !is_ended ? contract.current_spot_time
-                                        : (user_sold ? contract.sell_spot_time : contract.exit_tick_time);
+        var currentSpot = !is_ended ? contract.current_spot : (user_sold ? '-' : contract.exit_tick);
+        var currentSpotTime = !is_ended ? contract.current_spot_time : (user_sold ? '' : contract.exit_tick_time);
 
         containerSetText('trade_details_ref_id',           contract.transaction_ids.buy + (contract.transaction_ids.sell ? ' - ' + contract.transaction_ids.sell : ''));
-        containerSetText('trade_details_current_date',     toJapanTimeIfNeeded(epochToDateTime(currentSpotTime)));
-        containerSetText('trade_details_current_spot',     currentSpot || localize('not available'));
+        containerSetText('trade_details_current_date',     currentSpotTime ? toJapanTimeIfNeeded(epochToDateTime(currentSpotTime)) : '-');
+        containerSetText('trade_details_current_spot',     currentSpot);
         containerSetText('trade_details_indicative_price', indicative_price ? format_money(contract.currency, indicative_price) : '-');
 
         var profit_loss;
