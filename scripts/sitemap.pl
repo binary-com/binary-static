@@ -26,7 +26,7 @@ my @urls = (
     ['partners'               , 'monthly', '0.80' , 'ja'],
     ['cashier'                , 'monthly', '0.80'],
     ['careers'                , 'monthly', '0.80' , 'ja'],
-    ['user-testing'           , 'monthly', '0.80'],
+    ['security-testing'       , 'monthly', '0.80'],
     ['open-positions'         , 'monthly', '0.80'],
     ['payment-agent'          , 'monthly', '0.80'],
     ['group-history'          , 'monthly', '0.80'],

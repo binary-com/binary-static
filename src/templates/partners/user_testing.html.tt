@@ -1,4 +1,4 @@
-<div class="user_testing container">
+<div class="security_testing container">
   <div class="gr-no-gutter static_full">
     <h1>[% l("Security testing opportunities") %]</h1>
     <div>
@@ -27,7 +27,7 @@
           <div class="xquote">
             <div>
               <div class="picture">
-                <img class="responsive" src="[% request.url_for('images/pages/user_testing/hackerone-img.svg') %]"/>
+                <img class="responsive" src="[% request.url_for('images/pages/security_testing/hackerone-img.svg') %]"/>
               </div>
               <div class="text">
                 <a class="pjaxload" href="https://hackerone.com/binary" target="_blank">
