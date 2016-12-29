@@ -714,7 +714,7 @@ Header.prototype = {
         var that = this;
         var $el = $('#select_language'),
             $all_accounts = $('#all-accounts');
-        $('.languages').on('click', function(event) {
+        $('.languages').off('click').on('click', function(event) {
             event.stopPropagation();
             that.animate_disappear($all_accounts);
             if (+$el.css('opacity') === 1) {
