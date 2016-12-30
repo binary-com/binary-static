@@ -4,6 +4,7 @@ var Content              = require('../../common_functions/content').Content;
 var ViewPopupUI          = require('../user/view_popup/view_popup_ui').ViewPopupUI;
 var isVisible            = require('../../common_functions/common_functions').isVisible;
 var updatePurchaseStatus = require('./common').updatePurchaseStatus;
+var localize             = require('../../base/localize').localize;
 var Highcharts           = require('highcharts');
 require('highcharts/modules/exporting')(Highcharts);
 var elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
@@ -247,11 +248,11 @@ var TickDisplay = (function() {
             var $self = this;
 
             var profit = $self.payout - $self.price;
-            $self.update_ui($self.payout, profit, page.text.localize('This contract won'));
+            $self.update_ui($self.payout, profit, localize('This contract won'));
         },
         lose: function() {
             var $self = this;
-            $self.update_ui(0, -$self.price, page.text.localize('This contract lost'));
+            $self.update_ui(0, -$self.price, localize('This contract lost'));
         },
         to_monetary_format: function(number) {
             return number.toFixed(2);

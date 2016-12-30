@@ -6,7 +6,7 @@
         <div id="viewError" class="viewItem hidden">
             <p id="custom-error" class="error-msg hidden"></p>
             <p id="withdrawal-locked-error" class="error-msg hidden">
-                [% l('Withdrawal is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
+                [% l('Withdrawal is locked, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
         </div>
 

@@ -1,3 +1,5 @@
+var Client = require('../../../../base/client').Client;
+
 var JapanAccOpeningData = (function() {
     function getJapanAcc(elementObj) {
         var req = {
@@ -7,7 +9,7 @@ var JapanAccOpeningData = (function() {
             last_name                                  : elementObj.lname.value,
             date_of_birth                              : elementObj.dobyy.value + '-' + elementObj.dobmm.value + '-' + elementObj.dobdd.value,
             occupation                                 : elementObj.occupation.value,
-            residence                                  : page.client.residence,
+            residence                                  : Client.get_value('residence'),
             address_line_1                             : elementObj.address1.value,
             address_line_2                             : elementObj.address2.value,
             address_city                               : elementObj.town.value,

@@ -11,6 +11,7 @@ var updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
 var label_value               = require('../common').label_value;
 var elementTextContent        = require('../../../common_functions/common_functions').elementTextContent;
 var elementInnerHtml          = require('../../../common_functions/common_functions').elementInnerHtml;
+var Client                    = require('../../../base/client').Client;
 
 /*
  * Purchase object that handles all the functions related to
@@ -53,7 +54,7 @@ var Purchase_Beta = (function () {
             container.style.display = 'block';
             message_container.hide();
             confirmation_error.show();
-            elementInnerHtml(confirmation_error_contents, (/ClientUnwelcome/.test(error.code) ? error.message + '<a class="pjaxload" href="' + page.url.url_for('user/authenticatews') + '"> ' + page.text.localize('Authorise your account.') + '</a>' : error.message));
+            elementInnerHtml(confirmation_error_contents,  error.message);
         } else {
             var guideBtn = document.getElementById('guideBtn');
             if (guideBtn) {
@@ -108,7 +109,7 @@ var Purchase_Beta = (function () {
                 label_value(cost,   Content.localize().textStake,  addComma(cost_value));
             }
 
-            elementTextContent(balance, Content.localize().textContractConfirmationBalance + ' ' + format_money(TUser.get().currency, receipt.balance_after));
+            elementTextContent(balance, Content.localize().textContractConfirmationBalance + ' ' + format_money(Client.get_value('currency'), receipt.balance_after));
 
             if (show_chart) {
                 chart.show();

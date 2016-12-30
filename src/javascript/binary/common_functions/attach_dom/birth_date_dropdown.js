@@ -1,5 +1,6 @@
 var japanese_client = require('../country_base').japanese_client;
 var elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
+var localize = require('../../base/localize').localize;
 
 function generateBirthDate() {
     var days   = document.getElementById('dobdd'),
@@ -19,9 +20,9 @@ function generateBirthDate() {
     dropDownNumbers(year, startYear, endYear);
 
     if (japanese_client()) {
-        elementInnerHtml(days.options[0], page.text.localize('Day'));
-        elementInnerHtml(months.options[0], page.text.localize('Month'));
-        elementInnerHtml(year.options[0], page.text.localize('Year'));
+        elementInnerHtml(days.options[0], localize('Day'));
+        elementInnerHtml(months.options[0], localize('Month'));
+        elementInnerHtml(year.options[0], localize('Year'));
     }
 }
 
@@ -38,20 +39,7 @@ function dropDownNumbers(select, startNum, endNum) {
 }
 
 function dropDownMonths(select, startNum, endNum) {
-    var months = [
-        page.text.localize('Jan'),
-        page.text.localize('Feb'),
-        page.text.localize('Mar'),
-        page.text.localize('Apr'),
-        page.text.localize('May'),
-        page.text.localize('Jun'),
-        page.text.localize('Jul'),
-        page.text.localize('Aug'),
-        page.text.localize('Sep'),
-        page.text.localize('Oct'),
-        page.text.localize('Nov'),
-        page.text.localize('Dec'),
-    ];
+    var months = localize(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
     select.appendChild(document.createElement('option'));
     for (var i = startNum; i <= endNum; i++) {
         var option = document.createElement('option');

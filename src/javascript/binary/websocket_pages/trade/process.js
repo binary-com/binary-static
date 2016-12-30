@@ -26,7 +26,8 @@ var elementTextContent        = require('../../common_functions/common_functions
 var elementInnerHtml          = require('../../common_functions/common_functions').elementInnerHtml;
 var processTradingTimesAnswer = require('./common_independent').processTradingTimesAnswer;
 var setFormPlaceholderContent = require('./set_values').setFormPlaceholderContent;
-var moment = require('moment');
+var localize = require('../../base/localize').localize;
+var moment   = require('moment');
 
 /*
  * This function process the active symbols to get markets
@@ -131,7 +132,7 @@ function processContract(contracts) {
         contracts_list.style.display = 'none';
         message_container.hide();
         confirmation_error.show();
-        elementInnerHtml(confirmation_error, contracts.error.message + ' <a href="javascript:;" onclick="sessionStorage.removeItem(\'underlying\'); window.location.reload();">' + page.text.localize('Please reload the page') + '</a>');
+        elementInnerHtml(confirmation_error, contracts.error.message + ' <a href="javascript:;" onclick="sessionStorage.removeItem(\'underlying\'); window.location.reload();">' + localize('Please reload the page') + '</a>');
         return;
     }
 

@@ -1,6 +1,6 @@
 var Symbols     = require('../../symbols').Symbols;
-var MenuContent = require('../../../../base/menu_content').MenuContent;
 var template    = require('../../../../base/utility').template;
+var localize    = require('../../../../base/localize').localize;
 var Highcharts  = require('highcharts');
 var elementInnerHtml = require('../../../../common_functions/common_functions').elementInnerHtml;
 require('highcharts/modules/exporting')(Highcharts);
@@ -110,19 +110,19 @@ DigitInfoWS_Beta.prototype = {
         underlyings = underlyings.sort();
         var elem = '<select class="smallfont" name="underlying">';
         for (var i = 0; i < underlyings.length; i++) {
-            elem = elem + '<option value="' + underlyings[i] + '">' + page.text.localize(symbols[underlyings[i]]) + '</option>';
+            elem = elem + '<option value="' + underlyings[i] + '">' + localize(symbols[underlyings[i]]) + '</option>';
         }
         elem += '</select>';
         var contentId = document.getElementById('tab_last_digit-content'),
             content = '<div class="gr-parent">' +
                         '<div id="last_digit_histo_form" class="gr-12 gr-12-m gr-centered">' +
                         '<form class="smallfont gr-row" action="#" method="post">' +
-                        '<div class="gr-6 gr-12-m center-text"><div class="gr-padding-10">' + page.text.localize('Select market') + ':</div>' + elem + ' </div>' +
-                        '<div class="gr-6 gr-12-m center-text"><div class="gr-padding-10">' + page.text.localize('Number of ticks') + ':</div><select class="smallfont" name="tick_count"><option value="25">25</option><option value="50">50</option><option selected="selected" value="100">100</option><option value="500">500</option><option value="1000">1000</option></select></div>' +
+                        '<div class="gr-6 gr-12-m center-text"><div class="gr-padding-10">' + localize('Select market') + ':</div>' + elem + ' </div>' +
+                        '<div class="gr-6 gr-12-m center-text"><div class="gr-padding-10">' + localize('Number of ticks') + ':</div><select class="smallfont" name="tick_count"><option value="25">25</option><option value="50">50</option><option selected="selected" value="100">100</option><option value="500">500</option><option value="1000">1000</option></select></div>' +
                         '</form>' +
                         '</div>' +
                         '<div id="last_digit_histo" class="gr-12 gr-12-m gr-centered"></div>' +
-                        '<div id="last_digit_title" class="gr-hide">' + (domain.charAt(0).toUpperCase() + domain.slice(1)) + ' - ' + page.text.localize('Last digit stats for the latest [_1] ticks on [_2]') + '</div>' +
+                        '<div id="last_digit_title" class="gr-hide">' + (domain.charAt(0).toUpperCase() + domain.slice(1)) + ' - ' + localize('Last digit stats for the latest [_1] ticks on [_2]') + '</div>' +
                         '</div>';
         elementInnerHtml(contentId, content);
         $('[name=underlying]').val(underlying);
@@ -250,25 +250,6 @@ DigitInfoWS_Beta.prototype = {
             }
         }
         return series.setData(filtered_spots);
-    },
-    show_tab: function() {
-        var tab_last_digit = $('#tab_last_digit');
-        MenuContent.show_tab(tab_last_digit);
-        var saved_anaysis_tab = SessionStore.get('bet_page.selected_analysis_tab');
-        if (saved_anaysis_tab === 'tab_last_digit') {
-            MenuContent.trigger({
-                tab_id: saved_anaysis_tab,
-            });
-        }
-    },
-    hide_tab: function() {
-        var tab_last_digit = $('#tab_last_digit');
-        MenuContent.hide_tab(tab_last_digit);
-        if (typeof this.chart !== 'undefined') {
-            this.chart.destroy();
-        }
-        this.chart = undefined;
-        this.spots = [];
     },
     update_chart: function(tick) {
         if (tick.req_id === 2) {

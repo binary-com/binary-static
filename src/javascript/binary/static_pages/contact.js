@@ -1,10 +1,12 @@
-var email_rot13 = require('../common_functions/common_functions').email_rot13;
-var loadCSS     = require('../../lib/loadCSS').loadCSS;
-var loadJS      = require('../../lib/loadJS').loadJS;
+var email_rot13    = require('../common_functions/common_functions').email_rot13;
+var loadCSS        = require('../../lib/loadCSS').loadCSS;
+var loadJS         = require('../../lib/loadJS').loadJS;
+var getLanguage    = require('../base/language').getLanguage;
+var url_for_static = require('../base/url').url_for_static;
 
 var Contact = (function() {
     var init = function() {
-        $('#faq_url').attr('href', 'https://binary.desk.com/customer/' + page.language() + '/portal/articles');
+        $('#faq_url').attr('href', 'https://binary.desk.com/customer/' + getLanguage() + '/portal/articles');
         display_cs_contacts();
         show_live_chat_icon();
     };
@@ -80,7 +82,7 @@ var Contact = (function() {
         if (len > 0) {
             var timer = null;
             var updateIcon =  function () {
-                var image_url = page.url.url_for_static('images/pages/contact/chat-icon.svg');
+                var image_url = url_for_static('images/pages/contact/chat-icon.svg');
                 var desk_widget = $('.a-desk-widget');
                 var image_str = desk_widget.css('background-image');
                 if (image_str) {

@@ -1,3 +1,5 @@
+var url = require('../base/url').url;
+
 var Scroll = (function() {
     var sidebar_scroll = function(elm_selector) {
         elm_selector.on('click', '#sidebar-nav li', function() {
@@ -61,14 +63,14 @@ var Scroll = (function() {
     };
 
     var goToHashSection = function() {
-        if (page.url.location.hash !== '') {
-            $('a[href="' + page.url.location.hash + '"]').click();
+        if (url.location.hash !== '') {
+            $('a[href="' + url.location.hash + '"]').click();
         }
     };
 
     var scrollToHashSection = function() {
-        if (page.url.location.hash) {
-            $.scrollTo($(page.url.location.hash));
+        if (url.location.hash) {
+            $.scrollTo($(url.location.hash));
         }
     };
 

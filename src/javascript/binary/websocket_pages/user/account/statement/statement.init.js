@@ -1,4 +1,4 @@
-var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
+var showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
 var StatementUI          = require('./statement.ui').StatementUI;
 var addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;
 var buildOauthApps       = require('../../../../common_functions/get_app_details').buildOauthApps;
@@ -8,6 +8,8 @@ var moment               = require('moment');
 var DatePicker           = require('../../../../components/date_picker').DatePicker;
 var toISOFormat          = require('../../../../common_functions/string_util').toISOFormat;
 var dateValueChanged     = require('../../../../common_functions/common_functions').dateValueChanged;
+var localize = require('../../../../base/localize').localize;
+var getLanguage = require('../../../../base/language').getLanguage;
 
 var StatementWS = (function() {
     'use strict';
@@ -59,11 +61,11 @@ var StatementWS = (function() {
                 $('#statement-table tbody')
                     .append($('<tr/>', { class: 'flex-tr' })
                         .append($('<td/>', { colspan: 7 })
-                            .append($('<p/>', { class: 'notice-msg center-text', text: page.text.localize('Your account has no trading activity.') }))));
+                            .append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
             } else {
                 $('#jump-to').parent().parent().parent()
                              .removeClass('invisible');
-                if (page.language().toLowerCase() === 'ja') {
+                if (getLanguage() === 'JA') {
                     $('#download_csv').removeClass('invisible')
                                       .find('a')
                                       .unbind('click')
@@ -151,7 +153,7 @@ var StatementWS = (function() {
             datePickerInst = new DatePicker(jumpTo);
         datePickerInst.hide();
         datePickerInst.show('', '0');
-        $(jumpTo).val(page.text.localize('Today'))
+        $(jumpTo).val(localize('Today'))
                  .attr('data-value', toISOFormat(moment()))
                  .change(function() {
                      if (!dateValueChanged(this, 'date')) {

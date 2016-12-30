@@ -1,6 +1,7 @@
-var Content      = require('./content').Content;
 var elementTextContent = require('../common_functions/common_functions').elementTextContent;
 var elementInnerHtml = require('../common_functions/common_functions').elementInnerHtml;
+var Content  = require('./content').Content;
+var localize = require('../base/localize').localize;
 
 var Validate = (function() {
     var errorCounter = 0;
@@ -19,9 +20,9 @@ var Validate = (function() {
         }
     }
 
-    function handleError(error, text) {
+    function handleError(error, message) {
         var par = document.createElement('p'),
-            re = new RegExp(text),
+            re = new RegExp(message),
             allText = '';
         par.className = 'error-message-password';
         var parClass = $('.' + par.className);
@@ -30,10 +31,10 @@ var Validate = (function() {
                 allText += parClass[i].textContent;
             }
             if (!re.test(allText)) {
-                elementInnerHtml(par.innerHTML + ' ' + text);
+                elementInnerHtml(par.innerHTML + ' ' + message);
             }
         } else {
-            elementInnerHtml(par.innerHTML, text);
+            elementInnerHtml(par.innerHTML, message);
         }
         error.appendChild(par);
         displayErrorMessage(error);
@@ -54,7 +55,7 @@ var Validate = (function() {
             displayErrorMessage(error);
             return true;
         } else if (!validateEmail(email)) {
-            elementTextContent(error, Content.errorMessage('valid', page.text.localize('email address')));
+            elementTextContent(error, Content.errorMessage('valid', localize('email address')));
             displayErrorMessage(error);
             return true;
         }
@@ -69,7 +70,7 @@ var Validate = (function() {
             displayErrorMessage(error);
             return true;
         } else if (!validateToken(token)) {
-            elementTextContent(error, Content.errorMessage('valid', page.text.localize('verification token')));
+            elementTextContent(error, Content.errorMessage('valid', localize('verification token')));
             displayErrorMessage(error);
             return true;
         }
@@ -115,7 +116,7 @@ var Validate = (function() {
         if (/[0-9]+/.test(password) && /[A-Z]+/.test(password) && /[a-z]+/.test(password)) {
             return true;
         }
-        handleError(error, page.text.localize('Password should have lower and uppercase letters with numbers.'));
+        handleError(error, localize('Password should have lower and uppercase letters with numbers.'));
         return errorCounter++;
     }
 
@@ -126,14 +127,6 @@ var Validate = (function() {
         }
         return true;
     }
-
-  /* function passwordStrong(password, error){
-    if (testPassword(password)[0] < 20) {
-      displayErrorMessage(error);
-      return errorCounter++;
-    }
-    return true;
-  }*/
 
   // give error message for invalid password, needs value of password, repeat of password, and DOM element of error
   /**
@@ -217,7 +210,7 @@ function showPasswordError(password) {
 
     var hasUpperLowerDigitRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/;
     if (!hasUpperLowerDigitRegex.test(password)) {
-        errMsgs.push(page.text.localize('Password should have lower and uppercase letters with numbers.'));
+        errMsgs.push(localize('Password should have lower and uppercase letters with numbers.'));
     }
 
     return errMsgs;

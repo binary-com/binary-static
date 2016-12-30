@@ -11,6 +11,10 @@ var Moment          = require('moment');
 var toISOFormat     = require('../../common_functions/string_util').toISOFormat;
 var elementTextContent  = require('../../common_functions/common_functions').elementTextContent;
 var elementInnerHtml  = require('../../common_functions/common_functions').elementInnerHtml;
+var localize    = require('../../base/localize').localize;
+var getLanguage = require('../../base/language').getLanguage;
+var Client      = require('../../base/client').Client;
+var url_for     = require('../../base/url').url_for;
 
 /*
  * This contains common functions we need for processing the response
@@ -195,7 +199,7 @@ function displayMarkets(id, elements, selected) {
         }
 
         if (current.disabled) { // there is no open market
-            Notifications.show({ text: page.text.localize('All markets are closed now. Please try again later.'), uid: 'MARKETS_CLOSED' });
+            Notifications.show({ text: localize('All markets are closed now. Please try again later.'), uid: 'MARKETS_CLOSED' });
             document.getElementById('trading_init_progress').style.display = 'none';
         }
     }
@@ -233,7 +237,7 @@ function displayUnderlyings(id, elements, selected) {
             for (var k = 0; k < submarkets[keys2[j]].length; k++) {
                 var key = submarkets[keys2[j]][k];
                 var option = document.createElement('option'),
-                    content = document.createTextNode(page.text.localize(elements[key].display));
+                    content = document.createTextNode(localize(elements[key].display));
                 option.setAttribute('value', key);
                 if (selected && selected === key) {
                     option.setAttribute('selected', 'selected');
@@ -668,7 +672,7 @@ function displayTooltip(market, symbol) {
     if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
         if (guide) guide.hide();
         tip.show();
-        tip.setAttribute('target', page.url.url_for('/get-started/volidx-markets'));
+        tip.setAttribute('target', url_for('/get-started/volidx-markets'));
         app.show();
         appstore.show();
     } else {
@@ -679,17 +683,17 @@ function displayTooltip(market, symbol) {
     }
     if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/stock/) || markets.match(/stocks/)) {
         tip.show();
-        tip.setAttribute('target', page.url.url_for('/get-started/otc-indices-stocks'));
+        tip.setAttribute('target', url_for('/get-started/otc-indices-stocks'));
     }
     if (market.match(/^random_index/) || symbol.match(/^R_/)) {
-        tip.setAttribute('target', page.url.url_for('/get-started/volidx-markets', '#volidx-indices'));
+        tip.setAttribute('target', url_for('/get-started/volidx-markets', '#volidx-indices'));
     }
     if (market.match(/^random_daily/) || symbol.match(/^RDB/) || symbol.match(/^RDMO/) || symbol.match(/^RDS/)) {
-        tip.setAttribute('target', page.url.url_for('/get-started/volidx-markets', '#volidx-quotidians'));
+        tip.setAttribute('target', url_for('/get-started/volidx-markets', '#volidx-quotidians'));
     }
     if (market.match(/^smart_fx/) || symbol.match(/^WLD/)) {
         tip.show();
-        tip.setAttribute('target', page.url.url_for('/get-started/smart-indices', '#world-fx-indices'));
+        tip.setAttribute('target', url_for('/get-started/smart-indices', '#world-fx-indices'));
     }
 }
 
@@ -711,7 +715,7 @@ function selectOption(option, select) {
 }
 
 function updatePurchaseStatus(final_price, pnl, contract_status) {
-    $('#contract_purchase_heading').text(page.text.localize(contract_status));
+    $('#contract_purchase_heading').text(localize(contract_status));
     var $payout = $('#contract_purchase_payout'),
         $cost = $('#contract_purchase_cost'),
         $profit = $('#contract_purchase_profit');
@@ -722,13 +726,13 @@ function updatePurchaseStatus(final_price, pnl, contract_status) {
         $profit.html(Content.localize().textLoss + '<p>' + addComma(pnl) + '</p>');
     } else {
         $profit.html(Content.localize().textProfit + '<p>' + addComma(Math.round((final_price - pnl) * 100) / 100) + '</p>');
-        updateContractBalance(TUser.get().balance);
+        updateContractBalance(Client.get_value('balance'));
     }
 }
 
 function updateContractBalance(balance) {
     $('#contract_purchase_balance').text(
-        Content.localize().textContractConfirmationBalance + ' ' + format_money(TUser.get().currency, balance));
+        Content.localize().textContractConfirmationBalance + ' ' + format_money(Client.get_value('currency'), balance));
 }
 
 function updateWarmChart() {
@@ -774,7 +778,7 @@ function showHighchart() {
     } else {
         chartFrameCleanup();
         $('#trade_live_chart').hide();
-        $('#chart-error').text(page.text.localize('Chart is not available for this underlying.'))
+        $('#chart-error').text(localize('Chart is not available for this underlying.'))
                      .show();
     }
 }
@@ -801,7 +805,7 @@ function chartFrameSource() {
 
 function setChartSource() {
     var ja = japanese_client();
-    document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + (page.language() || 'en').toLowerCase() +
+    document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + getLanguage().toLowerCase() +
   '&hideOverlay=' + (ja ? 'true' : 'false') + '&hideShare=' + (ja ? 'true' : 'false') + '&timezone=GMT+' + (ja ? '9' : '0') +
   '&hideFooter=' + (ja ? 'true' : 'false');
 }
@@ -832,7 +836,7 @@ function toggleActiveNavMenuElement_Beta(nav, eventElement) {
 function updatePurchaseStatus_Beta(final_price, pnl, contract_status) {
     final_price = String(final_price).replace(/,/g, '') * 1;
     pnl = String(pnl).replace(/,/g, '') * 1;
-    $('#contract_purchase_heading').text(page.text.localize(contract_status));
+    $('#contract_purchase_heading').text(localize(contract_status));
     var payout  = document.getElementById('contract_purchase_payout'),
         cost    = document.getElementById('contract_purchase_cost'),
         profit  = document.getElementById('contract_purchase_profit');
@@ -854,28 +858,28 @@ function displayTooltip_Beta(market, symbol) {
     if (!market || !symbol) return;
     if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
         tip.show();
-        tip.setAttribute('target', page.url.url_for('/get-started/volidx-markets'));
+        tip.setAttribute('target', url_for('/get-started/volidx-markets'));
     } else {
         tip.hide();
     }
     if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/stock/) || markets.match(/stocks/)) {
         tip.show();
-        tip.setAttribute('target', page.url.url_for('/get-started/otc-indices-stocks'));
+        tip.setAttribute('target', url_for('/get-started/otc-indices-stocks'));
     }
     if (market.match(/^random_index/) || symbol.match(/^R_/)) {
-        tip.setAttribute('target', page.url.url_for('/get-started/volidx-markets', '#volidx-indices'));
+        tip.setAttribute('target', url_for('/get-started/volidx-markets', '#volidx-indices'));
     }
     if (market.match(/^random_daily/) || symbol.match(/^RDB/) || symbol.match(/^RDMO/) || symbol.match(/^RDS/)) {
-        tip.setAttribute('target', page.url.url_for('/get-started/volidx-markets', '#volidx-quotidians'));
+        tip.setAttribute('target', url_for('/get-started/volidx-markets', '#volidx-quotidians'));
     }
     if (market.match(/^smart_fx/) || symbol.match(/^WLD/)) {
         tip.show();
-        tip.setAttribute('target', page.url.url_for('/get-started/smart-indices', '#world-fx-indices'));
+        tip.setAttribute('target', url_for('/get-started/smart-indices', '#world-fx-indices'));
     }
 }
 
 function label_value(label_elem, label, value, no_currency) {
-    var currency = TUser.get().currency;
+    var currency = Client.get_value('currency');
     elementInnerHtml(label_elem, label);
     var value_elem = document.getElementById(label_elem.id + '_value');
     elementInnerHtml(value_elem, no_currency ? value : format_money(currency, value));
@@ -891,7 +895,7 @@ function timeIsValid($element) {
         !/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(endTimeValue)) {
         $element.addClass('error-field');
         if ($('#invalid-time').length === 0) {
-            $('#expiry_type_endtime').parent().append($('<p>', { class: 'error-msg', id: 'invalid-time', text: page.text.localize('Time is in the wrong format.') }));
+            $('#expiry_type_endtime').parent().append($('<p>', { class: 'error-msg', id: 'invalid-time', text: localize('Time is in the wrong format.') }));
         }
         return false;
     }
@@ -906,7 +910,7 @@ function timeIsValid($element) {
     if (Moment.utc(endDateValue + ' ' + endTimeValue).unix() <= startDateValue) {
         $element.addClass('error-field');
         if (!document.getElementById('end_time_validation')) {
-            $('#expiry_type_endtime').append('<p class="error-msg" id="end_time_validation">' + page.text.localize('End time must be after start time.') + '</p>');
+            $('#expiry_type_endtime').append('<p class="error-msg" id="end_time_validation">' + localize('End time must be after start time.') + '</p>');
         }
         return false;
     }

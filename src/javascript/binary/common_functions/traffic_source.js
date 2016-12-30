@@ -1,4 +1,7 @@
 var CookieStorage = require('../base/storage').CookieStorage;
+var Url    = require('../base/url').Url;
+var url    = require('../base/url').url;
+var Client = require('../base/client').Client;
 
 /*
  * Handles utm parameters/referrer to use on signup
@@ -41,13 +44,13 @@ var TrafficSource = (function() {
     };
 
     var setData = function() {
-        if (page.client.is_logged_in) {
+        if (Client.get_boolean('is_logged_in')) {
             clearData();
             return;
         }
 
         var current_values = getData(),
-            params = page.url.params_hash(),
+            params = url.params_hash(),
             param_keys = ['utm_source', 'utm_medium', 'utm_campaign'];
 
         if (params.utm_source) { // url params can be stored only if utm_source is available
@@ -65,7 +68,7 @@ var TrafficSource = (function() {
             referrer = doc_ref;
         }
         if (referrer && !current_values.referrer && !params.utm_source && !current_values.utm_source) {
-            cookie.set('referrer', (new URL(referrer)).location.hostname);
+            cookie.set('referrer', (new Url(referrer)).location.hostname);
         }
     };
 

@@ -13,6 +13,7 @@ var japanese_client      = require('../../../common_functions/country_base').jap
 var PortfolioWS          = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
 var ResizeSensor         = require('../../../../lib/resize-sensor');
 var State                = require('../../../base/storage').State;
+var url_for              = require('../../../base/url').url_for;
 var showPriceOverlay     = require('../common').showPriceOverlay;
 var showFormOverlay      = require('../common').showFormOverlay;
 var addEventListenerForm = require('../common').addEventListenerForm;
@@ -25,10 +26,10 @@ var TradePage_Beta = (function() {
     var onLoad = function() {
         var is_japanese_client = japanese_client();
         if (is_japanese_client && /\/trading(|_beta)\.html/i.test(window.location.pathname)) {
-            window.location.href = page.url.url_for('multi_barriers_trading');
+            window.location.href = url_for('multi_barriers_trading');
             return;
         } else if (!is_japanese_client && /\/multi_barriers_trading\.html/.test(window.location.pathname)) {
-            window.location.href = page.url.url_for('trading');
+            window.location.href = url_for('trading');
             return;
         }
         State.set('is_beta_trading', true);

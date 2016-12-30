@@ -3,19 +3,24 @@ var isValidDate = require('./common_functions').isValidDate;
 var elementInnerHtml = require('./common_functions').elementInnerHtml;
 var Content     = require('./content').Content;
 var Cookies     = require('../../lib/js-cookie');
+var localize    = require('../base/localize').localize;
+var Client      = require('../base/client').Client;
+var Contents    = require('../base/contents').Contents;
+var url_for     = require('../base/url').url_for;
 
 var ValidAccountOpening = (function() {
     var redirectCookie = function() {
-        if (page.client.show_login_if_logout(true)) {
+        if (Contents.show_login_if_logout(true)) {
             return;
         }
-        if (!page.client.is_virtual()) {
-            window.location.href = page.url.url_for('trading');
+        if (!Client.get_boolean('is_virtual')) {
+            window.location.href = url_for('trading');
             return;
         }
-        for (var i = 0; i < page.user.loginid_array.length; i++) {
-            if (page.user.loginid_array[i].real === true) {
-                window.location.href = page.url.url_for('trading');
+        var client_loginid_array = Client.get_value('loginid_array');
+        for (var i = 0; i < client_loginid_array.length; i++) {
+            if (client_loginid_array[i].real === true) {
+                window.location.href = url_for('trading');
                 return;
             }
         }
@@ -37,13 +42,14 @@ var ValidAccountOpening = (function() {
                 $('#financial-risk').remove();
             }
             var error = document.getElementsByClassName('notice-msg')[0];
-            elementInnerHtml(error, (response.msg_type === 'sanity_check') ? page.text.localize('There was some invalid character in an input field.') : errorMessage);
+            elementInnerHtml(error, (response.msg_type === 'sanity_check') ? localize('There was some invalid character in an input field.') : errorMessage);
+            error.innerHTML = (response.msg_type === 'sanity_check') ? localize('There was some invalid character in an input field.') : errorMessage;
             error.parentNode.parentNode.parentNode.setAttribute('style', 'display:block');
         } else if (Cookies.get('residence') === 'jp') {
-            window.location.href = page.url.url_for('new_account/knowledge_testws');
+            window.location.href = url_for('new_account/knowledge_testws');
             $('#topbar-msg').children('a').addClass('invisible');
         } else {     // jp account require more steps to have real account
-            page.client.process_new_account(Cookies.get('email'), message.client_id, message.oauth_token, false);
+            Client.process_new_account(Cookies.get('email'), message.client_id, message.oauth_token, false);
         }
     };
     var letters,
@@ -94,7 +100,7 @@ var ValidAccountOpening = (function() {
         }
     };
     var checkPostcode = function(postcode, errorPostcode) {
-        if ((postcode.value !== '' || page.client.residence === 'gb') && !/^[a-zA-Z\d-]+$/.test(postcode.value)) {
+        if ((postcode.value !== '' || Client.get_value('residence') === 'gb') && !/^[a-zA-Z\d-]+$/.test(postcode.value)) {
             initializeValues();
             elementInnerHtml(errorPostcode, Content.errorMessage('reg', [letters, numbers, hyphen]));
             Validate.displayErrorMessage(errorPostcode);

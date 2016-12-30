@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-22 03:48+0000\n"
+"PO-Revision-Date: 2016-12-28 03:50+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.10\n"
+"X-Generator: Weblate 2.11-dev\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -328,10 +328,8 @@ msgstr "一触即付交易"
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "*免税：交易所获之盈利在很多国家免税，但请务必咨询专业税务顾问。"
 
-#, fuzzy
-#| msgid "All calls are recorded for training and monitoring purposes"
 msgid "*All calls are recorded for training and monitoring purposes"
-msgstr "为了利于培训和监控，所有通话将被录音"
+msgstr "*为了利于培训和监控，所有通话将被录音"
 
 msgid ",000"
 msgstr ",000"
@@ -863,6 +861,16 @@ msgstr "账户转账"
 msgid "Account balance: "
 msgstr "账户余额： "
 
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "存款已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
+
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "存款已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
+
 msgid "Accounting"
 msgstr "会计"
 
@@ -1018,7 +1026,7 @@ msgid "An error occured."
 msgstr "发生错误。"
 
 msgid "Analyse and test our website for bugs and potential security issues."
-msgstr ""
+msgstr "针对我们网站的编程缺陷和潜在安全问题进行分析和测试。"
 
 msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
 msgstr "采用范围广泛的指标、价格带和多重覆盖图等分析市场走势。"
@@ -1212,9 +1220,6 @@ msgstr "澳大利亚"
 msgid "Authenticate"
 msgstr "验证"
 
-msgid "Authenticate your account"
-msgstr "验证您的账户"
-
 msgid "Authentication"
 msgstr "验证"
 
@@ -1296,10 +1301,8 @@ msgstr "基本平台"
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr "在为您开立 BIEL账户，对投资产品进行交易或投资之前，我们要先评估您所选择的投资产品或服务，如果对您不合适，我们必须提醒您。最后，由您自行决定是否开立账户，并使用我们产品或服务。您应充分了解我们产品和服务的风险，并承担所有责任。"
 
-#, fuzzy
-#| msgid "More benefits"
 msgid "Benefits"
-msgstr "更多福利"
+msgstr "福利"
 
 msgid "Benefits of being a Payment Agent"
 msgstr "成为付款代理的好处"
@@ -1599,7 +1602,9 @@ msgstr "收银台"
 msgid "Cashier Password"
 msgstr "收银台密码"
 
-msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#, fuzzy
+#| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr "收银台已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
 
 msgid "Cashier password"
@@ -2168,7 +2173,9 @@ msgstr "将%1 %2虚拟资金存入您的账户%3"
 msgid "Deposit Bonus"
 msgstr "存款奖金"
 
-msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr "存款已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
 
 msgid "Deposit of"
@@ -2364,7 +2371,7 @@ msgid "Each party to this Agreement represents and warrants to the other that it
 msgstr "协议各方向另一方陈述并保证，已经拥有并将在协议期间继续保留所有签订本协议、并向另一方授予本协议所授予的权利、所有权和许可以及履行本协议下所有相应义务的权利和权限。"
 
 msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
-msgstr ""
+msgstr "如果发现任何可验证问题，您可获得金钱奖励，高风险安全漏洞的奖金高达1,000美元。"
 
 msgid "Earn commissions by introducing new customers to %1."
 msgstr "通过介绍新客户给%1，以赚取佣金。"
@@ -2646,7 +2653,7 @@ msgid "Explore advanced trading features with the Next-Gen app for web and mobil
 msgstr "使用“下一代”网站与移动应用程序，探索高级交易功能。"
 
 msgid "Explore our HackerOne bounty programme"
-msgstr ""
+msgstr "探索我们的HackerOne奖励计划"
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "有丰富的先进编码原则和标准应用经验"
@@ -2728,6 +2735,11 @@ msgstr "Financial Asset"
 
 msgid "Financial Information"
 msgstr "金融信息"
+
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "取款已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
 
 msgid "Financial Security"
 msgstr "财务安全"
@@ -2927,8 +2939,6 @@ msgstr "获取报价"
 msgid "Getting Started"
 msgstr "开始交易"
 
-#, fuzzy
-#| msgid "Getting Started"
 msgid "Getting started"
 msgstr "开始交易"
 
@@ -3007,10 +3017,8 @@ msgstr "如果开始和结束期间价格跳动次数少于2，高于/低于合�
 msgid "Higher/Lower trades"
 msgstr "“高于/低于”交易"
 
-#, fuzzy
-#| msgid "Hackerone - for IT security professionals"
 msgid "Hone your security testing skills."
-msgstr "Hackerone-信息科技安全专业人员专用"
+msgstr "磨练您的安全测试技能。"
 
 msgid "Hour"
 msgstr "小时"
@@ -3383,7 +3391,7 @@ msgid "Income Source"
 msgstr "收入来源"
 
 msgid "Increase your HackerOne reputation to build up credibility and profile visibility."
-msgstr ""
+msgstr "增加您的HackerOne声誉，以建立信誉和配置文件的可见性。"
 
 msgid "Indemnification"
 msgstr "赔偿"
@@ -5320,7 +5328,7 @@ msgid "Read about the five types of trade offered by %1."
 msgstr "查看 %1 提供的 5 种交易。"
 
 msgid "Read and understand our HackerOne bug bounty programme policy."
-msgstr ""
+msgstr "阅读并了解我们的HackerOne编程缺陷奖励计划政策。"
 
 msgid "Read our blog for the stories and ideas that inspire us"
 msgstr "阅读我们的博客，了解激励我们的故事和想法"
@@ -5602,7 +5610,7 @@ msgid "Security and Privacy"
 msgstr "安全隐私"
 
 msgid "Security testing opportunities"
-msgstr ""
+msgstr "安全测试机会"
 
 msgid "Select market"
 msgstr "选择市场"
@@ -5940,7 +5948,7 @@ msgid "Submit"
 msgstr "提交"
 
 msgid "Submit a report on HackerOne, or a pull-request in GitHub with a suggested fix."
-msgstr ""
+msgstr "提交关于HackerOne的报告，或者在GitHub发起拉取请求，并提出修复建议。"
 
 msgid "Submit your CV and Cover Letter"
 msgstr "提交您的简历和求职信"
@@ -6030,7 +6038,7 @@ msgid "Tertiary"
 msgstr "三级"
 
 msgid "Test our products and services for security vulnerabilities. In the process, you’ll earn a monetary reward for any verifiable issues that you find, courtesy of our bug bounty programme."
-msgstr ""
+msgstr "对我们的产品和服务进行安全漏洞测试。 在这个过程中，如发现任何可验证问题，您将获得我们的编程缺陷奖金计划提供的金钱奖励。"
 
 msgid "Test-run %1, and sharpen your trading skills, with a no-risk, no-commitment, virtual account."
 msgstr "立即试用 %1，提升您的交易技能，体验无风险、无需资金投入的虚拟账户。"
@@ -6317,12 +6325,12 @@ msgstr "公司不保证您一定能在到期之前卖出该合约。"
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
 msgstr "本公司支持多种存款方式，每种方式都有不同的存款时序，其中一些可能无法提款。有关存取款方式和结算期的详情，请查看 <a href='%1' class='pjaxload'>此处。</a>"
 
-#, fuzzy
-#| msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
 msgid ""
 "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer\n"
 "                funds at the level: <strong>medium protection</strong>."
-msgstr "公司把客户资金存在独立的银行账户，与运营账户分开，因此如果公司破产，客户资金不会成为公司资产的一部分。这符合博彩委员会关于客户资金独立管理的要求，即：<strong>中等级别保护</strong>。"
+msgstr ""
+"公司把客户资金存在独立的银行账户，与运营账户分开，因此如果公司破产，客户资金不会成为公司资产的一部分。这符合博彩委员会关于客户\n"
+"                资金独立管理的要求，即：<strong>中等级别保护</strong>。"
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: medium protection."
 msgstr "公司把客户资金存在独立的银行账户并已作好安排，如果公司破产，客户账户资金将分配给客户。这符合博彩委员会关于客户资金独立管理的要求，即：中等级别保护。"
@@ -7067,18 +7075,14 @@ msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl
 msgid "Waiting for entry tick."
 msgstr "正在等待进场跳动点。"
 
-#, fuzzy
-#| msgid "Waiting for entry tick."
 msgid "Waiting for exit tick."
-msgstr "正在等待进场跳动点。"
+msgstr "正在等待退场跳动点。"
 
 msgid "Walkthrough Guide"
 msgstr "攻略指南"
 
-#, fuzzy
-#| msgid "At %1, we consider the strength and security of our trading platform to be critically important."
 msgid "Want to help us enhance the strength and security of our platform?"
-msgstr "%1 将交易平台的坚实稳定和安全列为至关重要的因素。"
+msgstr "想帮我们加强交易平台的坚实稳定和安全？"
 
 msgid "Want to learn more?"
 msgstr "想了解更多？"
@@ -7451,7 +7455,9 @@ msgstr "取款限额"
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "您的账户现时无法取款。请联系%1进行解锁。"
 
-msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr "取款已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
 
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
@@ -7640,6 +7646,11 @@ msgstr "一旦您账户的交易额超过奖励金额的25倍，您就可以从�
 msgid "You must accept the terms and conditions to open an account."
 msgstr "您必须接受条款和条件才能开户。"
 
+#, fuzzy
+#| msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
+msgid "You must complete the knowledge test to activate this account. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "您的账户未完全验证。欲知详情请访问<a class=\"pjaxload\" href=\"%1\">验证</a>页面。"
+
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "要使用%1 API，您必须遵守这些条款。"
 
@@ -7775,11 +7786,10 @@ msgstr "您的账户已经得到完全验证，且您的取款限额已经取消
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "您的账户已经得到完全验证，且您可在此查看您的<a class=\"pjaxload\" href=\"%1\">交易限额</a>。"
 
-msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
-msgstr "您的账户未完全验证。欲知详情请访问<a class=\"pjaxload\" href=\"%1\">验证</a>页面。"
-
-msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
-msgstr "您的账户未完全验证。欲知详情请访问<a href=\"%1\">验证</a>页面。"
+#, fuzzy
+#| msgid "Client is not fully authenticated."
+msgid "Your account is not fully authenticated."
+msgstr "客户端验证不充分。"
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "您的账户不应被用作银行信贷，其中的存款只应视为交易资金。本公司并不是金融机构，客户存款不会有利息。如果您重复进行存、取款，却没有进行相应的交易，在关闭账户之前，我们保留权利在不事先通知的情况下把相关银行费用转加到您的账户。"
@@ -8861,6 +8871,12 @@ msgstr "账户详情"
 
 msgid "Terms and Conditions Approval"
 msgstr "条款和条件审批"
+
+#~ msgid "Authenticate your account"
+#~ msgstr "验证您的账户"
+
+#~ msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
+#~ msgstr "您的账户未完全验证。欲知详情请访问<a href=\"%1\">验证</a>页面。"
 
 #~ msgid "AUD"
 #~ msgstr "澳元"
@@ -10028,9 +10044,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Client email not set."
 #~ msgstr "用户端电子邮件未设置。"
-
-#~ msgid "Client is not fully authenticated."
-#~ msgstr "客户端验证不充分。"
 
 #~ msgid "Close"
 #~ msgstr "收盘价"

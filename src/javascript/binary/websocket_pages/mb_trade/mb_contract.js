@@ -1,4 +1,7 @@
 var objectNotEmpty  = require('../../base/utility').objectNotEmpty;
+var localize        = require('../../base/localize').localize;
+var getLanguage     = require('../../base/language').getLanguage;
+var Client          = require('../../base/client').Client;
 var format_currency = require('../../common_functions/currency_to_symbol').format_currency;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
 var elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
@@ -49,7 +52,7 @@ var MBContract = (function() {
             Y: 'year',
         };
         Object.keys(durationMap).forEach(function(key) {
-            dur = dur.replace(key, page.text.localize(durationMap[key] + (+dur[0] === 1 || /h/.test(key) ? '' : 's')));
+            dur = dur.replace(key, localize(durationMap[key] + (+dur[0] === 1 || /h/.test(key) ? '' : 's')));
         });
         return dur;
     };
@@ -66,14 +69,14 @@ var MBContract = (function() {
         }
         return (moment(moment.utc(date_expiry * 1000))
                     .utcOffset(japanese_client() ? '+09:00' : '+00:00')
-                    .locale(page.language().toLowerCase())
+                    .locale(getLanguage().toLowerCase())
                     .format('MMM Do, HH:mm')
                     .replace(/08:59/, '09:00«') + ' (' + durationText(duration.replace('0d', '1d')) + ')');
     };
 
     // use function to generate elements and append them
     // e.g. element is select and element to append is option
-    var appendTextValueChild = function(element, text, value, isSelected) {
+    var appendTextValueChild = function(element, string, value, isSelected) {
         if (element && !element.nodeName) {
             if (typeof element === 'string') {
                 element = document.getElementById(element);
@@ -83,7 +86,7 @@ var MBContract = (function() {
         }
         if (!element) return;
         var option = document.createElement('option');
-        option.text = text;
+        option.text = string;
         option.value = value;
         if (isSelected) {
             option.setAttribute('selected', 'selected');
@@ -191,7 +194,7 @@ var MBContract = (function() {
         };
         Object.keys(all_durations).forEach(function(key) {
             if (all_durations[key]) {
-                remainingTimeString.push(all_durations[key] + page.text.localize((key + (+all_durations[key] === 1 ? '' : 's'))));
+                remainingTimeString.push(all_durations[key] + localize((key + (+all_durations[key] === 1 ? '' : 's'))));
             }
         });
         elementInnerHtml(remainingTimeElement, remainingTimeString.join(' '));
@@ -214,10 +217,10 @@ var MBContract = (function() {
             available_contracts = contracts_for_response.contracts_for.available,
             $categoryElement = $('#category');
         var categoryNames = {
-            callput     : page.text.localize('Higher/Lower'),
-            touchnotouch: page.text.localize('Touch/No Touch'),
-            endsinout   : page.text.localize('Ends In/Out'),
-            staysinout  : page.text.localize('Stays In/Goes Out'),
+            callput     : localize('Higher/Lower'),
+            touchnotouch: localize('Touch/No Touch'),
+            endsinout   : localize('Ends In/Out'),
+            staysinout  : localize('Stays In/Goes Out'),
         };
         var categoryOrder = {
             callput     : 1,
@@ -323,22 +326,22 @@ var MBContract = (function() {
     var displayDescriptions = function() {
         var contracts = getCurrentContracts(),
             $desc_wrappers = $('.prices-wrapper'),
-            currency = (format_currency(TUser.get().currency) || format_currency(document.getElementById('currency').value) || '¥'),
+            currency = (format_currency(Client.get_value('currency')) || format_currency(document.getElementById('currency').value) || '¥'),
             payout = Number(MBDefaults.get('payout') * (japanese_client() ? 1000 : 1)).toLocaleString(),
             display_name = MBSymbols.getName(MBDefaults.get('underlying')),
             date_expiry = PeriodText(contracts[0].trading_period).replace(/\s\(.*\)/, ''),
-            preposition = page.language() === 'JA' ? '{JAPAN ONLY}' : '';
+            preposition = getLanguage() === 'JA' ? '{JAPAN ONLY}' : '';
         contracts.forEach(function(c) {
             var contract_type = c.contract_type,
                 template = getTemplate(contract_type),
                 $wrapper = $($desc_wrappers[template.order]);
-            $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(page.text.localize(preposition + template.name));
-            $wrapper.find('.descr').text(page.text.localize(preposition + template.description, [currency, payout, display_name, date_expiry]));
+            $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(localize(preposition + template.name));
+            $wrapper.find('.descr').text(localize(preposition + template.description, [currency, payout, display_name, date_expiry]));
         });
     };
 
     var getCurrency = function() {
-        return (TUser.get().currency || document.getElementById('currency').value || 'JPY');
+        return (Client.get_value('currency') || document.getElementById('currency').value || 'JPY');
     };
 
     return {

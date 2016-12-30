@@ -48,7 +48,8 @@ var Purchase = (function () {
             container.style.display = 'block';
             message_container.hide();
             confirmation_error.show();
-            elementInnerHtml(confirmation_error, (/ClientUnwelcome/.test(error.code) ? error.message + '<a class="pjaxload" href="' + page.url.url_for('user/authenticatews') + '"> ' + page.text.localize('Authorise your account.') + '</a>' : error.message));
+            elementInnerHtml(confirmation_error, error.message);
+            confirmation_error.innerHTML = error.message;
         } else {
             var guideBtn = document.getElementById('guideBtn');
             if (guideBtn) {

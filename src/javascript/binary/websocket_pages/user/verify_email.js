@@ -1,5 +1,6 @@
 var Content         = require('../../common_functions/content').Content;
 var ValidateV2      = require('../../common_functions/validation_v2').ValidateV2;
+var url_for         = require('../../base/url').url_for;
 var bind_validation = require('../../validator').bind_validation;
 
 function VerifyEmail() {
@@ -35,7 +36,7 @@ function VerifyEmail() {
         var type = response.msg_type;
         var error = response.error;
         if (type === 'verify_email' && !error) {
-            window.location.href = page.url.url_for('new_account/virtualws');
+            window.location.href = url_for('new_account/virtualws');
             return;
         }
         if (!error || !error.message) return;

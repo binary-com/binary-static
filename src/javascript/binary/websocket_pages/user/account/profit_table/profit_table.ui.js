@@ -1,4 +1,6 @@
-var toJapanTimeIfNeeded = require('../../../../base/utility').toJapanTimeIfNeeded;
+var toJapanTimeIfNeeded = require('../../../../base/clock').Clock.toJapanTimeIfNeeded;
+var localize            = require('../../../../base/localize').localize;
+var Client              = require('../../../../base/client').Client;
 var Button              = require('../../../../common_functions/attach_dom/button').Button;
 var Content             = require('../../../../common_functions/content').Content;
 var Table               = require('../../../../common_functions/attach_dom/table').Table;
@@ -15,12 +17,13 @@ var ProfitTableUI = (function() {
     var profitTableID = 'profit-table';
     var cols = ['buy-date', 'ref', 'payout', 'contract', 'buy-price', 'sell-date', 'sell-price', 'pl', 'details'];
     var oauth_apps = {};
+    var currency = Client.get_value('currency');
 
     function createEmptyTable() {
         var header = [
             Content.localize().textDate,
             Content.localize().textRef,
-            page.text.localize('Potential Payout'),
+            localize('Potential Payout'),
             Content.localize().textContract,
             Content.localize().textPurchasePrice,
             Content.localize().textSaleDate,
@@ -31,7 +34,7 @@ var ProfitTableUI = (function() {
 
         var jpClient = japanese_client();
 
-        header[7] += (jpClient ? '' : (TUser.get().currency ? ' (' + TUser.get().currency + ')' : ''));
+        header[7] += (jpClient ? '' : (currency ? ' (' + currency + ')' : ''));
 
         var footer = [Content.localize().textTotalProfitLoss, '', '', '', '', '', '', '', ''];
 
@@ -76,7 +79,7 @@ var ProfitTableUI = (function() {
 
         var jpClient = japanese_client();
 
-        $('#pl-day-total > .pl').text(jpClient ? format_money(TUser.get().currency, total) : addComma(Number(total).toFixed(2)));
+        $('#pl-day-total > .pl').text(jpClient ? format_money(currency, total) : addComma(Number(total).toFixed(2)));
 
         var subTotalType = (total >= 0) ? 'profit' : 'loss';
         $('#pl-day-total > .pl').removeClass('profit').removeClass('loss');
@@ -89,7 +92,7 @@ var ProfitTableUI = (function() {
 
         var jpClient = japanese_client();
 
-        var data = [jpClient ? toJapanTimeIfNeeded(transaction.purchase_time) : profit_table_data.buyDate, '<span' + showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', jpClient ? format_money(TUser.get().currency, profit_table_data.payout) : profit_table_data.payout, '', jpClient ? format_money(TUser.get().currency, profit_table_data.buyPrice) : profit_table_data.buyPrice, (jpClient ? toJapanTimeIfNeeded(transaction.sell_time) : profit_table_data.sellDate), jpClient ? format_money(TUser.get().currency, profit_table_data.sellPrice) : profit_table_data.sellPrice, jpClient ? format_money(TUser.get().currency, profit_table_data.pl) : profit_table_data.pl, ''];
+        var data = [jpClient ? toJapanTimeIfNeeded(transaction.purchase_time) : profit_table_data.buyDate, '<span' + showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', jpClient ? format_money(currency, profit_table_data.payout) : profit_table_data.payout, '', jpClient ? format_money(currency, profit_table_data.buyPrice) : profit_table_data.buyPrice, (jpClient ? toJapanTimeIfNeeded(transaction.sell_time) : profit_table_data.sellDate), jpClient ? format_money(currency, profit_table_data.sellPrice) : profit_table_data.sellPrice, jpClient ? format_money(currency, profit_table_data.pl) : profit_table_data.pl, ''];
         var $row = Table.createFlexTableRow(data, cols, 'data');
 
         $row.children('.pl').addClass(plType);
@@ -104,7 +107,7 @@ var ProfitTableUI = (function() {
         // create view button and append
         var $viewButtonSpan = Button.createBinaryStyledButton();
         var $viewButton = $viewButtonSpan.children('.button').first();
-        $viewButton.text(page.text.localize('View'));
+        $viewButton.text(localize('View'));
         $viewButton.addClass('open_contract_detailsws');
         $viewButton.attr('contract_id', profit_table_data.id);
 

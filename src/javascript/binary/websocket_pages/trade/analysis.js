@@ -1,10 +1,13 @@
 var DigitInfoWS                = require('./charts/digit_infows').DigitInfoWS;
 var JapanPortfolio             = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
 var State                      = require('../../base/storage').State;
+var getLanguage                = require('../../base/language').getLanguage;
 var toggleActiveNavMenuElement = require('./common').toggleActiveNavMenuElement;
 var showHighchart              = require('./common').showHighchart;
 var elementInnerHtml           = require('../../common_functions/common_functions').elementInnerHtml;
-
+var Url            = require('../../base/url').Url;
+var url_for        = require('../../base/url').url_for;
+var url_for_static = require('../../base/url').url_for_static;
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -30,7 +33,7 @@ var TradingAnalysis = (function() {
         if (formName === 'callput') {
             formName = 'higherlower';
         }
-        $('#tab_explanation a').attr('href',  page.url.url_for('trade/bet_explanation', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
+        $('#tab_explanation a').attr('href',  url_for('trade/bet_explanation', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
         if (formName === 'digits' || formName === 'overunder' || formName === 'evenodd') {
             $('#tab_last_digit').removeClass('invisible');
         } else {
@@ -158,7 +161,7 @@ var TradingAnalysis = (function() {
      * handle the display of proper explanation based on parameters
      */
     var showExplanation = function(href) {
-        var options = new URL(href).params_hash();
+        var options = new Url(href).params_hash();
         var form_name    = options.form_name || 'risefall',
             show_image   = options.show_image   ? options.show_image   > 0 : true,
             show_winning = options.show_winning ? options.show_winning > 0 : true,
@@ -214,7 +217,7 @@ var TradingAnalysis = (function() {
         };
 
         if (show_image && images.hasOwnProperty(form_name)) {
-            var image_path = page.url.url_for_static('images/pages/trade-explanation/' + (page.language() === 'JA' ? 'ja/' : ''));
+            var image_path = url_for_static('images/pages/trade-explanation/' + (getLanguage() === 'JA' ? 'ja/' : ''));
             $Container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $Container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
             $Container.find('#explanation_image').removeClass(hidden_class);
