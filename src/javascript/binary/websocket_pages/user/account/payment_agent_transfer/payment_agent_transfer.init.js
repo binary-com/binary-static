@@ -1,4 +1,5 @@
 var onlyNumericOnKeypress    = require('../../../../common_functions/event_handler').onlyNumericOnKeypress;
+var Client                   = require('../../../../base/client').Client;
 var PaymentAgentTransferData = require('./payment_agent_transfer.data').PaymentAgentTransferData;
 var PaymentAgentTransferUI   = require('./payment_agent_transfer.ui').PaymentAgentTransferUI;
 
@@ -55,14 +56,14 @@ var PaymentAgentTransfer = (function() {
 
             PaymentAgentTransferUI.showDone();
 
-            PaymentAgentTransferUI.updateDoneView(TUser.get().loginid, req.transfer_to, req.amount, req.currency);
+            PaymentAgentTransferUI.updateDoneView(Client.get_value('loginid'), req.transfer_to, req.amount, req.currency);
         }
     }
 
     function init(auth) {
         var $pa_form = $('#paymentagent_transfer');
 
-        var currency = TUser.get().currency;
+        var currency = Client.get_value('currency');
 
         if (auth && !currency) {
             $('#no_balance_error').removeClass(hiddenClass);
@@ -114,7 +115,7 @@ var PaymentAgentTransfer = (function() {
                 return;
             }
 
-            var bal = +(TUser.get().balance);
+            var bal = +(Client.get_value('balance'));
             if (amount > bal) {
                 $insufficientBalError.removeClass(hiddenClass);
                 return;
@@ -158,7 +159,7 @@ var PaymentAgentTransfer = (function() {
     }
 
     function error_if_virtual() {
-        if (page.client.is_virtual()) {
+        if (Client.get_boolean('is_virtual')) {
             $('#virtual_error').removeClass('invisible');
             return true;
         }

@@ -9,6 +9,7 @@ var japanese_client    = require('../../common_functions/country_base').japanese
 var displayUnderlyings = require('../trade/common').displayUnderlyings;
 var showFormOverlay    = require('../trade/common').showFormOverlay;
 var processForgetTicks = require('../trade/process').processForgetTicks;
+var localize           = require('../../base/localize').localize;
 
 var MBProcess = (function() {
     var market_status = '',
@@ -52,7 +53,7 @@ var MBProcess = (function() {
             displayUnderlyings('underlying', symbols_list, symbol);
 
             if (symbol && !symbols_list[symbol].is_active) {
-                MBNotifications.show({ text: page.text.localize('This symbol is not active. Please try another symbol.'), uid: 'SYMBOL_INACTIVE' });
+                MBNotifications.show({ text: localize('This symbol is not active. Please try another symbol.'), uid: 'SYMBOL_INACTIVE' });
             } else if (update_page) {
                 MBProcess.processMarketUnderlying();
             }
@@ -61,7 +62,7 @@ var MBProcess = (function() {
 
     function handleMarketClosed() {
         $('.japan-form, .japan-table, #trading_bottom_content').addClass('invisible');
-        MBNotifications.show({ text: page.text.localize('Market is closed. Please try again later.'), uid: 'MARKET_CLOSED' });
+        MBNotifications.show({ text: localize('Market is closed. Please try again later.'), uid: 'MARKET_CLOSED' });
         symbols_timeout = setTimeout(function() { MBSymbols.getSymbols(1); }, 30000);
     }
 
@@ -229,7 +230,7 @@ var MBProcess = (function() {
             }
         }
         if (all_expired) {
-            MBNotifications.show({ text: page.text.localize('All barriers in this trading window are expired') + '.', uid: 'ALL_EXPIRED' });
+            MBNotifications.show({ text: localize('All barriers in this trading window are expired') + '.', uid: 'ALL_EXPIRED' });
             MBPrice.hidePriceOverlay();
         } else {
             MBNotifications.hide('ALL_EXPIRED');

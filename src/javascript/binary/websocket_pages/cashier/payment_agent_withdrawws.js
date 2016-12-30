@@ -1,6 +1,9 @@
 var template = require('../../base/utility').template;
 var Cookies  = require('../../../lib/js-cookie');
 var Content  = require('../../common_functions/content').Content;
+var localize = require('../../base/localize').localize;
+var Client   = require('../../base/client').Client;
+var url_for  = require('../../base/url').url_for;
 
 var PaymentAgentWithdrawWS = (function() {
     'use strict';
@@ -42,14 +45,14 @@ var PaymentAgentWithdrawWS = (function() {
 
         $views.addClass(hiddenClass);
 
-        if (page.client.is_virtual()) { // Virtual Account
-            showPageError(page.text.localize('You are not authorized for withdrawal via payment agent.'));
+        if (Client.get_boolean('is_virtual')) { // Virtual Account
+            showPageError(localize('You are not authorized for withdrawal via payment agent.'));
             return;
         }
 
         var residence = Cookies.get('residence');
 
-        if (page.client_status_detected('withdrawal_locked, cashier_locked', 'any')) {
+        if (Client.status_detected('withdrawal_locked, cashier_locked', 'any')) {
             lock_withdrawal('locked');
         } else {
             BinarySocket.send({ paymentagent_list: residence });
@@ -73,14 +76,14 @@ var PaymentAgentWithdrawWS = (function() {
         $ddlAgents.empty();
         var paList = response.paymentagent_list.list;
         if (paList.length > 0) {
-            BinarySocket.send({ verify_email: TUser.get().email, type: 'paymentagent_withdraw' });
-            insertListOption($ddlAgents, page.text.localize('Please select a payment agent'), '');
+            BinarySocket.send({ verify_email: Client.get_value('email'), type: 'paymentagent_withdraw' });
+            insertListOption($ddlAgents, localize('Please select a payment agent'), '');
             for (var i = 0; i < paList.length; i++) {
                 insertListOption($ddlAgents, paList[i].name, paList[i].paymentagent_loginid);
             }
             setActiveView(viewIDs.form);
         } else {
-            showPageError(page.text.localize('The Payment Agent facility is currently not available in your country.'));
+            showPageError(localize('The Payment Agent facility is currently not available in your country.'));
         }
     };
 
@@ -112,7 +115,7 @@ var PaymentAgentWithdrawWS = (function() {
         // verification token
         if (!isRequiredError(fieldIDs.verificationCode)) {
             if (token.length !== 48) {
-                showError(fieldIDs.verificationCode, Content.errorMessage('valid', page.text.localize('verification token')));
+                showError(fieldIDs.verificationCode, Content.errorMessage('valid', localize('verification token')));
             }
         }
 
@@ -121,11 +124,11 @@ var PaymentAgentWithdrawWS = (function() {
             if (!(/^\d+(\.\d+)?$/).test(amount) || !$.isNumeric(amount)) {
                 showError(fieldIDs.txtAmount, Content.errorMessage('reg', [numbers]));
             } else if (!(/^\d+(\.\d{1,2})?$/).test(amount)) {
-                showError(fieldIDs.txtAmount, page.text.localize('Only 2 decimal points are allowed.'));
+                showError(fieldIDs.txtAmount, localize('Only 2 decimal points are allowed.'));
             } else if (amount < minAmount) {
-                showError(fieldIDs.txtAmount, page.text.localize('Invalid amount, minimum is') + ' ' + withdrawCurrency + ' ' + minAmount);
+                showError(fieldIDs.txtAmount, localize('Invalid amount, minimum is') + ' ' + withdrawCurrency + ' ' + minAmount);
             } else if (amount > maxAmount) {
-                showError(fieldIDs.txtAmount, page.text.localize('Invalid amount, maximum is') + ' ' + withdrawCurrency + ' ' + maxAmount);
+                showError(fieldIDs.txtAmount, localize('Invalid amount, maximum is') + ' ' + withdrawCurrency + ' ' + maxAmount);
             }
         }
 
@@ -205,7 +208,7 @@ var PaymentAgentWithdrawWS = (function() {
                     .attr('class', 'success-msg')
                     .html(
                         '<ul class="checked"><li>' +
-                        page.text.localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [
+                        localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [
                             formData.currency,
                             formData.amount,
                             Cookies.get('loginid'),
@@ -221,7 +224,7 @@ var PaymentAgentWithdrawWS = (function() {
                         .attr('class', errorClass)
                         .html(response.error.message);
                 } else if (response.error.code === 'InvalidToken') {
-                    showPageError(template(Content.localize().textClickHereToRestart, [page.url.url_for('paymentagent/withdrawws')]));
+                    showPageError(template(Content.localize().textClickHereToRestart, [url_for('paymentagent/withdrawws')]));
                 } else {
                     showPageError(response.error.message);
                 }
@@ -260,7 +263,7 @@ var PaymentAgentWithdrawWS = (function() {
     var lock_withdrawal = function(withdrawal_locked) {
         if (withdrawal_locked === 'locked') {
             showPageError('', 'withdrawal-locked-error');
-        } else if (!page.client.is_virtual()) {
+        } else if (!Client.get_boolean('is_virtual')) {
             BinarySocket.send({ paymentagent_list: Cookies.get('residence') });
         }
     };
@@ -289,7 +292,7 @@ var PaymentAgentWithdrawWS = (function() {
         });
 
         Content.populate();
-        if (TUser.get().hasOwnProperty('is_virtual') || page.client_status_detected('withdrawal_locked, cashier_locked', 'any')) {
+        if (Client.get_boolean('values_set') || Client.status_detected('withdrawal_locked, cashier_locked', 'any')) {
             PaymentAgentWithdrawWS.init();
         } else if (sessionStorage.getItem('client_status') === null) {
             BinarySocket.send({ get_account_status: '1', passthrough: { dispatch_to: 'PaymentAgentWithdrawWS' } });

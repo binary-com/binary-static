@@ -839,6 +839,12 @@ msgstr ""
 msgid "Account balance: "
 msgstr ""
 
+msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr ""
+
+msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr ""
+
 msgid "Accounting"
 msgstr ""
 
@@ -1184,9 +1190,6 @@ msgid "Australia"
 msgstr ""
 
 msgid "Authenticate"
-msgstr ""
-
-msgid "Authenticate your account"
 msgstr ""
 
 msgid "Authentication"
@@ -1569,7 +1572,7 @@ msgstr ""
 msgid "Cashier Password"
 msgstr ""
 
-msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr ""
 
 msgid "Cashier password"
@@ -2136,7 +2139,7 @@ msgstr ""
 msgid "Deposit Bonus"
 msgstr ""
 
-msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr ""
 
 msgid "Deposit of"
@@ -2695,6 +2698,9 @@ msgid "Financial Asset"
 msgstr ""
 
 msgid "Financial Information"
+msgstr ""
+
+msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr ""
 
 msgid "Financial Security"
@@ -7397,7 +7403,7 @@ msgstr ""
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr ""
 
-msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr ""
 
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
@@ -7586,6 +7592,9 @@ msgstr ""
 msgid "You must accept the terms and conditions to open an account."
 msgstr ""
 
+msgid "You must complete the knowledge test to activate this account. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr ""
+
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr ""
 
@@ -7721,10 +7730,7 @@ msgstr ""
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr ""
 
-msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
-msgstr ""
-
-msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
+msgid "Your account is not fully authenticated."
 msgstr ""
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."

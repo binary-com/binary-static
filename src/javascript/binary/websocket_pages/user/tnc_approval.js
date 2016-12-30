@@ -1,5 +1,10 @@
 var showLoadingImage = require('../../base/utility').showLoadingImage;
 var template         = require('../../base/utility').template;
+var localize         = require('../../base/localize').localize;
+var Client           = require('../../base/client').Client;
+var url_for_static   = require('../../base/url').url_for_static;
+var url_for          = require('../../base/url').url_for;
+var default_redirect_url = require('../../base/url').default_redirect_url;
 var Content          = require('../../common_functions/content').Content;
 
 var TNCApproval = (function() {
@@ -30,7 +35,7 @@ var TNCApproval = (function() {
     };
 
     var showTNC = function() {
-        if (!terms_conditions_version || !client_tnc_status || !page.client.get_storage_value('landing_company_name')) {
+        if (!terms_conditions_version || !client_tnc_status || !Client.get_value('landing_company_fullname')) {
             return;
         }
 
@@ -40,16 +45,16 @@ var TNCApproval = (function() {
         }
 
         $('#tnc-loading').addClass(hiddenClass);
-        $('#tnc_image').attr('src', page.url.url_for_static('images/pages/cashier/protection-icon.svg'));
+        $('#tnc_image').attr('src', url_for_static('images/pages/cashier/protection-icon.svg'));
         $('#tnc_approval').removeClass(hiddenClass);
         var tnc_message = template($('#tnc-message').html(), [
-            page.client.get_storage_value('landing_company_name'),
-            page.client.residence === 'jp' ?
-            page.url.url_for('terms-and-conditions-jp') :
-            page.url.url_for('terms-and-conditions'),
+            Client.get_value('landing_company_fullname'),
+            Client.get_value('residence') === 'jp' ?
+            url_for('terms-and-conditions-jp') :
+            url_for('terms-and-conditions'),
         ]);
         $('#tnc-message').html(tnc_message).removeClass(hiddenClass);
-        $('#btn-accept').text(page.text.localize('OK'));
+        $('#btn-accept').text(localize('OK'));
     };
 
     var responseTNCApproval = function(response) {
@@ -62,11 +67,11 @@ var TNCApproval = (function() {
     };
 
     var redirectBack = function() {
-        window.location.href = redirectUrl || page.url.default_redirect_url();
+        window.location.href = redirectUrl || default_redirect_url();
     };
 
     var apiResponse = function(response) {
-        isReal = !TUser.get().is_virtual;
+        isReal = !Client.get_boolean('is_virtual');
         if (!isReal) {
             redirectBack();
         }

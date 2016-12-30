@@ -1,12 +1,13 @@
 var japanese_client = require('./country_base').japanese_client;
 var addComma        = require('./string_util').addComma;
+var getLanguage     = require('../base/language').getLanguage;
 
 function format_money(currencyValue, amount) {
     var money;
     if (amount) amount = String(amount).replace(/,/g, '');
     if (typeof Intl !== 'undefined' && currencyValue && currencyValue !== '' && amount && amount !== '') {
         var options = { style: 'currency', currency: currencyValue },
-            language = typeof window !== 'undefined' && page.language().toLowerCase() ? page.language().toLowerCase() : 'en';
+            language = typeof window !== 'undefined' ? getLanguage().toLowerCase() : 'en';
         money = new Intl.NumberFormat(language.replace('_', '-'), options).format(amount);
     } else {
         var updatedAmount,

@@ -1,3 +1,5 @@
+var Client = require('../base/client').Client;
+
 var RiskClassification = (function() {
     'use strict';
 
@@ -18,7 +20,7 @@ var RiskClassification = (function() {
         localStorage.removeItem('risk_classification');
         localStorage.removeItem('risk_classification.response');
         $('#risk_classification').remove();
-        page.client.check_tnc();
+        Client.check_tnc();
     };
 
     return {

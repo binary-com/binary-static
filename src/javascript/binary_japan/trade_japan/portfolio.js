@@ -1,4 +1,5 @@
-var State = require('../../binary/base/storage').State;
+var State  = require('../../binary/base/storage').State;
+var Client = require('../../binary/base/client').Client;
 var PortfolioWS = require('../../binary/websocket_pages/user/account/portfolio/portfolio.init').PortfolioWS;
 
 var JapanPortfolio = (function() {
@@ -29,7 +30,7 @@ var JapanPortfolio = (function() {
     }
 
     function isActive() {
-        if (page.client.is_logged_in && isTradePage()) {
+        if (Client.get_value('is_logged_in') && isTradePage()) {
             return true;
         }
         return false;

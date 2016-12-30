@@ -6,6 +6,7 @@ var japanese_client        = require('../../../common_functions/country_base').j
 var AssetIndexData         = require('./asset_indexws.data').AssetIndexData;
 var AssetIndex             = require('../asset_indexws').AssetIndex;
 var State                  = require('../../../base/storage').State;
+var url_for                = require('../../../base/url').url_for;
 
 var AssetIndexUI = (function() {
     'use strict';
@@ -21,7 +22,7 @@ var AssetIndexUI = (function() {
     var init = function(config) {
         if (japanese_client()) {
             if (!State.get('is_beta_trading')) {
-                window.location.href = page.url.url_for('resources');
+                window.location.href = url_for('resources');
             }
             return;
         }

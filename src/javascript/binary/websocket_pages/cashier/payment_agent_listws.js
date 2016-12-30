@@ -1,6 +1,7 @@
 var showLoadingImage = require('../../base/utility').showLoadingImage;
-var Cookies = require('../../../lib/js-cookie');
-var Content = require('../../common_functions/content').Content;
+var Cookies          = require('../../../lib/js-cookie');
+var Content          = require('../../common_functions/content').Content;
+var url_for_static   = require('../../base/url').url_for_static;
 
 var PaymentAgentListWS = (function() {
     'use strict';
@@ -109,7 +110,7 @@ var PaymentAgentListWS = (function() {
                 banks.map(function(bank) {
                     supported_banks += bank.length === 0 ?
                         '' :
-                        '<img src="' + page.url.url_for_static('images/pages/payment_agent/banks/' + bank.toLowerCase() + '.png') + '" alt="' + bank + '" title="' + bank + '" />';
+                        '<img src="' + url_for_static('images/pages/payment_agent/banks/' + bank.toLowerCase() + '.png') + '" alt="' + bank + '" title="' + bank + '" />';
                 });
             }
 

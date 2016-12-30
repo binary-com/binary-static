@@ -1,10 +1,12 @@
-var getAppId = require('../../config').getAppId;
+var getAppId    = require('../../config').getAppId;
+var getLanguage = require('./language').getLanguage;
+var Client      = require('./client').Client;
 
 var Login = (function() {
     'use strict';
 
     var redirect_to_login = function() {
-        if (!page.client.is_logged_in && !is_login_pages()) {
+        if (!Client.get_boolean('is_logged_in') && !is_login_pages()) {
             try {
                 sessionStorage.setItem('redirect_url', window.location.href);
             } catch (e) {
@@ -17,8 +19,8 @@ var Login = (function() {
     var login_url = function() {
         var server_url = localStorage.getItem('config.server_url');
         return ((server_url && /qa/.test(server_url)) ?
-            'https://www.' + server_url.split('.')[1] + '.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + page.language() :
-            'https://oauth.binary.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + page.language()
+            'https://www.' + server_url.split('.')[1] + '.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + getLanguage() :
+            'https://oauth.binary.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + getLanguage()
         );
     };
 

@@ -15,7 +15,9 @@ var MarketTimesUI = require('../../resources/market_times/market_timesws.ui').Ma
 var PortfolioWS   = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
 var ProfitTableWS = require('../../user/account/profit_table/profit_table.init').ProfitTableWS;
 var StatementWS   = require('../../user/account/statement/statement.init').StatementWS;
-var State = require('../../../base/storage').State;
+var State  = require('../../../base/storage').State;
+var GTM    = require('../../../base/gtm').GTM;
+var Client = require('../../../base/client').Client;
 
 /*
  * This Message object process the response from server and fire
@@ -41,7 +43,7 @@ var Message_Beta = (function () {
                 processContract_Beta(response);
                 window.contracts_for = response;
             } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && (!response.echo_req.hasOwnProperty('passthrough') || !response.echo_req.passthrough.hasOwnProperty('handler'))) {
-                page.client.set_storage_value('currencies', response.payout_currencies);
+                Client.set_value('currencies', response.payout_currencies.join(','));
                 displayCurrencies();
                 Symbols.getSymbols(1);
             } else if (type === 'proposal') {

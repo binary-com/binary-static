@@ -1,5 +1,10 @@
 var objectNotEmpty = require('./utility').objectNotEmpty;
 var Cookies        = require('../../lib/js-cookie');
+var getLanguage    = require('./language').getLanguage;
+var GTM     = require('./gtm').GTM;
+var Client  = require('./client').Client;
+var url_for = require('./url').url_for;
+var default_redirect_url = require('./url').default_redirect_url;
 
 var LoggedInHandler = (function() {
     'use strict';
@@ -19,14 +24,14 @@ var LoggedInHandler = (function() {
                 });
                 loginid = loginids[0];
                 // set cookies
-                page.client.set_cookie('loginid',      loginid);
-                page.client.set_cookie('loginid_list', loginid_list);
+                Client.set_cookie('loginid',      loginid);
+                Client.set_cookie('loginid_list', loginid_list);
             }
-            page.client.set_cookie('login', tokens[loginid]);
+            Client.set_cookie('login', tokens[loginid]);
 
             // set flags
             if (!$('body').hasClass('BlueTopBack')) localStorage.setItem('risk_classification', 'check');
-            page.client.set_check_tnc();
+            Client.set_check_tnc();
             GTM.set_login_flag();
 
             // redirect url
@@ -39,15 +44,16 @@ var LoggedInHandler = (function() {
         if (redirect_url) {
             var do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home'];
             var reg = new RegExp(do_not_redirect.join('|'), 'i');
-            if (!reg.test(redirect_url) && page.url.url_for('') !== redirect_url) {
+            if (!reg.test(redirect_url) && url_for('') !== redirect_url) {
                 set_default = false;
             }
         }
         if (set_default) {
-            redirect_url = page.url.default_redirect_url();
-            var lang_cookie = Cookies.get('language');
-            if (lang_cookie && lang_cookie !== page.language()) {
-                redirect_url = redirect_url.replace(new RegExp('\/' + page.language() + '\/', 'i'), '/' + lang_cookie.toLowerCase() + '/');
+            redirect_url = default_redirect_url();
+            var lang_cookie = Cookies.get('language'),
+                language = getLanguage();
+            if (lang_cookie && lang_cookie !== language) {
+                redirect_url = redirect_url.replace(new RegExp('\/' + language + '\/', 'i'), '/' + lang_cookie.toLowerCase() + '/');
             }
         }
         document.getElementById('loading_link').setAttribute('href', redirect_url);
@@ -66,7 +72,7 @@ var LoggedInHandler = (function() {
             }
         }
         if (objectNotEmpty(tokens)) {
-            page.client.set_storage_value('tokens', JSON.stringify(tokens));
+            Client.set_value('tokens', JSON.stringify(tokens));
         }
         return tokens;
     };

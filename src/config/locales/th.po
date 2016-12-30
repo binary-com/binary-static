@@ -868,6 +868,16 @@ msgstr "การโอนบัญชี"
 msgid "Account balance: "
 msgstr "ยอดคงเหลือในบัญชี: "
 
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "การฝากเงินถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
+
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "การฝากเงินถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
+
 msgid "Accounting"
 msgstr "การบัญชี"
 
@@ -1216,9 +1226,6 @@ msgstr "ออสเตรเลีย"
 
 msgid "Authenticate"
 msgstr "ยืนยันตัวตน"
-
-msgid "Authenticate your account"
-msgstr "ยืนยันตัวตนต่อบัญชีของท่าน"
 
 msgid "Authentication"
 msgstr "การระบุตัวตน"
@@ -1606,7 +1613,9 @@ msgstr "แคชเชียร์"
 msgid "Cashier Password"
 msgstr "รหัสผ่านสำหรับจัดการเงิน"
 
-msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#, fuzzy
+#| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr "แคชเชียร์ถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
 
 msgid "Cashier password"
@@ -2173,7 +2182,9 @@ msgstr "ฝาก %1 %2 เงินเสมือนในบัญชีข�
 msgid "Deposit Bonus"
 msgstr "โบนัสเงินฝาก"
 
-msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr "การฝากเงินถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
 
 msgid "Deposit of"
@@ -2733,6 +2744,11 @@ msgstr "สินทรัพย์ทางการเงิน"
 
 msgid "Financial Information"
 msgstr "ข้อมูลทางการเงิน"
+
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "การถอนถูกล็อค โปรด<a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
 
 msgid "Financial Security"
 msgstr "ความปลอดภัยทางการเงิน"
@@ -7461,7 +7477,9 @@ msgstr "วงเงินในการถอน"
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "ในขณะนี้ บัญชีของท่านไม่ได้รับอนุญาตให้ดำเนินการถอนเงิน โปรดติดต่อ %1 เพื่อปลดล็อค"
 
-msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr "การถอนถูกล็อค โปรด<a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
 
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
@@ -7650,6 +7668,11 @@ msgstr "ท่านอาจจะถอนโบนัสเมื่อท่
 msgid "You must accept the terms and conditions to open an account."
 msgstr "ท่านต้องยอมรับข้อตกลงและเงื่อนไขเพื่อเปิดบัญชี"
 
+#, fuzzy
+#| msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
+msgid "You must complete the knowledge test to activate this account. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "บัญชีของท่านยังไม่ได้รับการยืนยันตัวตนอย่างสมบูรณ์ โปรดเข้าเยี่ยมหน้า <a class=\"pjaxload\" href=\"%1\">การยืนยันตัวตน</a> เพื่อดำเนินการเพิ่มเติม"
+
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "ท่านต้องปฏิบัติตามข้อตกลงเหล่านี้ในการใช้ API ของ %1"
 
@@ -7785,11 +7808,10 @@ msgstr "บัญชีของท่านได้รับการยืน
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "บัญชีของท่านได้รับการยืนยันตัวตนอย่างสมบูรณ์แล้ว ท่านสามารถเรียกดู <a class=\"pjaxload\" href=\"%1\">วงเงินซื้อขายของท่านที่นี่</a>"
 
-msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
-msgstr "บัญชีของท่านยังไม่ได้รับการยืนยันตัวตนอย่างสมบูรณ์ โปรดเข้าเยี่ยมหน้า <a class=\"pjaxload\" href=\"%1\">การยืนยันตัวตน</a> เพื่อดำเนินการเพิ่มเติม"
-
-msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
-msgstr "บัญชีของท่านยังไม่ได้รับการยืนยันตัวตนอย่างสมบูรณ์ โปรดเข้าเยี่ยมหน้า <a href=\"%1\">การยืนยันตัวตน</a> เพื่อดำเนินการเพิ่มเติม"
+#, fuzzy
+#| msgid "Client is not fully authenticated."
+msgid "Your account is not fully authenticated."
+msgstr "บัญชีลูกค้ายังไม่ได้ยืนยันตัวตนครบถ้วน"
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "บัญชีของท่านไม่ควรใช้สำหรับการอำนวยความสะดวกในการฝากเงิน และการฝากเงินควรดำเนินการเมื่อท่านต้องการลงเงินในสัญญา บริษัทฯ ไม่ได้ประพฤติเยี่ยงสถาบันการเงิน ลูกค้าจะไม่ได้รับดอกเบี้ยจากการฝากเงิน ในการดำเนินการของท่านไม่ว่าจะฝากเงินหรือถอนเงินปราศจากสัญญาที่มีสัดส่วนเงินที่พอดีกัน ทางบริษัทฯ ขอสงวนสิทธิ์ในการดำเนินการกับบัญชีของท่าน โดยไม่ต้องแจ้งให้ทราบล่วงหน้า รวมถึงค่าธรรมเนียมต่างๆ ของธนาคารที่เกิดขึ้นก่อนการปิดบัญชี"
@@ -8870,6 +8892,12 @@ msgstr "รายละเอียดบัญชี"
 
 msgid "Terms and Conditions Approval"
 msgstr "การอนุมัติข้อตกลงและเงื่อนไข"
+
+#~ msgid "Authenticate your account"
+#~ msgstr "ยืนยันตัวตนต่อบัญชีของท่าน"
+
+#~ msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
+#~ msgstr "บัญชีของท่านยังไม่ได้รับการยืนยันตัวตนอย่างสมบูรณ์ โปรดเข้าเยี่ยมหน้า <a href=\"%1\">การยืนยันตัวตน</a> เพื่อดำเนินการเพิ่มเติม"
 
 #~ msgid "AUD"
 #~ msgstr "AUD"
@@ -10011,9 +10039,6 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 #~ msgid "Client email not set."
 #~ msgstr "อีเมล์ลูกค้ายังไม่ได้ระบุ"
-
-#~ msgid "Client is not fully authenticated."
-#~ msgstr "บัญชีลูกค้ายังไม่ได้ยืนยันตัวตนครบถ้วน"
 
 #~ msgid "Close"
 #~ msgstr "ปิด"
