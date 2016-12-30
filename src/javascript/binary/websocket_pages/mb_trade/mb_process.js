@@ -10,6 +10,7 @@ var displayUnderlyings = require('../trade/common').displayUnderlyings;
 var showFormOverlay    = require('../trade/common').showFormOverlay;
 var processForgetTicks = require('../trade/process').processForgetTicks;
 var localize           = require('../../base/localize').localize;
+var Client             = require('../../base/client').Client;
 
 var MBProcess = (function() {
     var market_status = '',
@@ -29,7 +30,7 @@ var MBProcess = (function() {
         // populate the Symbols object
         MBSymbols.details(data);
 
-        var symbols_list = japanese_client() || !page.client.is_logged_in ?
+        var symbols_list = japanese_client() || !Client.get_boolean('is_logged_in') ?
                 MBSymbols.underlyings().major_pairs : MBSymbols.getAllSymbols(),
             symbol       = MBDefaults.get('underlying'),
             update_page  = MBSymbols.need_page_update();
