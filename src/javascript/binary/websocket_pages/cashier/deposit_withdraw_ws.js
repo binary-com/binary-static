@@ -153,10 +153,11 @@ var ForwardWS = (function() {
 
     function checkOnLoad() {
         function clientIsVirtual() {
+            Content.populate();
             var is_virtual = Client.get_boolean('is_virtual');
             if (is_virtual) {
                 var ErrorVrtc = document.getElementsByClassName('error_vrtc');
-                ErrorVrtc.addClass('center-text notice-msg');
+                $(ErrorVrtc).addClass('center-text notice-msg');
                 ForwardWS.showError(Content.localize().featureNotRelevantToVirtual);
             }
             return is_virtual;
