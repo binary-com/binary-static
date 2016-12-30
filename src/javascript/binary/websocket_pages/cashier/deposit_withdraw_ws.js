@@ -155,7 +155,9 @@ var ForwardWS = (function() {
         function clientIsVirtual() {
             var is_virtual = Client.get_boolean('is_virtual');
             if (is_virtual) {
-                ForwardWS.showError(localize('This feature is not relevant to virtual-money accounts.'));
+                var ErrorVrtc = document.getElementsByClassName('error_vrtc');
+                ErrorVrtc.addClass('center-text notice-msg');
+                ForwardWS.showError(Content.localize().featureNotRelevantToVirtual);
             }
             return is_virtual;
         }

@@ -1,6 +1,5 @@
 var Content         = require('../../../common_functions/content').Content;
 var japanese_client = require('../../../common_functions/country_base').japanese_client;
-var localize = require('../../../base/localize').localize;
 var Client   = require('../../../base/client').Client;
 var url_for  = require('../../../base/url').url_for;
 
@@ -17,7 +16,7 @@ var AuthenticateWS = (function() {
         }
 
         function check_virtual() {
-            return Client.get_boolean('is_virtual') && show_error(localize('This feature is not relevant to virtual-money accounts.'));
+            return Client.get_boolean('is_virtual') && show_error(Content.localize().featureNotRelevantToVirtual);
         }
         if (!check_virtual()) {
             BinarySocket.init({

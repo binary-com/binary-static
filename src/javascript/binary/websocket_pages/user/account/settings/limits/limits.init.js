@@ -48,11 +48,12 @@ var LimitsWS = (function() {
     }
 
     function limitsError(error) {
+        Content.populate();
         document.getElementById('withdrawal-title').setAttribute('style', 'display:none');
         document.getElementById('limits-title').setAttribute('style', 'display:none');
         var errorElement = document.getElementsByClassName('notice-msg')[0];
         if ((error && error.code === 'FeatureNotAvailable' && Client.get_boolean('is_virtual')) || Client.get_boolean('is_virtual')) {
-            errorElement.innerHTML = localize('This feature is not relevant to virtual-money accounts.');
+            errorElement.innerHTML = Content.localize().featureNotRelevantToVirtual;
         } else if (error && error.message) {
             errorElement.innerHTML = error.message;
         } else {

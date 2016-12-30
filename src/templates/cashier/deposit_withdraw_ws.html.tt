@@ -37,7 +37,7 @@
             <p id="age-error" class="error_messages">
                 [% l('Account needs age verification, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
-            <p id="custom-error" class="error_messages"></p>
+            <p id="custom-error" class="error_messages error_vrtc"></p>
         </div>
     </div>
     <div class="container invisible" id="deposit-withdraw-iframe-container">
