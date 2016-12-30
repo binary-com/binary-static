@@ -131,7 +131,6 @@ var Content = (function() {
         });
 
         var starTime = document.getElementById('start_time_label');
-      
         if (selectorExists(starTime)) {
             starTime.textContent = localized.textStartTime;
         }
