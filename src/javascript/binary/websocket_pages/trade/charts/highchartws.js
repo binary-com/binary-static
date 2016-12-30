@@ -704,12 +704,12 @@ var Highchart = (function() {
     function update_chart(update_options) {
         var granularity = calculate_granularity(exit_time, now_time, purchase_time, start_time)[0];
         var series = chart.series[0];
-        var last = series.data[series.data.length - 1];
         if (granularity === 0) {
             chart.series[0].addPoint([update_options.tick.epoch * 1000, update_options.tick.quote * 1]);
         } else {
             var c = update_options.ohlc;
-            if (!c) return;
+            var last = series.data[series.data.length - 1];
+            if (!c || !last) return;
             var ohlc = [c.open_time * 1000, c.open * 1, c.high * 1, c.low * 1, c.close * 1];
 
             if (last.x !== ohlc[0]) {
