@@ -20,10 +20,10 @@ function get_highest_zindex(selector) {
     if (!selector) {
         selector = 'div,p,area,nav,section,header,canvas,aside,span';
     }
-    var all = [];
-    var _store_zindex = function () {
+    const all = [];
+    const _store_zindex = function () {
         if ($(this).is(':visible')) {
-            var z = $(this).css('z-index');
+            const z = $(this).css('z-index');
             if (!isNaN(z)) {
                 all.push(z);
             }
@@ -39,8 +39,8 @@ function downloadCSV(csvContents, filename) {
     if (navigator.msSaveBlob) { // IE 10+
         navigator.msSaveBlob(new Blob([csvContents], { type: 'text/csv;charset=utf-8;' }), filename);
     } else { // Other browsers
-        var csv = 'data:text/csv;charset=utf-8,' + csvContents;
-        var downloadLink = document.createElement('a');
+        const csv = 'data:text/csv;charset=utf-8,' + csvContents;
+        const downloadLink = document.createElement('a');
         downloadLink.href = encodeURI(csv);
         downloadLink.download = filename;
 
@@ -57,7 +57,7 @@ function template(string, content) {
 }
 
 function objectNotEmpty(obj) {
-    var isEmpty = true;
+    let isEmpty = true;
     if (obj && obj instanceof Object) {
         Object.keys(obj).forEach(function(key) {
             if (obj.hasOwnProperty(key)) isEmpty = false;

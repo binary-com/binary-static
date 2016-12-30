@@ -1,28 +1,26 @@
-var template = require('../../base/utility').template;
-var Cookies  = require('../../../lib/js-cookie');
-var Content  = require('../../common_functions/content').Content;
-var localize = require('../../base/localize').localize;
-var Client   = require('../../base/client').Client;
-var url_for  = require('../../base/url').url_for;
+const template = require('../../base/utility').template;
+const Cookies  = require('../../../lib/js-cookie');
+const Content  = require('../../common_functions/content').Content;
+const localize = require('../../base/localize').localize;
+const Client   = require('../../base/client').Client;
+const url_for  = require('../../base/url').url_for;
 
-var PaymentAgentWithdrawWS = (function() {
+const PaymentAgentWithdrawWS = (function() {
     'use strict';
 
-    var containerID,
+    let containerID,
         viewIDs,
         fieldIDs,
         errorClass,
         hiddenClass,
-        $views;
-
-    var formData,
-        isValid;
-
-    var withdrawCurrency,
+        $views,
+        formData,
+        isValid,
+        withdrawCurrency,
         minAmount,
         maxAmount;
 
-    var init = function() {
+    const init = function() {
         containerID = '#paymentagent_withdrawal';
         $views      = $(containerID + ' .viewItem');
         errorClass  = 'errorfield';
@@ -50,7 +48,7 @@ var PaymentAgentWithdrawWS = (function() {
             return;
         }
 
-        var residence = Cookies.get('residence');
+        const residence = Cookies.get('residence');
 
         if (Client.status_detected('withdrawal_locked, cashier_locked', 'any')) {
             lock_withdrawal('locked');
@@ -71,14 +69,14 @@ var PaymentAgentWithdrawWS = (function() {
     // -----------------------
     // ----- Agents List -----
     // -----------------------
-    var populateAgentsList = function(response) {
-        var $ddlAgents = $(fieldIDs.ddlAgents);
+    const populateAgentsList = function(response) {
+        const $ddlAgents = $(fieldIDs.ddlAgents);
         $ddlAgents.empty();
-        var paList = response.paymentagent_list.list;
+        const paList = response.paymentagent_list.list;
         if (paList.length > 0) {
             BinarySocket.send({ verify_email: Client.get_value('email'), type: 'paymentagent_withdraw' });
             insertListOption($ddlAgents, localize('Please select a payment agent'), '');
-            for (var i = 0; i < paList.length; i++) {
+            for (let i = 0; i < paList.length; i++) {
                 insertListOption($ddlAgents, paList[i].name, paList[i].paymentagent_loginid);
             }
             setActiveView(viewIDs.form);
@@ -87,23 +85,23 @@ var PaymentAgentWithdrawWS = (function() {
         }
     };
 
-    var insertListOption = function($ddlObject, itemText, itemValue) {
+    const insertListOption = function($ddlObject, itemText, itemValue) {
         $ddlObject.append($('<option/>', { value: itemValue, text: itemText }));
     };
 
     // ----------------------------
     // ----- Form Validations -----
     // ----------------------------
-    var formValidate = function() {
+    const formValidate = function() {
         clearError();
         isValid = true;
 
-        var agent  = $(fieldIDs.ddlAgents).val(),
+        const agent  = $(fieldIDs.ddlAgents).val(),
             amount = $(fieldIDs.txtAmount).val().trim(),
             desc   = $(fieldIDs.txtDesc).val().trim(),
             token  = $(fieldIDs.verificationCode).val().trim();
 
-        var letters = Content.localize().textLetters,
+        const letters = Content.localize().textLetters,
             numbers = Content.localize().textNumbers,
             space   = Content.localize().textSpace,
             period  = Content.localize().textPeriod,
@@ -150,7 +148,7 @@ var PaymentAgentWithdrawWS = (function() {
         };
     };
 
-    var isRequiredError = function(fieldID) {
+    const isRequiredError = function(fieldID) {
         if (!$(fieldID).val() || !(/.+/).test($(fieldID).val().trim())) {
             showError(fieldID, Content.errorMessage('req'));
             return true;
@@ -158,8 +156,8 @@ var PaymentAgentWithdrawWS = (function() {
         return false;
     };
 
-    /* var isCountError = function(fieldID, min, max) {
-        var fieldValue = $(fieldID).val().trim();
+    /* const isCountError = function(fieldID, min, max) {
+        const fieldValue = $(fieldID).val().trim();
         if((fieldValue.length > 0 && fieldValue.length < min) || fieldValue.length > max) {
             showError(fieldID, Content.errorMessage('range', '(' + min + '-' + max + ')'));
             return true;
@@ -171,8 +169,8 @@ var PaymentAgentWithdrawWS = (function() {
     // ----------------------------
     // ----- Withdraw Process -----
     // ----------------------------
-    var withdrawRequest = function(isDryRun) {
-        var dry_run = isDryRun ? 1 : 0;
+    const withdrawRequest = function(isDryRun) {
+        const dry_run = isDryRun ? 1 : 0;
         BinarySocket.send({
             paymentagent_withdraw: 1,
             paymentagent_loginid : formData.agent,
@@ -184,8 +182,8 @@ var PaymentAgentWithdrawWS = (function() {
         });
     };
 
-    var withdrawResponse = function(response) {
-        var responseCode = response.paymentagent_withdraw;
+    const withdrawResponse = function(response) {
+        const responseCode = response.paymentagent_withdraw;
         switch (responseCode) {
             case 2: // dry_run success: showing the confirmation page
                 setActiveView(viewIDs.confirm);
@@ -235,7 +233,7 @@ var PaymentAgentWithdrawWS = (function() {
     // -----------------------------
     // ----- Message Functions -----
     // -----------------------------
-    var showPageError = function(errMsg, id) {
+    const showPageError = function(errMsg, id) {
         $(viewIDs.error + ' > p').addClass(hiddenClass);
         if (id) {
             $(viewIDs.error + ' #' + id).removeClass(hiddenClass);
@@ -245,22 +243,22 @@ var PaymentAgentWithdrawWS = (function() {
         setActiveView(viewIDs.error);
     };
 
-    var showError = function(fieldID, errMsg) {
+    const showError = function(fieldID, errMsg) {
         $(fieldID).parent().append($('<p/>', { class: errorClass, text: errMsg }));
         isValid = false;
     };
 
-    var clearError = function(fieldID) {
+    const clearError = function(fieldID) {
         $(fieldID || viewIDs.form + ' .' + errorClass).remove();
     };
 
     // ----- View Control -----
-    var setActiveView = function(viewID) {
+    const setActiveView = function(viewID) {
         $views.addClass(hiddenClass);
         $(viewID).removeClass(hiddenClass);
     };
 
-    var lock_withdrawal = function(withdrawal_locked) {
+    const lock_withdrawal = function(withdrawal_locked) {
         if (withdrawal_locked === 'locked') {
             showPageError('', 'withdrawal-locked-error');
         } else if (!Client.get_boolean('is_virtual')) {
@@ -268,12 +266,12 @@ var PaymentAgentWithdrawWS = (function() {
         }
     };
 
-    var checkOnLoad = function() {
+    const checkOnLoad = function() {
         BinarySocket.init({
             onmessage: function(msg) {
-                var response = JSON.parse(msg.data);
+                const response = JSON.parse(msg.data);
                 if (response) {
-                    var type = response.msg_type;
+                    const type = response.msg_type;
                     switch (type) {
                         case 'authorize':
                             PaymentAgentWithdrawWS.init();

@@ -27,7 +27,7 @@ END_EXPORTS
 }
 
 sub _texts {
-    my $js = "var texts_json = {};\n";
+    my $js = "const texts_json = {};\n";
     foreach my $language (BS::all_languages()) {
         BS::set_lang($language);
 

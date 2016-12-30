@@ -1,12 +1,12 @@
-var handleResidence     = require('../../../common_functions/account_opening').handleResidence;
-var Content             = require('../../../common_functions/content').Content;
-var ValidAccountOpening = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
-var Client              = require('../../../base/client').Client;
-var url_for             = require('../../../base/url').url_for;
-var RealAccOpeningUI    = require('./real_acc_opening/real_acc_opening.ui').RealAccOpeningUI;
+const handleResidence     = require('../../../common_functions/account_opening').handleResidence;
+const Content             = require('../../../common_functions/content').Content;
+const ValidAccountOpening = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
+const Client              = require('../../../base/client').Client;
+const url_for             = require('../../../base/url').url_for;
+const RealAccOpeningUI    = require('./real_acc_opening/real_acc_opening.ui').RealAccOpeningUI;
 
-var RealAccOpening = (function() {
-    var init = function() {
+const RealAccOpening = (function() {
+    const init = function() {
         Content.populate();
         ValidAccountOpening.redirectCookie();
         handleResidence();
@@ -19,7 +19,7 @@ var RealAccOpening = (function() {
             if (RealAccOpeningUI.checkValidity()) {
                 BinarySocket.init({
                     onmessage: function(msg) {
-                        var response = JSON.parse(msg.data);
+                        const response = JSON.parse(msg.data);
                         if (response) {
                             if (response.msg_type === 'authorize' && !Client.get_boolean('is_virtual')) {
                                 window.location.href = url_for('trading');

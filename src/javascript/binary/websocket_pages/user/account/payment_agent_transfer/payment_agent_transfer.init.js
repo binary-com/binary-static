@@ -1,38 +1,23 @@
-var onlyNumericOnKeypress    = require('../../../../common_functions/event_handler').onlyNumericOnKeypress;
-var Client                   = require('../../../../base/client').Client;
-var PaymentAgentTransferData = require('./payment_agent_transfer.data').PaymentAgentTransferData;
-var PaymentAgentTransferUI   = require('./payment_agent_transfer.ui').PaymentAgentTransferUI;
+const onlyNumericOnKeypress    = require('../../../../common_functions/event_handler').onlyNumericOnKeypress;
+const Client                   = require('../../../../base/client').Client;
+const PaymentAgentTransferData = require('./payment_agent_transfer.data').PaymentAgentTransferData;
+const PaymentAgentTransferUI   = require('./payment_agent_transfer.ui').PaymentAgentTransferUI;
 
-var PaymentAgentTransfer = (function() {
-    var hiddenClass = 'invisible',
-        paymentagent;
+const PaymentAgentTransfer = (function() {
+    const hiddenClass = 'invisible';
+    let paymentagent;
 
-    function init_variable() {
+    const init_variable = function() {
         paymentagent = false;
-    }
+    };
 
-    function handleResponse(response) {
-        var type = response.msg_type;
-        if (type === 'get_settings') {
-            error_if_not_pa(response);
-        }
-
-        if (type === 'authorize' && paymentagent) {
-            PaymentAgentTransfer.init(true);
-        }
-
-        if (type === 'paymentagent_transfer') {
-            PaymentAgentTransfer.paymentAgentTransferHandler(response);
-        }
-    }
-
-    function paymentAgentTransferHandler(response) {
-        var req = response.echo_req;
+    const paymentAgentTransferHandler = function(response) {
+        const req = response.echo_req;
 
         if (response.error) {
             if (req.dry_run === 1) {
-                $('#transfer_error_client_id').removeClass(hiddenClass);
-                $('#transfer_error_client_id').text(response.error.message);
+                $('#transfer_error_client_id').removeClass(hiddenClass)
+                                              .text(response.error.message);
                 return;
             }
             PaymentAgentTransferUI.showTransferError(response.error.message);
@@ -58,40 +43,40 @@ var PaymentAgentTransfer = (function() {
 
             PaymentAgentTransferUI.updateDoneView(Client.get_value('loginid'), req.transfer_to, req.amount, req.currency);
         }
-    }
+    };
 
-    function init(auth) {
-        var $pa_form = $('#paymentagent_transfer');
-
-        var currency = Client.get_value('currency');
+    const init = function(auth) {
+        const $pa_form = $('#paymentagent_transfer'),
+            $no_bal_err = $('#no_balance_error'),
+            currency = Client.get_value('currency');
 
         if (auth && !currency) {
-            $('#no_balance_error').removeClass(hiddenClass);
+            $no_bal_err.removeClass(hiddenClass);
             $pa_form.addClass(hiddenClass);
 
             return;
         }
 
-        $('#no_balance_error').addClass(hiddenClass);
+        $no_bal_err.addClass(hiddenClass);
         $pa_form.removeClass(hiddenClass);
         $('#paymentagent_transfer_notes').removeClass('invisible');
 
         PaymentAgentTransferUI.updateFormView(currency);
 
-        var $submitFormButton = $pa_form.find('button#submit');
-        var $clientIDInput = $pa_form.find('input#client_id');
-        var $amountInput = $pa_form.find('input[name="amount"]');
+        const $submitFormButton = $pa_form.find('button#submit');
+        const $clientIDInput = $pa_form.find('input#client_id');
+        const $amountInput = $pa_form.find('input[name="amount"]');
 
-        var $clientIDError = $('#transfer_error_client_id');
-        var $amountError = $('#transfer_error_amount');
-        var $insufficientBalError = $('#insufficient-balance-error');
+        const $clientIDError = $('#transfer_error_client_id');
+        const $amountError = $('#transfer_error_amount');
+        const $insufficientBalError = $('#insufficient-balance-error');
 
-        var $paConfirmTransferButton = $('#pa_confirm_transfer #confirm_transfer');
-        var $paConfirmBackButton = $('#back_transfer');
+        const $paConfirmTransferButton = $('#pa_confirm_transfer').find('#confirm_transfer');
+        const $paConfirmBackButton = $('#back_transfer');
 
         $submitFormButton.click(function() {
-            var clientID = $clientIDInput.val();
-            var amount = $amountInput.val();
+            const clientID = $clientIDInput.val();
+            const amount = $amountInput.val();
 
             if (!clientID) {
                 $clientIDError.removeClass(hiddenClass);
@@ -115,7 +100,7 @@ var PaymentAgentTransfer = (function() {
                 return;
             }
 
-            var bal = +(Client.get_value('balance'));
+            const bal = +(Client.get_value('balance'));
             if (amount > bal) {
                 $insufficientBalError.removeClass(hiddenClass);
                 return;
@@ -126,8 +111,8 @@ var PaymentAgentTransfer = (function() {
 
         $paConfirmTransferButton.click(function() {
             $paConfirmTransferButton.attr('disabled', 'disabled');
-            var clientID = $clientIDInput.val();
-            var amount = $amountInput.val();
+            const clientID = $clientIDInput.val();
+            const amount = $amountInput.val();
             PaymentAgentTransferData.transfer(clientID, currency, amount, false);
         });
 
@@ -156,17 +141,17 @@ var PaymentAgentTransfer = (function() {
                 $submitFormButton.click();
             }
         });
-    }
+    };
 
-    function error_if_virtual() {
+    const error_if_virtual = function() {
         if (Client.get_boolean('is_virtual')) {
             $('#virtual_error').removeClass('invisible');
             return true;
         }
         return false;
-    }
+    };
 
-    function error_if_not_pa(response) {
+    const error_if_not_pa = function(response) {
         if (response.get_settings.hasOwnProperty('is_authenticated_payment_agent') && response.get_settings.is_authenticated_payment_agent === 0) {
             $('#not_pa_error').removeClass('invisible');
         } else if (!error_if_virtual() && response.get_settings.is_authenticated_payment_agent) {
@@ -175,7 +160,22 @@ var PaymentAgentTransfer = (function() {
             paymentagent = true;
             PaymentAgentTransfer.init(true);
         }
-    }
+    };
+
+    const handleResponse = function(response) {
+        const type = response.msg_type;
+        if (type === 'get_settings') {
+            error_if_not_pa(response);
+        }
+
+        if (type === 'authorize' && paymentagent) {
+            PaymentAgentTransfer.init(true);
+        }
+
+        if (type === 'paymentagent_transfer') {
+            PaymentAgentTransfer.paymentAgentTransferHandler(response);
+        }
+    };
 
     return {
         init                       : init,

@@ -1,68 +1,65 @@
-var template   = require('../../../base/utility').template;
-var LocalStore = require('../../../base/storage').LocalStore;
-var Client     = require('../../../base/client').Client;
-var moment     = require('moment');
+const template   = require('../../../base/utility').template;
+const LocalStore = require('../../../base/storage').LocalStore;
+const Client     = require('../../../base/client').Client;
+const moment     = require('moment');
 
-var RealityCheckData = (function() {
+const RealityCheckData = (function() {
     'use strict';
 
-    var defaultInterval = 600000;
-    var durationTemplateString = '[_1] days [_2] hours [_3] minutes';
-    var tradingTimeTemplate = 'Your trading statistics since [_1].';
+    const defaultInterval = 600000;
+    const durationTemplateString = '[_1] days [_2] hours [_3] minutes';
+    const tradingTimeTemplate = 'Your trading statistics since [_1].';
 
-    function getSummaryAsync() {
+    const getSummaryAsync = function() {
         BinarySocket.send({ reality_check: 1 });
-    }
+    };
 
-    function getAck() {
+    const getAck = function() {
         return LocalStore.get('reality_check.ack');
-    }
+    };
 
-    function setOpenSummaryFlag() {
+    const setOpenSummaryFlag = function() {
         LocalStore.set('reality_check.keep_open', 1);
-    }
+    };
 
-    function getOpenSummaryFlag() {
+    const getOpenSummaryFlag = function() {
         return LocalStore.get('reality_check.keep_open');
-    }
+    };
 
-    function triggerCloseEvent() {
+    const triggerCloseEvent = function() {
         LocalStore.set('reality_check.keep_open', 0);
-    }
+    };
 
-    function updateAck() {
+    const updateAck = function() {
         LocalStore.set('reality_check.ack', 1);
-    }
+    };
 
-    function getInterval() {
+    const getInterval = function() {
         return LocalStore.get('reality_check.interval');
-    }
+    };
 
-    function getPreviousLoadLoginId() {
+    const getPreviousLoadLoginId = function() {
         return LocalStore.get('reality_check.loginid');
-    }
+    };
 
-    function setPreviousLoadLoginId() {
-        var id = Client.get_value('loginid');
+    const setPreviousLoadLoginId = function() {
+        const id = Client.get_value('loginid');
         LocalStore.set('reality_check.loginid', id);
-    }
+    };
 
-    function updateInterval(ms) {
+    const updateInterval = function(ms) {
         LocalStore.set('reality_check.interval', ms);
-    }
+    };
 
-    function clear() {
+    const clear = function() {
         LocalStore.remove('reality_check.ack');
         LocalStore.remove('reality_check.interval');
         LocalStore.remove('reality_check.keep_open');
-        LocalStore.remove('reality_check.close');
-        LocalStore.remove('reality_check.svrtime');
-        LocalStore.remove('reality_check.basetime');
-    }
+    };
 
-    function resetInvalid() {
-        var ack = LocalStore.get('reality_check.ack');
-        var interval = +(LocalStore.get('reality_check.interval'));
+    const resetInvalid = function() {
+        const ack = LocalStore.get('reality_check.ack');
+        const interval = +(LocalStore.get('reality_check.interval'));
         if (ack !== '0' && ack !== '1') {
             LocalStore.set('reality_check.ack', 0);
         }
@@ -70,23 +67,23 @@ var RealityCheckData = (function() {
         if (!interval) {
             LocalStore.set('reality_check.interval', defaultInterval);
         }
-    }
+    };
 
-    function summaryData(wsData) {
-        var startTime = moment.utc(new Date(wsData.start_time * 1000));
-        var currentTime = moment.utc();
+    const summaryData = function(wsData) {
+        const startTime = moment.utc(new Date(wsData.start_time * 1000));
+        const currentTime = moment.utc();
 
-        var sessionDuration = moment.duration(currentTime.diff(startTime));
-        var durationString = template(durationTemplateString, [
+        const sessionDuration = moment.duration(currentTime.diff(startTime));
+        const durationString = template(durationTemplateString, [
             sessionDuration.get('days'),
             sessionDuration.get('hours'),
             sessionDuration.get('minutes'),
         ]);
 
-        var turnover = +(wsData.buy_amount) + (+(wsData.sell_amount));
-        var profitLoss = +(wsData.sell_amount) - (+(wsData.buy_amount));
+        const turnover = +(wsData.buy_amount) + (+(wsData.sell_amount));
+        const profitLoss = +(wsData.sell_amount) - (+(wsData.buy_amount));
 
-        var startTimeString = template(tradingTimeTemplate, [startTime.format('YYYY-MM-DD HH:mm:ss') + ' GMT']);
+        const startTimeString = template(tradingTimeTemplate, [startTime.format('YYYY-MM-DD HH:mm:ss') + ' GMT']);
         return {
             startTimeString: startTimeString,
             loginTime      : startTime.format('YYYY-MM-DD HH:mm:ss') + ' GMT',
@@ -101,7 +98,7 @@ var RealityCheckData = (function() {
             openContracts  : wsData.open_contract_count,
             potentialProfit: (+(wsData.potential_profit)).toFixed(2),
         };
-    }
+    };
 
     return {
         getSummaryAsync       : getSummaryAsync,

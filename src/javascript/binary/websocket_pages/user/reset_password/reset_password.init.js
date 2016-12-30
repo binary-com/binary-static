@@ -1,47 +1,46 @@
-var Login             = require('../../../base/login').Login;
-var isValidDate       = require('../../../common_functions/common_functions').isValidDate;
-var Content           = require('../../../common_functions/content').Content;
-var generateBirthDate = require('../../../common_functions/attach_dom/birth_date_dropdown').generateBirthDate;
-var japanese_client   = require('../../../common_functions/country_base').japanese_client;
-var passwordValid     = require('../../../common_functions/validation').passwordValid;
-var showPasswordError = require('../../../common_functions/validation').showPasswordError;
-var localize = require('../../../base/localize').localize;
+const Login             = require('../../../base/login').Login;
+const isValidDate       = require('../../../common_functions/common_functions').isValidDate;
+const Content           = require('../../../common_functions/content').Content;
+const generateBirthDate = require('../../../common_functions/attach_dom/birth_date_dropdown').generateBirthDate;
+const japanese_client   = require('../../../common_functions/country_base').japanese_client;
+const passwordValid     = require('../../../common_functions/validation').passwordValid;
+const showPasswordError = require('../../../common_functions/validation').showPasswordError;
+const localize = require('../../../base/localize').localize;
 
-var ResetPassword = (function () {
+const ResetPassword = (function () {
     'use strict';
 
-    var hiddenClass = 'invisible';
-    var resetErrorTemplate = '[_1]' +
+    const hiddenClass = 'invisible';
+    const resetErrorTemplate = '[_1]' +
         ' Please click the link below to restart the password recovery process. ' +
         'If you require further assistance, please contact our Customer Support.';
-    var dobdd,
+    let dobdd,
         dobmm,
         dobyy;
 
-    function submitResetPassword() {
-        var token = $('#verification-code').val();
-        var pw1 = $('#reset-password1').val();
-        var pw2 = $('#reset-password2').val();
+    const submitResetPassword = function() {
+        const token = $('#verification-code').val();
+        const pw1 = $('#reset-password1').val();
+        const pw2 = $('#reset-password2').val();
 
         if (token.length < 48) {
             $('#verification-error').removeClass(hiddenClass).text(localize('Verification code format incorrect.'));
             return;
         }
-
+        const $pw_err1 = $('#password-error1');
         if (!pw1) {                                         // password not entered
-            $('#password-error1').empty();
-            $('#password-error1').append('<p></p>', { class: 'errorfield' }).text(Content.localize().textMessageRequired);
-            $('#password-error1').removeClass(hiddenClass);
+            $pw_err1.empty()
+                    .append('<p></p>', { class: 'errorfield' }).text(Content.localize().textMessageRequired)
+                    .removeClass(hiddenClass);
             return;
         } else if (!passwordValid(pw1)) {                   // password failed validation
-            var errMsgs = showPasswordError(pw1);
-            $('#password-error1').empty();
+            const errMsgs = showPasswordError(pw1);
+            $pw_err1.empty();
             errMsgs.forEach(function(msg) {
-                var $errP = $('<p></p>', { class: 'errorfield' }).text(msg);
-                $('#password-error1').append($errP);
+                const $errP = $('<p></p>', { class: 'errorfield' }).text(msg);
+                $pw_err1.append($errP);
             });
-
-            $('#password-error1').removeClass(hiddenClass);
+            $pw_err1.removeClass(hiddenClass);
             return;
         }
 
@@ -59,7 +58,7 @@ var ResetPassword = (function () {
             return;
         }
 
-        var dobEntered = dobdd && dobmm && dobyy;
+        const dobEntered = dobdd && dobmm && dobyy;
         if (dobEntered) {
             if (!isValidDate(dobdd, dobmm, dobyy)) {
                 $('#dob-error').removeClass(hiddenClass).text(localize('Invalid format for date of birth.'));
@@ -81,15 +80,15 @@ var ResetPassword = (function () {
             });
             $('#reset').prop('disabled', true);
         }
-    }
+    };
 
-    function hideError() {
+    const hideError = function() {
         $('.errorfield').addClass(hiddenClass);
-    }
+    };
 
-    function resetPasswordWSHandler(msg) {
-        var response = JSON.parse(msg.data);
-        var type = response.msg_type;
+    const resetPasswordWSHandler = function(msg) {
+        const response = JSON.parse(msg.data);
+        const type = response.msg_type;
 
         if (type === 'reset_password') {
             $('#reset').prop('disabled', true);
@@ -100,7 +99,7 @@ var ResetPassword = (function () {
                 $('#reset-error').removeClass(hiddenClass);
 
                 // special handling as backend return inconsistent format
-                var errMsg = localize(resetErrorTemplate, [
+                const errMsg = localize(resetErrorTemplate, [
                     response.error.code === 'InputValidationFailed' ?
                         localize('Token has expired.') :
                         localize(response.error.message),
@@ -116,23 +115,27 @@ var ResetPassword = (function () {
                 }, 5000);
             }
         }
-    }
+    };
 
-    function haveRealAccountHandler() {
-        var isChecked = $('#have-real-account').is(':checked');
+    const haveRealAccountHandler = function() {
+        const isChecked = $('#have-real-account').is(':checked');
 
         dobdd = undefined;
         dobmm = undefined;
         dobyy = undefined;
 
+        const $dobyy = $('#dobyy'),
+            $dobmm = $('#dobmm'),
+            $dobdd = $('#dobdd');
+
         if (japanese_client()) {
-            $('#dobyy').val($('#dobyy option:first').val());
-            $('#dobmm').val($('#dobmm option:first').val());
-            $('#dobdd').val($('#dobdd option:first').val());
+            $dobyy.val($dobyy.find('option:first').val());
+            $dobmm.val($dobmm.find('option:first').val());
+            $dobdd.val($dobdd.find('option:first').val());
         } else {
-            $('#dobdd').val('');
-            $('#dobmm').val('');
-            $('#dobyy').val('');
+            $dobdd.val('');
+            $dobmm.val('');
+            $dobyy.val('');
         }
 
         if (isChecked) {
@@ -140,21 +143,21 @@ var ResetPassword = (function () {
         } else {
             $('#dob-field').addClass(hiddenClass);
         }
-    }
+    };
 
-    function onDOBChange() {
+    const onDOBChange = function() {
         dobdd = $('#dobdd').val();
         dobmm = $('#dobmm').val();
         dobyy = $('#dobyy').val();
-    }
+    };
 
-    function onEnterKey(e) {
+    const onEnterKey = function(e) {
         if (e.which === 13) {
             submitResetPassword();
         }
-    }
+    };
 
-    function init() {
+    const init = function() {
         $('#reset_passwordws').removeClass('invisible');
         Content.populate();
         if (japanese_client()) {
@@ -180,7 +183,7 @@ var ResetPassword = (function () {
             hideError();
             onDOBChange();
         });
-    }
+    };
 
     return {
         resetPasswordWSHandler: resetPasswordWSHandler,

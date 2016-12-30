@@ -1,7 +1,7 @@
-var CookieStorage = require('../base/storage').CookieStorage;
-var Url    = require('../base/url').Url;
-var url    = require('../base/url').url;
-var Client = require('../base/client').Client;
+const CookieStorage = require('../base/storage').CookieStorage;
+const Url           = require('../base/url').Url;
+const url           = require('../base/url').url;
+const Client        = require('../base/client').Client;
 
 /*
  * Handles utm parameters/referrer to use on signup
@@ -13,43 +13,43 @@ var Client = require('../base/client').Client;
  *
  */
 
-var TrafficSource = (function() {
+const TrafficSource = (function() {
     'use strict';
 
-    var cookie,
-        expire_months = 3;
+    let cookie;
+    const expire_months = 3;
 
-    var initCookie = function() {
+    const initCookie = function() {
         if (!cookie) {
             cookie = new CookieStorage('utm_data');
             cookie.read();
             // expiration date is used when writing cookie
-            var now = new Date();
+            const now = new Date();
             cookie.expires = now.setMonth(now.getMonth() + expire_months);
         }
     };
 
-    var getData = function() {
+    const getData = function() {
         initCookie();
-        var data = cookie.value;
+        const data = cookie.value;
         Object.keys(data).map(function(key) {
             data[key] = (data[key] || '').replace(/[^a-zA-Z0-9\s\-\.\_]/gi, '').substring(0, 100);
         });
         return data;
     };
 
-    var getSource = function(utm_data) {
+    const getSource = function(utm_data) {
         if (!utm_data) utm_data = getData();
         return utm_data.utm_source || utm_data.referrer || 'direct'; // in order of precedence
     };
 
-    var setData = function() {
+    const setData = function() {
         if (Client.get_boolean('is_logged_in')) {
             clearData();
             return;
         }
 
-        var current_values = getData(),
+        const current_values = getData(),
             params = url.params_hash(),
             param_keys = ['utm_source', 'utm_medium', 'utm_campaign'];
 
@@ -61,8 +61,8 @@ var TrafficSource = (function() {
             });
         }
 
-        var doc_ref  = document.referrer,
-            referrer = localStorage.getItem('index_referrer') || doc_ref;
+        const doc_ref  = document.referrer;
+        let referrer = localStorage.getItem('index_referrer') || doc_ref;
         localStorage.removeItem('index_referrer');
         if (doc_ref && !(new RegExp(window.location.hostname, 'i')).test(doc_ref)) {
             referrer = doc_ref;
@@ -72,7 +72,7 @@ var TrafficSource = (function() {
         }
     };
 
-    var clearData = function() {
+    const clearData = function() {
         initCookie();
         cookie.remove();
     };

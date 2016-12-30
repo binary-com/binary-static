@@ -1,31 +1,31 @@
-var email_rot13    = require('../common_functions/common_functions').email_rot13;
-var loadCSS        = require('../../lib/loadCSS').loadCSS;
-var loadJS         = require('../../lib/loadJS').loadJS;
-var getLanguage    = require('../base/language').getLanguage;
-var url_for_static = require('../base/url').url_for_static;
+const email_rot13    = require('../common_functions/common_functions').email_rot13;
+const loadCSS        = require('../../lib/loadCSS').loadCSS;
+const loadJS         = require('../../lib/loadJS').loadJS;
+const getLanguage    = require('../base/language').getLanguage;
+const url_for_static = require('../base/url').url_for_static;
 
-var Contact = (function() {
-    var init = function() {
+const Contact = (function() {
+    const init = function() {
         $('#faq_url').attr('href', 'https://binary.desk.com/customer/' + getLanguage() + '/portal/articles');
         display_cs_contacts();
         show_live_chat_icon();
     };
 
-    var display_cs_contacts = function() {
+    const display_cs_contacts = function() {
         $('.contact-content').on('change', '#cs_telephone_number', function () {
-            var val = $(this).val().split(',');
+            const val = $(this).val().split(',');
             $('#display_cs_telephone').html(val[0] + (val.length > 1 ? '<br />' + val[1] : ''));
         });
         $('#cs_contact_eaddress').html(email_rot13('<n uers=\"znvygb:fhccbeg@ovanel.pbz\" ery=\"absbyybj\">fhccbeg@ovanel.pbz</n>'));
     };
 
-    var show_live_chat_icon = function() {
+    const show_live_chat_icon = function() {
         if (typeof DESK === 'undefined') {
             loadCSS('https://d3jyn100am7dxp.cloudfront.net/assets/widget_embed_191.cssgz?1367387331');
             loadJS('https://d3jyn100am7dxp.cloudfront.net/assets/widget_embed_libraries_191.jsgz?1367387332');
         }
 
-        var desk_load = setInterval(function() {
+        const desk_load = setInterval(function() {
             if (typeof DESK !== 'undefined') {
                 render_desk_widget();
                 change_chat_icon();
@@ -34,7 +34,7 @@ var Contact = (function() {
         }, 80);
     };
 
-    var render_desk_widget = function() {
+    const render_desk_widget = function() {
         new DESK.Widget({
             version    : 1,
             site       : 'binary.desk.com',
@@ -76,15 +76,15 @@ var Contact = (function() {
         }).render();
     };
 
-    var change_chat_icon = function () {
+    const change_chat_icon = function () {
       // desk.com change icon - crude way
-        var len = $('#live-chat-icon').length;
+        const len = $('#live-chat-icon').length;
         if (len > 0) {
-            var timer = null;
-            var updateIcon =  function () {
-                var image_url = url_for_static('images/pages/contact/chat-icon.svg');
-                var desk_widget = $('.a-desk-widget');
-                var image_str = desk_widget.css('background-image');
+            let timer = null;
+            const updateIcon =  function () {
+                const image_url = url_for_static('images/pages/contact/chat-icon.svg');
+                const desk_widget = $('.a-desk-widget');
+                const image_str = desk_widget.css('background-image');
                 if (image_str) {
                     desk_widget.css({
                         'background-image': 'url("' + image_url + '")',

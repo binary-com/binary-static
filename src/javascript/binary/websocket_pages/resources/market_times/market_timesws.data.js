@@ -1,10 +1,10 @@
-var japanese_client = require('../../../common_functions/country_base').japanese_client;
+const japanese_client = require('../../../common_functions/country_base').japanese_client;
 
-var MarketTimesData = (function() {
+const MarketTimesData = (function() {
     'use strict';
 
-    var sendRequest = function(date, shouldRequestActiveSymbols) {
-        var req = { active_symbols: 'brief' };
+    const sendRequest = function(date, shouldRequestActiveSymbols) {
+        const req = { active_symbols: 'brief' };
         if (japanese_client()) {
             req.landing_company = 'japan';
         }
