@@ -1,3 +1,5 @@
+var getLanguage = require('../binary/base/language').getLanguage;
+
 /**!
  * PJAX- Standalone (+ several custom changes for binary.com)
  *
@@ -416,7 +418,7 @@
 		};
 		// Secret pjax ?get param so browser doesn't return pjax content from cache when we don't want it to
 		// Switch between ? and & so as not to break any URL params (Based on change by zmasek https://github.com/zmasek/)
-		var lang = page.language();
+		var lang = getLanguage();
 		xmlhttp.open("GET", location.replace(new RegExp('\/' + lang + '\/', 'i'), '/' + lang.toLowerCase() + '/pjax/'), true);
 		// Add headers so things can tell the request is being performed via AJAX.
 		xmlhttp.setRequestHeader('X-PJAX', 'true'); // PJAX header

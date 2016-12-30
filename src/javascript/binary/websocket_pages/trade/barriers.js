@@ -21,15 +21,15 @@ var Barriers = (function () {
         var barriers = Contract.barriers()[Defaults.get('underlying')],
             formName = Contract.form();
 
-        if (barriers && formName && Defaults.get('formname')!=='risefall') {
+        if (barriers && formName && Defaults.get('formname') !== 'risefall') {
             var barrier = barriers[formName];
-            if(barrier) {
-                var unit = document.getElementById('duration_units'),
-                    end_time = document.getElementById('expiry_date'),
-                    currentTick = Tick.quote(),
-                    indicativeBarrierTooltip = document.getElementById('indicative_barrier_tooltip'),
+            if (barrier) {
+                var unit                         = document.getElementById('duration_units'),
+                    end_time                     = document.getElementById('expiry_date'),
+                    indicativeBarrierTooltip     = document.getElementById('indicative_barrier_tooltip'),
                     indicativeHighBarrierTooltip = document.getElementById('indicative_high_barrier_tooltip'),
-                    indicativeLowBarrierTooltip = document.getElementById('indicative_low_barrier_tooltip'),
+                    indicativeLowBarrierTooltip  = document.getElementById('indicative_low_barrier_tooltip'),
+                    currentTick   = Tick.quote(),
                     decimalPlaces = countDecimalPlaces(currentTick);
 
                 if (barrier.count === 1) {
@@ -37,37 +37,37 @@ var Barriers = (function () {
                     document.getElementById('low_barrier_row').style.display = 'none';
                     document.getElementById('barrier_row').setAttribute('style', '');
 
-                    var defaults_barrier = Defaults.get('barrier');
-                    var barrier_def = defaults_barrier && !isNaN(defaults_barrier) ? defaults_barrier : barrier['barrier'];
-                    var elm = document.getElementById('barrier'),
+                    var defaults_barrier = Defaults.get('barrier'),
+                        barrier_def = defaults_barrier && !isNaN(defaults_barrier) ? defaults_barrier : barrier.barrier,
+                        elm     = document.getElementById('barrier'),
                         tooltip = document.getElementById('barrier_tooltip'),
-                        span = document.getElementById('barrier_span');
+                        span    = document.getElementById('barrier_span'),
+                        value;
                     if ((unit && isVisible(unit) && unit.value === 'd') ||
-                        (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(),'day')) ||
-                        !String(barrier['barrier']).match(/^[+-]/)) {
+                        (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day')) ||
+                        !String(barrier.barrier).match(/^[+-]/)) {
                         if (currentTick && !isNaN(currentTick) && String(barrier_def).match(/^[+-]/)) {
-                            elm.value = (parseFloat(currentTick) + parseFloat(barrier_def)).toFixed(decimalPlaces);
-                            elm.textContent = (parseFloat(currentTick) + parseFloat(barrier_def)).toFixed(decimalPlaces);
+                            value = (parseFloat(currentTick) + parseFloat(barrier_def)).toFixed(decimalPlaces);
                         } else {
-                            elm.value = parseFloat(barrier_def);
-                            elm.textContent = parseFloat(barrier_def);
+                            value = parseFloat(barrier_def);
                         }
                         tooltip.style.display = 'none';
                         span.style.display = 'inherit';
                         // no need to display indicative barrier in case of absolute barrier
                         indicativeBarrierTooltip.textContent = '';
                     } else {
-                        if(!String(barrier_def).match(/^[+-]/)) barrier_def = barrier['barrier']; // override Defaults value, because it's changing from absolute to relative barrier
-                        elm.value = barrier_def;
-                        elm.textContent = barrier_def;
+                        if (!String(barrier_def).match(/^[+-]/)) barrier_def = barrier.barrier; // override Defaults value, because it's changing from absolute to relative barrier
+                        value = barrier_def;
                         span.style.display = 'none';
                         tooltip.style.display = 'inherit';
                         if (currentTick && !isNaN(currentTick)) {
-                            indicativeBarrierTooltip.textContent = (parseFloat(currentTick) + parseFloat(barrier_def)).toFixed(decimalPlaces);
+                            indicativeBarrierTooltip.textContent = (parseFloat(currentTick) +
+                                parseFloat(barrier_def)).toFixed(decimalPlaces);
                         } else {
                             indicativeBarrierTooltip.textContent = '';
                         }
                     }
+                    elm.value = elm.textContent = value;
                     Defaults.set('barrier', elm.value);
                     Defaults.remove('barrier_high', 'barrier_low');
                     Barriers.validateBarrier();
@@ -77,51 +77,45 @@ var Barriers = (function () {
                     document.getElementById('high_barrier_row').setAttribute('style', '');
                     document.getElementById('low_barrier_row').setAttribute('style', '');
 
-                    var high_elm = document.getElementById('barrier_high'),
-                        low_elm = document.getElementById('barrier_low'),
+                    var high_elm     = document.getElementById('barrier_high'),
+                        low_elm      = document.getElementById('barrier_low'),
                         high_tooltip = document.getElementById('barrier_high_tooltip'),
-                        high_span = document.getElementById('barrier_high_span'),
-                        low_tooltip = document.getElementById('barrier_low_tooltip'),
-                        low_span = document.getElementById('barrier_low_span');
+                        high_span    = document.getElementById('barrier_high_span'),
+                        low_tooltip  = document.getElementById('barrier_low_tooltip'),
+                        low_span     = document.getElementById('barrier_low_span');
 
-                    var defaults_barrier_high = Defaults.get('barrier_high'), defaults_barrier_low = Defaults.get('barrier_low');
-                    var barrier_high = defaults_barrier_high && !isNaN(defaults_barrier_high) ? defaults_barrier_high : barrier['barrier'],
-                        barrier_low  = defaults_barrier_low  && !isNaN(defaults_barrier_low)  ? defaults_barrier_low  : barrier['barrier1'];
+                    var defaults_high = Defaults.get('barrier_high'),
+                        defaults_low  = Defaults.get('barrier_low'),
+                        barrier_high  = defaults_high && !isNaN(defaults_high) ? defaults_high : barrier.barrier,
+                        barrier_low   = defaults_low  && !isNaN(defaults_low)  ? defaults_low  : barrier.barrier1,
+                        value_high,
+                        value_low;
                     if ((unit && isVisible(unit) && unit.value === 'd') ||
-                        (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(),'day')) ||
-                        !String(barrier['barrier']).match(/^[+-]/)) {
+                        (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day')) ||
+                        !String(barrier.barrier).match(/^[+-]/)) {
                         if (currentTick && !isNaN(currentTick) && String(barrier_high).match(/^[+-]/)) {
-                            high_elm.value = (parseFloat(currentTick) + parseFloat(barrier_high)).toFixed(decimalPlaces);
-                            high_elm.textContent = (parseFloat(currentTick) + parseFloat(barrier_high)).toFixed(decimalPlaces);
-
-                            low_elm.value = (parseFloat(currentTick) + parseFloat(barrier_low)).toFixed(decimalPlaces);
-                            low_elm.textContent = (parseFloat(currentTick) + parseFloat(barrier_low)).toFixed(decimalPlaces);
+                            value_high = (parseFloat(currentTick) + parseFloat(barrier_high)).toFixed(decimalPlaces);
+                            value_low  = (parseFloat(currentTick) + parseFloat(barrier_low)).toFixed(decimalPlaces);
                         } else {
-                            high_elm.value = parseFloat(barrier_high);
-                            high_elm.textContent = parseFloat(barrier_high);
-
-                            low_elm.value = parseFloat(barrier_low);
-                            low_elm.textContent = parseFloat(barrier_low);
+                            value_high = parseFloat(barrier_high);
+                            value_low  = parseFloat(barrier_low);
                         }
 
-                        high_tooltip.style.display = 'none';
                         high_span.style.display = 'inherit';
-                        low_tooltip.style.display = 'none';
+                        high_tooltip.style.display = 'none';
                         low_span.style.display = 'inherit';
+                        low_tooltip.style.display = 'none';
 
                         indicativeHighBarrierTooltip.textContent = '';
                         indicativeLowBarrierTooltip.textContent = '';
                     } else {
                         // override Defaults value, if it's changing from absolute to relative barrier
-                        if(!String(barrier_high).match(/^[+-]/) || !String(barrier_low).match(/^[+-]/)) {
-                            barrier_high = barrier['barrier'];
-                            barrier_low  = barrier['barrier1'];
+                        if (!String(barrier_high).match(/^[+-]/) || !String(barrier_low).match(/^[+-]/)) {
+                            barrier_high = barrier.barrier;
+                            barrier_low  = barrier.barrier1;
                         }
-                        high_elm.value = barrier_high;
-                        high_elm.textContent = barrier_high;
-
-                        low_elm.value = barrier_low;
-                        low_elm.textContent = barrier_low;
+                        value_high = barrier_high;
+                        value_low  = barrier_low;
 
                         high_span.style.display = 'none';
                         high_tooltip.style.display = 'inherit';
@@ -129,13 +123,18 @@ var Barriers = (function () {
                         low_tooltip.style.display = 'inherit';
 
                         if (currentTick && !isNaN(currentTick)) {
-                            indicativeHighBarrierTooltip.textContent = (parseFloat(currentTick) + parseFloat(barrier_high)).toFixed(decimalPlaces);
-                            indicativeLowBarrierTooltip.textContent = (parseFloat(currentTick) + parseFloat(barrier_low)).toFixed(decimalPlaces);
+                            var high_tip = (parseFloat(currentTick) + parseFloat(barrier_high)).toFixed(decimalPlaces),
+                                low_tip  = (parseFloat(currentTick) + parseFloat(barrier_low)).toFixed(decimalPlaces);
+                            indicativeHighBarrierTooltip.textContent = high_tip;
+                            indicativeLowBarrierTooltip.textContent = low_tip;
                         } else {
                             indicativeHighBarrierTooltip.textContent = '';
                             indicativeLowBarrierTooltip.textContent = '';
                         }
                     }
+                    high_elm.value = high_elm.textContent = value_high;
+                    low_elm.value  = low_elm.textContent  = value_low;
+
                     Defaults.set('barrier_high', high_elm.value);
                     Defaults.set('barrier_low', low_elm.value);
                     Defaults.remove('barrier');
@@ -145,15 +144,16 @@ var Barriers = (function () {
         }
 
         var elements = document.getElementsByClassName('barrier_class');
-        for (var i = 0; i < elements.length; i++){
+        for (var i = 0; i < elements.length; i++) {
             elements[i].style.display = 'none';
         }
         Defaults.remove('barrier', 'barrier_high', 'barrier_low');
     };
 
     var validateBarrier = function() {
-        var barrierElement = document.getElementById('barrier');
-        if(isVisible(barrierElement) && (isNaN(parseFloat(barrierElement.value)) || parseFloat(barrierElement.value) === 0)) {
+        var barrierElement = document.getElementById('barrier'),
+            empty = isNaN(parseFloat(barrierElement.value)) || parseFloat(barrierElement.value) === 0;
+        if (isVisible(barrierElement) && empty) {
             barrierElement.value = '0';
             barrierElement.classList.add('error-field');
         } else {
@@ -162,12 +162,12 @@ var Barriers = (function () {
     };
 
     return {
-        display: display,
+        display         : display,
         isBarrierUpdated: function () { return isBarrierUpdated; },
         setBarrierUpdate: function (flag) {
             isBarrierUpdated = flag;
         },
-        validateBarrier: validateBarrier
+        validateBarrier: validateBarrier,
     };
 })();
 

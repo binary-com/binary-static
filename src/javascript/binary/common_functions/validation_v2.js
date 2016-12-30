@@ -2,10 +2,11 @@ var template = require('../base/utility').template;
 var moment   = require('moment');
 var dv       = require('../../lib/validation');
 var Content  = require('./content').Content;
+var localize = require('../base/localize').localize;
 
 var ValidateV2 = (function() {
     function err() {
-        return Content.errorMessage.apply(Content, arguments);
+        return Content.errorMessage(...arguments);
     }
 
     // We don't have access to the localised messages at the init-time
@@ -20,32 +21,32 @@ var ValidateV2 = (function() {
     }
 
     function local(value) {
-        return {unwrap: function() { return page.text.localize(value); }};
+        return { unwrap: function() { return localize(value); } };
     }
 
     function localKey(value) {
-        return {unwrap: function() { return Content.localize()[value]; }};
+        return { unwrap: function() { return Content.localize()[value]; } };
     }
 
     function msg() {
         var args = [].slice.call(arguments);
-        return {unwrap: function() {
-            return err.apply(null, args.map(unwrap));
-        }};
+        return { unwrap: function() {
+            return err(...args.map(unwrap));
+        } };
     }
 
-    function check(fn, err) {
+    function check(fn, error) {
         return function(value) {
             return fn(value) ?
                 dv.ok(value) :
-                dv.fail(unwrap(err));
+                dv.fail(unwrap(error));
         };
     }
 
     // TEST THESE
     function validEmail(email) {
-        var regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/;
-        return regex.test(email);
+        var regexp = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/;
+        return regexp.test(email);
     }
 
     function notEmpty(value) {
@@ -114,13 +115,13 @@ var ValidateV2 = (function() {
     }
 
     return {
-        err: err,
-        momentFmt: momentFmt,
-        required:  required,
-        password:  password,
-        email:     email,
-        token:     token,
-        regex:     regex,
+        err        : err,
+        momentFmt  : momentFmt,
+        required   : required,
+        password   : password,
+        email      : email,
+        token      : token,
+        regex      : regex,
         lengthRange: lengthRange,
     };
 })();

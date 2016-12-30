@@ -1,4 +1,7 @@
 var CookieStorage = require('../base/storage').CookieStorage;
+var Url    = require('../base/url').Url;
+var url    = require('../base/url').url;
+var Client = require('../base/client').Client;
 
 /*
  * Handles utm parameters/referrer to use on signup
@@ -10,7 +13,7 @@ var CookieStorage = require('../base/storage').CookieStorage;
  *
  */
 
-var TrafficSource = (function(){
+var TrafficSource = (function() {
     'use strict';
 
     var cookie,
@@ -41,10 +44,13 @@ var TrafficSource = (function(){
     };
 
     var setData = function() {
-        if (page.client.is_logged_in) return clearData();
+        if (Client.get_boolean('is_logged_in')) {
+            clearData();
+            return;
+        }
 
         var current_values = getData(),
-            params = page.url.params_hash(),
+            params = url.params_hash(),
             param_keys = ['utm_source', 'utm_medium', 'utm_campaign'];
 
         if (params.utm_source) { // url params can be stored only if utm_source is available
@@ -58,11 +64,11 @@ var TrafficSource = (function(){
         var doc_ref  = document.referrer,
             referrer = localStorage.getItem('index_referrer') || doc_ref;
         localStorage.removeItem('index_referrer');
-        if(doc_ref && !(new RegExp(window.location.hostname, 'i')).test(doc_ref)) {
+        if (doc_ref && !(new RegExp(window.location.hostname, 'i')).test(doc_ref)) {
             referrer = doc_ref;
         }
-        if(referrer && !current_values.referrer && !params.utm_source && !current_values.utm_source) {
-            cookie.set('referrer', (new URL(referrer)).location.hostname);
+        if (referrer && !current_values.referrer && !params.utm_source && !current_values.utm_source) {
+            cookie.set('referrer', (new Url(referrer)).location.hostname);
         }
     };
 

@@ -1,7 +1,9 @@
-var moment = require('moment');
+var moment   = require('moment');
+var localize = require('../../binary/base/localize').localize;
+var url_for = require('../../binary/base/url').url_for;
 
 var KnowledgeTestUI = (function () {
-    "use strict";
+    'use strict';
 
     function createTrueFalseBox(question, showAnswer) {
         var qid = question.id;
@@ -9,25 +11,25 @@ var KnowledgeTestUI = (function () {
         var falseId = qid + 'false';
 
         var $trueButton = $('<input />', {
-            type: 'radio',
-            name: qid,
-            id: trueId,
-            value: '1'
+            type : 'radio',
+            name : qid,
+            id   : trueId,
+            value: '1',
         });
-        //var $trueLabel = $('<label></label>', {class: 'img-holder true', for: trueId, value: '1'});
+        // var $trueLabel = $('<label></label>', {class: 'img-holder true', for: trueId, value: '1'});
         var $trueTd = $('<td></td>').append($trueButton);
 
         var $falseButton = $('<input />', {
-            type: 'radio',
-            name: qid,
-            id: falseId,
-            value: '0'
+            type : 'radio',
+            name : qid,
+            id   : falseId,
+            value: '0',
         });
-        //var $falseLabel = $('<label></label>', {class: 'img-holder false', for: falseId, value: '0'});
+        // var $falseLabel = $('<label></label>', {class: 'img-holder false', for: falseId, value: '0'});
         var $falseTd = $('<td></td>').append($falseButton);
 
         if (showAnswer) {
-            if (question.answer) {
+            if (question.correct_answer) {
                 $trueButton.prop('checked', true);
             } else {
                 $falseButton.prop('checked', true);
@@ -40,10 +42,10 @@ var KnowledgeTestUI = (function () {
     }
 
     function createQuestionRow(questionNo, question, showAnswer) {
-        var $questionRow = $('<tr></tr>', {id: questionNo, class: 'question'});
-        var $questionData = $('<td></td>').text(page.text.localize(question.question));
-        var $questionLink = $('<a></a>', {name: question.id});
-        $questionData.append($questionLink);
+        var $questionRow = $('<tr></tr>', { id: questionNo, class: 'question' });
+        var $questionData = $('<td></td>').text(localize(question.question_localized));
+        var $questionLink = $('<a></a>', { name: question.id });
+        $questionData.prepend($questionLink);
 
         var trueFalse = createTrueFalseBox(question, showAnswer);
 
@@ -55,21 +57,21 @@ var KnowledgeTestUI = (function () {
 
     function createQuestionTable(questions, showAnswer) {
         var $header = $('<tr></tr>');
-        var $questionColHeader = $('<th></th>', {id: 'question-header', class: 'question-col'})
-            .text(page.text.localize('Questions'));
+        var $questionColHeader = $('<th></th>', { id: 'question-header', class: 'question-col' })
+            .text(localize('Questions'));
 
-        var $trueColHeader = $('<th></th>', {id: 'true-header', class: 'true-col'})
-            .text(page.text.localize('True'));
+        var $trueColHeader = $('<th></th>', { id: 'true-header', class: 'true-col' })
+            .text(localize('True'));
 
-        var $falseColHeader = $('<th></th>', {id: 'fasle-header', class: 'false-col'})
-            .text(page.text.localize('False'));
+        var $falseColHeader = $('<th></th>', { id: 'fasle-header', class: 'false-col' })
+            .text(localize('False'));
 
         $header
             .append($questionColHeader)
             .append($trueColHeader)
             .append($falseColHeader);
 
-        var $tableContainer = $('<table></table>', {id: 'knowledge-test'});
+        var $tableContainer = $('<table></table>', { id: 'knowledge-test' });
 
         $tableContainer.append($header);
         questions.forEach(function(question, questionNo) {
@@ -80,16 +82,15 @@ var KnowledgeTestUI = (function () {
         return $tableContainer;
     }
 
-    //function createResultUI(score, time) {
+    // function createResultUI(score, time) {
     function createResultUI(score) {
+        var $resultTable = $('<table></table>', { class: 'kv-pairs' });
+        var $scoreRow = $('<tr></tr>').append($('<td>' + localize('Score') + '</td>')).append($('<td>' + score + '</td>'));
 
-        var $resultTable = $('<table></table>', { class: 'kv-pairs'});
-        var $scoreRow = $('<tr></tr>').append($('<td>' + page.text.localize('Score') + '</td>')).append($('<td>'+ score + '</td>'));
+        var date = moment();
+        var submitDate = moment.utc(date).format('YYYY') + localize('Year') + moment.utc(date).format('MM') + localize('Month') + moment.utc(date).format('DD') + localize('Day') + ' (' + localize('Weekday') + ')';
 
-        var date = new moment();
-        var submitDate = moment.utc(date).format('YYYY') + page.text.localize('Year') + moment.utc(date).format('MM') + page.text.localize('Month') + moment.utc(date).format('DD') + page.text.localize('Day') + ' (' + page.text.localize('Weekday') + ')';
-
-        var $dateRow = $('<tr></tr>').append($('<td>' + page.text.localize('Date') + '</td>')).append($('<td>'+ submitDate + '</td>'));
+        var $dateRow = $('<tr></tr>').append($('<td>' + localize('Date') + '</td>')).append($('<td>' + submitDate + '</td>'));
 
         $resultTable.append($scoreRow).append($dateRow);
 
@@ -98,7 +99,7 @@ var KnowledgeTestUI = (function () {
 
     function createAlreadyCompleteDiv() {
         var msg = "{JAPAN ONLY}Dear customer, you've already completed the knowledge test, please proceed to next step.";
-        var $completeDiv = $('<div></div>').text(page.text.localize(msg));
+        var $completeDiv = $('<div></div>').text(localize(msg));
         return $completeDiv;
     }
 
@@ -109,18 +110,19 @@ var KnowledgeTestUI = (function () {
         $topbarmsg.find('> span').removeClass('invisible');
         $topbarmsg.removeClass('invisible')
             .find('a').removeClass('invisible')
-                .attr('href', page.url.url_for('/new_account/knowledge_testws')).html($('<span/>', {text: page.text.localize('{JAPAN ONLY}Take knowledge test')}));
+                .attr('href', url_for('/new_account/knowledge_testws'))
+                .html($('<span/>', { text: localize('{JAPAN ONLY}Take knowledge test') }));
     }
 
     return {
-        createTrueFalseBox: createTrueFalseBox,
-        createQuestionRow: createQuestionRow,
-        createQuestionTable: createQuestionTable,
-        createResultUI: createResultUI,
+        createTrueFalseBox      : createTrueFalseBox,
+        createQuestionRow       : createQuestionRow,
+        createQuestionTable     : createQuestionTable,
+        createResultUI          : createResultUI,
         createAlreadyCompleteDiv: createAlreadyCompleteDiv,
-        createKnowledgeTestLink: createKnowledgeTestLink,
+        createKnowledgeTestLink : createKnowledgeTestLink,
     };
-}());
+})();
 
 module.exports = {
     KnowledgeTestUI: KnowledgeTestUI,

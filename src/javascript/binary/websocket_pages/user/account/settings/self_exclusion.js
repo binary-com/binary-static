@@ -9,9 +9,11 @@ var dv               = require('../../../../../lib/validation');
 var TimePicker       = require('../../../../components/time_picker').TimePicker;
 var DatePicker       = require('../../../../components/date_picker').DatePicker;
 var dateValueChanged = require('../../../../common_functions/common_functions').dateValueChanged;
+var localize         = require('../../../../base/localize').localize;
+var Client           = require('../../../../base/client').Client;
 
 var SelfExclusionWS = (function() {
-    "use strict";
+    'use strict';
 
     var $form,
         $loading;
@@ -30,7 +32,7 @@ var SelfExclusionWS = (function() {
         // for error messages to show properly
         $('#' + timeID).attr('style', 'margin-bottom:10px');
 
-        if (page.client.is_virtual()) {
+        if (Client.get_boolean('is_virtual')) {
             $('#selfExclusionDesc').addClass(hiddenClass);
             showPageError(Content.localize().textFeatureUnavailable, true);
             return;
@@ -44,7 +46,7 @@ var SelfExclusionWS = (function() {
 
         bind_validation.simple($form[0], {
             validate: validate,
-            submit: submitForm,
+            submit  : submitForm,
         });
 
         initDatePicker();
@@ -54,15 +56,15 @@ var SelfExclusionWS = (function() {
     function init() {
         Content.populate();
         BinarySocket.init({
-            onmessage: function(msg){
+            onmessage: function(msg) {
                 var response = JSON.parse(msg.data);
                 var msg_type = response.msg_type;
                 if      (msg_type === 'authorize') reallyInit();
                 else if (msg_type === 'get_self_exclusion') getResponse(response);
                 else if (msg_type === 'set_self_exclusion') setResponse(response);
-            }
+            },
         });
-        if ('is_virtual' in TUser.get()) {
+        if (Client.get_boolean('values_set')) {
             reallyInit();
         }
     }
@@ -71,13 +73,13 @@ var SelfExclusionWS = (function() {
     // ----- Get Values -----
     // ----------------------
     function getRequest() {
-        BinarySocket.send({get_self_exclusion: 1});
+        BinarySocket.send({ get_self_exclusion: 1 });
     }
 
     function getResponse(response) {
         if (response.error) {
             if (response.error.code === 'ClientSelfExclusion') {
-                page.client.send_logout_request();
+                Client.send_logout_request();
             }
             if (response.error.message) {
                 showPageError(response.error.message, true);
@@ -90,6 +92,7 @@ var SelfExclusionWS = (function() {
             fields[key] = value + '';
             $form.find('#' + key).val(value);
         });
+        return true;
     }
 
     function initDatePicker() {
@@ -105,6 +108,7 @@ var SelfExclusionWS = (function() {
             if (!dateValueChanged(this, 'date')) {
                 return false;
             }
+            return true;
         });
     }
 
@@ -121,14 +125,14 @@ var SelfExclusionWS = (function() {
             var errMsg = response.error.message;
             var field  = response.error.field;
             if (field) {
-                ValidationUI.draw('input[name='+field+']', errMsg);
+                ValidationUI.draw('input[name=' + field + ']', errMsg);
             } else {
-                showFormMessage(page.text.localize(errMsg), false);
+                showFormMessage(localize(errMsg), false);
             }
             return;
         }
         showFormMessage('Your changes have been updated.', true);
-        page.client.set_storage_value('session_start', moment().unix()); // used to handle session duration limit
+        Client.set_value('session_start', moment().unix()); // used to handle session duration limit
         getRequest();
     }
 
@@ -158,7 +162,7 @@ var SelfExclusionWS = (function() {
     function leftPadZeros(strint, zeroCount) {
         var result = strint;
         for (var i = 0; i < (zeroCount - strint.length); i++) {
-            result = "0" + result;
+            result = '0' + result;
         }
         return result;
     }
@@ -178,7 +182,7 @@ var SelfExclusionWS = (function() {
     function againstField(key) {
         return function(value) {
             var old = fields[key];
-            var err = page.text.localize('Please enter a number between 0 and [_1]', [old]);
+            var err = localize('Please enter a number between 0 and [_1]', [old]);
             var hasOld = !!old;
             var isEmpty = value.length === 0;
             if (!hasOld) {
@@ -226,19 +230,19 @@ var SelfExclusionWS = (function() {
         var validDate = V2.momentFmt('YYYY-MM-DD', 'Please select a valid date');
 
         schema = {
-            max_7day_losses:    [numericOrEmpty, againstField('max_7day_losses')],
-            max_7day_turnover:  [numericOrEmpty, againstField('max_7day_turnover')],
-            max_30day_losses:   [numericOrEmpty, againstField('max_30day_losses')],
-            max_30day_turnover: [numericOrEmpty, againstField('max_30day_turnover')],
-            max_balance:        [numericOrEmpty, againstField('max_balance')],
-            max_losses:         [numericOrEmpty, againstField('max_losses')],
-            max_open_bets:      [numericOrEmpty, againstField('max_open_bets')],
-            max_turnover:       [numericOrEmpty, againstField('max_turnover')],
+            max_7day_losses       : [numericOrEmpty, againstField('max_7day_losses')],
+            max_7day_turnover     : [numericOrEmpty, againstField('max_7day_turnover')],
+            max_30day_losses      : [numericOrEmpty, againstField('max_30day_losses')],
+            max_30day_turnover    : [numericOrEmpty, againstField('max_30day_turnover')],
+            max_balance           : [numericOrEmpty, againstField('max_balance')],
+            max_losses            : [numericOrEmpty, againstField('max_losses')],
+            max_open_bets         : [numericOrEmpty, againstField('max_open_bets')],
+            max_turnover          : [numericOrEmpty, againstField('max_turnover')],
             session_duration_limit: [numericOrEmpty, againstField('session_duration_limit'), validSessionDuration],
-            exclude_until:          [allowEmpty, validDate, afterToday, validExclusionDate, toDateString],
+            exclude_until         : [allowEmpty, validDate, afterToday, validExclusionDate, toDateString],
             // these two are combined.
             timeout_until_duration: [allowEmptyUnless('timeout_until'), validDate],
-            timeout_until:          [allowEmpty, validTime],
+            timeout_until         : [allowEmpty, validTime],
         };
         return schema;
     }
@@ -310,8 +314,7 @@ var SelfExclusionWS = (function() {
             if (!res.isOk) {
                 ValidationUI.draw(
                     'input[name=timeout_until_duration]',
-                    res.value[0]
-                );
+                    res.value[0]);
                 valid = false;
             } else {
                 delete values.timeout_until_duration;
@@ -320,15 +323,15 @@ var SelfExclusionWS = (function() {
         }
 
         return {
-            data: values,
-            valid: valid,
+            data   : values,
+            valid  : valid,
             changed: valid && detectChange(validation.raw, fields),
         };
     }
 
     function hasConfirmed() {
         var message = 'When you click "Ok" you will be excluded from trading on the site until the selected date.';
-        return window.confirm(page.text.localize(message));
+        return window.confirm(localize(message));
     }
 
     // -----------------------------
@@ -349,7 +352,7 @@ var SelfExclusionWS = (function() {
     function showFormMessage(msg, isSuccess) {
         $('#formMessage')
             .attr('class', isSuccess ? 'success-msg' : errorClass)
-            .html(isSuccess ? '<ul class="checked"><li>' + page.text.localize(msg) + '</li></ul>' : page.text.localize(msg))
+            .html(isSuccess ? '<ul class="checked"><li>' + localize(msg) + '</li></ul>' : localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);
@@ -358,7 +361,7 @@ var SelfExclusionWS = (function() {
     return {
         init: init,
     };
-}());
+})();
 
 module.exports = {
     SelfExclusionWS: SelfExclusionWS,

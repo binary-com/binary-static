@@ -1,16 +1,17 @@
 var done_typing = require('../lib/done-typing').done_typing;
 var formToObj   = require('../lib/form-to-obj').formToObj;
 var dv          = require('../lib/validation');
+var localize = require('./base/localize').localize;
 
 var ValidationUI = {
     clear: function() {
         $('.errorfield[data-is-error-field]').remove();
     },
-    draw:  function(selector, message) {
+    draw: function(selector, message) {
         var $parent = $(selector).parent();
         var $p = $('<p/>', {
             class: 'errorfield',
-            text:  page.text.localize(message),
+            text : localize(message),
         });
         $p.attr('data-is-error-field', true);
         $parent.append($p);
@@ -70,7 +71,7 @@ function validate_object(data, schema) {
     return {
         errors: rv.value,
         values: values,
-        raw:    data,
+        raw   : data,
     };
 }
 
@@ -124,7 +125,7 @@ function bind_validation(form, config) {
     });
     done_typing(form, {
         start: onStart,
-        stop:  onStop,
+        stop : onStop,
     });
 }
 
@@ -143,13 +144,13 @@ function bind_validation(form, config) {
  */
 bind_validation.simple = function(form, opts) {
     bind_validation(form, {
-        submit:   opts.submit,
-        extract:  opts.extract  || function() { return formToObj(form); },
+        submit  : opts.submit,
+        extract : opts.extract  || function() { return formToObj(form); },
         validate: opts.validate || function(data) { return validate_object(data, opts.schema); },
-        stop:     opts.stop     || function(validation) {
+        stop    : opts.stop     || function(validation) {
             ValidationUI.clear();
             validation.errors.forEach(function(err) {
-                var sel = 'input[name=' + stripTrailing(err.ctx) + ']';
+                var sel = '[name=' + stripTrailing(err.ctx) + ']';
                 ValidationUI.draw(sel, err.err);
             });
         },
@@ -157,8 +158,8 @@ bind_validation.simple = function(form, opts) {
 };
 
 module.exports = {
-    ValidationUI: ValidationUI,
-    customError: customError,
+    ValidationUI   : ValidationUI,
+    customError    : customError,
     validate_object: validate_object,
     bind_validation: bind_validation,
 };

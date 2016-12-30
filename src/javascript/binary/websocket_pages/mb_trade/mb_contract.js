@@ -1,4 +1,7 @@
 var objectNotEmpty  = require('../../base/utility').objectNotEmpty;
+var localize        = require('../../base/localize').localize;
+var getLanguage     = require('../../base/language').getLanguage;
+var Client          = require('../../base/client').Client;
 var format_currency = require('../../common_functions/currency_to_symbol').format_currency;
 var japanese_client = require('../../common_functions/country_base').japanese_client;
 var MBDefaults      = require('./mb_defaults').MBDefaults;
@@ -19,10 +22,10 @@ var MBContract = (function() {
         var req = {
             contracts_for: (underlying || MBDefaults.get('underlying')),
             currency     : getCurrency(),
-            region       : 'japan'
+            region       : 'japan',
         };
         if (!underlying) {
-            req.passthrough = {action: 'no-proposal'};
+            req.passthrough = { action: 'no-proposal' };
         }
         BinarySocket.send(req);
         if (contract_timeout) clearContractTimeout(contract_timeout);
@@ -40,23 +43,23 @@ var MBContract = (function() {
 
     var durationText = function(dur) {
         var durationMap = {
-            'm': 'min',
-            'h': 'h',
-            'd': 'day',
-            'W': 'week',
-            'M': 'month',
-            'Y': 'year',
+            m: 'min',
+            h: 'h',
+            d: 'day',
+            W: 'week',
+            M: 'month',
+            Y: 'year',
         };
         Object.keys(durationMap).forEach(function(key) {
-            dur = dur.replace(key, page.text.localize(durationMap[key] +
-                                                     (dur[0] == 1 || /h/.test(key) ? '' : 's')));
+            dur = dur.replace(key, localize(durationMap[key] + (+dur[0] === 1 || /h/.test(key) ? '' : 's')));
         });
         return dur;
     };
 
     var PeriodText = function(trading_period) {
-        var date_expiry, duration;
-        if (typeof(trading_period) === 'object') {
+        var date_expiry,
+            duration;
+        if (typeof trading_period === 'object') {
             date_expiry = trading_period.date_expiry.epoch;
             duration = trading_period.duration;
         } else {
@@ -65,39 +68,48 @@ var MBContract = (function() {
         }
         return (moment(moment.utc(date_expiry * 1000))
                     .utcOffset(japanese_client() ? '+09:00' : '+00:00')
-                    .locale(page.language().toLowerCase())
-                    .format('MMM Do, HH:mm').replace(/08:59/, '09:00«') +
-                 " (" + durationText(duration.replace('0d', '1d')) + ")");
+                    .locale(getLanguage().toLowerCase())
+                    .format('MMM Do, HH:mm')
+                    .replace(/08:59/, '09:00«') + ' (' + durationText(duration.replace('0d', '1d')) + ')');
     };
 
     // use function to generate elements and append them
     // e.g. element is select and element to append is option
-    var appendTextValueChild = function(element, text, value, isSelected){
-        var option = document.createElement("option");
-        option.text = text;
+    var appendTextValueChild = function(element, string, value, isSelected) {
+        if (element && !element.nodeName) {
+            if (typeof element === 'string') {
+                element = document.getElementById(element);
+            } else {
+                element = undefined;
+            }
+        }
+        if (!element) return;
+        var option = document.createElement('option');
+        option.text = string;
         option.value = value;
         if (isSelected) {
             option.setAttribute('selected', 'selected');
         }
         element.appendChild(option);
-        return;
     };
 
     var populatePeriods = function(rebuild) {
         if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return;
-        var trading_period, start_end,
+        var trading_period,
+            start_end,
             trading_period_array = [],
             available_contracts = contracts_for_response.contracts_for.available,
             selected_option = MBDefaults.get('category'),
             $periodElement = $('#period');
         if (!selected_option || !available_contracts) return;
         for (var i = 0; i < available_contracts.length; i++) {
-            if (available_contracts[i].contract_category !== selected_option) continue;
-            trading_period = available_contracts[i].trading_period;
-            if (!trading_period) return;
-            start_end = trading_period.date_start.epoch + '_' + trading_period.date_expiry.epoch + '_' + trading_period.duration;
-            if (trading_period_array.indexOf(start_end) < 0) {
-                trading_period_array.push(start_end);
+            if (available_contracts[i].contract_category === selected_option) {
+                trading_period = available_contracts[i].trading_period;
+                if (!trading_period) return;
+                start_end = trading_period.date_start.epoch + '_' + trading_period.date_expiry.epoch + '_' + trading_period.duration;
+                if (trading_period_array.indexOf(start_end) < 0) {
+                    trading_period_array.push(start_end);
+                }
             }
         }
         trading_period_array.sort(sortByExpiryTime);
@@ -107,7 +119,11 @@ var MBContract = (function() {
         if ($periodElement.children().length === 0) { // populate for the first time
             var default_value = MBDefaults.get('period');
             for (var j = 0; j < trading_period_array.length; j++) {
-                appendTextValueChild(document.getElementById('period'), PeriodText(trading_period_array[j]), trading_period_array[j], trading_period_array[j] == default_value);
+                appendTextValueChild(
+                    'period',
+                    PeriodText(trading_period_array[j]),
+                    trading_period_array[j],
+                    trading_period_array[j] === default_value);
             }
             MBDefaults.set('period', $periodElement.val());
             MBContract.displayDescriptions();
@@ -149,7 +165,10 @@ var MBContract = (function() {
         }
     };
 
-    var periodValue, $countDownTimer, remainingTimeElement, remainingTimeout;
+    var periodValue,
+        $countDownTimer,
+        remainingTimeElement,
+        remainingTimeout;
     var displayRemainingTime = function(recalculate) {
         if (typeof periodValue === 'undefined' || recalculate) {
             periodValue = document.getElementById('period').value;
@@ -166,17 +185,17 @@ var MBContract = (function() {
         var remainingTimeString = [],
             duration = moment.duration(timeLeft * 1000);
         var all_durations = {
-            month  : duration.months(),
-            day    : duration.days(),
-            hour   : duration.hours(),
-            minute : duration.minutes(),
-            second : duration.seconds()
+            month : duration.months(),
+            day   : duration.days(),
+            hour  : duration.hours(),
+            minute: duration.minutes(),
+            second: duration.seconds(),
         };
-        for (var key in all_durations) {
+        Object.keys(all_durations).forEach(function(key) {
             if (all_durations[key]) {
-                remainingTimeString.push(all_durations[key] + page.text.localize((key + (all_durations[key] == 1 ? '' : 's' ))));
+                remainingTimeString.push(all_durations[key] + localize((key + (+all_durations[key] === 1 ? '' : 's'))));
             }
-        }
+        });
         remainingTimeElement.innerHTML = remainingTimeString.join(' ');
         if (remainingTimeout) clearContractTimeout(remainingTimeout);
         remainingTimeout = setTimeout(displayRemainingTime, 1000);
@@ -187,11 +206,7 @@ var MBContract = (function() {
             b = second.split('_'),
             duration1 = a[1] - a[0],
             duration2 = b[1] - b[0];
-        if (a[1] === b[1]) {
-            return duration1 - duration2;
-        } else {
-            return a[1] - b[1];
-        }
+        return a[1] === b[1] ? duration1 - duration2 : a[1] - b[1];
     };
 
     var populateOptions = function(rebuild) {
@@ -201,16 +216,16 @@ var MBContract = (function() {
             available_contracts = contracts_for_response.contracts_for.available,
             $categoryElement = $('#category');
         var categoryNames = {
-            callput: page.text.localize('Higher/Lower'),
-            touchnotouch: page.text.localize('Touch/No Touch'),
-            endsinout: page.text.localize('Ends In/Out'),
-            staysinout: page.text.localize('Stays In/Goes Out'),
+            callput     : localize('Higher/Lower'),
+            touchnotouch: localize('Touch/No Touch'),
+            endsinout   : localize('Ends In/Out'),
+            staysinout  : localize('Stays In/Goes Out'),
         };
         var categoryOrder = {
             callput     : 1,
             touchnotouch: 2,
             endsinout   : 3,
-            staysinout  : 4
+            staysinout  : 4,
         };
         for (var i = 0; i < available_contracts.length; i++) {
             category = contracts_for_response.contracts_for.available[i].contract_category;
@@ -218,7 +233,7 @@ var MBContract = (function() {
                 contracts_array.push(category);
             }
         }
-        contracts_array.sort(function(a, b){
+        contracts_array.sort(function(a, b) {
             return categoryOrder[a] - categoryOrder[b];
         });
         if (rebuild) {
@@ -227,23 +242,27 @@ var MBContract = (function() {
         if ($categoryElement.children().length === 0) {
             var default_value = MBDefaults.get('category');
             for (var j = 0; j < contracts_array.length; j++) {
-                appendTextValueChild(document.getElementById('category'), categoryNames[contracts_array[j]], contracts_array[j], contracts_array[j] == default_value);
+                appendTextValueChild(
+                    'category',
+                    categoryNames[contracts_array[j]],
+                    contracts_array[j],
+                    contracts_array[j] === default_value);
             }
             MBDefaults.set('category', $('#category').val());
         }
-        populatePeriods();
+        populatePeriods(rebuild);
     };
 
     var getCurrentContracts = function() {
-        if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return;
+        if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return [];
         var contracts = [],
             category  = MBDefaults.get('category'),
             periods   = MBDefaults.get('period').split('_');
         contracts_for_response.contracts_for.available.forEach(function(c) {
             if (c.contract_category === category && c.trading_period &&
-                c.trading_period.date_start.epoch  == periods[0] &&
-                c.trading_period.date_expiry.epoch == periods[1]) {
-                   contracts.push(c);
+                    +c.trading_period.date_start.epoch  === +periods[0] &&
+                    +c.trading_period.date_expiry.epoch === +periods[1]) {
+                contracts.push(c);
             }
         });
         return contracts;
@@ -251,53 +270,53 @@ var MBContract = (function() {
 
     var getTemplate = function(contract_type) {
         var templates = {
-            'CALLE': {
-                'opposite'   : 'PUT',
-                'order'      : 0,
-                'name'       : 'Higher',
-                'description': '[_1] [_2] payout if [_3] is strictly higher or equal than Exercise price at close  on [_4].'
+            CALLE: {
+                opposite   : 'PUT',
+                order      : 0,
+                name       : 'Higher',
+                description: '[_1] [_2] payout if [_3] is strictly higher or equal than Exercise price at close  on [_4].',
             },
-            'PUT': {
-                'opposite'   : 'CALLE',
-                'order'      : 1,
-                'name'       : 'Lower',
-                'description': '[_1] [_2] payout if [_3] is strictly lower than Exercise price at close on [_4].'
+            PUT: {
+                opposite   : 'CALLE',
+                order      : 1,
+                name       : 'Lower',
+                description: '[_1] [_2] payout if [_3] is strictly lower than Exercise price at close on [_4].',
             },
-            'ONETOUCH': {
-                'opposite'   : 'NOTOUCH',
-                'order'      : 0,
-                'name'       : 'Touches',
-                'description': '[_1] [_2] payout if [_3] touches Exercise price through close on [_4].'
+            ONETOUCH: {
+                opposite   : 'NOTOUCH',
+                order      : 0,
+                name       : 'Touches',
+                description: '[_1] [_2] payout if [_3] touches Exercise price through close on [_4].',
             },
-            'NOTOUCH': {
-                'opposite'   : 'ONETOUCH',
-                'order'      : 1,
-                'name'       : 'Does Not Touch',
-                'description': '[_1] [_2] payout if [_3] does not touch Exercise price through close on [_4].'
+            NOTOUCH: {
+                opposite   : 'ONETOUCH',
+                order      : 1,
+                name       : 'Does Not Touch',
+                description: '[_1] [_2] payout if [_3] does not touch Exercise price through close on [_4].',
             },
-            'EXPIRYRANGEE': {
-                'opposite'   : 'EXPIRYMISS',
-                'order'      : 0,
-                'name'       : 'Ends Between',
-                'description': '[_1] [_2] payout if [_3] ends on or between low and high values of Exercise price at close on [_4].'
+            EXPIRYRANGEE: {
+                opposite   : 'EXPIRYMISS',
+                order      : 0,
+                name       : 'Ends Between',
+                description: '[_1] [_2] payout if [_3] ends on or between low and high values of Exercise price at close on [_4].',
             },
-            'EXPIRYMISS': {
-                'opposite'   : 'EXPIRYRANGEE',
-                'order'      : 1,
-                'name'       : 'Ends Outside',
-                'description': '[_1] [_2] payout if [_3] ends outside low and high values of Exercise price at close on [_4].'
+            EXPIRYMISS: {
+                opposite   : 'EXPIRYRANGEE',
+                order      : 1,
+                name       : 'Ends Outside',
+                description: '[_1] [_2] payout if [_3] ends outside low and high values of Exercise price at close on [_4].',
             },
-            'RANGE': {
-                'opposite'   : 'UPORDOWN',
-                'order'      : 0,
-                'name'       : 'Stays Between',
-                'description': '[_1] [_2] payout if [_3] stays between low and high values of Exercise price through close on [_4].'
+            RANGE: {
+                opposite   : 'UPORDOWN',
+                order      : 0,
+                name       : 'Stays Between',
+                description: '[_1] [_2] payout if [_3] stays between low and high values of Exercise price through close on [_4].',
             },
-            'UPORDOWN': {
-                'opposite'   : 'RANGE',
-                'order'      : 1,
-                'name'       : 'Goes Outside',
-                'description': '[_1] [_2] payout if [_3] goes outside of low and high values of Exercise price through close on [_4].'
+            UPORDOWN: {
+                opposite   : 'RANGE',
+                order      : 1,
+                name       : 'Goes Outside',
+                description: '[_1] [_2] payout if [_3] goes outside of low and high values of Exercise price through close on [_4].',
             },
         };
         return contract_type ? templates[contract_type] : templates;
@@ -306,22 +325,22 @@ var MBContract = (function() {
     var displayDescriptions = function() {
         var contracts = getCurrentContracts(),
             $desc_wrappers = $('.prices-wrapper'),
-            currency = (format_currency(TUser.get().currency) || format_currency(document.getElementById('currency').value) || '¥'),
+            currency = (format_currency(Client.get_value('currency')) || format_currency(document.getElementById('currency').value) || '¥'),
             payout = Number(MBDefaults.get('payout') * (japanese_client() ? 1000 : 1)).toLocaleString(),
             display_name = MBSymbols.getName(MBDefaults.get('underlying')),
             date_expiry = PeriodText(contracts[0].trading_period).replace(/\s\(.*\)/, ''),
-            preposition = page.language() === 'JA' ? '{JAPAN ONLY}' : '';
+            preposition = getLanguage() === 'JA' ? '{JAPAN ONLY}' : '';
         contracts.forEach(function(c) {
             var contract_type = c.contract_type,
                 template = getTemplate(contract_type),
                 $wrapper = $($desc_wrappers[template.order]);
-            $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(page.text.localize(preposition + template.name));
-            $wrapper.find('.descr').text(page.text.localize(preposition + template.description, [currency, payout, display_name, date_expiry]));
+            $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(localize(preposition + template.name));
+            $wrapper.find('.descr').text(localize(preposition + template.description, [currency, payout, display_name, date_expiry]));
         });
     };
 
     var getCurrency = function() {
-         return (TUser.get().currency || document.getElementById('currency').value || 'JPY');
+        return (Client.get_value('currency') || document.getElementById('currency').value || 'JPY');
     };
 
     return {
@@ -335,7 +354,9 @@ var MBContract = (function() {
         getCurrency         : getCurrency,
         getContractsResponse: function() { return contracts_for_response; },
         setContractsResponse: function(contracts_for) { contracts_for_response = contracts_for; },
-        onUnload            : function() { clearContractTimeout(); contracts_for_response = {}; periodValue = undefined; },
+        onUnload            : function() {
+            clearContractTimeout(); contracts_for_response = {}; periodValue = undefined;
+        },
     };
 })();
 

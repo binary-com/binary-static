@@ -9,7 +9,7 @@ var objectNotEmpty = require('../../base/utility').objectNotEmpty;
  *
  */
 
-var MBDefaults = (function(){
+var MBDefaults = (function() {
     'use strict';
 
     var params = {};
@@ -19,7 +19,7 @@ var MBDefaults = (function(){
     };
 
     var loadParams = function() {
-        if(!objectNotEmpty(params)) params = JSON.parse(localStorage.getItem('mb_trading')) || {};
+        if (!objectNotEmpty(params)) params = JSON.parse(localStorage.getItem('mb_trading')) || {};
     };
 
     var saveParams = function() {
@@ -30,7 +30,7 @@ var MBDefaults = (function(){
         if (!key) return;
         value = value || '';
         loadParams();
-        if(params[key] != value) {
+        if (params[key] !== value) {
             params[key] = value;
             saveParams();
         }
@@ -40,12 +40,12 @@ var MBDefaults = (function(){
         loadParams();
         var isUpdated = false;
         for (var i = 0; i < arguments.length; i++) {
-            if(params.hasOwnProperty(arguments[i])) {
-                delete(params[arguments[i]]);
+            if (params.hasOwnProperty(arguments[i])) {
+                delete params[arguments[i]];
                 isUpdated = true;
             }
         }
-        if(isUpdated) {
+        if (isUpdated) {
             saveParams();
         }
     };
@@ -54,7 +54,7 @@ var MBDefaults = (function(){
         get   : getDefault,
         set   : setDefault,
         remove: removeDefault,
-        clear : function(){params = {};}
+        clear : function() { params = {}; },
     };
 })();
 

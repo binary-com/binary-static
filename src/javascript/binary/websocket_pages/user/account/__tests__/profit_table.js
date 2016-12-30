@@ -1,16 +1,17 @@
-var expect = require('chai').expect;
+var expect      = require('chai').expect;
 var profitTable = require('../profit_table').ProfitTable;
-var ws = require('ws');
-var LiveApi = require('binary-live-api').LiveApi;
+var ws          = require('ws');
+var LiveApi     = require('binary-live-api').LiveApi;
+
 var api = new LiveApi({ websocket: ws });
 
 describe('Profit Table', function() {
     var profit_table;
-    before(function(done){
+    before(function(done) {
         this.timeout(10000);
-        //this is a read token, even if other people take it, won't be able to do any harm
-        api.authorize('hhh9bfrbq0G3dRf').then(function(){
-            api.getProfitTable({limit: 1, description: 1, offset: 0}).then(function(response){
+        // this is a read token, even if other people take it, won't be able to do any harm
+        api.authorize('hhh9bfrbq0G3dRf').then(function() {
+            api.getProfitTable({ limit: 1, description: 1, offset: 0 }).then(function(response) {
                 profit_table = response.profit_table;
                 done();
             });

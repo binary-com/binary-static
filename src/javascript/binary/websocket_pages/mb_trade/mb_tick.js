@@ -14,6 +14,7 @@
  * `MBTick.epoch()` to get the tick epoch time
  * 'MBTick.display()` to display current spot
  */
+
 var MBTick = (function() {
     'use strict';
 
@@ -28,13 +29,13 @@ var MBTick = (function() {
         errorMessage = '';
 
         if (data) {
-            if (data['error']) {
-                errorMessage = data['error']['message'];
+            if (data.error) {
+                errorMessage = data.error.message;
             } else {
-                var tick = data['tick'];
-                quote = tick['quote'];
-                id    = tick['id'];
-                epoch = tick['epoch'];
+                var tick = data.tick;
+                quote = tick.quote;
+                id    = tick.id;
+                epoch = tick.epoch;
 
                 spots[epoch] = quote;
                 var epoches = Object.keys(spots).sort(function(a, b) {
@@ -58,7 +59,7 @@ var MBTick = (function() {
             message = quote;
         }
 
-        if (parseFloat(message) != message) {
+        if (parseFloat(message) !== +message) {
             spotElement.className = 'error';
         } else {
             spotElement.classList.remove('error');
@@ -76,28 +77,29 @@ var MBTick = (function() {
         $('#spot-dyn').attr('class', 'dynamics ' + className);
     }
 
-    function updateWarmChart(){
-        var $chart = $('#trading_worm_chart');
-        var spots =  Object.keys(MBTick.spots()).sort(function(a,b){return a-b;}).map(function(v){return MBTick.spots()[v];});
-        var chart_config = {
-            type              : 'line',
-            lineColor         : '#606060',
-            fillColor         : false,
-            spotColor         : '#00f000',
-            minSpotColor      : '#f00000',
-            maxSpotColor      : '#0000f0',
-            highlightSpotColor: '#ffff00',
-            highlightLineColor: '#000000',
-            spotRadius        : 1.25,
-            width             : 200,
-            height            : 25,
-        };
+    function updateWarmChart() {
+        var $chart = $('#trading_worm_chart'),
+            spots_array = Object.keys(MBTick.spots())
+                .sort(function(a, b) { return a - b; })
+                .map(function(v) { return MBTick.spots()[v]; }),
+            chart_config = {
+                type              : 'line',
+                lineColor         : '#606060',
+                fillColor         : false,
+                spotColor         : '#00f000',
+                minSpotColor      : '#f00000',
+                maxSpotColor      : '#0000f0',
+                highlightSpotColor: '#ffff00',
+                highlightLineColor: '#000000',
+                spotRadius        : 1.25,
+                width             : 200,
+                height            : 25,
+            };
         if ($chart && typeof $chart.sparkline === 'function') {
-            $chart.sparkline(spots, chart_config);
-            if(spots.length){
+            $chart.sparkline(spots_array, chart_config);
+            if (spots_array.length) {
                 $chart.show();
-            }
-            else{
+            } else {
                 $chart.hide();
             }
         }
@@ -105,11 +107,11 @@ var MBTick = (function() {
 
     var request = function(symbol) {
         BinarySocket.send({
-            'ticks_history': symbol,
-            'style'        : 'ticks',
-            'end'          : 'latest',
-            'count'        : keep_number,
-            'subscribe'    : 1
+            ticks_history: symbol,
+            style        : 'ticks',
+            end          : 'latest',
+            count        : keep_number,
+            subscribe    : 1,
         });
     };
 
@@ -119,8 +121,8 @@ var MBTick = (function() {
                 details({
                     tick: {
                         epoch: res.history.times[i],
-                        quote: res.history.prices[i]
-                    }
+                        quote: res.history.prices[i],
+                    },
                 });
             }
         }
@@ -132,21 +134,21 @@ var MBTick = (function() {
         updateWarmChart: updateWarmChart,
         request        : request,
         processHistory : processHistory,
-        displayPriceMovement: displayPriceMovement,
-        quote       : function() { return quote; },
-        id          : function() { return id; },
-        epoch       : function() { return epoch; },
-        errorMessage: function() { return errorMessage; },
-        spots       : function() { return spots; },
-        setQuote    : function(q) { quote = q; },
-        clean       : function() {
+        quote          : function() { return quote; },
+        id             : function() { return id; },
+        epoch          : function() { return epoch; },
+        errorMessage   : function() { return errorMessage; },
+        spots          : function() { return spots; },
+        setQuote       : function(q) { quote = q; },
+        clean          : function() {
             spots = {};
             quote = '';
-            $('#spot').fadeOut(200, function(){
+            $('#spot').fadeOut(200, function() {
                 // resets spot movement coloring, will continue on the next tick responses
                 $('#spot-dyn').removeAttr('class').text('');
             });
         },
+        displayPriceMovement: displayPriceMovement,
     };
 })();
 

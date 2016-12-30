@@ -4,6 +4,11 @@ var japanese_client                 = require('../../../common_functions/country
 var DigitInfoWS_Beta                = require('./charts/digit_infows').DigitInfoWS_Beta;
 var PortfolioWS                     = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
 var State                           = require('../../../base/storage').State;
+var getLanguage                     = require('../../../base/language').getLanguage;
+var Url                             = require('../../../base/url').Url;
+var url_for                         = require('../../../base/url').url_for;
+var url_for_static                  = require('../../../base/url').url_for_static;
+var Client                          = require('../../../base/client').Client;
 var showHighchart                   = require('../common').showHighchart;
 var toggleActiveNavMenuElement_Beta = require('../common').toggleActiveNavMenuElement_Beta;
 
@@ -26,13 +31,13 @@ var TradingAnalysis_Beta = (function() {
         var formName = State.get('is_mb_trading') ? $('#category').val() :
                                                     $('#contract_form_name_nav').find('.a-active').attr('id');
         if (formName === 'matchdiff') {
-          formName = 'digits';
+            formName = 'digits';
         }
-        $('#tab_explanation a').attr('href',  page.url.url_for('trade/bet_explanation_beta', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
+        $('#tab_explanation a').attr('href',  url_for('trade/bet_explanation_beta', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
         if (formName === 'digits' || formName === 'overunder' || formName === 'evenodd') {
-            $('#tab_last_digit').removeClass("invisible");
+            $('#tab_last_digit').removeClass('invisible');
         } else {
-          $('#tab_last_digit').addClass("invisible");
+            $('#tab_last_digit').addClass('invisible');
         }
         sessionStorage.setItem('currentAnalysisTab_Beta', getActiveTab());
         loadAnalysisTab();
@@ -45,12 +50,12 @@ var TradingAnalysis_Beta = (function() {
     var bindAnalysisTabEvent = function() {
         'use strict';
 
-        if (page.client.is_logged_in) {
-          $('#tab_portfolio').removeClass('invisible');
+        if (Client.get_boolean('is_logged_in')) {
+            $('#tab_portfolio').removeClass('invisible');
         }
         if (!japanese_client()) {
-          $('#tab_asset_index'  ).removeClass('invisible');
-          $('#tab_trading_times').removeClass('invisible');
+            $('#tab_asset_index').removeClass('invisible');
+            $('#tab_trading_times').removeClass('invisible');
         }
 
         var $analysis_tabs = $('#trading_analysis_content #analysis_tabs');
@@ -72,6 +77,7 @@ var TradingAnalysis_Beta = (function() {
      */
     var loadAnalysisTab = function() {
         'use strict';
+
         var currentTab = getActiveTab(),
             currentLink = document.querySelector('#' + currentTab + ' a'),
             contentId = document.getElementById(currentTab + '-content');
@@ -80,7 +86,7 @@ var TradingAnalysis_Beta = (function() {
         toggleActiveNavMenuElement_Beta(analysisNavElement, currentLink.parentElement);
         toggleActiveAnalysisTabs();
 
-        switch(currentTab) {
+        switch (currentTab) {
             case 'tab_graph':
                 showHighchart();
                 break;
@@ -90,25 +96,25 @@ var TradingAnalysis_Beta = (function() {
             case 'tab_last_digit':
                 var underlying = $('[name=underlying] option:selected').val() || $('#underlying option:selected').val();
                 var tick = $('[name=tick_count]').val() || 100;
-                BinarySocket.send({'ticks_history': underlying, 'end': 'latest', 'count': tick + '', 'req_id': 1});
+                BinarySocket.send({ ticks_history: underlying, end: 'latest', count: tick + '', req_id: 1 });
                 break;
             case 'tab_asset_index':
-                AssetIndexUI.init({framed: true});
+                AssetIndexUI.init({ framed: true });
                 $('#tab_asset_index-content h1').hide();
                 break;
             case 'tab_trading_times':
-                MarketTimesUI.init({framed: true});
+                MarketTimesUI.init({ framed: true });
                 $('#tab_trading_times-content h1').hide();
                 break;
             default:
-                var url = currentLink.getAttribute('href') ;
+                var url = currentLink.getAttribute('href');
                 $.ajax({
                     method: 'GET',
-                    url: url,
+                    url   : url,
                 })
                 .done(function(data) {
                     contentId.innerHTML = data;
-                    if(currentTab === 'tab_explanation') {
+                    if (currentTab === 'tab_explanation') {
                         showExplanation(currentLink.href);
                     }
                 });
@@ -121,6 +127,7 @@ var TradingAnalysis_Beta = (function() {
      */
     var toggleActiveAnalysisTabs = function() {
         'use strict';
+
         var currentTab = getActiveTab(),
             analysisContainer = document.getElementById('analysis_content');
 
@@ -158,7 +165,7 @@ var TradingAnalysis_Beta = (function() {
      * handle the display of proper explanation based on parameters
      */
     var showExplanation = function(href) {
-        var options = new URL(href).params_hash();
+        var options = new Url(href).params_hash();
         var form_name    = options.form_name || 'risefall',
             show_image   = options.show_image   ? options.show_image   > 0 : true,
             show_winning = options.show_winning ? options.show_winning > 0 : true,
@@ -166,55 +173,55 @@ var TradingAnalysis_Beta = (function() {
             hidden_class = 'invisible',
             $Container   = $('#tab_explanation-content');
 
-        if(show_winning) {
+        if (show_winning) {
             $Container.find('#explanation_winning, #winning_' + form_name).removeClass(hidden_class);
         }
 
-        if(show_explain) {
+        if (show_explain) {
             $Container.find('#explanation_explain, #explain_' + form_name).removeClass(hidden_class);
         }
 
         var images = {
-            risefall : {
+            risefall: {
                 image1: 'rise-fall-1.svg',
                 image2: 'rise-fall-2.svg',
             },
-            higherlower : {
+            higherlower: {
                 image1: 'higher-lower-1.svg',
                 image2: 'higher-lower-2.svg',
             },
-            touchnotouch : {
+            touchnotouch: {
                 image1: 'touch-notouch-1.svg',
                 image2: 'touch-notouch-2.svg',
             },
-            endsinout : {
+            endsinout: {
                 image1: 'in-out-1.svg',
                 image2: 'in-out-2.svg',
             },
-            staysinout : {
+            staysinout: {
                 image1: 'in-out-3.svg',
                 image2: 'in-out-4.svg',
             },
-            updown : {
+            updown: {
                 image1: 'up-down-1.svg',
                 image2: 'up-down-2.svg',
             },
-            spreads : {
+            spreads: {
                 image1: 'spreads-1.svg',
                 image2: 'spreads-2.svg',
             },
-            evenodd : {
+            evenodd: {
                 image1: 'evenodd-1.svg',
                 image2: 'evenodd-2.svg',
             },
-            overunder : {
+            overunder: {
                 image1: 'overunder-1.svg',
                 image2: 'overunder-2.svg',
             },
         };
 
-        if(show_image && images.hasOwnProperty(form_name)) {
-            var image_path = page.url.url_for_static('images/pages/trade-explanation/' + (page.language() === 'JA' ? 'ja/' : ''));
+        if (show_image && images.hasOwnProperty(form_name)) {
+            var image_path = url_for_static('images/pages/trade-explanation/' + (getLanguage() === 'JA' ? 'ja/' : ''));
             $Container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $Container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
             $Container.find('#explanation_image').removeClass(hidden_class);
@@ -222,14 +229,13 @@ var TradingAnalysis_Beta = (function() {
     };
 
     return {
-        request: requestTradeAnalysis,
-        digit_info: function() {
+        request     : requestTradeAnalysis,
+        getActiveTab: getActiveTab,
+        digit_info  : function() {
             return trading_digit_info;
         },
-        getActiveTab: getActiveTab,
-        bindAnalysisTabEvent: bindAnalysisTabEvent
+        bindAnalysisTabEvent: bindAnalysisTabEvent,
     };
-
 })();
 
 module.exports = {

@@ -1,36 +1,35 @@
 var japanese_client = require('../../common_functions/country_base').japanese_client;
+var Client   = require('../../base/client').Client;
+var url_for  = require('../../base/url').url_for;
 
 var Cashier = (function() {
-    "use strict";
+    'use strict';
 
     var lock_cashier = function(withdrawal_locked, lock_type) {
-      if (withdrawal_locked === 'locked') {
-        $.each($('.' + lock_type), function(){
-            replace_with_disabled_button($(this).parent());
-        });
-      }
+        if (withdrawal_locked === 'locked') {
+            $.each($('.' + lock_type), function() {
+                replace_with_disabled_button($(this).parent());
+            });
+        }
     };
 
     var check_locked = function() {
-        if (TUser.get().is_virtual || page.client.is_virtual()) return;
-        if (page.client_status_detected('cashier_locked')) {
+        if (Client.get_boolean('is_virtual')) return;
+        if (Client.status_detected('cashier_locked')) {
             lock_cashier('locked', 'deposit, .withdraw');
-        }
-        else if (page.client_status_detected('withdrawal_locked')) {
+        } else if (Client.status_detected('withdrawal_locked')) {
             lock_cashier('locked', 'withdraw');
-        }
-        else if (page.client_status_detected('unwelcome')) {
+        } else if (Client.status_detected('unwelcome')) {
             lock_cashier('locked', 'deposit');
-        }
-        else if (sessionStorage.getItem('client_status') === null) {
-            BinarySocket.send({"get_account_status": "1", "passthrough":{"dispatch_to":"Cashier"}});
+        } else if (sessionStorage.getItem('client_status') === null) {
+            BinarySocket.send({ get_account_status: '1', passthrough: { dispatch_to: 'Cashier' } });
         }
     };
 
     var check_virtual_top_up = function() {
-        if (TUser.get().is_virtual || page.client.is_virtual()) {
-            if ((TUser.get().currency !== 'JPY' && TUser.get().balance > 1000) ||
-                (TUser.get().currency === 'JPY' && TUser.get().balance > 100000)) {
+        if (Client.get_boolean('is_virtual')) {
+            if ((Client.get_value('currency') !== 'JPY' && Client.get_value('balance') > 1000) ||
+                (Client.get_value('currency') === 'JPY' && Client.get_value('balance') > 100000)) {
                 replace_with_disabled_button('#VRT_topup_link');
             }
         }
@@ -40,37 +39,32 @@ var Cashier = (function() {
         var $a = $(elementToReplace);
         if ($a.length === 0) return;
         // use replaceWith, to disable previously caught pjax event
-        $a.replaceWith($('<a/>', {class: $a.attr('class').replace('pjaxload') + ' button-disabled', html: $a.html()}));
+        $a.replaceWith($('<a/>', { class: $a.attr('class').replace('pjaxload') + ' button-disabled', html: $a.html() }));
     };
 
     var onLoad = function() {
-        if (!/\/cashier\.html/.test(window.location.pathname) || !page.client.is_logged_in) {
-            return;
-        } else {
+        if (/\/cashier\.html/.test(window.location.pathname) && Client.get_boolean('is_logged_in')) {
             Cashier.check_locked();
             Cashier.check_virtual_top_up();
-            page.contents.topbar_message_visibility(TUser.get().landing_company);
         }
     };
 
     var onLoadPaymentMethods = function() {
         if (japanese_client()) {
-            window.location.href = page.url.url_for('/');
+            window.location.href = url_for('/');
         }
-        if (!page.client.is_logged_in || page.client.is_virtual()) {
-            return;
-        } else {
+        if (Client.get_boolean('is_logged_in') && !Client.get_boolean('is_virtual')) {
             Cashier.check_locked();
         }
     };
 
     return {
-        check_locked: check_locked,
+        check_locked        : check_locked,
         check_virtual_top_up: check_virtual_top_up,
-        onLoad: onLoad,
+        onLoad              : onLoad,
         onLoadPaymentMethods: onLoadPaymentMethods,
     };
-}());
+})();
 
 module.exports = {
     Cashier: Cashier,

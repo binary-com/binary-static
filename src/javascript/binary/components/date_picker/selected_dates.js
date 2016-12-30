@@ -1,5 +1,6 @@
 var DatePicker = require('../date_picker').DatePicker;
 var moment = require('moment');
+// var localize = require('../../base/localize').localize;
 
 DatePicker.SelectedDates = function(component_id, select_type) {
     this.component_id = component_id;
@@ -12,7 +13,7 @@ DatePicker.SelectedDates = function(component_id, select_type) {
     });
 
     $(this._super).on('change', function(event, selected) {
-        $(that).trigger('change', [ selected ]);
+        $(that).trigger('change', [selected]);
     });
 };
 
@@ -22,15 +23,16 @@ DatePicker.SelectedDates.prototype = {
         this._super.create(this.config());
     },
     hide: function() {
-        if($('#' + this.component_id + '.hasDatepicker').length > 0)
+        if ($('#' + this.component_id + '.hasDatepicker').length > 0)            {
             $('#' + this.component_id).datepicker('destroy');
+        }
     },
     config: function() {
         var config = this._super.config();
         var that = this;
         config.beforeShowDay = function(date) {
-            var lookup = moment.utc([ date.getFullYear(), date.getMonth(), date.getDate() ]).format("YYYY-MM-DD");
-            if(that.dates.indexOf(lookup) >= 0) {
+            var lookup = moment.utc([date.getFullYear(), date.getMonth(), date.getDate()]).format('YYYY-MM-DD');
+            if (that.dates.indexOf(lookup) >= 0) {
                 return [1];
             }
 
@@ -38,7 +40,7 @@ DatePicker.SelectedDates.prototype = {
         };
 
         config.beforeShow = function() {
-            return { defaultDate: $('#' + that.component_id).val()};
+            return { defaultDate: $('#' + that.component_id).val() };
         };
 
         return config;
@@ -86,7 +88,7 @@ DatePicker.SelectedDates.prototype = {
 //        if (typeof this.cache[cache_key] === 'undefined') {
 //            var that = this;
 //            $.ajax({
-//                url: page.url.url_for('trade_get.cgi'),
+//                url: url_for('trade_get.cgi'),
 //                data: { controller_action: 'trading_days',
 //                        underlying_symbol: underlying_symbol,
 //                        form_name: form_name
@@ -108,14 +110,25 @@ DatePicker.SelectedDates.prototype = {
 //    localizations: function() {
 //        var localizations = {};
 //
-//        localizations.monthNames = [page.text.localize('January'), page.text.localize('February'), page.text.localize('March'), page.text.localize('April'), page.text.localize('May'), page.text.localize('June'),page.text.localize('July'), page.text.localize('August'), page.text.localize('September'), page.text.localize('October'), page.text.localize('November'), page.text.localize('December') ];
+//        localizations.monthNames = [localize('January'), localize('February'),
+//          localize('March'), localize('April'), localize('May'),
+//          localize('June'),localize('July'), localize('August'),
+//          localize('September'), localize('October'), localize('November'),
+//          localize('December') ];
 //
-//        localizations.monthNamesShort = [page.text.localize('Jan'), page.text.localize('Feb'), page.text.localize('Mar'), page.text.localize('Apr'), page.text.localize('May'), page.text.localize('Jun'), page.text.localize('Jul'), page.text.localize('Aug'), page.text.localize('Sep'), page.text.localize('Oct'), page.text.localize('Nov'), page.text.localize('Dec')];
+//        localizations.monthNamesShort = [localize('Jan'), localize('Feb'),
+//          localize('Mar'), localize('Apr'), localize('May'),
+//          localize('Jun'), localize('Jul'), localize('Aug'),
+//          localize('Sep'), localize('Oct'), localize('Nov'),
+//          localize('Dec')];
 //
-//        localizations.dayNames = [page.text.localize('Sunday'), page.text.localize('Monday'), page.text.localize('Tuesday'), page.text.localize('Wednesday'), page.text.localize('Thursday'), page.text.localize('Friday'), page.text.localize('Saturday')];
+//        localizations.dayNames = [localize('Sunday'), localize('Monday'),
+//          localize('Tuesday'), localize('Wednesday'),
+//          localize('Thursday'), localize('Friday'),
+//          localize('Saturday')];
 //
-//        localizations.nextText = page.text.localize('Next');
-//        localizations.prevText = page.text.localize('Previous');
+//        localizations.nextText = localize('Next');
+//        localizations.prevText = localize('Previous');
 //
 //        return localizations;
 //    },

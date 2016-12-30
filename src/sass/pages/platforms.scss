@@ -5,6 +5,10 @@
     table {
         table-layout: fixed;
         width: 100%;
+        ul.checked li {
+            background-position: center;
+            margin: 0;
+        }
     }
     td, th {
         vertical-align: top;
@@ -34,10 +38,6 @@
         font-weight: bold;
         background: $COLOR_LIGHT_GRAY;
         border-bottom: 1px solid $COLOR_LIGHT_GRAY;
-    }
-    ul.checked li {
-        background-position: center;
-        margin: 0;
     }
     .small-padding-top {
         padding-top: 4px;

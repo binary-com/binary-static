@@ -1,42 +1,65 @@
-var Cookies = require('../../lib/js-cookie');
-var Login = require('../base/login').Login;
+var Cookies        = require('../../lib/js-cookie');
+var getLanguage    = require('../base/language').getLanguage;
+var URLForLanguage = require('../base/language').URLForLanguage;
 
 function checkClientsCountry() {
-  var clients_country = localStorage.getItem('clients_country');
-  if (clients_country) {
-    if (clients_country === 'jp') {
-      limitLanguage('JA');
-    } else if (clients_country === 'id') {
-      limitLanguage('ID');
+    var clients_country = localStorage.getItem('clients_country');
+    if (clients_country) {
+        if (clients_country === 'jp') {
+            limitLanguage('JA');
+        } else if (clients_country === 'id') {
+            limitLanguage('ID');
+        } else {
+            $('.languages').show();
+        }
     } else {
-      $('#language_select').show();
+        BinarySocket.init();
+        BinarySocket.send({ website_status: '1' });
     }
-  } else {
-    BinarySocket.init();
-    BinarySocket.send({"website_status" : "1"});
-  }
 }
 
 function limitLanguage(lang) {
-  if (page.language() !== lang && !Login.is_login_pages()) {
-    window.location.href = page.url_for_language(lang);
-  }
-  if (document.getElementById('language_select')) {
-    $('#language_select').remove();
-    $('#gmt-clock').removeClass();
-    $('#gmt-clock').addClass('gr-6 gr-12-m');
-    $('#contact-us').removeClass();
-    $('#contact-us').addClass('gr-6 gr-hide-m');
-  }
+    if (getLanguage() !== lang) {
+        window.location.href = URLForLanguage(lang);
+    }
+    if (document.getElementById('select_language')) {
+        $('.languages').remove();
+        $('#gmt-clock').removeClass();
+        $('#gmt-clock').addClass('gr-6 gr-12-m');
+        $('#contact-us').removeClass();
+        $('#contact-us').addClass('gr-6 gr-hide-m');
+    }
 }
 
 function japanese_client() {
     // handle for test case
     if (typeof window === 'undefined') return false;
-    return (page.language().toLowerCase() === 'ja' || (Cookies.get('residence') === 'jp') || localStorage.getItem('clients_country') === 'jp');
+    return (getLanguage() === 'JA' || (Cookies.get('residence') === 'jp') || localStorage.getItem('clients_country') === 'jp');
+}
+
+function checkLanguage() {
+    if (getLanguage() === 'ID') {
+        var regex = new RegExp('id'),
+            $blogLink = $('.blog a'),
+            $blogHREF = $blogLink.attr('href');
+        if (!regex.test($blogHREF)) {
+            $blogLink.attr('href', $blogHREF + '/id/');
+        }
+    }
+    if (japanese_client()) {
+        var visible = 'visibility: visible;';
+        $('.ja-hide').addClass('invisible');
+        $('.ja-show').attr('style', 'display: inline !important;' + visible);
+        $('.ja-show-block').attr('style', 'display: block !important;' + visible);
+        $('.ja-show-inline-block').attr('style', 'display: inline-block !important;' + visible);
+        $('.ja-no-padding').attr('style', 'padding-top: 0; padding-bottom: 0;');
+        $('#regulatory-text').removeClass('gr-9 gr-7-p')
+                             .addClass('gr-12 gr-12-p');
+    }
 }
 
 module.exports = {
     checkClientsCountry: checkClientsCountry,
     japanese_client    : japanese_client,
+    checkLanguage      : checkLanguage,
 };

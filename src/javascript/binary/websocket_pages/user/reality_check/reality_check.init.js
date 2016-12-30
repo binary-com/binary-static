@@ -1,7 +1,8 @@
-var RealityCheckUI = require('./reality_check.ui').RealityCheckUI;
+var RealityCheckUI   = require('./reality_check.ui').RealityCheckUI;
 var RealityCheckData = require('./reality_check.data').RealityCheckData;
+var Client           = require('../../../base/client').Client;
 
-var RealityCheck = (function () {
+var RealityCheck = (function() {
     'use strict';
 
     function realityCheckWSHandler(response) {
@@ -28,21 +29,21 @@ var RealityCheck = (function () {
 
     function init() {
         RealityCheckUI.initializeValues();
-        if (!page.client.require_reality_check()) {
+        if (!Client.get_boolean('has_reality_check')) {
             RealityCheckData.setPreviousLoadLoginId();
             RealityCheckUI.sendAccountStatus();
             return;
         }
 
-        RealityCheckUI.setLoginTime(TUser.get().logintime * 1000);
+        RealityCheckUI.setLoginTime(Client.get_value('session_start') * 1000);
 
         window.addEventListener('storage', realityStorageEventHandler, false);
 
-        if (TUser.get().loginid !== RealityCheckData.getPreviousLoadLoginId()) {
+        if (Client.get_value('loginid') !== RealityCheckData.getPreviousLoadLoginId()) {
             RealityCheckData.clear();
         }
 
-        RealityCheckData.resetInvalid();            // need to reset after clear
+        RealityCheckData.resetInvalid(); // need to reset after clear
 
         if (RealityCheckData.getAck() !== '1') {
             RealityCheckUI.renderFrequencyPopUp();
@@ -57,10 +58,10 @@ var RealityCheck = (function () {
     }
 
     return {
-        init: init,
+        init                 : init,
         realityCheckWSHandler: realityCheckWSHandler,
     };
-}());
+})();
 
 module.exports = {
     RealityCheck: RealityCheck,

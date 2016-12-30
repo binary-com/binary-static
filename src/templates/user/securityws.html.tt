@@ -5,7 +5,7 @@
         <div class="gr-3 gr-6-m gr-parent">
             <div class="gr-8 gr-padding-10">
                 <a class="pjaxload" href="[% request.url_for('/user/security/change_passwordws') %]">
-                    <img class="responsive" src="[% request.url_for('images/pages/settings/security.svg') %]">
+                    <img class="responsive" src="[% request.url_for('images/pages/settings/account_password.svg') %]">
                 </a>
             </div>
             <div class="gr-12">
@@ -19,7 +19,7 @@
         <div class="gr-3 gr-6-m gr-parent real invisible">
             <div class="gr-8 gr-padding-10">
                 <a class="pjaxload" href="[% request.url_for('/user/security/cashier_passwordws') %]">
-                    <img class="responsive" src="[% request.url_for('images/pages/settings/security.svg') %]">
+                    <img class="responsive" src="[% request.url_for('images/pages/settings/cashier_password.svg') %]">
                 </a>
             </div>
             <div class="gr-12">
