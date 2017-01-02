@@ -81,6 +81,12 @@
     </span>
     <span></span>
     <span class="button">
+      <button class="button" id="view_statement">
+        [% l("View Statement") %]
+      </button>
+    </span>
+    <span></span>
+    <span class="button">
       <button class="button" id="btn_logout">
         [% l("Logout") %]
       </button>

@@ -42,6 +42,7 @@ Page.prototype = {
             ViewBalance.init();
         } else {
             LocalStore.set('reality_check.ack', 0);
+            LocalStore.set('reality_check.show_in_statement', 1);
         }
         setCookieLanguage();
         if (sessionStorage.getItem('showLoginPage')) {

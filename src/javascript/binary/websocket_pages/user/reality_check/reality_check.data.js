@@ -30,6 +30,10 @@ var RealityCheckData = (function() {
         LocalStore.set('reality_check.keep_open', 0);
     }
 
+    function showInStatement(bool) {
+        LocalStore.set('reality_check.show_in_statement', bool);
+    }
+
     function updateAck() {
         LocalStore.set('reality_check.ack', 1);
     }
@@ -55,6 +59,7 @@ var RealityCheckData = (function() {
         LocalStore.remove('reality_check.ack');
         LocalStore.remove('reality_check.interval');
         LocalStore.remove('reality_check.keep_open');
+        LocalStore.remove('reality_check.show_in_statement');
         LocalStore.remove('reality_check.close');
         LocalStore.remove('reality_check.svrtime');
         LocalStore.remove('reality_check.basetime');
@@ -103,6 +108,10 @@ var RealityCheckData = (function() {
         };
     }
 
+    function shouldShowRealityCheck() {
+        return (/statementws/.test(window.location.pathname) ? JSON.parse(LocalStore.get('reality_check.show_in_statement')) : true);
+    }
+
     return {
         getSummaryAsync       : getSummaryAsync,
         getAck                : getAck,
@@ -117,6 +126,8 @@ var RealityCheckData = (function() {
         resetInvalid          : resetInvalid,
         summaryData           : summaryData,
         triggerCloseEvent     : triggerCloseEvent,
+        showInStatement       : showInStatement,
+        shouldShowRealityCheck: shouldShowRealityCheck,
     };
 })();
 

@@ -53,13 +53,13 @@ var RealityCheckUI = (function() {
                     var payload = $(realityCheckText);
                     showPopUp(payload.find('#reality-check-content'));
                     showIntervalOnPopUp();
-                    $('#continue').click(RealityCheckUI.onContinueClick);
+                    eventHandlers();
                 }
             },
             error: function() {
             },
         });
-        $('#continue').click(RealityCheckUI.onContinueClick);
+        eventHandlers();
     }
 
     function updateSummary(summary) {
@@ -93,8 +93,7 @@ var RealityCheckUI = (function() {
                     showPopUp(payload.find('#reality-check-content'));
                     updateSummary(summary);
                     showIntervalOnPopUp();
-                    $('#continue').click(RealityCheckUI.onContinueClick);
-                    $('button#btn_logout').click(RealityCheckUI.onLogoutClick);
+                    eventHandlers();
                 }
             },
             error: function() {
@@ -102,20 +101,13 @@ var RealityCheckUI = (function() {
         });
     }
 
-    function frequencyEventHandler() {
-        $('button#continue').click(function() {
-            RealityCheckData.updateAck();
+    function eventHandlers() {
+        $('#continue').click(RealityCheckUI.onContinueClick);
+        $('#view_statement').click(function() {
+            RealityCheckData.showInStatement(0);
+            window.location.href = url_for('user/statementws');
         });
-    }
-
-    function summaryEventHandler() {
-        $('button#continue').click(function() {
-            RealityCheckData.updateAck();
-        });
-
-        $('button#btn_logout').click(function() {
-            BinarySocket.send({ logout: 1 });
-        });
+        $('button#btn_logout').click(function() { BinarySocket.send({ logout: '1' }); });
     }
 
     function closePopUp() {
@@ -150,14 +142,6 @@ var RealityCheckUI = (function() {
         sendAccountStatus();
     }
 
-    function onLogoutClick() {
-        logout();
-    }
-
-    function logout() {
-        BinarySocket.send({ logout: '1' });
-    }
-
     function sendAccountStatus() {
         if (!Client.get_boolean('is_virtual') && Client.get_value('residence') !== 'jp' && !getAccountStatus) {
             BinarySocket.send({ get_account_status: 1 });
@@ -182,17 +166,14 @@ var RealityCheckUI = (function() {
     }
 
     return {
-        frequencyEventHandler: frequencyEventHandler,
-        summaryEventHandler  : summaryEventHandler,
-        renderFrequencyPopUp : renderFrequencyPopUp,
-        renderSummaryPopUp   : renderSummaryPopUp,
-        closePopUp           : closePopUp,
-        onContinueClick      : onContinueClick,
-        onLogoutClick        : onLogoutClick,
-        sendAccountStatus    : sendAccountStatus,
-        initializeValues     : initializeValues,
-        startSummaryTimer    : startSummaryTimer,
-        setLoginTime         : function(time) { loginTime = time; },
+        renderFrequencyPopUp: renderFrequencyPopUp,
+        renderSummaryPopUp  : renderSummaryPopUp,
+        closePopUp          : closePopUp,
+        onContinueClick     : onContinueClick,
+        sendAccountStatus   : sendAccountStatus,
+        initializeValues    : initializeValues,
+        startSummaryTimer   : startSummaryTimer,
+        setLoginTime        : function(time) { loginTime = time; },
     };
 })();
 

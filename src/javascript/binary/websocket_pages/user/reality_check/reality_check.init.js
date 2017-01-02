@@ -35,6 +35,10 @@ var RealityCheck = (function() {
             return;
         }
 
+        if (!RealityCheckData.shouldShowRealityCheck()) {
+            return;
+        }
+
         RealityCheckUI.setLoginTime(Client.get_value('session_start') * 1000);
 
         window.addEventListener('storage', realityStorageEventHandler, false);
