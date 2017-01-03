@@ -40,6 +40,7 @@ var MBSymbols = (function () {
         BinarySocket.send({
             active_symbols : 'brief',
             landing_company: 'japan',
+            product_type   : 'multi_barrier',
         });
         need_page_update = update;
     };
