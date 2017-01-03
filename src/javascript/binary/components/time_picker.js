@@ -1,15 +1,15 @@
-var moment = require('moment');
-var checkInput = require('../common_functions/common_functions').checkInput;
-var localize = require('../base/localize').localize;
+const moment = require('moment');
+const checkInput = require('../common_functions/common_functions').checkInput;
+const localize = require('../base/localize').localize;
 
-var TimePicker = function(component_selector) {
+const TimePicker = function(component_selector) {
     this.component_selector = component_selector;
 };
 
 TimePicker.prototype = {
     show: function(min_time, max_time) {
         this.checkWidth(this.config(min_time, max_time), this.component_selector, this);
-        var that = this;
+        const that = this;
         $(window).resize(function() { that.checkWidth(that.config_data, that.component_selector, that); });
     },
     hide: function() {
@@ -20,7 +20,7 @@ TimePicker.prototype = {
         $(this.component_selector).off('keydown');
     },
     create: function(config) {
-        var that = this;
+        const that = this;
         $(this.component_selector).keydown(function(e) {
             if (e.which === 13) {
                 e.preventDefault();
@@ -38,10 +38,10 @@ TimePicker.prototype = {
         return moment.utc(window.time);
     },
     config: function(min_time, max_time) {
-        var that = this,
-            time_now = this.time_now();
+        const that = this;
+        let time_now = this.time_now();
 
-        var config = {
+        const config = {
             hourText  : localize('Hour'),
             minuteText: localize('Minute'),
             amPmText  : localize(['AM', 'PM']),
@@ -59,13 +59,13 @@ TimePicker.prototype = {
         }
 
         config.onSelect = function(time) {
-            var oldValue = $(that.component_selector).attr('data-value');
+            const oldValue = $(that.component_selector).attr('data-value');
             if (!time.match(/^(:?[0-3]\d):(:?[0-5]\d):(:?[0-5]\d)$/)) {
                 time_now = that.time_now();
-                var invalid = time.match(/([a-z0-9]*):([a-z0-9]*):?([a-z0-9]*)?/);
-                var hour = time_now.format('hh');
-                var minute = time_now.format('mm');
-                var second = time_now.format('ss');
+                const invalid = time.match(/([a-z0-9]*):([a-z0-9]*):?([a-z0-9]*)?/);
+                let hour = time_now.format('hh'),
+                    minute = time_now.format('mm'),
+                    second = time_now.format('ss');
 
                 if (typeof invalid[1] !== 'undefined' && isFinite(invalid[1])) {
                     hour = parseInt(invalid[1]);
@@ -86,7 +86,7 @@ TimePicker.prototype = {
                     }
                 }
 
-                var new_time = moment(time_now.format('YYYY-MM-DD') + ' ' + hour + ':' + minute + ':' + second).format('HH:mm');
+                const new_time = moment(time_now.format('YYYY-MM-DD') + ' ' + hour + ':' + minute + ':' + second).format('HH:mm');
 
                 if (oldValue && oldValue === new_time) return false;
 
@@ -106,21 +106,21 @@ TimePicker.prototype = {
         return config;
     },
     getTime: function(time) {
-        var hour = ('0' + time.hour).slice(-2),
+        const hour = ('0' + time.hour).slice(-2),
             minute = ('0' + time.minute).slice(-2),
             second = '00';
         return ([hour, minute, second].join(':'));
     },
     checkWidth: function(config, component_selector, that) {
-        var $selector = $(that.component_selector);
+        const $selector = $(that.component_selector);
         if ($(window).width() < 770 && checkInput('time', 'not-a-time') && $selector.attr('data-picker') !== 'native') {
             that.hide($selector);
             $selector.attr({ type: 'time', 'data-picker': 'native' });
-            var minTime = config.minTime;
+            const minTime = config.minTime;
             if (minTime) {
                 $selector.attr('min', that.getTime(minTime));
             }
-            var maxTime = config.maxTime;
+            const maxTime = config.maxTime;
             if (maxTime) {
                 $selector.attr('max', that.getTime(maxTime));
             }

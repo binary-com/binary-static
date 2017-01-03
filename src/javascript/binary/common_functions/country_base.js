@@ -1,9 +1,9 @@
-var Cookies        = require('../../lib/js-cookie');
-var getLanguage    = require('../base/language').getLanguage;
-var URLForLanguage = require('../base/language').URLForLanguage;
+const Cookies        = require('../../lib/js-cookie');
+const getLanguage    = require('../base/language').getLanguage;
+const URLForLanguage = require('../base/language').URLForLanguage;
 
 function checkClientsCountry() {
-    var clients_country = localStorage.getItem('clients_country');
+    const clients_country = localStorage.getItem('clients_country');
     if (clients_country) {
         if (clients_country === 'jp') {
             limitLanguage('JA');
@@ -24,10 +24,10 @@ function limitLanguage(lang) {
     }
     if (document.getElementById('select_language')) {
         $('.languages').remove();
-        $('#gmt-clock').removeClass();
-        $('#gmt-clock').addClass('gr-6 gr-12-m');
-        $('#contact-us').removeClass();
-        $('#contact-us').addClass('gr-6 gr-hide-m');
+        $('#gmt-clock').removeClass()
+                       .addClass('gr-6 gr-12-m');
+        $('#contact-us').removeClass()
+                        .addClass('gr-6 gr-hide-m');
     }
 }
 
@@ -39,7 +39,7 @@ function japanese_client() {
 
 function checkLanguage() {
     if (getLanguage() === 'ID') {
-        var regex = new RegExp('id'),
+        const regex = new RegExp('id'),
             $blogLink = $('.blog a'),
             $blogHREF = $blogLink.attr('href');
         if (!regex.test($blogHREF)) {
@@ -47,7 +47,7 @@ function checkLanguage() {
         }
     }
     if (japanese_client()) {
-        var visible = 'visibility: visible;';
+        const visible = 'visibility: visible;';
         $('.ja-hide').addClass('invisible');
         $('.ja-show').attr('style', 'display: inline !important;' + visible);
         $('.ja-show-block').attr('style', 'display: block !important;' + visible);

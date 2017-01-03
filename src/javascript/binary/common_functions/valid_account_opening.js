@@ -1,14 +1,14 @@
-var Validate    = require('./validation').Validate;
-var isValidDate = require('./common_functions').isValidDate;
-var Content     = require('./content').Content;
-var Cookies     = require('../../lib/js-cookie');
-var localize    = require('../base/localize').localize;
-var Client      = require('../base/client').Client;
-var Contents    = require('../base/contents').Contents;
-var url_for     = require('../base/url').url_for;
+const Validate    = require('./validation').Validate;
+const isValidDate = require('./common_functions').isValidDate;
+const Content     = require('./content').Content;
+const Cookies     = require('../../lib/js-cookie');
+const localize    = require('../base/localize').localize;
+const Client      = require('../base/client').Client;
+const Contents    = require('../base/contents').Contents;
+const url_for     = require('../base/url').url_for;
 
-var ValidAccountOpening = (function() {
-    var redirectCookie = function() {
+const ValidAccountOpening = (function() {
+    const redirectCookie = function() {
         if (Contents.show_login_if_logout(true)) {
             return;
         }
@@ -16,17 +16,17 @@ var ValidAccountOpening = (function() {
             window.location.href = url_for('trading');
             return;
         }
-        var client_loginid_array = Client.get_value('loginid_array');
-        for (var i = 0; i < client_loginid_array.length; i++) {
+        const client_loginid_array = Client.get_value('loginid_array');
+        for (let i = 0; i < client_loginid_array.length; i++) {
             if (client_loginid_array[i].real === true) {
                 window.location.href = url_for('trading');
                 return;
             }
         }
     };
-    var handler = function(response, message) {
+    const handler = function(response, message) {
         if (response.error) {
-            var errorMessage = response.error.message;
+            const errorMessage = response.error.message;
             if (response.error.code === 'show risk disclaimer' && document.getElementById('financial-form')) {
                 $('#financial-form').addClass('hidden');
                 $('#financial-risk').removeClass('hidden');
@@ -40,7 +40,7 @@ var ValidAccountOpening = (function() {
                 $('#financial-form').remove();
                 $('#financial-risk').remove();
             }
-            var error = document.getElementsByClassName('notice-msg')[0];
+            const error = document.getElementsByClassName('notice-msg')[0];
             error.innerHTML = (response.msg_type === 'sanity_check') ? localize('There was some invalid character in an input field.') : errorMessage;
             error.parentNode.parentNode.parentNode.setAttribute('style', 'display:block');
         } else if (Cookies.get('residence') === 'jp') {
@@ -50,14 +50,14 @@ var ValidAccountOpening = (function() {
             Client.process_new_account(Cookies.get('email'), message.client_id, message.oauth_token, false);
         }
     };
-    var letters,
+    let letters,
         numbers,
         space,
         hyphen,
         period,
         apost;
 
-    var initializeValues = function() {
+    const initializeValues = function() {
         letters = Content.localize().textLetters;
         numbers = Content.localize().textNumbers;
         space   = Content.localize().textSpace;
@@ -66,7 +66,7 @@ var ValidAccountOpening = (function() {
         apost   = Content.localize().textApost;
     };
 
-    var checkFname = function(fname, errorFname) {
+    const checkFname = function(fname, errorFname) {
         if ((fname.value).trim().length < 2) {
             errorFname.innerHTML = Content.errorMessage('min', '2');
             Validate.displayErrorMessage(errorFname);
@@ -78,7 +78,7 @@ var ValidAccountOpening = (function() {
             window.accountErrorCounter++;
         }
     };
-    var checkLname = function(lname, errorLname) {
+    const checkLname = function(lname, errorLname) {
         if ((lname.value).trim().length < 2) {
             errorLname.innerHTML = Content.errorMessage('min', '2');
             Validate.displayErrorMessage(errorLname);
@@ -90,14 +90,14 @@ var ValidAccountOpening = (function() {
             window.accountErrorCounter++;
         }
     };
-    var checkDate = function(dobdd, dobmm, dobyy, errorDob) {
+    const checkDate = function(dobdd, dobmm, dobyy, errorDob) {
         if (!isValidDate(dobdd.value, dobmm.value, dobyy.value) || dobdd.value === '' || dobmm.value === '' || dobyy.value === '') {
             errorDob.innerHTML = Content.localize().textErrorBirthdate;
             Validate.displayErrorMessage(errorDob);
             window.accountErrorCounter++;
         }
     };
-    var checkPostcode = function(postcode, errorPostcode) {
+    const checkPostcode = function(postcode, errorPostcode) {
         if ((postcode.value !== '' || Client.get_value('residence') === 'gb') && !/^[a-zA-Z\d-]+$/.test(postcode.value)) {
             initializeValues();
             errorPostcode.innerHTML = Content.errorMessage('reg', [letters, numbers, hyphen]);
@@ -105,7 +105,7 @@ var ValidAccountOpening = (function() {
             window.accountErrorCounter++;
         }
     };
-    var checkTel = function(tel, errorTel) {
+    const checkTel = function(tel, errorTel) {
         if (tel.value.replace(/\+| /g, '').length < 6) {
             errorTel.innerHTML = Content.errorMessage('min', 6);
             Validate.displayErrorMessage(errorTel);
@@ -117,14 +117,14 @@ var ValidAccountOpening = (function() {
             window.accountErrorCounter++;
         }
     };
-    var checkAnswer = function(answer, errorAnswer) {
+    const checkAnswer = function(answer, errorAnswer) {
         if (answer.value.length < 4) {
             errorAnswer.innerHTML = Content.errorMessage('min', 4);
             Validate.displayErrorMessage(errorAnswer);
             window.accountErrorCounter++;
         }
     };
-    var checkCity = function(city, errorCity) {
+    const checkCity = function(city, errorCity) {
         if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test(city.value)) {
             initializeValues();
             errorCity.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);

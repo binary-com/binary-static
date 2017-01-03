@@ -1,19 +1,19 @@
-var MenuContent = (function () {
-    var listeners_events = [];
+const MenuContent = (function () {
+    const listeners_events = [];
 
-    var that = {
+    const that = {
         init: function (_menu_containers) {
             if (/trading/.test(window.location.pathname)) return;
             _menu_containers.filter(':not(.follow-default)').delegate('.tm-a,.tm-a-2', 'click', function (event) {
                 event.preventDefault();
 
-                var target = $(event.target);
-                var tab_id = target.parents('li:first').attr('id');
+                const target = $(event.target);
+                const tab_id = target.parents('li:first').attr('id');
 
                 if (tab_id) {
-                    var tab_container = target.parents('.tm-ul');
+                    const tab_container = target.parents('.tm-ul');
                     /* eslint-disable newline-per-chained-call */
-                    var selected_tab =
+                    let selected_tab =
                         // find previously active tab
                         tab_container.find('.tm-a, .tm-a-2')
                         // remove previously active tab
@@ -36,12 +36,19 @@ var MenuContent = (function () {
                     /* eslint-enable newline-per-chained-call */
 
                     // replace span to a, to make it clickable for real
-                    var span_tm_a = tab_container.find('span.tm-a');
+                    const span_tm_a = tab_container.find('span.tm-a');
                     span_tm_a.replaceWith('<a href="#" class="' + span_tm_a.attr('class') + '">' + span_tm_a.html() + '</a>');
 
-                    var menu_li = selected_tab.parents('li');
-                    var sub_menu_selected = menu_li.find('.tm-ul-2 .a-active');
-                    var selected_tab_id = menu_li.attr('id');
+                    const menu_li = selected_tab.parents('li');
+                    let sub_menu_selected = menu_li.find('.tm-ul-2 .a-active'),
+                        selected_tab_id = menu_li.attr('id');
+                    const $selected_tab_content = $('#' + selected_tab_id + '-content');
+                    let selected_content = $selected_tab_content
+                        // show selected tab content
+                        .removeClass('invisible')
+                        // and hide the rest
+                        .siblings(':not(.sticky)').addClass('invisible')
+                        .end();
 
                     if (!sub_menu_selected.length) {
                         sub_menu_selected = menu_li.find('.tm-a-2:first').addClass('a-active');
@@ -49,18 +56,12 @@ var MenuContent = (function () {
                         if (sub_menu_selected.length) {
                             selected_tab = sub_menu_selected;
                             selected_tab_id = sub_menu_selected.parents('li').attr('id');
-                            selected_content = $('#' + selected_tab_id + '-content').removeClass('invisible');
+                            selected_content = $selected_tab_content.removeClass('invisible');
                         } else {
                             selected_tab_id = menu_li.attr('id');
                         }
                     }
 
-                    var selected_content = $('#' + selected_tab_id + '-content')
-                        // show selected tab content
-                        .removeClass('invisible')
-                        // and hide the rest
-                        .siblings(':not(.sticky)').addClass('invisible')
-                        .end();
 
                     that.push_to_listeners({
                         id     : selected_tab_id,
@@ -76,16 +77,16 @@ var MenuContent = (function () {
         },
         push_to_listeners: function (info) {
             // push to listeners events
-            for (var i = 0; i < listeners_events.length; i++) {
+            for (let i = 0; i < listeners_events.length; i++) {
                 listeners_events[i](info);
             }
         },
         trigger: function (id) {
-            var tab_id     = id.tab_id,
-                content_id = id.content_id;
+            let tab_id = id.tab_id;
+            const content_id = id.content_id;
 
             if (!tab_id && typeof content_id !== 'undefined') {
-                var matched = content_id.match(/^(.+)-content$/);
+                const matched = content_id.match(/^(.+)-content$/);
                 if (matched && matched[1]) {
                     tab_id = matched[1];
                 }
@@ -95,13 +96,13 @@ var MenuContent = (function () {
                 return false;
             }
 
-            var tab_to_trigger = $('#' + tab_id);
+            const tab_to_trigger = $('#' + tab_id);
 
             if (!tab_to_trigger.length || tab_to_trigger.hasClass('invisible')) {
                 return false;
             }
             // else
-            var tab = tab_to_trigger.find('.tm-a');
+            const tab = tab_to_trigger.find('.tm-a');
             if (tab.length) {
                 return tab.trigger('click');
             }

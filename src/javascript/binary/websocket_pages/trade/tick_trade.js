@@ -1,17 +1,17 @@
-var Tick                 = require('./tick').Tick;
-var moment               = require('moment');
-var Content              = require('../../common_functions/content').Content;
-var ViewPopupUI          = require('../user/view_popup/view_popup_ui').ViewPopupUI;
-var isVisible            = require('../../common_functions/common_functions').isVisible;
-var updatePurchaseStatus = require('./common').updatePurchaseStatus;
-var localize             = require('../../base/localize').localize;
-var Highcharts           = require('highcharts');
+const Tick                 = require('./tick').Tick;
+const moment               = require('moment');
+const Content              = require('../../common_functions/content').Content;
+const ViewPopupUI          = require('../user/view_popup/view_popup_ui').ViewPopupUI;
+const isVisible            = require('../../common_functions/common_functions').isVisible;
+const updatePurchaseStatus = require('./common').updatePurchaseStatus;
+const localize             = require('../../base/localize').localize;
+const Highcharts           = require('highcharts');
 require('highcharts/modules/exporting')(Highcharts);
 
-var TickDisplay = (function() {
+const TickDisplay = (function() {
     return {
         initialize: function(data) {
-            var $self = this;
+            const $self = this;
 
             // setting up globals
             $self.number_of_ticks = parseInt(data.number_of_ticks);
@@ -24,7 +24,7 @@ var TickDisplay = (function() {
             $self.abs_barrier = data.abs_barrier;
             $self.display_decimals = data.display_decimals || 2;
             $self.show_contract_result = data.show_contract_result;
-            var tick_frequency = 5;
+            const tick_frequency = 5;
 
             if (data.show_contract_result) {
                 $self.contract_sentiment = data.contract_sentiment;
@@ -32,7 +32,7 @@ var TickDisplay = (function() {
                 $self.payout = parseFloat(data.payout);
             }
 
-            var minimize = data.show_contract_result,
+            const minimize = data.show_contract_result,
                 end_time = parseInt(data.contract_start) + parseInt(($self.number_of_ticks + 2) * tick_frequency);
 
             $self.set_x_indicators();
@@ -44,9 +44,9 @@ var TickDisplay = (function() {
             });
         },
         set_x_indicators: function() {
-            var $self = this;
+            const $self = this;
 
-            var exit_tick_index = $self.number_of_ticks - 1;
+            const exit_tick_index = $self.number_of_ticks - 1;
             if ($self.contract_category.match('asian')) {
                 $self.ticks_needed = $self.number_of_ticks;
                 $self.x_indicators = {
@@ -79,7 +79,7 @@ var TickDisplay = (function() {
             }
         },
         initialize_chart: function(config) {
-            var $self = this;
+            const $self = this;
 
             $self.chart = new Highcharts.Chart({
                 chart: {
@@ -94,9 +94,9 @@ var TickDisplay = (function() {
                 credits: { enabled: false },
                 tooltip: {
                     formatter: function () {
-                        var that = this;
-                        var new_y = that.y.toFixed($self.display_decimals);
-                        var mom = moment.utc($self.applicable_ticks[that.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
+                        const that = this;
+                        const new_y = that.y.toFixed($self.display_decimals);
+                        const mom = moment.utc($self.applicable_ticks[that.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
                         return mom + '<br/>' + $self.display_symbol + ' ' + new_y;
                     },
                 },
@@ -126,11 +126,11 @@ var TickDisplay = (function() {
             });
         },
         apply_chart_background_color: function(tick) {
-            var $self = this;
+            const $self = this;
             if (!$self.show_contract_result) {
                 return;
             }
-            var chart_container = $('#tick_chart');
+            const chart_container = $('#tick_chart');
             if ($self.contract_sentiment === 'up') {
                 if (tick.quote > $self.contract_barrier) {
                     chart_container.css('background-color', 'rgba(46,136,54,0.198039)');
@@ -146,21 +146,21 @@ var TickDisplay = (function() {
             }
         },
         add_barrier: function() {
-            var $self = this;
+            const $self = this;
 
             if (!$self.set_barrier) {
                 return;
             }
 
-            var barrier_type = $self.contract_category.match('asian') ? 'asian' : 'static';
+            const barrier_type = $self.contract_category.match('asian') ? 'asian' : 'static';
 
             if (barrier_type === 'static') {
-                var barrier_tick = $self.applicable_ticks[0];
+                const barrier_tick = $self.applicable_ticks[0];
 
                 if ($self.barrier) {
-                    var final_barrier = barrier_tick.quote + parseFloat($self.barrier);
-                  // sometimes due to rounding issues, result is 1.009999 while it should
-                  // be 1.01
+                    let final_barrier = barrier_tick.quote + parseFloat($self.barrier);
+                    // sometimes due to rounding issues, result is 1.009999 while it should
+                    // be 1.01
                     final_barrier = Number(Math.round(final_barrier + 'e' + $self.display_decimals) + 'e-' + $self.display_decimals);
 
                     barrier_tick.quote = final_barrier;
@@ -181,11 +181,11 @@ var TickDisplay = (function() {
             }
 
             if (barrier_type === 'asian') {
-                var total = 0;
-                for (var i = 0; i < $self.applicable_ticks.length; i++) {
+                let total = 0;
+                for (let i = 0; i < $self.applicable_ticks.length; i++) {
                     total += parseFloat($self.applicable_ticks[i].quote);
                 }
-                var calc_barrier =  total / $self.applicable_ticks.length;
+                let calc_barrier =  total / $self.applicable_ticks.length;
                 calc_barrier = calc_barrier.toFixed(parseInt($self.display_decimals) + 1); // round calculated barrier
 
                 $self.chart.yAxis[0].removePlotLine('tick-barrier');
@@ -202,13 +202,13 @@ var TickDisplay = (function() {
                 });
                 $self.contract_barrier = calc_barrier;
             }
-            var barrier = document.getElementById('contract_purchase_barrier');
+            const barrier = document.getElementById('contract_purchase_barrier');
             if ($self.contract_barrier && barrier) {
                 barrier.innerHTML = Content.localize().textBarrier + ': ' + $self.contract_barrier;
             }
         },
         add: function(indicator) {
-            var $self = this;
+            const $self = this;
 
             $self.chart.xAxis[0].addPlotLine({
                 value : indicator.index,
@@ -220,14 +220,14 @@ var TickDisplay = (function() {
             });
         },
         evaluate_contract_outcome: function() {
-            var $self = this;
+            const $self = this;
 
             if (!$self.contract_barrier) {
                 return; // can't do anything without barrier
             }
 
-            var exit_tick_index = $self.applicable_ticks.length - 1;
-            var exit_spot = $self.applicable_ticks[exit_tick_index].quote;
+            const exit_tick_index = $self.applicable_ticks.length - 1;
+            const exit_spot = $self.applicable_ticks[exit_tick_index].quote;
 
             if ($self.contract_sentiment === 'up') {
                 if (exit_spot > $self.contract_barrier) {
@@ -244,13 +244,13 @@ var TickDisplay = (function() {
             }
         },
         win: function() {
-            var $self = this;
+            const $self = this;
 
-            var profit = $self.payout - $self.price;
+            const profit = $self.payout - $self.price;
             $self.update_ui($self.payout, profit, localize('This contract won'));
         },
         lose: function() {
-            var $self = this;
+            const $self = this;
             $self.update_ui(0, -$self.price, localize('This contract lost'));
         },
         to_monetary_format: function(number) {
@@ -259,9 +259,9 @@ var TickDisplay = (function() {
     };
 })();
 
-var WSTickDisplay = Object.create(TickDisplay);
+const WSTickDisplay = Object.create(TickDisplay);
 WSTickDisplay.plot = function() {
-    var $self = this;
+    const $self = this;
     $self.contract_start_moment = moment($self.contract_start_ms).utc();
     $self.counter = 0;
     $self.applicable_ticks = [];
@@ -277,8 +277,8 @@ WSTickDisplay.socketSend = function(req) {
     BinarySocket.send(req);
 };
 WSTickDisplay.dispatch = function(data) {
-    var $self = this;
-    var chart = document.getElementById('tick_chart');
+    const $self = this;
+    const chart = document.getElementById('tick_chart');
 
     if (!chart || !isVisible(chart) || !data || (!data.tick && !data.history)) {
         return;
@@ -290,7 +290,7 @@ WSTickDisplay.dispatch = function(data) {
         ViewPopupUI.storeSubscriptionID(window.responseID);
     }
 
-    var epoches,
+    let epoches,
         spots2,
         display_decimals;
     if (document.getElementById('sell_content_wrapper')) {
@@ -335,8 +335,8 @@ WSTickDisplay.dispatch = function(data) {
             BinarySocket.send({ forget: window.responseID });
         }
     } else {
-        for (var d = 0; d < epoches.length; d++) {
-            var tick;
+        for (let d = 0; d < epoches.length; d++) {
+            let tick;
             if (data.tick) {
                 tick = {
                     epoch: parseInt(epoches[d]),
@@ -355,7 +355,7 @@ WSTickDisplay.dispatch = function(data) {
                 $self.chart.series[0].addPoint([$self.counter, tick.quote], true, false);
                 $self.applicable_ticks.push(tick);
                 $self.spots_list[tick.epoch] = tick.quote;
-                var indicator_key = '_' + $self.counter;
+                const indicator_key = '_' + $self.counter;
                 if (typeof $self.x_indicators[indicator_key] !== 'undefined') {
                     $self.x_indicators[indicator_key].index = $self.counter;
                     $self.add($self.x_indicators[indicator_key]);
@@ -379,7 +379,7 @@ WSTickDisplay.updateChart = function(data, contract) {
         window.abs_barrier = contract.barrier;
         window.tick_shortcode = contract.shortcode;
         window.tick_init = '';
-        var request = {
+        const request = {
             ticks_history: contract.underlying,
             start        : contract.date_start,
             end          : 'latest',

@@ -1,6 +1,6 @@
-var displayPriceMovement = require('./common_independent').displayPriceMovement;
-var countDecimalPlaces   = require('./common_independent').countDecimalPlaces;
-var isVisible            = require('../../common_functions/common_functions').isVisible;
+const displayPriceMovement = require('./common_independent').displayPriceMovement;
+const countDecimalPlaces   = require('./common_independent').countDecimalPlaces;
+const isVisible            = require('../../common_functions/common_functions').isVisible;
 
 /*
  * Tick object handles all the process/display related to tick streaming
@@ -18,28 +18,28 @@ var isVisible            = require('../../common_functions/common_functions').is
  * `Tick.epoch()` to get the tick epoch time
  * 'Tick.display()` to display current spot
  */
-var Tick = (function() {
-    var quote = '',
+const Tick = (function() {
+    let quote = '',
         id = '',
         epoch = '',
-        errorMessage = '',
         spots = {},
-        keep_number = 20;
+        errorMessage = '';
+    const keep_number = 20;
 
-    var details = function(data) {
+    const details = function(data) {
         errorMessage = '';
 
         if (data) {
             if (data.error) {
                 errorMessage = data.error.message;
             } else {
-                var tick = data.tick;
+                const tick = data.tick;
                 quote = tick.quote;
                 id = tick.id;
                 epoch = tick.epoch;
 
                 spots[epoch] = quote;
-                var epoches = Object.keys(spots).sort(function(a, b) {
+                const epoches = Object.keys(spots).sort(function(a, b) {
                     return a - b;
                 });
                 if (epoches.length > keep_number) {
@@ -49,11 +49,11 @@ var Tick = (function() {
         }
     };
 
-    var display = function() {
+    const display = function() {
         $('#spot').fadeIn(200);
-        var spotElement = document.getElementById('spot');
+        const spotElement = document.getElementById('spot');
         if (!spotElement) return;
-        var message = '';
+        let message = '';
         if (errorMessage) {
             message = errorMessage;
         } else {
@@ -74,23 +74,23 @@ var Tick = (function() {
     /*
      * function to display indicative barrier
      */
-    var displayIndicativeBarrier = function() {
+    const displayIndicativeBarrier = function() {
         'use strict';
 
-        var unit = document.getElementById('duration_units'),
+        const unit = document.getElementById('duration_units'),
             currentTick = Tick.quote(),
             indicativeBarrierTooltip = document.getElementById('indicative_barrier_tooltip'),
             indicativeHighBarrierTooltip = document.getElementById('indicative_high_barrier_tooltip'),
             indicativeLowBarrierTooltip = document.getElementById('indicative_low_barrier_tooltip'),
             barrierElement = document.getElementById('barrier'),
             highBarrierElement = document.getElementById('barrier_high'),
-            lowBarrierElement = document.getElementById('barrier_low'),
-            value;
+            lowBarrierElement = document.getElementById('barrier_low');
+        let value;
 
         if (unit && (!isVisible(unit) || unit.value !== 'd') && currentTick && !isNaN(currentTick)) {
-            var decimalPlaces = countDecimalPlaces(currentTick);
+            const decimalPlaces = countDecimalPlaces(currentTick);
             if (indicativeBarrierTooltip && isVisible(indicativeBarrierTooltip)) {
-                var barrierValue = isNaN(parseFloat(barrierElement.value)) ? 0 : parseFloat(barrierElement.value);
+                const barrierValue = isNaN(parseFloat(barrierElement.value)) ? 0 : parseFloat(barrierElement.value);
                 indicativeBarrierTooltip.textContent = (parseFloat(currentTick) + barrierValue).toFixed(decimalPlaces);
             }
 
@@ -112,7 +112,7 @@ var Tick = (function() {
         }
     };
 
-    var request = function(symbol) {
+    const request = function(symbol) {
         BinarySocket.send({
             ticks_history: symbol,
             style        : 'ticks',
@@ -122,9 +122,9 @@ var Tick = (function() {
         });
     };
 
-    var processHistory = function(res) {
+    const processHistory = function(res) {
         if (res.history && res.history.times && res.history.prices) {
-            for (var i = 0; i < res.history.times.length; i++) {
+            for (let i = 0; i < res.history.times.length; i++) {
                 details({
                     tick: {
                         epoch: res.history.times[i],

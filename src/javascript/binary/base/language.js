@@ -1,8 +1,8 @@
-var Cookies = require('../../lib/js-cookie');
-var CookieStorage = require('./storage').CookieStorage;
+const Cookies = require('../../lib/js-cookie');
+const CookieStorage = require('./storage').CookieStorage;
 
-var Language = (function () {
-    var all_languages = function() {
+const Language = (function () {
+    const all_languages = function() {
         return {
             EN   : 'English',
             DE   : 'Deutsch',
@@ -21,26 +21,26 @@ var Language = (function () {
         };
     };
 
-    var set_cookie_language = function () {
+    const set_cookie_language = function () {
         if (!Cookies.get('language')) {
-            var cookie = new CookieStorage('language');
+            const cookie = new CookieStorage('language');
             cookie.write(language());
         }
     };
 
-    var language_from_url = function() {
-        var regex = new RegExp('^(' + Object.keys(all_languages()).join('|') + ')$', 'i');
-        var langs = window.location.href.split('/').slice(3);
-        for (var i = 0; i < langs.length; i++) {
-            var lang = langs[i];
+    const language_from_url = function() {
+        const regex = new RegExp('^(' + Object.keys(all_languages()).join('|') + ')$', 'i');
+        const langs = window.location.href.split('/').slice(3);
+        for (let i = 0; i < langs.length; i++) {
+            const lang = langs[i];
             if (regex.test(lang)) return lang;
         }
         return '';
     };
 
-    var current_lang = null;
-    var language = function() {
-        var lang = current_lang;
+    let current_lang = null;
+    const language = function() {
+        let lang = current_lang;
         if (!lang) {
             lang = (language_from_url() || Cookies.get('language') || 'EN').toUpperCase();
             current_lang = lang;
@@ -48,16 +48,16 @@ var Language = (function () {
         return lang;
     };
 
-    var url_for_language = function(lang) {
+    const url_for_language = function(lang) {
         return window.location.href.replace(new RegExp('\/' + language() + '\/', 'i'), '/' + lang.trim().toLowerCase() + '/');
     };
 
-    var on_change_language = function() {
-        $('#select_language li').on('click', function() {
-            var lang = $(this).attr('class');
+    const on_change_language = function() {
+        $('#select_language').find('li').on('click', function() {
+            const lang = $(this).attr('class');
             if (language() === lang) return;
-            $('#display_language .language').text($(this).text());
-            var cookie = new CookieStorage('language');
+            $('#display_language').find('.language').text($(this).text());
+            const cookie = new CookieStorage('language');
             cookie.write(lang);
             document.location = url_for_language(lang);
         });

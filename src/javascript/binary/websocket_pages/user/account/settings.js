@@ -1,11 +1,11 @@
-var japanese_client = require('../../../common_functions/country_base').japanese_client;
-var Client          = require('../../../base/client').Client;
+const japanese_client = require('../../../common_functions/country_base').japanese_client;
+const Client          = require('../../../base/client').Client;
 
-var SettingsWS = (function() {
+const SettingsWS = (function() {
     'use strict';
 
-    var init = function() {
-        var classHidden = 'invisible',
+    const init = function() {
+        const classHidden = 'invisible',
             classReal   = '.real';
 
         if (!Client.get_boolean('is_virtual')) {
@@ -18,11 +18,11 @@ var SettingsWS = (function() {
         $('#settingsContainer').removeClass(classHidden);
     };
 
-    var onLoad = function() {
+    const onLoad = function() {
         if (!Client.get_boolean('values_set')) {
             BinarySocket.init({
                 onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
+                    const response = JSON.parse(msg.data);
                     if (response && response.msg_type === 'authorize') {
                         SettingsWS.init();
                     }

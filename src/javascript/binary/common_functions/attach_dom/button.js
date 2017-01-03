@@ -1,13 +1,13 @@
-var Button = (function() {
+const Button = (function() {
     'use strict';
 
-    function createBinaryStyledButton() {
-        var span = $('<span></span>', { class: 'button' });
-        var button = $('<button></button>', { class: 'button' });
+    const createBinaryStyledButton = function() {
+        const span = $('<span></span>', { class: 'button' });
+        const button = $('<button></button>', { class: 'button' });
         span.append(button);
 
         return span;
-    }
+    };
 
     return {
         createBinaryStyledButton: createBinaryStyledButton,

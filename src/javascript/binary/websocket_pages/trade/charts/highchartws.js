@@ -1,13 +1,13 @@
-var japanese_client = require('../../../common_functions/country_base').japanese_client;
-var MBContract  = require('../../mb_trade/mb_contract').MBContract;
-var ViewPopupUI = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
-var State       = require('../../../base/storage').State;
-var localize    = require('../../../base/localize').localize;
-var Highcharts  = require('highcharts/highstock');
+const japanese_client = require('../../../common_functions/country_base').japanese_client;
+const MBContract      = require('../../mb_trade/mb_contract').MBContract;
+const ViewPopupUI     = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
+const State           = require('../../../base/storage').State;
+const localize        = require('../../../base/localize').localize;
+const Highcharts      = require('highcharts/highstock');
 require('highcharts/modules/exporting')(Highcharts);
 
-var Highchart = (function() {
-    var chart,
+const Highchart = (function() {
+    let chart,
         options,
         chart_forget,
         responseID,
@@ -36,7 +36,7 @@ var Highchart = (function() {
         exit_time,
         underlying;
         // i;
-    function init_once() {
+    const init_once = function() {
         chart = '';
         initialized = false;
         chart_delayed = false;
@@ -46,25 +46,25 @@ var Highchart = (function() {
         contracts_for_send = false;
         history_send = false;
         entry_tick_barrier_drawn = false;
-    }
+    };
 
     // initiate the chart for the first time only, send it ticks or candles data
-    function init_chart(init_options) {
-        var data = [];
-        var type = '';
-        var i;
+    const init_chart = function(init_options) {
+        let data = [],
+            type = '',
+            i;
 
-        var lbl_start_time = '<div style="margin-bottom:3px;margin-left:10px;height:0;width:20px;border:0;border-bottom:2px;border-style:solid;border-color:#E98024;display:inline-block"></div> ' + localize('Start time') + ' ';
-        var lbl_entry_spot = '<div style="margin-left:10px;display:inline-block;border:3px solid orange;border-radius:6px;width:4px;height:4px;"></div> ' + localize('Entry spot') + ' ';
-        var lbl_exit_spot = '<div style="margin-left:10px;display:inline-block;background-color:orange;border-radius:6px;width:10px;height:10px;"></div> ' + localize('Exit spot') + ' ';
-        var lbl_end_time = '<div style="margin-bottom: 3px;margin-left:10px;height:0;width:20px;border:0;border-bottom:2px;border-style:dashed;border-color:#E98024;display:inline-block"></div> ' + localize('End time') + ' ';
-        var lbl_delay = '<span style="display:block;text-align:center;margin-bottom:0.2em;color:red"> ' + localize('Charting for this underlying is delayed') + ' </span>';
+        const lbl_start_time = '<div style="margin-bottom:3px;margin-left:10px;height:0;width:20px;border:0;border-bottom:2px;border-style:solid;border-color:#E98024;display:inline-block"></div> ' + localize('Start time') + ' ';
+        const lbl_entry_spot = '<div style="margin-left:10px;display:inline-block;border:3px solid orange;border-radius:6px;width:4px;height:4px;"></div> ' + localize('Entry spot') + ' ';
+        const lbl_exit_spot = '<div style="margin-left:10px;display:inline-block;background-color:orange;border-radius:6px;width:10px;height:10px;"></div> ' + localize('Exit spot') + ' ';
+        const lbl_end_time = '<div style="margin-bottom: 3px;margin-left:10px;height:0;width:20px;border:0;border-bottom:2px;border-style:dashed;border-color:#E98024;display:inline-block"></div> ' + localize('End time') + ' ';
+        const lbl_delay = '<span style="display:block;text-align:center;margin-bottom:0.2em;color:red"> ' + localize('Charting for this underlying is delayed') + ' </span>';
         // init_options.history indicates line chart
         if (init_options.history) {
             type = 'line';
-            var history = init_options.history;
-            var times = history.times;
-            var prices = history.prices;
+            const history = init_options.history;
+            const times = history.times;
+            const prices = history.prices;
             if (chart_delayed) {
                 for (i = 0; i < times.length; ++i) {
                     data.push([parseInt(times[i]) * 1000, prices[i] * 1]);
@@ -86,12 +86,12 @@ var Highchart = (function() {
                 return [c.epoch * 1000, c.open * 1, c.high * 1, c.low * 1, c.close * 1];
             });
         }
-        var title = localize(init_options.title);
+        const title = localize(init_options.title);
         // element where chart is to be displayed
-        var el = document.getElementById('analysis_live_chart');
+        const el = document.getElementById('analysis_live_chart');
         if (!el) return null;
 
-        var chartOptions = {
+        const chartOptions = {
             chart: {
                 type           : 'line',
                 renderTo       : el,
@@ -176,7 +176,7 @@ var Highchart = (function() {
 
         // display a guide for clients to know how we are marking entry and exit spots
         if (init_options.history) {
-            var txt = lbl_start_time + lbl_entry_spot + lbl_exit_spot + lbl_end_time;
+            const txt = lbl_start_time + lbl_entry_spot + lbl_exit_spot + lbl_end_time;
             chartOptions.subtitle = {
                 text   : (chart_delayed ? lbl_delay : '') + txt,
                 align  : 'center',
@@ -194,14 +194,14 @@ var Highchart = (function() {
 
         if (!el) return null;
         // eslint-disable-next-line new-cap
-        var new_chart = Highcharts.stockChart(el, chartOptions);
+        const new_chart = Highcharts.stockChart(el, chartOptions);
         initialized = true;
 
         return new_chart;
-    }
+    };
 
     // this is used to draw lines such as start and end times
-    var addPlotLineX = function(params) {
+    const addPlotLineX = function(params) {
         chart.xAxis[0].addPlotLine({
             value    : params.value,
             id       : params.id || params.value,
@@ -212,13 +212,12 @@ var Highchart = (function() {
             dashStyle: params.dashStyle || 'Solid',
         });
         if (sell_time && sell_time < end_time) {
-            var subtitle = chart.subtitle.element,
+            const subtitle = chart.subtitle.element,
                 subtitle_length = subtitle.childNodes.length,
-                textnode = document.createTextNode(' '  + localize('Sell time') + ' '),
-                i;
-            for (i = 0; i < subtitle_length; i++) {
+                textnode = document.createTextNode(' '  + localize('Sell time') + ' ');
+            for (let i = 0; i < subtitle_length; i++) {
                 if (/End time/.test(subtitle.childNodes[i].nodeValue)) {
-                    var item = subtitle.childNodes[i];
+                    const item = subtitle.childNodes[i];
                     subtitle.replaceChild(textnode, item);
                 }
             }
@@ -226,7 +225,7 @@ var Highchart = (function() {
     };
 
     // this is used to draw lines such as barrier
-    var addPlotLineY = function(params) {
+    const addPlotLineY = function(params) {
         chart.yAxis[0].addPlotLine({
             id       : params.id || params.label,
             value    : params.value,
@@ -239,7 +238,7 @@ var Highchart = (function() {
     };
 
     // since these values are used in almost every function, make them easy to initialize
-    function initialize_values() {
+    const initialize_values = function() {
         start_time      = parseInt(contract.date_start);
         purchase_time   = parseInt(contract.purchase_time);
         now_time        = parseInt(contract.current_spot_time);
@@ -252,10 +251,10 @@ var Highchart = (function() {
         exit_tick_time  = parseInt(contract.exit_tick_time);
         exit_time       = is_sold && sell_time < end_time ? sell_spot_time : exit_tick_time || end_time;
         underlying      = contract.underlying;
-    }
+    };
 
     // use this instead of BinarySocket.send to avoid overriding the on-message function of trading page
-    var socketSend = function(req) {
+    const socketSend = function(req) {
         if (!req) return;
         if (!req.hasOwnProperty('passthrough')) {
             req.passthrough = {};
@@ -265,10 +264,10 @@ var Highchart = (function() {
         BinarySocket.send(req);
     };
 
-    var dispatch = function(response) {
-        var type = response.msg_type,
-            error = response.error,
-            i;
+    const dispatch = function(response) {
+        const type = response.msg_type,
+            error = response.error;
+        let i;
         if (type === 'contracts_for' && (!error || (error && error.code && error.code === 'InvalidSymbol'))) {
             if (response.contracts_for && response.contracts_for.feed_license) {
                 handle_delay(response.contracts_for.feed_license);
@@ -359,7 +358,7 @@ var Highchart = (function() {
                         draw_line_x(start_time);
                     }
 
-                    // var duration = calculate_granularity(end_time, now_time, purchase_time, start_time)[1];
+                    // const duration = calculate_granularity(end_time, now_time, purchase_time, start_time)[1];
 
                     // show end time before contract ends if duration of contract is less than one day
                     // second OR condition is used so we don't draw end time again if there is sell time before
@@ -394,7 +393,7 @@ var Highchart = (function() {
         }
     };
 
-    function show_chart(proposal_contract, update) {
+    const show_chart = function(proposal_contract, update) {
         contract = proposal_contract;
         initialize_values();
         if (!update) {
@@ -411,21 +410,21 @@ var Highchart = (function() {
             end_contract();
         }
         forget_streams();
-    }
+    };
 
-    function show_error(type, message) {
-        var el = document.getElementById('analysis_live_chart');
+    const show_error = function(type, message) {
+        const el = document.getElementById('analysis_live_chart');
         if (!el) return;
         if (type === 'missing') {
             el.innerHTML = '<p class="error-msg">' + localize('Ticks history returned an empty array.') + '</p>';
         } else {
             el.innerHTML = '<p class="error-msg">' + message + '</p>';
         }
-    }
+    };
 
-    function request_data(update) {
-        var calculateGranularity = calculate_granularity(exit_time, now_time, purchase_time, start_time);
-        var granularity = calculateGranularity[0],
+    const request_data = function(update) {
+        const calculateGranularity = calculate_granularity(exit_time, now_time, purchase_time, start_time);
+        const granularity = calculateGranularity[0],
             duration    = calculateGranularity[1],
             margin      = granularity === 0 ? Math.max(300, (30 * duration) / (60 * 60) || 0) : 3 * granularity;
 
@@ -451,10 +450,10 @@ var Highchart = (function() {
             request.subscribe = 1;
         }
 
-        var contracts_response = State.get('is_mb_trading') ? MBContract.getContractsResponse() : window.contracts_for;
+        const contracts_response = State.get('is_mb_trading') ? MBContract.getContractsResponse() : window.contracts_for;
 
         if (contracts_response && contracts_response.echo_req.contracts_for === underlying) {
-            var license = contracts_response.contracts_for.feed_license;
+            const license = contracts_response.contracts_for.feed_license;
             if (contracts_response.contracts_for && license) {
                 handle_delay(license);
                 save_feed_license(contracts_response.echo_req.contracts_for, license);
@@ -467,9 +466,9 @@ var Highchart = (function() {
             socketSend({ contracts_for: underlying });
             contracts_for_send = true;
         }
-    }
+    };
 
-    function show_entry_error() {
+    const show_entry_error = function() {
         if (!entry_tick_time && chart_delayed === false && start_time && window.time.unix() >= parseInt(start_time)) {
             show_error('', localize('Waiting for entry tick.'));
         } else if (!history_send) {
@@ -477,9 +476,9 @@ var Highchart = (function() {
             if (request.subscribe) chart_subscribed = true;
             socketSend(request);
         }
-    }
+    };
 
-    function handle_delay(feed_license) {
+    const handle_delay = function(feed_license) {
         if (feed_license !== 'realtime') {
             if (!is_settleable) {
                 request.end = 'latest';
@@ -487,11 +486,11 @@ var Highchart = (function() {
             delete request.subscribe;
             chart_delayed = true;
         }
-    }
+    };
 
     // we have to update the color zones with the correct entry_tick_time
     // and barrier value
-    function select_entry_tick_barrier() {
+    const select_entry_tick_barrier = function() {
         if (entry_tick_time && chart && !entry_tick_barrier_drawn) {
             select_entry_tick(entry_tick_time);
             if (chart) {
@@ -503,34 +502,33 @@ var Highchart = (function() {
             }
             entry_tick_barrier_drawn = true;
         }
-    }
+    };
 
     // update color zone of exit time
-    function reselect_exit_time() {
+    const reselect_exit_time = function() {
         if (chart && exit_time) {
             chart.series[0].zones[1].value = parseInt(exit_time) * 1000;
             // force to redraw:
             chart.isDirty = true;
             chart.redraw();
         }
-    }
+    };
 
-    // function to set an orange circle on the entry tick
-    function select_entry_tick(value) {
-        var i;
+    // const to = function set an orange circle on the entry tick
+    const select_entry_tick = function(value) {
         value = parseInt(value);
         if (value && (options.history || options.tick) && chart) {
-            var firstIndex = Object.keys(chart.series[0].data)[0];
-            for (i = firstIndex; i < chart.series[0].data.length; i++) {
+            const firstIndex = Object.keys(chart.series[0].data)[0];
+            for (let i = firstIndex; i < chart.series[0].data.length; i++) {
                 if (value * 1000 === chart.series[0].data[i].x) {
                     chart.series[0].data[i].update({ marker: { fillColor: '#fff', lineColor: 'orange', lineWidth: 3, radius: 4, states: { hover: { fillColor: '#fff', lineColor: 'orange', lineWidth: 3, radius: 4 } } } });
                     return;
                 }
             }
         }
-    }
+    };
 
-    function draw_barrier() {
+    const draw_barrier = function() {
         if (chart.yAxis[0].plotLinesAndBands.length === 0) {
             if (contract.barrier) {
                 addPlotLineY({ id: 'barrier', value: contract.barrier * 1, label: localize('Barrier ([_1])').replace('[_1]', contract.barrier), dashStyle: 'Dot' });
@@ -539,32 +537,30 @@ var Highchart = (function() {
                 addPlotLineY({ id: 'low_barrier', value: contract.low_barrier * 1, label: localize('Low Barrier ([_1])').replace('[_1]', contract.low_barrier), dashStyle: 'Dot' });
             }
         }
-    }
+    };
 
-    // function to set an orange circle on the exit tick
-    function select_exit_tick(value) {
-        var i;
+    // const to = function set an orange circle on the exit tick
+    const select_exit_tick = function(value) {
         value = parseInt(value);
         if (value && (options.tick || options.history)) {
-            for (i = chart.series[0].data.length - 1; i >= 0; i--) {
+            for (let i = chart.series[0].data.length - 1; i >= 0; i--) {
                 if (value * 1000 === chart.series[0].data[i].x) {
                     chart.series[0].data[i].update({ marker: { fillColor: 'orange', lineColor: 'orange', lineWidth: 3, radius: 4, states: { hover: { fillColor: 'orange', lineColor: 'orange', lineWidth: 3, radius: 4 } } } });
                     return;
                 }
             }
         }
-    }
+    };
 
-    function reset_max() {
+    const reset_max = function() {
         if (sell_time && sell_time < end_time && chart) {
             chart.xAxis[0].setExtremes(min_point ? min_point * 1000 : null, (parseInt(sell_time) + 3) * 1000);
         }
-    }
+    };
 
     // calculate where to display the maximum value of the x-axis of the chart for line chart
-    function get_max_history(response) {
-        var end,
-            i;
+    const get_max_history = function(response) {
+        let end;
         if (sell_spot_time && sell_time < end_time) {
             end = sell_spot_time;
         } else if (exit_tick_time) {
@@ -573,7 +569,7 @@ var Highchart = (function() {
             end = end_time;
         }
         if (response.history && response.history.times && (is_settleable || is_sold)) {
-            for (i = response.history.times.length - 1; i >= 0; i--) {
+            for (let i = response.history.times.length - 1; i >= 0; i--) {
                 if (parseInt(response.history.times[i]) === parseInt(end)) {
                     max_point = parseInt(response.history.times[i === response.history.times.length - 1 ? i : i + 1]);
                     break;
@@ -588,15 +584,14 @@ var Highchart = (function() {
         } else {
             max_point = end_time;
         }
-    }
+    };
 
     // calculate where to display the maximum value of the x-axis of the chart for candle
-    function get_max_candle(response) {
-        var end,
-            i;
+    const get_max_candle = function(response) {
+        let end;
         if (sell_spot_time && sell_time < end_time) { end = sell_spot_time; } else { end = end_time; }
         if (is_settleable || is_sold) {
-            for (i = response.candles.length - 2; i >= 0; i--) {
+            for (let i = response.candles.length - 2; i >= 0; i--) {
                 if (
                     response.candles[i] &&
                     parseInt(response.candles[i].epoch) <= end &&
@@ -615,11 +610,11 @@ var Highchart = (function() {
         } else {
             max_point = end_time;
         }
-    }
+    };
 
-    function draw_line_x(valueTime, labelName, textLeft, dash, color) {
+    const draw_line_x = function(valueTime, labelName, textLeft, dash, color) {
         if (!chart) return;
-        var req = {
+        const req = {
             value: valueTime * 1000,
         };
         if (labelName && labelName !== '') req.label = labelName;
@@ -627,11 +622,11 @@ var Highchart = (function() {
         if (dash && dash !== '') req.dashStyle = dash;
         if (color) req.color = color;
         addPlotLineX(req);
-    }
+    };
 
-    // function to draw the last line needed and forget the streams
+    // const to = function draw the last line needed and forget the streams
     // also sets the exit tick
-    function end_contract() {
+    const end_contract = function() {
         if (chart) {
             if (sell_time && sell_time < end_time) {
                 draw_line_x(sell_time, '', 'textLeft', 'Dash');
@@ -655,9 +650,9 @@ var Highchart = (function() {
             forget_streams();
             contract_ended = true;
         }
-    }
+    };
 
-    function forget_streams() {
+    const forget_streams = function() {
         if (
             chart &&
             chart.series &&
@@ -666,17 +661,17 @@ var Highchart = (function() {
             (is_sold || is_settleable) &&
             responseID
         ) {
-            var last = chart.series[0].data[chart.series[0].data.length - 1];
+            const last = chart.series[0].data[chart.series[0].data.length - 1];
             if (parseInt(last.x) > end_time * 1000 || parseInt(last.x) > sell_time * 1000) {
                 socketSend({ forget: responseID });
                 chart_forget = true;
             }
         }
-    }
+    };
 
-    function calculate_granularity(end, now, purchase, start) {
-        var duration = Math.min(end * 1, now) - (purchase || start);
-        var granularity = 0;
+    const calculate_granularity = function(end, now, purchase, start) {
+        const duration = Math.min(end * 1, now) - (purchase || start);
+        let granularity = 0;
         if (duration <= 60 * 60)                granularity = 0;     // 1 hour
         else if (duration <= 2  * 60 * 60)      granularity = 120;   // 2 hours
         else if (duration <= 6  * 60 * 60)      granularity = 600;   // 6 hours
@@ -686,19 +681,19 @@ var Highchart = (function() {
         else granularity = 86400; // more than 30 days
 
         return [granularity, duration];
-    }
+    };
 
     // add the new data to the chart
-    function update_chart(update_options) {
-        var granularity = calculate_granularity(exit_time, now_time, purchase_time, start_time)[0];
-        var series = chart.series[0];
+    const update_chart = function(update_options) {
+        const granularity = calculate_granularity(exit_time, now_time, purchase_time, start_time)[0];
+        const series = chart.series[0];
         if (granularity === 0) {
             chart.series[0].addPoint([update_options.tick.epoch * 1000, update_options.tick.quote * 1]);
         } else {
-            var c = update_options.ohlc;
-            var last = series.data[series.data.length - 1];
+            const c = update_options.ohlc;
+            const last = series.data[series.data.length - 1];
             if (!c || !last) return;
-            var ohlc = [c.open_time * 1000, c.open * 1, c.high * 1, c.low * 1, c.close * 1];
+            const ohlc = [c.open_time * 1000, c.open * 1, c.high * 1, c.low * 1, c.close * 1];
 
             if (last.x !== ohlc[0]) {
                 series.addPoint(ohlc, true, true);
@@ -706,14 +701,13 @@ var Highchart = (function() {
                 last.update(ohlc, true);
             }
         }
-    }
+    };
 
-    function save_feed_license(save_contract, license) {
-        var regex = new RegExp('license.' + contract),
-            match_found = false,
-            i;
+    const save_feed_license = function(save_contract, license) {
+        const regex = new RegExp('license.' + contract);
+        let match_found = false;
 
-        for (i = 0; i < sessionStorage.length; i++) {
+        for (let i = 0; i < sessionStorage.length; i++) {
             if (regex.test(sessionStorage.key(i))) {
                 match_found = true;
                 break;
@@ -723,7 +717,7 @@ var Highchart = (function() {
         if (!match_found) {
             sessionStorage.setItem('license.' + save_contract, license);
         }
-    }
+    };
 
     return {
         show_chart: show_chart,
