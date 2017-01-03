@@ -1,16 +1,16 @@
-var MBNotifications = require('./mb_notifications').MBNotifications;
-var MBPrice = require('./mb_price').MBPrice;
-var ViewPopupWS = require('../user/view_popup/view_popupws').ViewPopupWS;
+const MBNotifications = require('./mb_notifications').MBNotifications;
+const MBPrice         = require('./mb_price').MBPrice;
+const ViewPopupWS     = require('../user/view_popup/view_popupws').ViewPopupWS;
 
 /*
  * Purchase object that handles all the functions related to
  * contract purchase response
  */
 
-var MBPurchase = (function () {
+const MBPurchase = (function () {
     'use strict';
 
-    var display = function (response) {
+    const display = function (response) {
         if (response.error) {
             MBPrice.hidePriceOverlay();
             MBNotifications.show({ text: response.error.message, uid: 'BUY_ERROR', dismissible: true });

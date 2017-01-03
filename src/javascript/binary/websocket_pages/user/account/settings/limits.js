@@ -1,9 +1,9 @@
-var LimitsWS = require('./limits/limits.init').LimitsWS;
-var Content  = require('../../../../common_functions/content').Content;
-var Client   = require('../../../../base/client').Client;
+const LimitsWS = require('./limits/limits.init').LimitsWS;
+const Content  = require('../../../../common_functions/content').Content;
+const Client   = require('../../../../base/client').Client;
 
-var Limits = (function() {
-    var onLoad = function() {
+const Limits = (function() {
+    const onLoad = function() {
         Content.populate();
         if (Client.get_boolean('is_virtual')) {
             LimitsWS.limitsError();
@@ -12,10 +12,10 @@ var Limits = (function() {
 
         BinarySocket.init({
             onmessage: function(msg) {
-                var response = JSON.parse(msg.data);
+                const response = JSON.parse(msg.data);
                 if (response) {
-                    var type = response.msg_type;
-                    var error = response.error;
+                    const type = response.msg_type;
+                    const error = response.error;
 
                     if (type === 'authorize' && Client.get_boolean('is_virtual')) {
                         LimitsWS.limitsError(error);
@@ -31,7 +31,7 @@ var Limits = (function() {
         BinarySocket.send({ get_limits: 1 });
     };
 
-    var onUnload = function() {
+    const onUnload = function() {
         LimitsWS.clean();
     };
 

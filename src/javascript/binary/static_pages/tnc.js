@@ -1,13 +1,13 @@
-var url = require('../base/url').url;
+const url = require('../base/url').url;
 
-var TermsAndConditions = (function() {
-    var init = function() {
-        var selected_tab = url.params_hash().selected_tab;
+const TermsAndConditions = (function() {
+    const init = function() {
+        const selected_tab = url.params_hash().selected_tab;
         if (selected_tab) {
             $('li#' + selected_tab + ' a').click();
         }
-        var year = document.getElementsByClassName('currentYear');
-        for (var i = 0; i < year.length; i++) {
+        const year = document.getElementsByClassName('currentYear');
+        for (let i = 0; i < year.length; i++) {
             year[i].innerHTML = new Date().getFullYear();
         }
     };

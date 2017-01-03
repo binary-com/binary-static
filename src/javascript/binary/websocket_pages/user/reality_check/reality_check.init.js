@@ -1,11 +1,11 @@
-var RealityCheckUI   = require('./reality_check.ui').RealityCheckUI;
-var RealityCheckData = require('./reality_check.data').RealityCheckData;
-var Client           = require('../../../base/client').Client;
+const RealityCheckUI   = require('./reality_check.ui').RealityCheckUI;
+const RealityCheckData = require('./reality_check.data').RealityCheckData;
+const Client           = require('../../../base/client').Client;
 
-var RealityCheck = (function() {
+const RealityCheck = (function() {
     'use strict';
 
-    function realityCheckWSHandler(response) {
+    const realityCheckWSHandler = function(response) {
         RealityCheckUI.initializeValues();
         if ($.isEmptyObject(response.reality_check)) {
             // not required for reality check
@@ -13,11 +13,11 @@ var RealityCheck = (function() {
             return;
         }
 
-        var summary = RealityCheckData.summaryData(response.reality_check);
+        const summary = RealityCheckData.summaryData(response.reality_check);
         RealityCheckUI.renderSummaryPopUp(summary);
-    }
+    };
 
-    function realityStorageEventHandler(ev) {
+    const realityStorageEventHandler = function(ev) {
         if (ev.key === 'reality_check.ack' && ev.newValue === '1') {
             RealityCheckUI.closePopUp();
             RealityCheckUI.startSummaryTimer();
@@ -25,9 +25,9 @@ var RealityCheck = (function() {
             RealityCheckUI.closePopUp();
             RealityCheckUI.startSummaryTimer();
         }
-    }
+    };
 
-    function init() {
+    const init = function() {
         RealityCheckUI.initializeValues();
         if (!Client.get_boolean('has_reality_check')) {
             RealityCheckData.setPreviousLoadLoginId();
@@ -55,7 +55,7 @@ var RealityCheck = (function() {
 
         RealityCheckData.setPreviousLoadLoginId();
         RealityCheckUI.sendAccountStatus();
-    }
+    };
 
     return {
         init                 : init,

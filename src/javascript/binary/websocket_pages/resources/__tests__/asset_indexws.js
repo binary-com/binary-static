@@ -1,12 +1,12 @@
-var expect = require('chai').expect;
-var asset_index = require('../asset_indexws').AssetIndex;
-var ws = require('ws');
-var LiveApi = require('binary-live-api').LiveApi;
+const expect = require('chai').expect;
+const asset_index = require('../asset_indexws').AssetIndex;
+const ws = require('ws');
+const LiveApi = require('binary-live-api').LiveApi;
 
-var api = new LiveApi({ websocket: ws });
+const api = new LiveApi({ websocket: ws });
 
 describe('Asset Index', function() {
-    var asset_index_res,
+    let asset_index_res,
         active_symbols_res;
     before(function(done) {
         this.timeout(10000);
@@ -25,7 +25,7 @@ describe('Asset Index', function() {
     });
 
     it('Should getAssetIndexData() have all expected data', function() {
-        var asset_index_data = asset_index.getAssetIndexData(asset_index_res, active_symbols_res);
+        const asset_index_data = asset_index.getAssetIndexData(asset_index_res, active_symbols_res);
         expect(asset_index_data).to.be.an('array');
         asset_index_data.forEach(function(asset_index_item) {
             expect(asset_index_item).to.be.an('array')
@@ -46,7 +46,7 @@ describe('Asset Index', function() {
     });
 
     it('Should getMarketColumns() have all expected data', function() {
-        var market_columns = asset_index.getMarketColumns();
+        const market_columns = asset_index.getMarketColumns();
         expect(market_columns).to.be.an('Object');
         Object.keys(market_columns).forEach(function(market) {
             expect(market_columns[market]).to.have.property('columns')

@@ -453,7 +453,7 @@
             display: inline-flex;
         }
     }
-    #period_row, #jbarrier_row, #jhigh_barrier_row, #jlow_barrier_row {
+    #period_row {
         display: none;
     }
     #duration_amount {
@@ -483,7 +483,7 @@
     #expiry_date, #expiry_time {
         font-size: 90%;
     }
-    .barrier_class input, #jhigh_barrier_row select, #jlow_barrier_row select, #jbarrier_row select, #period {
+    .barrier_class input, #period {
         width: 175px;
         @include BIDIR_PROP(margin-right, margin-left, 5px);
     }

@@ -1,10 +1,10 @@
-var Symbols     = require('../../symbols').Symbols;
-var template    = require('../../../../base/utility').template;
-var localize    = require('../../../../base/localize').localize;
-var Highcharts  = require('highcharts');
+const Symbols     = require('../../symbols').Symbols;
+const template    = require('../../../../base/utility').template;
+const localize    = require('../../../../base/localize').localize;
+const Highcharts  = require('highcharts');
 require('highcharts/modules/exporting')(Highcharts);
 
-var DigitInfoWS_Beta = function() {
+const DigitInfoWS_Beta = function() {
     this.chart_config = {
         chart: {
             renderTo           : 'last_digit_histo',
@@ -26,7 +26,7 @@ var DigitInfoWS_Beta = function() {
         tooltip: {
             borderWidth: 1,
             formatter  : function() {
-                var that       = this,
+                const that       = this,
                     total      = $("select[name='tick_count']").val(),
                     percentage = (that.y / total) * 100;
                 return '<b>Digit:</b> ' + that.x + '<br/>' +
@@ -51,8 +51,8 @@ var DigitInfoWS_Beta = function() {
                         fontSize  : '10px',
                     },
                     formatter: function() {
-                        var total = $("select[name='tick_count']").val();
-                        var percentage = (this.point.y / total) * 100;
+                        const total = $("select[name='tick_count']").val();
+                        const percentage = (this.point.y / total) * 100;
                         return percentage.toFixed(2) + ' %';
                     },
                 },
@@ -81,7 +81,7 @@ var DigitInfoWS_Beta = function() {
                 x        : 0,
                 enabled  : false,
                 formatter: function() {
-                    var total = $("select[name='tick_count']").val(),
+                    const total = $("select[name='tick_count']").val(),
                         percentage = parseInt((this.value / total) * 100);
                     return percentage + ' %';
                 },
@@ -98,52 +98,50 @@ var DigitInfoWS_Beta = function() {
 
 DigitInfoWS_Beta.prototype = {
     add_content: function(underlying) {
-        var domain = document.domain.split('.').slice(-2).join('.'),
-            underlyings = [];
-        var symbols = Symbols.getAllSymbols();
+        const domain = document.domain.split('.').slice(-2).join('.'),
+            symbols = Symbols.getAllSymbols();
+        let underlyings = [];
         Object.keys(symbols).forEach(function(key) {
             if (/^(R_|RD)/.test(key)) {
                 underlyings.push(key);
             }
         });
         underlyings = underlyings.sort();
-        var elem = '<select class="smallfont" name="underlying">';
-        for (var i = 0; i < underlyings.length; i++) {
+        let elem = '<select class="smallfont" name="underlying">';
+        for (let i = 0; i < underlyings.length; i++) {
             elem = elem + '<option value="' + underlyings[i] + '">' + localize(symbols[underlyings[i]]) + '</option>';
         }
         elem += '</select>';
-        var contentId = document.getElementById('tab_last_digit-content'),
-            content = '<div class="gr-parent">' +
-                        '<div id="last_digit_histo_form" class="gr-12 gr-12-m gr-centered">' +
-                        '<form class="smallfont gr-row" action="#" method="post">' +
-                        '<div class="gr-6 gr-12-m center-text"><div class="gr-padding-10">' + localize('Select market') + ':</div>' + elem + ' </div>' +
-                        '<div class="gr-6 gr-12-m center-text"><div class="gr-padding-10">' + localize('Number of ticks') + ':</div><select class="smallfont" name="tick_count"><option value="25">25</option><option value="50">50</option><option selected="selected" value="100">100</option><option value="500">500</option><option value="1000">1000</option></select></div>' +
-                        '</form>' +
-                        '</div>' +
-                        '<div id="last_digit_histo" class="gr-12 gr-12-m gr-centered"></div>' +
-                        '<div id="last_digit_title" class="gr-hide">' + (domain.charAt(0).toUpperCase() + domain.slice(1)) + ' - ' + localize('Last digit stats for the latest [_1] ticks on [_2]') + '</div>' +
-                        '</div>';
-        contentId.innerHTML = content;
+        document.getElementById('tab_last_digit-content').innerHTML = '<div class="gr-parent">' +
+            '<div id="last_digit_histo_form" class="gr-12 gr-12-m gr-centered">' +
+            '<form class="smallfont gr-row" action="#" method="post">' +
+            '<div class="gr-6 gr-12-m center-text"><div class="gr-padding-10">' + localize('Select market') + ':</div>' + elem + ' </div>' +
+            '<div class="gr-6 gr-12-m center-text"><div class="gr-padding-10">' + localize('Number of ticks') + ':</div><select class="smallfont" name="tick_count"><option value="25">25</option><option value="50">50</option><option selected="selected" value="100">100</option><option value="500">500</option><option value="1000">1000</option></select></div>' +
+            '</form>' +
+            '</div>' +
+            '<div id="last_digit_histo" class="gr-12 gr-12-m gr-centered"></div>' +
+            '<div id="last_digit_title" class="gr-hide">' + (domain.charAt(0).toUpperCase() + domain.slice(1)) + ' - ' + localize('Last digit stats for the latest [_1] ticks on [_2]') + '</div>' +
+            '</div>';
         $('[name=underlying]').val(underlying);
     },
     on_latest: function() {
-        var that = this;
-        var tab = $('#tab_last_digit-content');
-        var form = tab.find('form:first');
+        const that = this;
+        const tab = $('#tab_last_digit-content');
+        const form = tab.find('form:first');
         form.on('submit', function(event) {
             event.preventDefault();
             return false;
         }).addClass('unbind_later');
 
-        var get_latest = function() {
-            var symbol = $('[name=underlying] option:selected').val();
-            var request = {
+        const get_latest = function() {
+            const symbol = $('[name=underlying] option:selected').val();
+            const request = {
                 ticks_history: symbol,
                 end          : 'latest',
                 count        : $('[name=tick_count]', form).val(),
                 req_id       : 2 };
             if (that.chart.series[0].name !== symbol) {
-                if ($('#underlying option:selected').val() !== $('[name=underlying]', form).val()) {
+                if ($('#underlying').find('option:selected').val() !== $('[name=underlying]', form).val()) {
                     request.subscribe = 1;
                     request.style = 'ticks';
                 }
@@ -162,11 +160,18 @@ DigitInfoWS_Beta.prototype = {
             console.log('Unexpected error occured in the charts.');
             return;
         }
-        var dec = spots[0].split('.')[1].length;
-        for (var i = 0; i < spots.length; i++) {
-            var val = parseFloat(spots[i]).toFixed(dec);
+        const dec = spots[0].split('.')[1].length;
+        for (let i = 0; i < spots.length; i++) {
+            const val = parseFloat(spots[i]).toFixed(dec);
             spots[i] = val.substr(val.length - 1);
         }
+
+        const get_title = function() {
+            return {
+                text: template($('#last_digit_title').html(), [spots.length, $('[name=underlying] option:selected').text()]),
+            };
+        };
+
         this.spots = spots;
         if (this.chart && $('#last_digit_histo').html()) {
             this.chart.xAxis[0].update({ title: get_title() }, true);
@@ -180,19 +185,13 @@ DigitInfoWS_Beta.prototype = {
             this.stream_id = null;
         }
         this.update();
-
-        function get_title() {
-            return {
-                text: template($('#last_digit_title').html(), [spots.length, $('[name=underlying] option:selected').text()]),
-            };
-        }
     },
     update: function(symbol, latest_spot) {
         if (typeof this.chart === 'undefined') {
             return null;
         }
 
-        var series = this.chart.series[0]; // Where we put the final data.
+        const series = this.chart.series[0]; // Where we put the final data.
         if (series.name !== symbol) {
             latest_spot = undefined; // This simplifies the logic a bit later.
         }
@@ -204,22 +203,22 @@ DigitInfoWS_Beta.prototype = {
 
         // Always recompute and draw, even if theres no new data.
         // This is especially useful on first reuqest, but maybe in other ways.
-        var filtered_spots = [],
-            digit = 10,
+        const filtered_spots = [],
             filterFunc = function (el) { return +el === digit; },
             min_max_counter = [];
+        let digit = 10;
         while (digit--) {
-            var val = this.spots.filter(filterFunc).length;
+            const val = this.spots.filter(filterFunc).length;
             filtered_spots[digit] = val;
             if (typeof min_max_counter[val] === 'undefined') {
                 min_max_counter[val] = 0;
             }
             min_max_counter[val]++;
         }
-        var min = Math.min.apply(null, filtered_spots);
-        var max = Math.max.apply(null, filtered_spots);
-        var min_index = filtered_spots.indexOf(min);
-        var max_index = filtered_spots.indexOf(max);
+        const min = Math.min.apply(null, filtered_spots);
+        const max = Math.max.apply(null, filtered_spots);
+        const min_index = filtered_spots.indexOf(min);
+        const max_index = filtered_spots.indexOf(max);
         // changing color
         if (min_max_counter[min] >= 1) {
             filtered_spots[min_index] = { y: min, color: '#CC0000' };

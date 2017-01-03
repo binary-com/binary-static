@@ -1,5 +1,5 @@
-var expect  = require('chai').expect;
-var utility = require('../utility');
+const expect  = require('chai').expect;
+const utility = require('../utility');
 
 describe('template', function() {
     it('works as expected', function() {

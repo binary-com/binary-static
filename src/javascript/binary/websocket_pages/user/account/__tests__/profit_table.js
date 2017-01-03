@@ -1,12 +1,12 @@
-var expect      = require('chai').expect;
-var profitTable = require('../profit_table').ProfitTable;
-var ws          = require('ws');
-var LiveApi     = require('binary-live-api').LiveApi;
+const expect      = require('chai').expect;
+const profitTable = require('../profit_table').ProfitTable;
+const ws          = require('ws');
+const LiveApi     = require('binary-live-api').LiveApi;
 
-var api = new LiveApi({ websocket: ws });
+const api = new LiveApi({ websocket: ws });
 
 describe('Profit Table', function() {
-    var profit_table;
+    let profit_table;
     before(function(done) {
         this.timeout(10000);
         // this is a read token, even if other people take it, won't be able to do any harm
@@ -18,7 +18,7 @@ describe('Profit Table', function() {
         });
     });
     it('Should have all expected data', function() {
-        var profit_table_data = profitTable.getProfitTabletData(profit_table.transactions[0]);
+        const profit_table_data = profitTable.getProfitTabletData(profit_table.transactions[0]);
         expect(profit_table_data).to.be.an('Object')
             .and.to.have.property('buyDate')
             .and.to.be.a('string');

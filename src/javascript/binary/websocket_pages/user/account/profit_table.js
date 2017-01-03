@@ -1,15 +1,15 @@
-var moment = require('moment');
+const moment = require('moment');
 
-var ProfitTable = (function() {
+const ProfitTable = (function() {
     'use strict';
 
-    var getProfitTabletData = function(transaction) {
-        var buyMoment  = moment.utc(transaction.purchase_time * 1000),
+    const getProfitTabletData = function(transaction) {
+        const buyMoment  = moment.utc(transaction.purchase_time * 1000),
             sellMoment = moment.utc(transaction.sell_time * 1000),
             buyPrice  = parseFloat(transaction.buy_price).toFixed(2),
             sellPrice = parseFloat(transaction.sell_price).toFixed(2);
 
-        var profit_table_data = {
+        return {
             buyDate  : buyMoment.format('YYYY-MM-DD') + '\n' + buyMoment.format('HH:mm:ss') + ' GMT',
             ref      : transaction.transaction_id,
             payout   : parseFloat(transaction.payout).toFixed(2),
@@ -21,15 +21,11 @@ var ProfitTable = (function() {
             id       : transaction.contract_id,
             app_id   : transaction.app_id,
         };
-
-        return profit_table_data;
     };
 
-    var external = {
+    return {
         getProfitTabletData: getProfitTabletData,
     };
-
-    return external;
 })();
 
 module.exports = {

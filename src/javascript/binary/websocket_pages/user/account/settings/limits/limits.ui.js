@@ -1,20 +1,32 @@
-var Table    = require('../../../../../common_functions/attach_dom/table').Table;
-var addComma = require('../../../../../common_functions/string_util').addComma;
-var localize = require('../../../../../base/localize').localize;
-var Client   = require('../../../../../base/client').Client;
+const Table    = require('../../../../../common_functions/attach_dom/table').Table;
+const addComma = require('../../../../../common_functions/string_util').addComma;
+const localize = require('../../../../../base/localize').localize;
+const Client   = require('../../../../../base/client').Client;
 
-var LimitsUI = (function() {
+const LimitsUI = (function() {
     'use strict';
 
-    var clientLimits = '';
-    function fillLimitsTable(limits) {
-        var currency = Client.get_value('currency');
+    let clientLimits = '';
+
+    const appendRowTable = function(name, turnover_limit, padding, font_weight) {
+        clientLimits.append('<tr class="flex-tr">' +
+            '<td class="flex-tr-child" style="padding-left: ' + padding + '; font-weight: ' + font_weight + ';">' +
+            localize(name) +
+            '</td>' +
+            '<td>' +
+            turnover_limit +
+            '</td>' +
+            '</tr>');
+    };
+
+    const fillLimitsTable = function(limits) {
+        const currency = Client.get_value('currency');
 
         if (currency) {
             $('.limit').append(' (' + currency + ')');
         }
 
-        var openPosition   = document.getElementById('open-positions'),
+        const openPosition   = document.getElementById('open-positions'),
             accountBalance = document.getElementById('account-balance'),
             payout         = document.getElementById('payout'),
             payoutPer      = document.getElementById('payout-per-symbol-and-contract-type');
@@ -24,10 +36,10 @@ var LimitsUI = (function() {
         payout.textContent         = addComma(limits.payout).split('.')[0];
         payoutPer.textContent      = addComma(limits.payout_per_symbol_and_contract_type).split('.')[0];
 
-        var marketSpecific = limits.market_specific;
+        const marketSpecific = limits.market_specific;
         clientLimits = $('#client-limits');
         Object.keys(marketSpecific).forEach(function (key) {
-            var object = marketSpecific[key];
+            const object = marketSpecific[key];
             if (object.length && object.length > 0) {
                 appendRowTable(localize(key.charAt(0).toUpperCase() + key.slice(1)), '', 'auto', 'bold');
                 Object.keys(object).forEach(function (c) {
@@ -39,28 +51,17 @@ var LimitsUI = (function() {
                 appendRowTable(object.name, object.turnover_limit !== 'null' ? addComma(object.turnover_limit).split('.')[0] : 0, 'auto', 'bold');
             }
         });
-        var loginId =  Client.get_value('loginid');
+        const loginId =  Client.get_value('loginid');
         if (loginId) {
             $('#trading-limits').prepend(loginId + ' - ');
             $('#withdrawal-title').prepend(loginId + ' - ');
         }
         $('#withdrawal-limits, #limits-title').removeClass('invisible');
-    }
+    };
 
-    function appendRowTable(name, turnover_limit, padding, font_weight) {
-        clientLimits.append('<tr class="flex-tr">' +
-                                '<td class="flex-tr-child" style="padding-left: ' + padding + '; font-weight: ' + font_weight + ';">' +
-                                    localize(name) +
-                                '</td>' +
-                                '<td>' +
-                                    turnover_limit +
-                                '</td>' +
-                            '</tr>');
-    }
-
-    function clearTableContent() {
+    const clearTableContent = function() {
         Table.clearTableBody('client-limits');
-    }
+    };
 
     return {
         clearTableContent: clearTableContent,

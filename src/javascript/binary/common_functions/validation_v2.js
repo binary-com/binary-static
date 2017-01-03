@@ -1,13 +1,13 @@
-var template = require('../base/utility').template;
-var moment   = require('moment');
-var dv       = require('../../lib/validation');
-var Content  = require('./content').Content;
-var localize = require('../base/localize').localize;
+const template = require('../base/utility').template;
+const moment   = require('moment');
+const dv       = require('../../lib/validation');
+const Content  = require('./content').Content;
+const localize = require('../base/localize').localize;
 
-var ValidateV2 = (function() {
-    function err() {
+const ValidateV2 = (function() {
+    const err = function() {
         return Content.errorMessage(...arguments);
-    }
+    };
 
     // We don't have access to the localised messages at the init-time
     // of this module. Solution: delay execution with 'unwrappables'.
@@ -16,66 +16,66 @@ var ValidateV2 = (function() {
     // unwrap({unwrap: () => 1}) == 1
     // unwrap(1) == 1
     //
-    function unwrap(a) {
+    const unwrap = function(a) {
         return a.unwrap ? a.unwrap() : a;
-    }
+    };
 
-    function local(value) {
+    const local = function(value) {
         return { unwrap: function() { return localize(value); } };
-    }
+    };
 
-    function localKey(value) {
+    const localKey = function(value) {
         return { unwrap: function() { return Content.localize()[value]; } };
-    }
+    };
 
-    function msg() {
-        var args = [].slice.call(arguments);
+    const msg = function() {
+        const args = [].slice.call(arguments);
         return { unwrap: function() {
             return err(...args.map(unwrap));
         } };
-    }
+    };
 
-    function check(fn, error) {
+    const check = function(fn, error) {
         return function(value) {
             return fn(value) ?
                 dv.ok(value) :
                 dv.fail(unwrap(error));
         };
-    }
+    };
 
     // TEST THESE
-    function validEmail(email) {
-        var regexp = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/;
+    const validEmail = function(email) {
+        const regexp = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/;
         return regexp.test(email);
-    }
+    };
 
-    function notEmpty(value) {
+    const notEmpty = function(value) {
         return value.length > 0;
-    }
+    };
 
-    function validPasswordLength(value) {
+    const validPasswordLength = function(value) {
         return value.length >= 6 && value.length <= 25;
-    }
+    };
 
-    function validPasswordChars(value) {
+    const validPasswordChars = function(value) {
         return /[0-9]+/.test(value) &&
             /[A-Z]+/.test(value) &&
             /[a-z]+/.test(value);
-    }
+    };
 
-    function noSymbolsInPassword(value) {
+    const noSymbolsInPassword = function(value) {
         return /^[!-~]+$/.test(value);
-    }
+    };
 
-    function validToken(value) {
+    const validToken = function(value) {
         return value.length === 48;
-    }
+    };
 
     // CAN BE USED IN UI
-    var required = check(notEmpty, msg('req'));
-    var email    = check(validEmail, msg('valid', local('email address')));
-    var token    = check(validToken, msg('valid', local('verification token')));
-    var password = function(value) {
+    const required = check(notEmpty, msg('req'));
+    const email    = check(validEmail, msg('valid', local('email address')));
+    const token    = check(validToken, msg('valid', local('verification token')));
+    const password = function(value) {
         return dv.first(value, [
             password.len,
             password.allowed,
@@ -87,32 +87,32 @@ var ValidateV2 = (function() {
     password.allowed = check(validPasswordChars,  local('Password should have lower and uppercase letters with numbers.'));
     password.symbols = check(noSymbolsInPassword, msg('valid', localKey('textPassword')));
 
-    function regex(regexp, allowed) {
+    const regex = function(regexp, allowed) {
         return function(str) {
             return regexp.test(str) ?
                 dv.ok(str) :
                 dv.fail(err('reg', allowed));
         };
-    }
+    };
 
-    function lengthRange(start, end) {
-        var range = template('([_1]-[_2])', [start, end]);
+    const lengthRange = function(start, end) {
+        const range = template('([_1]-[_2])', [start, end]);
         return function(str) {
-            var len = str.length;
+            const len = str.length;
             return (len >= start && len <= end) ?
                 dv.ok(str) :
                 dv.fail(err('range', range));
         };
-    }
+    };
 
-    function momentFmt(format, error) {
+    const momentFmt = function(format, error) {
         return function(str) {
-            var date = moment(str, format, true);
+            const date = moment(str, format, true);
             return date.isValid() ?
                 dv.ok(date) :
                 dv.fail(error);
         };
-    }
+    };
 
     return {
         err        : err,
