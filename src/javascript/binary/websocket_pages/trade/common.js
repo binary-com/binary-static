@@ -212,8 +212,7 @@ function displayMarkets(id, elements, selected) {
 function displayUnderlyings(id, elements, selected) {
     'use strict';
 
-    var target = document.getElementById(id),
-        fragment =  document.createDocumentFragment();
+    var target = document.getElementById(id);
 
     if (!target) return;
 
@@ -221,33 +220,38 @@ function displayUnderlyings(id, elements, selected) {
         target.removeChild(target.firstChild);
     }
 
-    if (elements) {
-        var keys = Object.keys(elements).sort(function(a, b) {
-            return elements[a].display.localeCompare(elements[b].display);
-        });
-        var submarkets = {};
-        for (var i = 0; i < keys.length; i++) {
-            if (!submarkets.hasOwnProperty(elements[keys[i]].submarket)) {
-                submarkets[elements[keys[i]].submarket] = [];
-            }
-            submarkets[elements[keys[i]].submarket].push(keys[i]);
-        }
-        var keys2 = Object.keys(submarkets).sort(marketSort);
-        for (var j = 0; j < keys2.length; j++) {
-            for (var k = 0; k < submarkets[keys2[j]].length; k++) {
-                var key = submarkets[keys2[j]][k];
-                var option = document.createElement('option'),
-                    content = document.createTextNode(localize(elements[key].display));
-                option.setAttribute('value', key);
-                if (selected && selected === key) {
-                    option.setAttribute('selected', 'selected');
-                }
-                option.appendChild(content);
-                fragment.appendChild(option);
-            }
-        }
-        target.appendChild(fragment);
+    if (objectNotEmpty(elements)) {
+        target.appendChild(generateUnderlyingOptions(elements, selected));
     }
+}
+
+function generateUnderlyingOptions(elements, selected) {
+    var fragment = document.createDocumentFragment();
+    var keys = Object.keys(elements).sort(function(a, b) {
+        return elements[a].display.localeCompare(elements[b].display);
+    });
+    var submarkets = {};
+    for (var i = 0; i < keys.length; i++) {
+        if (!submarkets.hasOwnProperty(elements[keys[i]].submarket)) {
+            submarkets[elements[keys[i]].submarket] = [];
+        }
+        submarkets[elements[keys[i]].submarket].push(keys[i]);
+    }
+    var keys2 = Object.keys(submarkets).sort(marketSort);
+    for (var j = 0; j < keys2.length; j++) {
+        for (var k = 0; k < submarkets[keys2[j]].length; k++) {
+            var key = submarkets[keys2[j]][k];
+            var option = document.createElement('option'),
+                content = document.createTextNode(localize(elements[key].display));
+            option.setAttribute('value', key);
+            if (selected && selected === key) {
+                option.setAttribute('selected', 'selected');
+            }
+            option.appendChild(content);
+            fragment.appendChild(option);
+        }
+    }
+    return fragment;
 }
 
 /*
@@ -920,6 +924,7 @@ function timeIsValid($element) {
 
 module.exports = {
     displayUnderlyings             : displayUnderlyings,
+    generateUnderlyingOptions      : generateUnderlyingOptions,
     getFormNameBarrierCategory     : getFormNameBarrierCategory,
     contractTypeDisplayMapping     : contractTypeDisplayMapping,
     showPriceOverlay               : showPriceOverlay,

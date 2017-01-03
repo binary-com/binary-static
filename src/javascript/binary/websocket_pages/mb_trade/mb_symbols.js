@@ -23,15 +23,17 @@ var MBSymbols = (function () {
         tradeMarketsList = {},
         tradeUnderlyings = {},
         need_page_update = 1,
+        allSymbols       = {},
         names            = {};
 
     var details = function (data) {
         ActiveSymbols.clearData();
-        var allSymbols = data.active_symbols;
-        tradeMarkets     = ActiveSymbols.getMarkets(allSymbols);
-        tradeMarketsList = ActiveSymbols.getMarketsList(allSymbols);
-        tradeUnderlyings = ActiveSymbols.getTradeUnderlyings(allSymbols);
-        names            = ActiveSymbols.getSymbolNames(allSymbols);
+        var active_symbols = data.active_symbols;
+        tradeMarkets     = ActiveSymbols.getMarkets(active_symbols);
+        tradeMarketsList = ActiveSymbols.getMarketsList(active_symbols);
+        tradeUnderlyings = ActiveSymbols.getTradeUnderlyings(active_symbols);
+        allSymbols       = ActiveSymbols.getSymbols(allSymbols);
+        names            = ActiveSymbols.getSymbolNames(active_symbols);
     };
 
     var getSymbols = function (update) {
@@ -49,7 +51,7 @@ var MBSymbols = (function () {
         underlyings     : function ()      { return tradeUnderlyings; },
         getName         : function(symbol) { return names[symbol]; },
         need_page_update: function ()      { return need_page_update; },
-        getAllSymbols   : function()       { return names; },
+        getAllSymbols   : function()       { return allSymbols; },
     };
 })();
 

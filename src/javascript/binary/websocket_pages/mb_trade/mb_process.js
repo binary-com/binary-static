@@ -8,6 +8,7 @@ var TradingAnalysis    = require('../trade/analysis').TradingAnalysis;
 var japanese_client    = require('../../common_functions/country_base').japanese_client;
 var displayUnderlyings = require('../trade/common').displayUnderlyings;
 var showFormOverlay    = require('../trade/common').showFormOverlay;
+var generateUnderlyingOptions = require('../trade/common').generateUnderlyingOptions;
 var processForgetTicks = require('../trade/process').processForgetTicks;
 var localize           = require('../../base/localize').localize;
 var Client             = require('../../base/client').Client;
@@ -30,8 +31,8 @@ var MBProcess = (function() {
         // populate the Symbols object
         MBSymbols.details(data);
 
-        var symbols_list = japanese_client() || !Client.get_boolean('is_logged_in') ?
-                MBSymbols.underlyings().major_pairs : MBSymbols.getAllSymbols(),
+        var is_show_all  = Client.get_boolean('is_logged_in') && !japanese_client(),
+            symbols_list = !is_show_all ? MBSymbols.underlyings().major_pairs : MBSymbols.getAllSymbols(),
             symbol       = MBDefaults.get('underlying'),
             update_page  = MBSymbols.need_page_update();
 
@@ -51,7 +52,8 @@ var MBProcess = (function() {
             handleMarketClosed();
         } else {
             handleMarketOpen();
-            displayUnderlyings('underlying', symbols_list, symbol);
+            if (is_show_all) populateUnderlyingGroups(symbol);
+            else displayUnderlyings('underlying', symbols_list, symbol);
 
             if (symbol && !symbols_list[symbol].is_active) {
                 MBNotifications.show({ text: localize('This symbol is not active. Please try another symbol.'), uid: 'SYMBOL_INACTIVE' });
@@ -59,6 +61,20 @@ var MBProcess = (function() {
                 MBProcess.processMarketUnderlying();
             }
         }
+    }
+
+    function populateUnderlyingGroups(selected) {
+        var $underlyings = $('#underlying');
+        $underlyings.empty();
+        var allSymbols = MBSymbols.underlyings(),
+            markets = MBSymbols.markets();
+        Object.keys(markets)
+            .sort((a, b) => markets[a].name.localeCompare(markets[b].name))
+            .forEach((market) => {
+                $underlyings.append(
+                    $('<optgroup/>', { label: markets[market].name })
+                        .append($(generateUnderlyingOptions(allSymbols[market], selected))));
+            });
     }
 
     function handleMarketClosed() {
