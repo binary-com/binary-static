@@ -1,6 +1,6 @@
 function onlyNumericOnKeypress(ev) {
-    var key = ev.keyCode;
-    var char = String.fromCharCode(ev.which);
+    const key = ev.keyCode;
+    const char = String.fromCharCode(ev.which);
     if (
         (char === '.' && ev.target.value.indexOf(char) >= 0) ||
         (!/[0-9\.]/.test(char) && [8, 37, 39, 46].indexOf(key) < 0) || // delete, backspace, arrow keys
@@ -11,8 +11,8 @@ function onlyNumericOnKeypress(ev) {
 }
 
 function onlyNumericColonOnKeypress(ev) {
-    var key = ev.keyCode;
-    var char = String.fromCharCode(ev.which);
+    const key = ev.keyCode;
+    const char = String.fromCharCode(ev.which);
     if (
         (char === '.' && ev.target.value.indexOf(char) >= 0) ||
         (!/[0-9\.]/.test(char) && [8, 37, 39, 46, 58].indexOf(key) < 0) || // delete, backspace, arrow keys, colon

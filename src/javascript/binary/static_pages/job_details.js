@@ -1,13 +1,13 @@
-var localize = require('../base/localize').localize;
-var url_for  = require('../base/url').url_for;
-var url      = require('../base/url').url;
+const localize = require('../base/localize').localize;
+const url_for  = require('../base/url').url_for;
+const url      = require('../base/url').url;
 
-var JobDetails = (function() {
-    var dept;
-    var depts;
-    var sections;
+const JobDetails = (function() {
+    let dept,
+        depts,
+        sections;
 
-    function showSelectedDiv() {
+    const showSelectedDiv = function() {
         if ($('.job-details').find('#title').text() === '') {
             init();
         } else {
@@ -20,11 +20,11 @@ var JobDetails = (function() {
                 $('.senior_perl_message').addClass('invisible');
             }
         }
-    }
+    };
 
-    function check_url() {
-        var replace_dept;
-        var replace_section;
+    const check_url = function() {
+        let replace_dept,
+            replace_section;
         if (!dept || $.inArray(dept, depts) === -1) {
             replace_dept = '?dept=Information_Technology';
         }
@@ -38,40 +38,42 @@ var JobDetails = (function() {
             return false;
         }
         return true;
-    }
+    };
 
-    function init() {
+    const init = function() {
         dept = url.params_hash().dept;
         depts = ['Information_Technology', 'Quality_Assurance', 'Quantitative_Analysis', 'Marketing', 'Accounting', 'Compliance', 'Customer_Support', 'Human_Resources', 'Administrator', 'Internal_Audit'];
         sections = ['section-one', 'section-two', 'section-three', 'section-four', 'section-five', 'section-six', 'section-seven', 'section-eight'];
         if (check_url()) {
             $('.job-details').find('#title').html(localize(dept.replace(/_/g, ' ')));
-            var deptImage = $('.dept-image'),
+            const deptImage = $('.dept-image'),
                 sourceImage = deptImage.attr('src').replace('Information_Technology', dept);
             deptImage.attr('src', sourceImage)
                      .show();
-            var deptContent = $('#content-' + dept + ' div'),
-                section;
-            $('#sidebar-nav li').slice(deptContent.length).hide();
-            for (var i = 0; i < deptContent.length; i++) {
+            const deptContent = $('#content-' + dept + ' div'),
+                $sidebar_nav = $('#sidebar-nav');
+            let section;
+            $sidebar_nav.find('li').slice(deptContent.length).hide();
+            for (let i = 0; i < deptContent.length; i++) {
                 section = $('#' + dept + '-' + sections[i]);
                 section.insertAfter('.sections div:last-child');
                 if (section.attr('class')) {
-                    $('#sidebar-nav a[href="#' + sections[i] + '"]').html(localize(section.attr('class').replace(/_/g, ' ')));
+                    $sidebar_nav.find('a[href="#' + sections[i] + '"]').html(localize(section.attr('class').replace(/_/g, ' ')));
                 }
             }
-            $('.sidebar').show();
-            if ($('.sidebar li:visible').length === 1) {
-                $('.sidebar').hide();
+            const $sidebar = $('.sidebar');
+            $sidebar.show();
+            if ($sidebar.find('li:visible').length === 1) {
+                $sidebar.hide();
             }
             $('#' + url.location.hash.substring(9)).addClass('selected');
             showSelectedDiv();
             $('#back-button').attr('href', url_for('open-positions') + '#' + dept);
         }
-    }
+    };
 
-    function addEventListeners() {
-        var sidebarListItem = $('#sidebar-nav li');
+    const addEventListeners = function() {
+        const sidebarListItem = $('#sidebar-nav').find('li');
         sidebarListItem.click(function() {
             sidebarListItem.removeClass('selected');
             $(this).addClass('selected');
@@ -82,11 +84,11 @@ var JobDetails = (function() {
                 JobDetails.showSelectedDiv();
             }
         });
-    }
+    };
 
-    function removeEventListeners() {
+    const removeEventListeners = function() {
         $(window).off('hashchange');
-    }
+    };
 
     return {
         showSelectedDiv: showSelectedDiv,

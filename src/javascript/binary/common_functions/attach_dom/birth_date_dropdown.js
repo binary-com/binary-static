@@ -1,8 +1,8 @@
-var japanese_client = require('../country_base').japanese_client;
-var localize = require('../../base/localize').localize;
+const japanese_client = require('../country_base').japanese_client;
+const localize        = require('../../base/localize').localize;
 
 function generateBirthDate() {
-    var days   = document.getElementById('dobdd'),
+    const days   = document.getElementById('dobdd'),
         months = document.getElementById('dobmm'),
         year   = document.getElementById('dobyy');
 
@@ -13,7 +13,7 @@ function generateBirthDate() {
     // months
     dropDownMonths(months, 1, 12);
     // years
-    var currentYear = new Date().getFullYear(),
+    const currentYear = new Date().getFullYear(),
         startYear = currentYear - 100,
         endYear   = currentYear - 17;
     dropDownNumbers(year, startYear, endYear);
@@ -29,8 +29,8 @@ function generateBirthDate() {
 function dropDownNumbers(select, startNum, endNum) {
     select.appendChild(document.createElement('option'));
 
-    for (var i = startNum; i <= endNum; i++) {
-        var option = document.createElement('option');
+    for (let i = startNum; i <= endNum; i++) {
+        const option = document.createElement('option');
         option.text = i;
         option.value = i;
         select.appendChild(option);
@@ -38,16 +38,16 @@ function dropDownNumbers(select, startNum, endNum) {
 }
 
 function dropDownMonths(select, startNum, endNum) {
-    var months = localize(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
+    const months = localize(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
     select.appendChild(document.createElement('option'));
-    for (var i = startNum; i <= endNum; i++) {
-        var option = document.createElement('option');
+    for (let i = startNum; i <= endNum; i++) {
+        const option = document.createElement('option');
         if (i <= '9') {
             option.value = '0' + i;
         } else {
             option.value = i;
         }
-        for (var j = i; j <= i; j++) {
+        for (let j = i; j <= i; j++) {
             option.text = months[j - 1];
         }
         select.appendChild(option);

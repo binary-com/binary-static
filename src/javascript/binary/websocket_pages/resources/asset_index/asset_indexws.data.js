@@ -1,7 +1,7 @@
-var AssetIndexData = (function() {
+const AssetIndexData = (function() {
     'use strict';
 
-    var sendRequest = function(shouldRequestActiveSymbols) {
+    const sendRequest = function(shouldRequestActiveSymbols) {
         if (shouldRequestActiveSymbols) {
             BinarySocket.send({ active_symbols: 'brief' });
         }

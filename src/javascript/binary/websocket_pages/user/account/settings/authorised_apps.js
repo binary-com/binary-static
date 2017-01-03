@@ -1,10 +1,10 @@
-var Content         = require('../../../../common_functions/content').Content;
-var japanese_client = require('../../../../common_functions/country_base').japanese_client;
-var url_for         = require('../../../../base/url').url_for;
-var Applications    = require('./authorised_apps/authorised_apps.init').Applications;
+const Content         = require('../../../../common_functions/content').Content;
+const japanese_client = require('../../../../common_functions/country_base').japanese_client;
+const url_for         = require('../../../../base/url').url_for;
+const Applications    = require('./authorised_apps/authorised_apps.init').Applications;
 
-var AuthorisedApps = (function() {
-    var onLoad = function() {
+const AuthorisedApps = (function() {
+    const onLoad = function() {
         if (japanese_client()) {
             window.location.href = url_for('user/settingsws');
         }
@@ -12,7 +12,7 @@ var AuthorisedApps = (function() {
         Applications.init();
     };
 
-    var onUnload = function() {
+    const onUnload = function() {
         Applications.clean();
     };
 

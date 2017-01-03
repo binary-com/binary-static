@@ -1,29 +1,30 @@
-var Content         = require('../../../common_functions/content').Content;
-var japanese_client = require('../../../common_functions/country_base').japanese_client;
-var Client   = require('../../../base/client').Client;
-var url_for  = require('../../../base/url').url_for;
+const Content         = require('../../../common_functions/content').Content;
+const japanese_client = require('../../../common_functions/country_base').japanese_client;
+const localize = require('../../../base/localize').localize;
+const Client   = require('../../../base/client').Client;
+const url_for  = require('../../../base/url').url_for;
 
-var AuthenticateWS = (function() {
-    function init() {
+const AuthenticateWS = (function() {
+    const init = function() {
         if (japanese_client()) {
             window.location.href = url_for('trading');
         }
         Content.populate();
 
-        function show_error(error) {
+        const show_error = function(error) {
             $('#error_message').removeClass('invisible').text(error);
             return true;
-        }
+        };
 
-        function check_virtual() {
+        const check_virtual = function() {
             return Client.get_boolean('is_virtual') && show_error(Content.localize().featureNotRelevantToVirtual);
-        }
+        };
         if (!check_virtual()) {
             BinarySocket.init({
                 onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
+                    const response = JSON.parse(msg.data);
                     if (response) {
-                        var error = response.error;
+                        const error = response.error;
                         if (response.msg_type === 'get_account_status' && !check_virtual() && !error) {
                             if ($.inArray('authenticated', response.get_account_status.status) > -1) {
                                 $('#fully-authenticated').removeClass('invisible');
@@ -38,7 +39,7 @@ var AuthenticateWS = (function() {
             });
             BinarySocket.send({ get_account_status: 1 });
         }
-    }
+    };
     return {
         init: init,
     };

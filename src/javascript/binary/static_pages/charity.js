@@ -1,19 +1,19 @@
-var CharityPage = (function() {
-    var timeout = 5000;
-    var interval = null;
-    var gallery;
-    var images;
-    var onLoad = function() {
-        function switchPicture() {
+const CharityPage = (function() {
+    const timeout = 5000;
+    let gallery,
+        images,
+        interval = null;
+    const onLoad = function() {
+        const switchPicture = function() {
             images = gallery.find('img');
             if (images.length > 1) {
                 images.eq(images.length - 1).prependTo(gallery);
             }
-        }
+        };
         gallery = $('.gallery');
         interval = window.setInterval(switchPicture, timeout);
     };
-    var onUnload = function() {
+    const onUnload = function() {
         if (interval) {
             window.clearInterval(interval);
             interval = null;

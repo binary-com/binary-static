@@ -1,28 +1,28 @@
-var showLoadingImage    = require('../../../../base/utility').showLoadingImage;
-var toJapanTimeIfNeeded = require('../../../../base/clock').Clock.toJapanTimeIfNeeded;
-var format_money        = require('../../../../common_functions/currency_to_symbol').format_money;
-var buildOauthApps      = require('../../../../common_functions/get_app_details').buildOauthApps;
-var addTooltip          = require('../../../../common_functions/get_app_details').addTooltip;
-var showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
-var japanese_client     = require('../../../../common_functions/country_base').japanese_client;
-var Portfolio           = require('../portfolio').Portfolio;
-var ViewPopupWS         = require('../../view_popup/view_popupws').ViewPopupWS;
-var State               = require('../../../../base/storage').State;
-var localize = require('../../../../base/localize').localize;
-var Client   = require('../../../../base/client').Client;
-var url      = require('../../../../base/url').url;
+const showLoadingImage    = require('../../../../base/utility').showLoadingImage;
+const toJapanTimeIfNeeded = require('../../../../base/clock').Clock.toJapanTimeIfNeeded;
+const format_money        = require('../../../../common_functions/currency_to_symbol').format_money;
+const buildOauthApps      = require('../../../../common_functions/get_app_details').buildOauthApps;
+const addTooltip          = require('../../../../common_functions/get_app_details').addTooltip;
+const showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
+const japanese_client     = require('../../../../common_functions/country_base').japanese_client;
+const Portfolio           = require('../portfolio').Portfolio;
+const ViewPopupWS         = require('../../view_popup/view_popupws').ViewPopupWS;
+const State               = require('../../../../base/storage').State;
+const localize = require('../../../../base/localize').localize;
+const Client   = require('../../../../base/client').Client;
+const url      = require('../../../../base/url').url;
 
-var PortfolioWS = (function() {
+const PortfolioWS = (function() {
     'use strict';
 
-    var values,
+    let values,
         currency,
         oauth_apps,
         hidden_class,
         is_initialized,
         is_first_response;
 
-    var init = function() {
+    const init = function() {
         hidden_class = 'invisible';
         if (Client.get_value('balance')) {
             updateBalance();
@@ -33,8 +33,9 @@ var PortfolioWS = (function() {
         values = {};
         currency = '';
         oauth_apps = {};
-        $('#portfolio-loading').show();
-        showLoadingImage($('#portfolio-loading'));
+        const $portfolio_loading = $('#portfolio-loading');
+        $portfolio_loading.show();
+        showLoadingImage($portfolio_loading);
         is_first_response = true;
         BinarySocket.send({ portfolio: 1 });
         // Subscribe to transactions to auto update new purchases
@@ -43,18 +44,18 @@ var PortfolioWS = (function() {
         is_initialized = true;
 
         // Display ViewPopup according to contract_id in query string
-        var contract_id = url.param('contract_id');
+        const contract_id = url.param('contract_id');
         if (contract_id) {
             ViewPopupWS.init($('<div />', { contract_id: contract_id }).get(0));
         }
     };
 
-    var createPortfolioRow = function(data, is_first) {
-        var longCode = typeof module !== 'undefined' ?
+    const createPortfolioRow = function(data, is_first) {
+        const longCode = typeof module !== 'undefined' ?
             data.longcode :
             (japanese_client() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode);
 
-        var new_class = is_first ? '' : 'new';
+        const new_class = is_first ? '' : 'new';
         $('#portfolio-body').prepend(
             $('<tr class="tr-first ' + new_class + ' ' + data.contract_id + '" id="' + data.contract_id + '">' +
                 '<td class="ref"><span' + showTooltip(data.app_id, oauth_apps[data.app_id]) + ' data-balloon-pos="right">' + data.transaction_id + '</span></td>' +
@@ -69,10 +70,11 @@ var PortfolioWS = (function() {
                 '</tr>'));
     };
 
-    var updateBalance = function() {
-        if ($('#portfolio-balance').length === 0) return;
-        $('#portfolio-balance').text(Portfolio.getBalance(Client.get_value('balance'), Client.get_value('currency')));
-        var $if_balance_zero = $('#if-balance-zero');
+    const updateBalance = function() {
+        const $portfolio_balance = $('#portfolio-balance');
+        if ($portfolio_balance.length === 0) return;
+        $portfolio_balance.text(Portfolio.getBalance(Client.get_value('balance'), Client.get_value('currency')));
+        const $if_balance_zero = $('#if-balance-zero');
         if (Client.get_value('balance') > 0 || Client.get_boolean('is_virtual')) {
             $if_balance_zero.addClass(hidden_class);
         } else {
@@ -83,7 +85,7 @@ var PortfolioWS = (function() {
         }
     };
 
-    var updatePortfolio = function(data) {
+    const updatePortfolio = function(data) {
         if (data.hasOwnProperty('error')) {
             errorMessage(data.error.message);
             return;
@@ -98,7 +100,7 @@ var PortfolioWS = (function() {
              * User has at least one contract
              **/
             $('#portfolio-no-contract').hide();
-            var portfolio_data;
+            let portfolio_data;
             $.each(data.portfolio.contracts, function(ci, c) {
                 if (!values.hasOwnProperty(c.contract_id)) {
                     values[c.contract_id] = {};
@@ -125,7 +127,7 @@ var PortfolioWS = (function() {
         is_first_response = false;
     };
 
-    var transactionResponseHandler = function(response) {
+    const transactionResponseHandler = function(response) {
         if (response.hasOwnProperty('error')) {
             errorMessage(response.error.message);
         } else if (response.transaction.action === 'buy') {
@@ -135,12 +137,12 @@ var PortfolioWS = (function() {
         }
     };
 
-    var updateIndicative = function(data) {
+    const updateIndicative = function(data) {
         if (data.hasOwnProperty('error') || !values) {
             return;
         }
 
-        var proposal = Portfolio.getProposalOpenContract(data.proposal_open_contract);
+        const proposal = Portfolio.getProposalOpenContract(data.proposal_open_contract);
         // avoid updating 'values' before the new contract row added to the table
         if (!values.hasOwnProperty(proposal.contract_id)) {
             return;
@@ -150,12 +152,12 @@ var PortfolioWS = (function() {
         if (+proposal.is_settleable === 1 && !proposal.is_sold) {
             BinarySocket.send({ sell_expired: 1 });
         }
-        var $td = $('#' + proposal.contract_id + ' td.indicative');
+        const $td = $('#' + proposal.contract_id + ' td.indicative');
 
-        var old_indicative = values[proposal.contract_id].indicative || 0.00;
+        const old_indicative = values[proposal.contract_id].indicative || 0.00;
         values[proposal.contract_id].indicative = proposal.bid_price;
 
-        var status_class = '',
+        let status_class = '',
             no_resale_html = '';
         if (+proposal.is_sold === 1) {
             removeContract(proposal.contract_id);
@@ -173,19 +175,19 @@ var PortfolioWS = (function() {
         updateFooter();
     };
 
-    var updateOAuthApps = function(response) {
+    const updateOAuthApps = function(response) {
         oauth_apps = buildOauthApps(response.oauth_apps);
         addTooltip(oauth_apps);
     };
 
-    var removeContract = function(contract_id) {
+    const removeContract = function(contract_id) {
         delete (values[contract_id]);
         $('tr.' + contract_id)
             .removeClass('new')
             .css('opacity', '0.5')
             .fadeOut(1000, function() {
                 $(this).remove();
-                if ($('#portfolio-body tr').length === 0) {
+                if ($('#portfolio-body').find('tr').length === 0) {
                     $('#portfolio-table').addClass(hidden_class);
                     $('#cost-of-open-positions, #value-of-open-positions').text('');
                     $('#portfolio-no-contract').show();
@@ -194,13 +196,13 @@ var PortfolioWS = (function() {
         updateFooter();
     };
 
-    var updateFooter = function() {
+    const updateFooter = function() {
         $('#cost-of-open-positions').text(format_money(currency, Portfolio.getSumPurchase(values)));
         $('#value-of-open-positions').text(format_money(currency, Portfolio.getIndicativeSum(values)));
     };
 
-    var errorMessage = function(msg) {
-        var $err = $('#portfolio #error-msg');
+    const errorMessage = function(msg) {
+        const $err = $('#portfolio').find('#error-msg');
         if (msg) {
             $err.removeClass(hidden_class).text(msg);
         } else {
@@ -208,11 +210,11 @@ var PortfolioWS = (function() {
         }
     };
 
-    var onLoad = function() {
+    const onLoad = function() {
         if (!State.get('is_beta_trading') && !State.get('is_mb_trading')) {
             BinarySocket.init({
                 onmessage: function(msg) {
-                    var response = JSON.parse(msg.data),
+                    const response = JSON.parse(msg.data),
                         msg_type = response.msg_type;
 
                     switch (msg_type) {
@@ -237,7 +239,7 @@ var PortfolioWS = (function() {
         PortfolioWS.init();
     };
 
-    var onUnload = function() {
+    const onUnload = function() {
         BinarySocket.send({ forget_all: 'proposal_open_contract' });
         BinarySocket.send({ forget_all: 'transaction' });
         $('#portfolio-body').empty();

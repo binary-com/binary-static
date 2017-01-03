@@ -1,12 +1,12 @@
-var Content  = require('../binary/common_functions/content').Content;
-var localize = require('../binary/base/localize').localize;
-var Client   = require('../binary/base/client').Client;
+const Content  = require('../binary/common_functions/content').Content;
+const localize = require('../binary/base/localize').localize;
+const Client   = require('../binary/base/client').Client;
 
-var CashierJP = (function() {
+const CashierJP = (function() {
     function init(action) {
         Content.populate();
         if (Client.get_boolean('values_set')) {
-            var $container = $('#japan_cashier_container');
+            const $container = $('#japan_cashier_container');
             if (Client.get_boolean('is_virtual')) {
                 $container.addClass('center-text notice-msg').removeClass('invisible')
                 .text(Content.localize().featureNotRelevantToVirtual);
@@ -22,7 +22,7 @@ var CashierJP = (function() {
         } else {
             BinarySocket.init({
                 onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
+                    const response = JSON.parse(msg.data);
                     if (response && response.msg_type === 'authorize') {
                         CashierJP.init(action);
                     }
@@ -43,12 +43,13 @@ var CashierJP = (function() {
     }
     function error_handler() {
         $('.error-msg').remove();
-        var withdrawal_amount = $('#id123-control22598145').val();
+        const $id = $('#id123-control22598145');
+        const withdrawal_amount = $id.val();
         if (!/^([1-9][0-9]{0,5}|1000000)$/.test(withdrawal_amount)) {
-            $('#id123-control22598145').parent().append('<p class="error-msg">' + Content.errorMessage('number_should_between', '¥1 - ¥1,000,000') + '</p>');
+            $id.parent().append('<p class="error-msg">' + Content.errorMessage('number_should_between', '¥1 - ¥1,000,000') + '</p>');
             return false;
         } else if (parseInt(Client.get_value('balance')) < withdrawal_amount) {
-            $('#id123-control22598145').parent().append('<p class="error-msg">' + localize('Insufficient balance.') + '</p>');
+            $id.parent().append('<p class="error-msg">' + localize('Insufficient balance.') + '</p>');
             return false;
         }
         return true;

@@ -1,8 +1,8 @@
-var ResetPassword = require('./reset_password/reset_password.init').ResetPassword;
-var Client        = require('../../base/client').Client;
+const ResetPassword = require('./reset_password/reset_password.init').ResetPassword;
+const Client        = require('../../base/client').Client;
 
-var ResetPasswordWS = (function() {
-    var init = function() {
+const ResetPasswordWS = (function() {
+    const init = function() {
         if (Client.redirect_if_login()) {
             return;
         }

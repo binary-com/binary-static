@@ -1,16 +1,16 @@
-var template = require('../../base/utility').template;
-var Validate = require('../../common_functions/validation').Validate;
-var Content  = require('../../common_functions/content').Content;
-var localize = require('../../base/localize').localize;
-var Client   = require('../../base/client').Client;
-var url_for  = require('../../base/url').url_for;
-var appendTextValueChild = require('../../common_functions/common_functions').appendTextValueChild;
+const template = require('../../base/utility').template;
+const Validate = require('../../common_functions/validation').Validate;
+const Content  = require('../../common_functions/content').Content;
+const localize = require('../../base/localize').localize;
+const Client   = require('../../base/client').Client;
+const url_for  = require('../../base/url').url_for;
+const appendTextValueChild = require('../../common_functions/common_functions').appendTextValueChild;
 
-var ForwardWS = (function() {
-    function init(cashier_password) {
+const ForwardWS = (function() {
+    const init = function(cashier_password) {
         Content.populate();
 
-        var submit_currency = document.getElementById('submit-currency'),
+        const submit_currency = document.getElementById('submit-currency'),
             submit_verification = document.getElementById('submit-verification'),
             submit_ukgc_funds_protection = document.getElementById('submit-ukgc-funds-protection');
 
@@ -20,7 +20,7 @@ var ForwardWS = (function() {
         });
 
         submit_verification.addEventListener('click', function() {
-            var verification_token = document.getElementById('verification-token').value,
+            const verification_token = document.getElementById('verification-token').value,
                 verification_error = document.getElementById('verification-error');
             if (!Validate.errorMessageToken(verification_token, verification_error)) {
                 submit_verification.setAttribute('disabled', 'disabled');
@@ -37,51 +37,51 @@ var ForwardWS = (function() {
         });
 
         initDepositOrWithdraw(cashier_password);
-    }
+    };
 
-    function initDepositOrWithdraw(cashier_password) {
+    const initDepositOrWithdraw = function(cashier_password) {
         if (cashier_password === 1) {
             ForwardWS.showMessage('cashier-locked-message');
             sessionStorage.setItem('cashier_lock_redirect', window.location.href);
             return;
         }
-        var cashier_type = ForwardWS.getCashierType();
+        const cashier_type = ForwardWS.getCashierType();
         if (cashier_type === 'withdraw') {
             initWithdrawForm();
         } else if (cashier_type === 'deposit') {
             initDepositForm();
         }
-    }
+    };
 
-    function initWithdrawForm() {
+    const initWithdrawForm = function() {
         BinarySocket.send({
             verify_email: Client.get_value('email'),
             type        : 'payment_withdraw',
         });
         ForwardWS.showMessage('check-email-message');
         $('#withdraw-form').removeClass('invisible');
-    }
+    };
 
-    function initDepositForm() {
+    const initDepositForm = function() {
         if (Client.get_value('currency')) {
             ForwardWS.getCashierURL();
         } else {
             ForwardWS.showCurrency();
         }
-    }
+    };
 
-    function showCurrency() {
-        var currencies = Client.get_value('currencies').split(',');
+    const showCurrency = function() {
+        const currencies = Client.get_value('currencies').split(',');
         currencies.forEach(function(c) {
             appendTextValueChild('select-currency', c, c);
         });
         ForwardWS.showMessage('choose-currency-message');
         $('#currency-form').removeClass('invisible');
-    }
+    };
 
-    function getCashierType() {
-        var cashier_type,
-            deposit_withdraw_heading = document.getElementById('deposit-withdraw-heading'),
+    const getCashierType = function() {
+        let cashier_type;
+        const deposit_withdraw_heading = document.getElementById('deposit-withdraw-heading'),
             hash_value = window.location.hash;
         if (/withdraw/.test(hash_value)) {
             cashier_type = 'withdraw';
@@ -91,50 +91,50 @@ var ForwardWS = (function() {
             deposit_withdraw_heading.innerHTML = localize('Deposit');
         }
         return cashier_type;
-    }
+    };
 
-    function getCashierURL(verification_token) {
-        var req = { cashier: getCashierType() };
+    const getCashierURL = function(verification_token) {
+        const req = { cashier: getCashierType() };
         if (verification_token) req.verification_code = verification_token;
         if (/epg/.test(window.location.pathname)) req.provider = 'epg';
         BinarySocket.send(req);
-    }
+    };
 
-    function hideAll(option) {
+    const hideAll = function(option) {
         $('#withdraw-form, #currency-form, #ukgc-funds-protection, #deposit-withdraw-error').addClass('invisible');
         if (option) {
             $(option).addClass('invisible');
         }
-    }
+    };
 
-    function showError(error, id) {
+    const showError = function(error, id) {
         hideAll();
         if (!id) {
             $('#custom-error').html(error || localize('Sorry, an error occurred while processing your request.'));
         }
         hideParentShowChild('#deposit-withdraw-error', '.error_messages', id || 'custom-error');
-    }
+    };
 
-    function showErrorMessage(id) {
+    const showErrorMessage = function(id) {
         hideAll();
         hideParentShowChild('#deposit-withdraw-error', '.error_messages', id);
-    }
+    };
 
-    function showMessage(id) {
+    const showMessage = function(id) {
         hideParentShowChild('#deposit-withdraw-message', '.messages', id);
-    }
+    };
 
-    function hideParentShowChild(parent, children, id) {
+    const hideParentShowChild = function(parent, children, id) {
         $(parent).find(children).addClass('invisible').end()
             .find('#' + id)
             .removeClass('invisible')
             .end()
             .removeClass('invisible');
-    }
+    };
 
-    function showPersonalDetailsError(details) {
-        var msgID = 'personal-details-message',
-            errorFields;
+    const showPersonalDetailsError = function(details) {
+        const msgID = 'personal-details-message';
+        let errorFields;
         if (details) {
             errorFields = {
                 province: 'State/Province',
@@ -146,28 +146,29 @@ var ForwardWS = (function() {
                 email   : 'Email address',
             };
         }
-        var errMsg = template($('#' + msgID).html(), [localize(details ? errorFields[details] : 'details')]);
-        $('#' + msgID).html(errMsg);
+        const $el = $('#' + msgID),
+            errMsg = template($el.html(), [localize(details ? errorFields[details] : 'details')]);
+        $el.html(errMsg);
         ForwardWS.showMessage(msgID);
-    }
+    };
 
-    function checkOnLoad() {
-        function clientIsVirtual() {
+    const checkOnLoad = function() {
+        const clientIsVirtual = function() {
             Content.populate();
-            var is_virtual = Client.get_boolean('is_virtual');
+            const is_virtual = Client.get_boolean('is_virtual');
             if (is_virtual) {
                 var error_vrtc = document.getElementsByClassName('error_vrtc');
                 $(error_vrtc).addClass('center-text notice-msg');
                 ForwardWS.showError(Content.localize().featureNotRelevantToVirtual);
             }
             return is_virtual;
-        }
+        };
         if (clientIsVirtual()) return;
         BinarySocket.init({
             onmessage: function(msg) {
-                var response = JSON.parse(msg.data);
+                const response = JSON.parse(msg.data);
                 if (!response || clientIsVirtual()) return;
-                var type = response.msg_type,
+                const type = response.msg_type,
                     error = response.error;
 
                 if (error) {
@@ -249,7 +250,7 @@ var ForwardWS = (function() {
         ) {
             BinarySocket.send({ cashier_password: 1 });
         }
-    }
+    };
     return {
         init                    : init,
         getCashierType          : getCashierType,

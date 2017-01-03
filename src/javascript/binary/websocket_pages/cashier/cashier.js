@@ -1,11 +1,11 @@
-var japanese_client = require('../../common_functions/country_base').japanese_client;
-var Client   = require('../../base/client').Client;
-var url_for  = require('../../base/url').url_for;
+const japanese_client = require('../../common_functions/country_base').japanese_client;
+const Client   = require('../../base/client').Client;
+const url_for  = require('../../base/url').url_for;
 
-var Cashier = (function() {
+const Cashier = (function() {
     'use strict';
 
-    var lock_cashier = function(withdrawal_locked, lock_type) {
+    const lock_cashier = function(withdrawal_locked, lock_type) {
         if (withdrawal_locked === 'locked') {
             $.each($('.' + lock_type), function() {
                 replace_with_disabled_button($(this).parent());
@@ -13,7 +13,7 @@ var Cashier = (function() {
         }
     };
 
-    var check_locked = function() {
+    const check_locked = function() {
         if (Client.get_boolean('is_virtual')) return;
         if (Client.status_detected('cashier_locked')) {
             lock_cashier('locked', 'deposit, .withdraw');
@@ -26,7 +26,7 @@ var Cashier = (function() {
         }
     };
 
-    var check_virtual_top_up = function() {
+    const check_virtual_top_up = function() {
         if (Client.get_boolean('is_virtual')) {
             if ((Client.get_value('currency') !== 'JPY' && Client.get_value('balance') > 1000) ||
                 (Client.get_value('currency') === 'JPY' && Client.get_value('balance') > 100000)) {
@@ -35,21 +35,21 @@ var Cashier = (function() {
         }
     };
 
-    var replace_with_disabled_button = function(elementToReplace) {
-        var $a = $(elementToReplace);
+    const replace_with_disabled_button = function(elementToReplace) {
+        const $a = $(elementToReplace);
         if ($a.length === 0) return;
         // use replaceWith, to disable previously caught pjax event
         $a.replaceWith($('<a/>', { class: $a.attr('class').replace('pjaxload') + ' button-disabled', html: $a.html() }));
     };
 
-    var onLoad = function() {
+    const onLoad = function() {
         if (/\/cashier\.html/.test(window.location.pathname) && Client.get_boolean('is_logged_in')) {
             Cashier.check_locked();
             Cashier.check_virtual_top_up();
         }
     };
 
-    var onLoadPaymentMethods = function() {
+    const onLoadPaymentMethods = function() {
         if (japanese_client()) {
             window.location.href = url_for('/');
         }
