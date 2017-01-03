@@ -7,7 +7,7 @@ const updatePurchaseStatus = require('./common').updatePurchaseStatus;
 const localize             = require('../../base/localize').localize;
 const Highcharts           = require('highcharts');
 require('highcharts/modules/exporting')(Highcharts);
-var elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
+const elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
 
 const TickDisplay = (function() {
     return {
