@@ -1,15 +1,8 @@
-<<<<<<< HEAD
-var Content             = require('../../../../common_functions/content').Content;
-var ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
-var Validate            = require('../../../../common_functions/validation').Validate;
-var selectorExists    = require('../../../../common_functions/common_functions').selectorExists;
-var FinancialAccOpeningData = require('./financial_acc_opening.data').FinancialAccOpeningData;
-=======
 const Content             = require('../../../../common_functions/content').Content;
 const ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
 const Validate            = require('../../../../common_functions/validation').Validate;
 const FinancialAccOpeningData = require('./financial_acc_opening.data').FinancialAccOpeningData;
->>>>>>> upstream/master
+const selectorExists    = require('../../../../common_functions/common_functions').selectorExists;
 
 const FinancialAccOpeningUI = (function() {
     'use strict';

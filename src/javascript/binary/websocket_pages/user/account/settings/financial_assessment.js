@@ -1,23 +1,12 @@
-<<<<<<< HEAD
-var RiskClassification = require('../../../../common_functions/risk_classification').RiskClassification;
-var selectorExists     = require('../../../../common_functions/common_functions').selectorExists;
-var japanese_client    = require('../../../../common_functions/country_base').japanese_client;
-var showLoadingImage   = require('../../../../base/utility').showLoadingImage;
-var localize           = require('../../../../base/localize').localize;
-var Client             = require('../../../../base/client').Client;
-var url_for            = require('../../../../base/url').url_for;
-
-var FinancialAssessmentws = (function() {
-=======
 const RiskClassification = require('../../../../common_functions/risk_classification').RiskClassification;
 const japanese_client    = require('../../../../common_functions/country_base').japanese_client;
 const showLoadingImage   = require('../../../../base/utility').showLoadingImage;
 const localize           = require('../../../../base/localize').localize;
 const Client             = require('../../../../base/client').Client;
 const url_for            = require('../../../../base/url').url_for;
+const selectorExists     = require('../../../../common_functions/common_functions').selectorExists;
 
 const FinancialAssessmentws = (function() {
->>>>>>> upstream/master
     'use strict';
 
     let financial_assessment = {};
@@ -34,22 +23,6 @@ const FinancialAssessmentws = (function() {
     };
 
     // For translating strings
-<<<<<<< HEAD
-    var LocalizeText = function() {
-        $('#heading').text(localize($('#heading').text()));
-        $('#heading_risk').text(localize($('#heading_risk').text()));
-        $('#high_risk_classification').text(localize($('#high_risk_classification').text()));
-        var legend_0 = document.getElementsByTagName('legend')[0];
-        var legend_1 = document.getElementsByTagName('legend')[1];
-        if (selectorExists(legend_0)) {
-            legend_0.innerHTML = localize(legend_0.innerHTML);
-        }
-        if (selectorExists(legend_1)) {
-            legend_1.innerHTML = localize(legend_1.innerHTML);
-        }
-        $('#assessment_form label').each(function() {
-            var ele = $(this);
-=======
     const LocalizeText = function() {
         const $heading = $('#heading'),
             $heading_risk = $('#heading_risk'),
@@ -60,11 +33,16 @@ const FinancialAssessmentws = (function() {
         $heading.text(localize($heading.text()));
         $heading_risk.text(localize($heading_risk.text()));
         $high_risk.text(localize($high_risk.text()));
-        document.getElementsByTagName('legend')[0].innerHTML = localize(document.getElementsByTagName('legend')[0].innerHTML);
-        if (document.getElementsByTagName('legend')[1]) document.getElementsByTagName('legend')[1].innerHTML = localize(document.getElementsByTagName('legend')[1].innerHTML);
+        const legend_0 = document.getElementsByTagName('legend')[0];
+        const legend_1 = document.getElementsByTagName('legend')[1];
+        if (selectorExists(legend_0)) {
+            legend_0.innerHTML = localize(legend_0.innerHTML);
+        }
+        if (selectorExists(legend_1)) {
+            legend_1.innerHTML = localize(legend_1.innerHTML);
+        }
         $assessment_form.find('label').each(function() {
             const ele = $(this);
->>>>>>> upstream/master
             ele.text(localize(ele.text()));
         });
         $assessment_form.find('option').each(function() {

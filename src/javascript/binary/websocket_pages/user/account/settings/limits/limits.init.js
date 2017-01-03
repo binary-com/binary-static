@@ -1,20 +1,11 @@
-<<<<<<< HEAD
-var template = require('../../../../../base/utility').template;
-var Content  = require('../../../../../common_functions/content').Content;
-var addComma = require('../../../../../common_functions/string_util').addComma;
-var elementTextContent  = require('../../../../../common_functions/common_functions').elementTextContent;
-var elementInnerHtml    = require('../../../../../common_functions/common_functions').elementInnerHtml;
-var LimitsUI = require('./limits.ui').LimitsUI;
-var localize = require('../../../../../base/localize').localize;
-var Client   = require('../../../../../base/client').Client;
-=======
 const template = require('../../../../../base/utility').template;
 const Content  = require('../../../../../common_functions/content').Content;
 const addComma = require('../../../../../common_functions/string_util').addComma;
 const LimitsUI = require('./limits.ui').LimitsUI;
 const localize = require('../../../../../base/localize').localize;
 const Client   = require('../../../../../base/client').Client;
->>>>>>> upstream/master
+const elementTextContent  = require('../../../../../common_functions/common_functions').elementTextContent;
+const elementInnerHtml    = require('../../../../../common_functions/common_functions').elementInnerHtml;
 
 const LimitsWS = (function() {
     'use strict';

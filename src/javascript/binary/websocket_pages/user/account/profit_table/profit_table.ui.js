@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-var toJapanTimeIfNeeded = require('../../../../base/clock').Clock.toJapanTimeIfNeeded;
-var localize            = require('../../../../base/localize').localize;
-var Client              = require('../../../../base/client').Client;
-var Button              = require('../../../../common_functions/attach_dom/button').Button;
-var Content             = require('../../../../common_functions/content').Content;
-var Table               = require('../../../../common_functions/attach_dom/table').Table;
-var format_money        = require('../../../../common_functions/currency_to_symbol').format_money;
-var showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
-var japanese_client     = require('../../../../common_functions/country_base').japanese_client;
-var addComma            = require('../../../../common_functions/string_util').addComma;
-var elementTextContent  = require('../../../../common_functions/common_functions').elementTextContent;
-var ProfitTable         = require('../profit_table').ProfitTable;
-
-var ProfitTableUI = (function() {
-=======
 const toJapanTimeIfNeeded = require('../../../../base/clock').Clock.toJapanTimeIfNeeded;
 const localize            = require('../../../../base/localize').localize;
 const Client              = require('../../../../base/client').Client;
@@ -25,9 +9,9 @@ const showTooltip         = require('../../../../common_functions/get_app_detail
 const japanese_client     = require('../../../../common_functions/country_base').japanese_client;
 const addComma            = require('../../../../common_functions/string_util').addComma;
 const ProfitTable         = require('../profit_table').ProfitTable;
+const elementTextContent  = require('../../../../common_functions/common_functions').elementTextContent;
 
 const ProfitTableUI = (function() {
->>>>>>> upstream/master
     'use strict';
 
     const profitTableID = 'profit-table',
@@ -70,21 +54,13 @@ const ProfitTableUI = (function() {
         return $tableContainer;
     };
 
-<<<<<<< HEAD
-    function updateFooter(transactions) {
-        var accTotal = elementTextContent(document.querySelector('#pl-day-total > .pl'));
+    const updateFooter = function(transactions) {
+        let accTotal = elementTextContent(document.querySelector('#pl-day-total > .pl'));
+        accTotal = parseFloat(accTotal.replace(/,/g, ''));
         if (accTotal) {
-            accTotal = parseFloat(accTotal.replace(/,/g, ''));
             if (isNaN(accTotal)) {
                 accTotal = 0;
             }
-=======
-    const updateFooter = function(transactions) {
-        let accTotal = document.querySelector('#pl-day-total > .pl').textContent;
-        accTotal = parseFloat(accTotal.replace(/,/g, ''));
-        if (isNaN(accTotal)) {
-            accTotal = 0;
->>>>>>> upstream/master
         }
 
         const currentTotal = transactions.reduce(function(previous, current) {

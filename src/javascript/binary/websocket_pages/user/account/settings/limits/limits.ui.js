@@ -1,15 +1,8 @@
-<<<<<<< HEAD
-var Table    = require('../../../../../common_functions/attach_dom/table').Table;
-var addComma = require('../../../../../common_functions/string_util').addComma;
-var localize = require('../../../../../base/localize').localize;
-var Client   = require('../../../../../base/client').Client;
-var elementTextContent  = require('../../../../../common_functions/common_functions').elementTextContent;
-=======
 const Table    = require('../../../../../common_functions/attach_dom/table').Table;
 const addComma = require('../../../../../common_functions/string_util').addComma;
 const localize = require('../../../../../base/localize').localize;
 const Client   = require('../../../../../base/client').Client;
->>>>>>> upstream/master
+const elementTextContent  = require('../../../../../common_functions/common_functions').elementTextContent;
 
 const LimitsUI = (function() {
     'use strict';
