@@ -74,7 +74,7 @@ const PaymentAgentTransfer = (function() {
         const $paConfirmTransferButton = $('#pa_confirm_transfer').find('#confirm_transfer');
         const $paConfirmBackButton = $('#back_transfer');
 
-        $submitFormButton.click(function() {
+        $submitFormButton.off('click').click(function() {
             const clientID = $clientIDInput.val();
             const amount = $amountInput.val();
 
@@ -109,14 +109,14 @@ const PaymentAgentTransfer = (function() {
             PaymentAgentTransferData.transfer(clientID, currency, amount, true);
         });
 
-        $paConfirmTransferButton.click(function() {
+        $paConfirmTransferButton.off('click').click(function() {
             $paConfirmTransferButton.attr('disabled', 'disabled');
             const clientID = $clientIDInput.val();
             const amount = $amountInput.val();
             PaymentAgentTransferData.transfer(clientID, currency, amount, false);
         });
 
-        $paConfirmBackButton.click(function() {
+        $paConfirmBackButton.off('click').click(function() {
             PaymentAgentTransferUI.showForm();
             PaymentAgentTransferUI.showNotes();
             PaymentAgentTransferUI.hideConfirmation();

@@ -687,12 +687,12 @@ const Highchart = (function() {
     const update_chart = function(update_options) {
         const granularity = calculate_granularity(exit_time, now_time, purchase_time, start_time)[0];
         const series = chart.series[0];
-        const last = series.data[series.data.length - 1];
         if (granularity === 0) {
             chart.series[0].addPoint([update_options.tick.epoch * 1000, update_options.tick.quote * 1]);
         } else {
             const c = update_options.ohlc;
-            if (!c) return;
+            const last = series.data[series.data.length - 1];
+            if (!c || !last) return;
             const ohlc = [c.open_time * 1000, c.open * 1, c.high * 1, c.low * 1, c.close * 1];
 
             if (last.x !== ohlc[0]) {

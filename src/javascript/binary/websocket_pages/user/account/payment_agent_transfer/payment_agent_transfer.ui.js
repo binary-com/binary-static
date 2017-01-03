@@ -38,11 +38,15 @@ const PaymentAgentTransferUI = (function () {
     };
 
     const updateConfirmView = function(username, loginid, amount, currency) {
-        $('#pa_confirm_transfer').find('td#user-name').html(username)
-                                 .end()
-                                 .html(loginid)
-                                 .end()
-                                 .html(currency + ' ' + amount);
+        $('#pa_confirm_transfer')
+            .find('td#user-name')
+                .html(username)
+            .end()
+            .find('td#login-id')
+                .html(loginid)
+            .end()
+            .find('td#amount')
+                .html(currency + ' ' + amount);
     };
 
     const showTransferError = function(err) {
