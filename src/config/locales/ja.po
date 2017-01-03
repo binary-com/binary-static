@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-30 02:19+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2017-01-03 17:55+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -873,15 +873,13 @@ msgstr "口座振替"
 msgid "Account balance: "
 msgstr "口座残高： "
 
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">当社までお問い合わせ</a>ください。"
+msgstr "年齢認証が必要です。詳細は<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までご連絡ください。"
 
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">当社までお問い合わせ</a>ください。"
+msgstr ""
+"口座が無効になっています。詳細については<a class=\"pjaxload\" href=\"%1\""
+">カスタマーサポート</a>までお問い合わせください。"
 
 msgid "Accounting"
 msgstr "会計"
@@ -1624,10 +1622,10 @@ msgstr "入出金"
 msgid "Cashier Password"
 msgstr "入出金パスワード"
 
-#, fuzzy
-#| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">当社までお問い合わせ</a>ください。"
+msgstr ""
+"出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\""
+">カスタマーサポート</a>までお問い合わせください。"
 
 msgid "Cashier password"
 msgstr "入出金パスワード"
@@ -2203,10 +2201,10 @@ msgstr "%1 %2のバーチャルマネーをアカウント%3へ入金する"
 msgid "Deposit Bonus"
 msgstr "ご入金された場合に付与されるボーナスについて"
 
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">当社までお問い合わせ</a>ください。"
+msgstr ""
+"出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\""
+">カスタマーサポート</a>までご連絡ください。"
 
 msgid "Deposit of"
 msgstr "Xのご入金"
@@ -2766,10 +2764,10 @@ msgstr "金融資産"
 msgid "Financial Information"
 msgstr "金融情報"
 
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "出金アクションにロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">当社までお問い合わせ</a>ください。"
+msgstr ""
+"金融リスクの商品が必要です。詳細については<a class=\"pjaxload\" href=\"%1\""
+">カスタマーサポート</a>までお問い合わせください。"
 
 msgid "Financial Security"
 msgstr "安心できる資金保全"
@@ -7643,10 +7641,10 @@ msgstr "出金限度額"
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "お客様の口座の出金手続きは現在許可されていません。解除するには%1までご連絡ください。"
 
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "出金アクションにロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">当社までお問い合わせ</a>ください。"
+msgstr ""
+"出金アクションにロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\""
+">カスタマーサポート</a>までお問い合わせください。"
 
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr "取引プラットフォームの価格を扱うソフトウェア開発に携わるチームのメンバーと緊密に連携します。"
@@ -7836,10 +7834,10 @@ msgstr "ボーナス金額の２５倍に相当する取引高を達成された
 msgid "You must accept the terms and conditions to open an account."
 msgstr "ご口座を開設されるにあたりご利用規約に承諾しなければなりません。"
 
-#, fuzzy
-#| msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
 msgid "You must complete the knowledge test to activate this account. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "口座の認証はまだ完了しておりません。詳細に関しましては<a class=\"pjaxload\" href=\"%1\">認証</a> ページをご覧ください。"
+msgstr ""
+"口座を有効にするには、知識確認テストを行っていただく必要があります。詳細については<a class=\"pjaxload\" href=\"%1\""
+">カスタマーサポート</a>までお問い合わせください。"
 
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "%1 APIのご使用にあたり、これらの規約を遵守していただく必要があります。"
@@ -7978,10 +7976,8 @@ msgstr "お客さまのご口座はアップグレード済みですので、ご
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "お客様のご口座はアップグレード済みです。トレードの上限条件を<a class=\"pjaxload\" href=\"%1\">こちらから</a>ご確認頂けます。"
 
-#, fuzzy
-#| msgid "Client is not fully authenticated."
 msgid "Your account is not fully authenticated."
-msgstr "クライアントは完全に許可されていません。"
+msgstr "お客様の口座認証はまだ完了していません。"
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr ""
