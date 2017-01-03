@@ -1,17 +1,17 @@
-var AssetIndexUI                    = require('../../resources/asset_index/asset_indexws.ui').AssetIndexUI;
-var MarketTimesUI                   = require('../../resources/market_times/market_timesws.ui').MarketTimesUI;
-var japanese_client                 = require('../../../common_functions/country_base').japanese_client;
-var DigitInfoWS_Beta                = require('./charts/digit_infows').DigitInfoWS_Beta;
-var PortfolioWS                     = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
-var State                           = require('../../../base/storage').State;
-var getLanguage                     = require('../../../base/language').getLanguage;
-var Url                             = require('../../../base/url').Url;
-var url_for                         = require('../../../base/url').url_for;
-var url_for_static                  = require('../../../base/url').url_for_static;
-var Client                          = require('../../../base/client').Client;
-var showHighchart                   = require('../common').showHighchart;
-var toggleActiveNavMenuElement_Beta = require('../common').toggleActiveNavMenuElement_Beta;
-var elementInnerHtml                = require('../../../common_functions/common_functions').elementInnerHtml;
+const AssetIndexUI                    = require('../../resources/asset_index/asset_indexws.ui').AssetIndexUI;
+const MarketTimesUI                   = require('../../resources/market_times/market_timesws.ui').MarketTimesUI;
+const japanese_client                 = require('../../../common_functions/country_base').japanese_client;
+const DigitInfoWS_Beta                = require('./charts/digit_infows').DigitInfoWS_Beta;
+const PortfolioWS                     = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
+const State                           = require('../../../base/storage').State;
+const getLanguage                     = require('../../../base/language').getLanguage;
+const Url                             = require('../../../base/url').Url;
+const url_for                         = require('../../../base/url').url_for;
+const url_for_static                  = require('../../../base/url').url_for_static;
+const Client                          = require('../../../base/client').Client;
+const showHighchart                   = require('../common').showHighchart;
+const toggleActiveNavMenuElement_Beta = require('../common').toggleActiveNavMenuElement_Beta;
+const elementInnerHtml                = require('../../../common_functions/common_functions').elementInnerHtml;
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -25,16 +25,16 @@ var elementInnerHtml                = require('../../../common_functions/common_
  * or underlying to load bet analysis for that particular event
  */
 
-var TradingAnalysis_Beta = (function() {
-    var trading_digit_info = new DigitInfoWS_Beta();
+const TradingAnalysis_Beta = (function() {
+    const trading_digit_info = new DigitInfoWS_Beta();
 
-    var requestTradeAnalysis = function() {
-        var formName = State.get('is_mb_trading') ? $('#category').val() :
+    const requestTradeAnalysis = function() {
+        let formName = State.get('is_mb_trading') ? $('#category').val() :
                                                     $('#contract_form_name_nav').find('.a-active').attr('id');
         if (formName === 'matchdiff') {
             formName = 'digits';
         }
-        $('#tab_explanation a').attr('href',  url_for('trade/bet_explanation_beta', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
+        $('#tab_explanation').find('a').attr('href',  url_for('trade/bet_explanation_beta', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
         if (formName === 'digits' || formName === 'overunder' || formName === 'evenodd') {
             $('#tab_last_digit').removeClass('invisible');
         } else {
@@ -48,7 +48,7 @@ var TradingAnalysis_Beta = (function() {
      * This function bind event to link elements of bottom content
      * navigation
      */
-    var bindAnalysisTabEvent = function() {
+    const bindAnalysisTabEvent = function() {
         'use strict';
 
         if (Client.get_boolean('is_logged_in')) {
@@ -59,11 +59,11 @@ var TradingAnalysis_Beta = (function() {
             $('#tab_trading_times').removeClass('invisible');
         }
 
-        var $analysis_tabs = $('#trading_analysis_content #analysis_tabs');
+        const $analysis_tabs = $('#trading_analysis_content').find('#analysis_tabs');
         if ($analysis_tabs.length) {
             $analysis_tabs.find('li a').click(function(e) {
                 e.preventDefault();
-                var $li = $(this).parent();
+                const $li = $(this).parent();
                 sessionStorage.setItem('currentAnalysisTab_Beta', $li.attr('id'));
                 if (!$li.hasClass('active')) {
                     loadAnalysisTab();
@@ -76,14 +76,14 @@ var TradingAnalysis_Beta = (function() {
      * This function handles all the functionality on how to load
      * tab according to current paramerted
      */
-    var loadAnalysisTab = function() {
+    const loadAnalysisTab = function() {
         'use strict';
 
-        var currentTab = getActiveTab(),
+        const currentTab = getActiveTab(),
             currentLink = document.querySelector('#' + currentTab + ' a'),
             contentId = document.getElementById(currentTab + '-content');
 
-        var analysisNavElement = document.querySelector('#trading_analysis_content #analysis_tabs');
+        const analysisNavElement = document.querySelector('#trading_analysis_content #analysis_tabs');
         toggleActiveNavMenuElement_Beta(analysisNavElement, currentLink.parentElement);
         toggleActiveAnalysisTabs();
 
@@ -94,50 +94,53 @@ var TradingAnalysis_Beta = (function() {
             case 'tab_portfolio':
                 PortfolioWS.onLoad();
                 break;
-            case 'tab_last_digit':
-                var underlying = $('[name=underlying] option:selected').val() || $('#underlying option:selected').val();
-                var tick = $('[name=tick_count]').val() || 100;
+            case 'tab_last_digit': {
+                const underlying = $('[name=underlying] option:selected').val() || $('#underlying').find('option:selected').val();
+                const tick = $('[name=tick_count]').val() || 100;
                 BinarySocket.send({ ticks_history: underlying, end: 'latest', count: tick + '', req_id: 1 });
                 break;
+            }
             case 'tab_asset_index':
                 AssetIndexUI.init({ framed: true });
-                $('#tab_asset_index-content h1').hide();
+                $('#tab_asset').find('index-content').find('h1').hide();
                 break;
             case 'tab_trading_times':
                 MarketTimesUI.init({ framed: true });
-                $('#tab_trading_times-content h1').hide();
+                $('#tab_trading').find('times-content').find('h1').hide();
                 break;
-            default:
-                var url = currentLink.getAttribute('href');
+            default: {
+                const url = currentLink.getAttribute('href');
                 $.ajax({
                     method: 'GET',
                     url   : url,
                 })
-                .done(function(data) {
-                    elementInnerHtml(contentId, data);
-                    if (currentTab === 'tab_explanation') {
-                        showExplanation(currentLink.href);
-                    }
-                });
+
+                    .done(function (data) {
+                        elementInnerHtml(contentId, data);
+                        if (currentTab === 'tab_explanation') {
+                            showExplanation(currentLink.href);
+                        }
+                    });
                 break;
+            }
         }
     };
 
     /*
      * function to toggle the active element for analysis menu
      */
-    var toggleActiveAnalysisTabs = function() {
+    const toggleActiveAnalysisTabs = function() {
         'use strict';
 
-        var currentTab = getActiveTab(),
+        const currentTab = getActiveTab(),
             analysisContainer = document.getElementById('analysis_content');
 
         if (analysisContainer) {
-            var childElements = analysisContainer.children,
+            const childElements = analysisContainer.children,
                 currentTabElement = document.getElementById(currentTab + '-content'),
                 classes = currentTabElement.classList;
 
-            for (var i = 0, len = childElements.length; i < len; i++) {
+            for (let i = 0, len = childElements.length; i < len; i++) {
                 childElements[i].classList.remove('selectedTab');
                 childElements[i].classList.add('invisible');
             }
@@ -150,9 +153,9 @@ var TradingAnalysis_Beta = (function() {
     /*
      * get the current active tab if its visible i.e allowed for current parameters
      */
-    var getActiveTab = function() {
-        var selectedTab = sessionStorage.getItem('currentAnalysisTab_Beta') || (State.get('is_mb_trading') ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation'),
-            selectedElement = document.getElementById(selectedTab);
+    const getActiveTab = function() {
+        let selectedTab = sessionStorage.getItem('currentAnalysisTab_Beta') || (State.get('is_mb_trading') ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation');
+        const selectedElement = document.getElementById(selectedTab);
 
         if (selectedElement && selectedElement.classList.contains('invisible')) {
             selectedTab = window.chartAllowed ? 'tab_graph' : 'tab_explanation';
@@ -165,9 +168,9 @@ var TradingAnalysis_Beta = (function() {
     /*
      * handle the display of proper explanation based on parameters
      */
-    var showExplanation = function(href) {
-        var options = new Url(href).params_hash();
-        var form_name    = options.form_name || 'risefall',
+    const showExplanation = function(href) {
+        const options = new Url(href).params_hash();
+        const form_name    = options.form_name || 'risefall',
             show_image   = options.show_image   ? options.show_image   > 0 : true,
             show_winning = options.show_winning ? options.show_winning > 0 : true,
             show_explain = true,
@@ -182,7 +185,7 @@ var TradingAnalysis_Beta = (function() {
             $Container.find('#explanation_explain, #explain_' + form_name).removeClass(hidden_class);
         }
 
-        var images = {
+        const images = {
             risefall: {
                 image1: 'rise-fall-1.svg',
                 image2: 'rise-fall-2.svg',
@@ -222,7 +225,7 @@ var TradingAnalysis_Beta = (function() {
         };
 
         if (show_image && images.hasOwnProperty(form_name)) {
-            var image_path = url_for_static('images/pages/trade-explanation/' + (getLanguage() === 'JA' ? 'ja/' : ''));
+            const image_path = url_for_static('images/pages/trade-explanation/' + (getLanguage() === 'JA' ? 'ja/' : ''));
             $Container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $Container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
             $Container.find('#explanation_image').removeClass(hidden_class);

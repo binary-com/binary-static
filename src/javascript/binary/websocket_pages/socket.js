@@ -1,41 +1,41 @@
-var getSocketURL              = require('../../config').getSocketURL;
-var getAppId                  = require('../../config').getAppId;
-var Login                     = require('../base/login').Login;
-var objectNotEmpty            = require('../base/utility').objectNotEmpty;
-var getLoginToken             = require('../common_functions/common_functions').getLoginToken;
-var displayAcctSettings       = require('../common_functions/account_opening').displayAcctSettings;
-var SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
-var checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
-var Cashier                   = require('./cashier/cashier').Cashier;
-var CashierJP                 = require('../../binary_japan/cashier').CashierJP;
-var PaymentAgentWithdrawWS    = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
-var create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
-var TNCApproval               = require('./user/tnc_approval').TNCApproval;
-var ViewPopupWS               = require('./user/view_popup/view_popupws').ViewPopupWS;
-var ViewBalanceUI             = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
-var Cookies                   = require('../../lib/js-cookie');
-var State                     = require('../base/storage').State;
-var Highchart                 = require('./trade/charts/highchartws').Highchart;
-var WSTickDisplay             = require('./trade/tick_trade').WSTickDisplay;
-var TradePage                 = require('./trade/tradepage').TradePage;
-var Notifications             = require('./trade/notifications').Notifications;
-var TradePage_Beta            = require('./trade/beta/tradepage').TradePage_Beta;
-var reloadPage                = require('./trade/common').reloadPage;
-var MBTradePage               = require('./mb_trade/mb_tradepage').MBTradePage;
-var RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
-var RealityCheckData          = require('./user/reality_check/reality_check.data').RealityCheckData;
-var KnowledgeTest             = require('../../binary_japan/knowledge_test/knowledge_test.init').KnowledgeTest;
-var localize         = require('../base/localize').localize;
-var getLanguage      = require('../base/language').getLanguage;
-var validate_loginid = require('../base/client').validate_loginid;
-var GTM      = require('../base/gtm').GTM;
-var Clock    = require('../base/clock').Clock;
-var Header   = require('../base/header').Header;
-var LocalStore = require('../base/storage').LocalStore;
-var Client     = require('../base/client').Client;
-var page       = require('../base/page').page;
-var check_risk_classification       = require('../common_functions/check_risk_classification').check_risk_classification;
-var qualify_for_risk_classification = require('../common_functions/check_risk_classification').qualify_for_risk_classification;
+const getSocketURL              = require('../../config').getSocketURL;
+const getAppId                  = require('../../config').getAppId;
+const Login                     = require('../base/login').Login;
+const objectNotEmpty            = require('../base/utility').objectNotEmpty;
+const getLoginToken             = require('../common_functions/common_functions').getLoginToken;
+const displayAcctSettings       = require('../common_functions/account_opening').displayAcctSettings;
+const SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
+const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
+const Cashier                   = require('./cashier/cashier').Cashier;
+const CashierJP                 = require('../../binary_japan/cashier').CashierJP;
+const PaymentAgentWithdrawWS    = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
+const create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
+const TNCApproval               = require('./user/tnc_approval').TNCApproval;
+const ViewPopupWS               = require('./user/view_popup/view_popupws').ViewPopupWS;
+const ViewBalanceUI             = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
+const Cookies                   = require('../../lib/js-cookie');
+const State                     = require('../base/storage').State;
+const Highchart                 = require('./trade/charts/highchartws').Highchart;
+const WSTickDisplay             = require('./trade/tick_trade').WSTickDisplay;
+const TradePage                 = require('./trade/tradepage').TradePage;
+const Notifications             = require('./trade/notifications').Notifications;
+const TradePage_Beta            = require('./trade/beta/tradepage').TradePage_Beta;
+const reloadPage                = require('./trade/common').reloadPage;
+const MBTradePage               = require('./mb_trade/mb_tradepage').MBTradePage;
+const RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
+const RealityCheckData          = require('./user/reality_check/reality_check.data').RealityCheckData;
+const KnowledgeTest             = require('../../binary_japan/knowledge_test/knowledge_test.init').KnowledgeTest;
+const localize         = require('../base/localize').localize;
+const getLanguage      = require('../base/language').getLanguage;
+const validate_loginid = require('../base/client').validate_loginid;
+const GTM        = require('../base/gtm').GTM;
+const Clock      = require('../base/clock').Clock;
+const Header     = require('../base/header').Header;
+const LocalStore = require('../base/storage').LocalStore;
+const Client     = require('../base/client').Client;
+const page       = require('../base/page').page;
+const check_risk_classification       = require('../common_functions/check_risk_classification').check_risk_classification;
+const qualify_for_risk_classification = require('../common_functions/check_risk_classification').qualify_for_risk_classification;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
@@ -49,41 +49,42 @@ var qualify_for_risk_classification = require('../common_functions/check_risk_cl
  * `BinarySocket.init()` to initiate the connection
  * `BinarySocket.send({contracts_for : 1})` to send message to server
  */
-function BinarySocketClass() {
+const BinarySocketClass = function() {
     'use strict';
 
-    var binarySocket,
+    let binarySocket,
         bufferedSends = [],
         manualClosed = false,
         events = {},
         authorized = false,
-        timeouts = {},
         req_number = 0,
-        wrongAppId = 0,
+        wrongAppId = 0;
+
+    const timeouts = {},
         socketUrl = getSocketURL() + '?app_id=' + getAppId() + '&l=' + getLanguage();
 
-    var clearTimeouts = function() {
+    const clearTimeouts = function() {
         Object.keys(timeouts).forEach(function(key) {
             clearTimeout(timeouts[key]);
             delete timeouts[key];
         });
     };
 
-    var isReady = function () {
+    const isReady = function () {
         return binarySocket && binarySocket.readyState === 1;
     };
 
-    var isClose = function () {
+    const isClose = function () {
         return !binarySocket || binarySocket.readyState === 2 || binarySocket.readyState === 3;
     };
 
-    var sendBufferedSends = function () {
+    const sendBufferedSends = function () {
         while (bufferedSends.length > 0) {
             binarySocket.send(JSON.stringify(bufferedSends.shift()));
         }
     };
 
-    var send = function(data) {
+    const send = function(data) {
         if (isClose()) {
             bufferedSends.push(data);
             init(1);
@@ -115,7 +116,7 @@ function BinarySocketClass() {
         }
     };
 
-    var init = function (es) {
+    const init = function (es) {
         if (wrongAppId === getAppId()) {
             return;
         }
@@ -134,7 +135,7 @@ function BinarySocketClass() {
         }
 
         binarySocket.onopen = function () {
-            var apiToken = getLoginToken();
+            const apiToken = getLoginToken();
             if (apiToken && !authorized && localStorage.getItem('client.tokens')) {
                 binarySocket.send(JSON.stringify({ authorize: apiToken }));
             } else {
@@ -155,10 +156,10 @@ function BinarySocketClass() {
         };
 
         binarySocket.onmessage = function(msg) {
-            var response = JSON.parse(msg.data);
+            const response = JSON.parse(msg.data);
             if (response) {
                 if (response.hasOwnProperty('echo_req') && response.echo_req !== null && response.echo_req.hasOwnProperty('passthrough')) {
-                    var passthrough = response.echo_req.passthrough;
+                    const passthrough = response.echo_req.passthrough;
                     if (passthrough.hasOwnProperty('req_number')) {
                         clearInterval(timeouts[response.echo_req.passthrough.req_number]);
                         delete timeouts[response.echo_req.passthrough.req_number];
@@ -171,10 +172,10 @@ function BinarySocketClass() {
                         }
                     }
                 }
-                var type = response.msg_type;
+                const type = response.msg_type;
                 if (type === 'authorize') {
                     if (response.hasOwnProperty('error')) {
-                        var isActiveTab = sessionStorage.getItem('active_tab') === '1';
+                        const isActiveTab = sessionStorage.getItem('active_tab') === '1';
                         if (response.error.code === 'SelfExclusion' && isActiveTab) {
                             sessionStorage.removeItem('active_tab');
                             window.alert(response.error.message);
@@ -216,9 +217,9 @@ function BinarySocketClass() {
                     RealityCheckData.clear();
                     Client.do_logout(response);
                 } else if (type === 'landing_company') {
-                    var landing_company = response.landing_company;
+                    const landing_company = response.landing_company;
                     Header.topbar_message_visibility(landing_company);
-                    var company;
+                    let company;
                     if (response.hasOwnProperty('error')) return;
                     Object.keys(landing_company).forEach(function(key) {
                         if (Client.get_value('landing_company_name') === landing_company[key].shortcode) {
@@ -226,7 +227,7 @@ function BinarySocketClass() {
                         }
                     });
                     if (company) {
-                        var has_reality_check = company.has_reality_check;
+                        const has_reality_check = company.has_reality_check;
                         if (has_reality_check) {
                             Client.set_value('has_reality_check', has_reality_check);
                             RealityCheck.init();
@@ -237,7 +238,7 @@ function BinarySocketClass() {
                 } else if (type === 'payout_currencies') {
                     Client.set_value('currencies', response.payout_currencies.join(','));
                 } else if (type === 'get_settings' && response.get_settings) {
-                    var country_code = response.get_settings.country_code;
+                    const country_code = response.get_settings.country_code;
                     if (country_code) {
                         Client.set_value('residence', country_code);
                         if (!Cookies.get('residence')) {
@@ -253,7 +254,7 @@ function BinarySocketClass() {
                     GTM.event_handler(response.get_settings);
                     Client.set_value('tnc_status', response.get_settings.client_tnc_status || '-');
                     if (!localStorage.getItem('risk_classification')) Client.check_tnc();
-                    var jpStatus = response.get_settings.jp_account_status;
+                    const jpStatus = response.get_settings.jp_account_status;
                     if (jpStatus) {
                         switch (jpStatus.status) {
                             case 'jp_knowledge_test_pending':
@@ -352,7 +353,7 @@ function BinarySocketClass() {
             clearTimeouts();
 
             if (!manualClosed && wrongAppId !== getAppId()) {
-                var toCall = State.get('is_trading')      ? TradePage.onDisconnect      :
+                const toCall = State.get('is_trading')      ? TradePage.onDisconnect      :
                              State.get('is_beta_trading') ? TradePage_Beta.onDisconnect :
                              State.get('is_mb_trading')   ? MBTradePage.onDisconnect    : '';
                 if (toCall) {
@@ -374,7 +375,7 @@ function BinarySocketClass() {
         };
     };
 
-    var close = function () {
+    const close = function () {
         manualClosed = true;
         bufferedSends = [];
         events = {};
@@ -383,7 +384,7 @@ function BinarySocketClass() {
         }
     };
 
-    var clear = function() {
+    const clear = function() {
         bufferedSends = [];
         manualClosed = false;
         events = {};
@@ -397,9 +398,9 @@ function BinarySocketClass() {
         clear        : clear,
         clearTimeouts: clearTimeouts,
     };
-}
+};
 
-var BinarySocket = new BinarySocketClass();
+const BinarySocket = new BinarySocketClass();
 
 module.exports = {
     BinarySocket: BinarySocket,

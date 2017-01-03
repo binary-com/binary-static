@@ -1,11 +1,11 @@
-var expect        = require('chai').expect;
-var IPHistoryData = require('../settings/iphistory/iphistory.data.js').IPHistoryData;
+const expect        = require('chai').expect;
+const IPHistoryData = require('../settings/iphistory/iphistory.data.js').IPHistoryData;
 
 
 describe('IPHistoryData.parseUserAgent', function() {
     // TODO: add more user agent test strings
-    var parse = IPHistoryData.parseUserAgent;
-    var common = [
+    const parse = IPHistoryData.parseUserAgent;
+    const common = [
         {
             ua     : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:48.0) Gecko/20100101 Firefox/48.0',
             name   : 'Firefox',
@@ -50,30 +50,30 @@ describe('IPHistoryData.parseUserAgent', function() {
 
     common.forEach(function(entry) {
         it('works for ' + entry.name, function() {
-            var browser = IPHistoryData.parseUserAgent(entry.ua);
+            const browser = IPHistoryData.parseUserAgent(entry.ua);
             expect(browser.name).to.equal(entry.name);
             expect(browser.version).to.equal(entry.version);
         });
     });
 
     it('returns null when userAgent is not parsable', function() {
-        var ua = '--unparsable--';
+        const ua = '--unparsable--';
         expect(parse(ua)).to.equal(null);
     });
 });
 
 
 describe('IPHistoryData.parse', function() {
-    var parse = IPHistoryData.parse;
+    const parse = IPHistoryData.parse;
 
     it('parses activity objects correctly', function() {
-        var activity = {
+        const activity = {
             environment: '12-Jul-16 06:38:09GMT IP=211.24.127.133 IP_COUNTRY=MY User_AGENT=Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:48.0) Gecko/20100101 Firefox/48.0 LANG=EN',
             time       : 1468305490,
             status     : 1,
             action     : 'login',
         };
-        var res = parse(activity);
+        const res = parse(activity);
         expect(res).to.deep.equal({
             time   : 1468305490,
             success: true,
@@ -87,13 +87,13 @@ describe('IPHistoryData.parse', function() {
     });
 
     it('returns correct .success attribute', function() {
-        var activity = {
+        const activity = {
             environment: '13-Jul-16 05:13:29GMT IP=211.24.127.133 IP_COUNTRY=MY User_AGENT=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/601.6.17 (KHTML, like Gecko) Version/9.1.1 Safari/601.6.17 LANG=EN',
             time       : 1468386810,
             status     : 0,
             action     : 'login',
         };
-        var res = parse(activity);
+        const res = parse(activity);
         expect(res.success).to.equal(false);
     });
 });
@@ -101,11 +101,11 @@ describe('IPHistoryData.parse', function() {
 
 describe('IPHistoryData.calls', function() {
     it('calls the callback when .msg_type === "login_history"', function() {
-        var response = {
+        const response = {
             msg_type: 'login_history',
         };
-        var called;
-        var handler = IPHistoryData.calls(function(res) {
+        let called = false;
+        const handler = IPHistoryData.calls(function(res) {
             called = true;
             expect(res).to.deep.equal(response);
         });
@@ -119,8 +119,8 @@ describe('IPHistoryData.calls', function() {
             { msg_type: null },
             null,
         ].forEach(function(response) {
-            var called = false;
-            var handler = IPHistoryData.calls(function() {
+            let called = false;
+            const handler = IPHistoryData.calls(function() {
                 called = true;
             });
             handler({ data: JSON.stringify(response) });

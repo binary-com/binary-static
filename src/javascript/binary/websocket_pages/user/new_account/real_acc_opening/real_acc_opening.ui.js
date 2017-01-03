@@ -1,15 +1,15 @@
-var Content             = require('../../../../common_functions/content').Content;
-var ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
-var Validate            = require('../../../../common_functions/validation').Validate;
-var RealAccOpeningData = require('./real_acc_opening.data').RealAccOpeningData;
+const Content             = require('../../../../common_functions/content').Content;
+const ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
+const Validate            = require('../../../../common_functions/validation').Validate;
+const RealAccOpeningData  = require('./real_acc_opening.data').RealAccOpeningData;
 
-var RealAccOpeningUI = (function() {
+const RealAccOpeningUI = (function() {
     'use strict';
 
-    function checkValidity() {
+    const checkValidity = function() {
         window.accountErrorCounter = 0;
 
-        var elementObj = {
+        const elementObj = {
             title    : document.getElementById('title'),
             fname    : document.getElementById('fname'),
             lname    : document.getElementById('lname'),
@@ -28,7 +28,7 @@ var RealAccOpeningUI = (function() {
             tnc      : document.getElementById('tnc'),
         };
 
-        var errorObj = {
+        const errorObj = {
             title    : document.getElementById('error-title'),
             fname    : document.getElementById('error-fname'),
             lname    : document.getElementById('error-lname'),
@@ -94,7 +94,7 @@ var RealAccOpeningUI = (function() {
             return 1;
         }
         return 0;
-    }
+    };
 
     return {
         checkValidity: checkValidity,

@@ -1,16 +1,16 @@
-var Content        = require('../../../common_functions/content').Content;
-var validateEmail  = require('../../../common_functions/validation').validateEmail;
-var localize       = require('../../../base/localize').localize;
-var load_with_pjax = require('../../../base/pjax').load_with_pjax;
-var url_for        = require('../../../base/url').url_for;
+const Content        = require('../../../common_functions/content').Content;
+const validateEmail  = require('../../../common_functions/validation').validateEmail;
+const localize       = require('../../../base/localize').localize;
+const load_with_pjax = require('../../../base/pjax').load_with_pjax;
+const url_for        = require('../../../base/url').url_for;
 
-var LostPassword = (function() {
+const LostPassword = (function() {
     'use strict';
 
-    var hiddenClass = 'invisible';
+    const hiddenClass = 'invisible';
 
-    function submitEmail() {
-        var emailInput = ($('#lp_email').val() || '').trim();
+    const submitEmail = function() {
+        const emailInput = ($('#lp_email').val() || '').trim();
 
         if (emailInput === '') {
             $('#email_error').removeClass(hiddenClass).text(localize('This field is required.'));
@@ -20,17 +20,17 @@ var LostPassword = (function() {
             BinarySocket.send({ verify_email: emailInput, type: 'reset_password' });
             $('#submit').prop('disabled', true);
         }
-    }
+    };
 
-    function onEmailInput(input) {
+    const onEmailInput = function(input) {
         if (input) {
             $('#email_error').addClass(hiddenClass);
         }
-    }
+    };
 
-    function lostPasswordWSHandler(msg) {
-        var response = JSON.parse(msg.data);
-        var type = response.msg_type;
+    const lostPasswordWSHandler = function(msg) {
+        const response = JSON.parse(msg.data);
+        const type = response.msg_type;
 
         if (type === 'verify_email') {
             if (response.verify_email === 1) {
@@ -40,9 +40,9 @@ var LostPassword = (function() {
                 $('#submit').prop('disabled', false);
             }
         }
-    }
+    };
 
-    function init() {
+    const init = function() {
         Content.populate();
         $('#lost_passwordws').removeClass('invisible');
         $('#submit:enabled').click(function() {
@@ -55,7 +55,7 @@ var LostPassword = (function() {
             }
             onEmailInput(ev.target.value);
         });
-    }
+    };
 
     return {
         lostPasswordWSHandler: lostPasswordWSHandler,

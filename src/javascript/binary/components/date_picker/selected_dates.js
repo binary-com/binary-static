@@ -1,13 +1,13 @@
-var DatePicker = require('../date_picker').DatePicker;
-var moment = require('moment');
-// var localize = require('../../base/localize').localize;
+const DatePicker = require('../date_picker').DatePicker;
+const moment = require('moment');
+// const localize = require('../../base/localize').localize;
 
 DatePicker.SelectedDates = function(component_id, select_type) {
     this.component_id = component_id;
     this._super = new DatePicker(component_id, select_type);
     this.dates = [];
 
-    var that = this;
+    const that = this;
     $(this._super).on('enter_pressed', function() {
         $(that).trigger('enter_pressed');
     });
@@ -28,10 +28,10 @@ DatePicker.SelectedDates.prototype = {
         }
     },
     config: function() {
-        var config = this._super.config();
-        var that = this;
+        const config = this._super.config();
+        const that = this;
         config.beforeShowDay = function(date) {
-            var lookup = moment.utc([date.getFullYear(), date.getMonth(), date.getDate()]).format('YYYY-MM-DD');
+            const lookup = moment.utc([date.getFullYear(), date.getMonth(), date.getDate()]).format('YYYY-MM-DD');
             if (that.dates.indexOf(lookup) >= 0) {
                 return [1];
             }
@@ -46,8 +46,8 @@ DatePicker.SelectedDates.prototype = {
         return config;
     },
 //    handlers: function() {
-//        var handlers = {};
-//        var that = this;
+//        const handlers = {};
+//        const that = this;
 //        if (that.all_days_selectable) {
 //            handlers.beforeShowDay = function(date) {
 //                return [1];
@@ -78,15 +78,15 @@ DatePicker.SelectedDates.prototype = {
 //        return handlers;
 //    },
 //    isTradingDay: function(date) {
-//        var year = date.getFullYear();
-//        var underlying_symbol = this.underlying_symbol;
-//        var form_name = this.form_name;
+//        const year = date.getFullYear();
+//        const underlying_symbol = this.underlying_symbol;
+//        const form_name = this.form_name;
 //
-//        var cache_key = underlying_symbol + '-' + form_name;
+//        const cache_key = underlying_symbol + '-' + form_name;
 //        varyy lookup = year + '-' + (date.getMonth()+1) + '-' + date.getDate();
 //
 //        if (typeof this.cache[cache_key] === 'undefined') {
-//            var that = this;
+//            const that = this;
 //            $.ajax({
 //                url: url_for('trade_get.cgi'),
 //                data: { controller_action: 'trading_days',
@@ -108,7 +108,7 @@ DatePicker.SelectedDates.prototype = {
 //            }, 0);
 //    },
 //    localizations: function() {
-//        var localizations = {};
+//        const localizations = {};
 //
 //        localizations.monthNames = [localize('January'), localize('February'),
 //          localize('March'), localize('April'), localize('May'),

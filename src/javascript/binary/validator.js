@@ -1,15 +1,15 @@
-var done_typing = require('../lib/done-typing').done_typing;
-var formToObj   = require('../lib/form-to-obj').formToObj;
-var dv          = require('../lib/validation');
-var localize = require('./base/localize').localize;
+const done_typing = require('../lib/done-typing').done_typing;
+const formToObj   = require('../lib/form-to-obj').formToObj;
+const dv          = require('../lib/validation');
+const localize = require('./base/localize').localize;
 
-var ValidationUI = {
+const ValidationUI = {
     clear: function() {
         $('.errorfield[data-is-error-field]').remove();
     },
     draw: function(selector, message) {
-        var $parent = $(selector).parent();
-        var $p = $('<p/>', {
+        const $parent = $(selector).parent();
+        const $p = $('<p/>', {
             class: 'errorfield',
             text : localize(message),
         });
@@ -26,7 +26,7 @@ var ValidationUI = {
  */
 function customError(fn, err) {
     return function(value) {
-        var rv = fn(value);
+        const rv = fn(value);
         if (!rv.isOk) rv.value = [err];
         return rv;
     };
@@ -56,12 +56,12 @@ function withContext(ctx) {
  *                    raw is the data passed in.
  */
 function validate_object(data, schema) {
-    var keys = Object.keys(schema);
-    var values = {};
-    var rv = dv.combine([], keys.map(function(ctx) {
-        var res = dv.ok(data[ctx]);
-        var fns = schema[ctx];
-        for (var i = 0; i < fns.length; i++) {
+    const keys = Object.keys(schema),
+        values = {};
+    const rv = dv.combine([], keys.map(function(ctx) {
+        let res = dv.ok(data[ctx]);
+        const fns = schema[ctx];
+        for (let i = 0; i < fns.length; i++) {
             res = fns[i](res.value, data);
             if (!res.isOk) return res.fmap(withContext(ctx));
         }
@@ -77,7 +77,7 @@ function validate_object(data, schema) {
 
 
 function stripTrailing(name) {
-    return (name || '').replace(/\[\]$/, '');
+    return (name || '').replace(/\[]$/, '');
 }
 
 /**
@@ -93,28 +93,28 @@ function stripTrailing(name) {
  * @param config.submit    Called on submit event with event and validation state.
  */
 function bind_validation(form, config) {
-    var extract  = config.extract;
-    var validate = config.validate;
-    var stop     = config.stop;
-    var submit   = config.submit;
-    var seen     = {};
+    const extract  = config.extract,
+        validate = config.validate,
+        stop     = config.stop,
+        submit   = config.submit,
+        seen     = {};
 
-    function onStart(ev) {
+    const onStart = function(ev) {
         seen[stripTrailing(ev.target.name)] = true;
-    }
+    };
 
-    function onStop() {
-        var data = extract();
-        var validation = validate(data);
+    const onStop = function() {
+        const data = extract(),
+            validation = validate(data);
         validation.errors = validation.errors.filter(function(err) {
             return seen[err.ctx];
         });
         stop(validation);
-    }
+    };
 
     form.addEventListener('submit', function(ev) {
-        var data = extract();
-        var validation = validate(data);
+        const data = extract(),
+            validation = validate(data);
         stop(validation);
         submit(ev, validation);
     });
@@ -150,7 +150,7 @@ bind_validation.simple = function(form, opts) {
         stop    : opts.stop     || function(validation) {
             ValidationUI.clear();
             validation.errors.forEach(function(err) {
-                var sel = '[name=' + stripTrailing(err.ctx) + ']';
+                const sel = '[name=' + stripTrailing(err.ctx) + ']';
                 ValidationUI.draw(sel, err.err);
             });
         },

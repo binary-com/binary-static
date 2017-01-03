@@ -1,16 +1,23 @@
+<<<<<<< HEAD
 var Content             = require('../../../../common_functions/content').Content;
 var ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
 var Validate            = require('../../../../common_functions/validation').Validate;
 var selectorExists    = require('../../../../common_functions/common_functions').selectorExists;
 var FinancialAccOpeningData = require('./financial_acc_opening.data').FinancialAccOpeningData;
+=======
+const Content             = require('../../../../common_functions/content').Content;
+const ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
+const Validate            = require('../../../../common_functions/validation').Validate;
+const FinancialAccOpeningData = require('./financial_acc_opening.data').FinancialAccOpeningData;
+>>>>>>> upstream/master
 
-var FinancialAccOpeningUI = (function() {
+const FinancialAccOpeningUI = (function() {
     'use strict';
 
-    function checkValidity() {
+    const checkValidity = function() {
         window.accountErrorCounter = 0;
 
-        var elementObj = {
+        const elementObj = {
             title                : document.getElementById('title'),
             fname                : document.getElementById('fname'),
             lname                : document.getElementById('lname'),
@@ -46,7 +53,7 @@ var FinancialAccOpeningUI = (function() {
             netWorth             : document.getElementById('estimated_worth'),
         };
 
-        var errorObj = {
+        const errorObj = {
             title                : document.getElementById('error-title'),
             fname                : document.getElementById('error-fname'),
             lname                : document.getElementById('error-lname'),
@@ -132,7 +139,7 @@ var FinancialAccOpeningUI = (function() {
             return 1;
         }
         return 0;
-    }
+    };
 
     return {
         checkValidity: checkValidity,

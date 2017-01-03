@@ -1,8 +1,8 @@
-var Client = require('../../../../base/client').Client;
+const Client = require('../../../../base/client').Client;
 
-var JapanAccOpeningData = (function() {
-    function getJapanAcc(elementObj) {
-        var req = {
+const JapanAccOpeningData = (function() {
+    const getJapanAcc = function(elementObj) {
+        const req = {
             new_account_japan                          : 1,
             gender                                     : elementObj.gender.value,
             first_name                                 : elementObj.fname.value,
@@ -48,7 +48,7 @@ var JapanAccOpeningData = (function() {
         }
 
         BinarySocket.send(req);
-    }
+    };
 
     return {
         getJapanAcc: getJapanAcc,

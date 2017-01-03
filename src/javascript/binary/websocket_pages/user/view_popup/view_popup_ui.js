@@ -1,6 +1,6 @@
-var get_highest_zindex = require('../../../base/utility').get_highest_zindex;
+const get_highest_zindex = require('../../../base/utility').get_highest_zindex;
 
-var ViewPopupUI = (function() {
+const ViewPopupUI = (function() {
     return {
         _init: function() {
             this._container = null;
@@ -13,10 +13,10 @@ var ViewPopupUI = (function() {
                 this._container = null;
             }
             if (!this._container) {
-                var that = this;
-                var con = $('<div class="inpage_popup_container inpage_popup_container_ws" id="sell_popup_container"><a class="close"></a><div class="inpage_popup_content"></div></div>');
+                const that = this;
+                const con = $('<div class="inpage_popup_container inpage_popup_container_ws" id="sell_popup_container"><a class="close"></a><div class="inpage_popup_content"></div></div>');
                 con.hide();
-                var _on_close = function() {
+                const _on_close = function() {
                     that.cleanup(true);
                     if (/trading/.test(window.location.pathname)) {
                         // Re-subscribe the trading page's tick stream which was unsubscribed by popup's chart
@@ -41,7 +41,7 @@ var ViewPopupUI = (function() {
         },
         forget_streams: function() {
             while (window.stream_ids && window.stream_ids.length > 0) {
-                var id = window.stream_ids.pop();
+                const id = window.stream_ids.pop();
                 if (id && id.length > 0) {
                     BinarySocket.send({ forget: id });
                 }
@@ -49,7 +49,7 @@ var ViewPopupUI = (function() {
         },
         forget_chart_streams: function() {
             while (window.chart_stream_ids && window.chart_stream_ids.length > 0) {
-                var id = window.chart_stream_ids.pop();
+                const id = window.chart_stream_ids.pop();
                 if (id && id.length > 0) {
                     BinarySocket.send({ forget: id });
                 }
@@ -81,15 +81,15 @@ var ViewPopupUI = (function() {
             button.fadeTo(0, 1);
         },
         show_inpage_popup: function(data, containerClass, dragHandle) {
-            var that = this;
-            var con = this.container(true);
+            const that = this;
+            const con = this.container(true);
             if (containerClass) {
                 con.addClass(containerClass);
             }
             if (data) {
                 $('.inpage_popup_content', con).html(data);
             }
-            var body = $(document.body);
+            const body = $(document.body);
             con.css('position', 'fixed').css('z-index', get_highest_zindex() + 100);
             body.append(con);
             con.show();
@@ -109,9 +109,9 @@ var ViewPopupUI = (function() {
             return con;
         },
         reposition_confirmation_ondrag: function() {
-            var con = this.container();
-            var offset = con.offset();
-            var win_ = $(window);
+            const con = this.container();
+            const offset = con.offset();
+            const win_ = $(window);
             // top
             if (offset.top < win_.scrollTop()) { con.offset({ top: win_.scrollTop() }); }
             // left
@@ -120,10 +120,10 @@ var ViewPopupUI = (function() {
             if (offset.left > win_.width() - con.width()) { con.offset({ left: win_.width() - con.width() }); }
         },
         reposition_confirmation: function(x, y) {
-            var con = this.container();
-            var win_ = $(window);
-            var x_min = 0;
-            var y_min = 500;
+            const con = this.container(),
+                win_ = $(window);
+            let x_min = 0,
+                y_min = 500;
             if (win_.width() < 767) { // To be responsive, on mobiles and phablets we show popup as full screen.
                 x_min = 0;
                 y_min = 0;

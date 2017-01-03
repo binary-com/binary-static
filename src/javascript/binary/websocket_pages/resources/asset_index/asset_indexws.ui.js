@@ -1,25 +1,25 @@
-var showLoadingImage       = require('../../../base/utility').showLoadingImage;
-var Table                  = require('../../../common_functions/attach_dom/table').Table;
-var jqueryuiTabsToDropdown = require('../../../common_functions/common_functions').jqueryuiTabsToDropdown;
-var Content                = require('../../../common_functions/content').Content;
-var japanese_client        = require('../../../common_functions/country_base').japanese_client;
-var AssetIndexData         = require('./asset_indexws.data').AssetIndexData;
-var AssetIndex             = require('../asset_indexws').AssetIndex;
-var State                  = require('../../../base/storage').State;
-var url_for                = require('../../../base/url').url_for;
+const showLoadingImage       = require('../../../base/utility').showLoadingImage;
+const Table                  = require('../../../common_functions/attach_dom/table').Table;
+const jqueryuiTabsToDropdown = require('../../../common_functions/common_functions').jqueryuiTabsToDropdown;
+const Content                = require('../../../common_functions/content').Content;
+const japanese_client        = require('../../../common_functions/country_base').japanese_client;
+const AssetIndexData         = require('./asset_indexws.data').AssetIndexData;
+const AssetIndex             = require('../asset_indexws').AssetIndex;
+const State                  = require('../../../base/storage').State;
+const url_for                = require('../../../base/url').url_for;
 
-var AssetIndexUI = (function() {
+const AssetIndexUI = (function() {
     'use strict';
 
-    var $container,
+    let $container,
         $tabs,
-        $contents;
-    var activeSymbols,
+        $contents,
+        activeSymbols,
         assetIndex,
         marketColumns,
         isFramed;
 
-    var init = function(config) {
+    const init = function(config) {
         if (japanese_client()) {
             if (!State.get('is_beta_trading')) {
                 window.location.href = url_for('resources');
@@ -44,7 +44,7 @@ var AssetIndexUI = (function() {
         $container.tabs();
     };
 
-    var populateTable = function() {
+    const populateTable = function() {
         if (!activeSymbols || !assetIndex) return;
 
         $('#errorMsg').addClass('hidden');
@@ -53,11 +53,11 @@ var AssetIndexUI = (function() {
         $tabs = $('<ul/>');
         $contents = $('<div/>');
 
-        for (var i = 0; i < assetIndex.length; i++) {
-            var assetItem  = assetIndex[i];
-            var symbolInfo = assetItem[3];
+        for (let i = 0; i < assetIndex.length; i++) {
+            const assetItem  = assetIndex[i];
+            const symbolInfo = assetItem[3];
             if (symbolInfo) {
-                var $submarketTable = getSubmarketTable(assetItem, symbolInfo);
+                const $submarketTable = getSubmarketTable(assetItem, symbolInfo);
                 $submarketTable.find('tbody').append(createSubmarketTableRow(assetItem, symbolInfo));
             }
         }
@@ -72,14 +72,14 @@ var AssetIndexUI = (function() {
         }
     };
 
-    var getSubmarketTable = function(assetItem, symbolInfo) {
-        var marketID    = 'market-'    + symbolInfo.market;
-        var submarketID = 'submarket-' + symbolInfo.submarket;
+    const getSubmarketTable = function(assetItem, symbolInfo) {
+        const marketID    = 'market-'    + symbolInfo.market;
+        const submarketID = 'submarket-' + symbolInfo.submarket;
 
-        var $table = $contents.find('#' + submarketID);
+        let $table = $contents.find('#' + submarketID);
         if ($table.length === 0) {
             // Create the table for this submarket
-            var $market = $contents.find('#' + marketID);
+            let $market = $contents.find('#' + marketID);
             if ($market.length === 0) {
                 // Create the market and tab elements
                 $market = $('<div/>', { id: marketID });
@@ -93,14 +93,14 @@ var AssetIndexUI = (function() {
         return $table;
     };
 
-    var createSubmarketTableRow = function(assetItem, symbolInfo) {
-        var cells   = [symbolInfo.display_name],
+    const createSubmarketTableRow = function(assetItem, symbolInfo) {
+        const cells   = [symbolInfo.display_name],
             columns = ['asset'];
 
-        var marketCols = marketColumns[symbolInfo.market],
+        const marketCols = marketColumns[symbolInfo.market],
             assetCells = assetItem[4];
-        for (var i = 1; i < marketCols.columns.length; i++) {
-            var prop = marketCols.columns[i];
+        for (let i = 1; i < marketCols.columns.length; i++) {
+            const prop = marketCols.columns[i];
             if (prop.length > 0) {
                 cells.push(prop in assetCells ? assetCells[prop] : '--');
                 columns.push(prop);
@@ -110,28 +110,28 @@ var AssetIndexUI = (function() {
         return Table.createFlexTableRow(cells, columns, 'data');
     };
 
-    var createEmptyTable = function(assetItem, symbolInfo, submarketID) {
-        var market = symbolInfo.market;
+    const createEmptyTable = function(assetItem, symbolInfo, submarketID) {
+        const market = symbolInfo.market;
 
-        var metadata = {
+        const metadata = {
             id  : submarketID,
             cols: marketColumns[market].columns,
         };
 
-        var $submarketTable = Table.createFlexTable([], metadata, marketColumns[market].header);
+        const $submarketTable = Table.createFlexTable([], metadata, marketColumns[market].header);
 
-        var $submarketHeader = $('<tr/>', { class: 'flex-tr' })
+        const $submarketHeader = $('<tr/>', { class: 'flex-tr' })
             .append($('<th/>', { class: 'flex-tr-child submarket-name', colspan: marketColumns[market].columns.length, text: symbolInfo.submarket_display_name }));
         $submarketTable.find('thead').prepend($submarketHeader);
 
         return $submarketTable;
     };
 
-    var initSocket = function() {
+    const initSocket = function() {
         if (State.get('is_beta_trading')) return;
         BinarySocket.init({
             onmessage: function(msg) {
-                var response = JSON.parse(msg.data);
+                const response = JSON.parse(msg.data);
                 if (response) {
                     responseHandler(response);
                 }
@@ -139,8 +139,8 @@ var AssetIndexUI = (function() {
         });
     };
 
-    var responseHandler = function(response) {
-        var msg_type = response.msg_type;
+    const responseHandler = function(response) {
+        const msg_type = response.msg_type;
         if (msg_type === 'asset_index') {
             AssetIndexUI.setAssetIndex(response);
         } else if (msg_type === 'active_symbols') {

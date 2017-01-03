@@ -1,33 +1,33 @@
-var showLoadingImage     = require('../../../../base/utility').showLoadingImage;
-var showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
-var Content         = require('../../../../common_functions/content').Content;
-var FlexTableUI     = require('../../../../common_functions/attach_dom/flextable').FlexTableUI;
-var ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
-var japanese_client = require('../../../../common_functions/country_base').japanese_client;
-var ValidationUI    = require('../../../../validator').ValidationUI;
-var customError     = require('../../../../validator').customError;
-var bind_validation = require('../../../../validator').bind_validation;
-var dv       = require('../../../../../lib/validation');
-var localize = require('../../../../base/localize').localize;
-var url_for  = require('../../../../base/url').url_for;
+const showLoadingImage     = require('../../../../base/utility').showLoadingImage;
+const showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
+const Content         = require('../../../../common_functions/content').Content;
+const FlexTableUI     = require('../../../../common_functions/attach_dom/flextable').FlexTableUI;
+const ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
+const japanese_client = require('../../../../common_functions/country_base').japanese_client;
+const ValidationUI    = require('../../../../validator').ValidationUI;
+const customError     = require('../../../../validator').customError;
+const bind_validation = require('../../../../validator').bind_validation;
+const dv       = require('../../../../../lib/validation');
+const localize = require('../../../../base/localize').localize;
+const url_for  = require('../../../../base/url').url_for;
 
-var APITokenWS = (function() {
+const APITokenWS = (function() {
     'use strict';
 
-    var errorClass = 'errorfield';
-    var hideClass  = 'invisible';
-    var tableContainer = '#tokens_list';
-    var maxTokens = 30;
+    const errorClass = 'errorfield';
+    const hideClass  = 'invisible';
+    const tableContainer = '#tokens_list';
+    const maxTokens = 30;
 
-    function hide(s) { return function() { $(s).addClass(hideClass); }; }
-    function show(s) { return function() { $(s).removeClass(hideClass); }; }
+    const hide = function(s) { return function() { $(s).addClass(hideClass); }; };
+    const show = function(s) { return function() { $(s).removeClass(hideClass); }; };
 
-    var hideForm  = hide('#token_form');
-    var showForm  = show('#token_form');
-    var hideTable = hide(tableContainer);
-    var showTable = show(tableContainer);
+    const hideForm  = hide('#token_form');
+    const showForm  = show('#token_form');
+    const hideTable = hide(tableContainer);
+    const showTable = show(tableContainer);
 
-    function init() {
+    const init = function() {
         if (japanese_client()) {
             window.location.href = url_for('user/settingsws');
             return;
@@ -36,7 +36,7 @@ var APITokenWS = (function() {
         Content.populate();
         BinarySocket.init({
             onmessage: function(msg) {
-                var response = JSON.parse(msg.data);
+                const response = JSON.parse(msg.data);
                 if (response.msg_type === 'api_token') {
                     responseHandler(response);
                 }
@@ -60,12 +60,12 @@ var APITokenWS = (function() {
                 createToken(info.values);
             },
         });
-    }
+    };
 
-    function getSchema() {
-        var V2 = ValidateV2;
-        var letters = Content.localize().textLetters;
-        var numbers = Content.localize().textNumbers;
+    const getSchema = function() {
+        const V2 = ValidateV2;
+        const letters = Content.localize().textLetters;
+        const numbers = Content.localize().textNumbers;
         return {
             scopes: [
                 function(v) { return dv.ok(v || []); },
@@ -78,9 +78,9 @@ var APITokenWS = (function() {
                 V2.regex(/^\w+$/, [letters, numbers, '_']),
             ],
         };
-    }
+    };
 
-    function responseHandler(response) {
+    const responseHandler = function(response) {
         if ('error' in response) {
             showErrorMessage(response.error.message);
             return;
@@ -88,9 +88,9 @@ var APITokenWS = (function() {
 
         clearMessages();
 
-        var api_token = response.api_token;
-        var tokens    = api_token.tokens;
-        var newToken;
+        const api_token = response.api_token,
+            tokens    = api_token.tokens;
+        let newToken;
 
         if (tokens.length >= maxTokens) {
             hideForm();
@@ -104,7 +104,7 @@ var APITokenWS = (function() {
             $('#txtName').val('');
             newToken = response.echo_req.new_token;
         } else if ('delete_token' in api_token) {
-            var deleted = response.echo_req.delete_token;
+            const deleted = response.echo_req.delete_token;
             $('#' + deleted)
                 .removeClass('new')
                 .addClass('deleting')
@@ -116,13 +116,13 @@ var APITokenWS = (function() {
         }
 
         populateTokensList(tokens, newToken);
-    }
+    };
 
     // -----------------------
     // ----- Tokens List -----
     // -----------------------
-    function populateTokensList(tokens, newToken) {
-        var $tableContainer = $(tableContainer);
+    const populateTokensList = function(tokens, newToken) {
+        const $tableContainer = $(tableContainer);
         if (tokens.length === 0) {
             hideTable();
             return;
@@ -130,8 +130,8 @@ var APITokenWS = (function() {
         showTable();
         $tableContainer.empty();
 
-        var headers = ['Name', 'Token', 'Scopes', 'Last Used', 'Action'];
-        var columns = ['name', 'token', 'scopes', 'last-used', 'action'];
+        const headers = ['Name', 'Token', 'Scopes', 'Last Used', 'Action'];
+        const columns = ['name', 'token', 'scopes', 'last-used', 'action'];
         new FlexTableUI({
             id       : 'tokens_table',
             container: tableContainer,
@@ -148,11 +148,11 @@ var APITokenWS = (function() {
             },
         });
         showLocalTimeOnHover('td.last-used');
-    }
+    };
 
-    function createDeleteButton($row, token) {
-        var message = localize('Are you sure that you want to permanently delete token');
-        var $button = $('<button/>', { class: 'button btnDelete', text: localize('Delete') });
+    const createDeleteButton = function($row, token) {
+        const message = localize('Are you sure that you want to permanently delete token');
+        const $button = $('<button/>', { class: 'button btnDelete', text: localize('Delete') });
         $button.click(function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -164,15 +164,15 @@ var APITokenWS = (function() {
         $row.children('.action').html(
             $('<span/>', { class: 'button' })
                 .append($button));
-    }
+    };
 
-    function capitalise(v) {
+    const capitalise = function(v) {
         return v.charAt(0).toUpperCase() + v.slice(1);
-    }
+    };
 
-    function formatToken(token) {
-        var lastUsed = (token.last_used ? token.last_used + ' GMT' : localize('Never Used'));
-        var scopes = token.scopes.map(capitalise);
+    const formatToken = function(token) {
+        const lastUsed = (token.last_used ? token.last_used + ' GMT' : localize('Never Used'));
+        const scopes = token.scopes.map(capitalise);
         return [
             token.display_name,
             token.token,
@@ -180,58 +180,58 @@ var APITokenWS = (function() {
             lastUsed,
             '',  // btnDelete
         ];
-    }
+    };
 
-    function displayErrors(errors) {
+    const displayErrors = function(errors) {
         errors.forEach(function(err) {
-            var sel = err.ctx === 'name' ?
+            const sel = err.ctx === 'name' ?
                 '#txtName' :
                 '#scopes';
             ValidationUI.draw(sel, err.err);
         });
-    }
+    };
 
     // ---------------------------
     // ----- Actions Process -----
     // ---------------------------
-    function createToken(params) {
+    const createToken = function(params) {
         BinarySocket.send({
             api_token       : 1,
             new_token       : params.name,
             new_token_scopes: params.scopes,
         });
-    }
+    };
 
-    function deleteToken(token) {
+    const deleteToken = function(token) {
         BinarySocket.send({
             api_token   : 1,
             delete_token: token,
         });
-    }
+    };
 
     // -----------------------------
     // ----- Message Functions -----
     // -----------------------------
-    function showErrorMessage(msg) {
+    const showErrorMessage = function(msg) {
         $('#token_message').removeClass(hideClass)
             .find('p')
             .attr('class', errorClass)
             .html(localize(msg));
-    }
+    };
 
-    function showSubmitSuccess(msg) {
+    const showSubmitSuccess = function(msg) {
         $('#formMessage')
             .attr('class', 'success-msg')
             .html('<ul class="checked"><li>' + localize(msg) + '</li></ul>')
             .css('display', 'block')
             .delay(3000)
             .fadeOut(1000);
-    }
+    };
 
-    function clearMessages() {
+    const clearMessages = function() {
         $('#token_message').addClass(hideClass);
         $('#formMessage').html('');
-    }
+    };
 
     return {
         init: init,

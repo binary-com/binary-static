@@ -1,20 +1,20 @@
-var showLocalTimeOnHover = require('../../../base/clock').Clock.showLocalTimeOnHover;
-var toJapanTimeIfNeeded  = require('../../../base/clock').Clock.toJapanTimeIfNeeded;
-var objectNotEmpty       = require('../../../base/utility').objectNotEmpty;
-var format_money         = require('../../../common_functions/currency_to_symbol').format_money;
-// var japanese_client      = require('../../../common_functions/country_base').japanese_client;
-var MBPrice              = require('../../mb_trade/mb_price').MBPrice;
-var ViewPopupUI          = require('./view_popup_ui').ViewPopupUI;
-var moment               = require('moment');
-var State                = require('../../../base/storage').State;
-var Highchart            = require('../../trade/charts/highchartws').Highchart;
-var WSTickDisplay        = require('../../trade/tick_trade').WSTickDisplay;
-var localize = require('../../../base/localize').localize;
+const showLocalTimeOnHover = require('../../../base/clock').Clock.showLocalTimeOnHover;
+const toJapanTimeIfNeeded  = require('../../../base/clock').Clock.toJapanTimeIfNeeded;
+const objectNotEmpty       = require('../../../base/utility').objectNotEmpty;
+const format_money         = require('../../../common_functions/currency_to_symbol').format_money;
+// const japanese_client      = require('../../../common_functions/country_base').japanese_client;
+const MBPrice              = require('../../mb_trade/mb_price').MBPrice;
+const ViewPopupUI          = require('./view_popup_ui').ViewPopupUI;
+const moment               = require('moment');
+const State                = require('../../../base/storage').State;
+const Highchart            = require('../../trade/charts/highchartws').Highchart;
+const WSTickDisplay        = require('../../trade/tick_trade').WSTickDisplay;
+const localize = require('../../../base/localize').localize;
 
-var ViewPopupWS = (function() {
+const ViewPopupWS = (function() {
     'use strict';
 
-    var contractID,
+    let contractID,
         contractType,
         contract,
         isSold,
@@ -25,7 +25,7 @@ var ViewPopupWS = (function() {
         corporateActionEvent,
         corporateActionSent,
         chartUpdated;
-    var $Container,
+    let $Container,
         $loading,
         btnView,
         popupboxID,
@@ -33,7 +33,7 @@ var ViewPopupWS = (function() {
         winStatusID,
         hiddenClass;
 
-    var init = function(button) {
+    const init = function(button) {
         btnView              = button;
         contractID           = $(btnView).attr('contract_id');
         contractType         = '';
@@ -62,7 +62,7 @@ var ViewPopupWS = (function() {
         setLoadingState(true);
     };
 
-    var responseContract = function(response) {
+    const responseContract = function(response) {
         if (!response.proposal_open_contract || !objectNotEmpty(response.proposal_open_contract)) {
             showErrorPopup(response);
             return;
@@ -99,7 +99,7 @@ var ViewPopupWS = (function() {
     };
 
     // ===== Contract: Spread =====
-    var spreadShowContract = function() {
+    const spreadShowContract = function() {
         setLoadingState(false);
 
         spreadSetValues();
@@ -114,12 +114,12 @@ var ViewPopupWS = (function() {
         spreadUpdate();
     };
 
-    var spreadSetValues = function() {
+    const spreadSetValues = function() {
         contract.is_ended = contract.is_settleable || contract.is_sold;
         contract.status = localize(contract.is_ended ? 'Closed' : 'Open');
     };
 
-    var spreadUpdate = function() {
+    const spreadUpdate = function() {
         spreadSetValues();
 
         containerSetText('status',            contract.status, { class: contract.is_ended ? 'loss' : 'profit' });
@@ -137,20 +137,20 @@ var ViewPopupWS = (function() {
         sellSetVisibility(!isSellClicked && !contract.is_ended);
     };
 
-    // var spreadContractEnded = function(is_win) {
-    var spreadContractEnded = function() {
+    // const spreadContractEnded = function(is_win) {
+    const spreadContractEnded = function() {
         $Container.find('#sell_level').parent('tr').addClass(hiddenClass);
         $Container.find('#exit_level').text(contract.exit_level).parent('tr').removeClass(hiddenClass);
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
     };
 
-    var spreadMakeTemplate = function() {
+    const spreadMakeTemplate = function() {
         $Container = $('<div/>');
         $Container.prepend($('<div/>', { id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: localize('Contract Information') }));
 
-        var $table = $('<table><tbody></tbody></table>');
-        var tbody = spreadRow('Status',    'status', (contract.is_ended ? 'loss' : 'profit')) +
+        const $table = $('<table><tbody></tbody></table>');
+        const tbody = spreadRow('Status',    'status', (contract.is_ended ? 'loss' : 'profit')) +
             spreadRow('Entry Level',       'entry_level') +
             spreadRow('Exit Level',        'exit_level', '', '', !contract.is_ended) +
             spreadRow('Stop Loss Level',   'stop_loss_level') +
@@ -173,12 +173,12 @@ var ViewPopupWS = (function() {
         return $('#' + wrapperID);
     };
 
-    var spreadRow = function(label, id, classname, label_no_localize, isHidden) {
+    const spreadRow = function(label, id, classname, label_no_localize, isHidden) {
         return '<tr' + (isHidden ? ' class="' + hiddenClass + '"' : '') + '><td>' + localize(label) + (label_no_localize || '') + '</td><td' + (id ? ' id="' + id + '"' : '') + (classname ? ' class="' + classname + '"' : '') + '></td></tr>';
     };
 
     // ===== Contract: Normal =====
-    var normalShowContract = function() {
+    const normalShowContract = function() {
         setLoadingState(false);
 
         if (!$Container) {
@@ -198,8 +198,8 @@ var ViewPopupWS = (function() {
         if (State.get('is_mb_trading')) MBPrice.hidePriceOverlay();
     };
 
-    var normalUpdate = function() {
-        var finalPrice = contract.sell_price || contract.bid_price,
+    const normalUpdate = function() {
+        const finalPrice = contract.sell_price || contract.bid_price,
             is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start,
             user_sold = contract.sell_time && contract.sell_time <= contract.date_expiry,
             is_ended = contract.is_settleable || contract.is_sold || user_sold,
@@ -218,8 +218,8 @@ var ViewPopupWS = (function() {
                 '', true);
         }
 
-        var currentSpot = !is_ended ? contract.current_spot : (user_sold ? contract.sell_spot : contract.exit_tick);
-        var currentSpotTime = !is_ended ? contract.current_spot_time
+        const currentSpot = !is_ended ? contract.current_spot : (user_sold ? contract.sell_spot : contract.exit_tick);
+        const currentSpotTime = !is_ended ? contract.current_spot_time
                                         : (user_sold ? contract.sell_spot_time : contract.exit_tick_time);
 
         containerSetText('trade_details_ref_id',           contract.transaction_ids.buy + (contract.transaction_ids.sell ? ' - ' + contract.transaction_ids.sell : ''));
@@ -227,9 +227,9 @@ var ViewPopupWS = (function() {
         containerSetText('trade_details_current_spot',     currentSpot || localize('not available'));
         containerSetText('trade_details_indicative_price', indicative_price ? format_money(contract.currency, indicative_price) : '-');
 
-        var profit_loss;
-        var percentage;
-        // var jp_client;
+        let profit_loss,
+            percentage;
+        // const jp_client;
 
         if (finalPrice) {
             profit_loss = finalPrice - contract.buy_price;
@@ -294,20 +294,20 @@ var ViewPopupWS = (function() {
         contract.validation_error = '';
     };
 
-    var normalUpdateTimers = function() {
-        var update_time = function() {
-            var now = Math.max(Math.ceil((window.time || 0) / 1000), contract.current_spot_time || 0);
+    const normalUpdateTimers = function() {
+        const update_time = function() {
+            const now = Math.max(Math.ceil((window.time || 0) / 1000), contract.current_spot_time || 0);
             containerSetText('trade_details_live_date', toJapanTimeIfNeeded(epochToDateTime(now)));
             showLocalTimeOnHover('#trade_details_live_date');
 
-            var is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start,
+            const is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start,
                 is_ended = contract.is_settleable || contract.is_sold;
             if ((!is_started || is_ended || now >= contract.date_expiry) && document.getElementById('trade_details_live_remaining')) {
                 containerSetText('trade_details_live_remaining', '-');
             } else {
-                var remained = contract.date_expiry - now,
-                    day_seconds = 24 * 60 * 60,
+                let remained = contract.date_expiry - now,
                     days = 0;
+                const day_seconds = 24 * 60 * 60;
                 if (remained > day_seconds) {
                     days = Math.floor(remained / day_seconds);
                     remained %= day_seconds;
@@ -325,8 +325,8 @@ var ViewPopupWS = (function() {
         window.ViewPopupTimerInterval = setInterval(update_time, 500);
     };
 
-    // var normalContractEnded = function(is_win) {
-    var normalContractEnded = function() {
+    // const normalContractEnded = function(is_win) {
+    const normalContractEnded = function() {
         containerSetText('trade_details_current_title',    localize(contract.sell_spot_time < contract.date_expiry ? 'Contract Sold' : 'Contract Expiry'));
         containerSetText('trade_details_spot_label',       localize('Exit Spot'));
         containerSetText('trade_details_spottime_label',   localize('Exit Spot Time'));
@@ -340,23 +340,23 @@ var ViewPopupWS = (function() {
         // showWinLossStatus(is_win);
     };
 
-    var addColorAndClass = function($tabToShow, $tabToHide, $contentToShow, $contentToHide) {
+    const addColorAndClass = function($tabToShow, $tabToHide, $contentToShow, $contentToHide) {
         $tabToShow.attr('style', 'background: #f2f2f2;');
         $tabToHide.attr('style', 'background: #c2c2c2;');
         $contentToHide.addClass('invisible');
         $contentToShow.removeClass('invisible');
     };
 
-    var showCorporateAction = function() {
-        var $contractInformationTab = $('#contract_information_tab'),
+    const showCorporateAction = function() {
+        const $contractInformationTab = $('#contract_information_tab'),
             $contractInformationContent = $('#contract_information_content');
 
         $contractInformationTab.removeAttr('colspan');
         $('#contract_tabs').append('<th id="corporate_action_tab">' + localize('Corporate Action') + '</th>');
 
-        var $corporateActionTab = $('#corporate_action_tab'),
+        const $corporateActionTab = $('#corporate_action_tab'),
             $corporateActionContent = $('#corporate_action_content');
-        var $barrierChange = $('#barrier_change'),
+        const $barrierChange = $('#barrier_change'),
             $barrierChangeContent = $('#barrier_change_content');
 
         $corporateActionTab.attr('style', 'background: #c2c2c2;');
@@ -376,12 +376,12 @@ var ViewPopupWS = (function() {
         });
     };
 
-    var populateCorporateAction = function(corporateAction) {
-        for (var i = 0; i < corporateAction.get_corporate_actions.actions.length; i++) {
+    const populateCorporateAction = function(corporateAction) {
+        for (let i = 0; i < corporateAction.get_corporate_actions.actions.length; i++) {
             $('#corporate_action_content').append(
                 normalRow(corporateAction.get_corporate_actions.actions[i].display_date, '', '', '', corporateAction.get_corporate_actions.actions[i].type + ' (' + corporateAction.get_corporate_actions.actions[i].value + '-' + localize('for') + '-1)'));
         }
-        var originalBarriers,
+        let originalBarriers,
             adjustedBarriers;
 
         if (contract.original_barrier) {
@@ -401,13 +401,13 @@ var ViewPopupWS = (function() {
             adjustedBarriers);
     };
 
-    var normalMakeTemplate = function() {
+    const normalMakeTemplate = function() {
         $Container = $('<div/>').append($('<div/>', { id: wrapperID }));
 
-        var longcode = contract.longcode;
+        const longcode = contract.longcode;
 
         $Container.prepend($('<div/>', { id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: longcode }));
-        var $sections = $('<div/>').append($('<div class="gr-row container"><div id="sell_details_chart_wrapper" class="gr-8 gr-12-m"></div><div id="sell_details_table" class="gr-4 gr-12-m"></div></div>'));
+        const $sections = $('<div/>').append($('<div class="gr-row container"><div id="sell_details_chart_wrapper" class="gr-8 gr-12-m"></div><div id="sell_details_table" class="gr-4 gr-12-m"></div></div>'));
 
         $sections.find('#sell_details_table').append($(
             '<table>' +
@@ -449,21 +449,21 @@ var ViewPopupWS = (function() {
         return $('#' + wrapperID);
     };
 
-    var normalRow = function(label, label_id, value_id, isHidden, value) {
+    const normalRow = function(label, label_id, value_id, isHidden, value) {
         return '<tr' + (isHidden ? ' class="' + hiddenClass + '"' : '') + '><td' + (label_id ? ' id="' + label_id + '"' : '') + '>' + localize(label) + '</td><td' + (value_id ? ' id="' + value_id + '"' : '') + '>' + (value || '') + '</td></tr>';
     };
 
-    var epochToDateTime = function(epoch) {
+    const epochToDateTime = function(epoch) {
         return moment.utc(epoch * 1000).format('YYYY-MM-DD HH:mm:ss');
     };
 
     // ===== Tools =====
-    var containerSetText = function(id, string, attributes, isVisible) {
+    const containerSetText = function(id, string, attributes, isVisible) {
         if (!$Container || $Container.length === 0) {
             $Container = $('#' + wrapperID);
         }
 
-        var $target = $Container.find('#' + id);
+        const $target = $Container.find('#' + id);
         if ($target && $target.length > 0) {
             $target.html(string);
             if (attributes) $target.attr(attributes);
@@ -471,7 +471,7 @@ var ViewPopupWS = (function() {
         }
     };
 
-    /* var showWinLossStatus = function(isWin) {
+    /* const showWinLossStatus = function(isWin) {
         containerSetText(
             winStatusID,
             localize('This contract has ' + (isWin ? 'WON' : 'LOST')),
@@ -479,7 +479,7 @@ var ViewPopupWS = (function() {
         );
     };*/
 
-    var setLoadingState = function(showLoading) {
+    const setLoadingState = function(showLoading) {
         if (showLoading) {
             $loading = $('#trading_init_progress');
             if ($loading.length) {
@@ -495,9 +495,9 @@ var ViewPopupWS = (function() {
         }
     };
 
-    var showMessagePopup = function(message, title, msgClass) {
+    const showMessagePopup = function(message, title, msgClass) {
         setLoadingState(false);
-        var $con = $('<div/>');
+        const $con = $('<div/>');
         $con.prepend($('<div/>', { id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: localize(title) }));
         $con.append(
             $('<div/>', { id: wrapperID })
@@ -505,16 +505,16 @@ var ViewPopupWS = (function() {
         ViewPopupUI.show_inpage_popup('<div class="' + popupboxID + '">' + $con.html() + '</div>', 'message_popup', '#sell_bet_desc');
     };
 
-    var showErrorPopup = function(response, message) {
+    const showErrorPopup = function(response, message) {
         message = message || 'Sorry, an error occurred while processing your request.';
         showMessagePopup(localize(message), 'There was an error', 'notice-msg');
         console.log(response);
     };
 
-    var sellSetVisibility = function(show) {
-        var sellWrapperID = 'sell_at_market_wrapper',
+    const sellSetVisibility = function(show) {
+        const sellWrapperID = 'sell_at_market_wrapper',
             sellButtonID = 'sell_at_market';
-        var isExist = $Container.find('#' + sellWrapperID).length > 0;
+        const isExist = $Container.find('#' + sellWrapperID).length > 0;
         if (show) {
             if (isExist) return;
             if (contractType === 'spread') {
@@ -541,10 +541,10 @@ var ViewPopupWS = (function() {
 
     // ===== Requests & Responses =====
     // ----- Get Contract -----
-    var getContract = function(option) {
+    const getContract = function(option) {
         if (contractID) {
             ViewPopupUI.forget_streams();
-            var req = {
+            const req = {
                 proposal_open_contract: 1,
                 contract_id           : contractID,
                 subscribe             : 1,
@@ -555,9 +555,9 @@ var ViewPopupWS = (function() {
     };
 
     // ----- Corporate Action -----
-    var getCorporateActions = function() {
-        var epoch = window.time.unix();
-        var end_time = epoch < contract.date_expiry ? epoch.toFixed(0) : contract.date_expiry;
+    const getCorporateActions = function() {
+        const epoch = window.time.unix();
+        const end_time = epoch < contract.date_expiry ? epoch.toFixed(0) : contract.date_expiry;
         socketSend({
             get_corporate_actions: '1',
             symbol               : contract.underlying,
@@ -567,20 +567,20 @@ var ViewPopupWS = (function() {
     };
 
     // ----- Sell Expired -----
-    var sellExpired = function() {
+    const sellExpired = function() {
         socketSend({ sell_expired: 1, passthrough: {} });
     };
 
-    var responseSellExpired = function() {
+    const responseSellExpired = function() {
         getContract();
     };
 
     // ----- Sell Contract -----
-    var sellContract = function() {
+    const sellContract = function() {
         socketSend({ sell: contractID, price: contract.bid_price, passthrough: {} });
     };
 
-    var responseSell = function(response) {
+    const responseSell = function(response) {
         if (response.hasOwnProperty('error')) {
             if (response.error.code === 'NoOpenPosition') {
                 getContract();
@@ -607,7 +607,7 @@ var ViewPopupWS = (function() {
         }
     };
 
-    var socketSend = function(req) {
+    const socketSend = function(req) {
         if (!req.hasOwnProperty('passthrough')) {
             req.passthrough = {};
         }
@@ -615,7 +615,7 @@ var ViewPopupWS = (function() {
         BinarySocket.send(req);
     };
 
-    var dispatch = function(response) {
+    const dispatch = function(response) {
         switch (response.msg_type) {
             case 'proposal_open_contract':
                 if (response.proposal_open_contract) {
@@ -646,9 +646,8 @@ var ViewPopupWS = (function() {
             default:
                 break;
         }
-        var i,
-            dates = ['#trade_details_start_date', '#trade_details_end_date', '#trade_details_current_date', '#trade_details_live_date'];
-        for (i = 0; i < dates.length; i++) {
+        const dates = ['#trade_details_start_date', '#trade_details_end_date', '#trade_details_current_date', '#trade_details_live_date'];
+        for (let i = 0; i < dates.length; i++) {
             showLocalTimeOnHover(dates[i]);
             $(dates[i]).attr('data-balloon-pos', 'left');
         }

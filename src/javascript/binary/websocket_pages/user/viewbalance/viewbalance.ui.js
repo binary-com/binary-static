@@ -1,26 +1,26 @@
-var format_money          = require('../../../common_functions/currency_to_symbol').format_money;
-var PortfolioWS           = require('../account/portfolio/portfolio.init').PortfolioWS;
-var updateContractBalance = require('../../trade/common').updateContractBalance;
-var Client                = require('../../../base/client').Client;
+const format_money          = require('../../../common_functions/currency_to_symbol').format_money;
+const PortfolioWS           = require('../account/portfolio/portfolio.init').PortfolioWS;
+const updateContractBalance = require('../../trade/common').updateContractBalance;
+const Client                = require('../../../base/client').Client;
 
-var ViewBalanceUI = (function() {
-    function updateBalances(response) {
+const ViewBalanceUI = (function() {
+    const updateBalances = function(response) {
         if (response.hasOwnProperty('error')) {
             console.log(response.error.message);
             return;
         }
-        var balance = response.balance.balance;
+        const balance = response.balance.balance;
         Client.set_value('balance', balance);
         PortfolioWS.updateBalance();
-        var currency = response.balance.currency;
+        const currency = response.balance.currency;
         if (!currency) {
             return;
         }
-        var view = format_money(currency, balance);
+        const view = format_money(currency, balance);
         updateContractBalance(balance);
         $('.topMenuBalance').text(view)
             .css('visibility', 'visible');
-    }
+    };
 
     return {
         updateBalances: updateBalances,

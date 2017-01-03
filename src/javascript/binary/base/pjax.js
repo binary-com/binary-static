@@ -1,18 +1,18 @@
-var MenuContent  = require('./menu_content').MenuContent;
-var pjax         = require('../../lib/pjax-lib');
-var Url          = require('./url').Url;
-var url          = require('./url').url;
-var GTM          = require('./gtm').GTM;
-var SessionStore = require('./storage').SessionStore;
-var State        = require('./storage').State;
-var Contents     = require('./contents').Contents;
-var japanese_client = require('../common_functions/country_base').japanese_client;
-var url_for = require('./url').url_for;
-var Client = require('./client').Client;
-var Login = require('./login').Login;
-var page = require('./page').page;
+const MenuContent  = require('./menu_content').MenuContent;
+const Url          = require('./url').Url;
+const url          = require('./url').url;
+const GTM          = require('./gtm').GTM;
+const SessionStore = require('./storage').SessionStore;
+const State        = require('./storage').State;
+const Contents     = require('./contents').Contents;
+const url_for      = require('./url').url_for;
+const Client       = require('./client').Client;
+const Login        = require('./login').Login;
+const page         = require('./page').page;
+const japanese_client = require('../common_functions/country_base').japanese_client;
+const pjax = require('../../lib/pjax-lib');
 
-var make_mobile_menu = function () {
+const make_mobile_menu = function () {
     if ($('#mobile-menu-container').is(':visible')) {
         $('#mobile-menu').mmenu({
             position       : 'right',
@@ -29,7 +29,7 @@ var make_mobile_menu = function () {
 };
 
 // For object shape coherence we create named objects to be inserted into the queue.
-var URLPjaxQueueElement = function(exec_function, new_url) {
+const URLPjaxQueueElement = function(exec_function, new_url) {
     this.method = exec_function;
     if (new_url) {
         this.url = new RegExp(new_url);
@@ -46,7 +46,7 @@ URLPjaxQueueElement.prototype = {
     },
 };
 
-var IDPjaxQueueElement = function(exec_function, id) {
+const IDPjaxQueueElement = function(exec_function, id) {
     this.method = exec_function;
     this.sel = '#' + id;
 };
@@ -59,7 +59,7 @@ IDPjaxQueueElement.prototype = {
     },
 };
 
-var PjaxExecQueue = function () {
+const PjaxExecQueue = function () {
     this.url_exec_queue = [];
     this.id_exec_queue = [];
     this.fired = false;
@@ -75,8 +75,8 @@ PjaxExecQueue.prototype = {
     },
     fire: function () {
         if (!this.fired) {
-            var match_loc = window.location.href;
-            var i = this.url_exec_queue.length;
+            const match_loc = window.location.href;
+            let i = this.url_exec_queue.length;
             while (i--) {
                 this.url_exec_queue[i].fire(match_loc);
             }
@@ -96,13 +96,13 @@ PjaxExecQueue.prototype = {
     },
 };
 
-var pjax_config_page = function(new_url, exec_functions) {
-    var functions = exec_functions();
+const pjax_config_page = function(new_url, exec_functions) {
+    const functions = exec_functions();
     if (functions.onLoad) onLoad.queue_for_url(functions.onLoad, new_url);
     if (functions.onUnload) onUnload.queue_for_url(functions.onUnload, new_url);
 };
 
-var pjax_config = function() {
+const pjax_config = function() {
     return {
         container : 'content',
         beforeSend: function() {
@@ -115,15 +115,15 @@ var pjax_config = function() {
             onUnload.reset();
         },
         error: function() {
-            var error_text = SessionStore.get('errors.500');
+            const error_text = SessionStore.get('errors.500');
             if (error_text) {
                 $('#content').html(error_text);
             } else {
                 $.get('/errors/500.html').always(function(content) {
-                    var tmp = document.createElement('div');
+                    const tmp = document.createElement('div');
                     tmp.innerHTML = content;
-                    var tmpNodes = tmp.getElementsByTagName('div');
-                    for (var i = 0, l = tmpNodes.length; i < l; i++) {
+                    const tmpNodes = tmp.getElementsByTagName('div');
+                    for (let i = 0, l = tmpNodes.length; i < l; i++) {
                         if (tmpNodes[i].id === 'content') {
                             SessionStore.set('errors.500', tmpNodes[i].innerHTML);
                             $('#content').html(tmpNodes[i].innerHTML);
@@ -137,18 +137,18 @@ var pjax_config = function() {
     };
 };
 
-var init_pjax = function () {
+const init_pjax = function () {
     if (!$('body').hasClass('BlueTopBack')) { // No Pjax for BO.
         pjax.connect(pjax_config());
     }
 };
 
-var load_with_pjax = function(new_url) {
+const load_with_pjax = function(new_url) {
     if (url.is_in(new Url(new_url))) {
         return;
     }
 
-    var config = pjax_config();
+    const config = pjax_config();
     config.url = new_url;
     config.update_url = new_url;
     config.history = true;
@@ -156,15 +156,15 @@ var load_with_pjax = function(new_url) {
 };
 
 // Reduce duplication as required Auth is a common pattern
-var pjax_config_page_require_auth = function(new_url, exec) {
-    var oldOnLoad = exec().onLoad;
-    var newOnLoad = function() {
+const pjax_config_page_require_auth = function(new_url, exec) {
+    const oldOnLoad = exec().onLoad;
+    const newOnLoad = function() {
         if (!Contents.show_login_if_logout(true)) {
             oldOnLoad();
         }
     };
 
-    var newExecFn = function() {
+    const newExecFn = function() {
         return {
             onLoad  : newOnLoad,
             onUnload: exec().onUnload,
@@ -173,8 +173,8 @@ var pjax_config_page_require_auth = function(new_url, exec) {
     pjax_config_page(new_url, newExecFn);
 };
 
-var onLoad = new PjaxExecQueue();
-var onUnload = new PjaxExecQueue();
+const onLoad = new PjaxExecQueue();
+const onUnload = new PjaxExecQueue();
 
 init_pjax(); // Pjax-standalone will wait for on load event before attaching.
 $(function() { onLoad.fire(); });
@@ -209,10 +209,10 @@ onLoad.queue(function () {
 
     make_mobile_menu();
 
-    var i = window.location.href.split('#');
+    const i = window.location.href.split('#');
     if (i.length !== 2) return;
-    var o = document.getElementsByTagName('a');
-    for (var t = 0; t < o.length; t++) {
+    const o = document.getElementsByTagName('a');
+    for (let t = 0; t < o.length; t++) {
         if (o[t].href.substr(o[t].href.length - i[1].length - 1) === '#' + i[1]) {
             o[t].click();
             break;

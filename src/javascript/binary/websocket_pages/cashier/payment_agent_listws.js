@@ -1,20 +1,19 @@
-var showLoadingImage = require('../../base/utility').showLoadingImage;
-var Cookies          = require('../../../lib/js-cookie');
-var Content          = require('../../common_functions/content').Content;
-var url_for_static   = require('../../base/url').url_for_static;
+const showLoadingImage = require('../../base/utility').showLoadingImage;
+const Cookies          = require('../../../lib/js-cookie');
+const Content          = require('../../common_functions/content').Content;
+const url_for_static   = require('../../base/url').url_for_static;
 
-var PaymentAgentListWS = (function() {
+const PaymentAgentListWS = (function() {
     'use strict';
 
-    var hiddenClass,
+    let hiddenClass,
         ddlCountriesID,
-        $paListContainer;
-
-    var residence,
+        $paListContainer,
+        residence,
         agentTemplate;
 
 
-    var init = function() {
+    const init = function() {
         $(function() {
             $('#accordion').accordion({
                 heightStyle: 'content',
@@ -36,14 +35,14 @@ var PaymentAgentListWS = (function() {
         sendRequest(residence, true);
     };
 
-    var sendRequest = function(country, isList) {
+    const sendRequest = function(country, isList) {
         BinarySocket.send({
             paymentagent_list: country || $(ddlCountriesID).val(),
             passthrough      : isList ? { countries_list: '1' } : {},
         });
     };
 
-    var responseHandler = function(response) {
+    const responseHandler = function(response) {
         if (response.echo_req.passthrough && response.echo_req.passthrough.countries_list === '1') {
             populateCountriesList(response);
         } else {
@@ -54,19 +53,19 @@ var PaymentAgentListWS = (function() {
     // --------------------------
     // ----- Countries List -----
     // --------------------------
-    var populateCountriesList = function(response) {
-        var $ddlCountries = $(ddlCountriesID);
+    const populateCountriesList = function(response) {
+        const $ddlCountries = $(ddlCountriesID);
         $ddlCountries.empty();
 
-        var cList = response.paymentagent_list.available_countries;
+        const cList = response.paymentagent_list.available_countries;
         if (cList.length === 0) {
             $ddlCountries.parent().addClass(hiddenClass);
             showEmptyListMsg();
             return;
         }
 
-        var requestedCountry = response.echo_req.paymentagent_list;
-        var found = false;
+        const requestedCountry = response.echo_req.paymentagent_list;
+        let found = false;
         cList.map(function(country) {
             if (country === requestedCountry) {
                 found = true;
@@ -86,14 +85,14 @@ var PaymentAgentListWS = (function() {
         });
     };
 
-    var insertListOption = function($ddlObject, itemText, itemValue) {
+    const insertListOption = function($ddlObject, itemText, itemValue) {
         $ddlObject.append($('<option/>', { value: itemValue, text: itemText }));
     };
 
     // -----------------------
     // ----- Agents List -----
     // -----------------------
-    var populateAgentsList = function(list) {
+    const populateAgentsList = function(list) {
         if (!list || list.length === 0) {
             showEmptyListMsg();
             return;
@@ -101,12 +100,12 @@ var PaymentAgentListWS = (function() {
 
         showLoadingImage($paListContainer);
 
-        var $accordion = $('<div/>', { id: 'accordion' });
+        const $accordion = $('<div/>', { id: 'accordion' });
 
         list.map(function(agent) {
-            var supported_banks = '';
+            let supported_banks = '';
             if (agent.supported_banks && agent.supported_banks.length > 0) {
-                var banks = agent.supported_banks.split(',');
+                const banks = agent.supported_banks.split(',');
                 banks.map(function(bank) {
                     supported_banks += bank.length === 0 ?
                         '' :
@@ -136,14 +135,14 @@ var PaymentAgentListWS = (function() {
         });
     };
 
-    var showEmptyListMsg = function() {
+    const showEmptyListMsg = function() {
         $('#no_paymentagent').removeClass(hiddenClass);
     };
 
-    var onLoad = function() {
+    const onLoad = function() {
         BinarySocket.init({
             onmessage: function(msg) {
-                var response = JSON.parse(msg.data);
+                const response = JSON.parse(msg.data);
                 if (response) {
                     if (response.msg_type === 'paymentagent_list') {
                         PaymentAgentListWS.responseHandler(response);

@@ -1,27 +1,26 @@
-var Login             = require('./login').Login;
-var template          = require('./utility').template;
-var LocalStore        = require('./storage').LocalStore;
-var State             = require('./storage').State;
-var localizeForLang   = require('./localize').localizeForLang;
-var localize          = require('./localize').localize;
-var getLanguage       = require('./language').getLanguage;
-var setCookieLanguage = require('./language').setCookieLanguage;
-var Url               = require('./url').Url;
-var url_for           = require('./url').url_for;
-var Client            = require('./client').Client;
-var Header            = require('./header').Header;
-var Menu              = require('./menu').Menu;
-var Contents          = require('./contents').Contents;
-var TrafficSource     = require('../common_functions/traffic_source').TrafficSource;
-var checkLanguage     = require('../common_functions/country_base').checkLanguage;
-var ViewBalance       = require('../websocket_pages/user/viewbalance/viewbalance.init').ViewBalance;
-var Cookies           = require('../../lib/js-cookie');
-
+const Login             = require('./login').Login;
+const template          = require('./utility').template;
+const LocalStore        = require('./storage').LocalStore;
+const State             = require('./storage').State;
+const localizeForLang   = require('./localize').localizeForLang;
+const localize          = require('./localize').localize;
+const getLanguage       = require('./language').getLanguage;
+const setCookieLanguage = require('./language').setCookieLanguage;
+const Url               = require('./url').Url;
+const url_for           = require('./url').url_for;
+const Client            = require('./client').Client;
+const Header            = require('./header').Header;
+const Menu              = require('./menu').Menu;
+const Contents          = require('./contents').Contents;
+const TrafficSource     = require('../common_functions/traffic_source').TrafficSource;
+const checkLanguage     = require('../common_functions/country_base').checkLanguage;
+const ViewBalance       = require('../websocket_pages/user/viewbalance/viewbalance.init').ViewBalance;
+const Cookies           = require('../../lib/js-cookie');
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
 require('../../lib/mmenu/jquery.mmenu.min.all.js');
 
-var Page = function() {
+const Page = function() {
     State.set('is_loaded_by_pjax', false);
     Client.init();
     this.url = new Url();
@@ -60,14 +59,14 @@ Page.prototype = {
         Contents.on_unload();
     },
     record_affiliate_exposure: function() {
-        var token = this.url.param('t');
+        const token = this.url.param('t');
         if (!token || token.length !== 32) {
             return false;
         }
-        var token_length = token.length;
-        var is_subsidiary = /\w{1}/.test(this.url.param('s'));
+        const token_length = token.length;
+        const is_subsidiary = /\w{1}/.test(this.url.param('s'));
 
-        var cookie_token = Cookies.getJSON('affiliate_tracking');
+        const cookie_token = Cookies.getJSON('affiliate_tracking');
         if (cookie_token) {
             // Already exposed to some other affiliate.
             if (is_subsidiary && cookie_token && cookie_token.t) {
@@ -76,7 +75,7 @@ Page.prototype = {
         }
 
         // Record the affiliate exposure. Overwrite existing cookie, if any.
-        var cookie_hash = {};
+        const cookie_hash = {};
         if (token_length === 32) {
             cookie_hash.t = token.toString();
         }
@@ -95,23 +94,24 @@ Page.prototype = {
         window.location.reload(!!forcedReload);
     },
     endpoint_notification: function() {
-        var server  = localStorage.getItem('config.server_url');
+        const server  = localStorage.getItem('config.server_url');
         if (server && server.length > 0) {
-            var message = (/www\.binary\.com/i.test(window.location.hostname) ? '' :
+            const message = (/www\.binary\.com/i.test(window.location.hostname) ? '' :
                 localize('This is a staging server - For testing purposes only') + ' - ') +
-                localize('The server <a href="[_1]">endpoint</a> is: [_2]', [url_for('endpoint'), server]);
-            $('#end-note').html(message).removeClass('invisible');
-            $('#footer').css('padding-bottom', $('#end-note').height());
+                localize('The server <a href="[_1]">endpoint</a> is: [_2]', [url_for('endpoint'), server]),
+                $end_note = $('#end-note');
+            $end_note.html(message).removeClass('invisible');
+            $('#footer').css('padding-bottom', $end_note.height());
         }
     },
     show_authenticate_message: function() {
         if ($('.authenticate-msg').length !== 0 || /authenticatews\.html/.test(window.location.pathname)) return;
 
-        var p = $('<p/>', { class: 'authenticate-msg notice-msg' }),
-            span;
+        const p = $('<p/>', { class: 'authenticate-msg notice-msg' });
+        let span;
 
         if (Client.status_detected('unwelcome')) {
-            var purchase_button = $('.purchase_button');
+            const purchase_button = $('.purchase_button');
             if (purchase_button.length > 0 && !purchase_button.parent().hasClass('button-disabled')) {
                 $.each(purchase_button, function() {
                     $(this).off('click dblclick').removeAttr('data-balloon').parent()
@@ -121,7 +121,7 @@ Page.prototype = {
         }
 
         if (Client.status_detected('unwelcome, cashier_locked', 'any')) {
-            var if_balance_zero = $('#if-balance-zero');
+            const if_balance_zero = $('#if-balance-zero');
             if (if_balance_zero.length > 0 && !if_balance_zero.hasClass('button-disabled')) {
                 if_balance_zero.removeAttr('href').addClass('button-disabled');
             }
@@ -141,14 +141,14 @@ Page.prototype = {
             span = this.general_authentication_message();
         }
         if (span) {
-            $('#content > .container').prepend(p.append(span));
+            $('#content').find('> .container').prepend(p.append(span));
         }
     },
     general_authentication_message: function() {
-        var span = $('<span/>', { html: template(localize('To authenticate your account, kindly email the following to [_1]:', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
-        var ul   = $('<ul/>',   { class: 'checked' });
-        var li1  = $('<li/>',   { text: localize('A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date.') });
-        var li2  = $('<li/>',   { text: localize('A scanned copy of a utility bill or bank statement (no more than 3 months old)') });
+        const span = $('<span/>', { html: template(localize('To authenticate your account, kindly email the following to [_1]:', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
+        const ul   = $('<ul/>',   { class: 'checked' });
+        const li1  = $('<li/>',   { text: localize('A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date.') });
+        const li2  = $('<li/>',   { text: localize('A scanned copy of a utility bill or bank statement (no more than 3 months old)') });
         return span.append(ul.append(li1, li2));
     },
     show_notification_outdated_browser: function() {
@@ -164,7 +164,7 @@ Page.prototype = {
     },
 };
 
-var page = new Page();
+const page = new Page();
 
 // LocalStorage can be used as a means of communication among
 // different windows. The problem that is solved here is what
@@ -180,7 +180,7 @@ $(document).ready(function () {
     if ($('body').hasClass('BlueTopBack')) return; // exclude BO
     // Cookies is not always available.
     // So, fall back to a more basic solution.
-    var match = document.cookie.match(/\bloginid=(\w+)/);
+    let match = document.cookie.match(/\bloginid=(\w+)/);
     match = match ? match[1] : '';
     $(window).on('storage', function (jq_event) {
         switch (jq_event.originalEvent.key) {

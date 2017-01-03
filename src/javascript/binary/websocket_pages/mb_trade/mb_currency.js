@@ -1,8 +1,8 @@
-var format_currency = require('../../common_functions/currency_to_symbol').format_currency;
-var MBDefaults = require('./mb_defaults').MBDefaults;
-var japanese_client = require('../../common_functions/country_base').japanese_client;
-var State  = require('../../base/storage').State;
-var Client = require('../../base/client').Client;
+const format_currency = require('../../common_functions/currency_to_symbol').format_currency;
+const MBDefaults = require('./mb_defaults').MBDefaults;
+const japanese_client = require('../../common_functions/country_base').japanese_client;
+const State  = require('../../base/storage').State;
+const Client = require('../../base/client').Client;
 
 /*
  * Handles currency display
@@ -13,7 +13,7 @@ var Client = require('../../base/client').Client;
 function MBDisplayCurrencies(selected, showClass) {
     'use strict';
 
-    var target = document.getElementById('currency'),
+    const target = document.getElementById('currency'),
         fragment =  document.createDocumentFragment(),
         currencies = Client.get_value('currencies').split(',');
 
@@ -27,7 +27,7 @@ function MBDisplayCurrencies(selected, showClass) {
 
     if (currencies.length > 1 && !japanese_client()) {
         currencies.forEach(function (currency) {
-            var option = document.createElement('option'),
+            const option = document.createElement('option'),
                 content = document.createTextNode(currency);
 
             option.setAttribute('value', currency);
@@ -44,7 +44,7 @@ function MBDisplayCurrencies(selected, showClass) {
     } else {
         $('#currency').replaceWith('<span id="' + target.getAttribute('id') +
                                     '" class="' + (showClass ? target.getAttribute('class') : '') +
-                                    '"value="' + currencies[0] + '">' +
+                                    '" value="' + currencies[0] + '">' +
                                     (State.get('is_mb_trading') && japanese_client() ? '✕' : format_currency(currencies[0])) + '</span>');
         MBDefaults.set('currency', currencies[0]);
     }
