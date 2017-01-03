@@ -1,7 +1,6 @@
 const RiskClassification = require('../../../../common_functions/risk_classification').RiskClassification;
 const japanese_client    = require('../../../../common_functions/country_base').japanese_client;
 const showLoadingImage   = require('../../../../base/utility').showLoadingImage;
-const localize           = require('../../../../base/localize').localize;
 const Client             = require('../../../../base/client').Client;
 const url_for            = require('../../../../base/url').url_for;
 const Content              = require('../../../../common_functions/content').Content;
