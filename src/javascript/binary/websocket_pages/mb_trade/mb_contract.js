@@ -1,25 +1,25 @@
-var objectNotEmpty  = require('../../base/utility').objectNotEmpty;
-var localize        = require('../../base/localize').localize;
-var getLanguage     = require('../../base/language').getLanguage;
-var Client          = require('../../base/client').Client;
-var format_currency = require('../../common_functions/currency_to_symbol').format_currency;
-var japanese_client = require('../../common_functions/country_base').japanese_client;
-var MBDefaults      = require('./mb_defaults').MBDefaults;
-var MBSymbols       = require('./mb_symbols').MBSymbols;
-var moment          = require('moment');
+const objectNotEmpty  = require('../../base/utility').objectNotEmpty;
+const localize        = require('../../base/localize').localize;
+const getLanguage     = require('../../base/language').getLanguage;
+const Client          = require('../../base/client').Client;
+const format_currency = require('../../common_functions/currency_to_symbol').format_currency;
+const japanese_client = require('../../common_functions/country_base').japanese_client;
+const MBDefaults      = require('./mb_defaults').MBDefaults;
+const MBSymbols       = require('./mb_symbols').MBSymbols;
+const moment          = require('moment');
 
 /*
  * Contract object mocks the trading form we have on our website
  * It parses the contracts json we get from socket.send({contracts_for: 'R_50'})
  */
-var MBContract = (function() {
+const MBContract = (function() {
     'use strict';
 
-    var contracts_for_response,
+    let contracts_for_response,
         contract_timeout;
 
-    var getContracts = function(underlying) {
-        var req = {
+    const getContracts = function(underlying) {
+        const req = {
             contracts_for: (underlying || MBDefaults.get('underlying')),
             currency     : getCurrency(),
             product_type : 'multi_barrier',
@@ -32,7 +32,7 @@ var MBContract = (function() {
         contract_timeout = setTimeout(getContracts, 15000);
     };
 
-    var clearContractTimeout = function(timoutID) {
+    const clearContractTimeout = function(timoutID) {
         if (timoutID) {
             clearTimeout(timoutID);
         } else {
@@ -41,8 +41,8 @@ var MBContract = (function() {
         }
     };
 
-    var durationText = function(dur) {
-        var durationMap = {
+    const durationText = function(dur) {
+        const durationMap = {
             m: 'min',
             h: 'h',
             d: 'day',
@@ -56,8 +56,8 @@ var MBContract = (function() {
         return dur;
     };
 
-    var PeriodText = function(trading_period) {
-        var date_expiry,
+    const PeriodText = function(trading_period) {
+        let date_expiry,
             duration;
         if (typeof trading_period === 'object') {
             date_expiry = trading_period.date_expiry.epoch;
@@ -66,16 +66,17 @@ var MBContract = (function() {
             date_expiry = trading_period.split('_')[1];
             duration = trading_period.split('_')[2];
         }
-        return (moment(moment.utc(date_expiry * 1000))
-                    .utcOffset(japanese_client() ? '+09:00' : '+00:00')
-                    .locale(getLanguage().toLowerCase())
-                    .format('MMM Do, HH:mm')
-                    .replace(/08:59/, '09:00«') + ' (' + durationText(duration.replace('0d', '1d')) + ')');
+        const text_value = moment().utc(date_expiry * 1000)
+                            .utcOffset(japanese_client() ? '+09:00' : '+00:00')
+                            .locale(getLanguage().toLowerCase())
+                            .format('MMM Do, HH:mm')
+                            .replace(/08:59/, '09:00«') + ' (' + durationText(duration.replace('0d', '1d')) + ')';
+        return text_value.toString();
     };
 
     // use function to generate elements and append them
     // e.g. element is select and element to append is option
-    var appendTextValueChild = function(element, string, value, isSelected) {
+    const appendTextValueChild = function(element, string, value, isSelected) {
         if (element && !element.nodeName) {
             if (typeof element === 'string') {
                 element = document.getElementById(element);
@@ -84,7 +85,7 @@ var MBContract = (function() {
             }
         }
         if (!element) return;
-        var option = document.createElement('option');
+        const option = document.createElement('option');
         option.text = string;
         option.value = value;
         if (isSelected) {
@@ -93,16 +94,16 @@ var MBContract = (function() {
         element.appendChild(option);
     };
 
-    var populatePeriods = function(rebuild) {
+    const populatePeriods = function(rebuild) {
         if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return;
-        var trading_period,
-            start_end,
-            trading_period_array = [],
+        let trading_period,
+            start_end;
+        const trading_period_array = [],
             available_contracts = contracts_for_response.contracts_for.available,
             selected_option = MBDefaults.get('category'),
             $periodElement = $('#period');
         if (!selected_option || !available_contracts) return;
-        for (var i = 0; i < available_contracts.length; i++) {
+        for (let i = 0; i < available_contracts.length; i++) {
             if (available_contracts[i].contract_category === selected_option) {
                 trading_period = available_contracts[i].trading_period;
                 if (!trading_period) return;
@@ -117,8 +118,8 @@ var MBContract = (function() {
             $periodElement.empty();
         }
         if ($periodElement.children().length === 0) { // populate for the first time
-            var default_value = MBDefaults.get('period');
-            for (var j = 0; j < trading_period_array.length; j++) {
+            const default_value = MBDefaults.get('period');
+            for (let j = 0; j < trading_period_array.length; j++) {
                 appendTextValueChild(
                     'period',
                     PeriodText(trading_period_array[j]),
@@ -129,23 +130,23 @@ var MBContract = (function() {
             MBContract.displayDescriptions();
             MBContract.displayRemainingTime();
         } else { // update options
-            var existing_array = [],
-                missing_array  = [];
-            $('#period option').each(function() {
+            let existing_array = [];
+            const missing_array  = [];
+            $periodElement.find('option').each(function() {
                 existing_array.push($(this).val());
             });
 
             // add new periods to dropdown
-            for (var l = 0; l < trading_period_array.length; l++) {
+            for (let l = 0; l < trading_period_array.length; l++) {
                 if (existing_array.indexOf(trading_period_array[l]) < 0) {
                     missing_array.push(trading_period_array[l]);
                 }
             }
             if (missing_array.length > 0) {
-                var newOption;
+                let newOption;
                 existing_array = existing_array.concat(missing_array).sort(sortByExpiryTime);
-                for (var m = 0; m < existing_array.length; m++) {
-                    if ($('#period option[value="' + existing_array[m] + '"]').length < 1) {
+                for (let m = 0; m < existing_array.length; m++) {
+                    if ($periodElement.find('option[value="' + existing_array[m] + '"]').length < 1) {
                         newOption = '<option value="' + existing_array[m] + '">' + PeriodText(existing_array[m]) + '</option>';
                         if (m < 1) {
                             $(newOption).insertBefore($periodElement.children().eq(m));
@@ -159,32 +160,32 @@ var MBContract = (function() {
             // remove periods that no longer exist
             existing_array.forEach(function(period) {
                 if (trading_period_array.indexOf(period) < 0) {
-                    $('#period option[value="' + period + '"]').remove();
+                    $periodElement.find('option[value="' + period + '"]').remove();
                 }
             });
         }
     };
 
-    var periodValue,
+    let periodValue,
         $countDownTimer,
         remainingTimeElement,
         remainingTimeout;
-    var displayRemainingTime = function(recalculate) {
+    const displayRemainingTime = function(recalculate) {
         if (typeof periodValue === 'undefined' || recalculate) {
             periodValue = document.getElementById('period').value;
             $countDownTimer = $('.countdown-timer');
             remainingTimeElement = document.getElementById('remaining-time');
         }
         if (!periodValue) return;
-        var timeLeft = parseInt(periodValue.split('_')[1]) - window.time.unix();
+        const timeLeft = parseInt(periodValue.split('_')[1]) - window.time.unix();
         if (timeLeft <= 0) {
             location.reload();
         } else if (timeLeft < 120) {
             $countDownTimer.addClass('alert');
         }
-        var remainingTimeString = [],
+        const remainingTimeString = [],
             duration = moment.duration(timeLeft * 1000);
-        var all_durations = {
+        const all_durations = {
             month : duration.months(),
             day   : duration.days(),
             hour  : duration.hours(),
@@ -201,33 +202,33 @@ var MBContract = (function() {
         remainingTimeout = setTimeout(displayRemainingTime, 1000);
     };
 
-    var sortByExpiryTime = function(first, second) {
-        var a = first.split('_'),
+    const sortByExpiryTime = function(first, second) {
+        const a = first.split('_'),
             b = second.split('_'),
             duration1 = a[1] - a[0],
             duration2 = b[1] - b[0];
         return a[1] === b[1] ? duration1 - duration2 : a[1] - b[1];
     };
 
-    var populateOptions = function(rebuild) {
+    const populateOptions = function(rebuild) {
         if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return;
-        var category,
-            contracts_array = [],
+        let  category;
+        const contracts_array = [],
             available_contracts = contracts_for_response.contracts_for.available,
             $categoryElement = $('#category');
-        var categoryNames = {
+        const categoryNames = {
             callput     : localize('Higher/Lower'),
             touchnotouch: localize('Touch/No Touch'),
             endsinout   : localize('Ends In/Out'),
             staysinout  : localize('Stays In/Goes Out'),
         };
-        var categoryOrder = {
+        const categoryOrder = {
             callput     : 1,
             touchnotouch: 2,
             endsinout   : 3,
             staysinout  : 4,
         };
-        for (var i = 0; i < available_contracts.length; i++) {
+        for (let i = 0; i < available_contracts.length; i++) {
             category = contracts_for_response.contracts_for.available[i].contract_category;
             if (contracts_array.indexOf(category) < 0) {
                 contracts_array.push(category);
@@ -240,22 +241,22 @@ var MBContract = (function() {
             $categoryElement.empty();
         }
         if ($categoryElement.children().length === 0) {
-            var default_value = MBDefaults.get('category');
-            for (var j = 0; j < contracts_array.length; j++) {
+            const default_value = MBDefaults.get('category');
+            for (let j = 0; j < contracts_array.length; j++) {
                 appendTextValueChild(
                     'category',
                     categoryNames[contracts_array[j]],
                     contracts_array[j],
                     contracts_array[j] === default_value);
             }
-            MBDefaults.set('category', $('#category').val());
+            MBDefaults.set('category', $categoryElement.val());
         }
         populatePeriods(rebuild);
     };
 
-    var getCurrentContracts = function() {
+    const getCurrentContracts = function() {
         if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return [];
-        var contracts = [],
+        const contracts = [],
             category  = MBDefaults.get('category'),
             periods   = MBDefaults.get('period').split('_');
         contracts_for_response.contracts_for.available.forEach(function(c) {
@@ -268,8 +269,8 @@ var MBContract = (function() {
         return contracts;
     };
 
-    var getTemplate = function(contract_type) {
-        var templates = {
+    const getTemplate = function(contract_type) {
+        const templates = {
             CALLE: {
                 opposite   : 'PUT',
                 order      : 0,
@@ -322,8 +323,8 @@ var MBContract = (function() {
         return contract_type ? templates[contract_type] : templates;
     };
 
-    var displayDescriptions = function() {
-        var contracts = getCurrentContracts(),
+    const displayDescriptions = function() {
+        const contracts = getCurrentContracts(),
             $desc_wrappers = $('.prices-wrapper'),
             currency = (format_currency(Client.get_value('currency')) || format_currency(document.getElementById('currency').value) || '¥'),
             payout = Number(MBDefaults.get('payout') * (japanese_client() ? 1000 : 1)).toLocaleString(),
@@ -331,7 +332,7 @@ var MBContract = (function() {
             date_expiry = PeriodText(contracts[0].trading_period).replace(/\s\(.*\)/, ''),
             preposition = getLanguage() === 'JA' ? '{JAPAN ONLY}' : '';
         contracts.forEach(function(c) {
-            var contract_type = c.contract_type,
+            const contract_type = c.contract_type,
                 template = getTemplate(contract_type),
                 $wrapper = $($desc_wrappers[template.order]);
             $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(localize(preposition + template.name));
@@ -339,7 +340,7 @@ var MBContract = (function() {
         });
     };
 
-    var getCurrency = function() {
+    const getCurrency = function() {
         return (Client.get_value('currency') || document.getElementById('currency').value || 'JPY');
     };
 

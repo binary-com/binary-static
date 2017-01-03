@@ -1,4 +1,4 @@
-var ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbols;
+const ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbols;
 
 /*
  * MBSymbols object parses the active_symbols json that we get from socket.send({active_symbols: 'brief'}
@@ -16,19 +16,19 @@ var ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbo
  *
  */
 
-var MBSymbols = (function () {
+const MBSymbols = (function () {
     'use strict';
 
-    var tradeMarkets     = {},
+    let tradeMarkets     = {},
         tradeMarketsList = {},
         tradeUnderlyings = {},
         need_page_update = 1,
         allSymbols       = {},
         names            = {};
 
-    var details = function (data) {
+    const details = function (data) {
         ActiveSymbols.clearData();
-        var active_symbols = data.active_symbols;
+        const active_symbols = data.active_symbols;
         tradeMarkets     = ActiveSymbols.getMarkets(active_symbols);
         tradeMarketsList = ActiveSymbols.getMarketsList(active_symbols);
         tradeUnderlyings = ActiveSymbols.getTradeUnderlyings(active_symbols);
@@ -36,7 +36,7 @@ var MBSymbols = (function () {
         names            = ActiveSymbols.getSymbolNames(active_symbols);
     };
 
-    var getSymbols = function (update) {
+    const getSymbols = function (update) {
         BinarySocket.send({
             active_symbols : 'brief',
             landing_company: 'japan',

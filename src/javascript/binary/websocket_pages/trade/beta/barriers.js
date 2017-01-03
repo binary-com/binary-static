@@ -1,9 +1,9 @@
-var Contract_Beta      = require('./contract').Contract_Beta;
-var Defaults           = require('../defaults').Defaults;
-var Tick               = require('../tick').Tick;
-var moment             = require('moment');
-var isVisible          = require('../../../common_functions/common_functions').isVisible;
-var countDecimalPlaces = require('../common_independent').countDecimalPlaces;
+const Contract_Beta      = require('./contract').Contract_Beta;
+const Defaults           = require('../defaults').Defaults;
+const Tick               = require('../tick').Tick;
+const moment             = require('moment');
+const isVisible          = require('../../../common_functions/common_functions').isVisible;
+const countDecimalPlaces = require('../common_independent').countDecimalPlaces;
 
 /*
  * Handles barrier processing and display
@@ -12,19 +12,19 @@ var countDecimalPlaces = require('../common_independent').countDecimalPlaces;
  * for current `Contract.form()
  */
 
-var Barriers_Beta = (function () {
+const Barriers_Beta = (function () {
     'use strict';
 
-    var isBarrierUpdated = false;
+    let isBarrierUpdated = false;
 
-    var display = function () {
-        var barriers = Contract_Beta.barriers()[Defaults.get('underlying')],
+    const display = function () {
+        const barriers = Contract_Beta.barriers()[Defaults.get('underlying')],
             formName = Contract_Beta.form();
 
         if (barriers && formName && Defaults.get('formname') !== 'risefall') {
-            var barrier = barriers[formName];
+            const barrier = barriers[formName];
             if (barrier) {
-                var unit = document.getElementById('duration_units'),
+                const unit = document.getElementById('duration_units'),
                     end_time = document.getElementById('expiry_date'),
                     currentTick = Tick.quote(),
                     indicativeBarrierTooltip = document.getElementById('indicative_barrier_tooltip'),
@@ -37,11 +37,11 @@ var Barriers_Beta = (function () {
                     document.getElementById('low_barrier_row').style.display = 'none';
                     document.getElementById('barrier_row').setAttribute('style', '');
 
-                    var defaults_barrier = Defaults.get('barrier'),
-                        barrier_def = defaults_barrier && !isNaN(defaults_barrier) ? defaults_barrier : barrier.barrier,
+                    const defaults_barrier = Defaults.get('barrier'),
                         elm     = document.getElementById('barrier'),
                         tooltip = document.getElementById('barrier_tooltip'),
-                        span    = document.getElementById('barrier_span'),
+                        span    = document.getElementById('barrier_span');
+                    let barrier_def = defaults_barrier && !isNaN(defaults_barrier) ? defaults_barrier : barrier.barrier,
                         value;
                     if ((unit && isVisible(unit) && unit.value === 'd') ||
                         (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day')) ||
@@ -77,16 +77,16 @@ var Barriers_Beta = (function () {
                     document.getElementById('high_barrier_row').setAttribute('style', '');
                     document.getElementById('low_barrier_row').setAttribute('style', '');
 
-                    var high_elm     = document.getElementById('barrier_high'),
+                    const high_elm     = document.getElementById('barrier_high'),
                         low_elm      = document.getElementById('barrier_low'),
                         high_tooltip = document.getElementById('barrier_high_tooltip'),
                         high_span    = document.getElementById('barrier_high_span'),
                         low_tooltip  = document.getElementById('barrier_low_tooltip'),
                         low_span     = document.getElementById('barrier_low_span');
 
-                    var defaults_barrier_high = Defaults.get('barrier_high'),
-                        defaults_barrier_low  = Defaults.get('barrier_low'),
-                        barrier_high = defaults_barrier_high && !isNaN(defaults_barrier_high) ?
+                    const defaults_barrier_high = Defaults.get('barrier_high'),
+                        defaults_barrier_low  = Defaults.get('barrier_low');
+                    let barrier_high = defaults_barrier_high && !isNaN(defaults_barrier_high) ?
                             defaults_barrier_high : barrier.barrier,
                         barrier_low  = defaults_barrier_low  && !isNaN(defaults_barrier_low) ?
                             defaults_barrier_low  : barrier.barrier1,
@@ -145,15 +145,15 @@ var Barriers_Beta = (function () {
             }
         }
 
-        var elements = document.getElementsByClassName('barrier_class');
-        for (var i = 0; i < elements.length; i++) {
+        const elements = document.getElementsByClassName('barrier_class');
+        for (let i = 0; i < elements.length; i++) {
             elements[i].style.display = 'none';
         }
         Defaults.remove('barrier', 'barrier_high', 'barrier_low');
     };
 
-    var validateBarrier = function() {
-        var barrierElement = document.getElementById('barrier');
+    const validateBarrier = function() {
+        const barrierElement = document.getElementById('barrier');
         if (isVisible(barrierElement) && (isNaN(parseFloat(barrierElement.value)) ||
                 parseFloat(barrierElement.value) === 0)) {
             barrierElement.value = '0';

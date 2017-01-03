@@ -1,16 +1,16 @@
-var moment              = require('moment');
-var toTitleCase         = require('../../../common_functions/string_util').toTitleCase,
-    addComma            = require('../../../common_functions/string_util').addComma,
-    format_money        = require('../../../common_functions/currency_to_symbol').format_money,
-    toJapanTimeIfNeeded = require('../../../base/clock').Clock.toJapanTimeIfNeeded;
-var localize = require('../../../base/localize').localize;
-var Client   = require('../../../base/client').Client;
+const moment              = require('moment');
+const toTitleCase         = require('../../../common_functions/string_util').toTitleCase;
+const addComma            = require('../../../common_functions/string_util').addComma;
+const format_money        = require('../../../common_functions/currency_to_symbol').format_money;
+const toJapanTimeIfNeeded = require('../../../base/clock').Clock.toJapanTimeIfNeeded;
+const localize = require('../../../base/localize').localize;
+const Client   = require('../../../base/client').Client;
 
-var Statement = (function() {
+const Statement = (function() {
     'use strict';
 
-    var getStatementData = function(statement, currency, jpClient) {
-        var dateObj = new Date(statement.transaction_time * 1000),
+    const getStatementData = function(statement, currency, jpClient) {
+        const dateObj = new Date(statement.transaction_time * 1000),
             momentObj = moment.utc(dateObj),
             dateStr = momentObj.format('YYYY-MM-DD'),
             timeStr = momentObj.format('HH:mm:ss') + ' GMT',
@@ -18,7 +18,7 @@ var Statement = (function() {
             amount  = parseFloat(statement.amount),
             balance = parseFloat(statement.balance_after);
 
-        var statement_data = {
+        return {
             date   : jpClient ? toJapanTimeIfNeeded(statement.transaction_time) : dateStr + '\n' + timeStr,
             ref    : statement.transaction_id,
             payout : isNaN(payout) ? '-' : (jpClient ? format_money(currency, payout) : payout.toFixed(2)),
@@ -29,17 +29,15 @@ var Statement = (function() {
             id     : statement.contract_id,
             app_id : statement.app_id,
         };
-
-        return statement_data;
     };
 
-    var generateCSV = function(allData, jpClient) {
-        var columns  = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'],
+    const generateCSV = function(allData, jpClient) {
+        const columns  = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'],
             header   = ['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit'].map(function(str) { return localize(str); }),
             currency = Client.get_value('currency');
         header.push(localize('Balance') + (jpClient || !currency ? '' : ' (' + currency + ')'));
-        var sep = ',',
-            csv = [header.join(sep)];
+        const sep = ',';
+        let csv = [header.join(sep)];
         if (allData && allData.length > 0) {
             csv = csv.concat(
                 allData.map(function(data) {
@@ -52,12 +50,10 @@ var Statement = (function() {
         return csv.join('\r\n');
     };
 
-    var external = {
+    return {
         getStatementData: getStatementData,
         generateCSV     : generateCSV,
     };
-
-    return external;
 })();
 
 module.exports = {

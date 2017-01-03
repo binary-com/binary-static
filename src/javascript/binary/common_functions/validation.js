@@ -1,31 +1,31 @@
-var Content  = require('./content').Content;
-var localize = require('../base/localize').localize;
+const Content  = require('./content').Content;
+const localize = require('../base/localize').localize;
 
-var Validate = (function() {
-    var errorCounter = 0;
+const Validate = (function() {
+    let errorCounter = 0;
 
   // give DOM element of error to display
-    function displayErrorMessage(error) {
+    const displayErrorMessage = function(error) {
         error.setAttribute('style', 'display:block');
-    }
+    };
 
   // give DOM element or error to hide
-    function hideErrorMessage(error) {
+    const hideErrorMessage = function(error) {
         error.setAttribute('style', 'display:none');
-        var errorMessage = $('.error-message-password');
+        const errorMessage = $('.error-message-password');
         if (errorMessage) {
             errorMessage.remove();
         }
-    }
+    };
 
-    function handleError(error, message) {
-        var par = document.createElement('p'),
-            re = new RegExp(message),
-            allText = '';
+    const handleError = function(error, message) {
+        const par = document.createElement('p'),
+            re = new RegExp(message);
+        let allText = '';
         par.className = 'error-message-password';
-        var parClass = $('.' + par.className);
+        const parClass = $('.' + par.className);
         if (parClass.length > 1) {
-            for (var i = 0; i < parClass.length; i++) {
+            for (let i = 0; i < parClass.length; i++) {
                 allText += parClass[i].textContent;
             }
             if (!re.test(allText)) {
@@ -36,18 +36,15 @@ var Validate = (function() {
         }
         error.appendChild(par);
         displayErrorMessage(error);
-    }
+    };
 
   // check validity of token
-    function validateToken(token) {
-        if (token.length === 48) {
-            return true;
-        }
-        return false;
-    }
+    const validateToken = function(token) {
+        return (token.length === 48);
+    };
 
   // give error message for invalid email, needs DOM element of error and value of email
-    function errorMessageEmail(email, error) {
+    const errorMessageEmail = function(email, error) {
         if (email === '') {
             error.textContent = Content.errorMessage('req');
             displayErrorMessage(error);
@@ -59,10 +56,10 @@ var Validate = (function() {
         }
         hideErrorMessage(error);
         return false;
-    }
+    };
 
   // give error message for invalid verification token, needs DOM element of error and value of verification token
-    function errorMessageToken(token, error) {
+    const errorMessageToken = function(token, error) {
         if (token === '') {
             error.textContent = Content.errorMessage('req');
             displayErrorMessage(error);
@@ -74,57 +71,57 @@ var Validate = (function() {
         }
         hideErrorMessage(error);
         return false;
-    }
+    };
 
-    function passwordNotEmpty(password, error) {
+    const passwordNotEmpty = function(password, error) {
         if (!/^.+$/.test(password)) {
             handleError(error, Content.errorMessage('req'));
             return errorCounter++;
         }
         return true;
-    }
+    };
 
-    function fieldNotEmpty(field, error) {
+    const fieldNotEmpty = function(field, error) {
         if (!/^.+$/.test(field)) {
             error.textContent = Content.errorMessage('req');
             displayErrorMessage(error);
             return errorCounter++;
         }
         return true;
-    }
+    };
 
-    function passwordMatching(password, rPassword, rError) {
+    const passwordMatching = function(password, rPassword, rError) {
         if (password !== rPassword) {
             rError.textContent = Content.localize().textPasswordsNotMatching;
             displayErrorMessage(rError);
             return errorCounter++;
         }
         return true;
-    }
+    };
 
-    function passwordLength(password, error) {
+    const passwordLength = function(password, error) {
         if (password.length < 6 || password.length > 25) {
             handleError(error, Content.errorMessage('range', '6-25'));
             return errorCounter++;
         }
         return true;
-    }
+    };
 
-    function passwordChars(password, error) {
+    const passwordChars = function(password, error) {
         if (/[0-9]+/.test(password) && /[A-Z]+/.test(password) && /[a-z]+/.test(password)) {
             return true;
         }
         handleError(error, localize('Password should have lower and uppercase letters with numbers.'));
         return errorCounter++;
-    }
+    };
 
-    function isPasswordValid(password, error) {
+    const isPasswordValid = function(password, error) {
         if (!/^[!-~]+$/.test(password)) {
             handleError(error, Content.errorMessage('valid', Content.localize().textPassword));
             return errorCounter++;
         }
         return true;
-    }
+    };
 
   // give error message for invalid password, needs value of password, repeat of password, and DOM element of error
   /**
@@ -135,7 +132,7 @@ var Validate = (function() {
    * @param rError        dom to show error for confirm password (not jquery!)
    * @returns {boolean}
      */
-    function errorMessagePassword(password, rPassword, error, rError) {
+    const errorMessagePassword = function(password, rPassword, error, rError) {
         hideErrorMessage(error);
         hideErrorMessage(rError);
         errorCounter = 0;
@@ -150,14 +147,10 @@ var Validate = (function() {
         } else {
             fieldNotEmpty(rPassword, rError);
         }
+        return (errorCounter === 0);
+    };
 
-        if (errorCounter === 0) {
-            return true;
-        }
-        return false;
-    }
-
-    function errorMessageResidence(residence, error) {
+    const errorMessageResidence = function(residence, error) {
         hideErrorMessage(error);
         if (residence === '') {
             error.textContent = Content.errorMessage('req');
@@ -165,7 +158,7 @@ var Validate = (function() {
             return true;
         }
         return false;
-    }
+    };
 
     return {
         displayErrorMessage  : displayErrorMessage,
@@ -179,10 +172,7 @@ var Validate = (function() {
 })();
 
 function validateEmail(mail) {
-    if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(mail)) {
-        return true;
-    }
-    return false;
+    return (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(mail));
 }
 
 function passwordValid(password) {
@@ -190,7 +180,7 @@ function passwordValid(password) {
         return false;
     }
 
-    var r = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,25}$/;
+    const r = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,25}$/;
     return r.test(password);
 }
 
@@ -201,12 +191,12 @@ function passwordValid(password) {
  * @returns {Array}     array of error message, can be empty
  */
 function showPasswordError(password) {
-    var errMsgs = [];
+    const errMsgs = [];
     if (password.length < 6 || password.length > 25) {
         errMsgs.push(Content.errorMessage('range', '6-25'));
     }
 
-    var hasUpperLowerDigitRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/;
+    const hasUpperLowerDigitRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/;
     if (!hasUpperLowerDigitRegex.test(password)) {
         errMsgs.push(localize('Password should have lower and uppercase letters with numbers.'));
     }

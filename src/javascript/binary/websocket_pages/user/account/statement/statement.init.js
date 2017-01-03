@@ -1,17 +1,17 @@
-var showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
-var StatementUI          = require('./statement.ui').StatementUI;
-var addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;
-var buildOauthApps       = require('../../../../common_functions/get_app_details').buildOauthApps;
-var Content              = require('../../../../common_functions/content').Content;
-var japanese_client      = require('../../../../common_functions/country_base').japanese_client;
-var moment               = require('moment');
-var DatePicker           = require('../../../../components/date_picker').DatePicker;
-var toISOFormat          = require('../../../../common_functions/string_util').toISOFormat;
-var dateValueChanged     = require('../../../../common_functions/common_functions').dateValueChanged;
-var localize = require('../../../../base/localize').localize;
-var getLanguage = require('../../../../base/language').getLanguage;
+const showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
+const StatementUI          = require('./statement.ui').StatementUI;
+const addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;
+const buildOauthApps       = require('../../../../common_functions/get_app_details').buildOauthApps;
+const Content              = require('../../../../common_functions/content').Content;
+const japanese_client      = require('../../../../common_functions/country_base').japanese_client;
+const moment               = require('moment');
+const DatePicker           = require('../../../../components/date_picker').DatePicker;
+const toISOFormat          = require('../../../../common_functions/string_util').toISOFormat;
+const dateValueChanged     = require('../../../../common_functions/common_functions').dateValueChanged;
+const localize    = require('../../../../base/localize').localize;
+const getLanguage = require('../../../../base/language').getLanguage;
 
-var StatementWS = (function() {
+const StatementWS = (function() {
     'use strict';
 
     // Batch refer to number of data get from ws service per request
@@ -19,7 +19,7 @@ var StatementWS = (function() {
     // receive means receive from ws service
     // consume means consume by UI and displayed to page
 
-    var batchSize,
+    let batchSize,
         chunkSize,
         noMoreData,
         pending,
@@ -27,15 +27,40 @@ var StatementWS = (function() {
         transactionsReceived,
         transactionsConsumed;
 
-    var tableExist = function() {
+    const tableExist = function() {
         return document.getElementById('statement-table');
     };
 
-    var finishedConsumed = function() {
+    const finishedConsumed = function() {
         return transactionsConsumed === transactionsReceived;
     };
 
-    function statementHandler(response) {
+    const getStatement = function(opts) {
+        const req = { statement: 1, description: 1 };
+        if (opts) {
+            $.extend(true, req, opts);
+        }
+        const jumpToVal = $('#jump-to').attr('data-value');
+        if (jumpToVal && jumpToVal !== '') {
+            req.date_to = moment.utc(jumpToVal).unix() + ((japanese_client() ? 15 : 24) * (60 * 60));
+            req.date_from = 0;
+        }
+        BinarySocket.send(req);
+    };
+
+    const getNextBatchStatement = function() {
+        getStatement({ offset: transactionsReceived, limit: batchSize });
+        pending = true;
+    };
+
+    const getNextChunkStatement = function() {
+        const chunk = currentBatch.splice(0, chunkSize);
+        transactionsConsumed += chunk.length;
+        $('#rows_count').text(transactionsConsumed);
+        return chunk;
+    };
+
+    const statementHandler = function(response) {
         if (response.hasOwnProperty('error')) {
             StatementUI.errorMessage(response.error.message);
             return;
@@ -43,7 +68,7 @@ var StatementWS = (function() {
 
         pending = false;
 
-        var statement = response.statement;
+        const statement = response.statement;
         currentBatch = statement.transactions;
         transactionsReceived += currentBatch.length;
 
@@ -58,7 +83,7 @@ var StatementWS = (function() {
 
             // Show a message when the table is empty
             if ((transactionsReceived === 0) && (currentBatch.length === 0)) {
-                $('#statement-table tbody')
+                $('#statement-table').find('tbody')
                     .append($('<tr/>', { class: 'flex-tr' })
                         .append($('<td/>', { colspan: 7 })
                             .append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
@@ -74,28 +99,16 @@ var StatementWS = (function() {
             }
         }
         showLocalTimeOnHover('td.date');
-    }
+    };
 
-    function getNextBatchStatement() {
-        getStatement({ offset: transactionsReceived, limit: batchSize });
-        pending = true;
-    }
-
-    function getNextChunkStatement() {
-        var chunk = currentBatch.splice(0, chunkSize);
-        transactionsConsumed += chunk.length;
-        $('#rows_count').text(transactionsConsumed);
-        return chunk;
-    }
-
-    function loadStatementChunkWhenScroll() {
+    const loadStatementChunkWhenScroll = function() {
         $(document).scroll(function() {
-            function hidableHeight(percentage) {
-                var totalHidable = $(document).height() - $(window).height();
+            const hidableHeight = function(percentage) {
+                const totalHidable = $(document).height() - $(window).height();
                 return Math.floor((totalHidable * percentage) / 100);
-            }
+            };
 
-            var pFromTop = $(document).scrollTop();
+            const pFromTop = $(document).scrollTop();
 
             if (!tableExist()) {
                 return;
@@ -114,9 +127,9 @@ var StatementWS = (function() {
                 StatementUI.updateStatementTable(getNextChunkStatement());
             }
         });
-    }
+    };
 
-    function initTable() {
+    const initTable = function() {
         pending = false;
         noMoreData = false;
 
@@ -128,9 +141,26 @@ var StatementWS = (function() {
         StatementUI.errorMessage(null);
 
         StatementUI.clearTableContent();
-    }
+    };
 
-    function initPage() {
+    const initSocket = function() {
+        BinarySocket.init({
+            onmessage: function(msg) {
+                const response = JSON.parse(msg.data);
+                if (response) {
+                    const type = response.msg_type;
+                    if (type === 'statement') {
+                        StatementWS.statementHandler(response);
+                    } else if (type === 'oauth_apps') {
+                        addTooltip(StatementUI.setOauthApps(buildOauthApps(response.oauth_apps)));
+                    }
+                }
+            },
+        });
+        BinarySocket.send({ oauth_apps: 1 });
+    };
+
+    const initPage = function() {
         batchSize = 200;
         chunkSize = batchSize / 2;
         noMoreData = false;
@@ -142,14 +172,14 @@ var StatementWS = (function() {
         Content.populate();
         getNextBatchStatement();
         loadStatementChunkWhenScroll();
-    }
+    };
 
-    function cleanStatementPageState() {
+    const cleanStatementPageState = function() {
         initTable();
-    }
+    };
 
-    var attachDatePicker = function() {
-        var jumpTo = '#jump-to',
+    const attachDatePicker = function() {
+        const jumpTo = '#jump-to',
             datePickerInst = new DatePicker(jumpTo);
         datePickerInst.hide();
         datePickerInst.show('', '0');
@@ -165,36 +195,6 @@ var StatementWS = (function() {
                      return true;
                  });
     };
-
-    function initSocket() {
-        BinarySocket.init({
-            onmessage: function(msg) {
-                var response = JSON.parse(msg.data);
-                if (response) {
-                    var type = response.msg_type;
-                    if (type === 'statement') {
-                        StatementWS.statementHandler(response);
-                    } else if (type === 'oauth_apps') {
-                        addTooltip(StatementUI.setOauthApps(buildOauthApps(response.oauth_apps)));
-                    }
-                }
-            },
-        });
-        BinarySocket.send({ oauth_apps: 1 });
-    }
-
-    function getStatement(opts) {
-        var req = { statement: 1, description: 1 };
-        if (opts) {
-            $.extend(true, req, opts);
-        }
-        var jumpToVal = $('#jump-to').attr('data-value');
-        if (jumpToVal && jumpToVal !== '') {
-            req.date_to = moment.utc(jumpToVal).unix() + ((japanese_client() ? 15 : 24) * (60 * 60));
-            req.date_from = 0;
-        }
-        BinarySocket.send(req);
-    }
 
     return {
         init            : initPage,

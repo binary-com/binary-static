@@ -1,20 +1,20 @@
-var getAppId    = require('../../config').getAppId;
-var isVisible   = require('../common_functions/common_functions').isVisible;
-var getLanguage = require('./language').getLanguage;
-var Client      = require('./client').Client;
-var State       = require('./storage').State;
-var Cookies     = require('../../lib/js-cookie');
-var moment      = require('moment');
+const getAppId    = require('../../config').getAppId;
+const isVisible   = require('../common_functions/common_functions').isVisible;
+const getLanguage = require('./language').getLanguage;
+const Client      = require('./client').Client;
+const State       = require('./storage').State;
+const Cookies     = require('../../lib/js-cookie');
+const moment      = require('moment');
 
-var GTM = (function() {
+const GTM = (function() {
     'use strict';
 
-    var gtm_applicable = function() {
+    const gtm_applicable = function() {
         return /^(1|1098)$/.test(getAppId());
     };
 
-    var gtm_data_layer_info = function(data) {
-        var data_layer_info = {
+    const gtm_data_layer_info = function(data) {
+        const data_layer_info = {
             language : getLanguage(),
             pageTitle: page_title(),
             pjax     : State.get('is_loaded_by_pjax'),
@@ -27,7 +27,7 @@ var GTM = (function() {
 
         $.extend(true, data_layer_info, data);
 
-        var event = data_layer_info.event;
+        const event = data_layer_info.event;
         delete data_layer_info.event;
 
         return {
@@ -36,24 +36,24 @@ var GTM = (function() {
         };
     };
 
-    var push_data_layer = function(data) {
+    const push_data_layer = function(data) {
         if (!gtm_applicable()) return;
         if (!(/logged_inws/i).test(window.location.pathname)) {
-            var info = gtm_data_layer_info(data && typeof data === 'object' ? data : null);
+            const info = gtm_data_layer_info(data && typeof data === 'object' ? data : null);
             dataLayer[0] = info.data;
             dataLayer.push(info.data);
             dataLayer.push({ event: info.event });
         }
     };
 
-    var page_title = function() {
-        var t = /^.+[:-]\s*(.+)$/.exec(document.title);
+    const page_title = function() {
+        const t = /^.+[:-]\s*(.+)$/.exec(document.title);
         return t && t[1] ? t[1] : document.title;
     };
 
-    var event_handler = function(get_settings) {
+    const event_handler = function(get_settings) {
         if (!gtm_applicable()) return;
-        var is_login      = localStorage.getItem('GTM_login')      === '1',
+        const is_login      = localStorage.getItem('GTM_login')      === '1',
             is_newaccount = localStorage.getItem('GTM_newaccount') === '1';
         if (!is_login && !is_newaccount) {
             return;
@@ -62,12 +62,12 @@ var GTM = (function() {
         localStorage.removeItem('GTM_login');
         localStorage.removeItem('GTM_newaccount');
 
-        var affiliateToken = Cookies.getJSON('affiliate_tracking');
+        const affiliateToken = Cookies.getJSON('affiliate_tracking');
         if (affiliateToken) {
             GTM.push_data_layer({ bom_affiliate_token: affiliateToken.t });
         }
 
-        var data = {
+        const data = {
             visitorId  : Client.get_value('loginid'),
             bom_country: get_settings.country,
             bom_email  : get_settings.email,
@@ -87,12 +87,12 @@ var GTM = (function() {
         GTM.push_data_layer(data);
     };
 
-    var push_purchase_data = function(response) {
+    const push_purchase_data = function(response) {
         if (!gtm_applicable() || Client.get_boolean('is_virtual')) return;
-        var req = response.echo_req.passthrough,
+        const req = response.echo_req.passthrough,
             buy = response.buy;
         if (!buy) return;
-        var data = {
+        const data = {
             event             : 'buy_contract',
             visitorId         : Client.get_value('loginid'),
             bom_symbol        : req.symbol,
@@ -138,7 +138,7 @@ var GTM = (function() {
         GTM.push_data_layer(data);
     };
 
-    var set_login_flag = function() {
+    const set_login_flag = function() {
         if (!gtm_applicable()) return;
         localStorage.setItem('GTM_login', '1');
     };

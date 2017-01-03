@@ -1,18 +1,18 @@
-var Defaults        = require('./defaults').Defaults;
-var Notifications   = require('./notifications').Notifications;
-var Symbols         = require('./symbols').Symbols;
-var Tick            = require('./tick').Tick;
-var objectNotEmpty  = require('../../base/utility').objectNotEmpty;
-var Content         = require('../../common_functions/content').Content;
-var format_money    = require('../../common_functions/currency_to_symbol').format_money;
-var japanese_client = require('../../common_functions/country_base').japanese_client;
-var addComma        = require('../../common_functions/string_util').addComma;
-var Moment          = require('moment');
-var toISOFormat     = require('../../common_functions/string_util').toISOFormat;
-var localize    = require('../../base/localize').localize;
-var getLanguage = require('../../base/language').getLanguage;
-var Client      = require('../../base/client').Client;
-var url_for     = require('../../base/url').url_for;
+const Defaults        = require('./defaults').Defaults;
+const Notifications   = require('./notifications').Notifications;
+const Symbols         = require('./symbols').Symbols;
+const Tick            = require('./tick').Tick;
+const objectNotEmpty  = require('../../base/utility').objectNotEmpty;
+const Content         = require('../../common_functions/content').Content;
+const format_money    = require('../../common_functions/currency_to_symbol').format_money;
+const japanese_client = require('../../common_functions/country_base').japanese_client;
+const addComma        = require('../../common_functions/string_util').addComma;
+const Moment          = require('moment');
+const toISOFormat     = require('../../common_functions/string_util').toISOFormat;
+const localize    = require('../../base/localize').localize;
+const getLanguage = require('../../base/language').getLanguage;
+const Client      = require('../../base/client').Client;
+const url_for     = require('../../base/url').url_for;
 
 /*
  * This contains common functions we need for processing the response
@@ -46,16 +46,16 @@ function displayContractForms(id, elements, selected) {
     'use strict';
 
     if (!id || !elements || !selected) return;
-    var target = document.getElementById(id),
+    const target = document.getElementById(id),
         fragment = document.createDocumentFragment();
 
     target.innerHTML = '';
 
     if (elements) {
-        var tree = getContractCategoryTree(elements);
-        for (var i = 0; i < tree.length; i++) {
-            var el1 = tree[i];
-            var li = document.createElement('li');
+        const tree = getContractCategoryTree(elements);
+        for (let i = 0; i < tree.length; i++) {
+            const el1 = tree[i];
+            const li = document.createElement('li');
 
             li.classList.add('tm-li');
             if (i === 0) {
@@ -65,12 +65,12 @@ function displayContractForms(id, elements, selected) {
             }
 
             if (typeof el1 === 'object') {
-                var fragment2 = document.createDocumentFragment();
-                var flag = 0;
-                var first = '';
-                for (var j = 0; j < el1[1].length; j++) {
-                    var el2 = el1[1][j];
-                    var li2 = document.createElement('li'),
+                const fragment2 = document.createDocumentFragment();
+                let flag = 0,
+                    first = '';
+                for (let j = 0; j < el1[1].length; j++) {
+                    const el2 = el1[1][j];
+                    const li2 = document.createElement('li'),
                         a2 = document.createElement('a'),
                         content2 = document.createTextNode(elements[el2]);
                     li2.classList.add('tm-li-2');
@@ -98,7 +98,7 @@ function displayContractForms(id, elements, selected) {
                     fragment2.appendChild(li2);
                 }
                 if (fragment2.hasChildNodes()) {
-                    var ul = document.createElement('ul'),
+                    const ul = document.createElement('ul'),
                         a = document.createElement('a'),
                         content = document.createTextNode(elements[el1[0]]);
 
@@ -117,7 +117,7 @@ function displayContractForms(id, elements, selected) {
                     li.appendChild(ul);
                 }
             } else {
-                var content3 = document.createTextNode(elements[el1]),
+                const content3 = document.createTextNode(elements[el1]),
                     a3 = document.createElement('a');
 
                 if (selected && selected === el1.toLowerCase()) {
@@ -134,9 +134,9 @@ function displayContractForms(id, elements, selected) {
         }
         if (target) {
             target.appendChild(fragment);
-            var list = target.getElementsByClassName('tm-li');
-            for (var k = 0; k < list.length; k++) {
-                var li4 = list[k];
+            const list = target.getElementsByClassName('tm-li');
+            for (let k = 0; k < list.length; k++) {
+                const li4 = list[k];
                 li4.addEventListener('mouseover', function() {
                     this.classList.add('hover');
                 });
@@ -152,18 +152,18 @@ function displayContractForms(id, elements, selected) {
 function displayMarkets(id, elements, selected) {
     'use strict';
 
-    var target = document.getElementById(id),
+    const target = document.getElementById(id),
         fragment =  document.createDocumentFragment();
 
     while (target && target.firstChild) {
         target.removeChild(target.firstChild);
     }
 
-    var keys1 = Object.keys(elements).sort(marketSort);
-    for (var i = 0; i < keys1.length; i++) {
-        var key = keys1[i];
-        var option = document.createElement('option'),
+    const keys1 = Object.keys(elements).sort(marketSort);
+    for (let i = 0; i < keys1.length; i++) {
+        const key = keys1[i],
             content = document.createTextNode(elements[key].name);
+        let option = document.createElement('option');
         option.setAttribute('value', key);
         if (selected && selected === key) {
             option.setAttribute('selected', 'selected');
@@ -172,9 +172,9 @@ function displayMarkets(id, elements, selected) {
         fragment.appendChild(option);
 
         if (elements[key].submarkets && objectNotEmpty(elements[key].submarkets)) {
-            var keys2 = Object.keys(elements[key].submarkets).sort(marketSort);
-            for (var j = 0; j < keys2.length; j++) {
-                var key2 = keys2[j];
+            const keys2 = Object.keys(elements[key].submarkets).sort(marketSort);
+            for (let j = 0; j < keys2.length; j++) {
+                const key2 = keys2[j];
                 option = document.createElement('option');
                 option.setAttribute('value', key2);
                 if (selected && selected === key2) {
@@ -191,7 +191,7 @@ function displayMarkets(id, elements, selected) {
         if (target.selectedIndex < 0) {
             target.selectedIndex = 0;
         }
-        var current = target.options[target.selectedIndex];
+        const current = target.options[target.selectedIndex];
         if (selected !== current.value) {
             Defaults.set('market', current.value);
         }
@@ -212,7 +212,7 @@ function displayMarkets(id, elements, selected) {
 function displayUnderlyings(id, elements, selected) {
     'use strict';
 
-    var target = document.getElementById(id);
+    const target = document.getElementById(id);
 
     if (!target) return;
 
@@ -226,23 +226,23 @@ function displayUnderlyings(id, elements, selected) {
 }
 
 function generateUnderlyingOptions(elements, selected) {
-    var fragment = document.createDocumentFragment();
-    var keys = Object.keys(elements).sort(function(a, b) {
+    const fragment = document.createDocumentFragment();
+    const keys = Object.keys(elements).sort(function(a, b) {
         return elements[a].display.localeCompare(elements[b].display);
     });
-    var submarkets = {};
-    for (var i = 0; i < keys.length; i++) {
+    const submarkets = {};
+    for (let i = 0; i < keys.length; i++) {
         if (!submarkets.hasOwnProperty(elements[keys[i]].submarket)) {
             submarkets[elements[keys[i]].submarket] = [];
         }
         submarkets[elements[keys[i]].submarket].push(keys[i]);
     }
-    var keys2 = Object.keys(submarkets).sort(marketSort);
-    for (var j = 0; j < keys2.length; j++) {
-        for (var k = 0; k < submarkets[keys2[j]].length; k++) {
-            var key = submarkets[keys2[j]][k];
-            var option = document.createElement('option'),
-                content = document.createTextNode(localize(elements[key].display));
+    const keys2 = Object.keys(submarkets).sort(marketSort);
+    for (let j = 0; j < keys2.length; j++) {
+        for (let k = 0; k < submarkets[keys2[j]].length; k++) {
+            const key = submarkets[keys2[j]][k];
+            const option = document.createElement('option');
+            const content = document.createTextNode(localize(elements[key].display));
             option.setAttribute('value', key);
             if (selected && selected === key) {
                 option.setAttribute('selected', 'selected');
@@ -262,7 +262,7 @@ function generateUnderlyingOptions(elements, selected) {
 function getFormNameBarrierCategory(displayFormName) {
     'use strict';
 
-    var obj = {};
+    const obj = {};
     if (displayFormName) {
         if (displayFormName === 'risefall') {
             obj.formName = 'callput';
@@ -297,7 +297,7 @@ function getFormNameBarrierCategory(displayFormName) {
 function contractTypeDisplayMapping(type) {
     'use strict';
 
-    var obj = {
+    const obj = {
         CALL        : 'top',
         PUT         : 'bottom',
         CALLE       : 'top',
@@ -328,7 +328,7 @@ function contractTypeDisplayMapping(type) {
 function showPriceOverlay() {
     'use strict';
 
-    var elm = document.getElementById('loading_container2');
+    const elm = document.getElementById('loading_container2');
     if (elm) {
         elm.style.display = 'block';
     }
@@ -337,7 +337,7 @@ function showPriceOverlay() {
 function hidePriceOverlay() {
     'use strict';
 
-    var elm = document.getElementById('loading_container2');
+    const elm = document.getElementById('loading_container2');
     if (elm) {
         elm.style.display = 'none';
     }
@@ -346,7 +346,7 @@ function hidePriceOverlay() {
 function hideFormOverlay() {
     'use strict';
 
-    var elm = document.getElementById('loading_container3');
+    const elm = document.getElementById('loading_container3');
     if (elm) {
         elm.style.display = 'none';
     }
@@ -355,7 +355,7 @@ function hideFormOverlay() {
 function showFormOverlay() {
     'use strict';
 
-    var elm = document.getElementById('loading_container3');
+    const elm = document.getElementById('loading_container3');
     if (elm) {
         elm.style.display = 'block';
     }
@@ -367,11 +367,11 @@ function showFormOverlay() {
 function hideOverlayContainer() {
     'use strict';
 
-    var elm = document.getElementById('contract_confirmation_container');
+    const elm = document.getElementById('contract_confirmation_container');
     if (elm) {
         elm.style.display = 'none';
     }
-    var elm2 = document.getElementById('contracts_list');
+    const elm2 = document.getElementById('contracts_list');
     if (elm2) {
         elm2.style.display = 'flex';
     }
@@ -381,7 +381,7 @@ function hideOverlayContainer() {
 function getContractCategoryTree(elements) {
     'use strict';
 
-    var tree = [
+    let tree = [
         ['updown',
             ['risefall',
                 'higherlower'],
@@ -424,8 +424,8 @@ function getContractCategoryTree(elements) {
  * coloring will continue on the next proposal responses
  */
 function resetPriceMovement() {
-    var btns = document.getElementsByClassName('purchase_button');
-    for (var i = 0; i < btns.length; i++) {
+    const btns = document.getElementsByClassName('purchase_button');
+    for (let i = 0; i < btns.length; i++) {
         btns[i].setAttribute('data-display_value', '');
         btns[i].setAttribute('data-payout', '');
     }
@@ -437,11 +437,11 @@ function resetPriceMovement() {
 function toggleActiveNavMenuElement(nav, eventElement) {
     'use strict';
 
-    var liElements = nav.getElementsByTagName('li');
-    var classes = eventElement.classList;
+    const liElements = nav.getElementsByTagName('li');
+    const classes = eventElement.classList;
 
     if (!classes.contains('active')) {
-        for (var i = 0, len = liElements.length; i < len; i++) {
+        for (let i = 0, len = liElements.length; i < len; i++) {
             liElements[i].classList.remove('active');
         }
         classes.add('active');
@@ -451,11 +451,11 @@ function toggleActiveNavMenuElement(nav, eventElement) {
 function toggleActiveCatMenuElement(nav, eventElementId) {
     'use strict';
 
-    var eventElement = document.getElementById(eventElementId);
-    var liElements = nav.querySelectorAll('.active, .a-active');
-    var classes = eventElement.classList;
-    var i;
-    var len;
+    const eventElement = document.getElementById(eventElementId),
+        liElements = nav.querySelectorAll('.active, .a-active'),
+        classes = eventElement.classList;
+    let i,
+        len;
 
     if (!classes.contains('active')) {
         for (i = 0, len = liElements.length; i < len; i++) {
@@ -465,7 +465,7 @@ function toggleActiveCatMenuElement(nav, eventElementId) {
         classes.add('a-active');
 
         i = 0;
-        var parent = eventElement.parentElement;
+        let parent = eventElement.parentElement;
         while (parent && parent.id !== nav.id && i < 10) {
             if (parent.tagName === 'LI') {
                 parent.classList.add('active');
@@ -483,7 +483,7 @@ function displayCommentPrice(node, currency, type, payout) {
     'use strict';
 
     if (node && type && payout) {
-        var profit = payout - type,
+        const profit = payout - type,
             return_percent = (profit / type) * 100,
             comment = Content.localize().textNetProfit + ': ' + format_money(currency, profit) + ' | ' + Content.localize().textReturn + ' ' + return_percent.toFixed(1) + '%';
 
@@ -503,10 +503,10 @@ function displayCommentSpreads(node, currency, point) {
     'use strict';
 
     if (node && point) {
-        var amountPerPoint = document.getElementById('amount_per_point').value,
+        const amountPerPoint = document.getElementById('amount_per_point').value,
             stopType = document.querySelector('input[name="stop_type"]:checked').value,
-            stopLoss = document.getElementById('stop_loss').value,
-            displayAmount = 0;
+            stopLoss = document.getElementById('stop_loss').value;
+        let displayAmount = 0;
 
         if (isNaN(stopLoss) || isNaN(amountPerPoint)) {
             node.hide();
@@ -533,16 +533,16 @@ function displayCommentSpreads(node, currency, point) {
 function debounce(func, wait, immediate) {
     'use strict';
 
-    var timeout;
-    var delay = wait || 500;
+    let timeout;
+    const delay = wait || 500;
     return function() {
-        var context = this,
+        const context = this,
             args = arguments;
-        var later = function() {
+        const later = function() {
             timeout = null;
             if (!immediate) func.apply(context, args);
         };
-        var callNow = immediate && !timeout;
+        const callNow = immediate && !timeout;
         clearTimeout(timeout);
         timeout = setTimeout(later, delay);
         if (callNow) func.apply(context, args);
@@ -555,10 +555,10 @@ function debounce(func, wait, immediate) {
 function getDefaultMarket() {
     'use strict';
 
-    var mkt = Defaults.get('market');
-    var markets = Symbols.markets(1);
+    let mkt = Defaults.get('market');
+    const markets = Symbols.markets(1);
     if (!mkt || !markets[mkt]) {
-        var sorted_markets = Object.keys(Symbols.markets()).filter(function(v) {
+        const sorted_markets = Object.keys(Symbols.markets()).filter(function(v) {
             return markets[v].is_active;
         }).sort(function(a, b) {
             return getMarketsOrder(a) - getMarketsOrder(b);
@@ -570,7 +570,7 @@ function getDefaultMarket() {
 
 // Order
 function getMarketsOrder(market) {
-    var order = {
+    const order = {
         forex      : 1,
         volidx     : 2,
         indices    : 3,
@@ -599,7 +599,7 @@ function addEventListenerForm() {
 function submitForm(form) {
     'use strict';
 
-    var button = form.ownerDocument.createElement('input');
+    const button = form.ownerDocument.createElement('input');
     button.style.display = 'none';
     button.type = 'submit';
     form.appendChild(button).click();
@@ -612,7 +612,7 @@ function submitForm(form) {
 function durationOrder(duration) {
     'use strict';
 
-    var order = {
+    const order = {
         t: 1,
         s: 2,
         m: 3,
@@ -625,7 +625,7 @@ function durationOrder(duration) {
 function marketOrder(market) {
     'use strict';
 
-    var order = {
+    const order = {
         forex          : 0,
         major_pairs    : 1,
         minor_pairs    : 2,
@@ -665,7 +665,7 @@ function marketSort(a, b) {
 function displayTooltip(market, symbol) {
     'use strict';
 
-    var tip = document.getElementById('symbol_tip'),
+    const tip = document.getElementById('symbol_tip'),
         guide = document.getElementById('guideBtn'),
         app = document.getElementById('androidApp'),
         appstore = document.getElementById('appstore'),
@@ -700,9 +700,9 @@ function displayTooltip(market, symbol) {
 }
 
 function selectOption(option, select) {
-    var options = select.getElementsByTagName('option');
-    var contains = 0;
-    for (var i = 0; i < options.length; i++) {
+    const options = select.getElementsByTagName('option');
+    let contains = 0;
+    for (let i = 0; i < options.length; i++) {
         if (options[i].value === option && !options[i].hasAttribute('disabled')) {
             contains = 1;
             break;
@@ -718,7 +718,7 @@ function selectOption(option, select) {
 
 function updatePurchaseStatus(final_price, pnl, contract_status) {
     $('#contract_purchase_heading').text(localize(contract_status));
-    var $payout = $('#contract_purchase_payout'),
+    const $payout = $('#contract_purchase_payout'),
         $cost = $('#contract_purchase_cost'),
         $profit = $('#contract_purchase_profit');
 
@@ -738,13 +738,13 @@ function updateContractBalance(balance) {
 }
 
 function updateWarmChart() {
-    var $chart = $('#trading_worm_chart');
-    var spots =  Object.keys(Tick.spots()).sort(function(a, b) {
+    const $chart = $('#trading_worm_chart');
+    const spots =  Object.keys(Tick.spots()).sort(function(a, b) {
         return a - b;
     }).map(function(v) {
         return Tick.spots()[v];
     });
-    var chart_config = {
+    const chart_config = {
         type              : 'line',
         lineColor         : '#606060',
         fillColor         : false,
@@ -789,7 +789,7 @@ function chartFrameCleanup() {
     /*
      * Prevent IE memory leak (http://stackoverflow.com/questions/8407946).
      */
-    var chart_frame = document.getElementById('chart_frame');
+    const chart_frame = document.getElementById('chart_frame');
     if (chart_frame) {
         chart_frame.src = 'about:blank';
     }
@@ -806,7 +806,7 @@ function chartFrameSource() {
 }
 
 function setChartSource() {
-    var ja = japanese_client();
+    const ja = japanese_client();
     document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + getLanguage().toLowerCase() +
   '&hideOverlay=' + (ja ? 'true' : 'false') + '&hideShare=' + (ja ? 'true' : 'false') + '&timezone=GMT+' + (ja ? '9' : '0') +
   '&hideFooter=' + (ja ? 'true' : 'false');
@@ -820,15 +820,15 @@ function setChartSource() {
 function toggleActiveNavMenuElement_Beta(nav, eventElement) {
     'use strict';
 
-    var liElements = nav.getElementsByTagName('li');
-    var classes = eventElement.classList;
+    const liElements = nav.getElementsByTagName('li');
+    const classes = eventElement.classList;
 
     if (!classes.contains('active')) {
-        for (var i = 0, len = liElements.length; i < len; i++) {
+        for (let i = 0, len = liElements.length; i < len; i++) {
             liElements[i].classList.remove('active');
         }
         classes.add('active');
-        var parent = eventElement.parentElement.parentElement;
+        const parent = eventElement.parentElement.parentElement;
         if (parent.tagName === 'LI' && !parent.classList.contains('active')) {
             parent.classList.add('active');
         }
@@ -839,14 +839,14 @@ function updatePurchaseStatus_Beta(final_price, pnl, contract_status) {
     final_price = String(final_price).replace(/,/g, '') * 1;
     pnl = String(pnl).replace(/,/g, '') * 1;
     $('#contract_purchase_heading').text(localize(contract_status));
-    var payout  = document.getElementById('contract_purchase_payout'),
+    const payout  = document.getElementById('contract_purchase_payout'),
         cost    = document.getElementById('contract_purchase_cost'),
         profit  = document.getElementById('contract_purchase_profit');
 
     label_value(cost, Content.localize().textStake, addComma(Math.abs(pnl)));
     label_value(payout, Content.localize().textPayout, addComma(final_price));
 
-    var isWin = (final_price > 0);
+    const isWin = (final_price > 0);
     $('#contract_purchase_profit_value').attr('class', (isWin ? 'profit' : 'loss'));
     label_value(profit, isWin ? Content.localize().textProfit : Content.localize().textLoss,
         addComma(isWin ? Math.round((final_price - pnl) * 100) / 100 : -Math.abs(pnl)));
@@ -855,7 +855,7 @@ function updatePurchaseStatus_Beta(final_price, pnl, contract_status) {
 function displayTooltip_Beta(market, symbol) {
     'use strict';
 
-    var tip = document.getElementById('symbol_tip'),
+    const tip = document.getElementById('symbol_tip'),
         markets = document.getElementById('contract_markets').value;
     if (!market || !symbol) return;
     if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
@@ -881,29 +881,30 @@ function displayTooltip_Beta(market, symbol) {
 }
 
 function label_value(label_elem, label, value, no_currency) {
-    var currency = Client.get_value('currency');
+    const currency = Client.get_value('currency');
     label_elem.innerHTML = label;
-    var value_elem = document.getElementById(label_elem.id + '_value');
+    const value_elem = document.getElementById(label_elem.id + '_value');
     value_elem.innerHTML = no_currency ? value : format_money(currency, value);
     value_elem.setAttribute('value', String(value).replace(/,/g, ''));
 }
 
 function timeIsValid($element) {
-    var endDateValue = document.getElementById('expiry_date').getAttribute('data-value'),
+    let endDateValue = document.getElementById('expiry_date').getAttribute('data-value'),
         startDateValue = document.getElementById('date_start').value,
         endTimeValue = document.getElementById('expiry_time').value;
+    const $invalid_time = $('#invalid-time');
 
     if ($element.attr('id') === $('#expiry_time') && endTimeValue &&
         !/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(endTimeValue)) {
         $element.addClass('error-field');
-        if ($('#invalid-time').length === 0) {
+        if ($invalid_time.length === 0) {
             $('#expiry_type_endtime').parent().append($('<p>', { class: 'error-msg', id: 'invalid-time', text: localize('Time is in the wrong format.') }));
         }
         return false;
     }
 
     $element.removeClass('error-field');
-    $('#invalid-time').remove();
+    $invalid_time.remove();
 
     endDateValue = endDateValue ? toISOFormat(Moment(endDateValue)) : toISOFormat(new Moment());
     startDateValue = startDateValue === 'now' ? Math.floor(window.time._i / 1000) : startDateValue;

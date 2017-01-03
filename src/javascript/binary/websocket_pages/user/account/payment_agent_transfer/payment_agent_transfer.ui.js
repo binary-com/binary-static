@@ -1,66 +1,72 @@
-var localize = require('../../../../base/localize').localize;
+const localize = require('../../../../base/localize').localize;
 
-var PaymentAgentTransferUI = (function () {
+const PaymentAgentTransferUI = (function () {
     'use strict';
 
-    var hiddenClass = 'invisible';
+    const hiddenClass = 'invisible';
 
-    function hideForm() {
+    const hideForm = function() {
         $('#paymentagent_transfer').addClass(hiddenClass);
-    }
-    function showForm() {
+    };
+    const showForm = function() {
         $('#paymentagent_transfer').removeClass(hiddenClass);
-    }
+    };
 
-    function hideConfirmation() {
+    const hideConfirmation = function() {
         $('#pa_confirm_transfer').addClass(hiddenClass);
-    }
-    function showConfirmation() {
-        $('#pa_confirm_transfer').removeClass(hiddenClass);
-        $('#pa_confirm_transfer .errorfield').addClass(hiddenClass);
-    }
+    };
+    const showConfirmation = function() {
+        $('#pa_confirm_transfer').removeClass(hiddenClass)
+                                 .find('.errorfield').addClass(hiddenClass);
+    };
 
-    function hideDone() {
+    const hideDone = function() {
         $('#pa_transfer_done').addClass(hiddenClass);
-    }
-    function showDone() {
+    };
+    const showDone = function() {
         $('#pa_transfer_done').removeClass(hiddenClass);
-    }
+    };
 
-    function hideNotes() {
+    const hideNotes = function() {
         $('#paymentagent_transfer_notes').addClass(hiddenClass);
-    }
-    function showNotes() {
+    };
+    const showNotes = function() {
         $('#paymentagent_transfer_notes').removeClass(hiddenClass);
-    }
-    function updateFormView(currency) {
-        $('#paymentagent_transfer label[for="amount"]').text(localize('Amount') + ' ' + currency);
-    }
+    };
+    const updateFormView = function(currency) {
+        $('#paymentagent_transfer').find('label[for="amount"]').text(localize('Amount') + ' ' + currency);
+    };
 
-    function updateConfirmView(username, loginid, amount, currency) {
-        $('#pa_confirm_transfer td#user-name').html(username);
-        $('#pa_confirm_transfer td#login-id').html(loginid);
-        $('#pa_confirm_transfer td#amount').html(currency + ' ' + amount);
-    }
+    const updateConfirmView = function(username, loginid, amount, currency) {
+        $('#pa_confirm_transfer')
+            .find('td#user-name')
+                .html(username)
+            .end()
+            .find('td#login-id')
+                .html(loginid)
+            .end()
+            .find('td#amount')
+                .html(currency + ' ' + amount);
+    };
 
-    function showTransferError(err) {
-        $('#pa_confirm_transfer .errorfield')
-            .removeClass(hiddenClass)
-            .text(localize(err));
-    }
+    const showTransferError = function(err) {
+        $('#pa_confirm_transfer').find('.errorfield')
+                                 .removeClass(hiddenClass)
+                                 .text(localize(err));
+    };
 
-    function updateDoneView(fromID, toID, amount, currency) {
-        var templateString = 'Your request to transfer [_1] [_2] from [_3] to [_4] has been successfully processed.';
-        var confirmMsg = localize(templateString, [
+    const updateDoneView = function(fromID, toID, amount, currency) {
+        const templateString = 'Your request to transfer [_1] [_2] from [_3] to [_4] has been successfully processed.';
+        const confirmMsg = localize(templateString, [
             amount,
             currency,
             fromID,
             toID,
         ]);
 
-        $('#pa_transfer_done > #confirm-msg').text(confirmMsg);
-        $('#pa_transfer_done > #confirm-msg').removeClass(hiddenClass);
-    }
+        $('#pa_transfer_done').find(' > #confirm-msg').text(confirmMsg)
+                                             .removeClass(hiddenClass);
+    };
 
     return {
         hideForm         : hideForm,

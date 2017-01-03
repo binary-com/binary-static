@@ -1,13 +1,13 @@
-var Client                    = require('./client').Client;
-var checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
-var localize                  = require('./localize').localize;
-var check_risk_classification = require('../common_functions/check_risk_classification').check_risk_classification;
-var Login                     = require('./login').Login;
-var url_for                   = require('./url').url_for;
-var GTM                       = require('./gtm').GTM;
+const Client                    = require('./client').Client;
+const Login                     = require('./login').Login;
+const url_for                   = require('./url').url_for;
+const GTM                       = require('./gtm').GTM;
+const localize                  = require('./localize').localize;
+const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
+const check_risk_classification = require('../common_functions/check_risk_classification').check_risk_classification;
 
-var Header = (function() {
-    var on_load = function() {
+const Header = (function() {
+    const on_load = function() {
         show_or_hide_login_form();
         show_or_hide_language();
         logout_handler();
@@ -20,25 +20,25 @@ var Header = (function() {
         }
     };
 
-    var logout_handler = function() {
+    const logout_handler = function() {
         $('a.logout').unbind('click').click(function() {
             Client.send_logout_request();
         });
     };
 
-    var animate_disappear = function(element) {
+    const animate_disappear = function(element) {
         element.animate({ opacity: 0 }, 100, function() {
             element.css({ visibility: 'hidden', display: 'none' });
         });
     };
 
-    var animate_appear = function(element) {
+    const animate_appear = function(element) {
         element.css({ visibility: 'visible', display: 'block' })
             .animate({ opacity: 1 }, 100);
     };
 
-    var show_or_hide_language = function() {
-        var $el = $('#select_language'),
+    const show_or_hide_language = function() {
+        const $el = $('#select_language'),
             $all_accounts = $('#all-accounts');
         $('.languages').off('click').on('click', function(event) {
             event.stopPropagation();
@@ -55,9 +55,9 @@ var Header = (function() {
         });
     };
 
-    var show_or_hide_login_form = function() {
+    const show_or_hide_login_form = function() {
         if (!Client.get_boolean('is_logged_in')) return;
-        var all_accounts = $('#all-accounts'),
+        const all_accounts = $('#all-accounts'),
             language = $('#select_language');
         $('.nav-menu').unbind('click').on('click', function(event) {
             event.stopPropagation();
@@ -68,13 +68,13 @@ var Header = (function() {
                 animate_appear(all_accounts);
             }
         });
-        var loginid_select = '';
-        var loginid_array = Client.get_value('loginid_array');
-        for (var i = 0; i < loginid_array.length; i++) {
-            var login = loginid_array[i];
+        let loginid_select = '';
+        const loginid_array = Client.get_value('loginid_array');
+        for (let i = 0; i < loginid_array.length; i++) {
+            const login = loginid_array[i];
             if (!login.disabled) {
-                var curr_id = login.id;
-                var type = 'Virtual';
+                const curr_id = login.id;
+                let type = 'Virtual';
                 if (login.real) {
                     if (login.financial)          type = 'Investment';
                     else if (login.non_financial) type = 'Gaming';
@@ -100,11 +100,11 @@ var Header = (function() {
         });
     };
 
-    var switch_loginid = function(loginid) {
+    const switch_loginid = function(loginid) {
         if (!loginid || loginid.length === 0) {
             return;
         }
-        var token = Client.get_token(loginid);
+        const token = Client.get_token(loginid);
         if (!token || token.length === 0) {
             Client.send_logout_request(true);
             return;
@@ -124,19 +124,19 @@ var Header = (function() {
         window.location.reload();
     };
 
-    var topbar_message_visibility = function(c_config) {
+    const topbar_message_visibility = function(c_config) {
         if (Client.get_boolean('is_logged_in')) {
             if (!Client.get_boolean('values_set') || !c_config) {
                 return;
             }
-            var loginid_array = Client.get_value('loginid_array');
+            const loginid_array = Client.get_value('loginid_array');
 
-            var $upgrade_msg = $('.upgrademessage'),
+            const $upgrade_msg = $('.upgrademessage'),
                 hiddenClass  = 'invisible';
-            var hide_upgrade = function() {
+            const hide_upgrade = function() {
                 $upgrade_msg.addClass(hiddenClass);
             };
-            var show_upgrade = function(url, msg) {
+            const show_upgrade = function(url, msg) {
                 $upgrade_msg.removeClass(hiddenClass)
                     .find('a').removeClass(hiddenClass)
                     .attr('href', url_for(url))
@@ -144,9 +144,9 @@ var Header = (function() {
             };
 
             if (Client.get_boolean('is_virtual')) {
-                var show_upgrade_msg = true;
-                var show_virtual_msg = true;
-                var show_activation_msg = false;
+                let show_upgrade_msg = true,
+                    show_virtual_msg = true,
+                    show_activation_msg = false;
                 if (localStorage.getItem('jp_test_allowed') === '1') {
                     show_virtual_msg = false;
                     show_upgrade_msg = false; // do not show upgrade for user that filled up form
@@ -154,7 +154,7 @@ var Header = (function() {
                     show_upgrade_msg = false;
                     show_activation_msg = true;
                 }
-                for (var i = 0; i < loginid_array.length; i++) {
+                for (let i = 0; i < loginid_array.length; i++) {
                     if (loginid_array[i].real) {
                         hide_upgrade();
                         show_upgrade_msg = false;
@@ -177,12 +177,11 @@ var Header = (function() {
                     }
                 }
             } else {
-                var show_financial = false;
-
+                let show_financial = false;
                 // also allow UK MLT client to open MF account
                 if (Client.can_upgrade_gaming_to_financial(c_config) || (Client.get_value('residence') === 'gb' && /^MLT/.test(Client.get_value('loginid')))) {
                     show_financial = true;
-                    for (var j = 0; j < loginid_array.length; j++) {
+                    for (let j = 0; j < loginid_array.length; j++) {
                         if (loginid_array[j].financial) {
                             show_financial = false;
                             break;

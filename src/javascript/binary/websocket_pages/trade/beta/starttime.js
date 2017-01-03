@@ -1,10 +1,10 @@
-var Contract_Beta      = require('./contract').Contract_Beta;
-var Durations_Beta     = require('./duration').Durations;
-var Defaults = require('../defaults').Defaults;
-var getStartDateNode = require('../common_independent').getStartDateNode;
-var moment = require('moment');
-var Content = require('../../../common_functions/content').Content;
-var State = require('../../../base/storage').State;
+const Contract_Beta      = require('./contract').Contract_Beta;
+const Durations_Beta     = require('./duration').Durations;
+const Defaults = require('../defaults').Defaults;
+const getStartDateNode = require('../common_independent').getStartDateNode;
+const moment = require('moment');
+const Content = require('../../../common_functions/content').Content;
+const State = require('../../../base/storage').State;
 
 /*
  * Handles start time display
@@ -14,24 +14,24 @@ var State = require('../../../base/storage').State;
  * box
  */
 
-var StartDates_Beta = (function() {
+const StartDates_Beta = (function() {
     'use strict';
 
-    var hasNow = 0;
+    let hasNow = 0;
     State.remove('is_start_dates_displayed');
 
-    var compareStartDate = function(a, b) {
+    const compareStartDate = function(a, b) {
         return (a.date < b.date) ? -1 : (a.date > b.date ? 1 : 0);
     };
 
-    var displayStartDates = function() {
-        var startDates = Contract_Beta.startDates();
+    const displayStartDates = function() {
+        const startDates = Contract_Beta.startDates();
 
         if (startDates && startDates.list && startDates.list.length) {
-            var target   = getStartDateNode(),
+            const target   = getStartDateNode(),
                 fragment =  document.createDocumentFragment(),
-                row      = document.getElementById('date_start_row'),
-                option,
+                row      = document.getElementById('date_start_row');
+            let option,
                 content;
 
             row.style.display = 'flex';
@@ -54,13 +54,13 @@ var StartDates_Beta = (function() {
 
             startDates.list.sort(compareStartDate);
 
-            var first;
+            let first;
             startDates.list.forEach(function (start_date) {
-                var a = moment.unix(start_date.open).utc();
-                var b = moment.unix(start_date.close).utc();
+                let a = moment.unix(start_date.open).utc();
+                const b = moment.unix(start_date.close).utc();
 
-                var ROUNDING = 5 * 60 * 1000;
-                var start = moment.utc();
+                const ROUNDING = 5 * 60 * 1000;
+                const start = moment.utc();
 
                 if (moment(start).isAfter(moment(a))) {
                     a = start;

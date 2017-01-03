@@ -1,19 +1,19 @@
-var getLoginToken   = require('../../../../common_functions/common_functions').getLoginToken;
-var Content         = require('../../../../common_functions/content').Content;
-var ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
-var bind_validation = require('../../../../validator').bind_validation;
-var dv              = require('../../../../../lib/validation');
-var localize        = require('../../../../base/localize').localize;
-var load_with_pjax  = require('../../../../base/pjax').load_with_pjax;
-var Client          = require('../../../../base/client').Client;
+const getLoginToken   = require('../../../../common_functions/common_functions').getLoginToken;
+const Content         = require('../../../../common_functions/content').Content;
+const ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
+const bind_validation = require('../../../../validator').bind_validation;
+const dv              = require('../../../../../lib/validation');
+const localize        = require('../../../../base/localize').localize;
+const load_with_pjax  = require('../../../../base/pjax').load_with_pjax;
+const Client          = require('../../../../base/client').Client;
 
-var SecurityWS = (function() {
+const SecurityWS = (function() {
     'use strict';
 
-    var $form;
-    var current_state,
+    let $form,
+        current_state,
         redirect_url;
-    var STATE = {
+    const STATE = {
         WAIT_AUTH   : 'WAIT_AUTH',
         QUERY_LOCKED: 'QUERY_LOCKED',
         LOCKED      : 'LOCKED',
@@ -23,12 +23,12 @@ var SecurityWS = (function() {
         DONE        : 'DONE',
     };
 
-    function clearErrors() {
+    const clearErrors = function() {
         $('#SecuritySuccessMsg').text('');
         $('#invalidinputfound').text('');
-    }
+    };
 
-    function checkIsVirtual() {
+    const checkIsVirtual = function() {
         if (!Client.get_boolean('is_virtual')) {
             return false;
         }
@@ -37,16 +37,16 @@ var SecurityWS = (function() {
             .addClass('notice-msg center-text')
             .text(Content.localize().textFeatureUnavailable);
         return true;
-    }
+    };
 
-    function makeAuthRequest() {
+    const makeAuthRequest = function() {
         BinarySocket.send({
             authorize  : getLoginToken(),
             passthrough: { dispatch_to: 'cashier_password' },
         });
-    }
+    };
 
-    function init() {
+    const init = function() {
         Content.populate();
         $form = $('#changeCashierLock');
         if (checkIsVirtual()) return;
@@ -54,29 +54,29 @@ var SecurityWS = (function() {
         current_state = STATE.WAIT_AUTH;
         BinarySocket.init({ onmessage: handler });
         makeAuthRequest();
-    }
+    };
 
-    function authorised() {
+    const authorised = function() {
         current_state = STATE.QUERY_LOCKED;
         BinarySocket.send({
             cashier_password: '1',
         });
-    }
+    };
 
-    function updatePage(config) {
+    const updatePage = function(config) {
         $('legend').text(localize(config.legend));
         $('#lockInfo').text(localize(config.info));
         $form.find('button')
             .attr('value', config.button)
             .html(localize(config.button));
-    }
+    };
 
-    function setupRepeatPasswordForm() {
+    const setupRepeatPasswordForm = function() {
         $('#repasswordrow').show();
-    }
+    };
 
-    function lockedStatus(response) {
-        var locked = +response.cashier_password === 1;
+    const lockedStatus = function(response) {
+        const locked = +response.cashier_password === 1;
         if (locked) {
             updatePage({
                 legend: 'Unlock Cashier',
@@ -108,35 +108,35 @@ var SecurityWS = (function() {
             },
         });
         $form.show();
-    }
+    };
 
-    function getUnlockedSchema() {
-        var err = Content.localize().textPasswordsNotMatching;
-        function matches(value, data) {
+    const getUnlockedSchema = function() {
+        const err = Content.localize().textPasswordsNotMatching;
+        const matches = function(value, data) {
             return value === data.cashierlockpassword1;
-        }
+        };
 
         return {
             cashierlockpassword1: [ValidateV2.password],
             cashierlockpassword2: [dv.check(matches, err)],
         };
-    }
+    };
 
-    function makeTryingRequest() {
-        var key = current_state === STATE.TRY_UNLOCK ?
+    const makeTryingRequest = function() {
+        const key = current_state === STATE.TRY_UNLOCK ?
             'unlock_password' :
             'lock_password';
-        var params  = { cashier_password: '1' };
+        const params  = { cashier_password: '1' };
         params[key] = $('#cashierlockpassword1').val();
         BinarySocket.send(params);
-    }
+    };
 
-    function tryStatus(response) {
+    const tryStatus = function(response) {
         if (response.error) {
             current_state = current_state === STATE.TRY_UNLOCK ?
                 STATE.LOCKED :
                 STATE.UNLOCKED;
-            var message = response.error.message;
+            let message = response.error.message;
             if (current_state === STATE.LOCKED &&
                 response.error.code === 'InputValidationFailed') {
                 message = 'Sorry, you have entered an incorrect cashier password';
@@ -150,18 +150,18 @@ var SecurityWS = (function() {
         redirect_url = current_state === STATE.TRY_UNLOCK ? sessionStorage.getItem('cashier_lock_redirect') : '';
         setTimeout(redirect, 2000);
         current_state = STATE.DONE;
-    }
+    };
 
-    function redirect() {
+    const redirect = function() {
         if (redirect_url) {
             sessionStorage.removeItem('cashier_lock_redirect');
             load_with_pjax(redirect_url);
         }
-    }
+    };
 
-    function handler(msg) {
+    const handler = function(msg) {
         if (checkIsVirtual()) return;
-        var response = JSON.parse(msg.data);
+        const response = JSON.parse(msg.data);
         if (response.msg_type === 'authorize') {
             switch (current_state) {
                 case STATE.WAIT_AUTH:
@@ -187,7 +187,7 @@ var SecurityWS = (function() {
                     break;
             }
         }
-    }
+    };
 
     return {
         init: init,

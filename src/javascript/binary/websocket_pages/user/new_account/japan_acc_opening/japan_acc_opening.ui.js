@@ -1,17 +1,17 @@
-var Content             = require('../../../../common_functions/content').Content;
-var ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
-var Validate            = require('../../../../common_functions/validation').Validate;
-var JapanAccOpeningData = require('./japan_acc_opening.data').JapanAccOpeningData;
-var localize = require('../../../../base/localize').localize;
+const Content             = require('../../../../common_functions/content').Content;
+const ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
+const Validate            = require('../../../../common_functions/validation').Validate;
+const JapanAccOpeningData = require('./japan_acc_opening.data').JapanAccOpeningData;
+const localize = require('../../../../base/localize').localize;
 
-var JapanAccOpeningUI = (function () {
+const JapanAccOpeningUI = (function () {
     'use strict';
 
-    var elementObj;
+    let elementObj;
 
-    function checkValidity() {
+    const checkValidity = function() {
         window.accountErrorCounter = 0;
-        var letters = Content.localize().textLetters,
+        const letters = Content.localize().textLetters,
             numbers = Content.localize().textNumbers,
             space   = Content.localize().textSpace,
             hyphen  = Content.localize().textHyphen,
@@ -61,7 +61,7 @@ var JapanAccOpeningUI = (function () {
             pep        : document.getElementById('not-pep'),
         };
 
-        var errorObj = {
+        const errorObj = {
             gender     : document.getElementById('error-gender'),
             fname      : document.getElementById('error-fname'),
             lname      : document.getElementById('error-lname'),
@@ -109,13 +109,13 @@ var JapanAccOpeningUI = (function () {
             }
         });
 
-        if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test((elementObj.fname.value).trim())) {
+        if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:?><,|\d]+/.test((elementObj.fname.value).trim())) {
             errorObj.fname.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);
             Validate.displayErrorMessage(errorObj.fname);
             window.accountErrorCounter++;
         }
 
-        if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test((elementObj.lname.value).trim())) {
+        if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:?><,|\d]+/.test((elementObj.lname.value).trim())) {
             errorObj.lname.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);
             Validate.displayErrorMessage(errorObj.lname);
             window.accountErrorCounter++;
@@ -166,23 +166,25 @@ var JapanAccOpeningUI = (function () {
             }
         });
 
+        const $submit_msg = $('#submit-message');
+
         if (window.accountErrorCounter === 0) {
             Object.keys(errorObj).forEach(function (key) {
                 if (errorObj[key].offsetParent !== null) {
                     errorObj[key].setAttribute('style', 'display:none');
                 }
             });
-            $('#submit-message').removeClass('errorfield').text(localize('Processing your request...'));
+            $submit_msg.removeClass('errorfield').text(localize('Processing your request...'));
             return 1;
         }
         // else
-        $('#submit-message').addClass('errorfield').text(localize('Please check the above form for pending errors.'));
+        $submit_msg.addClass('errorfield').text(localize('Please check the above form for pending errors.'));
         return 0;
-    }
+    };
 
-    function fireRequest() {
+    const fireRequest = function() {
         JapanAccOpeningData.getJapanAcc(elementObj);
-    }
+    };
 
     return {
         checkValidity: checkValidity,

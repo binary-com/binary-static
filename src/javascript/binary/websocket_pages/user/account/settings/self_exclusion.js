@@ -1,31 +1,111 @@
-var showLoadingImage = require('../../../../base/utility').showLoadingImage;
-var Content          = require('../../../../common_functions/content').Content;
-var ValidateV2       = require('../../../../common_functions/validation_v2').ValidateV2;
-var ValidationUI     = require('../../../../validator').ValidationUI;
-var validate_object  = require('../../../../validator').validate_object;
-var bind_validation  = require('../../../../validator').bind_validation;
-var moment           = require('moment');
-var dv               = require('../../../../../lib/validation');
-var TimePicker       = require('../../../../components/time_picker').TimePicker;
-var DatePicker       = require('../../../../components/date_picker').DatePicker;
-var dateValueChanged = require('../../../../common_functions/common_functions').dateValueChanged;
-var localize         = require('../../../../base/localize').localize;
-var Client           = require('../../../../base/client').Client;
+const showLoadingImage = require('../../../../base/utility').showLoadingImage;
+const Content          = require('../../../../common_functions/content').Content;
+const ValidateV2       = require('../../../../common_functions/validation_v2').ValidateV2;
+const ValidationUI     = require('../../../../validator').ValidationUI;
+const validate_object  = require('../../../../validator').validate_object;
+const bind_validation  = require('../../../../validator').bind_validation;
+const moment           = require('moment');
+const dv               = require('../../../../../lib/validation');
+const TimePicker       = require('../../../../components/time_picker').TimePicker;
+const DatePicker       = require('../../../../components/date_picker').DatePicker;
+const dateValueChanged = require('../../../../common_functions/common_functions').dateValueChanged;
+const localize         = require('../../../../base/localize').localize;
+const Client           = require('../../../../base/client').Client;
 
-var SelfExclusionWS = (function() {
+const SelfExclusionWS = (function() {
     'use strict';
 
-    var $form,
-        $loading;
+    let $form,
+        $loading,
+        fields;
 
-    var timeDateID  = 'timeout_until_duration';
-    var timeID      = 'timeout_until';
-    var dateID      = 'exclude_until';
-    var errorClass  = 'errorfield';
-    var hiddenClass = 'hidden';
-    var fields;
+    const timeDateID  = 'timeout_until_duration',
+        timeID      = 'timeout_until',
+        dateID      = 'exclude_until',
+        errorClass  = 'errorfield',
+        hiddenClass = 'hidden';
 
-    function reallyInit() {
+    // ----------------------
+    // ----- Get Values -----
+    // ----------------------
+    const getRequest = function() {
+        BinarySocket.send({ get_self_exclusion: 1 });
+    };
+
+    const getResponse = function(response) {
+        if (response.error) {
+            if (response.error.code === 'ClientSelfExclusion') {
+                Client.send_logout_request();
+            }
+            if (response.error.message) {
+                showPageError(response.error.message, true);
+            }
+            return false;
+        }
+        $loading.addClass(hiddenClass);
+        $form.removeClass(hiddenClass);
+        $.each(response.get_self_exclusion, function(key, value) {
+            fields[key] = value + '';
+            $form.find('#' + key).val(value);
+        });
+        return true;
+    };
+
+    const initDatePicker = function() {
+        const timePickerInst = new TimePicker('#' + timeID);
+        timePickerInst.show();
+        // 6 weeks
+        const datePickerTime = new DatePicker('#' + timeDateID);
+        datePickerTime.show('today', 6 * 7);
+        // 5 years
+        const datePickerDate = new DatePicker('#' + dateID);
+        datePickerDate.show(moment().add(moment.duration(6, 'months')).toDate(), 5 * 365);
+        $('#' + timeDateID + ', #' + dateID).change(function() {
+            dateValueChanged(this, 'date');
+        });
+    };
+
+    // ----------------------
+    // ----- Set Values -----
+    // ----------------------
+    const setRequest = function(data) {
+        data.set_self_exclusion = 1;
+        BinarySocket.send(data);
+    };
+
+    const setResponse = function(response) {
+        if (response.error) {
+            const errMsg = response.error.message;
+            const field  = response.error.field;
+            if (field) {
+                ValidationUI.draw('input[name=' + field + ']', errMsg);
+            } else {
+                showFormMessage(localize(errMsg), false);
+            }
+            return;
+        }
+        showFormMessage('Your changes have been updated.', true);
+        Client.set_value('session_start', moment().unix()); // used to handle session duration limit
+        getRequest();
+    };
+
+    const validate = function(data) {
+        if (data.exclude_until) {
+            delete data.exclude_until;
+            data.exclude_until = $('#' + dateID).attr('data-value');
+        }
+        if (data.timeout_until_duration) {
+            delete data.timeout_until_duration;
+            data.timeout_until_duration = $('#' + timeDateID).attr('data-value');
+        }
+        const info = validate_object(data, getSchema());
+        info.errors = info.errors.filter(function(e) {
+            return e.err !== EMPTY;
+        });
+        return info;
+    };
+
+    const reallyInit = function() {
         $form    = $('#frmSelfExclusion');
         $loading = $('#loading');
 
@@ -51,14 +131,14 @@ var SelfExclusionWS = (function() {
 
         initDatePicker();
         getRequest();
-    }
+    };
 
-    function init() {
+    const init = function() {
         Content.populate();
         BinarySocket.init({
             onmessage: function(msg) {
-                var response = JSON.parse(msg.data);
-                var msg_type = response.msg_type;
+                const response = JSON.parse(msg.data);
+                const msg_type = response.msg_type;
                 if      (msg_type === 'authorize') reallyInit();
                 else if (msg_type === 'get_self_exclusion') getResponse(response);
                 else if (msg_type === 'set_self_exclusion') setResponse(response);
@@ -67,124 +147,57 @@ var SelfExclusionWS = (function() {
         if (Client.get_boolean('values_set')) {
             reallyInit();
         }
-    }
+    };
 
-    // ----------------------
-    // ----- Get Values -----
-    // ----------------------
-    function getRequest() {
-        BinarySocket.send({ get_self_exclusion: 1 });
-    }
-
-    function getResponse(response) {
-        if (response.error) {
-            if (response.error.code === 'ClientSelfExclusion') {
-                Client.send_logout_request();
-            }
-            if (response.error.message) {
-                showPageError(response.error.message, true);
-            }
-            return false;
-        }
-        $loading.addClass(hiddenClass);
-        $form.removeClass(hiddenClass);
-        $.each(response.get_self_exclusion, function(key, value) {
-            fields[key] = value + '';
-            $form.find('#' + key).val(value);
-        });
-        return true;
-    }
-
-    function initDatePicker() {
-        var timePickerInst = new TimePicker('#' + timeID);
-        timePickerInst.show();
-        // 6 weeks
-        var datePickerTime = new DatePicker('#' + timeDateID);
-        datePickerTime.show('today', 6 * 7);
-        // 5 years
-        var datePickerDate = new DatePicker('#' + dateID);
-        datePickerDate.show(moment().add(moment.duration(6, 'months')).toDate(), 5 * 365);
-        $('#' + timeDateID + ', #' + dateID).change(function() {
-            if (!dateValueChanged(this, 'date')) {
-                return false;
-            }
-            return true;
-        });
-    }
-
-    // ----------------------
-    // ----- Set Values -----
-    // ----------------------
-    function setRequest(data) {
-        data.set_self_exclusion = 1;
-        BinarySocket.send(data);
-    }
-
-    function setResponse(response) {
-        if (response.error) {
-            var errMsg = response.error.message;
-            var field  = response.error.field;
-            if (field) {
-                ValidationUI.draw('input[name=' + field + ']', errMsg);
-            } else {
-                showFormMessage(localize(errMsg), false);
-            }
-            return;
-        }
-        showFormMessage('Your changes have been updated.', true);
-        Client.set_value('session_start', moment().unix()); // used to handle session duration limit
-        getRequest();
-    }
-
-    // To propogate empty values.
-    function EMPTY() {}
-    function allowEmpty(value) {
+    // To propagate empty values.
+    const EMPTY = function() {};
+    const allowEmpty = function(value) {
         return value.length > 0 ?
             dv.ok(value) :
             dv.fail(EMPTY);
-    }
+    };
 
-    function afterToday(date) {
+    const afterToday = function(date) {
         return date.isAfter(moment()) ?
             dv.ok(date) :
             dv.fail('Exclude time must be after today.');
-    }
+    };
+
+    // big unsigned integer.
+    const big_uint = function(x) {
+        return x.replace(/^0+/, '');
+    };
+
+    big_uint.gt = function(x, y) {
+        const maxLength = Math.max(x.length, y.length);
+        const lhs = leftPadZeros(x, maxLength);
+        const rhs = leftPadZeros(y, maxLength);
+        return lhs > rhs; // lexicographical comparison
+    };
 
     // Let empty values go to next validator, because it
     // is ok to put empty values at this stage.
-    function numericOrEmpty(value) {
+    const numericOrEmpty = function(value) {
         if (!value) return dv.ok(value);
         return /^\d+$/.test(value) ?
             dv.ok(big_uint(value)) :
             dv.fail('Please enter an integer value');
-    }
+    };
 
-    function leftPadZeros(strint, zeroCount) {
-        var result = strint;
-        for (var i = 0; i < (zeroCount - strint.length); i++) {
+    const leftPadZeros = function(strint, zeroCount) {
+        let result = strint;
+        for (let i = 0; i < (zeroCount - strint.length); i++) {
             result = '0' + result;
         }
         return result;
-    }
-
-    // big unsigned integer.
-    function big_uint(x) {
-        return x.replace(/^0+/, '');
-    }
-
-    big_uint.gt = function(x, y) {
-        var maxLength = Math.max(x.length, y.length);
-        var lhs = leftPadZeros(x, maxLength);
-        var rhs = leftPadZeros(y, maxLength);
-        return lhs > rhs; // lexicographical comparison
     };
 
-    function againstField(key) {
+    const againstField = function(key) {
         return function(value) {
-            var old = fields[key];
-            var err = localize('Please enter a number between 0 and [_1]', [old]);
-            var hasOld = !!old;
-            var isEmpty = value.length === 0;
+            const old = fields[key];
+            const err = localize('Please enter a number between 0 and [_1]', [old]);
+            const hasOld = !!old;
+            const isEmpty = value.length === 0;
             if (!hasOld) {
                 return isEmpty ? dv.fail(EMPTY) : dv.ok(value);
             }
@@ -192,42 +205,42 @@ var SelfExclusionWS = (function() {
                 dv.fail(err) :
                 dv.ok(value);
         };
-    }
+    };
 
-    function validSessionDuration(value) {
+    const validSessionDuration = function(value) {
         return +value <= moment.duration(6, 'weeks').as('minutes') ?
             dv.ok(value) :
             dv.fail('Session duration limit cannot be more than 6 weeks.');
-    }
+    };
 
-    function validExclusionDate(date) {
-        var six_months = moment().add(moment.duration(6, 'months'));
-        var five_years = moment().add(moment.duration(5, 'years'));
+    const validExclusionDate = function(date) {
+        const six_months = moment().add(moment.duration(6, 'months'));
+        const five_years = moment().add(moment.duration(5, 'years'));
         return (
             (date.isBefore(six_months) && dv.fail('Exclude time cannot be less than 6 months.')) ||
             (date.isAfter(five_years)  && dv.fail('Exclude time cannot be for more than 5 years.')) ||
             dv.ok(date)
         );
-    }
+    };
 
-    function toDateString(date) {
+    const toDateString = function(date) {
         return dv.ok(date.format('YYYY-MM-DD'));
-    }
+    };
 
-    function allowEmptyUnless(key) {
+    const allowEmptyUnless = function(key) {
         return function(value, data) {
             if (value.length > 0) return dv.ok(value);
             if (data[key].length > 0) return dv.fail('Please select a valid date');
             return dv.fail(EMPTY);
         };
-    }
+    };
 
-    var schema;
-    function getSchema() {
+    let schema;
+    const getSchema = function() {
         if (schema) return schema;
-        var V2 = ValidateV2;
-        var validTime = V2.momentFmt('HH:mm', 'Please select a valid time');
-        var validDate = V2.momentFmt('YYYY-MM-DD', 'Please select a valid date');
+        const V2 = ValidateV2;
+        const validTime = V2.momentFmt('HH:mm', 'Please select a valid time');
+        const validDate = V2.momentFmt('YYYY-MM-DD', 'Please select a valid date');
 
         schema = {
             max_7day_losses       : [numericOrEmpty, againstField('max_7day_losses')],
@@ -245,42 +258,26 @@ var SelfExclusionWS = (function() {
             timeout_until         : [allowEmpty, validTime],
         };
         return schema;
-    }
+    };
 
-    function validate(data) {
-        if (data.exclude_until) {
-            delete data.exclude_until;
-            data.exclude_until = $('#' + dateID).attr('data-value');
-        }
-        if (data.timeout_until_duration) {
-            delete data.timeout_until_duration;
-            data.timeout_until_duration = $('#' + timeDateID).attr('data-value');
-        }
-        var info = validate_object(data, getSchema());
-        info.errors = info.errors.filter(function(e) {
-            return e.err !== EMPTY;
-        });
-        return info;
-    }
-
-    function detectChange(a, b) {
-        var k_a = Object.keys(a);
-        var k_b = Object.keys(b);
+    const detectChange = function(a, b) {
+        const k_a = Object.keys(a);
+        const k_b = Object.keys(b);
         if (k_a.length !== k_b.length) {
             return true;
         }
-        for (var i = 0; i < k_a.length; i++) {
-            var key = k_a[i];
+        for (let i = 0; i < k_a.length; i++) {
+            const key = k_a[i];
             if (a[key] !== b[key]) return true;
         }
         return false;
-    }
+    };
 
-    function submitForm(e, validation) {
+    const submitForm = function(e, validation) {
         e.preventDefault();
         e.stopPropagation();
         clearError();
-        var info = validateForm(validation);
+        const info = validateForm(validation);
         if (!info.valid) return;
         if (!info.changed) {
             showFormMessage('You did not change anything.', false);
@@ -290,24 +287,24 @@ var SelfExclusionWS = (function() {
             if (!hasConfirmed()) return;
         }
         setRequest(info.data);
-    }
+    };
 
-    function validateForm(validation) {
-        var values = validation.values;
-        var valid = validation.errors.length === 0;
+    const validateForm = function(validation) {
+        const values = validation.values;
+        let valid = validation.errors.length === 0;
 
         // Do the date time addition and validation here
-        var date = values.timeout_until_duration;
+        let date = values.timeout_until_duration;
         if (date) {
             // If we've gotten this far then there must *not*
             // be an error with the timeout date.
             date = moment(date);
-            var time = values.timeout_until;
+            const time = values.timeout_until;
             if (time) {
                 date = date.add(time.format('HH'), 'hours').add(time.format('mm'), 'minutes');
             }
-            var six_weeks = moment().add(moment.duration(6, 'weeks'));
-            var res = dv.first(date, [
+            const six_weeks = moment().add(moment.duration(6, 'weeks'));
+            const res = dv.first(date, [
                 afterToday,
                 dv.check(function(d) { return !d.isAfter(six_weeks); }, 'Exclude time cannot be more than 6 weeks'),
             ]);
@@ -327,36 +324,36 @@ var SelfExclusionWS = (function() {
             valid  : valid,
             changed: valid && detectChange(validation.raw, fields),
         };
-    }
+    };
 
-    function hasConfirmed() {
-        var message = 'When you click "Ok" you will be excluded from trading on the site until the selected date.';
+    const hasConfirmed = function() {
+        const message = 'When you click "Ok" you will be excluded from trading on the site until the selected date.';
         return window.confirm(localize(message));
-    }
+    };
 
     // -----------------------------
     // ----- Message Functions -----
     // -----------------------------
-    function showPageError(errMsg, hideForm) {
+    const showPageError = function(errMsg, hideForm) {
         $('#errorMsg').html(errMsg).removeClass(hiddenClass);
         if (hideForm) {
             $form.addClass(hiddenClass);
         }
-    }
+    };
 
-    function clearError() {
+    const clearError = function() {
         $('#errorMsg').html('').addClass(hiddenClass);
         $('#formMessage').html('');
-    }
+    };
 
-    function showFormMessage(msg, isSuccess) {
+    const showFormMessage = function(msg, isSuccess) {
         $('#formMessage')
             .attr('class', isSuccess ? 'success-msg' : errorClass)
             .html(isSuccess ? '<ul class="checked"><li>' + localize(msg) + '</li></ul>' : localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);
-    }
+    };
 
     return {
         init: init,

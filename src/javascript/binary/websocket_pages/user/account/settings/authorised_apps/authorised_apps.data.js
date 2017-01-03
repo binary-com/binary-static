@@ -1,36 +1,36 @@
-var moment = require('moment');
+const moment = require('moment');
 
-var ApplicationsData = (function() {
+const ApplicationsData = (function() {
     'use strict';
 
-    function calls(callback) {
+    const calls = function(callback) {
         return function(msg) {
-            var response = JSON.parse(msg.data);
+            const response = JSON.parse(msg.data);
             if (!response || response.msg_type !== 'oauth_apps') {
                 return;
             }
             callback(response);
         };
-    }
+    };
 
-    function list() {
+    const list = function() {
         BinarySocket.send({ oauth_apps: 1 });
-    }
+    };
 
-    function revoke(id) {
+    const revoke = function(id) {
         if (!id) return;
         BinarySocket.send({ oauth_apps: 1, revoke_app: id });
-    }
+    };
 
-    function parse(app) {
-        var last = app.last_used ? moment.utc(app.last_used) : null;
+    const parse = function(app) {
+        const last = app.last_used ? moment.utc(app.last_used) : null;
         return {
             name     : app.name,
             scopes   : app.scopes,
             last_used: last,
             id       : app.app_id,
         };
-    }
+    };
 
     return {
         parse : parse,

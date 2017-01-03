@@ -1,30 +1,30 @@
-var Contract_Beta             = require('./contract').Contract_Beta;
-var WSTickDisplay_Beta        = require('./tick_trade').WSTickDisplay_Beta;
-var Symbols                   = require('../symbols').Symbols;
-var Tick                      = require('../tick').Tick;
-var Content                   = require('../../../common_functions/content').Content;
-var format_money              = require('../../../common_functions/currency_to_symbol').format_money;
-var toTitleCase               = require('../../../common_functions/string_util').toTitleCase;
-var addComma                  = require('../../../common_functions/string_util').addComma;
-var isVisible                 = require('../../../common_functions/common_functions').isVisible;
-var updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
-var label_value               = require('../common').label_value;
-var Client                    = require('../../../base/client').Client;
+const Contract_Beta             = require('./contract').Contract_Beta;
+const WSTickDisplay_Beta        = require('./tick_trade').WSTickDisplay_Beta;
+const Symbols                   = require('../symbols').Symbols;
+const Tick                      = require('../tick').Tick;
+const Content                   = require('../../../common_functions/content').Content;
+const format_money              = require('../../../common_functions/currency_to_symbol').format_money;
+const toTitleCase               = require('../../../common_functions/string_util').toTitleCase;
+const addComma                  = require('../../../common_functions/string_util').addComma;
+const isVisible                 = require('../../../common_functions/common_functions').isVisible;
+const updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
+const label_value               = require('../common').label_value;
+const Client                    = require('../../../base/client').Client;
 
 /*
  * Purchase object that handles all the functions related to
  * contract purchase response
  */
 
-var Purchase_Beta = (function () {
+const Purchase_Beta = (function () {
     'use strict';
 
-    var purchase_data = {};
+    let purchase_data = {};
 
-    var display = function (details) {
+    const display = function (details) {
         purchase_data = details;
 
-        var receipt = details.buy,
+        const receipt = details.buy,
             passthrough = details.echo_req.passthrough,
             container = document.getElementById('contract_confirmation_container'),
             message_container = document.getElementById('confirmation_message'),
@@ -43,8 +43,8 @@ var Purchase_Beta = (function () {
             contracts_list = document.getElementById('contracts_list'),
             button = document.getElementById('contract_purchase_button');
 
-        var error = details.error;
-        var show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian');
+        const error = details.error;
+        const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian');
 
         contracts_list.style.display = 'none';
 
@@ -54,7 +54,7 @@ var Purchase_Beta = (function () {
             confirmation_error.show();
             confirmation_error_contents.innerHTML = error.message;
         } else {
-            var guideBtn = document.getElementById('guideBtn');
+            const guideBtn = document.getElementById('guideBtn');
             if (guideBtn) {
                 guideBtn.style.display = 'none';
             }
@@ -62,15 +62,15 @@ var Purchase_Beta = (function () {
             message_container.show();
             confirmation_error.hide();
 
-            $('#contract-values td').each(function() {
+            $('#contract-values').find('td').each(function() {
                 $(this).text('').removeAttr('class', '');
             });
-            var purchase_passthrough = purchase_data.echo_req.passthrough;
-            brief.textContent = $('#underlying option:selected').text() + ' / ' +
+            const purchase_passthrough = purchase_data.echo_req.passthrough;
+            brief.textContent = $('#underlying').find('option:selected').text() + ' / ' +
                 toTitleCase(Contract_Beta.contractType()[Contract_Beta.form()][purchase_passthrough.contract_type]) +
                 (Contract_Beta.form() === 'digits' ? ' ' + purchase_passthrough.barrier : '');
 
-            var is_spread = (Contract_Beta.form() === 'spreads');
+            const is_spread = (Contract_Beta.form() === 'spreads');
             if (is_spread) {
                 $('#contract_purchase_profit_list, #contract_purchase_description_section').removeClass('gr-4 gr-8').addClass('gr-6');
             } else {
@@ -84,7 +84,7 @@ var Purchase_Beta = (function () {
                 ref.textContent = Content.localize().textRef + ' ' + receipt.transaction_id;
             });
 
-            var payout_value,
+            let payout_value,
                 cost_value;
 
             if (passthrough.basis === 'payout') {
@@ -122,16 +122,16 @@ var Purchase_Beta = (function () {
                 button.setAttribute('contract_id', receipt.contract_id);
                 descr.show();
                 button.show();
-                $('#confirmation_message .open_contract_detailsws').attr('contract_id', receipt.contract_id).removeClass('invisible');
+                $('#confirmation_message').find('.open_contract_detailsws').attr('contract_id', receipt.contract_id).removeClass('invisible');
             } else {
                 descr.hide();
                 button.hide();
-                $('#confirmation_message .open_contract_detailsws').addClass('invisible');
+                $('#confirmation_message').find('.open_contract_detailsws').addClass('invisible');
             }
         }
 
         if (show_chart) {
-            var contract_sentiment;
+            let contract_sentiment;
             if (passthrough.contract_type === 'CALL' || passthrough.contract_type === 'ASIANU') {
                 contract_sentiment = 'up';
             } else {
@@ -140,18 +140,18 @@ var Purchase_Beta = (function () {
 
             // calculate number of decimals needed to display tick-chart according to the spot
             // value of the underlying
-            var decimal_points = 2;
-            var tick_spots = Tick.spots();
-            var tick_spot_epochs = Object.keys(tick_spots);
+            let decimal_points = 2;
+            const tick_spots = Tick.spots();
+            const tick_spot_epochs = Object.keys(tick_spots);
             if (tick_spot_epochs.length > 0) {
-                var last_quote = tick_spots[tick_spot_epochs[0]].toString();
+                const last_quote = tick_spots[tick_spot_epochs[0]].toString();
 
                 if (last_quote.indexOf('.') !== -1) {
                     decimal_points = last_quote.split('.')[1].length;
                 }
             }
 
-            var barrier;
+            let barrier;
             if (sessionStorage.getItem('formname') === 'higherlower') {
                 barrier = passthrough.barrier;
             }
@@ -176,36 +176,36 @@ var Purchase_Beta = (function () {
         }
     };
 
-    var update_spot_list = function() {
+    const update_spot_list = function() {
         if ($('#contract_purchase_spots:hidden').length) {
             return;
         }
 
-        var duration = purchase_data.echo_req && purchase_data.echo_req.passthrough ?
+        let duration = purchase_data.echo_req && purchase_data.echo_req.passthrough ?
                             purchase_data.echo_req.passthrough.duration : null;
 
         if (!duration) {
             return;
         }
 
-        var container  = document.getElementById('contract_purchase_spots'),
+        const container  = document.getElementById('contract_purchase_spots'),
             tick_elem  = document.getElementById('current_tick_number'),
             spot_elem  = document.getElementById('current_tick_spot'),
             list_elem  = document.getElementById('last_digits_list');
         if (container) {
             tick_elem.innerHTML = spot_elem.innerHTML = list_elem.innerHTML = '&nbsp;';
         }
-        for (var i = 1; i <= duration; i++) {
-            var fragment = document.createElement('div');
+        for (let i = 1; i <= duration; i++) {
+            const fragment = document.createElement('div');
             fragment.classList.add('gr-grow');
 
-            var digit_elem = document.createElement('div');
+            const digit_elem = document.createElement('div');
             digit_elem.classList.add('digit');
             digit_elem.id = 'tick_digit_' + i;
             digit_elem.innerHTML = '&nbsp;';
             fragment.appendChild(digit_elem);
 
-            var number_elem = document.createElement('div');
+            const number_elem = document.createElement('div');
             number_elem.classList.add('number');
             number_elem.innerHTML = i;
             fragment.appendChild(number_elem);
@@ -213,12 +213,12 @@ var Purchase_Beta = (function () {
             list_elem.appendChild(fragment);
         }
 
-        var spots2 = Tick.spots(),
-            epoches = Object.keys(spots2).sort(function(a, b) { return a - b; }),
-            tick_number = 0;
+        const spots2 = Tick.spots(),
+            epoches = Object.keys(spots2).sort(function(a, b) { return a - b; });
+        let tick_number = 0;
 
-        var is_win = function(last_digit) {
-            var contract_type = purchase_data.echo_req.passthrough.contract_type,
+        const is_win = function(last_digit) {
+            const contract_type = purchase_data.echo_req.passthrough.contract_type,
                 barrier       = purchase_data.echo_req.passthrough.barrier;
             return ((contract_type === 'DIGITMATCH' && last_digit === barrier) ||
                     (contract_type === 'DIGITDIFF'  && last_digit !== barrier) ||
@@ -227,13 +227,13 @@ var Purchase_Beta = (function () {
                     (contract_type === 'DIGITOVER'  && last_digit > barrier)   ||
                     (contract_type === 'DIGITUNDER' && last_digit < barrier));
         };
-        var last_digit;
-        var replace = function(d) {
+        let last_digit = null;
+        const replace = function(d) {
             last_digit = d;
             return '<span class="' + (is_win(d) ? 'profit' : 'loss') + '">' + d + '</span>';
         };
-        for (var s = 0; s < epoches.length; s++) {
-            var tick_d = {
+        for (let s = 0; s < epoches.length; s++) {
+            const tick_d = {
                 epoch: epoches[s],
                 quote: spots2[epoches[s]],
             };
@@ -244,12 +244,12 @@ var Purchase_Beta = (function () {
                 tick_elem.textContent = Content.localize().textTickResultLabel + ' ' + tick_number;
                 spot_elem.innerHTML = tick_d.quote.replace(/\d$/, replace);
 
-                var this_digit_elem = document.getElementById('tick_digit_' + tick_number);
+                const this_digit_elem = document.getElementById('tick_digit_' + tick_number);
                 this_digit_elem.classList.add(is_win(last_digit) ? 'profit' : 'loss');
                 this_digit_elem.textContent = last_digit;
 
                 if (last_digit && duration === 1) {
-                    var contract_status,
+                    let contract_status,
                         final_price,
                         pnl;
 

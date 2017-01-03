@@ -1,16 +1,16 @@
-var Content  = require('../../../common_functions/content').Content;
-var localize = require('../../../base/localize').localize;
-var Client   = require('../../../base/client').Client;
+const Content  = require('../../../common_functions/content').Content;
+const localize = require('../../../base/localize').localize;
+const Client   = require('../../../base/client').Client;
 
-var TopUpVirtualWS = (function() {
+const TopUpVirtualWS = (function() {
     'use strict';
 
-    var containerID,
+    let containerID,
         viewIDs,
         hiddenClass,
         $views;
 
-    var init = function() {
+    const init = function() {
         containerID = '#topup_virtual';
         hiddenClass = 'hidden';
         $views      = $(containerID + ' .viewItem');
@@ -28,7 +28,7 @@ var TopUpVirtualWS = (function() {
         }
     };
 
-    var responseHandler = function(response) {
+    const responseHandler = function(response) {
         if ('error' in response) {
             if ('message' in response.error) {
                 showMessage(localize(response.error.message), false);
@@ -44,21 +44,21 @@ var TopUpVirtualWS = (function() {
         }
     };
 
-    var showMessage = function(message, isSuccess) {
-        var viewID = isSuccess ? viewIDs.success : viewIDs.error;
+    const showMessage = function(message, isSuccess) {
+        const viewID = isSuccess ? viewIDs.success : viewIDs.error;
         setActiveView(viewID);
         $(viewID + ' > p').html(message);
     };
 
-    var setActiveView = function(viewID) {
+    const setActiveView = function(viewID) {
         $views.addClass(hiddenClass);
         $(viewID).removeClass(hiddenClass);
     };
 
-    var onLoad = function() {
+    const onLoad = function() {
         BinarySocket.init({
             onmessage: function(msg) {
-                var response = JSON.parse(msg.data);
+                const response = JSON.parse(msg.data);
                 if (response) {
                     if (response.msg_type === 'authorize') {
                         TopUpVirtualWS.init();

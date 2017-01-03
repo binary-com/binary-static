@@ -1,7 +1,7 @@
-var getLanguage = require('./language').getLanguage;
-var japanese_client = require('../common_functions/country_base').japanese_client;
+const getLanguage     = require('./language').getLanguage;
+const japanese_client = require('../common_functions/country_base').japanese_client;
 
-var Url = function (url) {
+const Url = function (url) {
     this.history_supported = typeof window !== 'undefined' && window.history && window.history.pushState;
     if (typeof url !== 'undefined') {
         this.location = $('<a>', { href: decodeURIComponent(url) })[0];
@@ -19,18 +19,18 @@ Url.prototype = {
         $(this).trigger('change', [this]);
     },
     update: function(url) {
-        var state_info = { container: 'content', url: url, useClass: 'pjaxload' };
+        const state_info = { container: 'content', url: url, useClass: 'pjaxload' };
         if (this.history_supported) {
             history.pushState(state_info, '', url);
             this.reset();
         }
     },
     param: function(name) {
-        var param_hash = this.params_hash();
+        const param_hash = this.params_hash();
         return param_hash[name];
     },
     path_matches: function(url) {
-        var this_pathname = this.location.pathname,
+        const this_pathname = this.location.pathname,
             url_pathname  = url.location.pathname;
         return (this_pathname === url_pathname || '/' + this_pathname === url_pathname);
     },
@@ -41,9 +41,9 @@ Url.prototype = {
     },
     is_in: function(url) {
         if (this.path_matches(url)) {
-            var this_params = this.params();
-            var param_count = this_params.length;
-            var match_count = 0;
+            const this_params = this.params();
+            let param_count = this_params.length,
+                match_count = 0;
             while (param_count--) {
                 if (url.param(this_params[param_count][0]) === this_params[param_count][1]) {
                     match_count++;
@@ -59,8 +59,8 @@ Url.prototype = {
     params_hash: function() {
         if (!this._param_hash || (this._param_hash && Object.keys(this._param_hash).length === 0)) {
             this._param_hash = {};
-            var params = this.params();
-            var param = params.length;
+            const params = this.params();
+            let param = params.length;
             while (param--) {
                 if (params[param][0]) {
                     this._param_hash[params[param][0]] = params[param][1];
@@ -70,39 +70,39 @@ Url.prototype = {
         return this._param_hash;
     },
     params: function() {
-        var params = [];
-        var parsed = this.location.search.substr(1).split('&');
-        var p_l = parsed.length;
+        const params = [],
+            parsed = this.location.search.substr(1).split('&');
+        let p_l = parsed.length;
         while (p_l--) {
-            var param = parsed[p_l].split('=');
+            const param = parsed[p_l].split('=');
             params.push(param);
         }
         return params;
     },
 };
 
-var url_for = function(path, params) {
+const url_for = function(path, params) {
     if (!path) {
         path = '';
     } else if (path.length > 0 && path[0] === '/') {
         path = path.substr(1);
     }
-    var lang = getLanguage().toLowerCase(),
-        url = '';
+    const lang = getLanguage().toLowerCase();
+    let url = '';
     if (typeof window !== 'undefined') {
         url  = window.location.href;
     }
     return url.substring(0, url.indexOf('/' + lang + '/') + lang.length + 2) + (path || 'home') + '.html' + (params ? '?' + params : '');
 };
 
-var url_for_static = function(path) {
+const url_for_static = function(path) {
     if (!path) {
         path = '';
     } else if (path.length > 0 && path[0] === '/') {
         path = path.substr(1);
     }
 
-    var staticHost;
+    let staticHost;
     if (typeof window !== 'undefined') {
         staticHost = window.staticHost;
     }
@@ -123,11 +123,11 @@ var url_for_static = function(path) {
     return staticHost + path;
 };
 
-var default_redirect_url = function() {
+const default_redirect_url = function() {
     return url_for(japanese_client() ? 'multi_barriers_trading' : 'trading');
 };
 
-var url = new Url();
+const url = new Url();
 
 module.exports = {
     Url                 : Url,
