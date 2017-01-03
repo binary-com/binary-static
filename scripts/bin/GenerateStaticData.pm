@@ -27,7 +27,7 @@ END_EXPORTS
 }
 
 sub _texts {
-    my $js = "var texts_json = {};\n";
+    my $js = "const texts_json = {};\n";
     foreach my $language (BS::all_languages()) {
         BS::set_lang($language);
 
@@ -158,6 +158,7 @@ sub _texts {
         push @texts, localize('The two passwords that you entered do not match.');
         push @texts, localize('Invalid email address');
         push @texts, localize('Your password cannot be the same as your email');
+        push @texts, localize('Sorry, an error occurred while processing your request.');
 
         # text used by websocket trading page javascript
         push @texts, localize('Start time');

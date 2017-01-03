@@ -1,20 +1,21 @@
-var Content         = require('../../../common_functions/content').Content;
-var ValidateV2      = require('../../../common_functions/validation_v2').ValidateV2;
-var ValidationUI    = require('../../../validator').ValidationUI;
-var customError     = require('../../../validator').customError;
-var bind_validation = require('../../../validator').bind_validation;
-var dv       = require('../../../../lib/validation');
-var localize = require('../../../base/localize').localize;
-var Client   = require('../../../base/client').Client;
+const Content         = require('../../../common_functions/content').Content;
+const ValidateV2      = require('../../../common_functions/validation_v2').ValidateV2;
+const ValidationUI    = require('../../../validator').ValidationUI;
+const customError     = require('../../../validator').customError;
+const bind_validation = require('../../../validator').bind_validation;
+const dv       = require('../../../../lib/validation');
+const localize = require('../../../base/localize').localize;
+const Client   = require('../../../base/client').Client;
 
-var PasswordWS = (function() {
-    var $form;
-    var $result;
+const PasswordWS = (function() {
+    let $form,
+        $result;
 
-    function init() {
-        $('#change-password').removeClass('invisible');
-        $form = $('#change-password > form');
-        $result = $('#change-password > div[data-id="success-result"]');
+    const init = function() {
+        const $container = $('#change-password');
+        $container.removeClass('invisible');
+        $form = $container.find(' > form');
+        $result = $container.find(' > div[data-id="success-result"]');
         bind_validation.simple($form[0], {
             stop  : displayErrors,
             schema: getSchema(),
@@ -25,12 +26,12 @@ var PasswordWS = (function() {
                 sendRequest(info.values);
             },
         });
-    }
+    };
 
-    var IS_EMPTY = { q: 'old-blank' };
-    var MATCHES_OLD = { q: 'same-as-old' };
+    const IS_EMPTY = { q: 'old-blank' };
+    const MATCHES_OLD = { q: 'same-as-old' };
 
-    function displayErrors(info) {
+    const displayErrors = function(info) {
         ValidationUI.clear();
         $form.find('p[data-error]').addClass('hidden');
         info.errors.forEach(function(err) {
@@ -43,37 +44,37 @@ var PasswordWS = (function() {
                     ValidationUI.draw('input[name=' + err.ctx + ']', err.err);
             }
         });
-    }
+    };
 
-    function getSchema() {
-        var V2 = ValidateV2;
-        var err = Content.localize().textPasswordsNotMatching;
+    const getSchema = function() {
+        const V2 = ValidateV2;
+        const err = Content.localize().textPasswordsNotMatching;
 
-        function notMatchingOld(value, data) {
+        const notMatchingOld = function(value, data) {
             return value !== data.old_password;
-        }
+        };
 
-        function match(value, data) {
+        const match = function(value, data) {
             return value === data.new_password;
-        }
+        };
         return {
             old_password   : [customError(V2.required, IS_EMPTY)],
             new_password   : [V2.required, dv.check(notMatchingOld, MATCHES_OLD), V2.password],
             repeat_password: [V2.required, dv.check(match, err)],
         };
-    }
+    };
 
-    function sendRequest(data) {
+    const sendRequest = function(data) {
         BinarySocket.send({
             change_password: '1',
             old_password   : data.old_password,
             new_password   : data.new_password,
         });
-    }
+    };
 
-    function handler(response) {
+    const handler = function(response) {
         if ('error' in response) {
-            var errorMsg = localize('Old password is wrong.');
+            let errorMsg = localize('Old password is wrong.');
             if ('message' in response.error) {
                 if (response.error.message.indexOf('old_password') === -1) {
                     errorMsg = response.error.message;
@@ -88,23 +89,23 @@ var PasswordWS = (function() {
         setTimeout(function() {
             Client.send_logout_request(true);
         }, 5000);
-    }
+    };
 
-    function initSocket() {
+    const initSocket = function() {
         Content.populate();
 
         BinarySocket.init({
             onmessage: function(msg) {
-                var response = JSON.parse(msg.data);
+                const response = JSON.parse(msg.data);
                 if (!response) return;
-                var type = response.msg_type;
+                const type = response.msg_type;
                 if (type === 'change_password' || (type === 'error' && 'change_password' in response.echo_req)) {
                     PasswordWS.handler(response);
                 }
             },
         });
         PasswordWS.init();
-    }
+    };
 
     return {
         init      : init,

@@ -1,8 +1,8 @@
-var LostPassword = require('./lost_password/lost_password.init').LostPassword;
-var Client       = require('../../base/client').Client;
+const LostPassword = require('./lost_password/lost_password.init').LostPassword;
+const Client       = require('../../base/client').Client;
 
-var LostPasswordWS = (function() {
-    var onLoad = function() {
+const LostPasswordWS = (function() {
+    const onLoad = function() {
         if (Client.redirect_if_login()) {
             return;
         }

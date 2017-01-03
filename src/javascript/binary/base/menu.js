@@ -1,46 +1,46 @@
-var Url    = require('./url').Url;
-var Client = require('./client').Client;
+const Url    = require('./url').Url;
+const Client = require('./client').Client;
 
-var Menu = (function() {
-    var page_url;
+const Menu = (function() {
+    let page_url;
 
-    var init = function (url) {
+    const init = function (url) {
         page_url = url;
         $(page_url).on('change', function() { activate(); });
     };
 
-    var activate = function() {
-        $('#menu-top li').removeClass('active');
+    const activate = function() {
+        $('#menu-top').find('li').removeClass('active');
         hide_main_menu();
 
-        var active = active_menu_top();
-        var trading = new RegExp('\/(jp_|multi_barriers_|)trading\.html');
-        var trading_is_active = trading.test(window.location.pathname);
+        const active = active_menu_top();
+        const trading = new RegExp('\/(jp_|multi_barriers_|)trading\.html');
+        const trading_is_active = trading.test(window.location.pathname);
         if (active) {
             active.addClass('active');
         }
-        var is_trading_submenu = /\/cashier|\/resources/.test(window.location.pathname) || trading_is_active;
+        const is_trading_submenu = /\/cashier|\/resources/.test(window.location.pathname) || trading_is_active;
         if (Client.get_boolean('is_logged_in') || trading_is_active || is_trading_submenu) {
             show_main_menu();
         }
     };
 
-    var show_main_menu = function() {
+    const show_main_menu = function() {
         $('#main-menu').removeClass('hidden');
         activate_main_menu();
     };
 
-    var hide_main_menu = function() {
+    const hide_main_menu = function() {
         $('#main-menu').addClass('hidden');
     };
 
-    var activate_main_menu = function() {
+    const activate_main_menu = function() {
         // First unset everything.
-        $('#main-menu li.item').removeClass('active');
-        $('#main-menu li.item').removeClass('hover');
-        $('#main-menu li.sub_item a').removeClass('a-active');
+        const $main_menu = $('#main-menu');
+        $main_menu.find('li.item').removeClass('active hover');
+        $main_menu.find('li.sub_item a').removeClass('a-active');
 
-        var active = active_main_menu();
+        const active = active_main_menu();
         if (active.subitem) {
             active.subitem.addClass('a-active');
         }
@@ -53,27 +53,28 @@ var Menu = (function() {
         on_mouse_hover(active.item);
     };
 
-    var on_unload = function() {
-        $('#main-menu .item').unbind();
-        $('#main-menu').unbind();
+    const on_unload = function() {
+        $('#main-menu').find('.item').unbind().end()
+                       .unbind();
     };
 
-    var on_mouse_hover = function(active_item) {
-        $('#main-menu .item').on('mouseenter', function() {
-            $('#main-menu li.item').removeClass('hover');
+    const on_mouse_hover = function(active_item) {
+        const $main_menu = $('#main-menu');
+        $main_menu.find('.item').on('mouseenter', function() {
+            $('#main-menu').find('li.item').removeClass('hover');
             $(this).addClass('hover');
         });
 
-        $('#main-menu').on('mouseleave', function() {
-            $('#main-menu li.item').removeClass('hover');
+        $main_menu.on('mouseleave', function() {
+            $main_menu.find('li.item').removeClass('hover');
             if (active_item) active_item.addClass('hover');
         });
     };
 
-    var active_menu_top = function() {
-        var active = '';
-        var path = window.location.pathname;
-        $('#menu-top li a').each(function() {
+    const active_menu_top = function() {
+        let active = '';
+        const path = window.location.pathname;
+        $('#menu-top').find('li a').each(function() {
             if (path.indexOf(this.pathname.replace(/\.html/i, '')) >= 0) {
                 active = $(this).closest('li');
             }
@@ -82,27 +83,27 @@ var Menu = (function() {
         return active;
     };
 
-    var active_main_menu = function() {
-        var new_url = page_url;
+    const active_main_menu = function() {
+        let new_url = page_url;
         if (/cashier/i.test(new_url.location.href) && !(/cashier_password/.test(new_url.location.href))) {
-            new_url = new Url($('#topMenuCashier a').attr('href'));
+            new_url = new Url($('#topMenuCashier').find('a').attr('href'));
         }
 
-        var item = '';
-        var subitem = '';
-
+        let item = '',
+            subitem = '';
+        const $main_menu = $('#main-menu');
         // Is something selected in main items list
-        $('#main-menu .items a').each(function () {
-            var url = new Url($(this).attr('href'));
+        $main_menu.find('.items a').each(function () {
+            const url = new Url($(this).attr('href'));
             if (url.is_in(new_url)) {
                 item = $(this).closest('.item');
             }
         });
 
-        $('#main-menu .sub_items a').each(function() {
-            var link_href = $(this).attr('href');
+        $main_menu.find('.sub_items a').each(function() {
+            const link_href = $(this).attr('href');
             if (link_href) {
-                var url = new Url(link_href);
+                const url = new Url(link_href);
                 if (url.is_in(new_url)) {
                     item = $(this).closest('.item');
                     subitem = $(this);

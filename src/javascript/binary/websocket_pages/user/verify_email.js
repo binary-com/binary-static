@@ -1,14 +1,35 @@
-var Content         = require('../../common_functions/content').Content;
-var ValidateV2      = require('../../common_functions/validation_v2').ValidateV2;
-var url_for         = require('../../base/url').url_for;
-var bind_validation = require('../../validator').bind_validation;
+const Content         = require('../../common_functions/content').Content;
+const ValidateV2      = require('../../common_functions/validation_v2').ValidateV2;
+const url_for         = require('../../base/url').url_for;
+const bind_validation = require('../../validator').bind_validation;
 
-function VerifyEmail() {
+const VerifyEmail = function() {
     Content.populate();
-    var form = $('#verify-email-form')[0];
+    const form = $('#verify-email-form')[0];
     if (!form) {
         return;
     }
+
+    const handler = function(msg) {
+        const response = JSON.parse(msg.data);
+        if (!response) return;
+
+        const type = response.msg_type;
+        const error = response.error;
+        if (type === 'verify_email' && !error) {
+            window.location.href = url_for('new_account/virtualws');
+            return;
+        }
+        if (!error || !error.message) return;
+        $('#signup_error')
+            .css({ display: 'inline-block' })
+            .text(error.message);
+    };
+
+    const openAccount = function(email) {
+        BinarySocket.init({ onmessage: handler });
+        BinarySocket.send({ verify_email: email, type: 'account_opening' });
+    };
 
     bind_validation.simple(form, {
         schema: {
@@ -28,28 +49,7 @@ function VerifyEmail() {
             openAccount(info.values.email);
         },
     });
-
-    function handler(msg) {
-        var response = JSON.parse(msg.data);
-        if (!response) return;
-
-        var type = response.msg_type;
-        var error = response.error;
-        if (type === 'verify_email' && !error) {
-            window.location.href = url_for('new_account/virtualws');
-            return;
-        }
-        if (!error || !error.message) return;
-        $('#signup_error')
-            .css({ display: 'inline-block' })
-            .text(error.message);
-    }
-
-    function openAccount(email) {
-        BinarySocket.init({ onmessage: handler });
-        BinarySocket.send({ verify_email: email, type: 'account_opening' });
-    }
-}
+};
 
 module.exports = {
     VerifyEmail: VerifyEmail,

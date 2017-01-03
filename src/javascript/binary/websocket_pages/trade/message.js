@@ -1,37 +1,37 @@
-var TradingAnalysis   = require('./analysis').TradingAnalysis;
-var displayCurrencies = require('./currency').displayCurrencies;
-var Notifications     = require('./notifications').Notifications;
-var Purchase          = require('./purchase').Purchase;
-var Symbols           = require('./symbols').Symbols;
-var Tick              = require('./tick').Tick;
-var processActiveSymbols = require('./process').processActiveSymbols;
-var processContract      = require('./process').processContract;
-var forgetTradingStreams = require('./process').forgetTradingStreams;
-var processTick          = require('./process').processTick;
-var processProposal      = require('./process').processProposal;
-var processTradingTimes  = require('./process').processTradingTimes;
-var PortfolioWS   = require('../user/account/portfolio/portfolio.init').PortfolioWS;
-var ProfitTableWS = require('../user/account/profit_table/profit_table.init').ProfitTableWS;
-var StatementWS   = require('../user/account/statement/statement.init').StatementWS;
-var State         = require('../../base/storage').State;
-var GTM           = require('../../base/gtm').GTM;
-var Client        = require('../../base/client').Client;
+const TradingAnalysis   = require('./analysis').TradingAnalysis;
+const displayCurrencies = require('./currency').displayCurrencies;
+const Notifications     = require('./notifications').Notifications;
+const Purchase          = require('./purchase').Purchase;
+const Symbols           = require('./symbols').Symbols;
+const Tick              = require('./tick').Tick;
+const processActiveSymbols = require('./process').processActiveSymbols;
+const processContract      = require('./process').processContract;
+const forgetTradingStreams = require('./process').forgetTradingStreams;
+const processTick          = require('./process').processTick;
+const processProposal      = require('./process').processProposal;
+const processTradingTimes  = require('./process').processTradingTimes;
+const PortfolioWS   = require('../user/account/portfolio/portfolio.init').PortfolioWS;
+const ProfitTableWS = require('../user/account/profit_table/profit_table.init').ProfitTableWS;
+const StatementWS   = require('../user/account/statement/statement.init').StatementWS;
+const State         = require('../../base/storage').State;
+const GTM           = require('../../base/gtm').GTM;
+const Client        = require('../../base/client').Client;
 
 /*
  * This Message object process the response from server and fire
  * events based on type of response
  */
-var Message = (function () {
+const Message = (function () {
     'use strict';
 
-    var process = function (msg) {
-        var response = JSON.parse(msg.data);
+    const process = function (msg) {
+        const response = JSON.parse(msg.data);
         if (!State.get('is_trading')) {
             forgetTradingStreams();
             return;
         }
         if (response) {
-            var type = response.msg_type;
+            const type = response.msg_type;
             if (type === 'active_symbols') {
                 processActiveSymbols(response);
             } else if (type === 'contracts_for') {
@@ -50,7 +50,7 @@ var Message = (function () {
             } else if (type === 'tick') {
                 processTick(response);
             } else if (type === 'history') {
-                var digit_info = TradingAnalysis.digit_info();
+                const digit_info = TradingAnalysis.digit_info();
                 if (response.req_id === 1 || response.req_id === 2) {
                     digit_info.show_chart(response.echo_req.ticks_history, response.history.prices);
                 } else                    {
