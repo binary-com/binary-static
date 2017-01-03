@@ -49,7 +49,6 @@ var Purchase = (function () {
             message_container.hide();
             confirmation_error.show();
             elementInnerHtml(confirmation_error, error.message);
-            confirmation_error.innerHTML = error.message;
         } else {
             var guideBtn = document.getElementById('guideBtn');
             if (guideBtn) {
