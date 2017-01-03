@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-03 17:55+0000\n"
+"PO-Revision-Date: 2017-01-03 18:54+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
@@ -327,7 +327,7 @@ msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "eGaming Reviewから「最優秀取引業者」を受賞"
 
 msgid "'Matches' - You win when the last digit of the last tick matches your prediction."
-msgstr "「Matches」 – 最後のTickの下一桁が予測した数字とマッチした場合に条件が満たされます。"
+msgstr "「MATCH」 – 最後のTickの下一桁が予測した数字とマッチした場合に条件が満たされます。"
 
 msgid "(Bejing/CST -8 hours)"
 msgstr "(北京/CST -8時間)"
@@ -874,7 +874,7 @@ msgid "Account balance: "
 msgstr "口座残高： "
 
 msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "年齢認証が必要です。詳細は<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までご連絡ください。"
+msgstr "年齢確認が必要です。詳細は<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までご連絡ください。"
 
 msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr ""
@@ -3225,7 +3225,9 @@ msgid "If you select \"Asian Rise\", you will win the payout if the <strong>last
 msgstr "「Asian アップ」を選択された場合、<strong>最後のTick</strong>が平均のTickよりも<strong>高い</strong>とペイアウトを獲得いただけます。"
 
 msgid "If you select \"Differs\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>not the same</strong> as your <strong>prediction</strong>."
-msgstr "「アンマッチ」を選択された場合、最後のtickの<strong>下一桁</strong>がお客さまの<strong>予測</strong>と違うとペイアウトを獲得いただけます。"
+msgstr ""
+"「DIFFER」を選択された場合、最後のtickの<strong>下一桁</strong>がお客さまの<strong>予測</strong>と違うとペイア"
+"ウトを獲得いただけます。"
 
 msgid "If you select \"Does Not Touch\", you win the payout if the market never touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "「NO-TOUCH」を選択された場合、<strong>取引期間が終了</strong>まで市場価格が<strong>バリア</strong>設定した価格にタッチしなければペイアウトを受け取れます。"
@@ -3252,7 +3254,9 @@ msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</str
 msgstr "「LOW」を選択された場合、 判定時刻の時点で<strong>判定レート</strong>が<strong>バリア価格</strong>未満の場合、ペイアウトを受け取れます。"
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
-msgstr "「マッチ」を選択された場合、最後のtickの<strong>下一桁</strong>が<strong>推測された数字</strong>と<strong>同じ</strong>であるとペイアウトを獲得いただけます。"
+msgstr ""
+"「MATCH」を選択された場合、最後のtickの<strong>下一桁</strong>が<strong>推測された数字</strong>と<strong"
+">同じ</strong>であるとペイアウトを獲得いただけます。"
 
 msgid "If you select \"Odd\", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>odd number (i.e., 1, 3, 5, 7, or 9).</strong>"
 msgstr "「奇数」を選択された場合、最後のtickの<strong>下一桁</strong>が<strong>奇数（例：1、3、5、7、9）</strong>であるとペイアウトを獲得いただけます。"
@@ -4346,7 +4350,7 @@ msgid "Marketing and Promotion"
 msgstr "マーケティング＆プロモーション"
 
 msgid "Matches/Differs"
-msgstr "マッチ/アンマッチ"
+msgstr "MATCH/DIFFER"
 
 msgid "Max:"
 msgstr "最大："
