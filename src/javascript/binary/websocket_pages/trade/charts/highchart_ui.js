@@ -45,6 +45,7 @@ const HighchartUI = (function() {
                 backgroundColor: null, /* make background transparent */
                 height         : Math.max(params.height, 450),
                 renderTo       : params.el,
+                animation      : false,
             },
             title: {
                 text : params.title,
@@ -61,6 +62,9 @@ const HighchartUI = (function() {
             },
             xAxis: {
                 labels: { overflow: 'justify', format: '{value:%H:%M:%S}' },
+            },
+            yAxis: {
+                labels: { align: 'left' },
             },
             series: [{
                 type : params.type,
@@ -80,10 +84,9 @@ const HighchartUI = (function() {
                     color: '#ccc',
                 }],
                 zoneAxis      : 'x',
-                cropThreshold : 5000,
+                cropThreshold : Infinity,
                 softThreshold : false,
-                TurboThreshold: 5000,
-                animationLimit: Infinity,
+                turboThreshold: Infinity,
             }],
             exporting  : { enabled: false },
             plotOptions: {
@@ -104,6 +107,7 @@ const HighchartUI = (function() {
 
     const get_highchart_options = function (JPClient) {
         return {
+            // use comma as separator instead of space
             lang  : { thousandsSep: ',' },
             global: {
                 timezoneOffset: JPClient ? -9 * 60 : 0, // Converting chart time to JST.
@@ -149,6 +153,11 @@ const HighchartUI = (function() {
         el.innerHTML = '<p class="error-msg">' + (type === 'missing' ? localize('Ticks history returned an empty array.') : message) + '</p>';
     };
 
+    const get_marker_object = function(type) {
+        const color = type === 'entry' ? 'white' : 'orange';
+        return { fillColor: color, lineColor: 'orange', lineWidth: 3, radius: 4, states: { hover: { fillColor: color, lineColor: 'orange', lineWidth: 3, radius: 4 } } };
+    };
+
     return {
         set_labels                  : set_labels,
         get_labels                  : get_labels,
@@ -158,6 +167,7 @@ const HighchartUI = (function() {
         replace_exit_label_with_sell: replace_exit_label_with_sell,
         get_plotline_options        : get_plotline_options,
         show_error                  : show_error,
+        get_marker_object           : get_marker_object,
     };
 })();
 
