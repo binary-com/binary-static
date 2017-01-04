@@ -1,11 +1,11 @@
 const japanese_client = require('../../../common_functions/country_base').japanese_client;
-const MBContract  = require('../../mb_trade/mb_contract').MBContract;
-const ViewPopupUI = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
-const State       = require('../../../base/storage').State;
-const localize    = require('../../../base/localize').localize;
-const template    = require('../../../base/utility').template;
-const HighchartUI = require('./highchart_ui').HighchartUI;
-const Highcharts  = require('highcharts/highstock');
+const MBContract      = require('../../mb_trade/mb_contract').MBContract;
+const ViewPopupUI     = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
+const State           = require('../../../base/storage').State;
+const localize        = require('../../../base/localize').localize;
+const template        = require('../../../base/utility').template;
+const HighchartUI     = require('./highchart_ui').HighchartUI;
+const Highcharts      = require('highcharts/highstock');
 require('highcharts/modules/exporting')(Highcharts);
 
 const Highchart = (function() {
@@ -56,7 +56,22 @@ const Highchart = (function() {
             i;
 
         const push_ticks = function(time, price) {
-            data.push([parseInt(time) * 1000, price * 1]);
+            time = parseInt(time);
+            // if we are no longer streaming data (viewing historical contract)
+            // we need to add the marker as we are pushing the data points
+            // since for large arrays, data doesn't get pushed to series[0].data,
+            // so we can't update marker consistently through that
+            if (exit_tick_time) {
+                const object = { x: time * 1000, y: price * 1 };
+                if (time === entry_tick_time) {
+                    object.marker = get_marker_object('white');
+                } else if (time === exit_tick_time || (user_sold() && time === sell_spot_time)) {
+                    object.marker = get_marker_object('orange');
+                }
+                data.push(object);
+            } else {
+                data.push([time * 1000, price * 1]);
+            }
         };
 
         let history = '',
@@ -110,8 +125,8 @@ const Highchart = (function() {
         Highcharts.setOptions(HighchartUI.get_highchart_options(JPClient));
 
         if (!el) return null;
-        // eslint-disable-next-line new-cap
-        const new_chart = Highcharts.stockChart(el, HighchartUI.get_chart_options());
+
+        const new_chart = new Highcharts.StockChart(el, HighchartUI.get_chart_options());
         initialized = true;
 
         return new_chart;
@@ -320,13 +335,15 @@ const Highchart = (function() {
     // we have to update the color zones with the correct entry_tick_time
     // and barrier value
     const select_entry_tick_barrier = function() {
-        if (chart && entry_tick_time && !entry_tick_barrier_drawn) {
-            entry_tick_barrier_drawn = true;
-            select_entry_tick(entry_tick_time);
-            if (chart) {
+        if (chart && entry_tick_time) {
+            if (chart && !entry_tick_barrier_drawn) {
                 draw_barrier();
                 chart.series[0].zones[0].value = entry_tick_time * 1000;
                 redraw_chart();
+                entry_tick_barrier_drawn = true;
+            }
+            if (chart) {
+                select_tick(entry_tick_time, 'entry');
             }
         }
     };
@@ -359,35 +376,26 @@ const Highchart = (function() {
         }
     };
 
-    // function to set an orange circle on the entry tick
-    const select_entry_tick = function(value) {
-        if (chart && value && (options.history || options.tick)) {
-            const firstIndex = Object.keys(chart.series[0].data)[0],
-                data = chart.series[0].data;
-            let current_data;
-            for (let i = firstIndex; i < data.length; i++) {
-                current_data = data[i];
-                update_marker(value, current_data, '#ffffff');
-            }
-        }
-    };
-
-    // function to set an orange circle on the exit tick
-    const select_exit_tick = function(value) {
-        if (chart && value && (options.tick || options.history)) {
+    // function to set an orange circle on the entry/exit tick
+    const select_tick = function(value, tick_type) {
+        if (chart && value && tick_type && (options.tick || options.history)) {
             const data = chart.series[0].data;
             let current_data;
             for (let i = data.length - 1; i >= 0; i--) {
                 current_data = data[i];
-                update_marker(value, current_data, 'orange');
+                update_marker(value, current_data, (tick_type === 'entry' ? 'white' : 'orange'));
             }
         }
     };
 
     const update_marker = function(value, current_data, color) {
         if (value * 1000 === current_data.x) {
-            current_data.update({ marker: { fillColor: color, lineColor: 'orange', lineWidth: 3, radius: 4, states: { hover: { fillColor: color, lineColor: 'orange', lineWidth: 3, radius: 4 } } } });
+            current_data.update({ marker: get_marker_object(color) });
         }
+    };
+
+    const get_marker_object = function(color) {
+        return { fillColor: color, lineColor: 'orange', lineWidth: 3, radius: 4, states: { hover: { fillColor: color, lineColor: 'orange', lineWidth: 3, radius: 4 } } };
     };
 
 
@@ -522,9 +530,9 @@ const Highchart = (function() {
         if (chart) {
             draw_line_x((user_sold() ? sell_time : end_time), '', 'textLeft', 'Dash');
             if (sell_spot_time && sell_spot_time < end_time && sell_spot_time >= start_time) {
-                select_exit_tick(sell_spot_time);
+                select_tick(sell_spot_time, 'exit');
             } else if (exit_tick_time) {
-                select_exit_tick(exit_tick_time);
+                select_tick(exit_tick_time, 'exit');
             }
             if (!contract.sell_spot && !contract.exit_tick) {
                 if ($('#waiting_exit_tick').length === 0) {
@@ -562,12 +570,12 @@ const Highchart = (function() {
         const duration = Math.min(end, now) - (purchase || start);
         let granularity;
               // days * hours * minutes * seconds
-        if      (duration <=           60 * 60) granularity = 0;     // less than 1 hour
-        else if (duration <=       2 * 60 * 60) granularity = 120;   // 2 hours
-        else if (duration <=       6 * 60 * 60) granularity = 600;   // 6 hours
-        else if (duration <=      24 * 60 * 60) granularity = 900;   // 1 day
-        else if (duration <=  5 * 24 * 60 * 60) granularity = 3600;  // 5 days
-        else if (duration <= 30 * 24 * 60 * 60) granularity = 14400; // 30 days
+        if      (duration <            60 * 60) granularity = 0;     // less than 1 hour
+        else if (duration <        2 * 60 * 60) granularity = 120;   // 2 hours
+        else if (duration <        6 * 60 * 60) granularity = 600;   // 6 hours
+        else if (duration <       24 * 60 * 60) granularity = 900;   // 1 day
+        else if (duration <   5 * 24 * 60 * 60) granularity = 3600;  // 5 days
+        else if (duration <  30 * 24 * 60 * 60) granularity = 14400; // 30 days
         else                                    granularity = 86400; // more than 30 days
 
         return [granularity, duration];

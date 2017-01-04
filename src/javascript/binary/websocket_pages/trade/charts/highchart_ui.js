@@ -1,4 +1,4 @@
-const localize      = require('../../../base/localize').localize;
+const localize = require('../../../base/localize').localize;
 
 const HighchartUI = (function() {
     let common_time_style,
@@ -44,6 +44,7 @@ const HighchartUI = (function() {
             chart: {
                 backgroundColor: null, /* make background transparent */
                 height         : Math.max(params.height, 450),
+                renderTo       : params.el,
             },
             title: {
                 text : params.title,
@@ -78,7 +79,11 @@ const HighchartUI = (function() {
                     // make the line grey again after trade ended
                     color: '#ccc',
                 }],
-                zoneAxis: 'x',
+                zoneAxis      : 'x',
+                cropThreshold : 5000,
+                softThreshold : false,
+                TurboThreshold: 5000,
+                animationLimit: Infinity,
             }],
             exporting  : { enabled: false },
             plotOptions: {
@@ -110,7 +115,7 @@ const HighchartUI = (function() {
         const subtitle_length = subtitle.childNodes.length,
             textnode = document.createTextNode(' '  + localize('Sell time') + ' ');
         for (let i = 0; i < subtitle_length; i++) {
-            var item = subtitle.childNodes[i];
+            const item = subtitle.childNodes[i];
             if (/End time/.test(item.nodeValue)) {
                 subtitle.replaceChild(textnode, item);
             }
@@ -118,19 +123,19 @@ const HighchartUI = (function() {
     };
 
     const get_plotline_options = function(params, type) {
-        var plotx = type === 'x';
+        const is_plotx = type === 'x';
         const options = {
             value    : params.value,
-            id       : params.id || (plotx ? params.value : params.label),
+            id       : params.id || (is_plotx ? params.value : params.label),
             label    : { text: params.label || '' },
-            color    : params.color || (plotx ? '#e98024' : 'green'),
-            zIndex   : plotx ? 2 : 1,
+            color    : params.color || (is_plotx ? '#e98024' : 'green'),
+            zIndex   : is_plotx ? 2 : 1,
             width    : params.width || 2,
             dashStyle: params.dashStyle || 'Solid',
         };
 
-        if (plotx) {
-            options.label.x = params.text_left ? -15 : 5;
+        if (is_plotx) {
+            options.label.x = params.textLeft ? -15 : 5;
         } else {
             options.label.align = 'center';
         }
@@ -139,13 +144,14 @@ const HighchartUI = (function() {
     };
 
     const show_error = function(type, message) {
-        var el = document.getElementById('analysis_live_chart');
+        const el = document.getElementById('analysis_live_chart');
         if (!el) return;
         el.innerHTML = '<p class="error-msg">' + (type === 'missing' ? localize('Ticks history returned an empty array.') : message) + '</p>';
     };
 
     return {
         set_labels                  : set_labels,
+        get_labels                  : get_labels,
         set_chart_options           : set_chart_options,
         get_chart_options           : function() { return chartOptions; },
         get_highchart_options       : get_highchart_options,
