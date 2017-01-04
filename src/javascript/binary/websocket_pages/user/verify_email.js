@@ -2,6 +2,7 @@ const Content         = require('../../common_functions/content').Content;
 const ValidateV2      = require('../../common_functions/validation_v2').ValidateV2;
 const url_for         = require('../../base/url').url_for;
 const bind_validation = require('../../validator').bind_validation;
+const localize        = require('../../base/localize').localize;
 
 const VerifyEmail = function() {
     Content.populate();
@@ -47,11 +48,11 @@ const VerifyEmail = function() {
             ev.preventDefault();
             if (info.errors.length) return;
             if (localStorage.getItem('clients_country') === 'my') {
-                $('#verify-email-form').find(' > div').addClass('center-text')
-                .html($('<p/>', {
-                    class: 'notice-msg',
-                    text : 'Sorry, account signup is not available in your country.',
-                }));
+                $('#verify-email-form')
+                .find(' > div')
+                .html('<p class="notice-msg center-text">' +
+                        localize('Sorry, account signup is not available in your country. Please contact <a href="[_1]">customer support</a> for more information.',
+                        [url_for('contact', '', true)]) + '</p>');
                 return;
             }
             openAccount(info.values.email);

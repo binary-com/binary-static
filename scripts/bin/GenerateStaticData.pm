@@ -723,6 +723,9 @@ sub _texts {
         push @texts, localize('This is a staging server - For testing purposes only');
         push @texts, localize('The server <a href="[_1]">endpoint</a> is: [_2]');
 
+        # strings for account signup error
+        push @texts, localize('Sorry, account signup is not available in your country. Please contact <a href="[_1]">customer support</a> for more information.');
+
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
     }
