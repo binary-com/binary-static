@@ -46,6 +46,14 @@ const VerifyEmail = function() {
         submit: function(ev, info) {
             ev.preventDefault();
             if (info.errors.length) return;
+            if (localStorage.getItem('clients_country') === 'my') {
+                $('#verify-email-form').find(' > div').addClass('center-text')
+                .html($('<p/>', {
+                    class: 'notice-msg',
+                    text : 'Sorry, account signup is not available in your country.',
+                }));
+                return;
+            }
             openAccount(info.values.email);
         },
     });
