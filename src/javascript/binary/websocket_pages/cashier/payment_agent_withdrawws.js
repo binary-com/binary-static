@@ -47,7 +47,7 @@ const PaymentAgentWithdrawWS = (function() {
             Content.populate();
             const errorMessage = document.getElementsByClassName('error-msg');
             $(errorMessage).addClass('notice-msg center-text');
-            showPageError(localize('You are not authorized for withdrawal via payment agent. please contact our Customer Support.'));
+            showPageError(localize('You are not authorized for withdrawal via payment agent.'));
             return;
         }
 
