@@ -45,7 +45,7 @@ const PaymentAgentWithdrawWS = (function() {
 
         if (Client.get_boolean('is_virtual')) { // Virtual Account
             Content.populate();
-            const errorMessage = document.getElementsByClassName('error-msg');
+            const errorMessage = document.getElementById('custom-error');
             $(errorMessage).addClass('notice-msg center-text');
             showPageError(localize('You are not authorized for withdrawal via payment agent.'));
             return;

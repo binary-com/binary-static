@@ -157,8 +157,7 @@ const ForwardWS = (function() {
             Content.populate();
             const is_virtual = Client.get_boolean('is_virtual');
             if (is_virtual) {
-                const error_vrtc = document.getElementsByClassName('error_vrtc');
-                $(error_vrtc).addClass('center-text notice-msg');
+                getCashierType();
                 ForwardWS.showError(Content.localize().featureNotRelevantToVirtual);
             }
             return is_virtual;
