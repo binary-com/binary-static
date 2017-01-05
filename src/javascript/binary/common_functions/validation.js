@@ -1,5 +1,7 @@
 const Content  = require('./content').Content;
 const localize = require('../base/localize').localize;
+const elementTextContent = require('../common_functions/common_functions').elementTextContent;
+const elementInnerHtml = require('../common_functions/common_functions').elementInnerHtml;
 
 const Validate = (function() {
     let errorCounter = 0;
@@ -29,10 +31,10 @@ const Validate = (function() {
                 allText += parClass[i].textContent;
             }
             if (!re.test(allText)) {
-                par.innerHTML = par.innerHTML + ' ' + message;
+                elementInnerHtml(par.innerHTML + ' ' + message);
             }
         } else {
-            par.innerHTML = message;
+            elementInnerHtml(par.innerHTML, message);
         }
         error.appendChild(par);
         displayErrorMessage(error);
@@ -46,11 +48,11 @@ const Validate = (function() {
   // give error message for invalid email, needs DOM element of error and value of email
     const errorMessageEmail = function(email, error) {
         if (email === '') {
-            error.textContent = Content.errorMessage('req');
+            elementTextContent(error, Content.errorMessage('req'));
             displayErrorMessage(error);
             return true;
         } else if (!validateEmail(email)) {
-            error.textContent = Content.errorMessage('valid', localize('email address'));
+            elementTextContent(error, Content.errorMessage('valid', localize('email address')));
             displayErrorMessage(error);
             return true;
         }
@@ -61,11 +63,11 @@ const Validate = (function() {
   // give error message for invalid verification token, needs DOM element of error and value of verification token
     const errorMessageToken = function(token, error) {
         if (token === '') {
-            error.textContent = Content.errorMessage('req');
+            elementTextContent(error, Content.errorMessage('req'));
             displayErrorMessage(error);
             return true;
         } else if (!validateToken(token)) {
-            error.textContent = Content.errorMessage('valid', localize('verification token'));
+            elementTextContent(error, Content.errorMessage('valid', localize('verification token')));
             displayErrorMessage(error);
             return true;
         }
@@ -83,7 +85,7 @@ const Validate = (function() {
 
     const fieldNotEmpty = function(field, error) {
         if (!/^.+$/.test(field)) {
-            error.textContent = Content.errorMessage('req');
+            elementTextContent(error, Content.errorMessage('req'));
             displayErrorMessage(error);
             return errorCounter++;
         }
@@ -92,7 +94,7 @@ const Validate = (function() {
 
     const passwordMatching = function(password, rPassword, rError) {
         if (password !== rPassword) {
-            rError.textContent = Content.localize().textPasswordsNotMatching;
+            elementTextContent(rError, Content.localize().textPasswordsNotMatching);
             displayErrorMessage(rError);
             return errorCounter++;
         }
@@ -153,7 +155,7 @@ const Validate = (function() {
     const errorMessageResidence = function(residence, error) {
         hideErrorMessage(error);
         if (residence === '') {
-            error.textContent = Content.errorMessage('req');
+            elementTextContent(error, Content.errorMessage('req'));
             displayErrorMessage(error);
             return true;
         }

@@ -30,6 +30,7 @@ const dateValueChanged               = require('../../../common_functions/common
 const TimePicker                     = require('../../../components/time_picker').TimePicker;
 const load_with_pjax                 = require('../../../base/pjax').load_with_pjax;
 const Client                         = require('../../../base/client').Client;
+const elementTextContent             = require('../../../common_functions/common_functions').elementTextContent;
 
 /*
  * TradingEvents object contains all the event handler const required = function for
@@ -312,7 +313,7 @@ const TradingEvents_Beta = (function () {
                 Defaults.set('currency', e.target.value);
                 const stopTypeDollarLabel = document.getElementById('stop_type_dollar_label');
                 if (stopTypeDollarLabel && isVisible(stopTypeDollarLabel)) {
-                    stopTypeDollarLabel.textContent = e.target.value;
+                    elementTextContent(stopTypeDollarLabel, e.target.value);
                 }
                 Price_Beta.processPriceRequest_Beta();
             });
