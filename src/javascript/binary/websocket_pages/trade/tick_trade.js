@@ -7,6 +7,7 @@ const updatePurchaseStatus = require('./common').updatePurchaseStatus;
 const localize             = require('../../base/localize').localize;
 const Highcharts           = require('highcharts');
 require('highcharts/modules/exporting')(Highcharts);
+const elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
 
 const TickDisplay = (function() {
     return {
@@ -204,7 +205,7 @@ const TickDisplay = (function() {
             }
             const barrier = document.getElementById('contract_purchase_barrier');
             if ($self.contract_barrier && barrier) {
-                barrier.innerHTML = Content.localize().textBarrier + ': ' + $self.contract_barrier;
+                elementInnerHtml(barrier, Content.localize().textBarrier + ': ' + $self.contract_barrier);
             }
         },
         add: function(indicator) {

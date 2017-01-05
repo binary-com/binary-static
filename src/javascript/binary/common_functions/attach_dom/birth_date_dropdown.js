@@ -1,5 +1,7 @@
 const japanese_client = require('../country_base').japanese_client;
 const localize        = require('../../base/localize').localize;
+const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
+
 
 function generateBirthDate() {
     const days   = document.getElementById('dobdd'),
@@ -19,9 +21,9 @@ function generateBirthDate() {
     dropDownNumbers(year, startYear, endYear);
 
     if (japanese_client()) {
-        days.options[0].innerHTML   = localize('Day');
-        months.options[0].innerHTML = localize('Month');
-        year.options[0].innerHTML   = localize('Year');
+        elementInnerHtml(days.options[0], localize('Day'));
+        elementInnerHtml(months.options[0], localize('Month'));
+        elementInnerHtml(year.options[0], localize('Year'));
     }
 }
 

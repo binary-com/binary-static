@@ -10,6 +10,8 @@ const isVisible                 = require('../../../common_functions/common_func
 const updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
 const label_value               = require('../common').label_value;
 const Client                    = require('../../../base/client').Client;
+const elementTextContent        = require('../../../common_functions/common_functions').elementTextContent;
+const elementInnerHtml          = require('../../../common_functions/common_functions').elementInnerHtml;
 
 /*
  * Purchase object that handles all the functions related to
@@ -52,7 +54,7 @@ const Purchase_Beta = (function () {
             container.style.display = 'block';
             message_container.hide();
             confirmation_error.show();
-            confirmation_error_contents.innerHTML = error.message;
+            elementInnerHtml(confirmation_error_contents,  error.message);
         } else {
             const guideBtn = document.getElementById('guideBtn');
             if (guideBtn) {
@@ -66,9 +68,8 @@ const Purchase_Beta = (function () {
                 $(this).text('').removeAttr('class', '');
             });
             const purchase_passthrough = purchase_data.echo_req.passthrough;
-            brief.textContent = $('#underlying').find('option:selected').text() + ' / ' +
-                toTitleCase(Contract_Beta.contractType()[Contract_Beta.form()][purchase_passthrough.contract_type]) +
-                (Contract_Beta.form() === 'digits' ? ' ' + purchase_passthrough.barrier : '');
+            elementTextContent(brief, $('#underlying').find('option:selected').text() + ' / ' + toTitleCase(Contract_Beta.contractType()[Contract_Beta.form()][purchase_passthrough.contract_type]) +
+                (Contract_Beta.form() === 'digits' ? ' ' + purchase_passthrough.barrier : ''));
 
             const is_spread = (Contract_Beta.form() === 'spreads');
             if (is_spread) {
@@ -77,11 +78,11 @@ const Purchase_Beta = (function () {
                 $('#contract_purchase_profit_list').removeClass('gr-6').addClass('gr-4');
                 $('#contract_purchase_description_section').removeClass('gr-6').addClass('gr-8');
             }
-            heading.textContent = Content.localize().textContractConfirmationHeading;
-            descr.textContent = receipt.longcode;
+            elementTextContent(heading, Content.localize().textContractConfirmationHeading);
+            elementTextContent(descr, receipt.longcode);
             if (barrier_element) label_value(barrier_element, '', '', true);
             [].forEach.call(document.getElementsByClassName('contract_purchase_reference'), function(ref) {
-                ref.textContent = Content.localize().textRef + ' ' + receipt.transaction_id;
+                elementTextContent(ref, Content.localize().textRef + ' ' + receipt.transaction_id);
             });
 
             let payout_value,
@@ -107,14 +108,14 @@ const Purchase_Beta = (function () {
                 label_value(cost,   Content.localize().textStake,  addComma(cost_value));
             }
 
-            balance.textContent = Content.localize().textContractConfirmationBalance + ' ' + format_money(Client.get_value('currency'), receipt.balance_after);
+            elementTextContent(balance, Content.localize().textContractConfirmationBalance + ' ' + format_money(Client.get_value('currency'), receipt.balance_after));
 
             if (show_chart) {
                 chart.show();
             }
 
             if (Contract_Beta.form() === 'digits') {
-                [].forEach.call(spots.childNodes, function(child) { child.innerHTML = '&nbsp;'; });
+                [].forEach.call(spots.childNodes, function(child) { elementInnerHtml(child, '&nbsp;'); });
                 spots.show();
             }
 
@@ -202,12 +203,12 @@ const Purchase_Beta = (function () {
             const digit_elem = document.createElement('div');
             digit_elem.classList.add('digit');
             digit_elem.id = 'tick_digit_' + i;
-            digit_elem.innerHTML = '&nbsp;';
+            elementInnerHtml(digit_elem, '&nbsp;');
             fragment.appendChild(digit_elem);
 
             const number_elem = document.createElement('div');
             number_elem.classList.add('number');
-            number_elem.innerHTML = i;
+            elementInnerHtml(number_elem, i);
             fragment.appendChild(number_elem);
 
             list_elem.appendChild(fragment);
@@ -241,12 +242,12 @@ const Purchase_Beta = (function () {
             if (isVisible(container) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time) {
                 tick_number++;
 
-                tick_elem.textContent = Content.localize().textTickResultLabel + ' ' + tick_number;
-                spot_elem.innerHTML = tick_d.quote.replace(/\d$/, replace);
+                elementTextContent(tick_elem, Content.localize().textTickResultLabel + ' ' + tick_number);
+                elementInnerHtml(spot_elem, tick_d.quote.replace(/\d$/, replace));
 
                 const this_digit_elem = document.getElementById('tick_digit_' + tick_number);
                 this_digit_elem.classList.add(is_win(last_digit) ? 'profit' : 'loss');
-                this_digit_elem.textContent = last_digit;
+                elementTextContent(this_digit_elem, last_digit);
 
                 if (last_digit && duration === 1) {
                     let contract_status,

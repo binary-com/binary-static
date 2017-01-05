@@ -1,5 +1,6 @@
 const template = require('../base/utility').template;
 const localize = require('../base/localize').localize;
+const selectorExists = require('../common_functions/common_functions').selectorExists;
 
 const Content = (function() {
     'use strict';
@@ -131,119 +132,119 @@ const Content = (function() {
         });
 
         const starTime = document.getElementById('start_time_label');
-        if (starTime) {
+        if (selectorExists(starTime)) {
             starTime.textContent = localized.textStartTime;
         }
 
         const minDurationTooltip = document.getElementById('duration_tooltip');
-        if (minDurationTooltip) {
+        if (selectorExists(minDurationTooltip)) {
             minDurationTooltip.textContent = localized.textMinDuration;
             minDurationTooltip.setAttribute('data-balloon', localized.textMinDurationTooltip);
         }
 
         const spotLabel = document.getElementById('spot_label');
-        if (spotLabel) {
+        if (selectorExists(spotLabel)) {
             spotLabel.textContent = localized.textSpot;
         }
 
         const barrierTooltip = document.getElementById('barrier_tooltip');
-        if (barrierTooltip) {
+        if (selectorExists(barrierTooltip)) {
             barrierTooltip.textContent = localized.textBarrierOffset;
             barrierTooltip.setAttribute('data-balloon', localized.textBarrierOffsetTooltip);
         }
 
         const barrierSpan = document.getElementById('barrier_span');
-        if (barrierSpan) {
+        if (selectorExists(barrierSpan)) {
             barrierSpan.textContent = localized.textBarrier;
         }
 
         const barrierHighTooltip = document.getElementById('barrier_high_tooltip');
-        if (barrierHighTooltip) {
+        if (selectorExists(barrierHighTooltip)) {
             barrierHighTooltip.textContent = localized.textHighBarrierOffset;
             barrierHighTooltip.setAttribute('data-balloon', localized.textBarrierOffsetTooltip);
         }
         const barrierHighSpan = document.getElementById('barrier_high_span');
-        if (barrierHighSpan) {
+        if (selectorExists(barrierHighSpan)) {
             barrierHighSpan.textContent = localized.textHighBarrier;
         }
 
         const barrierLowTooltip = document.getElementById('barrier_low_tooltip');
-        if (barrierLowTooltip) {
+        if (selectorExists(barrierLowTooltip)) {
             barrierLowTooltip.textContent = localized.textLowBarrierOffset;
             barrierLowTooltip.setAttribute('data-balloon', localized.textBarrierOffsetTooltip);
         }
         const barrierLowSpan = document.getElementById('barrier_low_span');
-        if (barrierLowSpan) {
+        if (selectorExists(barrierLowSpan)) {
             barrierLowSpan.textContent = localized.textLowBarrier;
         }
 
         const predictionLabel = document.getElementById('prediction_label');
-        if (predictionLabel) {
+        if (selectorExists(predictionLabel)) {
             predictionLabel.textContent = localized.textPredictionLabel;
         }
 
         const payoutOption = document.getElementById('payout_option');
-        if (payoutOption) {
+        if (selectorExists(payoutOption)) {
             payoutOption.textContent = localized.textPayout;
         }
 
         const stakeOption = document.getElementById('stake_option');
-        if (stakeOption) {
+        if (selectorExists(stakeOption)) {
             stakeOption.textContent = localized.textStake;
         }
 
         const purchaseButtonTop = document.getElementById('purchase_button_top');
-        if (purchaseButtonTop) {
+        if (selectorExists(purchaseButtonTop)) {
             purchaseButtonTop.textContent = localized.textPurchase;
         }
 
         const purchaseButtonBottom = document.getElementById('purchase_button_bottom');
-        if (purchaseButtonBottom) {
+        if (selectorExists(purchaseButtonBottom)) {
             purchaseButtonBottom.textContent = localized.textPurchase;
         }
 
         const period_label = document.getElementById('period_label');
-        if (period_label) {
+        if (selectorExists(period_label)) {
             period_label.textContent = localized.textContractPeriod;
         }
 
         const amount_per_point_label = document.getElementById('amount_per_point_label');
-        if (amount_per_point_label) {
+        if (selectorExists(amount_per_point_label)) {
             amount_per_point_label.textContent = localized.textAmountPerPoint;
         }
 
         const stop_loss_label = document.getElementById('stop_loss_label');
-        if (stop_loss_label) {
+        if (selectorExists(stop_loss_label)) {
             stop_loss_label.textContent = localized.textStopLoss;
         }
 
         const stop_profit_label = document.getElementById('stop_profit_label');
-        if (stop_profit_label) {
+        if (selectorExists(stop_profit_label)) {
             stop_profit_label.textContent = localized.textStopProfit;
         }
 
         const stop_type_label = document.getElementById('stop_type_label');
-        if (stop_type_label) {
+        if (selectorExists(stop_type_label)) {
             stop_type_label.textContent = localized.textStopType;
         }
 
         const stop_type_points = document.getElementById('stop_type_points_label');
-        if (stop_type_points) {
+        if (selectorExists(stop_type_points)) {
             stop_type_points.textContent = localized.textStopTypePoints;
         }
 
         const indicative_barrier_tooltip = document.getElementById('indicative_barrier_tooltip');
-        if (indicative_barrier_tooltip) {
+        if (selectorExists(indicative_barrier_tooltip)) {
             indicative_barrier_tooltip.setAttribute('data-balloon', localized.textIndicativeBarrierTooltip);
         }
 
         const indicative_high_barrier_tooltip = document.getElementById('indicative_high_barrier_tooltip');
-        if (indicative_high_barrier_tooltip) {
+        if (selectorExists(indicative_high_barrier_tooltip)) {
             indicative_high_barrier_tooltip.setAttribute('data-balloon', localized.textIndicativeBarrierTooltip);
         }
 
         const indicative_low_barrier_tooltip = document.getElementById('indicative_low_barrier_tooltip');
-        if (indicative_low_barrier_tooltip) {
+        if (selectorExists(indicative_low_barrier_tooltip)) {
             indicative_low_barrier_tooltip.setAttribute('data-balloon', localized.textIndicativeBarrierTooltip);
         }
     };

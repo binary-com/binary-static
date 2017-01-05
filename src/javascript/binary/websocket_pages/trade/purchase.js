@@ -6,6 +6,8 @@ const Content               = require('../../common_functions/content').Content;
 const isVisible             = require('../../common_functions/common_functions').isVisible;
 const updatePurchaseStatus  = require('./common').updatePurchaseStatus;
 const updateContractBalance = require('./common').updateContractBalance;
+const elementTextContent    = require('../../common_functions/common_functions').elementTextContent;
+const elementInnerHtml      = require('../../common_functions/common_functions').elementInnerHtml;
 
 /*
  * Purchase object that handles all the functions related to
@@ -46,7 +48,7 @@ const Purchase = (function () {
             container.style.display = 'block';
             message_container.hide();
             confirmation_error.show();
-            confirmation_error.innerHTML = error.message;
+            elementInnerHtml(confirmation_error, error.message);
         } else {
             const guideBtn = document.getElementById('guideBtn');
             if (guideBtn) {
@@ -56,10 +58,10 @@ const Purchase = (function () {
             message_container.show();
             confirmation_error.hide();
 
-            heading.textContent = Content.localize().textContractConfirmationHeading;
-            descr.textContent = receipt.longcode;
+            elementTextContent(heading, Content.localize().textContractConfirmationHeading);
+            elementTextContent(descr, receipt.longcode);
             if (barrier_element) barrier_element.textContent = '';
-            reference.textContent = Content.localize().textContractConfirmationReference + ' ' + receipt.transaction_id;
+            elementTextContent(reference, Content.localize().textContractConfirmationReference + ' ' + receipt.transaction_id);
 
             let payout_value,
                 cost_value;
@@ -74,13 +76,13 @@ const Purchase = (function () {
             const profit_value = Math.round((payout_value - cost_value) * 100) / 100;
 
             if (sessionStorage.getItem('formname') === 'spreads') {
-                payout.innerHTML = Content.localize().textStopLoss + ' <p>' + receipt.stop_loss_level + '</p>';
-                cost.innerHTML = Content.localize().textAmountPerPoint + ' <p>' + receipt.amount_per_point + '</p>';
-                profit.innerHTML = Content.localize().textStopProfit + ' <p>' + receipt.stop_profit_level + '</p>';
+                elementInnerHtml(payout, Content.localize().textStopLoss + ' <p>' + receipt.stop_loss_level + '</p>');
+                elementInnerHtml(cost, Content.localize().textAmountPerPoint + ' <p>' + receipt.amount_per_point + '</p>');
+                elementInnerHtml(profit, Content.localize().textStopProfit + ' <p>' + receipt.stop_profit_level + '</p>');
             } else {
-                payout.innerHTML = Content.localize().textContractConfirmationPayout + ' <p>' + payout_value + '</p>';
-                cost.innerHTML = Content.localize().textContractConfirmationCost + ' <p>' + cost_value + '</p>';
-                profit.innerHTML = Content.localize().textContractConfirmationProfit + ' <p>' + profit_value + '</p>';
+                elementInnerHtml(payout, Content.localize().textContractConfirmationPayout + ' <p>' + payout_value + '</p>');
+                elementInnerHtml(cost, Content.localize().textContractConfirmationCost + ' <p>' + cost_value + '</p>');
+                elementInnerHtml(profit, Content.localize().textContractConfirmationProfit + ' <p>' + profit_value + '</p>');
             }
 
             updateContractBalance(receipt.balance_after);
@@ -92,7 +94,7 @@ const Purchase = (function () {
             }
 
             if (Contract.form() === 'digits') {
-                spots.textContent = '';
+                elementTextContent(spots, '');
                 spots.className = '';
                 spots.show();
             } else {
@@ -100,7 +102,7 @@ const Purchase = (function () {
             }
 
             if (Contract.form() !== 'digits' && !show_chart) {
-                button.textContent = Content.localize().textContractConfirmationButton;
+                elementTextContent(button, Content.localize().textContractConfirmationButton);
                 button.setAttribute('contract_id', receipt.contract_id);
                 button.show();
                 $('.open_contract_detailsws').attr('contract_id', receipt.contract_id).removeClass('invisible');
@@ -186,7 +188,7 @@ const Purchase = (function () {
 
                 const el1 = document.createElement('div');
                 el1.classList.add('col');
-                el1.textContent = Content.localize().textTickResultLabel + ' ' + (spots.getElementsByClassName('row').length + 1);
+                elementTextContent(el1, Content.localize().textTickResultLabel + ' ' + (spots.getElementsByClassName('row').length + 1));
                 fragment.appendChild(el1);
 
                 const el2 = document.createElement('div');
@@ -195,13 +197,13 @@ const Purchase = (function () {
                 const hours = date.getUTCHours() < 10 ? '0' + date.getUTCHours() : date.getUTCHours();
                 const minutes = date.getUTCMinutes() < 10 ? '0' + date.getUTCMinutes() : date.getUTCMinutes();
                 const seconds = date.getUTCSeconds() < 10 ? '0' + date.getUTCSeconds() : date.getUTCSeconds();
-                el2.textContent = hours + ':' + minutes + ':' + seconds;
+                elementTextContent(el2, hours + ':' + minutes + ':' + seconds);
                 fragment.appendChild(el2);
 
                 const tick = tick_d.quote.replace(/\d$/, replace);
                 const el3 = document.createElement('div');
                 el3.classList.add('col');
-                el3.innerHTML = tick;
+                elementInnerHtml(el3, tick);
                 fragment.appendChild(el3);
 
                 spots.appendChild(fragment);
