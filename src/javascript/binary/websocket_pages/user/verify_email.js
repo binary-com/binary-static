@@ -48,11 +48,10 @@ const VerifyEmail = function() {
             ev.preventDefault();
             if (info.errors.length) return;
             if (localStorage.getItem('clients_country') === 'my') {
-                $('#verify-email-form')
-                .find(' > div')
+                $('#verify-email-form > div')
                 .html('<p class="notice-msg center-text">' +
                         localize('Sorry, account signup is not available in your country. Please contact <a href="[_1]">customer support</a> for more information.',
-                        [url_for('contact', '', true)]) + '</p>');
+                        [url_for('contact')]) + '</p>');
                 return;
             }
             openAccount(info.values.email);
