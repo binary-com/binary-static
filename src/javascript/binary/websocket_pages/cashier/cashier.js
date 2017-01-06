@@ -1,5 +1,6 @@
 const japanese_client = require('../../common_functions/country_base').japanese_client;
 const Client   = require('../../base/client').Client;
+const Header   = require('../../base/header').Header;
 const url_for  = require('../../base/url').url_for;
 
 const Cashier = (function() {
@@ -46,6 +47,7 @@ const Cashier = (function() {
         if (/\/cashier\.html/.test(window.location.pathname) && Client.get_boolean('is_logged_in')) {
             Cashier.check_locked();
             Cashier.check_virtual_top_up();
+            Header.topbar_message_visibility(Client.landing_company());
         }
     };
 
