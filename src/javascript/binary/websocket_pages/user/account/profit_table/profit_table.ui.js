@@ -9,6 +9,7 @@ const showTooltip         = require('../../../../common_functions/get_app_detail
 const japanese_client     = require('../../../../common_functions/country_base').japanese_client;
 const addComma            = require('../../../../common_functions/string_util').addComma;
 const ProfitTable         = require('../profit_table').ProfitTable;
+const elementTextContent  = require('../../../../common_functions/common_functions').elementTextContent;
 
 const ProfitTableUI = (function() {
     'use strict';
@@ -54,10 +55,12 @@ const ProfitTableUI = (function() {
     };
 
     const updateFooter = function(transactions) {
-        let accTotal = document.querySelector('#pl-day-total > .pl').textContent;
+        let accTotal = elementTextContent(document.querySelector('#pl-day-total > .pl'));
         accTotal = parseFloat(accTotal.replace(/,/g, ''));
-        if (isNaN(accTotal)) {
-            accTotal = 0;
+        if (accTotal) {
+            if (isNaN(accTotal)) {
+                accTotal = 0;
+            }
         }
 
         const currentTotal = transactions.reduce(function(previous, current) {
