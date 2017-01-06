@@ -4,6 +4,7 @@ const showLoadingImage   = require('../../../../base/utility').showLoadingImage;
 const localize           = require('../../../../base/localize').localize;
 const Client             = require('../../../../base/client').Client;
 const url_for            = require('../../../../base/url').url_for;
+const selectorExists     = require('../../../../common_functions/common_functions').selectorExists;
 
 const FinancialAssessmentws = (function() {
     'use strict';
@@ -32,8 +33,14 @@ const FinancialAssessmentws = (function() {
         $heading.text(localize($heading.text()));
         $heading_risk.text(localize($heading_risk.text()));
         $high_risk.text(localize($high_risk.text()));
-        document.getElementsByTagName('legend')[0].innerHTML = localize(document.getElementsByTagName('legend')[0].innerHTML);
-        if (document.getElementsByTagName('legend')[1]) document.getElementsByTagName('legend')[1].innerHTML = localize(document.getElementsByTagName('legend')[1].innerHTML);
+        const legend_0 = document.getElementsByTagName('legend')[0];
+        const legend_1 = document.getElementsByTagName('legend')[1];
+        if (selectorExists(legend_0)) {
+            legend_0.innerHTML = localize(legend_0.innerHTML);
+        }
+        if (selectorExists(legend_1)) {
+            legend_1.innerHTML = localize(legend_1.innerHTML);
+        }
         $assessment_form.find('label').each(function() {
             const ele = $(this);
             ele.text(localize(ele.text()));

@@ -2,6 +2,8 @@ const Symbols     = require('../../symbols').Symbols;
 const template    = require('../../../../base/utility').template;
 const localize    = require('../../../../base/localize').localize;
 const Highcharts  = require('highcharts');
+const elementInnerHtml = require('../../../../common_functions/common_functions').elementInnerHtml;
+
 require('highcharts/modules/exporting')(Highcharts);
 
 const DigitInfoWS_Beta = function() {
@@ -112,7 +114,8 @@ DigitInfoWS_Beta.prototype = {
             elem = elem + '<option value="' + underlyings[i] + '">' + localize(symbols[underlyings[i]]) + '</option>';
         }
         elem += '</select>';
-        document.getElementById('tab_last_digit-content').innerHTML = '<div class="gr-parent">' +
+        const contentId = document.getElementById('tab_last_digit-content'),
+            content = '<div class="gr-parent">' +
             '<div id="last_digit_histo_form" class="gr-12 gr-12-m gr-centered">' +
             '<form class="smallfont gr-row" action="#" method="post">' +
             '<div class="gr-6 gr-12-m center-text"><div class="gr-padding-10">' + localize('Select market') + ':</div>' + elem + ' </div>' +
@@ -122,6 +125,7 @@ DigitInfoWS_Beta.prototype = {
             '<div id="last_digit_histo" class="gr-12 gr-12-m gr-centered"></div>' +
             '<div id="last_digit_title" class="gr-hide">' + (domain.charAt(0).toUpperCase() + domain.slice(1)) + ' - ' + localize('Last digit stats for the latest [_1] ticks on [_2]') + '</div>' +
             '</div>';
+        elementInnerHtml(contentId, content);
         $('[name=underlying]').val(underlying);
     },
     on_latest: function() {

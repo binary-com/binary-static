@@ -2,6 +2,7 @@ const Content             = require('../../../../common_functions/content').Cont
 const ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
 const Validate            = require('../../../../common_functions/validation').Validate;
 const FinancialAccOpeningData = require('./financial_acc_opening.data').FinancialAccOpeningData;
+const selectorExists    = require('../../../../common_functions/common_functions').selectorExists;
 
 const FinancialAccOpeningUI = (function() {
     'use strict';
@@ -93,8 +94,10 @@ const FinancialAccOpeningUI = (function() {
         ValidAccountOpening.checkPostcode(elementObj.postcode, errorObj.postcode);
 
         if (elementObj.residence.value === 'gb' && /^$/.test((elementObj.postcode.value).trim())) {
-            errorObj.postcode.innerHTML = Content.errorMessage('req');
-            Validate.displayErrorMessage(errorObj.postcode);
+            if (selectorExists(errorObj.postcode)) {
+                errorObj.postcode.innerHTML = Content.errorMessage('req');
+                Validate.displayErrorMessage(errorObj.postcode);
+            }
             window.accountErrorCounter++;
         }
 
