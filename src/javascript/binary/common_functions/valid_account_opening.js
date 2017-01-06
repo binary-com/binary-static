@@ -132,6 +132,14 @@ const ValidAccountOpening = (function() {
             window.accountErrorCounter++;
         }
     };
+    const checkState = function(state, errorState) {
+        if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test(state.value)) {
+            initializeValues();
+            errorState.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);
+            Validate.displayErrorMessage(errorState);
+            window.accountErrorCounter++;
+        }
+    };
     return {
         redirectCookie: redirectCookie,
         handler       : handler,
@@ -142,6 +150,7 @@ const ValidAccountOpening = (function() {
         checkTel      : checkTel,
         checkAnswer   : checkAnswer,
         checkCity     : checkCity,
+        checkState    : checkState,
     };
 })();
 

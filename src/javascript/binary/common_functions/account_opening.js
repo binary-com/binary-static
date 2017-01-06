@@ -130,7 +130,7 @@ const handleResidence = function() {
                 }
                 $('#address-state').parent().parent().show();
                 if (window.state) {
-                    select.value = window.state;
+                    $('#address-state').val(window.state);
                 }
             } else if (type === 'residence_list') {
                 select = document.getElementById('residence-disabled') || document.getElementById('residence');
