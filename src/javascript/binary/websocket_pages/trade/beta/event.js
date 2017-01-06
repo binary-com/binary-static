@@ -11,7 +11,6 @@ const onDurationUnitChange           = require('./process').onDurationUnitChange
 const Defaults                       = require('../defaults').Defaults;
 const Tick                           = require('../tick').Tick;
 const onlyNumericOnKeypress          = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
-const onlyNumericColonOnKeypress     = require('../../../common_functions/event_handler').onlyNumericColonOnKeypress;
 const moment                         = require('moment');
 const setFormPlaceholderContent_Beta = require('../set_values').setFormPlaceholderContent_Beta;
 const showPriceOverlay               = require('../common').showPriceOverlay;
@@ -220,7 +219,7 @@ const TradingEvents_Beta = (function () {
             attachTimePicker();
             $('#expiry_time')
                 .on('focus, click', attachTimePicker)
-                .on('keypress', onlyNumericColonOnKeypress)
+                .on('keypress', function(ev) { onlyNumericOnKeypress(ev, [58]); })
                 .on('change input blur', function() {
                     if (!dateValueChanged(this, 'time')) {
                         return false;
@@ -363,12 +362,14 @@ const TradingEvents_Beta = (function () {
          */
         const barrierElement = document.getElementById('barrier');
         if (barrierElement) {
-            barrierElement.addEventListener('input', debounce(function (e) {
-                Barriers_Beta.validateBarrier();
-                Defaults.set('barrier', e.target.value);
-                Price_Beta.processPriceRequest_Beta();
-                submitForm(document.getElementById('websocket_form'));
-            }, 1000));
+            $('#barrier')
+                .on('keypress', function(ev) { onlyNumericOnKeypress(ev, [43, 45, 46]); })
+                .on('input', debounce(function (e) {
+                    Barriers_Beta.validateBarrier();
+                    Defaults.set('barrier', e.target.value);
+                    Price_Beta.processPriceRequest_Beta();
+                    submitForm(document.getElementById('websocket_form'));
+                }, 1000));
         }
 
         /*
