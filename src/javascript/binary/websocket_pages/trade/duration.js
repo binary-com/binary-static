@@ -14,6 +14,7 @@ const getTradingTimes  = require('./common_independent').getTradingTimes;
 const DatePicker       = require('../../components/date_picker').DatePicker;
 const toReadableFormat = require('../../common_functions/string_util').toReadableFormat;
 const toISOFormat      = require('../../common_functions/string_util').toISOFormat;
+const elementTextContent  = require('../../common_functions/common_functions').elementTextContent;
 
 /*
  * Handles duration processing display
@@ -224,8 +225,8 @@ const Durations = (function() {
         unit.value = Defaults.get('duration_units') &&
             document.querySelectorAll('select[id="duration_units"] [value="' + Defaults.get('duration_units') + '"]').length ?
                 Defaults.get('duration_units') : unit.value;
-        document.getElementById('duration_minimum').textContent = unitMinValue;
-        document.getElementById('duration_maximum').textContent = unitMaxValue;
+        elementTextContent(document.getElementById('duration_minimum'), unitMinValue);
+        elementTextContent(document.getElementById('duration_maximum'), unitMaxValue);
         if (selected_duration.amount && selected_duration.unit > unitValue) {
             unitValue = selected_duration.amount;
         }

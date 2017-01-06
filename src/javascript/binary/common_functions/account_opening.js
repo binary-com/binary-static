@@ -9,6 +9,7 @@ const japanese_client      = require('../common_functions/country_base').japanes
 const appendTextValueChild = require('../common_functions/common_functions').appendTextValueChild;
 const Cookies              = require('../../lib/js-cookie');
 const moment               = require('moment');
+const elementInnerHtml     = require('../common_functions/common_functions').elementInnerHtml;
 
 const displayAcctSettings = function(response) {
     const country = response.get_settings.country_code;
@@ -93,7 +94,7 @@ const handleResidence = function() {
                 const errorElement = document.getElementById('error-residence');
                 if (response.hasOwnProperty('error')) {
                     if (response.error.message) {
-                        errorElement.innerHTML = response.error.message;
+                        elementInnerHtml(errorElement, response.error.message);
                         errorElement.setAttribute('style', 'display:block');
                     }
                 } else {

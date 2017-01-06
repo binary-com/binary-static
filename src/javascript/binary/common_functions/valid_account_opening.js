@@ -6,6 +6,7 @@ const localize    = require('../base/localize').localize;
 const Client      = require('../base/client').Client;
 const Contents    = require('../base/contents').Contents;
 const url_for     = require('../base/url').url_for;
+const elementInnerHtml = require('./common_functions').elementInnerHtml;
 
 const ValidAccountOpening = (function() {
     const redirectCookie = function() {
@@ -40,8 +41,9 @@ const ValidAccountOpening = (function() {
                 $('#financial-form').remove();
                 $('#financial-risk').remove();
             }
+
             const error = document.getElementsByClassName('notice-msg')[0];
-            error.innerHTML = (response.msg_type === 'sanity_check') ? localize('There was some invalid character in an input field.') : errorMessage;
+            elementInnerHtml(error, (response.msg_type === 'sanity_check') ? localize('There was some invalid character in an input field.') : errorMessage);
             error.parentNode.parentNode.parentNode.setAttribute('style', 'display:block');
         } else if (Cookies.get('residence') === 'jp') {
             window.location.href = url_for('new_account/knowledge_testws');
@@ -68,31 +70,31 @@ const ValidAccountOpening = (function() {
 
     const checkFname = function(fname, errorFname) {
         if ((fname.value).trim().length < 2) {
-            errorFname.innerHTML = Content.errorMessage('min', '2');
+            elementInnerHtml(errorFname, Content.errorMessage('min', '2'));
             Validate.displayErrorMessage(errorFname);
             window.accountErrorCounter++;
         } else if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test(fname.value)) {
             initializeValues();
-            errorFname.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);
+            elementInnerHtml(errorFname, Content.errorMessage('reg', [letters, space, hyphen, period, apost]));
             Validate.displayErrorMessage(errorFname);
             window.accountErrorCounter++;
         }
     };
     const checkLname = function(lname, errorLname) {
         if ((lname.value).trim().length < 2) {
-            errorLname.innerHTML = Content.errorMessage('min', '2');
+            elementInnerHtml(errorLname, Content.errorMessage('min', '2'));
             Validate.displayErrorMessage(errorLname);
             window.accountErrorCounter++;
         } else if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test(lname.value)) {
             initializeValues();
-            errorLname.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);
+            elementInnerHtml(errorLname, Content.errorMessage('reg', [letters, space, hyphen, period, apost]));
             Validate.displayErrorMessage(errorLname);
             window.accountErrorCounter++;
         }
     };
     const checkDate = function(dobdd, dobmm, dobyy, errorDob) {
         if (!isValidDate(dobdd.value, dobmm.value, dobyy.value) || dobdd.value === '' || dobmm.value === '' || dobyy.value === '') {
-            errorDob.innerHTML = Content.localize().textErrorBirthdate;
+            elementInnerHtml(errorDob, Content.localize().textErrorBirthdate);
             Validate.displayErrorMessage(errorDob);
             window.accountErrorCounter++;
         }
@@ -100,26 +102,26 @@ const ValidAccountOpening = (function() {
     const checkPostcode = function(postcode, errorPostcode) {
         if ((postcode.value !== '' || Client.get_value('residence') === 'gb') && !/^[a-zA-Z\d-]+$/.test(postcode.value)) {
             initializeValues();
-            errorPostcode.innerHTML = Content.errorMessage('reg', [letters, numbers, hyphen]);
+            elementInnerHtml(errorPostcode, Content.errorMessage('reg', [letters, numbers, hyphen]));
             Validate.displayErrorMessage(errorPostcode);
             window.accountErrorCounter++;
         }
     };
     const checkTel = function(tel, errorTel) {
         if (tel.value.replace(/\+| /g, '').length < 6) {
-            errorTel.innerHTML = Content.errorMessage('min', 6);
+            elementInnerHtml(errorTel, Content.errorMessage('min', 6));
             Validate.displayErrorMessage(errorTel);
             window.accountErrorCounter++;
         } else if (!/^\+?[0-9\s]{6,35}$/.test(tel.value)) {
             initializeValues();
-            errorTel.innerHTML = Content.errorMessage('reg', [numbers, space]);
+            elementInnerHtml(errorTel, Content.errorMessage('reg', [numbers, space]));
             Validate.displayErrorMessage(errorTel);
             window.accountErrorCounter++;
         }
     };
     const checkAnswer = function(answer, errorAnswer) {
         if (answer.value.length < 4) {
-            errorAnswer.innerHTML = Content.errorMessage('min', 4);
+            elementInnerHtml(errorAnswer, Content.errorMessage('min', 4));
             Validate.displayErrorMessage(errorAnswer);
             window.accountErrorCounter++;
         }
@@ -127,7 +129,7 @@ const ValidAccountOpening = (function() {
     const checkCity = function(city, errorCity) {
         if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test(city.value)) {
             initializeValues();
-            errorCity.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);
+            elementInnerHtml(errorCity, Content.errorMessage('reg', [letters, space, hyphen, period, apost]));
             Validate.displayErrorMessage(errorCity);
             window.accountErrorCounter++;
         }

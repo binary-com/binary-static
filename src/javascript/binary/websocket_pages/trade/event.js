@@ -31,6 +31,7 @@ const TimePicker                 = require('../../components/time_picker').TimeP
 const dateValueChanged           = require('../../common_functions/common_functions').dateValueChanged;
 const load_with_pjax             = require('../../base/pjax').load_with_pjax;
 const Client                     = require('../../base/client').Client;
+const elementTextContent         = require('../../common_functions/common_functions').elementTextContent;
 
 /*
  * TradingEvents object contains all the event handler const required = function for
@@ -311,7 +312,7 @@ const TradingEvents = (function () {
                 Defaults.set('currency', e.target.value);
                 const stopTypeDollarLabel = document.getElementById('stop_type_dollar_label');
                 if (stopTypeDollarLabel && isVisible(stopTypeDollarLabel)) {
-                    stopTypeDollarLabel.textContent = e.target.value;
+                    elementTextContent(stopTypeDollarLabel, e.target.value);
                 }
                 Price.processPriceRequest();
             });

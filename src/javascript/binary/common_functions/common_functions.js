@@ -109,6 +109,27 @@ function dateValueChanged(element, type) {
     return true;
 }
 
+function selectorExists(element) {
+    if (typeof (element) !== 'undefined' && element !== null) {
+        return true;
+    }
+    return false;
+}
+
+function elementTextContent(element, text) { // eslint-disable-line consistent-return
+    if (selectorExists(element)) {
+        if (text) element.textContent = text;
+        else return element.textContent;
+    }
+}
+
+function elementInnerHtml(element, text) { // eslint-disable-line consistent-return
+    if (selectorExists(element)) {
+        if (text) element.innerHTML = text;
+        else return element.innerHTML;
+    }
+}
+
 module.exports = {
     getLoginToken         : function() { return Cookies.get('login'); },
     email_rot13           : email_rot13,
@@ -120,4 +141,7 @@ module.exports = {
     isVisible             : isVisible,
     checkInput            : checkInput,
     dateValueChanged      : dateValueChanged,
+    selectorExists        : selectorExists,
+    elementTextContent    : elementTextContent,
+    elementInnerHtml      : elementInnerHtml,
 };
