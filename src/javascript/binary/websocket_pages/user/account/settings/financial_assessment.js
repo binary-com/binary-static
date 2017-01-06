@@ -4,6 +4,7 @@ const showLoadingImage   = require('../../../../base/utility').showLoadingImage;
 const localize           = require('../../../../base/localize').localize;
 const Client             = require('../../../../base/client').Client;
 const url_for            = require('../../../../base/url').url_for;
+const Content              = require('../../../../common_functions/content').Content;
 const selectorExists     = require('../../../../common_functions/common_functions').selectorExists;
 
 const FinancialAssessmentws = (function() {
@@ -12,6 +13,7 @@ const FinancialAssessmentws = (function() {
     let financial_assessment = {};
 
     const init = function() {
+        Content.populate();
         if (checkIsVirtual()) return;
         LocalizeText();
         $('#assessment_form').on('submit', function(event) {
@@ -154,7 +156,7 @@ const FinancialAssessmentws = (function() {
     const checkIsVirtual = function() {
         if (Client.get_boolean('is_virtual')) {
             $('#assessment_form').addClass('invisible');
-            $('#response_on_success').addClass('notice-msg center-text').removeClass('invisible').text(localize('This feature is not relevant to virtual-money accounts.'));
+            $('#response_on_success').addClass('notice-msg center-text').removeClass('invisible').text(Content.localize().featureNotRelevantToVirtual);
             hideLoadingImg(false);
             return true;
         }

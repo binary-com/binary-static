@@ -1,4 +1,4 @@
-<div class='gr-12 gr-padding-10'>
+<div class="gr-12 gr-padding-10">
     <h1 id="deposit-withdraw-heading"></h1>
     <div>
         <div id="deposit-withdraw-message" class="invisible">
@@ -15,29 +15,29 @@
                 [% l('Your account is not fully authenticated.') %]
             </p>
         </div>
-        <div id="deposit-withdraw-error" class="center-text notice-msg invisible">
-            <p id="withdrawal-locked-error" class="error_messages">
+        <div id="deposit-withdraw-error" class="invisible">
+            <p id="withdrawal-locked-error" class="error_messages center-text notice-msg ">
                 [% l('Withdrawal is locked, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
-            <p id="deposit-locked-error" class="error_messages">
+            <p id="deposit-locked-error" class="error_messages center-text notice-msg ">
                 [% l('Deposit is locked, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
-            <p id="cashier-locked-error" class="error_messages">
+            <p id="cashier-locked-error" class="error_messages center-text notice-msg ">
                 [% l('Cashier is locked, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
-            <p id="financial-risk-error" class="error_messages">
+            <p id="financial-risk-error" class="error_messages center-text notice-msg ">
                 [% l('Financial Risk approval is required. Please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
-            <p id="knowledge-test-error" class="error_messages">
+            <p id="knowledge-test-error" class="error_messages center-text notice-msg ">
                 [% l('You must complete the knowledge test to activate this account. Please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
-            <p id="activation-error" class="error_messages">
+            <p id="activation-error" class="error_messages center-text notice-msg ">
                 [% l('Account not activated, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
-            <p id="age-error" class="error_messages">
+            <p id="age-error" class="error_messages center-text notice-msg ">
                 [% l('Account needs age verification, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
-            <p id="custom-error" class="error_messages"></p>
+            <p id="custom-error" class="error_messages center-text notice-msg error_vrtc"></p>
         </div>
     </div>
     <div class="container invisible" id="deposit-withdraw-iframe-container">
