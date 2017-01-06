@@ -31,10 +31,10 @@ const Validate = (function() {
                 allText += parClass[i].textContent;
             }
             if (!re.test(allText)) {
-                elementInnerHtml(par.innerHTML + ' ' + message);
+                elementInnerHtml(par, par.innerHTML + ' ' + message);
             }
         } else {
-            elementInnerHtml(par.innerHTML, message);
+            elementInnerHtml(par, message);
         }
         error.appendChild(par);
         displayErrorMessage(error);
