@@ -35,7 +35,7 @@ var MBMessage = (function () {
                 page.client.set_storage_value('currencies', response.payout_currencies);
                 MBDisplayCurrencies('', false);
                 MBSymbols.getSymbols(1);
-            } else if (type === 'proposal_array') {
+            } else if (type === 'proposal') {
                 MBProcess.processProposal(response);
             } else if (type === 'buy') {
                 MBPurchase.display(response);

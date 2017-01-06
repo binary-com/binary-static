@@ -27,45 +27,40 @@ var MBPrice = (function() {
         $tables;
 
     var addPriceObj = function(req) {
-        req.barriers.forEach(function(barrier_obj) {
-            var barrier = makeBarrier(barrier_obj);
-            if (!prices[barrier]) {
-                prices[barrier] = {};
-            }
-            prices[barrier][req.contract_type] = {};
-            if (!contract_types[req.contract_type]) {
-                contract_types[req.contract_type] = MBContract.getTemplate(req.contract_type);
-            }
-        });
+        var barrier = makeBarrier(req);
+        if (!prices[barrier]) {
+            prices[barrier] = {};
+        }
+        prices[barrier][req.contract_type] = {};
+        if (!contract_types[req.contract_type]) {
+            contract_types[req.contract_type] = MBContract.getTemplate(req.contract_type);
+        }
     };
 
-    var makeBarrier = function(barrier_obj) {
-        if (!barrier_obj.barrier && barrier_obj.error) barrier_obj = barrier_obj.error.details;
-        return (barrier_obj.barrier2 ? barrier_obj.barrier2 + '_' : '') + barrier_obj.barrier;
+    var makeBarrier = function(req) {
+        return (req.barrier2 ? req.barrier2 + '_' : '') + req.barrier;
     };
 
     var display = function(response) {
-        var contract_type = response.echo_req.contract_type;
-        response.proposal_array.proposals.forEach(function(proposal) {
-            var barrier = makeBarrier(proposal),
-                prev_proposal = $.extend({}, prices[barrier][contract_type]);
-            prices[barrier][contract_type] = $.extend({ echo_req: response.echo_req }, proposal);
+        var barrier = makeBarrier(response.echo_req),
+            contract_type = response.echo_req.contract_type,
+            prev_proposal = $.extend({}, prices[barrier][contract_type]);
 
-            if (!objectNotEmpty(prev_proposal)) {
-                res_count++;
-            }
+        if (!objectNotEmpty(prev_proposal)) {
+            res_count++;
+        }
 
-            // update previous ask_price to use in price movement
-            if (objectNotEmpty(prev_proposal) && !prev_proposal.error) {
-                prices[barrier][contract_type].prev_price = prev_proposal.ask_price;
-            }
-        });
+        prices[barrier][contract_type] = response;
+        // update previous ask_price to use in price movement
+        if (objectNotEmpty(prev_proposal) && !prev_proposal.error) {
+            prices[barrier][contract_type].prev_price = prev_proposal.proposal.ask_price;
+        }
 
         // populate table if all proposals received
         if (!is_displayed && res_count === Object.keys(prices).length * 2) {
             populateTable();
         } else {
-            updatePrice(contract_type);
+            updatePrice(prices[barrier][contract_type]);
         }
     };
 
@@ -91,42 +86,43 @@ var MBPrice = (function() {
         is_displayed = true;
     };
 
-    var updatePrice = function(contract_type) {
-        barriers.forEach(function(barrier) {
-            var proposal   = prices[barrier][contract_type],
-                price_rows = document.querySelectorAll(price_selector + ' div[data-barrier="' + makeBarrier(proposal) + '"]');
+    var updatePrice = function(proposal) {
+        var barrier    = makeBarrier(proposal.echo_req),
+            price_rows = document.querySelectorAll(price_selector + ' div[data-barrier="' + barrier + '"]');
 
-            if (!price_rows.length) return;
+        if (!price_rows.length) return;
 
-            var contract_info     = contract_types[contract_type],
-                contract_info_opp = contract_types[contract_info.opposite];
-            var values     = getValues(proposal),
-                values_opp = getValues(prices[barrier][contract_info.opposite]);
+        var contract_type     = proposal.echo_req.contract_type,
+            contract_info     = contract_types[contract_type],
+            contract_info_opp = contract_types[contract_info.opposite];
+        var values     = getValues(proposal),
+            values_opp = getValues(prices[barrier][contract_info.opposite]);
 
-            price_rows[+contract_info.order].innerHTML     = makePriceRow(values,     true);
-            price_rows[+contract_info_opp.order].innerHTML = makePriceRow(values_opp, true);
-        });
+        price_rows[+contract_info.order].innerHTML     = makePriceRow(values,     true);
+        price_rows[+contract_info_opp.order].innerHTML = makePriceRow(values_opp, true);
     };
 
     var getValues = function(proposal) {
-        var barrier       = makeBarrier(proposal),
+        var barrier       = makeBarrier(proposal.echo_req),
             payout        = proposal.echo_req.amount,
             contract_type = proposal.echo_req.contract_type,
             proposal_opp  = prices[barrier][contract_types[contract_type].opposite];
         return {
             contract_type      : contract_type,
             barrier            : barrier,
-            is_active          : !proposal.error && proposal.ask_price,
+            id                 : !proposal.error ? proposal.proposal.id : undefined,
+            is_active          : !proposal.error && proposal.proposal.ask_price,
             message            : proposal.error && proposal.error.code !== 'RateLimit' ? proposal.error.message : '',
             ask_price          : getAskPrice(proposal),
             sell_price         : payout - getAskPrice(proposal_opp),
-            ask_price_movement : !proposal.error ? getMovementDirection(proposal.prev_price, proposal.ask_price) : '',
-            sell_price_movement: proposal_opp && !proposal_opp.error ? getMovementDirection(proposal_opp.ask_price, proposal_opp.prev_price) : '',
+            ask_price_movement : !proposal.error ? getMovementDirection(proposal.prev_price, proposal.proposal.ask_price) : '',
+            sell_price_movement: proposal_opp && !proposal_opp.error ? getMovementDirection(proposal_opp.proposal.ask_price, proposal_opp.prev_price) : '',
         };
     };
 
     var getAskPrice = function(proposal) {
-        return proposal.error || +proposal.ask_price === 0 ? proposal.echo_req.amount : proposal.ask_price;
+        return (proposal.error || +proposal.proposal.ask_price === 0) ?
+            proposal.echo_req.amount : proposal.proposal.ask_price;
     };
 
     var getMovementDirection = function(prev, current) {
@@ -140,7 +136,7 @@ var MBPrice = (function() {
                 '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
                 '<div class="gr-4 buy-price">' +
                     '<button class="price-button' + (!values.is_active ? ' inactive' : '') + '"' +
-                        (values.is_active ? ' onclick="return HandleClick(\'MBPrice\', \'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
+                        (values.id ? ' onclick="return HandleClick(\'MBPrice\', \'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
                         (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' +
                             '<span class="value-wrapper">' +
                                 '<span class="dynamics ' + (values.ask_price_movement || '') + '"></span>' +
@@ -192,10 +188,10 @@ var MBPrice = (function() {
 
         var req = {
             buy       : 1,
-            price     : proposal.ask_price,
+            price     : proposal.proposal.ask_price,
             parameters: {
                 amount               : proposal.echo_req.amount,
-                barrier              : proposal.barrier,
+                barrier              : proposal.echo_req.barrier,
                 basis                : 'payout',
                 contract_type        : proposal.echo_req.contract_type,
                 currency             : MBContract.getCurrency(),
@@ -206,8 +202,8 @@ var MBPrice = (function() {
             },
         };
 
-        if (proposal.barrier2) {
-            req.parameters.barrier2 = proposal.barrier2;
+        if (proposal.echo_req.barrier2) {
+            req.parameters.barrier2 = proposal.echo_req.barrier2;
         }
 
         BinarySocket.send(req);
