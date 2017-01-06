@@ -157,7 +157,6 @@ const Barriers_Beta = (function () {
         const barrierElement = document.getElementById('barrier');
         if (isVisible(barrierElement) && (isNaN(parseFloat(barrierElement.value)) ||
                 parseFloat(barrierElement.value) === 0)) {
-            barrierElement.value = '0';
             barrierElement.classList.add('error-field');
         } else {
             barrierElement.classList.remove('error-field');
