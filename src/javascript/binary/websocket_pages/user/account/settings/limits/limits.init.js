@@ -4,6 +4,8 @@ const addComma = require('../../../../../common_functions/string_util').addComma
 const LimitsUI = require('./limits.ui').LimitsUI;
 const localize = require('../../../../../base/localize').localize;
 const Client   = require('../../../../../base/client').Client;
+const elementTextContent  = require('../../../../../common_functions/common_functions').elementTextContent;
+const elementInnerHtml    = require('../../../../../common_functions/common_functions').elementInnerHtml;
 
 const LimitsWS = (function() {
     'use strict';
@@ -17,7 +19,7 @@ const LimitsWS = (function() {
         const elWithdrawLimitAgg = document.getElementById('withdrawal-limit-aggregate');
 
         if (limits.lifetime_limit === 99999999 && limits.num_of_days_limit === 99999999) {
-            elWithdrawLimit.textContent = Content.localize().textAuthenticatedWithdrawal;
+            elementTextContent(elWithdrawLimit, Content.localize().textAuthenticatedWithdrawal);
         } else {
             let txtWithdrawLim             = Content.localize().textWithdrawalLimitsEquivalant,
                 txtWithdrawAmt             = Content.localize().textWithrawalAmountEquivalant,
@@ -31,8 +33,9 @@ const LimitsWS = (function() {
             if ((/^(iom)$/i).test(Client.get_value('landing_company_name'))) { // MX
                 txtWithdrawLim = Content.localize().textWithdrawalLimitsEquivalantDay;
                 txtWithdrawAmt  = Content.localize().textWithrawalAmountEquivalantDay;
-                elWithdrawLimit.textContent  = template(txtWithdrawLim, [limits.num_of_days, currency, daysLimit]);
-                elWithdrawn.textContent      = template(txtWithdrawAmt,  [currency, withdrawn, limits.num_of_days]);
+                elementTextContent(elWithdrawLimit,
+                   template(txtWithdrawLim, [limits.num_of_days, currency, daysLimit]));
+                elementTextContent(elWithdrawn, template(txtWithdrawAmt,  [currency, withdrawn, limits.num_of_days]));
             } else {
                 if ((/^(costarica|japan)$/i).test(Client.get_value('landing_company_name'))) { // CR , JP
                     txtWithdrawLim            = Content.localize().textWithdrawalLimits;
@@ -40,10 +43,10 @@ const LimitsWS = (function() {
                     text_CurrentMaxWithdrawal = Content.localize().textCurrentMaxWithdrawal;
                     currency                  = Client.get_value('currencies');
                 }
-                elWithdrawLimit.textContent  = template(txtWithdrawLim, [currency, daysLimit]);
-                elWithdrawn.textContent      = template(txtWithdrawAmt,  [currency, withdrawn]);
+                elementTextContent(elWithdrawLimit, template(txtWithdrawLim, [currency, daysLimit]));
+                elementTextContent(elWithdrawn, template(txtWithdrawAmt,  [currency, withdrawn]));
             }
-            elWithdrawLimitAgg.textContent = template(text_CurrentMaxWithdrawal, [currency, remainder]);
+            elementTextContent(elWithdrawLimitAgg, template(text_CurrentMaxWithdrawal, [currency, remainder]));
         }
     };
 
@@ -52,11 +55,11 @@ const LimitsWS = (function() {
         document.getElementById('limits-title').setAttribute('style', 'display:none');
         const errorElement = document.getElementsByClassName('notice-msg')[0];
         if ((error && error.code === 'FeatureNotAvailable' && Client.get_boolean('is_virtual')) || Client.get_boolean('is_virtual')) {
-            errorElement.innerHTML = localize('This feature is not relevant to virtual-money accounts.');
+            elementInnerHtml(errorElement, localize('This feature is not relevant to virtual-money accounts.'));
         } else if (error && error.message) {
-            errorElement.innerHTML = error.message;
+            elementInnerHtml(errorElement, error.message);
         } else {
-            errorElement.innerHTML = localize('An error occured') + '.';
+            elementInnerHtml(errorElement, localize('An error occured') + '.');
         }
         document.getElementById('client_message').setAttribute('style', 'display:block');
     };

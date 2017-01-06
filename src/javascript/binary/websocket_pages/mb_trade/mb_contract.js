@@ -7,6 +7,7 @@ const japanese_client = require('../../common_functions/country_base').japanese_
 const MBDefaults      = require('./mb_defaults').MBDefaults;
 const MBSymbols       = require('./mb_symbols').MBSymbols;
 const moment          = require('moment');
+const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -197,7 +198,7 @@ const MBContract = (function() {
                 remainingTimeString.push(all_durations[key] + localize((key + (+all_durations[key] === 1 ? '' : 's'))));
             }
         });
-        remainingTimeElement.innerHTML = remainingTimeString.join(' ');
+        elementInnerHtml(remainingTimeElement, remainingTimeString.join(' '));
         if (remainingTimeout) clearContractTimeout(remainingTimeout);
         remainingTimeout = setTimeout(displayRemainingTime, 1000);
     };

@@ -14,6 +14,7 @@ const Defaults                   = require('../defaults').Defaults;
 const isVisible                  = require('../../../common_functions/common_functions').isVisible;
 const localize                   = require('../../../base/localize').localize;
 const Client                     = require('../../../base/client').Client;
+const elementTextContent         = require('../../../common_functions/common_functions').elementTextContent;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -196,12 +197,12 @@ const Price_Beta = (function() {
             h4.setAttribute('class', 'contract_heading ' + type);
             if (is_spread) {
                 if (position === 'top') {
-                    h4.textContent = Content.localize().textSpreadTypeLong;
+                    elementTextContent(h4, Content.localize().textSpreadTypeLong);
                 } else {
-                    h4.textContent = Content.localize().textSpreadTypeShort;
+                    elementTextContent(h4, Content.localize().textSpreadTypeShort);
                 }
             } else {
-                h4.textContent = display_type;
+                elementTextContent(h4, display_type);
             }
         }
 
@@ -210,11 +211,11 @@ const Price_Beta = (function() {
             if (data.display_value) {
                 if (is_spread) {
                     $('.stake:visible').hide();
-                    amount.textContent = data.display_value;
+                    elementTextContent(amount, data.display_value);
                 } else {
                     $('.stake:hidden').show();
-                    stake.textContent = localize('Stake') + ': ';
-                    amount.textContent = format_money((currency.value || currency.getAttribute('value')), data.display_value);
+                    elementTextContent(stake, localize('Stake') + ': ');
+                    elementTextContent(amount, format_money((currency.value || currency.getAttribute('value')), data.display_value));
                 }
                 $('.stake_wrapper:hidden').show();
             } else {
@@ -222,8 +223,8 @@ const Price_Beta = (function() {
             }
 
             if (data.payout) {
-                payout.textContent = (is_spread ? localize('Payout/point') : localize('Payout')) + ': ';
-                payoutAmount.textContent = format_money((currency.value || currency.getAttribute('value')), +data.payout);
+                elementTextContent(payout, (is_spread ? localize('Payout/point') : localize('Payout')) + ': ');
+                elementTextContent(payoutAmount, format_money((currency.value || currency.getAttribute('value')), +data.payout));
                 $('.payout_wrapper:hidden').show();
             } else {
                 $('.payout_wrapper:visible').hide();
@@ -241,7 +242,7 @@ const Price_Beta = (function() {
             comment.hide();
             setData(details.error.details);
             error.show();
-            error.textContent = details.error.message;
+            elementTextContent(error, details.error.message);
         } else {
             setData(proposal);
             if ($('#websocket_form').find('.error-field').length > 0) {

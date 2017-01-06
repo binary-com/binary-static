@@ -218,6 +218,7 @@ const BinarySocketClass = function() {
                     Client.do_logout(response);
                 } else if (type === 'landing_company') {
                     const landing_company = response.landing_company;
+                    Client.landing_company(landing_company);
                     Header.topbar_message_visibility(landing_company);
                     let company;
                     if (response.hasOwnProperty('error')) return;
