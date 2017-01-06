@@ -135,9 +135,9 @@ const ValidAccountOpening = (function() {
         }
     };
     const checkState = function(state, errorState) {
-        if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test(state.value)) {
+        if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><|]+/.test(state.value)) {
             initializeValues();
-            errorState.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);
+            elementInnerHtml(errorState, Content.errorMessage('reg', [letters, space, hyphen, period, apost]));
             Validate.displayErrorMessage(errorState);
             window.accountErrorCounter++;
         }
