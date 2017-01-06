@@ -8,6 +8,7 @@ const moment = require('moment');
 
 const Client = (function () {
     const client_object = {};
+    let landing_company_response = {};
 
     const parseLoginIDList = function(string) {
         if (!string) return [];
@@ -350,6 +351,11 @@ const Client = (function () {
         return (match_type !== 'any');
     };
 
+    const get_set_landing_company = function(response) { // eslint-disable-line consistent-return
+        if (response) landing_company_response = response;
+        else return landing_company_response;
+    };
+
     return {
         init                  : init,
         validate_loginid      : validate_loginid,
@@ -376,6 +382,7 @@ const Client = (function () {
         send_logout_request: send_logout_request,
         do_logout          : do_logout,
         status_detected    : status_detected,
+        landing_company    : get_set_landing_company,
     };
 })();
 
