@@ -3,9 +3,10 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-28 03:50+0000\n"
+"PO-Revision-Date: 2017-01-07 00:19+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) "
+"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -861,15 +862,11 @@ msgstr "账户转账"
 msgid "Account balance: "
 msgstr "账户余额： "
 
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "存款已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
+msgstr "账户需要通过年龄验证。欲知详情，请联系<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "存款已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
+msgstr "账户未激活。欲知详情，请联系<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
 msgid "Accounting"
 msgstr "会计"
@@ -1602,10 +1599,8 @@ msgstr "收银台"
 msgid "Cashier Password"
 msgstr "收银台密码"
 
-#, fuzzy
-#| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "收银台已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
+msgstr "收银台已锁定。欲知详情，请联系<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
 msgid "Cashier password"
 msgstr "收银台密码"
@@ -2173,10 +2168,8 @@ msgstr "将%1 %2虚拟资金存入您的账户%3"
 msgid "Deposit Bonus"
 msgstr "存款奖金"
 
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "存款已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
+msgstr "存款已锁定。欲知详情，请联系<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
 msgid "Deposit of"
 msgstr "存款"
@@ -2736,10 +2729,8 @@ msgstr "Financial Asset"
 msgid "Financial Information"
 msgstr "金融信息"
 
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "取款已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
+msgstr "需要通过金融风险批准。欲知详情，请联系<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
 msgid "Financial Security"
 msgstr "财务安全"
@@ -7455,10 +7446,8 @@ msgstr "取款限额"
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "您的账户现时无法取款。请联系%1进行解锁。"
 
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "取款已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
+msgstr "取款已锁定。欲知详情，请联系<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr "与团队其他成员紧密合作，开发出可在交易平台上推动价格的软件"
@@ -7646,10 +7635,8 @@ msgstr "一旦您账户的交易额超过奖励金额的25倍，您就可以从�
 msgid "You must accept the terms and conditions to open an account."
 msgstr "您必须接受条款和条件才能开户。"
 
-#, fuzzy
-#| msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
 msgid "You must complete the knowledge test to activate this account. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "您的账户未完全验证。欲知详情请访问<a class=\"pjaxload\" href=\"%1\">验证</a>页面。"
+msgstr "要激活此账户，您必须完成知识测试。欲知详情请联系<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "要使用%1 API，您必须遵守这些条款。"
@@ -7786,10 +7773,8 @@ msgstr "您的账户已经得到完全验证，且您的取款限额已经取消
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "您的账户已经得到完全验证，且您可在此查看您的<a class=\"pjaxload\" href=\"%1\">交易限额</a>。"
 
-#, fuzzy
-#| msgid "Client is not fully authenticated."
 msgid "Your account is not fully authenticated."
-msgstr "客户端验证不充分。"
+msgstr "您的帐户未完成身份验证。"
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "您的账户不应被用作银行信贷，其中的存款只应视为交易资金。本公司并不是金融机构，客户存款不会有利息。如果您重复进行存、取款，却没有进行相应的交易，在关闭账户之前，我们保留权利在不事先通知的情况下把相关银行费用转加到您的账户。"
