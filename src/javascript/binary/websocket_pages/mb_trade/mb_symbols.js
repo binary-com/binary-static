@@ -52,7 +52,8 @@ const MBSymbols = (function () {
         underlyings     : function ()      { return tradeUnderlyings; },
         getName         : function(symbol) { return names[symbol]; },
         need_page_update: function ()      { return need_page_update; },
-        getAllSymbols   : function()       { return allSymbols; },
+        getAllSymbols   : function ()      { return allSymbols; },
+        clearData       : function ()      { ActiveSymbols.clearData(); },
     };
 })();
 
