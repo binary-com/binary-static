@@ -97,13 +97,11 @@ const MBTradingEvents = (function () {
 
         const validatePayout = function(payoutAmount) {
             let isOK = true;
-            if (!payoutAmount || isNaN(payoutAmount)) {
-                isOK = false;
-            } else if (japanese_client()) {
-                if (payoutAmount < 1 || payoutAmount > 100) {
-                    isOK = false;
-                }
-            } else if (payoutAmount <= 0 || payoutAmount > 5000) {
+            const contract = MBContract.getCurrentContracts();
+            const maxAmount = (Array.isArray(contract) && contract[0].expiry_type !== 'intraday') ? 20000 : 5000;
+            if (!payoutAmount || isNaN(payoutAmount) ||
+                (japanese_client() && (payoutAmount < 1 || payoutAmount > 100)) ||
+                (payoutAmount <= 0 || payoutAmount > maxAmount)) {
                 isOK = false;
             }
 
