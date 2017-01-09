@@ -49,7 +49,7 @@ const VerifyEmail = function() {
         submit: function(ev, info) {
             ev.preventDefault();
             if (info.errors.length) return;
-            if ((clients_country !== 'my') || /@binary\.com*$/.test(info.values.email)) {
+            if ((clients_country !== 'my') || /@binary\.com$/.test(info.values.email)) {
                 openAccount(info.values.email);
             } else {
                 $('#verify-email-form > div')
