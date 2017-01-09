@@ -201,7 +201,7 @@ const ViewPopupWS = (function() {
     const normalUpdate = function() {
         const finalPrice = contract.sell_price || contract.bid_price,
             is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start,
-            user_sold = contract.sell_time && contract.sell_time <= contract.date_expiry,
+            user_sold = contract.sell_time && contract.sell_time < contract.date_expiry,
             is_ended = contract.is_settleable || contract.is_sold || user_sold,
             indicative_price = finalPrice && is_ended ?
                              (contract.sell_price || contract.bid_price) : contract.bid_price ?
