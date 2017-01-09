@@ -85,10 +85,13 @@ const MBTradingEvents = (function () {
             const result = payoutElement.value.substring(0, ev.target.selectionStart) + char +
                 payoutElement.value.substring(ev.target.selectionEnd);
             if (japanese_client()) {
-                if (char === '.' || result[0] === '0' || +result < 1 || +result > 100) {
+                if (char === '.' || result[0] === '0') {
                     isOK = false;
                 }
-            } else if (result[0] === '0' || +result > 5000) {
+            } else if (result[0] === '0') {
+                isOK = false;
+            }
+            if (!validatePayout(+result)) {
                 isOK = false;
             }
 
@@ -96,6 +99,21 @@ const MBTradingEvents = (function () {
                 ev.returnValue = false;
                 ev.preventDefault();
             }
+        };
+
+        const validatePayout = function(payoutAmount) {
+            let isOK = true;
+            if (!payoutAmount || isNaN(payoutAmount)) {
+                isOK = false;
+            } else if (japanese_client()) {
+                if (payoutAmount < 1 || payoutAmount > 100) {
+                    isOK = false;
+                }
+            } else if (payoutAmount <= 0 || payoutAmount > 5000) {
+                isOK = false;
+            }
+
+            return isOK;
         };
 
         const payoutElement = document.getElementById('payout');
@@ -108,23 +126,26 @@ const MBTradingEvents = (function () {
             payoutElement.addEventListener('keypress', payoutOnKeypress);
             payoutElement.addEventListener('input', debounce(function(e) {
                 let payout = e.target.value;
-                if (japanese_client()) {
-                    const $payoutElement = $('#payout'),
-                        $tableElement = $('.japan-table');
-                    if (payout < 1 || payout > 100 || isNaN(payout)) {
-                        $payoutElement.addClass('error-field');
-                        $tableElement.addClass('invisible');
-                        return false;
-                    }
-                    $payoutElement.removeClass('error-field');
-                    $tableElement.removeClass('invisible');
-                } else {
+
+                if (!japanese_client()) {
                     payout = payout.replace(/[^0-9.]/g, '');
                     if (isStandardFloat(payout)) {
                         payout = parseFloat(payout).toFixed(2);
                     }
                     e.target.value = payout;
                 }
+
+                const $payoutElement = $('#payout');
+                const $tableElement = $('.japan-table');
+                if (!validatePayout(payout)) {
+                    $payoutElement.addClass('error-field');
+                    $tableElement.addClass('invisible');
+                    return false;
+                }
+                // else
+                $payoutElement.removeClass('error-field');
+                $tableElement.removeClass('invisible');
+
                 MBDefaults.set('payout', payout);
                 MBProcess.processPriceRequest();
                 MBContract.displayDescriptions();
