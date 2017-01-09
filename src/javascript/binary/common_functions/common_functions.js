@@ -125,8 +125,9 @@ function elementTextContent(element, text) { // eslint-disable-line consistent-r
 
 function elementInnerHtml(element, text) { // eslint-disable-line consistent-return
     if (selectorExists(element)) {
-        if (text) element.innerHTML = text;
-        else return element.innerHTML;
+        if (typeof text === 'undefined') return element.innerHTML;
+        // else
+        element.innerHTML = text;
     }
 }
 

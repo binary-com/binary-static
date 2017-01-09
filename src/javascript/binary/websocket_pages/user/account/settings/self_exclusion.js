@@ -114,7 +114,7 @@ const SelfExclusionWS = (function() {
 
         if (Client.get_boolean('is_virtual')) {
             $('#selfExclusionDesc').addClass(hiddenClass);
-            showPageError(Content.localize().textFeatureUnavailable, true);
+            showPageError(Content.localize().featureNotRelevantToVirtual, true);
             return;
         }
         showLoadingImage($loading);
