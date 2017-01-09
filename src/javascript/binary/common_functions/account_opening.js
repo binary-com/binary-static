@@ -9,6 +9,7 @@ const japanese_client      = require('../common_functions/country_base').japanes
 const appendTextValueChild = require('../common_functions/common_functions').appendTextValueChild;
 const Cookies              = require('../../lib/js-cookie');
 const moment               = require('moment');
+const elementInnerHtml     = require('../common_functions/common_functions').elementInnerHtml;
 
 const displayAcctSettings = function(response) {
     const country = response.get_settings.country_code;
@@ -93,7 +94,7 @@ const handleResidence = function() {
                 const errorElement = document.getElementById('error-residence');
                 if (response.hasOwnProperty('error')) {
                     if (response.error.message) {
-                        errorElement.innerHTML = response.error.message;
+                        elementInnerHtml(errorElement, response.error.message);
                         errorElement.setAttribute('style', 'display:block');
                     }
                 } else {
@@ -116,14 +117,21 @@ const handleResidence = function() {
                     $('#real-form').show();
                 }
             } else if (type === 'states_list') {
-                select = document.getElementById('address-state');
-                const states_list = response.states_list;
-                for (let i = 0; i < states_list.length; i++) {
-                    appendTextValueChild(select, states_list[i].text, states_list[i].value);
+                select = $('#address-state');
+                const states = response.states_list;
+
+                select.empty();
+
+                if (states && states.length > 0) {
+                    states.forEach(function(state) {
+                        select.append($('<option/>', { value: state.value, text: state.text }));
+                    });
+                } else {
+                    select.replaceWith($('<input/>', { id: 'address-state', name: 'address_state', type: 'text', maxlength: '35' }));
                 }
-                select.parentNode.parentNode.show();
+                $('#address-state').parent().parent().show();
                 if (window.state) {
-                    select.value = window.state;
+                    $('#address-state').val(window.state);
                 }
             } else if (type === 'residence_list') {
                 select = document.getElementById('residence-disabled') || document.getElementById('residence');

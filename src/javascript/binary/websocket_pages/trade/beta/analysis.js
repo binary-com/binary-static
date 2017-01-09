@@ -11,6 +11,7 @@ const url_for_static                  = require('../../../base/url').url_for_sta
 const Client                          = require('../../../base/client').Client;
 const showHighchart                   = require('../common').showHighchart;
 const toggleActiveNavMenuElement_Beta = require('../common').toggleActiveNavMenuElement_Beta;
+const elementInnerHtml                = require('../../../common_functions/common_functions').elementInnerHtml;
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -113,8 +114,9 @@ const TradingAnalysis_Beta = (function() {
                     method: 'GET',
                     url   : url,
                 })
+
                     .done(function (data) {
-                        contentId.innerHTML = data;
+                        elementInnerHtml(contentId, data);
                         if (currentTab === 'tab_explanation') {
                             showExplanation(currentLink.href);
                         }

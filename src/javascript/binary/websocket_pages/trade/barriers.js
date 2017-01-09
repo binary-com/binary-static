@@ -4,6 +4,7 @@ const Tick               = require('./tick').Tick;
 const moment             = require('moment');
 const isVisible          = require('../../common_functions/common_functions').isVisible;
 const countDecimalPlaces = require('./common_independent').countDecimalPlaces;
+const elementTextContent = require('../../common_functions/common_functions').elementTextContent;
 
 /*
  * Handles barrier processing and display
@@ -54,17 +55,17 @@ const Barriers = (function () {
                         tooltip.style.display = 'none';
                         span.style.display = 'inherit';
                         // no need to display indicative barrier in case of absolute barrier
-                        indicativeBarrierTooltip.textContent = '';
+                        elementTextContent(indicativeBarrierTooltip, '');
                     } else {
                         if (!String(barrier_def).match(/^[+-]/)) barrier_def = barrier.barrier; // override Defaults value, because it's changing from absolute to relative barrier
                         value = barrier_def;
                         span.style.display = 'none';
                         tooltip.style.display = 'inherit';
                         if (currentTick && !isNaN(currentTick)) {
-                            indicativeBarrierTooltip.textContent = (parseFloat(currentTick) +
-                                parseFloat(barrier_def)).toFixed(decimalPlaces);
+                            elementTextContent(indicativeBarrierTooltip, (parseFloat(currentTick) +
+                              parseFloat(barrier_def)).toFixed(decimalPlaces));
                         } else {
-                            indicativeBarrierTooltip.textContent = '';
+                            elementTextContent(indicativeBarrierTooltip, '');
                         }
                     }
                     elm.value = elm.textContent = value;
@@ -106,8 +107,8 @@ const Barriers = (function () {
                         low_span.style.display = 'inherit';
                         low_tooltip.style.display = 'none';
 
-                        indicativeHighBarrierTooltip.textContent = '';
-                        indicativeLowBarrierTooltip.textContent = '';
+                        elementTextContent(indicativeHighBarrierTooltip, '');
+                        elementTextContent(indicativeLowBarrierTooltip, '');
                     } else {
                         // override Defaults value, if it's changing from absolute to relative barrier
                         if (!String(barrier_high).match(/^[+-]/) || !String(barrier_low).match(/^[+-]/)) {
@@ -128,11 +129,11 @@ const Barriers = (function () {
 
                         if (currentTick && !isNaN(currentTick)) {
                             const current_tick = parseFloat(currentTick);
-                            indicativeHighBarrierTooltip.textContent = barrierVal(current_tick, barrier_high);
-                            indicativeLowBarrierTooltip.textContent = barrierVal(current_tick, barrier_low);
+                            elementTextContent(indicativeHighBarrierTooltip, barrierVal(current_tick, barrier_high));
+                            elementTextContent(indicativeLowBarrierTooltip, barrierVal(current_tick, barrier_low));
                         } else {
-                            indicativeHighBarrierTooltip.textContent = '';
-                            indicativeLowBarrierTooltip.textContent = '';
+                            elementTextContent(indicativeHighBarrierTooltip, '');
+                            elementTextContent(indicativeLowBarrierTooltip, '');
                         }
                     }
                     high_elm.value = high_elm.textContent = value_high;
@@ -157,7 +158,6 @@ const Barriers = (function () {
         const barrierElement = document.getElementById('barrier'),
             empty = isNaN(parseFloat(barrierElement.value)) || parseFloat(barrierElement.value) === 0;
         if (isVisible(barrierElement) && empty) {
-            barrierElement.value = '0';
             barrierElement.classList.add('error-field');
         } else {
             barrierElement.classList.remove('error-field');

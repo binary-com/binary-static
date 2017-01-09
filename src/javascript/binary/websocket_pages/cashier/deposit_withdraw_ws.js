@@ -5,6 +5,7 @@ const localize = require('../../base/localize').localize;
 const Client   = require('../../base/client').Client;
 const url_for  = require('../../base/url').url_for;
 const appendTextValueChild = require('../../common_functions/common_functions').appendTextValueChild;
+const elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
 
 const ForwardWS = (function() {
     const init = function(cashier_password) {
@@ -85,10 +86,10 @@ const ForwardWS = (function() {
             hash_value = window.location.hash;
         if (/withdraw/.test(hash_value)) {
             cashier_type = 'withdraw';
-            deposit_withdraw_heading.innerHTML = localize('Withdraw');
+            elementInnerHtml(deposit_withdraw_heading, localize('Withdraw'));
         } else if (/deposit/.test(hash_value)) {
             cashier_type = 'deposit';
-            deposit_withdraw_heading.innerHTML = localize('Deposit');
+            elementInnerHtml(deposit_withdraw_heading, localize('Deposit'));
         }
         return cashier_type;
     };
@@ -154,9 +155,11 @@ const ForwardWS = (function() {
 
     const checkOnLoad = function() {
         const clientIsVirtual = function() {
+            Content.populate();
             const is_virtual = Client.get_boolean('is_virtual');
             if (is_virtual) {
-                ForwardWS.showError(localize('This feature is not relevant to virtual-money accounts.'));
+                getCashierType();
+                ForwardWS.showError(Content.localize().featureNotRelevantToVirtual);
             }
             return is_virtual;
         };

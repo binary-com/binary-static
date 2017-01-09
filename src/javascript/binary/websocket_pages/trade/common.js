@@ -13,6 +13,8 @@ const localize    = require('../../base/localize').localize;
 const getLanguage = require('../../base/language').getLanguage;
 const Client      = require('../../base/client').Client;
 const url_for     = require('../../base/url').url_for;
+const elementTextContent  = require('../../common_functions/common_functions').elementTextContent;
+const elementInnerHtml  = require('../../common_functions/common_functions').elementInnerHtml;
 
 /*
  * This contains common functions we need for processing the response
@@ -49,7 +51,7 @@ function displayContractForms(id, elements, selected) {
     const target = document.getElementById(id),
         fragment = document.createDocumentFragment();
 
-    target.innerHTML = '';
+    elementInnerHtml(target, '');
 
     if (elements) {
         const tree = getContractCategoryTree(elements);
@@ -180,7 +182,7 @@ function displayMarkets(id, elements, selected) {
                 if (selected && selected === key2) {
                     option.setAttribute('selected', 'selected');
                 }
-                option.textContent = '\xA0\xA0\xA0\xA0' + elements[key].submarkets[key2].name;
+                elementTextContent(option, '\xA0\xA0\xA0\xA0' + elements[key].submarkets[key2].name);
                 fragment.appendChild(option);
             }
         }
@@ -491,7 +493,7 @@ function displayCommentPrice(node, currency, type, payout) {
             node.hide();
         } else {
             node.show();
-            node.textContent = comment;
+            elementTextContent(node, comment);
         }
     }
 }
@@ -516,7 +518,7 @@ function displayCommentSpreads(node, currency, point) {
             } else {
                 displayAmount = parseFloat(stopLoss);
             }
-            node.textContent = Content.localize().textSpreadDepositComment + ' ' + format_money(currency, displayAmount) + ' ' + Content.localize().textSpreadRequiredComment + ': ' + point + ' ' + Content.localize().textSpreadPointsComment;
+            elementTextContent(node, Content.localize().textSpreadDepositComment + ' ' + format_money(currency, displayAmount) + ' ' + Content.localize().textSpreadRequiredComment + ': ' + point + ' ' + Content.localize().textSpreadPointsComment);
         }
     }
 }
@@ -882,9 +884,9 @@ function displayTooltip_Beta(market, symbol) {
 
 function label_value(label_elem, label, value, no_currency) {
     const currency = Client.get_value('currency');
-    label_elem.innerHTML = label;
+    elementInnerHtml(label_elem, label);
     const value_elem = document.getElementById(label_elem.id + '_value');
-    value_elem.innerHTML = no_currency ? value : format_money(currency, value);
+    elementInnerHtml(value_elem, no_currency ? value : format_money(currency, value));
     value_elem.setAttribute('value', String(value).replace(/,/g, ''));
 }
 

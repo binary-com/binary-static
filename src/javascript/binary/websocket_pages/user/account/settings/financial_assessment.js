@@ -4,6 +4,8 @@ const showLoadingImage   = require('../../../../base/utility').showLoadingImage;
 const localize           = require('../../../../base/localize').localize;
 const Client             = require('../../../../base/client').Client;
 const url_for            = require('../../../../base/url').url_for;
+const Content              = require('../../../../common_functions/content').Content;
+const selectorExists     = require('../../../../common_functions/common_functions').selectorExists;
 
 const FinancialAssessmentws = (function() {
     'use strict';
@@ -11,6 +13,7 @@ const FinancialAssessmentws = (function() {
     let financial_assessment = {};
 
     const init = function() {
+        Content.populate();
         if (checkIsVirtual()) return;
         LocalizeText();
         $('#assessment_form').on('submit', function(event) {
@@ -32,8 +35,14 @@ const FinancialAssessmentws = (function() {
         $heading.text(localize($heading.text()));
         $heading_risk.text(localize($heading_risk.text()));
         $high_risk.text(localize($high_risk.text()));
-        document.getElementsByTagName('legend')[0].innerHTML = localize(document.getElementsByTagName('legend')[0].innerHTML);
-        if (document.getElementsByTagName('legend')[1]) document.getElementsByTagName('legend')[1].innerHTML = localize(document.getElementsByTagName('legend')[1].innerHTML);
+        const legend_0 = document.getElementsByTagName('legend')[0];
+        const legend_1 = document.getElementsByTagName('legend')[1];
+        if (selectorExists(legend_0)) {
+            legend_0.innerHTML = localize(legend_0.innerHTML);
+        }
+        if (selectorExists(legend_1)) {
+            legend_1.innerHTML = localize(legend_1.innerHTML);
+        }
         $assessment_form.find('label').each(function() {
             const ele = $(this);
             ele.text(localize(ele.text()));
@@ -147,7 +156,7 @@ const FinancialAssessmentws = (function() {
     const checkIsVirtual = function() {
         if (Client.get_boolean('is_virtual')) {
             $('#assessment_form').addClass('invisible');
-            $('#response_on_success').addClass('notice-msg center-text').removeClass('invisible').text(localize('This feature is not relevant to virtual-money accounts.'));
+            $('#response_on_success').addClass('notice-msg center-text').removeClass('invisible').text(Content.localize().featureNotRelevantToVirtual);
             hideLoadingImg(false);
             return true;
         }

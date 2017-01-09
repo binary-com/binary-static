@@ -144,7 +144,7 @@ const SettingsDetailsWS = (function() {
     };
 
     const populateStates = function(response) {
-        const $field = $(fieldIDs.state);
+        let $field = $(fieldIDs.state);
         const defaultValue = response.echo_req.passthrough.value;
         const states = response.states_list;
 
@@ -155,7 +155,8 @@ const SettingsDetailsWS = (function() {
                 $field.append($('<option/>', { value: state.value, text: state.text }));
             });
         } else {
-            $field.replaceWith($('<input/>', { id: fieldIDs.state, name: 'address_state', type: 'text', maxlength: '35' }));
+            $field.replaceWith($('<input/>', { id: fieldIDs.state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
+            $field = $(fieldIDs.state);
         }
 
         $field.val(defaultValue);

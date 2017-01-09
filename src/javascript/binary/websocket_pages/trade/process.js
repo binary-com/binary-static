@@ -26,6 +26,8 @@ const processTradingTimesAnswer = require('./common_independent').processTrading
 const setFormPlaceholderContent = require('./set_values').setFormPlaceholderContent;
 const localize = require('../../base/localize').localize;
 const moment   = require('moment');
+const elementTextContent        = require('../../common_functions/common_functions').elementTextContent;
+const elementInnerHtml          = require('../../common_functions/common_functions').elementInnerHtml;
 
 /*
  * This function process the active symbols to get markets
@@ -130,7 +132,7 @@ function processContract(contracts) {
         contracts_list.style.display = 'none';
         message_container.hide();
         confirmation_error.show();
-        confirmation_error.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="sessionStorage.removeItem(\'underlying\'); window.location.reload();">' + localize('Please reload the page') + '</a>';
+        elementInnerHtml(confirmation_error, contracts.error.message + ' <a href="javascript:;" onclick="sessionStorage.removeItem(\'underlying\'); window.location.reload();">' + localize('Please reload the page') + '</a>');
         return;
     }
 
@@ -243,7 +245,7 @@ function displaySpreads() {
         amountPerPointLabel.show();
         amountPerPoint.show();
         spreadContainer.show();
-        stopTypeDollarLabel.textContent = document.getElementById('currency').value || Defaults.get('currency');
+        elementTextContent(stopTypeDollarLabel, document.getElementById('currency').value || Defaults.get('currency'));
         if (Defaults.get('stop_type')) {
             const el = document.querySelectorAll('input[name="stop_type"][value="' + Defaults.get('stop_type') + '"]');
             if (el) {

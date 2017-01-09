@@ -26,6 +26,8 @@ const displayMarkets                 = require('../common').displayMarkets;
 const displayTooltip_Beta            = require('../common').displayTooltip_Beta;
 const processTradingTimesAnswer      = require('../common_independent').processTradingTimesAnswer;
 const moment = require('moment');
+const elementTextContent             = require('../../../common_functions/common_functions').elementTextContent;
+const elementInnerHtml               = require('../../../common_functions/common_functions').elementInnerHtml;
 
 /*
  * This function process the active symbols to get markets
@@ -131,7 +133,7 @@ function processContract_Beta(contracts) {
         contracts_list.style.display = 'none';
         message_container.hide();
         confirmation_error.show();
-        confirmation_error_contents.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="sessionStorage.removeItem(\'underlying\'); window.location.reload();">' + localize('Please reload the page') + '</a>';
+        elementInnerHtml(confirmation_error_contents, contracts.error.message + ' <a href="javascript:;" onclick="sessionStorage.removeItem(\'underlying\'); window.location.reload();">' + localize('Please reload the page') + '</a>');
         return;
     }
 
@@ -246,7 +248,7 @@ function displaySpreads_Beta() {
         amountPerPointLabel.show();
         amountPerPoint.show();
         spreadContainer.show();
-        stopTypeDollarLabel.textContent = document.getElementById('currency').value || Defaults.get('currency');
+        elementTextContent(stopTypeDollarLabel, document.getElementById('currency').value || Defaults.get('currency'));
         if (Defaults.get('stop_type')) {
             const el = document.querySelectorAll('input[name="stop_type"][value="' + Defaults.get('stop_type') + '"]');
             if (el) {
