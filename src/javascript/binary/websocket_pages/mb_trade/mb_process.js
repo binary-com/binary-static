@@ -32,7 +32,7 @@ const MBProcess = (function() {
         MBSymbols.details(data);
 
         const is_show_all  = Client.get_boolean('is_logged_in') && !japanese_client();
-        const symbols_list = !is_show_all ? MBSymbols.underlyings().major_pairs : MBSymbols.getAllSymbols();
+        const symbols_list = is_show_all ? MBSymbols.getAllSymbols() : MBSymbols.underlyings().major_pairs;
         const update_page  = MBSymbols.need_page_update();
         let symbol = MBDefaults.get('underlying');
 

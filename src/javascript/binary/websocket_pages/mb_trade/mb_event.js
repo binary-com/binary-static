@@ -84,14 +84,8 @@ const MBTradingEvents = (function () {
             }
             const result = payoutElement.value.substring(0, ev.target.selectionStart) + char +
                 payoutElement.value.substring(ev.target.selectionEnd);
-            if (japanese_client()) {
-                if (char === '.' || result[0] === '0') {
-                    isOK = false;
-                }
-            } else if (result[0] === '0') {
-                isOK = false;
-            }
-            if (!validatePayout(+result)) {
+
+            if ((japanese_client() && char === '.') || result[0] === '0' || !validatePayout(+result)) {
                 isOK = false;
             }
 
