@@ -6,6 +6,8 @@ const localize        = require('../../base/localize').localize;
 
 const VerifyEmail = function() {
     Content.populate();
+    const clients_country = localStorage.getItem('clients_country');
+
     const form = $('#verify-email-form')[0];
     if (!form) {
         return;
@@ -47,14 +49,14 @@ const VerifyEmail = function() {
         submit: function(ev, info) {
             ev.preventDefault();
             if (info.errors.length) return;
-            if (localStorage.getItem('clients_country') === 'my') {
+            if ((clients_country !== 'my') || /@binary.com\s*$/.test(info.values.email)) {
+                openAccount(info.values.email);
+            } else {
                 $('#verify-email-form > div')
-                .html('<p class="notice-msg center-text">' +
+                    .html('<p class="notice-msg center-text">' +
                         localize('Sorry, account signup is not available in your country. Please contact <a href="[_1]">customer support</a> for more information.',
-                        [url_for('contact')]) + '</p>');
-                return;
+                            [url_for('contact')]) + '</p>');
             }
-            openAccount(info.values.email);
         },
     });
 };
