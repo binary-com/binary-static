@@ -2,6 +2,7 @@ const format_money          = require('../../../common_functions/currency_to_sym
 const PortfolioWS           = require('../account/portfolio/portfolio.init').PortfolioWS;
 const updateContractBalance = require('../../trade/common').updateContractBalance;
 const Client                = require('../../../base/client').Client;
+const Cashier               = require('../../cashier/cashier').Cashier;
 
 const ViewBalanceUI = (function() {
     const updateBalances = function(response) {
@@ -20,6 +21,7 @@ const ViewBalanceUI = (function() {
         updateContractBalance(balance);
         $('.topMenuBalance').text(view)
             .css('visibility', 'visible');
+        Cashier.check_virtual_top_up();
     };
 
     return {
