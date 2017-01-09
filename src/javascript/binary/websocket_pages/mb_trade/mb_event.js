@@ -82,12 +82,14 @@ const MBTradingEvents = (function () {
                     /['%]/.test(char)) { // similarity to arrows key code in some browsers
                 isOK = false;
             }
+            const result = payoutElement.value.substring(0, ev.target.selectionStart) + char +
+                payoutElement.value.substring(ev.target.selectionEnd);
             if (japanese_client()) {
-                const result = payoutElement.value.substring(0, ev.target.selectionStart) + char +
-                                payoutElement.value.substring(ev.target.selectionEnd);
                 if (char === '.' || result[0] === '0' || +result < 1 || +result > 100) {
                     isOK = false;
                 }
+            } else if (result[0] === '0' || +result > 5000) {
+                isOK = false;
             }
 
             if (!isOK) {
