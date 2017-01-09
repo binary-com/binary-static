@@ -90,6 +90,7 @@
         font-size: $FONT_SIZE_XS;
         position: fixed;
         bottom: 0;
+        z-index: 10;
         width: 100%;
         a {
             color: $COLOR_WHITE;
