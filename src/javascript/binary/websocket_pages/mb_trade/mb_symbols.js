@@ -1,4 +1,6 @@
 const ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbols;
+const Client        = require('../../base/client').Client;
+const url_for       = require('../../base/url').url_for;
 
 /*
  * MBSymbols object parses the active_symbols json that we get from socket.send({active_symbols: 'brief'}
@@ -37,9 +39,15 @@ const MBSymbols = (function () {
     };
 
     const getSymbols = function (update) {
+        const landing_company_obj = Client.landing_company();
+        if (Client.get_boolean('is_logged_in') && !landing_company_obj.financial_company) {
+            window.location.href = url_for('trading');
+            return;
+        }
+        const landing_company = landing_company_obj.financial_company ? landing_company_obj.financial_company.shortcode : 'japan';
         BinarySocket.send({
             active_symbols : 'brief',
-            landing_company: 'japan',
+            landing_company: landing_company,
             product_type   : 'multi_barrier',
         });
         need_page_update = update;
