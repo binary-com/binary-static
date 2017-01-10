@@ -1,9 +1,12 @@
-var MBContract      = require('./mb_contract').MBContract;
-var objectNotEmpty  = require('../../base/utility').objectNotEmpty;
-var MBDefaults      = require('./mb_defaults').MBDefaults;
-var MBNotifications = require('./mb_notifications').MBNotifications;
-var japanese_client = require('../../common_functions/country_base').japanese_client;
-var addComma        = require('../../common_functions/string_util').addComma;
+const MBContract      = require('./mb_contract').MBContract;
+const MBDefaults      = require('./mb_defaults').MBDefaults;
+const MBNotifications = require('./mb_notifications').MBNotifications;
+const objectNotEmpty  = require('../../base/utility').objectNotEmpty;
+const localize        = require('../../base/localize').localize;
+const Client          = require('../../base/client').Client;
+const japanese_client = require('../../common_functions/country_base').japanese_client;
+const addComma        = require('../../common_functions/string_util').addComma;
+const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -14,21 +17,21 @@ var addComma        = require('../../common_functions/string_util').addComma;
  *
  */
 
-var MBPrice = (function() {
+const MBPrice = (function() {
     'use strict';
 
-    var prices         = {},
+    const price_selector = '.prices-wrapper .price-rows';
+    let prices         = {},
         contract_types = {},
         barriers       = [],
         req_id         = 0,
         res_count      = 0,
         is_displayed   = false,
-        price_selector = '.prices-wrapper .price-rows',
         $tables;
 
-    var addPriceObj = function(req) {
+    const addPriceObj = function(req) {
         req.barriers.forEach(function(barrier_obj) {
-            var barrier = makeBarrier(barrier_obj);
+            const barrier = makeBarrier(barrier_obj);
             if (!prices[barrier]) {
                 prices[barrier] = {};
             }
@@ -39,15 +42,15 @@ var MBPrice = (function() {
         });
     };
 
-    var makeBarrier = function(barrier_obj) {
+    const makeBarrier = function(barrier_obj) {
         if (!barrier_obj.barrier && barrier_obj.error) barrier_obj = barrier_obj.error.details;
         return (barrier_obj.barrier2 ? barrier_obj.barrier2 + '_' : '') + barrier_obj.barrier;
     };
 
-    var display = function(response) {
-        var contract_type = response.echo_req.contract_type;
+    const display = function(response) {
+        const contract_type = response.echo_req.contract_type;
         response.proposal_array.proposals.forEach(function(proposal) {
-            var barrier = makeBarrier(proposal),
+            const barrier = makeBarrier(proposal),
                 prev_proposal = $.extend({}, prices[barrier][contract_type]);
             prices[barrier][contract_type] = $.extend({ echo_req: response.echo_req }, proposal);
 
@@ -69,7 +72,7 @@ var MBPrice = (function() {
         }
     };
 
-    var populateTable = function() {
+    const populateTable = function() {
         if (!$tables) {
             $tables = $(price_selector);
         }
@@ -91,25 +94,25 @@ var MBPrice = (function() {
         is_displayed = true;
     };
 
-    var updatePrice = function(contract_type) {
+    const updatePrice = function(contract_type) {
         barriers.forEach(function(barrier) {
-            var proposal   = prices[barrier][contract_type],
+            const proposal   = prices[barrier][contract_type],
                 price_rows = document.querySelectorAll(price_selector + ' div[data-barrier="' + makeBarrier(proposal) + '"]');
 
             if (!price_rows.length) return;
 
-            var contract_info     = contract_types[contract_type],
+            const contract_info     = contract_types[contract_type],
                 contract_info_opp = contract_types[contract_info.opposite];
-            var values     = getValues(proposal),
+            const values     = getValues(proposal),
                 values_opp = getValues(prices[barrier][contract_info.opposite]);
 
-            price_rows[+contract_info.order].innerHTML     = makePriceRow(values,     true);
-            price_rows[+contract_info_opp.order].innerHTML = makePriceRow(values_opp, true);
+            elementInnerHtml(price_rows[+contract_info.order], makePriceRow(values,     true));
+            elementInnerHtml(price_rows[+contract_info_opp.order], makePriceRow(values_opp, true));
         });
     };
 
-    var getValues = function(proposal) {
-        var barrier       = makeBarrier(proposal),
+    const getValues = function(proposal) {
+        const barrier       = makeBarrier(proposal),
             payout        = proposal.echo_req.amount,
             contract_type = proposal.echo_req.contract_type,
             proposal_opp  = prices[barrier][contract_types[contract_type].opposite];
@@ -125,16 +128,16 @@ var MBPrice = (function() {
         };
     };
 
-    var getAskPrice = function(proposal) {
+    const getAskPrice = function(proposal) {
         return proposal.error || +proposal.ask_price === 0 ? proposal.echo_req.amount : proposal.ask_price;
     };
 
-    var getMovementDirection = function(prev, current) {
+    const getMovementDirection = function(prev, current) {
         return current > prev ? 'up' : current < prev ? 'down' : '';
     };
 
-    var makePriceRow = function(values, is_update) {
-        var payout   = MBDefaults.get('payout'),
+    const makePriceRow = function(values, is_update) {
+        const payout   = MBDefaults.get('payout'),
             is_japan = japanese_client();
         return (is_update ? '' : '<div data-barrier="' + values.barrier + '" class="gr-row price-row">') +
                 '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
@@ -159,21 +162,21 @@ var MBPrice = (function() {
             (is_update ? '' : '</div>');
     };
 
-    var processBuy = function(barrier, contract_type) {
+    const processBuy = function(barrier, contract_type) {
         if (!barrier || !contract_type) return;
-        if (!page.client.is_logged_in) {
-            MBNotifications.show({ text: page.text.localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true });
+        if (!Client.get_boolean('is_logged_in')) {
+            MBNotifications.show({ text: localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true });
             return;
         }
         MBPrice.showPriceOverlay();
         MBPrice.sendBuyRequest(barrier, contract_type);
     };
 
-    var formatPrice = function(price) {
+    const formatPrice = function(price) {
         return addComma(price, japanese_client() ? '0' : 2);
     };
 
-    var cleanup = function() {
+    const cleanup = function() {
         prices         = {};
         contract_types = {};
         barriers       = [];
@@ -186,11 +189,11 @@ var MBPrice = (function() {
         $(price_selector).html('');
     };
 
-    var sendBuyRequest = function(barrier, contract_type) {
-        var proposal = prices[barrier][contract_type];
+    const sendBuyRequest = function(barrier, contract_type) {
+        const proposal = prices[barrier][contract_type];
         if (!proposal || proposal.error) return;
 
-        var req = {
+        const req = {
             buy       : 1,
             price     : proposal.ask_price,
             parameters: {
@@ -213,11 +216,11 @@ var MBPrice = (function() {
         BinarySocket.send(req);
     };
 
-    var showPriceOverlay = function() {
+    const showPriceOverlay = function() {
         $('#disable-overlay').removeClass('invisible');
     };
 
-    var hidePriceOverlay = function() {
+    const hidePriceOverlay = function() {
         $('#disable-overlay, #loading-overlay').addClass('invisible');
     };
 

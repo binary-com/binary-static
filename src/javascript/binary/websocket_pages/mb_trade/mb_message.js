@@ -1,30 +1,32 @@
-var MBContract          = require('./mb_contract').MBContract;
-var MBDisplayCurrencies = require('./mb_currency').MBDisplayCurrencies;
-var MBNotifications     = require('./mb_notifications').MBNotifications;
-var MBProcess           = require('./mb_process').MBProcess;
-var MBPurchase          = require('./mb_purchase').MBPurchase;
-var MBSymbols           = require('./mb_symbols').MBSymbols;
-var MBTick              = require('./mb_tick').MBTick;
-var PortfolioWS = require('../user/account/portfolio/portfolio.init').PortfolioWS;
-var State = require('../../base/storage').State;
-var processTradingTimes  = require('../trade/process').processTradingTimes;
-var forgetTradingStreams = require('../trade/process').forgetTradingStreams;
+const MBContract          = require('./mb_contract').MBContract;
+const MBDisplayCurrencies = require('./mb_currency').MBDisplayCurrencies;
+const MBNotifications     = require('./mb_notifications').MBNotifications;
+const MBProcess           = require('./mb_process').MBProcess;
+const MBPurchase          = require('./mb_purchase').MBPurchase;
+const MBSymbols           = require('./mb_symbols').MBSymbols;
+const MBTick              = require('./mb_tick').MBTick;
+const PortfolioWS = require('../user/account/portfolio/portfolio.init').PortfolioWS;
+const State  = require('../../base/storage').State;
+const GTM    = require('../../base/gtm').GTM;
+const Client = require('../../base/client').Client;
+const processTradingTimes  = require('../trade/process').processTradingTimes;
+const forgetTradingStreams = require('../trade/process').forgetTradingStreams;
 
 /*
  * This Message object process the response from server and fire
  * events based on type of response
  */
-var MBMessage = (function () {
+const MBMessage = (function () {
     'use strict';
 
-    var process = function (msg) {
-        var response = JSON.parse(msg.data);
+    const process = function (msg) {
+        const response = JSON.parse(msg.data);
         if (!State.get('is_mb_trading')) {
             forgetTradingStreams();
             return;
         }
         if (response) {
-            var type = response.msg_type;
+            const type = response.msg_type;
             if (type === 'active_symbols') {
                 MBProcess.processActiveSymbols(response);
             } else if (type === 'contracts_for') {
@@ -32,7 +34,7 @@ var MBMessage = (function () {
                 MBContract.setContractsResponse(response);
                 MBProcess.processContract(response);
             } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && (!response.echo_req.hasOwnProperty('passthrough') || !response.echo_req.passthrough.hasOwnProperty('handler'))) {
-                page.client.set_storage_value('currencies', response.payout_currencies);
+                Client.set_value('currencies', response.payout_currencies.join(','));
                 MBDisplayCurrencies('', false);
                 MBSymbols.getSymbols(1);
             } else if (type === 'proposal_array') {

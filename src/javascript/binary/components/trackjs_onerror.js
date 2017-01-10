@@ -1,15 +1,15 @@
 window._trackJs = {
     onError: function(payload) {
-        function itemExistInList(item, list) {
-            for (var i = 0; i < list.length; i++) {
+        const itemExistInList = function(item, list) {
+            for (let i = 0; i < list.length; i++) {
                 if (item.indexOf(list[i]) > -1) {
                     return true;
                 }
             }
             return false;
-        }
+        };
 
-        var ignorableErrors = [
+        const ignorableErrors = [
             // General script error, not actionable
             '[object Event]',
             // General script error, not actionable
@@ -29,11 +29,7 @@ window._trackJs = {
 
         payload.network = payload.network.filter(function(item) {
             // ignore random errors from Intercom
-            if (item.statusCode === 403 && payload.message.indexOf('intercom') > -1) {
-                return false;
-            }
-
-            return true;
+            return !(item.statusCode === 403 && payload.message.indexOf('intercom') > -1);
         });
 
         return true;

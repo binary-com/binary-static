@@ -1,18 +1,18 @@
-var detect_hedging  = require('../../../../common_functions/common_functions').detect_hedging;
-var Content         = require('../../../../common_functions/content').Content;
-var ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
-var bind_validation = require('../../../../validator').bind_validation;
-var Cookies         = require('../../../../../lib/js-cookie');
-var moment          = require('moment');
-var dv              = require('../../../../../lib/validation');
+const detect_hedging  = require('../../../../common_functions/common_functions').detect_hedging;
+const ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
+const bind_validation = require('../../../../validator').bind_validation;
+const Content  = require('../../../../common_functions/content').Content;
+const Cookies  = require('../../../../../lib/js-cookie');
+const moment   = require('moment');
+const dv       = require('../../../../../lib/validation');
+const localize = require('../../../../base/localize').localize;
+const Client   = require('../../../../base/client').Client;
 
-var SettingsDetailsWS = (function() {
+const SettingsDetailsWS = (function() {
     'use strict';
 
-    var formID = '#frmPersonalDetails',
+    const formID = '#frmPersonalDetails',
         RealAccElements = '.RealAcc',
-        changed = false,
-        isInitialized,
         fieldIDs = {
             address1: '#Address1',
             address2: '#Address2',
@@ -21,23 +21,25 @@ var SettingsDetailsWS = (function() {
             postcode: '#Postcode',
             phone   : '#Phone',
         };
+    let changed = false,
+        isInitialized;
 
-    function init() {
+    const init = function() {
         Content.populate();
 
-        if (page.client.is_virtual() || page.client.residence) {
+        if (Client.get_boolean('is_virtual') || Client.get_value('residence')) {
             initOk();
         } else {
             isInitialized = false;
         }
 
         BinarySocket.send({ get_settings: '1', req_id: 1 });
-    }
+    };
 
-    function initOk() {
+    const initOk = function() {
         isInitialized = true;
-        var isVirtual = page.client.is_virtual();
-        var isJP = page.client.residence === 'jp';
+        const isVirtual = Client.get_boolean('is_virtual');
+        const isJP = Client.get_value('residence') === 'jp';
         bind_validation.simple($(formID)[0], {
             schema: isJP ? getJPSchema() : isVirtual ? {} : getNonJPSchema(),
             submit: function(ev, info) {
@@ -55,41 +57,42 @@ var SettingsDetailsWS = (function() {
             $('#fieldset_email_consent').removeClass('invisible');
             detect_hedging($('#PurposeOfTrading'), $('.hedge'));
         }
-    }
+    };
 
-    function getDetailsResponse(response) {
+    const getDetailsResponse = function(response) {
         if (!isInitialized) {
             initOk();
         }
-        var data = response.get_settings;
+        const data = response.get_settings;
 
         $('#lblCountry').text(data.country || '-');
         $('#lblEmail').text(data.email);
+        const $email_consent = $('#email_consent');
         if (data.email_consent) {
-            $('#email_consent').prop('checked', 'true');
+            $email_consent.prop('checked', 'true');
         }
 
-        $('#email_consent').on('change', function() {
+        $email_consent.on('change', function() {
             changed = true;
         });
 
-        if (page.client.is_virtual()) { // Virtual Account
+        if (Client.get_boolean('is_virtual')) { // Virtual Account
             $(RealAccElements).remove();
             $(formID).removeClass('hidden');
             return;
         }
         // Real Account
-        var birthDate = data.date_of_birth ? moment.utc(new Date(data.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
+        const birthDate = data.date_of_birth ? moment.utc(new Date(data.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
         $('#lblBirthDate').text(birthDate);
         // Generate states list
-        var residence = Cookies.get('residence');
+        const residence = Cookies.get('residence');
         if (residence) {
             BinarySocket.send({ states_list: residence, passthrough: { value: data.address_state } });
         }
-        if (page.client.residence === 'jp') {
-            var jpData = response.get_settings.jp_settings;
+        if (Client.get_value('residence') === 'jp') {
+            const jpData = response.get_settings.jp_settings;
             $('#lblName').text((data.last_name || ''));
-            $('#lblGender').text(page.text.localize(jpData.gender) || '');
+            $('#lblGender').text(localize(jpData.gender) || '');
             $('#lblAddress1').text(data.address_line_1 || '');
             $('#lblAddress2').text(data.address_line_2 || '');
             $('#lblCity').text(data.address_city || '');
@@ -138,12 +141,12 @@ var SettingsDetailsWS = (function() {
         }
 
         $(formID).removeClass('hidden');
-    }
+    };
 
-    function populateStates(response) {
-        var $field = $(fieldIDs.state);
-        var defaultValue = response.echo_req.passthrough.value;
-        var states = response.states_list;
+    const populateStates = function(response) {
+        let $field = $(fieldIDs.state);
+        const defaultValue = response.echo_req.passthrough.value;
+        const states = response.states_list;
 
         $field.empty();
 
@@ -152,19 +155,19 @@ var SettingsDetailsWS = (function() {
                 $field.append($('<option/>', { value: state.value, text: state.text }));
             });
         } else {
-            $field.replaceWith($('<input/>', { id: fieldIDs.state, name: 'address_state', type: 'text', maxlength: '35' }));
+            $field.replaceWith($('<input/>', { id: fieldIDs.state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
+            $field = $(fieldIDs.state);
         }
 
         $field.val(defaultValue);
-        $('#lblState').text($('#State option:selected').text());
+        $('#lblState').text($('#State').find('option:selected').text());
         $field.on('change', function() {
             changed = true;
         });
-    }
+    };
 
-    function toJPSettings(data) {
-        var jp_settings = {};
-        jp_settings = {};
+    const toJPSettings = function(data) {
+        const jp_settings = {};
         jp_settings.annual_income                               = data.annualIncome;
         jp_settings.financial_asset                             = data.financialAsset;
         jp_settings.occupation                                  = data.occupation;
@@ -181,13 +184,13 @@ var SettingsDetailsWS = (function() {
             jp_settings.hedge_asset_amount = data.hedgeAssetAmount;
         }
         return { jp_settings: jp_settings };
-    }
+    };
 
-    function submitJP(data) {
-        function trim(s) {
+    const submitJP = function(data) {
+        const trim = function(s) {
             return $(s).val().trim();
-        }
-        setDetails(page.client.is_virtual() ? data :
+        };
+        setDetails(Client.get_boolean('is_virtual') ? data :
             toJPSettings({
                 hedgeAssetAmount      : trim('#HedgeAssetAmount'),
                 annualIncome          : trim('#AnnualIncome'),
@@ -203,10 +206,10 @@ var SettingsDetailsWS = (function() {
                 purposeOfTrading      : trim('#PurposeOfTrading'),
                 hedgeAsset            : trim('#HedgeAsset'),
             }));
-    }
+    };
 
-    function getJPSchema() {
-        var V2 = ValidateV2;
+    const getJPSchema = function() {
+        const V2 = ValidateV2;
         if (/Hedging/.test($('#PurposeOfTrading').val())) {
             return {
                 hedge_asset_amount: [
@@ -218,30 +221,30 @@ var SettingsDetailsWS = (function() {
         }
         // else there is nothing to validate
         return {};
-    }
+    };
 
-    function submitNonJP(data) {
+    const submitNonJP = function(data) {
         delete data.hedge_asset_amount;
         setDetails(data);
-    }
+    };
 
-    function getNonJPSchema() {
-        var letters = Content.localize().textLetters,
+    const getNonJPSchema = function() {
+        const letters = Content.localize().textLetters,
             numbers = Content.localize().textNumbers,
             space   = Content.localize().textSpace,
             period  = Content.localize().textPeriod,
             comma   = Content.localize().textComma;
 
-        var V2 = ValidateV2;
-        var isAddress  = V2.regex(/^[^~!#$%^&*)(_=+\[}{\]\\\"\;\:\?\><\|]+$/, [letters, numbers, space, period, comma, '- . / @ \' ']);
-        var isCity     = V2.regex(/^[^~!@#$%^&*)(_=+\[\}\{\]\\\/\"\;\:\?\><\,\|\d]+$/, [letters, space, '- . \' ']);
-        var isState    = V2.regex(/^[^~!@#$%^&*)(_=+\[\}\{\]\\\/\"\;\:\?\><\|]+$/,     [letters, numbers, space, comma, '- . \'']);
-        var isPostcode = V2.regex(/^[\w\s-]+$/,                      [letters, numbers, space, '-']);
-        var isPhoneNo  = V2.regex(/^(|\+?[0-9\s\-]+)$/,              [numbers, space, '-']);
+        const V2 = ValidateV2;
+        const isAddress  = V2.regex(/^[^~!#$%^&*)(_=+\[}{\]\\\"\;\:\?\><\|]+$/, [letters, numbers, space, period, comma, '- . / @ \' ']);
+        const isCity     = V2.regex(/^[^~!@#$%^&*)(_=+\[\}\{\]\\\/\"\;\:\?\><\,\|\d]+$/, [letters, space, '- . \' ']);
+        const isState    = V2.regex(/^[^~!@#$%^&*)(_=+\[\}\{\]\\\/\"\;\:\?\><\|]+$/,     [letters, numbers, space, comma, '- . \'']);
+        const isPostcode = V2.regex(/^[\w\s-]+$/,                      [letters, numbers, space, '-']);
+        const isPhoneNo  = V2.regex(/^(|\+?[0-9\s\-]+)$/,              [numbers, space, '-']);
 
-        function maybeEmptyAddress(value) {
+        const maybeEmptyAddress = function(value) {
             return value.length ? isAddress(value) : dv.ok(value);
-        }
+        };
 
         return {
             address_line_1  : [V2.required, isAddress],
@@ -251,10 +254,10 @@ var SettingsDetailsWS = (function() {
             address_postcode: [V2.required, V2.lengthRange(1, 20), isPostcode],
             phone           : [V2.lengthRange(6, 35), isPhoneNo],
         };
-    }
+    };
 
-    function setDetails(data) {
-        var req = { set_settings: 1 };
+    const setDetails = function(data) {
+        const req = { set_settings: 1 };
         Object.keys(data).forEach(function(key) {
             req[key] = data[key];
         });
@@ -264,34 +267,34 @@ var SettingsDetailsWS = (function() {
             req.email_consent = 0;
         }
         BinarySocket.send(req);
-    }
+    };
 
-    function showFormMessage(msg, isSuccess) {
+    const showFormMessage = function(msg, isSuccess) {
         $('#formMessage')
             .attr('class', isSuccess ? 'success-msg' : 'errorfield')
-            .html(isSuccess ? '<ul class="checked"><li>' + page.text.localize(msg) + '</li></ul>' : page.text.localize(msg))
+            .html(isSuccess ? '<ul class="checked"><li>' + localize(msg) + '</li></ul>' : localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);
-    }
+    };
 
-    function setDetailsResponse(response) {
+    const setDetailsResponse = function(response) {
         // allow user to resubmit the form on error.
         changed = response.set_settings !== 1;
         showFormMessage(changed ?
             'Sorry, an error occurred while processing your account.' :
             'Your settings have been updated successfully.', !changed);
-    }
+    };
 
-    function onLoad() {
+    const onLoad = function() {
         BinarySocket.init({
             onmessage: function(msg) {
-                var response = JSON.parse(msg.data);
+                const response = JSON.parse(msg.data);
                 if (!response) {
                     console.log('some error occured');
                     return;
                 }
-                var type = response.msg_type;
+                const type = response.msg_type;
                 switch (type) {
                     case 'authorize':
                         SettingsDetailsWS.init();
@@ -315,10 +318,10 @@ var SettingsDetailsWS = (function() {
                 }
             },
         });
-        if (TUser.get().loginid) {
+        if (Client.get_value('loginid')) {
             SettingsDetailsWS.init();
         }
-    }
+    };
 
     return {
         init              : init,

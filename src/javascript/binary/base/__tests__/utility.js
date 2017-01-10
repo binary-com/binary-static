@@ -1,5 +1,5 @@
-var expect  = require('chai').expect;
-var utility = require('../utility');
+const expect  = require('chai').expect;
+const utility = require('../utility');
 
 describe('template', function() {
     it('works as expected', function() {
@@ -26,21 +26,5 @@ describe('objectNotEmpty', function() {
         expect(utility.objectNotEmpty(false)).to.eq(false);
         expect(utility.objectNotEmpty(true)).to.eq(false);
         expect(utility.objectNotEmpty('')).to.eq(false);
-    });
-});
-
-describe('parseLoginIDList', function() {
-    it('works for empty strings', function() {
-        var res = utility.parseLoginIDList('');
-        var expected = [];
-        expect(res).to.deep.equal(expected);
-    });
-    it('works correctly', function() {
-        var res = utility.parseLoginIDList('MF3101:R:E+VRTC759728:V:E');
-        var expected = [
-            { disabled: false, financial: true,  non_financial: false, id: 'MF3101', real: true },
-            { disabled: false, financial: false, non_financial: false, id: 'VRTC759728', real: false },
-        ];
-        expect(res).to.deep.equal(expected);
     });
 });

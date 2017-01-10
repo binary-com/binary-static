@@ -1,6 +1,5 @@
-<div id="limits-ws-container">
+<div id="limits-ws-container" class="gr-12 gr-padding-10">
     <h1>[% l("Trading and Withdrawal Limits") %]</h1>
-    <br>
     <div class="invisible" id="limits-title">
         <h2 id="trading-limits">[% l("Trading Limits") %]</h2>
         <div class="gr-padding-10">
@@ -68,15 +67,12 @@
             </p>
         </div>
     </div>
-    <div class="errorbox rbox" id="client_message" style="display:none">
-        <div class="rbox-wrap">
-            <div class="gr-12 rbox-content" id="client_message_content">
+    <div id="client_message" style="display:none">
+            <div id="client_message_content">
                 <p class="center-text notice-msg"></p>
             </div>
-        </div>
     </div>
 </div>
-<br>
 <div class="invisible" id="withdrawal-limits">
     <h2 id="withdrawal-title">[% l("Withdrawal Limits") %]</h2>
     <div>

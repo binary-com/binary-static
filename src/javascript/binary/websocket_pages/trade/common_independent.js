@@ -22,7 +22,7 @@ function countDecimalPlaces(num) {
     'use strict';
 
     if (!isNaN(num)) {
-        var str = num.toString();
+        const str = num.toString();
         if (str.indexOf('.') !== -1) {
             return str.split('.')[1].length;
         }
@@ -30,18 +30,18 @@ function countDecimalPlaces(num) {
     return 0;
 }
 
-var trading_times = {};
+const trading_times = {};
 
 function processTradingTimesAnswer(response) {
     if (!trading_times.hasOwnProperty(response.echo_req.trading_times) && response.hasOwnProperty('trading_times') && response.trading_times.hasOwnProperty('markets')) {
-        for (var i = 0; i < response.trading_times.markets.length; i++) {
-            var submarkets = response.trading_times.markets[i].submarkets;
+        for (let i = 0; i < response.trading_times.markets.length; i++) {
+            const submarkets = response.trading_times.markets[i].submarkets;
             if (submarkets) {
-                for (var j = 0; j < submarkets.length; j++) {
-                    var symbols = submarkets[j].symbols;
+                for (let j = 0; j < submarkets.length; j++) {
+                    const symbols = submarkets[j].symbols;
                     if (symbols) {
-                        for (var k = 0; k < symbols.length; k++) {
-                            var symbol = symbols[k];
+                        for (let k = 0; k < symbols.length; k++) {
+                            const symbol = symbols[k];
                             if (!trading_times[response.echo_req.trading_times]) {
                                 trading_times[response.echo_req.trading_times] = {};
                             }

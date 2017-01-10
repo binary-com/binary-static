@@ -1,9 +1,10 @@
-var template = require('../base/utility').template;
+const template = require('../base/utility').template;
+const localize = require('../base/localize').localize;
 
-var buildOauthApps = function(data) {
-    var oauth_apps = {};
+const buildOauthApps = function(data) {
+    const oauth_apps = {};
     if (data) {
-        for (var i = 0; i < data.length; i++) {
+        for (let i = 0; i < data.length; i++) {
             oauth_apps[data[i].app_id] = data[i].name;
         }
     }
@@ -11,8 +12,8 @@ var buildOauthApps = function(data) {
     return oauth_apps;
 };
 
-var addTooltip = function(oauth_apps) {
-    var keys = Object.keys(oauth_apps);
+const addTooltip = function(oauth_apps) {
+    const keys = Object.keys(oauth_apps);
     keys.forEach(function(key) {
         if (oauth_apps.hasOwnProperty(key)) {
             $('.' + key).attr('data-balloon', add_app_id_name(key, oauth_apps[key]));
@@ -20,15 +21,15 @@ var addTooltip = function(oauth_apps) {
     });
 };
 
-var add_app_id_name = function(app_id, app_name) {
-    var ref_string;
+const add_app_id_name = function(app_id, app_name) {
+    let ref_string;
     if (app_id) {
-        ref_string = template(page.text.localize('Transaction performed by [_1] (App ID: [_2])'), [app_name || '', app_id]);
+        ref_string = template(localize('Transaction performed by [_1] (App ID: [_2])'), [app_name || '', app_id]);
     }
     return ref_string;
 };
 
-var showTooltip = function(app_id, oauth_app_id) {
+const showTooltip = function(app_id, oauth_app_id) {
     return (
         app_id ?
             ' class="' + app_id + '" data-balloon="' + (

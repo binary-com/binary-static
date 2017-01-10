@@ -1,15 +1,18 @@
-var AccountTransferWS = (function() {
+const localize = require('../../base/localize').localize;
+const Client   = require('../../base/client').Client;
+
+const AccountTransferWS = (function() {
     'use strict';
 
-    var $form;
-    var account_from,
-        account_to;
-    var currType,
+    const availableCurr = [];
+    let $form,
+        account_from,
+        account_to,
+        currType,
         account_bal;
-    var availableCurr = [];
 
-    var init = function() {
-        if (page.client.redirect_if_is_virtual()) {
+    const init = function() {
+        if (Client.redirect_if_is_virtual()) {
             return;
         }
 
@@ -26,7 +29,7 @@ var AccountTransferWS = (function() {
                 return;
             }
 
-            var amt = $form.find('#acc_transfer_amount').val();
+            const amt = $form.find('#acc_transfer_amount').val();
             BinarySocket.send({
                 transfer_between_accounts: '1',
                 account_from             : account_from,
@@ -42,10 +45,21 @@ var AccountTransferWS = (function() {
 
             BinarySocket.send({ payout_currencies: '1' });
         });
+
+        $form.find('#acc_transfer_submit').on('click', function() {
+            const amount = $('#acc_transfer_amount').val();
+            if (!/^[0-9]+\.?[0-9]{0,2}$/.test(amount) || amount < 0.1) {
+                $('#invalid_amount').removeClass('invisible')
+                                    .show();
+                return false;
+            }
+            $('#acc_transfer_submit').submit();
+            return true;
+        });
     };
-    var set_account_from_to = function() {
-        var accounts = $('#transfer_account_transfer option:selected').text();
-        var matches = accounts
+    const set_account_from_to = function() {
+        const accounts = $('#transfer_account_transfer').find('option:selected').text();
+        const matches = accounts
                         .split('(')
                         .filter(function(v) {
                             return v.indexOf(')') > -1;
@@ -66,20 +80,20 @@ var AccountTransferWS = (function() {
 
         $form.find('#currencyType').html(currType);
     };
-    var validateForm = function() {
-        var amt = $form.find('#acc_transfer_amount').val();
-        var isValid = true;
+    const validateForm = function() {
+        const amt = $form.find('#acc_transfer_amount').val();
+        let isValid = true;
 
         if (amt.length <= 0) {
-            $form.find('#invalid_amount').text(page.text.localize('Invalid amount. Minimum transfer amount is 0.10, and up to 2 decimal places.'));
+            $form.find('#invalid_amount').text(localize('Invalid amount. Minimum transfer amount is 0.10, and up to 2 decimal places.'));
             isValid = false;
         }
 
         return isValid;
     };
 
-    var apiResponse = function(response) {
-        var type = response.msg_type;
+    const apiResponse = function(response) {
+        const type = response.msg_type;
         if (type === 'authorize') {
             init();
         } else if (type === 'transfer_between_accounts' || (type === 'error' && 'transfer_between_accounts' in response.echo_req)) {
@@ -89,15 +103,15 @@ var AccountTransferWS = (function() {
         }
     };
 
-    var responseMessage = function(response) {
+    const responseMessage = function(response) {
         if ('error' in response) {
             if ('message' in response.error) {
-                if ($('#transfer_account_transfer option').length > 0) {
+                if ($('#transfer_account_transfer').find('option').length > 0) {
                     $form.removeClass('invisible');
-                    $form.find('#invalid_amount').text(page.text.localize(response.error.message));
+                    $form.find('#invalid_amount').text(localize(response.error.message));
                 } else {
-                    $('#client_message').removeClass('invisible');
-                    $('#client_message p').html(page.text.localize(response.error.message));
+                    $('#client_message').removeClass('invisible')
+                                        .find('p').html(localize(response.error.message));
                     $('#success_form').addClass('invisible');
                     $form.addClass('invisible');
                 }
@@ -122,14 +136,14 @@ var AccountTransferWS = (function() {
                 });
             } else if (response.req_id === 4) {
                 $form.removeClass('invisible');
-                var secondacct,
+                let secondacct,
                     firstacct,
                     str,
-                    optionValue;
-                var selectedIndex = -1;
+                    optionValue,
+                    selectedIndex = -1;
 
                 $.each(response.accounts, function(index, value) {
-                    var currObj = {};
+                    const currObj = {};
 
                     if ($.isEmptyObject(firstacct)) {
                         firstacct = value.loginid;
@@ -144,13 +158,13 @@ var AccountTransferWS = (function() {
                         availableCurr.push(currObj);
                     } else {
                         secondacct = value.loginid;
-                        str = page.text.localize('from account (' + firstacct + ') to account (' + secondacct + ')');
+                        str = localize('from account (' + firstacct + ') to account (' + secondacct + ')');
                         optionValue = firstacct + '_to_' + secondacct;
                         $form.find('#transfer_account_transfer')
                              .append($('<option></option>')
                              .attr('value', optionValue)
                              .text(str));
-                        str = page.text.localize('from account (' + secondacct + ') to account (' + firstacct + ')');
+                        str = localize('from account (' + secondacct + ') to account (' + firstacct + ')');
                         optionValue = secondacct + '_to_' + firstacct;
                         $form.find('#transfer_account_transfer')
                              .append($('<option></option>')
@@ -171,7 +185,7 @@ var AccountTransferWS = (function() {
                     }
 
                     if (($.isEmptyObject(firstacct) === false) && ($.isEmptyObject(secondacct) === false)) {
-                        str = page.text.localize('from account (' + secondacct + ') to account (' + firstacct + ')');
+                        str = localize('from account (' + secondacct + ') to account (' + firstacct + ')');
                         optionValue = secondacct + '_to_' + firstacct;
                         $form.find('#transfer_account_transfer')
                                  .append($('<option></option>')
@@ -187,7 +201,7 @@ var AccountTransferWS = (function() {
                     }
                 });
 
-                for (var i = 0; i < selectedIndex; i++) {
+                for (let i = 0; i < selectedIndex; i++) {
                     $form.find('#transfer_account_transfer option').eq(i).remove();
                 }
 
@@ -204,8 +218,8 @@ var AccountTransferWS = (function() {
                     $form.addClass('invisible');
                     return false;
                 } else if (account_to === undefined || account_from === undefined || $.isEmptyObject(account_to)) {
-                    $('#client_message').removeClass('invisible');
-                    $('#client_message p').html(page.text.localize('The account transfer is unavailable for your account.'));
+                    $('#client_message').removeClass('invisible')
+                                        .find('p').html(localize('The account transfer is unavailable for your account.'));
                     $('#success_form').addClass('invisible');
                     $form.addClass('invisible');
                     return false;
@@ -222,17 +236,17 @@ var AccountTransferWS = (function() {
         return true;
     };
 
-    var onLoad = function() {
+    const onLoad = function() {
         BinarySocket.init({
             onmessage: function(msg) {
-                var response = JSON.parse(msg.data);
+                const response = JSON.parse(msg.data);
                 if (response) {
                     AccountTransferWS.apiResponse(response);
                 }
             },
         });
 
-        if (TUser.get().hasOwnProperty('is_virtual')) {
+        if (Client.get_boolean('is_virtual')) {
             AccountTransferWS.init();
         }
     };

@@ -1,5 +1,5 @@
-var expect = require('chai').expect;
-var format_money = require('../currency_to_symbol').format_money;
+const expect = require('chai').expect;
+const format_money = require('../currency_to_symbol').format_money;
 
 
 describe('format_money', function() {

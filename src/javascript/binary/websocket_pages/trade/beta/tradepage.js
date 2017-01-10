@@ -1,34 +1,35 @@
-var TradingAnalysis_Beta = require('./analysis').TradingAnalysis_Beta;
-var TradingEvents_Beta   = require('./event').TradingEvents_Beta;
-var Message_Beta         = require('./message').Message_Beta;
-var Price_Beta           = require('./price').Price_Beta;
-var forgetTradingStreams_Beta = require('./process').forgetTradingStreams_Beta;
-var displayCurrencies    = require('../currency').displayCurrencies;
-var Defaults             = require('../defaults').Defaults;
-var Notifications        = require('../notifications').Notifications;
-var Symbols              = require('../symbols').Symbols;
-var Content              = require('../../../common_functions/content').Content;
-var Guide                = require('../../../common_functions/guide').Guide;
-var japanese_client      = require('../../../common_functions/country_base').japanese_client;
-var PortfolioWS          = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
-var ResizeSensor         = require('../../../../lib/resize-sensor');
-var State                = require('../../../base/storage').State;
-var showPriceOverlay     = require('../common').showPriceOverlay;
-var showFormOverlay      = require('../common').showFormOverlay;
-var addEventListenerForm = require('../common').addEventListenerForm;
-var chartFrameCleanup    = require('../common').chartFrameCleanup;
+const TradingAnalysis_Beta = require('./analysis').TradingAnalysis_Beta;
+const TradingEvents_Beta   = require('./event').TradingEvents_Beta;
+const Message_Beta         = require('./message').Message_Beta;
+const Price_Beta           = require('./price').Price_Beta;
+const forgetTradingStreams_Beta = require('./process').forgetTradingStreams_Beta;
+const displayCurrencies    = require('../currency').displayCurrencies;
+const Defaults             = require('../defaults').Defaults;
+const Notifications        = require('../notifications').Notifications;
+const Symbols              = require('../symbols').Symbols;
+const Content              = require('../../../common_functions/content').Content;
+const Guide                = require('../../../common_functions/guide').Guide;
+const japanese_client      = require('../../../common_functions/country_base').japanese_client;
+const PortfolioWS          = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
+const ResizeSensor         = require('../../../../lib/resize-sensor');
+const State                = require('../../../base/storage').State;
+const url_for              = require('../../../base/url').url_for;
+const showPriceOverlay     = require('../common').showPriceOverlay;
+const showFormOverlay      = require('../common').showFormOverlay;
+const addEventListenerForm = require('../common').addEventListenerForm;
+const chartFrameCleanup    = require('../common').chartFrameCleanup;
 
-var TradePage_Beta = (function() {
-    var events_initialized = 0;
+const TradePage_Beta = (function() {
+    let events_initialized = 0;
     State.remove('is_beta_trading');
 
-    var onLoad = function() {
-        var is_japanese_client = japanese_client();
+    const onLoad = function() {
+        const is_japanese_client = japanese_client();
         if (is_japanese_client && /\/trading(|_beta)\.html/i.test(window.location.pathname)) {
-            window.location.href = page.url.url_for('multi_barriers_trading');
+            window.location.href = url_for('multi_barriers_trading');
             return;
         } else if (!is_japanese_client && /\/multi_barriers_trading\.html/.test(window.location.pathname)) {
-            window.location.href = page.url.url_for('trading');
+            window.location.href = url_for('trading');
             return;
         }
         State.set('is_beta_trading', true);
@@ -72,8 +73,8 @@ var TradePage_Beta = (function() {
         TradingAnalysis_Beta.bindAnalysisTabEvent();
     };
 
-    var adjustAnalysisColumnHeight = function() {
-        var sumHeight = 0;
+    const adjustAnalysisColumnHeight = function() {
+        let sumHeight = 0;
         if (window.innerWidth > 767) {
             $('.col-left').children().each(function() {
                 if ($(this).is(':visible')) sumHeight += $(this).outerHeight(true);
@@ -84,16 +85,15 @@ var TradePage_Beta = (function() {
         $('#trading_analysis_content').height(sumHeight);
     };
 
-    var moreTabsHandler = function($ul) {
+    const moreTabsHandler = function($ul) {
         if (!$ul) $ul = $('#analysis_tabs');
-        var $visibleTabs  = $ul.find('>li:visible'),
-            seeMoreClass  = 'see-more',
+        const seeMoreClass  = 'see-more',
             moreTabsClass = 'more-tabs',
-            maxWidth      = $ul.outerWidth(),
-            totalWidth    = 0;
+            maxWidth      = $ul.outerWidth();
+        let totalWidth = 0;
 
         // add seeMore tab
-        var $seeMore = $ul.find('li.' + seeMoreClass);
+        let $seeMore = $ul.find('li.' + seeMoreClass);
         if ($seeMore.length === 0) {
             $seeMore = $('<li class="tm-li ' + seeMoreClass + '"><a class="tm-a" href="javascript:;"><span class="caret-down"></span></a></li>');
             $ul.append($seeMore);
@@ -101,7 +101,7 @@ var TradePage_Beta = (function() {
         $seeMore.removeClass('active');
 
         // add moreTabs container
-        var $moreTabs = $ul.find('.' + moreTabsClass);
+        let $moreTabs = $ul.find('.' + moreTabsClass);
         if ($moreTabs.length === 0) {
             $moreTabs = $('<div class="' + moreTabsClass + '" />').appendTo($seeMore);
         } else {
@@ -112,13 +112,13 @@ var TradePage_Beta = (function() {
         $moreTabs.css('top', $ul.find('li:visible').outerHeight() - 1).unbind('click').click(function() { hideDropDown('fast'); });
 
         // move additional tabs to moreTabs
-        $visibleTabs = $ul.find('>li:visible');
+        const $visibleTabs = $ul.find('>li:visible');
         $visibleTabs.each(function(index, tab) {
             totalWidth += $(tab).outerWidth(true);
         });
-        var resultWidth = totalWidth;
+        let resultWidth = totalWidth;
         while (resultWidth >= maxWidth) {
-            var $thisTab = $ul.find('>li:not(.' + seeMoreClass + '):visible').last();
+            const $thisTab = $ul.find('>li:not(.' + seeMoreClass + '):visible').last();
             resultWidth -= $thisTab.outerWidth(true);
             $thisTab.prependTo($moreTabs);
         }
@@ -134,20 +134,20 @@ var TradePage_Beta = (function() {
         }
 
         // drop down behaviour
-        function showDropDown() {
+        const showDropDown = function() {
             $moreTabs.slideDown();
             if ($seeMore.find('.over').length === 0) {
                 $('<div/>', { class: 'over' }).insertBefore($seeMore.find('>a'));
                 $seeMore.find('.over').width($seeMore.width());
             }
             $seeMore.addClass('open');
-        }
-        function hideDropDown(duration) {
+        };
+        const hideDropDown = function(duration) {
             $moreTabs.slideUp(duration || 400, function() {
                 $seeMore.removeClass('open');
             });
-        }
-        var timeout;
+        };
+        let timeout;
         $seeMore.find('>a').unbind('click').on('click', function(e) {
             e.stopPropagation();
             if ($moreTabs.is(':visible')) {
@@ -176,12 +176,12 @@ var TradePage_Beta = (function() {
         });
     };
 
-    var reload = function() {
+    const reload = function() {
         sessionStorage.removeItem('underlying');
         window.location.reload();
     };
 
-    var onUnload = function() {
+    const onUnload = function() {
         State.remove('is_beta_trading');
         events_initialized = 0;
         forgetTradingStreams_Beta();
@@ -191,7 +191,7 @@ var TradePage_Beta = (function() {
         chartFrameCleanup();
     };
 
-    var onDisconnect = function() {
+    const onDisconnect = function() {
         showPriceOverlay();
         showFormOverlay();
         chartFrameCleanup();

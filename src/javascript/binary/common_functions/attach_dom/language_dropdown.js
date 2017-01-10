@@ -1,27 +1,30 @@
-var $languages,
+const getLanguage      = require('../../base/language').getLanguage;
+const getAllLanguages  = require('../../base/language').getAllLanguages;
+const onChangeLanguage = require('../../base/language').onChangeLanguage;
+
+let $languages,
     languageCode,
     languageText;
 
 function create_language_drop_down(languages) {
     $languages = $('.languages');
-    var selectLanguage = 'ul#select_language',
+    const selectLanguage = 'ul#select_language',
         $selectLanguage = $languages.find(selectLanguage);
     if ($languages.length === 0 || $selectLanguage.find('li span.language').text() !== '') return;
     languages.sort(function(a, b) {
         return (a === 'EN' || a < b) ? -1 : 1;
     });
-    var displayLanguage = 'ul#display_language',
-        language = page.language();
-    languageCode = language && language !== '' ? language : 'en';
-    languageText = language && language !== '' ? map_code_to_language(language) : 'English';
+    const displayLanguage = 'ul#display_language';
+    languageCode = getLanguage();
+    languageText = map_code_to_language(languageCode);
     add_display_language(displayLanguage);
     add_display_language(selectLanguage);
-    for (var i = 0; i < languages.length; i++) {
+    for (let i = 0; i < languages.length; i++) {
         $selectLanguage.append('<li class="' + languages[i] + '">' + map_code_to_language(languages[i]) + '</li>');
     }
-    $selectLanguage.find('li.' + language + ':eq(1)').addClass('invisible');
-    page.on_change_language();
-    $('.languages').removeClass('invisible');
+    $selectLanguage.find('li.' + languageCode + ':eq(1)').addClass('invisible');
+    onChangeLanguage();
+    $languages.removeClass('invisible');
 }
 
 function add_display_language(id) {
@@ -32,7 +35,7 @@ function add_display_language(id) {
 }
 
 function map_code_to_language(code) {
-    var map = page.all_languages();
+    const map = getAllLanguages();
     return map[code];
 }
 

@@ -1,13 +1,15 @@
-var JapanAccOpeningData = (function() {
-    function getJapanAcc(elementObj) {
-        var req = {
+const Client = require('../../../../base/client').Client;
+
+const JapanAccOpeningData = (function() {
+    const getJapanAcc = function(elementObj) {
+        const req = {
             new_account_japan                          : 1,
             gender                                     : elementObj.gender.value,
             first_name                                 : elementObj.fname.value,
             last_name                                  : elementObj.lname.value,
             date_of_birth                              : elementObj.dobyy.value + '-' + elementObj.dobmm.value + '-' + elementObj.dobdd.value,
             occupation                                 : elementObj.occupation.value,
-            residence                                  : page.client.residence,
+            residence                                  : Client.get_value('residence'),
             address_line_1                             : elementObj.address1.value,
             address_line_2                             : elementObj.address2.value,
             address_city                               : elementObj.town.value,
@@ -46,7 +48,7 @@ var JapanAccOpeningData = (function() {
         }
 
         BinarySocket.send(req);
-    }
+    };
 
     return {
         getJapanAcc: getJapanAcc,

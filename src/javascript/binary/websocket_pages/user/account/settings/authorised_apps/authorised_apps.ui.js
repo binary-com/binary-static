@@ -1,29 +1,53 @@
-var showLoadingImage = require('../../../../../base/utility').showLoadingImage;
-var showLocalTimeOnHover = require('../../../../../base/utility').showLocalTimeOnHover;
-var Button = require('../../../../../common_functions/attach_dom/button').Button;
-var FlexTableUI = require('../../../../../common_functions/attach_dom/flextable').FlexTableUI;
-var ApplicationsData = require('./authorised_apps.data').ApplicationsData;
+const showLoadingImage     = require('../../../../../base/utility').showLoadingImage;
+const showLocalTimeOnHover = require('../../../../../base/clock').Clock.showLocalTimeOnHover;
+const localize             = require('../../../../../base/localize').localize;
+const Button      = require('../../../../../common_functions/attach_dom/button').Button;
+const FlexTableUI = require('../../../../../common_functions/attach_dom/flextable').FlexTableUI;
+const ApplicationsData = require('./authorised_apps.data').ApplicationsData;
 
-var ApplicationsUI = (function() {
+const ApplicationsUI = (function() {
     'use strict';
 
-    var containerSelector = '#applications-ws-container';
-    var messages = {
+    const containerSelector = '#applications-ws-container';
+    const messages = {
         no_apps       : 'You have not granted access to any applications.',
         revoke_confirm: 'Are you sure that you want to permanently revoke access to application',
         revoke_access : 'Revoke access',
     };
-    var flexTable;
+    let flexTable;
 
-    function createTable(data) {
+    const formatApp = function(app) {
+        const last_used = app.last_used ? app.last_used.format('YYYY-MM-DD HH:mm:ss') : localize('Never');
+        return [
+            app.name,
+            app.scopes.join(', '),
+            last_used,
+            '', // for the "Revoke App" button
+        ];
+    };
+
+    const createRevokeButton = function(container, app) {
+        const $buttonSpan = Button.createBinaryStyledButton();
+        const $button = $buttonSpan.children('.button').first();
+        $button.text(localize(messages.revoke_access));
+        $button.on('click', function() {
+            if (window.confirm(localize(messages.revoke_confirm) + ": '" + app.name + "'?")) {
+                ApplicationsData.revoke(app.id);
+                container.css({ opacity: 0.5 });
+            }
+        });
+        return $buttonSpan;
+    };
+
+    const createTable = function(data) {
         if (flexTable) {
             return flexTable.replace(data);
         }
-        var headers = ['Name', 'Permissions', 'Last Used', 'Action'];
-        var columns = ['name', 'permissions', 'last_used', 'action'];
+        const headers = ['Name', 'Permissions', 'Last Used', 'Action'];
+        const columns = ['name', 'permissions', 'last_used', 'action'];
         flexTable = new FlexTableUI({
             container: containerSelector,
-            header   : headers.map(function(s) { return page.text.localize(s); }),
+            header   : headers.map(function(s) { return localize(s); }),
             id       : 'applications-table',
             cols     : columns,
             data     : data,
@@ -34,56 +58,33 @@ var ApplicationsUI = (function() {
             formatter: formatApp,
         });
         return showLocalTimeOnHover('td.last_used');
-    }
+    };
 
-    function formatApp(app) {
-        var last_used = app.last_used ? app.last_used.format('YYYY-MM-DD HH:mm:ss') : page.text.localize('Never');
-        return [
-            app.name,
-            app.scopes.join(', '),
-            last_used,
-            '', // for the "Revoke App" button
-        ];
-    }
-
-    function update(apps) {
+    const update = function(apps) {
         $('#loading').remove();
         createTable(apps);
         if (!apps.length) {
-            flexTable.displayError(page.text.localize(messages.no_apps), 7);
+            flexTable.displayError(localize(messages.no_apps), 7);
         }
-    }
+    };
 
-    function createRevokeButton(container, app) {
-        var $buttonSpan = Button.createBinaryStyledButton();
-        var $button = $buttonSpan.children('.button').first();
-        $button.text(page.text.localize(messages.revoke_access));
-        $button.on('click', function() {
-            if (window.confirm(page.text.localize(messages.revoke_confirm) + ": '" + app.name + "'?")) {
-                ApplicationsData.revoke(app.id);
-                container.css({ opacity: 0.5 });
-            }
-        });
-        return $buttonSpan;
-    }
-
-    function displayError(message) {
+    const displayError = function(message) {
         $(containerSelector + ' .error-msg').text(message);
-    }
+    };
 
-    function init() {
+    const init = function() {
         showLoadingImage($('<div/>', { id: 'loading' }).insertAfter('#applications-title'));
-        var $title = $('#applications-title').children().first();
-        var $desc  = $('#description');
-        $title.text(page.text.localize($title.text()));
-        $desc.text(page.text.localize($desc.text()));
-    }
+        const $title = $('#applications-title').children().first();
+        const $desc  = $('#description');
+        $title.text(localize($title.text()));
+        $desc.text(localize($desc.text()));
+    };
 
-    function clean() {
+    const clean = function() {
         $(containerSelector + ' .error-msg').text('');
         flexTable.clear();
         flexTable = null;
-    }
+    };
 
     return {
         init        : init,

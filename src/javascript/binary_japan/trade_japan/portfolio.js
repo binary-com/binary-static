@@ -1,21 +1,22 @@
-var State = require('../../binary/base/storage').State;
-var PortfolioWS = require('../../binary/websocket_pages/user/account/portfolio/portfolio.init').PortfolioWS;
+const State  = require('../../binary/base/storage').State;
+const Client = require('../../binary/base/client').Client;
+const PortfolioWS = require('../../binary/websocket_pages/user/account/portfolio/portfolio.init').PortfolioWS;
 
-var JapanPortfolio = (function() {
-    var $portfolio;
-    var isPortfolioActive = false;
+const JapanPortfolio = (function() {
+    let $portfolio,
+        isPortfolioActive = false;
 
     function init() {
         if (isActive()) {
             $('#tab_portfolio').removeClass('invisible');
         }
 
-        var $container = $('#tab_portfolio-content');
+        const $container = $('#tab_portfolio-content');
         $portfolio = $portfolio || $('#portfolio');
 
         if ($portfolio &&
-      (!$('#portfolio').parent().length ||
-        $('#portfolio').parent().get(0).id !== 'tab_portfolio-content')) {
+        (!$portfolio.parent().length ||
+        $portfolio.parent().get(0).id !== 'tab_portfolio-content')) {
             $portfolio.detach();
             $container.append($portfolio);
         }
@@ -29,10 +30,7 @@ var JapanPortfolio = (function() {
     }
 
     function isActive() {
-        if (page.client.is_logged_in && isTradePage()) {
-            return true;
-        }
-        return false;
+        return !!(Client.get_value('is_logged_in') && isTradePage());
     }
 
     function hide() {

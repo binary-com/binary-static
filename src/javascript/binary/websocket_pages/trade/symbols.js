@@ -1,4 +1,4 @@
-var ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbols;
+const ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbols;
 
 /*
  * Symbols object parses the active_symbols json that we get from socket.send({active_symbols: 'brief'}
@@ -16,25 +16,25 @@ var ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbo
  *
  */
 
-var Symbols = (function () {
+const Symbols = (function () {
     'use strict';
 
-    var tradeMarkets = {},
+    let tradeMarkets = {},
         tradeMarketsList = {},
         tradeUnderlyings = {},
         need_page_update = 1,
         names = {};
 
-    var details = function (data) {
-        var allSymbols = data.active_symbols;
+    const details = function (data) {
+        const allSymbols = data.active_symbols;
         tradeMarkets = ActiveSymbols.getMarkets(allSymbols);
         tradeMarketsList = ActiveSymbols.getMarketsList(allSymbols);
         tradeUnderlyings = ActiveSymbols.getTradeUnderlyings(allSymbols);
         names = ActiveSymbols.getSymbolNames(allSymbols);
     };
 
-    var getSymbols = function (update) {
-        var $args = {
+    const getSymbols = function (update) {
+        const $args = {
             active_symbols: 'brief',
         };
         BinarySocket.send($args);

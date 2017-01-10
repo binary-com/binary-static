@@ -1,29 +1,50 @@
-var showLocalTimeOnHover = require('../../../../../base/utility').showLocalTimeOnHover;
-var FlexTableUI = require('../../../../../common_functions/attach_dom/flextable').FlexTableUI;
-var moment = require('moment');
+const showLocalTimeOnHover = require('../../../../../base/clock').Clock.showLocalTimeOnHover;
+const FlexTableUI = require('../../../../../common_functions/attach_dom/flextable').FlexTableUI;
+const moment      = require('moment');
+const localize    = require('../../../../../base/localize').localize;
 
-var IPHistoryUI = (function() {
+const IPHistoryUI = (function() {
     'use strict';
 
-    var containerSelector = '#login_history-ws-container';
-    var no_messages_error = 'Your account has no Login/Logout activity.';
-    var flexTable;
+    const containerSelector = '#login_history-ws-container';
+    const no_messages_error = 'Your account has no Login/Logout activity.';
+    let flexTable;
 
-    function init() {
-        var $title = $('#login_history-title').children().first();
-        $title.text(page.text.localize($title.text()));
-    }
+    const init = function() {
+        const $title = $('#login_history-title').children().first();
+        $title.text(localize($title.text()));
+    };
 
-    function update(history) {
+    const formatRow = function(data) {
+        const timestamp = moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n') + ' GMT';
+        const status = localize(data.success ? 'Successful' : 'Failed');
+        const browser = data.browser;
+        let browserString = browser ?
+            browser.name + ' v' + browser.version :
+            'Unknown';
+        const patt = /^(opera|chrome|safari|firefox|IE|Edge|SeaMonkey|Chromium) v[0-9.]+$/i;
+        if (!patt.test(browserString) && browserString !== 'Unknown') {
+            browserString = 'Error';
+        }
+        return [
+            timestamp,
+            data.action,
+            browserString,
+            data.ip_addr,
+            status,
+        ];
+    };
+
+    const update = function(history) {
         if (flexTable) {
             return flexTable.replace(history);
         }
-        var headers = ['Date and Time', 'Action', 'Browser', 'IP Address', 'Status'];
-        var columns = ['timestamp', 'action', 'browser', 'ip', 'status'];
+        const headers = ['Date and Time', 'Action', 'Browser', 'IP Address', 'Status'];
+        const columns = ['timestamp', 'action', 'browser', 'ip', 'status'];
         flexTable = new FlexTableUI({
             id       : 'login-history-table',
             container: containerSelector,
-            header   : headers.map(function(s) { return page.text.localize(s); }),
+            header   : headers.map(function(s) { return localize(s); }),
             cols     : columns,
             data     : history,
             formatter: formatRow,
@@ -32,36 +53,20 @@ var IPHistoryUI = (function() {
             },
         });
         if (!history.length) {
-            return flexTable.displayError(page.text.localize(no_messages_error), 6);
+            return flexTable.displayError(localize(no_messages_error), 6);
         }
         return showLocalTimeOnHover('td.timestamp');
-    }
+    };
 
-    function formatRow(data) {
-        var timestamp = moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n') + ' GMT';
-        var status = page.text.localize(data.success ? 'Successful' : 'Failed');
-        var browser = data.browser;
-        var browserString = browser ?
-            browser.name + ' v' + browser.version :
-            'Unknown';
-        return [
-            timestamp,
-            data.action,
-            browserString,
-            data.ip_addr,
-            status,
-        ];
-    }
-
-    function clean() {
+    const clean = function() {
         $(containerSelector + ' .error-msg').text('');
         flexTable.clear();
         flexTable = null;
-    }
+    };
 
-    function displayError(error) {
+    const displayError = function(error) {
         $('#err').text(error);
-    }
+    };
 
     return {
         init        : init,

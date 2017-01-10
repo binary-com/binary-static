@@ -1,14 +1,16 @@
-var Content = require('../../../common_functions/content').Content;
+const Content  = require('../../../common_functions/content').Content;
+const localize = require('../../../base/localize').localize;
+const Client   = require('../../../base/client').Client;
 
-var TopUpVirtualWS = (function() {
+const TopUpVirtualWS = (function() {
     'use strict';
 
-    var containerID,
+    let containerID,
         viewIDs,
         hiddenClass,
         $views;
 
-    var init = function() {
+    const init = function() {
         containerID = '#topup_virtual';
         hiddenClass = 'hidden';
         $views      = $(containerID + ' .viewItem');
@@ -19,44 +21,44 @@ var TopUpVirtualWS = (function() {
 
         $views.addClass('hidden');
 
-        if (!page.client.is_virtual()) {
-            showMessage(page.text.localize('Sorry, this feature is available to virtual accounts only.'), false);
+        if (!Client.get_boolean('is_virtual')) {
+            showMessage(localize('Sorry, this feature is available to virtual accounts only.'), false);
         } else {
             BinarySocket.send({ topup_virtual: '1' });
         }
     };
 
-    var responseHandler = function(response) {
+    const responseHandler = function(response) {
         if ('error' in response) {
             if ('message' in response.error) {
-                showMessage(page.text.localize(response.error.message), false);
+                showMessage(localize(response.error.message), false);
             }
         } else {
             showMessage(
-                page.text.localize('[_1] [_2] has been credited to your Virtual money account [_3]', [
+                localize('[_1] [_2] has been credited to your Virtual money account [_3]', [
                     response.topup_virtual.currency,
                     response.topup_virtual.amount,
-                    page.client.loginid,
+                    Client.get_value('loginid'),
                 ]),
                 true);
         }
     };
 
-    var showMessage = function(message, isSuccess) {
-        var viewID = isSuccess ? viewIDs.success : viewIDs.error;
+    const showMessage = function(message, isSuccess) {
+        const viewID = isSuccess ? viewIDs.success : viewIDs.error;
         setActiveView(viewID);
         $(viewID + ' > p').html(message);
     };
 
-    var setActiveView = function(viewID) {
+    const setActiveView = function(viewID) {
         $views.addClass(hiddenClass);
         $(viewID).removeClass(hiddenClass);
     };
 
-    var onLoad = function() {
+    const onLoad = function() {
         BinarySocket.init({
             onmessage: function(msg) {
-                var response = JSON.parse(msg.data);
+                const response = JSON.parse(msg.data);
                 if (response) {
                     if (response.msg_type === 'authorize') {
                         TopUpVirtualWS.init();
@@ -67,7 +69,7 @@ var TopUpVirtualWS = (function() {
             },
         });
         Content.populate();
-        if (TUser.get().hasOwnProperty('is_virtual')) {
+        if (Client.get_boolean('is_virtual')) {
             TopUpVirtualWS.init();
         }
     };

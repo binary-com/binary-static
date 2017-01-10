@@ -1,10 +1,10 @@
-<div class="gr-12">
+<div>
     <h1>[% l('Payment Agent Withdrawal') %]</h1>
 
     <div id="paymentagent_withdrawal">
 
         <div id="viewError" class="viewItem hidden">
-            <p id="custom-error" class="error-msg hidden"></p>
+            <p id="custom-error" class="notice-msg center-text hidden"></p>
             <p id="withdrawal-locked-error" class="error-msg hidden">
                 [% l('Withdrawal is locked, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>

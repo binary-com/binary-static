@@ -1,5 +1,6 @@
-var Defaults = require('./defaults').Defaults;
-var format_currency = require('../../common_functions/currency_to_symbol').format_currency;
+const Defaults        = require('./defaults').Defaults;
+const format_currency = require('../../common_functions/currency_to_symbol').format_currency;
+const Client          = require('../../base/client').Client;
 
 /*
  * Handles currency display
@@ -10,9 +11,9 @@ var format_currency = require('../../common_functions/currency_to_symbol').forma
 function displayCurrencies() {
     'use strict';
 
-    var target = document.getElementById('currency'),
+    const target = document.getElementById('currency'),
         fragment =  document.createDocumentFragment(),
-        currencies = page.client.get_storage_value('currencies').split(',');
+        currencies = Client.get_value('currencies').split(',');
 
     if (!target) {
         return;
@@ -24,7 +25,7 @@ function displayCurrencies() {
 
     if (currencies.length > 1) {
         currencies.forEach(function (currency) {
-            var option = document.createElement('option'),
+            const option = document.createElement('option'),
                 content = document.createTextNode(currency);
 
             option.setAttribute('value', currency);
@@ -38,7 +39,7 @@ function displayCurrencies() {
     } else {
         $('#currency').replaceWith('<span id="' + target.getAttribute('id') +
                                     '" class="' + target.getAttribute('class') +
-                                    '"value="' + currencies[0] + '">' +
+                                    '" value="' + currencies[0] + '">' +
                                     format_currency(currencies[0]) + '</span>');
         Defaults.set('currency', currencies[0]);
     }
