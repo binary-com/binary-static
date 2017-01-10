@@ -67,7 +67,7 @@ const MBContract = (function() {
             date_expiry = trading_period.split('_')[1];
             duration = trading_period.split('_')[2];
         }
-        const text_value = moment().utc(date_expiry * 1000)
+        const text_value = moment.utc(date_expiry * 1000)
                             .utcOffset(japanese_client() ? '+09:00' : '+00:00')
                             .locale(getLanguage().toLowerCase())
                             .format('MMM Do, HH:mm')
