@@ -1,5 +1,5 @@
 // Brand colors and derivatives
-
+/* stylelint-disable color-no-hex */
 $COLOR_TEXT: #3d474d;
 $COLOR_CONTROL_BORDER: #dadada;
 $COLOR_ACTIVE: #ff992a;
@@ -7,7 +7,6 @@ $COLOR_ACTIVE: #ff992a;
 $COLOR_NAV: #a1aab3;
 $COLOR_NAV_ACTIVE: #929ca6;
 $COLOR_NAV_BORDER: #2a3052;
-
 
 $COLOR_ORANGE: #e98024;
 $COLOR_LIGHT_BLUE: #29abe2;
@@ -25,27 +24,27 @@ $COLOR_DARK_WHITE: #ccc;
 
 $COLOR_RED           : #c03;
 $COLOR_YELLOW        : #fef1cf;
-$COLOR_LIGHT_GRAY    : #F2F2F2;
-$COLOR_GRAY          : #DEDEDE;
-$COLOR_DARK_GRAY     : #44484C;
-$COLOR_GREEN         : #2E8836;
+$COLOR_LIGHT_GRAY    : #f2f2f2;
+$COLOR_GRAY          : #dedede;
+$COLOR_DARK_GRAY     : #44484c;
+$COLOR_GREEN         : #2e8836;
 
 // colors to remove
 
-$COLOR_GRAY_SHADE: #C2C2C2;
-$COLOR_DARK_GREEN: #14602B;
+$COLOR_GRAY_SHADE: #c2c2c2;
+$COLOR_DARK_GREEN: #14602b;
+/* stylelint-enable color-no-hex */
 
 $BORDER_RADIUS: 3px;
-$CONTROL_PADDING: .33333em;
-$CONTROL_PADDING_L: .5em 1em;
-$PAGE_PADDING: .5em;
+$CONTROL_PADDING: 0.33em;
+$CONTROL_PADDING_L: 0.5em 1em;
+$PAGE_PADDING: 0.5em;
 $HEADER_HEIGHT: 3em;
-$BOX_SHADOW: 0 0 50px 0 rgba(0,0,0, 0.25);
+$BOX_SHADOW: 0 0 50px 0 rgba(0, 0, 0, 0.25);
 
 $FONT-STACK: roboto, sans-serif;
 $FONT_BASE: 1rem;
 $FONT_SCALE: 1.15;
-
 
 // Use only these font sizes throughout the site
 
