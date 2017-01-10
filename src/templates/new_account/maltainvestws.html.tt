@@ -340,6 +340,30 @@
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
+                                <label for="occupation">[% l('Occupation') %]</label>
+                            </div>
+                            <div class="gr-8">
+                                <select id="occupation">
+                                    <option value="">[% l('Please select') %]</option>
+                                    <option value="Chief Executives, Senior Officials and Legislators">[% l('Chief Executives, Senior Officials and Legislators') %]</option>
+                                    <option value="Managers">[% l('Managers') %]</option>
+                                    <option value="Professionals">[% l('Professionals') %]</option>
+                                    <option value="Clerks">[% l('Clerks') %]</option>
+                                    <option value="Personal Care, Sales and Service Workers">[% l('Personal Care, Sales and Service Workers') %]</option>
+                                    <option value="Agricultural, Forestry and Fishery Workers">[% l('Agricultural, Forestry and Fishery Workers') %]</option>
+                                    <option value="Craft, Metal, Electrical and Electronics Workers">[% l('Craft, Metal, Electrical and Electronics Workers') %]</option>
+                                    <option value="Plant and Machine Operators and Assemblers">[% l('Plant and Machine Operators and Assemblers') %]</option>
+                                    <option value="Cleaners and Helpers">[% l('Cleaners and Helpers') %]</option>
+                                    <option value="Mining, Construction, Manufacturing and Transport Workers">[% l('Mining, Construction, Manufacturing and Transport Workers') %]</option>
+                                    <option value="Armed Forces">[% l('Armed Forces') %]</option>
+                                    <option value="Government Officers">[% l('Government Officers') %]</option>
+                                    <option value="Others">[% l('Others') %]</option>
+                                </select>
+                                <p class="errorfield" id="error-occupation" style="display:none"></p>
+                            </div>
+                        </div>
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
                                 <label for="education_level">[% l('Level of Education') %]</label>
                             </div>
                             <div class="gr-8">

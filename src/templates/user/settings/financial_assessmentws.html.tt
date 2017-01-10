@@ -203,6 +203,30 @@
                     </div>
                     <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
+                            <label for="occupation">Occupation</label>
+                        </div>
+                        <div class="gr-8">
+                            <select id="occupation" name="occupation">
+                                <option value="">Please select</option>
+                                <option value="Chief Executives, Senior Officials and Legislators">Chief Executives, Senior Officials and Legislators</option>
+                                <option value="Managers">Managers</option>
+                                <option value="Professionals">Professionals</option>
+                                <option value="Clerks">Clerks</option>
+                                <option value="Personal Care, Sales and Service Workers">Personal Care, Sales and Service Workers</option>
+                                <option value="Agricultural, Forestry and Fishery Workers">Agricultural, Forestry and Fishery Workers</option>
+                                <option value="Craft, Metal, Electrical and Electronics Workers">Craft, Metal, Electrical and Electronics Workers</option>
+                                <option value="Plant and Machine Operators and Assemblers">Plant and Machine Operators and Assemblers</option>
+                                <option value="Cleaners and Helpers">Cleaners and Helpers</option>
+                                <option value="Mining, Construction, Manufacturing and Transport Workers">Mining, Construction, Manufacturing and Transport Workers</option>
+                                <option value="Armed Forces">Armed Forces</option>
+                                <option value="Government Officers">Government Officers</option>
+                                <option value="Others">Others</option>
+                            </select>
+                            <p class="errorfield" id="erroroccupation"></p>
+                        </div>
+                    </div>
+                    <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-4  form_label">
                             <label for="education_level">Level of Education</label>
                         </div>
                         <div class="gr-8">
