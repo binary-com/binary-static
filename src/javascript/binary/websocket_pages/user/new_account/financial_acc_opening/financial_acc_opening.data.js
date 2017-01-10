@@ -28,6 +28,7 @@ const FinancialAccOpeningData = (function() {
             other_instruments_trading_experience: elementObj.otherExperience.value,
             other_instruments_trading_frequency : elementObj.otherFrequency.value,
             employment_industry                 : elementObj.employment.value,
+            occupation                          : elementObj.employment.value,
             education_level                     : elementObj.education.value,
             income_source                       : elementObj.incomeSource.value,
             net_income                          : elementObj.income.value,
