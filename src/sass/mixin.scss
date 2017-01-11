@@ -6,7 +6,7 @@
  * sample usage: @include BIDIR_VALUE(float, left, right);
  */
 @mixin BIDIR_VALUE($prop, $ltr_value, $rtl_value) {
-  #{$prop}: if($IS_LTR, $ltr_value, $rtl_value);
+    #{$prop}: if($IS_LTR, $ltr_value, $rtl_value);
 }
 
 /*
@@ -15,16 +15,16 @@
  * sample usage: @include BIDIR_PROP(margin-left, margin-right, 5px);
  */
 @mixin BIDIR_PROP($ltr_prop, $rtl_prop, $value) {
-  @if $IS_LTR {
-    #{$ltr_prop}: $value;
-  }
-  @else {
-    #{$rtl_prop}: $value;
-  }
+    @if $IS_LTR {
+        #{$ltr_prop}: $value;
+    }
+    @else {
+        #{$rtl_prop}: $value;
+    }
 }
 
 @mixin topspace {
-  margin-top:40px;
+    margin-top: 40px;
 }
 
 @mixin section-separator {
@@ -41,71 +41,73 @@
 }
 
 @mixin menu-left {
-  ul {
-    font-size:90%;
-    li {
-      list-style-image: none;
-      margin: 0;
-      background: $COLOR_LIGHT_GRAY;
-      line-height: 150%;
-      border-bottom: 1px solid #FFFFFF;
-      &:hover {
-        background: $COLOR_GRAY;
-      }
-      a {
-        font-weight: normal;
-        text-decoration: none;
-        display: block;
-        padding: 5px 5px 5px 10px;
-        color: $COLOR_BLUE;
-      }
+    ul {
+        font-size: 90%;
+        li {
+            list-style-image: none;
+            margin: 0;
+            background: $COLOR_LIGHT_GRAY;
+            line-height: 150%;
+            border-bottom: 1px solid $COLOR_WHITE;
+            &:hover {
+                background: $COLOR_GRAY;
+            }
+            a {
+                font-weight: normal;
+                text-decoration: none;
+                display: block;
+                padding: 5px 5px 5px 10px;
+                color: $COLOR_BLUE;
+            }
+        }
+        li.selected {
+            background: $COLOR_BLUE;
+            a {
+                color: $COLOR_WHITE;
+                text-decoration: none;
+            }
+        }
     }
-    li.selected {
-      background: $COLOR_BLUE;
-      a {
-        color: $COLOR_WHITE;
-        text-decoration: none;
-      }
+    .open-account {
+        background: $COLOR_LIGHT_GRAY;
+        padding: 20px;
     }
-  }
-  .open-account {
-    background: $COLOR_LIGHT_GRAY;
-    padding: 20px;
-  }
 }
 
 @mixin menu-right {
-  div {
-    background: $COLOR_LIGHT_GRAY;
-    margin-bottom: 20px;
-    padding: 20px;
-    text-align: center;
-    p {
-      margin: 0;
+    div {
+        background: $COLOR_LIGHT_GRAY;
+        margin-bottom: 20px;
+        padding: 20px;
+        text-align: center;
+        p {
+            margin: 0;
+        }
     }
-  }
-  .open-account {
-    p { margin-bottom: 1em; }
-    padding: 20px;
-  }
+    .open-account {
+        p {
+            margin-bottom: 1em;
+        }
+        padding: 20px;
+    }
 }
 
 @mixin link-button {
-  color: $COLOR_WHITE;
-  text-decoration: none;
-  text-align: center;
-  line-height:100%;
-  background: $COLOR_GREEN;
-  border-radius: $BORDER_RADIUS;
-  text-transform: capitalize;
-  padding: 10px 25px 10px 25px;
-  display: inline-block;
-  letter-spacing: 0.75px;
-  &:visited {
     color: $COLOR_WHITE;
-  }
-  &:hover, &:active {
     text-decoration: none;
-    background-color: #14602B;
-  }
+    text-align: center;
+    line-height: 100%;
+    background: $COLOR_GREEN;
+    border-radius: $BORDER_RADIUS;
+    text-transform: capitalize;
+    padding: 10px 25px;
+    display: inline-block;
+    letter-spacing: 0.75px;
+    &:visited {
+        color: $COLOR_WHITE;
+    }
+    &:hover, &:active {
+        text-decoration: none;
+        background-color: $COLOR_DARK_GREEN;
+    }
 }
