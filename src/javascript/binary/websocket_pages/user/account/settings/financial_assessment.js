@@ -120,6 +120,9 @@ const FinancialAssessmentws = (function() {
             const val = response.get_financial_assessment[key];
             $('#' + key).val(val);
         });
+        if (financial_assessment.occupation === undefined) {  // handle existing assessments
+            financial_assessment.occupation = '';
+        }
     };
 
     const clearErrors = function() {
