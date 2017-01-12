@@ -123,7 +123,7 @@ const MBPrice = (function() {
         return {
             contract_type      : contract_type,
             barrier            : barrier,
-            is_active          : !proposal.error && proposal.ask_price && !is_unwelcome,
+            is_active          : !proposal.error && proposal.proposal.ask_price && !is_unwelcome,
             message            : proposal.error && proposal.error.code !== 'RateLimit' ? proposal.error.message : '',
             ask_price          : getAskPrice(proposal),
             sell_price         : payout - getAskPrice(proposal_opp),
