@@ -5809,6 +5809,9 @@ msgstr "Przepraszamy, wybrana funkcja jest niedostępna."
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "Przepraszamy, wpisano nieprawidłowe hasło do kasjera"
 
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "Przepraszamy, Twoje konto nie ma uprawnień do kolejnych zakupów kontraktów."
+
 msgid "Spam - We do not condone Spam"
 msgstr "Spam – nie akceptujemy spamu"
 
@@ -7532,9 +7535,6 @@ msgstr "Partner nie może przekazywać żadnej części prowizji osobom, które 
 msgid "You are not allowed to store any Content (such as feed data)."
 msgstr "Nie zezwala się na przechowywanie jakichkolwiek treści (np. danych ze strumieniowych źródeł danych)."
 
-msgid "You are not authorized for withdrawal via payment agent."
-msgstr "Nie jesteś upoważniony do wypłat przez pośrednika płatności."
-
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "W żadnym wypadku Użytkownik nie jest upoważniony do otrzymania od Firmy jakiegokolwiek wynagrodzenia ani zwrotu kosztów."
 
@@ -9142,6 +9142,9 @@ msgstr "Dane konta"
 
 msgid "Terms and Conditions Approval"
 msgstr "Akceptacja regulaminu"
+
+#~ msgid "You are not authorized for withdrawal via payment agent."
+#~ msgstr "Nie jesteś upoważniony do wypłat przez pośrednika płatności."
 
 #~ msgid "Analyse and test our website for bugs and potential security issues."
 #~ msgstr "Sprawdzaj i testów naszą stronę internetową pod kątem usterek i potencjalnych problemów z bezpieczeństwem."
@@ -10899,9 +10902,6 @@ msgstr "Akceptacja regulaminu"
 
 #~ msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
 #~ msgstr "Przepraszamy, Twoje saldo jest za wysokie (%1). Maksymalne dozwolone saldo konta wynosi %2."
-
-#~ msgid "Sorry, your account is not authorised for any further contract purchases."
-#~ msgstr "Przepraszamy, Twoje konto nie ma uprawnień do kolejnych zakupów kontraktów."
 
 #~ msgid "Sorry, your currency of %1 is unavailable for Payment Agent Withdrawal"
 #~ msgstr "Przepraszamy, ale Twoja waluta dla %1 nie jest dostępna w przypadku wypłat za pośrednictwem pośrednika płatności"

@@ -5893,6 +5893,9 @@ msgstr "Xin lỗi, đặc tính này không có."
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "Xin lỗi, bạn đã nhập sai mật khẩu thu ngân"
 
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "Xin lỗi, tài khoản của bạn không có quyền mua thêm hợp đồng."
+
 msgid "Spam - We do not condone Spam"
 msgstr "Thư rác- Chúng tôi không bỏ qua cho thư rác"
 
@@ -7637,9 +7640,6 @@ msgstr "Bạn không được phép giảm bất kỳ khoản hoa hồng nào ch
 msgid "You are not allowed to store any Content (such as feed data)."
 msgstr "Bạn không được phép lưu trữ bất kỳ nội dung nào (ví dụ dữ liệu nguồn)."
 
-msgid "You are not authorized for withdrawal via payment agent."
-msgstr "Bạn không được quyền rút tiền qua đại lý thanh toán."
-
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "Bạn không có quyền nhận bất kỳ khoản bồi thường hay đền bù đối với bất kỳ tài sản nào của Công ty chúng tôi với mọi trường hợp."
 
@@ -9375,6 +9375,9 @@ msgstr "Chi tiết Tài khoản"
 
 msgid "Terms and Conditions Approval"
 msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
+
+#~ msgid "You are not authorized for withdrawal via payment agent."
+#~ msgstr "Bạn không được quyền rút tiền qua đại lý thanh toán."
 
 #, fuzzy
 #~| msgid "{JAPAN ONLY}FX Rate"
@@ -11139,9 +11142,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 #~ msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
 #~ msgstr "Xin lỗi, số dư tiền mặt trong tài khoản của bạn quá nhiều (%1). Số dư tài khoản tối đa của bạn là %2."
-
-#~ msgid "Sorry, your account is not authorised for any further contract purchases."
-#~ msgstr "Xin lỗi, tài khoản của bạn không có quyền mua thêm hợp đồng."
 
 #~ msgid "Sorry, your currency of %1 is unavailable for Payment Agent Withdrawal"
 #~ msgstr "XIn lỗi, đồng tiền của %1 không khả dụng cho Đại lý Thanh toán Rút tiền"

@@ -5841,6 +5841,9 @@ msgstr "Este recurso não está disponível."
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "Lamentamos, introduziu uma senha de caixa incorreta"
 
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "Lamentamos, a sua conta não está autorizada a mais compras de contratos."
+
 msgid "Spam - We do not condone Spam"
 msgstr "Spam - Não toleramos Spam"
 
@@ -7571,9 +7574,6 @@ msgstr "Não lhe é permitido passar qualquer parte do pagamento de comissões p
 msgid "You are not allowed to store any Content (such as feed data)."
 msgstr "Não é permitido armazenar qualquer conteúdo (tais como feeds de dados)."
 
-msgid "You are not authorized for withdrawal via payment agent."
-msgstr "Você não está autorizado a fazer uma retirada por meio de agente de pagamento."
-
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "Você não tem direito a receber nenhuma compensação ou reembolso de qualquer natureza da empresa, em nenhuma circunstância."
 
@@ -9189,6 +9189,9 @@ msgstr "Detalhes da Conta"
 
 msgid "Terms and Conditions Approval"
 msgstr "Aprovação dos termos e condições"
+
+#~ msgid "You are not authorized for withdrawal via payment agent."
+#~ msgstr "Você não está autorizado a fazer uma retirada por meio de agente de pagamento."
 
 #~ msgid "{JAPAN ONLY}JSA_Date_3"
 #~ msgstr "{JAPAN ONLY}JSA_Date_3"
@@ -10950,9 +10953,6 @@ msgstr "Aprovação dos termos e condições"
 
 #~ msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
 #~ msgstr "Lamentamos, o saldo em dinheiro da sua conta é demasiado alto (%1). O seu saldo máximo de conta é %2."
-
-#~ msgid "Sorry, your account is not authorised for any further contract purchases."
-#~ msgstr "Lamentamos, a sua conta não está autorizada a mais compras de contratos."
 
 #~ msgid "Sorry, your currency of %1 is unavailable for Payment Agent Withdrawal"
 #~ msgstr "Lamentamos, a sua moeda %1 não está disponível para retiradas através de Agentes de Pagamentos"

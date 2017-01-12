@@ -5845,6 +5845,9 @@ msgstr "Siamo spiacenti, questa funzione non è disponibile."
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "Siamo spiacenti, hai inserito una password della cassa non corretta"
 
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "Siamo spiacenti, il tuo account non è autorizzato per qualsiasi altro acquisto di contratti."
+
 msgid "Spam - We do not condone Spam"
 msgstr "Spam - Non tolleriamo lo Spam"
 
@@ -7583,9 +7586,6 @@ msgstr "Non ti è consentito ridurre alcun pagamento parziale delle commissioni 
 msgid "You are not allowed to store any Content (such as feed data)."
 msgstr "Non ti è consentito memorizzare alcun Contenuto (come i dati dei flussi)."
 
-msgid "You are not authorized for withdrawal via payment agent."
-msgstr "Non sei autorizzato a prelevare tramite un agente di pagamento."
-
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "Non hai in nessun caso diritto ad alcun compenso o rimborso di alcun tipo da parte della Società."
 
@@ -9207,6 +9207,9 @@ msgstr "Dettagli dell'account"
 
 msgid "Terms and Conditions Approval"
 msgstr "Approvazione dei termini e delle condizioni"
+
+#~ msgid "You are not authorized for withdrawal via payment agent."
+#~ msgstr "Non sei autorizzato a prelevare tramite un agente di pagamento."
 
 #~ msgid "{JAPAN ONLY}JSA_Date_3"
 #~ msgstr "{JAPAN ONLY}JSA_Date_3"
@@ -10955,9 +10958,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 #~ msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
 #~ msgstr "Siamo spiacenti, il saldo del tuo account è troppo alto (%1). Il saldo massimo è pari a %2."
-
-#~ msgid "Sorry, your account is not authorised for any further contract purchases."
-#~ msgstr "Siamo spiacenti, il tuo account non è autorizzato per qualsiasi altro acquisto di contratti."
 
 #~ msgid "Sorry, your currency of %1 is unavailable for Payment Agent Withdrawal"
 #~ msgstr "Siamo spiacenti, la valuta di %1 non è disponibile per il prelievo tramite Agente di pagamento"

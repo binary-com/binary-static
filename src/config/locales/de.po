@@ -5831,6 +5831,9 @@ msgstr "Leider ist diese Funktion nicht vorhanden."
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "Es tut uns leid, aber Sie haben ein ungültiges Kassen-Passwort eingegeben"
 
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "Es tut uns leid, aber Ihr Konto ist für den Erwerb weiterer Kontrakte nicht berechtigt."
+
 msgid "Spam - We do not condone Spam"
 msgstr "Spam - Wir dulden kein Spam"
 
@@ -7565,9 +7568,6 @@ msgstr "Es ist Ihnen nicht erlaubt, Teile Ihrer Provisionszahlungen als Rabatt b
 msgid "You are not allowed to store any Content (such as feed data)."
 msgstr "Es ist Ihnen nicht erlaubt, jeglichen Content (wie Feed-Daten) zu speichern."
 
-msgid "You are not authorized for withdrawal via payment agent."
-msgstr "Sie sind nicht befugt, eine Auszahlung über einen Zahlungsagent zu tätigen."
-
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "Sie sind in keinem Fall zu jeglicher Entschädigung oder Rückerstattung vom Unternehmen berechtigt."
 
@@ -9181,6 +9181,9 @@ msgstr "Kontoangaben"
 
 msgid "Terms and Conditions Approval"
 msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
+
+#~ msgid "You are not authorized for withdrawal via payment agent."
+#~ msgstr "Sie sind nicht befugt, eine Auszahlung über einen Zahlungsagent zu tätigen."
 
 #~ msgid "{JAPAN ONLY}JSA_Date_3"
 #~ msgstr "{JAPAN ONLY}JSA_Date_3"
@@ -10862,9 +10865,6 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 
 #~ msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
 #~ msgstr "Es tut uns leid, aber Ihr Kontostand ist zu hoch (%1). Ihr höchstmöglicher Kontostand ist %2."
-
-#~ msgid "Sorry, your account is not authorised for any further contract purchases."
-#~ msgstr "Es tut uns leid, aber Ihr Konto ist für den Erwerb weiterer Kontrakte nicht berechtigt."
 
 #~ msgid "Sorry, your currency of %1 is unavailable for Payment Agent Withdrawal"
 #~ msgstr "Leider ist Ihre Währung von %1 nicht für Zahlungsagenten-Abhebungen verfügbar"
