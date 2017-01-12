@@ -1,8 +1,8 @@
-var Cookies = require('../../../../../lib/js-cookie');
+const Cookies = require('../../../../../lib/js-cookie');
 
-var FinancialAccOpeningData = (function() {
-    function getRealAcc(elementObj) {
-        var req = {
+const FinancialAccOpeningData = (function() {
+    const getRealAcc = function(elementObj) {
+        const req = {
             new_account_maltainvest             : 1,
             salutation                          : elementObj.title.value,
             first_name                          : elementObj.fname.value,
@@ -50,7 +50,7 @@ var FinancialAccOpeningData = (function() {
         }
 
         BinarySocket.send(req);
-    }
+    };
 
     return {
         getRealAcc: getRealAcc,

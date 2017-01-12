@@ -1,8 +1,9 @@
-var ResetPassword = require('./reset_password/reset_password.init').ResetPassword;
+const ResetPassword = require('./reset_password/reset_password.init').ResetPassword;
+const Client        = require('../../base/client').Client;
 
-var ResetPasswordWS = (function() {
-    var init = function() {
-        if (page.client.redirect_if_login()) {
+const ResetPasswordWS = (function() {
+    const init = function() {
+        if (Client.redirect_if_login()) {
             return;
         }
         BinarySocket.init({

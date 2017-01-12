@@ -1,12 +1,12 @@
-var MBContract      = require('./mb_contract').MBContract;
-var MBDefaults      = require('./mb_defaults').MBDefaults;
-var MBNotifications = require('./mb_notifications').MBNotifications;
-var MBProcess       = require('./mb_process').MBProcess;
-var MBTick          = require('./mb_tick').MBTick;
-var TradingAnalysis = require('../trade/analysis').TradingAnalysis;
-var japanese_client = require('../../common_functions/country_base').japanese_client;
-var debounce        = require('../trade/common').debounce;
-var processForgetTicks = require('../trade/process').processForgetTicks;
+const MBContract      = require('./mb_contract').MBContract;
+const MBDefaults      = require('./mb_defaults').MBDefaults;
+const MBNotifications = require('./mb_notifications').MBNotifications;
+const MBProcess       = require('./mb_process').MBProcess;
+const MBTick          = require('./mb_tick').MBTick;
+const TradingAnalysis = require('../trade/analysis').TradingAnalysis;
+const japanese_client = require('../../common_functions/country_base').japanese_client;
+const debounce        = require('../trade/common').debounce;
+const processForgetTicks = require('../trade/process').processForgetTicks;
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -16,14 +16,14 @@ var processForgetTicks = require('../trade/process').processForgetTicks;
  * page for pjax to work else it will fire on all pages
  *
  */
-var MBTradingEvents = (function () {
+const MBTradingEvents = (function () {
     'use strict';
 
-    var initiate = function () {
+    const initiate = function () {
         /*
          * attach event to underlying change, event need to request new contract details and price
          */
-        var underlyingElement = document.getElementById('underlying');
+        const underlyingElement = document.getElementById('underlying');
         if (underlyingElement) {
             underlyingElement.addEventListener('change', function(e) {
                 if (e.target) {
@@ -33,7 +33,7 @@ var MBTradingEvents = (function () {
                     if (e.target.selectedIndex < 0) {
                         e.target.selectedIndex = 0;
                     }
-                    var underlying = e.target.value;
+                    const underlying = e.target.value;
                     MBDefaults.set('underlying', underlying);
                     MBNotifications.hide('SYMBOL_INACTIVE');
 
@@ -52,7 +52,7 @@ var MBTradingEvents = (function () {
             });
         }
 
-        var categoryElement = document.getElementById('category');
+        const categoryElement = document.getElementById('category');
         if (categoryElement) {
             categoryElement.addEventListener('change', function(e) {
                 MBDefaults.set('category', e.target.value);
@@ -62,7 +62,7 @@ var MBTradingEvents = (function () {
             });
         }
 
-        var periodElement = document.getElementById('period');
+        const periodElement = document.getElementById('period');
         if (periodElement) {
             periodElement.addEventListener('change', function(e) {
                 MBDefaults.set('period', e.target.value);
@@ -73,17 +73,17 @@ var MBTradingEvents = (function () {
             });
         }
 
-        var payoutOnKeypress = function(ev) {
-            var key  = ev.keyCode,
-                char = String.fromCharCode(ev.which),
-                isOK = true;
+        const payoutOnKeypress = function(ev) {
+            const key  = ev.keyCode,
+                char = String.fromCharCode(ev.which);
+            let isOK = true;
             if ((char === '.' && ev.target.value.indexOf(char) >= 0) ||
                     (!/[0-9\.]/.test(char) && [8, 37, 39, 46].indexOf(key) < 0) || // delete, backspace, arrow keys
                     /['%]/.test(char)) { // similarity to arrows key code in some browsers
                 isOK = false;
             }
             if (japanese_client()) {
-                var result = payoutElement.value.substring(0, ev.target.selectionStart) + char +
+                const result = payoutElement.value.substring(0, ev.target.selectionStart) + char +
                                 payoutElement.value.substring(ev.target.selectionEnd);
                 if (char === '.' || result[0] === '0' || +result < 1 || +result > 100) {
                     isOK = false;
@@ -96,18 +96,18 @@ var MBTradingEvents = (function () {
             }
         };
 
-        var payoutElement = document.getElementById('payout');
+        const payoutElement = document.getElementById('payout');
         if (payoutElement) {
             if (!payoutElement.value) {
-                var payout_def = MBDefaults.get('payout') || (japanese_client() ? 1 : 10);
+                const payout_def = MBDefaults.get('payout') || (japanese_client() ? 1 : 10);
                 payoutElement.value = payout_def;
                 MBDefaults.set('payout', payout_def);
             }
             payoutElement.addEventListener('keypress', payoutOnKeypress);
             payoutElement.addEventListener('input', debounce(function(e) {
-                var payout = e.target.value;
+                let payout = e.target.value;
                 if (japanese_client()) {
-                    var $payoutElement = $('#payout'),
+                    const $payoutElement = $('#payout'),
                         $tableElement = $('.japan-table');
                     if (payout < 1 || payout > 100 || isNaN(payout)) {
                         $payoutElement.addClass('error-field');
@@ -134,11 +134,11 @@ var MBTradingEvents = (function () {
         }
 
         // For verifying there are 2 digits after decimal
-        var isStandardFloat = (function(value) {
+        const isStandardFloat = (function(value) {
             return (!isNaN(value) && value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length > 2);
         });
 
-        var currencyElement = document.getElementById('currency');
+        const currencyElement = document.getElementById('currency');
         if (currencyElement) {
             currencyElement.addEventListener('change', function() {
                 MBProcess.processPriceRequest();

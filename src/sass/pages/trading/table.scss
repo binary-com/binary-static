@@ -83,6 +83,7 @@ table {
     }
     .ref {
         text-align: center;
+        white-space: nowrap;
     }
     .range {
         padding: 4px 36px;
@@ -104,10 +105,6 @@ table {
     font-size: 90%;
     border-bottom: 1px solid $COLOR_DARK_GRAY;
     background: none repeat scroll 0% 0% $COLOR_LIGHT_GRAY;
-    [class*='grd-grid-'] {
-        word-wrap: break-word;
-        white-space: normal;
-    }
 }
 
 .table-body {
@@ -115,7 +112,7 @@ table {
     line-height: 1.5em;
     padding-top: 20px;
     font-size: 90%;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     .profit {
         color: $COLOR_GREEN;
     }

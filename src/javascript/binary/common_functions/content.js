@@ -1,12 +1,14 @@
-var template = require('../base/utility').template;
+const template = require('../base/utility').template;
+const localize = require('../base/localize').localize;
+const selectorExists = require('../common_functions/common_functions').selectorExists;
 
-var Content = (function() {
+const Content = (function() {
     'use strict';
 
-    var localize = {};
+    let localized = {};
 
-    var populate = function() {
-        localize = {
+    const populate = function() {
+        localized = {
             textStartTime                     : 'Start time',
             textSpot                          : 'Spot',
             textBarrier                       : 'Barrier',
@@ -122,182 +124,168 @@ var Content = (function() {
             textMessagePasswordScore          : 'Password score is: [_1]. Passing score is: 20.',
             textShouldNotLessThan             : 'Please enter a number greater or equal to [_1].',
             textNumberLimit                   : 'Please enter a number between [_1].', // [_1] should be a range
+            featureNotRelevantToVirtual       : 'This feature is not relevant to virtual-money accounts.',
         };
 
-        Object.keys(localize).forEach(function(key) {
-            localize[key] = page.text.localize(localize[key]);
+        Object.keys(localized).forEach(function(key) {
+            localized[key] = localize(localized[key]);
         });
 
-        var starTime = document.getElementById('start_time_label');
-        if (starTime) {
-            starTime.textContent = localize.textStartTime;
+        const starTime = document.getElementById('start_time_label');
+        if (selectorExists(starTime)) {
+            starTime.textContent = localized.textStartTime;
         }
 
-        var minDurationTooltip = document.getElementById('duration_tooltip');
-        if (minDurationTooltip) {
-            minDurationTooltip.textContent = localize.textMinDuration;
-            minDurationTooltip.setAttribute('data-balloon', localize.textMinDurationTooltip);
+        const minDurationTooltip = document.getElementById('duration_tooltip');
+        if (selectorExists(minDurationTooltip)) {
+            minDurationTooltip.textContent = localized.textMinDuration;
+            minDurationTooltip.setAttribute('data-balloon', localized.textMinDurationTooltip);
         }
 
-        var spotLabel = document.getElementById('spot_label');
-        if (spotLabel) {
-            spotLabel.textContent = localize.textSpot;
+        const spotLabel = document.getElementById('spot_label');
+        if (selectorExists(spotLabel)) {
+            spotLabel.textContent = localized.textSpot;
         }
 
-        var barrierTooltip = document.getElementById('barrier_tooltip');
-        if (barrierTooltip) {
-            barrierTooltip.textContent = localize.textBarrierOffset;
-            barrierTooltip.setAttribute('data-balloon', localize.textBarrierOffsetTooltip);
+        const barrierTooltip = document.getElementById('barrier_tooltip');
+        if (selectorExists(barrierTooltip)) {
+            barrierTooltip.textContent = localized.textBarrierOffset;
+            barrierTooltip.setAttribute('data-balloon', localized.textBarrierOffsetTooltip);
         }
 
-        var barrierSpan = document.getElementById('barrier_span');
-        if (barrierSpan) {
-            barrierSpan.textContent = localize.textBarrier;
+        const barrierSpan = document.getElementById('barrier_span');
+        if (selectorExists(barrierSpan)) {
+            barrierSpan.textContent = localized.textBarrier;
         }
 
-        var barrierHighTooltip = document.getElementById('barrier_high_tooltip');
-        if (barrierHighTooltip) {
-            barrierHighTooltip.textContent = localize.textHighBarrierOffset;
-            barrierHighTooltip.setAttribute('data-balloon', localize.textBarrierOffsetTooltip);
+        const barrierHighTooltip = document.getElementById('barrier_high_tooltip');
+        if (selectorExists(barrierHighTooltip)) {
+            barrierHighTooltip.textContent = localized.textHighBarrierOffset;
+            barrierHighTooltip.setAttribute('data-balloon', localized.textBarrierOffsetTooltip);
         }
-        var barrierHighSpan = document.getElementById('barrier_high_span');
-        if (barrierHighSpan) {
-            barrierHighSpan.textContent = localize.textHighBarrier;
-        }
-
-        var barrierLowTooltip = document.getElementById('barrier_low_tooltip');
-        if (barrierLowTooltip) {
-            barrierLowTooltip.textContent = localize.textLowBarrierOffset;
-            barrierLowTooltip.setAttribute('data-balloon', localize.textBarrierOffsetTooltip);
-        }
-        var barrierLowSpan = document.getElementById('barrier_low_span');
-        if (barrierLowSpan) {
-            barrierLowSpan.textContent = localize.textLowBarrier;
+        const barrierHighSpan = document.getElementById('barrier_high_span');
+        if (selectorExists(barrierHighSpan)) {
+            barrierHighSpan.textContent = localized.textHighBarrier;
         }
 
-        var predictionLabel = document.getElementById('prediction_label');
-        if (predictionLabel) {
-            predictionLabel.textContent = localize.textPredictionLabel;
+        const barrierLowTooltip = document.getElementById('barrier_low_tooltip');
+        if (selectorExists(barrierLowTooltip)) {
+            barrierLowTooltip.textContent = localized.textLowBarrierOffset;
+            barrierLowTooltip.setAttribute('data-balloon', localized.textBarrierOffsetTooltip);
+        }
+        const barrierLowSpan = document.getElementById('barrier_low_span');
+        if (selectorExists(barrierLowSpan)) {
+            barrierLowSpan.textContent = localized.textLowBarrier;
         }
 
-        var payoutOption = document.getElementById('payout_option');
-        if (payoutOption) {
-            payoutOption.textContent = localize.textPayout;
+        const predictionLabel = document.getElementById('prediction_label');
+        if (selectorExists(predictionLabel)) {
+            predictionLabel.textContent = localized.textPredictionLabel;
         }
 
-        var stakeOption = document.getElementById('stake_option');
-        if (stakeOption) {
-            stakeOption.textContent = localize.textStake;
+        const payoutOption = document.getElementById('payout_option');
+        if (selectorExists(payoutOption)) {
+            payoutOption.textContent = localized.textPayout;
         }
 
-        var purchaseButtonTop = document.getElementById('purchase_button_top');
-        if (purchaseButtonTop) {
-            purchaseButtonTop.textContent = localize.textPurchase;
+        const stakeOption = document.getElementById('stake_option');
+        if (selectorExists(stakeOption)) {
+            stakeOption.textContent = localized.textStake;
         }
 
-        var purchaseButtonBottom = document.getElementById('purchase_button_bottom');
-        if (purchaseButtonBottom) {
-            purchaseButtonBottom.textContent = localize.textPurchase;
+        const purchaseButtonTop = document.getElementById('purchase_button_top');
+        if (selectorExists(purchaseButtonTop)) {
+            purchaseButtonTop.textContent = localized.textPurchase;
         }
 
-        var period_label = document.getElementById('period_label');
-        if (period_label) {
-            period_label.textContent = localize.textContractPeriod;
+        const purchaseButtonBottom = document.getElementById('purchase_button_bottom');
+        if (selectorExists(purchaseButtonBottom)) {
+            purchaseButtonBottom.textContent = localized.textPurchase;
         }
 
-        var amount_per_point_label = document.getElementById('amount_per_point_label');
-        if (amount_per_point_label) {
-            amount_per_point_label.textContent = localize.textAmountPerPoint;
+        const period_label = document.getElementById('period_label');
+        if (selectorExists(period_label)) {
+            period_label.textContent = localized.textContractPeriod;
         }
 
-        var stop_loss_label = document.getElementById('stop_loss_label');
-        if (stop_loss_label) {
-            stop_loss_label.textContent = localize.textStopLoss;
+        const amount_per_point_label = document.getElementById('amount_per_point_label');
+        if (selectorExists(amount_per_point_label)) {
+            amount_per_point_label.textContent = localized.textAmountPerPoint;
         }
 
-        var stop_profit_label = document.getElementById('stop_profit_label');
-        if (stop_profit_label) {
-            stop_profit_label.textContent = localize.textStopProfit;
+        const stop_loss_label = document.getElementById('stop_loss_label');
+        if (selectorExists(stop_loss_label)) {
+            stop_loss_label.textContent = localized.textStopLoss;
         }
 
-        var stop_type_label = document.getElementById('stop_type_label');
-        if (stop_type_label) {
-            stop_type_label.textContent = localize.textStopType;
+        const stop_profit_label = document.getElementById('stop_profit_label');
+        if (selectorExists(stop_profit_label)) {
+            stop_profit_label.textContent = localized.textStopProfit;
         }
 
-        var stop_type_points = document.getElementById('stop_type_points_label');
-        if (stop_type_points) {
-            stop_type_points.textContent = localize.textStopTypePoints;
+        const stop_type_label = document.getElementById('stop_type_label');
+        if (selectorExists(stop_type_label)) {
+            stop_type_label.textContent = localized.textStopType;
         }
 
-        var indicative_barrier_tooltip = document.getElementById('indicative_barrier_tooltip');
-        if (indicative_barrier_tooltip) {
-            indicative_barrier_tooltip.setAttribute('data-balloon', localize.textIndicativeBarrierTooltip);
+        const stop_type_points = document.getElementById('stop_type_points_label');
+        if (selectorExists(stop_type_points)) {
+            stop_type_points.textContent = localized.textStopTypePoints;
         }
 
-        var indicative_high_barrier_tooltip = document.getElementById('indicative_high_barrier_tooltip');
-        if (indicative_high_barrier_tooltip) {
-            indicative_high_barrier_tooltip.setAttribute('data-balloon', localize.textIndicativeBarrierTooltip);
+        const indicative_barrier_tooltip = document.getElementById('indicative_barrier_tooltip');
+        if (selectorExists(indicative_barrier_tooltip)) {
+            indicative_barrier_tooltip.setAttribute('data-balloon', localized.textIndicativeBarrierTooltip);
         }
 
-        var indicative_low_barrier_tooltip = document.getElementById('indicative_low_barrier_tooltip');
-        if (indicative_low_barrier_tooltip) {
-            indicative_low_barrier_tooltip.setAttribute('data-balloon', localize.textIndicativeBarrierTooltip);
+        const indicative_high_barrier_tooltip = document.getElementById('indicative_high_barrier_tooltip');
+        if (selectorExists(indicative_high_barrier_tooltip)) {
+            indicative_high_barrier_tooltip.setAttribute('data-balloon', localized.textIndicativeBarrierTooltip);
         }
 
-        var jpbarrier_label = document.getElementById('jbarrier_label');
-        if (jpbarrier_label) {
-            jpbarrier_label.textContent = localize.textExercisePrice;
-        }
-
-        var jpbarrier_high_label = document.getElementById('jbarrier_high_label');
-        if (jpbarrier_high_label) {
-            jpbarrier_high_label.textContent = localize.textHighBarrier;
-        }
-
-        var jpbarrier_low_label = document.getElementById('jbarrier_low_label');
-        if (jpbarrier_low_label) {
-            jpbarrier_low_label.textContent = localize.textLowBarrier;
+        const indicative_low_barrier_tooltip = document.getElementById('indicative_low_barrier_tooltip');
+        if (selectorExists(indicative_low_barrier_tooltip)) {
+            indicative_low_barrier_tooltip.setAttribute('data-balloon', localized.textIndicativeBarrierTooltip);
         }
     };
 
-    var errorMessage = function(messageType, param) {
-        var msg = '',
-            separator = ', ';
+    const errorMessage = function(messageType, param) {
+        let msg = '';
+        const separator = ', ';
         switch (messageType) {
             case 'req':
-                msg = localize.textMessageRequired;
+                msg = localized.textMessageRequired;
                 break;
             case 'reg':
-                if (param)                    {
-                    msg = template(localize.textMessageJustAllowed, [param.join(separator)]);
+                if (param) {
+                    msg = template(localized.textMessageJustAllowed, [param.join(separator)]);
                 }
                 break;
             case 'range':
-                if (param)                    {
-                    msg = template(localize.textMessageCountLimit, [param]);
+                if (param) {
+                    msg = template(localized.textMessageCountLimit, [param]);
                 }
                 break;
             case 'valid':
-                if (param)                    {
-                    msg = template(localize.textMessageValid, [param]);
+                if (param) {
+                    msg = template(localized.textMessageValid, [param]);
                 }
                 break;
             case 'min':
-                if (param)                    {
-                    msg = template(localize.textMessageMinRequired, [param]);
+                if (param) {
+                    msg = template(localized.textMessageMinRequired, [param]);
                 }
                 break;
             case 'pass':
-                if (param)                    {
-                    msg = template(localize.textMessagePasswordScore, [param]);
+                if (param) {
+                    msg = template(localized.textMessagePasswordScore, [param]);
                 }
                 break;
             case 'number_not_less_than':
-                msg = template(localize.textShouldNotLessThan, [param]);
+                msg = template(localized.textShouldNotLessThan, [param]);
                 break;
             case 'number_should_between':
-                msg = template(localize.textNumberLimit, [param]);
+                msg = template(localized.textNumberLimit, [param]);
                 break;
             default:
                 break;
@@ -306,7 +294,7 @@ var Content = (function() {
     };
 
     return {
-        localize    : function() { return localize; },
+        localize    : function() { return localized; },
         populate    : populate,
         errorMessage: errorMessage,
     };

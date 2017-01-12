@@ -1,18 +1,23 @@
-var showLoadingImage = require('../../base/utility').showLoadingImage;
-var template         = require('../../base/utility').template;
-var Content          = require('../../common_functions/content').Content;
+const showLoadingImage = require('../../base/utility').showLoadingImage;
+const template         = require('../../base/utility').template;
+const localize         = require('../../base/localize').localize;
+const Client           = require('../../base/client').Client;
+const url_for_static   = require('../../base/url').url_for_static;
+const url_for          = require('../../base/url').url_for;
+const default_redirect_url = require('../../base/url').default_redirect_url;
+const Content          = require('../../common_functions/content').Content;
 
-var TNCApproval = (function() {
+const TNCApproval = (function() {
     'use strict';
 
-    var terms_conditions_version,
+    let terms_conditions_version,
         client_tnc_status,
         hiddenClass,
         redirectUrl,
         isReal;
 
 
-    var init = function() {
+    const init = function() {
         hiddenClass = 'invisible';
         showLoadingImage($('#tnc-loading'));
 
@@ -29,8 +34,8 @@ var TNCApproval = (function() {
         });
     };
 
-    var showTNC = function() {
-        if (!terms_conditions_version || !client_tnc_status || !page.client.get_storage_value('landing_company_name')) {
+    const showTNC = function() {
+        if (!terms_conditions_version || !client_tnc_status || !Client.get_value('landing_company_fullname')) {
             return;
         }
 
@@ -40,19 +45,20 @@ var TNCApproval = (function() {
         }
 
         $('#tnc-loading').addClass(hiddenClass);
-        $('#tnc_image').attr('src', page.url.url_for_static('images/pages/cashier/protection-icon.svg'));
+        $('#tnc_image').attr('src', url_for_static('images/pages/cashier/protection-icon.svg'));
         $('#tnc_approval').removeClass(hiddenClass);
-        var tnc_message = template($('#tnc-message').html(), [
-            page.client.get_storage_value('landing_company_name'),
-            page.client.residence === 'jp' ?
-            page.url.url_for('terms-and-conditions-jp') :
-            page.url.url_for('terms-and-conditions'),
+        const $tnc_msg = $('#tnc-message');
+        const tnc_message = template($tnc_msg.html(), [
+            Client.get_value('landing_company_fullname'),
+            Client.get_value('residence') === 'jp' ?
+            url_for('terms-and-conditions-jp') :
+            url_for('terms-and-conditions'),
         ]);
-        $('#tnc-message').html(tnc_message).removeClass(hiddenClass);
-        $('#btn-accept').text(page.text.localize('OK'));
+        $tnc_msg.html(tnc_message).removeClass(hiddenClass);
+        $('#btn-accept').text(localize('OK'));
     };
 
-    var responseTNCApproval = function(response) {
+    const responseTNCApproval = function(response) {
         if (!response.hasOwnProperty('error')) {
             sessionStorage.setItem('check_tnc', 'checked');
             redirectBack();
@@ -61,12 +67,12 @@ var TNCApproval = (function() {
         }
     };
 
-    var redirectBack = function() {
-        window.location.href = redirectUrl || page.url.default_redirect_url();
+    const redirectBack = function() {
+        window.location.href = redirectUrl || default_redirect_url();
     };
 
-    var apiResponse = function(response) {
-        isReal = !TUser.get().is_virtual;
+    const apiResponse = function(response) {
+        isReal = !Client.get_boolean('is_virtual');
         if (!isReal) {
             redirectBack();
         }
@@ -88,10 +94,10 @@ var TNCApproval = (function() {
         }
     };
 
-    var onLoad = function() {
+    const onLoad = function() {
         BinarySocket.init({
             onmessage: function(msg) {
-                var response = JSON.parse(msg.data);
+                const response = JSON.parse(msg.data);
                 if (response) {
                     TNCApproval.apiResponse(response);
                 }

@@ -1,7 +1,7 @@
-var KnowledgeTestData = (function() {
+const KnowledgeTestData = (function() {
     'use strict';
 
-    var answers = {
+    const answers = {
         /* eslint-disable */
          1: false,  2: true,   3: true,   4: true,   5: true,   6: true,   7: true,   8: true,   9: false,  10: true,
         11: false, 12: true,  13: false, 14: true,  15: true,  16: true,  17: false, 18: true,  19: true,   20: true,
@@ -16,30 +16,31 @@ var KnowledgeTestData = (function() {
         /* eslint-enable */
     };
 
-    function randomPick4(questionsObj) {
-        var availables = Object.keys(questionsObj);
+    const randomPick4 = function(questionsObj) {
+        const availables = Object.keys(questionsObj);
 
-        var randomPicks = [];
-        for (var i = 0; i < 4; i++) {
-            var randomIndex = Math.floor(Math.random() * 100) % availables.length;
-            var randomQid = availables[randomIndex];
-            var randomPick = questionsObj[randomQid];
+        const randomPicks = [];
+        for (let i = 0; i < 4; i++) {
+            const randomIndex = Math.floor(Math.random() * 100) % availables.length;
+            const randomQid = availables[randomIndex];
+            const randomPick = questionsObj[randomQid];
             randomPicks.push(randomPick);
             availables.splice(randomIndex, 1);
         }
 
         return randomPicks;
-    }
+    };
 
-    function randomPick20() {
-        var questions = {};
+    const randomPick20 = function() {
+        const questions = {};
+        const container = '#data-questions';
         // retrieve questions text from html
-        $('#data-questions > div').each(function() { // sections
-            var category = +$(this).attr('data-section-id');
+        $(container + ' > div').each(function() { // sections
+            const category = +$(this).attr('data-section-id');
             questions['section' + category] = [];
 
             $(this).find('> div').each(function() { // questions
-                var question_id = +$(this).attr('data-question-id');
+                const question_id = +$(this).attr('data-question-id');
                 questions['section' + category].push({
                     category          : category,
                     id                : question_id,
@@ -50,21 +51,21 @@ var KnowledgeTestData = (function() {
             });
         });
 
-        var picked_questions = [];
+        const picked_questions = [];
         Object.keys(questions).forEach(function (section) {
             picked_questions.push(randomPick4(questions[section]));
         });
         return picked_questions;
-    }
+    };
 
-    function sendResult(questions, resultScore) {
+    const sendResult = function(questions, resultScore) {
         BinarySocket.send({
             jp_knowledge_test: 1,
             score            : resultScore,
             status           : resultScore >= 14 ? 'pass' : 'fail',
             questions        : questions,
         });
-    }
+    };
 
     return {
         randomPick20: randomPick20,

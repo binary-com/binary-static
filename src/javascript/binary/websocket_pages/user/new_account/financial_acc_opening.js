@@ -1,16 +1,19 @@
-var handleResidence       = require('../../../common_functions/account_opening').handleResidence;
-var Content               = require('../../../common_functions/content').Content;
-var ValidAccountOpening   = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
-var FinancialAccOpeningUI = require('./financial_acc_opening/financial_acc_opening.ui').FinancialAccOpeningUI;
+const handleResidence       = require('../../../common_functions/account_opening').handleResidence;
+const Content               = require('../../../common_functions/content').Content;
+const ValidAccountOpening   = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
+const Client                = require('../../../base/client').Client;
+const url_for               = require('../../../base/url').url_for;
+const FinancialAccOpeningUI = require('./financial_acc_opening/financial_acc_opening.ui').FinancialAccOpeningUI;
 
-var FinancialAccOpening = (function() {
-    var init = function() {
+const FinancialAccOpening = (function() {
+    const init = function() {
         Content.populate();
-        for (var i = 0; i < page.user.loginid_array.length; i++) {
-            if (page.user.loginid_array[i].financial) {
-                window.location.href = page.url.url_for('trading');
+        const client_loginid_array = Client.get_value('loginid_array');
+        for (let i = 0; i < client_loginid_array.length; i++) {
+            if (client_loginid_array[i].financial) {
+                window.location.href = url_for('trading');
                 return;
-            } else if (page.user.loginid_array[i].non_financial) {
+            } else if (client_loginid_array[i].non_financial) {
                 $('.security').hide();
             }
         }
@@ -22,7 +25,7 @@ var FinancialAccOpening = (function() {
             if (FinancialAccOpeningUI.checkValidity()) {
                 BinarySocket.init({
                     onmessage: function(msg) {
-                        var response = JSON.parse(msg.data);
+                        const response = JSON.parse(msg.data);
                         if (response) {
                             if (response.msg_type === 'new_account_maltainvest') {
                                 ValidAccountOpening.handler(response, response.new_account_maltainvest);
@@ -38,7 +41,7 @@ var FinancialAccOpening = (function() {
             if (FinancialAccOpeningUI.checkValidity()) {
                 BinarySocket.init({
                     onmessage: function(msg) {
-                        var response = JSON.parse(msg.data);
+                        const response = JSON.parse(msg.data);
                         if (response) {
                             if (response.msg_type === 'new_account_maltainvest') {
                                 ValidAccountOpening.handler(response, response.new_account_maltainvest);

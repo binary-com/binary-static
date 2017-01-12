@@ -1,26 +1,28 @@
-var Contract              = require('./contract').Contract;
-var Symbols               = require('./symbols').Symbols;
-var Tick                  = require('./tick').Tick;
-var WSTickDisplay         = require('./tick_trade').WSTickDisplay;
-var Content               = require('../../common_functions/content').Content;
-var isVisible             = require('../../common_functions/common_functions').isVisible;
-var updatePurchaseStatus  = require('./common').updatePurchaseStatus;
-var updateContractBalance = require('./common').updateContractBalance;
+const Contract              = require('./contract').Contract;
+const Symbols               = require('./symbols').Symbols;
+const Tick                  = require('./tick').Tick;
+const WSTickDisplay         = require('./tick_trade').WSTickDisplay;
+const Content               = require('../../common_functions/content').Content;
+const isVisible             = require('../../common_functions/common_functions').isVisible;
+const updatePurchaseStatus  = require('./common').updatePurchaseStatus;
+const updateContractBalance = require('./common').updateContractBalance;
+const elementTextContent    = require('../../common_functions/common_functions').elementTextContent;
+const elementInnerHtml      = require('../../common_functions/common_functions').elementInnerHtml;
 
 /*
  * Purchase object that handles all the functions related to
  * contract purchase response
  */
 
-var Purchase = (function () {
+const Purchase = (function () {
     'use strict';
 
-    var purchase_data = {};
+    let purchase_data = {};
 
-    var display = function (details) {
+    const display = function (details) {
         purchase_data = details;
 
-        var receipt = details.buy,
+        const receipt = details.buy,
             passthrough        = details.echo_req.passthrough,
             container          = document.getElementById('contract_confirmation_container'),
             message_container  = document.getElementById('confirmation_message'),
@@ -37,8 +39,8 @@ var Purchase = (function () {
             contracts_list     = document.getElementById('contracts_list'),
             button             = document.getElementById('contract_purchase_button');
 
-        var error = details.error;
-        var show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian');
+        const error = details.error;
+        const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian');
 
         contracts_list.style.display = 'none';
 
@@ -46,9 +48,9 @@ var Purchase = (function () {
             container.style.display = 'block';
             message_container.hide();
             confirmation_error.show();
-            confirmation_error.innerHTML = error.message;
+            elementInnerHtml(confirmation_error, error.message);
         } else {
-            var guideBtn = document.getElementById('guideBtn');
+            const guideBtn = document.getElementById('guideBtn');
             if (guideBtn) {
                 guideBtn.style.display = 'none';
             }
@@ -56,14 +58,13 @@ var Purchase = (function () {
             message_container.show();
             confirmation_error.hide();
 
-            heading.textContent = Content.localize().textContractConfirmationHeading;
-            descr.textContent = receipt.longcode;
+            elementTextContent(heading, Content.localize().textContractConfirmationHeading);
+            elementTextContent(descr, receipt.longcode);
             if (barrier_element) barrier_element.textContent = '';
-            reference.textContent = Content.localize().textContractConfirmationReference + ' ' + receipt.transaction_id;
+            elementTextContent(reference, Content.localize().textContractConfirmationReference + ' ' + receipt.transaction_id);
 
-            var payout_value,
-                cost_value,
-                profit_value;
+            let payout_value,
+                cost_value;
 
             if (passthrough.basis === 'payout') {
                 payout_value = passthrough.amount;
@@ -72,16 +73,16 @@ var Purchase = (function () {
                 cost_value = passthrough.amount;
                 payout_value = receipt.payout;
             }
-            profit_value = Math.round((payout_value - cost_value) * 100) / 100;
+            const profit_value = Math.round((payout_value - cost_value) * 100) / 100;
 
             if (sessionStorage.getItem('formname') === 'spreads') {
-                payout.innerHTML = Content.localize().textStopLoss + ' <p>' + receipt.stop_loss_level + '</p>';
-                cost.innerHTML = Content.localize().textAmountPerPoint + ' <p>' + receipt.amount_per_point + '</p>';
-                profit.innerHTML = Content.localize().textStopProfit + ' <p>' + receipt.stop_profit_level + '</p>';
+                elementInnerHtml(payout, Content.localize().textStopLoss + ' <p>' + receipt.stop_loss_level + '</p>');
+                elementInnerHtml(cost, Content.localize().textAmountPerPoint + ' <p>' + receipt.amount_per_point + '</p>');
+                elementInnerHtml(profit, Content.localize().textStopProfit + ' <p>' + receipt.stop_profit_level + '</p>');
             } else {
-                payout.innerHTML = Content.localize().textContractConfirmationPayout + ' <p>' + payout_value + '</p>';
-                cost.innerHTML = Content.localize().textContractConfirmationCost + ' <p>' + cost_value + '</p>';
-                profit.innerHTML = Content.localize().textContractConfirmationProfit + ' <p>' + profit_value + '</p>';
+                elementInnerHtml(payout, Content.localize().textContractConfirmationPayout + ' <p>' + payout_value + '</p>');
+                elementInnerHtml(cost, Content.localize().textContractConfirmationCost + ' <p>' + cost_value + '</p>');
+                elementInnerHtml(profit, Content.localize().textContractConfirmationProfit + ' <p>' + profit_value + '</p>');
             }
 
             updateContractBalance(receipt.balance_after);
@@ -93,7 +94,7 @@ var Purchase = (function () {
             }
 
             if (Contract.form() === 'digits') {
-                spots.textContent = '';
+                elementTextContent(spots, '');
                 spots.className = '';
                 spots.show();
             } else {
@@ -101,7 +102,7 @@ var Purchase = (function () {
             }
 
             if (Contract.form() !== 'digits' && !show_chart) {
-                button.textContent = Content.localize().textContractConfirmationButton;
+                elementTextContent(button, Content.localize().textContractConfirmationButton);
                 button.setAttribute('contract_id', receipt.contract_id);
                 button.show();
                 $('.open_contract_detailsws').attr('contract_id', receipt.contract_id).removeClass('invisible');
@@ -112,7 +113,7 @@ var Purchase = (function () {
         }
 
         if (show_chart) {
-            var contract_sentiment;
+            let contract_sentiment;
             if (passthrough.contract_type === 'CALL' || passthrough.contract_type === 'ASIANU') {
                 contract_sentiment = 'up';
             } else {
@@ -121,18 +122,18 @@ var Purchase = (function () {
 
             // calculate number of decimals needed to display tick-chart according to the spot
             // value of the underlying
-            var decimal_points = 2;
-            var tick_spots = Tick.spots();
-            var tick_spot_epochs = Object.keys(tick_spots);
+            let decimal_points = 2;
+            const tick_spots = Tick.spots();
+            const tick_spot_epochs = Object.keys(tick_spots);
             if (tick_spot_epochs.length > 0) {
-                var last_quote = tick_spots[tick_spot_epochs[0]].toString();
+                const last_quote = tick_spots[tick_spot_epochs[0]].toString();
 
                 if (last_quote.indexOf('.') !== -1) {
                     decimal_points = last_quote.split('.')[1].length;
                 }
             }
 
-            var barrier;
+            let barrier;
             if (sessionStorage.getItem('formname') === 'higherlower') {
                 barrier = passthrough.barrier;
             }
@@ -156,63 +157,63 @@ var Purchase = (function () {
         }
     };
 
-    var update_spot_list = function() {
+    const update_spot_list = function() {
         if ($('#contract_purchase_spots:hidden').length) {
             return;
         }
 
-        var duration = purchase_data.echo_req && purchase_data.echo_req.passthrough ?
+        let duration = purchase_data.echo_req && purchase_data.echo_req.passthrough ?
                         purchase_data.echo_req.passthrough.duration : null;
 
         if (!duration) {
             return;
         }
 
-        var spots = document.getElementById('contract_purchase_spots');
-        var spots2 = Tick.spots();
-        var epoches = Object.keys(spots2).sort(function(a, b) { return a - b; });
+        const spots = document.getElementById('contract_purchase_spots');
+        const spots2 = Tick.spots();
+        const epoches = Object.keys(spots2).sort(function(a, b) { return a - b; });
         if (spots) spots.textContent = '';
 
-        var last_digit;
-        var replace = function(d) { last_digit = d; return '<b>' + d + '</b>'; };
-        for (var s = 0; s < epoches.length; s++) {
-            var tick_d = {
+        let last_digit;
+        const replace = function(d) { last_digit = d; return '<b>' + d + '</b>'; };
+        for (let s = 0; s < epoches.length; s++) {
+            const tick_d = {
                 epoch: epoches[s],
                 quote: spots2[epoches[s]],
             };
 
             if (isVisible(spots) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time) {
-                var fragment = document.createElement('div');
+                const fragment = document.createElement('div');
                 fragment.classList.add('row');
 
-                var el1 = document.createElement('div');
+                const el1 = document.createElement('div');
                 el1.classList.add('col');
-                el1.textContent = Content.localize().textTickResultLabel + ' ' + (spots.getElementsByClassName('row').length + 1);
+                elementTextContent(el1, Content.localize().textTickResultLabel + ' ' + (spots.getElementsByClassName('row').length + 1));
                 fragment.appendChild(el1);
 
-                var el2 = document.createElement('div');
+                const el2 = document.createElement('div');
                 el2.classList.add('col');
-                var date = new Date(tick_d.epoch * 1000);
-                var hours = date.getUTCHours() < 10 ? '0' + date.getUTCHours() : date.getUTCHours();
-                var minutes = date.getUTCMinutes() < 10 ? '0' + date.getUTCMinutes() : date.getUTCMinutes();
-                var seconds = date.getUTCSeconds() < 10 ? '0' + date.getUTCSeconds() : date.getUTCSeconds();
-                el2.textContent = hours + ':' + minutes + ':' + seconds;
+                const date = new Date(tick_d.epoch * 1000);
+                const hours = date.getUTCHours() < 10 ? '0' + date.getUTCHours() : date.getUTCHours();
+                const minutes = date.getUTCMinutes() < 10 ? '0' + date.getUTCMinutes() : date.getUTCMinutes();
+                const seconds = date.getUTCSeconds() < 10 ? '0' + date.getUTCSeconds() : date.getUTCSeconds();
+                elementTextContent(el2, hours + ':' + minutes + ':' + seconds);
                 fragment.appendChild(el2);
 
-                var tick = tick_d.quote.replace(/\d$/, replace);
-                var el3 = document.createElement('div');
+                const tick = tick_d.quote.replace(/\d$/, replace);
+                const el3 = document.createElement('div');
                 el3.classList.add('col');
-                el3.innerHTML = tick;
+                elementInnerHtml(el3, tick);
                 fragment.appendChild(el3);
 
                 spots.appendChild(fragment);
                 spots.scrollTop = spots.scrollHeight;
 
                 if (last_digit && duration === 1) {
-                    var contract_status,
+                    let contract_status,
                         final_price,
-                        pnl,
-                        pass_contract_type = purchase_data.echo_req.passthrough.contract_type,
+                        pnl;
+                    const pass_contract_type = purchase_data.echo_req.passthrough.contract_type,
                         pass_barrier       = purchase_data.echo_req.passthrough.barrier;
 
                     if (
@@ -224,13 +225,13 @@ var Purchase = (function () {
                         (pass_contract_type === 'DIGITUNDER' && +last_digit < pass_barrier)
                     ) {
                         spots.className = 'won';
-                        final_price = $('#contract_purchase_payout p').text();
-                        pnl = $('#contract_purchase_cost p').text();
+                        final_price = $('#contract_purchase_payout').find('p').text();
+                        pnl = $('#contract_purchase_cost').find('p').text();
                         contract_status = Content.localize().textContractStatusWon;
                     } else {
                         spots.className = 'lost';
                         final_price = 0;
-                        pnl = -$('#contract_purchase_cost p').text();
+                        pnl = -$('#contract_purchase_cost').find('p').text();
                         contract_status = Content.localize().textContractStatusLost;
                     }
 

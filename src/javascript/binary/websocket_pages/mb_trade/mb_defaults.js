@@ -1,4 +1,4 @@
-var objectNotEmpty = require('../../base/utility').objectNotEmpty;
+const objectNotEmpty = require('../../base/utility').objectNotEmpty;
 
 /*
  * Handles trading page default values
@@ -9,24 +9,24 @@ var objectNotEmpty = require('../../base/utility').objectNotEmpty;
  *
  */
 
-var MBDefaults = (function() {
+const MBDefaults = (function() {
     'use strict';
 
-    var params = {};
-    var getDefault = function(key) {
+    let params = {};
+    const getDefault = function(key) {
         loadParams();
         return params[key];
     };
 
-    var loadParams = function() {
+    const loadParams = function() {
         if (!objectNotEmpty(params)) params = JSON.parse(localStorage.getItem('mb_trading')) || {};
     };
 
-    var saveParams = function() {
+    const saveParams = function() {
         localStorage.setItem('mb_trading', JSON.stringify(params));
     };
 
-    var setDefault = function(key, value) {
+    const setDefault = function(key, value) {
         if (!key) return;
         value = value || '';
         loadParams();
@@ -36,10 +36,10 @@ var MBDefaults = (function() {
         }
     };
 
-    var removeDefault = function() {
+    const removeDefault = function() {
         loadParams();
-        var isUpdated = false;
-        for (var i = 0; i < arguments.length; i++) {
+        let isUpdated = false;
+        for (let i = 0; i < arguments.length; i++) {
             if (params.hasOwnProperty(arguments[i])) {
                 delete params[arguments[i]];
                 isUpdated = true;

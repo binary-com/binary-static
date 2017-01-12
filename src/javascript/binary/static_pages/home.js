@@ -1,14 +1,15 @@
-var VerifyEmail = require('../websocket_pages/user/verify_email').VerifyEmail;
+const VerifyEmail = require('../websocket_pages/user/verify_email').VerifyEmail;
+const Client = require('../base/client').Client;
 
-var Home = (function() {
-    var init = function() {
-        if (!page.client.redirect_if_login()) {
+const Home = (function() {
+    const init = function() {
+        if (!Client.redirect_if_login()) {
             check_login_hide_signup();
             VerifyEmail();
         }
     };
-    var check_login_hide_signup = function() {
-        if (page.client.is_logged_in) {
+    const check_login_hide_signup = function() {
+        if (Client.get_boolean('is_logged_in')) {
             $('#verify-email-form').remove();
             $('.break').attr('style', 'margin-bottom:1em');
         }

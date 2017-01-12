@@ -1,28 +1,29 @@
-var moment      = require('moment');
-var checkInput  = require('../common_functions/common_functions').checkInput;
-var toReadableFormat = require('../common_functions/string_util').toReadableFormat;
+const moment = require('moment');
+const checkInput       = require('../common_functions/common_functions').checkInput;
+const toReadableFormat = require('../common_functions/string_util').toReadableFormat;
+const localize = require('../base/localize').localize;
 
-var DatePicker = function(component_selector, select_type) {
+const DatePicker = function(component_selector, select_type) {
     this.component_selector = component_selector;
     this.select_type = (typeof select_type === 'undefined') ? 'date' : select_type;
 
     this.localizations = {};
-    this.localizations.monthNames = [page.text.localize('January'), page.text.localize('February'), page.text.localize('March'), page.text.localize('April'), page.text.localize('May'), page.text.localize('June'), page.text.localize('July'), page.text.localize('August'), page.text.localize('September'), page.text.localize('October'), page.text.localize('November'), page.text.localize('December')];
+    this.localizations.monthNames = localize(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']);
 
-    this.localizations.monthNamesShort = [page.text.localize('Jan'), page.text.localize('Feb'), page.text.localize('Mar'), page.text.localize('Apr'), page.text.localize('May'), page.text.localize('Jun'), page.text.localize('Jul'), page.text.localize('Aug'), page.text.localize('Sep'), page.text.localize('Oct'), page.text.localize('Nov'), page.text.localize('Dec')];
+    this.localizations.monthNamesShort = localize(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
 
-    this.localizations.dayNames = [page.text.localize('Sunday'), page.text.localize('Monday'), page.text.localize('Tuesday'), page.text.localize('Wednesday'), page.text.localize('Thursday'), page.text.localize('Friday'), page.text.localize('Saturday')];
+    this.localizations.dayNames = localize(['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']);
 
-    this.localizations.dayNamesMin = [page.text.localize('Su'), page.text.localize('Mo'), page.text.localize('Tu'), page.text.localize('We'), page.text.localize('Th'), page.text.localize('Fr'), page.text.localize('Sa')];
+    this.localizations.dayNamesMin = localize(['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']);
 
-    this.localizations.nextText = page.text.localize('Next');
-    this.localizations.prevText = page.text.localize('Previous');
+    this.localizations.nextText = localize('Next');
+    this.localizations.prevText = localize('Previous');
 };
 
 DatePicker.prototype = {
     show: function(min_day, max_days, setValue, noNative) {
         this.checkWidth(this.config(min_day, max_days, setValue, noNative), this.component_selector, this);
-        var that = this;
+        const that = this;
         $(window).resize(function() { that.checkWidth(that.config_data, that.component_selector, that); });
     },
     hide: function() {
@@ -33,7 +34,7 @@ DatePicker.prototype = {
         $(this.component_selector).off('keydown');
     },
     create: function(config) {
-        var that = this;
+        const that = this;
         $(this.component_selector).keydown(function(e) {
             if (e.which === 13) {
                 e.preventDefault();
@@ -55,9 +56,9 @@ DatePicker.prototype = {
         $('button.ui-datepicker-trigger').remove();
     },
     config: function(min_day, max_days, setValue, noNative) {
-        var today = new Date();
+        const today = new Date();
 
-        var config = {
+        const config = {
             dateFormat     : 'dd M, yy',
             monthNames     : this.localizations.monthNames,
             monthNamesShort: this.localizations.monthNamesShort,
@@ -75,7 +76,7 @@ DatePicker.prototype = {
 
         if (max_days) {
             max_days = (typeof max_days === 'undefined') ? 365 : max_days;
-            var next_year = new Date();
+            const next_year = new Date();
             next_year.setDate(today.getDate() + Number(max_days));
             config.maxDate = next_year;
         }
@@ -83,9 +84,9 @@ DatePicker.prototype = {
         this.setValue = setValue;
         this.noNative = noNative;
 
-        var that = this;
+        const that = this;
         config.onSelect = function(date_text) {
-            var day = date_text.split(' ')[0],
+            const day = date_text.split(' ')[0],
                 month = ('0' + (Number($('.ui-datepicker-month').val()) + 1)).slice(-2),
                 year = $('.ui-datepicker-year').val(),
                 date = [year, month, day].join('-'),
@@ -93,9 +94,9 @@ DatePicker.prototype = {
 
             $(this).attr('data-value', date);
             if (that.select_type === 'diff') {
-                var today_utc = moment.utc();
-                var selected_date = moment.utc(date + ' 23:59:59');
-                var duration  = selected_date.diff(today_utc, 'days');
+                const today_utc = moment.utc();
+                const selected_date = moment.utc(date + ' 23:59:59');
+                const duration  = selected_date.diff(today_utc, 'days');
                 $(this).val(duration);
                 if (oldValue && oldValue === date) return false;
                 $(that.component_selector).trigger('change', [duration]);
@@ -116,13 +117,13 @@ DatePicker.prototype = {
         return config;
     },
     getDate: function(date) {
-        var year = date.getFullYear(),
+        const year = date.getFullYear(),
             month = ('0' + (date.getMonth() + 1)).slice(-2),
             day = ('0' + date.getDate()).slice(-2);
         return (year + '-' + month + '-' + day);
     },
     checkWidth: function(config, component_selector, that) {
-        var $selector = $(component_selector);
+        const $selector = $(component_selector);
         if ($(window).width() < 770 && that.noNative) {
             that.hide($selector);
             $selector.attr('type', 'number');
@@ -147,7 +148,7 @@ DatePicker.prototype = {
             ($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery') ||
             ($(window).width() < 770 && !checkInput('date', 'not-a-date'))
         ) {
-            var value = $selector.attr('data-value'),
+            const value = $selector.attr('data-value'),
                 format_value = value && that.select_type === 'date' ? toReadableFormat(moment(value)) : $selector.val();
             $selector.attr({ type: 'text', 'data-picker': 'jquery' })
                      .removeAttr('min')

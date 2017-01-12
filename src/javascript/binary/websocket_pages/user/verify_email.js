@@ -1,13 +1,38 @@
-var Content         = require('../../common_functions/content').Content;
-var ValidateV2      = require('../../common_functions/validation_v2').ValidateV2;
-var bind_validation = require('../../validator').bind_validation;
+const Content         = require('../../common_functions/content').Content;
+const ValidateV2      = require('../../common_functions/validation_v2').ValidateV2;
+const url_for         = require('../../base/url').url_for;
+const bind_validation = require('../../validator').bind_validation;
+const localize        = require('../../base/localize').localize;
 
-function VerifyEmail() {
+const VerifyEmail = function() {
     Content.populate();
-    var form = $('#verify-email-form')[0];
+    const clients_country = localStorage.getItem('clients_country');
+
+    const form = $('#verify-email-form')[0];
     if (!form) {
         return;
     }
+
+    const handler = function(msg) {
+        const response = JSON.parse(msg.data);
+        if (!response) return;
+
+        const type = response.msg_type;
+        const error = response.error;
+        if (type === 'verify_email' && !error) {
+            window.location.href = url_for('new_account/virtualws');
+            return;
+        }
+        if (!error || !error.message) return;
+        $('#signup_error')
+            .css({ display: 'inline-block' })
+            .text(error.message);
+    };
+
+    const openAccount = function(email) {
+        BinarySocket.init({ onmessage: handler });
+        BinarySocket.send({ verify_email: email, type: 'account_opening' });
+    };
 
     bind_validation.simple(form, {
         schema: {
@@ -24,31 +49,17 @@ function VerifyEmail() {
         submit: function(ev, info) {
             ev.preventDefault();
             if (info.errors.length) return;
-            openAccount(info.values.email);
+            if ((clients_country !== 'my') || /@binary\.com$/.test(info.values.email)) {
+                openAccount(info.values.email);
+            } else {
+                $('#verify-email-form > div')
+                    .html('<p class="notice-msg center-text">' +
+                        localize('Sorry, account signup is not available in your country. Please contact <a href="[_1]">customer support</a> for more information.',
+                            [url_for('contact')]) + '</p>');
+            }
         },
     });
-
-    function handler(msg) {
-        var response = JSON.parse(msg.data);
-        if (!response) return;
-
-        var type = response.msg_type;
-        var error = response.error;
-        if (type === 'verify_email' && !error) {
-            window.location.href = page.url.url_for('new_account/virtualws');
-            return;
-        }
-        if (!error || !error.message) return;
-        $('#signup_error')
-            .css({ display: 'inline-block' })
-            .text(error.message);
-    }
-
-    function openAccount(email) {
-        BinarySocket.init({ onmessage: handler });
-        BinarySocket.send({ verify_email: email, type: 'account_opening' });
-    }
-}
+};
 
 module.exports = {
     VerifyEmail: VerifyEmail,

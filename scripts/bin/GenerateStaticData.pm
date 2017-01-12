@@ -27,7 +27,7 @@ END_EXPORTS
 }
 
 sub _texts {
-    my $js = "var texts_json = {};\n";
+    my $js = "const texts_json = {};\n";
     foreach my $language (BS::all_languages()) {
         BS::set_lang($language);
 
@@ -158,6 +158,7 @@ sub _texts {
         push @texts, localize('The two passwords that you entered do not match.');
         push @texts, localize('Invalid email address');
         push @texts, localize('Your password cannot be the same as your email');
+        push @texts, localize('Sorry, an error occurred while processing your request.');
 
         # text used by websocket trading page javascript
         push @texts, localize('Start time');
@@ -360,7 +361,6 @@ sub _texts {
         push @texts, localize('Fridays');
 
         #strings for paymentagent_withdrawws page
-        push @texts, localize('You are not authorized for withdrawal via payment agent.');
         push @texts, localize('Please select a payment agent');
         push @texts, localize('The Payment Agent facility is currently not available in your country.');
         push @texts, localize('Invalid amount, minimum is');
@@ -497,6 +497,7 @@ sub _texts {
         push @texts, localize('Market is closed. Please try again later.');
         push @texts, localize('This symbol is not active. Please try another symbol.');
         push @texts, localize('Connection error: Please check your internet connection.');
+        push @texts, localize('Sorry, your account is not authorised for any further contract purchases.');
 
         #strings for digit_infows
         push @texts, localize('Select market');
@@ -721,6 +722,9 @@ sub _texts {
         # strings for endpoint notification
         push @texts, localize('This is a staging server - For testing purposes only');
         push @texts, localize('The server <a href="[_1]">endpoint</a> is: [_2]');
+
+        # strings for account signup error
+        push @texts, localize('Sorry, account signup is not available in your country. Please contact <a href="[_1]">customer support</a> for more information.');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";

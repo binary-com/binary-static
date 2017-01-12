@@ -1,70 +1,76 @@
-var template = require('../../../../../base/utility').template;
-var Content  = require('../../../../../common_functions/content').Content;
-var addComma = require('../../../../../common_functions/string_util').addComma;
-var LimitsUI = require('./limits.ui').LimitsUI;
+const template = require('../../../../../base/utility').template;
+const Content  = require('../../../../../common_functions/content').Content;
+const addComma = require('../../../../../common_functions/string_util').addComma;
+const LimitsUI = require('./limits.ui').LimitsUI;
+const localize = require('../../../../../base/localize').localize;
+const Client   = require('../../../../../base/client').Client;
+const elementTextContent  = require('../../../../../common_functions/common_functions').elementTextContent;
+const elementInnerHtml    = require('../../../../../common_functions/common_functions').elementInnerHtml;
 
-var LimitsWS = (function() {
+const LimitsWS = (function() {
     'use strict';
 
-    function limitsHandler(response) {
-        var limits = response.get_limits;
+    const limitsHandler = function(response) {
+        const limits = response.get_limits;
         LimitsUI.fillLimitsTable(limits);
 
-        var elWithdrawLimit    = document.getElementById('withdrawal-limit');
-        var elWithdrawn        = document.getElementById('already-withdraw');
-        var elWithdrawLimitAgg = document.getElementById('withdrawal-limit-aggregate');
+        const elWithdrawLimit    = document.getElementById('withdrawal-limit');
+        const elWithdrawn        = document.getElementById('already-withdraw');
+        const elWithdrawLimitAgg = document.getElementById('withdrawal-limit-aggregate');
 
         if (limits.lifetime_limit === 99999999 && limits.num_of_days_limit === 99999999) {
-            elWithdrawLimit.textContent = Content.localize().textAuthenticatedWithdrawal;
+            elementTextContent(elWithdrawLimit, Content.localize().textAuthenticatedWithdrawal);
         } else {
-            var txtWithdrawLim            = Content.localize().textWithdrawalLimitsEquivalant;
-            var txtWithdrawAmt             = Content.localize().textWithrawalAmountEquivalant;
-            var text_CurrentMaxWithdrawal = Content.localize().textCurrentMaxWithdrawalEquivalant;
-            var currency                  = 'EUR';
-            var daysLimit                 = addComma(limits.num_of_days_limit).split('.')[1] === '00' ? addComma(limits.num_of_days_limit).split('.')[0] : addComma(limits.num_of_days_limit);
+            let txtWithdrawLim             = Content.localize().textWithdrawalLimitsEquivalant,
+                txtWithdrawAmt             = Content.localize().textWithrawalAmountEquivalant,
+                text_CurrentMaxWithdrawal  = Content.localize().textCurrentMaxWithdrawalEquivalant,
+                currency                   = 'EUR';
+            const daysLimit                = addComma(limits.num_of_days_limit).split('.')[1] === '00' ? addComma(limits.num_of_days_limit).split('.')[0] : addComma(limits.num_of_days_limit);
             // no need for addComma since it is already string like "1,000"
-            var withdrawn                 = limits.withdrawal_since_inception_monetary;
-            var remainder                 = addComma(limits.remainder).split('.')[1] === '00' ? addComma(limits.remainder).split('.')[0] : addComma(limits.remainder);
+            const withdrawn                = limits.withdrawal_since_inception_monetary;
+            const remainder                = addComma(limits.remainder).split('.')[1] === '00' ? addComma(limits.remainder).split('.')[0] : addComma(limits.remainder);
 
-            if ((/^(iom)$/i).test(TUser.get().landing_company_name)) { // MX
+            if ((/^(iom)$/i).test(Client.get_value('landing_company_name'))) { // MX
                 txtWithdrawLim = Content.localize().textWithdrawalLimitsEquivalantDay;
                 txtWithdrawAmt  = Content.localize().textWithrawalAmountEquivalantDay;
-                elWithdrawLimit.textContent  = template(txtWithdrawLim, [limits.num_of_days, currency, daysLimit]);
-                elWithdrawn.textContent      = template(txtWithdrawAmt,  [currency, withdrawn, limits.num_of_days]);
+                elementTextContent(elWithdrawLimit,
+                   template(txtWithdrawLim, [limits.num_of_days, currency, daysLimit]));
+                elementTextContent(elWithdrawn, template(txtWithdrawAmt,  [currency, withdrawn, limits.num_of_days]));
             } else {
-                if ((/^(costarica|japan)$/i).test(TUser.get().landing_company_name)) { // CR , JP
+                if ((/^(costarica|japan)$/i).test(Client.get_value('landing_company_name'))) { // CR , JP
                     txtWithdrawLim            = Content.localize().textWithdrawalLimits;
                     txtWithdrawAmt             = Content.localize().textWithrawalAmount;
                     text_CurrentMaxWithdrawal = Content.localize().textCurrentMaxWithdrawal;
-                    currency                  = TUser.get().currency || page.client.get_storage_value('currencies');
+                    currency                  = Client.get_value('currencies');
                 }
-                elWithdrawLimit.textContent  = template(txtWithdrawLim, [currency, daysLimit]);
-                elWithdrawn.textContent      = template(txtWithdrawAmt,  [currency, withdrawn]);
+                elementTextContent(elWithdrawLimit, template(txtWithdrawLim, [currency, daysLimit]));
+                elementTextContent(elWithdrawn, template(txtWithdrawAmt,  [currency, withdrawn]));
             }
-            elWithdrawLimitAgg.textContent = template(text_CurrentMaxWithdrawal, [currency, remainder]);
+            elementTextContent(elWithdrawLimitAgg, template(text_CurrentMaxWithdrawal, [currency, remainder]));
         }
-    }
+    };
 
-    function limitsError(error) {
+    const limitsError = function(error) {
+        Content.populate();
         document.getElementById('withdrawal-title').setAttribute('style', 'display:none');
         document.getElementById('limits-title').setAttribute('style', 'display:none');
-        var errorElement = document.getElementsByClassName('notice-msg')[0];
-        if ((error && error.code === 'FeatureNotAvailable' && page.client.is_virtual()) || page.client.is_virtual()) {
-            errorElement.innerHTML = page.text.localize('This feature is not relevant to virtual-money accounts.');
+        const errorElement = document.getElementsByClassName('notice-msg')[0];
+        if ((error && error.code === 'FeatureNotAvailable' && Client.get_boolean('is_virtual')) || Client.get_boolean('is_virtual')) {
+            elementInnerHtml(errorElement, Content.localize().featureNotRelevantToVirtual);
         } else if (error && error.message) {
-            errorElement.innerHTML = error.message;
+            elementInnerHtml(errorElement, error.message);
         } else {
-            errorElement.innerHTML = page.text.localize('An error occured') + '.';
+            elementInnerHtml(errorElement, localize('An error occured') + '.');
         }
         document.getElementById('client_message').setAttribute('style', 'display:block');
-    }
+    };
 
-    function initTable() {
-        var client_message = document.getElementById('client_message');
+    const initTable = function() {
+        const client_message = document.getElementById('client_message');
         if (!client_message) return;
         client_message.setAttribute('style', 'display:none');
         LimitsUI.clearTableContent();
-    }
+    };
 
     return {
         limitsHandler: limitsHandler,

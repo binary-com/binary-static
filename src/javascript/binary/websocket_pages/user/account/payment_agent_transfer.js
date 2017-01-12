@@ -1,11 +1,12 @@
-var PaymentAgentTransfer = require('./payment_agent_transfer/payment_agent_transfer.init').PaymentAgentTransfer;
-var Content              = require('../../../common_functions/content').Content;
+const PaymentAgentTransfer = require('./payment_agent_transfer/payment_agent_transfer.init').PaymentAgentTransfer;
+const Content              = require('../../../common_functions/content').Content;
+const Client               = require('../../../base/client').Client;
 
-var PaymentAgentTransferSocket = (function() {
-    function initSocket() {
+const PaymentAgentTransferSocket = (function() {
+    const initSocket = function() {
         BinarySocket.init({
             onmessage: function(msg) {
-                var response = JSON.parse(msg.data);
+                const response = JSON.parse(msg.data);
 
                 if (response) {
                     PaymentAgentTransfer.handleResponse(response);
@@ -14,10 +15,10 @@ var PaymentAgentTransferSocket = (function() {
         });
         Content.populate();
         PaymentAgentTransfer.init_variable();
-        if (TUser.get().email) {
+        if (Client.get_value('email')) {
             PaymentAgentTransfer.init();
         }
-    }
+    };
     return {
         initSocket: initSocket,
     };

@@ -215,7 +215,7 @@ msgstr "%1 cerca un Copywriter attento per produrre contenuti che coinvolgano at
 
 #, fuzzy
 #| msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
-msgid "%1 supports the <a target='_blank' href='http://about.gambleaware.org/'>GambleAware</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
+msgid "%1 supports %2 which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgstr "%1 supporta la <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT), l'organizzazione benefica leader in Gran Bretagna, impegnata a minimizzare i danni derivanti dal gioco d'azzardo. La RGT finanzia la formazione, la prevenzione ed i trattamenti, oltre a commissionare delle ricerche per aiutare le persone a comprendere meglio i danni connessi al gioco d'azzardo. Offre inoltre una linea telefonica nazionale in grado di offrire una consulenza confidenziale e un supporto emotivo a coloro che sono alla ricerca di aiuto per il loro problema di gioco d'azzardo."
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
@@ -1027,7 +1027,7 @@ msgstr "Una personalità determinata, con una propensione alle vendite, in grado
 msgid "An error occured."
 msgstr "Si è verificato un errore."
 
-msgid "Analyse and test our website for bugs and potential security issues."
+msgid "Analyse and test the domains and subdomains listed in the scope."
 msgstr ""
 
 msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
@@ -3184,6 +3184,9 @@ msgstr "Se la risposta è si, non devi preoccuparti. Con Binary.com puoi vendere
 
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
 msgstr "Se non ricevi l'email nei prossimi minuti, controlla la cartella spam della tua mail."
+
+msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
+msgstr ""
 
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "Se hai l'insieme di abilità richieste, diventerai un valido membro del team di sviluppo del front end altamente specializzato nella guida dei nostri sistemi di trading in opzioni binarie verso nuove vette."
@@ -5634,6 +5637,11 @@ msgstr "Disclaimer sulla sicurezza"
 msgid "Security Statement"
 msgstr "Dichiarazione di sicurezza"
 
+#, fuzzy
+#| msgid "User Testing"
+msgid "Security Testing"
+msgstr "Test Utente"
+
 msgid "Security and Privacy"
 msgstr "Sicurezza e privacy"
 
@@ -5817,6 +5825,11 @@ msgstr "Sviluppo software (Perl)"
 msgid "Sorry, account opening is unavailable."
 msgstr "Siamo spiacenti, l'apertura di account non è disponibile."
 
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
+msgstr "Il deposito è bloccato, per ulteriori informazioni <a class=\"pjaxload\" href=\"%1\">contattaci</a>."
+
 msgid "Sorry, an error occurred while processing your account."
 msgstr "Siamo spiacenti, si è verificato un errore durante l'elaborazione del tuo account."
 
@@ -5831,6 +5844,9 @@ msgstr "Siamo spiacenti, questa funzione non è disponibile."
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "Siamo spiacenti, hai inserito una password della cassa non corretta"
+
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "Siamo spiacenti, il tuo account non è autorizzato per qualsiasi altro acquisto di contratti."
 
 msgid "Spam - We do not condone Spam"
 msgstr "Spam - Non tolleriamo lo Spam"
@@ -5973,7 +5989,7 @@ msgstr "Soggetto a qualsiasi istruzione specifica da te eventualmente fornita, d
 msgid "Submit"
 msgstr "Invia"
 
-msgid "Submit a report on HackerOne, or a pull-request in GitHub with a suggested fix."
+msgid "Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue."
 msgstr ""
 
 msgid "Submit your CV and Cover Letter"
@@ -7022,9 +7038,6 @@ msgstr "Utilizza l'opportunità offerta dal nostro sito internet per fare pratic
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr "Usare, eseguire e mostrare la tua Applicazione e i suoi contenuti per scopi commerciali, dimostrativi e per rendere disponibile la tua Applicazione ai nostri clienti; e    "
 
-msgid "User Testing"
-msgstr "Test Utente"
-
 msgid "Using our website, customers can trade currencies, indices, stocks and commodities 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
 msgstr "Utilizzando il nostro sito internet, i clienti possono negoziare valute, indici, azioni e materie prime 24/7. Disponiamo della definizione dei prezzi più flessibile e la più completa gamma di prodotti disponibili."
 
@@ -7572,9 +7585,6 @@ msgstr "Non ti è consentito ridurre alcun pagamento parziale delle commissioni 
 
 msgid "You are not allowed to store any Content (such as feed data)."
 msgstr "Non ti è consentito memorizzare alcun Contenuto (come i dati dei flussi)."
-
-msgid "You are not authorized for withdrawal via payment agent."
-msgstr "Non sei autorizzato a prelevare tramite un agente di pagamento."
 
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "Non hai in nessun caso diritto ad alcun compenso o rimborso di alcun tipo da parte della Società."
@@ -8657,17 +8667,11 @@ msgstr "{JAPAN ONLY}JSA_Date_1"
 msgid "{JAPAN ONLY}JSA_Date_2"
 msgstr "{JAPAN ONLY}JSA_Date_2"
 
-msgid "{JAPAN ONLY}JSA_Date_3"
-msgstr "{JAPAN ONLY}JSA_Date_3"
-
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
 msgstr "{JAPAN ONLY}JSA_Explanation_1_1)"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
 msgstr "{JAPAN ONLY}JSA_Explanation_1_2)"
-
-msgid "{JAPAN ONLY}JSA_Explanation_1_3)"
-msgstr "{JAPAN ONLY}JSA_Explanation_1_3)"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
 msgstr "{JAPAN ONLY}JSA_Explanation_2_1)"
@@ -8678,23 +8682,11 @@ msgstr "{JAPAN ONLY}JSA_Explanation_2_2)"
 msgid "{JAPAN ONLY}JSA_Explanation_2_3)"
 msgstr "{JAPAN ONLY}JSA_Explanation_2_3)"
 
-msgid "{JAPAN ONLY}JSA_Explanation_3_1)"
-msgstr "{JAPAN ONLY}JSA_Explanation_3_1)"
-
-msgid "{JAPAN ONLY}JSA_Explanation_3_2)"
-msgstr "{JAPAN ONLY}JSA_Explanation_3_2)"
-
-msgid "{JAPAN ONLY}JSA_Explanation_3_3)"
-msgstr "{JAPAN ONLY}JSA_Explanation_3_3)"
-
 msgid "{JAPAN ONLY}JSA_Title_1"
 msgstr "{JAPAN ONLY}JSA_Title_1"
 
 msgid "{JAPAN ONLY}JSA_Title_2"
 msgstr "{JAPAN ONLY}JSA_Title_2"
-
-msgid "{JAPAN ONLY}JSA_Title_3"
-msgstr "{JAPAN ONLY}JSA_Title_3"
 
 msgid "{JAPAN ONLY}Japan Service Announcements"
 msgstr "{JAPAN ONLY}Japan Service Announcements"
@@ -9183,9 +9175,6 @@ msgstr "Grafico"
 msgid "Open-Source Projects"
 msgstr "Progetti open-source"
 
-msgid "Sign Up to Test Our Platform"
-msgstr "Registrati per testare la nostra piattaforma"
-
 msgid "Types of Trades"
 msgstr "Tipologie di trade"
 
@@ -9218,6 +9207,30 @@ msgstr "Dettagli dell'account"
 
 msgid "Terms and Conditions Approval"
 msgstr "Approvazione dei termini e delle condizioni"
+
+#~ msgid "You are not authorized for withdrawal via payment agent."
+#~ msgstr "Non sei autorizzato a prelevare tramite un agente di pagamento."
+
+#~ msgid "{JAPAN ONLY}JSA_Date_3"
+#~ msgstr "{JAPAN ONLY}JSA_Date_3"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_1_3)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_1_3)"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_1)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_3_1)"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_2)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_3_2)"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_3)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_3_3)"
+
+#~ msgid "{JAPAN ONLY}JSA_Title_3"
+#~ msgstr "{JAPAN ONLY}JSA_Title_3"
+
+#~ msgid "Sign Up to Test Our Platform"
+#~ msgstr "Registrati per testare la nostra piattaforma"
 
 #~ msgid "Authenticate your account"
 #~ msgstr "Convalida il tuo account"
@@ -10945,9 +10958,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 #~ msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
 #~ msgstr "Siamo spiacenti, il saldo del tuo account è troppo alto (%1). Il saldo massimo è pari a %2."
-
-#~ msgid "Sorry, your account is not authorised for any further contract purchases."
-#~ msgstr "Siamo spiacenti, il tuo account non è autorizzato per qualsiasi altro acquisto di contratti."
 
 #~ msgid "Sorry, your currency of %1 is unavailable for Payment Agent Withdrawal"
 #~ msgstr "Siamo spiacenti, la valuta di %1 non è disponibile per il prelievo tramite Agente di pagamento"

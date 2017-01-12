@@ -1,20 +1,20 @@
-var Endpoint                      = require('./endpoint').Endpoint;
-var GetStartedJP                  = require('./get_started_jp').GetStartedJP;
-var JobDetails                    = require('./job_details').JobDetails;
-var Platforms                     = require('./platforms').Platforms;
-var Regulation                    = require('./regulation').Regulation;
-var Scroll                        = require('../common_functions/scroll').Scroll;
-var GetStarted                    = require('./get_started').GetStarted;
-var Contact                       = require('./contact').Contact;
-var Careers                       = require('./careers').Careers;
-var Home                          = require('./home').Home;
-var WhyUs                         = require('./why_us').WhyUs;
-var CharityPage                   = require('./charity').CharityPage;
-var TermsAndConditions            = require('./tnc').TermsAndConditions;
-var CashierJP                     = require('../../binary_japan/cashier').CashierJP;
-var LoggedInHandler               = require('../base/logged_in').LoggedInHandler;
-var pjax_config_page_require_auth = require('../base/page').pjax_config_page_require_auth;
-var pjax_config_page              = require('../base/page').pjax_config_page;
+const Endpoint                      = require('./endpoint').Endpoint;
+const GetStartedJP                  = require('./get_started_jp').GetStartedJP;
+const JobDetails                    = require('./job_details').JobDetails;
+const Platforms                     = require('./platforms').Platforms;
+const Regulation                    = require('./regulation').Regulation;
+const Scroll                        = require('../common_functions/scroll').Scroll;
+const GetStarted                    = require('./get_started').GetStarted;
+const Contact                       = require('./contact').Contact;
+const Careers                       = require('./careers').Careers;
+const Home                          = require('./home').Home;
+const WhyUs                         = require('./why_us').WhyUs;
+const CharityPage                   = require('./charity').CharityPage;
+const TermsAndConditions            = require('./tnc').TermsAndConditions;
+const CashierJP                     = require('../../binary_japan/cashier').CashierJP;
+const LoggedInHandler               = require('../base/logged_in').LoggedInHandler;
+const pjax_config_page_require_auth = require('../base/pjax').pjax_config_page_require_auth;
+const pjax_config_page              = require('../base/pjax').pjax_config_page;
 
 pjax_config_page('/home', function() {
     return {

@@ -1,5 +1,5 @@
 // TODO: to be remove after webpack finalized
-var exportAllFunctions = function(obj) {
+const exportAllFunctions = function(obj) {
     Object.keys(obj).forEach(function (key) {
         window[key] = obj[key];
     });
@@ -10,15 +10,15 @@ window.$ = window.jQuery = require('jquery');
 require('babel-polyfill');
 
 // needs refactoring
-exportAllFunctions(require('./binary/base/page'));
 exportAllFunctions(require('./binary/websocket_pages/socket'));
 
 // created for handling global onclick
 exportAllFunctions(require('./binary/common_functions/attach_dom/handle_click'));
+// used by gtm to update page after a new release
+exportAllFunctions(require('./binary/common_functions/check_new_release'));
 
 require('./lib/jquery-ui-timepicker/jquery.ui.timepicker.js');
 require('event-source-polyfill');
-require('./lib/jQuery.XDomainRequest.js');
 require('./lib/jquery-ui.js');
 require('./lib/jquery.sparkline.js');
 require('jquery.scrollto');

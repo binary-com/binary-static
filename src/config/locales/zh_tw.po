@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-28 03:49+0000\n"
+"PO-Revision-Date: 2017-01-12 04:23+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -213,8 +213,8 @@ msgstr "%1 誠聘社交媒體執行員，幫助增強並主動管理公司的社
 msgid "%1 seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world."
 msgstr "%1 誠聘文筆犀利的文案，幫助製作網站內容並積極向世界各地新潛能客戶和當前客戶發佈資訊。"
 
-msgid "%1 supports the <a target='_blank' href='http://about.gambleaware.org/'>GambleAware</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
-msgstr "%1支持 <a target='_blank' href='http://about.gambleaware.org/'>GambleAware</a>(RGT) 。這是英國一家領先的慈善機構，致力於消除跟賭博有關的危害。該機構撥款資助教育活動、疾病預防和治療服務，並受委託協助人們進一步了解與賭博危害有關的研究專案。它也建立了一個全國性電話服務專線，向尋求幫助的賭徒提供保密性諮詢和情緒上的支持。"
+msgid "%1 supports %2 which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
+msgstr "%1支持%2。這是英國一家領先的慈善機構，致力於消除跟賭博有關的危害。該機構撥款資助教育活動、疾病預防和治療服務，並受委託協助人們進一步了解與賭博危害有關的研究專案。它也建立了一個全國性電話服務專線，向尋求幫助的賭徒提供保密性諮詢和情緒上的支持。"
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "%1在久負盛名的倫敦EGR操作員頒獎儀式中榮獲2015年金融搏彩操作員第一獎。"
@@ -859,15 +859,11 @@ msgstr "帳戶轉帳"
 msgid "Account balance: "
 msgstr "帳戶餘額： "
 
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "存款已鎖定。欲知詳細資訊，請<a class=\"pjaxload\" href=\"%1\">聯繫我們</a>。"
+msgstr "帳戶需要通過年齡驗證。欲知詳細資訊，請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "存款已鎖定。欲知詳細資訊，請<a class=\"pjaxload\" href=\"%1\">聯繫我們</a>。"
+msgstr "帳戶未啟動。欲知詳細資訊，請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
 msgid "Accounting"
 msgstr "會計"
@@ -1023,8 +1019,8 @@ msgstr "有主見，具銷售驅動型人格，能夠很快適應並達到強大
 msgid "An error occured."
 msgstr "發生錯誤。"
 
-msgid "Analyse and test our website for bugs and potential security issues."
-msgstr "針對我們網站的編程缺陷和潛在安全問題進行分析和測試。"
+msgid "Analyse and test the domains and subdomains listed in the scope."
+msgstr "對範圍列出的網域和子網域進行分析及測試。"
 
 msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
 msgstr "採用範圍廣泛的指標、價格帶和多重覆蓋圖等分析市場走勢。"
@@ -1600,10 +1596,8 @@ msgstr "收銀台"
 msgid "Cashier Password"
 msgstr "收銀台密碼"
 
-#, fuzzy
-#| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "收銀台已鎖定。欲知詳細資訊，請<a class=\"pjaxload\" href=\"%1\">聯繫我們</a>。"
+msgstr "收銀台已鎖定。欲知詳細資訊，請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
 msgid "Cashier password"
 msgstr "收銀台密碼"
@@ -2169,10 +2163,8 @@ msgstr "將 %1 %2 虛擬資金存入您的帳戶%3"
 msgid "Deposit Bonus"
 msgstr "存款獎金"
 
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "存款已鎖定。欲知詳細資訊，請<a class=\"pjaxload\" href=\"%1\">聯繫我們</a>。"
+msgstr "存款已鎖定。欲知詳細資訊，請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
 msgid "Deposit of"
 msgstr "存款"
@@ -2732,10 +2724,8 @@ msgstr "Financial Asset"
 msgid "Financial Information"
 msgstr "金融資訊"
 
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "提款已鎖定。欲知詳細資訊，請<a class=\"pjaxload\" href=\"%1\">聯繫我們</a>。"
+msgstr "需要通過金融風險批准。欲知詳細資訊，請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
 msgid "Financial Security"
 msgstr "財務安全"
@@ -3168,6 +3158,9 @@ msgstr "如果是，請別擔心。在 Binary.com 平台，您可在到期之前
 
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
 msgstr "如果在幾分鐘內您未收到電子郵件，請檢查您的垃圾/廣告郵件夾。"
+
+msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
+msgstr "如您在我們的<a target='_blank' href='%1'>開源代碼</a>中發現任何漏洞，請立刻在GitHub提交引入請求。"
 
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "只要擁有我們需要的技能，您就有機會加入一個優秀的前端開發團隊，讓我們的二元期權交易系統達到新的巔峰。"
@@ -5600,6 +5593,9 @@ msgstr "安全免責聲明"
 msgid "Security Statement"
 msgstr "安全聲明"
 
+msgid "Security Testing"
+msgstr "安全測試"
+
 msgid "Security and Privacy"
 msgstr "安全隱私"
 
@@ -5783,6 +5779,9 @@ msgstr "軟體 (Perl) 開發"
 msgid "Sorry, account opening is unavailable."
 msgstr "對不起，不可開立帳號。"
 
+msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
+msgstr "對不起，您的國家不能註冊帳戶。欲知詳細資訊，請聯繫<a href=\"%1\">客服部</a>。"
+
 msgid "Sorry, an error occurred while processing your account."
 msgstr "對不起，在處理您的帳戶時出錯。"
 
@@ -5797,6 +5796,9 @@ msgstr "對不起，此功能不可用。"
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "對不起，您輸入的收銀台密碼不正確"
+
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "對不起，您的帳戶沒有進一步買入任何合約的權限。"
 
 msgid "Spam - We do not condone Spam"
 msgstr "垃圾郵件-我們不會容忍垃圾郵件"
@@ -5939,8 +5941,8 @@ msgstr "當我們執行客戶訂單時，在遵守您所提供的任何指令之
 msgid "Submit"
 msgstr "送出"
 
-msgid "Submit a report on HackerOne, or a pull-request in GitHub with a suggested fix."
-msgstr "提交關於HackerOne的報告，或者在GitHub發起提取要求，並提出修復建議。"
+msgid "Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue."
+msgstr "如果發現任何潛在安全問題，請在HackerOne提交報表，並附上解決問題的建議。"
 
 msgid "Submit your CV and Cover Letter"
 msgstr "提交您的簡歷和求職信"
@@ -6980,9 +6982,6 @@ msgstr "利用我們網站提供的機會，可以免費通過虛擬帳戶進行
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr "使用、執行，並顯示您的應用程式及其內容作為行銷、展示用途，並將您的應用程式提供給我們客戶使用。和    "
 
-msgid "User Testing"
-msgstr "使用者測試"
-
 msgid "Using our website, customers can trade currencies, indices, stocks and commodities 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
 msgstr "客戶可使用我們網站全天候進行貨幣、指數、股票和大宗商品交易。我們擁有最靈活的價格和最齊全的產品配套供選擇。"
 
@@ -7445,10 +7444,8 @@ msgstr "取款限額"
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "您的帳戶現時無法取款。請聯繫 %1進行解鎖。"
 
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "提款已鎖定。欲知詳細資訊，請<a class=\"pjaxload\" href=\"%1\">聯繫我們</a>。"
+msgstr "提款已鎖定。欲知詳細資訊，請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr "與團隊其他成員緊密合作，開發出可在交易平台上推動價格的軟體"
@@ -7524,9 +7521,6 @@ msgstr "您不能用部分佣金作為給推薦人的折扣，公司發現後將
 
 msgid "You are not allowed to store any Content (such as feed data)."
 msgstr "您未獲許可儲存任何內容(例如摘要資料)。"
-
-msgid "You are not authorized for withdrawal via payment agent."
-msgstr "您未經授權通過付款代理取款。"
 
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "您無權在任何情況下獲取公司任何補償或支付。"
@@ -7636,10 +7630,8 @@ msgstr "一旦您帳戶的交易額超過獎勵金額的25倍，您就可以從�
 msgid "You must accept the terms and conditions to open an account."
 msgstr "您必須接受條款和條件才能開戶。"
 
-#, fuzzy
-#| msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
 msgid "You must complete the knowledge test to activate this account. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "您的帳戶未完全驗證。欲知詳情請檢視<a class=\"pjaxload\" href=\"%1\">驗證</a>頁面。"
+msgstr "要啟動此帳戶，您必須完成知識測試。欲知詳情請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "要使用%1 API，您必須遵守這些條款。"
@@ -7776,10 +7768,8 @@ msgstr "您的帳戶已經得到完全驗證，且您的取款限額已經取消
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "您的帳戶已經得到完全驗證，您可在此檢視您的<a  class=\"pjaxload\" href=\"%1\"> 交易限額</a>。"
 
-#, fuzzy
-#| msgid "Client is not fully authenticated."
 msgid "Your account is not fully authenticated."
-msgstr "客戶未完成身份驗證。"
+msgstr "您的帳戶未完成身份驗證。"
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "您的帳戶不應該被用來作為銀行信貸，而存款應該被視為只用以進行交易的資金。本公司不是金融機構，客戶存款將不會有利息。如果您重覆進行存款和取款，卻沒有進行相稱的交易，在關閉帳戶之前，我們保留在不事先通知的情況下把我們所承擔的任何銀行費用轉到您帳戶的權利。"
@@ -8603,17 +8593,11 @@ msgstr "{JAPAN ONLY}JSA_Date_1"
 msgid "{JAPAN ONLY}JSA_Date_2"
 msgstr "{JAPAN ONLY}JSA_Date_2"
 
-msgid "{JAPAN ONLY}JSA_Date_3"
-msgstr "{JAPAN ONLY}JSA_Date_3"
-
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
 msgstr "{JAPAN ONLY}JSA_Explanation_1_1)"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
 msgstr "{JAPAN ONLY}JSA_Explanation_1_2)"
-
-msgid "{JAPAN ONLY}JSA_Explanation_1_3)"
-msgstr "{JAPAN ONLY}JSA_Explanation_1_3)"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
 msgstr "{JAPAN ONLY}JSA_Explanation_2_1)"
@@ -8624,23 +8608,11 @@ msgstr "{JAPAN ONLY}JSA_Explanation_2_2)"
 msgid "{JAPAN ONLY}JSA_Explanation_2_3)"
 msgstr "{JAPAN ONLY}JSA_Explanation_2_3)"
 
-msgid "{JAPAN ONLY}JSA_Explanation_3_1)"
-msgstr "{JAPAN ONLY}JSA_Explanation_3_1)"
-
-msgid "{JAPAN ONLY}JSA_Explanation_3_2)"
-msgstr "{JAPAN ONLY}JSA_Explanation_3_2)"
-
-msgid "{JAPAN ONLY}JSA_Explanation_3_3)"
-msgstr "{JAPAN ONLY}JSA_Explanation_3_3)"
-
 msgid "{JAPAN ONLY}JSA_Title_1"
 msgstr "{JAPAN ONLY}JSA_Title_1"
 
 msgid "{JAPAN ONLY}JSA_Title_2"
 msgstr "{JAPAN ONLY}JSA_Title_2"
-
-msgid "{JAPAN ONLY}JSA_Title_3"
-msgstr "{JAPAN ONLY}JSA_Title_3"
 
 msgid "{JAPAN ONLY}Japan Service Announcements"
 msgstr "{JAPAN ONLY}Japan Service Announcements"
@@ -9125,9 +9097,6 @@ msgstr "慈善活動"
 msgid "Open-Source Projects"
 msgstr "開源專案"
 
-msgid "Sign Up to Test Our Platform"
-msgstr "註冊試用我們的平台"
-
 msgid "Types of Trades"
 msgstr "交易類型"
 
@@ -9160,6 +9129,36 @@ msgstr "帳戶詳細資料"
 
 msgid "Terms and Conditions Approval"
 msgstr "條款和條件審批"
+
+#~ msgid "You are not authorized for withdrawal via payment agent."
+#~ msgstr "您未經授權通過付款代理取款。"
+
+#~ msgid "Analyse and test our website for bugs and potential security issues."
+#~ msgstr "針對我們網站的編程缺陷和潛在安全問題進行分析和測試。"
+
+#~ msgid "Submit a report on HackerOne, or a pull-request in GitHub with a suggested fix."
+#~ msgstr "提交關於HackerOne的報告，或者在GitHub發起提取要求，並提出修復建議。"
+
+#~ msgid "{JAPAN ONLY}JSA_Date_3"
+#~ msgstr "{JAPAN ONLY}JSA_Date_3"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_1_3)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_1_3)"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_1)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_3_1)"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_2)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_3_2)"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_3)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_3_3)"
+
+#~ msgid "{JAPAN ONLY}JSA_Title_3"
+#~ msgstr "{JAPAN ONLY}JSA_Title_3"
+
+#~ msgid "Sign Up to Test Our Platform"
+#~ msgstr "註冊試用我們的平台"
 
 #~ msgid "Authenticate your account"
 #~ msgstr "驗證您的帳戶"
@@ -10877,9 +10876,6 @@ msgstr "條款和條件審批"
 
 #~ msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
 #~ msgstr "對不起，您的帳戶現金餘額太高(%1)。最大允許餘額為%2。"
-
-#~ msgid "Sorry, your account is not authorised for any further contract purchases."
-#~ msgstr "對不起，您的帳戶沒有進一步買入任何合約的權限。"
 
 #~ msgid "Sorry, your currency of %1 is unavailable for Payment Agent Withdrawal"
 #~ msgstr "對不起，付款代理提款不可使用您的 %1 貨幣"

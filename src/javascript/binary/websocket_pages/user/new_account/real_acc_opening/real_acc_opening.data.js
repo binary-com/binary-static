@@ -1,8 +1,8 @@
-var Cookies = require('../../../../../lib/js-cookie');
+const Cookies = require('../../../../../lib/js-cookie');
 
-var RealAccOpeningData = (function() {
-    function getRealAcc(elementObj) {
-        var req = {
+const RealAccOpeningData = (function() {
+    const getRealAcc = function(elementObj) {
+        const req = {
             new_account_real: 1,
             salutation      : elementObj.title.value,
             first_name      : elementObj.fname.value,
@@ -24,7 +24,7 @@ var RealAccOpeningData = (function() {
         }
 
         BinarySocket.send(req);
-    }
+    };
 
     return {
         getRealAcc: getRealAcc,

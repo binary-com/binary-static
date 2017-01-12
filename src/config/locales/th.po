@@ -220,7 +220,7 @@ msgstr "%1 กำลังสรรหาเจ้าหน้าที่เข
 
 #, fuzzy
 #| msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
-msgid "%1 supports the <a target='_blank' href='http://about.gambleaware.org/'>GambleAware</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
+msgid "%1 supports %2 which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgstr "%1 ให้การสนับสนุนองค์กร <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT)  เป็นองค์กรการกุศลชั้นนำในประเทศอังกฤษเพื่อรณรงค์บรรเทาโทษของการพนันให้มีน้อยที่สุด บริการกองทุน RGT เพื่อการศึกษา บริการการรักษาและป้องกัน และการวิจัยต่างๆ นั้น เพื่อช่วยให้บุคลากรได้มีความเข้าใจเกี่ยวกับภัยของการพนันมากขึ้น สิ่งนี้ยังรวมถึงการมีหน่วยงานให้คำปรึกษาระดับชาติเพื่อแนะนำและสนับสนุนทุกคนที่ต้องการได้รับความช่วยเหลือเกี่ยวกับกรณีทางการพนันต่างๆ ของพวกเขา"
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
@@ -1032,7 +1032,7 @@ msgstr "มีความกล้าแสดงออก บุคลิก�
 msgid "An error occured."
 msgstr "มีข้อผิดพลาดเกิดขึ้น"
 
-msgid "Analyse and test our website for bugs and potential security issues."
+msgid "Analyse and test the domains and subdomains listed in the scope."
 msgstr ""
 
 msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
@@ -3185,6 +3185,9 @@ msgstr "หมดกังวล หากท่านใช้ Binary.com ท�
 
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
 msgstr "หากท่านไม่ได้รับอีเมล์ในอีก 2-3 นาที โปรดตรวจสอบอีเมล์ในกล่องขยะหรือสแปมของท่าน"
+
+msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
+msgstr ""
 
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "หากท่านมีคุณสมบัติที่เรากำลังสรรหา ท่านจะกลายเป็นส่วนหนึ่งของทีมงานพัฒนาระบบส่วนหน้าที่มีความสามารถสูง และรับผิดชอบในการพัฒนาระบบซื้อขายไบนารีออปชั่นที่มีสมรรถนะที่ดีเยี่ยมขึ้นไปอีก"
@@ -5623,6 +5626,11 @@ msgstr "การสงวนสิทธิ์ของความปลอด
 msgid "Security Statement"
 msgstr "ข้อความเกี่ยวกับความปลอดภัย"
 
+#, fuzzy
+#| msgid "User Testing"
+msgid "Security Testing"
+msgstr "การทดสอบด้วยผู้ใช้งาน"
+
 msgid "Security and Privacy"
 msgstr "ความปลอดภัยและความเป็นส่วนตัว"
 
@@ -5806,6 +5814,11 @@ msgstr "พัฒนาซอฟท์แวร์ด้วยภาษา Perl"
 msgid "Sorry, account opening is unavailable."
 msgstr "ขออภัย ไม่สามารถเปิดบัญชีได้"
 
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
+msgstr "การฝากเงินถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
+
 msgid "Sorry, an error occurred while processing your account."
 msgstr "ขออภัย มีความผิดพลาดเกิดขึ้นขณะที่ประมวลผลบัญชีของท่าน"
 
@@ -5820,6 +5833,10 @@ msgstr "ขออภัย ไม่สามารถใช้งานฟั�
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "ขออภัยค่ะ ท่านป้อนรหัสผ่านแคชเชียร์ไม่ถูกต้อง"
+
+#, fuzzy
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "ขออภัย your account is not authorised for any further contract purchases."
 
 msgid "Spam - We do not condone Spam"
 msgstr "สแปม - เราไม่เอาโทษสแปม"
@@ -5962,7 +5979,7 @@ msgstr "ขึ้นกับข้อแนะนำพิเศษใดๆ �
 msgid "Submit"
 msgstr "ส่ง"
 
-msgid "Submit a report on HackerOne, or a pull-request in GitHub with a suggested fix."
+msgid "Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue."
 msgstr ""
 
 msgid "Submit your CV and Cover Letter"
@@ -7008,9 +7025,6 @@ msgstr "ใช้โอกาสที่มีในเว็บของพว
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr "ใช้ ดำเนินการ และแสดงแอพพลิเคชันของท่าน และเนื้อหาเพื่อวัตถุประสงค์ทางการตลาด การสาธิต และให้ลูกค้าของเราได้ใช้งานแอพพลิเคชัน และ    "
 
-msgid "User Testing"
-msgstr "การทดสอบด้วยผู้ใช้งาน"
-
 msgid "Using our website, customers can trade currencies, indices, stocks and commodities 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
 msgstr "การใช้เว็บไซต์ของเรา ลูกค้าสามารถซื้อขายสกุลเงินต่างๆ ดัชนีต่างๆ หลักทรัพย์ต่างๆ สินค้าโภคภัณฑ์ต่างๆ ได้ตลอด 24 ชั่วโมง 7 วัน พวกเรามีความยืดหยุ่นในราคามากที่สุด และผลิตภัณฑ์ที่หลากหลายมากที่สุด"
 
@@ -7556,9 +7570,6 @@ msgstr "ท่านไม่ได้รับอนุญาตในการ
 
 msgid "You are not allowed to store any Content (such as feed data)."
 msgstr "ท่านไม่ได้รับอนุญาตให้เก็บข้อมูลใดๆ (เช่น ฟีดข้อมูล)"
-
-msgid "You are not authorized for withdrawal via payment agent."
-msgstr "ท่านไม่ได้รับอนุญาตให้ถอนเงินผ่านตัวแทนรับชำระเงิน"
 
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "ท่านไม่ได้รับสิทธิ์ในการได้รับค่าชดเชยใดๆ หรือ การชำระเงินคืนให้ในกรณีใดๆ จากบริษัทฯ ไม่ว่าสถานการณ์ใดๆ"
@@ -8635,17 +8646,11 @@ msgstr "{JAPAN ONLY}JSA_Date_1"
 msgid "{JAPAN ONLY}JSA_Date_2"
 msgstr "{JAPAN ONLY}JSA_Date_2"
 
-msgid "{JAPAN ONLY}JSA_Date_3"
-msgstr "{JAPAN ONLY}JSA_Date_3"
-
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
 msgstr "{JAPAN ONLY}JSA_Explanation_1_1)"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
 msgstr "{JAPAN ONLY}JSA_Explanation_1_2)"
-
-msgid "{JAPAN ONLY}JSA_Explanation_1_3)"
-msgstr "{JAPAN ONLY}JSA_Explanation_1_3)"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
 msgstr "{JAPAN ONLY}JSA_Explanation_2_1)"
@@ -8656,23 +8661,11 @@ msgstr "{JAPAN ONLY}JSA_Explanation_2_2)"
 msgid "{JAPAN ONLY}JSA_Explanation_2_3)"
 msgstr "{JAPAN ONLY}JSA_Explanation_2_3)"
 
-msgid "{JAPAN ONLY}JSA_Explanation_3_1)"
-msgstr "{JAPAN ONLY}JSA_Explanation_3_1)"
-
-msgid "{JAPAN ONLY}JSA_Explanation_3_2)"
-msgstr "{JAPAN ONLY}JSA_Explanation_3_2)"
-
-msgid "{JAPAN ONLY}JSA_Explanation_3_3)"
-msgstr "{JAPAN ONLY}JSA_Explanation_3_3)"
-
 msgid "{JAPAN ONLY}JSA_Title_1"
 msgstr "{JAPAN ONLY}JSA_Title_1"
 
 msgid "{JAPAN ONLY}JSA_Title_2"
 msgstr "{JAPAN ONLY}JSA_Title_2"
-
-msgid "{JAPAN ONLY}JSA_Title_3"
-msgstr "{JAPAN ONLY}JSA_Title_3"
 
 msgid "{JAPAN ONLY}Japan Service Announcements"
 msgstr "{JAPAN ONLY}Japan Service Announcements"
@@ -9157,9 +9150,6 @@ msgstr "การกุศล"
 msgid "Open-Source Projects"
 msgstr "โครงการโอเพ่นซอส"
 
-msgid "Sign Up to Test Our Platform"
-msgstr "ลงทะเบียนเพื่อทดลองระบบของเรา"
-
 msgid "Types of Trades"
 msgstr "ประเภทของการซื้อขาย"
 
@@ -9192,6 +9182,30 @@ msgstr "รายละเอียดบัญชี"
 
 msgid "Terms and Conditions Approval"
 msgstr "การอนุมัติข้อตกลงและเงื่อนไข"
+
+#~ msgid "You are not authorized for withdrawal via payment agent."
+#~ msgstr "ท่านไม่ได้รับอนุญาตให้ถอนเงินผ่านตัวแทนรับชำระเงิน"
+
+#~ msgid "{JAPAN ONLY}JSA_Date_3"
+#~ msgstr "{JAPAN ONLY}JSA_Date_3"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_1_3)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_1_3)"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_1)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_3_1)"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_2)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_3_2)"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_3)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_3_3)"
+
+#~ msgid "{JAPAN ONLY}JSA_Title_3"
+#~ msgstr "{JAPAN ONLY}JSA_Title_3"
+
+#~ msgid "Sign Up to Test Our Platform"
+#~ msgstr "ลงทะเบียนเพื่อทดลองระบบของเรา"
 
 #~ msgid "Authenticate your account"
 #~ msgstr "ยืนยันตัวตนต่อบัญชีของท่าน"
@@ -10834,10 +10848,6 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 #, fuzzy
 #~ msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
 #~ msgstr "ขออภัย your account cash balance is too high (%1). Your maximum account balance is %2."
-
-#, fuzzy
-#~ msgid "Sorry, your account is not authorised for any further contract purchases."
-#~ msgstr "ขออภัย your account is not authorised for any further contract purchases."
 
 #, fuzzy
 #~ msgid "Sorry, your currency of %1 is unavailable for Payment Agent Withdrawal"

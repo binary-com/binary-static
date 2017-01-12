@@ -1,12 +1,13 @@
-var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
-var addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;
-var buildOauthApps       = require('../../../../common_functions/get_app_details').buildOauthApps;
-var Content              = require('../../../../common_functions/content').Content;
-var ProfitTableUI        = require('./profit_table.ui').ProfitTableUI;
-var ProfitTableData      = require('./profit_table.data').ProfitTableData;
+const showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
+const addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;
+const buildOauthApps       = require('../../../../common_functions/get_app_details').buildOauthApps;
+const Content              = require('../../../../common_functions/content').Content;
+const ProfitTableUI        = require('./profit_table.ui').ProfitTableUI;
+const ProfitTableData      = require('./profit_table.data').ProfitTableData;
+const localize = require('../../../../base/localize').localize;
 
-var ProfitTableWS = (function() {
-    var batchSize,
+const ProfitTableWS = (function() {
+    let batchSize,
         chunkSize,
         transactionsReceived,
         transactionsConsumed,
@@ -14,15 +15,15 @@ var ProfitTableWS = (function() {
         pending,
         currentBatch;
 
-    var tableExist = function() {
+    const tableExist = function() {
         return document.getElementById('profit-table');
     };
 
-    var finishedConsumed = function() {
+    const finishedConsumed = function() {
         return transactionsConsumed === transactionsReceived;
     };
 
-    function initTable() {
+    const initTable = function() {
         currentBatch = [];
         transactionsConsumed = 0;
         transactionsReceived = 0;
@@ -33,16 +34,28 @@ var ProfitTableWS = (function() {
         if (tableExist()) {
             ProfitTableUI.cleanTableContent();
         }
-    }
+    };
 
-    function profitTableHandler(response) {
+
+    const getNextBatchTransactions = function() {
+        ProfitTableData.getProfitTable({ offset: transactionsReceived, limit: batchSize });
+        pending = true;
+    };
+
+    const getNextChunk = function() {
+        const chunk = currentBatch.splice(0, chunkSize);
+        transactionsConsumed += chunk.length;
+        return chunk;
+    };
+
+    const profitTableHandler = function(response) {
         if (response.hasOwnProperty('error')) {
             ProfitTableUI.errorMessage(response.error.message);
             return;
         }
 
         pending = false;
-        var profitTable = response.profit_table;
+        const profitTable = response.profit_table;
         currentBatch = profitTable.transactions;
         transactionsReceived += currentBatch.length;
 
@@ -56,33 +69,22 @@ var ProfitTableWS = (function() {
 
             // Show a message when the table is empty
             if ((transactionsReceived === 0) && (currentBatch.length === 0)) {
-                $('#profit-table tbody')
+                $('#profit-table').find('tbody')
                     .append($('<tr/>', { class: 'flex-tr' })
                         .append($('<td/>',  { colspan: 8 })
-                            .append($('<p/>', { class: 'notice-msg center-text', text: page.text.localize('Your account has no trading activity.') }))));
+                            .append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
             }
         }
-    }
+    };
 
-    function getNextBatchTransactions() {
-        ProfitTableData.getProfitTable({ offset: transactionsReceived, limit: batchSize });
-        pending = true;
-    }
-
-    function getNextChunk() {
-        var chunk = currentBatch.splice(0, chunkSize);
-        transactionsConsumed += chunk.length;
-        return chunk;
-    }
-
-    function onScrollLoad() {
+    const onScrollLoad = function() {
         $(document).scroll(function() {
-            function hidableHeight(percentage) {
-                var totalHidable = $(document).height() - $(window).height();
+            const hidableHeight = function(percentage) {
+                const totalHidable = $(document).height() - $(window).height();
                 return Math.floor((totalHidable * percentage) / 100);
-            }
+            };
 
-            var pFromTop = $(document).scrollTop();
+            const pFromTop = $(document).scrollTop();
 
             if (!tableExist()) {
                 return;
@@ -101,9 +103,28 @@ var ProfitTableWS = (function() {
                 ProfitTableUI.updateProfitTable(getNextChunk());
             }
         });
-    }
+    };
 
-    function init() {
+    const initSocket = function() {
+        BinarySocket.init({
+            onmessage: function(msg) {
+                const response = JSON.parse(msg.data);
+
+                if (response) {
+                    const type = response.msg_type;
+                    if (type === 'profit_table') {
+                        ProfitTableWS.profitTableHandler(response);
+                        showLocalTimeOnHover('td.buy-date,td.sell-date');
+                    } else if (type === 'oauth_apps') {
+                        addTooltip(ProfitTableUI.setOauthApps(buildOauthApps(response.oauth_apps)));
+                    }
+                }
+            },
+        });
+        BinarySocket.send({ oauth_apps: 1 });
+    };
+
+    const init = function() {
         batchSize = 100;
         chunkSize = batchSize / 2;
         transactionsReceived = 0;
@@ -115,26 +136,7 @@ var ProfitTableWS = (function() {
         Content.populate();
         getNextBatchTransactions();
         onScrollLoad();
-    }
-
-    function initSocket() {
-        BinarySocket.init({
-            onmessage: function(msg) {
-                var response = JSON.parse(msg.data);
-
-                if (response) {
-                    var type = response.msg_type;
-                    if (type === 'profit_table') {
-                        ProfitTableWS.profitTableHandler(response);
-                        showLocalTimeOnHover('td.buy-date,td.sell-date');
-                    } else if (type === 'oauth_apps') {
-                        addTooltip(ProfitTableUI.setOauthApps(buildOauthApps(response.oauth_apps)));
-                    }
-                }
-            },
-        });
-        BinarySocket.send({ oauth_apps: 1 });
-    }
+    };
 
     return {
         profitTableHandler: profitTableHandler,

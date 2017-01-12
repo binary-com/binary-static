@@ -1,9 +1,9 @@
-var GetStarted = (function() {
-    var select_nav_element = function() {
-        var $navLink = $('.nav li a');
-        var $navList = $('.nav li');
+const GetStarted = (function() {
+    const select_nav_element = function() {
+        const $navLink = $('.nav li a');
+        const $navList = $('.nav li');
         $navList.removeClass('selected');
-        for (var i = 0; i < $navLink.length; i++) {
+        for (let i = 0; i < $navLink.length; i++) {
             if ($navLink[i].href.match(window.location.pathname)) {
                 document.getElementsByClassName('nav')[0].getElementsByTagName('li')[i].setAttribute('class', 'selected');
                 break;
@@ -11,15 +11,14 @@ var GetStarted = (function() {
         }
     };
 
-    var get_started_behaviour = function() {
+    const get_started_behaviour = function() {
         if (/get-started-jp/.test(window.location.pathname)) return;
-        var update_active_subsection = function(to_show) {
-            var fragment;
-            var subsection = $('.subsection');
+        const update_active_subsection = function(to_show) {
+            const subsection = $('.subsection');
             subsection.addClass('hidden');
             to_show.removeClass('hidden');
-            var nav_back = $('.subsection-navigation .back');
-            var nav_next = $('.subsection-navigation .next');
+            const nav_back = $('.subsection-navigation .back');
+            const nav_next = $('.subsection-navigation .next');
 
             if (to_show.hasClass('first')) {
                 nav_back.addClass('button-disabled');
@@ -32,25 +31,24 @@ var GetStarted = (function() {
                 nav_next.removeClass('button-disabled');
             }
 
-            fragment = to_show.find('a[name]').attr('name').slice(0, -8);
-            document.location.hash = fragment;
+            document.location.hash = to_show.find('a[name]').attr('name').slice(0, -8);
 
             return false;
         };
 
-        var to_show;
-        var nav = $('.get-started').find('.subsection-navigation');
-        var fragment;
-        var len = nav.length;
+        let to_show,
+            fragment;
+        const nav = $('.get-started').find('.subsection-navigation');
+        const len = nav.length;
 
         if (len) {
             nav.on('click', 'a', function() {
-                var button = $(this);
+                const button = $(this);
                 if (button.hasClass('button-disabled')) {
                     return false;
                 }
-                var now_showing = $('.subsection:not(.hidden)');
-                var show = button.hasClass('next') ? now_showing.next('.subsection') : now_showing.prev('.subsection');
+                const now_showing = $('.subsection:not(.hidden)');
+                const show = button.hasClass('next') ? now_showing.next('.subsection') : now_showing.prev('.subsection');
                 return update_active_subsection(show);
             });
 

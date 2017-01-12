@@ -3,7 +3,7 @@
  *
  */
 
-var MBNotifications = (function() {
+const MBNotifications = (function() {
     'use strict';
 
     /*
@@ -13,8 +13,8 @@ var MBNotifications = (function() {
      *     dismissible: {boolean} dismissible messages can be hidden by client
      * }
      */
-    var showErrorMessage = function(options) {
-        var $note_wrapper = getContainer(),
+    const showErrorMessage = function(options) {
+        const $note_wrapper = getContainer(),
             $this_uid     = $note_wrapper.find('#' + options.uid);
 
         if (!options.uid || $this_uid.length === 0) {
@@ -27,8 +27,8 @@ var MBNotifications = (function() {
         hideSpinnerShowTrading();
     };
 
-    var generateMessage = function(options) {
-        var $message = $('<div class="notice-msg center-text' + (options.dismissible ? ' dismissible' : '') + '"' +
+    const generateMessage = function(options) {
+        const $message = $('<div class="notice-msg center-text' + (options.dismissible ? ' dismissible' : '') + '"' +
             (options.uid ? ' id="' + options.uid + '"' : '') + '>' + options.text +
                 (options.dismissible ? '<div class="notification-dismiss">x</div>' : '') +
             '</div>');
@@ -40,21 +40,21 @@ var MBNotifications = (function() {
         return $message;
     };
 
-    var hideErrorMessage = function(uid) {
+    const hideErrorMessage = function(uid) {
         if (uid) {
             getContainer().find('#' + uid).remove();
         }
     };
 
-    var dismissMessage = function(obj) {
+    const dismissMessage = function(obj) {
         $(obj).remove();
     };
 
-    var getContainer = function() {
+    const getContainer = function() {
         return $('#notifications_wrapper');
     };
 
-    var hideSpinnerShowTrading = function() {
+    const hideSpinnerShowTrading = function() {
         $('.barspinner').addClass('invisible');
         $('.mb-trading-wrapper').removeClass('invisible');
     };
