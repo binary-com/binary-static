@@ -1,13 +1,14 @@
-var japanese_client = require('../../../common_functions/country_base').japanese_client;
+const japanese_client = require('../../../common_functions/country_base').japanese_client;
+const Client          = require('../../../base/client').Client;
 
-var SettingsWS = (function() {
+const SettingsWS = (function() {
     'use strict';
 
-    var init = function() {
-        var classHidden = 'invisible',
+    const init = function() {
+        const classHidden = 'invisible',
             classReal   = '.real';
 
-        if (!page.client.is_virtual()) {
+        if (!Client.get_boolean('is_virtual')) {
             // control-class is a fake class, only used to counteract ja-hide class
             $(classReal).not((japanese_client() ? '.ja-hide' : '.control-class')).removeClass(classHidden);
         } else {
@@ -17,11 +18,11 @@ var SettingsWS = (function() {
         $('#settingsContainer').removeClass(classHidden);
     };
 
-    var onLoad = function() {
-        if (page.client.get_storage_value('is_virtual').length === 0) {
+    const onLoad = function() {
+        if (!Client.get_boolean('values_set')) {
             BinarySocket.init({
                 onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
+                    const response = JSON.parse(msg.data);
                     if (response && response.msg_type === 'authorize') {
                         SettingsWS.init();
                     }

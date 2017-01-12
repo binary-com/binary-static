@@ -97,14 +97,14 @@
     </div>
     <div class="gr-4 gr-12-m">
       <div class="gr-6 gr-padding-10">
-        <a class="pjaxload" href="[% request.url_for('/user-testing') %]">
+        <a class="pjaxload" href="[% request.url_for('/security-testing') %]">
           <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/tester.svg') %]"/>
         </a>
       </div>
       <div class="gr-12">
         <h4>
-          <a class="pjaxload" href="[% request.url_for('/user-testing') %]">
-            [% l("User Testing") %]
+          <a class="pjaxload" href="[% request.url_for('/security-testing') %]">
+            [% l("Security Testing") %]
           </a>
         </h4>
         <p>

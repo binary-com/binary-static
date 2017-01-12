@@ -1,15 +1,16 @@
-var Content             = require('../../../../common_functions/content').Content;
-var ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
-var Validate            = require('../../../../common_functions/validation').Validate;
-var FinancialAccOpeningData = require('./financial_acc_opening.data').FinancialAccOpeningData;
+const Content             = require('../../../../common_functions/content').Content;
+const ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
+const Validate            = require('../../../../common_functions/validation').Validate;
+const FinancialAccOpeningData = require('./financial_acc_opening.data').FinancialAccOpeningData;
+const selectorExists    = require('../../../../common_functions/common_functions').selectorExists;
 
-var FinancialAccOpeningUI = (function() {
+const FinancialAccOpeningUI = (function() {
     'use strict';
 
-    function checkValidity() {
+    const checkValidity = function() {
         window.accountErrorCounter = 0;
 
-        var elementObj = {
+        const elementObj = {
             title                : document.getElementById('title'),
             fname                : document.getElementById('fname'),
             lname                : document.getElementById('lname'),
@@ -45,7 +46,7 @@ var FinancialAccOpeningUI = (function() {
             netWorth             : document.getElementById('estimated_worth'),
         };
 
-        var errorObj = {
+        const errorObj = {
             title                : document.getElementById('error-title'),
             fname                : document.getElementById('error-fname'),
             lname                : document.getElementById('error-lname'),
@@ -93,8 +94,10 @@ var FinancialAccOpeningUI = (function() {
         ValidAccountOpening.checkPostcode(elementObj.postcode, errorObj.postcode);
 
         if (elementObj.residence.value === 'gb' && /^$/.test((elementObj.postcode.value).trim())) {
-            errorObj.postcode.innerHTML = Content.errorMessage('req');
-            Validate.displayErrorMessage(errorObj.postcode);
+            if (selectorExists(errorObj.postcode)) {
+                errorObj.postcode.innerHTML = Content.errorMessage('req');
+                Validate.displayErrorMessage(errorObj.postcode);
+            }
             window.accountErrorCounter++;
         }
 
@@ -129,7 +132,7 @@ var FinancialAccOpeningUI = (function() {
             return 1;
         }
         return 0;
-    }
+    };
 
     return {
         checkValidity: checkValidity,

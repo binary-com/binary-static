@@ -52,8 +52,8 @@
     }
     .xbubble-right {
         content: '';
-        width: 0px;
-        height: 0px;
+        width: 0;
+        height: 0;
         border-style: solid;
         @include BIDIR_VALUE(border-width, 25px 5px 0 10px, 25px 10px 0 5px);
         border-color: $COLOR_LIGHT_GRAY  transparent transparent transparent;
@@ -62,8 +62,8 @@
     }
     .xbubble-left {
         content: '';
-        width: 0px;
-        height: 0px;
+        width: 0;
+        height: 0;
         border-style: solid;
         @include BIDIR_VALUE(border-width, 25px 10px 0 5px, 25px 5px 0 10px);
         border-color: $COLOR_LIGHT_GRAY  transparent transparent transparent;

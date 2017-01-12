@@ -1,17 +1,20 @@
-var Contract_Beta              = require('./contract').Contract_Beta;
-var Content                    = require('../../../common_functions/content').Content;
-var format_money               = require('../../../common_functions/currency_to_symbol').format_money;
-var moment                     = require('moment');
-var contractTypeDisplayMapping = require('../common').contractTypeDisplayMapping;
-var resetPriceMovement         = require('../common').resetPriceMovement;
-var displayCommentPrice        = require('../common').displayCommentPrice;
-var displayCommentSpreads      = require('../common').displayCommentSpreads;
-var showPriceOverlay           = require('../common').showPriceOverlay;
-var displayPriceMovement       = require('../common_independent').displayPriceMovement;
-var getTradingTimes            = require('../common_independent').getTradingTimes;
-var getStartDateNode           = require('../common_independent').getStartDateNode;
-var Defaults                   = require('../defaults').Defaults;
-var isVisible                  = require('../../../common_functions/common_functions').isVisible;
+const Contract_Beta              = require('./contract').Contract_Beta;
+const Content                    = require('../../../common_functions/content').Content;
+const format_money               = require('../../../common_functions/currency_to_symbol').format_money;
+const moment                     = require('moment');
+const contractTypeDisplayMapping = require('../common').contractTypeDisplayMapping;
+const resetPriceMovement         = require('../common').resetPriceMovement;
+const displayCommentPrice        = require('../common').displayCommentPrice;
+const displayCommentSpreads      = require('../common').displayCommentSpreads;
+const showPriceOverlay           = require('../common').showPriceOverlay;
+const displayPriceMovement       = require('../common_independent').displayPriceMovement;
+const getTradingTimes            = require('../common_independent').getTradingTimes;
+const getStartDateNode           = require('../common_independent').getStartDateNode;
+const Defaults                   = require('../defaults').Defaults;
+const isVisible                  = require('../../../common_functions/common_functions').isVisible;
+const localize                   = require('../../../base/localize').localize;
+const Client                     = require('../../../base/client').Client;
+const elementTextContent         = require('../../../common_functions/common_functions').elementTextContent;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -26,18 +29,18 @@ var isVisible                  = require('../../../common_functions/common_funct
  * `socket.send(Price.proposal())` to send price proposal to sever
  * `Price.display()` to display the price details returned from server
  */
-var Price_Beta = (function() {
+const Price_Beta = (function() {
     'use strict';
 
-    var typeDisplayIdMapping = {},
+    let typeDisplayIdMapping = {},
         form_id = 0;
 
-    var createProposal = function(typeOfContract) {
-        var proposal = {
+    const createProposal = function(typeOfContract) {
+        const proposal = {
             proposal : 1,
             subscribe: 1,
         };
-        var underlying = document.getElementById('underlying'),
+        const underlying = document.getElementById('underlying'),
             contractType = typeOfContract,
             amountType = document.getElementById('amount_type'),
             currency = document.getElementById('currency'),
@@ -84,10 +87,10 @@ var Price_Beta = (function() {
             proposal.duration = parseInt(duration.value);
             proposal.duration_unit = durationUnit.value;
         } else if (expiryType && isVisible(expiryType) && expiryType.value === 'endtime') {
-            var endDate2 = endDate.getAttribute('data-value');
-            var endTime2 = Defaults.get('expiry_time');
+            const endDate2 = endDate.getAttribute('data-value');
+            let endTime2 = Defaults.get('expiry_time');
             if (!endTime2) {
-                var trading_times = getTradingTimes();
+                const trading_times = getTradingTimes();
                 if (trading_times.hasOwnProperty(endDate2) && typeof trading_times[endDate2][underlying.value] === 'object' && trading_times[endDate2][underlying.value].length && trading_times[endDate2][underlying.value][0] !== '--') {
                     if (trading_times[endDate2][underlying.value].length > 1) {
                         endTime2 = trading_times[endDate2][underlying.value][1];
@@ -147,17 +150,17 @@ var Price_Beta = (function() {
         return proposal;
     };
 
-    var display = function(details, contractType) {
-        var proposal = details.proposal;
-        var id = proposal ? proposal.id : '';
-        var params = details.echo_req;
+    const display = function(details, contractType) {
+        const proposal = details.proposal;
+        const id = proposal ? proposal.id : '';
+        const params = details.echo_req;
 
-        var type = params.contract_type;
+        let type = params.contract_type;
         if (id && !type) {
             type = typeDisplayIdMapping[id];
         }
 
-        var is_spread = false;
+        let is_spread = false;
         if (params.contract_type && (params.contract_type === 'SPREADU' || params.contract_type === 'SPREADD')) {
             is_spread = true;
         }
@@ -166,19 +169,19 @@ var Price_Beta = (function() {
             typeDisplayIdMapping[id] = type;
         }
 
-        var position = contractTypeDisplayMapping(type);
+        const position = contractTypeDisplayMapping(type);
 
         if (!position) {
             return;
         }
 
-        var container = document.getElementById('price_container_' + position);
+        const container = document.getElementById('price_container_' + position);
         if (!container) return;
         if (!$(container).is(':visible')) {
             $(container).fadeIn(200, function() { $(container).css('display', 'flex'); });
         }
 
-        var h4 = container.getElementsByClassName('contract_heading')[0],
+        const h4 = container.getElementsByClassName('contract_heading')[0],
             amount = container.getElementsByClassName('contract_amount')[0],
             payoutAmount = container.getElementsByClassName('contract_payout')[0],
             stake = container.getElementsByClassName('stake')[0],
@@ -189,30 +192,30 @@ var Price_Beta = (function() {
             error = container.getElementsByClassName('contract_error')[0],
             currency = document.getElementById('currency');
 
-        var display_type = type ? (contractType ? contractType[type] : '') : '';
+        const display_type = type ? (contractType ? contractType[type] : '') : '';
         if (display_type) {
             h4.setAttribute('class', 'contract_heading ' + type);
             if (is_spread) {
                 if (position === 'top') {
-                    h4.textContent = Content.localize().textSpreadTypeLong;
+                    elementTextContent(h4, Content.localize().textSpreadTypeLong);
                 } else {
-                    h4.textContent = Content.localize().textSpreadTypeShort;
+                    elementTextContent(h4, Content.localize().textSpreadTypeShort);
                 }
             } else {
-                h4.textContent = display_type;
+                elementTextContent(h4, display_type);
             }
         }
 
-        var setData = function(data) {
+        const setData = function(data) {
             if (!data) return;
             if (data.display_value) {
                 if (is_spread) {
                     $('.stake:visible').hide();
-                    amount.textContent = data.display_value;
+                    elementTextContent(amount, data.display_value);
                 } else {
                     $('.stake:hidden').show();
-                    stake.textContent = page.text.localize('Stake') + ': ';
-                    amount.textContent = format_money((currency.value || currency.getAttribute('value')), data.display_value);
+                    elementTextContent(stake, localize('Stake') + ': ');
+                    elementTextContent(amount, format_money((currency.value || currency.getAttribute('value')), data.display_value));
                 }
                 $('.stake_wrapper:hidden').show();
             } else {
@@ -220,14 +223,14 @@ var Price_Beta = (function() {
             }
 
             if (data.payout) {
-                payout.textContent = (is_spread ? page.text.localize('Payout/point') : page.text.localize('Payout')) + ': ';
-                payoutAmount.textContent = format_money((currency.value || currency.getAttribute('value')), +data.payout);
+                elementTextContent(payout, (is_spread ? localize('Payout/point') : localize('Payout')) + ': ');
+                elementTextContent(payoutAmount, format_money((currency.value || currency.getAttribute('value')), +data.payout));
                 $('.payout_wrapper:hidden').show();
             } else {
                 $('.payout_wrapper:visible').hide();
             }
 
-            if (data.longcode && window.innerWidth > 500 && !page.client_status_detected('unwelcome')) {
+            if (data.longcode && window.innerWidth > 500 && !Client.status_detected('unwelcome')) {
                 description.setAttribute('data-balloon', data.longcode);
             } else {
                 description.removeAttribute('data-balloon');
@@ -239,7 +242,7 @@ var Price_Beta = (function() {
             comment.hide();
             setData(details.error.details);
             error.show();
-            error.textContent = details.error.message;
+            elementTextContent(error, details.error.message);
         } else {
             setData(proposal);
             if ($('#websocket_form').find('.error-field').length > 0) {
@@ -254,7 +257,7 @@ var Price_Beta = (function() {
             } else {
                 displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
             }
-            var oldprice = purchase.getAttribute('data-display_value'),
+            const oldprice = purchase.getAttribute('data-display_value'),
                 oldpayout = purchase.getAttribute('data-payout');
             displayPriceMovement(amount, oldprice, proposal.display_value);
             displayPriceMovement(payoutAmount, oldpayout, proposal.payout);
@@ -271,34 +274,34 @@ var Price_Beta = (function() {
         }
     };
 
-    var clearMapping = function() {
+    const clearMapping = function() {
         typeDisplayIdMapping = {};
     };
 
-    var clearFormId = function() {
+    const clearFormId = function() {
         form_id = 0;
     };
 
     /*
      * Function to request for cancelling the current price proposal
      */
-    function processForgetProposals_Beta() {
+    const processForgetProposals_Beta = function() {
         showPriceOverlay();
         BinarySocket.send({
             forget_all: 'proposal',
         });
         Price_Beta.clearMapping();
-    }
+    };
 
     /*
      * Function to process and calculate price based on current form
      * parameters or change in form parameters
      */
-    function processPriceRequest_Beta() {
+    const processPriceRequest_Beta = function() {
         Price_Beta.incrFormId();
         processForgetProposals_Beta();
         showPriceOverlay();
-        var types = Contract_Beta.contractType()[Contract_Beta.form()];
+        let types = Contract_Beta.contractType()[Contract_Beta.form()];
         if (Contract_Beta.form() === 'digits') {
             switch (sessionStorage.getItem('formname')) {
                 case 'matchdiff':
@@ -324,7 +327,7 @@ var Price_Beta = (function() {
         Object.keys(types).forEach(function(typeOfContract) {
             BinarySocket.send(Price_Beta.proposal(typeOfContract));
         });
-    }
+    };
 
     return {
         proposal        : createProposal,

@@ -1,31 +1,33 @@
-var TradingAnalysis      = require('./analysis').TradingAnalysis;
-var displayCurrencies    = require('./currency').displayCurrencies;
-var Defaults             = require('./defaults').Defaults;
-var TradingEvents        = require('./event').TradingEvents;
-var Message              = require('./message').Message;
-var Notifications        = require('./notifications').Notifications;
-var Price                = require('./price').Price;
-var Symbols              = require('./symbols').Symbols;
-var forgetTradingStreams = require('./process').forgetTradingStreams;
-var Content              = require('../../common_functions/content').Content;
-var Guide                = require('../../common_functions/guide').Guide;
-var japanese_client      = require('../../common_functions/country_base').japanese_client;
-var State                = require('../../base/storage').State;
-var showPriceOverlay     = require('./common').showPriceOverlay;
-var showFormOverlay      = require('./common').showFormOverlay;
-var addEventListenerForm = require('./common').addEventListenerForm;
-var chartFrameCleanup    = require('./common').chartFrameCleanup;
+const TradingAnalysis      = require('./analysis').TradingAnalysis;
+const displayCurrencies    = require('./currency').displayCurrencies;
+const Defaults             = require('./defaults').Defaults;
+const TradingEvents        = require('./event').TradingEvents;
+const Message              = require('./message').Message;
+const Notifications        = require('./notifications').Notifications;
+const Price                = require('./price').Price;
+const Symbols              = require('./symbols').Symbols;
+const forgetTradingStreams = require('./process').forgetTradingStreams;
+const Content              = require('../../common_functions/content').Content;
+const Guide                = require('../../common_functions/guide').Guide;
+const japanese_client      = require('../../common_functions/country_base').japanese_client;
+const State                = require('../../base/storage').State;
+const showPriceOverlay     = require('./common').showPriceOverlay;
+const showFormOverlay      = require('./common').showFormOverlay;
+const addEventListenerForm = require('./common').addEventListenerForm;
+const chartFrameCleanup    = require('./common').chartFrameCleanup;
+const localize = require('../../base/localize').localize;
+const url_for  = require('../../base/url').url_for;
 
-var TradePage = (function() {
-    var events_initialized = 0;
+const TradePage = (function() {
+    let events_initialized = 0;
     State.remove('is_trading');
 
-    var onLoad = function() {
+    const onLoad = function() {
         if (japanese_client() && /\/trading\.html/i.test(window.location.pathname)) {
-            window.location.href = page.url.url_for('multi_barriers_trading');
+            window.location.href = url_for('multi_barriers_trading');
             return;
         } else if (!japanese_client() && /\/multi_barriers_trading\.html/.test(window.location.pathname)) {
-            window.location.href = page.url.url_for('trading');
+            window.location.href = url_for('trading');
             return;
         }
         State.set('is_trading', true);
@@ -58,23 +60,23 @@ var TradePage = (function() {
             addEventListenerForm();
         }
 
-    // Walktrough Guide
+        // Walk-through Guide
         Guide.init({
             script: 'trading',
         });
         TradingAnalysis.bindAnalysisTabEvent();
-        $('#tab_portfolio a').text(page.text.localize('Portfolio'));
-        $('#tab_graph a').text(page.text.localize('Chart'));
-        $('#tab_explanation a').text(page.text.localize('Explanation'));
-        $('#tab_last_digit a').text(page.text.localize('Last Digit Stats'));
+        $('#tab_portfolio').find('a').text(localize('Portfolio'));
+        $('#tab_graph').find('a').text(localize('Chart'));
+        $('#tab_explanation').find('a').text(localize('Explanation'));
+        $('#tab_last_digit').find('a').text(localize('Last Digit Stats'));
     };
 
-    var reload = function() {
+    const reload = function() {
         sessionStorage.removeItem('underlying');
         window.location.reload();
     };
 
-    var onUnload = function() {
+    const onUnload = function() {
         State.remove('is_trading');
         events_initialized = 0;
         forgetTradingStreams();
@@ -83,7 +85,7 @@ var TradePage = (function() {
         chartFrameCleanup();
     };
 
-    var onDisconnect = function() {
+    const onDisconnect = function() {
         showPriceOverlay();
         showFormOverlay();
         chartFrameCleanup();

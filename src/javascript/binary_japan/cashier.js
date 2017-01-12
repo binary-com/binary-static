@@ -1,13 +1,15 @@
-var Content = require('../binary/common_functions/content').Content;
-var objectNotEmpty = require('../binary/base/utility').objectNotEmpty;
+const Content  = require('../binary/common_functions/content').Content;
+const localize = require('../binary/base/localize').localize;
+const Client   = require('../binary/base/client').Client;
 
-var CashierJP = (function() {
+const CashierJP = (function() {
     function init(action) {
-        if (objectNotEmpty(TUser.get())) {
-            var $container = $('#japan_cashier_container');
-            if (page.client.is_virtual()) {
-                $container.addClass('center-text').removeClass('invisible')
-                    .html($('<p/>', { class: 'notice-msg', html: page.text.localize('This feature is not relevant to virtual-money accounts.') }));
+        Content.populate();
+        if (Client.get_boolean('values_set')) {
+            const $container = $('#japan_cashier_container');
+            if (Client.get_boolean('is_virtual')) {
+                $container.addClass('center-text notice-msg').removeClass('invisible')
+                .text(Content.localize().featureNotRelevantToVirtual);
                 return;
             }
             $container.removeClass('invisible');
@@ -20,7 +22,7 @@ var CashierJP = (function() {
         } else {
             BinarySocket.init({
                 onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
+                    const response = JSON.parse(msg.data);
                     if (response && response.msg_type === 'authorize') {
                         CashierJP.init(action);
                     }
@@ -30,23 +32,24 @@ var CashierJP = (function() {
     }
     function set_name_id() {
         if (/deposit-jp/.test(window.location.pathname)) {
-            $('#name_id').text((page.user.loginid || 'JP12345') + ' ' + (page.user.first_name || 'Joe Bloggs'));
+            $('#name_id').text((Client.get_value('loginid') || 'JP12345') + ' ' + (Client.get_value('first_name') || 'Joe Bloggs'));
         }
     }
     function set_email_id() {
         if (/withdraw-jp/.test(window.location.pathname)) {
-            $('#id123-control22598118').val(page.client.loginid);
-            $('#id123-control22598060').val(TUser.get().email);
+            $('#id123-control22598118').val(Client.get_value('loginid'));
+            $('#id123-control22598060').val(Client.get_value('email'));
         }
     }
     function error_handler() {
         $('.error-msg').remove();
-        var withdrawal_amount = $('#id123-control22598145').val();
+        const $id = $('#id123-control22598145');
+        const withdrawal_amount = $id.val();
         if (!/^([1-9][0-9]{0,5}|1000000)$/.test(withdrawal_amount)) {
-            $('#id123-control22598145').parent().append('<p class="error-msg">' + Content.errorMessage('number_should_between', '¥1 - ¥1,000,000') + '</p>');
+            $id.parent().append('<p class="error-msg">' + Content.errorMessage('number_should_between', '¥1 - ¥1,000,000') + '</p>');
             return false;
-        } else if (parseInt(TUser.get().balance) < withdrawal_amount) {
-            $('#id123-control22598145').parent().append('<p class="error-msg">' + page.text.localize('Insufficient balance.') + '</p>');
+        } else if (parseInt(Client.get_value('balance')) < withdrawal_amount) {
+            $id.parent().append('<p class="error-msg">' + localize('Insufficient balance.') + '</p>');
             return false;
         }
         return true;

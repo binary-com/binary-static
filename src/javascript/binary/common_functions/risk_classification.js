@@ -1,24 +1,26 @@
-var RiskClassification = (function() {
+const Client = require('../base/client').Client;
+
+const RiskClassification = (function() {
     'use strict';
 
-    var showRiskClassificationPopUp = function (content) {
+    const showRiskClassificationPopUp = function (content) {
         if ($('#risk_classification').length > 0) {
             return;
         }
-        var lightboxDiv = $("<div id='risk_classification' class='lightbox'></div>");
+        const lightboxDiv = $("<div id='risk_classification' class='lightbox'></div>");
 
-        var wrapper = $('<div></div>');
+        let wrapper = $('<div></div>');
         wrapper = wrapper.append(content);
         wrapper = $('<div></div>').append(wrapper);
         wrapper.appendTo(lightboxDiv);
         lightboxDiv.appendTo('body');
     };
 
-    var cleanup = function () {
+    const cleanup = function () {
         localStorage.removeItem('risk_classification');
         localStorage.removeItem('risk_classification.response');
         $('#risk_classification').remove();
-        page.client.check_tnc();
+        Client.check_tnc();
     };
 
     return {

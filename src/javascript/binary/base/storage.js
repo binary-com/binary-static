@@ -1,12 +1,11 @@
-var template = require('./utility').template;
-var Cookies  = require('../../lib/js-cookie');
+const Cookies  = require('../../lib/js-cookie');
 
-var isStorageSupported = function(storage) {
+const isStorageSupported = function(storage) {
     if (typeof storage === 'undefined') {
         return false;
     }
 
-    var testKey = 'test';
+    const testKey = 'test';
     try {
         storage.setItem(testKey, '1');
         storage.removeItem(testKey);
@@ -16,7 +15,7 @@ var isStorageSupported = function(storage) {
     }
 };
 
-var Store = function(storage) {
+const Store = function(storage) {
     this.storage = storage;
 };
 
@@ -37,7 +36,7 @@ Store.prototype = {
     },
 };
 
-var InScriptStore = function(object) {
+const InScriptStore = function(object) {
     this.store = typeof object !== 'undefined' ? object : {};
 };
 
@@ -50,12 +49,12 @@ InScriptStore.prototype = {
     keys  : function()           { return Object.keys(this.store); },
 };
 
-var State = new InScriptStore();
+const State = new InScriptStore();
 
-var CookieStorage = function (cookie_name, cookie_domain) {
+const CookieStorage = function (cookie_name, cookie_domain) {
     this.initialized = false;
     this.cookie_name = cookie_name;
-    var hostname = window.location.hostname;
+    const hostname = window.location.hostname;
     this.domain = cookie_domain || (/\.binary\.com/i.test(hostname) ? '.' + hostname.split('.').slice(-2).join('.') : hostname);
     this.path = '/';
     this.expires = new Date('Thu, 1 Jan 2037 12:00:00 GMT');
@@ -64,7 +63,7 @@ var CookieStorage = function (cookie_name, cookie_domain) {
 
 CookieStorage.prototype = {
     read: function() {
-        var cookie_value = Cookies.get(this.cookie_name);
+        const cookie_value = Cookies.get(this.cookie_name);
         try {
             this.value = cookie_value ? JSON.parse(cookie_value) : {};
         } catch (e) {
@@ -104,24 +103,34 @@ CookieStorage.prototype = {
     },
 };
 
-var Localizable = function(hash) {
-    this.texts = typeof hash !== 'undefined' ? hash : {};
-};
+let SessionStore,
+    LocalStore;
+if (typeof window !== 'undefined' && isStorageSupported(window.localStorage)) {
+    LocalStore = new Store(window.localStorage);
+}
 
-Localizable.prototype = {
-    localize: function(text, params) {
-        var index = text.replace(/[\s|.]/g, '_');
-        text = this.texts[index] || text;
-        // only do templating when explicitly required
-        return params ? template(text, params) : text;
-    },
-};
+if (typeof window !== 'undefined' && isStorageSupported(window.sessionStorage)) {
+    if (!LocalStore) {
+        LocalStore = new Store(window.sessionStorage);
+    }
+    SessionStore = new Store(window.sessionStorage);
+}
+
+if (!SessionStore || !LocalStore) {
+    if (!LocalStore) {
+        LocalStore = new InScriptStore();
+    }
+    if (!SessionStore) {
+        SessionStore = new InScriptStore();
+    }
+}
 
 module.exports = {
     isStorageSupported: isStorageSupported,
     Store             : Store,
     InScriptStore     : InScriptStore,
     CookieStorage     : CookieStorage,
-    Localizable       : Localizable,
     State             : State,
+    SessionStore      : SessionStore,
+    LocalStore        : LocalStore,
 };

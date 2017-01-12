@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-27 19:36+0000\n"
+"PO-Revision-Date: 2017-01-10 22:55+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -222,7 +222,7 @@ msgstr "ソーシャルメディアへの取り組みの強化と積極的な管
 msgid "%1 seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world."
 msgstr "当社では、世界中の顧客と潜在顧客との良好な関係を積極的に構築するコンテンツの制作に感覚の鋭いコピーライターを必要としています。"
 
-msgid "%1 supports the <a target='_blank' href='http://about.gambleaware.org/'>GambleAware</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
+msgid "%1 supports %2 which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgstr "%1は、ギャンブルに関連する害を最小限にすることを約束している英国の大手慈善団体<a target='_blank' href='http://about.gambleaware.org/'>「責任ある賭博基金」(RGT, Responsible Gambling Trust)</a>をサポートしています。RGT資金教育、予防と治療のサービスや手数料の調査は、ギャンブルに関する害についてより理解するのに役立ちます。また、機密なアドバイスや感情的なサポートをしている全国ギャンブルヘルプラインも提供しています。"
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
@@ -326,7 +326,7 @@ msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "eGaming Reviewから「最優秀取引業者」を受賞"
 
 msgid "'Matches' - You win when the last digit of the last tick matches your prediction."
-msgstr "「Matches」 – 最後のTickの下一桁が予測した数字とマッチした場合に条件が満たされます。"
+msgstr "「MATCH」 – 最後のTickの下一桁が予測した数字とマッチした場合に条件が満たされます。"
 
 msgid "(Bejing/CST -8 hours)"
 msgstr "(北京/CST -8時間)"
@@ -872,15 +872,11 @@ msgstr "口座振替"
 msgid "Account balance: "
 msgstr "口座残高： "
 
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">当社までお問い合わせ</a>ください。"
+msgstr "年齢確認が必要です。詳細は<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までご連絡ください。"
 
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">当社までお問い合わせ</a>ください。"
+msgstr "口座が無効になっています。詳細については<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
 
 msgid "Accounting"
 msgstr "会計"
@@ -1038,8 +1034,8 @@ msgstr "積極的であり、販売志向型の性格、そして迅速な適応
 msgid "An error occured."
 msgstr "エラーが発生しました"
 
-msgid "Analyse and test our website for bugs and potential security issues."
-msgstr "当ウェブサイトのバグまたは考えられるセキュリティ問題への分析とテスト"
+msgid "Analyse and test the domains and subdomains listed in the scope."
+msgstr "スコープに記載されているドメインとサブドメインの分析とテスト"
 
 msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
 msgstr "広範囲の指標、価格帯、オーバーレイで市場を分析"
@@ -1623,10 +1619,8 @@ msgstr "入出金"
 msgid "Cashier Password"
 msgstr "入出金パスワード"
 
-#, fuzzy
-#| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">当社までお問い合わせ</a>ください。"
+msgstr "出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
 
 msgid "Cashier password"
 msgstr "入出金パスワード"
@@ -2202,10 +2196,8 @@ msgstr "%1 %2のバーチャルマネーをアカウント%3へ入金する"
 msgid "Deposit Bonus"
 msgstr "ご入金された場合に付与されるボーナスについて"
 
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">当社までお問い合わせ</a>ください。"
+msgstr "出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までご連絡ください。"
 
 msgid "Deposit of"
 msgstr "Xのご入金"
@@ -2765,10 +2757,8 @@ msgstr "金融資産"
 msgid "Financial Information"
 msgstr "金融情報"
 
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "出金アクションにロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">当社までお問い合わせ</a>ください。"
+msgstr "金融リスクの商品が必要です。詳細については<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
 
 msgid "Financial Security"
 msgstr "安心できる資金保全"
@@ -3124,7 +3114,7 @@ msgid "I have read and agree to the"
 msgstr "私は一読したうえで、同意します。"
 
 msgid "I hereby agree and accept that all documents such as pre-contract forms, all terms and conditions, trade reports and other legally required materials will be issued in electronic format only."
-msgstr "電子交付への同意：契約締結前交付書面、取引約款、取引報告書、取引残高報告書、証拠金受領書等の書類が電子交付されることに同意します。"
+msgstr "電子交付への同意：契約締結前交付書面、取引約款、取引報告書、取引残高報告書、証拠金受領書、契約締結時交付書面等の書類が電子交付されることに同意します。"
 
 msgid "I understand and agree that, with regard to over-the-counter binary option trading, I have read and understand the general conditions and mechanisms for trading the contract, including details of the underlying financial index, before committing to a transaction."
 msgstr "本取引により想定される損失額（中途売却または解約した場合の解約清算金（試算額）を含む。）を踏まえ、お客さまが許容できる損失額及びお客さまの資産の状況への影響に照らして、お客さま自身が取引できる契約内容であることを確認したこと。（契約締結前交付書面「序文」参照）"
@@ -3204,6 +3194,9 @@ msgstr "もし、確定したいのならご心配いりません。お客さま
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
 msgstr "お客さまによっては迷惑メールフォルダーに入る場合もありますので、あわせてご確認ください。"
 
+msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
+msgstr "当社の<a target='_blank' href='%1'>オープンソースコード</a>で脆弱性を発見されましたら、お気軽にGitHubでプルリクエストをしてください。"
+
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "当社が求めるスキルをお持ちでしたら、バイナリーオプショントレーディングシステムの運営に従事している、新たな高みを目指す非常に有能なフロントエンド開発チームの貴重な一員になれます。"
 
@@ -3226,7 +3219,7 @@ msgid "If you select \"Asian Rise\", you will win the payout if the <strong>last
 msgstr "「Asian アップ」を選択された場合、<strong>最後のTick</strong>が平均のTickよりも<strong>高い</strong>とペイアウトを獲得いただけます。"
 
 msgid "If you select \"Differs\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>not the same</strong> as your <strong>prediction</strong>."
-msgstr "「アンマッチ」を選択された場合、最後のtickの<strong>下一桁</strong>がお客さまの<strong>予測</strong>と違うとペイアウトを獲得いただけます。"
+msgstr "「DIFFER」を選択された場合、最後のtickの<strong>下一桁</strong>がお客さまの<strong>予測</strong>と違うとペイアウトを獲得いただけます。"
 
 msgid "If you select \"Does Not Touch\", you win the payout if the market never touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "「NO-TOUCH」を選択された場合、<strong>取引期間が終了</strong>まで市場価格が<strong>バリア</strong>設定した価格にタッチしなければペイアウトを受け取れます。"
@@ -3253,7 +3246,7 @@ msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</str
 msgstr "「LOW」を選択された場合、 判定時刻の時点で<strong>判定レート</strong>が<strong>バリア価格</strong>未満の場合、ペイアウトを受け取れます。"
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
-msgstr "「マッチ」を選択された場合、最後のtickの<strong>下一桁</strong>が<strong>推測された数字</strong>と<strong>同じ</strong>であるとペイアウトを獲得いただけます。"
+msgstr "「MATCH」を選択された場合、最後のtickの<strong>下一桁</strong>が<strong>推測された数字</strong>と<strong>同じ</strong>であるとペイアウトを獲得いただけます。"
 
 msgid "If you select \"Odd\", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>odd number (i.e., 1, 3, 5, 7, or 9).</strong>"
 msgstr "「奇数」を選択された場合、最後のtickの<strong>下一桁</strong>が<strong>奇数（例：1、3、5、7、9）</strong>であるとペイアウトを獲得いただけます。"
@@ -4347,7 +4340,7 @@ msgid "Marketing and Promotion"
 msgstr "マーケティング＆プロモーション"
 
 msgid "Matches/Differs"
-msgstr "マッチ/アンマッチ"
+msgstr "MATCH/DIFFER"
 
 msgid "Max:"
 msgstr "最大："
@@ -4371,7 +4364,7 @@ msgid "Maximum aggregate loss over a 7-day period."
 msgstr "7日間の最大損失 (半角)"
 
 msgid "Maximum aggregate loss per day."
-msgstr "1日あたりの最大損失 (半角)"
+msgstr "1日あたりの最大損失額【1円単位】例 10万円の場合は100000 (半角)"
 
 msgid "Maximum aggregate payouts on open positions"
 msgstr "未現実利益限度額"
@@ -5461,7 +5454,7 @@ msgid "Regent Markets sets up a programming centre in Cyberjaya, Malaysia"
 msgstr "Regent Marketsは、サイバージャヤ（マレーシア）に開発センターを設立"
 
 msgid "Regent Pacific Group Ltd., the Hong Kong-listed founding shareholder of %1, <a href='%2' target='_blank'>disposes of its stake</a> at a valuation of US$ 50.5 million."
-msgstr "%1の大株主で香港取引所に上場しているRegent Pacific Group Ltd は<a href=\"%1\" target=\"_blank\">保有する当社の株式US$ 5,050万</a> をすべて売却しました。"
+msgstr "%1の大株主で香港取引所に上場しているRegent Pacific Group Ltd は<a href=\"%2\" target=\"_blank\">保有する当社の株式US$ 5,050万</a> をすべて売却しました。"
 
 msgid "Regent Pacific transaction"
 msgstr "Regent Pacific株式売却"
@@ -5671,6 +5664,9 @@ msgstr "セキュリティに関する免責事項"
 msgid "Security Statement"
 msgstr "個人情報と取引情報の秘匿性について"
 
+msgid "Security Testing"
+msgstr "セキュリティテスト"
+
 msgid "Security and Privacy"
 msgstr "口座開設時確認書類"
 
@@ -5854,6 +5850,9 @@ msgstr "ソフトウェア（Perl）開発"
 msgid "Sorry, account opening is unavailable."
 msgstr "申し訳ございませんが、口座開設をご利用いただけません。"
 
+msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
+msgstr "申し訳ございませんが、お客様の国では口座の開設ができません。詳細については<a href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
+
 msgid "Sorry, an error occurred while processing your account."
 msgstr "通信エラーが発生しましたので、再度ページの読み込みをしてください"
 
@@ -5868,6 +5867,9 @@ msgstr "申し訳ございませんが、この機能はご利用いただけま
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "申し訳ございませんが、ご入力頂いた入出金パスワードに誤りがあります"
+
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "申し訳ございませんが、これ以上のトレードの購入を可能にする権限がお客さまのご口座に存在しておりません。"
 
 msgid "Spam - We do not condone Spam"
 msgstr "スパム行為への対処について"
@@ -6010,8 +6012,8 @@ msgstr "クライアントの注文が実行される際に、お客さまによ
 msgid "Submit"
 msgstr "送信"
 
-msgid "Submit a report on HackerOne, or a pull-request in GitHub with a suggested fix."
-msgstr "HackerOneに報告いただくか、GitHubのプルリクエストに修正案をご提出ください。"
+msgid "Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue."
+msgstr "潜在的なセキュリティ問題を発見されましたら、問題解決の提案と共にHackerOneにて報告をお願いします。"
 
 msgid "Submit your CV and Cover Letter"
 msgstr "履歴書とカバーレターを提出してください"
@@ -7153,9 +7155,6 @@ msgstr "デモ口座で当社プラットフォームでのトレードを練習
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr "マーケティング、実証、当顧客にアプリケーションを利用させることを目的としたコンテンツとアプリケーションの使用、実行、表示    "
 
-msgid "User Testing"
-msgstr "ユーザーテスト"
-
 msgid "Using our website, customers can trade currencies, indices, stocks and commodities 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
 msgstr "当WEBブラウザ版取引画面上で、お客さまは最も柔軟な価格設定でバイナリーオプション取引が祝日を含む平日24時間可能です。"
 
@@ -7642,10 +7641,8 @@ msgstr "出金限度額"
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "お客様の口座の出金手続きは現在許可されていません。解除するには%1までご連絡ください。"
 
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "出金アクションにロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">当社までお問い合わせ</a>ください。"
+msgstr "出金アクションにロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
 
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr "取引プラットフォームの価格を扱うソフトウェア開発に携わるチームのメンバーと緊密に連携します。"
@@ -7721,9 +7718,6 @@ msgstr "アフィリエイト会員は獲得会員にアフィリエイト報酬
 
 msgid "You are not allowed to store any Content (such as feed data)."
 msgstr "コンテンツの格納が許可されていません（データフィードなど）。"
-
-msgid "You are not authorized for withdrawal via payment agent."
-msgstr "お客さまは決済サービスでのご出金が許可されていません。"
 
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "いかなる状況下において当社からの補償または償還を受ける権利はありません。"
@@ -7835,10 +7829,8 @@ msgstr "ボーナス金額の２５倍に相当する取引高を達成された
 msgid "You must accept the terms and conditions to open an account."
 msgstr "ご口座を開設されるにあたりご利用規約に承諾しなければなりません。"
 
-#, fuzzy
-#| msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
 msgid "You must complete the knowledge test to activate this account. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "口座の認証はまだ完了しておりません。詳細に関しましては<a class=\"pjaxload\" href=\"%1\">認証</a> ページをご覧ください。"
+msgstr "口座を有効にするには、知識確認テストを行っていただく必要があります。詳細については<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
 
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "%1 APIのご使用にあたり、これらの規約を遵守していただく必要があります。"
@@ -7977,10 +7969,8 @@ msgstr "お客さまのご口座はアップグレード済みですので、ご
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "お客様のご口座はアップグレード済みです。トレードの上限条件を<a class=\"pjaxload\" href=\"%1\">こちらから</a>ご確認頂けます。"
 
-#, fuzzy
-#| msgid "Client is not fully authenticated."
 msgid "Your account is not fully authenticated."
-msgstr "クライアントは完全に許可されていません。"
+msgstr "お客様の口座認証はまだ完了していません。"
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr ""
@@ -8835,17 +8825,11 @@ msgstr "2016/12/20"
 msgid "{JAPAN ONLY}JSA_Date_2"
 msgstr "2016/12/20"
 
-msgid "{JAPAN ONLY}JSA_Date_3"
-msgstr "-"
-
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
 msgstr "12月23日(金)、1月2日(月)は入出金及びカスタマーサポートの対応を終日お休みさせて頂きます"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
 msgstr "12月30日(金)最終営業の入出金及びカスタマーサポートの受付時間は15時までとさせて頂きます"
-
-msgid "{JAPAN ONLY}JSA_Explanation_1_3)"
-msgstr "-"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
 msgstr "26日の銀行振込からのご入金は、翌日27日に口座へ反映されます<br>26日の出金依頼は、翌27日以降の着金となります"
@@ -8856,23 +8840,11 @@ msgstr "12月30日以降のご入金は2017年1月4日以降口座に反映さ�
 msgid "{JAPAN ONLY}JSA_Explanation_2_3)"
 msgstr "12月31日(土)から1月3日(火)の期間は、国内金融機関（店舗）が休業のため、入出金サービスをご利用頂けません"
 
-msgid "{JAPAN ONLY}JSA_Explanation_3_1)"
-msgstr "-"
-
-msgid "{JAPAN ONLY}JSA_Explanation_3_2)"
-msgstr "-"
-
-msgid "{JAPAN ONLY}JSA_Explanation_3_3)"
-msgstr "-"
-
 msgid "{JAPAN ONLY}JSA_Title_1"
 msgstr "重要：年末年始の営業スケジュールに関するご案内"
 
 msgid "{JAPAN ONLY}JSA_Title_2"
 msgstr "重要：年末年始の入出金スケジュールに関するご案内"
-
-msgid "{JAPAN ONLY}JSA_Title_3"
-msgstr "-"
 
 msgid "{JAPAN ONLY}Japan Service Announcements"
 msgstr "お知らせ"
@@ -9365,9 +9337,6 @@ msgstr "チャリティー"
 msgid "Open-Source Projects"
 msgstr "オープンソースプロジェクト"
 
-msgid "Sign Up to Test Our Platform"
-msgstr "プラットフォームを試すために会員登録をする"
-
 msgid "Types of Trades"
 msgstr "トレードの種類"
 
@@ -9400,6 +9369,36 @@ msgstr "ご口座の詳細情報"
 
 msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
+
+#~ msgid "You are not authorized for withdrawal via payment agent."
+#~ msgstr "お客さまは決済サービスでのご出金が許可されていません。"
+
+#~ msgid "Analyse and test our website for bugs and potential security issues."
+#~ msgstr "当ウェブサイトのバグまたは考えられるセキュリティ問題への分析とテスト"
+
+#~ msgid "Submit a report on HackerOne, or a pull-request in GitHub with a suggested fix."
+#~ msgstr "HackerOneに報告いただくか、GitHubのプルリクエストに修正案をご提出ください。"
+
+#~ msgid "{JAPAN ONLY}JSA_Date_3"
+#~ msgstr "-"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_1_3)"
+#~ msgstr "-"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_1)"
+#~ msgstr "-"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_2)"
+#~ msgstr "-"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_3)"
+#~ msgstr "-"
+
+#~ msgid "{JAPAN ONLY}JSA_Title_3"
+#~ msgstr "-"
+
+#~ msgid "Sign Up to Test Our Platform"
+#~ msgstr "プラットフォームを試すために会員登録をする"
 
 #~ msgid "Authenticate your account"
 #~ msgstr "お客さまのアカウント認証"
@@ -11153,9 +11152,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
 #~ msgstr "申し訳ございませんが、口座残高は最大%2です。現在の口座現金残高は%1のため、制限を超えています。"
-
-#~ msgid "Sorry, your account is not authorised for any further contract purchases."
-#~ msgstr "申し訳ございませんが、これ以上のトレードの購入を可能にする権限がお客さまのご口座に存在しておりません。"
 
 #~ msgid "Sorry, your currency of %1 is unavailable for Payment Agent Withdrawal"
 #~ msgstr "申し訳ございません。%1の通貨は決済サービスでのご出金にご利用いただけません。"

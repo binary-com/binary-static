@@ -1,18 +1,19 @@
-var Tick                      = require('../tick').Tick;
-var ViewPopupUI               = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
-var moment                    = require('moment');
-var Content                   = require('../../../common_functions/content').Content;
-var isVisible                 = require('../../../common_functions/common_functions').isVisible;
-var addComma                  = require('../../../common_functions/string_util').addComma;
-var updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
-var label_value               = require('../common').label_value;
-var Highcharts                = require('highcharts');
+const Tick                      = require('../tick').Tick;
+const ViewPopupUI               = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
+const moment                    = require('moment');
+const Content                   = require('../../../common_functions/content').Content;
+const isVisible                 = require('../../../common_functions/common_functions').isVisible;
+const addComma                  = require('../../../common_functions/string_util').addComma;
+const updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
+const label_value               = require('../common').label_value;
+const localize                  = require('../../../base/localize').localize;
+const Highcharts                = require('highcharts');
 require('highcharts/modules/exporting')(Highcharts);
 
-var TickDisplay_Beta = (function() {
+const TickDisplay_Beta = (function() {
     return {
         initialize: function(data) {
-            var $self = this;
+            const $self = this;
 
             // setting up globals
             $self.number_of_ticks      = parseInt(data.number_of_ticks);
@@ -27,14 +28,14 @@ var TickDisplay_Beta = (function() {
             $self.show_contract_result = data.show_contract_result;
             $self.is_trading_page      = data.is_trading_page;
             $self.contract_sentiment   = data.contract_sentiment;
-            var tick_frequency         = 5;
+            const tick_frequency         = 5;
 
             if (data.show_contract_result) {
                 $self.price = parseFloat(data.price);
                 $self.payout = parseFloat(data.payout);
             }
 
-            var minimize = data.show_contract_result;
+            const minimize = data.show_contract_result;
 
             $self.set_x_indicators();
             $self.initialize_chart({
@@ -46,9 +47,9 @@ var TickDisplay_Beta = (function() {
             });
         },
         set_x_indicators: function() {
-            var $self = this;
+            const $self = this;
 
-            var exit_tick_index = $self.number_of_ticks - 1;
+            const exit_tick_index = $self.number_of_ticks - 1;
             if ($self.contract_category.match('asian')) {
                 $self.ticks_needed = $self.number_of_ticks;
                 $self.x_indicators = {
@@ -81,10 +82,10 @@ var TickDisplay_Beta = (function() {
             }
         },
         initialize_chart: function(config) {
-            var $self = this,
+            const $self = this,
                 is_start_on_first_tick = $self.contract_category.match('digits|asian');
 
-            var chart_options = {
+            const chart_options = {
                 chart: {
                     type           : 'line',
                     renderTo       : 'tick_chart',
@@ -97,9 +98,9 @@ var TickDisplay_Beta = (function() {
                 credits: { enabled: false },
                 tooltip: {
                     formatter: function () {
-                        var that = this;
-                        var new_y = that.y.toFixed($self.display_decimals);
-                        var mom = moment.utc($self.applicable_ticks[that.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
+                        const that = this;
+                        const new_y = that.y.toFixed($self.display_decimals);
+                        const mom = moment.utc($self.applicable_ticks[that.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
                         return mom + '<br/>' + $self.display_symbol + ' ' + new_y;
                     },
                     crosshairs: [true],
@@ -120,7 +121,7 @@ var TickDisplay_Beta = (function() {
                         zIndex: 1,
                     },
                     title: {
-                        text: page.text.localize('Tick'),
+                        text: localize('Tick'),
                     },
                 },
                 yAxis: {
@@ -140,13 +141,15 @@ var TickDisplay_Beta = (function() {
                 legend   : { enabled: false },
             };
             // Trading page's chart
-            function show_values(tick, time, price) {
-                $('#contract_purchase_profit_list #chart-values').css('display', 'flex');
-                $('#contract_purchase_profit_list #contract-values').css('display', 'none');
+            const show_values = function(tick, time, price) {
+                $('#contract_purchase_profit_list').find('#chart-values')
+                                                        .css('display', 'flex').end()
+                                                   .find('#contract-values')
+                                                        .css('display', 'none');
                 $('#chart_values_tick_value').text(tick);
                 $('#chart_values_time_value').text(time);
                 $('#chart_values_price_value').text(price);
-            }
+            };
             if ($self.is_trading_page) {
                 $.extend(true, chart_options, {
                     chart: {
@@ -156,15 +159,16 @@ var TickDisplay_Beta = (function() {
                         style: { display: 'none' },
 
                         formatter: function () {
-                            var that  = this,
+                            const that  = this,
                                 time  = moment.utc($self.applicable_ticks[that.x].epoch * 1000).format('HH:mm:ss'),
                                 price = addComma(that.y, $self.display_decimals);
                             show_values(+that.x + (is_start_on_first_tick ? 1 : 0), time, price);
                         },
                         events: {
                             hide: function () {
-                                $('#contract_purchase_profit_list #chart-values').hide();
-                                $('#contract_purchase_profit_list #contract-values').show();
+                                $('#contract_purchase_profit_list').find('#chart-values').hide().end()
+                                                                   .find(' #contract-values')
+                                                                        .show();
                             },
                         },
                     },
@@ -195,11 +199,11 @@ var TickDisplay_Beta = (function() {
             });
         },
         apply_chart_background_color: function(tick) {
-            var $self = this;
+            const $self = this;
             if (!$self.show_contract_result) {
                 return;
             }
-            var chart_container = $('#tick_chart');
+            const chart_container = $('#tick_chart');
             if ($self.contract_sentiment === 'up') {
                 if (tick.quote > $self.contract_barrier) {
                     chart_container.css('background-color', 'rgba(46,136,54,0.198039)');
@@ -215,21 +219,21 @@ var TickDisplay_Beta = (function() {
             }
         },
         add_barrier: function() {
-            var $self = this;
+            const $self = this;
 
             if (!$self.set_barrier) {
                 return;
             }
 
-            var barrier_type = $self.contract_category.match('asian') ? 'asian' : 'static',
+            const barrier_type = $self.contract_category.match('asian') ? 'asian' : 'static',
                 line_color   = $self.is_trading_page ? '#6b8fb9' : 'green',
                 line_width   = $self.is_trading_page ? 1 : 2;
 
             if (barrier_type === 'static') {
-                var barrier_tick = $self.applicable_ticks[0];
+                const barrier_tick = $self.applicable_ticks[0];
 
                 if ($self.barrier) {
-                    var final_barrier = barrier_tick.quote + parseFloat($self.barrier);
+                    let final_barrier = barrier_tick.quote + parseFloat($self.barrier);
                     // sometimes due to rounding issues, result is 1.009999 while it should
                     // be 1.01
                     final_barrier = Number(Math.round(final_barrier + 'e' + $self.display_decimals) + 'e-' + $self.display_decimals);
@@ -256,11 +260,11 @@ var TickDisplay_Beta = (function() {
             }
 
             if (barrier_type === 'asian') {
-                var total = 0;
-                for (var i = 0; i < $self.applicable_ticks.length; i++) {
+                let total = 0;
+                for (let i = 0; i < $self.applicable_ticks.length; i++) {
                     total += parseFloat($self.applicable_ticks[i].quote);
                 }
-                var calc_barrier =  total / $self.applicable_ticks.length;
+                let calc_barrier =  total / $self.applicable_ticks.length;
                 calc_barrier = calc_barrier.toFixed(parseInt($self.display_decimals) + 1); // round calculated barrier
 
                 $self.chart.yAxis[0].removePlotLine('tick-barrier');
@@ -277,14 +281,14 @@ var TickDisplay_Beta = (function() {
                 });
                 $self.contract_barrier = calc_barrier;
             }
-            var barrier = document.getElementById('contract_purchase_barrier');
+            const barrier = document.getElementById('contract_purchase_barrier');
             if ($self.contract_barrier && barrier) {
                 label_value(barrier, Content.localize().textBarrier,
                     addComma($self.contract_barrier, $self.display_decimals), true);
             }
         },
         add: function(indicator) {
-            var $self = this;
+            const $self = this;
 
             $self.chart.xAxis[0].addPlotLine({
                 value : indicator.index,
@@ -296,14 +300,14 @@ var TickDisplay_Beta = (function() {
             });
         },
         evaluate_contract_outcome: function() {
-            var $self = this;
+            const $self = this;
 
             if (!$self.contract_barrier) {
                 return; // can't do anything without barrier
             }
 
-            var exit_tick_index = $self.applicable_ticks.length - 1;
-            var exit_spot = $self.applicable_ticks[exit_tick_index].quote;
+            const exit_tick_index = $self.applicable_ticks.length - 1;
+            const exit_spot = $self.applicable_ticks[exit_tick_index].quote;
 
             if ($self.contract_sentiment === 'up') {
                 if (exit_spot > $self.contract_barrier) {
@@ -320,14 +324,14 @@ var TickDisplay_Beta = (function() {
             }
         },
         win: function() {
-            var $self = this;
+            const $self = this;
 
-            var profit = $self.payout - $self.price;
-            $self.update_ui($self.payout, profit, page.text.localize('This contract won'));
+            const profit = $self.payout - $self.price;
+            $self.update_ui($self.payout, profit, localize('This contract won'));
         },
         lose: function() {
-            var $self = this;
-            $self.update_ui(0, -$self.price, page.text.localize('This contract lost'));
+            const $self = this;
+            $self.update_ui(0, -$self.price, localize('This contract lost'));
         },
         to_monetary_format: function(number) {
             return number.toFixed(2);
@@ -335,9 +339,9 @@ var TickDisplay_Beta = (function() {
     };
 })();
 
-var WSTickDisplay_Beta = Object.create(TickDisplay_Beta);
+const WSTickDisplay_Beta = Object.create(TickDisplay_Beta);
 WSTickDisplay_Beta.plot = function() {
-    var $self = this;
+    const $self = this;
     $self.contract_start_moment = moment($self.contract_start_ms).utc();
     $self.counter = 0;
     $self.applicable_ticks = [];
@@ -353,8 +357,8 @@ WSTickDisplay_Beta.socketSend = function(req) {
     BinarySocket.send(req);
 };
 WSTickDisplay_Beta.dispatch = function(data) {
-    var $self = this;
-    var chart = document.getElementById('tick_chart');
+    const $self = this;
+    const chart = document.getElementById('tick_chart');
 
     if (!chart || !isVisible(chart) || !data || (!data.tick && !data.history)) {
         return;
@@ -366,7 +370,7 @@ WSTickDisplay_Beta.dispatch = function(data) {
         ViewPopupUI.storeSubscriptionID(window.responseID);
     }
 
-    var epoches,
+    let epoches,
         spots2,
         display_decimals;
     if (document.getElementById('sell_content_wrapper')) {
@@ -411,8 +415,8 @@ WSTickDisplay_Beta.dispatch = function(data) {
             BinarySocket.send({ forget: window.responseID });
         }
     } else {
-        for (var d = 0; d < epoches.length; d++) {
-            var tick;
+        for (let d = 0; d < epoches.length; d++) {
+            let tick;
             if (data.tick) {
                 tick = {
                     epoch: parseInt(epoches[d]),
@@ -430,7 +434,7 @@ WSTickDisplay_Beta.dispatch = function(data) {
                 $self.chart.series[0].addPoint([$self.counter, tick.quote], true, false);
                 $self.applicable_ticks.push(tick);
                 $self.spots_list[tick.epoch] = tick.quote;
-                var indicator_key = '_' + $self.counter;
+                const indicator_key = '_' + $self.counter;
                 if (typeof $self.x_indicators[indicator_key] !== 'undefined') {
                     $self.x_indicators[indicator_key].index = $self.counter;
                     $self.add($self.x_indicators[indicator_key]);
@@ -442,7 +446,7 @@ WSTickDisplay_Beta.dispatch = function(data) {
         }
 
         if ($self.is_trading_page) {
-            var is_up   = $self.contract_sentiment === 'up',
+            const is_up   = $self.contract_sentiment === 'up',
                 min     = $self.chart.yAxis[0].getExtremes().min,
                 max     = $self.chart.yAxis[0].getExtremes().max,
                 barrier = $self.contract_barrier;
@@ -475,7 +479,7 @@ WSTickDisplay_Beta.updateChart = function(data, contract) {
         window.tick_shortcode = contract.shortcode;
         window.contract_type = contract.contract_type;
         window.tick_init = '';
-        var request = {
+        const request = {
             ticks_history: contract.underlying,
             start        : contract.date_start,
             end          : 'latest',
@@ -494,7 +498,7 @@ WSTickDisplay_Beta.updateChart = function(data, contract) {
 
 // add tooltip events to highcharts
 Highcharts.wrap(Highcharts.Tooltip.prototype, 'hide', function (proceed) {
-    var tooltip = this.chart.options.tooltip;
+    const tooltip = this.chart.options.tooltip;
 
     // Run the original proceed method
     proceed.apply(this, Array.prototype.slice.call(arguments, 1));
@@ -505,7 +509,7 @@ Highcharts.wrap(Highcharts.Tooltip.prototype, 'hide', function (proceed) {
 });
 
 Highcharts.wrap(Highcharts.Tooltip.prototype, 'refresh', function (proceed) {
-    var tooltip = this.chart.options.tooltip;
+    const tooltip = this.chart.options.tooltip;
 
     // Run the original proceed method
     proceed.apply(this, Array.prototype.slice.call(arguments, 1));
