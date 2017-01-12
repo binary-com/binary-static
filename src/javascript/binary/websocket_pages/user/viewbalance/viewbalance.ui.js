@@ -21,7 +21,7 @@ const ViewBalanceUI = (function() {
         updateContractBalance(balance);
         $('.topMenuBalance').text(view)
             .css('visibility', 'visible');
-        Cashier.check_virtual_top_up();
+        Cashier.check_top_up_withdraw();
     };
 
     return {

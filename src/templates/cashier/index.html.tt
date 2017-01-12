@@ -36,11 +36,6 @@
     </div>
 
     <div class="gr-12 gr-padding-10 table-body">
-        <div class="gr-padding-10 invisible gr-parent">
-            <p class="notice-msg by_client_type client_real with_login_cookies">
-                [% l('Withdrawal is locked, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
-            </p>
-        </div>
         <div class="gr-padding-10">
             <h3>[% l('Bank-wire, credit card, e-cash wallet') %]</h3>
         </div>
