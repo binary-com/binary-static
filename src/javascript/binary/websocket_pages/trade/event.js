@@ -11,7 +11,6 @@ const processForgetTicks         = require('./process').processForgetTicks;
 const onExpiryTypeChange         = require('./process').onExpiryTypeChange;
 const onDurationUnitChange       = require('./process').onDurationUnitChange;
 const onlyNumericOnKeypress      = require('../../common_functions/event_handler').onlyNumericOnKeypress;
-const onlyNumericColonOnKeypress = require('../../common_functions/event_handler').onlyNumericColonOnKeypress;
 const moment                     = require('moment');
 const setFormPlaceholderContent  = require('./set_values').setFormPlaceholderContent;
 const isVisible                  = require('../../common_functions/common_functions').isVisible;
@@ -220,7 +219,7 @@ const TradingEvents = (function () {
             attachTimePicker();
             $('#expiry_time')
                 .on('focus click', attachTimePicker)
-                .on('keypress', onlyNumericColonOnKeypress)
+                .on('keypress', function(ev) { onlyNumericOnKeypress(ev, [58]); })
                 .on('change input blur', function () {
                     if (!dateValueChanged(this, 'time')) {
                         return false;
@@ -362,12 +361,14 @@ const TradingEvents = (function () {
          */
         const barrierElement = document.getElementById('barrier');
         if (barrierElement) {
-            barrierElement.addEventListener('input', debounce(function (e) {
-                Barriers.validateBarrier();
-                Defaults.set('barrier', e.target.value);
-                Price.processPriceRequest();
-                submitForm(document.getElementById('websocket_form'));
-            }, 1000));
+            $('#barrier')
+                .on('keypress', function(ev) { onlyNumericOnKeypress(ev, [43, 45, 46]); })
+                .on('input', debounce(function (e) {
+                    Barriers.validateBarrier();
+                    Defaults.set('barrier', e.target.value);
+                    Price.processPriceRequest();
+                    submitForm(document.getElementById('websocket_form'));
+                }, 1000));
         }
 
         /*

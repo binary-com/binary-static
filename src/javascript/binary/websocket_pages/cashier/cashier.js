@@ -1,5 +1,6 @@
 const japanese_client = require('../../common_functions/country_base').japanese_client;
 const Client   = require('../../base/client').Client;
+const Header   = require('../../base/header').Header;
 const url_for  = require('../../base/url').url_for;
 
 const Cashier = (function() {
@@ -27,7 +28,7 @@ const Cashier = (function() {
     };
 
     const check_virtual_top_up = function() {
-        if (Client.get_boolean('is_virtual')) {
+        if (is_cashier_page && Client.get_boolean('is_virtual')) {
             if ((Client.get_value('currency') !== 'JPY' && Client.get_value('balance') > 1000) ||
                 (Client.get_value('currency') === 'JPY' && Client.get_value('balance') > 100000)) {
                 replace_with_disabled_button('#VRT_topup_link');
@@ -39,14 +40,23 @@ const Cashier = (function() {
         const $a = $(elementToReplace);
         if ($a.length === 0) return;
         // use replaceWith, to disable previously caught pjax event
-        $a.replaceWith($('<a/>', { class: $a.attr('class').replace('pjaxload') + ' button-disabled', html: $a.html() }));
+        const new_element = { class: $a.attr('class').replace('pjaxload', 'button-disabled'), html: $a.html() },
+            id = $a.attr('id');
+
+        if (id) new_element.id = id;
+        $a.replaceWith($('<a/>', new_element));
     };
 
     const onLoad = function() {
-        if (/\/cashier\.html/.test(window.location.pathname) && Client.get_boolean('is_logged_in')) {
+        if (is_cashier_page && Client.get_boolean('is_logged_in')) {
             Cashier.check_locked();
             Cashier.check_virtual_top_up();
+            Header.topbar_message_visibility(Client.landing_company());
         }
+    };
+
+    const is_cashier_page = function () {
+        return /\/cashier\.html/.test(window.location.pathname);
     };
 
     const onLoadPaymentMethods = function() {

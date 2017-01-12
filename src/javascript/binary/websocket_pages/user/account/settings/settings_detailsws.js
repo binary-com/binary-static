@@ -144,7 +144,7 @@ const SettingsDetailsWS = (function() {
     };
 
     const populateStates = function(response) {
-        const $field = $(fieldIDs.state);
+        let $field = $(fieldIDs.state);
         const defaultValue = response.echo_req.passthrough.value;
         const states = response.states_list;
 
@@ -155,7 +155,8 @@ const SettingsDetailsWS = (function() {
                 $field.append($('<option/>', { value: state.value, text: state.text }));
             });
         } else {
-            $field.replaceWith($('<input/>', { id: fieldIDs.state, name: 'address_state', type: 'text', maxlength: '35' }));
+            $field.replaceWith($('<input/>', { id: fieldIDs.state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
+            $field = $(fieldIDs.state);
         }
 
         $field.val(defaultValue);
@@ -235,11 +236,11 @@ const SettingsDetailsWS = (function() {
             comma   = Content.localize().textComma;
 
         const V2 = ValidateV2;
-        const isAddress  = V2.regex(/^[^~!#$%^&*)(_=+\[}{\]\\\"\;\:\?\><\|]+$/, [letters, numbers, space, period, comma, '- . / @ \' ']);
+        const isAddress  = V2.regex(/^[^~!#$%^&*)(_=+\[}{\]\\\"\;\:\?\><\|]+$/,          [letters, numbers, space, period, comma, '- . / @ \' ']);
         const isCity     = V2.regex(/^[^~!@#$%^&*)(_=+\[\}\{\]\\\/\"\;\:\?\><\,\|\d]+$/, [letters, space, '- . \' ']);
         const isState    = V2.regex(/^[^~!@#$%^&*)(_=+\[\}\{\]\\\/\"\;\:\?\><\|]+$/,     [letters, numbers, space, comma, '- . \'']);
-        const isPostcode = V2.regex(/^[\w\s-]+$/,                      [letters, numbers, space, '-']);
-        const isPhoneNo  = V2.regex(/^(|\+?[0-9\s\-]+)$/,              [numbers, space, '-']);
+        const isPostcode = V2.regex(/^[^+]{0,20}$/,                                      [letters, numbers, space, '-']);
+        const isPhoneNo  = V2.regex(/^(|\+?[0-9\s\-]+)$/,                                [numbers, space, '-']);
 
         const maybeEmptyAddress = function(value) {
             return value.length ? isAddress(value) : dv.ok(value);
@@ -250,7 +251,7 @@ const SettingsDetailsWS = (function() {
             address_line_2  : [maybeEmptyAddress],
             address_city    : [V2.required, isCity],
             address_state   : [V2.required, isState],
-            address_postcode: [V2.required, V2.lengthRange(1, 20), isPostcode],
+            address_postcode: [V2.lengthRange(0, 20), isPostcode],
             phone           : [V2.lengthRange(6, 35), isPhoneNo],
         };
     };

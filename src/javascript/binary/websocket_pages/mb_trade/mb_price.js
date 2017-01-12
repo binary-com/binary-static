@@ -27,6 +27,7 @@ const MBPrice = (function() {
         req_id         = 0,
         res_count      = 0,
         is_displayed   = false,
+        is_unwelcome   = false,
         $tables;
 
     const addPriceObj = function(req) {
@@ -77,6 +78,15 @@ const MBPrice = (function() {
             });
         }
 
+        is_unwelcome = Client.status_detected('unwelcome');
+        if (is_unwelcome) {
+            MBNotifications.show({
+                text       : localize('Sorry, your account is not authorised for any further contract purchases.'),
+                uid        : 'UNWELCOME',
+                dismissible: false,
+            });
+        }
+
         barriers.forEach(function(barrier) {
             Object.keys(contract_types).forEach(function(contract_type) {
                 $($tables[+contract_types[contract_type].order])
@@ -113,8 +123,7 @@ const MBPrice = (function() {
         return {
             contract_type      : contract_type,
             barrier            : barrier,
-            id                 : !proposal.error ? proposal.proposal.id : undefined,
-            is_active          : !proposal.error && proposal.proposal.ask_price,
+            is_active          : !proposal.error && proposal.ask_price && !is_unwelcome,
             message            : proposal.error && proposal.error.code !== 'RateLimit' ? proposal.error.message : '',
             ask_price          : getAskPrice(proposal),
             sell_price         : payout - getAskPrice(proposal_opp),
@@ -139,7 +148,7 @@ const MBPrice = (function() {
                 '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
                 '<div class="gr-4 buy-price">' +
                     '<button class="price-button' + (!values.is_active ? ' inactive' : '') + '"' +
-                        (values.id ? ' onclick="return HandleClick(\'MBPrice\', \'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
+                        (values.is_active ? ' onclick="return HandleClick(\'MBPrice\', \'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
                         (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' +
                             '<span class="value-wrapper">' +
                                 '<span class="dynamics ' + (values.ask_price_movement || '') + '"></span>' +

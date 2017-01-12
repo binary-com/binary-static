@@ -57,10 +57,8 @@ const ProfitTableUI = (function() {
     const updateFooter = function(transactions) {
         let accTotal = elementTextContent(document.querySelector('#pl-day-total > .pl'));
         accTotal = parseFloat(accTotal.replace(/,/g, ''));
-        if (accTotal) {
-            if (isNaN(accTotal)) {
-                accTotal = 0;
-            }
+        if (!accTotal || isNaN(accTotal)) {
+            accTotal = 0;
         }
 
         const currentTotal = transactions.reduce(function(previous, current) {

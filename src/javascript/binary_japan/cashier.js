@@ -4,11 +4,12 @@ const Client   = require('../binary/base/client').Client;
 
 const CashierJP = (function() {
     function init(action) {
+        Content.populate();
         if (Client.get_boolean('values_set')) {
             const $container = $('#japan_cashier_container');
             if (Client.get_boolean('is_virtual')) {
-                $container.addClass('center-text').removeClass('invisible')
-                    .html($('<p/>', { class: 'notice-msg', html: localize('This feature is not relevant to virtual-money accounts.') }));
+                $container.addClass('center-text notice-msg').removeClass('invisible')
+                .text(Content.localize().featureNotRelevantToVirtual);
                 return;
             }
             $container.removeClass('invisible');

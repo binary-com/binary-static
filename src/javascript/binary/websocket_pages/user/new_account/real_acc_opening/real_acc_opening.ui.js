@@ -67,6 +67,9 @@ const RealAccOpeningUI = (function() {
         ValidAccountOpening.checkTel(elementObj.tel, errorObj.tel);
         ValidAccountOpening.checkAnswer(elementObj.answer, errorObj.answer);
         ValidAccountOpening.checkCity(elementObj.town, errorObj.town);
+        if (elementObj.state.nodeName === 'INPUT') {
+            ValidAccountOpening.checkState(elementObj.state, errorObj.state);
+        }
 
         Object.keys(elementObj).forEach(function (key) {
             if (elementObj[key].offsetParent !== null && key !== 'address2' && key !== 'postcode' && key !== 'state') {
