@@ -7,14 +7,16 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-11 19:23+0000\n"
-"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"PO-Revision-Date: 2017-01-12 19:47+0000\n"
+"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.11-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -218,10 +220,14 @@ msgstr "%1 приглашает на работу SMM специалиста, к
 msgid "%1 seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world."
 msgstr "%1 приглашает на работу опытного автора статей, способного создавать контент, привлекающий новых и текущих клиентов по всему миру."
 
-#, fuzzy
-#| msgid "%1 supports the <a target='_blank' href='http://about.gambleaware.org/'>GambleAware</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgid "%1 supports %2 which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
-msgstr "%1 поддерживает организацию <a target='_blank' href='http://about.gambleaware.org/'>GambleAware</a>, которая является ведущей благотворительной организацией в Великобритании по минимизации риска зависимости от азартных игр. GambleAware финансирует образование, профилактику, лечение и исследования, чтобы поднять и понять проблему игорной зависимости. Она также предлагает национальную линию помощи жертвам азартных игр, предоставляя конфиденциальные консультации и эмоциональную поддержку тем, кто обращается за помощью."
+msgstr ""
+"%1 поддерживает %2 – ведущую благотворительную организацию в Великобритании "
+"по минимизации риска зависимости от азартных игр. Организация финансирует "
+"образование, профилактику, лечение и исследования, призванные осветить и "
+"понять проблему игорной зависимости. Она также предлагает национальную линию "
+"помощи жертвам азартных игр, предоставляя конфиденциальные консультации и "
+"эмоциональную поддержку тем, кто обращается за помощью."
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "%1 завоевал первое место в категории Оператор по финансовому беттингу (Financial Betting Operator) на престижной церемонии 2015 EGR Operator Awards, которая состоялась в Лондоне."
@@ -1028,7 +1034,7 @@ msgid "An error occured."
 msgstr "Произошла ошибка."
 
 msgid "Analyse and test the domains and subdomains listed in the scope."
-msgstr ""
+msgstr "Анализ и тестирование предложенных доменов и поддоменов."
 
 msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
 msgstr "Анализируйте рынки с помощью большого количества индикаторов, ценовых диапазонов и инструментов наложения."
@@ -3171,6 +3177,9 @@ msgstr "Если вы не получите сообщения от нас в с
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr ""
+"Если Вы обнаружите какие-либо уязвимости в нашем <a target='_blank' "
+"href='%1'>проекте с открытым кодом</a>, пожалуйста, отправьте на GitHub "
+"отчёт со списком улучшений."
 
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "Если Вы обладаете нужными нам навыками, у Вас есть шанс стать ценным сотрудником нашей высокопрофессиональной команды разработчиков пользовательской части сайта (front end), улучшающей наши системы торговли бинарными опционами."
@@ -5606,10 +5615,8 @@ msgstr "Заявление о безопасности"
 msgid "Security Statement"
 msgstr "Сообщение о безопасности"
 
-#, fuzzy
-#| msgid "User Testing"
 msgid "Security Testing"
-msgstr "Пользовательское тестирование"
+msgstr "Проверка безопасности"
 
 msgid "Security and Privacy"
 msgstr "Безопасность"
@@ -5794,10 +5801,11 @@ msgstr "Разработка программного обеспечения (Pe
 msgid "Sorry, account opening is unavailable."
 msgstr "Извините, но открытие счёта недоступно."
 
-#, fuzzy
-#| msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "Счёт не активирован. Пожалуйста, свяжитесь с отделом <a class=\"pjaxload\" href=\"%1\">поддержки клиентов</a> для получения дополнительной информации."
+msgstr ""
+"Извините, регистрация счёта недоступна для граждан Вашей страны. Пожалуйста, "
+"свяжитесь с отделом <a href=\"%1\">поддержки клиентов</a> для получения "
+"дополнительной информации."
 
 msgid "Sorry, an error occurred while processing your account."
 msgstr "Извините, произошла ошибка."
@@ -5962,6 +5970,9 @@ msgstr "Подтвердить"
 
 msgid "Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue."
 msgstr ""
+"Отправьте на HackerOne отчёт о любых потенциальных нарушениях системы "
+"безопасности, которые Вам удалось найти, а также укажите свои варианты "
+"улучшений."
 
 msgid "Submit your CV and Cover Letter"
 msgstr "Отправьте своё резюме и сопроводительное письмо"
