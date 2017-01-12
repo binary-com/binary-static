@@ -361,7 +361,6 @@ sub _texts {
         push @texts, localize('Fridays');
 
         #strings for paymentagent_withdrawws page
-        push @texts, localize('You are not authorized for withdrawal via payment agent.');
         push @texts, localize('Please select a payment agent');
         push @texts, localize('The Payment Agent facility is currently not available in your country.');
         push @texts, localize('Invalid amount, minimum is');

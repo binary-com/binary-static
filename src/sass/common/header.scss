@@ -19,14 +19,14 @@ body #topbar {
     }
     .upgrademessage {
         text-align: center;
-    }
-    .upgrademessage a {
-        @include link-button;
-        border-radius: 2px;
-        font-size: 90%;
-        padding: 2px 4px;
-        text-transform: none;
-        @include BIDIR_VALUE(margin, 0 0 0 10px, 0 10px 0 0);
+        a {
+            @include link-button;
+            border-radius: 2px;
+            font-size: 90%;
+            padding: 2px 4px;
+            text-transform: none;
+            @include BIDIR_VALUE(margin, 0 0 0 10px, 0 10px 0 0);
+        }
     }
     a {
         color: $COLOR_WHITE;
@@ -36,26 +36,12 @@ body #topbar {
     #select_language {
         top: -3px;
     }
-    #display_language li:first-child {
-        margin-top: 0;
-    }
 }
 
 #header {
     height: 75px;
-    a {
-        img {
-            height: 55px;
-        }
-    }
-    select#client_loginid option[disabled=disabled] {
-        background-color: $COLOR_LIGHT_GRAY;
-    }
-    #binary-logo-text {
-        margin-top: 0 !important;
-        img {
-            width: 90%;
-        }
+    a img {
+        height: 55px;
     }
     #client-logged-out {
         @include BIDIR_VALUE(text-align, right, left);
@@ -63,10 +49,8 @@ body #topbar {
             margin-bottom: 0;
         }
     }
-    #mobile-menu-icon {
-        img {
-            max-width: 32px;
-        }
+    #mobile-menu-icon img {
+        max-width: 32px;
     }
     #mobile-menu-icon-container {
         margin-top: 5px;
@@ -96,7 +80,7 @@ body #topbar {
                 text-decoration: none;
                 letter-spacing: 0;
                 text-transform: capitalize;
-                padding: 0px 10px;
+                padding: 0 10px;
                 word-wrap: break-word;
                 color: $COLOR_WHITE;
             }
@@ -110,8 +94,5 @@ body #topbar {
         .main-account > .account-type {
             white-space: nowrap;
         }
-    }
-    #all-accounts {
-        z-index: 99;
     }
 }

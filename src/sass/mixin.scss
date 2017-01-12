@@ -111,3 +111,25 @@
         background-color: $COLOR_DARK_GREEN;
     }
 }
+
+@mixin portfolio_second_row_description {
+    .details {
+        display: table-column;
+        width: 0 !important;
+    }
+    tr {
+        td {
+            padding: 10px 5px 5px;
+        }
+        &.tr-first td {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        &.tr-desc {
+            display: table-row;
+            td {
+                padding-top: 0;
+            }
+        }
+    }
+}
