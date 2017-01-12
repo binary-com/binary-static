@@ -497,6 +497,7 @@ sub _texts {
         push @texts, localize('Market is closed. Please try again later.');
         push @texts, localize('This symbol is not active. Please try another symbol.');
         push @texts, localize('Connection error: Please check your internet connection.');
+        push @texts, localize('Sorry, your account is not authorised for any further contract purchases.');
 
         #strings for digit_infows
         push @texts, localize('Select market');
