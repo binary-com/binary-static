@@ -9,8 +9,7 @@ html, body {
 body {
     min-height: 100%;
     position: relative;
-    background-position: bottom;
-    background-repeat: repeat-x;
+    background: repeat-x bottom;
     overflow-x: hidden;
     .ui-widget {
         font-size: 0.9em;
@@ -31,6 +30,10 @@ select {
     max-width: 100%;
 }
 
+select.input {
+    width: 46.2%;
+}
+
 button {
     vertical-align: top;
 }
@@ -44,7 +47,11 @@ button::-moz-focus-inner, input[type='submit']::-moz-focus-inner {
     border: 0;
 }
 
-input, button, textarea, select, optgroup, option {
+a.button:hover {
+    text-decoration: none;
+}
+
+input, button, textarea, select, optgroup, option, xmp {
     font-family: inherit;
     font-size: inherit;
     font-style: inherit;
@@ -64,31 +71,6 @@ em {
     font-style: italic;
 }
 
-hr {
-    display: none;
-}
-
-acronym, abbr {
-    cursor: help;
-}
-
-span.button.button-disabled button.button-disabled, span a.button-disabled button {
-    color: $COLOR_GRAY_SHADE;
-    background: $COLOR_LIGHT_GRAY;
-    cursor: default;
-}
-
-.button.fullwidth {
-    width: 100%;
-    span {
-        display: block;
-    }
-}
-
-a.button:hover {
-    text-decoration: none;
-}
-
 form {
     margin: 0;
     padding: 0;
@@ -102,9 +84,6 @@ fieldset {
     &#formlayout {
         background: none;
         border: 0;
-        .errorfield {
-            margin-left: 0;
-        }
     }
     legend {
         color: $COLOR_DARK_GRAY;
@@ -122,10 +101,6 @@ textarea {
     width: 25em;
 }
 
-select.input {
-    width: 46.2%;
-}
-
 /* form styles */
 label {
     line-height: 25px;
@@ -141,35 +116,15 @@ label {
     width: 45%;
 }
 
-.row.focus input, .row.focus textarea {
-    background-color: $COLOR_YELLOW;
-}
-
-.text-only {
-    color: $COLOR_DARK_GRAY;
+*, p.no-para-margin, .errorfield {
+    margin: 0;
 }
 
 .errorfield {
-    margin: 0 0 0 0%;
-}
-
-.errorrow, .errorfield {
     font-size: 93%;
     font-style: italic;
     margin-top: 8px;
     color: $COLOR_RED;
-}
-
-.last-row {
-    margin-bottom: 0;
-}
-
-.form_button {
-    text-align: center;
-}
-
-.form_button .errorfield {
-    margin: 0;
 }
 
 .comment {
@@ -183,10 +138,6 @@ fieldset .error-msg {
 }
 
 /* global styles */
-* {
-    margin: 0;
-}
-
 .required_asterisk {
     color: $COLOR_ORANGE;
 }
@@ -204,8 +155,7 @@ fieldset .error-msg {
         cursor: pointer;
     }
     .inpage_popup_content {
-        margin: 10px;
-        margin-top: 30px;
+        margin: 30px 10px 10px;
         padding: 0;
     }
     .inpage_popup_content_box {
@@ -217,21 +167,7 @@ fieldset .error-msg {
     }
 }
 
-.paging-navigation {
-    ul.paging-links {
-        li {
-            line-height: 1em;
-        }
-    }
-}
 /* Coche icon, AKA tick */
-
-.hint {
-    font-size: 14px;
-    color: $COLOR_DARK_GRAY;
-    margin-top: 3px;
-}
-
 #content {
     margin-bottom: 20px;
 }
@@ -249,10 +185,6 @@ fieldset .error-msg {
 
 #content-holder {
     flex: 1 1 auto;
-}
-
-#outline {
-    outline: 0;
 }
 
 #main-menu .items li a {
@@ -285,36 +217,8 @@ _:-ms-fullscreen, :root #content-holder {
     height: 100%;
 }
 
-xmp {
-    font-family: inherit;
-}
-
-img.responsive {
-    width: 100%;
-    height: auto;
-}
-
-.color-blue {
-    color: $COLOR_BLUE;
-}
-
-.color-green {
-    color: $COLOR_GREEN;
-}
-
-.color-orange {
-    color: $COLOR_ORANGE;
-}
-
 .color-white {
     color: $COLOR_WHITE;
-}
-
-button.blue-button {
-    background: $COLOR_BLUE;
-    &:hover {
-        background-color: $COLOR_DARK_GREEN;
-    }
 }
 
 .half-sized-picture {
@@ -326,12 +230,8 @@ button.blue-button {
     white-space: nowrap;
 }
 
-p.no-para-margin {
-    margin: 0;
-}
-
-.separator-line-thin-gray {
-    border-top: 1px solid $COLOR_GRAY;
+.no-padding {
+    padding: 0;
 }
 
 .border-dark-gray {

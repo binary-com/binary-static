@@ -1,5 +1,5 @@
 @mixin ul_segmented_navigation {
-    box-shadow: inset 0px 0px 0px 1px rgba($COLOR_BLUE, 0.2);
+    box-shadow: inset 0 0 0 1px rgba($COLOR_BLUE, 0.2);
     background-color: $COLOR_LIGHT_GRAY;
     color: $COLOR_BLUE;
     display: flex;
@@ -59,10 +59,7 @@
     position: relative;
     opacity: 0;
     #markets_closed_msg {
-        margin-top: 0px;
-    }
-    abbr {
-        text-decoration: none;
+        margin-top: 0;
     }
     &.show {
         animation: fade 1s;
@@ -148,7 +145,7 @@
     }
     #contract_symbol_container {
         display: inline-flex;
-        padding: 0px;
+        padding: 0;
         #contract_markets_container {
             text-align: right;
             @include BIDIR_PROP(margin-right, margin-left, 1rem);
@@ -548,7 +545,7 @@
             height: auto;
         }
         #contract_form_content {
-            margin-top: 0px;
+            margin-top: 0;
         }
         #contract_form_content_wrapper {
             flex-direction: column;

@@ -355,8 +355,8 @@
     // You can have tooltips use a css class other than jqstooltip by specifying tooltipClassname
     defaultStyles = '.jqstooltip { ' +
             'position: absolute;' +
-            'left: 0px;' +
-            'top: 0px;' +
+            'left: 0;' +
+            'top: 0;' +
             'visibility: hidden;' +
             'background: rgb(0, 0, 0) transparent;' +
             'background-color: rgba(0,0,0,0.6);' +
@@ -2925,7 +2925,7 @@
             }
             $.data(target, '_jqs_vcanvas', this);
             this.canvas = document.createElement('span');
-            $(this.canvas).css({ display: 'inline-block', position: 'relative', overflow: 'hidden', width: width, height: height, margin: '0px', padding: '0px', verticalAlign: 'top'});
+            $(this.canvas).css({ display: 'inline-block', position: 'relative', overflow: 'hidden', width: width, height: height, margin: '0', padding: '0', verticalAlign: 'top'});
             this._insert(this.canvas, target);
             this._calculatePixelDims(width, height, this.canvas);
             this.canvas.width = this.pixelWidth;
@@ -2953,7 +2953,7 @@
                  ' id="jqsshape' + shapeid + '" ' +
                  stroke +
                  fill +
-                ' style="position:absolute;left:0px;top:0px;height:' + this.pixelHeight + 'px;width:' + this.pixelWidth + 'px;padding:0px;margin:0px;" ' +
+                ' style="position:absolute;left:0;top:0;height:' + this.pixelHeight + 'px;width:' + this.pixelWidth + 'px;padding:0;margin:0;" ' +
                 ' path="m ' + initial + ' l ' + vpath.join(', ') + ' ' + closed + 'e">' +
                 ' </v:shape>';
             return vel;
@@ -3010,7 +3010,7 @@
                  ' id="jqsshape' + shapeid + '" ' +
                  stroke +
                  fill +
-                ' style="position:absolute;left:0px;top:0px;height:' + this.pixelHeight + 'px;width:' + this.pixelWidth + 'px;padding:0px;margin:0px;" ' +
+                ' style="position:absolute;left:0;top:0;height:' + this.pixelHeight + 'px;width:' + this.pixelWidth + 'px;padding:0;margin:0;" ' +
                 ' path="m ' + x + ',' + y + ' wa ' + vpath.join(', ') + ' x e">' +
                 ' </v:shape>';
             return vel;

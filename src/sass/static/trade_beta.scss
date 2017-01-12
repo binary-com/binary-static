@@ -1,5 +1,5 @@
 @mixin ul_segmented_navigation {
-    box-shadow: inset 0px 0px 0px 1px rgba($COLOR_BLUE, 0.2);
+    box-shadow: inset 0 0 0 1px rgba($COLOR_BLUE, 0.2);
     background-color: $COLOR_LIGHT_GRAY;
     color: $COLOR_BLUE;
     display: flex;
@@ -59,10 +59,7 @@
     position: relative;
     opacity: 0;
     #markets_closed_msg {
-        margin-top: 0px;
-    }
-    abbr {
-        text-decoration: none;
+        margin-top: 0;
     }
     &.show {
         animation: fade 1s;
@@ -338,7 +335,7 @@
                 flex: 3;
             }
             .contract_purchase {
-                margin-bottom: 0px;
+                margin-bottom: 0;
                 margin-top: 10px;
                 .purchase_button {
                     cursor: pointer;
@@ -499,7 +496,7 @@
         #contract_purchase_heading, #confirmation_error_heading {
             font-size: 18px;
             line-height: 35px;
-            margin-bottom: 0px;
+            margin-bottom: 0;
             color: $COLOR_WHITE;
             background-color: $COLOR_BLUE;
             @include BIDIR_PROP(padding-left, padding-right, 10px);
@@ -659,7 +656,7 @@
                     font-size: 65%;
                 }
                 li.tm-li-2 {
-                    margin: 0px;
+                    margin: 0;
                     a.tm-a-2 {
                         font-size: 80%;
                     }
@@ -744,7 +741,7 @@
                     background: $COLOR_LIGHT_GRAY;
                     position: absolute;
                     bottom: -1px;
-                    @include BIDIR_PROP(right, left, 0px);
+                    @include BIDIR_PROP(right, left, 0);
                     z-index: 3;
                 }
             }
@@ -888,7 +885,7 @@
                 height: 630px !important;
             }
             #portfolio {
-                padding: 0px;
+                padding: 0;
             }
         }
     }
