@@ -237,17 +237,15 @@ const ForwardWS = (function() {
                 }
             },
         });
+        const hash = window.location.hash,
+            deposit_locked = /deposit/.test(hash) && Client.status_detected('cashier_locked, unwelcome', 'any'),
+            withdraw_locked = /withdraw/.test(hash) && Client.status_detected('cashier_locked, withdrawal_locked', 'any');
         if (sessionStorage.getItem('client_status') === null) {
             BinarySocket.send({
                 get_account_status: 1,
                 passthrough       : { dispatch_to: 'ForwardWS' },
             });
-        } else if (
-            (!Client.status_detected('cashier_locked, unwelcome', 'any') &&
-            /deposit/.test(window.location.hash)) ||
-            (!Client.status_detected('cashier_locked, withdrawal_locked', 'any') &&
-            /withdraw/.test(window.location.hash))
-        ) {
+        } else if (!deposit_locked && !withdraw_locked) {
             BinarySocket.send({ cashier_password: 1 });
         }
     };
