@@ -24,10 +24,12 @@ function limitLanguage(lang) {
     }
     if (document.getElementById('select_language')) {
         $('.languages').remove();
-        $('#gmt-clock').removeClass('gr-5 gr-6-m')
-                       .addClass('gr-6 gr-12-m');
-        $('#contact-us').removeClass('gr-2')
-                        .addClass('gr-6');
+        $('#gmt-clock')
+            .removeClass('gr-5 gr-6-m')
+            .addClass('gr-6 gr-12-m');
+        $('#contact-us')
+            .removeClass('gr-2')
+            .addClass('gr-6');
     }
 }
 
