@@ -46,10 +46,10 @@ const Cashier = (function() {
     const replace_button = function(action, elementToReplace) {
         const $a = $(elementToReplace);
         if ($a.length === 0) return;
-        const classToReplace = action === 'disable' ? 'pjaxload' : 'button-disabled',
-            Replacement = action === 'disable' ? 'button-disabled' : 'pjaxload';
+        const replace  = ['button-disabled', 'pjaxload'];
+        const disabled = action === 'disable';
         // use replaceWith, to disable previously caught pjax event
-        const new_element = { class: $a.attr('class').replace(classToReplace, Replacement), html: $a.html() },
+        const new_element = { class: $a.attr('class').replace(replace[+disabled], replace[+!disabled]), html: $a.html() },
             id = $a.attr('id');
 
         if (id) new_element.id = id;
