@@ -5836,6 +5836,9 @@ msgstr "Désolé, cette option n'est pas disponible."
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "Désolé, vous avez entré un mot de passe de caisse incorrect"
 
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "Désolé, votre compte n'est autorisé pour aucun achat supplémentaire de contrat."
+
 msgid "Spam - We do not condone Spam"
 msgstr "Spam : nous ne tolérons pas les spams"
 
@@ -7568,9 +7571,6 @@ msgstr "Vous n'avez pas l'autorisation de proposer aux clients de votre réseau 
 msgid "You are not allowed to store any Content (such as feed data)."
 msgstr "Vous n'avez pas l'autorisation de stocker des Contenus quels qu'ils soient (notamment les flux de données)."
 
-msgid "You are not authorized for withdrawal via payment agent."
-msgstr "Vous n'êtes pas habilité à faire des retraits via un agent de paiement."
-
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "Vous ne pouvez prétendre à aucune forme de compensation ou de remboursement de la part de la Société, quelles que soient les circonstances."
 
@@ -9192,6 +9192,9 @@ msgstr "Informations du compte"
 
 msgid "Terms and Conditions Approval"
 msgstr "Acceptation des conditions générales"
+
+#~ msgid "You are not authorized for withdrawal via payment agent."
+#~ msgstr "Vous n'êtes pas habilité à faire des retraits via un agent de paiement."
 
 #~ msgid "{JAPAN ONLY}JSA_Date_3"
 #~ msgstr "{JAPAN ONLY}JSA_Date_3"
@@ -10938,9 +10941,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
 #~ msgstr "Désolé, le solde disponible votre compte est trop élevé (%1). Le solde maximum de votre compte est de %2."
-
-#~ msgid "Sorry, your account is not authorised for any further contract purchases."
-#~ msgstr "Désolé, votre compte n'est autorisé pour aucun achat supplémentaire de contrat."
 
 #, fuzzy
 #~| msgid "Sorry, $currency is not default currency for payment agent "

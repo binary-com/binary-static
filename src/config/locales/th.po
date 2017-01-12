@@ -5834,6 +5834,10 @@ msgstr "ขออภัย ไม่สามารถใช้งานฟั�
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "ขออภัยค่ะ ท่านป้อนรหัสผ่านแคชเชียร์ไม่ถูกต้อง"
 
+#, fuzzy
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "ขออภัย your account is not authorised for any further contract purchases."
+
 msgid "Spam - We do not condone Spam"
 msgstr "สแปม - เราไม่เอาโทษสแปม"
 
@@ -7567,9 +7571,6 @@ msgstr "ท่านไม่ได้รับอนุญาตในการ
 msgid "You are not allowed to store any Content (such as feed data)."
 msgstr "ท่านไม่ได้รับอนุญาตให้เก็บข้อมูลใดๆ (เช่น ฟีดข้อมูล)"
 
-msgid "You are not authorized for withdrawal via payment agent."
-msgstr "ท่านไม่ได้รับอนุญาตให้ถอนเงินผ่านตัวแทนรับชำระเงิน"
-
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "ท่านไม่ได้รับสิทธิ์ในการได้รับค่าชดเชยใดๆ หรือ การชำระเงินคืนให้ในกรณีใดๆ จากบริษัทฯ ไม่ว่าสถานการณ์ใดๆ"
 
@@ -9181,6 +9182,9 @@ msgstr "รายละเอียดบัญชี"
 
 msgid "Terms and Conditions Approval"
 msgstr "การอนุมัติข้อตกลงและเงื่อนไข"
+
+#~ msgid "You are not authorized for withdrawal via payment agent."
+#~ msgstr "ท่านไม่ได้รับอนุญาตให้ถอนเงินผ่านตัวแทนรับชำระเงิน"
 
 #~ msgid "{JAPAN ONLY}JSA_Date_3"
 #~ msgstr "{JAPAN ONLY}JSA_Date_3"
@@ -10844,10 +10848,6 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 #, fuzzy
 #~ msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
 #~ msgstr "ขออภัย your account cash balance is too high (%1). Your maximum account balance is %2."
-
-#, fuzzy
-#~ msgid "Sorry, your account is not authorised for any further contract purchases."
-#~ msgstr "ขออภัย your account is not authorised for any further contract purchases."
 
 #, fuzzy
 #~ msgid "Sorry, your currency of %1 is unavailable for Payment Agent Withdrawal"
