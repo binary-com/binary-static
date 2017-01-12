@@ -40,82 +40,77 @@
         a:hover .section-header {
             background: $COLOR_DARK_GREEN;
         }
-        div {
-            &#what-is-binary-trading {
-                height: 80px;
-                background: url('../images/pages/get-started/intro_2.png') no-repeat 0 0;
-            }
-            &#binary-options-basics {
-                height: 80px;
-                background: url('../images/pages/get-started/intro_2.png') no-repeat 100% 0;
-            }
-            &#how-to-trade-binaries {
-                height: 80px;
-                background: url('../images/pages/get-started/intro_2.png') no-repeat 100% 24%;
-            }
-            &#types-of-trades {
-                height: 80px;
-                background: url('../images/pages/get-started/intro_2.png') no-repeat 0 47%;
-            }
-            &#benefits-of-trading-binaries {
-                height: 80px;
-                background: url('../images/pages/get-started/intro_2.png') no-repeat 0 24%;
-            }
-            &#beginners-faq {
-                height: 80px;
-                background: url('../images/pages/get-started/intro_2.png') no-repeat 0 71%;
-            }
-            &#glossary {
-                height: 80px;
-                background: url('../images/pages/get-started/intro_2.png') no-repeat 100% 71%;
-            }
-            &#spread {
-                height: 80px;
-                background: url('../images/pages/get-started/spread_bet.svg') no-repeat 100% 71%;
-            }
-            &#random-trades {
-                height: 80px;
-                background: url('../images/pages/get-started/intro_2.png') no-repeat 100% 93%;
-            }
-            &#smart-indices {
-                height: 80px;
-                background: url('../images/pages/get-started/smart-indices.svg') no-repeat 50% 50%/20% rgb(39, 40, 37);
-                background-size: 20%;
-            }
-            &#partners {
-                height: 80px;
-                background: url('../images/pages/partners/partner.svg') no-repeat 50% 50%/50% rgb(39, 40, 37);
-            }
-            &#how-to-open-an-account-img {
-                height: 80px;
-                background: url('../images/pages/get-started-jp/open_acc.svg') no-repeat center;
-                background-size: cover;
-            }
-            &#options-basic-knowledge-img {
-                height: 80px;
-                background: url('../images/pages/get-started-jp/knowledge.svg') no-repeat center;
-                background-size: cover;
-            }
-            &#summary-of-specifications-img {
-                height: 80px;
-                background: url('../images/pages/get-started-jp/summary.svg') no-repeat center;
-                background-size: cover;
-            }
-            &#identification-documents-img {
-                height: 80px;
-                background: url('../images/pages/get-started-jp/id.svg') no-repeat center;
-                background-size: cover;
-            }
-            &#trading-guide-img {
-                height: 80px;
-                background: url('../images/pages/get-started-jp/guide.svg') no-repeat center;
-                background-size: cover;
-            }
-            &#pre-contract-documents-img {
-                height: 80px;
-                background: url('../images/pages/get-started-jp/contract.svg') no-repeat center;
-                background-size: cover;
-            }
+        /* stylelint-disable selector-list-comma-newline-after, selector-list-comma-space-after */
+        #what-is-binary-trading, #binary-options-basics, #how-to-trade-binaries, #types-of-trades,
+        #benefits-of-trading-binaries, #beginners-faq, #glossary, #spread, #random-trades {
+            height: 80px;
+            background-repeat: no-repeat;
+            background-image: url('../images/pages/get-started/intro_2.png');
+        }
+        /* stylelint-enable selector-list-comma-newline-after, selector-list-comma-space-after */
+        #what-is-binary-trading {
+            background-position: 0 0;
+        }
+        #binary-options-basics {
+            background-position: 100% 0;
+        }
+        #how-to-trade-binaries {
+            background-position: 100% 24%;
+        }
+        #types-of-trades {
+            background-position: 0 47%;
+        }
+        #benefits-of-trading-binaries {
+            background-position: 0 24%;
+        }
+        #beginners-faq {
+            background-position: 0 71%;
+        }
+        #glossary {
+            background-position: 100% 71%;
+        }
+        #random-trades {
+            background-position: 100% 93%;
+        }
+        #smart-indices, #partners {
+            height: 80px;
+            background-repeat: no-repeat;
+        }
+        #spread {
+            background: url('../images/pages/get-started/spread_bet.svg') 100% 71%;
+        }
+        #smart-indices {
+            background: url('../images/pages/get-started/smart-indices.svg') 50% 50%/20% rgb(39, 40, 37);
+            background-size: 20%;
+        }
+        #partners {
+            background: url('../images/pages/partners/partner.svg') 50% 50%/50% rgb(39, 40, 37);
+        }
+        /* stylelint-disable selector-list-comma-newline-after, selector-list-comma-space-after */
+        #how-to-open-an-account-img, #options-basic-knowledge-img, #summary-of-specifications-img,
+        #identification-documents-img, #trading-guide-img, #pre-contract-documents-img {
+            height: 80px;
+            background: no-repeat center;
+            background-size: cover;
+        }
+        /* stylelint-enable selector-list-comma-newline-after, selector-list-comma-space-after */
+        #how-to-open-an-account-img {
+            background-image: url('../images/pages/get-started-jp/open_acc.svg');
+        }
+        #options-basic-knowledge-img {
+            background-image: url('../images/pages/get-started-jp/knowledge.svg');
+        }
+        #summary-of-specifications-img {
+            background-image: url('../images/pages/get-started-jp/summary.svg');
+        }
+        #identification-documents-img {
+            background-image: url('../images/pages/get-started-jp/id.svg');
+        }
+        #trading-guide-img {
+            background-image: url('../images/pages/get-started-jp/guide.svg');
+        }
+        #pre-contract-documents-img {
+            background-image: url('../images/pages/get-started-jp/contract.svg');
         }
     }
 }
