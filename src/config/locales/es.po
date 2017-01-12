@@ -5956,6 +5956,9 @@ msgstr "Esta funcionalidad no está disponible."
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "Lo sentimos, ingresó una contraseña de cajero incorrecta"
 
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "Lo sentimos, su cuenta no está autorizada para continuar con la compra de contratos."
+
 msgid "Spam - We do not condone Spam"
 msgstr "Correo electrónico basura. No aprobamos el correo electrónico basura"
 
@@ -7728,9 +7731,6 @@ msgstr "Usted no tiene permitido devolver ningún pago parcial de comisiones a s
 msgid "You are not allowed to store any Content (such as feed data)."
 msgstr "No tiene permiso para almacenar ningún Contenido (tal como alimentación de datos)."
 
-msgid "You are not authorized for withdrawal via payment agent."
-msgstr "Usted no está autorizado para retirar dinero a través de agente de pago."
-
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "Usted no tiene derecho a recibir ninguna compensación o reembolso de ningún tipo de la Compañía bajo ninguna circunstancia."
 
@@ -9468,6 +9468,9 @@ msgstr "Detalles de la cuenta"
 
 msgid "Terms and Conditions Approval"
 msgstr "Acuerdo con los términos y condiciones"
+
+#~ msgid "You are not authorized for withdrawal via payment agent."
+#~ msgstr "Usted no está autorizado para retirar dinero a través de agente de pago."
 
 #, fuzzy
 #~| msgid "{JAPAN ONLY}FX Rate"
@@ -11230,9 +11233,6 @@ msgstr "Acuerdo con los términos y condiciones"
 
 #~ msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
 #~ msgstr "Lo sentimos, el saldo de su cuenta es demasiado alto (%1). El máximo saldo de su cuenta es %2."
-
-#~ msgid "Sorry, your account is not authorised for any further contract purchases."
-#~ msgstr "Lo sentimos, su cuenta no está autorizada para continuar con la compra de contratos."
 
 #~ msgid "Sorry, your currency of %1 is unavailable for Payment Agent Withdrawal"
 #~ msgstr "Lo sentimos, su moneda %1 no está disponible para retiros a través del agente de pago"
