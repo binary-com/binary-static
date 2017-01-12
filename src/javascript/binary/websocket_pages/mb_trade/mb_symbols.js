@@ -50,6 +50,7 @@ const MBSymbols = (function () {
         getName         : function(symbol) { return names[symbol]; },
         need_page_update: function ()      { return need_page_update; },
         getAllSymbols   : function()       { return names; },
+        clearData       : function ()      { ActiveSymbols.clearData(); },
     };
 })();
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-05 23:20+0000\n"
-"Last-Translator: Yasushi Takeishi <takeishi@regentmarkets.com>\n"
+"PO-Revision-Date: 2017-01-10 22:55+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -222,8 +222,6 @@ msgstr "ソーシャルメディアへの取り組みの強化と積極的な管
 msgid "%1 seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world."
 msgstr "当社では、世界中の顧客と潜在顧客との良好な関係を積極的に構築するコンテンツの制作に感覚の鋭いコピーライターを必要としています。"
 
-#, fuzzy
-#| msgid "%1 supports the <a target='_blank' href='http://about.gambleaware.org/'>GambleAware</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgid "%1 supports %2 which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgstr "%1は、ギャンブルに関連する害を最小限にすることを約束している英国の大手慈善団体<a target='_blank' href='http://about.gambleaware.org/'>「責任ある賭博基金」(RGT, Responsible Gambling Trust)</a>をサポートしています。RGT資金教育、予防と治療のサービスや手数料の調査は、ギャンブルに関する害についてより理解するのに役立ちます。また、機密なアドバイスや感情的なサポートをしている全国ギャンブルヘルプラインも提供しています。"
 
@@ -1037,7 +1035,7 @@ msgid "An error occured."
 msgstr "エラーが発生しました"
 
 msgid "Analyse and test the domains and subdomains listed in the scope."
-msgstr ""
+msgstr "スコープに記載されているドメインとサブドメインの分析とテスト"
 
 msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
 msgstr "広範囲の指標、価格帯、オーバーレイで市場を分析"
@@ -3197,7 +3195,7 @@ msgid "If you don't receive the email within the next few minutes, please check 
 msgstr "お客さまによっては迷惑メールフォルダーに入る場合もありますので、あわせてご確認ください。"
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
-msgstr ""
+msgstr "当社の<a target='_blank' href='%1'>オープンソースコード</a>で脆弱性を発見されましたら、お気軽にGitHubでプルリクエストをしてください。"
 
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "当社が求めるスキルをお持ちでしたら、バイナリーオプショントレーディングシステムの運営に従事している、新たな高みを目指す非常に有能なフロントエンド開発チームの貴重な一員になれます。"
@@ -5666,10 +5664,8 @@ msgstr "セキュリティに関する免責事項"
 msgid "Security Statement"
 msgstr "個人情報と取引情報の秘匿性について"
 
-#, fuzzy
-#| msgid "User Testing"
 msgid "Security Testing"
-msgstr "ユーザーテスト"
+msgstr "セキュリティテスト"
 
 msgid "Security and Privacy"
 msgstr "口座開設時確認書類"
@@ -5854,10 +5850,8 @@ msgstr "ソフトウェア（Perl）開発"
 msgid "Sorry, account opening is unavailable."
 msgstr "申し訳ございませんが、口座開設をご利用いただけません。"
 
-#, fuzzy
-#| msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "口座が無効になっています。詳細については<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
+msgstr "申し訳ございませんが、お客様の国では口座の開設ができません。詳細については<a href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
 
 msgid "Sorry, an error occurred while processing your account."
 msgstr "通信エラーが発生しましたので、再度ページの読み込みをしてください"
@@ -5873,6 +5867,9 @@ msgstr "申し訳ございませんが、この機能はご利用いただけま
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "申し訳ございませんが、ご入力頂いた入出金パスワードに誤りがあります"
+
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "申し訳ございませんが、これ以上のトレードの購入を可能にする権限がお客さまのご口座に存在しておりません。"
 
 msgid "Spam - We do not condone Spam"
 msgstr "スパム行為への対処について"
@@ -6016,7 +6013,7 @@ msgid "Submit"
 msgstr "送信"
 
 msgid "Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue."
-msgstr ""
+msgstr "潜在的なセキュリティ問題を発見されましたら、問題解決の提案と共にHackerOneにて報告をお願いします。"
 
 msgid "Submit your CV and Cover Letter"
 msgstr "履歴書とカバーレターを提出してください"
@@ -7722,9 +7719,6 @@ msgstr "アフィリエイト会員は獲得会員にアフィリエイト報酬
 msgid "You are not allowed to store any Content (such as feed data)."
 msgstr "コンテンツの格納が許可されていません（データフィードなど）。"
 
-msgid "You are not authorized for withdrawal via payment agent."
-msgstr "お客さまは決済サービスでのご出金が許可されていません。"
-
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "いかなる状況下において当社からの補償または償還を受ける権利はありません。"
 
@@ -9375,6 +9369,9 @@ msgstr "ご口座の詳細情報"
 
 msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
+
+#~ msgid "You are not authorized for withdrawal via payment agent."
+#~ msgstr "お客さまは決済サービスでのご出金が許可されていません。"
 
 #~ msgid "Analyse and test our website for bugs and potential security issues."
 #~ msgstr "当ウェブサイトのバグまたは考えられるセキュリティ問題への分析とテスト"
@@ -11155,9 +11152,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
 #~ msgstr "申し訳ございませんが、口座残高は最大%2です。現在の口座現金残高は%1のため、制限を超えています。"
-
-#~ msgid "Sorry, your account is not authorised for any further contract purchases."
-#~ msgstr "申し訳ございませんが、これ以上のトレードの購入を可能にする権限がお客さまのご口座に存在しておりません。"
 
 #~ msgid "Sorry, your currency of %1 is unavailable for Payment Agent Withdrawal"
 #~ msgstr "申し訳ございません。%1の通貨は決済サービスでのご出金にご利用いただけません。"

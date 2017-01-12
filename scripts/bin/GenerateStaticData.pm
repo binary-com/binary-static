@@ -361,7 +361,6 @@ sub _texts {
         push @texts, localize('Fridays');
 
         #strings for paymentagent_withdrawws page
-        push @texts, localize('You are not authorized for withdrawal via payment agent.');
         push @texts, localize('Please select a payment agent');
         push @texts, localize('The Payment Agent facility is currently not available in your country.');
         push @texts, localize('Invalid amount, minimum is');
@@ -498,6 +497,7 @@ sub _texts {
         push @texts, localize('Market is closed. Please try again later.');
         push @texts, localize('This symbol is not active. Please try another symbol.');
         push @texts, localize('Connection error: Please check your internet connection.');
+        push @texts, localize('Sorry, your account is not authorised for any further contract purchases.');
 
         #strings for digit_infows
         push @texts, localize('Select market');
