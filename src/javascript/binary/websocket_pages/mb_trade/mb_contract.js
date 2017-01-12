@@ -129,7 +129,7 @@ const MBContract = (function() {
             }
             MBDefaults.set('period', $periodElement.val());
             MBContract.displayDescriptions();
-            MBContract.displayRemainingTime();
+            MBContract.displayRemainingTime(true);
         } else { // update options
             let existing_array = [];
             const missing_array  = [];
