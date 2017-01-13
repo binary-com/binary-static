@@ -13,6 +13,7 @@ const ViewBalanceUI = (function() {
         const balance = response.balance.balance;
         Client.set_value('balance', balance);
         PortfolioWS.updateBalance();
+        Cashier.check_top_up_withdraw();
         const currency = response.balance.currency;
         if (!currency) {
             return;
@@ -21,7 +22,6 @@ const ViewBalanceUI = (function() {
         updateContractBalance(balance);
         $('.topMenuBalance').text(view)
             .css('visibility', 'visible');
-        Cashier.check_top_up_withdraw();
     };
 
     return {

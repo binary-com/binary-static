@@ -129,7 +129,7 @@ Page.prototype = {
 
         const href = window.location.href,
             cashier_page = /cashier[\/\w]*\.html/.test(href),
-            withdrawal_page = cashier_page && !/deposit/.test(href);
+            withdrawal_page = cashier_page && !/(deposit|payment_agent_listws)/.test(href);
 
         if (Client.status_detected('authenticated, unwelcome', 'all')) {
             span = $('<span/>', { html: template(localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });

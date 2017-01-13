@@ -6,8 +6,13 @@ const url_for  = require('../../base/url').url_for;
 const Cashier = (function() {
     'use strict';
 
+    let withdrawal_locked;
+
     const lock_unlock_cashier = function(action, lock_type) {
         const toggle = action === 'lock' ? 'disable' : 'enable';
+        if (/withdraw/.test(lock_type) && withdrawal_locked) {
+            return;
+        }
         $.each($('.' + lock_type), function() {
             replace_button(toggle, $(this).parent());
         });
@@ -17,8 +22,10 @@ const Cashier = (function() {
         if (Client.get_boolean('is_virtual')) return;
         if (Client.status_detected('cashier_locked')) {
             lock_unlock_cashier('lock', 'deposit, .withdraw');
+            withdrawal_locked = true;
         } else if (Client.status_detected('withdrawal_locked')) {
             lock_unlock_cashier('lock', 'withdraw');
+            withdrawal_locked = true;
         } else if (Client.status_detected('unwelcome')) {
             lock_unlock_cashier('lock', 'deposit');
         } else if (sessionStorage.getItem('client_status') === null) {
@@ -27,7 +34,7 @@ const Cashier = (function() {
     };
 
     const check_top_up_withdraw = function() {
-        if (is_cashier_page) {
+        if (is_cashier_page() && Client.get_boolean('values_set')) {
             const currency = Client.get_value('currency'),
                 balance = Client.get_value('balance');
             if (Client.get_boolean('is_virtual')) {
@@ -46,18 +53,36 @@ const Cashier = (function() {
     const replace_button = function(action, elementToReplace) {
         const $a = $(elementToReplace);
         if ($a.length === 0) return;
-        const replace  = ['button-disabled', 'pjaxload'];
-        const disabled = action === 'disable';
-        // use replaceWith, to disable previously caught pjax event
-        const new_element = { class: $a.attr('class').replace(replace[+disabled], replace[+!disabled]), html: $a.html() },
-            id = $a.attr('id');
+        const replace = ['button-disabled', 'pjaxload'];
+        const disable = action === 'disable';
+        const id = $a.attr('id');
+        const href = $a.attr('href');
+        const data_href = $a.attr('data-href');
 
-        if (id) new_element.id = id;
+        // use replaceWith, to disable previously caught pjax event
+        const new_element = {
+            class      : $a.attr('class').replace(replace[+disable], replace[+!disable]),
+            id         : id,
+            html       : $a.html(),
+            href       : href || data_href,
+            'data-href': href,
+        };
+
+        if (disable) {
+            delete new_element.href;
+        } else {
+            delete new_element['data-href'];
+        }
+        if (!id) {
+            delete new_element.id;
+        }
+
         $a.replaceWith($('<a/>', new_element));
     };
 
     const onLoad = function() {
-        if (is_cashier_page && Client.get_boolean('is_logged_in')) {
+        if (is_cashier_page() && Client.get_boolean('is_logged_in')) {
+            withdrawal_locked = false;
             Cashier.check_locked();
             Cashier.check_top_up_withdraw();
             Header.topbar_message_visibility(Client.landing_company());
@@ -65,7 +90,7 @@ const Cashier = (function() {
     };
 
     const is_cashier_page = function () {
-        return /\/cashier\.html/.test(window.location.pathname);
+        return /cashier[\/\w]*\.html/.test(window.location.pathname);
     };
 
     const onLoadPaymentMethods = function() {

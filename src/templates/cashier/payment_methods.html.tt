@@ -6,8 +6,8 @@
                 <a href="[% request.url_for('/') %]" class="button by_client_type client_logged_out invisible pjaxload">
                 <span>[% l('Open an account now') %]</span>
                 </a>
-                <a href="[% request.url_for('cashier/forwardws#deposit') %]" class="button button_large by_client_type client_real with_login_cookies invisible">
-                <span>[% l('Deposit') %]</span>
+                <a href="[% request.url_for('cashier/forwardws#deposit') %]" class="button pjaxload by_client_type client_real with_login_cookies invisible">
+                <span class="deposit">[% l('Deposit') %]</span>
                 </a>
                 <a href="[% request.url_for('cashier/forwardws#withdraw') %]" class="button pjaxload by_client_type client_real with_login_cookies invisible">
                     <span class="withdraw">[% l('Withdraw') %]</span>
