@@ -160,7 +160,7 @@ const KnowledgeTest = (function() {
                     } else if (response.error.code === 'TestUnavailableNow') {
                         showMsgOnly('{JAPAN ONLY}The test is unavailable now, test can only be taken again on next business day with respect of most recent test.');
                     } else {
-                        showMsgOnly(response.error.message);
+                        $('#form-msg').html(response.error.message).removeClass(hiddenClass);
                         submitCompleted = false;
                     }
                 }

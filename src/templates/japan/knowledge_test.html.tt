@@ -44,7 +44,8 @@
             <h2 class="gr-padding-10">[% l('{JAPAN ONLY}Section 5: Calculation') %]</h2>
         </div>
 
-        <span class="button gr-centered center-text">
+        <span class="button gr-centered gr-padding-10 center-text">
+            <p id="form-msg" class="error-msg invisible"></p>
             <button id="knowledge-test-submit" class="button">[% l('Submit') %]</button>
         </span>
     </div>
