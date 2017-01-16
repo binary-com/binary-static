@@ -146,7 +146,9 @@ const Header = (function() {
             if (Client.get_boolean('is_virtual')) {
                 const jp_account_status = Client.get_value('jp_status');
                 if (jp_account_status) {
-                    $upgrade_msg.find('> span').removeClass(hiddenClass);
+                    $upgrade_msg.find('> span').removeClass(hiddenClass).end()
+                        .find('a')
+                        .addClass(hiddenClass);
                     if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
                         show_upgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
                     } else {

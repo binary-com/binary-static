@@ -3,7 +3,7 @@
     <div class="gr-padding-10">
         <div class="rbox form">
             <div class="rbox-wrap">
-                <form>
+                <form id="frm_endpoint">
                     <fieldset>
                         <legend>[% l('Details') %]</legend>
                         <div class="gr-padding-10 gr-row clear">
@@ -30,12 +30,8 @@
                         </div>
                     </fieldset>
                     <fieldset class="center-text" id="formlayout">
-                        <div class="button" style="display:inline-block">
-                            <button class="button" id="new_endpoint">[% l('Submit') %]</button>
-                        </div>
-                        <div class="button" style="display:inline-block">
-                            <button class="button" id="reset_endpoint">[% l('Reset to Original Settings') %]</button>
-                        </div>
+                        <button class="button" id="new_endpoint" type="submit">[% l('Submit') %]</button>
+                        <button class="button" id="reset_endpoint">[% l('Reset to Original Settings') %]</button>
                     </fieldset>
                 </form>
             </div>
