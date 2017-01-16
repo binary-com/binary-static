@@ -144,11 +144,20 @@ const Header = (function() {
             };
 
             if (Client.get_boolean('is_virtual')) {
+                let show_upgrade_msg = true;
+                for (let i = 0; i < loginid_array.length; i++) {
+                    if (loginid_array[i].real) {
+                        hide_upgrade();
+                        show_upgrade_msg = false;
+                        break;
+                    }
+                }
+                $upgrade_msg.removeClass(hiddenClass)
+                    .find('> span').removeClass(hiddenClass).end()
+                    .find('a')
+                    .addClass(hiddenClass);
                 const jp_account_status = Client.get_value('jp_status');
-                if (jp_account_status) {
-                    $upgrade_msg.find('> span').removeClass(hiddenClass).end()
-                        .find('a')
-                        .addClass(hiddenClass);
+                if (jp_account_status && show_upgrade_msg) {
                     if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
                         show_upgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
                     } else {
@@ -166,14 +175,6 @@ const Header = (function() {
                         }
                     }
                     return;
-                }
-                let show_upgrade_msg = true;
-                for (let i = 0; i < loginid_array.length; i++) {
-                    if (loginid_array[i].real) {
-                        hide_upgrade();
-                        show_upgrade_msg = false;
-                        break;
-                    }
                 }
                 if (show_upgrade_msg) {
                     $upgrade_msg.find('> span').removeClass(hiddenClass);
