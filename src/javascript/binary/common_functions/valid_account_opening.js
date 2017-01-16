@@ -124,6 +124,11 @@ const ValidAccountOpening = (function() {
             elementInnerHtml(errorAnswer, Content.errorMessage('min', 4));
             Validate.displayErrorMessage(errorAnswer);
             window.accountErrorCounter++;
+        } else if (!/^[\w\-\,\.\' ]{4,50}$/.test(answer.value)) {
+            initializeValues();
+            elementInnerHtml(errorAnswer, Content.errorMessage('reg', [letters, numbers, space, hyphen, period, apost]));
+            Validate.displayErrorMessage(errorAnswer);
+            window.accountErrorCounter++;
         }
     };
     const checkCity = function(city, errorCity) {
