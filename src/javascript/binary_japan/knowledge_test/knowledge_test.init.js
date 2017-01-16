@@ -78,11 +78,7 @@ const KnowledgeTest = (function() {
     const showResult = function(score, time) {
         $('#knowledge-test-instructions').addClass('invisible');
         $('#knowledge-test-header').text(localize('{JAPAN ONLY}Knowledge Test Result'));
-        if (score >= 14) {
-            $('#knowledge-test-msg').text(localize(passMsg));
-        } else {
-            $('#knowledge-test-msg').text(localize(failMsg));
-        }
+        $('#knowledge-test-msg').text(localize(score >= 14 ? passMsg : failMsg));
 
         const $resultTable = KnowledgeTestUI.createResultUI(score, time);
 
@@ -163,6 +159,9 @@ const KnowledgeTest = (function() {
                         $('#knowledgetest-link').addClass(hiddenClass);     // hide it anyway
                     } else if (response.error.code === 'TestUnavailableNow') {
                         showMsgOnly('{JAPAN ONLY}The test is unavailable now, test can only be taken again on next business day with respect of most recent test.');
+                    } else {
+                        $('#form-msg').html(response.error.message).removeClass(hiddenClass);
+                        submitCompleted = false;
                     }
                 }
             },
