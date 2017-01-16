@@ -492,6 +492,7 @@ sub _texts {
         push @texts, localize('min: 1,000');
         push @texts, localize('max: 100,000');
         push @texts, localize('Your Application is Being Processed.');
+        push @texts, localize('{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.');
         push @texts, localize('Processing your request...');
         push @texts, localize('Please check the above form for pending errors.');
         push @texts, localize('Market is closed. Please try again later.');

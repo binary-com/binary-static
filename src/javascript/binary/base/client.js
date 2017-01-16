@@ -28,7 +28,7 @@ const Client = (function () {
     const init = function () {
         const loginid = Cookies.get('loginid');
         client_object.loginid_array = parseLoginIDList(Cookies.get('loginid_list') || '');
-        const is_logged_in = !!(
+        const is_logged_in = (
             loginid &&
             client_object.loginid_array.length > 0 &&
             get_storage_value('tokens')
@@ -147,7 +147,7 @@ const Client = (function () {
 
     const check_tnc = function() {
         if (/user\/tnc_approvalws/.test(window.location.href) ||
-            /terms\-and\-conditions/.test(window.location.href) ||
+            /terms-and-conditions/.test(window.location.href) ||
             get_boolean('is_virtual') ||
             sessionStorage.getItem('check_tnc') !== 'check') {
             return;
