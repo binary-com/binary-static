@@ -16,15 +16,6 @@
             </p>
         </div>
         <div id="deposit-withdraw-error" class="invisible">
-            <p id="withdrawal-locked-error" class="error_messages center-text notice-msg ">
-                [% l('Withdrawal is locked, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
-            </p>
-            <p id="deposit-locked-error" class="error_messages center-text notice-msg ">
-                [% l('Deposit is locked, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
-            </p>
-            <p id="cashier-locked-error" class="error_messages center-text notice-msg ">
-                [% l('Cashier is locked, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
-            </p>
             <p id="financial-risk-error" class="error_messages center-text notice-msg ">
                 [% l('Financial Risk approval is required. Please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
