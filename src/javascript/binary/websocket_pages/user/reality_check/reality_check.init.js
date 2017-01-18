@@ -12,9 +12,13 @@ const RealityCheck = (function() {
             RealityCheckUI.sendAccountStatus();
             return;
         }
-
-        const summary = RealityCheckData.summaryData(response.reality_check);
-        RealityCheckUI.renderSummaryPopUp(summary);
+        if (/no-reality-check/.test(window.location.hash)) {
+            RealityCheckData.set_value('delay_check', 1);
+        } else {
+            RealityCheckData.set_value('delay_check', 0);
+            const summary = RealityCheckData.summaryData(response.reality_check);
+            RealityCheckUI.renderSummaryPopUp(summary);
+        }
     };
 
     const realityStorageEventHandler = function(ev) {
@@ -30,7 +34,7 @@ const RealityCheck = (function() {
     const init = function() {
         RealityCheckUI.initializeValues();
         if (!Client.get_boolean('has_reality_check')) {
-            RealityCheckData.setPreviousLoadLoginId();
+            RealityCheckData.set_value('loginid', Client.get_value('loginid'));
             RealityCheckUI.sendAccountStatus();
             return;
         }
@@ -39,21 +43,21 @@ const RealityCheck = (function() {
 
         window.addEventListener('storage', realityStorageEventHandler, false);
 
-        if (Client.get_value('loginid') !== RealityCheckData.getPreviousLoadLoginId()) {
+        if (Client.get_value('loginid') !== RealityCheckData.get_value('loginid')) {
             RealityCheckData.clear();
         }
 
         RealityCheckData.resetInvalid(); // need to reset after clear
 
-        if (RealityCheckData.getAck() !== '1') {
+        if (!RealityCheckData.get_value('ack')) {
             RealityCheckUI.renderFrequencyPopUp();
-        } else if (RealityCheckData.getOpenSummaryFlag() === '1') {
+        } else if (RealityCheckData.get_value('keep_open')) {
             RealityCheckData.getSummaryAsync();
         } else {
             RealityCheckUI.startSummaryTimer();
         }
 
-        RealityCheckData.setPreviousLoadLoginId();
+        RealityCheckData.set_value('loginid', Client.get_value('loginid'));
         RealityCheckUI.sendAccountStatus();
     };
 
