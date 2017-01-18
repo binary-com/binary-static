@@ -764,7 +764,9 @@ msgstr "มีความสนใจและความมุ่งมั่
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "วิธีการเชิงรุกในการแก้ปัญหาและนำเสนอวิธีการแก้ปัญหาต่างๆ ให้ลูกค้า"
 
-msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+#, fuzzy
+#| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
 msgstr "สแกนสำเนาใบแจ้งหนี้รายการสาธารณูปโภค หรือ รายงานธุรกรรมการเงินทางธนาคาร (ฉบับล่าสุด ไม่นานกว่า 3 เดือน) จำนวน 1 ฉบับ"
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
@@ -1373,12 +1375,7 @@ msgid "Binary (V) Ltd"
 msgstr "Binary (V) Ltd"
 
 msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016.pdf\" target=\"_blank\">view licence</a>."
-msgstr ""
-"Binary (V) Ltd ตั้งอยู่ที่ อาคาร Govant เมืองพอร์ตวิลลา PO Box 1276 วานูอาตู "
-"สาธารณรัฐวานูอาตู ได้รับใบอนุญาตและรับรองโดย Vanuatu Financial Services "
-"Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-"
-"of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016."
-"pdf\" target=\"_blank\">ดูใบอนุญาต</a>"
+msgstr "Binary (V) Ltd ตั้งอยู่ที่ อาคาร Govant เมืองพอร์ตวิลลา PO Box 1276 วานูอาตู สาธารณรัฐวานูอาตู ได้รับใบอนุญาตและรับรองโดย Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016.pdf\" target=\"_blank\">ดูใบอนุญาต</a>"
 
 msgid "Binary Bot"
 msgstr "Binary Bot"
@@ -1393,9 +1390,7 @@ msgid "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 
 msgstr "Binary Group Services Sdn Bhd ตั้งอยู่ที่ C-13-02 อาคาร iTech ถนน Impact, Cyber 6, 63000 ไซเบอร์จายา Selangor Darul Ehsan"
 
 msgid "Binary Group Services Sdn Bhd, Zweigstelle Berlin, Friedrichstraße 68, 10117 Berlin"
-msgstr ""
-"บริษัท Binary Group Services Sdn Bhd, Zweigstelle Berlin, Friedrichstraße "
-"68, 10117 เบอร์ลิน"
+msgstr "บริษัท Binary Group Services Sdn Bhd, Zweigstelle Berlin, Friedrichstraße 68, 10117 เบอร์ลิน"
 
 msgid "Binary Group Services is searching for talented and motivated Perl developers who are looking for a chance to excel. If you have the skill set we seek, you'll become a valued member of a highly competent back-end development team engaged in driving our binary options trading systems to new heights."
 msgstr "Binary Group Services กำลังสรรหานักพัฒนาโปรแกรม Perl ผู้มีความสามารถและมุ่งมั่นสำหรับโอกาสและความท้าทาย หากท่านมีคุณสมบัติที่เรากำลังมองหา ท่านจะเป็นบุคลากรที่มีคุณค่าในทีมพัฒนาระบบเบื้องหลังที่มีความสามารถในการขับเคลื่อนระบบซื้อขายไบนารีออปชั่นของเราในระยะยาว"
@@ -1613,11 +1608,6 @@ msgstr "แคชเชียร์"
 
 msgid "Cashier Password"
 msgstr "รหัสผ่านสำหรับจัดการเงิน"
-
-#, fuzzy
-#| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "แคชเชียร์ถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
 
 msgid "Cashier password"
 msgstr "รหัสผ่านสำหรับจัดการเงิน"
@@ -2182,11 +2172,6 @@ msgstr "ฝาก %1 %2 เงินเสมือนในบัญชีข�
 
 msgid "Deposit Bonus"
 msgstr "โบนัสเงินฝาก"
-
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "การฝากเงินถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
 
 msgid "Deposit of"
 msgstr "การฝากของ"
@@ -4339,9 +4324,7 @@ msgid "Maximum aggregate payouts on open positions"
 msgstr "มูลค่าการชำระเงินรวมที่มากที่สุดของโพซิชั่นที่เปิด"
 
 msgid "Maximum aggregate payouts on open positions per symbol and contract type"
-msgstr ""
-"มูลค่าการชำระเงินรวมที่มากที่สุดของโพซิชั่นที่เปิดต่อสัญลักษณ์และประเภทของสัญ"
-"ญา"
+msgstr "มูลค่าการชำระเงินรวมที่มากที่สุดของโพซิชั่นที่เปิดต่อสัญลักษณ์และประเภทของสัญญา"
 
 msgid "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
 msgstr ""
@@ -6704,7 +6687,9 @@ msgstr "ถึง"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "หากประสงค์จะสมัคร โปรดส่งประวัติย่อของท่าน และจดหมายแนะนำตัวมาที่ <span id='hr_contact_eaddress'></span>"
 
-msgid "To authenticate your account, kindly email the following to %1"
+#, fuzzy
+#| msgid "To authenticate your account, kindly email the following to %1"
+msgid "To authenticate your account, kindly email the following to %1:"
 msgstr "เพื่อตรวจสอบบัญชีของท่าน โปรดส่งข้อมูลผ่านอีเมล์มาที่ %1"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
@@ -7482,11 +7467,6 @@ msgstr "วงเงินในการถอน"
 
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "ในขณะนี้ บัญชีของท่านไม่ได้รับอนุญาตให้ดำเนินการถอนเงิน โปรดติดต่อ %1 เพื่อปลดล็อค"
-
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "การถอนถูกล็อค โปรด<a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
 
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr "ปฏิบัติงานร่วมกับบุคลากรอื่นๆ ในทีมเพื่อพัฒนาซอฟต์แวร์เกี่ยวกับการนำเสนอราคาที่ใช้ในแพลตฟอร์มการซื้อขายของเรา"
@@ -9062,6 +9042,9 @@ msgstr "{JAPAN ONLY}You set your own personal daily loss limit"
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
+msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
+msgstr ""
+
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
 
@@ -9172,6 +9155,21 @@ msgstr "รายละเอียดบัญชี"
 
 msgid "Terms and Conditions Approval"
 msgstr "การอนุมัติข้อตกลงและเงื่อนไข"
+
+#, fuzzy
+#~| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "แคชเชียร์ถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
+
+#, fuzzy
+#~| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "การฝากเงินถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
+
+#, fuzzy
+#~| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "การถอนถูกล็อค โปรด<a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
 
 #~ msgid "You are not authorized for withdrawal via payment agent."
 #~ msgstr "ท่านไม่ได้รับอนุญาตให้ถอนเงินผ่านตัวแทนรับชำระเงิน"
