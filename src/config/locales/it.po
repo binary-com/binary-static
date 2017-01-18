@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Italian (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-29 10:09+0000\n"
+"PO-Revision-Date: 2017-01-12 13:13+0000\n"
 "Last-Translator: Annalisa <ligiu@me.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/binary/static/it/>\n"
 "Language: it\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.10-dev\n"
+"X-Generator: Weblate 2.11-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" indica l'insieme delle routine programmatiche, protocolli e risorse di proprietà di %1 create e gestite da %1 che ti consentono di usare un'Applicazione registrata per interagire con la piattaforma di trading di %1."
@@ -328,10 +328,8 @@ msgstr "Trade (One) Touch"
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "* Tax Free: in molti paesi i profitti generati dal trading sono esenti da imposte ma si consiglia sempre di consultare un consulente fiscale."
 
-#, fuzzy
-#| msgid "All calls are recorded for training and monitoring purposes"
 msgid "*All calls are recorded for training and monitoring purposes"
-msgstr "Tutte le chiamate vengono registrate a fini formativi e di monitoraggio"
+msgstr "*Tutte le chiamate vengono registrate a fini formativi e di monitoraggio"
 
 msgid ",000"
 msgstr ",000"
@@ -761,7 +759,9 @@ msgstr "Una preferenza e la passione per Linux e per le piattaforme open-source"
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Un approccio proattivo alla risoluzione dei problemi e all'offerta di soluzioni ai clienti"
 
-msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+#, fuzzy
+#| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
 msgstr "Una copia scannerizzata di una bolletta o di un estratto conto (non antecedente i 3 mesi)."
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
@@ -1303,10 +1303,8 @@ msgstr "Piattaforme di base"
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr "Prima di aprire un account per fare trading o investire nei Prodotti d'Investimento con BIEL, siamo obbligati ad effettuare una valutazione sull'adeguatezza nei tuoi confronti dei Prodotti d'Investimento o servizi da te scelti e segnalarti se, sulla base delle informazioni a noi fornite da parte tua, qualsiasi prodotto o servizio sia inappropriato. Qualsiasi decisione relativa all'apertura di un account e all'utilizzo dei nostri prodotti o servizi spetta a te. È tua responsabilità quella di comprendere i rischi connessi ai nostri prodotti o servizi."
 
-#, fuzzy
-#| msgid "More benefits"
 msgid "Benefits"
-msgstr "Maggiori vantaggi"
+msgstr "Vantaggi"
 
 msgid "Benefits of being a Payment Agent"
 msgstr "I vantaggi dell'essere un Agente di pagamento"
@@ -1371,10 +1369,8 @@ msgstr "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas,
 msgid "Binary (V) Ltd"
 msgstr "Binary (V) Ltd"
 
-#, fuzzy
-#| msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">view licence</a>."
 msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016.pdf\" target=\"_blank\">view licence</a>."
-msgstr "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Repubblica di Vanuatu. Autorizzata e regolamentata dalla Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">vedi autorizzazione</a>."
+msgstr "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Repubblica di Vanuatu. Autorizzata e regolamentata dalla Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.20164.pdf\" target=\"_blank\">vedi autorizzazione</a>."
 
 msgid "Binary Bot"
 msgstr "Binary Bot"
@@ -1607,11 +1603,6 @@ msgstr "Cassa"
 
 msgid "Cashier Password"
 msgstr "Password della cassa"
-
-#, fuzzy
-#| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "La cassa è bloccata, per ulteriori informazioni <a class=\"pjaxload\" href=\"%1\">contattaci</a>."
 
 msgid "Cashier password"
 msgstr "Password della cassa"
@@ -2178,11 +2169,6 @@ msgstr "Deposita il denaro virtuale di %1 %2 sul suo account %3"
 
 msgid "Deposit Bonus"
 msgstr "Bonus sul deposito"
-
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Il deposito è bloccato, per ulteriori informazioni <a class=\"pjaxload\" href=\"%1\">contattaci</a>."
 
 msgid "Deposit of"
 msgstr "Deposito di"
@@ -2945,8 +2931,6 @@ msgstr "Ottieni il tuo prezzo"
 msgid "Getting Started"
 msgstr "Per iniziare"
 
-#, fuzzy
-#| msgid "Getting Started"
 msgid "Getting started"
 msgstr "Per iniziare"
 
@@ -3096,8 +3080,6 @@ msgstr "Dichiaro di non essere uno straniero politicamente attivo."
 msgid "I forgot my password, what should I do?"
 msgstr "Ho dimenticato la password, cosa dovrei fare?"
 
-#, fuzzy
-#| msgid "I have Real Money Account"
 msgid "I have a Real Money Account"
 msgstr "Ho un account con denaro reale"
 
@@ -4385,10 +4367,8 @@ msgstr "Sono richiesti minimo %1 caratteri."
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Minimo sei lettere minuscole e maiuscole con numeri"
 
-#, fuzzy
-#| msgid "minute"
 msgid "Minute"
-msgstr "minuto"
+msgstr "Minuto"
 
 msgid "Miss"
 msgstr "Sig.ra"
@@ -4998,10 +4978,8 @@ msgstr "Prima di procedere, conferma il trade sul tuo estratto."
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "Per completare il trasferimento, conferma i dettagli della transazione:"
 
-#, fuzzy
-#| msgid "Please contact us with whatever is on your mind at <a href=\"mailto:%1\">%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
-msgstr "Per qualsiasi richiesta, contattaci su <a href=\"mailto:%1\">%1</a>. Saremo lieti di aiutarti. Condividi liberamente con noi le tue idee e i tuoi suggerimenti."
+msgstr "Per qualsiasi richiesta, contattaci su <a href='mailto:%1'>%1</a>. Saremo lieti di aiutarti. Condividi liberamente con noi le tue idee e i tuoi suggerimenti."
 
 msgid "Please deposit before transfer to client."
 msgstr "Deposita prima di trasferire al cliente."
@@ -6719,7 +6697,9 @@ msgstr "A"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "Per candidarti, invia il tuo CV e una lettera di presentazione a <span id='hr_contact_eaddress'></span>."
 
-msgid "To authenticate your account, kindly email the following to %1"
+#, fuzzy
+#| msgid "To authenticate your account, kindly email the following to %1"
+msgid "To authenticate your account, kindly email the following to %1:"
 msgstr "Per convalidare il tuo account, ti chiediamo gentilmente di inviare quanto segue tramite email all'indirizzo %1"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
@@ -7506,11 +7486,6 @@ msgstr "Limiti per i Prelievi"
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "In questo momento non è consentito prelevare dal tuo account. Per sbloccarlo, contatta %1."
 
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Il prelievo è bloccato, per ulteriori informazioni <a class=\"pjaxload\" href=\"%1\">contattaci</a>."
-
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr "Lavora in stretta collaborazione con altri membri del team per sviluppare il software in grado di guidare i prezzi sulla nostra piattaforma di trading"
 
@@ -7834,10 +7809,8 @@ msgstr "Il tuo account è stato completamente convalidato e sono stati rimossi i
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "Il tuo account è stato pienamente convalidato. Puoi vedere i tuoi <a class=\"pjaxload\" href=\"%1\">limiti di trading qui</a>."
 
-#, fuzzy
-#| msgid "Client is not fully authenticated."
 msgid "Your account is not fully authenticated."
-msgstr "Il cliente non è pienamente autenticato."
+msgstr "Il tuo account non è pienamente autenticato."
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Il tuo account non dovrebbe avere una funzione bancaria e i depositi dovrebbero essere effettuati solo con l'obiettivo di utilizzare i fondi per piazzare dei contratti. La Società non è un istituto finanziario, i Clienti non riceveranno interessi sui depositi. Nel caso in cui vengano ripetutamente effettuati depositi e prelievi senza l'esecuzione di relativi contratti, prima della chiusura del conto, ci riserviamo il diritto di applicare sui tuoi account, senza alcun preavviso, qualsiasi onere bancario da noi sostenuto."
@@ -8010,10 +7983,8 @@ msgstr "indirizzo email"
 msgid "f"
 msgstr "f"
 
-#, fuzzy
-#| msgid "Th"
 msgid "h"
-msgstr "Gio"
+msgstr "h"
 
 msgid "hour"
 msgstr "ora"
@@ -8132,10 +8103,8 @@ msgstr "al tuo account."
 msgid "today"
 msgstr "oggi"
 
-#, fuzzy
-#| msgid "Fridays"
 msgid "today, Fridays"
-msgstr "Venerdì"
+msgstr "oggi, Venerdì"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "usare o riprodurre l'API di %1 diversamente da quanto consentito dai presenti Termini o"
@@ -9093,6 +9062,9 @@ msgstr "{JAPAN ONLY}You set your own personal daily loss limit"
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
+msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
+msgstr ""
+
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
 
@@ -9207,6 +9179,21 @@ msgstr "Dettagli dell'account"
 
 msgid "Terms and Conditions Approval"
 msgstr "Approvazione dei termini e delle condizioni"
+
+#, fuzzy
+#~| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "La cassa è bloccata, per ulteriori informazioni <a class=\"pjaxload\" href=\"%1\">contattaci</a>."
+
+#, fuzzy
+#~| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "Il deposito è bloccato, per ulteriori informazioni <a class=\"pjaxload\" href=\"%1\">contattaci</a>."
+
+#, fuzzy
+#~| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "Il prelievo è bloccato, per ulteriori informazioni <a class=\"pjaxload\" href=\"%1\">contattaci</a>."
 
 #~ msgid "You are not authorized for withdrawal via payment agent."
 #~ msgstr "Non sei autorizzato a prelevare tramite un agente di pagamento."

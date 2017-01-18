@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-10 22:55+0000\n"
-"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
+"PO-Revision-Date: 2017-01-13 07:07+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -770,7 +770,9 @@ msgstr "Linuxとオープンソースプラットフォームが好きで、情�
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "問題解決または顧客へ解決策の提供など積極的に取り組むことができる"
 
-msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+#, fuzzy
+#| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
 msgstr "ご不明な点等ありましたら、カスタマーサポートまでご連絡ください"
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
@@ -1619,9 +1621,6 @@ msgstr "入出金"
 msgid "Cashier Password"
 msgstr "入出金パスワード"
 
-msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
-
 msgid "Cashier password"
 msgstr "入出金パスワード"
 
@@ -2195,9 +2194,6 @@ msgstr "%1 %2のバーチャルマネーをアカウント%3へ入金する"
 
 msgid "Deposit Bonus"
 msgstr "ご入金された場合に付与されるボーナスについて"
-
-msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までご連絡ください。"
 
 msgid "Deposit of"
 msgstr "Xのご入金"
@@ -6836,7 +6832,9 @@ msgstr "終了"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "お申し込みいただく際は、履歴書とカバーレターを<span id='hr_contact_eaddress'></span>へご送付ください。"
 
-msgid "To authenticate your account, kindly email the following to %1"
+#, fuzzy
+#| msgid "To authenticate your account, kindly email the following to %1"
+msgid "To authenticate your account, kindly email the following to %1:"
 msgstr "入出金口座がロックされています。お手数ですが%1へメールでお問い合わせください。"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
@@ -7641,9 +7639,6 @@ msgstr "出金限度額"
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "お客様の口座の出金手続きは現在許可されていません。解除するには%1までご連絡ください。"
 
-msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "出金アクションにロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
-
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr "取引プラットフォームの価格を扱うソフトウェア開発に携わるチームのメンバーと緊密に連携します。"
 
@@ -8334,28 +8329,28 @@ msgid "{JAPAN ONLY}#1 Sales Division"
 msgstr "第一営業支店"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
-msgstr "%3のNO-TOUCHは、取引期間(%4)が終了するまでにバリア価格にタッチしないを予測"
+msgstr "%3のNO-TOUCHは、取引期間(%4)が終了するまでにバリア価格にタッチしないを予測<br>09:00«の判定時刻は08:59:59となります"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-msgstr "%3のEND-INは、判定時刻(%4)の時点で上限バリア未満かつ下限バリア以上を予測"
+msgstr "%3のEND-INは、判定時刻(%4)の時点で上限バリア未満かつ下限バリア以上を予測<br>09:00«の判定時刻は08:59:59となります"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr "%3のEND-OUTは、判定時刻(%4)の時点で上限バリア以上もしくは下限バリア未満を予測"
+msgstr "%3のEND-OUTは、判定時刻(%4)の時点で上限バリア以上もしくは下限バリア未満を予測<br>09:00«の判定時刻は08:59:59となります"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgstr "%3のBREAK-OUTは、取引期間中(%4)に上限バリア以上もしくは下限バリア以下になったと予測"
+msgstr "%3のBREAK-OUTは、取引期間中(%4)に上限バリア以上もしくは下限バリア以下になったと予測<br>09:00«の判定時刻は08:59:59となります"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-msgstr "%3のラダーHIGHは、判定時刻(%4)の時点でバリア価格以上を予測"
+msgstr "%3のラダーHIGHは、判定時刻(%4)の時点でバリア価格以上を予測<br>09:00«の判定時刻は08:59:59となります"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-msgstr "%3のラダーLOWは、判定時刻(%4)の時点でバリア価格未満を予測"
+msgstr "%3のラダーLOWは、判定時刻(%4)の時点でバリア価格未満を予測<br>09:00«の判定時刻は08:59:59となります"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-msgstr "%3のSTAY-INは取引期間中(%4)に上限バリア未満かつ下限バリア超過を維持すると予測"
+msgstr "%3のSTAY-INは取引期間中(%4)に上限バリア未満かつ下限バリア超過を維持すると予測<br>09:00«の判定時刻は08:59:59となります"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
-msgstr "%3のTOUCHは、取引期間(%4)が終了するまでバリア価格にタッチを予測"
+msgstr "%3のTOUCHは、取引期間(%4)が終了するまでバリア価格にタッチを予測<br>09:00«の判定時刻は08:59:59となります"
 
 msgid "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
 msgstr ""
@@ -9097,7 +9092,7 @@ msgid "{JAPAN ONLY}The exit price is important in binary options. In case of han
 msgstr "バイナリーオプション取引では、判定レートは重要であり、個人向け店頭通貨関連バイナリーオプション取引を取り扱う場合には、自社が決定する判定レートについて、ミスや作為的な操作が行われていないか自ら点検するほか、第三者の提供するレートデータを用いる場合でも、データに誤りがないか点検しております。"
 
 msgid "{JAPAN ONLY}The maximum loss for the buyer of an option is the price paid, and the maximium loss for the option seller will be the payout amount minus the opion price he received."
-msgstr "権利行使期限が到来し権利行使が行われない場合、オプションの権利は消滅するが、売り手が受け取ったオプション料はそのまま売り手のものとなります。"
+msgstr "満期日までに権利行使が行われない場合、オプションの権利は消滅するが、売り手が受け取ったオプション料はそのまま売り手のものとなります。"
 
 msgid "{JAPAN ONLY}The particular details of binary options are all the same, no matter which broking company you trade with."
 msgstr "店頭バイナリーオプションの金融商品は、取扱金融商品取引業者が異なっても同じ内容となります。"
@@ -9259,6 +9254,9 @@ msgstr "ご自身で取引限度額、損失限度額を期間ごとに設定で
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 msgstr "バイナリーオプション取引は、購入金額を超える損失が生じる可能性はありませんが、損失を限定するためのロスカットはありません。権利が消滅した場合、購入金額全額が損失となります。"
 
+msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
+msgstr ""
+
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "信託により区分管理"
 
@@ -9369,6 +9367,15 @@ msgstr "ご口座の詳細情報"
 
 msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
+
+#~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
+
+#~ msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までご連絡ください。"
+
+#~ msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "出金アクションにロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
 
 #~ msgid "You are not authorized for withdrawal via payment agent."
 #~ msgstr "お客さまは決済サービスでのご出金が許可されていません。"

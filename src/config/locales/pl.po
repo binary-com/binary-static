@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-03 09:26+0000\n"
-"Last-Translator: Anna Płochocka <plochocka.anna@gmail.com>\n"
+"PO-Revision-Date: 2017-01-12 18:45+0000\n"
+"Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -219,10 +219,8 @@ msgstr "%1 zatrudni kierownika ds. mediów społecznościowych, którego zadanie
 msgid "%1 seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world."
 msgstr "%1 zatrudni zdolnego copywritera, którego zadaniem będzie tworzenie treści atrakcyjnych dla potencjalnych i obecnych klientów z całego świata."
 
-#, fuzzy
-#| msgid "%1 supports the <a target='_blank' href='http://about.gambleaware.org/'>GambleAware</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgid "%1 supports %2 which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
-msgstr "%1 wspiera fundację <a target='_blank' href='http://about.gambleaware.org/'>GambleAware</a> (RGT), która jest najpopularniejszą organizacją charytatywną w Wielkiej Brytanii skupiającą się na minimalizowaniu szkód związanych z hazardem. RGT zajmuje się sponsorowaniem kształcenia dot. problemów związanych z hazardem oraz usług mających na celu zapobieganie tym problemom i zwalczanie ich. Zleca również różnego rodzaju badania, aby pomóc ludziom zrozumieć szkody, jaki może wyrządzić hazard. Prowadzi także krajowy telefon zaufania dla osób szukających pomocy w związku z problemami z hazardem, oferując poufne porady i wsparcie emocjonalne."
+msgstr "%1 wspiera fundację %2, która jest najpopularniejszą organizacją charytatywną w Wielkiej Brytanii skupiającą się na minimalizowaniu szkód związanych z hazardem. Zajmuje się ona sponsorowaniem kształcenia dot. problemów związanych z hazardem oraz usług mających na celu zapobieganie tym problemom i zwalczanie ich. Zleca również różnego rodzaju badania, aby pomóc ludziom zrozumieć szkody, jaki może wyrządzić hazard. Prowadzi także krajowy telefon zaufania dla osób szukających pomocy w związku z problemami z hazardem, oferując poufne porady i wsparcie emocjonalne."
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "%1 zdobywa pierwszą nagrodę w kategorii „Operator finansowy roku” na prestiżowej ceremonii wręczenia nagród EGR Operator Awards, która odbyła się w Londynie w 2015 r."
@@ -765,7 +763,9 @@ msgstr "Chęć pracy w systemie Linux i z wykorzystaniem platform typu open-sour
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Aktywne podejście do rozwiązywania problemów i zapewniania rozwiązań dla naszych klientów"
 
-msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+#, fuzzy
+#| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
 msgstr "Skan rachunku za media lub wyciągu bankowego (z ostatnich 3 miesięcy)."
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
@@ -1028,7 +1028,7 @@ msgid "An error occured."
 msgstr "Wystąpił błąd."
 
 msgid "Analyse and test the domains and subdomains listed in the scope."
-msgstr ""
+msgstr "Analizuj i testuj domeny i poddomeny wymienione w zakresie zadań."
 
 msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
 msgstr "Analizuj rynki, korzystając z szerokiej gamy wskaźników, poziomów cenowych oraz nakładek."
@@ -1604,9 +1604,6 @@ msgstr "Kasjer"
 msgid "Cashier Password"
 msgstr "Hasło do sekcji Kasjer"
 
-msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Sekcja Kasjer jest zablokowana, proszę skontaktować się z <a class=\"pjaxload\" href=\"%1\">działem obsługi klienta</a>, aby uzyskać więcej informacji."
-
 msgid "Cashier password"
 msgstr "Hasło do sekcji Kasjer"
 
@@ -2170,9 +2167,6 @@ msgstr "Wpłać na swoje konto %3 wirtualne pieniądze w kwocie: %2 %1"
 
 msgid "Deposit Bonus"
 msgstr "Bonus przy wpłacie"
-
-msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Dokonywanie wpłat jest zablokowane, proszę skontaktować się z <a class=\"pjaxload\" href=\"%1\">działem obsługi klienta</a>, aby uzyskać więcej informacji."
 
 msgid "Deposit of"
 msgstr "Wpłata w wysokości"
@@ -3012,7 +3006,7 @@ msgid "Higher/Lower trades"
 msgstr "Zakłady wyższy/niższy"
 
 msgid "Hone your security testing skills."
-msgstr "Udoskonal swoje zdolności w zakresie testowania pod kątem bezpieczeństwa."
+msgstr "Dojdź do perfekcji w testach bezpieczeństwa."
 
 msgid "Hour"
 msgstr "Godzina"
@@ -3168,7 +3162,7 @@ msgid "If you don't receive the email within the next few minutes, please check 
 msgstr "Jeśli nie otrzymasz od nas wiadomości e-mail w przeciągu kilku minut, sprawdź folder spam."
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
-msgstr ""
+msgstr "Jeśli znajdziesz jakiekolwiek luki w zabezpieczeniach naszych <a target='_blank' href='%1'>kodów open-source</a>, możesz wysłać wiadomość typu pull request na GitHub."
 
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "Jeśli posiadasz zdolności, których szukamy, z pewnością będziesz wartościowym członkiem wysoko wyspecjalizowanego zespołu programistów front end zaangażowanych w najwyższej jakości obsługę naszych systemów handlu opcjami binarnymi."
@@ -5601,10 +5595,8 @@ msgstr "Zastrzeżenie dotyczące bezpieczeństwa"
 msgid "Security Statement"
 msgstr "Oświadczenie o bezpieczeństwie"
 
-#, fuzzy
-#| msgid "User Testing"
 msgid "Security Testing"
-msgstr "Testowanie przez użytkownika"
+msgstr "Testowanie pod kątem bezpieczeństwa"
 
 msgid "Security and Privacy"
 msgstr "Bezpieczeństwo i prywatność"
@@ -5789,10 +5781,8 @@ msgstr "Tworzenie oprogramowania (Perl)"
 msgid "Sorry, account opening is unavailable."
 msgstr "Przepraszamy, otwarcie konta jest niemożliwe."
 
-#, fuzzy
-#| msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "Konto nie zostało aktywowane, proszę skontaktować się z <a class=\"pjaxload\" href=\"%1\">działem obsługi klienta</a>, aby uzyskać więcej informacji."
+msgstr "Przepraszamy, rejestracja konta nie jest dostępna w Twoim kraju. Proszę skontaktować się z <a href=\"%1\">>działem obsługi klienta</a>, aby uzyskać więcej informacji."
 
 msgid "Sorry, an error occurred while processing your account."
 msgstr "Przepraszamy, wystąpił błąd podczas operacji na Twoim koncie."
@@ -5954,7 +5944,7 @@ msgid "Submit"
 msgstr "Prześlij"
 
 msgid "Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue."
-msgstr ""
+msgstr "Wyślij raport na HackerOne dotyczący wszelkich potencjalnych problemów zabezpieczeń, które znajdziesz, razem z sugestiami, jak je rozwiązać."
 
 msgid "Submit your CV and Cover Letter"
 msgstr "Prześlij CV i list motywacyjny"
@@ -6679,7 +6669,9 @@ msgstr "Do"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "Aby aplikować, prześlij swoje CV i list motywacyjny na <span id='hr_contact_eaddress'></span>."
 
-msgid "To authenticate your account, kindly email the following to %1"
+#, fuzzy
+#| msgid "To authenticate your account, kindly email the following to %1"
+msgid "To authenticate your account, kindly email the following to %1:"
 msgstr "Aby uwierzytelnić konto, proszę przesłać do %1 drogą e-mailową dokumenty wymienione poniżej"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
@@ -7456,13 +7448,9 @@ msgstr "Limity wypłat"
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "Wypłaty środków z Twojego konta są w tym momencie niemożliwe. Skontaktuj się z %1, aby je odblokować."
 
-msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Dokonywanie wypłat jest zablokowane, proszę skontaktować się z <a class=\"pjaxload\" href=\"%1\">działem obsługi klienta</a>, aby uzyskać więcej informacji."
-
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr "Bliska współpraca z innymi członkami zespołu podczas tworzenia oprogramowania, które będzie określało ceny na naszej platformie do handlowania"
 
-#, fuzzy
 msgid "Work directly with members of our marketing and IT teams to produce graphics for the company website, blog, social media outlets, and marketing materials"
 msgstr "Bezpośrednia współpraca z naszym działem marketingu i IT w celu tworzenia materiałów graficznych na potrzeby firmowej strony internetowej, blogów, mediów społecznościowych i materiałów marketingowych"
 
@@ -9032,6 +9020,9 @@ msgstr "{JAPAN ONLY}You set your own personal daily loss limit"
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
+msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
+msgstr ""
+
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
 
@@ -9142,6 +9133,15 @@ msgstr "Dane konta"
 
 msgid "Terms and Conditions Approval"
 msgstr "Akceptacja regulaminu"
+
+#~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "Sekcja Kasjer jest zablokowana, proszę skontaktować się z <a class=\"pjaxload\" href=\"%1\">działem obsługi klienta</a>, aby uzyskać więcej informacji."
+
+#~ msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "Dokonywanie wpłat jest zablokowane, proszę skontaktować się z <a class=\"pjaxload\" href=\"%1\">działem obsługi klienta</a>, aby uzyskać więcej informacji."
+
+#~ msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "Dokonywanie wypłat jest zablokowane, proszę skontaktować się z <a class=\"pjaxload\" href=\"%1\">działem obsługi klienta</a>, aby uzyskać więcej informacji."
 
 #~ msgid "You are not authorized for withdrawal via payment agent."
 #~ msgstr "Nie jesteś upoważniony do wypłat przez pośrednika płatności."
