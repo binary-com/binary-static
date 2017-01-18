@@ -65,13 +65,13 @@ const RealityCheckData = (function() {
     const get_storage_value = function(key) {
         let value = reality_object[key] || LocalStore.get('reality_check.' + key) || '';
         if (+value === 1 || +value === 0 || value === 'true' || value === 'false') {
-            value = JSON.parse(value);
+            value = JSON.parse(value || false);
         }
         return value;
     };
 
     const clear_storage_values = function() {
-        // clear all client values from local storage
+        // clear all reality check values from local storage except loginid
         Object.keys(localStorage).forEach(function(c) {
             if (/^reality_check\.(?!(loginid$))/.test(c)) {
                 LocalStore.set(c, '');
