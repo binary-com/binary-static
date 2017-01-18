@@ -24,7 +24,6 @@ const reloadPage                = require('./trade/common').reloadPage;
 const MBTradePage               = require('./mb_trade/mb_tradepage').MBTradePage;
 const RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
 const RealityCheckData          = require('./user/reality_check/reality_check.data').RealityCheckData;
-const KnowledgeTest             = require('../../binary_japan/knowledge_test/knowledge_test.init').KnowledgeTest;
 const localize         = require('../base/localize').localize;
 const getLanguage      = require('../base/language').getLanguage;
 const validate_loginid = require('../base/client').validate_loginid;
@@ -209,7 +208,6 @@ const BinarySocketClass = function() {
                 } else if (type === 'time') {
                     Clock.time_counter(response);
                 } else if (type === 'logout') {
-                    localStorage.removeItem('jp_test_allowed');
                     RealityCheckData.clear();
                     Client.do_logout(response);
                 } else if (type === 'landing_company') {
@@ -253,16 +251,7 @@ const BinarySocketClass = function() {
                     if (!localStorage.getItem('risk_classification')) Client.check_tnc();
                     const jpStatus = response.get_settings.jp_account_status;
                     if (jpStatus) {
-                        switch (jpStatus.status) {
-                            case 'jp_knowledge_test_pending':
-                            case 'jp_knowledge_test_fail':
-                                localStorage.setItem('jp_test_allowed', 1);
-                                break;
-                            default: localStorage.setItem('jp_test_allowed', 0);
-                        }
-                        KnowledgeTest.showKnowledgeTestTopBarIfValid(jpStatus);
-                    } else {
-                        localStorage.removeItem('jp_test_allowed');
+                        Client.set_value('jp_status', jpStatus.status);
                     }
                     if (response.get_settings.is_authenticated_payment_agent) {
                         $('#topMenuPaymentAgent').removeClass('invisible');

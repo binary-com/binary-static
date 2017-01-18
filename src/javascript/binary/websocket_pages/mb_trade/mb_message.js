@@ -37,7 +37,7 @@ const MBMessage = (function () {
                 Client.set_value('currencies', response.payout_currencies.join(','));
                 MBDisplayCurrencies('', false);
                 MBSymbols.getSymbols(1);
-            } else if (type === 'proposal_array') {
+            } else if (type === 'proposal') {
                 MBProcess.processProposal(response);
             } else if (type === 'buy') {
                 MBPurchase.display(response);

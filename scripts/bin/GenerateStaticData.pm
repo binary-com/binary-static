@@ -422,9 +422,9 @@ sub _texts {
         push @texts, localize('today, Fridays');
 
         #strings for authenticate page
-        push @texts, localize('To authenticate your account, kindly email the following to [_1]');
+        push @texts, localize('To authenticate your account, kindly email the following to [_1]:');
         push @texts, localize('A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date.');
-        push @texts, localize('A scanned copy of a utility bill or bank statement (no more than 3 months old).');
+        push @texts, localize('A scanned copy of a utility bill or bank statement (no more than 3 months old)');
         push @texts, localize('This feature is not relevant to virtual-money accounts.');
         push @texts, localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].');
         push @texts, localize('Deposits and withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.');
@@ -492,6 +492,7 @@ sub _texts {
         push @texts, localize('min: 1,000');
         push @texts, localize('max: 100,000');
         push @texts, localize('Your Application is Being Processed.');
+        push @texts, localize('{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.');
         push @texts, localize('Processing your request...');
         push @texts, localize('Please check the above form for pending errors.');
         push @texts, localize('Market is closed. Please try again later.');

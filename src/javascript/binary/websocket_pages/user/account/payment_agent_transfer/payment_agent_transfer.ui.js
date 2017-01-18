@@ -40,13 +40,16 @@ const PaymentAgentTransferUI = (function () {
     const updateConfirmView = function(username, loginid, amount, currency) {
         $('#pa_confirm_transfer')
             .find('td#user-name')
-                .html(username)
+                .empty()
+                .text(username)
             .end()
             .find('td#login-id')
-                .html(loginid)
+                .empty()
+                .text(loginid)
             .end()
             .find('td#amount')
-                .html(currency + ' ' + amount);
+                .empty()
+                .text(currency + ' ' + amount);
     };
 
     const showTransferError = function(err) {
