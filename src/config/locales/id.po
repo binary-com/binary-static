@@ -763,7 +763,9 @@ msgstr "Preferensi dan semangat pada Linux dan platform open-source"
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Memiliki pendekatan proaktif untuk memecahkan masalah dan memberikan solusi kepada klien"
 
-msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+#, fuzzy
+#| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
 msgstr "Scan tagihan utilitas atau rekening koran (tidak melebihi 3 bulan setelah dicetak)."
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
@@ -1602,9 +1604,6 @@ msgstr "Kasir"
 msgid "Cashier Password"
 msgstr "Kata Sandi Kasir"
 
-msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Kasir terblokir, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">customer support</a> untuk informasi lebih lanjut."
-
 msgid "Cashier password"
 msgstr "Kata sandi Kasir"
 
@@ -2168,9 +2167,6 @@ msgstr "Tambahkan Deposit %1 %2 dana virtual kedalam akun %3 Anda"
 
 msgid "Deposit Bonus"
 msgstr "Bonus Deposit"
-
-msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Deposit terblokir, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">customer support</a> untuk informasi lebih lanjut."
 
 msgid "Deposit of"
 msgstr "Deposit dari"
@@ -6681,7 +6677,9 @@ msgstr "Kepada"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "Untuk mengajukan surat lamaran, kirimkan lamaran Anda ke <span id='hr_contact_eaddress'></span>."
 
-msgid "To authenticate your account, kindly email the following to %1"
+#, fuzzy
+#| msgid "To authenticate your account, kindly email the following to %1"
+msgid "To authenticate your account, kindly email the following to %1:"
 msgstr "Untuk membuktikan identitas Anda, silakan email hal berikut ini ke %1"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
@@ -7457,9 +7455,6 @@ msgstr "Batas Penarikan"
 
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "Penarikan untuk akun Anda tidak dapat dilanjutkan untuk saat ini. Silahkan hubungi %1 untuk pengaktifan."
-
-msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Penarikan terblokir, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">customer support</a> untuk informasi lebih lanjut."
 
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr "Bekerja sama dengan anggota tim lain untuk membangun software yang akan mengoperasikan harga pada platform trading kami"
@@ -9033,6 +9028,9 @@ msgstr "{JAPAN ONLY}You set your own personal daily loss limit"
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
+msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
+msgstr ""
+
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
 
@@ -9143,6 +9141,15 @@ msgstr "Keterangan rekening"
 
 msgid "Terms and Conditions Approval"
 msgstr "Syarat dan Ketentuan Persetujuan"
+
+#~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "Kasir terblokir, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">customer support</a> untuk informasi lebih lanjut."
+
+#~ msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "Deposit terblokir, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">customer support</a> untuk informasi lebih lanjut."
+
+#~ msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "Penarikan terblokir, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">customer support</a> untuk informasi lebih lanjut."
 
 #~ msgid "You are not authorized for withdrawal via payment agent."
 #~ msgstr "Anda tidak dibenarkan menarik dana menggunakan agen pembayaran."

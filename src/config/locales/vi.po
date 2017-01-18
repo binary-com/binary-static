@@ -769,7 +769,9 @@ msgstr "Có sở thích và niềm đam mê với Linux và nền tảng mã ngu
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Cách tiếp cận tích cực để giải quyết vấn đề và cung cấp giải pháp khách hàng"
 
-msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+#, fuzzy
+#| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
 msgstr "Một bản scan hóa đơn điện nước hoặc bản sao kê ngân hàng (không quá 3 tháng gần đây nhất)."
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
@@ -1622,11 +1624,6 @@ msgstr "Thu ngân"
 msgid "Cashier Password"
 msgstr "Mật khẩu Thu ngân"
 
-#, fuzzy
-#| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Thu ngân bị khóa, xin vui lòng <a class=\"pjaxload\" href=\"%1\"> liên hệ với chúng tôi</a> để biết thêm thông tin."
-
 msgid "Cashier password"
 msgstr "Mật khẩu Thu ngân"
 
@@ -2196,11 +2193,6 @@ msgstr "Gửi %1 %2 tiền ảo vào tài khoản %3 của bạn"
 
 msgid "Deposit Bonus"
 msgstr "Tiền thưởng Ký quỹ"
-
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Tiền gửi bị khóa, xin vui lòng <a class=\"pjaxload\" href=\"%1\"> liên hệ với chúng tôi</a> để biết thêm thông tin."
 
 msgid "Deposit of"
 msgstr "Tiền gửi của"
@@ -6765,7 +6757,9 @@ msgstr "Để"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "Để ứng tuyển, vui lòng gửi CV và thư xin việc của bạn tới <span id='hr_contact_eaddress'></span>."
 
-msgid "To authenticate your account, kindly email the following to %1"
+#, fuzzy
+#| msgid "To authenticate your account, kindly email the following to %1"
+msgid "To authenticate your account, kindly email the following to %1:"
 msgstr "Để xác thực tài khoản của bạn, vui lòng gửi email những giấy tờ sau tới %1"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
@@ -7559,11 +7553,6 @@ msgstr "Giới hạn Rút tiền"
 
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "Rút tiền tại tài khoản của bạn không được phép tại thời điểm này. Xin vui lòng liên hệ với %1 để mở khóa."
-
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Không thể rút tiền, vui lòng liên lạc với chúng tôi <a class=\"pjaxload\" href=\"%1\"></a> để có thêm thông tin."
 
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr "Làm việc chặt chẽ với các thành viên khác của nhóm để phát triển phần mềm định giá trên nền tảng giao dịch của chúng tôi"
@@ -9257,6 +9246,9 @@ msgstr "{JAPAN ONLY}You set your own personal daily loss limit"
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
+msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
+msgstr ""
+
 #, fuzzy
 #| msgid "{JAPAN ONLY}hours"
 msgid "{JAPAN ONLY}Your Funds"
@@ -9375,6 +9367,21 @@ msgstr "Chi tiết Tài khoản"
 
 msgid "Terms and Conditions Approval"
 msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
+
+#, fuzzy
+#~| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "Thu ngân bị khóa, xin vui lòng <a class=\"pjaxload\" href=\"%1\"> liên hệ với chúng tôi</a> để biết thêm thông tin."
+
+#, fuzzy
+#~| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "Tiền gửi bị khóa, xin vui lòng <a class=\"pjaxload\" href=\"%1\"> liên hệ với chúng tôi</a> để biết thêm thông tin."
+
+#, fuzzy
+#~| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "Không thể rút tiền, vui lòng liên lạc với chúng tôi <a class=\"pjaxload\" href=\"%1\"></a> để có thêm thông tin."
 
 #~ msgid "You are not authorized for withdrawal via payment agent."
 #~ msgstr "Bạn không được quyền rút tiền qua đại lý thanh toán."
