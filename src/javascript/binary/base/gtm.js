@@ -21,7 +21,7 @@ const GTM = (function() {
             url      : document.URL,
             event    : 'page_load',
         };
-        if (Client.get_boolean('is_logged_in')) {
+        if (Client.get_value('is_logged_in')) {
             data_layer_info.visitorId = Client.get_value('loginid');
         }
 
@@ -78,7 +78,7 @@ const GTM = (function() {
         if (is_newaccount) {
             data.bom_date_joined = data.bom_today;
         }
-        if (!Client.get_boolean('is_virtual')) {
+        if (!Client.get_value('is_virtual')) {
             data.bom_age       = parseInt((moment().unix() - get_settings.date_of_birth) / 31557600);
             data.bom_firstname = get_settings.first_name;
             data.bom_lastname  = get_settings.last_name;
@@ -88,7 +88,7 @@ const GTM = (function() {
     };
 
     const push_purchase_data = function(response) {
-        if (!gtm_applicable() || Client.get_boolean('is_virtual')) return;
+        if (!gtm_applicable() || Client.get_value('is_virtual')) return;
         const req = response.echo_req.passthrough,
             buy = response.buy;
         if (!buy) return;

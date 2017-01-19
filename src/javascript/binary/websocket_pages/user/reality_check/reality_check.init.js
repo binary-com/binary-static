@@ -37,7 +37,7 @@ const RealityCheck = (function() {
         } else {
             RealityCheckData.set_value('delay_reality_init', 0);
             RealityCheckUI.initializeValues();
-            if (!Client.get_boolean('has_reality_check')) {
+            if (!Client.get_value('has_reality_check')) {
                 RealityCheckData.set_value('loginid', Client.get_value('loginid'));
                 RealityCheckUI.sendAccountStatus();
                 return;

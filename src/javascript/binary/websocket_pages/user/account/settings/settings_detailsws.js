@@ -27,7 +27,7 @@ const SettingsDetailsWS = (function() {
     const init = function() {
         Content.populate();
 
-        if (Client.get_boolean('is_virtual') || Client.get_value('residence')) {
+        if (Client.get_value('is_virtual') || Client.get_value('residence')) {
             initOk();
         } else {
             isInitialized = false;
@@ -38,7 +38,7 @@ const SettingsDetailsWS = (function() {
 
     const initOk = function() {
         isInitialized = true;
-        const isVirtual = Client.get_boolean('is_virtual');
+        const isVirtual = Client.get_value('is_virtual');
         const isJP = Client.get_value('residence') === 'jp';
         bind_validation.simple($(formID)[0], {
             schema: isJP ? getJPSchema() : isVirtual ? {} : getNonJPSchema(),
@@ -76,7 +76,7 @@ const SettingsDetailsWS = (function() {
             changed = true;
         });
 
-        if (Client.get_boolean('is_virtual')) { // Virtual Account
+        if (Client.get_value('is_virtual')) { // Virtual Account
             $(RealAccElements).remove();
             $(formID).removeClass('hidden');
             return;
@@ -190,7 +190,7 @@ const SettingsDetailsWS = (function() {
         const trim = function(s) {
             return $(s).val().trim();
         };
-        setDetails(Client.get_boolean('is_virtual') ? data :
+        setDetails(Client.get_value('is_virtual') ? data :
             toJPSettings({
                 hedgeAssetAmount      : trim('#HedgeAssetAmount'),
                 annualIncome          : trim('#AnnualIncome'),

@@ -21,7 +21,7 @@ const RealAccOpening = (function() {
                     onmessage: function(msg) {
                         const response = JSON.parse(msg.data);
                         if (response) {
-                            if (response.msg_type === 'authorize' && !Client.get_boolean('is_virtual')) {
+                            if (response.msg_type === 'authorize' && !Client.get_value('is_virtual')) {
                                 window.location.href = url_for('trading');
                             }                            else if (response.msg_type === 'new_account_real') {
                                 ValidAccountOpening.handler(response, response.new_account_real);

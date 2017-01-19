@@ -5,9 +5,9 @@ const Client   = require('../binary/base/client').Client;
 const CashierJP = (function() {
     function init(action) {
         Content.populate();
-        if (Client.get_boolean('values_set')) {
+        if (Client.get_value('values_set')) {
             const $container = $('#japan_cashier_container');
-            if (Client.get_boolean('is_virtual')) {
+            if (Client.get_value('is_virtual')) {
                 $container.addClass('center-text notice-msg').removeClass('invisible')
                 .text(Content.localize().featureNotRelevantToVirtual);
                 return;

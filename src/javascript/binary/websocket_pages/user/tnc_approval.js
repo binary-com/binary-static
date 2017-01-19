@@ -72,7 +72,7 @@ const TNCApproval = (function() {
     };
 
     const apiResponse = function(response) {
-        isReal = !Client.get_boolean('is_virtual');
+        isReal = !Client.get_value('is_virtual');
         if (!isReal) {
             redirectBack();
         }

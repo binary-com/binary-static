@@ -196,7 +196,7 @@ const BinarySocketClass = function() {
                             send({ get_settings: 1 });
                             send({ get_account_status: 1 });
                             if (Cookies.get('residence')) send({ landing_company: Cookies.get('residence') });
-                            if (!Client.get_boolean('is_virtual')) send({ get_self_exclusion: 1 });
+                            if (!Client.get_value('is_virtual')) send({ get_self_exclusion: 1 });
                             if (/tnc_approvalws/.test(window.location.pathname)) {
                                 TNCApproval.showTNC();
                             }

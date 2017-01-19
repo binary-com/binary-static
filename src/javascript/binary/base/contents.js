@@ -27,7 +27,7 @@ const Contents = (function() {
     };
 
     const show_login_if_logout = function(shouldReplacePageContents) {
-        if (!Client.get_boolean('is_logged_in') && shouldReplacePageContents) {
+        if (!Client.get_value('is_logged_in') && shouldReplacePageContents) {
             $('#content').find(' > .container').addClass('center-text')
                 .html($('<p/>', {
                     class: 'notice-msg',
@@ -36,7 +36,7 @@ const Contents = (function() {
                 }));
             $('.login_link').click(function() { Login.redirect_to_login(); });
         }
-        return !Client.get_boolean('is_logged_in');
+        return !Client.get_value('is_logged_in');
     };
 
     return {

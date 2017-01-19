@@ -15,7 +15,7 @@ const Header = (function() {
         if (!$('body').hasClass('BlueTopBack') && !Login.is_login_pages()) {
             checkClientsCountry();
         }
-        if (Client.get_boolean('is_logged_in')) {
+        if (Client.get_value('is_logged_in')) {
             $('ul#menu-top').addClass('smaller-font');
         }
     };
@@ -56,7 +56,7 @@ const Header = (function() {
     };
 
     const show_or_hide_login_form = function() {
-        if (!Client.get_boolean('is_logged_in')) return;
+        if (!Client.get_value('is_logged_in')) return;
         const all_accounts = $('#all-accounts'),
             language = $('#select_language');
         $('.nav-menu').unbind('click').on('click', function(event) {
@@ -125,8 +125,8 @@ const Header = (function() {
     };
 
     const topbar_message_visibility = function(c_config) {
-        if (Client.get_boolean('is_logged_in')) {
-            if (!Client.get_boolean('values_set') || !c_config) {
+        if (Client.get_value('is_logged_in')) {
+            if (!Client.get_value('values_set') || !c_config) {
                 return;
             }
             const loginid_array = Client.get_value('loginid_array');
@@ -143,7 +143,7 @@ const Header = (function() {
                     .html($('<span/>', { text: localize(msg) }));
             };
 
-            if (Client.get_boolean('is_virtual')) {
+            if (Client.get_value('is_virtual')) {
                 let show_upgrade_msg = true;
                 for (let i = 0; i < loginid_array.length; i++) {
                     if (loginid_array[i].real) {

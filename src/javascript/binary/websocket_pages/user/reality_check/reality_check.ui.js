@@ -132,7 +132,7 @@ const RealityCheckUI = (function() {
     };
 
     const sendAccountStatus = function() {
-        if (!Client.get_boolean('is_virtual') && Client.get_value('residence') !== 'jp' && !getAccountStatus) {
+        if (!Client.get_value('is_virtual') && Client.get_value('residence') !== 'jp' && !getAccountStatus) {
             BinarySocket.send({ get_account_status: 1 });
             getAccountStatus = true;
         }

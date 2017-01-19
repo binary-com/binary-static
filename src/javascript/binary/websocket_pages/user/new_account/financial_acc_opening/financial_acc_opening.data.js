@@ -5,7 +5,7 @@ const FinancialAccOpeningData = (function() {
     const getRealAcc = function(elementObj) {
         const req = {
             new_account_maltainvest: 1,
-            accept_risk            : Client.get_boolean('accept_risk'),
+            accept_risk            : Client.get_value('accept_risk'),
         };
 
         Object.keys(elementObj).forEach((key) => {

@@ -156,7 +156,7 @@ const ForwardWS = (function() {
     const checkOnLoad = function() {
         const clientIsVirtual = function() {
             Content.populate();
-            const is_virtual = Client.get_boolean('is_virtual');
+            const is_virtual = Client.get_value('is_virtual');
             if (is_virtual) {
                 getCashierType();
                 ForwardWS.showError(Content.localize().featureNotRelevantToVirtual);

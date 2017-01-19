@@ -60,7 +60,7 @@ const Client = (function () {
     };
 
     const redirect_if_is_virtual = function(redirectPage) {
-        const is_virtual = get_boolean('is_virtual');
+        const is_virtual = get_storage_value('is_virtual');
         if (is_virtual) {
             window.location.href = url_for(redirectPage || '');
         }
@@ -68,10 +68,10 @@ const Client = (function () {
     };
 
     const redirect_if_login = function() {
-        if (get_boolean('is_logged_in')) {
+        if (get_storage_value('is_logged_in')) {
             window.location.href = default_redirect_url();
         }
-        return get_boolean('is_logged_in');
+        return get_storage_value('is_logged_in');
     };
 
     const set_storage_value = function(key, value) {
@@ -81,12 +81,11 @@ const Client = (function () {
 
     // use this function to get variables that have values
     const get_storage_value = function(key) {
-        return client_object[key] || LocalStore.get('client.' + key) || '';
-    };
-
-    // use this function to get variables that are a boolean
-    const get_boolean = function(value) {
-        return JSON.parse(get_storage_value(value) || false);
+        let value = client_object[key] || LocalStore.get('client.' + key) || '';
+        if (+value === 1 || +value === 0 || value === 'true' || value === 'false') {
+            value = JSON.parse(value || false);
+        }
+        return value;
     };
 
     const check_storage_values = function(origin) {
@@ -104,11 +103,11 @@ const Client = (function () {
             is_ok = false;
         }
 
-        if (get_boolean('is_logged_in')) {
+        if (get_storage_value('is_logged_in')) {
             if (
-                !get_boolean('is_virtual') &&
+                !get_storage_value('is_virtual') &&
                 Cookies.get('residence') &&
-                !get_boolean('has_reality_check')
+                !get_storage_value('has_reality_check')
             ) {
                 BinarySocket.send({
                     landing_company: Cookies.get('residence'),
@@ -148,7 +147,7 @@ const Client = (function () {
     const check_tnc = function() {
         if (/user\/tnc_approvalws/.test(window.location.href) ||
             /terms-and-conditions/.test(window.location.href) ||
-            get_boolean('is_virtual') ||
+            get_storage_value('is_virtual') ||
             sessionStorage.getItem('check_tnc') !== 'check') {
             return;
         }
@@ -255,13 +254,13 @@ const Client = (function () {
 
     const activate_by_client_type = function() {
         $('.by_client_type').addClass('invisible');
-        if (get_boolean('is_logged_in')) {
+        if (get_storage_value('is_logged_in')) {
             if (!client_object.values_set) {
                 return;
             }
             $('#client-logged-in').addClass('gr-centered');
             $('.client_logged_in').removeClass('invisible');
-            if (!get_boolean('is_virtual')) {
+            if (!get_storage_value('is_virtual')) {
                 // control-class is a fake class, only used to counteract ja-hide class
                 $('.by_client_type.client_real').not((japanese_client() ? '.ja-hide' : '.control-class')).removeClass('invisible').show();
 
@@ -363,7 +362,6 @@ const Client = (function () {
         redirect_if_login     : redirect_if_login,
         set_value             : set_storage_value,
         get_value             : get_storage_value,
-        get_boolean           : get_boolean,
         check_storage_values  : check_storage_values,
         response_authorize    : response_authorize,
         check_tnc             : check_tnc,
