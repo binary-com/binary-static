@@ -73,7 +73,7 @@ const Highchart = (function() {
             // and we can't update markers if data is empty
             time = parseInt(time);
             const is_match_entry = time === entry_tick_time,
-                is_match_exit = time === exit_tick_time || (user_sold() && time === sell_spot_time),
+                is_match_exit = time === exit_tick_time,
                 tick_type = is_match_entry ? 'entry' : 'exit';
             data.push({
                 x     : time * 1000,
@@ -127,6 +127,7 @@ const Highchart = (function() {
             data      : data,
             entry_time: entry_tick_time ? entry_tick_time * 1000 : start_time * 1000,
             exit_time : exit_time ? exit_time * 1000 : null,
+            user_sold : user_sold(),
         });
         Highcharts.setOptions(HighchartUI.get_highchart_options(JPClient));
 
@@ -198,7 +199,7 @@ const Highchart = (function() {
                         draw_line_x(start_time);
                     }
                 }
-                if (is_sold || is_settleable) {
+                if ((is_sold || is_settleable)) {
                     update_zone('exit');
                     end_contract();
                 }
@@ -314,7 +315,7 @@ const Highchart = (function() {
     };
 
     const update_zone = function (type) {
-        if (chart && type) {
+        if (chart && type && !user_sold()) {
             const value = type === 'entry' ? entry_tick_time : exit_time;
             chart.series[0].zones[(type === 'entry' ? 0 : 1)].value = value * 1000;
         }
@@ -472,10 +473,7 @@ const Highchart = (function() {
     const end_contract = function() {
         if (chart) {
             draw_line_x((user_sold() ? sell_time : end_time), '', 'textLeft', 'Dash');
-            if (sell_spot_time && sell_spot_time < end_time &&
-                (sell_spot_time >= start_time || sell_spot_time >= purchase_time)) {
-                select_tick(sell_spot_time, 'exit');
-            } else if (exit_tick_time) {
+            if (exit_tick_time) {
                 select_tick(exit_tick_time, 'exit');
             }
             if (!contract.sell_spot && !contract.exit_tick) {

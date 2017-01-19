@@ -596,7 +596,6 @@ sub _texts {
         push @texts, localize('Stop Profit Level');
         push @texts, localize('Current Level');
         push @texts, localize('Profit/Loss (points)');
-        push @texts, localize('not available');
         push @texts, localize('Contract is not started yet');
         push @texts, localize('Price');
         push @texts, localize('Spot Time');
