@@ -144,22 +144,37 @@ const Header = (function() {
             };
 
             if (Client.get_boolean('is_virtual')) {
-                let show_upgrade_msg = true,
-                    show_virtual_msg = true,
-                    show_activation_msg = false;
-                if (localStorage.getItem('jp_test_allowed') === '1') {
-                    show_virtual_msg = false;
-                    show_upgrade_msg = false; // do not show upgrade for user that filled up form
-                } else if ($('.jp_activation_pending').length !== 0) {
-                    show_upgrade_msg = false;
-                    show_activation_msg = true;
-                }
+                let show_upgrade_msg = true;
                 for (let i = 0; i < loginid_array.length; i++) {
                     if (loginid_array[i].real) {
                         hide_upgrade();
                         show_upgrade_msg = false;
                         break;
                     }
+                }
+                $upgrade_msg.removeClass(hiddenClass)
+                    .find('> span').removeClass(hiddenClass).end()
+                    .find('a')
+                    .addClass(hiddenClass);
+                const jp_account_status = Client.get_value('jp_status');
+                if (jp_account_status && show_upgrade_msg) {
+                    if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
+                        show_upgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');
+                    } else {
+                        $upgrade_msg.removeClass(hiddenClass);
+                        if (jp_account_status === 'jp_activation_pending') {
+                            if ($('.activation-message').length === 0) {
+                                $('#virtual-text').append(' <div class="activation-message">' + localize('Your Application is Being Processed.') + '</div>');
+                            }
+                        } else if (jp_account_status === 'activated') {
+                            if ($('.activated-message').length === 0) {
+                                $('#virtual-text').append(' <div class="activated-message">' +
+                                    localize('{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.') +
+                                    '</div>');
+                            }
+                        }
+                    }
+                    return;
                 }
                 if (show_upgrade_msg) {
                     $upgrade_msg.find('> span').removeClass(hiddenClass);
@@ -169,11 +184,6 @@ const Header = (function() {
                         show_upgrade('new_account/japanws', 'Upgrade to a Real Account');
                     } else {
                         show_upgrade('new_account/realws', 'Upgrade to a Real Account');
-                    }
-                } else if (show_virtual_msg) {
-                    $upgrade_msg.removeClass(hiddenClass).find('> span').removeClass(hiddenClass + ' gr-hide-m');
-                    if (show_activation_msg && $('.activation-message').length === 0) {
-                        $('#virtual-text').append(' <div class="activation-message">' + localize('Your Application is Being Processed.') + '</div>');
                     }
                 }
             } else {

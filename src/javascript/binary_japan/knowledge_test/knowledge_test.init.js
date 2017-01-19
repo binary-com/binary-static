@@ -3,6 +3,8 @@ const KnowledgeTestUI     = require('./knowledge_test.ui').KnowledgeTestUI;
 const KnowledgeTestData   = require('./knowledge_test.data').KnowledgeTestData;
 const localize = require('../../binary/base/localize').localize;
 const url_for  = require('../../binary/base/url').url_for;
+const Client   = require('../../binary/base/client').Client;
+const Header   = require('../../binary/base/header').Header;
 
 const KnowledgeTest = (function() {
     'use strict';
@@ -78,11 +80,16 @@ const KnowledgeTest = (function() {
     const showResult = function(score, time) {
         $('#knowledge-test-instructions').addClass('invisible');
         $('#knowledge-test-header').text(localize('{JAPAN ONLY}Knowledge Test Result'));
+        let msg;
         if (score >= 14) {
-            $('#knowledge-test-msg').text(localize(passMsg));
+            msg = passMsg;
+            Client.set_value('jp_status', 'jp_activation_pending');
+            // send some dummy string just to go through the function
+            Header.topbar_message_visibility('show_jp_message');
         } else {
-            $('#knowledge-test-msg').text(localize(failMsg));
+            msg = failMsg;
         }
+        $('#knowledge-test-msg').text(localize(msg));
 
         const $resultTable = KnowledgeTestUI.createResultUI(score, time);
 
@@ -139,16 +146,17 @@ const KnowledgeTest = (function() {
                     switch (jpStatus.status) {
                         case 'jp_knowledge_test_pending': populateQuestions();
                             break;
-                        case 'jp_knowledge_test_fail': if (Date.now() >= (jpStatus.next_test_epoch * 1000)) {
-                            // show Knowledge Test cannot be taken
-                            populateQuestions();
-                        } else {
-                            showDisallowedMsg(jpStatus);
-                        }
+                        case 'jp_knowledge_test_fail': {
+                            if (Date.now() >= (jpStatus.next_test_epoch * 1000)) {
+                                // show Knowledge Test cannot be taken
+                                populateQuestions();
+                            } else {
+                                showDisallowedMsg(jpStatus);
+                            }
                             break;
+                        }
                         case 'jp_activation_pending':
                             showCompletedMsg();
-                            showActivationPending();
                             break;
                         default: {
                             console.warn('Unexpected jp status');
@@ -163,6 +171,9 @@ const KnowledgeTest = (function() {
                         $('#knowledgetest-link').addClass(hiddenClass);     // hide it anyway
                     } else if (response.error.code === 'TestUnavailableNow') {
                         showMsgOnly('{JAPAN ONLY}The test is unavailable now, test can only be taken again on next business day with respect of most recent test.');
+                    } else {
+                        $('#form-msg').html(response.error.message).removeClass(hiddenClass);
+                        submitCompleted = false;
                     }
                 }
             },
@@ -171,32 +182,8 @@ const KnowledgeTest = (function() {
         BinarySocket.send({ get_settings: 1, passthrough: { key: 'knowledgetest' } });
     };
 
-    const showActivationPending = function() {
-        $('#topbar-msg').children('a').addClass(hiddenClass + ' jp_activation_pending');
-        if ($('.activation-message').length === 0) {
-            $('#virtual-text').append(' <div class="activation-message">' + localize('Your Application is Being Processed.') + '</div>');
-        }
-    };
-
-    const showKnowledgeTestTopBarIfValid = function(jpStatus) {
-        if (!jpStatus) {
-            return;
-        }
-        switch (jpStatus.status) {
-            case 'jp_knowledge_test_pending':
-            case 'jp_knowledge_test_fail':
-                KnowledgeTestUI.createKnowledgeTestLink();
-                break;
-            case 'jp_activation_pending':
-                showActivationPending();
-                break;
-            default:
-        }
-    };
-
     return {
-        init                          : init,
-        showKnowledgeTestTopBarIfValid: showKnowledgeTestTopBarIfValid,
+        init: init,
     };
 })();
 

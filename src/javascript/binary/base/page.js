@@ -16,6 +16,8 @@ const TrafficSource     = require('../common_functions/traffic_source').TrafficS
 const checkLanguage     = require('../common_functions/country_base').checkLanguage;
 const ViewBalance       = require('../websocket_pages/user/viewbalance/viewbalance.init').ViewBalance;
 const Cookies           = require('../../lib/js-cookie');
+const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check.init').RealityCheck;
+const RealityCheckData  = require('../websocket_pages/user/reality_check/reality_check.data').RealityCheckData;
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
 require('../../lib/mmenu/jquery.mmenu.min.all.js');
@@ -37,6 +39,11 @@ Page.prototype = {
         Contents.on_load();
         if (State.get('is_loaded_by_pjax')) {
             this.show_authenticate_message();
+            if (RealityCheckData.get_value('delay_reality_init')) {
+                RealityCheck.init();
+            } else if (RealityCheckData.get_value('delay_reality_check')) {
+                BinarySocket.send({ reality_check: 1 });
+            }
         }
         if (Client.get_boolean('is_logged_in')) {
             ViewBalance.init();
@@ -127,17 +134,21 @@ Page.prototype = {
             }
         }
 
+        const href = window.location.href,
+            cashier_page = /cashier[\/\w]*\.html/.test(href),
+            withdrawal_page = cashier_page && !/(deposit|payment_agent_listws)/.test(href);
+
         if (Client.status_detected('authenticated, unwelcome', 'all')) {
             span = $('<span/>', { html: template(localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
         } else if (Client.status_detected('unwelcome')) {
             span = this.general_authentication_message();
-        } else if (Client.status_detected('authenticated, cashier_locked', 'all') && /cashier\.html/.test(window.location.href)) {
+        } else if (Client.status_detected('authenticated, cashier_locked', 'all') && cashier_page) {
             span = $('<span/>', { html: template(localize('Deposits and withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
-        } else if (Client.status_detected('cashier_locked') && /cashier\.html/.test(window.location.href)) {
+        } else if (Client.status_detected('cashier_locked') && cashier_page) {
             span = this.general_authentication_message();
-        } else if (Client.status_detected('authenticated, withdrawal_locked', 'all') && /cashier\.html/.test(window.location.href)) {
+        } else if (Client.status_detected('authenticated, withdrawal_locked', 'all') && withdrawal_page) {
             span = $('<span/>', { html: template(localize('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
-        } else if (Client.status_detected('withdrawal_locked') && /cashier\.html/.test(window.location.href)) {
+        } else if (Client.status_detected('withdrawal_locked') && withdrawal_page) {
             span = this.general_authentication_message();
         }
         if (span) {

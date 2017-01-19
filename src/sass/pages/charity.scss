@@ -5,10 +5,10 @@
         display: block;
         overflow: hidden;
     }
-    .section-content:first-child {
-        text-align: center;
-    }
     .section-content {
+        &:first-child {
+            text-align: center;
+        }
         h1, .charity-country {
             margin: 35px 0 25px;
         }
@@ -23,16 +23,16 @@
         position: relative;
         width: 100%;
         overflow: hidden;
-    }
-    .gallery img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        transition: opacity 2s ease;
-    }
-    .gallery img:first-child {
-        position: relative;
-        opacity: 1;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 2s ease;
+            &:first-child {
+                position: relative;
+                opacity: 1;
+            }
+        }
     }
 }

@@ -5,8 +5,8 @@
 
         <div id="viewError" class="viewItem hidden">
             <p id="custom-error" class="notice-msg center-text hidden"></p>
-            <p id="withdrawal-locked-error" class="error-msg hidden">
-                [% l('Withdrawal is locked, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
+            <p id="withdrawal-locked-error" class="notice-msg center-text hidden">
+                [% l('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', '<a href="mailto:support@binary.com">support@binary.com</a>') %]
             </p>
         </div>
 

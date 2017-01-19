@@ -53,17 +53,11 @@ body.JA {
     .regulatory-logo {
         display: none !important;
     }
-    .empty-space {
-        margin-top: 40px;
-    }
     #asset-forex div.table-header:nth-of-type(n + 3), #asset-forex div.table-body:nth-of-type(n + 15) {
         display: none !important;
     }
     #tradingtimes-forex div.table-header:nth-of-type(n + 3), #tradingtimes-forex div.table-body:nth-of-type(n + 15) {
         display: none !important;
-    }
-    #footer-regulatory .gr-9, #footer-regulatory .gr-p-7 {
-        width: 100% !important;
     }
     #bet_guide_content div:nth-child(1) {
         display: none !important;
@@ -85,11 +79,19 @@ body.JA {
     #email_consent_label {
         font-size: $FONT_SIZE_XS;
     }
+    #footer #footer-regulatory {
+        #regulatory-text {
+            font-size: 14px;
+        }
+        .gr-9, .gr-p-7 {
+            width: 100% !important;
+        }
+    }
 }
 /*Vietnamese Language */
 body.VI {
     #legal-tab li.tm-li-2 {
-        margin-right: 0px !important;
+        margin-right: 0 !important;
         padding: 0 8px !important;
     }
     #trading_socket_container #contract_form_name_nav {
@@ -141,13 +143,10 @@ body.ID {
         margin-bottom: 10px;
     }
     #footer #social-networks {
-        padding-top: 0px;
+        padding-top: 0;
     }
     .id-hide {
         display: none !important;
-    }
-    .extra-space {
-        margin-top: 127px;
     }
     .languages {
         display: none;
@@ -158,19 +157,11 @@ body.ID {
     .google-play-badge {
         background-image: url('../images/pages/applications/googleplay_id.svg');
     }
-    @media screen and (max-width: 480px) {
-        .empty-space {
-            margin-top: 0 !important;
-        }
-        .extra-space {
-            margin-top: 0 !important;
-        }
-    }
 }
 
 body.IT, body.DE {
     #legal-tab li.tm-li-2 {
-        margin-right: 0px !important;
+        margin-right: 0 !important;
         padding: 0 8px !important;
     }
     a, button, .button, span, input {

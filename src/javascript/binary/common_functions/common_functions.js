@@ -110,25 +110,23 @@ function dateValueChanged(element, type) {
 }
 
 function selectorExists(element) {
-    if (typeof (element) !== 'undefined' && element !== null) {
-        return true;
-    }
-    return false;
+    return (typeof (element) !== 'undefined' && element !== null);
 }
 
-function elementTextContent(element, text) { // eslint-disable-line consistent-return
+function get_set_element_value(element, text, type) { // eslint-disable-line consistent-return
     if (selectorExists(element)) {
-        if (text) element.textContent = text;
-        else return element.textContent;
-    }
-}
-
-function elementInnerHtml(element, text) { // eslint-disable-line consistent-return
-    if (selectorExists(element)) {
-        if (typeof text === 'undefined') return element.innerHTML;
+        if (typeof text === 'undefined') return element[type];
         // else
-        element.innerHTML = text;
+        element[type] = text;
     }
+}
+
+function elementTextContent(element, text) {
+    return get_set_element_value(element, text, 'textContent');
+}
+
+function elementInnerHtml(element, text) {
+    return get_set_element_value(element, text, 'innerHTML');
 }
 
 module.exports = {
