@@ -43,15 +43,5 @@
         </p>
         <p id="rc-err" class="error-msg invisible">[% l("Please enter a number greater than 0") %]</p>
     </div>
-    <div class="center-text" id="reality-check-nav">
-        <span class="button">
-            <button bcont="1" class="button" id="continue">[% l("Continue Trading") %]</button>
-        </span>
-        <span class="button">
-            <button class="button" id="statement">[% l("View Statement") %]</button>
-        </span>
-        <span class="button">
-            <button class="button" id="btn_logout">[% l("Logout") %]</button>
-        </span>
-    </div>
+    [% INCLUDE global/reality_check_buttons.html.tt %]
 </div>

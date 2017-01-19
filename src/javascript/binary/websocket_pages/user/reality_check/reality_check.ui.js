@@ -61,9 +61,9 @@ const RealityCheckUI = (function() {
             showIntervalOnPopUp();
             $('#continue').click(onContinueClick);
             $('#statement').click(onStatementClick);
+            $('button#btn_logout').click(onLogoutClick);
             if (summary) {
                 updateSummary(summary);
-                $('button#btn_logout').click(onLogoutClick);
             }
         }
     };
