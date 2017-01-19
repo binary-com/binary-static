@@ -20,34 +20,23 @@ const displayAcctSettings = function(response) {
         generateState();
         if (/maltainvestws/.test(window.location.pathname)) {
             const settings = response.get_settings;
-            const title = document.getElementById('title'),
-                fname = document.getElementById('fname'),
-                lname = document.getElementById('lname'),
-                dobdd = document.getElementById('dobdd'),
-                dobmm = document.getElementById('dobmm'),
-                dobyy = document.getElementById('dobyy');
             const inputs = document.getElementsByClassName('input-disabled');
-            if (settings.salutation) {
-                title.value = settings.salutation;
-                fname.value = settings.first_name;
-                lname.value = settings.last_name;
+            let element;
+            Object.keys(settings).forEach((key) => {
+                element = document.getElementById(key);
+                if (element) {
+                    element.value = settings[key];
+                }
+            });
+            if (settings.date_of_birth) {
                 const date = moment.utc(settings.date_of_birth * 1000);
-                dobdd.value = date.format('DD').replace(/^0/, '');
-                dobmm.value = date.format('MM');
-                dobyy.value = date.format('YYYY');
-                for (let i = 0; i < inputs.length; i++) {
-                    inputs[i].disabled = true;
-                }
-                document.getElementById('address1').value = settings.address_line_1;
-                document.getElementById('address2').value = settings.address_line_2;
-                document.getElementById('address-town').value = settings.address_city;
+                document.getElementById('dobdd').value = date.format('DD').replace(/^0/, '');
+                document.getElementById('dobmm').value = date.format('MM');
+                document.getElementById('dobyy').value = date.format('YYYY');
                 window.state = settings.address_state;
-                document.getElementById('address-postcode').value = settings.address_postcode;
-                document.getElementById('tel').value = settings.phone;
+                toggleDisabled(inputs, true);
             } else {
-                for (let j = 0; j < inputs.length; j++) {
-                    inputs[j].disabled = false;
-                }
+                toggleDisabled(inputs, false);
             }
         }
     } else if (document.getElementById('move-residence-here') && $('#residence-form').is(':hidden')) {
@@ -55,11 +44,17 @@ const displayAcctSettings = function(response) {
     }
 };
 
+const toggleDisabled = (inputs, status) => {
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].disabled = status;
+    }
+};
+
 const show_residence_form = function() {
     const residenceForm = $('#residence-form');
-    const residenceDisabled = $('#residence-disabled');
+    const residenceDisabled = $('#residence');
     residenceDisabled.insertAfter('#move-residence-here');
-    $('#error-residence').insertAfter('#residence-disabled');
+    $('#error-residence').insertAfter('#residence');
     residenceDisabled.removeAttr('disabled');
     residenceForm.show();
     residenceForm.submit(function(evt) {
@@ -74,7 +69,7 @@ const show_residence_form = function() {
 };
 
 const generateState = function() {
-    const state = document.getElementById('address-state');
+    const state = document.getElementById('address_state');
     if (state.length !== 0) return;
     appendTextValueChild(state, Content.localize().textSelect, '');
     if (Client.get_value('residence') !== '') {
@@ -89,7 +84,7 @@ const handleResidence = function() {
             let select;
             const response = JSON.parse(msg.data),
                 type = response.msg_type,
-                residenceDisabled = $('#residence-disabled');
+                residenceDisabled = $('#residence');
             if (type === 'set_settings') {
                 const errorElement = document.getElementById('error-residence');
                 if (response.hasOwnProperty('error')) {
@@ -111,13 +106,13 @@ const handleResidence = function() {
                     BinarySocket.send({ residence_list: 1 });
                     $('#residence-form').hide();
                     residenceDisabled.insertAfter('#move-residence-back');
-                    $('#error-residence').insertAfter('#residence-disabled');
+                    $('#error-residence').insertAfter('#residence');
                     residenceDisabled.attr('disabled', 'disabled');
                     generateState();
                     $('#real-form').show();
                 }
             } else if (type === 'states_list') {
-                select = $('#address-state');
+                select = $('#address_state');
                 const states = response.states_list;
 
                 select.empty();
@@ -127,14 +122,14 @@ const handleResidence = function() {
                         select.append($('<option/>', { value: state.value, text: state.text }));
                     });
                 } else {
-                    select.replaceWith($('<input/>', { id: 'address-state', name: 'address_state', type: 'text', maxlength: '35' }));
+                    select.replaceWith($('<input/>', { id: 'address_state', name: 'address_state', type: 'text', maxlength: '35' }));
                 }
-                $('#address-state').parent().parent().show();
+                $('#address_state').parent().parent().show();
                 if (window.state) {
-                    $('#address-state').val(window.state);
+                    $('#address_state').val(window.state);
                 }
             } else if (type === 'residence_list') {
-                select = document.getElementById('residence-disabled') || document.getElementById('residence');
+                select = document.getElementById('residence');
                 const phoneElement   = document.getElementById('tel'),
                     residenceValue = Client.get_value('residence'),
                     residence_list = response.residence_list;

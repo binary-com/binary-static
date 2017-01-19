@@ -93,10 +93,10 @@
                         </div>
                         <div class="gr-padding-10 gr-row clear" style="display:none">
                             <div class="gr-4 form_label">
-                                <label for="address-state">[% l('State/Province') %]</label>
+                                <label for="address_state">[% l('State/Province') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="address-state" name="address-state"></select>
+                                <select id="address_state" name="address_state"></select>
                                 <p class="errorfield" id="error-state" style="display:none"></p>
                             </div>
                         </div>
@@ -462,9 +462,7 @@
                                 <input id="not-pep" type="checkbox"/>
                               </div>
                               <div class="gr-11">
-                                <span>
-                                  [% l("I declare I am not a Foreign Politically Exposed Person.") %]
-                                </span>
+                                <label for="not-pep">[% l("I declare I am not a Foreign Politically Exposed Person.") %]</label>
                               </div>
                             </div>
                           <p class="errorfield" id="error-not-pep"></p>
@@ -486,9 +484,9 @@
                                   <input id="use-electronic-doc" type="checkbox"/>
                                 </div>
                                 <div class="gr-11">
-                                  <span>
+                                  <label for="use-electronic-doc">
                                     [% l('I hereby agree and accept that all documents such as pre-contract forms, all terms and conditions, trade reports and other legally required materials will be issued in electronic format only.') %]
-                                  </span>
+                                  </label>
                                 </div>
                             </div>
                           <p class="errorfield" id="error-use-electronic-doc"></p>
@@ -507,7 +505,7 @@
                                 <input id="warnings-and-policies" type="checkbox"/>
                               </div>
                               <div class="gr-11">
-                                <span>
+                                <label for="warnings-and-policies">
                                   [% l('I confirm my agreement to the contents of all the documents listed below:') %]
                                   <br />
                                   <ul>
@@ -541,7 +539,7 @@
                                         </a>
                                       </li>
                                     </ul>
-                                  </span>
+                                  </label>
                                 </div>
                             </div>
                             <p class="errorfield" id="error-warnings-and-policies"></p>
@@ -563,9 +561,9 @@
                                 <input id="own-judgment" type="checkbox"/>
                               </div>
                               <div class="gr-11">
-                                <span>
+                                <label for="own-judgment">
                                   [% l('I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets.') %]
-                                </span>
+                                </label>
                               </div>
                             </div>
                           <p class="errorfield" id="error-own-judgment"></p>
@@ -578,9 +576,9 @@
                                 <input id="trading-mechanism" type="checkbox"/>
                               </div>
                               <div class="gr-11">
-                                <span>
+                                <label for="trading-mechanism">
                                   [% l('I understand and agree that, with regard to over-the-counter binary option trading, I have read and understand the general conditions and mechanisms for trading the contract, including details of the underlying financial index, before committing to a transaction.') %]
-                                </span>
+                                </label>
                               </div>
                             </div>
                           <p class="errorfield" id="error-trading-mechanism"></p>
@@ -599,9 +597,9 @@
                                 <input id="judgment-time" type="checkbox"/>
                               </div>
                               <div class="gr-11">
-                                <span>
+                                <label for="judgment-time">
                                   [% l('Each option transaction has a specified expiry time and date, known as the judgment time.') %]
-                                </span>
+                                </label>
                               </div>
                             </div>
                           <p class="errorfield" id="error-judgment-time"></p>
@@ -614,9 +612,9 @@
                                 <input id="total-loss" type="checkbox"/>
                               </div>
                               <div class="gr-11">
-                                <span>
+                                <label for="total-loss">
                                   [% l('If a customer holds a long position and the prediction goes wrong as of the judgment time, the invested principal amount will become zero value.') %]
-                                </span>
+                                </label>
                               </div>
                             </div>
                           <p class="errorfield" id="error-total-loss"></p>
@@ -629,9 +627,9 @@
                                 <input id="sellback-loss" type="checkbox"/>
                               </div>
                               <div class="gr-11">
-                                <span>
+                                <label for="sellback-loss">
                                   [% l('If a customer sells back a long option position before the determination time, then the sale price may be lower than the original purchase price, so there is a possibility of a net loss.') %]
-                                </span>
+                                </label>
                               </div>
                             </div>
                           <p class="errorfield" id="error-sellback-loss"></p>
@@ -644,9 +642,9 @@
                                 <input id="shortsell-loss" type="checkbox"/>
                               </div>
                               <div class="gr-11">
-                                <span>
+                                <label for="shortsell-loss">
                                   [% l('If a customer holds a short position and the prediction is incorrect as of the judgment time, the customer is required to pay the payout amount, and as that will be greater than the trade price that the customer originally received, this will cause a net loss.') %]
-                                </span>
+                                </label>
                               </div>
                             </div>
                           <p class="errorfield" id="error-shortsell-loss"></p>
@@ -659,9 +657,9 @@
                               <input id="company-profit" type="checkbox"/>
                             </div>
                             <div class="gr-11">
-                              <span>
+                              <label for="company-profit">
                                 [% l("[_1] earns a return from the difference between the total amount of all customers' payment and the total amount of all customers' receipts.", website_name) %]
-                              </span>
+                              </label>
                             </div>
                           </div>
                           <p class="errorfield" id="error-company-profit"></p>
@@ -674,9 +672,9 @@
                                 <input id="expert-knowledge" type="checkbox"/>
                               </div>
                               <div class="gr-11">
-                                <span>
+                                <label for="expert-knowledge">
                                   [% l('In carrying out OTC binary option trading, a customer needs expert knowledge such as the theoretical value of options, in order to make reasonable investment decisions.') %]
-                                </span>
+                                </label>
                               </div>
                             </div>
                           <p class="errorfield" id="error-expert-knowledge"></p>

@@ -24,7 +24,6 @@ function renderRiskClassificationPopUp() {
             if (riskClassificationText.includes('assessment_form')) {
                 const payload = $(riskClassificationText);
                 RiskClassification.showRiskClassificationPopUp(payload.find('#assessment_form'));
-                FinancialAssessmentws.LocalizeText();
                 const $risk_classification = $('#risk_classification');
                 $risk_classification.find('#assessment_form').removeClass('invisible')
                     .attr('style', 'text-align: left;');

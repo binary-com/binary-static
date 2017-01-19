@@ -9,7 +9,7 @@
                     <legend>[% l('Please select your country of residence') %]</legend>
                     <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4 form_label">
-                            <label for="residence-disabled">[% l('Country of residence') %]</label>
+                            <label for="residence">[% l('Country of residence') %]</label>
                         </div>
                         <div class="gr-8">
                           <span id="move-residence-here"></span>
@@ -70,11 +70,11 @@
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="residence-disabled">[% l('Country of residence') %]</label>
+                                <label for="residence">[% l('Country of residence') %]</label>
                             </div>
                             <div class="gr-8">
                                 <span id="move-residence-back"></span>
-                                <select name="residence-disabled" id="residence-disabled" disabled></select>
+                                <select name="residence" id="residence" disabled></select>
                                 <p class="errorfield" id="error-residence" style="display:none"></p>
                             </div>
                         </div>
@@ -111,10 +111,10 @@
                         </div>
                         <div class="gr-padding-10 gr-row clear" style="display:none">
                             <div class="gr-4 form_label">
-                                <label for="address-state">[% l('State/Province') %]</label>
+                                <label for="address_state">[% l('State/Province') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="address-state" name="address-state"></select>
+                                <select id="address_state" name="address_state"></select>
                                 <p class="errorfield" id="error-state" style="display:none"></p>
                             </div>
                         </div>
@@ -123,7 +123,7 @@
                                 <label for="address-postcode">[% l('Postal code/ZIP') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="address-postcode" name="address-postcode" maxlength="20"></select>
+                                <input type="text" class="text" id="address-postcode" name="address-postcode" maxlength="20" />
                                 <p class="errorfield" id="error-postcode" style="display:none"></p>
                             </div>
                         </div>
@@ -132,7 +132,7 @@
                                 <label for="tel">[% l('Telephone') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="tel" name="tel" maxlength="35"></select>
+                                <input type="text" class="text" id="tel" name="tel" maxlength="35" />
                                 <p class="errorfield" id="error-tel" style="display:none"></p>
                             </div>
                         </div>
@@ -170,13 +170,10 @@
                     </fieldset>
 
                     <fieldset class="center-text" id="formlayout">
-                        <div class="gr-12">
-                            <p>
-                                <input type="checkbox" name="tnc" id="tnc">
-                                    <span onclick="document.getElementById('tnc').checked=!document.getElementById('tnc').checked">[% l('I have read and agree to the') %] <a target="_blank" href="[% request.url_for('/terms-and-conditions') %]">[% l('terms and conditions') %]</a> [% l('of the site.') %]</span>
-                                    <p class="errorfield" id="error-tnc" style="display:none"></p>
-                                </input>
-                            </p>
+                        <div class="gr-12 gr-padding-10">
+                            <input type="checkbox" name="tnc" id="tnc">
+                            <label for="tnc">[% l('I have read and agree to the') %] <a target="_blank" href="[% request.url_for('/terms-and-conditions') %]">[% l('terms and conditions') %]</a> [% l('of the site.') %]</label>
+                            <p class="errorfield" id="error-tnc" style="display:none"></p>
                         </div>
                         <span class="button ">
                             <button class="button " id="btn_submit" type="submit">[% l('Open Account') %]</button>

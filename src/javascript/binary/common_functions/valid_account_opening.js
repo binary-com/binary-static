@@ -60,12 +60,14 @@ const ValidAccountOpening = (function() {
         apost;
 
     const initializeValues = function() {
-        letters = Content.localize().textLetters;
-        numbers = Content.localize().textNumbers;
-        space   = Content.localize().textSpace;
-        hyphen  = Content.localize().textHyphen;
-        period  = Content.localize().textPeriod;
-        apost   = Content.localize().textApost;
+        if (!letters) {
+            letters = Content.localize().textLetters;
+            numbers = Content.localize().textNumbers;
+            space   = Content.localize().textSpace;
+            hyphen  = Content.localize().textHyphen;
+            period  = Content.localize().textPeriod;
+            apost   = Content.localize().textApost;
+        }
     };
 
     const checkFname = function(fname, errorFname) {

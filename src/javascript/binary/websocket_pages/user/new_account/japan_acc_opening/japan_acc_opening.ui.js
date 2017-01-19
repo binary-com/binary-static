@@ -29,7 +29,7 @@ const JapanAccOpeningUI = (function () {
             address1   : document.getElementById('address1'),
             address2   : document.getElementById('address2'),
             town       : document.getElementById('address-town'),
-            state      : document.getElementById('address-state'),
+            state      : document.getElementById('address_state'),
             postcode   : document.getElementById('address-postcode'),
             tel        : document.getElementById('tel'),
             question   : document.getElementById('secret-question'),

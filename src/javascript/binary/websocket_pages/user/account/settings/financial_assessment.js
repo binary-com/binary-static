@@ -5,7 +5,6 @@ const localize           = require('../../../../base/localize').localize;
 const Client             = require('../../../../base/client').Client;
 const url_for            = require('../../../../base/url').url_for;
 const Content              = require('../../../../common_functions/content').Content;
-const selectorExists     = require('../../../../common_functions/common_functions').selectorExists;
 
 const FinancialAssessmentws = (function() {
     'use strict';
@@ -15,44 +14,12 @@ const FinancialAssessmentws = (function() {
     const init = function() {
         Content.populate();
         if (checkIsVirtual()) return;
-        LocalizeText();
         $('#assessment_form').on('submit', function(event) {
             event.preventDefault();
             submitForm();
             return false;
         });
         BinarySocket.send({ get_financial_assessment: 1 });
-    };
-
-    // For translating strings
-    const LocalizeText = function() {
-        const $heading = $('#heading'),
-            $heading_risk = $('#heading_risk'),
-            $high_risk = $('#high_risk_classification'),
-            $assessment_form = $('#assessment_form'),
-            $warning = $('#warning'),
-            $submit = $('#submit');
-        $heading.text(localize($heading.text()));
-        $heading_risk.text(localize($heading_risk.text()));
-        $high_risk.text(localize($high_risk.text()));
-        const legend_0 = document.getElementsByTagName('legend')[0];
-        const legend_1 = document.getElementsByTagName('legend')[1];
-        if (selectorExists(legend_0)) {
-            legend_0.innerHTML = localize(legend_0.innerHTML);
-        }
-        if (selectorExists(legend_1)) {
-            legend_1.innerHTML = localize(legend_1.innerHTML);
-        }
-        $assessment_form.find('label').each(function() {
-            const ele = $(this);
-            ele.text(localize(ele.text()));
-        });
-        $assessment_form.find('option').each(function() {
-            const ele = $(this);
-            ele.text(localize(ele.text()));
-        });
-        $warning.text(localize($warning.text()));
-        $submit.text(localize($submit.text()));
     };
 
     const submitForm = function() {
@@ -131,7 +98,7 @@ const FinancialAssessmentws = (function() {
         clearErrors();
         Object.keys(errors).forEach(function (key) {
             const error = errors[key];
-            $('#error' + key).text(localize(error));
+            $('#error_' + key).text(localize(error));
             if (!id) id = key;
         });
         hideLoadingImg();
@@ -189,11 +156,10 @@ const FinancialAssessmentws = (function() {
     };
 
     return {
-        init        : init,
-        apiResponse : apiResponse,
-        submitForm  : submitForm,
-        LocalizeText: LocalizeText,
-        onLoad      : onLoad,
+        init       : init,
+        apiResponse: apiResponse,
+        submitForm : submitForm,
+        onLoad     : onLoad,
     };
 })();
 
