@@ -1,6 +1,5 @@
 const moment   = require('moment');
 const localize = require('../../binary/base/localize').localize;
-const url_for  = require('../../binary/base/url').url_for;
 
 const KnowledgeTestUI = (function () {
     'use strict';
@@ -103,24 +102,12 @@ const KnowledgeTestUI = (function () {
         return $('<div></div>').text(localize(msg));
     };
 
-    const createKnowledgeTestLink = function() {
-        // change topbar to knowledge test link
-        const $topbarmsg = $('#topbar-msg');
-
-        $topbarmsg.find('> span').removeClass('invisible');
-        $topbarmsg.removeClass('invisible')
-            .find('a').removeClass('invisible')
-                .attr('href', url_for('/new_account/knowledge_testws'))
-                .html($('<span/>', { text: localize('{JAPAN ONLY}Take knowledge test') }));
-    };
-
     return {
         createTrueFalseBox      : createTrueFalseBox,
         createQuestionRow       : createQuestionRow,
         createQuestionTable     : createQuestionTable,
         createResultUI          : createResultUI,
         createAlreadyCompleteDiv: createAlreadyCompleteDiv,
-        createKnowledgeTestLink : createKnowledgeTestLink,
     };
 })();
 

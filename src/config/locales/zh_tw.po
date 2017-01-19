@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-12 04:23+0000\n"
+"PO-Revision-Date: 2017-01-18 01:26+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -757,7 +757,9 @@ msgstr "偏好并熱衷於使用Linux和開源平台"
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "主動尋求問題的對策，並向客戶端提交解決方案"
 
-msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+#, fuzzy
+#| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
 msgstr "水電煤帳單或銀行月結單掃描件（日期不得超過3個月）。"
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
@@ -1596,9 +1598,6 @@ msgstr "收銀台"
 msgid "Cashier Password"
 msgstr "收銀台密碼"
 
-msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "收銀台已鎖定。欲知詳細資訊，請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
-
 msgid "Cashier password"
 msgstr "收銀台密碼"
 
@@ -2162,9 +2161,6 @@ msgstr "將 %1 %2 虛擬資金存入您的帳戶%3"
 
 msgid "Deposit Bonus"
 msgstr "存款獎金"
-
-msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "存款已鎖定。欲知詳細資訊，請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
 msgid "Deposit of"
 msgstr "存款"
@@ -6667,7 +6663,9 @@ msgstr "到"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "如有意申請，請將您的履歷和求職信傳到<span id='hr_contact_eaddress'></span>。"
 
-msgid "To authenticate your account, kindly email the following to %1"
+#, fuzzy
+#| msgid "To authenticate your account, kindly email the following to %1"
+msgid "To authenticate your account, kindly email the following to %1:"
 msgstr "為驗證您的帳號，請將以下通過電子郵件傳到%1"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
@@ -7444,9 +7442,6 @@ msgstr "取款限額"
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "您的帳戶現時無法取款。請聯繫 %1進行解鎖。"
 
-msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "提款已鎖定。欲知詳細資訊，請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
-
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr "與團隊其他成員緊密合作，開發出可在交易平台上推動價格的軟體"
 
@@ -8099,7 +8094,7 @@ msgid "you are over 18 years of age, unless you are an Estonian resident whereby
 msgstr "您的年齡在18歲以上，如果您是愛沙尼亞居民，則年齡須在21歲以上；"
 
 msgid "you have read our privacy statement and hereby give us consent to process your personal information as outlined there;"
-msgstr "您經閱讀了我們的隱私聲明，並據此同意我們按上述方式對您的個人資訊進行處理；"
+msgstr "您已經閱讀了我們的隱私聲明，並據此同意我們按上述方式對您的個人資訊進行處理；"
 
 msgid "you have read this Legal Terms and Conditions page in full and understood that you will be buying and selling financial contracts subject to these terms and conditions;"
 msgstr "您已經完整閱讀此法律條款及條件頁面，並明白您將在這些條款和條件下買賣金融合約；"
@@ -9019,6 +9014,9 @@ msgstr "{JAPAN ONLY}You set your own personal daily loss limit"
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
+msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
+msgstr ""
+
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
 
@@ -9129,6 +9127,15 @@ msgstr "帳戶詳細資料"
 
 msgid "Terms and Conditions Approval"
 msgstr "條款和條件審批"
+
+#~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "收銀台已鎖定。欲知詳細資訊，請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
+
+#~ msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "存款已鎖定。欲知詳細資訊，請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
+
+#~ msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "提款已鎖定。欲知詳細資訊，請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
 #~ msgid "You are not authorized for withdrawal via payment agent."
 #~ msgstr "您未經授權通過付款代理取款。"
