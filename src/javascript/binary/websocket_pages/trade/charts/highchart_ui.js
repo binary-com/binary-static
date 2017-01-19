@@ -103,6 +103,9 @@ const HighchartUI = (function() {
             },
             rangeSelector: { enabled: false },
         };
+        if (params.user_sold) {
+            chartOptions.series[0].zones.pop();
+        }
     };
 
     const get_highchart_options = function (JPClient) {
