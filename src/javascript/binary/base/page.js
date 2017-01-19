@@ -127,17 +127,21 @@ Page.prototype = {
             }
         }
 
+        const href = window.location.href,
+            cashier_page = /cashier[\/\w]*\.html/.test(href),
+            withdrawal_page = cashier_page && !/(deposit|payment_agent_listws)/.test(href);
+
         if (Client.status_detected('authenticated, unwelcome', 'all')) {
             span = $('<span/>', { html: template(localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
         } else if (Client.status_detected('unwelcome')) {
             span = this.general_authentication_message();
-        } else if (Client.status_detected('authenticated, cashier_locked', 'all') && /cashier\.html/.test(window.location.href)) {
+        } else if (Client.status_detected('authenticated, cashier_locked', 'all') && cashier_page) {
             span = $('<span/>', { html: template(localize('Deposits and withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
-        } else if (Client.status_detected('cashier_locked') && /cashier\.html/.test(window.location.href)) {
+        } else if (Client.status_detected('cashier_locked') && cashier_page) {
             span = this.general_authentication_message();
-        } else if (Client.status_detected('authenticated, withdrawal_locked', 'all') && /cashier\.html/.test(window.location.href)) {
+        } else if (Client.status_detected('authenticated, withdrawal_locked', 'all') && withdrawal_page) {
             span = $('<span/>', { html: template(localize('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
-        } else if (Client.status_detected('withdrawal_locked') && /cashier\.html/.test(window.location.href)) {
+        } else if (Client.status_detected('withdrawal_locked') && withdrawal_page) {
             span = this.general_authentication_message();
         }
         if (span) {
