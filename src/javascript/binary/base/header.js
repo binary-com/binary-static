@@ -87,7 +87,7 @@ const Header = (function() {
                     $('.account-type').html(localize(type));
                     $('.account-id').html(curr_id);
                 } else {
-                    loginid_select += '<a href="#" value="' + curr_id + '"><li>' + localize(type) + '<div>' + curr_id + '</div>' +
+                    loginid_select += '<a href="javascript:;" value="' + curr_id + '"><li>' + localize(type) + '<div>' + curr_id + '</div>' +
                         '</li></a><div class="separator-line-thin-gray"></div>';
                 }
             }
