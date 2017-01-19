@@ -37,7 +37,7 @@ const MenuContent = (function () {
 
                     // replace span to a, to make it clickable for real
                     const span_tm_a = tab_container.find('span.tm-a');
-                    span_tm_a.replaceWith('<a href="#" class="' + span_tm_a.attr('class') + '">' + span_tm_a.html() + '</a>');
+                    span_tm_a.replaceWith('<a href="javascript:;" class="' + span_tm_a.attr('class') + '">' + span_tm_a.html() + '</a>');
 
                     const menu_li = selected_tab.parents('li');
                     let sub_menu_selected = menu_li.find('.tm-ul-2 .a-active'),
