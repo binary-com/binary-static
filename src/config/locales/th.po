@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-15 18:37+0000\n"
+"PO-Revision-Date: 2017-01-19 13:33+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -764,10 +764,10 @@ msgstr "มีความสนใจและความมุ่งมั่
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "วิธีการเชิงรุกในการแก้ปัญหาและนำเสนอวิธีการแก้ปัญหาต่างๆ ให้ลูกค้า"
 
-#, fuzzy
-#| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
-msgstr "สแกนสำเนาใบแจ้งหนี้รายการสาธารณูปโภค หรือ รายงานธุรกรรมการเงินทางธนาคาร (ฉบับล่าสุด ไม่นานกว่า 3 เดือน) จำนวน 1 ฉบับ"
+msgstr ""
+"สแกนสำเนาใบแจ้งหนี้รายการสาธารณูปโภค หรือ รายงานธุรกรรมการเงินทางธนาคาร "
+"(ฉบับล่าสุด ไม่นานกว่า 3 เดือน) จำนวน 1 ฉบับ"
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
 msgstr "สแกนสำเนาหนังสือเดินทาง หรือ สำเนาใบขับขี่ (ฉบับชั่วคราว หรือ ฉบับตลอดชีพ) หรือ สำเนาบัตรประชาชน ที่แสดงชื่อและวันเดือนปีเกิด จำนวน 1 ฉบับ เอกสารต้องไม่หมดอายุภายใน 6 เดือน นับจากวันที่ส่งเอกสาร"
@@ -873,10 +873,10 @@ msgstr "ยอดคงเหลือในบัญชี: "
 msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr "การฝากเงินถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
 
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "การฝากเงินถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
+msgstr ""
+"บัญชียังไม่ถูกเปิดใช้งาน โปรดติดต่อ <a class=\"pjaxload\" href=\"%1\""
+">แผนกลูกค้าสัมพันธ์</a> สำหรับข้อมูลเพิ่มเติม"
 
 msgid "Accounting"
 msgstr "การบัญชี"
@@ -2731,10 +2731,10 @@ msgstr "สินทรัพย์ทางการเงิน"
 msgid "Financial Information"
 msgstr "ข้อมูลทางการเงิน"
 
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "การถอนถูกล็อค โปรด<a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
+msgstr ""
+"ต้องมีการอนุมัติความเสี่ยงทางการเงิน โปรดติดต่อ <a class=\"pjaxload\" href=\""
+"%1\">แผนกลูกค้าสัมพันธ์</a> สำหรับข้อมูลเพิ่มเติม"
 
 msgid "Financial Security"
 msgstr "ความปลอดภัยทางการเงิน"
@@ -6334,12 +6334,14 @@ msgstr "บริษัทฯ ไม่รับประกันความ�
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
 msgstr "บริษัทฯ มีช่องทางการรับฝากที่หลากหลาย แต่ละช่องทางมีเงื่อนไขของเวลา และบางช่องทางไม่ได้ให้บริการสำหรับการถอน รายละเอียดเกี่ยวกับการฝากและการถอนรวมถึงเวลาในการตัดยอดสามารถตรวจสอบได้จาก <a href='%1' class='pjaxload'>ที่นี่</a>"
 
-#, fuzzy
-#| msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
 msgid ""
 "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer\n"
 "                funds at the level: <strong>medium protection</strong>."
-msgstr "บริษัทฯ ถือเงินทุนของลูกค้าในบัญชีธนาคาร ซึ่งจะไม่เกี่ยวข้องกับส่วนหนึ่งของบริษัทฯ ในแง่ความไม่สามารถชำระหนี้ ซึ่งเป็นเงื่อนไขของ Gambling Commission เกี่ยวกับเงินทุนของลูกค้าที่ระดับ: <strong>การป้องกันระดับกลาง</strong>"
+msgstr ""
+"บริษัทฯ ถือเงินทุนของลูกค้าในบัญชีธนาคาร "
+"ซึ่งจะไม่เกี่ยวข้องกับส่วนหนึ่งของบริษัทฯ ในแง่ความไม่สามารถชำระหนี้ "
+"ซึ่งเป็นเงื่อนไขของ Gambling Commission เกี่ยวกับเงินทุนของลูกค้าที่ระดับ: "
+"<strong>การป้องกันระดับกลาง</strong>"
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: medium protection."
 msgstr "บริษัทฯ ดูแลเงินทุนประกันของลูกค้าในบัญชีที่ถูกจัดสรรแยกเพื่อการปฏิบัติการ และการจัดการเพื่อให้แน่ใจว่า สินทรัพย์ของบัญชีลูกค้ามีการถูกจำหน่ายหากมีกรณีล้มละลาย ซึ่งเป็นไปตามข้อกำหนดของ Gambling Commission ในการแยกเงินทุนลูกค้าโดยเป็นมาตรการการป้องกันระดับกลาง"
@@ -6687,10 +6689,8 @@ msgstr "ถึง"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "หากประสงค์จะสมัคร โปรดส่งประวัติย่อของท่าน และจดหมายแนะนำตัวมาที่ <span id='hr_contact_eaddress'></span>"
 
-#, fuzzy
-#| msgid "To authenticate your account, kindly email the following to %1"
 msgid "To authenticate your account, kindly email the following to %1:"
-msgstr "เพื่อตรวจสอบบัญชีของท่าน โปรดส่งข้อมูลผ่านอีเมล์มาที่ %1"
+msgstr "เพื่อตรวจสอบบัญชีของท่าน โปรดส่งข้อมูลผ่านอีเมล์มาที่ %1:"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
 msgstr "เพื่อตรวจสอบบัญชีของท่าน โปรดส่งข้อมูลผ่านอีเมล์มาที่ <a href=\"mailto:%1\">%1</a>"
@@ -9044,6 +9044,8 @@ msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to 
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 msgstr ""
+"{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access "
+"Your Real-Money Account."
 
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
