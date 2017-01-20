@@ -59,7 +59,7 @@ const SessionDurationLimit = (function() {
     const displayWarning = function() {
         $('body').append(
             $("<div id='session_limit' class='lightbox'><div><div><div class='limit_message'>" +
-                localize('Your session duration limit will end in [_1] seconds.', [warning]) +
+                localize('Your session duration limit will end in [_1] seconds.', [warning / 1000]) +
                 '</div></div></div></div>'));
         $('#session_limit').click(function() { $(this).remove(); });
     };
