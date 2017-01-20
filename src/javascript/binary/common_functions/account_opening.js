@@ -184,8 +184,38 @@ const handleResidence = function() {
     });
 };
 
+const populateObjects = () => {
+    const elementObj = {};
+    const errorObj = {};
+    const all_ids = $('.form_input');
+    for (let i = 0; i < all_ids.length; i++) {
+        let id = all_ids[i].getAttribute('id');
+        const error_id = 'error_' + id;
+        elementObj[id] = document.getElementById(id);
+        // all date of birth fields share one error message element
+        if (/dob(mm|yy)/.test(id)) {
+            id = 'dobdd';
+        }
+        errorObj[id] = document.getElementById(error_id);
+    }
+    return {
+        elementObj: elementObj,
+        errorObj  : errorObj,
+    };
+};
+
+const hideAllErrors = (errorObj) => {
+    Object.keys(errorObj).forEach(function (key) {
+        if (errorObj[key] && errorObj[key].offsetParent !== null) {
+            errorObj[key].setAttribute('style', 'display:none');
+        }
+    });
+};
+
 
 module.exports = {
     displayAcctSettings: displayAcctSettings,
     handleResidence    : handleResidence,
+    populateObjects    : populateObjects,
+    hideAllErrors      : hideAllErrors,
 };

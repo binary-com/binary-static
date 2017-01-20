@@ -6,10 +6,11 @@ const FinancialAccOpeningData = (function() {
         const req = {
             new_account_maltainvest: 1,
             accept_risk            : Client.get_value('accept_risk'),
+            date_of_birth          : elementObj.dobyy.value + '-' + elementObj.dobmm.value + '-' + elementObj.dobdd.value,
         };
 
         Object.keys(elementObj).forEach((key) => {
-            if (!/^secret_(answer|question)$/.test(key)) {
+            if (!/^secret_(answer|question)$/.test(key) && !/exclude_data/.test(elementObj[key].className)) {
                 req[key] = elementObj[key].value;
             }
         });

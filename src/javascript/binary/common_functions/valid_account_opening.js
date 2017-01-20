@@ -33,15 +33,7 @@ const ValidAccountOpening = (function() {
                 $('#financial-risk').removeClass('hidden');
                 return;
             }
-            if (document.getElementById('real-form')) {
-                $('#real-form').remove();
-            } else if (document.getElementById('japan-form')) {
-                $('#japan-form').remove();
-            } else if (document.getElementById('financial-form')) {
-                $('#financial-form').remove();
-                $('#financial-risk').remove();
-            }
-
+            $('#submit-message').empty();
             const error = document.getElementsByClassName('notice-msg')[0];
             elementInnerHtml(error, (response.msg_type === 'sanity_check') ? localize('There was some invalid character in an input field.') : errorMessage);
             error.parentNode.parentNode.parentNode.setAttribute('style', 'display:block');

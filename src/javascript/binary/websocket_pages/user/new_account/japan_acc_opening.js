@@ -1,4 +1,5 @@
 const handleResidence     = require('../../../common_functions/account_opening').handleResidence;
+const populateObjects     = require('../../../common_functions/account_opening').populateObjects;
 const Content             = require('../../../common_functions/content').Content;
 const ValidAccountOpening = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
 const detect_hedging      = require('../../../common_functions/common_functions').detect_hedging;
@@ -15,10 +16,15 @@ const JapanAccOpening = (function() {
             return;
         }
         handleResidence();
-        detect_hedging($('#trading-purpose'), $('.hedging-assets'));
+        const objects = populateObjects();
+        const elementObj = objects.elementObj;
+        const errorObj = objects.errorObj;
+
+        detect_hedging($('#trading_purpose'), $('.hedging-assets'));
+
         $('#japan-form').submit(function(evt) {
             evt.preventDefault();
-            if (JapanAccOpeningUI.checkValidity()) {
+            if (JapanAccOpeningUI.checkValidity(elementObj, errorObj)) {
                 BinarySocket.init({
                     onmessage: function(msg) {
                         const response = JSON.parse(msg.data);
@@ -32,7 +38,6 @@ const JapanAccOpening = (function() {
                         }
                     },
                 });
-                JapanAccOpeningUI.fireRequest();
             }
         });
     };

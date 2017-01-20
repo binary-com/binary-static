@@ -1,5 +1,6 @@
 const Content             = require('../../../../common_functions/content').Content;
 const ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
+const hideAllErrors       = require('../../../../common_functions/account_opening').hideAllErrors;
 const Validate            = require('../../../../common_functions/validation').Validate;
 const FinancialAccOpeningData = require('./financial_acc_opening.data').FinancialAccOpeningData;
 const selectorExists    = require('../../../../common_functions/common_functions').selectorExists;
@@ -7,19 +8,8 @@ const selectorExists    = require('../../../../common_functions/common_functions
 const FinancialAccOpeningUI = (function() {
     'use strict';
 
-    const checkValidity = function() {
+    const checkValidity = function(elementObj, errorObj) {
         window.accountErrorCounter = 0;
-
-        const elementObj = {};
-        const errorObj = {};
-
-        const all_ids = $('#financial-form').find('.form_input');
-        for (let i = 0; i < all_ids.length; i++) {
-            const id = all_ids[i].getAttribute('id');
-            const error_id = 'error_' + id;
-            elementObj[id] = document.getElementById(id);
-            errorObj[id] = document.getElementById(error_id);
-        }
 
         ValidAccountOpening.checkFname(elementObj.first_name, errorObj.first_name);
         ValidAccountOpening.checkLname(elementObj.last_name, errorObj.last_name);
@@ -58,17 +48,8 @@ const FinancialAccOpeningUI = (function() {
         });
 
         if (window.accountErrorCounter === 0) {
-            elementObj.date_of_birth = elementObj.dobyy.value + '-' + elementObj.dobmm.value + '-' + elementObj.dobdd.value;
-            delete elementObj.dobdd;
-            delete elementObj.dobmm;
-            delete elementObj.dobyy;
-            delete elementObj.tnc;
             FinancialAccOpeningData.getRealAcc(elementObj);
-            Object.keys(errorObj).forEach(function (key) {
-                if (errorObj[key] && errorObj[key].offsetParent !== null) {
-                    errorObj[key].setAttribute('style', 'display:none');
-                }
-            });
+            hideAllErrors(errorObj);
             return 1;
         }
         return 0;
