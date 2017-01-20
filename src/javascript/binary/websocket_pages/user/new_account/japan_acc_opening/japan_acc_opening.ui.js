@@ -9,16 +9,15 @@ const localize            = require('../../../../base/localize').localize;
 const JapanAccOpeningUI = (function () {
     'use strict';
 
-    const checkValidity = function(elementObj, errorObj) {
-        window.accountErrorCounter = 0;
+    const checkValidity = function(elementObj, errorObj, errorEl) {
+        hideAllErrors(errorObj, errorEl);
+
         const letters = Content.localize().textLetters,
             numbers = Content.localize().textNumbers,
             space   = Content.localize().textSpace,
             hyphen  = Content.localize().textHyphen,
             period  = Content.localize().textPeriod,
             apost   = Content.localize().textApost;
-
-        hideAllErrors(errorObj);
 
         if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:?><,|\d]+/.test((elementObj.first_name.value).trim())) {
             errorObj.first_name.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);

@@ -130,7 +130,7 @@ const handleResidence = function() {
                 }
             } else if (type === 'residence_list') {
                 select = document.getElementById('residence');
-                const phoneElement   = document.getElementById('tel'),
+                const phoneElement   = document.getElementById('phone'),
                     residenceValue = Client.get('residence'),
                     residence_list = response.residence_list;
                 if (residence_list.length > 0) {
@@ -204,7 +204,12 @@ const populateObjects = () => {
     };
 };
 
-const hideAllErrors = (errorObj) => {
+const hideAllErrors = (errorObj, errorEl) => {
+    window.accountErrorCounter = 0;
+    if (errorEl) {
+        errorEl.innerHTML = '';
+        errorEl.parentNode.parentNode.parentNode.hide();
+    }
     Object.keys(errorObj).forEach(function (key) {
         if (errorObj[key] && errorObj[key].offsetParent !== null) {
             errorObj[key].setAttribute('style', 'display:none');

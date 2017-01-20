@@ -174,6 +174,10 @@ const Client = (function () {
                 LocalStore.set(c, '');
             }
         });
+        const hash = window.location.hash;
+        if (/no-reality-check/.test(hash)) {
+            window.location.hash = hash.replace('no-reality-check', '');
+        }
         set_check_tnc();
         sessionStorage.setItem('currencies', '');
     };

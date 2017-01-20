@@ -9,8 +9,8 @@ const selectorExists          = require('../../../../common_functions/common_fun
 const FinancialAccOpeningUI = (function() {
     'use strict';
 
-    const checkValidity = function(elementObj, errorObj) {
-        window.accountErrorCounter = 0;
+    const checkValidity = function(elementObj, errorObj, errorEl) {
+        hideAllErrors(errorObj, errorEl);
 
         ValidAccountOpening.checkFname(elementObj.first_name, errorObj.first_name);
         ValidAccountOpening.checkLname(elementObj.last_name, errorObj.last_name);

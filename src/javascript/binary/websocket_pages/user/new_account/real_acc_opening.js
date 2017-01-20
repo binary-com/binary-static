@@ -17,9 +17,10 @@ const RealAccOpening = (function() {
         const object = populateObjects();
         const elementObj = object.elementObj;
         const errorObj = object.errorObj;
-        $('#real-form').submit(function(evt) {
+        const errorEl = document.getElementsByClassName('notice-msg')[0];
+        $('#real-form').off('submit').on('submit', function(evt) {
             evt.preventDefault();
-            if (RealAccOpeningUI.checkValidity(elementObj, errorObj)) {
+            if (RealAccOpeningUI.checkValidity(elementObj, errorObj, errorEl)) {
                 BinarySocket.init({
                     onmessage: function(msg) {
                         const response = JSON.parse(msg.data);

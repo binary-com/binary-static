@@ -36,7 +36,7 @@ const ValidAccountOpening = (function() {
             $('#submit-message').empty();
             const error = document.getElementsByClassName('notice-msg')[0];
             elementInnerHtml(error, (response.msg_type === 'sanity_check') ? localize('There was some invalid character in an input field.') : errorMessage);
-            error.parentNode.parentNode.parentNode.setAttribute('style', 'display:block');
+            error.parentNode.parentNode.parentNode.show();
         } else if (Cookies.get('residence') === 'jp') {
             window.location.href = url_for('new_account/knowledge_testws');
             $('#topbar-msg').children('a').addClass('invisible');

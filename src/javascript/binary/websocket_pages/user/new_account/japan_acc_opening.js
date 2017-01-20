@@ -19,12 +19,13 @@ const JapanAccOpening = (function() {
         const objects = populateObjects();
         const elementObj = objects.elementObj;
         const errorObj = objects.errorObj;
+        const errorEl = document.getElementsByClassName('notice-msg')[0];
 
         detect_hedging($('#trading_purpose'), $('.hedging-assets'));
 
-        $('#japan-form').submit(function(evt) {
+        $('#japan-form').off('submit').on('submit', function(evt) {
             evt.preventDefault();
-            if (JapanAccOpeningUI.checkValidity(elementObj, errorObj)) {
+            if (JapanAccOpeningUI.checkValidity(elementObj, errorObj, errorEl)) {
                 BinarySocket.init({
                     onmessage: function(msg) {
                         const response = JSON.parse(msg.data);

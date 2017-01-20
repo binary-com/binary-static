@@ -8,7 +8,8 @@ const FinancialAccOpeningUI = require('./financial_acc_opening/financial_acc_ope
 
 const FinancialAccOpening = (function() {
     let elementObj,
-        errorObj;
+        errorObj,
+        errorEl;
 
     const init = function() {
         Content.populate();
@@ -26,10 +27,11 @@ const FinancialAccOpening = (function() {
         const object = populateObjects();
         elementObj = object.elementObj;
         errorObj = object.errorObj;
+        errorEl = document.getElementsByClassName('notice-msg')[0];
         BinarySocket.send({ residence_list: 1 });
         BinarySocket.send({ get_financial_assessment: 1 });
-        $('#financial-form').submit(function(evt) { onSubmit(evt); });
-        $('#financial-risk').submit(function(evt) {
+        $('#financial-form').off('submit').on('submit', function(evt) { onSubmit(evt); });
+        $('#financial-risk').off('submit').on('submit', function(evt) {
             Client.set('accept_risk', 1);
             onSubmit(evt);
         });
@@ -37,7 +39,7 @@ const FinancialAccOpening = (function() {
 
     const onSubmit = (evt) => {
         evt.preventDefault();
-        if (FinancialAccOpeningUI.checkValidity(elementObj, errorObj)) {
+        if (FinancialAccOpeningUI.checkValidity(elementObj, errorObj, errorEl)) {
             BinarySocket.init({
                 onmessage: function(msg) {
                     const response = JSON.parse(msg.data);

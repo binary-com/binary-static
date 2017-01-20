@@ -8,10 +8,8 @@ const RealAccOpeningData  = require('./real_acc_opening.data').RealAccOpeningDat
 const RealAccOpeningUI = (function() {
     'use strict';
 
-    const checkValidity = function(elementObj, errorObj) {
-        window.accountErrorCounter = 0;
-
-        hideAllErrors(errorObj);
+    const checkValidity = function(elementObj, errorObj, errorEl) {
+        hideAllErrors(errorObj, errorEl);
 
         ValidAccountOpening.checkFname(elementObj.first_name, errorObj.first_name);
         ValidAccountOpening.checkLname(elementObj.last_name, errorObj.last_name);
@@ -37,7 +35,6 @@ const RealAccOpeningUI = (function() {
         checkRequiredInputs(elementObj, errorObj, optional_fields);
 
         if (window.accountErrorCounter === 0) {
-            $('#btn_submit').attr('disabled', 'disabled');
             RealAccOpeningData.getRealAcc(elementObj);
             hideAllErrors(errorObj);
             return 1;
