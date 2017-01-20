@@ -337,7 +337,7 @@ const MBContract = (function() {
                 template = getTemplate(contract_type),
                 $wrapper = $($desc_wrappers[template.order]);
             $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(localize(preposition + template.name));
-            $wrapper.find('.descr').text(localize(preposition + template.description, [currency, payout, display_name, date_expiry]));
+            $wrapper.find('.descr').html(localize(preposition + template.description, [currency, payout, display_name, date_expiry]));
         });
     };
 
