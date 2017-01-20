@@ -25,7 +25,7 @@ const ValidAccountOpening = (function() {
             }
         }
     };
-    const handler = function(response, message) {
+    const handler = function(response, message_type) {
         if (response.error) {
             const errorMessage = response.error.message;
             if (response.error.code === 'show risk disclaimer' && document.getElementById('financial-form')) {
@@ -41,7 +41,7 @@ const ValidAccountOpening = (function() {
             window.location.href = url_for('new_account/knowledge_testws');
             $('#topbar-msg').children('a').addClass('invisible');
         } else {     // jp account require more steps to have real account
-            Client.process_new_account(Cookies.get('email'), message.client_id, message.oauth_token, false);
+            Client.process_new_account(Cookies.get('email'), response[message_type].client_id, response[message_type].oauth_token, false);
         }
     };
     let letters,

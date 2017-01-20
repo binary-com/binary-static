@@ -122,7 +122,7 @@ const handleResidence = function() {
                         select.append($('<option/>', { value: state.value, text: state.text }));
                     });
                 } else {
-                    select.replaceWith($('<input/>', { id: 'address_state', name: 'address_state', type: 'text', maxlength: '35' }));
+                    select.replaceWith($('<input/>', { id: 'address_state', name: 'address_state', type: 'text', maxlength: '35', class: 'form_input' }));
                 }
                 $('#address_state').parent().parent().show();
                 if (window.state) {
@@ -189,12 +189,12 @@ const populateObjects = () => {
     const errorObj = {};
     const all_ids = $('.form_input');
     for (let i = 0; i < all_ids.length; i++) {
-        let id = all_ids[i].getAttribute('id');
-        const error_id = 'error_' + id;
+        const id = all_ids[i].getAttribute('id');
+        let error_id = 'error_' + id;
         elementObj[id] = document.getElementById(id);
         // all date of birth fields share one error message element
         if (/dob(mm|yy)/.test(id)) {
-            id = 'dobdd';
+            error_id = 'error_dobdd';
         }
         errorObj[id] = document.getElementById(error_id);
     }
@@ -212,10 +212,28 @@ const hideAllErrors = (errorObj) => {
     });
 };
 
+const checkRequiredInputs = (elementObj, errorObj, optional_fields) => {
+    Object.keys(elementObj).forEach(function (key) {
+        if (elementObj[key].offsetParent !== null && key.indexOf(optional_fields) < 0) {
+            if (/^$/.test((elementObj[key].value).trim()) && elementObj[key].type !== 'checkbox') {
+                errorObj[key].innerHTML = Content.errorMessage('req');
+                Validate.displayErrorMessage(errorObj[key]);
+                window.accountErrorCounter++;
+            }
+            if (elementObj[key].type === 'checkbox' && !elementObj[key].checked) {
+                errorObj[key].innerHTML = Content.errorMessage('req');
+                Validate.displayErrorMessage(errorObj[key]);
+                window.accountErrorCounter++;
+            }
+        }
+    });
+};
+
 
 module.exports = {
     displayAcctSettings: displayAcctSettings,
     handleResidence    : handleResidence,
     populateObjects    : populateObjects,
     hideAllErrors      : hideAllErrors,
+    checkRequiredInputs: checkRequiredInputs,
 };

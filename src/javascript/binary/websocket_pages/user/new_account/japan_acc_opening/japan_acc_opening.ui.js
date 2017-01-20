@@ -1,9 +1,10 @@
 const Content             = require('../../../../common_functions/content').Content;
 const ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
 const hideAllErrors       = require('../../../../common_functions/account_opening').hideAllErrors;
+const checkRequiredInputs = require('../../../../common_functions/account_opening').checkRequiredInputs;
 const Validate            = require('../../../../common_functions/validation').Validate;
 const JapanAccOpeningData = require('./japan_acc_opening.data').JapanAccOpeningData;
-const localize = require('../../../../base/localize').localize;
+const localize            = require('../../../../base/localize').localize;
 
 const JapanAccOpeningUI = (function () {
     'use strict';
@@ -62,24 +63,9 @@ const JapanAccOpeningUI = (function () {
         }
 
         const optional_fields = ['address_line_2'];
-
-        Object.keys(elementObj).forEach(function (key) {
-            if (elementObj[key].offsetParent !== null && key.indexOf(optional_fields) < 0) {
-                if (/^$/.test((elementObj[key].value).trim()) && elementObj[key].type !== 'checkbox') {
-                    errorObj[key].innerHTML = Content.errorMessage('req');
-                    Validate.displayErrorMessage(errorObj[key]);
-                    window.accountErrorCounter++;
-                }
-                if (elementObj[key].type === 'checkbox' && !elementObj[key].checked) {
-                    errorObj[key].innerHTML = Content.errorMessage('req');
-                    Validate.displayErrorMessage(errorObj[key]);
-                    window.accountErrorCounter++;
-                }
-            }
-        });
+        checkRequiredInputs(elementObj, errorObj, optional_fields);
 
         const $submit_msg = $('#submit-message');
-
         if (window.accountErrorCounter === 0) {
             hideAllErrors(errorObj);
             $submit_msg.removeClass('errorfield').text(localize('Processing your request...'));

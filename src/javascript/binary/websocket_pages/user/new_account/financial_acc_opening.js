@@ -42,8 +42,9 @@ const FinancialAccOpening = (function() {
                 onmessage: function(msg) {
                     const response = JSON.parse(msg.data);
                     if (response) {
-                        if (response.msg_type === 'new_account_maltainvest') {
-                            ValidAccountOpening.handler(response, response.new_account_maltainvest);
+                        const message_type = response.msg_type;
+                        if (message_type === 'new_account_maltainvest') {
+                            ValidAccountOpening.handler(response, message_type);
                         }
                     }
                 },

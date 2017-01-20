@@ -1,9 +1,10 @@
-const Content             = require('../../../../common_functions/content').Content;
-const ValidAccountOpening = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
-const hideAllErrors       = require('../../../../common_functions/account_opening').hideAllErrors;
-const Validate            = require('../../../../common_functions/validation').Validate;
 const FinancialAccOpeningData = require('./financial_acc_opening.data').FinancialAccOpeningData;
-const selectorExists    = require('../../../../common_functions/common_functions').selectorExists;
+const Content                 = require('../../../../common_functions/content').Content;
+const ValidAccountOpening     = require('../../../../common_functions/valid_account_opening').ValidAccountOpening;
+const hideAllErrors           = require('../../../../common_functions/account_opening').hideAllErrors;
+const checkRequiredInputs     = require('../../../../common_functions/account_opening').checkRequiredInputs;
+const Validate                = require('../../../../common_functions/validation').Validate;
+const selectorExists          = require('../../../../common_functions/common_functions').selectorExists;
 
 const FinancialAccOpeningUI = (function() {
     'use strict';
@@ -31,21 +32,7 @@ const FinancialAccOpeningUI = (function() {
         ValidAccountOpening.checkCity(elementObj.address_city, errorObj.address_city);
 
         const optional_fields = ['address_line_2', 'address_postcode', 'address_state'];
-
-        Object.keys(elementObj).forEach(function (key) {
-            if (elementObj[key].offsetParent !== null && key.indexOf(optional_fields) < 0) {
-                if (/^$/.test((elementObj[key].value).trim()) && elementObj[key].type !== 'checkbox') {
-                    errorObj[key].innerHTML = Content.errorMessage('req');
-                    Validate.displayErrorMessage(errorObj[key]);
-                    window.accountErrorCounter++;
-                }
-                if (elementObj[key].type === 'checkbox' && !elementObj[key].checked) {
-                    errorObj[key].innerHTML = Content.errorMessage('req');
-                    Validate.displayErrorMessage(errorObj[key]);
-                    window.accountErrorCounter++;
-                }
-            }
-        });
+        checkRequiredInputs(elementObj, errorObj, optional_fields);
 
         if (window.accountErrorCounter === 0) {
             FinancialAccOpeningData.getRealAcc(elementObj);

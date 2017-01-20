@@ -31,7 +31,7 @@ const JapanAccOpening = (function() {
                         if (response) {
                             const type = response.msg_type;
                             if (type === 'new_account_japan') {
-                                ValidAccountOpening.handler(response, response.new_account_japan);
+                                ValidAccountOpening.handler(response, type);
                             } else if (type === 'sanity_check') {
                                 ValidAccountOpening.handler(response);
                             }
