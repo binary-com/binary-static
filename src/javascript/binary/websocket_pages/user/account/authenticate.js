@@ -16,7 +16,7 @@ const AuthenticateWS = (function() {
         };
 
         const check_virtual = function() {
-            return Client.get_value('is_virtual') && show_error(Content.localize().featureNotRelevantToVirtual);
+            return Client.get('is_virtual') && show_error(Content.localize().featureNotRelevantToVirtual);
         };
         if (!check_virtual()) {
             BinarySocket.init({

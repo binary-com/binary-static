@@ -13,11 +13,11 @@ const ValidAccountOpening = (function() {
         if (Contents.show_login_if_logout(true)) {
             return;
         }
-        if (!Client.get_value('is_virtual')) {
+        if (!Client.get('is_virtual')) {
             window.location.href = url_for('trading');
             return;
         }
-        const client_loginid_array = Client.get_value('loginid_array');
+        const client_loginid_array = Client.get('loginid_array');
         for (let i = 0; i < client_loginid_array.length; i++) {
             if (client_loginid_array[i].real === true) {
                 window.location.href = url_for('trading');
@@ -94,7 +94,7 @@ const ValidAccountOpening = (function() {
         }
     };
     const checkPostcode = function(postcode, errorPostcode) {
-        if ((postcode.value !== '' || Client.get_value('residence') === 'gb') && !/^[a-zA-Z\d-]+$/.test(postcode.value)) {
+        if ((postcode.value !== '' || Client.get('residence') === 'gb') && !/^[a-zA-Z\d-]+$/.test(postcode.value)) {
             initializeValues();
             elementInnerHtml(errorPostcode, Content.errorMessage('reg', [letters, numbers, hyphen]));
             Validate.displayErrorMessage(errorPostcode);

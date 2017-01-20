@@ -11,7 +11,7 @@ const JapanAccOpening = (function() {
     const init = function() {
         Content.populate();
         ValidAccountOpening.redirectCookie();
-        if (Client.get_value('residence') !== 'jp') {
+        if (Client.get('residence') !== 'jp') {
             window.location.href = url_for('trading');
             return;
         }

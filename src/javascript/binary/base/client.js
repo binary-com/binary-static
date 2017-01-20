@@ -31,13 +31,13 @@ const Client = (function () {
         const is_logged_in = (
             loginid &&
             client_object.loginid_array.length > 0 &&
-            get_storage_value('tokens')
+            get('tokens')
         );
 
-        set_storage_value('email', Cookies.get('email'));
-        set_storage_value('loginid', loginid);
-        set_storage_value('is_logged_in', is_logged_in);
-        set_storage_value('residence', Cookies.get('residence'));
+        set('email', Cookies.get('email'));
+        set('loginid', loginid);
+        set('is_logged_in', is_logged_in);
+        set('residence', Cookies.get('residence'));
     };
 
     const validate_loginid = function() {
@@ -60,7 +60,7 @@ const Client = (function () {
     };
 
     const redirect_if_is_virtual = function(redirectPage) {
-        const is_virtual = get_storage_value('is_virtual');
+        const is_virtual = get('is_virtual');
         if (is_virtual) {
             window.location.href = url_for(redirectPage || '');
         }
@@ -68,19 +68,19 @@ const Client = (function () {
     };
 
     const redirect_if_login = function() {
-        if (get_storage_value('is_logged_in')) {
+        if (get('is_logged_in')) {
             window.location.href = default_redirect_url();
         }
-        return get_storage_value('is_logged_in');
+        return get('is_logged_in');
     };
 
-    const set_storage_value = function(key, value) {
+    const set = function(key, value) {
         client_object[key] = value;
         return LocalStore.set('client.' + key, value);
     };
 
     // use this function to get variables that have values
-    const get_storage_value = function(key) {
+    const get = function(key) {
         let value = client_object[key] || LocalStore.get('client.' + key) || '';
         if (+value === 1 || +value === 0 || value === 'true' || value === 'false') {
             value = JSON.parse(value || false);
@@ -88,11 +88,11 @@ const Client = (function () {
         return value;
     };
 
-    const check_storage_values = function(origin) {
+    const check_values = function(origin) {
         let is_ok = true;
 
         // currencies
-        if (!get_storage_value('currencies')) {
+        if (!get('currencies')) {
             BinarySocket.send({
                 payout_currencies: 1,
                 passthrough      : {
@@ -103,11 +103,11 @@ const Client = (function () {
             is_ok = false;
         }
 
-        if (get_storage_value('is_logged_in')) {
+        if (get('is_logged_in')) {
             if (
-                !get_storage_value('is_virtual') &&
+                !get('is_virtual') &&
                 Cookies.get('residence') &&
-                !get_storage_value('has_reality_check')
+                !get('has_reality_check')
             ) {
                 BinarySocket.send({
                     landing_company: Cookies.get('residence'),
@@ -132,14 +132,14 @@ const Client = (function () {
         const authorize = response.authorize;
         if (!Cookies.get('email')) {
             set_cookie('email', authorize.email);
-            set_storage_value('email', authorize.email);
+            set('email', authorize.email);
         }
-        set_storage_value('session_start', parseInt(moment().valueOf() / 1000));
-        set_storage_value('is_virtual', authorize.is_virtual);
-        set_storage_value('landing_company_name', authorize.landing_company_name);
-        set_storage_value('landing_company_fullname', authorize.landing_company_fullname);
-        set_storage_value('currency', authorize.currency);
-        check_storage_values();
+        set('session_start', parseInt(moment().valueOf() / 1000));
+        set('is_virtual', authorize.is_virtual);
+        set('landing_company_name', authorize.landing_company_name);
+        set('landing_company_fullname', authorize.landing_company_fullname);
+        set('currency', authorize.currency);
+        check_values();
         client_object.values_set = true;
         activate_by_client_type();
     };
@@ -147,11 +147,11 @@ const Client = (function () {
     const check_tnc = function() {
         if (/user\/tnc_approvalws/.test(window.location.href) ||
             /terms-and-conditions/.test(window.location.href) ||
-            get_storage_value('is_virtual') ||
+            get('is_virtual') ||
             sessionStorage.getItem('check_tnc') !== 'check') {
             return;
         }
-        const client_tnc_status   = get_storage_value('tnc_status'),
+        const client_tnc_status   = get('tnc_status'),
             website_tnc_version = LocalStore.get('website.tnc_version');
         if (client_tnc_status && website_tnc_version && client_tnc_status !== website_tnc_version) {
             sessionStorage.setItem('tnc_redirect', window.location.href);
@@ -180,7 +180,7 @@ const Client = (function () {
 
     const get_token = function(client_loginid) {
         let token;
-        const tokens = get_storage_value('tokens');
+        const tokens = get('tokens');
         if (client_loginid && tokens) {
             const tokensObj = JSON.parse(tokens);
             if (tokensObj.hasOwnProperty(client_loginid) && tokensObj[client_loginid]) {
@@ -194,10 +194,10 @@ const Client = (function () {
         if (!client_loginid || !token || get_token(client_loginid)) {
             return false;
         }
-        const tokens = get_storage_value('tokens');
+        const tokens = get('tokens');
         const tokensObj = tokens && tokens.length > 0 ? JSON.parse(tokens) : {};
         tokensObj[client_loginid] = token;
-        set_storage_value('tokens', JSON.stringify(tokensObj));
+        set('tokens', JSON.stringify(tokensObj));
         return true;
     };
 
@@ -254,20 +254,20 @@ const Client = (function () {
 
     const activate_by_client_type = function() {
         $('.by_client_type').addClass('invisible');
-        if (get_storage_value('is_logged_in')) {
+        if (get('is_logged_in')) {
             if (!client_object.values_set) {
                 return;
             }
             $('#client-logged-in').addClass('gr-centered');
             $('.client_logged_in').removeClass('invisible');
-            if (!get_storage_value('is_virtual')) {
+            if (!get('is_virtual')) {
                 // control-class is a fake class, only used to counteract ja-hide class
                 $('.by_client_type.client_real').not((japanese_client() ? '.ja-hide' : '.control-class')).removeClass('invisible').show();
 
                 $('#topbar').addClass('primary-color-dark')
                             .removeClass('secondary-bg-color');
 
-                if (!/^CR/.test(get_storage_value('loginid'))) {
+                if (!/^CR/.test(get('loginid'))) {
                     $('#payment-agent-section').addClass('invisible')
                                                .hide();
                 }
@@ -360,9 +360,8 @@ const Client = (function () {
         validate_loginid      : validate_loginid,
         redirect_if_is_virtual: redirect_if_is_virtual,
         redirect_if_login     : redirect_if_login,
-        set_value             : set_storage_value,
-        get_value             : get_storage_value,
-        check_storage_values  : check_storage_values,
+        set                   : set,
+        get                   : get,
         response_authorize    : response_authorize,
         check_tnc             : check_tnc,
         set_check_tnc         : set_check_tnc,

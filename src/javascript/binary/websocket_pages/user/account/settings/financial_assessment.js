@@ -121,7 +121,7 @@ const FinancialAssessmentws = (function() {
     };
 
     const checkIsVirtual = function() {
-        if (Client.get_value('is_virtual')) {
+        if (Client.get('is_virtual')) {
             $('#assessment_form').addClass('invisible');
             $('#response_on_success').addClass('notice-msg center-text').removeClass('invisible').text(Content.localize().featureNotRelevantToVirtual);
             hideLoadingImg(false);

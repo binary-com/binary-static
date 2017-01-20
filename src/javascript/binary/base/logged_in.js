@@ -72,7 +72,7 @@ const LoggedInHandler = (function() {
             }
         }
         if (objectNotEmpty(tokens)) {
-            Client.set_value('tokens', JSON.stringify(tokens));
+            Client.set('tokens', JSON.stringify(tokens));
         }
         return tokens;
     };

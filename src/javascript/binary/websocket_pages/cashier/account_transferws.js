@@ -246,7 +246,7 @@ const AccountTransferWS = (function() {
             },
         });
 
-        if (Client.get_value('is_virtual')) {
+        if (Client.get('is_virtual')) {
             AccountTransferWS.init();
         }
     };

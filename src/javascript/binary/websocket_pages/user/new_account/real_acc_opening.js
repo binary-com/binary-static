@@ -10,8 +10,8 @@ const RealAccOpening = (function() {
         Content.populate();
         ValidAccountOpening.redirectCookie();
         handleResidence();
-        if (Client.get_value('residence')) {
-            BinarySocket.send({ landing_company: Client.get_value('residence') });
+        if (Client.get('residence')) {
+            BinarySocket.send({ landing_company: Client.get('residence') });
         }
         BinarySocket.send({ residence_list: 1 });
         const object = populateObjects();

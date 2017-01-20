@@ -4,7 +4,7 @@ const JapanAccOpeningData = (function() {
     const getJapanAcc = function(elementObj) {
         const req = {
             new_account_japan: 1,
-            residence        : Client.get_value('residence'),
+            residence        : Client.get('residence'),
             date_of_birth    : elementObj.dobyy.value + '-' + elementObj.dobmm.value + '-' + elementObj.dobdd.value,
         };
 

@@ -12,8 +12,8 @@ const FinancialAccOpening = (function() {
 
     const init = function() {
         Content.populate();
-        Client.set_value('accept_risk', 0);
-        const client_loginid_array = Client.get_value('loginid_array');
+        Client.set('accept_risk', 0);
+        const client_loginid_array = Client.get('loginid_array');
         for (let i = 0; i < client_loginid_array.length; i++) {
             if (client_loginid_array[i].financial) {
                 window.location.href = url_for('trading');
@@ -30,7 +30,7 @@ const FinancialAccOpening = (function() {
         BinarySocket.send({ get_financial_assessment: 1 });
         $('#financial-form').submit(function(evt) { onSubmit(evt); });
         $('#financial-risk').submit(function(evt) {
-            Client.set_value('accept_risk', 1);
+            Client.set('accept_risk', 1);
             onSubmit(evt);
         });
     };

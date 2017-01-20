@@ -15,7 +15,7 @@ const displayAcctSettings = function(response) {
     const country = response.get_settings.country_code;
     if (country && country !== null) {
         $('#real-form').show();
-        Client.set_value('residence', country);
+        Client.set('residence', country);
         generateBirthDate();
         generateState();
         if (/maltainvestws/.test(window.location.pathname)) {
@@ -62,7 +62,7 @@ const show_residence_form = function() {
         const residence_value = residenceDisabled.val();
         if (Validate.fieldNotEmpty(residence_value, document.getElementById('error-residence'))) {
             Client.set_cookie('residence', residence_value);
-            Client.set_value('residence', residence_value);
+            Client.set('residence', residence_value);
             BinarySocket.send({ set_settings: 1, residence: residence_value });
         }
     });
@@ -72,8 +72,8 @@ const generateState = function() {
     const state = document.getElementById('address_state');
     if (state.length !== 0) return;
     appendTextValueChild(state, Content.localize().textSelect, '');
-    if (Client.get_value('residence') !== '') {
-        BinarySocket.send({ states_list: Client.get_value('residence') });
+    if (Client.get('residence') !== '') {
+        BinarySocket.send({ states_list: Client.get('residence') });
     }
 };
 
@@ -94,13 +94,13 @@ const handleResidence = function() {
                     }
                 } else {
                     errorElement.setAttribute('style', 'display:none');
-                    BinarySocket.send({ landing_company: Client.get_value('residence') });
+                    BinarySocket.send({ landing_company: Client.get('residence') });
                 }
             } else if (type === 'landing_company') {
-                Cookies.set('residence', Client.get_value('residence'), { domain: '.' + document.domain.split('.').slice(-2).join('.'), path: '/' });
-                if (((Client.can_upgrade_gaming_to_financial(response.landing_company) && !Client.get_value('is_virtual')) || Client.can_upgrade_virtual_to_financial(response.landing_company)) && !/maltainvestws/.test(window.location.href)) {
+                Cookies.set('residence', Client.get('residence'), { domain: '.' + document.domain.split('.').slice(-2).join('.'), path: '/' });
+                if (((Client.can_upgrade_gaming_to_financial(response.landing_company) && !Client.get('is_virtual')) || Client.can_upgrade_virtual_to_financial(response.landing_company)) && !/maltainvestws/.test(window.location.href)) {
                     window.location.href = url_for('new_account/maltainvestws');
-                } else if (Client.can_upgrade_virtual_to_japan(response.landing_company) && Client.get_value('is_virtual') && !/japanws/.test(window.location.href)) {
+                } else if (Client.can_upgrade_virtual_to_japan(response.landing_company) && Client.get('is_virtual') && !/japanws/.test(window.location.href)) {
                     window.location.href = url_for('new_account/japanws');
                 } else if (!$('#real-form').is(':visible')) {
                     BinarySocket.send({ residence_list: 1 });
@@ -131,7 +131,7 @@ const handleResidence = function() {
             } else if (type === 'residence_list') {
                 select = document.getElementById('residence');
                 const phoneElement   = document.getElementById('tel'),
-                    residenceValue = Client.get_value('residence'),
+                    residenceValue = Client.get('residence'),
                     residence_list = response.residence_list;
                 if (residence_list.length > 0) {
                     for (let j = 0; j < residence_list.length; j++) {
