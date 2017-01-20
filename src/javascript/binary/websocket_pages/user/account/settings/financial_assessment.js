@@ -115,7 +115,7 @@ const FinancialAssessmentws = (function() {
                 showFormMessage('Sorry, an error occurred while processing your request.', false);
                 displayErrors(response.error.details);
             } else {
-                showFormMessage('Your settings have been updated successfully.', true);
+                showFormMessage('Your changes have been updated successfully.', true);
             }
         }
     };
