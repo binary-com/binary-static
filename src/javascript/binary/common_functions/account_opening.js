@@ -214,7 +214,7 @@ const hideAllErrors = (errorObj) => {
 
 const checkRequiredInputs = (elementObj, errorObj, optional_fields) => {
     Object.keys(elementObj).forEach(function (key) {
-        if (elementObj[key].offsetParent !== null && key.indexOf(optional_fields) < 0) {
+        if (elementObj[key].offsetParent !== null && optional_fields.indexOf(key) < 0) {
             if (/^$/.test((elementObj[key].value).trim()) && elementObj[key].type !== 'checkbox') {
                 errorObj[key].innerHTML = Content.errorMessage('req');
                 Validate.displayErrorMessage(errorObj[key]);
