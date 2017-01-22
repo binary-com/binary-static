@@ -1,5 +1,3 @@
-const moment = require('moment');
-
 const ConnectionsData = (function() {
     'use strict';
 
@@ -17,23 +15,16 @@ const ConnectionsData = (function() {
         BinarySocket.send({ connect_list: 1 });
     };
 
+    const add = function(connection_token) {
+        BinarySocket.send({ connection_add: 1, connection_token: connection_token });
+    }
+
     const del = function(provider) {
         if (!provider) return;
         BinarySocket.send({ connect_del: 1, provider: provider });
     };
 
-    const parse = function(app) {
-        const last = app.last_used ? moment.utc(app.last_used) : null;
-        return {
-            name     : app.name,
-            scopes   : app.scopes,
-            last_used: last,
-            id       : app.app_id,
-        };
-    };
-
     return {
-        parse: parse,
         calls: calls,
         del  : del,
         list : list,

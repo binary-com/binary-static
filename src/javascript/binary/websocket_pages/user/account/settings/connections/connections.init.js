@@ -1,5 +1,6 @@
 const ConnectionsUI   = require('./connections.ui').ConnectionsUI;
 const ConnectionsData = require('./connections.data').ConnectionsData;
+const url             = require('../../../base/url').url;
 
 const Connections = (function() {
     'use strict';
@@ -8,8 +9,12 @@ const Connections = (function() {
         if (response.error && response.error.message) {
             return ConnectionsUI.displayError(response.error.message);
         }
-        const apps = response.oauth_apps.map(ConnectionsData.parse);
-        return ConnectionsUI.update(apps);
+        if (response.connection_add) {
+            // call list on finish
+            ConnectionsData.list();
+        } else {
+            return ConnectionsUI.update(response.connect_list);
+        }
     };
 
     const init = function() {
@@ -17,7 +22,12 @@ const Connections = (function() {
         BinarySocket.init({
             onmessage: ConnectionsData.calls(responseHandler),
         });
-        ConnectionsData.list();
+        var connection_token = url.param['connection_token'];
+        if (typeof(connection_token) !== 'undefined') {
+            ConnectionsData.add(connection_token);
+        } else {
+            ConnectionsData.list();
+        }
     };
 
     const clean = function() {

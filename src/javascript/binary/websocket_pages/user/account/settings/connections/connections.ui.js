@@ -10,27 +10,24 @@ const ConnectionsUI = (function() {
 
     const containerSelector = '#connections-ws-container';
     const messages = {
-        no_apps: 'You do not have any connection.',
+        no_connect_list: 'You do not have any connection.',
     };
     let flexTable;
 
-    const formatApp = function(app) {
-        const last_used = app.last_used ? app.last_used.format('YYYY-MM-DD HH:mm:ss') : localize('Never');
+    const formatConnect = function(connect) {
         return [
-            app.name,
-            app.scopes.join(', '),
-            last_used,
+            connect.provider,
             '', // for the "Del Connection" button
         ];
     };
 
-    const createDelButton = function(container, app) {
+    const createDelButton = function(container, connect) {
         const $buttonSpan = Button.createBinaryStyledButton();
         const $button = $buttonSpan.children('.button').first();
         $button.text('Delete Connection');
         $button.on('click', function() {
-            if (window.confirm("Confirm: '" + app.name + "'?")) {
-                ConnectionsData.del(app.provider);
+            if (window.confirm("Confirm: '" + connect.provider + "'?")) {
+                ConnectionsData.del(connect.provider);
                 container.css({ opacity: 0.5 });
             }
         });
@@ -41,28 +38,28 @@ const ConnectionsUI = (function() {
         if (flexTable) {
             return flexTable.replace(data);
         }
-        const headers = ['Name', 'Permissions', 'Last Used', 'Action'];
-        const columns = ['name', 'permissions', 'last_used', 'action'];
+        const headers = ['Provider', 'Action'];
+        const columns = ['provider', 'action'];
         flexTable = new FlexTableUI({
             container: containerSelector,
             header   : headers.map(function(s) { return localize(s); }),
             id       : 'connections-table',
             cols     : columns,
             data     : data,
-            style    : function($row, app) {
+            style    : function($row, connect) {
                 $row.children('.action').first()
-                    .append(createDelButton($row, app));
+                    .append(createDelButton($row, connect));
             },
-            formatter: formatApp,
+            formatter: formatConnect,
         });
         return showLocalTimeOnHover('td.last_used');
     };
 
-    const update = function(apps) {
+    const update = function(connect_list) {
         $('#loading').remove();
-        createTable(apps);
-        if (!apps.length) {
-            flexTable.displayError(localize(messages.no_apps), 7);
+        createTable(connect_list);
+        if (!connect_list.length) {
+            flexTable.displayError(localize(messages.no_connect_list), 7);
         }
     };
 
