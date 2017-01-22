@@ -17,7 +17,7 @@ const ConnectionsData = (function() {
 
     const add = function(connection_token) {
         BinarySocket.send({ connection_add: 1, connection_token: connection_token });
-    }
+    };
 
     const del = function(provider) {
         if (!provider) return;
@@ -26,6 +26,7 @@ const ConnectionsData = (function() {
 
     return {
         calls: calls,
+        add  : add,
         del  : del,
         list : list,
     };
