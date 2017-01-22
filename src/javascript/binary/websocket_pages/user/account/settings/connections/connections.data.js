@@ -18,7 +18,7 @@ const ConnectionsData = (function() {
     };
 
     const del = function(provider) {
-        if (!id) return;
+        if (!provider) return;
         BinarySocket.send({ connect_del: 1, provider: provider });
     };
 
@@ -33,10 +33,10 @@ const ConnectionsData = (function() {
     };
 
     return {
-        parse : parse,
-        calls : calls,
-        del   : del,
-        list  : list,
+        parse: parse,
+        calls: calls,
+        del  : del,
+        list : list,
     };
 })();
 

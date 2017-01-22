@@ -1,5 +1,4 @@
 const Content         = require('../../../../common_functions/content').Content;
-const url_for         = require('../../../../base/url').url_for;
 const Connections     = require('./connections/connections.init').Connections;
 
 const UserConnections = (function() {

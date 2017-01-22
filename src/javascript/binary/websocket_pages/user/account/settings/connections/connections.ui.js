@@ -10,7 +10,7 @@ const ConnectionsUI = (function() {
 
     const containerSelector = '#connections-ws-container';
     const messages = {
-        no_apps       : 'You do not have any connection.'
+        no_apps: 'You do not have any connection.',
     };
     let flexTable;
 
