@@ -16,7 +16,7 @@ const ConnectionsUI = (function() {
 
     const formatConnect = function(connect) {
         return [
-            connect.provider,
+            connect,
             '', // for the "Del Connection" button
         ];
     };
@@ -26,8 +26,8 @@ const ConnectionsUI = (function() {
         const $button = $buttonSpan.children('.button').first();
         $button.text('Delete Connection');
         $button.on('click', function() {
-            if (window.confirm("Confirm: '" + connect.provider + "'?")) {
-                ConnectionsData.del(connect.provider);
+            if (window.confirm("Confirm: '" + connect + "'?")) {
+                ConnectionsData.del(connect);
                 container.css({ opacity: 0.5 });
             }
         });
