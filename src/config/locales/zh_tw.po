@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-18 01:26+0000\n"
+"PO-Revision-Date: 2017-01-19 01:27+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -757,10 +757,8 @@ msgstr "偏好并熱衷於使用Linux和開源平台"
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "主動尋求問題的對策，並向客戶端提交解決方案"
 
-#, fuzzy
-#| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
-msgstr "水電煤帳單或銀行月結單掃描件（日期不得超過3個月）。"
+msgstr "水電煤帳單或銀行月結單掃描件（日期不得超過3個月）"
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
 msgstr "顯示您名字和出生日期的護照、駕照（臨時或永久）或身份證的掃描件。文件須至少6個月有效期(從今天算起)。"
@@ -4152,6 +4150,9 @@ msgstr "鎖定收銀台"
 msgid "Log in"
 msgstr "登入"
 
+msgid "Log out"
+msgstr "登出"
+
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "登入您的%1 聯盟帳號並點選：財務&rarr; 付款說明。"
 
@@ -4172,9 +4173,6 @@ msgstr "登入時間:"
 
 msgid "Login trouble"
 msgstr "登入故障"
-
-msgid "Logout"
-msgstr "登出"
 
 msgid "Long"
 msgstr "長倉"
@@ -6663,10 +6661,8 @@ msgstr "到"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "如有意申請，請將您的履歷和求職信傳到<span id='hr_contact_eaddress'></span>。"
 
-#, fuzzy
-#| msgid "To authenticate your account, kindly email the following to %1"
 msgid "To authenticate your account, kindly email the following to %1:"
-msgstr "為驗證您的帳號，請將以下通過電子郵件傳到%1"
+msgstr "為驗證您的帳號，請將以下通過電子郵件傳到%1:"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
 msgstr "為驗證您的帳號，請將以下通過電子郵件傳到<a href=\"mailto:%1\">%1</a>"
@@ -7009,6 +7005,11 @@ msgstr "檢視"
 
 msgid "View Details"
 msgstr "檢視詳細資料"
+
+#, fuzzy
+#| msgid "View your statement"
+msgid "View Statement"
+msgstr "檢視您的帳單"
 
 msgid "View Updated Portfolio"
 msgstr "檢視更新後的組合"
@@ -7999,9 +8000,6 @@ msgstr "月份"
 
 msgid "months"
 msgstr "月份"
-
-msgid "not available"
-msgstr "不可使用"
 
 msgid "numbers"
 msgstr "號碼"
@@ -9015,7 +9013,7 @@ msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to t
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
-msgstr ""
+msgstr "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
@@ -9127,6 +9125,12 @@ msgstr "帳戶詳細資料"
 
 msgid "Terms and Conditions Approval"
 msgstr "條款和條件審批"
+
+#~ msgid "Logout"
+#~ msgstr "登出"
+
+#~ msgid "not available"
+#~ msgstr "不可使用"
 
 #~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 #~ msgstr "收銀台已鎖定。欲知詳細資訊，請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
@@ -9764,9 +9768,6 @@ msgstr "條款和條件審批"
 
 #~ msgid "Get started"
 #~ msgstr "開始交易"
-
-#~ msgid "Log out"
-#~ msgstr "登出"
 
 #~ msgid "Page not found"
 #~ msgstr "無法找到頁面"

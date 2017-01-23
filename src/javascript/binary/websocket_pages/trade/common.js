@@ -726,13 +726,13 @@ function updatePurchaseStatus(final_price, pnl, contract_status) {
         $profit.html(Content.localize().textLoss + '<p>' + addComma(pnl) + '</p>');
     } else {
         $profit.html(Content.localize().textProfit + '<p>' + addComma(Math.round((final_price - pnl) * 100) / 100) + '</p>');
-        updateContractBalance(Client.get_value('balance'));
+        updateContractBalance(Client.get('balance'));
     }
 }
 
 function updateContractBalance(balance) {
     $('#contract_purchase_balance').text(
-        Content.localize().textContractConfirmationBalance + ' ' + format_money(Client.get_value('currency'), balance));
+        Content.localize().textContractConfirmationBalance + ' ' + format_money(Client.get('currency'), balance));
 }
 
 function updateWarmChart() {
@@ -879,7 +879,7 @@ function displayTooltip_Beta(market, symbol) {
 }
 
 function label_value(label_elem, label, value, no_currency) {
-    const currency = Client.get_value('currency');
+    const currency = Client.get('currency');
     elementInnerHtml(label_elem, label);
     const value_elem = document.getElementById(label_elem.id + '_value');
     elementInnerHtml(value_elem, no_currency ? value : format_money(currency, value));

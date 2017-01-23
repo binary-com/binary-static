@@ -5,7 +5,7 @@ const Client   = require('../../../../base/client').Client;
 const Limits = (function() {
     const onLoad = function() {
         Content.populate();
-        if (Client.get_boolean('is_virtual')) {
+        if (Client.get('is_virtual')) {
             LimitsWS.limitsError();
             return;
         }
@@ -17,7 +17,7 @@ const Limits = (function() {
                     const type = response.msg_type;
                     const error = response.error;
 
-                    if (type === 'authorize' && Client.get_boolean('is_virtual')) {
+                    if (type === 'authorize' && Client.get('is_virtual')) {
                         LimitsWS.limitsError(error);
                     } else if (type === 'get_limits' && !error) {
                         LimitsWS.limitsHandler(response);

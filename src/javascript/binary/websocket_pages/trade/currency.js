@@ -13,7 +13,7 @@ function displayCurrencies() {
 
     const target = document.getElementById('currency'),
         fragment =  document.createDocumentFragment(),
-        currencies = Client.get_value('currencies').split(',');
+        currencies = Client.get('currencies').split(',');
 
     if (!target) {
         return;

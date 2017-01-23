@@ -108,7 +108,7 @@ const Purchase_Beta = (function () {
                 label_value(cost,   Content.localize().textStake,  addComma(cost_value));
             }
 
-            elementTextContent(balance, Content.localize().textContractConfirmationBalance + ' ' + format_money(Client.get_value('currency'), receipt.balance_after));
+            elementTextContent(balance, Content.localize().textContractConfirmationBalance + ' ' + format_money(Client.get('currency'), receipt.balance_after));
 
             if (show_chart) {
                 chart.show();

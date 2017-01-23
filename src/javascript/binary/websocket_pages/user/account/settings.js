@@ -8,7 +8,7 @@ const SettingsWS = (function() {
         const classHidden = 'invisible',
             classReal   = '.real';
 
-        if (!Client.get_boolean('is_virtual')) {
+        if (!Client.get('is_virtual')) {
             // control-class is a fake class, only used to counteract ja-hide class
             $(classReal).not((japanese_client() ? '.ja-hide' : '.control-class')).removeClass(classHidden);
         } else {
@@ -19,7 +19,7 @@ const SettingsWS = (function() {
     };
 
     const onLoad = function() {
-        if (!Client.get_boolean('values_set')) {
+        if (!Client.get('values_set')) {
             BinarySocket.init({
                 onmessage: function(msg) {
                     const response = JSON.parse(msg.data);

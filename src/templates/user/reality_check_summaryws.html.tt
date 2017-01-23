@@ -1,89 +1,47 @@
 <div id="reality-check-content">
-  <div>
-    <h1>
-      [% l("Reality Check") %]
-    </h1>
-    <p>
-      <label>
-        [% l("Login time:") %]
-      </label>
-      <span id="login-time"></span>
-    </p>
-    <p>
-      <label>
-        [% l("Current time:") %]
-      </label>
-      <span id="current-time"></span>
-    </p>
-    <p>
-      <label>
-        [% l("Session duration:") %]
-      </label>
-      <span id="session-duration"></span>
-    </p>
-    <p id="start-time"></p>
-    <table>
-      <tr>
-        <th>
-          [% l("Login ID") %]
-        </th>
-        <th>
-          [% l("Currency") %]
-        </th>
-        <th>
-          [% l("Turnover") %]
-        </th>
-        <th>
-          [% l("Profit / Loss") %]
-        </th>
-        <th>
-          [% l("Contracts bought") %]
-        </th>
-        <th>
-          [% l("Contracts sold") %]
-        </th>
-        <th>
-          [% l("Open contracts") %]
-        </th>
-        <th>
-          [% l("Potential profit") %]
-        </th>
-      </tr>
-      <tr>
-        <td id="login-id"></td>
-        <td id="rc_currency"></td>
-        <td id="turnover"></td>
-        <td id="profitloss"></td>
-        <td id="bought"></td>
-        <td id="sold"></td>
-        <td id="open"></td>
-        <td id="potential"></td>
-      </tr>
-    </table>
-    <p>
-      <label>
-        [% l("Reality Check Interval:") %]
-      </label>
-      <input id="realityDuration" interval="1" maxlength="4" min="1" size="6" type="number"/>
-      <span>
-        [% l("minutes") %]
-      </span>
-    </p>
-    <p id="rc-err" class="error-msg invisible">
-      [% l("Please enter a number greater than 0") %]
-    </p>
-  </div>
-  <div class="center-text" id="reality-check-nav">
-    <span class="button">
-      <button bcont="1" class="button" id="continue">
-        [% l("Continue Trading") %]
-      </button>
-    </span>
-    <span></span>
-    <span class="button">
-      <button class="button" id="btn_logout">
-        [% l("Logout") %]
-      </button>
-    </span>
-  </div>
+    <div>
+        <h1>[% l("Reality Check") %]</h1>
+        <p>
+            <label>[% l("Login time:") %]</label>
+            <span id="login-time"></span>
+        </p>
+        <p>
+            <label>[% l("Current time:") %]</label>
+            <span id="current-time"></span>
+        </p>
+        <p>
+            <label>[% l("Session duration:") %]</label>
+            <span id="session-duration"></span>
+        </p>
+        <p id="start-time"></p>
+            <table>
+                <tr>
+                    <th>[% l("Login ID") %]</th>
+                    <th>[% l("Currency") %]</th>
+                    <th>[% l("Turnover") %]</th>
+                    <th>[% l("Profit / Loss") %]</th>
+                    <th>[% l("Contracts bought") %]</th>
+                    <th>[% l("Contracts sold") %]</th>
+                    <th>[% l("Open contracts") %]</th>
+                    <th>[% l("Potential profit") %]</th>
+                </tr>
+                <tr>
+                    <td id="login-id"></td>
+                    <td id="rc_currency"></td>
+                    <td id="turnover"></td>
+                    <td id="profitloss"></td>
+                    <td id="bought"></td>
+                    <td id="sold"></td>
+                    <td id="open"></td>
+                    <td id="potential"></td>
+                </tr>
+            </table>
+        <p>
+            <label>[% l("Reality Check Interval:") %]</label>
+            <input id="realityDuration" interval="1" maxlength="4" min="1" size="6" type="number"/>
+            <span>[% l("minutes") %]</span>
+        </p>
+        <p id="rc-err" class="error-msg invisible">[% l("Please enter a number greater than 0") %]</p>
+    </div>
+    [% INCLUDE global/reality_check_buttons.html.tt %]
 </div>

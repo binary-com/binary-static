@@ -16,6 +16,8 @@ const TrafficSource     = require('../common_functions/traffic_source').TrafficS
 const checkLanguage     = require('../common_functions/country_base').checkLanguage;
 const ViewBalance       = require('../websocket_pages/user/viewbalance/viewbalance.init').ViewBalance;
 const Cookies           = require('../../lib/js-cookie');
+const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check.init').RealityCheck;
+const RealityCheckData  = require('../websocket_pages/user/reality_check/reality_check.data').RealityCheckData;
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
 require('../../lib/mmenu/jquery.mmenu.min.all.js');
@@ -37,8 +39,13 @@ Page.prototype = {
         Contents.on_load();
         if (State.get('is_loaded_by_pjax')) {
             this.show_authenticate_message();
+            if (RealityCheckData.get('delay_reality_init')) {
+                RealityCheck.init();
+            } else if (RealityCheckData.get('delay_reality_check')) {
+                BinarySocket.send({ reality_check: 1 });
+            }
         }
-        if (Client.get_boolean('is_logged_in')) {
+        if (Client.get('is_logged_in')) {
             ViewBalance.init();
         } else {
             LocalStore.set('reality_check.ack', 0);

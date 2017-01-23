@@ -327,7 +327,7 @@ const MBContract = (function() {
     const displayDescriptions = function() {
         const contracts = getCurrentContracts(),
             $desc_wrappers = $('.prices-wrapper'),
-            currency = (format_currency(Client.get_value('currency')) || format_currency(document.getElementById('currency').value) || '¥'),
+            currency = (format_currency(Client.get('currency')) || format_currency(document.getElementById('currency').value) || '¥'),
             payout = Number(MBDefaults.get('payout') * (japanese_client() ? 1000 : 1)).toLocaleString(),
             display_name = MBSymbols.getName(MBDefaults.get('underlying')),
             date_expiry = PeriodText(contracts[0].trading_period).replace(/\s\(.*\)/, ''),
@@ -337,12 +337,12 @@ const MBContract = (function() {
                 template = getTemplate(contract_type),
                 $wrapper = $($desc_wrappers[template.order]);
             $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(localize(preposition + template.name));
-            $wrapper.find('.descr').text(localize(preposition + template.description, [currency, payout, display_name, date_expiry]));
+            $wrapper.find('.descr').html(localize(preposition + template.description, [currency, payout, display_name, date_expiry]));
         });
     };
 
     const getCurrency = function() {
-        return (Client.get_value('currency') || document.getElementById('currency').value || 'JPY');
+        return (Client.get('currency') || document.getElementById('currency').value || 'JPY');
     };
 
     return {

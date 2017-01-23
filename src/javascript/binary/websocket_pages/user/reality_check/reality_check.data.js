@@ -1,6 +1,5 @@
 const template   = require('../../../base/utility').template;
 const LocalStore = require('../../../base/storage').LocalStore;
-const Client     = require('../../../base/client').Client;
 const moment     = require('moment');
 
 const RealityCheckData = (function() {
@@ -9,63 +8,20 @@ const RealityCheckData = (function() {
     const defaultInterval = 600000;
     const durationTemplateString = '[_1] days [_2] hours [_3] minutes';
     const tradingTimeTemplate = 'Your trading statistics since [_1].';
+    const reality_object = {};
 
     const getSummaryAsync = function() {
         BinarySocket.send({ reality_check: 1 });
     };
 
-    const getAck = function() {
-        return LocalStore.get('reality_check.ack');
-    };
-
-    const setOpenSummaryFlag = function() {
-        LocalStore.set('reality_check.keep_open', 1);
-    };
-
-    const getOpenSummaryFlag = function() {
-        return LocalStore.get('reality_check.keep_open');
-    };
-
-    const triggerCloseEvent = function() {
-        LocalStore.set('reality_check.keep_open', 0);
-    };
-
-    const updateAck = function() {
-        LocalStore.set('reality_check.ack', 1);
-    };
-
-    const getInterval = function() {
-        return LocalStore.get('reality_check.interval');
-    };
-
-    const getPreviousLoadLoginId = function() {
-        return LocalStore.get('reality_check.loginid');
-    };
-
-    const setPreviousLoadLoginId = function() {
-        const id = Client.get_value('loginid');
-        LocalStore.set('reality_check.loginid', id);
-    };
-
-    const updateInterval = function(ms) {
-        LocalStore.set('reality_check.interval', ms);
-    };
-
-    const clear = function() {
-        LocalStore.remove('reality_check.ack');
-        LocalStore.remove('reality_check.interval');
-        LocalStore.remove('reality_check.keep_open');
-    };
-
     const resetInvalid = function() {
-        const ack = LocalStore.get('reality_check.ack');
-        const interval = +(LocalStore.get('reality_check.interval'));
-        if (ack !== '0' && ack !== '1') {
-            LocalStore.set('reality_check.ack', 0);
+        const ack = get('ack');
+        const interval = +(get('interval'));
+        if (ack !== 0 && ack !== 1) {
+            set('ack', 0);
         }
-
         if (!interval) {
-            LocalStore.set('reality_check.interval', defaultInterval);
+            set('interval', defaultInterval);
         }
     };
 
@@ -100,20 +56,36 @@ const RealityCheckData = (function() {
         };
     };
 
+    const set = function(key, value) {
+        reality_object[key] = value;
+        return LocalStore.set('reality_check.' + key, value);
+    };
+
+    // use this function to get variables that have values
+    const get = function(key) {
+        let value = reality_object[key] || LocalStore.get('reality_check.' + key) || '';
+        if (+value === 1 || +value === 0 || value === 'true' || value === 'false') {
+            value = JSON.parse(value || false);
+        }
+        return value;
+    };
+
+    const clear_storage_values = function() {
+        // clear all reality check values from local storage except loginid
+        Object.keys(localStorage).forEach(function(c) {
+            if (/^reality_check\.(?!(loginid$))/.test(c)) {
+                LocalStore.set(c, '');
+            }
+        });
+    };
+
     return {
-        getSummaryAsync       : getSummaryAsync,
-        getAck                : getAck,
-        setOpenSummaryFlag    : setOpenSummaryFlag,
-        getOpenSummaryFlag    : getOpenSummaryFlag,
-        getPreviousLoadLoginId: getPreviousLoadLoginId,
-        setPreviousLoadLoginId: setPreviousLoadLoginId,
-        updateAck             : updateAck,
-        getInterval           : getInterval,
-        updateInterval        : updateInterval,
-        clear                 : clear,
-        resetInvalid          : resetInvalid,
-        summaryData           : summaryData,
-        triggerCloseEvent     : triggerCloseEvent,
+        getSummaryAsync: getSummaryAsync,
+        clear          : clear_storage_values,
+        resetInvalid   : resetInvalid,
+        summaryData    : summaryData,
+        set            : set,
+        get            : get,
     };
 })();
 

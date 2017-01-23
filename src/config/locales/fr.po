@@ -4171,6 +4171,9 @@ msgstr "Caisse"
 msgid "Log in"
 msgstr "Connexion"
 
+msgid "Log out"
+msgstr "Déconnexion"
+
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Connectez-vous à votre compte affilié %1 et cliquez sur : Finances &rarr; Instructions de paiement."
 
@@ -4191,9 +4194,6 @@ msgstr "Temps de connexion :"
 
 msgid "Login trouble"
 msgstr "Problème de connexion"
-
-msgid "Logout"
-msgstr "Déconnexion"
 
 msgid "Long"
 msgstr "Long"
@@ -7049,6 +7049,11 @@ msgstr "Affichage"
 msgid "View Details"
 msgstr "Afficher les informations"
 
+#, fuzzy
+#| msgid "View statement"
+msgid "View Statement"
+msgstr "Voir la déclaration"
+
 msgid "View Updated Portfolio"
 msgstr "Vue du Portefeuille Actualisé"
 
@@ -8048,9 +8053,6 @@ msgstr "mois"
 
 msgid "months"
 msgstr "mois"
-
-msgid "not available"
-msgstr "non disponible"
 
 msgid "numbers"
 msgstr "chiffres"
@@ -9185,6 +9187,12 @@ msgstr "Informations du compte"
 msgid "Terms and Conditions Approval"
 msgstr "Acceptation des conditions générales"
 
+#~ msgid "Logout"
+#~ msgstr "Déconnexion"
+
+#~ msgid "not available"
+#~ msgstr "non disponible"
+
 #, fuzzy
 #~| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 #~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
@@ -9767,9 +9775,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Get started"
 #~ msgstr "Se lancer"
-
-#~ msgid "Log out"
-#~ msgstr "Déconnexion"
 
 #~ msgid "Page not found"
 #~ msgstr "Page non-trouvée"
@@ -18071,9 +18076,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Sorry, you cannot convert"
 #~ msgstr "Désolé, vous ne pouvez pas convertir"
-
-#~ msgid "View statement"
-#~ msgstr "Voir la déclaration"
 
 #~ msgid "We are sorry, we do not allow conversion if you ever used a credit/debit card to deposit to your account segment."
 #~ msgstr "Nous sommes désolés, nous n'autorisons pas la conversion si vous avez déjà utilisé une carte de crédit/de débit pour faire un dépôt sur le segment de votre compte."
