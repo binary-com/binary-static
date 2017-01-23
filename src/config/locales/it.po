@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Italian (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-12 13:13+0000\n"
+"PO-Revision-Date: 2017-01-22 18:18+0000\n"
 "Last-Translator: Annalisa <ligiu@me.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/binary/static/it/>\n"
 "Language: it\n"
@@ -4164,6 +4164,9 @@ msgstr "Blocca la Cassa"
 msgid "Log in"
 msgstr "Login"
 
+msgid "Log out"
+msgstr "Logout"
+
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Accedi al tuo account di affiliazione di %1 e clicca su: Finanze &rarr; Istruzioni di pagamento."
 
@@ -4184,9 +4187,6 @@ msgstr "Orario d'accesso:"
 
 msgid "Login trouble"
 msgstr "Problemi con l'accesso"
-
-msgid "Logout"
-msgstr "Logout"
 
 msgid "Long"
 msgstr "A lungo"
@@ -6697,10 +6697,8 @@ msgstr "A"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "Per candidarti, invia il tuo CV e una lettera di presentazione a <span id='hr_contact_eaddress'></span>."
 
-#, fuzzy
-#| msgid "To authenticate your account, kindly email the following to %1"
 msgid "To authenticate your account, kindly email the following to %1:"
-msgstr "Per convalidare il tuo account, ti chiediamo gentilmente di inviare quanto segue tramite email all'indirizzo %1"
+msgstr "Per convalidare il tuo account, ti chiediamo gentilmente di inviare quanto segue tramite email all'indirizzo %1:"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
 msgstr "Per convalidare il tuo account, ti chiediamo gentilmente di inviare quanto segue tramite email all'indirizzo <a href=\"mailto:%1\">%1</a>"
@@ -6723,10 +6721,8 @@ msgstr "To open a trading account, our customers must confirm they fully underst
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "Per essere idoneo, dovrai avere una laurea in Fisica, Ingegneria finanziaria o Matematica"
 
-#, fuzzy
-#| msgid "To reset your password, enter the e-mail address you registered in the field below and click "
 msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
-msgstr "Per ripristinare la tua password, inserisci l'indirizzo email indicato in fase di registrazione nel campo sottostante e clicca "
+msgstr "Per ripristinare la tua password, inserisci l'indirizzo email indicato in fase di registrazione nel campo sottostante e clicca su \"Ripristina password\"."
 
 msgid "Today"
 msgstr "Oggi"
@@ -6785,10 +6781,8 @@ msgstr "Negozia su tutte le condizioni di mercato"
 msgid "Trade in the world's financial markets in a simple, user-friendly platform."
 msgstr "Negozia nei mercati finanziari del mondo su una piattaforma semplice e facile da utilizzare."
 
-#, fuzzy
-#| msgid "Trade in the world's financial markets in a simple, user-friendly platform."
 msgid "Trade in the world’s financial markets with a simple and user-friendly online platform."
-msgstr "Negozia nei mercati finanziari del mondo su una piattaforma semplice e facile da utilizzare."
+msgstr "Negozia nei mercati finanziari del mondo con una piattaforma online semplice e facile da utilizzare."
 
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "Negozia solo con soldi che puoi permetterti di perdere. Non fare trading con soldi presi in prestito."
@@ -7048,6 +7042,11 @@ msgstr "Mostra"
 msgid "View Details"
 msgstr "Mostra dettagli"
 
+#, fuzzy
+#| msgid "View your statement"
+msgid "View Statement"
+msgstr "Mostra il tuo estratto"
+
 msgid "View Updated Portfolio"
 msgstr "Mostra portafoglio aggiornato"
 
@@ -7102,10 +7101,8 @@ msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl
 msgid "Waiting for entry tick."
 msgstr "In attesa del tick d'ingresso."
 
-#, fuzzy
-#| msgid "Waiting for entry tick."
 msgid "Waiting for exit tick."
-msgstr "In attesa del tick d'ingresso."
+msgstr "In attesa del tick d'uscita."
 
 msgid "Walkthrough Guide"
 msgstr "Guida dettagliata"
@@ -8046,9 +8043,6 @@ msgstr "mese"
 msgid "months"
 msgstr "mesi"
 
-msgid "not available"
-msgstr "non disponibile"
-
 msgid "numbers"
 msgstr "numeri"
 
@@ -8124,10 +8118,8 @@ msgstr "settimana"
 msgid "weeks"
 msgstr "settimane"
 
-#, fuzzy
-#| msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
 msgid "with insider knowledge of any financial market or instrument."
-msgstr "È proibito fare trading su questo sito internet a persone con informazioni privilegiate riguardanti qualsiasi mercato o strumento finanziario."
+msgstr "con informazioni privilegiate riguardanti qualsiasi mercato o strumento finanziario."
 
 msgid "year"
 msgstr "anno"
@@ -9180,6 +9172,12 @@ msgstr "Dettagli dell'account"
 msgid "Terms and Conditions Approval"
 msgstr "Approvazione dei termini e delle condizioni"
 
+#~ msgid "Logout"
+#~ msgstr "Logout"
+
+#~ msgid "not available"
+#~ msgstr "non disponibile"
+
 #, fuzzy
 #~| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 #~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
@@ -9826,9 +9824,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 #~ msgid "Get started"
 #~ msgstr "Inizia"
-
-#~ msgid "Log out"
-#~ msgstr "Logout"
 
 #~ msgid "Page not found"
 #~ msgstr "Pagina non trovata"

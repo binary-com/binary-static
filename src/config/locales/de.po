@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: German (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-12 18:12+0000\n"
+"PO-Revision-Date: 2017-01-20 12:43+0000\n"
 "Last-Translator: Karin Graf <karin_graf@hotmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>\n"
 "Language: de\n"
@@ -759,10 +759,8 @@ msgstr "Eine Vorliebe und Leidenschaft für Linux und Open-Source Plattformen"
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Eine proaktive Vorgehensweise, um Probleme zu lösen und Client-Lösungen zu liefern"
 
-#, fuzzy
-#| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
-msgstr "Eine gescannte Kopie einer Abrechnung öffentlicher Versorgungsbetriebe oder eines Bankkontoauszuges (nicht älter als 3 Monate)."
+msgstr "Eine gescannte Kopie einer Abrechnung öffentlicher Versorgungsbetriebe oder eines Bankkontoauszuges (nicht älter als 3 Monate)"
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
 msgstr "Eine gescannte Kopie Ihres Reisepasses, gültigen Führerscheins (vorläufig oder endgültig) oder Personalausweises, auf der Ihr Name und das Geburtsdatum erkennbar sind."
@@ -4156,6 +4154,9 @@ msgstr "Kasse blockieren"
 msgid "Log in"
 msgstr "Log-in"
 
+msgid "Log out"
+msgstr "Abmelden"
+
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Loggen Sie sich in Ihr %1 Partner-Konto ein und klicken Sie auf: Finanzen &rarr; Zahlungsanweisungen."
 
@@ -4176,9 +4177,6 @@ msgstr "Login Uhrzeit:"
 
 msgid "Login trouble"
 msgstr "Login Problem"
-
-msgid "Logout"
-msgstr "Abmelden"
 
 msgid "Long"
 msgstr "Lang"
@@ -6668,10 +6666,8 @@ msgstr "An"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "Falls Sie sich bewerben möchten, senden Sie uns bitte Ihren Lebenslauf und ein Anschreiben an <span id='hr_contact_eaddress'></span>."
 
-#, fuzzy
-#| msgid "To authenticate your account, kindly email the following to %1"
 msgid "To authenticate your account, kindly email the following to %1:"
-msgstr "Um Ihr Konto zu authentifizieren, übersenden Sie uns bitte per E-Mail gescannte Kopien von Folgendem an %1"
+msgstr "Um Ihr Konto zu authentifizieren, übersenden Sie uns bitte per E-Mail gescannte Kopien von Folgendem an %1:"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
 msgstr "Um Ihr Konto zu authentifizieren, übersenden Sie uns bitte per E-Mail gescannte Kopien von Folgendem an <a href=\"mailto:%1\"> %1</a>"
@@ -7014,6 +7010,11 @@ msgstr "Ansehen"
 
 msgid "View Details"
 msgstr "Angaben ansehen"
+
+#, fuzzy
+#| msgid "View statement"
+msgid "View Statement"
+msgstr "Abrechnung ansehen"
 
 msgid "View Updated Portfolio"
 msgstr "Aktualisiertes Portfolio ansehen"
@@ -8010,9 +8011,6 @@ msgstr "Monat"
 
 msgid "months"
 msgstr "Monate"
-
-msgid "not available"
-msgstr "nicht vorhanden"
 
 msgid "numbers"
 msgstr "Zahlen"
@@ -9026,7 +9024,7 @@ msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to t
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
-msgstr ""
+msgstr "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
@@ -9138,6 +9136,12 @@ msgstr "Kontoangaben"
 
 msgid "Terms and Conditions Approval"
 msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
+
+#~ msgid "Logout"
+#~ msgstr "Abmelden"
+
+#~ msgid "not available"
+#~ msgstr "nicht vorhanden"
 
 #~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 #~ msgstr "Kasse ist gesperrt, bitte kontaktieren Sie die <a class=\"pjaxload\" href=\"%1\">Kundenbetreuung</a>, um mehr Informationen zu erhalten."
@@ -9710,9 +9714,6 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 
 #~ msgid "Get started"
 #~ msgstr "Erste Schritte"
-
-#~ msgid "Log out"
-#~ msgstr "Abmelden"
 
 #~ msgid "Page not found"
 #~ msgstr "Seite nicht gefunden"
@@ -17959,9 +17960,6 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 
 #~ msgid "Sorry, you cannot convert"
 #~ msgstr "Es tut uns leid, aber Sie können ... nicht umtauschen"
-
-#~ msgid "View statement"
-#~ msgstr "Abrechnung ansehen"
 
 #~ msgid "We are sorry, we do not allow conversion if you ever used a credit/debit card to deposit to your account segment."
 #~ msgstr "Es tut uns leid, aber wir erlauben keine Umrechnung, wenn Sie irgendwann eine Kredit-/Debitkarte benutzt haben, um auf Ihrem Konto eine Einzahlung vorzunehmen."

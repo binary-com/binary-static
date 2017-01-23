@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-11 03:13+0000\n"
+"PO-Revision-Date: 2017-01-18 09:31+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -763,10 +763,8 @@ msgstr "Preferensi dan semangat pada Linux dan platform open-source"
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Memiliki pendekatan proaktif untuk memecahkan masalah dan memberikan solusi kepada klien"
 
-#, fuzzy
-#| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
-msgstr "Scan tagihan utilitas atau rekening koran (tidak melebihi 3 bulan setelah dicetak)."
+msgstr "Scan tagihan utilitas atau rekening koran (tidak melebihi 3 bulan setelah dicetak)"
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
 msgstr "Scan paspor, SIM atau KTP yang memperlihatkan nama dan tanggal lahir Anda. Dokumen setidaknya memiliki 6 bulan masa berlaku."
@@ -4160,6 +4158,9 @@ msgstr "Kunci Kasir"
 msgid "Log in"
 msgstr "Masuk"
 
+msgid "Log out"
+msgstr "Keluar"
+
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Akses akun affiliasi %1 Anda dan klik pada : Keuangan &rarr; Instruksi Pembayaran."
 
@@ -4180,9 +4181,6 @@ msgstr "Waktu login:"
 
 msgid "Login trouble"
 msgstr "Masalah Login"
-
-msgid "Logout"
-msgstr "Keluar"
 
 msgid "Long"
 msgstr "Panjang"
@@ -6677,10 +6675,8 @@ msgstr "Kepada"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "Untuk mengajukan surat lamaran, kirimkan lamaran Anda ke <span id='hr_contact_eaddress'></span>."
 
-#, fuzzy
-#| msgid "To authenticate your account, kindly email the following to %1"
 msgid "To authenticate your account, kindly email the following to %1:"
-msgstr "Untuk membuktikan identitas Anda, silakan email hal berikut ini ke %1"
+msgstr "Untuk membuktikan identitas Anda, silakan email hal berikut ini ke %1:"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
 msgstr "Untuk membuktikan identitas Anda, silakan email hal berikut ini ke <a href=\"mailto:%1\">%1</a>"
@@ -7023,6 +7019,11 @@ msgstr "Lihat"
 
 msgid "View Details"
 msgstr "Lihat Rincian"
+
+#, fuzzy
+#| msgid "View statement"
+msgid "View Statement"
+msgstr "Lihat pernyataan"
 
 msgid "View Updated Portfolio"
 msgstr "Lihat portopolio terbaru"
@@ -8013,9 +8014,6 @@ msgstr "bulan"
 
 msgid "months"
 msgstr "bulan"
-
-msgid "not available"
-msgstr "tidak tersedia"
 
 msgid "numbers"
 msgstr "nomor"
@@ -9029,7 +9027,7 @@ msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to t
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
-msgstr ""
+msgstr "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
@@ -9141,6 +9139,12 @@ msgstr "Keterangan rekening"
 
 msgid "Terms and Conditions Approval"
 msgstr "Syarat dan Ketentuan Persetujuan"
+
+#~ msgid "Logout"
+#~ msgstr "Keluar"
+
+#~ msgid "not available"
+#~ msgstr "tidak tersedia"
 
 #~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 #~ msgstr "Kasir terblokir, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">customer support</a> untuk informasi lebih lanjut."
@@ -9781,9 +9785,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Get started"
 #~ msgstr "Memulai"
-
-#~ msgid "Log out"
-#~ msgstr "Keluar"
 
 #~ msgid "Page not found"
 #~ msgstr "Halaman tidak ditemukan"
@@ -18172,9 +18173,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Update failed.  Request support."
 #~ msgstr "Pembaruan gagal.  Mohon bantuan."
-
-#~ msgid "View statement"
-#~ msgstr "Lihat pernyataan"
 
 #~ msgid "We are sorry, we do not allow conversion if you ever used a credit/debit card to deposit to your account segment."
 #~ msgstr "Kami mohon maaf karena tidak dapat memproses penukaran kedalam bentuk valuta asing lainnya jika rekening anda pernah mendeposit dana menggunakan kartu kredit / debit."
