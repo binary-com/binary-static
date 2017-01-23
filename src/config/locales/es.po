@@ -4241,6 +4241,9 @@ msgstr "Bloquear cajero"
 msgid "Log in"
 msgstr "Iniciar sesión"
 
+msgid "Log out"
+msgstr "Cerrar"
+
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Inicie sesión en su cuenta de afiliado de %1 y haga clic en: Finanzas &rarr; Detalles de pago."
 
@@ -4261,9 +4264,6 @@ msgstr "Tiempo de ingreso:"
 
 msgid "Login trouble"
 msgstr "Problemas de inicio de sesión"
-
-msgid "Logout"
-msgstr "Salir"
 
 msgid "Long"
 msgstr "Largos"
@@ -7203,6 +7203,11 @@ msgstr "Ver"
 msgid "View Details"
 msgstr "Ver Detalles"
 
+#, fuzzy
+#| msgid "View statement"
+msgid "View Statement"
+msgstr "Ver extracto"
+
 msgid "View Updated Portfolio"
 msgstr "Ver cartera actualizada"
 
@@ -8214,9 +8219,6 @@ msgstr "mes"
 
 msgid "months"
 msgstr "meses"
-
-msgid "not available"
-msgstr "no disponible"
 
 msgid "numbers"
 msgstr "números"
@@ -9461,6 +9463,12 @@ msgstr "Detalles de la cuenta"
 msgid "Terms and Conditions Approval"
 msgstr "Acuerdo con los términos y condiciones"
 
+#~ msgid "Logout"
+#~ msgstr "Salir"
+
+#~ msgid "not available"
+#~ msgstr "no disponible"
+
 #, fuzzy
 #~| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 #~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
@@ -10117,9 +10125,6 @@ msgstr "Acuerdo con los términos y condiciones"
 
 #~ msgid "Get started"
 #~ msgstr "Comenzar"
-
-#~ msgid "Log out"
-#~ msgstr "Cerrar"
 
 #~ msgid "Page not found"
 #~ msgstr "Página no encontrada"
@@ -18405,9 +18410,6 @@ msgstr "Acuerdo con los términos y condiciones"
 
 #~ msgid "Update failed.  Request support."
 #~ msgstr "La actualización ha fallado. Solicite ayuda."
-
-#~ msgid "View statement"
-#~ msgstr "Ver extracto"
 
 #~ msgid "We are sorry, we do not allow conversion if you ever used a credit/debit card to deposit to your account segment."
 #~ msgstr "Lo sentimos, no permitimos la conversión si usa tarjeta de crédito/débito para depositar en su segmento de cuenta."

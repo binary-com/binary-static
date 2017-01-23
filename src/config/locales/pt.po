@@ -4166,6 +4166,9 @@ msgstr "Bloquear Caixa"
 msgid "Log in"
 msgstr "Conectar-se"
 
+msgid "Log out"
+msgstr "Sair"
+
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Faça o login na sua conta de afiliado da %1 e clique em: Finanças &rarr; Instruções de pagamento."
 
@@ -4186,9 +4189,6 @@ msgstr "Hora do Login:"
 
 msgid "Login trouble"
 msgstr "Problema com Login"
-
-msgid "Logout"
-msgstr "Terminar Sessão"
 
 msgid "Long"
 msgstr "Longo"
@@ -7040,6 +7040,11 @@ msgstr "Ver"
 msgid "View Details"
 msgstr "Ver detalhes"
 
+#, fuzzy
+#| msgid "View statement"
+msgid "View Statement"
+msgstr "Ver declaração"
+
 msgid "View Updated Portfolio"
 msgstr "Ver Portfólio Atualizado"
 
@@ -8039,9 +8044,6 @@ msgstr "mês"
 
 msgid "months"
 msgstr "meses"
-
-msgid "not available"
-msgstr "Indisponível"
 
 msgid "numbers"
 msgstr "números"
@@ -9170,6 +9172,12 @@ msgstr "Detalhes da Conta"
 msgid "Terms and Conditions Approval"
 msgstr "Aprovação dos termos e condições"
 
+#~ msgid "Logout"
+#~ msgstr "Terminar Sessão"
+
+#~ msgid "not available"
+#~ msgstr "Indisponível"
+
 #, fuzzy
 #~| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 #~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
@@ -9827,9 +9835,6 @@ msgstr "Aprovação dos termos e condições"
 
 #~ msgid "Get started"
 #~ msgstr "Começar"
-
-#~ msgid "Log out"
-#~ msgstr "Sair"
 
 #~ msgid "Page not found"
 #~ msgstr "Página não encontrada"
@@ -17988,9 +17993,6 @@ msgstr "Aprovação dos termos e condições"
 
 #~ msgid "Sorry, you cannot convert"
 #~ msgstr "Lamentamos, não pode converter"
-
-#~ msgid "View statement"
-#~ msgstr "Ver declaração"
 
 #~ msgid "We are sorry, we do not allow conversion if you ever used a credit/debit card to deposit to your account segment."
 #~ msgstr "Lamentamos, mas não permitimos a conversão se alguma vez tiver utilizado um cartão de crédito/débito para depositar no seu segmento de conta."

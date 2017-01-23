@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-01-20 23:36+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -4208,6 +4207,9 @@ msgstr "入出金をロック"
 msgid "Log in"
 msgstr "ログイン"
 
+msgid "Log out"
+msgstr "ログアウト"
+
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "%1のアフィリエイト口座にログインしFinances &rarr;Payment Instructionsをクリックし、ご変更手続きを行って下さい。"
 
@@ -4228,9 +4230,6 @@ msgstr "ログインタイム："
 
 msgid "Login trouble"
 msgstr "ログインにお困りの場合"
-
-msgid "Logout"
-msgstr "ログアウト"
 
 msgid "Long"
 msgstr "ロング"
@@ -7180,6 +7179,11 @@ msgstr "表示"
 msgid "View Details"
 msgstr "お客さま基本情報"
 
+#, fuzzy
+#| msgid "View statement"
+msgid "View Statement"
+msgstr "取引履歴を表示する"
+
 msgid "View Updated Portfolio"
 msgstr "更新されたポジション一覧を表示する"
 
@@ -8219,9 +8223,6 @@ msgstr "ヶ月"
 
 msgid "months"
 msgstr "ヶ月"
-
-msgid "not available"
-msgstr "利用不可"
 
 msgid "numbers"
 msgstr "数字"
@@ -9365,6 +9366,12 @@ msgstr "ご口座の詳細情報"
 msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
 
+#~ msgid "Logout"
+#~ msgstr "ログアウト"
+
+#~ msgid "not available"
+#~ msgstr "利用不可"
+
 #~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 #~ msgstr "出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
 
@@ -10007,9 +10014,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "Get started"
 #~ msgstr "はじめに"
-
-#~ msgid "Log out"
-#~ msgstr "ログアウト"
 
 #~ msgid "Page not found"
 #~ msgstr "ページ未検出"
@@ -18161,9 +18165,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "Sorry, you cannot convert"
 #~ msgstr "申し訳ございませんが、両替不可能です。"
-
-#~ msgid "View statement"
-#~ msgstr "取引履歴を表示する"
 
 #~ msgid "We are sorry, we do not allow conversion if you ever used a credit/debit card to deposit to your account segment."
 #~ msgstr "申し訳ございませんが、クレジットカードまたはデビットカードでご入金をされたことのある場合は両替を承ることができません。"
