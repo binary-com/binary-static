@@ -16,7 +16,7 @@ const ProfitTableUI = (function() {
 
     const profitTableID = 'profit-table',
         cols = ['buy-date', 'ref', 'payout', 'contract', 'buy-price', 'sell-date', 'sell-price', 'pl', 'details'],
-        currency = Client.get_value('currency');
+        currency = Client.get('currency');
     let oauth_apps = {};
 
     const createEmptyTable = function() {

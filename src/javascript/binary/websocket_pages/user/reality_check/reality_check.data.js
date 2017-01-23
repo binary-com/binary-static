@@ -15,13 +15,13 @@ const RealityCheckData = (function() {
     };
 
     const resetInvalid = function() {
-        const ack = get_storage_value('ack');
-        const interval = +(get_storage_value('interval'));
+        const ack = get('ack');
+        const interval = +(get('interval'));
         if (ack !== 0 && ack !== 1) {
-            set_storage_value('ack', 0);
+            set('ack', 0);
         }
         if (!interval) {
-            set_storage_value('interval', defaultInterval);
+            set('interval', defaultInterval);
         }
     };
 
@@ -56,13 +56,13 @@ const RealityCheckData = (function() {
         };
     };
 
-    const set_storage_value = function(key, value) {
+    const set = function(key, value) {
         reality_object[key] = value;
         return LocalStore.set('reality_check.' + key, value);
     };
 
     // use this function to get variables that have values
-    const get_storage_value = function(key) {
+    const get = function(key) {
         let value = reality_object[key] || LocalStore.get('reality_check.' + key) || '';
         if (+value === 1 || +value === 0 || value === 'true' || value === 'false') {
             value = JSON.parse(value || false);
@@ -84,8 +84,8 @@ const RealityCheckData = (function() {
         clear          : clear_storage_values,
         resetInvalid   : resetInvalid,
         summaryData    : summaryData,
-        set_value      : set_storage_value,
-        get_value      : get_storage_value,
+        set            : set,
+        get            : get,
     };
 })();
 

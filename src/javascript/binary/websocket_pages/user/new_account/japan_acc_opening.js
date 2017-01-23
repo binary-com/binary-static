@@ -1,4 +1,5 @@
 const handleResidence     = require('../../../common_functions/account_opening').handleResidence;
+const populateObjects     = require('../../../common_functions/account_opening').populateObjects;
 const Content             = require('../../../common_functions/content').Content;
 const ValidAccountOpening = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
 const detect_hedging      = require('../../../common_functions/common_functions').detect_hedging;
@@ -10,29 +11,34 @@ const JapanAccOpening = (function() {
     const init = function() {
         Content.populate();
         ValidAccountOpening.redirectCookie();
-        if (Client.get_value('residence') !== 'jp') {
+        if (Client.get('residence') !== 'jp') {
             window.location.href = url_for('trading');
             return;
         }
         handleResidence();
-        detect_hedging($('#trading-purpose'), $('.hedging-assets'));
-        $('#japan-form').submit(function(evt) {
+        const objects = populateObjects();
+        const elementObj = objects.elementObj;
+        const errorObj = objects.errorObj;
+        const errorEl = document.getElementsByClassName('notice-msg')[0];
+
+        detect_hedging($('#trading_purpose'), $('.hedging-assets'));
+
+        $('#japan-form').off('submit').on('submit', function(evt) {
             evt.preventDefault();
-            if (JapanAccOpeningUI.checkValidity()) {
+            if (JapanAccOpeningUI.checkValidity(elementObj, errorObj, errorEl)) {
                 BinarySocket.init({
                     onmessage: function(msg) {
                         const response = JSON.parse(msg.data);
                         if (response) {
                             const type = response.msg_type;
                             if (type === 'new_account_japan') {
-                                ValidAccountOpening.handler(response, response.new_account_japan);
+                                ValidAccountOpening.handler(response, type);
                             } else if (type === 'sanity_check') {
                                 ValidAccountOpening.handler(response);
                             }
                         }
                     },
                 });
-                JapanAccOpeningUI.fireRequest();
             }
         });
     };

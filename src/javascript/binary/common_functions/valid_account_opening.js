@@ -13,11 +13,11 @@ const ValidAccountOpening = (function() {
         if (Contents.show_login_if_logout(true)) {
             return;
         }
-        if (!Client.get_boolean('is_virtual')) {
+        if (!Client.get('is_virtual')) {
             window.location.href = url_for('trading');
             return;
         }
-        const client_loginid_array = Client.get_value('loginid_array');
+        const client_loginid_array = Client.get('loginid_array');
         for (let i = 0; i < client_loginid_array.length; i++) {
             if (client_loginid_array[i].real === true) {
                 window.location.href = url_for('trading');
@@ -25,7 +25,7 @@ const ValidAccountOpening = (function() {
             }
         }
     };
-    const handler = function(response, message) {
+    const handler = function(response, message_type) {
         if (response.error) {
             const errorMessage = response.error.message;
             if (response.error.code === 'show risk disclaimer' && document.getElementById('financial-form')) {
@@ -33,23 +33,15 @@ const ValidAccountOpening = (function() {
                 $('#financial-risk').removeClass('hidden');
                 return;
             }
-            if (document.getElementById('real-form')) {
-                $('#real-form').remove();
-            } else if (document.getElementById('japan-form')) {
-                $('#japan-form').remove();
-            } else if (document.getElementById('financial-form')) {
-                $('#financial-form').remove();
-                $('#financial-risk').remove();
-            }
-
+            $('#submit-message').empty();
             const error = document.getElementsByClassName('notice-msg')[0];
             elementInnerHtml(error, (response.msg_type === 'sanity_check') ? localize('There was some invalid character in an input field.') : errorMessage);
-            error.parentNode.parentNode.parentNode.setAttribute('style', 'display:block');
+            error.parentNode.parentNode.parentNode.show();
         } else if (Cookies.get('residence') === 'jp') {
             window.location.href = url_for('new_account/knowledge_testws');
             $('#topbar-msg').children('a').addClass('invisible');
         } else {     // jp account require more steps to have real account
-            Client.process_new_account(Cookies.get('email'), message.client_id, message.oauth_token, false);
+            Client.process_new_account(Cookies.get('email'), response[message_type].client_id, response[message_type].oauth_token, false);
         }
     };
     let letters,
@@ -60,12 +52,14 @@ const ValidAccountOpening = (function() {
         apost;
 
     const initializeValues = function() {
-        letters = Content.localize().textLetters;
-        numbers = Content.localize().textNumbers;
-        space   = Content.localize().textSpace;
-        hyphen  = Content.localize().textHyphen;
-        period  = Content.localize().textPeriod;
-        apost   = Content.localize().textApost;
+        if (!letters) {
+            letters = Content.localize().textLetters;
+            numbers = Content.localize().textNumbers;
+            space   = Content.localize().textSpace;
+            hyphen  = Content.localize().textHyphen;
+            period  = Content.localize().textPeriod;
+            apost   = Content.localize().textApost;
+        }
     };
 
     const checkFname = function(fname, errorFname) {
@@ -100,7 +94,7 @@ const ValidAccountOpening = (function() {
         }
     };
     const checkPostcode = function(postcode, errorPostcode) {
-        if ((postcode.value !== '' || Client.get_value('residence') === 'gb') && !/^[a-zA-Z\d-]+$/.test(postcode.value)) {
+        if ((postcode.value !== '' || Client.get('residence') === 'gb') && !/^[a-zA-Z\d-]+$/.test(postcode.value)) {
             initializeValues();
             elementInnerHtml(errorPostcode, Content.errorMessage('reg', [letters, numbers, hyphen]));
             Validate.displayErrorMessage(errorPostcode);

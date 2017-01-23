@@ -21,7 +21,7 @@ const LimitsUI = (function() {
     };
 
     const fillLimitsTable = function(limits) {
-        const currency = Client.get_value('currency');
+        const currency = Client.get('currency');
 
         if (currency) {
             $('.limit').append(' (' + currency + ')');
@@ -44,7 +44,7 @@ const LimitsUI = (function() {
             if (object.length && object.length > 0) {
                 appendRowTable(localize(key.charAt(0).toUpperCase() + key.slice(1)), '', 'auto', 'bold');
                 Object.keys(object).forEach(function (c) {
-                    if (Client.get_value('residence') !== 'jp' || /Major Pairs/.test(object[c].name)) {
+                    if (Client.get('residence') !== 'jp' || /Major Pairs/.test(object[c].name)) {
                         appendRowTable(object[c].name, object[c].turnover_limit !== 'null' ? addComma(object[c].turnover_limit).split('.')[0] : 0, '25px', 'normal');
                     }
                 });
@@ -52,7 +52,7 @@ const LimitsUI = (function() {
                 appendRowTable(object.name, object.turnover_limit !== 'null' ? addComma(object.turnover_limit).split('.')[0] : 0, 'auto', 'bold');
             }
         });
-        const loginId =  Client.get_value('loginid');
+        const loginId =  Client.get('loginid');
         if (loginId) {
             $('#trading-limits').prepend(loginId + ' - ');
             $('#withdrawal-title').prepend(loginId + ' - ');

@@ -280,7 +280,7 @@ sub _texts {
         push @texts, localize('period');
         push @texts, localize('comma');
         push @texts, localize('Sorry, an error occurred while processing your account.');
-        push @texts, localize('Your settings have been updated successfully.');
+        push @texts, localize('Your changes have been updated successfully.');
         push @texts, localize('m');
         push @texts, localize('f');
         push @texts, localize('Office worker');
@@ -626,55 +626,6 @@ sub _texts {
         push @texts, localize('Corporate Action');
 
         # strings for financial assessment
-        push @texts, localize('Financial Assessment');
-        push @texts, localize('Forex trading experience');
-        push @texts, localize('Forex trading frequency');
-        push @texts, localize('Indices trading experience');
-        push @texts, localize('Indices trading frequency');
-        push @texts, localize('Commodities trading experience');
-        push @texts, localize('Commodities trading frequency');
-        push @texts, localize('Stocks trading experience');
-        push @texts, localize('Stocks trading frequency');
-        push @texts, localize('Binary options or other financial derivatives trading experience');
-        push @texts, localize('Binary options or other financial derivatives trading frequency');
-        push @texts, localize('Other financial instruments trading experience');
-        push @texts, localize('Other financial instruments trading frequency');
-        push @texts, localize('Industry of Employment');
-        push @texts, localize('Level of Education');
-        push @texts, localize('Income Source');
-        push @texts, localize('Net Annual Income');
-        push @texts, localize('Estimated Net Worth');
-        push @texts, localize('0-1 year');
-        push @texts, localize('1-2 years');
-        push @texts, localize('Over 3 years');
-        push @texts, localize('0-5 transactions in the past 12 months');
-        push @texts, localize('6-10 transactions in the past 12 months');
-        push @texts, localize('40 transactions or more in the past 12 months');
-        push @texts, localize('Construction');
-        push @texts, localize('Education');
-        push @texts, localize('Finance');
-        push @texts, localize('Health');
-        push @texts, localize('Tourism');
-        push @texts, localize('Other');
-        push @texts, localize('Primary');
-        push @texts, localize('Secondary');
-        push @texts, localize('Tertiary');
-        push @texts, localize('Salaried Employee');
-        push @texts, localize('Self-Employed');
-        push @texts, localize('Investments & Dividends');
-        push @texts, localize('Pension');
-        push @texts, localize('Less than $25,000');
-        push @texts, localize('$25,000 - $100,000');
-        push @texts, localize('$100,000 - $500,000');
-        push @texts, localize('Over $500,001');
-        push @texts, localize('Less than $100,000');
-        push @texts, localize('$100,000 - $250,000');
-        push @texts, localize('$250,000 - $1,000,000');
-        push @texts, localize('Over $1,000,000');
-        push @texts, localize('The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.');
-        push @texts, localize('Your details have been updated.');
-        push @texts, localize('Please complete the following financial assessment form before continuing.');
-        push @texts, localize('Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed.');
         push @texts, localize('Please select a value');
 
         # Strings for authorised_appsws

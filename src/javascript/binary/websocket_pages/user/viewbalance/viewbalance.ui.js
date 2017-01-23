@@ -11,7 +11,7 @@ const ViewBalanceUI = (function() {
             return;
         }
         const balance = response.balance.balance;
-        Client.set_value('balance', balance);
+        Client.set('balance', balance);
         PortfolioWS.updateBalance();
         Cashier.check_top_up_withdraw();
         const currency = response.balance.currency;

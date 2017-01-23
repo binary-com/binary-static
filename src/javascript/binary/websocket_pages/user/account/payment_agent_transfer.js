@@ -15,7 +15,7 @@ const PaymentAgentTransferSocket = (function() {
         });
         Content.populate();
         PaymentAgentTransfer.init_variable();
-        if (Client.get_value('email')) {
+        if (Client.get('email')) {
             PaymentAgentTransfer.init();
         }
     };
