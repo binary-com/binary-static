@@ -12,16 +12,16 @@
                     <a href="" class="tm-a">[% l('Explanation') %]</a>
                 </li>
                 <li id="tab_last_digit" class="invisible tm-li">
-                    <a href="#" class="tm-a">[% l('Last Digit Stats') %]</a>
+                    <a href="javascript:;" class="tm-a">[% l('Last Digit Stats') %]</a>
                 </li>
                 <li id="tab_japan_info" class="invisible tm-li">
-                    <a href="#" class="tm-a"></a>
+                    <a href="javascript:;" class="tm-a"></a>
                 </li>
                 <li id="tab_asset_index" class="invisible tm-li">
-                    <a href="#" class="tm-a">[% l('Asset Index') %]</a>
+                    <a href="javascript:;" class="tm-a">[% l('Asset Index') %]</a>
                 </li>
                 <li id="tab_trading_times" class="invisible tm-li last">
-                    <a href="#" class="tm-a">[% l('Trading Times') %]</a>
+                    <a href="javascript:;" class="tm-a">[% l('Trading Times') %]</a>
                 </li>
             </ul>
         </div>

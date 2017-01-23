@@ -12,9 +12,13 @@ const RealityCheck = (function() {
             RealityCheckUI.sendAccountStatus();
             return;
         }
-
-        const summary = RealityCheckData.summaryData(response.reality_check);
-        RealityCheckUI.renderSummaryPopUp(summary);
+        if (/no-reality-check/.test(window.location.hash)) {
+            RealityCheckData.set_value('delay_reality_check', 1);
+        } else {
+            RealityCheckData.set_value('delay_reality_check', 0);
+            const summary = RealityCheckData.summaryData(response.reality_check);
+            RealityCheckUI.renderSummaryPopUp(summary);
+        }
     };
 
     const realityStorageEventHandler = function(ev) {
@@ -28,33 +32,38 @@ const RealityCheck = (function() {
     };
 
     const init = function() {
-        RealityCheckUI.initializeValues();
-        if (!Client.get_boolean('has_reality_check')) {
-            RealityCheckData.setPreviousLoadLoginId();
-            RealityCheckUI.sendAccountStatus();
-            return;
-        }
-
-        RealityCheckUI.setLoginTime(Client.get_value('session_start') * 1000);
-
-        window.addEventListener('storage', realityStorageEventHandler, false);
-
-        if (Client.get_value('loginid') !== RealityCheckData.getPreviousLoadLoginId()) {
-            RealityCheckData.clear();
-        }
-
-        RealityCheckData.resetInvalid(); // need to reset after clear
-
-        if (RealityCheckData.getAck() !== '1') {
-            RealityCheckUI.renderFrequencyPopUp();
-        } else if (RealityCheckData.getOpenSummaryFlag() === '1') {
-            RealityCheckData.getSummaryAsync();
+        if (/no-reality-check/.test(window.location.hash)) {
+            RealityCheckData.set_value('delay_reality_init', 1);
         } else {
-            RealityCheckUI.startSummaryTimer();
-        }
+            RealityCheckData.set_value('delay_reality_init', 0);
+            RealityCheckUI.initializeValues();
+            if (!Client.get_boolean('has_reality_check')) {
+                RealityCheckData.set_value('loginid', Client.get_value('loginid'));
+                RealityCheckUI.sendAccountStatus();
+                return;
+            }
 
-        RealityCheckData.setPreviousLoadLoginId();
-        RealityCheckUI.sendAccountStatus();
+            RealityCheckUI.setLoginTime(Client.get_value('session_start') * 1000);
+
+            window.addEventListener('storage', realityStorageEventHandler, false);
+
+            if (Client.get_value('loginid') !== RealityCheckData.get_value('loginid')) {
+                RealityCheckData.clear();
+            }
+
+            RealityCheckData.resetInvalid(); // need to reset after clear
+
+            if (!RealityCheckData.get_value('ack')) {
+                RealityCheckUI.renderFrequencyPopUp();
+            } else if (RealityCheckData.get_value('keep_open')) {
+                RealityCheckData.getSummaryAsync();
+            } else {
+                RealityCheckUI.startSummaryTimer();
+            }
+
+            RealityCheckData.set_value('loginid', Client.get_value('loginid'));
+            RealityCheckUI.sendAccountStatus();
+        }
     };
 
     return {

@@ -59,9 +59,6 @@ body.JA {
     #tradingtimes-forex div.table-header:nth-of-type(n + 3), #tradingtimes-forex div.table-body:nth-of-type(n + 15) {
         display: none !important;
     }
-    #footer-regulatory .gr-9, #footer-regulatory .gr-p-7 {
-        width: 100% !important;
-    }
     #bet_guide_content div:nth-child(1) {
         display: none !important;
     }
@@ -82,8 +79,13 @@ body.JA {
     #email_consent_label {
         font-size: $FONT_SIZE_XS;
     }
-    #footer #footer-regulatory #regulatory-text {
-        font-size: 12px;
+    #footer #footer-regulatory {
+        #regulatory-text {
+            font-size: 14px;
+        }
+        .gr-9, .gr-p-7 {
+            width: 100% !important;
+        }
     }
 }
 /*Vietnamese Language */
