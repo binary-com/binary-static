@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-12 19:47+0000\n"
+"PO-Revision-Date: 2017-01-19 11:28+0000\n"
 "Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
@@ -763,10 +763,8 @@ msgstr "Знание и заинтересованность в Linux, а так
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Активный подход к решению проблем и предоставлению клиентских решений"
 
-#, fuzzy
-#| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
-msgstr "Отсканированная копия счета за коммунальные услуги или выписка из банка с адресом (датированные не ранее, чем 3 последние месяца)."
+msgstr "Отсканированная копия счета за коммунальные услуги или выписка из банка с указанием адреса (датированные не позднее 3 месяцев)"
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
 msgstr "Отсканированная копия действительного паспорта, водительских прав или национального удостоверения личности, которая показывает имя, фамилию и дату рождения. Предоставленный Вами документ должен быть действителен как минимум еще в течение 6 месяцев после сегодняшней даты."
@@ -4160,6 +4158,9 @@ msgstr "Закрыть кассу паролем"
 msgid "Log in"
 msgstr "Вход"
 
+msgid "Log out"
+msgstr "Выход"
+
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Зайдите на свой партнерский счет %1 и нажмите на Финансы, а затем на Платежные инструкции."
 
@@ -4180,9 +4181,6 @@ msgstr "Время входа:"
 
 msgid "Login trouble"
 msgstr "Проблемы со входом"
-
-msgid "Logout"
-msgstr "Выход"
 
 msgid "Long"
 msgstr "Длинная позиция"
@@ -6676,10 +6674,8 @@ msgstr "До"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "Чтобы подать заявку на работу у нас, пришлите свое резюме и сопроводительное письмо на <span id='hr_contact_eaddress'></span>."
 
-#, fuzzy
-#| msgid "To authenticate your account, kindly email the following to %1"
 msgid "To authenticate your account, kindly email the following to %1:"
-msgstr "Для авторизации счета вышлите следующее по электронной почте на %1"
+msgstr "Для авторизации счета вышлите следующие данные по электронной почте на %1:"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
 msgstr "Для авторизации счета вышлите следующее по электронной почте на <a href=\"mailto:%1\">%1</a>"
@@ -7022,6 +7018,11 @@ msgstr "Просмотр"
 
 msgid "View Details"
 msgstr "Подробнее"
+
+#, fuzzy
+#| msgid "View statement"
+msgid "View Statement"
+msgstr "Смотрите историю счета"
 
 msgid "View Updated Portfolio"
 msgstr "Обновленный портфель"
@@ -8013,9 +8014,6 @@ msgstr "мес."
 
 msgid "months"
 msgstr "мес."
-
-msgid "not available"
-msgstr "нет данных"
 
 msgid "numbers"
 msgstr "цифры"
@@ -9029,7 +9027,7 @@ msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to t
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
-msgstr ""
+msgstr "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
@@ -9141,6 +9139,12 @@ msgstr "Информация о счете"
 
 msgid "Terms and Conditions Approval"
 msgstr "Согласие с правилами и условиями"
+
+#~ msgid "Logout"
+#~ msgstr "Выход"
+
+#~ msgid "not available"
+#~ msgstr "нет данных"
 
 #~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 #~ msgstr "Касса заблокирована. Пожалуйста, свяжитесь с отделом <a class=\"pjaxload\" href=\"%1\">поддержки клиентов</a> для получения дополнительной информации."
@@ -9805,9 +9809,6 @@ msgstr "Согласие с правилами и условиями"
 
 #~ msgid "Get started"
 #~ msgstr "С чего начать"
-
-#~ msgid "Log out"
-#~ msgstr "Выход"
 
 #~ msgid "Page not found"
 #~ msgstr "Страница не найдена"
@@ -18059,9 +18060,6 @@ msgstr "Согласие с правилами и условиями"
 
 #~ msgid "Update failed.  Request support."
 #~ msgstr "Обновление не принято. Запросите поддержку."
-
-#~ msgid "View statement"
-#~ msgstr "Смотрите историю счета"
 
 #~ msgid "We are sorry, we do not allow conversion if you ever used a credit/debit card to deposit to your account segment."
 #~ msgstr "Извините, счетам, на которых когда-либо для оплаты была использована кредитная/дебетовая карта, не предлагается опция конвертации."

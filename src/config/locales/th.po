@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-15 18:37+0000\n"
+"PO-Revision-Date: 2017-01-19 13:33+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -764,8 +764,6 @@ msgstr "มีความสนใจและความมุ่งมั่
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "วิธีการเชิงรุกในการแก้ปัญหาและนำเสนอวิธีการแก้ปัญหาต่างๆ ให้ลูกค้า"
 
-#, fuzzy
-#| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
 msgstr "สแกนสำเนาใบแจ้งหนี้รายการสาธารณูปโภค หรือ รายงานธุรกรรมการเงินทางธนาคาร (ฉบับล่าสุด ไม่นานกว่า 3 เดือน) จำนวน 1 ฉบับ"
 
@@ -873,10 +871,8 @@ msgstr "ยอดคงเหลือในบัญชี: "
 msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr "การฝากเงินถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
 
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "การฝากเงินถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
+msgstr "บัญชียังไม่ถูกเปิดใช้งาน โปรดติดต่อ <a class=\"pjaxload\" href=\"%1\">แผนกลูกค้าสัมพันธ์</a> สำหรับข้อมูลเพิ่มเติม"
 
 msgid "Accounting"
 msgstr "การบัญชี"
@@ -2731,10 +2727,8 @@ msgstr "สินทรัพย์ทางการเงิน"
 msgid "Financial Information"
 msgstr "ข้อมูลทางการเงิน"
 
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "การถอนถูกล็อค โปรด<a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
+msgstr "ต้องมีการอนุมัติความเสี่ยงทางการเงิน โปรดติดต่อ <a class=\"pjaxload\" href=\"%1\">แผนกลูกค้าสัมพันธ์</a> สำหรับข้อมูลเพิ่มเติม"
 
 msgid "Financial Security"
 msgstr "ความปลอดภัยทางการเงิน"
@@ -4167,6 +4161,9 @@ msgstr "Lock Cashier"
 msgid "Log in"
 msgstr "เข้าสู่ระบบ"
 
+msgid "Log out"
+msgstr "ออกจากระบบ"
+
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "เข้าสู่ระบบด้วย %1 บัญชีพันธมิตรของท่าน และคลิกที่: การเงิน &rarr; ขั้นตอนการชำระเงิน"
 
@@ -4187,9 +4184,6 @@ msgstr "เวลาเข้าสู่ระบบ:"
 
 msgid "Login trouble"
 msgstr "ปัญหาการเข้าสู่ระบบ"
-
-msgid "Logout"
-msgstr "ออกจากระบบ"
 
 msgid "Long"
 msgstr "Long"
@@ -6334,8 +6328,6 @@ msgstr "บริษัทฯ ไม่รับประกันความ�
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
 msgstr "บริษัทฯ มีช่องทางการรับฝากที่หลากหลาย แต่ละช่องทางมีเงื่อนไขของเวลา และบางช่องทางไม่ได้ให้บริการสำหรับการถอน รายละเอียดเกี่ยวกับการฝากและการถอนรวมถึงเวลาในการตัดยอดสามารถตรวจสอบได้จาก <a href='%1' class='pjaxload'>ที่นี่</a>"
 
-#, fuzzy
-#| msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
 msgid ""
 "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer\n"
 "                funds at the level: <strong>medium protection</strong>."
@@ -6687,10 +6679,8 @@ msgstr "ถึง"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "หากประสงค์จะสมัคร โปรดส่งประวัติย่อของท่าน และจดหมายแนะนำตัวมาที่ <span id='hr_contact_eaddress'></span>"
 
-#, fuzzy
-#| msgid "To authenticate your account, kindly email the following to %1"
 msgid "To authenticate your account, kindly email the following to %1:"
-msgstr "เพื่อตรวจสอบบัญชีของท่าน โปรดส่งข้อมูลผ่านอีเมล์มาที่ %1"
+msgstr "เพื่อตรวจสอบบัญชีของท่าน โปรดส่งข้อมูลผ่านอีเมล์มาที่ %1:"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
 msgstr "เพื่อตรวจสอบบัญชีของท่าน โปรดส่งข้อมูลผ่านอีเมล์มาที่ <a href=\"mailto:%1\">%1</a>"
@@ -7033,6 +7023,11 @@ msgstr "ดู"
 
 msgid "View Details"
 msgstr "ดูรายละเอียด"
+
+#, fuzzy
+#| msgid "View your statement"
+msgid "View Statement"
+msgstr "ดูสเตทเมนท์ของท่าน"
 
 msgid "View Updated Portfolio"
 msgstr "ดูพอร์ตโฟลิโอ"
@@ -8027,9 +8022,6 @@ msgstr "เดือน"
 
 msgid "months"
 msgstr "เดือน"
-
-msgid "not available"
-msgstr "ไม่มีอยู่"
 
 msgid "numbers"
 msgstr "ตัวเลข"
@@ -9043,7 +9035,7 @@ msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to t
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
-msgstr ""
+msgstr "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
@@ -9155,6 +9147,12 @@ msgstr "รายละเอียดบัญชี"
 
 msgid "Terms and Conditions Approval"
 msgstr "การอนุมัติข้อตกลงและเงื่อนไข"
+
+#~ msgid "Logout"
+#~ msgstr "ออกจากระบบ"
+
+#~ msgid "not available"
+#~ msgstr "ไม่มีอยู่"
 
 #, fuzzy
 #~| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
@@ -9777,9 +9775,6 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 #~ msgid "Get started"
 #~ msgstr "เริ่มเลย"
-
-#~ msgid "Log out"
-#~ msgstr "ออกจากระบบ"
 
 #~ msgid "Page not found"
 #~ msgstr "ไม่พบหน้าที่ต้องการ"
