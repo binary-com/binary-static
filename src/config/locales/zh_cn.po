@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-01-19 01:26+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) "
-"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -4155,6 +4154,9 @@ msgstr "锁定收银台"
 msgid "Log in"
 msgstr "登录"
 
+msgid "Log out"
+msgstr "退出"
+
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "登录您的 %1 联盟账号并点击：财务 &rarr; 付款说明。"
 
@@ -4175,9 +4177,6 @@ msgstr "登录时间:"
 
 msgid "Login trouble"
 msgstr "登录故障"
-
-msgid "Logout"
-msgstr "注销"
 
 msgid "Long"
 msgstr "长仓"
@@ -7015,6 +7014,11 @@ msgstr "查看"
 msgid "View Details"
 msgstr "查看详情"
 
+#, fuzzy
+#| msgid "View statement"
+msgid "View Statement"
+msgstr "查看报表。"
+
 msgid "View Updated Portfolio"
 msgstr "查看更新后的组合"
 
@@ -8006,9 +8010,6 @@ msgstr "月份"
 
 msgid "months"
 msgstr "月份"
-
-msgid "not available"
-msgstr "不可使用"
 
 msgid "numbers"
 msgstr "号码"
@@ -9023,9 +9024,7 @@ msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to t
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
-msgstr ""
-"{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access "
-"Your Real-Money Account."
+msgstr "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
@@ -9137,6 +9136,12 @@ msgstr "账户详情"
 
 msgid "Terms and Conditions Approval"
 msgstr "条款和条件审批"
+
+#~ msgid "Logout"
+#~ msgstr "注销"
+
+#~ msgid "not available"
+#~ msgstr "不可使用"
 
 #~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 #~ msgstr "收银台已锁定。欲知详情，请联系<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
@@ -9782,9 +9787,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Get started"
 #~ msgstr "开始交易"
-
-#~ msgid "Log out"
-#~ msgstr "退出"
 
 #~ msgid "Page not found"
 #~ msgstr "无法找到页面"
@@ -18093,9 +18095,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Update failed.  Request support."
 #~ msgstr "更新失败。请求支援。"
-
-#~ msgid "View statement"
-#~ msgstr "查看报表。"
 
 #~ msgid "We are sorry, we do not allow conversion if you ever used a credit/debit card to deposit to your account segment."
 #~ msgstr "对不起，如果您曾使用信用卡/借记卡存钱到您的帐户段，我们不允许转换。"
