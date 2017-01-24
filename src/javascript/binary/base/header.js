@@ -15,7 +15,7 @@ const Header = (function() {
         if (!$('body').hasClass('BlueTopBack') && !Login.is_login_pages()) {
             checkClientsCountry();
         }
-        if (Client.get('is_logged_in')) {
+        if (Client.is_logged_in()) {
             $('ul#menu-top').addClass('smaller-font');
         }
     };
@@ -56,7 +56,7 @@ const Header = (function() {
     };
 
     const show_or_hide_login_form = function() {
-        if (!Client.get('is_logged_in')) return;
+        if (!Client.is_logged_in()) return;
         const all_accounts = $('#all-accounts'),
             language = $('#select_language');
         $('.nav-menu').unbind('click').on('click', function(event) {
@@ -125,7 +125,7 @@ const Header = (function() {
     };
 
     const topbar_message_visibility = function(c_config) {
-        if (Client.get('is_logged_in')) {
+        if (Client.is_logged_in()) {
             if (!Client.get('values_set') || !c_config) {
                 return;
             }

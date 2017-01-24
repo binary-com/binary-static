@@ -45,7 +45,7 @@ Page.prototype = {
                 BinarySocket.send({ reality_check: 1 });
             }
         }
-        if (Client.get('is_logged_in')) {
+        if (Client.is_logged_in()) {
             ViewBalance.init();
         } else {
             LocalStore.set('reality_check.ack', 0);

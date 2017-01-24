@@ -21,7 +21,7 @@ const GTM = (function() {
             url      : document.URL,
             event    : 'page_load',
         };
-        if (Client.get('is_logged_in')) {
+        if (Client.is_logged_in()) {
             data_layer_info.visitorId = Client.get('loginid');
         }
 
