@@ -3,6 +3,7 @@ const LocalStore           = require('./storage').LocalStore;
 const url_for              = require('./url').url_for;
 const default_redirect_url = require('./url').default_redirect_url;
 const japanese_client = require('../common_functions/country_base').japanese_client;
+const getLoginToken        = require('../common_functions/common_functions').getLoginToken;
 const Cookies = require('../../lib/js-cookie');
 const moment = require('moment');
 
@@ -26,18 +27,21 @@ const Client = (function () {
     };
 
     const init = function () {
-        const loginid = Cookies.get('loginid');
         client_object.loginid_array = parseLoginIDList(Cookies.get('loginid_list') || '');
-        const is_logged_in = (
-            loginid &&
-            client_object.loginid_array.length > 0 &&
-            get('tokens')
-        );
 
-        set('email', Cookies.get('email'));
-        set('loginid', loginid);
-        set('is_logged_in', is_logged_in);
+        set('email',     Cookies.get('email'));
+        set('loginid',   Cookies.get('loginid'));
         set('residence', Cookies.get('residence'));
+        localStorage.removeItem('client.is_logged_in'); // cleanup
+    };
+
+    const is_logged_in = function() {
+        return (
+            get('tokens') &&
+            getLoginToken() &&
+            Cookies.get('loginid') &&
+            client_object.loginid_array.length > 0
+        );
     };
 
     const validate_loginid = function() {
@@ -68,10 +72,11 @@ const Client = (function () {
     };
 
     const redirect_if_login = function() {
-        if (get('is_logged_in')) {
+        const client_is_logged_in = is_logged_in();
+        if (client_is_logged_in) {
             window.location.href = default_redirect_url();
         }
-        return get('is_logged_in');
+        return client_is_logged_in;
     };
 
     const set = function(key, value) {
@@ -82,7 +87,7 @@ const Client = (function () {
     // use this function to get variables that have values
     const get = function(key) {
         let value = client_object[key] || LocalStore.get('client.' + key) || '';
-        if (+value === 1 || +value === 0 || value === 'true' || value === 'false') {
+        if (!Array.isArray(value) && (+value === 1 || +value === 0 || value === 'true' || value === 'false')) {
             value = JSON.parse(value || false);
         }
         return value;
@@ -103,7 +108,7 @@ const Client = (function () {
             is_ok = false;
         }
 
-        if (get('is_logged_in')) {
+        if (is_logged_in()) {
             if (
                 !get('is_virtual') &&
                 Cookies.get('residence') &&
@@ -258,7 +263,7 @@ const Client = (function () {
 
     const activate_by_client_type = function() {
         $('.by_client_type').addClass('invisible');
-        if (get('is_logged_in')) {
+        if (is_logged_in()) {
             if (!client_object.values_set) {
                 return;
             }
@@ -374,6 +379,7 @@ const Client = (function () {
         add_token             : add_token,
         set_cookie            : set_cookie,
         process_new_account   : process_new_account,
+        is_logged_in          : is_logged_in,
 
         can_upgrade_gaming_to_financial : can_upgrade_gaming_to_financial,
         can_upgrade_virtual_to_financial: can_upgrade_virtual_to_financial,
