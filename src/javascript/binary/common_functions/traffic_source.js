@@ -44,7 +44,7 @@ const TrafficSource = (function() {
     };
 
     const setData = function() {
-        if (Client.get('is_logged_in')) {
+        if (Client.is_logged_in()) {
             clearData();
             return;
         }

@@ -81,7 +81,7 @@ const Cashier = (function() {
     };
 
     const onLoad = function() {
-        if (is_cashier_page() && Client.get('is_logged_in')) {
+        if (is_cashier_page() && Client.is_logged_in()) {
             withdrawal_locked = false;
             Cashier.check_locked();
             Cashier.check_top_up_withdraw();
@@ -97,7 +97,7 @@ const Cashier = (function() {
         if (japanese_client()) {
             window.location.href = url_for('/');
         }
-        if (Client.get('is_logged_in') && !Client.get('is_virtual')) {
+        if (Client.is_logged_in() && !Client.get('is_virtual')) {
             Cashier.check_locked();
         }
     };

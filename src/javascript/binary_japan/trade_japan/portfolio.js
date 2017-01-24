@@ -30,7 +30,7 @@ const JapanPortfolio = (function() {
     }
 
     function isActive() {
-        return !!(Client.get('is_logged_in') && isTradePage());
+        return !!(Client.is_logged_in() && isTradePage());
     }
 
     function hide() {
