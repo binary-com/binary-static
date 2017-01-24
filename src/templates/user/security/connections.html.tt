@@ -19,7 +19,7 @@
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(oa, s);
 
-    var your_callback_script = window.location.href;
+    var your_callback_script = 'https://www.binaryqa16.com/oauth2/oneall/redirect?dir=' + encodeURIComponent(window.location.href);
 
     /* Embeds the buttons into the container oa_social_login_container */
     var _oneall = _oneall || [];
