@@ -82,7 +82,7 @@ const Client = (function () {
     // use this function to get variables that have values
     const get = function(key) {
         let value = client_object[key] || LocalStore.get('client.' + key) || '';
-        if (+value === 1 || +value === 0 || value === 'true' || value === 'false') {
+        if (!Array.isArray(value) && (+value === 1 || +value === 0 || value === 'true' || value === 'false')) {
             value = JSON.parse(value || false);
         }
         return value;
