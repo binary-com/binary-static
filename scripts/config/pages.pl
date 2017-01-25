@@ -36,6 +36,9 @@ sub all_pages {
         ['service-announcements',      'japan/service-announcements',  'default',    'Service Announcements',  'NOT-ja,en'],
         ['charity',                    'static/charity',               'default',    'Charity'],
 
+        ['copy-trading',               'static/copy_trading',          'default',    'Copy Trading', 'ja'],
+        ['user/copy-trader',           'user/copy_trader',             'default',    'Copy Trader',  'ja'],
+
         ['open-source-projects',       'partners/open_source_projects',  'full_width', 'Open-Source Projects'],
         ['partners',                   'partners/partners',              'full_width', 'Partners',           'ja'],
         ['payment-agent',              'partners/payment_agent',         'full_width', 'Payment Agents'],

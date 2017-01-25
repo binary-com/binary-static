@@ -1,3 +1,5 @@
+const pjax_config_page_require_auth = require('../base/pjax').pjax_config_page_require_auth;
+const pjax_config_page              = require('../base/pjax').pjax_config_page;
 const AccountTransferWS             = require('./cashier/account_transferws').AccountTransferWS;
 const Cashier                       = require('./cashier/cashier').Cashier;
 const ForwardWS                     = require('./cashier/deposit_withdraw_ws').ForwardWS;
@@ -28,13 +30,12 @@ const RealAccOpening                = require('./user/new_account/real_acc_openi
 const VirtualAccOpening             = require('./user/new_account/virtual_acc_opening').VirtualAccOpening;
 const ResetPasswordWS               = require('./user/reset_password').ResetPasswordWS;
 const TNCApproval                   = require('./user/tnc_approval').TNCApproval;
+const ViewPopupWS                   = require('./user/view_popup/view_popupws').ViewPopupWS;
+const CopyTrader                    = require('./user/copy_trader').CopyTrader;
 const TradePage                     = require('./trade/tradepage').TradePage;
 const TradePage_Beta                = require('./trade/beta/tradepage').TradePage_Beta;
 const MBTradePage                   = require('./mb_trade/mb_tradepage').MBTradePage;
-const ViewPopupWS                   = require('./user/view_popup/view_popupws').ViewPopupWS;
 const KnowledgeTest                 = require('../../binary_japan/knowledge_test/knowledge_test.init').KnowledgeTest;
-const pjax_config_page_require_auth = require('../base/pjax').pjax_config_page_require_auth;
-const pjax_config_page              = require('../base/pjax').pjax_config_page;
 
 pjax_config_page('/trading', function () {
     return {
@@ -340,6 +341,14 @@ pjax_config_page_require_auth('new_account/knowledge_testws', function() {
     return {
         onLoad: function() {
             KnowledgeTest.init();
+        },
+    };
+});
+
+pjax_config_page_require_auth('user/copy-trader', function() {
+    return {
+        onLoad: function() {
+            CopyTrader.init();
         },
     };
 });

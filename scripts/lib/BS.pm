@@ -249,6 +249,15 @@ sub menu {
         link_class => 'pjaxload'
         };
 
+    push @menu,
+        {
+            id         => 'topMenuCopyTrader',
+            class      => 'ja-hide',
+            url        => url_for('/user/copy-trader'),
+            text       => localize('Copy Trader'),
+            link_class => 'pjaxload'
+        };
+
     # push @{$menu}, $self->_main_menu_trading();
 
     return \@menu;
