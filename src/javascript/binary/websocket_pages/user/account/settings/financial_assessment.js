@@ -4,12 +4,7 @@ const showLoadingImage   = require('../../../../base/utility').showLoadingImage;
 const localize           = require('../../../../base/localize').localize;
 const Client             = require('../../../../base/client').Client;
 const url_for            = require('../../../../base/url').url_for;
-<<<<<<< HEAD
 const Content            = require('../../../../common_functions/content').Content;
-const selectorExists     = require('../../../../common_functions/common_functions').selectorExists;
-=======
-const Content              = require('../../../../common_functions/content').Content;
->>>>>>> upstream/master
 
 const FinancialAssessmentws = (function() {
     'use strict';
