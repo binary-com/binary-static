@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-29 08:40+0000\n"
+"PO-Revision-Date: 2017-01-18 09:31+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -218,8 +218,6 @@ msgstr "%1 sedang mencari Social Media Executive untuk meningkatkan dan secara p
 msgid "%1 seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world."
 msgstr "%1 mencari copywriter terbaik untuk menghasilkan konten yang secara aktif terlibat prospek baru dan pelanggan saat ini di seluruh dunia."
 
-#, fuzzy
-#| msgid "%1 supports the <a target='_blank' href='http://about.gambleaware.org/'>GambleAware</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgid "%1 supports %2 which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgstr " "
 
@@ -765,8 +763,8 @@ msgstr "Preferensi dan semangat pada Linux dan platform open-source"
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Memiliki pendekatan proaktif untuk memecahkan masalah dan memberikan solusi kepada klien"
 
-msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
-msgstr "Scan tagihan utilitas atau rekening koran (tidak melebihi 3 bulan setelah dicetak)."
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
+msgstr "Scan tagihan utilitas atau rekening koran (tidak melebihi 3 bulan setelah dicetak)"
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
 msgstr "Scan paspor, SIM atau KTP yang memperlihatkan nama dan tanggal lahir Anda. Dokumen setidaknya memiliki 6 bulan masa berlaku."
@@ -1028,7 +1026,7 @@ msgid "An error occured."
 msgstr "Terjadi error."
 
 msgid "Analyse and test the domains and subdomains listed in the scope."
-msgstr ""
+msgstr "Menganalisa dan menguji domain dan subdomain yang tercantum dalam ruang lingkup."
 
 msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
 msgstr "Analisa pasar dengan berbagai pilihan indikator, price band dan overlay."
@@ -1604,9 +1602,6 @@ msgstr "Kasir"
 msgid "Cashier Password"
 msgstr "Kata Sandi Kasir"
 
-msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Kasir terblokir, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">customer support</a> untuk informasi lebih lanjut."
-
 msgid "Cashier password"
 msgstr "Kata sandi Kasir"
 
@@ -2170,9 +2165,6 @@ msgstr "Tambahkan Deposit %1 %2 dana virtual kedalam akun %3 Anda"
 
 msgid "Deposit Bonus"
 msgstr "Bonus Deposit"
-
-msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Deposit terblokir, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">customer support</a> untuk informasi lebih lanjut."
 
 msgid "Deposit of"
 msgstr "Deposit dari"
@@ -3170,7 +3162,7 @@ msgid "If you don't receive the email within the next few minutes, please check 
 msgstr "Jika Anda tidak menerima e-mail beberapa menit yang akan datang, silakan periksa bagian junk/spam email Anda."
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
-msgstr ""
+msgstr "Jika Anda menemukan kerentanan pada <a target='_blank' href='%1'>kode open-source kami</a>, silahkan ajukan permohonan pada GitHub."
 
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "Jika Anda memiliki keahlian yang kami cari, maka Anda akan menjadi bagian dari anggota dari tim pengembangan front end yang sangat kompeten terlibat dalam mengoperasikan sistem opsi trading binary ke tahap yang lebih maju."
@@ -4166,6 +4158,9 @@ msgstr "Kunci Kasir"
 msgid "Log in"
 msgstr "Masuk"
 
+msgid "Log out"
+msgstr "Keluar"
+
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Akses akun affiliasi %1 Anda dan klik pada : Keuangan &rarr; Instruksi Pembayaran."
 
@@ -4186,9 +4181,6 @@ msgstr "Waktu login:"
 
 msgid "Login trouble"
 msgstr "Masalah Login"
-
-msgid "Logout"
-msgstr "Keluar"
 
 msgid "Long"
 msgstr "Panjang"
@@ -5606,10 +5598,8 @@ msgstr "Keamanan Sangkalan"
 msgid "Security Statement"
 msgstr "Pernyataan Keamanan"
 
-#, fuzzy
-#| msgid "User Testing"
 msgid "Security Testing"
-msgstr "Pengujian Pengguna"
+msgstr "Pengujian Keamanan"
 
 msgid "Security and Privacy"
 msgstr "Keamanan dan Privasi"
@@ -5794,10 +5784,8 @@ msgstr "Pengembangan Software (Perl)"
 msgid "Sorry, account opening is unavailable."
 msgstr "Maaf, pembukaan akun tidak tersedia."
 
-#, fuzzy
-#| msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "Akun belum diaktifkan, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">customer support</a> untuk informasi lebih lanjut."
+msgstr "Maaf, pendaftaran akun tidak tersedia untuk negara domisili Anda. Silahkan hubungi <a href=\"%1\">customer support</a> untuk info lebih lanjut."
 
 msgid "Sorry, an error occurred while processing your account."
 msgstr "Maaf, error terjadi ketika memproses rekening Anda."
@@ -5813,6 +5801,9 @@ msgstr "Maaf, fasilitas ini tidak tersedia."
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "Maaf, kata sandi yang Anda masukkan salah"
+
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "Maaf, akun Anda tidak dapat membeli kontrak selanjutnya."
 
 msgid "Spam - We do not condone Spam"
 msgstr "Spam - Kami tidak mentolerir Spam"
@@ -5957,7 +5948,7 @@ msgid "Submit"
 msgstr "Mengajukan"
 
 msgid "Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue."
-msgstr ""
+msgstr "Kirim laporan pada HackerOne mengenai potensi masalah keamanan yang Anda temukan, beserta saran untuk menyelesaikan masalah tersebut."
 
 msgid "Submit your CV and Cover Letter"
 msgstr "Kirim CV dan Cover Letter Anda"
@@ -6684,8 +6675,8 @@ msgstr "Kepada"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "Untuk mengajukan surat lamaran, kirimkan lamaran Anda ke <span id='hr_contact_eaddress'></span>."
 
-msgid "To authenticate your account, kindly email the following to %1"
-msgstr "Untuk membuktikan identitas Anda, silakan email hal berikut ini ke %1"
+msgid "To authenticate your account, kindly email the following to %1:"
+msgstr "Untuk membuktikan identitas Anda, silakan email hal berikut ini ke %1:"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
 msgstr "Untuk membuktikan identitas Anda, silakan email hal berikut ini ke <a href=\"mailto:%1\">%1</a>"
@@ -7028,6 +7019,11 @@ msgstr "Lihat"
 
 msgid "View Details"
 msgstr "Lihat Rincian"
+
+#, fuzzy
+#| msgid "View statement"
+msgid "View Statement"
+msgstr "Lihat pernyataan"
 
 msgid "View Updated Portfolio"
 msgstr "Lihat portopolio terbaru"
@@ -7461,9 +7457,6 @@ msgstr "Batas Penarikan"
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "Penarikan untuk akun Anda tidak dapat dilanjutkan untuk saat ini. Silahkan hubungi %1 untuk pengaktifan."
 
-msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "Penarikan terblokir, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">customer support</a> untuk informasi lebih lanjut."
-
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr "Bekerja sama dengan anggota tim lain untuk membangun software yang akan mengoperasikan harga pada platform trading kami"
 
@@ -7538,9 +7531,6 @@ msgstr "Anda tidak dibenarkan memberi potongan pembayaran komisi kepada anggota 
 
 msgid "You are not allowed to store any Content (such as feed data)."
 msgstr "Anda tidak diizinkan untuk menyimpan Konten (seperti data feed)."
-
-msgid "You are not authorized for withdrawal via payment agent."
-msgstr "Anda tidak dibenarkan menarik dana menggunakan agen pembayaran."
 
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "Anda tidak berhak atas kompensasi atau penggantian dalam bentuk apapun dari Perusahaan dalam keadaan apapun."
@@ -8024,9 +8014,6 @@ msgstr "bulan"
 
 msgid "months"
 msgstr "bulan"
-
-msgid "not available"
-msgstr "tidak tersedia"
 
 msgid "numbers"
 msgstr "nomor"
@@ -9039,6 +9026,9 @@ msgstr "{JAPAN ONLY}You set your own personal daily loss limit"
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
+msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
+msgstr "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
+
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
 
@@ -9149,6 +9139,24 @@ msgstr "Keterangan rekening"
 
 msgid "Terms and Conditions Approval"
 msgstr "Syarat dan Ketentuan Persetujuan"
+
+#~ msgid "Logout"
+#~ msgstr "Keluar"
+
+#~ msgid "not available"
+#~ msgstr "tidak tersedia"
+
+#~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "Kasir terblokir, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">customer support</a> untuk informasi lebih lanjut."
+
+#~ msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "Deposit terblokir, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">customer support</a> untuk informasi lebih lanjut."
+
+#~ msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "Penarikan terblokir, silahkan hubungi <a class=\"pjaxload\" href=\"%1\">customer support</a> untuk informasi lebih lanjut."
+
+#~ msgid "You are not authorized for withdrawal via payment agent."
+#~ msgstr "Anda tidak dibenarkan menarik dana menggunakan agen pembayaran."
 
 #~ msgid "Analyse and test our website for bugs and potential security issues."
 #~ msgstr "Analisa dan tes website kami untuk berbagai bug dan masalah keamanan."
@@ -9777,9 +9785,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Get started"
 #~ msgstr "Memulai"
-
-#~ msgid "Log out"
-#~ msgstr "Keluar"
 
 #~ msgid "Page not found"
 #~ msgstr "Halaman tidak ditemukan"
@@ -10898,9 +10903,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
 #~ msgstr "Saldo Anda sangat tinggi (%1). Jumlah maksimal saldo Anda adalah %2."
-
-#~ msgid "Sorry, your account is not authorised for any further contract purchases."
-#~ msgstr "Maaf, akun Anda tidak dapat membeli kontrak selanjutnya."
 
 #~ msgid "Sorry, your currency of %1 is unavailable for Payment Agent Withdrawal"
 #~ msgstr "Maaf, mata uang Anda %1 tidak tersedia untuk Penarikan Agen Pembayaran"
@@ -18171,9 +18173,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Update failed.  Request support."
 #~ msgstr "Pembaruan gagal.  Mohon bantuan."
-
-#~ msgid "View statement"
-#~ msgstr "Lihat pernyataan"
 
 #~ msgid "We are sorry, we do not allow conversion if you ever used a credit/debit card to deposit to your account segment."
 #~ msgstr "Kami mohon maaf karena tidak dapat memproses penukaran kedalam bentuk valuta asing lainnya jika rekening anda pernah mendeposit dana menggunakan kartu kredit / debit."

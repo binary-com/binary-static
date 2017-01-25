@@ -184,7 +184,7 @@ onLoad.queue(GTM.push_data_layer);
 onLoad.queue(function () {
     page.on_load();
     $('#logo').on('click', function() {
-        load_with_pjax(url_for(Client.get_boolean('is_logged_in') ? japanese_client() ? 'multi_barriers_trading' : 'trading' : ''));
+        load_with_pjax(url_for(Client.is_logged_in() ? japanese_client() ? 'multi_barriers_trading' : 'trading' : ''));
     });
     $('#btn_login').on('click', function(e) {
         e.preventDefault();

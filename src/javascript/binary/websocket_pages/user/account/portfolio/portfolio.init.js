@@ -24,7 +24,7 @@ const PortfolioWS = (function() {
 
     const init = function() {
         hidden_class = 'invisible';
-        if (Client.get_value('balance')) {
+        if (Client.get('balance')) {
             updateBalance();
         }
 
@@ -73,9 +73,9 @@ const PortfolioWS = (function() {
     const updateBalance = function() {
         const $portfolio_balance = $('#portfolio-balance');
         if ($portfolio_balance.length === 0) return;
-        $portfolio_balance.text(Portfolio.getBalance(Client.get_value('balance'), Client.get_value('currency')));
+        $portfolio_balance.text(Portfolio.getBalance(Client.get('balance'), Client.get('currency')));
         const $if_balance_zero = $('#if-balance-zero');
-        if (Client.get_value('balance') > 0 || Client.get_boolean('is_virtual')) {
+        if (Client.get('balance') > 0 || Client.get('is_virtual')) {
             $if_balance_zero.addClass(hidden_class);
         } else {
             $if_balance_zero.removeClass(hidden_class);

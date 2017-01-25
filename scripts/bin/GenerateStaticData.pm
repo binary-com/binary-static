@@ -280,7 +280,7 @@ sub _texts {
         push @texts, localize('period');
         push @texts, localize('comma');
         push @texts, localize('Sorry, an error occurred while processing your account.');
-        push @texts, localize('Your settings have been updated successfully.');
+        push @texts, localize('Your changes have been updated successfully.');
         push @texts, localize('m');
         push @texts, localize('f');
         push @texts, localize('Office worker');
@@ -361,7 +361,6 @@ sub _texts {
         push @texts, localize('Fridays');
 
         #strings for paymentagent_withdrawws page
-        push @texts, localize('You are not authorized for withdrawal via payment agent.');
         push @texts, localize('Please select a payment agent');
         push @texts, localize('The Payment Agent facility is currently not available in your country.');
         push @texts, localize('Invalid amount, minimum is');
@@ -423,9 +422,9 @@ sub _texts {
         push @texts, localize('today, Fridays');
 
         #strings for authenticate page
-        push @texts, localize('To authenticate your account, kindly email the following to [_1]');
+        push @texts, localize('To authenticate your account, kindly email the following to [_1]:');
         push @texts, localize('A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date.');
-        push @texts, localize('A scanned copy of a utility bill or bank statement (no more than 3 months old).');
+        push @texts, localize('A scanned copy of a utility bill or bank statement (no more than 3 months old)');
         push @texts, localize('This feature is not relevant to virtual-money accounts.');
         push @texts, localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].');
         push @texts, localize('Deposits and withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.');
@@ -493,11 +492,13 @@ sub _texts {
         push @texts, localize('min: 1,000');
         push @texts, localize('max: 100,000');
         push @texts, localize('Your Application is Being Processed.');
+        push @texts, localize('{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.');
         push @texts, localize('Processing your request...');
         push @texts, localize('Please check the above form for pending errors.');
         push @texts, localize('Market is closed. Please try again later.');
         push @texts, localize('This symbol is not active. Please try another symbol.');
         push @texts, localize('Connection error: Please check your internet connection.');
+        push @texts, localize('Sorry, your account is not authorised for any further contract purchases.');
 
         #strings for digit_infows
         push @texts, localize('Select market');
@@ -595,7 +596,6 @@ sub _texts {
         push @texts, localize('Stop Profit Level');
         push @texts, localize('Current Level');
         push @texts, localize('Profit/Loss (points)');
-        push @texts, localize('not available');
         push @texts, localize('Contract is not started yet');
         push @texts, localize('Price');
         push @texts, localize('Spot Time');
@@ -626,55 +626,6 @@ sub _texts {
         push @texts, localize('Corporate Action');
 
         # strings for financial assessment
-        push @texts, localize('Financial Assessment');
-        push @texts, localize('Forex trading experience');
-        push @texts, localize('Forex trading frequency');
-        push @texts, localize('Indices trading experience');
-        push @texts, localize('Indices trading frequency');
-        push @texts, localize('Commodities trading experience');
-        push @texts, localize('Commodities trading frequency');
-        push @texts, localize('Stocks trading experience');
-        push @texts, localize('Stocks trading frequency');
-        push @texts, localize('Binary options or other financial derivatives trading experience');
-        push @texts, localize('Binary options or other financial derivatives trading frequency');
-        push @texts, localize('Other financial instruments trading experience');
-        push @texts, localize('Other financial instruments trading frequency');
-        push @texts, localize('Industry of Employment');
-        push @texts, localize('Level of Education');
-        push @texts, localize('Income Source');
-        push @texts, localize('Net Annual Income');
-        push @texts, localize('Estimated Net Worth');
-        push @texts, localize('0-1 year');
-        push @texts, localize('1-2 years');
-        push @texts, localize('Over 3 years');
-        push @texts, localize('0-5 transactions in the past 12 months');
-        push @texts, localize('6-10 transactions in the past 12 months');
-        push @texts, localize('40 transactions or more in the past 12 months');
-        push @texts, localize('Construction');
-        push @texts, localize('Education');
-        push @texts, localize('Finance');
-        push @texts, localize('Health');
-        push @texts, localize('Tourism');
-        push @texts, localize('Other');
-        push @texts, localize('Primary');
-        push @texts, localize('Secondary');
-        push @texts, localize('Tertiary');
-        push @texts, localize('Salaried Employee');
-        push @texts, localize('Self-Employed');
-        push @texts, localize('Investments & Dividends');
-        push @texts, localize('Pension');
-        push @texts, localize('Less than $25,000');
-        push @texts, localize('$25,000 - $100,000');
-        push @texts, localize('$100,000 - $500,000');
-        push @texts, localize('Over $500,001');
-        push @texts, localize('Less than $100,000');
-        push @texts, localize('$100,000 - $250,000');
-        push @texts, localize('$250,000 - $1,000,000');
-        push @texts, localize('Over $1,000,000');
-        push @texts, localize('The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.');
-        push @texts, localize('Your details have been updated.');
-        push @texts, localize('Please complete the following financial assessment form before continuing.');
-        push @texts, localize('Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed.');
         push @texts, localize('Please select a value');
 
         # Strings for authorised_appsws

@@ -8,11 +8,9 @@
         li {
             line-height: 1;
         }
-        .partner {
-            img {
-                max-width: 65%;
-                margin: 0.3em auto;
-            }
+        .partner img {
+            max-width: 65%;
+            margin: 0.3em auto;
         }
     }
     #footer-regulatory {
@@ -90,6 +88,7 @@
         font-size: $FONT_SIZE_XS;
         position: fixed;
         bottom: 0;
+        z-index: 10;
         width: 100%;
         a {
             color: $COLOR_WHITE;

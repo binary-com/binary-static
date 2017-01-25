@@ -15,7 +15,7 @@ function MBDisplayCurrencies(selected, showClass) {
 
     const target = document.getElementById('currency'),
         fragment =  document.createDocumentFragment(),
-        currencies = Client.get_value('currencies').split(',');
+        currencies = Client.get('currencies').split(',');
 
     if (!target) {
         return;
@@ -46,6 +46,7 @@ function MBDisplayCurrencies(selected, showClass) {
                                     '" class="' + (showClass ? target.getAttribute('class') : '') +
                                     '" value="' + currencies[0] + '">' +
                                     (State.get('is_mb_trading') && japanese_client() ? '✕' : format_currency(currencies[0])) + '</span>');
+        if ($('.payout-mult:visible').length === 0) $('#payout').width(40); // wider when there is free space
         MBDefaults.set('currency', currencies[0]);
     }
 }

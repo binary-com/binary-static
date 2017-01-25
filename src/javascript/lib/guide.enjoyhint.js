@@ -391,7 +391,7 @@ var methods = {
 
                 var BottomElement = document.elementFromPoint(e.clientX, e.clientY);
                 //console.log(BottomElement.tagName)
-                $('canvas').css({left: '0px'});
+                $('canvas').css({left: '0'});
 
                 $(BottomElement).click();
 //          that.$canvas.show();

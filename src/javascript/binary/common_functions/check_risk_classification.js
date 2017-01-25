@@ -24,7 +24,6 @@ function renderRiskClassificationPopUp() {
             if (riskClassificationText.includes('assessment_form')) {
                 const payload = $(riskClassificationText);
                 RiskClassification.showRiskClassificationPopUp(payload.find('#assessment_form'));
-                FinancialAssessmentws.LocalizeText();
                 const $risk_classification = $('#risk_classification');
                 $risk_classification.find('#assessment_form').removeClass('invisible')
                     .attr('style', 'text-align: left;');
@@ -49,8 +48,8 @@ function renderRiskClassificationPopUp() {
 }
 
 function qualify_for_risk_classification() {
-    return (Client.get_boolean('is_logged_in') && !Client.get_boolean('is_virtual') &&
-            Client.get_value('residence') !== 'jp' && !$('body').hasClass('BlueTopBack') && $('#assessment_form').length === 0 &&
+    return (Client.is_logged_in() && !Client.get('is_virtual') &&
+            Client.get('residence') !== 'jp' && !$('body').hasClass('BlueTopBack') && $('#assessment_form').length === 0 &&
             (localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval')));
 }
 

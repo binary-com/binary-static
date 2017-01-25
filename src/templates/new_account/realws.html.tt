@@ -9,15 +9,15 @@
                     <legend>[% l('Please select your country of residence') %]</legend>
                     <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4 form_label">
-                            <label for="residence-disabled">[% l('Country of residence') %]</label>
+                            <label for="residence">[% l('Country of residence') %]</label>
                         </div>
                         <div class="gr-8">
                           <span id="move-residence-here"></span>
                         </div>
                     </div>
                     <div class="center-text">
-                      <span class="button ">
-                          <button class="button " id="residence_submit" type="submit">[% l('Proceed') %]</button>
+                      <span class="button">
+                          <button class="button" id="residence_submit" type="submit">[% l('Proceed') %]</button>
                       </span>
                     </div>
                   </fieldset>
@@ -27,34 +27,34 @@
                         <legend id="details">[% l('Details') %]</legend>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="title">[% l('Title') %]</label>
+                                <label for="salutation">[% l('Title') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="title" name="title">
+                                <select id="salutation" name="salutation" class="form_input">
                                   <option value="Mr">[% l('Mr') %]</option>
                                   <option value="Mrs">[% l('Mrs') %]</option>
                                   <option value="Ms">[% l('Ms') %]</option>
                                   <option value="Miss">[% l('Miss') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-title" style="display:none"></p>
+                                <p class="errorfield" id="error_salutation" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="fname">[% l('First name') %]</label>
+                                <label for="first_name">[% l('First name') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="fname" name="fname" maxlength="30"/>
-                                <p class="errorfield" id="error-fname" style="display:none"></p>
+                                <input type="text" class="text form_input" id="first_name" name="first_name" maxlength="30"/>
+                                <p class="errorfield" id="error_first_name" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="lname">[% l('Family name') %]</label>
+                                <label for="last_name">[% l('Family name') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="lname" name="lname" maxlength="30"/>
-                                <p class="errorfield" id="error-lname" style="display:none"></p>
+                                <input type="text" class="text form_input" id="last_name" name="last_name" maxlength="30"/>
+                                <p class="errorfield" id="error_last_name" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
@@ -62,20 +62,20 @@
                                 <label for="dobdd">[% l('Date of birth') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select name="dobdd" id="dobdd"></select>
-                                <select name="dobmm" id="dobmm"></select>
-                                <select name="dobyy" id="dobyy"></select>
-                                <p class="errorfield" id="error-birthdate" style="display:none"></p>
+                                <select name="dobdd" id="dobdd" class="form_input exclude_data"></select>
+                                <select name="dobmm" id="dobmm" class="form_input exclude_data"></select>
+                                <select name="dobyy" id="dobyy" class="form_input exclude_data"></select>
+                                <p class="errorfield" id="error_dobdd" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="residence-disabled">[% l('Country of residence') %]</label>
+                                <label for="residence">[% l('Country of residence') %]</label>
                             </div>
                             <div class="gr-8">
                                 <span id="move-residence-back"></span>
-                                <select name="residence-disabled" id="residence-disabled" disabled></select>
-                                <p class="errorfield" id="error-residence" style="display:none"></p>
+                                <select name="residence" id="residence" class="form_input" disabled></select>
+                                <p class="errorfield" id="error_residence" style="display:none"></p>
                             </div>
                         </div>
                     </fieldset>
@@ -84,56 +84,56 @@
                         <legend id="address">[% l('Address') %]</legend>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="address1">[% l('First line of home address') %]</label>
+                                <label for="address_line_1">[% l('First line of home address') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="address1" name="address1" maxlength="70"/>
-                                <p class="errorfield" id="error-address1" style="display:none"></p>
+                                <input type="text" class="text form_input" id="address_line_1" name="address_line_1" maxlength="70"/>
+                                <p class="errorfield" id="error_address_line_1" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="address2">[% l('Second line of home address') %]</label>
+                                <label for="address_line_2">[% l('Second line of home address') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="address2" name="address2" maxlength="70"/>
-                                <p class="errorfield" id="error-address2" style="display:none"></p>
+                                <input type="text" class="text form_input" id="address_line_2" name="address_line_2" maxlength="70"/>
+                                <p class="errorfield" id="error_address_line_2" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="address-town">[% l('Town/City') %]</label>
+                                <label for="address_city">[% l('Town/City') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="address-town" name="address-town" maxlength="35"/>
-                                <p class="errorfield" id="error-town" style="display:none"></p>
+                                <input type="text" class="text form_input" id="address_city" name="address_city" maxlength="35"/>
+                                <p class="errorfield" id="error_address_city" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear" style="display:none">
                             <div class="gr-4 form_label">
-                                <label for="address-state">[% l('State/Province') %]</label>
+                                <label for="address_state">[% l('State/Province') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="address-state" name="address-state"></select>
-                                <p class="errorfield" id="error-state" style="display:none"></p>
+                                <select id="address_state" name="address_state" class="form_input"></select>
+                                <p class="errorfield" id="error_address_state" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="address-postcode">[% l('Postal code/ZIP') %]</label>
+                                <label for="address_postcode">[% l('Postal code/ZIP') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="address-postcode" name="address-postcode" maxlength="20"></select>
-                                <p class="errorfield" id="error-postcode" style="display:none"></p>
+                                <input type="text" class="text form_input" id="address_postcode" name="address_postcode" maxlength="20" />
+                                <p class="errorfield" id="error_address_postcode" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="tel">[% l('Telephone') %]</label>
+                                <label for="phone">[% l('Telephone') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="tel" name="tel" maxlength="35"></select>
-                                <p class="errorfield" id="error-tel" style="display:none"></p>
+                                <input type="text" class="text form_input" id="phone" name="phone" maxlength="35" />
+                                <p class="errorfield" id="error_phone" style="display:none"></p>
                             </div>
                         </div>
                     </fieldset>
@@ -142,10 +142,10 @@
                         <legend id="security">[% l('Security') %]</legend>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="secret-question">[% l('Secret question') %]</label>
+                                <label for="secret_question">[% l('Secret question') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="secret-question">
+                                <select id="secret_question" class="form_input">
                                   <option value="Favourite dish">[% l('Favourite dish') %]</option>
                                   <option value="Mother's maiden name">[% l("Mother's maiden name") %]</option>
                                   <option value="Name of your pet">[% l('Name of your pet') %]</option>
@@ -155,31 +155,28 @@
                                   <option value="Brand of first car">[% l('Brand of first car') %]</option>
                                   <option value="Favourite artist">[% l('Favourite artist') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-question" style="display:none"></p>
+                                <p class="errorfield" id="error_secret_question" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="secret-answer">[% l('Answer to secret question') %]</label>
+                                <label for="secret_answer">[% l('Answer to secret question') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="secret-answer" maxlength="50" autocomplete="off"/>
-                                <p class="errorfield" id="error-answer" style="display:none"></p>
+                                <input type="text" class="text form_input" id="secret_answer" maxlength="50" autocomplete="off"/>
+                                <p class="errorfield" id="error_secret_answer" style="display:none"></p>
                             </div>
                         </div>
                     </fieldset>
 
                     <fieldset class="center-text" id="formlayout">
-                        <div class="gr-12">
-                            <p>
-                                <input type="checkbox" name="tnc" id="tnc">
-                                    <span onclick="document.getElementById('tnc').checked=!document.getElementById('tnc').checked">[% l('I have read and agree to the') %] <a target="_blank" href="[% request.url_for('/terms-and-conditions') %]">[% l('terms and conditions') %]</a> [% l('of the site.') %]</span>
-                                    <p class="errorfield" id="error-tnc" style="display:none"></p>
-                                </input>
-                            </p>
+                        <div class="gr-12 gr-padding-10">
+                            <input type="checkbox" name="tnc" id="tnc" class="form_input exclude_data">
+                            <label for="tnc">[% l('I have read and agree to the') %] <a target="_blank" href="[% request.url_for('/terms-and-conditions') %]">[% l('terms and conditions') %]</a> [% l('of the site.') %]</label>
+                            <p class="errorfield" id="error_tnc" style="display:none"></p>
                         </div>
-                        <span class="button ">
-                            <button class="button " id="btn_submit" type="submit">[% l('Open Account') %]</button>
+                        <span class="button">
+                            <button class="button" id="btn_submit" type="submit">[% l('Open Account') %]</button>
                         </span>
                     </fieldset>
                 </form>

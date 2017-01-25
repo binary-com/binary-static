@@ -29,7 +29,7 @@ const SecurityWS = (function() {
     };
 
     const checkIsVirtual = function() {
-        if (!Client.get_boolean('is_virtual')) {
+        if (!Client.get('is_virtual')) {
             return false;
         }
         $form.hide();
