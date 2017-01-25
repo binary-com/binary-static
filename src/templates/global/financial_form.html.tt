@@ -214,7 +214,7 @@
                 <option value="Government Officers">[% l('Government Officers') %]</option>
                 <option value="Others">[% l('Others') %]</option>
             </select>
-            <p class="errorfield" id="error_occupation" style="display:none"></p>
+            <p class="errorfield" id="error_occupation"></p>
         </div>
     </div>
     <div class="gr-padding-10 gr-row clear">
