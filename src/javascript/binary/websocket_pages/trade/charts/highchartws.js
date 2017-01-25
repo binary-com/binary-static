@@ -497,7 +497,8 @@ const Highchart = (function() {
             chart.series[0].options.data.length > 0
         ) {
             const data = chart.series[0].options.data;
-            const last = parseInt(data[data.length - 1].x);
+            const last_data = data[data.length - 1];
+            const last = parseInt(last_data.x || last_data[0]);
             if (last > (end_time * 1000) || last > (sell_time * 1000)) {
                 socketSend({ forget: responseID });
                 is_chart_forget = true;
