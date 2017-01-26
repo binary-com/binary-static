@@ -5,9 +5,9 @@ const Client   = require('../binary/base/client').Client;
 const CashierJP = (function() {
     function init(action) {
         Content.populate();
-        if (Client.get_boolean('values_set')) {
+        if (Client.get('values_set')) {
             const $container = $('#japan_cashier_container');
-            if (Client.get_boolean('is_virtual')) {
+            if (Client.get('is_virtual')) {
                 $container.addClass('center-text notice-msg').removeClass('invisible')
                 .text(Content.localize().featureNotRelevantToVirtual);
                 return;
@@ -32,13 +32,13 @@ const CashierJP = (function() {
     }
     function set_name_id() {
         if (/deposit-jp/.test(window.location.pathname)) {
-            $('#name_id').text((Client.get_value('loginid') || 'JP12345') + ' ' + (Client.get_value('first_name') || 'Joe Bloggs'));
+            $('#name_id').text((Client.get('loginid') || 'JP12345') + ' ' + (Client.get('first_name') || 'Joe Bloggs'));
         }
     }
     function set_email_id() {
         if (/withdraw-jp/.test(window.location.pathname)) {
-            $('#id123-control22598118').val(Client.get_value('loginid'));
-            $('#id123-control22598060').val(Client.get_value('email'));
+            $('#id123-control22598118').val(Client.get('loginid'));
+            $('#id123-control22598060').val(Client.get('email'));
         }
     }
     function error_handler() {
@@ -48,7 +48,7 @@ const CashierJP = (function() {
         if (!/^([1-9][0-9]{0,5}|1000000)$/.test(withdrawal_amount)) {
             $id.parent().append('<p class="error-msg">' + Content.errorMessage('number_should_between', '¥1 - ¥1,000,000') + '</p>');
             return false;
-        } else if (parseInt(Client.get_value('balance')) < withdrawal_amount) {
+        } else if (parseInt(Client.get('balance')) < withdrawal_amount) {
             $id.parent().append('<p class="error-msg">' + localize('Insufficient balance.') + '</p>');
             return false;
         }

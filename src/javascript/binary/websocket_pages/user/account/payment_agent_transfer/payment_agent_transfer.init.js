@@ -41,14 +41,14 @@ const PaymentAgentTransfer = (function() {
 
             PaymentAgentTransferUI.showDone();
 
-            PaymentAgentTransferUI.updateDoneView(Client.get_value('loginid'), req.transfer_to, req.amount, req.currency);
+            PaymentAgentTransferUI.updateDoneView(Client.get('loginid'), req.transfer_to, req.amount, req.currency);
         }
     };
 
     const init = function(auth) {
         const $pa_form = $('#paymentagent_transfer'),
             $no_bal_err = $('#no_balance_error'),
-            currency = Client.get_value('currency');
+            currency = Client.get('currency');
 
         if (auth && !currency) {
             $no_bal_err.removeClass(hiddenClass);
@@ -100,7 +100,7 @@ const PaymentAgentTransfer = (function() {
                 return;
             }
 
-            const bal = +(Client.get_value('balance'));
+            const bal = +(Client.get('balance'));
             if (amount > bal) {
                 $insufficientBalError.removeClass(hiddenClass);
                 return;
@@ -144,7 +144,7 @@ const PaymentAgentTransfer = (function() {
     };
 
     const error_if_virtual = function() {
-        if (Client.get_boolean('is_virtual')) {
+        if (Client.get('is_virtual')) {
             $('#virtual_error').removeClass('invisible');
             return true;
         }

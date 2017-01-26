@@ -27,7 +27,7 @@ const SettingsDetailsWS = (function() {
     const init = function() {
         Content.populate();
 
-        if (Client.get_boolean('is_virtual') || Client.get_value('residence')) {
+        if (Client.get('is_virtual') || Client.get('residence')) {
             initOk();
         } else {
             isInitialized = false;
@@ -38,8 +38,8 @@ const SettingsDetailsWS = (function() {
 
     const initOk = function() {
         isInitialized = true;
-        const isVirtual = Client.get_boolean('is_virtual');
-        const isJP = Client.get_value('residence') === 'jp';
+        const isVirtual = Client.get('is_virtual');
+        const isJP = Client.get('residence') === 'jp';
         bind_validation.simple($(formID)[0], {
             schema: isJP ? getJPSchema() : isVirtual ? {} : getNonJPSchema(),
             submit: function(ev, info) {
@@ -76,7 +76,7 @@ const SettingsDetailsWS = (function() {
             changed = true;
         });
 
-        if (Client.get_boolean('is_virtual')) { // Virtual Account
+        if (Client.get('is_virtual')) { // Virtual Account
             $(RealAccElements).remove();
             $(formID).removeClass('hidden');
             return;
@@ -89,7 +89,7 @@ const SettingsDetailsWS = (function() {
         if (residence) {
             BinarySocket.send({ states_list: residence, passthrough: { value: data.address_state } });
         }
-        if (Client.get_value('residence') === 'jp') {
+        if (Client.get('residence') === 'jp') {
             const jpData = response.get_settings.jp_settings;
             $('#lblName').text((data.last_name || ''));
             $('#lblGender').text(localize(jpData.gender) || '');
@@ -190,7 +190,7 @@ const SettingsDetailsWS = (function() {
         const trim = function(s) {
             return $(s).val().trim();
         };
-        setDetails(Client.get_boolean('is_virtual') ? data :
+        setDetails(Client.get('is_virtual') ? data :
             toJPSettings({
                 hedgeAssetAmount      : trim('#HedgeAssetAmount'),
                 annualIncome          : trim('#AnnualIncome'),
@@ -318,7 +318,7 @@ const SettingsDetailsWS = (function() {
                 }
             },
         });
-        if (Client.get_value('loginid')) {
+        if (Client.get('loginid')) {
             SettingsDetailsWS.init();
         }
     };

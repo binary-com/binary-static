@@ -760,7 +760,9 @@ msgstr "Une préférence et une passion pour Linux et les plateformes open sourc
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Capacité à résoudre les problèmes et à proposer des solutions adaptées aux clients de façon proactive"
 
-msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+#, fuzzy
+#| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
 msgstr "Copie scannée d'une facture ou d'un relevé bancaire (documents datés de moins de 3 mois)."
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
@@ -1605,11 +1607,6 @@ msgstr "Caisse"
 msgid "Cashier Password"
 msgstr "Mot de passe de la page « Caisse »"
 
-#, fuzzy
-#| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "La page Caisse est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1\">nous contacter</a> pour obtenir des informations supplémentaires."
-
 msgid "Cashier password"
 msgstr "Mot de passe de la page « Caisse »"
 
@@ -2175,11 +2172,6 @@ msgstr "Effectuer un dépôt de %2 %1 en argent virtuel sur votre compte %3"
 
 msgid "Deposit Bonus"
 msgstr "Bonus de dépôt"
-
-#, fuzzy
-#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "La fonction de dépôt est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1\">nous contacter</a> pour obtenir des informations."
 
 msgid "Deposit of"
 msgstr "Dépôt de"
@@ -4179,6 +4171,9 @@ msgstr "Caisse"
 msgid "Log in"
 msgstr "Connexion"
 
+msgid "Log out"
+msgstr "Déconnexion"
+
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Connectez-vous à votre compte affilié %1 et cliquez sur : Finances &rarr; Instructions de paiement."
 
@@ -4199,9 +4194,6 @@ msgstr "Temps de connexion :"
 
 msgid "Login trouble"
 msgstr "Problème de connexion"
-
-msgid "Logout"
-msgstr "Déconnexion"
 
 msgid "Long"
 msgstr "Long"
@@ -6708,7 +6700,9 @@ msgstr "à"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "Pour postuler, envoyez votre CV et votre lettre de motivation à <span id=\"hr_contact_eaddress\"></span>."
 
-msgid "To authenticate your account, kindly email the following to %1"
+#, fuzzy
+#| msgid "To authenticate your account, kindly email the following to %1"
+msgid "To authenticate your account, kindly email the following to %1:"
 msgstr "Pour authentifier votre compte, veuillez envoyer par émail avec les informations suivantes à %1"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
@@ -7054,6 +7048,11 @@ msgstr "Affichage"
 
 msgid "View Details"
 msgstr "Afficher les informations"
+
+#, fuzzy
+#| msgid "View statement"
+msgid "View Statement"
+msgstr "Voir la déclaration"
 
 msgid "View Updated Portfolio"
 msgstr "Vue du Portefeuille Actualisé"
@@ -7490,11 +7489,6 @@ msgstr "Limites de retrait"
 
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "Les retraits sur votre compte ne sont pas autorisés actuellement. Veuillez contacter %1 pour déverrouiller cette fontion."
-
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
-msgstr "La fonction de retrait est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1\">nous contacter</a> pour obtenir des informations supplémentaires."
 
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr "Développement d'un logiciel de tarification pour notre plateforme de trading, en collaboration étroite avec les autres membres de l'équipe"
@@ -8059,9 +8053,6 @@ msgstr "mois"
 
 msgid "months"
 msgstr "mois"
-
-msgid "not available"
-msgstr "non disponible"
 
 msgid "numbers"
 msgstr "chiffres"
@@ -9082,6 +9073,9 @@ msgstr "{JAPAN ONLY}You set your own personal daily loss limit"
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
+msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
+msgstr ""
+
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
 
@@ -9192,6 +9186,27 @@ msgstr "Informations du compte"
 
 msgid "Terms and Conditions Approval"
 msgstr "Acceptation des conditions générales"
+
+#~ msgid "Logout"
+#~ msgstr "Déconnexion"
+
+#~ msgid "not available"
+#~ msgstr "non disponible"
+
+#, fuzzy
+#~| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "La page Caisse est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1\">nous contacter</a> pour obtenir des informations supplémentaires."
+
+#, fuzzy
+#~| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "La fonction de dépôt est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1\">nous contacter</a> pour obtenir des informations."
+
+#, fuzzy
+#~| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "La fonction de retrait est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1\">nous contacter</a> pour obtenir des informations supplémentaires."
 
 #~ msgid "You are not authorized for withdrawal via payment agent."
 #~ msgstr "Vous n'êtes pas habilité à faire des retraits via un agent de paiement."
@@ -9760,9 +9775,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Get started"
 #~ msgstr "Se lancer"
-
-#~ msgid "Log out"
-#~ msgstr "Déconnexion"
 
 #~ msgid "Page not found"
 #~ msgstr "Page non-trouvée"
@@ -18064,9 +18076,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Sorry, you cannot convert"
 #~ msgstr "Désolé, vous ne pouvez pas convertir"
-
-#~ msgid "View statement"
-#~ msgstr "Voir la déclaration"
 
 #~ msgid "We are sorry, we do not allow conversion if you ever used a credit/debit card to deposit to your account segment."
 #~ msgstr "Nous sommes désolés, nous n'autorisons pas la conversion si vous avez déjà utilisé une carte de crédit/de débit pour faire un dépôt sur le segment de votre compte."

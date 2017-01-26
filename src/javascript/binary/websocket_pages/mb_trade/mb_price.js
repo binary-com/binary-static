@@ -123,7 +123,7 @@ const MBPrice = (function() {
         return {
             contract_type      : contract_type,
             barrier            : barrier,
-            is_active          : !proposal.error && proposal.ask_price && !is_unwelcome,
+            is_active          : !proposal.error && proposal.proposal.ask_price && !is_unwelcome,
             message            : proposal.error && proposal.error.code !== 'RateLimit' ? proposal.error.message : '',
             ask_price          : getAskPrice(proposal),
             sell_price         : payout - getAskPrice(proposal_opp),
@@ -169,7 +169,7 @@ const MBPrice = (function() {
 
     const processBuy = function(barrier, contract_type) {
         if (!barrier || !contract_type) return;
-        if (!Client.get_boolean('is_logged_in')) {
+        if (!Client.is_logged_in()) {
             MBNotifications.show({ text: localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true });
             return;
         }

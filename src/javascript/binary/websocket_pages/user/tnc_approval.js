@@ -35,7 +35,7 @@ const TNCApproval = (function() {
     };
 
     const showTNC = function() {
-        if (!terms_conditions_version || !client_tnc_status || !Client.get_value('landing_company_fullname')) {
+        if (!terms_conditions_version || !client_tnc_status || !Client.get('landing_company_fullname')) {
             return;
         }
 
@@ -49,8 +49,8 @@ const TNCApproval = (function() {
         $('#tnc_approval').removeClass(hiddenClass);
         const $tnc_msg = $('#tnc-message');
         const tnc_message = template($tnc_msg.html(), [
-            Client.get_value('landing_company_fullname'),
-            Client.get_value('residence') === 'jp' ?
+            Client.get('landing_company_fullname'),
+            Client.get('residence') === 'jp' ?
             url_for('terms-and-conditions-jp') :
             url_for('terms-and-conditions'),
         ]);
@@ -72,7 +72,7 @@ const TNCApproval = (function() {
     };
 
     const apiResponse = function(response) {
-        isReal = !Client.get_boolean('is_virtual');
+        isReal = !Client.get('is_virtual');
         if (!isReal) {
             redirectBack();
         }

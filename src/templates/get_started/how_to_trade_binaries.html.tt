@@ -246,10 +246,10 @@
             <div class="gr-12 center-text">
                 <div class="subsection-navigation">
                     <br/>
-                    <a class="back button" href="#">
+                    <a class="back button" href="javascript:;">
                         <span>[% l("Back") %]</span>
                     </a>
-                    <a class="next button" href="#">
+                    <a class="next button" href="javascript:;">
                         <span>[% l("Next") %]</span>
                     </a>
                 </div>

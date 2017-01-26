@@ -34,7 +34,7 @@ const Statement = (function() {
     const generateCSV = function(allData, jpClient) {
         const columns  = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'],
             header   = ['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit'].map(function(str) { return localize(str); }),
-            currency = Client.get_value('currency');
+            currency = Client.get('currency');
         header.push(localize('Balance') + (jpClient || !currency ? '' : ' (' + currency + ')'));
         const sep = ',';
         let csv = [header.join(sep)];
