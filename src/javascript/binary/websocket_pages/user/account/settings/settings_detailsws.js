@@ -2,7 +2,6 @@ const detect_hedging  = require('../../../../common_functions/common_functions')
 const ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
 const bind_validation = require('../../../../validator').bind_validation;
 const Content  = require('../../../../common_functions/content').Content;
-const Cookies  = require('../../../../../lib/js-cookie');
 const moment   = require('moment');
 const dv       = require('../../../../../lib/validation');
 const localize = require('../../../../base/localize').localize;
@@ -11,23 +10,32 @@ const Client   = require('../../../../base/client').Client;
 const SettingsDetailsWS = (function() {
     'use strict';
 
-    const formID = '#frmPersonalDetails',
-        RealAccElements = '.RealAcc',
-        fieldIDs = {
-            address1: '#Address1',
-            address2: '#Address2',
-            city    : '#City',
-            state   : '#State',
-            postcode: '#Postcode',
-            phone   : '#Phone',
-        };
-    let changed = false,
-        isInitialized;
+    const formID = '#frmPersonalDetails';
+    const RealAccElements = '.RealAcc';
+    const jpDataKeys = {
+        annual_income                              : '',
+        financial_asset                            : '',
+        occupation                                 : '',
+        trading_experience_equities                : '',
+        trading_experience_commodities             : '',
+        trading_experience_foreign_currency_deposit: '',
+        trading_experience_margin_fx               : '',
+        trading_experience_investment_trust        : '',
+        trading_experience_public_bond             : '',
+        trading_experience_option_trading          : '',
+        trading_purpose                            : '',
+    };
+    let isInitialized,
+        editable_fields,
+        isJP,
+        isVirtual,
+        residence;
 
     const init = function() {
         Content.populate();
+        editable_fields = {};
 
-        if (Client.get('is_virtual') || Client.get('residence')) {
+        if (Client.get('values_set') && (Client.get('is_virtual') || Client.get('residence'))) {
             initOk();
         } else {
             isInitialized = false;
@@ -38,25 +46,70 @@ const SettingsDetailsWS = (function() {
 
     const initOk = function() {
         isInitialized = true;
-        const isVirtual = Client.get('is_virtual');
-        const isJP = Client.get('residence') === 'jp';
+        isVirtual = Client.get('is_virtual');
+        residence = Client.get('residence');
+        isJP = residence === 'jp';
         bind_validation.simple($(formID)[0], {
             schema: isJP ? getJPSchema() : isVirtual ? {} : getNonJPSchema(),
             submit: function(ev, info) {
                 ev.preventDefault();
                 ev.stopPropagation();
                 if (info.errors.length > 0) return false;
-                if (!changed) {
-                    return showFormMessage('You did not change anything.', false);
-                }
-                if (isJP) return submitJP(info.values);
-                return submitNonJP(info.values);
+                info.values.email_consent = $('#email_consent:checked').length > 0 ? 1 : 0;
+                if (!isChanged(info.values)) return showFormMessage('You did not change anything.', false);
+                return setDetails(Client.get('is_virtual') || !isJP ? info.values : { jp_settings: jpDataKeys });
             },
         });
         if (isJP && !isVirtual) {
             $('#fieldset_email_consent').removeClass('invisible');
-            detect_hedging($('#PurposeOfTrading'), $('.hedge'));
+            detect_hedging($('#trading_purpose'), $('.hedge'));
         }
+    };
+
+    const isChanged = (values) => {
+        let changed = false,
+            data = values;
+        if (isJP) {
+            populateJPSettings();
+            data = $.extend(data, jpDataKeys);
+        }
+        Object.keys(editable_fields).every((key) => {
+            if (key in data && editable_fields[key] !== data[key]) {
+                changed = true;
+                return false;
+            }
+            return true;
+        });
+        return changed;
+    };
+
+    const displayGetSettingsData = (data, populate = true) => {
+        let $key,
+            $lbl_key,
+            $data_key,
+            has_key,
+            has_lbl_key;
+        Object.keys(data).forEach((key) => {
+            $key = $(`#${key}`);
+            $lbl_key = $(`#lbl_${key}`);
+            has_key = $key.length > 0;
+            has_lbl_key = $lbl_key.length > 0;
+            // prioritise labels for japan account
+            $key = has_key && has_lbl_key ? (isJP ? $lbl_key : $key) : (has_key ? $key : $lbl_key);
+            if ($key.length > 0) {
+                $data_key = data[key];
+                editable_fields[key] = $data_key;
+                if (populate) {
+                    if ($key.is(':checkbox')) {
+                        $key.prop('checked', !!$data_key);
+                    } else if (/(SELECT|INPUT)/.test($key.prop('nodeName'))) {
+                        $key.val($data_key);
+                    } else {
+                        $key.text($data_key ? localize($data_key) : '-');
+                    }
+                }
+            }
+        });
     };
 
     const getDetailsResponse = function(response) {
@@ -65,16 +118,10 @@ const SettingsDetailsWS = (function() {
         }
         const data = response.get_settings;
 
-        $('#lblCountry').text(data.country || '-');
-        $('#lblEmail').text(data.email);
-        const $email_consent = $('#email_consent');
-        if (data.email_consent) {
-            $email_consent.prop('checked', 'true');
-        }
+        data.date_of_birth = data.date_of_birth ? moment.utc(new Date(data.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
+        data.name = isJP ? data.last_name : (data.salutation || '') + ' ' + (data.first_name || '') + ' ' + (data.last_name || '');
 
-        $email_consent.on('change', function() {
-            changed = true;
-        });
+        displayGetSettingsData(data);
 
         if (Client.get('is_virtual')) { // Virtual Account
             $(RealAccElements).remove();
@@ -82,69 +129,26 @@ const SettingsDetailsWS = (function() {
             return;
         }
         // Real Account
-        const birthDate = data.date_of_birth ? moment.utc(new Date(data.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
-        $('#lblBirthDate').text(birthDate);
         // Generate states list
-        const residence = Cookies.get('residence');
         if (residence) {
             BinarySocket.send({ states_list: residence, passthrough: { value: data.address_state } });
         }
-        if (Client.get('residence') === 'jp') {
+        if (isJP) {
             const jpData = response.get_settings.jp_settings;
-            $('#lblName').text((data.last_name || ''));
-            $('#lblGender').text(localize(jpData.gender) || '');
-            $('#lblAddress1').text(data.address_line_1 || '');
-            $('#lblAddress2').text(data.address_line_2 || '');
-            $('#lblCity').text(data.address_city || '');
-            $('#lblPostcode').text(data.address_postcode || '');
-            $('#lblPhone').text(data.phone || '');
-
-            $('#AnnualIncome').val(jpData.annual_income);
-            $('#FinancialAsset').val(jpData.financial_asset);
-            $('#Occupation').val(jpData.occupation);
-            $('#Equities').val(jpData.trading_experience_equities);
-            $('#Commodities').val(jpData.trading_experience_commodities);
-            $('#ForeignCurrencyDeposit').val(jpData.trading_experience_foreign_currency_deposit);
-            $('#MarginFX').val(jpData.trading_experience_margin_fx);
-            $('#InvestmentTrust').val(jpData.trading_experience_investment_trust);
-            $('#PublicCorporationBond').val(jpData.trading_experience_public_bond);
-            $('#DerivativeTrading').val(jpData.trading_experience_option_trading);
-            $('#PurposeOfTrading').val(jpData.trading_purpose);
+            displayGetSettingsData(jpData);
             if (jpData.hedge_asset !== null && jpData.hedge_asset_amount !== null) {
-                $('#HedgeAsset').val(jpData.hedge_asset);
-                $('#HedgeAssetAmount').val(jpData.hedge_asset_amount);
                 $('.hedge').removeClass('invisible');
             }
-            $('.JpAcc').removeClass('invisible')
-                       .removeClass('hidden');
-
-            $('#AnnualIncome, #FinancialAsset, #Occupation, #Equities, #Commodities,' +
-                '#ForeignCurrencyDeposit, #MarginFX, #InvestmentTrust, #PublicCorporationBond,' +
-                '#DerivativeTrading, #PurposeOfTrading, #HedgeAsset, #HedgeAssetAmount')
-                .on('change', function() {
-                    changed = true;
-                });
+            $('.JpAcc').removeClass('invisible hidden');
         } else {
-            $('#lblName').text((data.salutation || '') + ' ' + (data.first_name || '') + ' ' + (data.last_name || ''));
-            $(fieldIDs.address1).val(data.address_line_1);
-            $(fieldIDs.address2).val(data.address_line_2);
-            $(fieldIDs.city).val(data.address_city);
-
-            $(fieldIDs.postcode).val(data.address_postcode);
-            $(fieldIDs.phone).val(data.phone);
-
-            $('#Address1, #Address2, #City, #State, #Postcode, #Phone').on('change', function() {
-                changed = true;
-            });
-
             $(RealAccElements).removeClass('hidden');
         }
-
         $(formID).removeClass('hidden');
     };
 
     const populateStates = function(response) {
-        let $field = $(fieldIDs.state);
+        const address_state = '#address_state';
+        let $field = $(address_state);
         const defaultValue = response.echo_req.passthrough.value;
         const states = response.states_list;
 
@@ -155,62 +159,29 @@ const SettingsDetailsWS = (function() {
                 $field.append($('<option/>', { value: state.value, text: state.text }));
             });
         } else {
-            $field.replaceWith($('<input/>', { id: fieldIDs.state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
-            $field = $(fieldIDs.state);
+            $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
+            $field = $(address_state);
         }
 
         $field.val(defaultValue);
-        $('#lblState').text($('#State').find('option:selected').text());
-        $field.on('change', function() {
-            changed = true;
+    };
+
+    const populateJPSettings = function() {
+        Object.keys(jpDataKeys).forEach((key) => {
+            jpDataKeys[key] = $(`#${key}`).val();
         });
-    };
-
-    const toJPSettings = function(data) {
-        const jp_settings = {};
-        jp_settings.annual_income                               = data.annualIncome;
-        jp_settings.financial_asset                             = data.financialAsset;
-        jp_settings.occupation                                  = data.occupation;
-        jp_settings.trading_experience_equities                 = data.equities;
-        jp_settings.trading_experience_commodities              = data.commodities;
-        jp_settings.trading_experience_foreign_currency_deposit = data.foreignCurrencyDeposit;
-        jp_settings.trading_experience_margin_fx                = data.marginFX;
-        jp_settings.trading_experience_investment_trust         = data.InvestmentTrust;
-        jp_settings.trading_experience_public_bond              = data.publicCorporationBond;
-        jp_settings.trading_experience_option_trading           = data.derivativeTrading;
-        jp_settings.trading_purpose                             = data.purposeOfTrading;
-        if (data.purposeOfTrading === 'Hedging') {
-            jp_settings.hedge_asset        = data.hedgeAsset;
-            jp_settings.hedge_asset_amount = data.hedgeAssetAmount;
+        if (/Hedging/.test($('#trading_purpose').val())) {
+            jpDataKeys.hedge_asset = $('#hedge_asset').val();
+            jpDataKeys.hedge_asset_amount = $('#hedge_asset_amount').val().trim();
+        } else {
+            delete jpDataKeys.hedge_asset;
+            delete jpDataKeys.hedge_asset_amount;
         }
-        return { jp_settings: jp_settings };
-    };
-
-    const submitJP = function(data) {
-        const trim = function(s) {
-            return $(s).val().trim();
-        };
-        setDetails(Client.get('is_virtual') ? data :
-            toJPSettings({
-                hedgeAssetAmount      : trim('#HedgeAssetAmount'),
-                annualIncome          : trim('#AnnualIncome'),
-                financialAsset        : trim('#FinancialAsset'),
-                occupation            : trim('#Occupation'),
-                equities              : trim('#Equities'),
-                commodities           : trim('#Commodities'),
-                foreignCurrencyDeposit: trim('#ForeignCurrencyDeposit'),
-                marginFX              : trim('#MarginFX'),
-                InvestmentTrust       : trim('#InvestmentTrust'),
-                publicCorporationBond : trim('#PublicCorporationBond'),
-                derivativeTrading     : trim('#DerivativeTrading'),
-                purposeOfTrading      : trim('#PurposeOfTrading'),
-                hedgeAsset            : trim('#HedgeAsset'),
-            }));
     };
 
     const getJPSchema = function() {
         const V2 = ValidateV2;
-        if (/Hedging/.test($('#PurposeOfTrading').val())) {
+        if (/Hedging/.test($('#trading_purpose').val())) {
             return {
                 hedge_asset_amount: [
                     function(v) { return dv.ok(v.trim()); },
@@ -221,11 +192,6 @@ const SettingsDetailsWS = (function() {
         }
         // else there is nothing to validate
         return {};
-    };
-
-    const submitNonJP = function(data) {
-        delete data.hedge_asset_amount;
-        setDetails(data);
     };
 
     const getNonJPSchema = function() {
@@ -261,11 +227,6 @@ const SettingsDetailsWS = (function() {
         Object.keys(data).forEach(function(key) {
             req[key] = data[key];
         });
-        if ($('#email_consent:checked').length > 0) {
-            req.email_consent = 1;
-        } else {
-            req.email_consent = 0;
-        }
         BinarySocket.send(req);
     };
 
@@ -280,10 +241,12 @@ const SettingsDetailsWS = (function() {
 
     const setDetailsResponse = function(response) {
         // allow user to resubmit the form on error.
-        changed = response.set_settings !== 1;
-        showFormMessage(changed ?
+        const is_error = response.set_settings !== 1;
+        // don't display the data again, but repopulate the editable_fields
+        if (!is_error) displayGetSettingsData(response.echo_req, false);
+        showFormMessage(is_error ?
             'Sorry, an error occurred while processing your account.' :
-            'Your settings have been updated successfully.', !changed);
+            'Your settings have been updated successfully.', !is_error);
     };
 
     const onLoad = function() {
