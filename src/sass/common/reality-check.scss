@@ -1,5 +1,6 @@
 .lightbox {
-    display: table;
+    display: flex;
+    flex-direction: column;
     position: fixed;
     top: 0;
     left: 0;
@@ -10,8 +11,8 @@
 }
 
 .lightbox > div {
-    display: table-cell;
-    vertical-align: middle;
+    margin: auto;
+    width: 100%;
 }
 
 .lightbox > div > div {
@@ -32,10 +33,6 @@
     td {
         width: 12.5%;
         text-align: center;
-    }
-    label {
-        display: inline-block;
-        width: 14em;
     }
     [data-balloon] {
         border-bottom: none;
