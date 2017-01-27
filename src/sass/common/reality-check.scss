@@ -18,7 +18,7 @@
     margin-left: auto;
     margin-right: auto;
     padding: 0.5em;
-    width: 44em;
+    max-width: 44em;
     text-align: center;
     background-color: $COLOR_WHITE;
     border-radius: $BORDER_RADIUS;
@@ -42,28 +42,10 @@
     }
 }
 
-#reality-check-content {
-    @media screen and (max-width: 480px) {
-        width: 45% !important;
-    }
-}
-
 #reality-check-nav, #balances-nav {
     margin-top: 1em;
     span:nth-child(2) {
         display: inline-block;
         width: 10em;
-    }
-}
-
-#reality-check-nav {
-    @media screen and (max-width: 480px) {
-        width: 45% !important;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    #risk_classification.lightbox > div > div {
-        width: 95vw;
     }
 }
