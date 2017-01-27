@@ -3,7 +3,7 @@ OneSignal.push(["init", {
     appId: "8e2d0514-4c65-424e-b87e-4ffaaa61da21",
     autoRegister: true,
     notifyButton: {
-        enable: true /* Set to false to hide */
+        enable: false /* Set to false to hide */
     },
     welcomeNotification: {
         disable: true
@@ -23,6 +23,4 @@ OneSignal.push(["init", {
         modalButtonText: 'Close'
         /* ... */
     }
-}], function() {
-    OneSignal.showHttpPrompt();
-});
+}]);

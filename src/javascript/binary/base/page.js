@@ -61,6 +61,7 @@ Page.prototype = {
         this.endpoint_notification();
         BinarySocket.init();
         this.show_notification_outdated_browser();
+        OneSignal.showHttpPrompt();
     },
     on_unload: function() {
         Menu.on_unload();
