@@ -39,13 +39,13 @@ Page.prototype = {
         Contents.on_load();
         if (State.get('is_loaded_by_pjax')) {
             this.show_authenticate_message();
-            if (RealityCheckData.get_value('delay_reality_init')) {
+            if (RealityCheckData.get('delay_reality_init')) {
                 RealityCheck.init();
-            } else if (RealityCheckData.get_value('delay_reality_check')) {
+            } else if (RealityCheckData.get('delay_reality_check')) {
                 BinarySocket.send({ reality_check: 1 });
             }
         }
-        if (Client.get_boolean('is_logged_in')) {
+        if (Client.is_logged_in()) {
             ViewBalance.init();
         } else {
             LocalStore.set('reality_check.ack', 0);

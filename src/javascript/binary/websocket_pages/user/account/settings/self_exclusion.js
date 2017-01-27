@@ -85,7 +85,7 @@ const SelfExclusionWS = (function() {
             return;
         }
         showFormMessage('Your changes have been updated.', true);
-        Client.set_value('session_start', moment().unix()); // used to handle session duration limit
+        Client.set('session_start', moment().unix()); // used to handle session duration limit
         getRequest();
     };
 
@@ -112,7 +112,7 @@ const SelfExclusionWS = (function() {
         // for error messages to show properly
         $('#' + timeID).attr('style', 'margin-bottom:10px');
 
-        if (Client.get_boolean('is_virtual')) {
+        if (Client.get('is_virtual')) {
             $('#selfExclusionDesc').addClass(hiddenClass);
             showPageError(Content.localize().featureNotRelevantToVirtual, true);
             return;
@@ -144,7 +144,7 @@ const SelfExclusionWS = (function() {
                 else if (msg_type === 'set_self_exclusion') setResponse(response);
             },
         });
-        if (Client.get_boolean('values_set')) {
+        if (Client.get('values_set')) {
             reallyInit();
         }
     };

@@ -34,12 +34,12 @@ const RealityCheckUI = (function() {
         wrapper.appendTo(lightboxDiv);
         lightboxDiv.appendTo('body');
 
-        $('#realityDuration').val(RealityCheckData.get_value('interval'))
+        $('#realityDuration').val(RealityCheckData.get('interval'))
                              .keypress(onlyNumericOnKeypress);
     };
 
     const showIntervalOnPopUp = function() {
-        const intervalMinutes = Math.floor(+RealityCheckData.get_value('interval') / 60 / 1000);
+        const intervalMinutes = Math.floor(+RealityCheckData.get('interval') / 60 / 1000);
         $('#realityDuration').val(intervalMinutes);
     };
 
@@ -112,9 +112,9 @@ const RealityCheckUI = (function() {
         }
 
         const intervalMs = intervalMinute * 60 * 1000;
-        RealityCheckData.set_value('interval', intervalMs);
-        RealityCheckData.set_value('keep_open', 0);
-        RealityCheckData.set_value('ack', 1);
+        RealityCheckData.set('interval', intervalMs);
+        RealityCheckData.set('keep_open', 0);
+        RealityCheckData.set('ack', 1);
         RealityCheckUI.closePopUp();
         startSummaryTimer();
         sendAccountStatus();
@@ -132,19 +132,19 @@ const RealityCheckUI = (function() {
     };
 
     const sendAccountStatus = function() {
-        if (!Client.get_boolean('is_virtual') && Client.get_value('residence') !== 'jp' && !getAccountStatus) {
+        if (!Client.get('is_virtual') && Client.get('residence') !== 'jp' && !getAccountStatus) {
             BinarySocket.send({ get_account_status: 1 });
             getAccountStatus = true;
         }
     };
 
     const startSummaryTimer = function() {
-        const interval = +RealityCheckData.get_value('interval');
+        const interval = +RealityCheckData.get('interval');
         const currentTime = Date.now();
         const toWait = interval - ((currentTime - loginTime) % interval);
 
         window.setTimeout(function() {
-            RealityCheckData.set_value('keep_open', 1);
+            RealityCheckData.set('keep_open', 1);
             RealityCheckData.getSummaryAsync();
         }, toWait);
     };

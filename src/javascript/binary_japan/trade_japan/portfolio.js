@@ -30,13 +30,14 @@ const JapanPortfolio = (function() {
     }
 
     function isActive() {
-        return !!(Client.get_value('is_logged_in') && isTradePage());
+        return !!(Client.is_logged_in() && isTradePage());
     }
 
     function hide() {
         if (isTradePage() && isPortfolioActive) {
             PortfolioWS.onUnload();
             isPortfolioActive = false;
+            $portfolio = undefined;
         }
     }
 

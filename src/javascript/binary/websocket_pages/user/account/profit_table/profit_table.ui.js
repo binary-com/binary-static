@@ -15,9 +15,9 @@ const ProfitTableUI = (function() {
     'use strict';
 
     const profitTableID = 'profit-table',
-        cols = ['buy-date', 'ref', 'payout', 'contract', 'buy-price', 'sell-date', 'sell-price', 'pl', 'details'],
-        currency = Client.get_value('currency');
-    let oauth_apps = {};
+        cols = ['buy-date', 'ref', 'payout', 'contract', 'buy-price', 'sell-date', 'sell-price', 'pl', 'details'];
+    let oauth_apps = {},
+        currency;
 
     const createEmptyTable = function() {
         const header = [
@@ -33,6 +33,7 @@ const ProfitTableUI = (function() {
         ];
 
         const jpClient = japanese_client();
+        currency = Client.get('currency');
 
         header[7] += (jpClient ? '' : (currency ? ' (' + currency + ')' : ''));
 

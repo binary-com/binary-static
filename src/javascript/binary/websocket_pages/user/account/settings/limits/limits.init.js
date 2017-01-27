@@ -30,18 +30,18 @@ const LimitsWS = (function() {
             const withdrawn                = limits.withdrawal_since_inception_monetary;
             const remainder                = addComma(limits.remainder).split('.')[1] === '00' ? addComma(limits.remainder).split('.')[0] : addComma(limits.remainder);
 
-            if ((/^(iom)$/i).test(Client.get_value('landing_company_name'))) { // MX
+            if ((/^(iom)$/i).test(Client.get('landing_company_name'))) { // MX
                 txtWithdrawLim = Content.localize().textWithdrawalLimitsEquivalantDay;
                 txtWithdrawAmt  = Content.localize().textWithrawalAmountEquivalantDay;
                 elementTextContent(elWithdrawLimit,
                    template(txtWithdrawLim, [limits.num_of_days, currency, daysLimit]));
                 elementTextContent(elWithdrawn, template(txtWithdrawAmt,  [currency, withdrawn, limits.num_of_days]));
             } else {
-                if ((/^(costarica|japan)$/i).test(Client.get_value('landing_company_name'))) { // CR , JP
+                if ((/^(costarica|japan)$/i).test(Client.get('landing_company_name'))) { // CR , JP
                     txtWithdrawLim            = Content.localize().textWithdrawalLimits;
-                    txtWithdrawAmt             = Content.localize().textWithrawalAmount;
+                    txtWithdrawAmt            = Content.localize().textWithrawalAmount;
                     text_CurrentMaxWithdrawal = Content.localize().textCurrentMaxWithdrawal;
-                    currency                  = Client.get_value('currencies');
+                    currency                  = Client.get('currency') || Client.get('default_currency');
                 }
                 elementTextContent(elWithdrawLimit, template(txtWithdrawLim, [currency, daysLimit]));
                 elementTextContent(elWithdrawn, template(txtWithdrawAmt,  [currency, withdrawn]));
@@ -55,7 +55,7 @@ const LimitsWS = (function() {
         document.getElementById('withdrawal-title').setAttribute('style', 'display:none');
         document.getElementById('limits-title').setAttribute('style', 'display:none');
         const errorElement = document.getElementsByClassName('notice-msg')[0];
-        if ((error && error.code === 'FeatureNotAvailable' && Client.get_boolean('is_virtual')) || Client.get_boolean('is_virtual')) {
+        if ((error && error.code === 'FeatureNotAvailable' && Client.get('is_virtual')) || Client.get('is_virtual')) {
             elementInnerHtml(errorElement, Content.localize().featureNotRelevantToVirtual);
         } else if (error && error.message) {
             elementInnerHtml(errorElement, error.message);

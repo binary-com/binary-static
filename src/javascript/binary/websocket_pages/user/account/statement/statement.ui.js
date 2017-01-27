@@ -30,7 +30,7 @@ const StatementUI = (function() {
         ];
 
         const jpClient = japanese_client(),
-            currency = Client.get_value('currency');
+            currency = Client.get('currency');
 
         header[6] += (jpClient || !currency ? '' : ' (' + currency + ')');
 
@@ -49,7 +49,7 @@ const StatementUI = (function() {
     };
 
     const createStatementRow = function(transaction) {
-        const statement_data = Statement.getStatementData(transaction, Client.get_value('currency'), japanese_client());
+        const statement_data = Statement.getStatementData(transaction, Client.get('currency'), japanese_client());
         allData.push($.extend({}, statement_data, {
             action: localize(statement_data.action),
             desc  : localize(statement_data.desc),
@@ -101,7 +101,7 @@ const StatementUI = (function() {
     const exportCSV = function() {
         downloadCSV(
             Statement.generateCSV(allData, japanese_client()),
-            'Statement_' + Client.get_value('loginid') + '_latest' + $('#rows_count').text() + '_' +
+            'Statement_' + Client.get('loginid') + '_latest' + $('#rows_count').text() + '_' +
                 toJapanTimeIfNeeded(window.time).replace(/\s/g, '_').replace(/:/g, '') + '.csv');
     };
 
