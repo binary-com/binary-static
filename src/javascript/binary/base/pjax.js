@@ -143,6 +143,9 @@ const init_pjax = function () {
     }
 };
 
+// TODO: remove or fix this function
+// find all instances with window.location.href
+// and replace them with the fixed function
 const load_with_pjax = function(new_url) {
     if (url.is_in(new Url(new_url))) {
         return;
