@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-12 18:45+0000\n"
+"PO-Revision-Date: 2017-01-27 12:51+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>"
+"\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.11-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -269,35 +271,23 @@ msgstr "Działania charytatywne %1 wspierają małe organizacje charytatywne i n
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(minimalny czas trwania, na przykład minimum 15 sekund)min"
 
-#, fuzzy
-#| msgid "$100,000 - $250,000"
 msgid "&#36;100,000 - &#36;250,000"
-msgstr "100 000 $ – 250 000 $"
+msgstr "100 000 &#36; – 250 000 &#36;"
 
-#, fuzzy
-#| msgid "$100,000 - $500,000"
 msgid "&#36;100,001 - &#36;500,000"
-msgstr "100 000 $ – 500 000 $"
+msgstr "100 000 &#36; – 500 000 &#36;"
 
-#, fuzzy
-#| msgid "$25,000 - $100,000"
 msgid "&#36;25,000 - &#36;50,000"
-msgstr "25 000 $ – 100 000 $"
+msgstr "25 000 &#36; – 100 000 &#36;"
 
-#, fuzzy
-#| msgid "$250,000 - $1,000,000"
 msgid "&#36;250,001 - &#36;500,000"
-msgstr "250 000 $ – 1 000 000 $"
+msgstr "250 000 &#36; – 1 000 000 &#36;"
 
-#, fuzzy
-#| msgid "$250,000 - $1,000,000"
 msgid "&#36;50,001 - &#36;100,000"
-msgstr "250 000 $ – 1 000 000 $"
+msgstr "250 000 &#36; – 1 000 000 &#36;"
 
-#, fuzzy
-#| msgid "$250,000 - $1,000,000"
 msgid "&#36;500,001 - &#36;1,000,000"
-msgstr "250 000 $ – 1 000 000 $"
+msgstr "250 000 &#36; – 1 000 000 &#36;"
 
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 to jeden z naszych najbardziej zaufanych partnerów, z którym współpracujemy od wielu lat.&#8221;"
@@ -781,10 +771,8 @@ msgstr "Chęć pracy w systemie Linux i z wykorzystaniem platform typu open-sour
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Aktywne podejście do rozwiązywania problemów i zapewniania rozwiązań dla naszych klientów"
 
-#, fuzzy
-#| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
-msgstr "Skan rachunku za media lub wyciągu bankowego (z ostatnich 3 miesięcy)."
+msgstr "Skan rachunku za media lub wyciągu bankowego (z ostatnich 3 miesięcy)"
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
 msgstr "Skan Twojego paszportu, prawa jazdy (czasowego lub normalnego) lub dowodu osobistego z Twoim imieniem i nazwiskiem oraz datą urodzenia. Dokument musi być ważny co najmniej 6 miesięcy od daty przesłania nam jego skanu."
@@ -3501,8 +3489,6 @@ msgstr "Investment Solicitation Policy"
 msgid "Investment trust"
 msgstr "Investment trust"
 
-#, fuzzy
-#| msgid "Investments & Dividends"
 msgid "Investments &amp; Dividends"
 msgstr "Inwestycje i dywidenda"
 
@@ -4118,15 +4104,11 @@ msgstr "Zgodność z przepisami"
 msgid "Legal Compliance"
 msgstr "Zgodność z prawem"
 
-#, fuzzy
-#| msgid "Less than $100,000"
 msgid "Less than &#36;100,000"
-msgstr "Mniej niż 100 000 $"
+msgstr "Mniej niż 100 000 &#36;"
 
-#, fuzzy
-#| msgid "Less than $25,000"
 msgid "Less than &#36;25,000"
-msgstr "Mniej niż 25 000 $"
+msgstr "Mniej niż 25 000 &#36;"
 
 msgid "Less than 1 million JPY"
 msgstr "Less than 1 million JPY"
@@ -4800,15 +4782,11 @@ msgstr "Nasze osiągnięcia"
 msgid "Our trading screen is simple to use:"
 msgstr "Nasz ekran do handlowania jest prosty w obsłudze:"
 
-#, fuzzy
-#| msgid "Over $1,000,000"
 msgid "Over &#36;1,000,000"
-msgstr "Ponad 1 000 000 $"
+msgstr "Ponad 1 000 000 &#36;"
 
-#, fuzzy
-#| msgid "Over $500,001"
 msgid "Over &#36;500,001"
-msgstr "Ponad 500 001 $"
+msgstr "Ponad 500 001 &#36;"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "Ponad milion zarejestrowanych kont na całym świecie"
@@ -6694,10 +6672,10 @@ msgstr "Do"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "Aby aplikować, prześlij swoje CV i list motywacyjny na <span id='hr_contact_eaddress'></span>."
 
-#, fuzzy
-#| msgid "To authenticate your account, kindly email the following to %1"
 msgid "To authenticate your account, kindly email the following to %1:"
-msgstr "Aby uwierzytelnić konto, proszę przesłać do %1 drogą e-mailową dokumenty wymienione poniżej"
+msgstr ""
+"Aby uwierzytelnić konto, proszę przesłać do %1 drogą e-mailową dokumenty "
+"wymienione poniżej:"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
 msgstr "Aby uwierzytelnić konto, proszę przesłać dokumenty wymienione poniżej na adres e-mail: <a href=\"mailto:%1\">%1</a>"
@@ -7041,8 +7019,6 @@ msgstr "Widok"
 msgid "View Details"
 msgstr "Zobacz szczegóły"
 
-#, fuzzy
-#| msgid "View statement"
 msgid "View Statement"
 msgstr "Zobacz oświadczenie"
 
@@ -7823,10 +7799,8 @@ msgstr "Sekcja Kasjer została zablokowana na Twoją prośbę - jeśli chcesz j�
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "Sekcja Kasjer została zablokowana na Twoją prośbę - jeśli chcesz ją odblokować, prosimy o podanie hasła."
 
-#, fuzzy
-#| msgid "Your settings have been updated successfully."
 msgid "Your changes have been updated successfully."
-msgstr "Twoje ustawienia zostały uaktualnione."
+msgstr "Zmiany zostały wprowadzone."
 
 msgid "Your changes have been updated."
 msgstr "Twoje zmiany zostały wprowadzone."
@@ -8290,10 +8264,8 @@ msgstr "{JAPAN ONLY}Binary K.K. Customer Account"
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Binary K. K."
 msgid "{JAPAN ONLY}Binary.com page title"
-msgstr "{JAPAN ONLY}Binary K. K."
+msgstr "{JAPAN ONLY}Binary.com page title"
 
 msgid "{JAPAN ONLY}Branch"
 msgstr "{JAPAN ONLY}Branch"
@@ -9053,6 +9025,8 @@ msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to 
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 msgstr ""
+"{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access "
+"Your Real-Money Account."
 
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
