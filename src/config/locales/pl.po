@@ -33,18 +33,6 @@ msgstr "„Współpracuję z wieloma firmami partnerskimi, ale ta jest z nich na
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "„Operator zewnętrzny\" to strona trzecia (niepowiązana z firmą), która udostępnia funkcje za pośrednictwem API %1."
 
-msgid "$100,000 - $250,000"
-msgstr "100 000 $ – 250 000 $"
-
-msgid "$100,000 - $500,000"
-msgstr "100 000 $ – 500 000 $"
-
-msgid "$25,000 - $100,000"
-msgstr "25 000 $ – 100 000 $"
-
-msgid "$250,000 - $1,000,000"
-msgstr "250 000 $ – 1 000 000 $"
-
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%2 %1 zostało odjęte z Twojego konta wirtualnego %3"
 
@@ -280,6 +268,36 @@ msgstr "Działania charytatywne %1 wspierają małe organizacje charytatywne i n
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(minimalny czas trwania, na przykład minimum 15 sekund)min"
+
+#, fuzzy
+#| msgid "$100,000 - $250,000"
+msgid "&#36;100,000 - &#36;250,000"
+msgstr "100 000 $ – 250 000 $"
+
+#, fuzzy
+#| msgid "$100,000 - $500,000"
+msgid "&#36;100,001 - &#36;500,000"
+msgstr "100 000 $ – 500 000 $"
+
+#, fuzzy
+#| msgid "$25,000 - $100,000"
+msgid "&#36;25,000 - &#36;50,000"
+msgstr "25 000 $ – 100 000 $"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;250,001 - &#36;500,000"
+msgstr "250 000 $ – 1 000 000 $"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;50,001 - &#36;100,000"
+msgstr "250 000 $ – 1 000 000 $"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;500,001 - &#36;1,000,000"
+msgstr "250 000 $ – 1 000 000 $"
 
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 to jeden z naszych najbardziej zaufanych partnerów, z którym współpracujemy od wielu lat.&#8221;"
@@ -3483,7 +3501,9 @@ msgstr "Investment Solicitation Policy"
 msgid "Investment trust"
 msgstr "Investment trust"
 
-msgid "Investments & Dividends"
+#, fuzzy
+#| msgid "Investments & Dividends"
+msgid "Investments &amp; Dividends"
 msgstr "Inwestycje i dywidenda"
 
 msgid "Investor Compensation Scheme"
@@ -4098,10 +4118,14 @@ msgstr "Zgodność z przepisami"
 msgid "Legal Compliance"
 msgstr "Zgodność z prawem"
 
-msgid "Less than $100,000"
+#, fuzzy
+#| msgid "Less than $100,000"
+msgid "Less than &#36;100,000"
 msgstr "Mniej niż 100 000 $"
 
-msgid "Less than $25,000"
+#, fuzzy
+#| msgid "Less than $25,000"
+msgid "Less than &#36;25,000"
 msgstr "Mniej niż 25 000 $"
 
 msgid "Less than 1 million JPY"
@@ -4776,10 +4800,14 @@ msgstr "Nasze osiągnięcia"
 msgid "Our trading screen is simple to use:"
 msgstr "Nasz ekran do handlowania jest prosty w obsłudze:"
 
-msgid "Over $1,000,000"
+#, fuzzy
+#| msgid "Over $1,000,000"
+msgid "Over &#36;1,000,000"
 msgstr "Ponad 1 000 000 $"
 
-msgid "Over $500,001"
+#, fuzzy
+#| msgid "Over $500,001"
+msgid "Over &#36;500,001"
 msgstr "Ponad 500 001 $"
 
 msgid "Over 1 million registered accounts worldwide"
@@ -4958,9 +4986,6 @@ msgstr "Sprawdź pocztę e-mail, aby odzyskać token potrzebny do zresetowania h
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "Wybierz, w jakiej walucie chcesz zawrzeć transakcję."
-
-msgid "Please complete the following financial assessment form before continuing."
-msgstr "Zanim przejdziesz dalej wypełnij poniższy formularz oceny sytuacji finansowej."
 
 msgid "Please confirm the trade on your statement before proceeding."
 msgstr "Aby przejść dalej, proszę potwierdzić transakcję w sekcji Stan konta."
@@ -7798,6 +7823,11 @@ msgstr "Sekcja Kasjer została zablokowana na Twoją prośbę - jeśli chcesz j�
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "Sekcja Kasjer została zablokowana na Twoją prośbę - jeśli chcesz ją odblokować, prosimy o podanie hasła."
 
+#, fuzzy
+#| msgid "Your settings have been updated successfully."
+msgid "Your changes have been updated successfully."
+msgstr "Twoje ustawienia zostały uaktualnione."
+
 msgid "Your changes have been updated."
 msgstr "Twoje zmiany zostały wprowadzone."
 
@@ -7806,9 +7836,6 @@ msgstr "Twoim klientom z pewnością spodoba się platforma handlowa %1, gdyż o
 
 msgid "Your current balance is"
 msgstr "Obecnie Twoje saldo wynosi"
-
-msgid "Your details have been updated."
-msgstr "Twoje dane zostały uaktualnione."
 
 msgid "Your funds are safe"
 msgstr "Twoje środki są bezpieczne"
@@ -7848,9 +7875,6 @@ msgstr "Wiesz, jakie jest ryzyko"
 
 msgid "Your session duration limit will end in %1 seconds."
 msgstr "Limit czasu sesji zakończy się za %1 s."
-
-msgid "Your settings have been updated successfully."
-msgstr "Twoje ustawienia zostały uaktualnione."
 
 msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
 msgstr "Twój token wygasł. Kliknij <a class=\"pjaxload\" href=\"%1\">tutaj</a>, aby rozpocząć proces weryfikacyjny ponownie."
@@ -8265,6 +8289,11 @@ msgstr "{JAPAN ONLY}Binary K.K. Customer Account"
 
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Binary K. K."
+msgid "{JAPAN ONLY}Binary.com page title"
+msgstr "{JAPAN ONLY}Binary K. K."
 
 msgid "{JAPAN ONLY}Branch"
 msgstr "{JAPAN ONLY}Branch"
@@ -9135,6 +9164,12 @@ msgstr "Dane konta"
 
 msgid "Terms and Conditions Approval"
 msgstr "Akceptacja regulaminu"
+
+#~ msgid "Please complete the following financial assessment form before continuing."
+#~ msgstr "Zanim przejdziesz dalej wypełnij poniższy formularz oceny sytuacji finansowej."
+
+#~ msgid "Your details have been updated."
+#~ msgstr "Twoje dane zostały uaktualnione."
 
 #~ msgid "Logout"
 #~ msgstr "Wyloguj"
