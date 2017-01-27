@@ -143,6 +143,9 @@ const init_pjax = function () {
     }
 };
 
+// TODO: remove or fix this function
+// find all instances with window.location.href
+// and replace them with the fixed function
 const load_with_pjax = function(new_url) {
     if (url.is_in(new Url(new_url))) {
         return;
@@ -184,7 +187,7 @@ onLoad.queue(GTM.push_data_layer);
 onLoad.queue(function () {
     page.on_load();
     $('#logo').on('click', function() {
-        load_with_pjax(url_for(Client.is_logged_in() ? japanese_client() ? 'multi_barriers_trading' : 'trading' : ''));
+        window.location.href = url_for(Client.is_logged_in() ? japanese_client() ? 'multi_barriers_trading' : 'trading' : '');
     });
     $('#btn_login').on('click', function(e) {
         e.preventDefault();
