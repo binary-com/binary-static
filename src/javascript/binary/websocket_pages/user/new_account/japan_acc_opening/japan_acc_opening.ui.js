@@ -31,8 +31,6 @@ const JapanAccOpeningUI = (function () {
             window.accountErrorCounter++;
         }
 
-        ValidAccountOpening.checkDate(elementObj.dobdd, elementObj.dobmm, elementObj.dobyy, errorObj.dobdd);
-
         if (!/^\d{3}-\d{4}$/.test(elementObj.address_postcode.value)) {
             errorObj.address_postcode.innerHTML = localize('Please follow the pattern 3 numbers, a dash, followed by 4 numbers.');
             Validate.displayErrorMessage(errorObj.address_postcode);
@@ -60,6 +58,10 @@ const JapanAccOpeningUI = (function () {
             Validate.displayErrorMessage(errorObj.hedge_asset_amount);
             window.accountErrorCounter++;
         }
+
+        ValidAccountOpening.checkDate(elementObj.dobdd, elementObj.dobmm, elementObj.dobyy, errorObj.dobdd);
+        ValidAccountOpening.checkAddress1(elementObj.address_line_1, errorObj.address_line_2);
+        ValidAccountOpening.checkAddress2(elementObj.address_line_1, errorObj.address_line_2);
 
         const optional_fields = ['address_line_2'];
         checkRequiredInputs(elementObj, errorObj, optional_fields);

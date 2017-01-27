@@ -25,6 +25,8 @@ const RealAccOpeningUI = (function() {
         ValidAccountOpening.checkTel(elementObj.phone, errorObj.phone);
         ValidAccountOpening.checkAnswer(elementObj.secret_answer, errorObj.secret_answer);
         ValidAccountOpening.checkCity(elementObj.address_city, errorObj.address_city);
+        ValidAccountOpening.checkAddress1(elementObj.address_line_1, errorObj.address_line_2);
+        ValidAccountOpening.checkAddress2(elementObj.address_line_1, errorObj.address_line_2);
         // we need to update address_state as it could be changes to input box now
         elementObj.address_state = document.getElementById('address_state');
         if (elementObj.address_state.nodeName === 'INPUT') {

@@ -16,6 +16,8 @@ const FinancialAccOpeningUI = (function() {
         ValidAccountOpening.checkLname(elementObj.last_name, errorObj.last_name);
         ValidAccountOpening.checkDate(elementObj.dobdd, elementObj.dobmm, elementObj.dobyy, errorObj.dobdd);
         ValidAccountOpening.checkPostcode(elementObj.address_postcode, errorObj.address_postcode);
+        ValidAccountOpening.checkAddress1(elementObj.address_line_1, errorObj.address_line_2);
+        ValidAccountOpening.checkAddress2(elementObj.address_line_1, errorObj.address_line_2);
 
         if (elementObj.residence.value === 'gb' && /^$/.test((elementObj.address_postcode.value).trim())) {
             if (selectorExists(errorObj.address_postcode)) {

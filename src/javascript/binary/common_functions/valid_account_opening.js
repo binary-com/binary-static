@@ -49,7 +49,8 @@ const ValidAccountOpening = (function() {
         space,
         hyphen,
         period,
-        apost;
+        apost,
+        comma;
 
     const initializeValues = function() {
         if (!letters) {
@@ -59,6 +60,7 @@ const ValidAccountOpening = (function() {
             hyphen  = Content.localize().textHyphen;
             period  = Content.localize().textPeriod;
             apost   = Content.localize().textApost;
+            comma   = Content.localize().textComma;
         }
     };
 
@@ -98,6 +100,22 @@ const ValidAccountOpening = (function() {
             initializeValues();
             elementInnerHtml(errorPostcode, Content.errorMessage('reg', [letters, numbers, hyphen]));
             Validate.displayErrorMessage(errorPostcode);
+            window.accountErrorCounter++;
+        }
+    };
+    const checkAddress1 = function(address1, errorAddress1) {
+        if (/^[^~!#$%^&*)(_=+\[}{\]\\\"\;\:\?\><\|]+$/.test(address1.value)) {
+            initializeValues();
+            elementInnerHtml(errorAddress1, Content.errorMessage('reg', [letters, numbers, space, period, comma, '- . / @ \' ']));
+            Validate.displayErrorMessage(errorAddress1);
+            window.accountErrorCounter++;
+        }
+    };
+    const checkAddress2 = function(address2, errorAddress2) {
+        if (address2.value !== '' && /^[^~!#$%^&*)(_=+\[}{\]\\\"\;\:\?\><\|]+$/.test(address2.value)) {
+            initializeValues();
+            elementInnerHtml(errorAddress2, Content.errorMessage('reg', [letters, numbers, space, period, comma, '- . / @ \' ']));
+            Validate.displayErrorMessage(errorAddress2);
             window.accountErrorCounter++;
         }
     };
@@ -148,6 +166,8 @@ const ValidAccountOpening = (function() {
         checkLname    : checkLname,
         checkDate     : checkDate,
         checkPostcode : checkPostcode,
+        checkAddress1 : checkAddress1,
+        checkAddress2 : checkAddress2,
         checkTel      : checkTel,
         checkAnswer   : checkAnswer,
         checkCity     : checkCity,
