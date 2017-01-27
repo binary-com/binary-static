@@ -60,8 +60,8 @@ const JapanAccOpeningUI = (function () {
         }
 
         ValidAccountOpening.checkDate(elementObj.dobdd, elementObj.dobmm, elementObj.dobyy, errorObj.dobdd);
-        ValidAccountOpening.checkAddress1(elementObj.address_line_1, errorObj.address_line_2);
-        ValidAccountOpening.checkAddress2(elementObj.address_line_1, errorObj.address_line_2);
+        ValidAccountOpening.checkAddress1(elementObj.address_line_1, errorObj.address_line_1);
+        ValidAccountOpening.checkAddress2(elementObj.address_line_2, errorObj.address_line_2);
 
         const optional_fields = ['address_line_2'];
         checkRequiredInputs(elementObj, errorObj, optional_fields);
