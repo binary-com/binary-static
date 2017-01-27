@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-01-27 06:39+0000\n"
 "Last-Translator: Masanari Higashiyama <higashiyama@regentmarkets.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,18 +33,6 @@ msgstr "「様々なアフィリエイトプログラムに加入してきまし
 
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "「サードパーティプロバイダー」とは%1 APIを使用して機能を利用可能にするサードパーティ（非提携）エンティティを意味します。"
-
-msgid "$100,000 - $250,000"
-msgstr "$100,000 - $250,000"
-
-msgid "$100,000 - $500,000"
-msgstr "$100,000 - $500,000"
-
-msgid "$25,000 - $100,000"
-msgstr "$25,000 - $100,000"
-
-msgid "$250,000 - $1,000,000"
-msgstr "$250,000 - $1,000,000"
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2をデモ口座%3に付与されました"
@@ -286,6 +273,36 @@ msgstr ""
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(最短期間, 例： 最短 15 秒）分"
+
+#, fuzzy
+#| msgid "$100,000 - $250,000"
+msgid "&#36;100,000 - &#36;250,000"
+msgstr "$100,000 - $250,000"
+
+#, fuzzy
+#| msgid "$100,000 - $500,000"
+msgid "&#36;100,001 - &#36;500,000"
+msgstr "$100,000 - $500,000"
+
+#, fuzzy
+#| msgid "$25,000 - $100,000"
+msgid "&#36;25,000 - &#36;50,000"
+msgstr "$25,000 - $100,000"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;250,001 - &#36;500,000"
+msgstr "$250,000 - $1,000,000"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;50,001 - &#36;100,000"
+msgstr "$250,000 - $1,000,000"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;500,001 - &#36;1,000,000"
+msgstr "$250,000 - $1,000,000"
 
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;Binary.comは最も歴史があり、信頼できるパートナーです。長年に渡り協業して参りました。&#8221;"
@@ -1078,11 +1095,7 @@ msgid "Any failure on your part to maintain the security of any security devices
 msgstr "%1 API上の、または関連するセキュリティデバイス、手順においてお客さま自身によって引き起こされた安全性維持への障害；"
 
 msgid "Any form of Spam will result in your account being placed under review and all funds due being withheld pending an investigation into your account. You need to be aware that %1 is liable to incur expenses in dealing with Spam generated mail and these same expenses will be deducted from your account. In this instance the amount determined will be fair and deemed final and acceptable based on good faith and such amount will be collectable by law and deemed to have been accepted by yourself as fair and reasonable and as agreed to by registration as an affiliate of %1."
-msgstr ""
-"スパム行為が検出された場合は、アフィリエイト口座の調査が実施され、アフィリエイト口座内の資金の支払いも保留とします。アフィリエイト会員は、Binary.c"
-"omがスパム行為への対策費用を負担する立場であり、そしてその対策費用と同額の額がアフィリエイト会員の口座から差し引かれることを十分に理解していただく必要が"
-"あります。対策費用の総額は、誠意に基づく平等な価格であり、法的に回収されます。これらの条件をBinary.comのアフィリエイト会員に登録された時点で公平"
-"かつ妥当であると承諾されたものとします。"
+msgstr "スパム行為が検出された場合は、アフィリエイト口座の調査が実施され、アフィリエイト口座内の資金の支払いも保留とします。アフィリエイト会員は、Binary.comがスパム行為への対策費用を負担する立場であり、そしてその対策費用と同額の額がアフィリエイト会員の口座から差し引かれることを十分に理解していただく必要があります。対策費用の総額は、誠意に基づく平等な価格であり、法的に回収されます。これらの条件をBinary.comのアフィリエイト会員に登録された時点で公平かつ妥当であると承諾されたものとします。"
 
 msgid "Any information given on these pages and/or emails or newsletters sent by the company related thereto, is not intended as financial or investment advice and the Company will not accept any liability in this respect, nor will the Company accept any responsibility for the accuracy or comprehensiveness of the information provided on this site."
 msgstr "当社サイトの全てのページ、メール、ニュースレターなどに掲載された情報は全て、金融または投資の助言を意図しているものではなく、当社はこの点においていかなる責任も負わず、当サイトに掲載されている情報の精度、網羅性に対する責任も負いません。"
@@ -1878,9 +1891,7 @@ msgid "Compliance with and Amendments to These Terms"
 msgstr "本規約の遵守と改定"
 
 msgid "Comply with the applicable laws, rules, and regulations (including, but not limited to, advertising, data protection and privacy laws, rules, and regulations) of the jurisdiction(s) in which you operate or target your business."
-msgstr ""
-"ビジネスターゲットまたは運営上で適用される法律、ルール、規制（広告、データ保護、、プライバシーに関する法令、ルール、規制を含むが、これに限定されない）を遵"
-"守します。"
+msgstr "ビジネスターゲットまたは運営上で適用される法律、ルール、規制（広告、データ保護、、プライバシーに関する法令、ルール、規制を含むが、これに限定されない）を遵守します。"
 
 msgid "Computer system and method for speculating on a financial market"
 msgstr "金融市場を推測するコンピュータシステムとその方法"
@@ -3148,10 +3159,7 @@ msgid "If all that sounds a bit daunting, you're right. But it's how we make sur
 msgstr "当社の要求水準に厳しい印象を持たれるかもしれませんが、人財を厳選するためにこれらのステップを採用しております。"
 
 msgid "If an error is made in the calculation of your share of the revenue share, the Company reserves the right to correct such calculation at any time, and to reclaim from you any overpayment made by the Company to you (including, without limitation, by way of reducing future payments earned, revenue to cover any processed chargebacks) before you can start earning revenue again. In special cases, the Company reserves the right to exclude revenue sharing  on promotional funds deposited into the client's account by the Company."
-msgstr ""
-"アフィリエイト報酬算出の際にエラーが発生した場合は、当社は常にそのような誤った計算値を修正し、過払いとなった金額を回収する権利を有し、回収し終わるまでアフ"
-"ィリエイト報酬から引き落とし続けます。尚、場合によっては当社がアフィリエイト会員の口座に当社が提供したプロモーション資金の利益共有を停止する権利も当社は有"
-"します。"
+msgstr "アフィリエイト報酬算出の際にエラーが発生した場合は、当社は常にそのような誤った計算値を修正し、過払いとなった金額を回収する権利を有し、回収し終わるまでアフィリエイト報酬から引き落とし続けます。尚、場合によっては当社がアフィリエイト会員の口座に当社が提供したプロモーション資金の利益共有を停止する権利も当社は有します。"
 
 msgid "If any provision of these Terms is found to be illegal, void, or unenforceable, the unenforceable provision will be modified so as to render it enforceable to the maximum extent possible in order to effect the intention of the provision; if a term cannot be so modified, it will be severed and the remaining provisions of these Terms will not be affected in any way."
 msgstr "規約のいずれかの条項が違法、無効、または執行不能であることが判明した場合、条項の極意に影響があるため、可能な最大限の範囲で法的強制力を与えるよう執行不能である条項は修正されます。"
@@ -3398,10 +3406,7 @@ msgid "In the event of any conflict between the content in this document and the
 msgstr "本書と上記の文書との間に矛盾がある場合、本書がお客さまの%1 APIの使用を制御します。本規約の条項に同意されない場合は、%1 APIへのアクセス及び使用をしないでください。"
 
 msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this Program. The Affiliate hereby irrevocably waives its rights to, and shall indemnify the Company and any member of the Binary group of companies for, any claim or demand made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, employees or against the %1 website in respect of such action taken by the Company."
-msgstr ""
-"上記の規定のいずれかに違反したアフィリエイト会員を当社が把握している場合、当社は本契約または適用される法律の下、その他の権利または利用できる救済策に加えて"
-"、本プログラムにアクセスして該当アフィリエイト会員をすぐにブロックする権利を有します。アフィリエイト会員は、ここに取消不能のその権利を放棄し、当社またはB"
-"inaryグループ会社の取締役、役員、株主、従業員または当社ウェブサイトに対するいかなる請求または要求への免責保証を与えます。"
+msgstr "上記の規定のいずれかに違反したアフィリエイト会員を当社が把握している場合、当社は本契約または適用される法律の下、その他の権利または利用できる救済策に加えて、本プログラムにアクセスして該当アフィリエイト会員をすぐにブロックする権利を有します。アフィリエイト会員は、ここに取消不能のその権利を放棄し、当社またはBinaryグループ会社の取締役、役員、株主、従業員または当社ウェブサイトに対するいかなる請求または要求への免責保証を与えます。"
 
 msgid "In the unlikely event of BIEL suffering an investment default and not being able to meet its obligations, BIEL is a member of the Malta Investor Compensation Scheme which covers the first €20,000 of any claim. Whether you are able to claim depends on the type of business and your personal circumstances."
 msgstr "万一BIELが投資デフォルトを被ったり、その義務を果たせない場合、BIELはマルタ投資家補償機構（the Malta Investor Compensation Scheme）のメンバーになるので初期クレームの€20,000 をカバーします。クレームをできるかどうかはビジネスタイプや個人の状況に準じます。"
@@ -3525,7 +3530,9 @@ msgstr "投資勧誘方針"
 msgid "Investment trust"
 msgstr "投資信託"
 
-msgid "Investments & Dividends"
+#, fuzzy
+#| msgid "Investments & Dividends"
+msgid "Investments &amp; Dividends"
 msgstr "投資と配当"
 
 msgid "Investor Compensation Scheme"
@@ -4158,10 +4165,14 @@ msgstr "法務・規制コンプライアンス"
 msgid "Legal Compliance"
 msgstr "法令順守"
 
-msgid "Less than $100,000"
+#, fuzzy
+#| msgid "Less than $100,000"
+msgid "Less than &#36;100,000"
 msgstr "$100,000未満"
 
-msgid "Less than $25,000"
+#, fuzzy
+#| msgid "Less than $25,000"
+msgid "Less than &#36;25,000"
 msgstr "$25,000未満"
 
 msgid "Less than 1 million JPY"
@@ -4844,10 +4855,14 @@ msgstr "当社の実績について"
 msgid "Our trading screen is simple to use:"
 msgstr "取引方法は次の5つの取引条件を選択・指定："
 
-msgid "Over $1,000,000"
+#, fuzzy
+#| msgid "Over $1,000,000"
+msgid "Over &#36;1,000,000"
 msgstr "$1,000,000以上"
 
-msgid "Over $500,001"
+#, fuzzy
+#| msgid "Over $500,001"
+msgid "Over &#36;500,001"
 msgstr "$500,001以上"
 
 msgid "Over 1 million registered accounts worldwide"
@@ -4884,9 +4899,7 @@ msgid "Ownership and content of the %1 website remains our respective properties
 msgstr "%1サイトの所有権とコンテンツは当社に属し、規約を承諾している間はどのような手段であれアフィリエイト会員に譲与されることはありません。"
 
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
-msgstr ""
-"アフィリエイト会員は、自身が保有するプロモーションサイトの所有権とコンテンツに責任があります。プロモーションサイトの開発、運用、維持、そしてサイト上に存在"
-"する全てのデータに対して責任があります。アフィリエイト会員は、それらに関する請求、損害賠償、費用（訴訟費用など）を当社に対して求めないことを確証します。"
+msgstr "アフィリエイト会員は、自身が保有するプロモーションサイトの所有権とコンテンツに責任があります。プロモーションサイトの開発、運用、維持、そしてサイト上に存在する全てのデータに対して責任があります。アフィリエイト会員は、それらに関する請求、損害賠償、費用（訴訟費用など）を当社に対して求めないことを確証します。"
 
 msgid "PM"
 msgstr "午後"
@@ -5028,9 +5041,6 @@ msgstr "パスワードの再設定にはワンタイムパスワードが必要
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "日本円にてお手続きできます"
-
-msgid "Please complete the following financial assessment form before continuing."
-msgstr "続行される前に下記財務評価書にご記入をお願いします。"
 
 msgid "Please confirm the trade on your statement before proceeding."
 msgstr "続行する前に、お客さまの取引明細書をご確認ください。"
@@ -5789,15 +5799,10 @@ msgid "Should a disruption occur in the data feeds which cannot be readily recti
 msgstr "当社にて容易に矯正できないような干渉がデータフィードに発生した場合、当社にはトレードの購入価格を返金する権利があります。"
 
 msgid "Should any client for whom you are receiving commissions process a chargeback, the Company reserves the right to deduct the commission portion of the chargeback from the total balance due to you for the current month. Should this deduction of the accumulated revenue exceed your current amount due, your balance will then revert to a negative balance, and you will have to earn revenue to cover the chargeback before you can start earning revenue again. The Company reserves the right, in special cases, to exclude revenue sharing  on promotional funds deposited into the client's account by the Company."
-msgstr ""
-"アフィリエイト報酬を得ているアフィリエイト会員がチャージバックを行った場合、チャージッバック請求相当額を該当月のアフィリエイト報酬から差し引く権利を当社は"
-"有します。このチャージバック費用がアフィリエイト報酬収入でカバーできない場合は、マイナス分として計上され、チャージバック費用が返金されるまでアフィリエイト"
-"報酬から差し引きされます。尚、場合によっては当社がアフィリエイト会員の口座に当社が提供したプロモーションコードを削除する権利も当社は有します。"
+msgstr "アフィリエイト報酬を得ているアフィリエイト会員がチャージバックを行った場合、チャージッバック請求相当額を該当月のアフィリエイト報酬から差し引く権利を当社は有します。このチャージバック費用がアフィリエイト報酬収入でカバーできない場合は、マイナス分として計上され、チャージバック費用が返金されるまでアフィリエイト報酬から差し引きされます。尚、場合によっては当社がアフィリエイト会員の口座に当社が提供したプロモーションコードを削除する権利も当社は有します。"
 
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
-msgstr ""
-"万が一、スパム行為への対策費用がアフィリエイト会員のアフィリエイト口座から回収できない場合、当社は別途回収方法を調査する権利を有します。例として、対策費用"
-"を全て回収できるまでアフィリエイト口座に発生した報酬を差し引くなどという方法が適用されます。"
+msgstr "万が一、スパム行為への対策費用がアフィリエイト会員のアフィリエイト口座から回収できない場合、当社は別途回収方法を調査する権利を有します。例として、対策費用を全て回収できるまでアフィリエイト口座に発生した報酬を差し引くなどという方法が適用されます。"
 
 msgid "Show payment agents for:"
 msgstr "決済サービスを表示する"
@@ -6207,9 +6212,7 @@ msgid "The Company is not under any obligation of confidentiality with respect t
 msgstr "当社はコントリビューションにおいて守秘義務を負いません。"
 
 msgid "The Company makes no claims that the %1 website will be uninterrupted or provide an error free service, and will not be liable for the consequences of any such errors or interruptions."
-msgstr ""
-"当社はBinary.comウェブサイトにおいてサービスの中断やエラーが全く起こらないサービスの提供を保証しているわけではありません。また、そのようなサービ"
-"スのエラーや中断によって生じた事象に対する責任を当社は負いません。"
+msgstr "当社はBinary.comウェブサイトにおいてサービスの中断やエラーが全く起こらないサービスの提供を保証しているわけではありません。また、そのようなサービスのエラーや中断によって生じた事象に対する責任を当社は負いません。"
 
 msgid "The Company may change the commission structure at any time at its sole and absolute discretion. We will endeavour to ensure affiliates are notified when changes have been made to the commission structure."
 msgstr "当社は単独且つ絶対的な裁量でいつでも手数料形体系を変更することができます。手数料体系に変更があった場合は、アフィリエイト会員へ通知するよう努めます。"
@@ -6239,10 +6242,7 @@ msgid "The Company provides the %1 API on an \"as is\" and \"as available\" basi
 msgstr "当社は原則として「現状のまま (as is)」、「提供されているまま (as available)」で%1 APIを提供し、あらゆる明示的・黙示的保証をすることはありません。法律によって許される最大の限度で、当社は特定の目的、権原、データの正確性、非侵害のために商品性、適合性の黙示的保証を含む一切の保証または表明を放棄します。"
 
 msgid "The Company provides the %1 website on an “as is” and “as available” basis, and gives no warranty that the %1 website will be free of errors, or that errors will be corrected, or that our website is free of any third party interferences such as hackers or any other harmful components that arise outside of the Company's control."
-msgstr ""
-"当社は原則として「現状有姿 (as is)」、「提供されているまま (as available)」ウェブサイトを提供し、ハッカーまたは当社の管理外で発生し"
-"たその他有害なコンポーネントなどの第三者の干渉が当サイトには無いこと、エラーは発生しないこと、エラーは必ず修正されるということを保証しているわけではありま"
-"せん。"
+msgstr "当社は原則として「現状有姿 (as is)」、「提供されているまま (as available)」ウェブサイトを提供し、ハッカーまたは当社の管理外で発生したその他有害なコンポーネントなどの第三者の干渉が当サイトには無いこと、エラーは発生しないこと、エラーは必ず修正されるということを保証しているわけではありません。"
 
 msgid "The Company receives a complaint which could have involved the Alternate Dispute Resolution entity, or the Company believes that you, the Affiliate, is in breach of any laws, rules, and regulations that may be relevant or applicable to the jurisdiction(s) in which you operate or target your business;"
 msgstr "他の機関に関連した異議を受け取り、当社にてお客さまによる広告コードに関する違反行為を検出した場合、当社にはこの契約を終了させる権利があります。"
@@ -6276,21 +6276,13 @@ msgid "The Company shall have no liability arising from orders, investment decis
 msgstr "%1 APIで公開または設置された情報に基づいたサードパーティまたはサービス（金融商品および通貨を含む）の注文、投資判断、購入から生じた問題について当社は一切の責任を負いません。"
 
 msgid "The Company shall not be liable to you in contract, or otherwise (including liability for negligence) for any loss, whether direct or indirect, of the Affiliate's business, revenue or profits, anticipated savings, or wasted expenditure, corruption, or destruction of data or for any indirect or consequential loss whatsoever."
-msgstr ""
-"当社は直接的または間接的なアフィリエイト会員のビジネスの損失、収益または利益の損失、予想される貯蓄の損失、若しくは無駄な支出、データの破損、そしていかなる"
-"間接的損失に対して、契約上当社が責任あるいはその他（過失責任を含む）を追うことはありません。"
+msgstr "当社は直接的または間接的なアフィリエイト会員のビジネスの損失、収益または利益の損失、予想される貯蓄の損失、若しくは無駄な支出、データの破損、そしていかなる間接的損失に対して、契約上当社が責任あるいはその他（過失責任を含む）を追うことはありません。"
 
 msgid "The Company shall pay you the currently published percentage of net revenues (as detailed on the commission page of your affiliate account) received during the term of the Agreement. The affiliate commission payments due shall only be for bona fide client referrals and the Company reserves the right to disregard duplicate accounts or nominee accounts that the Company sees as non-bona fide clients, at its sole discretion."
-msgstr ""
-"契約期間中は、アフィリエイト口座に記述されている報酬率に基づいた報酬をアフィリエイト会員に支払います。アフィリエイト報酬は誠実な会員獲得行為にのみ支払われ"
-"、重複口座の保有または不誠実な行動が検知されたアフィリエイト会員に対しては、当社の判断で支払いを停止する権利を有します。"
+msgstr "契約期間中は、アフィリエイト口座に記述されている報酬率に基づいた報酬をアフィリエイト会員に支払います。アフィリエイト報酬は誠実な会員獲得行為にのみ支払われ、重複口座の保有または不誠実な行動が検知されたアフィリエイト会員に対しては、当社の判断で支払いを停止する権利を有します。"
 
 msgid "The Company shall provide you with statements accessible through an electronic system detailing the revenues generated by clients you have referred, if any, which have accrued to you over the course of the calendar month. Such statements shall be updated daily. At the end of a calendar month, the Company shall record your total share of Net Revenues, if any, during the previous calendar month. In the event that a revenue share in any calendar month is a negative amount, the Company shall be entitled but not obliged to carry forward and set off such negative amount against future revenue shares which would otherwise be payable to you. However, the Company shall also be entitled but not obliged to zerorise the negative balance that would otherwise be carried forward."
-msgstr ""
-"当社は獲得会員から得られた、未決済分データも含むアフィリエイト報酬に関する詳細データを当社のウェブサイトにて提供します。この詳細データは毎日更新されます。"
-"カレンダー末日に該当月の報酬データを算出します。（該当月以前の持ち越しデータが存在すればそれも加味します。）該当月の報酬がマイナスの値を記録した場合は、翌"
-"月にそのマイナス分が持ち越されます。マイナス分を上回るアフィリエイト報酬が発生した際にアフィリエイト報酬を受け取れるようになります。尚、当社はマイナス分を"
-"０として扱い、翌月以降に持ち越さない場合があります。"
+msgstr "当社は獲得会員から得られた、未決済分データも含むアフィリエイト報酬に関する詳細データを当社のウェブサイトにて提供します。この詳細データは毎日更新されます。カレンダー末日に該当月の報酬データを算出します。（該当月以前の持ち越しデータが存在すればそれも加味します。）該当月の報酬がマイナスの値を記録した場合は、翌月にそのマイナス分が持ち越されます。マイナス分を上回るアフィリエイト報酬が発生した際にアフィリエイト報酬を受け取れるようになります。尚、当社はマイナス分を０として扱い、翌月以降に持ち越さない場合があります。"
 
 msgid "The Company will not be liable in any way to any persons in the event of force majeure, or for the act of any Government or legal authority or for the failure of or damage or destruction to, its computer systems, data or records or any part thereof, or for delays, losses, errors or omissions resulting from the failure or mismanagement of any telecommunications or computer equipment or software. The Company shall not be responsible for any damages or losses deemed or alleged to have resulted from or been caused by this site or its content. This includes any client's use or misuse of its content, the inability of any client to connect with or use the site, delay in operations or transmission, failure of communication lines, or any errors or omissions in content."
 msgstr "当社は、不可抗力的な事象、政府や規制機関による行動、コンピュータシステム、データ、記録などへの損害や破壊、及び通信、コンピュータ設備またはソフトウェアに対する不備に起因するような遅延、損害、エラーや遺漏というような事象に対する責任は一切負うことはありません。当社は当社サイトやコンテンツから引き起こされたと推測、及び主張されるような損害に対して責任を負うことはありません。この取り決めにはお客さまの誤ったコンテンツのご利用方法、当社サイトへの接続の失敗、操作や送受信の遅延、通信の失敗、及びコンテンツへのあらゆるエラーや遺漏といった事象も含まれます。"
@@ -7402,9 +7394,7 @@ msgid "We reserve the right to modify, supplement, or replace these Terms at any
 msgstr "当社はこれら規約をいつでも変更、補完、置き換える権利を留保します。重大な変更は通知されます。%1 APIへのご登録または使用の継続は、変更への同意とみなされます。"
 
 msgid "We reserve the right to refuse your referrals' application to open an account (or to close their accounts), as deemed necessary, to comply with any requirements we may periodically establish and/or that may be required under applicable laws, rules, and regulations."
-msgstr ""
-"当社は適用される法律、規則、規制の下で定期的に確立するまたは/及び必要とされる要件を満たすうえで、獲得会員の口座開設（または口座の閉鎖）"
-"の申請を必要に応じて拒否できる権利を留保します 。"
+msgstr "当社は適用される法律、規則、規制の下で定期的に確立するまたは/及び必要とされる要件を満たすうえで、獲得会員の口座開設（または口座の閉鎖）の申請を必要に応じて拒否できる権利を留保します 。"
 
 msgid "We segregate and hold client funds in secure AAA-rated banks."
 msgstr "日証金信託銀行の信託口座にて、当社の資産とは区分して管理されています。"
@@ -7881,14 +7871,10 @@ msgid "You represent and warrant to the Company that, excluding the Content, you
 msgstr "コンテンツを除くあなたのアプリケーションに対する使用、再現、送信、コピー、公共での表示、公共での実行、配布に関する権利があなたにあること、及びアプリケーションの使用またはプロモーションはサードパーティの権利（例：著作権、特許権、商標権、プライバシーの権利、個人または法人のパブリシティー権または財産権）または適用できる規制、法律、アプリケーションが利用できる国の法律を侵害しないことを当社を代表し、保証します。"
 
 msgid "You represent, warrant, and undertake that you have obtained and shall maintain all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business."
-msgstr ""
-"アフィリエイト会員は管轄区域の規制当局の権限に基づいたいかなる法律、規則、規制の範囲内での運営に必要な全てのライセンスを保持し、同意を得ていることを表明し"
-"、保証し、約束します。"
+msgstr "アフィリエイト会員は管轄区域の規制当局の権限に基づいたいかなる法律、規則、規制の範囲内での運営に必要な全てのライセンスを保持し、同意を得ていることを表明し、保証し、約束します。"
 
 msgid "You represent, warrant, and undertake that your website or promotion shall contain no material which is defamatory, pornographic, unlawful, harmful, threatening, obscene, harassing, or racially, ethnically, or otherwise objectionable or discriminatory, violent, politically sensitive, or otherwise controversial or in breach of any third party rights and shall not link to any such material."
-msgstr ""
-"アフィリエイト会員は、自身のプロモーションサイト、またはプロモーション手法において、中傷的、猥褻、非合法、破壊的、脅迫的、卑猥、嫌がらせ、人種的、民族的、"
-"差別的、暴力的、政治的な話題を含めないこと、及び全ての第三者の権利を侵害しないことを保証し、そのような内容を含むコンテンツにリンクしないことも保証します。"
+msgstr "アフィリエイト会員は、自身のプロモーションサイト、またはプロモーション手法において、中傷的、猥褻、非合法、破壊的、脅迫的、卑猥、嫌がらせ、人種的、民族的、差別的、暴力的、政治的な話題を含めないこと、及び全ての第三者の権利を侵害しないことを保証し、そのような内容を含むコンテンツにリンクしないことも保証します。"
 
 msgid "You risk only your initial stake, and your stake never increases, even in gapping markets."
 msgstr "お客さまの負う取引の最大損失額は購入金額と同額であり、相場が変動しても損失リスクが増大することはありません。"
@@ -7906,10 +7892,7 @@ msgid "You shall discontinue your use of all prior versions of the %1 API in fav
 msgstr "改定版%1 APIに相当する%1旧バージョンの全使用を中止しなければいけません。改訂版%1 APIが旧バージョンへの互換性を即座に持たせることを目的としておりますが、当社がそれに関して保証をしているわけではありません。また、旧バージョンと改定バージョンの%1 APIの互換性により生じたお客さまへの全障害に関して、当社は一切の責任を負いません。"
 
 msgid "You shall indemnify on demand and hold the Company harmless from, and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses, loss of profit, and reasonable legal costs, if applicable), and liabilities suffered or incurred, directly, or indirectly, by the Company in consequence of any breach, non-performance, or non-observance by you of any of your obligations or warranties under this Agreement."
-msgstr ""
-"アフィリエイト会員はあらゆる損失、要求、苦情、損害賠償、費用（該当する場合、重大な損失、利益の損失、法的対応の費用やそれにまつわる付加価値税）など要求に応"
-"じた賠償を行う必要があり、本契約の下、アフィリエイト会員の義務または保証の違反、不履行、非遵守の結果直接的または間接的に被った若しくは発生した負債を当社に"
-"求めることはしません。"
+msgstr "アフィリエイト会員はあらゆる損失、要求、苦情、損害賠償、費用（該当する場合、重大な損失、利益の損失、法的対応の費用やそれにまつわる付加価値税）など要求に応じた賠償を行う必要があり、本契約の下、アフィリエイト会員の義務または保証の違反、不履行、非遵守の結果直接的または間接的に被った若しくは発生した負債を当社に求めることはしません。"
 
 msgid "You shall not develop and implement marketing, advertising, and promotional activities which infringe any applicable laws, rules, regulations, or codes of practice relating to marketing, advertising, and promotional activities applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business."
 msgstr ""
@@ -8031,6 +8014,11 @@ msgstr "お客様の入出金はリクエストによりロックしました。
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "お客様のキャッシャーはリクエストにより、ロックされました。 - 解除するにはパスワードをご入力ください。"
 
+#, fuzzy
+#| msgid "Your settings have been updated successfully."
+msgid "Your changes have been updated successfully."
+msgstr "設定が正しく更新されました。"
+
 msgid "Your changes have been updated."
 msgstr "変更が更新されました。"
 
@@ -8039,9 +8027,6 @@ msgstr "非常に広い範囲のニーズに合わせた最高水準の取引経
 
 msgid "Your current balance is"
 msgstr "お客さまの現在の残高はxxxです。"
-
-msgid "Your details have been updated."
-msgstr "お客さまの詳細が更新されました。"
 
 msgid "Your funds are safe"
 msgstr "資金は安全に管理されます"
@@ -8081,9 +8066,6 @@ msgstr "リスクが明確"
 
 msgid "Your session duration limit will end in %1 seconds."
 msgstr "お客様の取引継続時間制限は%1秒後に終了します。"
-
-msgid "Your settings have been updated successfully."
-msgstr "設定が正しく更新されました。"
 
 msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
 msgstr "ワンタイムパスワードの有効期限が切れています。再度、<a class=\"pjaxload\" href=\"%1\">「最初からやり直し」</a> をクリックしてワンタイムパスワードを発行して下さい。"
@@ -8170,8 +8152,7 @@ msgstr "アポストロフィ"
 msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading"
 msgstr ""
 "バイナリー株式会社、バイナリーオプション、外国為替、外国為替取引、オンライントレード、金融トレード、バイナリートレード、指標取引、指標トレード、\n"
-"外国為替トレード、コモディティトレード、バイナリーオプション戦略、バイナリーブローカー、バイナリー取引、バイナリーオプリョン取引システム、バイナリー戦略、"
-"金融、株、投資、トレード"
+"外国為替トレード、コモディティトレード、バイナリーオプション戦略、バイナリーブローカー、バイナリー取引、バイナリーオプリョン取引システム、バイナリー戦略、金融、株、投資、トレード"
 
 msgid "comma"
 msgstr "読点"
@@ -8520,6 +8501,11 @@ msgstr "バイナリー（カ）コキャクグチ"
 
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "売り手の損失が限定されておりますが、バイナリーオプションはバニラオプションに比べ、ローリスクハイリターンな取引となります。"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Binary K. K."
+msgid "{JAPAN ONLY}Binary.com page title"
+msgstr "Binary株式会社"
 
 msgid "{JAPAN ONLY}Branch"
 msgstr "支店名"
@@ -9404,6 +9390,12 @@ msgstr "ご口座の詳細情報"
 
 msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
+
+#~ msgid "Please complete the following financial assessment form before continuing."
+#~ msgstr "続行される前に下記財務評価書にご記入をお願いします。"
+
+#~ msgid "Your details have been updated."
+#~ msgstr "お客さまの詳細が更新されました。"
 
 #~ msgid "Logout"
 #~ msgstr "ログアウト"
