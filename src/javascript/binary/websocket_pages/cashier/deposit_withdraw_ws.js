@@ -56,7 +56,7 @@ const ForwardWS = (function() {
 
     const initWithdrawForm = function() {
         BinarySocket.send({
-            verify_email: Client.get_value('email'),
+            verify_email: Client.get('email'),
             type        : 'payment_withdraw',
         });
         ForwardWS.showMessage('check-email-message');
@@ -64,7 +64,7 @@ const ForwardWS = (function() {
     };
 
     const initDepositForm = function() {
-        if (Client.get_value('currency')) {
+        if (Client.get('currency')) {
             ForwardWS.getCashierURL();
         } else {
             ForwardWS.showCurrency();
@@ -72,7 +72,7 @@ const ForwardWS = (function() {
     };
 
     const showCurrency = function() {
-        const currencies = Client.get_value('currencies').split(',');
+        const currencies = Client.get('currencies').split(',');
         currencies.forEach(function(c) {
             appendTextValueChild('select-currency', c, c);
         });
@@ -156,7 +156,7 @@ const ForwardWS = (function() {
     const checkOnLoad = function() {
         const clientIsVirtual = function() {
             Content.populate();
-            const is_virtual = Client.get_boolean('is_virtual');
+            const is_virtual = Client.get('is_virtual');
             if (is_virtual) {
                 getCashierType();
                 ForwardWS.showError(Content.localize().featureNotRelevantToVirtual);

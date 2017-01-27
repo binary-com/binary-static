@@ -13,9 +13,9 @@ const RealityCheck = (function() {
             return;
         }
         if (/no-reality-check/.test(window.location.hash)) {
-            RealityCheckData.set_value('delay_reality_check', 1);
+            RealityCheckData.set('delay_reality_check', 1);
         } else {
-            RealityCheckData.set_value('delay_reality_check', 0);
+            RealityCheckData.set('delay_reality_check', 0);
             const summary = RealityCheckData.summaryData(response.reality_check);
             RealityCheckUI.renderSummaryPopUp(summary);
         }
@@ -33,35 +33,35 @@ const RealityCheck = (function() {
 
     const init = function() {
         if (/no-reality-check/.test(window.location.hash)) {
-            RealityCheckData.set_value('delay_reality_init', 1);
+            RealityCheckData.set('delay_reality_init', 1);
         } else {
-            RealityCheckData.set_value('delay_reality_init', 0);
+            RealityCheckData.set('delay_reality_init', 0);
             RealityCheckUI.initializeValues();
-            if (!Client.get_boolean('has_reality_check')) {
-                RealityCheckData.set_value('loginid', Client.get_value('loginid'));
+            if (!Client.get('has_reality_check')) {
+                RealityCheckData.set('loginid', Client.get('loginid'));
                 RealityCheckUI.sendAccountStatus();
                 return;
             }
 
-            RealityCheckUI.setLoginTime(Client.get_value('session_start') * 1000);
+            RealityCheckUI.setLoginTime(Client.get('session_start') * 1000);
 
             window.addEventListener('storage', realityStorageEventHandler, false);
 
-            if (Client.get_value('loginid') !== RealityCheckData.get_value('loginid')) {
+            if (Client.get('loginid') !== RealityCheckData.get('loginid')) {
                 RealityCheckData.clear();
             }
 
             RealityCheckData.resetInvalid(); // need to reset after clear
 
-            if (!RealityCheckData.get_value('ack')) {
+            if (!RealityCheckData.get('ack')) {
                 RealityCheckUI.renderFrequencyPopUp();
-            } else if (RealityCheckData.get_value('keep_open')) {
+            } else if (RealityCheckData.get('keep_open')) {
                 RealityCheckData.getSummaryAsync();
             } else {
                 RealityCheckUI.startSummaryTimer();
             }
 
-            RealityCheckData.set_value('loginid', Client.get_value('loginid'));
+            RealityCheckData.set('loginid', Client.get('loginid'));
             RealityCheckUI.sendAccountStatus();
         }
     };

@@ -181,7 +181,7 @@ const BinarySocketClass = function() {
                         }
                         LocalStore.set('reality_check.ack', 0);
                         Client.send_logout_request(isActiveTab);
-                    } else if (response.authorize.loginid !== Client.get_value('loginid')) {
+                    } else if (response.authorize.loginid !== Client.get('loginid')) {
                         Client.send_logout_request(true);
                     } else if (!(response.hasOwnProperty('echo_req') && response.echo_req.hasOwnProperty('passthrough') &&
                         response.echo_req.passthrough.hasOwnProperty('dispatch_to') &&
@@ -196,7 +196,7 @@ const BinarySocketClass = function() {
                             send({ get_settings: 1 });
                             send({ get_account_status: 1 });
                             if (Cookies.get('residence')) send({ landing_company: Cookies.get('residence') });
-                            if (!Client.get_boolean('is_virtual')) send({ get_self_exclusion: 1 });
+                            if (!Client.get('is_virtual')) send({ get_self_exclusion: 1 });
                             if (/tnc_approvalws/.test(window.location.pathname)) {
                                 TNCApproval.showTNC();
                             }
@@ -217,25 +217,26 @@ const BinarySocketClass = function() {
                     let company;
                     if (response.hasOwnProperty('error')) return;
                     Object.keys(landing_company).forEach(function(key) {
-                        if (Client.get_value('landing_company_name') === landing_company[key].shortcode) {
+                        if (Client.get('landing_company_name') === landing_company[key].shortcode) {
                             company = landing_company[key];
                         }
                     });
                     if (company) {
+                        Client.set('default_currency', company.legal_default_currency);
                         const has_reality_check = company.has_reality_check;
                         if (has_reality_check) {
-                            Client.set_value('has_reality_check', has_reality_check);
+                            Client.set('has_reality_check', has_reality_check);
                             RealityCheck.init();
                         }
                     }
                 } else if (type === 'get_self_exclusion') {
                     SessionDurationLimit.exclusionResponseHandler(response);
                 } else if (type === 'payout_currencies') {
-                    Client.set_value('currencies', response.payout_currencies.join(','));
+                    Client.set('currencies', response.payout_currencies.join(','));
                 } else if (type === 'get_settings' && response.get_settings) {
                     const country_code = response.get_settings.country_code;
                     if (country_code) {
-                        Client.set_value('residence', country_code);
+                        Client.set('residence', country_code);
                         if (!Cookies.get('residence')) {
                             Client.set_cookie('residence', country_code);
                             send({ landing_company: country_code });
@@ -247,16 +248,16 @@ const BinarySocketClass = function() {
                         displayAcctSettings(response);
                     }
                     GTM.event_handler(response.get_settings);
-                    Client.set_value('tnc_status', response.get_settings.client_tnc_status || '-');
+                    Client.set('tnc_status', response.get_settings.client_tnc_status || '-');
                     if (!localStorage.getItem('risk_classification')) Client.check_tnc();
                     const jpStatus = response.get_settings.jp_account_status;
                     if (jpStatus) {
-                        Client.set_value('jp_status', jpStatus.status);
+                        Client.set('jp_status', jpStatus.status);
                     }
                     if (response.get_settings.is_authenticated_payment_agent) {
                         $('#topMenuPaymentAgent').removeClass('invisible');
                     }
-                    Client.set_value('first_name', response.get_settings.first_name);
+                    Client.set('first_name', response.get_settings.first_name);
                     CashierJP.set_name_id();
                     CashierJP.set_email_id();
                 } else if (type === 'website_status') {

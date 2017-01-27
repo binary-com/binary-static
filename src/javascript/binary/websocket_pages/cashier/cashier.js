@@ -19,7 +19,7 @@ const Cashier = (function() {
     };
 
     const check_locked = function() {
-        if (Client.get_boolean('is_virtual')) return;
+        if (Client.get('is_virtual')) return;
         if (Client.status_detected('cashier_locked')) {
             lock_unlock_cashier('lock', 'deposit, .withdraw');
             withdrawal_locked = true;
@@ -34,10 +34,10 @@ const Cashier = (function() {
     };
 
     const check_top_up_withdraw = function() {
-        if (is_cashier_page() && Client.get_boolean('values_set')) {
-            const currency = Client.get_value('currency'),
-                balance = Client.get_value('balance');
-            if (Client.get_boolean('is_virtual')) {
+        if (is_cashier_page() && Client.get('values_set')) {
+            const currency = Client.get('currency'),
+                balance = Client.get('balance');
+            if (Client.get('is_virtual')) {
                 if ((currency !== 'JPY' && balance > 1000) ||
                     (currency === 'JPY' && balance > 100000)) {
                     replace_button('disable', '#VRT_topup_link');
@@ -81,7 +81,7 @@ const Cashier = (function() {
     };
 
     const onLoad = function() {
-        if (is_cashier_page() && Client.get_boolean('is_logged_in')) {
+        if (is_cashier_page() && Client.is_logged_in()) {
             withdrawal_locked = false;
             Cashier.check_locked();
             Cashier.check_top_up_withdraw();
@@ -97,7 +97,7 @@ const Cashier = (function() {
         if (japanese_client()) {
             window.location.href = url_for('/');
         }
-        if (Client.get_boolean('is_logged_in') && !Client.get_boolean('is_virtual')) {
+        if (Client.is_logged_in() && !Client.get('is_virtual')) {
             Cashier.check_locked();
         }
     };

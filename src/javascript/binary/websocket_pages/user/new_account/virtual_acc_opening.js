@@ -80,7 +80,7 @@ const VirtualAccOpening = (function() {
     };
 
     const onLoad = function() {
-        if (Client.get_boolean('is_logged_in')) {
+        if (Client.is_logged_in()) {
             window.location.href = url_for('home');
             return;
         }
