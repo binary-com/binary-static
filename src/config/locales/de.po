@@ -3,9 +3,10 @@ msgstr ""
 "Project-Id-Version: German (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-20 12:43+0000\n"
+"PO-Revision-Date: 2017-01-27 14:34+0000\n"
 "Last-Translator: Karin Graf <karin_graf@hotmail.com>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>"
+"\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -264,35 +265,23 @@ msgstr "%1s gemeinnützige Initiative konzentriert sich auf kleine Stiftungen un
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(minimum duration, for example minimum 15 seconds)Minuten"
 
-#, fuzzy
-#| msgid "$100,000 - $250,000"
 msgid "&#36;100,000 - &#36;250,000"
-msgstr "$100.000 - $250.000"
+msgstr "100.000&#36; - 250.000&#36;"
 
-#, fuzzy
-#| msgid "$100,000 - $500,000"
 msgid "&#36;100,001 - &#36;500,000"
-msgstr "$100.000 - $500.000"
+msgstr "100.000&#36; - 500.000&#36;"
 
-#, fuzzy
-#| msgid "$25,000 - $100,000"
 msgid "&#36;25,000 - &#36;50,000"
-msgstr "$25.000 - $100.000"
+msgstr "25.000&#36; - 100.000&#36;"
 
-#, fuzzy
-#| msgid "$250,000 - $1,000,000"
 msgid "&#36;250,001 - &#36;500,000"
-msgstr "$250.000-$1.000.000"
+msgstr "250.001&#36; - 500.000&#36;"
 
-#, fuzzy
-#| msgid "$250,000 - $1,000,000"
 msgid "&#36;50,001 - &#36;100,000"
-msgstr "$250.000-$1.000.000"
+msgstr "50.001&#36; - 100.000&#36;"
 
-#, fuzzy
-#| msgid "$250,000 - $1,000,000"
 msgid "&#36;500,001 - &#36;1,000,000"
-msgstr "$250.000-$1.000.000"
+msgstr "500.001&#36; - 1.000.000&#36;"
 
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 ist einer unserer ältesten und vetrauenswürdigsten Partner. Wir arbeiten schon viele Jahre zusammen.&#8221;"
@@ -3497,10 +3486,8 @@ msgstr "Investment Solicitation Policy"
 msgid "Investment trust"
 msgstr "Investment trust"
 
-#, fuzzy
-#| msgid "Investments & Dividends"
 msgid "Investments &amp; Dividends"
-msgstr "Investitionen & Dividenden"
+msgstr "Investitionen &amp; Dividenden"
 
 msgid "Investor Compensation Scheme"
 msgstr "Anlegerentschädigungsplan"
@@ -4114,15 +4101,11 @@ msgstr "Erfüllung gesetzlicher und behördlicher Auflagen"
 msgid "Legal Compliance"
 msgstr "Gesetzmäßigkeit"
 
-#, fuzzy
-#| msgid "Less than $100,000"
 msgid "Less than &#36;100,000"
-msgstr "Weniger als 100.000 $"
+msgstr "Weniger als 100.000&#36;"
 
-#, fuzzy
-#| msgid "Less than $25,000"
 msgid "Less than &#36;25,000"
-msgstr "Weniger als 25.000 $"
+msgstr "Weniger als 25.000&#36;"
 
 msgid "Less than 1 million JPY"
 msgstr "Less than 1 million JPY"
@@ -4796,15 +4779,11 @@ msgstr "Unser Erfolgsnachweis"
 msgid "Our trading screen is simple to use:"
 msgstr "Unser Handelsbildschirm ist einfach zu benützen:"
 
-#, fuzzy
-#| msgid "Over $1,000,000"
 msgid "Over &#36;1,000,000"
-msgstr "Über $1.000.000"
+msgstr "Über 1.000.000&#36;"
 
-#, fuzzy
-#| msgid "Over $500,001"
 msgid "Over &#36;500,001"
-msgstr "Über $ 500.001"
+msgstr "Über 500.001&#36;"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "Weltweit über 1 Million angemeldeter Konten"
@@ -7036,10 +7015,8 @@ msgstr "Ansehen"
 msgid "View Details"
 msgstr "Angaben ansehen"
 
-#, fuzzy
-#| msgid "View statement"
 msgid "View Statement"
-msgstr "Abrechnung ansehen"
+msgstr "Statement ansehen"
 
 msgid "View Updated Portfolio"
 msgstr "Aktualisiertes Portfolio ansehen"
@@ -7824,10 +7801,8 @@ msgstr "Ihre Kasse wurde auf Ihren Antrag hin gesperrt - um Sie wieder zu entspe
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "Ihre Kasse ist auf Ihren Antrag hin gesperrt - um Sie zu entsperren, geben Sie bitte das Passwort ein."
 
-#, fuzzy
-#| msgid "Your settings have been updated successfully."
 msgid "Your changes have been updated successfully."
-msgstr "Ihre Einstellungen wurden erfolgreich aktualisiert."
+msgstr "Ihre Änderungen wurden erfolgreich aktualisiert."
 
 msgid "Your changes have been updated."
 msgstr "Ihre Änderungen wurden aktualisiert."
@@ -8291,10 +8266,8 @@ msgstr "{JAPAN ONLY}Binary K.K. Customer Account"
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Binary K. K."
 msgid "{JAPAN ONLY}Binary.com page title"
-msgstr "{JAPAN ONLY}Binary K. K."
+msgstr "{JAPAN ONLY}Binary.com page title"
 
 msgid "{JAPAN ONLY}Branch"
 msgstr "{JAPAN ONLY}Branch"
