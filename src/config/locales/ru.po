@@ -7,14 +7,16 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-26 22:31+0000\n"
-"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"PO-Revision-Date: 2017-01-30 10:54+0000\n"
+"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.11-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -268,35 +270,23 @@ msgstr "Благотворительная инициатива %1 ориент�
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(minimum duration, for example minimum 15 seconds)мин."
 
-#, fuzzy
-#| msgid "$100,000 - $250,000"
 msgid "&#36;100,000 - &#36;250,000"
-msgstr "$100,000 - $250,000"
+msgstr "&#36;100,000 - &#36;250,000"
 
-#, fuzzy
-#| msgid "$100,000 - $500,000"
 msgid "&#36;100,001 - &#36;500,000"
-msgstr "$100,000 - $500,000"
+msgstr "&#36;100,001 - &#36;500,000"
 
-#, fuzzy
-#| msgid "$25,000 - $100,000"
 msgid "&#36;25,000 - &#36;50,000"
-msgstr "$25,000 - $100,000"
+msgstr "&#36;25,000 - &#36;50,000"
 
-#, fuzzy
-#| msgid "$250,000 - $1,000,000"
 msgid "&#36;250,001 - &#36;500,000"
-msgstr "$250,000 - $1,000,000"
+msgstr "&#36;250,001 - &#36;500,000"
 
-#, fuzzy
-#| msgid "$250,000 - $1,000,000"
 msgid "&#36;50,001 - &#36;100,000"
-msgstr "$250,000 - $1,000,000"
+msgstr "&#36;50,001 - &#36;100,000"
 
-#, fuzzy
-#| msgid "$250,000 - $1,000,000"
 msgid "&#36;500,001 - &#36;1,000,000"
-msgstr "$250,000 - $1,000,000"
+msgstr "&#36;500,001 - &#36;1,000,000"
 
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 является одним из наших самых давних и надежных партнеров. Мы работаем вместе много лет.&#8221;"
@@ -3501,10 +3491,8 @@ msgstr "Investment Solicitation Policy"
 msgid "Investment trust"
 msgstr "Investment trust"
 
-#, fuzzy
-#| msgid "Investments & Dividends"
 msgid "Investments &amp; Dividends"
-msgstr "Инвестиции & Дивиденды"
+msgstr "Инвестиции &amp; Дивиденды"
 
 msgid "Investor Compensation Scheme"
 msgstr "Схема компенсации инвесторам"
@@ -4118,15 +4106,11 @@ msgstr "Нормативно-правовое соответствие"
 msgid "Legal Compliance"
 msgstr "Нормативно-правовое соответствие"
 
-#, fuzzy
-#| msgid "Less than $100,000"
 msgid "Less than &#36;100,000"
-msgstr "Менее $100,000"
+msgstr "Менее &#36;100,000"
 
-#, fuzzy
-#| msgid "Less than $25,000"
 msgid "Less than &#36;25,000"
-msgstr "Менее $25,000"
+msgstr "Менее &#36;25,000"
 
 msgid "Less than 1 million JPY"
 msgstr "Less than 1 million JPY"
@@ -4803,15 +4787,11 @@ msgstr "Наш послужной список"
 msgid "Our trading screen is simple to use:"
 msgstr "Наше торговое окно работает очень просто:"
 
-#, fuzzy
-#| msgid "Over $1,000,000"
 msgid "Over &#36;1,000,000"
-msgstr "Свыше $1,000,000"
+msgstr "Свыше &#36;1,000,000"
 
-#, fuzzy
-#| msgid "Over $500,001"
 msgid "Over &#36;500,001"
-msgstr "Более $500,001"
+msgstr "Более &#36;500,001"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "Свыше 1 миллиона зарегистрированных счетов по всему миру"
@@ -8292,10 +8272,8 @@ msgstr "{JAPAN ONLY}Binary K.K. Customer Account"
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Binary K. K."
 msgid "{JAPAN ONLY}Binary.com page title"
-msgstr "{JAPAN ONLY}Binary K. K."
+msgstr "{JAPAN ONLY}Binary.com page title"
 
 msgid "{JAPAN ONLY}Branch"
 msgstr "{JAPAN ONLY}Branch"
