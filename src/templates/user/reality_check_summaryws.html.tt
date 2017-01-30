@@ -1,41 +1,43 @@
 <div id="reality-check-content">
     <div>
         <h1>[% l("Reality Check") %]</h1>
-        <p>
-            <label>[% l("Login time:") %]</label>
-            <span id="login-time"></span>
-        </p>
-        <p>
-            <label>[% l("Current time:") %]</label>
-            <span id="current-time"></span>
-        </p>
-        <p>
-            <label>[% l("Session duration:") %]</label>
-            <span id="session-duration"></span>
-        </p>
+        <div class="gr-row gr-padding-10">
+            <div class="gr-3 gr-6-m"><label>[% l("Login time:") %]</label></div>
+            <div class="gr-9 gr-6-m"><label id="login-time"></label></div>
+        </div>
+        <div class="gr-row gr-padding-10">
+            <div class="gr-3 gr-6-m"><label>[% l("Current time:") %]</label></div>
+            <div class="gr-9 gr-6-m"><label id="current-time"></label></div>
+        </div>
+        <div class="gr-row gr-padding-10">
+            <div class="gr-3 gr-6-m"><label>[% l("Session duration:") %]</label></div>
+            <div class="gr-9 gr-6-m"><label id="session-duration"></label></div>
+        </div>
         <p id="start-time"></p>
-            <table>
-                <tr>
-                    <th>[% l("Login ID") %]</th>
-                    <th>[% l("Currency") %]</th>
-                    <th>[% l("Turnover") %]</th>
-                    <th>[% l("Profit / Loss") %]</th>
-                    <th>[% l("Contracts bought") %]</th>
-                    <th>[% l("Contracts sold") %]</th>
-                    <th>[% l("Open contracts") %]</th>
-                    <th>[% l("Potential profit") %]</th>
-                </tr>
-                <tr>
-                    <td id="login-id"></td>
-                    <td id="rc_currency"></td>
-                    <td id="turnover"></td>
-                    <td id="profitloss"></td>
-                    <td id="bought"></td>
-                    <td id="sold"></td>
-                    <td id="open"></td>
-                    <td id="potential"></td>
-                </tr>
-            </table>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>[% l("Login ID") %]</th>
+                        <th>[% l("Currency") %]</th>
+                        <th>[% l("Turnover") %]</th>
+                        <th>[% l("Profit / Loss") %]</th>
+                        <th>[% l("Contracts bought") %]</th>
+                        <th>[% l("Contracts sold") %]</th>
+                        <th>[% l("Open contracts") %]</th>
+                        <th>[% l("Potential profit") %]</th>
+                    </tr>
+                    <tr>
+                        <td id="login-id"></td>
+                        <td id="rc_currency"></td>
+                        <td id="turnover"></td>
+                        <td id="profitloss"></td>
+                        <td id="bought"></td>
+                        <td id="sold"></td>
+                        <td id="open"></td>
+                        <td id="potential"></td>
+                    </tr>
+                </table>
+            </div>
         <p>
             <label>[% l("Reality Check Interval:") %]</label>
             <input id="realityDuration" interval="1" maxlength="4" min="1" size="6" type="number"/>

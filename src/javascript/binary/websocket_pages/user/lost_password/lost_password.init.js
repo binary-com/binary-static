@@ -1,7 +1,6 @@
 const Content        = require('../../../common_functions/content').Content;
 const validateEmail  = require('../../../common_functions/validation').validateEmail;
 const localize       = require('../../../base/localize').localize;
-const load_with_pjax = require('../../../base/pjax').load_with_pjax;
 const url_for        = require('../../../base/url').url_for;
 
 const LostPassword = (function() {
@@ -34,7 +33,7 @@ const LostPassword = (function() {
 
         if (type === 'verify_email') {
             if (response.verify_email === 1) {
-                load_with_pjax(url_for('user/reset_passwordws'));
+                window.location.href = url_for('user/reset_passwordws');
             } else if (response.error) {
                 $('#email_error').removeClass(hiddenClass).text(Content.errorMessage('valid', localize('email address')));
                 $('#submit').prop('disabled', false);

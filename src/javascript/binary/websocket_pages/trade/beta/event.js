@@ -27,7 +27,6 @@ const getStartDateNode               = require('../common_independent').getStart
 const isVisible                      = require('../../../common_functions/common_functions').isVisible;
 const dateValueChanged               = require('../../../common_functions/common_functions').dateValueChanged;
 const TimePicker                     = require('../../../components/time_picker').TimePicker;
-const load_with_pjax                 = require('../../../base/pjax').load_with_pjax;
 const Client                         = require('../../../base/client').Client;
 const elementTextContent             = require('../../../common_functions/common_functions').elementTextContent;
 
@@ -483,8 +482,7 @@ const TradingEvents_Beta = (function () {
         const tip = document.getElementById('symbol_tip');
         if (init_logo) {
             tip.addEventListener('click', debounce(function (e) {
-                const url = e.target.getAttribute('target');
-                load_with_pjax(url);
+                window.location.href = e.target.getAttribute('target');
             }));
         }
     };

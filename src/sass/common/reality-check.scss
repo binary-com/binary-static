@@ -1,5 +1,6 @@
 .lightbox {
-    display: table;
+    display: flex;
+    flex-direction: column;
     position: fixed;
     top: 0;
     left: 0;
@@ -10,15 +11,15 @@
 }
 
 .lightbox > div {
-    display: table-cell;
-    vertical-align: middle;
+    margin: auto;
+    width: 100%;
 }
 
 .lightbox > div > div {
     margin-left: auto;
     margin-right: auto;
     padding: 0.5em;
-    width: 44em;
+    max-width: 44em;
     text-align: center;
     background-color: $COLOR_WHITE;
     border-radius: $BORDER_RADIUS;
@@ -33,18 +34,8 @@
         width: 12.5%;
         text-align: center;
     }
-    label {
-        display: inline-block;
-        width: 14em;
-    }
     [data-balloon] {
         border-bottom: none;
-    }
-}
-
-#reality-check-content {
-    @media screen and (max-width: 480px) {
-        width: 45% !important;
     }
 }
 
@@ -53,17 +44,5 @@
     span:nth-child(2) {
         display: inline-block;
         width: 10em;
-    }
-}
-
-#reality-check-nav {
-    @media screen and (max-width: 480px) {
-        width: 45% !important;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    #risk_classification.lightbox > div > div {
-        width: 95vw;
     }
 }
