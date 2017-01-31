@@ -38,13 +38,6 @@ const SecurityWS = (function() {
         return true;
     };
 
-    const makeAuthRequest = function() {
-        BinarySocket.send({
-            authorize  : getLoginToken(),
-            passthrough: { dispatch_to: 'cashier_password' },
-        });
-    };
-
     const init = function() {
         Content.populate();
         $form = $('#changeCashierLock');
@@ -52,13 +45,11 @@ const SecurityWS = (function() {
 
         current_state = STATE.WAIT_AUTH;
         BinarySocket.init({ onmessage: handler });
-        makeAuthRequest();
-    };
-
-    const authorised = function() {
-        current_state = STATE.QUERY_LOCKED;
-        BinarySocket.send({
-            cashier_password: '1',
+        BinarySocket.wait('authorize').then(() => {
+            current_state = STATE.QUERY_LOCKED;
+            BinarySocket.send({
+                cashier_password: '1',
+            });
         });
     };
 
@@ -103,7 +94,7 @@ const SecurityWS = (function() {
                 current_state = locked ?
                     STATE.TRY_UNLOCK :
                     STATE.TRY_LOCK;
-                makeAuthRequest();
+                makeTryingRequest();
             },
         });
         $form.show();
@@ -161,19 +152,7 @@ const SecurityWS = (function() {
     const handler = function(msg) {
         if (checkIsVirtual()) return;
         const response = JSON.parse(msg.data);
-        if (response.msg_type === 'authorize') {
-            switch (current_state) {
-                case STATE.WAIT_AUTH:
-                    authorised();
-                    break;
-                case STATE.TRY_UNLOCK:
-                case STATE.TRY_LOCK:
-                    makeTryingRequest();
-                    break;
-                default:
-                    break;
-            }
-        } else if (response.msg_type === 'cashier_password') {
+        if (response.msg_type === 'cashier_password') {
             switch (current_state) {
                 case STATE.QUERY_LOCKED:
                     lockedStatus(response);
