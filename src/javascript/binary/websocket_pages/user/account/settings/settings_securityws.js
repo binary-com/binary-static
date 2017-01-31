@@ -4,7 +4,6 @@ const ValidateV2      = require('../../../../common_functions/validation_v2').Va
 const bind_validation = require('../../../../validator').bind_validation;
 const dv              = require('../../../../../lib/validation');
 const localize        = require('../../../../base/localize').localize;
-const load_with_pjax  = require('../../../../base/pjax').load_with_pjax;
 const Client          = require('../../../../base/client').Client;
 
 const SecurityWS = (function() {
@@ -155,7 +154,7 @@ const SecurityWS = (function() {
     const redirect = function() {
         if (redirect_url) {
             sessionStorage.removeItem('cashier_lock_redirect');
-            load_with_pjax(redirect_url);
+            window.location.href = redirect_url;
         }
     };
 
