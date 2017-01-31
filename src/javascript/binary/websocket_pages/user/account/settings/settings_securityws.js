@@ -1,4 +1,3 @@
-const getLoginToken   = require('../../../../common_functions/common_functions').getLoginToken;
 const Content         = require('../../../../common_functions/content').Content;
 const ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
 const bind_validation = require('../../../../validator').bind_validation;
