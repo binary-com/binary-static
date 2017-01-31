@@ -66,7 +66,7 @@
                     <label for="occupation">[% l('Occupation') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="occupation">
+                    <select id="occupation" class="jp_value">
                         <option value="Office worker">[% l('Office worker') %]</option>
                         <option value="Director">[% l('Director') %]</option>
                         <option value="Public worker">[% l('Public worker') %]</option>
@@ -148,7 +148,7 @@
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
-                        <strong id="lbl_address_postcode"></strong>
+                        <strong id="lbl_address_postcode" class="jp_value"></strong>
                     </span>
                 </div>
             </div>
@@ -159,7 +159,7 @@
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
-                        <strong id="lbl_address_state"></strong>
+                        <strong id="lbl_address_state" class="jp_value"></strong>
                     </span>
                 </div>
             </div>
@@ -170,7 +170,7 @@
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
-                        <strong id="lbl_address_city"></strong>
+                        <strong id="lbl_address_city" class="jp_value"></strong>
                     </span>
                 </div>
             </div>
@@ -181,7 +181,7 @@
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
-                        <strong id="lbl_address_line_1"></strong>
+                        <strong id="lbl_address_line_1" class="jp_value"></strong>
                     </span>
                 </div>
             </div>
@@ -192,7 +192,7 @@
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
-                        <strong id="lbl_address_line_2"></strong>
+                        <strong id="lbl_address_line_2" class="jp_value"></strong>
                     </span>
                 </div>
             </div>
@@ -203,7 +203,7 @@
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
-                        <strong id="lbl_phone"></strong>
+                        <strong id="lbl_phone" class="jp_value"></strong>
                     </span>
                 </div>
             </div>
@@ -217,7 +217,7 @@
                     <label for="annual_income">[% l('Annual income') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="annual_income">
+                    <select id="annual_income" class="jp_value">
                         <option value="Less than 1 million JPY">[% l('Less than 1 million JPY') %]</option>
                         <option value="1-3 million JPY">[% l('1-3 million JPY') %]</option>
                         <option value="3-5 million JPY">[% l('3-5 million JPY') %]</option>
@@ -235,7 +235,7 @@
                     <label for="financial_asset">[% l('Financial asset') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="financial_asset">
+                    <select id="financial_asset" class="jp_value">
                         <option value="Less than 1 million JPY">[% l('Less than 1 million JPY') %]</option>
                         <option value="1-3 million JPY">[% l('1-3 million JPY') %]</option>
                         <option value="3-5 million JPY">[% l('3-5 million JPY') %]</option>
@@ -257,7 +257,7 @@
                     <label for="trading_experience_equities">[% l('Equities') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="trading_experience_equities">
+                    <select id="trading_experience_equities" class="jp_value">
                         <option value="No experience">[% l('No experience') %]</option>
                         <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
                         <option value="6 months to 1 year">[% l('6 months to 1 year') %]</option>
@@ -273,7 +273,7 @@
                     <label for="trading_experience_commodities">[% l('Commodities') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="trading_experience_commodities">
+                    <select id="trading_experience_commodities" class="jp_value">
                         <option value="No experience">[% l('No experience') %]</option>
                         <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
                         <option value="6 months to 1 year">[% l('6 months to 1 year') %]</option>
@@ -289,7 +289,7 @@
                     <label for="trading_experience_foreign_currency_deposit">[% l('Foreign currency deposit') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="trading_experience_foreign_currency_deposit">
+                    <select id="trading_experience_foreign_currency_deposit" class="jp_value">
                         <option value="No experience">[% l('No experience') %]</option>
                         <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
                         <option value="6 months to 1 year">[% l('6 months to 1 year') %]</option>
@@ -305,7 +305,7 @@
                     <label for="trading_experience_margin_fx">[% l('Margin FX') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="trading_experience_margin_fx">
+                    <select id="trading_experience_margin_fx" class="jp_value">
                         <option value="No experience">[% l('No experience') %]</option>
                         <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
                         <option value="6 months to 1 year">[% l('6 months to 1 year') %]</option>
@@ -321,7 +321,7 @@
                     <label for="trading_experience_investment_trust">[% l('Investment trust') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="trading_experience_investment_trust">
+                    <select id="trading_experience_investment_trust" class="jp_value">
                         <option value="No experience">[% l('No experience') %]</option>
                         <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
                         <option value="6 months to 1 year">[% l('6 months to 1 year') %]</option>
@@ -337,7 +337,7 @@
                     <label for="trading_experience_public_bond">[% l('Public and corporation bond') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="trading_experience_public_bond">
+                    <select id="trading_experience_public_bond" class="jp_value">
                         <option value="No experience">[% l('No experience') %]</option>
                         <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
                         <option value="6 months to 1 year">[% l('6 months to 1 year') %]</option>
@@ -353,7 +353,7 @@
                     <label for="trading_experience_option_trading">[% l('OTC Derivative (Option) Trading') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="trading_experience_option_trading">
+                    <select id="trading_experience_option_trading" class="jp_value">
                         <option value="No experience">[% l('No experience') %]</option>
                         <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
                         <option value="6 months to 1 year">[% l('6 months to 1 year') %]</option>
@@ -369,7 +369,7 @@
                     <label for="trading_purpose">[% l('Purpose of trading') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="trading_purpose">
+                    <select id="trading_purpose" class="jp_value">
                         <option value="Targeting short-term profits">[% l('Targeting short-term profits') %]</option>
                         <option value="Targeting medium-term / long-term profits">[% l('Targeting medium-term / long-term profits') %]</option>
                         <option value="Both the above">[% l('Both the above') %]</option>

@@ -12,19 +12,7 @@ const SettingsDetailsWS = (function() {
 
     const formID = '#frmPersonalDetails';
     const RealAccElements = '.RealAcc';
-    const jpDataKeys = {
-        annual_income                              : '',
-        financial_asset                            : '',
-        occupation                                 : '',
-        trading_experience_equities                : '',
-        trading_experience_commodities             : '',
-        trading_experience_foreign_currency_deposit: '',
-        trading_experience_margin_fx               : '',
-        trading_experience_investment_trust        : '',
-        trading_experience_public_bond             : '',
-        trading_experience_option_trading          : '',
-        trading_purpose                            : '',
-    };
+    let jpDataKeys = {};
     let isInitialized,
         editable_fields,
         isJP,
@@ -55,9 +43,14 @@ const SettingsDetailsWS = (function() {
                 ev.preventDefault();
                 ev.stopPropagation();
                 if (info.errors.length > 0) return false;
-                info.values.email_consent = $('#email_consent:checked').length > 0 ? 1 : 0;
-                if (!isChanged(info.values)) return showFormMessage('You did not change anything.', false);
-                return setDetails(Client.get('is_virtual') || !isJP ? info.values : { jp_settings: jpDataKeys });
+                let data = info.values;
+                data.email_consent = $('#email_consent:checked').length > 0 ? 1 : 0;
+                if (isJP) {
+                    populateJPSettings();
+                    data = $.extend(data, jpDataKeys);
+                }
+                if (!isChanged(data)) return showFormMessage('You did not change anything.', false);
+                return setDetails(Client.get('is_virtual') || data);
             },
         });
         if (isJP && !isVirtual) {
@@ -66,15 +59,11 @@ const SettingsDetailsWS = (function() {
         }
     };
 
-    const isChanged = (values) => {
-        let changed = false,
-            data = values;
-        if (isJP) {
-            populateJPSettings();
-            data = $.extend(data, jpDataKeys);
-        }
+    const isChanged = (data) => {
+        let changed = false;
         Object.keys(editable_fields).every((key) => {
-            if (key in data && editable_fields[key] !== data[key]) {
+            if ((key in data && editable_fields[key] !== data[key]) ||
+                (key in data.jp_settings && editable_fields[key] !== data.jp_settings[key])) {
                 changed = true;
                 return false;
             }
@@ -155,6 +144,7 @@ const SettingsDetailsWS = (function() {
         $field.empty();
 
         if (states && states.length > 0) {
+            $field.append($('<option/>', { value: '', text: localize('Please select') }));
             states.forEach(function(state) {
                 $field.append($('<option/>', { value: state.value, text: state.text }));
             });
@@ -167,15 +157,23 @@ const SettingsDetailsWS = (function() {
     };
 
     const populateJPSettings = function() {
-        Object.keys(jpDataKeys).forEach((key) => {
-            jpDataKeys[key] = $(`#${key}`).val();
+        let id,
+            val;
+        jpDataKeys = {};
+        jpDataKeys.jp_settings = {};
+        $('.jp_value').each(function() {
+            id = $(this).attr('id');
+            if (/lbl_/.test(id)) {
+                val = $(this).text();
+                jpDataKeys[id.replace('lbl_', '')] = val;
+            } else {
+                val = $(this).val();
+                jpDataKeys.jp_settings[id] = val;
+            }
         });
         if (/Hedging/.test($('#trading_purpose').val())) {
-            jpDataKeys.hedge_asset = $('#hedge_asset').val();
-            jpDataKeys.hedge_asset_amount = $('#hedge_asset_amount').val().trim();
-        } else {
-            delete jpDataKeys.hedge_asset;
-            delete jpDataKeys.hedge_asset_amount;
+            jpDataKeys.jp_settings.hedge_asset = $('#hedge_asset').val();
+            jpDataKeys.jp_settings.hedge_asset_amount = $('#hedge_asset_amount').val().trim();
         }
     };
 
@@ -204,7 +202,7 @@ const SettingsDetailsWS = (function() {
         const V2 = ValidateV2;
         const isAddress  = V2.regex(/^[^~!#$%^&*)(_=+\[}{\]\\\"\;\:\?\><\|]+$/,          [letters, numbers, space, period, comma, '- . / @ \' ']);
         const isCity     = V2.regex(/^[^~!@#$%^&*)(_=+\[\}\{\]\\\/\"\;\:\?\><\,\|\d]+$/, [letters, space, '- . \' ']);
-        const isState    = V2.regex(/^[^~!@#$%^&*)(_=+\[\}\{\]\\\/\"\;\:\?\><\|]+$/,     [letters, numbers, space, comma, '- . \'']);
+        const isState    = V2.regex(/^[^~!@#$%^&*)(_=+\[\}\{\]\\\/\"\;\:\?\><\|]*$/,     [letters, numbers, space, comma, '- . \'']);
         const isPostcode = V2.regex(/^[^+]{0,20}$/,                                      [letters, numbers, space, '-']);
         const isPhoneNo  = V2.regex(/^(|\+?[0-9\s\-]+)$/,                                [numbers, space, '-']);
 
@@ -216,7 +214,7 @@ const SettingsDetailsWS = (function() {
             address_line_1  : [V2.required, isAddress],
             address_line_2  : [maybeEmptyAddress],
             address_city    : [V2.required, isCity],
-            address_state   : [V2.required, isState],
+            address_state   : [isState],
             address_postcode: [V2.lengthRange(0, 20), isPostcode],
             phone           : [V2.lengthRange(6, 35), isPhoneNo],
         };
