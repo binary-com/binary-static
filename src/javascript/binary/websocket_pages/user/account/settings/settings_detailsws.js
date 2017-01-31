@@ -236,7 +236,7 @@ const SettingsDetailsWS = (function() {
             comma   = Content.localize().textComma;
 
         const V2 = ValidateV2;
-        const isAddress  = V2.regex(/^[^~!#$%^&*)(_=+\[}{\]\\\"\;\:\?\><\|]+$/,          [letters, numbers, space, period, comma, '- . / @ \' ']);
+        const isAddress  = V2.regex(/^[^~!#$%^&*)(_=+\[}{\]\\\"\;\:\?\><\|]+$/,          [letters, numbers, space, period, comma, '- / @ \' ']);
         const isCity     = V2.regex(/^[^~!@#$%^&*)(_=+\[\}\{\]\\\/\"\;\:\?\><\,\|\d]+$/, [letters, space, '- . \' ']);
         const isState    = V2.regex(/^[^~!@#$%^&*)(_=+\[\}\{\]\\\/\"\;\:\?\><\|]+$/,     [letters, numbers, space, comma, '- . \'']);
         const isPostcode = V2.regex(/^[^+]{0,20}$/,                                      [letters, numbers, space, '-']);
