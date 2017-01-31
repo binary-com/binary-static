@@ -234,7 +234,6 @@ const checkRequiredInputs = (elementObj, errorObj, optional_fields) => {
     });
 };
 
-
 module.exports = {
     displayAcctSettings: displayAcctSettings,
     handleResidence    : handleResidence,
