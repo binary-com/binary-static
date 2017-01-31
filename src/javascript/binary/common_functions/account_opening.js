@@ -54,13 +54,13 @@ const show_residence_form = function() {
     const residenceForm = $('#residence-form');
     const residenceDisabled = $('#residence');
     residenceDisabled.insertAfter('#move-residence-here');
-    $('#error-residence').insertAfter('#residence');
+    $('#error_residence').insertAfter('#residence');
     residenceDisabled.removeAttr('disabled');
     residenceForm.show();
     residenceForm.submit(function(evt) {
         evt.preventDefault();
         const residence_value = residenceDisabled.val();
-        if (Validate.fieldNotEmpty(residence_value, document.getElementById('error-residence'))) {
+        if (Validate.fieldNotEmpty(residence_value, document.getElementById('error_residence'))) {
             Client.set_cookie('residence', residence_value);
             Client.set('residence', residence_value);
             BinarySocket.send({ set_settings: 1, residence: residence_value });
@@ -86,7 +86,7 @@ const handleResidence = function() {
                 type = response.msg_type,
                 residenceDisabled = $('#residence');
             if (type === 'set_settings') {
-                const errorElement = document.getElementById('error-residence');
+                const errorElement = document.getElementById('error_residence');
                 if (response.hasOwnProperty('error')) {
                     if (response.error.message) {
                         elementInnerHtml(errorElement, response.error.message);
@@ -106,7 +106,7 @@ const handleResidence = function() {
                     BinarySocket.send({ residence_list: 1 });
                     $('#residence-form').hide();
                     residenceDisabled.insertAfter('#move-residence-back');
-                    $('#error-residence').insertAfter('#residence');
+                    $('#error_residence').insertAfter('#residence');
                     residenceDisabled.attr('disabled', 'disabled');
                     generateState();
                     $('#real-form').show();
