@@ -41,8 +41,32 @@ const InScriptStore = function(object) {
 };
 
 InScriptStore.prototype = {
-    get   : function(key)        { return this.store[key]; },
-    set   : function(key, value) { this.store[key] = value; },
+    get: function(key) {
+        let obj = this.store;
+        const keys = key.slice(0);
+        if (Array.isArray(keys)) {
+            keys.some(function(k, idx) {
+                if (k in obj && idx !== keys.length - 1) {
+                    obj = obj[k];
+                    key.shift();
+                    return false;
+                }
+                key = k;
+                return true;
+            });
+        }
+        return obj[key];
+    },
+    set: function(key, value) {
+        let obj = this.store;
+        if (Array.isArray(key)) {
+            key.forEach(function(k) {
+                if (k in obj) obj = obj[k];
+                else key = k;
+            });
+        }
+        obj[key] = value;
+    },
     remove: function(key)        { delete this.store[key]; },
     clear : function()           { this.store = {}; },
     has   : function(key)        { return this.get(key) !== undefined; },

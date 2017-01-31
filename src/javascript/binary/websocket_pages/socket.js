@@ -57,10 +57,19 @@ const BinarySocketClass = function() {
         events = {},
         authorized = false,
         req_number = 0,
+        req_id     = 0,
         wrongAppId = 0;
 
-    const timeouts = {},
-        socketUrl = getSocketURL() + '?app_id=' + getAppId() + '&l=' + getLanguage();
+    const timeouts  = {};
+    const socketUrl = getSocketURL() + '?app_id=' + getAppId() + '&l=' + getLanguage();
+    const promises  = {};
+    const no_duplicate_requests = [
+        'authorize',
+        'get_settings',
+        'website_status',
+        'get_account_status',
+        'get_financial_assessment',
+    ];
 
     const clearTimeouts = function() {
         Object.keys(timeouts).forEach(function(key) {
@@ -83,11 +92,27 @@ const BinarySocketClass = function() {
         }
     };
 
-    const send = function(data) {
-        if (isClose()) {
-            bufferedSends.push(data);
-            init(1);
-        } else if (isReady()) {
+    const send = function(data, force_send) {
+        const promise_obj = new PromiseClass();
+
+        if (!force_send) {
+            const msg_type = no_duplicate_requests.find(c => c in data);
+            const last_response = State.get(['response', msg_type]);
+            if (last_response) {
+                promise_obj.resolve(last_response);
+                return promise_obj.promise;
+            }
+        }
+
+        if (!data.req_id) {
+            data.req_id = ++req_id;
+        }
+        promises[data.req_id] = {
+            callback : (response) => { promise_obj.resolve(response); },
+            subscribe: !!data.subscribe,
+        };
+
+        if (isReady()) {
             if (!data.hasOwnProperty('passthrough') && !data.hasOwnProperty('verify_email')) {
                 data.passthrough = {};
             }
@@ -112,7 +137,12 @@ const BinarySocketClass = function() {
             binarySocket.send(JSON.stringify(data));
         } else {
             bufferedSends.push(data);
+            if (isClose()) {
+                init(1);
+            }
         }
+
+        return promise_obj.promise;
     };
 
     const init = function (es) {
@@ -172,6 +202,21 @@ const BinarySocketClass = function() {
                     }
                 }
                 const type = response.msg_type;
+
+                // store in State
+                if (!response.echo_req.subscribe) {
+                    State.set(['response', type], response);
+                }
+                // resolve the send promise
+                const this_req_id = response.req_id;
+                const pr = this_req_id ? promises[this_req_id] : null;
+                if (pr && typeof pr.callback === 'function') {
+                    pr.callback(response);
+                    if (!pr.subscribe) {
+                        delete promises[this_req_id];
+                    }
+                }
+
                 if (type === 'authorize') {
                     if (response.hasOwnProperty('error')) {
                         const isActiveTab = sessionStorage.getItem('active_tab') === '1';
@@ -386,6 +431,15 @@ const BinarySocketClass = function() {
         clearTimeouts: clearTimeouts,
     };
 };
+
+class PromiseClass {
+    constructor() {
+        this.promise = new Promise((resolve, reject) => {
+            this.reject = reject;
+            this.resolve = resolve;
+        });
+    }
+}
 
 const BinarySocket = new BinarySocketClass();
 
