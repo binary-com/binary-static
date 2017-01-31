@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-19 01:27+0000\n"
+"PO-Revision-Date: 2017-01-30 01:55+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -26,18 +26,6 @@ msgstr "「我與多家聯盟公司合作，迄今為止，它是我所發現的
 
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "「第三方供應商」指通過使用%1的API提供可用功能和作用的第三方（非聯盟成員）實體。"
-
-msgid "$100,000 - $250,000"
-msgstr "$100,000 - $250,000"
-
-msgid "$100,000 - $500,000"
-msgstr "$100,000 - $500,000"
-
-msgid "$25,000 - $100,000"
-msgstr "$25,000 - $100,000"
-
-msgid "$250,000 - $1,000,000"
-msgstr "$250,000 - $1,000,000"
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr " %1 %2已記入您的虛擬資金帳戶 %3"
@@ -274,6 +262,24 @@ msgstr "%1的慈善活動側重於捐助世界各地在當地社區有重大影�
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(minimum duration, for example minimum 15 seconds)分鐘"
+
+msgid "&#36;100,000 - &#36;250,000"
+msgstr "&#36;100,000 - &#36;250,000"
+
+msgid "&#36;100,001 - &#36;500,000"
+msgstr "&#36;100,001 - &#36;500,000"
+
+msgid "&#36;25,000 - &#36;50,000"
+msgstr "&#36;25,000 - &#36;50,000"
+
+msgid "&#36;250,001 - &#36;500,000"
+msgstr "&#36;250,001 - &#36;500,000"
+
+msgid "&#36;50,001 - &#36;100,000"
+msgstr "&#36;50,001 - &#36;100,000"
+
+msgid "&#36;500,001 - &#36;1,000,000"
+msgstr "&#36;500,001 - &#36;1,000,000"
 
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1一向都是我們最長久和最信賴的合作夥伴。我們已經有很多年的合作關係。&#8221;"
@@ -3475,8 +3481,8 @@ msgstr "Investment Solicitation Policy"
 msgid "Investment trust"
 msgstr "Investment trust"
 
-msgid "Investments & Dividends"
-msgstr "投資與分紅"
+msgid "Investments &amp; Dividends"
+msgstr "投資&amp;分紅"
 
 msgid "Investor Compensation Scheme"
 msgstr "投資者補償方案"
@@ -4090,11 +4096,11 @@ msgstr "法律&法規標準"
 msgid "Legal Compliance"
 msgstr "遵守法律"
 
-msgid "Less than $100,000"
-msgstr "少於$100,000"
+msgid "Less than &#36;100,000"
+msgstr "少於&#36;100,000"
 
-msgid "Less than $25,000"
-msgstr "少於$25,000"
+msgid "Less than &#36;25,000"
+msgstr "少於&#36;25,000"
 
 msgid "Less than 1 million JPY"
 msgstr "Less than 1 million JPY"
@@ -4768,11 +4774,11 @@ msgstr "我們的歷史紀錄"
 msgid "Our trading screen is simple to use:"
 msgstr "我們的交易屏幕簡單，容易使用:"
 
-msgid "Over $1,000,000"
-msgstr "大於$1,000,000"
+msgid "Over &#36;1,000,000"
+msgstr "大於&#36;1,000,000"
 
-msgid "Over $500,001"
-msgstr "大於$500,001"
+msgid "Over &#36;500,001"
+msgstr "大於&#36;500,001"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "全球各地擁有超過1百萬個註冊帳號"
@@ -4950,9 +4956,6 @@ msgstr "請檢查您的電郵領取重設密碼所需的權杖編號。"
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "請選擇您想要交易的外匯。"
-
-msgid "Please complete the following financial assessment form before continuing."
-msgstr "繼續操作前請填寫以下財務評估表格。"
 
 msgid "Please confirm the trade on your statement before proceeding."
 msgstr "繼續操作前，請在您的聲明上確認此項交易。"
@@ -7006,10 +7009,8 @@ msgstr "檢視"
 msgid "View Details"
 msgstr "檢視詳細資料"
 
-#, fuzzy
-#| msgid "View your statement"
 msgid "View Statement"
-msgstr "檢視您的帳單"
+msgstr "檢視帳單"
 
 msgid "View Updated Portfolio"
 msgstr "檢視更新後的組合"
@@ -7788,6 +7789,9 @@ msgstr "根據您的要求，您的收銀台已被鎖定- 如需解除鎖定，�
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "根據您的請求，您的收銀台已被鎖定- 如需解除鎖定，請輸入密碼。"
 
+msgid "Your changes have been updated successfully."
+msgstr "您的更改已成功更新。"
+
 msgid "Your changes have been updated."
 msgstr "您的更改已成功更新。"
 
@@ -7796,9 +7800,6 @@ msgstr "您的客戶將會對 %1 熱愛不已，因為我們針對特定需求�
 
 msgid "Your current balance is"
 msgstr "您目前餘額有"
-
-msgid "Your details have been updated."
-msgstr "您的個人資訊已成功更新。"
 
 msgid "Your funds are safe"
 msgstr "您的資金非常安全"
@@ -7838,9 +7839,6 @@ msgstr "您的風險是已知的"
 
 msgid "Your session duration limit will end in %1 seconds."
 msgstr "交易期持續時間限制將於%1秒內結束。"
-
-msgid "Your settings have been updated successfully."
-msgstr "您的設定已成功更新。"
 
 msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
 msgstr "您的權杖已過期。請點選<a class=\"pjaxload\" href=\"%1\">此處</a>重啟驗證程序。"
@@ -8255,6 +8253,9 @@ msgstr "{JAPAN ONLY}Binary K.K. Customer Account"
 
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
+
+msgid "{JAPAN ONLY}Binary.com page title"
+msgstr "{JAPAN ONLY}Binary.com page title"
 
 msgid "{JAPAN ONLY}Branch"
 msgstr "{JAPAN ONLY}Branch"
@@ -9125,6 +9126,12 @@ msgstr "帳戶詳細資料"
 
 msgid "Terms and Conditions Approval"
 msgstr "條款和條件審批"
+
+#~ msgid "Please complete the following financial assessment form before continuing."
+#~ msgstr "繼續操作前請填寫以下財務評估表格。"
+
+#~ msgid "Your details have been updated."
+#~ msgstr "您的個人資訊已成功更新。"
 
 #~ msgid "Logout"
 #~ msgstr "登出"

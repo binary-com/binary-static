@@ -37,6 +37,7 @@ const JapanPortfolio = (function() {
         if (isTradePage() && isPortfolioActive) {
             PortfolioWS.onUnload();
             isPortfolioActive = false;
+            $portfolio = undefined;
         }
     }
 

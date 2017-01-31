@@ -39,9 +39,9 @@ const LimitsWS = (function() {
             } else {
                 if ((/^(costarica|japan)$/i).test(Client.get('landing_company_name'))) { // CR , JP
                     txtWithdrawLim            = Content.localize().textWithdrawalLimits;
-                    txtWithdrawAmt             = Content.localize().textWithrawalAmount;
+                    txtWithdrawAmt            = Content.localize().textWithrawalAmount;
                     text_CurrentMaxWithdrawal = Content.localize().textCurrentMaxWithdrawal;
-                    currency                  = Client.get('currencies');
+                    currency                  = Client.get('currency') || Client.get('default_currency');
                 }
                 elementTextContent(elWithdrawLimit, template(txtWithdrawLim, [currency, daysLimit]));
                 elementTextContent(elWithdrawn, template(txtWithdrawAmt,  [currency, withdrawn]));

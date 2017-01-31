@@ -222,6 +222,7 @@ const BinarySocketClass = function() {
                         }
                     });
                     if (company) {
+                        Client.set('default_currency', company.legal_default_currency);
                         const has_reality_check = company.has_reality_check;
                         if (has_reality_check) {
                             Client.set('has_reality_check', has_reality_check);

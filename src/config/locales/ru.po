@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-19 11:28+0000\n"
-"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
+"PO-Revision-Date: 2017-01-30 10:54+0000\n"
+"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -31,18 +31,6 @@ msgstr "\"Я являюсь партнером нескольких компан
 
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "\"Сторонний поставщик (Сторонние поставщики)\" означает третью сторону (не являющуюся нашим партнёром), предоставляющую определённые функции посредством интерфейса прикладного программирования (API) %1."
-
-msgid "$100,000 - $250,000"
-msgstr "$100,000 - $250,000"
-
-msgid "$100,000 - $500,000"
-msgstr "$100,000 - $500,000"
-
-msgid "$25,000 - $100,000"
-msgstr "$25,000 - $100,000"
-
-msgid "$250,000 - $1,000,000"
-msgstr "$250,000 - $1,000,000"
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 было зачислено на Ваш Демо-счет %3"
@@ -279,6 +267,24 @@ msgstr "Благотворительная инициатива %1 ориент�
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(minimum duration, for example minimum 15 seconds)мин."
+
+msgid "&#36;100,000 - &#36;250,000"
+msgstr "&#36;100,000 - &#36;250,000"
+
+msgid "&#36;100,001 - &#36;500,000"
+msgstr "&#36;100,001 - &#36;500,000"
+
+msgid "&#36;25,000 - &#36;50,000"
+msgstr "&#36;25,000 - &#36;50,000"
+
+msgid "&#36;250,001 - &#36;500,000"
+msgstr "&#36;250,001 - &#36;500,000"
+
+msgid "&#36;50,001 - &#36;100,000"
+msgstr "&#36;50,001 - &#36;100,000"
+
+msgid "&#36;500,001 - &#36;1,000,000"
+msgstr "&#36;500,001 - &#36;1,000,000"
 
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 является одним из наших самых давних и надежных партнеров. Мы работаем вместе много лет.&#8221;"
@@ -3483,8 +3489,8 @@ msgstr "Investment Solicitation Policy"
 msgid "Investment trust"
 msgstr "Investment trust"
 
-msgid "Investments & Dividends"
-msgstr "Инвестиции & Дивиденды"
+msgid "Investments &amp; Dividends"
+msgstr "Инвестиции &amp; Дивиденды"
 
 msgid "Investor Compensation Scheme"
 msgstr "Схема компенсации инвесторам"
@@ -4098,11 +4104,11 @@ msgstr "Нормативно-правовое соответствие"
 msgid "Legal Compliance"
 msgstr "Нормативно-правовое соответствие"
 
-msgid "Less than $100,000"
-msgstr "Менее $100,000"
+msgid "Less than &#36;100,000"
+msgstr "Менее &#36;100,000"
 
-msgid "Less than $25,000"
-msgstr "Менее $25,000"
+msgid "Less than &#36;25,000"
+msgstr "Менее &#36;25,000"
 
 msgid "Less than 1 million JPY"
 msgstr "Less than 1 million JPY"
@@ -4779,11 +4785,11 @@ msgstr "Наш послужной список"
 msgid "Our trading screen is simple to use:"
 msgstr "Наше торговое окно работает очень просто:"
 
-msgid "Over $1,000,000"
-msgstr "Свыше $1,000,000"
+msgid "Over &#36;1,000,000"
+msgstr "Свыше &#36;1,000,000"
 
-msgid "Over $500,001"
-msgstr "Более $500,001"
+msgid "Over &#36;500,001"
+msgstr "Более &#36;500,001"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "Свыше 1 миллиона зарегистрированных счетов по всему миру"
@@ -4961,9 +4967,6 @@ msgstr "Пожалуйста, проверьте свой эл. адрес; Ва
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "Пожалуйста, выберите валюту, которую Вы желаете использовать на счету."
-
-msgid "Please complete the following financial assessment form before continuing."
-msgstr "Прежде, чем продолжить, пожалуйста, заполните следующую форму финансовой оценки."
 
 msgid "Please confirm the trade on your statement before proceeding."
 msgstr "Пожалуйста, подтвердите контракт в своей истории счета, прежде чем продолжить."
@@ -7019,10 +7022,8 @@ msgstr "Просмотр"
 msgid "View Details"
 msgstr "Подробнее"
 
-#, fuzzy
-#| msgid "View statement"
 msgid "View Statement"
-msgstr "Смотрите историю счета"
+msgstr "Смотреть историю счета"
 
 msgid "View Updated Portfolio"
 msgstr "Обновленный портфель"
@@ -7802,6 +7803,11 @@ msgstr "Ваша касса закрыта по Вашему запросу - д
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "Ваша касса закрыта по Вашему запросу – для открытия, пожалуйста, введите пароль."
 
+#, fuzzy
+#| msgid "Your settings have been updated successfully."
+msgid "Your changes have been updated successfully."
+msgstr "Настройки успешно обновлены."
+
 msgid "Your changes have been updated."
 msgstr "Ваши изменения внесены успешно."
 
@@ -7810,9 +7816,6 @@ msgstr "Вашим клиентам понравится торговая пла
 
 msgid "Your current balance is"
 msgstr "Текущий баланс Вашего счета составляет"
-
-msgid "Your details have been updated."
-msgstr "Ваши данные успешно обновлены."
 
 msgid "Your funds are safe"
 msgstr "Ваши средства в безопасности"
@@ -7852,9 +7855,6 @@ msgstr "Ваш риск заранее известен"
 
 msgid "Your session duration limit will end in %1 seconds."
 msgstr "Ограничение на длительность сессии закончится через %1 сек."
-
-msgid "Your settings have been updated successfully."
-msgstr "Настройки успешно обновлены."
 
 msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
 msgstr "Срок действия Вашего ключа истёк. Пожалуйста, нажмите <a class=\"pjaxload\" href=\"%1\">здесь,</a> чтобы повторно запустить процесс проверки."
@@ -8269,6 +8269,9 @@ msgstr "{JAPAN ONLY}Binary K.K. Customer Account"
 
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
+
+msgid "{JAPAN ONLY}Binary.com page title"
+msgstr "{JAPAN ONLY}Binary.com page title"
 
 msgid "{JAPAN ONLY}Branch"
 msgstr "{JAPAN ONLY}Branch"
@@ -9139,6 +9142,12 @@ msgstr "Информация о счете"
 
 msgid "Terms and Conditions Approval"
 msgstr "Согласие с правилами и условиями"
+
+#~ msgid "Please complete the following financial assessment form before continuing."
+#~ msgstr "Прежде, чем продолжить, пожалуйста, заполните следующую форму финансовой оценки."
+
+#~ msgid "Your details have been updated."
+#~ msgstr "Ваши данные успешно обновлены."
 
 #~ msgid "Logout"
 #~ msgstr "Выход"
