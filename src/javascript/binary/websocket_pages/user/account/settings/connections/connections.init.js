@@ -9,10 +9,10 @@ const Connections = (function() {
         if (response.error && response.error.message) {
             return ConnectionsUI.displayError(response.error.message);
         }
-        if (response.connect_add) { // call list on finish
+        if (response.connect_add || response.connect_del) { // call list on finish
             return ConnectionsData.list();
         }
-        return ConnectionsUI.update(response.connect_list);
+        return ConnectionsUI.update(response.connect_list || '');
     };
 
     const init = function() {

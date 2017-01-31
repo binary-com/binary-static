@@ -4,7 +4,7 @@ const ConnectionsData = (function() {
     const calls = function(callback) {
         return function(msg) {
             const response = JSON.parse(msg.data);
-            if (!response || response.msg_type !== 'connect_list') {
+            if (!response || !/connect_(list|add|del)/.test(response.msg_type)) {
                 return;
             }
             callback(response);
