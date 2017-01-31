@@ -27,7 +27,7 @@ const SettingsDetailsWS = (function() {
     const init = function() {
         Content.populate();
 
-        if (Client.get('is_virtual') || Client.get('residence')) {
+        if (Client.get('values_set') && (Client.get('is_virtual') || Client.get('residence'))) {
             initOk();
         } else {
             isInitialized = false;
@@ -49,14 +49,35 @@ const SettingsDetailsWS = (function() {
                 if (!changed) {
                     return showFormMessage('You did not change anything.', false);
                 }
-                if (isJP) return submitJP(info.values);
+                if (isJP) {
+                    return submitJP(info.values);
+                } else if (!isVirtual) {
+                    info.values.allow_copiers = $('#allow_copiers:checked').length > 0 ? 1 : 0;
+                }
                 return submitNonJP(info.values);
             },
         });
-        if (isJP && !isVirtual) {
-            $('#fieldset_email_consent').removeClass('invisible');
-            detect_hedging($('#PurposeOfTrading'), $('.hedge'));
+        if (!isVirtual) {
+            let $content_to_display;
+            if (isJP) {
+                $content_to_display = $('#email_consent_label');
+                detect_hedging($('#PurposeOfTrading'), $('.hedge'));
+            } else {
+                $content_to_display = $('#allow_copiers_label');
+            }
+            $content_to_display.parent().removeClass('invisible');
+            $('#fieldset_preferences').removeClass('invisible');
         }
+    };
+
+    const handleCheckBox = (el_selector, data_el_selector) => {
+        const $el = $(el_selector);
+        if (data_el_selector) {
+            $el.prop('checked', 'true');
+        }
+        $el.on('change', function() {
+            changed = true;
+        });
     };
 
     const getDetailsResponse = function(response) {
@@ -67,14 +88,7 @@ const SettingsDetailsWS = (function() {
 
         $('#lblCountry').text(data.country || '-');
         $('#lblEmail').text(data.email);
-        const $email_consent = $('#email_consent');
-        if (data.email_consent) {
-            $email_consent.prop('checked', 'true');
-        }
-
-        $email_consent.on('change', function() {
-            changed = true;
-        });
+        handleCheckBox('#email_consent', data.email_consent);
 
         if (Client.get('is_virtual')) { // Virtual Account
             $(RealAccElements).remove();
@@ -84,6 +98,7 @@ const SettingsDetailsWS = (function() {
         // Real Account
         const birthDate = data.date_of_birth ? moment.utc(new Date(data.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
         $('#lblBirthDate').text(birthDate);
+        handleCheckBox('#allow_copiers', data.allow_copiers);
         // Generate states list
         const residence = Cookies.get('residence');
         if (residence) {
@@ -261,11 +276,7 @@ const SettingsDetailsWS = (function() {
         Object.keys(data).forEach(function(key) {
             req[key] = data[key];
         });
-        if ($('#email_consent:checked').length > 0) {
-            req.email_consent = 1;
-        } else {
-            req.email_consent = 0;
-        }
+        req.email_consent = $('#email_consent:checked').length > 0 ? 1 : 0;
         BinarySocket.send(req);
     };
 

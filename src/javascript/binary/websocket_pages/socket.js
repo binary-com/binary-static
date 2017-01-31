@@ -1,40 +1,41 @@
-const getSocketURL              = require('../../config').getSocketURL;
-const getAppId                  = require('../../config').getAppId;
-const Login                     = require('../base/login').Login;
-const objectNotEmpty            = require('../base/utility').objectNotEmpty;
-const getLoginToken             = require('../common_functions/common_functions').getLoginToken;
-const displayAcctSettings       = require('../common_functions/account_opening').displayAcctSettings;
-const SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
-const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
-const Cashier                   = require('./cashier/cashier').Cashier;
-const CashierJP                 = require('../../binary_japan/cashier').CashierJP;
-const PaymentAgentWithdrawWS    = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
-const create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
-const TNCApproval               = require('./user/tnc_approval').TNCApproval;
-const ViewPopupWS               = require('./user/view_popup/view_popupws').ViewPopupWS;
-const ViewBalanceUI             = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
-const Cookies                   = require('../../lib/js-cookie');
-const State                     = require('../base/storage').State;
-const Highchart                 = require('./trade/charts/highchartws').Highchart;
-const WSTickDisplay             = require('./trade/tick_trade').WSTickDisplay;
-const TradePage                 = require('./trade/tradepage').TradePage;
-const Notifications             = require('./trade/notifications').Notifications;
-const TradePage_Beta            = require('./trade/beta/tradepage').TradePage_Beta;
-const reloadPage                = require('./trade/common').reloadPage;
-const MBTradePage               = require('./mb_trade/mb_tradepage').MBTradePage;
-const RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
-const RealityCheckData          = require('./user/reality_check/reality_check.data').RealityCheckData;
-const localize         = require('../base/localize').localize;
-const getLanguage      = require('../base/language').getLanguage;
-const validate_loginid = require('../base/client').validate_loginid;
-const GTM        = require('../base/gtm').GTM;
-const Clock      = require('../base/clock').Clock;
-const Header     = require('../base/header').Header;
-const LocalStore = require('../base/storage').LocalStore;
-const Client     = require('../base/client').Client;
-const page       = require('../base/page').page;
+const Cashier                         = require('./cashier/cashier').Cashier;
+const PaymentAgentWithdrawWS          = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
+const MBTradePage                     = require('./mb_trade/mb_tradepage').MBTradePage;
+const reloadPage                      = require('./trade/common').reloadPage;
+const TradePage_Beta                  = require('./trade/beta/tradepage').TradePage_Beta;
+const Highchart                       = require('./trade/charts/highchartws').Highchart;
+const Notifications                   = require('./trade/notifications').Notifications;
+const WSTickDisplay                   = require('./trade/tick_trade').WSTickDisplay;
+const TradePage                       = require('./trade/tradepage').TradePage;
+const RealityCheck                    = require('./user/reality_check/reality_check.init').RealityCheck;
+const RealityCheckData                = require('./user/reality_check/reality_check.data').RealityCheckData;
+const TNCApproval                     = require('./user/tnc_approval').TNCApproval;
+const ViewBalanceUI                   = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
+const ViewPopupWS                     = require('./user/view_popup/view_popupws').ViewPopupWS;
+const CopyTrader                      = require('./user/copy_trader').CopyTrader;
+const Client                          = require('../base/client').Client;
+const validate_loginid                = require('../base/client').validate_loginid;
+const Clock                           = require('../base/clock').Clock;
+const GTM                             = require('../base/gtm').GTM;
+const Header                          = require('../base/header').Header;
+const getLanguage                     = require('../base/language').getLanguage;
+const localize                        = require('../base/localize').localize;
+const Login                           = require('../base/login').Login;
+const page                            = require('../base/page').page;
+const objectNotEmpty                  = require('../base/utility').objectNotEmpty;
+const LocalStore                      = require('../base/storage').LocalStore;
+const State                           = require('../base/storage').State;
+const displayAcctSettings             = require('../common_functions/account_opening').displayAcctSettings;
+const create_language_drop_down       = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
 const check_risk_classification       = require('../common_functions/check_risk_classification').check_risk_classification;
 const qualify_for_risk_classification = require('../common_functions/check_risk_classification').qualify_for_risk_classification;
+const getLoginToken                   = require('../common_functions/common_functions').getLoginToken;
+const checkClientsCountry             = require('../common_functions/country_base').checkClientsCountry;
+const SessionDurationLimit            = require('../common_functions/session_duration_limit').SessionDurationLimit;
+const CashierJP                       = require('../../binary_japan/cashier').CashierJP;
+const getAppId                        = require('../../config').getAppId;
+const getSocketURL                    = require('../../config').getSocketURL;
+const Cookies                         = require('../../lib/js-cookie');
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
@@ -306,6 +307,8 @@ const BinarySocketClass = function() {
                         localStorage.removeItem('risk_classification.response');
                         Client.check_tnc();
                     }
+                } else if (type === 'copytrading_statistics') {
+                    CopyTrader.onResponse(response);
                 }
                 if (response.hasOwnProperty('error')) {
                     if (response.error && response.error.code) {

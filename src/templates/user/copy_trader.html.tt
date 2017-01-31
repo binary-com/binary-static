@@ -1,0 +1,119 @@
+<h1>[% l("Copy Trader") %]</h1>
+<div>
+    <form id="frm_copy_trader">
+        <fieldset>
+            <legend>[% l("Details") %]</legend>
+            <div class="gr-row gr-padding-20">
+                <div class="gr-4 form_label">
+                    <label for="loginid_copy">[% l("Login ID:") %]</label>
+                </div>
+                <div class="gr-8">
+                    <input type="text" id="loginid_copy" max="15" />
+                </div>
+            </div>
+        </fieldset>
+        <fieldset id="formlayout">
+            <div class="gr-row">
+                <div class="gr-4"></div>
+                <div class="gr-8">
+                    <p class="errorfield gr-padding-10 invisible"></p>
+                    <button class="button" id="btn_submit" type="submit">[% l('Get Statistics') %]</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <fieldset id="fld_display_copier" class="invisible">
+        <legend></legend>
+        <div class="gr-row gr-padding-10">
+            <div class="gr-4 form_label">
+                <label for="active_since">[% l("Active since:") %]</label>
+            </div>
+            <div class="gr-8">
+                <span id="inputheading">
+                    <strong><span id="active_since"></span></strong>
+                </span>
+            </div>
+        </div>
+        <div class="gr-row gr-padding-10">
+            <div class="gr-4 form_label">
+                <label for="avg_duration">[% l("Average duration:") %]</label>
+            </div>
+            <div class="gr-8">
+                <span id="inputheading">
+                    <strong><span id="avg_duration"></span></strong>
+                </span>
+            </div>
+        </div>
+        <div class="gr-row gr-padding-10">
+            <div class="gr-4 form_label">
+                <label for="avg_loss">[% l("Average loss:") %]</label>
+            </div>
+            <div class="gr-8">
+                <span id="inputheading">
+                    <strong><span id="avg_loss"></span></strong>
+                </span>
+            </div>
+        </div>
+        <div class="gr-row gr-padding-10">
+            <div class="gr-4 form_label">
+                <label for="avg_profit">[% l("Average profit:") %]</label>
+            </div>
+            <div class="gr-8">
+                <span id="inputheading">
+                    <strong><span id="avg_profit"></span></strong>
+                </span>
+            </div>
+        </div>
+        <div class="gr-row gr-padding-10">
+            <div class="gr-4 form_label">
+                <label for="copiers">[% l("Copiers:") %]</label>
+            </div>
+            <div class="gr-8">
+                <span id="inputheading">
+                    <strong><span id="copiers"></span></strong>
+                </span>
+            </div>
+        </div>
+        <div class="gr-row gr-padding-10">
+            <div class="gr-4 form_label">
+                <label for="last_12months_profitable_trades">[% l("Last 12 months profitable trades:") %]</label>
+            </div>
+            <div class="gr-8">
+                <span id="inputheading">
+                    <strong><span id="last_12months_profitable_trades"></span></strong>
+                </span>
+            </div>
+        </div>
+        <div class="gr-row gr-padding-10">
+            <div class="gr-4 form_label">
+                <label for="performance_probability">[% l("Performance probability:") %]</label>
+            </div>
+            <div class="gr-8">
+                <span id="inputheading">
+                    <strong><span id="performance_probability"></span></strong>
+                </span>
+            </div>
+        </div>
+        <div class="gr-row gr-padding-10">
+            <div class="gr-4 form_label">
+                <label for="total_trades">[% l("Total trades:") %]</label>
+            </div>
+            <div class="gr-8">
+                <span id="inputheading">
+                    <strong><span id="total_trades"></span></strong>
+                </span>
+            </div>
+        </div>
+        <div class="gr-row gr-padding-10">
+            <div class="gr-4 form_label">
+                <label for="trades_profitable">[% l("Trades profitable:") %]</label>
+            </div>
+            <div class="gr-8">
+                <span id="inputheading">
+                    <strong><span id="trades_profitable"></span></strong>
+                </span>
+            </div>
+        </div>
+    </fieldset>
+</div>

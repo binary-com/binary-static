@@ -244,7 +244,10 @@ _:-ms-fullscreen, :root #content-holder {
 
 input[type=checkbox] {
     margin-top: -5px;
-    &#email_consent {
+}
+
+#fieldset_preferences {
+    input[type=checkbox] {
         margin-top: 5px;
     }
 }
