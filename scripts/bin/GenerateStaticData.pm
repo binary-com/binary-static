@@ -681,6 +681,19 @@ sub _texts {
         push @texts, localize('You do not have any connections.');
         push @texts, localize('Are you sure that you want to permanently revoke connection to');
 
+        # strings for form_validation
+        push @texts, localize('Should be a valid number');
+        push @texts, localize('Should be more than [_1]');
+        push @texts, localize('Should be less than [_1]');
+        push @texts, localize('Only letters, numbers, space, hyphen, period, and apostrophe are allowed.');
+        push @texts, localize('Only letters, space, hyphen, period, and apostrophe are allowed.');
+        push @texts, localize('Only letters, numbers, and hyphen are allowed.');
+        push @texts, localize('Only numbers and spaces are allowed.');
+        push @texts, localize('Please submit a valid verification token.');
+        push @texts, localize('The two passwords that you entered do not match.');
+        push @texts, localize('[_1] and [_2] cannot be the same.');
+        push @texts, localize('You should enter [_1] characters.');
+
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
     }
