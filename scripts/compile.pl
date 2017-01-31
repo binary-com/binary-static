@@ -97,7 +97,7 @@ foreach my $m (@m) {
 
         my %stash = (
             website_name    => $request->website->display_name,
-            browser_title   => ($title ? localize($title).' | ' : '') . $request->website->display_name,
+            browser_title   => $title ? localize($title).' | ' : '',
             request         => $request,
             language        => uc $lang,
             root_url        => root_url(),
