@@ -74,6 +74,7 @@ InScriptStore.prototype = {
 };
 
 const State = new InScriptStore();
+State.set('response', {});
 
 const CookieStorage = function (cookie_name, cookie_domain) {
     this.initialized = false;
