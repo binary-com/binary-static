@@ -70,6 +70,34 @@ const BinarySocketClass = function() {
         'get_account_status',
         'get_financial_assessment',
     ];
+    const waiting_list = {
+        items: {},
+        add  : (msg_type, promise_obj) => {
+            if (!waiting_list.items[msg_type]) {
+                waiting_list.items[msg_type] = [];
+            }
+            waiting_list.items[msg_type].push(promise_obj);
+        },
+        resolve: (response) => {
+            const msg_type = response.msg_type;
+            const this_promises = waiting_list.items[msg_type];
+            if (this_promises && this_promises.length) {
+                this_promises.forEach((pr) => {
+                    if (!waiting_list.another_exists(pr, msg_type)) {
+                        pr.resolve(response);
+                    }
+                });
+                waiting_list.items[msg_type] = [];
+            }
+        },
+        another_exists: (pr, msg_type) => (
+            Object.keys(waiting_list.items)
+                .some(type => (
+                    type !== msg_type &&
+                    $.inArray(pr, waiting_list.items[type]) >= 0
+                ))
+        ),
+    };
 
     const clearTimeouts = function() {
         Object.keys(timeouts).forEach(function(key) {
@@ -90,6 +118,26 @@ const BinarySocketClass = function() {
         while (bufferedSends.length > 0) {
             binarySocket.send(JSON.stringify(bufferedSends.shift()));
         }
+    };
+
+    const wait = (...msg_types) => {
+        const promise_obj = new PromiseClass();
+        let is_resolved = true;
+        msg_types.forEach((msg_type) => {
+            const last_response = State.get(['response', msg_type]);
+            if (!last_response) {
+                if (msg_type !== 'authorize' || Client.is_logged_in()) {
+                    waiting_list.add(msg_type, promise_obj);
+                    is_resolved = false;
+                }
+            } else if (msg_types.length === 1) {
+                promise_obj.resolve(last_response);
+            }
+        });
+        if (is_resolved) {
+            promise_obj.resolve();
+        }
+        return promise_obj.promise;
     };
 
     const send = function(data, force_send) {
@@ -216,6 +264,8 @@ const BinarySocketClass = function() {
                         delete promises[this_req_id];
                     }
                 }
+                // resolve the wait promise
+                waiting_list.resolve(response);
 
                 if (type === 'authorize') {
                     if (response.hasOwnProperty('error')) {
@@ -424,6 +474,7 @@ const BinarySocketClass = function() {
 
     return {
         init         : init,
+        wait         : wait,
         send         : send,
         close        : close,
         socket       : function () { return binarySocket; },
