@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Italian (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-22 18:18+0000\n"
+"PO-Revision-Date: 2017-01-24 14:31+0000\n"
 "Last-Translator: Annalisa <ligiu@me.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/binary/static/it/>\n"
 "Language: it\n"
@@ -26,18 +26,6 @@ msgstr "\"Lavoro con molte società affiliate ma questa è di gran lunga la più
 
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "\"Provider esterno(i)\" indica un'organizzazione esterna (non affiliata) che rende disponibile le funzionalità e le funzioni attraverso l'uso dell'API di %1."
-
-msgid "$100,000 - $250,000"
-msgstr "$100.000 - $250.000"
-
-msgid "$100,000 - $500,000"
-msgstr "$100.000 - $500.000"
-
-msgid "$25,000 - $100,000"
-msgstr "$25.000 - $100.000"
-
-msgid "$250,000 - $1,000,000"
-msgstr "$250.000 - $1.000.000"
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 sono stati accreditati sul tuo Account di moneta virtuale %3"
@@ -276,6 +264,36 @@ msgstr ""
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "minimo %ctx(minimum duration, for example minimum 15 seconds)"
+
+#, fuzzy
+#| msgid "$100,000 - $250,000"
+msgid "&#36;100,000 - &#36;250,000"
+msgstr "$100.000 - $250.000"
+
+#, fuzzy
+#| msgid "$100,000 - $500,000"
+msgid "&#36;100,001 - &#36;500,000"
+msgstr "$100.000 - $500.000"
+
+#, fuzzy
+#| msgid "$25,000 - $100,000"
+msgid "&#36;25,000 - &#36;50,000"
+msgstr "$25.000 - $100.000"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;250,001 - &#36;500,000"
+msgstr "$250.000 - $1.000.000"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;50,001 - &#36;100,000"
+msgstr "$250.000 - $1.000.000"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;500,001 - &#36;1,000,000"
+msgstr "$250.000 - $1.000.000"
 
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 è uno dei partner più vecchi e affidabili che abbiamo mai avuto. Abbiamo lavorato insieme per molti anni.&#8221;"
@@ -3489,7 +3507,9 @@ msgstr "Investment Solicitation Policy"
 msgid "Investment trust"
 msgstr "Investment trust"
 
-msgid "Investments & Dividends"
+#, fuzzy
+#| msgid "Investments & Dividends"
+msgid "Investments &amp; Dividends"
 msgstr "Investimenti e Dividendi"
 
 msgid "Investor Compensation Scheme"
@@ -4104,10 +4124,14 @@ msgstr "Conformità legale e regolamentare"
 msgid "Legal Compliance"
 msgstr "Conformità legale"
 
-msgid "Less than $100,000"
+#, fuzzy
+#| msgid "Less than $100,000"
+msgid "Less than &#36;100,000"
 msgstr "Meno di $100.000"
 
-msgid "Less than $25,000"
+#, fuzzy
+#| msgid "Less than $25,000"
+msgid "Less than &#36;25,000"
 msgstr "Meno di $25.000"
 
 msgid "Less than 1 million JPY"
@@ -4786,10 +4810,14 @@ msgstr "La nostra comprovata esperienza"
 msgid "Our trading screen is simple to use:"
 msgstr "La nostra schermata di trading è facile da usare:"
 
-msgid "Over $1,000,000"
+#, fuzzy
+#| msgid "Over $1,000,000"
+msgid "Over &#36;1,000,000"
 msgstr "Più di $1.000.000"
 
-msgid "Over $500,001"
+#, fuzzy
+#| msgid "Over $500,001"
+msgid "Over &#36;500,001"
 msgstr "Più di $500.001"
 
 msgid "Over 1 million registered accounts worldwide"
@@ -4968,9 +4996,6 @@ msgstr "Verifica il tuo indirizzo e-mail per ottenere il token necessario per ri
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "Scegli in quale valuta desideri operare."
-
-msgid "Please complete the following financial assessment form before continuing."
-msgstr "Prima di continuare, completa il seguente modulo di valutazione finanziaria."
 
 msgid "Please confirm the trade on your statement before proceeding."
 msgstr "Prima di procedere, conferma il trade sul tuo estratto."
@@ -6099,10 +6124,8 @@ msgstr "L'<strong>orario di fine</strong> è il numero di minuti/ore selezionati
 msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "L'<strong>orario di fine</strong> è il numero di secondi/minuti/ore selezionati successivi all'<strong>orario d'inizio</strong> (se inferiore a un giorno di durata), oppure alla fine del giorno di trading (nel caso di uno o più giorni di durata)."
 
-#, fuzzy
-#| msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
-msgstr "Lo <strong>spot d'uscita</strong> è lo spot all'<strong>orario di fine</strong>."
+msgstr "Lo <strong>spot d'uscita</strong> è l'ultimo spot all'orario o prima dell'<strong>orario di fine</strong>."
 
 msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgstr "Lo <strong>spot d'uscita</strong> è lo spot all'<strong>orario di fine</strong>."
@@ -6347,12 +6370,12 @@ msgstr "La società non garantisce la possibilità di vendere un contratto prima
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
 msgstr "La società dispone di varie modalità di pagamento, ognuna con i propri tempi per i depositi, alcuni dei quali potrebbero non essere disponibili per i prelievi. Tutti i dettagli sui metodi di deposito e prelievo disponibili inclusi i periodi di liquidazione sono disponibili <a href='%1' class='pjaxload'>qui.</a>"
 
-#, fuzzy
-#| msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
 msgid ""
 "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer\n"
 "                funds at the level: <strong>medium protection</strong>."
-msgstr "La società detiene i fondi dei clienti in conti bancari separati da quelli operativi, i quali non faranno parte, in caso di insolvenza, dell'asset della Società. Ciò rispecchia i requisiti della Commissione sul gioco d'azzardo per la segregazione dei fondi dei clienti a livello: <strong>protezione media</strong>."
+msgstr ""
+"La società detiene i fondi dei clienti in conti bancari separati da quelli operativi, i quali non faranno parte, in caso di insolvenza, dell'asset della Società. Ciò rispecchia i requisiti della Commissione sul gioco d'azzardo per la segregazione dei fondi dei clienti\n"
+" a livello: <strong>protezione media</strong>."
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: medium protection."
 msgstr "La società detiene i fondi dei clienti in conti bancari separati da quelli operativi; sono stati effettuati degli accordi per garantire che, in caso di insolvenza, gli asset presenti sugli account dei clienti vengano loro ridistribuiti. Ciò rispecchia i requisiti della Commissione sul gioco d'azzardo per la segregazione dei fondi dei clienti a livello: protezione media."
@@ -6677,10 +6700,8 @@ msgstr "Livello"
 msgid "Time"
 msgstr "Orario"
 
-#, fuzzy
-#| msgid "Start time is in the future."
 msgid "Time is in the wrong format."
-msgstr "L'orario di inizio è nel futuro."
+msgstr "L'orario è in un formato errato."
 
 msgid "Time out until"
 msgstr "Tempo scaduto fino a"
@@ -7830,6 +7851,11 @@ msgstr "Come da tua richiesta, la cassa è bloccata. Per sbloccarla, <a class=\"
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "Come da tua richiesta, la cassa è bloccata. Per sbloccarla, inserisci la password."
 
+#, fuzzy
+#| msgid "Your settings have been updated successfully."
+msgid "Your changes have been updated successfully."
+msgstr "Le tue impostazioni sono state aggiornate con successo."
+
 msgid "Your changes have been updated."
 msgstr "Le tue modifiche sono state aggiornate."
 
@@ -7838,9 +7864,6 @@ msgstr "I tuoi clienti si innamoreranno della piattaforma di trading %1 perché 
 
 msgid "Your current balance is"
 msgstr "Il tuo saldo attuale è"
-
-msgid "Your details have been updated."
-msgstr "I tuoi dettagli sono stati aggiornati."
 
 msgid "Your funds are safe"
 msgstr "I tuoi fondi sono al sicuro"
@@ -7880,9 +7903,6 @@ msgstr "I tuoi rischi sono noti"
 
 msgid "Your session duration limit will end in %1 seconds."
 msgstr "Il limite di durata della tua sessione terminerà tra %1 secondi."
-
-msgid "Your settings have been updated successfully."
-msgstr "Le tue impostazioni sono state aggiornate con successo."
 
 msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
 msgstr "Il tuo token è scaduto. Clicca <a class=\"pjaxload\" href=\"%1\">qui</a> per riavviare la procedura di verifica."
@@ -8297,6 +8317,11 @@ msgstr "{JAPAN ONLY}Binary K.K. Customer Account"
 
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Binary K. K."
+msgid "{JAPAN ONLY}Binary.com page title"
+msgstr "{JAPAN ONLY}Binary K. K."
 
 msgid "{JAPAN ONLY}Branch"
 msgstr "{JAPAN ONLY}Branch"
@@ -9171,6 +9196,12 @@ msgstr "Dettagli dell'account"
 
 msgid "Terms and Conditions Approval"
 msgstr "Approvazione dei termini e delle condizioni"
+
+#~ msgid "Please complete the following financial assessment form before continuing."
+#~ msgstr "Prima di continuare, completa il seguente modulo di valutazione finanziaria."
+
+#~ msgid "Your details have been updated."
+#~ msgstr "I tuoi dettagli sono stati aggiornati."
 
 #~ msgid "Logout"
 #~ msgstr "Logout"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-12 18:45+0000\n"
+"PO-Revision-Date: 2017-01-27 12:51+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
@@ -32,18 +32,6 @@ msgstr "„Współpracuję z wieloma firmami partnerskimi, ale ta jest z nich na
 
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "„Operator zewnętrzny\" to strona trzecia (niepowiązana z firmą), która udostępnia funkcje za pośrednictwem API %1."
-
-msgid "$100,000 - $250,000"
-msgstr "100 000 $ – 250 000 $"
-
-msgid "$100,000 - $500,000"
-msgstr "100 000 $ – 500 000 $"
-
-msgid "$25,000 - $100,000"
-msgstr "25 000 $ – 100 000 $"
-
-msgid "$250,000 - $1,000,000"
-msgstr "250 000 $ – 1 000 000 $"
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%2 %1 zostało odjęte z Twojego konta wirtualnego %3"
@@ -280,6 +268,24 @@ msgstr "Działania charytatywne %1 wspierają małe organizacje charytatywne i n
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(minimalny czas trwania, na przykład minimum 15 sekund)min"
+
+msgid "&#36;100,000 - &#36;250,000"
+msgstr "100 000 &#36; – 250 000 &#36;"
+
+msgid "&#36;100,001 - &#36;500,000"
+msgstr "100 000 &#36; – 500 000 &#36;"
+
+msgid "&#36;25,000 - &#36;50,000"
+msgstr "25 000 &#36; – 100 000 &#36;"
+
+msgid "&#36;250,001 - &#36;500,000"
+msgstr "250 000 &#36; – 1 000 000 &#36;"
+
+msgid "&#36;50,001 - &#36;100,000"
+msgstr "250 000 &#36; – 1 000 000 &#36;"
+
+msgid "&#36;500,001 - &#36;1,000,000"
+msgstr "250 000 &#36; – 1 000 000 &#36;"
 
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 to jeden z naszych najbardziej zaufanych partnerów, z którym współpracujemy od wielu lat.&#8221;"
@@ -763,10 +769,8 @@ msgstr "Chęć pracy w systemie Linux i z wykorzystaniem platform typu open-sour
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Aktywne podejście do rozwiązywania problemów i zapewniania rozwiązań dla naszych klientów"
 
-#, fuzzy
-#| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
-msgstr "Skan rachunku za media lub wyciągu bankowego (z ostatnich 3 miesięcy)."
+msgstr "Skan rachunku za media lub wyciągu bankowego (z ostatnich 3 miesięcy)"
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
 msgstr "Skan Twojego paszportu, prawa jazdy (czasowego lub normalnego) lub dowodu osobistego z Twoim imieniem i nazwiskiem oraz datą urodzenia. Dokument musi być ważny co najmniej 6 miesięcy od daty przesłania nam jego skanu."
@@ -3483,7 +3487,7 @@ msgstr "Investment Solicitation Policy"
 msgid "Investment trust"
 msgstr "Investment trust"
 
-msgid "Investments & Dividends"
+msgid "Investments &amp; Dividends"
 msgstr "Inwestycje i dywidenda"
 
 msgid "Investor Compensation Scheme"
@@ -4098,11 +4102,11 @@ msgstr "Zgodność z przepisami"
 msgid "Legal Compliance"
 msgstr "Zgodność z prawem"
 
-msgid "Less than $100,000"
-msgstr "Mniej niż 100 000 $"
+msgid "Less than &#36;100,000"
+msgstr "Mniej niż 100 000 &#36;"
 
-msgid "Less than $25,000"
-msgstr "Mniej niż 25 000 $"
+msgid "Less than &#36;25,000"
+msgstr "Mniej niż 25 000 &#36;"
 
 msgid "Less than 1 million JPY"
 msgstr "Less than 1 million JPY"
@@ -4776,11 +4780,11 @@ msgstr "Nasze osiągnięcia"
 msgid "Our trading screen is simple to use:"
 msgstr "Nasz ekran do handlowania jest prosty w obsłudze:"
 
-msgid "Over $1,000,000"
-msgstr "Ponad 1 000 000 $"
+msgid "Over &#36;1,000,000"
+msgstr "Ponad 1 000 000 &#36;"
 
-msgid "Over $500,001"
-msgstr "Ponad 500 001 $"
+msgid "Over &#36;500,001"
+msgstr "Ponad 500 001 &#36;"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "Ponad milion zarejestrowanych kont na całym świecie"
@@ -4958,9 +4962,6 @@ msgstr "Sprawdź pocztę e-mail, aby odzyskać token potrzebny do zresetowania h
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "Wybierz, w jakiej walucie chcesz zawrzeć transakcję."
-
-msgid "Please complete the following financial assessment form before continuing."
-msgstr "Zanim przejdziesz dalej wypełnij poniższy formularz oceny sytuacji finansowej."
 
 msgid "Please confirm the trade on your statement before proceeding."
 msgstr "Aby przejść dalej, proszę potwierdzić transakcję w sekcji Stan konta."
@@ -6669,10 +6670,8 @@ msgstr "Do"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "Aby aplikować, prześlij swoje CV i list motywacyjny na <span id='hr_contact_eaddress'></span>."
 
-#, fuzzy
-#| msgid "To authenticate your account, kindly email the following to %1"
 msgid "To authenticate your account, kindly email the following to %1:"
-msgstr "Aby uwierzytelnić konto, proszę przesłać do %1 drogą e-mailową dokumenty wymienione poniżej"
+msgstr "Aby uwierzytelnić konto, proszę przesłać do %1 drogą e-mailową dokumenty wymienione poniżej:"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
 msgstr "Aby uwierzytelnić konto, proszę przesłać dokumenty wymienione poniżej na adres e-mail: <a href=\"mailto:%1\">%1</a>"
@@ -7016,8 +7015,6 @@ msgstr "Widok"
 msgid "View Details"
 msgstr "Zobacz szczegóły"
 
-#, fuzzy
-#| msgid "View statement"
 msgid "View Statement"
 msgstr "Zobacz oświadczenie"
 
@@ -7798,6 +7795,9 @@ msgstr "Sekcja Kasjer została zablokowana na Twoją prośbę - jeśli chcesz j�
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "Sekcja Kasjer została zablokowana na Twoją prośbę - jeśli chcesz ją odblokować, prosimy o podanie hasła."
 
+msgid "Your changes have been updated successfully."
+msgstr "Zmiany zostały wprowadzone."
+
 msgid "Your changes have been updated."
 msgstr "Twoje zmiany zostały wprowadzone."
 
@@ -7806,9 +7806,6 @@ msgstr "Twoim klientom z pewnością spodoba się platforma handlowa %1, gdyż o
 
 msgid "Your current balance is"
 msgstr "Obecnie Twoje saldo wynosi"
-
-msgid "Your details have been updated."
-msgstr "Twoje dane zostały uaktualnione."
 
 msgid "Your funds are safe"
 msgstr "Twoje środki są bezpieczne"
@@ -7848,9 +7845,6 @@ msgstr "Wiesz, jakie jest ryzyko"
 
 msgid "Your session duration limit will end in %1 seconds."
 msgstr "Limit czasu sesji zakończy się za %1 s."
-
-msgid "Your settings have been updated successfully."
-msgstr "Twoje ustawienia zostały uaktualnione."
 
 msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
 msgstr "Twój token wygasł. Kliknij <a class=\"pjaxload\" href=\"%1\">tutaj</a>, aby rozpocząć proces weryfikacyjny ponownie."
@@ -8265,6 +8259,9 @@ msgstr "{JAPAN ONLY}Binary K.K. Customer Account"
 
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
+
+msgid "{JAPAN ONLY}Binary.com page title"
+msgstr "{JAPAN ONLY}Binary.com page title"
 
 msgid "{JAPAN ONLY}Branch"
 msgstr "{JAPAN ONLY}Branch"
@@ -9023,7 +9020,7 @@ msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to t
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
-msgstr ""
+msgstr "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
@@ -9135,6 +9132,12 @@ msgstr "Dane konta"
 
 msgid "Terms and Conditions Approval"
 msgstr "Akceptacja regulaminu"
+
+#~ msgid "Please complete the following financial assessment form before continuing."
+#~ msgstr "Zanim przejdziesz dalej wypełnij poniższy formularz oceny sytuacji finansowej."
+
+#~ msgid "Your details have been updated."
+#~ msgstr "Twoje dane zostały uaktualnione."
 
 #~ msgid "Logout"
 #~ msgstr "Wyloguj"
