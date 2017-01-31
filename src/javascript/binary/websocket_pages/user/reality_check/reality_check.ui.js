@@ -59,9 +59,9 @@ const RealityCheckUI = (function() {
             const payload = $(realityCheckText);
             showPopUp(payload.find('#reality-check-content'));
             showIntervalOnPopUp();
-            $('#continue').click(onContinueClick);
-            $('#statement').click(onStatementClick);
-            $('button#btn_logout').click(onLogoutClick);
+            $('#continue').off('click').on('click dblclick', onContinueClick);
+            $('#statement').off('click').on('click dblclick', onStatementClick);
+            $('button#btn_logout').off('click').on('click dblclick', onLogoutClick);
             if (summary) {
                 updateSummary(summary);
             }

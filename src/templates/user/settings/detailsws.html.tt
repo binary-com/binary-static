@@ -12,7 +12,7 @@
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
-                        <strong id="lblName"></strong>
+                        <strong id="lbl_name"></strong>
                     </span>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
-                        <strong id="lblGender"></strong>
+                        <strong id="lbl_gender"></strong>
                     </span>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
-                        <strong id="lblBirthDate"></strong>
+                        <strong id="lbl_date_of_birth"></strong>
                     </span>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
-                        <strong id="lblCountry"></strong>
+                        <strong id="lbl_country"></strong>
                     </span>
                 </div>
             </div>
@@ -56,17 +56,17 @@
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
-                        <strong id="lblEmail"></strong>
+                        <strong id="lbl_email"></strong>
                     </span>
                 </div>
             </div>
 
             <div class="gr-padding-10 gr-row clear JpAcc invisible">
                 <div class="gr-4 form_label">
-                    <label>[% l('Occupation') %]</label>
+                    <label for="occupation">[% l('Occupation') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="Occupation">
+                    <select id="occupation" class="jp_value">
                         <option value="Office worker">[% l('Office worker') %]</option>
                         <option value="Director">[% l('Director') %]</option>
                         <option value="Public worker">[% l('Public worker') %]</option>
@@ -86,55 +86,55 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label for="Address1">[% l('First line of home address') %]</label>
+                    <label for="address_line_1">[% l('First line of home address') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input name='address_line_1' type="text" id="Address1" maxlength="70" />
+                    <input name='address_line_1' type="text" id="address_line_1" maxlength="70" />
                 </div>
             </div>
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label for="Address2">[% l('Second line of home address') %]</label>
+                    <label for="address_line_2">[% l('Second line of home address') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input name='address_line_2' type="text" id="Address2" maxlength="70" />
+                    <input name='address_line_2' type="text" id="address_line_2" maxlength="70" />
                 </div>
             </div>
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label for="City">[% l('Town/City') %]</label>
+                    <label for="address_city">[% l('Town/City') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input name='address_city' type="text" id="City" maxlength="35" />
+                    <input name='address_city' type="text" id="address_city" maxlength="35" />
                 </div>
             </div>
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label for="State">[% l('State/Province') %]</label>
+                    <label for="address_state">[% l('State/Province') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select name='address_state' id="State"></select>
+                    <select name='address_state' id="address_state"></select>
                 </div>
             </div>
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label for="Postcode">[% l('Postal Code / ZIP') %]</label>
+                    <label for="address_postcode">[% l('Postal Code / ZIP') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input name='address_postcode' type="text" id="Postcode" maxlength="20" />
+                    <input name='address_postcode' type="text" id="address_postcode" maxlength="20" />
                 </div>
             </div>
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label for="Phone">[% l('Telephone') %]</label>
+                    <label for="phone">[% l('Telephone') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input name='phone' type="text" id="Phone" maxlength="35" />
+                    <input name='phone' type="text" id="phone" maxlength="35" />
                 </div>
             </div>
         </fieldset>
@@ -144,66 +144,66 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label for="Postcode"><em class="required_asterisk">**</em> [% l('Postal Code / ZIP') %]</label>
+                    <label><em class="required_asterisk">**</em> [% l('Postal Code / ZIP') %]</label>
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
-                        <strong id="lblPostcode"></strong>
+                        <strong id="lbl_address_postcode" class="jp_value"></strong>
                     </span>
                 </div>
             </div>
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label for="State"><em class="required_asterisk">**</em> [% l('State/Province') %]</label>
+                    <label><em class="required_asterisk">**</em> [% l('State/Province') %]</label>
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
-                        <strong id="lblState"></strong>
+                        <strong id="lbl_address_state" class="jp_value"></strong>
                     </span>
                 </div>
             </div>
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label for="City"><em class="required_asterisk">**</em> [% l('Town/City') %]</label>
+                    <label><em class="required_asterisk">**</em> [% l('Town/City') %]</label>
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
-                        <strong id="lblCity"></strong>
+                        <strong id="lbl_address_city" class="jp_value"></strong>
                     </span>
                 </div>
             </div>
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label for="Address1"><em class="required_asterisk">**</em> [% l('First line of home address') %]</label>
+                    <label><em class="required_asterisk">**</em> [% l('First line of home address') %]</label>
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
-                        <strong id="lblAddress1"></strong>
+                        <strong id="lbl_address_line_1" class="jp_value"></strong>
                     </span>
                 </div>
             </div>
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label for="Address2"><em class="required_asterisk">**</em> [% l('Second line of home address') %]</label>
+                    <label><em class="required_asterisk">**</em> [% l('Second line of home address') %]</label>
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
-                        <strong id="lblAddress2"></strong>
+                        <strong id="lbl_address_line_2" class="jp_value"></strong>
                     </span>
                 </div>
             </div>
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label for="Phone"><em class="required_asterisk">**</em> [% l('Telephone') %]</label>
+                    <label><em class="required_asterisk">**</em> [% l('Telephone') %]</label>
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
-                        <strong id="lblPhone"></strong>
+                        <strong id="lbl_phone" class="jp_value"></strong>
                     </span>
                 </div>
             </div>
@@ -214,10 +214,10 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label>[% l('Annual income') %]</label>
+                    <label for="annual_income">[% l('Annual income') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="AnnualIncome">
+                    <select id="annual_income" class="jp_value">
                         <option value="Less than 1 million JPY">[% l('Less than 1 million JPY') %]</option>
                         <option value="1-3 million JPY">[% l('1-3 million JPY') %]</option>
                         <option value="3-5 million JPY">[% l('3-5 million JPY') %]</option>
@@ -232,10 +232,10 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label>[% l('Financial asset') %]</label>
+                    <label for="financial_asset">[% l('Financial asset') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="FinancialAsset">
+                    <select id="financial_asset" class="jp_value">
                         <option value="Less than 1 million JPY">[% l('Less than 1 million JPY') %]</option>
                         <option value="1-3 million JPY">[% l('1-3 million JPY') %]</option>
                         <option value="3-5 million JPY">[% l('3-5 million JPY') %]</option>
@@ -254,10 +254,10 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label>[% l('Equities') %]</label>
+                    <label for="trading_experience_equities">[% l('Equities') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="Equities">
+                    <select id="trading_experience_equities" class="jp_value">
                         <option value="No experience">[% l('No experience') %]</option>
                         <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
                         <option value="6 months to 1 year">[% l('6 months to 1 year') %]</option>
@@ -270,10 +270,10 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label>[% l('Commodities') %]</label>
+                    <label for="trading_experience_commodities">[% l('Commodities') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="Commodities">
+                    <select id="trading_experience_commodities" class="jp_value">
                         <option value="No experience">[% l('No experience') %]</option>
                         <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
                         <option value="6 months to 1 year">[% l('6 months to 1 year') %]</option>
@@ -286,10 +286,10 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label>[% l('Foreign currency deposit') %]</label>
+                    <label for="trading_experience_foreign_currency_deposit">[% l('Foreign currency deposit') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="ForeignCurrencyDeposit">
+                    <select id="trading_experience_foreign_currency_deposit" class="jp_value">
                         <option value="No experience">[% l('No experience') %]</option>
                         <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
                         <option value="6 months to 1 year">[% l('6 months to 1 year') %]</option>
@@ -302,10 +302,10 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label>[% l('Margin FX') %]</label>
+                    <label for="trading_experience_margin_fx">[% l('Margin FX') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="MarginFX">
+                    <select id="trading_experience_margin_fx" class="jp_value">
                         <option value="No experience">[% l('No experience') %]</option>
                         <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
                         <option value="6 months to 1 year">[% l('6 months to 1 year') %]</option>
@@ -318,10 +318,10 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label>[% l('Investment trust') %]</label>
+                    <label for="trading_experience_investment_trust">[% l('Investment trust') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="InvestmentTrust">
+                    <select id="trading_experience_investment_trust" class="jp_value">
                         <option value="No experience">[% l('No experience') %]</option>
                         <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
                         <option value="6 months to 1 year">[% l('6 months to 1 year') %]</option>
@@ -334,10 +334,10 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label>[% l('Public and corporation bond') %]</label>
+                    <label for="trading_experience_public_bond">[% l('Public and corporation bond') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="PublicCorporationBond">
+                    <select id="trading_experience_public_bond" class="jp_value">
                         <option value="No experience">[% l('No experience') %]</option>
                         <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
                         <option value="6 months to 1 year">[% l('6 months to 1 year') %]</option>
@@ -350,10 +350,10 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label>[% l('OTC Derivative (Option) Trading') %]</label>
+                    <label for="trading_experience_option_trading">[% l('OTC Derivative (Option) Trading') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="DerivativeTrading">
+                    <select id="trading_experience_option_trading" class="jp_value">
                         <option value="No experience">[% l('No experience') %]</option>
                         <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
                         <option value="6 months to 1 year">[% l('6 months to 1 year') %]</option>
@@ -366,10 +366,10 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label>[% l('Purpose of trading') %]</label>
+                    <label for="trading_purpose">[% l('Purpose of trading') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="PurposeOfTrading">
+                    <select id="trading_purpose" class="jp_value">
                         <option value="Targeting short-term profits">[% l('Targeting short-term profits') %]</option>
                         <option value="Targeting medium-term / long-term profits">[% l('Targeting medium-term / long-term profits') %]</option>
                         <option value="Both the above">[% l('Both the above') %]</option>
@@ -380,10 +380,10 @@
 
             <div class="gr-padding-10 gr-row clear hedge invisible">
                 <div class="gr-4 form_label">
-                    <label>[% l('Classification of assets requiring hedge') %]</label>
+                    <label for="hedge_asset">[% l('Classification of assets requiring hedge') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="HedgeAsset">
+                    <select id="hedge_asset">
                         <option value="Foreign currency deposit">[% l('Foreign currency deposit') %]</option>
                         <option value="Margin FX">[% l('Margin FX') %]</option>
                         <option value="Other">[% l('Other') %]</option>
@@ -393,10 +393,10 @@
 
             <div class="gr-padding-10 gr-row clear hedge invisible">
                 <div class="gr-4 form_label">
-                    <label>[% l('Amount of above assets') %]</label>
+                    <label for="hedge_asset_amount">[% l('Amount of above assets') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input class="text" name="hedge_asset_amount" id="HedgeAssetAmount" maxlength="20" type="text"/>
+                    <input class="text" name="hedge_asset_amount" id="hedge_asset_amount" maxlength="20" type="text"/>
                 </div>
             </div>
         </fieldset>
@@ -406,7 +406,7 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label" id="email_consent_label">
-                    <label>[% l('Receive news and special offers') %]</label>
+                    <label for="email_consent">[% l('Receive news and special offers') %]</label>
                 </div>
                 <div class="gr-8">
                     <input type="checkbox" id="email_consent"/>
