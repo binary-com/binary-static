@@ -27,7 +27,7 @@
 
         <title>[%= browser_title =%]</title>
 
-        <link rel="manifest" href="/manifest.json">
+        <link rel="manifest" href="[% root_url _ 'js/onesignal/manifest.json' %]">
         <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
         <link rel="apple-touch-icon" sizes="57x57" href="https://style.binary.com/images/favicons/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="114x114" href="https://style.binary.com/images/favicons/apple-touch-icon-114x114.png">
