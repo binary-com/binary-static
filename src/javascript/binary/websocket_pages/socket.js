@@ -66,9 +66,6 @@ const BinarySocketClass = function() {
     const no_duplicate_requests = [
         'authorize',
         'get_settings',
-        'website_status',
-        'get_account_status',
-        'get_financial_assessment',
     ];
     const waiting_list = {
         items: {},
