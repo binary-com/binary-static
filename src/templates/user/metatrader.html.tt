@@ -32,10 +32,19 @@
                         <div class="gr-4">[% l('Balance:') %]</div><div data="balance" class="gr-8"></div>
                         <div class="gr-4">[% l('Leverage:') %]</div><div data="leverage" class="gr-8"></div>
                     </div>
-                    <div class="acc-actions has-account invisible">
-                        <a href="javascript:;" class="act_password_change">[% l('Change Password') %]</a><br />
-                        <a href="javascript:;" class="act_deposit">[% l('Deposit') %]</a><br />
-                        <a href="javascript:;" class="act_withdrawal">[% l('Withdraw') %]</a><br />
+                    <div class="acc-actions has-account center-text invisible">
+                        <a href="javascript:;" class="act_deposit">
+                            <img src="[% request.url_for('images/pages/metatrader/deposit.svg') %]" alt="" />
+                            [% l('Deposit') %]
+                        </a>
+                        <a href="javascript:;" class="act_withdrawal">
+                            <img src="[% request.url_for('images/pages/metatrader/withdraw.svg') %]" alt="" />
+                            [% l('Withdraw') %]
+                        </a>
+                        <a href="javascript:;" class="act_password_change">
+                            <img src="[% request.url_for('images/pages/metatrader/password.svg') %]" alt="" />
+                            [% l('Password') %]
+                        </a>
                     </div>
                 </div>
             </div>

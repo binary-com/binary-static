@@ -5,6 +5,8 @@
         > div {
             height: 100%;
             border: 1px solid $COLOR_GRAY;
+            display: flex;
+            flex-direction: column;
             &:hover, &.active {
                 border-color: $COLOR_DARK_WHITE;
                 background: $COLOR_LIGHT_GRAY;
@@ -21,7 +23,7 @@
                 .info {
                     padding: 10px;
                     font-size: 0.9rem;
-                    height: 120px;
+                    height: 100px;
                     line-height: 1.5rem;
                     a:before {
                         content: ' ';
@@ -31,7 +33,7 @@
                 }
             }
             .loading {
-                margin: 75px 0;
+                margin: 25px 0;
             }
             .acc-info div {
                 font-size: 0.9rem;
@@ -40,10 +42,21 @@
                 word-break: break-all;
             }
             .acc-actions {
-                margin-top: 10px;
+                margin-top: auto;
                 padding: 10px;
                 border-top: 1px solid $COLOR_GRAY;
                 font-size: 0.9rem;
+                a {
+                    display: inline-block;
+                    width: 64px;
+                    text-align: center;
+                    margin: 0 10px;
+                    img {
+                        width: 32px;
+                        height: 32px;
+                        margin-bottom: 7px;
+                    }
+                }
             }
         }
     }
