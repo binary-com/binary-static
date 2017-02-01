@@ -100,6 +100,7 @@ sub all_pages {
         ['user/lost_passwordws',            'user/lost_passwordws',                           'default', 'Password Reset'],
         ['user/reset_passwordws',           'user/reset_passwordws',                          'default', 'Password Reset'],
         ['user/security/authorised_appsws', 'user/security/authorised_appsws',                'default', 'Authorised Applications', 'ja'],
+        ['user/security/connections',       'user/security/connections',                       'default', 'Connections'],
         ['user/reality_check_frequencyws',  'user/reality_check_frequencyws',                 'default', 'Reality Check'],
         ['user/reality_check_summaryws',    'user/reality_check_summaryws',                   'default', 'Reality Check'],
 
