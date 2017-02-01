@@ -163,7 +163,7 @@ const ForwardWS = (function() {
             }
             return is_virtual;
         };
-        if (clientIsVirtual()) return;
+        if (Client.get('values_set') && clientIsVirtual()) return;
         BinarySocket.init({
             onmessage: function(msg) {
                 const response = JSON.parse(msg.data);
