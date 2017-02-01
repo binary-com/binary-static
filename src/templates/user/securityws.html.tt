@@ -100,7 +100,7 @@
             </div>
         </div>
 
-        <div class="gr-3 gr-6-m gr-parent ja-hide">
+        <div class="gr-3 gr-6-m gr-parent ja-hide invisible">
             <div class="gr-8 gr-padding-10">
                 <a class="pjaxload" href="[% request.url_for('/user/security/connections') %]">
                     <img class="responsive" src="[% request.url_for('images/pages/settings/applications.svg') %]">

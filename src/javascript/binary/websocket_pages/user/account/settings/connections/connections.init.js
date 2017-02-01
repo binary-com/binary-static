@@ -12,7 +12,7 @@ const Connections = (function() {
         if (response.connect_add || response.connect_del) { // call list on finish
             return ConnectionsData.list();
         }
-        return ConnectionsUI.update(response.connect_list || '');
+        return ConnectionsUI.update(response.connect_list);
     };
 
     const init = function() {
