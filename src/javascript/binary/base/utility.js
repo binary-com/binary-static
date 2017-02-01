@@ -66,10 +66,20 @@ function objectNotEmpty(obj) {
     return !isEmpty;
 }
 
+function getPropertyValue(obj, keys) {
+    if (!Array.isArray(keys)) keys = [keys];
+    if (objectNotEmpty(obj) && keys[0] in obj && keys && keys.length > 1) {
+        return getPropertyValue(obj[keys[0]], keys.slice(1));
+    }
+    // else
+    return obj ? obj[keys[0]] : undefined;
+}
+
 module.exports = {
     showLoadingImage  : showLoadingImage,
     get_highest_zindex: get_highest_zindex,
     downloadCSV       : downloadCSV,
     template          : template,
     objectNotEmpty    : objectNotEmpty,
+    getPropertyValue  : getPropertyValue,
 };
