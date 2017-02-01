@@ -677,6 +677,10 @@ sub _texts {
         # strings for account signup error
         push @texts, localize('Sorry, account signup is not available in your country. Please contact <a href="[_1]">customer support</a> for more information.');
 
+        # strings for connection page
+        push @texts, localize('You do not have any connections.');
+        push @texts, localize('Are you sure that you want to permanently revoke connection to');
+
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
     }
