@@ -21,7 +21,7 @@ const ConnectionsData = (function() {
 
     const del = function(provider) {
         if (!provider) return;
-        BinarySocket.send({ connect_del: 1, provider: provider });
+        BinarySocket.send({ connect_del: 1, provider: provider.toLowerCase() });
     };
 
     return {
