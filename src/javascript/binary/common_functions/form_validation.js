@@ -77,10 +77,10 @@ const Validation = (function() {
             message = localize('Should be a valid number');
         } else if (options.min && +value < +options.min) {
             is_ok = false;
-            message = localize('Should be more than [_1]').replace('[_1]', options.min);
+            message = localize('Should be more than [_1]', [options.min]);
         } else if (options.max && +value > +options.max) {
             is_ok = false;
-            message = localize('Should be less than [_1]').replace('[_1]', options.max);
+            message = localize('Should be less than [_1]', [options.max]);
         }
 
         validators_map.number.message = message;
@@ -88,18 +88,18 @@ const Validation = (function() {
     };
 
     const validators_map = {
-        req          : { func: validRequired,     message: localize('This field is required.') },
-        email        : { func: validEmail,        message: localize('Invalid email address') },
-        password     : { func: validPassword,     message: localize('Password should have lower and uppercase letters with numbers.') },
-        general      : { func: validGeneral,      message: localize('Only letters, numbers, space, hyphen, period, and apostrophe are allowed.') },
-        letter_symbol: { func: validLetterSymbol, message: localize('Only letters, space, hyphen, period, and apostrophe are allowed.') },
-        postcode     : { func: validPostCode,     message: localize('Only letters, numbers, and hyphen are allowed.') },
-        phone        : { func: validPhone,        message: localize('Only numbers and spaces are allowed.') },
-        email_token  : { func: validEmailToken,   message: localize('Please submit a valid verification token.') },
-        compare      : { func: validCompare,      message: localize('The two passwords that you entered do not match.') },
-        not_equal    : { func: validNotEqual,     message: localize('[_1] and [_2] cannot be the same.') },
-        min          : { func: validMin,          message: localize('Minimum of [_1] characters required.') },
-        length       : { func: validLength,       message: localize('You should enter [_1] characters.') },
+        req          : { func: validRequired,     message: 'This field is required.' },
+        email        : { func: validEmail,        message: 'Invalid email address' },
+        password     : { func: validPassword,     message: 'Password should have lower and uppercase letters with numbers.' },
+        general      : { func: validGeneral,      message: 'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.' },
+        letter_symbol: { func: validLetterSymbol, message: 'Only letters, space, hyphen, period, and apostrophe are allowed.' },
+        postcode     : { func: validPostCode,     message: 'Only letters, numbers, and hyphen are allowed.' },
+        phone        : { func: validPhone,        message: 'Only numbers and spaces are allowed.' },
+        email_token  : { func: validEmailToken,   message: 'Please submit a valid verification token.' },
+        compare      : { func: validCompare,      message: 'The two passwords that you entered do not match.' },
+        not_equal    : { func: validNotEqual,     message: '[_1] and [_2] cannot be the same.' },
+        min          : { func: validMin,          message: 'Minimum of [_1] characters required.' },
+        length       : { func: validLength,       message: 'You should enter [_1] characters.' },
         number       : { func: validNumber,       message: '' },
     };
 
@@ -136,11 +136,11 @@ const Validation = (function() {
             if (!field.is_ok) {
                 message = options.message || validators_map[type].message;
                 if (type === 'length') {
-                    message = message.replace('[_1]', options.min === options.max ? options.min : `${options.min}-${options.max}`);
+                    message = localize(message, [options.min === options.max ? options.min : `${options.min}-${options.max}`]);
                 } else if (type === 'min') {
-                    message = message.replace('[_1]', options.min);
+                    message = localize(message, [options.min]);
                 } else if (type === 'not_equal') {
-                    message = message.replace('[_1]', options.name1).replace('[_2]', options.name2);
+                    message = localize(message, [localize(options.name1), localize(options.name2)]);
                 }
                 all_is_ok = false;
                 return true;
@@ -165,7 +165,7 @@ const Validation = (function() {
 
     const showError = (field, message) => {
         clearError(field);
-        field.$error.text(message).removeClass(hidden_class);
+        field.$error.text(localize(message)).removeClass(hidden_class);
     };
 
     const validate = (form_selector) => {
