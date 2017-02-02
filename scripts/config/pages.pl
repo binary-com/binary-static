@@ -56,6 +56,10 @@ sub all_pages {
 
         ['get-started-jp', 'japan/get_started',  'default', 'Get Started', 'NOT-ja,en'],
 
+        ['metatrader/contract-specifications', 'metatrader/contract_specifications', 'default',    'Contract Specifications'],
+        ['metatrader/download',                'metatrader/download',                'default',    'Start Trading with MetaTrader 5'],
+        ['metatrader/margin-policy',           'metatrader/margin_policy',           'full_width', 'MetaTrader Margin Policy'],
+
         ## ws
         ['account/account_transferws',   'cashier/account_transferws',                'default', 'Account Transfer'],
 

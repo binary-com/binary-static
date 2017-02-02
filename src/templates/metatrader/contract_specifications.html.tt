@@ -1,0 +1,30 @@
+<div class="content-tab-container static_full cs-content">
+    <div class="tab-menu">
+        <div class="tab-menu-wrap">
+            <ul id="cs-menu" class="tm-ul">
+                <li id="forex-tab" class="tm-li first active">
+                    <a href="#forex-tab" class="tm-a first a-active">[% l('Forex') %]</a>
+                </li>
+                <li id="volatility-tab" class="tm-li last">
+                    <a href="#volatility-tab" class="tm-a">[% l('Volatility Indices') %]</a>
+                </li>
+                <li id="cash-tab" class="tm-li last">
+                    <a href="#cash-tab" class="tm-a">[% l('Cash Indices') %]</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="tab-content">
+        <div class="tab-content-wrapper menu-has-sub-item">
+            <div id="forex-tab-content" class="toggle-content">
+                [% INCLUDE metatrader/contract_specifications/forex.html.tt %]
+            </div>
+            <div id="volatility-tab-content" class="toggle-content">
+                [% INCLUDE metatrader/contract_specifications/volatility_indices.html.tt %]
+            </div>
+            <div id="cash-tab-content" class="toggle-content">
+                [% INCLUDE metatrader/contract_specifications/cash_indices.html.tt %]
+            </div>
+        </div>
+    </div>
+</div>
