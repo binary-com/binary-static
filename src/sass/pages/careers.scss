@@ -1,17 +1,15 @@
 .career, .security_testing, .regulation-content {
-    .xquote {
+    .xquote, .xquote-inverse {
         background-color: $COLOR_LIGHT_GRAY;
         padding: 20px;
-        margin: 30px 0;
         div {
             overflow: hidden;
-            display: table;
+            display: inline;
             .picture {
-                float: left;
                 @include BIDIR_PROP(padding-right, padding-left, 20px);
             }
             .text {
-                display: table-cell;
+                display: inline-block;
                 vertical-align: middle;
                 span {
                     color: $COLOR_DARK_GRAY;
@@ -19,6 +17,21 @@
                 }
             }
         }
+    }
+    .xquote-inverse {
+        background-color: $COLOR_BLUE !important;
+        div {
+            .text {
+                a {
+                    color: $COLOR_WHITE;
+                }
+            }
+        }
+    }
+    h4 {
+        font-weight: 700;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $COLOR_GRAY;
     }
 }
 
