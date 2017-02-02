@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-30 10:54+0000\n"
-"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
+"PO-Revision-Date: 2017-02-01 07:16+0000\n"
+"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.11-dev\n"
+"X-Generator: Weblate 2.11\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API %1\" означает набор программ, протоколов, инструментов и ресурсов %1, созданных и поддерживаемых сайтом %1, а также позволяющих Вам пользоваться доступным приложением для работы на торговой платформе %1."
@@ -967,6 +967,9 @@ msgstr "Ограничения в Соглашении"
 msgid "Agreement for documents"
 msgstr "Agreement for documents"
 
+msgid "Agricultural, Forestry and Fishery Workers"
+msgstr ""
+
 msgid "All Partnership Options"
 msgstr "Все варианты сотрудничества"
 
@@ -1133,8 +1136,16 @@ msgstr "Вы уверены, что хотите навсегда удалить
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "Вы уверены, что хотите навсегда отказаться от доступа к приложению"
 
+#, fuzzy
+#| msgid "Are you sure that you want to permanently revoke access to application"
+msgid "Are you sure that you want to permanently revoke connection to"
+msgstr "Вы уверены, что хотите навсегда отказаться от доступа к приложению"
+
 msgid "Are your site visitors interested in:"
 msgstr "Посетителям Вашего сайта может быть интересно:"
+
+msgid "Armed Forces"
+msgstr "Вооруженные Силы"
 
 msgid "As Internal Auditor, you will perform unique, risk-based internal audits on the Binary Ltd. Group of companies. You will also be involved in risk management, evaluation of regulatory compliance, as well as work with the Head of Departments to improve business processes and support the realization of audit recommendations."
 msgstr "Должность внутреннего аудитора предполагает проведение уникального внутреннего аудита с учётом риска в группе компаний Binary Ltd. Также вы будете участвовать в управлении риском, оценке нормативно-правового соответствия и работать совместно с главами отделов над улучшением коммерческой деятельности компании, а также поддерживать реализацию рекомендаций аудита."
@@ -1649,6 +1660,9 @@ msgstr "Ознакомьтесь с некоторыми техническим�
 msgid "Check out the payment methods accepted by the payment agents in the list below."
 msgstr "Ниже проверьте список платежных способов, принимаемых платежным агентом."
 
+msgid "Chief Executives, Senior Officials and Legislators"
+msgstr ""
+
 msgid "Choose Asian Rise/Fall when you want to profit from the market ending higher or lower than the average price."
 msgstr "Выберите \"Азиатcкие Повышение/Падение\", если Вы желаете получить прибыль от рынка, который при окончании контракта будет выше или ниже средней цены."
 
@@ -1732,6 +1746,14 @@ msgstr "Гражданам Афганистана, Бельгии, Боснии 
 
 msgid "Classification of assets requiring hedge"
 msgstr "Classification of assets requiring hedge"
+
+#, fuzzy
+#| msgid "Complaints and Disputes"
+msgid "Cleaners and Helpers"
+msgstr "Жалобы и иски"
+
+msgid "Clerks"
+msgstr ""
 
 msgid "Click here to retry"
 msgstr "Нажмите, чтобы повторить попытку"
@@ -1883,6 +1905,11 @@ msgstr "Политика по конфликтам"
 msgid "Connection error: Please check your internet connection."
 msgstr "Проблема со связью: пожалуйста, проверьте Ваше подключение к интернету."
 
+#, fuzzy
+#| msgid "Construction"
+msgid "Connections"
+msgstr "Строительство"
+
 msgid "Construction"
 msgstr "Строительство"
 
@@ -2029,6 +2056,9 @@ msgstr "Cтрана проживания"
 
 msgid "Cover is made available on the basis of the depositor rather than on the basis of the number of deposits, meaning that if an individual has multiple accounts he will only be covered as to €20,000 on the global amount. Any other amount exceeding such threshold is not protected and will thus have to be borne by the investor."
 msgstr "Страховое покрытие предоставляется самому вкладчику, а не на основе количества внесённых им депозитов. Это означает, что если клиент открыл несколько счетов, общая сумма страховой компенсации составит €20,000. Любая сумма, превышающая данный порог, не будет защищена страховкой и должна вноситься на страх и риск инвестора."
+
+msgid "Craft, Metal, Electrical and Electronics Workers"
+msgstr ""
 
 msgid "Create"
 msgstr "Создать"
@@ -2959,6 +2989,9 @@ msgstr "Законодательство и юрисдикция"
 
 msgid "Governing law and jurisdiction"
 msgstr "Законодательство и юрисдикция"
+
+msgid "Government Officers"
+msgstr ""
 
 msgid "Grab a wide range of third-party apps for binary options trading in the <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Shop</a>."
 msgstr "К Вашим услугам большой ассортимент приложений для торговли бинарными опционами в <a href=\"https://shop.binary.com\" target=\"_blank\">Магазине Binary.com</a>."
@@ -4026,6 +4059,11 @@ msgstr "Июнь"
 msgid "Keep track of your authorised applications."
 msgstr "Следите за доступными приложениями."
 
+#, fuzzy
+#| msgid "Keep track of your authorised applications."
+msgid "Keep track of your authorised connections."
+msgstr "Следите за доступными приложениями."
+
 msgid "Key facts"
 msgstr "Основные факты"
 
@@ -4245,8 +4283,18 @@ msgstr "Управление системами безопасности, обн
 msgid "Manage the company's cashier system"
 msgstr "Управление кассовой системой компании"
 
+#, fuzzy
+#| msgid "Manage your authorised applications."
+msgid "Manage your OAuth connections."
+msgstr "Управление доступными приложениями."
+
 msgid "Manage your authorised applications."
 msgstr "Управление доступными приложениями."
+
+#, fuzzy
+#| msgid "DevOps Manager"
+msgid "Managers"
+msgstr "Менеджер команды DevOps"
 
 msgid "Mar"
 msgstr "Мар"
@@ -4365,6 +4413,9 @@ msgstr "Необходимо минимум %1 знака(ов)."
 
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Минимум шесть заглавных и строчных букв с цифрами"
+
+msgid "Mining, Construction, Manufacturing and Transport Workers"
+msgstr ""
 
 msgid "Minute"
 msgstr "Мин."
@@ -4926,6 +4977,9 @@ msgstr "Модули Perl"
 msgid "Permissions"
 msgstr "Разрешения"
 
+msgid "Personal Care, Sales and Service Workers"
+msgstr ""
+
 msgid "Personal Details"
 msgstr "Личные данные"
 
@@ -4943,6 +4997,9 @@ msgstr "Пипс"
 
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr "\"Пипс\" обозначает \"соответствующую процентную долю\", что обычно соответствует четвертой десятичной (т. е. 0.0001)."
+
+msgid "Plant and Machine Operators and Assemblers"
+msgstr ""
 
 msgid "Platform Comparison"
 msgstr "Сравнение платформ"
@@ -5210,6 +5267,11 @@ msgstr "Создание контента для сайта, блога, пуб�
 
 msgid "Professional Clients"
 msgstr "Клиенты-профессионалы"
+
+#, fuzzy
+#| msgid "Market Professionals"
+msgid "Professionals"
+msgstr "Профессионалы рынка"
 
 msgid "Proficiency in a scripting language - Perl preferred"
 msgstr "Хорошее знание скриптового языка программирования - желательно Perl"
@@ -7575,6 +7637,11 @@ msgstr "Вы можете воспользоваться платежным аг
 msgid "You did not change anything."
 msgstr "Вы не внесли никаких изменений."
 
+#, fuzzy
+#| msgid "You did not change anything."
+msgid "You do not have any connections."
+msgstr "Вы не внесли никаких изменений."
+
 msgid "You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading."
 msgstr "Вам не нужно вносить средства для открытия счета, но для начала торговли и покупки контрактов Вам необходимо будет пополнить счет."
 
@@ -7803,10 +7870,8 @@ msgstr "Ваша касса закрыта по Вашему запросу - д
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "Ваша касса закрыта по Вашему запросу – для открытия, пожалуйста, введите пароль."
 
-#, fuzzy
-#| msgid "Your settings have been updated successfully."
 msgid "Your changes have been updated successfully."
-msgstr "Настройки успешно обновлены."
+msgstr "Ваши изменения успешно обновлены."
 
 msgid "Your changes have been updated."
 msgstr "Ваши изменения внесены успешно."
@@ -21749,9 +21814,6 @@ msgstr "Согласие с правилами и условиями"
 
 #~ msgid "Answer to secret question (if applicable)"
 #~ msgstr "Ответ на контрольный вопрос (если имеется)"
-
-#~ msgid "Armed Forces"
-#~ msgstr "Вооруженные Силы"
 
 #~ msgid "As part of our security measures, your account has been chosen for a routine security check. In order to proceed with your withdrawal, you must obtain an Authorisation Code."
 #~ msgstr "Как часть процедур безопасности на нашем сайте, Ваш счет был выбран для стандартной проверки. Для вывода средств Вам необходимо получить авторизационный код."

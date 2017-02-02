@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-30 11:49+0000\n"
-"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
+"PO-Revision-Date: 2017-02-01 08:09+0000\n"
+"Last-Translator: Masanari Higashiyama <higashiyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.11-dev\n"
+"X-Generator: Weblate 2.11\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」とは%1の取引プラットフォームとのインターフェースとして登録されたアプリケーションを使用できるよう、%1によって作成・管理されているプログラムのルーチン、プロトコル、ツール、リソースの独自のセットのことをいいます。"
@@ -976,6 +976,9 @@ msgstr "制限契約"
 msgid "Agreement for documents"
 msgstr "交付書面等の確認"
 
+msgid "Agricultural, Forestry and Fishery Workers"
+msgstr ""
+
 msgid "All Partnership Options"
 msgstr "最高水準のサポート体制を提供"
 
@@ -1142,8 +1145,16 @@ msgstr "トークンを完全に削除してもよろしいですか？"
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "アプリケーションへのアクセスを完全に削除してもよろしいですか？"
 
+#, fuzzy
+#| msgid "Are you sure that you want to permanently revoke access to application"
+msgid "Are you sure that you want to permanently revoke connection to"
+msgstr "アプリケーションへのアクセスを完全に削除してもよろしいですか？"
+
 msgid "Are your site visitors interested in:"
 msgstr "お客さまのサイト訪問者は以下の内容に興味がありますか？"
+
+msgid "Armed Forces"
+msgstr ""
 
 msgid "As Internal Auditor, you will perform unique, risk-based internal audits on the Binary Ltd. Group of companies. You will also be involved in risk management, evaluation of regulatory compliance, as well as work with the Head of Departments to improve business processes and support the realization of audit recommendations."
 msgstr "内部監査人として、グループ会社のBinary Ltd.で独自のリスクベースの内部監査を行います。ビジネスプロセスを改善し、監査勧告の実現をサポートする部門担当者として働くだけではなく、その他にもリスク管理、規制へのコンプライアンス評価にも携わります。"
@@ -1430,7 +1441,7 @@ msgid "Binary K.K."
 msgstr "Binary K.K."
 
 msgid "Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590)."
-msgstr "バイナリー株式会社：〒150-0012 東京都 渋谷区 広尾 1−9−16 広尾宮田ビル 3F<br>第一種金融商品取引業者として登録完了（関東財務局長(金商)第2949号）金融先物取引業協会に加入（会員番号1590号）"
+msgstr "Binary株式会社：〒150-0012 東京都 渋谷区 広尾 1−9−16 広尾宮田ビル 3F<br>第一種金融商品取引業者として登録完了（関東財務局長(金商)第2949号）金融先物取引業協会に加入（会員番号1590号）"
 
 msgid "Binary KK granted Japan license"
 msgstr "第一種金融商品取引業者として登録"
@@ -1664,6 +1675,9 @@ msgstr "取引を開始する前に専門用語を確認する"
 msgid "Check out the payment methods accepted by the payment agents in the list below."
 msgstr "下記リストの決済サービスでご利用できるお支払い方法をご確認ください。"
 
+msgid "Chief Executives, Senior Officials and Legislators"
+msgstr ""
+
 msgid "Choose Asian Rise/Fall when you want to profit from the market ending higher or lower than the average price."
 msgstr "平均価格よりも終値が上か下かを予測されたい場合は「Asianアップ/ダウン」をご選択ください。"
 
@@ -1749,6 +1763,14 @@ msgstr ""
 
 msgid "Classification of assets requiring hedge"
 msgstr "ヘッジを必要とする資産の種類"
+
+#, fuzzy
+#| msgid "Complaints and Disputes"
+msgid "Cleaners and Helpers"
+msgstr "苦情の申し立て"
+
+msgid "Clerks"
+msgstr ""
 
 msgid "Click here to retry"
 msgstr "再試行するにはこちらをクリックしてください"
@@ -1908,6 +1930,11 @@ msgstr "利益相反ポリシー"
 msgid "Connection error: Please check your internet connection."
 msgstr "接続エラー：インターネット接続状況をご確認ください。"
 
+#, fuzzy
+#| msgid "Construction"
+msgid "Connections"
+msgstr "設営"
+
 msgid "Construction"
 msgstr "設営"
 
@@ -2054,6 +2081,9 @@ msgstr "居住国"
 
 msgid "Cover is made available on the basis of the depositor rather than on the basis of the number of deposits, meaning that if an individual has multiple accounts he will only be covered as to €20,000 on the global amount. Any other amount exceeding such threshold is not protected and will thus have to be borne by the investor."
 msgstr "補償は入金額ではなく、入金者に基いて利用が可能となります。これは個人が複数の口座を保持していた場合、統額€20,000までのみ補償されます。この閾値を超える額は保護されず、投資家が負担する必要があります。"
+
+msgid "Craft, Metal, Electrical and Electronics Workers"
+msgstr ""
 
 msgid "Create"
 msgstr "作成"
@@ -2985,6 +3015,9 @@ msgstr "準拠法と裁判管轄権"
 msgid "Governing law and jurisdiction"
 msgstr "準拠法と裁判管轄"
 
+msgid "Government Officers"
+msgstr ""
+
 msgid "Grab a wide range of third-party apps for binary options trading in the <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Shop</a>."
 msgstr "<a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com ショップ</a>にて、バイナリーオプションにご利用いただける幅広いサードパーティーのアプリケーションをご購入いただけます。"
 
@@ -3584,7 +3617,7 @@ msgid "Japan"
 msgstr "日本"
 
 msgid "Japan residents will have their account opened with Binary K.K. and will use our Japan trading platform, which is compliant with Japan rules and regulations."
-msgstr "日本の居住者はバイナリー株式会社を通して口座を開設いただき、日本の法令に準拠した当社の取引プラットフォームをご利用いただきます。"
+msgstr "日本の居住者はBinary株式会社を通して口座を開設いただき、日本の法令に準拠した当社の取引プラットフォームをご利用いただきます。"
 
 msgid "Japan website Download Text for Pre-contract Document"
 msgstr "「契約締結前交付書面」"
@@ -4071,6 +4104,11 @@ msgstr "６月"
 msgid "Keep track of your authorised applications."
 msgstr "認証済みアプリケーションを引き続き追跡してください。"
 
+#, fuzzy
+#| msgid "Keep track of your authorised applications."
+msgid "Keep track of your authorised connections."
+msgstr "認証済みアプリケーションを引き続き追跡してください。"
+
 msgid "Key facts"
 msgstr "グループ会社概要"
 
@@ -4292,8 +4330,18 @@ msgstr "当社が展開するサーバーのセキュリティ・侵入検知・
 msgid "Manage the company's cashier system"
 msgstr "入出金のシステム管理"
 
+#, fuzzy
+#| msgid "Manage your authorised applications."
+msgid "Manage your OAuth connections."
+msgstr "承認済みアプリケーションを管理します。"
+
 msgid "Manage your authorised applications."
 msgstr "承認済みアプリケーションを管理します。"
+
+#, fuzzy
+#| msgid "DevOps Manager"
+msgid "Managers"
+msgstr "DevOps マネージャー"
 
 msgid "Mar"
 msgstr "3"
@@ -4411,6 +4459,9 @@ msgstr "%1文字以上でご入力ください。"
 
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "6文字以上の英数字（大文字と小文字を含む）"
+
+msgid "Mining, Construction, Manufacturing and Transport Workers"
+msgstr ""
 
 msgid "Minute"
 msgstr "分"
@@ -4978,6 +5029,9 @@ msgstr "Perl モジュール"
 msgid "Permissions"
 msgstr "アクセス許可"
 
+msgid "Personal Care, Sales and Service Workers"
+msgstr ""
+
 msgid "Personal Details"
 msgstr "お客さま登録情報"
 
@@ -4995,6 +5049,9 @@ msgstr "Pip"
 
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr "Pipとは ‘percentage in point’の略語であり、通常は小数第４位の値を示します。例）0.0001"
+
+msgid "Plant and Machine Operators and Assemblers"
+msgstr ""
 
 msgid "Platform Comparison"
 msgstr "プラットフォームを比較"
@@ -5262,6 +5319,11 @@ msgstr "当社のブログ、ソーシャルメディア、マーケティング
 
 msgid "Professional Clients"
 msgstr "プロ投資家"
+
+#, fuzzy
+#| msgid "Market Professionals"
+msgid "Professionals"
+msgstr "マーケットのプロ投資家"
 
 msgid "Proficiency in a scripting language - Perl preferred"
 msgstr "スクリプト言語に堪能である - Perlが好ましい"
@@ -7756,6 +7818,11 @@ msgstr "%1でサポートされていないお支払い方法または現地通�
 msgid "You did not change anything."
 msgstr "変更はありません。"
 
+#, fuzzy
+#| msgid "You did not change anything."
+msgid "You do not have any connections."
+msgstr "変更はありません。"
+
 msgid "You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading."
 msgstr "口座開設条件として預託金は必須ではありませんが、取引を開始するにはあらかじめ預託金をご入金いただく必要があります。"
 
@@ -8124,9 +8191,7 @@ msgid "apostrophe"
 msgstr "アポストロフィ"
 
 msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading"
-msgstr ""
-"バイナリー株式会社、バイナリーオプション、外国為替、外国為替取引、オンライントレード、金融トレード、バイナリートレード、指標取引、指標トレード、\n"
-"外国為替トレード、コモディティトレード、バイナリーオプション戦略、バイナリーブローカー、バイナリー取引、バイナリーオプリョン取引システム、バイナリー戦略、金融、株、投資、トレード"
+msgstr "バイナリーオプション,外国為替,fx"
 
 msgid "comma"
 msgstr "読点"
@@ -8476,8 +8541,6 @@ msgstr "バイナリー（カ）コキャクグチ"
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "売り手の損失が限定されておりますが、バイナリーオプションはバニラオプションに比べ、ローリスクハイリターンな取引となります。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Binary K. K."
 msgid "{JAPAN ONLY}Binary.com page title"
 msgstr "Binary株式会社"
 
@@ -8614,7 +8677,7 @@ msgid "{JAPAN ONLY}Family members of categories 1) to 3)"
 msgstr "1〜3の家族"
 
 msgid "{JAPAN ONLY}Financial Condition"
-msgstr "業務及び財産の状況に関する報告書"
+msgstr "業務及び財産の状況に関する説明書"
 
 msgid "{JAPAN ONLY}Financial Instruments Business No. xxxx"
 msgstr "金融商品取引業者　関東財務局（金商）第2949号"
@@ -9252,7 +9315,7 @@ msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to t
 msgstr "バイナリーオプション取引は、購入金額を超える損失が生じる可能性はありませんが、損失を限定するためのロスカットはありません。権利が消滅した場合、購入金額全額が損失となります。"
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
-msgstr ""
+msgstr "リアル口座開設は完了致しました。使用するには再度ログインが必要となります。"
 
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "信託により区分管理"
@@ -9357,7 +9420,7 @@ msgid "Payment Agent Transfer"
 msgstr "決済サービスでのご送金"
 
 msgid "Sharp Prices. Smart Trading."
-msgstr "優れた価格設定、賢くトレード。"
+msgstr "バイナリーオプション取引"
 
 msgid "Account Details"
 msgstr "ご口座の詳細情報"
