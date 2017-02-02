@@ -81,7 +81,7 @@ const MetaTraderUI = (function() {
     const populateForm = (e) => {
         closeForm();
         let $target = $(e.target);
-        if ($target.prop('tagName').toLowerCase() !== 'a') {
+        if ($target.prop('tagName').toLowerCase() === 'img') {
             $target = $target.parents('a');
         }
         const acc_type = $target.parents('.acc-box').attr('id');

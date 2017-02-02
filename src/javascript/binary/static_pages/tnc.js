@@ -1,15 +1,13 @@
 const TermsAndConditions = (function() {
     const init = function() {
-        handleActive();
+        handleActiveTab();
         const year = document.getElementsByClassName('currentYear');
         for (let i = 0; i < year.length; i++) {
             year[i].innerHTML = new Date().getFullYear();
         }
     };
 
-    // function used on any page that has tab menu to
-    // show the correct tab/content if hash is changed in url
-    const handleActive = function() {
+    const handleActiveTab = function() {
         const hash    = window.location.hash || '#legal';
         const menu    = '.tab-menu-wrap';
         const content = '.tab-content-wrapper';

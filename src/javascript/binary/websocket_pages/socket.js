@@ -408,7 +408,7 @@ const BinarySocketClass = function() {
                         $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (error_code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.')) + '</p></div>');
                         break;
                     case 'RateLimit':
-                        if (!/jp_trading/i.test(window.location.pathname)) {
+                        if (!State.get('is_mb_trading')) {
                             $('#ratelimit-error-message')
                                 .css('display', 'block')
                                 .on('click', '#ratelimit-refresh-link', function () {
