@@ -19,11 +19,11 @@ const LimitsWS = (function() {
         const elWithdrawLimitAgg = document.getElementById('withdrawal-limit-aggregate');
 
         if (limits.lifetime_limit === 99999999 && limits.num_of_days_limit === 99999999) {
-            elementTextContent(elWithdrawLimit, Content.localize().textAuthenticatedWithdrawal);
+            elementTextContent(elWithdrawLimit, localize('Your account is fully authenticated and your withdrawal limits have been lifted.'));
         } else {
-            let txtWithdrawLim             = Content.localize().textWithdrawalLimitsEquivalant,
-                txtWithdrawAmt             = Content.localize().textWithrawalAmountEquivalant,
-                text_CurrentMaxWithdrawal  = Content.localize().textCurrentMaxWithdrawalEquivalant,
+            let txtWithdrawLim             = localize('Your withdrawal limit is [_1] [_2] (or equivalent in other currency).'),
+                txtWithdrawAmt             = localize('You have already withdrawn the equivalent of [_1] [_2].'),
+                text_CurrentMaxWithdrawal  = localize('Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2] (or equivalent in other currency).'),
                 currency                   = 'EUR';
             const daysLimit                = addComma(limits.num_of_days_limit).split('.')[1] === '00' ? addComma(limits.num_of_days_limit).split('.')[0] : addComma(limits.num_of_days_limit);
             // no need for addComma since it is already string like "1,000"
@@ -31,16 +31,16 @@ const LimitsWS = (function() {
             const remainder                = addComma(limits.remainder).split('.')[1] === '00' ? addComma(limits.remainder).split('.')[0] : addComma(limits.remainder);
 
             if ((/^(iom)$/i).test(Client.get('landing_company_name'))) { // MX
-                txtWithdrawLim = Content.localize().textWithdrawalLimitsEquivalantDay;
-                txtWithdrawAmt  = Content.localize().textWithrawalAmountEquivalantDay;
+                txtWithdrawLim = localize('Your [_1] day withdrawal limit is currently [_2] [_3] (or equivalent in other currency).');
+                txtWithdrawAmt = localize('You have already withdrawn the equivalent of [_1] [_2] in aggregate over the last [_3] days.');
                 elementTextContent(elWithdrawLimit,
                    template(txtWithdrawLim, [limits.num_of_days, currency, daysLimit]));
                 elementTextContent(elWithdrawn, template(txtWithdrawAmt,  [currency, withdrawn, limits.num_of_days]));
             } else {
                 if ((/^(costarica|japan)$/i).test(Client.get('landing_company_name'))) { // CR , JP
-                    txtWithdrawLim            = Content.localize().textWithdrawalLimits;
-                    txtWithdrawAmt            = Content.localize().textWithrawalAmount;
-                    text_CurrentMaxWithdrawal = Content.localize().textCurrentMaxWithdrawal;
+                    txtWithdrawLim            = localize('Your withdrawal limit is [_1] [_2].');
+                    txtWithdrawAmt            = localize('You have already withdrawn [_1] [_2].');
+                    text_CurrentMaxWithdrawal = localize('Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2].');
                     currency                  = Client.get('currency') || Client.get('default_currency');
                 }
                 elementTextContent(elWithdrawLimit, template(txtWithdrawLim, [currency, daysLimit]));

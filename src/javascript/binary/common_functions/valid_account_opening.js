@@ -90,7 +90,7 @@ const ValidAccountOpening = (function() {
     };
     const checkDate = function(dobdd, dobmm, dobyy, errorDob) {
         if (!isValidDate(dobdd.value, dobmm.value, dobyy.value) || dobdd.value === '' || dobmm.value === '' || dobyy.value === '') {
-            elementInnerHtml(errorDob, Content.localize().textErrorBirthdate);
+            elementInnerHtml(errorDob, localize('Please input a valid date'));
             Validate.displayErrorMessage(errorDob);
             window.accountErrorCounter++;
         }
