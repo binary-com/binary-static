@@ -4,8 +4,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-02-01 10:55+0000\n"
 "Last-Translator: Annalisa <ligiu@me.com>\n"
-"Language-Team: Italian "
-"<https://hosted.weblate.org/projects/binary/static/it/>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/binary/static/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -767,9 +766,7 @@ msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Un approccio proattivo alla risoluzione dei problemi e all'offerta di soluzioni ai clienti"
 
 msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
-msgstr ""
-"Una copia scannerizzata di una bolletta o di un estratto conto (non "
-"antecedente i 3 mesi)"
+msgstr "Una copia scannerizzata di una bolletta o di un estratto conto (non antecedente i 3 mesi)"
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
 msgstr "Una copia scannerizzata del tuo passaporto, patente (provvisoria o definitiva) o carta d'identità, indicante il tuo nome e la tua data di nascita. Il tuo documento deve essere valido per almeno 6 mesi dopo questa data."
@@ -970,6 +967,9 @@ msgstr "Restrizioni del contratto"
 msgid "Agreement for documents"
 msgstr "Agreement for documents"
 
+msgid "Agricultural, Forestry and Fishery Workers"
+msgstr ""
+
 msgid "All Partnership Options"
 msgstr "Tutte le opzioni di partnership"
 
@@ -1136,8 +1136,16 @@ msgstr "Sei sicuro di voler eliminare definitivamente il token"
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "Sei sicuro di voler revocare definitivamente l'accesso all'applicazione"
 
+#, fuzzy
+#| msgid "Are you sure that you want to permanently revoke access to application"
+msgid "Are you sure that you want to permanently revoke connection to"
+msgstr "Sei sicuro di voler revocare definitivamente l'accesso all'applicazione"
+
 msgid "Are your site visitors interested in:"
 msgstr "I visitatori del tuo sito sono interessati a:"
+
+msgid "Armed Forces"
+msgstr ""
 
 msgid "As Internal Auditor, you will perform unique, risk-based internal audits on the Binary Ltd. Group of companies. You will also be involved in risk management, evaluation of regulatory compliance, as well as work with the Head of Departments to improve business processes and support the realization of audit recommendations."
 msgstr "In qualità di Auditor interno eseguirai controlli interni esclusivi basati sui rischi del Gruppo di società di Binary Ltd. Sarai inoltre coinvolto nella gestione di rischi, nella valutazione della compliance regolamentare e lavorerai con il Capo dei dipartimenti per migliorare le procedure commerciali e supportare la realizzazione delle raccomandazioni dell'audit."
@@ -1650,6 +1658,9 @@ msgstr "Prima di iniziare controlla alcuni termini tecnici."
 msgid "Check out the payment methods accepted by the payment agents in the list below."
 msgstr "Controlla nell'elenco qui sotto le modalità di pagamento accettate dagli agenti di pagamento."
 
+msgid "Chief Executives, Senior Officials and Legislators"
+msgstr ""
+
 msgid "Choose Asian Rise/Fall when you want to profit from the market ending higher or lower than the average price."
 msgstr "Scegli Asiatiche Rialzo/Ribasso se desideri guadagnare quando il mercato chiude a un prezzo più alto o più basso di quello medio."
 
@@ -1733,6 +1744,14 @@ msgstr "Ai cittadini dell'Afghanistan, del Belgio, della Bosnia ed Erzegovina, d
 
 msgid "Classification of assets requiring hedge"
 msgstr "Classification of assets requiring hedge"
+
+#, fuzzy
+#| msgid "Complaints and Disputes"
+msgid "Cleaners and Helpers"
+msgstr "Reclami e Controversie"
+
+msgid "Clerks"
+msgstr ""
 
 msgid "Click here to retry"
 msgstr "Clicca qui per riprovare"
@@ -1886,6 +1905,11 @@ msgstr "Risoluzione Controversie"
 msgid "Connection error: Please check your internet connection."
 msgstr ""
 
+#, fuzzy
+#| msgid "Construction"
+msgid "Connections"
+msgstr "Costruzione"
+
 msgid "Construction"
 msgstr "Costruzione"
 
@@ -2032,6 +2056,9 @@ msgstr "Paese di residenza"
 
 msgid "Cover is made available on the basis of the depositor rather than on the basis of the number of deposits, meaning that if an individual has multiple accounts he will only be covered as to €20,000 on the global amount. Any other amount exceeding such threshold is not protected and will thus have to be borne by the investor."
 msgstr "La copertura viene resa disponibile sulla base del depositante piuttosto che sulla base del numero di depositi. Ciò significa che se un soggetto ha più account, sarà coperto solo fino a €20.000 sull'importo complessivo. Qualsiasi altro importo eccedente tale limite non è protetto e dovrà quindi essere sostenuto dall'investitore."
+
+msgid "Craft, Metal, Electrical and Electronics Workers"
+msgstr ""
 
 msgid "Create"
 msgstr "Crea"
@@ -2964,6 +2991,9 @@ msgstr "Legge applicabile e Giurisdizione"
 
 msgid "Governing law and jurisdiction"
 msgstr "Legge applicabile e giurisdizione"
+
+msgid "Government Officers"
+msgstr ""
 
 msgid "Grab a wide range of third-party apps for binary options trading in the <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Shop</a>."
 msgstr "Afferra un'ampia gamma di app di terze parti per il trading in opzioni binarie nello <a href=\"https://shop.binary.com\" target=\"_blank\"> Shop di Binary.com</a>."
@@ -4033,6 +4063,11 @@ msgstr "Giugno"
 msgid "Keep track of your authorised applications."
 msgstr "Tieni traccia delle tue applicazioni autorizzate."
 
+#, fuzzy
+#| msgid "Keep track of your authorised applications."
+msgid "Keep track of your authorised connections."
+msgstr "Tieni traccia delle tue applicazioni autorizzate."
+
 msgid "Key facts"
 msgstr "Eventi chiave"
 
@@ -4252,8 +4287,18 @@ msgstr "Gestire le misure di sicurezza, di rilevamento delle intrusioni, di prot
 msgid "Manage the company's cashier system"
 msgstr "Gestire il sistema di cassa della società"
 
+#, fuzzy
+#| msgid "Manage your authorised applications."
+msgid "Manage your OAuth connections."
+msgstr "Gestisci le tue applicazioni autorizzate."
+
 msgid "Manage your authorised applications."
 msgstr "Gestisci le tue applicazioni autorizzate."
+
+#, fuzzy
+#| msgid "DevOps Manager"
+msgid "Managers"
+msgstr "Manager DevOps"
 
 msgid "Mar"
 msgstr "Mar"
@@ -4373,6 +4418,9 @@ msgstr "Sono richiesti minimo %1 caratteri."
 
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Minimo sei lettere minuscole e maiuscole con numeri"
+
+msgid "Mining, Construction, Manufacturing and Transport Workers"
+msgstr ""
 
 msgid "Minute"
 msgstr "Minuto"
@@ -4934,6 +4982,9 @@ msgstr "Moduli Perl"
 msgid "Permissions"
 msgstr "Autorizzazioni"
 
+msgid "Personal Care, Sales and Service Workers"
+msgstr ""
+
 msgid "Personal Details"
 msgstr "Informazioni personali"
 
@@ -4951,6 +5002,9 @@ msgstr "Pip"
 
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr "Pip è l'acronimo di 'percentuale in punti', generalmente indicato dalla quarta cifra decimale (ad esempio 0,0001)."
+
+msgid "Plant and Machine Operators and Assemblers"
+msgstr ""
 
 msgid "Platform Comparison"
 msgstr "Confronto delle piattaforme"
@@ -5226,6 +5280,11 @@ msgstr "Produrre i contenuti del sito internet, blog, social media e materiali c
 
 msgid "Professional Clients"
 msgstr "Clienti professionisti"
+
+#, fuzzy
+#| msgid "Market Professionals"
+msgid "Professionals"
+msgstr "Professionisti del mercato"
 
 msgid "Proficiency in a scripting language - Perl preferred"
 msgstr "Competenza in un linguaggio di scripting - è preferito quello Perl"
@@ -7600,6 +7659,11 @@ msgstr "Per effettuare depositi e prelievi con modalità di pagamento o con valu
 msgid "You did not change anything."
 msgstr "Non hai modificato nulla."
 
+#, fuzzy
+#| msgid "You did not change anything."
+msgid "You do not have any connections."
+msgstr "Non hai modificato nulla."
+
 msgid "You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading."
 msgstr "Non è necessario fare alcun deposito per aprire un account ma, prima di iniziare il trading, bisogna depositare dei fondi."
 
@@ -9055,9 +9119,7 @@ msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to t
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
-msgstr ""
-"{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access "
-"Your Real-Money Account."
+msgstr "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
