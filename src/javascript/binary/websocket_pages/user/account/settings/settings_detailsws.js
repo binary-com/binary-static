@@ -63,7 +63,7 @@ const SettingsDetailsWS = (function() {
         let changed = false;
         Object.keys(editable_fields).every((key) => {
             if ((key in data && editable_fields[key] !== data[key]) ||
-                (key in data.jp_settings && editable_fields[key] !== data.jp_settings[key])) {
+                (data.jp_settings && key in data.jp_settings && editable_fields[key] !== data.jp_settings[key])) {
                 changed = true;
                 return false;
             }
