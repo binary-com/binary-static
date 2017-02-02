@@ -51,6 +51,11 @@ sub _texts {
         push @texts, localize('Trading Times');
         push @texts, localize('Shop');
         push @texts, localize('Payment Agent');
+        # account drop down
+        push @texts, localize('Virtual Account');
+        push @texts, localize('Real Account');
+        push @texts, localize('Investment Account');
+        push @texts, localize('Gaming Account');
         # datepicker texts
         push @texts, localize('Sunday');
         push @texts, localize('Monday');
@@ -280,7 +285,6 @@ sub _texts {
         push @texts, localize('Today');
         push @texts, localize('Details');
         # back-end string for statement page
-        push @texts, localize('Virtual Account');
         push @texts, localize('Sell');
         push @texts, localize('Buy');
         #strings for authenticate page
