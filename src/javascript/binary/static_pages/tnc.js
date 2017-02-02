@@ -1,6 +1,9 @@
+const url = require('../base/url').url;
+
 const TermsAndConditions = (function() {
     const init = function() {
         handleActiveTab();
+
         const year = document.getElementsByClassName('currentYear');
         for (let i = 0; i < year.length; i++) {
             year[i].innerHTML = new Date().getFullYear();
@@ -44,6 +47,12 @@ const TermsAndConditions = (function() {
             .end()
             .find(content_to_show)
             .removeClass(hidden_class);
+
+        const section = url.param('section');
+        if (section) {
+            const $section = $(`a[name="${section}"]`);
+            if ($section.length) $.scrollTo($section, 0, { offset: -10 });
+        }
     };
 
     return {
