@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-01-23 03:30+0000\n"
+"PO-Revision-Date: 2017-02-01 02:49+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.11-dev\n"
+"X-Generator: Weblate 2.11\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" adalah set eksklusif dari rutinitas program %1, protokol, alat dan sumber daya yang diciptakan dan dikelola oleh %1 yang dapat memberi Anda fasilitas untuk menggunakan aplikasi terdaftar pada platform trading %1."
@@ -269,35 +269,23 @@ msgstr "Inisiatif amal %1 berfokus pada badan amal kecil dan organisasi nirlaba 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(durasi minimal, contoh minimal 15 detik)min"
 
-#, fuzzy
-#| msgid "$100,000 - $250,000"
 msgid "&#36;100,000 - &#36;250,000"
-msgstr "$100,000 - $250,000"
+msgstr "&#36;100,000 - &#36;250,000"
 
-#, fuzzy
-#| msgid "$100,000 - $500,000"
 msgid "&#36;100,001 - &#36;500,000"
-msgstr "$100,000 - $500,000"
+msgstr "&#36;100,001 - &#36;500,000"
 
-#, fuzzy
-#| msgid "$25,000 - $100,000"
 msgid "&#36;25,000 - &#36;50,000"
-msgstr "$25,000 - $100,000"
+msgstr "&#36;25,000 - &#36;50,000"
 
-#, fuzzy
-#| msgid "$250,000 - $1,000,000"
 msgid "&#36;250,001 - &#36;500,000"
-msgstr "$250,000 - $1,000,000"
+msgstr "&#36;250,001 - &#36;500,000"
 
-#, fuzzy
-#| msgid "$250,000 - $1,000,000"
 msgid "&#36;50,001 - &#36;100,000"
-msgstr "$250,000 - $1,000,000"
+msgstr "&#36;50,001 - &#36;100,000"
 
-#, fuzzy
-#| msgid "$250,000 - $1,000,000"
 msgid "&#36;500,001 - &#36;1,000,000"
-msgstr "$250,000 - $1,000,000"
+msgstr "&#36;500,001 - &#36;1,000,000"
 
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 adalah salah satu partner paling lama dan terpercaya yang kami miliki. Kami telah bekerja sama selama bertahun-tahun.&#8221;"
@@ -979,6 +967,9 @@ msgstr "Pembatasan Kesepakatan"
 msgid "Agreement for documents"
 msgstr "Perjanjian untuk dokumen"
 
+msgid "Agricultural, Forestry and Fishery Workers"
+msgstr ""
+
 msgid "All Partnership Options"
 msgstr "Berbagai Pilihan Kemitraan"
 
@@ -1145,8 +1136,16 @@ msgstr "Apakah Anda yakin untuk menghapus token secara permanen"
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "Apakah Anda yakin bahwa Anda ingin secara permanen mencabut akses ke aplikasi"
 
+#, fuzzy
+#| msgid "Are you sure that you want to permanently revoke access to application"
+msgid "Are you sure that you want to permanently revoke connection to"
+msgstr "Apakah Anda yakin bahwa Anda ingin secara permanen mencabut akses ke aplikasi"
+
 msgid "Are your site visitors interested in:"
 msgstr "Apakah pengunjung website Anda tertarik untuk:"
+
+msgid "Armed Forces"
+msgstr "Angkatan bersenjata"
 
 msgid "As Internal Auditor, you will perform unique, risk-based internal audits on the Binary Ltd. Group of companies. You will also be involved in risk management, evaluation of regulatory compliance, as well as work with the Head of Departments to improve business processes and support the realization of audit recommendations."
 msgstr "Sebagai Internal Auditor, Anda akan melakukan audit internal yang unik, berbasis risiko pada perusahaan Grup Binary Ltd. Anda juga akan terlibat dalam manajemen risiko, evaluasi kepatuhan terhadap peraturan, serta bekerja dengan Kepala Departemen untuk meningkatkan proses bisnis dan mendukung realisasi rekomendasi audit."
@@ -1659,6 +1658,9 @@ msgstr "Lihat beberapa terma teknis sebelum Anda memulai."
 msgid "Check out the payment methods accepted by the payment agents in the list below."
 msgstr "Lihat metode pembayaran yang diterima oleh agen pembayaran pada daftar di bawah ini."
 
+msgid "Chief Executives, Senior Officials and Legislators"
+msgstr ""
+
 msgid "Choose Asian Rise/Fall when you want to profit from the market ending higher or lower than the average price."
 msgstr "Pilih Asian Rise/Fall untuk memperoleh profit dari pasar berakhir lebih tinggi atau lebih rendah dari harga rata rata."
 
@@ -1742,6 +1744,14 @@ msgstr "Warga Afghanistan, Belgia, Bosnia dan Herzegovina, Guyana, Irak, Lao PDR
 
 msgid "Classification of assets requiring hedge"
 msgstr "Klasifikasi aset yang membutuhkan hedge"
+
+#, fuzzy
+#| msgid "Complaints and Disputes"
+msgid "Cleaners and Helpers"
+msgstr "Keluhan dan Perselisihan"
+
+msgid "Clerks"
+msgstr ""
 
 msgid "Click here to retry"
 msgstr "Klik disini untuk mencoba lagi"
@@ -1893,6 +1903,11 @@ msgstr "Konflik Kebijakan"
 msgid "Connection error: Please check your internet connection."
 msgstr "Koneksi error: Silakan periksa koneksi internet Anda."
 
+#, fuzzy
+#| msgid "Construction"
+msgid "Connections"
+msgstr "Konstruksi"
+
 msgid "Construction"
 msgstr "Konstruksi"
 
@@ -2039,6 +2054,9 @@ msgstr "Negara tempat tinggal"
 
 msgid "Cover is made available on the basis of the depositor rather than on the basis of the number of deposits, meaning that if an individual has multiple accounts he will only be covered as to €20,000 on the global amount. Any other amount exceeding such threshold is not protected and will thus have to be borne by the investor."
 msgstr "Perlindungan tersedia berdasarkan depositor dan bukan jumlah deposit, hal ini berarti jika seseorang memiliki akun lebih dari satu maka beliau hanya akan dilindungi sebesar €20,000 secara keseluruhan. Jika jumlah melebihi batasan tersebut maka tidak akan dilindungi dan hal tersebut akan ditanggung sendiri oleh investor."
+
+msgid "Craft, Metal, Electrical and Electronics Workers"
+msgstr ""
 
 msgid "Create"
 msgstr "Membuat"
@@ -2970,6 +2988,9 @@ msgstr "Pemerintahan Hukum dan Yurisdiksi"
 msgid "Governing law and jurisdiction"
 msgstr "Hukum Pemerintahan dan yurisdiksi"
 
+msgid "Government Officers"
+msgstr ""
+
 msgid "Grab a wide range of third-party apps for binary options trading in the <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Shop</a>."
 msgstr "Dapatkan berbagai pilihan applikasi pihak ketiga untuk trading opsi binary pada <a href=\"https://shop.binary.com\" target=\"_blank\">Toko Binary.com</a>."
 
@@ -3501,10 +3522,8 @@ msgstr "Investment Solicitation Policy"
 msgid "Investment trust"
 msgstr "Investment trust"
 
-#, fuzzy
-#| msgid "Investments & Dividends"
 msgid "Investments &amp; Dividends"
-msgstr "Investasi & Dividen"
+msgstr "Investasi &amp; Dividen"
 
 msgid "Investor Compensation Scheme"
 msgstr "Skema Kompensasi Investor"
@@ -4040,6 +4059,11 @@ msgstr "Juni"
 msgid "Keep track of your authorised applications."
 msgstr "Melacak aplikasi resmi Anda."
 
+#, fuzzy
+#| msgid "Keep track of your authorised applications."
+msgid "Keep track of your authorised connections."
+msgstr "Melacak aplikasi resmi Anda."
+
 msgid "Key facts"
 msgstr "Fakta"
 
@@ -4118,15 +4142,11 @@ msgstr "Kepatuhan Hukum & Peraturan"
 msgid "Legal Compliance"
 msgstr "Kepatuhan Hukum"
 
-#, fuzzy
-#| msgid "Less than $100,000"
 msgid "Less than &#36;100,000"
-msgstr "Kurang dari $100,000"
+msgstr "Kurang dari &#36;100,000"
 
-#, fuzzy
-#| msgid "Less than $25,000"
 msgid "Less than &#36;25,000"
-msgstr "Kurang dari $25,000"
+msgstr "Kurang dari &#36;25,000"
 
 msgid "Less than 1 million JPY"
 msgstr "Less than 1 million JPY"
@@ -4263,8 +4283,18 @@ msgstr "Mengelola keamanan, deteksi intrusi, perlindungan DDoS dan tindakan kepa
 msgid "Manage the company's cashier system"
 msgstr "Mengelola sistem kasir perusahaan"
 
+#, fuzzy
+#| msgid "Manage your authorised applications."
+msgid "Manage your OAuth connections."
+msgstr "Mengelola aplikasi resmi Anda."
+
 msgid "Manage your authorised applications."
 msgstr "Mengelola aplikasi resmi Anda."
+
+#, fuzzy
+#| msgid "DevOps Manager"
+msgid "Managers"
+msgstr "DevOps Manager"
 
 msgid "Mar"
 msgstr "Mar"
@@ -4384,6 +4414,9 @@ msgstr "Minimal %1 karakter diperlukan."
 
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Minimal enam huruf kecil dan huruf besar beserta angka"
+
+msgid "Mining, Construction, Manufacturing and Transport Workers"
+msgstr ""
 
 msgid "Minute"
 msgstr "Menitan"
@@ -4803,15 +4836,11 @@ msgstr "Catatan sejarah kami"
 msgid "Our trading screen is simple to use:"
 msgstr "Layar trading kami sangat mudah digunakan:"
 
-#, fuzzy
-#| msgid "Over $1,000,000"
 msgid "Over &#36;1,000,000"
-msgstr "Lebih dari $1,000,000"
+msgstr "Lebih dari &#36;1,000,000"
 
-#, fuzzy
-#| msgid "Over $500,001"
 msgid "Over &#36;500,001"
-msgstr "Lebih $500,001"
+msgstr "Lebih &#36;500,001"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "Lebih dari 1 juta akun yang terdaftar di seluruh dunia"
@@ -4948,6 +4977,9 @@ msgstr "Modul perl"
 msgid "Permissions"
 msgstr "Izin"
 
+msgid "Personal Care, Sales and Service Workers"
+msgstr ""
+
 msgid "Personal Details"
 msgstr "Data Pribadi"
 
@@ -4965,6 +4997,9 @@ msgstr "Pip"
 
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr "Pip singkatan dari 'titik persentase' yang umumnya angka desimal keempat (yaitu 0,0001)."
+
+msgid "Plant and Machine Operators and Assemblers"
+msgstr ""
 
 msgid "Platform Comparison"
 msgstr "Perbandingan Platform"
@@ -5232,6 +5267,11 @@ msgstr "Menghasilkan konten untuk website perusahaan, blog, media sosial, dan ma
 
 msgid "Professional Clients"
 msgstr "Klien Profesional"
+
+#, fuzzy
+#| msgid "Market Professionals"
+msgid "Professionals"
+msgstr "Pasar Profesional"
 
 msgid "Proficiency in a scripting language - Perl preferred"
 msgstr "Kemahiran dalam bahasa scripting - diutamakan Perl"
@@ -7597,6 +7637,11 @@ msgstr "Anda dapat menggunakan agen pembayaran untuk mendeposit dan menarik dana
 msgid "You did not change anything."
 msgstr "Anda tidak melakukan perubahan."
 
+#, fuzzy
+#| msgid "You did not change anything."
+msgid "You do not have any connections."
+msgstr "Anda tidak melakukan perubahan."
+
 msgid "You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading."
 msgstr "Anda tidak harus melakukan deposit setelah mendaftar, namun anda perlu mendeposit untuk memulai trading."
 
@@ -7825,10 +7870,8 @@ msgstr "Kasir Anda telah terkunci sesuai permintaan Anda - untuk membuka kunci, 
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "Kasir Anda terkunci sesuai permintaan Anda - untuk membuka kunci, masukkan kata sandi."
 
-#, fuzzy
-#| msgid "Your settings have been updated successfully."
 msgid "Your changes have been updated successfully."
-msgstr "Pengaturan Anda telah sukses diperbarui."
+msgstr "Perubahan Anda telah berhasil diperbarui."
 
 msgid "Your changes have been updated."
 msgstr "Perubahan Anda telah diperbarui."
@@ -8292,10 +8335,8 @@ msgstr "{JAPAN ONLY}Binary K.K. Customer Account"
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Binary K. K."
 msgid "{JAPAN ONLY}Binary.com page title"
-msgstr "{JAPAN ONLY}Binary K. K."
+msgstr "{JAPAN ONLY}Binary.com page title"
 
 msgid "{JAPAN ONLY}Branch"
 msgstr "{JAPAN ONLY}Branch"
@@ -22258,9 +22299,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Answer to secret question (if applicable)"
 #~ msgstr "Jawaban kepada pertanyaan rahasia (jika ada)"
-
-#~ msgid "Armed Forces"
-#~ msgstr "Angkatan bersenjata"
 
 #~ msgid "As part of our security measures, your account has been chosen for a routine security check. In order to proceed with your withdrawal, you must obtain an Authorisation Code."
 #~ msgstr "Account anda telah dipilih untuk melengkapi prosedur keamanan kami. Untuk memproses pencairan anda, anda perlu mengajukan kode otorisasi."
