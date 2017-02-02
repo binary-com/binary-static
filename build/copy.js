@@ -16,7 +16,7 @@ module.exports = {
             { expand: true, cwd: 'src/download/', src: ['**'], dest: global.dist + '/download/' },
             { expand: true, cwd: 'src/css/external/jquery-ui-custom-theme/images/', src: ['**'], dest: global.dist + '/css/images' },
             { expand: true, cwd: 'src/css/external/jquery-ui-custom-theme/', src: ['*.css'], dest: global.dist + '/css/' },
-            { expand: true, cwd: 'src/javascript/lib/onesignal/', src: ['**'], dest: global.dist + '/js/onesignal/' },
+            { expand: true, cwd: 'src/javascript/lib/onesignal/', src: ['**'], dest: global.dist }, /* serve onesignal sdks from root */
         ]
     }
 };
