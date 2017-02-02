@@ -42,13 +42,7 @@ const MenuContent = (function () {
                     const menu_li = selected_tab.parents('li');
                     let sub_menu_selected = menu_li.find('.tm-ul-2 .a-active'),
                         selected_tab_id = menu_li.attr('id');
-                    const $selected_tab_content = $('#' + selected_tab_id + '-content');
-                    let selected_content = $selected_tab_content
-                        // show selected tab content
-                        .removeClass('invisible')
-                        // and hide the rest
-                        .siblings(':not(.sticky)').addClass('invisible')
-                        .end();
+                    let $selected_tab_content = $('#' + selected_tab_id + '-content');
 
                     if (!sub_menu_selected.length) {
                         sub_menu_selected = menu_li.find('.tm-a-2:first').addClass('a-active');
@@ -56,17 +50,22 @@ const MenuContent = (function () {
                         if (sub_menu_selected.length) {
                             selected_tab = sub_menu_selected;
                             selected_tab_id = sub_menu_selected.parents('li').attr('id');
-                            selected_content = $selected_tab_content.removeClass('invisible');
+                            $selected_tab_content = $('#' + selected_tab_id + '-content');
                         } else {
                             selected_tab_id = menu_li.attr('id');
                         }
                     }
-
+                    $selected_tab_content
+                    // show selected tab content
+                        .removeClass('invisible')
+                        // and hide the rest
+                        .siblings(':not(.sticky)').addClass('invisible')
+                        .end();
 
                     that.push_to_listeners({
                         id     : selected_tab_id,
                         target : selected_tab,
-                        content: selected_content,
+                        content: $selected_tab_content,
                         menu   : menu_li.parents('ul.tm-ul'),
                         event  : event,
                     });
