@@ -16,7 +16,7 @@
         <p>
             [% l("A binary option is a contract purchased by a trader, which pays a pre-determined amount if their prediction is correct.") %]
         </p>
-        <div class="ja-hide">
+        <div>
             <h2>
                 [% l("Commodities") %]
             </h2>
@@ -80,7 +80,7 @@
         <p>
             [% l("These are trades where the trader predicts if a market will finish higher or lower than a specified price target.") %]
         </p>
-        <div class="ja-hide">
+        <div>
             <h2>
                 [% l("Indices") %]
             </h2>
@@ -106,7 +106,7 @@
         <p>
             [% l("These are trades where the trader selects a price target, and predicts that the market will never touch the target before the expiry of the trade.") %]
         </p>
-        <div class="ja-hide">
+        <div>
             <h2>
                 [% l("(One) Touch trades") %]
             </h2>
@@ -132,7 +132,7 @@
         <p>
             [% l("The profit is the difference between the purchase price (the stake) and the payout on a winning trade.") %]
         </p>
-        <div class="ja-hide">
+        <div>
             <h2>
                 [% l("Volatility Indices") %]
             </h2>
