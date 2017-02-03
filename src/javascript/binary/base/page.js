@@ -64,16 +64,31 @@ Page.prototype = {
         this.show_notification_outdated_browser();
 
         OneSignal.push(function() {
+            // If we're on an unsupported browser, do nothing
+            if (!OneSignal.isPushNotificationsSupported()) {
+                return;
+            }
             OneSignal.isPushNotificationsEnabled()
                 .then(function(isPushEnabled) {
                     if (!isPushEnabled) {
                         OneSignal.getSubscription()
-                            // show prompt only for the first visit user
+                            // Show prompt only for the first visit user
                             .then(function(notOptedOut) {
                                 if (notOptedOut) {
                                     OneSignal.showHttpPrompt();
                                 }
                             });
+                    } else {
+                        // If user is subscribed and user is logged in, send user_id
+                        if (!Client.is_logged_in()) {
+                            return;
+                        }
+                        OneSignal.getTags(function(tags) {
+                            if (tags.user_id === undefined) {
+                                const id = localStorage.getItem('client.loginid');
+                                OneSignal.sendTags({ user_id: id });
+                            }
+                        });
                     }
                 });
         });
