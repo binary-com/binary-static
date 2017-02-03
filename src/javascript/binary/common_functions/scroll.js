@@ -13,6 +13,8 @@ const Scroll = (function() {
             const selector = elm_selector.find('.sidebar');
             const width = selector.width();
             const sticky_navigation_offset_top = selector.offset().top;
+            const container = elm_selector.find('.sidebar-container');
+
             // With thanks:
             // http://www.backslash.gr/content/blog/webdevelopment/6-navigation-menu-that-stays-on-top-with-jquery
 
@@ -22,10 +24,10 @@ const Scroll = (function() {
 
                 // if we've scrolled more than the navigation, change its position to fixed to stick to top,
                 // otherwise change it back to relative
-                if (scroll_top > sticky_navigation_offset_top && scroll_top + selector[0].offsetHeight < document.getElementById('footer').offsetTop) {
-                    selector.css({ position: 'fixed', top: 0, width: width });
-                } else if (scroll_top + selector[0].offsetHeight > document.getElementById('footer').offsetTop) {
-                    selector.css({ position: 'absolute', bottom: document.getElementById('footer').offsetHeight + 'px', top: '', width: width });
+                if (scroll_top + selector[0].offsetHeight > container[0].offsetHeight + container.offset().top) {
+                    selector.css({ position: 'absolute', bottom: 0, top: '', width: width });
+                } else if (scroll_top > sticky_navigation_offset_top) {
+                    selector.css({ position: 'fixed', top: 0, bottom: '', width: width });
                 } else {
                     selector.css({ position: 'relative' });
                 }
