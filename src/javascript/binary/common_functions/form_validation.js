@@ -4,7 +4,7 @@ const Validation = (function() {
     'use strict';
 
     const forms = {};
-    const error_class  = 'errorfield';
+    const error_class  = 'error-msg';
     const hidden_class = 'invisible';
 
     const events_map = {
