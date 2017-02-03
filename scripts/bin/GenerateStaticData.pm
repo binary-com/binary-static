@@ -706,6 +706,13 @@ sub _texts {
         push @texts, localize('Investor password');
         push @texts, localize('Current password');
         push @texts, localize('New password');
+        push @texts, localize('Demo');
+        push @texts, localize('Real Cent');
+        push @texts, localize('Real Standard');
+        push @texts, localize('Real STP');
+        push @texts, localize('Real Volatility');
+        push @texts, localize('Create Account');
+        push @texts, localize('Change Password');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";

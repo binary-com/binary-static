@@ -11,11 +11,11 @@ const MetaTraderConfig = (function() {
     const hidden_class = 'invisible';
 
     const types_info = {
-        demo            : { account_type: 'demo',      sub_account_type: '',         title: 'Demo',            max_leverage: 1000, is_demo: true },
-        vanuatu_cent    : { account_type: 'financial', sub_account_type: 'cent',     title: 'Real Cent',       max_leverage: 1000 },
-        vanuatu_standard: { account_type: 'financial', sub_account_type: 'standard', title: 'Real Standard',   max_leverage: 300 },
-        vanuatu_stp     : { account_type: 'financial', sub_account_type: 'stp',      title: 'Real STP',        max_leverage: 100 },
-        costarica       : { account_type: 'gaming',    sub_account_type: '',         title: 'Real Volatility', max_leverage: 100 },
+        demo            : { account_type: 'demo',      sub_account_type: '',         title: localize('Demo'),            max_leverage: 1000, is_demo: true },
+        vanuatu_cent    : { account_type: 'financial', sub_account_type: 'cent',     title: localize('Real Cent'),       max_leverage: 1000 },
+        vanuatu_standard: { account_type: 'financial', sub_account_type: 'standard', title: localize('Real Standard'),   max_leverage: 300 },
+        vanuatu_stp     : { account_type: 'financial', sub_account_type: 'stp',      title: localize('Real STP'),        max_leverage: 100 },
+        costarica       : { account_type: 'gaming',    sub_account_type: '',         title: localize('Real Volatility'), max_leverage: 100 },
     };
 
     const needsRealMessage = () => (
@@ -29,7 +29,7 @@ const MetaTraderConfig = (function() {
 
     const actions_info = {
         new_account: {
-            title      : 'Create Account',
+            title      : localize('Create Account'),
             success_msg: (response) => {
                 let acc_type = response.mt5_new_account.account_type;
                 switch (acc_type) {
@@ -78,7 +78,7 @@ const MetaTraderConfig = (function() {
             },
         },
         password_change: {
-            title        : 'Change Password',
+            title        : localize('Change Password'),
             success_msg  : response => localize('The main password of account number [_1] has been changed.', [response.echo_req.login]),
             prerequisites: () => new Promise(resolve => resolve('')),
             formValues   : ($form, acc_type, action) => {
@@ -87,7 +87,7 @@ const MetaTraderConfig = (function() {
             },
         },
         deposit: {
-            title      : 'Deposit',
+            title      : localize('Deposit'),
             success_msg: response => localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]', [
                 formatMoney(currency, response.echo_req.amount),
                 response.echo_req.from_binary,
@@ -115,7 +115,7 @@ const MetaTraderConfig = (function() {
             },
         },
         withdrawal: {
-            title      : 'Withdraw',
+            title      : localize('Withdraw'),
             success_msg: response => localize('[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]', [
                 formatMoney(currency, response.echo_req.amount),
                 response.echo_req.from_mt5,
