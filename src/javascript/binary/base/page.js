@@ -79,14 +79,14 @@ Page.prototype = {
                                 }
                             });
                     } else {
-                        // If user is subscribed and user is logged in, send user_id
+                        // If user is subscribed and is logged in, send login_id to onesignal
                         if (!Client.is_logged_in()) {
                             return;
                         }
                         OneSignal.getTags(function(tags) {
-                            if (tags.user_id === undefined) {
+                            if (tags.login_id === undefined) {
                                 const id = localStorage.getItem('client.loginid');
-                                OneSignal.sendTags({ user_id: id });
+                                OneSignal.sendTags({ login_id: id });
                             }
                         });
                     }

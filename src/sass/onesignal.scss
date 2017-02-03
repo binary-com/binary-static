@@ -1,0 +1,14 @@
+/* Override default OneSignal popover css */
+#onesignal-popover-container #onesignal-popover-dialog {
+    #onesignal-popover-allow-button.popover-button.primary {
+        background: $COLOR_GREEN !important;
+        box-shadow: none !important;
+    }
+    #onesignal-popover-cancel-button.popover-button.secondary {
+        background: $COLOR_LIGHT_GRAY !important;
+        color: $COLOR_BLACK !important;
+    }
+    div.popover-body-message {
+        color: $COLOR_BLACK !important;
+    }
+}

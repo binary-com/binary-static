@@ -57,39 +57,7 @@ OneSignal.push(function() {
     OneSignal.SERVICE_WORKER_PARAM = { scope: url_for_static('/') };
 });
 
-/* for debugging */
-// OneSignal.push(["getNotificationPermission", function(permission) {
-//     console.log("Site Notification Permission:", permission);
-// }]);
-//
-// OneSignal.push(["addListenerForNotificationOpened", function(data) {
-//     console.warn("[Page] addListenerForNotificationOpened:", data);
-// }]);
-//
-// OneSignal.push(function() {
-//     // attach event listeners
-//     OneSignal.on('initialize', function (e) {
-//         console.warn('OneSignal initialize event', e);
-//     });
-//     OneSignal.on('subscriptionChange', function (isSubscribed) {
-//         console.log("The user's subscription state is now:", isSubscribed);
-//     });
-//     OneSignal.on('notificationPermissionChange', function (e) {
-//         console.log(e);
-//     });
-//     OneSignal.on('notificationDismiss', function(e) {
-//         console.warn(e);
-//     });
-//     OneSignal.on('register', function() {
-//         OneSignal.getUserId()
-//             .then(function(userId) {
-//                 console.log(userId);
-//             });
-//     });
-// });
-
 OneSignal.push(function() {
-    // OneSignal.log.setLevel('trace'); /* for debugging */
     OneSignal.init(options);
 });
 
