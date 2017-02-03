@@ -71,7 +71,7 @@ const show_residence_form = function() {
 const generateState = function() {
     const state = document.getElementById('address_state');
     if (state.length !== 0) return;
-    appendTextValueChild(state, Content.localize().textSelect, '');
+    appendTextValueChild(state, localize('Please select'), '');
     if (Client.get('residence') !== '') {
         BinarySocket.send({ states_list: Client.get('residence') });
     }

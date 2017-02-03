@@ -138,9 +138,7 @@ const pjax_config = function() {
 };
 
 const init_pjax = function () {
-    if (!$('body').hasClass('BlueTopBack')) { // No Pjax for BO.
-        pjax.connect(pjax_config());
-    }
+    pjax.connect(pjax_config());
 };
 
 // TODO: remove or fix this function
