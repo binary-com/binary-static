@@ -41,7 +41,7 @@
         </div>
     </div>
     <div class="tab-content gr-padding-10">
-        <div class="tab-content-wrapper menu-has-sub-item gr-row">
+        <div class="tab-content-wrapper menu-has-sub-item">
             <div id="legal-binary-content" class="toggle-content invisible">[% INCLUDE legal/terms_and_conditions.html.tt %]</div>
             <div id="legal-mt-content" class="toggle-content invisible">[% INCLUDE legal/metatrader/terms_and_conditions.html.tt %]</div>
 

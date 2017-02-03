@@ -3,49 +3,49 @@
         <div class="section">
             <a id="tac"></a>
             <div class="section-content">
-                <div id="section-1" class="gr-12">[% INCLUDE legal/tac_sections/tac.html.tt %]</div>
+                <div id="section-1">[% INCLUDE legal/tac_sections/tac.html.tt %]</div>
             </div>
         </div>
         <div class="section">
             <a id="trading-rules"></a>
             <div class="section-content">
-                <div id="section-2" class="gr-12">[% INCLUDE legal/tac_sections/trading_rules.html.tt %]</div>
+                <div id="section-2">[% INCLUDE legal/tac_sections/trading_rules.html.tt %]</div>
             </div>
         </div>
         <div class="section">
             <a id="deposit-bonus"></a>
             <div class="section-content">
-                <div id="section-3" class="gr-12">[% INCLUDE legal/tac_sections/deposit_bonus.html.tt %]</div>
+                <div id="section-3">[% INCLUDE legal/tac_sections/deposit_bonus.html.tt %]</div>
             </div>
         </div>
         <div class="section">
             <a id="affiliate"></a>
             <div class="section-content">
-                <div id="section-4" class="gr-12">[% INCLUDE legal/tac_sections/affiliate.html.tt %]</div>
+                <div id="section-4">[% INCLUDE legal/tac_sections/affiliate.html.tt %]</div>
             </div>
         </div>
         <div class="section">
             <a id="api"></a>
             <div class="section-content">
-                <div id="section-5" class="gr-12">[% INCLUDE legal/tac_sections/api.html.tt %]</div>
+                <div id="section-5">[% INCLUDE legal/tac_sections/api.html.tt %]</div>
             </div>
         </div>
         <div class="section">
             <a id="complaints"></a>
             <div class="section-content">
-                <div id="section-6" class="gr-12">[% INCLUDE legal/tac_sections/complaints.html.tt %]</div>
+                <div id="section-6">[% INCLUDE legal/tac_sections/complaints.html.tt %]</div>
             </div>
         </div>
         <div class="section">
             <a id="conflicts-policy"></a>
             <div class="section-content">
-                <div id="section-7" class="gr-12">[% INCLUDE legal/tac_sections/conflicts_policy.html.tt %]</div>
+                <div id="section-7">[% INCLUDE legal/tac_sections/conflicts_policy.html.tt %]</div>
             </div>
         </div>
         <div class="section">
             <a id="biel"></a>
             <div class="section-content">
-                <div id="section-8" class="gr-12">[% INCLUDE legal/tac_sections/biel.html.tt %]</div>
+                <div id="section-8">[% INCLUDE legal/tac_sections/biel.html.tt %]</div>
             </div>
         </div>
     </div>
