@@ -4,12 +4,14 @@
         padding: 20px;
         div {
             overflow: hidden;
-            display: inline;
+            display: table;
+            margin: 0 auto;
             .picture {
+                float: left;
                 @include BIDIR_PROP(padding-right, padding-left, 20px);
             }
             .text {
-                display: inline-block;
+                display: table-cell;
                 vertical-align: middle;
                 span {
                     color: $COLOR_DARK_GRAY;
