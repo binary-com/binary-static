@@ -1,8 +1,10 @@
-const url = require('../base/url').url;
+const url    = require('../base/url').url;
+const Scroll = require('../common_functions/scroll').Scroll;
 
 const TermsAndConditions = (function() {
     const init = function() {
         handleActiveTab();
+        Scroll.sidebar_scroll($('.tac-binary'));
 
         const year = document.getElementsByClassName('currentYear');
         for (let i = 0; i < year.length; i++) {
