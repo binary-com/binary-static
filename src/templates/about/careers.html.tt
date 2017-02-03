@@ -8,19 +8,19 @@
             [% l("Imagine a workplace where your individuality, creativity and sense of adventure are valued and rewarded.") %]
           </p>
         </div>
-        <div class="gr-row gr-padding-30">
-          <div class="gr-12">
-            <img class="responsive" src="[% request.url_for('images/pages/careers/main@1.jpg') %]"/>
-            <div class="xquote-inverse">
-              <div>
-                <div class="picture">
-                  <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/view-positions-icon-white.svg') %]"/>
-                </div>
-                <div class="text">
-                  <a class="pjaxload" href="[% request.url_for('/open-positions') %]">
-                    [% l("View open positions") %]
-                  </a>
-                </div>
+      </div>
+      <div class="gr-row gr-padding-30">
+        <div class="gr-12">
+          <img class="responsive" src="[% request.url_for('images/pages/careers/main@1.jpg') %]"/>
+          <div class="xquote-inverse">
+            <div>
+              <div class="picture">
+                <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/view-positions-icon-white.svg') %]"/>
+              </div>
+              <div class="text">
+                <a class="pjaxload" href="[% request.url_for('/open-positions') %]">
+                  [% l("View open positions") %]
+                </a>
               </div>
             </div>
           </div>
@@ -148,7 +148,7 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid fill-bg-color">
+    <div class="gr-padding-30 fill-bg-color">
       <div class="container">
         <div class="gr-row gr-padding-30 center-text">
           <div class="gr-12 gr-padding-30">
@@ -193,32 +193,32 @@
         <div class="separator-line border-bottom"></div>
       </div>
       <div class="gr-row gr-padding-30">
-        <div class="gr-padding-30">
-          <div class="gr-12 center-text">
-            <h1>[% l("Open positions") %]</h1>
-            <p>[% l("[_1] is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:", website_name) %]</p>
+        <div class="gr-12 center-text">
+          <h1>[% l("Open positions") %]</h1>
+          <p>[% l("[_1] is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:", website_name) %]</p>
+        </div>
+      </div>
+      <div class="gr-10 gr-12-m gr-centered">
+        <div class="gr-row">
+          <div class="gr-6 gr-12-m">
+            <ul class="checked">
+              <li>[% l("Software (Perl) Development") %]</li>
+              <li>[% l("DevOps Engineering") %]</li>
+              <li>[% l("Information Security") %]</li>
+              <li>[% l("Front-End (Javascript) Development") %]</li>
+              <li>[% l("Quantitative Analytics") %]</li>
+              <li>[% l("Internal Audit") %]</li>
+            </ul>
           </div>
-          <div class="gr-row gr-push-1 gr-12-m">
-            <div class="gr-6 gr-12-m">
-              <ul class="checked">
-                <li>[% l("Software (Perl) Development") %]</li>
-                <li>[% l("DevOps Engineering") %]</li>
-                <li>[% l("Information Security") %]</li>
-                <li>[% l("Front-End (Javascript) Development") %]</li>
-                <li>[% l("Quantitative Analytics") %]</li>
-                <li>[% l("Internal Audit") %]</li>
-              </ul>
-            </div>
-            <div class="gr-6 gr-12-m">
-              <ul class="checked">
-                <li>[% l("Online Marketing") %]</li>
-                <li>[% l("Business Development") %]</li>
-                <li>[% l("Graphics Design") %]</li>
-                <li>[% l("Customer Support") %]</li>
-                <li>[% l("Legal & Regulatory Compliance") %]</li>
-                <li>[% l("Accounting & Payments") %]</li>
-              </ul>
-            </div>
+          <div class="gr-6 gr-12-m">
+            <ul class="checked">
+              <li>[% l("Online Marketing") %]</li>
+              <li>[% l("Business Development") %]</li>
+              <li>[% l("Graphics Design") %]</li>
+              <li>[% l("Customer Support") %]</li>
+              <li>[% l("Legal & Regulatory Compliance") %]</li>
+              <li>[% l("Accounting & Payments") %]</li>
+            </ul>
           </div>
         </div>
       </div>
