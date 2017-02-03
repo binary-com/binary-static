@@ -1,5 +1,5 @@
-var Regulation = (function() {
-    var init = function() {
+const Regulation = (function() {
+    const init = function() {
         $(function() {
             $('#accordion').accordion({
                 heightStyle: 'content',
@@ -8,8 +8,8 @@ var Regulation = (function() {
             });
         });
 
-        var coords = [],
-            $map_area = $('#planetmap area'),
+        const coords = [],
+            $map_area = $('#planetmap').find('area'),
             $selector = $('img[usemap="#planetmap"]');
         if (coords.length === 0) {
             $map_area.each(function() {
@@ -18,8 +18,8 @@ var Regulation = (function() {
         }
         function relocate_links() {
             $map_area.each(function(index) {
-                var c = '';
-                var new_width = $selector[0].getBoundingClientRect().width.toFixed(2);
+                let c = '';
+                const new_width = $selector[0].getBoundingClientRect().width.toFixed(2);
                 coords[index].split(',').map(function(v) { c += (c ? ',' : '') + ((v * new_width) / 900).toFixed(2); });
                 $(this).attr('coords', c);
             });

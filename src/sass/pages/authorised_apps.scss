@@ -1,18 +1,18 @@
-#applications-ws-container {
+#applications-ws-container, #connections-ws-container {
     table {
         td, th {
             text-align: center !important;
             vertical-align: middle !important;
             line-height: 30px;
             .button {
-                margin: 3px 0px;
+                margin: 3px 0;
             }
         }
     }
 }
 
 @media screen and (max-width: 480px) {
-    #applications-ws-container {
+    #applications-ws-container, #connections-ws-container {
         table td, table th {
             font-size: 80%;
         }

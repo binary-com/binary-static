@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-07 17:32+0000\n"
+"PO-Revision-Date: 2017-01-19 13:33+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.10-dev\n"
+"X-Generator: Weblate 2.11-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API ของ %1\" หมายถึง ระบบของ %1 ที่ประกอบด้วย ชุดคำสั่งต่างๆ โปรโตคอลต่างๆ เครื่องมือต่างๆ และทรัพยากรต่างๆ ที่ถูกพัฒนาขึ้นและดำเนินการโดย %1 ซึ่งท่านสามารถใช้งานแอพพลิเคชันได้เพื่อเชื่อมต่อกับแพลตฟอร์มการซื้อขายของ %1"
@@ -31,18 +31,6 @@ msgstr "\"ผมทำงานกับบริษัทพันธมิต�
 
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "\"Third Party Provider(s)\" หมายถึง กิจการของบุคคลที่สาม (ที่ไม่ใช่พันธมิตร) ซึ่งให้บริการต่างๆ ผ่านการใช้งาน API ของ %1"
-
-msgid "$100,000 - $250,000"
-msgstr "100,000 - 250,000 เหรียญสหรัฐ"
-
-msgid "$100,000 - $500,000"
-msgstr "100,000 - 500,000 เหรียญสหรัฐ"
-
-msgid "$25,000 - $100,000"
-msgstr "25,000 - 100,000 เหรียญสหรัฐ"
-
-msgid "$250,000 - $1,000,000"
-msgstr "250,000 - 1,000,000 เหรียญสหรัฐ"
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 ถูกเพิ่มแล้วที่บัญชีเสมือนของท่าน %3"
@@ -218,7 +206,9 @@ msgstr "%1 กำลังสรรหาเจ้าหน้าที่สื
 msgid "%1 seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world."
 msgstr "%1 กำลังสรรหาเจ้าหน้าที่เขียนต้นฉบับ หรือ ก๊อปปี้ไรท์เทอร์ ที่มีทักษะ ฉลาดหลักแหลม เพื่อผลิตเนื้อหาข้อมูลที่สามารถใช้ในการเพิ่มผู้มุ่งหวังใหม่ๆ และสื่อประสานกับลูกค้าปัจจุบันของเราทั่วทุกมุมโลก"
 
-msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
+#, fuzzy
+#| msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
+msgid "%1 supports %2 which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgstr "%1 ให้การสนับสนุนองค์กร <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT)  เป็นองค์กรการกุศลชั้นนำในประเทศอังกฤษเพื่อรณรงค์บรรเทาโทษของการพนันให้มีน้อยที่สุด บริการกองทุน RGT เพื่อการศึกษา บริการการรักษาและป้องกัน และการวิจัยต่างๆ นั้น เพื่อช่วยให้บุคลากรได้มีความเข้าใจเกี่ยวกับภัยของการพนันมากขึ้น สิ่งนี้ยังรวมถึงการมีหน่วยงานให้คำปรึกษาระดับชาติเพื่อแนะนำและสนับสนุนทุกคนที่ต้องการได้รับความช่วยเหลือเกี่ยวกับกรณีทางการพนันต่างๆ ของพวกเขา"
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
@@ -280,6 +270,36 @@ msgstr "แนวคิดการบริจาคเพื่อการก
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(ระยะเวลาที่ต่ำที่สุด, ตัวอย่าง ระยะที่ต่ำที่สุด 15 วินาที)นาที"
 
+#, fuzzy
+#| msgid "$100,000 - $250,000"
+msgid "&#36;100,000 - &#36;250,000"
+msgstr "100,000 - 250,000 เหรียญสหรัฐ"
+
+#, fuzzy
+#| msgid "$100,000 - $500,000"
+msgid "&#36;100,001 - &#36;500,000"
+msgstr "100,000 - 500,000 เหรียญสหรัฐ"
+
+#, fuzzy
+#| msgid "$25,000 - $100,000"
+msgid "&#36;25,000 - &#36;50,000"
+msgstr "25,000 - 100,000 เหรียญสหรัฐ"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;250,001 - &#36;500,000"
+msgstr "250,000 - 1,000,000 เหรียญสหรัฐ"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;50,001 - &#36;100,000"
+msgstr "250,000 - 1,000,000 เหรียญสหรัฐ"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;500,001 - &#36;1,000,000"
+msgstr "250,000 - 1,000,000 เหรียญสหรัฐ"
+
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 เป็นหนึ่งในพันธมิตรเก่าแก่และมีความเชื่อถือมากที่สุดที่เรามีมา พวกเราทำงานด้วยกันมานาน &#8221;"
 
@@ -330,6 +350,9 @@ msgstr "(One) Touch Trades"
 
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "* ปราศจากภาษี: กำไรจากการเทรดไม่ต้องนำไปเสียภาษีในหลายๆ ประเทศ แต่ท่านควรหารือ หรือ ขอคำปรึกษากับผู้เชี่ยวชาญด้านภาษีในประเทศของท่านด้วย"
+
+msgid "*All calls are recorded for training and monitoring purposes"
+msgstr "*ทุกสายการสนทนาจะถูกบันทึกเพื่อการอบรมและการสังเกตการณ์"
 
 msgid ",000"
 msgstr ",000"
@@ -759,7 +782,7 @@ msgstr "มีความสนใจและความมุ่งมั่
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "วิธีการเชิงรุกในการแก้ปัญหาและนำเสนอวิธีการแก้ปัญหาต่างๆ ให้ลูกค้า"
 
-msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
 msgstr "สแกนสำเนาใบแจ้งหนี้รายการสาธารณูปโภค หรือ รายงานธุรกรรมการเงินทางธนาคาร (ฉบับล่าสุด ไม่นานกว่า 3 เดือน) จำนวน 1 ฉบับ"
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
@@ -803,9 +826,6 @@ msgstr "API โทเค่น"
 
 msgid "API token for third party applications."
 msgstr "API โทเค่นสำหรับแอพพลิเคชันอื่น"
-
-msgid "AUD"
-msgstr "AUD"
 
 msgid "Ability to communicate fluently in the English language, in both oral and written forms"
 msgstr "มีทักษะภาษาอังกฤษดีเยี่ยมในการสื่อสารทางคำพูดและการเขียน"
@@ -863,6 +883,14 @@ msgstr "การโอนบัญชี"
 
 msgid "Account balance: "
 msgstr "ยอดคงเหลือในบัญชี: "
+
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "การฝากเงินถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
+
+msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "บัญชียังไม่ถูกเปิดใช้งาน โปรดติดต่อ <a class=\"pjaxload\" href=\"%1\">แผนกลูกค้าสัมพันธ์</a> สำหรับข้อมูลเพิ่มเติม"
 
 msgid "Accounting"
 msgstr "การบัญชี"
@@ -954,6 +982,9 @@ msgstr "ข้อจำกัดของข้อตกลง"
 msgid "Agreement for documents"
 msgstr "ข้อตกลงสำหรับเอกสาร"
 
+msgid "Agricultural, Forestry and Fishery Workers"
+msgstr ""
+
 msgid "All Partnership Options"
 msgstr "ประเภทของรายการพันธมิตร"
 
@@ -962,9 +993,6 @@ msgstr "กิจกรรมต่างๆ ของพันธมิตร�
 
 msgid "All barriers in this trading window are expired"
 msgstr "รายการ Barrier ทั้งหมดในหน้าต่างซื้อขายนี้หมดอายุ"
-
-msgid "All calls are recorded for training and monitoring purposes"
-msgstr "ทุกสายการสนทนาจะถูกบันทึกเพื่อการอบรมและการสังเกตการณ์"
 
 msgid "All credit card details are submitted directly to the Visa/Mastercard network using the latest SSL encryption technology, in accordance with bank policies."
 msgstr "รายละเอียดของบัตรเครดิตถูกส่งไปยังเครือข่ายวีซ่าและมาสเตอร์การ์ดโดยตรงโดยใช้เทคโนโลยีการเข้ารหัสแบบ SSL ล่าสุด ที่สอดคล้องกับนโยบายธนาคาร"
@@ -1020,6 +1048,9 @@ msgstr "มีความกล้าแสดงออก บุคลิก�
 
 msgid "An error occured."
 msgstr "มีข้อผิดพลาดเกิดขึ้น"
+
+msgid "Analyse and test the domains and subdomains listed in the scope."
+msgstr "วิเคราะห์และทดสอบโดเมนและโดเมนย่อยที่อยู่ในขอบเขตงาน"
 
 msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
 msgstr "วิเคราะห์ตลาดด้วยดัชนีที่ครอบคลุมอย่างกว้างขวาง ช่วงราคา และโอเวอร์เลย์"
@@ -1120,8 +1151,16 @@ msgstr "ท่านแน่ใจใช่ไหมที่จะลบโท
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "ท่านแน่ใจใช่ไหมที่จะยกเลิกการเข้าใช้ระบบถาวร"
 
+#, fuzzy
+#| msgid "Are you sure that you want to permanently revoke access to application"
+msgid "Are you sure that you want to permanently revoke connection to"
+msgstr "ท่านแน่ใจใช่ไหมที่จะยกเลิกการเข้าใช้ระบบถาวร"
+
 msgid "Are your site visitors interested in:"
 msgstr "ผู้เยี่ยมชมเว็บของท่านสนใจใน:"
+
+msgid "Armed Forces"
+msgstr ""
 
 msgid "As Internal Auditor, you will perform unique, risk-based internal audits on the Binary Ltd. Group of companies. You will also be involved in risk management, evaluation of regulatory compliance, as well as work with the Head of Departments to improve business processes and support the realization of audit recommendations."
 msgstr "ในบทบาทผู้ตรวจสอบภายใน ท่านจะปฏิบัติงานที่มีความจำเพาะ ดำเนินการตรวจสอบความเสี่ยงภายในองค์กรของ Binary Ltd. และบริษัทฯ ในเครือ ท่านจะมีบทบาทและความเกี่ยวข้องกับการบริหารความเสี่ยง การประเมินธรรมาภิบาลของข้อบัญญัติต่างๆ มีการปฏิบัติงานร่วมกับหัวหน้าแผนกต่างๆ เพื่อปรับปรุงกระบวนการทางธุรกิจและสนับสนุนความสำคัญของความเห็นของสำนักตรวจสอบภายใน"
@@ -1189,9 +1228,6 @@ msgstr "ช่วยเหลือหัวหน้าแผนกธรรม
 msgid "Assisting with the regulatory and statutory audit of Binary Group companies worldwide"
 msgstr "ช่วยเหลือและสนับสนุนงานทางกฎหมายและการตรวจสอบตามกฎหมายของบริษัทในเครือไบนารีทั่วโลก"
 
-msgid "At %1, we consider the strength and security of our trading platform to be critically important."
-msgstr "ที่ %1 พวกเราคำนึงถึงจุดแข็งและความปลอดภัยของระบบการซื้อขายเป็นสิ่งสำคัญยิ่งยวด"
-
 msgid "At any time and for any reason or no reason, the Company, in its sole discretion, may:"
 msgstr "ไม่ว่าเวลาใด ไม่ว่าเหตุผลใดก็ตาม บริษัทฯ มีดุลยพินิจเพื่อดำเนินการ ในเรื่อง:"
 
@@ -1215,9 +1251,6 @@ msgstr "ออสเตรเลีย"
 
 msgid "Authenticate"
 msgstr "ยืนยันตัวตน"
-
-msgid "Authenticate your account"
-msgstr "ยืนยันตัวตนต่อบัญชีของท่าน"
 
 msgid "Authentication"
 msgstr "การระบุตัวตน"
@@ -1300,6 +1333,9 @@ msgstr "แพลตฟอร์มพื้นฐาน"
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr "ก่อนการเปิดบัญชีให้ท่านเพื่อทำการซื้อขายหรือลงทุนในผลิตภัณฑ์เพื่อการลงทุนต่างๆ กับ BIEL เราขอดำเนินการประเมินเพื่อวิเคราะห์ถึงผลิตภัณฑ์และบริการเพื่อการลงทุนใดบ้างที่เหมาะสมกับท่าน และเพื่อแจ้งเตือนให้ท่านทราบว่า บนพื้นฐานของข้อมูลท่าน มีผลิตภัณฑ์และบริการเพื่อการลงทุนใดบ้างที่ไม่เหมาะกับท่าน การตัดสินใจใดๆ ก็ตามในการขอเปิดบัญชี และเพื่อการใช้งานผลิตภัณฑ์/บริการเพื่อการลงทุนเป็นไปตามความประสงค์ของท่าน และเป็นความรับผิดชอบของท่านที่จะเข้าใจและยอมรับความเสี่ยงเนื่องจากผลิตภัณฑ์/บริการเพื่อการลงทุนที่ท่านได้เลือก"
 
+msgid "Benefits"
+msgstr "ประโยชน์ต่างๆ"
+
 msgid "Benefits of being a Payment Agent"
 msgstr "ประโยชน์ต่างๆ ของการเป็นตัวแทนรับชำระเงิน"
 
@@ -1363,8 +1399,8 @@ msgstr "Binary (IOM) Ltd ตั้งอยู่ที่ ชั้น 1 อา
 msgid "Binary (V) Ltd"
 msgstr "Binary (V) Ltd"
 
-msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">view licence</a>."
-msgstr "Binary (V) Ltd ตั้งอยู่ที่ อาคาร Govant เมืองพอร์ตวิลลา PO Box 1276 วานูอาตู สาธารณรัฐวานูอาตู ได้รับใบอนุญาตและรับรองโดย Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">ดูใบอนุญาต</a>"
+msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016.pdf\" target=\"_blank\">view licence</a>."
+msgstr "Binary (V) Ltd ตั้งอยู่ที่ อาคาร Govant เมืองพอร์ตวิลลา PO Box 1276 วานูอาตู สาธารณรัฐวานูอาตู ได้รับใบอนุญาตและรับรองโดย Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016.pdf\" target=\"_blank\">ดูใบอนุญาต</a>"
 
 msgid "Binary Bot"
 msgstr "Binary Bot"
@@ -1377,6 +1413,9 @@ msgstr "Binary Group Services Sdn Bhd ตั้งอยู่เลขที่
 
 msgid "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgstr "Binary Group Services Sdn Bhd ตั้งอยู่ที่ C-13-02 อาคาร iTech ถนน Impact, Cyber 6, 63000 ไซเบอร์จายา Selangor Darul Ehsan"
+
+msgid "Binary Group Services Sdn Bhd, Zweigstelle Berlin, Friedrichstraße 68, 10117 Berlin"
+msgstr "บริษัท Binary Group Services Sdn Bhd, Zweigstelle Berlin, Friedrichstraße 68, 10117 เบอร์ลิน"
 
 msgid "Binary Group Services is searching for talented and motivated Perl developers who are looking for a chance to excel. If you have the skill set we seek, you'll become a valued member of a highly competent back-end development team engaged in driving our binary options trading systems to new heights."
 msgstr "Binary Group Services กำลังสรรหานักพัฒนาโปรแกรม Perl ผู้มีความสามารถและมุ่งมั่นสำหรับโอกาสและความท้าทาย หากท่านมีคุณสมบัติที่เรากำลังมองหา ท่านจะเป็นบุคลากรที่มีคุณค่าในทีมพัฒนาระบบเบื้องหลังที่มีความสามารถในการขับเคลื่อนระบบซื้อขายไบนารีออปชั่นของเราในระยะยาว"
@@ -1595,9 +1634,6 @@ msgstr "แคชเชียร์"
 msgid "Cashier Password"
 msgstr "รหัสผ่านสำหรับจัดการเงิน"
 
-msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgstr "แคชเชียร์ถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
-
 msgid "Cashier password"
 msgstr "รหัสผ่านสำหรับจัดการเงิน"
 
@@ -1636,6 +1672,9 @@ msgstr "ตรวจสอบคำศัพท์ทางเทคนิคก
 
 msgid "Check out the payment methods accepted by the payment agents in the list below."
 msgstr "ตรวจสอบวิธีการชำระเงินโดยตัวแทนรับชำระเงินจากข้อมูลด้านล่าง"
+
+msgid "Chief Executives, Senior Officials and Legislators"
+msgstr ""
 
 msgid "Choose Asian Rise/Fall when you want to profit from the market ending higher or lower than the average price."
 msgstr "เลือก Asian Rise/Fall เมื่อท่านต้องการกำไรจากตลาดสิ้นสุดสูงกว่า หรือ ต่ำกว่า ราคาเฉลี่ย"
@@ -1720,6 +1759,14 @@ msgstr "ลูกค้าในประเทศเหล่านี้ อ�
 
 msgid "Classification of assets requiring hedge"
 msgstr "การจำแนกสินทรัพย์ที่ต้องป้องกันความเสี่ยง"
+
+#, fuzzy
+#| msgid "Complaints and Disputes"
+msgid "Cleaners and Helpers"
+msgstr "การร้องเรียนและข้อโต้แย้ง"
+
+msgid "Clerks"
+msgstr ""
 
 msgid "Click here to retry"
 msgstr "คลิกที่นี่เพื่อลองใหม่"
@@ -1871,6 +1918,11 @@ msgstr "นโยบายการบริหารความขัดแย
 msgid "Connection error: Please check your internet connection."
 msgstr "การเชื่อมต่อมีความผิดพลาด: โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของท่าน"
 
+#, fuzzy
+#| msgid "Construction"
+msgid "Connections"
+msgstr "การก่อสร้าง / สิ่งปลูกสร้าง / การคิดค้น"
+
 msgid "Construction"
 msgstr "การก่อสร้าง / สิ่งปลูกสร้าง / การคิดค้น"
 
@@ -2018,6 +2070,9 @@ msgstr "ประเทศที่พำนัก"
 msgid "Cover is made available on the basis of the depositor rather than on the basis of the number of deposits, meaning that if an individual has multiple accounts he will only be covered as to €20,000 on the global amount. Any other amount exceeding such threshold is not protected and will thus have to be borne by the investor."
 msgstr "เงินสำรองถูกกำหนดไว้สำหรับผู้ฝาก หมายถึง เมื่อบุคคลมีบัญชีมากกว่า 1 บัญชี เขาจะต้องสำรองเงินไว้ 20,000 ยูโร จำนวนเงินที่มากกว่าจำนวนเงินที่กำหนดไว้จะไม่ได้รับการคุ้มครองและจะเป็นความรับผิดชอบของนักลงทุนเอง"
 
+msgid "Craft, Metal, Electrical and Electronics Workers"
+msgstr ""
+
 msgid "Create"
 msgstr "สร้าง"
 
@@ -2161,9 +2216,6 @@ msgstr "ฝาก %1 %2 เงินเสมือนในบัญชีข�
 
 msgid "Deposit Bonus"
 msgstr "โบนัสเงินฝาก"
-
-msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgstr "การฝากเงินถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
 
 msgid "Deposit of"
 msgstr "การฝากของ"
@@ -2342,9 +2394,6 @@ msgstr "รางวัล EGR Operator "
 msgid "EU Passport Rights"
 msgstr "สิทธิ์ตามหนังสือเดินทาง EU"
 
-msgid "EUR"
-msgstr "EUR"
-
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "แต่ละสัญญาของไบนารีออปชั่นจะมีอายุระยะเวลาหนึ่ง – กับ %1 ท่านสามารถกำหนดระยะเวลาสัญญาระหว่าง 10 วินาที ไปถึง 365 วัน"
 
@@ -2359,6 +2408,9 @@ msgstr "แต่ละธุรกรรมออปชั่นมีการ
 
 msgid "Each party to this Agreement represents and warrants to the other that it has, and will retain throughout the term of this Agreement all right, title, and authority to enter into this Agreement, to grant to the other party the rights and licences granted in this Agreement, and to perform all of its obligations under this Agreement."
 msgstr "แต่ละฝ่ายในข้อตกลงฉบับนี้ทำหน้าที่รับรองว่า จะรักษาและปฏิบัติตามข้อตกลงทุกข้อให้ถูกต้องตามสิทธิ กรรมสิทธิ์ หน้าที่ และบทบาทที่กล่าวในข้อตกลงนี้ เพื่อยินยอมให้บุคคลอื่นมีสิทธิ์และเสรีภาพตามหน้าที่ความรับผิดชอบที่ปรากฏในข้อตกลงนี้"
+
+msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
+msgstr ""
 
 msgid "Earn commissions by introducing new customers to %1."
 msgstr "ท่านจะได้รับค่าคอมมิชชั่นเมื่อท่านแนะนำลูกค้าใหม่ให้ %1"
@@ -2639,6 +2691,9 @@ msgstr "คำอธิบาย"
 msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
 msgstr "สร้างประสบการณ์การซื้อขายขั้นสูงด้วยแอพ Next-Gen สำหรับเว็บและอุปกรณ์สื่อสารเคลื่อนที่"
 
+msgid "Explore our HackerOne bounty programme"
+msgstr "ศึกษาโปรแกรม HackerOne ที่มีจำนวนมากของเรา"
+
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "มีประสบการณ์ ความรู้ความเข้าใจเกี่ยวกับมาตรฐานและหลักการพัฒนาโปรแกรมขั้นสูง"
 
@@ -2719,6 +2774,9 @@ msgstr "สินทรัพย์ทางการเงิน"
 
 msgid "Financial Information"
 msgstr "ข้อมูลทางการเงิน"
+
+msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "ต้องมีการอนุมัติความเสี่ยงทางการเงิน โปรดติดต่อ <a class=\"pjaxload\" href=\"%1\">แผนกลูกค้าสัมพันธ์</a> สำหรับข้อมูลเพิ่มเติม"
 
 msgid "Financial Security"
 msgstr "ความปลอดภัยทางการเงิน"
@@ -2861,9 +2919,6 @@ msgstr "นอกจากนี้ บริษัทฯ สงวนสิท�
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgstr "นอกจากนี้ บริษัทฯ ขอสงวนสิทธิ์ในมูลหนี้ทั้งหมดสำหรับการใช้งานในทางที่ผิด การเข้าถึงแบบผิดวิธี หรือ การใช้เงื่อนไขที่ไม่ถูกต้องกับ API ของ %1 เนื่องจากอุปกรณ์ที่ไม่เหมาะสม ภาวะผิดปกติที่เกี่ยวข้องกับผู้ให้บริการอินเทอร์เน็ต การอิ่มตัวของเครือข่ายอินเทอร์เน็ต รวมสาเหตุอื่นๆ"
 
-msgid "GBP"
-msgstr "GBP"
-
 msgid "GMT"
 msgstr "GMT"
 
@@ -2921,6 +2976,9 @@ msgstr "ตั้งราคาของท่าน"
 msgid "Getting Started"
 msgstr "เริ่มต้น"
 
+msgid "Getting started"
+msgstr "เริ่มต้น"
+
 msgid "Give Me More Money!"
 msgstr "เพิ่มเงินอีกหน่อย!"
 
@@ -2945,6 +3003,9 @@ msgstr "กำกับโดยกฎหมายและอำนาจตา
 msgid "Governing law and jurisdiction"
 msgstr "กำกับโดยกฎหมายและอำนาจตามกฎหมาย"
 
+msgid "Government Officers"
+msgstr ""
+
 msgid "Grab a wide range of third-party apps for binary options trading in the <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Shop</a>."
 msgstr "เลือกใช้แอพสำหรับการซื้อขายไบนารีออปชั่นที่ <a href=\"https://shop.binary.com\" target=\"_blank\">ร้าน Binary.com</a>"
 
@@ -2959,9 +3020,6 @@ msgstr "ได้ผลตอบแทนดี สูงถึง 35%"
 
 msgid "Group History"
 msgstr "ประวัติของเครือ"
-
-msgid "Hackerone - for IT security professionals"
-msgstr "HackerOne - สำหรับอาชีพเกี่ยวกับความปลอดภัยของระบบเทคโนโลยีสารสนเทศ"
 
 msgid "Hands-on test automation experience a plus"
 msgstr "มีประสบการณ์ในการทดสอบระบบแบบอัตโนมัติจะเป็นประโยชน์ในการพิจารณา"
@@ -2998,6 +3056,9 @@ msgstr "สัญญา Higher/Lower จะถูกคืนมูลค่า�
 
 msgid "Higher/Lower trades"
 msgstr "ซื้อขายสูงกว่า/ต่ำกว่า"
+
+msgid "Hone your security testing skills."
+msgstr "ขัดเกลาทักษะในการทดสอบความปลอดภัยของท่าน"
 
 msgid "Hour"
 msgstr "ชั่วโมง"
@@ -3065,8 +3126,6 @@ msgstr "ข้าพเจ้าแสดงเจตนารมณ์ ข้�
 msgid "I forgot my password, what should I do?"
 msgstr "ฉันลืมรหัสผ่าน ฉันจะทำอย่างไร?"
 
-#, fuzzy
-#| msgid "I have Real Money Account"
 msgid "I have a Real Money Account"
 msgstr "ฉันมีบัญชีเงินจริง"
 
@@ -3153,6 +3212,9 @@ msgstr "หมดกังวล หากท่านใช้ Binary.com ท�
 
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
 msgstr "หากท่านไม่ได้รับอีเมล์ในอีก 2-3 นาที โปรดตรวจสอบอีเมล์ในกล่องขยะหรือสแปมของท่าน"
+
+msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
+msgstr ""
 
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "หากท่านมีคุณสมบัติที่เรากำลังสรรหา ท่านจะกลายเป็นส่วนหนึ่งของทีมงานพัฒนาระบบส่วนหน้าที่มีความสามารถสูง และรับผิดชอบในการพัฒนาระบบซื้อขายไบนารีออปชั่นที่มีสมรรถนะที่ดีเยี่ยมขึ้นไปอีก"
@@ -3373,6 +3435,9 @@ msgstr "การซื้อขาย In/Out"
 msgid "Income Source"
 msgstr "แหล่งที่มาของรายได้"
 
+msgid "Increase your HackerOne reputation to build up credibility and profile visibility."
+msgstr ""
+
 msgid "Indemnification"
 msgstr "ค่าสินไหมทดแทน"
 
@@ -3472,7 +3537,9 @@ msgstr "นโยบายการชี้ชวนการลงทุน"
 msgid "Investment trust"
 msgstr "ความน่าเชื่อถือในการลงทุน"
 
-msgid "Investments & Dividends"
+#, fuzzy
+#| msgid "Investments & Dividends"
+msgid "Investments &amp; Dividends"
 msgstr "เงินปันผลและการลงทุน"
 
 msgid "Investor Compensation Scheme"
@@ -4009,6 +4076,11 @@ msgstr "มิถุนายน"
 msgid "Keep track of your authorised applications."
 msgstr "บันทึกการใช้งานแอพพลิเคชันของท่าน"
 
+#, fuzzy
+#| msgid "Keep track of your authorised applications."
+msgid "Keep track of your authorised connections."
+msgstr "บันทึกการใช้งานแอพพลิเคชันของท่าน"
+
 msgid "Key facts"
 msgstr "ข้อเท็จจริงหลัก"
 
@@ -4087,10 +4159,14 @@ msgstr "การปฏิบัติตามกฎหมายและหล
 msgid "Legal Compliance"
 msgstr "การยินยอมตามกฎหมาย"
 
-msgid "Less than $100,000"
+#, fuzzy
+#| msgid "Less than $100,000"
+msgid "Less than &#36;100,000"
 msgstr "น้อยกว่า 100,000 เหรียญสหรัฐ"
 
-msgid "Less than $25,000"
+#, fuzzy
+#| msgid "Less than $25,000"
+msgid "Less than &#36;25,000"
 msgstr "น้อยกว่า 25,000 เหรียญสหรัฐ"
 
 msgid "Less than 1 million JPY"
@@ -4147,6 +4223,9 @@ msgstr "Lock Cashier"
 msgid "Log in"
 msgstr "เข้าสู่ระบบ"
 
+msgid "Log out"
+msgstr "ออกจากระบบ"
+
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "เข้าสู่ระบบด้วย %1 บัญชีพันธมิตรของท่าน และคลิกที่: การเงิน &rarr; ขั้นตอนการชำระเงิน"
 
@@ -4167,9 +4246,6 @@ msgstr "เวลาเข้าสู่ระบบ:"
 
 msgid "Login trouble"
 msgstr "ปัญหาการเข้าสู่ระบบ"
-
-msgid "Logout"
-msgstr "ออกจากระบบ"
 
 msgid "Long"
 msgstr "Long"
@@ -4228,8 +4304,18 @@ msgstr "จัดการความปลอดภัย การป้อ�
 msgid "Manage the company's cashier system"
 msgstr "บริหารระบบการรับ-จ่ายเงินขององค์กร"
 
+#, fuzzy
+#| msgid "Manage your authorised applications."
+msgid "Manage your OAuth connections."
+msgstr "จัดการแอพพลิเคชันที่ลงทะเบียน"
+
 msgid "Manage your authorised applications."
 msgstr "จัดการแอพพลิเคชันที่ลงทะเบียน"
+
+#, fuzzy
+#| msgid "DevOps Manager"
+msgid "Managers"
+msgstr "ผู้จัดการงานพัฒนาระบบและปฏิบัติการ"
 
 msgid "Mar"
 msgstr "มี.ค."
@@ -4303,6 +4389,12 @@ msgstr "มูลค่ารวมที่ขาดทุนมากที่
 msgid "Maximum aggregate payouts on open positions"
 msgstr "มูลค่าการชำระเงินรวมที่มากที่สุดของโพซิชั่นที่เปิด"
 
+msgid "Maximum aggregate payouts on open positions per symbol and contract type"
+msgstr "มูลค่าการชำระเงินรวมที่มากที่สุดของโพซิชั่นที่เปิดต่อสัญลักษณ์และประเภทของสัญญา"
+
+msgid "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
+msgstr ""
+
 msgid "Maximum daily turnover"
 msgstr "มูลค่าการซื้อขายรายวันที่มากที่สุด"
 
@@ -4341,6 +4433,9 @@ msgstr "จำนวนตัวอักขระน้อยที่สุด
 
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "จำนวนตัวอักขระน้อยที่สุดที่ต้องการ คือ 6 อักขระ ซึ่งเป็นอักษรตัวเล็ก ตัวใหญ่ และตัวเลข"
+
+msgid "Mining, Construction, Manufacturing and Transport Workers"
+msgstr ""
 
 msgid "Minute"
 msgstr "นาที"
@@ -4416,9 +4511,6 @@ msgstr "แผนภูมิต่างๆ"
 
 msgid "My Account"
 msgstr "บัญชีของฉัน"
-
-msgid "Mycrowd - for Binary.com traders"
-msgstr "Mycrowd - สำหรับนักลงทุน Binary.com"
 
 msgid "Name"
 msgstr "ชื่อ"
@@ -4762,10 +4854,14 @@ msgstr "บันทึกการติดตามของพวกเรา
 msgid "Our trading screen is simple to use:"
 msgstr "หน้าจอสำหรับซื้อขายของพวกเราใช้งานง่าย:"
 
-msgid "Over $1,000,000"
+#, fuzzy
+#| msgid "Over $1,000,000"
+msgid "Over &#36;1,000,000"
 msgstr "มากกว่า 1,000,000 เหรียญสหรัฐ"
 
-msgid "Over $500,001"
+#, fuzzy
+#| msgid "Over $500,001"
+msgid "Over &#36;500,001"
 msgstr "มากกว่า 500,001 เหรียญสหรัฐ"
 
 msgid "Over 1 million registered accounts worldwide"
@@ -4905,6 +5001,9 @@ msgstr "โมดูลต่างๆ ในภาษา Perl"
 msgid "Permissions"
 msgstr "สิทธิ์"
 
+msgid "Personal Care, Sales and Service Workers"
+msgstr ""
+
 msgid "Personal Details"
 msgstr "รายละเอียดส่วนบุคคล"
 
@@ -4922,6 +5021,9 @@ msgstr "Pip"
 
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr "Pip ย่อมาจาก ‘Percentage in Point’ ซึ่งปกติจะเป็นทศนิยม 4 หลัก (เช่น 0.0001)"
+
+msgid "Plant and Machine Operators and Assemblers"
+msgstr ""
 
 msgid "Platform Comparison"
 msgstr "การเปรียบเทียบแพลตฟอร์ม"
@@ -4946,9 +5048,6 @@ msgstr "โปรดตรวจสอบอีเมล์ของท่าน
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "โปรดระบุสกุลเงินที่ท่านต้องการ"
-
-msgid "Please complete the following financial assessment form before continuing."
-msgstr "โปรดบันทึกผลการประเมินทางการเงินของท่านในแบบฟอร์มต่อไปนี้ ก่อนการดำเนินการต่อไป"
 
 msgid "Please confirm the trade on your statement before proceeding."
 msgstr "โปรดยืนยันการซื้อขายตามสเตทเมนท์ของท่านก่อนการดำเนินการต่อไป"
@@ -5193,6 +5292,11 @@ msgstr "รับผิดชอบในการผลิตเนื้อห
 msgid "Professional Clients"
 msgstr "อาชีพของลูกค้า"
 
+#, fuzzy
+#| msgid "Market Professionals"
+msgid "Professionals"
+msgstr "เจ้าหน้าที่ทางตลาด"
+
 msgid "Proficiency in a scripting language - Perl preferred"
 msgstr "มีความเชี่ยวชาญในภาษาสคริป หากเป็นภาษา Perl จะพิจารณาเป็นพิเศษ"
 
@@ -5304,6 +5408,9 @@ msgstr "ศึกษาเพิ่มเติมเกี่ยวกับค
 msgid "Read about the five types of trade offered by %1."
 msgstr "อ่านเกี่ยวกับประเภทของการซื้อขาย 5 ประเภท โดย %1"
 
+msgid "Read and understand our HackerOne bug bounty programme policy."
+msgstr ""
+
 msgid "Read our blog for the stories and ideas that inspire us"
 msgstr "อ่านบล็อกของเราสำหรับเรื่องต่างๆ และแนวคิดของเรา"
 
@@ -5381,9 +5488,6 @@ msgstr "ธุรกรรมของ Regent Pacific"
 
 msgid "Register"
 msgstr "ลงทะเบียน"
-
-msgid "Register to become a tester using the links below:"
-msgstr "ลงทะเบียนเพื่อเป็นผู้ทดสอบโดยคลิกที่ลิงค์ด้านล่าง:"
 
 msgid "Regulator:"
 msgstr "ผู้ควบคุม:"
@@ -5572,22 +5676,25 @@ msgid "Secret question"
 msgstr "คำถามลับ"
 
 msgid "Security"
-msgstr "ความปลอดภัย"
+msgstr "หลักทรัพย์"
 
 msgid "Security & Limits"
-msgstr "วงเงินในบัญชีและหลักประกัน"
+msgstr "วงเงินในบัญชีและหลักทรัพย์"
 
 msgid "Security Disclaimer"
-msgstr "การสงวนสิทธิ์ของความปลอดภัย"
+msgstr "การสงวนสิทธิ์ของหลักทรัพย์"
 
 msgid "Security Statement"
-msgstr "ข้อความเกี่ยวกับความปลอดภัย"
+msgstr "บทบัญญัติเกี่ยวกับหลักทรัพย์"
+
+msgid "Security Testing"
+msgstr "การทดสอบความปลอดภัย"
 
 msgid "Security and Privacy"
 msgstr "ความปลอดภัยและความเป็นส่วนตัว"
 
-msgid "Select Country"
-msgstr "บันทึก ประเทศ"
+msgid "Security testing opportunities"
+msgstr "โอกาสการทดสอบความปลอดภัย"
 
 msgid "Select market"
 msgstr "กำหนด ตลาด"
@@ -5706,17 +5813,11 @@ msgstr "ค่าใช้จ่ายเหล่านี้ไม่ครอ
 msgid "Show payment agents for:"
 msgstr "แสดงตัวแทนรับชำระเงินสำหรับ:"
 
-msgid "Sign Up to Test Our Platform"
-msgstr "ลงทะเบียนเพื่อทดลองระบบของเรา"
-
 msgid "Sign me up"
 msgstr "ลงทะเบียน / สมัครใช้งาน"
 
 msgid "Sign out"
 msgstr "ออกจากระบบ"
-
-msgid "Sign up as a tester and look for Binary.com-related projects."
-msgstr "ลงทะเบียนเป็นนักทดสอบระบบและดูแลโครงการที่เกี่ยวข้องกับ Binary.com"
 
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "มีประสบการณ์และผลงานในการสร้างสื่อสังคมออนไลน์ ด้านการตลาด และ/หรือ การโฆษณา"
@@ -5772,6 +5873,11 @@ msgstr "พัฒนาซอฟท์แวร์ด้วยภาษา Perl"
 msgid "Sorry, account opening is unavailable."
 msgstr "ขออภัย ไม่สามารถเปิดบัญชีได้"
 
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
+msgstr "การฝากเงินถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
+
 msgid "Sorry, an error occurred while processing your account."
 msgstr "ขออภัย มีความผิดพลาดเกิดขึ้นขณะที่ประมวลผลบัญชีของท่าน"
 
@@ -5786,6 +5892,9 @@ msgstr "ขออภัย ไม่สามารถใช้งานฟั�
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "ขออภัยค่ะ ท่านป้อนรหัสผ่านแคชเชียร์ไม่ถูกต้อง"
+
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "ขออภัย บัญชีของท่านไม่ได้รับอนุญาตในการซื้อสัญญาเพิ่ม"
 
 msgid "Spam - We do not condone Spam"
 msgstr "สแปม - เราไม่เอาโทษสแปม"
@@ -5928,6 +6037,9 @@ msgstr "ขึ้นกับข้อแนะนำพิเศษใดๆ �
 msgid "Submit"
 msgstr "ส่ง"
 
+msgid "Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue."
+msgstr ""
+
 msgid "Submit your CV and Cover Letter"
 msgstr "ส่งประวัติและจดหมายแนะนำตัวของท่าน"
 
@@ -6014,6 +6126,9 @@ msgstr "ข้อตกลงและเงื่อนไข"
 
 msgid "Tertiary"
 msgstr "ลำดับที่สาม"
+
+msgid "Test our products and services for security vulnerabilities. In the process, you’ll earn a monetary reward for any verifiable issues that you find, courtesy of our bug bounty programme."
+msgstr ""
 
 msgid "Test-run %1, and sharpen your trading skills, with a no-risk, no-commitment, virtual account."
 msgstr "การทดสอบของ %1 และลับทักษะการซื้อขายของท่านให้เฉียบคม โดยไม่มีความเสี่ยง ไม่มีข้อผูกมัด บัญชีเสมือน หรือ บัญชีทดลองใช้"
@@ -6300,7 +6415,9 @@ msgstr "บริษัทฯ ไม่รับประกันความ�
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
 msgstr "บริษัทฯ มีช่องทางการรับฝากที่หลากหลาย แต่ละช่องทางมีเงื่อนไขของเวลา และบางช่องทางไม่ได้ให้บริการสำหรับการถอน รายละเอียดเกี่ยวกับการฝากและการถอนรวมถึงเวลาในการตัดยอดสามารถตรวจสอบได้จาก <a href='%1' class='pjaxload'>ที่นี่</a>"
 
-msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
+msgid ""
+"The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer\n"
+"                funds at the level: <strong>medium protection</strong>."
 msgstr "บริษัทฯ ถือเงินทุนของลูกค้าในบัญชีธนาคาร ซึ่งจะไม่เกี่ยวข้องกับส่วนหนึ่งของบริษัทฯ ในแง่ความไม่สามารถชำระหนี้ ซึ่งเป็นเงื่อนไขของ Gambling Commission เกี่ยวกับเงินทุนของลูกค้าที่ระดับ: <strong>การป้องกันระดับกลาง</strong>"
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: medium protection."
@@ -6589,9 +6706,6 @@ msgstr "นี้ก็ผลงานชิ้นใหญ่อีกอัน
 msgid "This is the current price at which an underlying can be bought or sold at a particular time."
 msgstr "นี้คือราคาปัจจุบันที่ผลิตภัณฑ์อ้างอิงสามารถถูกซื้อ หรือ ขาย ณ เวลาใดๆ"
 
-msgid "This is why we're now recruiting additional testers for each new release, to ensure that our platform remains stable and secure with every enhancement deployed."
-msgstr "และนี่คือเหตุผลว่า ทำไมขณะนี้พวกเราทำการสรรหานักทดสอบระบบสำหรับงานแต่ละชุด เพื่อทำให้แน่ใจว่าระบบของเรามีเสถียรภาพและปลอดภัยในทุกๆ ครั้งที่มีการปรับปรุงระบบ"
-
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "ข้อสังเกตนี้ไม่ได้ชี้แจงความเสี่ยงที่เกี่ยวข้องทั้งหมดในการลงทุน หรือ ในผลิตภัณฑ์ที่ใกล้เคียงกัน หรือ ความเสี่ยงเหล่านั้นมีความสัมพันธ์อย่างไรกับกรณีของท่าน มันเป็นสิ่งสำคัญที่ท่านต้องมีความเข้าใจในความเสี่ยงต่างๆ อย่างถ่องแท้ ก่อนที่จะตัดสินใจในการซื้อ หรือ ขายผลิตภัณฑ์การลงทุนใดๆ หรือ ผลิตภัณฑ์เสี่ยงโชคกับเรา หากท่านมีข้อสงสัยใดๆ เกี่ยวกับความเสี่ยงในผลิตภัณฑ์เพื่อการลงทุนต่างๆ หรือ ผลิตภัณฑ์เสี่ยงโชคต่างๆ โปรดศึกษาข้อมูลและขอคำแนะนำจากผู้เชี่ยวชาญ"
 
@@ -6652,8 +6766,8 @@ msgstr "ถึง"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "หากประสงค์จะสมัคร โปรดส่งประวัติย่อของท่าน และจดหมายแนะนำตัวมาที่ <span id='hr_contact_eaddress'></span>"
 
-msgid "To authenticate your account, kindly email the following to %1"
-msgstr "เพื่อตรวจสอบบัญชีของท่าน โปรดส่งข้อมูลผ่านอีเมล์มาที่ %1"
+msgid "To authenticate your account, kindly email the following to %1:"
+msgstr "เพื่อตรวจสอบบัญชีของท่าน โปรดส่งข้อมูลผ่านอีเมล์มาที่ %1:"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
 msgstr "เพื่อตรวจสอบบัญชีของท่าน โปรดส่งข้อมูลผ่านอีเมล์มาที่ <a href=\"mailto:%1\">%1</a>"
@@ -6877,9 +6991,6 @@ msgstr "URL"
 msgid "US Patents"
 msgstr "สิทธิบัตร US"
 
-msgid "USD"
-msgstr "USD"
-
 msgid "UX / UI experience"
 msgstr "ประสบการณ์ในการออกแบบและพัฒนา UX / UI"
 
@@ -6970,9 +7081,6 @@ msgstr "ใช้โอกาสที่มีในเว็บของพว
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr "ใช้ ดำเนินการ และแสดงแอพพลิเคชันของท่าน และเนื้อหาเพื่อวัตถุประสงค์ทางการตลาด การสาธิต และให้ลูกค้าของเราได้ใช้งานแอพพลิเคชัน และ    "
 
-msgid "User Testing"
-msgstr "การทดสอบด้วยผู้ใช้งาน"
-
 msgid "Using our website, customers can trade currencies, indices, stocks and commodities 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
 msgstr "การใช้เว็บไซต์ของเรา ลูกค้าสามารถซื้อขายสกุลเงินต่างๆ ดัชนีต่างๆ หลักทรัพย์ต่างๆ สินค้าโภคภัณฑ์ต่างๆ ได้ตลอด 24 ชั่วโมง 7 วัน พวกเรามีความยืดหยุ่นในราคามากที่สุด และผลิตภัณฑ์ที่หลากหลายมากที่สุด"
 
@@ -7002,6 +7110,11 @@ msgstr "ดู"
 
 msgid "View Details"
 msgstr "ดูรายละเอียด"
+
+#, fuzzy
+#| msgid "View your statement"
+msgid "View Statement"
+msgstr "ดูสเตทเมนท์ของท่าน"
 
 msgid "View Updated Portfolio"
 msgstr "ดูพอร์ตโฟลิโอ"
@@ -7057,8 +7170,16 @@ msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl
 msgid "Waiting for entry tick."
 msgstr "กำลังรองช่วงราคาเริ่มต้น"
 
+msgid "Waiting for exit tick."
+msgstr "กำลังรอช่วงราคาสุดท้าย"
+
 msgid "Walkthrough Guide"
 msgstr "คู่มือแนะนำการใช้งาน"
+
+#, fuzzy
+#| msgid "At %1, we consider the strength and security of our trading platform to be critically important."
+msgid "Want to help us enhance the strength and security of our platform?"
+msgstr "ที่ %1 พวกเราคำนึงถึงจุดแข็งและความปลอดภัยของระบบการซื้อขายเป็นสิ่งสำคัญยิ่งยวด"
 
 msgid "Want to learn more?"
 msgstr "ต้องการเรียนรู้เพิ่มเติมมั้ย?"
@@ -7429,9 +7550,6 @@ msgstr "วงเงินในการถอน"
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "ในขณะนี้ บัญชีของท่านไม่ได้รับอนุญาตให้ดำเนินการถอนเงิน โปรดติดต่อ %1 เพื่อปลดล็อค"
 
-msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgstr "การถอนถูกล็อค โปรด<a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
-
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr "ปฏิบัติงานร่วมกับบุคลากรอื่นๆ ในทีมเพื่อพัฒนาซอฟต์แวร์เกี่ยวกับการนำเสนอราคาที่ใช้ในแพลตฟอร์มการซื้อขายของเรา"
 
@@ -7507,9 +7625,6 @@ msgstr "ท่านไม่ได้รับอนุญาตในการ
 msgid "You are not allowed to store any Content (such as feed data)."
 msgstr "ท่านไม่ได้รับอนุญาตให้เก็บข้อมูลใดๆ (เช่น ฟีดข้อมูล)"
 
-msgid "You are not authorized for withdrawal via payment agent."
-msgstr "ท่านไม่ได้รับอนุญาตให้ถอนเงินผ่านตัวแทนรับชำระเงิน"
-
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "ท่านไม่ได้รับสิทธิ์ในการได้รับค่าชดเชยใดๆ หรือ การชำระเงินคืนให้ในกรณีใดๆ จากบริษัทฯ ไม่ว่าสถานการณ์ใดๆ"
 
@@ -7550,6 +7665,11 @@ msgid "You can use an authorized payment agent to process deposits and withdrawa
 msgstr "ท่านสามารถใช้ตัวแทนรับชำระเงินที่ได้รับอนุญาตในการดำเนินการฝากเงิน และ ถอนเงิน ตามวิธีชำระเงิน หรือ สกุลเงินท้องถิ่นที่ไม่ได้รับรองโดย %1 ซึ่งเป็นวิธีที่ง่ายกว่าในทางปฏิบัติ"
 
 msgid "You did not change anything."
+msgstr "ท่านไม่ได้แก้ไขค่าใดๆ"
+
+#, fuzzy
+#| msgid "You did not change anything."
+msgid "You do not have any connections."
 msgstr "ท่านไม่ได้แก้ไขค่าใดๆ"
 
 msgid "You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading."
@@ -7617,6 +7737,11 @@ msgstr "ท่านอาจจะถอนโบนัสเมื่อท่
 
 msgid "You must accept the terms and conditions to open an account."
 msgstr "ท่านต้องยอมรับข้อตกลงและเงื่อนไขเพื่อเปิดบัญชี"
+
+#, fuzzy
+#| msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
+msgid "You must complete the knowledge test to activate this account. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "บัญชีของท่านยังไม่ได้รับการยืนยันตัวตนอย่างสมบูรณ์ โปรดเข้าเยี่ยมหน้า <a class=\"pjaxload\" href=\"%1\">การยืนยันตัวตน</a> เพื่อดำเนินการเพิ่มเติม"
 
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "ท่านต้องปฏิบัติตามข้อตกลงเหล่านี้ในการใช้ API ของ %1"
@@ -7753,11 +7878,8 @@ msgstr "บัญชีของท่านได้รับการยืน
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "บัญชีของท่านได้รับการยืนยันตัวตนอย่างสมบูรณ์แล้ว ท่านสามารถเรียกดู <a class=\"pjaxload\" href=\"%1\">วงเงินซื้อขายของท่านที่นี่</a>"
 
-msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
-msgstr "บัญชีของท่านยังไม่ได้รับการยืนยันตัวตนอย่างสมบูรณ์ โปรดเข้าเยี่ยมหน้า <a class=\"pjaxload\" href=\"%1\">การยืนยันตัวตน</a> เพื่อดำเนินการเพิ่มเติม"
-
-msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
-msgstr "บัญชีของท่านยังไม่ได้รับการยืนยันตัวตนอย่างสมบูรณ์ โปรดเข้าเยี่ยมหน้า <a href=\"%1\">การยืนยันตัวตน</a> เพื่อดำเนินการเพิ่มเติม"
+msgid "Your account is not fully authenticated."
+msgstr "บัญชีของท่านยังไม่ได้ยืนยันตัวตนอย่างสมบูรณ์"
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "บัญชีของท่านไม่ควรใช้สำหรับการอำนวยความสะดวกในการฝากเงิน และการฝากเงินควรดำเนินการเมื่อท่านต้องการลงเงินในสัญญา บริษัทฯ ไม่ได้ประพฤติเยี่ยงสถาบันการเงิน ลูกค้าจะไม่ได้รับดอกเบี้ยจากการฝากเงิน ในการดำเนินการของท่านไม่ว่าจะฝากเงินหรือถอนเงินปราศจากสัญญาที่มีสัดส่วนเงินที่พอดีกัน ทางบริษัทฯ ขอสงวนสิทธิ์ในการดำเนินการกับบัญชีของท่าน โดยไม่ต้องแจ้งให้ทราบล่วงหน้า รวมถึงค่าธรรมเนียมต่างๆ ของธนาคารที่เกิดขึ้นก่อนการปิดบัญชี"
@@ -7780,6 +7902,11 @@ msgstr "การรับ/ชำระเงินของท่านถู�
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "การรับ/ชำระเงินของท่านถูกล็อกตามความประสงค์ของท่าน - หากประสงค์ปลดล็อก โปรดป้อนรหัสผ่าน"
 
+#, fuzzy
+#| msgid "Your settings have been updated successfully."
+msgid "Your changes have been updated successfully."
+msgstr "การตั้งค่าของท่านถูกแก้ไขเรียบร้อยแล้ว"
+
 msgid "Your changes have been updated."
 msgstr "การเปลี่ยนแปลงของท่านได้ถูกดำเนินการแล้ว"
 
@@ -7788,9 +7915,6 @@ msgstr "ลูกค้าของท่านจะชอบระบบซื
 
 msgid "Your current balance is"
 msgstr "ยอดคงเหลือของท่าน คือ"
-
-msgid "Your details have been updated."
-msgstr "รายละเอียดของท่านได้รับการปรับปรุงเรียบร้อยแล้ว"
 
 msgid "Your funds are safe"
 msgstr "เงินทุนของท่านปลอดภัย"
@@ -7830,9 +7954,6 @@ msgstr "ความเสี่ยงของท่านที่ทราบ
 
 msgid "Your session duration limit will end in %1 seconds."
 msgstr "เวลาการซื้อขายของท่านจะสิ้นสุดภายใน %1 วินาที"
-
-msgid "Your settings have been updated successfully."
-msgstr "การตั้งค่าของท่านถูกแก้ไขเรียบร้อยแล้ว"
 
 msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
 msgstr "โทเค่นของท่านหมดอายุแล้ว โปรดคลิก<a class=\"pjaxload\" href=\"%1\">ที่นี่</a> เพื่อดำเนินกระบวนการตรวจสอบ"
@@ -7993,9 +8114,6 @@ msgstr "เดือน"
 msgid "months"
 msgstr "เดือน"
 
-msgid "not available"
-msgstr "ไม่มีอยู่"
-
 msgid "numbers"
 msgstr "ตัวเลข"
 
@@ -8050,10 +8168,8 @@ msgstr "ที่บัญชีของท่าน"
 msgid "today"
 msgstr "วันนี้"
 
-#, fuzzy
-#| msgid "Fridays"
 msgid "today, Fridays"
-msgstr "วันศุกร์"
+msgstr "วันนี้วันศุกร์"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
 msgstr "ใช้ หรือทำ API ของ %1 ใหม่ โดยได้รับอนุญาตภายใต้ข้อตกลงเหล่านี้ หรือ"
@@ -8252,6 +8368,11 @@ msgstr "{JAPAN ONLY}Binary K.K. Customer Account"
 
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Binary K. K."
+msgid "{JAPAN ONLY}Binary.com page title"
+msgstr "{JAPAN ONLY}Binary K. K."
 
 msgid "{JAPAN ONLY}Branch"
 msgstr "{JAPAN ONLY}Branch"
@@ -8583,17 +8704,11 @@ msgstr "{JAPAN ONLY}JSA_Date_1"
 msgid "{JAPAN ONLY}JSA_Date_2"
 msgstr "{JAPAN ONLY}JSA_Date_2"
 
-msgid "{JAPAN ONLY}JSA_Date_3"
-msgstr "{JAPAN ONLY}JSA_Date_3"
-
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
 msgstr "{JAPAN ONLY}JSA_Explanation_1_1)"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
 msgstr "{JAPAN ONLY}JSA_Explanation_1_2)"
-
-msgid "{JAPAN ONLY}JSA_Explanation_1_3)"
-msgstr "{JAPAN ONLY}JSA_Explanation_1_3)"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
 msgstr "{JAPAN ONLY}JSA_Explanation_2_1)"
@@ -8604,23 +8719,11 @@ msgstr "{JAPAN ONLY}JSA_Explanation_2_2)"
 msgid "{JAPAN ONLY}JSA_Explanation_2_3)"
 msgstr "{JAPAN ONLY}JSA_Explanation_2_3)"
 
-msgid "{JAPAN ONLY}JSA_Explanation_3_1)"
-msgstr "{JAPAN ONLY}JSA_Explanation_3_1)"
-
-msgid "{JAPAN ONLY}JSA_Explanation_3_2)"
-msgstr "{JAPAN ONLY}JSA_Explanation_3_2)"
-
-msgid "{JAPAN ONLY}JSA_Explanation_3_3)"
-msgstr "{JAPAN ONLY}JSA_Explanation_3_3)"
-
 msgid "{JAPAN ONLY}JSA_Title_1"
 msgstr "{JAPAN ONLY}JSA_Title_1"
 
 msgid "{JAPAN ONLY}JSA_Title_2"
 msgstr "{JAPAN ONLY}JSA_Title_2"
-
-msgid "{JAPAN ONLY}JSA_Title_3"
-msgstr "{JAPAN ONLY}JSA_Title_3"
 
 msgid "{JAPAN ONLY}Japan Service Announcements"
 msgstr "{JAPAN ONLY}Japan Service Announcements"
@@ -8766,15 +8869,6 @@ msgstr "{JAPAN ONLY}Please note:"
 msgid "{JAPAN ONLY}Pre-Contract Documents"
 msgstr "{JAPAN ONLY}Pre-Contract Documents"
 
-msgid "{JAPAN ONLY}Price of OTC currency option is the calculated value based on multiple elements and is determined by relative trading basically."
-msgstr "{JAPAN ONLY}Price of OTC currency option is the calculated value based on multiple elements and is determined by relative trading basically."
-
-msgid "{JAPAN ONLY}Price of call option will be lower interest rates of the underlying assets is low, but the price of the put option, go up when the interest rates of the underlying assets is low."
-msgstr "{JAPAN ONLY}Price of call option will be lower interest rates of the underlying assets is low, but the price of the put option, go up when the interest rates of the underlying assets is low."
-
-msgid "{JAPAN ONLY}Price of the option, the price of the underlying asset, price fluctuation rate of the underlying assets, the time until the exercise date, subject to any of the impact of interest rates."
-msgstr "{JAPAN ONLY}Price of the option, the price of the underlying asset, price fluctuation rate of the underlying assets, the time until the exercise date, subject to any of the impact of interest rates."
-
 msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 msgstr "{JAPAN ONLY}Prices for currency options are calculated relative the value of the underlying spot price, and are dependent on multiple factors which may vary."
 
@@ -8783,9 +8877,6 @@ msgstr "{JAPAN ONLY}Purchase, Settlement & Resale"
 
 msgid "{JAPAN ONLY}Rakuten Bank"
 msgstr "{JAPAN ONLY}Rakuten Bank"
-
-msgid "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
-msgstr "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
 
 msgid "{JAPAN ONLY}Registration"
 msgstr "{JAPAN ONLY}Registration"
@@ -8888,9 +8979,6 @@ msgstr "{JAPAN ONLY}The particular details of binary options are all the same, n
 
 msgid "{JAPAN ONLY}The payout is the amount that the option seller must pay to the buyer if the buyer exercises his right when the conditions for a payout have been satisfied."
 msgstr "{JAPAN ONLY}The payout is the amount that the option seller must pay to the buyer if the buyer exercises his right when the conditions for a payout have been satisfied."
-
-msgid "{JAPAN ONLY}The price of OTC binary options of the same conditions, (sometimes) the price varies depending on transactions dealers handling financial instruments business."
-msgstr "{JAPAN ONLY}The price of OTC binary options of the same conditions, (sometimes) the price varies depending on transactions dealers handling financial instruments business."
 
 msgid "{JAPAN ONLY}The price of a binary option is affected by not only the change in the underlying asset price, but also the change in remaining time to the exercise point."
 msgstr "{JAPAN ONLY}The price of a binary option is affected by not only the change in the underlying asset price, but also the change in remaining time to the exercise point."
@@ -9042,6 +9130,9 @@ msgstr "{JAPAN ONLY}You set your own personal daily loss limit"
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
+msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
+msgstr "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
+
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
 
@@ -9152,6 +9243,105 @@ msgstr "รายละเอียดบัญชี"
 
 msgid "Terms and Conditions Approval"
 msgstr "การอนุมัติข้อตกลงและเงื่อนไข"
+
+#~ msgid "Please complete the following financial assessment form before continuing."
+#~ msgstr "โปรดบันทึกผลการประเมินทางการเงินของท่านในแบบฟอร์มต่อไปนี้ ก่อนการดำเนินการต่อไป"
+
+#~ msgid "Your details have been updated."
+#~ msgstr "รายละเอียดของท่านได้รับการปรับปรุงเรียบร้อยแล้ว"
+
+#~ msgid "Logout"
+#~ msgstr "ออกจากระบบ"
+
+#~ msgid "not available"
+#~ msgstr "ไม่มีอยู่"
+
+#, fuzzy
+#~| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "แคชเชียร์ถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
+
+#, fuzzy
+#~| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "การฝากเงินถูกล็อค โปรด <a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
+
+#, fuzzy
+#~| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "การถอนถูกล็อค โปรด<a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
+
+#~ msgid "You are not authorized for withdrawal via payment agent."
+#~ msgstr "ท่านไม่ได้รับอนุญาตให้ถอนเงินผ่านตัวแทนรับชำระเงิน"
+
+#~ msgid "{JAPAN ONLY}JSA_Date_3"
+#~ msgstr "{JAPAN ONLY}JSA_Date_3"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_1_3)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_1_3)"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_1)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_3_1)"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_2)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_3_2)"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_3)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_3_3)"
+
+#~ msgid "{JAPAN ONLY}JSA_Title_3"
+#~ msgstr "{JAPAN ONLY}JSA_Title_3"
+
+#~ msgid "Sign Up to Test Our Platform"
+#~ msgstr "ลงทะเบียนเพื่อทดลองระบบของเรา"
+
+#~ msgid "Authenticate your account"
+#~ msgstr "ยืนยันตัวตนต่อบัญชีของท่าน"
+
+#~ msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
+#~ msgstr "บัญชีของท่านยังไม่ได้รับการยืนยันตัวตนอย่างสมบูรณ์ โปรดเข้าเยี่ยมหน้า <a href=\"%1\">การยืนยันตัวตน</a> เพื่อดำเนินการเพิ่มเติม"
+
+#~ msgid "AUD"
+#~ msgstr "AUD"
+
+#~ msgid "EUR"
+#~ msgstr "EUR"
+
+#~ msgid "GBP"
+#~ msgstr "GBP"
+
+#~ msgid "Mycrowd - for Binary.com traders"
+#~ msgstr "Mycrowd - สำหรับนักลงทุน Binary.com"
+
+#~ msgid "Register to become a tester using the links below:"
+#~ msgstr "ลงทะเบียนเพื่อเป็นผู้ทดสอบโดยคลิกที่ลิงค์ด้านล่าง:"
+
+#~ msgid "Sign up as a tester and look for Binary.com-related projects."
+#~ msgstr "ลงทะเบียนเป็นนักทดสอบระบบและดูแลโครงการที่เกี่ยวข้องกับ Binary.com"
+
+#~ msgid "This is why we're now recruiting additional testers for each new release, to ensure that our platform remains stable and secure with every enhancement deployed."
+#~ msgstr "และนี่คือเหตุผลว่า ทำไมขณะนี้พวกเราทำการสรรหานักทดสอบระบบสำหรับงานแต่ละชุด เพื่อทำให้แน่ใจว่าระบบของเรามีเสถียรภาพและปลอดภัยในทุกๆ ครั้งที่มีการปรับปรุงระบบ"
+
+#~ msgid "USD"
+#~ msgstr "USD"
+
+#~ msgid "{JAPAN ONLY}Price of OTC currency option is the calculated value based on multiple elements and is determined by relative trading basically."
+#~ msgstr "{JAPAN ONLY}Price of OTC currency option is the calculated value based on multiple elements and is determined by relative trading basically."
+
+#~ msgid "{JAPAN ONLY}Price of call option will be lower interest rates of the underlying assets is low, but the price of the put option, go up when the interest rates of the underlying assets is low."
+#~ msgstr "{JAPAN ONLY}Price of call option will be lower interest rates of the underlying assets is low, but the price of the put option, go up when the interest rates of the underlying assets is low."
+
+#~ msgid "{JAPAN ONLY}Price of the option, the price of the underlying asset, price fluctuation rate of the underlying assets, the time until the exercise date, subject to any of the impact of interest rates."
+#~ msgstr "{JAPAN ONLY}Price of the option, the price of the underlying asset, price fluctuation rate of the underlying assets, the time until the exercise date, subject to any of the impact of interest rates."
+
+#~ msgid "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
+#~ msgstr "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
+
+#~ msgid "{JAPAN ONLY}The price of OTC binary options of the same conditions, (sometimes) the price varies depending on transactions dealers handling financial instruments business."
+#~ msgstr "{JAPAN ONLY}The price of OTC binary options of the same conditions, (sometimes) the price varies depending on transactions dealers handling financial instruments business."
+
+#~ msgid "Select Country"
+#~ msgstr "บันทึก ประเทศ"
 
 #~ msgid "Virtual money credit to account"
 #~ msgstr "เครดิตเงินเสมือนไปยังบัญชี"
@@ -9688,9 +9878,6 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 #~ msgid "Get started"
 #~ msgstr "เริ่มเลย"
 
-#~ msgid "Log out"
-#~ msgstr "ออกจากระบบ"
-
 #~ msgid "Page not found"
 #~ msgstr "ไม่พบหน้าที่ต้องการ"
 
@@ -9951,9 +10138,6 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 #~ msgid "Client email not set."
 #~ msgstr "อีเมล์ลูกค้ายังไม่ได้ระบุ"
-
-#~ msgid "Client is not fully authenticated."
-#~ msgstr "บัญชีลูกค้ายังไม่ได้ยืนยันตัวตนครบถ้วน"
 
 #~ msgid "Close"
 #~ msgstr "ปิด"
@@ -10749,10 +10933,6 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 #, fuzzy
 #~ msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
 #~ msgstr "ขออภัย your account cash balance is too high (%1). Your maximum account balance is %2."
-
-#, fuzzy
-#~ msgid "Sorry, your account is not authorised for any further contract purchases."
-#~ msgstr "ขออภัย your account is not authorised for any further contract purchases."
 
 #, fuzzy
 #~ msgid "Sorry, your currency of %1 is unavailable for Payment Agent Withdrawal"

@@ -15,30 +15,30 @@
  * 'MBTick.display()` to display current spot
  */
 
-var MBTick = (function() {
+const MBTick = (function() {
     'use strict';
 
-    var quote = '',
+    let quote = '',
         id    = '',
         epoch = '',
         spots = {},
-        errorMessage = '',
-        keep_number  = 60;
+        errorMessage = '';
+    const keep_number  = 60;
 
-    var details = function(data) {
+    const details = function(data) {
         errorMessage = '';
 
         if (data) {
             if (data.error) {
                 errorMessage = data.error.message;
             } else {
-                var tick = data.tick;
+                const tick = data.tick;
                 quote = tick.quote;
                 id    = tick.id;
                 epoch = tick.epoch;
 
                 spots[epoch] = quote;
-                var epoches = Object.keys(spots).sort(function(a, b) {
+                const epoches = Object.keys(spots).sort(function(a, b) {
                     return a - b;
                 });
                 if (epoches.length > keep_number) {
@@ -48,11 +48,11 @@ var MBTick = (function() {
         }
     };
 
-    var display = function() {
+    const display = function() {
         $('#spot').fadeIn(200);
-        var spotElement = document.getElementById('spot');
+        const spotElement = document.getElementById('spot');
         if (!spotElement) return;
-        var message = '';
+        let message = '';
         if (errorMessage) {
             message = errorMessage;
         } else {
@@ -72,13 +72,13 @@ var MBTick = (function() {
     /*
      * Display price/spot movement variation to depict price moved up or down
      */
-    function displayPriceMovement(oldValue, currentValue) {
-        var className = (currentValue > oldValue) ? 'up' : (currentValue < oldValue) ? 'down' : 'still';
+    const displayPriceMovement = function(oldValue, currentValue) {
+        const className = (currentValue > oldValue) ? 'up' : (currentValue < oldValue) ? 'down' : 'still';
         $('#spot-dyn').attr('class', 'dynamics ' + className);
-    }
+    };
 
-    function updateWarmChart() {
-        var $chart = $('#trading_worm_chart'),
+    const updateWarmChart = function() {
+        const $chart = $('#trading_worm_chart'),
             spots_array = Object.keys(MBTick.spots())
                 .sort(function(a, b) { return a - b; })
                 .map(function(v) { return MBTick.spots()[v]; }),
@@ -103,9 +103,9 @@ var MBTick = (function() {
                 $chart.hide();
             }
         }
-    }
+    };
 
-    var request = function(symbol) {
+    const request = function(symbol) {
         BinarySocket.send({
             ticks_history: symbol,
             style        : 'ticks',
@@ -115,9 +115,9 @@ var MBTick = (function() {
         });
     };
 
-    var processHistory = function(res) {
+    const processHistory = function(res) {
         if (res.history && res.history.times && res.history.prices) {
-            for (var i = 0; i < res.history.times.length; i++) {
+            for (let i = 0; i < res.history.times.length; i++) {
                 details({
                     tick: {
                         epoch: res.history.times[i],

@@ -1,5 +1,6 @@
-var EnjoyHint = require('../../lib/guide.enjoyhint');
-var Cookies   = require('../../lib/js-cookie');
+const EnjoyHint = require('../../lib/guide.enjoyhint');
+const Cookies   = require('../../lib/js-cookie');
+const localize  = require('../base/localize').localize;
 
 /*
  *  This is developed to simplify the usage of enjoyhint (https://github.com/xbsoftware/enjoyhint)
@@ -10,18 +11,18 @@ var Cookies   = require('../../lib/js-cookie');
  *  3. Add the script data to getScript() method
  */
 
-var Guide = (function() {
-    var opt,
+const Guide = (function() {
+    let opt,
         cookieName,
         btnNext,
         btnFinish;
 
-    var init = function(options) {
+    const init = function(options) {
         opt = {
             script        : '',      // the script name in scripts
             autoStart     : false,   // false: start by button click
             guideBtnID    : '#guideBtn',
-            btnText       : page.text.localize('Walkthrough Guide'),  // guide start button's text
+            btnText       : localize('Walkthrough Guide'),  // guide start button's text
             blink_class   : 'highlight',
             blink_inDelay : 1000,
             blink_outDelay: 1000,
@@ -31,8 +32,8 @@ var Guide = (function() {
         $.extend(true, opt, options);
 
         cookieName = 'hide_guide';
-        btnNext    = { className: 'button', html: '<span>' + page.text.localize('Next') + '</span>' };
-        btnFinish  = { className: 'button btnFinish', html: '<span>' + page.text.localize('Finish') + '</span>' };
+        btnNext    = { className: 'button', html: '<span>' + localize('Next') + '</span>' };
+        btnFinish  = { className: 'button btnFinish', html: '<span>' + localize('Finish') + '</span>' };
 
         if ($(opt.guideBtnID).length === 0) {
             console.warn('Could not find the button placeholder: <div id="' + opt.guideBtnID + '"></div>');
@@ -55,17 +56,17 @@ var Guide = (function() {
     /*
      *  do not show the guide button if its close (X) has been clicked before
      */
-    var isDisabled = function() {
-        var disabled = Cookies.get(cookieName);
+    const isDisabled = function() {
+        const disabled = Cookies.get(cookieName);
         return !!disabled && $.inArray(opt.script, disabled.split(',')) >= 0;
     };
 
     /*
      *  handle the guide button appearance using a cookie for all scripts
      */
-    var setDisabled = function() {
+    const setDisabled = function() {
         if (!isDisabled()) {
-            var disabled = Cookies.get(cookieName);
+            const disabled = Cookies.get(cookieName);
             Cookies.set(cookieName, (!disabled ? opt.script : disabled + ',' + opt.script));
         }
     };
@@ -73,7 +74,7 @@ var Guide = (function() {
     /*
      *  generate the button's html
      */
-    var makeButton = function() {
+    const makeButton = function() {
         if ($(opt.guideBtnID).children().length > 0) {
             return;
         }
@@ -90,10 +91,9 @@ var Guide = (function() {
     /*
      *  both buttons' click event
      */
-    var setEvents = function() {
+    const setEvents = function() {
         $(opt.guideBtnID + ' strong').click(function() {
-            var enjoyhint_instance = null;
-            enjoyhint_instance = new EnjoyHint({});
+            const enjoyhint_instance = new EnjoyHint({});
             enjoyhint_instance.setScript(getScript(opt.script));
             enjoyhint_instance.runScript();
         });
@@ -112,43 +112,43 @@ var Guide = (function() {
     /*
      *  each page's script
      */
-    var getScript = function(scriptName) {
+    const getScript = function(scriptName) {
         if (scriptName !== 'trading') {
             return null;
         }
         return [
             {
                 selector   : '#contract_markets',
-                description: '<h1>' + page.text.localize('Step') + ' 1</h1>' +
-                                page.text.localize('Select your market'),
+                description: '<h1>' + localize('Step') + ' 1</h1>' +
+                                localize('Select your market'),
                 event_type: 'next',
                 nextButton: btnNext,
             },
             {
                 selector   : '#underlying',
-                description: '<h1>' + page.text.localize('Step') + ' 2</h1>' +
-                                page.text.localize('Select your underlying asset'),
+                description: '<h1>' + localize('Step') + ' 2</h1>' +
+                                localize('Select your underlying asset'),
                 event_type: 'next',
                 nextButton: btnNext,
             },
             {
                 selector   : '#contract_form_name_nav',
-                description: '<h1>' + page.text.localize('Step') + ' 3</h1>' +
-                                page.text.localize('Select your trade type'),
+                description: '<h1>' + localize('Step') + ' 3</h1>' +
+                                localize('Select your trade type'),
                 event_type: 'next',
                 nextButton: btnNext,
             },
             {
                 selector   : '#websocket_form',
-                description: '<h1>' + page.text.localize('Step') + ' 4</h1>' +
-                                page.text.localize('Adjust trade parameters'),
+                description: '<h1>' + localize('Step') + ' 4</h1>' +
+                                localize('Adjust trade parameters'),
                 event_type: 'next',
                 nextButton: btnNext,
             },
             {
                 selector   : '#contracts_list',
-                description: '<h1>' + page.text.localize('Step') + ' 5</h1>' +
-                                page.text.localize('Predict the direction<br />and purchase'),
+                description: '<h1>' + localize('Step') + ' 5</h1>' +
+                                localize('Predict the direction<br />and purchase'),
                 event_type: 'next',
                 nextButton: btnFinish,
             },

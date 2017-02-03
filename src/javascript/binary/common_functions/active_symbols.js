@@ -1,16 +1,16 @@
-var objectNotEmpty = require('../base/utility').objectNotEmpty;
+const objectNotEmpty = require('../base/utility').objectNotEmpty;
 
-var ActiveSymbols = (function () {
+const ActiveSymbols = (function () {
     'use strict';
 
-    var groupBy = function(xs, key) {
+    const groupBy = function(xs, key) {
         return xs.reduce(function(rv, x) {
             (rv[x[key]] = rv[x[key]] || []).push(x);
             return rv;
         }, {});
     };
 
-    var extend = function(a, b) {
+    const extend = function(a, b) {
         if (!a || !b) return null;
         Object.keys(b).forEach(function(key) {
             a[key] = b[key];
@@ -18,11 +18,11 @@ var ActiveSymbols = (function () {
         return a;
     };
 
-    var clone = function(obj) {
+    const clone = function(obj) {
         return extend({}, obj);
     };
 
-    var activeSymbols = {
+    return {
         markets   : {},
         submarkets: {},
         symbols   : {},
@@ -31,12 +31,12 @@ var ActiveSymbols = (function () {
                 return clone(this.markets);
             }
 
-            var that = this;
-            var markets = groupBy(symbols, 'market');
+            const that = this;
+            const markets = groupBy(symbols, 'market');
             Object.keys(markets).forEach(function(key) {
-                var marketName = key;
-                var marketSymbols = markets[key];
-                var symbol = marketSymbols[0];
+                const marketName = key;
+                const marketSymbols = markets[key];
+                const symbol = marketSymbols[0];
                 that.markets[marketName] = {
                     name     : symbol.market_display_name,
                     is_active: !symbol.is_trading_suspended && symbol.exchange_is_open,
@@ -55,12 +55,12 @@ var ActiveSymbols = (function () {
                 return clone(market.submarkets);
             }
             market.submarkets = {};
-            var that = this;
-            var submarkets = groupBy(symbols, 'submarket');
+            const that = this;
+            const submarkets = groupBy(symbols, 'submarket');
             Object.keys(submarkets).forEach(function(key) {
-                var submarketName = key;
-                var submarketSymbols = submarkets[key];
-                var symbol = submarketSymbols[0];
+                const submarketName = key;
+                const submarketSymbols = submarkets[key];
+                const symbol = submarketSymbols[0];
                 market.submarkets[submarketName] = {
                     name     : symbol.submarket_display_name,
                     is_active: !symbol.is_trading_suspended && symbol.exchange_is_open,
@@ -87,11 +87,11 @@ var ActiveSymbols = (function () {
         },
         getSubmarkets: function(active_symbols) {
             if (!objectNotEmpty(this.submarkets)) {
-                var markets = this.getMarkets(active_symbols);
-                var that = this;
+                const markets = this.getMarkets(active_symbols);
+                const that = this;
                 Object.keys(markets).forEach(function(key) {
-                    var market = markets[key];
-                    var submarkets = that.getSubmarketsForMarket(active_symbols, market);
+                    const market = markets[key];
+                    const submarkets = that.getSubmarketsForMarket(active_symbols, market);
                     extend(that.submarkets, submarkets);
                 });
             }
@@ -99,27 +99,27 @@ var ActiveSymbols = (function () {
         },
         getSymbols: function(active_symbols) {
             if (!objectNotEmpty(this.symbols)) {
-                var submarkets = this.getSubmarkets(active_symbols);
-                var that = this;
+                const submarkets = this.getSubmarkets(active_symbols);
+                const that = this;
                 Object.keys(submarkets).forEach(function(key) {
-                    var submarket = submarkets[key];
-                    var symbols = that.getSymbolsForSubmarket(active_symbols, submarket);
+                    const submarket = submarkets[key];
+                    const symbols = that.getSymbolsForSubmarket(active_symbols, submarket);
                     extend(that.symbols, symbols);
                 });
             }
             return clone(this.symbols);
         },
         getMarketsList: function(active_symbols) {
-            var tradeMarketsList = {};
+            const tradeMarketsList = {};
             extend(tradeMarketsList, this.getMarkets(active_symbols));
             extend(tradeMarketsList, this.getSubmarkets(active_symbols));
             return tradeMarketsList;
         },
         getTradeUnderlyings: function(active_symbols) {
-            var tradeUnderlyings = {};
-            var symbols = this.getSymbols(active_symbols);
+            const tradeUnderlyings = {};
+            const symbols = this.getSymbols(active_symbols);
             Object.keys(symbols).forEach(function(key) {
-                var symbol = symbols[key];
+                const symbol = symbols[key];
                 if (!tradeUnderlyings[symbol.market]) {
                     tradeUnderlyings[symbol.market] = {};
                 }
@@ -132,14 +132,13 @@ var ActiveSymbols = (function () {
             return tradeUnderlyings;
         },
         getSymbolNames: function(active_symbols) {
-            var symbols = clone(this.getSymbols(active_symbols));
+            const symbols = clone(this.getSymbols(active_symbols));
             Object.keys(symbols).forEach(function(key) {
                 symbols[key] = symbols[key].display;
             });
             return symbols;
         },
     };
-    return activeSymbols;
 })();
 
 module.exports = {

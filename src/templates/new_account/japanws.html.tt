@@ -12,36 +12,32 @@
                                 <label for="gender">[% l('Gender') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="gender">
+                                <select id="gender" class="form_input">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="m">[% l('Male') %]</option>
                                   <option value="f">[% l('Female') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-gender" style="display:none"></p>
+                                <p class="errorfield" id="error_gender" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="lname">[% l('Family name') %]</label>
+                                <label for="last_name">[% l('Family name') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="lname" name="lname" maxlength="30"/>
-                                <p class="hint">
-                                  [% l('{JAPAN ONLY}No space between last name and first name') %]
-                                </p>
-                                <p class="errorfield" id="error-lname" style="display:none"></p>
+                                <input type="text" class="text form_input" id="last_name" name="last_name" maxlength="30"/>
+                                <p class="hint">[% l('{JAPAN ONLY}No space between last name and first name') %]</p>
+                                <p class="errorfield" id="error_last_name" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="fname">[% l('First name') %]</label>
+                                <label for="first_name">[% l('First name') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="fname" name="fname" maxlength="30"/>
-                                <p class="hint">
-                                  [% l('{JAPAN ONLY}No space between last name and first name') %]
-                                </p>
-                                <p class="errorfield" id="error-fname" style="display:none"></p>
+                                <input type="text" class="text form_input" id="first_name" name="first_name" maxlength="30"/>
+                                <p class="hint">[% l('{JAPAN ONLY}No space between last name and first name') %]</p>
+                                <p class="errorfield" id="error_first_name" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
@@ -49,10 +45,10 @@
                                 <label for="dobdd">[% l('Date of birth') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select name="dobyy" id="dobyy"></select>
-                                <select name="dobmm" id="dobmm"></select>
-                                <select name="dobdd" id="dobdd"></select>
-                                <p class="errorfield" id="error-birthdate" style="display:none"></p>
+                                <select name="dobyy" id="dobyy" class="form_input exclude_data"></select>
+                                <select name="dobmm" id="dobmm" class="form_input exclude_data"></select>
+                                <select name="dobdd" id="dobdd" class="form_input exclude_data"></select>
+                                <p class="errorfield" id="error_dobdd" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
@@ -60,7 +56,7 @@
                                 <label for="occupation">[% l('Occupation') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="occupation">
+                                <select id="occupation" class="form_input">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="Office worker">[% l('Office worker') %]</option>
                                   <option value="Director">[% l('Director') %]</option>
@@ -72,7 +68,7 @@
                                   <option value="Unemployed">[% l('Unemployed') %]</option>
                                   <option value="Others">[% l('Others') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-occupation" style="display:none"></p>
+                                <p class="errorfield" id="error_occupation" style="display:none"></p>
                             </div>
                         </div>
                     </fieldset>
@@ -81,71 +77,61 @@
                         <legend id="address">[% l('Address') %]</legend>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="address-postcode">[% l('Postal code/ZIP') %]</label>
+                                <label for="address_postcode">[% l('Postal code/ZIP') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="address-postcode" name="address-postcode" maxlength="20"/>
-                                <p class="hint">
-                                  [% l('E.g. 123-4567') %]
-                                </p>
-                                <p class="errorfield" id="error-postcode" style="display:none"></p>
+                                <input type="text" class="text form_input" id="address_postcode" name="address_postcode" maxlength="20"/>
+                                <p class="hint">[% l('E.g. 123-4567') %]</p>
+                                <p class="errorfield" id="error_address_postcode" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear" style="display:none">
                             <div class="gr-4 form_label">
-                                <label for="address-state">[% l('State/Province') %]</label>
+                                <label for="address_state">[% l('State/Province') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="address-state" name="address-state"></select>
-                                <p class="errorfield" id="error-state" style="display:none"></p>
+                                <select id="address_state" name="address_state" class="form_input"></select>
+                                <p class="errorfield" id="error_address_state" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="address-town">[% l('Town/City') %]</label>
+                                <label for="address_city">[% l('Town/City') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="address-town" name="address-town" maxlength="35"/>
-                                <p class="hint">
-                                  [% l('E.g. Shibuya-ku') %]
-                                </p>
-                                <p class="errorfield" id="error-town" style="display:none"></p>
+                                <input type="text" class="text form_input" id="address_city" name="address_city" maxlength="35"/>
+                                <p class="hint">[% l('E.g. Shibuya-ku') %]</p>
+                                <p class="errorfield" id="error_address_city" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="address1">[% l('First line of home address') %]</label>
+                                <label for="address_line_1">[% l('First line of home address') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="address1" name="address1" maxlength="70"/>
-                                <p class="hint">
-                                  [% l('E.g. Hiroo') %]
-                                </p>
-                                <p class="errorfield" id="error-address1" style="display:none"></p>
+                                <input type="text" class="text form_input" id="address_line_1" name="address_line_1" maxlength="70"/>
+                                <p class="hint">[% l('E.g. Hiroo') %]</p>
+                                <p class="errorfield" id="error_address_line_1" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="address2">[% l('Second line of home address') %]</label>
+                                <label for="address_line_2">[% l('Second line of home address') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="address2" name="address2" maxlength="70"/>
-                                <p class="hint">
-                                  [% l('E.g. Building name, apartment number etc (Optional)') %]
-                                </p>
-                                <p class="errorfield" id="error-address2" style="display:none"></p>
+                                <input type="text" class="text form_input" id="address_line_2" name="address_line_2" maxlength="70"/>
+                                <p class="hint">[% l('E.g. Building name, apartment number etc (Optional)') %]</p>
+                                <p class="errorfield" id="error_address_line_2" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="tel">[% l('Telephone') %]</label>
+                                <label for="phone">[% l('Telephone') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="tel" name="tel" maxlength="35"/>
-                                <p class="hint">
-                                  [% l('E.g. 03-1234-5678') %]
-                                </p>
-                                <p class="errorfield" id="error-tel" style="display:none"></p>
+                                <input type="text" class="text form_input" id="phone" name="phone" maxlength="35"/>
+                                <p class="hint">[% l('E.g. 03-1234-5678') %]</p>
+                                <p class="errorfield" id="error_phone" style="display:none"></p>
                             </div>
                         </div>
                     </fieldset>
@@ -154,10 +140,10 @@
                         <legend id="security">[% l('Security') %]</legend>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="secret-question">[% l('Secret question') %]</label>
+                                <label for="secret_question">[% l('Secret question') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="secret-question">
+                                <select id="secret_question" class="form_input">
                                   <option value="Favourite dish">[% l('Favourite dish') %]</option>
                                   <option value="Mother's maiden name">[% l("Mother's maiden name") %]</option>
                                   <option value="Name of your pet">[% l('Name of your pet') %]</option>
@@ -167,16 +153,16 @@
                                   <option value="Brand of first car">[% l('Brand of first car') %]</option>
                                   <option value="Favourite artist">[% l('Favourite artist') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-question" style="display:none"></p>
+                                <p class="errorfield" id="error_secret_question" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="secret-answer">[% l('Answer to secret question') %]</label>
+                                <label for="secret_answer">[% l('Answer to secret question') %]</label>
                             </div>
                             <div class="gr-8">
-                                <input type="text" class="text" id="secret-answer" maxlength="50" autocomplete="off"/>
-                                <p class="errorfield" id="error-answer" style="display:none"></p>
+                                <input type="text" class="text form_input" id="secret_answer" maxlength="50" autocomplete="off"/>
+                                <p class="errorfield" id="error_secret_answer" style="display:none"></p>
                             </div>
                         </div>
                     </fieldset>
@@ -185,23 +171,21 @@
                         <legend id="status">[% l('Status') %]</legend>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="fatca">[% l('Not FATCA*') %]</label>
+                                <label for="declare_not_fatca">[% l('Not FATCA*') %]</label>
                             </div>
                             <div class="gr-8">
-                              <input id="fatca" type="checkbox"/>
+                              <input id="declare_not_fatca" type="checkbox" class="form_input"/>
                               <br />
-                              <p class="hint">
-                                [% l('You must not be a USA resident, citizen, or have any tax reporting to the USA') %]
-                              </p>
-                              <p class="errorfield" id="error-fatca"></p>
+                              <p class="hint">[% l('You must not be a USA resident, citizen, or have any tax reporting to the USA') %]</p>
+                              <p class="errorfield" id="error_declare_not_fatca"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="annual-income">[% l('Annual Income') %]</label>
+                                <label for="annual_income">[% l('Annual Income') %]</label>
                             </div>
                             <div class="gr-8">
-                              <select id="annual-income">
+                              <select id="annual_income" class="form_input">
                                 <option value="">[% l('Please select') %]</option>
                                 <option value="Less than 1 million JPY">[% l('Less than 1 million JPY') %]</option>
                                 <option value="1-3 million JPY">[% l('1-3 million JPY') %]</option>
@@ -212,15 +196,15 @@
                                 <option value="50-100 million JPY">[% l('50-100 million JPY') %]</option>
                                 <option value="Over 100 million JPY">[% l('Over 100 million JPY') %]</option>
                               </select>
-                              <p class="errorfield" id="error-annual-income"></p>
+                              <p class="errorfield" id="error_annual_income"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="financial-asset">[% l('Financial Asset') %]</label>
+                                <label for="financial_asset">[% l('Financial Asset') %]</label>
                             </div>
                             <div class="gr-8">
-                              <select id="financial-asset">
+                              <select id="financial_asset" class="form_input">
                                 <option value="">[% l('Please select') %]</option>
                                 <option value="Less than 1 million JPY">[% l('Less than 1 million JPY') %]</option>
                                 <option value="1-3 million JPY">[% l('1-3 million JPY') %]</option>
@@ -231,18 +215,18 @@
                                 <option value="50-100 million JPY">[% l('50-100 million JPY') %]</option>
                                 <option value="Over 100 million JPY">[% l('Over 100 million JPY') %]</option>
                               </select>
-                              <p class="errorfield" id="error-financial-asset"></p>
+                              <p class="errorfield" id="error_financial_asset"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="daily-loss-limit">[% l('Daily limit on losses') %]</label>
+                                <label for="daily_loss_limit">[% l('Daily limit on losses') %]</label>
                             </div>
                             <div class="gr-8">
-                              <input class="text" id="daily-loss-limit" type="text" maxlength="20"/>
+                              <input class="text form_input" id="daily_loss_limit" type="text" maxlength="20"/>
                               <br />
                               <p class="hint">[% l('Maximum aggregate loss per day.') %]</p>
-                              <p class="errorfield" id="error-daily-loss-limit"></p>
+                              <p class="errorfield" id="error_daily_loss_limit"></p>
                             </div>
                         </div>
                     </fieldset>
@@ -251,10 +235,10 @@
                       <legend id="trading-experience">[% l('Trading Experience') %]</legend>
                       <div class="gr-padding-10 gr-row clear">
                           <div class="gr-4 form_label">
-                              <label for="equities">[% l('Equities') %]</label>
+                              <label for="trading_experience_equities">[% l('Equities') %]</label>
                           </div>
                           <div class="gr-8">
-                            <select id="equities">
+                            <select id="trading_experience_equities" class="form_input">
                               <option value="">[% l('Please select') %]</option>
                               <option value="No experience">[% l('No experience') %]</option>
                               <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
@@ -263,15 +247,15 @@
                               <option value="3-5 years">[% l('3-5 years') %]</option>
                               <option value="Over 5 years">[% l('Over 5 years') %]</option>
                             </select>
-                            <p class="errorfield" id="error-equities"></p>
+                            <p class="errorfield" id="error_trading_experience_equities"></p>
                           </div>
                       </div>
                       <div class="gr-padding-10 gr-row clear">
                           <div class="gr-4 form_label">
-                              <label for="commodities">[% l('Commodities') %]</label>
+                              <label for="trading_experience_commodities">[% l('Commodities') %]</label>
                           </div>
                           <div class="gr-8">
-                            <select id="commodities">
+                            <select id="trading_experience_commodities" class="form_input">
                               <option value="">[% l('Please select') %]</option>
                               <option value="No experience">[% l('No experience') %]</option>
                               <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
@@ -280,15 +264,15 @@
                               <option value="3-5 years">[% l('3-5 years') %]</option>
                               <option value="Over 5 years">[% l('Over 5 years') %]</option>
                             </select>
-                            <p class="errorfield" id="error-commodities"></p>
+                            <p class="errorfield" id="error_trading_experience_commodities"></p>
                           </div>
                       </div>
                       <div class="gr-padding-10 gr-row clear">
                           <div class="gr-4 form_label">
-                              <label for="foreign-currency-deposit">[% l('Foreign currency deposit') %]</label>
+                              <label for="trading_experience_foreign_currency_deposit">[% l('Foreign currency deposit') %]</label>
                           </div>
                           <div class="gr-8">
-                            <select id="foreign-currency-deposit">
+                            <select id="trading_experience_foreign_currency_deposit" class="form_input">
                               <option value="">[% l('Please select') %]</option>
                               <option value="No experience">[% l('No experience') %]</option>
                               <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
@@ -297,15 +281,15 @@
                               <option value="3-5 years">[% l('3-5 years') %]</option>
                               <option value="Over 5 years">[% l('Over 5 years') %]</option>
                             </select>
-                            <p class="errorfield" id="error-foreign-currency-deposit"></p>
+                            <p class="errorfield" id="error_trading_experience_foreign_currency_deposit"></p>
                           </div>
                       </div>
                       <div class="gr-padding-10 gr-row clear">
                           <div class="gr-4 form_label">
-                              <label for="margin-fx">[% l('Margin FX') %]</label>
+                              <label for="trading_experience_margin_fx">[% l('Margin FX') %]</label>
                           </div>
                           <div class="gr-8">
-                            <select id="margin-fx">
+                            <select id="trading_experience_margin_fx" class="form_input">
                               <option value="">[% l('Please select') %]</option>
                               <option value="No experience">[% l('No experience') %]</option>
                               <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
@@ -314,15 +298,15 @@
                               <option value="3-5 years">[% l('3-5 years') %]</option>
                               <option value="Over 5 years">[% l('Over 5 years') %]</option>
                             </select>
-                            <p class="errorfield" id="error-margin-fx"></p>
+                            <p class="errorfield" id="error_trading_experience_margin_fx"></p>
                           </div>
                       </div>
                       <div class="gr-padding-10 gr-row clear">
                           <div class="gr-4 form_label">
-                              <label for="investment-trust">[% l('Investment trust') %]</label>
+                              <label for="trading_experience_investment_trust">[% l('Investment trust') %]</label>
                           </div>
                           <div class="gr-8">
-                            <select id="investment-trust">
+                            <select id="trading_experience_investment_trust" class="form_input">
                               <option value="">[% l('Please select') %]</option>
                               <option value="No experience">[% l('No experience') %]</option>
                               <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
@@ -331,15 +315,15 @@
                               <option value="3-5 years">[% l('3-5 years') %]</option>
                               <option value="Over 5 years">[% l('Over 5 years') %]</option>
                             </select>
-                            <p class="errorfield" id="error-investment-trust"></p>
+                            <p class="errorfield" id="error_trading_experience_investment_trust"></p>
                           </div>
                       </div>
                       <div class="gr-padding-10 gr-row clear">
                           <div class="gr-4 form_label">
-                              <label for="public-and-corporation-bond">[% l('Public and corporation bond') %]</label>
+                              <label for="trading_experience_public_bond">[% l('Public and corporation bond') %]</label>
                           </div>
                           <div class="gr-8">
-                            <select id="public-and-corporation-bond">
+                            <select id="trading_experience_public_bond" class="form_input">
                               <option value="">[% l('Please select') %]</option>
                               <option value="No experience">[% l('No experience') %]</option>
                               <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
@@ -348,15 +332,15 @@
                               <option value="3-5 years">[% l('3-5 years') %]</option>
                               <option value="Over 5 years">[% l('Over 5 years') %]</option>
                             </select>
-                            <p class="errorfield" id="error-public-and-corporation-bond"></p>
+                            <p class="errorfield" id="error_trading_experience_public_bond"></p>
                           </div>
                       </div>
                       <div class="gr-padding-10 gr-row clear">
                           <div class="gr-4 form_label nowrap">
-                              <label for="otc-derivative-trading">[% l('OTC Derivative (Option) Trading') %]</label>
+                              <label for="trading_experience_option_trading">[% l('OTC Derivative (Option) Trading') %]</label>
                           </div>
                           <div class="gr-8">
-                            <select id="otc-derivative-trading">
+                            <select id="trading_experience_option_trading" class="form_input">
                               <option value="">[% l('Please select') %]</option>
                               <option value="No experience">[% l('No experience') %]</option>
                               <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
@@ -365,115 +349,89 @@
                               <option value="3-5 years">[% l('3-5 years') %]</option>
                               <option value="Over 5 years">[% l('Over 5 years') %]</option>
                             </select>
-                            <p class="errorfield" id="error-otc-derivative-trading"></p>
+                            <p class="errorfield" id="error_trading_experience_option_trading"></p>
                           </div>
                       </div>
                       <div class="gr-padding-10 gr-row clear">
                           <div class="gr-4 form_label">
-                              <label for="trading-purpose">[% l('Purpose of trading') %]</label>
+                              <label for="trading_purpose">[% l('Purpose of trading') %]</label>
                           </div>
                           <div class="gr-8">
-                            <select id="trading-purpose">
+                            <select id="trading_purpose" class="form_input">
                               <option value="">[% l('Please select') %]</option>
                               <option value="Targeting short-term profits">[% l('Targeting short-term profits') %]</option>
                               <option value="Targeting medium-term / long-term profits">[% l('Targeting medium-term / long-term profits') %]</option>
                               <option value="Both the above">[% l('Both the above') %]</option>
                               <option value="Hedging">[% l('Hedging') %]</option>
                             </select>
-                            <p class="errorfield" id="error-trading-purpose"></p>
+                            <p class="errorfield" id="error_trading_purpose"></p>
                           </div>
                       </div>
                       <div class="gr-padding-10 gr-row clear hedging-assets invisible">
                         <div class="gr-4 form_label">
-                          <label for="hedge-asset">[% l('Classification of assets requiring hedge') %]</label>
+                          <label for="hedge_asset">[% l('Classification of assets requiring hedge') %]</label>
                         </div>
                         <div class="gr-8">
-                          <select id="hedge-asset">
+                          <select id="hedge_asset" class="form_input exclude_data">
                             <option value="">[% l('Please select') %]</option>
                             <option value="Foreign currency deposit">[% l('Foreign currency deposit') %]</option>
                             <option value="Margin FX">[% l('Margin FX') %]</option>
                             <option value="Other">[% l('Other') %]</option>
                           </select>
-                          <p class="errorfield" id="error-hedge-asset"></p>
+                          <p class="errorfield" id="error_hedge_asset"></p>
                         </div>
                       </div>
                       <div class="gr-padding-10 gr-row clear hedging-assets invisible">
                         <div class="gr-4 form_label">
-                          <label for="hedge-asset-amount">[% l('Amount of above assets') %]</label>
+                          <label for="hedge_asset_amount">[% l('Amount of above assets') %]</label>
                         </div>
                         <div class="gr-8">
-                          <input class="text" id="hedge-asset-amount" maxlength="20" type="text"/>
-                          <p class="errorfield" id="error-hedge-asset-amount"></p>
+                          <input class="text form_input exclude_data" id="hedge_asset_amount" maxlength="20" type="text"/>
+                          <p class="errorfield" id="error_hedge_asset_amount"></p>
                         </div>
                       </div>
                     </fieldset>
 
                     <fieldset>
-                      <legend id="foreign-pep-declaration">[% l('{JAPAN ONLY}Foreign PEP Declaration') %]</legend>
+                      <legend>[% l('{JAPAN ONLY}Foreign PEP Declaration') %]</legend>
                       <div class="gr-12">
-                          <p>
-                              [% l("{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:") %]
-                          </p>
+                          <p>[% l("{JAPAN ONLY}We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:") %]</p>
                           <ol>
-                              <li>
-                                  [% l("{JAPAN ONLY}Foreign Head of State") %]
-                              </li>
+                              <li>[% l("{JAPAN ONLY}Foreign Head of State") %]</li>
                               <li>
                                   [% l("{JAPAN ONLY}In a Government or Juridicial position such as:") %]
                                   <ul>
-                                      <li>
-                                          [% l("{JAPAN ONLY}Equivalent to Prime Minister, Minister of State, or Vice-Minister of State of Japan") %]
-                                      </li>
-                                      <li>
-                                          [% l("{JAPAN ONLY}Equivalent to Chairperson or Vice-Chairperson of the House of Representatives or the House of Councilors of Japan") %]
-                                      </li>
-                                      <li>
-                                          [% l("{JAPAN ONLY}Equivalent to Justice of the Supreme Court of Japan") %]
-                                      </li>
-                                      <li>
-                                          [% l("{JAPAN ONLY}Equivalent to Ambassador, Envoy, Government delegate, or Plenipotentiary of Japan") %]
-                                      </li>
-                                      <li>
-                                          [% l("{JAPAN ONLY}Equivalent to Head of the Joint Staff, Vice Chief of Staff, Chief of Staff of Ground Self-Defense Force, Vice Chief of Staff of G.S.D.F., Chief of Staff of Maritime Self-Defense Force, Vice Chief of Staff of M.S.D.F., Chief of Staff Air Self-Defense Force, or Vice Chief of Staff of A.S.D.F. of Japan") %]
-                                      </li>
-                                      <li>
-                                          [% l("{JAPAN ONLY}A board member of a Central Bank") %]
-                                      </li>
-                                      <li>
-                                          [% l("{JAPAN ONLY}A board member of a company subject to resolution or approval for its budget from a body equivalent to the Diet of Japan") %]
-                                      </li>
+                                      <li>[% l("{JAPAN ONLY}Equivalent to Prime Minister, Minister of State, or Vice-Minister of State of Japan") %]</li>
+                                      <li>[% l("{JAPAN ONLY}Equivalent to Chairperson or Vice-Chairperson of the House of Representatives or the House of Councilors of Japan") %]</li>
+                                      <li>[% l("{JAPAN ONLY}Equivalent to Justice of the Supreme Court of Japan") %]</li>
+                                      <li>[% l("{JAPAN ONLY}Equivalent to Ambassador, Envoy, Government delegate, or Plenipotentiary of Japan") %]</li>
+                                      <li>[% l("{JAPAN ONLY}Equivalent to Head of the Joint Staff, Vice Chief of Staff, Chief of Staff of Ground Self-Defense Force, Vice Chief of Staff of G.S.D.F., Chief of Staff of Maritime Self-Defense Force, Vice Chief of Staff of M.S.D.F., Chief of Staff Air Self-Defense Force, or Vice Chief of Staff of A.S.D.F. of Japan") %]</li>
+                                      <li>[% l("{JAPAN ONLY}A board member of a Central Bank") %]</li>
+                                      <li>[% l("{JAPAN ONLY}A board member of a company subject to resolution or approval for its budget from a body equivalent to the Diet of Japan") %]</li>
                                   </ul>
                               </li>
-                              <li>
-                                  [% l("{JAPAN ONLY}Current or former member of category 1) or 2)") %]
-                              </li>
-                              <li>
-                                  [% l("{JAPAN ONLY}Family members of categories 1) to 3)") %]
-                              </li>
-                              <li>
-                                  [% l("{JAPAN ONLY}Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)") %]
-                              </li>
+                              <li>[% l("{JAPAN ONLY}Current or former member of category 1) or 2)") %]</li>
+                              <li>[% l("{JAPAN ONLY}Family members of categories 1) to 3)") %]</li>
+                              <li>[% l("{JAPAN ONLY}Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)") %]</li>
                           </ol>
                       </div>
                       <div class="gr-padding-10 gr-row clear">
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="not-pep" type="checkbox"/>
+                                <input id="not_pep" type="checkbox" class="form_input exclude_data"/>
                               </div>
                               <div class="gr-11">
-                                <span>
-                                  [% l("I declare I am not a Foreign Politically Exposed Person.") %]
-                                </span>
+                                <label for="not_pep">[% l("I declare I am not a Foreign Politically Exposed Person.") %]</label>
                               </div>
                             </div>
-                          <p class="errorfield" id="error-not-pep"></p>
+                          <p class="errorfield" id="error_not_pep"></p>
                         </div>
                       </div>
                   </fieldset>
 
                     <fieldset>
-                      <legend id="agreement-for-documents">[% l('Agreement for documents') %]</legend>
+                      <legend>[% l('Agreement for documents') %]</legend>
                       <div class="gr-12">
                         <p>
                           [% l('We will provide all documents in electronic format. Please tick the box if you agree and go to the next step.') %]
@@ -483,15 +441,15 @@
                         <div class="gr-12">
                             <div class="gr-row">
                                 <div class="gr-1">
-                                  <input id="use-electronic-doc" type="checkbox"/>
+                                  <input id="agree_use_electronic_doc" type="checkbox" class="form_input" />
                                 </div>
                                 <div class="gr-11">
-                                  <span>
+                                  <label for="agree_use_electronic_doc">
                                     [% l('I hereby agree and accept that all documents such as pre-contract forms, all terms and conditions, trade reports and other legally required materials will be issued in electronic format only.') %]
-                                  </span>
+                                  </label>
                                 </div>
                             </div>
-                          <p class="errorfield" id="error-use-electronic-doc"></p>
+                          <p class="errorfield" id="error_agree_use_electronic_doc"></p>
                         </div>
                       </div>
                       <div class="gr-padding-10 gr-row clear">
@@ -504,10 +462,10 @@
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="warnings-and-policies" type="checkbox"/>
+                                <input id="agree_warnings_and_policies" type="checkbox" class="form_input" />
                               </div>
                               <div class="gr-11">
-                                <span>
+                                <label for="agree_warnings_and_policies">
                                   [% l('I confirm my agreement to the contents of all the documents listed below:') %]
                                   <br />
                                   <ul>
@@ -541,16 +499,16 @@
                                         </a>
                                       </li>
                                     </ul>
-                                  </span>
+                                  </label>
                                 </div>
                             </div>
-                            <p class="errorfield" id="error-warnings-and-policies"></p>
+                            <p class="errorfield" id="error_agree_warnings_and_policies"></p>
                           </div>
                         </div>
                     </fieldset>
 
                     <fieldset>
-                      <legend id="confirmation-and-understandings">[% l('Confirmation and understandings') %]</legend>
+                      <legend>[% l('Confirmation and understandings') %]</legend>
                       <div class="gr-12">
                         <p>
                           [% l('To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside.') %]
@@ -560,30 +518,30 @@
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="own-judgment" type="checkbox"/>
+                                <input id="confirm_understand_own_judgment" type="checkbox" class="form_input" />
                               </div>
                               <div class="gr-11">
-                                <span>
+                                <label for="confirm_understand_own_judgment">
                                   [% l('I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets.') %]
-                                </span>
+                                </label>
                               </div>
                             </div>
-                          <p class="errorfield" id="error-own-judgment"></p>
+                          <p class="errorfield" id="error_confirm_understand_own_judgment"></p>
                         </div>
                       </div>
                       <div class="gr-padding-10 gr-row clear">
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="trading-mechanism" type="checkbox"/>
+                                <input id="confirm_understand_trading_mechanism" type="checkbox" class="form_input" />
                               </div>
                               <div class="gr-11">
-                                <span>
+                                <label for="confirm_understand_trading_mechanism">
                                   [% l('I understand and agree that, with regard to over-the-counter binary option trading, I have read and understand the general conditions and mechanisms for trading the contract, including details of the underlying financial index, before committing to a transaction.') %]
-                                </span>
+                                </label>
                               </div>
                             </div>
-                          <p class="errorfield" id="error-trading-mechanism"></p>
+                          <p class="errorfield" id="error_confirm_understand_trading_mechanism"></p>
                         </div>
                       </div>
                       <div class="gr-padding-10 gr-row clear">
@@ -596,90 +554,90 @@
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="judgment-time" type="checkbox"/>
+                                <input id="confirm_understand_judgment_time" type="checkbox" class="form_input" />
                               </div>
                               <div class="gr-11">
-                                <span>
+                                <label for="confirm_understand_judgment_time">
                                   [% l('Each option transaction has a specified expiry time and date, known as the judgment time.') %]
-                                </span>
+                                </label>
                               </div>
                             </div>
-                          <p class="errorfield" id="error-judgment-time"></p>
+                          <p class="errorfield" id="error_confirm_understand_judgment_time"></p>
                         </div>
                       </div>
                       <div class="gr-padding-10 gr-row clear">
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="total-loss" type="checkbox"/>
+                                <input id="confirm_understand_total_loss" type="checkbox" class="form_input" />
                               </div>
                               <div class="gr-11">
-                                <span>
+                                <label for="confirm_understand_total_loss">
                                   [% l('If a customer holds a long position and the prediction goes wrong as of the judgment time, the invested principal amount will become zero value.') %]
-                                </span>
+                                </label>
                               </div>
                             </div>
-                          <p class="errorfield" id="error-total-loss"></p>
+                          <p class="errorfield" id="error_confirm_understand_total_loss"></p>
                         </div>
                       </div>
                       <div class="gr-padding-10 gr-row clear">
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="sellback-loss" type="checkbox"/>
+                                <input id="confirm_understand_sellback_loss" type="checkbox" class="form_input" />
                               </div>
                               <div class="gr-11">
-                                <span>
+                                <label for="confirm_understand_sellback_loss">
                                   [% l('If a customer sells back a long option position before the determination time, then the sale price may be lower than the original purchase price, so there is a possibility of a net loss.') %]
-                                </span>
+                                </label>
                               </div>
                             </div>
-                          <p class="errorfield" id="error-sellback-loss"></p>
+                          <p class="errorfield" id="error_confirm_understand_sellback_loss"></p>
                         </div>
                       </div>
                       <div class="gr-padding-10 gr-row clear">
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="shortsell-loss" type="checkbox"/>
+                                <input id="confirm_understand_shortsell_loss" type="checkbox" class="form_input" />
                               </div>
                               <div class="gr-11">
-                                <span>
+                                <label for="confirm_understand_shortsell_loss">
                                   [% l('If a customer holds a short position and the prediction is incorrect as of the judgment time, the customer is required to pay the payout amount, and as that will be greater than the trade price that the customer originally received, this will cause a net loss.') %]
-                                </span>
+                                </label>
                               </div>
                             </div>
-                          <p class="errorfield" id="error-shortsell-loss"></p>
+                          <p class="errorfield" id="error_confirm_understand_shortsell_loss"></p>
                         </div>
                       </div>
                       <div class="gr-padding-10 gr-row clear">
                         <div class="gr-12">
                           <div class="gr-row">
                             <div class="gr-1">
-                              <input id="company-profit" type="checkbox"/>
+                              <input id="confirm_understand_company_profit" type="checkbox" class="form_input" />
                             </div>
                             <div class="gr-11">
-                              <span>
+                              <label for="confirm_understand_company_profit">
                                 [% l("[_1] earns a return from the difference between the total amount of all customers' payment and the total amount of all customers' receipts.", website_name) %]
-                              </span>
+                              </label>
                             </div>
                           </div>
-                          <p class="errorfield" id="error-company-profit"></p>
+                          <p class="errorfield" id="error_confirm_understand_company_profit"></p>
                         </div>
                       </div>
                       <div class="gr-padding-10 gr-row clear">
                         <div class="gr-12">
                             <div class="gr-row">
                               <div class="gr-1">
-                                <input id="expert-knowledge" type="checkbox"/>
+                                <input id="confirm_understand_expert_knowledge" type="checkbox" class="form_input" />
                               </div>
                               <div class="gr-11">
-                                <span>
+                                <label for="confirm_understand_expert_knowledge">
                                   [% l('In carrying out OTC binary option trading, a customer needs expert knowledge such as the theoretical value of options, in order to make reasonable investment decisions.') %]
-                                </span>
+                                </label>
                               </div>
                             </div>
-                          <p class="errorfield" id="error-expert-knowledge"></p>
+                          <p class="errorfield" id="error_confirm_understand_expert_knowledge"></p>
                         </div>
                       </div>
                     </fieldset>

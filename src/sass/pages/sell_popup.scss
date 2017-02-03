@@ -32,7 +32,7 @@
     border-top: 1px solid $COLOR_WHITE;
     background-color: $COLOR_WHITE;
     .inpage_popup_content_box {
-        border: 0px;
+        border: 0;
         #contract_win_status {
             line-height: 30px;
             &.won {
@@ -43,7 +43,7 @@
             }
         }
         .popup_bet_desc {
-            border: 0px;
+            border: 0;
             padding: 5px;
             line-height: 20px;
             background-color: $COLOR_BLUE;
@@ -62,16 +62,16 @@
             #sell_details_chart_wrapper {
                 border-right: 1px solid $COLOR_DARK_GRAY;
                 margin-right: -1px;
-                padding: 0px;
+                padding: 0;
                 .chart-notice {
-                    margin: 0px;
+                    margin: 0;
                 }
                 .highcharts-container {
                     direction: ltr;
                 }
             }
             #sell_details_table {
-                padding: 0px;
+                padding: 0;
                 border-left: 1px solid $COLOR_DARK_GRAY;
                 th {
                     line-height: 24px;
@@ -91,7 +91,7 @@
                     }
                 }
                 .last_cell {
-                    border-bottom: 0px;
+                    border-bottom: 0;
                     min-height: 20px;
                     padding: 5px 15px;
                     text-align: center;

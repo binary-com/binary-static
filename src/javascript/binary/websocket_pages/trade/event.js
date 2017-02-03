@@ -1,93 +1,54 @@
-var TradingAnalysis            = require('./analysis').TradingAnalysis;
-var Barriers                   = require('./barriers').Barriers;
-var Contract                   = require('./contract').Contract;
-var Defaults                   = require('./defaults').Defaults;
-var Durations                  = require('./duration').Durations;
-var Price                      = require('./price').Price;
-var StartDates                 = require('./starttime').StartDates;
-var Tick                       = require('./tick').Tick;
-var onlyNumericOnKeypress      = require('../../common_functions/event_handler').onlyNumericOnKeypress;
-var onlyNumericColonOnKeypress = require('../../common_functions/event_handler').onlyNumericColonOnKeypress;
-var moment                     = require('moment');
-var setFormPlaceholderContent  = require('./set_values').setFormPlaceholderContent;
-var isVisible                  = require('../../common_functions/common_functions').isVisible;
-var showPriceOverlay           = require('./common').showPriceOverlay;
-var showFormOverlay            = require('./common').showFormOverlay;
-var toggleActiveCatMenuElement = require('./common').toggleActiveCatMenuElement;
-var debounce                   = require('./common').debounce;
-var submitForm                 = require('./common').submitForm;
-var displayTooltip             = require('./common').displayTooltip;
-var updateWarmChart            = require('./common').updateWarmChart;
-var reloadPage                 = require('./common').reloadPage;
-var chartFrameSource           = require('./common').chartFrameSource;
-var timeIsValid                = require('./common').timeIsValid;
-var TimePicker                 = require('../../components/time_picker').TimePicker;
-var dateValueChanged           = require('../../common_functions/common_functions').dateValueChanged;
+const TradingAnalysis            = require('./analysis').TradingAnalysis;
+const Barriers                   = require('./barriers').Barriers;
+const Contract                   = require('./contract').Contract;
+const Defaults                   = require('./defaults').Defaults;
+const Durations                  = require('./duration').Durations;
+const Price                      = require('./price').Price;
+const Tick                       = require('./tick').Tick;
+const processMarket              = require('./process').processMarket;
+const processContractForm        = require('./process').processContractForm;
+const processForgetTicks         = require('./process').processForgetTicks;
+const onExpiryTypeChange         = require('./process').onExpiryTypeChange;
+const onDurationUnitChange       = require('./process').onDurationUnitChange;
+const onlyNumericOnKeypress      = require('../../common_functions/event_handler').onlyNumericOnKeypress;
+const moment                     = require('moment');
+const setFormPlaceholderContent  = require('./set_values').setFormPlaceholderContent;
+const isVisible                  = require('../../common_functions/common_functions').isVisible;
+const showPriceOverlay           = require('./common').showPriceOverlay;
+const showFormOverlay            = require('./common').showFormOverlay;
+const hideOverlayContainer       = require('./common').hideOverlayContainer;
+const toggleActiveCatMenuElement = require('./common').toggleActiveCatMenuElement;
+const debounce                   = require('./common').debounce;
+const submitForm                 = require('./common').submitForm;
+const displayTooltip             = require('./common').displayTooltip;
+const updateWarmChart            = require('./common').updateWarmChart;
+const reloadPage                 = require('./common').reloadPage;
+const chartFrameSource           = require('./common').chartFrameSource;
+const timeIsValid                = require('./common').timeIsValid;
+const getStartDateNode           = require('./common_independent').getStartDateNode;
+const TimePicker                 = require('../../components/time_picker').TimePicker;
+const dateValueChanged           = require('../../common_functions/common_functions').dateValueChanged;
+const Client                     = require('../../base/client').Client;
+const elementTextContent         = require('../../common_functions/common_functions').elementTextContent;
 
 /*
- * TradingEvents object contains all the event handler function required for
+ * TradingEvents object contains all the event handler const required = function for
  * websocket trading page
  *
  * We need it as object so that we can call TradingEvent.init() only on trading
  * page for pjax to work else it will fire on all pages
  *
  */
-var TradingEvents = (function () {
+const TradingEvents = (function () {
     'use strict';
 
-    var onExpiryTypeChange = function(value) {
-        if (!value || !$('#expiry_type').find('option[value=' + value + ']').length) {
-            value = 'duration';
-        }
-        $('#expiry_type').val(value);
-
-        var make_price_request = 0;
-        if (value === 'endtime') {
-            Durations.displayEndTime();
-            if (Defaults.get('expiry_date')) {
-                Durations.selectEndDate(moment(Defaults.get('expiry_date')));
-                make_price_request = -1;
-            }
-            Defaults.remove('duration_units', 'duration_amount');
-        } else {
-            StartDates.enable();
-            Durations.display();
-            if (Defaults.get('duration_units')) {
-                TradingEvents.onDurationUnitChange(Defaults.get('duration_units'));
-            }
-            var duration_amount = Defaults.get('duration_amount');
-            if (duration_amount && duration_amount > $('#duration_minimum').text()) {
-                $('#duration_amount').val(duration_amount);
-            }
-            make_price_request = 1;
-            Defaults.remove('expiry_date', 'expiry_time', 'end_date');
-            Durations.validateMinDurationAmount();
-        }
-
-        return make_price_request;
-    };
-
-    var onDurationUnitChange = function(value) {
-        if (!value || !$('#duration_units').find('option[value=' + value + ']').length) {
-            return 0;
-        }
-
-        $('#duration_units').val(value);
-        Defaults.set('duration_units', value);
-
-        Durations.select_unit(value);
-        Durations.populate();
-
-        return 1;
-    };
-
-    var initiate = function () {
+    const initiate = function () {
         /*
          * attach event to market list, so when client change market we need to update undelryings
          * and request for new Contract details to populate the form and request price accordingly
          */
-        var marketNavElement = document.getElementById('contract_markets');
-        var onMarketChange = function(market) {
+        const marketNavElement = document.getElementById('contract_markets');
+        const onMarketChange = function(market) {
             showPriceOverlay();
             Defaults.set('market', market);
 
@@ -101,7 +62,7 @@ var TradingEvents = (function () {
 
         if (marketNavElement) {
             marketNavElement.addEventListener('change', function(e) {
-                var clickedMarket = e.target;
+                const clickedMarket = e.target;
                 onMarketChange(clickedMarket.value);
             });
         }
@@ -110,17 +71,17 @@ var TradingEvents = (function () {
          * attach event to form list, so when client click on different form we need to update form
          * and request for new Contract details to populate the form and request price accordingly
          */
-        var contractFormEventChange = function () {
+        const contractFormEventChange = function () {
             processContractForm();
             TradingAnalysis.request();
         };
 
-        var formNavElement = document.getElementById('contract_form_name_nav');
+        const formNavElement = document.getElementById('contract_form_name_nav');
         if (formNavElement) {
             formNavElement.addEventListener('click', function(e) {
                 if (e.target && e.target.getAttribute('menuitem')) {
-                    var clickedForm = e.target;
-                    var isFormActive = clickedForm.classList.contains('active') || clickedForm.parentElement.classList.contains('active');
+                    const clickedForm = e.target;
+                    const isFormActive = clickedForm.classList.contains('active') || clickedForm.parentElement.classList.contains('active');
                     Defaults.set('formname', clickedForm.getAttribute('menuitem'));
 
                     setFormPlaceholderContent();
@@ -130,7 +91,7 @@ var TradingEvents = (function () {
                     if (!isFormActive) {
                         contractFormEventChange();
                     }
-                    var contractFormCheckbox = document.getElementById('contract_form_show_menu');
+                    const contractFormCheckbox = document.getElementById('contract_form_show_menu');
                     if (contractFormCheckbox) {
                         contractFormCheckbox.checked = false;
                     }
@@ -141,7 +102,7 @@ var TradingEvents = (function () {
         /*
          * attach event to underlying change, event need to request new contract details and price
          */
-        var underlyingElement = document.getElementById('underlying');
+        const underlyingElement = document.getElementById('underlying');
         if (underlyingElement) {
             underlyingElement.addEventListener('change', function(e) {
                 if (e.target) {
@@ -151,7 +112,7 @@ var TradingEvents = (function () {
                     if (e.target.selectedIndex < 0) {
                         e.target.selectedIndex = 0;
                     }
-                    var underlying = e.target.value;
+                    const underlying = e.target.value;
                     Defaults.remove('barrier', 'barrier_high', 'barrier_low');
                     Defaults.set('underlying', underlying);
                     TradingAnalysis.request();
@@ -174,65 +135,66 @@ var TradingEvents = (function () {
         /*
          * bind event to change in duration amount, request new price
          */
-        function triggerOnDurationChange(e) {
+        const triggerOnDurationChange = function(e) {
             if (e.target.value % 1 !== 0) {
                 e.target.value = Math.floor(e.target.value);
             }
             Defaults.set('duration_amount', e.target.value);
             Durations.select_amount(e.target.value);
-            processPriceRequest();
+            Price.processPriceRequest();
             submitForm(document.getElementById('websocket_form'));
-        }
-        var durationAmountElement = document.getElementById('duration_amount'),
-            inputEventTriggered = false;          // For triggering one of the two events.
+        };
+        const durationAmountElement = document.getElementById('duration_amount');
+        let inputEventTriggered = false;          // For triggering one of the two events.
         if (durationAmountElement) {
             durationAmountElement.addEventListener('keypress', onlyNumericOnKeypress);
             // jquery needed for datepicker
-            $('#duration_amount').on('input', debounce(function (e) {
-                triggerOnDurationChange(e);
-                Durations.validateMinDurationAmount();
-                inputEventTriggered = true;
-            }));
-            $('#duration_amount').on('change', debounce(function (e) {
-                // using Defaults, to update the value by datepicker if it was emptied by keyboard (delete)
-                Durations.validateMinDurationAmount();
-                if (inputEventTriggered === false || !Defaults.get('duration_amount'))                    {
+            $('#duration_amount')
+                .on('input', debounce(function (e) {
                     triggerOnDurationChange(e);
-                } else {
-                    inputEventTriggered = false;
-                }
-            }));
+                    Durations.validateMinDurationAmount();
+                    inputEventTriggered = true;
+                }))
+                .on('change', debounce(function (e) {
+                    // using Defaults, to update the value by datepicker if it was emptied by keyboard (delete)
+                    Durations.validateMinDurationAmount();
+                    if (inputEventTriggered === false || !Defaults.get('duration_amount')) {
+                        triggerOnDurationChange(e);
+                    } else {
+                        inputEventTriggered = false;
+                    }
+                }));
         }
 
         /*
          * attach event to expiry time change, event need to populate duration
          * and request new price
          */
-        var expiryTypeElement = document.getElementById('expiry_type');
+        const expiryTypeElement = document.getElementById('expiry_type');
         if (expiryTypeElement) {
             expiryTypeElement.addEventListener('change', function(e) {
                 Defaults.set('expiry_type', e.target.value);
                 onExpiryTypeChange(e.target.value);
-                if (expiryTypeElement.value !== 'endtime') processPriceRequest();
+                if (expiryTypeElement.value !== 'endtime') Price.processPriceRequest();
             });
         }
 
         /*
          * bind event to change in duration units, populate duration and request price
          */
-        var durationUnitElement = document.getElementById('duration_units');
+        const durationUnitElement = document.getElementById('duration_units');
         if (durationUnitElement) {
             durationUnitElement.addEventListener('change', function (e) {
                 Defaults.remove('barrier', 'barrier_high', 'barrier_low');
                 onDurationUnitChange(e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
             });
         }
 
         /*
          * bind event to change in endtime date and time
          */
-        var endDateElement = document.getElementById('expiry_date');
+        const endDateElement = document.getElementById('expiry_date');
         if (endDateElement) {
             // need to use jquery as datepicker is used, if we switch to some other
             // datepicker we can move back to javascript
@@ -247,17 +209,23 @@ var TradingEvents = (function () {
             });
         }
 
-        var endTimeElement = document.getElementById('expiry_time');
+        const endTimeElement = document.getElementById('expiry_time');
         if (endTimeElement) {
+            /*
+             * attach datepicker and timepicker to end time durations
+             * have to use jquery
+             */
+            attachTimePicker();
             $('#expiry_time')
-                .on('keypress', onlyNumericColonOnKeypress)
+                .on('focus click', attachTimePicker)
+                .on('keypress', function(ev) { onlyNumericOnKeypress(ev, [58]); })
                 .on('change input blur', function () {
                     if (!dateValueChanged(this, 'time')) {
                         return false;
                     }
                     if (timeIsValid($('#expiry_time'))) {
                         Durations.setTime(endTimeElement.value);
-                        processPriceRequest();
+                        Price.processPriceRequest();
                     }
                     return true;
                 });
@@ -266,7 +234,7 @@ var TradingEvents = (function () {
         /*
          * attach event to change in amount, request new price only
          */
-        var amountElement = document.getElementById('amount');
+        const amountElement = document.getElementById('amount');
         if (amountElement) {
             amountElement.addEventListener('keypress', onlyNumericOnKeypress);
 
@@ -276,7 +244,7 @@ var TradingEvents = (function () {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
                 Defaults.set('amount', e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -286,13 +254,13 @@ var TradingEvents = (function () {
          * whether start time is forward starting or not and request
          * new price
          */
-        var dateStartElement = StartDates.node();
+        const dateStartElement = getStartDateNode();
         if (dateStartElement) {
             dateStartElement.addEventListener('change', function (e) {
                 Defaults.set('date_start', e.target.value);
-                var r = Durations.onStartDateChange(e.target.value);
+                const r = Durations.onStartDateChange(e.target.value);
                 if (r >= 0) {
-                    processPriceRequest();
+                    Price.processPriceRequest();
                 }
             });
         }
@@ -301,11 +269,11 @@ var TradingEvents = (function () {
          * attach event to change in amount type that is whether its
          * payout or stake and request new price
          */
-        var amountTypeElement = document.getElementById('amount_type');
+        const amountTypeElement = document.getElementById('amount_type');
         if (amountTypeElement) {
             amountTypeElement.addEventListener('change', function (e) {
                 Defaults.set('amount_type', e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
             });
         }
 
@@ -313,25 +281,21 @@ var TradingEvents = (function () {
          * attach event to change in submarkets. We need to disable
          * underlyings that are not in selected seubmarkets
          */
-        var submarketElement = document.getElementById('submarket');
+        const submarketElement = document.getElementById('submarket');
         if (submarketElement) {
             submarketElement.addEventListener('change', function (e) {
                 if (e.target) {
-                    var elem = document.getElementById('underlying');
-                    var underlyings = elem.children;
+                    const elem = document.getElementById('underlying');
+                    const underlyings = elem.children;
 
-                    for (var i = 0, len = underlyings.length; i < len; i++) {
-                        if (e.target.value !== 'all' && e.target.value !== underlyings[i].className) {
-                            underlyings[i].disabled = true;
-                        } else {
-                            underlyings[i].disabled = false;
-                        }
+                    for (let i = 0, len = underlyings.length; i < len; i++) {
+                        underlyings[i].disabled = e.target.value !== 'all' && e.target.value !== underlyings[i].className;
                     }
 
                     // as submarket change has modified the underlying list so we need to manually
                     // fire change event for underlying
                     document.querySelectorAll('#underlying option:enabled')[0].selected = 'selected';
-                    var event = new Event('change');
+                    const event = new Event('change');
                     elem.dispatchEvent(event);
                 }
             });
@@ -340,15 +304,15 @@ var TradingEvents = (function () {
         /*
          * attach an event to change in currency
          */
-        var currencyElement = document.getElementById('currency');
+        const currencyElement = document.getElementById('currency');
         if (currencyElement) {
             currencyElement.addEventListener('change', function (e) {
                 Defaults.set('currency', e.target.value);
-                var stopTypeDollarLabel = document.getElementById('stop_type_dollar_label');
+                const stopTypeDollarLabel = document.getElementById('stop_type_dollar_label');
                 if (stopTypeDollarLabel && isVisible(stopTypeDollarLabel)) {
-                    stopTypeDollarLabel.textContent = e.target.value;
+                    elementTextContent(stopTypeDollarLabel, e.target.value);
                 }
-                processPriceRequest();
+                Price.processPriceRequest();
             });
         }
 
@@ -356,15 +320,15 @@ var TradingEvents = (function () {
          * attach event to purchase buttons to buy the current contract
          */
         $('.purchase_button').on('click dblclick', function () {
-            if (!page.client_status_detected('unwelcome') && !isVisible(document.getElementById('confirmation_message_container'))) {
-                var id = this.getAttribute('data-purchase-id'),
+            if (!Client.status_detected('unwelcome') && !isVisible(document.getElementById('confirmation_message_container'))) {
+                const id = this.getAttribute('data-purchase-id'),
                     askPrice = this.getAttribute('data-ask-price');
 
-                var params = { buy: id, price: askPrice, passthrough: {} };
+                const params = { buy: id, price: askPrice, passthrough: {} };
                 Object.keys(this.attributes).forEach(function(attr) {
                     if (attr && this.attributes[attr] && this.attributes[attr].name &&
                             !/data\-balloon/.test(this.attributes[attr].name)) { // do not send tooltip data
-                        var m = this.attributes[attr].name.match(/data\-(.+)/);
+                        const m = this.attributes[attr].name.match(/data\-(.+)/);
 
                         if (m && m[1] && m[1] !== 'purchase-id' && m[1] !== 'passthrough') {
                             params.passthrough[m[1]] = this.attributes[attr].value;
@@ -372,9 +336,10 @@ var TradingEvents = (function () {
                     }
                 }, this);
                 if (id && askPrice) {
+                    $('.purchase_button').css('visibility', 'hidden');
                     BinarySocket.send(params);
                     Price.incrFormId();
-                    processForgetProposals();
+                    Price.processForgetProposals();
                 }
             }
         });
@@ -385,33 +350,34 @@ var TradingEvents = (function () {
         $('#close_confirmation_container, #contract_purchase_new_trade').on('click', function (e) {
             if (e.target) {
                 e.preventDefault();
-                document.getElementById('contract_confirmation_container').style.display = 'none';
-                document.getElementById('contracts_list').style.display = 'flex';
-                processPriceRequest();
+                hideOverlayContainer();
+                Price.processPriceRequest();
             }
         });
 
         /*
          * attach an event to change in barrier
          */
-        var barrierElement = document.getElementById('barrier');
+        const barrierElement = document.getElementById('barrier');
         if (barrierElement) {
-            barrierElement.addEventListener('input', debounce(function (e) {
-                Barriers.validateBarrier();
-                Defaults.set('barrier', e.target.value);
-                processPriceRequest();
-                submitForm(document.getElementById('websocket_form'));
-            }, 1000));
+            $('#barrier')
+                .on('keypress', function(ev) { onlyNumericOnKeypress(ev, [43, 45, 46]); })
+                .on('input', debounce(function (e) {
+                    Barriers.validateBarrier();
+                    Defaults.set('barrier', e.target.value);
+                    Price.processPriceRequest();
+                    submitForm(document.getElementById('websocket_form'));
+                }, 1000));
         }
 
         /*
          * attach an event to change in low barrier
          */
-        var lowBarrierElement = document.getElementById('barrier_low');
+        const lowBarrierElement = document.getElementById('barrier_low');
         if (lowBarrierElement) {
             lowBarrierElement.addEventListener('input', debounce(function (e) {
                 Defaults.set('barrier_low', e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -419,11 +385,11 @@ var TradingEvents = (function () {
         /*
          * attach an event to change in high barrier
          */
-        var highBarrierElement = document.getElementById('barrier_high');
+        const highBarrierElement = document.getElementById('barrier_high');
         if (highBarrierElement) {
             highBarrierElement.addEventListener('input', debounce(function (e) {
                 Defaults.set('barrier_high', e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -431,11 +397,11 @@ var TradingEvents = (function () {
         /*
          * attach an event to change in digit prediction input
          */
-        var predictionElement = document.getElementById('prediction');
+        const predictionElement = document.getElementById('prediction');
         if (predictionElement) {
             predictionElement.addEventListener('change', debounce(function (e) {
                 Defaults.set('prediction', e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -443,14 +409,14 @@ var TradingEvents = (function () {
         /*
          * attach an event to change in amount per point for spreads
          */
-        var amountPerPointElement = document.getElementById('amount_per_point');
+        const amountPerPointElement = document.getElementById('amount_per_point');
         if (amountPerPointElement) {
             amountPerPointElement.addEventListener('input', debounce(function (e) {
                 if (isStandardFloat(e.target.value)) {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
                 Defaults.set('amount_per_point', e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -458,14 +424,14 @@ var TradingEvents = (function () {
         /*
          * attach an event to change in stop type for spreads
          */
-        var stopTypeEvent = function (e) {
+        const stopTypeEvent = function (e) {
             Defaults.set('stop_type', e.target.value);
-            processPriceRequest();
+            Price.processPriceRequest();
         };
 
-        var stopTypeElement = document.querySelectorAll('input[name="stop_type"]');
+        const stopTypeElement = document.querySelectorAll('input[name="stop_type"]');
         if (stopTypeElement) {
-            for (var i = 0, len = stopTypeElement.length; i < len; i++) {
+            for (let i = 0, len = stopTypeElement.length; i < len; i++) {
                 stopTypeElement[i].addEventListener('click', stopTypeEvent);
             }
         }
@@ -473,14 +439,14 @@ var TradingEvents = (function () {
         /*
          * attach an event to change in stop loss input value
          */
-        var stopLossElement = document.getElementById('stop_loss');
+        const stopLossElement = document.getElementById('stop_loss');
         if (stopLossElement) {
             stopLossElement.addEventListener('input', debounce(function (e) {
                 if (isStandardFloat(e.target.value)) {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
                 Defaults.set('stop_loss', e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -488,59 +454,49 @@ var TradingEvents = (function () {
         /*
          * attach an event to change in stop profit input value
          */
-        var stopProfitElement = document.getElementById('stop_profit');
+        const stopProfitElement = document.getElementById('stop_profit');
         if (stopProfitElement) {
             stopProfitElement.addEventListener('input', debounce(function (e) {
                 if (isStandardFloat(e.target.value)) {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
                 Defaults.set('stop_profit', e.target.value);
-                processPriceRequest();
+                Price.processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
 
         // For verifying there are 2 digits after decimal
-        var isStandardFloat = (function(value) {
+        const isStandardFloat = (function(value) {
             return (!isNaN(value) && value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length > 2);
         });
 
-        var init_logo = document.getElementById('trading_init_progress');
+        const init_logo = document.getElementById('trading_init_progress');
         if (init_logo) {
             init_logo.addEventListener('click', debounce(function () {
                 reloadPage();
             }));
         }
 
-        var tip = document.getElementById('symbol_tip');
+        const tip = document.getElementById('symbol_tip');
         if (init_logo) {
             tip.addEventListener('click', debounce(function (e) {
-                var url = e.target.getAttribute('target');
-                load_with_pjax(url);
+                window.location.href = e.target.getAttribute('target');
             }));
         }
-
-        /*
-         * attach datepicker and timepicker to end time durations
-         * have to use jquery
-         */
-        attachTimePicker();
-        $('#expiry_time').on('focus click', attachTimePicker);
     };
 
-    function attachTimePicker() {
-        var timePickerInst = new TimePicker('#expiry_time');
-        var date_start = document.getElementById('date_start').value;
-        var now = !date_start || date_start === 'now';
-        var current_moment = now ? (window.time ? window.time : moment.utc()) : parseInt(date_start) * 1000;
+    const attachTimePicker = function() {
+        const timePickerInst = new TimePicker('#expiry_time');
+        const date_start = document.getElementById('date_start').value;
+        const now = !date_start || date_start === 'now';
+        const current_moment = now ? (window.time ? window.time : moment.utc()) : parseInt(date_start) * 1000;
         timePickerInst.hide();
         timePickerInst.show(current_moment);
-    }
+    };
 
     return {
-        init                : initiate,
-        onExpiryTypeChange  : onExpiryTypeChange,
-        onDurationUnitChange: onDurationUnitChange,
+        init: initiate,
     };
 })();
 

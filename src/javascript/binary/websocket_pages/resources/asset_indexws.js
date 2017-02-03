@@ -1,10 +1,10 @@
-var AssetIndex = (function() {
+const AssetIndex = (function() {
     'use strict';
 
-    var marketColumns;
+    let marketColumns;
 
     // Search and Remove (to decrease the next search count)
-    var getSymbolInfo = function(qSymbol, activeSymbols) {
+    const getSymbolInfo = function(qSymbol, activeSymbols) {
         return activeSymbols.filter(function(sy, id) {
             if (sy.symbol === qSymbol) {
                 activeSymbols.splice(id, 1);
@@ -18,13 +18,13 @@ var AssetIndex = (function() {
      * This method generates headers for all tables of each market
      * should include headers existed in all assets of each market and its submarkets
      */
-    var getAssetIndexData = function(assetIndex, activeSymbols) {
+    const getAssetIndexData = function(assetIndex, activeSymbols) {
         if (!assetIndex || !activeSymbols) return null;
 
         marketColumns = {};
 
         // index of items in asset_index response
-        var idx = {
+        const idx = {
             symbol     : 0,
             displayName: 1,
             cells      : 2,
@@ -38,11 +38,11 @@ var AssetIndex = (function() {
             },
         };
 
-        for (var i = 0; i < assetIndex.length; i++) {
-            var assetItem = assetIndex[i];
-            var symbolInfo = getSymbolInfo(assetItem[idx.symbol], activeSymbols)[0];
+        for (let i = 0; i < assetIndex.length; i++) {
+            const assetItem = assetIndex[i];
+            const symbolInfo = getSymbolInfo(assetItem[idx.symbol], activeSymbols)[0];
             if (symbolInfo) {
-                var market = symbolInfo.market;
+                const market = symbolInfo.market;
 
                 assetItem.push(symbolInfo);
 
@@ -54,14 +54,14 @@ var AssetIndex = (function() {
                     };
                 }
 
-                var assetCells = assetItem[idx.cells],
+                const assetCells = assetItem[idx.cells],
                     values = {};
-                for (var j = 0; j < assetCells.length; j++) {
-                    var col  = assetCells[j][idx.cellProps.cellName];
+                for (let j = 0; j < assetCells.length; j++) {
+                    const col  = assetCells[j][idx.cellProps.cellName];
 
                     values[col] = assetCells[j][idx.cellProps.cellFrom] + ' - ' + assetCells[j][idx.cellProps.cellTo];
 
-                    var marketCols = marketColumns[market];
+                    const marketCols = marketColumns[market];
                     if (marketCols.columns.indexOf(col) === -1) {
                         marketCols.header.push(assetCells[j][idx.cellProps.cellDisplayName]);
                         marketCols.columns.push(col);
@@ -73,11 +73,10 @@ var AssetIndex = (function() {
         return assetIndex;
     };
 
-    var external = {
+    return {
         getAssetIndexData: getAssetIndexData,
         getMarketColumns : function() { return marketColumns; },
     };
-    return external;
 })();
 
 module.exports = {

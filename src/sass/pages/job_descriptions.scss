@@ -9,13 +9,6 @@
     .one-line {
         margin-bottom: 35px;
     }
-    .grd-grid-3 {
-        text-align: center;
-    }
-    .grd-grid-9, .grd-grid-3, .grd-row-padding {
-        padding-left: 0;
-        padding-right: 0;
-    }
     img.responsive {
         margin-top: 1.1em;
         width: 50%;
@@ -23,9 +16,6 @@
     h2 {
         padding-left: 10px;
         padding-right: 10px;
-    }
-    .nowrap {
-        white-space: nowrap;
     }
     .eq {
         padding: 10px;
@@ -38,12 +28,6 @@
 }
 
 .job-details {
-    .grd-grid-3 .grd-grid-12 {
-        padding-left: 0;
-    }
-    .grd-grid-3 .grd-grid-12:first-child {
-        margin-bottom: 0.3em;
-    }
     .sidebar {
         position: relative;
     }
@@ -63,22 +47,12 @@
         .eq:nth-child(2n+1) {
             border-width: 0;
         }
-        .grd-grid-phablet-6 {
-            border-width: 0 !important;
-        }
-        .grd-grid-phablet-6:nth-child(even) {
-            border-width: 0 0 0 1px !important;
-        }
     }
 }
 @media screen and (max-width: 460px) {
     .open-positions {
         .eq {
             width: 100%;
-        }
-        .grd-grid-mobile-12:not(:first-child) {
-            padding-top: 20px;
-            margin-top: auto !important;
         }
         h1 {
             text-align: center;

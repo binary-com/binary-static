@@ -1,28 +1,28 @@
-var IPHistoryUI = require('./iphistory.ui').IPHistoryUI;
-var IPHistoryData = require('./iphistory.data').IPHistoryData;
+const IPHistoryUI   = require('./iphistory.ui').IPHistoryUI;
+const IPHistoryData = require('./iphistory.data').IPHistoryData;
 
-var IPHistory = (function() {
+const IPHistory = (function() {
     'use strict';
 
-    function responseHandler(response) {
+    const responseHandler = function(response) {
         if (response.error && response.error.message) {
             return IPHistoryUI.displayError(response.error.message);
         }
-        var parsed = response.login_history.map(IPHistoryData.parse);
+        const parsed = response.login_history.map(IPHistoryData.parse);
         return IPHistoryUI.update(parsed);
-    }
+    };
 
-    function init() {
+    const init = function() {
         IPHistoryUI.init();
         BinarySocket.init({
             onmessage: IPHistoryData.calls(responseHandler),
         });
         IPHistoryData.get(50);
-    }
+    };
 
-    function clean() {
+    const clean = function() {
         IPHistoryUI.clean();
-    }
+    };
 
     return {
         init : init,

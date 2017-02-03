@@ -1,22 +1,24 @@
-var Scroll = (function() {
-    var sidebar_scroll = function(elm_selector) {
+const url = require('../base/url').url;
+
+const Scroll = (function() {
+    const sidebar_scroll = function(elm_selector) {
         elm_selector.on('click', '#sidebar-nav li', function() {
-            var clicked_li = $(this);
+            const clicked_li = $(this);
             $.scrollTo($('.section:eq(' + clicked_li.index() + ')'), 500);
             return false;
         }).addClass('unbind_later');
 
         if (elm_selector.length) {
             // grab the initial top offset of the navigation
-            var selector = elm_selector.find('.sidebar');
-            var width = selector.width();
-            var sticky_navigation_offset_top = selector.offset().top;
+            const selector = elm_selector.find('.sidebar');
+            const width = selector.width();
+            const sticky_navigation_offset_top = selector.offset().top;
             // With thanks:
             // http://www.backslash.gr/content/blog/webdevelopment/6-navigation-menu-that-stays-on-top-with-jquery
 
             // our function that decides weather the navigation bar should have "fixed" css position or not.
-            var sticky_navigation = function() {
-                var scroll_top = $(window).scrollTop(); // our current vertical position from the top
+            const sticky_navigation = function() {
+                const scroll_top = $(window).scrollTop(); // our current vertical position from the top
 
                 // if we've scrolled more than the navigation, change its position to fixed to stick to top,
                 // otherwise change it back to relative
@@ -32,14 +34,14 @@ var Scroll = (function() {
             // run our function on load
             sticky_navigation();
 
-            var sidebar_nav = selector.find('#sidebar-nav');
-            var length = elm_selector.find('.section').length;
+            const sidebar_nav = selector.find('#sidebar-nav');
+            const length = elm_selector.find('.section').length;
             $(window).on('scroll', function() {
                 // and run it again every time you scroll
                 sticky_navigation();
 
-                for (var i = 0; i < length; i++) {
-                    var section = $('.section:eq(' + i + ')'),
+                for (let i = 0; i < length; i++) {
+                    const section = $('.section:eq(' + i + ')'),
                         sectionOffset = section.offset(),
                         isOffsetTop = sectionOffset && $(this).scrollTop() >= sectionOffset.top - 5;
                     if (($(window).scrollTop() === 0 || isOffsetTop) && section.css('display') !== 'none') { // ignore hidden elements
@@ -60,15 +62,15 @@ var Scroll = (function() {
         }
     };
 
-    var goToHashSection = function() {
-        if (page.url.location.hash !== '') {
-            $('a[href="' + page.url.location.hash + '"]').click();
+    const goToHashSection = function() {
+        if (url.location.hash !== '') {
+            $('a[href="' + url.location.hash + '"]').click();
         }
     };
 
-    var scrollToHashSection = function() {
-        if (page.url.location.hash) {
-            $.scrollTo($(page.url.location.hash));
+    const scrollToHashSection = function() {
+        if (url.location.hash) {
+            $.scrollTo($(url.location.hash));
         }
     };
 

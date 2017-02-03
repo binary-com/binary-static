@@ -1,23 +1,22 @@
-var MarketTimes = (function() {
+const MarketTimes = (function() {
     'use strict';
 
-    var getSubmarketInfo = function(activeSymbols, submarketDisplayName) {
+    const getSubmarketInfo = function(activeSymbols, submarketDisplayName) {
         return activeSymbols.filter(function(sy) {
             return sy.submarket_display_name === submarketDisplayName;
         });
     };
 
-    var getSymbolInfo = function(qSymbol, activeSymbols) {
+    const getSymbolInfo = function(qSymbol, activeSymbols) {
         return activeSymbols.filter(function(sy) {
             return (sy.symbol === qSymbol);
         });
     };
 
-    var external = {
+    return {
         getSubmarketInfo: getSubmarketInfo,
         getSymbolInfo   : getSymbolInfo,
     };
-    return external;
 })();
 
 module.exports = {

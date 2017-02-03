@@ -1,4 +1,4 @@
-var Cookies = require('./lib/js-cookie');
+const Cookies = require('./lib/js-cookie');
 
 /*
  * Configuration values needed in js codes
@@ -15,9 +15,9 @@ function getAppId() {
 }
 
 function getSocketURL() {
-    var server_url = localStorage.getItem('config.server_url');
+    let server_url = localStorage.getItem('config.server_url');
     if (!server_url) {
-        var loginid = Cookies.get('loginid'),
+        const loginid = Cookies.get('loginid'),
             isReal  = loginid && !/^VRT/.test(loginid),
             toGreenPercent = { real: 100, virtual: 0, logged_out: 0 }, // default percentage
             categoryMap    = ['real', 'virtual', 'logged_out'],
@@ -26,7 +26,7 @@ function getSocketURL() {
 
         // override defaults by cookie values
         if (percentValues && percentValues.indexOf(',') > 0) {
-            var cookiePercents = percentValues.split(',');
+            const cookiePercents = percentValues.split(',');
             categoryMap.map(function(cat, idx) {
                 if (cookiePercents[idx] && !isNaN(cookiePercents[idx])) {
                     toGreenPercent[cat] = +cookiePercents[idx].trim();

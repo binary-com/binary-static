@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: French (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-11-21 14:41+0000\n"
+"PO-Revision-Date: 2016-12-20 17:16+0000\n"
 "Last-Translator: Chloe Chevreton <chloe-che@hotmail.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/binary/static/fr/>\n"
 "Language: fr\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.10-dev\n"
+"X-Generator: Weblate 2.10\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "« L'API %1 » désigne l'ensemble des produits propriétaires de %1, notamment les routines, protocoles, outils et ressources de programmation créés et mis en service par %1, vous permettant d'utiliser une Application enregistrée pour communiquer avec la plateforme de trading %1."
@@ -27,18 +27,6 @@ msgstr "« Je travaille avec plusieurs sociétés affiliées, et celle-ci est d
 
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "« Tiers fournisseur(s) » désigne la tierce partie (non-affiliée) offrant l'accès à différentes caractéristiques et fonctionnalités par le biais de l'API Binary.com."
-
-msgid "$100,000 - $250,000"
-msgstr "100 000 $ - 250 000 $"
-
-msgid "$100,000 - $500,000"
-msgstr "100 000 $ - 500 000 $"
-
-msgid "$25,000 - $100,000"
-msgstr "25 000 $ - 100 000 $"
-
-msgid "$250,000 - $1,000,000"
-msgstr "250 000 $ - 1 000 000 $"
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%2 %1 ont été crédités sur votre compte virtuel %3"
@@ -214,7 +202,9 @@ msgstr "%1 recrute un responsable des réseaux sociaux chargé d'assurer l'optim
 msgid "%1 seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world."
 msgstr "%1 recrute un rédacteur qualifié chargé de concevoir des contenus de qualité permettant de capter de nouveaux prospects tout en communiquant efficacement avec nos clients actuels basés dans le monde entier."
 
-msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
+#, fuzzy
+#| msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
+msgid "%1 supports %2 which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgstr "%1 soutien le <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a>, un organisme de prévention actif dans le secteur des jeux d'argent. Le RGT finance des services de sensibilisation, de prévention et de traitement des problèmes liés au jeu, tout en dirigeant des recherches visant à promouvoir une meilleure compréhension des risques liés aux jeux d'argent. Il gère également une ligne téléphonique afin de fournir des conseils et un soutien humain aux personnes recherchant une aide concernant leurs problèmes de jeu."
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
@@ -274,6 +264,36 @@ msgstr "L'action caritative de %1 soutient les petites associations caritatives 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(durée minimum, par exemple 15 secondes minimum)min"
 
+#, fuzzy
+#| msgid "$100,000 - $250,000"
+msgid "&#36;100,000 - &#36;250,000"
+msgstr "100 000 $ - 250 000 $"
+
+#, fuzzy
+#| msgid "$100,000 - $500,000"
+msgid "&#36;100,001 - &#36;500,000"
+msgstr "100 000 $ - 500 000 $"
+
+#, fuzzy
+#| msgid "$25,000 - $100,000"
+msgid "&#36;25,000 - &#36;50,000"
+msgstr "25 000 $ - 100 000 $"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;250,001 - &#36;500,000"
+msgstr "250 000 $ - 1 000 000 $"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;50,001 - &#36;100,000"
+msgstr "250 000 $ - 1 000 000 $"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;500,001 - &#36;1,000,000"
+msgstr "250 000 $ - 1 000 000 $"
+
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 est l'un de nos partenaires les plus anciens et les plus fiables. Nous travaillons ensemble depuis de nombreuses années.&#8221;"
 
@@ -324,6 +344,11 @@ msgstr "Options (One) Touch"
 
 msgid "* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor."
 msgstr "* Exonéré d'impôt : les bénéfices issus du trading sont exonérés d'impôt dans de nombreux pays. Cependant, il convient de toujours consulter un conseiller fiscal qualifié."
+
+#, fuzzy
+#| msgid "All calls are recorded for training and monitoring purposes"
+msgid "*All calls are recorded for training and monitoring purposes"
+msgstr "Tous les appels sont enregistrés à des fins de suivi et d'optimisation"
 
 msgid ",000"
 msgstr ",000"
@@ -753,7 +778,9 @@ msgstr "Une préférence et une passion pour Linux et les plateformes open sourc
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Capacité à résoudre les problèmes et à proposer des solutions adaptées aux clients de façon proactive"
 
-msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+#, fuzzy
+#| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
 msgstr "Copie scannée d'une facture ou d'un relevé bancaire (documents datés de moins de 3 mois)."
 
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
@@ -797,9 +824,6 @@ msgstr "Jeton d'API"
 
 msgid "API token for third party applications."
 msgstr "Jeton d'authentification API pour applications tierces."
-
-msgid "AUD"
-msgstr "AUD"
 
 msgid "Ability to communicate fluently in the English language, in both oral and written forms"
 msgstr "Capacité à communiquer couramment en anglais, à l'oral comme à l'écrit"
@@ -857,6 +881,16 @@ msgstr "Virement de compte à compte"
 
 msgid "Account balance: "
 msgstr "Solde du compte : "
+
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "La fonction de dépôt est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1\">nous contacter</a> pour obtenir des informations."
+
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "La fonction de dépôt est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1\">nous contacter</a> pour obtenir des informations."
 
 msgid "Accounting"
 msgstr "Comptabilité"
@@ -948,6 +982,9 @@ msgstr "Restrictions applicables à l'Accord"
 msgid "Agreement for documents"
 msgstr "Accord concernant les documents"
 
+msgid "Agricultural, Forestry and Fishery Workers"
+msgstr ""
+
 msgid "All Partnership Options"
 msgstr "Toutes les options de partenariat"
 
@@ -956,9 +993,6 @@ msgstr "Toutes les activités d'affiliation doivent être menées de façon prof
 
 msgid "All barriers in this trading window are expired"
 msgstr "Toutes les barrières de cette fenêtre de trading sont expirées"
-
-msgid "All calls are recorded for training and monitoring purposes"
-msgstr "Tous les appels sont enregistrés à des fins de suivi et d'optimisation"
 
 msgid "All credit card details are submitted directly to the Visa/Mastercard network using the latest SSL encryption technology, in accordance with bank policies."
 msgstr "Toutes les informations relatives aux cartes bancaires sont directement transmises au réseau Visa/MasterCard par le biais de la dernière technologie de cryptage SSL, conformément aux politiques des banques."
@@ -1014,6 +1048,9 @@ msgstr "Une personnalité affirmée, axée sur la vente, capable de s'adapter ra
 
 msgid "An error occured."
 msgstr "Une erreur s'est produite."
+
+msgid "Analyse and test the domains and subdomains listed in the scope."
+msgstr ""
 
 msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
 msgstr "Analysez les marchés grâce à un large éventail d'indicateurs, de zones de prix et de superpositions d'instruments."
@@ -1114,8 +1151,16 @@ msgstr "Voulez-vous vraiment supprimer ce jeton de façon permanente ?"
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "Voulez-vous vraiment révoquer l'accès à cette application de façon permanente ?"
 
+#, fuzzy
+#| msgid "Are you sure that you want to permanently revoke access to application"
+msgid "Are you sure that you want to permanently revoke connection to"
+msgstr "Voulez-vous vraiment révoquer l'accès à cette application de façon permanente ?"
+
 msgid "Are your site visitors interested in:"
 msgstr "Les visiteurs de votre site souhaitent-ils :"
+
+msgid "Armed Forces"
+msgstr ""
 
 msgid "As Internal Auditor, you will perform unique, risk-based internal audits on the Binary Ltd. Group of companies. You will also be involved in risk management, evaluation of regulatory compliance, as well as work with the Head of Departments to improve business processes and support the realization of audit recommendations."
 msgstr "En tant qu'auditeur interne, vous réaliserez des audits internes basés sur les risques pour le groupe de sociétés Binary Ltd. Vous interviendrez également dans la gestion du risque, l'évaluation de la conformité réglementaire, tout en collaborant avec le directeur du service d'audit interne pour améliorer les processus opérationnels et promouvoir la réalisation des recommandations d'audit."
@@ -1183,9 +1228,6 @@ msgstr "Assister la directrice de la conformité dans l'obtention des licences n
 msgid "Assisting with the regulatory and statutory audit of Binary Group companies worldwide"
 msgstr "Contribuer au bon déroulement de l'audit réglementaire et légal des sociétés Binary Group à l'international"
 
-msgid "At %1, we consider the strength and security of our trading platform to be critically important."
-msgstr "Chez %1, nous accordons une importance particulière à la fiabilité et à la sécurité de notre plateforme de trading."
-
 msgid "At any time and for any reason or no reason, the Company, in its sole discretion, may:"
 msgstr "À tout moment, avec ou sans raison et pour quelque raison que ce soit, la Société peut, à sa seule discrétion :"
 
@@ -1209,9 +1251,6 @@ msgstr "Australie"
 
 msgid "Authenticate"
 msgstr "Authentification"
-
-msgid "Authenticate your account"
-msgstr "Authentifier votre compte"
 
 msgid "Authentication"
 msgstr "Authentification"
@@ -1294,6 +1333,11 @@ msgstr "Plateformes basiques"
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr "Avant que nous puissions procéder à l'ouverture d'un compte pour vous permettre de négocier ou d'investir dans des Produits d'investissement par l'intermédiaire de BIEL, nous sommes dans l'obligation de déterminer si les Produits d'investissement ou les services que vous avez sélectionnés sont adaptés à votre situation, et de vous avertir, le cas échéant, du caractère inapproprié de tout produit ou service en fonction des informations que vous nous fournissez. La décision d'ouvrir un compte et d'utiliser nos produits ou services vous appartient. Il est de votre responsabilité de comprendre les risques qu'impliquent nos produits ou services."
 
+#, fuzzy
+#| msgid "More benefits"
+msgid "Benefits"
+msgstr "Avantages supplémentaires"
+
 msgid "Benefits of being a Payment Agent"
 msgstr "Avantages associés au statut d'agen"
 
@@ -1357,7 +1401,9 @@ msgstr "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas,
 msgid "Binary (V) Ltd"
 msgstr "Binary (V) Ltd"
 
-msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">view licence</a>."
+#, fuzzy
+#| msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">view licence</a>."
+msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016.pdf\" target=\"_blank\">view licence</a>."
 msgstr "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, République de Vanuatu. Société autorisée et réglementée par la Commission des Services Financiers du Vanuatu :  <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\"> afficher la licence</a>."
 
 msgid "Binary Bot"
@@ -1371,6 +1417,9 @@ msgstr "Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2,
 
 msgid "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgstr "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
+
+msgid "Binary Group Services Sdn Bhd, Zweigstelle Berlin, Friedrichstraße 68, 10117 Berlin"
+msgstr ""
 
 msgid "Binary Group Services is searching for talented and motivated Perl developers who are looking for a chance to excel. If you have the skill set we seek, you'll become a valued member of a highly competent back-end development team engaged in driving our binary options trading systems to new heights."
 msgstr "Binary Group Services recrute des développeurs Perl talentueux et motivés, désireux d'exceller dans leur domaine. Si vous possédez les compétences que nous recherchons, vous deviendrez un maillon indispensable de notre équipe experte en développement back-end, chargée de propulser nos systèmes de trading d'options binaires au sommet du marché."
@@ -1587,9 +1636,6 @@ msgstr "Caisse"
 msgid "Cashier Password"
 msgstr "Mot de passe de la page « Caisse »"
 
-msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgstr "La page Caisse est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1\">nous contacter</a> pour obtenir des informations supplémentaires."
-
 msgid "Cashier password"
 msgstr "Mot de passe de la page « Caisse »"
 
@@ -1628,6 +1674,9 @@ msgstr "Familiarisez-vous avec certains termes techniques avant de commencer."
 
 msgid "Check out the payment methods accepted by the payment agents in the list below."
 msgstr "Vérifiez les méthodes de paiement acceptées par les agents de paiement dans la liste ci-dessous."
+
+msgid "Chief Executives, Senior Officials and Legislators"
+msgstr ""
 
 msgid "Choose Asian Rise/Fall when you want to profit from the market ending higher or lower than the average price."
 msgstr "Sélectionnez les options Asiatiques (hausse/baisse) pour prédire si le marché terminera à un cours supérieur ou inférieur à la moyenne des cours."
@@ -1713,6 +1762,14 @@ msgstr "Les citoyens des pays suivants ne sont pas autorisés à ouvrir un compt
 msgid "Classification of assets requiring hedge"
 msgstr "Classification of assets requiring hedge"
 
+#, fuzzy
+#| msgid "Complaints and Disputes"
+msgid "Cleaners and Helpers"
+msgstr "Réclamations et litiges"
+
+msgid "Clerks"
+msgstr ""
+
 msgid "Click here to retry"
 msgstr "Cliquez ici pour réessayer"
 
@@ -1726,7 +1783,7 @@ msgid "Clients agree to be fully and personally liable for the due settlement of
 msgstr "Les clients acceptent d'assumer personnellement l'entière responsabilité du règlement de chaque transaction effectuée par le biais de leur compte Binary.com. Cette responsabilité couvre également toute transaction effectuée par des membres de la famille du Client ou par des personnes de son entourage ayant obtenu l'accès au compte. Il incombe aux clients de s'assurer d'être les seuls à contrôler l'accès au compte, et de veiller à ce qu'aucun mineur ne puisse accéder aux activités de trading disponibles sur le site Web. Quoi qu'il advienne, les Clients restent entièrement responsables de toutes les positions éventuelles ouvertes sur leur compte, et de toutes les transactions réglées par carte bancaire et effectuées sur le site pour leur compte. Chaque Client s'engage également à indemniser la Société pour l'ensemble des coûts et pertes de quelque forme que ce soit que la Société pourrait encourir en conséquence directe ou indirecte d'un manquement du Client à mettre en œuvre ou à régler une telle transaction. Les dettes de jeu en ligne sont régies par la loi de l'Île de Man."
 
 msgid "Clients agree to comply with the reasonable requests made by the Company for the purpose of verifying compliance with this term."
-msgstr ""
+msgstr "Les clients acceptent de satisfaire les demandes raisonnables formulées par la Société dans une optique de vérification de la conformité à cette condition."
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. Binary.com is not available in the Republic of Vanuatu."
 msgstr "Les clients basés dans le reste du monde (sauf dans certains pays : États-Unis, Costa Rica, Hong-Kong) pourront ouvrir leur compte MetaTrader 5 Forex et CFD auprès de Binary (V) Ltd. Binary.com n'est pas disponible au Vanuatu."
@@ -1864,6 +1921,11 @@ msgstr "Gestion des conflits d'intérêts"
 #| msgid "Connection error: Please view the progress at your portfolio page."
 msgid "Connection error: Please check your internet connection."
 msgstr "Erreur de connexion : veuillez visualiser la progression sur votre page de portefeuille."
+
+#, fuzzy
+#| msgid "Construction"
+msgid "Connections"
+msgstr "Construction"
 
 msgid "Construction"
 msgstr "Construction"
@@ -2012,6 +2074,9 @@ msgstr "Pays de résidence"
 msgid "Cover is made available on the basis of the depositor rather than on the basis of the number of deposits, meaning that if an individual has multiple accounts he will only be covered as to €20,000 on the global amount. Any other amount exceeding such threshold is not protected and will thus have to be borne by the investor."
 msgstr "La couverture est calculée sur la base du déposant plutôt que sur la base du nombre de dépôts. Par conséquent, si un individu détient plusieurs comptes, le montant global de la couverture ne pourra excéder 20 000 €. Tout montant supérieur à ce plafond n'est pas pris en compte et devra donc être supporté par l'investisseur."
 
+msgid "Craft, Metal, Electrical and Electronics Workers"
+msgstr ""
+
 msgid "Create"
 msgstr "Créer"
 
@@ -2155,9 +2220,6 @@ msgstr "Effectuer un dépôt de %2 %1 en argent virtuel sur votre compte %3"
 
 msgid "Deposit Bonus"
 msgstr "Bonus de dépôt"
-
-msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgstr "La fonction de dépôt est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1\">nous contacter</a> pour obtenir des informations."
 
 msgid "Deposit of"
 msgstr "Dépôt de"
@@ -2336,9 +2398,6 @@ msgstr "    "
 msgid "EU Passport Rights"
 msgstr "Droits relatifs au passeport européen"
 
-msgid "EUR"
-msgstr "EUR"
-
 msgid "Each binary option contract runs for a set time - with %1 you can choose a contract that runs between 10 seconds and 365 days."
 msgstr "Chaque contrat d'option binaire est actif pendant une période prédéfinie. Avec %1, vous pouvez sélectionner une période de 10 secondes à 365 jours."
 
@@ -2353,6 +2412,9 @@ msgstr "Each option transaction has a specified expiry time and date, known as t
 
 msgid "Each party to this Agreement represents and warrants to the other that it has, and will retain throughout the term of this Agreement all right, title, and authority to enter into this Agreement, to grant to the other party the rights and licences granted in this Agreement, and to perform all of its obligations under this Agreement."
 msgstr "Chaque partie du présent Accord déclare et garantit à l'autre partie que, pour la durée de cet Accord, elle conserve tout droit, titre et autorité à conclure cet Accord, à octroyer à l'autre partie les licences et les droits accordés en vertu de cet Accord et à remplir toutes ses obligations dans le cadre de cet Accord."
+
+msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
+msgstr ""
 
 msgid "Earn commissions by introducing new customers to %1."
 msgstr "Percevez des commissions en faisant découvrir %1 à de nouveaux clients."
@@ -2633,6 +2695,9 @@ msgstr "Explication"
 msgid "Explore advanced trading features with the Next-Gen app for web and mobile."
 msgstr "Découvrez des fonctions de trading avancées avec l'application Web et mobile Next-Gen."
 
+msgid "Explore our HackerOne bounty programme"
+msgstr ""
+
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Solide expérience de la mise en application des principes et normes de programmation avancée."
 
@@ -2713,6 +2778,11 @@ msgstr "Actif financier"
 
 msgid "Financial Information"
 msgstr "Information financière"
+
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "La fonction de retrait est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1\">nous contacter</a> pour obtenir des informations supplémentaires."
 
 msgid "Financial Security"
 msgstr "Sécurité financière"
@@ -2855,9 +2925,6 @@ msgstr "De plus, la Société, dans les circonstances décrites ci-dessus ou dan
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgstr "En outre, la Société décline toute responsabilité concernant tout type de dysfonctionnement, d'impossibilité d'accès, ou de mauvaises conditions d'utilisation de l'API %1 pouvant découler d'équipements inappropriés, de perturbations liées aux fournisseurs d'accès Internet, de la saturation du réseau Internet ou de toute autre situation."
 
-msgid "GBP"
-msgstr "GBP"
-
 msgid "GMT"
 msgstr "GMT"
 
@@ -2915,6 +2982,11 @@ msgstr "Obtenez un prix"
 msgid "Getting Started"
 msgstr "Pour débuter"
 
+#, fuzzy
+#| msgid "Getting Started"
+msgid "Getting started"
+msgstr "Pour débuter"
+
 msgid "Give Me More Money!"
 msgstr "Je souhaite générer davantage de profits !"
 
@@ -2939,6 +3011,9 @@ msgstr "Droit applicable et juridiction"
 msgid "Governing law and jurisdiction"
 msgstr "Droit applicable et juridiction"
 
+msgid "Government Officers"
+msgstr ""
+
 msgid "Grab a wide range of third-party apps for binary options trading in the <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Shop</a>."
 msgstr "Accédez à un large éventail d'applications tierces dédiées au trading d'options binaires sur la <a href=\"https://shop.binary.com\" target=\"_blank\"> Boutique Binary.com</a> ."
 
@@ -2953,9 +3028,6 @@ msgstr "Gains importants. Gagnez jusqu'à 35%"
 
 msgid "Group History"
 msgstr "Histoire du groupe"
-
-msgid "Hackerone - for IT security professionals"
-msgstr "Hackerone - pour les professionnels de la sécurité des TI"
 
 msgid "Hands-on test automation experience a plus"
 msgstr "Une expérience directe de l'automatisation de tests serait un plus"
@@ -2993,8 +3065,13 @@ msgstr "Les contrats « Supérieur/Inférieur » seront remboursés à leur pr
 msgid "Higher/Lower trades"
 msgstr "Contrats Supérieur/Inférieur"
 
+#, fuzzy
+#| msgid "Hackerone - for IT security professionals"
+msgid "Hone your security testing skills."
+msgstr "Hackerone - pour les professionnels de la sécurité des TI"
+
 msgid "Hour"
-msgstr ""
+msgstr "Heure"
 
 msgid "Housewife / Househusband"
 msgstr "Au foyer"
@@ -3110,7 +3187,7 @@ msgid "If any provision of this Agreement is held to be void or unenforceable in
 msgstr "Si toute disposition de cet Accord est jugée nulle ou inapplicable en intégralité ou en partie, la disposition contestée (ou une partie de celle-ci) sera considérée comme devant être supprimée de cet Accord et les dispositions restantes (incluant le reste de la disposition affectée) continueront d'être valides et applicables."
 
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
-msgstr ""
+msgstr "Si la Société (à sa seule discrétion) estime qu'un Client ne respecte pas ces conditions, ou si un Client ne satisfait pas une demande raisonnable d'informations formulée par la Société, la Société peut supprimer le compte dudit Client et conserver l'ensemble des fonds qui s'y trouvent."
 
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "Si la Société est dans l'obligation légale de partager vos informations personnelles ou financières en vertu du droit ou de la réglementation applicable ou conformément à l'ordonnance d’un tribunal compétent ou d'un organisme gouvernemental, la Société, sauf si la loi l'interdit, vous en avisera immédiatement, afin de vous permettre de prendre les mesures qu'elle juge appropriées pour assurer la protection de telles informations. Ce type de divulgation légale ne peut en aucun cas être interprétée comme une infraction à cet Accord relatif aux Conditions générales."
@@ -3147,6 +3224,9 @@ msgstr "Avec Binary.com, vous pouvez vendre vos options avant leur expiration af
 
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
 msgstr "Si vous ne recevez pas le mail dans les minutes suivantes, veuillez vérifier votre dossier spam/courrier indésirable."
+
+msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
+msgstr ""
 
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "Si vous possédez les compétences que nous recherchons, vous deviendrez un maillon indispensable de notre équipe experte en développement front-end, chargée de propulser nos systèmes de trading d'options binaires au sommet du marché."
@@ -3365,6 +3445,9 @@ msgstr "Options zone In/Out"
 msgid "Income Source"
 msgstr "Source de Revenu"
 
+msgid "Increase your HackerOne reputation to build up credibility and profile visibility."
+msgstr ""
+
 msgid "Indemnification"
 msgstr "Exonération de responsabilité"
 
@@ -3464,7 +3547,9 @@ msgstr "Investment Solicitation Policy"
 msgid "Investment trust"
 msgstr "Investment trust"
 
-msgid "Investments & Dividends"
+#, fuzzy
+#| msgid "Investments & Dividends"
+msgid "Investments &amp; Dividends"
 msgstr "Investissements et dividendes"
 
 msgid "Investor Compensation Scheme"
@@ -4001,6 +4086,11 @@ msgstr "juin"
 msgid "Keep track of your authorised applications."
 msgstr "Consultez la liste de vos applications autorisées."
 
+#, fuzzy
+#| msgid "Keep track of your authorised applications."
+msgid "Keep track of your authorised connections."
+msgstr "Consultez la liste de vos applications autorisées."
+
 msgid "Key facts"
 msgstr "Informations clés"
 
@@ -4079,10 +4169,14 @@ msgstr "Conformité juridique et réglementaire"
 msgid "Legal Compliance"
 msgstr "Conformité juridique"
 
-msgid "Less than $100,000"
+#, fuzzy
+#| msgid "Less than $100,000"
+msgid "Less than &#36;100,000"
 msgstr "Moins de 100 000 $"
 
-msgid "Less than $25,000"
+#, fuzzy
+#| msgid "Less than $25,000"
+msgid "Less than &#36;25,000"
 msgstr "Moins de 25 000 $"
 
 msgid "Less than 1 million JPY"
@@ -4139,6 +4233,9 @@ msgstr "Caisse"
 msgid "Log in"
 msgstr "Connexion"
 
+msgid "Log out"
+msgstr "Déconnexion"
+
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Connectez-vous à votre compte affilié %1 et cliquez sur : Finances &rarr; Instructions de paiement."
 
@@ -4159,9 +4256,6 @@ msgstr "Temps de connexion :"
 
 msgid "Login trouble"
 msgstr "Problème de connexion"
-
-msgid "Logout"
-msgstr "Déconnexion"
 
 msgid "Long"
 msgstr "Long"
@@ -4220,8 +4314,18 @@ msgstr "Assurer la sécurité, la détection d'intrusion, la protection contre l
 msgid "Manage the company's cashier system"
 msgstr "Gestion du système de caisse de la société"
 
+#, fuzzy
+#| msgid "Manage your authorised applications."
+msgid "Manage your OAuth connections."
+msgstr "Gestion de vos applications autorisées."
+
 msgid "Manage your authorised applications."
 msgstr "Gestion de vos applications autorisées."
+
+#, fuzzy
+#| msgid "DevOps Manager"
+msgid "Managers"
+msgstr "Responsable DevOps [H/F]"
 
 msgid "Mar"
 msgstr "mars"
@@ -4295,6 +4399,14 @@ msgstr "Maximum global des pertes par jour."
 msgid "Maximum aggregate payouts on open positions"
 msgstr "Maximum global des paiements sur les positions ouvertes"
 
+#, fuzzy
+#| msgid "Maximum aggregate payouts on open positions"
+msgid "Maximum aggregate payouts on open positions per symbol and contract type"
+msgstr "Maximum global des paiements sur les positions ouvertes"
+
+msgid "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
+msgstr ""
+
 msgid "Maximum daily turnover"
 msgstr "Volume maximal des transactions par jour"
 
@@ -4333,6 +4445,9 @@ msgstr "Un minimum de %1 caractères est requis."
 
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Minimum de six lettres minuscules et majuscules avec des chiffres"
+
+msgid "Mining, Construction, Manufacturing and Transport Workers"
+msgstr ""
 
 #, fuzzy
 #| msgid "Minutes"
@@ -4410,9 +4525,6 @@ msgstr "Graphiques multiples"
 
 msgid "My Account"
 msgstr "Mon compte"
-
-msgid "Mycrowd - for Binary.com traders"
-msgstr "Mycrowd - pour les traders Binary.com"
 
 msgid "Name"
 msgstr "Nom"
@@ -4756,10 +4868,14 @@ msgstr "Notre expérience"
 msgid "Our trading screen is simple to use:"
 msgstr "Notre écran de trading est simple d'utilisation :"
 
-msgid "Over $1,000,000"
+#, fuzzy
+#| msgid "Over $1,000,000"
+msgid "Over &#36;1,000,000"
 msgstr "Plus de 1 000 000 $"
 
-msgid "Over $500,001"
+#, fuzzy
+#| msgid "Over $500,001"
+msgid "Over &#36;500,001"
 msgstr "Plus de 500 001 $"
 
 msgid "Over 1 million registered accounts worldwide"
@@ -4897,6 +5013,9 @@ msgstr "Modules Perl"
 msgid "Permissions"
 msgstr "Permissions"
 
+msgid "Personal Care, Sales and Service Workers"
+msgstr ""
+
 msgid "Personal Details"
 msgstr "Informations personnelles"
 
@@ -4914,6 +5033,9 @@ msgstr "Pip (« percentage in point »)"
 
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr "Le « pip » désigne une unité de variation du taux de change, généralement une unité de la quatrième décimale (c'est-à-dire 0,0001)."
+
+msgid "Plant and Machine Operators and Assemblers"
+msgstr ""
 
 msgid "Platform Comparison"
 msgstr "Comparaison des plateformes"
@@ -4938,9 +5060,6 @@ msgstr "Veuillez consulter vos e-mails pour obtenir le jeton nécessaire à la r
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "Veuillez sélectionner la devise avec laquelle vous souhaitez effectuer des transactions."
-
-msgid "Please complete the following financial assessment form before continuing."
-msgstr "Veuillez remplir le formulaire d'évaluation financière suivant avant de continuer."
 
 msgid "Please confirm the trade on your statement before proceeding."
 msgstr "Veuillez confirmer l'opération sur votre relevé avant de continuer."
@@ -5191,6 +5310,11 @@ msgstr "Création de contenus destinés à la diffusion sur le site Web et le bl
 msgid "Professional Clients"
 msgstr "Clients professionnels"
 
+#, fuzzy
+#| msgid "Market Professionals"
+msgid "Professionals"
+msgstr "Professionnels du marché"
+
 msgid "Proficiency in a scripting language - Perl preferred"
 msgstr "Parfaite maîtrise d'un langage de script (idéalement Perl)"
 
@@ -5304,6 +5428,9 @@ msgstr "Accédez à des informations sur les fonctions, les caractéristiques, l
 msgid "Read about the five types of trade offered by %1."
 msgstr "Découvrez les cinq types d'option disponibles chez %1."
 
+msgid "Read and understand our HackerOne bug bounty programme policy."
+msgstr ""
+
 msgid "Read our blog for the stories and ideas that inspire us"
 msgstr "Consultez notre blog pour découvrir les histoires et les idées qui nous inspirent"
 
@@ -5381,9 +5508,6 @@ msgstr "Transaction Regent Pacific"
 
 msgid "Register"
 msgstr "Inscription"
-
-msgid "Register to become a tester using the links below:"
-msgstr "Inscrivez-vous pour rejoindre notre groupe de testeurs en utilisant les liens ci-dessous :"
 
 msgid "Regulator:"
 msgstr "Organisme de réglementation :"
@@ -5583,11 +5707,16 @@ msgstr "Clause de non-responsabilité quant à la sécurité"
 msgid "Security Statement"
 msgstr "Déclaration de sécurité"
 
+#, fuzzy
+#| msgid "User Testing"
+msgid "Security Testing"
+msgstr "Test utilisateur"
+
 msgid "Security and Privacy"
 msgstr "Confidentialité et sécurité"
 
-msgid "Select Country"
-msgstr "Sélectionnez un pays"
+msgid "Security testing opportunities"
+msgstr ""
 
 msgid "Select market"
 msgstr "Sélectionnez un marché"
@@ -5706,17 +5835,11 @@ msgstr "Dans l'éventualité où ces dépenses ne pourraient être couvertes par
 msgid "Show payment agents for:"
 msgstr "Montrer les agents de paiement pour:"
 
-msgid "Sign Up to Test Our Platform"
-msgstr "Inscrivez-vous pour tester notre plateforme"
-
 msgid "Sign me up"
 msgstr "Inscription"
 
 msgid "Sign out"
 msgstr "Désinscription"
-
-msgid "Sign up as a tester and look for Binary.com-related projects."
-msgstr "Inscrivez-vous en tant que testeur et recherchez des projets Binary.com."
 
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "Expérience significative dans les domaines des médias sociaux, du marketing et/ou de la publicité"
@@ -5772,6 +5895,11 @@ msgstr "Développement de logiciel (Perl)"
 msgid "Sorry, account opening is unavailable."
 msgstr "Désolé, l'ouverture de compte est indisponible."
 
+#, fuzzy
+#| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
+msgstr "La fonction de dépôt est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1\">nous contacter</a> pour obtenir des informations."
+
 msgid "Sorry, an error occurred while processing your account."
 msgstr "Désolé, une erreur est survenu pendant le traitement de votre compte."
 
@@ -5786,6 +5914,9 @@ msgstr "Désolé, cette option n'est pas disponible."
 
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "Désolé, vous avez entré un mot de passe de caisse incorrect"
+
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "Désolé, votre compte n'est autorisé pour aucun achat supplémentaire de contrat."
 
 msgid "Spam - We do not condone Spam"
 msgstr "Spam : nous ne tolérons pas les spams"
@@ -5928,6 +6059,9 @@ msgstr "Sujet à n'importe quelles instructions spécifiques fournies par vous, 
 msgid "Submit"
 msgstr "Envoyer"
 
+msgid "Submit a report on HackerOne of any potential security issue you found, along with any suggestions you have to resolve the issue."
+msgstr ""
+
 msgid "Submit your CV and Cover Letter"
 msgstr "Envoyez votre CV et votre lettre de motivation"
 
@@ -6014,6 +6148,9 @@ msgstr "Conditions générales"
 
 msgid "Tertiary"
 msgstr "Supérieur"
+
+msgid "Test our products and services for security vulnerabilities. In the process, you’ll earn a monetary reward for any verifiable issues that you find, courtesy of our bug bounty programme."
+msgstr ""
 
 msgid "Test-run %1, and sharpen your trading skills, with a no-risk, no-commitment, virtual account."
 msgstr "Essayez %1 et développez vos compétences de trader avec un compte virtuel sans risques, sans engagement."
@@ -6300,7 +6437,11 @@ msgstr "La société ne garantit pas la capacité de vendre un contrat avant son
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
 msgstr "La société offre plusieurs méthodes de dépôt, avec des délais spécifiques en fonction de la méthode choisie. Certaines de ces méthodes ne peuvent être utilisées pour effectuer des retraits. Toutes les informations relatives aux méthodes de dépôt disponibles et aux délais de règlement sont accessibles <a href='%1' class='pjaxload'>ici.</a>"
 
-msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
+#, fuzzy
+#| msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
+msgid ""
+"The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer\n"
+"                funds at the level: <strong>medium protection</strong>."
 msgstr "La société détient les fonds du client dans des compte bancaire séparés des comptes opérationnels qui, en cas d'insolvabilité, ne font pas partie des biens de la Société. Ceci répond aux exigences de la Gambling Commission en ce qui concerne la séparation des fonds du client au niveau: <strong>protection moyenne</strong>."
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: medium protection."
@@ -6584,9 +6725,6 @@ msgstr "Événement marquant : nous recevons un double prix octroyé par le Fina
 msgid "This is the current price at which an underlying can be bought or sold at a particular time."
 msgstr "Il s'agit du prix actuel auquel un sous-jacent peut être acheté ou vendu à un moment donné."
 
-msgid "This is why we're now recruiting additional testers for each new release, to ensure that our platform remains stable and secure with every enhancement deployed."
-msgstr "C'est pourquoi nous recrutons actuellement des testeurs supplémentaires pour chaque nouvelle version, afin d'assurer la stabilité et la sécurité de notre plateforme d'une mise à jour à l'autre."
-
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "Cet avertissement n'explique pas tous les risques liés aux investissements ou produits associés, et ne permet pas d'évaluer ces risques en fonction de votre situation personnelle. Il est important que vous compreniez pleinement les risques auxquels vous vous exposez avant de prendre la décision de négocier ou de vendre un produit d'investissement par l'intermédiaire de Binary.com. En cas de doutes concernant les risques associés aux produits d'investissement, il convient de faire appel à un professionnel pour obtenir des conseils adaptés."
 
@@ -6649,7 +6787,9 @@ msgstr "à"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "Pour postuler, envoyez votre CV et votre lettre de motivation à <span id=\"hr_contact_eaddress\"></span>."
 
-msgid "To authenticate your account, kindly email the following to %1"
+#, fuzzy
+#| msgid "To authenticate your account, kindly email the following to %1"
+msgid "To authenticate your account, kindly email the following to %1:"
 msgstr "Pour authentifier votre compte, veuillez envoyer par émail avec les informations suivantes à %1"
 
 msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
@@ -6874,9 +7014,6 @@ msgstr "URL"
 msgid "US Patents"
 msgstr "Brevets des États-Unis"
 
-msgid "USD"
-msgstr "USD"
-
 msgid "UX / UI experience"
 msgstr "Expérience UX / UI"
 
@@ -6967,9 +7104,6 @@ msgstr "Profitez des possibilités qu'offre notre site Web pour vous entrainer g
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr "utiliser, exécuter et diffuser votre Application et son contenu à des fins de commercialisation, de démonstration et de mise à disposition de votre Application auprès de nos clients ; et    "
 
-msgid "User Testing"
-msgstr "Test utilisateur"
-
 msgid "Using our website, customers can trade currencies, indices, stocks and commodities 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
 msgstr "Par le biais de notre site Web, les clients peuvent négocier les devises, les indices, les actions ou les matières premières 24h/24, 7j/7. Nous offrons les tarifs les plus flexibles et la gamme de produits la plus complète du marché."
 
@@ -7001,6 +7135,11 @@ msgstr "Affichage"
 
 msgid "View Details"
 msgstr "Afficher les informations"
+
+#, fuzzy
+#| msgid "View statement"
+msgid "View Statement"
+msgstr "Voir la déclaration"
 
 msgid "View Updated Portfolio"
 msgstr "Vue du Portefeuille Actualisé"
@@ -7056,8 +7195,18 @@ msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl
 msgid "Waiting for entry tick."
 msgstr "En attente du tick d'entrée."
 
+#, fuzzy
+#| msgid "Waiting for entry tick."
+msgid "Waiting for exit tick."
+msgstr "En attente du tick d'entrée."
+
 msgid "Walkthrough Guide"
 msgstr "Guide interactif"
+
+#, fuzzy
+#| msgid "At %1, we consider the strength and security of our trading platform to be critically important."
+msgid "Want to help us enhance the strength and security of our platform?"
+msgstr "Chez %1, nous accordons une importance particulière à la fiabilité et à la sécurité de notre plateforme de trading."
 
 msgid "Want to learn more?"
 msgstr "Envie d'en savoir plus ?"
@@ -7428,9 +7577,6 @@ msgstr "Limites de retrait"
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr "Les retraits sur votre compte ne sont pas autorisés actuellement. Veuillez contacter %1 pour déverrouiller cette fontion."
 
-msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgstr "La fonction de retrait est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1\">nous contacter</a> pour obtenir des informations supplémentaires."
-
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr "Développement d'un logiciel de tarification pour notre plateforme de trading, en collaboration étroite avec les autres membres de l'équipe"
 
@@ -7506,9 +7652,6 @@ msgstr "Vous n'avez pas l'autorisation de proposer aux clients de votre réseau 
 msgid "You are not allowed to store any Content (such as feed data)."
 msgstr "Vous n'avez pas l'autorisation de stocker des Contenus quels qu'ils soient (notamment les flux de données)."
 
-msgid "You are not authorized for withdrawal via payment agent."
-msgstr "Vous n'êtes pas habilité à faire des retraits via un agent de paiement."
-
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "Vous ne pouvez prétendre à aucune forme de compensation ou de remboursement de la part de la Société, quelles que soient les circonstances."
 
@@ -7549,6 +7692,11 @@ msgid "You can use an authorized payment agent to process deposits and withdrawa
 msgstr "Vous pouvez utiliser un agent de paiement autorisé pour prendre en charge les dépôts et les retraits pour les méthodes de paiement ou les devises locales non prises en charge par %1. C'est simple."
 
 msgid "You did not change anything."
+msgstr "Vous n'avez effectué aucune modification."
+
+#, fuzzy
+#| msgid "You did not change anything."
+msgid "You do not have any connections."
 msgstr "Vous n'avez effectué aucune modification."
 
 msgid "You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading."
@@ -7616,6 +7764,11 @@ msgstr "Vous pourrez retirer le montant du bonus une fois que le volume de trans
 
 msgid "You must accept the terms and conditions to open an account."
 msgstr "Vous devez accepter les conditions générales pour ouvrir un compte."
+
+#, fuzzy
+#| msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
+msgid "You must complete the knowledge test to activate this account. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgstr "Votre compte est entièrement authentifié. Pour obtenir des informations supplémentaires, veuillez consulter la page d'<a class=\"pjaxload\" href=\"%1\">authentification</a>."
 
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "Pour pouvoir utiliser l'API %1, vous respecter ces Conditions."
@@ -7752,11 +7905,10 @@ msgstr "Votre compte est entièrement authentifié et vos limites de retrait ont
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "Votre compte est entièrement authentifié. Vous pouvez voir vos <a class=\"pjaxload\" href=\"%1\">limites de trading ici</a>."
 
-msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
-msgstr "Votre compte est entièrement authentifié. Pour obtenir des informations supplémentaires, veuillez consulter la page d'<a class=\"pjaxload\" href=\"%1\">authentification</a>."
-
-msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
-msgstr "L'authentification de votre compte n'est pas terminée. Veuillez consulter la page <a href=\"%1\">Authentification</a> pour obtenir des informations supplémentaires."
+#, fuzzy
+#| msgid "Your account does not require authentication at this time."
+msgid "Your account is not fully authenticated."
+msgstr "Votre compte ne doit pas être authentifié en ce moment."
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Votre compte ne sera pas utilisé comme une facilité bancaire et les dépôts ne seront qu'effectués pour utiliser des fonds pour faire des contrats. La Société n'est pas une institution financière, les Clients ne reçoivent pas d'intérêts sur les dépôts. Si vous devriez faire plusieurs dépôts et retraits sans que des contrats commensurables soient faits, nous nous réservons le droit de facturer à votre compte, sans notification antérieure, tous frais bancaires nous aurions contractés avant la fermeture du compte."
@@ -7779,6 +7931,11 @@ msgstr "Votre caisse est verrouillée conformément à votre demande - si vous s
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "Votre caisse est verrouillée conformément à votre demande - si vous souhaitez la déverrouiller, veuillez saisir le mot de passe."
 
+#, fuzzy
+#| msgid "Your settings have been updated successfully."
+msgid "Your changes have been updated successfully."
+msgstr "Vos paramètres ont été actualisés avec succès."
+
 msgid "Your changes have been updated."
 msgstr "Vos modifications ont été prises en compte."
 
@@ -7787,9 +7944,6 @@ msgstr "Vos clients aimeront la plate-forme de trading %1 : nous offrons une ex
 
 msgid "Your current balance is"
 msgstr "Votre solde actuel est de"
-
-msgid "Your details have been updated."
-msgstr "Vos détails ont été actualisés."
 
 msgid "Your funds are safe"
 msgstr "Vos fonds sont sécurisés"
@@ -7829,9 +7983,6 @@ msgstr "Vos risques sont connus"
 
 msgid "Your session duration limit will end in %1 seconds."
 msgstr "Votre limite de durée de session sera atteinte dans %1 secondes."
-
-msgid "Your settings have been updated successfully."
-msgstr "Vos paramètres ont été actualisés avec succès."
 
 msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
 msgstr "Votre jeton a expiré. Veuillez cliquer <a class=\"pjaxload\" href=\"%1\">ici</a> pour relancer le processus de vérification."
@@ -7993,9 +8144,6 @@ msgstr "mois"
 
 msgid "months"
 msgstr "mois"
-
-msgid "not available"
-msgstr "non disponible"
 
 msgid "numbers"
 msgstr "chiffres"
@@ -8257,6 +8405,11 @@ msgstr "{JAPAN ONLY}Binary K.K. Customer Account"
 
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Binary K. K."
+msgid "{JAPAN ONLY}Binary.com page title"
+msgstr "{JAPAN ONLY}Binary K. K."
 
 msgid "{JAPAN ONLY}Branch"
 msgstr "{JAPAN ONLY}Branch"
@@ -8590,17 +8743,11 @@ msgstr "{JAPAN ONLY}JSA_Date_1"
 msgid "{JAPAN ONLY}JSA_Date_2"
 msgstr "{JAPAN ONLY}JSA_Date_2"
 
-msgid "{JAPAN ONLY}JSA_Date_3"
-msgstr "{JAPAN ONLY}JSA_Date_3"
-
 msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
 msgstr "{JAPAN ONLY}JSA_Explanation_1_1)"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
 msgstr "{JAPAN ONLY}JSA_Explanation_1_2)"
-
-msgid "{JAPAN ONLY}JSA_Explanation_1_3)"
-msgstr "{JAPAN ONLY}JSA_Explanation_1_3)"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
 msgstr "{JAPAN ONLY}JSA_Explanation_2_1)"
@@ -8611,23 +8758,11 @@ msgstr "{JAPAN ONLY}JSA_Explanation_2_2)"
 msgid "{JAPAN ONLY}JSA_Explanation_2_3)"
 msgstr "{JAPAN ONLY}JSA_Explanation_2_3)"
 
-msgid "{JAPAN ONLY}JSA_Explanation_3_1)"
-msgstr "{JAPAN ONLY}JSA_Explanation_3_1)"
-
-msgid "{JAPAN ONLY}JSA_Explanation_3_2)"
-msgstr "{JAPAN ONLY}JSA_Explanation_3_2)"
-
-msgid "{JAPAN ONLY}JSA_Explanation_3_3)"
-msgstr "{JAPAN ONLY}JSA_Explanation_3_3)"
-
 msgid "{JAPAN ONLY}JSA_Title_1"
 msgstr "{JAPAN ONLY}JSA_Title_1"
 
 msgid "{JAPAN ONLY}JSA_Title_2"
 msgstr "{JAPAN ONLY}JSA_Title_2"
-
-msgid "{JAPAN ONLY}JSA_Title_3"
-msgstr "{JAPAN ONLY}JSA_Title_3"
 
 msgid "{JAPAN ONLY}Japan Service Announcements"
 msgstr "{JAPAN ONLY}Japan Service Announcements"
@@ -8773,15 +8908,6 @@ msgstr "{JAPAN ONLY}Please note:"
 msgid "{JAPAN ONLY}Pre-Contract Documents"
 msgstr "{JAPAN ONLY}Pre-Contract Documents"
 
-msgid "{JAPAN ONLY}Price of OTC currency option is the calculated value based on multiple elements and is determined by relative trading basically."
-msgstr "{JAPAN ONLY}Price of OTC currency option is the calculated value based on multiple elements and is determined by relative trading basically."
-
-msgid "{JAPAN ONLY}Price of call option will be lower interest rates of the underlying assets is low, but the price of the put option, go up when the interest rates of the underlying assets is low."
-msgstr "{JAPAN ONLY}Price of call option will be lower interest rates of the underlying assets is low, but the price of the put option, go up when the interest rates of the underlying assets is low."
-
-msgid "{JAPAN ONLY}Price of the option, the price of the underlying asset, price fluctuation rate of the underlying assets, the time until the exercise date, subject to any of the impact of interest rates."
-msgstr "{JAPAN ONLY}Price of the option, the price of the underlying asset, price fluctuation rate of the underlying assets, the time until the exercise date, subject to any of the impact of interest rates."
-
 msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 msgstr "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 
@@ -8790,9 +8916,6 @@ msgstr "{JAPAN ONLY}Purchase, Settlement & Resale"
 
 msgid "{JAPAN ONLY}Rakuten Bank"
 msgstr "{JAPAN ONLY}Rakuten Bank"
-
-msgid "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
-msgstr "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
 
 msgid "{JAPAN ONLY}Registration"
 msgstr "{JAPAN ONLY}Registration"
@@ -8895,9 +9018,6 @@ msgstr "{JAPAN ONLY}The particular details of binary options are all the same, n
 
 msgid "{JAPAN ONLY}The payout is the amount that the option seller must pay to the buyer if the buyer exercises his right when the conditions for a payout have been satisfied."
 msgstr "{JAPAN ONLY}The payout is the amount that the option seller must pay to the buyer if the buyer exercises his right when the conditions for a payout have been satisfied."
-
-msgid "{JAPAN ONLY}The price of OTC binary options of the same conditions, (sometimes) the price varies depending on transactions dealers handling financial instruments business."
-msgstr "{JAPAN ONLY}The price of OTC binary options of the same conditions, (sometimes) the price varies depending on transactions dealers handling financial instruments business."
 
 msgid "{JAPAN ONLY}The price of a binary option is affected by not only the change in the underlying asset price, but also the change in remaining time to the exercise point."
 msgstr "{JAPAN ONLY}The price of a binary option is affected by not only the change in the underlying asset price, but also the change in remaining time to the exercise point."
@@ -9049,6 +9169,9 @@ msgstr "{JAPAN ONLY}You set your own personal daily loss limit"
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
+msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
+msgstr ""
+
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
 
@@ -9159,6 +9282,105 @@ msgstr "Informations du compte"
 
 msgid "Terms and Conditions Approval"
 msgstr "Acceptation des conditions générales"
+
+#~ msgid "Please complete the following financial assessment form before continuing."
+#~ msgstr "Veuillez remplir le formulaire d'évaluation financière suivant avant de continuer."
+
+#~ msgid "Your details have been updated."
+#~ msgstr "Vos détails ont été actualisés."
+
+#~ msgid "Logout"
+#~ msgstr "Déconnexion"
+
+#~ msgid "not available"
+#~ msgstr "non disponible"
+
+#, fuzzy
+#~| msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Cashier is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "La page Caisse est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1\">nous contacter</a> pour obtenir des informations supplémentaires."
+
+#, fuzzy
+#~| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Deposit is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "La fonction de dépôt est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1\">nous contacter</a> pour obtenir des informations."
+
+#, fuzzy
+#~| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+#~ msgid "Withdrawal is locked, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+#~ msgstr "La fonction de retrait est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1\">nous contacter</a> pour obtenir des informations supplémentaires."
+
+#~ msgid "You are not authorized for withdrawal via payment agent."
+#~ msgstr "Vous n'êtes pas habilité à faire des retraits via un agent de paiement."
+
+#~ msgid "{JAPAN ONLY}JSA_Date_3"
+#~ msgstr "{JAPAN ONLY}JSA_Date_3"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_1_3)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_1_3)"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_1)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_3_1)"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_2)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_3_2)"
+
+#~ msgid "{JAPAN ONLY}JSA_Explanation_3_3)"
+#~ msgstr "{JAPAN ONLY}JSA_Explanation_3_3)"
+
+#~ msgid "{JAPAN ONLY}JSA_Title_3"
+#~ msgstr "{JAPAN ONLY}JSA_Title_3"
+
+#~ msgid "Sign Up to Test Our Platform"
+#~ msgstr "Inscrivez-vous pour tester notre plateforme"
+
+#~ msgid "Authenticate your account"
+#~ msgstr "Authentifier votre compte"
+
+#~ msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
+#~ msgstr "L'authentification de votre compte n'est pas terminée. Veuillez consulter la page <a href=\"%1\">Authentification</a> pour obtenir des informations supplémentaires."
+
+#~ msgid "AUD"
+#~ msgstr "AUD"
+
+#~ msgid "EUR"
+#~ msgstr "EUR"
+
+#~ msgid "GBP"
+#~ msgstr "GBP"
+
+#~ msgid "Mycrowd - for Binary.com traders"
+#~ msgstr "Mycrowd - pour les traders Binary.com"
+
+#~ msgid "Register to become a tester using the links below:"
+#~ msgstr "Inscrivez-vous pour rejoindre notre groupe de testeurs en utilisant les liens ci-dessous :"
+
+#~ msgid "Sign up as a tester and look for Binary.com-related projects."
+#~ msgstr "Inscrivez-vous en tant que testeur et recherchez des projets Binary.com."
+
+#~ msgid "This is why we're now recruiting additional testers for each new release, to ensure that our platform remains stable and secure with every enhancement deployed."
+#~ msgstr "C'est pourquoi nous recrutons actuellement des testeurs supplémentaires pour chaque nouvelle version, afin d'assurer la stabilité et la sécurité de notre plateforme d'une mise à jour à l'autre."
+
+#~ msgid "USD"
+#~ msgstr "USD"
+
+#~ msgid "{JAPAN ONLY}Price of OTC currency option is the calculated value based on multiple elements and is determined by relative trading basically."
+#~ msgstr "{JAPAN ONLY}Price of OTC currency option is the calculated value based on multiple elements and is determined by relative trading basically."
+
+#~ msgid "{JAPAN ONLY}Price of call option will be lower interest rates of the underlying assets is low, but the price of the put option, go up when the interest rates of the underlying assets is low."
+#~ msgstr "{JAPAN ONLY}Price of call option will be lower interest rates of the underlying assets is low, but the price of the put option, go up when the interest rates of the underlying assets is low."
+
+#~ msgid "{JAPAN ONLY}Price of the option, the price of the underlying asset, price fluctuation rate of the underlying assets, the time until the exercise date, subject to any of the impact of interest rates."
+#~ msgstr "{JAPAN ONLY}Price of the option, the price of the underlying asset, price fluctuation rate of the underlying assets, the time until the exercise date, subject to any of the impact of interest rates."
+
+#~ msgid "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
+#~ msgstr "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
+
+#~ msgid "{JAPAN ONLY}The price of OTC binary options of the same conditions, (sometimes) the price varies depending on transactions dealers handling financial instruments business."
+#~ msgstr "{JAPAN ONLY}The price of OTC binary options of the same conditions, (sometimes) the price varies depending on transactions dealers handling financial instruments business."
+
+#~ msgid "Select Country"
+#~ msgstr "Sélectionnez un pays"
 
 #~ msgid "Virtual money credit to account"
 #~ msgstr "Crédit de fonds virtuels sur le compte"
@@ -9655,9 +9877,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Get started"
 #~ msgstr "Se lancer"
-
-#~ msgid "Log out"
-#~ msgstr "Déconnexion"
 
 #~ msgid "Page not found"
 #~ msgstr "Page non-trouvée"
@@ -10836,9 +11055,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
 #~ msgstr "Désolé, le solde disponible votre compte est trop élevé (%1). Le solde maximum de votre compte est de %2."
-
-#~ msgid "Sorry, your account is not authorised for any further contract purchases."
-#~ msgstr "Désolé, votre compte n'est autorisé pour aucun achat supplémentaire de contrat."
 
 #, fuzzy
 #~| msgid "Sorry, $currency is not default currency for payment agent "
@@ -16167,9 +16383,6 @@ msgstr "Acceptation des conditions générales"
 #~ msgid "This call will return the same JSON structure that can be previewed from the API Console Facility."
 #~ msgstr "Cet appel rendra la même structure JSON qui peut être prévisualisée de la fonction API console."
 
-#~ msgid "Your account does not require authentication at this time."
-#~ msgstr "Votre compte ne doit pas être authentifié en ce moment."
-
 #~ msgid "%1 provides <a href=\"%2\" class=\"pjaxload\">Self Exclusion</a> facilities which allow you to set limits on your account."
 #~ msgstr "%1 propose des fonctionnalités <a href=\"%2\" class=\"pjaxload\">d'Auto-exclusion</a> qui vous permettent de fixer des limites sur votre compte."
 
@@ -17965,9 +18178,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Sorry, you cannot convert"
 #~ msgstr "Désolé, vous ne pouvez pas convertir"
-
-#~ msgid "View statement"
-#~ msgstr "Voir la déclaration"
 
 #~ msgid "We are sorry, we do not allow conversion if you ever used a credit/debit card to deposit to your account segment."
 #~ msgstr "Nous sommes désolés, nous n'autorisons pas la conversion si vous avez déjà utilisé une carte de crédit/de débit pour faire un dépôt sur le segment de votre compte."

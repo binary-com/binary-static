@@ -27,7 +27,7 @@
       <div class="charity-country">
         <h3>[% l("Malta") %]</h3>
         <div class="gr-row">
-          <div class="gr-4"><p>Insert image here</p></div>
+          <div class="gr-4"><p><img class="responsive" src="[% request.url_for('/images/pages/charity/eurobasket_wolves.jpg') %]"></p></div>
           <div class="gr-8">
             <p><strong>[% l("Eurobasket Wolves") %]</strong></p>
             <p>[% l("The Eurobasket Wolves is a local basketball club founded in 2002. It teaches youth basketball through its club and school programmes. Its U8’s and U10’s boys and girls teams, plus its U14’s and U16’s girls teams compete nationally. It is the first basketball club in Malta to establish an after-school basketball training programme where the training sessions are conducted on school grounds.") %]</p>

@@ -7,3 +7,10 @@ iframe#chart_frame {
     min-width: 100%;
     *width: 100%; /* stylelint-disable-line declaration-block-no-duplicate-properties */
 }
+
+.chart-delay {
+    display: block;
+    text-align: center;
+    margin-bottom: 0.2em;
+    color: $COLOR_RED;
+}

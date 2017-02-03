@@ -1,9 +1,9 @@
-var Table = require('./table').Table;
+const Table = require('./table').Table;
 
-var FlexTableUI = function(config) {
+const FlexTableUI = function(config) {
     this.config = config;
     this.id = config.id;
-    var $tableContainer = Table.createFlexTable(
+    const $tableContainer = Table.createFlexTable(
         [],
         this.getMetadata(),
         config.header,
@@ -24,11 +24,11 @@ FlexTableUI.prototype = {
     },
 
     extend: function(data) {
-        var cols = this.config.cols;
-        var formatter = this.config.formatter;
-        var style = this.config.style;
+        const cols = this.config.cols;
+        const formatter = this.config.formatter;
+        const style = this.config.style;
         Table.appendTableBody(this.id, data, function(datum) {
-            var $row = Table.createFlexTableRow(formatter(datum), cols, 'data');
+            const $row = Table.createFlexTableRow(formatter(datum), cols, 'data');
             if (style) {
                 style($row, datum);
             }
@@ -37,9 +37,9 @@ FlexTableUI.prototype = {
     },
 
     displayError: function(message, colspan) {
-        var $tr = $('<tr/>', { class: 'flex-tr' });
-        var $td = $('<td/>', { colspan: colspan });
-        var $p  = $('<p/>', { class: 'notice-msg center-text', text: message });
+        const $tr = $('<tr/>', { class: 'flex-tr' });
+        const $td = $('<td/>', { colspan: colspan });
+        const $p  = $('<p/>', { class: 'notice-msg center-text', text: message });
         return $('#' + this.id + ' tbody').append($tr.append($td.append($p)));
     },
 

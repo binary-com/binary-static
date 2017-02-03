@@ -1,9 +1,7 @@
 #main-menu {
     margin-bottom: 40px;
-    ul {
-        ul {
-            width: 100%;
-        }
+    ul ul {
+        width: 100%;
     }
     a.a-active, span.a-active {
         color: $COLOR_ORANGE;

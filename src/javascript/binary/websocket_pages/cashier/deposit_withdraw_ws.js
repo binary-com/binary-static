@@ -1,165 +1,264 @@
-var template = require('../../base/utility').template;
-var Validate = require('../../common_functions/validation').Validate;
-var Content  = require('../../common_functions/content').Content;
+const template = require('../../base/utility').template;
+const Validate = require('../../common_functions/validation').Validate;
+const Content  = require('../../common_functions/content').Content;
+const localize = require('../../base/localize').localize;
+const Client   = require('../../base/client').Client;
+const url_for  = require('../../base/url').url_for;
+const appendTextValueChild = require('../../common_functions/common_functions').appendTextValueChild;
+const elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
 
-var ForwardWS = (function() {
-    function init() {
+const ForwardWS = (function() {
+    const init = function(cashier_password) {
         Content.populate();
-        var verification_error = document.getElementById('verification-error');
-        $('#submit-currency').click(function() {
-            $('#submit-currency').attr('disabled', 'disabled');
+
+        const submit_currency = document.getElementById('submit-currency'),
+            submit_verification = document.getElementById('submit-verification'),
+            submit_ukgc_funds_protection = document.getElementById('submit-ukgc-funds-protection');
+
+        submit_currency.addEventListener('click', function() {
+            submit_currency.setAttribute('disabled', 'disabled');
             BinarySocket.send({ set_account_currency: $('#select-currency').val() });
         });
-        $('#submit-verification').click(function() {
-            var verification_token = document.getElementById('verification-token').value;
+
+        submit_verification.addEventListener('click', function() {
+            const verification_token = document.getElementById('verification-token').value,
+                verification_error = document.getElementById('verification-error');
             if (!Validate.errorMessageToken(verification_token, verification_error)) {
-                $('#submit-verification').attr('disabled', 'disabled');
+                submit_verification.setAttribute('disabled', 'disabled');
                 getCashierURL(verification_token);
             }
         });
-        $('#submit-ukgc-funds-protection').click(function() {
-            $('#submit-ukgc-funds-protection').attr('disabled', 'disabled');
-            BinarySocket.send({ tnc_approval: 1, ukgc_funds_protection: 1 });
+
+        submit_ukgc_funds_protection.addEventListener('click', function() {
+            submit_ukgc_funds_protection.setAttribute('disabled', 'disabled');
+            BinarySocket.send({
+                tnc_approval         : 1,
+                ukgc_funds_protection: 1,
+            });
         });
-    }
-    function getCashierType() {
-        var cashier_type;
-        if (/withdraw/.test(window.location.hash)) {
+
+        initDepositOrWithdraw(cashier_password);
+    };
+
+    const initDepositOrWithdraw = function(cashier_password) {
+        if (cashier_password === 1) {
+            ForwardWS.showMessage('cashier-locked-message');
+            sessionStorage.setItem('cashier_lock_redirect', window.location.href);
+            return;
+        }
+        const cashier_type = ForwardWS.getCashierType();
+        if (cashier_type === 'withdraw') {
+            initWithdrawForm();
+        } else if (cashier_type === 'deposit') {
+            initDepositForm();
+        }
+    };
+
+    const initWithdrawForm = function() {
+        BinarySocket.send({
+            verify_email: Client.get('email'),
+            type        : 'payment_withdraw',
+        });
+        ForwardWS.showMessage('check-email-message');
+        $('#withdraw-form').removeClass('invisible');
+    };
+
+    const initDepositForm = function() {
+        if (Client.get('currency')) {
+            ForwardWS.getCashierURL();
+        } else {
+            ForwardWS.showCurrency();
+        }
+    };
+
+    const showCurrency = function() {
+        const currencies = Client.get('currencies').split(',');
+        currencies.forEach(function(c) {
+            appendTextValueChild('select-currency', c, c);
+        });
+        ForwardWS.showMessage('choose-currency-message');
+        $('#currency-form').removeClass('invisible');
+    };
+
+    const getCashierType = function() {
+        let cashier_type;
+        const deposit_withdraw_heading = document.getElementById('deposit-withdraw-heading'),
+            hash_value = window.location.hash;
+        if (/withdraw/.test(hash_value)) {
             cashier_type = 'withdraw';
-            document.getElementById('deposit-withdraw-heading').innerHTML = page.text.localize('Withdraw');
-        } else if (/deposit/.test(window.location.hash)) {
+            elementInnerHtml(deposit_withdraw_heading, localize('Withdraw'));
+        } else if (/deposit/.test(hash_value)) {
             cashier_type = 'deposit';
-            document.getElementById('deposit-withdraw-heading').innerHTML = page.text.localize('Deposit');
+            elementInnerHtml(deposit_withdraw_heading, localize('Deposit'));
         }
         return cashier_type;
-    }
-    function getCashierURL(verification_token) {
-        var req = { cashier: getCashierType() };
+    };
+
+    const getCashierURL = function(verification_token) {
+        const req = { cashier: getCashierType() };
         if (verification_token) req.verification_code = verification_token;
         if (/epg/.test(window.location.pathname)) req.provider = 'epg';
         BinarySocket.send(req);
-    }
-    function hideAll() {
-        $('#withdraw-form').hide();
-        $('#currency-form').hide();
-        $('#ukgc-funds-protection').hide();
-        $('#deposit-withdraw-error').hide();
-    }
-    function showError(error, id) {
+    };
+
+    const hideAll = function(option) {
+        $('#withdraw-form, #currency-form, #ukgc-funds-protection, #deposit-withdraw-error').addClass('invisible');
+        if (option) {
+            $(option).addClass('invisible');
+        }
+    };
+
+    const showError = function(error, id) {
         hideAll();
-        $('#deposit-withdraw-error .error_messages').hide();
-        if (id) {
-            $('#deposit-withdraw-error #' + id).show();
-        } else {
-            $('#custom-error').html(error || page.text.localize('Sorry, an error occurred while processing your request.')).show();
+        if (!id) {
+            $('#custom-error').html(error || localize('Sorry, an error occurred while processing your request.'));
         }
-        $('#deposit-withdraw-error').show();
-    }
-    function showMessage(id) {
-        $('#deposit-withdraw-message .messages').hide();
-        $('#deposit-withdraw-message #' + id).show();
-        $('#deposit-withdraw-message').show();
-    }
-    function checkOnLoad() {
-        function check_virtual() {
-            if (page.client.is_virtual()) {
-                ForwardWS.showError(page.text.localize('This feature is not relevant to virtual-money accounts.'));
+        hideParentShowChild('#deposit-withdraw-error', '.error_messages', id || 'custom-error');
+    };
+
+    const showErrorMessage = function(id) {
+        hideAll();
+        hideParentShowChild('#deposit-withdraw-error', '.error_messages', id);
+    };
+
+    const showMessage = function(id) {
+        hideParentShowChild('#deposit-withdraw-message', '.messages', id);
+    };
+
+    const hideParentShowChild = function(parent, children, id) {
+        $(parent).find(children).addClass('invisible').end()
+            .find('#' + id)
+            .removeClass('invisible')
+            .end()
+            .removeClass('invisible');
+    };
+
+    const showPersonalDetailsError = function(details) {
+        const msgID = 'personal-details-message';
+        let errorFields;
+        if (details) {
+            errorFields = {
+                province: 'State/Province',
+                country : 'Country',
+                city    : 'Town/City',
+                street  : 'First line of home address',
+                pcode   : 'Postal Code / ZIP',
+                phone   : 'Telephone',
+                email   : 'Email address',
+            };
+        }
+        const $el = $('#' + msgID),
+            errMsg = template($el.html(), [localize(details ? errorFields[details] : 'details')]);
+        $el.html(errMsg);
+        ForwardWS.showMessage(msgID);
+    };
+
+    const checkOnLoad = function() {
+        const clientIsVirtual = function() {
+            Content.populate();
+            const is_virtual = Client.get('is_virtual');
+            if (is_virtual) {
+                getCashierType();
+                ForwardWS.showError(Content.localize().featureNotRelevantToVirtual);
             }
-            return page.client.is_virtual();
-        }
-        if (!check_virtual()) {
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
-                    if (response && !check_virtual()) {
-                        var type = response.msg_type;
-                        var error = response.error;
-                        if (type === 'cashier_password' && !error) {
-                            ForwardWS.init();
-                            if (response.cashier_password === 1) {
-                                ForwardWS.showMessage('cashier-locked-message');
-                                sessionStorage.setItem('cashier_lock_redirect', window.location.href);
-                            } else {
-                                var cashier_type = ForwardWS.getCashierType();
-                                if (cashier_type === 'withdraw') {
-                                    BinarySocket.send({ verify_email: TUser.get().email, type: 'payment_withdraw' });
-                                    ForwardWS.showMessage('check-email-message');
-                                    $('#withdraw-form').show();
-                                } else if (cashier_type === 'deposit') {
-                                    if (TUser.get().currency !== '') {
-                                        ForwardWS.getCashierURL();
-                                    } else {
-                                        ForwardWS.showMessage('choose-currency-message');
-                                        $('#currency-form').show();
-                                    }
-                                }
-                            }
-                        } else if (type === 'cashier_password' && error) {
+            return is_virtual;
+        };
+        if (Client.get('values_set') && clientIsVirtual()) return;
+        BinarySocket.init({
+            onmessage: function(msg) {
+                const response = JSON.parse(msg.data);
+                if (!response || clientIsVirtual()) return;
+                const type = response.msg_type,
+                    error = response.error;
+
+                if (error) {
+                    switch (type) {
+                        case 'cashier_password':
+                        case 'set_account_currency':
+                        case 'tnc_approval':
                             ForwardWS.showError(error.message);
-                        } else if (type === 'cashier' && !error) {
-                            ForwardWS.hideAll();
-                            $('#deposit-withdraw-message').hide();
-                            $('#deposit-withdraw-iframe-container iframe').attr('src', response.cashier);
-                            $('#deposit-withdraw-iframe-container').show();
-                        } else if (type === 'cashier' && error) {
-                            ForwardWS.hideAll();
-                            $('#deposit-withdraw-message').hide();
-                            if (error.code && error.code === 'ASK_TNC_APPROVAL') {
-                                window.location.href = page.url.url_for('user/tnc_approvalws');
-                            } else if (error.code && error.code === 'ASK_FIX_DETAILS') {
-                                var msgID = 'personal-details-message',
-                                    errorFields;
-                                if (error.details) {
-                                    errorFields = {
-                                        province: 'State/Province',
-                                        country : 'Country',
-                                        city    : 'Town/City',
-                                        street  : 'First line of home address',
-                                        pcode   : 'Postal Code / ZIP',
-                                        phone   : 'Telephone',
-                                        email   : 'Email address',
-                                    };
+                            break;
+                        case 'cashier':
+                            ForwardWS.hideAll('#deposit-withdraw-message');
+                            if (error.code) {
+                                switch (error.code) {
+                                    case 'ASK_TNC_APPROVAL':
+                                        window.location.href = url_for('user/tnc_approvalws');
+                                        break;
+                                    case 'ASK_FIX_DETAILS':
+                                        ForwardWS.showPersonalDetailsError(error.details);
+                                        break;
+                                    case 'ASK_UK_FUNDS_PROTECTION':
+                                        $('#ukgc-funds-protection').removeClass('invisible');
+                                        break;
+                                    case 'ASK_AUTHENTICATE':
+                                        ForwardWS.showMessage('not-authenticated-message');
+                                        break;
+                                    case 'ASK_FINANCIAL_RISK_APPROVAL':
+                                        showErrorMessage('financial-risk-error');
+                                        break;
+                                    case 'ASK_JP_KNOWLEDGE_TEST':
+                                        showErrorMessage('knowledge-test-error');
+                                        break;
+                                    case 'JP_NOT_ACTIVATION':
+                                        showErrorMessage('activation-error');
+                                        break;
+                                    case 'ASK_AGE_VERIFICATION':
+                                        showErrorMessage('age-error');
+                                        break;
+                                    default:
+                                        ForwardWS.showError(error.message);
                                 }
-                                var errMsg = template($('#' + msgID).html(), [page.text.localize(error.details ? errorFields[error.details] : 'details')]);
-                                $('#' + msgID).html(errMsg);
-                                ForwardWS.showMessage(msgID);
-                            } else if (error.code && error.code === 'ASK_UK_FUNDS_PROTECTION') {
-                                $('#ukgc-funds-protection').show();
-                            } else if (error.code && error.code === 'ASK_AUTHENTICATE') {
-                                ForwardWS.showMessage('not-authenticated-message');
                             } else {
                                 ForwardWS.showError(error.message);
                             }
-                        } else if (type === 'set_account_currency' && !error) {
-                            ForwardWS.getCashierURL();
-                        } else if (type === 'set_account_currency' && error) {
+                            break;
+                        default:
                             ForwardWS.showError(error.message);
-                        } else if (type === 'tnc_approval' && !error) {
-                            ForwardWS.getCashierURL();
-                        } else if (type === 'tnc_approval' && error) {
-                            ForwardWS.showError(error.message);
-                        }
                     }
-                },
+                    return;
+                }
+                // if we are here we can assume there was no error
+                switch (type) {
+                    case 'cashier_password':
+                        ForwardWS.init(response.cashier_password);
+                        break;
+                    case 'cashier':
+                        ForwardWS.hideAll('#deposit-withdraw-message');
+                        $('#deposit-withdraw-iframe-container').find('iframe').attr('src', response.cashier).end()
+                            .removeClass('invisible');
+                        break;
+                    case 'set_account_currency':
+                    case 'tnc_approval':
+                        ForwardWS.getCashierURL();
+                        break;
+                    default:
+                        break;
+                }
+            },
+        });
+        const hash = window.location.hash,
+            deposit_locked = /deposit/.test(hash) && Client.status_detected('cashier_locked, unwelcome', 'any'),
+            withdraw_locked = /withdraw/.test(hash) && Client.status_detected('cashier_locked, withdrawal_locked', 'any');
+        if (sessionStorage.getItem('client_status') === null) {
+            BinarySocket.send({
+                get_account_status: 1,
+                passthrough       : { dispatch_to: 'ForwardWS' },
             });
-            if (sessionStorage.getItem('client_status') === null) {
-                BinarySocket.send({ get_account_status: '1', passthrough: { dispatch_to: 'ForwardWS' } });
-            } else if (
-            (!page.client_status_detected('cashier_locked, unwelcome', 'any') && /deposit/.test(window.location.hash)) ||
-            (!page.client_status_detected('cashier_locked, withdrawal_locked', 'any') && /withdraw/.test(window.location.hash))
-        ) {
-                BinarySocket.send({ cashier_password: '1' });
-            }
+        } else if (!deposit_locked && !withdraw_locked) {
+            BinarySocket.send({ cashier_password: 1 });
         }
-    }
+    };
     return {
-        init          : init,
-        getCashierType: getCashierType,
-        getCashierURL : getCashierURL,
-        hideAll       : hideAll,
-        showError     : showError,
-        showMessage   : showMessage,
-        checkOnLoad   : checkOnLoad,
+        init                    : init,
+        getCashierType          : getCashierType,
+        getCashierURL           : getCashierURL,
+        hideAll                 : hideAll,
+        showError               : showError,
+        showMessage             : showMessage,
+        checkOnLoad             : checkOnLoad,
+        showPersonalDetailsError: showPersonalDetailsError,
+        showCurrency            : showCurrency,
     };
 })();
 

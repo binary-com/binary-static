@@ -1,8 +1,8 @@
-var PaymentAgentTransferData = (function() {
+const PaymentAgentTransferData = (function() {
     'use strict';
 
-    function transfer(transferTo, currency, amount, toDryRun) {
-        var dryRun = toDryRun ? 1 : 0;
+    const transfer = function(transferTo, currency, amount, toDryRun) {
+        const dryRun = toDryRun ? 1 : 0;
         BinarySocket.send({
             paymentagent_transfer: 1,
             transfer_to          : transferTo,
@@ -10,7 +10,7 @@ var PaymentAgentTransferData = (function() {
             amount               : amount,
             dry_run              : dryRun,
         });
-    }
+    };
 
     return {
         transfer: transfer,

@@ -1,136 +1,83 @@
-#cashier-content {
-    h3 {
-        margin: 10px 0;
-    }
-}
+/* stylelint-disable selector-list-comma-newline-after, selector-list-comma-space-after */
 
-#int_bank_wire {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -7px -9px;
+#int_bank_wire, #local_bank_transfer, #western_union, #citadel, #visa,
+#mastercard, #cuo-credit-card, #moneybrokers, #neteller, #moneta,
+#webmoney, #qiwi, #icbc, #fastpay, #perfect_money, #yandex, #paysafecard, #okpay {
     width: 72px;
     height: 57px;
+    background-image: url('../images/pages/cashier/payment_methods_sprite_1.png');
+}
+
+/* stylelint-enable selector-list-comma-newline-after, selector-list-comma-space-after */
+
+#int_bank_wire {
+    background-position: -7px -9px;
 }
 
 #local_bank_transfer {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -90px -9px;
-    width: 72px;
-    height: 57px;
+    background-position: -90px -9px;
 }
 
 #western_union {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -174px -9px;
-    width: 72px;
-    height: 57px;
+    background-position: -174px -9px;
 }
 
 #citadel {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -257px -9px;
-    width: 72px;
-    height: 57px;
+    background-position: -257px -9px;
 }
 
 #visa {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -338px -10px;
-    width: 72px;
-    height: 57px;
+    background-position: -338px -10px;
 }
 
 #mastercard {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -421px -11px;
-    width: 72px;
-    height: 57px;
+    background-position: -421px -11px;
 }
 
 #cuo-credit-card {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -108px -214px;
-    width: 72px;
-    height: 57px;
+    background-position: -108px -214px;
 }
 
 #moneybrokers {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -8px -72px;
-    width: 72px;
-    height: 57px;
+    background-position: -8px -72px;
 }
 
 #neteller {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -90px -72px;
-    width: 72px;
-    height: 57px;
+    background-position: -90px -72px;
 }
 
 #moneta {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -174px -72px;
-    width: 72px;
-    height: 57px;
+    background-position: -174px -72px;
 }
 
 #webmoney {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -257px -73px;
-    width: 72px;
-    height: 57px;
+    background-position: -257px -73px;
 }
 
 #qiwi {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -10px -136px;
-    width: 72px;
-    height: 57px;
+    background-position: -10px -136px;
 }
 
 #icbc {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -9px -348px;
-    width: 72px;
-    height: 57px;
+    background-position: -9px -348px;
 }
 
 #fastpay {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -12px -429px;
-    width: 72px;
-    height: 57px;
+    background-position: -12px -429px;
 }
 
 #perfect_money {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -106px -428px;
-    width: 72px;
-    height: 57px;
+    background-position: -106px -428px;
 }
 
 #yandex {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -102px -348px;
-    width: 72px;
-    height: 57px;
+    background-position: -102px -348px;
 }
 
 #paysafecard {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -372px -425px;
-    width: 72px;
-    height: 57px;
+    background-position: -372px -425px;
 }
 
 #okpay {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -285px -426px;
-    width: 72px;
-    height: 57px;
-}
-
-#visa_verified {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -12px -210px;
-    display: inline-block;
-    width: 78px;
-    height: 46px;
-}
-
-#securecode {
-    background: url('../images/pages/cashier/payment_methods_sprite_1.png') no-repeat -7px -294px;
-    display: inline-block;
-    width: 111px;
-    height: 38px;
-}
-
-.no_side_padding {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-}
-
-#payment_agent {
-    outline: none;
+    background-position: -285px -426px;
 }

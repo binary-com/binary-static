@@ -1,6 +1,8 @@
-var objectNotEmpty             = require('../../base/utility').objectNotEmpty;
-var Content                    = require('../../common_functions/content').Content;
-var getFormNameBarrierCategory = require('./common').getFormNameBarrierCategory;
+const objectNotEmpty             = require('../../base/utility').objectNotEmpty;
+const Content                    = require('../../common_functions/content').Content;
+const getFormNameBarrierCategory = require('./common').getFormNameBarrierCategory;
+const localize    = require('../../base/localize').localize;
+const getLanguage = require('../../base/language').getLanguage;
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -18,21 +20,21 @@ var getFormNameBarrierCategory = require('./common').getFormNameBarrierCategory;
  * `Contract.open()` `Contract.close()`
  * `Contract.barriers` if applicable for current underlying
  */
-var Contract = (function() {
+const Contract = (function() {
     'use strict';
 
-    var contractDetails = {},
+    const contractType = {};
+    let contractDetails = {},
+        barriers = {},
         durations = {},
         startDates = {},
-        barriers = {},
-        contractType = {},
         open,
         close,
         form,
         barrier;
 
-    var populate_durations = function(currentContract) {
-        var currentCategory  = currentContract.contract_category,
+    const populate_durations = function(currentContract) {
+        const currentCategory  = currentContract.contract_category,
             expiry_type      = currentContract.expiry_type,
             barrier_category = currentContract.barrier_category,
             start_type       = currentContract.start_type,
@@ -60,9 +62,9 @@ var Contract = (function() {
         durations[expiry_type][currentCategory][barrier_category][start_type].min_contract_duration = min_duration;
     };
 
-    var details = function(formName) {
-        var contracts = Contract.contracts().contracts_for,
-            barrierCategory;
+    const details = function(formName) {
+        const contracts = Contract.contracts().contracts_for;
+        let barrierCategory;
 
         if (!contracts) return;
 
@@ -71,12 +73,12 @@ var Contract = (function() {
         open = contracts.open;
         close = contracts.close;
 
-        var formBarrier = getFormNameBarrierCategory(formName);
+        const formBarrier = getFormNameBarrierCategory(formName);
         form = formName = formBarrier.formName;
         barrier = barrierCategory = formBarrier.barrierCategory;
 
         contracts.available.forEach(function(currentObj) {
-            var contractCategory = currentObj.contract_category;
+            const contractCategory = currentObj.contract_category;
 
             if (formName && formName === contractCategory) {
                 if (barrierCategory) {
@@ -93,7 +95,7 @@ var Contract = (function() {
                     startDates.has_spot = 1;
                 }
 
-                var symbol = currentObj.underlying_symbol;
+                const symbol = currentObj.underlying_symbol;
                 if (currentObj.barrier_category && currentObj.barrier_category !== 'non_financial') {
                     if (!barriers.hasOwnProperty(symbol)) {
                         barriers[symbol] = {};
@@ -118,9 +120,9 @@ var Contract = (function() {
                     contractType[contractCategory] = {};
                 }
 
-                var type = currentObj.contract_type;
+                const type = currentObj.contract_type;
                 if (!contractType[contractCategory].hasOwnProperty(type)) {
-                    contractType[contractCategory][type] = page.text.localize(currentObj.contract_display);
+                    contractType[contractCategory][type] = localize(currentObj.contract_display);
                 }
             }
         });
@@ -132,18 +134,18 @@ var Contract = (function() {
         }
     };
 
-    var getContracts = function(underlying) {
+    const getContracts = function(underlying) {
         BinarySocket.send({ contracts_for: underlying });
     };
 
-    var getContractForms = function() {
-        var contracts = Contract.contracts().contracts_for,
+    const getContractForms = function() {
+        const contracts = Contract.contracts().contracts_for,
             tradeContractForms = {};
 
         if (!contracts) return null;
 
         contracts.available.forEach(function(currentObj) {
-            var contractCategory = currentObj.contract_category;
+            const contractCategory = currentObj.contract_category;
             if (contractCategory && !tradeContractForms.hasOwnProperty(contractCategory)) {
                 if (contractCategory === 'callput') {
                     if (currentObj.barrier_category === 'euro_atm') {
@@ -152,10 +154,10 @@ var Contract = (function() {
                         tradeContractForms.higherlower = Content.localize().textFormHigherLower;
                     }
                 } else {
-                    tradeContractForms[contractCategory] = page.text.localize(currentObj.contract_category_display);
+                    tradeContractForms[contractCategory] = localize(currentObj.contract_category_display);
                     if (contractCategory === 'digits') {
                         tradeContractForms.matchdiff = Content.localize().textFormMatchesDiffers;
-                        if (page.language() !== 'ID') {
+                        if (getLanguage() !== 'ID') {
                             tradeContractForms.evenodd = Content.localize().textFormEvenOdd;
                             tradeContractForms.overunder = Content.localize().textFormOverUnder;
                         }

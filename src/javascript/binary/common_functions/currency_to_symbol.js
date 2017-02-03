@@ -1,15 +1,16 @@
-var japanese_client = require('./country_base').japanese_client;
-var addComma        = require('./string_util').addComma;
+const japanese_client = require('./country_base').japanese_client;
+const addComma        = require('./string_util').addComma;
+const getLanguage     = require('../base/language').getLanguage;
 
 function format_money(currencyValue, amount) {
-    var money;
+    let money;
     if (amount) amount = String(amount).replace(/,/g, '');
     if (typeof Intl !== 'undefined' && currencyValue && currencyValue !== '' && amount && amount !== '') {
-        var options = { style: 'currency', currency: currencyValue },
-            language = typeof window !== 'undefined' && page.language().toLowerCase() ? page.language().toLowerCase() : 'en';
+        const options = { style: 'currency', currency: currencyValue },
+            language = typeof window !== 'undefined' ? getLanguage().toLowerCase() : 'en';
         money = new Intl.NumberFormat(language.replace('_', '-'), options).format(amount);
     } else {
-        var updatedAmount,
+        let updatedAmount,
             sign = '';
         if (japanese_client()) {
             updatedAmount = parseInt(amount);
@@ -20,7 +21,7 @@ function format_money(currencyValue, amount) {
             updatedAmount = parseFloat(amount).toFixed(2);
         }
         updatedAmount = addComma(updatedAmount);
-        var symbol = format_money.map[currencyValue];
+        const symbol = format_money.map[currencyValue];
         if (symbol === undefined) {
             money = currencyValue + ' ' + updatedAmount;
         } else {

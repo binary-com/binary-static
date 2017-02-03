@@ -1,7 +1,7 @@
-var ViewBalance = (function() {
-    function init() {
+const ViewBalance = (function() {
+    const init = function() {
         BinarySocket.init(1);
-    }
+    };
 
     return {
         init: init,

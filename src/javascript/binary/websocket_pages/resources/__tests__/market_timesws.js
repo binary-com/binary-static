@@ -1,12 +1,12 @@
-var expect = require('chai').expect;
-var market_times = require('../market_timesws').MarketTimes;
-var ws = require('ws');
-var LiveApi = require('binary-live-api').LiveApi;
+const expect = require('chai').expect;
+const market_times = require('../market_timesws').MarketTimes;
+const ws = require('ws');
+const LiveApi = require('binary-live-api').LiveApi;
 
-var api = new LiveApi({ websocket: ws });
+const api = new LiveApi({ websocket: ws });
 
 describe('Trading Times', function() {
-    var trading_times_res,
+    let trading_times_res,
         active_symbols_res;
     before(function(done) {
         this.timeout(10000);
@@ -42,7 +42,7 @@ describe('Trading Times', function() {
                 expect(submarket).to.have.property('symbols')
                     .that.is.an('array');
 
-                var submarket_info = market_times.getSubmarketInfo(active_symbols_res, submarket.name);
+                const submarket_info = market_times.getSubmarketInfo(active_symbols_res, submarket.name);
                 expect(submarket_info).to.be.an('array');
                 submarket_info.forEach(function(info) {
                     expect(info).to.be.an('object')

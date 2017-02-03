@@ -1,12 +1,12 @@
-var expect    = require('chai').expect;
-var statement = require('../statement').Statement;
-var ws        = require('ws');
-var LiveApi   = require('binary-live-api').LiveApi;
+const expect    = require('chai').expect;
+const statement = require('../statement').Statement;
+const ws        = require('ws');
+const LiveApi   = require('binary-live-api').LiveApi;
 
-var api = new LiveApi({ websocket: ws });
+const api = new LiveApi({ websocket: ws });
 
 describe('Statement', function() {
-    var statement_ws;
+    let statement_ws;
     before(function(done) {
         this.timeout(10000);
         // this is a read token, even if other people take it, won't be able to do any harm
@@ -18,7 +18,7 @@ describe('Statement', function() {
         });
     });
     it('Should have all expected data', function() {
-        var statement_data = statement.getStatementData(statement_ws.transactions[0]);
+        const statement_data = statement.getStatementData(statement_ws.transactions[0]);
         expect(statement_data).to.be.an('Object')
             .and.to.have.property('date')
             .and.to.be.a('string');

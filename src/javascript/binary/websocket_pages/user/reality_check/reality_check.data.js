@@ -1,90 +1,45 @@
-var template = require('../../../base/utility').template;
-var moment   = require('moment');
+const template   = require('../../../base/utility').template;
+const LocalStore = require('../../../base/storage').LocalStore;
+const moment     = require('moment');
 
-var RealityCheckData = (function() {
+const RealityCheckData = (function() {
     'use strict';
 
-    var defaultInterval = 600000;
-    var durationTemplateString = '[_1] days [_2] hours [_3] minutes';
-    var tradingTimeTemplate = 'Your trading statistics since [_1].';
+    const defaultInterval = 600000;
+    const durationTemplateString = '[_1] days [_2] hours [_3] minutes';
+    const tradingTimeTemplate = 'Your trading statistics since [_1].';
+    const reality_object = {};
 
-    function getSummaryAsync() {
+    const getSummaryAsync = function() {
         BinarySocket.send({ reality_check: 1 });
-    }
+    };
 
-    function getAck() {
-        return LocalStore.get('reality_check.ack');
-    }
-
-    function setOpenSummaryFlag() {
-        LocalStore.set('reality_check.keep_open', 1);
-    }
-
-    function getOpenSummaryFlag() {
-        return LocalStore.get('reality_check.keep_open');
-    }
-
-    function triggerCloseEvent() {
-        LocalStore.set('reality_check.keep_open', 0);
-    }
-
-    function updateAck() {
-        LocalStore.set('reality_check.ack', 1);
-    }
-
-    function getInterval() {
-        return LocalStore.get('reality_check.interval');
-    }
-
-    function getPreviousLoadLoginId() {
-        return LocalStore.get('reality_check.loginid');
-    }
-
-    function setPreviousLoadLoginId() {
-        var id = TUser.get().loginid;
-        LocalStore.set('reality_check.loginid', id);
-    }
-
-    function updateInterval(ms) {
-        LocalStore.set('reality_check.interval', ms);
-    }
-
-    function clear() {
-        LocalStore.remove('reality_check.ack');
-        LocalStore.remove('reality_check.interval');
-        LocalStore.remove('reality_check.keep_open');
-        LocalStore.remove('reality_check.close');
-        LocalStore.remove('reality_check.svrtime');
-        LocalStore.remove('reality_check.basetime');
-    }
-
-    function resetInvalid() {
-        var ack = LocalStore.get('reality_check.ack');
-        var interval = +(LocalStore.get('reality_check.interval'));
-        if (ack !== '0' && ack !== '1') {
-            LocalStore.set('reality_check.ack', 0);
+    const resetInvalid = function() {
+        const ack = get('ack');
+        const interval = +(get('interval'));
+        if (ack !== 0 && ack !== 1) {
+            set('ack', 0);
         }
-
         if (!interval) {
-            LocalStore.set('reality_check.interval', defaultInterval);
+            set('interval', defaultInterval);
         }
-    }
+    };
 
-    function summaryData(wsData) {
-        var startTime = moment.utc(new Date(wsData.start_time * 1000));
-        var currentTime = moment.utc();
+    const summaryData = function(wsData) {
+        const startTime = moment.utc(new Date(wsData.start_time * 1000));
+        const currentTime = moment.utc();
 
-        var sessionDuration = moment.duration(currentTime.diff(startTime));
-        var durationString = template(durationTemplateString, [
+        const sessionDuration = moment.duration(currentTime.diff(startTime));
+        const durationString = template(durationTemplateString, [
             sessionDuration.get('days'),
             sessionDuration.get('hours'),
             sessionDuration.get('minutes'),
         ]);
 
-        var turnover = +(wsData.buy_amount) + (+(wsData.sell_amount));
-        var profitLoss = +(wsData.sell_amount) - (+(wsData.buy_amount));
+        const turnover = +(wsData.buy_amount) + (+(wsData.sell_amount));
+        const profitLoss = +(wsData.sell_amount) - (+(wsData.buy_amount));
 
-        var startTimeString = template(tradingTimeTemplate, [startTime.format('YYYY-MM-DD HH:mm:ss') + ' GMT']);
+        const startTimeString = template(tradingTimeTemplate, [startTime.format('YYYY-MM-DD HH:mm:ss') + ' GMT']);
         return {
             startTimeString: startTimeString,
             loginTime      : startTime.format('YYYY-MM-DD HH:mm:ss') + ' GMT',
@@ -99,22 +54,38 @@ var RealityCheckData = (function() {
             openContracts  : wsData.open_contract_count,
             potentialProfit: (+(wsData.potential_profit)).toFixed(2),
         };
-    }
+    };
+
+    const set = function(key, value) {
+        reality_object[key] = value;
+        return LocalStore.set('reality_check.' + key, value);
+    };
+
+    // use this function to get variables that have values
+    const get = function(key) {
+        let value = reality_object[key] || LocalStore.get('reality_check.' + key) || '';
+        if (+value === 1 || +value === 0 || value === 'true' || value === 'false') {
+            value = JSON.parse(value || false);
+        }
+        return value;
+    };
+
+    const clear_storage_values = function() {
+        // clear all reality check values from local storage except loginid
+        Object.keys(localStorage).forEach(function(c) {
+            if (/^reality_check\.(?!(loginid$))/.test(c)) {
+                LocalStore.set(c, '');
+            }
+        });
+    };
 
     return {
-        getSummaryAsync       : getSummaryAsync,
-        getAck                : getAck,
-        setOpenSummaryFlag    : setOpenSummaryFlag,
-        getOpenSummaryFlag    : getOpenSummaryFlag,
-        getPreviousLoadLoginId: getPreviousLoadLoginId,
-        setPreviousLoadLoginId: setPreviousLoadLoginId,
-        updateAck             : updateAck,
-        getInterval           : getInterval,
-        updateInterval        : updateInterval,
-        clear                 : clear,
-        resetInvalid          : resetInvalid,
-        summaryData           : summaryData,
-        triggerCloseEvent     : triggerCloseEvent,
+        getSummaryAsync: getSummaryAsync,
+        clear          : clear_storage_values,
+        resetInvalid   : resetInvalid,
+        summaryData    : summaryData,
+        set            : set,
+        get            : get,
     };
 })();
 

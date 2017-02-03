@@ -1,22 +1,27 @@
-var RealityCheckUI   = require('./reality_check.ui').RealityCheckUI;
-var RealityCheckData = require('./reality_check.data').RealityCheckData;
+const RealityCheckUI   = require('./reality_check.ui').RealityCheckUI;
+const RealityCheckData = require('./reality_check.data').RealityCheckData;
+const Client           = require('../../../base/client').Client;
 
-var RealityCheck = (function() {
+const RealityCheck = (function() {
     'use strict';
 
-    function realityCheckWSHandler(response) {
+    const realityCheckWSHandler = function(response) {
         RealityCheckUI.initializeValues();
         if ($.isEmptyObject(response.reality_check)) {
             // not required for reality check
             RealityCheckUI.sendAccountStatus();
             return;
         }
+        if (/no-reality-check/.test(window.location.hash)) {
+            RealityCheckData.set('delay_reality_check', 1);
+        } else {
+            RealityCheckData.set('delay_reality_check', 0);
+            const summary = RealityCheckData.summaryData(response.reality_check);
+            RealityCheckUI.renderSummaryPopUp(summary);
+        }
+    };
 
-        var summary = RealityCheckData.summaryData(response.reality_check);
-        RealityCheckUI.renderSummaryPopUp(summary);
-    }
-
-    function realityStorageEventHandler(ev) {
+    const realityStorageEventHandler = function(ev) {
         if (ev.key === 'reality_check.ack' && ev.newValue === '1') {
             RealityCheckUI.closePopUp();
             RealityCheckUI.startSummaryTimer();
@@ -24,37 +29,42 @@ var RealityCheck = (function() {
             RealityCheckUI.closePopUp();
             RealityCheckUI.startSummaryTimer();
         }
-    }
+    };
 
-    function init() {
-        RealityCheckUI.initializeValues();
-        if (!page.client.require_reality_check()) {
-            RealityCheckData.setPreviousLoadLoginId();
-            RealityCheckUI.sendAccountStatus();
-            return;
-        }
-
-        RealityCheckUI.setLoginTime(TUser.get().logintime * 1000);
-
-        window.addEventListener('storage', realityStorageEventHandler, false);
-
-        if (TUser.get().loginid !== RealityCheckData.getPreviousLoadLoginId()) {
-            RealityCheckData.clear();
-        }
-
-        RealityCheckData.resetInvalid(); // need to reset after clear
-
-        if (RealityCheckData.getAck() !== '1') {
-            RealityCheckUI.renderFrequencyPopUp();
-        } else if (RealityCheckData.getOpenSummaryFlag() === '1') {
-            RealityCheckData.getSummaryAsync();
+    const init = function() {
+        if (/no-reality-check/.test(window.location.hash)) {
+            RealityCheckData.set('delay_reality_init', 1);
         } else {
-            RealityCheckUI.startSummaryTimer();
-        }
+            RealityCheckData.set('delay_reality_init', 0);
+            RealityCheckUI.initializeValues();
+            if (!Client.get('has_reality_check')) {
+                RealityCheckData.set('loginid', Client.get('loginid'));
+                RealityCheckUI.sendAccountStatus();
+                return;
+            }
 
-        RealityCheckData.setPreviousLoadLoginId();
-        RealityCheckUI.sendAccountStatus();
-    }
+            RealityCheckUI.setLoginTime(Client.get('session_start') * 1000);
+
+            window.addEventListener('storage', realityStorageEventHandler, false);
+
+            if (Client.get('loginid') !== RealityCheckData.get('loginid')) {
+                RealityCheckData.clear();
+            }
+
+            RealityCheckData.resetInvalid(); // need to reset after clear
+
+            if (!RealityCheckData.get('ack')) {
+                RealityCheckUI.renderFrequencyPopUp();
+            } else if (RealityCheckData.get('keep_open')) {
+                RealityCheckData.getSummaryAsync();
+            } else {
+                RealityCheckUI.startSummaryTimer();
+            }
+
+            RealityCheckData.set('loginid', Client.get('loginid'));
+            RealityCheckUI.sendAccountStatus();
+        }
+    };
 
     return {
         init                 : init,
