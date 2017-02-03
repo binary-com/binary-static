@@ -104,7 +104,7 @@ const ValidAccountOpening = (function() {
         }
     };
     const checkAddress1 = function(address1, errorAddress1) {
-        if (/[~!#$%^&*)(_=+\[}{\]\\\"\;\:\?\><\|]+/.test(address1.value)) {
+        if (/[`~!#$%^&*)(_=+\[}{\]\\\"\;\:\?\><\|]+/.test(address1.value)) {
             initializeValues();
             elementInnerHtml(errorAddress1, Content.errorMessage('reg', [letters, numbers, space, period, comma, '- / @ \' ']));
             Validate.displayErrorMessage(errorAddress1);
@@ -112,7 +112,7 @@ const ValidAccountOpening = (function() {
         }
     };
     const checkAddress2 = function(address2, errorAddress2) {
-        if (address2.value !== '' && /[~!#$%^&*)(_=+\[}{\]\\\"\;\:\?\><\|]+/.test(address2.value)) {
+        if (address2.value !== '' && /[`~!#$%^&*)(_=+\[}{\]\\\"\;\:\?\><\|]+/.test(address2.value)) {
             initializeValues();
             elementInnerHtml(errorAddress2, Content.errorMessage('reg', [letters, numbers, space, period, comma, '- / @ \' ']));
             Validate.displayErrorMessage(errorAddress2);
