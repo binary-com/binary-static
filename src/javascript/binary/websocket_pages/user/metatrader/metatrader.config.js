@@ -11,18 +11,18 @@ const MetaTraderConfig = (function() {
     const hidden_class = 'invisible';
 
     const types_info = {
-        demo            : { account_type: 'demo',      sub_account_type: '',         title: 'Demo',          max_leverage: 1000, is_demo: true },
-        vanuatu_cent    : { account_type: 'financial', sub_account_type: 'cent',     title: 'Real Cent',     max_leverage: 1000 },
-        vanuatu_standard: { account_type: 'financial', sub_account_type: 'standard', title: 'Real Standard', max_leverage: 300 },
-        vanuatu_stp     : { account_type: 'financial', sub_account_type: 'stp',      title: 'Real STP',      max_leverage: 100 },
-        volatility      : { account_type: 'gaming',    sub_account_type: '',         title: 'Volatility',    max_leverage: 100 },
+        demo            : { account_type: 'demo',      sub_account_type: '',         title: 'Demo',            max_leverage: 1000, is_demo: true },
+        vanuatu_cent    : { account_type: 'financial', sub_account_type: 'cent',     title: 'Real Cent',       max_leverage: 1000 },
+        vanuatu_standard: { account_type: 'financial', sub_account_type: 'standard', title: 'Real Standard',   max_leverage: 300 },
+        vanuatu_stp     : { account_type: 'financial', sub_account_type: 'stp',      title: 'Real STP',        max_leverage: 100 },
+        costarica       : { account_type: 'gaming',    sub_account_type: '',         title: 'Real Volatility', max_leverage: 100 },
     };
 
     const needsRealMessage = () => (
          Client.get('has_real') ?
              localize('To perform this action, please switch to your [_1] Real Account.', ['Binary.com']) :
              localize('To perform this action, please <a href="[_1]"> upgrade to [_2] Real Account</a>.', [
-                 url_for('new-account/real'),
+                 url_for('new_account/realws'),
                  'Binary.com',
              ])
     );
@@ -30,8 +30,15 @@ const MetaTraderConfig = (function() {
     const actions_info = {
         new_account: {
             title      : 'Create Account',
-            success_msg: response => localize('Congratulations! Your [_1] Account has been created.', [
-                types_info[response.mt5_new_account.account_type === 'financial' ? `binary_${response.mt5_new_account.sub_account_type}` : response.mt5_new_account.account_type].title]),
+            success_msg: (response) => {
+                let acc_type = response.mt5_new_account.account_type;
+                switch (acc_type) {
+                    case 'financial': acc_type = `vanuatu_${response.mt5_new_account.sub_account_type}`; break;
+                    case 'gaming'   : acc_type = 'costarica'; break;
+                    // no default
+                }
+                return localize('Congratulations! Your [_1] Account has been created.', [types_info[acc_type].title]);
+            },
             login        : response => response.mt5_new_account.login,
             prerequisites: acc_type => (
                 new Promise((resolve) => {

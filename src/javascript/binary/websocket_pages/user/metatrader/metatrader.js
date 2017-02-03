@@ -47,9 +47,9 @@ const MetaTrader = (function() {
         });
     };
 
-    const getAccountType = function(group) {
-        return group ? (/demo/.test(group) ? 'demo' : group.split('\\')[1] || '') : '';
-    };
+    const getAccountType = group => (
+        group ? (/demo/.test(group) ? 'demo' : group.split('\\')[1] || '') : ''
+    );
 
     const makeRequestObject = (acc_type, action) => {
         const req = {};

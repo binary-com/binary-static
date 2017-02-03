@@ -285,7 +285,7 @@
                                 <li>[% l('A scanned copy of a utility bill or bank statement that is no more than three months old.') %]</li>
                             </ul>
                         </li>
-                        <li class="assessment invisible">[% l('Complete the <a href="[_1]">Financial Assessment</a>.', request.url_for('user/assessment')) %]</li>
+                        <li class="assessment invisible">[% l('Complete the <a href="[_1]">Financial Assessment</a>.', request.url_for('/user/settings/assessmentws')) %]</li>
                     </ul>
                 </div>
             </div>
