@@ -7,14 +7,16 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-01 07:16+0000\n"
+"PO-Revision-Date: 2017-02-03 18:07+0000\n"
 "Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.11\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -968,7 +970,7 @@ msgid "Agreement for documents"
 msgstr "Agreement for documents"
 
 msgid "Agricultural, Forestry and Fishery Workers"
-msgstr ""
+msgstr "Работники сельского, лесного и рыбного хозяйства"
 
 msgid "All Partnership Options"
 msgstr "Все варианты сотрудничества"
@@ -1136,10 +1138,8 @@ msgstr "Вы уверены, что хотите навсегда удалить
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "Вы уверены, что хотите навсегда отказаться от доступа к приложению"
 
-#, fuzzy
-#| msgid "Are you sure that you want to permanently revoke access to application"
 msgid "Are you sure that you want to permanently revoke connection to"
-msgstr "Вы уверены, что хотите навсегда отказаться от доступа к приложению"
+msgstr "Вы уверены, что хотите навсегда отказаться от подключения к"
 
 msgid "Are your site visitors interested in:"
 msgstr "Посетителям Вашего сайта может быть интересно:"
@@ -1753,7 +1753,7 @@ msgid "Cleaners and Helpers"
 msgstr "Жалобы и иски"
 
 msgid "Clerks"
-msgstr ""
+msgstr "Клерки"
 
 msgid "Click here to retry"
 msgstr "Нажмите, чтобы повторить попытку"
@@ -1905,10 +1905,8 @@ msgstr "Политика по конфликтам"
 msgid "Connection error: Please check your internet connection."
 msgstr "Проблема со связью: пожалуйста, проверьте Ваше подключение к интернету."
 
-#, fuzzy
-#| msgid "Construction"
 msgid "Connections"
-msgstr "Строительство"
+msgstr "Подключения"
 
 msgid "Construction"
 msgstr "Строительство"
@@ -2058,7 +2056,7 @@ msgid "Cover is made available on the basis of the depositor rather than on the 
 msgstr "Страховое покрытие предоставляется самому вкладчику, а не на основе количества внесённых им депозитов. Это означает, что если клиент открыл несколько счетов, общая сумма страховой компенсации составит €20,000. Любая сумма, превышающая данный порог, не будет защищена страховкой и должна вноситься на страх и риск инвестора."
 
 msgid "Craft, Metal, Electrical and Electronics Workers"
-msgstr ""
+msgstr "Ремёсленники, рабочие по металлу, электрике и электронике"
 
 msgid "Create"
 msgstr "Создать"
@@ -2991,7 +2989,7 @@ msgid "Governing law and jurisdiction"
 msgstr "Законодательство и юрисдикция"
 
 msgid "Government Officers"
-msgstr ""
+msgstr "Гос. служащие"
 
 msgid "Grab a wide range of third-party apps for binary options trading in the <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Shop</a>."
 msgstr "К Вашим услугам большой ассортимент приложений для торговли бинарными опционами в <a href=\"https://shop.binary.com\" target=\"_blank\">Магазине Binary.com</a>."
@@ -4059,10 +4057,8 @@ msgstr "Июнь"
 msgid "Keep track of your authorised applications."
 msgstr "Следите за доступными приложениями."
 
-#, fuzzy
-#| msgid "Keep track of your authorised applications."
 msgid "Keep track of your authorised connections."
-msgstr "Следите за доступными приложениями."
+msgstr "Следите за авторизованными подключениями."
 
 msgid "Key facts"
 msgstr "Основные факты"
@@ -4291,10 +4287,8 @@ msgstr "Управление доступными приложениями."
 msgid "Manage your authorised applications."
 msgstr "Управление доступными приложениями."
 
-#, fuzzy
-#| msgid "DevOps Manager"
 msgid "Managers"
-msgstr "Менеджер команды DevOps"
+msgstr "Менеджеры"
 
 msgid "Mar"
 msgstr "Мар"
