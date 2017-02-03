@@ -1,13 +1,13 @@
 <div class="career gr-parent static_full">
   <div class="container">
-    <div class="gr-row gr-padding-30 center-text">
-      <div class="gr-12 gr-padding-30">
+    <div class="gr-row center-text">
+      <div class="gr-12">
         <h1>[% l("Imagine") %]</h1>
         <p>
           [% l("Imagine a workplace where your individuality, creativity and sense of adventure are valued and rewarded.") %]
         </p>
       </div>
-      <div class="gr-row">
+      <div class="gr-row gr-padding-30">
         <div class="gr-12">
           <img class="responsive" src="[% request.url_for('images/pages/careers/main@1.jpg') %]"/>
           <div class="xquote-inverse">
