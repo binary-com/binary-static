@@ -55,7 +55,7 @@ const MetaTraderConfig = (function() {
                             BinarySocket.send({ get_financial_assessment: 1 }).then((response_financial) => {
                                 if (!objectNotEmpty(response_financial.get_financial_assessment)) {
                                     $msg.find('li.assessment').removeClass(hidden_class)
-                                        .find('a').click(() => { localStorage.setItem('financial_assessment_redirect', url_for('user/metatrader')); });
+                                        .find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${url_for('user/metatrader')}')`);
                                 }
                                 resolve($msg.find(`.checked > li:not(.${hidden_class})`).length ? $msg.html() : '');
                             });

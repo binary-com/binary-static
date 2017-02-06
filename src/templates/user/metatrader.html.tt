@@ -138,7 +138,7 @@
                 <div class="gr-12-m gr-centered">
                     <p>
                         <input id="chk_tnc" type="checkbox" />
-                        <label for="chk_tnc">[% l('I have read and agree to the') %] <a target="_blank" href="[% request.url_for('/terms-and-conditions') %]">[% l('terms and conditions') %]</a> [% l('of the site.') %]</label>
+                        <label for="chk_tnc">[% l('I have read and agree to the') %] <a target="_blank" href="[% request.url_for('/terms-and-conditions') %]#legal-mt">[% l('terms and conditions') %]</a> [% l('of the site.') %]</label>
                     </p>
                 </div>
             </div>

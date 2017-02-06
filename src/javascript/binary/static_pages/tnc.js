@@ -53,7 +53,7 @@ const TermsAndConditions = (function() {
         const section = url.param('section');
         if (section) {
             const $section = $(`a[name="${section}"]`);
-            if ($section.length) $.scrollTo($section, 0, { offset: -10 });
+            if ($section.length) setTimeout(() => { $.scrollTo($section, 0, { offset: -10 }); }, 500);
         }
     };
 

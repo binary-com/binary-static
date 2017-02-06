@@ -19,10 +19,10 @@
             <div id="forex-content" class="toggle-content">
                 [% INCLUDE metatrader/contract_specifications/forex.html.tt %]
             </div>
-            <div id="volatility-content" class="toggle-content">
+            <div id="volatility-content" class="toggle-content invisible">
                 [% INCLUDE metatrader/contract_specifications/volatility_indices.html.tt %]
             </div>
-            <div id="cash-content" class="toggle-content">
+            <div id="cash-content" class="toggle-content invisible">
                 [% INCLUDE metatrader/contract_specifications/cash_indices.html.tt %]
             </div>
         </div>
