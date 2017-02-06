@@ -76,7 +76,7 @@
           </span>
         </a>
         <p>
-          [% l("Trade with ease with [_1]'s wide range of deposit and withdrawal methods. Your funds will be segregated and held in AAA-rated banks.", website_name) %]
+          [% l("Trade with ease with [_1]'s wide range of deposit and withdrawal methods. Your funds will be segregated and held in secure and licensed financial institutions.", website_name) %]
         </p>
         <a class="pjaxload button" href="[% request.url_for('/cashier/payment_methods') %]">
           <img class="responsive" src="[% request.url_for('images/pages/tour/tour-flexible-banking.png') %]"/>
