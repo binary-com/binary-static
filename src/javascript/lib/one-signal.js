@@ -8,28 +8,7 @@ const options = {
     path: url_for_static('/'),
     persistNotification: false,
     notifyButton: {
-        enable: true,
-        // displayPredicate: function() {
-        //     /* Hide the notify button if the user is subscribed */
-        //     return OneSignal.isPushNotificationsEnabled()
-        //         .then(function(isPushEnabled) {
-        //             return !isPushEnabled;
-        //         });
-        // },
-        text: {
-            'tip.state.unsubscribed': 'Subscribe to notifications',
-            'tip.state.subscribed': "You're subscribed to notifications",
-            'tip.state.blocked': "You've blocked notifications",
-            'message.prenotify': 'Click to subscribe to notifications',
-            'message.action.subscribed': "Thanks for subscribing!",
-            'message.action.resubscribed': "You're subscribed to notifications",
-            'message.action.unsubscribed': "You won't receive notifications again",
-            'dialog.main.title': 'Manage Site Notifications',
-            'dialog.main.button.subscribe': 'SUBSCRIBE',
-            'dialog.main.button.unsubscribe': 'UNSUBSCRIBE',
-            'dialog.blocked.title': 'Unblock Notifications',
-            'dialog.blocked.message': "Follow these instructions to allow notifications:"
-        },
+        enable: false,
     },
     welcomeNotification: {
         "title": "Binary.com",
@@ -40,12 +19,6 @@ const options = {
         /* These prompt options values configure both the HTTP prompt and the HTTP popup. */
         /* actionMessage limited to 90 characters */
         actionMessage: "Binary.com would like to send you push notifications.",
-        /* Example notification title */
-        exampleNotificationTitle: 'Example notification',
-        /* Example notification message */
-        exampleNotificationMessage: 'This is an example notification',
-        /* Text below example notification, limited to 50 characters */
-        exampleNotificationCaption: 'You can unsubscribe anytime',
         /* acceptButtonText limited to 15 characters */
         acceptButtonText: "ALLOW",
         /* cancelButtonText limited to 15 characters */
