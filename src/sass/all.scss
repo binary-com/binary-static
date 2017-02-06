@@ -14,6 +14,7 @@
 @import 'common/nav';
 @import 'common/reality-check';
 @import 'common/accordion';
+@import 'common/timepicker';
 
 /* pages */
 @import 'pages/home.scss';
@@ -68,9 +69,6 @@
 
 /* external stylesheets
  * ===================================== */
-/* date picker */
-@import 'external/jquery.ui.timepicker.scss';
-
 /* Grid layout system */
 @import 'external/grid';
 @import 'external/mmenu/jquery.mmenu.all';
