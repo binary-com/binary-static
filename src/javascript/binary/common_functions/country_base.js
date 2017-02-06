@@ -61,9 +61,9 @@ function checkLanguage() {
         $('.ja-no-padding').attr('style', 'padding-top: 0; padding-bottom: 0;');
         $('#regulatory-text').removeClass('gr-9 gr-7-p')
                              .addClass('gr-12 gr-12-p');
-    }
-    if (!japanese_residence()) {
-        $('#topMenuCashier').hide();
+        if (!japanese_residence()) {
+            $('#topMenuCashier').hide();
+        }
     }
 }
 
