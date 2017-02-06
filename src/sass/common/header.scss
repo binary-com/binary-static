@@ -24,7 +24,6 @@ body #topbar {
             border-radius: 2px;
             font-size: 90%;
             padding: 2px 4px;
-            text-transform: none;
             @include BIDIR_VALUE(margin, 0 0 0 10px, 0 10px 0 0);
         }
     }
