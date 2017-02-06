@@ -3,7 +3,7 @@ const TrafficSource = require('../../../../common_functions/traffic_source').Tra
 const ValidateV2    = require('../../../../common_functions/validation_v2').ValidateV2;
 const Cookies = require('../../../../../lib/js-cookie');
 const dv      = require('../../../../../lib/validation');
-const url     = require('../../../../base/url').url;
+const Client  = require('../../../../base/client').Client;
 
 const VirtualAccOpeningData = (function() {
     'use strict';
@@ -22,7 +22,7 @@ const VirtualAccOpeningData = (function() {
         if (utm_data.utm_medium)   req.utm_medium   = utm_data.utm_medium;
         if (utm_data.utm_campaign) req.utm_campaign = utm_data.utm_campaign;
 
-        const gclid = url.params_hash().gclid;
+        const gclid = Client.get('gclid');
         if (gclid) req.gclid_url = gclid;
 
         if (Cookies.get('affiliate_tracking')) {
