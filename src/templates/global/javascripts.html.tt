@@ -1,3 +1,4 @@
 [%= FOREACH js IN javascript.libs =%]
-  <script src='[%= js =%]' defer async></script>
+  <script src='[%= js =%]'></script>
 [%= END =%]
+<script src='[%= javascript.stylejs =%]'></script>

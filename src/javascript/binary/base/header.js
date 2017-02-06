@@ -9,7 +9,6 @@ const check_risk_classification = require('../common_functions/check_risk_classi
 const Header = (function() {
     const on_load = function() {
         show_or_hide_login_form();
-        show_or_hide_language();
         logout_handler();
         check_risk_classification();
         if (!Login.is_login_pages()) {
@@ -26,19 +25,8 @@ const Header = (function() {
         });
     };
 
-    const show_or_hide_language = function() {
-        $('.languages').off('click');
-        $(document).off('click');
-        // global functions from binary style
-        langListener();
-        documentListener();
-    };
-
     const show_or_hide_login_form = function() {
         if (!Client.is_logged_in()) return;
-        $('.nav-menu').off('click');
-        // global function from binary style
-        navMenuListener();
         let loginid_select = '';
         const loginid_array = Client.get('loginid_array');
         for (let i = 0; i < loginid_array.length; i++) {

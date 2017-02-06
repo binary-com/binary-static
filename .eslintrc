@@ -25,10 +25,7 @@
         'DESK':            false,
 
         // from binary style
-        'tabListener':      true,
-        'langListener':     true,
-        'documentListener': true,
-        'navMenuListener':  true,
+        'tabListener': true,
     },
     'rules': {
         'array-callback-return': 0,
