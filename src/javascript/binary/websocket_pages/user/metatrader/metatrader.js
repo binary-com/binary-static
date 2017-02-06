@@ -1,3 +1,5 @@
+const Client           = require('../../../base/client').Client;
+const Content          = require('../../../common_functions/content').Content;
 const Validation       = require('../../../common_functions/form_validation');
 const MetaTraderConfig = require('./metatrader.config');
 const MetaTraderUI     = require('./metatrader.ui');
@@ -10,8 +12,30 @@ const MetaTrader = (function() {
     const fields       = MetaTraderConfig.fields;
 
     const init = () => {
-        getAllAccountsInfo();
-        MetaTraderUI.init(submit);
+        BinarySocket.send({ landing_company: Client.get('residence') }).then((response) => {
+            if (!response.error) {
+                const lc = response.landing_company;
+                const has_financial_company = lc.hasOwnProperty('mt_financial_company') && lc.mt_financial_company.shortcode === 'vanuatu';
+                const has_gaming_company    = lc.hasOwnProperty('mt_gaming_company') && lc.mt_gaming_company.shortcode === 'costarica';
+                if (lc.hasOwnProperty('financial_company') && lc.financial_company.shortcode === 'costarica' && (has_financial_company || has_gaming_company)) {
+                    updateEnabledStatus('gaming', has_gaming_company);
+                    updateEnabledStatus('financial', has_financial_company);
+                    getAllAccountsInfo();
+                    MetaTraderUI.init(submit);
+                } else {
+                    Content.populate();
+                    MetaTraderUI.displayPageError(Content.localize().textFeatureUnavailable);
+                }
+            }
+        });
+    };
+
+    const updateEnabledStatus = (account_type, is_enabled) => {
+        Object.keys(types_info).forEach((acc_type) => {
+            if (types_info[acc_type].account_type === account_type) {
+                types_info[acc_type].is_enabled = is_enabled;
+            }
+        });
     };
 
     const getAllAccountsInfo = () => {

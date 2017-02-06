@@ -2,6 +2,7 @@
     <div>
         <h1>[% l('MetaTrader account management') %]</h1>
     </div>
+    <p id="page_msg" class="notice-msg center-text invisible"></p>
     <div id="mt_loading">[% INCLUDE global/loading.html.tt %]</div>
     <div class="gr-12">
         <div id="accounts_list" class="gr-row"></div>

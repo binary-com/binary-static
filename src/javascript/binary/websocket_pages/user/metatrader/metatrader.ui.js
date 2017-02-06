@@ -35,7 +35,7 @@ const MetaTraderUI = (function() {
     const populateAccountList = () => {
         const $acc_box = $templates.find('> .acc-box');
         Object.keys(types_info).forEach(function(acc_type) {
-            if ($list.find(`#${acc_type}`).length === 0) {
+            if ($list.find(`#${acc_type}`).length === 0 && (types_info[acc_type].is_enabled || types_info[acc_type].is_demo)) {
                 const $acc_item = $acc_box.clone();
 
                 // set values
@@ -146,6 +146,13 @@ const MetaTraderUI = (function() {
         $.scrollTo($main_msg, 500, { offset: -10 });
     };
 
+    const displayPageError = (message) => {
+        $('#mt_account_management').find('#page_msg').html(message).removeClass(hidden_class)
+            .end()
+            .find('#mt_loading')
+            .remove();
+    };
+
     const disableButton = () => {
         const $btn = $form.find('button');
         if ($btn.length && !$btn.find('.barspinner').length) {
@@ -173,6 +180,7 @@ const MetaTraderUI = (function() {
         hideFormMessage      : hideFormMessage,
         displayFormMessage   : displayFormMessage,
         displayMainMessage   : displayMainMessage,
+        displayPageError     : displayPageError,
         disableButton        : disableButton,
         enableButton         : enableButton,
     };
