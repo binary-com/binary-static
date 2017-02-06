@@ -143,11 +143,10 @@ sub js_config {
     }
 
     # Binary-style
-    my $stylejs = "https://style.binary.com/binary.js?$static_hash";
+    push @libs, "https://style.binary.com/binary.js?$static_hash";
 
     return {
-        libs     => \@libs,
-        stylejs  => $stylejs,
+        libs => \@libs,
     };
 }
 

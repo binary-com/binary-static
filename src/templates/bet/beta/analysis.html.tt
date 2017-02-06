@@ -1,7 +1,7 @@
 <div id="trading_analysis_content">
     <div class="content-tab-container page-section">
         <div id="analysis_tab_container">
-            <ul id="analysis_tabs" class="tm-ul">
+            <ul id="analysis_tabs" class="tm-ul follow-default">
                 <li id="tab_graph" class="tm-li first">
                     <a href="#tab_graph" class="tm-a first">[% l('Chart') %]</a>
                 </li>
