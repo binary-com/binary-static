@@ -54,7 +54,8 @@ const MetaTraderConfig = (function() {
                             }
                             BinarySocket.send({ get_financial_assessment: 1 }).then((response_financial) => {
                                 if (!objectNotEmpty(response_financial.get_financial_assessment)) {
-                                    $msg.find('li.assessment').removeClass(hidden_class);
+                                    $msg.find('li.assessment').removeClass(hidden_class)
+                                        .find('a').click(() => { localStorage.setItem('financial_assessment_redirect', url_for('user/metatrader')); });
                                 }
                                 resolve($msg.find(`.checked > li:not(.${hidden_class})`).length ? $msg.html() : '');
                             });
@@ -101,7 +102,7 @@ const MetaTraderConfig = (function() {
                     BinarySocket.send({ cashier_password: 1 }).then((response) => {
                         if (!response.error && response.cashier_password === 1) {
                             resolve(localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.', [
-                                url_for('cashier/cashier-password')]));
+                                url_for('user/security/cashier_passwordws')]));
                         } else {
                             resolve();
                         }

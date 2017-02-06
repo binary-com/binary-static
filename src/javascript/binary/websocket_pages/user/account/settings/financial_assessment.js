@@ -119,6 +119,11 @@ const FinancialAssessmentws = (function() {
                 displayErrors(response.error.details);
             } else {
                 showFormMessage('Your changes have been updated successfully.', true);
+                const redirect_url = localStorage.getItem('financial_assessment_redirect');
+                if (redirect_url) {
+                    localStorage.removeItem('financial_assessment_redirect');
+                    setTimeout(() => { window.location.href = redirect_url; }, 5000);
+                }
             }
         }
     };
