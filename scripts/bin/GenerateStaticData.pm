@@ -485,6 +485,9 @@ sub _texts {
         push @texts, localize('There was a problem accessing the server.');
         push @texts, localize('There was a problem accessing the server during purchase.');
 
+        # strings for OneSignal
+        push @texts, localize('Thank you for subscribing!');
+
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
     }

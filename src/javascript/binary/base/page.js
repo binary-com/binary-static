@@ -66,36 +66,7 @@ Page.prototype = {
         this.endpoint_notification();
         BinarySocket.init();
         this.show_notification_outdated_browser();
-
-        OneSignal.push(function() {
-            // If we're on an unsupported browser, do nothing
-            if (!OneSignal.isPushNotificationsSupported()) {
-                return;
-            }
-            OneSignal.isPushNotificationsEnabled()
-                .then(function(isPushEnabled) {
-                    if (!isPushEnabled) {
-                        OneSignal.getSubscription()
-                            // Show prompt only for the first visit user
-                            .then(function(notOptedOut) {
-                                if (notOptedOut) {
-                                    OneSignal.showHttpPrompt();
-                                }
-                            });
-                    } else {
-                        // If user is subscribed and is logged in, send login_id to onesignal
-                        if (!Client.is_logged_in()) {
-                            return;
-                        }
-                        OneSignal.getTags(function(tags) {
-                            if (tags.login_id === undefined) {
-                                const id = localStorage.getItem('client.loginid');
-                                OneSignal.sendTags({ login_id: id });
-                            }
-                        });
-                    }
-                });
-        });
+        OneSignal.prompt();
     },
     on_unload: function() {
         Menu.on_unload();
