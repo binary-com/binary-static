@@ -23,6 +23,12 @@
         'BinarySocket':    false,
         'trackJs':         false,
         'DESK':            false,
+
+        // from binary style
+        'tabListener':      true,
+        'langListener':     true,
+        'documentListener': true,
+        'navMenuListener':  true,
     },
     'rules': {
         'array-callback-return': 0,

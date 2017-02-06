@@ -26,48 +26,19 @@ const Header = (function() {
         });
     };
 
-    const animate_disappear = function(element) {
-        element.animate({ opacity: 0 }, 100, function() {
-            element.css({ visibility: 'hidden', display: 'none' });
-        });
-    };
-
-    const animate_appear = function(element) {
-        element.css({ visibility: 'visible', display: 'block' })
-            .animate({ opacity: 1 }, 100);
-    };
-
     const show_or_hide_language = function() {
-        const $el = $('#select_language'),
-            $all_accounts = $('#all-accounts');
-        $('.languages').off('click').on('click', function(event) {
-            event.stopPropagation();
-            animate_disappear($all_accounts);
-            if (+$el.css('opacity') === 1) {
-                animate_disappear($el);
-            } else {
-                animate_appear($el);
-            }
-        });
-        $(document).unbind('click').on('click', function() {
-            animate_disappear($all_accounts);
-            animate_disappear($el);
-        });
+        $('.languages').off('click');
+        $(document).off('click');
+        // global functions from binary style
+        langListener();
+        documentListener();
     };
 
     const show_or_hide_login_form = function() {
         if (!Client.is_logged_in()) return;
-        const all_accounts = $('#all-accounts'),
-            language = $('#select_language');
-        $('.nav-menu').unbind('click').on('click', function(event) {
-            event.stopPropagation();
-            animate_disappear(language);
-            if (+all_accounts.css('opacity') === 1) {
-                animate_disappear(all_accounts);
-            } else {
-                animate_appear(all_accounts);
-            }
-        });
+        $('.nav-menu').off('click');
+        // global function from binary style
+        navMenuListener();
         let loginid_select = '';
         const loginid_array = Client.get('loginid_array');
         for (let i = 0; i < loginid_array.length; i++) {
