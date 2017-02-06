@@ -18,15 +18,10 @@ const ViewBalance       = require('../websocket_pages/user/viewbalance/viewbalan
 const Cookies           = require('../../lib/js-cookie');
 const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check.init').RealityCheck;
 const RealityCheckData  = require('../websocket_pages/user/reality_check/reality_check.data').RealityCheckData;
+const OneSignal         = require('../../lib/one-signal.js');
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
 require('../../lib/mmenu/jquery.mmenu.min.all.js');
-<<<<<<< HEAD
-
-const OneSignal = require('../../lib/one-signal.js');
-=======
-const OneSignal = require('../../lib/push-notifications.js');
->>>>>>> Updates
 
 const Page = function() {
     State.set('is_loaded_by_pjax', false);
