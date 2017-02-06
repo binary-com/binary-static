@@ -12,7 +12,7 @@ const Header = (function() {
         show_or_hide_language();
         logout_handler();
         check_risk_classification();
-        if (!$('body').hasClass('BlueTopBack') && !Login.is_login_pages()) {
+        if (!Login.is_login_pages()) {
             checkClientsCountry();
         }
         if (Client.is_logged_in()) {

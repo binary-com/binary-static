@@ -11,9 +11,7 @@ const ResetPassword = (function () {
     'use strict';
 
     const hiddenClass = 'invisible';
-    const resetErrorTemplate = '[_1]' +
-        ' Please click the link below to restart the password recovery process. ' +
-        'If you require further assistance, please contact our Customer Support.';
+    const resetErrorTemplate = '[_1] Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support.';
     let dobdd,
         dobmm,
         dobyy;
@@ -108,8 +106,7 @@ const ResetPassword = (function () {
                 $('#reset-error-msg').text(errMsg);
             } else {
                 $('p.notice-msg')
-                    .text(localize('Your password has been successfully reset. ' +
-                        'Please log into your account using your new password.'));
+                    .text(localize('Your password has been successfully reset. Please log into your account using your new password.'));
                 window.setTimeout(function () {
                     Login.redirect_to_login();
                 }, 5000);

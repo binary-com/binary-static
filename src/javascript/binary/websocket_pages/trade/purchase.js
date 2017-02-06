@@ -8,6 +8,7 @@ const updatePurchaseStatus  = require('./common').updatePurchaseStatus;
 const updateContractBalance = require('./common').updateContractBalance;
 const elementTextContent    = require('../../common_functions/common_functions').elementTextContent;
 const elementInnerHtml      = require('../../common_functions/common_functions').elementInnerHtml;
+const localize              = require('../../base/localize').localize;
 
 /*
  * Purchase object that handles all the functions related to
@@ -61,7 +62,7 @@ const Purchase = (function () {
             elementTextContent(heading, Content.localize().textContractConfirmationHeading);
             elementTextContent(descr, receipt.longcode);
             if (barrier_element) barrier_element.textContent = '';
-            elementTextContent(reference, Content.localize().textContractConfirmationReference + ' ' + receipt.transaction_id);
+            elementTextContent(reference, localize('Your transaction reference is') + ' ' + receipt.transaction_id);
 
             let payout_value,
                 cost_value;
@@ -80,9 +81,9 @@ const Purchase = (function () {
                 elementInnerHtml(cost, Content.localize().textAmountPerPoint + ' <p>' + receipt.amount_per_point + '</p>');
                 elementInnerHtml(profit, Content.localize().textStopProfit + ' <p>' + receipt.stop_profit_level + '</p>');
             } else {
-                elementInnerHtml(payout, Content.localize().textContractConfirmationPayout + ' <p>' + payout_value + '</p>');
-                elementInnerHtml(cost, Content.localize().textContractConfirmationCost + ' <p>' + cost_value + '</p>');
-                elementInnerHtml(profit, Content.localize().textContractConfirmationProfit + ' <p>' + profit_value + '</p>');
+                elementInnerHtml(payout, localize('Potential Payout') + ' <p>' + payout_value + '</p>');
+                elementInnerHtml(cost, localize('Total Cost') + ' <p>' + cost_value + '</p>');
+                elementInnerHtml(profit, localize('Potential Profit') + ' <p>' + profit_value + '</p>');
             }
 
             updateContractBalance(receipt.balance_after);
@@ -102,7 +103,7 @@ const Purchase = (function () {
             }
 
             if (Contract.form() !== 'digits' && !show_chart) {
-                elementTextContent(button, Content.localize().textContractConfirmationButton);
+                elementTextContent(button, localize('View'));
                 button.setAttribute('contract_id', receipt.contract_id);
                 button.show();
                 $('.open_contract_detailsws').attr('contract_id', receipt.contract_id).removeClass('invisible');

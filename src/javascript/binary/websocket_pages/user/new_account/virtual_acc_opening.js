@@ -31,7 +31,9 @@ const VirtualAccOpening = (function() {
         $('.notice-message').remove();
         const $form = $('#virtual-form');
         $form.html($('<p/>', {
-            html: template(Content.localize().textDuplicatedEmail, [url_for('user/lost_passwordws')]),
+            html: template(
+                localize('Your provided email address is already in use by another Login ID. According to our terms and conditions, you may only register once through our site. If you have forgotten the password of your existing account, please <a href="[_1]">try our password recovery tool</a> or contact customer service.'),
+                [url_for('user/lost_passwordws')]),
         }));
     };
 

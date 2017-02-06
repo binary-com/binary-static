@@ -74,10 +74,6 @@ const ApplicationsUI = (function() {
 
     const init = function() {
         showLoadingImage($('<div/>', { id: 'loading' }).insertAfter('#applications-title'));
-        const $title = $('#applications-title').children().first();
-        const $desc  = $('#description');
-        $title.text(localize($title.text()));
-        $desc.text(localize($desc.text()));
     };
 
     const clean = function() {
