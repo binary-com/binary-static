@@ -22,10 +22,10 @@ const StatementUI = (function() {
             Content.localize().textDate,
             Content.localize().textRef,
             localize('Potential Payout'),
-            Content.localize().textAction,
-            Content.localize().textDescription,
-            Content.localize().textCreditDebit,
-            Content.localize().textBalance,
+            localize('Action'),
+            localize('Description'),
+            localize('Credit/Debit'),
+            localize('Balance'),
             Content.localize().textDetails,
         ];
 

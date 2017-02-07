@@ -1,4 +1,3 @@
-const MenuContent  = require('./menu_content').MenuContent;
 const Url          = require('./url').Url;
 const url          = require('./url').url;
 const GTM          = require('./gtm').GTM;
@@ -138,9 +137,7 @@ const pjax_config = function() {
 };
 
 const init_pjax = function () {
-    if (!$('body').hasClass('BlueTopBack')) { // No Pjax for BO.
-        pjax.connect(pjax_config());
-    }
+    pjax.connect(pjax_config());
 };
 
 // TODO: remove or fix this function
@@ -200,15 +197,8 @@ onUnload.queue(function () {
 });
 
 onLoad.queue(function () {
-    $('.tm-ul > li').hover(
-        function () {
-            $(this).addClass('hover');
-        },
-        function () {
-            $(this).removeClass('hover');
-        });
-
-    MenuContent.init($('.content-tab-container').find('.tm-ul'));
+    // global function used from binary style
+    tabListener();
 
     make_mobile_menu();
 
