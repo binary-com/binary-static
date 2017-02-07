@@ -167,11 +167,9 @@ const Client = (function () {
     };
 
     const set_check_tnc = function () {
-        if (!$('body').hasClass('BlueTopBack')) {
-            sessionStorage.setItem('check_tnc', 'check');
-            localStorage.removeItem('client.tnc_status');
-            localStorage.removeItem('website.tnc_version');
-        }
+        sessionStorage.setItem('check_tnc', 'check');
+        localStorage.removeItem('client.tnc_status');
+        localStorage.removeItem('website.tnc_version');
     };
 
     const clear_storage_values = function() {

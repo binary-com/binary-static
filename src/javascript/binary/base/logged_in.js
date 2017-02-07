@@ -30,7 +30,7 @@ const LoggedInHandler = (function() {
             Client.set_cookie('login', tokens[loginid]);
 
             // set flags
-            if (!$('body').hasClass('BlueTopBack')) localStorage.setItem('risk_classification', 'check');
+            localStorage.setItem('risk_classification', 'check');
             Client.set_check_tnc();
             GTM.set_login_flag();
 

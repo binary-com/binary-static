@@ -18,9 +18,7 @@ exportAllFunctions(require('./binary/common_functions/attach_dom/handle_click'))
 // used by gtm to update page after a new release
 exportAllFunctions(require('./binary/common_functions/check_new_release'));
 
-require('./lib/jquery-ui-timepicker/jquery.ui.timepicker.js');
 require('event-source-polyfill');
-require('./lib/jquery-ui.js');
 require('./lib/jquery.sparkline.js');
 require('jquery.scrollto');
 

@@ -363,7 +363,7 @@ const BinarySocketClass = function() {
                         if (!localStorage.getItem('risk_classification')) Client.check_tnc();
                         if (response.website_status.clients_country) {
                             localStorage.setItem('clients_country', response.website_status.clients_country);
-                            if (!$('body').hasClass('BlueTopBack') && !Login.is_login_pages()) {
+                            if (!Login.is_login_pages()) {
                                 checkClientsCountry();
                             }
                         }
