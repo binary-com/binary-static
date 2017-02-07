@@ -6,12 +6,22 @@ const bind_validation = require('../../../validator').bind_validation;
 const dv       = require('../../../../lib/validation');
 const localize = require('../../../base/localize').localize;
 const Client   = require('../../../base/client').Client;
+const url_for  = require('../../../base/url').url_for;
 
 const PasswordWS = (function() {
     let $form,
         $result;
 
+    const hasPassword = function () {
+        if (Client.get('values_set') && !Client.get('has_password')) {
+            window.location.href = url_for('user/settingsws');
+            return false;
+        }
+        return true;
+    };
+
     const init = function() {
+        if (!hasPassword()) return;
         const $container = $('#change-password');
         $container.removeClass('invisible');
         $form = $container.find(' > form');
@@ -65,6 +75,7 @@ const PasswordWS = (function() {
     };
 
     const sendRequest = function(data) {
+        if (!hasPassword()) return;
         BinarySocket.send({
             change_password: '1',
             old_password   : data.old_password,

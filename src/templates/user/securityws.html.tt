@@ -2,7 +2,7 @@
     <h1>[% l('Security') %]</h1>
 
     <div class="gr-row">
-        <div class="gr-3 gr-6-m gr-parent">
+        <div class="gr-3 gr-6-m gr-parent invisible" id="change_password">
             <div class="gr-8 gr-padding-10">
                 <a class="pjaxload" href="[% request.url_for('/user/security/change_passwordws') %]">
                     <img class="responsive" src="[% request.url_for('images/pages/settings/account_password.svg') %]">

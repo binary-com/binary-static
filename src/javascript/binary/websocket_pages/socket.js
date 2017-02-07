@@ -282,8 +282,11 @@ const BinarySocketClass = function() {
                         Client.check_tnc();
                     }
                     localStorage.setItem('risk_classification.response', response.get_account_status.risk_classification);
-
-                    sessionStorage.setItem('client_status', response.get_account_status.status);
+                    const status = response.get_account_status.status;
+                    sessionStorage.setItem('client_status', status);
+                    if (/has_password/.test(status)) {
+                        Client.set('has_password', 1);
+                    }
                     page.show_authenticate_message();
 
                     if (response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.hasOwnProperty('dispatch_to')) {

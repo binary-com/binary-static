@@ -96,12 +96,14 @@ const ResetPassword = (function () {
                 $('p.notice-msg').addClass(hiddenClass);
                 $('#reset-error').removeClass(hiddenClass);
 
-                // special handling as backend return inconsistent format
-                const errMsg = localize(resetErrorTemplate, [
-                    response.error.code === 'InputValidationFailed' ?
-                        localize('Token has expired.') :
-                        localize(response.error.message),
-                ]);
+                const error_code = response.error.code;
+                let errMsg;
+                if (error_code === 'SocialBased') {
+                    errMsg = localize(response.error.message);
+                    $('#reset-error').find('a').addClass(hiddenClass);
+                } else { // special handling as backend return inconsistent format
+                    errMsg = localize(resetErrorTemplate, [error_code === 'InputValidationFailed' ? localize('Token has expired.') : localize(response.error.message)]);
+                }
 
                 $('#reset-error-msg').text(errMsg);
             } else {
