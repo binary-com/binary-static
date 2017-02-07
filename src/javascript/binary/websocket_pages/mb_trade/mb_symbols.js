@@ -41,7 +41,7 @@ const MBSymbols = (function () {
     const getSymbols = function (update) {
         const landing_company_obj = Client.landing_company();
         const allowed_markets     = Client.get_client_landing_company().legal_allowed_markets;
-        if (Client.get_boolean('is_logged_in') && allowed_markets && allowed_markets.indexOf('forex') === -1) {
+        if (Client.is_logged_in() && allowed_markets && allowed_markets.indexOf('forex') === -1) {
             window.location.href = url_for('trading');
             return;
         }
