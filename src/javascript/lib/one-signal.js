@@ -25,6 +25,7 @@ OneSignal.push(function() {
 });
 
 function prompt() {
+    if (window.location.hostname !== 'www.binary.com') return;
     OneSignal.push(function() {
         // If we're on an unsupported browser, do nothing
         if (!OneSignal.isPushNotificationsSupported()) {
@@ -33,12 +34,11 @@ function prompt() {
         OneSignal.isPushNotificationsEnabled()
             .then(function(isPushEnabled) {
                 if (isPushEnabled && Client.is_logged_in()) {
-                    // If user is subscribed and is logged in, send login_id to onesignal
+                    // If user is subscribed and is logged in, send login_id, web language to onesignal
                     OneSignal.getTags(function (tags) {
                         if (tags.login_id === undefined) {
-                            const id = Client.get('loginid');
                             OneSignal.sendTags({
-                                login_id: id,
+                                login_id: Client.get('loginid'),
                                 language: getLanguage().toLowerCase()
                             });
                         }
