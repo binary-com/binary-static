@@ -47,7 +47,7 @@ my @urls = (
     ['get-started/what-is-binary-trading'      , 'monthly', '0.80', 'ja'],
     ['get-started/types-of-trades'             , 'monthly', '0.80', 'ja'],
     ['get-started/binary-options-basics'       , 'monthly', '0.80', 'ja'],
-    ['get-started/benefits-of-trading-binaries', 'monthly', '0.80', 'ja'],
+    ['get-started/why-trade-with-us'           , 'monthly', '0.80', 'ja'],
     ['get-started/how-to-trade-binaries'       , 'monthly', '0.80', 'ja'],
     ['get-started/volidx-markets'              , 'monthly', '0.80', 'ja'],
     ['get-started/spread'                      , 'monthly', '0.80', 'ja'],

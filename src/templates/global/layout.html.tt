@@ -13,8 +13,8 @@
           <li><a class="pjaxload" href="[% request.url_for('/get-started/what-is-binary-trading') %]">[% l("Why choose binary trading?") %]</a></li>
           <li><a class="pjaxload" href="[% request.url_for('/get-started/types-of-trades') %]">[% l("Types of trades") %]</a></li>
           <li><a class="pjaxload" href="[% request.url_for('/get-started/binary-options-basics') %]">[% l("Binary options basics") %]</a></li>
-          <li><a class="pjaxload" href="[% request.url_for('/get-started/benefits-of-trading-binaries') %]">[% l("Benefits of binary trading") %]</a></li>
-          <li><a class="pjaxload" href="[% request.url_for('/get-started/how-to-trade-binaries') %]">[% l("How to trade binaries?") %]</a></li>
+          <li><a class="pjaxload" href="[% request.url_for('/get-started/why-trade-with-us') %]">[% l("Why trade with [_1]", website_name) %]</a></li>
+          <li><a class="pjaxload" href="[% request.url_for('/get-started/how-to-trade-binaries') %]">[% l("How to trade binary options?") %]</a></li>
           <li class="ja-hide"><a class="pjaxload" href="[% request.url_for('/get-started/volidx-markets') %]">[% l("How to trade the Volatility Indices markets?") %]</a></li>
           <li class="ja-hide"><a class="pjaxload" href="[% request.url_for('/get-started/spread') %]">[% l("How to trade spreads?") %]</a></li>
           <li class="ja-hide"><a class="pjaxload" href="[% request.url_for('/get-started/smart-indices') %]">[% l("Smart Markets") %]</a></li>

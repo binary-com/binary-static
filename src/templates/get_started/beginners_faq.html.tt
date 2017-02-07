@@ -1,88 +1,37 @@
 <div class="section-content section-10">
-  <div class="gr-12">
     <h1>[% l("FAQ") %]</h1>
-  </div>
-  <div class="gr-12">
     <h2>[% l("Opening an account") %]</h2>
-    <br />
+
     <h3>[% l("I'm new to binaries, where do I start?") %]</h3>
-    <p>
-      [% l("The first step is to open an account. You can <a target='_blank' href='[_1]'>apply online</a> in just a few minutes.", request.url_for('/')) %]
-    </p>
+    <p>[% l("The first step is to open an account. You can <a target='_blank' href='[_1]'>apply online</a> in just a few minutes.", request.url_for('/')) %]</p>
+
     <h3>[% l("Do I need to send any documents?") %]</h3>
-    <p>
-      [% l("We don't usually require any documents as we can verify your identity online.") %]
-    </p>
-  </div>
-  <div class="gr-12">
-    <h2>[% l("Financial Security") %]</h2>
-    <br />
-    <h3>[% l("How safe is my money with [_1]?", website_name) %]</h3>
-  </div>
-  <div class="gr-12">
-  <div class="gr-row">
-  <div class="gr-8 gr-12-m">
-    <p>
-      [% l("Your money is always safe with [_1]. At all times, it is held in segregated AAA-rated banks, which is a condition of our trading licenses.", website_name) %]
-    </p>
-  </div>
-  <div class="gr-parent gr-4 gr-8-m gr-centered-m ja-hide">
-    <div class="gr-11 gr-padding-10 gr-centered">
-      <img class="responsive" src="[% request.url_for('images/pages/why-us/mga-logo2.svg') %]" />
-    </div>
-    <div class="gr-row">
-    <div class="gr-6 gr-padding-10">
-      <img class="responsive" src="[% request.url_for('images/pages/why-us/why-us-proven-record_1.svg') %]" />
-    </div>
-    <div class="gr-6 gr-padding-10">
-      <img class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]" />
-    </div>
-    </div>
-  </div>
-  </div>
-</div>
-  <div class="gr-12">
+    <p>[% l("We don't usually require any documents as we can verify your identity online.") %]</p>
+
+    <h2>[% l("Client funds") %]</h2>
+    <h3>[% l("Where does [_1] hold my funds?", website_name) %]</h3>
+    <p>[% l("We segregate all client funds and hold them in secure and licensed financial institutions, according to the conditions of our trading licenses.") %]</p>
+
     <h3>[% l("How does [_1] make money?", website_name) %]</h3>
-    <p>
-      [% l("[_1] has thousands of clients taking a variety of positions on the financial markets at any one time, and earns a small margin on these trades.", website_name) %]
-    </p>
-  </div>
-  <div class="gr-12">
+    <p>[% l("[_1] has thousands of clients taking a variety of positions on the financial markets at any one time, and earns a small margin on these trades.", website_name) %]</p>
+
     <h2>[% l("Depositing and withdrawing funds") %]</h2>
-    <br />
     <h3>[% l("Do I need to deposit any funds to open an account?") %]</h3>
-  </div>
-  <div class="gr-12">
-    <p>
-      [% l("You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading.") %]
-    </p>
-  </div>
-  <div class="gr-12">
+    <p>[% l("You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading.") %]</p>
+
     <h3>[% l("How do I fund my account?") %]</h3>
-    <p>
-      [% l("[_1] offers a range of common deposit and withdrawal methods, from credit and debit cards to bank wires, e-cash and e-wallets.", website_name) %]
-    </p>
-  </div>
-  <div class="gr-12">
+    <p>[% l("[_1] offers a range of common deposit and withdrawal methods, from credit and debit cards to bank wires, e-cash and e-wallets.", website_name) %]</p>
+
     <h3>[% l("Is it possible to deposit the same funds through different payment methods?") %]</h3>
-    <p>
-      [% l("Unfortunately, no - funds initially deposited through one payment method must be withdrawn through the same system; funds cannot be transferred to an alternate system for withdrawal. We do offer a wide variety of payment methods, to suit your specific needs and preferences.") %]
-    </p>
-  </div>
-  <div class="gr-12">
+    <p>[% l("Unfortunately, no - funds initially deposited through one payment method must be withdrawn through the same system; funds cannot be transferred to an alternate system for withdrawal. We do offer a wide variety of payment methods, to suit your specific needs and preferences.") %]</p>
+
     <h2>[% l("Learning to trade") %]</h2>
-    <br />
     <h3>[% l("Do you offer virtual-money accounts?") %]</h3>
-    <p>
-      [% l("[_1] offers a virtual-money account so you can get the hang of trading binaries. Why not <a class='pjaxload' href='[_2]'>open a free \$10k fully-functional virtual-money account</a>, and start learning how to trade.", website_name, request.url_for('/')) %]
-    </p>
+    <p>[% l("[_1] offers a virtual-money account so you can get the hang of trading binaries. Why not <a class='pjaxload' href='[_2]'>open a free \$10k fully-functional virtual-money account</a>, and start learning how to trade.", website_name, request.url_for('/')) %]</p>
+
     <h3>[% l("Will I need to install any software?") %]</h3>
-    <p>
-      [% l("[_1] is entirely web-based and requires no software installation.", website_name) %]
-    </p>
+    <p>[% l("[_1] is entirely web-based and requires no software installation.", website_name) %]</p>
+
     <h3>[% l("How soon can I start trading?") %]</h3>
-    <p>
-      [% l("You can <a class='pjaxload' href='[_1]'>open an account</a>, deposit funds and begin trading within minutes.", request.url_for('/')) %]
-    </p>
-  </div>
+    <p>[% l("You can <a class='pjaxload' href='[_1]'>open an account</a>, deposit funds and begin trading within minutes.", request.url_for('/')) %]</p>
 </div>

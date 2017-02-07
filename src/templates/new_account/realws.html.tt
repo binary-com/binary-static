@@ -88,6 +88,7 @@
                             </div>
                             <div class="gr-8">
                                 <input type="text" class="text form_input" id="address_line_1" name="address_line_1" maxlength="70"/>
+                                <p class="hint">[% l('Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account.') %]</p>
                                 <p class="errorfield" id="error_address_line_1" style="display:none"></p>
                             </div>
                         </div>
