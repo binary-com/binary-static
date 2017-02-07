@@ -2,12 +2,15 @@
     <h1>[% l('Available payment methods') %]</h1>
     <div class="gr-12">
         <div id="payment_method_suggestions gr-padding-10" class='center-text'>
+            <div class="gr-padding-10 invisible upgrademessage">
+                <a class="button"></a>
+            </div>
             <p>
                 <a href="[% request.url_for('/') %]" class="button by_client_type client_logged_out invisible pjaxload">
-                <span>[% l('Open an account now') %]</span>
+                    <span>[% l('Open an account now') %]</span>
                 </a>
                 <a href="[% request.url_for('cashier/forwardws#deposit') %]" class="button pjaxload by_client_type client_real with_login_cookies invisible">
-                <span class="deposit">[% l('Deposit') %]</span>
+                    <span class="deposit">[% l('Deposit') %]</span>
                 </a>
                 <a href="[% request.url_for('cashier/forwardws#withdraw') %]" class="button pjaxload by_client_type client_real with_login_cookies invisible">
                     <span class="withdraw">[% l('Withdraw') %]</span>
