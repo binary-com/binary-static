@@ -2,7 +2,7 @@
     <h1>[% l("Why trade with [_1]", website_name) %]</h1>
     <h2>[% l("Award-winning online trading platform") %]</h2>
     <ul>
-        <li>[% l("<strong>Simple and intuitive</strong> - Enjoy a trading platform that’s easy to navigate and use") %]</li>
+        <li>[% l("<strong>Simple and intuitive</strong> - Enjoy a trading platform that\’s easy to navigate and use") %]</li>
         <li>[% l("<strong>Instant access</strong> - Open an account and start trading in minutes. Deposits and withdrawals are also available 24/7") %]</li>
         <li>[% l("<strong>Available 24/7</strong> - Trade when you want. [_1] is available 24/7, even on weekends", website_name) %]</li>
         <li>[% l("<strong>Patented technology</strong> - Trade with the industry pioneer and holder of a patented pricing technology") %]</li>

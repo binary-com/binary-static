@@ -18,7 +18,7 @@
           <li class="ja-hide"><a class="pjaxload" href="[% request.url_for('/get-started/volidx-markets') %]">[% l("How to trade the Volatility Indices markets?") %]</a></li>
           <li class="ja-hide"><a class="pjaxload" href="[% request.url_for('/get-started/spread') %]">[% l("How to trade spreads?") %]</a></li>
           <li class="ja-hide"><a class="pjaxload" href="[% request.url_for('/get-started/smart-indices') %]">[% l("Smart Markets") %]</a></li>
-          <li class="ja-hide"><a class="pjaxload" href="[% request.url_for('/get-started/otc-indices-stocks') %]">[% l("OTC Indices and Stocks") %]</a></li>
+          <li class="ja-hide"><a class="pjaxload" href="[% request.url_for('/get-started/otc-indices-stocks') %]">[% l("OTC Indices and stocks") %]</a></li>
           <li><a class="pjaxload" href="[% request.url_for('/get-started/beginners-faq') %]">[% l("FAQ") %]</a></li>
           <li><a class="pjaxload" href="[% request.url_for('/get-started/glossary') %]">[% l("Glossary") %]</a></li>
         </ul>
@@ -43,10 +43,10 @@
           [% l('Want to learn more?') %]
           <br/>
           <a class="pjaxload ja-hide" href="[% request.url_for('/tour') %]">
-            [% l('View the Tour') %]
+            [% l('View the tour') %]
           </a>
           <a class="pjaxload hidden ja-show" href="[% request.url_for('/tour-jp') %]">
-            [% l('View the Tour') %]
+            [% l('View the tour') %]
           </a>
         </p>
       </div>

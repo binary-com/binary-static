@@ -1,5 +1,5 @@
 <fieldset>
-    <legend>[% l("Financial Information") %]</legend>
+    <legend>[% l("Financial information") %]</legend>
 
     <div class="gr-padding-10 gr-row clear">
         <div class="gr-4 form_label">
@@ -178,7 +178,7 @@
     </div>
     <div class="gr-padding-10 gr-row clear">
         <div class="gr-4 form_label">
-            <label for="employment_industry">[% l("Industry of Employment") %]</label>
+            <label for="employment_industry">[% l("Industry of employment") %]</label>
         </div>
         <div class="gr-8">
             <select id="employment_industry" name="employment_industry" class="form_input">
@@ -219,7 +219,7 @@
     </div>
     <div class="gr-padding-10 gr-row clear">
         <div class="gr-4 form_label">
-            <label for="education_level">[% l("Level of Education") %]</label>
+            <label for="education_level">[% l("Level of education") %]</label>
         </div>
         <div class="gr-8">
             <select id="education_level" name="education_level" class="form_input">
@@ -233,7 +233,7 @@
     </div>
     <div class="gr-padding-10 gr-row clear">
         <div class="gr-4 form_label">
-            <label for="income_source">[% l("Income Source") %]</label>
+            <label for="income_source">[% l("Income source") %]</label>
         </div>
         <div class="gr-8">
             <select id="income_source" name="income_source" class="form_input">
@@ -249,7 +249,7 @@
     </div>
     <div class="gr-padding-10 gr-row clear">
         <div class="gr-4 form_label">
-            <label for="net_income">[% l("Net Annual Income") %]</label>
+            <label for="net_income">[% l("Net annual income") %]</label>
         </div>
         <div class="gr-8">
             <select id="net_income" name="net_income" class="form_input">
@@ -265,7 +265,7 @@
     </div>
     <div class="gr-padding-10 gr-row clear">
         <div class="gr-4 form_label">
-            <label for="estimated_worth">[% l("Estimated Net Worth") %]</label>
+            <label for="estimated_worth">[% l("Estimated net worth") %]</label>
         </div>
         <div class="gr-8">
             <select id="estimated_worth" name="estimated_worth" class="form_input">

@@ -13,7 +13,7 @@
                                         <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]" />
                                     </div>
                                     <div class="gr-5 gr-8-m gr-centered">
-                                        <button class="primary-bg-color" id="btn-verify-email" type="submit">[% l('Create Free Account') %]</button>
+                                        <button class="primary-bg-color" id="btn-verify-email" type="submit">[% l('Create free account') %]</button>
                                     </div>
                                     <span class="gr-12 gr-padding-10 error-msg hint color-white center-text" id="signup_error" style="display:none"></span>
                                 </div>
