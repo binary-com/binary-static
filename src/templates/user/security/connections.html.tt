@@ -1,8 +1,0 @@
-<div id="connections-ws-container">
-    <div class="page-title" id="connections-title">
-        <h1>[% l("Connections") %]</h1>
-        <p id="description">[% l("Keep track of your authorised connections.") %]</p>
-        <p class="error-msg" id="err"></p>
-        <div id="oa_social_login_container"></div>
-    </div>
-</div>
