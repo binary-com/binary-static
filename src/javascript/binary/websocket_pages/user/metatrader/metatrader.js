@@ -1,5 +1,4 @@
-const Client           = require('../../../base/client').Client;
-const Content          = require('../../../common_functions/content').Content;
+const localize         = require('../../../base/localize').localize;
 const Validation       = require('../../../common_functions/form_validation');
 const MetaTraderConfig = require('./metatrader.config');
 const MetaTraderUI     = require('./metatrader.ui');
@@ -11,23 +10,34 @@ const MetaTrader = (function() {
     const actions_info = MetaTraderConfig.actions_info;
     const fields       = MetaTraderConfig.fields;
 
+    let has_financial_company,
+        has_gaming_company;
+
     const init = () => {
-        BinarySocket.send({ landing_company: Client.get('residence') }).then((response) => {
-            if (!response.error) {
-                const lc = response.landing_company;
-                const has_financial_company = lc.hasOwnProperty('mt_financial_company') && lc.mt_financial_company.shortcode === 'vanuatu';
-                const has_gaming_company    = lc.hasOwnProperty('mt_gaming_company') && lc.mt_gaming_company.shortcode === 'costarica';
-                if (lc.hasOwnProperty('financial_company') && lc.financial_company.shortcode === 'costarica' && (has_financial_company || has_gaming_company)) {
-                    updateEnabledStatus('gaming', has_gaming_company);
-                    updateEnabledStatus('financial', has_financial_company);
-                    getAllAccountsInfo();
-                    MetaTraderUI.init(submit);
-                } else {
-                    Content.populate();
-                    MetaTraderUI.displayPageError(Content.localize().textFeatureUnavailable);
-                }
+        BinarySocket.wait('landing_company').then((response) => {
+            if (isEligible(response)) {
+                updateEnabledStatus('gaming', has_gaming_company);
+                updateEnabledStatus('financial', has_financial_company);
+                getAllAccountsInfo();
+                MetaTraderUI.init(submit);
+            } else {
+                MetaTraderUI.displayPageError(localize('Sorry, this feature is not available.'));
             }
         });
+    };
+
+    const isEligible = (landing_company_response) => {
+        let is_eligible = false;
+        if (!landing_company_response.error) {
+            const lc              = landing_company_response.landing_company;
+            has_financial_company = lc.hasOwnProperty('mt_financial_company') && lc.mt_financial_company.shortcode === 'vanuatu';
+            has_gaming_company    = lc.hasOwnProperty('mt_gaming_company') && lc.mt_gaming_company.shortcode === 'costarica';
+            if (lc.hasOwnProperty('financial_company') && lc.financial_company.shortcode === 'costarica' &&
+                (has_financial_company || has_gaming_company)) {
+                is_eligible = true;
+            }
+        }
+        return is_eligible;
     };
 
     const updateEnabledStatus = (account_type, is_enabled) => {
@@ -126,7 +136,8 @@ const MetaTrader = (function() {
     };
 
     return {
-        init: init,
+        init      : init,
+        isEligible: isEligible,
     };
 })();
 

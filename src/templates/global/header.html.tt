@@ -119,7 +119,7 @@
                                     <a class="link with_login_cookies pjaxload" href="[% request.url_for('/user/securityws') %]">
                                         <li class="topMenuSecurity">[% l("Security & Limits") %]</li>
                                     </a>
-                                    <a class="link with_login_cookies pjaxload" href="[% request.url_for('/user/metatrader') %]">
+                                    <a class="link with_login_cookies pjaxload invisible" id="user_menu_metatrader" href="[% request.url_for('/user/metatrader') %]">
                                         <li class="topMenuMetaTrader">[% l("MetaTrader") %]</li>
                                     </a>
                                     <div class="separator-line-thin-gray"></div>
