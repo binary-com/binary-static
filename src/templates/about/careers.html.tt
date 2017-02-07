@@ -83,17 +83,19 @@
         </div>
       </div>
       <div class="gr-row gr-padding-30">
-        <div class="gr-6 gr-12-m">
+        <div class="gr-6 gr-12-m center-text">
           <img class="responsive" src="[% request.url_for('images/pages/careers/fsb@1.jpg') %]"/>
+            <p class="gr-padding-10 hint">
+                [% l("Imagine a workplace that often doesn\'t feel like work.") %]
+            </p>
         </div>
-        <div class="gr-6 gr-12-m">
+        <div class="gr-6 gr-12-m center-text">
           <img class="responsive" src="[% request.url_for('images/pages/careers/pt@1.jpg') %]"/>
-
+            <p class="gr-padding-10 hint">
+                [% l("Where we\'re one big, multicultural family.") %]
+            </p>
         </div>
         <div class="gr-12">
-          <p>
-              [% l("Imagine a workplace that often doesn\'t feel like work.") %]
-          </p>
           <p>
             [% l("And your weekends can take you to some of the world\'s most exotic and beautiful places.") %]
           </p>
@@ -121,16 +123,16 @@
         <div class="gr-4 gr-12-m">
           <h2>[% l("Where you can go") %]</h2>
           <p>
-            [% l("When it\'s time to kick back, you\'ll find beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits.") %]
+            [% l("Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits.") %]
           </p>
         </div>
         <div class="gr-4 gr-12-m">
           <h2>[% l("More benefits") %]</h2>
           <p>
-            [% l("We offer a market-based salary, annual performance bonus, health benefits for you and your family, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you\’re in Malta or Malaysia.") %]
+            [% l("We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you\’re in Malta or Malaysia.") %]
           </p>
         </div>
-        <div class="gr-9 gr-12-m gr-6-p center-text gr-centered gr-padding-10">
+        <div class="gr-9 gr-12-m gr-6-p center-text gr-centered gr-padding-30">
           <div class="xquote">
             <div>
               <div class="picture">
