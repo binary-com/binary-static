@@ -56,10 +56,10 @@
     <div class="section-content">
       <div class="gr-12">
         <h1>
-          [% l("Do you want to lock in profits?") %]
+          [% l("Exit your trades before expiry") %]
         </h1>
         <p>
-          [% l("If you do, no worries. With Binary.com, you can sell your trades before expiry to lock in profits. There's no need to wait until the end time.") %]
+          [% l("With [_1], you can sell your contracts before expiry to keep any profits you may have made or to minimise your losses. You don’t have to wait until the actual expiration time.", website_name) %]
         </p>
       </div>
     </div>
@@ -76,7 +76,7 @@
           </span>
         </a>
         <p>
-          [% l("Trade with ease with [_1]'s wide range of deposit and withdrawal methods. Your funds will be segregated and held in AAA-rated banks.", website_name) %]
+          [% l("Trade with ease with [_1]'s wide range of deposit and withdrawal methods. Your funds will be segregated and held in secure and licensed financial institutions.", website_name) %]
         </p>
         <a class="pjaxload button" href="[% request.url_for('/cashier/payment_methods') %]">
           <img class="responsive" src="[% request.url_for('images/pages/tour/tour-flexible-banking.png') %]"/>
