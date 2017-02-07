@@ -36,7 +36,11 @@ function limitLanguage(lang) {
 function japanese_client() {
     // handle for test case
     if (typeof window === 'undefined') return false;
-    return (getLanguage() === 'JA' || (Cookies.get('residence') === 'jp') || localStorage.getItem('clients_country') === 'jp');
+    return (getLanguage() === 'JA' || japanese_residence() || localStorage.getItem('clients_country') === 'jp');
+}
+
+function japanese_residence() {
+    return (Cookies.get('residence') === 'jp');
 }
 
 function checkLanguage() {
@@ -57,11 +61,15 @@ function checkLanguage() {
         $('.ja-no-padding').attr('style', 'padding-top: 0; padding-bottom: 0;');
         $('#regulatory-text').removeClass('gr-9 gr-7-p')
                              .addClass('gr-12 gr-12-p');
+        if (!japanese_residence()) {
+            $('#topMenuCashier').hide();
+        }
     }
 }
 
 module.exports = {
     checkClientsCountry: checkClientsCountry,
     japanese_client    : japanese_client,
+    japanese_residence : japanese_residence,
     checkLanguage      : checkLanguage,
 };

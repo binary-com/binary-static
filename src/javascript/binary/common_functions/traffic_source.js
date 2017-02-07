@@ -61,6 +61,11 @@ const TrafficSource = (function() {
             });
         }
 
+        // Store gclid
+        if (params.gclid && !Client.is_logged_in()) {
+            Client.set('gclid', params.gclid);
+        }
+
         const doc_ref  = document.referrer;
         let referrer = localStorage.getItem('index_referrer') || doc_ref;
         localStorage.removeItem('index_referrer');

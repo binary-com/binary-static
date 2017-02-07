@@ -1,7 +1,9 @@
-const japanese_client = require('../../common_functions/country_base').japanese_client;
-const Client   = require('../../base/client').Client;
-const Header   = require('../../base/header').Header;
-const url_for  = require('../../base/url').url_for;
+const japanese_client      = require('../../common_functions/country_base').japanese_client;
+const japanese_residence   = require('../../common_functions/country_base').japanese_residence;
+const Client               = require('../../base/client').Client;
+const Header               = require('../../base/header').Header;
+const url_for              = require('../../base/url').url_for;
+const default_redirect_url = require('../../base/url').default_redirect_url;
 
 const Cashier = (function() {
     'use strict';
@@ -20,6 +22,7 @@ const Cashier = (function() {
 
     const check_locked = function() {
         if (Client.get('is_virtual')) return;
+        if (japanese_client() && !japanese_residence()) window.location.href = default_redirect_url();
         if (Client.status_detected('cashier_locked')) {
             lock_unlock_cashier('lock', 'deposit, .withdraw');
             withdrawal_locked = true;
