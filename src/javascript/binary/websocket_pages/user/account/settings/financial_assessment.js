@@ -4,7 +4,7 @@ const showLoadingImage   = require('../../../../base/utility').showLoadingImage;
 const localize           = require('../../../../base/localize').localize;
 const Client             = require('../../../../base/client').Client;
 const url_for            = require('../../../../base/url').url_for;
-const Content              = require('../../../../common_functions/content').Content;
+const Content            = require('../../../../common_functions/content').Content;
 
 const FinancialAssessmentws = (function() {
     'use strict';
@@ -87,6 +87,9 @@ const FinancialAssessmentws = (function() {
             const val = response.get_financial_assessment[key];
             $('#' + key).val(val);
         });
+        if (financial_assessment.occupation === undefined) {  // handle existing assessments
+            financial_assessment.occupation = '';
+        }
     };
 
     const clearErrors = function() {

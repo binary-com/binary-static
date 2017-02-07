@@ -32,18 +32,6 @@ msgstr "<strong>Vinod Gorasia, Giám đốc Marketing của Agora Lifestyles</
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "\"Bên thứ ba Cung cấp Dịch vụ\" có nghĩa là bên thứ ba (không trực thuộc) là một thực thể pháp lý cung cấp các chức năng và dịch vụ thông qua việc sử dụng %1 API."
 
-msgid "$100,000 - $250,000"
-msgstr "$100,000 - $250,000"
-
-msgid "$100,000 - $500,000"
-msgstr "$100,000 - $500,000"
-
-msgid "$25,000 - $100,000"
-msgstr "$25,000 - $100,000"
-
-msgid "$250,000 - $1,000,000"
-msgstr "$250,000 - $1,000,000"
-
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 vừa được cộng thêm vào tài khoản tiền Ảo %3 của bạn"
 
@@ -285,6 +273,36 @@ msgstr "sáng kiến từ thiện của %1 tập trung vào các tổ chức t�
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(thời gian tối thiểu, ví dụ 15 giây tối thiểu)tối thiểu"
+
+#, fuzzy
+#| msgid "$100,000 - $250,000"
+msgid "&#36;100,000 - &#36;250,000"
+msgstr "$100,000 - $250,000"
+
+#, fuzzy
+#| msgid "$100,000 - $500,000"
+msgid "&#36;100,001 - &#36;500,000"
+msgstr "$100,000 - $500,000"
+
+#, fuzzy
+#| msgid "$25,000 - $100,000"
+msgid "&#36;25,000 - &#36;50,000"
+msgstr "$25,000 - $100,000"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;250,001 - &#36;500,000"
+msgstr "$250,000 - $1,000,000"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;50,001 - &#36;100,000"
+msgstr "$250,000 - $1,000,000"
+
+#, fuzzy
+#| msgid "$250,000 - $1,000,000"
+msgid "&#36;500,001 - &#36;1,000,000"
+msgstr "$250,000 - $1,000,000"
 
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 là một trong những đối tác lâu đời nhất và đáng tin cậy nhất của chúng tôi. Hai bên đã làm việc cùng nhau trong rất nhiều năm.&#8221;"
@@ -977,6 +995,9 @@ msgstr "Thỏa thuận về các Giới hạn"
 msgid "Agreement for documents"
 msgstr "Agreement for documents"
 
+msgid "Agricultural, Forestry and Fishery Workers"
+msgstr ""
+
 msgid "All Partnership Options"
 msgstr "Tất cả các lựa chọn hợp tác"
 
@@ -1143,8 +1164,16 @@ msgstr "Bạn có chắc chắn muốn xóa vĩnh viễn token"
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "Bạn có chắc chắn muốn thu hồi quyền truy cập vào ứng dụng vĩnh viễn"
 
+#, fuzzy
+#| msgid "Are you sure that you want to permanently revoke access to application"
+msgid "Are you sure that you want to permanently revoke connection to"
+msgstr "Bạn có chắc chắn muốn thu hồi quyền truy cập vào ứng dụng vĩnh viễn"
+
 msgid "Are your site visitors interested in:"
 msgstr "Khách đến thăm trang của bạn có hứng thú với:"
+
+msgid "Armed Forces"
+msgstr ""
 
 msgid "As Internal Auditor, you will perform unique, risk-based internal audits on the Binary Ltd. Group of companies. You will also be involved in risk management, evaluation of regulatory compliance, as well as work with the Head of Departments to improve business processes and support the realization of audit recommendations."
 msgstr "Kiểm Toán Nội Bộ, bạn sẽ thực hiện kiểm toán toàn bộ tập đoàn Binary dựa trên báo cáo rủi ro cơ bản. Bạn cũng sẽ được tham gia vào quản lý rủi ro, đánh giá về việc tuân thủ các quy định, cũng như làm việc với trưởng các bộ phận để cải tiến quy trình kinh doanh và hỗ trợ việc thực hiện kiến nghị kiểm toán."
@@ -1663,6 +1692,9 @@ msgstr "Xem vài cụm từ chuyên ngành trước khi bạn bắt đầu
 msgid "Check out the payment methods accepted by the payment agents in the list below."
 msgstr "Xem các phương thức thanh toán được chấp nhận trong danh sách dưới đây."
 
+msgid "Chief Executives, Senior Officials and Legislators"
+msgstr ""
+
 msgid "Choose Asian Rise/Fall when you want to profit from the market ending higher or lower than the average price."
 msgstr "Chọn Tăng/Giảm châu Á khi bạn muốn có lợi nhuận từ khi thị trường kết thúc với giá cao hơn hoặc thấp hơn giá bình quân."
 
@@ -1746,6 +1778,14 @@ msgstr "Công dân của Afghanistan, Bỉ, Bosnia và Herzegovina, Guyana, Iraq
 
 msgid "Classification of assets requiring hedge"
 msgstr "Classification of assets requiring hedge"
+
+#, fuzzy
+#| msgid "Complaints and Disputes"
+msgid "Cleaners and Helpers"
+msgstr "Khiếu nại và Tranh chấp"
+
+msgid "Clerks"
+msgstr ""
 
 msgid "Click here to retry"
 msgstr "Vui lòng nhấp vào đây để thử lại"
@@ -1903,6 +1943,11 @@ msgstr "Xung đột Chính sách"
 msgid "Connection error: Please check your internet connection."
 msgstr "Lỗi kết nối: xin vui lòng kiểm tra kết nối internet của bạn."
 
+#, fuzzy
+#| msgid "Construction"
+msgid "Connections"
+msgstr "Xây dựng"
+
 msgid "Construction"
 msgstr "Xây dựng"
 
@@ -2049,6 +2094,9 @@ msgstr "Quốc gia cư trú"
 
 msgid "Cover is made available on the basis of the depositor rather than on the basis of the number of deposits, meaning that if an individual has multiple accounts he will only be covered as to €20,000 on the global amount. Any other amount exceeding such threshold is not protected and will thus have to be borne by the investor."
 msgstr "Bồi hoàn được dựa trên cơ sở của người gửi hơn là cơ sở của số lượng người gửi, có nghĩa là nếu một cá nhân có nhiều tài khoản thì anh ấy chỉ có thể được bồi hoàn tối đa tới €20,000 số tiền quy định chung. Bất cứ số tiền nào vượt quá ngưỡng này sẽ không được bảo vệ vì vậy các nhà đầu tư phải tự chịu khoản tiền đó."
+
+msgid "Craft, Metal, Electrical and Electronics Workers"
+msgstr ""
 
 msgid "Create"
 msgstr "Tạo"
@@ -2990,6 +3038,9 @@ msgstr "Quy định và Quyền hạn chủ đạo"
 msgid "Governing law and jurisdiction"
 msgstr "Quy định và Quyền hạn chủ đạo"
 
+msgid "Government Officers"
+msgstr ""
+
 msgid "Grab a wide range of third-party apps for binary options trading in the <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Shop</a>."
 msgstr "Lấy một loạt các ứng dụng bên thứ ba cho các giao dịch tùy chọn nhị phân tại <a href=\"https://shop.binary.com\" target=\"_blank\">Cửa hàng Binary.com</a>."
 
@@ -3527,7 +3578,9 @@ msgstr "Chính sách Mời thầu Đầu tư"
 msgid "Investment trust"
 msgstr "Sự tín nhiệm đầu tư"
 
-msgid "Investments & Dividends"
+#, fuzzy
+#| msgid "Investments & Dividends"
+msgid "Investments &amp; Dividends"
 msgstr "Đầu tư và Cổ tức"
 
 msgid "Investor Compensation Scheme"
@@ -4064,6 +4117,11 @@ msgstr "Tháng Sáu"
 msgid "Keep track of your authorised applications."
 msgstr "Theo dõi liên tục các ứng dụng được cho phép của bạn."
 
+#, fuzzy
+#| msgid "Keep track of your authorised applications."
+msgid "Keep track of your authorised connections."
+msgstr "Theo dõi liên tục các ứng dụng được cho phép của bạn."
+
 msgid "Key facts"
 msgstr "Các nhân tố chính"
 
@@ -4142,10 +4200,14 @@ msgstr "Tuân thủ Luật lệ & Quy định"
 msgid "Legal Compliance"
 msgstr "Sự tuân thủ pháp luật"
 
-msgid "Less than $100,000"
+#, fuzzy
+#| msgid "Less than $100,000"
+msgid "Less than &#36;100,000"
 msgstr "Ít hơn $100,000"
 
-msgid "Less than $25,000"
+#, fuzzy
+#| msgid "Less than $25,000"
+msgid "Less than &#36;25,000"
 msgstr "Ít hơn $25,000"
 
 msgid "Less than 1 million JPY"
@@ -4285,8 +4347,18 @@ msgstr "Quản lý an ninh, phát hiện xâm nhập, bảo vệ DDoS và đánh
 msgid "Manage the company's cashier system"
 msgstr "Quản lý hệ thống thu ngân của công ty"
 
+#, fuzzy
+#| msgid "Manage your authorised applications."
+msgid "Manage your OAuth connections."
+msgstr "Quản lý các ứng dụng được cho phép của bạn."
+
 msgid "Manage your authorised applications."
 msgstr "Quản lý các ứng dụng được cho phép của bạn."
+
+#, fuzzy
+#| msgid "DevOps Manager"
+msgid "Managers"
+msgstr "Quản lý/ Trưởng phòng DevOps"
 
 msgid "Mar"
 msgstr "Tháng Ba"
@@ -4408,6 +4480,9 @@ msgstr "Tối thiểu %1 các kí tự cần thiết."
 
 msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Ít nhất 6 chữ thường và chữ hoa với những con số"
+
+msgid "Mining, Construction, Manufacturing and Transport Workers"
+msgstr ""
 
 #, fuzzy
 #| msgid "minute"
@@ -4834,10 +4909,14 @@ msgstr "Bảng theo dõi hoạt động của chúng tôi"
 msgid "Our trading screen is simple to use:"
 msgstr "Màn hình giao dịch của chúng tôi đơn giản để sử dụng:"
 
-msgid "Over $1,000,000"
+#, fuzzy
+#| msgid "Over $1,000,000"
+msgid "Over &#36;1,000,000"
 msgstr "Trên $1,000,000"
 
-msgid "Over $500,001"
+#, fuzzy
+#| msgid "Over $500,001"
+msgid "Over &#36;500,001"
 msgstr "Trên $500,001"
 
 msgid "Over 1 million registered accounts worldwide"
@@ -4977,6 +5056,9 @@ msgstr "module Perl"
 msgid "Permissions"
 msgstr "Quyền hạn"
 
+msgid "Personal Care, Sales and Service Workers"
+msgstr ""
+
 msgid "Personal Details"
 msgstr "Thông tin cá nhân"
 
@@ -4994,6 +5076,9 @@ msgstr "Bước giá nhỏ nhất"
 
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr "Pip là viết tắt của 'Percentage in point' cái mà ở vị trí thứ tư sau dấu thập phân (ví dụ 0.0001)."
+
+msgid "Plant and Machine Operators and Assemblers"
+msgstr ""
 
 msgid "Platform Comparison"
 msgstr "So sánh sàn"
@@ -5018,9 +5103,6 @@ msgstr "Vui lòng kiểm tra email của bạn để tìm lại token được 
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "Xin vui lòng chọn đồng tiền mà bạn muốn giao dịch."
-
-msgid "Please complete the following financial assessment form before continuing."
-msgstr "Vui lòng hoàn tất mẫu đánh giá tài chính dưới đây trước khi tiếp tục."
 
 msgid "Please confirm the trade on your statement before proceeding."
 msgstr "Xin vui lòng xác nhận nội dung giao dịch của bạn trước khi xử lý."
@@ -5278,6 +5360,11 @@ msgstr "Đưa ra nội dung cho trang web, blog, phương tiện truyền thông
 
 msgid "Professional Clients"
 msgstr "Khách hàng Chuyên nghiệp"
+
+#, fuzzy
+#| msgid "Market Professionals"
+msgid "Professionals"
+msgstr "Các chuyên gia về Thị trường"
 
 msgid "Proficiency in a scripting language - Perl preferred"
 msgstr "Thông thạo mã scripting language - Ưu tiên Perl"
@@ -7676,6 +7763,11 @@ msgstr "Bạn có thể sử dụng một đại lý thanh toán uỷ quyền đ
 msgid "You did not change anything."
 msgstr "Bạn chưa thay đổi bất cứ nội dung nào."
 
+#, fuzzy
+#| msgid "You did not change anything."
+msgid "You do not have any connections."
+msgstr "Bạn chưa thay đổi bất cứ nội dung nào."
+
 msgid "You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading."
 msgstr "Bạn không cần gửi tiền để mở tài khoản, nhưng bạn cần gửi tiền trước khi bạn bắt đầu giao dịch."
 
@@ -7912,6 +8004,11 @@ msgstr "Quỹ đã bị khóa theo yêu cầu của bạn - để mở khóa, vu
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "Quỹ đã được khóa theo yêu cầu của bạn - để mở khóa, vui lòng điền mật khẩu."
 
+#, fuzzy
+#| msgid "Your settings have been updated successfully."
+msgid "Your changes have been updated successfully."
+msgstr "Thiết lập của bạn đã được cập nhật thành công."
+
 msgid "Your changes have been updated."
 msgstr "Những thay đổi của bạn đã được cập nhật."
 
@@ -7920,9 +8017,6 @@ msgstr "Khách hàng của bạn sẽ yêu thích sàn giao dịch %1 bởi
 
 msgid "Your current balance is"
 msgstr "Số dư hiện tại của bạn là"
-
-msgid "Your details have been updated."
-msgstr "Thông tin chi tiết của bạn đã được cập nhật."
 
 msgid "Your funds are safe"
 msgstr "Tiền của bạn đang được an toàn"
@@ -7962,9 +8056,6 @@ msgstr "Rủi ro của bạn đã được biết đến"
 
 msgid "Your session duration limit will end in %1 seconds."
 msgstr "Giới hạn phiên giao dịch của bạn sẽ kết thúc trong %1 giây nữa."
-
-msgid "Your settings have been updated successfully."
-msgstr "Thiết lập của bạn đã được cập nhật thành công."
 
 msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
 msgstr "Chuỗi xác nhận của bạn đã hết hiệu lực. Xin vui lòng nhấp chuột vào <a class=\"pjaxload\" href=\"%1\">đây</a> để khởi động lại quá trình xác minh."
@@ -8423,6 +8514,11 @@ msgstr "{JAPAN ONLY}Binary K. K."
 
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Binary K. K."
+msgid "{JAPAN ONLY}Binary.com page title"
+msgstr "{JAPAN ONLY}Binary K. K."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}month"
@@ -9369,6 +9465,12 @@ msgstr "Chi tiết Tài khoản"
 
 msgid "Terms and Conditions Approval"
 msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
+
+#~ msgid "Please complete the following financial assessment form before continuing."
+#~ msgstr "Vui lòng hoàn tất mẫu đánh giá tài chính dưới đây trước khi tiếp tục."
+
+#~ msgid "Your details have been updated."
+#~ msgstr "Thông tin chi tiết của bạn đã được cập nhật."
 
 #~ msgid "Logout"
 #~ msgstr "Đăng xuất"

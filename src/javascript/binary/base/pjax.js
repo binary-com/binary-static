@@ -1,4 +1,3 @@
-const MenuContent  = require('./menu_content').MenuContent;
 const Url          = require('./url').Url;
 const url          = require('./url').url;
 const GTM          = require('./gtm').GTM;
@@ -138,11 +137,12 @@ const pjax_config = function() {
 };
 
 const init_pjax = function () {
-    if (!$('body').hasClass('BlueTopBack')) { // No Pjax for BO.
-        pjax.connect(pjax_config());
-    }
+    pjax.connect(pjax_config());
 };
 
+// TODO: remove or fix this function
+// find all instances with window.location.href
+// and replace them with the fixed function
 const load_with_pjax = function(new_url) {
     if (url.is_in(new Url(new_url))) {
         return;
@@ -184,7 +184,7 @@ onLoad.queue(GTM.push_data_layer);
 onLoad.queue(function () {
     page.on_load();
     $('#logo').on('click', function() {
-        load_with_pjax(url_for(Client.is_logged_in() ? japanese_client() ? 'multi_barriers_trading' : 'trading' : ''));
+        window.location.href = url_for(Client.is_logged_in() ? japanese_client() ? 'multi_barriers_trading' : 'trading' : '');
     });
     $('#btn_login').on('click', function(e) {
         e.preventDefault();
@@ -197,15 +197,8 @@ onUnload.queue(function () {
 });
 
 onLoad.queue(function () {
-    $('.tm-ul > li').hover(
-        function () {
-            $(this).addClass('hover');
-        },
-        function () {
-            $(this).removeClass('hover');
-        });
-
-    MenuContent.init($('.content-tab-container').find('.tm-ul'));
+    // global function used from binary style
+    tabListener();
 
     make_mobile_menu();
 
