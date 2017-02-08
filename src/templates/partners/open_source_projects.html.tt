@@ -1,4 +1,4 @@
-<div class="container container">
+<div class="container">
   <div class="open-source-projects static_full gr-row">
     <div class="gr-3 gr-hide-m">
       <div class="sidebar">
@@ -16,8 +16,10 @@
             <a href="#translations">[% l("Translations") %]</a>
           </li>
         </ul>
-        <div class="sidebar-button">
-          <a class="pjaxload" href="[% request.url_for('contact') %]">[% l("Contact us") %]</a>
+        <div class="center-text gr-padding-10">
+          <a class="button pjaxload" href="[% request.url_for('contact') %]">
+              <span>[% l("Contact us") %]</span>
+          </a>
         </div>
       </div>
     </div>
@@ -111,11 +113,11 @@
                   <p>
                     [% l("Do you want to see Binary.com in other languages, or can you suggest improvements to our current translations?") %]
                   </p>
-                  <a class="pjaxload button" href="[% request.url_for('contact') %]">
+                  <!-- a class="pjaxload button" href="[% request.url_for('contact') %]">
                     <span>
                       [% l("Contact us") %]
                     </span>
-                  </a>
+                  </a -->
                 </div>
               </div>
             </div>

@@ -1,5 +1,5 @@
 <div class='gr-12 static_full'>
-    <h1>[% l('Real Money Account Opening') %]</h1>
+    <h1>[% l('Real Money Account opening') %]</h1>
     <div class="gr-padding-10">
 
         <div class="rbox form">
@@ -177,7 +177,7 @@
                             <p class="errorfield" id="error_tnc" style="display:none"></p>
                         </div>
                         <span class="button">
-                            <button class="button" id="btn_submit" type="submit">[% l('Open Account') %]</button>
+                            <button class="button" id="btn_submit" type="submit">[% l('Open account') %]</button>
                         </span>
                     </fieldset>
                 </form>

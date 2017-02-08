@@ -1,6 +1,6 @@
 <div class="static_full">
 
-    <h1>[% l("US Patents") %]</h1>
+    <h1>[% l("US patents") %]</h1>
     <ul>
         <li><a onclick="window.open('http://www.google.com/patents/US7206762')" href="javascript:void(0);">[% l('Betting system and method') %]</a></li>
         <li><a onclick="window.open('http://www.google.com/patents/US8046293')" href="javascript:void(0);">[% l('Computer trading system for offering custom financial market speculations') %]</a></li>

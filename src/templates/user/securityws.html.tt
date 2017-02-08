@@ -10,7 +10,7 @@
             </div>
             <div class="gr-12">
                 <h4>
-                    <a class="pjaxload" href="[% request.url_for('/user/security/change_passwordws') %]">[% l('Account Password') %]</a>
+                    <a class="pjaxload" href="[% request.url_for('/user/security/change_passwordws') %]">[% l('Account password') %]</a>
                 </h4>
                 <p>[% l('Change your main login password.') %]</p>
             </div>
@@ -24,7 +24,7 @@
             </div>
             <div class="gr-12">
                 <h4>
-                    <a class="pjaxload" href="[% request.url_for('/user/security/cashier_passwordws') %]">[% l('Cashier Password') %]</a>
+                    <a class="pjaxload" href="[% request.url_for('/user/security/cashier_passwordws') %]">[% l('Cashier password') %]</a>
                 </h4>
                 <p>[% l('Change the password used for deposits and withdrawals.') %]</p>
             </div>
@@ -38,7 +38,7 @@
             </div>
             <div class="gr-12">
                 <h4>
-                    <a class="pjaxload" href="[% request.url_for('/user/security/self_exclusionws') %]">[% l('Self Exclusion') %]</a>
+                    <a class="pjaxload" href="[% request.url_for('/user/security/self_exclusionws') %]">[% l('Self-exclusion') %]</a>
                 </h4>
                 <p>[% l('Facility that allows you to set limits on your account.') %]</p>
             </div>
@@ -66,7 +66,7 @@
             </div>
             <div class="gr-12">
                 <h4>
-                    <a class="pjaxload" href="[% request.url_for('/user/security/iphistoryws') %]">[% l('Login History') %]</a>
+                    <a class="pjaxload" href="[% request.url_for('/user/security/iphistoryws') %]">[% l('Login history') %]</a>
                 </h4>
                 <p>[% l('View your login history.') %]</p>
             </div>
@@ -80,7 +80,7 @@
             </div>
             <div class="gr-12">
                 <h4>
-                    <a class="pjaxload" href="[% request.url_for('/user/security/api_tokenws') %]">[% l('API Token') %]</a>
+                    <a class="pjaxload" href="[% request.url_for('/user/security/api_tokenws') %]">[% l('API token') %]</a>
                 </h4>
                 <p>[% l('API token for third party applications.') %]</p>
             </div>
@@ -94,7 +94,7 @@
             </div>
             <div class="gr-12">
                 <h4>
-                    <a class="pjaxload" href="[% request.url_for('/user/security/authorised_appsws') %]">[% l('Authorised Applications') %]</a>
+                    <a class="pjaxload" href="[% request.url_for('/user/security/authorised_appsws') %]">[% l('Authorised applications') %]</a>
                 </h4>
                 <p>[% l('Manage your authorised applications.') %]</p>
             </div>

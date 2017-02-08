@@ -1,11 +1,11 @@
 <div class="gr-12">
     <h2>
-        [% l("Data Feed") %]
+        [% l("Data feed") %]
     </h2>
     <p>
         [% l("Information about the data feeds used by our company, and how the data is processed before being fed into the system.") %]
     </p>
-    <h2>[% l("Filtering Stray Ticks") %]</h2>
+    <h2>[% l("Filtering stray ticks") %]</h2>
         <p>
         [% l("Depending on the quality of the data feeds received from our feed providers, our servers might apply a tick filtering algorithm. The purpose of this filtering algorithm is to strip the feed of stray ticks. Stray ticks are ticks that manifestly fall outside of the current trading range of the market; such ticks are often due to communication delays with the exchanges or banks that provide quotes, human error, or database problems at any point between the originator of the quote and our servers.") %]
         </p>

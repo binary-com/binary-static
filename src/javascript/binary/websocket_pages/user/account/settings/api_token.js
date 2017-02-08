@@ -130,7 +130,7 @@ const APITokenWS = (function() {
         showTable();
         $tableContainer.empty();
 
-        const headers = ['Name', 'Token', 'Scopes', 'Last Used', 'Action'];
+        const headers = ['Name', 'Token', 'Scopes', 'Last used', 'Action'];
         const columns = ['name', 'token', 'scopes', 'last-used', 'action'];
         new FlexTableUI({
             id       : 'tokens_table',
@@ -171,7 +171,7 @@ const APITokenWS = (function() {
     };
 
     const formatToken = function(token) {
-        const lastUsed = (token.last_used ? token.last_used + ' GMT' : localize('Never Used'));
+        const lastUsed = (token.last_used ? token.last_used + ' GMT' : localize('Never used'));
         const scopes = token.scopes.map(capitalise);
         return [
             token.display_name,

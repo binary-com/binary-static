@@ -10,7 +10,7 @@
                     <div class="gr-6 gr-12-m gr-no-gutter-left padding-right-five">
                         <div class="select-box">
                             <div class="padding-10">
-                                <div class="select-heading">[% l('FX Rate') %]</div>
+                                <div class="select-heading">[% l('FX rate') %]</div>
                                 <select class="select" id="underlying"></select>
                             </div>
                         </div>
@@ -18,7 +18,7 @@
                     <div class="gr-6 gr-12-m gr-no-gutter-left padding-right-five">
                         <div class="select-box">
                             <div class="padding-10">
-                                <div class="select-heading">[% l('Option Type') %]</div>
+                                <div class="select-heading">[% l('Option type') %]</div>
                                 <select class="select" id="category"></select>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                     <div class="gr-6 gr-12-m gr-no-gutter-left padding-right-five">
                         <div class="select-box">
                             <div class="padding-10">
-                                <div class="select-heading">[% l('Trading Period') %]</div>
+                                <div class="select-heading">[% l('Trading period') %]</div>
                                 <select class="select" id="period"></select>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                     <div class="gr-6 gr-12-m gr-no-gutter-left no-padding-right">
                         <div class="select-box">
                             <div class="padding-10">
-                                <div class="select-heading">[% l('Payout Amount') %]</div>
+                                <div class="select-heading">[% l('Payout amount') %]</div>
                                 <div class="payout-input">
                                     <div class="float-left">
                                         <select class="select" id="currency"></select>
@@ -88,8 +88,8 @@
                 <div class="gr-12">
                     <div class="gr-row heading">
                         <div class="gr-4 barrier">[% l('Barrier') %]</div>
-                        <div class="gr-4 buy-price">[% l('Buy Price') %]</div>
-                        <div class="gr-4 sell-price">[% l('Sell Price') %]</div>
+                        <div class="gr-4 buy-price">[% l('Buy price') %]</div>
+                        <div class="gr-4 sell-price">[% l('Sell price') %]</div>
                     </div>
                     <div class="price-rows"></div>
                 </div>
@@ -104,8 +104,8 @@
                 <div class="gr-12">
                     <div class="gr-row heading">
                         <div class="gr-4 barrier">[% l('Barrier') %]</div>
-                        <div class="gr-4 buy-price">[% l('Buy Price') %]</div>
-                        <div class="gr-4 sell-price">[% l('Sell Price') %]</div>
+                        <div class="gr-4 buy-price">[% l('Buy price') %]</div>
+                        <div class="gr-4 sell-price">[% l('Sell price') %]</div>
                     </div>
                     <div class="price-rows"></div>
                 </div>

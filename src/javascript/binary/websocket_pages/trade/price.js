@@ -202,7 +202,7 @@ const Price = (function() {
                     elementTextContent(h4, Content.localize().textSpreadTypeShort);
                 }
             } else {
-                elementTextContent(h4, display_text);
+                elementTextContent(h4, display_text.replace(/\b\w/g, l => l.toUpperCase())); // capitalise each word
             }
         }
 

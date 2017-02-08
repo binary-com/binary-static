@@ -1,5 +1,5 @@
 <div class="endpoint-config static_full">
-    <h1>[% l('Change API Endpoint') %]</h1>
+    <h1>[% l('Change API endpoint') %]</h1>
     <div class="gr-padding-10">
         <div class="rbox form">
             <div class="rbox-wrap">
@@ -32,7 +32,7 @@
                     <fieldset class="center-text" id="formlayout">
                         <button class="button" id="new_endpoint" type="submit">[% l('Submit') %]</button>
                         <a class="button" id="reset_endpoint">
-                            <span class="button">[% l('Reset to Original Settings') %]</span>
+                            <span class="button">[% l('Reset to original settings') %]</span>
                         </a>
                     </fieldset>
                 </form>

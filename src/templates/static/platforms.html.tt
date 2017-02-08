@@ -1,3 +1,4 @@
+<div class="container">
 <div class="gr-row static_full">
     <div class="gr-3 gr-hide-m gr-hide-p">
         <div class="sidebar-left">
@@ -87,7 +88,7 @@
                             [% l("Monitor the movements of your favourite assets and markets at the same time.") %]
                             <p>
                                 <a class="button" href="https://webtrader.binary.com" target="_blank">
-                                    <span>[% l("Try Webtrader") %]</span>
+                                    <span>[% l("Try Binary Webtrader") %]</span>
                                 </a>
                             </p>
                         </p>
@@ -107,7 +108,7 @@
                             <div class="gr-row">
                                 <div class="gr-12">
                                     <a class="button" href="https://app.binary.com" target="_blank">
-                                        <span>Try Next-Gen</span>
+                                        <span>[% l("Try Binary Next-Gen") %]</span>
                                     </a>
                                 </div>
                             </div>
@@ -309,4 +310,5 @@
             <p>[% l("You can even build your own online trading sites, apps, and bots with our <a href=\"https://developers.binary.com\" target=\"_blank\">API and developer tools</a>.") %]</p>
         </div>
     </div>
+</div>
 </div>

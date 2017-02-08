@@ -33,8 +33,8 @@
                     <li>[% l("Currencies - All major Forex pairs") %]</li>
                     <li>[% l("Indices - All major worldwide stock indices sourced from the over-the-counter market") %]</li>
                     <li>[% l("Commodities - Major commodities such as gold and oil") %]</li>
-                    <li>[% l("OTC stocks - Blue-chip stock contracts sourced from the over-the-counter market") %]</li>
-                    <li>[% l("Volatility indices - [_1]'s proprietary indices that simulate market forces", website_name) %]</li>
+                    <li>[% l("OTC Stocks - Blue-chip stock contracts sourced from the over-the-counter market") %]</li>
+                    <li>[% l("Volatility Indices - [_1]'s proprietary indices that simulate market forces", website_name) %]</li>
                 </ul>
             </li>
             <li>
@@ -77,8 +77,8 @@
     <div class="subsection last hidden">
         <a class="by_client_type client_logged_out" name="dont-just-read-about-it-section"></a>
 
-        <h2>[% l("Interested? Why not try a virtual account") %]</h2>
-        <p>[% l("Test-run [_1], and sharpen your trading skills, with a no-risk, no-commitment, virtual account.", website_name) %]</p>
+        <h2>[% l("Interested? Why not try a Virtual Account") %]</h2>
+        <p>[% l("Test-run [_1], and sharpen your trading skills, with a no-risk, no-commitment Virtual Account.", website_name) %]</p>
 
         <div class="gr-row">
             <div class="gr-4"><img class="responsive" src="[% request.url_for('images/pages/home/step-1.svg') %]"/></div>

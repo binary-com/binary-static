@@ -18,7 +18,7 @@
           <li class="ja-hide"><a class="pjaxload" href="[% request.url_for('/get-started/volidx-markets') %]">[% l("How to trade the Volatility Indices markets?") %]</a></li>
           <li class="ja-hide"><a class="pjaxload" href="[% request.url_for('/get-started/spread') %]">[% l("How to trade spreads?") %]</a></li>
           <li class="ja-hide"><a class="pjaxload" href="[% request.url_for('/get-started/smart-indices') %]">[% l("Smart Markets") %]</a></li>
-          <li class="ja-hide"><a class="pjaxload" href="[% request.url_for('/get-started/otc-indices-stocks') %]">[% l("OTC Indices and stocks") %]</a></li>
+          <li class="ja-hide"><a class="pjaxload" href="[% request.url_for('/get-started/otc-indices-stocks') %]">[% l("OTC Indices and Stocks") %]</a></li>
           <li><a class="pjaxload" href="[% request.url_for('/get-started/beginners-faq') %]">[% l("FAQ") %]</a></li>
           <li><a class="pjaxload" href="[% request.url_for('/get-started/glossary') %]">[% l("Glossary") %]</a></li>
         </ul>

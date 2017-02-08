@@ -10,7 +10,7 @@
     <div class="gr-12">
       <h4>
         <a class="pjaxload" href="[% request.url_for('/resources/asset_indexws') %]">
-          [% l("Asset Index") %]
+          [% l("Asset index") %]
         </a>
       </h4>
       <p>[% l("View the full list of assets, contract types and durations.") %]</p>
@@ -25,7 +25,7 @@
     <div class="gr-12">
       <h4>
         <a class="pjaxload" href="[% request.url_for('/resources/market_timesws') %]">
-          [% l("Trading Times") %]
+          [% l("Trading times") %]
         </a>
       </h4>
       <p>[% l("View the operating hours of the markets you can trade.") %]</p>

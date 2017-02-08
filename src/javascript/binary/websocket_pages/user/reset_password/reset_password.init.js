@@ -11,7 +11,7 @@ const ResetPassword = (function () {
     'use strict';
 
     const hiddenClass = 'invisible';
-    const resetErrorTemplate = '[_1] Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support.';
+    const resetErrorTemplate = '[_1] Please click the link below to restart the password recovery process. If you require further assistance, please contact our customer support.';
     let dobdd,
         dobmm,
         dobyy;

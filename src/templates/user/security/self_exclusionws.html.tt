@@ -1,5 +1,5 @@
 <div class="gr-12 gr-padding-10">
-	<h1>[% l('Self-Exclusion Facilities') %]</h1>
+	<h1>[% l('Self-exclusion facilities') %]</h1>
 
 	<p id="selfExclusionDesc">[% l('Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href="[_1]">customer support</a>.', request.url_for('contact')) %]</p>
 
@@ -130,7 +130,7 @@
 				<div class="gr-4"></div>
 				<div class="gr-8">
 					<span class="button">
-						<button class="button">[% l('Update Settings') %]</button>
+						<button class="button">[% l('Update settings') %]</button>
 					</span>
 				</div>
 			</div>

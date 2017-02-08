@@ -23,11 +23,11 @@ const ProfitTableUI = (function() {
         const header = [
             Content.localize().textDate,
             Content.localize().textRef,
-            localize('Potential Payout'),
+            localize('Potential payout'),
             localize('Contract'),
-            localize('Purchase Price'),
-            localize('Sale Date'),
-            localize('Sale Price'),
+            localize('Purchase price'),
+            localize('Sale date'),
+            localize('Sale price'),
             localize('Profit/Loss'),
             Content.localize().textDetails,
         ];
@@ -37,7 +37,7 @@ const ProfitTableUI = (function() {
 
         header[7] += (jpClient ? '' : (currency ? ' (' + currency + ')' : ''));
 
-        const footer = [localize('Total Profit/Loss'), '', '', '', '', '', '', '', ''];
+        const footer = [localize('Total profit/loss'), '', '', '', '', '', '', '', ''];
 
         const data = [];
         const metadata = {

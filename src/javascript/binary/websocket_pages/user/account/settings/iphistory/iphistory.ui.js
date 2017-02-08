@@ -7,7 +7,7 @@ const IPHistoryUI = (function() {
     'use strict';
 
     const containerSelector = '#login_history-ws-container';
-    const no_messages_error = 'Your account has no Login/Logout activity.';
+    const no_messages_error = 'Your account has no login/logout activity.';
     let flexTable;
 
     const init = function() {
@@ -39,7 +39,7 @@ const IPHistoryUI = (function() {
         if (flexTable) {
             return flexTable.replace(history);
         }
-        const headers = ['Date and Time', 'Action', 'Browser', 'IP Address', 'Status'];
+        const headers = ['Date and time', 'Action', 'Browser', 'IP address', 'Status'];
         const columns = ['timestamp', 'action', 'browser', 'ip', 'status'];
         flexTable = new FlexTableUI({
             id       : 'login-history-table',

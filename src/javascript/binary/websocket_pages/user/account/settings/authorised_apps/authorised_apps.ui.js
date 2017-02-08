@@ -43,7 +43,7 @@ const ApplicationsUI = (function() {
         if (flexTable) {
             return flexTable.replace(data);
         }
-        const headers = ['Name', 'Permissions', 'Last Used', 'Action'];
+        const headers = ['Name', 'Permissions', 'Last used', 'Action'];
         const columns = ['name', 'permissions', 'last_used', 'action'];
         flexTable = new FlexTableUI({
             container: containerSelector,

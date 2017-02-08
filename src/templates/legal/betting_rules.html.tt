@@ -1,7 +1,7 @@
 <div class="gr-12">
 
     <h2>
-        [% l("Trading Rules") %]
+        [% l("Trading rules") %]
     </h2>
     <p>
         [% l("The Company may impose certain rules and restrictions in relation to the placing of market orders on this website. Such rules may change from time to time, according to market conditions and other factors. The following indicative rules are currently in place:") %]
@@ -37,7 +37,7 @@
                 [% l("The company does not guarantee the ability to sell a contract prior to its expiration time.") %]
             </li>
     </ul>
-    <h2>[% l("Contract Payouts") %]</h2>
+    <h2>[% l("Contract payouts") %]</h2>
     <p>
         [% l("Contract payouts shall be determined by the Company by reference to the daily high/low/close values reported on this website relevant to the underlying index(ices) of the contract(s) or from the interbank trading data received by the Company for forex quotes or commodities prices as displayed on the website, subject that the Company shall have the right to make corrections to such data in the event of mis-priced or typographically incorrect data. Clients should note that the different markets may close at different times during the day due to local trading hours and time zones.") %]
     </p>
@@ -56,7 +56,7 @@
     <p>
         [% l("Should a disruption occur in the data feeds which cannot be readily rectified by the Company, the Company reserves the right to refund the contract purchase.") %]
     </p>
-    <h2>[% l("Trading Limits") %]</h2>
+    <h2>[% l("Trading limits") %]</h2>
     <p>
         [% l("The Company may impose volume trading limits on Client accounts in its sole discretion. Current trading volume limits upon account opening are USD/GBP/EUR/AUD 30,000/day maximum trading volume. The maximum account size (i.e. cash balance) is USD/GBP/EUR/AUD 300,000 and the maximum outstanding contract payout at a given time per account is USD/GBP/EUR/AUD 25,000. These limits are increased once a Client is fully authenticated; where the new maximum trading volume will be USD/GBP/EUR/AUD 500,000, having a maximum account size of USD/GBP/EUR/AUD 300,000 and a maximum outstanding contract payout at a given time per account of USD/GBP/EUR/AUD 500,000. If the account balance exceeds the maximum account size, then withdrawals must be made to bring the balance down to under this limit.") %]
     </p>

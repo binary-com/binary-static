@@ -17,7 +17,7 @@ const KnowledgeTest = (function() {
     const randomPicksObj = {};
     let resultScore = 0;
 
-    const passMsg = '{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly.';
+    const passMsg = '{JAPAN ONLY}Congratulations, you have pass the test, our customer support will contact you shortly.';
     const failMsg = '{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours.';
 
     const questionAnswerHandler = function(ev) {

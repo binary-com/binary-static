@@ -1,5 +1,5 @@
 <div class='gr-12 static_full'>
-    <h1>[% l('Financial Account Opening') %]</h1>
+    <h1>[% l('Financial Account opening') %]</h1>
     <div class="gr-padding-10">
 
         <div class="rbox form">
@@ -168,7 +168,7 @@
                             <label for="tnc">[% l('I have read and agree to the') %] <a target="_blank" href="[% request.url_for('/terms-and-conditions') %]">[% l('terms and conditions') %]</a> [% l('of the site.') %]</label>
                             <p class="errorfield" id="error_tnc" style="display:none"></p>
                         </div>
-                        <button class="button" id="btn_submit" type="submit">[% l('Open Account') %]</button>
+                        <button class="button" id="btn_submit" type="submit">[% l('Open account') %]</button>
                     </fieldset>
                 </form>
 

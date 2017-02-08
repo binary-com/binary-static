@@ -12,7 +12,7 @@
                     <div class="gr-row">
                         <div class='gr-5 gr-6-m no-underline' id="gmt-clock" data-balloon-pos="down"></div>
                         <div class='gr-2 gr-hide-m' id='contact-us'>
-                            <a class="pjaxload" href="[% request.url_for('contact') %]">[% l("Contact Us") %]</a>
+                            <a class="pjaxload" href="[% request.url_for('contact') %]">[% l("Contact us") %]</a>
                         </div>
                         <div class='gr-5 gr-6-m'>
                             <div class="languages invisible">
@@ -62,16 +62,16 @@
                         <div id='main-navigation'>
                             <ul id="menu-top">
                                 <li class="ja-hide">
-                                    <a class="pjaxload" href="[% request.url_for('why-us') %]">[% l('Why Us?') %]</a>
+                                    <a class="pjaxload" href="[% request.url_for('why-us') %]">[% l('Why us?') %]</a>
                                 </li>
                                 <li class="all-hide ja-show-inline-block">
-                                    <a class="pjaxload" href="[% request.url_for('why-us-jp') %]">[% l('Why Us?') %]</a>
+                                    <a class="pjaxload" href="[% request.url_for('why-us-jp') %]">[% l('Why us?') %]</a>
                                 </li>
                                 <li class="ja-hide">
-                                    <a class="pjaxload" href="[% request.url_for('get-started') %]">[% l("Get Started") %]</a>
+                                    <a class="pjaxload" href="[% request.url_for('get-started') %]">[% l("Get started") %]</a>
                                 </li>
                                 <li class="all-hide ja-show-inline-block">
-                                  <a class="pjaxload" href="[% request.url_for('get-started-jp') %]">[% l("Get Started") %]</a>
+                                  <a class="pjaxload" href="[% request.url_for('get-started-jp') %]">[% l("Get started") %]</a>
                                 </li>
                                 <li class="ja-hide">
                                     <a class="pjaxload" href="[% request.url_for('tour') %]">[% l('Tour') %]</a>
@@ -117,7 +117,7 @@
                                         <li class="topMenuProfile">[% l("Profile") %]</li>
                                     </a>
                                     <a class="link with_login_cookies pjaxload" href="[% request.url_for('/user/securityws') %]">
-                                        <li class="topMenuSecurity">[% l("Security & Limits") %]</li>
+                                        <li class="topMenuSecurity">[% l("Security and limits") %]</li>
                                     </a>
                                     <div class="separator-line-thin-gray"></div>
                                     <div class="login-id-list"></div>

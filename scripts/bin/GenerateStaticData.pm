@@ -43,14 +43,14 @@ sub _texts {
         # menu items
         push @texts, localize('Trade');
         push @texts, localize('Portfolio');
-        push @texts, localize('Profit Table');
+        push @texts, localize('Profit table');
         push @texts, localize('Statement');
         push @texts, localize('Cashier');
         push @texts, localize('Resources');
-        push @texts, localize('Asset Index');
-        push @texts, localize('Trading Times');
+        push @texts, localize('Asset index');
+        push @texts, localize('Trading times');
         push @texts, localize('Shop');
-        push @texts, localize('Payment Agent');
+        push @texts, localize('Payment agent');
         # account drop down
         push @texts, localize('Virtual Account');
         push @texts, localize('Real Account');
@@ -107,7 +107,7 @@ sub _texts {
         # highchart localization text
         push @texts, localize('Start time');
         push @texts, localize('Entry spot');
-        push @texts, localize('Purchase Time');
+        push @texts, localize('Purchase time');
         push @texts, localize('Exit spot');
         push @texts, localize('End time');
         push @texts, localize('Sell time');
@@ -128,11 +128,11 @@ sub _texts {
         push @texts, localize('Payout');
         push @texts, localize('Stake');
         push @texts, localize('Duration');
-        push @texts, localize('End Time');
+        push @texts, localize('End time');
         push @texts, localize('Net profit');
         push @texts, localize('Return');
         push @texts, localize('Now');
-        push @texts, localize('Contract Confirmation');
+        push @texts, localize('Contract confirmation');
         push @texts, localize('Your transaction reference is');
         push @texts, localize('Rise/Fall');
         push @texts, localize('Higher/Lower');
@@ -144,9 +144,9 @@ sub _texts {
         push @texts, localize('Ends In/Out');
         push @texts, localize('Touch/No Touch');
         push @texts, localize('Stays In/Goes Out');
-        push @texts, localize('Potential Payout');
-        push @texts, localize('Total Cost');
-        push @texts, localize('Potential Profit');
+        push @texts, localize('Potential payout');
+        push @texts, localize('Total cost');
+        push @texts, localize('Potential profit');
         push @texts, localize('Amount per point');
         push @texts, localize('Stop-loss');
         push @texts, localize('Stop-profit');
@@ -162,7 +162,7 @@ sub _texts {
         push @texts, localize('is required. Current spread');
         push @texts, localize('Chart');
         push @texts, localize('Explanation');
-        push @texts, localize('Last Digit Stats');
+        push @texts, localize('Last digit stats');
         push @texts, localize('Waiting for entry tick.');
         push @texts, localize('Waiting for exit tick.');
         push @texts, localize('Please log in.');
@@ -216,7 +216,7 @@ sub _texts {
         push @texts, localize('Opens');
         push @texts, localize('Closes');
         push @texts, localize('Settles');
-        push @texts, localize('Upcoming Events');
+        push @texts, localize('Upcoming events');
         # back-end strings for trading_timesws page
         push @texts, localize('Closes early (at 21:00)');
         push @texts, localize('Closes early (at 18:00)');
@@ -227,7 +227,7 @@ sub _texts {
         push @texts, localize('today, Fridays');
         #strings for paymentagent_withdrawws page
         push @texts, localize('Please select a payment agent');
-        push @texts, localize('The Payment Agent facility is currently not available in your country.');
+        push @texts, localize('The payment agent facility is currently not available in your country.');
         push @texts, localize('Invalid amount, minimum is');
         push @texts, localize('Invalid amount, maximum is');
         push @texts, localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.');
@@ -237,13 +237,13 @@ sub _texts {
         push @texts, localize('The maximum number of tokens ([_1]) has been reached.');
         push @texts, localize('Name');
         push @texts, localize('Token');
-        push @texts, localize('Last Used');
-        push @texts, localize('Never Used');
+        push @texts, localize('Last used');
+        push @texts, localize('Never used');
         push @texts, localize('Delete');
         push @texts, localize('Are you sure that you want to permanently delete token');
         push @texts, localize('Please select at least one scope');
         #strings for Walkthrough Guide
-        push @texts, localize('Walkthrough Guide');
+        push @texts, localize('Walkthrough guide');
         push @texts, localize('Finish');
         push @texts, localize('Step');
         #strings for Walkthrough Guide -> trading page
@@ -278,9 +278,9 @@ sub _texts {
         push @texts, localize('Date');
         push @texts, localize('Action');
         push @texts, localize('Contract');
-        push @texts, localize('Sale Date');
-        push @texts, localize('Sale Price');
-        push @texts, localize('Total Profit/Loss');
+        push @texts, localize('Sale date');
+        push @texts, localize('Sale price');
+        push @texts, localize('Total profit/loss');
         push @texts, localize('Your account has no trading activity.');
         push @texts, localize('Today');
         push @texts, localize('Details');
@@ -306,7 +306,7 @@ sub _texts {
         push @texts, localize('{JAPAN ONLY}Take knowledge test');
         push @texts, localize('{JAPAN ONLY}Knowledge Test Result');
         push @texts, localize('{JAPAN ONLY}Knowledge Test');
-        push @texts, localize('{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly.');
+        push @texts, localize('{JAPAN ONLY}Congratulations, you have pass the test, our customer support will contact you shortly.');
         push @texts, localize('{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours.');
         push @texts, localize('{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until [_1]. Last test taken at [_2].');
         push @texts, localize("{JAPAN ONLY}Dear customer, you've already completed the knowledge test, please proceed to next step.");
@@ -351,20 +351,20 @@ sub _texts {
         push @texts, localize('Deposit');
         push @texts, localize('Your request to transfer [_1] [_2] from [_3] to [_4] has been successfully processed.');
         #strings for iphistoryws
-        push @texts, localize('Date and Time');
+        push @texts, localize('Date and time');
         push @texts, localize('Browser');
-        push @texts, localize('IP Address');
+        push @texts, localize('IP address');
         push @texts, localize('Status');
         push @texts, localize('Successful');
         push @texts, localize('Failed');
-        push @texts, localize('Your account has no Login/Logout activity.');
+        push @texts, localize('Your account has no login/logout activity.');
         #strings for reality_check
         push @texts, localize('Please enter a number between [_1].');
         push @texts, localize('Your trading statistics since [_1].');
         #strings for securityws
-        push @texts, localize('Unlock Cashier');
+        push @texts, localize('Unlock cashier');
         push @texts, localize('Your cashier is locked as per your request - to unlock it, please enter the password.');
-        push @texts, localize('Lock Cashier');
+        push @texts, localize('Lock cashier');
         push @texts, localize('An additional password can be used to restrict access to the cashier.');
         push @texts, localize('Update');
         push @texts, localize('Sorry, you have entered an incorrect cashier password');
@@ -392,6 +392,7 @@ sub _texts {
         push @texts, localize('Compliance');
         push @texts, localize('Compliance Executive');
         push @texts, localize('Anti-Fraud Officer');
+        push @texts, localize('Customer Support');
         push @texts, localize('Global Customer Service Representatives');
         push @texts, localize('Human Resources');
         push @texts, localize('Human Resource Executive');
@@ -400,12 +401,12 @@ sub _texts {
         push @texts, localize('Internal Audit');
         push @texts, localize('Internal Auditor');
         #strings for view popup ws
-        push @texts, localize('Start Time');
-        push @texts, localize('Entry Spot');
-        push @texts, localize('Low Barrier');
-        push @texts, localize('Low Barrier ([_1])');
-        push @texts, localize('High Barrier');
-        push @texts, localize('High Barrier ([_1])');
+        push @texts, localize('Start time');
+        push @texts, localize('Entry spot');
+        push @texts, localize('Low barrier');
+        push @texts, localize('Low barrier ([_1])');
+        push @texts, localize('High barrier');
+        push @texts, localize('High barrier ([_1])');
         push @texts, localize('Barrier ([_1])');
         push @texts, localize('This contract won');
         push @texts, localize('This contract lost');
@@ -417,26 +418,26 @@ sub _texts {
         push @texts, localize('Description');
         push @texts, localize('Credit/Debit');
         push @texts, localize('Balance');
-        push @texts, localize('Purchase Price');
+        push @texts, localize('Purchase price');
         push @texts, localize('Profit/Loss');
-        push @texts, localize('Contract Information');
-        push @texts, localize('Contract Expiry');
-        push @texts, localize('Contract Sold');
+        push @texts, localize('Contract information');
+        push @texts, localize('Contract expiry');
+        push @texts, localize('Contract sold');
         push @texts, localize('Current');
         push @texts, localize('Open');
         push @texts, localize('Closed');
-        push @texts, localize('Entry Level');
-        push @texts, localize('Exit Level');
-        push @texts, localize('Stop Loss Level');
-        push @texts, localize('Stop Profit Level');
-        push @texts, localize('Current Level');
+        push @texts, localize('Entry level');
+        push @texts, localize('Exit level');
+        push @texts, localize('Stop loss level');
+        push @texts, localize('Stop profit level');
+        push @texts, localize('Current level');
         push @texts, localize('Profit/Loss (points)');
         push @texts, localize('Contract is not started yet');
         push @texts, localize('Price');
-        push @texts, localize('Spot Time');
-        push @texts, localize('Current Time');
-        push @texts, localize('Exit Spot Time');
-        push @texts, localize('Exit Spot');
+        push @texts, localize('Spot time');
+        push @texts, localize('Current time');
+        push @texts, localize('Exit spot time');
+        push @texts, localize('Exit spot');
         push @texts, localize('Indicative');
         push @texts, localize('There was an error');
         push @texts, localize('Sell at market');
@@ -446,15 +447,15 @@ sub _texts {
         push @texts, localize('Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price.');
         push @texts, localize('Contract ID');
         push @texts, localize('Reference ID');
-        push @texts, localize('Remaining Time');
+        push @texts, localize('Remaining time');
         push @texts, localize('This contract was affected by a Corporate Action event.');
-        push @texts, localize('Barrier Change');
-        push @texts, localize('Original Barrier');
-        push @texts, localize('Original High Barrier');
-        push @texts, localize('Original Low Barrier');
-        push @texts, localize('Adjusted Barrier');
-        push @texts, localize('Adjusted High Barrier');
-        push @texts, localize('Adjusted Low Barrier');
+        push @texts, localize('Barrier change');
+        push @texts, localize('Original barrier');
+        push @texts, localize('Original high barrier');
+        push @texts, localize('Original low barrier');
+        push @texts, localize('Adjusted barrier');
+        push @texts, localize('Adjusted high barrier');
+        push @texts, localize('Adjusted low barrier');
         push @texts, localize('Corporate Action');
         # strings for financial assessment
         push @texts, localize('Please select a value');
@@ -466,7 +467,7 @@ sub _texts {
         push @texts, localize('Are you sure that you want to permanently revoke access to application');
         push @texts, localize('Transaction performed by [_1] (App ID: [_2])');
         # Strings for lost_passwordws
-        push @texts, localize('[_1] Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support.');
+        push @texts, localize('[_1] Please click the link below to restart the password recovery process. If you require further assistance, please contact our customer support.');
         push @texts, localize('Your password has been successfully reset. Please log into your account using your new password.');
         push @texts, localize('Verification code format incorrect.');
         # strings for cashierws page

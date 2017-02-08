@@ -171,7 +171,7 @@ const MarketTimesUI = (function() {
             localize('Opens'),
             localize('Closes'),
             localize('Settles'),
-            localize('Upcoming Events'),
+            localize('Upcoming events'),
         ];
 
         const metadata = {
