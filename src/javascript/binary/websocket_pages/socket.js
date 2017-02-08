@@ -312,7 +312,7 @@ const BinarySocketClass = function() {
                     Header.topbar_message_visibility(landing_company);
                     let company;
                     if (response.error) return;
-                    Header.metatrader_menu_item_visibility(response);
+                    // Header.metatrader_menu_item_visibility(response); // to be uncommented once MetaTrader launched
                     Object.keys(landing_company).forEach(function(key) {
                         if (Client.get('landing_company_name') === landing_company[key].shortcode) {
                             company = landing_company[key];

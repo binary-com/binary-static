@@ -81,18 +81,6 @@
                                     target="[% target %]"[% END %]>[% l('Payment Methods') %]</a>
                                 </li>
                             </ul>
-
-                            <div class="gr-padding-20">
-                                <h4 class="secondary-color">[% l('Trading') %]</h4>
-                                <ul>
-                                    <li>
-                                        <a class="pjaxload" href="[% request.url_for('/platforms') %]">[% l('Platforms') %]</a>
-                                    </li>
-                                    <li>
-                                        <a class="pjaxload" href="[% request.url_for('/resources/asset_indexws') %]">[% l('Asset Index') %]</a>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -132,16 +120,13 @@
                            </ul>
                        </div>
                        <div class="gr-4 ja-hide">
-                           <h4 class="secondary-color">[% l('MetaTrader') %]</h4>
+                           <h4 class="secondary-color">[% l('Trading') %]</h4>
                            <ul>
                                <li>
-                                   <a class="pjaxload" href="[% request.url_for('/metatrader/margin-policy') %]">[% l('Margin Policy') %]</a>
+                                   <a class="pjaxload" href="[% request.url_for('/platforms') %]">[% l('Platforms') %]</a>
                                </li>
                                <li>
-                                   <a class="pjaxload" href="[% request.url_for('/metatrader/contract-specifications') %]">[% l('Contract Specifications') %]</a>
-                               </li>
-                               <li>
-                                   <a class="pjaxload" href="[% request.url_for('/metatrader/download') %]">[% l('Download MetaTrader') %]</a>
+                                   <a class="pjaxload" href="[% request.url_for('/resources/asset_indexws') %]">[% l('Asset Index') %]</a>
                                </li>
                            </ul>
                        </div>
