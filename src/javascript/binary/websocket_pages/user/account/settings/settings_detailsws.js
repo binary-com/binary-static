@@ -261,7 +261,7 @@ const SettingsDetailsWS = (function() {
             phone           : [V2.lengthRange(6, 35), isPhoneNo],
         };
 
-        if (Client.get('is_financial')) {
+        if (Client.is_financial()) {
             validations.place_of_birth            = [V2.required];
             validations.tax_residence             = [V2.required];
             validations.tax_identification_number = [V2.required, isTaxID];
