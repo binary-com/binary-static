@@ -38,6 +38,9 @@ Page.prototype = {
         this.record_affiliate_exposure();
         Contents.on_load();
         if (State.get('is_loaded_by_pjax')) {
+            if (Client.should_redirect_tax()) {
+                window.location.href = url_for('user/settings/detailsws');
+            }
             this.show_authenticate_message();
             if (RealityCheckData.get('delay_reality_init')) {
                 RealityCheck.init();

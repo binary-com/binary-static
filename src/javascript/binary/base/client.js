@@ -362,6 +362,26 @@ const Client = (function () {
         else return landing_company_response;
     };
 
+    const is_financial = () => {
+        const get_account_type = get('is_financial');
+        if (get_account_type !== '') return get_account_type;
+        let looping_user;
+        for (let i = 0; i < client_object.loginid_array.length; i++) {
+            looping_user = client_object.loginid_array[i];
+            if (looping_user.id === get('loginid')) {
+                if (looping_user.financial) {
+                    set('is_financial', 1);
+                }
+                break;
+            }
+        }
+        return get('is_financial');
+    };
+
+    const should_complete_tax = () => get('is_financial') && !get('has_tax_information');
+
+    const should_redirect_tax = () => should_complete_tax() && !/user\/settings\/detailsws/.test(window.location.pathname);
+
     return {
         init                  : init,
         validate_loginid      : validate_loginid,
@@ -388,6 +408,9 @@ const Client = (function () {
         do_logout          : do_logout,
         status_detected    : status_detected,
         landing_company    : get_set_landing_company,
+        is_financial       : is_financial,
+        should_complete_tax: should_complete_tax,
+        should_redirect_tax: should_redirect_tax,
     };
 })();
 

@@ -33,6 +33,7 @@ const Header     = require('../base/header').Header;
 const LocalStore = require('../base/storage').LocalStore;
 const Client     = require('../base/client').Client;
 const page       = require('../base/page').page;
+const url_for    = require('../base/url').url_for;
 const check_risk_classification       = require('../common_functions/check_risk_classification').check_risk_classification;
 const qualify_for_risk_classification = require('../common_functions/check_risk_classification').qualify_for_risk_classification;
 
@@ -282,8 +283,13 @@ const BinarySocketClass = function() {
                         Client.check_tnc();
                     }
                     localStorage.setItem('risk_classification.response', response.get_account_status.risk_classification);
-
-                    sessionStorage.setItem('client_status', response.get_account_status.status);
+                    const status = response.get_account_status.status;
+                    sessionStorage.setItem('client_status', status);
+                    if (/crs_tin_information/.test(status)) {
+                        Client.set('has_tax_information', 1);
+                    } else if (Client.should_redirect_tax()) {
+                        window.location.href = url_for('user/settings/detailsws');
+                    }
                     page.show_authenticate_message();
 
                     if (response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.hasOwnProperty('dispatch_to')) {

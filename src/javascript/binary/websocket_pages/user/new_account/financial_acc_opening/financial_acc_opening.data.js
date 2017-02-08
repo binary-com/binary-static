@@ -24,6 +24,8 @@ const FinancialAccOpeningData = (function() {
             req.secret_answer = elementObj.secret_answer.value;
         }
 
+        req.tax_residence = req.tax_residence.join(',');
+
         BinarySocket.send(req);
     };
 

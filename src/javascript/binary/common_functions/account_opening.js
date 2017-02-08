@@ -10,6 +10,7 @@ const appendTextValueChild = require('../common_functions/common_functions').app
 const Cookies              = require('../../lib/js-cookie');
 const moment               = require('moment');
 const elementInnerHtml     = require('../common_functions/common_functions').elementInnerHtml;
+require('select2');
 
 const displayAcctSettings = function(response) {
     const country = response.get_settings.country_code;
@@ -129,22 +130,38 @@ const handleResidence = function() {
                     $('#address_state').val(window.state);
                 }
             } else if (type === 'residence_list') {
-                select = document.getElementById('residence');
+                const obj_residence_el = {
+                    select        : document.getElementById('residence'),
+                    place_of_birth: document.getElementById('place_of_birth'),
+                    tax_residence : document.getElementById('tax_residence'),
+                };
                 const phoneElement   = document.getElementById('phone'),
                     residenceValue = Client.get('residence'),
                     residence_list = response.residence_list;
+                let text,
+                    value;
                 if (residence_list.length > 0) {
                     for (let j = 0; j < residence_list.length; j++) {
                         const residence = residence_list[j];
-                        if (select) {
-                            appendTextValueChild(select, residence.text, residence.value, residence.disabled ? 'disabled' : undefined);
-                        }
+                        text = residence.text;
+                        value = residence.value;
+                        appendIfExist(obj_residence_el, text, value, residence.disabled ? 'disabled' : undefined);
+
                         if (residenceValue !== 'jp' && phoneElement && phoneElement.value === '' && residence.phone_idd && residenceValue === residence.value) {
                             phoneElement.value = '+' + residence.phone_idd;
                         }
                     }
-                    if (residenceValue && select) {
-                        select.value = residenceValue;
+                    if (obj_residence_el.tax_residence) {
+                        $('#tax_residence').select2()
+                            .removeClass('invisible');
+                    }
+                    if (residenceValue) {
+                        if (obj_residence_el.select) {
+                            obj_residence_el.select.value = residenceValue;
+                        }
+                        if (obj_residence_el.place_of_birth) {
+                            obj_residence_el.place_of_birth.value = residenceValue || '';
+                        }
                     }
                     if (document.getElementById('virtual-form')) {
                         BinarySocket.send({ website_status: 1 });
@@ -181,6 +198,16 @@ const handleResidence = function() {
                 });
             }
         },
+    });
+};
+
+const appendIfExist = (object_el, text, value, disabled) => {
+    let object_el_key;
+    Object.keys(object_el).forEach(function(key) {
+        object_el_key = object_el[key];
+        if (object_el_key) {
+            appendTextValueChild(object_el_key, text, value, disabled && key === 'residence' ? disabled : undefined);
+        }
     });
 };
 

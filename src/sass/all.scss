@@ -14,6 +14,7 @@
 @import 'common/reality-check';
 @import 'common/accordion';
 @import 'common/timepicker';
+@import 'common/select2';
 
 /* pages */
 @import 'pages/home.scss';
@@ -71,3 +72,6 @@
 /* Grid layout system */
 @import 'external/grid';
 @import 'external/mmenu/jquery.mmenu.all';
+
+/* from node_modules */
+@import '../../node_modules/select2/dist/css/select2.css';

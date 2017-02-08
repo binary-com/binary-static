@@ -1,0 +1,29 @@
+/* override the css for select 2 */
+
+body {
+    .select2-container--default {
+        &.select2-container--focus .select2-selection--multiple, .select2-selection--multiple {
+            border: 1px solid $COLOR_LIGHT_GRAY;
+            .select2-selection__choice {
+                background-color: $COLOR_LIGHT_GRAY;
+                border: 1px solid $COLOR_GRAY;
+            }
+            .select2-selection__rendered li {
+                font-size: 17px;
+            }
+        }
+    }
+    .select2-search.select2-search--inline {
+        margin: 0;
+    }
+    .select2-dropdown {
+        border: 1px solid $COLOR_LIGHT_GRAY;
+    }
+    .select2-results__option {
+        padding: 1px 5px;
+        margin: 0;
+    }
+    .select2-container {
+        width: 280px !important;
+    }
+}
