@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-02-07 04:27+0000\n"
 "Last-Translator: Yasushi Takeishi <takeishi@regentmarkets.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -107,7 +106,9 @@ msgstr "口座数が100万口座を超え、社史に残る実績を達成、業
 msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr "「ドラッグ&ドロップ」操作で自動売買ロボットを作成し、システムトレードを可能にする自動トレーダープログラミングツール<a href='%2' target='_blank' class='ja-hide'></a>を導入しました。"
 
-msgid "%1 is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
+#, fuzzy
+#| msgid "%1 is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
+msgid "%1 is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
 msgstr "Binary.comでは柔軟なワークスタイルが可能です。世界中のホームオフィスからの在宅勤務の機会もご希望に応じて許可しています。"
 
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
@@ -1571,6 +1572,11 @@ msgstr "私のサイト専用にバナーをカスタマイズして貰うこと
 msgid "Canada"
 msgstr "カナダ"
 
+#, fuzzy
+#| msgid "Careers For Americans"
+msgid "Career opportunities for Americans"
+msgstr "採用情報（アメリカ出身の方）"
+
 msgid "Careers"
 msgstr "採用情報"
 
@@ -1796,9 +1802,6 @@ msgstr "コモデティ取引頻度"
 
 msgid "Company addresses"
 msgstr "会社所在地"
-
-msgid "Company trip to Phuket, Thailand"
-msgstr "タイ・プーケット島での社員旅行"
 
 msgid "Company's Right"
 msgstr "当社の権利"
@@ -2593,6 +2596,11 @@ msgstr "トレードによっては終了前に再売り可能"
 msgid "Expand our network of active affiliates in your local market. Contribute your energy, skills, and knowledge of the local business culture to help further our rapid rate of growth worldwide."
 msgstr "ローカル市場での当アフィリエイトネットワークを積極的に展開します。世界的発展速度を助長するためにローカルのビジネス文化のエネルギー、スキル、知識をお貸しください。"
 
+#, fuzzy
+#| msgid "No experience"
+msgid "Experience"
+msgstr "経験なし"
+
 msgid "Experience in an anti-fraud or risk management role"
 msgstr "不正防止やリスク管理の経験"
 
@@ -3091,6 +3099,11 @@ msgstr "理想的なユーザー"
 
 msgid "Ideal for beginners and experienced traders"
 msgstr ""
+
+#, fuzzy
+#| msgid "Ideal Users"
+msgid "Ideas"
+msgstr "理想的なユーザー"
 
 msgid "If a customer holds a long position and the prediction goes wrong as of the judgment time, the invested principal amount will become zero value."
 msgstr "取引期間中のオプション価格は変動すること。（契約締結前交付書面「店頭バイナリーオプション取引のリスクについての説明」-④オプションの価格変動リスク参照）"
@@ -4030,6 +4043,14 @@ msgstr "認証済みアプリケーションを引き続き追跡してくださ
 msgid "Key facts"
 msgstr "グループ会社概要"
 
+#, fuzzy
+#| msgid "When it's time to kick back, you'll find beautiful beaches, islands and mountains to explore, just a short flight away. From Malta, you'll have Europe, the Mediterranean and North Africa on your doorstep. And from Malaysia, you'll be within easy reach of some of Asia's most spectacular scenery."
+msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
+msgstr "余暇を楽しむ際には、短時間のフライトで美しいビーチ、島、そして山へアクセスできます。マルタ共和国では、地中海や北アフリカを容易に訪問でき、マレーシアからは、アジアの様々な印象的な場所に行くことができます。"
+
+msgid "Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account."
+msgstr ""
+
 msgid "Know what you stand to win or lose"
 msgstr ""
 
@@ -4207,6 +4228,9 @@ msgstr "ロング"
 
 msgid "Long-term partnership with the leading financial trading service"
 msgstr "業界を牽引するトレードサービスとの長期的なパートナーシップ"
+
+msgid "Looking for a new and exciting career in a country that's modern, diverse and tolerant? Binary.com is one of the world's most progressive companies, with offices in Asia and Europe."
+msgstr ""
 
 msgid "Loss"
 msgstr "損益"
@@ -4786,11 +4810,13 @@ msgstr "当社が提供するデータフィードと他社がインターネッ
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr "当社の競合相手であったBetsForTraders社の顧客を獲得し、組織として成長していきます。"
 
-msgid "Our headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas, and World Heritage sites. We also have two offices in Malaysia: our operational headquarters in the high-tech township of Cyberjaya, and a branch office at KL Sentral in the heart of the country’s capital, Kuala Lumpur."
-msgstr "Binary.comの本社は、温暖な気候、美しい保養地区、そして世界遺産といった環境に恵まれた観光地であるマルタ共和国に存在します。また、エキサイティングなアジアの中心部であるマレーシアの首都クアラルンプールの南部に位置する、ハイテク産業で有名なCyberjayaに業務部門を統括する本社が存在します。"
-
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "当社の情報秘匿に関する取り決めは、アクセス管理とビジネスの継続性を考慮した業界にて最良の慣行に基づいております。"
+
+#, fuzzy
+#| msgid "Other Obligations"
+msgid "Our locations"
+msgstr "その他の義務"
 
 #, fuzzy
 #| msgid "%1 prices are benchmarked against the interbank options market, so you always get best-in-class prices for your trades."
@@ -5963,6 +5989,11 @@ msgstr "日"
 msgid "Supplementary Terms and Conditions for Financial Products offered by Binary Investments (Europe) Ltd."
 msgstr "Binary Investments (Europe) Ltdが提供する金融商品の補助規約"
 
+#, fuzzy
+#| msgid "%1 supports"
+msgid "Support"
+msgstr "%1はGamCareという団体と恊働しています"
+
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "グループのグローバルな人材募集や人材管理のニーズをサポート"
 
@@ -5983,6 +6014,11 @@ msgstr "堅牢で高品質、量産可能なコードを書く役割を担い、
 
 msgid "Tasked with writing robust, high-quality, production-ready code as well as refactoring and optimizing a large and complex legacy code base."
 msgstr "大規模で複雑なレガシーコードベースのリファクタリングと最適化だけではなく、堅牢で高品質であり量産可能なコードを書く役割を担います。"
+
+#, fuzzy
+#| msgid "Team"
+msgid "Teamwork"
+msgstr "チーム"
 
 msgid "Tel"
 msgstr "お電話"
@@ -6205,9 +6241,6 @@ msgstr "当社は当プログラムへの参加許可を与える権限を有し
 
 msgid "The Company's Obligations"
 msgstr "当社の義務"
-
-msgid "The Cyberview Lodge Resort in Cyberjaya"
-msgstr "Cyberjaya（マレーシア）・The Cyberview Lodge Resort"
 
 msgid "The Data Protection laws and regulations place obligations on users of personal data and lay down principles for fair and lawful processing of this information. We are committed to safeguarding your privacy online. We only use your personal information to help us service your account, to improve our services to you, and to provide you with products you have requested. We do not sell your personal information to third parties, but we may provide your personal information to payment providers to facilitate transactions on your account."
 msgstr "個人情報保護に関する法律と規制により、お客さまの個人情報の利用に対する義務が発生し平等で法的な取り扱い原則が課されます。当社はオンライン上でのお客さまのプライバシー保護を確証し、ご口座へのサービスへの実施、改善、及びリクエストされた商品を提供する目的でのみ、お客さまの個人情報を利用します。当社はお客さまの個人情報を第三者に販売することはありませんが、ご口座でのお取引をアシストするために個人情報を金融機関に提供する場合があります。"
@@ -7098,9 +7131,6 @@ msgstr "当WEBブラウザ版取引画面上で、お客さまは最も柔軟な
 msgid "Utilise a variety of tactics - both online and offline - to grow and support the company's network of partners in your designated market"
 msgstr "戦略の多様性を活用– オンラインでもオフラインでも –自身で指定した市場でパートナーの当ネットワークをサポート"
 
-msgid "Valletta, the capital of Malta"
-msgstr "マルタ共和国首都・Valletta"
-
 msgid "Verification Token"
 msgstr "ワンタイムパスワード"
 
@@ -7298,7 +7328,9 @@ msgstr "当社はお客さまのご口座残高を現金または現金同等物
 msgid "We may release subsequent versions of the %1 API and require that you use those subsequent versions. Your continued use of the APIs following a subsequent release will be deemed your acceptance of modifications."
 msgstr "%1 APIの後続バージョンをリリースすることがあり、その際後続バージョンを使用していただく必要があります。後続APIを引き続きご使用されることで、変更に同意されたとみなします。"
 
-msgid "We offer a market-based remuneration structure, an annual cash bonus plan, health benefits for you and your family, travel and internet allowances, and company trips."
+#, fuzzy
+#| msgid "We offer a market-based remuneration structure, an annual cash bonus plan, health benefits for you and your family, travel and internet allowances, and company trips."
+msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you’re in Malta or Malaysia."
 msgstr "当社では、ボーナス、本人及び家族への各種健康保険、旅行、インターネット、社員旅行といった魅力的な福利厚生を提供しています。"
 
 msgid "We prohibit the use of unauthorised incentives, gifts and payments to encourage customer sign-ups. In the event that we believe that you have engaged in such activity, we reserve the right to withhold any amounts due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval."
@@ -7400,9 +7432,6 @@ msgstr "他にどのようなレポートを参照できるか教えて下さい
 msgid "What our clients are saying"
 msgstr "お客さまの声"
 
-msgid "When it's time to kick back, you'll find beautiful beaches, islands and mountains to explore, just a short flight away. From Malta, you'll have Europe, the Mediterranean and North Africa on your doorstep. And from Malaysia, you'll be within easy reach of some of Asia's most spectacular scenery."
-msgstr "余暇を楽しむ際には、短時間のフライトで美しいビーチ、島、そして山へアクセスできます。マルタ共和国では、地中海や北アフリカを容易に訪問でき、マレーシアからは、アジアの様々な印象的な場所に行くことができます。"
-
 msgid "When the Affiliate's referred clients open an account with any member of the Binary group, we assume ownership of the database of names and contact information and any other data of the Affiliates' referred clients."
 msgstr "獲得会員がBinaryグループの口座を開設した場合、獲得会員の氏名、トレード情報、その他データの所有権を当社が引き受けます。"
 
@@ -7454,14 +7483,14 @@ msgstr "協力的な同僚達は第二の家族のような存在です。"
 msgid "Where teamwork and a collaborative culture form the platform for personal and corporate growth."
 msgstr "チームワークと協業的な企業文化により、個人と組織の成長を可能にする環境を築きます。"
 
-msgid "Where we are"
-msgstr "オフィス所在地"
-
 msgid "Where we consider, on the basis of the information provided by you that you do not possess the knowledge and experience to appreciate the risks associated with an investment in the proposed instrument, we will issue a warning to you.  Such a warning shall be displayed on the website."
 msgstr "お客さまから提供いただいた情報を基に、お客さまには提案された計測器での投資に伴うリスクを理解する知識と経験が不足していると判断たため、お客さまに警告をさせていただきいます。この警告はウェブサイト上に表示されます。"
 
 msgid "Where we do not manage to obtain sufficient information to assess the appropriateness of the product or service for you, we will similarly inform you that we are not in a position to assess appropriateness."
 msgstr "当社がお客さまのへの商品またはサービスの妥当性を評価するのに十分な情報を得られない場合、妥当性を評価する立場に当社がないことを同様にお知らせ致します。"
+
+msgid "Where we're one big, multicultural family."
+msgstr ""
 
 msgid "Where you can go"
 msgstr "余暇の過ごし方"
@@ -7472,17 +7501,11 @@ msgstr "お客さまが当社に以下の例を含む特定のご指示をされ
 msgid "Where your experience, drive and talent can propel you in unknown directions. And you have the freedom to push into new frontiers."
 msgstr "あなたの経験、意思、そして才能が新たな世界を導き、そして新たな領域への意欲を駆り立てることでしょう。"
 
-msgid "Whether in Malta or Malaysia, you'll enjoy a high standard of living, and your income will stretch further than in most western countries."
-msgstr "マルタ共和国でもマレーシアでも、高い生活水準を得ることができ、収入も先進国の基準での増大が見込めます。"
-
 msgid "Who can apply to be a Payment Agent?"
 msgstr "決済サービスエージェントに申し込む"
 
 msgid "Who can be a client on the %1 platform?"
 msgstr "どのような人が%1の会員になることができますか？"
-
-msgid "Who love working with people from different cultures, and are keen to contribute to a dynamic and unique workplace, and not merely pass on through."
-msgstr "様々な文化背景を持つ同僚と働くことに興味があり、ダイナミックで個性的な職場環境への貢献できる方を歓迎します。"
 
 msgid "Why Choose Binary Trading?"
 msgstr "バイナリー取引が選ばれる理由"
@@ -8213,9 +8236,7 @@ msgstr ""
 "弊社では、内部管理統括責任者を受益者代理人（甲）とし、毎営業日、区分管理必要額の確認を行っております。また、外部弁護士を受益者代理人（乙）とし、弊社が破綻した場合に日証金信託銀行からお客様の資産の返還にあたります。"
 
 msgid "{JAPAN ONLY}%1 was one of the first active Binary Options brokers and has a proven track record of delivering first class service and maintaining an award winning trading platform, while delivering strong financial performance to our shareholders, for more than 15 years worldwide."
-msgstr ""
-"%1はオンライン上のオプション取引業界のパイオニアであり、世界中の個人投資家からサービスの評価を受けています。また、数々の受賞歴を有し、15年以上にわたり"
-"強固な財務基盤を維持しています。"
+msgstr "%1はオンライン上のオプション取引業界のパイオニアであり、世界中の個人投資家からサービスの評価を受けています。また、数々の受賞歴を有し、15年以上にわたり強固な財務基盤を維持しています。"
 
 msgid "{JAPAN ONLY}251"
 msgstr "251"
@@ -9191,6 +9212,27 @@ msgstr "各種設定"
 
 msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
+
+#~ msgid "Company trip to Phuket, Thailand"
+#~ msgstr "タイ・プーケット島での社員旅行"
+
+#~ msgid "Our headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas, and World Heritage sites. We also have two offices in Malaysia: our operational headquarters in the high-tech township of Cyberjaya, and a branch office at KL Sentral in the heart of the country’s capital, Kuala Lumpur."
+#~ msgstr "Binary.comの本社は、温暖な気候、美しい保養地区、そして世界遺産といった環境に恵まれた観光地であるマルタ共和国に存在します。また、エキサイティングなアジアの中心部であるマレーシアの首都クアラルンプールの南部に位置する、ハイテク産業で有名なCyberjayaに業務部門を統括する本社が存在します。"
+
+#~ msgid "The Cyberview Lodge Resort in Cyberjaya"
+#~ msgstr "Cyberjaya（マレーシア）・The Cyberview Lodge Resort"
+
+#~ msgid "Valletta, the capital of Malta"
+#~ msgstr "マルタ共和国首都・Valletta"
+
+#~ msgid "Where we are"
+#~ msgstr "オフィス所在地"
+
+#~ msgid "Whether in Malta or Malaysia, you'll enjoy a high standard of living, and your income will stretch further than in most western countries."
+#~ msgstr "マルタ共和国でもマレーシアでも、高い生活水準を得ることができ、収入も先進国の基準での増大が見込めます。"
+
+#~ msgid "Who love working with people from different cultures, and are keen to contribute to a dynamic and unique workplace, and not merely pass on through."
+#~ msgstr "様々な文化背景を持つ同僚と働くことに興味があり、ダイナミックで個性的な職場環境への貢献できる方を歓迎します。"
 
 #~ msgid "%1 has updated its %2. By clicking OK, you confirm that you have read and accepted the updated %2."
 #~ msgstr "%1が%2を改定いたします。当社でお取引なさっているお客さまにおいて、改定後の%2の内容を必ずご確認いただく必要がございます。原則、改定後の書面の内容をご確認いただきOKボタンを押して頂くまで、お取引できなくなりますので、お取引の際ご注意ください。"
@@ -17559,9 +17601,6 @@ msgstr "利用規約の承認"
 #~ msgid "Sorry, your file is too large. The maximum file size is 1 Megabyte (1MB)."
 #~ msgstr "申し訳ございませんが、ファイルのサイズが大き過ぎます。ファイルサイズの最大値は１メガバイト (1MB)まで承っております。"
 
-#~ msgid "Team"
-#~ msgstr "チーム"
-
 #~ msgid "Thank you for visiting %1 and for providing your feedback. We will endeavour to respond as soon as possible."
 #~ msgstr "%1へのアクセス、及びご意見を頂きましてありがとうございます。なるべく早急にお返事を差し上げるべく、尽力いたします。"
 
@@ -20210,9 +20249,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "Companies which provide services directly to end users."
 #~ msgstr "リテール向け製品を提供する企業。"
-
-#~ msgid "%1 supports"
-#~ msgstr "%1はGamCareという団体と恊働しています"
 
 #~ msgid "Open a"
 #~ msgstr "是非とも"
