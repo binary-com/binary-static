@@ -1,4 +1,4 @@
-<div class="gr-12" id="pa-transfer-client">
+<div id="pa-transfer-client">
     <h1>[% l('Payment Agent transfer') %]</h1>
 
     <div id="pa_transfer_loading" class="center-text">[% INCLUDE global/loading.html.tt %]</div>
