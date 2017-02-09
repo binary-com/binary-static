@@ -144,6 +144,7 @@ const PaymentAgentTransfer = (function() {
     const error_if_virtual = function() {
         if (Client.get('is_virtual')) {
             $('#virtual_error').removeClass('invisible');
+            $('#pa_transfer_loading').remove();
             return true;
         }
         return false;
