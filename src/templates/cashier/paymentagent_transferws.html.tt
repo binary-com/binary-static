@@ -43,11 +43,11 @@
     </div>
 
     <div id="virtual_error" class="invisible">
-        <p class="center notice-msg">[% l('This feature is not relevant to virtual-money accounts.') %]</p>
+        <p class="center-text notice-msg">[% l('This feature is not relevant to virtual-money accounts.') %]</p>
     </div>
 
     <div id="not_pa_error" class="invisible">
-        <p class="center notice-msg">[% l('This feature is only relevant to payment agent accounts.') %]</p>
+        <p class="center-text notice-msg">[% l('This feature is only relevant to payment agent accounts.') %]</p>
     </div>
 
     <div id="paymentagent_transfer" class="invisible">
