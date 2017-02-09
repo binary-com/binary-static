@@ -1,3 +1,5 @@
+import OneSignal from '../../lib/onesignal';
+
 const Login             = require('./login').Login;
 const template          = require('./utility').template;
 const LocalStore        = require('./storage').LocalStore;
@@ -18,7 +20,6 @@ const ViewBalance       = require('../websocket_pages/user/viewbalance/viewbalan
 const Cookies           = require('../../lib/js-cookie');
 const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check.init').RealityCheck;
 const RealityCheckData  = require('../websocket_pages/user/reality_check/reality_check.data').RealityCheckData;
-const OneSignal         = require('../../lib/one-signal.js');
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
 require('../../lib/mmenu/jquery.mmenu.min.all.js');
@@ -61,7 +62,7 @@ Page.prototype = {
         this.endpoint_notification();
         BinarySocket.init();
         this.show_notification_outdated_browser();
-        OneSignal.prompt();
+        OneSignal.checkSubscription();
     },
     on_unload: function() {
         Menu.on_unload();
