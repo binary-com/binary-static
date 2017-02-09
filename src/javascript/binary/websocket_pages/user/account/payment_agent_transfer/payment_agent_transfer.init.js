@@ -161,12 +161,14 @@ const PaymentAgentTransfer = (function() {
 
     const setFormVisibility = function(is_visible) {
         if (is_visible) {
+            $('#pa_transfer_loading').remove();
             PaymentAgentTransferUI.showForm();
             PaymentAgentTransferUI.showNotes();
         } else {
             PaymentAgentTransferUI.hideForm();
             PaymentAgentTransferUI.hideNotes();
             if (Client.get('values_set') && !Client.get('is_authenticated_payment_agent')) {
+                $('#pa_transfer_loading').remove();
                 $('#not_pa_error').removeClass('invisible');
             }
         }
