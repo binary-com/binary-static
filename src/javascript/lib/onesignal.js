@@ -47,7 +47,7 @@ class BinaryOneSignal {
      */
     checkSubscription() {
         this.OneSignal.push(() => {
-            // if (window.location.hostname !== 'www.binary.com') return; // Use in production
+            if (window.location.hostname !== 'www.binary.com') return; // Use in production
             // If we're on an unsupported browser, do nothing
             if (!this.OneSignal.isPushNotificationsSupported()) {
                 return;
