@@ -366,7 +366,13 @@ const Client = (function () {
 
     const should_complete_tax = () => is_financial() && !get('has_tax_information');
 
-    const should_redirect_tax = () => should_complete_tax() && !/user\/settings\/detailsws/.test(window.location.pathname);
+    const should_redirect_tax = () => {
+        if (should_complete_tax() && !/user\/settings\/detailsws/.test(window.location.pathname)) {
+            window.location.href = url_for('user/settings/detailsws');
+            return true;
+        }
+        return false;
+    };
 
     return {
         init                  : init,

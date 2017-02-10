@@ -288,7 +288,7 @@ const BinarySocketClass = function() {
                     if (/crs_tin_information/.test(status)) {
                         Client.set('has_tax_information', 1);
                     } else if (Client.should_redirect_tax()) {
-                        window.location.href = url_for('user/settings/detailsws');
+                        return;
                     }
                     page.show_authenticate_message();
 
