@@ -33,7 +33,6 @@ const Header     = require('../base/header').Header;
 const LocalStore = require('../base/storage').LocalStore;
 const Client     = require('../base/client').Client;
 const page       = require('../base/page').page;
-const url_for    = require('../base/url').url_for;
 const check_risk_classification       = require('../common_functions/check_risk_classification').check_risk_classification;
 const qualify_for_risk_classification = require('../common_functions/check_risk_classification').qualify_for_risk_classification;
 
@@ -287,8 +286,11 @@ const BinarySocketClass = function() {
                     sessionStorage.setItem('client_status', status);
                     if (/crs_tin_information/.test(status)) {
                         Client.set('has_tax_information', 1);
-                    } else if (Client.should_redirect_tax()) {
-                        return;
+                    } else {
+                        Client.set('has_tax_information', 0);
+                        if (Client.should_redirect_tax()) {
+                            return;
+                        }
                     }
                     page.show_authenticate_message();
 

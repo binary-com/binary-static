@@ -19,7 +19,9 @@ const SettingsDetailsWS = (function() {
         editable_fields,
         isJP,
         isVirtual,
-        residence;
+        residence,
+        tax_residence_values,
+        place_of_birth_value;
 
     const init = function() {
         Content.populate();
@@ -51,7 +53,8 @@ const SettingsDetailsWS = (function() {
                     populateJPSettings();
                     data = $.extend(data, jpDataKeys);
                 }
-                if (data.tax_residence) data.tax_residence = data.tax_residence.join(',');
+                const tax_residence_val = $('#tax_residence').val();
+                data.tax_residence = (Array.isArray(tax_residence_val) ? tax_residence_val.join(',') : tax_residence_val) || '';
                 if (!isChanged(data)) return showFormMessage('You did not change anything.', false);
                 return setDetails(Client.get('is_virtual') || data);
             },
@@ -79,6 +82,12 @@ const SettingsDetailsWS = (function() {
     };
 
     const displayGetSettingsData = (data, populate = true) => {
+        if (data.tax_residence) {
+            tax_residence_values = data.tax_residence.split(',');
+        }
+        if (data.place_of_birth) {
+            place_of_birth_value = data.place_of_birth;
+        }
         let $key,
             $lbl_key,
             $data_key,
@@ -179,10 +188,10 @@ const SettingsDetailsWS = (function() {
                 value = current_residence.value;
                 appendIfExist(obj_residence_el, text, value);
             }
-            if (obj_residence_el.tax_residence) {
-                $('#tax_residence').select2()
-                    .removeClass('invisible');
-            }
+            $('#tax_residence').select2()
+                .val(tax_residence_values).trigger('change')
+                .removeClass('invisible');
+            obj_residence_el.place_of_birth.value = place_of_birth_value || residence;
         }
     };
 
@@ -274,6 +283,10 @@ const SettingsDetailsWS = (function() {
 
     const setDetails = function(data) {
         const req = { set_settings: 1 };
+        if (Client.is_financial() && data.tax_residence && data.tax_identification_number) {
+            Client.set('has_tax_information', 1);
+            $('#tax_information_notice').addClass('invisible');
+        }
         Object.keys(data).forEach(function(key) {
             req[key] = data[key];
         });
