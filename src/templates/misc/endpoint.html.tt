@@ -18,7 +18,7 @@
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="app_id">[% l('OAuth App ID (Optional)') %]</label>
+                                <label for="app_id">[% l('OAuth App ID (optional)') %]</label>
                             </div>
                             <div class="gr-8">
                                 <input type="text" class="text" id="app_id" maxlength="5" />

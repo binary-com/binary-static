@@ -191,7 +191,7 @@ const Highchart = (function() {
                     chart = init_chart(options);
                     if (!chart) return;
 
-                    if (purchase_time !== start_time) draw_line_x(purchase_time, localize('Purchase Time'), '', '', '#7cb5ec');
+                    if (purchase_time !== start_time) draw_line_x(purchase_time, localize('Purchase time'), '', '', '#7cb5ec');
 
                     // second condition is used to make sure contracts that have purchase time
                     // but are sold before the start time don't show start time

@@ -13,7 +13,6 @@
         <li>[% l("<strong>All payouts</strong> - from \$1 to \$50,000.") %]</li>
     </ul>
     <br />
-
     <h2>[% l("Binary trading is ideal for both individuals and market professionals") %]</h2>
     <h3>[% l("Individual traders") %]</h3>
     <p>[% l("If you\'re an individual trader, you\'ll appreciate the simplicity, flexibility, and limited risk of binary trading. With [_1]'s low minimum stakes, you\'ll soon learn how to trade with skill and confidence. And if you have any questions, you\'re free to access <a class='pjaxload' href='[_2]'>our helpful support desk</a>.", website_name, request.url_for("contact")) %]</p>

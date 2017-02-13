@@ -11,6 +11,7 @@
     <h2>[% l("Client funds") %]</h2>
     <h3>[% l("Where does [_1] hold my funds?", website_name) %]</h3>
     <p>[% l("We segregate all client funds and hold them in secure and licensed financial institutions, according to the conditions of our trading licenses.") %]</p>
+
     <h3>[% l("How does [_1] make money?", website_name) %]</h3>
     <p>[% l("[_1] has thousands of clients taking a variety of positions on the financial markets at any one time, and earns a small margin on these trades.", website_name) %]</p>
 

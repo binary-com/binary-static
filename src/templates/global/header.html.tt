@@ -117,7 +117,7 @@
                                         <li class="topMenuProfile">[% l("Profile") %]</li>
                                     </a>
                                     <a class="link with_login_cookies pjaxload" href="[% request.url_for('/user/securityws') %]">
-                                        <li class="topMenuSecurity">[% l("Security and limits") %]</li>
+                                        <li class="topMenuSecurity">[% l("Security & Limits") %]</li>
                                     </a>
                                     <div class="separator-line-thin-gray"></div>
                                     <div class="login-id-list"></div>

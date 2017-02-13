@@ -336,9 +336,9 @@ const ViewPopupWS = (function() {
 
     // const normalContractEnded = function(is_win) {
     const normalContractEnded = function() {
-        containerSetText('trade_details_current_title',    localize(contract.sell_spot_time < contract.date_expiry ? 'Contract Sold' : 'Contract Expiry'));
-        containerSetText('trade_details_spot_label',       localize('Exit Spot'));
-        containerSetText('trade_details_spottime_label',   localize('Exit Spot Time'));
+        containerSetText('trade_details_current_title',    localize(contract.sell_spot_time < contract.date_expiry ? 'Contract sold' : 'Contract expiry'));
+        containerSetText('trade_details_spot_label',       localize('Exit spot'));
+        containerSetText('trade_details_spottime_label',   localize('Exit spot time'));
         containerSetText('trade_details_indicative_label', localize('Price'));
         // show validation error if contract is not settled yet
         if (!(contract.is_settleable && !contract.is_sold)) {
@@ -424,7 +424,7 @@ const ViewPopupWS = (function() {
             normalRow('Contract ID', '', 'trade_details_contract_id') +
             normalRow('Reference ID', '', 'trade_details_ref_id') +
             normalRow('Start time', '', 'trade_details_start_date') +
-            (!contract.tick_count ? normalRow('End Time', '', 'trade_details_end_date') +
+            (!contract.tick_count ? normalRow('End time', '', 'trade_details_end_date') +
                 normalRow('Remaining time', '', 'trade_details_live_remaining') : '') +
             normalRow('Entry spot', '', 'trade_details_entry_spot') +
             normalRow(contract.barrier_count > 1 ? 'High barrier' :

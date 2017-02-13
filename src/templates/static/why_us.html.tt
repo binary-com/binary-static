@@ -61,10 +61,10 @@
                       [% l("Real-time prices, benchmarked against interbank options markets.") %]
                     </li>
                     <li>
-                      [% l("Returns above 100% on simple <a href='[_1]' class='pjaxload'>rise/fall</a> contracts.", request.url_for('trading?market=forex&formname=risefall')) %]
+                      [% l("Returns above 100% on simple <a href='[_1]' class='pjaxload'>Rise/Fall</a> contracts.", request.url_for('trading?market=forex&formname=risefall')) %]
                     </li>
                     <li>
-                      [% l("Returns above 1000% on <a href='[_1]' class='pjaxload'>higher/lower</a> and <a href='[_2]' class='pjaxload'>touch/no-touch</a> trades.", request.url_for('trading?market=forex&formname=higherlower'), request.url_for('trading?market=forex&formname=touchnotouch')) %]
+                      [% l("Returns above 1000% on <a href='[_1]' class='pjaxload'>Higher/Lower</a> and <a href='[_2]' class='pjaxload'>Touch/No Touch</a> trades.", request.url_for('trading?market=forex&formname=higherlower'), request.url_for('trading?market=forex&formname=touchnotouch')) %]
                     </li>
                     <li>
                       [% l("No hidden fees or commissions.") %]
@@ -191,7 +191,7 @@
           <div id="section-5">
             <div class="gr-12">
               <h1>
-                [% l("Licensed, trusted, and secure") %]
+                [% l("Licensed, trusted and secure") %]
               </h1>
             </div>
             <div class="gr-row">
@@ -204,7 +204,7 @@
                       [% l("We have a proven track record since we launched our platform in 2000.") %]
                     </li>
                     <li>
-                      [% l("We are licensed and regulated in the British Isles, Japan, and in Malta since 2015.") %]
+                      [% l("We are licensed and regulated in the British Isles, Japan and in Malta since 2015.") %]
                     </li>
                     <li>
                       [% l("We segregate your funds and keep them in secure and licensed financial institutions.") %]
