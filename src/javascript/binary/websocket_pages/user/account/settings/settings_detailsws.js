@@ -24,10 +24,11 @@ const SettingsDetailsWS = (function() {
         place_of_birth_value;
 
     const init = function() {
+        if (isInitialized) return;
         Content.populate();
         editable_fields = {};
 
-        if (Client.get('values_set') && (Client.get('is_virtual') || Client.get('residence'))) {
+        if (Client.get('values_set_account') && (Client.get('is_virtual') || Client.get('residence'))) {
             initOk();
         } else {
             isInitialized = false;
@@ -102,7 +103,7 @@ const SettingsDetailsWS = (function() {
             $key = has_key && has_lbl_key ? (isJP ? $lbl_key : $key) : (has_key ? $key : $lbl_key);
             if ($key.length > 0) {
                 $data_key = data[key];
-                editable_fields[key] = $data_key;
+                editable_fields[key] = $data_key === null ? '' : $data_key;
                 if (populate) {
                     if ($key.is(':checkbox')) {
                         $key.prop('checked', !!$data_key);
@@ -255,7 +256,10 @@ const SettingsDetailsWS = (function() {
         const isState    = V2.regex(/^[^`~!@#$%^&*)(_=+\[\}\{\]\\\/\"\;\:\?\><\|]*$/,     [letters, numbers, space, comma, hyphen, '. \'']);
         const isPostcode = V2.regex(/^[^+]{0,20}$/,                                       [letters, numbers, space, hyphen]);
         const isPhoneNo  = V2.regex(/^(|\+?[0-9\s\-]+)$/,                                 [numbers, space, hyphen]);
-        const isTaxID    = V2.regex(/^[\w-]{0,20}$/,                                      [letters, numbers, hyphen]);
+
+        const isResidence    = V2.regex(/^([a-z]{2}$)?/,                                  [letters]);
+        const isTaxResidence = V2.regex(/^([a-z]{2}(,[a-z]{2})*)?$/,                      [letters]);
+        const isTaxID        = V2.regex(/^[\w-]{0,20}$/,                                  [letters, numbers, hyphen]);
 
         const maybeEmptyAddress = function(value) {
             return value.length ? isAddress(value) : dv.ok(value);
@@ -271,10 +275,12 @@ const SettingsDetailsWS = (function() {
         };
 
         if (Client.is_financial()) {
-            validations.place_of_birth            = [V2.required];
-            validations.tax_residence             = [V2.required];
+            validations.place_of_birth            = [V2.required, isResidence];
+            validations.tax_residence             = [V2.required, isTaxResidence];
             validations.tax_identification_number = [V2.required, isTaxID];
         } else {
+            validations.place_of_birth            = [isResidence];
+            validations.tax_residence             = [isTaxResidence];
             validations.tax_identification_number = [isTaxID];
         }
 
@@ -352,9 +358,14 @@ const SettingsDetailsWS = (function() {
         }
     };
 
+    const onUnload = () => {
+        isInitialized = false;
+    };
+
     return {
-        init  : init,
-        onLoad: onLoad,
+        init    : init,
+        onLoad  : onLoad,
+        onUnload: onUnload,
     };
 })();
 
