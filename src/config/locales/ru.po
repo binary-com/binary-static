@@ -7,14 +7,16 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-08 21:35+0000\n"
-"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"PO-Revision-Date: 2017-02-13 14:00+0000\n"
+"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.12-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -144,10 +146,11 @@ msgstr "Число пользователей %1 достигло 1 миллио
 msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr "%1 представляет <a href='%2' target='_blank' class='ja-hide'>программный инструмент для </a><span class='all-hide ja-show'>автоматизированной торговли</span>, позволяющий трейдерам разрабатывать собственных торговых роботов с помощью простой функции “перетаскивания объектов”."
 
-#, fuzzy
-#| msgid "%1 is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
 msgid "%1 is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
-msgstr "%1 гордится своей гибкостью. Помимо работы в офисе, наши сотрудники могут выбрать удалённую работу из своих домашних офисов по всему миру. Если Вам подходит именно это, мы открыты для такого формата."
+msgstr ""
+"%1 – гибкая и динамичная компания. Помимо работы в офисе, наши сотрудники "
+"могут выбрать удалённую работу из своих домашних офисов по всему миру. Если "
+"Вам подходит именно это, мы открыты для такого формата."
 
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
 msgstr "%1 всегда стремится увеличивать свою команду талантливых администраторов, технических сотрудников и менеджеров, пополняя её самыми лучшими и опытными специалистами. Чтобы постоянно поддерживать дальнейший рост и развитие компании, мы расширили список интересных вакансий в следующих областях:"
@@ -205,6 +208,8 @@ msgstr "%1 предлагает демо-счета, на которых Вы м
 
 msgid "%1 offers five main types of trades that will help you execute your market view or strategy:"
 msgstr ""
+"%1 предоставляет пять основных видов контрактов, которые позволят Вам "
+"опробовать свои торговые стратегии:"
 
 msgid "%1 offers new ways to trade"
 msgstr "%1 предлагает новые способы работы на рынках"
@@ -212,10 +217,8 @@ msgstr "%1 предлагает новые способы работы на ры
 msgid "%1 offers the world's financial markets in a simple, user-friendly platform."
 msgstr "%1 предлагает работу на мировых финансовых рынках на простой для использования платформе."
 
-#, fuzzy
-#| msgid "%1 offers five ways to trade your chosen asset:"
 msgid "%1 offers you four ways to trade a particular asset:"
-msgstr "%1 предлагает пять способов торговать на выбранном Вами инструменте:"
+msgstr "%1 предлагает Вашему вниманию четыре способа торговли активами:"
 
 msgid "%1 opens an office in the QSentral office building in central Kuala Lumpur to further expand its IT development team."
 msgstr "%1 открывает офис в здании QSentral, в самом центре Куала-Лумпура, чтобы продолжить расширять свою команду разработчиков IT."
@@ -522,10 +525,11 @@ msgstr "<strong>При любых условиях рынка:</strong> ввер
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>При любых условиях рынка</strong> – вверх/вниз, касание/нет касания, внутри/вне."
 
-#, fuzzy
-#| msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgid "<strong>All markets and conditions</strong> - Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets"
-msgstr "<strong>Любые рынки, любые условия</strong> – торгуйте валютами, индексами и сырьевыми товарами в условиях снижающихся или растущих, волатильных или неподвижных рынков."
+msgstr ""
+"<strong>Любые рынки и любые условия</strong> – торгуйте валютами, индексами, "
+"сырьевыми товарами и другими активами в условиях снижающихся или растущих, "
+"волатильных или неподвижных рынков"
 
 msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
 msgstr "<strong>На всех рынках:</strong> валютные пары, акции, индексы и сырьевые материалы."
@@ -542,10 +546,10 @@ msgstr "<strong>С выплатами по контрактам</strong> от $1
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>Тест на целесообразность: ПРЕДУПРЕЖДЕНИЕ:</strong> Предоставляя Вам наши услуги, мы имеем обязательство получить от Вас определенную информацию, чтобы знать об уместности предоставления Вам того или иного продукта (то есть, предоставление услуг в зависимости от того, обладаете ли Вы опытом и знаниями, достаточными для понимания всех возможных рисков)."
 
-#, fuzzy
-#| msgid "<strong>Trade when you want to trade</strong> - trade 24/7, even on weekends."
 msgid "<strong>Available 24/7</strong> - Trade when you want. %1 is available 24/7, even on weekends"
-msgstr "<strong>Торгуйте в любое время</strong> – работайте на рынках 24 часа 7 дней в неделю, даже в выходные."
+msgstr ""
+"<strong>Торгуйте 24/7</strong> – работайте в удобное для Вас время: 7 дней в "
+"неделю, 24 часа в сутки и даже на выходных"
 
 msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
 msgstr "<strong>Комиссии:</strong> Вы будете взимать комиссию за обработку транзакций."
@@ -561,6 +565,8 @@ msgstr "<strong>Дополнительный доход:</strong> Вы полу�
 
 msgid "<strong>Flexible</strong> - Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy"
 msgstr ""
+"<strong>Гибкость</strong> – выберите один из миллиона доступных контрактов и "
+"задайте настройки согласно Вашей стратегии"
 
 #, fuzzy
 #| msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
@@ -573,15 +579,15 @@ msgstr "<strong>ВАЖНАЯ ИНФОРМАЦИЯ</strong> – %1 не явля�
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the payment agents listed above. Each payment agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of payment agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and payment agents."
 msgstr "<strong>ВАЖНАЯ ИНФОРМАЦИЯ</strong> – %1 не является представителем никакого из указанных платежных агентов. Каждый платежный агент функционирует как независимый предприниматель, а %1 не поддерживает, не выполняет поручительства и не гарантирует надежности любого из платежных агентов. КЛИЕНТЫ ПОЛЬЗУЮТСЯ УСЛУГАМИ ПЛАТЕЖНЫХ АГЕНТОВ НА СВОЙ СТРАХ И РИСК. Мы рекомендуем клиентам заранее проверить информацию о платежных агентах, прежде чем высылать им денежные средства. %1 не несет никакой ответственности за транзакции между клиентом и платежным агентом."
 
-#, fuzzy
-#| msgid "<strong>In/Out</strong> - where you can profit from the market staying inside, or going outside, two price targets."
 msgid "<strong>In/Out</strong> - Predict the market staying inside or going outside two price targets."
-msgstr "<strong>Внутри/Вне</strong> – где вы можете получить прибыль, если рынок останется внутри двух ценовых барьеров или выйдет за них."
+msgstr ""
+"<strong>Внутри/Вне</strong> – попытайтесь предсказать, останется ли рынок "
+"внутри двух ценовых барьеров или выйдет за их пределы."
 
-#, fuzzy
-#| msgid "<strong>Instant access</strong> - open an account in minutes."
 msgid "<strong>Instant access</strong> - Open an account and start trading in minutes. Deposits and withdrawals are also available 24/7"
-msgstr "<strong>Мгновенный доступ</strong> – откройте счет в считанные минуты."
+msgstr ""
+"<strong>Мгновенный доступ</strong> – откройте счет и начните торговать в "
+"считанные минуты. Пополняйте и выводите средства со счёта 24/7"
 
 msgid "<strong>Long-term partnership:</strong> Your partnership with %1 could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide."
 msgstr "<strong>Долгосрочное партнерство:</strong> Ваше партнерство с %1 может стать способом БЕСПЛАТНОГО продвижения Ваших продуктов или услуг более миллиону наших зарегистрированных клиентов по всему миру."
@@ -594,10 +600,11 @@ msgstr "<strong>Низкие ставки</strong> – начните торго
 msgid "<strong>Other Risks</strong>: There are other risks that relate to trading investment products and trading foreign currencies that cannot be described in detail in this document. Generally, however, securities, options and currency transactions involve exposure to a combination of the following risk factors: market risk, credit risk, settlement risk, liquidity risk, operational risk and legal risk. For example, there can be serious market disruptions if economic or political or other unforeseen events locally or overseas affect the market. In addition to these types of risk there may be other factors such as accounting and tax treatment issues that you should consider."
 msgstr "<strong>Другие риски</strong>: Есть и другие риски, связанные с торговлей на инвестиционных продуктах и иностранной валюте, которые не могут быть подробно описаны в этом документе. В целом, однако, ценные бумаги, опционы и валютные операции подвержены воздействию сочетания следующих факторов риска: рыночный риск, кредитный риск, риск урегулирования, риск ликвидности, операционный риск и правовой риск. Например, могут возникнуть серьезные перебои с рыночными данными, если какие-либо экономические, политические или другие непредвиденные события локально или за рубежом влияют на рынок. В дополнение к этим видам риска могут добавляться и другие факторы, такие как вопросы бухгалтерского и налогового толка, которые Вы должны иметь в виду."
 
-#, fuzzy
-#| msgid "<strong>Patented technology</strong> - %1 is the industry pioneer and holds patented pricing technology."
 msgid "<strong>Patented technology</strong> - Trade with the industry pioneer and holder of a patented pricing technology"
-msgstr "<strong>Запатентованная технология</strong> – %1 является одной из первых платформ бинарных опционов и имеет запатентованную технологию оценки."
+msgstr ""
+"<strong>Запатентованная технология</strong> – торгуйте с признанным "
+"новатором в данной индустрии, обладающим собственной запатентованной "
+"ценоврой технологией"
 
 msgid "<strong>Preferences:</strong>"
 msgstr "<strong>Пожелания:</strong>"
