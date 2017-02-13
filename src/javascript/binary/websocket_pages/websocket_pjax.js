@@ -262,6 +262,9 @@ pjax_config_page_require_auth('settings/detailsws', function() {
         onLoad: function() {
             SettingsDetailsWS.onLoad();
         },
+        onUnload: function () {
+            SettingsDetailsWS.onUnload();
+        },
     };
 });
 
