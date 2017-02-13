@@ -9,10 +9,9 @@ const check_risk_classification = require('../common_functions/check_risk_classi
 const Header = (function() {
     const on_load = function() {
         show_or_hide_login_form();
-        show_or_hide_language();
         logout_handler();
         check_risk_classification();
-        if (!$('body').hasClass('BlueTopBack') && !Login.is_login_pages()) {
+        if (!Login.is_login_pages()) {
             checkClientsCountry();
         }
         if (Client.is_logged_in()) {
@@ -26,48 +25,8 @@ const Header = (function() {
         });
     };
 
-    const animate_disappear = function(element) {
-        element.animate({ opacity: 0 }, 100, function() {
-            element.css({ visibility: 'hidden', display: 'none' });
-        });
-    };
-
-    const animate_appear = function(element) {
-        element.css({ visibility: 'visible', display: 'block' })
-            .animate({ opacity: 1 }, 100);
-    };
-
-    const show_or_hide_language = function() {
-        const $el = $('#select_language'),
-            $all_accounts = $('#all-accounts');
-        $('.languages').off('click').on('click', function(event) {
-            event.stopPropagation();
-            animate_disappear($all_accounts);
-            if (+$el.css('opacity') === 1) {
-                animate_disappear($el);
-            } else {
-                animate_appear($el);
-            }
-        });
-        $(document).unbind('click').on('click', function() {
-            animate_disappear($all_accounts);
-            animate_disappear($el);
-        });
-    };
-
     const show_or_hide_login_form = function() {
         if (!Client.is_logged_in()) return;
-        const all_accounts = $('#all-accounts'),
-            language = $('#select_language');
-        $('.nav-menu').unbind('click').on('click', function(event) {
-            event.stopPropagation();
-            animate_disappear(language);
-            if (+all_accounts.css('opacity') === 1) {
-                animate_disappear(all_accounts);
-            } else {
-                animate_appear(all_accounts);
-            }
-        });
         let loginid_select = '';
         const loginid_array = Client.get('loginid_array');
         for (let i = 0; i < loginid_array.length; i++) {

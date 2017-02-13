@@ -165,11 +165,9 @@ const Client = (function () {
     };
 
     const set_check_tnc = function () {
-        if (!$('body').hasClass('BlueTopBack')) {
-            sessionStorage.setItem('check_tnc', 'check');
-            localStorage.removeItem('client.tnc_status');
-            localStorage.removeItem('website.tnc_version');
-        }
+        sessionStorage.setItem('check_tnc', 'check');
+        localStorage.removeItem('client.tnc_status');
+        localStorage.removeItem('website.tnc_version');
     };
 
     const clear_storage_values = function() {
@@ -364,6 +362,16 @@ const Client = (function () {
         else return landing_company_response;
     };
 
+    const get_client_landing_company = function() {
+        let client_landing_company = {};
+        Object.keys(landing_company_response).forEach(function(key) {
+            if (client_object.landing_company_name === landing_company_response[key].shortcode) {
+                client_landing_company = landing_company_response[key];
+            }
+        });
+        return client_landing_company;
+    };
+
     return {
         init                  : init,
         validate_loginid      : validate_loginid,
@@ -390,6 +398,8 @@ const Client = (function () {
         do_logout          : do_logout,
         status_detected    : status_detected,
         landing_company    : get_set_landing_company,
+
+        get_client_landing_company: get_client_landing_company,
     };
 })();
 

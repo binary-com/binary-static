@@ -188,7 +188,6 @@ const page = new Page();
 // jQuery's ready function works always.
 
 $(document).ready(function () {
-    if ($('body').hasClass('BlueTopBack')) return; // exclude BO
     // Cookies is not always available.
     // So, fall back to a more basic solution.
     let match = document.cookie.match(/\bloginid=(\w+)/);

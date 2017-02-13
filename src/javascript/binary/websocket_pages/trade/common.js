@@ -214,42 +214,46 @@ function displayMarkets(id, elements, selected) {
 function displayUnderlyings(id, elements, selected) {
     'use strict';
 
-    const target = document.getElementById(id),
-        fragment =  document.createDocumentFragment();
+    const target = document.getElementById(id);
 
-    while (target && target.firstChild) {
+    if (!target) return;
+
+    while (target.firstChild) {
         target.removeChild(target.firstChild);
     }
 
-    if (elements) {
-        const keys = Object.keys(elements).sort(function(a, b) {
-            return elements[a].display.localeCompare(elements[b].display);
-        });
-        const submarkets = {};
-        for (let i = 0; i < keys.length; i++) {
-            if (!submarkets.hasOwnProperty(elements[keys[i]].submarket)) {
-                submarkets[elements[keys[i]].submarket] = [];
-            }
-            submarkets[elements[keys[i]].submarket].push(keys[i]);
+    if (objectNotEmpty(elements)) {
+        target.appendChild(generateUnderlyingOptions(elements, selected));
+    }
+}
+
+function generateUnderlyingOptions(elements, selected) {
+    const fragment = document.createDocumentFragment();
+    const keys = Object.keys(elements).sort(function(a, b) {
+        return elements[a].display.localeCompare(elements[b].display);
+    });
+    const submarkets = {};
+    for (let i = 0; i < keys.length; i++) {
+        if (!submarkets.hasOwnProperty(elements[keys[i]].submarket)) {
+            submarkets[elements[keys[i]].submarket] = [];
         }
-        const keys2 = Object.keys(submarkets).sort(marketSort);
-        for (let j = 0; j < keys2.length; j++) {
-            for (let k = 0; k < submarkets[keys2[j]].length; k++) {
-                const key = submarkets[keys2[j]][k];
-                const option = document.createElement('option'),
-                    content = document.createTextNode(localize(elements[key].display));
-                option.setAttribute('value', key);
-                if (selected && selected === key) {
-                    option.setAttribute('selected', 'selected');
-                }
-                option.appendChild(content);
-                fragment.appendChild(option);
+        submarkets[elements[keys[i]].submarket].push(keys[i]);
+    }
+    const keys2 = Object.keys(submarkets).sort(marketSort);
+    for (let j = 0; j < keys2.length; j++) {
+        for (let k = 0; k < submarkets[keys2[j]].length; k++) {
+            const key = submarkets[keys2[j]][k];
+            const option = document.createElement('option');
+            const content = document.createTextNode(localize(elements[key].display));
+            option.setAttribute('value', key);
+            if (selected && selected === key) {
+                option.setAttribute('selected', 'selected');
             }
+            option.appendChild(content);
+            fragment.appendChild(option);
         }
     }
-    if (target) {
-        target.appendChild(fragment);
-    }
+    return fragment;
 }
 
 /*
@@ -483,7 +487,7 @@ function displayCommentPrice(node, currency, type, payout) {
     if (node && type && payout) {
         const profit = payout - type,
             return_percent = (profit / type) * 100,
-            comment = Content.localize().textNetProfit + ': ' + format_money(currency, profit) + ' | ' + Content.localize().textReturn + ' ' + return_percent.toFixed(1) + '%';
+            comment = localize('Net profit') + ': ' + format_money(currency, profit) + ' | ' + localize('Return') + ' ' + return_percent.toFixed(1) + '%';
 
         if (isNaN(profit) || isNaN(return_percent)) {
             node.hide();
@@ -514,7 +518,7 @@ function displayCommentSpreads(node, currency, point) {
             } else {
                 displayAmount = parseFloat(stopLoss);
             }
-            elementTextContent(node, Content.localize().textSpreadDepositComment + ' ' + format_money(currency, displayAmount) + ' ' + Content.localize().textSpreadRequiredComment + ': ' + point + ' ' + Content.localize().textSpreadPointsComment);
+            elementTextContent(node, localize('Deposit of') + ' ' + format_money(currency, displayAmount) + ' ' + localize('is required. Current spread') + ': ' + point + ' ' + localize('points'));
         }
     }
 }
@@ -720,8 +724,8 @@ function updatePurchaseStatus(final_price, pnl, contract_status) {
         $cost = $('#contract_purchase_cost'),
         $profit = $('#contract_purchase_profit');
 
-    $payout.html(Content.localize().textBuyPrice + '<p>' + addComma(Math.abs(pnl)) + '</p>');
-    $cost.html(Content.localize().textFinalPrice + '<p>' + addComma(final_price) + '</p>');
+    $payout.html(localize('Buy price') + '<p>' + addComma(Math.abs(pnl)) + '</p>');
+    $cost.html(localize('Final price') + '<p>' + addComma(final_price) + '</p>');
     if (!final_price) {
         $profit.html(Content.localize().textLoss + '<p>' + addComma(pnl) + '</p>');
     } else {
@@ -923,6 +927,7 @@ function timeIsValid($element) {
 
 module.exports = {
     displayUnderlyings             : displayUnderlyings,
+    generateUnderlyingOptions      : generateUnderlyingOptions,
     getFormNameBarrierCategory     : getFormNameBarrierCategory,
     contractTypeDisplayMapping     : contractTypeDisplayMapping,
     showPriceOverlay               : showPriceOverlay,

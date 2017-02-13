@@ -1,12 +1,12 @@
-const MBContract      = require('./mb_contract').MBContract;
-const MBDefaults      = require('./mb_defaults').MBDefaults;
-const MBNotifications = require('./mb_notifications').MBNotifications;
-const objectNotEmpty  = require('../../base/utility').objectNotEmpty;
-const localize        = require('../../base/localize').localize;
-const Client          = require('../../base/client').Client;
-const japanese_client = require('../../common_functions/country_base').japanese_client;
-const addComma        = require('../../common_functions/string_util').addComma;
-const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
+const MBContract         = require('./mb_contract').MBContract;
+const MBDefaults         = require('./mb_defaults').MBDefaults;
+const MBNotifications    = require('./mb_notifications').MBNotifications;
+const objectNotEmpty     = require('../../base/utility').objectNotEmpty;
+const localize           = require('../../base/localize').localize;
+const Client             = require('../../base/client').Client;
+const japanese_client    = require('../../common_functions/country_base').japanese_client;
+const addComma           = require('../../common_functions/string_util').addComma;
+const elementInnerHtml   = require('../../common_functions/common_functions').elementInnerHtml;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -147,7 +147,7 @@ const MBPrice = (function() {
         return (is_update ? '' : '<div data-barrier="' + values.barrier + '" class="gr-row price-row">') +
                 '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
                 '<div class="gr-4 buy-price">' +
-                    '<button class="price-button' + (!values.is_active ? ' inactive' : '') + '"' +
+                    '<button class="price-button' + (values.is_active ? '' : ' inactive') + '"' +
                         (values.is_active ? ' onclick="return HandleClick(\'MBPrice\', \'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
                         (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' +
                             '<span class="value-wrapper">' +

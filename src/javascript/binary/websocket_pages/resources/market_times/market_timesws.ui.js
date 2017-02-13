@@ -167,11 +167,11 @@ const MarketTimesUI = (function() {
 
     const createEmptyTable = function(tableID) {
         const header = [
-            Content.localize().textAsset,
-            Content.localize().textOpens,
-            Content.localize().textCloses,
-            Content.localize().textSettles,
-            Content.localize().textUpcomingEvents,
+            localize('Asset'),
+            localize('Opens'),
+            localize('Closes'),
+            localize('Settles'),
+            localize('Upcoming Events'),
         ];
 
         const metadata = {
