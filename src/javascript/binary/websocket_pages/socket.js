@@ -310,14 +310,9 @@ const BinarySocketClass = function() {
                     const landing_company = response.landing_company;
                     Client.landing_company(landing_company);
                     Header.topbar_message_visibility(landing_company);
-                    let company;
                     if (response.error) return;
                     // Header.metatrader_menu_item_visibility(response); // to be uncommented once MetaTrader launched
-                    Object.keys(landing_company).forEach(function(key) {
-                        if (Client.get('landing_company_name') === landing_company[key].shortcode) {
-                            company = landing_company[key];
-                        }
-                    });
+                    const company = Client.get_client_landing_company();
                     if (company) {
                         Client.set('default_currency', company.legal_default_currency);
                         const has_reality_check = company.has_reality_check;
@@ -352,6 +347,7 @@ const BinarySocketClass = function() {
                         Client.set('jp_status', jpStatus.status);
                     }
                     if (response.get_settings.is_authenticated_payment_agent) {
+                        Client.set('is_authenticated_payment_agent', true);
                         $('#topMenuPaymentAgent').removeClass('invisible');
                     }
                     Client.set('first_name', response.get_settings.first_name);
