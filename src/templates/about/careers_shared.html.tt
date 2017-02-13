@@ -1,4 +1,4 @@
-<div class="gr-row gr-padding-10">
+<div class="gr-row gr-padding-30">
   <div class="gr-4 gr-12-m gr-6-p center-text gr-centered">
     <div class="xquote">
       <div>
@@ -17,26 +17,28 @@
 <div class="gr-12 gr-hide-m">
   <div class="separator-line border-bottom"></div>
 </div>
-<div class="gr-12 gr-padding-10">
-  <h1>
-    [% l("Are you ready?") %]
-  </h1>
-  <p>
-    [% l("If you are, we'd love to hear from you.") %]
-  </p>
-  <p>
-    [% l("Send us a CV and a covering letter that describes your career interests.") %]
-  </p>
-  <p>
-    [% l("If you meet our basic requirements, we'll send you a talent test.") %]
-  </p>
-  <p>
-    [% l("If we're happy with your results, we'll contact you for an interview and then do background and reference checks.") %]
-  </p>
-  <p>
-    [% l("If all that sounds a bit daunting, you're right. But it's how we make sure we get the best people for our team.") %]
-  </p>
-</div>
-<div class="gr-12">
-  <p class="center-text">[% l("To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>.") %]</p>
+<div class="gr-row gr-padding-30">
+  <div class="gr-12">
+    <h1>
+      [% l("Are you ready?") %]
+    </h1>
+    <p>
+      [% l("If you are, we'd love to hear from you.") %]
+    </p>
+    <p>
+      [% l("Send us a CV and a covering letter that describes your career interests.") %]
+    </p>
+    <p>
+      [% l("If you meet our basic requirements, we'll send you a talent test.") %]
+    </p>
+    <p>
+      [% l("If we're happy with your results, we'll contact you for an interview and then do background and reference checks.") %]
+    </p>
+    <p>
+      [% l("If all that sounds a bit daunting, you're right. But it's how we make sure we get the best people for our team.") %]
+    </p>
+  </div>
+  <div class="gr-12">
+    <p class="center-text">[% l("To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>.") %]</p>
+  </div>
 </div>

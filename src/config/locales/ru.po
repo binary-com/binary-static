@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-03 18:48+0000\n"
+"PO-Revision-Date: 2017-02-08 21:35+0000\n"
 "Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.11\n"
+"X-Generator: Weblate 2.12-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API %1\" означает набор программ, протоколов, инструментов и ресурсов %1, созданных и поддерживаемых сайтом %1, а также позволяющих Вам пользоваться доступным приложением для работы на торговой платформе %1."
@@ -104,7 +104,9 @@ msgstr "Число пользователей %1 достигло 1 миллио
 msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr "%1 представляет <a href='%2' target='_blank' class='ja-hide'>программный инструмент для </a><span class='all-hide ja-show'>автоматизированной торговли</span>, позволяющий трейдерам разрабатывать собственных торговых роботов с помощью простой функции “перетаскивания объектов”."
 
-msgid "%1 is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
+#, fuzzy
+#| msgid "%1 is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
+msgid "%1 is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
 msgstr "%1 гордится своей гибкостью. Помимо работы в офисе, наши сотрудники могут выбрать удалённую работу из своих домашних офисов по всему миру. Если Вам подходит именно это, мы открыты для такого формата."
 
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
@@ -229,23 +231,11 @@ msgstr "Отдел количественной аналитики %1 отвеч
 msgid "%1's Smart FX are smart markets that measure the value of a currency against a basket of major currencies."
 msgstr "Индексы Smart FX от %1 – это \"умные\" рынки, которые измеряют стоимость валюты по отношению к группе основных валют."
 
-#, fuzzy
-#| msgid ""
-#| "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much\n"
-#| "                    less investment than would be required in the live market."
 msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
-msgstr ""
-"Контракты со спредами от %1 представляют собой производные контракты с кредитным рычагом, стоимость которых прямо связана с динамикой основного рынка. Клиенты, открывающие “длинные позиции” на растущем рынке (и “короткие позиции” на снижающемся рынке) получают прибыль от данных движений, внося\n"
-"                    гораздо меньшие инвестиции, чем на живом рынке."
+msgstr "Контракты со спредами от %1 представляют собой производные контракты с кредитным рычагом, стоимость которых прямо связана с динамикой основного рынка. Клиенты, открывающие “длинные позиции” на растущем рынке (и “короткие позиции” на снижающемся рынке) получают прибыль от данных движений, внося гораздо меньшие инвестиции, чем на живом рынке."
 
-#, fuzzy
-#| msgid ""
-#| "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are\n"
-#| "                    closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
 msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
-msgstr ""
-"Контракты со спредами от %1 требуют наличия функции ‘стоп-лосс’, ограничивающей максимальные потери, которые может понести клиент. Сумма, необходимая для активации функции ‘стоп-лосс’, послужит в качестве депозита и не может быть использована для дальнейшей торговли, пока не будет закрыт контракт со спредом. Контракты со спредом\n"
-"                    закрываются тогда, когда они будут проданы клиентом по достижении уровня ‘стоп-лосс’ или 'стоп-профит'."
+msgstr "Контракты со спредами от %1 требуют наличия функции ‘стоп-лосс’, ограничивающей максимальные потери, которые может понести клиент. Сумма, необходимая для активации функции ‘стоп-лосс’, послужит в качестве депозита и не может быть использована для дальнейшей торговли, пока не будет закрыт контракт со спредом. Контракты со спредом закрываются тогда, когда они будут проданы клиентом или по достижении уровней ‘стоп-лосс’ и 'стоп-профит'."
 
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
 msgstr "Индексы волатильности %1 основаны на криптографически зашифрованном генераторе случайных чисел, надёжность которого подтверждена независимой третьей стороной."
@@ -651,14 +641,8 @@ msgstr "Степень бакалавра в области маркетинга
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "Платежный Агент выступает в роли посредника между нашим Клиентом и %1. Платежный агент обрабатывает пополнение и вывод средств для Клиентов, которые желают использовать специфический электронный способ оплаты или местную валюту, не предложенную на %1. Комиссию за перевод оплачивает Клиент."
 
-#, fuzzy
-#| msgid ""
-#| "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier\n"
-#| "            or the low barrier at any time during the period chosen by a trader."
 msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
-msgstr ""
-"Если Вы выбираете \"Останется между\" (не коснется обоих уровней), Вы получаете прибыль, если рынок останется между верхним и нижним барьером (не коснется НИ ОДНОГО из них) за все время действия контракта. Контракт \"Выйдет за пределы\" приносит прибыль, если рынок коснется ЛИБО верхнего,\n"
-"             ЛИБО нижнего барьера в любое время действия контракта."
+msgstr "Если Вы выбираете \"Останется между\" (не коснется обоих уровней), Вы получаете прибыль, если рынок останется между верхним и нижним барьером (не коснется НИ ОДНОГО из них) за все время действия контракта. Контракт \"Выйдет за пределы\" приносит прибыль, если рынок коснется ЛИБО верхнего, ЛИБО нижнего барьера в любое время действия контракта."
 
 msgid "A True Partnership"
 msgstr "Настоящее партнерство"
@@ -807,10 +791,8 @@ msgstr "Пароль счета"
 msgid "Account Transfer"
 msgstr "Перевод счета"
 
-#, fuzzy
-#| msgid "Account balance: "
 msgid "Account balance:"
-msgstr "Баланс счета: "
+msgstr "Баланс счета:"
 
 msgid "Account balance: "
 msgstr "Баланс счета: "
@@ -964,14 +946,8 @@ msgstr "Сумма за пункт"
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "Диплом о дополнительном специальном/высшем образовании, окончании ВУЗа или получении степени бакалавра"
 
-#, fuzzy
-#| msgid ""
-#| "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high\n"
-#| "            price target OR strictly lower than the low price target."
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
-msgstr ""
-"Контракт \"Закончится внутри\" приносит прибыль, если выходная цена рынка строго выше, чем нижний ценовой барьер И строго ниже, чем верхний ценовой барьер. Контракт \"Закончится вне\" приносит прибыль, если выходная цена рынка ЛИБО строго выше, чем\n"
-"            верхний ценовой барьер, ЛИБО строго ниже, чем нижний ценовой барьер."
+msgstr "Контракт \"Закончится внутри\" приносит прибыль, если выходная цена рынка строго выше, чем нижний ценовой барьер И строго ниже, чем верхний ценовой барьер. Контракт \"Закончится вне\" приносит прибыль, если выходная цена рынка ЛИБО строго выше, чем верхний ценовой барьер, ЛИБО строго ниже, чем нижний ценовой барьер."
 
 msgid "An additional password can be used to restrict access to the cashier."
 msgstr "Можно использовать дополнительный пароль для ограничения доступа к кассе."
@@ -1409,14 +1385,8 @@ msgstr "Binary открыл офис в Японии"
 msgid "Binary option"
 msgstr "Бинарный опцион"
 
-#, fuzzy
-#| msgid ""
-#| "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your\n"
-#| "            initial stake."
 msgid "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your initial stake."
-msgstr ""
-"Бинарные опционы легки для понимания. Они называются \"бинарными\", потому что контракт имеет только два возможных исхода – выигрыш или проигрыш. Если ваш прогноз верен, вы получите заранее установленную прибыль. В противном случае вы потеряете только изначальную\n"
-"             инвестицию (цену покупки)."
+msgstr "Бинарные опционы легки для понимания. Они называются \"бинарными\", потому что контракт имеет только два возможных исхода – выигрыш или проигрыш. Если ваш прогноз верен, вы получите заранее установленную прибыль. В противном случае вы потеряете только изначальную инвестицию (цену покупки)."
 
 msgid "Binary options basics"
 msgstr "Основы бинарных опционов"
@@ -1554,6 +1524,11 @@ msgstr "Как я могу персонализировать баннер дл�
 
 msgid "Canada"
 msgstr "Канада"
+
+#, fuzzy
+#| msgid "Careers For Americans"
+msgid "Career opportunities for Americans"
+msgstr "Карьеры для американцев"
 
 msgid "Careers"
 msgstr "Карьера"
@@ -1770,9 +1745,6 @@ msgstr "Частота торговли сырьевыми товарами"
 
 msgid "Company addresses"
 msgstr "Адреса компании"
-
-msgid "Company trip to Phuket, Thailand"
-msgstr "Корпоративная поездка в Пхукет, Тайланд"
 
 msgid "Company's Right"
 msgstr "Права Компании"
@@ -2567,6 +2539,11 @@ msgstr "Возможность досрочно продать контракт 
 msgid "Expand our network of active affiliates in your local market. Contribute your energy, skills, and knowledge of the local business culture to help further our rapid rate of growth worldwide."
 msgstr "Расширьте нашу сеть активных партнёров на местном рынке. Используйте свою энергию, навыки и знания местной бизнес-культуры, чтобы поддержать наш стремительный рост на мировом рынке."
 
+#, fuzzy
+#| msgid "No experience"
+msgid "Experience"
+msgstr "No experience"
+
 msgid "Experience in an anti-fraud or risk management role"
 msgstr "Опыт борьбы с мошенничеством и управления риском"
 
@@ -2964,10 +2941,8 @@ msgstr "Цена покупки контрактов Выше/Ниже буде�
 msgid "Higher/Lower trades"
 msgstr "Контракты Выше/Ниже"
 
-#, fuzzy
-#| msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
 msgid "Higher/Lower – Predict that the market will end higher or lower than a price target"
-msgstr "<strong>Выше/Ниже</strong> – сделайте прогноз, будет рынок выше или ниже заданного барьера."
+msgstr "Выше/Ниже – сделайте прогноз, будет рынок выше или ниже заданного барьера"
 
 msgid "Hone your security testing skills."
 msgstr "Усовершенствуйте свои навыки тестирования безопасности."
@@ -3002,8 +2977,6 @@ msgstr "Как это работает?"
 msgid "How soon can I start trading?"
 msgstr "Как скоро я могу начать торговать?"
 
-#, fuzzy
-#| msgid "How to trade binaries?"
 msgid "How to trade binary options?"
 msgstr "Как торговать бинарными опционами?"
 
@@ -3063,6 +3036,11 @@ msgstr "Идеальные пользователи"
 
 msgid "Ideal for beginners and experienced traders"
 msgstr ""
+
+#, fuzzy
+#| msgid "Ideal Users"
+msgid "Ideas"
+msgstr "Идеальные пользователи"
 
 msgid "If a customer holds a long position and the prediction goes wrong as of the judgment time, the invested principal amount will become zero value."
 msgstr "If a customer holds a long position and the prediction goes wrong as of the judgment time, the invested principal amount will become zero value."
@@ -3274,14 +3252,8 @@ msgstr "In carrying out OTC binary option trading, a customer needs expert knowl
 msgid "In classic Silicon Valley style, Hong Kong based hedge fund manager and entrepreneur, Jean-Yves Sireau, starts Regent Markets in his Hong Kong bedroom. He develops the systems, methods and algorithms for implementing a fixed-odds financial betting system. Jean-Yves's vision is to create a market in the simplest of all derivatives contracts - the fixed-odds bet - and to offer ordinary investors the chance to make small bets. Until his innovation, binary options are normally only traded in large quantities."
 msgstr "В классическом стиле Силиконовой долины, хедж-менеджер фонда и предприниматель Жан-Ив Сиро основал проект Regent Markets в своей квартире в Гонконге. Он развивает системы, методы и алгоритмы для системы финансовых ставок с фиксированным коэффициентом выигрыша. Идея Жан-Ива: создать из всех производных контрактов простой рынок (с фиксированным коэффициентом выигрыша) и дать обычным инвесторам шанс делать ставки на небольшие суммы. До этой инновации торговля на бинарных опционах была возможна только в больших объемах."
 
-#, fuzzy
-#| msgid ""
-#| "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro\n"
-#| "            will rise in relation to the value of the US dollar."
 msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
-msgstr ""
-"На рынке Forex трейдеры могут заключать контракты, основанные на цене одной валюты по отношению к другой. Например, если трейдер выбирает контракт \"Повышение\" на EUR/USD, он делает прогноз, что цена евро\n"
-"            поднимется по отношению к американскому доллару."
+msgstr "На рынке Forex трейдеры могут заключать контракты, основанные на цене одной валюты по отношению к другой. Например, если трейдер выбирает контракт \"Повышение\" на EUR/USD, он делает прогноз, что цена евро поднимется по отношению к американскому доллару."
 
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 msgstr "Чтобы получить доступ к нашим мобильным приложениям и другим сторонним приложениям, нужно сначала сгенерировать ключ API."
@@ -3984,6 +3956,14 @@ msgstr "Следите за авторизованными подключени�
 msgid "Key facts"
 msgstr "Основные факты"
 
+#, fuzzy
+#| msgid "When it's time to kick back, you'll find beautiful beaches, islands and mountains to explore, just a short flight away. From Malta, you'll have Europe, the Mediterranean and North Africa on your doorstep. And from Malaysia, you'll be within easy reach of some of Asia's most spectacular scenery."
+msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
+msgstr "В свободное от работы время Вы найдете прекрасные пляжи, острова и горы совсем недалеко от места проживания. На Мальте вы будете находиться в центре Средиземноморья, между континентальной Европой и Северной Африкой. В Малайзии же Вы окажетесь в самом центре красивейших азиатских пейзажей."
+
+msgid "Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account."
+msgstr ""
+
 msgid "Know what you stand to win or lose"
 msgstr ""
 
@@ -4159,6 +4139,9 @@ msgstr "Длинная позиция"
 
 msgid "Long-term partnership with the leading financial trading service"
 msgstr "Долгосрочное партнерство с ведущей платформой финансового беттинга"
+
+msgid "Looking for a new and exciting career in a country that's modern, diverse and tolerant? Binary.com is one of the world's most progressive companies, with offices in Asia and Europe."
+msgstr ""
 
 msgid "Loss"
 msgstr "Потери"
@@ -4733,11 +4716,13 @@ msgstr "Котировки на нашем сайте иногда могут с
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr "Наш быстрый рост дополняется приобретением клиентской базы BetsForTraders, одного из наших основных конкурентов."
 
-msgid "Our headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas, and World Heritage sites. We also have two offices in Malaysia: our operational headquarters in the high-tech township of Cyberjaya, and a branch office at KL Sentral in the heart of the country’s capital, Kuala Lumpur."
-msgstr "Наш главный офис находится на Мальте, любимом многими курорте с теплым климатом, отличной инфраструктурой и историческими памятниками. Также у нас есть два офиса в Малайзии: операционный офис в Киберджайя (районе новых технологий) и филиал в районе KL Sentral – самом сердце Куала-Лумпура, столицы Малайзии."
-
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "Наша политика в области безопасности и защиты данных входит в число лучших в индустрии."
+
+#, fuzzy
+#| msgid "Other Obligations"
+msgid "Our locations"
+msgstr "Другие обязательства"
 
 #, fuzzy
 #| msgid "%1 prices are benchmarked against the interbank options market, so you always get best-in-class prices for your trades."
@@ -5906,6 +5891,11 @@ msgstr "Воскресенье"
 msgid "Supplementary Terms and Conditions for Financial Products offered by Binary Investments (Europe) Ltd."
 msgstr "Дополнительные Правила и Условия для финансовых продуктов, предлагаемых Binary Investments (Europe) Ltd."
 
+#, fuzzy
+#| msgid "%1 supports"
+msgid "Support"
+msgstr "%1 поддерживает"
+
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "Поддержание процесса найма мировых сотрудников для группы наших компаний и управление кадровым потенциалом"
 
@@ -5926,6 +5916,11 @@ msgstr "Написание надёжного, качественного и г�
 
 msgid "Tasked with writing robust, high-quality, production-ready code as well as refactoring and optimizing a large and complex legacy code base."
 msgstr "Написание надёжного, качественного и готового кода, а также реструктуризация и оптимизация большой базы унаследованного кода."
+
+#, fuzzy
+#| msgid "Team"
+msgid "Teamwork"
+msgstr "Коллектив"
 
 msgid "Tel"
 msgstr "Тел"
@@ -6139,9 +6134,6 @@ msgstr "Компания по своему усмотрению решает, о
 
 msgid "The Company's Obligations"
 msgstr "Обязательства Компании"
-
-msgid "The Cyberview Lodge Resort in Cyberjaya"
-msgstr "Cyberview Lodge Resort в г. Киберджайя"
 
 msgid "The Data Protection laws and regulations place obligations on users of personal data and lay down principles for fair and lawful processing of this information. We are committed to safeguarding your privacy online. We only use your personal information to help us service your account, to improve our services to you, and to provide you with products you have requested. We do not sell your personal information to third parties, but we may provide your personal information to payment providers to facilitate transactions on your account."
 msgstr "Законы и положения о защите информации налагают на нас обязательства строго следовать принципам законного использования данных. Предоставленная Вами информация надежно защищена. Мы используем ваши личные данные исключительно в целях обслуживания Вашего счета и улучшения предоставляемого нами сервиса. Мы не передаем/не продаем предоставленную Вами частную информацию третьим лицам, но мы можем предоставить данные платежным учреждениям в случае необходимости подтверждения совершенной на Вашем счете транзакции."
@@ -6941,9 +6933,6 @@ msgstr "На нашем сайте клиенты могут торговать 
 msgid "Utilise a variety of tactics - both online and offline - to grow and support the company's network of partners in your designated market"
 msgstr "Использование различных онлайн и оффлайн тактик с целью поддержания роста партнёрской сети компании на Вашем целевом рынке"
 
-msgid "Valletta, the capital of Malta"
-msgstr "Валлетта, столица Мальты"
-
 msgid "Verification Token"
 msgstr "Проверочный ключ"
 
@@ -7121,7 +7110,9 @@ msgstr "Мы содержим клиентские счета в наличны�
 msgid "We may release subsequent versions of the %1 API and require that you use those subsequent versions. Your continued use of the APIs following a subsequent release will be deemed your acceptance of modifications."
 msgstr "Мы можем выпускать последующие версии API %1 и требуем от Вас пользоваться данными последующими версиями. Дальнейшее использование Вами новых API после их выпуска будет означать принятие Вами данных изменений."
 
-msgid "We offer a market-based remuneration structure, an annual cash bonus plan, health benefits for you and your family, travel and internet allowances, and company trips."
+#, fuzzy
+#| msgid "We offer a market-based remuneration structure, an annual cash bonus plan, health benefits for you and your family, travel and internet allowances, and company trips."
+msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you’re in Malta or Malaysia."
 msgstr "Мы предлагаем структуру вознаграждения, основанную на рыночной ситуации, ежегодный план премий, медицинскую страховку для Вас и Вашей семьи, пособия для путешествий и интернета, а также корпоративные поездки."
 
 msgid "We prohibit the use of unauthorised incentives, gifts and payments to encourage customer sign-ups. In the event that we believe that you have engaged in such activity, we reserve the right to withhold any amounts due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval."
@@ -7223,9 +7214,6 @@ msgstr "Какие другие отчеты я могу получить?"
 msgid "What our clients are saying"
 msgstr "Отзывы наших клиентов"
 
-msgid "When it's time to kick back, you'll find beautiful beaches, islands and mountains to explore, just a short flight away. From Malta, you'll have Europe, the Mediterranean and North Africa on your doorstep. And from Malaysia, you'll be within easy reach of some of Asia's most spectacular scenery."
-msgstr "В свободное от работы время Вы найдете прекрасные пляжи, острова и горы совсем недалеко от места проживания. На Мальте вы будете находиться в центре Средиземноморья, между континентальной Европой и Северной Африкой. В Малайзии же Вы окажетесь в самом центре красивейших азиатских пейзажей."
-
 msgid "When the Affiliate's referred clients open an account with any member of the Binary group, we assume ownership of the database of names and contact information and any other data of the Affiliates' referred clients."
 msgstr "Когда клиенты, направленные Партнером, открывают счёт на сайте любого представителя Binary Group, мы будем обладать правом собственности на базу данных, содержащую имена, контактные данные, а также любые другие данные о клиентах, привлеченных Партнером."
 
@@ -7277,14 +7265,14 @@ msgstr "Где готовые помочь коллеги станут Вам в
 msgid "Where teamwork and a collaborative culture form the platform for personal and corporate growth."
 msgstr "Где командная работа и культура сотрудничества создают платформу для персонального и корпоративного роста."
 
-msgid "Where we are"
-msgstr "Где мы находимся"
-
 msgid "Where we consider, on the basis of the information provided by you that you do not possess the knowledge and experience to appreciate the risks associated with an investment in the proposed instrument, we will issue a warning to you.  Such a warning shall be displayed on the website."
 msgstr "В случаях, когда на основе информации, предоставленной Вами, мы сочтём, что Вы не обладаете знаниями и опытом, достаточными для оценки рисков, связанных с инвестициями на предлагаемом рынке, мы сделаем Вам предупреждение. Такое предупреждение будет отображено на сайте."
 
 msgid "Where we do not manage to obtain sufficient information to assess the appropriateness of the product or service for you, we will similarly inform you that we are not in a position to assess appropriateness."
 msgstr "В случаях, когда нам не удастся получить достаточную информацию для оценки пригодности продукта или услуги для Вас, мы также сообщим Вам, что мы не в состоянии оценить целесообразность."
+
+msgid "Where we're one big, multicultural family."
+msgstr ""
 
 msgid "Where you can go"
 msgstr "Что Вы можете посетить"
@@ -7295,17 +7283,11 @@ msgstr "Когда Вы даете нам конкретные указания,
 msgid "Where your experience, drive and talent can propel you in unknown directions. And you have the freedom to push into new frontiers."
 msgstr "Где Ваш опыт, энергия и талант могут привести Вас к неожиданным высотам. При этом у Вас будет свобода поиска новых границ."
 
-msgid "Whether in Malta or Malaysia, you'll enjoy a high standard of living, and your income will stretch further than in most western countries."
-msgstr "На Мальте или в Малайзии у Вас будет высокий уровень жизни, а Ваш доход будет превышать средний заработок, по сравнению с большинством западных стран."
-
 msgid "Who can apply to be a Payment Agent?"
 msgstr "Кто может подать заявку Платежного Агента?"
 
 msgid "Who can be a client on the %1 platform?"
 msgstr "Кто может стать клиентом платформы %1?"
-
-msgid "Who love working with people from different cultures, and are keen to contribute to a dynamic and unique workplace, and not merely pass on through."
-msgstr "Кто любит работать с людьми разных культур и стремится внести свой вклад в динамичной и уникальной рабочей обстановке, а не просто числиться в штате."
 
 msgid "Why Choose Binary Trading?"
 msgstr "Почему стоит выбрать бинарные опционы?"
@@ -8969,6 +8951,27 @@ msgstr "Настройки"
 
 msgid "Terms and Conditions Approval"
 msgstr "Согласие с правилами и условиями"
+
+#~ msgid "Company trip to Phuket, Thailand"
+#~ msgstr "Корпоративная поездка в Пхукет, Тайланд"
+
+#~ msgid "Our headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas, and World Heritage sites. We also have two offices in Malaysia: our operational headquarters in the high-tech township of Cyberjaya, and a branch office at KL Sentral in the heart of the country’s capital, Kuala Lumpur."
+#~ msgstr "Наш главный офис находится на Мальте, любимом многими курорте с теплым климатом, отличной инфраструктурой и историческими памятниками. Также у нас есть два офиса в Малайзии: операционный офис в Киберджайя (районе новых технологий) и филиал в районе KL Sentral – самом сердце Куала-Лумпура, столицы Малайзии."
+
+#~ msgid "The Cyberview Lodge Resort in Cyberjaya"
+#~ msgstr "Cyberview Lodge Resort в г. Киберджайя"
+
+#~ msgid "Valletta, the capital of Malta"
+#~ msgstr "Валлетта, столица Мальты"
+
+#~ msgid "Where we are"
+#~ msgstr "Где мы находимся"
+
+#~ msgid "Whether in Malta or Malaysia, you'll enjoy a high standard of living, and your income will stretch further than in most western countries."
+#~ msgstr "На Мальте или в Малайзии у Вас будет высокий уровень жизни, а Ваш доход будет превышать средний заработок, по сравнению с большинством западных стран."
+
+#~ msgid "Who love working with people from different cultures, and are keen to contribute to a dynamic and unique workplace, and not merely pass on through."
+#~ msgstr "Кто любит работать с людьми разных культур и стремится внести свой вклад в динамичной и уникальной рабочей обстановке, а не просто числиться в штате."
 
 #~ msgid "%1 has updated its %2. By clicking OK, you confirm that you have read and accepted the updated %2."
 #~ msgstr "%1 обновил %2. Нажав OK, Вы подтвердите, что прочитали и приняли новые %2."
@@ -17366,9 +17369,6 @@ msgstr "Согласие с правилами и условиями"
 #~ msgid "Sorry, your file is too large. The maximum file size is 1 Megabyte (1MB)."
 #~ msgstr "Извините, Ваш файл слишком большой. Максимальный размер 1 мегабайт (1MB)."
 
-#~ msgid "Team"
-#~ msgstr "Коллектив"
-
 #~ msgid "Thank you for visiting %1 and for providing your feedback. We will endeavour to respond as soon as possible."
 #~ msgstr "Спасибо за посещение %1 и Ваше сообщение. Мы постараемся ответить Вам в ближайшие 48 часов, за исключением выходных."
 
@@ -20140,9 +20140,6 @@ msgstr "Согласие с правилами и условиями"
 
 #~ msgid "Companies which provide services directly to end users."
 #~ msgstr "Компании, которые предоставляют услуги непосредственно конечным пользователям."
-
-#~ msgid "%1 supports"
-#~ msgstr "%1 поддерживает"
 
 #~ msgid "Open a"
 #~ msgstr "Открыть"

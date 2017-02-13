@@ -5,7 +5,6 @@ const objectNotEmpty     = require('../../base/utility').objectNotEmpty;
 const localize           = require('../../base/localize').localize;
 const Client             = require('../../base/client').Client;
 const japanese_client    = require('../../common_functions/country_base').japanese_client;
-const japanese_residence = require('../../common_functions/country_base').japanese_residence;
 const addComma           = require('../../common_functions/string_util').addComma;
 const elementInnerHtml   = require('../../common_functions/common_functions').elementInnerHtml;
 
@@ -142,18 +141,14 @@ const MBPrice = (function() {
         return current > prev ? 'up' : current < prev ? 'down' : '';
     };
 
-    const allowBuy = function(is_active) {
-        return is_active && japanese_residence();
-    };
-
     const makePriceRow = function(values, is_update) {
         const payout   = MBDefaults.get('payout'),
             is_japan = japanese_client();
         return (is_update ? '' : '<div data-barrier="' + values.barrier + '" class="gr-row price-row">') +
                 '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
                 '<div class="gr-4 buy-price">' +
-                    '<button class="price-button' + (allowBuy(values.is_active) ? '' : ' inactive') + '"' +
-                        (allowBuy(values.is_active) ? ' onclick="return HandleClick(\'MBPrice\', \'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
+                    '<button class="price-button' + (values.is_active ? '' : ' inactive') + '"' +
+                        (values.is_active ? ' onclick="return HandleClick(\'MBPrice\', \'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
                         (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' +
                             '<span class="value-wrapper">' +
                                 '<span class="dynamics ' + (values.ask_price_movement || '') + '"></span>' +

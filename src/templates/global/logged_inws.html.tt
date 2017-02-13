@@ -11,7 +11,7 @@
         }
     </script>
 [%= FOREACH js IN javascript.libs =%]
-    <script src='[%= js =%]' defer></script>
+    <script src='[%= js =%]'></script>
 [%= END =%]
     <style>
         body {margin: 0;}

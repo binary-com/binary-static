@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-02 03:59+0000\n"
+"PO-Revision-Date: 2017-02-11 03:36+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.11\n"
+"X-Generator: Weblate 2.12-dev\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -101,7 +101,9 @@ msgstr "%1 已拥有百万用户，到达了一个历史性的里程碑。本公
 msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr "%1也引入了<a href='%2' target='_blank' class='ja-hide'>自动化交易程序工具</a><span class='all-hide ja-show'>自动化交易程序工具</span>，允许客户轻松使用“拖放”操作开发自己的自动化交易机器人。"
 
-msgid "%1 is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
+#, fuzzy
+#| msgid "%1 is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
+msgid "%1 is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
 msgstr "%1 是一个人性化管理的工作场所。除了在各办事处工作的员工，我们在世界各国还有选择在家里远程办公的人员。如果您希望在家里办公，我们是同意这么做的。"
 
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
@@ -159,7 +161,7 @@ msgid "%1 offers a virtual-money account so you can get the hang of trading bina
 msgstr "%2提供虚拟资金账户，以便投资者掌握二元期权交易的技巧。何不<a class='pjaxload' href='%2'>免费开立一个1万美元、功能齐全的虚拟资金账户</a>，并开始学习如何交易呢？"
 
 msgid "%1 offers five main types of trades that will help you execute your market view or strategy:"
-msgstr ""
+msgstr "%1 提供五种可帮助您执行市场观点或策略的交易："
 
 msgid "%1 offers new ways to trade"
 msgstr "%1提供新的交易方式"
@@ -380,7 +382,7 @@ msgid "30-day turnover limit "
 msgstr "30天交易限额 "
 
 msgid "4. Choose your Stake and Potential Return"
-msgstr ""
+msgstr "4. 选择您的投注额与潜在回报率"
 
 msgid "40 transactions or more in the past 12 months"
 msgstr "过去12个月内40次交易或以上"
@@ -526,7 +528,7 @@ msgid "<strong>Extra revenue stream:</strong> You will have the potential to ear
 msgstr "<strong>额外收入源流:</strong> 您将从我们的联盟计划受惠，开辟另一潜在收入源流。"
 
 msgid "<strong>Flexible</strong> - Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy"
-msgstr ""
+msgstr "<strong>灵活性</strong> - 随时从一百多万个交易选项中挑选并按照您倾向的策略自定义交易"
 
 #, fuzzy
 #| msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
@@ -569,7 +571,7 @@ msgid "<strong>Preferences:</strong>"
 msgstr "<strong>首选项:</strong>"
 
 msgid "<strong>Protect your profits</strong> - Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
-msgstr ""
+msgstr "<strong>盈利保护</strong> - 长期合约到期前售出交易，以保护您的盈利或将亏损降至最低"
 
 msgid "<strong>Requirements:</strong>"
 msgstr "<strong>要求:</strong>"
@@ -600,7 +602,7 @@ msgid "<strong>Short to long-term durations</strong> - Choose timeframes from 10
 msgstr "<strong>各种期限任君选择</strong> - 期限最短10 秒，最长 365 天。"
 
 msgid "<strong>Simple and intuitive</strong> - Enjoy a trading platform that’s easy to navigate and use"
-msgstr ""
+msgstr "<strong>简单与直观化</strong> - 享受简单操作、轻松浏览的交易平台"
 
 #, fuzzy
 #| msgid "<strong>Touch/No Touch</strong> - predict if the market will touch or not touch a price target."
@@ -613,7 +615,7 @@ msgid "<strong>Trade according to your preferred strategy</strong> - Trade based
 msgstr "<strong>按您的策略进行交易</strong> 使用技术或基本面分析，相信您的判断，按您的‘所想’执行交易。"
 
 msgid "<strong>Transparent risk and potential reward</strong> - Know how much you will win or lose before you purchase the contract"
-msgstr ""
+msgstr "<strong>风险透明化与潜在奖金</strong> - 购入合约交易前，您已知道赢或输的金额"
 
 #, fuzzy
 #| msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
@@ -1549,6 +1551,11 @@ msgstr "你是否能为我的网站定制一个横幅广告？"
 msgid "Canada"
 msgstr "加拿大"
 
+#, fuzzy
+#| msgid "Careers For Americans"
+msgid "Career opportunities for Americans"
+msgstr "美国居民的工作机会"
+
 msgid "Careers"
 msgstr "工作机会"
 
@@ -1613,7 +1620,7 @@ msgid "Choose a password"
 msgstr "选用密码"
 
 msgid "Choose a payout and our system will calculate the stake required to purchase the contract."
-msgstr ""
+msgstr "选择赔付额后，系统将计算购入合约所需投注资金额。"
 
 msgid "Choose a payout from $1 to $50,000."
 msgstr "赔付额的选择范围为 1 美元到 5 万美元。"
@@ -1766,9 +1773,6 @@ msgstr "大宗商品交易频率"
 
 msgid "Company addresses"
 msgstr "公司地址"
-
-msgid "Company trip to Phuket, Thailand"
-msgstr "公司组织到泰国普吉岛旅游"
 
 msgid "Company's Right"
 msgstr "公司权利"
@@ -2563,6 +2567,11 @@ msgstr "可在合约到期前转售交易合约"
 msgid "Expand our network of active affiliates in your local market. Contribute your energy, skills, and knowledge of the local business culture to help further our rapid rate of growth worldwide."
 msgstr "扩大我们在您当地市场的活跃联盟机构网络。贡献您对当地商业文化的力量、技能和知识，帮助我们在全球进一步快速增长。"
 
+#, fuzzy
+#| msgid "No experience"
+msgid "Experience"
+msgstr "No experience"
+
 msgid "Experience in an anti-fraud or risk management role"
 msgstr "反欺诈或风险管理岗位的工作经验"
 
@@ -3059,6 +3068,11 @@ msgstr "理想用户"
 
 msgid "Ideal for beginners and experienced traders"
 msgstr ""
+
+#, fuzzy
+#| msgid "Ideal Users"
+msgid "Ideas"
+msgstr "理想用户"
 
 msgid "If a customer holds a long position and the prediction goes wrong as of the judgment time, the invested principal amount will become zero value."
 msgstr "If a customer holds a long position and the prediction goes wrong as of the judgment time, the invested principal amount will become zero value."
@@ -3980,6 +3994,14 @@ msgstr "跟踪您的授权连接。"
 msgid "Key facts"
 msgstr "关键资料"
 
+#, fuzzy
+#| msgid "When it's time to kick back, you'll find beautiful beaches, islands and mountains to explore, just a short flight away. From Malta, you'll have Europe, the Mediterranean and North Africa on your doorstep. And from Malaysia, you'll be within easy reach of some of Asia's most spectacular scenery."
+msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
+msgstr "想放松的时候，您只需飞行很短的距离就能尽情探索美丽的海滩、岛屿和山区。您可从马耳他轻松前往欧洲、地中海和北非。此外，您也可在马来西亚饱览亚洲最壮观的美景。"
+
+msgid "Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account."
+msgstr ""
+
 msgid "Know what you stand to win or lose"
 msgstr ""
 
@@ -4155,6 +4177,9 @@ msgstr "长仓"
 
 msgid "Long-term partnership with the leading financial trading service"
 msgstr "与一流金融交易服务商保持长期合作关系"
+
+msgid "Looking for a new and exciting career in a country that's modern, diverse and tolerant? Binary.com is one of the world's most progressive companies, with offices in Asia and Europe."
+msgstr ""
 
 msgid "Loss"
 msgstr "亏损"
@@ -4728,11 +4753,13 @@ msgstr "我们的数据源可能与互联网上其他数据源有差异（各种
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr "我们获取了主要竞争对手之一BetsForTraders 的客户群，为公司快速的内生性增长提供支持。"
 
-msgid "Our headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas, and World Heritage sites. We also have two offices in Malaysia: our operational headquarters in the high-tech township of Cyberjaya, and a branch office at KL Sentral in the heart of the country’s capital, Kuala Lumpur."
-msgstr "我们总部设在马耳他，是个拥有温暖气候，美丽休闲区和世界遗产地的旅游胜地。我们也在马来西亚设了两个办事处：运营总部设于高科技特区 Cyberjaya， 并在首都吉隆坡市中心KL Sentral设了分部办事处。"
-
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "我们的信息安全政策基于访问控制和业务持续性的业内最佳实践。"
+
+#, fuzzy
+#| msgid "Your location"
+msgid "Our locations"
+msgstr "请选择您的位置"
 
 #, fuzzy
 #| msgid "%1 prices are benchmarked against the interbank options market, so you always get best-in-class prices for your trades."
@@ -5901,6 +5928,11 @@ msgstr "周日"
 msgid "Supplementary Terms and Conditions for Financial Products offered by Binary Investments (Europe) Ltd."
 msgstr "Binary 投资 (欧洲)有限公司提供的金融产品补充条款和条件。"
 
+#, fuzzy
+#| msgid "Support"
+msgid "Support"
+msgstr "支持"
+
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "支持集团的全球招聘和人才管理"
 
@@ -5921,6 +5953,11 @@ msgstr "负责编写可靠、高质量、生产就绪的代码，并致力于改
 
 msgid "Tasked with writing robust, high-quality, production-ready code as well as refactoring and optimizing a large and complex legacy code base."
 msgstr "负责编写可靠、高质量、生产就绪的代码，并重构和优化大型、复杂的遗留代码库。"
+
+#, fuzzy
+#| msgid "Team"
+msgid "Teamwork"
+msgstr "团队"
 
 msgid "Tel"
 msgstr "电话"
@@ -6134,9 +6171,6 @@ msgstr "公司将自行确定您的申请是否成功。公司的决定具有最
 
 msgid "The Company's Obligations"
 msgstr "公司的义务"
-
-msgid "The Cyberview Lodge Resort in Cyberjaya"
-msgstr "塞布再也度假酒店 (Cyberview Lodge Resort)"
 
 msgid "The Data Protection laws and regulations place obligations on users of personal data and lay down principles for fair and lawful processing of this information. We are committed to safeguarding your privacy online. We only use your personal information to help us service your account, to improve our services to you, and to provide you with products you have requested. We do not sell your personal information to third parties, but we may provide your personal information to payment providers to facilitate transactions on your account."
 msgstr "数据保护法律和法规规定了个人信息使用者应承担的义务以及公平处理相关信息的原则。我们承诺保护您的在线隐私。您的个人信息仅被我们用于账户服务、改善服务和提供产品。我们不会向第三方出售您的信息，但是为了方便交易，可能向支付提供者提供您的个人信息。"
@@ -6934,9 +6968,6 @@ msgstr "客户可使用本网站进行全天候的货币、指数、股票和大
 msgid "Utilise a variety of tactics - both online and offline - to grow and support the company's network of partners in your designated market"
 msgstr "在您指定的市场利用各种在线和离线策略帮助公司合作伙伴网络成长和提供支持"
 
-msgid "Valletta, the capital of Malta"
-msgstr "马耳他首都瓦莱塔"
-
 msgid "Verification Token"
 msgstr "验证令牌"
 
@@ -7114,7 +7145,9 @@ msgstr "我们为客户保管现金或现金等价物余额。我们100%保证�
 msgid "We may release subsequent versions of the %1 API and require that you use those subsequent versions. Your continued use of the APIs following a subsequent release will be deemed your acceptance of modifications."
 msgstr "我们可能发布%1 API的后续版本，并要求你使用这些后续版本。您继续使用Api后续版本将被视为您接受修定版本。"
 
-msgid "We offer a market-based remuneration structure, an annual cash bonus plan, health benefits for you and your family, travel and internet allowances, and company trips."
+#, fuzzy
+#| msgid "We offer a market-based remuneration structure, an annual cash bonus plan, health benefits for you and your family, travel and internet allowances, and company trips."
+msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you’re in Malta or Malaysia."
 msgstr "我们提供市场化的薪酬结构、年度现金分红方案、医疗保险（包括您和您的家人）、出差和网络补贴、以及公司旅游。"
 
 msgid "We prohibit the use of unauthorised incentives, gifts and payments to encourage customer sign-ups. In the event that we believe that you have engaged in such activity, we reserve the right to withhold any amounts due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval."
@@ -7216,9 +7249,6 @@ msgstr "我还可以生成哪些报告？"
 msgid "What our clients are saying"
 msgstr "客户评语"
 
-msgid "When it's time to kick back, you'll find beautiful beaches, islands and mountains to explore, just a short flight away. From Malta, you'll have Europe, the Mediterranean and North Africa on your doorstep. And from Malaysia, you'll be within easy reach of some of Asia's most spectacular scenery."
-msgstr "想放松的时候，您只需飞行很短的距离就能尽情探索美丽的海滩、岛屿和山区。您可从马耳他轻松前往欧洲、地中海和北非。此外，您也可在马来西亚饱览亚洲最壮观的美景。"
-
 msgid "When the Affiliate's referred clients open an account with any member of the Binary group, we assume ownership of the database of names and contact information and any other data of the Affiliates' referred clients."
 msgstr "联盟会员的推荐客户在Binary集团任何成员公司开账户时，我们承担此联盟会员的推荐客户名称和联系信息数据库以及任何其他数据的所有权。"
 
@@ -7270,14 +7300,14 @@ msgstr "公司的同事像家人那样相互帮助。"
 msgid "Where teamwork and a collaborative culture form the platform for personal and corporate growth."
 msgstr "团队精神和协作文化构建个人和企业成长的平台。"
 
-msgid "Where we are"
-msgstr "我们的位置"
-
 msgid "Where we consider, on the basis of the information provided by you that you do not possess the knowledge and experience to appreciate the risks associated with an investment in the proposed instrument, we will issue a warning to you.  Such a warning shall be displayed on the website."
 msgstr "根据您提供的信息，如果我们认为您不具备应对投资风险的知识和经验，就会向您提出警告。该警告将显示在网站上。"
 
 msgid "Where we do not manage to obtain sufficient information to assess the appropriateness of the product or service for you, we will similarly inform you that we are not in a position to assess appropriateness."
 msgstr "当我们无法获取足够信息为您评估产品或服务的合适性时，同样会通知您。"
+
+msgid "Where we're one big, multicultural family."
+msgstr ""
 
 msgid "Where you can go"
 msgstr "您可以去哪里"
@@ -7288,17 +7318,11 @@ msgstr "当您向我们提出特定要求，例如（一）指定合约价格，
 msgid "Where your experience, drive and talent can propel you in unknown directions. And you have the freedom to push into new frontiers."
 msgstr "在这里，您的经验、奋斗精神和天赋可以推动你往未知的方向迈进，而且您可以自由地踏入新的领域。"
 
-msgid "Whether in Malta or Malaysia, you'll enjoy a high standard of living, and your income will stretch further than in most western countries."
-msgstr "无论是在马耳他或马来西亚，您都可以享受优渥的生活。相比大多数西方国家，在这些地方您的收入会更经用。"
-
 msgid "Who can apply to be a Payment Agent?"
 msgstr "谁能申请成为付款代理？"
 
 msgid "Who can be a client on the %1 platform?"
 msgstr "哪些人可能成为 %1 平台的客户？"
-
-msgid "Who love working with people from different cultures, and are keen to contribute to a dynamic and unique workplace, and not merely pass on through."
-msgstr "我们乐于和具有不同文化背景的同事合作，热衷于为充满活力、独具特色的工作场所贡献力量，而不只是充当过客。"
 
 msgid "Why Choose Binary Trading?"
 msgstr "为何选择二元期权交易？"
@@ -8965,6 +8989,27 @@ msgstr "设置"
 
 msgid "Terms and Conditions Approval"
 msgstr "条款和条件审批"
+
+#~ msgid "Company trip to Phuket, Thailand"
+#~ msgstr "公司组织到泰国普吉岛旅游"
+
+#~ msgid "Our headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas, and World Heritage sites. We also have two offices in Malaysia: our operational headquarters in the high-tech township of Cyberjaya, and a branch office at KL Sentral in the heart of the country’s capital, Kuala Lumpur."
+#~ msgstr "我们总部设在马耳他，是个拥有温暖气候，美丽休闲区和世界遗产地的旅游胜地。我们也在马来西亚设了两个办事处：运营总部设于高科技特区 Cyberjaya， 并在首都吉隆坡市中心KL Sentral设了分部办事处。"
+
+#~ msgid "The Cyberview Lodge Resort in Cyberjaya"
+#~ msgstr "塞布再也度假酒店 (Cyberview Lodge Resort)"
+
+#~ msgid "Valletta, the capital of Malta"
+#~ msgstr "马耳他首都瓦莱塔"
+
+#~ msgid "Where we are"
+#~ msgstr "我们的位置"
+
+#~ msgid "Whether in Malta or Malaysia, you'll enjoy a high standard of living, and your income will stretch further than in most western countries."
+#~ msgstr "无论是在马耳他或马来西亚，您都可以享受优渥的生活。相比大多数西方国家，在这些地方您的收入会更经用。"
+
+#~ msgid "Who love working with people from different cultures, and are keen to contribute to a dynamic and unique workplace, and not merely pass on through."
+#~ msgstr "我们乐于和具有不同文化背景的同事合作，热衷于为充满活力、独具特色的工作场所贡献力量，而不只是充当过客。"
 
 #~ msgid "%1 has updated its %2. By clicking OK, you confirm that you have read and accepted the updated %2."
 #~ msgstr "%1已经更新了%2。通过点击OK键，您确认已经阅读并接受更新的%2条款和条件。"
@@ -17395,9 +17440,6 @@ msgstr "条款和条件审批"
 #~ msgid "Sorry, your file is too large. The maximum file size is 1 Megabyte (1MB)."
 #~ msgstr "对不起，您的文件太大。最大文件大小为 1 兆 (1MB)。"
 
-#~ msgid "Team"
-#~ msgstr "团队"
-
 #~ msgid "Thank you for visiting %1 and for providing your feedback. We will endeavour to respond as soon as possible."
 #~ msgstr "谢谢访问 %1 并提供反馈。我们将尽快回复。"
 
@@ -20182,11 +20224,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Companies which provide services directly to end users."
 #~ msgstr "直接向终端用户提供服务的公司。"
-
-#, fuzzy
-#~| msgid "Support"
-#~ msgid "%1 supports"
-#~ msgstr "支持"
 
 #, fuzzy
 #~| msgid "Open"
@@ -23850,9 +23887,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Your email address is invalid. Please enter a valid email address."
 #~ msgstr "您的电邮地址无效。请输入有效电邮地址。"
-
-#~ msgid "Your location"
-#~ msgstr "请选择您的位置"
 
 #~ msgid "Your log file is too large - displaying last 500 lines only"
 #~ msgstr "您的日志文件太大 - 仅显示最后 500 行"
