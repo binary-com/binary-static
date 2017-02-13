@@ -350,6 +350,7 @@ var getLanguage = require('../binary/base/language').getLanguage;
 
 			// Parse page & update DOM
 			options = internal.updateContent(html, options);
+            options.title = $(html).find('title').text() || options.title;
 
 			// Do we need to add this to the history?
 			if(options.history) {
