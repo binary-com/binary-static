@@ -362,6 +362,16 @@ const Client = (function () {
         else return landing_company_response;
     };
 
+    const get_client_landing_company = function() {
+        let client_landing_company = {};
+        Object.keys(landing_company_response).forEach(function (key) {
+            if (client_object.landing_company_name === landing_company_response[key].shortcode) {
+                client_landing_company = landing_company_response[key];
+            }
+        });
+        return client_landing_company;
+    };
+
     const is_financial = () => client_object.loginid_array.find(obj => (obj.id === get('loginid'))).financial;
 
     const should_complete_tax = () => is_financial() && !get('has_tax_information');
@@ -403,6 +413,8 @@ const Client = (function () {
         is_financial       : is_financial,
         should_complete_tax: should_complete_tax,
         should_redirect_tax: should_redirect_tax,
+
+        get_client_landing_company: get_client_landing_company,
     };
 })();
 

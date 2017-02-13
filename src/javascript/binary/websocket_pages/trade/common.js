@@ -214,42 +214,46 @@ function displayMarkets(id, elements, selected) {
 function displayUnderlyings(id, elements, selected) {
     'use strict';
 
-    const target = document.getElementById(id),
-        fragment =  document.createDocumentFragment();
+    const target = document.getElementById(id);
 
-    while (target && target.firstChild) {
+    if (!target) return;
+
+    while (target.firstChild) {
         target.removeChild(target.firstChild);
     }
 
-    if (elements) {
-        const keys = Object.keys(elements).sort(function(a, b) {
-            return elements[a].display.localeCompare(elements[b].display);
-        });
-        const submarkets = {};
-        for (let i = 0; i < keys.length; i++) {
-            if (!submarkets.hasOwnProperty(elements[keys[i]].submarket)) {
-                submarkets[elements[keys[i]].submarket] = [];
-            }
-            submarkets[elements[keys[i]].submarket].push(keys[i]);
+    if (objectNotEmpty(elements)) {
+        target.appendChild(generateUnderlyingOptions(elements, selected));
+    }
+}
+
+function generateUnderlyingOptions(elements, selected) {
+    const fragment = document.createDocumentFragment();
+    const keys = Object.keys(elements).sort(function(a, b) {
+        return elements[a].display.localeCompare(elements[b].display);
+    });
+    const submarkets = {};
+    for (let i = 0; i < keys.length; i++) {
+        if (!submarkets.hasOwnProperty(elements[keys[i]].submarket)) {
+            submarkets[elements[keys[i]].submarket] = [];
         }
-        const keys2 = Object.keys(submarkets).sort(marketSort);
-        for (let j = 0; j < keys2.length; j++) {
-            for (let k = 0; k < submarkets[keys2[j]].length; k++) {
-                const key = submarkets[keys2[j]][k];
-                const option = document.createElement('option'),
-                    content = document.createTextNode(localize(elements[key].display));
-                option.setAttribute('value', key);
-                if (selected && selected === key) {
-                    option.setAttribute('selected', 'selected');
-                }
-                option.appendChild(content);
-                fragment.appendChild(option);
+        submarkets[elements[keys[i]].submarket].push(keys[i]);
+    }
+    const keys2 = Object.keys(submarkets).sort(marketSort);
+    for (let j = 0; j < keys2.length; j++) {
+        for (let k = 0; k < submarkets[keys2[j]].length; k++) {
+            const key = submarkets[keys2[j]][k];
+            const option = document.createElement('option');
+            const content = document.createTextNode(localize(elements[key].display));
+            option.setAttribute('value', key);
+            if (selected && selected === key) {
+                option.setAttribute('selected', 'selected');
             }
+            option.appendChild(content);
+            fragment.appendChild(option);
         }
     }
-    if (target) {
-        target.appendChild(fragment);
-    }
+    return fragment;
 }
 
 /*
@@ -923,6 +927,7 @@ function timeIsValid($element) {
 
 module.exports = {
     displayUnderlyings             : displayUnderlyings,
+    generateUnderlyingOptions      : generateUnderlyingOptions,
     getFormNameBarrierCategory     : getFormNameBarrierCategory,
     contractTypeDisplayMapping     : contractTypeDisplayMapping,
     showPriceOverlay               : showPriceOverlay,
