@@ -37,6 +37,46 @@ msgstr "「サードパーティプロバイダー」とは%1 APIを使用して
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2をデモ口座%3に付与されました"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
+msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
+msgstr "%3のNO-TOUCHは、取引期間(%4)が終了するまでにバリア価格にタッチしないを予測"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+msgstr "%3のEND-INは、判定時刻(%4)の時点で上限バリア未満かつ下限バリア以上を予測"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+msgstr "%3のEND-OUTは、判定時刻(%4)の時点で上限バリア以上もしくは下限バリア未満を予測"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+msgstr "%3のBREAK-OUTは、取引期間中(%4)に上限バリア以上もしくは下限バリア以下になったと予測"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+msgstr "%3のラダーHIGHは、判定時刻(%4)の時点でバリア価格以上を予測"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+msgstr "%3のラダーLOWは、判定時刻(%4)の時点でバリア価格未満を予測"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+msgstr "%3のSTAY-INは取引期間中(%4)に上限バリア未満かつ下限バリア超過を維持すると予測"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
+msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
+msgstr "%3のTOUCHは、取引期間(%4)が終了するまでバリア価格にタッチを予測"
+
 msgid "%1 (Toll Free)"
 msgstr "==フリーダイヤル=="
 
@@ -2190,6 +2230,11 @@ msgstr "アカウントのチャージバック証明書類の提出"
 msgid "Document department processes, to enhance the marketing team's ability to execute repeated tasks efficiently and effectively"
 msgstr "反復作業を効率的かつ効果的に実行するマーケティングのチームワーク強化に必要な部門プロセスの文書作成"
 
+#, fuzzy
+#| msgid "does not touch"
+msgid "Does Not Touch"
+msgstr "ノータッチ"
+
 msgid "Dormant and Inactive Accounts"
 msgstr "口座維持手数料について"
 
@@ -2334,6 +2379,11 @@ msgstr "終了時間"
 msgid "End time must be after start time."
 msgstr "取引終了時間は明日以降として設定して下さい。"
 
+#, fuzzy
+#| msgid "ends between"
+msgid "Ends Between"
+msgstr "範囲内で終了"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "END-IN/END-OUT トレード"
 
@@ -2345,6 +2395,11 @@ msgstr "ご不明な点等ありましたら、カスタマーサポートまで
 
 msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
 msgstr "Ends In/Out：取引終了時の判定価格が、設定された上下バリア価格の「レンジ内」か「レンジ外」にあるかを予測します"
+
+#, fuzzy
+#| msgid "ends outside"
+msgid "Ends Outside"
+msgstr "レンジ外で終了"
 
 msgid "Engage in data mining using SQL databases, R/S-Plus, OLAP and other analytical tools"
 msgstr "SQLデータベース、R/ S-Plus、OLAP、その他分析ツールを使用してデータマイニングに従事"
@@ -2840,6 +2895,11 @@ msgstr "<a href=\"https://login.binary.com/signup.php\">会員登録ページ</a
 msgid "Go with the leader"
 msgstr "バイナリーオプション取引業界のフロント・ランナー"
 
+#, fuzzy
+#| msgid "goes outside"
+msgid "Goes Outside"
+msgstr "BREAK-OUT"
+
 msgid "Governing Laws and Jurisdiction"
 msgstr "準拠法と裁判管轄権"
 
@@ -2887,6 +2947,11 @@ msgstr "上限追加バリア値"
 
 msgid "High conversions and customer value"
 msgstr "高いコンバージョン率と集客率"
+
+#, fuzzy
+#| msgid "higher"
+msgid "Higher"
+msgstr "HIGH"
 
 msgid "Higher/Lower"
 msgstr "ラダーHIGH/ラダーLOW"
@@ -4132,6 +4197,11 @@ msgstr "下限バリア"
 
 msgid "Low barrier offset"
 msgstr "下限追加バリア値"
+
+#, fuzzy
+#| msgid "lower"
+msgid "Lower"
+msgstr "LOW"
 
 msgid "MENA FFXPO Award"
 msgstr "MENA FFXPO 賞を受賞"
@@ -5755,6 +5825,11 @@ msgstr "金融資産"
 msgid "Stay informed. %1 offers daily market reports and market research, as well as frequent trading webinars."
 msgstr "マーケット情報を得ましょう。当社では、マーケットレポートやリサーチ情報を提供しています。"
 
+#, fuzzy
+#| msgid "stays between"
+msgid "Stays Between"
+msgstr "STAY-IN"
+
 msgid "Stays Between/Goes Outside trades"
 msgstr "STAY-IN/BREAK-OUT トレード"
 
@@ -6741,6 +6816,11 @@ msgstr "<strong>TOUCH/NO-TOUCH</strong>：バリア設定をした価格に達�
 
 msgid "Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "ご不明な点等ありましたら、カスタマーサポートまでご連絡ください。"
+
+#, fuzzy
+#| msgid "touches"
+msgid "Touches"
+msgstr "タッチ"
 
 msgid "Tour"
 msgstr "ご利用方法"
@@ -8091,30 +8171,6 @@ msgstr "当社サービスを通じて金融トレードを購入するメリッ
 msgid "{JAPAN ONLY}#1 Sales Division"
 msgstr "第一営業支店"
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
-msgstr "%3のNO-TOUCHは、取引期間(%4)が終了するまでにバリア価格にタッチしないを予測"
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-msgstr "%3のEND-INは、判定時刻(%4)の時点で上限バリア未満かつ下限バリア以上を予測"
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr "%3のEND-OUTは、判定時刻(%4)の時点で上限バリア以上もしくは下限バリア未満を予測"
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgstr "%3のBREAK-OUTは、取引期間中(%4)に上限バリア以上もしくは下限バリア以下になったと予測"
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-msgstr "%3のラダーHIGHは、判定時刻(%4)の時点でバリア価格以上を予測"
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-msgstr "%3のラダーLOWは、判定時刻(%4)の時点でバリア価格未満を予測"
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-msgstr "%3のSTAY-INは取引期間中(%4)に上限バリア未満かつ下限バリア超過を維持すると予測"
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
-msgstr "%3のTOUCHは、取引期間(%4)が終了するまでバリア価格にタッチを予測"
-
 msgid "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
 msgstr ""
 "店頭バイナリーオプション取引は、法令によりお客様から預託を受けた資産と会社の資産を区分して管理することが義務付けられております。弊社では、関係法令に則り、日証金信託銀行へ全額信託を実施しております。\n"
@@ -8316,9 +8372,6 @@ msgstr "当社のバイナリーオプション取引の月次取引実績をお
 msgid "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
 msgstr "区分管理必要額は当社が毎日算出し、算出日から2営業日までに信託をします。この2営業日の間も金融庁長官の指定する金融機関において、当社の資産とは分別して管理します。"
 
-msgid "{JAPAN ONLY}Does Not Touch"
-msgstr "NO-TOUCH"
-
 msgid "{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account."
 msgstr "デモ口座にて擬似取引を行って頂き、操作方法等に慣れて頂くことをお勧め致します"
 
@@ -8330,12 +8383,6 @@ msgstr "最新のレポートをダウンロード"
 
 msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
 msgstr "本人確認書類およびマイナンバー「個人番号カード」書類を当社から送信したメールに添付して返信してください。"
-
-msgid "{JAPAN ONLY}Ends Between"
-msgstr "END-IN"
-
-msgid "{JAPAN ONLY}Ends Outside"
-msgstr "END-OUT"
 
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "お客さまの基本情報を記入して頂き交付書面等に同意後、口座開設ボタンをクリックしてください。"
@@ -8429,12 +8476,6 @@ msgstr "外国PEPs（重要な公的地位にある者（Politically Exposed Per
 
 msgid "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
 msgstr "緑の購入ボタンをクリック後、約定済み通知画面が表示されます。約定済み通知画面上には、バリア価格を含んだリアルタイムのチャートなど詳細な取引情報が表示されています。売却ボタンも表示されているので、売却取引を行うこともできます。"
-
-msgid "{JAPAN ONLY}Goes Outside"
-msgstr "BREAK-OUT"
-
-msgid "{JAPAN ONLY}Higher"
-msgstr "HIGH"
 
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
 msgstr "〒150-0012　東京都渋谷区広尾1-9-16　広尾宮田ビル3F"
@@ -8620,9 +8661,6 @@ msgstr "・問題の複写を禁止します。また、第三者に漏えいし
 msgid "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 msgstr "リアルタイムで保有ポジションの損益とチャート分析"
 
-msgid "{JAPAN ONLY}Lower"
-msgstr "LOW"
-
 msgid "{JAPAN ONLY}Main business"
 msgstr "主な業務"
 
@@ -8791,9 +8829,6 @@ msgstr "通貨関連バイナリーオプションのショートポジション
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "残念ながら、合格点に達しませんでした。24時間以降（週末を除く）に再受験してください。"
 
-msgid "{JAPAN ONLY}Stays Between"
-msgstr "STAY-IN"
-
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "取引概要"
 
@@ -8880,9 +8915,6 @@ msgstr "オプションを購入するには、緑の購入ボタンをクリッ
 
 msgid "{JAPAN ONLY}To compensate for any rise in the price of an underlying asset that you intend to buy in future, you should buy a call option."
 msgstr "将来購入する予定の原資産の値上がりを補うため、原資産のコールオプションを購入しました。"
-
-msgid "{JAPAN ONLY}Touches"
-msgstr "TOUCH"
 
 msgid "{JAPAN ONLY}Track your trade in real time:"
 msgstr "取引成立後の状況はリアルタイムで確認できます:"
@@ -9098,6 +9130,30 @@ msgstr "各種設定"
 
 msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
+
+#~ msgid "{JAPAN ONLY}Does Not Touch"
+#~ msgstr "NO-TOUCH"
+
+#~ msgid "{JAPAN ONLY}Ends Between"
+#~ msgstr "END-IN"
+
+#~ msgid "{JAPAN ONLY}Ends Outside"
+#~ msgstr "END-OUT"
+
+#~ msgid "{JAPAN ONLY}Goes Outside"
+#~ msgstr "BREAK-OUT"
+
+#~ msgid "{JAPAN ONLY}Higher"
+#~ msgstr "HIGH"
+
+#~ msgid "{JAPAN ONLY}Lower"
+#~ msgstr "LOW"
+
+#~ msgid "{JAPAN ONLY}Stays Between"
+#~ msgstr "STAY-IN"
+
+#~ msgid "{JAPAN ONLY}Touches"
+#~ msgstr "TOUCH"
 
 #~ msgid "Company trip to Phuket, Thailand"
 #~ msgstr "タイ・プーケット島での社員旅行"
@@ -13600,9 +13656,6 @@ msgstr "利用規約の承認"
 #~ msgid "Win payout if the last tick of %3 is strictly higher than the average of the %plural(%5,%d tick,%d ticks)."
 #~ msgstr "%3の最後の値が%plural(%5,%d tick,%d ticks)の平均よりも高い場合に、ペイアウトをお受け取りいただけます。"
 
-#~ msgid "higher"
-#~ msgstr "HIGH"
-
 #~ msgid "Win payout if %3 is strictly higher than %6 at %5."
 #~ msgstr "%3が%5の時点で%6よりも高い場合にペイアウトをお受け取りいただけます。"
 
@@ -13648,17 +13701,11 @@ msgstr "利用規約の承認"
 #~ msgid "Win payout if the last digit of %3 is strictly lower than %6 after %5 ticks."
 #~ msgstr "%3の下一桁が%5 tickの時点で%6よりも低い場合、ペイアウトをお受け取りいただけます。"
 
-#~ msgid "ends outside"
-#~ msgstr "レンジ外で終了"
-
 #~ msgid "Win payout if %3 ends outside %7 to %6 at %5."
 #~ msgstr "%3が%5の時点で%7と%6のレンジ外で終了した場合に、ペイアウトをお受け取りいただけます。"
 
 #~ msgid "Win payout if %3 ends outside %7 to %6 at %5 after %4."
 #~ msgstr "%3が%4後の%5の時点で%7と%6のレンジ外で終了した場合に、ペイアウトをお受け取りいただけます。"
-
-#~ msgid "ends between"
-#~ msgstr "範囲内で終了"
 
 #~ msgid "Win payout if %3 ends strictly between %7 to %6 at %5."
 #~ msgstr "%3が%5の時点で正確に%7と%6の範囲内で終了した場合、ペイアウトをお受け取りいただけます。"
@@ -13666,26 +13713,17 @@ msgstr "利用規約の承認"
 #~ msgid "Win payout if %3 ends strictly between %7 to %6 at %5 after %4."
 #~ msgstr "%3が%4後の%5の時点で%7と%6の範囲内で終了した場合に、ペイアウトをお受け取りいただけます。"
 
-#~ msgid "does not touch"
-#~ msgstr "ノータッチ"
-
 #~ msgid "Win payout if %3 does not touch %6 through %5."
 #~ msgstr "%3が%5までに%6に達しなかった場合に、ペイアウトをお受け取りいただけます。"
 
 #~ msgid "Win payout if %3 does not touch %6 through %5 after %4."
 #~ msgstr "%3が%4後の%5までに%6に達しなかった場合に、ペイアウトをお受け取りいただけます。"
 
-#~ msgid "touches"
-#~ msgstr "タッチ"
-
 #~ msgid "Win payout if %3 touches %6 through %5."
 #~ msgstr "%3が%5までに%6に達した場合に、ペイアウトをお受け取りいただけます。"
 
 #~ msgid "Win payout if %3 touches %6 through %5 after %4."
 #~ msgstr "%3が%4後の%5までに%6に達した場合に、ペイアウトをお受け取りいただけます。"
-
-#~ msgid "lower"
-#~ msgstr "LOW"
 
 #~ msgid "Win payout if %3 is strictly lower than %6 at %5."
 #~ msgstr "%3が%5の時点で%6よりも低い場合に、ペイアウトをお受け取りいただけます。"
@@ -13695,9 +13733,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "Win payout if %3 after %plural(%5,%d tick,%d ticks) is strictly lower than %6."
 #~ msgstr "%3が%plural(%5,%d tick,%d ticks)後に%6よりも低い場合に、ペイアウトをお受け取りいただけます。"
-
-#~ msgid "stays between"
-#~ msgstr "STAY-IN"
 
 #~ msgid "Win payout if %3 stays between %7 to %6 through %5."
 #~ msgstr "%3が%5までに常に%7と%6の範囲内に留まった場合に、ペイアウトをお受け取りいただけます。"
@@ -13722,9 +13757,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "%1 %2 payout for every point %3 rises from entry level, with stop loss of %4 points and stop profit of %5 points."
 #~ msgstr "各ポイント%3の %1%2のペイアウトはエントリーレベルから降下します。損切りは%4、利益ストップは%5です。"
-
-#~ msgid "goes outside"
-#~ msgstr "BREAK-OUT"
 
 #~ msgid "Win payout if %3 goes outside %7 to %6 through %5."
 #~ msgstr "%3が%5までに%7と%6のレンジ外に出た場合に、ペイアウトをお受け取りいただけます。"

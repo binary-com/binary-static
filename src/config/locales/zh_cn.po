@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-02-13 07:12+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) "
-"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,6 +31,46 @@ msgstr "\"第三方供应商\"指通过使用%1的API提供可用功能和作用
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 已记入您的虚拟资金账户%3"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
+msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
+msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 
 msgid "%1 (Toll Free)"
 msgstr "%1(免费电话)"
@@ -2248,6 +2287,11 @@ msgstr "文档帐户扣款"
 msgid "Document department processes, to enhance the marketing team's ability to execute repeated tasks efficiently and effectively"
 msgstr "通过文档部门流程提高营销队伍有效执行重复任务的能力"
 
+#, fuzzy
+#| msgid "does not touch"
+msgid "Does Not Touch"
+msgstr "未触及"
+
 msgid "Dormant and Inactive Accounts"
 msgstr "睡眠和非活跃账户"
 
@@ -2396,6 +2440,11 @@ msgstr "结束时间"
 msgid "End time must be after start time."
 msgstr "结束时间必须在开始时间之后。"
 
+#, fuzzy
+#| msgid "ends between"
+msgid "Ends Between"
+msgstr "区间之内结束"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "“收于范围之内/之外”的交易"
 
@@ -2409,6 +2458,11 @@ msgstr "如果开始和结束期间价格跳动次数少于2，收于范围之�
 #| msgid "Choose Ends In/Out to profit from the market stopping inside or outside two price targets at the end of the time period."
 msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
 msgstr "选择到期时价格处于某个范围之内 / 之外的期权：如果市场价格在合约到期时处于两个目标价格之内 / 之外即可获利。"
+
+#, fuzzy
+#| msgid "ends outside"
+msgid "Ends Outside"
+msgstr "区间之外结束"
 
 msgid "Engage in data mining using SQL databases, R/S-Plus, OLAP and other analytical tools"
 msgstr "使用 SQL 数据库、R/S-Plus、OLAP 和其他分析工具从事数据挖掘工作"
@@ -2908,6 +2962,11 @@ msgstr "前往 <a href=\"https://login.binary.com/signup.php\">注册页面</a> 
 msgid "Go with the leader"
 msgstr "选择行业领军企业"
 
+#, fuzzy
+#| msgid "goes outside"
+msgid "Goes Outside"
+msgstr "处于区间之外"
+
 msgid "Governing Laws and Jurisdiction"
 msgstr "适用法律和司法管辖权"
 
@@ -2955,6 +3014,11 @@ msgstr "高障碍位移"
 
 msgid "High conversions and customer value"
 msgstr "高转换率和客户价值"
+
+#, fuzzy
+#| msgid "higher"
+msgid "Higher"
+msgstr "高于"
 
 msgid "Higher/Lower"
 msgstr "“高于/低于”"
@@ -4196,6 +4260,11 @@ msgstr "低障碍"
 
 msgid "Low barrier offset"
 msgstr "低障碍位移"
+
+#, fuzzy
+#| msgid "lower"
+msgid "Lower"
+msgstr "低于"
 
 msgid "MENA FFXPO Award"
 msgstr "中东和北非地区 FFXPO 奖"
@@ -5757,8 +5826,7 @@ msgid "Specific Instructions"
 msgstr "特定指令"
 
 msgid "Specify your payout, which is your potential return if your prediction is correct. Our system will proceed to calculate your stake, which is the total cost of purchasing the contract. %1 offers payouts from $1 to $50,000."
-msgstr ""
-"确定赔付额，如果您的预测正确的话，这就是您的潜在回报率。我们的系统将进一步计算您的投注额，即购入合约的总成本。%1提供从1美元到5万美元的赔付额。"
+msgstr "确定赔付额，如果您的预测正确的话，这就是您的潜在回报率。我们的系统将进一步计算您的投注额，即购入合约的总成本。%1提供从1美元到5万美元的赔付额。"
 
 msgid "Spot"
 msgstr "现价"
@@ -5809,6 +5877,11 @@ msgstr "统计"
 
 msgid "Stay informed. %1 offers daily market reports and market research, as well as frequent trading webinars."
 msgstr "通过 %1 的每日市场报告、市场研究和经常举行的在线讨论会及时掌握最新动态。"
+
+#, fuzzy
+#| msgid "stays between"
+msgid "Stays Between"
+msgstr "位于区间之内"
 
 msgid "Stays Between/Goes Outside trades"
 msgstr "“保持在范围内/超出范围”的交易"
@@ -6699,6 +6772,11 @@ msgstr "<strong>触及/未触及</strong> - 预测市场价格是否会触及目
 msgid "Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "如果开始和结束期间价格跳动次数少于2，触及/未触及合约购入价将全额退还。"
 
+#, fuzzy
+#| msgid "touches"
+msgid "Touches"
+msgstr "触及"
+
 msgid "Tour"
 msgstr "指南"
 
@@ -7261,9 +7339,7 @@ msgid "When we enter into Contracts with you, we will take all reasonable steps 
 msgstr "当我们与您订立合约时，我们会采取负责任的行动，通过遵循我们的订单执行政策以及您所提供的任何特定指令执行合约条款，为您争取最佳结果。我们的订单执行政策包含一整套特定的程序，为您获取最佳执行结果，需要遵循并考虑的因素包括：（一）您的合约性质，（二）您制定合约的优先事项，（三）与市场有关的实行方式，考虑这些的目的是在广泛的、可能互相冲突的因素间实现最佳平衡（根据我们的观点）。我们的政策并不能提供保证，但当我们与您订立合约后，获得的价格将总比别处合算。"
 
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
-msgstr ""
-"当您对收到的价格感到满意时请立刻执行交易。通过我们的独特平台，您不会遇到滑价或跳空市场。更重要的是，不会有任何隐藏费用。您也可在任何长期合约到期前随时售出"
-"，以保护您的赚取利润或将亏损降至最低额。"
+msgstr "当您对收到的价格感到满意时请立刻执行交易。通过我们的独特平台，您不会遇到滑价或跳空市场。更重要的是，不会有任何隐藏费用。您也可在任何长期合约到期前随时售出，以保护您的赚取利润或将亏损降至最低额。"
 
 msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
 msgstr "当您点选“Ok”后，您将被禁止在此网站交易，直到选定期限结束为止。"
@@ -8003,30 +8079,6 @@ msgstr "您拥有足够的金融交易经验和知识，能够评估经由本网
 msgid "{JAPAN ONLY}#1 Sales Division"
 msgstr "{JAPAN ONLY}#1 Sales Division"
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
-
 msgid "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
 msgstr "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
 
@@ -8219,9 +8271,6 @@ msgstr "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 msgid "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
 msgstr "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
 
-msgid "{JAPAN ONLY}Does Not Touch"
-msgstr "{JAPAN ONLY}Does Not Touch"
-
 msgid "{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account."
 msgstr "{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account."
 
@@ -8233,12 +8282,6 @@ msgstr "{JAPAN ONLY}Download our latest report here"
 
 msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
 msgstr "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
-
-msgid "{JAPAN ONLY}Ends Between"
-msgstr "{JAPAN ONLY}Ends Between"
-
-msgid "{JAPAN ONLY}Ends Outside"
-msgstr "{JAPAN ONLY}Ends Outside"
 
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
@@ -8332,12 +8375,6 @@ msgstr "{JAPAN ONLY}Foreign PEP Declaration"
 
 msgid "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
 msgstr "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
-
-msgid "{JAPAN ONLY}Goes Outside"
-msgstr "{JAPAN ONLY}Goes Outside"
-
-msgid "{JAPAN ONLY}Higher"
-msgstr "{JAPAN ONLY}Higher"
 
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
 msgstr "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
@@ -8519,9 +8556,6 @@ msgstr "{JAPAN ONLY}Knowledge test list item 5"
 msgid "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 msgstr "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 
-msgid "{JAPAN ONLY}Lower"
-msgstr "{JAPAN ONLY}Lower"
-
 msgid "{JAPAN ONLY}Main business"
 msgstr "{JAPAN ONLY}Main business"
 
@@ -8690,9 +8724,6 @@ msgstr "{JAPAN ONLY}Short positions in FX Binary Options must be covered by init
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 
-msgid "{JAPAN ONLY}Stays Between"
-msgstr "{JAPAN ONLY}Stays Between"
-
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "{JAPAN ONLY}Summary of Specifications"
 
@@ -8779,9 +8810,6 @@ msgstr "{JAPAN ONLY}To buy an option, simply click on the price button to execut
 
 msgid "{JAPAN ONLY}To compensate for any rise in the price of an underlying asset that you intend to buy in future, you should buy a call option."
 msgstr "{JAPAN ONLY}To compensate for any rise in the price of an underlying asset that you intend to buy in future, you should buy a call option."
-
-msgid "{JAPAN ONLY}Touches"
-msgstr "{JAPAN ONLY}Touches"
 
 msgid "{JAPAN ONLY}Track your trade in real time:"
 msgstr "{JAPAN ONLY}Track your trade in real time:"
@@ -8993,6 +9021,30 @@ msgstr "设置"
 
 msgid "Terms and Conditions Approval"
 msgstr "条款和条件审批"
+
+#~ msgid "{JAPAN ONLY}Does Not Touch"
+#~ msgstr "{JAPAN ONLY}Does Not Touch"
+
+#~ msgid "{JAPAN ONLY}Ends Between"
+#~ msgstr "{JAPAN ONLY}Ends Between"
+
+#~ msgid "{JAPAN ONLY}Ends Outside"
+#~ msgstr "{JAPAN ONLY}Ends Outside"
+
+#~ msgid "{JAPAN ONLY}Goes Outside"
+#~ msgstr "{JAPAN ONLY}Goes Outside"
+
+#~ msgid "{JAPAN ONLY}Higher"
+#~ msgstr "{JAPAN ONLY}Higher"
+
+#~ msgid "{JAPAN ONLY}Lower"
+#~ msgstr "{JAPAN ONLY}Lower"
+
+#~ msgid "{JAPAN ONLY}Stays Between"
+#~ msgstr "{JAPAN ONLY}Stays Between"
+
+#~ msgid "{JAPAN ONLY}Touches"
+#~ msgstr "{JAPAN ONLY}Touches"
 
 #~ msgid "Company trip to Phuket, Thailand"
 #~ msgstr "公司组织到泰国普吉岛旅游"
@@ -13470,9 +13522,6 @@ msgstr "条款和条件审批"
 #~ msgid "Win payout if the last tick of %3 is strictly higher than the average of the %plural(%5,%d tick,%d ticks)."
 #~ msgstr "如果%3的最新跳动点严格高于%plural(%5,%d 跳动点,%d 跳动点) 的平均价格，将获得赔付额。"
 
-#~ msgid "higher"
-#~ msgstr "高于"
-
 #~ msgid "Win payout if %3 is strictly higher than %6 at %5."
 #~ msgstr "如果%3在%5严格高于%6，将获得赔付额。"
 
@@ -13518,17 +13567,11 @@ msgstr "条款和条件审批"
 #~ msgid "Win payout if the last digit of %3 is strictly lower than %6 after %5 ticks."
 #~ msgstr "如果%3的最后数字在%5跳动点之后严格低于%6，将获得赔付额。"
 
-#~ msgid "ends outside"
-#~ msgstr "区间之外结束"
-
 #~ msgid "Win payout if %3 ends outside %7 to %6 at %5."
 #~ msgstr "如果%3在%5时收盘于%7至%6之外，将获得赔付额。"
 
 #~ msgid "Win payout if %3 ends outside %7 to %6 at %5 after %4."
 #~ msgstr "如果%3在%4过后的%5时收盘于%7至%6之外，将获得赔付额。"
-
-#~ msgid "ends between"
-#~ msgstr "区间之内结束"
 
 #~ msgid "Win payout if %3 ends strictly between %7 to %6 at %5."
 #~ msgstr "如果%3在%5时收盘严格处于%7至%6之间，将获得赔付额。"
@@ -13536,26 +13579,17 @@ msgstr "条款和条件审批"
 #~ msgid "Win payout if %3 ends strictly between %7 to %6 at %5 after %4."
 #~ msgstr "如果%3在%4之后的%5时收盘严格处于%7至%6之间，将获得赔付额。"
 
-#~ msgid "does not touch"
-#~ msgstr "未触及"
-
 #~ msgid "Win payout if %3 does not touch %6 through %5."
 #~ msgstr "如果%3一直到%5时未触及%6，将获得赔付额。"
 
 #~ msgid "Win payout if %3 does not touch %6 through %5 after %4."
 #~ msgstr "如果%3在%4之后到%5时未触及%6，将获得赔付额。"
 
-#~ msgid "touches"
-#~ msgstr "触及"
-
 #~ msgid "Win payout if %3 touches %6 through %5."
 #~ msgstr "如果%3一直到%5时触及%6，将获得赔付额。"
 
 #~ msgid "Win payout if %3 touches %6 through %5 after %4."
 #~ msgstr "如果%3在%4过后一直到%5时触及%6，将获得赔付额。"
-
-#~ msgid "lower"
-#~ msgstr "低于"
 
 #~ msgid "Win payout if %3 is strictly lower than %6 at %5."
 #~ msgstr "如果%3在%5严格低于%6，将获得赔付额。"
@@ -13565,9 +13599,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Win payout if %3 after %plural(%5,%d tick,%d ticks) is strictly lower than %6."
 #~ msgstr "如果%3在%plural(%5,%d 跳动点,%d 跳动点) 之后严格低于%6，将获得赔付额。"
-
-#~ msgid "stays between"
-#~ msgstr "位于区间之内"
 
 #~ msgid "Win payout if %3 stays between %7 to %6 through %5."
 #~ msgstr "如果%3在%5时一直在%7至%6之间，将获得赔付额。"
@@ -13592,9 +13623,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "%1 %2 payout for every point %3 rises from entry level, with stop loss of %4 points and stop profit of %5 points."
 #~ msgstr "%3入市价位每上涨一点即可获得%1%2赔付额，止损为%4点，止盈为%5点。"
-
-#~ msgid "goes outside"
-#~ msgstr "处于区间之外"
 
 #~ msgid "Win payout if %3 goes outside %7 to %6 through %5."
 #~ msgstr "如果%3一直到%5时处于%7至%6之外，将获得赔付额。"
