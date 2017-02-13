@@ -11,11 +11,11 @@ const MetaTraderConfig = (function() {
     const hidden_class = 'invisible';
 
     const types_info = {
-        demo            : { account_type: 'demo',      sub_account_type: '',         title: localize('Demo'),            max_leverage: 1000, is_demo: true },
-        vanuatu_cent    : { account_type: 'financial', sub_account_type: 'cent',     title: localize('Real Cent'),       max_leverage: 1000 },
-        vanuatu_standard: { account_type: 'financial', sub_account_type: 'standard', title: localize('Real Standard'),   max_leverage: 300 },
-        vanuatu_stp     : { account_type: 'financial', sub_account_type: 'stp',      title: localize('Real STP'),        max_leverage: 100 },
-        costarica       : { account_type: 'gaming',    sub_account_type: '',         title: localize('Real Volatility'), max_leverage: 100 },
+        demo            : { account_type: 'demo',      mt5_account_type: '',         title: localize('Demo'),            max_leverage: 1000, is_demo: true },
+        vanuatu_cent    : { account_type: 'financial', mt5_account_type: 'cent',     title: localize('Real Cent'),       max_leverage: 1000 },
+        vanuatu_standard: { account_type: 'financial', mt5_account_type: 'standard', title: localize('Real Standard'),   max_leverage: 300 },
+        vanuatu_stp     : { account_type: 'financial', mt5_account_type: 'stp',      title: localize('Real STP'),        max_leverage: 100 },
+        costarica       : { account_type: 'gaming',    mt5_account_type: '',         title: localize('Real Volatility'), max_leverage: 100 },
     };
 
     const needsRealMessage = () => (
@@ -33,7 +33,7 @@ const MetaTraderConfig = (function() {
             success_msg: (response) => {
                 let acc_type = response.mt5_new_account.account_type;
                 switch (acc_type) {
-                    case 'financial': acc_type = `vanuatu_${response.mt5_new_account.sub_account_type}`; break;
+                    case 'financial': acc_type = `vanuatu_${response.mt5_new_account.mt5_account_type}`; break;
                     case 'gaming'   : acc_type = 'costarica'; break;
                     // no default
                 }
@@ -148,23 +148,22 @@ const MetaTraderConfig = (function() {
 
     const fields = {
         new_account: {
-            lbl_account_type    : { id: '#lbl_account_type' },
-            lbl_sub_account_type: { id: '#lbl_sub_account_type' },
-            lbl_email           : { id: '#lbl_email' },
-            txt_name            : { id: '#txt_name',          request_field: 'name' },
-            ddl_leverage        : { id: '#ddl_leverage',      request_field: 'leverage' },
-            txt_main_pass       : { id: '#txt_main_pass',     request_field: 'mainPassword' },
-            txt_re_main_pass    : { id: '#txt_re_main_pass' },
-            txt_investor_pass   : { id: '#txt_investor_pass', request_field: 'investPassword' },
-            chk_tnc             : { id: '#chk_tnc' },
-            additional_fields   :
+            lbl_account_type : { id: '#lbl_account_type' },
+            lbl_email        : { id: '#lbl_email' },
+            txt_name         : { id: '#txt_name',          request_field: 'name' },
+            ddl_leverage     : { id: '#ddl_leverage',      request_field: 'leverage' },
+            txt_main_pass    : { id: '#txt_main_pass',     request_field: 'mainPassword' },
+            txt_re_main_pass : { id: '#txt_re_main_pass' },
+            txt_investor_pass: { id: '#txt_investor_pass', request_field: 'investPassword' },
+            chk_tnc          : { id: '#chk_tnc' },
+            additional_fields:
                 acc_type => ($.extend(
                     {
                         account_type: types_info[acc_type].account_type,
                         email       : Client.get('email'),
                     },
-                    types_info[acc_type].sub_account_type ? {
-                        sub_account_type: types_info[acc_type].sub_account_type,
+                    types_info[acc_type].mt5_account_type ? {
+                        mt5_account_type: types_info[acc_type].mt5_account_type,
                     } : {})),
         },
         password_change: {
