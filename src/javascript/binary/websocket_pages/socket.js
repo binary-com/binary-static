@@ -214,13 +214,8 @@ const BinarySocketClass = function() {
                     const landing_company = response.landing_company;
                     Client.landing_company(landing_company);
                     Header.topbar_message_visibility(landing_company);
-                    let company;
                     if (response.hasOwnProperty('error')) return;
-                    Object.keys(landing_company).forEach(function(key) {
-                        if (Client.get('landing_company_name') === landing_company[key].shortcode) {
-                            company = landing_company[key];
-                        }
-                    });
+                    const company = Client.get_client_landing_company();
                     if (company) {
                         Client.set('default_currency', company.legal_default_currency);
                         const has_reality_check = company.has_reality_check;

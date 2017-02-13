@@ -1,4 +1,6 @@
 const ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbols;
+const Client        = require('../../base/client').Client;
+const url_for       = require('../../base/url').url_for;
 
 /*
  * MBSymbols object parses the active_symbols json that we get from socket.send({active_symbols: 'brief'}
@@ -23,21 +25,31 @@ const MBSymbols = (function () {
         tradeMarketsList = {},
         tradeUnderlyings = {},
         need_page_update = 1,
+        allSymbols       = {},
         names            = {};
 
     const details = function (data) {
         ActiveSymbols.clearData();
-        const allSymbols = data.active_symbols;
-        tradeMarkets     = ActiveSymbols.getMarkets(allSymbols);
-        tradeMarketsList = ActiveSymbols.getMarketsList(allSymbols);
-        tradeUnderlyings = ActiveSymbols.getTradeUnderlyings(allSymbols);
-        names            = ActiveSymbols.getSymbolNames(allSymbols);
+        const active_symbols = data.active_symbols;
+        tradeMarkets     = ActiveSymbols.getMarkets(active_symbols);
+        tradeMarketsList = ActiveSymbols.getMarketsList(active_symbols);
+        tradeUnderlyings = ActiveSymbols.getTradeUnderlyings(active_symbols);
+        allSymbols       = ActiveSymbols.getSymbols(allSymbols);
+        names            = ActiveSymbols.getSymbolNames(active_symbols);
     };
 
     const getSymbols = function (update) {
+        const landing_company_obj = Client.landing_company();
+        const allowed_markets     = Client.get_client_landing_company().legal_allowed_markets;
+        if (Client.is_logged_in() && allowed_markets && allowed_markets.indexOf('forex') === -1) {
+            window.location.href = url_for('trading');
+            return;
+        }
+        const landing_company = landing_company_obj.financial_company ? landing_company_obj.financial_company.shortcode : 'japan';
         BinarySocket.send({
             active_symbols : 'brief',
-            landing_company: 'japan',
+            landing_company: landing_company,
+            product_type   : 'multi_barrier',
         });
         need_page_update = update;
     };
@@ -49,7 +61,7 @@ const MBSymbols = (function () {
         underlyings     : function ()      { return tradeUnderlyings; },
         getName         : function(symbol) { return names[symbol]; },
         need_page_update: function ()      { return need_page_update; },
-        getAllSymbols   : function()       { return names; },
+        getAllSymbols   : function ()      { return allSymbols; },
         clearData       : function ()      { ActiveSymbols.clearData(); },
     };
 })();
