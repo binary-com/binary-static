@@ -63,6 +63,37 @@
                     </fieldset>
 
                     <fieldset>
+                        <legend>[% l('Tax Information') %]</legend>
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
+                                <label for="place_of_birth">[% l('Place of birth') %]</label>
+                            </div>
+                            <div class="gr-8">
+                                <select name="place_of_birth" id="place_of_birth" class="form_input"></select>
+                                <p class="errorfield" id="error_place_of_birth" style="display:none"></p>
+                            </div>
+                        </div>
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
+                                <label for="tax_residence">[% l('Tax residence') %]</label>
+                            </div>
+                            <div class="gr-8">
+                                <select name="tax_residence" id="tax_residence" class="form_input invisible" multiple="multiple"></select>
+                                <p class="errorfield" id="error_tax_residence" style="display:none"></p>
+                            </div>
+                        </div>
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
+                                <label for="tax_identification_number">[% l('Tax identification number') %]</label>
+                            </div>
+                            <div class="gr-8">
+                                <input type="text" class="text form_input" id="tax_identification_number" maxlength="20"/>
+                                <p class="errorfield" id="error_tax_identification_number" style="display:none"></p>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
                         <legend id="address">[% l('Address') %]</legend>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
@@ -70,6 +101,7 @@
                             </div>
                             <div class="gr-8">
                                 <input type="text" class="text form_input" id="address_line_1" maxlength="70"/>
+                                <p class="hint">[% l('Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account.') %]</p>
                                 <p class="errorfield" id="error_address_line_1" style="display:none"></p>
                             </div>
                         </div>

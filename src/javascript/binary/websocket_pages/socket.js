@@ -214,13 +214,8 @@ const BinarySocketClass = function() {
                     const landing_company = response.landing_company;
                     Client.landing_company(landing_company);
                     Header.topbar_message_visibility(landing_company);
-                    let company;
                     if (response.hasOwnProperty('error')) return;
-                    Object.keys(landing_company).forEach(function(key) {
-                        if (Client.get('landing_company_name') === landing_company[key].shortcode) {
-                            company = landing_company[key];
-                        }
-                    });
+                    const company = Client.get_client_landing_company();
                     if (company) {
                         Client.set('default_currency', company.legal_default_currency);
                         const has_reality_check = company.has_reality_check;
@@ -276,6 +271,7 @@ const BinarySocketClass = function() {
                 } else if (type === 'reality_check') {
                     RealityCheck.realityCheckWSHandler(response);
                 } else if (type === 'get_account_status' && response.get_account_status) {
+                    Client.set('values_set_account', 1);
                     if (response.get_account_status.risk_classification === 'high' && qualify_for_risk_classification()) {
                         send({ get_financial_assessment: 1 });
                     } else {
@@ -283,8 +279,13 @@ const BinarySocketClass = function() {
                         Client.check_tnc();
                     }
                     localStorage.setItem('risk_classification.response', response.get_account_status.risk_classification);
-
-                    sessionStorage.setItem('client_status', response.get_account_status.status);
+                    const status = response.get_account_status.status;
+                    sessionStorage.setItem('client_status', status);
+                    if (/crs_tin_information/.test(status)) {
+                        Client.set('has_tax_information', 1);
+                    } else if (Client.should_redirect_tax()) {
+                        return;
+                    }
                     page.show_authenticate_message();
 
                     if (response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.hasOwnProperty('dispatch_to')) {
