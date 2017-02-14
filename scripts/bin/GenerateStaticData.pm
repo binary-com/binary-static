@@ -345,8 +345,6 @@ sub _texts {
         push @texts, localize('Select market');
         push @texts, localize('Number of ticks');
         push @texts, localize('Last digit stats for the latest [_1] ticks on [_2]');
-        #strings for tnc_approvalws
-        push @texts, localize('Ok');
         #strings for paymentagentws
         push @texts, localize('Amount');
         push @texts, localize('Deposit');
