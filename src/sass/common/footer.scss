@@ -38,7 +38,7 @@
                 padding-left: 5px;
             }
         }
-        #ratelimit-error-message {
+        #ratelimit-error-message, #site-status-message {
             display: none;
             position: fixed;
             top: 0;
@@ -55,6 +55,9 @@
                     font-size: inherit;
                 }
             }
+        }
+        #site-status-message {
+            z-index: 9999;
         }
     }
     #footer-last {

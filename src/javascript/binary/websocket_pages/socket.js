@@ -56,6 +56,7 @@ const BinarySocketClass = function() {
         manualClosed = false,
         events = {},
         authorized = false,
+        is_available = true,
         req_number = 0,
         wrongAppId = 0;
 
@@ -87,7 +88,7 @@ const BinarySocketClass = function() {
         if (isClose()) {
             bufferedSends.push(data);
             init(1);
-        } else if (isReady()) {
+        } else if (isReady() && is_available) {
             if (!data.hasOwnProperty('passthrough') && !data.hasOwnProperty('verify_email')) {
                 data.passthrough = {};
             }
@@ -134,6 +135,7 @@ const BinarySocketClass = function() {
         }
 
         binarySocket.onopen = function () {
+            send({ broadcast_notifications: 1 });
             const apiToken = getLoginToken();
             if (apiToken && !authorized && localStorage.getItem('client.tokens')) {
                 binarySocket.send(JSON.stringify({ authorize: apiToken }));
@@ -172,7 +174,10 @@ const BinarySocketClass = function() {
                     }
                 }
                 const type = response.msg_type;
-                if (type === 'authorize') {
+                if (type === 'site_status') {
+                    is_available = /^up$/i.test(response.site_status);
+                    $('#site-status-message').css('display', is_available ? 'none' : 'block').find('.message').html(response.message);
+                } else if (type === 'authorize') {
                     if (response.hasOwnProperty('error')) {
                         const isActiveTab = sessionStorage.getItem('active_tab') === '1';
                         if (response.error.code === 'SelfExclusion' && isActiveTab) {
