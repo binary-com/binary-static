@@ -374,7 +374,7 @@ const Client = (function () {
         return client_landing_company;
     };
 
-    const is_financial = () => client_object.loginid_array.find(obj => (obj.id === get('loginid'))).financial;
+    const is_financial = () => (client_object.loginid_array.find(obj => (obj.id === get('loginid'))) || {}).financial;
 
     const should_complete_tax = () => is_financial() && !get('has_tax_information');
 
