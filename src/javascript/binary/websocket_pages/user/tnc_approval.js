@@ -32,8 +32,8 @@ const TNCApproval = (function() {
             const terms_conditions_version = State.get(['response', 'website_status', 'website_status', 'terms_conditions_version']);
             const client_tnc_status        = State.get(['response', 'get_settings', 'get_settings', 'client_tnc_status']);
 
-            if (!terms_conditions_version || terms_conditions_version === client_tnc_status) {
-                // redirectBack();
+            if (Client.get('is_virtual') || !terms_conditions_version || terms_conditions_version === client_tnc_status) {
+                redirectBack(redirect_anyway);
                 return;
             }
 
