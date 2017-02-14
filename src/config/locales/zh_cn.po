@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-02-14 06:16+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) "
-"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -127,8 +126,7 @@ msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader
 msgstr "%1也引入了<a href='%2' target='_blank' class='ja-hide'>自动化交易程序工具</a><span class='all-hide ja-show'>自动化交易程序工具</span>，允许客户轻松使用“拖放”操作开发自己的自动化交易机器人。"
 
 msgid "%1 is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
-msgstr ""
-"%1 是充满活力和灵活的工作场所。除了在各办事处工作的职员，我们在世界各国还有选择在家里远程办公的人员。如果您希望在家里办公，我们是同意这么做的。"
+msgstr "%1 是充满活力和灵活的工作场所。除了在各办事处工作的职员，我们在世界各国还有选择在家里远程办公的人员。如果您希望在家里办公，我们是同意这么做的。"
 
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
 msgstr "%1 不断为系统管理员、技术参与者和主管人才团队添加经验丰富的专业人员。我们在以下区域开发了多个吸引人的工作机会，以支持我们持续成长:"
@@ -251,14 +249,10 @@ msgid "%1's Smart FX are smart markets that measure the value of a currency agai
 msgstr "%1 的智能外汇是衡量一种货币相对一篮子主要货币价值的智能型市场。"
 
 msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
-msgstr ""
-"%1 的价差合约为杠杆型衍生合约，其价值直接与基础市场走势挂钩。  "
-"以低于实时市场的投资在上涨市场购入“长仓”合同（及在下降市场购入“短仓”合同）的客户可从以上价格走势中获利。"
+msgstr "%1 的价差合约为杠杆型衍生合约，其价值直接与基础市场走势挂钩。  以低于实时市场的投资在上涨市场购入“长仓”合同（及在下降市场购入“短仓”合同）的客户可从以上价格走势中获利。"
 
 msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
-msgstr ""
-"%1 的价差合约需要可以制定客户最大损失限额的“止损”。此“止损”额将当作定金，在价差合约平仓前不可用于继续交易。价差合约在接触“止损”或“止盈”水平时由"
-"客户售出完成平仓。"
+msgstr "%1 的价差合约需要可以制定客户最大损失限额的“止损”。此“止损”额将当作定金，在价差合约平仓前不可用于继续交易。价差合约在接触“止损”或“止盈”水平时由客户售出完成平仓。"
 
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
 msgstr "1％的波动率指数由经过加密的安全随机数字生成器生成，并由独立的第三方审计其公平度。"
@@ -634,9 +628,7 @@ msgid "A Payment Agent acts like an exchange between the Client (that is, our cu
 msgstr "付款代理人扮演客户（即我们的顾客）和 %1之间的兑换员。付款代理人负责为希望使用某一特定电子货币方法或%1不支持的本地货币的客户处理充值和提款事宜。汇款费用由客户支付。"
 
 msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
-msgstr ""
-"如果市场在所选期限内一直保持在（没有触及）高障碍或低障碍之间，所选择的“保持在范围之内”交易即可获利。如果市场在所选期限内只要触及高障碍或低障碍，所选择的"
-"“超出范围之外”交易即可获利。"
+msgstr "如果市场在所选期限内一直保持在（没有触及）高障碍或低障碍之间，所选择的“保持在范围之内”交易即可获利。如果市场在所选期限内只要触及高障碍或低障碍，所选择的“超出范围之外”交易即可获利。"
 
 msgid "A True Partnership"
 msgstr "真正的合作伙伴"
@@ -939,9 +931,7 @@ msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "高等/高级/研究生文凭或学士学位"
 
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
-msgstr ""
-"如果市场平仓价格严格高于 \"低\" 目标价格以及严格低于 \"高\"目标价格，“收于范围之内”交易将可获利。如果市场平仓价格严格高于 \"高\" "
-"目标价格或严格低于 \"低\"目标价格，“收于范围之外”交易将可获利。"
+msgstr "如果市场平仓价格严格高于 \"低\" 目标价格以及严格低于 \"高\"目标价格，“收于范围之内”交易将可获利。如果市场平仓价格严格高于 \"高\" 目标价格或严格低于 \"低\"目标价格，“收于范围之外”交易将可获利。"
 
 msgid "An additional password can be used to restrict access to the cashier."
 msgstr "可使用额外密码来限制对收银台的访问。"
@@ -1592,9 +1582,7 @@ msgid "Choose the Touch/No Touch trade if you want to predict the market touchin
 msgstr "如您希望通过预测市场在合约期限内是否会触及目标价格而获利，您可以选择交易“触及/未触及”期权。"
 
 msgid "Choose the asset you wish to trade, such as gold, oil, stocks, or currency pairs. The value of a binary option is derived from the price of the underlying asset. One advantage of trading binary options is that you are not buying or selling the actual asset, only a contract that determines how that asset performs."
-msgstr ""
-"选择您要交易的资产，如黄金、原油、股票或货币对。二元期权的价值基于标的资产价格。二元期权交易的一个优势就是您并非买卖实际资产， "
-"只是一个确认资产表现状况的合约。"
+msgstr "选择您要交易的资产，如黄金、原油、股票或货币对。二元期权的价值基于标的资产价格。二元期权交易的一个优势就是您并非买卖实际资产， 只是一个确认资产表现状况的合约。"
 
 msgid "Choose the payment method you'd like to use."
 msgstr "选择您想要采用的支付方式。"
@@ -3228,8 +3216,7 @@ msgid "In classic Silicon Valley style, Hong Kong based hedge fund manager and e
 msgstr "Regent Markets 的创始人 Jean-Yves Sireau 是香港的一名对冲基金经理和企业家。与很多硅谷创业公司一样，Regent Markets 是在他的香港住所成立的。他开发了实施固定赔率金融投注体系的系统、方法和算法。Jean-Yves 的愿景是提供固定赔率投注（最简单的衍生品合约）市场，并向普通投资者提供进行小额投注的机会。在他的创新举动之前，二元期权通常只进行大额交易。"
 
 msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
-msgstr ""
-"在外汇市场中，交易者可以根据一种货币对另一种货币的价格变动交易合约。例如，如果交易者选择欧元/美元“上涨”期权，即预测欧元的价值相对美元的价值将会上涨。"
+msgstr "在外汇市场中，交易者可以根据一种货币对另一种货币的价格变动交易合约。例如，如果交易者选择欧元/美元“上涨”期权，即预测欧元的价值相对美元的价值将会上涨。"
 
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 msgstr "首先您必须生成API令牌才能够访问我们的移动应用程序和其他第三方应用程序。"
@@ -3931,8 +3918,7 @@ msgid "Key facts"
 msgstr "关键资料"
 
 msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
-msgstr ""
-"想放松时只需飞行很短的距离就能尽情探索美丽的海滩、岛屿和山区。您可从马耳他轻松前往欧洲、地中海和北非。此外，您也可在马来西亚饱览亚洲最壮观的美景。"
+msgstr "想放松时只需飞行很短的距离就能尽情探索美丽的海滩、岛屿和山区。您可从马耳他轻松前往欧洲、地中海和北非。此外，您也可在马来西亚饱览亚洲最壮观的美景。"
 
 msgid "Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account."
 msgstr "请提供您的完整地址。<br>以便在您开立真实账户时验证您的身份。"
@@ -6346,9 +6332,7 @@ msgid "The use, operation or combination of the %1 API with non-%1 API(s), data,
 msgstr "如原本可以避免承担责任，但因为将%1 API与非%1 API系统、数据、设备或文件同时使用、操作或组合;或"
 
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
-msgstr ""
-"波动率指数模拟各种真实的市场情况，并根据不同的市场情况提供理想的平台交易实践和测试策略。这些指数取决于波动率和漂移率，并帮助用户尝试各种场景，如高波动率、"
-"低波动率、看涨和看跌趋势。"
+msgstr "波动率指数模拟各种真实的市场情况，并根据不同的市场情况提供理想的平台交易实践和测试策略。这些指数取决于波动率和漂移率，并帮助用户尝试各种场景，如高波动率、低波动率、看涨和看跌趋势。"
 
 msgid "Then, make your trade"
 msgstr "然后进行交易"
