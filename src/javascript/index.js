@@ -8,6 +8,7 @@ const exportAllFunctions = function(obj) {
 window.$ = window.jQuery = require('jquery');
 
 require('babel-polyfill');
+require('promise-polyfill');
 
 // needs refactoring
 exportAllFunctions(require('./binary/websocket_pages/socket'));

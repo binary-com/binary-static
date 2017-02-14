@@ -23,6 +23,7 @@ const SettingsWS                    = require('./user/account/settings').Setting
 const StatementWS                   = require('./user/account/statement/statement.init').StatementWS;
 const TopUpVirtualWS                = require('./user/account/top_up_virtualws').TopUpVirtualWS;
 const LostPasswordWS                = require('./user/lost_password').LostPasswordWS;
+const MetaTrader                    = require('./user/metatrader/metatrader');
 const FinancialAccOpening           = require('./user/new_account/financial_acc_opening').FinancialAccOpening;
 const JapanAccOpening               = require('./user/new_account/japan_acc_opening').JapanAccOpening;
 const RealAccOpening                = require('./user/new_account/real_acc_opening').RealAccOpening;
@@ -355,6 +356,14 @@ pjax_config_page_require_auth('new_account/knowledge_testws', function() {
     return {
         onLoad: function() {
             KnowledgeTest.init();
+        },
+    };
+});
+
+pjax_config_page_require_auth('user/metatrader', function() {
+    return {
+        onLoad: function() {
+            MetaTrader.init();
         },
     };
 });

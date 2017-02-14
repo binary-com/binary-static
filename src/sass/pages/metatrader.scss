@@ -1,0 +1,106 @@
+#mt_account_management {
+    #accounts_list .acc-box {
+        padding: 0 10px 0 0;
+        margin-bottom: 10px;
+        > div {
+            height: 100%;
+            border: 1px solid $COLOR_GRAY;
+            display: flex;
+            flex-direction: column;
+            &:hover, &.active {
+                border-color: $COLOR_DARK_WHITE;
+                background: $COLOR_LIGHT_GRAY;
+            }
+            .title {
+                line-height: 40px;
+                text-align: center;
+                background: $COLOR_NAV_BORDER;
+                color: $COLOR_WHITE;
+                margin-bottom: 10px;
+            }
+            .no-account {
+                margin-bottom: 20px;
+                .info {
+                    padding: 10px;
+                    font-size: 0.9rem;
+                    height: 100px;
+                    line-height: 1.5rem;
+                    a:before {
+                        content: ' ';
+                        display: block;
+                        margin-top: 5px;
+                    }
+                }
+            }
+            .loading {
+                margin: 25px 0;
+            }
+            .acc-info div {
+                font-size: 0.9rem;
+                padding: 0 0 0 25px;
+                line-height: 1.6em;
+                word-break: break-all;
+            }
+            .acc-actions {
+                margin-top: auto;
+                padding: 10px;
+                border-top: 1px solid $COLOR_GRAY;
+                font-size: 0.9rem;
+                a {
+                    display: inline-block;
+                    width: 64px;
+                    text-align: center;
+                    margin: 0 10px;
+                    img {
+                        height: 32px;
+                        margin-bottom: 7px;
+                    }
+                }
+            }
+        }
+    }
+    .fst-container {
+        width: 100%;
+        padding-right: 10px;
+        #fst_action {
+            border: 1px solid $COLOR_LIGHT_GRAY;
+            margin: 0;
+            padding-bottom: 30px;
+            position: relative;
+            legend {
+                background: $COLOR_NAV_BORDER;
+                color: $COLOR_WHITE;
+                padding: 8px 10px;
+                margin-left: 15px;
+            }
+            .close {
+                cursor: pointer;
+                position: absolute;
+                top: 16px;
+                right: -1px;
+                z-index: 1;
+                width: 32px;
+                height: 32px;
+                background: $COLOR_NAV_BORDER svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="14" height="14"><path fill="#{rgba($COLOR_WHITE, 1)}" d="M50,5,45,0,25,20,5,0,0,5,20,25,0,45l5,5L25,30,45,50l5-5L30,25Z"/></svg>') no-repeat center;
+                &:hover {
+                    background-color: $COLOR_DARK_BLUE;
+                }
+            }
+            button .barspinner.white {
+                height: 13px;
+                margin: 3px;
+            }
+            .error-msg {
+                text-align: left;
+                margin-top: 3px;
+            }
+        }
+    }
+    .form-row {
+        padding: 10px 0;
+        label {
+            display: block;
+            text-align: right;
+        }
+    }
+}

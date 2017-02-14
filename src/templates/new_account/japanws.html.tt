@@ -470,11 +470,11 @@
                                   <br />
                                   <ul>
                                     <li>
-                                      <a href="[% request.url_for('/terms-and-conditions-jp?selected_tab=risk-warning-tab') %]" target="_blank">
+                                      <a href="[% request.url_for('/terms-and-conditions-jp') %]?#account-warning" target="_blank">
                                         [% l('General Risk Warning') %]</a>
                                       </li>
                                       <li>
-                                        <a href="[% request.url_for('/terms-and-conditions-jp?selected_tab=risk-tab') %]" target="_blank">
+                                        <a href="[% request.url_for('/terms-and-conditions-jp') %]?#account-risk" target="_blank">
                                           [% l('Risks for binary option trading') %]
                                         </a>
                                       </li>
@@ -489,12 +489,12 @@
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="[% request.url_for('/terms-and-conditions-jp?selected_tab=privacy-tab') %]" target="_blank">
+                                        <a href="[% request.url_for('/terms-and-conditions-jp') %]?#account-privacy" target="_blank">
                                           [% l('Privacy Policy') %]
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="[% request.url_for('/terms-and-conditions-jp?selected_tab=anti-social-connection-tab') %]" target="_blank">
+                                        <a href="[% request.url_for('/terms-and-conditions-jp') %]?#account-antisocial" target="_blank">
                                           [% l('No connection with Antisocial forces') %]
                                         </a>
                                       </li>

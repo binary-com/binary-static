@@ -179,7 +179,7 @@ const KnowledgeTest = (function() {
             },
         });
 
-        BinarySocket.send({ get_settings: 1, passthrough: { key: 'knowledgetest' } });
+        BinarySocket.send({ get_settings: 1, passthrough: { key: 'knowledgetest' } }, true);
     };
 
     return {
