@@ -23,7 +23,7 @@ const MBContract = (function() {
         const req = {
             contracts_for: (underlying || MBDefaults.get('underlying')),
             currency     : getCurrency(),
-            region       : 'japan',
+            product_type : 'multi_barrier',
         };
         if (!underlying) {
             req.passthrough = { action: 'no-proposal' };
@@ -330,14 +330,13 @@ const MBContract = (function() {
             currency = (format_currency(Client.get('currency')) || format_currency(document.getElementById('currency').value) || '¥'),
             payout = Number(MBDefaults.get('payout') * (japanese_client() ? 1000 : 1)).toLocaleString(),
             display_name = MBSymbols.getName(MBDefaults.get('underlying')),
-            date_expiry = PeriodText(contracts[0].trading_period).replace(/\s\(.*\)/, ''),
-            preposition = getLanguage() === 'JA' ? '{JAPAN ONLY}' : '';
+            date_expiry = PeriodText(contracts[0].trading_period).replace(/\s\(.*\)/, '');
         contracts.forEach(function(c) {
             const contract_type = c.contract_type,
                 template = getTemplate(contract_type),
                 $wrapper = $($desc_wrappers[template.order]);
-            $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(localize(preposition + template.name));
-            $wrapper.find('.descr').html(localize(preposition + template.description, [currency, payout, display_name, date_expiry]));
+            $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(localize(template.name));
+            $wrapper.find('.descr').html(localize(template.description, [currency, payout, display_name, date_expiry]));
         });
     };
 

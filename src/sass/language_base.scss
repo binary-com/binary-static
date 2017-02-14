@@ -7,7 +7,7 @@ body {
     .all-hide {
         display: none !important;
     }
-    ul.checked li {
+    ul.checked > li {
         @include BIDIR_VALUE(background-position, left top, right top);
         @include BIDIR_PROP(padding-left, padding-right, 35px);
     }
@@ -15,6 +15,7 @@ body {
         background-repeat: no-repeat;
         width: 140px;
         height: 40px;
+        display: inline-block;
     }
 }
 

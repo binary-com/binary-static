@@ -1,15 +1,17 @@
-const MBContract         = require('./mb_contract').MBContract;
-const MBDefaults         = require('./mb_defaults').MBDefaults;
-const MBNotifications    = require('./mb_notifications').MBNotifications;
-const MBPrice            = require('./mb_price').MBPrice;
-const MBSymbols          = require('./mb_symbols').MBSymbols;
-const MBTick             = require('./mb_tick').MBTick;
-const TradingAnalysis    = require('../trade/analysis').TradingAnalysis;
-const japanese_client    = require('../../common_functions/country_base').japanese_client;
-const displayUnderlyings = require('../trade/common').displayUnderlyings;
-const showFormOverlay    = require('../trade/common').showFormOverlay;
-const processForgetTicks = require('../trade/process').processForgetTicks;
-const localize           = require('../../base/localize').localize;
+const MBContract                = require('./mb_contract').MBContract;
+const MBDefaults                = require('./mb_defaults').MBDefaults;
+const MBNotifications           = require('./mb_notifications').MBNotifications;
+const MBPrice                   = require('./mb_price').MBPrice;
+const MBSymbols                 = require('./mb_symbols').MBSymbols;
+const MBTick                    = require('./mb_tick').MBTick;
+const TradingAnalysis           = require('../trade/analysis').TradingAnalysis;
+const japanese_client           = require('../../common_functions/country_base').japanese_client;
+const displayUnderlyings        = require('../trade/common').displayUnderlyings;
+const generateUnderlyingOptions = require('../trade/common').generateUnderlyingOptions;
+const showFormOverlay           = require('../trade/common').showFormOverlay;
+const processForgetTicks        = require('../trade/process').processForgetTicks;
+const localize                  = require('../../base/localize').localize;
+const Client                    = require('../../base/client').Client;
 
 const MBProcess = (function() {
     let market_status = '',
@@ -29,13 +31,14 @@ const MBProcess = (function() {
         // populate the Symbols object
         MBSymbols.details(data);
 
-        const market       = 'major_pairs',
-            symbols_list = MBSymbols.underlyings()[market],
-            update_page  = MBSymbols.need_page_update();
-        let symbol       = MBDefaults.get('underlying');
+        const is_show_all  = Client.is_logged_in() && !japanese_client();
+        const symbols_list = is_show_all ? MBSymbols.getAllSymbols() : MBSymbols.underlyings().major_pairs;
+        const update_page  = MBSymbols.need_page_update();
+        let symbol = MBDefaults.get('underlying');
 
         if (update_page && (!symbol || !symbols_list[symbol])) {
             symbol = undefined;
+            MBDefaults.remove('underlying');
         }
         // check if all symbols are inactive
         let is_market_closed = true;
@@ -49,7 +52,8 @@ const MBProcess = (function() {
             handleMarketClosed();
         } else {
             handleMarketOpen();
-            displayUnderlyings('underlying', symbols_list, symbol);
+            if (is_show_all) populateUnderlyingGroups(symbol);
+            else displayUnderlyings('underlying', symbols_list, symbol);
 
             if (symbol && !symbols_list[symbol].is_active) {
                 MBNotifications.show({ text: localize('This symbol is not active. Please try another symbol.'), uid: 'SYMBOL_INACTIVE' });
@@ -57,6 +61,22 @@ const MBProcess = (function() {
                 MBProcess.processMarketUnderlying();
             }
         }
+    };
+
+    const populateUnderlyingGroups = function(selected) {
+        const $underlyings = $('#underlying');
+        const allSymbols = MBSymbols.underlyings();
+        const markets    = MBSymbols.markets();
+
+        $underlyings.empty();
+
+        Object.keys(markets)
+            .sort((a, b) => markets[a].name.localeCompare(markets[b].name))
+            .forEach((market) => {
+                $underlyings.append(
+                    $('<optgroup/>', { label: markets[market].name })
+                        .append($(generateUnderlyingOptions(allSymbols[market], selected))));
+            });
     };
 
     const handleMarketClosed = function() {

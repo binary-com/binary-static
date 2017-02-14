@@ -82,18 +82,30 @@ const MBTradingEvents = (function () {
                     /['%]/.test(char)) { // similarity to arrows key code in some browsers
                 isOK = false;
             }
-            if (japanese_client()) {
-                const result = payoutElement.value.substring(0, ev.target.selectionStart) + char +
-                                payoutElement.value.substring(ev.target.selectionEnd);
-                if (char === '.' || result[0] === '0' || +result < 1 || +result > 100) {
-                    isOK = false;
-                }
+            const result = payoutElement.value.substring(0, ev.target.selectionStart) + char +
+                payoutElement.value.substring(ev.target.selectionEnd);
+
+            if ((japanese_client() && char === '.') || result[0] === '0' || !validatePayout(+result)) {
+                isOK = false;
             }
 
             if (!isOK) {
                 ev.returnValue = false;
                 ev.preventDefault();
             }
+        };
+
+        const validatePayout = function(payoutAmount) {
+            let isOK = true;
+            const contract = MBContract.getCurrentContracts();
+            const maxAmount = (Array.isArray(contract) && contract[0].expiry_type !== 'intraday') ? 20000 : 5000;
+            if (!payoutAmount || isNaN(payoutAmount) ||
+                (japanese_client() && (payoutAmount < 1 || payoutAmount > 100)) ||
+                (payoutAmount <= 0 || payoutAmount > maxAmount)) {
+                isOK = false;
+            }
+
+            return isOK;
         };
 
         const payoutElement = document.getElementById('payout');
@@ -106,23 +118,26 @@ const MBTradingEvents = (function () {
             payoutElement.addEventListener('keypress', payoutOnKeypress);
             payoutElement.addEventListener('input', debounce(function(e) {
                 let payout = e.target.value;
-                if (japanese_client()) {
-                    const $payoutElement = $('#payout'),
-                        $tableElement = $('.japan-table');
-                    if (payout < 1 || payout > 100 || isNaN(payout)) {
-                        $payoutElement.addClass('error-field');
-                        $tableElement.addClass('invisible');
-                        return false;
-                    }
-                    $payoutElement.removeClass('error-field');
-                    $tableElement.removeClass('invisible');
-                } else {
+
+                if (!japanese_client()) {
                     payout = payout.replace(/[^0-9.]/g, '');
                     if (isStandardFloat(payout)) {
                         payout = parseFloat(payout).toFixed(2);
                     }
                     e.target.value = payout;
                 }
+
+                const $payoutElement = $('#payout');
+                const $tableElement = $('.japan-table');
+                if (!validatePayout(payout)) {
+                    $payoutElement.addClass('error-field');
+                    $tableElement.addClass('invisible');
+                    return false;
+                }
+                // else
+                $payoutElement.removeClass('error-field');
+                $tableElement.removeClass('invisible');
+
                 MBDefaults.set('payout', payout);
                 MBProcess.processPriceRequest();
                 MBContract.displayDescriptions();

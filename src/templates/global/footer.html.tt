@@ -101,13 +101,13 @@
                                </li>
                                <li class='ja-hide'>
                                    <a class="pjaxload"
-                                      href="[% request.url_for('/terms-and-conditions') %]#privacy-tab"[% IF
+                                      href="[% request.url_for('/terms-and-conditions') %]?#privacy"[% IF
                                    target
                                    %] target="[% target %]"[% END %]>[% l('Security and Privacy') %]</a>
                                </li>
                                <li class='hidden ja-show-block'>
                                    <a class="pjaxload"
-                                      href="[% request.url_for('/terms-and-conditions-jp?selected_tab=privacy-tab') %]"[% IF
+                                      href="[% request.url_for('/terms-and-conditions-jp') %]?#account-privacy"[% IF
                                    target
                                    %] target="[% target %]"[% END %]>[% l('Security and Privacy') %]</a>
                                </li>
@@ -115,7 +115,7 @@
                                    <a class="pjaxload" href="[% request.url_for('responsible-trading') %]">[% l('Responsible Trading') %]</a>
                                </li>
                                <li class="ja-hide">
-                                   <a class="pjaxload" href="[% request.url_for('/terms-and-conditions?selected_tab=complaints-disputes-tac-tab') %]">[% l('Complaints') %]</a>
+                                   <a class="pjaxload" href="[% request.url_for('/terms-and-conditions?section=complaints-disputes') %]#legal-binary">[% l('Complaints') %]</a>
                                </li>
                            </ul>
                        </div>

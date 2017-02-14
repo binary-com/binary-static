@@ -1,0 +1,118 @@
+<div id="volatility-specs" class="gr-row">
+    <div class="gr-12 gr-padding-10">
+        <h1>[% l('Contract Specifications (CFD) - Volatility Indices') %]</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>[% l('Symbol') %]</th>
+                        <th>[% l('Volume 1.0 (Trade Size)') %]</th>
+                        <th>[% l('Minimum Volume (Trade Size)') %]</th>
+                        <th>[% l('Maximum Volume (Trade Size)') %]</th>
+                        <th>[% l('Minimum Volume Increment') %]</th>
+                        <th>[% l('Pip Size') %]</th>
+                        <th>[% l('Minimum Spread') %]</th>
+                        <th>[% l('Margin') %]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>[% l('Volatility 100 Index') %]</th>
+                        <td>[% l('USD 1 per point') %]</td>
+                        <td>0.01</td>
+                        <td>100</td>
+                        <td>0.01</td>
+                        <td>0.01</td>
+                        <td>0.025%</td>
+                        <td>0.2%</td>
+                    </tr>
+                    <tr>
+                        <th>[% l('Volatility 75 Index') %]</th>
+                        <td>[% l('USD 1 per point') %]</td>
+                        <td>0.01</td>
+                        <td>100</td>
+                        <td>0.01</td>
+                        <td>0.0001</td>
+                        <td>0.018%</td>
+                        <td>0.2%</td>
+                    </tr>
+                    <tr>
+                        <th>[% l('Volatility 50 Index') %]</th>
+                        <td>[% l('USD 1 per point') %]</td>
+                        <td>0.5</td>
+                        <td>100</td>
+                        <td>0.01</td>
+                        <td>0.0001</td>
+                        <td>0.012%</td>
+                        <td>0.2%</td>
+                    </tr>
+                    <tr>
+                        <th>[% l('Volatility 25 Index') %]</th>
+                        <td>[% l('USD 1 per point') %]</td>
+                        <td>0.5</td>
+                        <td>100</td>
+                        <td>0.01</td>
+                        <td>0.001</td>
+                        <td>0.006%</td>
+                        <td>0.2%</td>
+                    </tr>
+                    <tr>
+                        <th>[% l('Volatility 10 Index') %]</th>
+                        <td>[% l('USD 1 per point') %]</td>
+                        <td>0.1</td>
+                        <td>100</td>
+                        <td>0.01</td>
+                        <td>0.001</td>
+                        <td>0.025%</td>
+                        <td>0.2%</td>
+                    </tr>
+                    <tr>
+                        <th data-balloon="[% l('High frequency (2 ticks per second)') %]">[% l('HF Volatility 100 Index') %]</th>
+                        <td>[% l('USD 1 per point') %]</td>
+                        <td>0.01</td>
+                        <td>100</td>
+                        <td>0.01</td>
+                        <td>0.001</td>
+                        <td>0.012%</td>
+                        <td>0.2%</td>
+                    </tr>
+                    <tr>
+                        <th data-balloon="[% l('High frequency (2 ticks per second)') %]">[% l('HF Volatility 50 Index') %]</th>
+                        <td>[% l('USD 1 per point') %]</td>
+                        <td>0.5</td>
+                        <td>100</td>
+                        <td>0.01</td>
+                        <td>0.001</td>
+                        <td>0.012%</td>
+                        <td>0.2%</td>
+                    </tr>
+                    <tr>
+                        <th data-balloon="[% l('High frequency (2 ticks per second)') %]">[% l('HF Volatility 10 Index') %]</th>
+                        <td>[% l('USD 1 per point') %]</td>
+                        <td>0.1</td>
+                        <td>100</td>
+                        <td>0.01</td>
+                        <td>0.001</td>
+                        <td>0.005%</td>
+                        <td>0.2%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="gr-12 gr-padding-10">
+        <h2>[% l('How to read the table above') %]</h2>
+        <p>[% l('CFD (Contract for Difference): CFD is an instrument that allows you to profit by speculating on the rise or fall of an instrument. The profit/loss is estimated as a function of the difference in the buy/sell prices of the underlying instrument.') %]</p>
+        <p>[% l('For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:') %]</p>
+        <div class="gr-12 gr-padding-10 fill-bg-color">
+            <div class="gr-prefix-1">
+                <p>[% l('(Sell Price - Buy Price) x Volume x Price Per Point = Profit') %]</p>
+                <p>[% l('I.e. (20010 - 20000) x 1 x 1 = USD 10') %]</p>
+            </div>
+        </div>
+        <p>[% l('Each time you open a position on a Volatility Index symbol, you can start with a minimum volume transaction of 0.01 (trade size), which translates to USD 0.01 per point movement of the index.') %]</p>
+        <p>[% l('Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit.') %]</p>
+        <p>[% l('To learn more, read our <a href="[_1]">Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices.', request.url_for('/metatrader/margin-policy')) %]</p>
+    </div>
+</div>
