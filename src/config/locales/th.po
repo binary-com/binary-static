@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-11 17:10+0000\n"
+"PO-Revision-Date: 2017-02-14 20:17+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -35,45 +35,61 @@ msgstr "\"Third Party Provider(s)\" หมายถึง กิจการข�
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 ถูกเพิ่มแล้วที่บัญชีเสมือนของท่าน %3"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
 msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
+msgstr "%1 %2 วางเงิน หาก %3 ไม่ผ่านราคาและปิดที่ %4"
 
 #, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+msgstr ""
+"%1 %2 วางเงิน หาก %3 ends on or between low and high values of Exercise "
+"price at close on %4.\n"
+"%1 %2 วางเงิน หาก %3 ไม่ผ่านราคาและปิดที่ %4"
 
 #, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+msgstr ""
+"%1 %2 วางเงิน หาก %3 ends outside low and high values of Exercise price at "
+"close on %4.\n"
+"%1 %2 วางเงิน หาก %3 ไม่ผ่านราคาและปิดที่ %4"
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+msgstr ""
+"{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of "
+"Exercise price through close on %4.\n"
+"%1 %2 วางเงิน หาก %3 ไม่ผ่านราคาและปิดที่ %4"
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+msgstr ""
+"{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise "
+"price at close  on %4.\n"
+"%1 %2 วางเงิน หาก %3 ไม่ผ่านราคาและปิดที่ %4"
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
 msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+msgstr ""
+"{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at "
+"close on %4.\n"
+"%1 %2 วางเงิน หาก %3 ไม่ผ่านราคาและปิดที่ %4"
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+msgstr ""
+"{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise "
+"price through close on %4.\n"
+"%1 %2 วางเงิน หาก %3 ไม่ผ่านราคาและปิดที่ %4"
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
+msgstr ""
+"{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4.\n"
+"%1 %2 วางเงิน หาก %3 ไม่ผ่านราคาและปิดที่ %4"
 
 msgid "%1 (Toll Free)"
 msgstr "%1 (ไม่มีค่าธรรมเนียม)"
@@ -615,6 +631,8 @@ msgstr "<strong>ซื้อขายด้วยยุทธวิธีขอ�
 
 msgid "<strong>Transparent risk and potential reward</strong> - Know how much you will win or lose before you purchase the contract"
 msgstr ""
+"<strong>ความเสี่ยงที่โปร่งใสและรางวัลที่คุ้มค่า</strong> - รู้ได้ว่า "
+"ท่านจะชนะหรือแพ้ด้วยมูลค่าเท่าใด ก่อนที่ท่านจะซื้อสัญญาใดๆ"
 
 msgid "<strong>Two-way pricing</strong> - Receive quotes for a trade and counter-trade, so you always get unbiased, transparent rates from %1"
 msgstr "<strong>ราคาสองทาง</strong> - ตั้งราคาซื้อขาย และ เทรดผ่านตัวแทน ไม่ว่าช่องทางใด ท่านจะได้เห็นข้อมูลเดียวกัน ไม่ปกปิด ราคาโปร่งใส ตรงไปตรงมา จาก %1"
@@ -1589,7 +1607,7 @@ msgid "Choose a password"
 msgstr "กำหนด รหัสผ่าน"
 
 msgid "Choose a payout and our system will calculate the stake required to purchase the contract."
-msgstr ""
+msgstr "กำหนดการชำระเงินและระบบของเราจะคำนวณจำนวนเงินที่ต้องวางเพื่อซื้อสัญญา"
 
 msgid "Choose a payout from $1 to $50,000."
 msgstr "กำหนด การชำระเงิน ตั้งแต่ 1 ถึง 50,000 เหรียญสหรัฐ"
@@ -2206,8 +2224,6 @@ msgstr "เอกสารบัญชีปฏิเสธการชำระ
 msgid "Document department processes, to enhance the marketing team's ability to execute repeated tasks efficiently and effectively"
 msgstr "บริหารจัดการกระบวนการเอกสารของแผนกเพื่อเพิ่มความสามารถของทีมการตลาดในการดำเนินการงานซ้ำๆ ให้มีประสิทธิผลอย่างมีประสิทธิภาพ"
 
-#, fuzzy
-#| msgid "does not touch"
 msgid "Does Not Touch"
 msgstr "ไม่แตะ"
 
@@ -2277,10 +2293,12 @@ msgstr "แต่ละธุรกรรมออปชั่นมีการ
 msgid "Each party to this Agreement represents and warrants to the other that it has, and will retain throughout the term of this Agreement all right, title, and authority to enter into this Agreement, to grant to the other party the rights and licences granted in this Agreement, and to perform all of its obligations under this Agreement."
 msgstr "แต่ละฝ่ายในข้อตกลงฉบับนี้ทำหน้าที่รับรองว่า จะรักษาและปฏิบัติตามข้อตกลงทุกข้อให้ถูกต้องตามสิทธิ กรรมสิทธิ์ หน้าที่ และบทบาทที่กล่าวในข้อตกลงนี้ เพื่อยินยอมให้บุคคลอื่นมีสิทธิ์และเสรีภาพตามหน้าที่ความรับผิดชอบที่ปรากฏในข้อตกลงนี้"
 
-#, fuzzy
-#| msgid "Each binary trade is for a pre-determined payout amount. You win the payout if your prediction is correct."
 msgid "Each trade comes with a pre-determined payout that you will see after adjusting each parameter. You’ll win the payout if your prediction is correct. If not, you will only lose your initial stake."
-msgstr "แต่ละการซื้อขายไบนารีเป็นการกำหนดจำนวนเงินที่ต้องถูกชำระไว้ก่อน เมื่อท่านชนะจะได้รับการชำระเงินหากการพยากรณ์ หรือ การทำนายของท่านถูกต้อง"
+msgstr ""
+"แต่ละการซื้อขายเป็นการกำหนดจำนวนเงินที่ต้องถูกชำระไว้ก่อน "
+"ซึ่งท่านสามารถปรับตัวแปรในการคำนวณมูลค่า เมื่อท่านชนะจะได้รับการชำระเงิน "
+"หากการพยากรณ์ หรือ การทำนายของท่านถูกต้อง "
+"หรือท่านจะต้องชำระเงินที่ท่านวางหากผลไม่ถูกต้อง"
 
 msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
 msgstr "ได้รับรางวัลที่เป็นตัวเงินจากปัญหาที่ท่านพบ ด้วยเงินรางวัลที่มีมูลค่าสูงถึง 1,000 เหรียญสหรัฐสำหรับปัญหาความเปราะบางด้านความปลอดภัยที่มีความเสี่ยงระดับสูง"
@@ -2357,8 +2375,6 @@ msgstr "เวลาสิ้นสุด"
 msgid "End time must be after start time."
 msgstr "เวลาสิ้นสุดต้องเป็นเวลาภายหลังเวลาเริ่มต้น"
 
-#, fuzzy
-#| msgid "ends between"
 msgid "Ends Between"
 msgstr "สิ้นสุดระหว่าง"
 
@@ -2374,8 +2390,6 @@ msgstr "สัญญา Ends In/Out จะถูกคืนมูลค่า�
 msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
 msgstr "Ends In/Out - ทำนาย หากตลาดสิ้นสุดที่ราคา ใน หรือ นอกของราคาเป้าหมาย 2 ค่าเมื่อหมดช่วงเวลา"
 
-#, fuzzy
-#| msgid "ends outside"
 msgid "Ends Outside"
 msgstr "สิ้นสุดภายนอก"
 
@@ -2871,8 +2885,6 @@ msgstr "ไปที่ <a href=\"https://login.binary.com/signup.php\">หน�
 msgid "Go with the leader"
 msgstr "ก้าวไปกับผู้นำ"
 
-#, fuzzy
-#| msgid "goes outside"
 msgid "Goes Outside"
 msgstr "ออกนอกขอบเขต"
 
@@ -2924,8 +2936,6 @@ msgstr "Barrier สูง ที่หักกลบลบกัน"
 msgid "High conversions and customer value"
 msgstr "การแปลงสภาพสูง และเป็นลูกค้าที่มีคุณค่าสูง"
 
-#, fuzzy
-#| msgid "higher"
 msgid "Higher"
 msgstr "สูงกว่า"
 
@@ -2941,10 +2951,10 @@ msgstr "สัญญา Higher/Lower จะถูกคืนมูลค่า�
 msgid "Higher/Lower trades"
 msgstr "ซื้อขายสูงกว่า/ต่ำกว่า"
 
-#, fuzzy
-#| msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
 msgid "Higher/Lower – Predict that the market will end higher or lower than a price target"
-msgstr "<strong>Higher/Lower</strong> - พยากรณ์ว่า ตลาดจะสูงกว่า หรือ ต่ำกว่า ราคาเป้าหมาย"
+msgstr ""
+"Higher/Lower - พยากรณ์ว่า ตลาดจะสิ้นสุดที่ค่าสูงกว่า หรือ ต่ำกว่า "
+"ราคาเป้าหมาย"
 
 msgid "Hone your security testing skills."
 msgstr "ขัดเกลาทักษะในการทดสอบความปลอดภัยของท่าน"
@@ -3333,7 +3343,7 @@ msgid "Indices"
 msgstr "ดัชนี"
 
 msgid "Indices - All major worldwide stock indices sourced from the over-the-counter market"
-msgstr ""
+msgstr "ดัชนี - ดัชนีหลักทรัพย์หลักต่างๆ ทั่วโลก"
 
 msgid "Indices trading experience"
 msgstr "ประสบการณ์การเทรดดัชนีต่างๆ"
@@ -4156,8 +4166,6 @@ msgstr "Barrier ต่ำ"
 msgid "Low barrier offset"
 msgstr "Barrier ต่ำออฟเซ็ท"
 
-#, fuzzy
-#| msgid "lower"
 msgid "Lower"
 msgstr "ต่ำกว่า"
 
@@ -5585,18 +5593,15 @@ msgstr "รอบระยะเวลาการซื้อขาย ใน�
 msgid "Session duration:"
 msgstr "รอบระยะเวลาการซื้อขาย:"
 
-#, fuzzy
-#| msgid "The barrier(s) you choose defines your position and triggers your payout."
 msgid "Set barrier(s) to define your position and trigger the payout you will receive."
-msgstr "Barrier ที่ท่านเลือกกำหนดโพซิชั่นของท่านและส่งผลต่อการชำระเงินของท่าน"
+msgstr ""
+"ตั้งค่า Barrier เพื่อกำหนดโพซิชั่นของท่านและสัมพันธ์กับเงินที่ท่านจะได้รับ"
 
 msgid "Set client deposit and loss limits"
 msgstr "การตั้งวงเงินฝากและขาดทุน"
 
-#, fuzzy
-#| msgid "You can set the length of your trade, from 10 seconds to 365 days."
 msgid "Set the length of your trade, from 10 seconds to 365 days."
-msgstr "ท่านสามารถกำหนดระยะเวลาการซื้อขายของท่าน จาก 10 วินาที ถึง 365 วัน"
+msgstr "กำหนดระยะเวลาการซื้อขายของท่าน จาก 10 วินาที ถึง 365 วัน"
 
 msgid "Set up and manage social-media advertising campaigns, effectively micro-targeting potential clients and partners"
 msgstr "เตรียมและจัดการการส่งเสริมการตลาดทางสื่อสังคม การพัฒนาศักยภาพของกลุ่มเป้าหมายขนาดเล็กที่เป็นลูกค้าและพันธมิตร"
@@ -5763,8 +5768,6 @@ msgstr "สถานะ"
 msgid "Stay informed. %1 offers daily market reports and market research, as well as frequent trading webinars."
 msgstr "เราให้ข้อมูลที่เพียงพออยู่เสมอ %1 จัดเตรียมรายงานสภาวะตลาดประจำวัน และรายงานการวิเคราะห์ตลาด เช่นเดียวกับการมีสัมมนาออนไลน์เกี่ยวกับการซื้อขาย"
 
-#, fuzzy
-#| msgid "stays between"
 msgid "Stays Between"
 msgstr "อยู่ระหว่าง"
 
@@ -5812,10 +5815,8 @@ msgstr "ระดับการระงับกำไร"
 msgid "Stop-loss"
 msgstr "ระงับขาดทุน"
 
-#, fuzzy
-#| msgid "Net profit"
 msgid "Stop-profit"
-msgstr "กำไรสุทธิ"
+msgstr "ล็อคกำไร"
 
 msgid "Stop-type"
 msgstr "ประเภทของการระงับ"
@@ -6634,8 +6635,6 @@ msgstr "Touch/No Touch - พยากรณ์ว่า ตลาดสามา
 msgid "Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "สัญญา Touch/No Touch จะถูกคืนมูลค่าที่ราคาซื้อหากช่วงราคามีน้อยกว่า 2 ช่วง ระหว่างเวลาเริ่มต้นกระทั่งเวลาสิ้นสุด"
 
-#, fuzzy
-#| msgid "touches"
 msgid "Touches"
 msgstr "แตะ"
 
@@ -6853,10 +6852,8 @@ msgstr "นอกจากที่กำหนดไว้ พวกเรา�
 msgid "Unlock Cashier"
 msgstr "ปลดล็อกแคชเชียร์"
 
-#, fuzzy
-#| msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
 msgid "Up - Predict that the market will end higher than the average price"
-msgstr "<strong>Higher/Lower</strong> - พยากรณ์ว่า ตลาดจะสูงกว่า หรือ ต่ำกว่า ราคาเป้าหมาย"
+msgstr "Up - พยากรณ์ว่า ตลาดจะสิ้นสุดด้วยค่าที่สูงกว่าราคาเฉลี่ย"
 
 msgid "Up/Down"
 msgstr "Up/Down"
@@ -7034,10 +7031,10 @@ msgstr "ในขณะนี้ พวกเราพิจารณารั�
 msgid "We are entitled under the Rules to rely upon information provided by you. You should ensure that you provide us with accurate and complete information and notify us in the event that any information supplied to us changes. You should note that if you provide us with inaccurate information, or if you fail to notify us of any changes to information previously supplied by you, this may adversely affect the quality of the services that we can provide."
 msgstr "พวกเราได้รับสิทธิ์ตามข้อกำหนดเกี่ยวกับข้อมูลที่ได้รับจากท่าน ท่านควรให้ข้อมูลที่ถูกต้องและครบถ้วน และแจ้งให้เราทราบเมื่อข้อมูลเหล่านั้นมีการเปลี่ยนแปลง และเราขอเรียนให้ท่านทราบว่า หากท่านให้ข้อมูลที่ไม่ถูกต้อง หรือ ท่านไม่ได้แจ้งให้เราทราบถึงความเปลี่ยนแปลงนั้น เหล่านี้จะมีผลต่อคุณภาพของการให้บริการที่พวกเราได้เตรียมให้ท่าน"
 
-#, fuzzy
-#| msgid "We are fully licensed in the British Isles and Malta."
 msgid "We are licensed and regulated in the British Isles, Japan, and in Malta since 2015."
-msgstr "พวกเราได้รับใบอนุญาตเต็มรูปแบบในสหราชอาณาจักร และประเทศมอลตา"
+msgstr ""
+"พวกเราได้รับใบอนุญาตเและและการรับรองการค้าตามกฎหมายในสหราชอาณาจักร ญี่ปุ่น "
+"และประเทศมอลตา ตั้งแต่ พ.ศ. 2558 (ค.ศ. 2015)"
 
 msgid "We are looking for energetic and enthusiastic individuals who love challenges, are detail-oriented and highly analytical to join our Internal Audit team."
 msgstr "พวกเราสรรหาทีมงานที่มีความคล่องแคล่ว กระตือรือล้น รักความท้าทาย ใส่ใจในระดับรายละเอียด และมีทักษะสูงในการวิเคราะห์เพื่อร่วมงานกับทีมตรวจสอบภายในของเรา"
@@ -7436,10 +7433,10 @@ msgstr "ท่านสามารถแจ้งความประสงค
 msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
 msgstr "ท่านสามารถแจ้งความประสงค์เงินเสมือนจำนวนมากกว่านี้ หากยอดคงเหลือเสมือนของท่านลงไปต่ำกว่า 1,000 เหรียญสหรัฐ"
 
-#, fuzzy
-#| msgid "You can close your trade before expiry to lock in profits."
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
-msgstr "ท่านสามารถปิดสัญญาซื้อขายของท่านก่อนวันหมดอายุเพื่อรักษากำไรของท่านไว้"
+msgstr ""
+"ท่านสามารถขายสัญญาซื้อขายของท่านก่อนวันหมดอายุเพื่อรักษากำไรของท่านที่พึงได้ "
+"หรือ เพื่อย่อภาวะขาดทุนของท่าน"
 
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
 msgstr "ท่านสามารถใช้ตัวแทนรับชำระเงินที่ได้รับอนุญาตในการดำเนินการฝากเงิน และ ถอนเงิน ตามวิธีชำระเงิน หรือ สกุลเงินท้องถิ่นที่ไม่ได้รับรองโดย %1 ซึ่งเป็นวิธีที่ง่ายกว่าในทางปฏิบัติ"
