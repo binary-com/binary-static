@@ -486,6 +486,40 @@ sub _texts {
         push @texts, localize('There was a problem accessing the server.');
         push @texts, localize('There was a problem accessing the server during purchase.');
 
+        # strings for form_validation
+        push @texts, localize('Should be a valid number');
+        push @texts, localize('Should be more than [_1]');
+        push @texts, localize('Should be less than [_1]');
+        push @texts, localize('Only letters, numbers, space, hyphen, period, and apostrophe are allowed.');
+        push @texts, localize('Only letters, space, hyphen, period, and apostrophe are allowed.');
+        push @texts, localize('Only letters, numbers, and hyphen are allowed.');
+        push @texts, localize('Only numbers and spaces are allowed.');
+        push @texts, localize('Please submit a valid verification token.');
+        push @texts, localize('The two passwords that you entered do not match.');
+        push @texts, localize('[_1] and [_2] cannot be the same.');
+        push @texts, localize('You should enter [_1] characters.');
+
+        # strings for metatrader
+        push @texts, localize('To perform this action, please switch to your [_1] Real Account.');
+        push @texts, localize('To perform this action, please <a href="[_1]"> upgrade to [_2] Real Account</a>.');
+        push @texts, localize('Congratulations! Your [_1] Account has been created.');
+        push @texts, localize('The main password of account number [_1] has been changed.');
+        push @texts, localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]');
+        push @texts, localize('[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]');
+        push @texts, localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.');
+        push @texts, localize('Sorry, this feature is not available.');
+        push @texts, localize('Main password');
+        push @texts, localize('Investor password');
+        push @texts, localize('Current password');
+        push @texts, localize('New password');
+        push @texts, localize('Demo');
+        push @texts, localize('Real Cent');
+        push @texts, localize('Real Standard');
+        push @texts, localize('Real STP');
+        push @texts, localize('Real Volatility');
+        push @texts, localize('Create Account');
+        push @texts, localize('Change Password');
+
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
     }

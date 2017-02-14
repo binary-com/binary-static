@@ -22,7 +22,15 @@ const FinancialAccOpeningUI = (function() {
         if (elementObj.residence.value === 'gb' && /^$/.test((elementObj.address_postcode.value).trim())) {
             if (selectorExists(errorObj.address_postcode)) {
                 errorObj.address_postcode.innerHTML = Content.errorMessage('req');
-                Validate.displayErrorMessage(errorObj.postcode);
+                Validate.displayErrorMessage(errorObj.address_postcode);
+            }
+            window.accountErrorCounter++;
+        }
+
+        if (!/^[\w-]{0,20}$/.test((elementObj.tax_identification_number.value).trim())) {
+            if (selectorExists(errorObj.tax_identification_number)) {
+                errorObj.tax_identification_number.innerHTML = Content.errorMessage('reg', [Content.localize().textLetters, Content.localize().textNumbers, Content.localize().textHyphen]);
+                Validate.displayErrorMessage(errorObj.tax_identification_number);
             }
             window.accountErrorCounter++;
         }

@@ -24,6 +24,9 @@ const FinancialAccOpeningData = (function() {
             req.secret_answer = elementObj.secret_answer.value;
         }
 
+        const tax_residence_val = $(elementObj.tax_residence).val();
+        req.tax_residence = typeof tax_residence_val === 'string' ? tax_residence_val : tax_residence_val.join(',');
+
         BinarySocket.send(req);
     };
 

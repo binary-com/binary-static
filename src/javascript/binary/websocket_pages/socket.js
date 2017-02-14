@@ -2,6 +2,7 @@ const getSocketURL              = require('../../config').getSocketURL;
 const getAppId                  = require('../../config').getAppId;
 const Login                     = require('../base/login').Login;
 const objectNotEmpty            = require('../base/utility').objectNotEmpty;
+const getPropertyValue          = require('../base/utility').getPropertyValue;
 const getLoginToken             = require('../common_functions/common_functions').getLoginToken;
 const displayAcctSettings       = require('../common_functions/account_opening').displayAcctSettings;
 const SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
@@ -57,10 +58,44 @@ const BinarySocketClass = function() {
         events = {},
         authorized = false,
         req_number = 0,
+        req_id     = 0,
         wrongAppId = 0;
 
-    const timeouts = {},
-        socketUrl = getSocketURL() + '?app_id=' + getAppId() + '&l=' + getLanguage();
+    const timeouts  = {};
+    const socketUrl = getSocketURL() + '?app_id=' + getAppId() + '&l=' + getLanguage();
+    const promises  = {};
+    const no_duplicate_requests = [
+        'authorize',
+        'get_settings',
+    ];
+    const waiting_list = {
+        items: {},
+        add  : (msg_type, promise_obj) => {
+            if (!waiting_list.items[msg_type]) {
+                waiting_list.items[msg_type] = [];
+            }
+            waiting_list.items[msg_type].push(promise_obj);
+        },
+        resolve: (response) => {
+            const msg_type = response.msg_type;
+            const this_promises = waiting_list.items[msg_type];
+            if (this_promises && this_promises.length) {
+                this_promises.forEach((pr) => {
+                    if (!waiting_list.another_exists(pr, msg_type)) {
+                        pr.resolve(response);
+                    }
+                });
+                waiting_list.items[msg_type] = [];
+            }
+        },
+        another_exists: (pr, msg_type) => (
+            Object.keys(waiting_list.items)
+                .some(type => (
+                    type !== msg_type &&
+                    $.inArray(pr, waiting_list.items[type]) >= 0
+                ))
+        ),
+    };
 
     const clearTimeouts = function() {
         Object.keys(timeouts).forEach(function(key) {
@@ -83,11 +118,47 @@ const BinarySocketClass = function() {
         }
     };
 
-    const send = function(data) {
-        if (isClose()) {
-            bufferedSends.push(data);
-            init(1);
-        } else if (isReady()) {
+    const wait = (...msg_types) => {
+        const promise_obj = new PromiseClass();
+        let is_resolved = true;
+        msg_types.forEach((msg_type) => {
+            const last_response = State.get(['response', msg_type]);
+            if (!last_response) {
+                if (msg_type !== 'authorize' || Client.is_logged_in()) {
+                    waiting_list.add(msg_type, promise_obj);
+                    is_resolved = false;
+                }
+            } else if (msg_types.length === 1) {
+                promise_obj.resolve(last_response);
+            }
+        });
+        if (is_resolved) {
+            promise_obj.resolve();
+        }
+        return promise_obj.promise;
+    };
+
+    const send = function(data, force_send) {
+        const promise_obj = new PromiseClass();
+
+        if (!force_send) {
+            const msg_type = no_duplicate_requests.find(c => c in data);
+            const last_response = State.get(['response', msg_type]);
+            if (last_response) {
+                promise_obj.resolve(last_response);
+                return promise_obj.promise;
+            }
+        }
+
+        if (!data.req_id) {
+            data.req_id = ++req_id;
+        }
+        promises[data.req_id] = {
+            callback : (response) => { promise_obj.resolve(response); },
+            subscribe: !!data.subscribe,
+        };
+
+        if (isReady()) {
             if (!data.hasOwnProperty('passthrough') && !data.hasOwnProperty('verify_email')) {
                 data.passthrough = {};
             }
@@ -112,7 +183,12 @@ const BinarySocketClass = function() {
             binarySocket.send(JSON.stringify(data));
         } else {
             bufferedSends.push(data);
+            if (isClose()) {
+                init(1);
+            }
         }
+
+        return promise_obj.promise;
     };
 
     const init = function (es) {
@@ -157,13 +233,16 @@ const BinarySocketClass = function() {
         binarySocket.onmessage = function(msg) {
             const response = JSON.parse(msg.data);
             if (response) {
-                if (response.hasOwnProperty('echo_req') && response.echo_req !== null && response.echo_req.hasOwnProperty('passthrough')) {
-                    const passthrough = response.echo_req.passthrough;
-                    if (passthrough.hasOwnProperty('req_number')) {
-                        clearInterval(timeouts[response.echo_req.passthrough.req_number]);
-                        delete timeouts[response.echo_req.passthrough.req_number];
-                    } else if (passthrough.hasOwnProperty('dispatch_to')) {
-                        switch (passthrough.dispatch_to) {
+                const passthrough = getPropertyValue(response, ['echo_req', 'passthrough']);
+                let dispatch_to;
+                if (passthrough) {
+                    dispatch_to = passthrough.dispatch_to;
+                    const this_req_number = passthrough.req_number;
+                    if (this_req_number) {
+                        clearInterval(timeouts[this_req_number]);
+                        delete timeouts[this_req_number];
+                    } else {
+                        switch (dispatch_to) {
                             case 'ViewPopupWS':       ViewPopupWS.dispatch(response); break;
                             case 'ViewChartWS':       Highchart.dispatch(response);   break;
                             case 'ViewTickDisplayWS': WSTickDisplay.dispatch(response); break;
@@ -171,11 +250,30 @@ const BinarySocketClass = function() {
                         }
                     }
                 }
+
                 const type = response.msg_type;
+
+                // store in State
+                if (!response.echo_req.subscribe) {
+                    State.set(['response', type], response);
+                }
+                // resolve the send promise
+                const this_req_id = response.req_id;
+                const pr = this_req_id ? promises[this_req_id] : null;
+                if (pr && typeof pr.callback === 'function') {
+                    pr.callback(response);
+                    if (!pr.subscribe) {
+                        delete promises[this_req_id];
+                    }
+                }
+                // resolve the wait promise
+                waiting_list.resolve(response);
+
+                const error_code = getPropertyValue(response, ['error', 'code']);
                 if (type === 'authorize') {
-                    if (response.hasOwnProperty('error')) {
+                    if (response.error) {
                         const isActiveTab = sessionStorage.getItem('active_tab') === '1';
-                        if (response.error.code === 'SelfExclusion' && isActiveTab) {
+                        if (error_code === 'SelfExclusion' && isActiveTab) {
                             sessionStorage.removeItem('active_tab');
                             window.alert(response.error.message);
                         }
@@ -183,9 +281,7 @@ const BinarySocketClass = function() {
                         Client.send_logout_request(isActiveTab);
                     } else if (response.authorize.loginid !== Client.get('loginid')) {
                         Client.send_logout_request(true);
-                    } else if (!(response.hasOwnProperty('echo_req') && response.echo_req.hasOwnProperty('passthrough') &&
-                        response.echo_req.passthrough.hasOwnProperty('dispatch_to') &&
-                        response.echo_req.passthrough.dispatch_to === 'cashier_password')) {
+                    } else if (dispatch_to !== 'cashier_password') {
                         authorized = true;
                         if (typeof events.onauth === 'function') {
                             events.onauth();
@@ -214,7 +310,8 @@ const BinarySocketClass = function() {
                     const landing_company = response.landing_company;
                     Client.landing_company(landing_company);
                     Header.topbar_message_visibility(landing_company);
-                    if (response.hasOwnProperty('error')) return;
+                    if (response.error) return;
+                    // Header.metatrader_menu_item_visibility(response); // to be uncommented once MetaTrader launched
                     const company = Client.get_client_landing_company();
                     if (company) {
                         Client.set('default_currency', company.legal_default_currency);
@@ -257,11 +354,11 @@ const BinarySocketClass = function() {
                     CashierJP.set_name_id();
                     CashierJP.set_email_id();
                 } else if (type === 'website_status') {
-                    if (!response.hasOwnProperty('error')) {
+                    if (!response.error) {
                         create_language_drop_down(response.website_status.supported_languages);
                         LocalStore.set('website.tnc_version', response.website_status.terms_conditions_version);
                         if (!localStorage.getItem('risk_classification')) Client.check_tnc();
-                        if (response.website_status.hasOwnProperty('clients_country')) {
+                        if (response.website_status.clients_country) {
                             localStorage.setItem('clients_country', response.website_status.clients_country);
                             if (!Login.is_login_pages()) {
                                 checkClientsCountry();
@@ -271,6 +368,7 @@ const BinarySocketClass = function() {
                 } else if (type === 'reality_check') {
                     RealityCheck.realityCheckWSHandler(response);
                 } else if (type === 'get_account_status' && response.get_account_status) {
+                    Client.set('values_set_account', 1);
                     if (response.get_account_status.risk_classification === 'high' && qualify_for_risk_classification()) {
                         send({ get_financial_assessment: 1 });
                     } else {
@@ -278,20 +376,23 @@ const BinarySocketClass = function() {
                         Client.check_tnc();
                     }
                     localStorage.setItem('risk_classification.response', response.get_account_status.risk_classification);
-
-                    sessionStorage.setItem('client_status', response.get_account_status.status);
+                    const status = response.get_account_status.status;
+                    sessionStorage.setItem('client_status', status);
+                    if (/crs_tin_information/.test(status)) {
+                        Client.set('has_tax_information', 1);
+                    } else if (Client.should_redirect_tax()) {
+                        return;
+                    }
                     page.show_authenticate_message();
 
-                    if (response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.hasOwnProperty('dispatch_to')) {
-                        if (response.echo_req.passthrough.dispatch_to === 'ForwardWS') {
-                            BinarySocket.send({ cashier_password: '1' });
-                        } else if (response.echo_req.passthrough.dispatch_to === 'Cashier') {
-                            Cashier.check_locked();
-                        } else if (response.echo_req.passthrough.dispatch_to === 'PaymentAgentWithdrawWS') {
-                            PaymentAgentWithdrawWS.lock_withdrawal(Client.status_detected('withdrawal_locked, cashier_locked', 'any') ? 'locked' : 'unlocked');
-                        }
+                    if (dispatch_to === 'ForwardWS') {
+                        BinarySocket.send({ cashier_password: '1' });
+                    } else if (dispatch_to === 'Cashier') {
+                        Cashier.check_locked();
+                    } else if (dispatch_to === 'PaymentAgentWithdrawWS') {
+                        PaymentAgentWithdrawWS.lock_withdrawal(Client.status_detected('withdrawal_locked, cashier_locked', 'any') ? 'locked' : 'unlocked');
                     }
-                } else if (type === 'get_financial_assessment' && !response.hasOwnProperty('error')) {
+                } else if (type === 'get_financial_assessment' && !response.error) {
                     if (!objectNotEmpty(response.get_financial_assessment)) {
                         if (qualify_for_risk_classification() && localStorage.getItem('risk_classification.response') === 'high') {
                             localStorage.setItem('risk_classification', 'high');
@@ -303,28 +404,33 @@ const BinarySocketClass = function() {
                         Client.check_tnc();
                     }
                 }
-                if (response.hasOwnProperty('error')) {
-                    if (response.error && response.error.code) {
-                        if (response.error.code && (response.error.code === 'WrongResponse' || response.error.code === 'OutputValidationFailed')) {
-                            $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (response.error.code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.')) + '</p></div>');
-                        } else if (response.error.code === 'RateLimit' && !/jp_trading/i.test(window.location.pathname)) {
+
+                switch (error_code) {
+                    case 'WrongResponse':
+                    case 'OutputValidationFailed':
+                        $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (error_code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.')) + '</p></div>');
+                        break;
+                    case 'RateLimit':
+                        if (!State.get('is_mb_trading')) {
                             $('#ratelimit-error-message')
-                            .css('display', 'block')
-                            .on('click', '#ratelimit-refresh-link', function () {
-                                window.location.reload();
-                            });
-                        } else if (response.error.code === 'InvalidToken' &&
-                          type !== 'reset_password' &&
-                          type !== 'new_account_virtual' &&
-                          type !== 'paymentagent_withdraw' &&
-                          type !== 'cashier') {
-                            Client.send_logout_request();
-                        } else if (response.error.code === 'InvalidAppID') {
-                            wrongAppId = getAppId();
-                            window.alert(response.error.message);
+                                .css('display', 'block')
+                                .on('click', '#ratelimit-refresh-link', function () {
+                                    window.location.reload();
+                                });
                         }
-                    }
+                        break;
+                    case 'InvalidToken':
+                        if (!/^(reset_password|new_account_virtual|paymentagent_withdraw|cashier)$/.test(type)) {
+                            Client.send_logout_request();
+                        }
+                        break;
+                    case 'InvalidAppID':
+                        wrongAppId = getAppId();
+                        window.alert(response.error.message);
+                        break;
+                    // no default
                 }
+
                 if (typeof events.onmessage === 'function') {
                     events.onmessage(msg);
                 }
@@ -337,8 +443,8 @@ const BinarySocketClass = function() {
 
             if (!manualClosed && wrongAppId !== getAppId()) {
                 const toCall = State.get('is_trading')      ? TradePage.onDisconnect      :
-                             State.get('is_beta_trading') ? TradePage_Beta.onDisconnect :
-                             State.get('is_mb_trading')   ? MBTradePage.onDisconnect    : '';
+                               State.get('is_beta_trading') ? TradePage_Beta.onDisconnect :
+                               State.get('is_mb_trading')   ? MBTradePage.onDisconnect    : '';
                 if (toCall) {
                     Notifications.show({ text: localize('Connection error: Please check your internet connection.'), uid: 'CONNECTION_ERROR', dismissible: true });
                     timeouts.error = setTimeout(function() {
@@ -375,6 +481,7 @@ const BinarySocketClass = function() {
 
     return {
         init         : init,
+        wait         : wait,
         send         : send,
         close        : close,
         socket       : function () { return binarySocket; },
@@ -382,6 +489,15 @@ const BinarySocketClass = function() {
         clearTimeouts: clearTimeouts,
     };
 };
+
+class PromiseClass {
+    constructor() {
+        this.promise = new Promise((resolve, reject) => {
+            this.reject = reject;
+            this.resolve = resolve;
+        });
+    }
+}
 
 const BinarySocket = new BinarySocketClass();
 
