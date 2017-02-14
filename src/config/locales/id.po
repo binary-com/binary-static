@@ -7,9 +7,10 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-13 07:09+0000\n"
+"PO-Revision-Date: 2017-02-14 07:16+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
-"Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
+"Language-Team: Indonesian "
+"<https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,45 +36,39 @@ msgstr "\"Provider Pihak Ketiga\" adalah pihak ketiga (bukan-afiliasi) yang memb
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 telah dikreditkan kedalam akun uang virtual Anda %3"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
 msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
+msgstr "Hasil %1 %2 jika %3 tidak menyentuh harga Kesepakatan hingga %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+msgstr ""
+"Hasil %1 %2 jika %3 berakhir pada atau antara nilai rendah dan tinggi harga "
+"Kesepakatan pada %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+msgstr ""
+"Hasil %1 %2 jika %3 berakhir diluar nilai rendah dan tinggi harga "
+"Kesepakatan pada %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+msgstr ""
+"Hasil %1 %2 jika %3 berakhir diluar nilai rendah dan tinggi harga "
+"Kesepakatan hingga %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+msgstr ""
+"Hasil %1 %2 jika %3 pasti lebih tinggi atau sama dengan harga Kesepakatan "
+"pada %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
 msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+msgstr "Hasil %1 %2 jika %3 pasti lebih rendah dari harga Kesepakatan pada %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+msgstr ""
+"Hasil %1 %2 jika %3 tetap diantara nilai rendah dan tinggi harga Kesepakatan "
+"hingga %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
+msgstr "Hasil %1 %2 jika %3 menyentuh harga Kesepakatan hingga %4."
 
 msgid "%1 (Toll Free)"
 msgstr "%1 (Bebas Pulsa)"
@@ -556,10 +551,10 @@ msgstr "<strong>Aliran pendapatan tambahan:</strong> Anda akan memiliki potensi 
 msgid "<strong>Flexible</strong> - Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy"
 msgstr "<strong>Fleksibel</strong> - Pilih dari satu juta lebih kemungkinan variasi trading kapan saja, dan sesuaikan kontrak Anda pada strategi pilihan Anda"
 
-#, fuzzy
-#| msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
 msgid "<strong>Higher/Lower</strong> - Predict the market ending higher or lower than a price target."
-msgstr "<strong>Higher/Lower</strong> - analisa pasar akan berakhir lebih tinggi atau lebih rendah dari target harga."
+msgstr ""
+"<strong>Higher/Lower</strong> - Menganalisa pasar akan berakhir lebih tinggi "
+"atau lebih rendah dari harga target."
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>SANGGAHAN PENTING</strong> - %1 tidak berafiliasi dengan Agen Pembayaran manapun. Setiap Agen Pembayaran beroperasi sendiri dan %1 tidak bertanggungjawab atas risiko penggunaannya. PELANGGAN BERURUSAN DENGAN AGEN PEMBAYARAN ATAS RISIKO SENDIRI. Pelanggan disarankan untuk mengecek kredibilitas dan eksistensi Agen Pembayaran bersangkutan sebelum bertransaksi dengan mereka."
@@ -567,86 +562,94 @@ msgstr "<strong>SANGGAHAN PENTING</strong> - %1 tidak berafiliasi dengan Agen Pe
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the payment agents listed above. Each payment agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of payment agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and payment agents."
 msgstr "<strong>SANGGAHAN PENTING</strong> - %1 tidak berafiliasi dengan agen pembayaran manapun. Setiap agen pembayaran beroperasi sendiri dan %1 tidak bertanggungjawab atas risiko penggunaannya. PELANGGAN BERURUSAN DENGAN AGEN PEMBAYARAN ATAS RISIKO SENDIRI. Pelanggan disarankan untuk mengecek kredibilitas dan eksistensi agen pembayaran bersangkutan sebelum bertransaksi dengan mereka. %1 dengan apapun alasan tidak bertanggungjawab kepada transaksi yang dilakukan antara pelanggan dengan agen pembayaran."
 
-#, fuzzy
-#| msgid "<strong>In/Out</strong> - where you can profit from the market staying inside, or going outside, two price targets."
 msgid "<strong>In/Out</strong> - Predict the market staying inside or going outside two price targets."
-msgstr "<strong>In/Out</strong> - keuntungan dari pasar yang tetap bergerak di dalam atau bergerak ke luar dua target harga."
+msgstr ""
+"<strong>In/Out</strong> - Menganalisa pasar akan tetap berada di dalam atau "
+"keluar dari dua harga target."
 
-#, fuzzy
-#| msgid "<strong>Instant access</strong> - open an account in minutes."
 msgid "<strong>Instant access</strong> - Open an account and start trading in minutes. Deposits and withdrawals are also available 24/7"
-msgstr "<strong>Akses langsung</strong> - daftar akun dalam hitungan menit."
+msgstr ""
+"<strong>Akses instan</strong> - Mendaftar akun dan mulai trading hanya dalam "
+"beberapa menit. Deposit dan penarikan tersedia 24/7"
 
 msgid "<strong>Long-term partnership:</strong> Your partnership with %1 could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide."
 msgstr "<strong>Kemitraan jangka panjang:</strong> Kemitraan Anda dengan %1 dapat menjadi sarana untuk mempromosikan produk atau jasa GRATIS kepada 1,000,000+ pelanggan yang terdaftar, di seluruh dunia."
 
-#, fuzzy
-#| msgid "<strong>Low minimum stakes</strong> - start trading with as little as $5."
 msgid "<strong>Low minimum stakes</strong> - Deposit as little as USD 5 to start trading"
-msgstr "<strong>Modal minimal rendah</strong> - mulai trading dari serendah $5."
+msgstr ""
+"<strong>Modal minimal rendah</strong> - Deposit dari USD 5 untuk memulai "
+"trading"
 
 msgid "<strong>Other Risks</strong>: There are other risks that relate to trading investment products and trading foreign currencies that cannot be described in detail in this document. Generally, however, securities, options and currency transactions involve exposure to a combination of the following risk factors: market risk, credit risk, settlement risk, liquidity risk, operational risk and legal risk. For example, there can be serious market disruptions if economic or political or other unforeseen events locally or overseas affect the market. In addition to these types of risk there may be other factors such as accounting and tax treatment issues that you should consider."
 msgstr "<strong>Risiko Lainnya</strong>: Terdapat risiko lain yang berhubungan dengan trading produk investasi dan trading mata uang asing yang tidak dapat dijelaskan secara rinci dalam dokumen ini. Umumnya, bagaimanapun, sekuritas, pilihan dan transaksi mata uang melibatkan paparan kombinasi risiko dari faktor-faktor sebagai berikut: risiko pasar, risiko kredit, risiko penyelesaian, risiko likuiditas, risiko operasional dan risiko hukum. Misalnya, bisa ada gangguan pasar serius jika kejadian tak terduga ekonomi atau politik atau lainnya secara lokal atau luar negeri mempengaruhi pasar. Selain jenis risiko tersebut mungkin ada faktor-faktor lain seperti masalah akuntansi dan perlakuan pajak yang harus Anda pertimbangkan."
 
-#, fuzzy
-#| msgid "<strong>Patented technology</strong> - %1 is the industry pioneer and holds patented pricing technology."
 msgid "<strong>Patented technology</strong> - Trade with the industry pioneer and holder of a patented pricing technology"
-msgstr "<strong>Teknologi yang dipatenkan</strong> - %1 adalah pelopor industri dan memiliki teknologi harga yang telah dipatenkan."
+msgstr ""
+"<strong>Teknologi yang dipatenkan</strong> - Bertrading pada pelopor "
+"industri dan pemegang teknologi harga yang dipatenkan"
 
 msgid "<strong>Preferences:</strong>"
 msgstr "<strong>Preferensi:</strong>"
 
 msgid "<strong>Protect your profits</strong> - Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
 msgstr ""
+"<strong>Lindungi keuntungan Anda</strong> - Jual kontrak jangka panjang Anda "
+"sebelum berakhir untuk melindungi keuntungan atau untuk mengurangkan risiko "
+"kerugian"
 
 msgid "<strong>Requirements:</strong>"
 msgstr "<strong>Persyaratan:</strong>"
 
-#, fuzzy
-#| msgid "<strong>Rise/Fall</strong> - predict if the market will rise or fall from its current level."
 msgid "<strong>Rise/Fall</strong> - Predict the market rising or falling from its current level."
-msgstr "<strong>Rise/Fall</strong> - analisa pasar akan naik atau turun dari level terkini."
+msgstr ""
+"<strong>Rise/Fall</strong> - Menganalisa pasar akan naik atau turun dari "
+"level terkininya."
 
-#, fuzzy
-#| msgid "<strong>Scalable trading</strong> - win the same proportional return on stakes of all values."
 msgid "<strong>Scalable</strong> - Earn the same proportional return on stakes of all values"
-msgstr "<strong>Trading skala</strong> - dapatkan jumlah laba proporsional yang sama pada setiap modal."
+msgstr ""
+"<strong>Dapat diukur</strong> - Dapatkan laba yang sebanding dengan modal "
+"pada semua nilai"
 
-#, fuzzy
-#| msgid "<strong>Security</strong> - %1 ensures your personal data and transactions are always secure."
 msgid "<strong>Security and privacy</strong> - Trade confidently, knowing that your personal data, transactions, and funds are always secure"
-msgstr "<strong>Keamanan</strong> - %1 memastikan bahwa data pribadi dan transaksi Anda selalu aman."
+msgstr ""
+"<strong>Keamanan dan privasi</strong> - Bertradinglah dengan percaya diri, "
+"ketahui data pribadi, transaksi dan dana Anda akan selalu aman"
 
-#, fuzzy
-#| msgid "<strong>Benchmarked prices</strong> - %1 benchmarks its prices daily against inter-bank derivatives markets."
 msgid "<strong>Sharp, benchmarked prices</strong> - Benefit from the same rates of return as interbank traders. Our prices are benchmarked daily against the interbank options markets."
-msgstr "<strong>Harga acuan</strong> - %1 harga acuan harian sesuai dengan pasar derivatif antar bank."
+msgstr ""
+"<strong>Tajam, harga standar</strong> - Nilai keuntungan yang sama seperti "
+"yang didapatkan oleh trader antar bank. Harga kami adalah distandarkan "
+"setiap hari berbanding dengan opsi pasar antar bank."
 
-#, fuzzy
-#| msgid "<strong>Short to long-term</strong> - choose timeframes from 10 seconds to 365 days."
 msgid "<strong>Short to long-term durations</strong> - Choose timeframes from 10 seconds to 365 days"
-msgstr "<strong>Jangka pendek hingga jangka panjang</strong> - pilih durasi dari 10 hingga 365 hari."
+msgstr ""
+"<strong>Durasi jangka pendek hingga jangka panjang</strong> - Pilih jangka "
+"waktu dari 10 detik hingga 365 hari"
 
 msgid "<strong>Simple and intuitive</strong> - Enjoy a trading platform that’s easy to navigate and use"
 msgstr ""
+"<strong>Sederhana dan intuitif</strong> - Nikmati platform trading yang "
+"mudah dinavigasi dan digunakan"
 
-#, fuzzy
-#| msgid "<strong>Touch/No Touch</strong> - predict if the market will touch or not touch a price target."
 msgid "<strong>Touch/No Touch</strong> - Predict the market touching or not touching a price target."
-msgstr "<strong>Touch/No Touch</strong> - menganalisa apakah pasar akan menyentuh atau tidak target harga."
+msgstr ""
+"<strong>Touch/No Touch</strong> - Menganalisa pasar akan menyentuh atau "
+"tidak harga target."
 
-#, fuzzy
-#| msgid "<strong>Trade to your strategy</strong> - set your trades on 'gut feel', or use technical or fundamental analysis."
 msgid "<strong>Trade according to your preferred strategy</strong> - Trade based on \"gut feel\" or rely on technical and fundamental analysis"
-msgstr "<strong>Gunakan strategi trading Anda</strong> - tetapkan trading Anda menggunakan 'insting' atau analisa teknikal atau fundamental."
+msgstr ""
+"<strong>Bertrading sesuai dengan strategi pilihan Anda</strong> - Bertrading "
+"berdasarkan \"insting\" atau mengandalkan analisis teknis dan fundamental"
 
 msgid "<strong>Transparent risk and potential reward</strong> - Know how much you will win or lose before you purchase the contract"
 msgstr ""
+"<strong>Risiko transparan dan potensi laba</strong> - Ketahui berapa banyak "
+"potensi keuntungan atau kerugian sebelum melakukan pembelian kontrak"
 
-#, fuzzy
-#| msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
 msgid "<strong>Two-way pricing</strong> - Receive quotes for a trade and counter-trade, so you always get unbiased, transparent rates from %1"
-msgstr "<strong>harga 2-arah</strong> - %1 selalu memperlihatkan harga lawan arah dari trading Anda, dimana Anda memperoleh harga transparan."
+msgstr ""
+"<strong>Harga 2-arah</strong> - Menerima harga untuk trading dan trading "
+"konter, dimana Anda tidak akan terpengaruh, harga transparan dari %1"
 
 msgid "<ul><li> Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>. </li><li> Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button. </li><li> Under the <strong>Cookies</strong> section, select the \"<strong>Don't block cookies</strong>\" option. </li><li> Click anywhere outside the menu to save and close. </li></ul>"
 msgstr "<ul><li> Kunjungi menu <strong>More actions</strong> dan pilih <strong>Settings</strong>. </li><li> Dibawah <strong>Advanced Settings</strong>, klik pada tombol <strong>View advanced settings</strong>. </li><li> Dibawah bagian <strong>Cookies</strong>, pilih \"<strong>Jangan blokir cookies</strong>\". </li><li> Klik dimana saja diluar menu untuk menyimpan dan menutup. </li></ul>"
@@ -675,14 +678,13 @@ msgstr "Memegang gelar Sarjana dalami bidang Pemasaran, Bisnis Administrasi atau
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "Agen Pembayaran bertindak sebagai penukar antara Klien (Pelanggan kami) dan %1. Agen Pembayaran memproses deposit dan penarikan untuk Klien yang ingin menggunakan metode pembayaran tertentu atau mata uang lokal yang tidak ditawarkan oleh %1. Biaya transfer akan ditanggung oleh Klien."
 
-#, fuzzy
-#| msgid ""
-#| "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier\n"
-#| "            or the low barrier at any time during the period chosen by a trader."
 msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
 msgstr ""
-"Kontrak tetap antara akan memberi untung jika market tetap berada diantara (tidak menyentuh) KEDUA batasan tinggi atau rendah kapan saja selama periode yang dipilih oleh trader. Kontrak bergerak keluar akan memberi untung jika pasar menyentuh SALAH SATU batasan tinggi \n"
-"atau batasan rendah selama periode kontrak yang dipilih oleh trader."
+"Kontrak Stays Between akan memberi hasil jika pasar tetap berada diantara ("
+"tidak menyentuh) KEDUA batasan tinggi atau batasan rendah kapan saja selama "
+"periode yang dipilih oleh trader. Kontrak Goes Outside akan memberi hasil "
+"jika pasar menyentuh SALAH SATU batasan tinggi atau batasan rendah kapan "
+"saja selama periode yang dipilih oleh trader."
 
 msgid "A True Partnership"
 msgstr "Kemitraan Sejati"
@@ -831,10 +833,8 @@ msgstr "Kata Sandi Akun"
 msgid "Account Transfer"
 msgstr "Transfer Akun"
 
-#, fuzzy
-#| msgid "Account balance: "
 msgid "Account balance:"
-msgstr "Saldo akun Anda: "
+msgstr "Saldo akun:"
 
 msgid "Account balance: "
 msgstr "Saldo akun Anda: "
@@ -936,7 +936,7 @@ msgid "Agreement for documents"
 msgstr "Perjanjian untuk dokumen"
 
 msgid "Agricultural, Forestry and Fishery Workers"
-msgstr ""
+msgstr "Pekerja Pertanian, Kehutanan dan Perikanan"
 
 msgid "All Partnership Options"
 msgstr "Berbagai Pilihan Kemitraan"
@@ -950,10 +950,8 @@ msgstr "Semua batasan pada tampilan trading ini telah berakhir"
 msgid "All credit card details are submitted directly to the Visa/Mastercard network using the latest SSL encryption technology, in accordance with bank policies."
 msgstr "Semua data kartu kredit adalah dikirimkan langsung ke dalam jaringan Visa/Mastercard menggunakan teknologi sandi SSL terbaru, sesuai dengan peraturan bank."
 
-#, fuzzy
-#| msgid "All conditions trading"
 msgid "All market conditions and durations"
-msgstr "Semua kondisi trading"
+msgstr "Semua kondisi pasar dan durasi"
 
 msgid "All markets are closed now. Please try again later."
 msgstr "Semua pasar ditutup saat ini. Coba kembali nanti."
@@ -988,14 +986,13 @@ msgstr "Jumlah per poin"
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "Lanjutan/Tinggi/Lulusan Diploma atau Sarjana"
 
-#, fuzzy
-#| msgid ""
-#| "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high\n"
-#| "            price target OR strictly lower than the low price target."
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
 msgstr ""
-"Kontrak Berakhir Antara akan memberi hasil jika harga akhir pasar harus lebih tinggi dari target harga rendah DAN harus lebih rendah dari target harga tinggi. Kontrak Berakhir Diluar akan memberi hasil jika harga akhir pasar SALAH SATU yaitu harus lebih tinggi \n"
-"dari target harga tinggi ATAU harus lebih rendah dari target harga rendah."
+"Kontrak Ends Between trade akan memberi hasil jika harga akhir pasar pasti "
+"lebih tinggi dari harga target rendah DAN pasti lebih rendah dari harga "
+"target tinggi. Kontrak Ends Outside akan menghasilkan jika harga akhir pasar "
+"ANTARA pasti lebih tinggi dari harga target tinggi ATAU pasti lebih rendah "
+"dari harga target rendah."
 
 msgid "An additional password can be used to restrict access to the cashier."
 msgstr "Kata sandi tambahan dapat digunakan untuk membatasi akses ke kasir."
@@ -1108,10 +1105,8 @@ msgstr "Apakah Anda yakin untuk menghapus token secara permanen"
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "Apakah Anda yakin bahwa Anda ingin secara permanen mencabut akses ke aplikasi"
 
-#, fuzzy
-#| msgid "Are you sure that you want to permanently revoke access to application"
 msgid "Are you sure that you want to permanently revoke connection to"
-msgstr "Apakah Anda yakin bahwa Anda ingin secara permanen mencabut akses ke aplikasi"
+msgstr "Apakah Anda yakin bahwa Anda ingin secara permanen mencabut koneksi ke"
 
 msgid "Are your site visitors interested in:"
 msgstr "Apakah pengunjung website Anda tertarik untuk:"
@@ -1230,10 +1225,8 @@ msgstr "Metode pembayaran yang tersedia"
 msgid "Avoid the need to have an e-wallet"
 msgstr "Menghindari kebutuhan untuk memiliki e-wallet"
 
-#, fuzzy
-#| msgid "Multi award-winning trading platform."
 msgid "Award-winning online trading platform"
-msgstr "Platform yang memenangi berbagai penghargaan."
+msgstr "Platform trading online yang memenangi berbagai penghargaan"
 
 msgid "Award-winning, patented financial trading platform"
 msgstr "Dipatenkan sebagai platform trading finansial"
@@ -1433,14 +1426,12 @@ msgstr "Binary membuka kantor di Jepang"
 msgid "Binary option"
 msgstr "Opsi binary"
 
-#, fuzzy
-#| msgid ""
-#| "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your\n"
-#| "            initial stake."
 msgid "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your initial stake."
 msgstr ""
-"Opsi binary mudah dipahami. Disebut ‘binary’ karena opsi ini hanya memiliki dua pilihan - untung atau rugi. Jika analisa Anda benar, Anda akan memperoleh hasil yang Anda inginkan pada awal trading. Jika tidak, Anda hanya akan kehilangan \n"
-"modal awal."
+"Opsi Binary mudah untuk dimengerti. Disebut 'binary' karena hanya dapat "
+"menghasilkan dua kemungkinan - untung atau rugi. Jika analisa Anda tepat, "
+"Anda akan menerima hasil yang sudah ditentukan pada awal trading. Jika "
+"tidak, maka Anda hanya akan kehilangan modal awal Anda."
 
 msgid "Binary options basics"
 msgstr "Opsi binary dasar"
@@ -1532,10 +1523,8 @@ msgstr "Harga Beli"
 msgid "Buy an App, or Build Your Own"
 msgstr "Beli Applikasi, atau Membangun Sendiri"
 
-#, fuzzy
-#| msgid "Buy Price"
 msgid "Buy price"
-msgstr "Harga Beli"
+msgstr "Harga beli"
 
 msgid "By clicking <strong>Accept</strong> below and proceeding with the Account Opening you should note that you may be exposing yourself to risks (which may be significant, including the risk of loss of the entire sum invested) that you may not have the knowledge and experience to properly assess or mitigate."
 msgstr "Dengan mengklik <strong>Menerima</strong> dibawah ini dan melanjutkan Pendaftaran Akun berarti Anda memahami bahwa Anda akan mungkin akan mengalami risiko (yang mungkin segnifikan termasuk risiko kehilangan semua dana yang Anda investasikan) dimana Anda mungkin tidak memiliki pengetahuan dan pengalaman untuk mengurangi atau menghindarinya."
@@ -1579,10 +1568,8 @@ msgstr "Dapatkan Anda memberikan banner khusus untuk website saya?"
 msgid "Canada"
 msgstr "KANADA"
 
-#, fuzzy
-#| msgid "Careers For Americans"
 msgid "Career opportunities for Americans"
-msgstr "Karir Untuk Amerika"
+msgstr "Peluang karir bagi Amerika"
 
 msgid "Careers"
 msgstr "Karir"
@@ -1633,7 +1620,7 @@ msgid "Check out the payment methods accepted by the payment agents in the list 
 msgstr "Lihat metode pembayaran yang diterima oleh agen pembayaran pada daftar di bawah ini."
 
 msgid "Chief Executives, Senior Officials and Legislators"
-msgstr ""
+msgstr "Kepala Eksekutif, Pejabat Senior dan Legislator"
 
 msgid "Choose Scopes:"
 msgstr "Pilih Cangkupan:"
@@ -1649,26 +1636,27 @@ msgstr "Pilih kata sandi"
 
 msgid "Choose a payout and our system will calculate the stake required to purchase the contract."
 msgstr ""
+"Pilih hasil dan sistem kami akan menghitung modal yang di perlukan untuk "
+"membeli kontrak."
 
 msgid "Choose a payout from $1 to $50,000."
 msgstr "Pilih hasil dari $1 hingga $50,000."
 
 msgid "Choose from five types of markets and their respective assets:"
-msgstr ""
+msgstr "Pilih dari lima jenis pasar dan aset masing-masing:"
 
-#, fuzzy
-#| msgid "Choose Touch / No Touch when you want to profit from the market touching or not touching a target any time during the contract period."
 msgid "Choose the Touch/No Touch trade if you want to predict the market touching or not touching a target any time during the contract period."
-msgstr "Pilih Menyentuh/Tidak untuk memperoleh keuntungan dari pasar yang menyentuh atau tidak target harga kapan saja selama periode kontrak."
+msgstr ""
+"Pilih kontrak Touch/No Touch jika Anda ingin menganalisa pasar akan "
+"menyentuh atau tidak target harga kapan saja selama periode kontrak."
 
-#, fuzzy
-#| msgid ""
-#| "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying\n"
-#| "            or selling the actual asset."
 msgid "Choose the asset you wish to trade, such as gold, oil, stocks, or currency pairs. The value of a binary option is derived from the price of the underlying asset. One advantage of trading binary options is that you are not buying or selling the actual asset, only a contract that determines how that asset performs."
 msgstr ""
-"Hal pertama yang harus dilakukan adalah memilih aset yang ingin anda tradingkan, seperti emas (gold) atau minyak (oil), saham atau harga FX (Nilai opsi binary yang berasal dari harga aset). Kelebihan besar dari trading opsi adalah anda tidak membeli \n"
-"atau menjual aset yang sebenarnya."
+"Pilih aset yang ingin Anda tradingkan seperti emas (gold), minyak (oil), "
+"saham atau pasangan mata uang. Nilai opsi binary dihasilkan dari harga pasar "
+"yang mendasari. Salah satu keunggulan trading opsi binary adalah Anda tidak "
+"membeli aset berbentuk fisik, Anda hanya membeli kontrak yang menentukan "
+"bagaimana prestasi aset Anda."
 
 msgid "Choose the payment method you'd like to use."
 msgstr "Pilih metode pembayaran yang ingin Anda gunakan."
@@ -1688,13 +1676,11 @@ msgstr "Warga Afghanistan, Belgia, Bosnia dan Herzegovina, Guyana, Irak, Lao PDR
 msgid "Classification of assets requiring hedge"
 msgstr "Klasifikasi aset yang membutuhkan hedge"
 
-#, fuzzy
-#| msgid "Complaints and Disputes"
 msgid "Cleaners and Helpers"
-msgstr "Keluhan dan Perselisihan"
+msgstr "Pembersih dan Pembantu"
 
 msgid "Clerks"
-msgstr ""
+msgstr "Pegawai"
 
 msgid "Click here to retry"
 msgstr "Klik disini untuk mencoba lagi"
@@ -1702,10 +1688,8 @@ msgstr "Klik disini untuk mencoba lagi"
 msgid "Client classification"
 msgstr "Klasifikasi klien"
 
-#, fuzzy
-#| msgid "Client ID"
 msgid "Client funds"
-msgstr "Klien ID"
+msgstr "Dana klien"
 
 msgid "Client's Liability"
 msgstr "Kewajiban Klien"
@@ -1785,10 +1769,8 @@ msgstr "Komisi akan diperoleh sepanjang klien masih aktif, bagi seluruh transaks
 msgid "Commodities"
 msgstr "Komoditi"
 
-#, fuzzy
-#| msgid "<strong>Commodities</strong> - trade major commodities such as gold and oil."
 msgid "Commodities - Major commodities such as gold and oil"
-msgstr "<strong>Komoditas</strong> - trading komoditas utama seperti emas dan minyak."
+msgstr "Komoditas - Komoditas utama seperti emas dan minyak"
 
 msgid "Commodities are resources that are grown or extracted from the ground, such as silver, gold and oil. On %1, they are priced in US dollars."
 msgstr "Komoditas adalah sumber yang berkembang dan disaring dari tanah seperti perak, emas dan minyak. Di %1 mereka memiliki harga dalam dolar Amerika."
@@ -1809,7 +1791,7 @@ msgid "Compare all the trading platforms that we offer. Choose the ideal platfor
 msgstr "Bandingkan semua platform trading yang kami tawarkan. Pilih platform yang ideal bagi strategi trading Anda."
 
 msgid "Competitive and transparent pricing"
-msgstr ""
+msgstr "Harga kompetitif dan transparan"
 
 msgid "Complaints"
 msgstr "Keluhan"
@@ -1856,10 +1838,8 @@ msgstr "Konflik Kebijakan"
 msgid "Connection error: Please check your internet connection."
 msgstr "Koneksi error: Silakan periksa koneksi internet Anda."
 
-#, fuzzy
-#| msgid "Construction"
 msgid "Connections"
-msgstr "Konstruksi"
+msgstr "Koneksi"
 
 msgid "Construction"
 msgstr "Konstruksi"
@@ -2006,7 +1986,7 @@ msgid "Cover is made available on the basis of the depositor rather than on the 
 msgstr "Perlindungan tersedia berdasarkan depositor dan bukan jumlah deposit, hal ini berarti jika seseorang memiliki akun lebih dari satu maka beliau hanya akan dilindungi sebesar €20,000 secara keseluruhan. Jika jumlah melebihi batasan tersebut maka tidak akan dilindungi dan hal tersebut akan ditanggung sendiri oleh investor."
 
 msgid "Craft, Metal, Electrical and Electronics Workers"
-msgstr ""
+msgstr "Pekerja Kerajinan, Logam, Listrik dan Elektronik"
 
 msgid "Create"
 msgstr "Membuat"
@@ -2044,10 +2024,8 @@ msgstr "Kartu Kredit/Debit"
 msgid "Currencies"
 msgstr "Mata uang"
 
-#, fuzzy
-#| msgid "<strong>Currencies</strong> - trade all major FX pairs."
 msgid "Currencies - All major Forex pairs"
-msgstr "<strong>Mata uang</strong> - trading semua pasangan utama FX."
+msgstr "Mata Uang - Semua pasangan Forex utama"
 
 msgid "Currency"
 msgstr "Mata uang"
@@ -2222,6 +2200,8 @@ msgstr "Digits"
 
 msgid "Digits let you predict the last decimal digit of the spot price. There are three types of Digits trades:"
 msgstr ""
+"Digits memberi Anda untuk menganalisa angka desimal terakhir harga spot. "
+"Terdapat tiga jenis kontrak Digits:"
 
 msgid "Director"
 msgstr "Director"
@@ -2277,18 +2257,15 @@ msgstr "Dokumentasi akun tagihan ulang"
 msgid "Document department processes, to enhance the marketing team's ability to execute repeated tasks efficiently and effectively"
 msgstr "Memproses dokumen departemen, meningkatkan kemampuan tim pemasaran untuk menjalankan tugas-tugas berulang secara efisien dan efektif"
 
-#, fuzzy
-#| msgid "does not touch"
 msgid "Does Not Touch"
-msgstr "tidak menyentuh"
+msgstr "Does Not Touch"
 
 msgid "Dormant and Inactive Accounts"
 msgstr "Akun Dormant dan Tidak Aktif"
 
-#, fuzzy
-#| msgid "Profit from the market ending higher or lower than a target price"
 msgid "Down - Predict that the market will end lower than the average price"
-msgstr "Keuntungan dari market yang berakhir lebih tinggi atau lebih rendah dari target harga"
+msgstr ""
+"Down - Menganalisa pasar akan berakhir lebih rendah dari harga rata-rata"
 
 msgid "Download CSV"
 msgstr "Download CSV"
@@ -2350,10 +2327,11 @@ msgstr "Setiap transaksi memiliki waktu dan tanggal berakhir tertentu, dikenal s
 msgid "Each party to this Agreement represents and warrants to the other that it has, and will retain throughout the term of this Agreement all right, title, and authority to enter into this Agreement, to grant to the other party the rights and licences granted in this Agreement, and to perform all of its obligations under this Agreement."
 msgstr "Masing-masing pihak pada Perjanjian ini akan mewakili dan menjamin kepada yang lain yang telah, dan akan mempertahankan seluruh jangka waktu, hak dan wewenang untuk masuk ke dalam Perjanjian ini, untuk memberikan kepada pihak lain hak-hak dan lisensi yang diberikan dalam Perjanjian ini, dan untuk melakukan semua kewajibannya berdasarkan Perjanjian ini."
 
-#, fuzzy
-#| msgid "Each binary trade is for a pre-determined payout amount. You win the payout if your prediction is correct."
 msgid "Each trade comes with a pre-determined payout that you will see after adjusting each parameter. You’ll win the payout if your prediction is correct. If not, you will only lose your initial stake."
-msgstr "Setiap kontrak binary memiliki hasil yang telah ditetapkan. Anda akan memperoleh hasil jika analisa tepat."
+msgstr ""
+"Setiap kontrak menyediakan hasil yang akan Anda lihat setelah merubah setiap "
+"parameter. Anda akan mendapatkan hasil jika analisa Anda tepat. Jika tidak, "
+"maka Anda hanya akan kehilangan modal awal Anda."
 
 msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
 msgstr "Dapatkan bayaran dari masalah yang Anda temukan, dengan ganjaran hingga USD 1,000 bagi rentan keamanan dengan resiko tinggi."
@@ -2430,10 +2408,8 @@ msgstr "Waktu end"
 msgid "End time must be after start time."
 msgstr "Waktu berakhir harus setelah waktu mulai."
 
-#, fuzzy
-#| msgid "ends between"
 msgid "Ends Between"
-msgstr "berakhir antara"
+msgstr "Ends Between"
 
 msgid "Ends Between/Ends Outside trades"
 msgstr "Kontrak Berakhir Antara/Berakhir Keluar"
@@ -2444,15 +2420,13 @@ msgstr "Ends In/Out"
 msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "Kontrak Ends In/Out akan mendapat pengembalian harga beli jika terdapat kurang dari 2 tik penyelesaian dari waktu mulai hingga akhir."
 
-#, fuzzy
-#| msgid "Choose Ends In/Out to profit from the market stopping inside or outside two price targets at the end of the time period."
 msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "Pilih Ends In/Out untuk memperoleh untung pada pasar yang berakhir didalam atau keluar dua target harga pada akhir periode."
+msgstr ""
+"Ends In/Out – Menganalisa pasar akan berakhir didalam atau diluar harga "
+"target pada akhir periode"
 
-#, fuzzy
-#| msgid "ends outside"
 msgid "Ends Outside"
-msgstr "berakhir di luar"
+msgstr "Ends Outside"
 
 msgid "Engage in data mining using SQL databases, R/S-Plus, OLAP and other analytical tools"
 msgstr "Terlibat dalam data mining menggunakan database SQL, R/S-Plus, OLAP dan alat analisis lainnya"
@@ -2522,6 +2496,8 @@ msgstr "Even/Odd"
 
 msgid "Even/Odd - Predict that the last digit is even or odd after the last tick"
 msgstr ""
+"Even/Odd - Menganalisa angka terakhir adalah genap atau ganjil setelah tik "
+"akhir"
 
 msgid "Even/Odd contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "Kontrak Even/Odd akan memperoleh pengembalian harga beli jika kontrak tidak berakhir dalam waktu 5 menit."
@@ -2604,18 +2580,14 @@ msgstr "Waktu Exit Spot"
 msgid "Exit spot"
 msgstr "Spot akhir"
 
-#, fuzzy
-#| msgid "Ability to re-sell trades before expiry"
 msgid "Exit your trades before expiry"
-msgstr "Tersedia kesempatan menjual kontrak sebelum berakhir"
+msgstr "Keluar dari kontrak sebelum berakhir"
 
 msgid "Expand our network of active affiliates in your local market. Contribute your energy, skills, and knowledge of the local business culture to help further our rapid rate of growth worldwide."
 msgstr "Memperluas jaringan afiliasi aktif kami pada pasar lokal. Mengkontribusikan energi, keterampilan, dan pengetahuan Anda mengenai budaya bisnis lokal untuk membantu lebih lanjut tingkat pertumbuhan yang cepat di seluruh dunia."
 
-#, fuzzy
-#| msgid "No experience"
 msgid "Experience"
-msgstr "No experience"
+msgstr "Pengalaman"
 
 msgid "Experience in an anti-fraud or risk management role"
 msgstr "Berpengalaman dalam berperan sebagai anti-penipuan dan manajemen risiko"
@@ -2725,10 +2697,8 @@ msgstr " "
 msgid "Filtering Stray Ticks"
 msgstr "Penyaringan Tik Monoton"
 
-#, fuzzy
-#| msgid "Final Price"
 msgid "Final price"
-msgstr "Harga Akhir"
+msgstr "Harga akhir"
 
 msgid "Finance"
 msgstr "Keuangan"
@@ -2952,10 +2922,8 @@ msgstr "Kunjungi <a href=\"https://login.binary.com/signup.php\">halaman daftar<
 msgid "Go with the leader"
 msgstr "Ikuti pemimpin"
 
-#, fuzzy
-#| msgid "goes outside"
 msgid "Goes Outside"
-msgstr "bergerak keluar"
+msgstr "Goes Outside"
 
 msgid "Governing Laws and Jurisdiction"
 msgstr "Pemerintahan Hukum dan Yurisdiksi"
@@ -2964,7 +2932,7 @@ msgid "Governing law and jurisdiction"
 msgstr "Hukum Pemerintahan dan yurisdiksi"
 
 msgid "Government Officers"
-msgstr ""
+msgstr "Pegawai Pemerintah"
 
 msgid "Grab a wide range of third-party apps for binary options trading in the <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Shop</a>."
 msgstr "Dapatkan berbagai pilihan applikasi pihak ketiga untuk trading opsi binary pada <a href=\"https://shop.binary.com\" target=\"_blank\">Toko Binary.com</a>."
@@ -3005,18 +2973,16 @@ msgstr "Batasan offset tinggi"
 msgid "High conversions and customer value"
 msgstr "Konversi tinggi dan menghargai Pelanggan"
 
-#, fuzzy
-#| msgid "higher"
 msgid "Higher"
-msgstr "lebih tinggi"
+msgstr "Higher"
 
 msgid "Higher/Lower"
 msgstr "Higher/Lower"
 
-#, fuzzy
-#| msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
 msgid "Higher/Lower - Predict if the market will end higher or lower than a target price"
-msgstr "<strong>Higher/Lower</strong> - analisa pasar akan berakhir lebih tinggi atau lebih rendah dari target harga."
+msgstr ""
+"Higher/Lower - Menganalisa pasar akan berakhir lebih tinggi atau lebih "
+"rendah dari harga target"
 
 msgid "Higher/Lower contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "Kontrak Higher/Lower akan mendapat pengembalian harga beli jika terdapat kurang dari 2 tik penyelesaian dari waktu mulai hingga akhir."
@@ -3024,10 +2990,10 @@ msgstr "Kontrak Higher/Lower akan mendapat pengembalian harga beli jika terdapat
 msgid "Higher/Lower trades"
 msgstr "Kontrak Higher/Lower"
 
-#, fuzzy
-#| msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
 msgid "Higher/Lower – Predict that the market will end higher or lower than a price target"
-msgstr "<strong>Higher/Lower</strong> - analisa pasar akan berakhir lebih tinggi atau lebih rendah dari target harga."
+msgstr ""
+"Higher/Lower – Menganalisa pasar akan berakhir lebih tinggi atau lebih "
+"rendah dari harga target"
 
 msgid "Hone your security testing skills."
 msgstr "Asah keterampilan menguji Anda."
@@ -3062,10 +3028,8 @@ msgstr "Bagaimana cara kerjanya?"
 msgid "How soon can I start trading?"
 msgstr "Seberapa cepat saya bisa memulai trading?"
 
-#, fuzzy
-#| msgid "How to trade binaries?"
 msgid "How to trade binary options?"
-msgstr "Cara bertrading binary?"
+msgstr "Bagaimana cara bertrading opsi binary?"
 
 msgid "How to trade spreads?"
 msgstr "Cara bertrading spread?"
@@ -3122,12 +3086,10 @@ msgid "Ideal Users"
 msgstr "Pengguna Ideal"
 
 msgid "Ideal for beginners and experienced traders"
-msgstr ""
+msgstr "Ideal untuk pemula dan trader berpengalaman"
 
-#, fuzzy
-#| msgid "Ideal Users"
 msgid "Ideas"
-msgstr "Pengguna Ideal"
+msgstr "Berbagai Ide"
 
 msgid "If a customer holds a long position and the prediction goes wrong as of the judgment time, the invested principal amount will become zero value."
 msgstr "Jika pelanggan memiliki posisi jangka panjang dan prediksi salah sepanjang waktu penilaian, maka jumlah modal yang diinvestasikan akan bernilai nol."
@@ -3339,14 +3301,13 @@ msgstr "Untuk bertrading OTC opsi binary, pelanggan perlu memiliki pengetahuan a
 msgid "In classic Silicon Valley style, Hong Kong based hedge fund manager and entrepreneur, Jean-Yves Sireau, starts Regent Markets in his Hong Kong bedroom. He develops the systems, methods and algorithms for implementing a fixed-odds financial betting system. Jean-Yves's vision is to create a market in the simplest of all derivatives contracts - the fixed-odds bet - and to offer ordinary investors the chance to make small bets. Until his innovation, binary options are normally only traded in large quantities."
 msgstr "Dengan gaya klasik Silicon Valley, seorang manager pengelola dana berjiwa pengusaha bernama Jean-Yves Sireau memulai Regent Markets dari kamar tidurnya di Hong Kong. Beliau membangun sistem, metode dan algoritma untuk mengimplementasikannya pada sistem trading financial fixed-odds. Visi Jean-Yves adalah untuk menciptakan pasar pada kontrak derivatif sederhana - trading fixed-odds - dan menawarkan kesempatan bagi investor umum untuk membeli kontrak berukuran kecil. Hingga inovasi beliau, opsi binary biasanya hanya ditradingkan dalam jumlah besar."
 
-#, fuzzy
-#| msgid ""
-#| "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro\n"
-#| "            will rise in relation to the value of the US dollar."
 msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
 msgstr ""
-"Pada pasar valuta asing, para trader dapat membeli kontrak berdasarkan pertukaran harga dari satu mata uang ke mata uang lainnya. Sebagai contoh jika trader memilih kontrak Naik pada market EUR/USD, hal ini berarti mereka menganalisa nilai mata uang Euro \n"
-"akan lebih tinggi dari harga mata uang dolar AS."
+"Pada pasar valuta asing, para trader dapat membeli kontrak berdasarkan "
+"pertukaran harga dari satu mata uang ke mata uang lainnya. Sebagai contoh "
+"jika trader memilih kontrak Naik pada market EUR/USD, hal ini berarti mereka "
+"menganalisa nilai mata uang Euro akan lebih tinggi dari harga mata uang "
+"dolar AS."
 
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 msgstr "Untuk mengakses aplikasi mobile kami dan aplikasi pihak ketiga lainnya, Anda harus membuat Token API."
@@ -3399,10 +3360,10 @@ msgstr "In/Out"
 msgid "In/Out (ends between/outside and stays between/goes outside)"
 msgstr "In/Out (ends between/outside dan stays between/goes outside)"
 
-#, fuzzy
-#| msgid "<strong>Stays/Ends Between/Outside</strong> - will the market stay/end between/outside two target prices?"
 msgid "In/Out - Predict if the market will stay between or outside two target prices"
-msgstr "<strong>Berada/Berakhir Diantara/Diluar</strong> - apakah market akan berada tetap/berakhir antara/keluar dua target harga?"
+msgstr ""
+"In/Out - Menganalisa pasar akan tetap berada diantara atau diluar dua harga "
+"target"
 
 msgid "In/Out trades"
 msgstr "Kontrak In/Out"
@@ -3427,6 +3388,8 @@ msgstr "Indeks"
 
 msgid "Indices - All major worldwide stock indices sourced from the over-the-counter market"
 msgstr ""
+"Indeks - Semua indeks saham utama di seluruh dunia bersumber dari pasar OTC "
+"(over-the-counter)"
 
 msgid "Indices trading experience"
 msgstr "Pengalaman trading indeks"
@@ -4043,24 +4006,25 @@ msgstr "Juni"
 msgid "Keep track of your authorised applications."
 msgstr "Melacak aplikasi resmi Anda."
 
-#, fuzzy
-#| msgid "Keep track of your authorised applications."
 msgid "Keep track of your authorised connections."
-msgstr "Melacak aplikasi resmi Anda."
+msgstr "Melacak koneksi resmi Anda."
 
 msgid "Key facts"
 msgstr "Fakta"
 
-#, fuzzy
-#| msgid "When it's time to kick back, you'll find beautiful beaches, islands and mountains to explore, just a short flight away. From Malta, you'll have Europe, the Mediterranean and North Africa on your doorstep. And from Malaysia, you'll be within easy reach of some of Asia's most spectacular scenery."
 msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
-msgstr "Jika sudah tiba waktunya, Anda akan menemukan berbagai pantai yang indah, pulau dan pegunungan untuk di ekplorasi dengan penerbangan singkat. Dari Malta, Anda memiliki Eropa, Mediteranian hingga Afrika Utara di depan pintu Anda. Dan dari Malaysia, Anda dengan mudah dapat mengunjungi berbagai tempat indah di Asia."
+msgstr ""
+"Nikmati keindahan pantai, pulau dan pegunungan dengan penerbangan singkat. "
+"Dari Malta, tersedia Eropa, Mediteranian dan Afrika Utara. Dan dari "
+"Malaysia, seluruh Asia menanti."
 
 msgid "Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account."
 msgstr ""
+"Mohon berikan alamat lengkap Anda.<br>Alamat ini akan digunakan untuk "
+"membuktikan identitas Anda pada saat mendaftar akun riil."
 
 msgid "Know what you stand to win or lose"
-msgstr ""
+msgstr "Ketahui apa yang akan Anda dapatkan"
 
 msgid "Knowledge and experience in the financial services industry"
 msgstr "Berpengetahuan dan pengalaman pada industri jasa keuangan"
@@ -4116,10 +4080,8 @@ msgstr "Belajar lebih lanjut"
 msgid "Learn more about our corporate culture"
 msgstr "Pelajari lebih lanjut tentang budaya perusahaan kami"
 
-#, fuzzy
-#| msgid "Learn more about spreads on binary.com."
 msgid "Learn more about spreads on %1."
-msgstr "Pelajari lebih lanjut mengenai spread di Binary.com."
+msgstr "Pelajari lebih lanjut mengenai spread di %1."
 
 msgid "Learn the basics, from choosing your asset to winning your payout."
 msgstr "Pelajari secara mendasar bagaimana memilih aset untuk mendapat keuntungan Anda."
@@ -4164,13 +4126,13 @@ msgid "Liaise with banks and payment providers"
 msgstr "Bekerja sama dengan bank dan penyedia pembayaran"
 
 msgid "Licensed and regulated"
-msgstr ""
+msgstr "Berlisensi dan diatur"
 
 msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan"
 msgstr "Berlisensi dan diatur di Malta, Inggris, Isle of Man, Irlandia dan Jepang"
 
 msgid "Licensed, trusted, and secure"
-msgstr ""
+msgstr "Berlisensi, dipercaya, dan aman"
 
 msgid "Life-long career interest in the Accounting field"
 msgstr "berminat pada karir seumur hidup di bidang Akuntansi"
@@ -4237,6 +4199,9 @@ msgstr "Kemitraan jangka panjang bersama penyedia layanan trading finansial terk
 
 msgid "Looking for a new and exciting career in a country that's modern, diverse and tolerant? Binary.com is one of the world's most progressive companies, with offices in Asia and Europe."
 msgstr ""
+"Mencari karir baru dan menarik di negara yang modern, beragam dan toleran? "
+"Binary.com adalah salah satu perusahaan yang paling progresif di dunia, "
+"memiliki kantor di Asia dan Eropa."
 
 msgid "Loss"
 msgstr "Rugi"
@@ -4253,10 +4218,8 @@ msgstr "Batasan rendah"
 msgid "Low barrier offset"
 msgstr "Batasan offset rendah"
 
-#, fuzzy
-#| msgid "lower"
 msgid "Lower"
-msgstr "lebih rendah"
+msgstr "Lower"
 
 msgid "MENA FFXPO Award"
 msgstr "Penghargaan MENA FFXPO"
@@ -4294,18 +4257,14 @@ msgstr "Mengelola keamanan, deteksi intrusi, perlindungan DDoS dan tindakan kepa
 msgid "Manage the company's cashier system"
 msgstr "Mengelola sistem kasir perusahaan"
 
-#, fuzzy
-#| msgid "Manage your authorised applications."
 msgid "Manage your OAuth connections."
-msgstr "Mengelola aplikasi resmi Anda."
+msgstr "Kelola koneksi OAuth Anda."
 
 msgid "Manage your authorised applications."
 msgstr "Mengelola aplikasi resmi Anda."
 
-#, fuzzy
-#| msgid "DevOps Manager"
 msgid "Managers"
-msgstr "DevOps Manager"
+msgstr "Manajer"
 
 msgid "Mar"
 msgstr "Mar"
@@ -4355,7 +4314,7 @@ msgid "Matches/Differs"
 msgstr "Matches/Differs"
 
 msgid "Matches/Differs - Predict that the last digit will match or not match"
-msgstr ""
+msgstr "Matches/Differs - Menganalisa angka terakhir akan cocok atau tidak"
 
 msgid "Max:"
 msgstr "Mak:"
@@ -4430,7 +4389,7 @@ msgid "Minimum of six lower and uppercase letters with numbers"
 msgstr "Minimal enam huruf kecil dan huruf besar beserta angka"
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
-msgstr ""
+msgstr "Pekerja Pertambangan, Konstruksi, Manufaktur dan Transportasi"
 
 msgid "Minute"
 msgstr "Menitan"
@@ -4657,6 +4616,8 @@ msgstr "Indeks dan Saham OTC"
 
 msgid "OTC stocks - Blue-chip stock contracts sourced from the over-the-counter market"
 msgstr ""
+"Saham OTC - Kontrak saham blue-chip yang bersumber dari pasar OTC (over-the-"
+"counter)"
 
 msgid "Occupation"
 msgstr "Occupation"
@@ -4823,15 +4784,13 @@ msgstr "Pertumbuhan cepat kami dilengkapi dengan akuisisi dari klien BetsForTrad
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "Kebijakan informasi keamanan kami adalah berdasarkan praktek industri terbaik pada kontrol akses dan kontinuitas bisnis."
 
-#, fuzzy
-#| msgid "Other Obligations"
 msgid "Our locations"
-msgstr "Kewajiban Lainnya"
+msgstr "Lokasi kami"
 
-#, fuzzy
-#| msgid "%1 prices are benchmarked against the interbank options market, so you always get best-in-class prices for your trades."
 msgid "Our prices are benchmarked against the interbank options market. You’ll receive fair and transparent pricing, whatever your position."
-msgstr "Harga %1 mengacu kepada pasar antar bank pilihan, dimana Anda selalu akan memperoleh harga terbaik pada setiap trading Anda."
+msgstr ""
+"Harga kami mengacu pada pasar opsi antar bank. Anda akan menerima harga yang "
+"adil dan transparan, apa pun posisi Anda."
 
 msgid "Our services are provided on an execution only basis. We do not provide investment advice in relation to our products or services. We sometimes provide factual information or research recommendations about a market, information about transaction procedures and information about the potential risks involved and how those risks may be minimised. However, any decision to use our products or services is made by you."
 msgstr "Layanan yang kami sediakan adalah berdasarkan eksekusi. Kami tidak memberikan saran berhubungan dengan investasi pada produk atau layanan. Kami secara berkala menyediakan informasi faktual atau rekomendasi tentang pasar, informasi tentang prosedur transaksi dan informasi tentang potensi risiko yang terlibat dan bagaimana risiko tersebut dapat diminimalkan. Namun, keputusan untuk menggunakan produk atau layanan kami sepenuhnya ditangan Anda."
@@ -4877,6 +4836,7 @@ msgstr "Over/Under"
 
 msgid "Over/Under - Predict that the last digit is higher or lower"
 msgstr ""
+"Over/Under - Menganalisa angka terakhir akan lebih tinggi atau lebih rendah"
 
 msgid "Over/Under contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "Kontrak Over/Under akan memperoleh pengembalian harga beli jika kontrak tidak berakhir dalam waktu 5 menit."
@@ -4969,7 +4929,7 @@ msgid "Permissions"
 msgstr "Izin"
 
 msgid "Personal Care, Sales and Service Workers"
-msgstr ""
+msgstr "Perawatan Pribadi, Penjualan dan Pekerja Layanan"
 
 msgid "Personal Details"
 msgstr "Data Pribadi"
@@ -4990,7 +4950,7 @@ msgid "Pip stands for 'percentage in point' which is generally the fourth decima
 msgstr "Pip singkatan dari 'titik persentase' yang umumnya angka desimal keempat (yaitu 0,0001)."
 
 msgid "Plant and Machine Operators and Assemblers"
-msgstr ""
+msgstr "Pengilangan dan Mesin Operator dan Perakit"
 
 msgid "Platform Comparison"
 msgstr "Perbandingan Platform"
@@ -5232,10 +5192,8 @@ msgstr "Menghasilkan konten untuk website perusahaan, blog, media sosial, dan ma
 msgid "Professional Clients"
 msgstr "Klien Profesional"
 
-#, fuzzy
-#| msgid "Market Professionals"
 msgid "Professionals"
-msgstr "Pasar Profesional"
+msgstr "Profesional"
 
 msgid "Proficiency in a scripting language - Perl preferred"
 msgstr "Kemahiran dalam bahasa scripting - diutamakan Perl"
@@ -5531,10 +5489,9 @@ msgstr "Hak untuk Mengakhiri"
 msgid "Rise/Fall"
 msgstr "Rise/Fall"
 
-#, fuzzy
-#| msgid "<strong>Rise/Fall</strong> - predict if the market will rise or fall from its current level."
 msgid "Rise/Fall - Predict if the market will rise or fall from its current level"
-msgstr "<strong>Rise/Fall</strong> - analisa pasar akan naik atau turun dari level terkini."
+msgstr ""
+"Rise/Fall - Menganalisa pasar akan naik atau turun dari level terkininya"
 
 msgid "Rise/Fall contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes, or (3) for contracts starting in the future, if there are no ticks in the 5 minutes before the contract's start time."
 msgstr "Kontrak Rise/Fall akan memperoleh ganti rugi berupa harga beli jika terjadi kondisi sebagai berikut: (1) terdapat kurang dari 2 tik antara waktu mulai dan akhir atau (2) jika kontrak tidak berakhir dalam tempo 5 menit untuk kontrak berdurasi tik, atau (3) kontrak dimulai di masa hadapan, jika tidak terdapat tik 5 menit sebelum kontrak dimulai."
@@ -5542,10 +5499,9 @@ msgstr "Kontrak Rise/Fall akan memperoleh ganti rugi berupa harga beli jika terj
 msgid "Rise/Fall trades"
 msgstr "Kontrak Rise/Fall"
 
-#, fuzzy
-#| msgid "<strong>Rise/Fall</strong> - predict if the market will rise or fall from its current level."
 msgid "Rise/Fall – Predict that the market will rise or fall from its current level"
-msgstr "<strong>Rise/Fall</strong> - analisa pasar akan naik atau turun dari level terkini."
+msgstr ""
+"Rise/Fall – Menganalisa pasar akan naik atau turun dari level terkininya"
 
 msgid "Risk Disclaimer"
 msgstr "Sanggahan Risiko"
@@ -5697,18 +5653,16 @@ msgstr "Batasan waktu berlangsung, dalam menit"
 msgid "Session duration:"
 msgstr "Sesi durasi:"
 
-#, fuzzy
-#| msgid "The barrier(s) you choose defines your position and triggers your payout."
 msgid "Set barrier(s) to define your position and trigger the payout you will receive."
-msgstr "Batasan yang anda pilih akan menentukan posisi dan memicu hasil anda."
+msgstr ""
+"Susun batasan untuk menentukan posisi Anda dan memperoleh hasil yang akan "
+"Anda terima."
 
 msgid "Set client deposit and loss limits"
 msgstr "Menetapkan batas deposit dan kerugian klien"
 
-#, fuzzy
-#| msgid "You can set the length of your trade, from 10 seconds to 365 days."
 msgid "Set the length of your trade, from 10 seconds to 365 days."
-msgstr "Anda dapat menentukan lama kontrak, dari 10 detik hingga 365 hari."
+msgstr "Susun periode trading, dari 10 detik hingga 365 hari."
 
 msgid "Set up and manage social-media advertising campaigns, effectively micro-targeting potential clients and partners"
 msgstr "Mempersiapkan dan mengelola kampanye iklan media sosial, secara  efektif menargetkan klien dan juga mitra bisnis potensial"
@@ -5826,6 +5780,9 @@ msgstr "Instruksi khusus"
 
 msgid "Specify your payout, which is your potential return if your prediction is correct. Our system will proceed to calculate your stake, which is the total cost of purchasing the contract. %1 offers payouts from $1 to $50,000."
 msgstr ""
+"Tentukan hasil Anda, yaitu potensi laba Anda jika analisa Anda tepat. Sistem "
+"kami akan melanjutkan perhitungan modal, yaitu total jumlah pembelian "
+"kontrak. %1 menawarkan hasil dari $1 hingga $50,000."
 
 msgid "Spot"
 msgstr "Posisi"
@@ -5876,10 +5833,8 @@ msgstr "Status"
 msgid "Stay informed. %1 offers daily market reports and market research, as well as frequent trading webinars."
 msgstr "Pengetahuan terkini. %1 menawarkan laporan dan penelitian pasar harian termasuk berbagai webinar."
 
-#, fuzzy
-#| msgid "stays between"
 msgid "Stays Between"
-msgstr "tetap antara"
+msgstr "Stays Between"
 
 msgid "Stays Between/Goes Outside trades"
 msgstr "Kontrak Tetap Antara/Bergerak Keluar"
@@ -5890,10 +5845,10 @@ msgstr "Stays In/Goes Out"
 msgid "Stays In/Goes Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "Kontrak In/Goes Out akan mendapat pengembalian harga beli jika terdapat kurang dari 2 tik penyelesaian dari waktu mulai hingga akhir."
 
-#, fuzzy
-#| msgid "Choose Stays In/Out to profit from the market staying inside or going outside two price targets any time during the contract period."
 msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
-msgstr "Pilih Stays In/Out untuk memperoleh keuntungan jika pasar tetap di dalam/keluar target kapan saja selama periode tersebut."
+msgstr ""
+"Stays In/Out – Menganalisa pasar akan tetap didalam atau bergerak keluar dua "
+"harga target kapan saja selama periode kontrak berlangsung"
 
 msgid "Step"
 msgstr "Langkah"
@@ -5901,8 +5856,6 @@ msgstr "Langkah"
 msgid "Step 1: Define your position"
 msgstr "Langkah 1: Tentukan posisi Anda"
 
-#, fuzzy
-#| msgid "Step 2: Get your trade price"
 msgid "Step 2: Get your contract price"
 msgstr "Langkah 2: Dapatkan harga kontrak Anda"
 
@@ -5927,10 +5880,8 @@ msgstr "Tingkat Stop Profit"
 msgid "Stop-loss"
 msgstr "Stop-loss"
 
-#, fuzzy
-#| msgid "Stop-profit:"
 msgid "Stop-profit"
-msgstr "Stop-profit:"
+msgstr "Stop-profit"
 
 msgid "Stop-type"
 msgstr "Stop-type"
@@ -6001,10 +5952,8 @@ msgstr "Minggu"
 msgid "Supplementary Terms and Conditions for Financial Products offered by Binary Investments (Europe) Ltd."
 msgstr "Syarat dan Ketentuan Tambahan untuk Produk Keuangan yang ditawarkan oleh Binary Investments (Europe) Ltd."
 
-#, fuzzy
-#| msgid "%1 supports"
 msgid "Support"
-msgstr "%1 mendukung"
+msgstr "Support"
 
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "Membantu Grup dalam perekrutan dan manajemen bakat yang diperlukan"
@@ -6027,10 +5976,8 @@ msgstr "Bertugas menulis, menghasilkan konten berkualitas, memproduksi kode siap
 msgid "Tasked with writing robust, high-quality, production-ready code as well as refactoring and optimizing a large and complex legacy code base."
 msgstr "Bertugas menulis, menghasilkan konten berkualitas, memproduksi kode siap sedia serta refactoring dan optimasi basis kode warisan yang besar dan kompleks."
 
-#, fuzzy
-#| msgid "Team"
 msgid "Teamwork"
-msgstr "Tim"
+msgstr "Kerja tim"
 
 msgid "Tel"
 msgstr "Tel"
@@ -6416,14 +6363,12 @@ msgstr "Layanan trading finansial yang disediakan pada situs ini hanya cocok unt
 msgid "The first step is to open an account. You can <a target='_blank' href='%1'>apply online</a> in just a few minutes."
 msgstr "Langkah pertama adalah untuk mendaftar akun. Anda dapat <a target='_blank' href='%1'>mendaftar online</a> dalam hitungan menit."
 
-#, fuzzy
-#| msgid ""
-#| "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying\n"
-#| "            or selling the actual asset."
 msgid "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying or selling the actual asset."
 msgstr ""
-"Hal pertama yang harus dilakukan adalah memilih aset yang ingin anda tradingkan, seperti emas (gold) atau minyak (oil), saham atau harga FX (Nilai opsi binary yang berasal dari harga aset). Kelebihan besar dari trading opsi adalah anda tidak membeli \n"
-"atau menjual aset yang sebenarnya."
+"Hal pertama yang harus dilakukan adalah memilih aset yang ingin anda "
+"tradingkan, seperti emas (gold) atau minyak (oil), saham atau harga FX ("
+"Nilai opsi binary yang berasal dari harga aset). Kelebihan besar dari "
+"trading opsi adalah anda tidak membeli atau menjual aset yang sebenarnya."
 
 msgid "The first tick is the first tick after the contract is processed by our servers."
 msgstr "Tik awal adalah tik pertama setelah kontrak diproses oleh server kami."
@@ -6509,38 +6454,32 @@ msgstr "Penggunaan API %1 adalah risiko Anda sendiri, dan Anda bertanggung jawab
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr "Penggunaan, operasi atau kombinasi dari API %1 dengan bukan API %1 baik itu data, peralatan atau dokumentasi jika kewajiban dihindari tetapi untuk penggunaan tersebut, operasi atau kombinasi atau"
 
-#, fuzzy
-#| msgid ""
-#| "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try\n"
-#| "                out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr ""
-"Indeks volatilitas mensimulasikan berbagai situasi pasar riil dan menyediakan platform yang ideal untuk digunakan bertrading dan mencoba strategi pada berbagai kondisi pasar. Indeks ini tergantung kepada volatilitas dan pergerakan cepat yang membantu pengguna untuk mencoba \n"
-"skenario seperti – volatilitas tinggi, volatilitas rendah, trend bullish dan bearish."
+"Indeks volatilitas mensimulasikan berbagai situasi pasar riil dan "
+"menyediakan platform yang ideal untuk digunakan bertrading dan mencoba "
+"strategi pada berbagai kondisi pasar. Indeks ini tergantung kepada "
+"volatilitas dan pergerakan cepat yang membantu pengguna untuk mencoba "
+"skenario seperti – volatilitas tinggi, volatilitas rendah, trend bullish dan "
+"bearish."
 
 msgid "Then, make your trade"
 msgstr "Kemudian, beli kontrak"
 
 msgid "There are four main trade types for you to choose from:"
-msgstr ""
+msgstr "Tersedia empat jenis kontrak utama yang dapat Anda pilih:"
 
 msgid "There are risks associated with utilizing an Internet-based deal execution trading system, including but not limited to the failure of hardware, software and Internet connection. Since %1 does not control signal power, its reception or routing via Internet, configuration of your equipment or reliability of its connection, we cannot be responsible for communication failures, distortions or delays when trading via the Internet."
 msgstr "Terdapat beberapa risiko dalam penggunaan sistem pengeksekusian trading menggunakan internet, termasuk dan tidak terbatas kepada kegagalan hardware, software dan koneksi internet. Berhubung %1 tidak mengatur kekuatan sinyal, penerimaan atau routing melalui internet, konfigurasi peralatan anda atau reliabilitas koneksi maka kami tidak bertanggung jawab kepada kegagalan komunikasi, perubahan atau keterlambatan ketika melakukan trading melalui internet."
 
-#, fuzzy
-#| msgid "There are 3 types of tick trades:"
 msgid "There are two types of In/Out trades:"
-msgstr "Terdapat 3 jenis trading tik:"
+msgstr "Tersedia dua jenis kontrak In/Out:"
 
-#, fuzzy
-#| msgid "There are 3 types of tick trades:"
 msgid "There are two types of Up/Down trades:"
-msgstr "Terdapat 3 jenis trading tik:"
+msgstr "Tersedia dua jenis kontrak Up/Down:"
 
-#, fuzzy
-#| msgid "There are two ways to obtain an API Token:"
 msgid "There are two ways to trade Asians:"
-msgstr "Terdapat dua cara untuk mendapatkan Token API:"
+msgstr "Tersedia dua langkah untuk bertrading Asians:"
 
 msgid "There was a problem accessing the server during purchase."
 msgstr "Terjadi masalah mengakses server saat pembelian berlangsung."
@@ -6764,18 +6703,15 @@ msgstr "Total Untung/Rugi"
 msgid "Touch/No Touch"
 msgstr "Touch/No Touch"
 
-#, fuzzy
-#| msgid "<strong>Touch/No Touch</strong> - predict if the market will touch or not touch a price target."
 msgid "Touch/No Touch - Predict if the market will touch or not touch a target price"
-msgstr "<strong>Touch/No Touch</strong> - menganalisa apakah pasar akan menyentuh atau tidak target harga."
+msgstr ""
+"Touch/No Touch - Menganalisa pasar akan menyentuh atau tidak harga target"
 
 msgid "Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "Kontrak Touch/No Touch akan mendapat pengembalian harga beli jika terdapat kurang dari 2 tik penyelesaian dari waktu mulai hingga akhir."
 
-#, fuzzy
-#| msgid "touches"
 msgid "Touches"
-msgstr "menyentuh"
+msgstr "Touches"
 
 msgid "Tour"
 msgstr "Panduan"
@@ -6810,18 +6746,17 @@ msgstr "Bertrading pada pasar keuangan dunia melalui platform online yang sederh
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "Bertradinglah menggunakan dana yang anda mampu. Jangan bertrading menggunakan dana pinjaman."
 
-#, fuzzy
-#| msgid "1. trade type"
 msgid "Trade type"
-msgstr "1. jenis kontrak"
+msgstr "Jenis kontrak"
 
 msgid "Trade with a powerful interface known as the global industry standard."
 msgstr "Trading menggunakan antarmuka yang dikenal oleh standar industri global."
 
-#, fuzzy
-#| msgid "Trade with ease with %1's wide range of deposit and withdrawal methods. Your funds will be segregated and held in AAA-rated banks."
 msgid "Trade with ease with %1's wide range of deposit and withdrawal methods. Your funds will be segregated and held in secure and licensed financial institutions."
-msgstr "Trading mudah menggunakan berbagai pilihan metode deposit dan penarikan %1. Dana anda akan disimpan pada berbagai bank utama dunia."
+msgstr ""
+"Bertrading dengan mudah dengan pilihan luas metode deposit dan penarikan %1. "
+"Dana Anda akan disimpan secara terpisah pada institusi keuangan yang "
+"berlisensi dan aman."
 
 msgid "Trade your way"
 msgstr "Trading dengan cara Anda"
@@ -6850,10 +6785,10 @@ msgstr "Waktu Trading"
 msgid "Trading and Withdrawal Limits"
 msgstr "Batasan Penarikan"
 
-#, fuzzy
-#| msgid "Trading binaries is remarkably easy, and requires only 3 simple steps:"
 msgid "Trading binary options is relatively easy, and you can purchase a trade in only three simple steps."
-msgstr "Trading binary sangat mudah, hanya memerlukan 3 langkah sederhana:"
+msgstr ""
+"Trading opsi binary relatif mudah, dan Anda dapat membeli kontrak hanya "
+"dengan tiga langkah sederhana."
 
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class=\"ja-hide\">Read about <a href=\"%1\" class=\"pjaxload\">Responsible Trading</a>.</span>"
 msgstr "Trading opsi Binary memiliki resiko tinggi dan mungkin tidak cocok untuk semua investor. Pastikan untuk memahami berbagai resiko yang terlibat termasuk mempertimbangkan tujuan, situasi keuangan, kebutuhan dan tingkat pengalaman trading Anda."
@@ -6969,10 +6904,8 @@ msgstr "Trading Dibawah Umur"
 msgid "Underlying"
 msgstr "Yang mendasari"
 
-#, fuzzy
-#| msgid "Underlying"
 msgid "Underlying market"
-msgstr "Yang mendasari"
+msgstr "Pasar dasar"
 
 msgid "Unemployed"
 msgstr "Unemployed"
@@ -6995,10 +6928,8 @@ msgstr "Kecuali disarankan, kami memperlakukan Anda sebagai Klien Ritel. Anda ju
 msgid "Unlock Cashier"
 msgstr "Buka Kasir"
 
-#, fuzzy
-#| msgid "Profit from the market ending higher or lower than a target price"
 msgid "Up - Predict that the market will end higher than the average price"
-msgstr "Keuntungan dari market yang berakhir lebih tinggi atau lebih rendah dari target harga"
+msgstr "Up - Menganalisa pasar akan berakhir lebih tinggi dari harga rata-rata"
 
 msgid "Up/Down"
 msgstr "Up/Down"
@@ -7120,10 +7051,9 @@ msgstr "Indeks Volatilitas"
 msgid "Volatility Indices are further categorized into two types:"
 msgstr "Indeks Volatilitas lebih lanjut dikategorikan menjadi dua jenis:"
 
-#, fuzzy
-#| msgid "<strong>Volatility Indices</strong> - trade %1's proprietary volatility indices."
 msgid "Volatility indices - %1's proprietary indices that simulate market forces"
-msgstr "<strong>Indeks Volatilitas</strong> - bertrading indeks volatilitas %1."
+msgstr ""
+"Indeks volatilitas - Indeks %1 yang disimulasi menggunakan kekuatan pasar"
 
 msgid "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
@@ -7176,10 +7106,9 @@ msgstr "Kami saat ini menerima permohonan dari berbagai pemasaran affiliasi yang
 msgid "We are entitled under the Rules to rely upon information provided by you. You should ensure that you provide us with accurate and complete information and notify us in the event that any information supplied to us changes. You should note that if you provide us with inaccurate information, or if you fail to notify us of any changes to information previously supplied by you, this may adversely affect the quality of the services that we can provide."
 msgstr "Kami berhak di bawah Aturan untuk mengandalkan informasi yang Anda berikan. Anda harus memastikan bahwa Anda memberikan kami informasi yang akurat dan lengkap dan memberitahu kami dalam hal bahwa setiap informasi yang diberikan kepada kami berubah. Anda harus mencatat bahwa jika Anda memberikan kami informasi yang tidak akurat, atau jika Anda gagal untuk memberitahu kami dari setiap perubahan informasi yang sebelumnya diberikan, ini dapat mempengaruhi kualitas layanan yang kami berikan."
 
-#, fuzzy
-#| msgid "We are fully licensed in the British Isles and Malta."
 msgid "We are licensed and regulated in the British Isles, Japan, and in Malta since 2015."
-msgstr "Kami sepenuhnya memiliki ijin dari British Isles dan Malta."
+msgstr ""
+"Kami berlisensi dan diatur di Kepulauan Inggris, Jepang dan Malta sejak 2015."
 
 msgid "We are looking for energetic and enthusiastic individuals who love challenges, are detail-oriented and highly analytical to join our Internal Audit team."
 msgstr "Kami mencari individu energik dan antusias yang suka tantangan, yang berorientasi detail dan sangat analitis untuk bergabung dengan tim Internal Audit kami."
@@ -7205,10 +7134,9 @@ msgstr "Kami mempekerjakan tim ekstensif terdiri dari penulis, desainer, analis 
 msgid "We have a general duty to conduct our business with you honestly, fairly, and professionally and to act in your best interests when opening and closing Binary Options trades with you."
 msgstr "Kami memiliki tanggung jawab untuk melakukan bisnis secara jujur, adil dan profesional serta untuk mengutamakan kepentingan Anda didalam mendaftar dan menutup trading Opsi Binary."
 
-#, fuzzy
-#| msgid "We have a proven track record since starting in 2000."
 msgid "We have a proven track record since we launched our platform in 2000."
-msgstr "Kami memiliki track record yang terbukti sejak tahun 2000."
+msgstr ""
+"Kami memiliki track record yang terbukti sejak diluncurkan pada tahun 2000."
 
 msgid "We have a tested and proven selection of banners, links, reviews, newsletters, videos, and text ads for your use. Additionally, we have flash banners which you can grab through your affiliate account. If you would like customized tools, or an item currently not offered on the site, please contact your account manager at: <a href=\"mailto:%1\">%1</a>."
 msgstr "Kami telah menguji dan membuktikan keakuratan beberapa banner, link, review, newsletter, video, dan teks iklan untuk Anda gunakan. Selain itu, kami memiliki flash banner yang dapat Anda ambil melalui akun afiliasi Anda. Jika Anda menginginkan peralatan khusus atau fasilitas yang belum ditawarkan, silahkan hubungi manajer Anda di: <a href=\"mailto:%1\">%1</a>."
@@ -7225,10 +7153,11 @@ msgstr "Kami menjaga jumlah saldo tunai untuk memastikan 100% saldo tunai setiap
 msgid "We may release subsequent versions of the %1 API and require that you use those subsequent versions. Your continued use of the APIs following a subsequent release will be deemed your acceptance of modifications."
 msgstr "Kami mungkin akan merilis versi berikutnya dari API %1 dan mengharuskan Anda menggunakan versi-versi berikutnya. Jika Anda terus menggunakan API pada rilis berikutnya maka akan dianggap penerimaan Anda termodifikasi."
 
-#, fuzzy
-#| msgid "We offer a market-based remuneration structure, an annual cash bonus plan, health benefits for you and your family, travel and internet allowances, and company trips."
 msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you’re in Malta or Malaysia."
-msgstr "Kami menawarkan struktur remunerasi sesuai pasar, bonus tahunan, manfaat kesehatan bagi Anda dan keluarga, tunjangan transportasi dan internet termasuk perjalanan wisata."
+msgstr ""
+"Kami menawarkan gaji berdasarkan pasar, bonus kinerja tahunan, manfaat "
+"kesehatan, wisata dan tunjangan internet dan perjalanan perusahaan. "
+"Menikmati standar hidup yang tinggi, baik itu di Malta atau Malaysia."
 
 msgid "We prohibit the use of unauthorised incentives, gifts and payments to encourage customer sign-ups. In the event that we believe that you have engaged in such activity, we reserve the right to withhold any amounts due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval."
 msgstr "Kami melarang penggunaan tidak sah insentif, hadiah dan pembayaran lain untuk mengajak klien bergabung. Jika kami mengetahui Anda melakukan kegiatan seperti yang disebutkan maka kami berhak untuk menahan keanggotaan afiliasi Anda. Namun jika Anda memiliki rencana khusus tentang insentif atau lainnya, silahkan hubungi manajer afiliasi Anda untuk perbincangan selanjutnya."
@@ -7250,9 +7179,14 @@ msgstr "Kami berhak menolak permohonan referral Anda untuk mendaftar akun (atau 
 
 msgid "We segregate all client funds and hold them in secure and licensed financial institutions, according to the conditions of our trading licenses."
 msgstr ""
+"Kami memisahkan semua dana klien dan menyimpannya pada lembaga-lembaga "
+"keuangan yang aman dan berlisensi, sesuai dengan kondisi lisensi tarding "
+"kami."
 
 msgid "We segregate your funds and keep them in secure and licensed financial institutions."
 msgstr ""
+"Kami memisahkan dana Anda dan menyimpannya pada lembaga-lembaga keuangan "
+"yang aman dan berlisensi."
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues."
 msgstr "Kami menggunakan pembuktian identitas dan mendeteksi tindakan penyalahgunaan secara langsung untuk membantu kami menjaga keamanan akun Anda dari akses yang tidak dibenarkan. Kami juga selalu memantau aktifitas penyalahgunaan dan bekerjasama dengan pihak berwajib untuk mengatasi masalah penipuan."
@@ -7455,13 +7389,15 @@ msgstr "Dengan %1 Anda dapat bertrading:"
 msgid "With %1, you can count on us to serve you with integrity and reliability."
 msgstr ""
 
-#, fuzzy
-#| msgid "If you do, no worries. With Binary.com, you can sell your trades before expiry to lock in profits. There's no need to wait until the end time."
 msgid "With %1, you can sell your contracts before expiry to keep any profits you may have made or to minimise your losses. You don’t have to wait until the actual expiration time."
-msgstr "Jika Anda tidak mengetahuinya, jangan khawatir. Di Binary.com, Anda dapat menjual kontrak sebelum berakhir untuk memastikan keuntungan Anda. Anda tidak perlu menunggu hingga kontrak berakhir."
+msgstr ""
+"Di %1, Anda berkesempatan untuk menutup kontrak sebelum berakhir untuk "
+"mengurangkan risiko kerugian Anda. Anda tidak perlu menunggu hingga kontrak "
+"berakhir."
 
 msgid "With %1, you’ll know the risk and potential reward before you purchase a contract."
 msgstr ""
+"Di %1, Anda akan mengetahui risiko dan potensi hasil sebelum membeli kontrak."
 
 msgid "With regards to tracking your referrals accessing %1 via the links on your website or by quoting your affiliate IDs during the sign-up process, the Company shall use all reasonable endeavours to ensure that whenever a client is referred to %1 through these links or affiliate IDs, and they subsequently place a contract or otherwise transact with the Company, the relevant client is identified as originating from your referral. However, the Company shall not be liable to you in any way if the Company is unable to identify a client as originating from your referral. Only properly tagged clients can be assigned to you. It is your responsibility to ensure that all links are properly tagged."
 msgstr "Sehubungan dengan pelacakan referral Anda dalam mengakses %1 melalui link pada website Anda atau dengan mengutip ID afiliasi Anda selama proses pendaftaran, Perusahaan akan menggunakan semua upaya yang wajar untuk memastikan bahwa setiap kali klien tersebut mengakses %1 melalui link atau ID afiliasi Anda, dan mereka kemudian membeli kontrak atau bertransaksi dengan Perusahaan, maka klien yang relevan akan diidentifikasi berasal dari referral Anda. Namun, Perusahaan tidak bertanggung jawab jika Perusahaan tidak dapat mengidentifikasi klien sebagai berasal dari referral Anda. Hanya referral yang benar ditandai sebagai klien akan dapat diberikan dibawah Anda. Merupakan tanggung jawab Anda untuk memastikan bahwa semua link adalah ditandai dengan benar."
@@ -7580,10 +7516,10 @@ msgstr "Anda dapat mengisi dana virtual kembali jika saldo kurang dari JPY 100,0
 msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
 msgstr "Anda dapat mengisi dana virtual kembali jika saldo kurang dari USD 1,000.00."
 
-#, fuzzy
-#| msgid "You can close your trade before expiry to lock in profits."
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
-msgstr "Anda dapat menjual kontrak sebelum berakhir untuk memperoleh keuntungan."
+msgstr ""
+"Anda berkesempatan untuk menutup kontrak sebelum berakhir untuk mengurangkan "
+"risiko kerugian Anda."
 
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
 msgstr "Anda dapat menggunakan agen pembayaran untuk mendeposit dan menarik dana menggunakan transfer bank lokal atau e-cash yang tidak disediakan oleh %1. Sangat mudah."
@@ -7686,10 +7622,8 @@ msgstr "Anda mewakili, menjamin, dan melakukan yang Anda telah diperoleh dan har
 msgid "You represent, warrant, and undertake that your website or promotion shall contain no material which is defamatory, pornographic, unlawful, harmful, threatening, obscene, harassing, or racially, ethnically, or otherwise objectionable or discriminatory, violent, politically sensitive, or otherwise controversial or in breach of any third party rights and shall not link to any such material."
 msgstr "Anda mewakili, menjamin, dan memastikan bahwa website atau promosi yang Anda miliki tidak mengandung bahan yang memfitnah, pornografi, melanggar hukum, membahayakan, mengancam, cabul, melecehkan, atau ras, etnis, atau tidak pantas atau diskriminatif, kekerasan, politik yang sensitif atau kontroversial atau melanggar hak-hak pihak ketiga dan tidak akan link ke materi tersebut."
 
-#, fuzzy
-#| msgid "You risk only your initial stake, and your stake never increases, even in gapping markets."
 msgid "You risk only your initial stake, and your stake never increases."
-msgstr "Risiko Anda hanya pada modal, dan modal Anda tidak akan berubah meskipun terjadi perubahan pasar."
+msgstr "Risiko Anda terbatas pada modal dan jumlah modal tidak meningkat."
 
 msgid "You shall avoid disclosure or unauthorized use of any confidential information that may come to your knowledge or possession to third persons or external parties."
 msgstr "Anda harus menghindari pengungkapan atau penggunaan yang tidak sah bagi informasi rahasia yang mungkin datang atas pengetahuan atau kepemilikan pihak ketiga atau pihak luar."
