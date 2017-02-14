@@ -1,79 +1,59 @@
-[%
-  selected_tab = request.param('selected_tab');
-  IF NOT selected_tab; selected_tab = 'legal-tab'; END;
-%]
 <div class="content-tab-container static_full tab-with-subsection">
-  <div class="tab-menu">
-    <div class="tab-menu-wrap container">
-      <ul id="legal-menu" class="tm-ul">
-        <li id="legal-tab" class="tm-li[% IF selected_tab == 'legal-tab' || selected_tab == 'legal-tac-tab' || selected_tab == 'betting-rules-tab' || selected_tab == 'promo-tac-tab' || selected_tab == 'affiliate-tac-tab' || selected_tab == 'api-tac-tab' || selected_tab == 'complaints-disputes-tac-tab' +%] active[% END +%] first">
-          <span class="menu-wrap-a">
-            <span class="menu-wrap-b"><a href="#legal-tab" class="tm-a first[% IF selected_tab == 'legal-tab' || selected_tab == 'legal-tac-tab' || selected_tab == 'betting-rules-tab' || selected_tab == 'promo-tac-tab' || selected_tab == 'affiliate-tac-tab' || selected_tab == 'complaints-disputes-tac-tab' +%] a-active[% END +%]">[% l('Terms and Conditions') %]</a></span>
-          </span>
-          <ul class="tm-ul-2">
-            <li id="legal-tac-tab" class="tm-li-2[% IF selected_tab == 'legal-tab' || selected_tab == 'legal-tac-tab' +%] active[% END +%] first"><span class="tm-a-2[% IF selected_tab == 'legal-tab' || selected_tab == 'legal-tac-tab' +%] a-active[% END +%]">[% l('Site') %]</span></li>
-            <li id="betting-rules-tab" class="tm-li-2[% IF selected_tab == 'betting-rules-tab' +%] active[% END +%]"><a href="?selected_tab=betting-rules-tab" class="tm-a-2[% IF selected_tab == 'betting-rules-tab' +%] a-active[% END +%]">[% l('Trading Rules') %]</a></li>
-            <li id="promo-tac-tab" class="ja-hide tm-li-2[% IF selected_tab == 'promo-tac-tab' +%] active[% END +%]"><a href="?selected_tab=promo-tac-tab" class="tm-a-2[% IF selected_tab == 'promo-tac-tab' +%] a-active[% END +%]">[% l('Bonus Code') %]</a></li>
-            <li id="affiliate-tac-tab" class="ja-hide tm-li-2[% IF selected_tab == 'affiliate-tac-tab' +%] active[% END +%]"><a href="?selected_tab=affiliate-tac-tab" class="tm-a-2[% IF selected_tab == 'affiliate-tac-tab' +%] a-active[% END +%]">[% l('Affiliate') %]</a></li>
-            <li id="api-tac-tab" class="ja-hide tm-li-2[% IF selected_tab == 'api-tac-tab' +%] active[% END +%]"><a href="?selected_tab=api-tac-tab" class="tm-a-2[% IF selected_tab == 'api-tac-tab' +%] a-active[% END +%]">[% l('API') %]</a></li>
-            <li id="complaints-disputes-tac-tab" class="tm-li-2[% IF selected_tab == 'complaints-disputes-tac-tab' +%] active[% END +%] last"><a href="?selected_tab=complaints-disputes-tac-tab" class="tm-a-2[% IF selected_tab == 'complaints-disputes-tac-tab' +%] a-active[% END +%]">[% l('Complaints and Disputes') %]</a></li>
-            <li id="conflicts-policy-tac-tab" class="tm-li-2[% IF selected_tab == 'conflicts-policy-tac-tab' +%] active[% END +%] last"><a href="?selected_tab=conflicts-policy-tac-tab" class="tm-a-2[% IF selected_tab == 'conflicts-policy-tac-tab' +%] a-active[% END +%]">[% l('conflicts Policy') %]</a></li>
-            <li id="biel-terms-tac-tab" class="ja-hide tm-li-2[% IF selected_tab == 'biel-terms-tac-tab' +%] active[% END +%] last"><a href="?selected_tab=biel-terms-tac-tab" class="tm-a-2[% IF selected_tab == 'biel-terms-tac-tab' +%] a-active[% END +%]">[% l('BIEL Terms') %]</a></li>
-          </ul>
-        </li>
-        <li id="datafeed-tab" class="tm-li[% IF selected_tab == 'datafeed-tab' +%] active[% END +%]"><a href="#datafeed-tab" class="tm-a[% IF selected_tab == 'datafeed-tab' +%] a-active[% END +%]">[% l('Data Feed') %]</a></li>
-        <li id="privacy-tab" class="tm-li[% IF selected_tab == 'privacy-tab' +%] active[% END +%]"><a href="#privacy-tab" class="tm-a[% IF selected_tab == 'privacy-tab' +%] a-active[% END +%]">[% l('Security and Privacy') %]</a></li>
-        <li id="copyright-tab" class="tm-li[% IF selected_tab == 'copyright-tab' +%] active[% END +%]"><a href="#copyright-tab" class="tm-a[% IF selected_tab == 'copyright-tab' +%] a-active[% END +%]">[% l('Copyright') %]</a></li>
-        <li id="risk-tab" class="tm-li[% IF selected_tab == 'risk-tab' +%] active[% END +%] last"><a href="#risk-tab" class="tm-a[% IF selected_tab == 'risk-tab' +%] a-active[% END +%]">[% l('Risk Disclaimer') %]</a></li>
-        <li id="order-execution-tab" class="tm-li[% IF selected_tab == 'order-execution-tab' +%] active[% END +%] last"><a href="#order-execution-tab" class="tm-a[% IF selected_tab == 'order-execution-tab' +%] a-active[% END +%]">[% l('Order Execution') %]</a></li>
-      </ul>
+    <div class="tab-menu">
+        <div class="tab-menu-wrap">
+            <ul id="legal-menu" class="tm-ul">
+                <li id="legal" class="tm-li first">
+                    <span class="menu-wrap-a">
+                        <span class="menu-wrap-b">
+                            <a href="#legal" class="tm-a first">[% l('Terms and Conditions') %]</a>
+                        </span>
+                    </span>
+                    <ul class="tm-ul-2">
+                        <li id="legal-binary" class="tm-li-2 first"><a href="#legal-binary" class="tm-a-2">[% l('Binary Options') %]</a></li>
+                        <li id="legal-mt" class="tm-li-2"><a href="#legal-mt" class="tm-a-2">[% l('MetaTrader') %]</a></li>
+                    </ul>
+                </li>
+
+                <li id="datafeed" class="tm-li"><a href="#datafeed" class="tm-a">[% l('Data Feed') %]</a></li>
+                <li id="privacy" class="tm-li"><a href="#privacy" class="tm-a">[% l('Security and Privacy') %]</a></li>
+                <li id="copyright" class="tm-li"><a href="#copyright" class="tm-a">[% l('Copyright') %]</a></li>
+
+                <li id="risk" class="tm-li">
+                    <span class="menu-wrap-a">
+                        <span class="menu-wrap-b"><a href="#risk" class="tm-a first">[% l('Risk Disclaimer') %]</a></span>
+                    </span>
+                    <ul class="tm-ul-2">
+                        <li id="risk-binary" class="tm-li-2 first"><a href="#risk-binary" class="tm-a-2">[% l('Binary Options') %]</a></li>
+                        <li id="risk-mt" class="tm-li-2"><a href="#risk-mt" class="tm-a-2">[% l('MetaTrader') %]</a></li>
+                    </ul>
+                </li>
+
+                <li id="order-execution" class="tm-li">
+                    <span class="menu-wrap-a">
+                        <span class="menu-wrap-b"><a href="#order-execution" class="tm-a first">[% l('Order Execution') %]</a></span>
+                    </span>
+                    <ul class="tm-ul-2">
+                        <li id="order-execution-binary" class="tm-li-2 first"><a href="#order-execution-binary" class="tm-a-2">[% l('Binary Options') %]</a></li>
+                        <li id="order-execution-mt" class="tm-li-2"><a href="#order-execution-mt" class="tm-a-2">[% l('MetaTrader') %]</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
-  <div class="tab-content">
-    <div class="tab-content-wrapper menu-has-sub-item">
-      <div id="legal-tac-tab-content" class="toggle-content[% IF selected_tab == 'legal-tab' || selected_tab == 'legal-tac-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/terms_and_conditions.html.tt %]
-      </div>
-      <div id="betting-rules-tab-content" class="toggle-content[% IF selected_tab == 'betting-rules-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/betting_rules.html.tt %]
-      </div>
-      <div id="promo-tac-tab-content" class="toggle-content[% IF selected_tab == 'promo-tac-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/promocode.html.tt %]
-      </div>
-      <div id="affiliate-tac-tab-content" class="toggle-content[% IF selected_tab == 'affiliate-tac-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/affiliate_tac_tab.html.tt %]
-      </div>
-      <div id="api-tac-tab-content" class="toggle-content[% IF selected_tab == 'api-tac-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/api_tac_tab.html.tt %]
-      </div>
+    <div class="tab-content gr-padding-10">
+        <div class="tab-content-wrapper menu-has-sub-item">
+            <div id="legal-binary-content" class="toggle-content invisible">[% INCLUDE legal/terms_and_conditions.html.tt %]</div>
+            <div id="legal-mt-content" class="toggle-content invisible">[% INCLUDE legal/metatrader/terms_and_conditions.html.tt %]</div>
 
-      <div id="complaints-disputes-tac-tab-content" class="toggle-content[% IF selected_tab == 'complaints-disputes-tac-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/complaints_disputes.html.tt %]
-      </div>
+            <div id="datafeed-content" class="toggle-content invisible">[% INCLUDE legal/datafeed.html.tt %]</div>
+            <div id="privacy-content" class="toggle-content invisible">[% INCLUDE legal/privacy.html.tt %]</div>
+            <div id="copyright-content" class="toggle-content invisible">[% INCLUDE legal/copyright.html.tt %]</div>
 
-      <div id="conflicts-policy-tac-tab-content" class="toggle-content[% IF selected_tab == 'conflicts-policy-tac-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/conflicts_policy.html.tt %]
-      </div>
+            <div id="risk-binary-content" class="toggle-content invisible">[% INCLUDE legal/risk_disclaimer.html.tt %]</div>
+            <div id="risk-mt-content" class="toggle-content invisible">[% INCLUDE legal/metatrader/risk_disclaimer.html.tt %]</div>
 
-      <div id="biel-terms-tac-tab-content" class="toggle-content[% IF selected_tab == 'biel-terms-tac-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/biel_terms.html.tt %]
-      </div>
-
-      <div id="datafeed-tab-content" class="toggle-content[% IF selected_tab == 'datafeed-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/datafeed.html.tt %]
-      </div>
-      <div id="privacy-tab-content" class="toggle-content[% IF selected_tab == 'privacy-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/privacy.html.tt %]
-      </div>
-      <div id="copyright-tab-content" class="toggle-content[% IF selected_tab == 'copyright-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/copyright.html.tt %]
-      </div>
-      <div id="risk-tab-content" class="toggle-content[% IF selected_tab == 'risk-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/risk_disclaimer.html.tt %]
-      </div>
-      <div id="order-execution-tab-content" class="toggle-content[% IF selected_tab == 'order-execution-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/order_execution.html.tt %]
-      </div>
+            <div id="order-execution-binary-content" class="toggle-content invisible">[% INCLUDE legal/order_execution.html.tt %]</div>
+            <div id="order-execution-mt-content" class="toggle-content invisible">[% INCLUDE legal/metatrader/order_execution.html.tt %]</div>
+        </div>
     </div>
-  </div>
 </div>

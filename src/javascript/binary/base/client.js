@@ -16,9 +16,11 @@ const Client = (function () {
         return string.split('+').sort().map(function(str) {
             const items = str.split(':');
             const id = items[0];
+            const is_real = items[1] === 'R';
+            if (is_real) client_object.has_real = is_real;
             return {
                 id           : id,
-                real         : items[1] === 'R',
+                real         : is_real,
                 disabled     : items[2] === 'D',
                 financial    : /^MF/.test(id),
                 non_financial: /^MLT/.test(id),
@@ -364,12 +366,24 @@ const Client = (function () {
 
     const get_client_landing_company = function() {
         let client_landing_company = {};
-        Object.keys(landing_company_response).forEach(function(key) {
+        Object.keys(landing_company_response).forEach(function (key) {
             if (client_object.landing_company_name === landing_company_response[key].shortcode) {
                 client_landing_company = landing_company_response[key];
             }
         });
         return client_landing_company;
+    };
+
+    const is_financial = () => (client_object.loginid_array.find(obj => (obj.id === get('loginid'))) || {}).financial;
+
+    const should_complete_tax = () => is_financial() && !get('has_tax_information');
+
+    const should_redirect_tax = () => {
+        if (should_complete_tax() && !/user\/settings\/detailsws/.test(window.location.pathname)) {
+            window.location.href = url_for('user/settings/detailsws');
+            return true;
+        }
+        return false;
     };
 
     return {
@@ -398,6 +412,9 @@ const Client = (function () {
         do_logout          : do_logout,
         status_detected    : status_detected,
         landing_company    : get_set_landing_company,
+        is_financial       : is_financial,
+        should_complete_tax: should_complete_tax,
+        should_redirect_tax: should_redirect_tax,
 
         get_client_landing_company: get_client_landing_company,
     };

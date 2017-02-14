@@ -1,6 +1,10 @@
 <div>
     <h1>[% l('Personal Details') %]</h1>
 
+    <p class="notice-msg center-text invisible" id="tax_information_notice">
+        [% l('Please complete the tax information before proceeding.') %]
+    </p>
+
     <form class="form form gr-padding-10 hidden" id="frmPersonalDetails">
 
         <fieldset>
@@ -77,6 +81,37 @@
                         <option value="Unemployed">[% l('Unemployed') %]</option>
                         <option value="Others">[% l('Others') %]</option>
                     </select>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="hidden RealAcc ja-hide">
+            <legend>[% l('Tax Information') %]</legend>
+
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
+                    <label for="place_of_birth">[% l('Place of birth') %]</label>
+                </div>
+                <div class="gr-8">
+                    <select name="place_of_birth" id="place_of_birth" class="form_input"></select>
+                </div>
+            </div>
+
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
+                    <label for="tax_residence">[% l('Tax residence') %]</label>
+                </div>
+                <div class="gr-8">
+                    <select name="tax_residence" id="tax_residence" class="form_input invisible" multiple="multiple"></select>
+                </div>
+            </div>
+
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
+                    <label for="tax_identification_number">[% l('Tax identification number') %]</label>
+                </div>
+                <div class="gr-8">
+                    <input type="text" class="text form_input" id="tax_identification_number" name="tax_identification_number" maxlength="20"/>
                 </div>
             </div>
         </fieldset>

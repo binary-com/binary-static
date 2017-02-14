@@ -108,6 +108,9 @@ pjax_config_page('/terms-and-conditions', function() {
         onLoad: function() {
             TermsAndConditions.init();
         },
+        onUnload: function() {
+            Scroll.offScroll();
+        },
     };
 });
 
