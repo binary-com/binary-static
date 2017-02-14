@@ -7,14 +7,16 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-13 14:10+0000\n"
-"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"PO-Revision-Date: 2017-02-14 16:38+0000\n"
+"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.12-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -35,45 +37,44 @@ msgstr "\"Сторонний поставщик (Сторонние постав
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 было зачислено на Ваш Демо-счет %3"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
 msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
+msgstr ""
+"Получите выплату %1 %2, если %3 не коснётся заданного ценового барьера на "
+"момент закрытия %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+msgstr ""
+"Получите выплату %1 %2, если %3 завершит контракт на или между верхним или "
+"нижним ценовым барьером на момент закрытия %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+msgstr ""
+"Получите выплату %1 %2, если %3 завершит торговлю вне верхнего и нижнего "
+"ценового барьера на момент закрытия %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+msgstr ""
+"Получите выплату %1 %2, если %3 выйдет за пределы верхнего и нижнего "
+"ценового барьера на момент закрытия %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+msgstr ""
+"Получите выплату %1 %2, если %3 будет находиться строго выше или на заданном "
+"ценовом барьере на момент окончания %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
 msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+msgstr ""
+"Получите выплату %1 %2, если %3 будет находиться строго ниже заданной цены "
+"на момент закрытия %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+msgstr ""
+"Получите выплату %1 %2, если %3 останется между заданным верхним и нижним "
+"барьером на момент закрытия %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
+msgstr ""
+"Получите выплату %1 %2, если %3 коснётся заданной цены к моменту закрытия %4."
 
 msgid "%1 (Toll Free)"
 msgstr "%1 (Бесплатно)"
@@ -616,10 +617,10 @@ msgstr "<strong>От краткосрочных до долгосрочных с
 msgid "<strong>Simple and intuitive</strong> - Enjoy a trading platform that’s easy to navigate and use"
 msgstr "<strong>Просто и удобно</strong> – воспользуйтесь простой и интуитивно понятной платформой"
 
-#, fuzzy
-#| msgid "<strong>Touch/No Touch</strong> - predict if the market will touch or not touch a price target."
 msgid "<strong>Touch/No Touch</strong> - Predict the market touching or not touching a price target."
-msgstr "<strong>Касание/Нет касания</strong> – сделайте прогноз, коснется или нет рынок выбранного барьера."
+msgstr ""
+"<strong>Касание/Нет касания</strong> – сделайте прогноз, коснется ли рынок "
+"выбранного барьера."
 
 msgid "<strong>Trade according to your preferred strategy</strong> - Trade based on \"gut feel\" or rely on technical and fundamental analysis"
 msgstr "<strong>Придерживайтесь выбранной стратегии</strong> – доверяйте своему чутью или пользуйтесь данными технического и фундаментального анализа."
