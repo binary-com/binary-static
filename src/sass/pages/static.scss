@@ -23,6 +23,10 @@
     }
 }
 
+.sidebar-container {
+    position: relative;
+}
+
 .sidebar {
     @include menu-left;
 }

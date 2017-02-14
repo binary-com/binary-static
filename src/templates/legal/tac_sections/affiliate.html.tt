@@ -1,7 +1,5 @@
 <div>
-
     <h2>[% l("[_1] Affiliate Program Terms and Conditions", website_name) %]</h2>
-
     <ol class="reset_ol">
         <li>[% l("This Document") %]
             <ol class="reset_ol">
@@ -111,15 +109,15 @@
                 <li>[% l("Either party may terminate this Agreement forthwith on written notice if a receiver, examiner, or administrator is appointed of the whole or any part of the other party's assets or the other party is struck off the Register of Companies in the jurisdiction where it was incorporated or an order is made or a resolution passed for winding up of the other party (unless such order or resolution is part of a voluntary scheme for the reconstruction or amalgamation of that party as a solvent corporation and the resulting corporation, if a different legal person, undertakes to be bound by this Agreement).") %]</li>
                 <li>[% l("Either party may terminate this Agreement on delivery of one weeks' prior written notice to the other party.") %]</li>
                 <li>[% l("Termination for Causes") %]
-                  <ol class="reset_ol">
-                    <li>[% l("If:") %]
-                      <ol class="reset_ol">
-                        <li>[% l("The Company receives a complaint which could have involved the Alternate Dispute Resolution entity, or the Company believes that you, the Affiliate, is in breach of any laws, rules, and regulations that may be relevant or applicable to the jurisdiction(s) in which you operate or target your business;") %]</li>
-                        <li>[% l("The information provided during the sign-up process warranted by yourself to be true and correct is determined by the Company to be false or incorrect during the term of this Agreement;") %]</li>
-                        <li>[% l("You have not obtained and have not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business;") %]</li>
-                      </ol>
-                    </li>
-                  </ol>
+                    <ol class="reset_ol">
+                        <li>[% l("If:") %]
+                            <ol class="reset_ol">
+                                <li>[% l("The Company receives a complaint which could have involved the Alternate Dispute Resolution entity, or the Company believes that you, the Affiliate, is in breach of any laws, rules, and regulations that may be relevant or applicable to the jurisdiction(s) in which you operate or target your business;") %]</li>
+                                <li>[% l("The information provided during the sign-up process warranted by yourself to be true and correct is determined by the Company to be false or incorrect during the term of this Agreement;") %]</li>
+                                <li>[% l("You have not obtained and have not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business;") %]</li>
+                            </ol>
+                        </li>
+                    </ol>
                 </li>
                 <li>[% l("Termination of this Agreement shall not prejudice any rights of any party which may have arisen on or before the date of termination.") %]</li>
             </ol>

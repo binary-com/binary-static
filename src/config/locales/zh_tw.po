@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-11 03:35+0000\n"
+"PO-Revision-Date: 2017-02-14 06:15+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -29,6 +29,30 @@ msgstr "「第三方供應商」指通過使用%1的API提供可用功能和作�
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr " %1 %2已記入您的虛擬資金帳戶 %3"
+
+msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
+msgstr "%4閉市時如果%3未觸及履約價格，可獲取%1 %2的賠付額。"
+
+msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+msgstr "%4閉市時如果%3平倉價相等於或介於履約價格最低和最高價位間，可獲取%1 %2 賠付額。"
+
+msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+msgstr "%4閉市時如果%3平倉價在履約價格最低和最高價位範圍外，可獲取%1 %2 賠付額。"
+
+msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+msgstr "%4閉市時如果%3價在履約價格最低和最高價位範圍外，可獲取%1 %2 賠付額。"
+
+msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+msgstr "%4閉市時如果%3嚴格高於或相等於履約價格，可獲取%1 %2 賠付額。"
+
+msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+msgstr "%4閉市時如果%3嚴格低於履約價格，可獲取%1 %2 賠付額。"
+
+msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+msgstr "%4閉市時如果%3在履約價格最低和最高價位範圍內，可獲取%1 %2 賠付額。"
+
+msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
+msgstr "%4閉市時如果%3觸及履約價格，可獲取%1 %2 賠付額。"
 
 msgid "%1 (Toll Free)"
 msgstr "%1(免費電話)"
@@ -99,10 +123,8 @@ msgstr "%1 建立歷史性里程碑，今已擁有百萬使用者。本公司繼
 msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr "%1也導入了<a href='%2' target='_blank' class='ja-hide'>自動化交易程式工具</a><span class='all-hide ja-show'>自動化交易程式工具</span>，讓客戶輕鬆採用「拖放」功能開發自己的自動化交易機器人。"
 
-#, fuzzy
-#| msgid "%1 is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
 msgid "%1 is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
-msgstr "%1 是一個人性化管理的工作場所。除了在各辦事處工作的員工，我們在世界各國還有選擇在家里遠程辦公的人員。如果您希望在家里辦公，我們是同意這麼做的。"
+msgstr "%1 是充滿活力和靈活的工作場所。除了在各辦事處工作的職員，我們在世界各國還有選擇在家里遠程辦公的人員。如果您希望在家里辦公，我們是同意這麼做的。"
 
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
 msgstr "%1 不斷為系統管理員、技術參與者和主管人才團隊新增經驗豐富的專業人員。我們在以下區域開發了多個吸引人的工作機會，以支持我們持續成長:"
@@ -167,10 +189,8 @@ msgstr "%1提供新的交易方式"
 msgid "%1 offers the world's financial markets in a simple, user-friendly platform."
 msgstr "%1 提供簡單、人性化的全球性金融交易平台。"
 
-#, fuzzy
-#| msgid "%1 offers five ways to trade your chosen asset:"
 msgid "%1 offers you four ways to trade a particular asset:"
-msgstr "%1 為您所選擇的資產提供以下五種交易方式："
+msgstr "%1 為您每一資產提供以下四種交易方式："
 
 msgid "%1 opens an office in the QSentral office building in central Kuala Lumpur to further expand its IT development team."
 msgstr "%1在吉隆坡市中心QSentral辦公大樓開設辦公室，進一步擴大IT開發團隊。"
@@ -226,23 +246,11 @@ msgstr "％1的定量分析小組負責在二元期權網站提供訂價及選�
 msgid "%1's Smart FX are smart markets that measure the value of a currency against a basket of major currencies."
 msgstr "%1 的智慧外匯是衡量一種貨幣相對一籃子主要貨幣價值的智慧型市場。"
 
-#, fuzzy
-#| msgid ""
-#| "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much\n"
-#| "                    less investment than would be required in the live market."
 msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
-msgstr ""
-"%1 的價差合約為槓桿型衍生合約，其價值直接與基礎市場走勢掛勾。  以比實時市場較\n"
-"                    低之投資對上漲市場購入「長倉」合同（及對下降市場購入「短倉」合同）的客戶從以上價格走勢中獲利。"
+msgstr "%1 的價差合約為槓桿型衍生合約，其價值直接與基礎市場走勢掛勾。  以比實時市場較低之投資對上漲市場購入「長倉」合同（及對下降市場購入「短倉」合同）的客戶從以上價格走勢中獲利。"
 
-#, fuzzy
-#| msgid ""
-#| "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are\n"
-#| "                    closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
 msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
-msgstr ""
-"%1 的價差合約需要可以制定客戶最大損失限額的「止損」。此「止損」額將當作訂金，在價差合約平倉前不可用於繼續交易。價差合約\n"
-"                    在接觸「止損」或「止盈」水平時由客戶售出完成平倉。"
+msgstr "%1 的價差合約需要可以制定客戶最大損失限額的「止損」。此「止損」額將當作訂金，在價差合約平倉前不可用於繼續交易。價差合約在接觸「止損」或「止盈」水平時由客戶售出完成平倉。"
 
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
 msgstr "1％的波動率指數由經過加密的安全隨機數字生成器生成，並由獨立的第三方審計其公平度。"
@@ -488,10 +496,8 @@ msgstr "<strong>所有市場條件:</strong>上漲/下跌，觸及/未觸及，�
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>所有市場條件</strong> - 上漲/下跌，觸及/未觸及，範圍內/範圍外。"
 
-#, fuzzy
-#| msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgid "<strong>All markets and conditions</strong> - Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets"
-msgstr "<strong>所有市場，所有市場環境</strong> - 在各種市場環境（上漲、下跌、橫盤整理、交易清淡和震盪）中交易外匯、指數和商品。"
+msgstr "<strong>所有市場和環境</strong> - 在各種市場環境（上漲、下跌、橫盤整理、交易清淡和震盪）中交易外匯、指數、商品及其它"
 
 msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
 msgstr "<strong>所有市場:</strong>外匯、股指和商品。"
@@ -508,10 +514,8 @@ msgstr "<strong>所有賠付額</strong> - 從1 美元到10 萬美元。"
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>合適性測試:警告:</strong>為了給您提供服務，我們必須向您獲取資訊，以便評估某項產品或服務對您是否合適（就是說要看您是否擁有足夠經驗和知識來了解相關的風險）。"
 
-#, fuzzy
-#| msgid "<strong>Trade when you want to trade</strong> - trade 24/7, even on weekends."
 msgid "<strong>Available 24/7</strong> - Trade when you want. %1 is available 24/7, even on weekends"
-msgstr "<strong>隨時交易</strong> - 全天候均可進行交易（包括週末）。"
+msgstr "<strong>隨時交易</strong> - %1 全天候均可進行交易（包括週末）"
 
 msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
 msgstr "<strong>佣金:</strong> 您將可收取交易處理的佣金費。"
@@ -528,8 +532,6 @@ msgstr "<strong>額外收入源流:</strong> 您將從我們的聯盟計劃受�
 msgid "<strong>Flexible</strong> - Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy"
 msgstr "<strong>靈活性</strong> - 隨時從一百多萬個交易選項中挑選並按照您傾向的策略自訂交易"
 
-#, fuzzy
-#| msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
 msgid "<strong>Higher/Lower</strong> - Predict the market ending higher or lower than a price target."
 msgstr "<strong>高於/低於</strong> - 預測到期時市場價格是高於還是低於目標價格。"
 
@@ -539,31 +541,23 @@ msgstr "<strong>重要免責聲明</strong> - %1 與上述所有支付代理不�
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the payment agents listed above. Each payment agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of payment agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and payment agents."
 msgstr "<strong>重要免責聲明</strong> - %1 與上述所有支付代理不存在附屬關係。各支付代理均以獨立服務提供商的身份運營，未由%1支持、擔保或經其它方式批准。客戶與支付代理的業務往來，風險自負。我們建議客戶在向支付代理匯款前，應事先查詢其信用狀況。在任何情況下，%1 都不對客戶與支付代理之間的交易承擔責任。"
 
-#, fuzzy
-#| msgid "<strong>In/Out</strong> - where you can profit from the market staying inside, or going outside, two price targets."
 msgid "<strong>In/Out</strong> - Predict the market staying inside or going outside two price targets."
-msgstr "<strong>範圍內/範圍外</strong> - 可通過預測市場價格是否會在兩個目標價格的範圍之內而獲利。"
+msgstr "<strong>範圍內/範圍外</strong> - 預測市場價格是否會在兩個目標價格的範圍之內。"
 
-#, fuzzy
-#| msgid "<strong>Instant access</strong> - open an account in minutes."
 msgid "<strong>Instant access</strong> - Open an account and start trading in minutes. Deposits and withdrawals are also available 24/7"
-msgstr "<strong>快速開戶</strong> - 僅需數分鐘即可開設帳戶。"
+msgstr "<strong>快速存取</strong> - 僅需數分鐘即可開設帳戶並開始交易。也可全天候存取款"
 
 msgid "<strong>Long-term partnership:</strong> Your partnership with %1 could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide."
 msgstr "<strong>長期合作關係:</strong> 您和 %1 合夥即可免費向我們全世界 1,000,000+ 位註冊客戶推銷您的產品或服務。"
 
-#, fuzzy
-#| msgid "<strong>Low minimum stakes</strong> - start trading with as little as $5."
 msgid "<strong>Low minimum stakes</strong> - Deposit as little as USD 5 to start trading"
-msgstr "<strong>無驚無險</strong> -  無「延期成本」，無「追加保證金」，不會被「強行平倉」，無隱藏費用或佣金。"
+msgstr "<strong>最低交易金額</strong> -  存款最低僅需5美元即可開始交易"
 
 msgid "<strong>Other Risks</strong>: There are other risks that relate to trading investment products and trading foreign currencies that cannot be described in detail in this document. Generally, however, securities, options and currency transactions involve exposure to a combination of the following risk factors: market risk, credit risk, settlement risk, liquidity risk, operational risk and legal risk. For example, there can be serious market disruptions if economic or political or other unforeseen events locally or overseas affect the market. In addition to these types of risk there may be other factors such as accounting and tax treatment issues that you should consider."
 msgstr "<strong>其它風險</strong>: 關於投資產品交易和外匯交易，還有其它風險無法在此文件中一一詳細說明。但是，一般來說，證卷、期權和貨幣交易所牽涉的集合性風險包括以下因素：市場風險、信用風險、結算風險、流動性風險、運作風險和法律風險。例如，本地或海外可能會發生經濟、政治或其它不可預測事件而造成市場嚴重紛亂。除了這些風險以外，您還應該考慮諸如會計和稅務處理問題等其它因素。"
 
-#, fuzzy
-#| msgid "<strong>Patented technology</strong> - %1 is the industry pioneer and holds patented pricing technology."
 msgid "<strong>Patented technology</strong> - Trade with the industry pioneer and holder of a patented pricing technology"
-msgstr "<strong>專利技術</strong> - %1 是業內領先企業，擁有受專利保護的報價技術。"
+msgstr "<strong>專利技術</strong> - 通過擁有受專利保護的報價技術的業內領先企業進行交易"
 
 msgid "<strong>Preferences:</strong>"
 msgstr "<strong>偏好設定:</strong>"
@@ -574,51 +568,35 @@ msgstr "<strong>盈利保護</strong> - 長期合約到期前售出交易，以�
 msgid "<strong>Requirements:</strong>"
 msgstr "<strong>需求:</strong>"
 
-#, fuzzy
-#| msgid "<strong>Rise/Fall</strong> - predict if the market will rise or fall from its current level."
 msgid "<strong>Rise/Fall</strong> - Predict the market rising or falling from its current level."
 msgstr "<strong>上漲/下跌</strong> - 預測市場價格是否會從目前水平上漲或下跌。"
 
-#, fuzzy
-#| msgid "<strong>Scalable trading</strong> - win the same proportional return on stakes of all values."
 msgid "<strong>Scalable</strong> - Earn the same proportional return on stakes of all values"
-msgstr "<strong>可調比例交易</strong> - 無論投入多少資金進行交易，均可獲得同等回報率。"
+msgstr "<strong>可調比例</strong> - 無論投入多少資金進行交易，均可獲得同等回報率"
 
-#, fuzzy
-#| msgid "<strong>Security</strong> - %1 ensures your personal data and transactions are always secure."
 msgid "<strong>Security and privacy</strong> - Trade confidently, knowing that your personal data, transactions, and funds are always secure"
-msgstr "<strong>安全保障</strong> - %1 確保您個人資料和交易的安全。"
+msgstr "<strong>安全保障和隱私</strong> - 讓您了解個人資料、交易和資金總是安全並充滿信心進行交易"
 
-#, fuzzy
-#| msgid "<strong>Benchmarked prices</strong> - %1 benchmarks its prices daily against inter-bank derivatives markets."
 msgid "<strong>Sharp, benchmarked prices</strong> - Benefit from the same rates of return as interbank traders. Our prices are benchmarked daily against the interbank options markets."
-msgstr "<strong>基準價格</strong> - %1 每日都對比銀行間衍生品市場來制訂基準價格。"
+msgstr "<strong>精確的基準價格</strong> - 與銀行間交易員享有相同的回報率。我們每日都對比銀行間選項市場來制訂基準價格。"
 
-#, fuzzy
-#| msgid "<strong>Short to long-term</strong> - choose timeframes from 10 seconds to 365 days."
 msgid "<strong>Short to long-term durations</strong> - Choose timeframes from 10 seconds to 365 days"
-msgstr "<strong>各種期限任君選擇</strong> - 期限最短10 秒，最長365 天。"
+msgstr "<strong>各種交易期限任君選擇</strong> - 期限最短10 秒，最長365 天"
 
 msgid "<strong>Simple and intuitive</strong> - Enjoy a trading platform that’s easy to navigate and use"
 msgstr "<strong>簡單與直覺化</strong> - 享受簡單操作、輕鬆瀏覽的交易平台"
 
-#, fuzzy
-#| msgid "<strong>Touch/No Touch</strong> - predict if the market will touch or not touch a price target."
 msgid "<strong>Touch/No Touch</strong> - Predict the market touching or not touching a price target."
 msgstr "<strong>觸及/未觸及</strong> - 預測市場價格是否會觸及目標價格。"
 
-#, fuzzy
-#| msgid "<strong>Trade to your strategy</strong> - set your trades on 'gut feel', or use technical or fundamental analysis."
 msgid "<strong>Trade according to your preferred strategy</strong> - Trade based on \"gut feel\" or rely on technical and fundamental analysis"
-msgstr "<strong>按您的策略進行交易</strong> - 使用技術或基本面分析，相信您的判斷，按您的「想法」執行交易。"
+msgstr "<strong>按您所傾向的策略進行交易</strong> - 使用技術或基本面分析或按您的「直覺」執行交易"
 
 msgid "<strong>Transparent risk and potential reward</strong> - Know how much you will win or lose before you purchase the contract"
 msgstr "<strong>風險透明化與潛在獎金</strong> - 購入合約交易前，您已知道贏或輸的金額"
 
-#, fuzzy
-#| msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
 msgid "<strong>Two-way pricing</strong> - Receive quotes for a trade and counter-trade, so you always get unbiased, transparent rates from %1"
-msgstr "<strong>雙向報價</strong> - %1 提供交易與反向交易的報價，因此您將始終獲得公正透明的價格。"
+msgstr "<strong>雙向報價</strong> - %1 提供交易與反向交易的報價，因此您將始終獲得公正透明的價格"
 
 msgid "<ul><li> Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>. </li><li> Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button. </li><li> Under the <strong>Cookies</strong> section, select the \"<strong>Don't block cookies</strong>\" option. </li><li> Click anywhere outside the menu to save and close. </li></ul>"
 msgstr "<ul><li>前往<strong>更多操作</strong>選單並選取 <strong></strong>設定。</li><li>在<strong>進階設定</strong>標籤下，點選<strong>檢視進階設定</strong>按鈕。 </li><li>在<strong>Cookies</strong>分區下，選取 \"<strong>不可阻止 cookies</strong>\"選項。</li><li> 選單外任意點選儲存並關閉。</li></ul>"
@@ -647,14 +625,8 @@ msgstr "市場行銷、工商管理或相關學科學士學位"
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "付款代理人扮演客戶（即我們的顧客）和 %1之間的兌換員。如果客戶希望使用某種特定電子貨幣或1%不支持的本地貨幣，付款代理人將負責為客戶處理充值和提款事宜。匯款費用由客戶支付。"
 
-#, fuzzy
-#| msgid ""
-#| "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier\n"
-#| "            or the low barrier at any time during the period chosen by a trader."
 msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
-msgstr ""
-"如果市場在所選期限內一直保持在（沒有觸及）高障礙或低障礙之間，所選擇的「保持在範圍之內」交易即可獲利。如果市場在所選期限內只要觸及高障礙\n"
-"             或低障礙，所選擇的「超出範圍之外」交易即可獲利。"
+msgstr "如果市場在所選期限內一直保持在（沒有觸及）高障礙或低障礙之間，所選擇的「保持在範圍之內」交易即可獲利。如果市場在所選期限內只要觸及高障礙或低障礙，所選擇的「超出範圍之外」交易即可獲利。"
 
 msgid "A True Partnership"
 msgstr "真正的合作夥伴"
@@ -803,10 +775,8 @@ msgstr "帳戶密碼"
 msgid "Account Transfer"
 msgstr "帳戶轉帳"
 
-#, fuzzy
-#| msgid "Account balance: "
 msgid "Account balance:"
-msgstr "帳戶餘額： "
+msgstr "帳戶餘額："
 
 msgid "Account balance: "
 msgstr "帳戶餘額： "
@@ -922,10 +892,8 @@ msgstr "此交易窗口的所有障礙已過期"
 msgid "All credit card details are submitted directly to the Visa/Mastercard network using the latest SSL encryption technology, in accordance with bank policies."
 msgstr "所有信用卡資料都按照銀行政策，使用最新 SSL 加密技術直接送出至 Visa/Mastercard 網路。"
 
-#, fuzzy
-#| msgid "Trade all market conditions"
 msgid "All market conditions and durations"
-msgstr "交易各種市況"
+msgstr "所有市場環境和期限"
 
 msgid "All markets are closed now. Please try again later."
 msgstr "所有市場現已關閉。請稍後重試。"
@@ -960,14 +928,8 @@ msgstr "每點之金額"
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "高等/高級/研究生文憑或學士學位"
 
-#, fuzzy
-#| msgid ""
-#| "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high\n"
-#| "            price target OR strictly lower than the low price target."
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
-msgstr ""
-"如果市場平倉價格嚴格高於「低」目標價格以及嚴格低於「高」目標價格，「收於範圍之內」交易將可獲利。如果市場平倉價格嚴格高於「高」 \n"
-"             目標價格或嚴格低於「低」目標價格，「收於範圍之外」交易將可獲利。"
+msgstr "如果市場平倉價格嚴格高於「低」目標價格以及嚴格低於「高」目標價格，「收於範圍之內」交易將可獲利。如果市場平倉價格嚴格高於「高」目標價格或嚴格低於「低」目標價格，「收於範圍之外」交易將可獲利。"
 
 msgid "An additional password can be used to restrict access to the cashier."
 msgstr "可使用額外密碼來限制對收銀台的存取。"
@@ -1200,10 +1162,8 @@ msgstr "可用支付方式"
 msgid "Avoid the need to have an e-wallet"
 msgstr "避免使用電子錢包"
 
-#, fuzzy
-#| msgid "Multi award-winning trading platform."
 msgid "Award-winning online trading platform"
-msgstr "屢次獲頒大獎的交易平台。"
+msgstr "獲頒大獎的線上交易平台"
 
 msgid "Award-winning, patented financial trading platform"
 msgstr "屢獲大獎、受專利保護的金融交易平台"
@@ -1403,14 +1363,8 @@ msgstr "Binary 開設日本辦公室"
 msgid "Binary option"
 msgstr "二元期權"
 
-#, fuzzy
-#| msgid ""
-#| "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your\n"
-#| "            initial stake."
 msgid "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your initial stake."
-msgstr ""
-"二元期權很容易了解。它被稱為「二元」是因為只能有2種結果：贏或輸。如果預測正確，您會獲得交易開始時設定的賠付額。不然，您將損失\n"
-"             起始資金。"
+msgstr "二元期權很容易了解。它被稱為「二元」是因為只能有2種結果：贏或輸。如果預測正確，您會獲得交易開始時設定的賠付額。不然，您將損失起始資金。"
 
 msgid "Binary options basics"
 msgstr "二元期權基本知識"
@@ -1502,8 +1456,6 @@ msgstr "買入價"
 msgid "Buy an App, or Build Your Own"
 msgstr "購買或自己製作應用程式"
 
-#, fuzzy
-#| msgid "Buy Price"
 msgid "Buy price"
 msgstr "買入價"
 
@@ -1549,8 +1501,6 @@ msgstr "你是否能為我的網站訂製一個橫幅廣告？"
 msgid "Canada"
 msgstr "加拿大"
 
-#, fuzzy
-#| msgid "Careers For Americans"
 msgid "Career opportunities for Americans"
 msgstr "美國居民的工作機會"
 
@@ -1624,21 +1574,13 @@ msgid "Choose a payout from $1 to $50,000."
 msgstr "賠付額的選擇範圍為1 美元到5 萬美元。"
 
 msgid "Choose from five types of markets and their respective assets:"
-msgstr ""
+msgstr "從五種市場與相關資產中選擇："
 
-#, fuzzy
-#| msgid "Choose Touch / No Touch when you want to profit from the market touching or not touching a target any time during the contract period."
 msgid "Choose the Touch/No Touch trade if you want to predict the market touching or not touching a target any time during the contract period."
 msgstr "如您希望通過預測市場在合約期限內是否會觸及或不觸及目標價格而獲利，您可以選擇交易「觸及/未觸及」期權。"
 
-#, fuzzy
-#| msgid ""
-#| "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying\n"
-#| "            or selling the actual asset."
 msgid "Choose the asset you wish to trade, such as gold, oil, stocks, or currency pairs. The value of a binary option is derived from the price of the underlying asset. One advantage of trading binary options is that you are not buying or selling the actual asset, only a contract that determines how that asset performs."
-msgstr ""
-"首先選擇您要交易的資產，如黃金、石油、股票或外匯（二元期權的價值基於標的資產價格）。期權交易一個很大的優勢就是您並非買\n"
-"            賣實際資產。"
+msgstr "選擇您要交易的資產，如黃金、石油、股票或貨幣對。二元期權的價值基於標的資產價格。二元期權交易的一個優勢就是您並非買賣實際資產，只是一個確認資產表現狀況的合約。"
 
 msgid "Choose the payment method you'd like to use."
 msgstr "選擇您想要採用的支付方式。"
@@ -1670,10 +1612,8 @@ msgstr "點選此處重試"
 msgid "Client classification"
 msgstr "客戶分類"
 
-#, fuzzy
-#| msgid "Clients' Money"
 msgid "Client funds"
-msgstr "客戶的錢"
+msgstr "客戶基金"
 
 msgid "Client's Liability"
 msgstr "客戶的責任"
@@ -1753,10 +1693,8 @@ msgstr "佣金收入將在客戶的一生期間基於客戶所進行的交易支
 msgid "Commodities"
 msgstr "商品"
 
-#, fuzzy
-#| msgid "<strong>Commodities</strong> - trade major commodities such as gold and oil."
 msgid "Commodities - Major commodities such as gold and oil"
-msgstr "<strong>商品</strong> - 交易黃金和原油等主要商品。"
+msgstr "商品 - 黃金和原油等主要商品"
 
 msgid "Commodities are resources that are grown or extracted from the ground, such as silver, gold and oil. On %1, they are priced in US dollars."
 msgstr "商品是生長在地上或從地面開採的寶貴資源，例如白銀、黃金和石油。在 %1 ，商品按美元報價。"
@@ -1777,7 +1715,7 @@ msgid "Compare all the trading platforms that we offer. Choose the ideal platfor
 msgstr "對我們提供的所有交易平台做個比較。為您的首選策略選擇理想交易平台。"
 
 msgid "Competitive and transparent pricing"
-msgstr ""
+msgstr "競爭及透明的價格"
 
 msgid "Complaints"
 msgstr "投訴"
@@ -2010,10 +1948,8 @@ msgstr "信用卡/扣款卡"
 msgid "Currencies"
 msgstr "貨幣"
 
-#, fuzzy
-#| msgid "<strong>Currencies</strong> - trade all major FX pairs."
 msgid "Currencies - All major Forex pairs"
-msgstr "<strong>外匯</strong> - 可交易所有主要貨幣對。"
+msgstr "貨幣 - 所有主要外匯貨幣對"
 
 msgid "Currency"
 msgstr "貨幣"
@@ -2187,7 +2123,7 @@ msgid "Digits"
 msgstr "數字期權"
 
 msgid "Digits let you predict the last decimal digit of the spot price. There are three types of Digits trades:"
-msgstr ""
+msgstr "讓您預測現貨價格最後小數點數值的數字。共有三種數字交易："
 
 msgid "Director"
 msgstr "Director"
@@ -2243,13 +2179,14 @@ msgstr "文檔賬戶扣款"
 msgid "Document department processes, to enhance the marketing team's ability to execute repeated tasks efficiently and effectively"
 msgstr "通過文檔部門流程提高行銷隊伍有效執行重複任務的能力"
 
+msgid "Does Not Touch"
+msgstr "未觸及"
+
 msgid "Dormant and Inactive Accounts"
 msgstr "休眠和非使用中帳戶"
 
-#, fuzzy
-#| msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
 msgid "Down - Predict that the market will end lower than the average price"
-msgstr "<strong>高於/低於</strong> - 預測到期時市場價格是高於還是低於目標價格。"
+msgstr "下跌 - 預測收盤市場價格低於平均價格"
 
 msgid "Download CSV"
 msgstr "下載CSV"
@@ -2311,10 +2248,8 @@ msgstr "Each option transaction has a specified expiry time and date, known as t
 msgid "Each party to this Agreement represents and warrants to the other that it has, and will retain throughout the term of this Agreement all right, title, and authority to enter into this Agreement, to grant to the other party the rights and licences granted in this Agreement, and to perform all of its obligations under this Agreement."
 msgstr "協議各方向另一方陳述並保證，已經擁有並將在協議期間繼續保留所有簽訂本協議、並向另一方授予本協議所授予的權利、擁有權和許可以及履行本協議下所有相應義務的權利和許可權。"
 
-#, fuzzy
-#| msgid "Each binary trade is for a pre-determined payout amount. You win the payout if your prediction is correct."
 msgid "Each trade comes with a pre-determined payout that you will see after adjusting each parameter. You’ll win the payout if your prediction is correct. If not, you will only lose your initial stake."
-msgstr "二元期權交易追求的是預先設定的賠付額。一旦您預測正確即可贏得賠付額。"
+msgstr "每次調整參數後您將看到每個交易的預先設定賠付額。一旦您預測正確即可贏得賠付額。否則您將僅損失初始投注額。"
 
 msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
 msgstr "如果發現任何可驗證問題，您可獲得金錢獎勵，高風險安全漏洞的獎金最高可達1,000美元。"
@@ -2391,6 +2326,9 @@ msgstr "結束時間"
 msgid "End time must be after start time."
 msgstr "結束時間必須開始時間之後。"
 
+msgid "Ends Between"
+msgstr "區間之內結束"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "「收於範圍之內/之外」的交易"
 
@@ -2400,10 +2338,11 @@ msgstr "收盤價在「範圍之內/之外」"
 msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "如果開始和結束期間價格跳動次數少於2，「收於範圍之內/之外」合約購入價將全額退還。"
 
-#, fuzzy
-#| msgid "Choose Ends In/Out to profit from the market stopping inside or outside two price targets at the end of the time period."
 msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr "選擇到期時價格處於範圍之內/之外的期權：如果市場價格在合約到期時處於兩個目標價格之內/之外即可獲利。"
+msgstr "到期時價格處於範圍之內/之外 - 預測市場價格在合約到期時處於兩個目標價格範圍之內或之外"
+
+msgid "Ends Outside"
+msgstr "區間之外結束"
 
 msgid "Engage in data mining using SQL databases, R/S-Plus, OLAP and other analytical tools"
 msgstr "使用 SQL 資料庫、R/S-Plus、OLAP 和其他分析工具從事資料挖掘工作"
@@ -2472,7 +2411,7 @@ msgid "Even/Odd"
 msgstr "偶/奇"
 
 msgid "Even/Odd - Predict that the last digit is even or odd after the last tick"
-msgstr ""
+msgstr "偶/奇-預測最後跳動點的最後數字為偶數或奇數"
 
 msgid "Even/Odd contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "奇/偶合約如果沒在 5 分鐘內結束，將退還購入價格。"
@@ -2556,15 +2495,13 @@ msgid "Exit spot"
 msgstr "退市現價"
 
 msgid "Exit your trades before expiry"
-msgstr ""
+msgstr "合約到期前退出交易"
 
 msgid "Expand our network of active affiliates in your local market. Contribute your energy, skills, and knowledge of the local business culture to help further our rapid rate of growth worldwide."
 msgstr "擴大我們在您當地市場的活躍聯盟機構網路。 貢獻您對當地商業文化的力量、技能和知識，幫助我們在全球進一步快速增長。"
 
-#, fuzzy
-#| msgid "No experience"
 msgid "Experience"
-msgstr "No experience"
+msgstr "經驗"
 
 msgid "Experience in an anti-fraud or risk management role"
 msgstr "反欺詐或風險管理崗位的工作經驗"
@@ -2674,8 +2611,6 @@ msgstr "過濾控制"
 msgid "Filtering Stray Ticks"
 msgstr "過濾離散價位"
 
-#, fuzzy
-#| msgid "Final Price"
 msgid "Final price"
 msgstr "最終價格"
 
@@ -2901,6 +2836,9 @@ msgstr "前往<a href=\"https://login.binary.com/signup.php\">註冊頁面</a>�
 msgid "Go with the leader"
 msgstr "選擇行業領軍企業"
 
+msgid "Goes Outside"
+msgstr "處於區間之外"
+
 msgid "Governing Laws and Jurisdiction"
 msgstr "適用法律和司法管轄權"
 
@@ -2949,13 +2887,14 @@ msgstr "高障礙位移"
 msgid "High conversions and customer value"
 msgstr "高轉換率和客戶價值"
 
+msgid "Higher"
+msgstr "高於"
+
 msgid "Higher/Lower"
 msgstr "「高於/低於」"
 
-#, fuzzy
-#| msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
 msgid "Higher/Lower - Predict if the market will end higher or lower than a target price"
-msgstr "<strong>高於/低於</strong> - 預測到期時市場價格是高於還是低於目標價格。"
+msgstr "高於/低於 - 預測到期時市場價格是高於還是低於目標價格"
 
 msgid "Higher/Lower contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "如果開始和結束期間價格跳動次數少於2，「高於/低於」合約購入價將全額退還。"
@@ -2963,10 +2902,8 @@ msgstr "如果開始和結束期間價格跳動次數少於2，「高於/低於�
 msgid "Higher/Lower trades"
 msgstr "「高於/低於」交易"
 
-#, fuzzy
-#| msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
 msgid "Higher/Lower – Predict that the market will end higher or lower than a price target"
-msgstr "<strong>高於/低於</strong> - 預測到期時市場價格是高於還是低於目標價格。"
+msgstr "高於/低於 - 預測到期時市場價格是高於還是低於目標價格"
 
 msgid "Hone your security testing skills."
 msgstr "磨練您的安全測試技能。"
@@ -3001,8 +2938,6 @@ msgstr "如何操作？"
 msgid "How soon can I start trading?"
 msgstr "我需要多久才能開始交易？"
 
-#, fuzzy
-#| msgid "How to trade binaries?"
 msgid "How to trade binary options?"
 msgstr "二元期權如何交易?"
 
@@ -3061,12 +2996,10 @@ msgid "Ideal Users"
 msgstr "理想使用者"
 
 msgid "Ideal for beginners and experienced traders"
-msgstr ""
+msgstr "最適於新手和經驗豐富的交易者"
 
-#, fuzzy
-#| msgid "Ideal Users"
 msgid "Ideas"
-msgstr "理想使用者"
+msgstr "想法"
 
 msgid "If a customer holds a long position and the prediction goes wrong as of the judgment time, the invested principal amount will become zero value."
 msgstr "If a customer holds a long position and the prediction goes wrong as of the judgment time, the invested principal amount will become zero value."
@@ -3278,14 +3211,8 @@ msgstr "In carrying out OTC binary option trading, a customer needs expert knowl
 msgid "In classic Silicon Valley style, Hong Kong based hedge fund manager and entrepreneur, Jean-Yves Sireau, starts Regent Markets in his Hong Kong bedroom. He develops the systems, methods and algorithms for implementing a fixed-odds financial betting system. Jean-Yves's vision is to create a market in the simplest of all derivatives contracts - the fixed-odds bet - and to offer ordinary investors the chance to make small bets. Until his innovation, binary options are normally only traded in large quantities."
 msgstr "Regent Markets 的創始人 Jean-Yves Sireau 是香港的一名對沖基金經理和企業家。與很多矽谷創業公司一樣，Regent Markets 是在他的香港住所成立的。他開發了實施固定賠率金融投注體系的系統、方法和算法。 Jean-Yves 的願景是提供固定賠率投注（最簡單的衍生品合約）市場，並向普通投資者提供進行小額投注的機會。在他的創新舉動之前，二元期權通常只進行大額交易。"
 
-#, fuzzy
-#| msgid ""
-#| "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro\n"
-#| "            will rise in relation to the value of the US dollar."
 msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
-msgstr ""
-"在外匯市場中，交易者可以根據一種貨幣對另一種貨幣的價格變動交易合約。例如，如果交易者選擇歐元/美元「上漲」期權，即預測歐元\n"
-"             的價值相對美元的價值將會上漲。"
+msgstr "在外匯市場中，交易者可以根據一種貨幣對另一種貨幣的價格變動交易合約。例如，如果交易者選擇歐元/美元「上漲」期權，即預測歐元的價值相對美元的價值將會上漲。"
 
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 msgstr "首先您必須生成API權杖才能夠存取我們的行動應用程式和其他第三方應用程式。"
@@ -3338,10 +3265,8 @@ msgstr "「範圍之內/之外」"
 msgid "In/Out (ends between/outside and stays between/goes outside)"
 msgstr "「範圍之內/之外」期權(收盤位於範圍之內/之外以及保持在範圍之內/超出範圍之外)"
 
-#, fuzzy
-#| msgid "<strong>In/Out</strong> - predict if the market will stay inside two price targets, or end between or outside them."
 msgid "In/Out - Predict if the market will stay between or outside two target prices"
-msgstr "<strong>範圍內/範圍外</strong> - 可通過預測到期時市場價格是否會在兩個目標價格的範圍之內而獲利。"
+msgstr "範圍內/範圍外 - 預測市場價格是否會保持在兩個目標價格之內/之外"
 
 msgid "In/Out trades"
 msgstr "「範圍之內/之外」交易"
@@ -3365,7 +3290,7 @@ msgid "Indices"
 msgstr "指數"
 
 msgid "Indices - All major worldwide stock indices sourced from the over-the-counter market"
-msgstr ""
+msgstr "指數 - 全球所有主要的股票指數源自場外交易市場"
 
 msgid "Indices trading experience"
 msgstr "指數交易經驗"
@@ -3988,16 +3913,14 @@ msgstr "跟蹤您的授權連接。"
 msgid "Key facts"
 msgstr "關鍵資料"
 
-#, fuzzy
-#| msgid "When it's time to kick back, you'll find beautiful beaches, islands and mountains to explore, just a short flight away. From Malta, you'll have Europe, the Mediterranean and North Africa on your doorstep. And from Malaysia, you'll be within easy reach of some of Asia's most spectacular scenery."
 msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
-msgstr "想放鬆的時候，您只需飛行很短的距離就能盡情探索美麗的海灘、島嶼和山區。您可從馬爾他輕鬆前往歐洲、地中海和北非。此外，您也可在馬來西亞飽覽亞洲最壯觀的一些美景。"
+msgstr "想放鬆時只需飛行很短的距離就能盡情探索美麗的海灘、島嶼和山區。您可從馬爾他輕鬆前往歐洲、地中海和北非。此外，您也可在馬來西亞飽覽亞洲最壯觀的一些美景。"
 
 msgid "Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account."
-msgstr ""
+msgstr "請提供您的完整地址。<br>以便在您開立真實帳戶時驗證您的身份。"
 
 msgid "Know what you stand to win or lose"
-msgstr ""
+msgstr "知道您的輸贏立場"
 
 msgid "Knowledge and experience in the financial services industry"
 msgstr "金融服務業知識和經驗"
@@ -4053,10 +3976,8 @@ msgstr "瞭解更多資訊"
 msgid "Learn more about our corporate culture"
 msgstr "查看關於我們企業文化的詳細資料"
 
-#, fuzzy
-#| msgid "Learn more about spreads on binary.com."
 msgid "Learn more about spreads on %1."
-msgstr "請到 binary.com 檢視價差的詳細資料。"
+msgstr "請到 %1 檢視價差的詳細資料。"
 
 msgid "Learn the basics, from choosing your asset to winning your payout."
 msgstr "了解二元期權交易基礎知識，從選擇標的資產到選擇目標賠付額，全都包含在內。"
@@ -4101,13 +4022,13 @@ msgid "Liaise with banks and payment providers"
 msgstr "與銀行和支付提供商聯繫"
 
 msgid "Licensed and regulated"
-msgstr ""
+msgstr "擁有牌照並受監管"
 
 msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan"
 msgstr "由馬爾他、英國、曼島、愛爾蘭和日本相關機構授予執照和監管"
 
 msgid "Licensed, trusted, and secure"
-msgstr ""
+msgstr "有牌照、備受信賴、及安全"
 
 msgid "Life-long career interest in the Accounting field"
 msgstr "有興趣長期從事會計工作"
@@ -4173,7 +4094,7 @@ msgid "Long-term partnership with the leading financial trading service"
 msgstr "與一流金融交易服務商保持長期合作關係"
 
 msgid "Looking for a new and exciting career in a country that's modern, diverse and tolerant? Binary.com is one of the world's most progressive companies, with offices in Asia and Europe."
-msgstr ""
+msgstr "想要在一個現代化、多元化和開放的國家找份新的、吸引人的工作？Binary.com是全球最具前景的公司之一，在亞洲和歐洲都擁有辦公室。"
 
 msgid "Loss"
 msgstr "虧損"
@@ -4189,6 +4110,9 @@ msgstr "低障礙"
 
 msgid "Low barrier offset"
 msgstr "低障礙位移"
+
+msgid "Lower"
+msgstr "低於"
 
 msgid "MENA FFXPO Award"
 msgstr "中東和北非地區 FFXPO 獎"
@@ -4281,7 +4205,7 @@ msgid "Matches/Differs"
 msgstr "相符/差異"
 
 msgid "Matches/Differs - Predict that the last digit will match or not match"
-msgstr ""
+msgstr "符合/相差 - 預測最後數字是否符合"
 
 msgid "Max:"
 msgstr "最大:"
@@ -4581,7 +4505,7 @@ msgid "OTC Indices and Stocks"
 msgstr "場外交易指數和股票"
 
 msgid "OTC stocks - Blue-chip stock contracts sourced from the over-the-counter market"
-msgstr ""
+msgstr "場外交易股票 - 源自場外交易市場的藍籌股票合約"
 
 msgid "Occupation"
 msgstr "Occupation"
@@ -4748,15 +4672,11 @@ msgstr "我們獲取了主要競爭對手之一 BetsForTraders 的客戶群，�
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "我們的資訊安全政策基於存取控制和業務持續性的業內最佳實踐。"
 
-#, fuzzy
-#| msgid "Other Obligations"
 msgid "Our locations"
-msgstr "其它義務"
+msgstr "我們的位置"
 
-#, fuzzy
-#| msgid "%1 prices are benchmarked against the interbank options market, so you always get best-in-class prices for your trades."
 msgid "Our prices are benchmarked against the interbank options market. You’ll receive fair and transparent pricing, whatever your position."
-msgstr "%1 的報價基於銀行間二元期權市場，讓您可在交易中始終獲得同類產品中最優的報價。"
+msgstr "我們的報價基於銀行間期權市場基準價格，讓您不論身在何處都可獲得最公平、透明的報價。"
 
 msgid "Our services are provided on an execution only basis. We do not provide investment advice in relation to our products or services. We sometimes provide factual information or research recommendations about a market, information about transaction procedures and information about the potential risks involved and how those risks may be minimised. However, any decision to use our products or services is made by you."
 msgstr "我們所提供的服務僅限於執行。我們並不提供與產品和服務有關的投資諮詢。我們有時會提供關於市場的實際資訊或研究推薦、關於交易進程的資訊和相關風險可能性、以及如何將這些風險減至最小的方法。但是，關於使用產品或服務的任何決定都由您作出。"
@@ -4801,7 +4721,7 @@ msgid "Over/Under"
 msgstr "大於/小於"
 
 msgid "Over/Under - Predict that the last digit is higher or lower"
-msgstr ""
+msgstr "大於/小於 - 預測最後數字是大於或小於"
 
 msgid "Over/Under contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "大於/小於合約如果沒在 5 分鐘內結束，將退還購入價格。"
@@ -5454,10 +5374,8 @@ msgstr "終止權利"
 msgid "Rise/Fall"
 msgstr "「上漲/下跌」合約"
 
-#, fuzzy
-#| msgid "<strong>Rise/Fall</strong> - predict if the market will rise or fall from its current level."
 msgid "Rise/Fall - Predict if the market will rise or fall from its current level"
-msgstr "<strong>上漲/下跌</strong> - 預測市場價格是否會從目前水平上漲或下跌。"
+msgstr "上漲/下跌 - 預測市場價格是否會從目前水平上漲或下跌"
 
 msgid "Rise/Fall contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes, or (3) for contracts starting in the future, if there are no ticks in the 5 minutes before the contract's start time."
 msgstr "如果出現以下情況，「上漲/下跌」合約購入價將全額退還：（1）開始和結束期間價格跳動次數少於2，或（2）價格跳動期類型合約，如果合約沒在5分鐘內結束，或（3）未來開始類型合約，如果合約開始時間前5分鐘內價格沒跳動。"
@@ -5465,10 +5383,8 @@ msgstr "如果出現以下情況，「上漲/下跌」合約購入價將全額�
 msgid "Rise/Fall trades"
 msgstr "「上漲/下跌」交易"
 
-#, fuzzy
-#| msgid "<strong>Rise/Fall</strong> - predict if the market will rise or fall from its current level."
 msgid "Rise/Fall – Predict that the market will rise or fall from its current level"
-msgstr "<strong>上漲/下跌</strong> - 預測市場價格是否會從目前水平上漲或下跌。"
+msgstr "上漲/下跌 - 預測市場價格是否會從目前水平上漲或下跌"
 
 msgid "Risk Disclaimer"
 msgstr "風險免責聲明"
@@ -5620,18 +5536,14 @@ msgstr "交易期持續時間限制，以分鐘作單位"
 msgid "Session duration:"
 msgstr "工作階段時間："
 
-#, fuzzy
-#| msgid "The barrier(s) you choose defines your position and triggers your payout."
 msgid "Set barrier(s) to define your position and trigger the payout you will receive."
-msgstr "您所選擇的障礙水平用於設定頭寸參數以及觸發賠付。"
+msgstr "您可設定障礙水平用於確認頭寸參數以及觸發賠付。"
 
 msgid "Set client deposit and loss limits"
 msgstr "設定客戶端存款和虧損限額"
 
-#, fuzzy
-#| msgid "You can set the length of your trade, from 10 seconds to 365 days."
 msgid "Set the length of your trade, from 10 seconds to 365 days."
-msgstr "您可設定交易期限，從10 秒至365 天。"
+msgstr "設定交易期限，從10 秒至365 天。"
 
 msgid "Set up and manage social-media advertising campaigns, effectively micro-targeting potential clients and partners"
 msgstr "有效集中針對潛在客戶和業務合作夥伴的社交媒體廣告宣傳活動設定和管理工作"
@@ -5748,7 +5660,7 @@ msgid "Specific Instructions"
 msgstr "特定指令"
 
 msgid "Specify your payout, which is your potential return if your prediction is correct. Our system will proceed to calculate your stake, which is the total cost of purchasing the contract. %1 offers payouts from $1 to $50,000."
-msgstr ""
+msgstr "確定賠付額，如果您的預測正確的話，這就是您的潛在回報率。我們的系統將進一步計算您的投注額，即購入合約的總成本。 %1提供從1美元到5萬美元的賠付額。"
 
 msgid "Spot"
 msgstr "現價"
@@ -5798,6 +5710,9 @@ msgstr "狀況"
 msgid "Stay informed. %1 offers daily market reports and market research, as well as frequent trading webinars."
 msgstr "通過 %1 的每日市場報告及市場研究，還有經常舉行的線上研討會及時掌握最新動態。"
 
+msgid "Stays Between"
+msgstr "位於區間之內"
+
 msgid "Stays Between/Goes Outside trades"
 msgstr "「保持在範圍之內/超出範圍之外」的交易"
 
@@ -5807,10 +5722,8 @@ msgstr "「保持在範圍之內/超出範圍之外」"
 msgid "Stays In/Goes Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "如果開始和結束期間價格跳動次數少於2，「保持在範圍之內/超出範圍之外」合約購入價將全額退還。"
 
-#, fuzzy
-#| msgid "Choose Stays In/Out to profit from the market staying inside or going outside two price targets any time during the contract period."
 msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
-msgstr "選擇「保持在範圍之內/之外」期權：如果市價在合約期限內的任何時間都保持在兩個目標價位範圍之內或超出範圍之外即可獲利。"
+msgstr "保持在範圍之內/之外 - 預測市價在合約期限內的任何時間都保持在兩個目標價位範圍之內或超出範圍之外"
 
 msgid "Step"
 msgstr "步驟"
@@ -5818,10 +5731,8 @@ msgstr "步驟"
 msgid "Step 1: Define your position"
 msgstr "步驟 1：設定您的頭寸參數"
 
-#, fuzzy
-#| msgid "Step 2: Get your trade price"
 msgid "Step 2: Get your contract price"
-msgstr "步驟 2：獲取交易報價"
+msgstr "步驟 2：獲取合約報價"
 
 msgid "Step 3: Make your trade"
 msgstr "步驟 3：執行交易"
@@ -5844,10 +5755,8 @@ msgstr "止盈價位"
 msgid "Stop-loss"
 msgstr "止損"
 
-#, fuzzy
-#| msgid "Stop-profit:"
 msgid "Stop-profit"
-msgstr "止盈:"
+msgstr "止盈"
 
 msgid "Stop-type"
 msgstr "停止類型"
@@ -5918,10 +5827,8 @@ msgstr "星期日"
 msgid "Supplementary Terms and Conditions for Financial Products offered by Binary Investments (Europe) Ltd."
 msgstr "Binary 投資 (歐洲)有限公司提供的金融產品補充條款和條件。"
 
-#, fuzzy
-#| msgid "Supported banks"
 msgid "Support"
-msgstr "支持銀行"
+msgstr "支持"
 
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "支持集團的全球招聘和人才管理需求"
@@ -5945,7 +5852,7 @@ msgid "Tasked with writing robust, high-quality, production-ready code as well a
 msgstr "負責編寫可靠、高品質、生產就諸的代碼，並重構和優化既大型又複雜的遺留代碼庫。"
 
 msgid "Teamwork"
-msgstr ""
+msgstr "團隊合作"
 
 msgid "Tel"
 msgstr "電話"
@@ -6329,14 +6236,8 @@ msgstr "本網站所涵蓋的金融交易服務僅適合這樣的客戶：能夠
 msgid "The first step is to open an account. You can <a target='_blank' href='%1'>apply online</a> in just a few minutes."
 msgstr "第一步是開戶。您可以<a target='_blank' href='%1'>線上申請</a>開戶，只需佔用您幾分鐘的時間。"
 
-#, fuzzy
-#| msgid ""
-#| "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying\n"
-#| "            or selling the actual asset."
 msgid "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying or selling the actual asset."
-msgstr ""
-"首先選擇您要交易的資產，如黃金、石油、股票或外匯（二元期權的價值基於標的資產價格）。期權交易一個很大的優勢就是您並非買\n"
-"            賣實際資產。"
+msgstr "首先選擇您要交易的資產，如黃金、石油、股票或外匯（二元期權的價值基於標的資產價格）。期權交易一個很大的優勢就是您並非買賣實際資產。"
 
 msgid "The first tick is the first tick after the contract is processed by our servers."
 msgstr "首個跳動點指在我們伺服器處理合約後的第一個跳動點。"
@@ -6422,38 +6323,26 @@ msgstr "除了不能排除的任何適用法律、法規所規定的賠償責任
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr "如原本可以避免承擔責任，但因為將%1 API與非%1 API系統、資料、設備或文件同時使用、操作或組合;或"
 
-#, fuzzy
-#| msgid ""
-#| "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try\n"
-#| "                out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
-msgstr ""
-"波動率指數類比各種真實的市場情況，並根據不同的市場情況提供理想的平台交易實踐和測試策略。這些指數取決於波動率和漂移率，並協助使用者嘗試\n"
-"                各種場景，如高波動率、低波動率、看漲和看跌趨勢。"
+msgstr "波動率指數類比各種真實的市場情況，並根據不同的市場情況提供理想的平台交易實踐和測試策略。這些指數取決於波動率和漂移率，並協助使用者嘗試各種場景，如高波動率、低波動率、看漲和看跌趨勢。"
 
 msgid "Then, make your trade"
 msgstr "然後進行交易"
 
 msgid "There are four main trade types for you to choose from:"
-msgstr ""
+msgstr "共有四種交易供您選擇:"
 
 msgid "There are risks associated with utilizing an Internet-based deal execution trading system, including but not limited to the failure of hardware, software and Internet connection. Since %1 does not control signal power, its reception or routing via Internet, configuration of your equipment or reliability of its connection, we cannot be responsible for communication failures, distortions or delays when trading via the Internet."
 msgstr "在通過基於網際網路的交易系統執行交易時會存在諸多風險，包括但不僅限於硬體、軟體故障和網際網路連接故障。由於 %1 並不控制訊號功率、經由網路的訊號接收或路由以及您設備的配置或連接的可靠性，所以當您通過網路進行交易時我們並不會對通訊故障、失真或延遲等問題負責。"
 
-#, fuzzy
-#| msgid "There are two ways to obtain an API Token:"
 msgid "There are two types of In/Out trades:"
-msgstr "要獲取API權杖有兩種方法:"
+msgstr "範圍內/外交易有兩種類型:"
 
-#, fuzzy
-#| msgid "There are two ways to obtain an API Token:"
 msgid "There are two types of Up/Down trades:"
-msgstr "要獲取API權杖有兩種方法:"
+msgstr "上漲/下跌交易有兩種類型:"
 
-#, fuzzy
-#| msgid "There are two ways to obtain an API Token:"
 msgid "There are two ways to trade Asians:"
-msgstr "要獲取API權杖有兩種方法:"
+msgstr "亞洲期權交易有兩種方式:"
 
 msgid "There was a problem accessing the server during purchase."
 msgstr "買入時伺服器存取出了問題。"
@@ -6677,13 +6566,14 @@ msgstr "利潤/虧損合計"
 msgid "Touch/No Touch"
 msgstr "觸及/未觸及"
 
-#, fuzzy
-#| msgid "<strong>Touch/No Touch</strong> - predict if the market will touch or not touch a price target."
 msgid "Touch/No Touch - Predict if the market will touch or not touch a target price"
-msgstr "<strong>觸及/未觸及</strong> - 預測市場價格是否會觸及目標價格。"
+msgstr "觸及/未觸及 - 預測市場價格是否會觸及目標價格"
 
 msgid "Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "如果開始和結束期間價格跳動次數少於2，觸及/未觸及合約購入價將全額退還。"
+
+msgid "Touches"
+msgstr "觸及"
 
 msgid "Tour"
 msgstr "導覽"
@@ -6718,18 +6608,14 @@ msgstr "在簡單、方便的全球性金融市場線上平台進行交易。"
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "根據您的風險承受能力進行交易。切勿借錢交易。"
 
-#, fuzzy
-#| msgid "Trade Time"
 msgid "Trade type"
-msgstr "交易時間"
+msgstr "交易類型"
 
 msgid "Trade with a powerful interface known as the global industry standard."
 msgstr "在稱為全球行業標準的強大介面上交易。"
 
-#, fuzzy
-#| msgid "Trade with ease with %1's wide range of deposit and withdrawal methods. Your funds will be segregated and held in AAA-rated banks."
 msgid "Trade with ease with %1's wide range of deposit and withdrawal methods. Your funds will be segregated and held in secure and licensed financial institutions."
-msgstr "易進易出- %1 提供廣泛的存取款方式。您的資金均由 3A 級銀行單獨託管。"
+msgstr "易進易出- %1 提供廣泛的存取款方式。您的資金將集合並由安全可靠和擁有牌照的金融機構託管。"
 
 msgid "Trade your way"
 msgstr "以您的方式執行交易"
@@ -6758,10 +6644,8 @@ msgstr "交易時間"
 msgid "Trading and Withdrawal Limits"
 msgstr "交易和取款限額"
 
-#, fuzzy
-#| msgid "Trading binaries is remarkably easy, and requires only 3 simple steps:"
 msgid "Trading binary options is relatively easy, and you can purchase a trade in only three simple steps."
-msgstr "二元期權交易非常簡單，僅需執行3 個簡單的步驟："
+msgstr "二元期權交易非常簡單，僅需執行三個簡單的步驟即可購入交易。"
 
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class=\"ja-hide\">Read about <a href=\"%1\" class=\"pjaxload\">Responsible Trading</a>.</span>"
 msgstr "二元期權交易不一定適合每一個人。因此，請確保您完全明白有關的風險。您的虧損可能會超越起始資金存款，而您並不擁有或占有任何標的資產。對於進行博彩產品交易之二元期權，請務必要記住博彩活動可能會上癮，請在玩時提醒自己要承擔責任。<span class=\"ja-hide\">請查閱<a href=\"%1\" class=\"pjaxload\">負責任交易</a>。</span>"
@@ -6877,10 +6761,8 @@ msgstr "未成年人投注"
 msgid "Underlying"
 msgstr "標的資產"
 
-#, fuzzy
-#| msgid "Underlying"
 msgid "Underlying market"
-msgstr "標的資產"
+msgstr "標的市場"
 
 msgid "Unemployed"
 msgstr "Unemployed"
@@ -6903,10 +6785,8 @@ msgstr "除非另行通知，我們將視您為零售客戶。您也可通過書
 msgid "Unlock Cashier"
 msgstr "解鎖收銀台"
 
-#, fuzzy
-#| msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
 msgid "Up - Predict that the market will end higher than the average price"
-msgstr "<strong>高於/低於</strong> - 預測到期時市場價格是高於還是低於目標價格。"
+msgstr "高於 - 預測到期時市場價格高於平均價格"
 
 msgid "Up/Down"
 msgstr "漲/跌"
@@ -7028,10 +6908,8 @@ msgstr "波動率指數"
 msgid "Volatility Indices are further categorized into two types:"
 msgstr "波動率指數進一步分為兩種類型 ："
 
-#, fuzzy
-#| msgid "<strong>Volatility Indices</strong> - trade %1's proprietary volatility indices."
 msgid "Volatility indices - %1's proprietary indices that simulate market forces"
-msgstr "<strong>波動率指數</strong> - 交易 %1 專屬波動率指數。"
+msgstr "波動率指數 - %1專屬的模擬市場力量指數"
 
 msgid "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
@@ -7084,10 +6962,8 @@ msgstr "我們歡迎全球各地熟練、雄心勃勃的聯盟行銷人員申請
 msgid "We are entitled under the Rules to rely upon information provided by you. You should ensure that you provide us with accurate and complete information and notify us in the event that any information supplied to us changes. You should note that if you provide us with inaccurate information, or if you fail to notify us of any changes to information previously supplied by you, this may adversely affect the quality of the services that we can provide."
 msgstr "我們遵循規則需求，完全依賴您所提供的資訊。您必須確保給我們提供準確和完整的資訊，並在所提供的資訊有任何更改時通知我們。您須注意，如果給我們提供的資訊有錯誤，或是資訊有更改時沒通知我們，可能會嚴重影響我們所提供的服務品質。"
 
-#, fuzzy
-#| msgid "We are fully licensed in the British Isles and Malta."
 msgid "We are licensed and regulated in the British Isles, Japan, and in Malta since 2015."
-msgstr "我們在不列顛群島及馬爾他已獲得全面授權。"
+msgstr "自2015年，我們在不列顛群島、日本及馬爾他已獲得授權並受監管。"
 
 msgid "We are looking for energetic and enthusiastic individuals who love challenges, are detail-oriented and highly analytical to join our Internal Audit team."
 msgstr "我們正在尋找充滿活力和熱忱、熱愛挑戰、注重細節並具備高超分析技能的人員，加入我們的內部審計團隊。"
@@ -7113,10 +6989,8 @@ msgstr "我們聘請了大批撰稿人、設計師、市場分析師和程式員
 msgid "We have a general duty to conduct our business with you honestly, fairly, and professionally and to act in your best interests when opening and closing Binary Options trades with you."
 msgstr "我們的常規義務是以誠實、公正和專業的方式對您提供業務上的服務，並在與您開立和結束二元期權交易時替您爭取最大的利益。"
 
-#, fuzzy
-#| msgid "We have a proven track record since starting in 2000."
 msgid "We have a proven track record since we launched our platform in 2000."
-msgstr "自2000年成立以來，我們保持良好的追蹤記錄。"
+msgstr "自2000年推出平台以來，我們保持良好的追蹤記錄。"
 
 msgid "We have a tested and proven selection of banners, links, reviews, newsletters, videos, and text ads for your use. Additionally, we have flash banners which you can grab through your affiliate account. If you would like customized tools, or an item currently not offered on the site, please contact your account manager at: <a href=\"mailto:%1\">%1</a>."
 msgstr "我們已為您準備好經過測試和驗證的橫幅廣告、連結、評論、新聞通訊、視訊以及文字廣告。此外，我們還有 Flash 廣告，您可以在聯盟會員帳戶中抓取。如果您想要訂製工具或本網站目前尚未提供的物品，請傳送郵件至 <a href=\"mailto:%1\">%1</a> 與您的賬戶管理員聯繫。"
@@ -7133,10 +7007,8 @@ msgstr "我們為客戶保管現金或現金等價物餘額。我們保證每一
 msgid "We may release subsequent versions of the %1 API and require that you use those subsequent versions. Your continued use of the APIs following a subsequent release will be deemed your acceptance of modifications."
 msgstr "我們可能發布%1 API的後續版本，並要求你使用這些後續版本。您繼續使用Api後續版本將被視為您接受修定版本。"
 
-#, fuzzy
-#| msgid "We offer a market-based remuneration structure, an annual cash bonus plan, health benefits for you and your family, travel and internet allowances, and company trips."
 msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you’re in Malta or Malaysia."
-msgstr "我們提供市場化的薪酬結構、年度現金分紅計劃、醫療保險（包括您和您的家人）、出差和網際網路零用金以及公司旅遊。"
+msgstr "我們提供市場化的薪酬、年度表現分紅、醫療保險、出差和網際網路零用金以及公司旅遊。不論您是在馬爾他或馬來西亞都能享受高水平生活。"
 
 msgid "We prohibit the use of unauthorised incentives, gifts and payments to encourage customer sign-ups. In the event that we believe that you have engaged in such activity, we reserve the right to withhold any amounts due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval."
 msgstr "我們禁止用未經授權的獎勵、禮物和付款來鼓勵客戶註冊。一旦認定您做出這些行為，我們有權截留任何應向您支付的款項。如果您有意提供特殊獎勵，請聯繫您的帳戶管理員，以便進一步討論和獲得批准。"
@@ -7157,10 +7029,10 @@ msgid "We reserve the right to refuse your referrals' application to open an acc
 msgstr "為遵守我們定期建立和/或適用法律、規則和條例的任何要求，我們保留在必要時拒絕您的轉介人申請開立（或關閉）帳戶的權利。"
 
 msgid "We segregate all client funds and hold them in secure and licensed financial institutions, according to the conditions of our trading licenses."
-msgstr ""
+msgstr "我們按照交易牌照規定條件將所有客戶的基金集合並保留在安全及擁有牌照的金融機構裡。"
 
 msgid "We segregate your funds and keep them in secure and licensed financial institutions."
-msgstr ""
+msgstr "我們將您的基金集合並保留在安全及擁有牌照的金融機構裡。"
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues."
 msgstr "我們通過身份驗證服務和即時防欺詐措施來防止您的帳戶遭到非法存取。另外，我們還會對您的帳戶活動進行監控以發現不正常的欺詐活動跡象，我們還會和收債代理和執法機關合作來應對欺詐問題。"
@@ -7247,7 +7119,7 @@ msgid "When we enter into Contracts with you, we will take all reasonable steps 
 msgstr "當我們與您訂立合約時，我們會採取負責任的行動，遵循我們的訂單執行政策以及您所提供的任何特定指令執行合約條款，為您爭取最佳結果。我們的訂單執行政策包含一整套程序，為了讓您獲取最佳執行結果而特別制定，遵循並考慮以下因素：（一）您的合約的性質，（二）制定合約時您所指定的優先事項，（三）與市場有關的實行方式，目的是根據我們的觀點，在廣泛的、有時會相衝突的因素間實現最佳平衡。我們的政策並不提供任何保證，但我們與您訂立合約的價格永遠比別處更加合算。"
 
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
-msgstr ""
+msgstr "當您對收到的價格感到滿意時請立刻執行交易。通過我們的獨特平台，您不會遇到滑價或跳空市場。更重要的是，不會有任何隱藏費用。您也可在任何長期合約到期前隨時售出，以保護您的賺取利潤或將虧損降至最低額。"
 
 msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
 msgstr "當您點選「Ok」後，您將被禁止在此網站交易，直到選定期限結束為止。"
@@ -7274,7 +7146,7 @@ msgid "Where can I send my questions, comments and suggestions?"
 msgstr "我在哪裡可以提交問題、評論和建議？"
 
 msgid "Where does %1 hold my funds?"
-msgstr ""
+msgstr "%1將我的基金保留在哪裡？"
 
 msgid "Where new ideas trump safe, old ones. And you're free to work your way, free from hierarchies and red tape."
 msgstr "我們鼓勵新創意，不鼓勵安全、老套的想法。您可以按自己的方式開展工作，不必考慮職務階層和繁文縟節。"
@@ -7295,7 +7167,7 @@ msgid "Where we do not manage to obtain sufficient information to assess the app
 msgstr "當我們無法獲取足夠資訊來為您評估產品或服務的合適性時，我們也會通知您我們未能進行合適性評估。"
 
 msgid "Where we're one big, multicultural family."
-msgstr ""
+msgstr "我們是個龐大的、多元文化的家庭。"
 
 msgid "Where you can go"
 msgstr "您可以去往哪裡"
@@ -7343,7 +7215,7 @@ msgid "Why should I become an affiliate with %1?"
 msgstr "我為什麼要成為%1的聯盟會員？"
 
 msgid "Why trade with %1"
-msgstr ""
+msgstr "為何通過%1交易"
 
 msgid "Will I need to install any software?"
 msgstr "我需要安裝任何軟體嗎？"
@@ -7361,15 +7233,13 @@ msgid "With %1 you can trade:"
 msgstr "通過 %1，您可以交易："
 
 msgid "With %1, you can count on us to serve you with integrity and reliability."
-msgstr ""
+msgstr "通過%1，您可放心享用我們完整及可靠的服務。"
 
-#, fuzzy
-#| msgid "If you do, no worries. With Binary.com, you can sell your trades before expiry to lock in profits. There's no need to wait until the end time."
 msgid "With %1, you can sell your contracts before expiry to keep any profits you may have made or to minimise your losses. You don’t have to wait until the actual expiration time."
-msgstr "如果是，請別擔心。在 Binary.com 平台，您可在到期之前賣出交易以鎖定利潤。不需要等合約到期再操作。"
+msgstr "在%1平台，您可在到期之前賣出合約以鎖定利潤或將虧損減至最低。不需要等合約到期再操作。"
 
 msgid "With %1, you’ll know the risk and potential reward before you purchase a contract."
-msgstr ""
+msgstr "通過%1，您可在購入合約前了解其風險和潛在獎勵。"
 
 msgid "With regards to tracking your referrals accessing %1 via the links on your website or by quoting your affiliate IDs during the sign-up process, the Company shall use all reasonable endeavours to ensure that whenever a client is referred to %1 through these links or affiliate IDs, and they subsequently place a contract or otherwise transact with the Company, the relevant client is identified as originating from your referral. However, the Company shall not be liable to you in any way if the Company is unable to identify a client as originating from your referral. Only properly tagged clients can be assigned to you. It is your responsibility to ensure that all links are properly tagged."
 msgstr "對於通過您的網站連結或在註冊過程中引用您的聯盟會員ID 訪問%1的您所推薦客戶，公司將採用所有合理的方式進行跟蹤，確保任何通過這些連結或聯盟會員ID推薦到%1並執行後續合約交易或公司其他交易的客戶源自您的推薦。 但是，如果公司無法確定該客戶源自您的推薦，公司將不對您承擔任何責任。 只有帶適當標記的客戶才可以指派給您。 確保所有連結含正確標記是您的責任。"
@@ -7488,10 +7358,8 @@ msgstr "如果虛擬資金餘額低於100,000日圓，您可請求獲取更多�
 msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
 msgstr "如果虛擬資金餘額低於1,000.00美元，您可請求獲取更多虛擬資金。"
 
-#, fuzzy
-#| msgid "You can close your trade before expiry to lock in profits."
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
-msgstr "您可在合約到期前賣出交易合約，以鎖定利潤。"
+msgstr "您可在合約到期前賣出交易合約，以鎖定利潤或將虧損減至最低。"
 
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
 msgstr "對於不受 %1  支持的支付方式或本地貨幣， 您可使用授權支付代理輕鬆處理存款和取款。"
@@ -7592,10 +7460,8 @@ msgstr "您聲明、保證、並承諾取得，並須保持所有依據任何適
 msgid "You represent, warrant, and undertake that your website or promotion shall contain no material which is defamatory, pornographic, unlawful, harmful, threatening, obscene, harassing, or racially, ethnically, or otherwise objectionable or discriminatory, violent, politically sensitive, or otherwise controversial or in breach of any third party rights and shall not link to any such material."
 msgstr "您陳述、保證並承諾，您的網站或推廣不得包含誹謗、色情、違法、危險、威脅、低俗、騷擾、反種族或民族、歧視、暴力、政治敏感及其他帶有爭議或違反其他第三方權利的材料，並不得連結至此類內容。"
 
-#, fuzzy
-#| msgid "You risk only your initial stake, and your stake never increases, even in gapping markets."
 msgid "You risk only your initial stake, and your stake never increases."
-msgstr "您承擔的風險僅包括您的初始投注額。您的投注額永遠不會增加，即便是存在跳空缺口的市場也是如此。"
+msgstr "您承擔的風險僅包括您的初始投注額，而且您的投注額永遠不會增加。"
 
 msgid "You shall avoid disclosure or unauthorized use of any confidential information that may come to your knowledge or possession to third persons or external parties."
 msgstr "您須避免向第三方或外方披露或未經授權使用您可能獲知或擁有的任何機密資訊。"
@@ -7984,30 +7850,6 @@ msgstr "您擁有足夠的金融交易經驗和知識，有能力評估經由本
 msgid "{JAPAN ONLY}#1 Sales Division"
 msgstr "{JAPAN ONLY}#1 Sales Division"
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
-
 msgid "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
 msgstr "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
 
@@ -8200,9 +8042,6 @@ msgstr "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 msgid "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
 msgstr "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
 
-msgid "{JAPAN ONLY}Does Not Touch"
-msgstr "{JAPAN ONLY}Does Not Touch"
-
 msgid "{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account."
 msgstr "{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account."
 
@@ -8214,12 +8053,6 @@ msgstr "{JAPAN ONLY}Download our latest report here"
 
 msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
 msgstr "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
-
-msgid "{JAPAN ONLY}Ends Between"
-msgstr "{JAPAN ONLY}Ends Between"
-
-msgid "{JAPAN ONLY}Ends Outside"
-msgstr "{JAPAN ONLY}Ends Outside"
 
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
@@ -8313,12 +8146,6 @@ msgstr "{JAPAN ONLY}Foreign PEP Declaration"
 
 msgid "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
 msgstr "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
-
-msgid "{JAPAN ONLY}Goes Outside"
-msgstr "{JAPAN ONLY}Goes Outside"
-
-msgid "{JAPAN ONLY}Higher"
-msgstr "{JAPAN ONLY}Higher"
 
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
 msgstr "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
@@ -8500,9 +8327,6 @@ msgstr "{JAPAN ONLY}Knowledge test list item 5"
 msgid "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 msgstr "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 
-msgid "{JAPAN ONLY}Lower"
-msgstr "{JAPAN ONLY}Lower"
-
 msgid "{JAPAN ONLY}Main business"
 msgstr "{JAPAN ONLY}Main business"
 
@@ -8671,9 +8495,6 @@ msgstr "{JAPAN ONLY}Short positions in FX Binary Options must be covered by init
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 
-msgid "{JAPAN ONLY}Stays Between"
-msgstr "{JAPAN ONLY}Stays Between"
-
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "{JAPAN ONLY}Summary of Specifications"
 
@@ -8760,9 +8581,6 @@ msgstr "{JAPAN ONLY}To buy an option, simply click on the price button to execut
 
 msgid "{JAPAN ONLY}To compensate for any rise in the price of an underlying asset that you intend to buy in future, you should buy a call option."
 msgstr "{JAPAN ONLY}To compensate for any rise in the price of an underlying asset that you intend to buy in future, you should buy a call option."
-
-msgid "{JAPAN ONLY}Touches"
-msgstr "{JAPAN ONLY}Touches"
 
 msgid "{JAPAN ONLY}Track your trade in real time:"
 msgstr "{JAPAN ONLY}Track your trade in real time:"
@@ -8935,13 +8753,9 @@ msgstr "開源專案"
 msgid "Types of Trades"
 msgstr "交易類型"
 
-#, fuzzy
-#| msgid "TradingView for Binary.com"
 msgid "Why Trade with Binary.com"
-msgstr "Binary.com提供的TradingView"
+msgstr "為何通過Binary.com進行交易"
 
-#, fuzzy
-#| msgid "How to Trade Binaries?"
 msgid "How to Trade Binary Options?"
 msgstr "二元期權如何交易?"
 
@@ -8974,6 +8788,30 @@ msgstr "設定"
 
 msgid "Terms and Conditions Approval"
 msgstr "條款和條件審批"
+
+#~ msgid "{JAPAN ONLY}Does Not Touch"
+#~ msgstr "{JAPAN ONLY}Does Not Touch"
+
+#~ msgid "{JAPAN ONLY}Ends Between"
+#~ msgstr "{JAPAN ONLY}Ends Between"
+
+#~ msgid "{JAPAN ONLY}Ends Outside"
+#~ msgstr "{JAPAN ONLY}Ends Outside"
+
+#~ msgid "{JAPAN ONLY}Goes Outside"
+#~ msgstr "{JAPAN ONLY}Goes Outside"
+
+#~ msgid "{JAPAN ONLY}Higher"
+#~ msgstr "{JAPAN ONLY}Higher"
+
+#~ msgid "{JAPAN ONLY}Lower"
+#~ msgstr "{JAPAN ONLY}Lower"
+
+#~ msgid "{JAPAN ONLY}Stays Between"
+#~ msgstr "{JAPAN ONLY}Stays Between"
+
+#~ msgid "{JAPAN ONLY}Touches"
+#~ msgstr "{JAPAN ONLY}Touches"
 
 #~ msgid "Company trip to Phuket, Thailand"
 #~ msgstr "公司組織到泰國普吉島旅遊"
@@ -13424,9 +13262,6 @@ msgstr "條款和條件審批"
 #~ msgid "Win payout if the last tick of %3 is strictly higher than the average of the %plural(%5,%d tick,%d ticks)."
 #~ msgstr "如果%3的最新跳動點嚴格高於%plural(%5,%d 跳動點,%d 跳動點)的平均價格，將獲得賠付額。"
 
-#~ msgid "higher"
-#~ msgstr "高於"
-
 #~ msgid "Win payout if %3 is strictly higher than %6 at %5."
 #~ msgstr "如果 %3 在 %5 時嚴格高於 %6，將獲得賠付額。"
 
@@ -13472,17 +13307,11 @@ msgstr "條款和條件審批"
 #~ msgid "Win payout if the last digit of %3 is strictly lower than %6 after %5 ticks."
 #~ msgstr "如果%3的最後數字在%5跳動點之後嚴格低於%6，將獲得賠付額。"
 
-#~ msgid "ends outside"
-#~ msgstr "區間之外結束"
-
 #~ msgid "Win payout if %3 ends outside %7 to %6 at %5."
 #~ msgstr "如果%3在%5時收盤於%7至%6之外，將獲得賠付額。"
 
 #~ msgid "Win payout if %3 ends outside %7 to %6 at %5 after %4."
 #~ msgstr "如果%3在%4過後的%5時收盤於%7至%6之外，將獲得賠付額。"
-
-#~ msgid "ends between"
-#~ msgstr "區間之內結束"
 
 #~ msgid "Win payout if %3 ends strictly between %7 to %6 at %5."
 #~ msgstr "如果%3在%5時收盤嚴格處於%7至%6之間，將獲得賠付額。"
@@ -13490,26 +13319,17 @@ msgstr "條款和條件審批"
 #~ msgid "Win payout if %3 ends strictly between %7 to %6 at %5 after %4."
 #~ msgstr "如果%3在%4之後的%5時收盤嚴格處於%7至%6之間，將獲得賠付額。"
 
-#~ msgid "does not touch"
-#~ msgstr "未觸及"
-
 #~ msgid "Win payout if %3 does not touch %6 through %5."
 #~ msgstr "如果%3一直到%5時未觸及%6，將獲得賠付額。"
 
 #~ msgid "Win payout if %3 does not touch %6 through %5 after %4."
 #~ msgstr "如果%3在%4之後到%5時未觸及%6，將獲得賠付額。"
 
-#~ msgid "touches"
-#~ msgstr "觸及"
-
 #~ msgid "Win payout if %3 touches %6 through %5."
 #~ msgstr "如果%3一直到%5時觸及%6，將獲得賠付額。"
 
 #~ msgid "Win payout if %3 touches %6 through %5 after %4."
 #~ msgstr "如果%3在%4過後一直到%5時觸及%6，將獲得賠付額。"
-
-#~ msgid "lower"
-#~ msgstr "低於"
 
 #~ msgid "Win payout if %3 is strictly lower than %6 at %5."
 #~ msgstr "如果%3在%5時嚴格低於%6，將獲得賠付額。"
@@ -13519,9 +13339,6 @@ msgstr "條款和條件審批"
 
 #~ msgid "Win payout if %3 after %plural(%5,%d tick,%d ticks) is strictly lower than %6."
 #~ msgstr "如果%3在%plural(%5,%d 跳動點,%d 跳動點)之後嚴格低於%6，將獲得賠付額。"
-
-#~ msgid "stays between"
-#~ msgstr "位於區間之內"
 
 #~ msgid "Win payout if %3 stays between %7 to %6 through %5."
 #~ msgstr "如果%3在%5時一直在%7至%6之間，將獲得賠付額。"
@@ -13546,9 +13363,6 @@ msgstr "條款和條件審批"
 
 #~ msgid "%1 %2 payout for every point %3 rises from entry level, with stop loss of %4 points and stop profit of %5 points."
 #~ msgstr "%3入市價位每上漲一點即可獲得%1%2賠付額，止損為%4點，止盈為%5點。"
-
-#~ msgid "goes outside"
-#~ msgstr "處於區間之外"
 
 #~ msgid "Win payout if %3 goes outside %7 to %6 through %5."
 #~ msgstr "如果%3一直到%5時處於%7至%6之外，將獲得賠付額。"

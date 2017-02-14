@@ -5,6 +5,7 @@ const GTM                       = require('./gtm').GTM;
 const localize                  = require('./localize').localize;
 const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
 const check_risk_classification = require('../common_functions/check_risk_classification').check_risk_classification;
+const MetaTrader                = require('../websocket_pages/user/metatrader/metatrader');
 
 const Header = (function() {
     const on_load = function() {
@@ -57,6 +58,12 @@ const Header = (function() {
             $(this).attr('disabled', 'disabled');
             switch_loginid($(this).attr('value'));
         });
+    };
+
+    const metatrader_menu_item_visibility = function(landing_company_response) {
+        if (MetaTrader.isEligible(landing_company_response)) {
+            $('#all-accounts #user_menu_metatrader').removeClass('invisible');
+        }
     };
 
     const switch_loginid = function(loginid) {
@@ -170,7 +177,8 @@ const Header = (function() {
     return {
         on_load: on_load,
 
-        topbar_message_visibility: topbar_message_visibility,
+        topbar_message_visibility      : topbar_message_visibility,
+        metatrader_menu_item_visibility: metatrader_menu_item_visibility,
     };
 })();
 
