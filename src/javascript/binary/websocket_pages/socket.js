@@ -378,6 +378,9 @@ const BinarySocketClass = function() {
                     localStorage.setItem('risk_classification.response', response.get_account_status.risk_classification);
                     const status = response.get_account_status.status;
                     sessionStorage.setItem('client_status', status);
+                    if (/has_password/.test(status)) {
+                        Client.set('has_password', 1);
+                    }
                     if (/crs_tin_information/.test(status)) {
                         Client.set('has_tax_information', 1);
                     } else if (Client.should_redirect_tax()) {

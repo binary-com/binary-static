@@ -104,7 +104,6 @@ sub all_pages {
         ['user/security/authorised_appsws',  'user/security/authorised_appsws',      'default',    'Authorised Applications', 'ja'],
         ['user/security/cashier_passwordws', 'user/security/cashier_passwordws',     'default',    'Cashier Password'],
         ['user/security/change_passwordws',  'user/security/change_passwordws',      'default',    'Change Password'],
-        ['user/security/connections',        'user/security/connections',            'default',    'Connections'],
         ['user/security/iphistoryws',        'user/security/iphistory',              'default',    'Login History',           'ja'],
         ['user/security/limitsws',           'user/security/limitsws',               'default',    'Account Limits'],
         ['user/security/self_exclusionws',   'user/security/self_exclusionws',       'default',    'Account Details'],
