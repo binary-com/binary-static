@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-01 02:49+0000\n"
+"PO-Revision-Date: 2017-02-13 07:09+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.11\n"
+"X-Generator: Weblate 2.12-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" adalah set eksklusif dari rutinitas program %1, protokol, alat dan sumber daya yang diciptakan dan dikelola oleh %1 yang dapat memberi Anda fasilitas untuk menggunakan aplikasi terdaftar pada platform trading %1."
@@ -34,6 +34,46 @@ msgstr "\"Provider Pihak Ketiga\" adalah pihak ketiga (bukan-afiliasi) yang memb
 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 telah dikreditkan kedalam akun uang virtual Anda %3"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
+msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
+msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
+msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 
 msgid "%1 (Toll Free)"
 msgstr "%1 (Bebas Pulsa)"
@@ -104,10 +144,8 @@ msgstr "%1 mencapai 1 juta pengguna, pencapaian bersejarah. Perusahaan akan sela
 msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr "%1 memperkenalkan sebuah <a href='%2' target='_blank' class='ja-hide'>alat pemrograman auto-trader</a><span class='all-hide ja-show'>alat pemrograman auto-trader</span>, memungkinkan klien untuk mengembangkan robot trading mereka sendiri secara otomatis dengan konsep sederhana “drag-and-drop”."
 
-#, fuzzy
-#| msgid "%1 is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
 msgid "%1 is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
-msgstr "%1 adalah tempat yang sangat fleksibel. Begitu juga dengan kantor kami, kami memiliki staf yang dapat bekerja dari rumah mereka di seluruh negara. Jika hal ini cocok untuk Anda, kami terbuka untuk itu."
+msgstr "%1 adalah tempat kerja yang dinamis dan fleksibel. Begitu juga dengan kantor kami, kami memiliki pegawai yang dapat bekerja dari rumah di seluruh negara. Jika hal ini cocok untuk Anda, kami terbuka untuk itu."
 
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
 msgstr "%1 selalu mencari profesional berpengalaman untuk bergabung di dalam tim administrasi, kontributor teknikal dan beberapa manajer berbakat. Untuk mendukung perkembangan kami, kami telah mengembangkan beberapa peluang karir pada area berikut ini:"
@@ -164,7 +202,7 @@ msgid "%1 offers a virtual-money account so you can get the hang of trading bina
 msgstr "%1 menawarkan akun uang virtual dimana Anda dapat mencoba trading binary. Kenapa tidak <a class='pjaxload' href='%2'>mendaftar akun uang virtual dengan gratis $10k</a> dan mulai belajar bagaimana cara bertrading."
 
 msgid "%1 offers five main types of trades that will help you execute your market view or strategy:"
-msgstr ""
+msgstr "%1 menawarkan lima kontrak utama yang membantu mengeksekusi strategi Anda:"
 
 msgid "%1 offers new ways to trade"
 msgstr "%1 menawarkan cara baru bertrading"
@@ -172,10 +210,8 @@ msgstr "%1 menawarkan cara baru bertrading"
 msgid "%1 offers the world's financial markets in a simple, user-friendly platform."
 msgstr "%1 menawarkan platform pasar finansial dunia yang sederhana dan mudah."
 
-#, fuzzy
-#| msgid "%1 offers five ways to trade your chosen asset:"
 msgid "%1 offers you four ways to trade a particular asset:"
-msgstr "%1 menawarkan lima cara bertrading pada pilihan aset Anda:"
+msgstr "%1 menawarkan empat cara bertrading pada aset tertentu:"
 
 msgid "%1 opens an office in the QSentral office building in central Kuala Lumpur to further expand its IT development team."
 msgstr "%1 membuka kantor pada gedung perkantoran QSentral di pusat Kuala Lumpur untuk memperluas tim pengembangan IT mereka."
@@ -231,19 +267,9 @@ msgstr "Grup Analisa Kuantitatif %1 bertanggung jawab pada harga opsi yang ditaw
 msgid "%1's Smart FX are smart markets that measure the value of a currency against a basket of major currencies."
 msgstr "Smart FX %1 adalah pasar yang diukur berdasarkan nilai mata uang berbanding dengan kumpulan beberapa mata uang utama."
 
-#, fuzzy
-#| msgid ""
-#| "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much\n"
-#| "                    less investment than would be required in the live market."
 msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
-msgstr ""
-"Kontrak Spread %1 adalah kontrak derivatif berjangka, dimana nilainya ditentukan langsung oleh pergerakan pasar dasar. Pelanggan yang memilih 'Long' pada kenaikan pasar (dan yang memilih 'Short' pada penurunan pasar) akan memperoleh profit dari pergerakan dengan \n"
-"                    jumlah investasi yang sangat rendah jika dibandingkan dengan bertrading pada bursa saham."
+msgstr "Kontrak Spread %1 adalah kontrak derivatif berjangka, dimana nilainya ditentukan langsung oleh pergerakan pasar dasar. Pelanggan yang memilih 'Long' pada kenaikan pasar (dan yang memilih 'Short' pada penurunan pasar) akan memperoleh profit dari pergerakan dengan jumlah investasi yang sangat rendah jika dibandingkan dengan bertrading pada bursa saham."
 
-#, fuzzy
-#| msgid ""
-#| "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are\n"
-#| "                    closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
 msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
 msgstr ""
 "Kontrak Spread %1 memerlukan 'stop loss' yang akan membatasi jumlah maksimal kerugian yang akan dialami oleh Klien. Jumlah 'stop loss' akan berperan sebagai deposit dan tidak akan ditradingkan hingga Kontrak Spread ditutup. Kontrak Spread \n"
@@ -386,7 +412,7 @@ msgid "30-day turnover limit "
 msgstr "Batas omset 30-hari "
 
 msgid "4. Choose your Stake and Potential Return"
-msgstr ""
+msgstr "4. Pilih Modal dan Potensi Laba Anda"
 
 msgid "40 transactions or more in the past 12 months"
 msgstr "40 transaksi atau lebih pada 12 bulan terakhir"
@@ -494,10 +520,8 @@ msgstr "<strong>Semua kondisi pasar:</strong> naik/turun, menyentuh/tidak menyen
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>Semua kondisi pasar</strong> - naik/turun, menyentuh/tidak menyentuh, di dalam/di luar."
 
-#, fuzzy
-#| msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgid "<strong>All markets and conditions</strong> - Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets"
-msgstr "<strong>Semua pasar, semua kondisi</strong> - trading mata uang, indeks dan komoditas pada kenaikan, penurunan, sideway, sepi atau volatilitas pasar."
+msgstr "<strong>Semua pasar dan kondisi</strong> - trading pada mata uang, indeks, komoditas dan lainnya pada kenaikan, penurunan, sideway, sepi atau volatilitas pasar"
 
 msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
 msgstr "<strong>Semua pasar:</strong> valuta asing, indeks saham dan komoditas."
@@ -514,10 +538,8 @@ msgstr "<strong>Hasil</strong> - dari $1 hingga $50,000."
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>Ketepatan Test: PERINGATAN:</strong> Dalam memberikan pelayanan, kami diharuskan untuk memperoleh informasi dari Anda untuk memastikan apakah produk atau layanan yang diberikan adalah tepat untuk Anda (yaitu, apakah Anda memiliki pengalaman dan pengetahuan untuk memahami risiko yang terlibat)."
 
-#, fuzzy
-#| msgid "<strong>Trade when you want to trade</strong> - trade 24/7, even on weekends."
 msgid "<strong>Available 24/7</strong> - Trade when you want. %1 is available 24/7, even on weekends"
-msgstr "<strong>Trading kapan saja</strong> - trading 24/7, bahkan pada akhir pekan."
+msgstr "<strong>Tersedia 24/7</strong> - Trading kapan saja. %1 tersedia 24/7, bahkan pada akhir pekan"
 
 msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
 msgstr "<strong>Komisi:</strong> Anda akan mengenakan komisi untuk memproses transaksi."
@@ -532,7 +554,7 @@ msgid "<strong>Extra revenue stream:</strong> You will have the potential to ear
 msgstr "<strong>Aliran pendapatan tambahan:</strong> Anda akan memiliki potensi untuk mendapatkan tingkat lain pendapatan dari program afiliasi kami."
 
 msgid "<strong>Flexible</strong> - Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy"
-msgstr ""
+msgstr "<strong>Fleksibel</strong> - Pilih dari satu juta lebih kemungkinan variasi trading kapan saja, dan sesuaikan kontrak Anda pada strategi pilihan Anda"
 
 #, fuzzy
 #| msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
@@ -2255,6 +2277,11 @@ msgstr "Dokumentasi akun tagihan ulang"
 msgid "Document department processes, to enhance the marketing team's ability to execute repeated tasks efficiently and effectively"
 msgstr "Memproses dokumen departemen, meningkatkan kemampuan tim pemasaran untuk menjalankan tugas-tugas berulang secara efisien dan efektif"
 
+#, fuzzy
+#| msgid "does not touch"
+msgid "Does Not Touch"
+msgstr "tidak menyentuh"
+
 msgid "Dormant and Inactive Accounts"
 msgstr "Akun Dormant dan Tidak Aktif"
 
@@ -2403,6 +2430,11 @@ msgstr "Waktu end"
 msgid "End time must be after start time."
 msgstr "Waktu berakhir harus setelah waktu mulai."
 
+#, fuzzy
+#| msgid "ends between"
+msgid "Ends Between"
+msgstr "berakhir antara"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "Kontrak Berakhir Antara/Berakhir Keluar"
 
@@ -2416,6 +2448,11 @@ msgstr "Kontrak Ends In/Out akan mendapat pengembalian harga beli jika terdapat 
 #| msgid "Choose Ends In/Out to profit from the market stopping inside or outside two price targets at the end of the time period."
 msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
 msgstr "Pilih Ends In/Out untuk memperoleh untung pada pasar yang berakhir didalam atau keluar dua target harga pada akhir periode."
+
+#, fuzzy
+#| msgid "ends outside"
+msgid "Ends Outside"
+msgstr "berakhir di luar"
 
 msgid "Engage in data mining using SQL databases, R/S-Plus, OLAP and other analytical tools"
 msgstr "Terlibat dalam data mining menggunakan database SQL, R/S-Plus, OLAP dan alat analisis lainnya"
@@ -2915,6 +2952,11 @@ msgstr "Kunjungi <a href=\"https://login.binary.com/signup.php\">halaman daftar<
 msgid "Go with the leader"
 msgstr "Ikuti pemimpin"
 
+#, fuzzy
+#| msgid "goes outside"
+msgid "Goes Outside"
+msgstr "bergerak keluar"
+
 msgid "Governing Laws and Jurisdiction"
 msgstr "Pemerintahan Hukum dan Yurisdiksi"
 
@@ -2962,6 +3004,11 @@ msgstr "Batasan offset tinggi"
 
 msgid "High conversions and customer value"
 msgstr "Konversi tinggi dan menghargai Pelanggan"
+
+#, fuzzy
+#| msgid "higher"
+msgid "Higher"
+msgstr "lebih tinggi"
 
 msgid "Higher/Lower"
 msgstr "Higher/Lower"
@@ -4205,6 +4252,11 @@ msgstr "Batasan rendah"
 
 msgid "Low barrier offset"
 msgstr "Batasan offset rendah"
+
+#, fuzzy
+#| msgid "lower"
+msgid "Lower"
+msgstr "lebih rendah"
 
 msgid "MENA FFXPO Award"
 msgstr "Penghargaan MENA FFXPO"
@@ -5824,6 +5876,11 @@ msgstr "Status"
 msgid "Stay informed. %1 offers daily market reports and market research, as well as frequent trading webinars."
 msgstr "Pengetahuan terkini. %1 menawarkan laporan dan penelitian pasar harian termasuk berbagai webinar."
 
+#, fuzzy
+#| msgid "stays between"
+msgid "Stays Between"
+msgstr "tetap antara"
+
 msgid "Stays Between/Goes Outside trades"
 msgstr "Kontrak Tetap Antara/Bergerak Keluar"
 
@@ -6714,6 +6771,11 @@ msgstr "<strong>Touch/No Touch</strong> - menganalisa apakah pasar akan menyentu
 
 msgid "Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "Kontrak Touch/No Touch akan mendapat pengembalian harga beli jika terdapat kurang dari 2 tik penyelesaian dari waktu mulai hingga akhir."
+
+#, fuzzy
+#| msgid "touches"
+msgid "Touches"
+msgstr "menyentuh"
 
 msgid "Tour"
 msgstr "Panduan"
@@ -8016,30 +8078,6 @@ msgstr "Anda memiliki pengalaman yang cukup dan pengetahuan dalam hal trading fi
 msgid "{JAPAN ONLY}#1 Sales Division"
 msgstr "{JAPAN ONLY}#1 Sales Division"
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
-
 msgid "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
 msgstr "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
 
@@ -8232,9 +8270,6 @@ msgstr "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 msgid "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
 msgstr "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
 
-msgid "{JAPAN ONLY}Does Not Touch"
-msgstr "{JAPAN ONLY}Does Not Touch"
-
 msgid "{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account."
 msgstr "{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account."
 
@@ -8246,12 +8281,6 @@ msgstr "{JAPAN ONLY}Download our latest report here"
 
 msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
 msgstr "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
-
-msgid "{JAPAN ONLY}Ends Between"
-msgstr "{JAPAN ONLY}Ends Between"
-
-msgid "{JAPAN ONLY}Ends Outside"
-msgstr "{JAPAN ONLY}Ends Outside"
 
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
@@ -8345,12 +8374,6 @@ msgstr "{JAPAN ONLY}Foreign PEP Declaration"
 
 msgid "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
 msgstr "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
-
-msgid "{JAPAN ONLY}Goes Outside"
-msgstr "{JAPAN ONLY}Goes Outside"
-
-msgid "{JAPAN ONLY}Higher"
-msgstr "{JAPAN ONLY}Higher"
 
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
 msgstr "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
@@ -8532,9 +8555,6 @@ msgstr "{JAPAN ONLY}Knowledge Test Result"
 msgid "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 msgstr "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 
-msgid "{JAPAN ONLY}Lower"
-msgstr "{JAPAN ONLY}Lower"
-
 msgid "{JAPAN ONLY}Main business"
 msgstr "{JAPAN ONLY}Main business"
 
@@ -8703,9 +8723,6 @@ msgstr "{JAPAN ONLY}Short positions in FX Binary Options must be covered by init
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 
-msgid "{JAPAN ONLY}Stays Between"
-msgstr "{JAPAN ONLY}Stays Between"
-
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "{JAPAN ONLY}Summary of Specifications"
 
@@ -8792,9 +8809,6 @@ msgstr "{JAPAN ONLY}To buy an option, simply click on the price button to execut
 
 msgid "{JAPAN ONLY}To compensate for any rise in the price of an underlying asset that you intend to buy in future, you should buy a call option."
 msgstr "{JAPAN ONLY}To compensate for any rise in the price of an underlying asset that you intend to buy in future, you should buy a call option."
-
-msgid "{JAPAN ONLY}Touches"
-msgstr "{JAPAN ONLY}Touches"
 
 msgid "{JAPAN ONLY}Track your trade in real time:"
 msgstr "{JAPAN ONLY}Track your trade in real time:"
@@ -9006,6 +9020,30 @@ msgstr "Pengaturan"
 
 msgid "Terms and Conditions Approval"
 msgstr "Syarat dan Ketentuan Persetujuan"
+
+#~ msgid "{JAPAN ONLY}Does Not Touch"
+#~ msgstr "{JAPAN ONLY}Does Not Touch"
+
+#~ msgid "{JAPAN ONLY}Ends Between"
+#~ msgstr "{JAPAN ONLY}Ends Between"
+
+#~ msgid "{JAPAN ONLY}Ends Outside"
+#~ msgstr "{JAPAN ONLY}Ends Outside"
+
+#~ msgid "{JAPAN ONLY}Goes Outside"
+#~ msgstr "{JAPAN ONLY}Goes Outside"
+
+#~ msgid "{JAPAN ONLY}Higher"
+#~ msgstr "{JAPAN ONLY}Higher"
+
+#~ msgid "{JAPAN ONLY}Lower"
+#~ msgstr "{JAPAN ONLY}Lower"
+
+#~ msgid "{JAPAN ONLY}Stays Between"
+#~ msgstr "{JAPAN ONLY}Stays Between"
+
+#~ msgid "{JAPAN ONLY}Touches"
+#~ msgstr "{JAPAN ONLY}Touches"
 
 #~ msgid "Company trip to Phuket, Thailand"
 #~ msgstr "Perjalanan wisata ke Phuket, Thailand"
@@ -13476,9 +13514,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "Win payout if the last tick of %3 is strictly higher than the average of the %plural(%5,%d tick,%d ticks)."
 #~ msgstr "Dapatkan hasil jika tik terakhir %3 pasti akan lebih tinggi dari rata-rata %plural(%5,%d tick,%d ticks)."
 
-#~ msgid "higher"
-#~ msgstr "lebih tinggi"
-
 #~ msgid "Win payout if %3 is strictly higher than %6 at %5."
 #~ msgstr "Dapatkan hasil jika %3 pasti akan lebih tinggi dari %6 pada %5."
 
@@ -13524,17 +13559,11 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "Win payout if the last digit of %3 is strictly lower than %6 after %5 ticks."
 #~ msgstr "Dapatkan hasil jika digit terakhir %3 harus lebih rendah dari %6 setelah %5 tik."
 
-#~ msgid "ends outside"
-#~ msgstr "berakhir di luar"
-
 #~ msgid "Win payout if %3 ends outside %7 to %6 at %5."
 #~ msgstr "Dapatkan hasil jika %3 berakhir diluar %7 hingga %6 pada %5."
 
 #~ msgid "Win payout if %3 ends outside %7 to %6 at %5 after %4."
 #~ msgstr "Dapatkan hasil jika %3 berakhir diluar %7 hingga %6 pada %5 setelah %4."
-
-#~ msgid "ends between"
-#~ msgstr "berakhir antara"
 
 #~ msgid "Win payout if %3 ends strictly between %7 to %6 at %5."
 #~ msgstr "Dapatkan hasil jika %3 berakhir pasti antara %7 hingga %6 pada %5."
@@ -13542,26 +13571,17 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "Win payout if %3 ends strictly between %7 to %6 at %5 after %4."
 #~ msgstr "Dapatkan hasil jika %3 pasti berakhir antara %7 hingga %6 pada %5 setelah %4."
 
-#~ msgid "does not touch"
-#~ msgstr "tidak menyentuh"
-
 #~ msgid "Win payout if %3 does not touch %6 through %5."
 #~ msgstr "Dapatkan hasil jika %3 tidak menyentuh %6 melewati %5."
 
 #~ msgid "Win payout if %3 does not touch %6 through %5 after %4."
 #~ msgstr "Dapatkan hasil jika %3 tidak menyentuh %6 melewati %5 setelah %4."
 
-#~ msgid "touches"
-#~ msgstr "menyentuh"
-
 #~ msgid "Win payout if %3 touches %6 through %5."
 #~ msgstr "Dapatkan hasil jika %3 menyentuh %6 melewati %5."
 
 #~ msgid "Win payout if %3 touches %6 through %5 after %4."
 #~ msgstr "Dapatkan hasil jika %3 menyentuh %6 melewati %5 setelah %4."
-
-#~ msgid "lower"
-#~ msgstr "lebih rendah"
 
 #~ msgid "Win payout if %3 is strictly lower than %6 at %5."
 #~ msgstr "Dapatkan hasil jika %3 pasti lebih rendah dari %6 pada %5."
@@ -13571,9 +13591,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Win payout if %3 after %plural(%5,%d tick,%d ticks) is strictly lower than %6."
 #~ msgstr "Dapatkan hasil jika %3 setelah %plural(%5,%d tick,%d ticks) pasti lebih rendah dari %6."
-
-#~ msgid "stays between"
-#~ msgstr "tetap antara"
 
 #~ msgid "Win payout if %3 stays between %7 to %6 through %5."
 #~ msgstr "Dapatkan hasil jika %3 berada tetap antara %7 hingga %6 melalui %5."
@@ -13598,9 +13615,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "%1 %2 payout for every point %3 rises from entry level, with stop loss of %4 points and stop profit of %5 points."
 #~ msgstr "Hasil %1 %2 untuk setiap kenaikan poin pada %3 dari entry level, dengan stop loss %4 poin dan stop profit %6 %5."
-
-#~ msgid "goes outside"
-#~ msgstr "bergerak keluar"
 
 #~ msgid "Win payout if %3 goes outside %7 to %6 through %5."
 #~ msgstr "Dapatkan hasil jika %3 bergerak diluar %7 hingga %6 melewati %5."
