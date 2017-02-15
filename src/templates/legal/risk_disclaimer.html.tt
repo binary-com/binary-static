@@ -1,4 +1,4 @@
-<div>
+<div class="gr-12">
     <h2>[% l("Risk disclaimer") %]</h2>
     <p>[% l('This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through [_1]. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products ("Investment Products") and binary bets such as those relating to the Volatility Indices ("Gambling Products").', website_name) %]</p>
     <p>[% l('Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA and all other Binary Group members are sometimes referred to collectively as "[_1]", "us" or "we".', website_name) %]</p>
@@ -6,7 +6,7 @@
     <p>[% l('If you choose to enter into a Contract with us, it is important that you remain aware of the risks involved, that you have adequate investment resources to bear such risks and that you monitor your positions carefully.') %]</p>
     <h2>[% l('General risks') %]</h2>
     <p></p>
-    <h4>[% l('No Aavice') %]</h4>
+    <h4>[% l('No Advice') %]</h4>
     <p>[% l('Our services are provided on an execution only basis. We do not provide investment advice in relation to our products or services. We sometimes provide factual information or research recommendations about a market, information about transaction procedures and information about the potential risks involved and how those risks may be minimised. However, any decision to use our products or services is made by you.') %]</p>
     <p>[% l('You are responsible for managing your tax and legal affairs including making any regulatory filings and payments and complying with applicable laws and regulations. We do not provide any regulatory, tax or legal advice. If you are in any doubt as to the tax treatment or liabilities of Investment Products or Gambling Products available through [_1], you may wish to seek independent advice.', website_name) %]</p>
     <h4>[% l('Appropriateness') %]</h4>
