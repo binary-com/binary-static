@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-02-15 04:07+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
-"Language-Team: Indonesian "
-"<https://hosted.weblate.org/projects/binary/static/id/>\n"
+"Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -809,6 +808,11 @@ msgstr "Tentang Kami dan Regulator"
 msgid "About Us and these Terms"
 msgstr "Tentang Kami dan Syarat"
 
+#, fuzzy
+#| msgid "%1 academy"
+msgid "Academy"
+msgstr "Akademi %1"
+
 msgid "Accept"
 msgstr "Menerima"
 
@@ -1592,9 +1596,6 @@ msgstr ""
 
 msgid "Binary.com's CPAN contributions"
 msgstr "Kontribusi CPAN Binary.com"
-
-msgid "Blog"
-msgstr "Blog"
 
 msgid "Both the above"
 msgstr "Keduanya diatas"
@@ -10215,6 +10216,9 @@ msgstr "Batasan rekening"
 
 msgid "Account Details"
 msgstr "Keterangan rekening"
+
+#~ msgid "Blog"
+#~ msgstr "Blog"
 
 #~ msgid "Bonus Code"
 #~ msgstr "Kode Bonus"
