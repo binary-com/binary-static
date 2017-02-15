@@ -1,15 +1,17 @@
-const RiskClassification = require('../../../../common_functions/risk_classification').RiskClassification;
-const japanese_client    = require('../../../../common_functions/country_base').japanese_client;
-const showLoadingImage   = require('../../../../base/utility').showLoadingImage;
-const localize           = require('../../../../base/localize').localize;
 const Client             = require('../../../../base/client').Client;
+const localize           = require('../../../../base/localize').localize;
 const url_for            = require('../../../../base/url').url_for;
+const showLoadingImage   = require('../../../../base/utility').showLoadingImage;
 const Content            = require('../../../../common_functions/content').Content;
+const japanese_client    = require('../../../../common_functions/country_base').japanese_client;
+const RiskClassification = require('../../../../common_functions/risk_classification').RiskClassification;
 
 const FinancialAssessmentws = (function() {
     'use strict';
 
     let financial_assessment = {};
+
+    const hidden_class = 'invisible';
 
     const init = function() {
         Content.populate();
@@ -75,8 +77,8 @@ const FinancialAssessmentws = (function() {
         if (typeof show_form === 'undefined') {
             show_form = true;
         }
-        if (show_form)            {
-            $('#assessment_form').removeClass('invisible');
+        if (show_form) {
+            $('#assessment_form').removeClass(hidden_class);
         }
     };
 
@@ -119,19 +121,14 @@ const FinancialAssessmentws = (function() {
                 displayErrors(response.error.details);
             } else {
                 showFormMessage('Your changes have been updated successfully.', true);
-                const redirect_url = localStorage.getItem('financial_assessment_redirect');
-                if (redirect_url) {
-                    localStorage.removeItem('financial_assessment_redirect');
-                    setTimeout(() => { window.location.href = redirect_url; }, 5000);
-                }
             }
         }
     };
 
     const checkIsVirtual = function() {
         if (Client.get('is_virtual')) {
-            $('#assessment_form').addClass('invisible');
-            $('#response_on_success').addClass('notice-msg center-text').removeClass('invisible').text(Content.localize().featureNotRelevantToVirtual);
+            $('#assessment_form').addClass(hidden_class);
+            $('#msg_main').addClass('notice-msg center-text').removeClass(hidden_class).text(Content.localize().featureNotRelevantToVirtual);
             hideLoadingImg(false);
             return true;
         }
@@ -139,12 +136,25 @@ const FinancialAssessmentws = (function() {
     };
 
     const showFormMessage = function(msg, isSuccess) {
-        $('#form_message')
-            .attr('class', isSuccess ? 'success-msg' : 'errorfield')
-            .html(isSuccess ? '<ul class="checked" style="display: inline-block;"><li>' + localize(msg) + '</li></ul>' : localize(msg))
-            .css('display', 'block')
-            .delay(5000)
-            .fadeOut(1000);
+        const redirect_url = localStorage.getItem('financial_assessment_redirect');
+        if (isSuccess && /metatrader/i.test(redirect_url)) {
+            localStorage.removeItem('financial_assessment_redirect');
+            $.scrollTo($('h1#heading'), 500, { offset: -10 });
+            $('#assessment_form').addClass(hidden_class);
+            $('#msg_main').removeClass(hidden_class);
+            BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
+                if ($.inArray('authenticated', response_status.get_account_status.status) === -1) {
+                    $('#msg_authenticate').removeClass(hidden_class);
+                }
+            });
+        } else {
+            $('#form_message')
+                .attr('class', isSuccess ? 'success-msg' : 'errorfield')
+                .html(isSuccess ? '<ul class="checked" style="display: inline-block;"><li>' + localize(msg) + '</li></ul>' : localize(msg))
+                .css('display', 'block')
+                .delay(5000)
+                .fadeOut(1000);
+        }
     };
 
     const onLoad = function() {
