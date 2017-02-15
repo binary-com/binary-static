@@ -498,8 +498,6 @@ sub _texts {
         push @texts, localize('You should enter [_1] characters.');
 
         # strings for metatrader
-        push @texts, localize('To perform this action, please switch to your [_1] Real Account.');
-        push @texts, localize('To perform this action, please <a href="[_1]"> upgrade to [_2] Real Account</a>.');
         push @texts, localize('Congratulations! Your [_1] Account has been created.');
         push @texts, localize('The main password of account number [_1] has been changed.');
         push @texts, localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]');
