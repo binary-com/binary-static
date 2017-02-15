@@ -1,0 +1,56 @@
+<div class="static_full">
+    <h1>[% l("Start Trading with MetaTrader 5") %]</h1>
+
+    <div class="gr-row">
+        <div class="gr-6 gr-12-m">
+            <ol>
+                <li>[% l('Click the button below to download MetaTrader.') %]</li>
+                <li>[% l('Run the installation file and follow the instructions.') %]</li>
+                <li>[% l('Log into the application using your MetaTrader account number and your MetaTrader account password.') %]</li>
+            </ol>
+            <p class="hint">[% l('If you previously downloaded MetaTrader 5 directly from MetaTrader\'s website, please select "[_1]" from the list of available brokers.', brand_name) %]</p>
+        </div>
+        <div class="gr-6 gr-hide-m">
+            <img class="responsive" src="[% request.url_for('images/pages/metatrader/mt5-pc.svg') %]" alt=""/>
+        </div>
+    </div>
+
+    <div class="gr-row">
+        <div class="gr-6 gr-12-m">
+            <a class="button full-width" href="[% request.url_for('/download/binarycom_mt5_setup.exe') %]">
+                <span>[% l('Download MetaTrader for Windows') %]</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="gr-row">
+        <div class="gr-6 gr-12-m gr-parent">
+            <div class="gr-row">
+                <div class="gr-6 gr-no-gutter-right">
+                    <a class="button button-secondary" href="https://s3.amazonaws.com/binary-mt5/binary-mt5.dmg" download>
+                        <span>[% l('Download for MacOS') %]</span>
+                    </a>
+                </div>
+                <div class="gr-6 align-end">
+                    <a class="button button-secondary" href="https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux" target="_blank">
+                        <span>[% l('Linux Instructions') %]</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="gr-6 gr-12-m">
+            <div class="gr-row">
+                <div class="gr-6 gr-no-gutter-right align-end">
+                    <a href="https://download.mql5.com/cdn/mobile/mt5/ios?server=Binary.com-Server" target="_blank">
+                        <span class="app-store-badge"></span>
+                    </a>
+                </div>
+                <div class="gr-6">
+                    <a href="https://download.mql5.com/cdn/mobile/mt5/android?server=Binary.com-Server" target="_blank">
+                        <span class="google-play-badge"></span>
+                    </a>
+                </div>
+           </div>
+        </div>
+    </div>
+</div>

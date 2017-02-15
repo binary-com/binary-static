@@ -24,7 +24,7 @@ const TNCApproval = (function() {
         redirectUrl = sessionStorage.getItem('tnc_redirect');
         sessionStorage.removeItem('tnc_redirect');
 
-        BinarySocket.send({ get_settings: '1' });
+        BinarySocket.send({ get_settings: '1' }, true);
         BinarySocket.send({ website_status: '1' });
 
         $('#btn-accept').click(function(e) {

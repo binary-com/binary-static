@@ -36,6 +36,30 @@ msgstr ""
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr ""
 
+msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
+msgstr ""
+
+msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+msgstr ""
+
+msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+msgstr ""
+
+msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+msgstr ""
+
+msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+msgstr ""
+
+msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+msgstr ""
+
+msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+msgstr ""
+
+msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
+msgstr ""
+
 msgid "%1 (Toll Free)"
 msgstr ""
 
@@ -2141,6 +2165,9 @@ msgstr ""
 msgid "Document department processes, to enhance the marketing team's ability to execute repeated tasks efficiently and effectively"
 msgstr ""
 
+msgid "Does Not Touch"
+msgstr ""
+
 msgid "Dormant and Inactive Accounts"
 msgstr ""
 
@@ -2285,6 +2312,9 @@ msgstr ""
 msgid "End time must be after start time."
 msgstr ""
 
+msgid "Ends Between"
+msgstr ""
+
 msgid "Ends Between/Ends Outside trades"
 msgstr ""
 
@@ -2295,6 +2325,9 @@ msgid "Ends In/Out contracts will be refunded at the purchase price if there are
 msgstr ""
 
 msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr ""
+
+msgid "Ends Outside"
 msgstr ""
 
 msgid "Engage in data mining using SQL databases, R/S-Plus, OLAP and other analytical tools"
@@ -2789,6 +2822,9 @@ msgstr ""
 msgid "Go with the leader"
 msgstr ""
 
+msgid "Goes Outside"
+msgstr ""
+
 msgid "Governing Laws and Jurisdiction"
 msgstr ""
 
@@ -2835,6 +2871,9 @@ msgid "High barrier offset"
 msgstr ""
 
 msgid "High conversions and customer value"
+msgstr ""
+
+msgid "Higher"
 msgstr ""
 
 msgid "Higher/Lower"
@@ -4056,6 +4095,9 @@ msgid "Low barrier"
 msgstr ""
 
 msgid "Low barrier offset"
+msgstr ""
+
+msgid "Lower"
 msgstr ""
 
 msgid "MENA FFXPO Award"
@@ -5654,6 +5696,9 @@ msgstr ""
 msgid "Stay informed. %1 offers daily market reports and market research, as well as frequent trading webinars."
 msgstr ""
 
+msgid "Stays Between"
+msgstr ""
+
 msgid "Stays Between/Goes Outside trades"
 msgstr ""
 
@@ -6509,6 +6554,9 @@ msgid "Touch/No Touch - Predict if the market will touch or not touch a target p
 msgstr ""
 
 msgid "Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
+msgid "Touches"
 msgstr ""
 
 msgid "Tour"
@@ -7786,30 +7834,6 @@ msgstr ""
 msgid "{JAPAN ONLY}#1 Sales Division"
 msgstr ""
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
-msgstr ""
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-msgstr ""
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr ""
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgstr ""
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-msgstr ""
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-msgstr ""
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-msgstr ""
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
-msgstr ""
-
 msgid "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
 msgstr ""
 
@@ -8002,9 +8026,6 @@ msgstr ""
 msgid "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
 msgstr ""
 
-msgid "{JAPAN ONLY}Does Not Touch"
-msgstr ""
-
 msgid "{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account."
 msgstr ""
 
@@ -8015,12 +8036,6 @@ msgid "{JAPAN ONLY}Download our latest report here"
 msgstr ""
 
 msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
-msgstr ""
-
-msgid "{JAPAN ONLY}Ends Between"
-msgstr ""
-
-msgid "{JAPAN ONLY}Ends Outside"
 msgstr ""
 
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
@@ -8114,12 +8129,6 @@ msgid "{JAPAN ONLY}Foreign PEP Declaration"
 msgstr ""
 
 msgid "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
-msgstr ""
-
-msgid "{JAPAN ONLY}Goes Outside"
-msgstr ""
-
-msgid "{JAPAN ONLY}Higher"
 msgstr ""
 
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
@@ -8302,9 +8311,6 @@ msgstr ""
 msgid "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 msgstr ""
 
-msgid "{JAPAN ONLY}Lower"
-msgstr ""
-
 msgid "{JAPAN ONLY}Main business"
 msgstr ""
 
@@ -8473,9 +8479,6 @@ msgstr ""
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr ""
 
-msgid "{JAPAN ONLY}Stays Between"
-msgstr ""
-
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr ""
 
@@ -8561,9 +8564,6 @@ msgid "{JAPAN ONLY}To buy an option, simply click on the price button to execute
 msgstr ""
 
 msgid "{JAPAN ONLY}To compensate for any rise in the price of an underlying asset that you intend to buy in future, you should buy a call option."
-msgstr ""
-
-msgid "{JAPAN ONLY}Touches"
 msgstr ""
 
 msgid "{JAPAN ONLY}Track your trade in real time:"

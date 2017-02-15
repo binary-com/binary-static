@@ -312,30 +312,31 @@ sub _texts {
         push @texts, localize("{JAPAN ONLY}Dear customer, you've already completed the knowledge test, please proceed to next step.");
         push @texts, localize('{JAPAN ONLY}Please complete the following questions.');
         push @texts, localize('{JAPAN ONLY}The test is unavailable now, test can only be taken again on next business day with respect of most recent test.');
-        push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] is strictly higher or equal than Exercise price at close  on [_4].');
-        push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] is strictly lower than Exercise price at close on [_4].');
-        push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] does not touch Exercise price through close on [_4].');
-        push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] touches Exercise price through close on [_4].');
-        push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] ends on or between low and high values of Exercise price at close on [_4].');
-        push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] ends outside low and high values of Exercise price at close on [_4].');
-        push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] stays between low and high values of Exercise price through close on [_4].');
-        push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] goes outside of low and high values of Exercise price through close on [_4].');
-        push @texts, localize('{JAPAN ONLY}Higher');
-        push @texts, localize('{JAPAN ONLY}Lower');
-        push @texts, localize('{JAPAN ONLY}Touches');
-        push @texts, localize('{JAPAN ONLY}Does Not Touch');
-        push @texts, localize('{JAPAN ONLY}Ends Between');
-        push @texts, localize('{JAPAN ONLY}Ends Outside');
-        push @texts, localize('{JAPAN ONLY}Stays Between');
-        push @texts, localize('{JAPAN ONLY}Goes Outside');
-        push @texts, localize('Remaining time');
         push @texts, localize('You need to finish all 20 questions.');
         push @texts, localize('Weekday');
-        push @texts, localize('All barriers in this trading window are expired');
         push @texts, localize('Your Application is Being Processed.');
         push @texts, localize('{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.');
         push @texts, localize('Processing your request...');
         push @texts, localize('Please check the above form for pending errors.');
+        #strings for multi_barriers_trading page
+        push @texts, localize('[_1] [_2] payout if [_3] is strictly higher or equal than Exercise price at close  on [_4].');
+        push @texts, localize('[_1] [_2] payout if [_3] is strictly lower than Exercise price at close on [_4].');
+        push @texts, localize('[_1] [_2] payout if [_3] does not touch Exercise price through close on [_4].');
+        push @texts, localize('[_1] [_2] payout if [_3] touches Exercise price through close on [_4].');
+        push @texts, localize('[_1] [_2] payout if [_3] ends on or between low and high values of Exercise price at close on [_4].');
+        push @texts, localize('[_1] [_2] payout if [_3] ends outside low and high values of Exercise price at close on [_4].');
+        push @texts, localize('[_1] [_2] payout if [_3] stays between low and high values of Exercise price through close on [_4].');
+        push @texts, localize('[_1] [_2] payout if [_3] goes outside of low and high values of Exercise price through close on [_4].');
+        push @texts, localize('Higher');
+        push @texts, localize('Lower');
+        push @texts, localize('Touches');
+        push @texts, localize('Does Not Touch');
+        push @texts, localize('Ends Between');
+        push @texts, localize('Ends Outside');
+        push @texts, localize('Stays Between');
+        push @texts, localize('Goes Outside');
+        push @texts, localize('All barriers in this trading window are expired');
+        push @texts, localize('Remaining time');
         push @texts, localize('Market is closed. Please try again later.');
         push @texts, localize('This symbol is not active. Please try another symbol.');
         push @texts, localize('Connection error: Please check your internet connection.');
@@ -478,15 +479,46 @@ sub _texts {
         push @texts, localize('The server <a href="[_1]">endpoint</a> is: [_2]');
         # strings for account signup error
         push @texts, localize('Sorry, account signup is not available in your country. Please contact <a href="[_1]">customer support</a> for more information.');
-        # strings for connection page
-        push @texts, localize('You do not have any connections.');
-        push @texts, localize('Are you sure that you want to permanently revoke connection to');
         # strings from back-end
         push @texts, localize('There was a problem accessing the server.');
         push @texts, localize('There was a problem accessing the server during purchase.');
 
         # strings for OneSignal
         push @texts, localize('Thank you for subscribing!');
+
+        # strings for form_validation
+        push @texts, localize('Should be a valid number');
+        push @texts, localize('Should be more than [_1]');
+        push @texts, localize('Should be less than [_1]');
+        push @texts, localize('Only letters, numbers, space, hyphen, period, and apostrophe are allowed.');
+        push @texts, localize('Only letters, space, hyphen, period, and apostrophe are allowed.');
+        push @texts, localize('Only letters, numbers, and hyphen are allowed.');
+        push @texts, localize('Only numbers and spaces are allowed.');
+        push @texts, localize('Please submit a valid verification token.');
+        push @texts, localize('The two passwords that you entered do not match.');
+        push @texts, localize('[_1] and [_2] cannot be the same.');
+        push @texts, localize('You should enter [_1] characters.');
+
+        # strings for metatrader
+        push @texts, localize('To perform this action, please switch to your [_1] Real Account.');
+        push @texts, localize('To perform this action, please <a href="[_1]"> upgrade to [_2] Real Account</a>.');
+        push @texts, localize('Congratulations! Your [_1] Account has been created.');
+        push @texts, localize('The main password of account number [_1] has been changed.');
+        push @texts, localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]');
+        push @texts, localize('[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]');
+        push @texts, localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.');
+        push @texts, localize('Sorry, this feature is not available.');
+        push @texts, localize('Main password');
+        push @texts, localize('Investor password');
+        push @texts, localize('Current password');
+        push @texts, localize('New password');
+        push @texts, localize('Demo');
+        push @texts, localize('Real Cent');
+        push @texts, localize('Real Standard');
+        push @texts, localize('Real STP');
+        push @texts, localize('Real Volatility');
+        push @texts, localize('Create Account');
+        push @texts, localize('Change Password');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";

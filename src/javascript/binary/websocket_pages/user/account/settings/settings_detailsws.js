@@ -34,7 +34,7 @@ const SettingsDetailsWS = (function() {
             isInitialized = false;
         }
 
-        BinarySocket.send({ get_settings: '1', req_id: 1 });
+        BinarySocket.send({ get_settings: '1', req_id: 1 }, true);
     };
 
     const initOk = function() {

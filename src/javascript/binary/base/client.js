@@ -16,9 +16,11 @@ const Client = (function () {
         return string.split('+').sort().map(function(str) {
             const items = str.split(':');
             const id = items[0];
+            const is_real = items[1] === 'R';
+            if (is_real) client_object.has_real = is_real;
             return {
                 id           : id,
-                real         : items[1] === 'R',
+                real         : is_real,
                 disabled     : items[2] === 'D',
                 financial    : /^MF/.test(id),
                 non_financial: /^MLT/.test(id),
@@ -372,7 +374,7 @@ const Client = (function () {
         return client_landing_company;
     };
 
-    const is_financial = () => client_object.loginid_array.find(obj => (obj.id === get('loginid'))).financial;
+    const is_financial = () => (client_object.loginid_array.find(obj => (obj.id === get('loginid'))) || {}).financial;
 
     const should_complete_tax = () => is_financial() && !get('has_tax_information');
 
