@@ -273,20 +273,15 @@
             </div>
         </form>
 
-        <div id="msg_authenticate">
-            <div class="align-start">
-                <p>[% l('To create an MT5 Financial Account please:') %]</p>
-                <ul class="checked">
-                    <li class="authenticate invisible">
-                        [% l('Authenticate your Binary.com account.') %]
-                        <p>[% l('Kindly email the following documents to <a href="mailto:[_1]">[_1]</a> to authenticate your account:', 'support@binary.com') %]</p>
-                        <ul class="bullet">
-                            <li>[% l('A scanned copy of your passport, driving licence (provisional or full), or identity card that shows your full name and date of birth.') %]</li>
-                            <li>[% l('A scanned copy of a utility bill or bank statement that is no more than three months old.') %]</li>
-                        </ul>
-                    </li>
-                    <li class="assessment invisible">[% l('Complete the <a href="[_1]">Financial Assessment</a>.', request.url_for('/user/settings/assessmentws')) %]</li>
-                </ul>
+        <div id="messages">
+            <div id="msg_switch">[% l('To perform this action, please switch to your [_1] Real Account.', website_name) %]</div>
+            <div id="msg_upgrade">[% l('To perform this action, please <a href="[_1]">upgrade to [_2] Real Account</a>.', request.url_for('new_account/realws'), website_name) %]</div>
+            <div id="msg_assessment">[% l('To create an MT5 Financial Account please complete the <a href="[_1]">Financial Assessment</a>.', request.url_for('user/settings/assessmentws')) %]</div>
+            <div id="msg_authenticate">
+                <div class="txt-left">
+                    <p>[% l('To withdraw from MT5 Financial Account please Authenticate your [_1] account.', website_name) %]</p>
+                    [% INCLUDE user/common/authenticate_message.html.tt %]
+                </div>
             </div>
         </div>
     </div>

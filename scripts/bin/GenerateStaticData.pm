@@ -288,9 +288,10 @@ sub _texts {
         push @texts, localize('Sell');
         push @texts, localize('Buy');
         #strings for authenticate page
-        push @texts, localize('To authenticate your account, kindly email the following to [_1]:');
-        push @texts, localize('A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date.');
-        push @texts, localize('A scanned copy of a utility bill or bank statement (no more than 3 months old)');
+        push @texts, localize('Please send us the following documents in order to verify your identity and authenticate your account:');
+        push @texts, localize('Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth.');
+        push @texts, localize('Proof of address - A scanned copy of a utility bill or bank statement that\'s not more than three months old.');
+        push @texts, localize('If you have any questions, kindly contact our Customer Support team at <a href="mailto:[_1]">[_1]</a>.');
         push @texts, localize('This feature is not relevant to virtual-money accounts.');
         push @texts, localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].');
         push @texts, localize('Deposits and withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.');
