@@ -12,7 +12,6 @@
     <p>
         [% l('These ST&Cs begin to apply on the date we open your account, and, for any new versions after that, on the date we notify you.') %]
     </p>
-
     <h2>[% l("About us and our regulator") %]</h2>
     <p>
         [% l("BIEL is a company established in Malta under registration number C70156 and having its registered office at Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta.") %]
@@ -23,12 +22,10 @@
     <p>
         [% l('In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the "Rules"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail.') %]
     </p>
-
     <h2>[% l("Restrictions") %]</h2>
     <p>
         [% l("Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd.") %]
     </p>
-
     <h2>[% l("Client classification") %]</h2>
     <p>
         [% l("Under the Rules, clients may be categorised into one of the following three categories:") %]
@@ -53,7 +50,6 @@
     <p>
         [% l("We are entitled under the Rules to rely upon information provided by you. You should ensure that you provide us with accurate and complete information and notify us in the event that any information supplied to us changes. You should note that if you provide us with inaccurate information, or if you fail to notify us of any changes to information previously supplied by you, this may adversely affect the quality of the services that we can provide.") %]
     </p>
-
     <h2>[% l("Appropriateness test") %]</h2>
     <p>
         [% l("In the course of provision of services we shall, where applicable, conduct an appropriateness test in order to determine whether, in our view and on the basis of the information provided by you, you have the necessary knowledge and experience in the investment field to understand the risks involved in the specific type of product or service offered or demanded.") %]
@@ -74,16 +70,16 @@
     <p>
         [% l("Since we exclusively deal on own account in Financial Products this means that we act as the execution venue and accordingly all transactions entered into with us will be executed outside a regulated market (stock exchange) or multilateral trading facility.") %]
     </p>
-    <h2>[% l("Clients' money") %]</h2>
+    <h2>[% l("Clients\' money") %]</h2>
     <p>
-        [% l('Monies deposited by you with us in advance of a trade or pending withdrawal is treated by us as clients\' money. We hold such monies in pooled or omnibus clients\' money bank accounts opened with banks or other institutions ("Institutions"), segregated from our own money. Such clients\' money bank accounts may be opened with EEA Institutions or Institutions outside the EEA. Where clients money is held with non-EEA Institutions this means that such accounts will be subject to laws other than those of an EEA member state and your rights may differ accordingly.') %]
+        [% l("Monies deposited by you with us in advance of a trade or pending withdrawal is treated by us as clients\' money. We hold such monies in pooled or omnibus clients\' money bank accounts opened with banks or other institutions (\"Institutions\"), segregated from our own money. Such clients\' money bank accounts may be opened with EEA Institutions or Institutions outside the EEA. Where clients money is held with non-EEA Institutions this means that such accounts will be subject to laws other than those of an EEA member state and your rights may differ accordingly.") %]
     </p>
     <p>
         [% l("The Financial Products that we offer to deal in are contracts entered into between you and us. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that you pay us, we promise to pay you a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that we hold on your behalf and neither benefit from clients' assets protection in the event of our insolvency. Similarly the premium or price that you pay to take out a trade is not held as clients' money but as consideration for our undertaking to pay.") %]
     </p>
     <h2>[% l("Investor compensation scheme") %]</h2>
     <p>
-        [% l('BIEL forms part of <a href="[_1]" target="_blank">the Investor Compensation Scheme</a> (the "Scheme") which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company\'s net liability to a client in respect of investments which qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9.', 'http://www.compensationschemes.org.mt') %]
+        [% l("BIEL forms part of <a href="[_1]" target="_blank">the Investor Compensation Scheme</a> (the "Scheme") which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company\'s net liability to a client in respect of investments which qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9.', 'http://www.compensationschemes.org.mt'") %]
     </p>
     <p>
         [% l("Cover is made available on the basis of the depositor rather than on the basis of the number of deposits, meaning that if an individual has multiple accounts he will only be covered as to €20,000 on the global amount. Any other amount exceeding such threshold is not protected and will thus have to be borne by the investor.") %]

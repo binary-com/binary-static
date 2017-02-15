@@ -1,7 +1,3 @@
-[%
-  selected_tab = request.param('selected_tab');
-  IF NOT selected_tab; selected_tab = 'legal-tab'; END;
-%]
 <div class="content-tab-container static_full tab-with-subsection">
   <div class="tab-menu">
     <div class="tab-menu-wrap container">
@@ -46,34 +42,38 @@
       <div id="api-tac-tab-content" class="toggle-content[% IF selected_tab == 'api-tac-tab' +%][% ELSE +%] invisible[% END +%]">
         [% INCLUDE legal/api_tac_tab.html.tt %]
       </div>
-
-      <div id="complaints-disputes-tac-tab-content" class="toggle-content[% IF selected_tab == 'complaints-disputes-tac-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/complaints_disputes.html.tt %]
-      </div>
-
-      <div id="conflicts-policy-tac-tab-content" class="toggle-content[% IF selected_tab == 'conflicts-policy-tac-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/conflicts_policy.html.tt %]
-      </div>
-
-      <div id="biel-terms-tac-tab-content" class="toggle-content[% IF selected_tab == 'biel-terms-tac-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/biel_terms.html.tt %]
-      </div>
-
-      <div id="datafeed-tab-content" class="toggle-content[% IF selected_tab == 'datafeed-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/datafeed.html.tt %]
-      </div>
-      <div id="privacy-tab-content" class="toggle-content[% IF selected_tab == 'privacy-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/privacy.html.tt %]
-      </div>
-      <div id="copyright-tab-content" class="toggle-content[% IF selected_tab == 'copyright-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/copyright.html.tt %]
-      </div>
-      <div id="risk-tab-content" class="toggle-content[% IF selected_tab == 'risk-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/risk_disclaimer.html.tt %]
-      </div>
-      <div id="order-execution-tab-content" class="toggle-content[% IF selected_tab == 'order-execution-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE legal/order_execution.html.tt %]
-      </div>
-    </div>
+      <li id="risk" class="tm-li">
+        <span class="menu-wrap-a">
+          <span class="menu-wrap-b"><a href="#risk" class="tm-a first">[% l('Risk Disclaimer') %]</a></span>
+        </span>
+        <ul class="tm-ul-2">
+          <li id="risk-binary" class="tm-li-2 first"><a href="#risk-binary" class="tm-a-2">[% l('Binary Options') %]</a></li>
+          <li id="risk-mt" class="tm-li-2"><a href="#risk-mt" class="tm-a-2">[% l('MetaTrader') %]</a></li>
+        </ul>
+      </li>
+      <li id="order-execution" class="tm-li">
+        <span class="menu-wrap-a">
+          <span class="menu-wrap-b"><a href="#order-execution" class="tm-a first">[% l('Order Execution') %]</a></span>
+        </span>
+        <ul class="tm-ul-2">
+          <li id="order-execution-binary" class="tm-li-2 first"><a href="#order-execution-binary" class="tm-a-2">[% l('Binary Options') %]</a></li>
+          <li id="order-execution-mt" class="tm-li-2"><a href="#order-execution-mt" class="tm-a-2">[% l('MetaTrader') %]</a></li>
+        </ul>
+      </li>
+    </ul>
   </div>
+</div>
+<div class="tab-content gr-padding-10">
+  <div class="tab-content-wrapper menu-has-sub-item">
+    <div id="legal-binary-content" class="toggle-content invisible">[% INCLUDE legal/terms_and_conditions.html.tt %]</div>
+    <div id="legal-mt-content" class="toggle-content invisible">[% INCLUDE legal/metatrader/terms_and_conditions.html.tt %]</div>
+    <div id="datafeed-content" class="toggle-content invisible">[% INCLUDE legal/datafeed.html.tt %]</div>
+    <div id="privacy-content" class="toggle-content invisible">[% INCLUDE legal/privacy.html.tt %]</div>
+    <div id="copyright-content" class="toggle-content invisible">[% INCLUDE legal/copyright.html.tt %]</div>
+    <div id="risk-binary-content" class="toggle-content invisible">[% INCLUDE legal/risk_disclaimer.html.tt %]</div>
+    <div id="risk-mt-content" class="toggle-content invisible">[% INCLUDE legal/metatrader/risk_disclaimer.html.tt %]</div>
+    <div id="order-execution-binary-content" class="toggle-content invisible">[% INCLUDE legal/order_execution.html.tt %]</div>
+    <div id="order-execution-mt-content" class="toggle-content invisible">[% INCLUDE legal/metatrader/order_execution.html.tt %]</div>
+  </div>
+</div>
 </div>

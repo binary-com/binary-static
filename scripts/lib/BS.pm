@@ -129,7 +129,7 @@ sub css_files {
     }
 
     # Binary-style
-    push @css, "https://style.binary.com/binary.css?$static_hash";
+    push @css, "https://kellybinary.github.io/binary-style/binary.css?$static_hash";
 
     return @css;
 }

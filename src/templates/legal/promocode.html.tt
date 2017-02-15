@@ -1,6 +1,6 @@
 <div class="gr-12">
     <h2>
-        [% l("Deposit bonus") %]
+    [% l("Deposit bonus") %]
     </h2>
     <p>
         [% l("This bonus will be processed and credited to a client's account when:") %]
@@ -34,9 +34,8 @@
     <p>
         [% l("The company reserves the right to cancel/prohibit the use of this promotion at its own discretion at any time.") %]
     </p>
-
     <h2>
-        [% l("Free bonus") %]
+    [% l("Free bonus") %]
     </h2>
     <ol>
         <li>

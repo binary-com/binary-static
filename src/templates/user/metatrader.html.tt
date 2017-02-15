@@ -1,0 +1,293 @@
+<div id="mt_account_management" class="container">
+    <div>
+        <h1>[% l('MetaTrader account management') %]</h1>
+    </div>
+    <p id="page_msg" class="notice-msg center-text invisible"></p>
+    <div id="mt_loading">[% INCLUDE global/loading.html.tt %]</div>
+    <div class="gr-12">
+        <div id="accounts_list" class="gr-row"></div>
+    </div>
+
+    <div class="fst-container">
+        <div id="main_msg" class="notice-msg center-text invisible"></div>
+        <fieldset id="fst_action" class="invisible">
+            <legend></legend>
+            <span class="close"></span>
+            <form id="frm_action"></form>
+        </fieldset>
+    </div>
+
+    <div id="templates" class="invisible">
+        <div class="acc-box gr-12-m gr-6-p gr-4-t gr-4">
+            <div>
+                <div class="title"></div>
+                <div class="loading">[% INCLUDE global/loading.html.tt %]</div>
+                <div class="center-text no-account invisible">
+                    <div class="info"></div>
+                    <span class="button"><span class="act_new_account">[% l('Create Account') %]</span></span>
+                </div>
+                <div class="acc-info has-account gr-row invisible">
+                    <div class="gr-4">[% l('Login ID:') %]</div><div data="login" class="gr-8"></div>
+                    <div class="gr-4">[% l('Name:') %]</div><div data="name" class="gr-7"></div>
+                    <div class="gr-4">[% l('Balance:') %]</div><div data="balance" class="gr-8"></div>
+                    <div class="gr-4">[% l('Leverage:') %]</div><div data="leverage" class="gr-8"></div>
+                </div>
+                <div class="acc-actions has-account center-text invisible">
+                    <a href="javascript:;" class="act_deposit">
+                        <img src="[% request.url_for('images/pages/metatrader/deposit.svg') %]" alt="" />
+                        [% l('Deposit') %]
+                    </a>
+                    <a href="javascript:;" class="act_withdrawal">
+                        <img src="[% request.url_for('images/pages/metatrader/withdraw.svg') %]" alt="" />
+                        [% l('Withdraw') %]
+                    </a>
+                    <a href="javascript:;" class="act_password_change">
+                        <img src="[% request.url_for('images/pages/metatrader/password.svg') %]" alt="" />
+                        [% l('Password') %]
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="no_account_info">
+            <div id="demo">[% l('Open a free Demo account.') %]</div>
+            <div id="vanuatu_cent">
+                [% l('The Cent account offers the highest leverage, as well as low margin call and stop out level.') %]
+                <a class="invisible" target="_blank">[% l('Read more') %]</a>
+            </div>
+            <div id="vanuatu_standard">
+                [% l('The Standard account is suitable for a wide range of traders, both new and experienced.') %]
+                <a class="invisible" target="_blank">[% l('Read more') %]</a>
+            </div>
+            <div id="vanuatu_stp">
+                [% l('The STP account provides you with the tightest spreads and connects you directly to the market.') %]
+                <a class="invisible" target="_blank">[% l('Read more') %]</a>
+            </div>
+            <div id="costarica">
+                [% l('The Volatility account allows you to profit by speculating on the rise or fall of an instrument.') %]
+                <a class="invisible" target="_blank">[% l('Read more') %]</a>
+            </div>
+        </div>
+
+        <form id="frm_new_account">
+            <div class="gr-row form-row">
+                <div class="gr-4">
+                    <label>[% l('Account type') %]</label>
+                </div>
+                <div class="gr-8">
+                    <span id="lbl_account_type"></span>
+                </div>
+            </div>
+            <div class="gr-row form-row">
+                <div class="gr-4">
+                    <label>[% l('Email') %]</label>
+                </div>
+                <div class="gr-8">
+                    <span id="lbl_email"></span>
+                </div>
+            </div>
+            <div class="gr-row form-row">
+                <div class="gr-4">
+                    <label for="txt_name">[% l('Name') %]</label>
+                </div>
+                <div class="gr-8">
+                    <input id="txt_name" type="text" maxlength="30" autocomplete="off" />
+                </div>
+            </div>
+            <div class="gr-row form-row invisible">
+                <div class="gr-4">
+                    <label for="ddl_leverage">[% l('Leverage') %]</label>
+                </div>
+                <div class="gr-8">
+                    <select id="ddl_leverage">
+                        <option value="1">1:1</option>
+                        <option value="50">1:50</option>
+                        <option value="100" selected="selected">1:100</option>
+                        <option value="200">1:200</option>
+                        <option value="300">1:300</option>
+                        <option value="500">1:500</option>
+                        <option value="1000">1:1000</option>
+                    </select>
+                </div>
+            </div>
+            <div class="gr-row form-row">
+                <div class="gr-4">
+                    <label for="txt_main_pass">[% l('Main password (trading access)') %]</label>
+                </div>
+                <div class="gr-8">
+                    <input id="txt_main_pass" type="password" maxlength="25" />
+                    <div class="hint">[% l('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.') %]</div>
+                </div>
+            </div>
+            <div class="gr-row form-row">
+                <div class="gr-4">
+                    <label for="txt_re_main_pass">[% l('Verify main password') %]</label>
+                </div>
+                <div class="gr-8">
+                    <input id="txt_re_main_pass" type="password" maxlength="25" />
+                </div>
+            </div>
+            <div class="gr-row form-row">
+                <div class="gr-4">
+                    <label for="txt_investor_pass">[% l('Investor password (read-only access)') %]</label>
+                </div>
+                <div class="gr-8">
+                    <input id="txt_investor_pass" type="password" maxlength="25" />
+                </div>
+            </div>
+            <div class="gr-row">
+                <div class="gr-12-m gr-centered">
+                    <p>
+                        <input id="chk_tnc" type="checkbox" />
+                        <label for="chk_tnc">[% l('I have read and agree to the') %] <a target="_blank" href="[% request.url_for('/terms-and-conditions') %]#legal-mt">[% l('terms and conditions') %]</a> [% l('of the site.') %]</label>
+                    </p>
+                </div>
+            </div>
+
+            <div class="gr-row">
+                <div class="gr-8 gr-push-4">
+                    <p id="msg_form" class="error-msg invisible"></p>
+                    <button id="btn_submit" type="submit">[% l('Create Account') %]</button>
+                </div>
+            </div>
+        </form>
+
+        <form id="frm_password_change">
+            <div class="gr-row form-row">
+                <div class="gr-4">
+                    <label>[% l('Login ID') %]</label>
+                </div>
+                <div class="gr-8">
+                    <span id="lbl_login"></span>
+                </div>
+            </div>
+            <div class="gr-row form-row">
+                <div class="gr-4">
+                    <label for="txt_old_password">[% l('Current password') %]</label>
+                </div>
+                <div class="gr-8">
+                    <input id="txt_old_password" type="password" maxlength="25" />
+                </div>
+            </div>
+            <div class="gr-row form-row">
+                <div class="gr-4">
+                    <label for="txt_new_password">[% l('New password') %]</label>
+                </div>
+                <div class="gr-8">
+                    <input id="txt_new_password" type="password" maxlength="25" />
+                    <div class="hint">[% l('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.') %]</div>
+                </div>
+            </div>
+            <div class="gr-row form-row">
+                <div class="gr-4">
+                    <label for="txt_re_new_password">[% l('Verify new password') %]</label>
+                </div>
+                <div class="gr-8">
+                    <input id="txt_re_new_password" type="password" maxlength="25" />
+                </div>
+            </div>
+
+            <div class="gr-row">
+                <div class="gr-8 gr-push-4">
+                    <p id="msg_form" class="error-msg invisible"></p>
+                    <button id="btn_submit" type="submit">[% l('Change Password') %]</button>
+                </div>
+            </div>
+        </form>
+
+        <form id="frm_deposit">
+            <p>[% l('Transfer funds from Binary.com account into your MT5 account:') %]</p>
+            <div class="gr-row form-row">
+                <div class="gr-4">
+                    <label>[% l('Transfer from') %]</label>
+                </div>
+                <div class="gr-8">
+                    <span id="lbl_from"></span>
+                </div>
+            </div>
+            <div class="gr-row form-row">
+                <div class="gr-4">
+                    <label>[% l('Deposit into') %]</label>
+                </div>
+                <div class="gr-8">
+                    <span id="lbl_to"></span>
+                </div>
+            </div>
+            <div class="gr-row form-row">
+                <div class="gr-4">
+                    <label for="txt_amount">[% l('Amount') %]</label>
+                </div>
+                <div class="gr-8">
+                    &#36; <input id="txt_amount" type="text" maxlength="10" />
+                </div>
+            </div>
+
+            <div class="gr-row">
+                <div class="gr-8 gr-push-4">
+                    <p id="msg_form" class="error-msg invisible"></p>
+                    <button id="btn_submit" type="submit">[% l('Deposit') %]</button>
+                </div>
+            </div>
+        </form>
+
+        <form id="frm_withdrawal">
+            <p>[% l('Transfer funds from your MT5 account into your Binary.com account:') %]</p>
+            <div class="gr-row form-row">
+                <div class="gr-4">
+                    <label>[% l('Withdraw from') %]</label>
+                </div>
+                <div class="gr-8">
+                    <span id="lbl_from"></span>
+                </div>
+            </div>
+            <div class="gr-row form-row">
+                <div class="gr-4">
+                    <label>[% l('Transfer into') %]</label>
+                </div>
+                <div class="gr-8">
+                    <span id="lbl_to"></span>
+                </div>
+            </div>
+            <div class="gr-row form-row">
+                <div class="gr-4">
+                    <label for="txt_main_pass">[% l('MT5 main password') %]</label>
+                </div>
+                <div class="gr-8">
+                    <input id="txt_main_pass" type="password" maxlength="25" />
+                </div>
+            </div>
+            <div class="gr-row form-row">
+                <div class="gr-4">
+                    <label for="txt_amount">[% l('Amount') %]</label>
+                </div>
+                <div class="gr-8">
+                    &#36; <input id="txt_amount" type="text" maxlength="10" />
+                </div>
+            </div>
+
+            <div class="gr-row">
+                <div class="gr-8 gr-push-4">
+                    <p id="msg_form" class="error-msg invisible"></p>
+                    <button id="btn_submit" type="submit">[% l('Withdraw') %]</button>
+                </div>
+            </div>
+        </form>
+
+        <div id="msg_authenticate">
+            <div class="align-start">
+                <p>[% l('To create an MT5 Financial Account please:') %]</p>
+                <ul class="checked">
+                    <li class="authenticate invisible">
+                        [% l('Authenticate your Binary.com account.') %]
+                        <p>[% l('Kindly email the following documents to <a href="mailto:[_1]">[_1]</a> to authenticate your account:', 'support@binary.com') %]</p>
+                        <ul class="bullet">
+                            <li>[% l('A scanned copy of your passport, driving licence (provisional or full), or identity card that shows your full name and date of birth.') %]</li>
+                            <li>[% l('A scanned copy of a utility bill or bank statement that is no more than three months old.') %]</li>
+                        </ul>
+                    </li>
+                    <li class="assessment invisible">[% l('Complete the <a href="[_1]">Financial Assessment</a>.', request.url_for('/user/settings/assessmentws')) %]</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

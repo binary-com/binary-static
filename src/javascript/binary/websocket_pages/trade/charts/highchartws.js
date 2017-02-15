@@ -252,6 +252,11 @@ const Highchart = (function() {
             request.end = sell_spot_time ? (parseInt(sell_spot_time) + margin).toFixed(0) : 'latest';
         }
 
+        // switch start and end if start is after end
+        if (!isNaN(request.end) && request.start > request.end) {
+            request.end = [request.start, request.start = request.end][0];
+        }
+
         if (granularity !== 0) {
             request.granularity = granularity;
         }

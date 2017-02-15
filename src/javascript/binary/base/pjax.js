@@ -74,6 +74,7 @@ PjaxExecQueue.prototype = {
     },
     fire: function () {
         if (!this.fired) {
+            url.reset();
             const match_loc = window.location.href;
             let i = this.url_exec_queue.length;
             while (i--) {

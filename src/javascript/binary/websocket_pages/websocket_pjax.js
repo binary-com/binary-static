@@ -12,7 +12,6 @@ const PortfolioWS                   = require('./user/account/portfolio/portfoli
 const ProfitTableWS                 = require('./user/account/profit_table/profit_table.init').ProfitTableWS;
 const APITokenWS                    = require('./user/account/settings/api_token').APITokenWS;
 const AuthorisedApps                = require('./user/account/settings/authorised_apps').AuthorisedApps;
-const UserConnections               = require('./user/account/settings/connections').UserConnections;
 const FinancialAssessmentws         = require('./user/account/settings/financial_assessment').FinancialAssessmentws;
 const IPHistoryWS                   = require('./user/account/settings/iphistory').IPHistoryWS;
 const Limits                        = require('./user/account/settings/limits').Limits;
@@ -23,6 +22,7 @@ const SettingsWS                    = require('./user/account/settings').Setting
 const StatementWS                   = require('./user/account/statement/statement.init').StatementWS;
 const TopUpVirtualWS                = require('./user/account/top_up_virtualws').TopUpVirtualWS;
 const LostPasswordWS                = require('./user/lost_password').LostPasswordWS;
+const MetaTrader                    = require('./user/metatrader/metatrader');
 const FinancialAccOpening           = require('./user/new_account/financial_acc_opening').FinancialAccOpening;
 const JapanAccOpening               = require('./user/new_account/japan_acc_opening').JapanAccOpening;
 const RealAccOpening                = require('./user/new_account/real_acc_opening').RealAccOpening;
@@ -215,17 +215,6 @@ pjax_config_page_require_auth('user/security/authorised_appsws', function() {
     };
 });
 
-pjax_config_page_require_auth('user/security/connections', function() {
-    return {
-        onLoad: function() {
-            UserConnections.onLoad();
-        },
-        onUnload: function() {
-            UserConnections.onUnload();
-        },
-    };
-});
-
 pjax_config_page_require_auth('user/settings/assessmentws', function() {
     return {
         onLoad: function() {
@@ -355,6 +344,14 @@ pjax_config_page_require_auth('new_account/knowledge_testws', function() {
     return {
         onLoad: function() {
             KnowledgeTest.init();
+        },
+    };
+});
+
+pjax_config_page_require_auth('user/metatrader', function() {
+    return {
+        onLoad: function() {
+            MetaTrader.init();
         },
     };
 });
