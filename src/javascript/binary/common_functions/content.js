@@ -44,7 +44,7 @@ const Content = (function() {
             textCloses                     : 'Closes',
             textMessageRequired            : 'This field is required.',
             textMessageRequiredCheckBox    : 'Please select the checkbox.',
-            textMessageRequiredTNC         : 'Please select the terms and conditions.',
+            textMessageRequiredTNC         : 'Please accept the terms and conditions.',
             textMessageCountLimit          : 'You should enter between [_1] characters.', // [_1] should be replaced by a range. sample: (6-20)
             textMessageJustAllowed         : 'Only [_1] are allowed.',      // [_1] should be replaced by values including: letters, numbers, space, period, ...
             textMessageValid               : 'Please submit a valid [_1].', // [_1] should be replaced by values such as email address
