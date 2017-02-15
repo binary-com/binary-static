@@ -41,6 +41,7 @@
         <a id="why-choose-payment-agents"></a>
         <div class="section-content">
           <div id="section-1">
+              <div class="gr-row">
             <div class="gr-12">
               <h1>
                 [% l("Payment agents") %]
@@ -52,6 +53,7 @@
                 [% l("[_1] would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions.", website_name) %]
               </p>
             </div>
+              </div>
             <div class="gr-row">
                 <div class="gr-8 gr-12-m">
                   <p>
@@ -152,7 +154,7 @@
               <h1>
                 [% l("How does it work?") %]
               </h1>
-              <p>[% l("Interested, so what's next? If you can offer our clients a specific e-cash method or a local payment option that is not already provided by [_1], and you have a good track record in the market, then we would love to <a href='mailto:[_2]'>hear from you!</a>", website_name, affiliate_email) %]</p>
+              <p>[% l("Interested? So, what\'s next? If you can offer our clients a specific e-cash method or a local payment option that is not already provided by [_1], and you have a good track record in the market, then we would love to <a href='mailto:[_2]'>hear from you!</a>", website_name, affiliate_email) %]</p>
               <p>
                 [% l("As a first step, please send us an application with:") %]
               </p>
@@ -170,7 +172,7 @@
                   [% l("The commission you will charge clients on deposits and withdrawals") %]
                 </li>
               </ul>
-              <p>[% l("Please submit the above information to <a href='mailto:[_1]'>[_1]</a>.", affiliate_email) %]</p>
+              <p>[% l("Please submit the above information to <a href='mailto:[_1]'>[_1]</a>", affiliate_email) %]</p>
               <p>
                 [% l("Once we receive your application, one of our affiliate managers will contact you to follow up with the next steps in the application process (this will include asking you to submit several documents).") %]
               </p>
@@ -189,7 +191,7 @@
               </h1>
               <p>[% l("If you would like more information on becoming a payment agent, please contact us at <a href='mailto:[_1]'>[_1]</a>", affiliate_email) %]</p>
               <p>
-                [% l("We look forward to hearing from you.") %]
+                [% l("We look forward to hearing from you") %]
               </p>
             </div>
           </div>
