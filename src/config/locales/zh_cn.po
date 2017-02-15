@@ -3,9 +3,10 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-14 06:16+0000\n"
+"PO-Revision-Date: 2017-02-15 07:36+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) "
+"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -84,7 +85,7 @@ msgid "%1 also provides links to an online quiz to assess a potential gambling p
 msgstr "%1 还提供评估潜在赌博问题的在线测试链接以及了解您实际承受能力的在线赌博计算器。"
 
 msgid "%1 and %2 cannot be the same."
-msgstr ""
+msgstr "%1 和 %2 不可相同。"
 
 msgid "%1 and the bull/bear logo are registered trademarks."
 msgstr "%1 和牛/熊徽标是注册商标。"
@@ -92,10 +93,8 @@ msgstr "%1 和牛/熊徽标是注册商标。"
 msgid "%1 continues to innovate and grow"
 msgstr "%1 不断创新、日渐成长"
 
-#, fuzzy
-#| msgid "Deposit is done. Transaction ID: %1"
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
-msgstr "已完成存款。交易编号: %1"
+msgstr "已完成从%2至账号%3的%1存款。交易编号: %4"
 
 msgid "%1 does not charge any transfer fees."
 msgstr "%1不收取任何转账费用。"
@@ -238,10 +237,8 @@ msgstr "%1支持%2。这是英国一家领先的慈善机构，致力于消除�
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "%1在久负盛名的伦敦EGR操作员颁奖仪式中荣获2015年金融博彩操作员第一奖。"
 
-#, fuzzy
-#| msgid "Withdrawal is done. Transaction ID: %1"
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
-msgstr "已完成提款。交易编号：%1"
+msgstr "已完成从账号%2至%3的%1提款。交易编号: %4交易编号：%4"
 
 msgid "%1 would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions."
 msgstr "%1 希望与世界各地的潜在支付代理合作，以便我们可为各区域客户提供当地支付处理服务。"
@@ -802,10 +799,8 @@ msgstr "关于我们和我们的监管机构"
 msgid "About Us and these Terms"
 msgstr "关于我们和这些条款"
 
-#, fuzzy
-#| msgid "%1 academy"
 msgid "Academy"
-msgstr "%1学院"
+msgstr "学院"
 
 msgid "Accept"
 msgstr "接受"
@@ -1269,10 +1264,8 @@ msgstr "澳大利亚"
 msgid "Australia 200 Cash Index"
 msgstr "澳大利亚 200 现金指数"
 
-#, fuzzy
-#| msgid "Authenticate your account"
 msgid "Authenticate your Binary.com account."
-msgstr "验证您的账户"
+msgstr "验证您的Binary.com账户。"
 
 msgid "Authentication"
 msgstr "验证"
@@ -1325,10 +1318,8 @@ msgstr "返回"
 msgid "Balance"
 msgstr "余额"
 
-#, fuzzy
-#| msgid "Balance"
 msgid "Balance:"
-msgstr "余额"
+msgstr "余额："
 
 msgid "Bank wire/Money transfer"
 msgstr "银行电汇/转账"
@@ -1947,10 +1938,8 @@ msgstr "投诉与纠纷"
 msgid "Complaints and disputes"
 msgstr "投诉和纠纷"
 
-#, fuzzy
-#| msgid "To create a Financial Account for MT5, please complete the <a href=\"%1\">Financial Assessment</a>."
 msgid "Complete the <a href=\"%1\">Financial Assessment</a>."
-msgstr "如要在 MT5 开立金融账户，请完成<a href=\"%1\">财务评估</a>。"
+msgstr "请完成<a href=\"%1\">财务评估</a>。"
 
 msgid "Compliance"
 msgstr "法规遵从性"
@@ -1988,10 +1977,8 @@ msgstr "Confirmation and understandings"
 msgid "Conflicts Policy"
 msgstr "冲突政策"
 
-#, fuzzy
-#| msgid "Congratulations! Your account has been created."
 msgid "Congratulations! Your %1 Account has been created."
-msgstr "恭喜! 您已成功开立账户。"
+msgstr "恭喜! 您已成功开立%1账户。"
 
 msgid "Connection error: Please check your internet connection."
 msgstr "连接错误：请检查您网络连接。"
@@ -2161,8 +2148,6 @@ msgstr "工艺、金属、电气和电子工人"
 msgid "Create"
 msgstr "创建"
 
-#, fuzzy
-#| msgid "Create account"
 msgid "Create Account"
 msgstr "开立账户"
 
@@ -3291,10 +3276,8 @@ msgstr "我怎么知道我赚了多少？"
 msgid "How do we calculate interest fees for long positions?"
 msgstr "多头头寸的利息费用如何计算？"
 
-#, fuzzy
-#| msgid " How do we calculate interest fees for short positions?"
 msgid "How do we calculate interest fees for short positions?"
-msgstr " 空头头寸的利息费用如何计算？"
+msgstr "空头头寸的利息费用如何计算？"
 
 msgid "How does %1 make money?"
 msgstr "%1 如何盈利？"
@@ -3848,10 +3831,8 @@ msgstr "投资 &amp; 分红"
 msgid "Investor Compensation Scheme"
 msgstr "投资者补偿方案"
 
-#, fuzzy
-#| msgid "Reset Password"
 msgid "Investor password"
-msgstr "重置密码"
+msgstr "投资者密码"
 
 msgid "Investor password (read-only access)"
 msgstr "投资者密码 （只读访问权限）"
@@ -4531,10 +4512,8 @@ msgstr "通过杠杆社交媒体工具标识、引入并转换潜在新客户和
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that you would be able to enter into a trade position that is of 50 times higher than your margin. When you invest in a leveraged product, your profit or loss is based on the leveraged position, i.e., the increased/amplified value of your trade determined based on the leverage ratio you set for your account."
 msgstr "融资融券交易中，杠杆指使用保证金增加/扩大交易数值。杠杆的表达方式是比率。举个例子，如果杠杆是50: 1，您将能够持有比保证金高出 50 倍的交易头寸。当您投资一种杠杆产品时，您的盈利或亏损将根据杠杆的头寸计算，也就是说，您为账户设置的杠杆比率决定了您的交易增加/扩大数值。"
 
-#, fuzzy
-#| msgid "Leverage"
 msgid "Leverage:"
-msgstr "杠杆"
+msgstr "杠杆："
 
 msgid "Liability"
 msgstr "责任"
@@ -4617,10 +4596,8 @@ msgstr "登录历史"
 msgid "Login ID"
 msgstr "登录 ID"
 
-#, fuzzy
-#| msgid "Login ID"
 msgid "Login ID:"
-msgstr "登录 ID"
+msgstr "登录 ID："
 
 msgid "Login time:"
 msgstr "登录时间:"
@@ -4667,10 +4644,8 @@ msgstr "中东和北非地区 FFXPO 奖"
 msgid "MT5 main password"
 msgstr "MT5 主密码"
 
-#, fuzzy
-#| msgid "MT5 main password"
 msgid "Main password"
-msgstr "MT5 主密码"
+msgstr "主密码"
 
 msgid "Main password (trading access)"
 msgstr "主密码（交易访问）"
@@ -5217,23 +5192,17 @@ msgstr "只允许 2 个小数位。"
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgstr "成立后仅五年，我们的在线交易服务即斩获这一重要奖项。该奖项旨在表彰 BetOnMarkets.com 向交易新手和资深交易者提供可靠、快速和安全的网上交易。此时，我们网站的交易数量已超过1500万笔。"
 
-#, fuzzy
-#| msgid "Only 2 decimal points are allowed."
 msgid "Only letters, numbers, and hyphen are allowed."
-msgstr "只允许 2 个小数位。"
+msgstr "只允许字母、数字和连字符。"
 
 msgid "Only letters, numbers, space, hyphen, period, and apostrophe are allowed."
-msgstr ""
+msgstr "只允许使用字母、数字、空格、连字符、句点和省略号。"
 
-#, fuzzy
-#| msgid "Please use only letters, spaces, hyphens, full-stops or apostrophes."
 msgid "Only letters, space, hyphen, period, and apostrophe are allowed."
-msgstr "请使用字母、空格、连字符、句号或省略号。"
+msgstr "只允许字母、空格、连字符、句号和省略号。"
 
-#, fuzzy
-#| msgid "Only 2 decimal points are allowed."
 msgid "Only numbers and spaces are allowed."
-msgstr "只允许 2 个小数位。"
+msgstr "只允许数字和空格。"
 
 msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "每人只能开立一个账户。使用假名开立账户或属于同一客户的多个账户不能赢取款项和/或退款。"
@@ -5259,10 +5228,8 @@ msgstr "开源"
 msgid "Open a Financial Account"
 msgstr "开设金融账户"
 
-#, fuzzy
-#| msgid "Open a free account"
 msgid "Open a free Demo account."
-msgstr "开立免费账户"
+msgstr "开立免费演示账户。"
 
 msgid "Open a free account"
 msgstr "开立免费账户"
@@ -5555,10 +5522,8 @@ msgstr "点数大小"
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr "点（percentage in point，缩写为pip）一般来说是指小数点后第4位数（如0.0001）。"
 
-#, fuzzy
-#| msgid "Date of birth"
 msgid "Place of birth"
-msgstr "出生日期"
+msgstr "出生地点"
 
 msgid "Plant and Machine Operators and Assemblers"
 msgstr "工厂和机器操作员及装配员"
@@ -5587,10 +5552,8 @@ msgstr "请检查您的电邮领取重设密码所须的令牌号。"
 msgid "Please choose which currency you would like to transact in."
 msgstr "请选择您想要交易的货币。"
 
-#, fuzzy
-#| msgid "Please confirm the trade on your statement before proceeding."
 msgid "Please complete the tax information before proceeding."
-msgstr "继续执行之前，请在您的声明上确认此项交易。"
+msgstr "继续执行之前，请填写完整税务信息。"
 
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "请确认交易详情以完成转账："
@@ -5688,10 +5651,8 @@ msgstr "请指定您的优选实况调查间隔时间分钟数"
 msgid "Please submit a valid %1."
 msgstr "请提交有效的 %1。"
 
-#, fuzzy
-#| msgid "Please submit a valid %1."
 msgid "Please submit a valid verification token."
-msgstr "请提交有效的 %1。"
+msgstr "请提交有效的验证令牌。"
 
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "请将以上信息发送到<a href='mailto:%1'>%1</a>。"
@@ -5972,24 +5933,20 @@ msgstr "真实账户"
 msgid "Real Account - Your real money account opened with Binary.com's MT5 Trading Platform licensed from MetaQuotes Software Corporation."
 msgstr "真实账户 - 由MetaQuotes软件公司授权，通过Binary.com 的 MT5 交易平台开立的真实资金账户。"
 
-#, fuzzy
-#| msgid "Real Account"
 msgid "Real Cent"
-msgstr "真实账户"
+msgstr "真实美分"
 
 msgid "Real Money Account Opening"
 msgstr "开立真实资金账户"
 
 msgid "Real STP"
-msgstr ""
+msgstr "真实STP"
 
 msgid "Real Standard"
-msgstr ""
+msgstr "真实标准"
 
-#, fuzzy
-#| msgid "Chaikin Volatility"
 msgid "Real Volatility"
-msgstr "蔡金波动率"
+msgstr "真实波动率"
 
 msgid "Real-time prices, benchmarked against interbank options markets."
 msgstr "实时报价，以银行间期权市场为基准。"
@@ -6390,18 +6347,14 @@ msgstr "如果数据源发生中断而公司不能迅速恢复，公司保留退
 msgid "Should any client for whom you are receiving commissions process a chargeback, the Company reserves the right to deduct the commission portion of the chargeback from the total balance due to you for the current month. Should this deduction of the accumulated revenue exceed your current amount due, your balance will then revert to a negative balance, and you will have to earn revenue to cover the chargeback before you can start earning revenue again. The Company reserves the right, in special cases, to exclude revenue sharing  on promotional funds deposited into the client's account by the Company."
 msgstr "如果您的客户拒付佣金，公司保留从当月应向您支付的款项中扣除该佣金的权利。如果累计扣款超过您目前应收款项的金额，您的存款将会变成负值，而您必须在补偿拒付佣金之后才能重新赚取收益。在特定情况下，公司保留禁止客户对公司促销资金进行收入分成的权利。"
 
-#, fuzzy
-#| msgid "Please input a valid number."
 msgid "Should be a valid number"
-msgstr "请输入有效号码。"
+msgstr "必须是有效号码"
 
-#, fuzzy
-#| msgid "Stake must be less than payout."
 msgid "Should be less than %1"
-msgstr "成本必须少于收入。"
+msgstr "必须少于%1"
 
 msgid "Should be more than %1"
-msgstr ""
+msgstr "必须大于 %1"
 
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "如果您账户的资金不足以覆盖这些费用，我们有权考虑其他替代方法：如果您的账户产生了购买账户，我们将会截留此等账户的佣金款项，直至损害赔偿的账户结清。"
@@ -6726,20 +6679,14 @@ msgstr "负责编写可靠、高质量、生产就绪的代码，并致力于改
 msgid "Tasked with writing robust, high-quality, production-ready code as well as refactoring and optimizing a large and complex legacy code base."
 msgstr "负责编写可靠、高质量、生产就绪的代码，并重构和优化大型、复杂的遗留代码库。"
 
-#, fuzzy
-#| msgid "Group Information"
 msgid "Tax Information"
-msgstr "集团信息"
+msgstr "税务信息"
 
-#, fuzzy
-#| msgid "P. Indemnification"
 msgid "Tax identification number"
-msgstr "十六、赔偿"
+msgstr "税务标识号"
 
-#, fuzzy
-#| msgid "Last Year of Residence"
 msgid "Tax residence"
-msgstr "居住的最后一年"
+msgstr "纳税居住地"
 
 msgid "Teamwork"
 msgstr "团队合作"
@@ -6859,7 +6806,7 @@ msgid "The Binary.com website's static content (CSS, Javascript) is available as
 msgstr "Binary.com网站的静态内容（CSS，Javascript）可在github以<a target='_blank' href='%1'>二进制静态</a>开源项目中使用。您是否想重新设定Binary.com网站的设计版面，提高浏览器兼容性、网站成像速度或Javascript性能？请加入项目，提交您的代码修改上拉请求。"
 
 msgid "The Cent account offers the highest leverage, as well as low margin call and stop out level."
-msgstr ""
+msgstr "美分账户提供最大杆杠、以及低额追加保证金与强制平仓水平。"
 
 msgid "The Company does not guarantee that the %1 API it provides will function without interruption or errors in functioning. In particular, the operation of the %1 API may be interrupted due to maintenance, updates, or system or network failures. The Company disclaims all liability for damages caused by any such interruption or errors in functioning."
 msgstr "公司并不保证所提供的 %1 API运行时功能不会中断或出现错误。特别是，%1 API操作时可能会由于维护、更新或系统及网络故障而中断。公司不承担任何上述运作中断或错误所引起的赔偿责任。"
@@ -7018,13 +6965,13 @@ msgid "The Program"
 msgstr "计划"
 
 msgid "The STP account provides you with the tightest spreads and connects you directly to the market."
-msgstr ""
+msgstr "STP账户提供最低价差，并让您与市场直接连接。"
 
 msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
 msgstr "庇护所社区第3学习中心是为正在缅甸等待与家人被遣至第三国的难民儿童成立的社区学校。 该学校旨在为这些处于最脆弱年龄的儿童提供教育，为他们的未来做好准备。"
 
 msgid "The Standard account is suitable for a wide range of traders, both new and experienced."
-msgstr ""
+msgstr "标准账户适合广泛的交易者，包括新手和经验丰富的操盘手。"
 
 msgid "The Stop Out Level applicable to your Real Account may differ from the default Stop Out Level published on our website."
 msgstr "适用于您真实账户的强制平仓水平可能与我们网站公布的默认强制平仓水平不一样。"
@@ -7036,7 +6983,7 @@ msgid "The Volatility 100 Index is twice as volatile as the Volatility 50 Index,
 msgstr "波动率100指数的波幅是波动率50指数的两倍，是波动率25指数的四倍。"
 
 msgid "The Volatility account allows you to profit by speculating on the rise or fall of an instrument."
-msgstr ""
+msgstr "波动率账户允许您通过预测一种工具的价格是否会上涨或下跌而获利。"
 
 msgid "The ability to acquire knowledge of compliance matters in a multitude of international jurisdictions"
 msgstr "在各个国际司法管辖区范围内获取法规遵循事项的相关知识"
@@ -7219,10 +7166,8 @@ msgstr "杠杆比率指使用您的保证金（为进行交易从您的账户余
 msgid "The loss of USD 306 is the difference between the exit and entry level multiplied by the amount per point."
 msgstr "306美元亏损是以退出和进场价位的相差额乘以每一点的金额算出。"
 
-#, fuzzy
-#| msgid "Your password has been changed."
 msgid "The main password of account number %1 has been changed."
-msgstr "您的密码已更改。"
+msgstr "%1账号的主密码已更改。"
 
 msgid "The margin for our CFDs are calculated as follows:"
 msgstr "差价合约保证金的计算方法如下︰"
@@ -7569,10 +7514,8 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "如需更改姓名、生日、居住国或电子邮件，请与<a href=\"%1\">客服人员</a>联系。"
 
-#, fuzzy
-#| msgid "Upgrade to a Financial Account"
 msgid "To create an MT5 Financial Account please:"
-msgstr "升级到金融账户"
+msgstr "要开立MT5金融账户，请："
 
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "要启用 cookie，请根据您的浏览器版本选择对应的指示说明，并进行操作。"
@@ -7592,15 +7535,11 @@ msgstr "要开立真实账户，您必须在Binary.com拥有已通过身份验�
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 msgstr "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 
-#, fuzzy
-#| msgid "To create a Financial Account for MT5, please <a href=\"%1\"> upgrade to %2 Real Account</a>."
 msgid "To perform this action, please <a href=\"%1\"> upgrade to %2 Real Account</a>."
-msgstr "如要在MT5开立金融账户，请<a href=\"%1\">升级到 %2 真实账户</a>。"
+msgstr "如要执行此操作，请<a href=\"%1\">升级到 %2 真实账户</a>。"
 
-#, fuzzy
-#| msgid "To create a Financial Account for MT5, please switch to your %1 Real Account."
 msgid "To perform this action, please switch to your %1 Real Account."
-msgstr "如要在MT5开立金融账户，请切换到 %1 真实账户。"
+msgstr "如要执行此操作，请切换到 %1 真实账户。"
 
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "要获得录取资格，您必须拥有物理、金融工程或数学专业的本科学历"
@@ -8821,10 +8760,8 @@ msgstr "你不可提出高压销售策略或虚假承诺。"
 msgid "You shall not target any of your marketing, advertising, and promotional activities to any persons under the age of 18 years old."
 msgstr "您不可对任何年龄不满 18 岁者进行市场营销、广告和促销活动。"
 
-#, fuzzy
-#| msgid "You should enter between %1 characters."
 msgid "You should enter %1 characters."
-msgstr "您最多只能输入 %1  个字符。"
+msgstr "您必须输入%1个字符。"
 
 msgid "You should enter between %1 characters."
 msgstr "您最多只能输入 %1  个字符。"
@@ -8937,10 +8874,8 @@ msgstr "您违反任何%1权利;"
 msgid "Your cashier is locked as per your request - to unlock it, please click <a class=\"pjaxload\" href=\"%1\">here</a>."
 msgstr "根据您的请求，您的收银台已被锁定 - 如需解除锁定，请点击<a class=\"pjaxload\" href=\"%1\">此处</a>。"
 
-#, fuzzy
-#| msgid "Your cashier is locked as per your request - to unlock it, please click <a class=\"pjaxload\" href=\"%1\">here</a>."
 msgid "Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
-msgstr "根据您的请求，您的收银台已被锁定 - 如需解除锁定，请点击<a class=\"pjaxload\" href=\"%1\">此处</a>。"
+msgstr "根据您的请求，您的收银台已被锁定 - 如需解除锁定，请点击<a href=\"%1\">此处</a>。"
 
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "根据您的请求，您的收银台已被锁定 - 如需解除锁定，请输入密码。"
