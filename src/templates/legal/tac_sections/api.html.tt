@@ -1,6 +1,6 @@
 <div class="gr-12">
 
-    <h2>[% l("[_1] Application Program Interface (\"API\") terms and conditions" , website_name) %]</h2>
+    <h2>[% l("[_1] Application Program Interface (\"API\") Terms and Conditions" , website_name) %]</h2>
     <p>[% l("This document (the \"Agreement\") sets out the terms and conditions (\"Terms\") between \"the Company\" which is Binary Services Ltd (\"we,\" \"us,\" and \"our\"), and you (the person who registered for the [_1] Application Program Interface (\"API\"); \"you\", or \"your\").", website_name) %]</p>
     <ol class="reset_ol">
         <li><strong>[% l("Definitions") %]</strong>
