@@ -15,6 +15,10 @@ const SettingsWS = (function() {
             $(classReal).addClass(classHidden);
         }
 
+        if (Client.get('has_password')) {
+            $('#change_password').removeClass(classHidden);
+        }
+
         $('#settingsContainer').removeClass(classHidden);
     };
 

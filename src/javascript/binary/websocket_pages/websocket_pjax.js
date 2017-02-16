@@ -12,7 +12,6 @@ const PortfolioWS                   = require('./user/account/portfolio/portfoli
 const ProfitTableWS                 = require('./user/account/profit_table/profit_table.init').ProfitTableWS;
 const APITokenWS                    = require('./user/account/settings/api_token').APITokenWS;
 const AuthorisedApps                = require('./user/account/settings/authorised_apps').AuthorisedApps;
-const UserConnections               = require('./user/account/settings/connections').UserConnections;
 const FinancialAssessmentws         = require('./user/account/settings/financial_assessment').FinancialAssessmentws;
 const IPHistoryWS                   = require('./user/account/settings/iphistory').IPHistoryWS;
 const Limits                        = require('./user/account/settings/limits').Limits;
@@ -212,17 +211,6 @@ pjax_config_page_require_auth('user/security/authorised_appsws', function() {
         },
         onUnload: function() {
             AuthorisedApps.onUnload();
-        },
-    };
-});
-
-pjax_config_page_require_auth('user/security/connections', function() {
-    return {
-        onLoad: function() {
-            UserConnections.onLoad();
-        },
-        onUnload: function() {
-            UserConnections.onUnload();
         },
     };
 });
