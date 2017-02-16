@@ -162,18 +162,12 @@ const SettingsDetailsWS = (function() {
         return jpDataKeys;
     };
 
-    const isChanged = (data) => {
-        let changed = false;
-        Object.keys(editable_fields).every((key) => {
-            if ((key in data && editable_fields[key] !== data[key]) ||
-                (data.jp_settings && key in data.jp_settings && editable_fields[key] !== data.jp_settings[key])) {
-                changed = true;
-                return false;
-            }
-            return true;
-        });
-        return changed;
-    };
+    const isChanged = data => (
+        Object.keys(editable_fields).some(key => (
+            (key in data && editable_fields[key] !== data[key]) ||
+            (data.jp_settings && key in data.jp_settings && editable_fields[key] !== data.jp_settings[key])
+        ))
+    );
 
     const bindValidation = () => {
         let validations;
