@@ -485,6 +485,9 @@ sub _texts {
         push @texts, localize('There was a problem accessing the server.');
         push @texts, localize('There was a problem accessing the server during purchase.');
 
+        # strings for OneSignal
+        push @texts, localize('Thank you for subscribing!');
+
         # strings for form_validation
         push @texts, localize('Should be a valid number');
         push @texts, localize('Should be more than [_1]');
