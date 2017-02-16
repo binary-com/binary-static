@@ -1277,11 +1277,6 @@ msgstr "Voulez-vous vraiment supprimer ce jeton de façon permanente ?"
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "Voulez-vous vraiment révoquer l'accès à cette application de façon permanente ?"
 
-#, fuzzy
-#| msgid "Are you sure that you want to permanently revoke access to application"
-msgid "Are you sure that you want to permanently revoke connection to"
-msgstr "Voulez-vous vraiment révoquer l'accès à cette application de façon permanente ?"
-
 msgid "Are your site visitors interested in:"
 msgstr "Les visiteurs de votre site souhaitent-ils :"
 
@@ -2162,11 +2157,6 @@ msgstr "Félicitations ! <br /> Vous avez gagné le contrat !"
 #| msgid "Connection error: Please view the progress at your portfolio page."
 msgid "Connection error: Please check your internet connection."
 msgstr "Erreur de connexion : veuillez visualiser la progression sur votre page de portefeuille."
-
-#, fuzzy
-#| msgid "Construction"
-msgid "Connections"
-msgstr "Construction"
 
 msgid "Construction"
 msgstr "Construction"
@@ -4674,11 +4664,6 @@ msgstr ""
 msgid "Keep track of your authorised applications."
 msgstr "Consultez la liste de vos applications autorisées."
 
-#, fuzzy
-#| msgid "Keep track of your authorised applications."
-msgid "Keep track of your authorised connections."
-msgstr "Consultez la liste de vos applications autorisées."
-
 msgid "Key facts"
 msgstr "Informations clés"
 
@@ -5004,11 +4989,6 @@ msgstr "Assurer la sécurité, la détection d'intrusion, la protection contre l
 
 msgid "Manage the company's cashier system"
 msgstr "Gestion du système de caisse de la société"
-
-#, fuzzy
-#| msgid "Manage your authorised applications."
-msgid "Manage your OAuth connections."
-msgstr "Gestion de vos applications autorisées."
 
 msgid "Manage your authorised applications."
 msgstr "Gestion de vos applications autorisées."
@@ -5920,6 +5900,11 @@ msgstr "Plateformes"
 msgid "Please %1 to view this page"
 msgstr "Veuillez %1 pour afficher cette page"
 
+#, fuzzy
+#| msgid "You must accept the terms and conditions to open an account."
+msgid "Please accept the terms and conditions."
+msgstr "Vous devez accepter les conditions générales pour ouvrir un compte."
+
 msgid "Please check the above form for pending errors."
 msgstr "Veuillez vérifier que les informations ci-dessus ne contiennent pas d'erreurs."
 
@@ -6028,6 +6013,11 @@ msgid "Please select a value"
 msgstr "Veuillez sélectionner une valeure."
 
 msgid "Please select at least one scope"
+msgstr "Veuillez sélectionner au moins un champ d'application"
+
+#, fuzzy
+#| msgid "Please select at least one scope"
+msgid "Please select the checkbox."
 msgstr "Veuillez sélectionner au moins un champ d'application"
 
 msgid "Please select your country of residence"
@@ -9146,11 +9136,6 @@ msgstr ""
 msgid "You did not change anything."
 msgstr "Vous n'avez effectué aucune modification."
 
-#, fuzzy
-#| msgid "You did not change anything."
-msgid "You do not have any connections."
-msgstr "Vous n'avez effectué aucune modification."
-
 msgid "You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading."
 msgstr "Il n'est pas nécessaire de déposer des fonds pour ouvrir un compte, mais vous devez approvisionner votre compte avant de pouvoir effectuer des opérations de trading."
 
@@ -10734,8 +10719,8 @@ msgstr "Accusé de réception"
 msgid "Payment Agent Transfer"
 msgstr "Virement par agent de paiement"
 
-msgid "Sharp Prices. Smart Trading."
-msgstr "Tarifs compétitifs. Trading Intelligent."
+msgid "Trusted by traders since 2000"
+msgstr ""
 
 msgid "Authenticate"
 msgstr "Authentification"
@@ -10751,6 +10736,34 @@ msgstr "Limites du Compte"
 
 msgid "Account Details"
 msgstr "Informations du compte"
+
+#, fuzzy
+#~| msgid "Are you sure that you want to permanently revoke access to application"
+#~ msgid "Are you sure that you want to permanently revoke connection to"
+#~ msgstr "Voulez-vous vraiment révoquer l'accès à cette application de façon permanente ?"
+
+#, fuzzy
+#~| msgid "Construction"
+#~ msgid "Connections"
+#~ msgstr "Construction"
+
+#, fuzzy
+#~| msgid "Keep track of your authorised applications."
+#~ msgid "Keep track of your authorised connections."
+#~ msgstr "Consultez la liste de vos applications autorisées."
+
+#, fuzzy
+#~| msgid "Manage your authorised applications."
+#~ msgid "Manage your OAuth connections."
+#~ msgstr "Gestion de vos applications autorisées."
+
+#, fuzzy
+#~| msgid "You did not change anything."
+#~ msgid "You do not have any connections."
+#~ msgstr "Vous n'avez effectué aucune modification."
+
+#~ msgid "Sharp Prices. Smart Trading."
+#~ msgstr "Tarifs compétitifs. Trading Intelligent."
 
 #~ msgid "Blog"
 #~ msgstr "Blog"
@@ -11213,9 +11226,6 @@ msgstr "Informations du compte"
 
 #~ msgid "You get fair and transparent pricing, whatever your position."
 #~ msgstr "Vous recevez une tarification juste et transparente, quelle que soit votre position."
-
-#~ msgid "You must accept the terms and conditions to open an account."
-#~ msgstr "Vous devez accepter les conditions générales pour ouvrir un compte."
 
 #~ msgid "You set the barrier(s) to define your position."
 #~ msgstr "Vous sélectionnez une/des barrière(s) afin de déterminer votre position."

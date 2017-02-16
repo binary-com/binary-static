@@ -1182,9 +1182,6 @@ msgstr "Sind Sie sicher, dass Sie den Token endgültig löschen möchten?"
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "Sind Sie sicher, dass Sie den Zugang endgültig widerrufen möchten"
 
-msgid "Are you sure that you want to permanently revoke connection to"
-msgstr "Sind Sie sicher, dass Sie den Zugang zu endgültig widerrufen möchten"
-
 msgid "Are your site visitors interested in:"
 msgstr "Haben die Besucher Ihrer Webseite Interesse an:"
 
@@ -2037,9 +2034,6 @@ msgstr "Herzlichen Glückwunsch! Ihr Konto wurde erstellt."
 
 msgid "Connection error: Please check your internet connection."
 msgstr "Verbindungsfehler: Bitte überprüfen Sie Ihre Internetverbindung."
-
-msgid "Connections"
-msgstr "Verbindungen"
 
 msgid "Construction"
 msgstr "Aufbau"
@@ -4501,9 +4495,6 @@ msgstr ""
 msgid "Keep track of your authorised applications."
 msgstr "Verfolgen Sie Ihre genehmigten Anwendungen."
 
-msgid "Keep track of your authorised connections."
-msgstr "Verfolgen Sie Ihre genehmigten Verbindungen."
-
 msgid "Key facts"
 msgstr "Wichtige Fakten"
 
@@ -4815,9 +4806,6 @@ msgstr "Sicherheitsverwaltung, Eindringungsentdeckung, DDos-Schutz und PCI Compl
 
 msgid "Manage the company's cashier system"
 msgstr "Verwaltung des Kassensystems des Unternehmens"
-
-msgid "Manage your OAuth connections."
-msgstr "Verwalten Sie Ihre OAuth Verbindungen."
 
 msgid "Manage your authorised applications."
 msgstr "Verwalten Sie Ihre genehmigten Anwendungen."
@@ -5715,6 +5703,11 @@ msgstr "Plattformen"
 msgid "Please %1 to view this page"
 msgstr "Bitte %1, um diese Seite anzuzeigen"
 
+#, fuzzy
+#| msgid "You must accept the terms and conditions to open an account."
+msgid "Please accept the terms and conditions."
+msgstr "Sie müssen die Geschäftsbedingungen akzeptieren, um ein Konto eröffnen zu können."
+
 msgid "Please check the above form for pending errors."
 msgstr "Bitte überprüfen Sie das oben stehende Formular nach ausstehenden Fehlern."
 
@@ -5817,6 +5810,11 @@ msgid "Please select a value"
 msgstr "Bitte wählen Sie einen Wert aus"
 
 msgid "Please select at least one scope"
+msgstr "Bitte wählen Sie zumindest einen Bereich aus"
+
+#, fuzzy
+#| msgid "Please select at least one scope"
+msgid "Please select the checkbox."
 msgstr "Bitte wählen Sie zumindest einen Bereich aus"
 
 msgid "Please select your country of residence"
@@ -8860,9 +8858,6 @@ msgstr ""
 msgid "You did not change anything."
 msgstr "Sie haben nichts geändert."
 
-msgid "You do not have any connections."
-msgstr "Sie haben keine Verbindungen."
-
 msgid "You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading."
 msgstr "Sie müssen kein Geld einzahlen, um ein Konto zu eröffnen; Sie müssen jedoch Geld einzahlen, bevor Sie mit dem Handeln beginnen können."
 
@@ -10422,8 +10417,8 @@ msgstr "Anerkennung"
 msgid "Payment Agent Transfer"
 msgstr "Zahlungsagent Überweisung"
 
-msgid "Sharp Prices. Smart Trading."
-msgstr "Präzise Kurse. Intelligentes Handeln."
+msgid "Trusted by traders since 2000"
+msgstr ""
 
 msgid "Authenticate"
 msgstr "Authentifizieren"
@@ -10439,6 +10434,24 @@ msgstr "Kontolimits"
 
 msgid "Account Details"
 msgstr "Kontoangaben"
+
+#~ msgid "Are you sure that you want to permanently revoke connection to"
+#~ msgstr "Sind Sie sicher, dass Sie den Zugang zu endgültig widerrufen möchten"
+
+#~ msgid "Connections"
+#~ msgstr "Verbindungen"
+
+#~ msgid "Keep track of your authorised connections."
+#~ msgstr "Verfolgen Sie Ihre genehmigten Verbindungen."
+
+#~ msgid "Manage your OAuth connections."
+#~ msgstr "Verwalten Sie Ihre OAuth Verbindungen."
+
+#~ msgid "You do not have any connections."
+#~ msgstr "Sie haben keine Verbindungen."
+
+#~ msgid "Sharp Prices. Smart Trading."
+#~ msgstr "Präzise Kurse. Intelligentes Handeln."
 
 #~ msgid "Blog"
 #~ msgstr "Blog"
@@ -10901,9 +10914,6 @@ msgstr "Kontoangaben"
 
 #~ msgid "You get fair and transparent pricing, whatever your position."
 #~ msgstr "Sie erhalten, ungeachtet Ihrer Stellung, faire und transparente Kurse."
-
-#~ msgid "You must accept the terms and conditions to open an account."
-#~ msgstr "Sie müssen die Geschäftsbedingungen akzeptieren, um ein Konto eröffnen zu können."
 
 #~ msgid "You set the barrier(s) to define your position."
 #~ msgstr "Sie setzen die Schwelle(n) und definieren Ihre Position."

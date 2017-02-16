@@ -183,6 +183,8 @@ sub _texts {
         push @texts, localize('Forex');
         #strings for detailsws
         push @texts, localize('This field is required.');
+        push @texts, localize('Please select the checkbox.');
+        push @texts, localize('Please accept the terms and conditions.');
         push @texts, localize('You should enter between [_1] characters.');
         push @texts, localize('Only [_1] are allowed.');
         push @texts, localize('letters');
@@ -479,9 +481,6 @@ sub _texts {
         push @texts, localize('The server <a href="[_1]">endpoint</a> is: [_2]');
         # strings for account signup error
         push @texts, localize('Sorry, account signup is not available in your country. Please contact <a href="[_1]">customer support</a> for more information.');
-        # strings for connection page
-        push @texts, localize('You do not have any connections.');
-        push @texts, localize('Are you sure that you want to permanently revoke connection to');
         # strings from back-end
         push @texts, localize('There was a problem accessing the server.');
         push @texts, localize('There was a problem accessing the server during purchase.');
