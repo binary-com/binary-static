@@ -187,15 +187,14 @@ const SettingsDetailsWS = (function() {
             ];
             const tax_id_validation = { selector: '#tax_identification_number',  validations: ['postcode', ['length', { min: 0, max: 20 }]] };
             if (Client.is_financial()) {
-                tax_id_validation.validations[1][1].min = 1;
-                tax_id_validation.validations.push('req');
                 validations.push(
                     { selector: '#place_of_birth', validations: ['req'] },
                     { selector: '#tax_residence',  validations: ['req'] },
-                    tax_id_validation);
-            } else {
-                validations.push(tax_id_validation);
+                );
+                tax_id_validation.validations[1][1].min = 1;
+                tax_id_validation.validations.unshift('req');
             }
+            validations.push(tax_id_validation);
         }
         Validation.init(formID, validations);
     };
