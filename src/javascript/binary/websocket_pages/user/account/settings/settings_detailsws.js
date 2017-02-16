@@ -1,6 +1,7 @@
 const localize             = require('../../../../base/localize').localize;
 const Client               = require('../../../../base/client').Client;
 const State                = require('../../../../base/storage').State;
+const getFormData          = require('../../../../base/utility').getFormData;
 const Content              = require('../../../../common_functions/content').Content;
 const detect_hedging       = require('../../../../common_functions/common_functions').detect_hedging;
 const appendTextValueChild = require('../../../../common_functions/common_functions').appendTextValueChild;
@@ -125,22 +126,7 @@ const SettingsDetailsWS = (function() {
     };
 
     const populateData = () => {
-        const data = {};
-        let id,
-            val,
-            $this;
-        $('.form_input').each(function () {
-            $this = $(this);
-            id = $this.attr('id');
-            if (/lbl_/.test(id)) {
-                val = $this.text();
-            } else if ($this.is(':checkbox')) {
-                val = $this.is(':checked') ? 1 : 0;
-            } else {
-                val = $this.val();
-            }
-            data[id.replace('lbl_', '')] = val;
-        });
+        const data = getFormData();
         const tax_residence_val = $('#tax_residence').val();
         data.tax_residence = (Array.isArray(tax_residence_val) ? tax_residence_val.join(',') : tax_residence_val) || '';
         return data;

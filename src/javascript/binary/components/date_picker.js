@@ -21,8 +21,8 @@ const DatePicker = function(component_selector, select_type) {
 };
 
 DatePicker.prototype = {
-    show: function(min_day, max_days, setValue, noNative) {
-        this.checkWidth(this.config(min_day, max_days, setValue, noNative), this.component_selector, this);
+    show: function(min_day, max_days, setValue, noNative, yearRange) {
+        this.checkWidth(this.config(min_day, max_days, setValue, noNative, yearRange), this.component_selector, this);
         const that = this;
         $(window).resize(function() { that.checkWidth(that.config_data, that.component_selector, that); });
     },
@@ -55,7 +55,7 @@ DatePicker.prototype = {
         // from the DOM and use our own one.
         $('button.ui-datepicker-trigger').remove();
     },
-    config: function(min_day, max_days, setValue, noNative) {
+    config: function(min_day, max_days, setValue, noNative, yearRange) {
         const today = new Date();
 
         const config = {
@@ -75,10 +75,13 @@ DatePicker.prototype = {
         }
 
         if (max_days) {
-            max_days = (typeof max_days === 'undefined') ? 365 : max_days;
             const next_year = new Date();
             next_year.setDate(today.getDate() + Number(max_days));
             config.maxDate = next_year;
+        }
+
+        if (yearRange) {
+            config.yearRange = yearRange;
         }
 
         this.setValue = setValue;

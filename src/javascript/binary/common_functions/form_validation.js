@@ -64,6 +64,7 @@ const Validation = (function() {
     const validGeneral      = value => !/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|]+/.test(value);
     const validPostCode     = value => /^[a-zA-Z\d-]*$/.test(value);
     const validPhone        = value => /^\+?[0-9\s]*$/.test(value);
+    const validRegular      = (value, options) => options.regex.test(value);
     const validEmailToken   = value => value.trim().length === 48;
 
     const validCompare  = (value, options) => value === $(options.to).val();
@@ -107,6 +108,7 @@ const Validation = (function() {
         min          : { func: validMin,          message: 'Minimum of [_1] characters required.' },
         length       : { func: validLength,       message: 'You should enter [_1] characters.' },
         number       : { func: validNumber,       message: '' },
+        regular      : { func: validRegular,      message: '' },
     };
 
     const pass_length = { min: 6, max: 25 };

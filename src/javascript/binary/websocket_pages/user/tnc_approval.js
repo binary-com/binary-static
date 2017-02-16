@@ -99,7 +99,7 @@ const TNCApproval = (function() {
             onmessage: function(msg) {
                 const response = JSON.parse(msg.data);
                 if (response) {
-                    TNCApproval.apiResponse(response);
+                    apiResponse(response);
                 }
             },
         });
@@ -109,10 +109,9 @@ const TNCApproval = (function() {
     };
 
     return {
-        init       : init,
-        apiResponse: apiResponse,
-        showTNC    : showTNC,
-        onLoad     : onLoad,
+        init   : init,
+        showTNC: showTNC,
+        onLoad : onLoad,
     };
 })();
 

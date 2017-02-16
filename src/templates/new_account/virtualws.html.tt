@@ -1,65 +1,65 @@
 <div class='gr-12 static_full'>
-  <h1>[% l('Create New Account') %]</h1>
-  <p class='notice-message'>
-    [% l('Thank you for signing up! Please check your email to retrieve the verification token.') %]
-  </p>
-  <div class="gr-padding-10">
-    <div class="rbox form">
-      <div class="rbox-wrap">
-        <form id="virtual-form">
-          <fieldset>
-            <legend id="details">[% l('Details') %]</legend>
-            <div class="gr-padding-10 gr-row clear">
-              <div class="gr-4 form_label">
-                <label for="verification-code">[% l('Verification token') %]</label>
-              </div>
-              <div class="gr-8">
-                <input type="text" name="verification-code" id="verification-code" maxlength="48" autocomplete="off"/>
-                <div class="hint">[% l('Please check your email for the value of this token') %]</div>
-              </div>
-            </div>
-            <div class="gr-padding-10 gr-row clear">
-              <div class="gr-4  form_label">
-                <label for="password">[% l('Choose a password') %]</label>
-              </div>
-              <div class="gr-8">
-                <input type="password" id="password" name="password" maxlength="25"/>
-                <div class="hint">[% l('Minimum of six lower and uppercase letters with numbers') %]</div>
-              </div>
-            </div>
-            <div class="gr-padding-10 gr-row clear">
-              <div class="gr-4 form_label">
-                <label for="r-password">[% l('Re-enter password') %]</label>
-              </div>
-              <div class="gr-8">
-                <input type="password" id="r-password" name="r-password" maxlength="25"/>
-              </div>
-            </div>
-            <div class="gr-padding-10 gr-row clear">
-              <div class="gr-4 form_label">
-                <label for="residence">[% l('Country of residence') %]</label>
-              </div>
-              <div class="gr-8">
-                <select name="residence" id="residence" class="invisible"></select>
-              </div>
-            </div>
-            <div class="gr-padding-10 gr-row clear invisible">
-                <div class="gr-4 form_label" id="email_consent_label">
-                    <label>[% l('Receive news and special offers') %]</label>
-                </div>
-                <div class="gr-8">
-                    <input type="checkbox" id="email_consent" checked="checked"/>
-                </div>
-            </div>
-          </fieldset>
-          <fieldset class="center-text" id="formlayout">
-            <span class="button ">
-              <button class="button " id="btn_submit" type="submit">[% l('Create New Account') %]</button>
-              <p class="errorfield" id="error-account-opening" style="display:none"></p>
-            </span>
-          </fieldset>
-        </form>
-      </div>
+    <h1>[% l('Create New Account') %]</h1>
+    <p class='notice-message'>[% l('Thank you for signing up! Please check your email to retrieve the verification token.') %]</p>
+    <div class="rbox form gr-padding-10">
+        <div class="rbox-wrap">
+            <form id="virtual-form">
+                <fieldset>
+                    <legend id="details">[% l('Details') %]</legend>
+
+                    <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-4 form_label">
+                            <label for="verification_code">[% l('Verification token') %]</label>
+                        </div>
+                        <div class="gr-8">
+                            <input type="text" name="verification_code" id="verification_code" class="form_input" maxlength="48" autocomplete="off"/>
+                            <div class="hint">[% l('Please check your email for the value of this token') %]</div>
+                        </div>
+                    </div>
+
+                    <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-4 form_label">
+                            <label for="client_password">[% l('Choose a password') %]</label>
+                        </div>
+                        <div class="gr-8">
+                            <input type="password" id="client_password" class="form_input" name="client_password" maxlength="25"/>
+                            <div class="hint">[% l('Minimum of six lower and uppercase letters with numbers') %]</div>
+                        </div>
+                    </div>
+
+                    <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-4 form_label">
+                            <label for="repeat_password">[% l('Re-enter password') %]</label>
+                        </div>
+                        <div class="gr-8">
+                            <input type="password" id="repeat_password" name="repeat_password" maxlength="25"/>
+                        </div>
+                    </div>
+
+                    <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-4 form_label">
+                            <label for="residence">[% l('Country of residence') %]</label>
+                        </div>
+                        <div class="gr-8">
+                            <select name="residence" id="residence" class="invisible form_input"></select>
+                        </div>
+                    </div>
+
+                    <div class="gr-padding-10 gr-row clear invisible">
+                        <div class="gr-4 form_label" id="email_consent_label">
+                            <label for="email_consent">[% l('Receive news and special offers') %]</label>
+                        </div>
+                        <div class="gr-8">
+                            <input type="checkbox" id="email_consent" class="form_input" checked="checked"/>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="center-text" id="formlayout">
+                    <button class="button" id="btn_submit" type="submit">[% l('Create New Account') %]</button>
+                    <p class="errorfield invisible" id="error-account-opening"></p>
+                </fieldset>
+            </form>
+        </div>
     </div>
-  </div>
 </div>
