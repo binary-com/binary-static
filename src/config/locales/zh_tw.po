@@ -4,8 +4,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-02-15 07:36+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) "
-"<https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
+"Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1157,9 +1156,6 @@ msgstr "確定要永久刪除權杖嗎"
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "確定要永久廢除應用程式存取權限嗎"
 
-msgid "Are you sure that you want to permanently revoke connection to"
-msgstr "是否確定要永久廢除連接到"
-
 msgid "Are your site visitors interested in:"
 msgstr "您的網站訪問者是否有興趣："
 
@@ -1978,9 +1974,6 @@ msgstr "恭喜! 您已成功開立%1帳戶。"
 
 msgid "Connection error: Please check your internet connection."
 msgstr "連接錯誤:請檢查您的網絡連接。"
-
-msgid "Connections"
-msgstr "連接"
 
 msgid "Construction"
 msgstr "建構"
@@ -4376,9 +4369,6 @@ msgstr "十一、電子交易平台和交易"
 msgid "Keep track of your authorised applications."
 msgstr "跟蹤您的授權應用程式。"
 
-msgid "Keep track of your authorised connections."
-msgstr "跟蹤您的授權連接。"
-
 msgid "Key facts"
 msgstr "關鍵資料"
 
@@ -4678,9 +4668,6 @@ msgstr "我們所部署的所有伺服器相關的安全、入侵檢測、DDoS �
 
 msgid "Manage the company's cashier system"
 msgstr "管理公司的出納系統"
-
-msgid "Manage your OAuth connections."
-msgstr "管理您的OAuth連接。"
 
 msgid "Manage your authorised applications."
 msgstr "管理您的授權應用程式。"
@@ -5534,6 +5521,11 @@ msgstr "平台"
 msgid "Please %1 to view this page"
 msgstr "要查看此頁面，請 %1 t"
 
+#, fuzzy
+#| msgid "You must accept the terms and conditions to open an account."
+msgid "Please accept the terms and conditions."
+msgstr "您必須接受條款和條件才能開戶。"
+
 msgid "Please check the above form for pending errors."
 msgstr "請檢查以上表格是否有待定錯誤。"
 
@@ -5634,6 +5626,11 @@ msgid "Please select a value"
 msgstr "請選擇一個數值"
 
 msgid "Please select at least one scope"
+msgstr "請選擇至少一個範圍"
+
+#, fuzzy
+#| msgid "Please select at least one scope"
+msgid "Please select the checkbox."
 msgstr "請選擇至少一個範圍"
 
 msgid "Please select your country of residence"
@@ -8580,9 +8577,6 @@ msgstr "您同意我們對您和我們之間的電話對話錄音。所有通過
 msgid "You did not change anything."
 msgstr "您沒做任何更改。"
 
-msgid "You do not have any connections."
-msgstr "您沒有任何連接。"
-
 msgid "You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading."
 msgstr "開戶無需存入資金，但在您準備好要進行交易前需要入金。"
 
@@ -10122,8 +10116,8 @@ msgstr "確認"
 msgid "Payment Agent Transfer"
 msgstr "支付代理轉帳"
 
-msgid "Sharp Prices. Smart Trading."
-msgstr "精準報價，智慧交易。"
+msgid "Trusted by traders since 2000"
+msgstr ""
 
 msgid "Authenticate"
 msgstr "驗證"
@@ -10139,6 +10133,24 @@ msgstr "帳戶限額"
 
 msgid "Account Details"
 msgstr "帳戶詳細資料"
+
+#~ msgid "Are you sure that you want to permanently revoke connection to"
+#~ msgstr "是否確定要永久廢除連接到"
+
+#~ msgid "Connections"
+#~ msgstr "連接"
+
+#~ msgid "Keep track of your authorised connections."
+#~ msgstr "跟蹤您的授權連接。"
+
+#~ msgid "Manage your OAuth connections."
+#~ msgstr "管理您的OAuth連接。"
+
+#~ msgid "You do not have any connections."
+#~ msgstr "您沒有任何連接。"
+
+#~ msgid "Sharp Prices. Smart Trading."
+#~ msgstr "精準報價，智慧交易。"
 
 #~ msgid "Blog"
 #~ msgstr "部落格"
@@ -10814,9 +10826,6 @@ msgstr "帳戶詳細資料"
 
 #~ msgid "You get fair and transparent pricing, whatever your position."
 #~ msgstr "不論您要執行什麼樣的交易，您都將獲得公平透明的報價。"
-
-#~ msgid "You must accept the terms and conditions to open an account."
-#~ msgstr "您必須接受條款和條件才能開戶。"
 
 #~ msgid "You set the barrier(s) to define your position."
 #~ msgstr "通過設定障礙水平界定您的頭寸。"

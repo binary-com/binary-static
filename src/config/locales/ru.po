@@ -9,14 +9,12 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-02-15 06:49+0000\n"
 "Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
-"Language-Team: Russian "
-"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.12-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -643,10 +641,7 @@ msgid "<strong>Transparent risk and potential reward</strong> - Know how much yo
 msgstr ""
 
 msgid "<strong>Two-way pricing</strong> - Receive quotes for a trade and counter-trade, so you always get unbiased, transparent rates from %1"
-msgstr ""
-"<strong>Оценка контракта в двух направлениях</strong> – получите котировку "
-"для контракта и встречного контракта, чтобы всегда знать точные и прозрачные "
-"цены от %1."
+msgstr "<strong>Оценка контракта в двух направлениях</strong> – получите котировку для контракта и встречного контракта, чтобы всегда знать точные и прозрачные цены от %1."
 
 msgid "<ul><li> Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>. </li><li> Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button. </li><li> Under the <strong>Cookies</strong> section, select the \"<strong>Don't block cookies</strong>\" option. </li><li> Click anywhere outside the menu to save and close. </li></ul>"
 msgstr "<ul><li> Зайдите в меню <strong>Дополнительные действия</strong> и выберите <strong>Настройки</strong>. </li><li> В разделе <strong>Дополнительно</strong> нажмите кнопку <strong>Просмотреть расширенные настройки</strong>. </li><li>  В разделе <strong>Cookies</strong> выберите опцию \"<strong>Не блокировать cookies</strong>\". </li><li> Кликните за пределами меню, чтобы сохранить настройки и закрыть меню. </li></ul>"
@@ -1178,9 +1173,6 @@ msgstr "Вы уверены, что хотите навсегда удалить
 
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "Вы уверены, что хотите навсегда отказаться от доступа к приложению"
-
-msgid "Are you sure that you want to permanently revoke connection to"
-msgstr "Вы уверены, что хотите навсегда отказаться от подключения к"
 
 msgid "Are your site visitors interested in:"
 msgstr "Посетителям Вашего сайта может быть интересно:"
@@ -2018,9 +2010,6 @@ msgstr "Поздравляем! Ваш счёт успешно открыт."
 
 msgid "Connection error: Please check your internet connection."
 msgstr "Проблема со связью: пожалуйста, проверьте Ваше подключение к интернету."
-
-msgid "Connections"
-msgstr "Подключения"
 
 msgid "Construction"
 msgstr "Строительство"
@@ -4450,9 +4439,6 @@ msgstr "K. Электронная торговая платформа и кон�
 msgid "Keep track of your authorised applications."
 msgstr "Следите за доступными приложениями."
 
-msgid "Keep track of your authorised connections."
-msgstr "Следите за авторизованными подключениями."
-
 msgid "Key facts"
 msgstr "Основные факты"
 
@@ -4764,9 +4750,6 @@ msgstr "Управление системами безопасности, обн
 
 msgid "Manage the company's cashier system"
 msgstr "Управление кассовой системой компании"
-
-msgid "Manage your OAuth connections."
-msgstr "Управление подключением OAuth."
 
 msgid "Manage your authorised applications."
 msgstr "Управление доступными приложениями."
@@ -5637,6 +5620,11 @@ msgstr "Платформы"
 msgid "Please %1 to view this page"
 msgstr "Пожалуйста, %1, чтобы просмотреть данную страницу"
 
+#, fuzzy
+#| msgid "You must accept the terms and conditions to open an account."
+msgid "Please accept the terms and conditions."
+msgstr "Для открытия счета необходимо согласиться с правилами и условиями."
+
 msgid "Please check the above form for pending errors."
 msgstr "Пожалуйста, исправьте указанные ошибки в форме выше."
 
@@ -5739,6 +5727,11 @@ msgid "Please select a value"
 msgstr "Пожалуйста, выберите значение"
 
 msgid "Please select at least one scope"
+msgstr "Пожалуйста, выберите минимум один параметр"
+
+#, fuzzy
+#| msgid "Please select at least one scope"
+msgid "Please select the checkbox."
 msgstr "Пожалуйста, выберите минимум один параметр"
 
 msgid "Please select your country of residence"
@@ -8779,9 +8772,6 @@ msgstr "Настоящим Вы даёте нам согласие на запи
 msgid "You did not change anything."
 msgstr "Вы не внесли никаких изменений."
 
-msgid "You do not have any connections."
-msgstr "У вас нет подключений."
-
 msgid "You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading."
 msgstr "Вам не нужно вносить средства для открытия счета, но для начала торговли и покупки контрактов Вам необходимо будет пополнить счет."
 
@@ -10331,8 +10321,8 @@ msgstr "Подтверждение"
 msgid "Payment Agent Transfer"
 msgstr "Перевод через агента"
 
-msgid "Sharp Prices. Smart Trading."
-msgstr "Лучшие цены. Умный трейдинг."
+msgid "Trusted by traders since 2000"
+msgstr ""
 
 msgid "Authenticate"
 msgstr "Авторизация"
@@ -10348,6 +10338,24 @@ msgstr "Лимиты счета"
 
 msgid "Account Details"
 msgstr "Информация о счете"
+
+#~ msgid "Are you sure that you want to permanently revoke connection to"
+#~ msgstr "Вы уверены, что хотите навсегда отказаться от подключения к"
+
+#~ msgid "Connections"
+#~ msgstr "Подключения"
+
+#~ msgid "Keep track of your authorised connections."
+#~ msgstr "Следите за авторизованными подключениями."
+
+#~ msgid "Manage your OAuth connections."
+#~ msgstr "Управление подключением OAuth."
+
+#~ msgid "You do not have any connections."
+#~ msgstr "У вас нет подключений."
+
+#~ msgid "Sharp Prices. Smart Trading."
+#~ msgstr "Лучшие цены. Умный трейдинг."
 
 #~ msgid "Blog"
 #~ msgstr "Блог"
@@ -10997,9 +11005,6 @@ msgstr "Информация о счете"
 
 #~ msgid "You get fair and transparent pricing, whatever your position."
 #~ msgstr "Вы получаете справедливую и прозрачную оценку контракта, независимо от его параметров."
-
-#~ msgid "You must accept the terms and conditions to open an account."
-#~ msgstr "Для открытия счета необходимо согласиться с правилами и условиями."
 
 #~ msgid "You set the barrier(s) to define your position."
 #~ msgstr "Вы задаете параметры позиции."

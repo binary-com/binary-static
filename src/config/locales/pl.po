@@ -1186,9 +1186,6 @@ msgstr "Czy na pewno chcesz trwale usunąć token"
 msgid "Are you sure that you want to permanently revoke access to application"
 msgstr "Czy na pewno chcesz na stałe wyłączyć dostęp do aplikacji na stałe?"
 
-msgid "Are you sure that you want to permanently revoke connection to"
-msgstr "Czy na pewno chcesz na stałe wyłączyć połączenie z"
-
 msgid "Are your site visitors interested in:"
 msgstr "Czy odwiedzających Twoją stronę interesuje:"
 
@@ -2041,9 +2038,6 @@ msgstr "Gratulacje! Twoje konto zostało utworzone."
 
 msgid "Connection error: Please check your internet connection."
 msgstr "Błąd połączenia: sprawdż połączenie internetowe"
-
-msgid "Connections"
-msgstr "Połączenia"
 
 msgid "Construction"
 msgstr "Budownictwo"
@@ -4503,9 +4497,6 @@ msgstr ""
 msgid "Keep track of your authorised applications."
 msgstr "Obserwuj swoje zatwierdzone aplikacje."
 
-msgid "Keep track of your authorised connections."
-msgstr "Obserwuj swoje zatwierdzone połączenia."
-
 msgid "Key facts"
 msgstr "Najważniejsze fakty"
 
@@ -4817,9 +4808,6 @@ msgstr "Dbanie o bezpieczeństwo, wykrywanie zagrożeń, ochronę DDoS i zgodno�
 
 msgid "Manage the company's cashier system"
 msgstr "Zarządzanie firmowym systemem „Kasjer”"
-
-msgid "Manage your OAuth connections."
-msgstr "Zarządzaj swoimi połączeniami OAuth."
 
 msgid "Manage your authorised applications."
 msgstr "Zarządzaj zatwierdzonymi aplikacjami."
@@ -5717,6 +5705,11 @@ msgstr "Platformy"
 msgid "Please %1 to view this page"
 msgstr "Zaloguj się, aby wyświetlić tę stronę"
 
+#, fuzzy
+#| msgid "You must accept the terms and conditions to open an account."
+msgid "Please accept the terms and conditions."
+msgstr "Musisz zaakceptować regulamin, aby otworzyć konto."
+
 msgid "Please check the above form for pending errors."
 msgstr "Zapoznaj się z listą nierozwiązanych błędów w powyższym formularzu."
 
@@ -5819,6 +5812,11 @@ msgid "Please select a value"
 msgstr "Proszę wybrać wartość"
 
 msgid "Please select at least one scope"
+msgstr "Proszę wybrać przynajmniej jeden zakres"
+
+#, fuzzy
+#| msgid "Please select at least one scope"
+msgid "Please select the checkbox."
 msgstr "Proszę wybrać przynajmniej jeden zakres"
 
 msgid "Please select your country of residence"
@@ -8855,9 +8853,6 @@ msgstr ""
 msgid "You did not change anything."
 msgstr "Nic nie zostało zmienione."
 
-msgid "You do not have any connections."
-msgstr "Nie masz żadnych połączeń."
-
 msgid "You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading."
 msgstr "Nie musisz wpłacać pieniędzy, aby otworzyć konto, jednak musisz wpłacić środki przed rozpoczęciem handlowania."
 
@@ -10417,8 +10412,8 @@ msgstr "Potwierdzenie"
 msgid "Payment Agent Transfer"
 msgstr "Przelew dla pośrednika płatności"
 
-msgid "Sharp Prices. Smart Trading."
-msgstr "Atrakcyjne ceny. Mądre handlowanie."
+msgid "Trusted by traders since 2000"
+msgstr ""
 
 msgid "Authenticate"
 msgstr "Zweryfikuj"
@@ -10434,6 +10429,24 @@ msgstr "Limity na koncie"
 
 msgid "Account Details"
 msgstr "Dane konta"
+
+#~ msgid "Are you sure that you want to permanently revoke connection to"
+#~ msgstr "Czy na pewno chcesz na stałe wyłączyć połączenie z"
+
+#~ msgid "Connections"
+#~ msgstr "Połączenia"
+
+#~ msgid "Keep track of your authorised connections."
+#~ msgstr "Obserwuj swoje zatwierdzone połączenia."
+
+#~ msgid "Manage your OAuth connections."
+#~ msgstr "Zarządzaj swoimi połączeniami OAuth."
+
+#~ msgid "You do not have any connections."
+#~ msgstr "Nie masz żadnych połączeń."
+
+#~ msgid "Sharp Prices. Smart Trading."
+#~ msgstr "Atrakcyjne ceny. Mądre handlowanie."
 
 #~ msgid "Blog"
 #~ msgstr "Blog"
@@ -10896,9 +10909,6 @@ msgstr "Dane konta"
 
 #~ msgid "You get fair and transparent pricing, whatever your position."
 #~ msgstr "Otrzymujesz uczciwe i jasne zasady wyceny niezależnie od swojej pozycji."
-
-#~ msgid "You must accept the terms and conditions to open an account."
-#~ msgstr "Musisz zaakceptować regulamin, aby otworzyć konto."
 
 #~ msgid "You set the barrier(s) to define your position."
 #~ msgstr "Ustalasz limit(y), aby określić swoją pozycję."
