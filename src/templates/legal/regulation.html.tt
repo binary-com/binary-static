@@ -64,27 +64,27 @@
                             <img class="responsive" src="[% request.url_for('images/pages/regulation/map.svg') %]" usemap="#planetmap">
                         </div>
                         <map name="planetmap" id="planetmap">
-                            <area shape="rect" coords="374.91,21,520,55" href="http://www.fi.se/Folder-EN/Startpage/Register/Company-register/?sok1=Binary+Investments&mode=wide" alt="Sweden" target="_blank">
+                            <area shape="rect" coords="374.91,21,520,55" href="[% request.url_for('download/regulation/Sweden.pdf') %]" alt="Sweden" target="_blank">
                             <area shape="rect" coords="353.01,59.16,498.18,90.87" href="[% request.url_for('download/regulation/Denmark.pdf') %]" alt="Denmark" target="_blank">
-                            <area shape="rect" coords="328.02,95.37,473.19,127.08" href="https://portal.mvp.bafin.de/database/InstInfo/institutDetails.do?cmd=loadInstitutAction&institutId=143125" alt="Germany" target="_blank">
-                            <area shape="rect" coords="270.18,131.58,440.64,163.29" href="https://www.afm.nl/en/professionals/registers/alle-huidige-registers/beleggingsonderneming.aspx?id=70399C7A-F71F-E511-A3EB-005056BE011D&q=binary+investments" alt="Netherlands" target="_blank">
-                            <area shape="rect" coords="0.00,259.71,198.93,291.42" href="https://register.fca.org.uk/ShPo_FirmDetailsPage?id=001b000000p2GpEAAU" alt="United Kingdom" target="_blank">
+                            <area shape="rect" coords="328.02,95.37,473.19,127.08" href="[% request.url_for('download/regulation/Germany.pdf') %]" alt="Germany" target="_blank">
+                            <area shape="rect" coords="270.18,131.58,440.64,163.29" href="[% request.url_for('download/regulation/Netherlands.pdf') %]" alt="Netherlands" target="_blank">
+                            <area shape="rect" coords="0.00,259.71,198.93,291.42" href="[% request.url_for('download/regulation/UnitedKingdom.pdf') %]" alt="United Kingdom" target="_blank">
                             <area shape="rect" coords="26.61,343.62,198.93,375.33" href="[% request.url_for('download/regulation/Luxembourg.pdf') %]" alt="Luxembourg" target="_blank">
                             <area shape="rect" coords="53.76,378.81,198.93,410.52" href="[% request.url_for('download/regulation/France.pdf') %]" alt="France" target="_blank">
-                            <area shape="rect" coords="2.82,432.81,147.99,464.52" href="http://www.cnmv.es/Portal/Consultas/ESI/ESISExtranjerasLP.aspx?numero=3944&tipo=CLP" alt="Spain" target="_blank">
-                            <area shape="rect" coords="2.82,468.96,147.99,500.67" href="http://web3.cmvm.pt/english/sdi/ifs/LPS/lps_dtl.cfm?num_ent=%26%23%24WU%21-Q%3E%0A&tip_if=%24%3E%23%3A%3B%3C%20%20%20%0A" alt="Portugal" target="_blank">
-                            <area shape="rect" coords="34.50,505.59,147.99,537.30" href="http://www.consob.it/mainen/documenti/english/intermediaries/albi/COM.html?symblink=/mainen/intermediares/investments_firms/com_lnk.html" alt="Italy" target="_blank">
-                            <area shape="rect" coords="292.95,556.05,438.12,587.76" href="https://www.fma.gv.at/en/search-company-database/?cname=Binary+Investments&place=&bic=&category=&per_page=10&submitted=1" alt="Austria" target="_blank">
+                            <area shape="rect" coords="2.82,432.81,147.99,464.52" href="[% request.url_for('download/regulation/Spain.pdf') %]" alt="Spain" target="_blank">
+                            <area shape="rect" coords="2.82,468.96,147.99,500.67" href="[% request.url_for('download/regulation/Portugal.pdf') %]" alt="Portugal" target="_blank">
+                            <area shape="rect" coords="34.50,505.59,147.99,537.30" href="[% request.url_for('download/regulation/Italy.pdf') %]" alt="Italy" target="_blank">
+                            <area shape="rect" coords="292.95,556.05,438.12,587.76" href="[% request.url_for('download/regulation/Austria.pdf') %]" alt="Austria" target="_blank">
                             <area shape="rect" coords="498.57,665.88,643.74,697.59" href="[% request.url_for('download/regulation/Slovenia.pdf') %]" alt="Slovenia" target="_blank">
                             <area shape="rect" coords="532.14,629.79,677.31,661.50" href="http://www.hanfa.hr/EN/nav/232/notifications-from-eu-member-states---tk.html" alt="Croatia" target="_blank">
                             <area shape="rect" coords="754.83,540.21,900.00,571.92" href="[% request.url_for('download/regulation/Greece.pdf') %]" alt="Greece" target="_blank">
                             <area shape="rect" coords="754.83,419.19,900.00,450.90" href="[% request.url_for('download/regulation/Romania.pdf') %]" alt="Romania" target="_blank">
-                            <area shape="rect" coords="754.83,369.57,900.00,401.28" href="https://subjekty.nbs.sk/?aa=&bb=2&cc=&qq=Binary+Investments" alt="Slovakia" target="_blank">
-                            <area shape="rect" coords="708.69,334.14,900.00,365.85" href="https://apl.cnb.cz/apljerrsdad/JERRS.WEB10.VIZITKA?p_lang=en&p_SEQ_ID=10765086&p_VER_ID=1000&p_DATUM=28.07.2016&p_ROL_KOD=" alt="Czech Republic" target="_blank">
-                            <area shape="rect" coords="765.87,287.94,900.03,319.65" href="https://www.knf.gov.pl/en/authorised_entities.jsp#searchedName=Binary%20Investments&ctype=&wybraneOPZ=&wybraneDT=&wybranePPZ=&companyCategoryName=" alt="Poland" target="_blank">
+                            <area shape="rect" coords="754.83,369.57,900.00,401.28" href="[% request.url_for('download/regulation/Slovakia.pdf') %]" alt="Slovakia" target="_blank">
+                            <area shape="rect" coords="708.69,334.14,900.00,365.85" href="[% request.url_for('download/regulation/Czech.pdf') %]" alt="Czech Republic" target="_blank">
+                            <area shape="rect" coords="765.87,287.94,900.03,319.65" href="[% request.url_for('download/regulation/Poland.pdf') %]" alt="Poland" target="_blank">
                             <area shape="rect" coords="765.87,222.12,900.03,253.83" href="http://www.fktk.lv/en/market/financial-instruments-market/service-providers-from-the-eea/freedom-to-provide-services.html" alt="Latvia" target="_blank">
-                            <area shape="rect" coords="765.87,185.97,900.03,217.68" href="https://www.fi.ee/index.php?id=2228&action=showentity&eid=97148" alt="Estonia" target="_blank">
-                            <area shape="rect" coords="765.87,41.64,900.03,73.35" href="http://www.finanssivalvonta.fi/en/Authorisations/Notifications/Pages/notifications.aspx" alt="Finland" target="_blank">
+                            <area shape="rect" coords="765.87,185.97,900.03,217.68" href="[% request.url_for('download/regulation/Estonia.pdf') %]" alt="Estonia" target="_blank">
+                            <area shape="rect" coords="765.87,41.64,900.03,73.35" href="[% request.url_for('download/regulation/Finland.pdf') %]" alt="Finland" target="_blank">
                         </map>
                     </div>
                     <h3 class="margin-top">[% l("Pillar 3 Disclosures") %]</h3>
