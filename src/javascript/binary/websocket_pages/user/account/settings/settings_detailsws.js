@@ -227,6 +227,8 @@ const SettingsDetailsWS = (function() {
                 Client.set('has_tax_information', 1);
                 $('#tax_information_notice').addClass('invisible');
             }
+            // to update the State with latest get_settings data
+            BinarySocket.send({ get_settings: '1' }, true);
         }
         showFormMessage(is_error ?
             'Sorry, an error occurred while processing your account.' :
