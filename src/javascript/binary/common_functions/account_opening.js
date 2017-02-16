@@ -258,7 +258,9 @@ const checkRequiredInputs = (elementObj, errorObj, optional_fields) => {
                 window.accountErrorCounter++;
             }
             if (elementObj[key].type === 'checkbox' && !elementObj[key].checked) {
-                errorObj[key].innerHTML = Content.errorMessage('req');
+                const param = { field_type: 'checkbox' };
+                if (key === 'tnc') param.for = 'tnc';
+                errorObj[key].innerHTML = Content.errorMessage('req', param);
                 Validate.displayErrorMessage(errorObj[key]);
                 window.accountErrorCounter++;
             }
