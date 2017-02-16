@@ -62,7 +62,9 @@ const TNCApproval = (function() {
         const redirect_url = sessionStorage.getItem('tnc_redirect');
         sessionStorage.removeItem('tnc_redirect');
         if (redirect_url || redirect_anyway) {
-            window.location.href = redirect_url || default_redirect_url();
+            setTimeout(() => {
+                window.location.href = redirect_url || default_redirect_url();
+            }, redirect_anyway ? 500 : 5000);
         }
     };
 
