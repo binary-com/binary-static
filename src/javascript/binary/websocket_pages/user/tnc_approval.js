@@ -46,6 +46,7 @@ const TNCApproval = (function() {
                     if (response.error) {
                         $('#err_message').html(response.error.message).removeClass(hidden_class);
                     } else {
+                        BinarySocket.send({ get_settings: '1' }, true);
                         sessionStorage.setItem('check_tnc', 'checked');
                         redirectBack(redirect_anyway);
                         if (typeof onSuccess === 'function') {
