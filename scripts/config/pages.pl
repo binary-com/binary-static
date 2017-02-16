@@ -74,9 +74,9 @@ sub all_pages {
         ['paymentagent/transferws',      'cashier/paymentagent_transferws',           'default', 'Payment Agent Transfer'],
         ['paymentagent/withdrawws',      'cashier/paymentagent_withdrawws',           'default', 'Payment Agent Withdrawal'],
 
-        ['multi_barriers_trading', 'bet/mb_trading',  'default', 'Sharp Prices. Smart Trading.'],
-        ['trading',                'bet/static',      'default', 'Sharp Prices. Smart Trading.'],
-        ['trading_beta',           'bet/beta/static', 'default', 'Sharp Prices. Smart Trading.', 'ja'],
+        ['multi_barriers_trading', 'bet/mb_trading',  'default', 'Trusted by traders since 2000'],
+        ['trading',                'bet/static',      'default', 'Trusted by traders since 2000'],
+        ['trading_beta',           'bet/beta/static', 'default', 'Trusted by traders since 2000', 'ja'],
 
         ['new_account/japanws',          'new_account/japanws',         'default', 'Real Money Account Opening', 'NOT-ja,en'],
         ['new_account/knowledge_testws', 'japan/knowledge_test',        'default', 'Real Money Account Opening', 'NOT-ja,en'],

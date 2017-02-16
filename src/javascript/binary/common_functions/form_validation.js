@@ -17,7 +17,7 @@ const Validation = (function() {
         $field.length ? ($field.attr('type') === 'checkbox' ? 'checkbox' : $field.get(0).localName) : null
     );
 
-    const getFieldValue = $field => (getFieldType($field) === 'checkbox' ? ($field.is(':checked') ? '1' : '') : $field.val()) || '';
+    const getFieldValue = field => (field.type === 'checkbox' ? (field.$.is(':checked') ? '1' : '') : field.$.val()) || '';
 
     const initForm = (form_selector, fields) => {
         const $form = $(`${form_selector}:visible`);
@@ -27,6 +27,7 @@ const Validation = (function() {
                 field.$ = $form.find(field.selector);
                 if (!field.$.length) return;
 
+                field.type = getFieldType(field.$);
                 field.form = form_selector;
                 if (field.msg_element) {
                     field.$error = $form.find(field.msg_element);
@@ -38,7 +39,7 @@ const Validation = (function() {
                     field.$error = $parent.find(`.${error_class}`);
                 }
 
-                const event = events_map[getFieldType(field.$)];
+                const event = events_map[field.type];
                 if (event) {
                     field.$.unbind(event).on(event, () => {
                         checkField(field);
@@ -51,7 +52,12 @@ const Validation = (function() {
     // ------------------------------
     // ----- Validation Methods -----
     // ------------------------------
-    const validRequired     = value => value.length;
+    const validRequired = (value, options, field) => {
+        if (value.length) return true;
+        // else
+        validators_map.req.message = field.type === 'checkbox' ? 'Please select the checkbox.' : 'This field is required.';
+        return false;
+    };
     const validEmail        = value => /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(value);
     const validPassword     = value => /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+/.test(value);
     const validLetterSymbol = value => !/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test(value);
@@ -88,7 +94,7 @@ const Validation = (function() {
     };
 
     const validators_map = {
-        req          : { func: validRequired,     message: 'This field is required.' },
+        req          : { func: validRequired,     message: '' },
         email        : { func: validEmail,        message: 'Invalid email address' },
         password     : { func: validPassword,     message: 'Password should have lower and uppercase letters with numbers.' },
         general      : { func: validGeneral,      message: 'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.' },
@@ -124,13 +130,13 @@ const Validation = (function() {
                 options = valid[1];
             }
 
-            if (type === 'password' && !validLength(getFieldValue(field.$), pass_length)) {
+            if (type === 'password' && !validLength(getFieldValue(field), pass_length)) {
                 field.is_ok = false;
                 type = 'length';
                 options = pass_length;
             } else {
                 const validator = validators_map[type].func;
-                field.is_ok = validator(getFieldValue(field.$), options, field.form);
+                field.is_ok = validator(getFieldValue(field), options, field);
             }
 
             if (!field.is_ok) {
