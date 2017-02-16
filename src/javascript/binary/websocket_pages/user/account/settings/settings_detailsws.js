@@ -22,7 +22,6 @@ const SettingsDetailsWS = (function() {
         place_of_birth_value;
 
     const init = function() {
-        isInitialized = true;
         isVirtual = Client.get('is_virtual');
         residence = Client.get('residence');
         isJP = residence === 'jp';
@@ -30,8 +29,14 @@ const SettingsDetailsWS = (function() {
             $('#fieldset_email_consent').removeClass('invisible');
             detect_hedging($('#trading_purpose'), $('.hedge'));
         }
+        showHideTaxMessage();
+    };
+
+    const showHideTaxMessage = () => {
         if (Client.should_complete_tax()) {
             $('#tax_information_notice').removeClass('invisible');
+        } else {
+            $('#tax_information_notice').addClass('invisible');
         }
     };
 
@@ -58,10 +63,13 @@ const SettingsDetailsWS = (function() {
         } else {
             $(RealAccElements).removeClass('hidden');
         }
-        $(formID)
-            .submit(handleSubmit)
-            .removeClass('hidden');
-        bindValidation();
+        if (!isInitialized) {
+            $(formID)
+                .submit(handleSubmit)
+                .removeClass('hidden');
+            bindValidation();
+            isInitialized = true;
+        }
     };
 
     const displayGetSettingsData = (data, populate = true) => {
@@ -189,8 +197,7 @@ const SettingsDetailsWS = (function() {
             if (Client.is_financial()) {
                 validations.push(
                     { selector: '#place_of_birth', validations: ['req'] },
-                    { selector: '#tax_residence',  validations: ['req'] },
-                );
+                    { selector: '#tax_residence',  validations: ['req'] });
                 tax_id_validation.validations[1][1].min = 1;
                 tax_id_validation.validations.unshift('req');
             }
@@ -212,16 +219,15 @@ const SettingsDetailsWS = (function() {
     const setDetailsResponse = function(response) {
         // allow user to resubmit the form on error.
         const is_error = response.set_settings !== 1;
-        // don't display the data again, but repopulate the editable_fields
         if (!is_error) {
-            const echo_req = response.echo_req;
-            displayGetSettingsData(echo_req, false);
-            if (Client.is_financial() && echo_req.tax_residence && echo_req.tax_identification_number) {
-                Client.set('has_tax_information', 1);
-                $('#tax_information_notice').addClass('invisible');
-            }
+            // to update tax information message for financial clients
+            BinarySocket.send({ get_account_status: 1 }, true).then(() => {
+                showHideTaxMessage();
+            });
             // to update the State with latest get_settings data
-            BinarySocket.send({ get_settings: '1' }, true);
+            BinarySocket.send({ get_settings: 1 }, true).then((data) => {
+                getDetailsResponse(data.get_settings);
+            });
         }
         showFormMessage(is_error ?
             'Sorry, an error occurred while processing your account.' :

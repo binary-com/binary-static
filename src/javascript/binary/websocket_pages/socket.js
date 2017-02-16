@@ -368,7 +368,6 @@ const BinarySocketClass = function() {
                 } else if (type === 'reality_check') {
                     RealityCheck.realityCheckWSHandler(response);
                 } else if (type === 'get_account_status' && response.get_account_status) {
-                    Client.set('values_set_account', 1);
                     if (response.get_account_status.risk_classification === 'high' && qualify_for_risk_classification()) {
                         send({ get_financial_assessment: 1 });
                     } else {
