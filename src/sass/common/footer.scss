@@ -14,6 +14,7 @@
         }
     }
     #footer-regulatory {
+        padding-top: 10px;
         a {
             display: inline-block;
             text-decoration: underline;
@@ -23,30 +24,18 @@
             text-align: justify;
             font-size: 10px;
         }
-        #social-networks {
-            padding-top: 20px;
-        }
         #iom_icon_footer {
             max-width: 90px;
         }
         #lga_icon_footer {
             max-width: 140px;
         }
-        #mfsa_logo {
-            max-width: 320px;
-            margin-top: 10px;
-        }
-        #mifid_logo {
-            max-width: 150px;
-            margin-top: 15px;
-        }
         .social-icons {
             @include BIDIR_VALUE (text-align, right, left);
             .social-network-icon {
                 width: 30px;
                 height: 30px;
-                padding-right: 5px;
-                padding-top: 10px;
+                padding-left: 5px;
             }
         }
         #ratelimit-error-message {

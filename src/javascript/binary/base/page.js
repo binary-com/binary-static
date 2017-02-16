@@ -1,3 +1,5 @@
+import OneSignal from '../../lib/onesignal';
+
 const Login             = require('./login').Login;
 const template          = require('./utility').template;
 const LocalStore        = require('./storage').LocalStore;
@@ -38,6 +40,9 @@ Page.prototype = {
         this.record_affiliate_exposure();
         Contents.on_load();
         if (State.get('is_loaded_by_pjax')) {
+            if (Client.should_redirect_tax()) {
+                return;
+            }
             this.show_authenticate_message();
             if (RealityCheckData.get('delay_reality_init')) {
                 RealityCheck.init();
@@ -60,6 +65,7 @@ Page.prototype = {
         this.endpoint_notification();
         BinarySocket.init();
         this.show_notification_outdated_browser();
+        OneSignal.checkSubscription();
     },
     on_unload: function() {
         Menu.on_unload();

@@ -1,142 +1,55 @@
 <div class="section-content section-2">
-  <div class="gr-12">
-    <h1>
-      [% l("Types of trades") %]
-    </h1>
-    <p>
-      [% l("Whatever your market view or strategy, [_1] provides you with the right trade to profit from your prediction. Choose from five ways to trade:", website_name) %]
-    </p>
-    <ul class="bullet">
-      <li>
-        [% l("Up/Down trades") %]
-      </li>
-      <li>
-        [% l("Touch/No touch trades") %]
-      </li>
-      <li>
-        [% l("In/Out trades") %]
-      </li>
-      <li class="ja-hide">
-        [% l("Asians") %]
-      </li>
-      <li class="ja-hide">
-        [% l("Digits") %]
-      </li>
-    </ul>
-  </div>
-  <div class="subsection">
-    <div class="gr-12">
-      <h2>
-        <a class="pjaxload" href="[% request.url_for('trading?market=forex&formname=risefall') %]">
-          [% l("Up/Down") %]
-        </a>
-      </h2>
-      <p class="ja-hide">
-        [% l("Choose Rise/Fall when you want to profit from the market rising or falling from its current level.") %]
-      </p>
-      <p>
-        [% l("Choose Higher/Lower when you want to profit from the market ending higher or lower than a price target.") %]
-      </p>
+    <div>
+        <h1>[% l("Types of trades") %]</h1>
+        <p>[% l("[_1] offers five main types of trades that will help you execute your market view or strategy:", website_name) %]</p>
+        <ul class="bullet">
+            <li>[% l("Up/Down") %]</li>
+            <li>[% l("Touch/No Touch") %]</li>
+            <li>[% l("In/Out") %]</li>
+            <li>[% l("Asians") %]</li>
+            <li>[% l("Digits") %]</li>
+        </ul>
+    </div>
+
+    <div class="subsection">
+        <h2><a class="pjaxload" href="[% request.url_for('trading?market=forex&formname=risefall') %]">[% l("Up/Down") %]</a></h2>
+        <p>[% l("There are two types of Up/Down trades:") %]</p>
+        <ol>
+            <li>[% l("Rise/Fall – Predict that the market will rise or fall from its current level") %]</li>
+            <li>[% l("Higher/Lower – Predict that the market will end higher or lower than a price target") %]</li>
+        </ol>
+    </div>
+
+    <div class="subsection">
+      <h2><a class="pjaxload" href="[% request.url_for('trading?market=forex&formname=touchnotouch') %]">[% l("Touch/No Touch") %]</a></h2>
+      <p>[% l("Choose the Touch/No Touch trade if you want to predict the market touching or not touching a target any time during the contract period.") %]</p>
+    </div>
+
+    <div class="subsection">
+      <h2><a class="pjaxload" href="[% request.url_for('trading?market=forex&formname=staysinout') %]">[% l("In/Out") %]</a></h2>
+      <p>[% l("There are two types of In/Out trades:") %]</p>
       <ol>
-        <li>
-          [% l("Choose the market, the time period, and how much you wish to win.") %]
-        </li>
-        <li>
-          [% l("Price the trade.") %]
-        </li>
-        <li>
-          [% l("Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a price target farther away from the current price.") %]
-        </li>
+        <li>[% l("Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period") %]</li>
+        <li>[% l("Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period") %]</li>
       </ol>
     </div>
-  </div>
-  <div class="subsection">
-    <div class="gr-12">
-      <h2>
-        <a class="pjaxload" href="[% request.url_for('trading?market=forex&formname=touchnotouch') %]">
-          [% l("Touch/No Touch") %]
-        </a>
-      </h2>
-      <p>
-        [% l("Choose Touch / No Touch when you want to profit from the market touching or not touching a target any time during the contract period.") %]
-      </p>
+
+    <div class="subsection">
+      <h2><a class="pjaxload" href="[% request.url_for('trading?market=volidx&formname=asian') %]">[% l("Asians") %]</a></h2>
+      <p>[% l("There are two ways to trade Asians:") %]</p>
       <ol>
-        <li>
-          [% l("Choose the market, the price target, the time period, and how much you wish to win.") %]
-        </li>
-        <li>
-          [% l("Price the trade.") %]
-        </li>
-        <li>
-          [% l("Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a 'Touch' trade, with a price target farther away from the current price.") %]
-        </li>
+        <li>[% l("Up - Predict that the market will end higher than the average price") %]</li>
+        <li>[% l("Down - Predict that the market will end lower than the average price") %]</li>
       </ol>
     </div>
-  </div>
-  <div class="subsection">
-    <div class="gr-12">
-      <h2>
-        <a class="pjaxload" href="[% request.url_for('trading?market=forex&formname=staysinout') %]">
-          [% l("In/Out") %]
-        </a>
-      </h2>
-      <p>
-        [% l("Choose Stays In/Out to profit from the market staying inside or going outside two price targets any time during the contract period.") %]
-      </p>
-      <p>
-        [% l("Choose Ends In/Out to profit from the market stopping inside or outside two price targets at the end of the time period.") %]
-      </p>
+
+    <div class="subsection">
+      <h2><a class="pjaxload" href="[% request.url_for('trading?market=volidx&formname=matchdiff') %]">[% l("Digits") %]</a></h2>
+      <p>[% l("Digits let you predict the last decimal digit of the spot price. There are three types of Digits trades:") %]</p>
       <ol>
-        <li>
-          [% l("Choose the market, the price targets, the time period, and how much you wish to win.") %]
-        </li>
-        <li>
-          [% l("Price the trade.") %]
-        </li>
-        <li>
-          [% l("Win 10-1000% on your stake if you are correct. Increase your winning return by choosing 'Stays In' with a narrow price target.") %]
-        </li>
+        <li>[% l("Matches/Differs - Predict that the last digit will match or not match") %]</li>
+        <li>[% l("Even/Odd - Predict that the last digit is even or odd after the last tick") %]</li>
+        <li>[% l("Over/Under - Predict that the last digit is higher or lower") %]</li>
       </ol>
     </div>
-  </div>
-  <div class="subsection ja-hide">
-    <div class="gr-12">
-      <h2>
-        <a class="pjaxload" href="[% request.url_for('trading?market=volidx&formname=asian') %]">
-          [% l("Asians") %]
-        </a>
-      </h2>
-      <p>
-        [% l("Choose Asian Rise/Fall when you want to profit from the market ending higher or lower than the average price.") %]
-      </p>
-      <ol>
-        <li>
-          [% l("'Asian Rise' - You win when the last tick is higher than the average of the ticks during the trade.") %]
-        </li>
-        <li>
-          [% l("'Asian Fall' - You win when the last tick is lower than the average of the ticks during the trade.") %]
-        </li>
-      </ol>
-    </div>
-  </div>
-  <div class="subsection ja-hide">
-    <div class="gr-12">
-      <h2>
-        <a class="pjaxload" href="[% request.url_for('trading?market=volidx&formname=matchdiff') %]">
-          [% l("Digits") %]
-        </a>
-      </h2>
-      <p>
-        [% l("Choose digit if you want to profit from predicting the last decimal digit of the spot.") %]
-      </p>
-      <ol>
-        <li>
-          [% l("'Matches' - You win when the last digit of the last tick matches your prediction.") %]
-        </li>
-        <li>
-          [% l("'Differs' - You win when the last digit of the last tick does not match your prediction.") %]
-        </li>
-      </ol>
-    </div>
-  </div>
 </div>

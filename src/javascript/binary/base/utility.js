@@ -3,8 +3,8 @@
  *
  * @param container: a jQuery object
  */
-function showLoadingImage(container) {
-    container.empty().append('<div class="barspinner dark"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div>');
+function showLoadingImage(container, theme = 'dark') {
+    container.empty().append(`<div class="barspinner ${theme}"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div>`);
 }
 
 /**
@@ -66,10 +66,24 @@ function objectNotEmpty(obj) {
     return !isEmpty;
 }
 
+function cloneObject(obj) {
+    return objectNotEmpty(obj) ? $.extend({}, obj) : obj;
+}
+
+function getPropertyValue(obj, keys) {
+    if (!Array.isArray(keys)) keys = [keys];
+    if (objectNotEmpty(obj) && keys[0] in obj && keys && keys.length > 1) {
+        return getPropertyValue(obj[keys[0]], keys.slice(1));
+    }
+    // else return clone of object to avoid overwriting data
+    return obj ? cloneObject(obj[keys[0]]) : undefined;
+}
+
 module.exports = {
     showLoadingImage  : showLoadingImage,
     get_highest_zindex: get_highest_zindex,
     downloadCSV       : downloadCSV,
     template          : template,
     objectNotEmpty    : objectNotEmpty,
+    getPropertyValue  : getPropertyValue,
 };

@@ -10,6 +10,7 @@ const appendTextValueChild = require('../common_functions/common_functions').app
 const Cookies              = require('../../lib/js-cookie');
 const moment               = require('moment');
 const elementInnerHtml     = require('../common_functions/common_functions').elementInnerHtml;
+require('select2');
 
 const displayAcctSettings = function(response) {
     const country = response.get_settings.country_code;
@@ -52,14 +53,14 @@ const toggleDisabled = (inputs, status) => {
 
 const show_residence_form = function() {
     const residenceForm = $('#residence-form');
-    const residenceDisabled = $('#residence');
-    residenceDisabled.insertAfter('#move-residence-here');
+    const $residence = $('#residence');
+    $residence.insertAfter('#move-residence-here');
     $('#error_residence').insertAfter('#residence');
-    residenceDisabled.removeAttr('disabled');
+    $residence.removeAttr('disabled');
     residenceForm.show();
     residenceForm.submit(function(evt) {
         evt.preventDefault();
-        const residence_value = residenceDisabled.val();
+        const residence_value = $residence.val();
         if (Validate.fieldNotEmpty(residence_value, document.getElementById('error_residence'))) {
             Client.set_cookie('residence', residence_value);
             Client.set('residence', residence_value);
@@ -81,10 +82,9 @@ const handleResidence = function() {
     generateBirthDate();
     BinarySocket.init({
         onmessage: function(msg) {
-            let select;
             const response = JSON.parse(msg.data),
                 type = response.msg_type,
-                residenceDisabled = $('#residence');
+                $residence = $('#residence');
             if (type === 'set_settings') {
                 const errorElement = document.getElementById('error_residence');
                 if (response.hasOwnProperty('error')) {
@@ -105,54 +105,76 @@ const handleResidence = function() {
                 } else if (!$('#real-form').is(':visible')) {
                     BinarySocket.send({ residence_list: 1 });
                     $('#residence-form').hide();
-                    residenceDisabled.insertAfter('#move-residence-back');
+                    $residence.insertAfter('#move-residence-back');
                     $('#error_residence').insertAfter('#residence');
-                    residenceDisabled.attr('disabled', 'disabled');
+                    $residence.attr('disabled', 'disabled');
                     generateState();
                     $('#real-form').show();
                 }
             } else if (type === 'states_list') {
-                select = $('#address_state');
+                let $address_state = $('#address_state');
                 const states = response.states_list;
 
-                select.empty();
+                $address_state.empty();
 
                 if (states && states.length > 0) {
                     states.forEach(function(state) {
-                        select.append($('<option/>', { value: state.value, text: state.text }));
+                        $address_state.append($('<option/>', { value: state.value, text: state.text }));
                     });
                 } else {
-                    select.replaceWith($('<input/>', { id: 'address_state', name: 'address_state', type: 'text', maxlength: '35', class: 'form_input' }));
+                    $address_state.replaceWith($('<input/>', { id: 'address_state', name: 'address_state', type: 'text', maxlength: '35', class: 'form_input' }));
+                    $address_state = $('#address_state');
                 }
-                $('#address_state').parent().parent().show();
+                $address_state.parent().parent().show();
                 if (window.state) {
-                    $('#address_state').val(window.state);
+                    $address_state.val(window.state);
                 }
             } else if (type === 'residence_list') {
-                select = document.getElementById('residence');
+                const obj_residence_el = {
+                    residence     : document.getElementById('residence'),
+                    place_of_birth: document.getElementById('place_of_birth'),
+                    tax_residence : document.getElementById('tax_residence'),
+                };
+                Object.keys(obj_residence_el).forEach(function (key) {
+                    if (obj_residence_el[key] === null || obj_residence_el[key].childElementCount !== 0) {
+                        delete obj_residence_el[key];
+                    }
+                });
+                if (obj_residence_el.length === 0) return;
                 const phoneElement   = document.getElementById('phone'),
                     residenceValue = Client.get('residence'),
                     residence_list = response.residence_list;
+                let text,
+                    value;
                 if (residence_list.length > 0) {
                     for (let j = 0; j < residence_list.length; j++) {
                         const residence = residence_list[j];
-                        if (select) {
-                            appendTextValueChild(select, residence.text, residence.value, residence.disabled ? 'disabled' : undefined);
-                        }
+                        text = residence.text;
+                        value = residence.value;
+                        appendIfExist(obj_residence_el, text, value, residence.disabled ? 'disabled' : undefined);
+
                         if (residenceValue !== 'jp' && phoneElement && phoneElement.value === '' && residence.phone_idd && residenceValue === residence.value) {
                             phoneElement.value = '+' + residence.phone_idd;
                         }
                     }
-                    if (residenceValue && select) {
-                        select.value = residenceValue;
+                    if (obj_residence_el.tax_residence) {
+                        $('#tax_residence').select2()
+                            .removeClass('invisible');
+                    }
+                    if (residenceValue) {
+                        if (obj_residence_el.residence) {
+                            obj_residence_el.residence.value = residenceValue;
+                        }
+                        if (obj_residence_el.place_of_birth) {
+                            obj_residence_el.place_of_birth.value = residenceValue || '';
+                        }
                     }
                     if (document.getElementById('virtual-form')) {
                         BinarySocket.send({ website_status: 1 });
                     }
                 }
             } else if (type === 'website_status') {
-                const status  = response.website_status,
-                    $residence = $('#residence');
+                const status  = response.website_status;
                 if (status && status.clients_country) {
                     const clientCountry = $residence.find('option[value="' + status.clients_country + '"]');
                     if (!clientCountry.attr('disabled')) {
@@ -181,6 +203,16 @@ const handleResidence = function() {
                 });
             }
         },
+    });
+};
+
+const appendIfExist = (object_el, text, value, disabled) => {
+    let object_el_key;
+    Object.keys(object_el).forEach(function(key) {
+        object_el_key = object_el[key];
+        if (object_el_key) {
+            appendTextValueChild(object_el_key, text, value, disabled && key === 'residence' ? disabled : undefined);
+        }
     });
 };
 
@@ -226,7 +258,9 @@ const checkRequiredInputs = (elementObj, errorObj, optional_fields) => {
                 window.accountErrorCounter++;
             }
             if (elementObj[key].type === 'checkbox' && !elementObj[key].checked) {
-                errorObj[key].innerHTML = Content.errorMessage('req');
+                const param = { field_type: 'checkbox' };
+                if (key === 'tnc') param.for = 'tnc';
+                errorObj[key].innerHTML = Content.errorMessage('req', param);
                 Validate.displayErrorMessage(errorObj[key]);
                 window.accountErrorCounter++;
             }

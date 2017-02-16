@@ -101,13 +101,13 @@
                                </li>
                                <li class='ja-hide'>
                                    <a class="pjaxload"
-                                      href="[% request.url_for('/terms-and-conditions') %]#privacy-tab"[% IF
+                                      href="[% request.url_for('/terms-and-conditions') %]?#privacy"[% IF
                                    target
                                    %] target="[% target %]"[% END %]>[% l('Security and Privacy') %]</a>
                                </li>
                                <li class='hidden ja-show-block'>
                                    <a class="pjaxload"
-                                      href="[% request.url_for('/terms-and-conditions-jp?selected_tab=privacy-tab') %]"[% IF
+                                      href="[% request.url_for('/terms-and-conditions-jp') %]?#account-privacy"[% IF
                                    target
                                    %] target="[% target %]"[% END %]>[% l('Security and Privacy') %]</a>
                                </li>
@@ -115,7 +115,7 @@
                                    <a class="pjaxload" href="[% request.url_for('responsible-trading') %]">[% l('Responsible Trading') %]</a>
                                </li>
                                <li class="ja-hide">
-                                   <a class="pjaxload" href="[% request.url_for('/terms-and-conditions?selected_tab=complaints-disputes-tac-tab') %]">[% l('Complaints') %]</a>
+                                   <a class="pjaxload" href="[% request.url_for('/terms-and-conditions?section=complaints-disputes') %]#legal-binary">[% l('Complaints') %]</a>
                                </li>
                            </ul>
                        </div>
@@ -162,42 +162,24 @@
     </div>
     <div id="footer-regulatory" class="primary-color-dark">
         <div class="container">
-            <div>
-                <div class="gr-padding-10">
-                    <div class="gr-parent">
-                        <div class="gr-row ja-hide id-hide">
-                            <div class="gr-2">
-                                <a href="http://www.gov.im/gambling/" target="_blank">
-                                    <img id="iom_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]"/>
-                                </a>
-                            </div>
-                            <div class="gr-2 center-text">
-                                <a href="https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1" target="_blank">
-                                    <img id="lga_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/mga-logo-footer.svg') %]"/>
-                                </a>
-                            </div>
-                            <div class="gr-6 center-text">
-                                <a href="http://mfsa.com.mt/" target="_blank">
-                                    <img id="mfsa_logo" class="responsive" src="[% request.url_for('images/pages/footer/mfsa-logo.svg') %]"/>
-                                </a>
-                            </div>
-                            <div class="gr-2">
-                                <a href="http://mfsa.com.mt/" target="_blank">
-                                    <img id="mifid_logo" class="responsive" src="[% request.url_for('images/pages/footer/mifid-logo.svg') %]"/>
-                                </a>
-                            </div>
+            <div class="gr-row">
+                <div id="regulatory-text" class="gr-9 gr-12-m gr-7-p gr-padding-10 gr-parent content-inverse-color">
+                    [% l("This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='[_1]' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='[_2]' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495") %]
+                </div>
+                <div class="ja-hide gr-3 gr-12-m gr-5-p center-text" id="social-networks">
+                    <div class="gr-row ja-hide id-hide">
+                        <div class="gr-5">
+                            <a href="http://www.gov.im/gambling/" target="_blank">
+                                <img id="iom_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]"/>
+                            </a>
+                        </div>
+                        <div class="gr-7">
+                            <a href="https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1" target="_blank">
+                                <img id="lga_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/mga-logo-footer.svg') %]"/>
+                            </a>
                         </div>
                     </div>
-                    <div class="gr-parent">
-                        <div class="gr-row">
-                            <div id="regulatory-text" class="gr-9 gr-12-m gr-7-p content-inverse-color">
-                                [% l("This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='[_1]' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='[_2]' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495") %]
-                            </div>
-                            <div class="ja-hide gr-3 gr-12-m gr-5-p" id="social-networks">
-                                [% INCLUDE global/social.html.tt %]
-                            </div>
-                        </div>
-                    </div>
+                    [% INCLUDE global/social.html.tt %]
                 </div>
             </div>
         </div>

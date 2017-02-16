@@ -36,6 +36,30 @@ msgstr ""
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr ""
 
+msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
+msgstr ""
+
+msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+msgstr ""
+
+msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+msgstr ""
+
+msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+msgstr ""
+
+msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+msgstr ""
+
+msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+msgstr ""
+
+msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+msgstr ""
+
+msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
+msgstr ""
+
 msgid "%1 (Toll Free)"
 msgstr ""
 
@@ -96,9 +120,6 @@ msgstr ""
 msgid "%1 has updated its  <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
 msgstr ""
 
-msgid "%1 has updated its %2. By clicking OK, you confirm that you have read and accepted the updated %2."
-msgstr ""
-
 msgid "%1 has updated its <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
 msgstr ""
 
@@ -108,7 +129,7 @@ msgstr ""
 msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr ""
 
-msgid "%1 is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
+msgid "%1 is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
 msgstr ""
 
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
@@ -141,9 +162,6 @@ msgstr ""
 msgid "%1 is seeking several highly skilled Marketing Executives, eager to contribute their energy, passion, and specialised strengths in connecting with prospects and clients based throughout the globe."
 msgstr ""
 
-msgid "%1 is tailored to traders of all levels."
-msgstr ""
-
 msgid "%1 is the award-winning industry pioneer in online options trading."
 msgstr ""
 
@@ -168,7 +186,7 @@ msgstr ""
 msgid "%1 offers a virtual-money account so you can get the hang of trading binaries. Why not <a class='pjaxload' href='%2'>open a free $10k fully-functional virtual-money account</a>, and start learning how to trade."
 msgstr ""
 
-msgid "%1 offers five ways to trade your chosen asset:"
+msgid "%1 offers five main types of trades that will help you execute your market view or strategy:"
 msgstr ""
 
 msgid "%1 offers new ways to trade"
@@ -177,10 +195,10 @@ msgstr ""
 msgid "%1 offers the world's financial markets in a simple, user-friendly platform."
 msgstr ""
 
-msgid "%1 opens an office in the QSentral office building in central Kuala Lumpur to further expand its IT development team."
+msgid "%1 offers you four ways to trade a particular asset:"
 msgstr ""
 
-msgid "%1 prices are benchmarked against the interbank options market, so you always get best-in-class prices for your trades."
+msgid "%1 opens an office in the QSentral office building in central Kuala Lumpur to further expand its IT development team."
 msgstr ""
 
 msgid "%1 provides business partnership services via the following programs."
@@ -234,14 +252,10 @@ msgstr ""
 msgid "%1's Smart FX are smart markets that measure the value of a currency against a basket of major currencies."
 msgstr ""
 
-msgid ""
-"%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much\n"
-"                    less investment than would be required in the live market."
+msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
 msgstr ""
 
-msgid ""
-"%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are\n"
-"                    closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
+msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
 msgstr ""
 
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
@@ -260,9 +274,6 @@ msgid "%1's systems are now processing in excess of 1 million transactions/day (
 msgstr ""
 
 msgid "%1’s charitable initiative focuses on small charities and nonprofits around the world that are making a positive difference in their local communities. Our donations have a direct impact, free from the burden of overheads seen in larger charities."
-msgstr ""
-
-msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr ""
 
 msgid "&#36;100,000 - &#36;250,000"
@@ -295,12 +306,6 @@ msgstr ""
 msgid "'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls."
 msgstr ""
 
-msgid "'Asian Fall' - You win when the last tick is lower than the average of the ticks during the trade."
-msgstr ""
-
-msgid "'Asian Rise' - You win when the last tick is higher than the average of the ticks during the trade."
-msgstr ""
-
 msgid "'Best Customer Communication Firm' award by Investors Chronicle"
 msgstr ""
 
@@ -316,16 +321,7 @@ msgstr ""
 msgid "'Best Fixed-Odds Firm 2012' award by Global Banking and Finance Review"
 msgstr ""
 
-msgid "'Differs' - You win when the last digit of the last tick does not match your prediction."
-msgstr ""
-
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
-msgstr ""
-
-msgid "'Matches' - You win when the last digit of the last tick matches your prediction."
-msgstr ""
-
-msgid "(Bejing/CST -8 hours)"
 msgstr ""
 
 msgid "(One) Touch trades"
@@ -397,7 +393,7 @@ msgstr ""
 msgid "30-day turnover limit "
 msgstr ""
 
-msgid "4. Choose your Payout"
+msgid "4. Choose your Stake and Potential Return"
 msgstr ""
 
 msgid "40 transactions or more in the past 12 months"
@@ -471,9 +467,6 @@ msgid ""
 "    </ul>"
 msgstr ""
 
-msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
-msgstr ""
-
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr ""
 
@@ -489,7 +482,7 @@ msgstr ""
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr ""
 
-msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
+msgid "<strong>All markets and conditions</strong> - Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets"
 msgstr ""
 
 msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
@@ -507,19 +500,10 @@ msgstr ""
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr ""
 
-msgid "<strong>Benchmarked prices</strong> - %1 benchmarks its prices daily against inter-bank derivatives markets."
+msgid "<strong>Available 24/7</strong> - Trade when you want. %1 is available 24/7, even on weekends"
 msgstr ""
 
 msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
-msgstr ""
-
-msgid "<strong>Commodities</strong> - trade major commodities such as gold and oil."
-msgstr ""
-
-msgid "<strong>Currencies</strong> - trade all major FX pairs, around the clock."
-msgstr ""
-
-msgid "<strong>Currencies</strong> - trade all major FX pairs."
 msgstr ""
 
 msgid "<strong>Duties and Responsibilities:</strong>"
@@ -531,13 +515,10 @@ msgstr ""
 msgid "<strong>Extra revenue stream:</strong> You will have the potential to earn another level of income from our affiliate program."
 msgstr ""
 
-msgid "<strong>Falling markets</strong> - choose the falls trade, lower trade, one-touch trade with a low barrier, or no-touch trade with a high barrier."
+msgid "<strong>Flexible</strong> - Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy"
 msgstr ""
 
-msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
-msgstr ""
-
-msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
+msgid "<strong>Higher/Lower</strong> - Predict the market ending higher or lower than a price target."
 msgstr ""
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
@@ -546,121 +527,61 @@ msgstr ""
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the payment agents listed above. Each payment agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of payment agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and payment agents."
 msgstr ""
 
-msgid "<strong>In/Out</strong> - predict if the market will stay inside two price targets, or end between or outside them."
+msgid "<strong>In/Out</strong> - Predict the market staying inside or going outside two price targets."
 msgstr ""
 
-msgid "<strong>In/Out</strong> - where you can profit from the market staying inside, or going outside, two price targets."
-msgstr ""
-
-msgid "<strong>Instant access</strong> - open an account in minutes."
-msgstr ""
-
-msgid "<strong>Instant funding</strong> - open, fund, or withdraw from your account within minutes, 24 hours a day."
-msgstr ""
-
-msgid "<strong>Known risks</strong> - you know from the start what you will win or lose."
-msgstr ""
-
-msgid "<strong>Long-term action</strong> - choose trades with durations of up to 365 days."
+msgid "<strong>Instant access</strong> - Open an account and start trading in minutes. Deposits and withdrawals are also available 24/7"
 msgstr ""
 
 msgid "<strong>Long-term partnership:</strong> Your partnership with %1 could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide."
 msgstr ""
 
-msgid "<strong>Low minimum stakes</strong> - start trading with as little as $5."
-msgstr ""
-
-msgid "<strong>No surprises</strong> - no 'slippage', no 'margin calls', no getting 'stopped out', and no hidden fees or commissions."
-msgstr ""
-
-msgid "<strong>No surprises</strong> - you will never have margin calls, gap risk, slippage costs, hidden fees or commissions."
+msgid "<strong>Low minimum stakes</strong> - Deposit as little as USD 5 to start trading"
 msgstr ""
 
 msgid "<strong>Other Risks</strong>: There are other risks that relate to trading investment products and trading foreign currencies that cannot be described in detail in this document. Generally, however, securities, options and currency transactions involve exposure to a combination of the following risk factors: market risk, credit risk, settlement risk, liquidity risk, operational risk and legal risk. For example, there can be serious market disruptions if economic or political or other unforeseen events locally or overseas affect the market. In addition to these types of risk there may be other factors such as accounting and tax treatment issues that you should consider."
 msgstr ""
 
-msgid "<strong>Patented technology</strong> - %1 is the industry pioneer and holds patented pricing technology."
-msgstr ""
-
-msgid "<strong>Payment options</strong> - %1 offers many payment methods, such as credit/debit cards, bank wires, e-cash and e-wallets."
+msgid "<strong>Patented technology</strong> - Trade with the industry pioneer and holder of a patented pricing technology"
 msgstr ""
 
 msgid "<strong>Preferences:</strong>"
 msgstr ""
 
-msgid "<strong>Quiet markets</strong> - choose the no-touch trade, the stays-between trade, or the ends-between trade."
+msgid "<strong>Protect your profits</strong> - Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
 msgstr ""
 
 msgid "<strong>Requirements:</strong>"
 msgstr ""
 
-msgid "<strong>Rise/Fall</strong> - predict if the market will rise or fall from its current level."
+msgid "<strong>Rise/Fall</strong> - Predict the market rising or falling from its current level."
 msgstr ""
 
-msgid "<strong>Rise/Fall</strong> - where you can profit from the market rising or falling from its current level."
+msgid "<strong>Scalable</strong> - Earn the same proportional return on stakes of all values"
 msgstr ""
 
-msgid "<strong>Rising markets</strong> - choose the rise trade, higher trade, one-touch trade with a high barrier, or no-touch trade with a low barrier."
+msgid "<strong>Security and privacy</strong> - Trade confidently, knowing that your personal data, transactions, and funds are always secure"
 msgstr ""
 
-msgid "<strong>Scalable trading</strong> - win the same proportional return on stakes of all values."
+msgid "<strong>Sharp, benchmarked prices</strong> - Benefit from the same rates of return as interbank traders. Our prices are benchmarked daily against the interbank options markets."
 msgstr ""
 
-msgid "<strong>Security</strong> - %1 ensures your personal data and transactions are always secure."
+msgid "<strong>Short to long-term durations</strong> - Choose timeframes from 10 seconds to 365 days"
 msgstr ""
 
-msgid "<strong>Set your probability of winning</strong> - choose trades with high returns and a low probability to win, or with low returns and a high probability to win."
+msgid "<strong>Simple and intuitive</strong> - Enjoy a trading platform that’s easy to navigate and use"
 msgstr ""
 
-msgid "<strong>Short to long-term</strong> - choose timeframes from 10 seconds to 365 days."
+msgid "<strong>Touch/No Touch</strong> - Predict the market touching or not touching a price target."
 msgstr ""
 
-msgid "<strong>Short-term action</strong> - choose intraday trades from 1 minute to 24 hours."
+msgid "<strong>Trade according to your preferred strategy</strong> - Trade based on \"gut feel\" or rely on technical and fundamental analysis"
 msgstr ""
 
-msgid "<strong>Stock Indices</strong> - trade all major worldwide stock indices."
+msgid "<strong>Transparent risk and potential reward</strong> - Know how much you will win or lose before you purchase the contract"
 msgstr ""
 
-msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices."
-msgstr ""
-
-msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
-msgstr ""
-
-msgid "<strong>Tax-free</strong> - binaries are licensed as a betting activity in the UK, so your winnings are tax-free."
-msgstr ""
-
-msgid "<strong>Touch/No Touch</strong> - predict if the market will touch or not touch a price target."
-msgstr ""
-
-msgid "<strong>Touch/No Touch</strong> - where you can profit from the market touching or not touching a target price."
-msgstr ""
-
-msgid "<strong>Trade to your budget</strong> - dip a toe in the water with $2 or go all out for $50,000."
-msgstr ""
-
-msgid "<strong>Trade to your strategy</strong> - set your trades on 'gut feel', or use technical or fundamental analysis."
-msgstr ""
-
-msgid "<strong>Trade when you want to trade</strong> - trade 24/7, even on weekends."
-msgstr ""
-
-msgid "<strong>Trade with confidence</strong> - get pricing that is normally reserved for big institutional players."
-msgstr ""
-
-msgid "<strong>Trade your way</strong> - customize your trades to meet your needs."
-msgstr ""
-
-msgid "<strong>Up to 100% returns on rise/fall trades</strong> - we challenge you to find better returns on any competing website."
-msgstr ""
-
-msgid "<strong>Volatile markets</strong> - choose the one-touch trade, the goes-outside trade, or the ends outside trade."
-msgstr ""
-
-msgid "<strong>Volatility Indices</strong> - trade %1's proprietary volatility indices."
-msgstr ""
-
-msgid "<strong>Volatility indices</strong> - trade %1's own volatility indices, 24/7."
+msgid "<strong>Two-way pricing</strong> - Receive quotes for a trade and counter-trade, so you always get unbiased, transparent rates from %1"
 msgstr ""
 
 msgid "<ul><li> Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>. </li><li> Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button. </li><li> Under the <strong>Cookies</strong> section, select the \"<strong>Don't block cookies</strong>\" option. </li><li> Click anywhere outside the menu to save and close. </li></ul>"
@@ -690,9 +611,7 @@ msgstr ""
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr ""
 
-msgid ""
-"A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier\n"
-"            or the low barrier at any time during the period chosen by a trader."
+msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
 msgstr ""
 
 msgid "A True Partnership"
@@ -842,6 +761,9 @@ msgstr ""
 msgid "Account Transfer"
 msgstr ""
 
+msgid "Account balance:"
+msgstr ""
+
 msgid "Account balance: "
 msgstr ""
 
@@ -956,6 +878,9 @@ msgstr ""
 msgid "All credit card details are submitted directly to the Visa/Mastercard network using the latest SSL encryption technology, in accordance with bank policies."
 msgstr ""
 
+msgid "All market conditions and durations"
+msgstr ""
+
 msgid "All markets are closed now. Please try again later."
 msgstr ""
 
@@ -989,9 +914,7 @@ msgstr ""
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr ""
 
-msgid ""
-"An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high\n"
-"            price target OR strictly lower than the low price target."
+msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
 msgstr ""
 
 msgid "An additional password can be used to restrict access to the cashier."
@@ -1001,9 +924,6 @@ msgid "An advanced university degree in Mathematics, Physics or Engineering"
 msgstr ""
 
 msgid "An assertive, sales-driven personality, able to adapt quickly and achieve powerful results"
-msgstr ""
-
-msgid "An error occured."
 msgstr ""
 
 msgid "Analyse and test the domains and subdomains listed in the scope."
@@ -1204,13 +1124,7 @@ msgstr ""
 msgid "Australia"
 msgstr ""
 
-msgid "Authenticate"
-msgstr ""
-
 msgid "Authentication"
-msgstr ""
-
-msgid "Authorise your account."
 msgstr ""
 
 msgid "Authorised Applications"
@@ -1232,6 +1146,9 @@ msgid "Available payment methods"
 msgstr ""
 
 msgid "Avoid the need to have an e-wallet"
+msgstr ""
+
+msgid "Award-winning online trading platform"
 msgstr ""
 
 msgid "Award-winning, patented financial trading platform"
@@ -1292,9 +1209,6 @@ msgid "Benefits"
 msgstr ""
 
 msgid "Benefits of being a Payment Agent"
-msgstr ""
-
-msgid "Benefits of binary trading"
 msgstr ""
 
 msgid "Benefits of trading binaries"
@@ -1423,9 +1337,6 @@ msgstr ""
 msgid "Binary Tick Trade App"
 msgstr ""
 
-msgid "Binary Trading is simple to learn and to execute."
-msgstr ""
-
 msgid "Binary Webtrader"
 msgstr ""
 
@@ -1438,9 +1349,7 @@ msgstr ""
 msgid "Binary option"
 msgstr ""
 
-msgid ""
-"Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your\n"
-"            initial stake."
+msgid "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your initial stake."
 msgstr ""
 
 msgid "Binary options basics"
@@ -1521,9 +1430,6 @@ msgstr ""
 msgid "Business Development"
 msgstr ""
 
-msgid "But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions."
-msgstr ""
-
 msgid "But we're picky. We only select people with special qualities: serious professionals, who have high moral standards, and thrive in an honest, collaborative environment."
 msgstr ""
 
@@ -1534,6 +1440,9 @@ msgid "Buy Price"
 msgstr ""
 
 msgid "Buy an App, or Build Your Own"
+msgstr ""
+
+msgid "Buy price"
 msgstr ""
 
 msgid "By clicking <strong>Accept</strong> below and proceeding with the Account Opening you should note that you may be exposing yourself to risks (which may be significant, including the risk of loss of the entire sum invested) that you may not have the knowledge and experience to properly assess or mitigate."
@@ -1576,6 +1485,9 @@ msgid "Can you customize a banner for my site?"
 msgstr ""
 
 msgid "Canada"
+msgstr ""
+
+msgid "Career opportunities for Americans"
 msgstr ""
 
 msgid "Careers"
@@ -1629,25 +1541,7 @@ msgstr ""
 msgid "Chief Executives, Senior Officials and Legislators"
 msgstr ""
 
-msgid "Choose Asian Rise/Fall when you want to profit from the market ending higher or lower than the average price."
-msgstr ""
-
-msgid "Choose Ends In/Out to profit from the market stopping inside or outside two price targets at the end of the time period."
-msgstr ""
-
-msgid "Choose Higher/Lower when you want to profit from the market ending higher or lower than a price target."
-msgstr ""
-
-msgid "Choose Rise/Fall when you want to profit from the market rising or falling from its current level."
-msgstr ""
-
 msgid "Choose Scopes:"
-msgstr ""
-
-msgid "Choose Stays In/Out to profit from the market staying inside or going outside two price targets any time during the contract period."
-msgstr ""
-
-msgid "Choose Touch / No Touch when you want to profit from the market touching or not touching a target any time during the contract period."
 msgstr ""
 
 msgid "Choose a Name:"
@@ -1659,46 +1553,25 @@ msgstr ""
 msgid "Choose a password"
 msgstr ""
 
+msgid "Choose a payout and our system will calculate the stake required to purchase the contract."
+msgstr ""
+
 msgid "Choose a payout from $1 to $50,000."
 msgstr ""
 
-msgid "Choose a trade type"
+msgid "Choose from five types of markets and their respective assets:"
 msgstr ""
 
-msgid "Choose digit if you want to profit from predicting the last decimal digit of the spot."
+msgid "Choose the Touch/No Touch trade if you want to predict the market touching or not touching a target any time during the contract period."
 msgstr ""
 
-msgid "Choose from over 1 million trades"
-msgstr ""
-
-msgid "Choose from over a million possible trades at any time."
-msgstr ""
-
-msgid "Choose the barrier(s)"
-msgstr ""
-
-msgid "Choose the duration"
-msgstr ""
-
-msgid "Choose the market, the price target, the time period, and how much you wish to win."
-msgstr ""
-
-msgid "Choose the market, the price targets, the time period, and how much you wish to win."
-msgstr ""
-
-msgid "Choose the market, the time period, and how much you wish to win."
+msgid "Choose the asset you wish to trade, such as gold, oil, stocks, or currency pairs. The value of a binary option is derived from the price of the underlying asset. One advantage of trading binary options is that you are not buying or selling the actual asset, only a contract that determines how that asset performs."
 msgstr ""
 
 msgid "Choose the payment method you'd like to use."
 msgstr ""
 
-msgid "Choose the payout"
-msgstr ""
-
 msgid "Choose the specific type of API token that you need, based on the capabilities that you wish to make available."
-msgstr ""
-
-msgid "Choose the underlying market"
 msgstr ""
 
 msgid "Choose your own strike."
@@ -1723,6 +1596,9 @@ msgid "Click here to retry"
 msgstr ""
 
 msgid "Client classification"
+msgstr ""
+
+msgid "Client funds"
 msgstr ""
 
 msgid "Client's Liability"
@@ -1803,6 +1679,9 @@ msgstr ""
 msgid "Commodities"
 msgstr ""
 
+msgid "Commodities - Major commodities such as gold and oil"
+msgstr ""
+
 msgid "Commodities are resources that are grown or extracted from the ground, such as silver, gold and oil. On %1, they are priced in US dollars."
 msgstr ""
 
@@ -1815,13 +1694,13 @@ msgstr ""
 msgid "Company addresses"
 msgstr ""
 
-msgid "Company trip to Phuket, Thailand"
-msgstr ""
-
 msgid "Company's Right"
 msgstr ""
 
 msgid "Compare all the trading platforms that we offer. Choose the ideal platform for your preferred trading strategy."
+msgstr ""
+
+msgid "Competitive and transparent pricing"
 msgstr ""
 
 msgid "Complaints"
@@ -1933,9 +1812,6 @@ msgid "Contract payouts shall be determined by the Company by reference to the d
 msgstr ""
 
 msgid "Contract period"
-msgstr ""
-
-msgid "Contract purchased with app ID"
 msgstr ""
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
@@ -2058,6 +1934,9 @@ msgstr ""
 msgid "Currencies"
 msgstr ""
 
+msgid "Currencies - All major Forex pairs"
+msgstr ""
+
 msgid "Currency"
 msgstr ""
 
@@ -2104,9 +1983,6 @@ msgid "Data Feed"
 msgstr ""
 
 msgid "Date"
-msgstr ""
-
-msgid "Date (GMT)"
 msgstr ""
 
 msgid "Date and Time"
@@ -2158,9 +2034,6 @@ msgid "Depending on the quality of the feeds received from our feed providers, o
 msgstr ""
 
 msgid "Deposit"
-msgstr ""
-
-msgid "Deposit %1 %2 virtual money into your account %3"
 msgstr ""
 
 msgid "Deposit Bonus"
@@ -2235,6 +2108,9 @@ msgstr ""
 msgid "Digits"
 msgstr ""
 
+msgid "Digits let you predict the last decimal digit of the spot price. There are three types of Digits trades:"
+msgstr ""
+
 msgid "Director"
 msgstr ""
 
@@ -2280,9 +2156,6 @@ msgstr ""
 msgid "Do you want to learn more about the markets and how to trade them? Check out the resources below."
 msgstr ""
 
-msgid "Do you want to lock in profits?"
-msgstr ""
-
 msgid "Do you want to see Binary.com in other languages, or can you suggest improvements to our current translations?"
 msgstr ""
 
@@ -2292,7 +2165,13 @@ msgstr ""
 msgid "Document department processes, to enhance the marketing team's ability to execute repeated tasks efficiently and effectively"
 msgstr ""
 
+msgid "Does Not Touch"
+msgstr ""
+
 msgid "Dormant and Inactive Accounts"
+msgstr ""
+
+msgid "Down - Predict that the market will end lower than the average price"
 msgstr ""
 
 msgid "Download CSV"
@@ -2349,13 +2228,13 @@ msgstr ""
 msgid "Each binary option is a prediction on the future movement of an underlying market."
 msgstr ""
 
-msgid "Each binary trade is for a pre-determined payout amount. You win the payout if your prediction is correct."
-msgstr ""
-
 msgid "Each option transaction has a specified expiry time and date, known as the judgment time."
 msgstr ""
 
 msgid "Each party to this Agreement represents and warrants to the other that it has, and will retain throughout the term of this Agreement all right, title, and authority to enter into this Agreement, to grant to the other party the rights and licences granted in this Agreement, and to perform all of its obligations under this Agreement."
+msgstr ""
+
+msgid "Each trade comes with a pre-determined payout that you will see after adjusting each parameter. You’ll win the payout if your prediction is correct. If not, you will only lose your initial stake."
 msgstr ""
 
 msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
@@ -2433,6 +2312,9 @@ msgstr ""
 msgid "End time must be after start time."
 msgstr ""
 
+msgid "Ends Between"
+msgstr ""
+
 msgid "Ends Between/Ends Outside trades"
 msgstr ""
 
@@ -2440,6 +2322,12 @@ msgid "Ends In/Out"
 msgstr ""
 
 msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
+msgstr ""
+
+msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
+msgstr ""
+
+msgid "Ends Outside"
 msgstr ""
 
 msgid "Engage in data mining using SQL databases, R/S-Plus, OLAP and other analytical tools"
@@ -2506,6 +2394,9 @@ msgid "European Union residents with the exception of the UK, who wish to trade 
 msgstr ""
 
 msgid "Even/Odd"
+msgstr ""
+
+msgid "Even/Odd - Predict that the last digit is even or odd after the last tick"
 msgstr ""
 
 msgid "Even/Odd contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
@@ -2577,9 +2468,6 @@ msgstr ""
 msgid "Exercise exceptional client relationship management skills to prevent fraudulent activities in payments processing and business transactions."
 msgstr ""
 
-msgid "Exercise period"
-msgstr ""
-
 msgid "Exit Level"
 msgstr ""
 
@@ -2592,7 +2480,13 @@ msgstr ""
 msgid "Exit spot"
 msgstr ""
 
+msgid "Exit your trades before expiry"
+msgstr ""
+
 msgid "Expand our network of active affiliates in your local market. Contribute your energy, skills, and knowledge of the local business culture to help further our rapid rate of growth worldwide."
+msgstr ""
+
+msgid "Experience"
 msgstr ""
 
 msgid "Experience in an anti-fraud or risk management role"
@@ -2664,12 +2558,6 @@ msgstr ""
 msgid "Failed"
 msgstr ""
 
-msgid "Failed to reset password. %1, please retry."
-msgstr ""
-
-msgid "Failed to update trade description."
-msgstr ""
-
 msgid "False"
 msgstr ""
 
@@ -2709,6 +2597,9 @@ msgstr ""
 msgid "Filtering Stray Ticks"
 msgstr ""
 
+msgid "Final price"
+msgstr ""
+
 msgid "Finance"
 msgstr ""
 
@@ -2727,13 +2618,7 @@ msgstr ""
 msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr ""
 
-msgid "Financial Security"
-msgstr ""
-
 msgid "Financial asset"
-msgstr ""
-
-msgid "Financial rewards"
 msgstr ""
 
 msgid "Find the right trade for every market condition."
@@ -2758,9 +2643,6 @@ msgid "First-class client service."
 msgstr ""
 
 msgid "Firsthand knowledge of other cultures through direct experience"
-msgstr ""
-
-msgid "Flexibility"
 msgstr ""
 
 msgid "Flexible trades"
@@ -2814,9 +2696,6 @@ msgstr ""
 msgid "Forex, Volatility Indices"
 msgstr ""
 
-msgid "Format: yyyy-mm-dd (not required for virtual-money accounts)"
-msgstr ""
-
 msgid "Fr"
 msgstr ""
 
@@ -2848,9 +2727,6 @@ msgid "Friday"
 msgstr ""
 
 msgid "Fridays"
-msgstr ""
-
-msgid "From"
 msgstr ""
 
 msgid "Front-End (Javascript) Development"
@@ -2946,6 +2822,9 @@ msgstr ""
 msgid "Go with the leader"
 msgstr ""
 
+msgid "Goes Outside"
+msgstr ""
+
 msgid "Governing Laws and Jurisdiction"
 msgstr ""
 
@@ -2994,16 +2873,22 @@ msgstr ""
 msgid "High conversions and customer value"
 msgstr ""
 
-msgid "High returns"
+msgid "Higher"
 msgstr ""
 
 msgid "Higher/Lower"
+msgstr ""
+
+msgid "Higher/Lower - Predict if the market will end higher or lower than a target price"
 msgstr ""
 
 msgid "Higher/Lower contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr ""
 
 msgid "Higher/Lower trades"
+msgstr ""
+
+msgid "Higher/Lower – Predict that the market will end higher or lower than a price target"
 msgstr ""
 
 msgid "Hone your security testing skills."
@@ -3036,13 +2921,10 @@ msgstr ""
 msgid "How does it work?"
 msgstr ""
 
-msgid "How safe is my money with %1?"
-msgstr ""
-
 msgid "How soon can I start trading?"
 msgstr ""
 
-msgid "How to trade binaries?"
+msgid "How to trade binary options?"
 msgstr ""
 
 msgid "How to trade spreads?"
@@ -3099,7 +2981,10 @@ msgstr ""
 msgid "Ideal Users"
 msgstr ""
 
-msgid "Ideal for both pros and novices"
+msgid "Ideal for beginners and experienced traders"
+msgstr ""
+
+msgid "Ideas"
 msgstr ""
 
 msgid "If a customer holds a long position and the prediction goes wrong as of the judgment time, the invested principal amount will become zero value."
@@ -3156,9 +3041,6 @@ msgstr ""
 msgid "If you choose to enter into a Contract with us, it is important that you remain aware of the risks involved, that you have adequate investment resources to bear such risks and that you monitor your positions carefully."
 msgstr ""
 
-msgid "If you do, no worries. With Binary.com, you can sell your trades before expiry to lock in profits. There's no need to wait until the end time."
-msgstr ""
-
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
 msgstr ""
 
@@ -3172,9 +3054,6 @@ msgid "If you introduce our website to potential clients, you will eventually st
 msgstr ""
 
 msgid "If you meet our basic requirements, we'll send you a talent test."
-msgstr ""
-
-msgid "If you need assistance feel free to contact our %1Customer Support"
 msgstr ""
 
 msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
@@ -3318,9 +3197,7 @@ msgstr ""
 msgid "In classic Silicon Valley style, Hong Kong based hedge fund manager and entrepreneur, Jean-Yves Sireau, starts Regent Markets in his Hong Kong bedroom. He develops the systems, methods and algorithms for implementing a fixed-odds financial betting system. Jean-Yves's vision is to create a market in the simplest of all derivatives contracts - the fixed-odds bet - and to offer ordinary investors the chance to make small bets. Until his innovation, binary options are normally only traded in large quantities."
 msgstr ""
 
-msgid ""
-"In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro\n"
-"            will rise in relation to the value of the US dollar."
+msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
 msgstr ""
 
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
@@ -3374,6 +3251,9 @@ msgstr ""
 msgid "In/Out (ends between/outside and stays between/goes outside)"
 msgstr ""
 
+msgid "In/Out - Predict if the market will stay between or outside two target prices"
+msgstr ""
+
 msgid "In/Out trades"
 msgstr ""
 
@@ -3393,6 +3273,9 @@ msgid "Indicative"
 msgstr ""
 
 msgid "Indices"
+msgstr ""
+
+msgid "Indices - All major worldwide stock indices sourced from the over-the-counter market"
 msgstr ""
 
 msgid "Indices trading experience"
@@ -3456,12 +3339,6 @@ msgid "Invalid amount, maximum is"
 msgstr ""
 
 msgid "Invalid amount, minimum is"
-msgstr ""
-
-msgid "Invalid date of birth."
-msgstr ""
-
-msgid "Invalid email address"
 msgstr ""
 
 msgid "Investigate and reproduce client-reported issues"
@@ -4007,9 +3884,6 @@ msgstr ""
 msgid "July"
 msgstr ""
 
-msgid "Jump To"
-msgstr ""
-
 msgid "Jun"
 msgstr ""
 
@@ -4023,6 +3897,15 @@ msgid "Keep track of your authorised connections."
 msgstr ""
 
 msgid "Key facts"
+msgstr ""
+
+msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
+msgstr ""
+
+msgid "Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account."
+msgstr ""
+
+msgid "Know what you stand to win or lose"
 msgstr ""
 
 msgid "Knowledge and experience in the financial services industry"
@@ -4079,7 +3962,7 @@ msgstr ""
 msgid "Learn more about our corporate culture"
 msgstr ""
 
-msgid "Learn more about spreads on binary.com."
+msgid "Learn more about spreads on %1."
 msgstr ""
 
 msgid "Learn the basics, from choosing your asset to winning your payout."
@@ -4124,7 +4007,13 @@ msgstr ""
 msgid "Liaise with banks and payment providers"
 msgstr ""
 
+msgid "Licensed and regulated"
+msgstr ""
+
 msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan"
+msgstr ""
+
+msgid "Licensed, trusted, and secure"
 msgstr ""
 
 msgid "Life-long career interest in the Accounting field"
@@ -4190,6 +4079,9 @@ msgstr ""
 msgid "Long-term partnership with the leading financial trading service"
 msgstr ""
 
+msgid "Looking for a new and exciting career in a country that's modern, diverse and tolerant? Binary.com is one of the world's most progressive companies, with offices in Asia and Europe."
+msgstr ""
+
 msgid "Loss"
 msgstr ""
 
@@ -4203,6 +4095,9 @@ msgid "Low barrier"
 msgstr ""
 
 msgid "Low barrier offset"
+msgstr ""
+
+msgid "Lower"
 msgstr ""
 
 msgid "MENA FFXPO Award"
@@ -4293,6 +4188,9 @@ msgid "Marketing and Promotion"
 msgstr ""
 
 msgid "Matches/Differs"
+msgstr ""
+
+msgid "Matches/Differs - Predict that the last digit will match or not match"
 msgstr ""
 
 msgid "Max:"
@@ -4442,9 +4340,6 @@ msgstr ""
 msgid "Multiple Charts"
 msgstr ""
 
-msgid "My Account"
-msgstr ""
-
 msgid "Name"
 msgstr ""
 
@@ -4502,9 +4397,6 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-msgid "Next Day"
-msgstr ""
-
 msgid "Next-Gen"
 msgstr ""
 
@@ -4515,9 +4407,6 @@ msgid "No Connections With Antisocial Forces"
 msgstr ""
 
 msgid "No Connections with Antisocial Forces"
-msgstr ""
-
-msgid "No Live price update"
 msgstr ""
 
 msgid "No Touch trades"
@@ -4536,9 +4425,6 @@ msgid "No fiduciary duty"
 msgstr ""
 
 msgid "No hidden fees or commissions."
-msgstr ""
-
-msgid "No matter the market - rising or falling, quiet or volatile - you'll find a trade to suit your outlook."
 msgstr ""
 
 msgid "No open positions."
@@ -4602,6 +4488,9 @@ msgid "OTC Derivative (Option) Trading"
 msgstr ""
 
 msgid "OTC Indices and Stocks"
+msgstr ""
+
+msgid "OTC stocks - Blue-chip stock contracts sourced from the over-the-counter market"
 msgstr ""
 
 msgid "Occupation"
@@ -4766,10 +4655,13 @@ msgstr ""
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr ""
 
-msgid "Our headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas, and World Heritage sites. We also have two offices in Malaysia: our operational headquarters in the high-tech township of Cyberjaya, and a branch office at KL Sentral in the heart of the country’s capital, Kuala Lumpur."
+msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr ""
 
-msgid "Our information security policies are based on industry best practices in access control and business continuity."
+msgid "Our locations"
+msgstr ""
+
+msgid "Our prices are benchmarked against the interbank options market. You’ll receive fair and transparent pricing, whatever your position."
 msgstr ""
 
 msgid "Our services are provided on an execution only basis. We do not provide investment advice in relation to our products or services. We sometimes provide factual information or research recommendations about a market, information about transaction procedures and information about the potential risks involved and how those risks may be minimised. However, any decision to use our products or services is made by you."
@@ -4814,6 +4706,9 @@ msgstr ""
 msgid "Over/Under"
 msgstr ""
 
+msgid "Over/Under - Predict that the last digit is higher or lower"
+msgstr ""
+
 msgid "Over/Under contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr ""
 
@@ -4841,37 +4736,13 @@ msgstr ""
 msgid "Partners"
 msgstr ""
 
-msgid "Password"
-msgstr ""
-
 msgid "Password Reset"
-msgstr ""
-
-msgid "Password does not match."
-msgstr ""
-
-msgid "Password is moderate"
 msgstr ""
 
 msgid "Password is not strong enough."
 msgstr ""
 
-msgid "Password is strong"
-msgstr ""
-
-msgid "Password is very strong"
-msgstr ""
-
-msgid "Password is weak"
-msgstr ""
-
-msgid "Password must contains at least 1 digit, 1 uppercase letter and 1 lowercase letter."
-msgstr ""
-
 msgid "Password reset"
-msgstr ""
-
-msgid "Password score is: %1. Passing score is: 20."
 msgstr ""
 
 msgid "Password should have lower and uppercase letters with numbers."
@@ -4976,9 +4847,6 @@ msgstr ""
 msgid "Please choose which currency you would like to transact in."
 msgstr ""
 
-msgid "Please confirm the trade on your statement before proceeding."
-msgstr ""
-
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr ""
 
@@ -4988,16 +4856,10 @@ msgstr ""
 msgid "Please deposit before transfer to client."
 msgstr ""
 
-msgid "Please enter a date that is at least 6 months from now."
-msgstr ""
-
 msgid "Please enter a number between %1."
 msgstr ""
 
 msgid "Please enter a number between 0 and %1"
-msgstr ""
-
-msgid "Please enter a number greater or equal to %1."
 msgstr ""
 
 msgid "Please enter a number greater than 0"
@@ -5084,12 +4946,6 @@ msgstr ""
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr ""
 
-msgid "Please try again."
-msgstr ""
-
-msgid "Please wait.<br />Your request is being processed."
-msgstr ""
-
 msgid "Points"
 msgstr ""
 
@@ -5150,9 +5006,6 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-msgid "Previous Day"
-msgstr ""
-
 msgid "Previous experience in the financial services industry"
 msgstr ""
 
@@ -5171,16 +5024,7 @@ msgstr ""
 msgid "Price"
 msgstr ""
 
-msgid "Price the trade."
-msgstr ""
-
-msgid "Prices"
-msgstr ""
-
 msgid "Primary"
-msgstr ""
-
-msgid "Print chart"
 msgstr ""
 
 msgid "Prior knowledge and experience in Information Technology and/or Software Development"
@@ -5315,9 +5159,6 @@ msgstr ""
 msgid "Questions"
 msgstr ""
 
-msgid "Random"
-msgstr ""
-
 msgid "Re-enter password"
 msgstr ""
 
@@ -5357,9 +5198,6 @@ msgstr ""
 msgid "Reality Check Interval:"
 msgstr ""
 
-msgid "Reap the rewards of trading binaries, knowing your funds are always safe."
-msgstr ""
-
 msgid "Receive news and special offers"
 msgstr ""
 
@@ -5367,9 +5205,6 @@ msgid "Ref."
 msgstr ""
 
 msgid "Reference ID"
-msgstr ""
-
-msgid "Refresh page"
 msgstr ""
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
@@ -5525,10 +5360,16 @@ msgstr ""
 msgid "Rise/Fall"
 msgstr ""
 
+msgid "Rise/Fall - Predict if the market will rise or fall from its current level"
+msgstr ""
+
 msgid "Rise/Fall contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes, or (3) for contracts starting in the future, if there are no ticks in the 5 minutes before the contract's start time."
 msgstr ""
 
 msgid "Rise/Fall trades"
+msgstr ""
+
+msgid "Rise/Fall – Predict that the market will rise or fall from its current level"
 msgstr ""
 
 msgid "Risk Disclaimer"
@@ -5565,21 +5406,6 @@ msgid "Sale Price"
 msgstr ""
 
 msgid "Saturday"
-msgstr ""
-
-msgid "Save as CSV"
-msgstr ""
-
-msgid "Save as JPEG"
-msgstr ""
-
-msgid "Save as PDF"
-msgstr ""
-
-msgid "Save as PNG"
-msgstr ""
-
-msgid "Save as SVG"
 msgstr ""
 
 msgid "Scope and Intent"
@@ -5696,13 +5522,16 @@ msgstr ""
 msgid "Session duration:"
 msgstr ""
 
+msgid "Set barrier(s) to define your position and trigger the payout you will receive."
+msgstr ""
+
 msgid "Set client deposit and loss limits"
 msgstr ""
 
-msgid "Set up and manage social-media advertising campaigns, effectively micro-targeting potential clients and partners"
+msgid "Set the length of your trade, from 10 seconds to 365 days."
 msgstr ""
 
-msgid "Settings"
+msgid "Set up and manage social-media advertising campaigns, effectively micro-targeting potential clients and partners"
 msgstr ""
 
 msgid "Settles"
@@ -5745,9 +5574,6 @@ msgid "Sign out"
 msgstr ""
 
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
-msgstr ""
-
-msgid "Simplicity"
 msgstr ""
 
 msgid "Simply change any of your parameters and the trade price instantly changes, giving you real-time knowledge of your stake. %1 ensures fair and transparent pricing by showing you both sides of the trade."
@@ -5795,9 +5621,6 @@ msgstr ""
 msgid "Software (Perl) Development"
 msgstr ""
 
-msgid "Sorry, account opening is unavailable."
-msgstr ""
-
 msgid "Sorry, account signup is not available in your country. Please contact <a href=\"%1\">customer support</a> for more information."
 msgstr ""
 
@@ -5810,9 +5633,6 @@ msgstr ""
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr ""
 
-msgid "Sorry, this feature is not available."
-msgstr ""
-
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr ""
 
@@ -5823,6 +5643,9 @@ msgid "Spam - We do not condone Spam"
 msgstr ""
 
 msgid "Specific Instructions"
+msgstr ""
+
+msgid "Specify your payout, which is your potential return if your prediction is correct. Our system will proceed to calculate your stake, which is the total cost of purchasing the contract. %1 offers payouts from $1 to $50,000."
 msgstr ""
 
 msgid "Spot"
@@ -5844,9 +5667,6 @@ msgid "Stake"
 msgstr ""
 
 msgid "Start Time"
-msgstr ""
-
-msgid "Start Trading"
 msgstr ""
 
 msgid "Start from:"
@@ -5876,6 +5696,9 @@ msgstr ""
 msgid "Stay informed. %1 offers daily market reports and market research, as well as frequent trading webinars."
 msgstr ""
 
+msgid "Stays Between"
+msgstr ""
+
 msgid "Stays Between/Goes Outside trades"
 msgstr ""
 
@@ -5885,13 +5708,16 @@ msgstr ""
 msgid "Stays In/Goes Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr ""
 
+msgid "Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period"
+msgstr ""
+
 msgid "Step"
 msgstr ""
 
 msgid "Step 1: Define your position"
 msgstr ""
 
-msgid "Step 2: Get your trade price"
+msgid "Step 2: Get your contract price"
 msgstr ""
 
 msgid "Step 3: Make your trade"
@@ -5913,6 +5739,9 @@ msgid "Stop Profit Level"
 msgstr ""
 
 msgid "Stop-loss"
+msgstr ""
+
+msgid "Stop-profit"
 msgstr ""
 
 msgid "Stop-type"
@@ -5984,6 +5813,9 @@ msgstr ""
 msgid "Supplementary Terms and Conditions for Financial Products offered by Binary Investments (Europe) Ltd."
 msgstr ""
 
+msgid "Support"
+msgstr ""
+
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr ""
 
@@ -6003,6 +5835,9 @@ msgid "Tasked with writing robust, high-quality, production-ready code and contr
 msgstr ""
 
 msgid "Tasked with writing robust, high-quality, production-ready code as well as refactoring and optimizing a large and complex legacy code base."
+msgstr ""
+
+msgid "Teamwork"
 msgstr ""
 
 msgid "Tel"
@@ -6036,9 +5871,6 @@ msgid "Termination for Causes"
 msgstr ""
 
 msgid "Termination of this Agreement shall not prejudice any rights of any party which may have arisen on or before the date of termination."
-msgstr ""
-
-msgid "Terms & Conditions"
 msgstr ""
 
 msgid "Terms and Conditions"
@@ -6221,9 +6053,6 @@ msgstr ""
 msgid "The Company's Obligations"
 msgstr ""
 
-msgid "The Cyberview Lodge Resort in Cyberjaya"
-msgstr ""
-
 msgid "The Data Protection laws and regulations place obligations on users of personal data and lay down principles for fair and lawful processing of this information. We are committed to safeguarding your privacy online. We only use your personal information to help us service your account, to improve our services to you, and to provide you with products you have requested. We do not sell your personal information to third parties, but we may provide your personal information to payment providers to facilitate transactions on your account."
 msgstr ""
 
@@ -6306,9 +6135,6 @@ msgid "The average is the average of the ticks, including the first and the last
 msgstr ""
 
 msgid "The barrier of a binary option trade is the price target you set for the underlying. You can choose trades that stay below or go above a price target, or stay between two targets."
-msgstr ""
-
-msgid "The barrier(s) you choose defines your position and triggers your payout."
 msgstr ""
 
 msgid "The best promotional tools and robust online reporting"
@@ -6394,9 +6220,7 @@ msgstr ""
 msgid "The first step is to open an account. You can <a target='_blank' href='%1'>apply online</a> in just a few minutes."
 msgstr ""
 
-msgid ""
-"The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying\n"
-"            or selling the actual asset."
+msgid "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying or selling the actual asset."
 msgstr ""
 
 msgid "The first tick is the first tick after the contract is processed by our servers."
@@ -6483,24 +6307,31 @@ msgstr ""
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr ""
 
-msgid ""
-"The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try\n"
-"                out scenarios like - high volatility, low volatility, bullish and bearish trends."
+msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr ""
 
 msgid "Then, make your trade"
 msgstr ""
 
+msgid "There are four main trade types for you to choose from:"
+msgstr ""
+
 msgid "There are risks associated with utilizing an Internet-based deal execution trading system, including but not limited to the failure of hardware, software and Internet connection. Since %1 does not control signal power, its reception or routing via Internet, configuration of your equipment or reliability of its connection, we cannot be responsible for communication failures, distortions or delays when trading via the Internet."
+msgstr ""
+
+msgid "There are two types of In/Out trades:"
+msgstr ""
+
+msgid "There are two types of Up/Down trades:"
+msgstr ""
+
+msgid "There are two ways to trade Asians:"
 msgstr ""
 
 msgid "There was a problem accessing the server during purchase."
 msgstr ""
 
 msgid "There was a problem accessing the server."
-msgstr ""
-
-msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr ""
 
 msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
@@ -6575,15 +6406,6 @@ msgstr ""
 msgid "This bonus will be processed and credited to a client's account when:"
 msgstr ""
 
-msgid "This contract can not be traded in the final 2 minutes before settlement"
-msgstr ""
-
-msgid "This contract has LOST"
-msgstr ""
-
-msgid "This contract has WON"
-msgstr ""
-
 msgid "This contract lost"
 msgstr ""
 
@@ -6609,6 +6431,9 @@ msgid "This field is required."
 msgstr ""
 
 msgid "This is a staging server - For testing purposes only"
+msgstr ""
+
+msgid "This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset."
 msgstr ""
 
 msgid "This is another award we really savour. Trade2win is a portal for active traders seeking to profit from stocks, futures, options and forex, and these traders award us silver (we are just pipped for gold by Betfair). It means active traders worldwide rate our trading platform extremely highly."
@@ -6674,9 +6499,6 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-msgid "To"
-msgstr ""
-
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr ""
 
@@ -6728,10 +6550,13 @@ msgstr ""
 msgid "Touch/No Touch"
 msgstr ""
 
+msgid "Touch/No Touch - Predict if the market will touch or not touch a target price"
+msgstr ""
+
 msgid "Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr ""
 
-msgid "Touch/No touch trades"
+msgid "Touches"
 msgstr ""
 
 msgid "Tour"
@@ -6758,9 +6583,6 @@ msgstr ""
 msgid "Trade all major currencies, indices, stocks, and commodities."
 msgstr ""
 
-msgid "Trade all market conditions"
-msgstr ""
-
 msgid "Trade in the world's financial markets in a simple, user-friendly platform."
 msgstr ""
 
@@ -6770,10 +6592,13 @@ msgstr ""
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr ""
 
+msgid "Trade type"
+msgstr ""
+
 msgid "Trade with a powerful interface known as the global industry standard."
 msgstr ""
 
-msgid "Trade with ease with %1's wide range of deposit and withdrawal methods. Your funds will be segregated and held in AAA-rated banks."
+msgid "Trade with ease with %1's wide range of deposit and withdrawal methods. Your funds will be segregated and held in secure and licensed financial institutions."
 msgstr ""
 
 msgid "Trade your way"
@@ -6803,7 +6628,7 @@ msgstr ""
 msgid "Trading and Withdrawal Limits"
 msgstr ""
 
-msgid "Trading binaries is remarkably easy, and requires only 3 simple steps:"
+msgid "Trading binary options is relatively easy, and you can purchase a trade in only three simple steps."
 msgstr ""
 
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class=\"ja-hide\">Read about <a href=\"%1\" class=\"pjaxload\">Responsible Trading</a>.</span>"
@@ -6869,15 +6694,6 @@ msgstr ""
 msgid "Try Webtrader"
 msgstr ""
 
-msgid "Try adding more letters or numbers."
-msgstr ""
-
-msgid "Try adding more letters."
-msgstr ""
-
-msgid "Try adding more numbers."
-msgstr ""
-
 msgid "Try it now"
 msgstr ""
 
@@ -6929,6 +6745,9 @@ msgstr ""
 msgid "Underlying"
 msgstr ""
 
+msgid "Underlying market"
+msgstr ""
+
 msgid "Unemployed"
 msgstr ""
 
@@ -6950,10 +6769,10 @@ msgstr ""
 msgid "Unlock Cashier"
 msgstr ""
 
-msgid "Up/Down"
+msgid "Up - Predict that the market will end higher than the average price"
 msgstr ""
 
-msgid "Up/Down trades"
+msgid "Up/Down"
 msgstr ""
 
 msgid "Upcoming Events"
@@ -6999,9 +6818,6 @@ msgid "Using our website, customers can trade currencies, indices, stocks and co
 msgstr ""
 
 msgid "Utilise a variety of tactics - both online and offline - to grow and support the company's network of partners in your designated market"
-msgstr ""
-
-msgid "Valletta, the capital of Malta"
 msgstr ""
 
 msgid "Verification Token"
@@ -7076,6 +6892,9 @@ msgstr ""
 msgid "Volatility Indices are further categorized into two types:"
 msgstr ""
 
+msgid "Volatility indices - %1's proprietary indices that simulate market forces"
+msgstr ""
+
 msgid "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 msgstr ""
 
@@ -7127,16 +6946,10 @@ msgstr ""
 msgid "We are entitled under the Rules to rely upon information provided by you. You should ensure that you provide us with accurate and complete information and notify us in the event that any information supplied to us changes. You should note that if you provide us with inaccurate information, or if you fail to notify us of any changes to information previously supplied by you, this may adversely affect the quality of the services that we can provide."
 msgstr ""
 
-msgid "We are fully licensed in the British Isles and Malta."
+msgid "We are licensed and regulated in the British Isles, Japan, and in Malta since 2015."
 msgstr ""
 
 msgid "We are looking for energetic and enthusiastic individuals who love challenges, are detail-oriented and highly analytical to join our Internal Audit team."
-msgstr ""
-
-msgid "We are not able to stream live prices at the moment. To enjoy live streaming of prices try refreshing the page, if you get this issue after repeated attempts try a different browser"
-msgstr ""
-
-msgid "We are not accepting accounts from residents of this country at the present time."
 msgstr ""
 
 msgid "We are required by our licence to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency <a href='%1' target='_blank'>%1</a>."
@@ -7160,7 +6973,7 @@ msgstr ""
 msgid "We have a general duty to conduct our business with you honestly, fairly, and professionally and to act in your best interests when opening and closing Binary Options trades with you."
 msgstr ""
 
-msgid "We have a proven track record since starting in 2000."
+msgid "We have a proven track record since we launched our platform in 2000."
 msgstr ""
 
 msgid "We have a tested and proven selection of banners, links, reviews, newsletters, videos, and text ads for your use. Additionally, we have flash banners which you can grab through your affiliate account. If you would like customized tools, or an item currently not offered on the site, please contact your account manager at: <a href=\"mailto:%1\">%1</a>."
@@ -7178,7 +6991,7 @@ msgstr ""
 msgid "We may release subsequent versions of the %1 API and require that you use those subsequent versions. Your continued use of the APIs following a subsequent release will be deemed your acceptance of modifications."
 msgstr ""
 
-msgid "We offer a market-based remuneration structure, an annual cash bonus plan, health benefits for you and your family, travel and internet allowances, and company trips."
+msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you’re in Malta or Malaysia."
 msgstr ""
 
 msgid "We prohibit the use of unauthorised incentives, gifts and payments to encourage customer sign-ups. In the event that we believe that you have engaged in such activity, we reserve the right to withhold any amounts due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval."
@@ -7199,7 +7012,10 @@ msgstr ""
 msgid "We reserve the right to refuse your referrals' application to open an account (or to close their accounts), as deemed necessary, to comply with any requirements we may periodically establish and/or that may be required under applicable laws, rules, and regulations."
 msgstr ""
 
-msgid "We segregate and hold client funds in secure AAA-rated banks."
+msgid "We segregate all client funds and hold them in secure and licensed financial institutions, according to the conditions of our trading licenses."
+msgstr ""
+
+msgid "We segregate your funds and keep them in secure and licensed financial institutions."
 msgstr ""
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues."
@@ -7247,9 +7063,6 @@ msgstr ""
 msgid "Wednesday"
 msgstr ""
 
-msgid "Week of"
-msgstr ""
-
 msgid "Weekday"
 msgstr ""
 
@@ -7280,12 +7093,6 @@ msgstr ""
 msgid "What our clients are saying"
 msgstr ""
 
-msgid "Whatever your market view or strategy, %1 provides you with the right trade to profit from your prediction. Choose from five ways to trade:"
-msgstr ""
-
-msgid "When it's time to kick back, you'll find beautiful beaches, islands and mountains to explore, just a short flight away. From Malta, you'll have Europe, the Mediterranean and North Africa on your doorstep. And from Malaysia, you'll be within easy reach of some of Asia's most spectacular scenery."
-msgstr ""
-
 msgid "When the Affiliate's referred clients open an account with any member of the Binary group, we assume ownership of the database of names and contact information and any other data of the Affiliates' referred clients."
 msgstr ""
 
@@ -7295,13 +7102,10 @@ msgstr ""
 msgid "When we enter into Contracts with you, we will take all reasonable steps to achieve the best possible result for you by executing those Contracts according to our order execution policy and subject to any specific instructions received from you. Our order execution policy comprises a set of procedures that are designed to obtain the best possible execution result for you subject to and taking into account: (a) the nature of your Contracts, (b) the priorities you have identified to us in relation to entering into those Contracts, and (c) the practices relating to the market in question, with the aim of producing a result which provides, in our view, the best balance across a range of sometimes conflicting factors. Our policy cannot provide a guarantee, however, that when entering into Contracts with you, the price will always be better than one which is or might have been available elsewhere."
 msgstr ""
 
-msgid "When you are satisfied with the trade price, instantly execute your trade."
+msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr ""
 
 msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
-msgstr ""
-
-msgid "When you click 'Ok' you will be excluded from trading on the site until the selected date."
 msgstr ""
 
 msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
@@ -7325,6 +7129,9 @@ msgstr ""
 msgid "Where can I send my questions, comments and suggestions?"
 msgstr ""
 
+msgid "Where does %1 hold my funds?"
+msgstr ""
+
 msgid "Where new ideas trump safe, old ones. And you're free to work your way, free from hierarchies and red tape."
 msgstr ""
 
@@ -7337,13 +7144,13 @@ msgstr ""
 msgid "Where teamwork and a collaborative culture form the platform for personal and corporate growth."
 msgstr ""
 
-msgid "Where we are"
-msgstr ""
-
 msgid "Where we consider, on the basis of the information provided by you that you do not possess the knowledge and experience to appreciate the risks associated with an investment in the proposed instrument, we will issue a warning to you.  Such a warning shall be displayed on the website."
 msgstr ""
 
 msgid "Where we do not manage to obtain sufficient information to assess the appropriateness of the product or service for you, we will similarly inform you that we are not in a position to assess appropriateness."
+msgstr ""
+
+msgid "Where we're one big, multicultural family."
 msgstr ""
 
 msgid "Where you can go"
@@ -7355,16 +7162,10 @@ msgstr ""
 msgid "Where your experience, drive and talent can propel you in unknown directions. And you have the freedom to push into new frontiers."
 msgstr ""
 
-msgid "Whether in Malta or Malaysia, you'll enjoy a high standard of living, and your income will stretch further than in most western countries."
-msgstr ""
-
 msgid "Who can apply to be a Payment Agent?"
 msgstr ""
 
 msgid "Who can be a client on the %1 platform?"
-msgstr ""
-
-msgid "Who love working with people from different cultures, and are keen to contribute to a dynamic and unique workplace, and not merely pass on through."
 msgstr ""
 
 msgid "Why Choose Binary Trading?"
@@ -7397,16 +7198,10 @@ msgstr ""
 msgid "Why should I become an affiliate with %1?"
 msgstr ""
 
+msgid "Why trade with %1"
+msgstr ""
+
 msgid "Will I need to install any software?"
-msgstr ""
-
-msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing 'Stays In' with a narrow price target."
-msgstr ""
-
-msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a 'Touch' trade, with a price target farther away from the current price."
-msgstr ""
-
-msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a price target farther away from the current price."
 msgstr ""
 
 msgid "Windows, macOS, Linux"
@@ -7421,19 +7216,13 @@ msgstr ""
 msgid "With %1 you can trade:"
 msgstr ""
 
-msgid "With %1 you're in control of how much you can win. You specify a fixed payout amount at the outset, and your stake - what you pay - is then calculated. %1 offers payouts from $1 to $50,000."
+msgid "With %1, you can count on us to serve you with integrity and reliability."
 msgstr ""
 
-msgid "With %1's unique platform, there's no risk of 'slippage' or gapping markets. And no hidden fees."
+msgid "With %1, you can sell your contracts before expiry to keep any profits you may have made or to minimise your losses. You don’t have to wait until the actual expiration time."
 msgstr ""
 
-msgid "With %1, the most you can lose is the amount you stake at the start of your trade."
-msgstr ""
-
-msgid "With %1, you're in control. Simply fix your upside and your downside before every trade."
-msgstr ""
-
-msgid "With %1, your money is secure."
+msgid "With %1, you’ll know the risk and potential reward before you purchase a contract."
 msgstr ""
 
 msgid "With regards to tracking your referrals accessing %1 via the links on your website or by quoting your affiliate IDs during the sign-up process, the Company shall use all reasonable endeavours to ensure that whenever a client is referred to %1 through these links or affiliate IDs, and they subsequently place a contract or otherwise transact with the Company, the relevant client is identified as originating from your referral. However, the Company shall not be liable to you in any way if the Company is unable to identify a client as originating from your referral. Only properly tagged clients can be assigned to you. It is your responsibility to ensure that all links are properly tagged."
@@ -7449,9 +7238,6 @@ msgid "Withdraw: %1 working days"
 msgstr ""
 
 msgid "Withdraw: Not applicable"
-msgstr ""
-
-msgid "Withdrawal"
 msgstr ""
 
 msgid "Withdrawal Limits"
@@ -7547,12 +7333,6 @@ msgstr ""
 msgid "You can <a class='pjaxload' href='%1'>open an account</a>, deposit funds and begin trading within minutes."
 msgstr ""
 
-msgid "You can choose payouts from $1 to $50,000. This wide payout range is ideal for both small and large traders."
-msgstr ""
-
-msgid "You can close your trade before expiry to lock in profits."
-msgstr ""
-
 msgid "You can even build your own online trading sites, apps, and bots with our <a href=\"https://developers.binary.com\" target=\"_blank\">API and developer tools</a>."
 msgstr ""
 
@@ -7562,13 +7342,7 @@ msgstr ""
 msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
 msgstr ""
 
-msgid "You can sell back long-term trades at any time to profit from changing market conditions."
-msgstr ""
-
-msgid "You can set the length of your trade, from 10 seconds to 365 days."
-msgstr ""
-
-msgid "You can trade a range of markets, timescales and indices - 24/7."
+msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr ""
 
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
@@ -7581,9 +7355,6 @@ msgid "You do not have any connections."
 msgstr ""
 
 msgid "You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading."
-msgstr ""
-
-msgid "You get fair and transparent pricing, whatever your position."
 msgstr ""
 
 msgid "You have already withdrawn %1 %2."
@@ -7643,9 +7414,6 @@ msgstr ""
 msgid "You may withdraw the bonus amount once you have exceeded an account turnover of 25 times the bonus amount value."
 msgstr ""
 
-msgid "You must accept the terms and conditions to open an account."
-msgstr ""
-
 msgid "You must complete the knowledge test to activate this account. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgstr ""
 
@@ -7676,10 +7444,7 @@ msgstr ""
 msgid "You represent, warrant, and undertake that your website or promotion shall contain no material which is defamatory, pornographic, unlawful, harmful, threatening, obscene, harassing, or racially, ethnically, or otherwise objectionable or discriminatory, violent, politically sensitive, or otherwise controversial or in breach of any third party rights and shall not link to any such material."
 msgstr ""
 
-msgid "You risk only your initial stake, and your stake never increases, even in gapping markets."
-msgstr ""
-
-msgid "You set the barrier(s) to define your position."
+msgid "You risk only your initial stake, and your stake never increases."
 msgstr ""
 
 msgid "You shall avoid disclosure or unauthorized use of any confidential information that may come to your knowledge or possession to third persons or external parties."
@@ -7736,9 +7501,6 @@ msgstr ""
 msgid "You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgstr ""
 
-msgid "You will have no 'margin calls', no 'stops', and no surprises."
-msgstr ""
-
 msgid "You win the payout if the market price does not end in the digit you have selected."
 msgstr ""
 
@@ -7746,9 +7508,6 @@ msgid "You win the payout if the market price ends in the digit you have selecte
 msgstr ""
 
 msgid "You won't lose your shirt"
-msgstr ""
-
-msgid "You'll be surprised by the returns you can make."
 msgstr ""
 
 msgid "You're using a Virtual Account."
@@ -7799,9 +7558,6 @@ msgstr ""
 msgid "Your breach of any of %1's rights;"
 msgstr ""
 
-msgid "Your cashier is locked as per your request - to unlock it, please click %1here"
-msgstr ""
-
 msgid "Your cashier is locked as per your request - to unlock it, please click <a class=\"pjaxload\" href=\"%1\">here</a>."
 msgstr ""
 
@@ -7817,22 +7573,10 @@ msgstr ""
 msgid "Your clients will love the %1 trading platform because we offer a complete trading experience tailored to the needs of an exceptionally wide range of traders."
 msgstr ""
 
-msgid "Your current balance is"
-msgstr ""
-
-msgid "Your funds are safe"
-msgstr ""
-
-msgid "Your money is always safe with %1. At all times, it is held in segregated AAA-rated banks, which is a condition of our trading licenses."
-msgstr ""
-
 msgid "Your name, email address and contact number"
 msgstr ""
 
 msgid "Your password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it."
-msgstr ""
-
-msgid "Your password cannot be the same as your email"
 msgstr ""
 
 msgid "Your password has been changed. Please log in again."
@@ -7851,9 +7595,6 @@ msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully proces
 msgstr ""
 
 msgid "Your request to withdraw %1 %2 from your account %3 to Payment Agent %4 account has been successfully processed."
-msgstr ""
-
-msgid "Your risks are known"
 msgstr ""
 
 msgid "Your session duration limit will end in %1 seconds."
@@ -7887,9 +7628,6 @@ msgid "Your withdrawal limit is %1 %2 (or equivalent in other currency)."
 msgstr ""
 
 msgid "Your withdrawal limit is %1 %2."
-msgstr ""
-
-msgid "Zoom"
 msgstr ""
 
 msgid "a definite or indefinite period during which you wish to exclude yourself from the website."
@@ -7952,13 +7690,7 @@ msgstr ""
 msgid "email address"
 msgstr ""
 
-msgid "f"
-msgstr ""
-
 msgid "h"
-msgstr ""
-
-msgid "hour"
 msgstr ""
 
 msgid "hours"
@@ -7982,13 +7714,7 @@ msgstr ""
 msgid "letters"
 msgstr ""
 
-msgid "loading..."
-msgstr ""
-
 msgid "login"
-msgstr ""
-
-msgid "m"
 msgstr ""
 
 msgid "max: 100,000"
@@ -8001,12 +7727,6 @@ msgid "min: 1,000"
 msgstr ""
 
 msgid "minimum available duration"
-msgstr ""
-
-msgid "mins"
-msgstr ""
-
-msgid "minute"
 msgstr ""
 
 msgid "minutes"
@@ -8036,9 +7756,6 @@ msgstr ""
 msgid "points"
 msgstr ""
 
-msgid "second"
-msgstr ""
-
 msgid "seconds"
 msgstr ""
 
@@ -8061,9 +7778,6 @@ msgid "the platform is 100% web based making it instantly available for clients.
 msgstr ""
 
 msgid "the platform is user friendly and accessible to all levels of traders."
-msgstr ""
-
-msgid "ticks"
 msgstr ""
 
 msgid "to your account."
@@ -8120,37 +7834,10 @@ msgstr ""
 msgid "{JAPAN ONLY}#1 Sales Division"
 msgstr ""
 
-msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
-msgstr ""
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-msgstr ""
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr ""
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgstr ""
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-msgstr ""
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-msgstr ""
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-msgstr ""
-
-msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
-msgstr ""
-
 msgid "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
 msgstr ""
 
 msgid "{JAPAN ONLY}%1 was one of the first active Binary Options brokers and has a proven track record of delivering first class service and maintaining an award winning trading platform, while delivering strong financial performance to our shareholders, for more than 15 years worldwide."
-msgstr ""
-
-msgid "{JAPAN ONLY},000"
 msgstr ""
 
 msgid "{JAPAN ONLY}251"
@@ -8339,9 +8026,6 @@ msgstr ""
 msgid "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
 msgstr ""
 
-msgid "{JAPAN ONLY}Does Not Touch"
-msgstr ""
-
 msgid "{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account."
 msgstr ""
 
@@ -8351,16 +8035,7 @@ msgstr ""
 msgid "{JAPAN ONLY}Download our latest report here"
 msgstr ""
 
-msgid "{JAPAN ONLY}END-IN/END-OUT"
-msgstr ""
-
 msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
-msgstr ""
-
-msgid "{JAPAN ONLY}Ends Between"
-msgstr ""
-
-msgid "{JAPAN ONLY}Ends Outside"
 msgstr ""
 
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
@@ -8394,9 +8069,6 @@ msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still
 msgstr ""
 
 msgid "{JAPAN ONLY}Executing trades"
-msgstr ""
-
-msgid "{JAPAN ONLY}FX Rate"
 msgstr ""
 
 msgid "{JAPAN ONLY}Family members of categories 1) to 3)"
@@ -8457,15 +8129,6 @@ msgid "{JAPAN ONLY}Foreign PEP Declaration"
 msgstr ""
 
 msgid "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
-msgstr ""
-
-msgid "{JAPAN ONLY}Goes Outside"
-msgstr ""
-
-msgid "{JAPAN ONLY}HIGH/LOW"
-msgstr ""
-
-msgid "{JAPAN ONLY}Higher"
 msgstr ""
 
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
@@ -8588,16 +8251,10 @@ msgstr ""
 msgid "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
 msgstr ""
 
-msgid "{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account."
-msgstr ""
-
 msgid "{JAPAN ONLY}It is possible to use two binary options to make a profit if the asset price settles inbetween the two strikes. It is also possible to buy a single range option that will achieve the same result."
 msgstr ""
 
 msgid "{JAPAN ONLY}It is possible to use two binary options to make a profit if the asset price settles outside the two strikes. It is also possible to buy a single range option that will achieve the same result."
-msgstr ""
-
-msgid "{JAPAN ONLY}It prohibits the copying of the questions . In addition , You agree that you will not leak to third party"
 msgstr ""
 
 msgid "{JAPAN ONLY}JSA_Date_1"
@@ -8654,9 +8311,6 @@ msgstr ""
 msgid "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 msgstr ""
 
-msgid "{JAPAN ONLY}Lower"
-msgstr ""
-
 msgid "{JAPAN ONLY}Main business"
 msgstr ""
 
@@ -8673,9 +8327,6 @@ msgid "{JAPAN ONLY}November 7, 2014"
 msgstr ""
 
 msgid "{JAPAN ONLY}Option Pricing"
-msgstr ""
-
-msgid "{JAPAN ONLY}Option Type"
 msgstr ""
 
 msgid "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
@@ -8712,9 +8363,6 @@ msgid "{JAPAN ONLY}Our internal management control officer and beneficiary repre
 msgstr ""
 
 msgid "{JAPAN ONLY}Our trading page provides an overall view of all the option contracts available to trade, showing the live buy and sell prices and providing quick selection and trading buttons."
-msgstr ""
-
-msgid "{JAPAN ONLY}Payout Amount"
 msgstr ""
 
 msgid "{JAPAN ONLY}Please allow up to 3 business days for the funds to be credited to your trading account."
@@ -8789,9 +8437,6 @@ msgstr ""
 msgid "{JAPAN ONLY}Remitter's Name:"
 msgstr ""
 
-msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
-msgstr ""
-
 msgid "{JAPAN ONLY}Savings"
 msgstr ""
 
@@ -8834,13 +8479,7 @@ msgstr ""
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr ""
 
-msgid "{JAPAN ONLY}Stays Between"
-msgstr ""
-
 msgid "{JAPAN ONLY}Summary of Specifications"
-msgstr ""
-
-msgid "{JAPAN ONLY}TOUCH /NO-TOUCH"
 msgstr ""
 
 msgid "{JAPAN ONLY}Take knowledge test"
@@ -8915,13 +8554,7 @@ msgstr ""
 msgid "{JAPAN ONLY}There are two types of option delivery: One requires exchanging the underlying asset, and the other requires a payment which depends on the difference between the fair market price and the exercise price. A Binary Option is the second type where if the fair market price meets certain conditions with respect to the exercise price, then an agreed fixed amount will be paid to the option buyer."
 msgstr ""
 
-msgid "{JAPAN ONLY}This knowledge test is required by law. As we provide the test, we know customers better whether the customers are suitable investors to be carried out the binary options trading, and customers can start trading with us."
-msgstr ""
-
 msgid "{JAPAN ONLY}This popup window can also be activated from the portfolio panel, and portfolio page, by clicking the Trade View button."
-msgstr ""
-
-msgid "{JAPAN ONLY}This test is for the purpose of confirming if the customers have basic knowledge related to options trading ."
 msgstr ""
 
 msgid "{JAPAN ONLY}To avoid or hedge the future price of an underlying asset which you hold, you should buy a call option."
@@ -8933,12 +8566,6 @@ msgstr ""
 msgid "{JAPAN ONLY}To compensate for any rise in the price of an underlying asset that you intend to buy in future, you should buy a call option."
 msgstr ""
 
-msgid "{JAPAN ONLY}To invest a binary options investment accurately, the customer are required knowledge and experience related to derivative transactions."
-msgstr ""
-
-msgid "{JAPAN ONLY}Touches"
-msgstr ""
-
 msgid "{JAPAN ONLY}Track your trade in real time:"
 msgstr ""
 
@@ -8946,9 +8573,6 @@ msgid "{JAPAN ONLY}Trading & Hedging"
 msgstr ""
 
 msgid "{JAPAN ONLY}Trading Guide"
-msgstr ""
-
-msgid "{JAPAN ONLY}Trading Period"
 msgstr ""
 
 msgid "{JAPAN ONLY}Trading manual"
@@ -9044,9 +8668,6 @@ msgstr ""
 msgid "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 msgstr ""
 
-msgid "{JAPAN ONLY}¥"
-msgstr ""
-
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr ""
 
@@ -9116,13 +8737,16 @@ msgstr ""
 msgid "Types of Trades"
 msgstr ""
 
-msgid "Benefits of Binary Trading"
+msgid "Why Trade with Binary.com"
 msgstr ""
 
-msgid "How to Trade Binaries?"
+msgid "How to Trade Binary Options?"
 msgstr ""
 
 msgid "What Are OTC Indices and Stocks?"
+msgstr ""
+
+msgid "Authenticate"
 msgstr ""
 
 msgid "Acknowledgement"
@@ -9141,6 +8765,9 @@ msgid "Sharp Prices. Smart Trading."
 msgstr ""
 
 msgid "Account Details"
+msgstr ""
+
+msgid "Settings"
 msgstr ""
 
 msgid "Terms and Conditions Approval"
