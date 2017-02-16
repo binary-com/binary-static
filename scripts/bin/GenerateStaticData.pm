@@ -183,6 +183,8 @@ sub _texts {
         push @texts, localize('Forex');
         #strings for detailsws
         push @texts, localize('This field is required.');
+        push @texts, localize('Please select the checkbox.');
+        push @texts, localize('Please accept the terms and conditions.');
         push @texts, localize('You should enter between [_1] characters.');
         push @texts, localize('Only [_1] are allowed.');
         push @texts, localize('letters');
