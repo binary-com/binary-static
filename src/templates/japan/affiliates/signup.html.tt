@@ -6,7 +6,6 @@
             <div class="tab-menu-wrap container">
                 <ul class="tm-ul">
                     <li id="general_info" class="tm-li active first"><span class="menu-wrap-a"><span class="menu-wrap-b"><span class="tm-a a-active">[% l('Affiliate') %]</span></span></span></li>
-                    <!-- <li id="faq" class="tm-li last"><a href="#faq" class="tm-a">[% l('FAQ') %]</a></li> -->
                 </ul>
             </div>
         </div>
@@ -15,9 +14,6 @@
                 <div id="general_info-content" class="toggle-content">
                     [% INCLUDE japan/affiliates/main.html.tt %]
                 </div>
-                <!-- <div id="faq-content" class="toggle-content invisible">
-                    [% INCLUDE japan/affiliates/faq.html.tt %]
-                </div> -->
             </div>
         </div>
     </div>
