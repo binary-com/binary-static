@@ -1,0 +1,19 @@
+<div class="gr-row form-row center-text-m [% row_class %]">
+    <div class="gr-4 gr-12-m">
+        <label for="[% id %]">[% label %]</label>
+    </div>
+    <div class="gr-8 gr-12-m">
+    [% SWITCH type -%]
+        [%- CASE 'select' -%]
+            <select id="[% id %]" [% attributes %]>
+            [%= content -%]
+            </select>
+        [%- CASE ['text', 'password'] -%]
+            <input type="[% type %]" id="[% id %]" [% attributes %] />
+        [%- CASE 'label' -%]
+            <span class="text-display">
+                <strong id="[% id %]" [% attributes %]></strong>
+            </span>
+    [%- END %]
+    </div>
+</div>

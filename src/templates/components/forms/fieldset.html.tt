@@ -1,0 +1,4 @@
+<fieldset>
+    [% IF legend %]<legend>[% legend %]</legend>[% END %]
+    [% content %]
+</fieldset>

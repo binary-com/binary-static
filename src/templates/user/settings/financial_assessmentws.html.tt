@@ -24,13 +24,6 @@
             <p class="gr-12">[% l("The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.") %]</p>
         </fieldset>
 
-        <fieldset class="center-text" id="formlayout">
-            <div id="msg_form"></div>
-            <div class="gr-padding-10">
-                <span>
-                    <button class="button" id="btn_submit">[% l("Update") %]</button>
-                </span>
-            </div>
-        </fieldset>
+        [% INCLUDE components/forms/submit_button.html.tt text=l("Update") is_centered=1 type='submit' %]
     </form>
 </div>
