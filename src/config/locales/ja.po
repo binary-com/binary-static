@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-15 21:06+0000\n"
+"PO-Revision-Date: 2017-02-17 01:29+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -89,7 +90,7 @@ msgid "%1 also provides links to an online quiz to assess a potential gambling p
 msgstr "当社もまた、潜在的なギャンブルの問題を見極めるオンラインクイズやいくら費やすかがわかるオンラインギャンブル計算機を提供しています。"
 
 msgid "%1 and %2 cannot be the same."
-msgstr ""
+msgstr "%1 と %2を同じ内容にすることはできません。"
 
 msgid "%1 and the bull/bear logo are registered trademarks."
 msgstr "当社の社名とブル/ベアのロゴは、登録商標です。"
@@ -769,10 +770,10 @@ msgid "A. Introduction"
 msgstr "A. はじめに"
 
 msgid "A. Introduction and Scope of Agreement"
-msgstr ""
+msgstr "A. 概要と契約範囲"
 
 msgid "A. Spot FX"
-msgstr ""
+msgstr "A. スポット FX"
 
 msgid "AM"
 msgstr "午前"
@@ -832,7 +833,7 @@ msgid "Access to your personal data is strictly prohibited with the exception of
 msgstr "お客さまの個人データへのアクセスは、当社の主要な担当者のみ職務執行に必要な場合に限り可能とし、それ以外の者は厳しく禁止されています。"
 
 msgid "Account Balance - Your account balance represents:"
-msgstr ""
+msgstr "口座残高 - 現在の口座残高："
 
 msgid "Account Closure"
 msgstr "口座解約"
@@ -1834,8 +1835,6 @@ msgstr "再試行するにはこちらをクリックしてください"
 msgid "Click the button below to download MetaTrader."
 msgstr "MetaTraderをダウンロードするには下のボタンをクリックしてください。"
 
-#, fuzzy
-#| msgid "Clients' Money"
 msgid "Client Money"
 msgstr "お客さまマネー"
 
@@ -1926,10 +1925,8 @@ msgstr "判定時刻:21:00"
 msgid "Closing a Transaction"
 msgstr "選択通貨"
 
-#, fuzzy
-#| msgid "Open an Account"
 msgid "Closing an Account"
-msgstr "口座開設"
+msgstr "口座閉鎖"
 
 msgid "Closing or part-closing all or any of your Open Positions based on the prevailing prices available in the relevant markets;"
 msgstr ""
@@ -1982,8 +1979,6 @@ msgstr "クレーム"
 msgid "Complaints and Disputes"
 msgstr "苦情の申し立て"
 
-#, fuzzy
-#| msgid "Complaints and Disputes"
 msgid "Complaints and disputes"
 msgstr "苦情の申し立て"
 
@@ -2028,10 +2023,8 @@ msgstr "確認事項"
 msgid "Conflicts Policy"
 msgstr "利益相反ポリシー"
 
-#, fuzzy
-#| msgid "Congratulations! Your account has been created."
 msgid "Congratulations! Your %1 Account has been created."
-msgstr "おめでとうございます！口座の作成が完了しました。"
+msgstr "おめでとうございます！%1口座の作成が完了しました。"
 
 msgid "Connection error: Please check your internet connection."
 msgstr "接続エラー：インターネット接続状況をご確認ください。"
@@ -2096,10 +2089,8 @@ msgstr ""
 msgid "Contract Specifications (CFD) - Volatility Indices"
 msgstr ""
 
-#, fuzzy
-#| msgid "Contract Confirmation"
 msgid "Contract Specifications - Forex"
-msgstr "トレード確定"
+msgstr "トレード仕様 - 外国為替"
 
 msgid "Contract is not started yet"
 msgstr "トレードはまだ開始していません"
@@ -2200,8 +2191,6 @@ msgstr "工芸品、金属、電気、電子"
 msgid "Create"
 msgstr "作成"
 
-#, fuzzy
-#| msgid "Create New Account"
 msgid "Create Account"
 msgstr "デモ口座開設"
 
@@ -2244,10 +2233,8 @@ msgstr "通貨：主要外国為替通貨のペアを取り扱っています。
 msgid "Currency"
 msgstr "通貨"
 
-#, fuzzy
-#| msgid "Currency"
 msgid "Currency Symbol"
-msgstr "通貨"
+msgstr "通貨記号"
 
 msgid "Current"
 msgstr "現在"
@@ -2279,10 +2266,8 @@ msgstr "サイバージャヤ（マレーシア）"
 msgid "D. Capacity"
 msgstr ""
 
-#, fuzzy
-#| msgid "Linux Instructions"
 msgid "D. Client Instructions"
-msgstr "Linux操作手順"
+msgstr "D. クライアント操作手順"
 
 msgid "Daily Reset Indices"
 msgstr "デイリーリセットインデックス"
@@ -2362,8 +2347,6 @@ msgstr "入金"
 msgid "Deposit Bonus"
 msgstr "ご入金された場合に付与されるボーナスについて"
 
-#, fuzzy
-#| msgid "Deposit to"
 msgid "Deposit into"
 msgstr "XXXへご入金"
 
@@ -2508,10 +2491,8 @@ msgstr "CSVファイルでダウンロード"
 msgid "Download MetaTrader for Windows"
 msgstr "Windows版のMetaTraderをダウンロード"
 
-#, fuzzy
-#| msgid "Download PDF"
 msgid "Download for MacOS"
-msgstr "PDFをダウンロード"
+msgstr "MacOSにダウンロード"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "セールス及びマーケティング目標をサポートする急速な成長と事業開発の推進"
@@ -2537,10 +2518,8 @@ msgstr "本契約期間中に、あなたの全知的財産権に基いて、ロ
 msgid "E-cash"
 msgstr "eキャッシュ"
 
-#, fuzzy
-#| msgid "MetaTrader Accounts Management"
 msgid "E. Account Management"
-msgstr "MetaTraderアカウント管理"
+msgstr "E. 口座管理"
 
 #, fuzzy
 #| msgid "Best Execution Factors"
