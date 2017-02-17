@@ -6746,6 +6746,11 @@ msgstr "Kam"
 msgid "Thank you for signing up! Please check your email to retrieve the verification token."
 msgstr "Terima kasih telah mendaftar! Silahkan cek email Anda untuk memperoleh token verifikasi."
 
+#, fuzzy
+#| msgid "Thank you for verifying your email."
+msgid "Thank you for subscribing!"
+msgstr "Terima kasih telah memverifikasi email Anda."
+
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "API %1 memiliki batas penggunaan untuk mencegah penyalahgunaan dan/atau pengusulan kembali API %1. Batas penggunaan ini dapat berubah di masa depan tanpa pemberitahuan. Jika Anda secara konsisten melebihi batas penggunaan atau menyalahgunaan layanan maka kami dapat memblokir akses Anda ke dalam API %1."
 
@@ -7385,7 +7390,7 @@ msgstr ""
 msgid "This Document"
 msgstr "Dokumen ini"
 
-msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com, i.e., Spot FX."
+msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com."
 msgstr ""
 
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
@@ -14913,9 +14918,6 @@ msgstr "Keterangan rekening"
 
 #~ msgid "System Time"
 #~ msgstr "Waktu Sistem"
-
-#~ msgid "Thank you for verifying your email."
-#~ msgstr "Terima kasih telah memverifikasi email Anda."
 
 #~ msgid "The system is missing critical pricing information. Please try again in a few minutes, or try a different market."
 #~ msgstr "Sistem tidak dapat memberikan informasi harga. Silahkan coba kembali sebentar lagi atau coba pasar lain."

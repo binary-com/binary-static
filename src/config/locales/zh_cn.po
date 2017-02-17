@@ -6742,6 +6742,11 @@ msgstr "星期四"
 msgid "Thank you for signing up! Please check your email to retrieve the verification token."
 msgstr "谢谢您的注册！请查看邮件并提取验证令牌。"
 
+#, fuzzy
+#| msgid "Thank you for verifying your email."
+msgid "Thank you for subscribing!"
+msgstr "感谢验证您的电子邮箱。"
+
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "%1 API的使用受到限制，以防止%1 API被滥用和/或改变用途。将来这些使用限制可能不另行通知而更改。如果你持续超出使用限制，或以其他方式滥用该服务，我们可能会阻止您访问%1 API。"
 
@@ -7379,7 +7384,9 @@ msgstr "本协议将于您收到真实账户编号的日期开始生效。关于
 msgid "This Document"
 msgstr "本文件"
 
-msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com, i.e., Spot FX."
+#, fuzzy
+#| msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com, i.e., Spot FX."
+msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com."
 msgstr "此政策适用于在买卖Binary.com提供的金融产品如现货外汇交易的Binary.com零售和专业客户。"
 
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
@@ -15126,9 +15133,6 @@ msgstr "账户详情"
 
 #~ msgid "System Time"
 #~ msgstr "系统时间"
-
-#~ msgid "Thank you for verifying your email."
-#~ msgstr "感谢验证您的电子邮箱。"
 
 #~ msgid "The system is missing critical pricing information. Please try again in a few minutes, or try a different market."
 #~ msgstr "系统丢失关键定价信息。 请几分钟后再试，或尝试别的市场。"

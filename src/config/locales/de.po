@@ -6954,6 +6954,11 @@ msgstr "Do"
 msgid "Thank you for signing up! Please check your email to retrieve the verification token."
 msgstr "Vielen Dank, dass Sie sich angemeldet haben! Bitte überprüfen Sie Ihre E-Mail, um den Verfikationstoken abzurufen."
 
+#, fuzzy
+#| msgid "Thank you for verifying your email."
+msgid "Thank you for subscribing!"
+msgstr "Vielen Dank, dass Sie Ihre E-Mail bestätigt haben."
+
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "Das %1 API hat zwingende Verwendungsbeschränkungen, um den Missbrauch und/oder die Veränderung des %1 API zu verhindern. Diese Verwendungsbeschränkungen können zukünftig ohne Vorankündigung verändert werden. Wenn Sie ständig Ihre Benutzungsgrenze überschreiten oder ansonsten den Service missbrauchen, können wir Ihren Zugang zum %1 API sperren."
 
@@ -7602,7 +7607,7 @@ msgstr "Diese ST&Cs gelten ab dem Datum Ihrer Kontoeröffnung und danach für al
 msgid "This Document"
 msgstr "Dieses Dokument"
 
-msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com, i.e., Spot FX."
+msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com."
 msgstr ""
 
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
@@ -15086,9 +15091,6 @@ msgstr "Kontoangaben"
 
 #~ msgid "System Time"
 #~ msgstr "Systemzeit"
-
-#~ msgid "Thank you for verifying your email."
-#~ msgstr "Vielen Dank, dass Sie Ihre E-Mail bestätigt haben."
 
 #~ msgid "The system is missing critical pricing information. Please try again in a few minutes, or try a different market."
 #~ msgstr "Dem System fehlen ausschlaggebende Kursangaben. Bitte versuchen Sie es in ein paar Minuten erneut oder versuchen Sie es auf einem anderen Markt."

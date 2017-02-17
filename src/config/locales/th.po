@@ -6977,6 +6977,11 @@ msgstr "พฤ"
 msgid "Thank you for signing up! Please check your email to retrieve the verification token."
 msgstr "ขอบคุณสำหรับการลงทะเบียน! โปรดตรวจสอบอีเมล์ของท่านเพื่อรับโทเค่น"
 
+#, fuzzy
+#| msgid "Thank you for verifying your email."
+msgid "Thank you for subscribing!"
+msgstr "ขอบคุณสำหรับการตรวจสอบอีเมล์ของท่าน"
+
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "API ของ %1 จำกัดเรียกการใช้เพื่อป้องกันการใช้งานผิดๆ และ/หรือ การเปลี่ยนภาวะ API ของ %1 การจำกัดการใช้งานนี้อาจจะมีการเปลี่ยนแปลงโดยไม่ต้องแจ้งให้ทราบล่วงหน้า หากท่านใช้เกินกำหนดเสมอ หรือ นำไปใช้ในทางที่ผิด พวกเราอาจจะไม่อนุญาตให้ท่านเรียกใช้ API ของ %1 อีก"
 
@@ -7623,7 +7628,7 @@ msgstr "ข้อตกลงและเงื่อนไขเพิ่มเ
 msgid "This Document"
 msgstr "เอกสารฉบับนี้"
 
-msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com, i.e., Spot FX."
+msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com."
 msgstr ""
 
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
@@ -14853,9 +14858,6 @@ msgstr "รายละเอียดบัญชี"
 
 #~ msgid "System Time"
 #~ msgstr "เวลาของระบบ"
-
-#~ msgid "Thank you for verifying your email."
-#~ msgstr "ขอบคุณสำหรับการตรวจสอบอีเมล์ของท่าน"
 
 #~ msgid "This contract has expired."
 #~ msgstr "สัญญานี้หมดอายุ"
