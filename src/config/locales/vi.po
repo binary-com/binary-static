@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-02-17 01:30+0000\n"
 "Last-Translator: Pham Minh Hieu <hphamv7@gmail.com>\n"
-"Language-Team: Vietnamese "
-"<https://hosted.weblate.org/projects/binary/static/vi/>\n"
+"Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -7232,6 +7231,11 @@ msgstr "Th"
 msgid "Thank you for signing up! Please check your email to retrieve the verification token."
 msgstr "Cám ơn bạn đã đăng ký thành viên! Vui lòng kiểm tra email của bạn để tìm thấy token xác minh."
 
+#, fuzzy
+#| msgid "Thank you for verifying your email."
+msgid "Thank you for subscribing!"
+msgstr "Cám ơn bạn đã xác nhận email của mình."
+
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "%1 API có giới hạn sử dụng thực thi để ngăn chặn lạm dụng  %1 API. Các giới hạn sử dụng có thể thay đổi trong tương lai mà không báo trước. Nếu bạn liên tục vượt quá giới hạn sử dụng hoặc lạm dụng dịch vụ, chúng tôi có thể ngăn chặn truy cập của bạn vào %1 API."
 
@@ -7895,7 +7899,7 @@ msgstr "Những ST&C này bắt đầu được áp dụng kể từ nga
 msgid "This Document"
 msgstr "Hồ sơ này"
 
-msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com, i.e., Spot FX."
+msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com."
 msgstr ""
 
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
@@ -15576,9 +15580,6 @@ msgstr "Chi tiết Tài khoản"
 
 #~ msgid "System Time"
 #~ msgstr "Thời gian của hệ thống"
-
-#~ msgid "Thank you for verifying your email."
-#~ msgstr "Cám ơn bạn đã xác nhận email của mình."
 
 #~ msgid "The system is missing critical pricing information. Please try again in a few minutes, or try a different market."
 #~ msgstr "Hệ thống đang thiếu thông tin định giá quan trọng. Vui lòng thử lại sau ít phút, hoặc thử một thị trường khác."

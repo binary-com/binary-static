@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-02-17 01:31+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -6966,6 +6965,11 @@ msgstr "木"
 msgid "Thank you for signing up! Please check your email to retrieve the verification token."
 msgstr "ご登録頂きありがとうございます！　ご登録頂いたメールアドレスにワンタイムパスワードを送信致しました。"
 
+#, fuzzy
+#| msgid "Thank you for verifying your email."
+msgid "Thank you for subscribing!"
+msgstr "メール認証をしていただき、ありがとうございます。"
+
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "%1 APIの乱用及び転用を防ぐため、使用制限が適用されます。使用制限は通知なしに変更されることがあります。使用制限を一貫して超過されたり、サービスを乱用された場合、お客さまの%1 APIへのアクセスをブロックさせていただく可能性があります。"
 
@@ -7711,7 +7715,7 @@ msgstr "これらST&Cs（特別条件と事業条件）は、お客さまの口�
 msgid "This Document"
 msgstr "本文書"
 
-msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com, i.e., Spot FX."
+msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com."
 msgstr ""
 
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
@@ -15306,9 +15310,6 @@ msgstr "ご口座の詳細情報"
 
 #~ msgid "System Time"
 #~ msgstr "システム時間"
-
-#~ msgid "Thank you for verifying your email."
-#~ msgstr "メール認証をしていただき、ありがとうございます。"
 
 #~ msgid "The system is missing critical pricing information. Please try again in a few minutes, or try a different market."
 #~ msgstr "重要な価格決定に関する情報をシステム上で検知することができませんでした。数分後、改めてトレードを実施して頂くか、他の市場のトレードをお試し下さい。"

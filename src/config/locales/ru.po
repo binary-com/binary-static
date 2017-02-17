@@ -9,14 +9,12 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-02-16 06:22+0000\n"
 "Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
-"Language-Team: Russian "
-"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.12-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -640,9 +638,7 @@ msgid "<strong>Trade according to your preferred strategy</strong> - Trade based
 msgstr "<strong>Придерживайтесь выбранной стратегии</strong> – доверяйте своему чутью или пользуйтесь данными технического и фундаментального анализа."
 
 msgid "<strong>Transparent risk and potential reward</strong> - Know how much you will win or lose before you purchase the contract"
-msgstr ""
-"<strong>Понятный риск и прозрачная прибыль</strong> – заранее знайте размер "
-"потенциальной прибыли или потерь ещё до покупки контракта"
+msgstr "<strong>Понятный риск и прозрачная прибыль</strong> – заранее знайте размер потенциальной прибыли или потерь ещё до покупки контракта"
 
 msgid "<strong>Two-way pricing</strong> - Receive quotes for a trade and counter-trade, so you always get unbiased, transparent rates from %1"
 msgstr "<strong>Оценка контракта в двух направлениях</strong> – получите котировку для контракта и встречного контракта, чтобы всегда знать точные и прозрачные цены от %1."
@@ -6879,6 +6875,11 @@ msgstr "Чт"
 msgid "Thank you for signing up! Please check your email to retrieve the verification token."
 msgstr "Спасибо за регистрацию! Теперь проверьте электронную почту, на которую должен прийти проверочный ключ."
 
+#, fuzzy
+#| msgid "Thank you for verifying your email."
+msgid "Thank you for subscribing!"
+msgstr "Спасибо за верификацию своего эл.адреса."
+
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "API %1 имеет ограничения использования, введённые с целью предотвращения злоупотреблений и/или использования API %1 для других целей. Данные ограничения использования могут быть изменены в будущем без предварительного уведомления. Если Вы регулярно превышаете лимиты использования или иным образом злоупотребляете услугами, мы можем заблокировать Ваш доступ к API %1."
 
@@ -7538,7 +7539,9 @@ msgstr "Данное Соглашение вступает в силу на мо
 msgid "This Document"
 msgstr "Данный документ"
 
-msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com, i.e., Spot FX."
+#, fuzzy
+#| msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com, i.e., Spot FX."
+msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com."
 msgstr "Данная Политика распространяется на индивидуальных и профессиональных клиентов Binary.com, работающих с финансовыми продуктами, предложенными на сайте Binary.com, т.е. спот Forex."
 
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
@@ -15314,9 +15317,6 @@ msgstr "Информация о счете"
 
 #~ msgid "System Time"
 #~ msgstr "Системное время"
-
-#~ msgid "Thank you for verifying your email."
-#~ msgstr "Спасибо за верификацию своего эл.адреса."
 
 #~ msgid "The system is missing critical pricing information. Please try again in a few minutes, or try a different market."
 #~ msgstr "Система не смогла оценить контракт. Просим попытаться снова через несколько минут или попробовать другой инструмент."

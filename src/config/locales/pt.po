@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-02-16 23:28+0000\n"
 "Last-Translator: Alcino Jorge <alcino@binary.com>\n"
-"Language-Team: Portuguese "
-"<https://hosted.weblate.org/projects/binary/static/pt/>\n"
+"Language-Team: Portuguese <https://hosted.weblate.org/projects/binary/static/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -209,9 +208,7 @@ msgid "%1 offers a virtual-money account so you can get the hang of trading bina
 msgstr "A %1 disponibiliza uma conta virtual para que você possa se habituar à negociação de binários. Por que não <a class='pjaxload' href='%2'> abrir uma conta gratuita totalmente funcional, com $10k de dinheiro virtual</a>, e começar a aprender como negociar?"
 
 msgid "%1 offers five main types of trades that will help you execute your market view or strategy:"
-msgstr ""
-"A %1 disponibiliza cincos tipos principais de negociações que o ajudarão a "
-"executar a sua visão de mercado ou a sua estratégia:"
+msgstr "A %1 disponibiliza cincos tipos principais de negociações que o ajudarão a executar a sua visão de mercado ou a sua estratégia:"
 
 msgid "%1 offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk). Client orders are typically hedged when the total transaction volume exceeds a predefined threshold of risk tolerance level. For both execution models, %1 acts as the contractual counterparty to the transactions that you enter into with us, as opposed to entering into a contractual counterparty with a central clearing house as would be the case with exchange traded financial instruments. As such, counterparty risk exists. Counterparty risk refers to the risk of loss for clients resulting from the fact that the counterparty to the forex and/or contracts for differences transaction that you entered into may default on its obligations prior to the final settlement of the transaction's cash flow."
 msgstr ""
@@ -7183,6 +7180,11 @@ msgstr "Qui"
 msgid "Thank you for signing up! Please check your email to retrieve the verification token."
 msgstr "Obrigado por se cadastrar! Verifique a sua caixa de entrada para obter o token de verificação."
 
+#, fuzzy
+#| msgid "Thank you for verifying your email."
+msgid "Thank you for subscribing!"
+msgstr "Obrigado por verificar o seu endereço de e-mail."
+
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "A API %1 tem limites de uso impostos para prevenir abusos e/ou readaptação da API %1. Estes limites de uso podem ser alterados no futuro sem aviso prévio. Caso você exceda consistentemente os limites de uso ou, de outro forma, abuse o serviço, podemos bloquear o seu acesso à API %1."
 
@@ -7848,7 +7850,7 @@ msgstr "Estes termos e condições de serviço começam a aplicar-se na data em 
 msgid "This Document"
 msgstr "Este Documento"
 
-msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com, i.e., Spot FX."
+msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com."
 msgstr ""
 
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
@@ -15424,9 +15426,6 @@ msgstr "Detalhes da Conta"
 
 #~ msgid "System Time"
 #~ msgstr "Horário do Sistema"
-
-#~ msgid "Thank you for verifying your email."
-#~ msgstr "Obrigado por verificar o seu endereço de e-mail."
 
 #~ msgid "The system is missing critical pricing information. Please try again in a few minutes, or try a different market."
 #~ msgstr "O sistema está sem acesso a informações importantes sobre preços. Por favor tente novamente dentro de alguns minutos ou tente outro mercado."
