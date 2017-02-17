@@ -1,5 +1,5 @@
-const RiskClassification    = require('../common_functions/risk_classification').RiskClassification;
-const FinancialAssessmentws = require('../websocket_pages/user/account/settings/financial_assessment').FinancialAssessmentws;
+const RiskClassification  = require('../common_functions/risk_classification').RiskClassification;
+const FinancialAssessment = require('../websocket_pages/user/account/settings/financial_assessment');
 const Client  = require('../base/client').Client;
 const url_for = require('../base/url').url_for;
 
@@ -29,20 +29,21 @@ function renderRiskClassificationPopUp() {
                     .attr('style', 'text-align: left;');
                 $risk_classification.find('#high_risk_classification').removeClass('invisible');
                 $risk_classification.find('#heading_risk').removeClass('invisible');
-                $risk_classification.find('#assessment_form').on('submit', function(event) {
-                    event.preventDefault();
-                    FinancialAssessmentws.submitForm();
-                    return false;
-                });
+                handleForm($risk_classification);
             }
         },
         error: function() {
             return false;
         },
     });
-    $('#risk_classification').find('#assessment_form').on('submit', function(event) {
+    handleForm($('#risk_classification'));
+}
+
+function handleForm($risk_classification) {
+    FinancialAssessment.handleForm();
+    $risk_classification.find('#assessment_form').on('submit', function(event) {
         event.preventDefault();
-        FinancialAssessmentws.submitForm();
+        FinancialAssessment.submitForm();
         return false;
     });
 }

@@ -1,133 +1,111 @@
 const Client             = require('../../../../base/client').Client;
 const localize           = require('../../../../base/localize').localize;
+const State              = require('../../../../base/storage').State;
 const url_for            = require('../../../../base/url').url_for;
 const showLoadingImage   = require('../../../../base/utility').showLoadingImage;
 const Content            = require('../../../../common_functions/content').Content;
 const japanese_client    = require('../../../../common_functions/country_base').japanese_client;
 const RiskClassification = require('../../../../common_functions/risk_classification').RiskClassification;
+const Validation         = require('../../../../common_functions/form_validation');
 
-const FinancialAssessmentws = (function() {
+const FinancialAssessment = (() => {
     'use strict';
 
-    let financial_assessment = {};
+    let financial_assessment = {},
+        arr_validation = [];
 
-    const hidden_class = 'invisible';
+    const form_selector = '#frm_assessment';
+    const hidden_class  = 'invisible';
 
-    const init = function() {
-        Content.populate();
+    const onLoad = () => {
+        if (japanese_client()) {
+            window.location.href = url_for('user/settingsws');
+        }
         if (checkIsVirtual()) return;
-        $('#assessment_form').on('submit', function(event) {
+
+        Content.populate();
+        $(form_selector).on('submit', (event) => {
             event.preventDefault();
             submitForm();
             return false;
         });
-        BinarySocket.send({ get_financial_assessment: 1 });
-    };
 
-    const submitForm = function() {
-        $('#submit').attr('disabled', 'disabled');
-
-        if (!validateForm()) {
-            setTimeout(function() { $('#submit').removeAttr('disabled'); }, 1000);
-            return;
-        }
-
-        let hasChanged = false;
-        Object.keys(financial_assessment).forEach(function(key) {
-            const $key = $('#' + key);
-            if ($key.length && $key.val() !== financial_assessment[key]) {
-                hasChanged = true;
-            }
+        BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
+            handleForm(response);
         });
-        if (Object.keys(financial_assessment).length === 0) hasChanged = true;
-        if (!hasChanged) {
-            showFormMessage('You did not change anything.', false);
-            setTimeout(function() { $('#submit').removeAttr('disabled'); }, 1000);
-            return;
-        }
-
-        const data = { set_financial_assessment: 1 };
-        showLoadingImage($('#form_message'));
-        $('#assessment_form').find('select').each(function() {
-            financial_assessment[$(this).attr('id')] = data[$(this).attr('id')] = $(this).val();
-        });
-        BinarySocket.send(data);
-        RiskClassification.cleanup();
     };
 
-    const validateForm = function() {
-        let isValid = true;
-        const errors = {};
-        clearErrors();
-        $('#assessment_form').find('select').each(function() {
-            if (!$(this).val()) {
-                isValid = false;
-                errors[$(this).attr('id')] = localize('Please select a value');
-            }
-        });
-        if (!isValid) {
-            displayErrors(errors);
+    const handleForm = (response) => {
+        if (!response) {
+            response = State.get(['response', 'get_financial_assessment']);
         }
+        hideLoadingImg(true);
 
-        return isValid;
-    };
-
-    const hideLoadingImg = function(show_form) {
-        $('#loading').remove();
-        if (typeof show_form === 'undefined') {
-            show_form = true;
-        }
-        if (show_form) {
-            $('#assessment_form').removeClass(hidden_class);
-        }
-    };
-
-    const responseGetAssessment = function(response) {
-        hideLoadingImg();
         financial_assessment = response.get_financial_assessment;
-        Object.keys(response.get_financial_assessment).forEach(function (key) {
+        Object.keys(response.get_financial_assessment).forEach((key) => {
             const val = response.get_financial_assessment[key];
-            $('#' + key).val(val);
+            $(`#${key}`).val(val);
         });
+
+        arr_validation = [];
         if (financial_assessment.occupation === undefined) {  // handle existing assessments
             financial_assessment.occupation = '';
         }
-    };
-
-    const clearErrors = function() {
-        $('.errorfield').each(function() { $(this).text(''); });
-    };
-
-    const displayErrors = function(errors) {
-        let id = '';
-        clearErrors();
-        Object.keys(errors).forEach(function (key) {
-            const error = errors[key];
-            $('#error_' + key).text(localize(error));
-            if (!id) id = key;
+        $(form_selector).find('select').map(function() {
+            arr_validation.push({ selector: `#${$(this).attr('id')}`, validations: ['req'] });
         });
-        hideLoadingImg();
-        $.scrollTo($('#' + id), 500);
+        Validation.init(form_selector, arr_validation);
     };
 
-    const apiResponse = function(response) {
-        if (checkIsVirtual()) return;
-        if (response.msg_type === 'get_financial_assessment') {
-            responseGetAssessment(response);
-        } else if (response.msg_type === 'set_financial_assessment') {
-            $('#submit').removeAttr('disabled');
-            if ('error' in response) {
-                showFormMessage('Sorry, an error occurred while processing your request.', false);
-                displayErrors(response.error.details);
-            } else {
-                showFormMessage('Your changes have been updated successfully.', true);
+    const submitForm = () => {
+        const $btn_submit = $(`${form_selector} #btn_submit`);
+        $btn_submit.attr('disabled', 'disabled');
+
+        if (Validation.validate(form_selector)) {
+            let hasChanged = false;
+            Object.keys(financial_assessment).forEach((key) => {
+                const $key = $(`#${key}`);
+                if ($key.length && $key.val() !== financial_assessment[key]) {
+                    hasChanged = true;
+                }
+            });
+            if (Object.keys(financial_assessment).length === 0) hasChanged = true;
+            if (!hasChanged) {
+                showFormMessage('You did not change anything.', false);
+                setTimeout(() => { $btn_submit.removeAttr('disabled'); }, 1000);
+                return;
             }
+
+            const data = { set_financial_assessment: 1 };
+            showLoadingImage($('#msg_form'));
+            $(form_selector).find('select').each(function() {
+                financial_assessment[$(this).attr('id')] = data[$(this).attr('id')] = $(this).val();
+            });
+            BinarySocket.send(data).then((response) => {
+                $btn_submit.removeAttr('disabled');
+                if (response.error) {
+                    showFormMessage('Sorry, an error occurred while processing your request.', false);
+                } else {
+                    showFormMessage('Your changes have been updated successfully.', true);
+                    RiskClassification.cleanup();
+                }
+            });
+        } else {
+            setTimeout(() => { $btn_submit.removeAttr('disabled'); }, 1000);
         }
     };
 
-    const checkIsVirtual = function() {
+    const hideLoadingImg = (show_form) => {
+        $('#assessment_loading').remove();
+        if (show_form) {
+            $(form_selector).removeClass(hidden_class);
+        }
+    };
+
+    const checkIsVirtual = () => {
         if (Client.get('is_virtual')) {
-            $('#assessment_form').addClass(hidden_class);
+            hideLoadingImg();
+            $(form_selector).addClass(hidden_class);
             $('#msg_main').addClass('notice-msg center-text').removeClass(hidden_class).text(Content.localize().featureNotRelevantToVirtual);
             hideLoadingImg(false);
             return true;
@@ -135,12 +113,12 @@ const FinancialAssessmentws = (function() {
         return false;
     };
 
-    const showFormMessage = function(msg, isSuccess) {
+    const showFormMessage = (msg, isSuccess) => {
         const redirect_url = localStorage.getItem('financial_assessment_redirect');
         if (isSuccess && /metatrader/i.test(redirect_url)) {
             localStorage.removeItem('financial_assessment_redirect');
             $.scrollTo($('h1#heading'), 500, { offset: -10 });
-            $('#assessment_form').addClass(hidden_class);
+            $(form_selector).addClass(hidden_class);
             $('#msg_main').removeClass(hidden_class);
             BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
                 if ($.inArray('authenticated', response_status.get_account_status.status) === -1) {
@@ -148,7 +126,7 @@ const FinancialAssessmentws = (function() {
                 }
             });
         } else {
-            $('#form_message')
+            $('#msg_form')
                 .attr('class', isSuccess ? 'success-msg' : 'errorfield')
                 .html(isSuccess ? '<ul class="checked" style="display: inline-block;"><li>' + localize(msg) + '</li></ul>' : localize(msg))
                 .css('display', 'block')
@@ -157,30 +135,11 @@ const FinancialAssessmentws = (function() {
         }
     };
 
-    const onLoad = function() {
-        if (japanese_client()) {
-            window.location.href = url_for('user/settingsws');
-        }
-        BinarySocket.init({
-            onmessage: function(msg) {
-                const response = JSON.parse(msg.data);
-                if (response) {
-                    FinancialAssessmentws.apiResponse(response);
-                }
-            },
-        });
-        showLoadingImage($('<div/>', { id: 'loading', class: 'center-text' }).insertAfter('#heading'));
-        FinancialAssessmentws.init();
-    };
-
     return {
-        init       : init,
-        apiResponse: apiResponse,
-        submitForm : submitForm,
-        onLoad     : onLoad,
+        onLoad    : onLoad,
+        handleForm: handleForm,
+        submitForm: submitForm,
     };
 })();
 
-module.exports = {
-    FinancialAssessmentws: FinancialAssessmentws,
-};
+module.exports = FinancialAssessment;

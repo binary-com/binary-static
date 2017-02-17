@@ -112,6 +112,14 @@ label {
     line-height: 25px;
 }
 
+.form-row {
+    padding: 10px 0;
+    label {
+        display: block;
+        text-align: right;
+    }
+}
+
 .input {
     width: 45%;
 }
@@ -134,7 +142,6 @@ label {
 
 fieldset .error-msg {
     width: 100%;
-    text-align: center;
 }
 
 /* global styles */
