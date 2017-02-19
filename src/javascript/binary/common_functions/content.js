@@ -43,6 +43,8 @@ const Content = (function() {
             textProfit                     : 'Profit',
             textCloses                     : 'Closes',
             textMessageRequired            : 'This field is required.',
+            textMessageRequiredCheckBox    : 'Please select the checkbox.',
+            textMessageRequiredTNC         : 'Please accept the terms and conditions.',
             textMessageCountLimit          : 'You should enter between [_1] characters.', // [_1] should be replaced by a range. sample: (6-20)
             textMessageJustAllowed         : 'Only [_1] are allowed.',      // [_1] should be replaced by values including: letters, numbers, space, period, ...
             textMessageValid               : 'Please submit a valid [_1].', // [_1] should be replaced by values such as email address
@@ -71,7 +73,9 @@ const Content = (function() {
         const separator = ', ';
         switch (messageType) {
             case 'req':
-                msg = localized.textMessageRequired;
+                msg = param && param.field_type === 'checkbox' ?
+                    (param.for === 'tnc' ? localized.textMessageRequiredTNC : localized.textMessageRequiredCheckBox) :
+                    localized.textMessageRequired;
                 break;
             case 'reg':
                 if (param) msg = template(localized.textMessageJustAllowed, [param.join(separator)]);

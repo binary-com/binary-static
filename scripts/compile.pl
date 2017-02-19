@@ -11,7 +11,7 @@ use HTML::Entities qw( encode_entities );
 use Encode;
 use Term::ANSIColor;
 
-use BS qw/set_is_dev is_dev branch set_branch localize set_lang all_languages tt2 css_files js_config menu get_static_hash set_static_hash/;
+use BS qw/set_is_dev root_url is_dev branch set_branch localize set_lang all_languages tt2 css_files js_config menu get_static_hash set_static_hash/;
 use BS::Request;
 
 require "config/pages.pl";
@@ -100,6 +100,7 @@ foreach my $m (@m) {
             browser_title   => $title ? localize($title).' | ' : '',
             request         => $request,
             language        => uc $lang,
+            root_url        => root_url(),
             current_path    => $save_as,
             current_route   => $current_route,
             affiliate_email => 'affiliates@binary.com',

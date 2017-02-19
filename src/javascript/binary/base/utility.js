@@ -66,13 +66,17 @@ function objectNotEmpty(obj) {
     return !isEmpty;
 }
 
+function cloneObject(obj) {
+    return objectNotEmpty(obj) ? $.extend({}, obj) : obj;
+}
+
 function getPropertyValue(obj, keys) {
     if (!Array.isArray(keys)) keys = [keys];
     if (objectNotEmpty(obj) && keys[0] in obj && keys && keys.length > 1) {
         return getPropertyValue(obj[keys[0]], keys.slice(1));
     }
-    // else
-    return obj ? obj[keys[0]] : undefined;
+    // else return clone of object to avoid overwriting data
+    return obj ? cloneObject(obj[keys[0]]) : undefined;
 }
 
 module.exports = {

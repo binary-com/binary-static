@@ -179,7 +179,7 @@
         <div class="gr-4 gr-12-m gr-centered gr-padding-10">
           <div class="xquote">
             <div class="text nowrap">
-              <a href="https://www.binary.com/en/careers-for-americans.html" target="_blank">
+              <a href="[% request.url_for('careers-for-americans') %]" class="pjaxload">
                 [% l("Learn more") %]
               </a>
             </div>
