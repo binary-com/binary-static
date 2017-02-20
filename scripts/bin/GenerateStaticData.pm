@@ -290,6 +290,7 @@ sub _texts {
         push @texts, localize('Sell');
         push @texts, localize('Buy');
         #strings for authenticate page
+        push @texts, localize('Certain features and services are currently unavailable. Please <a href="[_1]">contact us</a> for more details.');
         push @texts, localize('To authenticate your account, kindly email the following to [_1]:');
         push @texts, localize('A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date.');
         push @texts, localize('A scanned copy of a utility bill or bank statement (no more than 3 months old)');

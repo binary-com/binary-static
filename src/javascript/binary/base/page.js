@@ -162,11 +162,8 @@ Page.prototype = {
         }
     },
     general_authentication_message: function() {
-        const span = $('<span/>', { html: template(localize('To authenticate your account, kindly email the following to [_1]:', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
-        const ul   = $('<ul/>',   { class: 'checked' });
-        const li1  = $('<li/>',   { text: localize('A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date.') });
-        const li2  = $('<li/>',   { text: localize('A scanned copy of a utility bill or bank statement (no more than 3 months old)') });
-        return span.append(ul.append(li1, li2));
+        const span = $('<span/>', { html: template(localize('Certain features and services are currently unavailable. Please <a href="[_1]">contact us</a> for more details.', ['https://www.binary.com/en/contact.html'])) });
+        return span;
     },
     show_notification_outdated_browser: function() {
         window.$buoop = {
