@@ -7,7 +7,11 @@ function generateBirthDate() {
     const date_of_birth = '#date_of_birth';
     const datePickerInst = new DatePicker(date_of_birth);
     datePickerInst.hide();
-    datePickerInst.show(-100 * 365, (-18 * 365) - 5, '', '', '-100:-18');
+    datePickerInst.show({
+        minDate  : -100 * 365,
+        maxDate  : (-18 * 365) - 5,
+        yearRange: '-100:-18',
+    });
     $(date_of_birth)
         .attr('data-value', toISOFormat(moment()))
         .change(function() {
