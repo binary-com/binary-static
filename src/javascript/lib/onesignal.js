@@ -5,6 +5,7 @@ const url_for_static = require('./../binary/base/url').url_for_static;
 
 class BinaryOneSignal {
     constructor() {
+        if (!isApplicable()) return;
         this.OneSignal = window.OneSignal || [];
         this.options = {
             appId       : '8e2d0514-4c65-424e-b87e-4ffaaa61da21',
@@ -46,8 +47,8 @@ class BinaryOneSignal {
      * then send the user website language and Binary login_id to OneSignal
      */
     checkSubscription() {
+        if (!isApplicable()) return;
         this.OneSignal.push(() => {
-            if (window.location.hostname !== 'www.binary.com') return; // Use in production
             // If we're on an unsupported browser, do nothing
             if (!this.OneSignal.isPushNotificationsSupported()) {
                 return;
@@ -68,5 +69,7 @@ class BinaryOneSignal {
         });
     }
 }
+
+const isApplicable = () => (window.location.hostname === 'www.binary.com' && !/logged_inws/i.test(window.location.pathname));
 
 export default new BinaryOneSignal();
