@@ -103,29 +103,33 @@ const handleWebsiteStatus = (website_status) => {
 };
 
 const handleState = (states_list, formID, getValidations) => {
-    let $address_state = $('#address_state');
+    BinarySocket.wait('get_settings').then((response) => {
+        let $address_state = $('#address_state');
 
-    $address_state.empty();
+        $address_state.empty();
 
-    if (states_list && states_list.length > 0) {
-        states_list.forEach(function(state) {
-            $address_state.append($('<option/>', { value: state.value, text: state.text }));
-        });
-        if (Client.get('address_state')) {
-            $address_state.val(Client.get('address_state'));
+        const client_state = response.get_settings.address_state;
+
+        if (states_list && states_list.length > 0) {
+            states_list.forEach(function(state) {
+                $address_state.append($('<option/>', { value: state.value, text: state.text }));
+            });
+            if (client_state) {
+                $address_state.val(client_state);
+            }
+        } else {
+            $address_state.replaceWith($('<input/>', { id: 'address_state', name: 'address_state', type: 'text', maxlength: '35', class: 'form_input' }));
+            $address_state = $('#address_state');
+            if (client_state) {
+                $address_state.text(client_state);
+            }
         }
-    } else {
-        $address_state.replaceWith($('<input/>', { id: 'address_state', name: 'address_state', type: 'text', maxlength: '35', class: 'form_input' }));
-        $address_state = $('#address_state');
-        if (Client.get('address_state')) {
-            $address_state.text(Client.get('address_state'));
-        }
-    }
-    $address_state.parent().parent().show();
+        $address_state.parent().parent().show();
 
-    if (formID && typeof getValidations === 'function') {
-        Validation.init(formID, getValidations());
-    }
+        if (formID && typeof getValidations === 'function') {
+            Validation.init(formID, getValidations());
+        }
+    });
 };
 
 const appendIfExist = (object_el, text, value, disabled) => {

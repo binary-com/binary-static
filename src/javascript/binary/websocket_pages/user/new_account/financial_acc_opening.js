@@ -45,7 +45,6 @@ const FinancialAccOpening = (function() {
                     const moment_val = moment.utc(value * 1000);
                     value = moment_val.format('DD MMM, YYYY');
                     $element.attr('data-value', toISOFormat(moment_val));
-                    Client.set('address_state', get_settings.address_state);
                     $('.input-disabled').attr('disabled', 'disabled');
                 } else if (key === 'tax_residence') {
                     value = value.split(',');
