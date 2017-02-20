@@ -91,7 +91,7 @@
                                         <img class="full-height" src="[% request.url_for('images/pages/regulation/pillar.svg') %]">
                                     </div>
                                     <div class="gr-9 align-start quote-text">
-                                        <a download="[% true %]" href="[% request.url_for('/download/BIEL_Pillar_3_Report.pdf') %]" target="_blank">
+                                        <a download="[% true %]" href="[% request.url_for('/download/BIEL_Pillar_3_Report_Version_2.pdf') %]" target="_blank">
                                             [% l("Pillar 3 disclosure report") %]
                                         </a>
                                     </div>
