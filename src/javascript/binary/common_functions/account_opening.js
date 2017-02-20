@@ -1,5 +1,4 @@
-const generateBirthDate    = require('./attach_dom/birth_date_picker').generateBirthDate;
-const elementInnerHtml     = require('./common_functions').elementInnerHtml;
+const generateBirthDate    = require('./attach_dom/birth_date_picker');
 const localize             = require('../base/localize').localize;
 const Client               = require('../base/client').Client;
 const State                = require('../base/storage').State;
@@ -146,9 +145,8 @@ const handleNewAccount = function(response, message_type) {
     if (response.error) {
         const errorMessage = response.error.message;
         $('#submit-message').empty();
-        const error = document.getElementsByClassName('notice-msg')[0];
-        elementInnerHtml(error, (response.msg_type === 'sanity_check') ? localize('There was some invalid character in an input field.') : errorMessage);
-        error.parentNode.parentNode.parentNode.show();
+        $('#client_message').find('.notice-msg').text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : errorMessage).end()
+            .removeClass('invisible');
     } else {
         Client.process_new_account(Client.get('email'), response[message_type].client_id, response[message_type].oauth_token, false);
     }

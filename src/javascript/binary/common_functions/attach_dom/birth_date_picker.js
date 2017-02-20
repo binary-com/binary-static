@@ -20,6 +20,4 @@ function generateBirthDate() {
         .val('');
 }
 
-module.exports = {
-    generateBirthDate: generateBirthDate,
-};
+module.exports = generateBirthDate;

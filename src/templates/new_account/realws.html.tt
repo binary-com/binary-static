@@ -178,7 +178,7 @@
                 </fieldset>
             </form>
 
-            <div class="errorbox rbox" id="client_message" style="display:none">
+            <div class="errorbox rbox invisible" id="client_message">
                 <div class="rbox-wrap">
                     <div class="gr-12 rbox-content" id="client_message_content">
                         <p class="center notice-msg"></p>
