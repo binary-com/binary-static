@@ -2,16 +2,16 @@
     <div class='gr-hide' id='mobile-menu'>
         <ul>
             <li class="ja-hide">
-                <a class="pjaxload" href="[% request.url_for('why-us') %]">[% l('Why Us?') %]</a>
+                <a class="pjaxload" href="[% request.url_for('why-us') %]">[% l('Why us?') %]</a>
             </li>
             <li class="all-hide ja-show-block">
-                <a class="pjaxload" href="[% request.url_for('why-us-jp') %]">[% l('Why Us?') %]</a>
+                <a class="pjaxload" href="[% request.url_for('why-us-jp') %]">[% l('Why us?') %]</a>
             </li>
             <li class="ja-hide">
-              <a class="pjaxload" href="[% request.url_for('get-started') %]"[% target %]>[% l("Get Started") %]</a>
+              <a class="pjaxload" href="[% request.url_for('get-started') %]"[% target %]>[% l("Get started") %]</a>
             </li>
             <li class="all-hide ja-show-block">
-                <a class="pjaxload" href="[% request.url_for('get-started-jp') %]"[% target %]>[% l("Get Started") %]</a>
+                <a class="pjaxload" href="[% request.url_for('get-started-jp') %]"[% target %]>[% l("Get started") %]</a>
             </li>
             <li class="ja-hide">
                 <a class="pjaxload" href="[% request.url_for('tour') %]">[% l('Tour') %]</a>

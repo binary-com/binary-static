@@ -1,8 +1,8 @@
 <div class="gr-12 gr-padding-10">
-    <h1 id="heading">[% l("Financial Assessment") %]</h1>
+    <h1 id="heading">[% l("Financial assessment") %]</h1>
     <p class = "invisible" id="response_on_success"></p>
     <form class="formObject gr-padding-10 invisible" id="assessment_form" name="assessment_form">
-        <h1 id="heading_risk" class="invisible">[% l("Financial Assessment") %]</h1>
+        <h1 id="heading_risk" class="invisible">[% l("Financial assessment") %]</h1>
         <p class="invisible" id="high_risk_classification">
             [% l("Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed.") %]
         </p>

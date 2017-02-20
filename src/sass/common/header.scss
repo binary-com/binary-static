@@ -24,7 +24,6 @@ body #topbar {
             border-radius: 2px;
             font-size: 90%;
             padding: 2px 4px;
-            text-transform: none;
             @include BIDIR_VALUE(margin, 0 0 0 10px, 0 10px 0 0);
         }
     }
@@ -79,7 +78,6 @@ body #topbar {
                 max-width: 110px;
                 text-decoration: none;
                 letter-spacing: 0;
-                text-transform: capitalize;
                 padding: 0 10px;
                 word-wrap: break-word;
                 color: $COLOR_WHITE;

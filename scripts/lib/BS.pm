@@ -129,7 +129,7 @@ sub css_files {
     }
 
     # Binary-style
-    push @css, "https://style.binary.com/binary.css?$static_hash";
+    push @css, "https://kellybinary.github.io/binary-style/binary.css?$static_hash";
 
     return @css;
 }
@@ -185,7 +185,7 @@ sub menu {
         {
         id         => 'topMenuProfitTable',
         url        => url_for('/user/profit_tablews'),
-        text       => localize('Profit Table'),
+        text       => localize('Profit table'),
         class      => 'client_logged_in invisible',
         link_class => 'pjaxload',
         };
@@ -220,14 +220,14 @@ sub menu {
         id         => 'topMenuAssetIndex',
         class      => 'ja-hide',
         url        => url_for('/resources/asset_indexws'),
-        text       => localize('Asset Index'),
+        text       => localize('Asset index'),
         link_class => 'pjaxload',
     };
 
     my $trading_times_ref = {
         id         => 'topMenuTradingTimes',
         url        => url_for('/resources/market_timesws'),
-        text       => localize('Trading Times'),
+        text       => localize('Trading times'),
         link_class => 'pjaxload',
     };
 
@@ -239,7 +239,7 @@ sub menu {
         id         => 'topMenuShop',
         class      => 'ja-hide',
         url        => 'https://shop.binary.com',
-        text       => localize('Shop'),
+        text       => 'Binary.com '.localize('Shop'),
         target     => '_blank'
         };
 
@@ -248,7 +248,7 @@ sub menu {
         id         => 'topMenuPaymentAgent',
         class      => 'invisible',
         url        => url_for('/paymentagent/transferws'),
-        text       => localize('Payment Agent'),
+        text       => localize('Payment agent'),
         link_class => 'pjaxload'
         };
 

@@ -1,23 +1,24 @@
+<div class="container">
 <div class="gr-row static_full">
     <div class="gr-3 gr-hide-m gr-hide-p sidebar-container">
         <div class="sidebar-left">
             <ul class="sidebar-nav">
                 <li>
-                    <a href="#trading-platforms">[% l("Trading Platforms") %]</a>
+                    <a href="#trading-platforms">[% l("Trading platforms") %]</a>
                 </li>
                 <li class="invisible">
-                    <a href="#platforms-comparison">[% l("Platform Comparison") %]</a>
+                    <a href="#platforms-comparison">[% l("Platform comparison") %]</a>
                 </li>
                 <li>
-                    <a href="#more-tools">[% l("More Tools") %]</a>
+                    <a href="#more-tools">[% l("More tools") %]</a>
                 </li>
             </ul>
         </div>
     </div>
     <div class="gr-9 gr-12-m platforms-section">
         <div id="trading-platforms" class="sections invisible">
-            <h1>[% l("Trading Platforms") %]</h1>
-            <h2>[% l("Basic Platforms") %]</h2>
+            <h1>[% l("Trading platforms") %]</h1>
+            <h2>[% l("Basic platforms") %]</h2>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-12-p">
                     <div class="gr-12 gr-7-p gr-10-m">
@@ -30,7 +31,7 @@
                             [% l("Trade in the world’s financial markets with a simple and user-friendly online platform.") %]
                             <p>
                                 <a class="button pjaxload" href="[% request.url_for('/trading') %]">
-                                    <span>[% l("Trade Now") %]</span>
+                                    <span>[% l("Trade now") %]</span>
                                 </a>
                             </p>
                         </p>
@@ -57,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <h2>[% l("Advanced Platforms") %]</h2>
+            <h2>[% l("Advanced platforms") %]</h2>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-12-p">
                     <div class="gr-8 gr-5-p gr-7-m">
@@ -87,7 +88,7 @@
                             [% l("Monitor the movements of your favourite assets and markets at the same time.") %]
                             <p>
                                 <a class="button" href="https://webtrader.binary.com" target="_blank">
-                                    <span>[% l("Try Webtrader") %]</span>
+                                    <span>[% l("Try Binary Webtrader") %]</span>
                                 </a>
                             </p>
                         </p>
@@ -107,7 +108,7 @@
                             <div class="gr-row">
                                 <div class="gr-12">
                                     <a class="button" href="https://app.binary.com" target="_blank">
-                                        <span>Try Next-Gen</span>
+                                        <span>[% l("Try Binary Next-Gen") %]</span>
                                     </a>
                                 </div>
                             </div>
@@ -142,7 +143,7 @@
             </div>
         </div>
         <div id="platforms-comparison" class="invisible">
-            <h1>[% l("Platform Comparison") %]</h1>
+            <h1>[% l("Platform comparison") %]</h1>
             <p>[% l("Compare all the trading platforms that we offer. Choose the ideal platform for your preferred trading strategy.") %]</p>
             <div class="gr-padding-30">
                 <p class="hint">[% l("Note: Scroll the table to the right to see all platforms.") %]</p>
@@ -284,7 +285,7 @@
             </div>
         </div>
         <div id="more-tools" class="sections invisible">
-            <h1>[% l("More Tools") %]</h1>
+            <h1>[% l("More tools") %]</h1>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-12-p">
                     <div class="gr-10 gr-5-p gr-9-m">
@@ -309,4 +310,5 @@
             <p>[% l("You can even build your own online trading sites, apps, and bots with our <a href=\"https://developers.binary.com\" target=\"_blank\">API and developer tools</a>.") %]</p>
         </div>
     </div>
+</div>
 </div>

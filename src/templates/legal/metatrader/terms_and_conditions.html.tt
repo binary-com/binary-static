@@ -1,7 +1,5 @@
-<div>
-    <h2>
-        [% l("Terms and Conditions") %]
-    </h2>
+<div class="gr-12">
+    <h2>[% l("Terms and Conditions") %]</h2>
     <p>[% l("Version 3") %]</p>
     <h2>[% l("A. Introduction and Scope of Agreement") %]</h2>
     <ol>
@@ -103,7 +101,6 @@
                     </ul>
                 </li>
             </ul>
-
         </li>
         <li>[% l("Closing an Account") %]
             <ul class="bullet">
@@ -111,10 +108,10 @@
             </ul>
         </li>
         <!-- <li>[% l("Base Currency") %]
-                    <ul class="bullet">
-                        <li>[% l("Any realised profits and interest charges that are denominated in a currency that's different from your Base Currency will be automatically converted to your Base Currency before being debited / credited to your Real Account. The conversion will be performed at commercially reasonable rates.") %]</li>
-                    </ul>
-                </li> -->
+            <ul class="bullet">
+                <li>[% l("Any realised profits and interest charges that are denominated in a currency that's different from your Base Currency will be automatically converted to your Base Currency before being debited / credited to your Real Account. The conversion will be performed at commercially reasonable rates.") %]</li>
+            </ul>
+        </li> -->
     </ol>
     <h2>[% l("F. Orders") %]</h2>
     <ol>

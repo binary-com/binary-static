@@ -1,7 +1,7 @@
 <div id="limits-ws-container" class="gr-12 gr-padding-10">
-    <h1>[% l("Trading and Withdrawal Limits") %]</h1>
+    <h1>[% l("Trading and withdrawal limits") %]</h1>
     <div class="invisible" id="limits-title">
-        <h2 id="trading-limits">[% l("Trading Limits") %]</h2>
+        <h2 id="trading-limits">[% l("Trading limits") %]</h2>
         <div class="gr-padding-10">
             <table class="flex-table" id="client-limits">
                 <thead>
@@ -74,7 +74,7 @@
     </div>
 </div>
 <div class="invisible" id="withdrawal-limits">
-    <h2 id="withdrawal-title">[% l("Withdrawal Limits") %]</h2>
+    <h2 id="withdrawal-title">[% l("Withdrawal limits") %]</h2>
     <div>
         <p id="withdrawal-limit"></p>
         <p id="already-withdraw"></p>

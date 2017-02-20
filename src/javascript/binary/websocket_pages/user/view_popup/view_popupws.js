@@ -147,16 +147,16 @@ const ViewPopupWS = (function() {
 
     const spreadMakeTemplate = function() {
         $Container = $('<div/>');
-        $Container.prepend($('<div/>', { id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: localize('Contract Information') }));
+        $Container.prepend($('<div/>', { id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: localize('Contract information') }));
 
         const $table = $('<table><tbody></tbody></table>');
         const tbody = spreadRow('Status',    'status', (contract.is_ended ? 'loss' : 'profit')) +
-            spreadRow('Entry Level',       'entry_level') +
-            spreadRow('Exit Level',        'exit_level', '', '', !contract.is_ended) +
-            spreadRow('Stop Loss Level',   'stop_loss_level') +
-            spreadRow('Stop Profit Level', 'stop_profit_level') +
-            spreadRow('Current Level',     'sell_level', '', '', contract.is_ended) +
-            spreadRow('Amount Per Point',  'per_point') +
+            spreadRow('Entry level',       'entry_level') +
+            spreadRow('Exit level',        'exit_level', '', '', !contract.is_ended) +
+            spreadRow('Stop loss level',   'stop_loss_level') +
+            spreadRow('Stop profit level', 'stop_profit_level') +
+            spreadRow('Current level',     'sell_level', '', '', contract.is_ended) +
+            spreadRow('Amount per point',  'per_point') +
             spreadRow('Profit/Loss',       'pl_value', (contract.profit >= 0 ? 'profit' : 'loss'), ' (' + contract.currency + ')') +
             spreadRow('Profit/Loss (points)', 'pl_point');
 
@@ -336,9 +336,9 @@ const ViewPopupWS = (function() {
 
     // const normalContractEnded = function(is_win) {
     const normalContractEnded = function() {
-        containerSetText('trade_details_current_title',    localize(contract.sell_spot_time < contract.date_expiry ? 'Contract Sold' : 'Contract Expiry'));
-        containerSetText('trade_details_spot_label',       localize('Exit Spot'));
-        containerSetText('trade_details_spottime_label',   localize('Exit Spot Time'));
+        containerSetText('trade_details_current_title',    localize(contract.sell_spot_time < contract.date_expiry ? 'Contract sold' : 'Contract expiry'));
+        containerSetText('trade_details_spot_label',       localize('Exit spot'));
+        containerSetText('trade_details_spottime_label',   localize('Exit spot time'));
         containerSetText('trade_details_indicative_label', localize('Price'));
         // show validation error if contract is not settled yet
         if (!(contract.is_settleable && !contract.is_sold)) {
@@ -394,16 +394,16 @@ const ViewPopupWS = (function() {
             adjustedBarriers;
 
         if (contract.original_barrier) {
-            originalBarriers = normalRow(localize('Original Barrier'), '', '', '', contract.original_barrier);
+            originalBarriers = normalRow(localize('Original barrier'), '', '', '', contract.original_barrier);
         } else if (contract.original_high_barrier) {
-            originalBarriers = normalRow(localize('Original High Barrier'), '', '', '', contract.original_high_barrier) +
-                normalRow(localize('Original Low Barrier'), '', '', '', contract.original_low_barrier);
+            originalBarriers = normalRow(localize('Original high barrier'), '', '', '', contract.original_high_barrier) +
+                normalRow(localize('Original low barrier'), '', '', '', contract.original_low_barrier);
         }
         if (contract.barrier) {
-            adjustedBarriers = normalRow(localize('Adjusted Barrier'), '', '', '', contract.barrier);
+            adjustedBarriers = normalRow(localize('Adjusted barrier'), '', '', '', contract.barrier);
         } else if (contract.high_barrier) {
-            adjustedBarriers = normalRow(localize('Adjusted High Barrier'), '', '', '', contract.high_barrier) +
-                normalRow(localize('Adjusted Low Barrier'), '', '', '', contract.low_barrier);
+            adjustedBarriers = normalRow(localize('Adjusted high barrier'), '', '', '', contract.high_barrier) +
+                normalRow(localize('Adjusted low Barrier'), '', '', '', contract.low_barrier);
         }
         $('#barrier_change_content').append(
             originalBarriers +
@@ -420,25 +420,25 @@ const ViewPopupWS = (function() {
 
         $sections.find('#sell_details_table').append($(
             '<table>' +
-            '<tr id="contract_tabs"><th colspan="2" id="contract_information_tab">' + localize('Contract Information') + '</th></tr><tbody id="contract_information_content">' +
+            '<tr id="contract_tabs"><th colspan="2" id="contract_information_tab">' + localize('Contract information') + '</th></tr><tbody id="contract_information_content">' +
             normalRow('Contract ID', '', 'trade_details_contract_id') +
             normalRow('Reference ID', '', 'trade_details_ref_id') +
-            normalRow('Start Time', '', 'trade_details_start_date') +
-            (!contract.tick_count ? normalRow('End Time', '', 'trade_details_end_date') +
-                normalRow('Remaining Time', '', 'trade_details_live_remaining') : '') +
-            normalRow('Entry Spot', '', 'trade_details_entry_spot') +
-            normalRow(contract.barrier_count > 1 ? 'High Barrier' :
+            normalRow('Start time', '', 'trade_details_start_date') +
+            (!contract.tick_count ? normalRow('End time', '', 'trade_details_end_date') +
+                normalRow('Remaining time', '', 'trade_details_live_remaining') : '') +
+            normalRow('Entry spot', '', 'trade_details_entry_spot') +
+            normalRow(contract.barrier_count > 1 ? 'High barrier' :
                 /^DIGIT(MATCH|DIFF)$/.test(contract.contract_type) ? 'Target' : 'Barrier', '', 'trade_details_barrier', true) +
-            (contract.barrier_count > 1 ? normalRow('Low Barrier', '', 'trade_details_barrier_low', true) : '') +
-            normalRow('Potential Payout', '', 'trade_details_payout') +
-            normalRow('Purchase Price', '', 'trade_details_purchase_price') +
+            (contract.barrier_count > 1 ? normalRow('Low barrier', '', 'trade_details_barrier_low', true) : '') +
+            normalRow('Potential payout', '', 'trade_details_payout') +
+            normalRow('Purchase price', '', 'trade_details_purchase_price') +
             '</tbody><tbody id="corporate_action_content" class="invisible"></tbody>' +
-            '<th colspan="2" id="barrier_change" class="invisible">' + localize('Barrier Change') + '</th>' +
+            '<th colspan="2" id="barrier_change" class="invisible">' + localize('Barrier change') + '</th>' +
             '<tbody id="barrier_change_content" class="invisible"></tbody>' +
             '<tr><th colspan="2" id="trade_details_current_title">' + localize('Current') + '</th></tr>' +
             normalRow('Spot', 'trade_details_spot_label', 'trade_details_current_spot') +
-            normalRow('Spot Time', 'trade_details_spottime_label', 'trade_details_current_date') +
-            normalRow('Current Time', '', 'trade_details_live_date') +
+            normalRow('Spot time', 'trade_details_spottime_label', 'trade_details_current_date') +
+            normalRow('Current time', '', 'trade_details_live_date') +
             normalRow('Indicative', 'trade_details_indicative_label', 'trade_details_indicative_price') +
             normalRow('Profit/Loss', '', 'trade_details_profit_loss') +
             '<tr><td colspan="2" class="last_cell" id="trade_details_message">&nbsp;</td></tr>' +

@@ -1,5 +1,5 @@
 <div>
-    <h1>[% l('Personal Details') %]</h1>
+    <h1>[% l('Personal details') %]</h1>
 
     <p class="notice-msg center-text invisible" id="tax_information_notice">
         [% l('Please complete the tax information before proceeding.') %]
@@ -45,7 +45,7 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label><em class="required_asterisk">**</em> [% l('Country of Residence') %]</label>
+                    <label><em class="required_asterisk">**</em> [% l('Country of residence') %]</label>
                 </div>
                 <div class="gr-8">
                     <span id="inputheading">
@@ -157,7 +157,7 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label for="address_postcode">[% l('Postal Code / ZIP') %]</label>
+                    <label for="address_postcode">[% l('Postal/ZIP code') %]</label>
                 </div>
                 <div class="gr-8">
                     <input name='address_postcode' type="text" id="address_postcode" class="form_input" maxlength="20" />
@@ -285,7 +285,7 @@
         </fieldset>
 
         <fieldset class="JpAcc invisible">
-            <legend>[% l('Trading Experience') %]</legend>
+            <legend>[% l('Trading experience') %]</legend>
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
@@ -468,6 +468,6 @@
 
     </form>
 
-    <p class="required hidden RealAcc JpAcc rowCustomerSupport"><em class="required_asterisk">**</em> [% l('To change your name, date of birth, country of residence, or email, please contact <a href="[_1]">Customer Support</a>.', request.url_for('contact')) %]</p>
+    <p class="required hidden RealAcc JpAcc rowCustomerSupport"><em class="required_asterisk">**</em> [% l('To change your name, date of birth, country of residence, or email, please contact <a href="[_1]">customer support</a>.', request.url_for('contact')) %]</p>
 
 </div>

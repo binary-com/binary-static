@@ -21,7 +21,7 @@ const StatementUI = (function() {
         const header = [
             Content.localize().textDate,
             Content.localize().textRef,
-            localize('Potential Payout'),
+            localize('Potential payout'),
             localize('Action'),
             localize('Description'),
             localize('Credit/Debit'),

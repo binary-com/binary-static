@@ -10,7 +10,7 @@
             </div>
             <div class="gr-12">
                 <h4>
-                    <a class="pjaxload" href="[% request.url_for('/user/settings/detailsws') %]">[% l('Personal Details') %]</a>
+                    <a class="pjaxload" href="[% request.url_for('/user/settings/detailsws') %]">[% l('Personal details') %]</a>
                 </h4>
                 <p>[% l('View your personal information.') %]</p>
             </div>
@@ -24,7 +24,7 @@
             </div>
             <div class="gr-12">
                 <h4>
-                    <a class="pjaxload" href="[% request.url_for('/user/settings/assessmentws') %]">[% l('Financial Assessment') %]</a>
+                    <a class="pjaxload" href="[% request.url_for('/user/settings/assessmentws') %]">[% l('Financial assessment') %]</a>
                 </h4>
                 <p>[% l('View your financial assessment settings.') %]</p>
             </div>

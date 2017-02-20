@@ -126,7 +126,7 @@
                 </div>
 
                 <div id="explain_evenodd" class="invisible">
-                    <h3>[% l("The First Tick") %]</h3>
+                    <h3>[% l("The first tick") %]</h3>
                     <p>[% l("The first tick is the first tick after the contract is processed by our servers.") %]</p>
                     <p class="hint"><strong>[% l("Note") %]: </strong>[% l("Even/Odd contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes.") %]</p>
                 </div>
@@ -140,7 +140,7 @@
                 </div>
 
                 <div id="explain_overunder" class="invisible">
-                    <h3>[% l("The First Tick") %]</h3>
+                    <h3>[% l("The first tick") %]</h3>
                     <p>[% l("The first tick is the first tick after the contract is processed by our servers.") %]</p>
                     <p class="hint"><strong>[% l("Note") %]: </strong>[% l("Over/Under contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes.") %]</p>
                 </div>
@@ -166,7 +166,7 @@
                 </div>
 
                 <div id="explain_spreads" class="invisible">
-                    <h3>[% l("Entry Level") %]</h3>
+                    <h3>[% l("Entry level") %]</h3>
                     <p>[% l("For long contracts, the entry level is the spot plus half spread and the exit level is spot minus half spread. For short contracts, the entry level is spot minus half spread and the exit level is spot plus half spread.") %]</p>
                     <p>[% l("The amount of profit/loss per point of rise/fall is multiplied by the amount per point. A large amount per point will result in large profits/losses per point of movement of the index.") %]</p>
                 </div>

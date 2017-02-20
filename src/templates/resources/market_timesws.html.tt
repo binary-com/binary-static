@@ -1,4 +1,4 @@
-<h1>[% l('Trading Times') %]</h1>
+<h1>[% l('Trading times') %]</h1>
 <p>
     <label for="trading-date">[% l('Date') %]: </label>
     <input type="text" id="trading-date" readonly="readonly" size="12" />

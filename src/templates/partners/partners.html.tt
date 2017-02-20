@@ -4,7 +4,7 @@
       [% l("Partners") %]
     </h1>
     <p>
-      [% l("[_1] provides business partnership services via the following programs.", website_name) %]
+      [% l("[_1] provides business partnership services via the following programs:", website_name) %]
     </p>
   </div>
   <div class="gr-row gr-clear">
@@ -17,7 +17,7 @@
       <div class="gr-12">
         <h4>
           <a class="pjaxload" href="[% request.url_for('/affiliate/signup') %]">
-            [% l("Affiliate Program") %]
+            [% l("Affiliate program") %]
           </a>
         </h4>
         <p>
@@ -34,11 +34,11 @@
       <div class="gr-12">
         <h4>
           <a class="pjaxload" href="[% request.url_for('/payment-agent') %]">
-            [% l("Payment Agent") %]
+            [% l("Payment agent") %]
           </a>
         </h4>
         <p>
-          [% l("Apply to become a Payment Agent") %]
+          [% l("Apply to become a payment agent.") %]
         </p>
       </div>
     </div>
@@ -70,7 +70,7 @@
       <div class="gr-12">
         <h4>
           <a class="pjaxload" href="[% request.url_for('/open-source-projects') %]">
-            [% l("Open Source") %]
+            [% l("Open source") %]
           </a>
         </h4>
         <p>
@@ -91,7 +91,7 @@
           </a>
         </h4>
         <p>
-          [% l("Apply to become a contributor") %]
+          [% l("Apply to become a contributor.") %]
         </p>
       </div>
     </div>
@@ -104,7 +104,7 @@
       <div class="gr-12">
         <h4>
           <a class="pjaxload" href="[% request.url_for('/security-testing') %]">
-            [% l("Security Testing") %]
+            [% l("Security testing") %]
           </a>
         </h4>
         <p>

@@ -81,9 +81,9 @@ const Purchase = (function () {
                 elementInnerHtml(cost, Content.localize().textAmountPerPoint + ' <p>' + receipt.amount_per_point + '</p>');
                 elementInnerHtml(profit, Content.localize().textStopProfit + ' <p>' + receipt.stop_profit_level + '</p>');
             } else {
-                elementInnerHtml(payout, localize('Potential Payout') + ' <p>' + payout_value + '</p>');
-                elementInnerHtml(cost, localize('Total Cost') + ' <p>' + cost_value + '</p>');
-                elementInnerHtml(profit, localize('Potential Profit') + ' <p>' + profit_value + '</p>');
+                elementInnerHtml(payout, localize('Potential payout') + ' <p>' + payout_value + '</p>');
+                elementInnerHtml(cost, localize('Total cost') + ' <p>' + cost_value + '</p>');
+                elementInnerHtml(profit, localize('Potential profit') + ' <p>' + profit_value + '</p>');
             }
 
             updateContractBalance(receipt.balance_after);

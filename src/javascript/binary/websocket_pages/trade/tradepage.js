@@ -68,7 +68,7 @@ const TradePage = (function() {
         $('#tab_portfolio').find('a').text(localize('Portfolio'));
         $('#tab_graph').find('a').text(localize('Chart'));
         $('#tab_explanation').find('a').text(localize('Explanation'));
-        $('#tab_last_digit').find('a').text(localize('Last Digit Stats'));
+        $('#tab_last_digit').find('a').text(localize('Last digit stats'));
     };
 
     const reload = function() {

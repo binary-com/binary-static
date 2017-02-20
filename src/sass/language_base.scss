@@ -111,12 +111,6 @@ body.VI {
 
 /*French Language */
 body.FR {
-    a, button, .button, span, input {
-        text-transform: initial !important;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        text-transform: initial !important;
-    }
     #trading_socket_container #contract_form_name_nav {
         font-size: 80%;
     }
@@ -165,12 +159,6 @@ body.IT, body.DE {
         margin-right: 0 !important;
         padding: 0 8px !important;
     }
-    a, button, .button, span, input {
-        text-transform: initial !important;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        text-transform: initial !important;
-    }
 }
 
 body.ES {
@@ -215,15 +203,6 @@ body.RU {
     }
     .google-play-badge {
         background-image: url('../images/pages/applications/googleplay_ru.svg');
-    }
-}
-
-body.PT, body.RU {
-    a, button, .button, span, input {
-        text-transform: initial !important;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        text-transform: initial !important;
     }
 }
 

@@ -5,7 +5,7 @@
                 <li id="legal" class="tm-li first">
                     <span class="menu-wrap-a">
                         <span class="menu-wrap-b">
-                            <a href="#legal" class="tm-a first">[% l('Terms and Conditions') %]</a>
+                            <a href="#legal" class="tm-a first">[% l('Terms and conditions') %]</a>
                         </span>
                     </span>
                     <ul class="tm-ul-2">
@@ -14,13 +14,13 @@
                     </ul>
                 </li>
 
-                <li id="datafeed" class="tm-li"><a href="#datafeed" class="tm-a">[% l('Data Feed') %]</a></li>
-                <li id="privacy" class="tm-li"><a href="#privacy" class="tm-a">[% l('Security and Privacy') %]</a></li>
+                <li id="datafeed" class="tm-li"><a href="#datafeed" class="tm-a">[% l('Data feed') %]</a></li>
+                <li id="privacy" class="tm-li"><a href="#privacy" class="tm-a">[% l('Security and privacy') %]</a></li>
                 <li id="copyright" class="tm-li"><a href="#copyright" class="tm-a">[% l('Copyright') %]</a></li>
 
                 <li id="risk" class="tm-li">
                     <span class="menu-wrap-a">
-                        <span class="menu-wrap-b"><a href="#risk" class="tm-a first">[% l('Risk Disclaimer') %]</a></span>
+                        <span class="menu-wrap-b"><a href="#risk" class="tm-a first">[% l('Risk disclaimer') %]</a></span>
                     </span>
                     <ul class="tm-ul-2">
                         <li id="risk-binary" class="tm-li-2 first"><a href="#risk-binary" class="tm-a-2">[% l('Binary Options') %]</a></li>
@@ -30,7 +30,7 @@
 
                 <li id="order-execution" class="tm-li">
                     <span class="menu-wrap-a">
-                        <span class="menu-wrap-b"><a href="#order-execution" class="tm-a first">[% l('Order Execution') %]</a></span>
+                        <span class="menu-wrap-b"><a href="#order-execution" class="tm-a first">[% l('Order execution') %]</a></span>
                     </span>
                     <ul class="tm-ul-2">
                         <li id="order-execution-binary" class="tm-li-2 first"><a href="#order-execution-binary" class="tm-a-2">[% l('Binary Options') %]</a></li>

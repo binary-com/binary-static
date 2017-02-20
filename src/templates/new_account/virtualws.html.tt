@@ -1,5 +1,5 @@
 <div class='gr-12 static_full'>
-  <h1>[% l('Create New Account') %]</h1>
+  <h1>[% l('Create new account') %]</h1>
   <p class='notice-message'>
     [% l('Thank you for signing up! Please check your email to retrieve the verification token.') %]
   </p>
@@ -54,7 +54,7 @@
           </fieldset>
           <fieldset class="center-text" id="formlayout">
             <span class="button ">
-              <button class="button " id="btn_submit" type="submit">[% l('Create New Account') %]</button>
+              <button class="button " id="btn_submit" type="submit">[% l('Create new account') %]</button>
               <p class="errorfield" id="error-account-opening" style="display:none"></p>
             </span>
           </fieldset>

@@ -68,14 +68,14 @@ const SecurityWS = (function() {
         const locked = +response.cashier_password === 1;
         if (locked) {
             updatePage({
-                legend: 'Unlock Cashier',
+                legend: 'Unlock cashier',
                 info  : 'Your cashier is locked as per your request - to unlock it, please enter the password.',
-                button: 'Unlock Cashier',
+                button: 'Unlock cashier',
             });
             $('#repasswordrow').hide();
         } else {
             updatePage({
-                legend: 'Lock Cashier',
+                legend: 'Lock cashier',
                 info  : 'An additional password can be used to restrict access to the cashier.',
                 button: 'Update',
             });
