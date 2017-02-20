@@ -99,9 +99,9 @@
                             </div>
                         </div>
                     </div>
-                    <h3 class="margin-top">[% l("Prospectus") %]</h3>
+                    <h3 class="margin-top">[% l("Product Disclosure Statement") %]</h3>
                     <div>
-                        <p>[% l("Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options.") %]</p>
+                        <p>[% l("Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options.") %]</p>
                         <div class="gr-4 gr-12-m gr-6-p gr-centered">
                             <div class="xquote border-dark-gray">
                                 <div class="gr-row">
@@ -109,8 +109,8 @@
                                         <img class="full-height" src="[% request.url_for('images/pages/regulation/prospectus.svg') %]">
                                     </div>
                                     <div class="gr-8 align-start quote-text">
-                                        <a download="[% true %]" href="[% request.url_for('/download/BIEL_Prospectus.pdf') %]" target="_blank">
-                                            [% l("Prospectus") %]
+                                        <a download="[% true %]" href="[% request.url_for('/download/BIEL_Product_Disclosure_Statement.pdf') %]" target="_blank">
+                                            [% l("Product Disclosure Statement") %]
                                         </a>
                                     </div>
                                 </div>
