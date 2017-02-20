@@ -1,4 +1,4 @@
-<fieldset>
+<fieldset[% IF id %] id="[% id %]"[% END %][% IF class %] class="[% class %]"[% END %]>
     [% IF legend %]<legend>[% legend %]</legend>[% END %]
     [% content %]
 </fieldset>
