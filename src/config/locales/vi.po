@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-02-17 10:57+0000\n"
 "Last-Translator: Pham Minh Hieu <hphamv7@gmail.com>\n"
-"Language-Team: Vietnamese "
-"<https://hosted.weblate.org/projects/binary/static/vi/>\n"
+"Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3212,25 +3211,13 @@ msgid "For e-cash methods or local currencies not supported by %1."
 msgstr "Đối với thẻ E-cash hoặc bản tệ không được hỗ trợ bởi %1."
 
 msgid "For example, the CFDs on US 30 Cash Index offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 Cash Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
-msgstr ""
-"Ví dụ, các hợp đồng chênh lệch giá trên chỉ số tiền mặt US 30 cung cấp 1 USD "
-"cho mỗi điểm hợp đồng. Nếu bạn mua vào một hợp đồng khối lượng 1.0 cho chỉ "
-"số tiền mặt US 30 với giá thành 20,000 USD và sau đó bán lại nó với giá "
-"20,010 thì biểu đồ lợi nhuận của bạn sẽ được tính như sau:"
+msgstr "Ví dụ, các hợp đồng chênh lệch giá trên chỉ số tiền mặt US 30 cung cấp 1 USD cho mỗi điểm hợp đồng. Nếu bạn mua vào một hợp đồng khối lượng 1.0 cho chỉ số tiền mặt US 30 với giá thành 20,000 USD và sau đó bán lại nó với giá 20,010 thì biểu đồ lợi nhuận của bạn sẽ được tính như sau:"
 
 msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
-msgstr ""
-"Ví dụ, các hợp đồng chênh lệch giá trên chỉ số biến động cung cấp 1 USD cho "
-"mỗi hợp đồng. Nếu mua vào một khối hợp đồng 1.0 trên sàn biến động 100 với "
-"mức giá là 20,000 và sau đó bán lại với giá thầu 20,010 USD, biểu giá lợi "
-"nhuận của bạn sẽ được tính như sau:"
+msgstr "Ví dụ, các hợp đồng chênh lệch giá trên chỉ số biến động cung cấp 1 USD cho mỗi hợp đồng. Nếu mua vào một khối hợp đồng 1.0 trên sàn biến động 100 với mức giá là 20,000 và sau đó bán lại với giá thầu 20,010 USD, biểu giá lợi nhuận của bạn sẽ được tính như sau:"
 
 msgid "For features and trading illustration of Spot FX offered by Binary.com, refer to the Product Disclosure Statement. This policy is an appendix to the overarching Binary.com Order Execution Policy and should be read in conjunction with the overarching Binary.com Order Execution Policy."
-msgstr ""
-"Đối với các tính năng và thí dụ thương mại của Spot FX được cung cấp bởi "
-"Binary.com, tham chiếu đến các báo cáo công bố sản phẩm. Chính sách này là "
-"một phụ lục vào chính sách thực thi lệnh bao quát của Binary.com và nên được "
-"đọc kết hợp với chính sách thực thi lệnh  bao quát của Binary.com."
+msgstr "Đối với các tính năng và thí dụ thương mại của Spot FX được cung cấp bởi Binary.com, tham chiếu đến các báo cáo công bố sản phẩm. Chính sách này là một phụ lục vào chính sách thực thi lệnh bao quát của Binary.com và nên được đọc kết hợp với chính sách thực thi lệnh  bao quát của Binary.com."
 
 msgid "For forex quotes the closing times are defined by the Company as shown in the Market Opening Times section of the website. In the event of any dispute regarding market or settlement values, the decision of the Company shall be final and binding. Clients should note that certain markets (such as stocks and stock indices) are not open throughout the day and that trading may not be available when the markets are closed."
 msgstr "Đối với báo giá ngoại tệ tại thời điểm đóng cửa được xác định bởi Công ty được thể hiện trong mục Thời gian Mở cửa Thị trường trên trang web. Trường hợp có bất kì tranh chấp nào liên quan đến giá trị thị trường hoặc giá trị quyết toán, công ty sẽ có quyết định bắt buộc và sau cùng. Khách hàng nên chú ý rằng thị trường nhất định (như là chỉ số chứng khoán và chứng khoán) không mở suốt ngày và giao dịch cũng không có sẵn khi thị trường đóng cửa."
@@ -9677,6 +9664,9 @@ msgstr "địa chỉ hòm thư"
 msgid "h"
 msgstr "Th"
 
+msgid "hour"
+msgstr "giờ"
+
 msgid "hours"
 msgstr "giờ"
 
@@ -9717,6 +9707,9 @@ msgstr "tối thiểu: 1.000"
 
 msgid "minimum available duration"
 msgstr "khoảng thời gian có sẵn tối thiểu"
+
+msgid "mins"
+msgstr ""
 
 msgid "minutes"
 msgstr "phút"
@@ -11435,9 +11428,6 @@ msgstr "Chi tiết Tài khoản"
 
 #~ msgid "f"
 #~ msgstr "f"
-
-#~ msgid "hour"
-#~ msgstr "giờ"
 
 #~ msgid "loading..."
 #~ msgstr "đang tải..."
