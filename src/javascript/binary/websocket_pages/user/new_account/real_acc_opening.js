@@ -1,8 +1,6 @@
 const Client         = require('../../../base/client').Client;
-const getFormData    = require('../../../base/utility').getFormData;
 const AccountOpening = require('../../../common_functions/account_opening');
-const Validation     = require('../../../common_functions/form_validation');
-const Cookies        = require('../../../../lib/js-cookie');
+const FormManager    = require('../../../common_functions/form_manager');
 
 const RealAccOpening = (function() {
     const residenceID = '#residence';
@@ -14,7 +12,7 @@ const RealAccOpening = (function() {
         BinarySocket.wait('authorize').then(() => {
             if (Client.get('residence')) {
                 if (AccountOpening.redirectAccount()) return;
-                AccountOpening.populateForm(formID, getValidations);
+                AccountOpening.populateForm(formID, AccountOpening.commonValidations);
                 $(formID).removeClass('invisible');
                 bindValidation();
             } else {
@@ -24,28 +22,11 @@ const RealAccOpening = (function() {
         });
     };
 
-    const getValidations = () => (
-        AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(formID))
-    );
-
     const bindValidation = () => {
-        $(formID).off('submit').on('submit', function(evt) {
-            evt.preventDefault();
-            if (Validation.validate(formID)) {
-                BinarySocket.send(populateReq()).then((response) => {
-                    AccountOpening.handleNewAccount(response, response.msg_type);
-                });
-            }
-        });
+        FormManager.handleSubmit(formID, { new_account_real: 1 }, handleResponse);
     };
 
-    const populateReq = () => {
-        const req = $.extend({ new_account_real: 1 }, getFormData());
-        if (Cookies.get('affiliate_tracking')) {
-            req.affiliate_token = Cookies.getJSON('affiliate_tracking').t;
-        }
-        return req;
-    };
+    const handleResponse = response => (AccountOpening.handleNewAccount(response, response.msg_type));
 
     const show_residence_form = () => {
         const $residence = $(residenceID);
@@ -61,7 +42,7 @@ const RealAccOpening = (function() {
                             BinarySocket.send({ get_settings: 1 }, true).then((data) => {
                                 if (data.get_settings.country_code) {
                                     if (AccountOpening.redirectAccount()) return;
-                                    AccountOpening.populateForm(formID, getValidations);
+                                    AccountOpening.populateForm(formID, AccountOpening.commonValidations);
                                     hide_residence_form();
                                 }
                             });

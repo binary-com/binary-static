@@ -11,7 +11,7 @@
                             <label for="gender">[% l('Gender') %]</label>
                         </div>
                         <div class="gr-8">
-                            <select id="gender" class="form_input">
+                            <select id="gender">
                                 <option value="">[% l('Please select') %]</option>
                                 <option value="m">[% l('Male') %]</option>
                                 <option value="f">[% l('Female') %]</option>
@@ -24,7 +24,7 @@
                             <label for="last_name">[% l('Family name') %]</label>
                         </div>
                         <div class="gr-8">
-                            <input type="text" class="text form_input" id="last_name" name="last_name" maxlength="30"/>
+                            <input type="text" class="text" id="last_name" name="last_name" maxlength="30"/>
                             <p class="hint">[% l('{JAPAN ONLY}No space between last name and first name') %]</p>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                             <label for="first_name">[% l('First name') %]</label>
                         </div>
                         <div class="gr-8">
-                            <input type="text" class="text form_input" id="first_name" name="first_name" maxlength="30"/>
+                            <input type="text" class="text" id="first_name" name="first_name" maxlength="30"/>
                             <p class="hint">[% l('{JAPAN ONLY}No space between last name and first name') %]</p>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                             <label for="date_of_birth">[% l('Date of birth') %]</label>
                         </div>
                         <div class="gr-8">
-                            <input type="text" id="date_of_birth" name="date_of_birth" class="form_input" size="12" readonly="readonly"/>
+                            <input type="text" id="date_of_birth" name="date_of_birth" size="12" readonly="readonly"/>
                         </div>
                     </div>
 
@@ -53,7 +53,7 @@
                             <label for="occupation">[% l('Occupation') %]</label>
                         </div>
                         <div class="gr-8">
-                            <select id="occupation" class="form_input">
+                            <select id="occupation">
                                 <option value="">[% l('Please select') %]</option>
                                 <option value="Office worker">[% l('Office worker') %]</option>
                                 <option value="Director">[% l('Director') %]</option>
@@ -77,7 +77,7 @@
                             <label for="address_postcode">[% l('Postal code/ZIP') %]</label>
                         </div>
                         <div class="gr-8">
-                            <input type="text" class="text form_input" id="address_postcode" name="address_postcode" maxlength="20"/>
+                            <input type="text" class="text" id="address_postcode" name="address_postcode" maxlength="20"/>
                             <p class="hint">[% l('E.g. 123-4567') %]</p>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
                             <label for="address_state">[% l('State/Province') %]</label>
                         </div>
                         <div class="gr-8">
-                            <select id="address_state" name="address_state" class="form_input"></select>
+                            <select id="address_state" name="address_state"></select>
                         </div>
                     </div>
 
@@ -96,7 +96,7 @@
                             <label for="address_city">[% l('Town/City') %]</label>
                         </div>
                         <div class="gr-8">
-                            <input type="text" class="text form_input" id="address_city" name="address_city" maxlength="35"/>
+                            <input type="text" class="text" id="address_city" name="address_city" maxlength="35"/>
                             <p class="hint">[% l('E.g. Shibuya-ku') %]</p>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                             <label for="address_line_1">[% l('First line of home address') %]</label>
                         </div>
                         <div class="gr-8">
-                            <input type="text" class="text form_input" id="address_line_1" name="address_line_1" maxlength="70"/>
+                            <input type="text" class="text" id="address_line_1" name="address_line_1" maxlength="70"/>
                             <p class="hint">[% l('E.g. Hiroo') %]</p>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                             <label for="address_line_2">[% l('Second line of home address') %]</label>
                         </div>
                         <div class="gr-8">
-                            <input type="text" class="text form_input" id="address_line_2" name="address_line_2" maxlength="70"/>
+                            <input type="text" class="text" id="address_line_2" name="address_line_2" maxlength="70"/>
                             <p class="hint">[% l('E.g. Building name, apartment number etc (Optional)') %]</p>
                         </div>
                     </div>
@@ -126,7 +126,7 @@
                             <label for="phone">[% l('Telephone') %]</label>
                         </div>
                         <div class="gr-8">
-                            <input type="text" class="text form_input" id="phone" name="phone" maxlength="35"/>
+                            <input type="text" class="text" id="phone" name="phone" maxlength="35"/>
                             <p class="hint">[% l('E.g. 03-1234-5678') %]</p>
                         </div>
                     </div>
@@ -140,7 +140,7 @@
                             <label for="secret_question">[% l('Secret question') %]</label>
                         </div>
                         <div class="gr-8">
-                            <select id="secret_question" class="form_input">
+                            <select id="secret_question">
                                 <option value="Favourite dish">[% l('Favourite dish') %]</option>
                                 <option value="Mother's maiden name">[% l("Mother's maiden name") %]</option>
                                 <option value="Name of your pet">[% l('Name of your pet') %]</option>
@@ -158,7 +158,7 @@
                             <label for="secret_answer">[% l('Answer to secret question') %]</label>
                         </div>
                         <div class="gr-8">
-                            <input type="text" class="text form_input" id="secret_answer" maxlength="50" autocomplete="off"/>
+                            <input type="text" class="text" id="secret_answer" maxlength="50" autocomplete="off"/>
                         </div>
                     </div>
                 </fieldset>
@@ -171,7 +171,7 @@
                             <label for="declare_not_fatca">[% l('Not FATCA*') %]</label>
                         </div>
                         <div class="gr-8">
-                            <input id="declare_not_fatca" type="checkbox" class="form_input"/>
+                            <input id="declare_not_fatca" type="checkbox" />
                             <p class="hint">[% l('You must not be a USA resident, citizen, or have any tax reporting to the USA') %]</p>
                         </div>
                     </div>
@@ -181,7 +181,7 @@
                             <label for="annual_income">[% l('Annual Income') %]</label>
                         </div>
                         <div class="gr-8">
-                            <select id="annual_income" class="form_input">
+                            <select id="annual_income">
                                 <option value="">[% l('Please select') %]</option>
                                 <option value="Less than 1 million JPY">[% l('Less than 1 million JPY') %]</option>
                                 <option value="1-3 million JPY">[% l('1-3 million JPY') %]</option>
@@ -200,7 +200,7 @@
                             <label for="financial_asset">[% l('Financial Asset') %]</label>
                         </div>
                         <div class="gr-8">
-                            <select id="financial_asset" class="form_input">
+                            <select id="financial_asset">
                                 <option value="">[% l('Please select') %]</option>
                                 <option value="Less than 1 million JPY">[% l('Less than 1 million JPY') %]</option>
                                 <option value="1-3 million JPY">[% l('1-3 million JPY') %]</option>
@@ -219,7 +219,7 @@
                             <label for="daily_loss_limit">[% l('Daily limit on losses') %]</label>
                         </div>
                         <div class="gr-8">
-                            <input class="text form_input" id="daily_loss_limit" type="text" maxlength="20"/>
+                            <input class="text" id="daily_loss_limit" type="text" maxlength="20"/>
                             <p class="hint">[% l('Maximum aggregate loss per day.') %]</p>
                         </div>
                     </div>
@@ -233,7 +233,7 @@
                             <label for="trading_experience_equities">[% l('Equities') %]</label>
                         </div>
                         <div class="gr-8">
-                            <select id="trading_experience_equities" class="form_input">
+                            <select id="trading_experience_equities">
                                 <option value="">[% l('Please select') %]</option>
                                 <option value="No experience">[% l('No experience') %]</option>
                                 <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
@@ -250,7 +250,7 @@
                             <label for="trading_experience_commodities">[% l('Commodities') %]</label>
                         </div>
                         <div class="gr-8">
-                            <select id="trading_experience_commodities" class="form_input">
+                            <select id="trading_experience_commodities">
                                 <option value="">[% l('Please select') %]</option>
                                 <option value="No experience">[% l('No experience') %]</option>
                                 <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
@@ -267,7 +267,7 @@
                             <label for="trading_experience_foreign_currency_deposit">[% l('Foreign currency deposit') %]</label>
                         </div>
                         <div class="gr-8">
-                            <select id="trading_experience_foreign_currency_deposit" class="form_input">
+                            <select id="trading_experience_foreign_currency_deposit">
                                 <option value="">[% l('Please select') %]</option>
                                 <option value="No experience">[% l('No experience') %]</option>
                                 <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
@@ -284,7 +284,7 @@
                             <label for="trading_experience_margin_fx">[% l('Margin FX') %]</label>
                         </div>
                         <div class="gr-8">
-                            <select id="trading_experience_margin_fx" class="form_input">
+                            <select id="trading_experience_margin_fx">
                                 <option value="">[% l('Please select') %]</option>
                                 <option value="No experience">[% l('No experience') %]</option>
                                 <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
@@ -301,7 +301,7 @@
                             <label for="trading_experience_investment_trust">[% l('Investment trust') %]</label>
                         </div>
                         <div class="gr-8">
-                            <select id="trading_experience_investment_trust" class="form_input">
+                            <select id="trading_experience_investment_trust">
                                 <option value="">[% l('Please select') %]</option>
                                 <option value="No experience">[% l('No experience') %]</option>
                                 <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
@@ -318,7 +318,7 @@
                             <label for="trading_experience_public_bond">[% l('Public and corporation bond') %]</label>
                         </div>
                         <div class="gr-8">
-                            <select id="trading_experience_public_bond" class="form_input">
+                            <select id="trading_experience_public_bond">
                                 <option value="">[% l('Please select') %]</option>
                                 <option value="No experience">[% l('No experience') %]</option>
                                 <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
@@ -335,7 +335,7 @@
                             <label for="trading_experience_option_trading">[% l('OTC Derivative (Option) Trading') %]</label>
                         </div>
                         <div class="gr-8">
-                            <select id="trading_experience_option_trading" class="form_input">
+                            <select id="trading_experience_option_trading">
                                 <option value="">[% l('Please select') %]</option>
                                 <option value="No experience">[% l('No experience') %]</option>
                                 <option value="Less than 6 months">[% l('Less than 6 months') %]</option>
@@ -352,7 +352,7 @@
                             <label for="trading_purpose">[% l('Purpose of trading') %]</label>
                         </div>
                         <div class="gr-8">
-                            <select id="trading_purpose" class="form_input">
+                            <select id="trading_purpose">
                                 <option value="">[% l('Please select') %]</option>
                                 <option value="Targeting short-term profits">[% l('Targeting short-term profits') %]</option>
                                 <option value="Targeting medium-term / long-term profits">[% l('Targeting medium-term / long-term profits') %]</option>
@@ -425,7 +425,7 @@
                     </div>
 
                     <div class="gr-padding-10 gr-12">
-                        <input id="agree_use_electronic_doc" type="checkbox" class="form_input" />
+                        <input id="agree_use_electronic_doc" type="checkbox" />
                         <label for="agree_use_electronic_doc">[% l('I hereby agree and accept that all documents such as pre-contract forms, all terms and conditions, trade reports and other legally required materials will be issued in electronic format only.') %]</label>
                     </div>
 
@@ -435,7 +435,7 @@
 
                     <div class="gr-padding-10 gr-12">
                         <div>
-                            <input id="agree_warnings_and_policies" type="checkbox" class="form_input" />
+                            <input id="agree_warnings_and_policies" type="checkbox" />
                             <label for="agree_warnings_and_policies">[% l('I confirm my agreement to the contents of all the documents listed below:') %]</label>
                         </div>
                         <div>
@@ -459,12 +459,12 @@
                     </div>
 
                     <div class="gr-padding-10 gr-12">
-                        <input id="confirm_understand_own_judgment" type="checkbox" class="form_input" />
+                        <input id="confirm_understand_own_judgment" type="checkbox" />
                         <label for="confirm_understand_own_judgment">[% l('I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets.') %]</label>
                     </div>
 
                     <div class="gr-padding-10 gr-12">
-                        <input id="confirm_understand_trading_mechanism" type="checkbox" class="form_input" />
+                        <input id="confirm_understand_trading_mechanism" type="checkbox" />
                         <label for="confirm_understand_trading_mechanism">[% l('I understand and agree that, with regard to over-the-counter binary option trading, I have read and understand the general conditions and mechanisms for trading the contract, including details of the underlying financial index, before committing to a transaction.') %]</label>
                     </div>
 
@@ -473,32 +473,32 @@
                     </div>
 
                     <div class="gr-padding-10 gr-12">
-                        <input id="confirm_understand_judgment_time" type="checkbox" class="form_input" />
+                        <input id="confirm_understand_judgment_time" type="checkbox" />
                         <label for="confirm_understand_judgment_time">[% l('Each option transaction has a specified expiry time and date, known as the judgment time.') %]</label>
                     </div>
 
                     <div class="gr-padding-10 gr-12">
-                        <input id="confirm_understand_total_loss" type="checkbox" class="form_input" />
+                        <input id="confirm_understand_total_loss" type="checkbox" />
                         <label for="confirm_understand_total_loss">[% l('If a customer holds a long position and the prediction goes wrong as of the judgment time, the invested principal amount will become zero value.') %]</label>
                     </div>
 
                     <div class="gr-padding-10 gr-12">
-                        <input id="confirm_understand_sellback_loss" type="checkbox" class="form_input" />
+                        <input id="confirm_understand_sellback_loss" type="checkbox" />
                         <label for="confirm_understand_sellback_loss">[% l('If a customer sells back a long option position before the determination time, then the sale price may be lower than the original purchase price, so there is a possibility of a net loss.') %]</label>
                     </div>
 
                     <div class="gr-padding-10 gr-12">
-                        <input id="confirm_understand_shortsell_loss" type="checkbox" class="form_input" />
+                        <input id="confirm_understand_shortsell_loss" type="checkbox" />
                         <label for="confirm_understand_shortsell_loss">[% l('If a customer holds a short position and the prediction is incorrect as of the judgment time, the customer is required to pay the payout amount, and as that will be greater than the trade price that the customer originally received, this will cause a net loss.') %]</label>
                     </div>
 
                     <div class="gr-padding-10 gr-12">
-                        <input id="confirm_understand_company_profit" type="checkbox" class="form_input" />
+                        <input id="confirm_understand_company_profit" type="checkbox" />
                         <label for="confirm_understand_company_profit">[% l("[_1] earns a return from the difference between the total amount of all customers' payment and the total amount of all customers' receipts.", website_name) %]</label>
                     </div>
 
                     <div class="gr-padding-10 gr-12">
-                        <input id="confirm_understand_expert_knowledge" type="checkbox" class="form_input" />
+                        <input id="confirm_understand_expert_knowledge" type="checkbox" />
                         <label for="confirm_understand_expert_knowledge">[% l('In carrying out OTC binary option trading, a customer needs expert knowledge such as the theoretical value of options, in order to make reasonable investment decisions.') %]</label>
                     </div>
                 </fieldset>

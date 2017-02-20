@@ -25,7 +25,7 @@ const Validation = (function() {
             forms[form_selector] = { fields: fields, $form: $form };
             fields.forEach((field) => {
                 field.$ = $form.find(field.selector);
-                if (!field.$.length) return;
+                if (!field.$.length || !field.validations) return;
 
                 field.type = getFieldType(field.$);
                 field.form = form_selector;
@@ -117,7 +117,7 @@ const Validation = (function() {
     // ----- Validate -----
     // --------------------
     const checkField = (field) => {
-        if (!field.$.is(':visible')) return true;
+        if (!field.$.is(':visible') || !field.validations) return true;
         let all_is_ok = true,
             message;
 

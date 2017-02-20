@@ -4,7 +4,8 @@ const Client               = require('../base/client').Client;
 const State                = require('../base/storage').State;
 const url_for              = require('../base/url').url_for;
 const appendTextValueChild = require('../common_functions/common_functions').appendTextValueChild;
-const Validation           = require('../common_functions/form_validation');
+const FormManager          = require('../common_functions/form_manager');
+const Cookies              = require('../../lib/js-cookie');
 require('select2');
 
 const redirectCookie = function() {
@@ -117,7 +118,7 @@ const handleState = (states_list, formID, getValidations) => {
                 $address_state.val(client_state);
             }
         } else {
-            $address_state.replaceWith($('<input/>', { id: 'address_state', name: 'address_state', type: 'text', maxlength: '35', class: 'form_input' }));
+            $address_state.replaceWith($('<input/>', { id: 'address_state', name: 'address_state', type: 'text', maxlength: '35' }));
             $address_state = $('#address_state');
             if (client_state) {
                 $address_state.text(client_state);
@@ -126,7 +127,7 @@ const handleState = (states_list, formID, getValidations) => {
         $address_state.parent().parent().show();
 
         if (formID && typeof getValidations === 'function') {
-            Validation.init(formID, getValidations());
+            FormManager.init(formID, getValidations());
         }
     });
 };
@@ -152,24 +153,43 @@ const handleNewAccount = function(response, message_type) {
     }
 };
 
-const commonValidations = () => ([
-    { selector: '#first_name',         validations: ['req', ['length', { min: 2, max: 30 }], 'letter_symbol'] },
-    { selector: '#last_name',          validations: ['req', ['length', { min: 2, max: 30 }], 'letter_symbol'] },
-    { selector: '#date_of_birth',      validations: ['req'] },
-    { selector: '#address_line_1',     validations: ['req', 'general'] },
-    { selector: '#address_line_2',     validations: ['general'] },
-    { selector: '#address_city',       validations: ['req', 'letter_symbol'] },
-    { selector: 'input#address_state', validations: ['letter_symbol'] },
-    { selector: '#address_postcode',   validations: ['postcode'] },
-    { selector: '#phone',              validations: ['req', 'phone', ['min', { min: 6, max: 35 }]] },
-    { selector: '#secret_answer',      validations: ['req', ['min', { min: 4, max: 50 }]] },
-    { selector: '#tnc',                validations: ['req'] },
-]);
+const commonValidations = () => {
+    const req = [
+        { selector: '#salutation',         validations: ['req'] },
+        { selector: '#first_name',         validations: ['req', ['length', { min: 2, max: 30 }], 'letter_symbol'] },
+        { selector: '#last_name',          validations: ['req', ['length', { min: 2, max: 30 }], 'letter_symbol'] },
+        { selector: '#date_of_birth',      validations: ['req'] },
+        { selector: '#address_line_1',     validations: ['req', 'general'] },
+        { selector: '#address_line_2',     validations: ['general'] },
+        { selector: '#address_city',       validations: ['req', 'letter_symbol'] },
+        { selector: '#address_state',      validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'], request_field: 'address_state' },
+        { selector: '#address_postcode',   validations: ['postcode'] },
+        { selector: '#phone',              validations: ['req', 'phone', ['min', { min: 6, max: 35 }]] },
+        { selector: '#secret_question',    validations: ['req'] },
+        { selector: '#secret_answer',      validations: ['req', ['min', { min: 4, max: 50 }]] },
+        { selector: '#tnc',                validations: ['req'], exclude_request: 1 },
+
+        { request_field: 'residence', value: Client.get('residence') },
+    ];
+
+    if (Cookies.get('affiliate_tracking')) {
+        req.push({ request_field: 'affiliate_token', value: Cookies.getJSON('affiliate_tracking').t });
+    }
+
+    return req;
+};
 
 const selectCheckboxValidation = (formID) => {
     const validations = [];
+    let validation,
+        id;
     $(formID).find('select, input[type=checkbox]').each(function () {
-        validations.push({ selector: `#${$(this).attr('id')}`, validations: ['req'] });
+        id = $(this).attr('id');
+        validation = { selector: `#${id}`, validations: ['req'] };
+        if (/(tnc|not_pep)/.test(id)) {
+            validation.exclude_request = 1;
+        }
+        validations.push(validation);
     });
     return validations;
 };
