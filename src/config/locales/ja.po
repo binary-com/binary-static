@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-17 01:31+0000\n"
-"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
+"PO-Revision-Date: 2017-02-17 04:27+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -1276,8 +1276,6 @@ msgstr "８月"
 msgid "Australia"
 msgstr "オーストラリア"
 
-#, fuzzy
-#| msgid "Australian OTC Index"
 msgid "Australia 200 Cash Index"
 msgstr "オーストラリア 店頭ンデックス"
 
@@ -4494,8 +4492,6 @@ msgstr "グループ会社概要"
 msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
 msgstr "短時間のフライトで美しいビーチ、島、そして山へアクセスできます。マルタ共和国から地中海や北アフリカへ、マレーシアからはアジア全体へを容易に訪問できます。"
 
-#, fuzzy
-#| msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
 msgid "Kindly email the following documents to <a href=\"mailto:%1\">%1</a> to authenticate your account:"
 msgstr "入出金口座がロックされています。お手数ですが<a href=\"mailto:%1\">%1</a>へメールでお問い合わせください。"
 
@@ -4707,8 +4703,6 @@ msgstr "ログイン履歴"
 msgid "Login ID"
 msgstr "ログインID"
 
-#, fuzzy
-#| msgid "Login ID"
 msgid "Login ID:"
 msgstr "ログインID"
 
@@ -9478,6 +9472,9 @@ msgstr "メールアドレス"
 msgid "h"
 msgstr "時間"
 
+msgid "hour"
+msgstr "時間"
+
 msgid "hours"
 msgstr "時間"
 
@@ -9516,6 +9513,9 @@ msgstr "ペイアウト: ¥1,000"
 
 msgid "minimum available duration"
 msgstr "最短取引期間"
+
+msgid "mins"
+msgstr "分"
 
 msgid "minutes"
 msgstr "分"
@@ -11128,17 +11128,11 @@ msgstr "ご口座の詳細情報"
 #~ msgid "f"
 #~ msgstr "女性"
 
-#~ msgid "hour"
-#~ msgstr "時間"
-
 #~ msgid "loading..."
 #~ msgstr "読み込み中"
 
 #~ msgid "m"
 #~ msgstr "男性"
-
-#~ msgid "mins"
-#~ msgstr "分"
 
 #~ msgid "minute"
 #~ msgstr "分"
