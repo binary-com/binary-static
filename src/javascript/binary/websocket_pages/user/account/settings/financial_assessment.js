@@ -27,7 +27,6 @@ const FinancialAssessment = (() => {
         $(form_selector).on('submit', (event) => {
             event.preventDefault();
             submitForm();
-            return false;
         });
 
         BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
