@@ -5971,6 +5971,11 @@ msgstr "Ihre Anfrage wird bearbeitet..."
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "Erstellung von Inhalten für die Blogs des Unternehmens, Soziale Medien und Werbematerialien"
 
+#, fuzzy
+#| msgid "Risk Disclaimer"
+msgid "Product Disclosure Statement"
+msgstr "Risikohinweise"
+
 msgid "Professional Clients"
 msgstr "Professionelle Kunden"
 
@@ -6009,9 +6014,6 @@ msgstr "Korrekturlesen und Korrektur von Inhalten, die auf unserer Firmen-Websit
 
 msgid "Proofreader"
 msgstr "Korrektor"
-
-msgid "Prospectus"
-msgstr "Prospekte"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "Nachweisbare Kenntnisse von Revisionsstandards, Verfahren, Gesetzen, Vorschriften und Verordnungen sind ein zusätzlicher Vorteil"
@@ -6092,7 +6094,9 @@ msgstr "Bitte geben Sie Ihr Passwort erneut ein"
 msgid "Read"
 msgstr "Lesen"
 
-msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+#, fuzzy
+#| msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+msgid "Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
 msgstr "Lesen Sie unten über die Features, Eigenschaften, Vorteile und Risiken binärer Optionen im Prospekt von Binary Investments (Europe) Limited. In dem „Zeitplan” Abschnitt gibt es Investitionsbeispiele von Kontrakttypen, um Ihnen dabei zu helfen, die Grundlagen vom Handel mit binären Optionen in den Griff zu bekommen."
 
 msgid "Read about the five types of trade offered by %1."
@@ -8887,8 +8891,10 @@ msgstr "Sie haben keinen Zugriff auf Anwendungen gewährt."
 msgid "You have not obtained and have not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business;"
 msgstr "Sie haben nicht alle erforderlichen Lizenzen und Bewilligungen, die zum Betrieb nach den Gesetzen, Regeln und Vorschriften von Behörden oder Aufsichtsbehörden in dem Land/den Ländern in dem/denen Sie aktiv sind oder auf die Ihre Aktivitäten zielen, eingeholt oder aufrecht erhalten;"
 
-msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
-msgstr "Sie haben das Kurslimit für Anfragen je Sekunde erreicht. <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">Aktualisieren</a> Sie bitte die Seite, um fortzufahren."
+#, fuzzy
+#| msgid "You have reached the rate limit for %1."
+msgid "You have reached the rate limit of requests per second. Please try later."
+msgstr "Sie haben das Kurslimit für %1 erreicht."
 
 #, fuzzy
 #| msgid "you have read our privacy statement and hereby give us consent to process your personal information as outlined there;"
@@ -10445,6 +10451,12 @@ msgstr "Kontolimits"
 
 msgid "Account Details"
 msgstr "Kontoangaben"
+
+#~ msgid "Prospectus"
+#~ msgstr "Prospekte"
+
+#~ msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
+#~ msgstr "Sie haben das Kurslimit für Anfragen je Sekunde erreicht. <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">Aktualisieren</a> Sie bitte die Seite, um fortzufahren."
 
 #~ msgid "Are you sure that you want to permanently revoke connection to"
 #~ msgstr "Sind Sie sicher, dass Sie den Zugang zu endgültig widerrufen möchten"
@@ -13068,9 +13080,6 @@ msgstr "Kontoangaben"
 
 #~ msgid "You have opened an account using invalid details."
 #~ msgstr "Sie haben ein Konto mit ungültigen Angaben eröffnet."
-
-#~ msgid "You have reached the rate limit for %1."
-#~ msgstr "Sie haben das Kurslimit für %1 erreicht."
 
 #~ msgid "You have signed up for more than one account."
 #~ msgstr "Sie haben sich mit mehr als einem Konto angemeldet."

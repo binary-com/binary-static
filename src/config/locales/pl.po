@@ -9,14 +9,12 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-02-20 12:15+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>"
-"\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.12-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -5975,6 +5973,11 @@ msgstr "Twa przetwarzanie Twojego żądania..."
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "Twrzenie treści umieszczonych na stronie internetowej i blogach firmowych oraz w mediach społecznościowych i materiałach marketingowych"
 
+#, fuzzy
+#| msgid "Risk Disclaimer"
+msgid "Product Disclosure Statement"
+msgstr "Zastrzeżenie dotyczące ryzyka"
+
 msgid "Professional Clients"
 msgstr "Klienci profesjonalni"
 
@@ -6013,9 +6016,6 @@ msgstr "Sprawdzanie i korekta treści umieszczanych na stronie internetowej firm
 
 msgid "Proofreader"
 msgstr "Korektor"
-
-msgid "Prospectus"
-msgstr "Prospekt"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "Potwierdzona znajomość standardów i procedur audytowych, przepisów prawnych i regulacyjnych będzie dodatkowym atutem"
@@ -6096,7 +6096,9 @@ msgstr "Proszę ponownie wpisać hasło"
 msgid "Read"
 msgstr "Odczyt"
 
-msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+#, fuzzy
+#| msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+msgid "Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
 msgstr "W poniższym prospekcie Binary Investments (Europe) Limited znajdziesz informacje na temat funkcji i cech opcji binarnych, a także związanych z nimi korzyści i możliwym ryzyku. W sekcji „Harmonogramy” zawarte są przykłady inwestycji dla poszczególnych rodzajów zakładów, które pomogą Ci zrozumieć podstawy handlowania opcjami binarnymi."
 
 msgid "Read about the five types of trade offered by %1."
@@ -8884,8 +8886,10 @@ msgstr "Nie przyznano Ci dostępu do żadnej aplikacji."
 msgid "You have not obtained and have not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business;"
 msgstr "Partner nie uzyskał niezbędnych licencji i pozwoleń na prowadzenie działalności wymaganych na mocy obowiązujących przepisów, rozporządzeń i norm prawnych wydawanych przez jakikolwiek organ regulacyjny w obrębie jurysdykcji kraju, w którym Partner prowadzi działalność lub do którego kieruje swoje usługi, lub utracił takie licencje i pozwolenia."
 
-msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
-msgstr "Został osiągnięty limit żądań na sekundę. Aby kontynuować, <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">odśwież</a> stronę."
+#, fuzzy
+#| msgid "You have reached the rate limit for %1."
+msgid "You have reached the rate limit of requests per second. Please try later."
+msgstr "Osiągnięto limit stawki dla %1."
 
 #, fuzzy
 #| msgid "you have read our privacy statement and hereby give us consent to process your personal information as outlined there;"
@@ -10442,6 +10446,12 @@ msgstr "Limity na koncie"
 
 msgid "Account Details"
 msgstr "Dane konta"
+
+#~ msgid "Prospectus"
+#~ msgstr "Prospekt"
+
+#~ msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
+#~ msgstr "Został osiągnięty limit żądań na sekundę. Aby kontynuować, <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">odśwież</a> stronę."
 
 #~ msgid "Are you sure that you want to permanently revoke connection to"
 #~ msgstr "Czy na pewno chcesz na stałe wyłączyć połączenie z"
@@ -13141,9 +13151,6 @@ msgstr "Dane konta"
 
 #~ msgid "You have opened an account using invalid details."
 #~ msgstr "Otworzono konto przy użyciu nieważnych danych."
-
-#~ msgid "You have reached the rate limit for %1."
-#~ msgstr "Osiągnięto limit stawki dla %1."
 
 #~ msgid "You have signed up for more than one account."
 #~ msgstr "Zarejestrowano się na więcej niż jednym koncie."

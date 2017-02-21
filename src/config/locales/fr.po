@@ -6174,6 +6174,11 @@ msgstr "Traitement de votre demande en cours..."
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "Création de contenus destinés à la diffusion sur le site Web et le blog de la société, sur les réseaux sociaux et dans le cadre de nos campagnes marketing"
 
+#, fuzzy
+#| msgid "Risk Disclaimer"
+msgid "Product Disclosure Statement"
+msgstr "Divulgation des risques"
+
 msgid "Professional Clients"
 msgstr "Clients professionnels"
 
@@ -6216,9 +6221,6 @@ msgstr "Relecture et correction des contenus diffusés sur le site Web et le blo
 
 msgid "Proofreader"
 msgstr "Relecteur [H/F]"
-
-msgid "Prospectus"
-msgstr "Prospectus"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "La connaissance des normes, procédures, lois et réglementations applicables à l'audit constitue un avantage supplémentaire"
@@ -6299,7 +6301,9 @@ msgstr "Saisissez à nouveau votre mot de passe"
 msgid "Read"
 msgstr "Lire"
 
-msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+#, fuzzy
+#| msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+msgid "Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
 msgstr "Accédez à des informations sur les fonctions, les caractéristiques, les avantages et les risques des options binaires dans le prospectus de Binary Investments (Europe) Limited, disponible ci-dessous. La section « Modèles » présente des exemples d'investissement pour différents types de contrat afin de vous permettre de mieux comprendre les bases des options binaires."
 
 msgid "Read about the five types of trade offered by %1."
@@ -9165,8 +9169,10 @@ msgstr "Vous n'avez acheté aucun contrat."
 msgid "You have not obtained and have not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business;"
 msgstr "Vous n'avez pas obtenu ou conservé toutes les licences et autorisations nécessaires pour agir en conformité avec les éventuelles lois et réglementations applicables sous l'autorité de tout organisme de réglementation opérant dans la/les juridiction(s) au sein desquelles vous menez vos activités ou sous l'autorité desquelles sont placés les marchés que vous ciblez ;"
 
-msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
-msgstr "Vous avez atteint la limite autorisée de demandes par seconde. Pour continuer, veuillez <a href=\"javascript:;\" id=\"ratelimit-refresh-link\"> actualiser</a> la page."
+#, fuzzy
+#| msgid "You have reached the rate limit for %1."
+msgid "You have reached the rate limit of requests per second. Please try later."
+msgstr "Vous avez atteint la limite de tentatives par seconde de %1."
 
 #, fuzzy
 #| msgid "you have read our privacy statement and hereby give us consent to process your personal information as outlined there;"
@@ -10747,6 +10753,12 @@ msgstr "Limites du Compte"
 
 msgid "Account Details"
 msgstr "Informations du compte"
+
+#~ msgid "Prospectus"
+#~ msgstr "Prospectus"
+
+#~ msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
+#~ msgstr "Vous avez atteint la limite autorisée de demandes par seconde. Pour continuer, veuillez <a href=\"javascript:;\" id=\"ratelimit-refresh-link\"> actualiser</a> la page."
 
 #, fuzzy
 #~| msgid "Are you sure that you want to permanently revoke access to application"
@@ -13490,9 +13502,6 @@ msgstr "Informations du compte"
 
 #~ msgid "You have opened an account using invalid details."
 #~ msgstr "Vous avez ouvert un compte en utilisant des détails non valides."
-
-#~ msgid "You have reached the rate limit for %1."
-#~ msgstr "Vous avez atteint la limite de tentatives par seconde de %1."
 
 #~ msgid "You have signed up for more than one account."
 #~ msgstr "Vous vous êtes inscrit pour plus d'un compte."

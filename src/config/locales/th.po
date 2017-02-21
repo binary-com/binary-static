@@ -1735,8 +1735,7 @@ msgid "Change the Stop Out Level in relation to your account."
 msgstr "เปลี่ยนระดับ Stop Out ที่สัมพันธ์กับบัญชีของท่าน"
 
 msgid "Change the margin rate in relation to both Open Positions and new orders;"
-msgstr ""
-"การเปลี่ยนแปลงอัตรามาร์จินสัมพันธ์กับโพซิชั่นที่เปิดอยู่และคำสั่งซื้อใหม่;"
+msgstr "การเปลี่ยนแปลงอัตรามาร์จินสัมพันธ์กับโพซิชั่นที่เปิดอยู่และคำสั่งซื้อใหม่;"
 
 msgid "Change the password used for deposits and withdrawals."
 msgstr "เปลี่ยนรหัสผ่านเพื่อใช้ในการฝากเงินและถอนเงิน"
@@ -3719,11 +3718,7 @@ msgid "In the course of provision of services we shall, where applicable, conduc
 msgstr "ในหลักสูตรก่อนการให้บริการใดๆ พวกเราจะจัดให้มีการทดสอบตามความเหมาะสมเพื่อกำหนดพื้นฐานข้อมูลตามมุมมองของพวกเราสำหรับท่าน ท่านจะต้องมีความรู้พื้นฐานที่จำเป็นและประสบการณ์ในการลงทุนเพื่อเข้าใจความเสี่ยงที่จะเกิดขึ้นกีบผลิตภัณฑ์ หรือ บริการ"
 
 msgid "In the course of provision of services, we may, where applicable, conduct an appropriateness test, in accordance with our regulatory obligations, in order to determine whether, in our view and on the basis of the information provided by you, you have the necessary knowledge and experience in the investment field to understand the risks involved in the specific type of product or service offered or demanded."
-msgstr ""
-"ในหลักสูตรก่อนการให้บริการใดๆ พวกเราอาจจะจัดให้มีการทดสอบตามความเหมาะสมเพื่อก"
-"ำหนดพื้นฐานข้อมูลตามมุมมองของพวกเราสำหรับท่าน ท่านจะต้องมีความรู้พื้นฐานที่จำ"
-"เป็นและประสบการณ์ในการลงทุนเพื่อเข้าใจความเสี่ยงที่จะเกิดขึ้นกีบผลิตภัณฑ์ หรื"
-"อ บริการ"
+msgstr "ในหลักสูตรก่อนการให้บริการใดๆ พวกเราอาจจะจัดให้มีการทดสอบตามความเหมาะสมเพื่อกำหนดพื้นฐานข้อมูลตามมุมมองของพวกเราสำหรับท่าน ท่านจะต้องมีความรู้พื้นฐานที่จำเป็นและประสบการณ์ในการลงทุนเพื่อเข้าใจความเสี่ยงที่จะเกิดขึ้นกีบผลิตภัณฑ์ หรือ บริการ"
 
 msgid "In the event of any conflict between the content in this document and the above documents, this document controls your use of the %1 API. If you disagree with any of the provisions in these Terms, do not access or use the %1 API."
 msgstr "ในกรณีที่มีข้อพิพาทที่เกี่ยวข้องกับเนื้อหาสาระในเอกสารฉบับนี้ และเอกสารต่างๆ ข้างต้น เอกสารฉบับนี้กำหนดการใช้งาน %1 API ของท่าน หากท่านไม่เห็นด้วยในกรณีใดๆ ที่บังคับใช้ในเงื่อนไขการใช้งาน ได้โปรดอย่าเรียกใช้ API หรือ นำ API ของ %1 ไปใช้งาน"
@@ -4566,9 +4561,7 @@ msgid "Life-long career interest in the Accounting field"
 msgstr "มีความสนใจในสายงานบัญชีตลอดชีพ"
 
 msgid "Likelihood of execution and settlement - the depth of liquidity of the market in which your order is related to."
-msgstr ""
-"ความเป็นไปได้ของการดำเนินการและการชำระราคา - "
-"สภาพคล่องของตลาดที่คำสั่งซื้อของท่านสัมพันธ์ด้วย"
+msgstr "ความเป็นไปได้ของการดำเนินการและการชำระราคา - สภาพคล่องของตลาดที่คำสั่งซื้อของท่านสัมพันธ์ด้วย"
 
 msgid "Limit"
 msgstr "วงเงิน"
@@ -5830,6 +5823,11 @@ msgstr "กำลังดำเนินการตามความประ
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "รับผิดชอบในการผลิตเนื้อหาที่ใช้อยู่ในเว็บไซต์ บล็อก สื่อสังคมต่างๆ และสื่อการตลาดของบริษัทฯ"
 
+#, fuzzy
+#| msgid "Risk Disclosure Statement"
+msgid "Product Disclosure Statement"
+msgstr "ข้อตกลงการสงวนสิทธิ์ด้านความเสี่ยง"
+
 msgid "Professional Clients"
 msgstr "อาชีพของลูกค้า"
 
@@ -5868,9 +5866,6 @@ msgstr "พิสูจน์อักษรและแก้ไขความ
 
 msgid "Proofreader"
 msgstr "นักพิสูจน์อักษร"
-
-msgid "Prospectus"
-msgstr "หนังสือชี้ชวน"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "มีความรู้ของมาตรฐานการตรวจสอบภายใน ระเบียบวิธี กฎหมาย ข้อบัญญัติ ที่พิสูจน์ได้จะเป็นประโยชน์ในการพิจารณา"
@@ -5947,7 +5942,9 @@ msgstr "ป้อนรหัสผ่านของท่านอีกคร
 msgid "Read"
 msgstr "อ่าน"
 
-msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+#, fuzzy
+#| msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+msgid "Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
 msgstr "ศึกษาเพิ่มเติมเกี่ยวกับคุณลักษณะ ลักษณะพิเศษ ประโยชน์ และความเสี่ยงของไบนารีออปชั่นในหนังสือชี้ชวนของด้านล่าง รวมถึงในส่วน \"ตารางเวลา\" สำหรับตัวอย่างการลงทุนของสัญญาประเภทต่างๆ ที่ช่วยให้ท่านเข้าใจพื้นฐานของไบนารีออปชั่น"
 
 msgid "Read about the five types of trade offered by %1."
@@ -7107,10 +7104,7 @@ msgid ""
 msgstr "บริษัทฯ ถือเงินทุนของลูกค้าในบัญชีธนาคาร ซึ่งจะไม่เกี่ยวข้องกับส่วนหนึ่งของบริษัทฯ ในแง่ความไม่สามารถชำระหนี้ ซึ่งเป็นเงื่อนไขของ Gambling Commission เกี่ยวกับเงินทุนของลูกค้าที่ระดับ: <strong>การป้องกันระดับกลาง</strong>"
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency."
-msgstr ""
-"บริษัทฯ ดูแลเงินทุนประกันของลูกค้าในบัญชีที่ถูกจัดสรรแยกเพื่อการปฏิบัติการ "
-"และการจัดการเพื่อให้แน่ใจว่า "
-"สินทรัพย์ของบัญชีลูกค้ามีการถูกจำหน่ายหากมีกรณีล้มละลาย"
+msgstr "บริษัทฯ ดูแลเงินทุนประกันของลูกค้าในบัญชีที่ถูกจัดสรรแยกเพื่อการปฏิบัติการ และการจัดการเพื่อให้แน่ใจว่า สินทรัพย์ของบัญชีลูกค้ามีการถูกจำหน่ายหากมีกรณีล้มละลาย"
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: medium protection."
 msgstr "บริษัทฯ ดูแลเงินทุนประกันของลูกค้าในบัญชีที่ถูกจัดสรรแยกเพื่อการปฏิบัติการ และการจัดการเพื่อให้แน่ใจว่า สินทรัพย์ของบัญชีลูกค้ามีการถูกจำหน่ายหากมีกรณีล้มละลาย ซึ่งเป็นไปตามข้อกำหนดของ Gambling Commission ในการแยกเงินทุนลูกค้าโดยเป็นมาตรการการป้องกันระดับกลาง"
@@ -7424,9 +7418,7 @@ msgid "This Agreement shall commence on the date you first accept this Agreement
 msgstr "ข้อตกลงนี้จะมีผลในวันแรกที่ท่านยอมรับข้อตกลงนี้ และจะมีผลต่อเนื่องกระทั่งการยุติตามข้อตกลงและเงื่อนไขที่กำหนดไว้ในสัญญานี้"
 
 msgid "This Agreement will commence on the date you receive your Real Account number, and, for any new versions thereafter, on the date the new versions are published on our website."
-msgstr ""
-"ข้อตกลงจะเริ่มใช้ในวันที่ท่านได้รับเลขที่บัญชีจริงของท่าน "
-"และสำหรับเวอร์ชันใหม่ๆ หลังจากนั้น ในวันที่เราจะประกาศให้ท่านทราบทางเว็บไซต์"
+msgstr "ข้อตกลงจะเริ่มใช้ในวันที่ท่านได้รับเลขที่บัญชีจริงของท่าน และสำหรับเวอร์ชันใหม่ๆ หลังจากนั้น ในวันที่เราจะประกาศให้ท่านทราบทางเว็บไซต์"
 
 msgid "This Document"
 msgstr "เอกสารฉบับนี้"
@@ -7669,10 +7661,7 @@ msgid "Trade with a powerful interface known as the global industry standard."
 msgstr "ซื้อขายด้วยเครื่องมืออันทรงพลังที่มีมาตรฐานระดับโลก"
 
 msgid "Trade with ease with %1's wide range of deposit and withdrawal methods. Your funds will be segregated and held in secure and licensed financial institutions."
-msgstr ""
-"ซื้อขายง่ายด้วยวิธีการฝากเงินและการถอนเงินหลายช่องทางของ %1 เงินทุนของท่านจะไ"
-"ด้รับการดูแลอย่างปลอดภัยจากสถาบันการเงินที่ได้รับใบอนุญาตและการรับรองทางการเง"
-"ิน"
+msgstr "ซื้อขายง่ายด้วยวิธีการฝากเงินและการถอนเงินหลายช่องทางของ %1 เงินทุนของท่านจะได้รับการดูแลอย่างปลอดภัยจากสถาบันการเงินที่ได้รับใบอนุญาตและการรับรองทางการเงิน"
 
 msgid "Trade your way"
 msgstr "ซื้อขายด้วยวิธีการของท่าน"
@@ -7702,9 +7691,7 @@ msgid "Trading and Withdrawal Limits"
 msgstr "วงเงินซื้อขายและถอนเงิน"
 
 msgid "Trading binary options is relatively easy, and you can purchase a trade in only three simple steps."
-msgstr ""
-"การซื้อขายไบนารีออปชั่นทำได้อย่างง่ายดาย ด้วยเพียง 3 ขั้นตอน "
-"เพื่อเริ่มการซื้อขาย"
+msgstr "การซื้อขายไบนารีออปชั่นทำได้อย่างง่ายดาย ด้วยเพียง 3 ขั้นตอน เพื่อเริ่มการซื้อขาย"
 
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class=\"ja-hide\">Read about <a href=\"%1\" class=\"pjaxload\">Responsible Trading</a>.</span>"
 msgstr "การซื้อขายไบนารีออปชั่นอาจจะไม่เหมาะสมกับทุกคน ดังนั้นโปรดแน่ใจว่า ท่านมีความเข้าใจที่สมบูรณ์ในเรื่องความเสี่ยงที่เกี่ยวข้อง การขาดทุนของท่านสามารถมีค่ามากกว่าเงินที่ท่านฝากเริ่มต้น และท่านจะไม่ได้รับผลตอบแทนใดๆ จากสินทรัพย์ผลิตภัณฑ์อ้างอิงนั้น อนึ่ง ไบนารีออปชั่น เป็นผลิตภัณฑ์เพื่อการเสี่ยงโชค โปรดทราบว่า การเสี่ยงโชคอาจทำให้เป็นพฤติกรรมเสพติด โปรดใช้ความระมัดระวังในการซื้อขาย <span class=\"ja-hide\">ศึกษาเพิ่มเติมเกี่ยวกับ <a href=\"%1\" class=\"pjaxload\">ความรับผิดชอบต่อการซื้อขาย</a></span>"
@@ -8151,11 +8138,7 @@ msgid "We may, however, withhold your withdrawal request from your Real Account 
 msgstr ""
 
 msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you’re in Malta or Malaysia."
-msgstr ""
-"พวกเราให้ค่าตอบแทนตามโครงสร้างของตลาด มีโบนัสรายปี มีการประกันสุขภาพ "
-"มีค่าเบี้ยเลี้ยงในการเดินทางและอินเทอร์เน็ต "
-"รวมถึงมีกิจกรรมการเดินทางท่องเที่ยวร่วมกันในบริษัทฯ "
-"อีกทั้งมีคุณภาพชีวิตขั้นสูง ไม่ว่าจะเป็นสำนักงานที่มอลตา หรือ มาเลเซีย"
+msgstr "พวกเราให้ค่าตอบแทนตามโครงสร้างของตลาด มีโบนัสรายปี มีการประกันสุขภาพ มีค่าเบี้ยเลี้ยงในการเดินทางและอินเทอร์เน็ต รวมถึงมีกิจกรรมการเดินทางท่องเที่ยวร่วมกันในบริษัทฯ อีกทั้งมีคุณภาพชีวิตขั้นสูง ไม่ว่าจะเป็นสำนักงานที่มอลตา หรือ มาเลเซีย"
 
 msgid "We prohibit the use of unauthorised incentives, gifts and payments to encourage customer sign-ups. In the event that we believe that you have engaged in such activity, we reserve the right to withhold any amounts due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval."
 msgstr "พวกเราห้ามไม่ให้ใช้สิ่งจูงใจ ของขวัญ และการชำระเงินที่ไม่ถูกต้องเพื่อกระตุ้นให้ลูกค้าลงทะเบียน ในกรณีที่เกิดขึ้น หากพวกเราเชื่อมั่นว่า ท่านมีส่วนร่วมในกิจกรรมดังกล่าว พวกเราสงวนสิทธิ์ในการระงับค่าตอบแทนของท่าน อย่างไรก็ตาม หากท่านมีสิ่งจูงใจที่เฉพาะเจาะจงในความคิดของท่าน โปรดติดต่อผู้ดูแลบัญชีของท่านในการปรึกษาหารือและขออนุมัติ"
@@ -8199,12 +8182,7 @@ msgid "We use identity verification services and real-time fraud detection measu
 msgstr "พวกเราใช้บริการการตรวจสอบอัตลักษณ์และการวัดการตรวจจับการทุจริตแบบเรียลไทม์เพื่อป้องกันท่านจากพฤติกรรมการเข้าถึงบัญชีของท่านโดยไม่ได้รับอนุญาต พวกเรายังคงติดตามดูแลการเข้าใช้บัญชีเมื่อมีพฤติกรรมที่ไม่ปกติ หรือ น่าสงสัยเกิดขึ้น ซึ่งอาจจะบ่งชี้ถึงการทุจริต ทั้งนี้เป็นการประสานงานรวมกันกับหน่วยงานรวบรวมข้อมูลและหน่วยงานที่บังคับใช้กฎหมายเพื่อตรวจสอบกรณีทุจริต"
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorized access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and low-enforcement agencies to address fraud issues."
-msgstr ""
-"พวกเราใช้บริการการตรวจสอบอัตลักษณ์และการวัดการตรวจจับการทุจริตแบบเรียลไทม์เพื"
-"่อป้องกันท่านจากพฤติกรรมการเข้าถึงบัญชีของท่านโดยไม่ได้รับอนุญาต "
-"พวกเรายังคงติดตามดูแลการเข้าใช้บัญชีเมื่อมีพฤติกรรมที่ไม่ปกติ หรือ "
-"น่าสงสัยเกิดขึ้น ซึ่งอาจจะบ่งชี้ถึงการทุจริต ทั้งนี้เป็นการประสานงานรวมกันกับ"
-"หน่วยงานรวบรวมข้อมูลและหน่วยงานที่บังคับใช้กฎหมายเพื่อตรวจสอบกรณีทุจริต"
+msgstr "พวกเราใช้บริการการตรวจสอบอัตลักษณ์และการวัดการตรวจจับการทุจริตแบบเรียลไทม์เพื่อป้องกันท่านจากพฤติกรรมการเข้าถึงบัญชีของท่านโดยไม่ได้รับอนุญาต พวกเรายังคงติดตามดูแลการเข้าใช้บัญชีเมื่อมีพฤติกรรมที่ไม่ปกติ หรือ น่าสงสัยเกิดขึ้น ซึ่งอาจจะบ่งชี้ถึงการทุจริต ทั้งนี้เป็นการประสานงานรวมกันกับหน่วยงานรวบรวมข้อมูลและหน่วยงานที่บังคับใช้กฎหมายเพื่อตรวจสอบกรณีทุจริต"
 
 msgid "We will act on any instructions given or appearing to be given by you and received by us in relation to the margin trading service provided through the MT5 Trading Platform, as deemed instructed by you. However, it is not our obligation to act on any instructions deemed instructed by you, and we are not obligated to give you any reasons for declining to do so. Instructions received by us from you are deemed final and will not be revocable. It is your responsibility to ensure the genuineness and accuracy of the instructions given by you to us."
 msgstr ""
@@ -8309,10 +8287,7 @@ msgid "When we accept an order from you to open or close a transaction, or any o
 msgstr ""
 
 msgid "When we deal on own account (dealing desk), we act as principal and not as an agent on your behalf and we therefore act as the execution venue."
-msgstr ""
-"ในการดำเนินการบัญชีที่ครอบครอง (Dealing Desk) "
-"เราเสมือนเป็นผู้ดำเนินการหลักและไม่ได้เป็นตัวแทนของท่าน "
-"ดังนั้นพวกเราเป็นผู้ที่มีสิทธิ์ในการดำเนินการกับสัญญาของท่าน"
+msgstr "ในการดำเนินการบัญชีที่ครอบครอง (Dealing Desk) เราเสมือนเป็นผู้ดำเนินการหลักและไม่ได้เป็นตัวแทนของท่าน ดังนั้นพวกเราเป็นผู้ที่มีสิทธิ์ในการดำเนินการกับสัญญาของท่าน"
 
 msgid "When we enter into Contracts with you, we will take all reasonable steps to achieve the best possible result for you by executing those Contracts according to our order execution policy and subject to any specific instructions received from you. Our order execution policy comprises a set of procedures that are designed to obtain the best possible execution result for you subject to and taking into account: (a) the nature of your Contracts, (b) the priorities you have identified to us in relation to entering into those Contracts, and (c) the practices relating to the market in question, with the aim of producing a result which provides, in our view, the best balance across a range of sometimes conflicting factors. Our policy cannot provide a guarantee, however, that when entering into Contracts with you, the price will always be better than one which is or might have been available elsewhere."
 msgstr "เมื่อพวกเราดำเนินการสัญญากับท่าน พวกเรารับผิดชอบตในทุกขั้นตอนเพื่อจะทำให้ท่านได้รับผลลัพธ์ที่ดีที่สุดเท่าที่เป็นไปได้เมื่อซื้อขายสัญญากับเราตามนโยบายการบริหารคำสั่งซื้อและคำสั่งพิเศษอื่นๆ จากท่าน นโยบายการบริหารคำสั่งซื้อประกอบด้วยกลุ่มของระเบียบวิธีที่ถูกออกแบบเพื่อให้มีผลลัพธ์ที่ดีที่สุดเท่าที่เป็นไปได้ในบัญชี (ก) ธรรมชาติวิสัยของสัญญา (ข) ลำดับความสำคัญที่ท่านเป็นผู้กำหนดให้เรา และ (ค) การบริหารตามความสัมพันธ์ของตลาด เพื่อวัตถุประสงค์ของการสร้างผลได้ หากแต่ในบางกรณีที่อาจจะพบความขัดแย้งในปัจจัยต่างๆ นโยบายของเราไม่สามารถเป็นหลักประกันให้ท่าน อย่างไรก็ตาม เมื่อท่านได้ทำการซื้อขายสัญญากับเราแล้ว ราคาของเราจะเป็นราคาที่ดีกว่าเสมอ"
@@ -8372,11 +8347,7 @@ msgid "Where we consider, on the basis of the information provided by you that y
 msgstr "เมื่อพวกเราพิจารณาบนพื้นฐานข้อมูลที่บริการให้กับท่าน และพบว่า ท่านไม่มีความรู้และประสบการณ์เกี่ยวกับการบริหารจัดการความเสี่ยงที่เกี่ยวข้องในการลงทุนด้วยเครื่องมือที่เราได้เตรียมไว้สนับสนุนท่าน พวกเราจะส่งข้อความเตือนให้กับท่าน และการเตือนดังกล่าวจะแสดงในเว็บไซต์"
 
 msgid "Where we consider, on the basis of the information provided by you that you do not possess the knowledge and experience to appreciate the risks associated with an investment in the proposed instrument, we will issue a warning to you. Such a warning shall be displayed on the website."
-msgstr ""
-"เมื่อพวกเราพิจารณาบนพื้นฐานข้อมูลที่บริการให้กับท่าน และพบว่า ท่านไม่มีความรู"
-"้และประสบการณ์เกี่ยวกับการบริหารจัดการความเสี่ยงที่เกี่ยวข้องในการลงทุนด้วยเค"
-"รื่องมือที่เราได้เตรียมไว้สนับสนุนท่าน พวกเราจะส่งข้อความเตือนให้กับท่าน "
-"และการเตือนดังกล่าวจะแสดงในเว็บไซต์"
+msgstr "เมื่อพวกเราพิจารณาบนพื้นฐานข้อมูลที่บริการให้กับท่าน และพบว่า ท่านไม่มีความรู้และประสบการณ์เกี่ยวกับการบริหารจัดการความเสี่ยงที่เกี่ยวข้องในการลงทุนด้วยเครื่องมือที่เราได้เตรียมไว้สนับสนุนท่าน พวกเราจะส่งข้อความเตือนให้กับท่าน และการเตือนดังกล่าวจะแสดงในเว็บไซต์"
 
 msgid "Where we do not manage to obtain sufficient information to assess the appropriateness of the product or service for you, we will similarly inform you that we are not in a position to assess appropriateness."
 msgstr "พวกเราไม่มีหน้าที่ในการจัดการเพื่อให้ท่านมีข้อมูลเพียงพอต่อการประเมินผลิตภัณฑ์และบริการอย่างเหมาะสม พวกเราจะแจ้งท่านในทำนองเดียวกันว่า พวกเราไม่ได้ทำหน้าที่ประเมินความเหมาะสมให้ท่าน"
@@ -8463,10 +8434,7 @@ msgid "With %1, you can count on us to serve you with integrity and reliability.
 msgstr ""
 
 msgid "With %1, you can sell your contracts before expiry to keep any profits you may have made or to minimise your losses. You don’t have to wait until the actual expiration time."
-msgstr ""
-"เมื่อท่านใช้ %1 "
-"ท่านสามารถขายสัญญาของท่านก่อนวันหมดอายุเพื่อกำหนดรับผลกำไรที่ท่านพึงได้ หรือ "
-"เพื่อลดการขาดทุนให้ต่ำที่สุด ไม่จำเป็นต้องรอกระทั่งเวลาสิ้นสุด"
+msgstr "เมื่อท่านใช้ %1 ท่านสามารถขายสัญญาของท่านก่อนวันหมดอายุเพื่อกำหนดรับผลกำไรที่ท่านพึงได้ หรือ เพื่อลดการขาดทุนให้ต่ำที่สุด ไม่จำเป็นต้องรอกระทั่งเวลาสิ้นสุด"
 
 msgid "With %1, you’ll know the risk and potential reward before you purchase a contract."
 msgstr ""
@@ -8628,9 +8596,7 @@ msgid "You are not resident in a restricted country such as the USA, Japan, Hong
 msgstr ""
 
 msgid "You are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
-msgstr ""
-"ท่านมีอายุมากกว่า 18 ปี หากแต่ท่านเป็นพลเมืองเอสโทเนีย ท่านจะต้องอายุมากกว่า "
-"21 ปี;"
+msgstr "ท่านมีอายุมากกว่า 18 ปี หากแต่ท่านเป็นพลเมืองเอสโทเนีย ท่านจะต้องอายุมากกว่า 21 ปี;"
 
 msgid "You are responsible for managing your tax and legal affairs including making any regulatory filings and payments and complying with applicable laws and regulations. We do not provide any regulatory, tax or legal advice. If you are in any doubt as to the tax treatment or liabilities of Investment Products or Gambling Products available through %1, you may wish to seek independent advice."
 msgstr "ท่านมีหน้าที่ในการจัดการภาษีของท่าน และหน้าที่ตามกฎหมาย รวมถึงการปฏิบัติตามหลักเกณฑ์ในการให้ข้อมูลและชำระภาษีอากรตามกฎหมายที่บังคับใช้ พวกเราไม่ได้มีหน้าที่ให้คำปรึกษาในเรื่องหลักเกณฑ์ ภาษี หรือ กฎหมายที่เกี่ยวข้อง หากท่านมีข้อสงสัยใดๆ ในการดำเนินการทางภาษี หรือ หน้าที่ความรับผิดชอบที่เกี่ยวข้องอันเกิดจากผลิตภัณฑ์ทางการลงทุน หรือ ผลิตภัณฑ์เพื่อการเสี่ยงโชคที่มีอยู่กับ ขอให้ท่านหารือ หรือ หาข้อมูลเพิ่มเติมจากที่ปรึกษาอิสระที่สามารถไขข้อข้องใจของท่านได้"
@@ -8689,27 +8655,22 @@ msgstr "ท่านไม่ได้รับอนุญาตให้เข
 msgid "You have not obtained and have not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business;"
 msgstr "ท่านไม่ได้รับ และไม่ได้ดำเนินการต่อใบอนุญาตที่จำเป็นทั้งหมด หรือ ยินยอมที่จะปฏิบัติตามกฏหมาย ข้อกำหนด และกฎเกณฑ์ที่เป็นไปตามอำนาจและขอบเขตของการบังคับใช้ตามกฎหมายที่ท่านดำเนินการ หรือ กำหนดในธุรกิจของท่าน"
 
-msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
-msgstr "ท่านได้ส่งคำสั่งต่อวินาทีเกินอัตราที่กำหนด เพื่อดำเนินการต่อ โปรด <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">รีเฟรช</a> หน้านี้"
+#, fuzzy
+#| msgid "You have reached the rate limit for %1."
+msgid "You have reached the rate limit of requests per second. Please try later."
+msgstr "ท่านได้ใช้วงเงินสำหรับ %1 เต็มมูลค่าแล้ว"
 
 msgid "You have read our privacy statement and hereby give us consent to process your personal information as outlined there;"
-msgstr ""
-"ท่านได้อ่านนโยบายความเป็นส่วนตัวของเรา "
-"และให้ความยินยอมในการดำเนินการต่อข้อมูลส่วนบุคคลของท่านตามที่กล่าวนี้;"
+msgstr "ท่านได้อ่านนโยบายความเป็นส่วนตัวของเรา และให้ความยินยอมในการดำเนินการต่อข้อมูลส่วนบุคคลของท่านตามที่กล่าวนี้;"
 
 msgid "You have read this Legal Terms and Conditions page in full and understood that you will be buying and selling financial contracts subject to these terms and conditions;"
-msgstr ""
-"ท่านได้อ่านข้อกำหนดทางกฎหมายและเงื่อนไขทั้งหมดแล้ว และมีความเข้าใจว่า "
-"ท่านจะดำเนินการซื้อและขายสัญญาทางการเงินต่างๆ "
-"โดยเป็นไปตามเงื่อนไขและข้อตกลงที่ได้รับทราบแล้ว;"
+msgstr "ท่านได้อ่านข้อกำหนดทางกฎหมายและเงื่อนไขทั้งหมดแล้ว และมีความเข้าใจว่า ท่านจะดำเนินการซื้อและขายสัญญาทางการเงินต่างๆ โดยเป็นไปตามเงื่อนไขและข้อตกลงที่ได้รับทราบแล้ว;"
 
 msgid "You have sold this contract at %1 %2"
 msgstr "ท่าได้ขายสัญญานี้ที่ %1 %2"
 
 msgid "You have sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and have done so without relying on any information contained in this site."
-msgstr ""
-"ท่านมีประสบการณ์และความรู้ที่เพียงพอในการลงทุนทางการเงินเพื่อการประเมินความเส"
-"ี่ยงและคุณค่าของการลงทุนโดยปราศจากการอ้างอิงข้อมูลที่เกี่ยวข้องในเว็บไซต์นี้"
+msgstr "ท่านมีประสบการณ์และความรู้ที่เพียงพอในการลงทุนทางการเงินเพื่อการประเมินความเสี่ยงและคุณค่าของการลงทุนโดยปราศจากการอ้างอิงข้อมูลที่เกี่ยวข้องในเว็บไซต์นี้"
 
 msgid "You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/."
 msgstr "ท่านต้องลงทะเบียน และขอรหัส App ID ก่อนที่ท่านจะใช้เซิร์ฟเวอร์ OAuth ที่ต่างกันในการพิสูจน์ตัวตน สำหรับข้อมูลเพิ่มเติมสามารถอ้างอิงรายละเอียด OAuth จาก https://developers.binary.com"
@@ -9225,10 +9186,7 @@ msgid "the characteristics of the order;"
 msgstr "ลักษณะของคำสั่งซื้อ"
 
 msgid "the market conditions of the financial instruments that your orders are related to, which includes the need for timely execution, availability of price improvement, liquidity of the market, size of your order, and the potential impact on total consideration."
-msgstr ""
-"ในเงื่อนไขของตลาดเครื่องมือทางการเงินซึ่งคำสั่งซื้อของท่านสัมพันธ์กับปัจจัยเล"
-"่านี้ การสั่งประมวลผลในเวลาที่เหมาะสม ราคาที่มีในตลาด สภาพคล่องของตลาด "
-"ปริมาณของคำสั่งซื้อของท่าน และปัจจัยที่มีผลต่อการพิจารณาในภาพรวม"
+msgstr "ในเงื่อนไขของตลาดเครื่องมือทางการเงินซึ่งคำสั่งซื้อของท่านสัมพันธ์กับปัจจัยเล่านี้ การสั่งประมวลผลในเวลาที่เหมาะสม ราคาที่มีในตลาด สภาพคล่องของตลาด ปริมาณของคำสั่งซื้อของท่าน และปัจจัยที่มีผลต่อการพิจารณาในภาพรวม"
 
 msgid "the platform is 100% web based making it instantly available for clients."
 msgstr "เป็นระบบการใช้งานผ่านเว็บ 100% ทำให้ลูกค้าใช้งานได้ทันที"
@@ -10237,6 +10195,12 @@ msgstr "วงเงินในบัญชี"
 
 msgid "Account Details"
 msgstr "รายละเอียดบัญชี"
+
+#~ msgid "Prospectus"
+#~ msgstr "หนังสือชี้ชวน"
+
+#~ msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
+#~ msgstr "ท่านได้ส่งคำสั่งต่อวินาทีเกินอัตราที่กำหนด เพื่อดำเนินการต่อ โปรด <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">รีเฟรช</a> หน้านี้"
 
 #~ msgid "Are you sure that you want to permanently revoke connection to"
 #~ msgstr "ท่านแน่ใจใช่ไหมที่จะยกเลิกการเชื่อมต่อระบบกับ"
@@ -12671,9 +12635,6 @@ msgstr "รายละเอียดบัญชี"
 
 #~ msgid "You have opened an account using invalid details."
 #~ msgstr "ท่านได้เปิดบัญชีโดยใช้รายละเอียดที่ไม่ถูกต้อง"
-
-#~ msgid "You have reached the rate limit for %1."
-#~ msgstr "ท่านได้ใช้วงเงินสำหรับ %1 เต็มมูลค่าแล้ว"
 
 #~ msgid "You have signed up for more than one account."
 #~ msgstr "ท่านได้ลงทะเบียนมากกว่าหนึ่งบัญชี"

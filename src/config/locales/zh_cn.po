@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-02-20 02:08+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) "
-"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -5786,6 +5785,11 @@ msgstr "您的请求在处理中..."
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "为公司网站、博客、社交媒体渠道和营销材料创建内容"
 
+#, fuzzy
+#| msgid "Risk Disclosure Statement"
+msgid "Product Disclosure Statement"
+msgstr "风险披露声明"
+
 msgid "Professional Clients"
 msgstr "专业客户"
 
@@ -5824,9 +5828,6 @@ msgstr "公司网站、博客、社交媒体网站和营销材料内容翻译的
 
 msgid "Proofreader"
 msgstr "校对员"
-
-msgid "Prospectus"
-msgstr "说明书"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "熟知审计标准、程序、法律、规则和条例者优先录取"
@@ -5903,7 +5904,9 @@ msgstr "重新输入密码"
 msgid "Read"
 msgstr "阅读"
 
-msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+#, fuzzy
+#| msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+msgid "Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
 msgstr "请参阅以下Binary Investments (Europe) Limited 说明书中关于二元期权的功能、特点、好处，以及风险。\"时间表\"一节中包含了合同类型的投资范例，以帮助您了解二元期权交易的基本概念。"
 
 msgid "Read about the five types of trade offered by %1."
@@ -8613,8 +8616,10 @@ msgstr "您没有访问任何应用程序的权限。"
 msgid "You have not obtained and have not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business;"
 msgstr "您没有得到和不持有任何适用法律、规则和规章对您所经营业务在任何监管机构的管辖权管辖范围下您进行经营的必要许可权和同意书；"
 
-msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
-msgstr "您已达每秒最大请求限额。请 <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">刷新</a>页面继续操作。"
+#, fuzzy
+#| msgid "You have reached the rate limit for %1."
+msgid "You have reached the rate limit of requests per second. Please try later."
+msgstr "您已达 %1的最高限率。"
 
 msgid "You have read our privacy statement and hereby give us consent to process your personal information as outlined there;"
 msgstr "您已阅读了我们的隐私声明，并据此同意我们按上述方式对您的个人信息进行处理；"
@@ -10152,6 +10157,12 @@ msgstr "账户限额"
 
 msgid "Account Details"
 msgstr "账户详情"
+
+#~ msgid "Prospectus"
+#~ msgstr "说明书"
+
+#~ msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
+#~ msgstr "您已达每秒最大请求限额。请 <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">刷新</a>页面继续操作。"
 
 #~ msgid "Are you sure that you want to permanently revoke connection to"
 #~ msgstr "是否确定要永久废除连接到"
@@ -13125,9 +13136,6 @@ msgstr "账户详情"
 
 #~ msgid "You have opened an account using invalid details."
 #~ msgstr "您使用无效信息开立了账户。"
-
-#~ msgid "You have reached the rate limit for %1."
-#~ msgstr "您已达 %1的最高限率。"
 
 #~ msgid "You have signed up for more than one account."
 #~ msgstr "您已注册一个以上的账户。"
