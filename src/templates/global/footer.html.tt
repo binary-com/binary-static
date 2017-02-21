@@ -185,7 +185,7 @@
         </div>
         <div id="ratelimit-error-message">
             <div class="message">
-                [% l('You have reached the rate limit of requests per second. To continue, please <a href="javascript:;" id="ratelimit-refresh-link">refresh</a> the page.') %]
+                [% l('You have reached the rate limit of requests per second. Please try later.') %]
             </div>
         </div>
     </div>
