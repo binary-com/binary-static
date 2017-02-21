@@ -17,7 +17,7 @@ const MetaTraderConfig = (function() {
         costarica       : { account_type: 'gaming',    mt5_account_type: '',         title: localize('Real Volatility'), max_leverage: 100 },
     };
 
-    const needsRealMessage = () => $(`#msg_${Client.has_real() ? 'switch' : 'upgrade'}`).html();
+    const needsRealMessage = () => $(`#msg_${Client.get('has_real') ? 'switch' : 'upgrade'}`).html();
 
     const actions_info = {
         new_account: {
