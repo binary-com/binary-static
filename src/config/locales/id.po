@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-02-21 05:12+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
-"Language-Team: Indonesian "
-"<https://hosted.weblate.org/projects/binary/static/id/>\n"
+"Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2966,8 +2965,7 @@ msgid "Follow up on rejected deposits"
 msgstr "Menindaklanjuti deposito tertolak"
 
 msgid "For added security, please check your email to retrieve the verification token."
-msgstr ""
-"Untuk keamanan tambahan, cek email Anda untuk mengambil token verifikasi."
+msgstr "Untuk keamanan tambahan, cek email Anda untuk mengambil token verifikasi."
 
 msgid "For e-cash methods or local currencies not supported by %1."
 msgstr "Untuk metode e-cash atau mata uang lokal yang tidak disediakan oleh %1."
@@ -5618,9 +5616,7 @@ msgid "Please note that you may update your personal information at any time by 
 msgstr "Anda dapat melakukan perbaikan data dengan mengakses bagian \"Pengaturan\" pada akun Anda. Merupakan tanggung jawab Anda untuk memastikan %1 mengetahui tentang perubahan yang Anda lakukan pada data pribadi Anda."
 
 msgid "Please provide us with the following information, after retrieving the verification token from your email:"
-msgstr ""
-"Setelah memperoleh token verifikasi dari email Anda, mohon sediakan "
-"informasi sebagai berikut:"
+msgstr "Setelah memperoleh token verifikasi dari email Anda, mohon sediakan informasi sebagai berikut:"
 
 msgid "Please refer to the following commission plan."
 msgstr "Silakan lihat rencana komisi berikut ini."
@@ -5798,6 +5794,9 @@ msgstr "Memproses permintaan Anda..."
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "Menghasilkan konten untuk website perusahaan, blog, media sosial, dan materi pemasaran"
 
+msgid "Product Disclosure Statement"
+msgstr ""
+
 msgid "Professional Clients"
 msgstr "Klien Profesional"
 
@@ -5836,9 +5835,6 @@ msgstr "Mengoreksi dan memperbaiki konten yang muncul pada website perusahaan, b
 
 msgid "Proofreader"
 msgstr "Korektor"
-
-msgid "Prospectus"
-msgstr "Prospektus"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "Memiliki pengetahuan standar audit, prosedur, hukum, aturan dan peraturan merupakan nilai tambahan"
@@ -5915,7 +5911,9 @@ msgstr "Masukkan kembali sandi Anda"
 msgid "Read"
 msgstr "Baca"
 
-msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+#, fuzzy
+#| msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+msgid "Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
 msgstr "Baca tentang fitur, karakteristik, manfaat, dan risiko dari opsi binary dalam prospektusBinary Investments (Europe) Limited berikut ini. Lihat juga bagian \"Jadwal\" yang merupakan contoh jenis kontrak untuk membantu Anda mendapat pondasi dasar mengenai opsi binary."
 
 msgid "Read about the five types of trade offered by %1."
@@ -6748,9 +6746,7 @@ msgid "Th"
 msgstr "Kam"
 
 msgid "Thank you for signing up! Please check your email to retrieve the verification token."
-msgstr ""
-"Terima kasih karena telah mendaftar! Silahkan cek email Anda untuk "
-"memperoleh token verifikasi."
+msgstr "Terima kasih karena telah mendaftar! Silahkan cek email Anda untuk memperoleh token verifikasi."
 
 #, fuzzy
 #| msgid "Thank you for verifying your email."
@@ -8626,8 +8622,10 @@ msgstr "Anda belum diberikan akses ke dalam aplikasi apapun."
 msgid "You have not obtained and have not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business;"
 msgstr "Anda belum memperoleh dan tidak mempertahankan semua lisensi yang diperlukan dan persetujuan untuk beroperasi dalam undang-undang, peraturan, dan peraturan yang berlaku di bawah kewenangan badan peraturan yurisdiksi di mana Anda beroperasi atau target bisnis Anda;"
 
-msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
-msgstr "Anda telah mencapai batas permintaan per detik. Untuk melanjutkan, silahkan <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">perbarui</a> halaman."
+#, fuzzy
+#| msgid "You have reached the rate limit for %1."
+msgid "You have reached the rate limit of requests per second. Please try later."
+msgstr "Anda telah mencapai batasan sebesar %1."
 
 msgid "You have read our privacy statement and hereby give us consent to process your personal information as outlined there;"
 msgstr ""
@@ -10164,6 +10162,12 @@ msgstr "Batasan rekening"
 
 msgid "Account Details"
 msgstr "Keterangan rekening"
+
+#~ msgid "Prospectus"
+#~ msgstr "Prospektus"
+
+#~ msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
+#~ msgstr "Anda telah mencapai batas permintaan per detik. Untuk melanjutkan, silahkan <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">perbarui</a> halaman."
 
 #~ msgid "Are you sure that you want to permanently revoke connection to"
 #~ msgstr "Apakah Anda yakin bahwa Anda ingin secara permanen mencabut koneksi ke"
@@ -12923,9 +12927,6 @@ msgstr "Keterangan rekening"
 
 #~ msgid "You have opened an account using invalid details."
 #~ msgstr "Anda mendaftar menggunakan data tidak lengkap."
-
-#~ msgid "You have reached the rate limit for %1."
-#~ msgstr "Anda telah mencapai batasan sebesar %1."
 
 #~ msgid "You have signed up for more than one account."
 #~ msgstr "Anda telah mendaftar lebih dari satu akun riil."

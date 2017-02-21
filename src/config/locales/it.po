@@ -6115,6 +6115,11 @@ msgstr "Elaborazione in corso della tua richiesta..."
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "Produrre i contenuti del sito internet, blog, social media e materiali commerciali della società"
 
+#, fuzzy
+#| msgid "Risk Disclaimer"
+msgid "Product Disclosure Statement"
+msgstr "Disclaimer sui rischi"
+
 msgid "Professional Clients"
 msgstr "Clienti professionisti"
 
@@ -6153,9 +6158,6 @@ msgstr "Revisionare e correggere il contenuto presente sul sito internet, blog, 
 
 msgid "Proofreader"
 msgstr "Proofreader"
-
-msgid "Prospectus"
-msgstr "Prospetto"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "La comprovata conoscenza degli standard di revisione, procedure, leggi, regole e regolamenti rappresenta un vantaggio aggiuntivo"
@@ -6234,7 +6236,7 @@ msgstr "Inserisci nuovamente la password"
 msgid "Read"
 msgstr "Leggi"
 
-msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+msgid "Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
 msgstr ""
 
 msgid "Read about the five types of trade offered by %1."
@@ -9006,8 +9008,10 @@ msgstr "Non hai accesso ad alcuna applicazione."
 msgid "You have not obtained and have not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business;"
 msgstr "Non hai ottenuto e non manterrai tutte le licenze e i consensi necessari per operare all'interno di qualsiasi legge, norma e regolamento applicabile in base all'autorità di qualsiasi ente regolatore della giurisdizione competente su cui operi o rivolgi la tua attività;"
 
-msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
-msgstr "Hai raggiunto il limite di tasso delle richieste per secondo. Per continuare, <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">aggiorna</a> la pagina."
+#, fuzzy
+#| msgid "You have reached the rate limit for %1."
+msgid "You have reached the rate limit of requests per second. Please try later."
+msgstr "Hai raggiunto il limite di tasso di %1."
 
 msgid "You have read our privacy statement and hereby give us consent to process your personal information as outlined there;"
 msgstr "Hai letto la nostra informativa sulla privacy e con la presente ci dai il consenso a procedere con le tue informazioni personali nel modo lì indicato;"
@@ -10560,6 +10564,12 @@ msgstr "Limiti dell'account"
 
 msgid "Account Details"
 msgstr "Dettagli dell'account"
+
+#~ msgid "Prospectus"
+#~ msgstr "Prospetto"
+
+#~ msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
+#~ msgstr "Hai raggiunto il limite di tasso delle richieste per secondo. Per continuare, <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">aggiorna</a> la pagina."
 
 #, fuzzy
 #~| msgid "Are you sure that you want to permanently revoke access to application"
@@ -13251,9 +13261,6 @@ msgstr "Dettagli dell'account"
 
 #~ msgid "You have opened an account using invalid details."
 #~ msgstr "Hai aperto un account utilizzando dati non validi."
-
-#~ msgid "You have reached the rate limit for %1."
-#~ msgstr "Hai raggiunto il limite di tasso di %1."
 
 #~ msgid "You have signed up for more than one account."
 #~ msgstr "Hai registrato più di un account."

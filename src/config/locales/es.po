@@ -6276,6 +6276,11 @@ msgstr "No se puede procesar su solicitud"
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "Producir contenido para la página web, el blog, los medios sociales y los materiales de marketing de la Compañía"
 
+#, fuzzy
+#| msgid "Risk Disclaimer"
+msgid "Product Disclosure Statement"
+msgstr "Advertencia de riesgo"
+
 msgid "Professional Clients"
 msgstr "Clientes profesionales"
 
@@ -6318,11 +6323,6 @@ msgstr "Revisar y corregir el contenido que aparece en el sitio web, el blog, lo
 
 msgid "Proofreader"
 msgstr "Corrector"
-
-#, fuzzy
-#| msgid "BIEL Prospectus"
-msgid "Prospectus"
-msgstr "BIEL Prospectus"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "El conocimiento probado de las normas auditoriales, los procedimientos, los leyes, las normas y los reglamentos es una ventaja añadida"
@@ -6405,7 +6405,7 @@ msgstr "Vuelva a teclear su contraseña"
 msgid "Read"
 msgstr "Leer"
 
-msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+msgid "Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
 msgstr ""
 
 msgid "Read about the five types of trade offered by %1."
@@ -9321,8 +9321,10 @@ msgstr "Usted no ha concedido acceso a ninguna aplicación."
 msgid "You have not obtained and have not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business;"
 msgstr "No ha obtenido y no ha mantenido todas las licencias y autorizaciones necesarias para operar según las leyes, normas y reglamentos aplicables bajo la autoridad de cualquier organismo regulador de la jurisdicción en la que opera o centra su negocio;"
 
-msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
-msgstr "Ha alcanzado el límite de solicitudes por segundo. Para continuar, <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">recargue</a> la página."
+#, fuzzy
+#| msgid "You have reached the rate limit for %1."
+msgid "You have reached the rate limit of requests per second. Please try later."
+msgstr "Ha alcanzado el límite para %1."
 
 #, fuzzy
 #| msgid "you have read our privacy statement and hereby give us consent to process your personal information as outlined there;"
@@ -11009,6 +11011,14 @@ msgstr "Límites de la cuenta"
 
 msgid "Account Details"
 msgstr "Detalles de la cuenta"
+
+#, fuzzy
+#~| msgid "BIEL Prospectus"
+#~ msgid "Prospectus"
+#~ msgstr "BIEL Prospectus"
+
+#~ msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
+#~ msgstr "Ha alcanzado el límite de solicitudes por segundo. Para continuar, <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">recargue</a> la página."
 
 #, fuzzy
 #~| msgid "Are you sure that you want to permanently revoke access to application"
@@ -13740,9 +13750,6 @@ msgstr "Detalles de la cuenta"
 
 #~ msgid "You have opened an account using invalid details."
 #~ msgstr "Ha abierto una cuenta utilizando datos no válidos."
-
-#~ msgid "You have reached the rate limit for %1."
-#~ msgstr "Ha alcanzado el límite para %1."
 
 #~ msgid "You have signed up for more than one account."
 #~ msgstr "Usted se ha inscrito en nuestra web con más de una cuenta."
