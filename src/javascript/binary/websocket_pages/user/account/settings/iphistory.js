@@ -1,19 +1,19 @@
 const Content         = require('../../../../common_functions/content').Content;
 const japanese_client = require('../../../../common_functions/country_base').japanese_client;
 const url_for         = require('../../../../base/url').url_for;
-const IPHistory       = require('./iphistory/iphistory.init').IPHistory;
+const IPHistoryInit   = require('./iphistory/iphistory.init');
 
-const IPHistoryWS = (function() {
+const IPHistory = (function() {
     const onLoad = function() {
         if (japanese_client()) {
             window.location.href = url_for('user/settingsws');
         }
         Content.populate();
-        IPHistory.init();
+        IPHistoryInit.init();
     };
 
     const onUnload = function() {
-        IPHistory.clean();
+        IPHistoryInit.clean();
     };
 
     return {
@@ -22,6 +22,4 @@ const IPHistoryWS = (function() {
     };
 })();
 
-module.exports = {
-    IPHistoryWS: IPHistoryWS,
-};
+module.exports = IPHistory;

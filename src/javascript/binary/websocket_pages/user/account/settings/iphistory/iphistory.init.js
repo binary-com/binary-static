@@ -1,7 +1,7 @@
-const IPHistoryUI   = require('./iphistory.ui').IPHistoryUI;
-const IPHistoryData = require('./iphistory.data').IPHistoryData;
+const IPHistoryUI   = require('./iphistory.ui');
+const IPHistoryData = require('./iphistory.data');
 
-const IPHistory = (function() {
+const IPHistoryInit = (function() {
     'use strict';
 
     const responseHandler = function(response) {
@@ -14,10 +14,13 @@ const IPHistory = (function() {
 
     const init = function() {
         IPHistoryUI.init();
-        BinarySocket.init({
-            onmessage: IPHistoryData.calls(responseHandler),
+        const req = {
+            login_history: '1',
+            limit        : 50,
+        };
+        BinarySocket.send(req).then((response) => {
+            responseHandler(response);
         });
-        IPHistoryData.get(50);
     };
 
     const clean = function() {
@@ -30,6 +33,4 @@ const IPHistory = (function() {
     };
 })();
 
-module.exports = {
-    IPHistory: IPHistory,
-};
+module.exports = IPHistoryInit;

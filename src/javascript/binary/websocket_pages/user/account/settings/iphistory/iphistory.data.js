@@ -41,28 +41,10 @@ const IPHistoryData = (function() {
         };
     };
 
-    const calls = function(callback) {
-        return function(msg) {
-            const response = JSON.parse(msg.data);
-            if (!response || response.msg_type !== 'login_history') {
-                return;
-            }
-            callback(response);
-        };
-    };
-
-    const get = function(n) {
-        BinarySocket.send({ login_history: 1, limit: n });
-    };
-
     return {
         parse         : parse,
         parseUserAgent: parse_ua,
-        calls         : calls,
-        get           : get,
     };
 })();
 
-module.exports = {
-    IPHistoryData: IPHistoryData,
-};
+module.exports = IPHistoryData;

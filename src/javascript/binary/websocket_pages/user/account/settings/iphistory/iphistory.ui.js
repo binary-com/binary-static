@@ -76,6 +76,4 @@ const IPHistoryUI = (function() {
     };
 })();
 
-module.exports = {
-    IPHistoryUI: IPHistoryUI,
-};
+module.exports = IPHistoryUI;
