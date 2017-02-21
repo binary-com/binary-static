@@ -200,7 +200,7 @@ const MetaTraderConfig = (function() {
             { selector: fields.new_account.txt_re_main_pass.id,  validations: ['req', ['compare', { to: fields.new_account.txt_main_pass.id }]] },
             { selector: fields.new_account.txt_investor_pass.id, validations: ['req', 'password', ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
             { selector: fields.new_account.ddl_leverage.id,      validations: ['req'] },
-            { selector: fields.new_account.chk_tnc.id,           validations: ['req'] },
+            { selector: fields.new_account.chk_tnc.id,           validations: [['req', { message: 'Please accept the terms and conditions.' }]] },
         ],
         password_change: [
             { selector: fields.password_change.txt_old_password.id,    validations: ['req'] },

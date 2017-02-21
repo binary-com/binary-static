@@ -183,6 +183,8 @@ sub _texts {
         push @texts, localize('Forex');
         #strings for detailsws
         push @texts, localize('This field is required.');
+        push @texts, localize('Please select the checkbox.');
+        push @texts, localize('Please accept the terms and conditions.');
         push @texts, localize('You should enter between [_1] characters.');
         push @texts, localize('Only [_1] are allowed.');
         push @texts, localize('letters');
@@ -483,6 +485,9 @@ sub _texts {
         # strings from back-end
         push @texts, localize('There was a problem accessing the server.');
         push @texts, localize('There was a problem accessing the server during purchase.');
+
+        # strings for OneSignal
+        push @texts, localize('Thank you for subscribing!');
 
         # strings for form_validation
         push @texts, localize('Should be a valid number');
