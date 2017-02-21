@@ -112,7 +112,9 @@ const MetaTraderConfig = (function() {
                     resolve(needsRealMessage());
                 } else if (types_info[acc_type].account_type === 'financial') {
                     BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
-                        resolve($.inArray('authenticated', response_status.get_account_status.status) === -1 ? $('#msg_authenticate').html() : '');
+                        resolve($.inArray('authenticated', response_status.get_account_status.status) === -1 ?
+                            $('#msg_authenticate').find('.show_for_mt5').removeClass('invisible').end()
+                                .html() : '');
                     });
                 } else {
                     resolve();
