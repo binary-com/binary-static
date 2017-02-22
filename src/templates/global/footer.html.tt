@@ -59,8 +59,8 @@
                                 <li class="ja-hide id-hide">
                                     <a href="http://www.gamcare.org.uk/" target="_blank">[% l('GamCare') %]</a>
                                 </li>
-                                <li class="ja-hide blog">
-                                    <a href="http://academy.binary.com" target="_blank">[% l('Blog') %]</a>
+                                <li class="ja-hide academy">
+                                    <a href="http://academy.binary.com" target="_blank">[% l('Academy') %]</a>
                                 </li>
                                 <li class='ja-hide id-hide'>
                                     <a href="https://academy.binary.com/en/events/" target="_blank">[% l('Webinars') %]</a>
@@ -101,13 +101,13 @@
                                </li>
                                <li class='ja-hide'>
                                    <a class="pjaxload"
-                                      href="[% request.url_for('/terms-and-conditions') %]#privacy-tab"[% IF
+                                      href="[% request.url_for('/terms-and-conditions') %]?#privacy"[% IF
                                    target
                                    %] target="[% target %]"[% END %]>[% l('Security and Privacy') %]</a>
                                </li>
                                <li class='hidden ja-show-block'>
                                    <a class="pjaxload"
-                                      href="[% request.url_for('/terms-and-conditions-jp?selected_tab=privacy-tab') %]"[% IF
+                                      href="[% request.url_for('/terms-and-conditions-jp') %]?#account-privacy"[% IF
                                    target
                                    %] target="[% target %]"[% END %]>[% l('Security and Privacy') %]</a>
                                </li>
@@ -115,7 +115,7 @@
                                    <a class="pjaxload" href="[% request.url_for('responsible-trading') %]">[% l('Responsible Trading') %]</a>
                                </li>
                                <li class="ja-hide">
-                                   <a class="pjaxload" href="[% request.url_for('/terms-and-conditions?selected_tab=complaints-disputes-tac-tab') %]">[% l('Complaints') %]</a>
+                                   <a class="pjaxload" href="[% request.url_for('/terms-and-conditions?section=complaints-disputes') %]#legal-binary">[% l('Complaints') %]</a>
                                </li>
                            </ul>
                        </div>
@@ -185,7 +185,7 @@
         </div>
         <div id="ratelimit-error-message">
             <div class="message">
-                [% l('You have reached the rate limit of requests per second. To continue, please <a href="javascript:;" id="ratelimit-refresh-link">refresh</a> the page.') %]
+                [% l('You have reached the rate limit of requests per second. Please try later.') %]
             </div>
         </div>
     </div>

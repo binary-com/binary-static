@@ -1,0 +1,165 @@
+<div id="cash-specs" class="gr-row">
+    <div class="gr-12 gr-padding-10">
+        <h1>[% l('Contract Specifications (CFD) - Cash Indices') %]</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>[% l('Symbol') %]</th>
+                    <th>[% l('Description') %]</th>
+                    <th>[% l('Volume 1.0<br>(Trade Size)') %]</th>
+                    <th>[% l('Minimum Volume<br>(Trade Size)') %]</th>
+                    <th>[% l('Maximum Volume<br>(Trade Size)') %]</th>
+                    <th>[% l('Margin') %]</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>AUS_200</td>
+                    <td>[% l('Australia 200 Cash Index') %]</td>
+                    <td>[% l('AUD 1 per point') %]</td>
+                    <td>1</td>
+                    <td>100</td>
+                    <td>0.2%</td>
+                </tr>
+                <tr>
+                    <td>JP_225</td>
+                    <td>[% l('Japan Cash Index') %]</td>
+                    <td>[% l('JPY 1 per point') %]</td>
+                    <td>10</td>
+                    <td>1000</td>
+                    <td>0.2%</td>
+                </tr>
+                <tr>
+                    <td>IND_30</td>
+                    <td>[% l('India 50 Cash Index') %]</td>
+                    <td>[% l('USD 1 per point') %]</td>
+                    <td>1</td>
+                    <td>100</td>
+                    <td>0.2%</td>
+                </tr>
+                <tr>
+                    <td>ESP_35</td>
+                    <td>[% l('Spain 35 Cash Index') %]</td>
+                    <td>[% l('EUR 1 per point') %]</td>
+                    <td>1</td>
+                    <td>100</td>
+                    <td>0.2%</td>
+                </tr>
+                <tr>
+                    <td>EUR_50</td>
+                    <td>[% l('Euro 50 Cash Index') %]</td>
+                    <td>[% l('EUR 1 per point') %]</td>
+                    <td>1</td>
+                    <td>500</td>
+                    <td>0.2%</td>
+                </tr>
+                <tr>
+                    <td>FRA_40</td>
+                    <td>[% l('France 40 Cash Index') %]</td>
+                    <td>[% l('EUR 1 per point') %]</td>
+                    <td>1</td>
+                    <td>500</td>
+                    <td>0.2%</td>
+                </tr>
+                <tr>
+                    <td>GBP_100</td>
+                    <td>[% l('UK 100 Cash Index') %]</td>
+                    <td>[% l('GBP 1 per point') %]</td>
+                    <td>1</td>
+                    <td>500</td>
+                    <td>0.2%</td>
+                </tr>
+                <tr>
+                    <td>NED_25</td>
+                    <td>[% l('Netherlands 25 Cash Index') %]</td>
+                    <td>[% l('EUR 1 per point') %]</td>
+                    <td>1</td>
+                    <td>100</td>
+                    <td>0.2%</td>
+                </tr>
+                <tr>
+                    <td>ZAF_40</td>
+                    <td>[% l('South Africa 40 Cash Index') %]</td>
+                    <td>[% l('ZAR 1 per point') %]</td>
+                    <td>1</td>
+                    <td>100</td>
+                    <td>0.2%</td>
+                </tr>
+                <tr>
+                    <td>DAX_30</td>
+                    <td>[% l('German 30 Cash Index') %]</td>
+                    <td>[% l('EUR 1 per point') %]</td>
+                    <td>1</td>
+                    <td>100</td>
+                    <td>0.2%</td>
+                </tr>
+                <tr>
+                    <td>CAN_60</td>
+                    <td>[% l('Canada 60 Cash Index') %]</td>
+                    <td>[% l('CAD 1 per point') %]</td>
+                    <td>1</td>
+                    <td>100</td>
+                    <td>0.2%</td>
+                </tr>
+                <tr>
+                    <td>US_30</td>
+                    <td>[% l('US 30 Cash Index') %]</td>
+                    <td>[% l('USD 1 per point') %]</td>
+                    <td>1</td>
+                    <td>200</td>
+                    <td>0.2%</td>
+                </tr>
+                <tr>
+                    <td>US_100</td>
+                    <td>[% l('US 100 Cash Index') %]</td>
+                    <td>[% l('USD 1 per point') %]</td>
+                    <td>1</td>
+                    <td>200</td>
+                    <td>0.2%</td>
+                </tr>
+                <tr>
+                    <td>US_500</td>
+                    <td>[% l('US 500 Cash Index') %]</td>
+                    <td>[% l('USD 1 per point') %]</td>
+                    <td>1</td>
+                    <td>200</td>
+                    <td>0.2%</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="gr-12 gr-padding-10">
+        <h2>[% l('How to read the table above') %]</h2>
+        <p>[% l('CFD (Contract for Difference): CFD is an instrument that allows you to profit by speculating on the rise or fall of an instrument. The profit/loss is estimated as a function of the difference in the buy/sell prices of the underlying instrument.') %]</p>
+        <p>[% l('For example, the CFDs on US 30 Cash Index offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 Cash Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:') %]</p>
+        <div class="gr-12 gr-padding-10 fill-bg-color">
+            <div class="gr-prefix-1">
+                <p>[% l('(Sell Price - Buy Price) x Volume x Price Per Point = Profit') %]</p>
+                <p>[% l('I.e. (20010 - 20000) x 1 x 1 = USD 10') %]</p>
+            </div>
+        </div>
+        <p>[% l('Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit.') %]</p>
+        <p>[% l('To learn more, read our <a href="[_1]">Margin Policy</a> that further explains our margin requirements.', request.url_for('/metatrader/margin-policy')) %]</p>
+        <h2>[% l('Important notes on our swap rates (overnight funding)') %]</h2>
+        <p>[% l('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open. This adjustment is based on interbank lending rates, on top of a 2% fee.') %]</p>
+        <p>[% l('The interest adjustment is calculated in points, meaning we will convert the relevant market rates to points in the base instrument.') %]</p>
+        <p>[% l('The swap rate will depend on the direction of the position you take:') %]</p>
+        <div class="gr-prefix-1">
+            <ul class="bullet">
+                <li>[% l('<strong>Long positions</strong>: We charge a 2% fee on top of market rates.') %]</li>
+                <li>[% l('<strong>Short positions</strong>: We charge a 2% fee on top of market rates.') %]</li>
+            </ul>
+        </div>
+        <p>[% l('Please take note that our swap rate also depends on the time and days you hold your positions open: ') %]</p>
+        <div class="gr-prefix-1">
+            <ul class="bullet">
+                <li>[% l('You will be subjected to swap rates if you keep a position open past the market close.') %]</li>
+                <li>[% l('Positions that are still open on Friday at market close will be charged three times the swap rate to account for weekends, a standard practice for all brokers.') %]</li>
+                <li>[% l('Our swap rate may also be adjusted to take holidays into account.') %]</li>
+            </ul>
+        </div>
+    </div>
+</div>
