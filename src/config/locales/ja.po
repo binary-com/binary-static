@@ -9343,6 +9343,11 @@ msgstr "お客さまのご口座%3から決済サービス%4口座へ%1 %2の出
 msgid "Your session duration limit will end in %1 seconds."
 msgstr "お客様の取引継続時間制限は%1秒後に終了します。"
 
+#, fuzzy
+#| msgid "Your changes have been updated successfully."
+msgid "Your settings have been updated successfully."
+msgstr "設定が正しく更新されました。"
+
 msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
 msgstr "ワンタイムパスワードの有効期限が切れています。再度、<a class=\"pjaxload\" href=\"%1\">「最初からやり直し」</a> をクリックしてワンタイムパスワードを発行して下さい。"
 
