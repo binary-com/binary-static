@@ -414,11 +414,7 @@ const BinarySocketClass = function() {
                         $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (error_code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.')) + '</p></div>');
                         break;
                     case 'RateLimit':
-                        $('#ratelimit-error-message:hidden')
-                            .css('display', 'block')
-                            .on('click', '#ratelimit-refresh-link', function () {
-                                window.location.reload();
-                            });
+                        $('#ratelimit-error-message:hidden').css('display', 'block');
                         break;
                     case 'InvalidToken':
                         if (!/^(reset_password|new_account_virtual|paymentagent_withdraw|cashier)$/.test(type)) {
