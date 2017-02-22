@@ -194,6 +194,7 @@ sub _texts {
         push @texts, localize('comma');
         push @texts, localize('Sorry, an error occurred while processing your account.');
         push @texts, localize('Your changes have been updated successfully.');
+        push @texts, localize('Your settings have been updated successfully.');
         #strings for home and virtualws page
         push @texts, localize('verification token');
         push @texts, localize('Please submit a valid [_1].');
