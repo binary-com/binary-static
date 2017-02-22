@@ -66,6 +66,7 @@ const BinarySocketClass = function() {
     const no_duplicate_requests = [
         'authorize',
         'get_settings',
+        'residence_list',
     ];
     const waiting_list = {
         items: {},
@@ -364,7 +365,6 @@ const BinarySocketClass = function() {
                 } else if (type === 'reality_check') {
                     RealityCheck.realityCheckWSHandler(response);
                 } else if (type === 'get_account_status' && response.get_account_status) {
-                    Client.set('values_set_account', 1);
                     if (response.get_account_status.risk_classification === 'high' && qualify_for_risk_classification()) {
                         send({ get_financial_assessment: 1 });
                     } else {
@@ -410,11 +410,7 @@ const BinarySocketClass = function() {
                         $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (error_code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.')) + '</p></div>');
                         break;
                     case 'RateLimit':
-                        $('#ratelimit-error-message:hidden')
-                            .css('display', 'block')
-                            .on('click', '#ratelimit-refresh-link', function () {
-                                window.location.reload();
-                            });
+                        $('#ratelimit-error-message:hidden').css('display', 'block');
                         break;
                     case 'InvalidToken':
                         if (!/^(reset_password|new_account_virtual|paymentagent_withdraw|cashier)$/.test(type)) {

@@ -151,9 +151,13 @@ const Client = (function () {
         activate_by_client_type();
     };
 
+    const tnc_pages = () => {
+        const location = window.location.href;
+        return /user\/tnc_approvalws/.test(location) || /terms-and-conditions/.test(location);
+    };
+
     const check_tnc = function() {
-        if (/user\/tnc_approvalws/.test(window.location.href) ||
-            /terms-and-conditions/.test(window.location.href) ||
+        if (tnc_pages() ||
             get('is_virtual') ||
             sessionStorage.getItem('check_tnc') !== 'check') {
             return;
@@ -379,7 +383,7 @@ const Client = (function () {
     const should_complete_tax = () => is_financial() && !get('has_tax_information');
 
     const should_redirect_tax = () => {
-        if (should_complete_tax() && !/user\/settings\/detailsws/.test(window.location.pathname)) {
+        if (should_complete_tax() && !/user\/settings\/detailsws/.test(window.location.pathname) && !tnc_pages()) {
             window.location.href = url_for('user/settings/detailsws');
             return true;
         }

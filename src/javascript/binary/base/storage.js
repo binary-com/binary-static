@@ -1,4 +1,5 @@
 const getPropertyValue = require('./utility').getPropertyValue;
+const objectNotEmpty   = require('./utility').objectNotEmpty;
 const Cookies          = require('../../lib/js-cookie');
 
 const isStorageSupported = function(storage) {
@@ -45,15 +46,14 @@ InScriptStore.prototype = {
     get: function(key) {
         return getPropertyValue(this.store, key);
     },
-    set: function(key, value) {
-        let obj = this.store;
-        if (Array.isArray(key)) {
-            key.forEach(function(k) {
-                if (k in obj) obj = obj[k];
-                else key = k;
-            });
+    set: function(key, value, obj = this.store) {
+        if (!Array.isArray(key)) key = [key];
+        if (key.length > 1) {
+            if (!(key[0] in obj) || !objectNotEmpty(obj[key[0]])) obj[key[0]] = {};
+            this.set(key.slice(1), value, obj[key[0]]);
+        } else {
+            obj[key[0]] = value;
         }
-        obj[key] = value;
     },
     remove: function(key)        { delete this.store[key]; },
     clear : function()           { this.store = {}; },

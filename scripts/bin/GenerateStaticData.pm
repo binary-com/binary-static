@@ -329,6 +329,8 @@ sub _texts {
         push @texts, localize('[_1] [_2] payout if [_3] ends outside low and high values of Exercise price at close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] stays between low and high values of Exercise price through close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] goes outside of low and high values of Exercise price through close on [_4].');
+        push @texts, localize('hour');
+        push @texts, localize('mins');
         push @texts, localize('Higher');
         push @texts, localize('Lower');
         push @texts, localize('Touches');
@@ -482,6 +484,9 @@ sub _texts {
         # strings from back-end
         push @texts, localize('There was a problem accessing the server.');
         push @texts, localize('There was a problem accessing the server during purchase.');
+
+        # strings for OneSignal
+        push @texts, localize('Thank you for subscribing!');
 
         # strings for form_validation
         push @texts, localize('Should be a valid number');
