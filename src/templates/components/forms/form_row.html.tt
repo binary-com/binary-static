@@ -13,7 +13,7 @@
     <div class="gr-8 gr-12-m">
     [% SWITCH type -%]
         [%- CASE 'select' -%]
-            <select id="[% id %]" [% attributes %]>
+            <select id="[% id %]" class="form_input" [% attributes %]>
             [%= content -%]
             </select>
         [%- CASE ['text', 'password'] -%]
