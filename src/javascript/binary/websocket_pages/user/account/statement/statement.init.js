@@ -8,6 +8,7 @@ const moment               = require('moment');
 const DatePicker           = require('../../../../components/date_picker').DatePicker;
 const toISOFormat          = require('../../../../common_functions/string_util').toISOFormat;
 const dateValueChanged     = require('../../../../common_functions/common_functions').dateValueChanged;
+const ViewPopupWS          = require('../../view_popup/view_popupws');
 const localize    = require('../../../../base/localize').localize;
 const getLanguage = require('../../../../base/language').getLanguage;
 
@@ -129,7 +130,7 @@ const StatementWS = (function() {
         });
     };
 
-    const initTable = function() {
+    const onUnload = function() {
         pending = false;
         noMoreData = false;
 
@@ -174,10 +175,6 @@ const StatementWS = (function() {
         loadStatementChunkWhenScroll();
     };
 
-    const cleanStatementPageState = function() {
-        initTable();
-    };
-
     const attachDatePicker = function() {
         const jumpTo = '#jump-to',
             datePickerInst = new DatePicker(jumpTo);
@@ -191,19 +188,23 @@ const StatementWS = (function() {
                      }
                      $('.table-container').remove();
                      StatementUI.clearTableContent();
-                     StatementWS.init();
+                     initPage();
                      return true;
                  });
+    };
+
+    const onLoad = function() {
+        initPage();
+        attachDatePicker();
+        ViewPopupWS.viewButtonOnClick('#statement-ws-container');
     };
 
     return {
         init            : initPage,
         statementHandler: statementHandler,
-        clean           : cleanStatementPageState,
-        attachDatePicker: attachDatePicker,
+        onLoad          : onLoad,
+        onUnload        : onUnload,
     };
 })();
 
-module.exports = {
-    StatementWS: StatementWS,
-};
+module.exports = StatementWS;

@@ -102,7 +102,7 @@ const PasswordWS = (function() {
         }, 5000);
     };
 
-    const initSocket = function() {
+    const onLoad = function() {
         Content.populate();
 
         BinarySocket.init({
@@ -111,20 +111,18 @@ const PasswordWS = (function() {
                 if (!response) return;
                 const type = response.msg_type;
                 if (type === 'change_password' || (type === 'error' && 'change_password' in response.echo_req)) {
-                    PasswordWS.handler(response);
+                    handler(response);
                 }
             },
         });
-        PasswordWS.init();
+        init();
     };
 
     return {
-        init      : init,
-        handler   : handler,
-        initSocket: initSocket,
+        onLoad : onLoad,
+        init   : init,
+        handler: handler,
     };
 })();
 
-module.exports = {
-    PasswordWS: PasswordWS,
-};
+module.exports = PasswordWS;

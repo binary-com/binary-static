@@ -22,6 +22,4 @@ const IPHistoryWS = (function() {
     };
 })();
 
-module.exports = {
-    IPHistoryWS: IPHistoryWS,
-};
+module.exports = IPHistoryWS;

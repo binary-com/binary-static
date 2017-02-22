@@ -10,7 +10,7 @@ const Symbols              = require('../symbols').Symbols;
 const Content              = require('../../../common_functions/content').Content;
 const Guide                = require('../../../common_functions/guide').Guide;
 const japanese_client      = require('../../../common_functions/country_base').japanese_client;
-const PortfolioWS          = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
+const PortfolioWS          = require('../../user/account/portfolio/portfolio.init');
 const ResizeSensor         = require('../../../../lib/resize-sensor');
 const State                = require('../../../base/storage').State;
 const url_for              = require('../../../base/url').url_for;
@@ -18,6 +18,7 @@ const showPriceOverlay     = require('../common').showPriceOverlay;
 const showFormOverlay      = require('../common').showFormOverlay;
 const addEventListenerForm = require('../common').addEventListenerForm;
 const chartFrameCleanup    = require('../common').chartFrameCleanup;
+const ViewPopupWS          = require('../../user/view_popup/view_popupws');
 
 const TradePage_Beta = (function() {
     let events_initialized = 0;
@@ -71,6 +72,8 @@ const TradePage_Beta = (function() {
             script: 'trading',
         });
         TradingAnalysis_Beta.bindAnalysisTabEvent();
+
+        ViewPopupWS.viewButtonOnClick('#contract_confirmation_container');
     };
 
     const adjustAnalysisColumnHeight = function() {
@@ -206,6 +209,4 @@ const TradePage_Beta = (function() {
     };
 })();
 
-module.exports = {
-    TradePage_Beta: TradePage_Beta,
-};
+module.exports = TradePage_Beta;

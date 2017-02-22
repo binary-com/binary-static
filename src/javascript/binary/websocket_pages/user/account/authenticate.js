@@ -4,7 +4,7 @@ const Client   = require('../../../base/client').Client;
 const url_for  = require('../../../base/url').url_for;
 
 const AuthenticateWS = (function() {
-    const init = function() {
+    const onLoad = function() {
         if (japanese_client()) {
             window.location.href = url_for('trading');
         }
@@ -39,11 +39,10 @@ const AuthenticateWS = (function() {
             BinarySocket.send({ get_account_status: 1 });
         }
     };
+
     return {
-        init: init,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    AuthenticateWS: AuthenticateWS,
-};
+module.exports = AuthenticateWS;

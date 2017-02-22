@@ -133,7 +133,7 @@ const SelfExclusionWS = (function() {
         getRequest();
     };
 
-    const init = function() {
+    const onLoad = function() {
         Content.populate();
         BinarySocket.init({
             onmessage: function(msg) {
@@ -356,10 +356,8 @@ const SelfExclusionWS = (function() {
     };
 
     return {
-        init: init,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    SelfExclusionWS: SelfExclusionWS,
-};
+module.exports = SelfExclusionWS;

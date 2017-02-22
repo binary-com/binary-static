@@ -15,6 +15,7 @@ const showPriceOverlay     = require('./common').showPriceOverlay;
 const showFormOverlay      = require('./common').showFormOverlay;
 const addEventListenerForm = require('./common').addEventListenerForm;
 const chartFrameCleanup    = require('./common').chartFrameCleanup;
+const ViewPopupWS          = require('../user/view_popup/view_popupws');
 const localize = require('../../base/localize').localize;
 const url_for  = require('../../base/url').url_for;
 
@@ -69,6 +70,8 @@ const TradePage = (function() {
         $('#tab_graph').find('a').text(localize('Chart'));
         $('#tab_explanation').find('a').text(localize('Explanation'));
         $('#tab_last_digit').find('a').text(localize('Last Digit Stats'));
+
+        ViewPopupWS.viewButtonOnClick('#contract_confirmation_container');
     };
 
     const reload = function() {
@@ -100,6 +103,4 @@ const TradePage = (function() {
     };
 })();
 
-module.exports = {
-    TradePage: TradePage,
-};
+module.exports = TradePage;

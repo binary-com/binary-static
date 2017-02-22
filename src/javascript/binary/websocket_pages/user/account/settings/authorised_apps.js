@@ -22,6 +22,4 @@ const AuthorisedApps = (function() {
     };
 })();
 
-module.exports = {
-    AuthorisedApps: AuthorisedApps,
-};
+module.exports = AuthorisedApps;

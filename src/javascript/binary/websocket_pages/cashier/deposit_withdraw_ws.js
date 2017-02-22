@@ -153,7 +153,7 @@ const ForwardWS = (function() {
         ForwardWS.showMessage(msgID);
     };
 
-    const checkOnLoad = function() {
+    const onLoad = function() {
         const clientIsVirtual = function() {
             Content.populate();
             const is_virtual = Client.get('is_virtual');
@@ -250,18 +250,16 @@ const ForwardWS = (function() {
         }
     };
     return {
+        onLoad                  : onLoad,
         init                    : init,
         getCashierType          : getCashierType,
         getCashierURL           : getCashierURL,
         hideAll                 : hideAll,
         showError               : showError,
         showMessage             : showMessage,
-        checkOnLoad             : checkOnLoad,
         showPersonalDetailsError: showPersonalDetailsError,
         showCurrency            : showCurrency,
     };
 })();
 
-module.exports = {
-    ForwardWS: ForwardWS,
-};
+module.exports = ForwardWS;

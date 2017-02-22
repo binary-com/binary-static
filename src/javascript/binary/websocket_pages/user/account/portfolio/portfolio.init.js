@@ -6,7 +6,7 @@ const addTooltip          = require('../../../../common_functions/get_app_detail
 const showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
 const japanese_client     = require('../../../../common_functions/country_base').japanese_client;
 const Portfolio           = require('../portfolio').Portfolio;
-const ViewPopupWS         = require('../../view_popup/view_popupws').ViewPopupWS;
+const ViewPopupWS         = require('../../view_popup/view_popupws');
 const State               = require('../../../../base/storage').State;
 const localize = require('../../../../base/localize').localize;
 const Client   = require('../../../../base/client').Client;
@@ -237,6 +237,7 @@ const PortfolioWS = (function() {
             });
         }
         PortfolioWS.init();
+        ViewPopupWS.viewButtonOnClick('#portfolio-table');
     };
 
     const onUnload = function() {
@@ -259,6 +260,4 @@ const PortfolioWS = (function() {
     };
 })();
 
-module.exports = {
-    PortfolioWS: PortfolioWS,
-};
+module.exports = PortfolioWS;

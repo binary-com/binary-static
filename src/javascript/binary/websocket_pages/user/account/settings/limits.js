@@ -41,6 +41,4 @@ const Limits = (function() {
     };
 })();
 
-module.exports = {
-    Limits: Limits,
-};
+module.exports = Limits;

@@ -23,7 +23,7 @@ const MarketTimesUI = (function() {
         tradingTimes,
         isFramed;
 
-    const init = function(config) {
+    const onLoad = function(config) {
         $date      = $('#trading-date');
         $container = $('#trading-times');
         columns    = ['Asset', 'Opens', 'Closes', 'Settles', 'UpcomingEvents'];
@@ -204,7 +204,7 @@ const MarketTimesUI = (function() {
     };
 
     return {
-        init            : init,
+        onLoad          : onLoad,
         setActiveSymbols: function(response) {
             activeSymbols = response.active_symbols.slice(0); // clone
             if (tradingTimes) populateTable();
@@ -216,6 +216,4 @@ const MarketTimesUI = (function() {
     };
 })();
 
-module.exports = {
-    MarketTimesUI: MarketTimesUI,
-};
+module.exports = MarketTimesUI;

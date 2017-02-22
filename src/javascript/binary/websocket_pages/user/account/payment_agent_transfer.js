@@ -3,7 +3,7 @@ const Content              = require('../../../common_functions/content').Conten
 const Client               = require('../../../base/client').Client;
 
 const PaymentAgentTransferSocket = (function() {
-    const initSocket = function() {
+    const onLoad = function() {
         BinarySocket.init({
             onmessage: function(msg) {
                 const response = JSON.parse(msg.data);
@@ -19,11 +19,10 @@ const PaymentAgentTransferSocket = (function() {
             PaymentAgentTransfer.init();
         }
     };
+
     return {
-        initSocket: initSocket,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    PaymentAgentTransferSocket: PaymentAgentTransferSocket,
-};
+module.exports = PaymentAgentTransferSocket;

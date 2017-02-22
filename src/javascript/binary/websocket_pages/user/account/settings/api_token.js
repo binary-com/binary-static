@@ -27,7 +27,7 @@ const APITokenWS = (function() {
     const hideTable = hide(tableContainer);
     const showTable = show(tableContainer);
 
-    const init = function() {
+    const onLoad = function() {
         if (japanese_client()) {
             window.location.href = url_for('user/settingsws');
             return;
@@ -234,10 +234,8 @@ const APITokenWS = (function() {
     };
 
     return {
-        init: init,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    APITokenWS: APITokenWS,
-};
+module.exports = APITokenWS;

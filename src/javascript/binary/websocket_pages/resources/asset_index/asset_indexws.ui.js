@@ -19,7 +19,7 @@ const AssetIndexUI = (function() {
         marketColumns,
         isFramed;
 
-    const init = function(config) {
+    const onLoad = function(config) {
         if (japanese_client()) {
             if (!State.get('is_beta_trading')) {
                 window.location.href = url_for('resources');
@@ -149,7 +149,7 @@ const AssetIndexUI = (function() {
     };
 
     return {
-        init            : init,
+        onLoad          : onLoad,
         setActiveSymbols: function(response) {
             activeSymbols = response.active_symbols.slice(0); // clone
             if (assetIndex) populateTable();
@@ -161,6 +161,4 @@ const AssetIndexUI = (function() {
     };
 })();
 
-module.exports = {
-    AssetIndexUI: AssetIndexUI,
-};
+module.exports = AssetIndexUI;

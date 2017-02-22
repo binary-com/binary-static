@@ -22,7 +22,6 @@ const RealityCheck      = require('../websocket_pages/user/reality_check/reality
 const RealityCheckData  = require('../websocket_pages/user/reality_check/reality_check.data').RealityCheckData;
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
-require('../../lib/mmenu/jquery.mmenu.min.all.js');
 
 const Page = function() {
     State.set('is_loaded_by_pjax', false);
@@ -65,6 +64,7 @@ Page.prototype = {
         this.endpoint_notification();
         BinarySocket.init();
         this.show_notification_outdated_browser();
+        Menu.make_mobile_menu();
         // OneSignal.checkSubscription();
     },
     on_unload: function() {

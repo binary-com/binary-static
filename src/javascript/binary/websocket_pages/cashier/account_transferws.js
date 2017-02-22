@@ -241,13 +241,13 @@ const AccountTransferWS = (function() {
             onmessage: function(msg) {
                 const response = JSON.parse(msg.data);
                 if (response) {
-                    AccountTransferWS.apiResponse(response);
+                    apiResponse(response);
                 }
             },
         });
 
         if (Client.get('is_virtual')) {
-            AccountTransferWS.init();
+            init();
         }
     };
 
@@ -258,6 +258,4 @@ const AccountTransferWS = (function() {
     };
 })();
 
-module.exports = {
-    AccountTransferWS: AccountTransferWS,
-};
+module.exports = AccountTransferWS;

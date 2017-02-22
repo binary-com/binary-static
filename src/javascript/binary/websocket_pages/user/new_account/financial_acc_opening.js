@@ -11,7 +11,7 @@ const FinancialAccOpening = (function() {
         errorObj,
         errorEl;
 
-    const init = function() {
+    const onLoad = function() {
         Content.populate();
         Client.set('accept_risk', 0);
         const client_loginid_array = Client.get('loginid_array');
@@ -55,10 +55,8 @@ const FinancialAccOpening = (function() {
     };
 
     return {
-        init: init,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    FinancialAccOpening: FinancialAccOpening,
-};
+module.exports = FinancialAccOpening;

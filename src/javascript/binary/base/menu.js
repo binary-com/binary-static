@@ -1,5 +1,6 @@
 const Url    = require('./url').Url;
 const Client = require('./client').Client;
+require('../../lib/mmenu/jquery.mmenu.min.all.js');
 
 const Menu = (function() {
     let page_url;
@@ -114,9 +115,26 @@ const Menu = (function() {
         return { item: item, subitem: subitem };
     };
 
+    const make_mobile_menu = function () {
+        if ($('#mobile-menu-container').is(':visible')) {
+            $('#mobile-menu').mmenu({
+                position       : 'right',
+                zposition      : 'front',
+                slidingSubmenus: false,
+                searchfield    : true,
+                onClick        : {
+                    close: true,
+                },
+            }, {
+                selectedClass: 'active',
+            });
+        }
+    };
+
     return {
-        init     : init,
-        on_unload: on_unload,
+        init            : init,
+        on_unload       : on_unload,
+        make_mobile_menu: make_mobile_menu,
     };
 })();
 

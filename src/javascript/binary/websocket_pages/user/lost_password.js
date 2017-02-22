@@ -17,6 +17,4 @@ const LostPasswordWS = (function() {
     };
 })();
 
-module.exports = {
-    LostPasswordWS: LostPasswordWS,
-};
+module.exports = LostPasswordWS;

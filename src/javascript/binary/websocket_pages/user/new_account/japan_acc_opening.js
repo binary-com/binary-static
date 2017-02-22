@@ -8,7 +8,7 @@ const url_for             = require('../../../base/url').url_for;
 const JapanAccOpeningUI   = require('./japan_acc_opening/japan_acc_opening.ui').JapanAccOpeningUI;
 
 const JapanAccOpening = (function() {
-    const init = function() {
+    const onLoad = function() {
         Content.populate();
         ValidAccountOpening.redirectCookie();
         if (Client.get('residence') !== 'jp') {
@@ -44,10 +44,8 @@ const JapanAccOpening = (function() {
     };
 
     return {
-        init: init,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    JapanAccOpening: JapanAccOpening,
-};
+module.exports = JapanAccOpening;

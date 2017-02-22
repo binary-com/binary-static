@@ -6,7 +6,7 @@ const Client              = require('../../../base/client').Client;
 const RealAccOpeningUI    = require('./real_acc_opening/real_acc_opening.ui').RealAccOpeningUI;
 
 const RealAccOpening = (function() {
-    const init = function() {
+    const onLoad = function() {
         Content.populate();
         ValidAccountOpening.redirectCookie();
         handleResidence();
@@ -37,10 +37,8 @@ const RealAccOpening = (function() {
     };
 
     return {
-        init: init,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    RealAccOpening: RealAccOpening,
-};
+module.exports = RealAccOpening;

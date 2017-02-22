@@ -1,4 +1,4 @@
-const CashierJP = require('../../../binary_japan/cashier').CashierJP;
+const CashierJP = require('../../../binary_japan/cashier');
 const MBPrice   = require('../../websocket_pages/mb_trade/mb_price').MBPrice;
 
 const HandleClick = function (param, ...values) {

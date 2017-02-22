@@ -37,7 +37,7 @@ const SecurityWS = (function() {
         return true;
     };
 
-    const init = function() {
+    const onLoad = function() {
         Content.populate();
         $form = $('#changeCashierLock');
         if (checkIsVirtual()) return;
@@ -167,10 +167,8 @@ const SecurityWS = (function() {
     };
 
     return {
-        init: init,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    SecurityWS: SecurityWS,
-};
+module.exports = SecurityWS;

@@ -75,12 +75,10 @@ const TopUpVirtualWS = (function() {
     };
 
     return {
+        onLoad         : onLoad,
         init           : init,
         responseHandler: responseHandler,
-        onLoad         : onLoad,
     };
 })();
 
-module.exports = {
-    TopUpVirtualWS: TopUpVirtualWS,
-};
+module.exports = TopUpVirtualWS;

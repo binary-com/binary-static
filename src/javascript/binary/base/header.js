@@ -3,7 +3,9 @@ const Login                     = require('./login').Login;
 const url_for                   = require('./url').url_for;
 const GTM                       = require('./gtm').GTM;
 const localize                  = require('./localize').localize;
+const BinaryPjax                = require('./binary_pjax');
 const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
+const japanese_client           = require('../common_functions/country_base').japanese_client;
 const check_risk_classification = require('../common_functions/check_risk_classification').check_risk_classification;
 const MetaTrader                = require('../websocket_pages/user/metatrader/metatrader');
 
@@ -18,6 +20,14 @@ const Header = (function() {
         if (Client.is_logged_in()) {
             $('ul#menu-top').addClass('smaller-font');
         }
+
+        $('#logo').off('click').on('click', function() {
+            BinaryPjax.go(url_for(Client.is_logged_in() ? japanese_client() ? 'multi_barriers_trading' : 'trading' : ''));
+        });
+        $('#btn_login').off('click').on('click', function(e) {
+            e.preventDefault();
+            Login.redirect_to_login();
+        });
     };
 
     const logout_handler = function() {

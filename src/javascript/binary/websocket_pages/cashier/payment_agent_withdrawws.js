@@ -269,7 +269,7 @@ const PaymentAgentWithdrawWS = (function() {
         }
     };
 
-    const checkOnLoad = function() {
+    const onLoad = function() {
         BinarySocket.init({
             onmessage: function(msg) {
                 const response = JSON.parse(msg.data);
@@ -301,14 +301,12 @@ const PaymentAgentWithdrawWS = (function() {
     };
 
     return {
+        onLoad            : onLoad,
         init              : init,
         populateAgentsList: populateAgentsList,
         withdrawResponse  : withdrawResponse,
         lock_withdrawal   : lock_withdrawal,
-        checkOnLoad       : checkOnLoad,
     };
 })();
 
-module.exports = {
-    PaymentAgentWithdrawWS: PaymentAgentWithdrawWS,
-};
+module.exports = PaymentAgentWithdrawWS;

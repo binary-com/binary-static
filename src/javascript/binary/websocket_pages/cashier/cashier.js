@@ -109,10 +109,9 @@ const Cashier = (function() {
         check_locked         : check_locked,
         check_top_up_withdraw: check_top_up_withdraw,
         onLoad               : onLoad,
-        onLoadPaymentMethods : onLoadPaymentMethods,
+
+        PaymentMethods: { onLoad: () => { onLoadPaymentMethods(); } },
     };
 })();
 
-module.exports = {
-    Cashier: Cashier,
-};
+module.exports = Cashier;

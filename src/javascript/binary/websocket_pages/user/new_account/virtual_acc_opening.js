@@ -94,6 +94,4 @@ const VirtualAccOpening = (function() {
     };
 })();
 
-module.exports = {
-    VirtualAccOpening: VirtualAccOpening,
-};
+module.exports = VirtualAccOpening;

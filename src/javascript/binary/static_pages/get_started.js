@@ -1,3 +1,5 @@
+const Scroll = require('../common_functions/scroll');
+
 const GetStarted = (function() {
     const select_nav_element = function() {
         const $navLink = $('.nav li a');
@@ -11,7 +13,7 @@ const GetStarted = (function() {
         }
     };
 
-    const get_started_behaviour = function() {
+    const onLoad = function() {
         if (/get-started-jp/.test(window.location.pathname)) return;
         const update_active_subsection = function(to_show) {
             const subsection = $('.subsection');
@@ -59,11 +61,14 @@ const GetStarted = (function() {
         select_nav_element();
     };
 
+    const onUnload = function() {
+        Scroll.offScroll();
+    };
+
     return {
-        get_started_behaviour: get_started_behaviour,
+        onLoad  : onLoad,
+        onUnload: onUnload,
     };
 })();
 
-module.exports = {
-    GetStarted: GetStarted,
-};
+module.exports = GetStarted;

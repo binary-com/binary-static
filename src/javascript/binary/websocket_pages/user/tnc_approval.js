@@ -9,7 +9,7 @@ const TNCApproval = (function() {
 
     const hidden_class = 'invisible';
 
-    const init = function() {
+    const onLoad = function() {
         requiresTNCApproval($('#btn_accept'), display, null, true);
     };
 
@@ -69,7 +69,7 @@ const TNCApproval = (function() {
     };
 
     return {
-        init               : init,
+        onLoad             : onLoad,
         requiresTNCApproval: requiresTNCApproval,
     };
 })();

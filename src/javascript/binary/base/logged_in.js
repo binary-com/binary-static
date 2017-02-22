@@ -9,7 +9,7 @@ const default_redirect_url = require('./url').default_redirect_url;
 const LoggedInHandler = (function() {
     'use strict';
 
-    const init = function() {
+    const onLoad = function() {
         parent.window.is_logging_in = 1; // this flag is used in base.js to prevent auto-reloading this page
         let redirect_url;
         try {
@@ -83,10 +83,8 @@ const LoggedInHandler = (function() {
     };
 
     return {
-        init: init,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    LoggedInHandler: LoggedInHandler,
-};
+module.exports = LoggedInHandler;

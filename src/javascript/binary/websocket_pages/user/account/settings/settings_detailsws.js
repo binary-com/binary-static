@@ -329,6 +329,4 @@ const SettingsDetailsWS = (function() {
     };
 })();
 
-module.exports = {
-    SettingsDetailsWS: SettingsDetailsWS,
-};
+module.exports = SettingsDetailsWS;

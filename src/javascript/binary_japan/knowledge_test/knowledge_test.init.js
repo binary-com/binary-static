@@ -128,7 +128,7 @@ const KnowledgeTest = (function() {
         showQuestionsTable();
     };
 
-    const init = function() {
+    const onLoad = function() {
         BinarySocket.init({
             onmessage: function(msg) {
                 const response = JSON.parse(msg.data);
@@ -183,10 +183,8 @@ const KnowledgeTest = (function() {
     };
 
     return {
-        init: init,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    KnowledgeTest: KnowledgeTest,
-};
+module.exports = KnowledgeTest;

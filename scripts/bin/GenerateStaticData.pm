@@ -36,6 +36,7 @@ sub _texts {
         push @texts, localize('Month');
         push @texts, localize('Year');
         push @texts, localize('Sorry, an error occurred while processing your request.');
+        push @texts, localize('Please <a href="[_1]">log in</a> to view this page.');
         # top bar
         push @texts, localize('Upgrade to a Real Account');
         push @texts, localize('Upgrade to a Financial Account');
