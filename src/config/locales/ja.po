@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-22 08:12+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2017-02-23 10:40+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -683,10 +683,14 @@ msgid "A background in IT development"
 msgstr "IT開発の経歴"
 
 msgid "A binary option is a contract purchased by a trader, which pays a pre-determined amount if their prediction is correct."
-msgstr "バイナリーオプションとは、購入したトレードが勝った際に得られる事前に決定済みの金額のことです。"
+msgstr ""
+"バイナリーオプションとはトレーダーがトレードを購入し、条件が満たされた場合にあらかじめ決められたペイアウトがトレーダーに支払われることをいいます。"
 
 msgid "A binary option is an option with a fixed payout that is determined at the start of the trade. If your prediction is correct, you receive an agreed payout. If not, you lose your initial stake, and no more. The options are called 'binary' because there can be only two outcomes - win or lose."
-msgstr "バイナリーオプションは、事前に定められたリターンを提供するオプション取引です。もし予測が正しければ、事前に定められたペイアウトを得ることが出来ます。予測が外れた場合は購入価格のみを失います。このオプション取引は、条件を満たすか、満たさないかのみ結果としてもたらされるので、「バイナリー」と呼ばれています。"
+msgstr ""
+"バイナリーオプションは、取引開始時に予め決められた固定ペイアウトを用いたオプション取引です。条件が満たされた場合、そのペイアウトをお受け取りいただけます。"
+"条件が満たされなかった場合は、ペイアウトは支払われず購入金額を失うことになります。条件が満たされるか・満たされないか - "
+"の2つだけの結果からなることから、「バイナリーオプション」と呼ばれています。"
 
 msgid "A broad array of HR-related administrative tasks"
 msgstr "幅広いHR関連の管理作業"
@@ -1551,7 +1555,7 @@ msgid "Binary trading is flexible."
 msgstr "柔軟な取引"
 
 msgid "Binary trading is ideal for both individuals and market professionals."
-msgstr "バイナリー取引は個人投資家、及びマーケットのプロの両者に最適"
+msgstr "バイナリーは個人投資家にもプロの投資家にも最適"
 
 msgid "Binary trading is very simple."
 msgstr "見やすい画面でお取引が可能"
@@ -2412,13 +2416,13 @@ msgid "Differences with other data feeds"
 msgstr "他社が提供するデータフィードとの相違について"
 
 msgid "Digit contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
-msgstr "Digitトレードはトレードが5分以内に終了しない場合、購入金額が返金されます。"
+msgstr "DIGITトレードはトレードが5分以内に終了しない場合、購入金額が返金されます。"
 
 msgid "Digits"
 msgstr "数字"
 
 msgid "Digits let you predict the last decimal digit of the spot price. There are three types of Digits trades:"
-msgstr "数字取引ではスポット価格の下一桁を予測します。3つの取引タイプがあります。"
+msgstr "DIGITトレードではスポット価格の下一桁を予測します。3つの取引タイプがあります。"
 
 msgid "Director"
 msgstr "取締役"
@@ -3578,7 +3582,9 @@ msgid "If you select \"Odd\", you will win the payout if the <strong>last digit
 msgstr "「奇数」を選択された場合、最後のtickの<strong>下一桁</strong>が<strong>奇数（例：1、3、5、7、9）</strong>であるとペイアウトを獲得いただけます。"
 
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
-msgstr "「オーバー」を選択された場合、最後のtickの<strong>下一桁</strong>が<strong>予測を超える</strong>とペイアウトを獲得いただけます。"
+msgstr ""
+"「OVER」を選択された場合、最後のtickの<strong>下一桁</strong>が<strong>予測を超える</strong>とペイアウトを獲得い"
+"ただけます。"
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "「アップ」を選択された場合、<strong>終値</strong>が<strong>エントリー価格</strong>より正確に高くなるとペイアウトを獲得いただけます。同値は条件を満たしていないと判定されます。"
@@ -3590,7 +3596,9 @@ msgid "If you select \"Touches\", you win the payout if the market touches the <
 msgstr "「TOUCH」を選択された場合、<strong>取引期間が終了するまで</strong>に市場価格が<strong>バリア</strong>設定した価格にタッチすればペイアウトを受け取れます。"
 
 msgid "If you select \"Under\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>less than your prediction.</strong>"
-msgstr "「アンダー」を選択された場合、最後のtickの<strong>下一桁</strong>が<strong>予測を下回る</strong>とペイアウトを獲得いただけます。"
+msgstr ""
+"「UNDER」を選択された場合、最後のtickの<strong>下一桁</strong>が<strong>予測を下回る</strong>とペイアウトを獲得"
+"いただけます。"
 
 msgid "If you select \"falls\", you win the payout if the market price is lower than the <strong>entry spot</strong>."
 msgstr "\"ダウン\"を選択された場合、トレード終了時間の市場価格が<strong>エントリー価格</strong>より低くなるとペイアウトを獲得いただけます。同値は条件を満たしていないと判定されます。"
@@ -4885,7 +4893,7 @@ msgid "Matches/Differs"
 msgstr "MATCH/DIFFER"
 
 msgid "Matches/Differs - Predict that the last digit will match or not match"
-msgstr "マッチ/アンマッチ：下一桁が予め予想した数字に合致するかしないかを予測します"
+msgstr "MATCH/UNMATCH：下一桁が予め予想した数字に合致するかしないかを予測します"
 
 msgid "Max:"
 msgstr "最大："
@@ -5552,7 +5560,7 @@ msgid "Over/Under"
 msgstr "以上/以下"
 
 msgid "Over/Under - Predict that the last digit is higher or lower"
-msgstr "Over/Under：下一桁が特定の数字を超えるか、下回るかを予測します"
+msgstr "OVER/UNDER：下一桁が特定の数字を超えるか、下回るかを予測します"
 
 msgid "Over/Under contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "Over/Underトレードは5分以内にトレードが終了しない場合、購入金額が返金されます。"
