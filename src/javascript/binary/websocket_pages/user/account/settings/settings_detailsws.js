@@ -64,7 +64,6 @@ const SettingsDetailsWS = (function() {
         } else {
             $(RealAccElements).removeClass('hidden');
         }
-        get_settings_data = data;
         $(formID).removeClass('hidden');
         FormManager.handleSubmit(formID, { set_settings: 1 }, setDetailsResponse, additionalCheck);
     };
@@ -132,9 +131,12 @@ const SettingsDetailsWS = (function() {
 
                 { selector: '#email_consent' },
 
-                { selector: '#hedge_asset_amount', validations: ['req', 'number'] },
-                { selector: '#hedge_asset',        validations: ['req'] },
+                { selector: '#hedge_asset_amount', validations: ['req', 'number'], parent_node: 'jp_settings' },
+                { selector: '#hedge_asset',        validations: ['req'], parent_node: 'jp_settings' },
             ];
+            $(formID).find('select').each(function () {
+                validations.push({ selector: `#${$(this).attr('id')}`, validations: ['req'], parent_node: 'jp_settings' });
+            });
         } else {
             validations = [
                 { selector: '#address_line_1',   validations: ['req', 'general'] },
@@ -220,7 +222,6 @@ const SettingsDetailsWS = (function() {
     const populateStates = function(response) {
         const address_state = '#address_state';
         let $field = $(address_state);
-        const defaultValue = response.echo_req.passthrough.value;
         const states = response.states_list;
 
         $field.empty();
@@ -234,7 +235,7 @@ const SettingsDetailsWS = (function() {
             $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
             $field = $(address_state);
         }
-        $field.val(defaultValue);
+        $field.val(get_settings_data.address_state);
         FormManager.init(formID, getValidations(get_settings_data));
     };
 
@@ -246,16 +247,15 @@ const SettingsDetailsWS = (function() {
 
         BinarySocket.wait('authorize', 'get_account_status', 'get_settings').then(() => {
             init();
-            const data = State.get(['response', 'get_settings', 'get_settings']);
-            getDetailsResponse(data);
+            get_settings_data = State.get(['response', 'get_settings', 'get_settings']);
+            getDetailsResponse(get_settings_data);
             if (!isJP) {
                 BinarySocket.send({ residence_list: 1 }).then((response) => {
                     populateResidence(response);
                 });
             }
             if (residence) {
-                const states_req = { states_list: residence, passthrough: { value: data.address_state } };
-                BinarySocket.send(states_req).then((response) => {
+                BinarySocket.send({ states_list: residence }).then((response) => {
                     populateStates(response);
                 });
             }

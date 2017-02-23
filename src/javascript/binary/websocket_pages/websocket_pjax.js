@@ -296,6 +296,9 @@ pjax_config_page_require_auth('new_account/japanws', function() {
         onLoad: function() {
             JapanAccOpening.onLoad();
         },
+        onUnload: function() {
+            JapanAccOpening.onUnload();
+        },
     };
 });
 
