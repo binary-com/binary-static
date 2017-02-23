@@ -6,6 +6,7 @@ const localize                  = require('./localize').localize;
 const Login                     = require('./login').Login;
 const page                      = require('./page').page;
 const default_redirect_url      = require('./url').default_redirect_url;
+const url                       = require('./url').url;
 const check_risk_classification = require('../common_functions/check_risk_classification').check_risk_classification;
 const ViewBalanceUI             = require('../websocket_pages/user/viewbalance/viewbalance.ui').ViewBalanceUI;
 
@@ -41,6 +42,7 @@ const BinaryLoader = (function() {
     };
 
     const afterContentChange = (e, content) => {
+        url.reset();
         page.on_load();
         const this_page = content.getAttribute('data-page');
         if (this_page in pages_config) {
