@@ -19,7 +19,8 @@ const SettingsDetailsWS = (function() {
         isVirtual,
         residence,
         tax_residence_values,
-        place_of_birth_value;
+        place_of_birth_value,
+        get_settings_data = {};
 
     const init = function() {
         isVirtual = Client.get('is_virtual');
@@ -63,8 +64,8 @@ const SettingsDetailsWS = (function() {
         } else {
             $(RealAccElements).removeClass('hidden');
         }
+        get_settings_data = data;
         $(formID).removeClass('hidden');
-        FormManager.init(formID, getValidations(data));
         FormManager.handleSubmit(formID, { set_settings: 1 }, setDetailsResponse, additionalCheck);
     };
 
@@ -234,6 +235,7 @@ const SettingsDetailsWS = (function() {
             $field = $(address_state);
         }
         $field.val(defaultValue);
+        FormManager.init(formID, getValidations(get_settings_data));
     };
 
     const onLoad = function() {

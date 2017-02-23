@@ -17,7 +17,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th>[% l('Volatility 100 Index') %]</th>
+                        <th>Volatility 100 Index</th>
                         <td>[% l('USD 1 per point') %]</td>
                         <td>0.01</td>
                         <td>100</td>
@@ -27,7 +27,7 @@
                         <td>0.2%</td>
                     </tr>
                     <tr>
-                        <th>[% l('Volatility 75 Index') %]</th>
+                        <th>Volatility 75 Index</th>
                         <td>[% l('USD 1 per point') %]</td>
                         <td>0.01</td>
                         <td>100</td>
@@ -37,7 +37,7 @@
                         <td>0.2%</td>
                     </tr>
                     <tr>
-                        <th>[% l('Volatility 50 Index') %]</th>
+                        <th>Volatility 50 Index</th>
                         <td>[% l('USD 1 per point') %]</td>
                         <td>0.5</td>
                         <td>100</td>
@@ -47,7 +47,7 @@
                         <td>0.2%</td>
                     </tr>
                     <tr>
-                        <th>[% l('Volatility 25 Index') %]</th>
+                        <th>Volatility 25 Index</th>
                         <td>[% l('USD 1 per point') %]</td>
                         <td>0.5</td>
                         <td>100</td>
@@ -57,7 +57,7 @@
                         <td>0.2%</td>
                     </tr>
                     <tr>
-                        <th>[% l('Volatility 10 Index') %]</th>
+                        <th>Volatility 10 Index</th>
                         <td>[% l('USD 1 per point') %]</td>
                         <td>0.1</td>
                         <td>100</td>
@@ -67,7 +67,7 @@
                         <td>0.2%</td>
                     </tr>
                     <tr>
-                        <th data-balloon="[% l('High frequency (2 ticks per second)') %]">[% l('HF Volatility 100 Index') %]</th>
+                        <th data-balloon="[% l('High frequency (2 ticks per second)') %]">HF Volatility 100 Index</th>
                         <td>[% l('USD 1 per point') %]</td>
                         <td>0.01</td>
                         <td>100</td>
@@ -77,7 +77,7 @@
                         <td>0.2%</td>
                     </tr>
                     <tr>
-                        <th data-balloon="[% l('High frequency (2 ticks per second)') %]">[% l('HF Volatility 50 Index') %]</th>
+                        <th data-balloon="[% l('High frequency (2 ticks per second)') %]">HF Volatility 50 Index</th>
                         <td>[% l('USD 1 per point') %]</td>
                         <td>0.5</td>
                         <td>100</td>
@@ -87,7 +87,7 @@
                         <td>0.2%</td>
                     </tr>
                     <tr>
-                        <th data-balloon="[% l('High frequency (2 ticks per second)') %]">[% l('HF Volatility 10 Index') %]</th>
+                        <th data-balloon="[% l('High frequency (2 ticks per second)') %]">HF Volatility 10 Index</th>
                         <td>[% l('USD 1 per point') %]</td>
                         <td>0.1</td>
                         <td>100</td>
