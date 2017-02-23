@@ -22,7 +22,7 @@ const Header = (function() {
         }
 
         $('#logo').off('click').on('click', function() {
-            BinaryPjax.go(url_for(Client.is_logged_in() ? japanese_client() ? 'multi_barriers_trading' : 'trading' : ''));
+            BinaryPjax.load(url_for(Client.is_logged_in() ? japanese_client() ? 'multi_barriers_trading' : 'trading' : ''));
         });
         $('#btn_login').off('click').on('click', function(e) {
             e.preventDefault();

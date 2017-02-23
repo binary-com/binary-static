@@ -1,12 +1,12 @@
+const BinaryPjax      = require('../../../base/binary_pjax');
+const Client          = require('../../../base/client').Client;
+const localize        = require('../../../base/localize').localize;
 const Content         = require('../../../common_functions/content').Content;
 const ValidateV2      = require('../../../common_functions/validation_v2').ValidateV2;
-const ValidationUI    = require('../../../validator').ValidationUI;
-const customError     = require('../../../validator').customError;
 const bind_validation = require('../../../validator').bind_validation;
-const dv       = require('../../../../lib/validation');
-const localize = require('../../../base/localize').localize;
-const Client   = require('../../../base/client').Client;
-const url_for  = require('../../../base/url').url_for;
+const customError     = require('../../../validator').customError;
+const ValidationUI    = require('../../../validator').ValidationUI;
+const dv              = require('../../../../lib/validation');
 
 const PasswordWS = (function() {
     let $form,
@@ -14,7 +14,7 @@ const PasswordWS = (function() {
 
     const hasPassword = function () {
         if (Client.get('values_set') && !Client.get('has_password')) {
-            window.location.href = url_for('user/settingsws');
+            BinaryPjax.load('user/settingsws');
             return false;
         }
         return true;

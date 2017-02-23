@@ -1,8 +1,9 @@
-const RiskClassification  = require('../common_functions/risk_classification').RiskClassification;
-const FinancialAssessment = require('../websocket_pages/user/account/settings/financial_assessment');
-const Client  = require('../base/client').Client;
-const State   = require('../base/storage').State;
-const url_for = require('../base/url').url_for;
+const BinaryPjax            = require('../base/binary_pjax');
+const Client                = require('../base/client').Client;
+const State                 = require('../base/storage').State;
+const url_for               = require('../base/url').url_for;
+const RiskClassification    = require('../common_functions/risk_classification').RiskClassification;
+const FinancialAssessment   = require('../websocket_pages/user/account/settings/financial_assessment');
 
 function check_risk_classification() {
     if (State.get(['response', 'get_account_status', 'get_account_status', 'risk_classification']) === 'high' &&
@@ -14,7 +15,7 @@ function check_risk_classification() {
 
 function renderRiskClassificationPopUp() {
     if (/user\/settings\/assessmentws/i.test(window.location.pathname)) {
-        window.location.href = url_for('user/settingsws');
+        BinaryPjax.load('user/settingsws');
         return;
     }
     if ($('#frm_assessment').length) return;

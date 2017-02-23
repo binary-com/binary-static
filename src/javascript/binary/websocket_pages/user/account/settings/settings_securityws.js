@@ -1,9 +1,10 @@
+const BinaryPjax      = require('../../../../base/binary_pjax');
+const Client          = require('../../../../base/client').Client;
+const localize        = require('../../../../base/localize').localize;
 const Content         = require('../../../../common_functions/content').Content;
 const ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
 const bind_validation = require('../../../../validator').bind_validation;
 const dv              = require('../../../../../lib/validation');
-const localize        = require('../../../../base/localize').localize;
-const Client          = require('../../../../base/client').Client;
 
 const SecurityWS = (function() {
     'use strict';
@@ -144,7 +145,7 @@ const SecurityWS = (function() {
     const redirect = function() {
         if (redirect_url) {
             sessionStorage.removeItem('cashier_lock_redirect');
-            window.location.href = redirect_url;
+            BinaryPjax.load(redirect_url);
         }
     };
 

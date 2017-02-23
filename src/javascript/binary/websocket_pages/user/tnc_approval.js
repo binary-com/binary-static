@@ -1,3 +1,4 @@
+const BinaryPjax           = require('../../base/binary_pjax');
 const Client               = require('../../base/client').Client;
 const State                = require('../../base/storage').State;
 const default_redirect_url = require('../../base/url').default_redirect_url;
@@ -9,7 +10,7 @@ const TNCApproval = (function() {
 
     const hidden_class = 'invisible';
 
-    const onLoad = function() {
+    const init = function() {
         requiresTNCApproval($('#btn_accept'), display, null, true);
     };
 
@@ -63,13 +64,13 @@ const TNCApproval = (function() {
         sessionStorage.removeItem('tnc_redirect');
         if (redirect_url || redirect_anyway) {
             setTimeout(() => {
-                window.location.href = redirect_url || default_redirect_url();
+                BinaryPjax.load(redirect_url || default_redirect_url());
             }, redirect_anyway ? 500 : 5000);
         }
     };
 
     return {
-        onLoad             : onLoad,
+        init               : init,
         requiresTNCApproval: requiresTNCApproval,
     };
 })();

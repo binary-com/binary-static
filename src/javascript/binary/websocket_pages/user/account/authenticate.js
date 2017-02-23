@@ -1,12 +1,12 @@
+const BinaryPjax      = require('../../../base/binary_pjax');
+const Client          = require('../../../base/client').Client;
 const Content         = require('../../../common_functions/content').Content;
 const japanese_client = require('../../../common_functions/country_base').japanese_client;
-const Client   = require('../../../base/client').Client;
-const url_for  = require('../../../base/url').url_for;
 
 const AuthenticateWS = (function() {
     const onLoad = function() {
         if (japanese_client()) {
-            window.location.href = url_for('trading');
+            BinaryPjax.load('trading');
         }
         Content.populate();
 

@@ -1,8 +1,8 @@
 const japanese_client      = require('../../common_functions/country_base').japanese_client;
 const japanese_residence   = require('../../common_functions/country_base').japanese_residence;
+const BinaryPjax           = require('../../base/binary_pjax');
 const Client               = require('../../base/client').Client;
 const Header               = require('../../base/header').Header;
-const url_for              = require('../../base/url').url_for;
 const default_redirect_url = require('../../base/url').default_redirect_url;
 
 const Cashier = (function() {
@@ -22,7 +22,7 @@ const Cashier = (function() {
 
     const check_locked = function() {
         if (Client.get('is_virtual')) return;
-        if (japanese_client() && !japanese_residence()) window.location.href = default_redirect_url();
+        if (japanese_client() && !japanese_residence()) BinaryPjax.load(default_redirect_url());
         if (Client.status_detected('cashier_locked')) {
             lock_unlock_cashier('lock', 'deposit, .withdraw');
             withdrawal_locked = true;
@@ -98,7 +98,7 @@ const Cashier = (function() {
 
     const onLoadPaymentMethods = function() {
         if (japanese_client()) {
-            window.location.href = url_for('/');
+            BinaryPjax.load('/');
         }
         if (Client.is_logged_in() && !Client.get('is_virtual')) {
             Cashier.check_locked();

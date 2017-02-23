@@ -1,15 +1,15 @@
-const showLoadingImage     = require('../../../../base/utility').showLoadingImage;
+const BinaryPjax           = require('../../../../base/binary_pjax');
 const showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
-const Content         = require('../../../../common_functions/content').Content;
-const FlexTableUI     = require('../../../../common_functions/attach_dom/flextable').FlexTableUI;
-const ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
-const japanese_client = require('../../../../common_functions/country_base').japanese_client;
-const ValidationUI    = require('../../../../validator').ValidationUI;
-const customError     = require('../../../../validator').customError;
-const bind_validation = require('../../../../validator').bind_validation;
-const dv       = require('../../../../../lib/validation');
-const localize = require('../../../../base/localize').localize;
-const url_for  = require('../../../../base/url').url_for;
+const localize             = require('../../../../base/localize').localize;
+const showLoadingImage     = require('../../../../base/utility').showLoadingImage;
+const FlexTableUI          = require('../../../../common_functions/attach_dom/flextable').FlexTableUI;
+const Content              = require('../../../../common_functions/content').Content;
+const japanese_client      = require('../../../../common_functions/country_base').japanese_client;
+const ValidateV2           = require('../../../../common_functions/validation_v2').ValidateV2;
+const customError          = require('../../../../validator').customError;
+const bind_validation      = require('../../../../validator').bind_validation;
+const ValidationUI         = require('../../../../validator').ValidationUI;
+const dv                   = require('../../../../../lib/validation');
 
 const APITokenWS = (function() {
     'use strict';
@@ -29,7 +29,7 @@ const APITokenWS = (function() {
 
     const onLoad = function() {
         if (japanese_client()) {
-            window.location.href = url_for('user/settingsws');
+            BinaryPjax.load('user/settingsws');
             return;
         }
 

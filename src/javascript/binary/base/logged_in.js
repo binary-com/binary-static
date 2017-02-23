@@ -57,7 +57,7 @@ const LoggedInHandler = (function() {
             }
         }
         document.getElementById('loading_link').setAttribute('href', redirect_url);
-        window.location.href = redirect_url;
+        window.location.href = redirect_url; // need to redirect not using pjax
     };
 
     const storeTokens = function() {

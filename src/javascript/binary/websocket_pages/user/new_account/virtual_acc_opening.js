@@ -1,12 +1,13 @@
+const VirtualAccOpeningData = require('./virtual_acc_opening/virtual_acc_opening.data').VirtualAccOpeningData;
+const BinaryPjax            = require('../../../base/binary_pjax');
+const Client                = require('../../../base/client').Client;
+const localize              = require('../../../base/localize').localize;
+const url_for               = require('../../../base/url').url_for;
 const template              = require('../../../base/utility').template;
 const handleResidence       = require('../../../common_functions/account_opening').handleResidence;
 const Content               = require('../../../common_functions/content').Content;
 const japanese_client       = require('../../../common_functions/country_base').japanese_client;
 const bind_validation       = require('../../../validator').bind_validation;
-const VirtualAccOpeningData = require('./virtual_acc_opening/virtual_acc_opening.data').VirtualAccOpeningData;
-const localize = require('../../../base/localize').localize;
-const Client   = require('../../../base/client').Client;
-const url_for  = require('../../../base/url').url_for;
 
 const VirtualAccOpening = (function() {
     const onSuccess = function(res) {
@@ -83,7 +84,7 @@ const VirtualAccOpening = (function() {
 
     const onLoad = function() {
         if (Client.is_logged_in()) {
-            window.location.href = url_for('home');
+            BinaryPjax.load('home');
             return;
         }
         init();

@@ -1,11 +1,11 @@
-const template = require('../../base/utility').template;
-const Validate = require('../../common_functions/validation').Validate;
-const Content  = require('../../common_functions/content').Content;
-const localize = require('../../base/localize').localize;
-const Client   = require('../../base/client').Client;
-const url_for  = require('../../base/url').url_for;
+const BinaryPjax           = require('../../base/binary_pjax');
+const Client               = require('../../base/client').Client;
+const localize             = require('../../base/localize').localize;
+const template             = require('../../base/utility').template;
 const appendTextValueChild = require('../../common_functions/common_functions').appendTextValueChild;
 const elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
+const Content              = require('../../common_functions/content').Content;
+const Validate             = require('../../common_functions/validation').Validate;
 
 const ForwardWS = (function() {
     const init = function(cashier_password) {
@@ -183,7 +183,7 @@ const ForwardWS = (function() {
                             if (error.code) {
                                 switch (error.code) {
                                     case 'ASK_TNC_APPROVAL':
-                                        window.location.href = url_for('user/tnc_approvalws');
+                                        BinaryPjax.load('user/tnc_approvalws');
                                         break;
                                     case 'ASK_FIX_DETAILS':
                                         ForwardWS.showPersonalDetailsError(error.details);

@@ -1,6 +1,6 @@
 const ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbols;
+const BinaryPjax    = require('../../base/binary_pjax');
 const Client        = require('../../base/client').Client;
-const url_for       = require('../../base/url').url_for;
 
 /*
  * MBSymbols object parses the active_symbols json that we get from socket.send({active_symbols: 'brief'}
@@ -42,7 +42,7 @@ const MBSymbols = (function () {
         const landing_company_obj = Client.landing_company();
         const allowed_markets     = Client.get_client_landing_company().legal_allowed_markets;
         if (Client.is_logged_in() && allowed_markets && allowed_markets.indexOf('forex') === -1) {
-            window.location.href = url_for('trading');
+            BinaryPjax.load('trading');
             return;
         }
         const landing_company = landing_company_obj.financial_company ? landing_company_obj.financial_company.shortcode : 'japan';

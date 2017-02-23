@@ -1,5 +1,6 @@
-const localize             = require('../binary/base/localize').localize;
+const BinaryPjax           = require('../binary/base/binary_pjax');
 const Client               = require('../binary/base/client').Client;
+const localize             = require('../binary/base/localize').localize;
 const default_redirect_url = require('../binary/base/url').default_redirect_url;
 const Content              = require('../binary/common_functions/content').Content;
 const japanese_client      = require('../binary/common_functions/country_base').japanese_client;
@@ -9,7 +10,7 @@ const CashierJP = (function() {
     const init = function(action) {
         Content.populate();
         if (Client.get('values_set')) {
-            if (japanese_client() && !japanese_residence()) window.location.href = default_redirect_url();
+            if (japanese_client() && !japanese_residence()) BinaryPjax.load(default_redirect_url());
             const $container = $('#japan_cashier_container');
             if (Client.get('is_virtual')) {
                 $container.addClass('center-text notice-msg').removeClass('invisible')

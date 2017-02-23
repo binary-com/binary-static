@@ -80,7 +80,7 @@ const BinaryLoader = (function() {
                     });
             }
         } else if (config.not_authenticated && Client.is_logged_in()) {
-            BinaryPjax.go(default_redirect_url(), true);
+            BinaryPjax.load(default_redirect_url(), true);
         } else {
             active_script.onLoad();
         }

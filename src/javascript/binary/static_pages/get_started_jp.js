@@ -1,10 +1,10 @@
+const BinaryPjax      = require('../base/binary_pjax');
 const japanese_client = require('../common_functions/country_base').japanese_client;
-const url_for         = require('../base/url').url_for;
 
 const GetStartedJP = (function() {
     const onLoad = function() {
         if (!japanese_client()) {
-            window.location.href = url_for('get-started');
+            BinaryPjax.load('get-started');
         }
         const showSelectedTab = function() {
             const updatedTab = window.location.hash;

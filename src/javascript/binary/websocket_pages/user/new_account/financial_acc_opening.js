@@ -1,9 +1,9 @@
+const BinaryPjax            = require('../../../base/binary_pjax');
+const Client                = require('../../../base/client').Client;
 const handleResidence       = require('../../../common_functions/account_opening').handleResidence;
 const populateObjects       = require('../../../common_functions/account_opening').populateObjects;
 const Content               = require('../../../common_functions/content').Content;
 const ValidAccountOpening   = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
-const Client                = require('../../../base/client').Client;
-const url_for               = require('../../../base/url').url_for;
 const FinancialAccOpeningUI = require('./financial_acc_opening/financial_acc_opening.ui').FinancialAccOpeningUI;
 
 const FinancialAccOpening = (function() {
@@ -17,7 +17,7 @@ const FinancialAccOpening = (function() {
         const client_loginid_array = Client.get('loginid_array');
         for (let i = 0; i < client_loginid_array.length; i++) {
             if (client_loginid_array[i].financial) {
-                window.location.href = url_for('trading');
+                BinaryPjax.load('trading');
                 return;
             } else if (client_loginid_array[i].non_financial) {
                 $('.security').hide();

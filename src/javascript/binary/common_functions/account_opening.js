@@ -1,15 +1,15 @@
 const generateBirthDate    = require('./attach_dom/birth_date_dropdown').generateBirthDate;
-const objectNotEmpty       = require('../base/utility').objectNotEmpty;
-const localize             = require('../base/localize').localize;
+const BinaryPjax           = require('../base/binary_pjax');
 const Client               = require('../base/client').Client;
-const url_for              = require('../base/url').url_for;
-const Validate             = require('../common_functions/validation').Validate;
+const localize             = require('../base/localize').localize;
+const objectNotEmpty       = require('../base/utility').objectNotEmpty;
+const appendTextValueChild = require('../common_functions/common_functions').appendTextValueChild;
+const elementInnerHtml     = require('../common_functions/common_functions').elementInnerHtml;
 const Content              = require('../common_functions/content').Content;
 const japanese_client      = require('../common_functions/country_base').japanese_client;
-const appendTextValueChild = require('../common_functions/common_functions').appendTextValueChild;
+const Validate             = require('../common_functions/validation').Validate;
 const Cookies              = require('../../lib/js-cookie');
 const moment               = require('moment');
-const elementInnerHtml     = require('../common_functions/common_functions').elementInnerHtml;
 require('select2');
 
 const displayAcctSettings = function(response) {
@@ -99,9 +99,9 @@ const handleResidence = function() {
             } else if (type === 'landing_company') {
                 Cookies.set('residence', Client.get('residence'), { domain: '.' + document.domain.split('.').slice(-2).join('.'), path: '/' });
                 if (((Client.can_upgrade_gaming_to_financial(response.landing_company) && !Client.get('is_virtual')) || Client.can_upgrade_virtual_to_financial(response.landing_company)) && !/maltainvestws/.test(window.location.href)) {
-                    window.location.href = url_for('new_account/maltainvestws');
+                    BinaryPjax.load('new_account/maltainvestws');
                 } else if (Client.can_upgrade_virtual_to_japan(response.landing_company) && Client.get('is_virtual') && !/japanws/.test(window.location.href)) {
-                    window.location.href = url_for('new_account/japanws');
+                    BinaryPjax.load('new_account/japanws');
                 } else if (!$('#real-form').is(':visible')) {
                     BinarySocket.send({ residence_list: 1 });
                     $('#residence-form').hide();

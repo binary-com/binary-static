@@ -1,12 +1,12 @@
-const Validate    = require('./validation').Validate;
-const isValidDate = require('./common_functions').isValidDate;
-const Content     = require('./content').Content;
-const Cookies     = require('../../lib/js-cookie');
-const localize    = require('../base/localize').localize;
-const Client      = require('../base/client').Client;
-const Contents    = require('../base/contents').Contents;
-const url_for     = require('../base/url').url_for;
 const elementInnerHtml = require('./common_functions').elementInnerHtml;
+const isValidDate      = require('./common_functions').isValidDate;
+const Content          = require('./content').Content;
+const Validate         = require('./validation').Validate;
+const BinaryPjax       = require('../base/binary_pjax');
+const Client           = require('../base/client').Client;
+const Contents         = require('../base/contents').Contents;
+const localize         = require('../base/localize').localize;
+const Cookies          = require('../../lib/js-cookie');
 
 const ValidAccountOpening = (function() {
     const redirectCookie = function() {
@@ -14,13 +14,13 @@ const ValidAccountOpening = (function() {
             return;
         }
         if (!Client.get('is_virtual')) {
-            window.location.href = url_for('trading');
+            BinaryPjax.load('trading');
             return;
         }
         const client_loginid_array = Client.get('loginid_array');
         for (let i = 0; i < client_loginid_array.length; i++) {
             if (client_loginid_array[i].real === true) {
-                window.location.href = url_for('trading');
+                BinaryPjax.load('trading');
                 return;
             }
         }
@@ -38,7 +38,7 @@ const ValidAccountOpening = (function() {
             elementInnerHtml(error, (response.msg_type === 'sanity_check') ? localize('There was some invalid character in an input field.') : errorMessage);
             error.parentNode.parentNode.parentNode.show();
         } else if (Cookies.get('residence') === 'jp') {
-            window.location.href = url_for('new_account/knowledge_testws');
+            BinaryPjax.load('new_account/knowledge_testws');
             $('#topbar-msg').children('a').addClass('invisible');
         } else {     // jp account require more steps to have real account
             Client.process_new_account(Cookies.get('email'), response[message_type].client_id, response[message_type].oauth_token, false);

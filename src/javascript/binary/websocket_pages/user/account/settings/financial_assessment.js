@@ -1,7 +1,7 @@
+const BinaryPjax         = require('../../../../base/binary_pjax');
 const Client             = require('../../../../base/client').Client;
 const localize           = require('../../../../base/localize').localize;
 const State              = require('../../../../base/storage').State;
-const url_for            = require('../../../../base/url').url_for;
 const showLoadingImage   = require('../../../../base/utility').showLoadingImage;
 const Content            = require('../../../../common_functions/content').Content;
 const japanese_client    = require('../../../../common_functions/country_base').japanese_client;
@@ -19,7 +19,7 @@ const FinancialAssessment = (() => {
 
     const onLoad = () => {
         if (japanese_client()) {
-            window.location.href = url_for('user/settingsws');
+            BinaryPjax.load('user/settingsws');
         }
         if (checkIsVirtual()) return;
 

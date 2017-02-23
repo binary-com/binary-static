@@ -1,11 +1,11 @@
+const BinaryPjax           = require('./binary_pjax');
 const CookieStorage        = require('./storage').CookieStorage;
 const LocalStore           = require('./storage').LocalStore;
-const url_for              = require('./url').url_for;
 const default_redirect_url = require('./url').default_redirect_url;
-const japanese_client = require('../common_functions/country_base').japanese_client;
 const getLoginToken        = require('../common_functions/common_functions').getLoginToken;
-const Cookies = require('../../lib/js-cookie');
-const moment = require('moment');
+const japanese_client      = require('../common_functions/country_base').japanese_client;
+const Cookies              = require('../../lib/js-cookie');
+const moment               = require('moment');
 
 const Client = (function () {
     const client_object = {};
@@ -68,7 +68,7 @@ const Client = (function () {
     const redirect_if_is_virtual = function(redirectPage) {
         const is_virtual = get('is_virtual');
         if (is_virtual) {
-            window.location.href = url_for(redirectPage || '');
+            BinaryPjax.load(redirectPage || '');
         }
         return is_virtual;
     };
@@ -76,7 +76,7 @@ const Client = (function () {
     const redirect_if_login = function() {
         const client_is_logged_in = is_logged_in();
         if (client_is_logged_in) {
-            window.location.href = default_redirect_url();
+            BinaryPjax.load(default_redirect_url());
         }
         return client_is_logged_in;
     };
@@ -151,10 +151,7 @@ const Client = (function () {
         activate_by_client_type();
     };
 
-    const tnc_pages = () => {
-        const location = window.location.href;
-        return /user\/tnc_approvalws/.test(location) || /terms-and-conditions/.test(location);
-    };
+    const tnc_pages = () => /(user\/tnc_approvalws|terms-and-conditions)/i.test(location);
 
     const check_tnc = function() {
         if (tnc_pages() ||
@@ -166,7 +163,7 @@ const Client = (function () {
             website_tnc_version = LocalStore.get('website.tnc_version');
         if (client_tnc_status && website_tnc_version && client_tnc_status !== website_tnc_version) {
             sessionStorage.setItem('tnc_redirect', window.location.href);
-            window.location.href = url_for('user/tnc_approvalws');
+            BinaryPjax.load('user/tnc_approvalws');
         }
     };
 
@@ -235,7 +232,7 @@ const Client = (function () {
         // set local storage
         localStorage.setItem('GTM_newaccount', '1');
         localStorage.setItem('active_loginid', client_loginid);
-        window.location.href = default_redirect_url();
+        window.location.href = default_redirect_url(); // need to redirect not using pjax
     };
 
     const can_upgrade_gaming_to_financial = function(data) {
@@ -384,7 +381,7 @@ const Client = (function () {
 
     const should_redirect_tax = () => {
         if (should_complete_tax() && !/user\/settings\/detailsws/.test(window.location.pathname) && !tnc_pages()) {
-            window.location.href = url_for('user/settings/detailsws');
+            BinaryPjax.load('user/settings/detailsws');
             return true;
         }
         return false;
