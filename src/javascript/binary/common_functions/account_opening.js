@@ -166,8 +166,8 @@ const commonValidations = () => {
         { selector: '#address_postcode',   validations: ['postcode'] },
         { selector: '#phone',              validations: ['req', 'phone', ['min', { min: 6, max: 35 }]] },
         { selector: '#secret_question',    validations: ['req'] },
-        { selector: '#secret_answer',      validations: ['req', ['min', { min: 4, max: 50 }]] },
-        { selector: '#tnc',                validations: ['req'], exclude_request: 1 },
+        { selector: '#secret_answer',      validations: ['req', 'letter_symbol', ['min', { min: 4, max: 50 }]] },
+        { selector: '#tnc',                validations: [['req', { message: localize('Please accept the terms and conditions.') }]], exclude_request: 1 },
 
         { request_field: 'residence', value: Client.get('residence') },
     ];
@@ -185,11 +185,13 @@ const selectCheckboxValidation = (formID) => {
         id;
     $(formID).find('select, input[type=checkbox]').each(function () {
         id = $(this).attr('id');
-        validation = { selector: `#${id}`, validations: ['req'] };
-        if (/(tnc|not_pep)/.test(id)) {
-            validation.exclude_request = 1;
+        if (id !== 'tnc') {
+            validation = { selector: `#${id}`, validations: ['req'] };
+            if (id === 'not_pep') {
+                validation.exclude_request = 1;
+            }
+            validations.push(validation);
         }
-        validations.push(validation);
     });
     return validations;
 };

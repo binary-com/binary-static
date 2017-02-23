@@ -43,7 +43,7 @@
                             <label for="date_of_birth">[% l('Date of birth') %]</label>
                         </div>
                         <div class="gr-8">
-                            <input type="text" id="date_of_birth" name="date_of_birth" input-disabled" size="12" readonly="readonly"/>
+                            <input type="text" id="date_of_birth" name="date_of_birth" class="input-disabled" size="12" readonly="readonly"/>
                         </div>
                     </div>
 

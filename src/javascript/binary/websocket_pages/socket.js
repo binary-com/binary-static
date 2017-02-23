@@ -361,13 +361,13 @@ const BinarySocketClass = function() {
                 } else if (type === 'reality_check') {
                     RealityCheck.realityCheckWSHandler(response);
                 } else if (type === 'get_account_status' && response.get_account_status) {
-                    if (response.get_account_status.risk_classification === 'high' && qualify_for_risk_classification()) {
+                    if (response.get_account_status.risk_classification === 'high') {
+                        localStorage.setItem('risk_classification', 'high');
                         send({ get_financial_assessment: 1 });
                     } else {
                         localStorage.removeItem('risk_classification');
                         Client.check_tnc();
                     }
-                    localStorage.setItem('risk_classification.response', response.get_account_status.risk_classification);
                     const status = response.get_account_status.status;
                     sessionStorage.setItem('client_status', status);
                     if (/has_password/.test(status)) {
@@ -389,13 +389,12 @@ const BinarySocketClass = function() {
                     }
                 } else if (type === 'get_financial_assessment' && !response.error) {
                     if (!objectNotEmpty(response.get_financial_assessment)) {
-                        if (qualify_for_risk_classification() && localStorage.getItem('risk_classification.response') === 'high') {
+                        if (qualify_for_risk_classification() && State.get(['response', 'get_account_status', 'get_account_status', 'risk_classification']) === 'high') {
                             localStorage.setItem('risk_classification', 'high');
                             check_risk_classification();
                         }
                     } else if ((localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval')) && localStorage.getItem('risk_classification') !== 'high') {
                         localStorage.removeItem('risk_classification');
-                        localStorage.removeItem('risk_classification.response');
                         Client.check_tnc();
                     }
                 }

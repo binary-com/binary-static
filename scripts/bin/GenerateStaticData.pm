@@ -290,9 +290,10 @@ sub _texts {
         push @texts, localize('Sell');
         push @texts, localize('Buy');
         #strings for authenticate page
-        push @texts, localize('To authenticate your account, kindly email the following to [_1]:');
-        push @texts, localize('A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date.');
-        push @texts, localize('A scanned copy of a utility bill or bank statement (no more than 3 months old)');
+        push @texts, localize('Please send us the following documents in order to verify your identity and authenticate your account:');
+        push @texts, localize('Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth.');
+        push @texts, localize('Proof of address - A scanned copy of a utility bill or bank statement that\'s not more than three months old.');
+        push @texts, localize('If you have any questions, kindly contact our Customer Support team at <a href="mailto:[_1]">[_1]</a>.');
         push @texts, localize('This feature is not relevant to virtual-money accounts.');
         push @texts, localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].');
         push @texts, localize('Deposits and withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.');
@@ -503,8 +504,6 @@ sub _texts {
         push @texts, localize('You should enter [_1] characters.');
 
         # strings for metatrader
-        push @texts, localize('To perform this action, please switch to your [_1] Real Account.');
-        push @texts, localize('To perform this action, please <a href="[_1]"> upgrade to [_2] Real Account</a>.');
         push @texts, localize('Congratulations! Your [_1] Account has been created.');
         push @texts, localize('The main password of account number [_1] has been changed.');
         push @texts, localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]');
