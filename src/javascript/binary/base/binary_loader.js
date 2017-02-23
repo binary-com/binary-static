@@ -1,6 +1,7 @@
 const BinaryPjax                = require('./binary_pjax');
 const pages_config              = require('./binary_pages');
 const Client                    = require('./client').Client;
+const GTM                       = require('./gtm').GTM;
 const Header                    = require('./header').Header;
 const localize                  = require('./localize').localize;
 const Login                     = require('./login').Login;
@@ -44,6 +45,7 @@ const BinaryLoader = (function() {
     const afterContentChange = (e, content) => {
         url.reset();
         page.on_load();
+        GTM.push_data_layer();
         const this_page = content.getAttribute('data-page');
         if (this_page in pages_config) {
             loadHandler(pages_config[this_page]);
