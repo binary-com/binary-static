@@ -1,11 +1,10 @@
 const localize             = require('../../../../base/localize').localize;
 const Client               = require('../../../../base/client').Client;
 const State                = require('../../../../base/storage').State;
-const getFormData          = require('../../../../base/utility').getFormData;
 const Content              = require('../../../../common_functions/content').Content;
 const detect_hedging       = require('../../../../common_functions/common_functions').detect_hedging;
 const appendTextValueChild = require('../../../../common_functions/common_functions').appendTextValueChild;
-const Validation           = require('../../../../common_functions/form_validation');
+const FormManager          = require('../../../../common_functions/form_manager');
 const moment               = require('moment');
 require('select2');
 
@@ -64,13 +63,9 @@ const SettingsDetailsWS = (function() {
         } else {
             $(RealAccElements).removeClass('hidden');
         }
-        if (!isInitialized) {
-            $(formID)
-                .submit(handleSubmit)
-                .removeClass('hidden');
-            bindValidation();
-            isInitialized = true;
-        }
+        $(formID).removeClass('hidden');
+        FormManager.init(formID, getValidations(data));
+        FormManager.handleSubmit(formID, { set_settings: 1 }, setDetailsResponse, additionalCheck);
     };
 
     const displayGetSettingsData = (data, populate = true) => {
@@ -108,52 +103,12 @@ const SettingsDetailsWS = (function() {
         });
     };
 
-    const handleSubmit = () => {
-        event.preventDefault();
-        if (Validation.validate(formID)) {
-            let data = populateData();
-            if (isJP) {
-                data = $.extend(data, populateJPData());
-                delete data.place_of_birth;
-                delete data.tax_identification_number;
-            }
-            if (!isChanged(data)) {
-                showFormMessage('You did not change anything.', false);
-                return;
-            }
-            setDetails(data);
+    const additionalCheck = (data) => {
+        if (!isChanged(data)) {
+            showFormMessage('You did not change anything.', false);
+            return false;
         }
-    };
-
-    const populateData = () => {
-        const data = getFormData();
-        const tax_residence_val = $('#tax_residence').val();
-        data.tax_residence = (Array.isArray(tax_residence_val) ? tax_residence_val.join(',') : tax_residence_val) || '';
-        return data;
-    };
-
-    const populateJPData = function() {
-        let id,
-            val,
-            $this;
-        const jpDataKeys = {};
-        jpDataKeys.jp_settings = {};
-        $('.jp_value').each(function() {
-            $this = $(this);
-            id = $this.attr('id');
-            if (/lbl_/.test(id)) {
-                val = $this.text();
-                jpDataKeys[id.replace('lbl_', '')] = val;
-            } else {
-                val = $this.val();
-                jpDataKeys.jp_settings[id] = val;
-            }
-        });
-        if (/Hedging/.test($('#trading_purpose').val())) {
-            jpDataKeys.jp_settings.hedge_asset = $('#hedge_asset').val();
-            jpDataKeys.jp_settings.hedge_asset_amount = $('#hedge_asset_amount').val().trim();
-        }
-        return jpDataKeys;
+        return true;
     };
 
     const isChanged = data => (
@@ -163,10 +118,19 @@ const SettingsDetailsWS = (function() {
         ))
     );
 
-    const bindValidation = () => {
+    const getValidations = (data) => {
         let validations;
         if (isJP) {
             validations = [
+                { request_field: 'address_line_1',   value: data.address_line_1 },
+                { request_field: 'address_line_2',   value: data.address_line_2 },
+                { request_field: 'address_city',     value: data.address_city },
+                { request_field: 'address_state',    value: data.address_state },
+                { request_field: 'address_postcode', value: data.address_postcode },
+                { request_field: 'phone',            value: data.phone },
+
+                { selector: '#email_consent' },
+
                 { selector: '#hedge_asset_amount', validations: ['req', 'number'] },
                 { selector: '#hedge_asset',        validations: ['req'] },
             ];
@@ -178,28 +142,18 @@ const SettingsDetailsWS = (function() {
                 { selector: '#address_state',    validations: ['letter_symbol'] },
                 { selector: '#address_postcode', validations: ['postcode', ['length', { min: 0, max: 20 }]] },
                 { selector: '#phone',            validations: ['phone', ['length', { min: 6, max: 35 }]] },
+
+                { selector: '#place_of_birth', validations: Client.is_financial() ? ['req'] : '' },
+                { selector: '#tax_residence',  validations: Client.is_financial() ? ['req'] : '' },
             ];
             const tax_id_validation = { selector: '#tax_identification_number',  validations: ['postcode', ['length', { min: 0, max: 20 }]] };
             if (Client.is_financial()) {
-                validations.push(
-                    { selector: '#place_of_birth', validations: ['req'] },
-                    { selector: '#tax_residence',  validations: ['req'] });
                 tax_id_validation.validations[1][1].min = 1;
                 tax_id_validation.validations.unshift('req');
             }
             validations.push(tax_id_validation);
         }
-        Validation.init(formID, validations);
-    };
-
-    const setDetails = function(data) {
-        const req = { set_settings: 1 };
-        Object.keys(data).forEach(function(key) {
-            req[key] = data[key];
-        });
-        BinarySocket.send(req).then((response) => {
-            setDetailsResponse(response);
-        });
+        return validations;
     };
 
     const setDetailsResponse = function(response) {
@@ -284,6 +238,7 @@ const SettingsDetailsWS = (function() {
 
     const onLoad = function() {
         if (isInitialized) return;
+        isInitialized = true;
         Content.populate();
         editable_fields = {};
 

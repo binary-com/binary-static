@@ -45,18 +45,21 @@ const FormManager = (function() {
                         current_field.value ? current_field.value :
                             $selector.attr('data-value') || (/lbl_/.test(selector) ? (current_field.value || $selector.text()) :
                                 $selector.is(':checkbox') ? ($selector.is(':checked') ? 1 : 0) :
-                                    Array.isArray(val) ? val.join(',') : val);
+                                    Array.isArray(val) ? val.join(',') : (val || ''));
                 }
             }
         });
         return data;
     };
 
-    const handleSubmit = (form_selector, obj_request, fnc_response_handler) => {
+    const handleSubmit = (form_selector, obj_request, fnc_response_handler, fnc_additional_check) => {
         $(form_selector).off('submit').on('submit', function(evt) {
             evt.preventDefault();
             if (Validation.validate(form_selector)) {
                 const req = $.extend(obj_request, getFormData(form_selector));
+                if (fnc_additional_check && typeof fnc_additional_check === 'function' && !fnc_additional_check(req)) {
+                    return;
+                }
                 BinarySocket.send(req).then((response) => {
                     if (typeof fnc_response_handler === 'function') {
                         fnc_response_handler(response);

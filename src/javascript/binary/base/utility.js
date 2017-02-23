@@ -79,26 +79,6 @@ function getPropertyValue(obj, keys) {
     return obj ? cloneObject(obj[keys[0]]) : undefined;
 }
 
-function getFormData() {
-    const data = {};
-    let id,
-        val;
-    $('.form_input').each(function () {
-        id = this.getAttribute('id');
-        val = this.value;
-
-        // prioritise data-value
-        // if label, take the text
-        // if checkbox, take checked value
-        // otherwise take the value
-        data[id.replace('lbl_', '')] =
-            this.getAttribute('data-value') || (/lbl_/.test(id) ? this.text :
-                $(this).is(':checkbox') ? ($(this).is(':checked') ? 1 : 0) :
-                    Array.isArray(val) ? val.join(',') : val);
-    });
-    return data;
-}
-
 module.exports = {
     showLoadingImage  : showLoadingImage,
     get_highest_zindex: get_highest_zindex,
@@ -106,5 +86,4 @@ module.exports = {
     template          : template,
     objectNotEmpty    : objectNotEmpty,
     getPropertyValue  : getPropertyValue,
-    getFormData       : getFormData,
 };
