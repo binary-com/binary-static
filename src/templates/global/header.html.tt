@@ -113,13 +113,13 @@
                                     <div class="nav-caret"></div>
                                 </a>
                                 <ul>
-                                    <a class="link with_login_cookies" href="[% request.url_for('/user/settingsws') %]">
+                                    <a class="link" href="[% request.url_for('/user/settingsws') %]">
                                         <li class="topMenuProfile">[% l("Profile") %]</li>
                                     </a>
-                                    <a class="link with_login_cookies" href="[% request.url_for('/user/securityws') %]">
+                                    <a class="link" href="[% request.url_for('/user/securityws') %]">
                                         <li class="topMenuSecurity">[% l("Security & Limits") %]</li>
                                     </a>
-                                    <a class="link with_login_cookies invisible" id="user_menu_metatrader" href="[% request.url_for('/user/metatrader') %]">
+                                    <a class="link invisible" id="user_menu_metatrader" href="[% request.url_for('/user/metatrader') %]">
                                         <li class="topMenuMetaTrader">[% l("MetaTrader") %]</li>
                                     </a>
                                     <div class="separator-line-thin-gray"></div>
