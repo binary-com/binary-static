@@ -305,16 +305,18 @@ const SettingsDetailsWS = (function() {
             init();
             const data = State.get(['response', 'get_settings', 'get_settings']);
             getDetailsResponse(data);
-            if (!isJP) {
-                BinarySocket.send({ residence_list: 1 }).then((response) => {
-                    populateResidence(response);
-                });
-            }
-            if (residence) {
-                const states_req = { states_list: residence, passthrough: { value: data.address_state } };
-                BinarySocket.send(states_req).then((response) => {
-                    populateStates(response);
-                });
+            if (!isVirtual) {
+                if (!isJP) {
+                    BinarySocket.send({ residence_list: 1 }).then((response) => {
+                        populateResidence(response);
+                    });
+                }
+                if (residence) {
+                    const states_req = { states_list: residence, passthrough: { value: data.address_state } };
+                    BinarySocket.send(states_req).then((response) => {
+                        populateStates(response);
+                    });
+                }
             }
         });
     };

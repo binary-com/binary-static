@@ -11,7 +11,6 @@ const Cashier                   = require('./cashier/cashier').Cashier;
 const CashierJP                 = require('../../binary_japan/cashier').CashierJP;
 const PaymentAgentWithdrawWS    = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
 const create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
-const TNCApproval               = require('./user/tnc_approval').TNCApproval;
 const ViewPopupWS               = require('./user/view_popup/view_popupws').ViewPopupWS;
 const ViewBalanceUI             = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
 const Cookies                   = require('../../lib/js-cookie');
@@ -294,9 +293,6 @@ const BinarySocketClass = function() {
                             send({ get_account_status: 1 });
                             if (Cookies.get('residence')) send({ landing_company: Cookies.get('residence') });
                             if (!Client.get('is_virtual')) send({ get_self_exclusion: 1 });
-                            if (/tnc_approvalws/.test(window.location.pathname)) {
-                                TNCApproval.showTNC();
-                            }
                         }
                         sendBufferedSends();
                     }
@@ -369,13 +365,13 @@ const BinarySocketClass = function() {
                 } else if (type === 'reality_check') {
                     RealityCheck.realityCheckWSHandler(response);
                 } else if (type === 'get_account_status' && response.get_account_status) {
-                    if (response.get_account_status.risk_classification === 'high' && qualify_for_risk_classification()) {
+                    if (response.get_account_status.risk_classification === 'high') {
+                        localStorage.setItem('risk_classification', 'high');
                         send({ get_financial_assessment: 1 });
                     } else {
                         localStorage.removeItem('risk_classification');
                         Client.check_tnc();
                     }
-                    localStorage.setItem('risk_classification.response', response.get_account_status.risk_classification);
                     const status = response.get_account_status.status;
                     sessionStorage.setItem('client_status', status);
                     if (/has_password/.test(status)) {
@@ -397,13 +393,12 @@ const BinarySocketClass = function() {
                     }
                 } else if (type === 'get_financial_assessment' && !response.error) {
                     if (!objectNotEmpty(response.get_financial_assessment)) {
-                        if (qualify_for_risk_classification() && localStorage.getItem('risk_classification.response') === 'high') {
+                        if (qualify_for_risk_classification() && State.get(['response', 'get_account_status', 'get_account_status', 'risk_classification']) === 'high') {
                             localStorage.setItem('risk_classification', 'high');
                             check_risk_classification();
                         }
                     } else if ((localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval')) && localStorage.getItem('risk_classification') !== 'high') {
                         localStorage.removeItem('risk_classification');
-                        localStorage.removeItem('risk_classification.response');
                         Client.check_tnc();
                     }
                 }
@@ -414,11 +409,7 @@ const BinarySocketClass = function() {
                         $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (error_code === 'WrongResponse' && response.error.message ? response.error.message : localize('Sorry, an error occurred while processing your request.')) + '</p></div>');
                         break;
                     case 'RateLimit':
-                        $('#ratelimit-error-message:hidden')
-                            .css('display', 'block')
-                            .on('click', '#ratelimit-refresh-link', function () {
-                                window.location.reload();
-                            });
+                        $('#ratelimit-error-message:hidden').css('display', 'block');
                         break;
                     case 'InvalidToken':
                         if (!/^(reset_password|new_account_virtual|paymentagent_withdraw|cashier)$/.test(type)) {

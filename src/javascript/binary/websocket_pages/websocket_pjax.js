@@ -12,7 +12,7 @@ const PortfolioWS                   = require('./user/account/portfolio/portfoli
 const ProfitTableWS                 = require('./user/account/profit_table/profit_table.init').ProfitTableWS;
 const APITokenWS                    = require('./user/account/settings/api_token').APITokenWS;
 const AuthorisedApps                = require('./user/account/settings/authorised_apps').AuthorisedApps;
-const FinancialAssessmentws         = require('./user/account/settings/financial_assessment').FinancialAssessmentws;
+const FinancialAssessment           = require('./user/account/settings/financial_assessment');
 const IPHistoryWS                   = require('./user/account/settings/iphistory');
 const Limits                        = require('./user/account/settings/limits').Limits;
 const SelfExclusionWS               = require('./user/account/settings/self_exclusion').SelfExclusionWS;
@@ -28,7 +28,7 @@ const JapanAccOpening               = require('./user/new_account/japan_acc_open
 const RealAccOpening                = require('./user/new_account/real_acc_opening').RealAccOpening;
 const VirtualAccOpening             = require('./user/new_account/virtual_acc_opening').VirtualAccOpening;
 const ResetPasswordWS               = require('./user/reset_password').ResetPasswordWS;
-const TNCApproval                   = require('./user/tnc_approval').TNCApproval;
+const TNCApproval                   = require('./user/tnc_approval');
 const TradePage                     = require('./trade/tradepage').TradePage;
 const TradePage_Beta                = require('./trade/beta/tradepage').TradePage_Beta;
 const MBTradePage                   = require('./mb_trade/mb_tradepage').MBTradePage;
@@ -218,7 +218,7 @@ pjax_config_page_require_auth('user/security/authorised_appsws', function() {
 pjax_config_page_require_auth('user/settings/assessmentws', function() {
     return {
         onLoad: function() {
-            FinancialAssessmentws.onLoad();
+            FinancialAssessment.onLoad();
         },
     };
 });
@@ -323,7 +323,7 @@ pjax_config_page('user/reset_passwordws', function() {
 pjax_config_page_require_auth('tnc_approvalws', function() {
     return {
         onLoad: function() {
-            TNCApproval.onLoad();
+            TNCApproval.init();
         },
     };
 });
