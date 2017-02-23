@@ -330,6 +330,8 @@ sub _texts {
         push @texts, localize('[_1] [_2] payout if [_3] ends outside low and high values of Exercise price at close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] stays between low and high values of Exercise price through close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] goes outside of low and high values of Exercise price through close on [_4].');
+        push @texts, localize('hour');
+        push @texts, localize('mins');
         push @texts, localize('Higher');
         push @texts, localize('Lower');
         push @texts, localize('Touches');
