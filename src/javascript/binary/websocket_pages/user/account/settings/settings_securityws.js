@@ -1,5 +1,4 @@
 const BinaryPjax      = require('../../../../base/binary_pjax');
-const Client          = require('../../../../base/client').Client;
 const localize        = require('../../../../base/localize').localize;
 const Content         = require('../../../../common_functions/content').Content;
 const ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
@@ -27,30 +26,14 @@ const SecurityWS = (function() {
         $('#invalidinputfound').text('');
     };
 
-    const checkIsVirtual = function() {
-        if (!Client.get('is_virtual')) {
-            return false;
-        }
-        $form.hide();
-        $('#SecuritySuccessMsg')
-            .addClass('notice-msg center-text')
-            .text(Content.localize().featureNotRelevantToVirtual);
-        return true;
-    };
-
     const onLoad = function() {
         Content.populate();
         $form = $('#changeCashierLock');
-        if (checkIsVirtual()) return;
 
         current_state = STATE.WAIT_AUTH;
         BinarySocket.init({ onmessage: handler });
-        BinarySocket.wait('authorize').then(() => {
-            current_state = STATE.QUERY_LOCKED;
-            BinarySocket.send({
-                cashier_password: '1',
-            });
-        });
+        current_state = STATE.QUERY_LOCKED;
+        BinarySocket.send({ cashier_password: '1' });
     };
 
     const updatePage = function(config) {
@@ -150,7 +133,6 @@ const SecurityWS = (function() {
     };
 
     const handler = function(msg) {
-        if (checkIsVirtual()) return;
         const response = JSON.parse(msg.data);
         if (response.msg_type === 'cashier_password') {
             switch (current_state) {

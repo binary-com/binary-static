@@ -1,5 +1,4 @@
 const VirtualAccOpeningData = require('./virtual_acc_opening/virtual_acc_opening.data').VirtualAccOpeningData;
-const BinaryPjax            = require('../../../base/binary_pjax');
 const Client                = require('../../../base/client').Client;
 const localize              = require('../../../base/localize').localize;
 const url_for               = require('../../../base/url').url_for;
@@ -55,7 +54,7 @@ const VirtualAccOpening = (function() {
         });
     };
 
-    const init = function() {
+    const onLoad = function() {
         Content.populate();
         handleResidence();
         BinarySocket.send({ residence_list: 1 });
@@ -80,14 +79,6 @@ const VirtualAccOpening = (function() {
                 });
             },
         });
-    };
-
-    const onLoad = function() {
-        if (Client.is_logged_in()) {
-            BinaryPjax.load('home');
-            return;
-        }
-        init();
     };
 
     return {

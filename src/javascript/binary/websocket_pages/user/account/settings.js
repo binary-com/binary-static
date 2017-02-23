@@ -4,7 +4,7 @@ const Client          = require('../../../base/client').Client;
 const SettingsWS = (function() {
     'use strict';
 
-    const init = function() {
+    const onLoad = function() {
         const classHidden = 'invisible',
             classReal   = '.real';
 
@@ -22,23 +22,7 @@ const SettingsWS = (function() {
         $('#settingsContainer').removeClass(classHidden);
     };
 
-    const onLoad = function() {
-        if (!Client.get('values_set')) {
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    const response = JSON.parse(msg.data);
-                    if (response && response.msg_type === 'authorize') {
-                        SettingsWS.init();
-                    }
-                },
-            });
-        } else {
-            SettingsWS.init();
-        }
-    };
-
     return {
-        init  : init,
         onLoad: onLoad,
     };
 })();

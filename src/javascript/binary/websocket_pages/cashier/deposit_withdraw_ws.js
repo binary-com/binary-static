@@ -4,13 +4,10 @@ const localize             = require('../../base/localize').localize;
 const template             = require('../../base/utility').template;
 const appendTextValueChild = require('../../common_functions/common_functions').appendTextValueChild;
 const elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
-const Content              = require('../../common_functions/content').Content;
 const Validate             = require('../../common_functions/validation').Validate;
 
 const ForwardWS = (function() {
     const init = function(cashier_password) {
-        Content.populate();
-
         const submit_currency = document.getElementById('submit-currency'),
             submit_verification = document.getElementById('submit-verification'),
             submit_ukgc_funds_protection = document.getElementById('submit-ukgc-funds-protection');
@@ -154,20 +151,10 @@ const ForwardWS = (function() {
     };
 
     const onLoad = function() {
-        const clientIsVirtual = function() {
-            Content.populate();
-            const is_virtual = Client.get('is_virtual');
-            if (is_virtual) {
-                getCashierType();
-                ForwardWS.showError(Content.localize().featureNotRelevantToVirtual);
-            }
-            return is_virtual;
-        };
-        if (Client.get('values_set') && clientIsVirtual()) return;
         BinarySocket.init({
             onmessage: function(msg) {
                 const response = JSON.parse(msg.data);
-                if (!response || clientIsVirtual()) return;
+                if (!response) return;
                 const type = response.msg_type,
                     error = response.error;
 

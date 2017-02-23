@@ -43,14 +43,6 @@ const PaymentAgentWithdrawWS = (function() {
 
         $views.addClass(hiddenClass);
 
-        if (Client.get('is_virtual')) { // Virtual Account
-            Content.populate();
-            const errorMessage = document.getElementById('custom-error');
-            $(errorMessage).addClass('notice-msg center-text');
-            showPageError(localize('This feature is not relevant to virtual-money accounts.'));
-            return;
-        }
-
         const residence = Cookies.get('residence');
 
         if (Client.status_detected('withdrawal_locked, cashier_locked', 'any')) {
@@ -264,7 +256,7 @@ const PaymentAgentWithdrawWS = (function() {
     const lock_withdrawal = function(withdrawal_locked) {
         if (withdrawal_locked === 'locked') {
             showPageError('', 'withdrawal-locked-error');
-        } else if (!Client.get('is_virtual')) {
+        } else {
             BinarySocket.send({ paymentagent_list: Cookies.get('residence') });
         }
     };
@@ -276,9 +268,6 @@ const PaymentAgentWithdrawWS = (function() {
                 if (response) {
                     const type = response.msg_type;
                     switch (type) {
-                        case 'authorize':
-                            PaymentAgentWithdrawWS.init();
-                            break;
                         case 'paymentagent_list':
                             PaymentAgentWithdrawWS.populateAgentsList(response);
                             break;
@@ -293,7 +282,7 @@ const PaymentAgentWithdrawWS = (function() {
         });
 
         Content.populate();
-        if (Client.get('values_set') || Client.status_detected('withdrawal_locked, cashier_locked', 'any')) {
+        if (Client.status_detected('withdrawal_locked, cashier_locked', 'any')) {
             PaymentAgentWithdrawWS.init();
         } else if (sessionStorage.getItem('client_status') === null) {
             BinarySocket.send({ get_account_status: '1', passthrough: { dispatch_to: 'PaymentAgentWithdrawWS' } });

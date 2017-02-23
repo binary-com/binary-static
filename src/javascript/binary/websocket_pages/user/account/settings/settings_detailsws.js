@@ -301,7 +301,7 @@ const SettingsDetailsWS = (function() {
         Content.populate();
         editable_fields = {};
 
-        BinarySocket.wait('authorize', 'get_account_status', 'get_settings').then(() => {
+        BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();
             const data = State.get(['response', 'get_settings', 'get_settings']);
             getDetailsResponse(data);

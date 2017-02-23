@@ -1,5 +1,4 @@
 const BinaryPjax         = require('../../../../base/binary_pjax');
-const Client             = require('../../../../base/client').Client;
 const localize           = require('../../../../base/localize').localize;
 const State              = require('../../../../base/storage').State;
 const showLoadingImage   = require('../../../../base/utility').showLoadingImage;
@@ -21,7 +20,6 @@ const FinancialAssessment = (() => {
         if (japanese_client()) {
             BinaryPjax.load('user/settingsws');
         }
-        if (checkIsVirtual()) return;
 
         Content.populate();
         $(form_selector).on('submit', (event) => {
@@ -99,17 +97,6 @@ const FinancialAssessment = (() => {
         if (show_form) {
             $(form_selector).removeClass(hidden_class);
         }
-    };
-
-    const checkIsVirtual = () => {
-        if (Client.get('is_virtual')) {
-            hideLoadingImg();
-            $(form_selector).addClass(hidden_class);
-            $('#msg_main').addClass('notice-msg center-text').removeClass(hidden_class).text(Content.localize().featureNotRelevantToVirtual);
-            hideLoadingImg(false);
-            return true;
-        }
-        return false;
     };
 
     const showFormMessage = (msg, isSuccess) => {

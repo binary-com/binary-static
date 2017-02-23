@@ -9,30 +9,13 @@ const japanese_residence   = require('../binary/common_functions/country_base').
 const CashierJP = (function() {
     const init = function(action) {
         Content.populate();
-        if (Client.get('values_set')) {
-            if (japanese_client() && !japanese_residence()) BinaryPjax.load(default_redirect_url());
-            const $container = $('#japan_cashier_container');
-            if (Client.get('is_virtual')) {
-                $container.addClass('center-text notice-msg').removeClass('invisible')
-                .text(Content.localize().featureNotRelevantToVirtual);
-                return;
-            }
-            $container.removeClass('invisible');
-            if (action === 'deposit') {
-                set_name_id();
-            } else if (action === 'withdraw') {
-                set_email_id();
-                Content.populate();
-            }
-        } else {
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    const response = JSON.parse(msg.data);
-                    if (response && response.msg_type === 'authorize') {
-                        init(action);
-                    }
-                },
-            });
+        if (japanese_client() && !japanese_residence()) BinaryPjax.load(default_redirect_url());
+        const $container = $('#japan_cashier_container');
+        $container.removeClass('invisible');
+        if (action === 'deposit') {
+            set_name_id();
+        } else if (action === 'withdraw') {
+            set_email_id();
         }
     };
 

@@ -24,9 +24,7 @@ const PortfolioWS = (function() {
 
     const init = function() {
         hidden_class = 'invisible';
-        if (Client.get('values_set')) {
-            updateBalance();
-        }
+        updateBalance();
 
         if (is_initialized) return;
 
