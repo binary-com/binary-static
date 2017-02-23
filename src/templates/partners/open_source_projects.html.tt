@@ -17,7 +17,7 @@
           </li>
         </ul>
         <div class="sidebar-button">
-          <a class="pjaxload" href="[% request.url_for('contact') %]">[% l("Contact us") %]</a>
+          <a href="[% request.url_for('contact') %]">[% l("Contact us") %]</a>
         </div>
       </div>
     </div>
@@ -111,7 +111,7 @@
                   <p>
                     [% l("Do you want to see Binary.com in other languages, or can you suggest improvements to our current translations?") %]
                   </p>
-                  <a class="pjaxload button" href="[% request.url_for('contact') %]">
+                  <a class="button" href="[% request.url_for('contact') %]">
                     <span>
                       [% l("Contact us") %]
                     </span>

@@ -56,7 +56,7 @@ const Cashier = (function() {
     const replace_button = function(action, elementToReplace) {
         const $a = $(elementToReplace);
         if ($a.length === 0) return;
-        const replace = ['button-disabled', 'pjaxload'];
+        const replace = ['button-disabled', 'toggle'];
         const disable = action === 'disable';
         const id = $a.attr('id');
         const href = $a.attr('href');

@@ -201,7 +201,7 @@ sub _texts {
         push @texts, localize('email address');
         push @texts, localize('password');
         push @texts, localize('The two passwords that you entered do not match.');
-        push @texts, localize('Your token has expired. Please click <a class="pjaxload" href="[_1]">here</a> to restart the verification process.');
+        push @texts, localize('Your token has expired. Please click <a href="[_1]">here</a> to restart the verification process.');
         push @texts, localize('Your provided email address is already in use by another Login ID. According to our terms and conditions, you may only register once through our site. If you have forgotten the password of your existing account, please <a href="[_1]">try our password recovery tool</a> or contact customer service.');
         push @texts, localize('Password should have lower and uppercase letters with numbers.');
         push @texts, localize('Password is not strong enough.');

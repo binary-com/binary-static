@@ -30,9 +30,7 @@
                 <img class="responsive" src="[% request.url_for('images/pages/security_testing/hackerone-img.svg') %]"/>
               </div>
               <div class="text">
-                <a class="pjaxload" href="https://hackerone.com/binary" target="_blank">
-                  [% l("Explore our HackerOne bounty programme") %]
-                </a>
+                <a href="https://hackerone.com/binary" target="_blank">[% l("Explore our HackerOne bounty programme") %]</a>
               </div>
             </div>
           </div>

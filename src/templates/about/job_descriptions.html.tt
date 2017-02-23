@@ -19,11 +19,9 @@
               [% l("DevOps Manager / Team Lead") %]
             </h3>
             <p>
-              [% l("Responsibilities include hardware and software deployment, network security, intrusion detection, and load balancing.") %]
+              [% l("Responsibilities components hardware and software deployment, network security, intrusion detection, and load balancing.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Information_Technology#section-one') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Information_Technology#section-one') %]">[% l("Learn more") %]</a>
           </div>
           <div class="eq">
             <h3>
@@ -32,9 +30,7 @@
             <p>
               [% l("Tasked with writing robust, high-quality, production-ready code as well as refactoring and optimizing a large and complex legacy code base.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Information_Technology#section-two') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Information_Technology#section-two') %]">[% l("Learn more") %]</a>
           </div>
           <div class="eq">
             <h3 class="one-line nowrap">
@@ -43,9 +39,7 @@
             <p>
               [% l("Tasked with writing robust, high-quality, production-ready code and contributing to the architecture that drives our high-traffic global website.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Information_Technology#section-three') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Information_Technology#section-three') %]">[% l("Learn more") %]</a>
           </div>
         </div>
       </div>
@@ -71,9 +65,7 @@
             <p>
               [% l("Execute and update manual and automated test plans, ensure the integrity of releases, investigate and reproduce client-reported issues.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Quality_Assurance#section-one') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Quality_Assurance#section-one') %]">[% l("Learn more") %]</a>
           </div>
         </div>
       </div>
@@ -99,9 +91,7 @@
             <p>
               [% l("Responsible for the risk management and derivatives pricing of the company, including implementation and maintenance.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Quantitative_Analysis#section-one') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Quantitative_Analysis#section-one') %]">[% l("Learn more") %]</a>
           </div>
           <div class="eq">
             <h3>
@@ -110,9 +100,7 @@
             <p>
               [% l("Responsible for the pricing of binary options offered on the [_1] website and the risk management and profitability of its options book.", website_name) %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Quantitative_Analysis#section-two') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Quantitative_Analysis#section-two') %]">[% l("Learn more") %]</a>
           </div>
         </div>
       </div>
@@ -138,9 +126,7 @@
             <p>
               [% l("Work with senior staff to coordinate project delivery; develop and update schedules; document processes; and push initiatives to successful completion.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Marketing#section-one') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Marketing#section-one') %]">[% l("Learn more") %]</a>
           </div>
           <div class="eq">
             <h3>
@@ -149,9 +135,7 @@
             <p>
               [% l("Enhance and proactively manage the company's social-media efforts, using a variety of channels to attract and nurture prospects, clients, partners, and recruits.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Marketing#section-two') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Marketing#section-two') %]">[% l("Learn more") %]</a>
           </div>
           <div class="eq">
             <h3>
@@ -160,9 +144,7 @@
             <p>
               [% l("Drive rapid growth from key areas of the world, applying a variety of online and offline marketing abilities to expand the company's active affiliate network.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Marketing#section-three') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Marketing#section-three') %]">[% l("Learn more") %]</a>
           </div>
           <div class="eq">
             <h3>
@@ -171,9 +153,7 @@
             <p>
               [% l("Design engaging, visually inspiring content for the company's website and many other forms of media, including both online and offline materials.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Marketing#section-four') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Marketing#section-four') %]">[% l("Learn more") %]</a>
           </div>
           <div class="eq">
             <h3>
@@ -182,9 +162,7 @@
             <p>
               [% l("Contribute your creativity and marketing capabilities to further the company's branding efforts, implementing a broad array of promotional campaigns.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Marketing#section-five') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Marketing#section-five') %]">[% l("Learn more") %]</a>
           </div>
           <div class="eq">
             <h3>
@@ -193,9 +171,7 @@
             <p>
               [% l("Create clear, concise, and engaging content that effectively promotes the company's trading platform and product offerings in a variety of formats.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Marketing#section-six') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Marketing#section-six') %]">[% l("Learn more") %]</a>
           </div>
           <div class="eq">
             <h3>
@@ -204,9 +180,7 @@
             <p>
               [% l("Work with colleagues in IT, Customer Support, and Marketing to provide localised text for our global website, blog, social media outlets, and promotional materials.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Marketing#section-seven') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Marketing#section-seven') %]">[% l("Learn more") %]</a>
           </div>
           <div class="eq">
             <h3>
@@ -215,9 +189,7 @@
             <p>
               [% l("Apply a meticulous eye for detail in proofreading the content that appears on the company's website, blog, social media outlets, and marketing materials.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Marketing#section-eight') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Marketing#section-eight') %]">[% l("Learn more") %]</a>
           </div>
         </div>
       </div>
@@ -243,9 +215,7 @@
             <p>
               [% l("Responsible for the processing of client payments, assisting with the management accounts of the companies within our group, and more.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Accounting#section-one') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Accounting#section-one') %]">[% l("Learn more") %]</a>
           </div>
         </div>
       </div>
@@ -271,9 +241,7 @@
             <p>
               [% l("Ensuring that the Binary Group of companies are in full compliance with the legal and regulatory regimes to which they are subject.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Compliance#section-one') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Compliance#section-one') %]">[% l("Learn more") %]</a>
           </div>
           <div class="eq">
             <h3>
@@ -282,9 +250,7 @@
             <p>
               [% l("Exercise exceptional client relationship management skills to prevent fraudulent activities in payments processing and business transactions.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Compliance#section-two') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Compliance#section-two') %]">[% l("Learn more") %]</a>
           </div>
         </div>
       </div>
@@ -310,9 +276,7 @@
             <p>
               [% l("As a member of our global Client Service Team you will serve as the voice of our customers by resolving and reducing client service issues.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Customer_Support#section-one') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Customer_Support#section-one') %]">[% l("Learn more") %]</a>
           </div>
         </div>
       </div>
@@ -338,9 +302,7 @@
             <p>
               [% l("Responsible for supporting the Group's global recruiting and talent management needs and a broad array of HR-related administrative tasks.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Human_Resources#section-one') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Human_Resources#section-one') %]">[% l("Learn more") %]</a>
           </div>
         </div>
       </div>
@@ -366,9 +328,7 @@
             <p>
               [% l("Provide administrative support in areas related to vendor management, event planning, accounting, and human resources administration.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Administrator#section-one') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Administrator#section-one') %]">[% l("Learn more") %]</a>
           </div>
         </div>
       </div>
@@ -394,9 +354,7 @@
             <p>
               [% l("Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Internal_Audit#section-one') %]">
-              [% l("Learn more") %]
-            </a>
+            <a href="[% request.url_for('/open-positions/job-details?dept=Internal_Audit#section-one') %]">[% l("Learn more") %]</a>
           </div>
         </div>
       </div>

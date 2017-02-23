@@ -52,5 +52,5 @@
     <p>[% l('The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions. [_1] has taken reasonable measures to ensure the accuracy of the information on the website, however, we do not guarantee its accuracy and will not accept liability for any loss or damage which may arise directly or indirectly from the content or your inability to access the website, for any delay in or failure of the transmission or the receipt of any instruction or notification sent through this website.', website_name) %]</p>
 
     <h2>[% l('Costs and Charges') %]</h2>
-    <p>[% l('Our costs and charges for depositing and withdrawing money are set out <a href="[_1]" class="pjaxload">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability.', request.url_for('cashier/payment_methods') ) %]</p>
+    <p>[% l('Our costs and charges for depositing and withdrawing money are set out <a href="[_1]">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability.', request.url_for('cashier/payment_methods') ) %]</p>
 </div>

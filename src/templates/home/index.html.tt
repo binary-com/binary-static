@@ -175,7 +175,7 @@
                 [% l("Payment methods") %]
             </h2>
             <div class="gr-12">
-                <a class="pjaxload" href="[% request.url_for('/cashier/payment_methods') %]">
+                <a href="[% request.url_for('/cashier/payment_methods') %]">
                     <div class="gr-row gr-row-align-center">
                         <div id="visa"></div>
                         <div id="mastercard"></div>

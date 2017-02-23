@@ -3,22 +3,22 @@
     <div class="sidebar-left">
       <ul class="nav">
         <li class="how-to-open-an-account">
-          <a class="pjaxload" href="#how-to-open-an-account">[% l('{JAPAN ONLY}How to Open an Account') %]</a>
+          <a href="#how-to-open-an-account">[% l('{JAPAN ONLY}How to Open an Account') %]</a>
         </li>
         <li class="identification-documents">
-          <a class="pjaxload" href="#identification-documents">[% l('{JAPAN ONLY}Identification Documents') %]</a>
+          <a href="#identification-documents">[% l('{JAPAN ONLY}Identification Documents') %]</a>
         </li>
         <li class="options-basic-knowledge">
-          <a class="pjaxload" href="#options-basic-knowledge">[% l('{JAPAN ONLY}Options Basic Knowledge') %]</a>
+          <a href="#options-basic-knowledge">[% l('{JAPAN ONLY}Options Basic Knowledge') %]</a>
         </li>
         <li class="trading-guide">
-          <a class="pjaxload" href="#trading-guide">[% l('{JAPAN ONLY}Trading Guide') %]</a>
+          <a href="#trading-guide">[% l('{JAPAN ONLY}Trading Guide') %]</a>
         </li>
         <li class="summary-of-specifications">
-          <a class="pjaxload" href="#summary-of-specifications">[% l('{JAPAN ONLY}Summary of Specifications') %]</a>
+          <a href="#summary-of-specifications">[% l('{JAPAN ONLY}Summary of Specifications') %]</a>
         </li>
         <li class="pre-contract-documents">
-          <a class="pjaxload" href="#pre-contract-documents">[% l('{JAPAN ONLY}Pre-Contract Documents') %]</a>
+          <a href="#pre-contract-documents">[% l('{JAPAN ONLY}Pre-Contract Documents') %]</a>
         </li>
       </ul>
     </div>
@@ -29,7 +29,7 @@
     <dl class="gr-row">
       <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color section-jp">
-          <a class="pjaxload" href="#how-to-open-an-account">
+          <a href="#how-to-open-an-account">
             <div id="how-to-open-an-account-img"></div>
             <div class="section-header">
               [% l('{JAPAN ONLY}How to Open an Account') %]
@@ -39,7 +39,7 @@
       </div>
       <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color section-jp">
-          <a class="pjaxload" href="#identification-documents">
+          <a href="#identification-documents">
             <div id="identification-documents-img"></div>
             <div class="section-header">
               [% l('{JAPAN ONLY}Identification Documents') %]
@@ -52,7 +52,7 @@
     <dl class="gr-row">
       <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color section-jp">
-          <a class="pjaxload" href="#options-basic-knowledge">
+          <a href="#options-basic-knowledge">
             <div id="options-basic-knowledge-img"></div>
             <div class="section-header">
               [% l('{JAPAN ONLY}Options Basic Knowledge') %]
@@ -62,7 +62,7 @@
       </div>
       <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color section-jp">
-          <a class="pjaxload" href="#trading-guide">
+          <a href="#trading-guide">
             <div id="trading-guide-img"></div>
             <div class="section-header">
               [% l('{JAPAN ONLY}Trading Guide') %]
@@ -75,7 +75,7 @@
     <dl class="gr-row">
       <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color section-jp">
-          <a class="pjaxload" href="#summary-of-specifications">
+          <a href="#summary-of-specifications">
             <div id="summary-of-specifications-img"></div>
             <div class="section-header">
               [% l('{JAPAN ONLY}Summary of Specifications') %]
@@ -85,7 +85,7 @@
       </div>
       <div class="gr-6 list gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color section-jp">
-          <a class="pjaxload" href="#pre-contract-documents">
+          <a href="#pre-contract-documents">
             <div id="pre-contract-documents-img"></div>
             <div class="section-header">
               [% l('{JAPAN ONLY}Pre-Contract Documents') %]
@@ -101,7 +101,7 @@
     <div id="content-how-to-open-an-account">
       <h1>[% l('{JAPAN ONLY}How to Open an Account') %]</h1>
       <p>
-        [% l('{JAPAN ONLY}You can apply to open an account online. Simply click <a class="pjaxload" href="[_1]">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account.', request.url_for('/')) %]
+        [% l('{JAPAN ONLY}You can apply to open an account online. Simply click <a href="[_1]">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account.', request.url_for('/')) %]
       </p>
       <p>
         [% l('{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:') %]
@@ -115,7 +115,7 @@
           <li>
             [% l('{JAPAN ONLY}Email us copies of your Identification Documents and My Number card.') %]
             <p class="hint">
-              [% l('{JAPAN ONLY}Please click <a class="pjaxload" href="#identification-documents">here</a> for further information.') %]
+              [% l('{JAPAN ONLY}Please click <a href="#identification-documents">here</a> for further information.') %]
             </p>
           </li>
           <li>
@@ -236,7 +236,7 @@
     <div class="sidebar-right">
       <div class="by_client_type client_logged_out invisible fill-bg-color">
         <p>
-          <a class="pjaxload" href="[% request.url_for('/') %]">[% l('Try it now') %]</a>
+          <a href="[% request.url_for('/') %]">[% l('Try it now') %]</a>
           <br>
           [% l('No risk, $10K virtual money account') %]
         </p>
@@ -245,7 +245,7 @@
         <p>
           [% l('Want to learn more?') %]
           <br>
-          <a class="pjaxload" href="[% request.url_for('/tour-jp') %]">[% l('View the Tour') %]</a>
+          <a href="[% request.url_for('/tour-jp') %]">[% l('View the Tour') %]</a>
         </p>
       </div>
     </div>

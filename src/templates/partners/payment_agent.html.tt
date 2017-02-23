@@ -30,7 +30,7 @@
           </li>
         </ul>
         <div class="sidebar-button">
-          [% l("<a class='pjaxload' href='mailto:[_1]'>Contact Us</a>", affiliate_email) %]
+          <a href="mailto:[% affiliate_email %]">[% l("Contact Us") %]</a>
         </div>
       </div>
     </div>
