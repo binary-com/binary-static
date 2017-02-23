@@ -83,9 +83,10 @@ const handleResidenceList = (residence_list) => {
             if (obj_residence_el.place_of_birth) {
                 obj_residence_el.place_of_birth.value = residenceValue || '';
             }
+        } else {
+            BinarySocket.wait('website_status').then(data => handleWebsiteStatus(data.website_status));
         }
     }
-    BinarySocket.wait('website_status').then(data => handleWebsiteStatus(data.website_status));
 };
 
 const handleWebsiteStatus = (website_status) => {

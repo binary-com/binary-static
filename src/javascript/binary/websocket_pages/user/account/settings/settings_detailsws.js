@@ -42,10 +42,11 @@ const SettingsDetailsWS = (function() {
     };
 
     const getDetailsResponse = function(data) {
-        data.date_of_birth = data.date_of_birth ? moment.utc(new Date(data.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
-        data.name = isJP ? data.last_name : (data.salutation || '') + ' ' + (data.first_name || '') + ' ' + (data.last_name || '');
+        const get_settings = $.extend({}, data);
+        get_settings.date_of_birth = get_settings.date_of_birth ? moment.utc(new Date(get_settings.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
+        get_settings.name = isJP ? get_settings.last_name : (get_settings.salutation || '') + ' ' + (get_settings.first_name || '') + ' ' + (get_settings.last_name || '');
 
-        displayGetSettingsData(data);
+        displayGetSettingsData(get_settings);
 
         if (Client.get('is_virtual')) { // Virtual Account
             $(RealAccElements).remove();
@@ -55,7 +56,7 @@ const SettingsDetailsWS = (function() {
         // Real Account
         // Generate states list
         if (isJP) {
-            const jpData = data.jp_settings;
+            const jpData = get_settings.jp_settings;
             displayGetSettingsData(jpData);
             if (jpData.hedge_asset !== null && jpData.hedge_asset_amount !== null) {
                 $('.hedge').removeClass('invisible');
@@ -244,20 +245,23 @@ const SettingsDetailsWS = (function() {
         isInitialized = true;
         Content.populate();
         editable_fields = {};
+        get_settings_data = {};
 
         BinarySocket.wait('authorize', 'get_account_status', 'get_settings').then(() => {
             init();
             get_settings_data = State.get(['response', 'get_settings', 'get_settings']);
             getDetailsResponse(get_settings_data);
-            if (!isJP) {
-                BinarySocket.send({ residence_list: 1 }).then((response) => {
-                    populateResidence(response);
-                });
-            }
-            if (residence) {
-                BinarySocket.send({ states_list: residence }).then((response) => {
-                    populateStates(response);
-                });
+            if (!isVirtual) {
+                if (!isJP) {
+                    BinarySocket.send({ residence_list: 1 }).then((response) => {
+                        populateResidence(response);
+                    });
+                }
+                if (residence) {
+                    BinarySocket.send({ states_list: residence }).then((response) => {
+                        populateStates(response);
+                    });
+                }
             }
         });
     };
