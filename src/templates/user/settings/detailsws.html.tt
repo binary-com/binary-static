@@ -45,6 +45,15 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
+                    <label for="place_of_birth">[% l('Place of birth') %]</label>
+                </div>
+                <div class="gr-8">
+                    <select name="place_of_birth" id="place_of_birth" class="form_input"></select>
+                </div>
+            </div>
+
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Country of Residence') %]</label>
                 </div>
                 <div class="gr-8">
@@ -87,15 +96,6 @@
 
         <fieldset class="hidden RealAcc ja-hide">
             <legend>[% l('Tax Information') %]</legend>
-
-            <div class="gr-padding-10 gr-row clear">
-                <div class="gr-4 form_label">
-                    <label for="place_of_birth">[% l('Place of birth') %]</label>
-                </div>
-                <div class="gr-8">
-                    <select name="place_of_birth" id="place_of_birth" class="form_input"></select>
-                </div>
-            </div>
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
