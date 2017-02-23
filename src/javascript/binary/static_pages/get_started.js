@@ -14,7 +14,6 @@ const GetStarted = (function() {
     };
 
     const onLoad = function() {
-        if (/get-started-jp/.test(window.location.pathname)) return;
         const update_active_subsection = function(to_show) {
             const subsection = $('.subsection');
             subsection.addClass('hidden');

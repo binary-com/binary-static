@@ -47,6 +47,8 @@ const BinaryLoader = (function() {
         const this_page = content.getAttribute('data-page');
         if (this_page in pages_config) {
             loadHandler(pages_config[this_page]);
+        } else if (/\/get-started\//i.test(window.location.pathname)) {
+            loadHandler(pages_config['get-started']);
         }
 
         Header.on_load();
