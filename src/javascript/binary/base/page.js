@@ -1,4 +1,4 @@
-import OneSignal from '../../lib/onesignal';
+// import OneSignal from '../../lib/onesignal';
 
 const Login             = require('./login').Login;
 const template          = require('./utility').template;
@@ -65,7 +65,7 @@ Page.prototype = {
         this.endpoint_notification();
         BinarySocket.init();
         this.show_notification_outdated_browser();
-        OneSignal.checkSubscription();
+        // OneSignal.checkSubscription();
     },
     on_unload: function() {
         Menu.on_unload();
