@@ -1,5 +1,4 @@
-// import OneSignal from '../../lib/onesignal';
-
+const push_notification = require('pushwoosh-notification');
 const Login             = require('./login').Login;
 const template          = require('./utility').template;
 const LocalStore        = require('./storage').LocalStore;
@@ -10,6 +9,7 @@ const getLanguage       = require('./language').getLanguage;
 const setCookieLanguage = require('./language').setCookieLanguage;
 const Url               = require('./url').Url;
 const url_for           = require('./url').url_for;
+const url_for_static    = require('./url').url_for_static;
 const Client            = require('./client').Client;
 const Header            = require('./header').Header;
 const Menu              = require('./menu').Menu;
@@ -29,6 +29,7 @@ const Page = function() {
     Client.init();
     this.url = new Url();
     Menu.init(this.url);
+    push_notification(url_for_static('/') + 'service-worker.js', 'web.com.pushwoosh.websiteid', 'D04E6-FA474');
 };
 
 Page.prototype = {
@@ -65,7 +66,6 @@ Page.prototype = {
         this.endpoint_notification();
         BinarySocket.init();
         this.show_notification_outdated_browser();
-        // OneSignal.checkSubscription();
     },
     on_unload: function() {
         Menu.on_unload();
