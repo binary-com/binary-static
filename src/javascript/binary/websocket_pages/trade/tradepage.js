@@ -24,11 +24,8 @@ const TradePage = (function() {
     State.remove('is_trading');
 
     const onLoad = function() {
-        if (japanese_client() && /\/trading\.html/i.test(window.location.pathname)) {
+        if (japanese_client()) {
             BinaryPjax.load('multi_barriers_trading');
-            return;
-        } else if (!japanese_client() && /\/multi_barriers_trading\.html/.test(window.location.pathname)) {
-            BinaryPjax.load('trading');
             return;
         }
         State.set('is_trading', true);

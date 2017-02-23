@@ -15,13 +15,11 @@ const Menu = (function() {
         hide_main_menu();
 
         const active = active_menu_top();
-        const trading = new RegExp('\/(jp_|multi_barriers_|)trading\.html');
-        const trading_is_active = trading.test(window.location.pathname);
         if (active) {
             active.addClass('active');
         }
-        const is_trading_submenu = /\/cashier|\/resources/.test(window.location.pathname) || trading_is_active;
-        if (Client.is_logged_in() || trading_is_active || is_trading_submenu) {
+
+        if (Client.is_logged_in() || /\/(cashier|resources|trading|trading_beta|multi_barriers_trading)/i.test(window.location.pathname)) {
             show_main_menu();
         }
     };

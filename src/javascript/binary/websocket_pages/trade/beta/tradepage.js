@@ -26,11 +26,8 @@ const TradePage_Beta = (function() {
 
     const onLoad = function() {
         const is_japanese_client = japanese_client();
-        if (is_japanese_client && /\/trading(|_beta)\.html/i.test(window.location.pathname)) {
+        if (is_japanese_client) {
             BinaryPjax.load('multi_barriers_trading');
-            return;
-        } else if (!is_japanese_client && /\/multi_barriers_trading\.html/.test(window.location.pathname)) {
-            BinaryPjax.load('trading');
             return;
         }
         State.set('is_beta_trading', true);

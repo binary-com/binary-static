@@ -37,7 +37,7 @@ const Cashier = (function() {
     };
 
     const check_top_up_withdraw = function() {
-        if (is_cashier_page() && Client.get('values_set')) {
+        if (/cashier[\/\w]*\.html/.test(window.location.pathname) && Client.get('values_set')) {
             const currency = Client.get('currency'),
                 balance = Client.get('balance');
             if (Client.get('is_virtual')) {
@@ -84,16 +84,12 @@ const Cashier = (function() {
     };
 
     const onLoad = function() {
-        if (is_cashier_page() && Client.is_logged_in()) {
+        if (Client.is_logged_in()) {
             withdrawal_locked = false;
             Cashier.check_locked();
             Cashier.check_top_up_withdraw();
             Header.topbar_message_visibility(Client.landing_company());
         }
-    };
-
-    const is_cashier_page = function () {
-        return /cashier[\/\w]*\.html/.test(window.location.pathname);
     };
 
     const onLoadPaymentMethods = function() {
