@@ -11,7 +11,6 @@ const Cashier                   = require('./cashier/cashier').Cashier;
 const CashierJP                 = require('../../binary_japan/cashier').CashierJP;
 const PaymentAgentWithdrawWS    = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
 const create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
-const TNCApproval               = require('./user/tnc_approval').TNCApproval;
 const ViewPopupWS               = require('./user/view_popup/view_popupws').ViewPopupWS;
 const ViewBalanceUI             = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
 const Cookies                   = require('../../lib/js-cookie');
@@ -294,9 +293,6 @@ const BinarySocketClass = function() {
                             send({ get_account_status: 1 });
                             if (Cookies.get('residence')) send({ landing_company: Cookies.get('residence') });
                             if (!Client.get('is_virtual')) send({ get_self_exclusion: 1 });
-                            if (/tnc_approvalws/.test(window.location.pathname)) {
-                                TNCApproval.showTNC();
-                            }
                         }
                         sendBufferedSends();
                     }

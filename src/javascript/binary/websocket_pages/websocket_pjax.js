@@ -28,7 +28,7 @@ const JapanAccOpening               = require('./user/new_account/japan_acc_open
 const RealAccOpening                = require('./user/new_account/real_acc_opening').RealAccOpening;
 const VirtualAccOpening             = require('./user/new_account/virtual_acc_opening').VirtualAccOpening;
 const ResetPasswordWS               = require('./user/reset_password').ResetPasswordWS;
-const TNCApproval                   = require('./user/tnc_approval').TNCApproval;
+const TNCApproval                   = require('./user/tnc_approval');
 const TradePage                     = require('./trade/tradepage').TradePage;
 const TradePage_Beta                = require('./trade/beta/tradepage').TradePage_Beta;
 const MBTradePage                   = require('./mb_trade/mb_tradepage').MBTradePage;
@@ -323,7 +323,7 @@ pjax_config_page('user/reset_passwordws', function() {
 pjax_config_page_require_auth('tnc_approvalws', function() {
     return {
         onLoad: function() {
-            TNCApproval.onLoad();
+            TNCApproval.init();
         },
     };
 });
