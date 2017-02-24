@@ -182,7 +182,7 @@ const StatementWS = (function() {
         const jumpTo = '#jump-to',
             datePickerInst = new DatePicker(jumpTo);
         datePickerInst.hide();
-        datePickerInst.show('', '0');
+        datePickerInst.show({ maxDate: 0 });
         $(jumpTo).val(localize('Today'))
                  .attr('data-value', toISOFormat(moment()))
                  .change(function() {

@@ -1,8 +1,7 @@
 const Login             = require('../../../base/login').Login;
 const isValidDate       = require('../../../common_functions/common_functions').isValidDate;
 const Content           = require('../../../common_functions/content').Content;
-const generateBirthDate = require('../../../common_functions/attach_dom/birth_date_dropdown').generateBirthDate;
-const japanese_client   = require('../../../common_functions/country_base').japanese_client;
+const generateBirthDate = require('../../../common_functions/attach_dom/birth_date_picker');
 const passwordValid     = require('../../../common_functions/validation').passwordValid;
 const showPasswordError = require('../../../common_functions/validation').showPasswordError;
 const localize = require('../../../base/localize').localize;
@@ -12,9 +11,7 @@ const ResetPassword = (function () {
 
     const hiddenClass = 'invisible';
     const resetErrorTemplate = '[_1] Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support.';
-    let dobdd,
-        dobmm,
-        dobyy;
+    let date_of_birth;
 
     const submitResetPassword = function() {
         const token = $('#verification-code').val();
@@ -56,9 +53,8 @@ const ResetPassword = (function () {
             return;
         }
 
-        const dobEntered = dobdd && dobmm && dobyy;
-        if (dobEntered) {
-            if (!isValidDate(dobdd, dobmm, dobyy)) {
+        if (date_of_birth) {
+            if (!isValidDate(date_of_birth)) {
                 $('#dob-error').removeClass(hiddenClass).text(localize('Invalid format for date of birth.'));
                 return;
             }
@@ -67,7 +63,7 @@ const ResetPassword = (function () {
                 reset_password   : 1,
                 verification_code: token,
                 new_password     : pw1,
-                date_of_birth    : [dobyy, dobmm, dobdd].join('-'),
+                date_of_birth    : date_of_birth,
             });
             $('#reset').prop('disabled', true);
         } else {
@@ -118,25 +114,6 @@ const ResetPassword = (function () {
 
     const haveRealAccountHandler = function() {
         const isChecked = $('#have-real-account').is(':checked');
-
-        dobdd = undefined;
-        dobmm = undefined;
-        dobyy = undefined;
-
-        const $dobyy = $('#dobyy'),
-            $dobmm = $('#dobmm'),
-            $dobdd = $('#dobdd');
-
-        if (japanese_client()) {
-            $dobyy.val($dobyy.find('option:first').val());
-            $dobmm.val($dobmm.find('option:first').val());
-            $dobdd.val($dobdd.find('option:first').val());
-        } else {
-            $dobdd.val('');
-            $dobmm.val('');
-            $dobyy.val('');
-        }
-
         if (isChecked) {
             $('#dob-field').removeClass(hiddenClass);
         } else {
@@ -145,9 +122,7 @@ const ResetPassword = (function () {
     };
 
     const onDOBChange = function() {
-        dobdd = $('#dobdd').val();
-        dobmm = $('#dobmm').val();
-        dobyy = $('#dobyy').val();
+        date_of_birth = $('#date_of_birth').attr('data-value');
     };
 
     const onEnterKey = function(e) {
@@ -159,10 +134,6 @@ const ResetPassword = (function () {
     const init = function() {
         $('#reset_passwordws').removeClass('invisible');
         Content.populate();
-        if (japanese_client()) {
-            $('#dobmm').insertAfter('#dobyy');
-            $('#dobdd').insertAfter('#dobmm');
-        }
         generateBirthDate();
 
         $('input').keypress(function (e) {

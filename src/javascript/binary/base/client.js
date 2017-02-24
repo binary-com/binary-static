@@ -17,13 +17,19 @@ const Client = (function () {
             const items = str.split(':');
             const id = items[0];
             const is_real = items[1] === 'R';
+            const is_financial = /^MF/.test(id);
+            const is_gaming = /^MLT/.test(id);
+
             if (is_real) client_object.has_real = is_real;
+            if (is_financial) client_object.has_financial = is_financial;
+            if (is_gaming) client_object.has_gaming = is_gaming;
+
             return {
                 id           : id,
                 real         : is_real,
                 disabled     : items[2] === 'D',
-                financial    : /^MF/.test(id),
-                non_financial: /^MLT/.test(id),
+                financial    : is_financial,
+                non_financial: is_gaming,
             };
         });
     };

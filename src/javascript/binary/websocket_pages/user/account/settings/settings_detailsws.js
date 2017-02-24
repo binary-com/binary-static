@@ -4,7 +4,7 @@ const State                = require('../../../../base/storage').State;
 const Content              = require('../../../../common_functions/content').Content;
 const detect_hedging       = require('../../../../common_functions/common_functions').detect_hedging;
 const appendTextValueChild = require('../../../../common_functions/common_functions').appendTextValueChild;
-const Validation           = require('../../../../common_functions/form_validation');
+const FormManager          = require('../../../../common_functions/form_manager');
 const moment               = require('moment');
 require('select2');
 
@@ -19,7 +19,8 @@ const SettingsDetailsWS = (function() {
         isVirtual,
         residence,
         tax_residence_values,
-        place_of_birth_value;
+        place_of_birth_value,
+        get_settings_data = {};
 
     const init = function() {
         isVirtual = Client.get('is_virtual');
@@ -41,10 +42,11 @@ const SettingsDetailsWS = (function() {
     };
 
     const getDetailsResponse = function(data) {
-        data.date_of_birth = data.date_of_birth ? moment.utc(new Date(data.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
-        data.name = isJP ? data.last_name : (data.salutation || '') + ' ' + (data.first_name || '') + ' ' + (data.last_name || '');
+        const get_settings = $.extend({}, data);
+        get_settings.date_of_birth = get_settings.date_of_birth ? moment.utc(new Date(get_settings.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
+        get_settings.name = isJP ? get_settings.last_name : (get_settings.salutation || '') + ' ' + (get_settings.first_name || '') + ' ' + (get_settings.last_name || '');
 
-        displayGetSettingsData(data);
+        displayGetSettingsData(get_settings);
 
         if (Client.get('is_virtual')) { // Virtual Account
             $(RealAccElements).remove();
@@ -54,7 +56,7 @@ const SettingsDetailsWS = (function() {
         // Real Account
         // Generate states list
         if (isJP) {
-            const jpData = data.jp_settings;
+            const jpData = get_settings.jp_settings;
             displayGetSettingsData(jpData);
             if (jpData.hedge_asset !== null && jpData.hedge_asset_amount !== null) {
                 $('.hedge').removeClass('invisible');
@@ -63,12 +65,8 @@ const SettingsDetailsWS = (function() {
         } else {
             $(RealAccElements).removeClass('hidden');
         }
-        if (!isInitialized) {
-            $(formID)
-                .submit(handleSubmit)
-                .removeClass('hidden');
-            isInitialized = true;
-        }
+        $(formID).removeClass('hidden');
+        FormManager.handleSubmit(formID, { set_settings: 1 }, setDetailsResponse, additionalCheck);
     };
 
     const displayGetSettingsData = (data, populate = true) => {
@@ -106,67 +104,12 @@ const SettingsDetailsWS = (function() {
         });
     };
 
-    const handleSubmit = () => {
-        event.preventDefault();
-        if (Validation.validate(formID)) {
-            let data = populateData();
-            if (isJP) {
-                data = $.extend(data, populateJPData());
-                delete data.place_of_birth;
-                delete data.tax_identification_number;
-            }
-            if (!isChanged(data)) {
-                showFormMessage('You did not change anything.', false);
-                return;
-            }
-            setDetails(data);
+    const additionalCheck = (data) => {
+        if (!isChanged(data)) {
+            showFormMessage('You did not change anything.', false);
+            return false;
         }
-    };
-
-    const populateData = () => {
-        const data = {};
-        let id,
-            val,
-            $this;
-        $('.form_input').each(function () {
-            $this = $(this);
-            id = $this.attr('id');
-            if (/lbl_/.test(id)) {
-                val = $this.text();
-            } else if ($this.is(':checkbox')) {
-                val = $this.is(':checked') ? 1 : 0;
-            } else {
-                val = $this.val();
-            }
-            data[id.replace('lbl_', '')] = val;
-        });
-        const tax_residence_val = $('#tax_residence').val();
-        data.tax_residence = (Array.isArray(tax_residence_val) ? tax_residence_val.join(',') : tax_residence_val) || '';
-        return data;
-    };
-
-    const populateJPData = function() {
-        let id,
-            val,
-            $this;
-        const jpDataKeys = {};
-        jpDataKeys.jp_settings = {};
-        $('.jp_value').each(function() {
-            $this = $(this);
-            id = $this.attr('id');
-            if (/lbl_/.test(id)) {
-                val = $this.text();
-                jpDataKeys[id.replace('lbl_', '')] = val;
-            } else {
-                val = $this.val();
-                jpDataKeys.jp_settings[id] = val;
-            }
-        });
-        if (/Hedging/.test($('#trading_purpose').val())) {
-            jpDataKeys.jp_settings.hedge_asset = $('#hedge_asset').val();
-            jpDataKeys.jp_settings.hedge_asset_amount = $('#hedge_asset_amount').val().trim();
-        }
-        return jpDataKeys;
+        return true;
     };
 
     const isChanged = data => (
@@ -176,13 +119,25 @@ const SettingsDetailsWS = (function() {
         ))
     );
 
-    const bindValidation = () => {
+    const getValidations = (data) => {
         let validations;
         if (isJP) {
             validations = [
-                { selector: '#hedge_asset_amount', validations: ['req', 'number'] },
-                { selector: '#hedge_asset',        validations: ['req'] },
+                { request_field: 'address_line_1',   value: data.address_line_1 },
+                { request_field: 'address_line_2',   value: data.address_line_2 },
+                { request_field: 'address_city',     value: data.address_city },
+                { request_field: 'address_state',    value: data.address_state },
+                { request_field: 'address_postcode', value: data.address_postcode },
+                { request_field: 'phone',            value: data.phone },
+
+                { selector: '#email_consent' },
+
+                { selector: '#hedge_asset_amount', validations: ['req', 'number'], parent_node: 'jp_settings' },
+                { selector: '#hedge_asset',        validations: ['req'], parent_node: 'jp_settings' },
             ];
+            $(formID).find('select').each(function () {
+                validations.push({ selector: `#${$(this).attr('id')}`, validations: ['req'], parent_node: 'jp_settings' });
+            });
         } else {
             validations = [
                 { selector: '#address_line_1',     validations: ['req', 'general'] },
@@ -191,28 +146,18 @@ const SettingsDetailsWS = (function() {
                 { selector: 'input#address_state', validations: ['letter_symbol'] },
                 { selector: '#address_postcode',   validations: ['postcode', ['length', { min: 0, max: 20 }]] },
                 { selector: '#phone',              validations: ['phone', ['length', { min: 6, max: 35 }]] },
+
+                { selector: '#place_of_birth', validations: Client.is_financial() ? ['req'] : '' },
+                { selector: '#tax_residence',  validations: Client.is_financial() ? ['req'] : '' },
             ];
             const tax_id_validation = { selector: '#tax_identification_number',  validations: ['postcode', ['length', { min: 0, max: 20 }]] };
             if (Client.is_financial()) {
-                validations.push(
-                    { selector: '#place_of_birth', validations: ['req'] },
-                    { selector: '#tax_residence',  validations: ['req'] });
                 tax_id_validation.validations[1][1].min = 1;
                 tax_id_validation.validations.unshift('req');
             }
             validations.push(tax_id_validation);
         }
-        Validation.init(formID, validations);
-    };
-
-    const setDetails = function(data) {
-        const req = { set_settings: 1 };
-        Object.keys(data).forEach(function(key) {
-            req[key] = data[key];
-        });
-        BinarySocket.send(req).then((response) => {
-            setDetailsResponse(response);
-        });
+        return validations;
     };
 
     const setDetailsResponse = function(response) {
@@ -278,7 +223,6 @@ const SettingsDetailsWS = (function() {
     const populateStates = function(response) {
         const address_state = '#address_state';
         let $field = $(address_state);
-        const defaultValue = response.echo_req.passthrough.value;
         const states = response.states_list;
 
         $field.empty();
@@ -292,19 +236,21 @@ const SettingsDetailsWS = (function() {
             $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
             $field = $(address_state);
         }
-        $field.val(defaultValue);
-        bindValidation();
+        $field.val(get_settings_data.address_state);
+        FormManager.init(formID, getValidations(get_settings_data));
     };
 
     const onLoad = function() {
         if (isInitialized) return;
+        isInitialized = true;
         Content.populate();
         editable_fields = {};
+        get_settings_data = {};
 
         BinarySocket.wait('authorize', 'get_account_status', 'get_settings').then(() => {
             init();
-            const data = State.get(['response', 'get_settings', 'get_settings']);
-            getDetailsResponse(data);
+            get_settings_data = State.get(['response', 'get_settings', 'get_settings']);
+            getDetailsResponse(get_settings_data);
             if (!isVirtual) {
                 if (!isJP) {
                     BinarySocket.send({ residence_list: 1 }).then((response) => {
@@ -312,8 +258,7 @@ const SettingsDetailsWS = (function() {
                     });
                 }
                 if (residence) {
-                    const states_req = { states_list: residence, passthrough: { value: data.address_state } };
-                    BinarySocket.send(states_req).then((response) => {
+                    BinarySocket.send({ states_list: residence }).then((response) => {
                         populateStates(response);
                     });
                 }

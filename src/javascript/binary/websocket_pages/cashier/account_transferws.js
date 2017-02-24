@@ -241,7 +241,7 @@ const AccountTransferWS = (function() {
             onmessage: function(msg) {
                 const response = JSON.parse(msg.data);
                 if (response) {
-                    AccountTransferWS.apiResponse(response);
+                    apiResponse(response);
                 }
             },
         });
@@ -252,9 +252,8 @@ const AccountTransferWS = (function() {
     };
 
     return {
-        init       : init,
-        apiResponse: apiResponse,
-        onLoad     : onLoad,
+        init  : init,
+        onLoad: onLoad,
     };
 })();
 

@@ -1,43 +1,67 @@
-const handleResidence     = require('../../../common_functions/account_opening').handleResidence;
-const populateObjects     = require('../../../common_functions/account_opening').populateObjects;
-const Content             = require('../../../common_functions/content').Content;
-const ValidAccountOpening = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
-const Client              = require('../../../base/client').Client;
-const RealAccOpeningUI    = require('./real_acc_opening/real_acc_opening.ui').RealAccOpeningUI;
+const Client         = require('../../../base/client').Client;
+const AccountOpening = require('../../../common_functions/account_opening');
+const FormManager    = require('../../../common_functions/form_manager');
 
 const RealAccOpening = (function() {
-    const init = function() {
-        Content.populate();
-        ValidAccountOpening.redirectCookie();
-        handleResidence();
-        if (Client.get('residence')) {
-            BinarySocket.send({ landing_company: Client.get('residence') });
-        }
-        BinarySocket.send({ residence_list: 1 });
-        const object = populateObjects();
-        const elementObj = object.elementObj;
-        const errorObj = object.errorObj;
-        const errorEl = document.getElementsByClassName('notice-msg')[0];
-        $('#real-form').off('submit').on('submit', function(evt) {
-            evt.preventDefault();
-            if (RealAccOpeningUI.checkValidity(elementObj, errorObj, errorEl)) {
-                BinarySocket.init({
-                    onmessage: function(msg) {
-                        const response = JSON.parse(msg.data);
-                        if (response) {
-                            const message_type = response.msg_type;
-                            if (message_type === 'new_account_real') {
-                                ValidAccountOpening.handler(response, message_type);
-                            }
-                        }
-                    },
-                });
+    const residenceID = '#residence';
+    const formID = '#real-form';
+
+    const onLoad = () => {
+        if (AccountOpening.redirectCookie()) return;
+
+        BinarySocket.wait('authorize').then(() => {
+            if (Client.get('residence')) {
+                if (AccountOpening.redirectAccount()) return;
+                AccountOpening.populateForm(formID, AccountOpening.commonValidations);
+                $(formID).removeClass('invisible');
+                bindValidation();
+            } else {
+                AccountOpening.getResidence();
+                show_residence_form();
             }
         });
     };
 
+    const bindValidation = () => {
+        FormManager.handleSubmit(formID, { new_account_real: 1 }, handleResponse);
+    };
+
+    const handleResponse = response => (AccountOpening.handleNewAccount(response, response.msg_type));
+
+    const show_residence_form = () => {
+        const $residence = $(residenceID);
+        $residence.insertAfter('#move-residence-here')
+            .removeAttr('disabled');
+        $('#residence-form').removeClass('invisible')
+            .submit(function(evt) {
+                evt.preventDefault();
+                const residence_value = $residence.val();
+                BinarySocket.send({ set_settings: 1, residence: residence_value })
+                    .then((response) => {
+                        if (!response.hasOwnProperty('error')) {
+                            BinarySocket.send({ get_settings: 1 }, true).then((data) => {
+                                if (data.get_settings.country_code) {
+                                    if (AccountOpening.redirectAccount()) return;
+                                    AccountOpening.populateForm(formID, AccountOpening.commonValidations);
+                                    hide_residence_form();
+                                }
+                            });
+                        }
+                    });
+            });
+    };
+
+    const hide_residence_form = () => {
+        const $residence = $(residenceID);
+        $('#residence-form').addClass('invisible');
+        $residence.insertAfter('#move-residence-back');
+        $residence.attr('disabled', 'disabled');
+        $(formID).removeClass('invisible');
+        bindValidation();
+    };
+
     return {
-        init: init,
+        onLoad: onLoad,
     };
 })();
 

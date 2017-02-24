@@ -239,7 +239,14 @@ const Durations_Beta = (function() {
         if (unit.value === 'd') {
             const tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
-            datePickerDur.show(tomorrow, 364, 'attr', 'noNative');
+            datePickerDur.show({
+                minDate   : tomorrow,
+                maxDate   : 364,
+                additional: {
+                    setValue: 'attr',
+                    native  : 0,
+                },
+            });
             amountElement.change(function(value) {
                 let dayDiff;
                 const $duration_amount_val = $('#duration_amount').val();
@@ -259,7 +266,10 @@ const Durations_Beta = (function() {
 
         if ($('#expiry_date').is(':visible')) {
             datePickDate.hide();
-            datePickDate.show('today', 364);
+            datePickDate.show({
+                minDate: 'today',
+                maxDate: 364,
+            });
         }
 
         validateMinDurationAmount();

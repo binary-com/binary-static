@@ -44,7 +44,10 @@ const MarketTimesUI = (function() {
         $date.val(toReadableFormat(date))
              .attr('data-value', toISOFormat(date));
         const datePickerInst = new DatePicker('#trading-date');
-        datePickerInst.show('today', 364);
+        datePickerInst.show({
+            minDate: 'today',
+            maxDate: 364,
+        });
         $date.change(function() {
             if (!dateValueChanged(this, 'date')) {
                 return false;
