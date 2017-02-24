@@ -3,47 +3,47 @@ const FlexTableUI = require('../../../../../common_functions/attach_dom/flextabl
 const moment      = require('moment');
 const localize    = require('../../../../../base/localize').localize;
 
-const IPHistoryUI = (function() {
+const IPHistoryUI = (() => {
     'use strict';
 
-    const containerSelector = '#login_history-ws-container';
-    const no_messages_error = 'Your account has no Login/Logout activity.';
-    let flexTable;
+    const container_selector = '#login_history-ws-container';
+    const no_messages_error  = 'Your account has no Login/Logout activity.';
+    let flex_table;
 
-    const init = function() {
+    const init = () => {
         const $title = $('#login_history-title').children().first();
         $title.text(localize($title.text()));
     };
 
-    const formatRow = function(data) {
+    const formatRow = (data) => {
         const timestamp = moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n') + ' GMT';
-        const status = localize(data.success ? 'Successful' : 'Failed');
-        const browser = data.browser;
-        let browserString = browser ?
+        const status    = localize(data.success ? 'Successful' : 'Failed');
+        const browser   = data.browser;
+        let browser_string = browser ?
             browser.name + ' v' + browser.version :
             'Unknown';
         const patt = /^(opera|chrome|safari|firefox|IE|Edge|SeaMonkey|Chromium) v[0-9.]+$/i;
-        if (!patt.test(browserString) && browserString !== 'Unknown') {
-            browserString = 'Error';
+        if (!patt.test(browser_string) && browser_string !== 'Unknown') {
+            browser_string = 'Error';
         }
         return [
             timestamp,
             data.action,
-            browserString,
+            browser_string,
             data.ip_addr,
             status,
         ];
     };
 
-    const update = function(history) {
-        if (flexTable) {
-            return flexTable.replace(history);
+    const update = (history) => {
+        if (flex_table) {
+            return flex_table.replace(history);
         }
         const headers = ['Date and Time', 'Action', 'Browser', 'IP Address', 'Status'];
         const columns = ['timestamp', 'action', 'browser', 'ip', 'status'];
-        flexTable = new FlexTableUI({
+        flex_table = new FlexTableUI({
             id       : 'login-history-table',
-            container: containerSelector,
+            container: container_selector,
             header   : headers.map(function(s) { return localize(s); }),
             cols     : columns,
             data     : history,
@@ -53,18 +53,18 @@ const IPHistoryUI = (function() {
             },
         });
         if (!history.length) {
-            return flexTable.displayError(localize(no_messages_error), 6);
+            return flex_table.displayError(localize(no_messages_error), 6);
         }
         return showLocalTimeOnHover('td.timestamp');
     };
 
-    const clean = function() {
-        $(containerSelector + ' .error-msg').text('');
-        flexTable.clear();
-        flexTable = null;
+    const clean = () => {
+        $(container_selector + ' .error-msg').text('');
+        flex_table.clear();
+        flex_table = null;
     };
 
-    const displayError = function(error) {
+    const displayError = (error) => {
         $('#err').text(error);
     };
 
@@ -76,6 +76,4 @@ const IPHistoryUI = (function() {
     };
 })();
 
-module.exports = {
-    IPHistoryUI: IPHistoryUI,
-};
+module.exports = IPHistoryUI;
