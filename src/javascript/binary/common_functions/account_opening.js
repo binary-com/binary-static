@@ -72,8 +72,9 @@ const handleResidenceList = (residence_list) => {
                 phoneElement.value = '+' + residence.phone_idd;
             }
         }
+        const $tax_residence = $('#tax_residence');
         if (obj_residence_el.tax_residence) {
-            $('#tax_residence').select2()
+            $tax_residence.select2()
                 .removeClass('invisible');
         }
         if (residenceValue) {
@@ -83,6 +84,7 @@ const handleResidenceList = (residence_list) => {
             if (obj_residence_el.place_of_birth) {
                 obj_residence_el.place_of_birth.value = residenceValue || '';
             }
+            $tax_residence.val(residenceValue).trigger('change');
         } else {
             BinarySocket.wait('website_status').then(data => handleWebsiteStatus(data.website_status));
         }
