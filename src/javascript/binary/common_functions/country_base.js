@@ -45,11 +45,11 @@ function japanese_residence() {
 
 function checkLanguage() {
     if (getLanguage() === 'ID') {
-        const regex = new RegExp('id'),
-            $blogLink = $('.blog a'),
-            $blogHREF = $blogLink.attr('href');
-        if (!regex.test($blogHREF)) {
-            $blogLink.attr('href', $blogHREF + '/id/');
+        const regex = new RegExp('id');
+        const $academyLink = $('.academy a');
+        const academyHREF = $academyLink.attr('href');
+        if (!regex.test(academyHREF)) {
+            $academyLink.attr('href', academyHREF + '/id/');
         }
     }
     if (japanese_client()) {

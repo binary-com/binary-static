@@ -1,3 +1,5 @@
+const localize = require('../../base/localize').localize;
+
 /*
  * Notifications manages various notification messages
  *
@@ -29,7 +31,7 @@ const MBNotifications = (function() {
 
     const generateMessage = function(options) {
         const $message = $('<div class="notice-msg center-text' + (options.dismissible ? ' dismissible' : '') + '"' +
-            (options.uid ? ' id="' + options.uid + '"' : '') + '>' + options.text +
+            (options.uid ? ' id="' + options.uid + '"' : '') + '>' + localize(options.text) +
                 (options.dismissible ? '<div class="notification-dismiss">x</div>' : '') +
             '</div>');
 

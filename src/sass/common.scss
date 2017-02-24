@@ -81,7 +81,7 @@ fieldset {
     border: 1px solid $COLOR_GRAY;
     padding: 5px;
     margin-bottom: 10px;
-    &#formlayout {
+    &#formlayout { /* TODO: remove all occurrences: no point in using fieldset when we hide its border */
         background: none;
         border: 0;
     }
@@ -91,8 +91,12 @@ fieldset {
         font-weight: bold;
         text-transform: capitalize;
     }
-    #inputheading {
+    #inputheading, .text-display { /* TODO: replace all occurrences of id with the class */
         line-height: 25px;
+    }
+    .error-msg {
+        width: 100%;
+        margin-top: 5px;
     }
 }
 
@@ -110,6 +114,14 @@ label {
 .form_label {
     @include BIDIR_VALUE(text-align, right, left);
     line-height: 25px;
+}
+
+.form-row {
+    padding: 10px 0;
+    label {
+        display: block;
+        text-align: right;
+    }
 }
 
 .input {
@@ -130,11 +142,6 @@ label {
 .comment {
     font-size: 93%;
     font-style: italic;
-}
-
-fieldset .error-msg {
-    width: 100%;
-    text-align: center;
 }
 
 /* global styles */

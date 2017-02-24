@@ -8,7 +8,6 @@ const MetaTraderConfig = (function() {
     'use strict';
 
     const currency = 'USD';
-    const hidden_class = 'invisible';
 
     const types_info = {
         demo            : { account_type: 'demo',      mt5_account_type: '',         title: localize('Demo'),            max_leverage: 1000, is_demo: true },
@@ -18,14 +17,7 @@ const MetaTraderConfig = (function() {
         costarica       : { account_type: 'gaming',    mt5_account_type: '',         title: localize('Real Volatility'), max_leverage: 100 },
     };
 
-    const needsRealMessage = () => (
-         Client.get('has_real') ?
-             localize('To perform this action, please switch to your [_1] Real Account.', ['Binary.com']) :
-             localize('To perform this action, please <a href="[_1]"> upgrade to [_2] Real Account</a>.', [
-                 url_for('new_account/realws'),
-                 'Binary.com',
-             ])
-    );
+    const needsRealMessage = () => $(`#msg_${Client.get('has_real') ? 'switch' : 'upgrade'}`).html();
 
     const actions_info = {
         new_account: {
@@ -47,18 +39,10 @@ const MetaTraderConfig = (function() {
                     } else if (Client.get('is_virtual')) {
                         resolve(needsRealMessage());
                     } else if (types_info[acc_type].account_type === 'financial') {
-                        BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
-                            const $msg = $('#msg_authenticate').clone();
-                            if ($.inArray('authenticated', response_status.get_account_status.status) === -1) {
-                                $msg.find('li.authenticate').removeClass(hidden_class);
-                            }
-                            BinarySocket.send({ get_financial_assessment: 1 }).then((response_financial) => {
-                                if (!objectNotEmpty(response_financial.get_financial_assessment)) {
-                                    $msg.find('li.assessment').removeClass(hidden_class)
-                                        .find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${url_for('user/metatrader')}')`);
-                                }
-                                resolve($msg.find(`.checked > li:not(.${hidden_class})`).length ? $msg.html() : '');
-                            });
+                        BinarySocket.send({ get_financial_assessment: 1 }).then((response_financial) => {
+                            resolve(!objectNotEmpty(response_financial.get_financial_assessment) ?
+                                $('#msg_assessment').find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${url_for('user/metatrader')}')`).end()
+                                    .html() : '');
                         });
                     } else {
                         resolve();
@@ -123,8 +107,20 @@ const MetaTraderConfig = (function() {
                 response.echo_req.to_binary,
                 response.binary_transaction_id,
             ]),
-            prerequisites: () => new Promise(resolve => resolve(Client.get('is_virtual') ? needsRealMessage() : '')),
-            pre_submit   : ($form, acc_type, displayFormMessage) => (
+            prerequisites: acc_type => new Promise((resolve) => {
+                if (Client.get('is_virtual')) {
+                    resolve(needsRealMessage());
+                } else if (types_info[acc_type].account_type === 'financial') {
+                    BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
+                        resolve($.inArray('authenticated', response_status.get_account_status.status) === -1 ?
+                            $('#msg_authenticate').find('.show_for_mt5').removeClass('invisible').end()
+                                .html() : '');
+                    });
+                } else {
+                    resolve();
+                }
+            }),
+            pre_submit: ($form, acc_type, displayFormMessage) => (
                 BinarySocket.send({
                     mt5_password_check: 1,
                     login             : types_info[acc_type].account_info.login,

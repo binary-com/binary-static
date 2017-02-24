@@ -67,7 +67,6 @@ const SettingsDetailsWS = (function() {
             $(formID)
                 .submit(handleSubmit)
                 .removeClass('hidden');
-            bindValidation();
             isInitialized = true;
         }
     };
@@ -186,12 +185,12 @@ const SettingsDetailsWS = (function() {
             ];
         } else {
             validations = [
-                { selector: '#address_line_1',   validations: ['req', 'general'] },
-                { selector: '#address_line_2',   validations: ['general'] },
-                { selector: '#address_city',     validations: ['req', 'letter_symbol'] },
-                { selector: '#address_state',    validations: ['letter_symbol'] },
-                { selector: '#address_postcode', validations: ['postcode', ['length', { min: 0, max: 20 }]] },
-                { selector: '#phone',            validations: ['phone', ['length', { min: 6, max: 35 }]] },
+                { selector: '#address_line_1',     validations: ['req', 'general'] },
+                { selector: '#address_line_2',     validations: ['general'] },
+                { selector: '#address_city',       validations: ['req', 'letter_symbol'] },
+                { selector: 'input#address_state', validations: ['letter_symbol'] },
+                { selector: '#address_postcode',   validations: ['postcode', ['length', { min: 0, max: 20 }]] },
+                { selector: '#phone',              validations: ['phone', ['length', { min: 6, max: 35 }]] },
             ];
             const tax_id_validation = { selector: '#tax_identification_number',  validations: ['postcode', ['length', { min: 0, max: 20 }]] };
             if (Client.is_financial()) {
@@ -294,6 +293,7 @@ const SettingsDetailsWS = (function() {
             $field = $(address_state);
         }
         $field.val(defaultValue);
+        bindValidation();
     };
 
     const onLoad = function() {
@@ -305,16 +305,18 @@ const SettingsDetailsWS = (function() {
             init();
             const data = State.get(['response', 'get_settings', 'get_settings']);
             getDetailsResponse(data);
-            if (!isJP) {
-                BinarySocket.send({ residence_list: 1 }).then((response) => {
-                    populateResidence(response);
-                });
-            }
-            if (residence) {
-                const states_req = { states_list: residence, passthrough: { value: data.address_state } };
-                BinarySocket.send(states_req).then((response) => {
-                    populateStates(response);
-                });
+            if (!isVirtual) {
+                if (!isJP) {
+                    BinarySocket.send({ residence_list: 1 }).then((response) => {
+                        populateResidence(response);
+                    });
+                }
+                if (residence) {
+                    const states_req = { states_list: residence, passthrough: { value: data.address_state } };
+                    BinarySocket.send(states_req).then((response) => {
+                        populateStates(response);
+                    });
+                }
             }
         });
     };
