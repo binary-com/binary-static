@@ -4,25 +4,20 @@ const Client   = require('../../../../base/client').Client;
 
 const Limits = (() => {
     const onLoad = () => {
-        Content.populate();
-        if (Client.get('is_virtual')) {
-            LimitsWS.limitsError();
-            return;
-        }
-
-        BinarySocket.send({ get_limits: 1 }).then((response) => {
-            if (response) {
-                const type = response.msg_type;
-                const error = response.error;
-
-                if (type === 'authorize' && Client.get('is_virtual')) {
-                    LimitsWS.limitsError(error);
-                } else if (type === 'get_limits' && !error) {
-                    LimitsWS.limitsHandler(response);
-                } else if (error) {
-                    LimitsWS.limitsError(error);
-                }
+        BinarySocket.wait('authorize').then(() => {
+            Content.populate();
+            if (Client.get('is_virtual')) {
+                LimitsWS.limitsError();
+                return;
             }
+
+            BinarySocket.send({ get_limits: 1 }).then((response) => {
+                if (response.error) {
+                    LimitsWS.limitsError(response.error);
+                } else {
+                    LimitsWS.limitsHandler(response);
+                }
+            });
         });
     };
 

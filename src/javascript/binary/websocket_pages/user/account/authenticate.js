@@ -19,17 +19,12 @@ const Authenticate = (() => {
 
         if (!checkVirtual()) {
             BinarySocket.send({ get_account_status: 1 }).then((response) => {
-                if (response) {
-                    const error = response.error;
-                    if (response.msg_type === 'get_account_status' && !checkVirtual() && !error) {
-                        if ($.inArray('authenticated', response.get_account_status.status) > -1) {
-                            $('#fully-authenticated').removeClass('invisible');
-                        } else {
-                            $('#not-authenticated').removeClass('invisible');
-                        }
-                    } else if (error) {
-                        showError(error.message);
-                    }
+                if (response.error) {
+                    showError(response.error.message);
+                } else if ($.inArray('authenticated', response.get_account_status.status) > -1) {
+                    $('#fully-authenticated').removeClass('invisible');
+                } else {
+                    $('#not-authenticated').removeClass('invisible');
                 }
             });
         }
