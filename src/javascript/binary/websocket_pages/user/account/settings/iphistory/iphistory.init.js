@@ -4,7 +4,7 @@ const IPHistoryData = require('./iphistory.data');
 const IPHistoryInit = (function() {
     'use strict';
 
-    const responseHandler = function(response) {
+    const responseHandler = (response) => {
         if (response.error && response.error.message) {
             return IPHistoryUI.displayError(response.error.message);
         }
@@ -12,7 +12,7 @@ const IPHistoryInit = (function() {
         return IPHistoryUI.update(parsed);
     };
 
-    const init = function() {
+    const init = () => {
         IPHistoryUI.init();
         const req = {
             login_history: '1',
@@ -23,7 +23,7 @@ const IPHistoryInit = (function() {
         });
     };
 
-    const clean = function() {
+    const clean = () => {
         IPHistoryUI.clean();
     };
 

@@ -10,12 +10,12 @@ const IPHistoryUI = (function() {
     const no_messages_error = 'Your account has no Login/Logout activity.';
     let flexTable;
 
-    const init = function() {
+    const init = () => {
         const $title = $('#login_history-title').children().first();
         $title.text(localize($title.text()));
     };
 
-    const formatRow = function(data) {
+    const formatRow = (data) => {
         const timestamp = moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n') + ' GMT';
         const status = localize(data.success ? 'Successful' : 'Failed');
         const browser = data.browser;
@@ -35,7 +35,7 @@ const IPHistoryUI = (function() {
         ];
     };
 
-    const update = function(history) {
+    const update = (history) => {
         if (flexTable) {
             return flexTable.replace(history);
         }
@@ -58,13 +58,13 @@ const IPHistoryUI = (function() {
         return showLocalTimeOnHover('td.timestamp');
     };
 
-    const clean = function() {
+    const clean = () => {
         $(containerSelector + ' .error-msg').text('');
         flexTable.clear();
         flexTable = null;
     };
 
-    const displayError = function(error) {
+    const displayError = (error) => {
         $('#err').text(error);
     };
 
