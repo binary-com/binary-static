@@ -1,12 +1,13 @@
+const BinaryPjax                = require('./binary_pjax');
 const Client                    = require('./client').Client;
-const Login                     = require('./login').Login;
-const url_for                   = require('./url').url_for;
 const GTM                       = require('./gtm').GTM;
 const localize                  = require('./localize').localize;
-const BinaryPjax                = require('./binary_pjax');
+const Login                     = require('./login').Login;
+const State                     = require('./storage').State;
+const url_for                   = require('./url').url_for;
+const check_risk_classification = require('../common_functions/check_risk_classification').check_risk_classification;
 const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
 const japanese_client           = require('../common_functions/country_base').japanese_client;
-const check_risk_classification = require('../common_functions/check_risk_classification').check_risk_classification;
 const MetaTrader                = require('../websocket_pages/user/metatrader/metatrader');
 
 const Header = (function() {
@@ -22,7 +23,7 @@ const Header = (function() {
         }
 
         $('#logo').off('click').on('click', function() {
-            BinaryPjax.load(url_for(Client.is_logged_in() ? japanese_client() ? 'multi_barriers_trading' : 'trading' : ''));
+            BinaryPjax.load(url_for(Client.is_logged_in() ? (japanese_client() ? 'multi_barriers_trading' : 'trading') : ''));
         });
         $('#btn_login').off('click').on('click', function(e) {
             e.preventDefault();
@@ -100,11 +101,9 @@ const Header = (function() {
         window.location.reload();
     };
 
-    const topbar_message_visibility = function(c_config) {
-        if (Client.is_logged_in()) {
-            if (!Client.get('values_set') || !c_config) {
-                return;
-            }
+    const topbar_message_visibility = function() {
+        BinarySocket.wait('authorize', 'landing_company').then(() => {
+            const landing_company = State.get(['response', 'landing_company', 'landing_company']);
             const loginid_array = Client.get('loginid_array');
 
             const $upgrade_msg = $('.upgrademessage'),
@@ -154,9 +153,9 @@ const Header = (function() {
                 }
                 if (show_upgrade_msg) {
                     $upgrade_msg.find('> span').removeClass(hiddenClass);
-                    if (Client.can_upgrade_virtual_to_financial(c_config)) {
+                    if (Client.can_upgrade_virtual_to_financial(landing_company)) {
                         show_upgrade('new_account/maltainvestws', 'Upgrade to a Financial Account');
-                    } else if (Client.can_upgrade_virtual_to_japan(c_config)) {
+                    } else if (Client.can_upgrade_virtual_to_japan(landing_company)) {
                         show_upgrade('new_account/japanws', 'Upgrade to a Real Account');
                     } else {
                         show_upgrade('new_account/realws', 'Upgrade to a Real Account');
@@ -165,7 +164,7 @@ const Header = (function() {
             } else {
                 let show_financial = false;
                 // also allow UK MLT client to open MF account
-                if (Client.can_upgrade_gaming_to_financial(c_config) || (Client.get('residence') === 'gb' && /^MLT/.test(Client.get('loginid')))) {
+                if (Client.can_upgrade_gaming_to_financial(landing_company) || (Client.get('residence') === 'gb' && /^MLT/.test(Client.get('loginid')))) {
                     show_financial = true;
                     for (let j = 0; j < loginid_array.length; j++) {
                         if (loginid_array[j].financial) {
@@ -181,7 +180,7 @@ const Header = (function() {
                     hide_upgrade();
                 }
             }
-        }
+        });
     };
 
     return {

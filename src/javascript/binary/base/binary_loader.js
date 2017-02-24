@@ -1,15 +1,12 @@
-const BinaryPjax                = require('./binary_pjax');
-const pages_config              = require('./binary_pages');
-const Client                    = require('./client').Client;
-const GTM                       = require('./gtm').GTM;
-const Header                    = require('./header').Header;
-const localize                  = require('./localize').localize;
-const Login                     = require('./login').Login;
-const page                      = require('./page').page;
-const default_redirect_url      = require('./url').default_redirect_url;
-const url                       = require('./url').url;
-const check_risk_classification = require('../common_functions/check_risk_classification').check_risk_classification;
-const ViewBalanceUI             = require('../websocket_pages/user/viewbalance/viewbalance.ui').ViewBalanceUI;
+const BinaryPjax           = require('./binary_pjax');
+const pages_config         = require('./binary_pages');
+const Client               = require('./client').Client;
+const GTM                  = require('./gtm').GTM;
+const localize             = require('./localize').localize;
+const Login                = require('./login').Login;
+const page                 = require('./page').page;
+const default_redirect_url = require('./url').default_redirect_url;
+const url                  = require('./url').url;
 
 const BinaryLoader = (function() {
     'use strict';
@@ -18,13 +15,7 @@ const BinaryLoader = (function() {
         active_script = null;
 
     const init = () => {
-        page.on_load();
-
-        BinarySocket.init({
-            authorize: (response) => { Client.response_authorize(response); },
-            balance  : (response) => { ViewBalanceUI.updateBalance(response); },
-            logout   : (response) => { Client.do_logout(response); },
-        }, Client.is_logged_in());
+        BinarySocket.init();
 
         container = $('#content-holder');
         container.on('binarypjax:before', beforeContentChange);
@@ -53,9 +44,7 @@ const BinaryLoader = (function() {
             loadHandler(pages_config['get-started']);
         }
 
-        Header.on_load();
         BinarySocket.wait('get_settings', 'get_account_status').then(() => { Client.check_tnc(); });
-        check_risk_classification();
     };
 
     const errorMessages = {

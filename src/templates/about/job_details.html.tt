@@ -70,7 +70,7 @@
   <div id="content-Information_Technology">
     <div class="DevOps_Manager" id="Information_Technology-section-one">
       <p>
-        [% l("[_1]'s IT Operations Group is responsible for the design, development and operation of the company's high-traffic networks. Its responsibilities components hardware and software deployment, up-time and reliability testing, incident response reporting, network security, intrusion detection, and load balancing.", website_name) %]
+        [% l("[_1]'s IT Operations Group is responsible for the design, development and operation of the company's high-traffic networks. Its responsibilities include hardware and software deployment, up-time and reliability testing, incident response reporting, network security, intrusion detection, and load balancing.", website_name) %]
       </p>
       <p>
         [% l("As our DevOps Manager/Team Lead, you'll be responsible for the training, development and direction of a world class Linux-based Systems Administration team.") %]

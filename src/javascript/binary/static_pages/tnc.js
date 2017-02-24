@@ -1,6 +1,6 @@
 const localize    = require('../base/localize').localize;
 const url         = require('../base/url').url;
-const Scroll      = require('../common_functions/scroll').Scroll;
+const Scroll      = require('../common_functions/scroll');
 const TNCApproval = require('../websocket_pages/user/tnc_approval');
 
 const TermsAndConditions = (function() {

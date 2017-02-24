@@ -1,6 +1,7 @@
 const BinaryPjax           = require('./binary_pjax');
 const CookieStorage        = require('./storage').CookieStorage;
 const LocalStore           = require('./storage').LocalStore;
+const State                = require('./storage').State;
 const default_redirect_url = require('./url').default_redirect_url;
 const getLoginToken        = require('../common_functions/common_functions').getLoginToken;
 const japanese_client      = require('../common_functions/country_base').japanese_client;
@@ -9,7 +10,6 @@ const moment               = require('moment');
 
 const Client = (function () {
     const client_object = {};
-    let landing_company_response = {};
 
     const parseLoginIDList = function(string) {
         if (!string) return [];
@@ -147,11 +147,10 @@ const Client = (function () {
         set('landing_company_fullname', authorize.landing_company_fullname);
         set('currency', authorize.currency);
         check_values();
-        client_object.values_set = true;
         activate_by_client_type();
     };
 
-    const tnc_pages = () => /(user\/tnc_approvalws|terms-and-conditions)/i.test(location);
+    const tnc_pages = () => /(user\/tnc_approvalws|terms-and-conditions)/i.test(window.location.href);
 
     const check_tnc = function() {
         if (tnc_pages() ||
@@ -265,33 +264,32 @@ const Client = (function () {
     const activate_by_client_type = function() {
         $('.by_client_type').addClass('invisible');
         if (is_logged_in()) {
-            if (!client_object.values_set) {
-                return;
-            }
-            $('#client-logged-in').addClass('gr-centered');
-            $('.client_logged_in').removeClass('invisible');
-            if (!get('is_virtual')) {
-                // control-class is a fake class, only used to counteract ja-hide class
-                $('.by_client_type.client_real').not((japanese_client() ? '.ja-hide' : '.control-class')).removeClass('invisible').show();
+            BinarySocket.wait('get_settings').then(() => {
+                $('#client-logged-in').addClass('gr-centered');
+                $('.client_logged_in').removeClass('invisible');
+                if (!get('is_virtual')) {
+                    // control-class is a fake class, only used to counteract ja-hide class
+                    $('.by_client_type.client_real').not((japanese_client() ? '.ja-hide' : '.control-class')).removeClass('invisible').show();
 
-                $('#topbar').addClass('primary-color-dark')
-                            .removeClass('secondary-bg-color');
+                    $('#topbar').addClass('primary-color-dark')
+                                .removeClass('secondary-bg-color');
 
-                if (!/^CR/.test(get('loginid'))) {
-                    $('#payment-agent-section').addClass('invisible')
-                                               .hide();
+                    if (!/^CR/.test(get('loginid'))) {
+                        $('#payment-agent-section').addClass('invisible')
+                                                   .hide();
+                    }
+
+                    if (has_gaming_financial_enabled()) {
+                        $('#account-transfer-section').removeClass('invisible');
+                    }
+                } else {
+                    $('.by_client_type.client_virtual').removeClass('invisible')
+                                                       .show();
+
+                    $('#topbar').addClass('secondary-bg-color')
+                                .removeClass('primary-color-dark');
                 }
-
-                if (has_gaming_financial_enabled()) {
-                    $('#account-transfer-section').removeClass('invisible');
-                }
-            } else {
-                $('.by_client_type.client_virtual').removeClass('invisible')
-                                                   .show();
-
-                $('#topbar').addClass('secondary-bg-color')
-                            .removeClass('primary-color-dark');
-            }
+            });
         } else {
             $('.by_client_type.client_logged_out').removeClass('invisible')
                                                   .show();
@@ -360,12 +358,8 @@ const Client = (function () {
         return (match_type !== 'any');
     };
 
-    const get_set_landing_company = function(response) { // eslint-disable-line consistent-return
-        if (response) landing_company_response = response;
-        else return landing_company_response;
-    };
-
-    const get_client_landing_company = function() {
+    const current_landing_company = function() {
+        const landing_company_response = State.get(['response', 'landing_company', 'landing_company']);
         let client_landing_company = {};
         Object.keys(landing_company_response).forEach(function (key) {
             if (client_object.landing_company_name === landing_company_response[key].shortcode) {
@@ -412,12 +406,11 @@ const Client = (function () {
         send_logout_request: send_logout_request,
         do_logout          : do_logout,
         status_detected    : status_detected,
-        landing_company    : get_set_landing_company,
         is_financial       : is_financial,
         should_complete_tax: should_complete_tax,
         should_redirect_tax: should_redirect_tax,
 
-        get_client_landing_company: get_client_landing_company,
+        current_landing_company: current_landing_company,
     };
 })();
 

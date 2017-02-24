@@ -13,7 +13,7 @@ const PasswordWS = (function() {
         $result;
 
     const hasPassword = function () {
-        if (Client.get('values_set') && !Client.get('has_password')) {
+        if (!Client.get('has_password')) {
             BinaryPjax.load('user/settingsws');
             return false;
         }

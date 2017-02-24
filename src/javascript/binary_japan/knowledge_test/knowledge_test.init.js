@@ -84,8 +84,7 @@ const KnowledgeTest = (function() {
         if (score >= 14) {
             msg = passMsg;
             Client.set('jp_status', 'jp_activation_pending');
-            // send some dummy string just to go through the function
-            Header.topbar_message_visibility('show_jp_message');
+            Header.topbar_message_visibility();
         } else {
             msg = failMsg;
         }

@@ -153,7 +153,7 @@ const PaymentAgentTransfer = (function() {
         } else {
             PaymentAgentTransferUI.hideForm();
             PaymentAgentTransferUI.hideNotes();
-            if (Client.get('values_set') && !Client.get('is_authenticated_payment_agent')) {
+            if (!Client.get('is_authenticated_payment_agent')) {
                 $('#pa_transfer_loading').remove();
                 $('#not_pa_error').removeClass('invisible');
             }

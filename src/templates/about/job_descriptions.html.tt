@@ -19,7 +19,7 @@
               [% l("DevOps Manager / Team Lead") %]
             </h3>
             <p>
-              [% l("Responsibilities components hardware and software deployment, network security, intrusion detection, and load balancing.") %]
+              [% l("Responsibilities include hardware and software deployment, network security, intrusion detection, and load balancing.") %]
             </p>
             <a href="[% request.url_for('/open-positions/job-details?dept=Information_Technology#section-one') %]">[% l("Learn more") %]</a>
           </div>

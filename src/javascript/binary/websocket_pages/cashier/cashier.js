@@ -37,20 +37,22 @@ const Cashier = (function() {
     };
 
     const check_top_up_withdraw = function() {
-        if (/cashier[\/\w]*\.html/.test(window.location.pathname) && Client.get('values_set')) {
-            const currency = Client.get('currency'),
-                balance = Client.get('balance');
-            if (Client.get('is_virtual')) {
-                if ((currency !== 'JPY' && balance > 1000) ||
-                    (currency === 'JPY' && balance > 100000)) {
-                    replace_button('disable', '#VRT_topup_link');
+        BinarySocket.wait('authorize').then(() => {
+            if (/cashier[\/\w]*\.html/.test(window.location.pathname)) {
+                const currency = Client.get('currency'),
+                    balance = Client.get('balance');
+                if (Client.get('is_virtual')) {
+                    if ((currency !== 'JPY' && balance > 1000) ||
+                        (currency === 'JPY' && balance > 100000)) {
+                        replace_button('disable', '#VRT_topup_link');
+                    }
+                } else if (!currency || +balance === 0) {
+                    lock_unlock_cashier('lock', 'withdraw');
+                } else {
+                    lock_unlock_cashier('unlock', 'withdraw');
                 }
-            } else if (!currency || +balance === 0) {
-                lock_unlock_cashier('lock', 'withdraw');
-            } else {
-                lock_unlock_cashier('unlock', 'withdraw');
             }
-        }
+        });
     };
 
     const replace_button = function(action, elementToReplace) {
@@ -88,16 +90,7 @@ const Cashier = (function() {
             withdrawal_locked = false;
             Cashier.check_locked();
             Cashier.check_top_up_withdraw();
-            Header.topbar_message_visibility(Client.landing_company());
-        }
-    };
-
-    const onLoadPaymentMethods = function() {
-        if (japanese_client()) {
-            BinaryPjax.load('/');
-        }
-        if (Client.is_logged_in() && !Client.get('is_virtual')) {
-            Cashier.check_locked();
+            Header.topbar_message_visibility(); // To handle the upgrade buttons visibility
         }
     };
 
@@ -106,7 +99,7 @@ const Cashier = (function() {
         check_top_up_withdraw: check_top_up_withdraw,
         onLoad               : onLoad,
 
-        PaymentMethods: { onLoad: () => { onLoadPaymentMethods(); } },
+        PaymentMethods: { onLoad: () => { onLoad(); } },
     };
 })();
 
