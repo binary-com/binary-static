@@ -85,15 +85,13 @@ const BinaryPjax = (function() {
         }
 
         event.preventDefault();
-        processUrl(url);
+        // check if url is not same as current
+        if (location.href !== url) {
+            processUrl(url);
+        }
     };
 
     const processUrl = (url, replace) => {
-        // check if url is not same as current
-        if (location.href === url) {
-            return;
-        }
-
         State.set('is_loaded_by_pjax', true);
 
         if (!/^http/i.test(url)) {
