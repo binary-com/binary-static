@@ -1,7 +1,7 @@
 const IPHistoryUI   = require('./iphistory.ui');
 const IPHistoryData = require('./iphistory.data');
 
-const IPHistoryInit = (function() {
+const IPHistoryInit = (() => {
     'use strict';
 
     const responseHandler = (response) => {

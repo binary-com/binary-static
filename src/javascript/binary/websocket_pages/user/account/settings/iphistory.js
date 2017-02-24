@@ -3,8 +3,8 @@ const japanese_client = require('../../../../common_functions/country_base').jap
 const url_for         = require('../../../../base/url').url_for;
 const IPHistoryInit   = require('./iphistory/iphistory.init');
 
-const IPHistory = (function() {
-    const onLoad = function() {
+const IPHistory = (() => {
+    const onLoad = () => {
         if (japanese_client()) {
             window.location.href = url_for('user/settingsws');
         }
@@ -12,7 +12,7 @@ const IPHistory = (function() {
         IPHistoryInit.init();
     };
 
-    const onUnload = function() {
+    const onUnload = () => {
         IPHistoryInit.clean();
     };
 

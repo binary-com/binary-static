@@ -1,5 +1,5 @@
-const IPHistoryData = (function() {
-    const parse_ua = (user_agent) => {
+const IPHistoryData = (() => {
+    const parseUA = (user_agent) => {
         // Table of UA-values (and precedences) from:
         //  https://developer.mozilla.org/en-US/docs/Browser_detection_using_the_user_agent
         // Regexes stolen from:
@@ -36,14 +36,14 @@ const IPHistoryData = (function() {
             time   : activity.time,
             action : activity.action,
             success: activity.status === 1,
-            browser: parse_ua(user_agent),
+            browser: parseUA(user_agent),
             ip_addr: ip_addr,
         };
     };
 
     return {
         parse         : parse,
-        parseUserAgent: parse_ua,
+        parseUserAgent: parseUA,
     };
 })();
 
