@@ -162,15 +162,19 @@ const Client = (function () {
         return /user\/tnc_approvalws/.test(location) || /terms-and-conditions/.test(location);
     };
 
-    const check_tnc = function() {
+    const should_accept_tnc = () => {
         if (tnc_pages() ||
             get('is_virtual') ||
             sessionStorage.getItem('check_tnc') !== 'check') {
-            return;
+            return false;
         }
-        const client_tnc_status   = get('tnc_status'),
-            website_tnc_version = LocalStore.get('website.tnc_version');
-        if (client_tnc_status && website_tnc_version && client_tnc_status !== website_tnc_version) {
+        const client_tnc_status   = get('tnc_status');
+        const website_tnc_version = LocalStore.get('website.tnc_version');
+        return client_tnc_status && website_tnc_version && client_tnc_status !== website_tnc_version;
+    };
+
+    const check_tnc = function() {
+        if (should_accept_tnc()) {
             sessionStorage.setItem('tnc_redirect', window.location.href);
             window.location.href = url_for('user/tnc_approvalws');
         }
@@ -404,6 +408,7 @@ const Client = (function () {
         set                   : set,
         get                   : get,
         response_authorize    : response_authorize,
+        should_accept_tnc     : should_accept_tnc,
         check_tnc             : check_tnc,
         set_check_tnc         : set_check_tnc,
         clear_storage_values  : clear_storage_values,

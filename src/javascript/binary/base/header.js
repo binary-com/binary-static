@@ -1,8 +1,10 @@
 const Client                    = require('./client').Client;
-const Login                     = require('./login').Login;
-const url_for                   = require('./url').url_for;
 const GTM                       = require('./gtm').GTM;
 const localize                  = require('./localize').localize;
+const Login                     = require('./login').Login;
+const url_for                   = require('./url').url_for;
+const template                  = require('./utility').template;
+const objectNotEmpty            = require('./utility').objectNotEmpty;
 const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
 const check_risk_classification = require('../common_functions/check_risk_classification').check_risk_classification;
 const MetaTrader                = require('../websocket_pages/user/metatrader/metatrader');
@@ -17,6 +19,7 @@ const Header = (function() {
         }
         if (Client.is_logged_in()) {
             $('ul#menu-top').addClass('smaller-font');
+            displayAccountStatus();
         }
     };
 
@@ -172,6 +175,60 @@ const Header = (function() {
                 }
             }
         }
+    };
+
+    const displayNotification = (message) => {
+        const $msg_notification = $('#msg_notification');
+        $msg_notification.html(message);
+        if ($msg_notification.is(':hidden')) $msg_notification.slideDown(500);
+    };
+
+    const displayAccountStatus = () => {
+        BinarySocket.wait('get_account_status').then((response) => {
+            const status = response.get_account_status.status;
+
+            const messages = {
+                authenticate: () => template(
+                    localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.',
+                        ['<a href="' + url_for('user/authenticatews') + '">', '</a>'])),
+                risk: () => template(
+                    localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.'),
+                    ['<a href="' + url_for('user/settings/assessmentws') + '">', '</a>']),
+                tax: () => template(
+                    localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.'),
+                    ['<a href="' + url_for('user/settings/detailsws') + '">', '</a>']),
+                tnc: () => template(
+                    localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.'),
+                    ['<a href="' + url_for('user/tnc_approvalws') + '">', '</a>']),
+                unwelcome: () => template(
+                    localize('Your account is restricted - kindly [_1]contact customer support[_2] for assistance.'),
+                    ['<a href="mailto:support@binary.com">', '</a>']),
+            };
+
+            const riskAssessment = () => {
+                if (response.get_account_status.risk_classification === 'high') {
+                    BinarySocket.send({ get_financial_assessment: 1 })
+                        .then(data => !objectNotEmpty(data.get_financial_assessment));
+                }
+                return false;
+            };
+
+            const check_statuses = [
+                { validation: () => !/(authenticated|age_verification)/.test(status),        message: messages.authenticate },
+                { validation: riskAssessment,                                                message: messages.risk },
+                { validation: () => !/crs_tin_information/.test(status),                     message: messages.tax },
+                { validation: Client.should_accept_tnc,                                      message: messages.tnc },
+                { validation: () => !/(unwelcome|(cashier|withdrawal)_locked)/.test(status), message: messages.unwelcome },
+            ];
+
+            check_statuses.some((object) => {
+                if (object.validation()) {
+                    displayNotification(object.message());
+                    return true;
+                }
+                return false;
+            });
+        });
     };
 
     return {

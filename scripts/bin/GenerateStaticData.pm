@@ -520,6 +520,13 @@ sub _texts {
         push @texts, localize('Create Account');
         push @texts, localize('Change Password');
 
+        # strings for header notification
+        push @texts, localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.');
+        push @texts, localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.');
+        push @texts, localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.');
+        push @texts, localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.');
+        push @texts, localize('Your account is restricted - kindly [_1]contact customer support[_2] for assistance.');
+
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
     }
