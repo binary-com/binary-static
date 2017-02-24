@@ -90,7 +90,7 @@ const Cashier = (function() {
             withdrawal_locked = false;
             Cashier.check_locked();
             Cashier.check_top_up_withdraw();
-            Header.topbar_message_visibility(); // To handle the upgrade buttons visibility
+            Header.upgrade_message_visibility(); // To handle the upgrade buttons visibility
         }
     };
 

@@ -301,7 +301,7 @@ const BinarySocketClass = function() {
                     RealityCheckData.clear();
                     Client.do_logout(response);
                 } else if (type === 'landing_company') {
-                    Header.topbar_message_visibility();
+                    Header.upgrade_message_visibility();
                     if (response.error) return;
                     // Header.metatrader_menu_item_visibility(response); // to be uncommented once MetaTrader launched
                     const company = Client.current_landing_company();
@@ -326,7 +326,7 @@ const BinarySocketClass = function() {
                             send({ landing_company: country_code });
                         }
                     } else if (country_code === null && response.get_settings.country === null) {
-                        Header.topbar_message_visibility();
+                        Header.upgrade_message_visibility();
                     }
                     if (/realws|maltainvestws|japanws/.test(window.location.href)) {
                         displayAcctSettings(response);

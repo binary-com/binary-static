@@ -101,7 +101,7 @@ const Header = (function() {
         window.location.reload();
     };
 
-    const topbar_message_visibility = function() {
+    const upgrade_message_visibility = function() {
         BinarySocket.wait('authorize', 'landing_company').then(() => {
             const landing_company = State.get(['response', 'landing_company', 'landing_company']);
             const loginid_array = Client.get('loginid_array');
@@ -186,7 +186,7 @@ const Header = (function() {
     return {
         on_load: on_load,
 
-        topbar_message_visibility      : topbar_message_visibility,
+        upgrade_message_visibility     : upgrade_message_visibility,
         metatrader_menu_item_visibility: metatrader_menu_item_visibility,
     };
 })();
