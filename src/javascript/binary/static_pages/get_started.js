@@ -40,9 +40,8 @@ const GetStarted = (function() {
         let to_show,
             fragment;
         const nav = $('.get-started').find('.subsection-navigation');
-        const len = nav.length;
 
-        if (len) {
+        if (nav.length) {
             nav.on('click', 'a', function() {
                 const button = $(this);
                 if (button.hasClass('button-disabled')) {
@@ -54,7 +53,7 @@ const GetStarted = (function() {
             });
 
             fragment = (location.href.split('#'))[1];
-            to_show = fragment ? $('a[name=' + fragment + '-section]').parent().parent('.subsection') : $('.subsection.first');
+            to_show = fragment ? $('a[name=' + fragment + '-section]').parent('.subsection') : $('.subsection.first');
             update_active_subsection(to_show);
         }
         select_nav_element();

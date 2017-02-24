@@ -62,7 +62,7 @@ const pages_config = {
     careers               : { module: Careers },
     cashier               : { module: Cashier },
     cashier_passwordws    : { module: SecurityWS,                 is_authenticated: true, only_real: true },
-    change_password       : { module: PasswordWS,                 is_authenticated: true },
+    change_passwordws     : { module: PasswordWS,                 is_authenticated: true },
     charity               : { module: Charity },
     contact               : { module: Contact },
     detailsws             : { module: SettingsDetailsWS,          is_authenticated: true },
