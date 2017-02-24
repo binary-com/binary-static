@@ -254,7 +254,7 @@ const BinarySocketClass = function() {
 
                 // store in State
                 if (!response.echo_req.subscribe) {
-                    State.set(['response', type], response);
+                    State.set(['response', type], $.extend({}, response));
                 }
                 // resolve the send promise
                 const this_req_id = response.req_id;
