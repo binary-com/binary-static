@@ -1,11 +1,12 @@
-const AccountOpening = require('../../../common_functions/account_opening');
-const FormManager    = require('../../../common_functions/form_manager');
-const toISOFormat    = require('../../../common_functions/string_util').toISOFormat;
-const objectNotEmpty = require('../../../base/utility').objectNotEmpty;
-const Client         = require('../../../base/client').Client;
-const State          = require('../../../base/storage').State;
-const url_for        = require('../../../base/url').url_for;
-const moment         = require('moment');
+const AccountOpening       = require('../../../common_functions/account_opening');
+const FormManager          = require('../../../common_functions/form_manager');
+const toISOFormat          = require('../../../common_functions/string_util').toISOFormat;
+const objectNotEmpty       = require('../../../base/utility').objectNotEmpty;
+const Client               = require('../../../base/client').Client;
+const State                = require('../../../base/storage').State;
+const url_for              = require('../../../base/url').url_for;
+const default_redirect_url = require('../../../base/url').default_redirect_url;
+const moment               = require('moment');
 
 const FinancialAccOpening = (function() {
     const formID = '#financial-form';
@@ -18,6 +19,20 @@ const FinancialAccOpening = (function() {
         } else if (Client.get('has_gaming')) {
             $('.security').hide();
         }
+
+        BinarySocket.wait('landing_company').then((response) => {
+            const landing_company = response.landing_company;
+            if (Client.get('is_virtual')) {
+                if (Client.can_upgrade_virtual_to_japan(landing_company)) {
+                    window.location.href = url_for('new_account/japanws');
+                } else if (!Client.can_upgrade_virtual_to_financial(landing_company)) {
+                    window.location.href = url_for('new_account/realws');
+                }
+            } else if (!Client.can_upgrade_gaming_to_financial(landing_company)) {
+                window.location.href = default_redirect_url();
+            }
+        });
+
         if (AccountOpening.redirectAccount()) return;
         AccountOpening.populateForm(formID, getValidations);
 
