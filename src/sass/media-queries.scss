@@ -35,6 +35,11 @@
     input, select {
         width: 80%;
     }
+    .center-text-m {
+        &, label {
+            text-align: center;
+        }
+    }
     #btn-verify-email {
         font-size: 0.9em;
         padding: 0;

@@ -7,10 +7,7 @@
       </p>
 
       <div id="not-authenticated" class="invisible">
-          <p>[% l('To authenticate your account, kindly email the following to <a href="mailto:[_1]">[_1]</a>', 'support@binary.com') %]</p>
-          <p>[% l('- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth.') %]</p>
-          <p>[% l('and') %]</p>
-          <p>[% l('- A scanned copy of a utility bill or bank statement (no more than 3 months old).') %]</p>
+          [% INCLUDE user/common/authenticate_message.html.tt %]
       </div>
 
       <p class="center-text notice-msg invisible" id="error_message"></p>
