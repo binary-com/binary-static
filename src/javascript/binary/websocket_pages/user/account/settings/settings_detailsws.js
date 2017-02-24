@@ -95,7 +95,7 @@ const SettingsDetailsWS = (function() {
                     if ($key.is(':checkbox')) {
                         $key.prop('checked', !!$data_key);
                     } else if (/(SELECT|INPUT)/.test($key.prop('nodeName'))) {
-                        $key.val($data_key);
+                        $key.val($data_key.split(',')).trigger('change');
                     } else {
                         $key.text($data_key ? localize($data_key) : '-');
                     }
