@@ -162,7 +162,7 @@ Page.prototype = {
         }
     },
     general_authentication_message: function() {
-        const span = $('<span/>', { html: template(localize('Certain features and services are currently unavailable. Please <a href="[_1]">contact us</a> for more details.', ['https://www.binary.com/en/contact.html'])) });
+        const span = $('<span/>', { html: template(localize('Certain features and services are currently unavailable. Please <a href="[_1]">contact us</a> for more details.', [url_for('contact')])) });
         return span;
     },
     show_notification_outdated_browser: function() {
