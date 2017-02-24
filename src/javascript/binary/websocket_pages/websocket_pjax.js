@@ -283,23 +283,29 @@ pjax_config_page('user/lost_passwordws', function() {
 pjax_config_page_require_auth('new_account/maltainvestws', function() {
     return {
         onLoad: function() {
-            FinancialAccOpening.init();
+            FinancialAccOpening.onLoad();
+        },
+        onUnload: function() {
+            FinancialAccOpening.onUnload();
         },
     };
 });
 
-pjax_config_page('new_account/japanws', function() {
+pjax_config_page_require_auth('new_account/japanws', function() {
     return {
         onLoad: function() {
-            JapanAccOpening.init();
+            JapanAccOpening.onLoad();
+        },
+        onUnload: function() {
+            JapanAccOpening.onUnload();
         },
     };
 });
 
-pjax_config_page('new_account/realws', function() {
+pjax_config_page_require_auth('new_account/realws', function() {
     return {
         onLoad: function() {
-            RealAccOpening.init();
+            RealAccOpening.onLoad();
         },
     };
 });
