@@ -236,6 +236,7 @@ const ForwardWS = (function() {
             BinarySocket.send({ cashier_password: 1 });
         }
     };
+
     return {
         onLoad                  : onLoad,
         init                    : init,
