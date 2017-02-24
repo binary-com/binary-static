@@ -1,16 +1,20 @@
-const BinaryPjax            = require('../base/binary_pjax');
-const Client                = require('../base/client').Client;
-const State                 = require('../base/storage').State;
-const url_for               = require('../base/url').url_for;
-const RiskClassification    = require('../common_functions/risk_classification').RiskClassification;
-const FinancialAssessment   = require('../websocket_pages/user/account/settings/financial_assessment');
+const BinaryPjax          = require('../base/binary_pjax');
+const Client              = require('../base/client').Client;
+const State               = require('../base/storage').State;
+const url_for             = require('../base/url').url_for;
+const objectNotEmpty      = require('../base/utility').objectNotEmpty;
+const RiskClassification  = require('../common_functions/risk_classification').RiskClassification;
+const FinancialAssessment = require('../websocket_pages/user/account/settings/financial_assessment');
 
 function check_risk_classification() {
-    if (State.get(['response', 'get_account_status', 'get_account_status', 'risk_classification']) === 'high' &&
-        localStorage.getItem('risk_classification') === 'high' &&
-        qualify_for_risk_classification()) {
-        renderRiskClassificationPopUp();
-    }
+    BinarySocket.wait('get_financial_assessment').then(() => {
+        if (State.get(['response', 'get_account_status', 'get_account_status', 'risk_classification']) === 'high' &&
+            !objectNotEmpty(State.get(['response', 'get_financial_assessment', 'get_financial_assessment'])) &&
+            localStorage.getItem('risk_classification') === 'high' &&
+            qualify_for_risk_classification()) {
+            renderRiskClassificationPopUp();
+        }
+    });
 }
 
 function renderRiskClassificationPopUp() {
