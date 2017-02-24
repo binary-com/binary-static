@@ -4,7 +4,6 @@ const Login                     = require('../base/login').Login;
 const objectNotEmpty            = require('../base/utility').objectNotEmpty;
 const getPropertyValue          = require('../base/utility').getPropertyValue;
 const getLoginToken             = require('../common_functions/common_functions').getLoginToken;
-const displayAcctSettings       = require('../common_functions/account_opening').displayAcctSettings;
 const SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
 const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
 const Cashier                   = require('./cashier/cashier');
@@ -327,9 +326,6 @@ const BinarySocketClass = function() {
                         }
                     } else if (country_code === null && response.get_settings.country === null) {
                         Header.upgrade_message_visibility();
-                    }
-                    if (/realws|maltainvestws|japanws/.test(window.location.href)) {
-                        displayAcctSettings(response);
                     }
                     GTM.event_handler(response.get_settings);
                     Client.set('tnc_status', response.get_settings.client_tnc_status || '-');

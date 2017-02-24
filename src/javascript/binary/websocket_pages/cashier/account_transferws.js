@@ -242,9 +242,8 @@ const AccountTransferWS = (function() {
     };
 
     return {
-        init       : init,
-        apiResponse: apiResponse,
-        onLoad     : onLoad,
+        init  : init,
+        onLoad: onLoad,
     };
 })();
 

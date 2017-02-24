@@ -56,10 +56,16 @@ const SelfExclusionWS = (function() {
         timePickerInst.show();
         // 6 weeks
         const datePickerTime = new DatePicker('#' + timeDateID);
-        datePickerTime.show('today', 6 * 7);
+        datePickerTime.show({
+            minDate: 'today',
+            maxDate: 6 * 7,
+        });
         // 5 years
         const datePickerDate = new DatePicker('#' + dateID);
-        datePickerDate.show(moment().add(moment.duration(6, 'months')).toDate(), 5 * 365);
+        datePickerDate.show({
+            minDate: moment().add(moment.duration(6, 'months')).toDate(),
+            maxDate: 5 * 365,
+        });
         $('#' + timeDateID + ', #' + dateID).change(function() {
             dateValueChanged(this, 'date');
         });

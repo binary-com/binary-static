@@ -202,7 +202,7 @@ sub _texts {
         push @texts, localize('password');
         push @texts, localize('The two passwords that you entered do not match.');
         push @texts, localize('Your token has expired. Please click <a href="[_1]">here</a> to restart the verification process.');
-        push @texts, localize('Your provided email address is already in use by another Login ID. According to our terms and conditions, you may only register once through our site. If you have forgotten the password of your existing account, please <a href="[_1]">try our password recovery tool</a> or contact customer service.');
+        push @texts, localize('The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.');
         push @texts, localize('Password should have lower and uppercase letters with numbers.');
         push @texts, localize('Password is not strong enough.');
         push @texts, localize('Please [_1] to view this page');
@@ -499,6 +499,7 @@ sub _texts {
         push @texts, localize('Only letters, numbers, space, hyphen, period, and apostrophe are allowed.');
         push @texts, localize('Only letters, space, hyphen, period, and apostrophe are allowed.');
         push @texts, localize('Only letters, numbers, and hyphen are allowed.');
+        push @texts, localize('Only numbers, space, and hyphen are allowed.');
         push @texts, localize('Only numbers and spaces are allowed.');
         push @texts, localize('Please submit a valid verification token.');
         push @texts, localize('The two passwords that you entered do not match.');
