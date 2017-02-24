@@ -71,10 +71,10 @@
                             <h4 class="secondary-color">[% l('Banking') %]</h4>
                             <ul>
                                 <li>
-                                    <a href="[% request.url_for('/cashier') %]"[% IF target %] target="[% target %]"[% END %]>[% l('Cashier') %]</a>
+                                    <a href="[% request.url_for('/cashier') %]">[% l('Cashier') %]</a>
                                 </li>
                                 <li class="ja-hide">
-                                    <a href="[% request.url_for('/cashier/payment_methods') %]"[% IF target %] target="[% target %]"[% END %]>[% l('Payment Methods') %]</a>
+                                    <a href="[% request.url_for('/cashier/payment_methods') %]">[% l('Payment Methods') %]</a>
                                 </li>
                             </ul>
                         </div>
@@ -86,16 +86,16 @@
                            <h4 class="secondary-color">[% l('Legal') %]</h4>
                            <ul>
                                <li class='ja-hide'>
-                                   <a href="[% request.url_for('/terms-and-conditions') %]"[% IF target %] target="[% target %]"[% END %]>[% l('Terms and Conditions') %]</a>
+                                   <a href="[% request.url_for('/terms-and-conditions') %]">[% l('Terms and Conditions') %]</a>
                                </li>
                                <li class='hidden ja-show-block'>
-                                   <a href="[% request.url_for('/terms-and-conditions-jp') %]"[% IF target %] target="[% target %]"[% END %]>[% l('Terms and Conditions') %]</a>
+                                   <a href="[% request.url_for('/terms-and-conditions-jp') %]">[% l('Terms and Conditions') %]</a>
                                </li>
                                <li class='ja-hide'>
-                                   <a href="[% request.url_for('/terms-and-conditions') %]?#privacy"[% IF target %] target="[% target %]"[% END %]>[% l('Security and Privacy') %]</a>
+                                   <a href="[% request.url_for('/terms-and-conditions') %]?#privacy">[% l('Security and Privacy') %]</a>
                                </li>
                                <li class='hidden ja-show-block'>
-                                   <a href="[% request.url_for('/terms-and-conditions-jp') %]?#account-privacy"[% IF target %] target="[% target %]"[% END %]>[% l('Security and Privacy') %]</a>
+                                   <a href="[% request.url_for('/terms-and-conditions-jp') %]?#account-privacy">[% l('Security and Privacy') %]</a>
                                </li>
                                <li class="ja-hide">
                                    <a href="[% request.url_for('responsible-trading') %]">[% l('Responsible Trading') %]</a>
