@@ -7,7 +7,7 @@ const Client   = require('../../../../../base/client').Client;
 const elementTextContent  = require('../../../../../common_functions/common_functions').elementTextContent;
 const elementInnerHtml    = require('../../../../../common_functions/common_functions').elementInnerHtml;
 
-const Limits = (() => {
+const LimitsInit = (() => {
     'use strict';
 
     const limitsHandler = (response) => {
@@ -80,4 +80,4 @@ const Limits = (() => {
     };
 })();
 
-module.exports = Limits;
+module.exports = LimitsInit;

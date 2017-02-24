@@ -1,4 +1,4 @@
-const LimitsWS = require('./limits/limits.init');
+const LimitsInit = require('./limits/limits.init');
 const Content  = require('../../../../common_functions/content').Content;
 const Client   = require('../../../../base/client').Client;
 
@@ -7,22 +7,22 @@ const Limits = (() => {
         BinarySocket.wait('authorize').then(() => {
             Content.populate();
             if (Client.get('is_virtual')) {
-                LimitsWS.limitsError();
+                LimitsInit.limitsError();
                 return;
             }
 
             BinarySocket.send({ get_limits: 1 }).then((response) => {
                 if (response.error) {
-                    LimitsWS.limitsError(response.error);
+                    LimitsInit.limitsError(response.error);
                 } else {
-                    LimitsWS.limitsHandler(response);
+                    LimitsInit.limitsHandler(response);
                 }
             });
         });
     };
 
     const onUnload = () => {
-        LimitsWS.clean();
+        LimitsInit.clean();
     };
 
     return {
