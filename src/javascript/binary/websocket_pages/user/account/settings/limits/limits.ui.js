@@ -4,12 +4,12 @@ const localize = require('../../../../../base/localize').localize;
 const Client   = require('../../../../../base/client').Client;
 const elementTextContent  = require('../../../../../common_functions/common_functions').elementTextContent;
 
-const LimitsUI = (function() {
+const LimitsUI = (() => {
     'use strict';
 
     let clientLimits = '';
 
-    const appendRowTable = function(name, turnover_limit, padding, font_weight) {
+    const appendRowTable = (name, turnover_limit, padding, font_weight) => {
         clientLimits.append('<tr class="flex-tr">' +
             '<td class="flex-tr-child" style="padding-left: ' + padding + '; font-weight: ' + font_weight + ';">' +
             localize(name) +
@@ -20,14 +20,14 @@ const LimitsUI = (function() {
             '</tr>');
     };
 
-    const fillLimitsTable = function(limits) {
+    const fillLimitsTable = (limits) => {
         const currency = Client.get('currency');
 
         if (currency) {
             $('.limit').append(' (' + currency + ')');
         }
 
-        const openPosition   = document.getElementById('open-positions'),
+        const openPosition = document.getElementById('open-positions'),
             accountBalance = document.getElementById('account-balance'),
             payout         = document.getElementById('payout'),
             payoutPer      = document.getElementById('payout-per-symbol-and-contract-type');
@@ -60,7 +60,7 @@ const LimitsUI = (function() {
         $('#withdrawal-limits, #limits-title').removeClass('invisible');
     };
 
-    const clearTableContent = function() {
+    const clearTableContent = () =>  {
         Table.clearTableBody('client-limits');
     };
 
@@ -70,6 +70,4 @@ const LimitsUI = (function() {
     };
 })();
 
-module.exports = {
-    LimitsUI: LimitsUI,
-};
+module.exports = LimitsUI;

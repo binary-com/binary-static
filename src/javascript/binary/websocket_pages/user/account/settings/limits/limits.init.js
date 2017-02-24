@@ -1,16 +1,16 @@
 const template = require('../../../../../base/utility').template;
 const Content  = require('../../../../../common_functions/content').Content;
 const addComma = require('../../../../../common_functions/string_util').addComma;
-const LimitsUI = require('./limits.ui').LimitsUI;
+const LimitsUI = require('./limits.ui');
 const localize = require('../../../../../base/localize').localize;
 const Client   = require('../../../../../base/client').Client;
 const elementTextContent  = require('../../../../../common_functions/common_functions').elementTextContent;
 const elementInnerHtml    = require('../../../../../common_functions/common_functions').elementInnerHtml;
 
-const LimitsWS = (function() {
+const Limits = (() => {
     'use strict';
 
-    const limitsHandler = function(response) {
+    const limitsHandler = (response) => {
         const limits = response.get_limits;
         LimitsUI.fillLimitsTable(limits);
 
@@ -50,7 +50,7 @@ const LimitsWS = (function() {
         }
     };
 
-    const limitsError = function(error) {
+    const limitsError = (error) => {
         Content.populate();
         document.getElementById('withdrawal-title').setAttribute('style', 'display:none');
         document.getElementById('limits-title').setAttribute('style', 'display:none');
@@ -65,7 +65,7 @@ const LimitsWS = (function() {
         document.getElementById('client_message').setAttribute('style', 'display:block');
     };
 
-    const initTable = function() {
+    const initTable = () => {
         const client_message = document.getElementById('client_message');
         if (!client_message) return;
         client_message.setAttribute('style', 'display:none');
@@ -79,6 +79,4 @@ const LimitsWS = (function() {
     };
 })();
 
-module.exports = {
-    LimitsWS: LimitsWS,
-};
+module.exports = Limits;
