@@ -23,11 +23,12 @@ const redirectAccount = function() {
 
         // redirect client to correct account opening page if needed
         if (!State.get('is_financial_opening') &&
-            ((Client.can_upgrade_gaming_to_financial(landing_company) && !isVirtual) ||
+            ((!isVirtual && Client.can_upgrade_gaming_to_financial(landing_company)) ||
             Client.can_upgrade_virtual_to_financial(landing_company))) {
             window.location.href = url_for('new_account/maltainvestws');
             return false;
-        } else if (!State.get('is_japan_opening') && Client.can_upgrade_virtual_to_japan(landing_company) && isVirtual) {
+        }
+        if (!State.get('is_japan_opening') && isVirtual && Client.can_upgrade_virtual_to_japan(landing_company)) {
             window.location.href = url_for('new_account/japanws');
             return false;
         }
