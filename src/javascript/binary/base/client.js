@@ -271,31 +271,25 @@ const Client = (function () {
                     // control-class is a fake class, only used to counteract ja-hide class
                     $('.by_client_type.client_real').not((japanese_client() ? '.ja-hide' : '.control-class')).removeClass('invisible').show();
 
-                    $('#topbar').addClass('primary-color-dark')
-                                .removeClass('secondary-bg-color');
+                    $('#topbar').addClass('primary-color-dark').removeClass('secondary-bg-color');
 
                     if (!/^CR/.test(get('loginid'))) {
-                        $('#payment-agent-section').addClass('invisible')
-                                                   .hide();
+                        $('#payment-agent-section').addClass('invisible').hide();
                     }
 
                     if (has_gaming_financial_enabled()) {
                         $('#account-transfer-section').removeClass('invisible');
                     }
                 } else {
-                    $('.by_client_type.client_virtual').removeClass('invisible')
-                                                       .show();
+                    $('.by_client_type.client_virtual').removeClass('invisible').show();
 
-                    $('#topbar').addClass('secondary-bg-color')
-                                .removeClass('primary-color-dark');
+                    $('#topbar').addClass('secondary-bg-color').removeClass('primary-color-dark');
                 }
             });
         } else {
-            $('.by_client_type.client_logged_out').removeClass('invisible')
-                                                  .show();
+            $('.by_client_type.client_logged_out').removeClass('invisible').show();
 
-            $('#topbar').removeClass('secondary-bg-color')
-                        .addClass('primary-color-dark');
+            $('#topbar').removeClass('secondary-bg-color').addClass('primary-color-dark');
         }
     };
 
