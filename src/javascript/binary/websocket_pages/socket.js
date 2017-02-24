@@ -283,9 +283,6 @@ const BinarySocketClass = function() {
                         Client.send_logout_request(true);
                     } else if (dispatch_to !== 'cashier_password') {
                         authorized = true;
-                        if (typeof events.onauth === 'function') {
-                            events.onauth();
-                        }
                         if (!Login.is_login_pages()) {
                             Client.response_authorize(response);
                             send({ balance: 1, subscribe: 1 });
