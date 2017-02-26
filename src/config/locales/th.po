@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-20 17:13+0000\n"
+"PO-Revision-Date: 2017-02-26 17:03+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -36,44 +36,35 @@ msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 ถูกเพิ่มแล้วที่บัญชีเสมือนของท่าน %3"
 
 msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
-msgstr "%1 %2 ได้รับเงิน เมื่อ %3 ไม่ผ่านราคาและปิดที่ %4"
+msgstr "%1 %2 ได้รับเงิน เมื่อ %3 ไม่ผ่านราคาใช้สิทธิ์และปิดที่ %4"
 
 msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgstr "%1 %2 ได้รับเงิน เมื่อ %3 สิ้นสุดหรืออยู่ระหว่างค่าต่ำสุดและค่าสูงสุดของราคาซื้อขาย ณ เวลาปิดที่ %4"
 
-#, fuzzy
 msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgstr ""
-"%1 %2 ได้รับเงิน เมื่อ %3 ends outside low and high values of Exercise price at close on %4.\n"
-"%1 %2 วางเงิน หาก %3 ไม่ผ่านราคาและปิดที่ %4"
+"%1 %2 ได้รับเงิน เมื่อ %3 "
+"สิ้นสุดนอกขอบเขตราคาใช้สิทธิ์ต่ำสุดและสูงสุดและปิดที่ %4"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgstr ""
-"%1 %2 ได้รับเงิน เมื่อ %3 goes outside of low and high values of Exercise price through close on %4.\n"
-"%1 %2 วางเงิน หาก %3 ไม่ผ่านราคาและปิดที่ %4"
+"%1 %2 ได้รับเงิน เมื่อ %3 "
+"ออกนอกขอบเขตของราคาใช้สิทธิ์ที่ต่ำและสูงกว่าไปกระทั่งยุติที่ %4"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 msgstr ""
-"%1 %2 ได้รับเงิน เมื่อ %3 is strictly higher or equal than Exercise price at close  on %4.\n"
-"%1 %2 วางเงิน หาก %3 ไม่ผ่านราคาและปิดที่ %4"
+"%1 %2 ได้รับเงิน เมื่อ %3 มีมูลค่าเท่ากันหรือสูงกว่าราคาใช้สิทธิ์ที่ปิดเมื่อ "
+"%4"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
 msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
 msgstr ""
-"%1 %2 ได้รับเงิน เมื่อ %3 is strictly lower than Exercise price at close on %4.\n"
-"%1 %2 วางเงิน หาก %3 ไม่ผ่านราคาและปิดที่ %4"
+"%1 %2 ได้รับเงิน เมื่อ %3 มีมูลค่าเท่ากันหรือต่ำกว่าราคาใช้สิทธิ์ที่ปิดเมื่อ "
+"%4"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
 msgstr ""
-"%1 %2 ได้รับเงิน เมื่อ %3 stays between low and high values of Exercise price through close on %4.\n"
-"%1 %2 วางเงิน หาก %3 ไม่ผ่านราคาและปิดที่ %4"
+"%1 %2 ได้รับเงิน เมื่อ %3 "
+"อยูระหว่างค่าต่ำและสูงของราคาใช้สิทธิ์กระทั่งปิดเมื่อ %4"
 
 msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
 msgstr "%1 %2 ได้รับเงิน เมื่อ %3 แตะราคาอ้างอิงและปิดที่ %4"
@@ -213,8 +204,23 @@ msgstr "%1 เสนอบัญชีเงินเสมือนจริง
 msgid "%1 offers five main types of trades that will help you execute your market view or strategy:"
 msgstr "%1 นำเสนอการซื้อขาย 5 ประเภท ที่ช่วยท่านขับเคลื่อนกลยุทธ์การตลาด:"
 
+#, fuzzy
 msgid "%1 offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk). Client orders are typically hedged when the total transaction volume exceeds a predefined threshold of risk tolerance level. For both execution models, %1 acts as the contractual counterparty to the transactions that you enter into with us, as opposed to entering into a contractual counterparty with a central clearing house as would be the case with exchange traded financial instruments. As such, counterparty risk exists. Counterparty risk refers to the risk of loss for clients resulting from the fact that the counterparty to the forex and/or contracts for differences transaction that you entered into may default on its obligations prior to the final settlement of the transaction's cash flow."
 msgstr ""
+"%1 นำเสนอฟอเร็กซ์และสัญญาในรูปแบบที่แตกต่างผ่านตัวแบบเชิงผสมผสาน เช่น "
+"ทั้งการซื้อขายจากบัญชีของท่านเอง (ผ่าน Dealing Desk) และทำเฮดจิ้งบางส่วนกับตั"
+"วแทนของเรา (ไม่ผ่าน Dealing Desk) คำสั่งของลูกค้าจะถูกประกันความเสี่ยงไว้ "
+"เมื่อปริมาณธุรกรรมทั้งหมดเกินจากระดับความเสี่ยงที่กำหนดไว้ "
+"สำหรับตัวแบบทั้งสองนั้น %1 เป็นหุ้นส่วนของสัญญา ที่ท่านทำธุรกรรมกับเรา \n"
+"\n"
+"For both execution models, %1 acts as the contractual counterparty to the "
+"transactions that you enter into with us, as opposed to entering into a "
+"contractual counterparty with a central clearing house as would be the case "
+"with exchange traded financial instruments. As such, counterparty risk "
+"exists. Counterparty risk refers to the risk of loss for clients resulting "
+"from the fact that the counterparty to the forex and/or contracts for "
+"differences transaction that you entered into may default on its obligations "
+"prior to the final settlement of the transaction's cash flow."
 
 msgid "%1 offers new ways to trade"
 msgstr "%1 เสนอช่องทางใหม่ๆ ในการซื้อขาย"
@@ -1002,6 +1008,9 @@ msgstr "เงินทุนทั้งหมดโอนจากบัญช
 
 msgid "All intellectual property rights in the MT5 Trading Platform are owned by the Licensor and shall remain the exclusive property of the Licensor. Nothing in this Agreement intends to transfer any such rights or to vest any such rights in you."
 msgstr ""
+"สิทธิ์ทั้งหมดในทรัพย์สินทางปัญญาในแพลตฟอร์มการซื้อขาย MT5 "
+"มีกรรมสิทธิ์โดยผู้อนุญาตและคงกรรมสิทธิ์ในทรัพย์สินต่อผู้อนุญาต "
+"โดยไม่มีการยินยอมให้โอนถ่ายสิทธิ์ใดๆ ตามข้อตกลงนี้"
 
 msgid "All market conditions and durations"
 msgstr "ทุกเงื่อนไขของตลาด และทุกช่วงเวลา"
@@ -1014,6 +1023,13 @@ msgstr "ข้อมูลการให้ความเห็น ข่า�
 
 msgid "All products traded on margin carry a high degree of risk and can result in losses as well as profits that exceed your initial deposit. The margin trading service described in this Agreement is not suitable for everyone. You acknowledge that the margin trading service described in this Agreement is designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us."
 msgstr ""
+"ผลิตภัณฑ์ทั้งหมดที่ซื้อขายด้วยมาร์จินมีความเสี่ยงสูงและสามารถทำให้ขาดทุนหรือก"
+"ำไรภายหลังการวางเงินเดิมพันของท่านครั้งแรก "
+"บริการซื้อขายมาร์จินที่บรรยายในข้อตกลงนี้ไม่มีความเหมาะสมกับทุกคน ความยินยอมใ"
+"นการใช้บริการซื้อขายมาร์จินตามสัญญานี้เกิดจากความสมัครใจของท่านเองซื้อท่านเป็"
+"นผู้มีความรู้และมีประสบการณ์ต่อธุรกรรมประเภทต่างๆ "
+"ที่กล่าวถึงในสัญญาข้อตกลงนี้ และท่านมีความเข้าใจอันดีต่อความเสี่ยงที่เกี่ยวข้"
+"องก่อนการดำเนินการซื้อขายและลงนามในสัญญากับเรา"
 
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "เวลาที่ใช้อ้างอิง คือ GMT (Greenwich Mean Time) เวลามาตรฐานเมืองกรีนิช"
@@ -1098,6 +1114,9 @@ msgstr "ใดๆ"
 
 msgid "Any Transaction opened by you must be within any credit or position limit in effect with respect to the Real Account or any Transactions."
 msgstr ""
+"เมื่อมีการดำเนินธุรกรรมใดๆ "
+"ต้องอยู่ในวงเงินเครดิตหรือโพซิชั่นที่กำหนดของบัญชีจริง หรือ "
+"เงื่อนไขธุรกรรมนั้นๆ"
 
 msgid "Any changes in our privacy policy or security statement will be posted onto this website. In the event of material changes that directly affect the economic use of your personal information, we will request your prior authorisation in writing before effecting such change on your account."
 msgstr "การเปลี่ยนแปลงใดๆ ในนโยบายความเป็นส่วนตัว หรือ ด้านความปลอดภัยของพวกเรานั้นจะนำไปประกาศบนหน้าเว็บไซต์ ในกรณีที่มีการแก้ไขหรือการเปลี่ยนแปลงใดๆ ที่กระทบกับด้านเศรษฐศาสตร์ของการใช้ข้อมูลของท่าน พวกเราจะดำเนินการขออนุญาตจากท่านเป็นลายลักษณ์อักษรก่อนกระทำการเปลี่ยนแปลงนั้นกับบัญชีของท่าน"
@@ -1510,9 +1529,10 @@ msgstr "ไบนารีออปชั่น (Binary Options)"
 msgid "Binary Options Basics"
 msgstr "พื้นฐานไบนารีออปชั่น"
 
-#, fuzzy
 msgid "Binary Options Real Account - Your real money account opened with Binary.com which you use to trade binary options with Binary.com."
-msgstr "Binary Options Real Account -"
+msgstr ""
+"Binary Options Real Account - บัญชีเงินจริงของท่านที่เปิดกับ Binary.com "
+"ซึ่งท่านใช้ในการซื้อขายไบนารีออปชั่นกับ Binary.com"
 
 msgid "Binary Shop"
 msgstr "ร้านไบนารี"
@@ -1570,6 +1590,8 @@ msgstr "Binary.com"
 
 msgid "Binary.com assesses the choice of external execution venues regularly (at least once a year) with the intention of achieving a better result for you based on our best execution obligation."
 msgstr ""
+"Binary.com ประเมินปัจจัยของสถานที่ประมวลผลภายนอกสม่ำเสมอ (อย่างน้อยปีละครั้ง)"
+" ด้วยความมุ่งมั่นในการสร้างผลลัพธ์ที่ดีขึ้นให้กับท่าน"
 
 msgid "Binary.com is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements."
 msgstr "Binary.com ได้รับใบอนุญาตและได้รับการรับรองแพลตฟอร์มในการซื้อขายที่ให้บริการแก่ลูกค้ากว่า 1,000,000 รายทั่วโลก พวกเรามีใบอนุญาตต่างๆ ที่ได้รับการรับรองจากทั่วโลก ตั้งแต่ปี 1999 (พ.ศ. 2542) พวกเราให้บริการลูกค้าด้วยพันธกิจที่แน่วแน่เพื่อสร้างความน่าเชื่อถือ บูรณภาพ พวกเรายึดถือหลักการทางจริยธรรมอย่างสูงสุด"
@@ -1583,16 +1605,19 @@ msgstr "Binary.com เป็นผู้สนับสนุนกระบว�
 msgid "Binary.com is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "Binary.com ไม่ได้เปิดดำเนินการที่ประเทศคอสตาริก้า และไม่ได้ดำเนินการ หรือ ได้รับอำนวยการโดยหลักเกณฑ์ของ Costa Rican Financial System"
 
-#, fuzzy
 msgid "Binary.com offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk)."
-msgstr "Binary.com"
+msgstr ""
+"Binary.com นำเสนอฟอเร็กซ์และสัญญาในรูปแบบที่แตกต่างผ่านตัวแบบเชิงผสมผสาน เช่"
+"น ทั้งการซื้อขายจากบัญชีของท่านเอง (ผ่าน Dealing Desk) "
+"และทำเฮดจิ้งบางส่วนกับตัวแทนของเรา (ไม่ผ่าน Dealing Desk)"
 
 msgid "Binary.com open-source projects"
 msgstr "โครงการโอเพ่นซอสต่างๆ ของ Binary.com"
 
-#, fuzzy
 msgid "Binary.com owes you a duty of best execution when executing orders on your behalf, i.e., when you are placing a legitimate reliance on us to safeguard your interest in relation to the execution of your order."
-msgstr "Binary.com"
+msgstr ""
+"Binary.com รับผิดชอบอย่างดีที่สุดในการประมวลผลคำสั่งของท่าน "
+"ดังที่ท่านได้มอบความไว้วางใจให้เราดูแลคำสั่งซื้อของท่าน"
 
 msgid "Binary.com provides you best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by:"
 msgstr "Binary.com เตรียมการดำเนินการที่ดีที่สุดโดยใช้การรวบรวมวิธีการอันชาญฉลาดในการจัดการคำสั่งซื้อที่เข้ามา วิธีการอันชาญฉลาดดำเนินการโดย:"
@@ -1673,9 +1698,11 @@ msgstr "C. เงื่อนไขของการบริการ"
 msgid "CAD 1 per point"
 msgstr "1 CAD ต่อหน่วย"
 
-#, fuzzy
 msgid "CFD (Contract for Difference): CFD is an instrument that allows you to profit by speculating on the rise or fall of an instrument. The profit/loss is estimated as a function of the difference in the buy/sell prices of the underlying instrument."
-msgstr "CFD (Contract for Difference): CFD เป็นเครื่องมือ is an instrument that allows you to profit by speculating on the rise or fall of an instrument. The profit/loss is estimated as a function of the difference in the buy/sell prices of the underlying instrument."
+msgstr ""
+"CFD (Contract for Difference): CFD เป็นเครื่องมือในการทำกำไรทั้งขาขึ้"
+"นและขาลง กำไร หรือ "
+"ขาดทุนนั้นจะถูกประมาณการเมื่อมีการกำหนดราคาซื้อ/ราคาขายของผลิตภัณฑ์อ้างอิง"
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "ฉันสามารถเป็นพันธมิตรได้ไหม หากฉันไม่มีเว็บไซต์?"
@@ -1791,14 +1818,13 @@ msgstr "เลือกซื้อขายจากตลาด 5 ประเ
 msgid "Choose the Touch/No Touch trade if you want to predict the market touching or not touching a target any time during the contract period."
 msgstr "เลือกซื้อขาย Touch / No Touch เมื่อต้องการทำกำไรในตลาดโดยการพิจารณาราคาเป้าหมายว่า จะบรรลุ หรือ ไม่บรรลุ ราคาเป้าหมายในระยะเวลาของสัญญา"
 
-#, fuzzy
-#| msgid ""
-#| "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying\n"
-#| "            or selling the actual asset."
 msgid "Choose the asset you wish to trade, such as gold, oil, stocks, or currency pairs. The value of a binary option is derived from the price of the underlying asset. One advantage of trading binary options is that you are not buying or selling the actual asset, only a contract that determines how that asset performs."
 msgstr ""
-"สิ่งแรกที่ต้องทำ คือ เลือกสินทรัพย์ที่ท่านปรารถนาจะซื้อขาย เช่น ทองคำ หรือ น้ำมัน หลักทรัพย์ หรือ อัตราแลกเปลี่ยน (มูลค่าของไบนารีออปชั่นจะถูกกำหนดจากราคาของผลิตภัณฑ์อ้างอิง) ประโยชน์ที่ยิ่งใหญ่ของการซื้อขายออปชั่น คือ ท่านไม่ได้กำลังซื้อ\n"
-"            หรือ ดำเนินการขายสินทรัพย์จริง"
+"เลือกสินทรัพย์ที่ท่านปรารถนาจะซื้อขาย เช่น ทองคำ น้ำมัน หลักทรัพย์ หรือ "
+"อัตราแลกเปลี่ยน มูลค่าของไบนารีออปชั่นจะถูกกำหนดจากราคาของผลิตภัณฑ์อ้างอิง "
+"ประโยชน์ที่ยิ่งใหญ่ของการซื้อขายออปชั่น คือ ท่านไม่ได้กำลังซื้อ หรือ "
+"ดำเนินการขายสินทรัพย์จริง "
+"ท่านเพียงแต่ดำเนินการผ่านสัญญาที่กำหนดผลิตภัณฑ์อ้างอิงที่ท่านต้องการซื้อขาย"
 
 msgid "Choose the payment method you'd like to use."
 msgstr "กำหนดวิธีการชำระเงินที่ท่านต้องการ"
@@ -1876,7 +1902,10 @@ msgid "Clients registered with Binary Investments (Europe) Ltd can raise their u
 msgstr "ลูกค้าลงทะเบียนกับ Binary Investments (Europe) Ltd สามารถแจ้งข้อพิพาทต่างๆ ที่ยังไม่ได้ข้อสรุปของพวกเขากับ MFSA's Consumer Complaints Manager โดยรายละเอียดในการแจ้งมูลเหตุต่างๆ กับ MFSA's Consumer Complaints Manager สามารถศึกษาและตรวจสอบรายละเอียดได้จาก: %1 โดยข้อร้องเรียน ข้อพิพาทต่างๆ ที่แจ้งกับ MFSA's Consumer Complaints Manager นั้นต้องจัดทำเป็นลายลักษณ์อักษรเสมอ"
 
 msgid "Clients registered with any Group company, and in particular with Binary (V) Ltd. or Binary (C.R.). S.A., can raise their unresolved disputes with management by submitting an email to <a href='mailto:%1'>%1</a>."
-msgstr "ลูกค้าที่ลงทะเบียนกับบริษัทในเครือ และโดยเฉพาะกับ Binary (V) Ltd. หรืแ Binary (C.R.). S.A. สามารถส่งข้อคัดค้านของเขาให้กับผู้บริหารผ่านทางอีเมล์ <a href='mailto:%1'>%1</a>"
+msgstr ""
+"ลูกค้าที่ลงทะเบียนกับบริษัทในเครือ และโดยเฉพาะกับ Binary (V) Ltd. หรือ "
+"Binary (C.R.). S.A. สามารถส่งข้อคัดค้านของเขาให้กับผู้บริหารผ่านทางอีเมล์ <a "
+"href='mailto:%1'>%1</a>"
 
 msgid "Clients shall not hold or pool third party funds into their own account held with the Company."
 msgstr "ลูกค้าจะต้องไม่เป็น หรือ มีเงินของบุคคลที่สามในบัญชีของเขาที่มีในบริษัทฯ"
@@ -1892,6 +1921,8 @@ msgstr "เงินของลูกค้า"
 
 msgid "Close all or any of your Open Positions at a closing level that is reasonably available;"
 msgstr ""
+"การปิดโพซิชั่นทั้งหมด หรือ การปิดโพซิชั่นที่เปิดอยู่ใดๆ ณ "
+"ระดับปิดนั้นสามารถดำเนินการได้;"
 
 msgid "Closed"
 msgstr "ปิด"
@@ -2148,8 +2179,9 @@ msgstr "กอปปี้ไรท์เตอร์หรือ ผู้เ�
 msgid "Corporate Action"
 msgstr "การดำเนินการขององค์กร"
 
+#, fuzzy
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
-msgstr ""
+msgstr "Costs -"
 
 msgid "Costs and Charges"
 msgstr "ค่าใช้จ่ายและค่าธรรมเนียม"
@@ -2536,7 +2568,7 @@ msgid "Each binary option is a prediction on the future movement of an underlyin
 msgstr "แต่ละไบนารีออปชั่นเป็นการพยากรณ์การเคลื่อนไหวในอนาคตของตลาดจำเพาะต่างๆ"
 
 msgid "Each of the following event constitutes an \"Event of Default\":"
-msgstr ""
+msgstr "กรณีต่อไปนี้เป็นกรณีที่เรียกว่า \"ผิดนัด\":"
 
 msgid "Each option transaction has a specified expiry time and date, known as the judgment time."
 msgstr "แต่ละธุรกรรมออปชั่นมีการกำหนดวันและเวลาหมดอายุ หรือเป็นที่รู้จักในนาม เวลาตัดสิน"
@@ -3455,6 +3487,9 @@ msgstr "หากท่านมีความประสงค์ใด เ�
 
 msgid "If you buy <strong>1 Volume of Volatility 100 Index</strong> at a <strong>price of US&#36 20,000</strong> and a <strong>margin rate of 0.01(1%)</strong>, the margin required to purchase that one lot will be calculated as follows:"
 msgstr ""
+"หากท่านซื้อ <strong>1 สัญญาของดัชนี Volatility 100</strong> ที่ <strong>ราคา "
+"US&#36 20,000</strong> และ <strong>อัตรามาร์จินที่ "
+"0.01(1%)</strong>การคำนวณมาร์จินของการซื้อเป็นดังนี้:"
 
 msgid "If you buy <strong>one lot of the EUR/USD</strong> symbol with a <strong>contract size of 100,000</strong> and <strong>leverage of 100:1</strong>, the margin required to purchase that one lot will be calculated as follows:"
 msgstr ""
@@ -3588,10 +3623,14 @@ msgstr "หากท่านต้องการทราบข้อมูล
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
 msgstr "หากท่านต้องการแจ้งข้อปรับปรุง หรือร้องทุกข์เกี่ยวกับบริการของเรา โปรดติดต่อเราและให้รายละเอียดที่เกี่ยวข้องกับเหตุการณ์ที่ท่านพบ เราจะดำเนินการตรวจสอบและแจ้งกลับให้ท่านทราบต่อข้อร้องเรียนของท่าน เวลาที่ใช้ในการดำเนินการตามปกติ คือ ประมาณ 1-2 สัปดาห์ (และมากที่สุด คือ 2 เดือน) เมื่อได้รับเอกสารและรายละเอียดที่เกี่ยวข้องทั้งหมด"
 
-#, fuzzy
-#| msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
 msgid "If you would like to file a complaint with regards to the margin trading service described in this Agreement, kindly contact us by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
-msgstr "หากท่านต้องการแจ้งข้อปรับปรุง หรือร้องทุกข์เกี่ยวกับบริการของเรา โปรดติดต่อเราและให้รายละเอียดที่เกี่ยวข้องกับเหตุการณ์ที่ท่านพบ เราจะดำเนินการตรวจสอบและแจ้งกลับให้ท่านทราบต่อข้อร้องเรียนของท่าน เวลาที่ใช้ในการดำเนินการตามปกติ คือ ประมาณ 1-2 สัปดาห์ (และมากที่สุด คือ 2 เดือน) เมื่อได้รับเอกสารและรายละเอียดที่เกี่ยวข้องทั้งหมด"
+msgstr ""
+"หากท่านต้องการแจ้งข้อปรับปรุง "
+"หรือร้องทุกข์เกี่ยวกับบริการซื้อขายมาร์จินของเราที่กำหนดในข้อตกลงนี้ "
+"โปรดติดต่อเราและให้รายละเอียดที่เกี่ยวข้องกับเหตุการณ์ที่ท่านพบ "
+"เราจะดำเนินการตรวจสอบและแจ้งกลับให้ท่านทราบต่อข้อร้องเรียนของท่าน "
+"เวลาที่ใช้ในการดำเนินการตามปกติ คือ ประมาณ 1-2 สัปดาห์ (และมากที่สุด คือ "
+"ภายใน 2 เดือน) เมื่อได้รับเอกสารและรายละเอียดที่เกี่ยวข้องทั้งหมด"
 
 msgid "If you're a broker we'd like to work with you. You will be introducing your clients to a unique and innovative product - the %1 trading platform."
 msgstr "หากท่านเป็นโบรกเกอร์ พวกเราต้องการดำเนินธุรกิจร่วมกับท่าน เราจะแนะนำผลิตภัณฑ์นวัตกรรมที่ไม่เหมือนใครให้กับลูกค้าของท่าน - ระบบซื้อขาย %1"
@@ -3650,10 +3689,12 @@ msgstr "ในเดือนเมษายน <a target='_blank' href='http://
 msgid "In October 1999, Regent Markets receives US$ 2 million investment funding from Jim Mellon through his Regent Pacific Group, a Hong Kong based fund management company."
 msgstr "เมื่อเดือนตุลาคม พ.ศ. 2542 (ค.ศ.1999) Regent Markets ได้รับเงินลงทุน 2 ล้านเหรียญสหรัฐ จากนายจิม เมลลอน ผ่านทาง Regent Pacific Group บริษัทจัดการกองทุนที่ฮ่องกง"
 
-#, fuzzy
-#| msgid "Where we do not manage to obtain sufficient information to assess the appropriateness of the product or service for you, we will similarly inform you that we are not in a position to assess appropriateness."
 msgid "In accordance with applicable regulatory requirements, where we do not manage to obtain sufficient information to assess the appropriateness of the product or service for you, we will similarly inform you that we are not in a position to assess appropriateness."
-msgstr "พวกเราไม่มีหน้าที่ในการจัดการเพื่อให้ท่านมีข้อมูลเพียงพอต่อการประเมินผลิตภัณฑ์และบริการอย่างเหมาะสม พวกเราจะแจ้งท่านในทำนองเดียวกันว่า พวกเราไม่ได้ทำหน้าที่ประเมินความเหมาะสมให้ท่าน"
+msgstr ""
+"ในการปฏิบัติตามข้อกำหนดทางกฎเกณฑ์ที่เกี่ยวข้อง พวกเราไม่มีหน้าที่ในการจัดการเ"
+"พื่อให้ท่านมีข้อมูลเพียงพอต่อการประเมินผลิตภัณฑ์และบริการอย่างเหมาะสม "
+"พวกเราจะแจ้งท่านในทำนองเดียวกันว่า "
+"พวกเราไม่ได้ทำหน้าที่ประเมินความเหมาะสมให้ท่าน"
 
 msgid "In all circumstances, the Company reserves the right to make changes to these Terms and Conditions. If the Company elects to make any material changes to these Terms and Conditions, our clients will be notified in advance and shall either accept or decline to agree. Declining to agree shall result in a material breach of this agreement and the client's account maybe frozen, suspended or cancelled."
 msgstr "บริษัทฯ สงวนสิทธิ์ในการเปลี่ยนแปลข้อตกลงและเงื่อนไข หากมีการเปลี่ยนแปลงใดๆ เกิดขึ้น บริษัทฯ จะเรียนให้ลูกค้าทราบล่วงหน้าเพื่อให้พิจารณายอมรับ หรือ ปฏิเสธ ในกรณีที่ดำเนินการปฏิเสธจะส่งผลถึงการผิดสัญญา หรือฝ่าฝืนข้อตกลง และบัญชีของลูกค้าอาจจะถูกปฏิเสธ อาจจะถูกพักชั่วคราว หรือ ถูกยกเลิก"
@@ -4640,6 +4681,9 @@ msgstr "พันธมิตรระยะยาวด้วยบริกา
 
 msgid "Looking for a new and exciting career in a country that's modern, diverse and tolerant? Binary.com is one of the world's most progressive companies, with offices in Asia and Europe."
 msgstr ""
+"ท่านกำลังมองหาอาชีพใหม่ที่น่าตื่นเต้นในประเทศที่ทันสมัย หลายหลาย "
+"และยอมรับฟังความคิดเห็น? Binary.com เป็นหนึ่งในองค์กรที่มีพัฒนาการอย่างรวดเร็"
+"ว แวดล้อมด้วยสำนักงานทั้งในภูมิภาคเอเชีย และยุโรป"
 
 msgid "Loss"
 msgstr "เสีย"
@@ -5115,9 +5159,9 @@ msgstr "หมายเหตุ: การถอนเงินผ่านต�
 msgid "Notes:"
 msgstr "บันทึก:"
 
-#, fuzzy
 msgid "Nothing in this Force Majeure Event section shall be taken as indicating that it constitutes an event of default."
-msgstr "เหตุสุดวิสัย"
+msgstr ""
+"ไม่มีข้อใดในวรรคของเหตุสุดวิสัยจะใช้บ่งชี้ว่า เป็นสาเหตุของเหตุการณ์ตามปกติ"
 
 msgid "Notification of Changes"
 msgstr "การแจ้งความเปลี่ยนแปลงให้ทราบ"
@@ -5371,10 +5415,10 @@ msgstr "นโยบายเกี่ยวกับความปลอดภ
 msgid "Our locations"
 msgstr "สถานที่ต่างๆ ของเรา"
 
-#, fuzzy
-#| msgid "%1 prices are benchmarked against the interbank options market, so you always get best-in-class prices for your trades."
 msgid "Our prices are benchmarked against the interbank options market. You’ll receive fair and transparent pricing, whatever your position."
-msgstr "%1 ราคาต่างๆ นั้น อ้างอิงตามเกณฑ์มาตรฐานของราคาออปชั่นในตลาด ดังนั้นท่านจะได้รับราคาที่ดีที่สุดเสมอในการเทรดของท่าน"
+msgstr ""
+"ราคาต่างๆ ของพวกเรานั้น อ้างอิงตามเกณฑ์มาตรฐานของราคาออปชั่นในตลาด "
+"ดังนั้นท่านจะได้รับราคาที่ยุติธรรมและโปร่งใสเสมอในการซื้อขายของท่าน"
 
 msgid "Our services are provided on an execution only basis. We do not provide investment advice in relation to our products or services. We sometimes provide factual information or research recommendations about a market, information about transaction procedures and information about the potential risks involved and how those risks may be minimised. However, any decision to use our products or services is made by you."
 msgstr "บริการของเราเกี่ยวข้องกับการดำเนินการซื้อขายเท่านั้น ไม่รวมถึงบริการให้คำแนำนำการลงทุนเกี่ยวกับสินค้าและบริการของเรา โดยพวกเราเตรียมข้อมูลข้อเท็จจริง บทวิเคราะห์เกี่ยวกับตลาด ขั้นตอนการดำเนินธุรกรรม และข้อมูลเกี่ยวกับความเสี่ยงที่เกี่ยวข้อง เพื่อให้มีความเสี่ยงในระดับต่ำ อย่างไรก็ตาม การตัดสินใจเกี่ยวกับการเลือกใช้สินค้าหรือบริการใดๆ ของเรานั้นถูกกำหนดโดยท่านผู้ดำเนินการซื้อขาย"
@@ -5782,7 +5826,7 @@ msgid "Price - the price at which the transaction in relation to your order is e
 msgstr ""
 
 msgid "Price/ Prices - Bid and Offer Price/ Prices."
-msgstr ""
+msgstr "Price/ Prices - ราคาเสนอซื้อ และ ราคาเสนอขาย / ราคา"
 
 msgid "Primary"
 msgstr "หลัก"
@@ -5823,10 +5867,8 @@ msgstr "กำลังดำเนินการตามความประ
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "รับผิดชอบในการผลิตเนื้อหาที่ใช้อยู่ในเว็บไซต์ บล็อก สื่อสังคมต่างๆ และสื่อการตลาดของบริษัทฯ"
 
-#, fuzzy
-#| msgid "Risk Disclosure Statement"
 msgid "Product Disclosure Statement"
-msgstr "ข้อตกลงการสงวนสิทธิ์ด้านความเสี่ยง"
+msgstr "ข้อตกลงการสงวนสิทธิ์ด้านผลิตภัณฑ์"
 
 msgid "Professional Clients"
 msgstr "อาชีพของลูกค้า"
@@ -5942,10 +5984,13 @@ msgstr "ป้อนรหัสผ่านของท่านอีกคร
 msgid "Read"
 msgstr "อ่าน"
 
-#, fuzzy
-#| msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
 msgid "Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
-msgstr "ศึกษาเพิ่มเติมเกี่ยวกับคุณลักษณะ ลักษณะพิเศษ ประโยชน์ และความเสี่ยงของไบนารีออปชั่นในหนังสือชี้ชวนของด้านล่าง รวมถึงในส่วน \"ตารางเวลา\" สำหรับตัวอย่างการลงทุนของสัญญาประเภทต่างๆ ที่ช่วยให้ท่านเข้าใจพื้นฐานของไบนารีออปชั่น"
+msgstr ""
+"ศึกษาเพิ่มเติมเกี่ยวกับคุณลักษณะ ลักษณะพิเศษ ประโยชน์ "
+"และความเสี่ยงของไบนารีออปชั่นในข้อตกลงการสงวนสิทธิ์ด้านผลิตภัณฑ์ของ Binary "
+"Investments (Europe) Limited ด้านล่าง รวมถึงในส่วน \"ภาคผนวก\" "
+"สำหรับตัวอย่างการลงทุนของสัญญาประเภทต่างๆ "
+"ที่ช่วยให้ท่านเข้าใจพื้นฐานของไบนารีออปชั่น"
 
 msgid "Read about the five types of trade offered by %1."
 msgstr "อ่านเกี่ยวกับประเภทของการซื้อขาย 5 ประเภท โดย %1"
@@ -6583,10 +6628,8 @@ msgstr "ระดับการระงับการขาดทุน"
 msgid "Stop Order / Stop Loss Order - an instruction to execute a Transaction to close an Open Position when the Price reaches your specified Price."
 msgstr ""
 
-#, fuzzy
-#| msgid "Stop Profit Level"
 msgid "Stop Out Level"
-msgstr "ระดับการระงับกำไร"
+msgstr "ระดับยุติการซื้อขาย"
 
 msgid "Stop Out Level - the Margin Level at or below which your Open Positions may be forcefully with or without your prior consent."
 msgstr ""
@@ -7124,8 +7167,9 @@ msgstr "ระยะเวลาของสัญญาในการซื้
 msgid "The customer agrees they understand each the following statements regarding OTC binary options trading:"
 msgstr "ลูกค้ายินยอม และเข้าใจในแต่ละเงื่อนไขต่อไปนี้ เกี่ยวกับการซื้อขายไบนารีออปชั่น OTC:"
 
+#, fuzzy
 msgid "The cut-off time for performing Roll-overs and booking of the Roll-over Credit/Debit."
-msgstr ""
+msgstr "ในเวลา"
 
 msgid "The default Stop Out Level applicable to your Account is published on our website. However, the default Stop Out Level is subject to alteration at our absolute discretion. Any changes to the Stop Out Level will take effect immediately. We will endeavour to notify you of an alteration to the default Stop Out Level by publishing the revised default Stop Out Level on our website. It is your responsibility to check our website regularly and remain informed about the default Stop Out Level."
 msgstr ""
@@ -7150,6 +7194,8 @@ msgstr "ราคาสปอตเริ่มต้น คือ ราคา�
 
 msgid "The execution venues are assessed, on a regular basis, whether the they provide for the best possible result for our clients."
 msgstr ""
+"สถานที่ในการประมวลผลถูกดำเนินการประเมินตามงวดเวลา "
+"เพื่อให้มีการให้บริการที่ดีที่สุดเท่าที่เป็นไปได้กับลูกค้าของเรา"
 
 msgid "The execution, delivery and performance of this Agreement and each Transaction will not violate any law, ordinance, charter, by-law or rule applicable to you or the jurisdiction in which you are resident."
 msgstr ""
@@ -7186,6 +7232,8 @@ msgstr "ข้อมูลในขณะลงทะเบียนยืนย
 
 msgid "The instruments available on the electronic trading platform (including their availability for trading);"
 msgstr ""
+"เครื่องมือต่างๆ มีให้เรียกใช้ในแพลตฟอร์มการซื้อขายอิเล็กทรอนิกส์ (รวมถึง "
+"มีพร้อมสำหรับการซื้อขาย)"
 
 msgid "The interest adjustment is calculated in points, meaning we will convert the relevant interbank lending rates to points in the base currency."
 msgstr ""
@@ -8136,6 +8184,9 @@ msgstr ""
 
 msgid "We may, however, withhold your withdrawal request from your Real Account to your Binary Options Real Account, in whole or in part, if:"
 msgstr ""
+"อย่างไรก็ตาม "
+"ท่านอาจจะระงับคำสั่งถอนเงินของท่านจากบัญชีจริงไปบัญชีไบนารีออปชั่นจริง ทั้"
+"งหมด หรือ บางส่วน หาก:"
 
 msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you’re in Malta or Malaysia."
 msgstr "พวกเราให้ค่าตอบแทนตามโครงสร้างของตลาด มีโบนัสรายปี มีการประกันสุขภาพ มีค่าเบี้ยเลี้ยงในการเดินทางและอินเทอร์เน็ต รวมถึงมีกิจกรรมการเดินทางท่องเที่ยวร่วมกันในบริษัทฯ อีกทั้งมีคุณภาพชีวิตขั้นสูง ไม่ว่าจะเป็นสำนักงานที่มอลตา หรือ มาเลเซีย"
@@ -8147,7 +8198,7 @@ msgid "We provide here a summary of the policy we maintain in order to manage co
 msgstr "พวกเราจัดเตรียมนโยบายโดยสรุปเพื่อมีขึ้นเพื่อบริหารจัดการความขัดแย้งในผลประโยชน์ตามหน้าที่ที่เรามีต่อลูกค้าของเรา"
 
 msgid "We reasonably consider that funds may be required to meet any Margin Requirement; and/or"
-msgstr ""
+msgstr "ท่านพิจารณาว่า ต้องวางหลักทรัพย์ตามข้อกำหนดมาร์จิน และ/หรือ"
 
 msgid "We rebrand BetOnMarkets.com as <a target='_blank' href='%1'>www.%2</a>. The rebranding is a natural evolution for the platform as it continues to grow market share in the highly competitive field of binary trading. The new brand reflects the nature of the business, and our new tagline - Sharp Prices, Smart Trading - communicates our ethos and commitment to our clients."
 msgstr "เราปรับปรุงภาพลักษณ์ BetOnMarkets.com ให้เป็น <a target='_blank' href='%1'>www.%2</a> การปรับปรุงภาพลักษณ์เป็นวิวัฒนาการตามธรรมชาติสำหรับแพลตฟอร์มเพื่อที่จะโตอย่างต่อเนื่องในตลาดการซื้อขายไบนารีที่มีการแข่งขันสูง ภาพลักษณ์ใหม่แสดงถึงธรรมชาติของธุรกิจ และคำนิยามใหม่ของเรา - ราคาเฉียบ การซื้อขายอันชาญฉลาด (Sharp Prices Smart Trading) ที่สื่อความถึงปรัชญาและพันธกิจขององค์กรที่มีต่อลูกค้าของเรา"
@@ -8516,6 +8567,8 @@ msgstr ""
 
 msgid "You acknowledge and accept that your Real Account will be maintained in one currency, which is the same currency maintained in your Binary Options Real Account."
 msgstr ""
+"ท่านยอมรับว่า บัญชีเงินจริงของท่านจะถูกผูกกับเงินสกุลใดสกุลหนึ่ง "
+"ที่เป็นสกุลเงินเดียวกับบัญชีเงินจริงไบนารีออปชั่นของท่าน"
 
 msgid "You acknowledge and agree that the Company may, at any time without prior notice and at its discretion, change the trading rules in relation to:"
 msgstr ""
@@ -8528,6 +8581,10 @@ msgstr ""
 
 msgid "You acknowledge that it is your responsibility to monitor your Account Balance and Margin Requirement and we are not under any obligation to keep you informed (i.e., to make a Margin Call)."
 msgstr ""
+"ท่านยอมรับว่า "
+"เป็นหน้าที่ความรับผิดชอบของท่านในการตรวจสอบยอดคงเหลือในบัญชีของท่าน "
+"และข้อกำหนดมาร์จิน และท่านจะไม่ละเลยต่อหน้าที่ที่ท่านพึงได้รับแจ้ง (เช่น "
+"การเรียกให้ชำระมูลค่า กรณี Margin Call)"
 
 msgid "You acknowledge that it is your responsibility to understand the features, characteristics, terms and conditions of an Order and the implications of executing an Order before you place an Order with us."
 msgstr ""
@@ -8594,6 +8651,10 @@ msgstr "ท่านไม่ได้รับสิทธิ์ในการ
 
 msgid "You are not resident in a restricted country such as the USA, Japan, Hong Kong, Costa Rica, Malaysia, Malta, Iran, North Korea, Jersey, Iraq, or such other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr ""
+"ท่านไม่มีที่พำนัก หรือ มีถิ่นฐานในประเทศต่อไปนี้ สหรัฐอเมริการ ญี่ปุ้น ฮ่"
+"องกง คอสตาริก้า มาเลเซีย มอลตา อิหร่าน เกาหลีเหนือ เจอร์ซี อิรัก หรือ "
+"ประเทศอื่นๆ ที่ทางบริษัทฯ "
+"อาจจะมีการกำหนดในแต่ละครั้งตามดุลยพินิจของบริษัทฯแต่เพียงผู้เดียว"
 
 msgid "You are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
 msgstr "ท่านมีอายุมากกว่า 18 ปี หากแต่ท่านเป็นพลเมืองเอสโทเนีย ท่านจะต้องอายุมากกว่า 21 ปี;"
@@ -8655,10 +8716,8 @@ msgstr "ท่านไม่ได้รับอนุญาตให้เข
 msgid "You have not obtained and have not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business;"
 msgstr "ท่านไม่ได้รับ และไม่ได้ดำเนินการต่อใบอนุญาตที่จำเป็นทั้งหมด หรือ ยินยอมที่จะปฏิบัติตามกฏหมาย ข้อกำหนด และกฎเกณฑ์ที่เป็นไปตามอำนาจและขอบเขตของการบังคับใช้ตามกฎหมายที่ท่านดำเนินการ หรือ กำหนดในธุรกิจของท่าน"
 
-#, fuzzy
-#| msgid "You have reached the rate limit for %1."
 msgid "You have reached the rate limit of requests per second. Please try later."
-msgstr "ท่านได้ใช้วงเงินสำหรับ %1 เต็มมูลค่าแล้ว"
+msgstr "ท่านได้ใช้อัตราการส่งคำสั่งต่อวินาทีเกินที่กำหนด กรุณาลองใหม่ภายหลัง"
 
 msgid "You have read our privacy statement and hereby give us consent to process your personal information as outlined there;"
 msgstr "ท่านได้อ่านนโยบายความเป็นส่วนตัวของเรา และให้ความยินยอมในการดำเนินการต่อข้อมูลส่วนบุคคลของท่านตามที่กล่าวนี้;"
@@ -8818,6 +8877,9 @@ msgstr "ท่านควรจะอ่านเงื่อนไขและ
 
 msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial markets indices (forex, stocks, commodities) are financial instruments."
 msgstr ""
+"ท่านมีความเข้าใจในผลิตภัณฑ์ที่อยู่บนฐานตัวเลขสุ่ม (\"ดัชนีผันผวน\") กล่าวคือ "
+"เป็นผลิตภัณฑ์การพนัน ที่อ้างอิงกับดัชนีของตลาดการเงิน (ฟอเร็กซ์ หลักทรัพย์ "
+"สินค้าโภคภัณฑ์) เป็นเครื่องมือทางการเงิน"
 
 msgid "You will be automatically logged out after such time."
 msgstr "ท่านออกจากระบบโดยอัตโนมัติภายหลังเวลาดังกล่าว"
@@ -8929,6 +8991,9 @@ msgstr "ลูกค้าของท่านจะชอบระบบซื
 
 msgid "Your death, your incapacity, become of unsound mind or your inability to pay your debts as they fall due, or is bankrupt or insolvent, as defined under any bankruptcy or insolvency law applicable to you, if you are an individual;"
 msgstr ""
+"การถึงแก่กรรมของท่าน การลุสมรรถภาพ การกลายเป็นบุคคลวิกลจริต "
+"หรือขาดความสามารถในการชำระหนี้ของท่าน หรือการเป็นบุคคลล้มละลาย "
+"หรือสิ้นเนื้อประดาตัว ตามกฎหมายบุคคลล้มละลาย"
 
 msgid "Your debts are not settled as and when they fall due;"
 msgstr "หนี้ของท่านยังไม่ได้รับชำระและถึงกำหนดแล้ว"
@@ -8963,10 +9028,8 @@ msgstr "คำสั่งของท่านเพื่อถอน %1 %2 �
 msgid "Your session duration limit will end in %1 seconds."
 msgstr "เวลาการซื้อขายของท่านจะสิ้นสุดภายใน %1 วินาที"
 
-#, fuzzy
-#| msgid "Your changes have been updated successfully."
 msgid "Your settings have been updated successfully."
-msgstr "การแก้ไขของท่านถูกดำเนินการเรียบร้อยแล้ว"
+msgstr "การตั้งค่าของท่านถูกดำเนินการเรียบร้อยแล้ว"
 
 msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
 msgstr "โทเค่นของท่านหมดอายุแล้ว โปรดคลิก<a class=\"pjaxload\" href=\"%1\">ที่นี่</a> เพื่อดำเนินกระบวนการตรวจสอบ"
