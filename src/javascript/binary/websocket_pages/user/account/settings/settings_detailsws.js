@@ -78,7 +78,7 @@ const SettingsDetailsWS = (function() {
         }
         let $key,
             $lbl_key,
-            $data_key,
+            data_key,
             has_key,
             has_lbl_key;
         Object.keys(data).forEach((key) => {
@@ -89,15 +89,15 @@ const SettingsDetailsWS = (function() {
             // prioritise labels for japan account
             $key = has_key && has_lbl_key ? (isJP ? $lbl_key : $key) : (has_key ? $key : $lbl_key);
             if ($key.length > 0) {
-                $data_key = data[key];
-                editable_fields[key] = $data_key === null ? '' : $data_key;
+                data_key = data[key] || '';
+                editable_fields[key] = data_key;
                 if (populate) {
                     if ($key.is(':checkbox')) {
-                        $key.prop('checked', !!$data_key);
+                        $key.prop('checked', !!data_key);
                     } else if (/(SELECT|INPUT)/.test($key.prop('nodeName'))) {
-                        $key.val($data_key.split(',')).trigger('change');
+                        $key.val(data_key.split(',')).trigger('change');
                     } else {
-                        $key.text($data_key ? localize($data_key) : '-');
+                        $key.text(data_key ? localize(data_key) : '-');
                     }
                 }
             }
