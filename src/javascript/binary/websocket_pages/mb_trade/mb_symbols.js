@@ -46,12 +46,14 @@ const MBSymbols = (function () {
             BinaryPjax.load('trading');
             return;
         }
-        const landing_company = landing_company_obj.financial_company ? landing_company_obj.financial_company.shortcode : 'japan';
-        BinarySocket.send({
-            active_symbols : 'brief',
-            landing_company: landing_company,
-            product_type   : 'multi_barrier',
-        });
+        const req = {
+            active_symbols: 'brief',
+            product_type  : 'multi_barrier',
+        };
+        if (landing_company_obj) {
+            req.landing_company = landing_company_obj.financial_company ? landing_company_obj.financial_company.shortcode : 'japan';
+        }
+        BinarySocket.send(req);
         need_page_update = update;
     };
 

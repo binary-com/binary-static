@@ -359,7 +359,7 @@ const Client = (function () {
     };
 
     const current_landing_company = function() {
-        const landing_company_response = State.get(['response', 'landing_company', 'landing_company']);
+        const landing_company_response = State.get(['response', 'landing_company', 'landing_company']) || {};
         let client_landing_company = {};
         Object.keys(landing_company_response).forEach(function (key) {
             if (client_object.landing_company_name === landing_company_response[key].shortcode) {
