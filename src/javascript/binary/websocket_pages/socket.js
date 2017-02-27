@@ -8,7 +8,6 @@ const SessionDurationLimit      = require('../common_functions/session_duration_
 const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
 const Cashier                   = require('./cashier/cashier');
 const CashierJP                 = require('../../binary_japan/cashier');
-const PaymentAgentWithdrawWS    = require('./cashier/payment_agent_withdrawws');
 const create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
 const ViewPopupWS               = require('./user/view_popup/view_popupws');
 const ViewBalanceUI             = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
@@ -379,8 +378,6 @@ const BinarySocketClass = function() {
                         BinarySocket.send({ cashier_password: '1' });
                     } else if (dispatch_to === 'Cashier') {
                         Cashier.check_locked();
-                    } else if (dispatch_to === 'PaymentAgentWithdrawWS') {
-                        PaymentAgentWithdrawWS.lock_withdrawal(Client.status_detected('withdrawal_locked, cashier_locked', 'any') ? 'locked' : 'unlocked');
                     }
                 } else if (type === 'get_financial_assessment' && !response.error) {
                     if (!objectNotEmpty(response.get_financial_assessment)) {
