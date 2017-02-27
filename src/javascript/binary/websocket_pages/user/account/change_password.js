@@ -12,16 +12,7 @@ const PasswordWS = (function() {
     let $form,
         $result;
 
-    const hasPassword = function () {
-        if (Client.get('values_set') && !Client.get('has_password')) {
-            window.location.href = url_for('user/settingsws');
-            return false;
-        }
-        return true;
-    };
-
     const init = function() {
-        if (!hasPassword()) return;
         const $container = $('#change-password');
         $container.removeClass('invisible');
         $form = $container.find(' > form');
@@ -75,7 +66,6 @@ const PasswordWS = (function() {
     };
 
     const sendRequest = function(data) {
-        if (!hasPassword()) return;
         BinarySocket.send({
             change_password: '1',
             old_password   : data.old_password,
@@ -102,8 +92,16 @@ const PasswordWS = (function() {
         }, 5000);
     };
 
-    const initSocket = function() {
+    const onLoad = function() {
         Content.populate();
+
+        BinarySocket.wait('get_account_status').then((response) => {
+            if (/has_password/.test(response.get_account_status.status)) {
+                init();
+            } else {
+                window.location.href = url_for('user/settingsws');
+            }
+        });
 
         BinarySocket.init({
             onmessage: function(msg) {
@@ -111,17 +109,14 @@ const PasswordWS = (function() {
                 if (!response) return;
                 const type = response.msg_type;
                 if (type === 'change_password' || (type === 'error' && 'change_password' in response.echo_req)) {
-                    PasswordWS.handler(response);
+                    handler(response);
                 }
             },
         });
-        PasswordWS.init();
     };
 
     return {
-        init      : init,
-        handler   : handler,
-        initSocket: initSocket,
+        onLoad: onLoad,
     };
 })();
 

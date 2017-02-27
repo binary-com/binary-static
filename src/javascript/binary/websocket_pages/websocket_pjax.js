@@ -191,7 +191,7 @@ pjax_config_page_require_auth('user/authenticatews', function() {
 pjax_config_page_require_auth('user/security/change_password', function() {
     return {
         onLoad: function() {
-            PasswordWS.initSocket();
+            PasswordWS.onLoad();
         },
     };
 });

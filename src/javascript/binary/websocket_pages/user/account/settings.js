@@ -5,7 +5,7 @@ const SettingsWS = (function() {
     'use strict';
 
     const onLoad = function() {
-        BinarySocket.wait('authorize', 'get_account_status').then(() => {
+        BinarySocket.wait('get_account_status').then((response) => {
             const classHidden = 'invisible';
             const classReal   = '.real';
 
@@ -15,7 +15,7 @@ const SettingsWS = (function() {
                 $(classReal).not((japanese_client() ? '.ja-hide' : '')).removeClass(classHidden);
             }
 
-            if (Client.get('has_password')) {
+            if (/has_password/.test(response.get_account_status.status)) {
                 $('#change_password').removeClass(classHidden);
             }
 
