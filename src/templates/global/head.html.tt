@@ -27,12 +27,15 @@
 
         [% INCLUDE global/title.html.tt %]
 
+<<<<<<< HEAD
         [%# <link rel="manifest" href="[% root_url _ 'manifest.json' % ]">
         <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script> %]
 
         <link rel="manifest" href="[% root_url _ 'manifest.json' %]">
         <script type="text/javascript" src="//cdn.pushwoosh.com/webpush/pushwoosh-web-notifications.js" async></script>
 
+=======
+>>>>>>> upstream/master
         <link rel="apple-touch-icon" sizes="57x57" href="https://style.binary.com/images/favicons/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="114x114" href="https://style.binary.com/images/favicons/apple-touch-icon-114x114.png">
         <link rel="apple-touch-icon" sizes="72x72" href="https://style.binary.com/images/favicons/apple-touch-icon-72x72.png">

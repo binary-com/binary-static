@@ -66,6 +66,7 @@ Page.prototype = {
         this.endpoint_notification();
         BinarySocket.init();
         this.show_notification_outdated_browser();
+        push_notification()
     },
     on_unload: function() {
         Menu.on_unload();
