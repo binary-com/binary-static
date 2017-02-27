@@ -6,7 +6,7 @@ const PaymentAgentWithdrawWS        = require('./cashier/payment_agent_withdraww
 const AssetIndexUI                  = require('./resources/asset_index/asset_indexws.ui').AssetIndexUI;
 const MarketTimesUI                 = require('./resources/market_times/market_timesws.ui').MarketTimesUI;
 const AuthenticateWS                = require('./user/account/authenticate').AuthenticateWS;
-const PasswordWS                    = require('./user/account/change_password').PasswordWS;
+const ChangePassword                = require('./user/account/change_password');
 const PaymentAgentTransferSocket    = require('./user/account/payment_agent_transfer').PaymentAgentTransferSocket;
 const PortfolioWS                   = require('./user/account/portfolio/portfolio.init').PortfolioWS;
 const ProfitTableWS                 = require('./user/account/profit_table/profit_table.init').ProfitTableWS;
@@ -17,8 +17,8 @@ const IPHistory                     = require('./user/account/settings/iphistory
 const Limits                        = require('./user/account/settings/limits').Limits;
 const SelfExclusionWS               = require('./user/account/settings/self_exclusion').SelfExclusionWS;
 const SettingsDetailsWS             = require('./user/account/settings/settings_detailsws').SettingsDetailsWS;
-const SecurityWS                    = require('./user/account/settings/settings_securityws').SecurityWS;
-const SettingsWS                    = require('./user/account/settings').SettingsWS;
+const CashierPassword               = require('./user/account/settings/cashier_password');
+const Settings                      = require('./user/account/settings');
 const StatementWS                   = require('./user/account/statement/statement.init').StatementWS;
 const TopUpVirtualWS                = require('./user/account/top_up_virtualws').TopUpVirtualWS;
 const LostPasswordWS                = require('./user/lost_password').LostPasswordWS;
@@ -127,7 +127,7 @@ pjax_config_page_require_auth('user/security/self_exclusionws', function() {
 pjax_config_page_require_auth('user/security/cashier_passwordws', function() {
     return {
         onLoad: function() {
-            SecurityWS.init();
+            CashierPassword.onLoad();
         },
     };
 });
@@ -191,7 +191,7 @@ pjax_config_page_require_auth('user/authenticatews', function() {
 pjax_config_page_require_auth('user/security/change_password', function() {
     return {
         onLoad: function() {
-            PasswordWS.onLoad();
+            ChangePassword.onLoad();
         },
     };
 });
@@ -259,7 +259,7 @@ pjax_config_page_require_auth('settings/detailsws', function() {
 pjax_config_page_require_auth('settingsws|securityws', function() {
     return {
         onLoad: function() {
-            SettingsWS.onLoad();
+            Settings.onLoad();
         },
     };
 });

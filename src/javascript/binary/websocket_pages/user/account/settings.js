@@ -1,7 +1,7 @@
 const japanese_client = require('../../../common_functions/country_base').japanese_client;
 const Client          = require('../../../base/client').Client;
 
-const SettingsWS = (function() {
+const Settings = (function() {
     'use strict';
 
     const onLoad = function() {
@@ -28,6 +28,4 @@ const SettingsWS = (function() {
     };
 })();
 
-module.exports = {
-    SettingsWS: SettingsWS,
-};
+module.exports = Settings;
