@@ -11,7 +11,7 @@ const Home                          = require('./home').Home;
 const WhyUs                         = require('./why_us').WhyUs;
 const CharityPage                   = require('./charity').CharityPage;
 const TermsAndConditions            = require('./tnc').TermsAndConditions;
-const CashierJP                     = require('../../binary_japan/cashier').CashierJP;
+const CashierJP                     = require('../../binary_japan/cashier');
 const LoggedInHandler               = require('../base/logged_in').LoggedInHandler;
 const pjax_config_page_require_auth = require('../base/pjax').pjax_config_page_require_auth;
 const pjax_config_page              = require('../base/pjax').pjax_config_page;
@@ -128,7 +128,7 @@ pjax_config_page('/platforms', function() {
 pjax_config_page_require_auth('/cashier/deposit-jp', function() {
     return {
         onLoad: function() {
-            CashierJP.init('deposit');
+            CashierJP.onLoad('deposit');
         },
     };
 });
@@ -136,7 +136,7 @@ pjax_config_page_require_auth('/cashier/deposit-jp', function() {
 pjax_config_page_require_auth('/cashier/withdraw-jp', function() {
     return {
         onLoad: function() {
-            CashierJP.init('withdraw');
+            CashierJP.onLoad('withdraw');
         },
     };
 });

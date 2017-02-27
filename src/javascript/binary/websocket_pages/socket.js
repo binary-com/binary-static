@@ -343,8 +343,6 @@ const BinarySocketClass = function() {
                         $('#topMenuPaymentAgent').removeClass('invisible');
                     }
                     Client.set('first_name', response.get_settings.first_name);
-                    CashierJP.set_name_id();
-                    CashierJP.set_email_id();
                 } else if (type === 'website_status') {
                     if (!response.error) {
                         create_language_drop_down(response.website_status.supported_languages);
