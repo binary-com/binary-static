@@ -19,7 +19,7 @@ const Settings = (function() {
                 $('#change_password').removeClass(class_hidden);
             }
 
-            $('#settingsContainer').removeClass(class_hidden);
+            $('#settings_container').removeClass(class_hidden);
         });
     };
 

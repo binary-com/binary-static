@@ -57,7 +57,7 @@ const CashierPassword = (function() {
         }
         $form.removeClass(hidden_class);
         FormManager.init(form_id, [
-            { selector: '#cashier_password',        validations: ['req', 'password'], request_field: $('#repeat_cashier_password').is(':visible') ? 'lock_password' : 'unlock_password' },
+            { selector: '#cashier_password',        validations: ['req', 'password'], request_field: locked ? 'unlock_password' : 'lock_password' },
             { selector: '#repeat_cashier_password', validations: ['req', ['compare', { to: '#cashier_password' }]], exclude_request: 1 },
         ]);
         FormManager.handleSubmit(form_id, { cashier_password: 1 }, handleResponse);
@@ -76,7 +76,7 @@ const CashierPassword = (function() {
             $form_error.text(localize(message));
             return;
         }
-        redirect_url = $('#repeat_cashier_password').is(':hidden') ? sessionStorage.getItem('cashier_lock_redirect') : '';
+        redirect_url = sessionStorage.getItem('cashier_lock_redirect') || '';
         $form.addClass(hidden_class);
         $form_message.text(localize('Your settings have been updated successfully.'));
         setTimeout(redirect, 2000);

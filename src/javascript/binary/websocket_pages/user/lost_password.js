@@ -1,7 +1,7 @@
-const Client         = require('../../base/client').Client;
-const localize       = require('../../base/localize').localize;
-const url_for        = require('../../base/url').url_for;
-const FormManager    = require('../../common_functions/form_manager');
+const Client      = require('../../base/client').Client;
+const localize    = require('../../base/localize').localize;
+const url_for     = require('../../base/url').url_for;
+const FormManager = require('../../common_functions/form_manager');
 
 const LostPassword = (function() {
     'use strict';

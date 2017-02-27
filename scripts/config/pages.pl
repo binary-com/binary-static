@@ -97,7 +97,7 @@ sub all_pages {
         ['user/settingsws',                  'user/settings',                        'default',    'Settings'],
         ['user/statementws',                 'user/statementws',                     'default',    'Statement'],
         ['user/tnc_approvalws',              'legal/tnc_approvalws',                 'default',    'Terms and Conditions Approval'],
-        ['user/reset_passwordws',            'user/reset_passwordws',                'default',    'Password Reset'],
+        ['user/reset_passwordws',            'user/reset_password',                  'default',    'Password Reset'],
         ['user/reality_check_frequencyws',   'user/reality_check_frequencyws',       'default',    'Reality Check'],
         ['user/reality_check_summaryws',     'user/reality_check_summaryws',         'default',    'Reality Check'],
         ['user/security/api_tokenws',        'user/security/api_tokenws',            'default',    'API Token',               'ja'],
