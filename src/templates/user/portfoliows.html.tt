@@ -13,10 +13,10 @@
 
             <!-- If the account balance is zero we show the following button, otherwise we remove it -->
             <span id="if-balance-zero" class="invisible by_client_type client_real">
-                <a href="[% request.url_for('cashier/forwardws#deposit') %]" class="button ja-hide">
+                <a href="[% request.url_for('cashier/forwardws#deposit') %]" class="button nowrap ja-hide">
                     <span>[% l('Make a Deposit') %]</span>
                 </a>
-                <a href="[% request.url_for('cashier/deposit-jp') %]" class="button all-hide ja-show">
+                <a href="[% request.url_for('cashier/deposit-jp') %]" class="button nowrap all-hide ja-show">
                     <span>[% l('Make a Deposit') %]</span>
                 </a>
             </span>

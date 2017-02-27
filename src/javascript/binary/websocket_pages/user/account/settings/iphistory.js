@@ -1,19 +1,19 @@
-const IPHistory       = require('./iphistory/iphistory.init').IPHistory;
+const IPHistoryInit   = require('./iphistory/iphistory.init');
 const BinaryPjax      = require('../../../../base/binary_pjax');
 const Content         = require('../../../../common_functions/content').Content;
 const japanese_client = require('../../../../common_functions/country_base').japanese_client;
 
-const IPHistoryWS = (function() {
-    const onLoad = function() {
+const IPHistory = (() => {
+    const onLoad = () => {
         if (japanese_client()) {
             BinaryPjax.load('user/settingsws');
         }
         Content.populate();
-        IPHistory.init();
+        IPHistoryInit.init();
     };
 
-    const onUnload = function() {
-        IPHistory.clean();
+    const onUnload = () => {
+        IPHistoryInit.clean();
     };
 
     return {
@@ -22,4 +22,4 @@ const IPHistoryWS = (function() {
     };
 })();
 
-module.exports = IPHistoryWS;
+module.exports = IPHistory;

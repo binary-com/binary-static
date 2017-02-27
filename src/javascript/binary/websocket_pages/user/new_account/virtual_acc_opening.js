@@ -16,6 +16,7 @@ const VirtualAccOpening = (function() {
             handleJPForm();
         } else {
             getResidence();
+            $('#residence').removeClass('invisible');
             bindValidation();
         }
 

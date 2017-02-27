@@ -24,7 +24,7 @@ const AssetIndexUI               = require('../websocket_pages/resources/asset_i
 const MarketTimesUI              = require('../websocket_pages/resources/market_times/market_timesws.ui');
 const TradePage_Beta             = require('../websocket_pages/trade/beta/tradepage');
 const TradePage                  = require('../websocket_pages/trade/tradepage');
-const AuthenticateWS             = require('../websocket_pages/user/account/authenticate');
+const Authenticate               = require('../websocket_pages/user/account/authenticate');
 const PasswordWS                 = require('../websocket_pages/user/account/change_password');
 const PaymentAgentTransferSocket = require('../websocket_pages/user/account/payment_agent_transfer');
 const PortfolioWS                = require('../websocket_pages/user/account/portfolio/portfolio.init');
@@ -32,7 +32,7 @@ const ProfitTableWS              = require('../websocket_pages/user/account/prof
 const APITokenWS                 = require('../websocket_pages/user/account/settings/api_token');
 const AuthorisedApps             = require('../websocket_pages/user/account/settings/authorised_apps');
 const FinancialAssessment        = require('../websocket_pages/user/account/settings/financial_assessment');
-const IPHistoryWS                = require('../websocket_pages/user/account/settings/iphistory');
+const IPHistory                  = require('../websocket_pages/user/account/settings/iphistory');
 const Limits                     = require('../websocket_pages/user/account/settings/limits');
 const SettingsWS                 = require('../websocket_pages/user/account/settings');
 const SelfExclusionWS            = require('../websocket_pages/user/account/settings/self_exclusion');
@@ -57,7 +57,7 @@ const pages_config = {
     api_tokenws           : { module: APITokenWS,                 is_authenticated: true },
     assessmentws          : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
     asset_indexws         : { module: AssetIndexUI },
-    authenticatews        : { module: AuthenticateWS,             is_authenticated: true, only_real: true },
+    authenticatews        : { module: Authenticate,               is_authenticated: true, only_real: true },
     authorised_appsws     : { module: AuthorisedApps,             is_authenticated: true },
     careers               : { module: Careers },
     cashier               : { module: Cashier },
@@ -70,7 +70,7 @@ const pages_config = {
     epg_forwardws         : { module: ForwardWS,                  is_authenticated: true, only_real: true },
     forwardws             : { module: ForwardWS,                  is_authenticated: true, only_real: true },
     home                  : { module: Home,                       not_authenticated: true },
-    iphistoryws           : { module: IPHistoryWS,                is_authenticated: true },
+    iphistoryws           : { module: IPHistory,                  is_authenticated: true },
     japanws               : { module: JapanAccOpening,            is_authenticated: true, only_virtual: true },
     knowledge_testws      : { module: KnowledgeTest,              is_authenticated: true, only_virtual: true },
     limitsws              : { module: Limits,                     is_authenticated: true, only_real: true },
