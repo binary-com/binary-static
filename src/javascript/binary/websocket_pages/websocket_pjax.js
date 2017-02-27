@@ -21,7 +21,7 @@ const SettingsDetailsWS             = require('./user/account/settings/settings_
 const Settings                      = require('./user/account/settings');
 const StatementWS                   = require('./user/account/statement/statement.init').StatementWS;
 const TopUpVirtualWS                = require('./user/account/top_up_virtualws').TopUpVirtualWS;
-const LostPasswordWS                = require('./user/lost_password').LostPasswordWS;
+const LostPassword                  = require('./user/lost_password');
 const MetaTrader                    = require('./user/metatrader/metatrader');
 const FinancialAccOpening           = require('./user/new_account/financial_acc_opening').FinancialAccOpening;
 const JapanAccOpening               = require('./user/new_account/japan_acc_opening').JapanAccOpening;
@@ -275,7 +275,7 @@ pjax_config_page_require_auth('top_up_virtualws', function() {
 pjax_config_page('user/lost_passwordws', function() {
     return {
         onLoad: function() {
-            LostPasswordWS.onLoad();
+            LostPassword.onLoad();
         },
     };
 });
