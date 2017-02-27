@@ -1,11 +1,11 @@
 const MarketTimes = (() => {
     'use strict';
 
-    const getSubmarketInfo = (activeSymbols, submarketDisplayName) =>
-        activeSymbols.filter(sy => (sy.submarket_display_name === submarketDisplayName));
+    const getSubmarketInfo = (active_symbols, submarket_display_name) =>
+        active_symbols.filter(sy => (sy.submarket_display_name === submarket_display_name));
 
-    const getSymbolInfo = (qSymbol, activeSymbols) =>
-        activeSymbols.filter(sy => (sy.symbol === qSymbol));
+    const getSymbolInfo = (qSymbol, active_symbols) =>
+        active_symbols.filter(sy => (sy.symbol === qSymbol));
 
     return {
         getSubmarketInfo: getSubmarketInfo,
