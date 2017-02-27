@@ -3,20 +3,20 @@ const showLocalTimeOnHover = require('../../../../../base/clock').Clock.showLoca
 const localize             = require('../../../../../base/localize').localize;
 const Button      = require('../../../../../common_functions/attach_dom/button').Button;
 const FlexTableUI = require('../../../../../common_functions/attach_dom/flextable').FlexTableUI;
-const ApplicationsData = require('./authorised_apps.data').ApplicationsData;
+const ApplicationsData = require('./authorised_apps.data');
 
-const ApplicationsUI = (function() {
+const ApplicationsUI = (() => {
     'use strict';
 
-    const containerSelector = '#applications-ws-container';
+    const container_selector = '#applications-ws-container';
     const messages = {
         no_apps       : 'You have not granted access to any applications.',
         revoke_confirm: 'Are you sure that you want to permanently revoke access to application',
         revoke_access : 'Revoke access',
     };
-    let flexTable;
+    let flex_table;
 
-    const formatApp = function(app) {
+    const formatApp = (app) => {
         const last_used = app.last_used ? app.last_used.format('YYYY-MM-DD HH:mm:ss') : localize('Never');
         return [
             app.name,
@@ -26,27 +26,33 @@ const ApplicationsUI = (function() {
         ];
     };
 
-    const createRevokeButton = function(container, app) {
-        const $buttonSpan = Button.createBinaryStyledButton();
-        const $button = $buttonSpan.children('.button').first();
+    const createRevokeButton = (container, app) => {
+        const $button_span = Button.createBinaryStyledButton();
+        const $button = $button_span.children('.button').first();
         $button.text(localize(messages.revoke_access));
         $button.on('click', function() {
             if (window.confirm(localize(messages.revoke_confirm) + ": '" + app.name + "'?")) {
-                ApplicationsData.revoke(app.id);
+                BinarySocket.send({ oauth_apps: 1, revoke_app: app.id }).then((response) => {
+                    if (response.error) {
+                        displayError(response.error.message);
+                    } else {
+                        update(response.oauth_apps.map(ApplicationsData.parse));
+                    }
+                });
                 container.css({ opacity: 0.5 });
             }
         });
-        return $buttonSpan;
+        return $button_span;
     };
 
-    const createTable = function(data) {
-        if (flexTable) {
-            return flexTable.replace(data);
+    const createTable = (data) => {
+        if (flex_table) {
+            return flex_table.replace(data);
         }
         const headers = ['Name', 'Permissions', 'Last Used', 'Action'];
         const columns = ['name', 'permissions', 'last_used', 'action'];
-        flexTable = new FlexTableUI({
-            container: containerSelector,
+        flex_table = new FlexTableUI({
+            container: container_selector,
             header   : headers.map(function(s) { return localize(s); }),
             id       : 'applications-table',
             cols     : columns,
@@ -60,26 +66,26 @@ const ApplicationsUI = (function() {
         return showLocalTimeOnHover('td.last_used');
     };
 
-    const update = function(apps) {
+    const update = (apps) => {
         $('#loading').remove();
         createTable(apps);
         if (!apps.length) {
-            flexTable.displayError(localize(messages.no_apps), 7);
+            flex_table.displayError(localize(messages.no_apps), 7);
         }
     };
 
-    const displayError = function(message) {
-        $(containerSelector + ' .error-msg').text(message);
+    const displayError = (message) => {
+        $(container_selector + ' .error-msg').text(message);
     };
 
-    const init = function() {
+    const init = () => {
         showLoadingImage($('<div/>', { id: 'loading' }).insertAfter('#applications-title'));
     };
 
-    const clean = function() {
-        $(containerSelector + ' .error-msg').text('');
-        flexTable.clear();
-        flexTable = null;
+    const clean = () => {
+        $(container_selector + ' .error-msg').text('');
+        flex_table.clear();
+        flex_table = null;
     };
 
     return {
@@ -90,6 +96,4 @@ const ApplicationsUI = (function() {
     };
 })();
 
-module.exports = {
-    ApplicationsUI: ApplicationsUI,
-};
+module.exports = ApplicationsUI;
