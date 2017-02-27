@@ -170,6 +170,8 @@ Page.prototype = {
         return div.append(ul.append(li1, li2)).append(p);
     },
     show_notification_outdated_browser: function() {
+        const src = '//browser-update.org/update.min.js';
+        if ($(`script[src*="${src}"]`).length) return;
         window.$buoop = {
             vs : { i: 11, f: -4, o: -4, s: 9, c: -4 },
             api: 4,
@@ -177,7 +179,7 @@ Page.prototype = {
             url: 'https://whatbrowser.org/',
         };
         $(document).ready(function() {
-            $('body').append($('<script/>', { src: '//browser-update.org/update.min.js' }));
+            $('body').append($('<script/>', { src: src }));
         });
     },
 };
