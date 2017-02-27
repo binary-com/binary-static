@@ -17,13 +17,19 @@ const Client = (function () {
             const items = str.split(':');
             const id = items[0];
             const is_real = items[1] === 'R';
+            const is_financial = /^MF/.test(id);
+            const is_gaming = /^MLT/.test(id);
+
             if (is_real) client_object.has_real = is_real;
+            if (is_financial) client_object.has_financial = is_financial;
+            if (is_gaming) client_object.has_gaming = is_gaming;
+
             return {
                 id           : id,
                 real         : is_real,
                 disabled     : items[2] === 'D',
-                financial    : /^MF/.test(id),
-                non_financial: /^MLT/.test(id),
+                financial    : is_financial,
+                non_financial: is_gaming,
             };
         });
     };
@@ -151,9 +157,13 @@ const Client = (function () {
         activate_by_client_type();
     };
 
+    const tnc_pages = () => {
+        const location = window.location.href;
+        return /user\/tnc_approvalws/.test(location) || /terms-and-conditions/.test(location);
+    };
+
     const check_tnc = function() {
-        if (/user\/tnc_approvalws/.test(window.location.href) ||
-            /terms-and-conditions/.test(window.location.href) ||
+        if (tnc_pages() ||
             get('is_virtual') ||
             sessionStorage.getItem('check_tnc') !== 'check') {
             return;
@@ -379,7 +389,7 @@ const Client = (function () {
     const should_complete_tax = () => is_financial() && !get('has_tax_information');
 
     const should_redirect_tax = () => {
-        if (should_complete_tax() && !/user\/settings\/detailsws/.test(window.location.pathname)) {
+        if (should_complete_tax() && !/user\/settings\/detailsws/.test(window.location.pathname) && !tnc_pages()) {
             window.location.href = url_for('user/settings/detailsws');
             return true;
         }

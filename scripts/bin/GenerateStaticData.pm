@@ -201,7 +201,7 @@ sub _texts {
         push @texts, localize('password');
         push @texts, localize('The two passwords that you entered do not match.');
         push @texts, localize('Your token has expired. Please click <a class="pjaxload" href="[_1]">here</a> to restart the verification process.');
-        push @texts, localize('Your provided email address is already in use by another Login ID. According to our terms and conditions, you may only register once through our site. If you have forgotten the password of your existing account, please <a href="[_1]">try our password recovery tool</a> or contact customer service.');
+        push @texts, localize('The email address provided is already in use. If you forgot your password, please try our <a class="pjaxload" href="[_1]">password recovery tool</a> or contact our customer service.');
         push @texts, localize('Password should have lower and uppercase letters with numbers.');
         push @texts, localize('Password is not strong enough.');
         push @texts, localize('Please [_1] to view this page');
@@ -290,9 +290,10 @@ sub _texts {
         push @texts, localize('Sell');
         push @texts, localize('Buy');
         #strings for authenticate page
-        push @texts, localize('To authenticate your account, kindly email the following to [_1]:');
-        push @texts, localize('A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date.');
-        push @texts, localize('A scanned copy of a utility bill or bank statement (no more than 3 months old)');
+        push @texts, localize('Please send us the following documents in order to verify your identity and authenticate your account:');
+        push @texts, localize('Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth.');
+        push @texts, localize('Proof of address - A scanned copy of a utility bill or bank statement that\'s not more than three months old.');
+        push @texts, localize('If you have any questions, kindly contact our Customer Support team at <a href="mailto:[_1]">[_1]</a>.');
         push @texts, localize('This feature is not relevant to virtual-money accounts.');
         push @texts, localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].');
         push @texts, localize('Deposits and withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.');
@@ -329,6 +330,8 @@ sub _texts {
         push @texts, localize('[_1] [_2] payout if [_3] ends outside low and high values of Exercise price at close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] stays between low and high values of Exercise price through close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] goes outside of low and high values of Exercise price through close on [_4].');
+        push @texts, localize('hour');
+        push @texts, localize('mins');
         push @texts, localize('Higher');
         push @texts, localize('Lower');
         push @texts, localize('Touches');
@@ -347,8 +350,6 @@ sub _texts {
         push @texts, localize('Select market');
         push @texts, localize('Number of ticks');
         push @texts, localize('Last digit stats for the latest [_1] ticks on [_2]');
-        #strings for tnc_approvalws
-        push @texts, localize('Ok');
         #strings for paymentagentws
         push @texts, localize('Amount');
         push @texts, localize('Deposit');
@@ -495,6 +496,7 @@ sub _texts {
         push @texts, localize('Only letters, numbers, space, hyphen, period, and apostrophe are allowed.');
         push @texts, localize('Only letters, space, hyphen, period, and apostrophe are allowed.');
         push @texts, localize('Only letters, numbers, and hyphen are allowed.');
+        push @texts, localize('Only numbers, space, and hyphen are allowed.');
         push @texts, localize('Only numbers and spaces are allowed.');
         push @texts, localize('Please submit a valid verification token.');
         push @texts, localize('The two passwords that you entered do not match.');
@@ -502,8 +504,6 @@ sub _texts {
         push @texts, localize('You should enter [_1] characters.');
 
         # strings for metatrader
-        push @texts, localize('To perform this action, please switch to your [_1] Real Account.');
-        push @texts, localize('To perform this action, please <a href="[_1]"> upgrade to [_2] Real Account</a>.');
         push @texts, localize('Congratulations! Your [_1] Account has been created.');
         push @texts, localize('The main password of account number [_1] has been changed.');
         push @texts, localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]');

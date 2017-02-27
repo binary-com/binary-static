@@ -1,5 +1,5 @@
-const IPHistoryData = (function() {
-    const parse_ua = function(user_agent) {
+const IPHistoryData = (() => {
+    const parseUA = (user_agent) => {
         // Table of UA-values (and precedences) from:
         //  https://developer.mozilla.org/en-US/docs/Browser_detection_using_the_user_agent
         // Regexes stolen from:
@@ -28,7 +28,7 @@ const IPHistoryData = (function() {
         return null;
     };
 
-    const parse = function(activity) {
+    const parse = (activity) => {
         const environ    = activity.environment;
         const ip_addr    = environ.split(' ')[2].split('=')[1];
         const user_agent = environ.match('User_AGENT=(.+) LANG')[1];
@@ -36,33 +36,15 @@ const IPHistoryData = (function() {
             time   : activity.time,
             action : activity.action,
             success: activity.status === 1,
-            browser: parse_ua(user_agent),
+            browser: parseUA(user_agent),
             ip_addr: ip_addr,
         };
     };
 
-    const calls = function(callback) {
-        return function(msg) {
-            const response = JSON.parse(msg.data);
-            if (!response || response.msg_type !== 'login_history') {
-                return;
-            }
-            callback(response);
-        };
-    };
-
-    const get = function(n) {
-        BinarySocket.send({ login_history: 1, limit: n });
-    };
-
     return {
         parse         : parse,
-        parseUserAgent: parse_ua,
-        calls         : calls,
-        get           : get,
+        parseUserAgent: parseUA,
     };
 })();
 
-module.exports = {
-    IPHistoryData: IPHistoryData,
-};
+module.exports = IPHistoryData;

@@ -1,9 +1,15 @@
-const url    = require('../base/url').url;
-const Scroll = require('../common_functions/scroll').Scroll;
+const localize    = require('../base/localize').localize;
+const url         = require('../base/url').url;
+const Scroll      = require('../common_functions/scroll').Scroll;
+const TNCApproval = require('../websocket_pages/user/tnc_approval');
 
 const TermsAndConditions = (function() {
     const init = function() {
         handleActiveTab();
+        TNCApproval.requiresTNCApproval(
+            $('#btn_accept'),
+            () => { $('.tnc_accept').removeClass('invisible'); },
+            () => { $('#tnc_accept').html(localize('Your settings have been updated successfully.')); });
         Scroll.sidebar_scroll($('.tac-binary'));
 
         const year = document.getElementsByClassName('currentYear');

@@ -1,17 +1,11 @@
-const MarketTimes = (function() {
+const MarketTimes = (() => {
     'use strict';
 
-    const getSubmarketInfo = function(activeSymbols, submarketDisplayName) {
-        return activeSymbols.filter(function(sy) {
-            return sy.submarket_display_name === submarketDisplayName;
-        });
-    };
+    const getSubmarketInfo = (active_symbols, submarket_display_name) =>
+        active_symbols.filter(sy => (sy.submarket_display_name === submarket_display_name));
 
-    const getSymbolInfo = function(qSymbol, activeSymbols) {
-        return activeSymbols.filter(function(sy) {
-            return (sy.symbol === qSymbol);
-        });
-    };
+    const getSymbolInfo = (qSymbol, active_symbols) =>
+        active_symbols.filter(sy => (sy.symbol === qSymbol));
 
     return {
         getSubmarketInfo: getSubmarketInfo,
@@ -19,6 +13,4 @@ const MarketTimes = (function() {
     };
 })();
 
-module.exports = {
-    MarketTimes: MarketTimes,
-};
+module.exports = MarketTimes;
