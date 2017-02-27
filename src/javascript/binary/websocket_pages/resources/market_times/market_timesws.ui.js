@@ -77,15 +77,17 @@ const MarketTimesUI = (function() {
         for (let m = 0; m < markets.length; m++) {
             const tabID = 'market_' + (m + 1);
 
-            // tabs
-            if (!isJapanTrading) {
-                $ul.append($('<li/>').append($('<a/>', { href: '#' + tabID, text: markets[m].name, id: 'outline' })));
-            }
-
             // contents
             const $market = $('<div/>', { id: tabID });
             $market.append(createMarketTables(markets[m], isJapanTrading));
-            $contents.append($market);
+            if ($market.find('table tr').length) {
+                $contents.append($market);
+
+                // tabs
+                if (!isJapanTrading) {
+                    $ul.append($('<li/>').append($('<a/>', { href: '#' + tabID, text: markets[m].name, id: 'outline' })));
+                }
+            }
         }
 
         $container.empty().append($ul).append($contents.children());
@@ -130,7 +132,9 @@ const MarketTimesUI = (function() {
                     }
                 }
 
-                $marketTables.append($submarketTable);
+                if ($submarketTable.find('tbody tr').length) {
+                    $marketTables.append($submarketTable);
+                }
             }
         }
 
