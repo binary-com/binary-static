@@ -53,7 +53,7 @@ const ApplicationsUI = (() => {
         const columns = ['name', 'permissions', 'last_used', 'action'];
         flex_table = new FlexTableUI({
             container: container_selector,
-            header   : headers.map(function(s) { return localize(s); }),
+            header   : headers.map(s => localize(s)),
             id       : 'applications-table',
             cols     : columns,
             data     : data,
