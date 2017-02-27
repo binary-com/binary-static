@@ -6,20 +6,20 @@ const Settings = (function() {
 
     const onLoad = function() {
         BinarySocket.wait('get_account_status').then((response) => {
-            const classHidden = 'invisible';
-            const classReal   = '.real';
+            const class_hidden = 'invisible';
+            const class_real   = '.real';
 
             if (Client.get('is_virtual')) {
-                $(classReal).addClass(classHidden);
+                $(class_real).addClass(class_hidden);
             } else {
-                $(classReal).not((japanese_client() ? '.ja-hide' : '')).removeClass(classHidden);
+                $(class_real).not((japanese_client() ? '.ja-hide' : '')).removeClass(class_hidden);
             }
 
             if (/has_password/.test(response.get_account_status.status)) {
-                $('#change_password').removeClass(classHidden);
+                $('#change_password').removeClass(class_hidden);
             }
 
-            $('#settingsContainer').removeClass(classHidden);
+            $('#settingsContainer').removeClass(class_hidden);
         });
     };
 

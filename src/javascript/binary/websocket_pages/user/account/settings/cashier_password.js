@@ -8,7 +8,7 @@ const CashierPassword = (function() {
 
     let $form,
         redirect_url;
-    const form_id = '#frmCashierPassword';
+    const form_id = '#frm_cashier_password';
     const hidden_class = 'invisible';
 
     const checkIsVirtual = function() {
