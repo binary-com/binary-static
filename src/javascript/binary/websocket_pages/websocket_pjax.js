@@ -13,7 +13,7 @@ const ProfitTableWS                 = require('./user/account/profit_table/profi
 const APITokenWS                    = require('./user/account/settings/api_token').APITokenWS;
 const AuthorisedApps                = require('./user/account/settings/authorised_apps').AuthorisedApps;
 const FinancialAssessment           = require('./user/account/settings/financial_assessment');
-const IPHistoryWS                   = require('./user/account/settings/iphistory').IPHistoryWS;
+const IPHistory                     = require('./user/account/settings/iphistory');
 const Limits                        = require('./user/account/settings/limits');
 const SelfExclusionWS               = require('./user/account/settings/self_exclusion').SelfExclusionWS;
 const SettingsDetailsWS             = require('./user/account/settings/settings_detailsws').SettingsDetailsWS;
@@ -226,10 +226,10 @@ pjax_config_page_require_auth('user/settings/assessmentws', function() {
 pjax_config_page_require_auth('user/security/iphistoryws', function() {
     return {
         onLoad: function() {
-            IPHistoryWS.onLoad();
+            IPHistory.onLoad();
         },
         onUnload: function() {
-            IPHistoryWS.onUnload();
+            IPHistory.onUnload();
         },
     };
 });
