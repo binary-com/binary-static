@@ -1,7 +1,7 @@
-const expect = require('chai').expect;
-const asset_index = require('../asset_indexws').AssetIndex;
-const ws = require('ws');
-const LiveApi = require('binary-live-api').LiveApi;
+const expect      = require('chai').expect;
+const asset_index = require('../asset_indexws');
+const ws          = require('ws');
+const LiveApi     = require('binary-live-api').LiveApi;
 
 const api = new LiveApi({ websocket: ws });
 
