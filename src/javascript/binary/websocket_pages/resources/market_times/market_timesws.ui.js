@@ -3,41 +3,39 @@ const Table                  = require('../../../common_functions/attach_dom/tab
 const jqueryuiTabsToDropdown = require('../../../common_functions/common_functions').jqueryuiTabsToDropdown;
 const Content                = require('../../../common_functions/content').Content;
 const japanese_client        = require('../../../common_functions/country_base').japanese_client;
-const MarketTimesData        = require('./market_timesws.data').MarketTimesData;
-const MarketTimes            = require('../market_timesws').MarketTimes;
+const MarketTimes            = require('../market_timesws');
 const moment                 = require('moment');
 const State                  = require('../../../base/storage').State;
 const DatePicker             = require('../../../components/date_picker').DatePicker;
 const toReadableFormat       = require('../../../common_functions/string_util').toReadableFormat;
 const toISOFormat            = require('../../../common_functions/string_util').toISOFormat;
 const dateValueChanged       = require('../../../common_functions/common_functions').dateValueChanged;
-const localize = require('../../../base/localize').localize;
+const localize               = require('../../../base/localize').localize;
 
-const MarketTimesUI = (function() {
+const MarketTimesUI = (() => {
     'use strict';
 
     let $date,
         $container,
         columns,
-        activeSymbols,
-        tradingTimes,
-        isFramed;
+        active_symbols,
+        trading_times,
+        is_framed;
 
-    const init = function(config) {
+    const init = (config) => {
         $date      = $('#trading-date');
         $container = $('#trading-times');
         columns    = ['Asset', 'Opens', 'Closes', 'Settles', 'UpcomingEvents'];
-        if (!State.get('is_beta_trading')) activeSymbols = tradingTimes = undefined;
+        if (!State.get('is_beta_trading')) active_symbols = trading_times = undefined;
 
         if ($container.contents().length) return;
 
         Content.populate();
         showLoadingImage($container);
 
-        isFramed = (config && config.framed);
-        if (!tradingTimes) {
-            initSocket();
-            MarketTimesData.sendRequest('today', !(activeSymbols && activeSymbols.length));
+        is_framed = (config && config.framed);
+        if (!trading_times) {
+            sendRequest('today', !(active_symbols && active_symbols.length));
         }
 
         const date = moment.utc();
@@ -54,37 +52,37 @@ const MarketTimesUI = (function() {
             }
             $container.empty();
             showLoadingImage($container);
-            tradingTimes = null;
-            MarketTimesData.sendRequest($date.attr('data-value'), !activeSymbols);
+            trading_times = null;
+            sendRequest($date.attr('data-value'), !active_symbols);
             return true;
         });
 
         $container.tabs();
     };
 
-    const populateTable = function() {
-        if (!activeSymbols || !tradingTimes) return;
+    const populateTable = () => {
+        if (!active_symbols || !trading_times) return;
 
         $('#errorMsg').addClass('hidden');
 
-        const isJapanTrading = japanese_client();
+        const is_japan_trading = japanese_client();
 
-        const markets = tradingTimes.markets;
+        const markets = trading_times.markets;
 
-        const $ul = $('<ul/>', { class: isJapanTrading ? 'hidden' : '' });
+        const $ul = $('<ul/>', { class: is_japan_trading ? 'hidden' : '' });
         const $contents = $('<div/>');
 
         for (let m = 0; m < markets.length; m++) {
             const tabID = 'market_' + (m + 1);
 
             // tabs
-            if (!isJapanTrading) {
+            if (!is_japan_trading) {
                 $ul.append($('<li/>').append($('<a/>', { href: '#' + tabID, text: markets[m].name, id: 'outline' })));
             }
 
             // contents
             const $market = $('<div/>', { id: tabID });
-            $market.append(createMarketTables(markets[m], isJapanTrading));
+            $market.append(createMarketTables(markets[m], is_japan_trading));
             $contents.append($market);
         }
 
@@ -92,58 +90,58 @@ const MarketTimesUI = (function() {
 
         $container.tabs('destroy').tabs();
 
-        if (isFramed) {
+        if (is_framed) {
             $container.find('ul').hide();
             $('<div/>', { class: 'center-text' }).append(jqueryuiTabsToDropdown($container)).prependTo($container);
         }
     };
 
-    const createMarketTables = function(market, isJapanTrading) {
-        const $marketTables = $('<div/>');
+    const createMarketTables = (market, is_japan_trading) => {
+        const $market_tables = $('<div/>');
 
         // submarkets of this market
         const submarkets = market.submarkets;
-        let shouldPopulate;
+        let should_populate;
         for (let s = 0; s < submarkets.length; s++) {
-            shouldPopulate = true;
+            should_populate = true;
             // display only "Major Pairs" for Japan
-            if (isJapanTrading) {
-                const submarketInfo = MarketTimes.getSubmarketInfo(activeSymbols, submarkets[s].name);
-                if (submarketInfo.length === 0 || submarketInfo[0].submarket !== 'major_pairs') {
-                    shouldPopulate = false;
+            if (is_japan_trading) {
+                const submarket_info = MarketTimes.getSubmarketInfo(active_symbols, submarkets[s].name);
+                if (submarket_info.length === 0 || submarket_info[0].submarket !== 'major_pairs') {
+                    should_populate = false;
                 }
             }
 
-            if (shouldPopulate) {
+            if (should_populate) {
                 // submarket table
-                const $submarketTable = createEmptyTable(market.name + '-' + s);
+                const $submarket_table = createEmptyTable(market.name + '-' + s);
 
                 // submarket name
-                $submarketTable.find('thead').prepend(createSubmarketHeader(submarkets[s].name))
+                $submarket_table.find('thead').prepend(createSubmarketHeader(submarkets[s].name))
                     .find('th.opens, th.closes').addClass('nowrap');
 
                 // symbols of this submarket
                 const symbols = submarkets[s].symbols;
                 for (let sy = 0; sy < symbols.length; sy++) {
-                    if (Object.keys(MarketTimes.getSymbolInfo(symbols[sy].symbol, activeSymbols)).length !== 0) {
-                        $submarketTable.find('tbody').append(createSubmarketTableRow(market.name, submarkets[s].name, symbols[sy]));
+                    if (Object.keys(MarketTimes.getSymbolInfo(symbols[sy].symbol, active_symbols)).length !== 0) {
+                        $submarket_table.find('tbody').append(createSubmarketTableRow(market.name, submarkets[s].name, symbols[sy]));
                     }
                 }
 
-                $marketTables.append($submarketTable);
+                $market_tables.append($submarket_table);
             }
         }
 
-        return $marketTables;
+        return $market_tables;
     };
 
-    const createSubmarketHeader = function(submarketName) {
-        return $('<tr/>', { class: 'flex-tr' })
-            .append($('<th/>', { class: 'flex-tr-child submarket-name', colspan: columns.length, text: submarketName }));
+    const createSubmarketHeader = (submarket_name) => {
+        $('<tr/>', { class: 'flex-tr' })
+            .append($('<th/>', { class: 'flex-tr-child submarket-name', colspan: columns.length, text: submarket_name }));
     };
 
-    const createSubmarketTableRow = function(marketName, submarketName, symbol) {
-        const $tableRow = Table.createFlexTableRow(
+    const createSubmarketTableRow = (market_name, submarket_name, symbol) => {
+        const $table_row = Table.createFlexTableRow(
             [
                 symbol.name,
                 '', // Opens
@@ -153,14 +151,14 @@ const MarketTimesUI = (function() {
             ],
             columns,
             'data');
-        $tableRow.children('.opens').html(symbol.times.open.join('<br />'));
-        $tableRow.children('.closes').html(symbol.times.close.join('<br />'));
-        $tableRow.children('.upcomingevents').html(createEventsText(symbol.events));
+        $table_row.children('.opens').html(symbol.times.open.join('<br />'));
+        $table_row.children('.closes').html(symbol.times.close.join('<br />'));
+        $table_row.children('.upcomingevents').html(createEventsText(symbol.events));
 
-        return $tableRow;
+        return $table_row;
     };
 
-    const createEventsText = function(events) {
+    const createEventsText = (events) => {
         let result = '';
         for (let i = 0; i < events.length; i++) {
             result += (i > 0 ? '<br />' : '') + localize(events[i].descrip) + ': ' + localize(events[i].dates);
@@ -168,7 +166,7 @@ const MarketTimesUI = (function() {
         return result.length > 0 ? result : '--';
     };
 
-    const createEmptyTable = function(tableID) {
+    const createEmptyTable = (table_id) => {
         const header = [
             localize('Asset'),
             localize('Opens'),
@@ -178,47 +176,41 @@ const MarketTimesUI = (function() {
         ];
 
         const metadata = {
-            id  : tableID,
+            id  : table_id,
             cols: columns,
         };
 
         return Table.createFlexTable([], metadata, header);
     };
 
-    const initSocket = function() {
+    const sendRequest = (date, should_request_active_symbols) => {
         if (State.get('is_beta_trading')) return;
-        BinarySocket.init({
-            onmessage: function(msg) {
-                const response = JSON.parse(msg.data);
-                if (response) {
-                    responseHandler(response);
-                }
-            },
-        });
-    };
 
-    const responseHandler = function(response) {
-        const msg_type = response.msg_type;
-        if (msg_type === 'trading_times') {
-            MarketTimesUI.setTradingTimes(response);
-        } else if (msg_type === 'active_symbols') {
-            MarketTimesUI.setActiveSymbols(response);
+        const req = { active_symbols: 'brief' };
+        if (japanese_client()) {
+            req.landing_company = 'japan';
         }
+        if (should_request_active_symbols) {
+            BinarySocket.send(req).then((response) => {
+                MarketTimesUI.setActiveSymbols(response);
+            });
+        }
+        BinarySocket.send({ trading_times: date || 'today' }).then((response) => {
+            MarketTimesUI.setTradingTimes(response);
+        });
     };
 
     return {
         init            : init,
-        setActiveSymbols: function(response) {
-            activeSymbols = response.active_symbols.slice(0); // clone
-            if (tradingTimes) populateTable();
+        setActiveSymbols: (response) => {
+            active_symbols = response.active_symbols.slice(0); // clone
+            if (trading_times) populateTable();
         },
-        setTradingTimes: function(response) {
-            tradingTimes = response.trading_times;
-            if (activeSymbols) populateTable();
+        setTradingTimes: (response) => {
+            trading_times = response.trading_times;
+            if (active_symbols) populateTable();
         },
     };
 })();
 
-module.exports = {
-    MarketTimesUI: MarketTimesUI,
-};
+module.exports = MarketTimesUI;
