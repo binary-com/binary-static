@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-23 10:40+0000\n"
+"PO-Revision-Date: 2017-02-27 13:29+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
@@ -4860,7 +4860,7 @@ msgid "Market Opinions"
 msgstr "マーケットに関する掲載情報について"
 
 msgid "Market Professionals"
-msgstr "マーケットのプロ投資家"
+msgstr "市場のプロ投資家"
 
 msgid "Market exit price"
 msgstr "市場出口価格"
@@ -6333,20 +6333,20 @@ msgid "Rights on Default:"
 msgstr "中止する権限"
 
 msgid "Rise/Fall"
-msgstr "アップ/ダウン"
+msgstr "ラダー"
 
 msgid "Rise/Fall - Predict if the market will rise or fall from its current level"
 msgstr "ラダー：権利行使価格を上回るか、下回るかを予測します"
 
 msgid "Rise/Fall contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes, or (3) for contracts starting in the future, if there are no ticks in the 5 minutes before the contract's start time."
 msgstr ""
-"Rise/Fallトレードは下記の条件が発生した場合に、購入金額が返金されます。\n"
+"ラダートレードは下記の条件が発生した場合に、購入金額が返金されます。\n"
 "(1) 開始から終了までの取引期間中にTickが2未満である\n"
 "(2) Tick期間のトレードが5分以内で終了しない\n"
 "(3) トレード開始前の5分以内にTickが発生しない"
 
 msgid "Rise/Fall trades"
-msgstr "アップ/ダウン トレード"
+msgstr "ラダートレード"
 
 msgid "Rise/Fall – Predict that the market will rise or fall from its current level"
 msgstr "ラダー：権利行使価格を上回るか、下回るかを予測します"
@@ -6483,7 +6483,7 @@ msgid "Sell back trades at market prices."
 msgstr "市場価格で保有ポジションを売却"
 
 msgid "Sell option"
-msgstr "オプションの転売"
+msgstr "オプションの売却"
 
 msgid "Sell time"
 msgstr "売却時間"
@@ -7263,7 +7263,9 @@ msgid "The affiliate program enables you to benefit from referring clients to th
 msgstr "アフィリエイトプログラムサイトにクライアントをご紹介いただくことで、利益をお受け取りいただけます。サイトへ新しいクライアントを集客するスキルのあるアフィリエイトで成長と成功をわかち合いましょう。"
 
 msgid "The amount of profit/loss per point of rise/fall is multiplied by the amount per point. A large amount per point will result in large profits/losses per point of movement of the index."
-msgstr "アップ/ダウンのポイントごとの利益額/損失額は、1ポイントの金額を掛けたものになります。1ポイントが大きいとインデックスの動向のポイントごとの利益/損失も大きくなります。"
+msgstr ""
+"ラダーのポイントごとの利益額/損失額は、1ポイントの金額を掛けたものになります。1ポイントが大きいとインデックスの動向のポイントごとの利益/損失も大きくな"
+"ります。"
 
 msgid "The anti-money laundering processes have the following effects on Clients:"
 msgstr ""
@@ -7533,7 +7535,7 @@ msgid "The required minimum deposit has been made by the client AND"
 msgstr "ボーナス付与に必要な最低金額以上を入金され、かつ"
 
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
-msgstr "期限前の契約転売の詳細は「オプションの転売」からご覧いただけます。"
+msgstr "期限前の契約転売の詳細は「オプションの売却」からご覧いただけます。"
 
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "ペイアウトとは、トレードの予測が正しかった場合に得る金額のことです。（「払い戻し価格」の項目をご確認下さい）"
