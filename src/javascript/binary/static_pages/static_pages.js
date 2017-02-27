@@ -1,4 +1,5 @@
-const Scroll = require('../common_functions/scroll');
+const Scroll     = require('../common_functions/scroll');
+const handleHash = require('../base/utility').handleHash;
 
 module.exports = {
     OpenPositions: {
@@ -15,5 +16,8 @@ module.exports = {
     PaymentAgent: {
         onLoad  : () => { Scroll.sidebar_scroll($('.payment-agent')); },
         onUnload: () => { Scroll.offScroll(); },
+    },
+    AffiliateSignup: {
+        onLoad: () => { tabListener(); handleHash(); },
     },
 };

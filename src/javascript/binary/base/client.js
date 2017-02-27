@@ -3,6 +3,7 @@ const CookieStorage        = require('./storage').CookieStorage;
 const LocalStore           = require('./storage').LocalStore;
 const State                = require('./storage').State;
 const default_redirect_url = require('./url').default_redirect_url;
+const url_for              = require('./url').url_for;
 const getLoginToken        = require('../common_functions/common_functions').getLoginToken;
 const japanese_client      = require('../common_functions/country_base').japanese_client;
 const Cookies              = require('../../lib/js-cookie');
@@ -375,7 +376,7 @@ const Client = (function () {
 
     const should_redirect_tax = () => {
         if (should_complete_tax() && !/user\/settings\/detailsws/.test(window.location.pathname) && !tnc_pages()) {
-            BinaryPjax.load('user/settings/detailsws');
+            window.location.href = url_for('user/settings/detailsws');
             return true;
         }
         return false;

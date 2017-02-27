@@ -91,6 +91,7 @@ const pages_config = {
     securityws               : { module: SettingsWS,                 is_authenticated: true },
     self_exclusionws         : { module: SelfExclusionWS,            is_authenticated: true, only_real: true },
     settingsws               : { module: SettingsWS,                 is_authenticated: true },
+    signup                   : { module: StaticPages.AffiliateSignup },
     statementws              : { module: StatementWS,                is_authenticated: true },
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
     top_up_virtualws         : { module: TopUpVirtualWS,             is_authenticated: true, only_virtual: true },

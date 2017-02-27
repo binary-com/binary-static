@@ -32,7 +32,10 @@ const GetStarted = (function() {
                 nav_next.removeClass('button-disabled');
             }
 
-            document.location.hash = to_show.find('a[name]').attr('name').slice(0, -8);
+            const new_hash = to_show.find('a[name]').attr('name').slice(0, -8);
+            if (window.location.hash !== `#${new_hash}`) {
+                window.location.hash = new_hash;
+            }
 
             return false;
         };
