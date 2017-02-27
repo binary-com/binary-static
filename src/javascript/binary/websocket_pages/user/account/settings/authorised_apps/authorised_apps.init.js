@@ -6,9 +6,6 @@ const Applications = (() => {
 
     const init = () => {
         ApplicationsUI.init();
-        // BinarySocket.init({
-        //     onmessage: ApplicationsData.calls(responseHandler),
-        // });
         BinarySocket.send({ oauth_apps: 1 }).then((response) => {
             if (response.error) {
                 ApplicationsUI.displayError(response.error.message);
