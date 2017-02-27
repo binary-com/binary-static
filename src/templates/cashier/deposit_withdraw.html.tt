@@ -1,5 +1,6 @@
-<div class="gr-padding-10">
+<div>
     <h1 id="deposit-withdraw-heading"></h1>
+
     <div>
         <div id="deposit-withdraw-message" class="invisible">
             <p id="cashier-locked-message" class="messages">
@@ -15,6 +16,7 @@
                 [% l('Your account is not fully authenticated.') %]
             </p>
         </div>
+
         <div id="deposit-withdraw-error" class="invisible">
             <p id="financial-risk-error" class="error_messages center-text notice-msg ">
                 [% l('Financial Risk approval is required. Please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
@@ -31,37 +33,31 @@
             <p id="custom-error" class="error_messages center-text notice-msg error_vrtc"></p>
         </div>
     </div>
+
     <div class="invisible" id="deposit-withdraw-iframe-container">
         <iframe src="" frameborder="0" width="100%" id="cashiercont" scrolling="auto" style="padding:0;margin:0;"></iframe>
     </div>
-    <div id="ukgc-funds-protection" class="gr-row gr-parent invisible">
+
+    <form id="ukgc-funds-protection" class="gr-row gr-parent invisible">
         <div class="gr-2 gr-6-m gr-centered-m">
-            <p>
-                <img class="responsive" src="[% request.url_for('images/pages/cashier/protection-icon.svg') %]" />
-            </p>
+            <p><img class="responsive" src="[% request.url_for('images/pages/cashier/protection-icon.svg') %]" /></p>
         </div>
+
         <div class="gr-10 gr-12-m">
-            <p>
-                [% l("We are required by our license to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency <a href='[_1]' target='_blank'>[_1]</a>.", "http://www.gamblingcommission.gov.uk/Consumers/Protection-of-customer-funds.aspx")
-                %]
-            </p>
-            <p>
-                [% l("The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer
-                funds at the level: <strong>medium protection</strong>.") %]
-            </p>
+            <p>[% l("We are required by our license to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency <a href='[_1]' target='_blank'>[_1]</a>.", "http://www.gamblingcommission.gov.uk/Consumers/Protection-of-customer-funds.aspx") %]</p>
+            <p>[% l("The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>.") %]</p>
             <div class='gr-3 gr-6-m gr-centered'>
-                <span class="button">
-                      <button id="submit-ukgc-funds-protection" class="button" value="ok" type="submit">[% l('Proceed') %]</button>
-                  </span>
+                <button id="submit-ukgc-funds-protection" class="button" value="ok" type="submit">[% l('Proceed') %]</button>
             </div>
         </div>
-    </div>
+    </form>
+
     <div id="currency-form" class="invisible">
         <div class="rbox-wrap">
             <fieldset>
                 <div class="gr-padding-10 gr-row clear">
                     <div class="gr-4 form_label">
-                        <label for="currency">[% l("Transact in") %]</label>
+                        <label for="select-currency">[% l("Transact in") %]</label>
                     </div>
                     <div class="gr-8">
                         <select id="select-currency"></select>
@@ -69,15 +65,14 @@
                 </div>
                 <div class="gr-padding-10 row clear center-text">
                     <div class="gr-8">
-                        <span class="button">
-              <button class="button" id="submit-currency" type="submit" value="Continue">[% l("Continue") %]</button>
-            </span>
+                        <button class="button" id="submit-currency" type="submit" value="Continue">[% l("Continue") %]</button>
                     </div>
                 </div>
             </fieldset>
         </div>
     </div>
-    <div id="withdraw-form" class="invisible">
+
+    <form id="withdraw-form" class="invisible">
         <fieldset>
             <div class="gr-row gr-parent gr-padding-10">
                 <div class="form_label gr-4">
@@ -86,14 +81,11 @@
                 <div class="gr-8">
                     <input id="verification-token" type="text" maxlength="48" autocomplete="off" />
                     <div class="hint">[% l("Please check your email for the value of this token") %]</div>
-                    <p class="errorfield invisible" id="verification-error"></p>
                 </div>
             </div>
-            <div class="gr-12 gr-parent gr-centered center-text">
-                <span class="button">
-                    <button class="button" id="submit-verification" type="button">[% l("Submit") %]</button>
-                </span>
-            </div>
         </fieldset>
-    </div>
+        <div class="gr-12 gr-parent gr-centered center-text">
+            <button class="button" type="submit">[% l("Submit") %]</button>
+        </div>
+    </form>
 </div>

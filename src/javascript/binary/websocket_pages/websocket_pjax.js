@@ -1,6 +1,6 @@
 const AccountTransferWS             = require('./cashier/account_transferws').AccountTransferWS;
 const Cashier                       = require('./cashier/cashier');
-const ForwardWS                     = require('./cashier/deposit_withdraw_ws').ForwardWS;
+const DepositWithdraw               = require('./cashier/deposit_withdraw');
 const PaymentAgentListWS            = require('./cashier/payment_agent_listws').PaymentAgentListWS;
 const PaymentAgentWithdrawWS        = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
 const AssetIndexUI                  = require('./resources/asset_index/asset_indexws.ui');
@@ -159,7 +159,7 @@ pjax_config_page('/cashier/payment_methods', function() {
 pjax_config_page_require_auth('cashier/forwardws|cashier/epg_forwardws', function() {
     return {
         onLoad: function() {
-            ForwardWS.checkOnLoad();
+            DepositWithdraw.onLoad();
         },
     };
 });

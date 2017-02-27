@@ -377,9 +377,7 @@ const BinarySocketClass = function() {
                     }
                     page.show_authenticate_message();
 
-                    if (dispatch_to === 'ForwardWS') {
-                        BinarySocket.send({ cashier_password: '1' });
-                    } else if (dispatch_to === 'PaymentAgentWithdrawWS') {
+                    if (dispatch_to === 'PaymentAgentWithdrawWS') {
                         PaymentAgentWithdrawWS.lock_withdrawal(Client.status_detected('withdrawal_locked, cashier_locked', 'any') ? 'locked' : 'unlocked');
                     }
                 } else if (type === 'get_financial_assessment' && !response.error) {
