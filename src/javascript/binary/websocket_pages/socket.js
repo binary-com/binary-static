@@ -6,7 +6,6 @@ const getPropertyValue          = require('../base/utility').getPropertyValue;
 const getLoginToken             = require('../common_functions/common_functions').getLoginToken;
 const SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
 const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
-const Cashier                   = require('./cashier/cashier').Cashier;
 const CashierJP                 = require('../../binary_japan/cashier').CashierJP;
 const PaymentAgentWithdrawWS    = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
 const create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
@@ -253,7 +252,7 @@ const BinarySocketClass = function() {
                 const type = response.msg_type;
 
                 // store in State
-                if (!response.echo_req.subscribe) {
+                if (!response.echo_req.subscribe || type === 'balance') {
                     State.set(['response', type], response);
                 }
                 // resolve the send promise
@@ -382,8 +381,6 @@ const BinarySocketClass = function() {
 
                     if (dispatch_to === 'ForwardWS') {
                         BinarySocket.send({ cashier_password: '1' });
-                    } else if (dispatch_to === 'Cashier') {
-                        Cashier.check_locked();
                     } else if (dispatch_to === 'PaymentAgentWithdrawWS') {
                         PaymentAgentWithdrawWS.lock_withdrawal(Client.status_detected('withdrawal_locked, cashier_locked', 'any') ? 'locked' : 'unlocked');
                     }

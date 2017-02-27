@@ -2,7 +2,6 @@ const japanese_client      = require('../../common_functions/country_base').japa
 const japanese_residence   = require('../../common_functions/country_base').japanese_residence;
 const Client               = require('../../base/client').Client;
 const Header               = require('../../base/header').Header;
-const url_for              = require('../../base/url').url_for;
 const default_redirect_url = require('../../base/url').default_redirect_url;
 
 const Cashier = (function() {
@@ -10,51 +9,58 @@ const Cashier = (function() {
 
     let withdrawal_locked;
 
-    const lock_unlock_cashier = function(action, lock_type) {
+    const lockUnlockCashier = function(action, lock_type) {
         const toggle = action === 'lock' ? 'disable' : 'enable';
         if (/withdraw/.test(lock_type) && withdrawal_locked) {
             return;
         }
         $.each($('.' + lock_type), function() {
-            replace_button(toggle, $(this).parent());
+            replaceButton(toggle, $(this).parent());
         });
     };
 
-    const check_locked = function() {
-        if (Client.get('is_virtual')) return;
-        if (japanese_client() && !japanese_residence()) window.location.href = default_redirect_url();
-        if (Client.status_detected('cashier_locked')) {
-            lock_unlock_cashier('lock', 'deposit, .withdraw');
-            withdrawal_locked = true;
-        } else if (Client.status_detected('withdrawal_locked')) {
-            lock_unlock_cashier('lock', 'withdraw');
-            withdrawal_locked = true;
-        } else if (Client.status_detected('unwelcome')) {
-            lock_unlock_cashier('lock', 'deposit');
-        } else if (sessionStorage.getItem('client_status') === null) {
-            BinarySocket.send({ get_account_status: '1', passthrough: { dispatch_to: 'Cashier' } });
-        }
+    const checkLocked = function() {
+        if (!Client.is_logged_in()) return;
+        BinarySocket.wait('authorize').then(() => {
+            if (Client.get('is_virtual')) return;
+            if (japanese_client() && !japanese_residence()) {
+                window.location.href = default_redirect_url();
+                return;
+            }
+            checkTopUpWithdraw();
+            BinarySocket.wait('get_account_status').then(() => {
+                if (Client.status_detected('cashier_locked')) {
+                    lockUnlockCashier('lock', 'deposit, .withdraw');
+                    withdrawal_locked = true;
+                } else if (Client.status_detected('withdrawal_locked')) {
+                    lockUnlockCashier('lock', 'withdraw');
+                    withdrawal_locked = true;
+                } else if (Client.status_detected('unwelcome')) {
+                    lockUnlockCashier('lock', 'deposit');
+                }
+            });
+        });
     };
 
-    const check_top_up_withdraw = function() {
-        if (is_cashier_page() && Client.get('values_set')) {
-            const currency = Client.get('currency'),
-                balance = Client.get('balance');
+    const checkTopUpWithdraw = function() {
+        BinarySocket.wait('balance').then(() => {
+            const currency = Client.get('currency');
+            const balance = Client.get('balance');
             if (Client.get('is_virtual')) {
                 if ((currency !== 'JPY' && balance > 1000) ||
                     (currency === 'JPY' && balance > 100000)) {
-                    replace_button('disable', '#VRT_topup_link');
+                    replaceButton('disable', '#VRT_topup_link');
                 }
             } else if (!currency || +balance === 0) {
-                lock_unlock_cashier('lock', 'withdraw');
+                lockUnlockCashier('lock', 'withdraw');
             } else {
-                lock_unlock_cashier('unlock', 'withdraw');
+                lockUnlockCashier('unlock', 'withdraw');
             }
-        }
+        });
     };
 
-    const replace_button = function(action, elementToReplace) {
-        const $a = $(elementToReplace);
+    const replaceButton = function(action, el_to_replace) {
+        const $a = $(el_to_replace);
         if ($a.length === 0) return;
         const replace = ['button-disabled', 'pjaxload'];
         const disable = action === 'disable';
@@ -84,35 +90,17 @@ const Cashier = (function() {
     };
 
     const onLoad = function() {
-        if (is_cashier_page() && Client.is_logged_in()) {
+        if (Client.is_logged_in()) {
             withdrawal_locked = false;
-            Cashier.check_locked();
-            Cashier.check_top_up_withdraw();
+            checkLocked();
             Header.topbar_message_visibility(Client.landing_company());
         }
     };
 
-    const is_cashier_page = function () {
-        return /cashier[\/\w]*\.html/.test(window.location.pathname);
-    };
-
-    const onLoadPaymentMethods = function() {
-        if (japanese_client()) {
-            window.location.href = url_for('/');
-        }
-        if (Client.is_logged_in() && !Client.get('is_virtual')) {
-            Cashier.check_locked();
-        }
-    };
-
     return {
-        check_locked         : check_locked,
-        check_top_up_withdraw: check_top_up_withdraw,
-        onLoad               : onLoad,
-        onLoadPaymentMethods : onLoadPaymentMethods,
+        checkLocked: checkLocked,
+        onLoad     : onLoad,
     };
 })();
 
-module.exports = {
-    Cashier: Cashier,
-};
+module.exports = Cashier;

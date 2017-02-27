@@ -1,5 +1,5 @@
 const AccountTransferWS             = require('./cashier/account_transferws').AccountTransferWS;
-const Cashier                       = require('./cashier/cashier').Cashier;
+const Cashier                       = require('./cashier/cashier');
 const ForwardWS                     = require('./cashier/deposit_withdraw_ws').ForwardWS;
 const PaymentAgentListWS            = require('./cashier/payment_agent_listws').PaymentAgentListWS;
 const PaymentAgentWithdrawWS        = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
@@ -151,7 +151,7 @@ pjax_config_page('/cashier', function() {
 pjax_config_page('/cashier/payment_methods', function() {
     return {
         onLoad: function() {
-            Cashier.onLoadPaymentMethods();
+            Cashier.checkLocked();
         },
     };
 });
