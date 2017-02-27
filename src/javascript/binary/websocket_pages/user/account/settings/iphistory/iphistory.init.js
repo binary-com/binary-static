@@ -1,10 +1,10 @@
-const IPHistoryUI   = require('./iphistory.ui').IPHistoryUI;
-const IPHistoryData = require('./iphistory.data').IPHistoryData;
+const IPHistoryUI   = require('./iphistory.ui');
+const IPHistoryData = require('./iphistory.data');
 
-const IPHistory = (function() {
+const IPHistoryInit = (() => {
     'use strict';
 
-    const responseHandler = function(response) {
+    const responseHandler = (response) => {
         if (response.error && response.error.message) {
             return IPHistoryUI.displayError(response.error.message);
         }
@@ -12,15 +12,18 @@ const IPHistory = (function() {
         return IPHistoryUI.update(parsed);
     };
 
-    const init = function() {
+    const init = () => {
         IPHistoryUI.init();
-        BinarySocket.init({
-            onmessage: IPHistoryData.calls(responseHandler),
+        const req = {
+            login_history: '1',
+            limit        : 50,
+        };
+        BinarySocket.send(req).then((response) => {
+            responseHandler(response);
         });
-        IPHistoryData.get(50);
     };
 
-    const clean = function() {
+    const clean = () => {
         IPHistoryUI.clean();
     };
 
@@ -30,6 +33,4 @@ const IPHistory = (function() {
     };
 })();
 
-module.exports = {
-    IPHistory: IPHistory,
-};
+module.exports = IPHistoryInit;

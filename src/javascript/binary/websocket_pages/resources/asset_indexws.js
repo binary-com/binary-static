@@ -1,84 +1,81 @@
-const AssetIndex = (function() {
+const AssetIndex = (() => {
     'use strict';
 
-    let marketColumns;
+    let market_columns;
 
     // Search and Remove (to decrease the next search count)
-    const getSymbolInfo = function(qSymbol, activeSymbols) {
-        return activeSymbols.filter(function(sy, id) {
+    const getSymbolInfo = (qSymbol, active_symbols) =>
+        active_symbols.filter((sy, id) => {
             if (sy.symbol === qSymbol) {
-                activeSymbols.splice(id, 1);
+                active_symbols.splice(id, 1);
                 return true;
             }
             return false;
         });
-    };
 
     /*
      * This method generates headers for all tables of each market
      * should include headers existed in all assets of each market and its submarkets
      */
-    const getAssetIndexData = function(assetIndex, activeSymbols) {
-        if (!assetIndex || !activeSymbols) return null;
+    const getAssetIndexData = (asset_index, active_symbols) => {
+        if (!asset_index || !active_symbols) return null;
 
-        marketColumns = {};
+        market_columns = {};
 
         // index of items in asset_index response
         const idx = {
-            symbol     : 0,
-            displayName: 1,
-            cells      : 2,
-            symInfo    : 3,
-            values     : 4,
-            cellProps  : {
-                cellName       : 0,
-                cellDisplayName: 1,
-                cellFrom       : 2,
-                cellTo         : 3,
+            symbol      : 0,
+            display_name: 1,
+            cells       : 2,
+            sym_info    : 3,
+            values      : 4,
+            cell_props  : {
+                cell_name        : 0,
+                cell_display_name: 1,
+                cell_from        : 2,
+                cell_to          : 3,
             },
         };
 
-        for (let i = 0; i < assetIndex.length; i++) {
-            const assetItem = assetIndex[i];
-            const symbolInfo = getSymbolInfo(assetItem[idx.symbol], activeSymbols)[0];
-            if (symbolInfo) {
-                const market = symbolInfo.market;
+        for (let i = 0; i < asset_index.length; i++) {
+            const asset_item = asset_index[i];
+            const symbol_info = getSymbolInfo(asset_item[idx.symbol], active_symbols)[0];
+            if (symbol_info) {
+                const market = symbol_info.market;
 
-                assetItem.push(symbolInfo);
+                asset_item.push(symbol_info);
 
                 // Generate market columns to use in all this market's submarket tables
-                if (!(market in marketColumns)) {
-                    marketColumns[market] = {
+                if (!(market in market_columns)) {
+                    market_columns[market] = {
                         header : [''],
                         columns: [''],
                     };
                 }
 
-                const assetCells = assetItem[idx.cells],
+                const asset_cells = asset_item[idx.cells],
                     values = {};
-                for (let j = 0; j < assetCells.length; j++) {
-                    const col  = assetCells[j][idx.cellProps.cellName];
+                for (let j = 0; j < asset_cells.length; j++) {
+                    const col  = asset_cells[j][idx.cell_props.cell_name];
 
-                    values[col] = assetCells[j][idx.cellProps.cellFrom] + ' - ' + assetCells[j][idx.cellProps.cellTo];
+                    values[col] = asset_cells[j][idx.cell_props.cell_from] + ' - ' + asset_cells[j][idx.cell_props.cell_to];
 
-                    const marketCols = marketColumns[market];
-                    if (marketCols.columns.indexOf(col) === -1) {
-                        marketCols.header.push(assetCells[j][idx.cellProps.cellDisplayName]);
-                        marketCols.columns.push(col);
+                    const market_cols = market_columns[market];
+                    if (market_cols.columns.indexOf(col) === -1) {
+                        market_cols.header.push(asset_cells[j][idx.cell_props.cell_display_name]);
+                        market_cols.columns.push(col);
                     }
                 }
-                assetItem.push(values);
+                asset_item.push(values);
             }
         }
-        return assetIndex;
+        return asset_index;
     };
 
     return {
         getAssetIndexData: getAssetIndexData,
-        getMarketColumns : function() { return marketColumns; },
+        getMarketColumns : () => market_columns,
     };
 })();
 
-module.exports = {
-    AssetIndex: AssetIndex,
-};
+module.exports = AssetIndex;

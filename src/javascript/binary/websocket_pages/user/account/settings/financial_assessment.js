@@ -87,6 +87,7 @@ const FinancialAssessment = (() => {
                 } else {
                     showFormMessage('Your changes have been updated successfully.', true);
                     RiskClassification.cleanup();
+                    BinarySocket.send({ get_financial_assessment: 1 }, true);
                 }
             });
         } else {

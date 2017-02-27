@@ -3,9 +3,9 @@ const Cashier                       = require('./cashier/cashier').Cashier;
 const ForwardWS                     = require('./cashier/deposit_withdraw_ws').ForwardWS;
 const PaymentAgentListWS            = require('./cashier/payment_agent_listws').PaymentAgentListWS;
 const PaymentAgentWithdrawWS        = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
-const AssetIndexUI                  = require('./resources/asset_index/asset_indexws.ui').AssetIndexUI;
-const MarketTimesUI                 = require('./resources/market_times/market_timesws.ui').MarketTimesUI;
-const AuthenticateWS                = require('./user/account/authenticate').AuthenticateWS;
+const AssetIndexUI                  = require('./resources/asset_index/asset_indexws.ui');
+const MarketTimesUI                 = require('./resources/market_times/market_timesws.ui');
+const AuthenticateWS                = require('./user/account/authenticate');
 const PasswordWS                    = require('./user/account/change_password').PasswordWS;
 const PaymentAgentTransferSocket    = require('./user/account/payment_agent_transfer').PaymentAgentTransferSocket;
 const PortfolioWS                   = require('./user/account/portfolio/portfolio.init').PortfolioWS;
@@ -13,8 +13,8 @@ const ProfitTableWS                 = require('./user/account/profit_table/profi
 const APITokenWS                    = require('./user/account/settings/api_token').APITokenWS;
 const AuthorisedApps                = require('./user/account/settings/authorised_apps').AuthorisedApps;
 const FinancialAssessment           = require('./user/account/settings/financial_assessment');
-const IPHistoryWS                   = require('./user/account/settings/iphistory').IPHistoryWS;
-const Limits                        = require('./user/account/settings/limits').Limits;
+const IPHistory                     = require('./user/account/settings/iphistory');
+const Limits                        = require('./user/account/settings/limits');
 const SelfExclusionWS               = require('./user/account/settings/self_exclusion').SelfExclusionWS;
 const SettingsDetailsWS             = require('./user/account/settings/settings_detailsws').SettingsDetailsWS;
 const SecurityWS                    = require('./user/account/settings/settings_securityws').SecurityWS;
@@ -226,10 +226,10 @@ pjax_config_page_require_auth('user/settings/assessmentws', function() {
 pjax_config_page_require_auth('user/security/iphistoryws', function() {
     return {
         onLoad: function() {
-            IPHistoryWS.onLoad();
+            IPHistory.onLoad();
         },
         onUnload: function() {
-            IPHistoryWS.onUnload();
+            IPHistory.onUnload();
         },
     };
 });
