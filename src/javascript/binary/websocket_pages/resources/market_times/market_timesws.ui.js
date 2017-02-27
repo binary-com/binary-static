@@ -135,10 +135,9 @@ const MarketTimesUI = (() => {
         return $market_tables;
     };
 
-    const createSubmarketHeader = (submarket_name) => {
+    const createSubmarketHeader = submarket_name => (
         $('<tr/>', { class: 'flex-tr' })
-            .append($('<th/>', { class: 'flex-tr-child submarket-name', colspan: columns.length, text: submarket_name }));
-    };
+            .append($('<th/>', { class: 'flex-tr-child submarket-name', colspan: columns.length, text: submarket_name })));
 
     const createSubmarketTableRow = (market_name, submarket_name, symbol) => {
         const $table_row = Table.createFlexTableRow(
