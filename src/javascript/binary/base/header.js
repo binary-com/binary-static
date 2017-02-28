@@ -227,10 +227,10 @@ const Header = (function() {
                 const has_status = (regex => !regex.test(status));
 
                 const check_statuses = [
-                    { validation: () => has_status(/(authenticated|age_verification)/),        message: messages.authenticate },
+                    { validation: Client.should_accept_tnc,                                    message: messages.tnc },
                     { validation: riskAssessment,                                              message: messages.risk },
                     { validation: () => has_status(/crs_tin_information/),                     message: messages.tax },
-                    { validation: Client.should_accept_tnc,                                    message: messages.tnc },
+                    { validation: () => has_status(/(authenticated|age_verification)/),        message: messages.authenticate },
                     { validation: () => has_status(/(unwelcome|(cashier|withdrawal)_locked)/), message: messages.unwelcome },
                 ];
 
