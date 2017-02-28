@@ -193,49 +193,54 @@ const Header = (function() {
     };
 
     const displayAccountStatus = () => {
-        BinarySocket.wait('get_account_status').then((response) => {
-            const status = response.get_account_status.status;
+        BinarySocket.wait('authorize').then(() => {
+            if (Client.get('is_virtual')) return;
+            BinarySocket.wait('get_account_status').then((response) => {
+                const status = response.get_account_status.status;
 
-            const messages = {
-                authenticate: () => template(
-                    localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.',
-                        ['<a href="' + url_for('user/authenticatews') + '">', '</a>'])),
-                risk: () => template(
-                    localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.'),
-                    ['<a href="' + url_for('user/settings/assessmentws') + '">', '</a>']),
-                tax: () => template(
-                    localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.'),
-                    ['<a href="' + url_for('user/settings/detailsws') + '">', '</a>']),
-                tnc: () => template(
-                    localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.'),
-                    ['<a href="' + url_for('user/tnc_approvalws') + '">', '</a>']),
-                unwelcome: () => template(
-                    localize('Your account is restricted - kindly [_1]contact customer support[_2] for assistance.'),
-                    ['<a href="mailto:support@binary.com">', '</a>']),
-            };
+                const messages = {
+                    authenticate: () => template(
+                        localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.',
+                            ['<a href="' + url_for('user/authenticatews') + '">', '</a>'])),
+                    risk: () => template(
+                        localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.'),
+                        ['<a href="' + url_for('user/settings/assessmentws') + '">', '</a>']),
+                    tax: () => template(
+                        localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.'),
+                        ['<a href="' + url_for('user/settings/detailsws') + '">', '</a>']),
+                    tnc: () => template(
+                        localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.'),
+                        ['<a href="' + url_for('user/tnc_approvalws') + '">', '</a>']),
+                    unwelcome: () => template(
+                        localize('Your account is restricted - kindly [_1]contact customer support[_2] for assistance.'),
+                        ['<a href="mailto:support@binary.com">', '</a>']),
+                };
 
-            const riskAssessment = () => {
-                if (response.get_account_status.risk_classification === 'high') {
-                    BinarySocket.send({ get_financial_assessment: 1 })
-                        .then(data => !objectNotEmpty(data.get_financial_assessment));
-                }
-                return false;
-            };
+                const riskAssessment = () => {
+                    if (response.get_account_status.risk_classification === 'high') {
+                        BinarySocket.send({ get_financial_assessment: 1 })
+                            .then(data => !objectNotEmpty(data.get_financial_assessment));
+                    }
+                    return false;
+                };
 
-            const check_statuses = [
-                { validation: () => !/(authenticated|age_verification)/.test(status),        message: messages.authenticate },
-                { validation: riskAssessment,                                                message: messages.risk },
-                { validation: () => !/crs_tin_information/.test(status),                     message: messages.tax },
-                { validation: Client.should_accept_tnc,                                      message: messages.tnc },
-                { validation: () => !/(unwelcome|(cashier|withdrawal)_locked)/.test(status), message: messages.unwelcome },
-            ];
+                const has_status = (regex => !regex.test(status));
 
-            check_statuses.some((object) => {
-                if (object.validation()) {
-                    displayNotification(object.message());
-                    return true;
-                }
-                return false;
+                const check_statuses = [
+                    { validation: () => has_status(/(authenticated|age_verification)/),        message: messages.authenticate },
+                    { validation: riskAssessment,                                              message: messages.risk },
+                    { validation: () => has_status(/crs_tin_information/),                     message: messages.tax },
+                    { validation: Client.should_accept_tnc,                                    message: messages.tnc },
+                    { validation: () => has_status(/(unwelcome|(cashier|withdrawal)_locked)/), message: messages.unwelcome },
+                ];
+
+                check_statuses.some((object) => {
+                    if (object.validation()) {
+                        displayNotification(object.message());
+                        return true;
+                    }
+                    return false;
+                });
             });
         });
     };
