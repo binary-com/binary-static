@@ -1,4 +1,3 @@
-const push_notification = require('pushwoosh-notification');
 const Login             = require('./login').Login;
 const template          = require('./utility').template;
 const LocalStore        = require('./storage').LocalStore;
@@ -9,7 +8,6 @@ const getLanguage       = require('./language').getLanguage;
 const setCookieLanguage = require('./language').setCookieLanguage;
 const Url               = require('./url').Url;
 const url_for           = require('./url').url_for;
-const url_for_static    = require('./url').url_for_static;
 const Client            = require('./client').Client;
 const Header            = require('./header').Header;
 const Menu              = require('./menu').Menu;
@@ -20,6 +18,7 @@ const ViewBalance       = require('../websocket_pages/user/viewbalance/viewbalan
 const Cookies           = require('../../lib/js-cookie');
 const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check.init').RealityCheck;
 const RealityCheckData  = require('../websocket_pages/user/reality_check/reality_check.data').RealityCheckData;
+const PushNotification  = require('../../lib/push_notification');
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
 
@@ -28,7 +27,7 @@ const Page = function() {
     Client.init();
     this.url = new Url();
     Menu.init(this.url);
-    push_notification(url_for_static('/') + 'service-worker.js', 'web.com.pushwoosh.websiteid', 'D04E6-FA474');
+    PushNotification.init();
 };
 
 Page.prototype = {
@@ -66,6 +65,7 @@ Page.prototype = {
         BinarySocket.init();
         this.show_notification_outdated_browser();
         Menu.make_mobile_menu();
+        PushNotification.sendTags();
     },
     on_unload: function() {
         Menu.on_unload();
