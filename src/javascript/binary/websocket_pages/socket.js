@@ -350,9 +350,6 @@ const BinarySocketClass = function() {
                 } else if (type === 'get_account_status' && response.get_account_status) {
                     const status = response.get_account_status.status;
                     sessionStorage.setItem('client_status', status);
-                    if (/has_password/.test(status)) {
-                        Client.set('has_password', 1);
-                    }
 
                     page.show_authenticate_message();
 
