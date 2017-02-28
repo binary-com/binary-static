@@ -84,6 +84,4 @@ const MBTradePage = (function() {
     };
 })();
 
-module.exports = {
-    MBTradePage: MBTradePage,
-};
+module.exports = MBTradePage;

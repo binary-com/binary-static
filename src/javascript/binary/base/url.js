@@ -19,7 +19,7 @@ Url.prototype = {
         $(this).trigger('change', [this]);
     },
     update: function(url) {
-        const state_info = { container: 'content', url: url, useClass: 'pjaxload' };
+        const state_info = { container: 'content', url: url };
         if (this.history_supported) {
             history.pushState(state_info, '', url);
             this.reset();

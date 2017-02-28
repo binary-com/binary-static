@@ -3,7 +3,7 @@
 <div class="gr-row">
     <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color">
-            <a class="pjaxload" href="[% request.url_for('/get-started/what-is-binary-trading') %]">
+            <a href="[% request.url_for('/get-started/what-is-binary-trading') %]">
                 <div id="what-is-binary-trading"></div>
                 <div class="section-header">[% l("Why choose binary trading?") %]</div>
             </a>
@@ -13,7 +13,7 @@
 
     <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color">
-            <a class="pjaxload" href="[% request.url_for('/get-started/types-of-trades') %]">
+            <a href="[% request.url_for('/get-started/types-of-trades') %]">
                 <div id="types-of-trades"></div>
                 <div class="section-header">[% l("Types of trades") %]</div>
             </a>
@@ -25,7 +25,7 @@
 <div class="gr-row">
     <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color">
-            <a class="pjaxload" href="[% request.url_for('/get-started/binary-options-basics') %]">
+            <a href="[% request.url_for('/get-started/binary-options-basics') %]">
                 <div id="binary-options-basics"></div>
                 <div class="section-header">[% l("Binary options basics") %]</div>
             </a>
@@ -35,7 +35,7 @@
 
     <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color">
-            <a class="pjaxload" href="[% request.url_for('/get-started/why-trade-with-us') %]">
+            <a href="[% request.url_for('/get-started/why-trade-with-us') %]">
                 <div id="why-trade-with-us"></div>
                 <div class="section-header">[% l("Benefits of trading binaries") %]</div>
             </a>
@@ -47,7 +47,7 @@
 <div class="gr-row">
     <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color">
-            <a class="pjaxload" href="[% request.url_for('/get-started/how-to-trade-binaries') %]">
+            <a href="[% request.url_for('/get-started/how-to-trade-binaries') %]">
                 <div id="how-to-trade-binaries"></div>
                 <div class="section-header">[% l("How to trade binary options?") %]</div>
             </a>
@@ -56,7 +56,7 @@
     </div>
     <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color">
-            <a class="pjaxload" href="[% request.url_for('/get-started/beginners-faq') %]">
+            <a href="[% request.url_for('/get-started/beginners-faq') %]">
                 <div id="beginners-faq"></div>
                 <div class="section-header">[% l("FAQ") %]</div>
             </a>
@@ -68,7 +68,7 @@
 <div class="gr-row">
     <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color">
-            <a class="pjaxload" href="[% request.url_for('/get-started/volidx-markets') %]">
+            <a href="[% request.url_for('/get-started/volidx-markets') %]">
                 <div id="random-trades"></div>
                 <div class="section-header">[% l("How to trade the Volatility Indices markets?") %]</div>
             </a>
@@ -77,7 +77,7 @@
     </div>
     <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color">
-            <a class="pjaxload" href="[% request.url_for('/get-started/smart-indices') %]">
+            <a href="[% request.url_for('/get-started/smart-indices') %]">
                 <div id="smart-indices"></div>
                 <div class="section-header">[% l("Smart Markets") %]</div>
             </a>
@@ -89,7 +89,7 @@
 <div class="gr-row">
     <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color">
-            <a class="pjaxload" href="[% request.url_for('/get-started/glossary') %]">
+            <a href="[% request.url_for('/get-started/glossary') %]">
                 <div id="glossary"></div>
                 <div class="section-header">[% l("Glossary") %]</div>
             </a>
@@ -98,7 +98,7 @@
     </div>
     <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
         <div class="section fill-bg-color">
-            <a class="pjaxload" href="[% request.url_for('/get-started/spread') %]">
+            <a href="[% request.url_for('/get-started/spread') %]">
                 <div id="spread"></div>
                 <div class="section-header">[% l("Spreads") %]</div>
             </a>

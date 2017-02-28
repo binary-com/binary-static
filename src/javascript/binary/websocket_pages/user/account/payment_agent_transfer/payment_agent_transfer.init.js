@@ -5,11 +5,6 @@ const PaymentAgentTransferUI   = require('./payment_agent_transfer.ui').PaymentA
 
 const PaymentAgentTransfer = (function() {
     const hiddenClass = 'invisible';
-    let paymentagent;
-
-    const init_variable = function() {
-        paymentagent = false;
-    };
 
     const paymentAgentTransferHandler = function(response) {
         const req = response.echo_req;
@@ -141,22 +136,12 @@ const PaymentAgentTransfer = (function() {
         });
     };
 
-    const error_if_virtual = function() {
-        if (Client.get('is_virtual')) {
-            $('#virtual_error').removeClass('invisible');
-            $('#pa_transfer_loading').remove();
-            return true;
-        }
-        return false;
-    };
-
     const error_if_not_pa = function(response) {
-        if (response.get_settings.hasOwnProperty('is_authenticated_payment_agent') && response.get_settings.is_authenticated_payment_agent === 0) {
-            setFormVisibility(false);
-        } else if (!error_if_virtual() && response.get_settings.is_authenticated_payment_agent) {
+        if (response.get_settings.is_authenticated_payment_agent) {
             setFormVisibility(true);
-            paymentagent = true;
             PaymentAgentTransfer.init(true);
+        } else {
+            setFormVisibility(false);
         }
     };
 
@@ -168,7 +153,7 @@ const PaymentAgentTransfer = (function() {
         } else {
             PaymentAgentTransferUI.hideForm();
             PaymentAgentTransferUI.hideNotes();
-            if (Client.get('values_set') && !Client.get('is_authenticated_payment_agent')) {
+            if (!Client.get('is_authenticated_payment_agent')) {
                 $('#pa_transfer_loading').remove();
                 $('#not_pa_error').removeClass('invisible');
             }
@@ -181,10 +166,6 @@ const PaymentAgentTransfer = (function() {
             error_if_not_pa(response);
         }
 
-        if (type === 'authorize' && paymentagent) {
-            PaymentAgentTransfer.init(true);
-        }
-
         if (type === 'paymentagent_transfer') {
             paymentAgentTransferHandler(response);
         }
@@ -192,7 +173,6 @@ const PaymentAgentTransfer = (function() {
 
     return {
         init          : init,
-        init_variable : init_variable,
         handleResponse: handleResponse,
     };
 })();

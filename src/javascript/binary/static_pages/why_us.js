@@ -1,17 +1,20 @@
-const Scroll = require('../common_functions/scroll').Scroll;
+const Scroll = require('../common_functions/scroll');
 const Client = require('../base/client').Client;
 
 const WhyUs = (function() {
-    const init = function() {
+    const onLoad = function() {
         Scroll.sidebar_scroll($('.why-us'));
-        Client.activate_by_client_type('body');
+        Client.activate_by_client_type();
+    };
+
+    const onUnload = function() {
+        Scroll.offScroll();
     };
 
     return {
-        init: init,
+        onLoad  : onLoad,
+        onUnload: onUnload,
     };
 })();
 
-module.exports = {
-    WhyUs: WhyUs,
-};
+module.exports = WhyUs;

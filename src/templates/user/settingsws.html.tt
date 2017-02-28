@@ -4,13 +4,13 @@
     <div class="gr-row">
         <div class="gr-3 gr-6-m gr-parent">
             <div class="gr-8 gr-padding-10">
-                <a class="pjaxload" href="[% request.url_for('/user/settings/detailsws') %]">
+                <a href="[% request.url_for('/user/settings/detailsws') %]">
                     <img class="responsive" src="[% request.url_for('images/pages/settings/detail.svg') %]">
                 </a>
             </div>
             <div class="gr-12">
                 <h4>
-                    <a class="pjaxload" href="[% request.url_for('/user/settings/detailsws') %]">[% l('Personal Details') %]</a>
+                    <a href="[% request.url_for('/user/settings/detailsws') %]">[% l('Personal Details') %]</a>
                 </h4>
                 <p>[% l('View your personal information.') %]</p>
             </div>
@@ -18,13 +18,13 @@
 
         <div class="gr-3 gr-6-m gr-parent ja-hide real invisible">
             <div class="gr-8 gr-padding-10">
-                <a class="pjaxload" href="[% request.url_for('/user/settings/assessmentws') %]">
+                <a href="[% request.url_for('/user/settings/assessmentws') %]">
                     <img class="responsive" src="[% request.url_for('images/pages/settings/financial-assessment.svg') %]">
                 </a>
             </div>
             <div class="gr-12">
                 <h4>
-                    <a class="pjaxload" href="[% request.url_for('/user/settings/assessmentws') %]">[% l('Financial Assessment') %]</a>
+                    <a href="[% request.url_for('/user/settings/assessmentws') %]">[% l('Financial Assessment') %]</a>
                 </h4>
                 <p>[% l('View your financial assessment settings.') %]</p>
             </div>

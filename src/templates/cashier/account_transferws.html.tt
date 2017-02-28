@@ -31,9 +31,7 @@
     <div class="gr-12 rbox-content" id="client_message_content">
       <p class="center-text notice-msg">
         [% l("The account transfer is unavailable. Please") %]
-        <a class="pjaxload" href="[% request.url_for('/cashier/forwardws#deposit') %]">
-          [% l("deposit") %]
-        </a>
+        <a href="[% request.url_for('/cashier/forwardws#deposit') %]">[% l("deposit") %]</a>
         [% l("to your account.") %]
       </p>
     </div>

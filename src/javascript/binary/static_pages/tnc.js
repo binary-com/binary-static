@@ -1,16 +1,17 @@
 const localize    = require('../base/localize').localize;
 const url         = require('../base/url').url;
-const Scroll      = require('../common_functions/scroll').Scroll;
+const Scroll      = require('../common_functions/scroll');
 const TNCApproval = require('../websocket_pages/user/tnc_approval');
 
 const TermsAndConditions = (function() {
-    const init = function() {
+    const onLoad = function() {
         handleActiveTab();
         TNCApproval.requiresTNCApproval(
             $('#btn_accept'),
             () => { $('.tnc_accept').removeClass('invisible'); },
             () => { $('#tnc_accept').html(localize('Your settings have been updated successfully.')); });
         Scroll.sidebar_scroll($('.tac-binary'));
+        tabListener();
 
         const year = document.getElementsByClassName('currentYear');
         for (let i = 0; i < year.length; i++) {
@@ -65,11 +66,14 @@ const TermsAndConditions = (function() {
         }
     };
 
+    const onUnload = function() {
+        Scroll.offScroll();
+    };
+
     return {
-        init: init,
+        onLoad  : onLoad,
+        onUnload: onUnload,
     };
 })();
 
-module.exports = {
-    TermsAndConditions: TermsAndConditions,
-};
+module.exports = TermsAndConditions;

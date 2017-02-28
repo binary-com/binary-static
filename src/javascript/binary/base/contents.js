@@ -4,7 +4,7 @@ const Login    = require('./login').Login;
 
 const Contents = (function() {
     const on_load = function() {
-        Client.activate_by_client_type();
+        Client.activate_by_client_type('#header');
         update_content_class();
         init_draggable();
     };

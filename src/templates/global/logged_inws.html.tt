@@ -29,10 +29,14 @@
             <img id="type-logo" src="https://style.binary.com/images/logo/type.svg" alt="Binary.com" />
         </a>
     </div>
-    <div id="login_loading">
-        <a href="[% request.url_for('/') %]" id="loading_link">
-            [% INCLUDE global/loading.html.tt %]
-        </a>
+    <div id="content-holder">
+        <div id="content">
+            <div id="login_loading">
+                <a href="[% request.url_for('/') %]" id="loading_link">
+                    [% INCLUDE global/loading.html.tt %]
+                </a>
+            </div>
+        </div>
     </div>
 </body>
 </html>

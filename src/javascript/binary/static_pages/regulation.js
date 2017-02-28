@@ -1,5 +1,5 @@
 const Regulation = (function() {
-    const init = function() {
+    const onLoad = function() {
         $(function() {
             $('#accordion').accordion({
                 heightStyle: 'content',
@@ -29,10 +29,8 @@ const Regulation = (function() {
     };
 
     return {
-        init: init,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    Regulation: Regulation,
-};
+module.exports = Regulation;

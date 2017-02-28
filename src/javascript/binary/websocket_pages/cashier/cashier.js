@@ -1,3 +1,4 @@
+const BinaryPjax           = require('../../base/binary_pjax');
 const Client               = require('../../base/client').Client;
 const Header               = require('../../base/header').Header;
 const default_redirect_url = require('../../base/url').default_redirect_url;
@@ -15,10 +16,10 @@ const Cashier = (function() {
 
     const checkLocked = function() {
         if (!Client.is_logged_in()) return;
-        BinarySocket.wait('authorize').then(() => {
+        BinarySocket.wait('authorize', 'website_status').then(() => {
             if (Client.get('is_virtual')) return;
             if (japanese_client() && !japanese_residence()) {
-                window.location.href = default_redirect_url();
+                BinaryPjax(default_redirect_url());
                 return;
             }
             checkTopUpWithdraw();
@@ -30,7 +31,7 @@ const Cashier = (function() {
                 } else if (Client.status_detected('unwelcome')) {
                     lock('deposit');
                 }
-                Client.activate_by_client_type('body');
+                Client.activate_by_client_type();
             });
         });
     };
@@ -55,7 +56,7 @@ const Cashier = (function() {
         if ($a.length === 0) return;
 
         // use replaceWith, to disable previously caught pjax event
-        const new_element = { class: $a.attr('class').replace('pjaxload', 'button-disabled'), html: $a.html() };
+        const new_element = { class: $a.attr('class').replace('toggle', 'button-disabled'), html: $a.html() };
 
         const id = $a.attr('id');
         if (id) {
@@ -68,9 +69,9 @@ const Cashier = (function() {
     const onLoad = function() {
         if (Client.is_logged_in()) {
             checkLocked();
-            Header.topbar_message_visibility(Client.landing_company());
-            if (!/^CR/.test(Client.get('loginid'))) {
-                $('#payment-agent-section').addClass('invisible');
+            Header.upgrade_message_visibility(); // To handle the upgrade buttons visibility
+            if (Client.get('is_virtual') || /CR/.test(Client.get('loginid'))) {
+                $('#payment-agent-section').removeClass('invisible');
             }
             if (Client.has_gaming_financial_enabled()) {
                 $('#account-transfer-section').removeClass('invisible');
@@ -79,8 +80,9 @@ const Cashier = (function() {
     };
 
     return {
-        checkLocked: checkLocked,
-        onLoad     : onLoad,
+        checkLocked   : checkLocked,
+        onLoad        : onLoad,
+        PaymentMethods: { onLoad: () => { checkLocked(); } },
     };
 })();
 

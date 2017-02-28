@@ -1,11 +1,11 @@
+const AssetIndex             = require('../asset_indexws');
+const BinaryPjax             = require('../../../base/binary_pjax');
+const State                  = require('../../../base/storage').State;
 const showLoadingImage       = require('../../../base/utility').showLoadingImage;
 const Table                  = require('../../../common_functions/attach_dom/table').Table;
 const jqueryuiTabsToDropdown = require('../../../common_functions/common_functions').jqueryuiTabsToDropdown;
 const Content                = require('../../../common_functions/content').Content;
 const japanese_client        = require('../../../common_functions/country_base').japanese_client;
-const AssetIndex             = require('../asset_indexws');
-const State                  = require('../../../base/storage').State;
-const url_for                = require('../../../base/url').url_for;
 
 const AssetIndexUI = (() => {
     'use strict';
@@ -18,10 +18,10 @@ const AssetIndexUI = (() => {
         market_columns,
         is_framed;
 
-    const init = (config) => {
+    const onLoad = function(config) {
         if (japanese_client()) {
             if (!State.get('is_beta_trading')) {
-                window.location.href = url_for('resources');
+                BinaryPjax.load('resources');
             }
             return;
         }
@@ -138,7 +138,7 @@ const AssetIndexUI = (() => {
     };
 
     return {
-        init            : init,
+        onLoad          : onLoad,
         setActiveSymbols: (response) => {
             active_symbols = response.active_symbols.slice(0); // clone
             if (asset_index) populateTable();
