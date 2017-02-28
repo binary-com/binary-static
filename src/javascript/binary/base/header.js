@@ -7,7 +7,6 @@ const State                     = require('./storage').State;
 const url_for                   = require('./url').url_for;
 const template                  = require('./utility').template;
 const objectNotEmpty            = require('./utility').objectNotEmpty;
-const check_risk_classification = require('../common_functions/check_risk_classification').check_risk_classification;
 const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
 const japanese_client           = require('../common_functions/country_base').japanese_client;
 const MetaTrader                = require('../websocket_pages/user/metatrader/metatrader');
@@ -16,7 +15,6 @@ const Header = (function() {
     const on_load = function() {
         show_or_hide_login_form();
         logout_handler();
-        check_risk_classification();
         if (!Login.is_login_pages()) {
             checkClientsCountry();
         }

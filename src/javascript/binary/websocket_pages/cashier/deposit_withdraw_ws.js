@@ -1,4 +1,3 @@
-const BinaryPjax           = require('../../base/binary_pjax');
 const Client               = require('../../base/client').Client;
 const localize             = require('../../base/localize').localize;
 const template             = require('../../base/utility').template;

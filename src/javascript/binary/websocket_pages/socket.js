@@ -1,7 +1,6 @@
 const getSocketURL              = require('../../config').getSocketURL;
 const getAppId                  = require('../../config').getAppId;
 const Login                     = require('../base/login').Login;
-const objectNotEmpty            = require('../base/utility').objectNotEmpty;
 const getPropertyValue          = require('../base/utility').getPropertyValue;
 const getLoginToken             = require('../common_functions/common_functions').getLoginToken;
 const SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
@@ -31,8 +30,6 @@ const Header     = require('../base/header').Header;
 const LocalStore = require('../base/storage').LocalStore;
 const Client     = require('../base/client').Client;
 const page       = require('../base/page').page;
-const check_risk_classification       = require('../common_functions/check_risk_classification').check_risk_classification;
-const qualify_for_risk_classification = require('../common_functions/check_risk_classification').qualify_for_risk_classification;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
@@ -351,12 +348,6 @@ const BinarySocketClass = function() {
                 } else if (type === 'reality_check') {
                     RealityCheck.realityCheckWSHandler(response);
                 } else if (type === 'get_account_status' && response.get_account_status) {
-                    if (response.get_account_status.risk_classification === 'high') {
-                        localStorage.setItem('risk_classification', 'high');
-                        send({ get_financial_assessment: 1 });
-                    } else {
-                        localStorage.removeItem('risk_classification');
-                    }
                     const status = response.get_account_status.status;
                     sessionStorage.setItem('client_status', status);
                     if (/has_password/.test(status)) {
@@ -369,15 +360,6 @@ const BinarySocketClass = function() {
                         BinarySocket.send({ cashier_password: '1' });
                     } else if (dispatch_to === 'Cashier') {
                         Cashier.check_locked();
-                    }
-                } else if (type === 'get_financial_assessment' && !response.error) {
-                    if (!objectNotEmpty(response.get_financial_assessment)) {
-                        if (qualify_for_risk_classification() && State.get(['response', 'get_account_status', 'get_account_status', 'risk_classification']) === 'high') {
-                            localStorage.setItem('risk_classification', 'high');
-                            check_risk_classification();
-                        }
-                    } else if ((localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval')) && localStorage.getItem('risk_classification') !== 'high') {
-                        localStorage.removeItem('risk_classification');
                     }
                 }
 

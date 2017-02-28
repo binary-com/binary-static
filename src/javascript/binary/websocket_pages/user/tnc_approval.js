@@ -1,6 +1,5 @@
 const BinaryPjax           = require('../../base/binary_pjax');
 const Client               = require('../../base/client').Client;
-const State                = require('../../base/storage').State;
 const default_redirect_url = require('../../base/url').default_redirect_url;
 const url_for              = require('../../base/url').url_for;
 const template             = require('../../base/utility').template;

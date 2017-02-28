@@ -313,8 +313,6 @@ const Client = (function () {
                 Cookies.remove(c, { path: parent_path });
             }
         });
-        localStorage.removeItem('risk_classification');
-        localStorage.removeItem('risk_classification.response');
         window.location.reload();
     };
 

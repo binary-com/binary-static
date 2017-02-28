@@ -30,7 +30,6 @@ const LoggedInHandler = (function() {
             Client.set_cookie('login', tokens[loginid]);
 
             // set flags
-            localStorage.setItem('risk_classification', 'check');
             GTM.set_login_flag();
 
             // redirect url
