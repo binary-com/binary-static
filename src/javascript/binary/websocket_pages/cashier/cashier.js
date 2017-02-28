@@ -30,6 +30,7 @@ const Cashier = (function() {
                 } else if (Client.status_detected('unwelcome')) {
                     lock('deposit');
                 }
+                Client.activate_by_client_type('body');
             });
         });
     };
@@ -68,6 +69,12 @@ const Cashier = (function() {
         if (Client.is_logged_in()) {
             checkLocked();
             Header.topbar_message_visibility(Client.landing_company());
+            if (!/^CR/.test(Client.get('loginid'))) {
+                $('#payment-agent-section').addClass('invisible');
+            }
+            if (Client.has_gaming_financial_enabled()) {
+                $('#account-transfer-section').removeClass('invisible');
+            }
         }
     };
 

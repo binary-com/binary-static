@@ -1,11 +1,13 @@
-const japanese_client = require('../common_functions/country_base').japanese_client;
+const Client          = require('../base/client').Client;
 const url_for         = require('../base/url').url_for;
+const japanese_client = require('../common_functions/country_base').japanese_client;
 
 const GetStartedJP = (function() {
     const init = function() {
         if (!japanese_client()) {
             window.location.href = url_for('get-started');
         }
+        Client.activate_by_client_type('body');
         const showSelectedTab = function() {
             const updatedTab = window.location.hash;
             $('.contents div').hide();

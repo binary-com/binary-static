@@ -6,7 +6,6 @@ const getPropertyValue          = require('../base/utility').getPropertyValue;
 const getLoginToken             = require('../common_functions/common_functions').getLoginToken;
 const SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
 const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
-const CashierJP                 = require('../../binary_japan/cashier').CashierJP;
 const PaymentAgentWithdrawWS    = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
 const create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
 const ViewPopupWS               = require('./user/view_popup/view_popupws').ViewPopupWS;

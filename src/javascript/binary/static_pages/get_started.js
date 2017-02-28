@@ -1,3 +1,5 @@
+const Client = require('../base/client').Client;
+
 const GetStarted = (function() {
     const select_nav_element = function() {
         const $navLink = $('.nav li a');
@@ -13,6 +15,7 @@ const GetStarted = (function() {
 
     const get_started_behaviour = function() {
         if (/get-started-jp/.test(window.location.pathname)) return;
+        Client.activate_by_client_type('body');
         const update_active_subsection = function(to_show) {
             const subsection = $('.subsection');
             subsection.addClass('hidden');
