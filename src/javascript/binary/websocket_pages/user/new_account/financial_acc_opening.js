@@ -1,11 +1,11 @@
+const BinaryPjax     = require('../../../base/binary_pjax');
+const Client         = require('../../../base/client').Client;
+const State                = require('../../../base/storage').State;
+const default_redirect_url = require('../../../base/url').default_redirect_url;
+const objectNotEmpty       = require('../../../base/utility').objectNotEmpty;
 const AccountOpening       = require('../../../common_functions/account_opening');
 const FormManager          = require('../../../common_functions/form_manager');
 const toISOFormat          = require('../../../common_functions/string_util').toISOFormat;
-const objectNotEmpty       = require('../../../base/utility').objectNotEmpty;
-const Client               = require('../../../base/client').Client;
-const State                = require('../../../base/storage').State;
-const url_for              = require('../../../base/url').url_for;
-const default_redirect_url = require('../../../base/url').default_redirect_url;
 const moment               = require('moment');
 
 const FinancialAccOpening = (function() {
@@ -14,7 +14,7 @@ const FinancialAccOpening = (function() {
     const onLoad = function() {
         State.set('is_financial_opening', 1);
         if (Client.get('has_financial')) {
-            window.location.href = url_for('trading');
+            BinaryPjax.load('trading');
             return;
         } else if (Client.get('has_gaming')) {
             $('.security').hide();
@@ -24,12 +24,12 @@ const FinancialAccOpening = (function() {
             const landing_company = response.landing_company;
             if (Client.get('is_virtual')) {
                 if (Client.can_upgrade_virtual_to_japan(landing_company)) {
-                    window.location.href = url_for('new_account/japanws');
+                    BinaryPjax.load('new_account/japanws');
                 } else if (!Client.can_upgrade_virtual_to_financial(landing_company)) {
-                    window.location.href = url_for('new_account/realws');
+                    BinaryPjax.load('new_account/realws');
                 }
             } else if (!Client.can_upgrade_gaming_to_financial(landing_company)) {
-                window.location.href = default_redirect_url();
+                BinaryPjax.load(default_redirect_url());
             }
         });
 
@@ -101,6 +101,4 @@ const FinancialAccOpening = (function() {
     };
 })();
 
-module.exports = {
-    FinancialAccOpening: FinancialAccOpening,
-};
+module.exports = FinancialAccOpening;

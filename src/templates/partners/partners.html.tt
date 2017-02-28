@@ -10,36 +10,28 @@
   <div class="gr-row gr-clear">
     <div class="gr-4 gr-12-m">
       <div class="gr-6 gr-padding-10">
-        <a class="pjaxload" href="[% request.url_for('/affiliate/signup') %]">
+        <a href="[% request.url_for('/affiliate/signup') %]">
           <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/affiliate-program.svg') %]"/>
         </a>
       </div>
       <div class="gr-12">
         <h4>
-          <a class="pjaxload" href="[% request.url_for('/affiliate/signup') %]">
-            [% l("Affiliate Program") %]
-          </a>
+          <a href="[% request.url_for('/affiliate/signup') %]">[% l("Affiliate Program") %]</a>
         </h4>
-        <p>
-          [% l("Earn commissions by introducing new customers to [_1].", website_name) %]
-        </p>
+        <p>[% l("Earn commissions by introducing new customers to [_1].", website_name) %]</p>
       </div>
     </div>
     <div class="gr-4 gr-12-m">
       <div class="gr-6 gr-padding-10">
-        <a class="pjaxload" href="[% request.url_for('/payment-agent') %]">
+        <a href="[% request.url_for('/payment-agent') %]">
           <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/payment-agents.svg') %]"/>
         </a>
       </div>
       <div class="gr-12">
         <h4>
-          <a class="pjaxload" href="[% request.url_for('/payment-agent') %]">
-            [% l("Payment Agent") %]
-          </a>
+          <a href="[% request.url_for('/payment-agent') %]">[% l("Payment Agent") %]</a>
         </h4>
-        <p>
-          [% l("Apply to become a Payment Agent") %]
-        </p>
+        <p>[% l("Apply to become a Payment Agent") %]</p>
       </div>
     </div>
     <div class="gr-4 gr-12-m">
@@ -50,32 +42,24 @@
       </div>
       <div class="gr-12">
         <h4>
-          <a href="https://developers.binary.com" target="_blank">
-            [% l("API") %]
-          </a>
+          <a href="https://developers.binary.com" target="_blank">[% l("API") %]</a>
         </h4>
-        <p>
-          [% l("Develop your own trading application with our APIs.") %]
-        </p>
+        <p>[% l("Develop your own trading application with our APIs.") %]</p>
       </div>
     </div>
   </div>
   <div class="gr-row gr-clear">
     <div class="gr-4 gr-12-m">
       <div class="gr-6 gr-padding-10">
-        <a class="pjaxload" href="[% request.url_for('/open-source-projects') %]">
+        <a href="[% request.url_for('/open-source-projects') %]">
           <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/open-source-venture.svg') %]"/>
         </a>
       </div>
       <div class="gr-12">
         <h4>
-          <a class="pjaxload" href="[% request.url_for('/open-source-projects') %]">
-            [% l("Open Source") %]
-          </a>
+          <a href="[% request.url_for('/open-source-projects') %]">[% l("Open Source") %]</a>
         </h4>
-        <p>
-          [% l("Contribute to [_1]\'s open-source projects.", website_name) %]
-        </p>
+        <p>[% l("Contribute to [_1]\'s open-source projects.", website_name) %]</p>
       </div>
     </div>
     <div class="gr-4 gr-12-m">
@@ -86,30 +70,22 @@
       </div>
       <div class="gr-12">
         <h4>
-          <a href="https://academy.binary.com/en/contributors/" target="_blank">
-            [% l("Contributors") %]
-          </a>
+          <a href="https://academy.binary.com/en/contributors/" target="_blank">[% l("Contributors") %]</a>
         </h4>
-        <p>
-          [% l("Apply to become a contributor") %]
-        </p>
+        <p>[% l("Apply to become a contributor") %]</p>
       </div>
     </div>
     <div class="gr-4 gr-12-m">
       <div class="gr-6 gr-padding-10">
-        <a class="pjaxload" href="[% request.url_for('/security-testing') %]">
+        <a href="[% request.url_for('/security-testing') %]">
           <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/tester.svg') %]"/>
         </a>
       </div>
       <div class="gr-12">
         <h4>
-          <a class="pjaxload" href="[% request.url_for('/security-testing') %]">
-            [% l("Security Testing") %]
-          </a>
+          <a href="[% request.url_for('/security-testing') %]">[% l("Security Testing") %]</a>
         </h4>
-        <p>
-          [% l("Earn money for any verifiable errors that you find.") %]
-        </p>
+        <p>[% l("Earn money for any verifiable errors that you find.") %]</p>
       </div>
     </div>
   </div>

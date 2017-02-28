@@ -1,35 +1,36 @@
+const moment                     = require('moment');
 const TradingAnalysis            = require('./analysis').TradingAnalysis;
 const Barriers                   = require('./barriers').Barriers;
+const chartFrameSource           = require('./common').chartFrameSource;
+const debounce                   = require('./common').debounce;
+const displayTooltip             = require('./common').displayTooltip;
+const hideOverlayContainer       = require('./common').hideOverlayContainer;
+const reloadPage                 = require('./common').reloadPage;
+const showFormOverlay            = require('./common').showFormOverlay;
+const showPriceOverlay           = require('./common').showPriceOverlay;
+const submitForm                 = require('./common').submitForm;
+const toggleActiveCatMenuElement = require('./common').toggleActiveCatMenuElement;
+const timeIsValid                = require('./common').timeIsValid;
+const updateWarmChart            = require('./common').updateWarmChart;
 const Contract                   = require('./contract').Contract;
 const Defaults                   = require('./defaults').Defaults;
 const Durations                  = require('./duration').Durations;
 const Price                      = require('./price').Price;
-const Tick                       = require('./tick').Tick;
-const processMarket              = require('./process').processMarket;
-const processContractForm        = require('./process').processContractForm;
-const processForgetTicks         = require('./process').processForgetTicks;
-const onExpiryTypeChange         = require('./process').onExpiryTypeChange;
 const onDurationUnitChange       = require('./process').onDurationUnitChange;
-const onlyNumericOnKeypress      = require('../../common_functions/event_handler').onlyNumericOnKeypress;
-const moment                     = require('moment');
+const onExpiryTypeChange         = require('./process').onExpiryTypeChange;
+const processForgetTicks         = require('./process').processForgetTicks;
+const processContractForm        = require('./process').processContractForm;
+const processMarket              = require('./process').processMarket;
 const setFormPlaceholderContent  = require('./set_values').setFormPlaceholderContent;
-const isVisible                  = require('../../common_functions/common_functions').isVisible;
-const showPriceOverlay           = require('./common').showPriceOverlay;
-const showFormOverlay            = require('./common').showFormOverlay;
-const hideOverlayContainer       = require('./common').hideOverlayContainer;
-const toggleActiveCatMenuElement = require('./common').toggleActiveCatMenuElement;
-const debounce                   = require('./common').debounce;
-const submitForm                 = require('./common').submitForm;
-const displayTooltip             = require('./common').displayTooltip;
-const updateWarmChart            = require('./common').updateWarmChart;
-const reloadPage                 = require('./common').reloadPage;
-const chartFrameSource           = require('./common').chartFrameSource;
-const timeIsValid                = require('./common').timeIsValid;
 const getStartDateNode           = require('./common_independent').getStartDateNode;
-const TimePicker                 = require('../../components/time_picker').TimePicker;
-const dateValueChanged           = require('../../common_functions/common_functions').dateValueChanged;
+const Tick                       = require('./tick').Tick;
+const BinaryPjax                 = require('../../base/binary_pjax');
 const Client                     = require('../../base/client').Client;
+const dateValueChanged           = require('../../common_functions/common_functions').dateValueChanged;
 const elementTextContent         = require('../../common_functions/common_functions').elementTextContent;
+const isVisible                  = require('../../common_functions/common_functions').isVisible;
+const onlyNumericOnKeypress      = require('../../common_functions/event_handler').onlyNumericOnKeypress;
+const TimePicker                 = require('../../components/time_picker').TimePicker;
 
 /*
  * TradingEvents object contains all the event handler const required = function for
@@ -481,7 +482,7 @@ const TradingEvents = (function () {
         const tip = document.getElementById('symbol_tip');
         if (init_logo) {
             tip.addEventListener('click', debounce(function (e) {
-                window.location.href = e.target.getAttribute('target');
+                BinaryPjax.load(e.target.getAttribute('target'));
             }));
         }
     };

@@ -1,16 +1,16 @@
+const BinaryPjax        = require('../../../base/binary_pjax');
+const Client            = require('../../../base/client').Client;
+const State             = require('../../../base/storage').State;
 const AccountOpening    = require('../../../common_functions/account_opening');
 const detect_hedging    = require('../../../common_functions/common_functions').detect_hedging;
 const FormManager       = require('../../../common_functions/form_manager');
-const Client            = require('../../../base/client').Client;
-const url_for           = require('../../../base/url').url_for;
-const State             = require('../../../base/storage').State;
 
 const JapanAccOpening = (function() {
     const onLoad = function() {
         if (AccountOpening.redirectCookie()) return;
         BinarySocket.wait('authorize').then(() => {
             if (Client.get('residence') !== 'jp') {
-                window.location.href = url_for('trading');
+                BinaryPjax.load('trading');
                 return;
             }
             State.set('is_japan_opening', 1);
@@ -45,7 +45,7 @@ const JapanAccOpening = (function() {
         if ('error' in response) {
             AccountOpening.handleNewAccount(response, response.msg_type);
         } else {
-            window.location.href = url_for('new_account/knowledge_testws');
+            BinaryPjax.load('new_account/knowledge_testws');
             $('#topbar-msg').children('a').addClass('invisible');
         }
     };
@@ -60,6 +60,4 @@ const JapanAccOpening = (function() {
     };
 })();
 
-module.exports = {
-    JapanAccOpening: JapanAccOpening,
-};
+module.exports = JapanAccOpening;

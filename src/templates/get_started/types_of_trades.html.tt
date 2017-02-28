@@ -12,7 +12,7 @@
     </div>
 
     <div class="subsection">
-        <h2><a class="pjaxload" href="[% request.url_for('trading?market=forex&formname=risefall') %]">[% l("Up/Down") %]</a></h2>
+        <h2><a href="[% request.url_for('trading?market=forex&formname=risefall') %]">[% l("Up/Down") %]</a></h2>
         <p>[% l("There are two types of Up/Down trades:") %]</p>
         <ol>
             <li>[% l("Rise/Fall – Predict that the market will rise or fall from its current level") %]</li>
@@ -21,12 +21,12 @@
     </div>
 
     <div class="subsection">
-      <h2><a class="pjaxload" href="[% request.url_for('trading?market=forex&formname=touchnotouch') %]">[% l("Touch/No Touch") %]</a></h2>
+      <h2><a href="[% request.url_for('trading?market=forex&formname=touchnotouch') %]">[% l("Touch/No Touch") %]</a></h2>
       <p>[% l("Choose the Touch/No Touch trade if you want to predict the market touching or not touching a target any time during the contract period.") %]</p>
     </div>
 
     <div class="subsection">
-      <h2><a class="pjaxload" href="[% request.url_for('trading?market=forex&formname=staysinout') %]">[% l("In/Out") %]</a></h2>
+      <h2><a href="[% request.url_for('trading?market=forex&formname=staysinout') %]">[% l("In/Out") %]</a></h2>
       <p>[% l("There are two types of In/Out trades:") %]</p>
       <ol>
         <li>[% l("Stays In/Out – Predict that the market stays inside or goes outside two price targets any time during the contract period") %]</li>
@@ -35,7 +35,7 @@
     </div>
 
     <div class="subsection">
-      <h2><a class="pjaxload" href="[% request.url_for('trading?market=volidx&formname=asian') %]">[% l("Asians") %]</a></h2>
+      <h2><a href="[% request.url_for('trading?market=volidx&formname=asian') %]">[% l("Asians") %]</a></h2>
       <p>[% l("There are two ways to trade Asians:") %]</p>
       <ol>
         <li>[% l("Up - Predict that the market will end higher than the average price") %]</li>
@@ -44,7 +44,7 @@
     </div>
 
     <div class="subsection">
-      <h2><a class="pjaxload" href="[% request.url_for('trading?market=volidx&formname=matchdiff') %]">[% l("Digits") %]</a></h2>
+      <h2><a href="[% request.url_for('trading?market=volidx&formname=matchdiff') %]">[% l("Digits") %]</a></h2>
       <p>[% l("Digits let you predict the last decimal digit of the spot price. There are three types of Digits trades:") %]</p>
       <ol>
         <li>[% l("Matches/Differs - Predict that the last digit will match or not match") %]</li>

@@ -145,13 +145,13 @@ const PaymentAgentListWS = (function() {
                 const response = JSON.parse(msg.data);
                 if (response) {
                     if (response.msg_type === 'paymentagent_list') {
-                        PaymentAgentListWS.responseHandler(response);
+                        responseHandler(response);
                     }
                 }
             },
         });
         Content.populate();
-        PaymentAgentListWS.init();
+        init();
     };
 
     return {
@@ -161,6 +161,4 @@ const PaymentAgentListWS = (function() {
     };
 })();
 
-module.exports = {
-    PaymentAgentListWS: PaymentAgentListWS,
-};
+module.exports = PaymentAgentListWS;

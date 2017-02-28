@@ -247,7 +247,7 @@ const SettingsDetailsWS = (function() {
         editable_fields = {};
         get_settings_data = {};
 
-        BinarySocket.wait('authorize', 'get_account_status', 'get_settings').then(() => {
+        BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();
             get_settings_data = State.get(['response', 'get_settings', 'get_settings']);
             getDetailsResponse(get_settings_data);
@@ -276,6 +276,4 @@ const SettingsDetailsWS = (function() {
     };
 })();
 
-module.exports = {
-    SettingsDetailsWS: SettingsDetailsWS,
-};
+module.exports = SettingsDetailsWS;
