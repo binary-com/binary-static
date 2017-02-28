@@ -22,7 +22,9 @@
         </p>
     </div>
 
-    <div><iframe src="" frameborder="0" width="100%" scrolling="auto"></iframe></div>
+    <div class="invisible">
+        <iframe src="" frameborder="0" width="100%" scrolling="auto"></iframe>
+    </div>
 
     <form id="frm_ukgc" class="gr-row gr-parent invisible">
         <div class="gr-2 gr-6-m gr-centered-m">

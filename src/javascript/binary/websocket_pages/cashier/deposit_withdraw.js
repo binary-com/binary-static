@@ -10,6 +10,7 @@ const DepositWithdraw = (function() {
 
     let cashier_type;
     const container = '#deposit_withdraw';
+    const hidden_class = 'invisible';
 
     const init = function(cashier_password) {
         if (cashier_password) {
@@ -44,7 +45,7 @@ const DepositWithdraw = (function() {
             } else {
                 showMessage('check_email_message');
                 const withdraw_form_id = '#frm_withdraw';
-                $(withdraw_form_id).removeClass('invisible');
+                $(withdraw_form_id).removeClass(hidden_class);
                 FormManager.init(withdraw_form_id, [{ selector: '#verification_code', validations: ['req', 'email_token'] }]);
                 FormManager.handleSubmit(withdraw_form_id, populateReq(), handleCashierResponse);
             }
@@ -58,7 +59,7 @@ const DepositWithdraw = (function() {
         });
         showMessage('choose_currency_message');
         const currency_form_id = '#frm_currency';
-        $(currency_form_id).removeClass('invisible');
+        $(currency_form_id).removeClass(hidden_class);
         FormManager.init(currency_form_id, [{ selector: '#select_currency', request_field: 'set_account_currency' }]);
         FormManager.handleSubmit(currency_form_id, {}, commonResponseHandler);
     };
@@ -86,8 +87,11 @@ const DepositWithdraw = (function() {
         BinarySocket.send(populateReq()).then(response => handleCashierResponse(response));
     };
 
-    const hideAll = function(option = '') {
-        $(`#frm_withdraw, #frm_currency, #frm_ukgc, #errors, #${option}`).addClass('invisible');
+    const hideAll = function(option) {
+        $('#frm_withdraw, #frm_currency, #frm_ukgc, #errors').addClass(hidden_class);
+        if (option) {
+            $(option).addClass(hidden_class);
+        }
     };
 
     const showError = function(id, error) {
@@ -97,9 +101,9 @@ const DepositWithdraw = (function() {
     };
 
     const showMessage = function(id, parent = 'messages') {
-        $(`#${id}`).siblings().addClass('invisible').end()
-            .removeClass('invisible');
-        $(container).find(`#${parent}`).removeClass('invisible');
+        $(`#${id}`).siblings().addClass(hidden_class).end()
+            .removeClass(hidden_class);
+        $(container).find(`#${parent}`).removeClass(hidden_class);
     };
 
     const showPersonalDetailsError = function(details) {
@@ -124,13 +128,13 @@ const DepositWithdraw = (function() {
 
     const initUKGC = () => {
         const ukgc_form_id = '#frm_ukgc';
-        $(ukgc_form_id).removeClass('invisible');
+        $(ukgc_form_id).removeClass(hidden_class);
         FormManager.init(ukgc_form_id, [{ request_field: 'ukgc_funds_protection', value: 1 }]);
         FormManager.handleSubmit(ukgc_form_id, { tnc_approval: 1 }, commonResponseHandler);
     };
 
     const handleCashierResponse = (response) => {
-        hideAll('messages');
+        hideAll('#messages');
         const error = response.error;
         if (error) {
             switch (error.code) {
@@ -162,7 +166,8 @@ const DepositWithdraw = (function() {
                     showError('custom_error', error.message);
             }
         } else {
-            $(container).find('iframe').attr('src', response.cashier);
+            $(container).find('iframe').attr('src', response.cashier).parent()
+                .removeClass(hidden_class);
         }
     };
 
