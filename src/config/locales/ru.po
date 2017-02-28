@@ -127,9 +127,6 @@ msgstr "На %1 тысячи клиентов приобретают самые 
 msgid "%1 has updated its  <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
 msgstr "%1 обновил <a class=\"pjaxload\" href=\"%2\">Правила и Условия</a>. Нажав OK, Вы подтвердите, что ознакомились и согласились с новыми <a class=\"pjaxload\" href=\"%2\">Правилами и условиями</a>."
 
-msgid "%1 has updated its <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
-msgstr "%1 обновил <a class=\"pjaxload\" href=\"%2\">Правила и Условия</a>. Нажав OK, Вы подтвердите, что ознакомились и согласились с новыми <a class=\"pjaxload\" href=\"%2\">Правилами и Условиями</a>."
-
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr "Число пользователей %1 достигло 1 миллиона, что является историческим рубежом. Компания продолжает расти в геометрической прогрессии и подтверждает позицию лидера в данной индустрии."
 
@@ -353,12 +350,6 @@ msgstr "*Все звонки записываются с целью обучен
 
 msgid ",000"
 msgstr ",000"
-
-msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
-msgstr "- Отсканированная копия счета за коммунальные услуги или выписка из банка с адресом (датированные не ранее, чем 3 последние месяца)."
-
-msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
-msgstr "- Отсканированная копия действительного паспорта, водительских прав или национального удостоверения личности, которая показывает имя, фамилию и дату рождения."
 
 msgid "0-1 year"
 msgstr "0-1 года"
@@ -727,18 +718,6 @@ msgstr "Знание и заинтересованность в Linux, а так
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Активный подход к решению проблем и предоставлению клиентских решений"
 
-msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
-msgstr "Отсканированная копия счета за коммунальные услуги или выписка из банка с указанием адреса (датированные не позднее 3 месяцев)"
-
-msgid "A scanned copy of a utility bill or bank statement that is no more than three months old."
-msgstr "Отсканированный счёт за коммунальные услуги или выписка с Вашего банковского счёта (датированные не позднее, чем за 3 месяца до текущей даты)."
-
-msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
-msgstr "Отсканированная копия действительного паспорта, водительских прав или национального удостоверения личности, которая показывает имя, фамилию и дату рождения. Предоставленный Вами документ должен быть действителен как минимум еще в течение 6 месяцев после сегодняшней даты."
-
-msgid "A scanned copy of your passport, driving licence (provisional or full), or identity card that shows your full name and date of birth."
-msgstr "Отсканированная копия Вашего паспорта, водительских прав (временных или постоянных) или Id-карты, содержащей Ваше имя и дату рождения."
-
 msgid "A strong and passionate interest in Marketing and Advertising"
 msgstr "Высокий интерес к маркетингу и рекламе"
 
@@ -819,6 +798,11 @@ msgstr "Академия"
 
 msgid "Accept"
 msgstr "Принять"
+
+#, fuzzy
+#| msgid "Terms and Conditions"
+msgid "Accept Terms and Conditions"
+msgstr "Правила и условия"
 
 msgid "Accept local bank wires"
 msgstr "Принимают местные банковские переводы"
@@ -1276,11 +1260,6 @@ msgstr "Австралия"
 msgid "Australia 200 Cash Index"
 msgstr ""
 
-#, fuzzy
-#| msgid "Authenticate your account"
-msgid "Authenticate your Binary.com account."
-msgstr "Авторизовать свой счет"
-
 msgid "Authentication"
 msgstr "Авторизация"
 
@@ -1637,6 +1616,11 @@ msgstr "Цена покупки"
 msgid "By clicking <strong>Accept</strong> below and proceeding with the Account Opening you should note that you may be exposing yourself to risks (which may be significant, including the risk of loss of the entire sum invested) that you may not have the knowledge and experience to properly assess or mitigate."
 msgstr "Обратите внимание, что, нажимая на кнопку внизу <strong>Согласен</strong> и переходя к открытию счета, Вы можете подвергать себя различным рискам (которые иногда могут быть значительными, включая риск потери всей инвестированной суммы), для оценки и смягчения которых у Вас может не быть достаточных знаний или опыта."
 
+#, fuzzy
+#| msgid "%1 has updated its %2. By clicking OK, you confirm that you have read and accepted the updated %2."
+msgid "By clicking OK, you confirm that you have read and accepted Terms & Conditions."
+msgstr "%1 обновил %2. Нажав OK, Вы подтвердите, что прочитали и приняли новые %2."
+
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
 msgstr "По умолчанию, система умного распределения поступающих ордеров гарантирует, что в верхней части стакана котировок всегда находится лучшая цена бид и цена предложения, предоставленные конкурирующими поставщиками ликвидности. Тем не менее, при определённом уровне рыночной ликвидности данное положение может измениться и наиболее важным фактором станет сама возможность исполнения."
 
@@ -1961,11 +1945,6 @@ msgstr "Жалобы и иски"
 
 msgid "Complaints and disputes"
 msgstr "Жалобы и споры"
-
-#, fuzzy
-#| msgid "<a href=\"%1\" class=\"pjaxload\">View your Financial Assessment</a>"
-msgid "Complete the <a href=\"%1\">Financial Assessment</a>."
-msgstr "<a href=\"%1\" class=\"pjaxload\">Посмотреть свою финансовую оценку</a>"
 
 msgid "Compliance"
 msgstr "Служба контроля"
@@ -3386,6 +3365,9 @@ msgstr "У меня уже есть реальный счёт"
 msgid "I have read and agree to the"
 msgstr "Я прочитал и согласен с"
 
+msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
+msgstr "Я прочитал и согласен с  <a target=\"_blank\" href=\"%1\">правилами и условиями</a> сайта."
+
 msgid "I hereby agree and accept that all documents such as pre-contract forms, all terms and conditions, trade reports and other legally required materials will be issued in electronic format only."
 msgstr "I hereby agree and accept that all documents such as pre-contract forms, all terms and conditions, trade reports and other legally required materials will be issued in electronic format only."
 
@@ -3504,6 +3486,11 @@ msgstr "Если Вы не можете незамедлительно комп�
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr "Если Вы обнаружите какие-либо уязвимости в нашем <a target='_blank' href='%1'>проекте с открытым кодом</a>, пожалуйста, отправьте на GitHub отчёт со списком улучшений."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
+msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
+msgstr "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr "Если Вы открыли несколько позиций на одном и том же активе, любая закрывающая позиция, размещённая на том же активе, закроет открытые позиции в хронологическом порядке (в порядке открытия)."
@@ -3660,6 +3647,11 @@ msgstr "Представьте место работы, которое по ощ
 
 msgid "Imagine a workplace where your individuality, creativity and sense of adventure are valued and rewarded."
 msgstr "Представьте рабочее место, где Ваши индивидуальность, креативность и любовь к приключениям находят свое место и ценятся."
+
+#, fuzzy
+#| msgid "Instant"
+msgid "Important"
+msgstr "Мгновенно"
 
 msgid "Important notes on our swap rates (overnight funding)"
 msgstr ""
@@ -4447,10 +4439,10 @@ msgstr "Основные факты"
 msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
 msgstr "В свободное от работы время Вы найдете прекрасные пляжи, острова и горы совсем недалеко от места проживания. На Мальте вы будете находиться в центре Средиземноморья, между континентальной Европой и Северной Африкой. В Малайзии же Вы окажетесь в самом центре красивейших азиатских пейзажей."
 
-msgid "Kindly email the following documents to <a href=\"mailto:%1\">%1</a> to authenticate your account:"
-msgstr "Чтобы аутентифицировать счёт, пожалуйста, отправьте следующие документы по адресу <a href=\"mailto:%1\">%1</a>:"
-
 msgid "Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account."
+msgstr ""
+
+msgid "Kindly send us these documents within 5 days to keep your MT5 account active."
 msgstr ""
 
 msgid "Know what you stand to win or lose"
@@ -5186,6 +5178,9 @@ msgstr "O. Гарантии и обязательства"
 msgid "OAuth App ID (Optional)"
 msgstr "Номер приложения OAuth (опционально)"
 
+msgid "OK"
+msgstr "ОК"
+
 msgid "OTC Derivative (Option) Trading"
 msgstr "OTC Derivative (Option) Trading"
 
@@ -5206,9 +5201,6 @@ msgstr "Октябрь"
 
 msgid "Office worker"
 msgstr "Office worker"
-
-msgid "Ok"
-msgstr "ОК"
 
 msgid "Old password is wrong."
 msgstr "Старый пароль неверный."
@@ -5274,6 +5266,11 @@ msgstr "Пожалуйста, используйте только буквы л�
 #, fuzzy
 #| msgid "Only 2 decimal points are allowed."
 msgid "Only numbers and spaces are allowed."
+msgstr "Разрешены лишь 2 десятичные."
+
+#, fuzzy
+#| msgid "Only 2 decimal points are allowed."
+msgid "Only numbers, space, and hyphen are allowed."
 msgstr "Разрешены лишь 2 десятичные."
 
 msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
@@ -5737,6 +5734,11 @@ msgstr "Пожалуйста, выберите минимум один пара�
 msgid "Please select your country of residence"
 msgstr "Пожалуйста, выберите страну проживания"
 
+#, fuzzy
+#| msgid "Kindly email the following documents to <a href=\"mailto:%1\">%1</a> to authenticate your account:"
+msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+msgstr "Чтобы аутентифицировать счёт, пожалуйста, отправьте следующие документы по адресу <a href=\"mailto:%1\">%1</a>:"
+
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Пожалуйста, укажите желаемый интервал для проверки реальности (в минутах)"
 
@@ -5886,6 +5888,11 @@ msgstr "Обработка Вашего запроса..."
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "Создание контента для сайта, блога, публикаций в социальных сетях и маркетинговых материалов компании"
 
+#, fuzzy
+#| msgid "Risk Disclosure Statement"
+msgid "Product Disclosure Statement"
+msgstr "Заявление о риске"
+
 msgid "Professional Clients"
 msgstr "Клиенты-профессионалы"
 
@@ -5919,14 +5926,21 @@ msgstr "Прибыль/убытки (пункты)"
 msgid "Prohibited Trades"
 msgstr "Запрещённые сделки"
 
+#, fuzzy
+#| msgid "A scanned copy of a utility bill or bank statement that is no more than three months old."
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+msgstr "Отсканированный счёт за коммунальные услуги или выписка с Вашего банковского счёта (датированные не позднее, чем за 3 месяца до текущей даты)."
+
+#, fuzzy
+#| msgid "A scanned copy of your passport, driving licence (provisional or full), or identity card that shows your full name and date of birth."
+msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
+msgstr "Отсканированная копия Вашего паспорта, водительских прав (временных или постоянных) или Id-карты, содержащей Ваше имя и дату рождения."
+
 msgid "Proofread and correct the content appearing on the company's website, blog, social media outlets, and marketing materials, from English to the regional language and vice versa"
 msgstr "Вычитка и внесение правок в контент, отображаемый на сайте компании, в блоге, социальных сетях и маркетинговых материалах (в переводе с английского на региональные языки и наоборот)"
 
 msgid "Proofreader"
 msgstr "Корректор"
-
-msgid "Prospectus"
-msgstr "Проспект"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "Подтверждённые знания стандартов аудита, процедур, законов, правил и нормативных положений - дополнительное преимущество"
@@ -6003,7 +6017,9 @@ msgstr "Введите пароль заново"
 msgid "Read"
 msgstr "Читать"
 
-msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+#, fuzzy
+#| msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+msgid "Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
 msgstr "Узнайте о свойствах, характерных особенностях, преимуществах и рисках бинарных опционов в нижеприведённом проспекте компании Binary Investments (Europe) Limited. Здесь Вы также найдёте раздел \"Графики\", где показаны примеры инвестирования в определённые типы контрактов, чтобы помочь Вам понять основы бинарных опционов."
 
 msgid "Read about the five types of trade offered by %1."
@@ -6872,13 +6888,11 @@ msgstr "Попробуйте прямо сейчас работу на демо-
 msgid "Th"
 msgstr "Чт"
 
+msgid "Thank you for completing the Financial Assessment and registering your Financial Account. You can now deposit funds and trade Forex with real money on MT5."
+msgstr ""
+
 msgid "Thank you for signing up! Please check your email to retrieve the verification token."
 msgstr "Спасибо за регистрацию! Теперь проверьте электронную почту, на которую должен прийти проверочный ключ."
-
-#, fuzzy
-#| msgid "Thank you for verifying your email."
-msgid "Thank you for subscribing!"
-msgstr "Спасибо за верификацию своего эл.адреса."
 
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "API %1 имеет ограничения использования, введённые с целью предотвращения злоупотреблений и/или использования API %1 для других целей. Данные ограничения использования могут быть изменены в будущем без предварительного уведомления. Если Вы регулярно превышаете лимиты использования или иным образом злоупотребляете услугами, мы можем заблокировать Ваш доступ к API %1."
@@ -7234,6 +7248,9 @@ msgstr "Длительность – это временной период ку
 
 msgid "The easiest way to get started in the financial markets"
 msgstr "Простой способ начать работать на финансовых рынках"
+
+msgid "The email address provided is already in use. If you forgot your password, please try our <a class=\"pjaxload\" href=\"%1\">password recovery tool</a> or contact our customer service."
+msgstr ""
 
 msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
 msgstr "Уровень входа в длинные позиции составляет 1001, что соответствует формуле: уровень входа + половина спреда. Спот-котировка на выходе составляет 1100; таким образом, уровень окончания длинной позиции составляет 1099, что соответствует формуле: спот-котировка на выходе - половина спреда."
@@ -7658,12 +7675,6 @@ msgstr "Заголовок"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "Чтобы подать заявку на работу у нас, пришлите свое резюме и сопроводительное письмо на <span id='hr_contact_eaddress'></span>."
 
-msgid "To authenticate your account, kindly email the following to %1:"
-msgstr "Для авторизации счета вышлите следующие данные по электронной почте на %1:"
-
-msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
-msgstr "Для авторизации счета вышлите следующее по электронной почте на <a href=\"mailto:%1\">%1</a>"
-
 msgid "To be considered for this mission critical leadership role, you'll need to demonstrate a passion for open source technologies and a desire to test your talents in a dynamic and challenging work environment."
 msgstr "Чтобы поучаствовать в конкурсе на эту важную руководящую должность, Вам необходимо продемонстрировать высокий интерес к технологиям с открытым исходным кодом, а также желание протестировать ваши навыки в интересной и динамичной рабочей среде."
 
@@ -7674,9 +7685,9 @@ msgid "To change your name, date of birth, country of residence, or email, pleas
 msgstr "Чтобы изменить имя, дату рождения, страну проживания или эл. адрес, пожалуйста, обратитесь в <a href=\"%1\">службу поддержки</a>."
 
 #, fuzzy
-#| msgid "Upgrade to a Financial Account"
-msgid "To create an MT5 Financial Account please:"
-msgstr "Обновите до финансового счета"
+#| msgid "<a href=\"%1\" class=\"pjaxload\">View your Financial Assessment</a>"
+msgid "To create an MT5 Financial Account please complete the <a href=\"%1\">Financial Assessment</a>."
+msgstr "<a href=\"%1\" class=\"pjaxload\">Посмотреть свою финансовую оценку</a>"
 
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "Для активации cookies следуйте инструкциям ниже для типа браузера, который Вы используете."
@@ -7698,7 +7709,7 @@ msgstr "To open a trading account, our customers must confirm they fully underst
 
 #, fuzzy
 #| msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
-msgid "To perform this action, please <a href=\"%1\"> upgrade to %2 Real Account</a>."
+msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "Чтобы создать торговый счет на MetaTrader, <a href=\"%1\"> откройте реальный счет на %2</a>."
 
 #, fuzzy
@@ -7711,6 +7722,11 @@ msgstr "Чтобы претендовать на эту должность, вы
 
 msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
 msgstr "Чтобы изменить пароль, введите Ваш зарегистрированный эл. адрес в поле внизу и нажмите \"Изменить пароль\"."
+
+#, fuzzy
+#| msgid "If you wish to raise these limits, please authenticate your account."
+msgid "To withdraw from MT5 Financial Account please Authenticate your %1 account."
+msgstr "Если Вы желаете повысить данные лимиты, пожалуйста, авторизируйте свой счет."
 
 msgid "Today"
 msgstr "Cегодня"
@@ -8803,8 +8819,10 @@ msgstr "У Вас нет доступа к приложениям."
 msgid "You have not obtained and have not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business;"
 msgstr "Вы не получили и не обладаете всеми необходимыми лицензиями и разрешениями, чтобы работать в соответствии с любыми законами, правилами и нормативными требованиями, действующими в рамках любого регулирующего органа в юрисдикции (юрисдикциях), в которой вы ведёте или планируете вести бизнес;"
 
-msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
-msgstr "Вы достигли предела количества запросов в секунду. Чтобы продолжить, пожалуйста <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">обновите</a> страницу."
+#, fuzzy
+#| msgid "You have reached the rate limit for %1."
+msgid "You have reached the rate limit of requests per second. Please try later."
+msgstr "Вы достигли лимита курса для %1."
 
 msgid "You have read our privacy statement and hereby give us consent to process your personal information as outlined there;"
 msgstr "Вы ознакомились с нашим положением о защите данных и настоящим разрешаете нам использовать Вашу личную информацию в рамках данного Соглашения;"
@@ -9103,9 +9121,6 @@ msgstr "Ваш пароль был изменен. Пожалуйста, зай�
 msgid "Your personal information is used primarily as a way of authenticating you as the proper owner of your account and as the person to whom withdrawal payments may be made, and to process trades. We collect personal data relating to you directly from you when you fill in the account opening form. In the event of any doubt as to the authenticity of your account details or of any withdrawal request, the company reserves the right to request further authentication information as may be deemed appropriate under the circumstances."
 msgstr "Ваша личная информация используется для установления Вашей личности как владельца счета, для выплат с Вашего счета на Ваше имя, а также для обработки контрактов. Мы запрашиваем всю личную информацию при открытии счета напрямую у Вас. Если у нас есть какие-либо сомнения относительно точности всех данных или данных при запросе на вывод средств, компания оставляет за собой право запросить дальнейшую информацию, которая считается необходимой, в зависимости от обстоятельств."
 
-msgid "Your provided email address is already in use by another Login ID. According to our terms and conditions, you may only register once through our site. If you have forgotten the password of your existing account, please <a href=\"%1\">try our password recovery tool</a> or contact customer service."
-msgstr "Указанный Вами электронный адрес уже используется для другого счёта. В соответствии с нашими Правилами и условиями, Вы можете зарегистрироваться на сайте только однажды. Если Вы забыли пароль к своему счету, пожалуйста, <a href=\"%1\">воспользуйтесь инструментом для получения этих данных</a> или свяжитесь с нашей службой поддержки."
-
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr "Ваш запрос на перевод %1 %2 с %3 на %4 был выполнен успешно."
 
@@ -9114,6 +9129,9 @@ msgstr "Ваш запрос на вывод %1 %2 с Вашего счета %3 
 
 msgid "Your session duration limit will end in %1 seconds."
 msgstr "Ограничение на длительность сессии закончится через %1 сек."
+
+msgid "Your settings have been updated successfully."
+msgstr "Ваши настройки обновлены успешно."
 
 msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
 msgstr "Срок действия Вашего ключа истёк. Пожалуйста, нажмите <a class=\"pjaxload\" href=\"%1\">здесь,</a> чтобы повторно запустить процесс проверки."
@@ -10352,6 +10370,54 @@ msgstr "Лимиты счета"
 msgid "Account Details"
 msgstr "Информация о счете"
 
+#~ msgid "%1 has updated its <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
+#~ msgstr "%1 обновил <a class=\"pjaxload\" href=\"%2\">Правила и Условия</a>. Нажав OK, Вы подтвердите, что ознакомились и согласились с новыми <a class=\"pjaxload\" href=\"%2\">Правилами и Условиями</a>."
+
+#~ msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+#~ msgstr "- Отсканированная копия счета за коммунальные услуги или выписка из банка с адресом (датированные не ранее, чем 3 последние месяца)."
+
+#~ msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
+#~ msgstr "- Отсканированная копия действительного паспорта, водительских прав или национального удостоверения личности, которая показывает имя, фамилию и дату рождения."
+
+#~ msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
+#~ msgstr "Отсканированная копия счета за коммунальные услуги или выписка из банка с указанием адреса (датированные не позднее 3 месяцев)"
+
+#~ msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
+#~ msgstr "Отсканированная копия действительного паспорта, водительских прав или национального удостоверения личности, которая показывает имя, фамилию и дату рождения. Предоставленный Вами документ должен быть действителен как минимум еще в течение 6 месяцев после сегодняшней даты."
+
+#, fuzzy
+#~| msgid "Authenticate your account"
+#~ msgid "Authenticate your Binary.com account."
+#~ msgstr "Авторизовать свой счет"
+
+#~ msgid "Ok"
+#~ msgstr "ОК"
+
+#, fuzzy
+#~| msgid "Thank you for verifying your email."
+#~ msgid "Thank you for subscribing!"
+#~ msgstr "Спасибо за верификацию своего эл.адреса."
+
+#~ msgid "To authenticate your account, kindly email the following to %1:"
+#~ msgstr "Для авторизации счета вышлите следующие данные по электронной почте на %1:"
+
+#~ msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
+#~ msgstr "Для авторизации счета вышлите следующее по электронной почте на <a href=\"mailto:%1\">%1</a>"
+
+#, fuzzy
+#~| msgid "Upgrade to a Financial Account"
+#~ msgid "To create an MT5 Financial Account please:"
+#~ msgstr "Обновите до финансового счета"
+
+#~ msgid "Your provided email address is already in use by another Login ID. According to our terms and conditions, you may only register once through our site. If you have forgotten the password of your existing account, please <a href=\"%1\">try our password recovery tool</a> or contact customer service."
+#~ msgstr "Указанный Вами электронный адрес уже используется для другого счёта. В соответствии с нашими Правилами и условиями, Вы можете зарегистрироваться на сайте только однажды. Если Вы забыли пароль к своему счету, пожалуйста, <a href=\"%1\">воспользуйтесь инструментом для получения этих данных</a> или свяжитесь с нашей службой поддержки."
+
+#~ msgid "Prospectus"
+#~ msgstr "Проспект"
+
+#~ msgid "You have reached the rate limit of requests per second. To continue, please <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">refresh</a> the page."
+#~ msgstr "Вы достигли предела количества запросов в секунду. Чтобы продолжить, пожалуйста <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">обновите</a> страницу."
+
 #~ msgid "Are you sure that you want to permanently revoke connection to"
 #~ msgstr "Вы уверены, что хотите навсегда отказаться от подключения к"
 
@@ -10559,9 +10625,6 @@ msgstr "Информация о счете"
 #~ msgid "XPTUSD"
 #~ msgstr "XPTUSD"
 
-#~ msgid "Your settings have been updated successfully."
-#~ msgstr "Ваши настройки обновлены успешно."
-
 #~ msgid "ZAF_40"
 #~ msgstr "ZAF_40"
 
@@ -10612,9 +10675,6 @@ msgstr "Информация о счете"
 
 #~ msgid "Who love working with people from different cultures, and are keen to contribute to a dynamic and unique workplace, and not merely pass on through."
 #~ msgstr "Кто любит работать с людьми разных культур и стремится внести свой вклад в динамичной и уникальной рабочей обстановке, а не просто числиться в штате."
-
-#~ msgid "%1 has updated its %2. By clicking OK, you confirm that you have read and accepted the updated %2."
-#~ msgstr "%1 обновил %2. Нажав OK, Вы подтвердите, что прочитали и приняли новые %2."
 
 #~ msgid "%1 is tailored to traders of all levels."
 #~ msgstr "%1 подходит для всех уровней трейдеров."
@@ -11468,9 +11528,6 @@ msgstr "Информация о счете"
 
 #~ msgid "Please re-enter your email"
 #~ msgstr "Пожалуйста, повторно введите Ваш эл.адрес"
-
-#~ msgid "Instant"
-#~ msgstr "Мгновенно"
 
 #~ msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
 #~ msgstr "В частности, когда мы заключим с Вами сделку в рамках торговли бинарными опционами (далее именуемую \"Контракт\"), мы будем обязаны предоставить Вам следующее: "
@@ -12378,9 +12435,6 @@ msgstr "Информация о счете"
 #~ msgid "If you need help, please contact our customer support team at"
 #~ msgstr "Если Вам нужна помощь, обратитесь в службу поддержки"
 
-#~ msgid "If you wish to raise these limits, please authenticate your account."
-#~ msgstr "Если Вы желаете повысить данные лимиты, пожалуйста, авторизируйте свой счет."
-
 #~ msgid "In order for you to place contracts, we need to know your Residence (Country). Please update your settings."
 #~ msgstr "Для того, чтобы Вы могли приобретать контракты, нам необходимо знать Вашу страну проживания. Пожалуйста, обновите свои настройки."
 
@@ -12566,9 +12620,6 @@ msgstr "Информация о счете"
 
 #~ msgid "Number of ticks must be between %1 and %2"
 #~ msgstr "Количество тиков должно быть от %1 до %2"
-
-#~ msgid "OK"
-#~ msgstr "ОК"
 
 #~ msgid "Open an Account"
 #~ msgstr "Открыть счет"
@@ -13306,9 +13357,6 @@ msgstr "Информация о счете"
 
 #~ msgid "You have opened an account using invalid details."
 #~ msgstr "Вы указали некоторые неверные данные при открытии счета."
-
-#~ msgid "You have reached the rate limit for %1."
-#~ msgstr "Вы достигли лимита курса для %1."
 
 #~ msgid "You have signed up for more than one account."
 #~ msgstr "Вы открыли более одного счета."
@@ -15617,9 +15665,6 @@ msgstr "Информация о счете"
 
 #~ msgid "Forgot Login ID or Password?"
 #~ msgstr "Забыли логин или пароль?"
-
-#~ msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
-#~ msgstr "Я прочитал и согласен с  <a target=\"_blank\" href=\"%1\">правилами и условиями</a> сайта."
 
 #~ msgid "Invalid amount"
 #~ msgstr "Вы ввели неверную сумму"
