@@ -3,9 +3,10 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-23 08:40+0000\n"
+"PO-Revision-Date: 2017-02-28 07:45+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) "
+"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -783,10 +784,8 @@ msgstr "学院"
 msgid "Accept"
 msgstr "接受"
 
-#, fuzzy
-#| msgid "Terms and Conditions"
 msgid "Accept Terms and Conditions"
-msgstr "条款和条件"
+msgstr "接受条款和条件"
 
 msgid "Accept local bank wires"
 msgstr "接受本地银行电汇"
@@ -1598,10 +1597,8 @@ msgstr "买入价"
 msgid "By clicking <strong>Accept</strong> below and proceeding with the Account Opening you should note that you may be exposing yourself to risks (which may be significant, including the risk of loss of the entire sum invested) that you may not have the knowledge and experience to properly assess or mitigate."
 msgstr "通过点击以下<strong>接受</strong> 键并依照后续流程开立账户，您须注意，您可能承担一些风险（可能会很严重，包括损失整个投资资金的风险），而对于此类风险缺，你可能乏知识与经验以作出正确评估或化解。"
 
-#, fuzzy
-#| msgid "%1 has updated its %2. By clicking OK, you confirm that you have read and accepted the updated %2."
 msgid "By clicking OK, you confirm that you have read and accepted Terms & Conditions."
-msgstr "%1已经更新了%2。通过点击OK键，您确认已经阅读并接受更新的%2条款和条件。"
+msgstr "通过点击OK键，您确认已经阅读并接受条款和条件。"
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
 msgstr "默认情况下，智能订单路由系统确保记录本的最顶部位总是由最佳竞标价格和参与竞争的流动性提供商报价组成。然而，在市场流动性不足的时候，这种情况可能会改变，并由执行可能性作主要执行因素。"
@@ -3429,10 +3426,8 @@ msgstr "如果您无法按照本协议规定立即将拖欠我们的款项全额
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr "如您在我们的<a target='_blank' href='%1'>开源代码</a>中发现任何漏洞， 请立刻在GitHub提交引入请求。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
 msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
-msgstr "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
+msgstr "如有任何疑问，请前往<a href=\"mailto:%1\">%1</a>联系我们的客服团队。"
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr "如果您已在同一市场持有多个未平仓头寸，您在同一市场完成任何平仓交易将使其他未平仓头寸按创建时间先进先出顺序平仓。"
@@ -3590,10 +3585,8 @@ msgstr "想象一下，一个基本上让您感觉不到是在工作的工作场
 msgid "Imagine a workplace where your individuality, creativity and sense of adventure are valued and rewarded."
 msgstr "想象一下，一个重视和鼓励个性、创造性和冒险精神的工作场所。"
 
-#, fuzzy
-#| msgid "Instant"
 msgid "Important"
-msgstr "即时"
+msgstr "重要"
 
 msgid "Important notes on our swap rates (overnight funding)"
 msgstr "掉期利率（隔夜资金）的重要说明"
@@ -4379,7 +4372,7 @@ msgid "Kindly provide your complete address.<br>This will be used to authenticat
 msgstr "请提供您的完整地址。<br>以便在您开立真实账户时验证您的身份。"
 
 msgid "Kindly send us these documents within 5 days to keep your MT5 account active."
-msgstr ""
+msgstr "想要让您的MT5账户继续生效，请在5天内将这些文件寄送给我们。"
 
 msgid "Know what you stand to win or lose"
 msgstr "知道您的输赢立场"
@@ -5187,10 +5180,8 @@ msgstr "只允许字母、空格、连字符、句号和省略号。"
 msgid "Only numbers and spaces are allowed."
 msgstr "只允许数字和空格。"
 
-#, fuzzy
-#| msgid "Only letters, numbers, and hyphen are allowed."
 msgid "Only numbers, space, and hyphen are allowed."
-msgstr "只允许字母、数字和连字符。"
+msgstr "只允许数字、空格和连字符。"
 
 msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "每人只能开立一个账户。使用假名开立账户或属于同一客户的多个账户不能赢取款项和/或退款。"
@@ -5639,10 +5630,8 @@ msgstr "请选择复选框。"
 msgid "Please select your country of residence"
 msgstr "请选择您的居住国"
 
-#, fuzzy
-#| msgid "Kindly email the following documents to <a href=\"mailto:%1\">%1</a> to authenticate your account:"
 msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
-msgstr "为验证您的账号，请将以下文件通过电子邮件发送到<a href=\"mailto:%1\"> %1</a>︰"
+msgstr "为证明您的身份和验证您的账号，请将以下文件发送给我们︰"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "请指定您的优选实况调查间隔时间分钟数"
@@ -5827,15 +5816,11 @@ msgstr "利润/亏损（点）"
 msgid "Prohibited Trades"
 msgstr "违禁交易"
 
-#, fuzzy
-#| msgid "A scanned copy of a utility bill or bank statement that is no more than three months old."
 msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
-msgstr "水电煤账单或银行月结单扫描件（日期不得超过3个月）。"
+msgstr "地址证明 - 水电煤账单或银行月结单扫描件（日期不得超过3个月）。"
 
-#, fuzzy
-#| msgid "A scanned copy of your passport, driving licence (provisional or full), or identity card that shows your full name and date of birth."
 msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
-msgstr "显示您名字和出生日期的护照、驾照（临时或永久）或身份证的扫描件。"
+msgstr "身份证明 - 显示您名字和出生日期的护照、驾照（临时或永久）或身份证的扫描件。"
 
 msgid "Proofread and correct the content appearing on the company's website, blog, social media outlets, and marketing materials, from English to the regional language and vice versa"
 msgstr "公司网站、博客、社交媒体网站和营销材料内容翻译的校对和更正（从英语翻译成区域语言，或反向）"
@@ -6752,7 +6737,7 @@ msgid "Th"
 msgstr "星期四"
 
 msgid "Thank you for completing the Financial Assessment and registering your Financial Account. You can now deposit funds and trade Forex with real money on MT5."
-msgstr ""
+msgstr "谢谢您完成财务评估及注册金融账户。现在您可以存入资金并在MT5以真实资金开始外汇交易。"
 
 msgid "Thank you for signing up! Please check your email to retrieve the verification token."
 msgstr "谢谢您的注册！请查看邮件并提取验证令牌。"
@@ -7114,6 +7099,8 @@ msgstr "参与金融市场最简便的方法"
 
 msgid "The email address provided is already in use. If you forgot your password, please try our <a class=\"pjaxload\" href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr ""
+"所提供的电子邮件地址已经在使用。如果忘了密码，请尝试使用我们的<a class=\"pjaxload\" href=\"%1\""
+">密码恢复工具</a>或联系客服部。"
 
 msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
 msgstr "长仓合约的进场价位为1001，即进场现价 + 一半价差。退出时，现价为1100，所以长仓合约的退出价位是1099，即退市现价 - 一半价差。"
@@ -7523,10 +7510,8 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "如需更改姓名、生日、居住国或电子邮件，请与<a href=\"%1\">客服人员</a>联系。"
 
-#, fuzzy
-#| msgid "Complete the <a href=\"%1\">Financial Assessment</a>."
 msgid "To create an MT5 Financial Account please complete the <a href=\"%1\">Financial Assessment</a>."
-msgstr "请完成<a href=\"%1\">财务评估</a>。"
+msgstr "要开立MT5金融账户，请完成<a href=\"%1\">财务评估</a>。"
 
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "要启用 cookie，请根据您的浏览器版本选择对应的指示说明，并进行操作。"
@@ -7546,8 +7531,6 @@ msgstr "要开立真实账户，您必须在Binary.com拥有已通过身份验�
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 msgstr "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 
-#, fuzzy
-#| msgid "To perform this action, please <a href=\"%1\"> upgrade to %2 Real Account</a>."
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "如要执行此操作，请<a href=\"%1\">升级到 %2 真实账户</a>。"
 
@@ -7560,10 +7543,8 @@ msgstr "要获得录取资格，您必须拥有物理、金融工程或数学专
 msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
 msgstr "如要重新设置密码，在下面输入您注册的电子邮件并点击“重设密码”。"
 
-#, fuzzy
-#| msgid "If you wish to raise these limits, please authenticate your account."
 msgid "To withdraw from MT5 Financial Account please Authenticate your %1 account."
-msgstr "如果您想提高这些限额，请验证您的账户。"
+msgstr "如果您想从MT5金融账户提款，请验证您的%1账户。"
 
 msgid "Today"
 msgstr "今天"
@@ -8611,7 +8592,7 @@ msgid "You did not change anything."
 msgstr "您没作任何更改。"
 
 msgid "You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading."
-msgstr "开户无需存入资金，但您前需要在正式交易前入金。"
+msgstr "开户无需存入资金，但您需要在正式交易前入金。"
 
 msgid "You have all necessary authority, powers, consents, licences and authorisations and have taken all necessary actions to enable you to enter into and perform this Agreement and such Transactions lawfully;"
 msgstr "您拥有所有必要的许可、权力、同意、牌照及授权并已采取所有必要措施，使您能够合法签订并履行本协议和此类交易;"
