@@ -327,8 +327,6 @@ const BinarySocketClass = function() {
                         Header.upgrade_message_visibility();
                     }
                     GTM.event_handler(response.get_settings);
-                    Client.set('tnc_status', response.get_settings.client_tnc_status || '-');
-                    if (!localStorage.getItem('risk_classification')) Client.check_tnc();
                     const jpStatus = response.get_settings.jp_account_status;
                     if (jpStatus) {
                         Client.set('jp_status', jpStatus.status);
@@ -343,8 +341,6 @@ const BinarySocketClass = function() {
                 } else if (type === 'website_status') {
                     if (!response.error) {
                         create_language_drop_down(response.website_status.supported_languages);
-                        LocalStore.set('website.tnc_version', response.website_status.terms_conditions_version);
-                        if (!localStorage.getItem('risk_classification')) Client.check_tnc();
                         if (response.website_status.clients_country) {
                             localStorage.setItem('clients_country', response.website_status.clients_country);
                             if (!Login.is_login_pages()) {
@@ -360,18 +356,13 @@ const BinarySocketClass = function() {
                         send({ get_financial_assessment: 1 });
                     } else {
                         localStorage.removeItem('risk_classification');
-                        Client.check_tnc();
                     }
                     const status = response.get_account_status.status;
                     sessionStorage.setItem('client_status', status);
                     if (/has_password/.test(status)) {
                         Client.set('has_password', 1);
                     }
-                    if (/crs_tin_information/.test(status)) {
-                        Client.set('has_tax_information', 1);
-                    } else if (Client.should_redirect_tax()) {
-                        return;
-                    }
+
                     page.show_authenticate_message();
 
                     if (dispatch_to === 'ForwardWS') {
@@ -387,7 +378,6 @@ const BinarySocketClass = function() {
                         }
                     } else if ((localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval')) && localStorage.getItem('risk_classification') !== 'high') {
                         localStorage.removeItem('risk_classification');
-                        Client.check_tnc();
                     }
                 }
 

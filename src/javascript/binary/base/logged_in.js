@@ -31,7 +31,6 @@ const LoggedInHandler = (function() {
 
             // set flags
             localStorage.setItem('risk_classification', 'check');
-            Client.set_check_tnc();
             GTM.set_login_flag();
 
             // redirect url

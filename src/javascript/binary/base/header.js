@@ -229,17 +229,19 @@ const Header = (function() {
                 const check_statuses = [
                     { validation: Client.should_accept_tnc,                                    message: messages.tnc },
                     { validation: riskAssessment,                                              message: messages.risk },
-                    { validation: () => has_status(/crs_tin_information/),                     message: messages.tax },
+                    { validation: Client.should_complete_tax,                                  message: messages.tax },
                     { validation: () => has_status(/(authenticated|age_verification)/),        message: messages.authenticate },
                     { validation: () => has_status(/(unwelcome|(cashier|withdrawal)_locked)/), message: messages.unwelcome },
                 ];
 
-                check_statuses.some((object) => {
-                    if (object.validation()) {
-                        displayNotification(object.message());
-                        return true;
-                    }
-                    return false;
+                BinarySocket.wait('website_status', 'get_settings').then(() => {
+                    check_statuses.some((object) => {
+                        if (object.validation()) {
+                            displayNotification(object.message());
+                            return true;
+                        }
+                        return false;
+                    });
                 });
             });
         });

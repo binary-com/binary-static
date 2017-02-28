@@ -28,6 +28,9 @@
             <p id="age-error" class="error_messages center-text notice-msg ">
                 [% l('Account needs age verification, please contact <a href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
+            <p id="tnc-error" class="error_messages center-text notice-msg ">
+                [% l('Please <a href="[_1]">accept the updated Terms and Conditions</a>.', request.url_for('user/tnc_approvalws')) %]
+            </p>
             <p id="custom-error" class="error_messages center-text notice-msg error_vrtc"></p>
         </div>
     </div>

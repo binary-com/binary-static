@@ -30,16 +30,12 @@ const Page = function() {
 
 Page.prototype = {
     on_load: function() {
-        Client.set_check_tnc();
         this.url.reset();
         localizeForLang(getLanguage());
         Header.on_load();
         this.record_affiliate_exposure();
         Contents.on_load();
         if (State.get('is_loaded_by_pjax')) {
-            if (Client.should_redirect_tax()) {
-                return;
-            }
             this.show_authenticate_message();
             if (RealityCheckData.get('delay_reality_init')) {
                 RealityCheck.init();

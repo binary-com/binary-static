@@ -3,7 +3,6 @@ const CookieStorage        = require('./storage').CookieStorage;
 const LocalStore           = require('./storage').LocalStore;
 const State                = require('./storage').State;
 const default_redirect_url = require('./url').default_redirect_url;
-const url_for              = require('./url').url_for;
 const getLoginToken        = require('../common_functions/common_functions').getLoginToken;
 const japanese_client      = require('../common_functions/country_base').japanese_client;
 const Cookies              = require('../../lib/js-cookie');
@@ -134,11 +133,6 @@ const Client = (function () {
             }
         }
 
-        // website TNC version
-        if (!LocalStore.get('website.tnc_version')) {
-            BinarySocket.send({ website_status: 1 });
-        }
-
         return is_ok;
     };
 
@@ -157,30 +151,11 @@ const Client = (function () {
         activate_by_client_type();
     };
 
-    const tnc_pages = () => /(user\/tnc_approvalws|terms-and-conditions)/i.test(window.location.href);
-
     const should_accept_tnc = () => {
-        if (tnc_pages() ||
-            get('is_virtual') ||
-            sessionStorage.getItem('check_tnc') !== 'check') {
-            return false;
-        }
-        const client_tnc_status   = get('tnc_status');
-        const website_tnc_version = LocalStore.get('website.tnc_version');
+        if (get('is_virtual')) return false;
+        const website_tnc_version = State.get(['response', 'website_status', 'website_status', 'terms_conditions_version']);
+        const client_tnc_status = State.get(['response', 'get_settings', 'get_settings', 'client_tnc_status']);
         return client_tnc_status && website_tnc_version && client_tnc_status !== website_tnc_version;
-    };
-
-    const check_tnc = function() {
-        if (should_accept_tnc()) {
-            sessionStorage.setItem('tnc_redirect', window.location.href);
-            BinaryPjax.load('user/tnc_approvalws');
-        }
-    };
-
-    const set_check_tnc = function () {
-        sessionStorage.setItem('check_tnc', 'check');
-        localStorage.removeItem('client.tnc_status');
-        localStorage.removeItem('website.tnc_version');
     };
 
     const clear_storage_values = function() {
@@ -194,7 +169,6 @@ const Client = (function () {
         if (/no-reality-check/.test(hash)) {
             window.location.hash = hash.replace('no-reality-check', '');
         }
-        set_check_tnc();
         sessionStorage.setItem('currencies', '');
     };
 
@@ -378,14 +352,6 @@ const Client = (function () {
 
     const should_complete_tax = () => is_financial() && !get('has_tax_information');
 
-    const should_redirect_tax = () => {
-        if (should_complete_tax() && !/user\/settings\/detailsws/.test(window.location.pathname) && !tnc_pages()) {
-            window.location.href = url_for('user/settings/detailsws');
-            return true;
-        }
-        return false;
-    };
-
     return {
         init                  : init,
         validate_loginid      : validate_loginid,
@@ -395,8 +361,6 @@ const Client = (function () {
         get                   : get,
         response_authorize    : response_authorize,
         should_accept_tnc     : should_accept_tnc,
-        check_tnc             : check_tnc,
-        set_check_tnc         : set_check_tnc,
         clear_storage_values  : clear_storage_values,
         get_token             : get_token,
         add_token             : add_token,
@@ -414,7 +378,6 @@ const Client = (function () {
         status_detected    : status_detected,
         is_financial       : is_financial,
         should_complete_tax: should_complete_tax,
-        should_redirect_tax: should_redirect_tax,
 
         current_landing_company: current_landing_company,
     };

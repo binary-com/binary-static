@@ -170,7 +170,7 @@ const ForwardWS = (function() {
                             if (error.code) {
                                 switch (error.code) {
                                     case 'ASK_TNC_APPROVAL':
-                                        BinaryPjax.load('user/tnc_approvalws');
+                                        ForwardWS.showMessage('tnc-error');
                                         break;
                                     case 'ASK_FIX_DETAILS':
                                         ForwardWS.showPersonalDetailsError(error.details);

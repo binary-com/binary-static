@@ -30,10 +30,7 @@ const TNCApproval = (function() {
 
     const requiresTNCApproval = ($btn, funcDisplay, onSuccess, redirect_anyway) => {
         BinarySocket.wait('website_status', 'get_settings').then(() => {
-            const terms_conditions_version = State.get(['response', 'website_status', 'website_status', 'terms_conditions_version']);
-            const client_tnc_status        = State.get(['response', 'get_settings', 'get_settings', 'client_tnc_status']);
-
-            if (Client.get('is_virtual') || !terms_conditions_version || terms_conditions_version === client_tnc_status) {
+            if (!Client.should_accept_tnc()) {
                 redirectBack(redirect_anyway);
                 return;
             }
@@ -47,8 +44,8 @@ const TNCApproval = (function() {
                     if (response.error) {
                         $('#err_message').html(response.error.message).removeClass(hidden_class);
                     } else {
-                        BinarySocket.send({ get_settings: '1' }, true);
-                        sessionStorage.setItem('check_tnc', 'checked');
+                        BinarySocket.send({ get_settings: 1 }, true);
+                        BinarySocket.send({ website_status: 1 });
                         redirectBack(redirect_anyway);
                         if (typeof onSuccess === 'function') {
                             onSuccess();
@@ -60,12 +57,10 @@ const TNCApproval = (function() {
     };
 
     const redirectBack = function(redirect_anyway) {
-        const redirect_url = sessionStorage.getItem('tnc_redirect');
-        sessionStorage.removeItem('tnc_redirect');
-        if (redirect_url || redirect_anyway) {
+        if (redirect_anyway) {
             setTimeout(() => {
-                BinaryPjax.load(redirect_url || default_redirect_url());
-            }, redirect_anyway ? 500 : 5000);
+                BinaryPjax.load(default_redirect_url());
+            }, 500);
         }
     };
 
