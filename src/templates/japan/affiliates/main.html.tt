@@ -69,7 +69,7 @@
     <h2>[% l('{JAPAN ONLY}A True Partnership') %]</h2>
 
     <p>[% l("{JAPAN ONLY}We offer an informative and entertaining way to advertise online; including text ads, customer landing pages and invitations to promotional and educational events for your site visitors.") %]</p>
-    <p>[% l("{JAPAN ONLY}If you introduce our website to potential clients, you will earn as soon as one of them opens a real account with [_1] and begins trading.", broker_name) %]</p>
+    <p>[% l("{JAPAN ONLY}If you introduce our website to potential clients, you will earn as soon as one of them opens a real account with [_1] and begins trading. ", broker_name) %]<span>[% l("Please see our <a href=[_1]>terms and conditions</a> for details of payout qualifications.", request.url_for('/terms-and-conditions-jp') ) %]</span></p>
     <p>[% l("{JAPAN ONLY}After we complete mandatory regulatory checks on your website, you will be approved as an affiliate, and provided with everything necessary for you to start right away.") %]</p>
     <p>[% l("{JAPAN ONLY}So, what are you waiting for? Please join us as an affiliate today.") %]</p>
 
