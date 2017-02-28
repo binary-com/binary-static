@@ -1,3 +1,5 @@
+const Scroll = require('../common_functions/scroll');
+
 const GetStarted = (function() {
     const select_nav_element = function() {
         const $navLink = $('.nav li a');
@@ -11,8 +13,7 @@ const GetStarted = (function() {
         }
     };
 
-    const get_started_behaviour = function() {
-        if (/get-started-jp/.test(window.location.pathname)) return;
+    const onLoad = function() {
         const update_active_subsection = function(to_show) {
             const subsection = $('.subsection');
             subsection.addClass('hidden');
@@ -31,7 +32,10 @@ const GetStarted = (function() {
                 nav_next.removeClass('button-disabled');
             }
 
-            document.location.hash = to_show.find('a[name]').attr('name').slice(0, -8);
+            const new_hash = to_show.find('a[name]').attr('name').slice(0, -8);
+            if (window.location.hash !== `#${new_hash}`) {
+                window.location.hash = new_hash;
+            }
 
             return false;
         };
@@ -39,9 +43,8 @@ const GetStarted = (function() {
         let to_show,
             fragment;
         const nav = $('.get-started').find('.subsection-navigation');
-        const len = nav.length;
 
-        if (len) {
+        if (nav.length) {
             nav.on('click', 'a', function() {
                 const button = $(this);
                 if (button.hasClass('button-disabled')) {
@@ -53,17 +56,20 @@ const GetStarted = (function() {
             });
 
             fragment = (location.href.split('#'))[1];
-            to_show = fragment ? $('a[name=' + fragment + '-section]').parent().parent('.subsection') : $('.subsection.first');
+            to_show = fragment ? $('a[name=' + fragment + '-section]').parent('.subsection') : $('.subsection.first');
             update_active_subsection(to_show);
         }
         select_nav_element();
     };
 
+    const onUnload = function() {
+        Scroll.offScroll();
+    };
+
     return {
-        get_started_behaviour: get_started_behaviour,
+        onLoad  : onLoad,
+        onUnload: onUnload,
     };
 })();
 
-module.exports = {
-    GetStarted: GetStarted,
-};
+module.exports = GetStarted;

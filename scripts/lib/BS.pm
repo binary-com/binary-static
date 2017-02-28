@@ -159,7 +159,6 @@ sub menu {
         class      => 'ja-hide hide-tablet-mobile',
         url        => url_for('/trading'),
         text       => localize('Trade'),
-        link_class => 'pjaxload',
         };
 
     push @menu,
@@ -168,7 +167,6 @@ sub menu {
         class      => 'all-hide ja-show hide-tablet-mobile',
         url        => url_for('/multi_barriers_trading'),
         text       => localize('Trade'),
-        link_class => 'pjaxload'
         };
 
     # Portfolio
@@ -178,7 +176,6 @@ sub menu {
         url        => url_for('/user/portfoliows'),
         text       => localize('Portfolio'),
         class      => 'client_logged_in invisible',
-        link_class => 'pjaxload',
         };
 
     push @menu,
@@ -187,7 +184,6 @@ sub menu {
         url        => url_for('/user/profit_tablews'),
         text       => localize('Profit Table'),
         class      => 'client_logged_in invisible',
-        link_class => 'pjaxload',
         };
 
     push @menu,
@@ -196,7 +192,6 @@ sub menu {
         url        => url_for('/user/statementws'),
         text       => localize('Statement'),
         class      => 'client_logged_in invisible',
-        link_class => 'pjaxload',
         };
 
     # cashier
@@ -205,7 +200,6 @@ sub menu {
         id         => 'topMenuCashier',
         url        => url_for('/cashier'),
         text       => localize('Cashier'),
-        link_class => 'pjaxload',
         };
 
     # resources
@@ -213,7 +207,6 @@ sub menu {
         id         => 'topMenuResources',
         url        => url_for('/resources'),
         text       => localize('Resources'),
-        link_class => 'pjaxload',
     };
 
     my $asset_index_ref = {
@@ -221,14 +214,12 @@ sub menu {
         class      => 'ja-hide',
         url        => url_for('/resources/asset_indexws'),
         text       => localize('Asset Index'),
-        link_class => 'pjaxload',
     };
 
     my $trading_times_ref = {
         id         => 'topMenuTradingTimes',
         url        => url_for('/resources/market_timesws'),
         text       => localize('Trading Times'),
-        link_class => 'pjaxload',
     };
 
     $resources_items_ref->{'sub_items'} = [$asset_index_ref, $trading_times_ref];
@@ -249,7 +240,6 @@ sub menu {
         class      => 'invisible',
         url        => url_for('/paymentagent/transferws'),
         text       => localize('Payment Agent'),
-        link_class => 'pjaxload'
         };
 
     # push @{$menu}, $self->_main_menu_trading();

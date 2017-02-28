@@ -1,9 +1,9 @@
+const BinaryPjax      = require('../../../../base/binary_pjax');
+const localize        = require('../../../../base/localize').localize;
 const Content         = require('../../../../common_functions/content').Content;
 const ValidateV2      = require('../../../../common_functions/validation_v2').ValidateV2;
 const bind_validation = require('../../../../validator').bind_validation;
 const dv              = require('../../../../../lib/validation');
-const localize        = require('../../../../base/localize').localize;
-const Client          = require('../../../../base/client').Client;
 
 const SecurityWS = (function() {
     'use strict';
@@ -26,30 +26,14 @@ const SecurityWS = (function() {
         $('#invalidinputfound').text('');
     };
 
-    const checkIsVirtual = function() {
-        if (!Client.get('is_virtual')) {
-            return false;
-        }
-        $form.hide();
-        $('#SecuritySuccessMsg')
-            .addClass('notice-msg center-text')
-            .text(Content.localize().featureNotRelevantToVirtual);
-        return true;
-    };
-
-    const init = function() {
+    const onLoad = function() {
         Content.populate();
         $form = $('#changeCashierLock');
-        if (checkIsVirtual()) return;
 
         current_state = STATE.WAIT_AUTH;
         BinarySocket.init({ onmessage: handler });
-        BinarySocket.wait('authorize').then(() => {
-            current_state = STATE.QUERY_LOCKED;
-            BinarySocket.send({
-                cashier_password: '1',
-            });
-        });
+        current_state = STATE.QUERY_LOCKED;
+        BinarySocket.send({ cashier_password: '1' });
     };
 
     const updatePage = function(config) {
@@ -144,12 +128,11 @@ const SecurityWS = (function() {
     const redirect = function() {
         if (redirect_url) {
             sessionStorage.removeItem('cashier_lock_redirect');
-            window.location.href = redirect_url;
+            BinaryPjax.load(redirect_url);
         }
     };
 
     const handler = function(msg) {
-        if (checkIsVirtual()) return;
         const response = JSON.parse(msg.data);
         if (response.msg_type === 'cashier_password') {
             switch (current_state) {
@@ -167,10 +150,8 @@ const SecurityWS = (function() {
     };
 
     return {
-        init: init,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    SecurityWS: SecurityWS,
-};
+module.exports = SecurityWS;

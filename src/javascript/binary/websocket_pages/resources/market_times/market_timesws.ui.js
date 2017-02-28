@@ -1,16 +1,16 @@
+const moment                 = require('moment');
+const MarketTimes            = require('../market_timesws');
+const State                  = require('../../../base/storage').State;
 const showLoadingImage       = require('../../../base/utility').showLoadingImage;
+const localize               = require('../../../base/localize').localize;
 const Table                  = require('../../../common_functions/attach_dom/table').Table;
+const dateValueChanged       = require('../../../common_functions/common_functions').dateValueChanged;
 const jqueryuiTabsToDropdown = require('../../../common_functions/common_functions').jqueryuiTabsToDropdown;
 const Content                = require('../../../common_functions/content').Content;
 const japanese_client        = require('../../../common_functions/country_base').japanese_client;
-const MarketTimes            = require('../market_timesws');
-const moment                 = require('moment');
-const State                  = require('../../../base/storage').State;
-const DatePicker             = require('../../../components/date_picker').DatePicker;
-const toReadableFormat       = require('../../../common_functions/string_util').toReadableFormat;
 const toISOFormat            = require('../../../common_functions/string_util').toISOFormat;
-const dateValueChanged       = require('../../../common_functions/common_functions').dateValueChanged;
-const localize               = require('../../../base/localize').localize;
+const toReadableFormat       = require('../../../common_functions/string_util').toReadableFormat;
+const DatePicker             = require('../../../components/date_picker').DatePicker;
 
 const MarketTimesUI = (() => {
     'use strict';
@@ -22,7 +22,7 @@ const MarketTimesUI = (() => {
         trading_times,
         is_framed;
 
-    const init = (config) => {
+    const onLoad = function(config) {
         $date      = $('#trading-date');
         $container = $('#trading-times');
         columns    = ['Asset', 'Opens', 'Closes', 'Settles', 'UpcomingEvents'];
@@ -204,7 +204,7 @@ const MarketTimesUI = (() => {
     };
 
     return {
-        init            : init,
+        onLoad          : onLoad,
         setActiveSymbols: (response) => {
             active_symbols = response.active_symbols.slice(0); // clone
             if (trading_times) populateTable();

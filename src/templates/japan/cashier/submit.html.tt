@@ -4,6 +4,6 @@
 <p>[% l("{JAPAN ONLY}Please ensure you maintain sufficient balance in your trading account.") %]</p>
 <p>[% l("{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:[_1]'>Customer Support</a>.", "support@binary.com") %]</p>
 
-<a class='button pjaxload' href="[% request.url_for('/multi_barriers_trading') %]">
+<a class='button' href="[% request.url_for('/multi_barriers_trading') %]">
     <span>[% l('{JAPAN ONLY}Continue Trading') %]</span>
 </a>

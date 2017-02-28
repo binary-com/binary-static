@@ -36,6 +36,7 @@ sub _texts {
         push @texts, localize('Month');
         push @texts, localize('Year');
         push @texts, localize('Sorry, an error occurred while processing your request.');
+        push @texts, localize('Please <a href="[_1]">log in</a> to view this page.');
         # top bar
         push @texts, localize('Upgrade to a Real Account');
         push @texts, localize('Upgrade to a Financial Account');
@@ -194,14 +195,15 @@ sub _texts {
         push @texts, localize('comma');
         push @texts, localize('Sorry, an error occurred while processing your account.');
         push @texts, localize('Your changes have been updated successfully.');
+        push @texts, localize('Your settings have been updated successfully.');
         #strings for home and virtualws page
         push @texts, localize('verification token');
         push @texts, localize('Please submit a valid [_1].');
         push @texts, localize('email address');
         push @texts, localize('password');
         push @texts, localize('The two passwords that you entered do not match.');
-        push @texts, localize('Your token has expired. Please click <a class="pjaxload" href="[_1]">here</a> to restart the verification process.');
-        push @texts, localize('The email address provided is already in use. If you forgot your password, please try our <a class="pjaxload" href="[_1]">password recovery tool</a> or contact our customer service.');
+        push @texts, localize('Your token has expired. Please click <a href="[_1]">here</a> to restart the verification process.');
+        push @texts, localize('The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.');
         push @texts, localize('Password should have lower and uppercase letters with numbers.');
         push @texts, localize('Password is not strong enough.');
         push @texts, localize('Please [_1] to view this page');
@@ -332,6 +334,8 @@ sub _texts {
         push @texts, localize('[_1] [_2] payout if [_3] goes outside of low and high values of Exercise price through close on [_4].');
         push @texts, localize('hour');
         push @texts, localize('mins');
+        push @texts, localize('minute');
+        push @texts, localize('second');
         push @texts, localize('Higher');
         push @texts, localize('Lower');
         push @texts, localize('Touches');
@@ -485,10 +489,7 @@ sub _texts {
         # strings from back-end
         push @texts, localize('There was a problem accessing the server.');
         push @texts, localize('There was a problem accessing the server during purchase.');
-
-        # strings for OneSignal
-        push @texts, localize('Thank you for subscribing!');
-
+        
         # strings for form_validation
         push @texts, localize('Should be a valid number');
         push @texts, localize('Should be more than [_1]');

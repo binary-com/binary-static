@@ -1,16 +1,13 @@
-const template = require('../../base/utility').template;
-const Validate = require('../../common_functions/validation').Validate;
-const Content  = require('../../common_functions/content').Content;
-const localize = require('../../base/localize').localize;
-const Client   = require('../../base/client').Client;
-const url_for  = require('../../base/url').url_for;
+const BinaryPjax           = require('../../base/binary_pjax');
+const Client               = require('../../base/client').Client;
+const localize             = require('../../base/localize').localize;
+const template             = require('../../base/utility').template;
 const appendTextValueChild = require('../../common_functions/common_functions').appendTextValueChild;
 const elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
+const Validate             = require('../../common_functions/validation').Validate;
 
 const ForwardWS = (function() {
     const init = function(cashier_password) {
-        Content.populate();
-
         const submit_currency = document.getElementById('submit-currency'),
             submit_verification = document.getElementById('submit-verification'),
             submit_ukgc_funds_protection = document.getElementById('submit-ukgc-funds-protection');
@@ -153,21 +150,11 @@ const ForwardWS = (function() {
         ForwardWS.showMessage(msgID);
     };
 
-    const checkOnLoad = function() {
-        const clientIsVirtual = function() {
-            Content.populate();
-            const is_virtual = Client.get('is_virtual');
-            if (is_virtual) {
-                getCashierType();
-                ForwardWS.showError(Content.localize().featureNotRelevantToVirtual);
-            }
-            return is_virtual;
-        };
-        if (Client.get('values_set') && clientIsVirtual()) return;
+    const onLoad = function() {
         BinarySocket.init({
             onmessage: function(msg) {
                 const response = JSON.parse(msg.data);
-                if (!response || clientIsVirtual()) return;
+                if (!response) return;
                 const type = response.msg_type,
                     error = response.error;
 
@@ -183,7 +170,7 @@ const ForwardWS = (function() {
                             if (error.code) {
                                 switch (error.code) {
                                     case 'ASK_TNC_APPROVAL':
-                                        window.location.href = url_for('user/tnc_approvalws');
+                                        BinaryPjax.load('user/tnc_approvalws');
                                         break;
                                     case 'ASK_FIX_DETAILS':
                                         ForwardWS.showPersonalDetailsError(error.details);
@@ -251,18 +238,16 @@ const ForwardWS = (function() {
     };
 
     return {
+        onLoad                  : onLoad,
         init                    : init,
         getCashierType          : getCashierType,
         getCashierURL           : getCashierURL,
         hideAll                 : hideAll,
         showError               : showError,
         showMessage             : showMessage,
-        checkOnLoad             : checkOnLoad,
         showPersonalDetailsError: showPersonalDetailsError,
         showCurrency            : showCurrency,
     };
 })();
 
-module.exports = {
-    ForwardWS: ForwardWS,
-};
+module.exports = ForwardWS;

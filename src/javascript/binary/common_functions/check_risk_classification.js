@@ -1,9 +1,10 @@
+const BinaryPjax          = require('../base/binary_pjax');
+const Client              = require('../base/client').Client;
+const State               = require('../base/storage').State;
+const url_for             = require('../base/url').url_for;
+const objectNotEmpty      = require('../base/utility').objectNotEmpty;
 const RiskClassification  = require('../common_functions/risk_classification').RiskClassification;
 const FinancialAssessment = require('../websocket_pages/user/account/settings/financial_assessment');
-const objectNotEmpty      = require('../base/utility').objectNotEmpty;
-const Client  = require('../base/client').Client;
-const State   = require('../base/storage').State;
-const url_for = require('../base/url').url_for;
 
 function check_risk_classification() {
     BinarySocket.wait('get_financial_assessment').then(() => {
@@ -18,7 +19,7 @@ function check_risk_classification() {
 
 function renderRiskClassificationPopUp() {
     if (/user\/settings\/assessmentws/i.test(window.location.pathname)) {
-        window.location.href = url_for('user/settingsws');
+        BinaryPjax.load('user/settingsws');
         return;
     }
     if ($('#frm_assessment').length) return;

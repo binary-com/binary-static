@@ -8,7 +8,7 @@
 
     <div id="viewSuccess" class="viewItem hidden">
       <p class="success-msg"></p>
-      <a class="button pjaxload" href="[% request.url_for('/user/portfoliows') %]">
+      <a class="button" href="[% request.url_for('/user/portfoliows') %]">
         <span>[% l('View Updated Portfolio') %]</span>
       </a>
     </div>

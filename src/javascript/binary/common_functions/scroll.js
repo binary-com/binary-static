@@ -84,6 +84,4 @@ const Scroll = (function() {
     };
 })();
 
-module.exports = {
-    Scroll: Scroll,
-};
+module.exports = Scroll;

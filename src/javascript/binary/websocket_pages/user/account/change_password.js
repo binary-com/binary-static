@@ -1,20 +1,20 @@
+const BinaryPjax      = require('../../../base/binary_pjax');
+const Client          = require('../../../base/client').Client;
+const localize        = require('../../../base/localize').localize;
 const Content         = require('../../../common_functions/content').Content;
 const ValidateV2      = require('../../../common_functions/validation_v2').ValidateV2;
-const ValidationUI    = require('../../../validator').ValidationUI;
-const customError     = require('../../../validator').customError;
 const bind_validation = require('../../../validator').bind_validation;
-const dv       = require('../../../../lib/validation');
-const localize = require('../../../base/localize').localize;
-const Client   = require('../../../base/client').Client;
-const url_for  = require('../../../base/url').url_for;
+const customError     = require('../../../validator').customError;
+const ValidationUI    = require('../../../validator').ValidationUI;
+const dv              = require('../../../../lib/validation');
 
 const PasswordWS = (function() {
     let $form,
         $result;
 
     const hasPassword = function () {
-        if (Client.get('values_set') && !Client.get('has_password')) {
-            window.location.href = url_for('user/settingsws');
+        if (!Client.get('has_password')) {
+            BinaryPjax.load('user/settingsws');
             return false;
         }
         return true;
@@ -102,7 +102,7 @@ const PasswordWS = (function() {
         }, 5000);
     };
 
-    const initSocket = function() {
+    const onLoad = function() {
         Content.populate();
 
         BinarySocket.init({
@@ -111,20 +111,18 @@ const PasswordWS = (function() {
                 if (!response) return;
                 const type = response.msg_type;
                 if (type === 'change_password' || (type === 'error' && 'change_password' in response.echo_req)) {
-                    PasswordWS.handler(response);
+                    handler(response);
                 }
             },
         });
-        PasswordWS.init();
+        init();
     };
 
     return {
-        init      : init,
-        handler   : handler,
-        initSocket: initSocket,
+        onLoad : onLoad,
+        init   : init,
+        handler: handler,
     };
 })();
 
-module.exports = {
-    PasswordWS: PasswordWS,
-};
+module.exports = PasswordWS;

@@ -1,7 +1,7 @@
 const ApplicationsUI   = require('./authorised_apps.ui');
 const ApplicationsData = require('./authorised_apps.data');
 
-const Applications = (() => {
+const ApplicationsInit = (() => {
     'use strict';
 
     const init = () => {
@@ -25,4 +25,4 @@ const Applications = (() => {
     };
 })();
 
-module.exports = Applications;
+module.exports = ApplicationsInit;

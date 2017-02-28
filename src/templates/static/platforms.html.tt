@@ -29,7 +29,7 @@
                         <p>
                             [% l("Trade in the world’s financial markets with a simple and user-friendly online platform.") %]
                             <p>
-                                <a class="button pjaxload" href="[% request.url_for('/trading') %]">
+                                <a class="button" href="[% request.url_for('/trading') %]">
                                     <span>[% l("Trade Now") %]</span>
                                 </a>
                             </p>

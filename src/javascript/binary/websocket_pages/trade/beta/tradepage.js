@@ -1,23 +1,24 @@
-const TradingAnalysis_Beta = require('./analysis').TradingAnalysis_Beta;
-const TradingEvents_Beta   = require('./event').TradingEvents_Beta;
-const Message_Beta         = require('./message').Message_Beta;
-const Price_Beta           = require('./price').Price_Beta;
+const TradingAnalysis_Beta      = require('./analysis').TradingAnalysis_Beta;
+const TradingEvents_Beta        = require('./event').TradingEvents_Beta;
+const Message_Beta              = require('./message').Message_Beta;
+const Price_Beta                = require('./price').Price_Beta;
 const forgetTradingStreams_Beta = require('./process').forgetTradingStreams_Beta;
-const displayCurrencies    = require('../currency').displayCurrencies;
-const Defaults             = require('../defaults').Defaults;
-const Notifications        = require('../notifications').Notifications;
-const Symbols              = require('../symbols').Symbols;
-const Content              = require('../../../common_functions/content').Content;
-const Guide                = require('../../../common_functions/guide').Guide;
-const japanese_client      = require('../../../common_functions/country_base').japanese_client;
-const PortfolioWS          = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
-const ResizeSensor         = require('../../../../lib/resize-sensor');
-const State                = require('../../../base/storage').State;
-const url_for              = require('../../../base/url').url_for;
-const showPriceOverlay     = require('../common').showPriceOverlay;
-const showFormOverlay      = require('../common').showFormOverlay;
-const addEventListenerForm = require('../common').addEventListenerForm;
-const chartFrameCleanup    = require('../common').chartFrameCleanup;
+const displayCurrencies         = require('../currency').displayCurrencies;
+const addEventListenerForm      = require('../common').addEventListenerForm;
+const chartFrameCleanup         = require('../common').chartFrameCleanup;
+const showFormOverlay           = require('../common').showFormOverlay;
+const showPriceOverlay          = require('../common').showPriceOverlay;
+const Defaults                  = require('../defaults').Defaults;
+const Notifications             = require('../notifications').Notifications;
+const Symbols                   = require('../symbols').Symbols;
+const PortfolioWS               = require('../../user/account/portfolio/portfolio.init');
+const ViewPopupWS               = require('../../user/view_popup/view_popupws');
+const BinaryPjax                = require('../../../base/binary_pjax');
+const State                     = require('../../../base/storage').State;
+const Content                   = require('../../../common_functions/content').Content;
+const japanese_client           = require('../../../common_functions/country_base').japanese_client;
+const Guide                     = require('../../../common_functions/guide').Guide;
+const ResizeSensor              = require('../../../../lib/resize-sensor');
 
 const TradePage_Beta = (function() {
     let events_initialized = 0;
@@ -25,11 +26,8 @@ const TradePage_Beta = (function() {
 
     const onLoad = function() {
         const is_japanese_client = japanese_client();
-        if (is_japanese_client && /\/trading(|_beta)\.html/i.test(window.location.pathname)) {
-            window.location.href = url_for('multi_barriers_trading');
-            return;
-        } else if (!is_japanese_client && /\/multi_barriers_trading\.html/.test(window.location.pathname)) {
-            window.location.href = url_for('trading');
+        if (is_japanese_client) {
+            BinaryPjax.load('multi_barriers_trading');
             return;
         }
         State.set('is_beta_trading', true);
@@ -71,6 +69,8 @@ const TradePage_Beta = (function() {
             script: 'trading',
         });
         TradingAnalysis_Beta.bindAnalysisTabEvent();
+
+        ViewPopupWS.viewButtonOnClick('#contract_confirmation_container');
     };
 
     const adjustAnalysisColumnHeight = function() {
@@ -206,6 +206,4 @@ const TradePage_Beta = (function() {
     };
 })();
 
-module.exports = {
-    TradePage_Beta: TradePage_Beta,
-};
+module.exports = TradePage_Beta;
