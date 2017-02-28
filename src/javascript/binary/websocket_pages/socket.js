@@ -283,6 +283,8 @@ const BinarySocketClass = function() {
                             send({ balance: 1, subscribe: 1 });
                             send({ get_settings: 1 });
                             send({ get_account_status: 1 });
+                            // TODO: remove this when back-end adds it as a status to get_account_status
+                            send({ get_financial_assessment: 1 });
                             if (Cookies.get('residence')) send({ landing_company: Cookies.get('residence') });
                             if (!Client.get('is_virtual')) send({ get_self_exclusion: 1 });
                         }

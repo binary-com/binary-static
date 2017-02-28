@@ -1,5 +1,6 @@
 const BinaryPjax           = require('../../base/binary_pjax');
 const Client               = require('../../base/client').Client;
+const Header               = require('../../base/header').Header;
 const default_redirect_url = require('../../base/url').default_redirect_url;
 const url_for              = require('../../base/url').url_for;
 const template             = require('../../base/utility').template;
@@ -43,8 +44,9 @@ const TNCApproval = (function() {
                     if (response.error) {
                         $('#err_message').html(response.error.message).removeClass(hidden_class);
                     } else {
-                        BinarySocket.send({ get_settings: 1 }, true);
-                        BinarySocket.send({ website_status: 1 });
+                        BinarySocket.send({ get_settings: 1 }, true).then(() => {
+                            Header.displayAccountStatus();
+                        });
                         redirectBack(redirect_anyway);
                         if (typeof onSuccess === 'function') {
                             onSuccess();

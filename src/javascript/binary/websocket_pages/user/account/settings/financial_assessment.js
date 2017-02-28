@@ -1,4 +1,5 @@
 const BinaryPjax         = require('../../../../base/binary_pjax');
+const Header             = require('../../../../base/header').Header;
 const localize           = require('../../../../base/localize').localize;
 const State              = require('../../../../base/storage').State;
 const showLoadingImage   = require('../../../../base/utility').showLoadingImage;
@@ -27,7 +28,7 @@ const FinancialAssessment = (() => {
             submitForm();
         });
 
-        BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
+        BinarySocket.wait('get_financial_assessment').then((response) => {
             handleForm(response);
         });
     };
@@ -38,7 +39,7 @@ const FinancialAssessment = (() => {
         }
         hideLoadingImg(true);
 
-        financial_assessment = response.get_financial_assessment;
+        financial_assessment = $.extend({}, response.get_financial_assessment);
 
         if (!objectNotEmpty(financial_assessment)) {
             BinarySocket.wait('get_account_status').then((data) => {
@@ -93,7 +94,9 @@ const FinancialAssessment = (() => {
                     showFormMessage('Sorry, an error occurred while processing your request.', false);
                 } else {
                     showFormMessage('Your changes have been updated successfully.', true);
-                    BinarySocket.send({ get_financial_assessment: 1 });
+                    BinarySocket.send({ get_financial_assessment: 1 }).then(() => {
+                        Header.displayAccountStatus();
+                    });
                 }
             });
         } else {

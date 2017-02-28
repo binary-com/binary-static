@@ -1,5 +1,6 @@
 const localize             = require('../../../../base/localize').localize;
 const Client               = require('../../../../base/client').Client;
+const Header               = require('../../../../base/header').Header;
 const State                = require('../../../../base/storage').State;
 const Content              = require('../../../../common_functions/content').Content;
 const detect_hedging       = require('../../../../common_functions/common_functions').detect_hedging;
@@ -167,6 +168,7 @@ const SettingsDetailsWS = (function() {
             // to update tax information message for financial clients
             BinarySocket.send({ get_account_status: 1 }, true).then(() => {
                 showHideTaxMessage();
+                Header.displayAccountStatus();
             });
             // to update the State with latest get_settings data
             BinarySocket.send({ get_settings: 1 }, true).then((data) => {

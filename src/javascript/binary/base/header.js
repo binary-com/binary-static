@@ -194,7 +194,8 @@ const Header = (function() {
         BinarySocket.wait('authorize').then(() => {
             if (Client.get('is_virtual')) return;
             BinarySocket.wait('get_account_status').then((response) => {
-                const status = response.get_account_status.status;
+                const get_account_status = response.get_account_status;
+                const status = get_account_status.status;
 
                 const messages = {
                     authenticate: () => template(
@@ -215,9 +216,8 @@ const Header = (function() {
                 };
 
                 const riskAssessment = () => {
-                    if (response.get_account_status.risk_classification === 'high') {
-                        BinarySocket.send({ get_financial_assessment: 1 })
-                            .then(data => !objectNotEmpty(data.get_financial_assessment));
+                    if (get_account_status.risk_classification === 'high') {
+                        return !objectNotEmpty(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
                     }
                     return false;
                 };
@@ -232,7 +232,7 @@ const Header = (function() {
                     { validation: () => has_status(/(unwelcome|(cashier|withdrawal)_locked)/), message: messages.unwelcome },
                 ];
 
-                BinarySocket.wait('website_status', 'get_settings').then(() => {
+                BinarySocket.wait('website_status', 'get_settings', 'get_financial_assessment').then(() => {
                     check_statuses.some((object) => {
                         if (object.validation()) {
                             displayNotification(object.message());
@@ -250,6 +250,7 @@ const Header = (function() {
 
         upgrade_message_visibility     : upgrade_message_visibility,
         metatrader_menu_item_visibility: metatrader_menu_item_visibility,
+        displayAccountStatus           : displayAccountStatus,
     };
 })();
 
