@@ -1,5 +1,5 @@
 const expect        = require('chai').expect;
-const IPHistoryData = require('../settings/iphistory/iphistory.data.js').IPHistoryData;
+const IPHistoryData = require('../settings/iphistory/iphistory.data.js');
 
 
 describe('IPHistoryData.parseUserAgent', function() {
@@ -95,36 +95,5 @@ describe('IPHistoryData.parse', function() {
         };
         const res = parse(activity);
         expect(res.success).to.equal(false);
-    });
-});
-
-
-describe('IPHistoryData.calls', function() {
-    it('calls the callback when .msg_type === "login_history"', function() {
-        const response = {
-            msg_type: 'login_history',
-        };
-        let called = false;
-        const handler = IPHistoryData.calls(function(res) {
-            called = true;
-            expect(res).to.deep.equal(response);
-        });
-        handler({ data: JSON.stringify(response) });
-        expect(called).to.equal(true);
-    });
-
-    it('does nothing otherwise', function() {
-        [
-            { msg_type: 'oauth' },
-            { msg_type: null },
-            null,
-        ].forEach(function(response) {
-            let called = false;
-            const handler = IPHistoryData.calls(function() {
-                called = true;
-            });
-            handler({ data: JSON.stringify(response) });
-            expect(called).to.equal(false);
-        });
     });
 });

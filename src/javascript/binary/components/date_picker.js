@@ -1,7 +1,7 @@
-const moment = require('moment');
+const moment           = require('moment');
 const checkInput       = require('../common_functions/common_functions').checkInput;
 const toReadableFormat = require('../common_functions/string_util').toReadableFormat;
-const localize = require('../base/localize').localize;
+const localize         = require('../base/localize').localize;
 
 const DatePicker = function(component_selector, select_type) {
     this.component_selector = component_selector;
@@ -21,8 +21,8 @@ const DatePicker = function(component_selector, select_type) {
 };
 
 DatePicker.prototype = {
-    show: function(min_day, max_days, setValue, noNative) {
-        this.checkWidth(this.config(min_day, max_days, setValue, noNative), this.component_selector, this);
+    show: function(options) {
+        this.checkWidth(this.config(options), this.component_selector, this);
         const that = this;
         $(window).resize(function() { that.checkWidth(that.config_data, that.component_selector, that); });
     },
@@ -55,10 +55,16 @@ DatePicker.prototype = {
         // from the DOM and use our own one.
         $('button.ui-datepicker-trigger').remove();
     },
-    config: function(min_day, max_days, setValue, noNative) {
+    config: function(options) {
         const today = new Date();
 
-        const config = {
+        if (options.additional) {
+            this.setValue = options.additional.setValue;
+            this.noNative = !options.additional.native;
+            delete options.additional;
+        }
+
+        let config = {
             dateFormat     : 'dd M, yy',
             monthNames     : this.localizations.monthNames,
             monthNamesShort: this.localizations.monthNamesShort,
@@ -70,19 +76,17 @@ DatePicker.prototype = {
             changeYear     : true,
         };
 
-        if (min_day) {
-            config.minDate = min_day === 'today' ? today : min_day;
+        config = $.extend(config, options);
+
+        if (options.minDate === 'today') {
+            config.minDate = today;
         }
 
-        if (max_days) {
-            max_days = (typeof max_days === 'undefined') ? 365 : max_days;
+        if (options.maxDate) {
             const next_year = new Date();
-            next_year.setDate(today.getDate() + Number(max_days));
+            next_year.setDate(today.getDate() + Number(options.maxDate));
             config.maxDate = next_year;
         }
-
-        this.setValue = setValue;
-        this.noNative = noNative;
 
         const that = this;
         config.onSelect = function(date_text) {

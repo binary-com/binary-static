@@ -3,18 +3,18 @@ const Cashier                       = require('./cashier/cashier').Cashier;
 const ForwardWS                     = require('./cashier/deposit_withdraw_ws').ForwardWS;
 const PaymentAgentListWS            = require('./cashier/payment_agent_listws').PaymentAgentListWS;
 const PaymentAgentWithdrawWS        = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
-const AssetIndexUI                  = require('./resources/asset_index/asset_indexws.ui').AssetIndexUI;
-const MarketTimesUI                 = require('./resources/market_times/market_timesws.ui').MarketTimesUI;
-const AuthenticateWS                = require('./user/account/authenticate').AuthenticateWS;
+const AssetIndexUI                  = require('./resources/asset_index/asset_indexws.ui');
+const MarketTimesUI                 = require('./resources/market_times/market_timesws.ui');
+const AuthenticateWS                = require('./user/account/authenticate');
 const PasswordWS                    = require('./user/account/change_password').PasswordWS;
 const PaymentAgentTransferSocket    = require('./user/account/payment_agent_transfer').PaymentAgentTransferSocket;
 const PortfolioWS                   = require('./user/account/portfolio/portfolio.init').PortfolioWS;
 const ProfitTableWS                 = require('./user/account/profit_table/profit_table.init').ProfitTableWS;
 const APITokenWS                    = require('./user/account/settings/api_token').APITokenWS;
 const AuthorisedApps                = require('./user/account/settings/authorised_apps').AuthorisedApps;
-const FinancialAssessmentws         = require('./user/account/settings/financial_assessment').FinancialAssessmentws;
-const IPHistoryWS                   = require('./user/account/settings/iphistory').IPHistoryWS;
-const Limits                        = require('./user/account/settings/limits').Limits;
+const FinancialAssessment           = require('./user/account/settings/financial_assessment');
+const IPHistory                     = require('./user/account/settings/iphistory');
+const Limits                        = require('./user/account/settings/limits');
 const SelfExclusionWS               = require('./user/account/settings/self_exclusion').SelfExclusionWS;
 const SettingsDetailsWS             = require('./user/account/settings/settings_detailsws').SettingsDetailsWS;
 const SecurityWS                    = require('./user/account/settings/settings_securityws').SecurityWS;
@@ -28,7 +28,7 @@ const JapanAccOpening               = require('./user/new_account/japan_acc_open
 const RealAccOpening                = require('./user/new_account/real_acc_opening').RealAccOpening;
 const VirtualAccOpening             = require('./user/new_account/virtual_acc_opening').VirtualAccOpening;
 const ResetPasswordWS               = require('./user/reset_password').ResetPasswordWS;
-const TNCApproval                   = require('./user/tnc_approval').TNCApproval;
+const TNCApproval                   = require('./user/tnc_approval');
 const TradePage                     = require('./trade/tradepage').TradePage;
 const TradePage_Beta                = require('./trade/beta/tradepage').TradePage_Beta;
 const MBTradePage                   = require('./mb_trade/mb_tradepage').MBTradePage;
@@ -218,7 +218,7 @@ pjax_config_page_require_auth('user/security/authorised_appsws', function() {
 pjax_config_page_require_auth('user/settings/assessmentws', function() {
     return {
         onLoad: function() {
-            FinancialAssessmentws.onLoad();
+            FinancialAssessment.onLoad();
         },
     };
 });
@@ -226,10 +226,10 @@ pjax_config_page_require_auth('user/settings/assessmentws', function() {
 pjax_config_page_require_auth('user/security/iphistoryws', function() {
     return {
         onLoad: function() {
-            IPHistoryWS.onLoad();
+            IPHistory.onLoad();
         },
         onUnload: function() {
-            IPHistoryWS.onUnload();
+            IPHistory.onUnload();
         },
     };
 });
@@ -283,23 +283,29 @@ pjax_config_page('user/lost_passwordws', function() {
 pjax_config_page_require_auth('new_account/maltainvestws', function() {
     return {
         onLoad: function() {
-            FinancialAccOpening.init();
+            FinancialAccOpening.onLoad();
+        },
+        onUnload: function() {
+            FinancialAccOpening.onUnload();
         },
     };
 });
 
-pjax_config_page('new_account/japanws', function() {
+pjax_config_page_require_auth('new_account/japanws', function() {
     return {
         onLoad: function() {
-            JapanAccOpening.init();
+            JapanAccOpening.onLoad();
+        },
+        onUnload: function() {
+            JapanAccOpening.onUnload();
         },
     };
 });
 
-pjax_config_page('new_account/realws', function() {
+pjax_config_page_require_auth('new_account/realws', function() {
     return {
         onLoad: function() {
-            RealAccOpening.init();
+            RealAccOpening.onLoad();
         },
     };
 });
@@ -323,7 +329,7 @@ pjax_config_page('user/reset_passwordws', function() {
 pjax_config_page_require_auth('tnc_approvalws', function() {
     return {
         onLoad: function() {
-            TNCApproval.onLoad();
+            TNCApproval.init();
         },
     };
 });

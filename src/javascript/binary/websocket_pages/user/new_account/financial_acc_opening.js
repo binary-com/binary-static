@@ -1,61 +1,103 @@
-const handleResidence       = require('../../../common_functions/account_opening').handleResidence;
-const populateObjects       = require('../../../common_functions/account_opening').populateObjects;
-const Content               = require('../../../common_functions/content').Content;
-const ValidAccountOpening   = require('../../../common_functions/valid_account_opening').ValidAccountOpening;
-const Client                = require('../../../base/client').Client;
-const url_for               = require('../../../base/url').url_for;
-const FinancialAccOpeningUI = require('./financial_acc_opening/financial_acc_opening.ui').FinancialAccOpeningUI;
+const AccountOpening       = require('../../../common_functions/account_opening');
+const FormManager          = require('../../../common_functions/form_manager');
+const toISOFormat          = require('../../../common_functions/string_util').toISOFormat;
+const objectNotEmpty       = require('../../../base/utility').objectNotEmpty;
+const Client               = require('../../../base/client').Client;
+const State                = require('../../../base/storage').State;
+const url_for              = require('../../../base/url').url_for;
+const default_redirect_url = require('../../../base/url').default_redirect_url;
+const moment               = require('moment');
 
 const FinancialAccOpening = (function() {
-    let elementObj,
-        errorObj,
-        errorEl;
+    const formID = '#financial-form';
 
-    const init = function() {
-        Content.populate();
-        Client.set('accept_risk', 0);
-        const client_loginid_array = Client.get('loginid_array');
-        for (let i = 0; i < client_loginid_array.length; i++) {
-            if (client_loginid_array[i].financial) {
-                window.location.href = url_for('trading');
-                return;
-            } else if (client_loginid_array[i].non_financial) {
-                $('.security').hide();
-            }
+    const onLoad = function() {
+        State.set('is_financial_opening', 1);
+        if (Client.get('has_financial')) {
+            window.location.href = url_for('trading');
+            return;
+        } else if (Client.get('has_gaming')) {
+            $('.security').hide();
         }
-        handleResidence();
-        const object = populateObjects();
-        elementObj = object.elementObj;
-        errorObj = object.errorObj;
-        errorEl = document.getElementsByClassName('notice-msg')[0];
-        BinarySocket.send({ residence_list: 1 });
-        BinarySocket.send({ get_financial_assessment: 1 });
-        $('#financial-form').off('submit').on('submit', function(evt) { onSubmit(evt); });
-        $('#financial-risk').off('submit').on('submit', function(evt) {
-            Client.set('accept_risk', 1);
-            onSubmit(evt);
+
+        BinarySocket.wait('landing_company').then((response) => {
+            const landing_company = response.landing_company;
+            if (Client.get('is_virtual')) {
+                if (Client.can_upgrade_virtual_to_japan(landing_company)) {
+                    window.location.href = url_for('new_account/japanws');
+                } else if (!Client.can_upgrade_virtual_to_financial(landing_company)) {
+                    window.location.href = url_for('new_account/realws');
+                }
+            } else if (!Client.can_upgrade_gaming_to_financial(landing_company)) {
+                window.location.href = default_redirect_url();
+            }
         });
+
+        if (AccountOpening.redirectAccount()) return;
+        AccountOpening.populateForm(formID, getValidations);
+
+        BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
+            if (objectNotEmpty(response.get_financial_assessment)) {
+                const keys = Object.keys(response.get_financial_assessment);
+                keys.forEach(function(key) {
+                    const val = response.get_financial_assessment[key];
+                    $('#' + key).val(val);
+                });
+            }
+        });
+
+        BinarySocket.wait('get_settings').then((response) => {
+            const get_settings = response.get_settings;
+            let $element,
+                value;
+            Object.keys(get_settings).forEach((key) => {
+                $element = $(`#${key}`);
+                value = get_settings[key];
+                if (key === 'date_of_birth') {
+                    const moment_val = moment.utc(value * 1000);
+                    value = moment_val.format('DD MMM, YYYY');
+                    $element.attr('data-value', toISOFormat(moment_val));
+                    $('.input-disabled').attr('disabled', 'disabled');
+                } else if (key === 'tax_residence' && value) {
+                    value = value.split(',');
+                }
+                if (value) $element.val(value).trigger('change');
+            });
+        });
+
+        bindValidation();
     };
 
-    const onSubmit = (evt) => {
-        evt.preventDefault();
-        if (FinancialAccOpeningUI.checkValidity(elementObj, errorObj, errorEl)) {
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    const response = JSON.parse(msg.data);
-                    if (response) {
-                        const message_type = response.msg_type;
-                        if (message_type === 'new_account_maltainvest') {
-                            ValidAccountOpening.handler(response, message_type);
-                        }
-                    }
-                },
-            });
+    const getValidations = () => (
+        AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(formID), [
+            { selector: '#tax_identification_number', validations: ['req', 'postcode', ['length', { min: 1, max: 20 }]] },
+        ])
+    );
+
+    const bindValidation = () => {
+        const obj_req = { new_account_maltainvest: 1 };
+
+        FormManager.handleSubmit(formID, $.extend(obj_req, { accept_risk: 0 }), handleResponse);
+
+        FormManager.handleSubmit('#financial-risk', $.extend(obj_req, { accept_risk: 1 }), handleResponse);
+    };
+
+    const handleResponse = (response) => {
+        if ('error' in response && response.error.code === 'show risk disclaimer') {
+            $('#financial-form').addClass('hidden');
+            $('#financial-risk').removeClass('hidden');
+        } else {
+            AccountOpening.handleNewAccount(response, response.msg_type);
         }
+    };
+
+    const onUnload = () => {
+        State.set('is_financial_opening', 0);
     };
 
     return {
-        init: init,
+        onLoad  : onLoad,
+        onUnload: onUnload,
     };
 })();
 
