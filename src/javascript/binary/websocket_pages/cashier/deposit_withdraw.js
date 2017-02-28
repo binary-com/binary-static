@@ -167,21 +167,19 @@ const DepositWithdraw = (function() {
     };
 
     const onLoad = function() {
-        BinarySocket.wait('authorize').then(() => {
-            getCashierType();
-            BinarySocket.wait('get_account_status').then(() => {
-                const can_deposit = cashier_type === 'deposit' && !Client.status_detected('cashier_locked, unwelcome', 'any');
-                const can_withdraw = cashier_type === 'withdraw' && !Client.status_detected('cashier_locked, withdrawal_locked', 'any');
-                if (can_deposit || can_withdraw) {
-                    BinarySocket.send({ cashier_password: 1 }).then((response) => {
-                        if ('error' in response) {
-                            showError('custom_error', response.error.message);
-                        } else {
-                            init(response.cashier_password);
-                        }
-                    });
-                }
-            });
+        getCashierType();
+        BinarySocket.wait('get_account_status').then(() => {
+            const can_deposit = cashier_type === 'deposit' && !Client.status_detected('cashier_locked, unwelcome', 'any');
+            const can_withdraw = cashier_type === 'withdraw' && !Client.status_detected('cashier_locked, withdrawal_locked', 'any');
+            if (can_deposit || can_withdraw) {
+                BinarySocket.send({ cashier_password: 1 }).then((response) => {
+                    if ('error' in response) {
+                        showError('custom_error', response.error.message);
+                    } else {
+                        init(response.cashier_password);
+                    }
+                });
+            }
         });
     };
 
