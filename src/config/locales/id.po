@@ -7,9 +7,10 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-27 06:55+0000\n"
+"PO-Revision-Date: 2017-02-28 03:35+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
-"Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
+"Language-Team: Indonesian "
+"<https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -789,10 +790,8 @@ msgstr "Akademi"
 msgid "Accept"
 msgstr "Menerima"
 
-#, fuzzy
-#| msgid "Terms and Conditions"
 msgid "Accept Terms and Conditions"
-msgstr "Syarat dan Kondisi"
+msgstr "Menerima Syarat dan Ketentuan"
 
 msgid "Accept local bank wires"
 msgstr "Menerima transfer bank lokal"
@@ -1604,10 +1603,8 @@ msgstr "Harga beli"
 msgid "By clicking <strong>Accept</strong> below and proceeding with the Account Opening you should note that you may be exposing yourself to risks (which may be significant, including the risk of loss of the entire sum invested) that you may not have the knowledge and experience to properly assess or mitigate."
 msgstr "Dengan mengklik <strong>Menerima</strong> dibawah ini dan melanjutkan Pendaftaran Akun berarti Anda memahami bahwa Anda akan mungkin akan mengalami risiko (yang mungkin segnifikan termasuk risiko kehilangan semua dana yang Anda investasikan) dimana Anda mungkin tidak memiliki pengetahuan dan pengalaman untuk mengurangi atau menghindarinya."
 
-#, fuzzy
-#| msgid "%1 has updated its %2. By clicking OK, you confirm that you have read and accepted the updated %2."
 msgid "By clicking OK, you confirm that you have read and accepted Terms & Conditions."
-msgstr "%1 telah memperbarui %2. Dengan mengklik OK, berarti Anda sudah membaca dan menyetujui %2 terbaru."
+msgstr "Dengan mengklik OK, Anda telah membaca dan menerima Syarat & Ketentuan."
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
 msgstr "Secara langsung, sistem routing pintar akan memastikan buku terbaik selalu dihasilkan dari bid dan harga penawaran terbaik dengan membandingkan penyedia likuiditas. Namun, selama masa likuiditas pasar hal ini dapat berubah dengan kemungkinan eksekusi menjadi faktor eksekusi utama."
@@ -3372,6 +3369,9 @@ msgstr "Jika ketentuan apapun dalam Perjanjian ini dianggap tidak berlaku atau t
 
 msgid "If any provision of this Agreement shall be held invalid or unenforceable by a court or regulatory body of competent jurisdiction, the remainder of this Agreement shall remain in full force and effect."
 msgstr ""
+"Jika ada ketentuan dalam Perjanjian ini dianggap tidak sah atau tidak dapat "
+"diterapkan oleh pengadilan atau badan pengawas yang berwenang, sisa "
+"Perjanjian ini akan tetap berlaku sepenuhnya."
 
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
 msgstr "Jika Perusahaan (dengan kebijakannya sendiri) tidak puas meskipun Pelanggan sudah memenuhi persyaratan, atau Klien tidak mematuhi permintaan wajar mengenai informasi yang diperlukan oleh Perusahaan, maka Perusahaan dapat membatalkan akun Klien dan menahan saldo yang ada."
@@ -3381,6 +3381,16 @@ msgstr "Jika Perusahaan diwajibkan secara hukum untuk menginformasikan data prib
 
 msgid "If the Margin Level for your Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
 msgstr ""
+"Jika Margin Level untuk Akun Riil Anda mencapai atau jatuh di bawah Stop Out "
+"Level, maka hal ini akan diklasifikasikan sebagai Wanprestasi. Dalam keadaan "
+"seperti itu, Posisi Berjalan secara otomatis akan ditutup dengan urutan "
+"sebagai berikut: (i) server menganalisa Order klien yang tidak di bawah "
+"eksekusi pada saat ini; (ii) server menghapus Order dengan Margin terbesar; "
+"(iii) jika Margin Level Anda masih di bawah Stop Out Level, order berikutnya "
+"akan dihapus (perintah tanpa persyaratan margin tidak dihapus); (iv) jika "
+"Margin Level Anda masih di bawah Stop Out Level, server menutup posisi "
+"dengan kerugian terbesar; (V) Posisi Berjalan ditutup hingga Margin Level "
+"Anda menjadi lebih tinggi daripada Level Stop Out."
 
 msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
 msgstr "Jika masalah ini terus berlangsung, silahkan hubungi <a href=\"%1\">customer support</a>."
@@ -3390,6 +3400,9 @@ msgstr "Jika Perjanjian ini dihentikan berhubung alasan apapun, maka Anda harus 
 
 msgid "If we determine that a force majeure event exists, the Company shall promptly give notice thereof to the client. Subsequently, we may, at our absolute discretion, take one or more of the following steps:"
 msgstr ""
+"Jika terjadi peristiwa dalam keadaan memaksa maka Perusahaan akan segera "
+"memberitahukan hal tersebut kepada klien. Selanjutnya, kami mungkin akan "
+"mengambil keputusan sepihak mengikuti langkah berikut:"
 
 msgid "If we're happy with your results, we'll contact you for an interview and then do background and reference checks."
 msgstr "Jika anda lulus, kami akan menghubungi Anda untuk wawancara termasuk pemeriksaan latar belakang dan referensi."
@@ -3414,9 +3427,17 @@ msgstr "Jika Anda sudah bersedia, hubungi kami segera."
 
 msgid "If you buy <strong>1 Volume of Volatility 100 Index</strong> at a <strong>price of US&#36 20,000</strong> and a <strong>margin rate of 0.01(1%)</strong>, the margin required to purchase that one lot will be calculated as follows:"
 msgstr ""
+"Jika Anda membeli <strong>1 Volume Indeks Volatilitas 100</strong> pada "
+"<strong>harga US&#36 20.000</strong> dengan <strong>harga margin "
+"0.01(1%)</strong>, maka margin yang diperlukan untuk membeli satu lot "
+"tersebut akan dihitung sebagai berikut:"
 
 msgid "If you buy <strong>one lot of the EUR/USD</strong> symbol with a <strong>contract size of 100,000</strong> and <strong>leverage of 100:1</strong>, the margin required to purchase that one lot will be calculated as follows:"
 msgstr ""
+"Jika Anda membeli <strong>satu lot EUR/USD</strong> dengan <strong>jumlah "
+"kontrak 100.000</strong> dan <strong>leverage 100:1</strong>, maka margin "
+"yang diperlukan untuk membeli satu lot tersebut akan dihitung sebagai "
+"berikut:"
 
 msgid "If you choose to enter into a Contract with us, it is important that you remain aware of the risks involved, that you have adequate investment resources to bear such risks and that you monitor your positions carefully."
 msgstr "Jika Anda memutuskan untuk membeli Kontrak, adalah penting bahwa Anda tetap sadar akan risiko yang terlibat dan memiliki sumber daya investasi yang memadai untuk menanggung risiko tersebut dan memantau posisi Anda dengan hati-hati."
@@ -3429,17 +3450,26 @@ msgstr "Jika Anda tidak menerima e-mail beberapa menit yang akan datang, silakan
 
 msgid "If you fail to immediately make full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
 msgstr ""
+"Jika Anda gagal membuat pelunasan dari jumlah yang ditentukan pada "
+"Perjanjian ini, kami berhak untuk mengenakan bunga dari jumlah tersebut. "
+"Jumlah bunga akan dikenakan dalam hitungan harian dari tanggal jatuh tempo "
+"sehingga pelunasan diterima penuh pada bank yang telah kami tentukan, dan "
+"akan dibayar berdasarkan permintaan."
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr "Jika Anda menemukan kerentanan pada <a target='_blank' href='%1'>kode open-source kami</a>, silahkan ajukan permohonan pada GitHub."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
 msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
-msgstr "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
+msgstr ""
+"Jika Anda memiliki pertanyaan, silakan hubungi tim Customer Support kami di <"
+"a href=\"mailto:%1\">%1</a>."
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr ""
+"Jika Anda membeli lebih dari satu Posisi Berjalan pada pasar yang sama, "
+"setiap penutupan transaksi yang Anda tempatkan pada pasar yang sama akan "
+"menutup Posisi Berjalan dalam urutan kronologis di mana Posisi Berjalan yang "
+"dibeli lebih dahulu dan diikuti dengan posisi selanjutnya."
 
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "Jika Anda memiliki keahlian yang kami cari, maka Anda akan menjadi bagian dari anggota dari tim pengembangan front end yang sangat kompeten terlibat dalam mengoperasikan sistem opsi trading binary ke tahap yang lebih maju."
@@ -3449,6 +3479,10 @@ msgstr "Jika Anda memperkenalkan website kami kepada klien potensial, Anda akhir
 
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open. This adjustment is based on interbank lending rates, on top of a 2% fee."
 msgstr ""
+"Jika Anda menyimpan posisi berjalan lebih dari satu malam, penyesuaian bunga "
+"akan dikenakan pada akun trading Anda sebagai indikasi untuk menyimpan "
+"posisi berjalan Anda. Penyesuaian ini adalah berdasarkan bunga bank ditambah "
+"dengan biaya 2%."
 
 msgid "If you meet our basic requirements, we'll send you a talent test."
 msgstr "Jika Anda memenuhi syarat utama kami, kami akan mengirimkan tes kemahiran."
@@ -3542,9 +3576,16 @@ msgstr "Jika Anda ingin memperoleh keuntungan dari produk terlaris ini maka pili
 
 msgid "If you wanted to purchase <strong>100 units</strong> of a particular asset trading at <strong>US&#36; 50 per unit</strong> through a traditional broker, it would cost you <strong>US&#36; 5,000</strong> for this transaction."
 msgstr ""
+"Jika Anda ingin membeli <strong>100 unit</strong> aset trading pada "
+"<strong>US&#36; 50 per unit</strong> melalui broker traditional, Anda akan "
+"dikenakan <strong>US&#36; 5.000</strong> untuk transaksi ini."
 
 msgid "If you wish to withdraw funds from your Real Account and close your Real Account, you may notify us by contacting our helpdesk at <a href='mailto:%1'>%1</a>. Your Real Account may be closed if you do not have any Open Positions and all amounts due to us have been settled."
 msgstr ""
+"Jika Anda ingin menarik dana dan menutup Akun Riil Anda, Anda dapat "
+"memberitahu kami dengan menghubungi helpdesk di<a href='mailto:%1'>%1</a>. "
+"Akun Riil Anda akan ditutup jika sudah tidak ada lagi Posisi Berjalan dan "
+"saldo akun Anda sudah kosong."
 
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
 msgstr "Jika Anda ingin informasi lebih lanjut mengenai Agen Pembayaran, silahkan hubungi kami di <a href='mailto:%1'>%1</a>"
