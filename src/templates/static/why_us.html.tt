@@ -35,7 +35,7 @@
           </li>
         </ul>
         <div class="center-text gr-padding-10 by_client_type client_logged_out client_virtual">
-          <a class=" button pjaxload" href="[% request.url_for('/') %]">
+          <a class="button" href="[% request.url_for('/') %]">
             <span>[% l("Open a free account") %]</span>
           </a>
         </div>
@@ -61,10 +61,10 @@
                       [% l("Real-time prices, benchmarked against interbank options markets.") %]
                     </li>
                     <li>
-                      [% l("Returns above 100% on simple <a href='[_1]' class='pjaxload'>rise/fall</a> contracts.", request.url_for('trading?market=forex&formname=risefall')) %]
+                      [% l("Returns above 100% on simple <a href='[_1]'>rise/fall</a> contracts.", request.url_for('trading?market=forex&formname=risefall')) %]
                     </li>
                     <li>
-                      [% l("Returns above 1000% on <a href='[_1]' class='pjaxload'>higher/lower</a> and <a href='[_2]' class='pjaxload'>touch/no-touch</a> trades.", request.url_for('trading?market=forex&formname=higherlower'), request.url_for('trading?market=forex&formname=touchnotouch')) %]
+                      [% l("Returns above 1000% on <a href='[_1]'>higher/lower</a> and <a href='[_2]'>touch/no-touch</a> trades.", request.url_for('trading?market=forex&formname=higherlower'), request.url_for('trading?market=forex&formname=touchnotouch')) %]
                     </li>
                     <li>
                       [% l("No hidden fees or commissions.") %]

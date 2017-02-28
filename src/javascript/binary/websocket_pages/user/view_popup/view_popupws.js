@@ -662,14 +662,20 @@ const ViewPopupWS = (function() {
         }
     };
 
+    const viewButtonOnClick = function (container_selector) {
+        $(container_selector).on('click', '.open_contract_detailsws', function (e) {
+            e.preventDefault();
+            init(this);
+        });
+    };
+
     return {
-        init        : init,
-        dispatch    : dispatch,
-        spreadUpdate: spreadUpdate,
-        normalUpdate: normalUpdate,
+        init             : init,
+        dispatch         : dispatch,
+        spreadUpdate     : spreadUpdate,
+        normalUpdate     : normalUpdate,
+        viewButtonOnClick: viewButtonOnClick,
     };
 })();
 
-module.exports = {
-    ViewPopupWS: ViewPopupWS,
-};
+module.exports = ViewPopupWS;

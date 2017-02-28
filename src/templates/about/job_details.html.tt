@@ -48,7 +48,7 @@
       <div class="gr-3 gr-hide-m gr-hide-p"></div>
       <div class="gr-9 gr-12-m gr-12-p center-text gr-centered">
         <div class="gr-12">
-          <a class="button  pjaxload" href="mailto:hr@binary.com">
+          <a class="button" href="mailto:hr@binary.com">
             <span>
               [% l("Submit your CV and Cover Letter") %]
             </span>
@@ -60,9 +60,7 @@
           </p>
         </div>
         <div class="gr-12 gr-padding-10">
-          <a class="pjaxload" id="back-button">
-            [% l("<< Back to Job Descriptions") %]
-          </a>
+          <a id="back-button">[% l("<< Back to Job Descriptions") %]</a>
         </div>
       </div>
     </div>

@@ -118,11 +118,6 @@ const SelfExclusionWS = (function() {
         // for error messages to show properly
         $('#' + timeID).attr('style', 'margin-bottom:10px');
 
-        if (Client.get('is_virtual')) {
-            $('#selfExclusionDesc').addClass(hiddenClass);
-            showPageError(Content.localize().featureNotRelevantToVirtual, true);
-            return;
-        }
         showLoadingImage($loading);
 
         fields = {};
@@ -139,20 +134,17 @@ const SelfExclusionWS = (function() {
         getRequest();
     };
 
-    const init = function() {
+    const onLoad = function() {
         Content.populate();
         BinarySocket.init({
             onmessage: function(msg) {
                 const response = JSON.parse(msg.data);
                 const msg_type = response.msg_type;
-                if      (msg_type === 'authorize') reallyInit();
-                else if (msg_type === 'get_self_exclusion') getResponse(response);
+                if (msg_type === 'get_self_exclusion') getResponse(response);
                 else if (msg_type === 'set_self_exclusion') setResponse(response);
             },
         });
-        if (Client.get('values_set')) {
-            reallyInit();
-        }
+        reallyInit();
     };
 
     // To propagate empty values.
@@ -362,10 +354,8 @@ const SelfExclusionWS = (function() {
     };
 
     return {
-        init: init,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    SelfExclusionWS: SelfExclusionWS,
-};
+module.exports = SelfExclusionWS;

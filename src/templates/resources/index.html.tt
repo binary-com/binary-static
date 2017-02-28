@@ -3,30 +3,26 @@
 <div class="gr-row">
   <div class="gr-3 gr-8-m gr-parent ja-hide">
     <div class="gr-8 gr-padding-10">
-      <a class="pjaxload" href="[% request.url_for('/resources/asset_indexws') %]" id="asset-index">
+      <a href="[% request.url_for('/resources/asset_indexws') %]" id="asset-index">
         <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/resources/asset-index.svg') %]"/>
       </a>
     </div>
     <div class="gr-12">
       <h4>
-        <a class="pjaxload" href="[% request.url_for('/resources/asset_indexws') %]">
-          [% l("Asset Index") %]
-        </a>
+        <a href="[% request.url_for('/resources/asset_indexws') %]">[% l("Asset Index") %]</a>
       </h4>
       <p>[% l("View the full list of assets, contract types and durations.") %]</p>
     </div>
   </div>
   <div class="gr-3 gr-8-m gr-parent">
     <div class="gr-8 gr-padding-10">
-      <a class="pjaxload" href="[% request.url_for('/resources/market_timesws') %]" id="trading-times">
+      <a href="[% request.url_for('/resources/market_timesws') %]" id="trading-times">
         <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/resources/trading-times.svg') %]"/>
       </a>
     </div>
     <div class="gr-12">
       <h4>
-        <a class="pjaxload" href="[% request.url_for('/resources/market_timesws') %]">
-          [% l("Trading Times") %]
-        </a>
+        <a href="[% request.url_for('/resources/market_timesws') %]">[% l("Trading Times") %]</a>
       </h4>
       <p>[% l("View the operating hours of the markets you can trade.") %]</p>
     </div>

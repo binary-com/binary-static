@@ -23,6 +23,7 @@ require('./lib/jquery.sparkline.js');
 require('jquery.scrollto');
 
 require('./binary/components/trackjs_onerror');
-require('./binary/static_pages/static_pjax');
-require('./binary/websocket_pages/websocket_pjax');
-require('./lib/firebase');
+
+const BinaryLoader = require('./binary/base/binary_loader');
+
+$(window).on('load', BinaryLoader.init);

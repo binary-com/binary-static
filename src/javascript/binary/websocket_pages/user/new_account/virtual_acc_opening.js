@@ -1,5 +1,5 @@
-const localize              = require('../../../base/localize').localize;
 const Client                = require('../../../base/client').Client;
+const localize              = require('../../../base/localize').localize;
 const url_for               = require('../../../base/url').url_for;
 const template              = require('../../../base/utility').template;
 const getResidence          = require('../../../common_functions/account_opening').getResidence;
@@ -12,10 +12,6 @@ const VirtualAccOpening = (function() {
     const form = '#virtual-form';
 
     const onLoad = function() {
-        if (Client.is_logged_in()) {
-            window.location.href = url_for('trading');
-            return;
-        }
         if (japanese_client()) {
             handleJPForm();
         } else {
@@ -76,11 +72,11 @@ const VirtualAccOpening = (function() {
 
         switch (error.code) {
             case 'InvalidToken': {
-                const message = 'Your token has expired. Please click <a class="pjaxload" href="[_1]">here</a> to restart the verification process.';
+                const message = 'Your token has expired. Please click <a href="[_1]">here</a> to restart the verification process.';
                 return showFormError(message, '');
             }
             case 'duplicate email': {
-                const message = 'The email address provided is already in use. If you forgot your password, please try our <a class="pjaxload" href="[_1]">password recovery tool</a> or contact our customer service.';
+                const message = 'The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.';
                 return showFormError(message, 'user/lost_passwordws');
             }
             case 'PasswordError': {
@@ -103,8 +99,7 @@ const VirtualAccOpening = (function() {
     };
 
     const showError = (message) => {
-        const $error = $('#error-account-opening');
-        $error.removeClass('invisible')
+        $('#error-account-opening').removeClass('invisible')
             .text(localize(message));
     };
 
@@ -113,6 +108,4 @@ const VirtualAccOpening = (function() {
     };
 })();
 
-module.exports = {
-    VirtualAccOpening: VirtualAccOpening,
-};
+module.exports = VirtualAccOpening;

@@ -1,8 +1,8 @@
 const japanese_client      = require('../../common_functions/country_base').japanese_client;
 const japanese_residence   = require('../../common_functions/country_base').japanese_residence;
+const BinaryPjax           = require('../../base/binary_pjax');
 const Client               = require('../../base/client').Client;
 const Header               = require('../../base/header').Header;
-const url_for              = require('../../base/url').url_for;
 const default_redirect_url = require('../../base/url').default_redirect_url;
 
 const Cashier = (function() {
@@ -22,7 +22,7 @@ const Cashier = (function() {
 
     const check_locked = function() {
         if (Client.get('is_virtual')) return;
-        if (japanese_client() && !japanese_residence()) window.location.href = default_redirect_url();
+        if (japanese_client() && !japanese_residence()) BinaryPjax.load(default_redirect_url());
         if (Client.status_detected('cashier_locked')) {
             lock_unlock_cashier('lock', 'deposit, .withdraw');
             withdrawal_locked = true;
@@ -37,26 +37,28 @@ const Cashier = (function() {
     };
 
     const check_top_up_withdraw = function() {
-        if (is_cashier_page() && Client.get('values_set')) {
-            const currency = Client.get('currency'),
-                balance = Client.get('balance');
-            if (Client.get('is_virtual')) {
-                if ((currency !== 'JPY' && balance > 1000) ||
-                    (currency === 'JPY' && balance > 100000)) {
-                    replace_button('disable', '#VRT_topup_link');
+        BinarySocket.wait('authorize').then(() => {
+            if (/cashier[\/\w]*\.html/.test(window.location.pathname)) {
+                const currency = Client.get('currency'),
+                    balance = Client.get('balance');
+                if (Client.get('is_virtual')) {
+                    if ((currency !== 'JPY' && balance > 1000) ||
+                        (currency === 'JPY' && balance > 100000)) {
+                        replace_button('disable', '#VRT_topup_link');
+                    }
+                } else if (!currency || +balance === 0) {
+                    lock_unlock_cashier('lock', 'withdraw');
+                } else {
+                    lock_unlock_cashier('unlock', 'withdraw');
                 }
-            } else if (!currency || +balance === 0) {
-                lock_unlock_cashier('lock', 'withdraw');
-            } else {
-                lock_unlock_cashier('unlock', 'withdraw');
             }
-        }
+        });
     };
 
     const replace_button = function(action, elementToReplace) {
         const $a = $(elementToReplace);
         if ($a.length === 0) return;
-        const replace = ['button-disabled', 'pjaxload'];
+        const replace = ['button-disabled', 'toggle'];
         const disable = action === 'disable';
         const id = $a.attr('id');
         const href = $a.attr('href');
@@ -84,24 +86,11 @@ const Cashier = (function() {
     };
 
     const onLoad = function() {
-        if (is_cashier_page() && Client.is_logged_in()) {
+        if (Client.is_logged_in()) {
             withdrawal_locked = false;
             Cashier.check_locked();
             Cashier.check_top_up_withdraw();
-            Header.topbar_message_visibility(Client.landing_company());
-        }
-    };
-
-    const is_cashier_page = function () {
-        return /cashier[\/\w]*\.html/.test(window.location.pathname);
-    };
-
-    const onLoadPaymentMethods = function() {
-        if (japanese_client()) {
-            window.location.href = url_for('/');
-        }
-        if (Client.is_logged_in() && !Client.get('is_virtual')) {
-            Cashier.check_locked();
+            Header.upgrade_message_visibility(); // To handle the upgrade buttons visibility
         }
     };
 
@@ -109,10 +98,9 @@ const Cashier = (function() {
         check_locked         : check_locked,
         check_top_up_withdraw: check_top_up_withdraw,
         onLoad               : onLoad,
-        onLoadPaymentMethods : onLoadPaymentMethods,
+
+        PaymentMethods: { onLoad: () => { onLoad(); } },
     };
 })();
 
-module.exports = {
-    Cashier: Cashier,
-};
+module.exports = Cashier;
