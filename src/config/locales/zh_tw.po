@@ -4,8 +4,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-02-23 06:35+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) "
-"<https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
+"Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -119,9 +118,6 @@ msgid "%1 has thousands of clients taking a variety of positions on the financia
 msgstr "%1 在任一時間內均有數千名客戶交易各類金融產品，該平台在這些交易中僅賺取極低的利潤率。"
 
 msgid "%1 has updated its  <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
-msgstr "%1已經更新了其<a class=\"pjaxload\" href=\"%2\">條款和條件</a>。通過點選OK按鈕，您確定已經閱讀和接受此更新<a class=\"pjaxload\" href=\"%2\">條款和條件</a>。"
-
-msgid "%1 has updated its <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
 msgstr "%1已經更新了其<a class=\"pjaxload\" href=\"%2\">條款和條件</a>。通過點選OK按鈕，您確定已經閱讀和接受此更新<a class=\"pjaxload\" href=\"%2\">條款和條件</a>。"
 
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
@@ -345,12 +341,6 @@ msgstr "*為了利於培訓和監控,所有通話將被錄音"
 
 msgid ",000"
 msgstr ",000"
-
-msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
-msgstr "水電煤帳單或銀行月結單掃描件（日期不得超過3個月）。"
-
-msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
-msgstr "顯示您名字和出生日期的護照、駕照（臨時或永久）或身份證的掃描件。"
 
 msgid "0-1 year"
 msgstr "0-1 年"
@@ -710,18 +700,6 @@ msgstr "偏好并熱衷於使用Linux和開源平台"
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "主動尋求問題的對策，並向客戶端提交解決方案"
 
-msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
-msgstr "水電煤帳單或銀行月結單掃描件（日期不得超過3個月）"
-
-msgid "A scanned copy of a utility bill or bank statement that is no more than three months old."
-msgstr "水電煤帳單或銀行月結單掃描件（日期不得超過3個月）。"
-
-msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
-msgstr "顯示您名字和出生日期的護照、駕照（臨時或永久）或身份證的掃描件。文件須至少6個月有效期(從今天算起)。"
-
-msgid "A scanned copy of your passport, driving licence (provisional or full), or identity card that shows your full name and date of birth."
-msgstr "顯示您名字和出生日期的護照、駕照（臨時或永久）或身份證的掃描件。"
-
 msgid "A strong and passionate interest in Marketing and Advertising"
 msgstr "對市場行銷和廣告充滿熱忱，非常感興趣"
 
@@ -802,6 +780,11 @@ msgstr "學院"
 
 msgid "Accept"
 msgstr "接受"
+
+#, fuzzy
+#| msgid "Terms and Conditions"
+msgid "Accept Terms and Conditions"
+msgstr "條款和條件"
 
 msgid "Accept local bank wires"
 msgstr "接受本地銀行電匯"
@@ -1259,9 +1242,6 @@ msgstr "澳大利亞"
 msgid "Australia 200 Cash Index"
 msgstr "澳大利亞 200 現金指數"
 
-msgid "Authenticate your Binary.com account."
-msgstr "驗證您的Binary.com帳戶。"
-
 msgid "Authentication"
 msgstr "驗證"
 
@@ -1616,6 +1596,11 @@ msgstr "買入價"
 msgid "By clicking <strong>Accept</strong> below and proceeding with the Account Opening you should note that you may be exposing yourself to risks (which may be significant, including the risk of loss of the entire sum invested) that you may not have the knowledge and experience to properly assess or mitigate."
 msgstr "通過點選以下的<strong>接受</strong> 鍵繼續開立帳戶，請注意您可能讓自己冒一些風險（可能會很嚴重，包括損失整個投資資金的風險），而您可能缺乏正確評估或化解風險的知識或經驗。"
 
+#, fuzzy
+#| msgid "%1 has updated its %2. By clicking OK, you confirm that you have read and accepted the updated %2."
+msgid "By clicking OK, you confirm that you have read and accepted Terms & Conditions."
+msgstr "%1已經更新了其%2條款和條件。通過點選OK按鈕，您確定已經閱讀和接受此更新%2條款和條件。"
+
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
 msgstr "預設情況下，智慧型訂單路由系統確保記錄本的最頂部位總是由最佳競標價格和參與競爭的流動性提供商報價組成。然而，在市場流動性不足的時候，這種情況可能會改變，並由執行可能性作主要執行因素。"
 
@@ -1930,9 +1915,6 @@ msgstr "投訴與糾紛"
 
 msgid "Complaints and disputes"
 msgstr "投訴和糾紛"
-
-msgid "Complete the <a href=\"%1\">Financial Assessment</a>."
-msgstr "請完成<a href=\"%1\">財務評估</a>。"
 
 msgid "Compliance"
 msgstr "法律事務"
@@ -3323,6 +3305,9 @@ msgstr "我有真實資金帳戶"
 msgid "I have read and agree to the"
 msgstr "我已閱讀並同意"
 
+msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
+msgstr "我已閱讀並同意本網站的<a target=\"_blank\" href=\"%1\">條款和條件</a>。"
+
 msgid "I hereby agree and accept that all documents such as pre-contract forms, all terms and conditions, trade reports and other legally required materials will be issued in electronic format only."
 msgstr "I hereby agree and accept that all documents such as pre-contract forms, all terms and conditions, trade reports and other legally required materials will be issued in electronic format only."
 
@@ -3439,6 +3424,11 @@ msgstr "如果您無法按照本協定規定立即將拖欠我們的款項全額
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr "如您在我們的<a target='_blank' href='%1'>開源代碼</a>中發現任何漏洞，請立刻在GitHub提交引入請求。"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
+msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
+msgstr "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr "如果您已在同一市場持有多個未平倉頭寸，您在同一市場完成任何平倉交易將使其他未平倉頭寸按建立時間先進先出順序平倉。"
@@ -3595,6 +3585,11 @@ msgstr "想像一下，一個基本上讓您感覺不到是在工作的工作場
 
 msgid "Imagine a workplace where your individuality, creativity and sense of adventure are valued and rewarded."
 msgstr "想像一下，一個重視和鼓勵個性、創造性和冒險精神的工作場所。"
+
+#, fuzzy
+#| msgid "Instant"
+msgid "Important"
+msgstr "即時"
 
 msgid "Important notes on our swap rates (overnight funding)"
 msgstr "掉期利率（隔夜資金）的重要說明"
@@ -4376,11 +4371,11 @@ msgstr "關鍵資料"
 msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
 msgstr "想放鬆時只需飛行很短的距離就能盡情探索美麗的海灘、島嶼和山區。您可從馬爾他輕鬆前往歐洲、地中海和北非。此外，您也可在馬來西亞飽覽亞洲最壯觀的一些美景。"
 
-msgid "Kindly email the following documents to <a href=\"mailto:%1\">%1</a> to authenticate your account:"
-msgstr "為驗證您的帳號，請將以下文件通過電子郵件傳到<a href=\"mailto:%1\">%1</a>:"
-
 msgid "Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account."
 msgstr "請提供您的完整地址。<br>以便在您開立真實帳戶時驗證您的身份。"
+
+msgid "Kindly send us these documents within 5 days to keep your MT5 account active."
+msgstr ""
 
 msgid "Know what you stand to win or lose"
 msgstr "知道您的輸贏立場"
@@ -5102,6 +5097,9 @@ msgstr "十五、陳述和保證"
 msgid "OAuth App ID (Optional)"
 msgstr "OAuth 應用程式 ID (可選)"
 
+msgid "OK"
+msgstr "確定"
+
 msgid "OTC Derivative (Option) Trading"
 msgstr "OTC Derivative (Option) Trading"
 
@@ -5122,9 +5120,6 @@ msgstr "十月"
 
 msgid "Office worker"
 msgstr "辦公室員工"
-
-msgid "Ok"
-msgstr "確定"
 
 msgid "Old password is wrong."
 msgstr "舊密碼不正確。"
@@ -5185,6 +5180,11 @@ msgstr "只允許字母、空格、連字號、句號和所有格號。"
 
 msgid "Only numbers and spaces are allowed."
 msgstr "只允許數字和空格。"
+
+#, fuzzy
+#| msgid "Only letters, numbers, and hyphen are allowed."
+msgid "Only numbers, space, and hyphen are allowed."
+msgstr "只允許字母、數字和連字符。"
 
 msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "每人只能開立一個帳戶。使用假名開立的帳戶或同一人開立的多個帳戶將不會獲得任何贏取的款項和/或退款。"
@@ -5633,6 +5633,11 @@ msgstr "請選擇核取方塊。"
 msgid "Please select your country of residence"
 msgstr "請選擇您的居住國"
 
+#, fuzzy
+#| msgid "Kindly email the following documents to <a href=\"mailto:%1\">%1</a> to authenticate your account:"
+msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+msgstr "為驗證您的帳號，請將以下文件通過電子郵件傳到<a href=\"mailto:%1\">%1</a>:"
+
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "請指定您的優選實況調查間隔時間分鐘數"
 
@@ -5816,6 +5821,16 @@ msgstr "利潤/虧損(點)"
 msgid "Prohibited Trades"
 msgstr "違禁交易"
 
+#, fuzzy
+#| msgid "A scanned copy of a utility bill or bank statement that is no more than three months old."
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+msgstr "水電煤帳單或銀行月結單掃描件（日期不得超過3個月）。"
+
+#, fuzzy
+#| msgid "A scanned copy of your passport, driving licence (provisional or full), or identity card that shows your full name and date of birth."
+msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
+msgstr "顯示您名字和出生日期的護照、駕照（臨時或永久）或身份證的掃描件。"
+
 msgid "Proofread and correct the content appearing on the company's website, blog, social media outlets, and marketing materials, from English to the regional language and vice versa"
 msgstr "校對並更正公司網站、部落格、社交媒體網站和行銷材料內容翻譯（從英語翻譯成各地區語言，或從各地區語言翻譯成英語）"
 
@@ -5898,9 +5913,7 @@ msgid "Read"
 msgstr "閱讀"
 
 msgid "Read about the features, characteristics, benefits, and risks of binary options in the Product Disclosure Statement of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
-msgstr ""
-"請參閱以下Binary Investments (Europe) Limited 產品披露聲明中關於二元期權的功能、特點、好處，以及風險。 "
-"「時程表」一節中包含了合同類型的投資範例，以幫助您瞭解二元期權交易的基本概念。"
+msgstr "請參閱以下Binary Investments (Europe) Limited 產品披露聲明中關於二元期權的功能、特點、好處，以及風險。 「時程表」一節中包含了合同類型的投資範例，以幫助您瞭解二元期權交易的基本概念。"
 
 msgid "Read about the five types of trade offered by %1."
 msgstr "檢視 %1 提供的 5 種交易。"
@@ -6730,11 +6743,11 @@ msgstr "立即試用 %1，提升您的交易技能，體驗無風險、無資金
 msgid "Th"
 msgstr "星期四"
 
+msgid "Thank you for completing the Financial Assessment and registering your Financial Account. You can now deposit funds and trade Forex with real money on MT5."
+msgstr ""
+
 msgid "Thank you for signing up! Please check your email to retrieve the verification token."
 msgstr "謝謝您的註冊！請檢視郵件並提取驗證權杖。"
-
-msgid "Thank you for subscribing!"
-msgstr "謝謝您訂閱!"
 
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "%1 API的使用受到限制，以防止%1 API被濫用和/或改變用途。將來這些使用限制可能不另行通知而更改。如果你持續超出使用限制，或以其他方式濫用該服務，我們可能會阻止您存取%1 API。"
@@ -7090,6 +7103,9 @@ msgstr "期限是所買入交易的時間週期（參考「合約期限」）。
 
 msgid "The easiest way to get started in the financial markets"
 msgstr "參與金融市場最簡便的方法"
+
+msgid "The email address provided is already in use. If you forgot your password, please try our <a class=\"pjaxload\" href=\"%1\">password recovery tool</a> or contact our customer service."
+msgstr ""
 
 msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
 msgstr "長倉合約的進場價位為1001，即進場現價 + 一半價差。退出時，現價為 1100，因此長倉合約的退市價位為 1099，即退場現價 - 一半價差。"
@@ -7490,12 +7506,6 @@ msgstr "職稱"
 msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
 msgstr "如有意申請，請將您的履歷和求職信傳到<span id='hr_contact_eaddress'></span>。"
 
-msgid "To authenticate your account, kindly email the following to %1:"
-msgstr "為驗證您的帳號，請將以下通過電子郵件傳到%1:"
-
-msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
-msgstr "為驗證您的帳號，請將以下通過電子郵件傳到<a href=\"mailto:%1\">%1</a>"
-
 msgid "To be considered for this mission critical leadership role, you'll need to demonstrate a passion for open source technologies and a desire to test your talents in a dynamic and challenging work environment."
 msgstr "要申請這個重要的領導職位，您須顯示出開源技術的熱忱，以及在充滿活力和挑戰性的工作環境中測試才華的慾望。"
 
@@ -7505,8 +7515,10 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "如需更改姓名、生日、居住國或電子郵件地址，請與<a href=\"%1\">客服人員</a>聯繫。"
 
-msgid "To create an MT5 Financial Account please:"
-msgstr "要開立MT5金融帳戶，請:"
+#, fuzzy
+#| msgid "Complete the <a href=\"%1\">Financial Assessment</a>."
+msgid "To create an MT5 Financial Account please complete the <a href=\"%1\">Financial Assessment</a>."
+msgstr "請完成<a href=\"%1\">財務評估</a>。"
 
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "要啟用cookie，請按下面符合您瀏覽器版本的指示說明進行操作。"
@@ -7526,7 +7538,9 @@ msgstr "要開立真實帳戶，您必須在Binary.com擁有已通過身份驗�
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 msgstr "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 
-msgid "To perform this action, please <a href=\"%1\"> upgrade to %2 Real Account</a>."
+#, fuzzy
+#| msgid "To perform this action, please <a href=\"%1\"> upgrade to %2 Real Account</a>."
+msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "如要執行此操作，請<a href=\"%1\">升級到 %2 真實帳戶</a>。"
 
 msgid "To perform this action, please switch to your %1 Real Account."
@@ -7537,6 +7551,11 @@ msgstr "要獲得錄取資格，您必須擁有物理、金融工程或數學專
 
 msgid "To reset your password, enter the e-mail address you registered in the field below and click 'Reset Password'."
 msgstr "如要重新設定密碼，在下面的欄位中輸入您註冊的電子郵件地址並點選「重設密碼」。"
+
+#, fuzzy
+#| msgid "If you wish to raise these limits, please authenticate your account."
+msgid "To withdraw from MT5 Financial Account please Authenticate your %1 account."
+msgstr "如果您想提高這些限額，請驗證您的帳戶。"
 
 msgid "Today"
 msgstr "今天"
@@ -8897,9 +8916,6 @@ msgstr "您的密碼已成功重設。請用新密碼登入您的帳戶。"
 msgid "Your personal information is used primarily as a way of authenticating you as the proper owner of your account and as the person to whom withdrawal payments may be made, and to process trades. We collect personal data relating to you directly from you when you fill in the account opening form. In the event of any doubt as to the authenticity of your account details or of any withdrawal request, the company reserves the right to request further authentication information as may be deemed appropriate under the circumstances."
 msgstr "您的個人資訊主要用於確認您是帳戶的合法擁有人以及提款和交易的對象。我們在您填寫開戶表格時會直接收集您的個人資料。如果我們對您的帳戶細節或提款要求的真實性有疑問，本公司有權要求您提供必要的驗證資訊。"
 
-msgid "Your provided email address is already in use by another Login ID. According to our terms and conditions, you may only register once through our site. If you have forgotten the password of your existing account, please <a href=\"%1\">try our password recovery tool</a> or contact customer service."
-msgstr "您所輸入的電郵地址已經被另外的登入ID使用。根據我們的使用條款和條件，您只能在我們的網站註冊一次。如果您忘記了目前帳戶的密碼，請<a href=\"%1\">嘗試我們的密碼復原工具</a>或聯繫我們的客服人員。"
-
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr "您從%3 轉帳%1%2 到%4 的要求已成功處理。"
 
@@ -10145,6 +10161,42 @@ msgstr "帳戶限額"
 msgid "Account Details"
 msgstr "帳戶詳細資料"
 
+#~ msgid "%1 has updated its <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
+#~ msgstr "%1已經更新了其<a class=\"pjaxload\" href=\"%2\">條款和條件</a>。通過點選OK按鈕，您確定已經閱讀和接受此更新<a class=\"pjaxload\" href=\"%2\">條款和條件</a>。"
+
+#~ msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+#~ msgstr "水電煤帳單或銀行月結單掃描件（日期不得超過3個月）。"
+
+#~ msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
+#~ msgstr "顯示您名字和出生日期的護照、駕照（臨時或永久）或身份證的掃描件。"
+
+#~ msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
+#~ msgstr "水電煤帳單或銀行月結單掃描件（日期不得超過3個月）"
+
+#~ msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
+#~ msgstr "顯示您名字和出生日期的護照、駕照（臨時或永久）或身份證的掃描件。文件須至少6個月有效期(從今天算起)。"
+
+#~ msgid "Authenticate your Binary.com account."
+#~ msgstr "驗證您的Binary.com帳戶。"
+
+#~ msgid "Ok"
+#~ msgstr "確定"
+
+#~ msgid "Thank you for subscribing!"
+#~ msgstr "謝謝您訂閱!"
+
+#~ msgid "To authenticate your account, kindly email the following to %1:"
+#~ msgstr "為驗證您的帳號，請將以下通過電子郵件傳到%1:"
+
+#~ msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
+#~ msgstr "為驗證您的帳號，請將以下通過電子郵件傳到<a href=\"mailto:%1\">%1</a>"
+
+#~ msgid "To create an MT5 Financial Account please:"
+#~ msgstr "要開立MT5金融帳戶，請:"
+
+#~ msgid "Your provided email address is already in use by another Login ID. According to our terms and conditions, you may only register once through our site. If you have forgotten the password of your existing account, please <a href=\"%1\">try our password recovery tool</a> or contact customer service."
+#~ msgstr "您所輸入的電郵地址已經被另外的登入ID使用。根據我們的使用條款和條件，您只能在我們的網站註冊一次。如果您忘記了目前帳戶的密碼，請<a href=\"%1\">嘗試我們的密碼復原工具</a>或聯繫我們的客服人員。"
+
 #~ msgid "Prospectus"
 #~ msgstr "說明書"
 
@@ -10441,9 +10493,6 @@ msgstr "帳戶詳細資料"
 
 #~ msgid "Who love working with people from different cultures, and are keen to contribute to a dynamic and unique workplace, and not merely pass on through."
 #~ msgstr "我們樂於與來自不同文化背景的同事合作，並熱衷於為打造充滿活力和獨特的工作場所貢獻一份力量，而不只是充當過客。"
-
-#~ msgid "%1 has updated its %2. By clicking OK, you confirm that you have read and accepted the updated %2."
-#~ msgstr "%1已經更新了其%2條款和條件。通過點選OK按鈕，您確定已經閱讀和接受此更新%2條款和條件。"
 
 #~ msgid "%1 is tailored to traders of all levels."
 #~ msgstr "%1 適合不同層次的交易者。"
@@ -11299,9 +11348,6 @@ msgstr "帳戶詳細資料"
 
 #~ msgid "Please re-enter your email"
 #~ msgstr "請重新輸入您的電郵地址"
-
-#~ msgid "Instant"
-#~ msgstr "即時"
 
 #~ msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
 #~ msgstr "更確切地，一旦我們與您建立了二元期權交易（雙方各持一份「合約」），我們有責任向您提供 "
@@ -12180,9 +12226,6 @@ msgstr "帳戶詳細資料"
 #~ msgid "If you need help, please contact our customer support team at"
 #~ msgstr "如果您需要幫助，請通過以下方式聯繫我們的客戶支援團隊：%1"
 
-#~ msgid "If you wish to raise these limits, please authenticate your account."
-#~ msgstr "如果您想提高這些限額，請驗證您的帳戶。"
-
 #~ msgid "In order for you to place contracts, we need to know your Residence (Country). Please update your settings."
 #~ msgstr "為了讓您能夠交易期權合約，我們需要知道您的居住地（國）。請更新您的設定。"
 
@@ -12365,9 +12408,6 @@ msgstr "帳戶詳細資料"
 
 #~ msgid "Number of ticks must be between %1 and %2"
 #~ msgstr "跳動點數目須在%1 與 %2之間"
-
-#~ msgid "OK"
-#~ msgstr "確定"
 
 #~ msgid "Open an Account"
 #~ msgstr "開設帳戶"
@@ -15381,9 +15421,6 @@ msgstr "帳戶詳細資料"
 
 #~ msgid "Forgot Login ID or Password?"
 #~ msgstr "忘記登入 ID 或密碼?"
-
-#~ msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
-#~ msgstr "我已閱讀並同意本網站的<a target=\"_blank\" href=\"%1\">條款和條件</a>。"
 
 #~ msgid "Invalid amount"
 #~ msgstr "無效金額"
