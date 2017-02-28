@@ -1,12 +1,13 @@
 const Scroll     = require('../common_functions/scroll');
 const handleHash = require('../base/utility').handleHash;
+const GetStarted = require('./get_started');
 
 module.exports = {
     OpenPositions: {
         onLoad: () => { Scroll.scrollToHashSection(); },
     },
     VolidxMarkets: {
-        onLoad  : () => { Scroll.goToHashSection(); },
+        onLoad  : () => { Scroll.goToHashSection(); GetStarted.onLoad(); },
         onUnload: () => { Scroll.offScroll(); },
     },
     OpenSourceProjects: {
