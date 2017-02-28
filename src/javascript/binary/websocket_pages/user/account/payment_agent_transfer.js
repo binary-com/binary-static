@@ -1,9 +1,8 @@
 const PaymentAgentTransfer = require('./payment_agent_transfer/payment_agent_transfer.init').PaymentAgentTransfer;
 const Content              = require('../../../common_functions/content').Content;
-const Client               = require('../../../base/client').Client;
 
 const PaymentAgentTransferSocket = (function() {
-    const initSocket = function() {
+    const onLoad = function() {
         BinarySocket.init({
             onmessage: function(msg) {
                 const response = JSON.parse(msg.data);
@@ -14,16 +13,12 @@ const PaymentAgentTransferSocket = (function() {
             },
         });
         Content.populate();
-        PaymentAgentTransfer.init_variable();
-        if (Client.get('email')) {
-            PaymentAgentTransfer.init();
-        }
+        PaymentAgentTransfer.init();
     };
+
     return {
-        initSocket: initSocket,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    PaymentAgentTransferSocket: PaymentAgentTransferSocket,
-};
+module.exports = PaymentAgentTransferSocket;

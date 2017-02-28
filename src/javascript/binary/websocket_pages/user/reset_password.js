@@ -2,7 +2,7 @@ const ResetPassword = require('./reset_password/reset_password.init').ResetPassw
 const Client        = require('../../base/client').Client;
 
 const ResetPasswordWS = (function() {
-    const init = function() {
+    const onLoad = function() {
         if (Client.redirect_if_login()) {
             return;
         }
@@ -13,10 +13,8 @@ const ResetPasswordWS = (function() {
     };
 
     return {
-        init: init,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    ResetPasswordWS: ResetPasswordWS,
-};
+module.exports = ResetPasswordWS;
