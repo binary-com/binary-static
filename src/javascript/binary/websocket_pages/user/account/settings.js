@@ -1,25 +1,26 @@
 const japanese_client = require('../../../common_functions/country_base').japanese_client;
 const Client          = require('../../../base/client').Client;
 
-const SettingsWS = (function() {
+const Settings = (function() {
     'use strict';
 
     const onLoad = function() {
-        const classHidden = 'invisible',
-            classReal   = '.real';
+        BinarySocket.wait('get_account_status').then((response) => {
+            const class_hidden = 'invisible';
+            const class_real   = '.real';
 
-        if (!Client.get('is_virtual')) {
-            // control-class is a fake class, only used to counteract ja-hide class
-            $(classReal).not((japanese_client() ? '.ja-hide' : '.control-class')).removeClass(classHidden);
-        } else {
-            $(classReal).addClass(classHidden);
-        }
+            if (Client.get('is_virtual')) {
+                $(class_real).addClass(class_hidden);
+            } else {
+                $(class_real).not((japanese_client() ? '.ja-hide' : '')).removeClass(class_hidden);
+            }
 
-        if (Client.get('has_password')) {
-            $('#change_password').removeClass(classHidden);
-        }
+            if (/has_password/.test(response.get_account_status.status)) {
+                $('#change_password').removeClass(class_hidden);
+            }
 
-        $('#settingsContainer').removeClass(classHidden);
+            $('#settings_container').removeClass(class_hidden);
+        });
     };
 
     return {
@@ -27,4 +28,4 @@ const SettingsWS = (function() {
     };
 })();
 
-module.exports = SettingsWS;
+module.exports = Settings;
