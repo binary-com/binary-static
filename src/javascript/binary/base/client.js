@@ -1,15 +1,16 @@
+const BinaryPjax           = require('./binary_pjax');
 const CookieStorage        = require('./storage').CookieStorage;
 const LocalStore           = require('./storage').LocalStore;
-const url_for              = require('./url').url_for;
+const State                = require('./storage').State;
 const default_redirect_url = require('./url').default_redirect_url;
-const japanese_client = require('../common_functions/country_base').japanese_client;
+const url_for              = require('./url').url_for;
 const getLoginToken        = require('../common_functions/common_functions').getLoginToken;
-const Cookies = require('../../lib/js-cookie');
-const moment = require('moment');
+const japanese_client      = require('../common_functions/country_base').japanese_client;
+const Cookies              = require('../../lib/js-cookie');
+const moment               = require('moment');
 
 const Client = (function () {
     const client_object = {};
-    let landing_company_response = {};
 
     const parseLoginIDList = function(string) {
         if (!string) return [];
@@ -74,7 +75,7 @@ const Client = (function () {
     const redirect_if_is_virtual = function(redirectPage) {
         const is_virtual = get('is_virtual');
         if (is_virtual) {
-            window.location.href = url_for(redirectPage || '');
+            BinaryPjax.load(redirectPage || '');
         }
         return is_virtual;
     };
@@ -82,7 +83,7 @@ const Client = (function () {
     const redirect_if_login = function() {
         const client_is_logged_in = is_logged_in();
         if (client_is_logged_in) {
-            window.location.href = default_redirect_url();
+            BinaryPjax.load(default_redirect_url());
         }
         return client_is_logged_in;
     };
@@ -153,14 +154,10 @@ const Client = (function () {
         set('landing_company_fullname', authorize.landing_company_fullname);
         set('currency', authorize.currency);
         check_values();
-        client_object.values_set = true;
         activate_by_client_type();
     };
 
-    const tnc_pages = () => {
-        const location = window.location.href;
-        return /user\/tnc_approvalws/.test(location) || /terms-and-conditions/.test(location);
-    };
+    const tnc_pages = () => /(user\/tnc_approvalws|terms-and-conditions)/i.test(window.location.href);
 
     const check_tnc = function() {
         if (tnc_pages() ||
@@ -172,7 +169,7 @@ const Client = (function () {
             website_tnc_version = LocalStore.get('website.tnc_version');
         if (client_tnc_status && website_tnc_version && client_tnc_status !== website_tnc_version) {
             sessionStorage.setItem('tnc_redirect', window.location.href);
-            window.location.href = url_for('user/tnc_approvalws');
+            BinaryPjax.load('user/tnc_approvalws');
         }
     };
 
@@ -241,7 +238,7 @@ const Client = (function () {
         // set local storage
         localStorage.setItem('GTM_newaccount', '1');
         localStorage.setItem('active_loginid', client_loginid);
-        window.location.href = default_redirect_url();
+        window.location.href = default_redirect_url(); // need to redirect not using pjax
     };
 
     const can_upgrade_gaming_to_financial = function(data) {
@@ -274,39 +271,32 @@ const Client = (function () {
     const activate_by_client_type = function() {
         $('.by_client_type').addClass('invisible');
         if (is_logged_in()) {
-            if (!client_object.values_set) {
-                return;
-            }
-            $('#client-logged-in').addClass('gr-centered');
-            $('.client_logged_in').removeClass('invisible');
-            if (!get('is_virtual')) {
-                // control-class is a fake class, only used to counteract ja-hide class
-                $('.by_client_type.client_real').not((japanese_client() ? '.ja-hide' : '.control-class')).removeClass('invisible').show();
+            BinarySocket.wait('get_settings').then(() => {
+                $('#client-logged-in').addClass('gr-centered');
+                $('.client_logged_in').removeClass('invisible');
+                if (!get('is_virtual')) {
+                    // control-class is a fake class, only used to counteract ja-hide class
+                    $('.by_client_type.client_real').not((japanese_client() ? '.ja-hide' : '.control-class')).removeClass('invisible').show();
 
-                $('#topbar').addClass('primary-color-dark')
-                            .removeClass('secondary-bg-color');
+                    $('#topbar').addClass('primary-color-dark').removeClass('secondary-bg-color');
 
-                if (!/^CR/.test(get('loginid'))) {
-                    $('#payment-agent-section').addClass('invisible')
-                                               .hide();
+                    if (!/^CR/.test(get('loginid'))) {
+                        $('#payment-agent-section').addClass('invisible').hide();
+                    }
+
+                    if (has_gaming_financial_enabled()) {
+                        $('#account-transfer-section').removeClass('invisible');
+                    }
+                } else {
+                    $('.by_client_type.client_virtual').removeClass('invisible').show();
+
+                    $('#topbar').addClass('secondary-bg-color').removeClass('primary-color-dark');
                 }
-
-                if (has_gaming_financial_enabled()) {
-                    $('#account-transfer-section').removeClass('invisible');
-                }
-            } else {
-                $('.by_client_type.client_virtual').removeClass('invisible')
-                                                   .show();
-
-                $('#topbar').addClass('secondary-bg-color')
-                            .removeClass('primary-color-dark');
-            }
+            });
         } else {
-            $('.by_client_type.client_logged_out').removeClass('invisible')
-                                                  .show();
+            $('.by_client_type.client_logged_out').removeClass('invisible').show();
 
-            $('#topbar').removeClass('secondary-bg-color')
-                        .addClass('primary-color-dark');
+            $('#topbar').removeClass('secondary-bg-color').addClass('primary-color-dark');
         }
     };
 
@@ -369,12 +359,8 @@ const Client = (function () {
         return (match_type !== 'any');
     };
 
-    const get_set_landing_company = function(response) { // eslint-disable-line consistent-return
-        if (response) landing_company_response = response;
-        else return landing_company_response;
-    };
-
-    const get_client_landing_company = function() {
+    const current_landing_company = function() {
+        const landing_company_response = State.get(['response', 'landing_company', 'landing_company']) || {};
         let client_landing_company = {};
         Object.keys(landing_company_response).forEach(function (key) {
             if (client_object.landing_company_name === landing_company_response[key].shortcode) {
@@ -421,12 +407,11 @@ const Client = (function () {
         send_logout_request: send_logout_request,
         do_logout          : do_logout,
         status_detected    : status_detected,
-        landing_company    : get_set_landing_company,
         is_financial       : is_financial,
         should_complete_tax: should_complete_tax,
         should_redirect_tax: should_redirect_tax,
 
-        get_client_landing_company: get_client_landing_company,
+        current_landing_company: current_landing_company,
     };
 })();
 

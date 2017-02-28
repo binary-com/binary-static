@@ -1,6 +1,6 @@
 const State  = require('../../binary/base/storage').State;
 const Client = require('../../binary/base/client').Client;
-const PortfolioWS = require('../../binary/websocket_pages/user/account/portfolio/portfolio.init').PortfolioWS;
+const PortfolioWS = require('../../binary/websocket_pages/user/account/portfolio/portfolio.init');
 
 const JapanPortfolio = (function() {
     let $portfolio,

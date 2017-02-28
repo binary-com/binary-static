@@ -1,6 +1,6 @@
 const MBNotifications = require('./mb_notifications').MBNotifications;
 const MBPrice         = require('./mb_price').MBPrice;
-const ViewPopupWS     = require('../user/view_popup/view_popupws').ViewPopupWS;
+const ViewPopupWS     = require('../user/view_popup/view_popupws');
 
 /*
  * Purchase object that handles all the functions related to

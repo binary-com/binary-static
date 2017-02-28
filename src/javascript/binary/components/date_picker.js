@@ -60,7 +60,7 @@ DatePicker.prototype = {
 
         if (options.additional) {
             this.setValue = options.additional.setValue;
-            this.noNative = options.additional.native;
+            this.noNative = !options.additional.native;
             delete options.additional;
         }
 

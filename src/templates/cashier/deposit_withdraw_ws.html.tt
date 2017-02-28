@@ -3,13 +3,13 @@
     <div>
         <div id="deposit-withdraw-message" class="invisible">
             <p id="cashier-locked-message" class="messages">
-                [% l('Your cashier is locked as per your request - to unlock it, please click <a class="pjaxload" href="[_1]">here</a>.', request.url_for('/user/security/cashier_passwordws')) %]
+                [% l('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.', request.url_for('/user/security/cashier_passwordws')) %]
             </p>
             <p id="check-email-message" class="messages">[% l('For added security, please check your email to retrieve the verification token.') %]</p>
             <p id="choose-currency-message" class="messages">[% l('Please choose which currency you would like to transact in.') %]</p>
             <p id="personal-details-message" class="messages">
-                [% l('There was a problem validating your personal details. Please update your [_1] <a class="pjaxload" href="[_2]">here</a>.', '[_1]', request.url_for('/user/settings/detailsws')) %]
-                <br /> [% l('If you need assistance feel free to contact our <a class="pjaxload" href="[_1]">Customer Support</a>.', request.url_for('/contact')) %]
+                [% l('There was a problem validating your personal details. Please update your [_1] <a href="[_2]">here</a>.', '[_1]', request.url_for('/user/settings/detailsws')) %]
+                <br /> [% l('If you need assistance feel free to contact our <a href="[_1]">Customer Support</a>.', request.url_for('/contact')) %]
             </p>
             <p id="not-authenticated-message" class="messages">
                 [% l('Your account is not fully authenticated.') %]
@@ -17,16 +17,16 @@
         </div>
         <div id="deposit-withdraw-error" class="invisible">
             <p id="financial-risk-error" class="error_messages center-text notice-msg ">
-                [% l('Financial Risk approval is required. Please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
+                [% l('Financial Risk approval is required. Please contact <a href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
             <p id="knowledge-test-error" class="error_messages center-text notice-msg ">
-                [% l('You must complete the knowledge test to activate this account. Please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
+                [% l('You must complete the knowledge test to activate this account. Please contact <a href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
             <p id="activation-error" class="error_messages center-text notice-msg ">
-                [% l('Account not activated, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
+                [% l('Account not activated, please contact <a href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
             <p id="age-error" class="error_messages center-text notice-msg ">
-                [% l('Account needs age verification, please contact <a class="pjaxload" href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
+                [% l('Account needs age verification, please contact <a href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
             </p>
             <p id="custom-error" class="error_messages center-text notice-msg error_vrtc"></p>
         </div>

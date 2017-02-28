@@ -27,11 +27,11 @@
 
     <h2>[% l("Learning to trade") %]</h2>
     <h3>[% l("Do you offer virtual-money accounts?") %]</h3>
-    <p>[% l("[_1] offers a virtual-money account so you can get the hang of trading binaries. Why not <a class='pjaxload' href='[_2]'>open a free \$10k fully-functional virtual-money account</a>, and start learning how to trade.", website_name, request.url_for('/')) %]</p>
+    <p>[% l("[_1] offers a virtual-money account so you can get the hang of trading binaries. Why not <a href='[_2]'>open a free \$10k fully-functional virtual-money account</a>, and start learning how to trade.", website_name, request.url_for('/')) %]</p>
 
     <h3>[% l("Will I need to install any software?") %]</h3>
     <p>[% l("[_1] is entirely web-based and requires no software installation.", website_name) %]</p>
 
     <h3>[% l("How soon can I start trading?") %]</h3>
-    <p>[% l("You can <a class='pjaxload' href='[_1]'>open an account</a>, deposit funds and begin trading within minutes.", request.url_for('/')) %]</p>
+    <p>[% l("You can <a href='[_1]'>open an account</a>, deposit funds and begin trading within minutes.", request.url_for('/')) %]</p>
 </div>

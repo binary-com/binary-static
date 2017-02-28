@@ -1,6 +1,6 @@
+const BinaryPjax  = require('../../../base/binary_pjax');
 const Client      = require('../../../base/client').Client;
 const localize    = require('../../../base/localize').localize;
-const url_for     = require('../../../base/url').url_for;
 const FormManager = require('../../../common_functions/form_manager');
 
 const ChangePassword = (function() {
@@ -32,7 +32,7 @@ const ChangePassword = (function() {
             if (/has_password/.test(response.get_account_status.status)) {
                 init();
             } else {
-                window.location.href = url_for('user/settingsws');
+                BinaryPjax.load('user/settingsws');
             }
         });
     };
@@ -43,3 +43,4 @@ const ChangePassword = (function() {
 })();
 
 module.exports = ChangePassword;
+

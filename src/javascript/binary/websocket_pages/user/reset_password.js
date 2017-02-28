@@ -36,7 +36,9 @@ const ResetPassword = (function () {
         }
     };
 
-    const init = function() {
+    const onLoad = function() {
+        if (Client.redirect_if_login()) return;
+
         generateBirthDate();
 
         $('#have_real_account').click(function () {
@@ -58,16 +60,9 @@ const ResetPassword = (function () {
         FormManager.handleSubmit(form_id, { reset_password: 1 }, responseHandler);
     };
 
-    const onLoad = function() {
-        if (!Client.redirect_if_login()) {
-            init();
-        }
-    };
-
     return {
         onLoad: onLoad,
     };
 })();
 
 module.exports = ResetPassword;
-

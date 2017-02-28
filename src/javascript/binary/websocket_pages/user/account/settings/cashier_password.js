@@ -1,7 +1,7 @@
+const BinaryPjax  = require('../../../../base/binary_pjax');
+const localize    = require('../../../../base/localize').localize;
 const Content     = require('../../../../common_functions/content').Content;
 const FormManager = require('../../../../common_functions/form_manager');
-const Client      = require('../../../../base/client').Client;
-const localize    = require('../../../../base/localize').localize;
 
 const CashierPassword = (function() {
     'use strict';
@@ -11,23 +11,11 @@ const CashierPassword = (function() {
     const form_id = '#frm_cashier_password';
     const hidden_class = 'invisible';
 
-    const checkIsVirtual = function() {
-        if (!Client.get('is_virtual')) {
-            return false;
-        }
-        $form.addClass(hidden_class);
-        $('#form_message')
-            .addClass('notice-msg center-text')
-            .text(Content.localize().featureNotRelevantToVirtual);
-        return true;
-    };
-
     const onLoad = function() {
         Content.populate();
         $form = $(form_id);
 
         BinarySocket.wait('authorize').then(() => {
-            if (checkIsVirtual()) return;
             BinarySocket.send({ cashier_password: 1 }).then(response => init(response));
         });
     };
@@ -85,7 +73,7 @@ const CashierPassword = (function() {
     const redirect = function() {
         if (redirect_url) {
             sessionStorage.removeItem('cashier_lock_redirect');
-            window.location.href = redirect_url;
+            BinaryPjax.load(redirect_url);
         }
     };
 

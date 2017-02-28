@@ -56,9 +56,7 @@ const LimitsInit = (() => {
         document.getElementById('withdrawal-title').setAttribute('style', 'display:none');
         document.getElementById('limits-title').setAttribute('style', 'display:none');
         const errorElement = document.getElementsByClassName('notice-msg')[0];
-        if ((error && error.code === 'FeatureNotAvailable' && Client.get('is_virtual')) || Client.get('is_virtual')) {
-            elementInnerHtml(errorElement, Content.localize().featureNotRelevantToVirtual);
-        } else if (error && error.message) {
+        if (error && error.message) {
             elementInnerHtml(errorElement, error.message);
         } else {
             elementInnerHtml(errorElement, localize('An error occured') + '.');

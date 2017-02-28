@@ -1,5 +1,3 @@
-// import OneSignal from '../../lib/onesignal';
-
 const Login             = require('./login').Login;
 const template          = require('./utility').template;
 const LocalStore        = require('./storage').LocalStore;
@@ -22,7 +20,6 @@ const RealityCheck      = require('../websocket_pages/user/reality_check/reality
 const RealityCheckData  = require('../websocket_pages/user/reality_check/reality_check.data').RealityCheckData;
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
-require('../../lib/mmenu/jquery.mmenu.min.all.js');
 
 const Page = function() {
     State.set('is_loaded_by_pjax', false);
@@ -65,7 +62,7 @@ Page.prototype = {
         this.endpoint_notification();
         BinarySocket.init();
         this.show_notification_outdated_browser();
-        // OneSignal.checkSubscription();
+        Menu.make_mobile_menu();
     },
     on_unload: function() {
         Menu.on_unload();
@@ -170,6 +167,8 @@ Page.prototype = {
         return div.append(ul.append(li1, li2)).append(p);
     },
     show_notification_outdated_browser: function() {
+        const src = '//browser-update.org/update.min.js';
+        if ($(`script[src*="${src}"]`).length) return;
         window.$buoop = {
             vs : { i: 11, f: -4, o: -4, s: 9, c: -4 },
             api: 4,
@@ -177,7 +176,7 @@ Page.prototype = {
             url: 'https://whatbrowser.org/',
         };
         $(document).ready(function() {
-            $('body').append($('<script/>', { src: '//browser-update.org/update.min.js' }));
+            $('body').append($('<script/>', { src: src }));
         });
     },
 };

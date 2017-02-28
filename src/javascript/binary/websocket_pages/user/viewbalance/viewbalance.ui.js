@@ -1,8 +1,8 @@
 const format_money          = require('../../../common_functions/currency_to_symbol').format_money;
-const PortfolioWS           = require('../account/portfolio/portfolio.init').PortfolioWS;
+const PortfolioWS           = require('../account/portfolio/portfolio.init');
 const updateContractBalance = require('../../trade/common').updateContractBalance;
 const Client                = require('../../../base/client').Client;
-const Cashier               = require('../../cashier/cashier').Cashier;
+const Cashier               = require('../../cashier/cashier');
 
 const ViewBalanceUI = (function() {
     const updateBalances = function(response) {

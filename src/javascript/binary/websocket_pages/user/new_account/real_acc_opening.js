@@ -9,17 +9,15 @@ const RealAccOpening = (function() {
     const onLoad = () => {
         if (AccountOpening.redirectCookie()) return;
 
-        BinarySocket.wait('authorize').then(() => {
-            if (Client.get('residence')) {
-                if (AccountOpening.redirectAccount()) return;
-                AccountOpening.populateForm(formID, AccountOpening.commonValidations);
-                $(formID).removeClass('invisible');
-                bindValidation();
-            } else {
-                AccountOpening.getResidence();
-                show_residence_form();
-            }
-        });
+        if (Client.get('residence')) {
+            if (AccountOpening.redirectAccount()) return;
+            AccountOpening.populateForm(formID, AccountOpening.commonValidations);
+            $(formID).removeClass('invisible');
+            bindValidation();
+        } else {
+            AccountOpening.getResidence();
+            show_residence_form();
+        }
     };
 
     const bindValidation = () => {
@@ -65,6 +63,4 @@ const RealAccOpening = (function() {
     };
 })();
 
-module.exports = {
-    RealAccOpening: RealAccOpening,
-};
+module.exports = RealAccOpening;

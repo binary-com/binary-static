@@ -1,23 +1,22 @@
-const Scroll = require('../common_functions/scroll').Scroll;
+const Scroll = require('../common_functions/scroll');
 const Client = require('../base/client').Client;
 
 const WhyUs = (function() {
-    const init = function() {
+    const onLoad = function() {
         Scroll.sidebar_scroll($('.why-us'));
-        hide_if_logged_in();
-    };
-
-    const hide_if_logged_in = function() {
         if (Client.is_logged_in()) {
             $('.client_logged_out').remove();
         }
     };
 
+    const onUnload = function() {
+        Scroll.offScroll();
+    };
+
     return {
-        init: init,
+        onLoad  : onLoad,
+        onUnload: onUnload,
     };
 })();
 
-module.exports = {
-    WhyUs: WhyUs,
-};
+module.exports = WhyUs;
