@@ -34,7 +34,7 @@
             </a>
           </li>
         </ul>
-        <div class="center-text gr-padding-10 by_client_type client_logged_out client_virtual">
+        <div class="center-text gr-padding-10 client_logged_out">
           <a class="button" href="[% request.url_for('/') %]">
             <span>[% l("Open a free account") %]</span>
           </a>
