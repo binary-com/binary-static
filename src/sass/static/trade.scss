@@ -80,6 +80,7 @@
         height: 28px;
         .tm-li {
             height: 28px;
+            vertical-align: top;
         }
     }
     .button button {
@@ -660,6 +661,7 @@
             width: auto;
             font-size: 85%;
             line-height: 28px;
+            white-space: nowrap;
         }
         .tm-ul-2 {
             top: 29px;
