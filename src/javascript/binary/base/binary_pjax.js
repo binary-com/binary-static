@@ -164,10 +164,12 @@ const BinaryPjax = (function() {
     };
 
     const cachePut = (url, content) => {
-        cache[url] = content;
+        cache[cleanUrl(url)] = content;
     };
 
-    const cacheGet = url => cache[url];
+    const cacheGet = url => cache[cleanUrl(url)];
+
+    const cleanUrl = url => url.replace(/(\?|#).*$/, '');
 
     const locationReplace = (url) => {
         window.history.replaceState(null, '', url);
