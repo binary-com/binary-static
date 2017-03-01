@@ -6,7 +6,6 @@ const Tick                = require('./tick').Tick;
 const Client              = require('../../base/client').Client;
 const getLanguage         = require('../../base/language').getLanguage;
 const localize            = require('../../base/localize').localize;
-const State               = require('../../base/storage').State;
 const url_for             = require('../../base/url').url_for;
 const objectNotEmpty      = require('../../base/utility').objectNotEmpty;
 const Content             = require('../../common_functions/content').Content;
@@ -929,7 +928,7 @@ function timeIsValid($element) {
 // disable purchase button if client is unwelcome
 const checkPurchaseButton = () => {
     BinarySocket.wait('get_account_status').then((response) => {
-        if ((State.get('is_trading') || State.get('is_beta_trading')) && /unwelcome/.test(response.get_account_status.status)) {
+        if (/unwelcome/.test(response.get_account_status.status)) {
             const purchase_button = $('.purchase_button');
             if (purchase_button.length > 0 && !purchase_button.parent().hasClass('button-disabled')) {
                 $.each(purchase_button, function() {
