@@ -6,6 +6,9 @@ const Home = (function() {
         if (!Client.redirect_if_login()) {
             check_login_hide_signup();
             VerifyEmail();
+            $('#start_now').click(() => {
+                $.scrollTo($('#verify-email-form'), 500, { offset: -10 });
+            });
         }
     };
 

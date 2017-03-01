@@ -1,0 +1,151 @@
+<div id="banner">
+    <div class="container gr-padding-30">
+        <h1 class="center-text gr-padding-10">[% l("First-Class FX Binary Options Trading Platform") %]</h1>
+        <h3 class="center-text gr-padding-10">[% l("Offering the widest available range of currencies, option types and trading periods on a fast intuitve, proprietary trading.") %]</h3>
+        <form id="verify-email-form">
+            <div class="gr-row gr-row-align-center">
+                <div class="signup-box gr-7 gr-10-p gr-12-m gr-no-gutter">
+                    <div class="gr-row gr-padding-30">
+                        <div class="gr-8 gr-10-m gr-centered">
+                            <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]" />
+                        </div>
+                        <div class="gr-4 gr-8-m gr-centered">
+                            <button id="btn-verify-email" type="submit">[% l('Get started') %]</button>
+                        </div>
+                        <span class="gr-12 gr-padding-10 error-msg hint color-white center-text" id="signup_error" style="display:none"></span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container gr-padding-10">
+    <div class="gr-row">
+        <div class="gr-6 gr-12-p gr-12-m">
+            <div class="gr-7 gr-8-m gr-centered gr-padding-10">
+                <div>
+                    <a href="http://www.ffaj.or.jp/en/memberlist/list.html#k_sakimono_senmon" target="_blank">
+                        <img class="responsive" src="[% request.url_for('images/pages/regulation/binarykk-logo.gif') %]">
+                    </a>
+                </div>
+                <div class="gr-padding-30">
+                    <h3>[% l('Licensed in Japan') %]</h3>
+                    <p>[% l('Binary KK is a Type 1 Financial instruments Business License and is regulated by the FFAJ') %]</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="gr-6 gr-12-p gr-12-m">
+            <div class="gr-7 gr-8-m gr-centered gr-padding-10">
+                <div>
+                    <a href="http://www.ffaj.or.jp/en/memberlist/list.html#k_sakimono_senmon" target="_blank">
+                        <img class="responsive" src="[% request.url_for('images/pages/regulation/binarykk-logo.gif') %]">
+                    </a>
+                </div>
+                <div class="gr-padding-30">
+                    <h3>[% l('Protected Funds') %]</h3>
+                    <p>[% l('All customer funds are segregated and held with JFS Trust Bank') %]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="separator-line border-bottom"></div>
+</div>
+
+<div class="container gr-padding-10">
+    <h2 class="center-text gr-padding-10">[% l('A leading innovator of Binary Options trading for over 15 Years') %]</h2>
+    <div class="gr-row">
+        <div class="gr-5 gr-centered gr-12-p gr-12-m">
+            <div class="xquote fill-bg-color">
+                <p>[% l('Trade the world’s major currencies with a wide range options and trading periods. More than any other Japan broker!') %]</p>
+            </div>
+        </div>
+        <div class="gr-5 gr-centered gr-6-p gr-8-m gr-padding-30">
+            <img class="gr-11 gr-12-p gr-12-m gr-centered" src="[% request.url_for('images/pages/home-jp/currencies.svg') %]">
+        </div>
+    </div>
+
+    <div class="gr-padding-30 center-text">
+        <a class="button" href="[% request.url_for('/multi_barriers_trading') %]">
+            <span>[% l("Try our trading page") %]</span>
+        </a>
+    </div>
+</div>
+
+<div class="gr-padding-30 fill-bg-color">
+    <div class="container">
+        <h2 class="center-text gr-padding-10">[% l('How to begin') %]</h2>
+
+        <div class="gr-11 gr-centered">
+            <div class="gr-row">
+                <div class="gr-6 gr-12-m gr-padding-30">
+                    <div class="gr-row align-center">
+                        <img class="small-image" src="[% request.url_for('images/pages/home-jp/1.svg') %]">
+                        <img class="medium-image" src="[% request.url_for('images/pages/home-jp/demo.svg') %]">
+                        <p class="gr-6 gr-no-gutter">[% l('Open a Demo Account') %]</p>
+                    </div>
+                </div>
+
+                <div class="gr-6 gr-12-m gr-padding-30">
+                    <div class="gr-row align-center">
+                        <img class="small-image" src="[% request.url_for('images/pages/home-jp/2.svg') %]">
+                        <img class="medium-image" src="[% request.url_for('images/pages/home-jp/real_money.svg') %]">
+                        <p class="gr-6 gr-no-gutter">[% l('Apply for a Real Money Account') %]</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gr-row">
+                <div class="gr-6 gr-12-m gr-padding-30">
+                    <div class="gr-row align-center">
+                        <img class="small-image" src="[% request.url_for('images/pages/home-jp/3.svg') %]">
+                        <img class="medium-image" src="[% request.url_for('images/pages/home-jp/test.svg') %]">
+                        <p class="gr-6 gr-no-gutter">[% l('Pass our Knowledge Test') %]</p>
+                    </div>
+                </div>
+
+                <div class="gr-6 gr-12-m gr-padding-30">
+                    <div class="gr-row align-center">
+                        <img class="small-image" src="[% request.url_for('images/pages/home-jp/4.svg') %]">
+                        <img class="medium-image" src="[% request.url_for('images/pages/home-jp/email.svg') %]">
+                        <p class="gr-6 gr-no-gutter">[% l('Email us your Identity Documents') %]</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gr-row">
+                <div class="gr-6 gr-12-m gr-padding-30">
+                    <div class="gr-row align-center">
+                        <img class="small-image" src="[% request.url_for('images/pages/home-jp/5.svg') %]">
+                        <img class="medium-image" src="[% request.url_for('images/pages/home-jp/secure.svg') %]">
+                        <p class="gr-6 gr-no-gutter">[% l('Receive your activation code by secure') %]</p>
+                    </div>
+                </div>
+
+                <div class="gr-6 gr-12-m gr-padding-30">
+                    <div class="gr-row align-center">
+                        <img class="small-image" src="[% request.url_for('images/pages/home-jp/6.svg') %]">
+                        <img class="medium-image" src="[% request.url_for('images/pages/home-jp/fund.svg') %]">
+                        <p class="gr-6 gr-no-gutter">[% l('Deposit funds and begin trading') %]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="center-text">
+            <button class="button" id="start_now">[% l('Start now') %]</button>
+        </div>
+    </div>
+</div>
+
+<div class="container gr-padding-30 center-text">
+    <h2 class="gr-padding-10">[% l('FX Bloggers, Mentors & Gurus') %]</h2>
+    <p>[% l('Join our affiliate program to earn income by leveraging your hard-earned network of contact') %]</p>
+    <div class="gr-padding-30">
+        <a class="button" href="[% request.url_for('/affiliate/signup-jp') %]">
+            <span>[% l("Join now") %]</span>
+        </a>
+    </div>
+</div>
