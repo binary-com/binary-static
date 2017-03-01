@@ -197,7 +197,7 @@ const MBContract = (function() {
         };
         Object.keys(all_durations).forEach(function(key) {
             if (all_durations[key]) {
-                remainingTimeString.push(all_durations[key] + localize((key + (+all_durations[key] === 1 ? '' : 's'))));
+                remainingTimeString.push(all_durations[key] + (japanese_client() ? '' : ' ') + localize((key + (+all_durations[key] === 1 ? '' : 's'))));
             }
         });
         elementInnerHtml(remainingTimeElement, remainingTimeString.join(' '));
