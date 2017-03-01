@@ -2,33 +2,36 @@ const Client         = require('../binary/base/client').Client;
 const url_for_static = require('../binary/base/url').url_for_static;
 const Pushwoosh      = require('web-push-notifications').Pushwoosh;
 
-const BinaryPushWoosh = (() => {
+const BinaryPushwoosh = (() => {
     const pw = new Pushwoosh();
 
+    let initialised = false;
+
     const init = () => {
-        pw.push(['init', {
-            logLevel                : 'info', // or debug
-            applicationCode         : 'D04E6-FA474',
-            safariWebsitePushID     : 'web.com.binary',
-            defaultNotificationTitle: 'Binary.com',
-            defaultNotificationImage: 'https://style.binary.com/images/logo/logomark.png',
-            serviceWorkerUrl        : url_for_static('/') + 'pushwoosh-service-worker-light.js',
-        }]);
+        if (!initialised) {
+            pw.push(['init', {
+                logLevel                : 'none', // or debug
+                applicationCode         : 'D04E6-FA474',
+                safariWebsitePushID     : 'web.com.binary',
+                defaultNotificationTitle: 'Binary.com',
+                defaultNotificationImage: 'https://style.binary.com/images/logo/logomark.png',
+                serviceWorkerUrl        : url_for_static('/') + 'pushwoosh-service-worker-light.js',
+            }]);
+            initialised = true;
+        }
     };
 
     const sendTags = () => {
-        pw.push((api) => {
-            api.getTags().then((result) => {
-                if (!result.result['Login ID']) { // send login id
-                    return api.setTags({ 'Login ID': Client.get('loginid') }).then((r) => {
-                        console.log('setTags result', r);
-                    });
-                }
-                return null;
-            }).catch((e) => {
-                console.log('error', e);
+        if (initialised) {
+            pw.push((api) => {
+                api.getTags().then((result) => {
+                    if (!result.result['Login ID']) { // send login id
+                        return api.setTags({ 'Login ID': Client.get('loginid') });
+                    }
+                    return null;
+                });
             });
-        });
+        }
     };
 
     return {
@@ -37,4 +40,4 @@ const BinaryPushWoosh = (() => {
     };
 })();
 
-module.exports = BinaryPushWoosh;
+module.exports = BinaryPushwoosh;
