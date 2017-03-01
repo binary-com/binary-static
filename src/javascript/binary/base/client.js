@@ -334,7 +334,7 @@ const Client = (function () {
 
     const is_financial = () => (client_object.loginid_array.find(obj => (obj.id === get('loginid'))) || {}).financial;
 
-    const should_complete_tax = () => is_financial() && !get('has_tax_information');
+    const should_complete_tax = () => is_financial() && !/crs_tin_information/.test((State.get(['response', 'get_account_status', 'get_account_status']) || {}).status);
 
     return {
         init                  : init,
