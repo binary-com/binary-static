@@ -5,7 +5,6 @@ const objectNotEmpty            = require('../base/utility').objectNotEmpty;
 const getPropertyValue          = require('../base/utility').getPropertyValue;
 const getLoginToken             = require('../common_functions/common_functions').getLoginToken;
 const SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
-const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
 const create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
 const ViewPopupWS               = require('./user/view_popup/view_popupws');
 const ViewBalanceUI             = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
@@ -341,12 +340,6 @@ const BinarySocketClass = function() {
                         create_language_drop_down(response.website_status.supported_languages);
                         LocalStore.set('website.tnc_version', response.website_status.terms_conditions_version);
                         if (!localStorage.getItem('risk_classification')) Client.check_tnc();
-                        if (response.website_status.clients_country) {
-                            localStorage.setItem('clients_country', response.website_status.clients_country);
-                            if (!Login.is_login_pages()) {
-                                checkClientsCountry();
-                            }
-                        }
                     }
                 } else if (type === 'reality_check') {
                     RealityCheck.realityCheckWSHandler(response);
