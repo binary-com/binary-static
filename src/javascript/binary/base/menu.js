@@ -1,5 +1,6 @@
 const Url    = require('./url').Url;
 const Client = require('./client').Client;
+require('../../lib/mmenu/jquery.mmenu.min.all.js');
 
 const Menu = (function() {
     let page_url;
@@ -14,13 +15,11 @@ const Menu = (function() {
         hide_main_menu();
 
         const active = active_menu_top();
-        const trading = new RegExp('\/(jp_|multi_barriers_|)trading\.html');
-        const trading_is_active = trading.test(window.location.pathname);
         if (active) {
             active.addClass('active');
         }
-        const is_trading_submenu = /\/cashier|\/resources/.test(window.location.pathname) || trading_is_active;
-        if (Client.is_logged_in() || trading_is_active || is_trading_submenu) {
+
+        if (Client.is_logged_in() || /\/(cashier|resources|trading|trading_beta|multi_barriers_trading)/i.test(window.location.pathname)) {
             show_main_menu();
         }
     };
@@ -114,9 +113,26 @@ const Menu = (function() {
         return { item: item, subitem: subitem };
     };
 
+    const make_mobile_menu = function () {
+        if ($('#mobile-menu-container').is(':visible')) {
+            $('#mobile-menu').mmenu({
+                position       : 'right',
+                zposition      : 'front',
+                slidingSubmenus: false,
+                searchfield    : true,
+                onClick        : {
+                    close: true,
+                },
+            }, {
+                selectedClass: 'active',
+            });
+        }
+    };
+
     return {
-        init     : init,
-        on_unload: on_unload,
+        init            : init,
+        on_unload       : on_unload,
+        make_mobile_menu: make_mobile_menu,
     };
 })();
 

@@ -21,11 +21,7 @@ const TopUpVirtualWS = (function() {
 
         $views.addClass('hidden');
 
-        if (!Client.get('is_virtual')) {
-            showMessage(localize('Sorry, this feature is available to virtual accounts only.'), false);
-        } else {
-            BinarySocket.send({ topup_virtual: '1' });
-        }
+        BinarySocket.send({ topup_virtual: '1' });
     };
 
     const responseHandler = function(response) {
@@ -75,12 +71,10 @@ const TopUpVirtualWS = (function() {
     };
 
     return {
+        onLoad         : onLoad,
         init           : init,
         responseHandler: responseHandler,
-        onLoad         : onLoad,
     };
 })();
 
-module.exports = {
-    TopUpVirtualWS: TopUpVirtualWS,
-};
+module.exports = TopUpVirtualWS;

@@ -1,11 +1,13 @@
+const Client          = require('../base/client').Client;
+const BinaryPjax      = require('../base/binary_pjax');
 const japanese_client = require('../common_functions/country_base').japanese_client;
-const url_for         = require('../base/url').url_for;
 
 const GetStartedJP = (function() {
-    const init = function() {
+    const onLoad = function() {
         if (!japanese_client()) {
-            window.location.href = url_for('get-started');
+            BinaryPjax.load('get-started');
         }
+        Client.activate_by_client_type();
         const showSelectedTab = function() {
             const updatedTab = window.location.hash;
             $('.contents div').hide();
@@ -37,16 +39,14 @@ const GetStartedJP = (function() {
         });
     };
 
-    const unload = function() {
+    const onUnload = function() {
         $(window).off('hashchange');
     };
 
     return {
-        init  : init,
-        unload: unload,
+        onLoad  : onLoad,
+        onUnload: onUnload,
     };
 })();
 
-module.exports = {
-    GetStartedJP: GetStartedJP,
-};
+module.exports = GetStartedJP;

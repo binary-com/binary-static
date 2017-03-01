@@ -1,10 +1,10 @@
 const toJapanTimeIfNeeded = require('../../binary/base/clock').Clock.toJapanTimeIfNeeded;
 const KnowledgeTestUI     = require('./knowledge_test.ui').KnowledgeTestUI;
 const KnowledgeTestData   = require('./knowledge_test.data').KnowledgeTestData;
-const localize = require('../../binary/base/localize').localize;
-const url_for  = require('../../binary/base/url').url_for;
-const Client   = require('../../binary/base/client').Client;
-const Header   = require('../../binary/base/header').Header;
+const BinaryPjax          = require('../../binary/base/binary_pjax');
+const Client              = require('../../binary/base/client').Client;
+const Header              = require('../../binary/base/header').Header;
+const localize            = require('../../binary/base/localize').localize;
 
 const KnowledgeTest = (function() {
     'use strict';
@@ -84,8 +84,7 @@ const KnowledgeTest = (function() {
         if (score >= 14) {
             msg = passMsg;
             Client.set('jp_status', 'jp_activation_pending');
-            // send some dummy string just to go through the function
-            Header.topbar_message_visibility('show_jp_message');
+            Header.upgrade_message_visibility();
         } else {
             msg = failMsg;
         }
@@ -128,7 +127,7 @@ const KnowledgeTest = (function() {
         showQuestionsTable();
     };
 
-    const init = function() {
+    const onLoad = function() {
         BinarySocket.init({
             onmessage: function(msg) {
                 const response = JSON.parse(msg.data);
@@ -139,7 +138,7 @@ const KnowledgeTest = (function() {
                     const jpStatus = response.get_settings.jp_account_status;
 
                     if (!jpStatus) {
-                        window.location.href = url_for('/');
+                        BinaryPjax.load('/');
                         return;
                     }
 
@@ -160,7 +159,7 @@ const KnowledgeTest = (function() {
                             break;
                         default: {
                             console.warn('Unexpected jp status');
-                            window.location.href = url_for('/');
+                            BinaryPjax.load('/');
                         }
                     }
                 } else if (type === 'jp_knowledge_test') {
@@ -183,10 +182,8 @@ const KnowledgeTest = (function() {
     };
 
     return {
-        init: init,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    KnowledgeTest: KnowledgeTest,
-};
+module.exports = KnowledgeTest;

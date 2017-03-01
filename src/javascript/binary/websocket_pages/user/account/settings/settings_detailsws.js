@@ -28,7 +28,6 @@ const SettingsDetailsWS = (function() {
         isJP = residence === 'jp';
         if (isJP && !isVirtual) {
             $('#fieldset_email_consent').removeClass('invisible');
-            detect_hedging($('#trading_purpose'), $('.hedge'));
         }
         showHideTaxMessage();
     };
@@ -238,6 +237,11 @@ const SettingsDetailsWS = (function() {
         }
         $field.val(get_settings_data.address_state);
         FormManager.init(formID, getValidations(get_settings_data));
+        if (isJP && !isVirtual) {
+            // detect_hedging needs to be called after FormManager.init
+            // or all previously bound event listeners on form elements will be removed
+            detect_hedging($('#trading_purpose'), $('.hedge'));
+        }
     };
 
     const onLoad = function() {
@@ -247,7 +251,7 @@ const SettingsDetailsWS = (function() {
         editable_fields = {};
         get_settings_data = {};
 
-        BinarySocket.wait('authorize', 'get_account_status', 'get_settings').then(() => {
+        BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();
             get_settings_data = State.get(['response', 'get_settings', 'get_settings']);
             getDetailsResponse(get_settings_data);
@@ -276,6 +280,4 @@ const SettingsDetailsWS = (function() {
     };
 })();
 
-module.exports = {
-    SettingsDetailsWS: SettingsDetailsWS,
-};
+module.exports = SettingsDetailsWS;
