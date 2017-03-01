@@ -10,6 +10,7 @@ const DepositWithdraw = (function() {
     let cashier_type;
     const container = '#deposit_withdraw';
     const hidden_class = 'invisible';
+    let verification_code;
 
     const init = function(cashier_password) {
         if (cashier_password) {
@@ -17,20 +18,21 @@ const DepositWithdraw = (function() {
             sessionStorage.setItem('cashier_lock_redirect', window.location.href);
             return;
         }
-        if (cashier_type === 'withdraw') {
-            initWithdrawForm();
-        } else if (cashier_type === 'deposit' && Client.get('currency')) {
-            getCashierURL();
-        } else {
+        if (!Client.get('currency')) {
             showCurrency();
+        } else {
+            initDepositWithdraw();
         }
     };
 
-    const commonResponseHandler = (response) => {
-        if ('error' in response) {
+    const initDepositWithdraw = (response) => {
+        if (response && response.error) {
             showError('custom_error', response.error.message);
-        } else {
+        } else if (cashier_type === 'deposit') {
             getCashierURL();
+        } else if (cashier_type === 'withdraw') {
+            hideAll('#messages');
+            initWithdrawForm();
         }
     };
 
@@ -60,7 +62,7 @@ const DepositWithdraw = (function() {
         const currency_form_id = '#frm_currency';
         $(currency_form_id).removeClass(hidden_class);
         FormManager.init(currency_form_id, [{ selector: '#select_currency', request_field: 'set_account_currency' }]);
-        FormManager.handleSubmit(currency_form_id, {}, commonResponseHandler);
+        FormManager.handleSubmit(currency_form_id, {}, initDepositWithdraw);
     };
 
     const getCashierType = function() {
@@ -75,15 +77,17 @@ const DepositWithdraw = (function() {
         }
     };
 
-    const populateReq = function(verification_token) {
+    const populateReq = function(send_verification) {
         const req = { cashier: cashier_type };
-        if (verification_token) req.verification_code = verification_token;
+        const verification_code_val = $('#verification_code').val();
+        if (verification_code_val) verification_code = verification_code_val;
+        if (send_verification && verification_code) req.verification_code = verification_code;
         if (/epg/.test(window.location.pathname)) req.provider = 'epg';
         return req;
     };
 
     const getCashierURL = function() {
-        BinarySocket.send(populateReq()).then(response => handleCashierResponse(response));
+        BinarySocket.send(populateReq(1)).then(response => handleCashierResponse(response));
     };
 
     const hideAll = function(option) {
@@ -125,11 +129,19 @@ const DepositWithdraw = (function() {
         showMessage(msgID);
     };
 
+    const ukgcResponseHandler = (response) => {
+        if ('error' in response) {
+            showError('custom_error', response.error.message);
+        } else {
+            getCashierURL();
+        }
+    };
+
     const initUKGC = () => {
         const ukgc_form_id = '#frm_ukgc';
         $(ukgc_form_id).removeClass(hidden_class);
         FormManager.init(ukgc_form_id, [{ request_field: 'ukgc_funds_protection', value: 1 }]);
-        FormManager.handleSubmit(ukgc_form_id, { tnc_approval: 1 }, commonResponseHandler);
+        FormManager.handleSubmit(ukgc_form_id, { tnc_approval: 1 }, ukgcResponseHandler);
     };
 
     const handleCashierResponse = (response) => {
