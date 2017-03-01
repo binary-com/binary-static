@@ -1,5 +1,6 @@
 const Client         = require('../binary/base/client').Client;
 const url_for_static = require('../binary/base/url').url_for_static;
+const getLanguage    = require('../binary/base/language').getLanguage;
 const Pushwoosh      = require('web-push-notifications').Pushwoosh;
 
 const BinaryPushwoosh = (() => {
@@ -25,8 +26,11 @@ const BinaryPushwoosh = (() => {
         if (initialised) {
             pw.push((api) => {
                 api.getTags().then((result) => {
-                    if (!result.result['Login ID']) { // send login id
-                        return api.setTags({ 'Login ID': Client.get('loginid') });
+                    if (!result.result['Login ID'] || !result.result['Site Language']) { // send login id
+                        return api.setTags({
+                            'Login ID'     : Client.get('loginid'),
+                            'Site Language': getLanguage(),
+                        });
                     }
                     return null;
                 });
