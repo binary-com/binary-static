@@ -16,7 +16,7 @@ const WhyUs              = require('../static_pages/why_us');
 
 const AccountTransferWS          = require('../websocket_pages/cashier/account_transferws');
 const Cashier                    = require('../websocket_pages/cashier/cashier');
-const ForwardWS                  = require('../websocket_pages/cashier/deposit_withdraw_ws');
+const DepositWithdraw            = require('../websocket_pages/cashier/deposit_withdraw');
 const PaymentAgentListWS         = require('../websocket_pages/cashier/payment_agent_listws');
 const PaymentAgentWithdrawWS     = require('../websocket_pages/cashier/payment_agent_withdrawws');
 const MBTradePage                = require('../websocket_pages/mb_trade/mb_tradepage');
@@ -67,8 +67,8 @@ const pages_config = {
     contact                  : { module: Contact },
     detailsws                : { module: SettingsDetailsWS,          is_authenticated: true },
     endpoint                 : { module: Endpoint },
-    epg_forwardws            : { module: ForwardWS,                  is_authenticated: true, only_real: true },
-    forwardws                : { module: ForwardWS,                  is_authenticated: true, only_real: true },
+    epg_forwardws            : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
+    forwardws                : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
     home                     : { module: Home,                       not_authenticated: true },
     iphistoryws              : { module: IPHistory,                  is_authenticated: true },
     japanws                  : { module: JapanAccOpening,            is_authenticated: true, only_virtual: true },

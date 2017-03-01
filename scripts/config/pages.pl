@@ -64,8 +64,8 @@ sub all_pages {
         ['account/account_transferws',   'cashier/account_transferws',                'default', 'Account Transfer'],
 
         ['cashier/deposit-jp',           'japan/cashier/deposit',                     'default', 'Deposit',         'NOT-ja,en'],
-        ['cashier/epg_forwardws',        'cashier/deposit_withdraw_ws',               'default', 'Cashier'],
-        ['cashier/forwardws',            'cashier/deposit_withdraw_ws',               'default', 'Cashier',         'ja'],
+        ['cashier/epg_forwardws',        'cashier/deposit_withdraw',                  'default', 'Cashier'],
+        ['cashier/forwardws',            'cashier/deposit_withdraw',                  'default', 'Cashier',         'ja'],
         ['cashier/payment_agent_listws', 'cashier/payment_agent_listws',              'default', 'Payment Agent Deposit'],
         ['cashier/submit-withdraw-jp',   'japan/cashier/submit',                      'default', 'Acknowledgement', 'NOT-ja,en'],
         ['cashier/top_up_virtualws',     'user/top_up_virtualws',                     'default', 'Give Me More Money!'],

@@ -148,7 +148,6 @@ const Client = (function () {
         set('landing_company_fullname', authorize.landing_company_fullname);
         set('currency', authorize.currency);
         check_values();
-        activate_by_client_type();
     };
 
     const should_accept_tnc = () => {
@@ -246,34 +245,21 @@ const Client = (function () {
         return has_gaming && has_financial;
     };
 
-    const activate_by_client_type = function() {
-        $('.by_client_type').addClass('invisible');
+    const activate_by_client_type = function(section = 'body') {
         if (is_logged_in()) {
-            BinarySocket.wait('get_settings').then(() => {
+            BinarySocket.wait('authorize', 'website_status').then(() => {
                 $('#client-logged-in').addClass('gr-centered');
                 $('.client_logged_in').removeClass('invisible');
-                if (!get('is_virtual')) {
-                    // control-class is a fake class, only used to counteract ja-hide class
-                    $('.by_client_type.client_real').not((japanese_client() ? '.ja-hide' : '.control-class')).removeClass('invisible').show();
-
-                    $('#topbar').addClass('primary-color-dark').removeClass('secondary-bg-color');
-
-                    if (!/^CR/.test(get('loginid'))) {
-                        $('#payment-agent-section').addClass('invisible').hide();
-                    }
-
-                    if (has_gaming_financial_enabled()) {
-                        $('#account-transfer-section').removeClass('invisible');
-                    }
-                } else {
-                    $('.by_client_type.client_virtual').removeClass('invisible').show();
-
+                if (get('is_virtual')) {
+                    $(section).find('.client_virtual').removeClass('invisible');
                     $('#topbar').addClass('secondary-bg-color').removeClass('primary-color-dark');
+                } else {
+                    $(section).find('.client_real').not((japanese_client() ? '.ja-hide' : '')).removeClass('invisible');
+                    $('#topbar').addClass('primary-color-dark').removeClass('secondary-bg-color');
                 }
             });
         } else {
-            $('.by_client_type.client_logged_out').removeClass('invisible').show();
-
+            $(section).find('.client_logged_out').removeClass('invisible');
             $('#topbar').removeClass('secondary-bg-color').addClass('primary-color-dark');
         }
     };
@@ -369,6 +355,7 @@ const Client = (function () {
         can_upgrade_gaming_to_financial : can_upgrade_gaming_to_financial,
         can_upgrade_virtual_to_financial: can_upgrade_virtual_to_financial,
         can_upgrade_virtual_to_japan    : can_upgrade_virtual_to_japan,
+        has_gaming_financial_enabled    : has_gaming_financial_enabled,
         activate_by_client_type         : activate_by_client_type,
 
         send_logout_request: send_logout_request,

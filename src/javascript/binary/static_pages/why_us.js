@@ -4,9 +4,7 @@ const Client = require('../base/client').Client;
 const WhyUs = (function() {
     const onLoad = function() {
         Scroll.sidebar_scroll($('.why-us'));
-        if (Client.is_logged_in()) {
-            $('.client_logged_out').remove();
-        }
+        Client.activate_by_client_type();
     };
 
     const onUnload = function() {
