@@ -26,7 +26,7 @@ const BinaryPushwoosh = (() => {
         if (initialised) {
             pw.push((api) => {
                 api.getTags().then((result) => {
-                    if (!result.result['Login ID'] || !result.result['Site Language']) { // send login id
+                    if (!result.result['Login ID'] || !result.result['Site Language']) { // send login id and site language
                         return api.setTags({
                             'Login ID'     : Client.get('loginid'),
                             'Site Language': getLanguage(),

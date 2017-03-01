@@ -28,6 +28,7 @@ const Page = function() {
     this.url = new Url();
     Menu.init(this.url);
     PushNotification.init();
+    PushNotification.sendTags();
 };
 
 Page.prototype = {
@@ -65,7 +66,6 @@ Page.prototype = {
         BinarySocket.init();
         this.show_notification_outdated_browser();
         Menu.make_mobile_menu();
-        PushNotification.sendTags();
     },
     on_unload: function() {
         Menu.on_unload();
