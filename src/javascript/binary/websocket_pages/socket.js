@@ -6,8 +6,6 @@ const getPropertyValue          = require('../base/utility').getPropertyValue;
 const getLoginToken             = require('../common_functions/common_functions').getLoginToken;
 const SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
 const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
-const Cashier                   = require('./cashier/cashier');
-const CashierJP                 = require('../../binary_japan/cashier');
 const create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
 const ViewPopupWS               = require('./user/view_popup/view_popupws');
 const ViewBalanceUI             = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
@@ -252,7 +250,7 @@ const BinarySocketClass = function() {
                 const type = response.msg_type;
 
                 // store in State
-                if (!response.echo_req.subscribe) {
+                if (!response.echo_req.subscribe || type === 'balance') {
                     State.set(['response', type], $.extend({}, response));
                 }
                 // resolve the send promise
@@ -338,8 +336,6 @@ const BinarySocketClass = function() {
                         $('#topMenuPaymentAgent').removeClass('invisible');
                     }
                     Client.set('first_name', response.get_settings.first_name);
-                    CashierJP.set_name_id();
-                    CashierJP.set_email_id();
                 } else if (type === 'website_status') {
                     if (!response.error) {
                         create_language_drop_down(response.website_status.supported_languages);
@@ -364,21 +360,12 @@ const BinarySocketClass = function() {
                     }
                     const status = response.get_account_status.status;
                     sessionStorage.setItem('client_status', status);
-                    if (/has_password/.test(status)) {
-                        Client.set('has_password', 1);
-                    }
                     if (/crs_tin_information/.test(status)) {
                         Client.set('has_tax_information', 1);
                     } else if (Client.should_redirect_tax()) {
                         return;
                     }
                     page.show_authenticate_message();
-
-                    if (dispatch_to === 'ForwardWS') {
-                        BinarySocket.send({ cashier_password: '1' });
-                    } else if (dispatch_to === 'Cashier') {
-                        Cashier.check_locked();
-                    }
                 } else if (type === 'get_financial_assessment' && !response.error) {
                     if (!objectNotEmpty(response.get_financial_assessment)) {
                         if (qualify_for_risk_classification() && State.get(['response', 'get_account_status', 'get_account_status', 'risk_classification']) === 'high') {

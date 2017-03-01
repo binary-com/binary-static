@@ -16,7 +16,7 @@ const WhyUs              = require('../static_pages/why_us');
 
 const AccountTransferWS          = require('../websocket_pages/cashier/account_transferws');
 const Cashier                    = require('../websocket_pages/cashier/cashier');
-const ForwardWS                  = require('../websocket_pages/cashier/deposit_withdraw_ws');
+const DepositWithdraw            = require('../websocket_pages/cashier/deposit_withdraw');
 const PaymentAgentListWS         = require('../websocket_pages/cashier/payment_agent_listws');
 const PaymentAgentWithdrawWS     = require('../websocket_pages/cashier/payment_agent_withdrawws');
 const MBTradePage                = require('../websocket_pages/mb_trade/mb_tradepage');
@@ -25,28 +25,28 @@ const MarketTimesUI              = require('../websocket_pages/resources/market_
 const TradePage_Beta             = require('../websocket_pages/trade/beta/tradepage');
 const TradePage                  = require('../websocket_pages/trade/tradepage');
 const Authenticate               = require('../websocket_pages/user/account/authenticate');
-const PasswordWS                 = require('../websocket_pages/user/account/change_password');
+const ChangePassword             = require('../websocket_pages/user/account/change_password');
 const PaymentAgentTransferSocket = require('../websocket_pages/user/account/payment_agent_transfer');
 const PortfolioWS                = require('../websocket_pages/user/account/portfolio/portfolio.init');
 const ProfitTableWS              = require('../websocket_pages/user/account/profit_table/profit_table.init');
 const APITokenWS                 = require('../websocket_pages/user/account/settings/api_token');
 const AuthorisedApps             = require('../websocket_pages/user/account/settings/authorised_apps');
+const CashierPassword            = require('../websocket_pages/user/account/settings/cashier_password');
 const FinancialAssessment        = require('../websocket_pages/user/account/settings/financial_assessment');
 const IPHistory                  = require('../websocket_pages/user/account/settings/iphistory');
 const Limits                     = require('../websocket_pages/user/account/settings/limits');
-const SettingsWS                 = require('../websocket_pages/user/account/settings');
+const Settings                   = require('../websocket_pages/user/account/settings');
 const SelfExclusionWS            = require('../websocket_pages/user/account/settings/self_exclusion');
 const SettingsDetailsWS          = require('../websocket_pages/user/account/settings/settings_detailsws');
-const SecurityWS                 = require('../websocket_pages/user/account/settings/settings_securityws');
 const StatementWS                = require('../websocket_pages/user/account/statement/statement.init');
 const TopUpVirtualWS             = require('../websocket_pages/user/account/top_up_virtualws');
-const LostPasswordWS             = require('../websocket_pages/user/lost_password');
+const LostPassword               = require('../websocket_pages/user/lost_password');
 const MetaTrader                 = require('../websocket_pages/user/metatrader/metatrader');
 const FinancialAccOpening        = require('../websocket_pages/user/new_account/financial_acc_opening');
 const JapanAccOpening            = require('../websocket_pages/user/new_account/japan_acc_opening');
 const RealAccOpening             = require('../websocket_pages/user/new_account/real_acc_opening');
 const VirtualAccOpening          = require('../websocket_pages/user/new_account/virtual_acc_opening');
-const ResetPasswordWS            = require('../websocket_pages/user/reset_password');
+const ResetPassword              = require('../websocket_pages/user/reset_password');
 const TNCApproval                = require('../websocket_pages/user/tnc_approval');
 
 const CashierJP     = require('../../binary_japan/cashier');
@@ -61,21 +61,21 @@ const pages_config = {
     authorised_appsws        : { module: AuthorisedApps,             is_authenticated: true },
     careers                  : { module: Careers },
     cashier                  : { module: Cashier },
-    cashier_passwordws       : { module: SecurityWS,                 is_authenticated: true, only_real: true },
-    change_passwordws        : { module: PasswordWS,                 is_authenticated: true },
+    cashier_passwordws       : { module: CashierPassword,            is_authenticated: true, only_real: true },
+    change_passwordws        : { module: ChangePassword,             is_authenticated: true },
     charity                  : { module: Charity },
     contact                  : { module: Contact },
     detailsws                : { module: SettingsDetailsWS,          is_authenticated: true },
     endpoint                 : { module: Endpoint },
-    epg_forwardws            : { module: ForwardWS,                  is_authenticated: true, only_real: true },
-    forwardws                : { module: ForwardWS,                  is_authenticated: true, only_real: true },
+    epg_forwardws            : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
+    forwardws                : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
     home                     : { module: Home,                       not_authenticated: true },
     iphistoryws              : { module: IPHistory,                  is_authenticated: true },
     japanws                  : { module: JapanAccOpening,            is_authenticated: true, only_virtual: true },
     knowledge_testws         : { module: KnowledgeTest,              is_authenticated: true, only_virtual: true },
     limitsws                 : { module: Limits,                     is_authenticated: true, only_real: true },
     logged_inws              : { module: LoggedInHandler },
-    lost_passwordws          : { module: LostPasswordWS,             not_authenticated: true },
+    lost_passwordws          : { module: LostPassword,               not_authenticated: true },
     maltainvestws            : { module: FinancialAccOpening,        is_authenticated: true },
     market_timesws           : { module: MarketTimesUI },
     metatrader               : { module: MetaTrader,                 is_authenticated: true },
@@ -87,10 +87,10 @@ const pages_config = {
     profit_tablews           : { module: ProfitTableWS,              is_authenticated: true },
     realws                   : { module: RealAccOpening,             is_authenticated: true, only_virtual: true },
     regulation               : { module: Regulation },
-    reset_passwordws         : { module: ResetPasswordWS,            not_authenticated: true },
-    securityws               : { module: SettingsWS,                 is_authenticated: true },
+    reset_passwordws         : { module: ResetPassword,              not_authenticated: true },
+    securityws               : { module: Settings,                   is_authenticated: true },
     self_exclusionws         : { module: SelfExclusionWS,            is_authenticated: true, only_real: true },
-    settingsws               : { module: SettingsWS,                 is_authenticated: true },
+    settingsws               : { module: Settings,                   is_authenticated: true },
     signup                   : { module: StaticPages.AffiliateSignup },
     statementws              : { module: StatementWS,                is_authenticated: true },
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
