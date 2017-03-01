@@ -28,7 +28,6 @@ const Page = function() {
     this.url = new Url();
     Menu.init(this.url);
     PushNotification.init();
-    PushNotification.sendTags();
 };
 
 Page.prototype = {
