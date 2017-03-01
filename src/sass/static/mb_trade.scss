@@ -49,6 +49,9 @@
         .price-row:nth-child(odd) {
             background: $COLOR_LIGHT_GRAY;
         }
+        &:nth-child(odd) .price-rows .price-button {
+            background: $COLOR_RED;
+        }
     }
     .base-value {
         font-size: 9px;
@@ -88,7 +91,7 @@
         color: $COLOR_WHITE;
         text-align: center;
         line-height: 100%;
-        background: $COLOR_GREEN;
+        background: $COLOR_LIGHT_BLUE;
         border-radius: 3px;
         padding: 10px 0;
         cursor: pointer;
@@ -120,7 +123,7 @@
         color: $COLOR_GRAY;
         &.price-button {
             color: $COLOR_WHITE;
-            background: $COLOR_GRAY;
+            background: $COLOR_GRAY !important;
             cursor: default;
             overflow: visible;
         }
