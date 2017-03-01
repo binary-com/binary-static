@@ -57,8 +57,7 @@ function handleForm($risk_classification) {
 }
 
 function qualify_for_risk_classification() {
-    return (Client.is_logged_in() && !Client.get('is_virtual') && Client.get('residence') !== 'jp' &&
-            (localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval')));
+    return (Client.is_logged_in() && !Client.get('is_virtual') && Client.get('residence') !== 'jp');
 }
 
 module.exports = {

@@ -58,7 +58,7 @@ const RealityCheckData = (function() {
 
     const set = function(key, value) {
         reality_object[key] = value;
-        return LocalStore.set('reality_check.' + key, value);
+        return LocalStore.set('client.reality_check.' + key, value);
     };
 
     // use this function to get variables that have values

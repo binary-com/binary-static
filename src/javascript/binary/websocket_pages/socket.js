@@ -17,8 +17,6 @@ const Notifications             = require('./trade/notifications').Notifications
 const TradePage_Beta            = require('./trade/beta/tradepage');
 const reloadPage                = require('./trade/common').reloadPage;
 const MBTradePage               = require('./mb_trade/mb_tradepage');
-const RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
-const RealityCheckData          = require('./user/reality_check/reality_check.data').RealityCheckData;
 const localize         = require('../base/localize').localize;
 const getLanguage      = require('../base/language').getLanguage;
 const validate_loginid = require('../base/client').validate_loginid;
@@ -272,7 +270,6 @@ const BinarySocketClass = function() {
                             sessionStorage.removeItem('active_tab');
                             window.alert(response.error.message);
                         }
-                        LocalStore.set('reality_check.ack', 0);
                         Client.send_logout_request(isActiveTab);
                     } else if (response.authorize.loginid !== Client.get('loginid')) {
                         Client.send_logout_request(true);
@@ -283,6 +280,7 @@ const BinarySocketClass = function() {
                             send({ balance: 1, subscribe: 1 });
                             send({ get_settings: 1 });
                             send({ get_account_status: 1 });
+                            send({ payout_currencies: 1 });
                             if (Cookies.get('residence')) send({ landing_company: Cookies.get('residence') });
                             if (!Client.get('is_virtual')) send({ get_self_exclusion: 1 });
                         }
@@ -293,7 +291,6 @@ const BinarySocketClass = function() {
                 } else if (type === 'time') {
                     Clock.time_counter(response);
                 } else if (type === 'logout') {
-                    RealityCheckData.clear();
                     Client.do_logout(response);
                 } else if (type === 'landing_company') {
                     Header.upgrade_message_visibility();
@@ -302,11 +299,6 @@ const BinarySocketClass = function() {
                     const company = Client.current_landing_company();
                     if (company) {
                         Client.set('default_currency', company.legal_default_currency);
-                        const has_reality_check = company.has_reality_check;
-                        if (has_reality_check) {
-                            Client.set('has_reality_check', has_reality_check);
-                            RealityCheck.init();
-                        }
                     }
                 } else if (type === 'get_self_exclusion') {
                     SessionDurationLimit.exclusionResponseHandler(response);
@@ -340,8 +332,6 @@ const BinarySocketClass = function() {
                         LocalStore.set('website.tnc_version', response.website_status.terms_conditions_version);
                         if (!localStorage.getItem('risk_classification')) Client.check_tnc();
                     }
-                } else if (type === 'reality_check') {
-                    RealityCheck.realityCheckWSHandler(response);
                 } else if (type === 'get_account_status' && response.get_account_status) {
                     if (response.get_account_status.risk_classification === 'high') {
                         localStorage.setItem('risk_classification', 'high');
@@ -364,7 +354,7 @@ const BinarySocketClass = function() {
                             localStorage.setItem('risk_classification', 'high');
                             check_risk_classification();
                         }
-                    } else if ((localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval')) && localStorage.getItem('risk_classification') !== 'high') {
+                    } else if (localStorage.getItem('risk_classification') !== 'high') {
                         localStorage.removeItem('risk_classification');
                         Client.check_tnc();
                     }

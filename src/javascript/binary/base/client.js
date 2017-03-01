@@ -102,46 +102,6 @@ const Client = (function () {
         return value;
     };
 
-    const check_values = function(origin) {
-        let is_ok = true;
-
-        // currencies
-        if (!get('currencies')) {
-            BinarySocket.send({
-                payout_currencies: 1,
-                passthrough      : {
-                    handler: 'client',
-                    origin : origin || '',
-                },
-            });
-            is_ok = false;
-        }
-
-        if (is_logged_in()) {
-            if (
-                !get('is_virtual') &&
-                Cookies.get('residence') &&
-                !get('has_reality_check')
-            ) {
-                BinarySocket.send({
-                    landing_company: Cookies.get('residence'),
-                    passthrough    : {
-                        handler: 'client',
-                        origin : origin || '',
-                    },
-                });
-                is_ok = false;
-            }
-        }
-
-        // website TNC version
-        if (!LocalStore.get('website.tnc_version')) {
-            BinarySocket.send({ website_status: 1 });
-        }
-
-        return is_ok;
-    };
-
     const response_authorize = function(response) {
         const authorize = response.authorize;
         if (!Cookies.get('email')) {
@@ -153,7 +113,6 @@ const Client = (function () {
         set('landing_company_name', authorize.landing_company_name);
         set('landing_company_fullname', authorize.landing_company_fullname);
         set('currency', authorize.currency);
-        check_values();
     };
 
     const tnc_pages = () => /(user\/tnc_approvalws|terms-and-conditions)/i.test(window.location.href);
@@ -297,7 +256,6 @@ const Client = (function () {
         if (response.logout !== 1) return;
         Client.clear_storage_values();
         LocalStore.remove('client.tokens');
-        LocalStore.set('reality_check.ack', 0);
         sessionStorage.removeItem('client_status');
         const cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence'];
         const domains = [

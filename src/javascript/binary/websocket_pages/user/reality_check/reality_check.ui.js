@@ -15,12 +15,7 @@ const RealityCheckUI = (function() {
     const frequency_url = url_for('user/reality_check_frequencyws'),
         summary_url = url_for('user/reality_check_summaryws'),
         hiddenClass = 'invisible';
-    let loginTime, // milliseconds
-        getAccountStatus;
-
-    const initializeValues = function() {
-        getAccountStatus = false;
-    };
+    let loginTime; // milliseconds
 
     const showPopUp = function(content) {
         if ($('#reality-check').length > 0) {
@@ -133,9 +128,8 @@ const RealityCheckUI = (function() {
     };
 
     const sendAccountStatus = function() {
-        if (!Client.get('is_virtual') && Client.get('residence') !== 'jp' && !getAccountStatus) {
+        if (!Client.get('is_virtual') && Client.get('residence') !== 'jp') {
             BinarySocket.send({ get_account_status: 1 });
-            getAccountStatus = true;
         }
     };
 
@@ -155,7 +149,6 @@ const RealityCheckUI = (function() {
         renderSummaryPopUp  : (summary) => { getAjax(summary); },
         closePopUp          : closePopUp,
         sendAccountStatus   : sendAccountStatus,
-        initializeValues    : initializeValues,
         startSummaryTimer   : startSummaryTimer,
         setLoginTime        : function(time) { loginTime = time; },
     };
