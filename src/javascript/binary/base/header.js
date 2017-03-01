@@ -5,7 +5,6 @@ const localize                  = require('./localize').localize;
 const Login                     = require('./login').Login;
 const State                     = require('./storage').State;
 const url_for                   = require('./url').url_for;
-const template                  = require('./utility').template;
 const objectNotEmpty            = require('./utility').objectNotEmpty;
 const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
 const japanese_client           = require('../common_functions/country_base').japanese_client;
@@ -198,20 +197,15 @@ const Header = (function() {
                 const status = get_account_status.status;
 
                 const messages = {
-                    authenticate: () => template(
-                        localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.',
-                            ['<a href="' + url_for('user/authenticatews') + '">', '</a>'])),
-                    risk: () => template(
-                        localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.'),
+                    authenticate: () => localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.',
+                            ['<a href="' + url_for('user/authenticatews') + '">', '</a>']),
+                    risk: () => localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',
                         ['<a href="' + url_for('user/settings/assessmentws') + '">', '</a>']),
-                    tax: () => template(
-                        localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.'),
+                    tax: () => localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',
                         ['<a href="' + url_for('user/settings/detailsws') + '">', '</a>']),
-                    tnc: () => template(
-                        localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.'),
+                    tnc: () => localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',
                         ['<a href="' + url_for('user/tnc_approvalws') + '">', '</a>']),
-                    unwelcome: () => template(
-                        localize('Your account is restricted - kindly [_1]contact customer support[_2] for assistance.'),
+                    unwelcome: () => localize('Your account is restricted - kindly [_1]contact customer support[_2] for assistance.',
                         ['<a href="mailto:support@binary.com">', '</a>']),
                 };
 
