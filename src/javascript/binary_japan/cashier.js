@@ -7,32 +7,24 @@ const japanese_client      = require('../binary/common_functions/country_base').
 const japanese_residence   = require('../binary/common_functions/country_base').japanese_residence;
 
 const CashierJP = (function() {
-    const init = function(action) {
+    'use strict';
+
+    const onLoad = (action) => {
         Content.populate();
         if (japanese_client() && !japanese_residence()) BinaryPjax.load(default_redirect_url());
         const $container = $('#japan_cashier_container');
-        $container.removeClass('invisible');
-        if (action === 'deposit') {
-            set_name_id();
-        } else if (action === 'withdraw') {
-            set_email_id();
-        }
+        BinarySocket.wait('get_settings').then(() => {
+            $container.removeClass('invisible');
+            if (action === 'deposit') {
+                $('#name_id').text((Client.get('loginid') || 'JP12345') + ' ' + (Client.get('first_name') || 'Joe Bloggs'));
+            } else if (action === 'withdraw') {
+                $('#id123-control22598118').val(Client.get('loginid'));
+                $('#id123-control22598060').val(Client.get('email'));
+            }
+        });
     };
 
-    const set_name_id = function() {
-        if (/deposit-jp/.test(window.location.pathname)) {
-            $('#name_id').text((Client.get('loginid') || 'JP12345') + ' ' + (Client.get('first_name') || 'Joe Bloggs'));
-        }
-    };
-
-    const set_email_id = function() {
-        if (/withdraw-jp/.test(window.location.pathname)) {
-            $('#id123-control22598118').val(Client.get('loginid'));
-            $('#id123-control22598060').val(Client.get('email'));
-        }
-    };
-
-    const error_handler = function() {
+    const errorHandler = () => {
         $('.error-msg').remove();
         const $id = $('#id123-control22598145');
         const withdrawal_amount = $id.val();
@@ -47,13 +39,9 @@ const CashierJP = (function() {
     };
 
     return {
-        init         : init,
-        set_name_id  : set_name_id,
-        set_email_id : set_email_id,
-        error_handler: error_handler,
-
-        Deposit : { onLoad: () => { init('deposit'); } },
-        Withdraw: { onLoad: () => { init('withdraw'); } },
+        errorHandler: errorHandler,
+        Deposit     : { onLoad: () => { onLoad('deposit'); } },
+        Withdraw    : { onLoad: () => { onLoad('withdraw'); } },
     };
 })();
 
