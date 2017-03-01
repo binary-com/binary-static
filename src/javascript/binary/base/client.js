@@ -276,7 +276,6 @@ const Client = (function () {
         Client.clear_storage_values();
         LocalStore.remove('client.tokens');
         LocalStore.set('reality_check.ack', 0);
-        sessionStorage.removeItem('client_status');
         const cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence'];
         const domains = [
             '.' + document.domain.split('.').slice(-2).join('.'),
@@ -300,25 +299,6 @@ const Client = (function () {
             }
         });
         window.location.reload();
-    };
-
-    // type can take one or more params, separated by comma
-    // e.g. one param = 'authenticated', two params = 'unwelcome, authenticated'
-    // match_type can be `any` `all`, by default is `any`
-    // should be passed when more than one param in type.
-    // `any` will return true if any of the params in type are found in client status
-    // `all` will return true if all of the params in type are found in client status
-    const status_detected = function(type, match_type) {
-        let client_status = sessionStorage.getItem('client_status');
-        if (!client_status || client_status.length === 0) return false;
-        const require_auth = /\,/.test(type) ? type.split(/, */) : [type];
-        client_status = client_status.split(',');
-        match_type = match_type && match_type === 'all' ? 'all' : 'any';
-        for (let i = 0; i < require_auth.length; i++) {
-            if (match_type === 'any' && (client_status.indexOf(require_auth[i]) > -1)) return true;
-            if (match_type === 'all' && (client_status.indexOf(require_auth[i]) < 0)) return false;
-        }
-        return (match_type !== 'any');
     };
 
     const current_landing_company = function() {
@@ -360,7 +340,6 @@ const Client = (function () {
 
         send_logout_request: send_logout_request,
         do_logout          : do_logout,
-        status_detected    : status_detected,
         is_financial       : is_financial,
         should_complete_tax: should_complete_tax,
 

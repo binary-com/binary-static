@@ -43,19 +43,21 @@ const PaymentAgentWithdrawWS = (function() {
 
         $views.addClass(hiddenClass);
 
-        if (Client.status_detected('withdrawal_locked, cashier_locked', 'any')) {
-            showPageError('', 'withdrawal-locked-error');
-        } else {
-            BinarySocket.send({ paymentagent_list: Cookies.get('residence') });
-        }
-
-        $(viewIDs.form + ' button').click(function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            formData = formValidate();
-            if (formData) {
-                withdrawRequest(true);
+        BinarySocket.wait('get_account_status').then((response) => {
+            if (/(withdrawal|cashier)_locked/.test(response.get_account_status.status)) {
+                showPageError('', 'withdrawal-locked-error');
+            } else {
+                BinarySocket.send({ paymentagent_list: Cookies.get('residence') });
             }
+
+            $(viewIDs.form + ' button').click(function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                formData = formValidate();
+                if (formData) {
+                    withdrawRequest(true);
+                }
+            });
         });
     };
 

@@ -13,7 +13,6 @@ const Contract                   = require('./contract').Contract;
 const Defaults                   = require('./defaults').Defaults;
 const isVisible                  = require('../../common_functions/common_functions').isVisible;
 const localize                   = require('../../base/localize').localize;
-const Client                     = require('../../base/client').Client;
 const elementTextContent         = require('../../common_functions/common_functions').elementTextContent;
 
 /*
@@ -230,11 +229,13 @@ const Price = (function() {
                 $('.payout_wrapper:visible').hide();
             }
 
-            if (data.longcode && window.innerWidth > 500 && !Client.status_detected('unwelcome')) {
-                description.setAttribute('data-balloon', data.longcode);
-            } else {
-                description.removeAttribute('data-balloon');
-            }
+            BinarySocket.wait('get_account_status').then((response) => {
+                if (data.longcode && window.innerWidth > 500 && !/unwelcome/.test(response.get_account_status.status)) {
+                    description.setAttribute('data-balloon', data.longcode);
+                } else {
+                    description.removeAttribute('data-balloon');
+                }
+            });
         };
 
         if (details.error) {

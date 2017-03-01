@@ -1,33 +1,32 @@
-const getSocketURL              = require('../../config').getSocketURL;
-const getAppId                  = require('../../config').getAppId;
-const Login                     = require('../base/login').Login;
-const getPropertyValue          = require('../base/utility').getPropertyValue;
-const getLoginToken             = require('../common_functions/common_functions').getLoginToken;
-const SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
-const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
-const create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
-const ViewPopupWS               = require('./user/view_popup/view_popupws');
-const ViewBalanceUI             = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
-const Cookies                   = require('../../lib/js-cookie');
-const State                     = require('../base/storage').State;
+const MBTradePage               = require('./mb_trade/mb_tradepage');
+const TradePage_Beta            = require('./trade/beta/tradepage');
 const Highchart                 = require('./trade/charts/highchartws').Highchart;
+const reloadPage                = require('./trade/common').reloadPage;
+const Notifications             = require('./trade/notifications').Notifications;
 const WSTickDisplay             = require('./trade/tick_trade').WSTickDisplay;
 const TradePage                 = require('./trade/tradepage');
-const Notifications             = require('./trade/notifications').Notifications;
-const TradePage_Beta            = require('./trade/beta/tradepage');
-const reloadPage                = require('./trade/common').reloadPage;
-const MBTradePage               = require('./mb_trade/mb_tradepage');
-const RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
 const RealityCheckData          = require('./user/reality_check/reality_check.data').RealityCheckData;
-const localize         = require('../base/localize').localize;
-const getLanguage      = require('../base/language').getLanguage;
-const validate_loginid = require('../base/client').validate_loginid;
-const GTM        = require('../base/gtm').GTM;
-const Clock      = require('../base/clock').Clock;
-const Header     = require('../base/header').Header;
-const LocalStore = require('../base/storage').LocalStore;
-const Client     = require('../base/client').Client;
-const page       = require('../base/page').page;
+const RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
+const ViewPopupWS               = require('./user/view_popup/view_popupws');
+const ViewBalanceUI             = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
+const Client                    = require('../base/client').Client;
+const validate_loginid          = require('../base/client').validate_loginid;
+const Clock                     = require('../base/clock').Clock;
+const GTM                       = require('../base/gtm').GTM;
+const Header                    = require('../base/header').Header;
+const getLanguage               = require('../base/language').getLanguage;
+const localize                  = require('../base/localize').localize;
+const Login                     = require('../base/login').Login;
+const LocalStore                = require('../base/storage').LocalStore;
+const State                     = require('../base/storage').State;
+const getPropertyValue          = require('../base/utility').getPropertyValue;
+const create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
+const getLoginToken             = require('../common_functions/common_functions').getLoginToken;
+const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
+const SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
+const getAppId                  = require('../../config').getAppId;
+const getSocketURL              = require('../../config').getSocketURL;
+const Cookies                   = require('../../lib/js-cookie');
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
@@ -347,11 +346,6 @@ const BinarySocketClass = function() {
                     }
                 } else if (type === 'reality_check') {
                     RealityCheck.realityCheckWSHandler(response);
-                } else if (type === 'get_account_status' && response.get_account_status) {
-                    const status = response.get_account_status.status;
-                    sessionStorage.setItem('client_status', status);
-
-                    page.show_authenticate_message();
                 }
 
                 switch (error_code) {

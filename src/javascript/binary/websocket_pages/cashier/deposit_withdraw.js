@@ -1,5 +1,7 @@
+const BinaryPjax           = require('../../base/binary_pjax');
 const Client               = require('../../base/client').Client;
 const localize             = require('../../base/localize').localize;
+const default_redirect_url = require('../../base/url').default_redirect_url;
 const template             = require('../../base/utility').template;
 const appendTextValueChild = require('../../common_functions/common_functions').appendTextValueChild;
 const FormManager          = require('../../common_functions/form_manager');
@@ -172,17 +174,23 @@ const DepositWithdraw = (function() {
 
     const onLoad = function() {
         getCashierType();
-        BinarySocket.wait('get_account_status').then(() => {
-            const can_deposit = cashier_type === 'deposit' && !Client.status_detected('cashier_locked, unwelcome', 'any');
-            const can_withdraw = cashier_type === 'withdraw' && !Client.status_detected('cashier_locked, withdrawal_locked', 'any');
-            if (can_deposit || can_withdraw) {
-                BinarySocket.send({ cashier_password: 1 }).then((response) => {
-                    if ('error' in response) {
-                        showError('custom_error', response.error.message);
+        BinarySocket.wait('get_account_status').then((response) => {
+            const status = response.get_account_status.status;
+            const cashier_locked  = /cashier_locked/.test(status);
+            const unwelcome       = /unwelcome/.test(status);
+            const withdraw_locked = /withdrawal_locked/.test(status);
+
+            if ((cashier_type === 'deposit' && !cashier_locked && !unwelcome) ||
+                (cashier_type === 'withdraw' && !cashier_locked && !withdraw_locked)) {
+                BinarySocket.send({ cashier_password: 1 }).then((data) => {
+                    if ('error' in data) {
+                        showError('custom_error', data.error.message);
                     } else {
-                        init(response.cashier_password);
+                        init(data.cashier_password);
                     }
                 });
+            } else {
+                BinaryPjax.load(default_redirect_url());
             }
         });
     };

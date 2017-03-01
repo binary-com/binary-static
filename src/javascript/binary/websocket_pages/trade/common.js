@@ -1,20 +1,21 @@
-const Defaults        = require('./defaults').Defaults;
-const Notifications   = require('./notifications').Notifications;
-const Symbols         = require('./symbols').Symbols;
-const Tick            = require('./tick').Tick;
-const objectNotEmpty  = require('../../base/utility').objectNotEmpty;
-const Content         = require('../../common_functions/content').Content;
-const format_money    = require('../../common_functions/currency_to_symbol').format_money;
-const japanese_client = require('../../common_functions/country_base').japanese_client;
-const addComma        = require('../../common_functions/string_util').addComma;
-const Moment          = require('moment');
-const toISOFormat     = require('../../common_functions/string_util').toISOFormat;
-const localize    = require('../../base/localize').localize;
-const getLanguage = require('../../base/language').getLanguage;
-const Client      = require('../../base/client').Client;
-const url_for     = require('../../base/url').url_for;
+const Moment              = require('moment');
+const Defaults            = require('./defaults').Defaults;
+const Notifications       = require('./notifications').Notifications;
+const Symbols             = require('./symbols').Symbols;
+const Tick                = require('./tick').Tick;
+const Client              = require('../../base/client').Client;
+const getLanguage         = require('../../base/language').getLanguage;
+const localize            = require('../../base/localize').localize;
+const State               = require('../../base/storage').State;
+const url_for             = require('../../base/url').url_for;
+const objectNotEmpty      = require('../../base/utility').objectNotEmpty;
+const Content             = require('../../common_functions/content').Content;
+const japanese_client     = require('../../common_functions/country_base').japanese_client;
+const format_money        = require('../../common_functions/currency_to_symbol').format_money;
+const addComma            = require('../../common_functions/string_util').addComma;
+const toISOFormat         = require('../../common_functions/string_util').toISOFormat;
+const elementInnerHtml    = require('../../common_functions/common_functions').elementInnerHtml;
 const elementTextContent  = require('../../common_functions/common_functions').elementTextContent;
-const elementInnerHtml  = require('../../common_functions/common_functions').elementInnerHtml;
 
 /*
  * This contains common functions we need for processing the response
@@ -925,6 +926,21 @@ function timeIsValid($element) {
     return true;
 }
 
+// disable purchase button if client is unwelcome
+const checkPurchaseButton = () => {
+    BinarySocket.wait('get_account_status').then((response) => {
+        if ((State.get('is_trading') || State.get('is_beta_trading')) && /unwelcome/.test(response.get_account_status.status)) {
+            const purchase_button = $('.purchase_button');
+            if (purchase_button.length > 0 && !purchase_button.parent().hasClass('button-disabled')) {
+                $.each(purchase_button, function() {
+                    $(this).off('click dblclick').removeAttr('data-balloon').parent()
+                        .addClass('button-disabled');
+                });
+            }
+        }
+    });
+};
+
 module.exports = {
     displayUnderlyings             : displayUnderlyings,
     generateUnderlyingOptions      : generateUnderlyingOptions,
@@ -962,4 +978,5 @@ module.exports = {
     displayTooltip_Beta            : displayTooltip_Beta,
     label_value                    : label_value,
     timeIsValid                    : timeIsValid,
+    checkPurchaseButton            : checkPurchaseButton,
 };

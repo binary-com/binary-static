@@ -90,7 +90,6 @@ const Header = (function() {
         // cleaning the previous values
         Client.clear_storage_values();
         sessionStorage.setItem('active_tab', '1');
-        sessionStorage.removeItem('client_status');
         // set cookies: loginid, login
         Client.set_cookie('loginid', loginid);
         Client.set_cookie('login',   token);

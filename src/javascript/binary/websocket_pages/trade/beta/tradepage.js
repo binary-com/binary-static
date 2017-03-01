@@ -3,11 +3,12 @@ const TradingEvents_Beta        = require('./event').TradingEvents_Beta;
 const Message_Beta              = require('./message').Message_Beta;
 const Price_Beta                = require('./price').Price_Beta;
 const forgetTradingStreams_Beta = require('./process').forgetTradingStreams_Beta;
-const displayCurrencies         = require('../currency').displayCurrencies;
 const addEventListenerForm      = require('../common').addEventListenerForm;
 const chartFrameCleanup         = require('../common').chartFrameCleanup;
+const checkPurchaseButton       = require('../common').checkPurchaseButton;
 const showFormOverlay           = require('../common').showFormOverlay;
 const showPriceOverlay          = require('../common').showPriceOverlay;
+const displayCurrencies         = require('../currency').displayCurrencies;
 const Defaults                  = require('../defaults').Defaults;
 const Notifications             = require('../notifications').Notifications;
 const Symbols                   = require('../symbols').Symbols;
@@ -71,6 +72,7 @@ const TradePage_Beta = (function() {
         TradingAnalysis_Beta.bindAnalysisTabEvent();
 
         ViewPopupWS.viewButtonOnClick('#contract_confirmation_container');
+        checkPurchaseButton();
     };
 
     const adjustAnalysisColumnHeight = function() {

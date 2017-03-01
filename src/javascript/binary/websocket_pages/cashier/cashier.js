@@ -23,12 +23,13 @@ const Cashier = (function() {
                 return;
             }
             checkTopUpWithdraw();
-            BinarySocket.wait('get_account_status').then(() => {
-                if (Client.status_detected('cashier_locked')) {
+            BinarySocket.wait('get_account_status').then((response) => {
+                const status = response.get_account_status.status;
+                if (/cashier_locked/.test(status)) {
                     lock('deposit, .withdraw');
-                } else if (Client.status_detected('withdrawal_locked')) {
+                } else if (/withdrawal_locked/.test(status)) {
                     lock('withdraw');
-                } else if (Client.status_detected('unwelcome')) {
+                } else if (/unwelcome/.test(status)) {
                     lock('deposit');
                 }
                 Client.activate_by_client_type();
