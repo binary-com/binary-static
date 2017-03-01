@@ -1,3 +1,4 @@
+const Client = require('../base/client').Client;
 const Scroll = require('../common_functions/scroll');
 
 const GetStarted = (function() {
@@ -14,6 +15,8 @@ const GetStarted = (function() {
     };
 
     const onLoad = function() {
+        Client.activate_by_client_type();
+
         const update_active_subsection = function(to_show) {
             const subsection = $('.subsection');
             subsection.addClass('hidden');
