@@ -116,14 +116,15 @@
             right: 3px;
         }
         &:hover {
-            background-color: $COLOR_DARK_GREEN;
+            opacity: 0.8;
         }
     }
     .inactive {
         color: $COLOR_GRAY;
-        &.price-button {
+        &.price-button, &:hover {
             color: $COLOR_WHITE;
             background: $COLOR_GRAY !important;
+            opacity: 1;
             cursor: default;
             overflow: visible;
         }
