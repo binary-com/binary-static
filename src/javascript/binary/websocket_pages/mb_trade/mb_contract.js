@@ -54,6 +54,9 @@ const MBContract = (function() {
         Object.keys(durationMap).forEach(function(key) {
             dur = dur.replace(key, localize(durationMap[key] + (+dur[0] === 1 || /h/.test(key) ? '' : 's')));
         });
+        if (!japanese_client()) {
+            dur = dur.replace(/(\d+)([a-z]+)/ig, '$1 $2 ').trim();
+        }
         return dur;
     };
 
@@ -70,9 +73,9 @@ const MBContract = (function() {
         let text_value = moment.utc(date_expiry * 1000)
                             .utcOffset(japanese_client() ? '+09:00' : '+00:00')
                             .locale(getLanguage().toLowerCase())
-                            .format('MMM Do, HH:mm');
+                            .format('MMM Do, HH:mm') + ' (' + durationText(duration.replace('0d', '1d')) + ')';
         if (japanese_client()) {
-            text_value = text_value.replace(/08:59/, '09:00«') + ' (' + durationText(duration.replace('0d', '1d')) + ')';
+            text_value = text_value.replace(/08:59/, '09:00«');
         }
         return text_value.toString();
     };
