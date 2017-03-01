@@ -188,6 +188,11 @@ const Header = (function() {
         if ($msg_notification.is(':hidden')) $msg_notification.slideDown(500);
     };
 
+    const hideNotification = () => {
+        const $msg_notification = $('#msg_notification');
+        if ($msg_notification.is(':visible')) $msg_notification.slideUp(500, () => { $msg_notification.html(''); });
+    };
+
     const displayAccountStatus = () => {
         BinarySocket.wait('authorize').then(() => {
             if (Client.get('is_virtual')) return;
@@ -204,7 +209,7 @@ const Header = (function() {
 
                 const messages = {
                     authenticate: () => localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.',
-                            ['<a href="' + url_for('user/authenticatews') + '">', '</a>']),
+                            ['<a href="' + url_for('user/authenticate') + '">', '</a>']),
                     risk: () => localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',
                         ['<a href="' + url_for('user/settings/assessmentws') + '">', '</a>']),
                     tax: () => localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',
@@ -216,7 +221,7 @@ const Header = (function() {
                 };
 
                 const validations = {
-                    authenticate: () => /(authenticated|age_verification)/.test(status) && !japanese_client(),
+                    authenticate: () => (!/authenticated/.test(status) || !/age_verification/.test(status)) && !japanese_client(),
                     risk        : () => riskAssessment(),
                     tax         : () => Client.should_complete_tax(),
                     tnc         : () => Client.should_accept_tnc(),
@@ -232,13 +237,14 @@ const Header = (function() {
                 ];
 
                 BinarySocket.wait('website_status', 'get_settings', 'get_financial_assessment').then(() => {
-                    check_statuses.some((object) => {
+                    const notified = check_statuses.some((object) => {
                         if (object.validation()) {
                             displayNotification(object.message());
                             return true;
                         }
                         return false;
                     });
+                    if (!notified) hideNotification();
                 });
             });
         });
