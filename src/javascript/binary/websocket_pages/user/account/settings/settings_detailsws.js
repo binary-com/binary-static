@@ -29,7 +29,6 @@ const SettingsDetailsWS = (function() {
         isJP = residence === 'jp';
         if (isJP && !isVirtual) {
             $('#fieldset_email_consent').removeClass('invisible');
-            detect_hedging($('#trading_purpose'), $('.hedge'));
         }
         showHideTaxMessage();
     };
@@ -240,6 +239,11 @@ const SettingsDetailsWS = (function() {
         }
         $field.val(get_settings_data.address_state);
         FormManager.init(formID, getValidations(get_settings_data));
+        if (isJP && !isVirtual) {
+            // detect_hedging needs to be called after FormManager.init
+            // or all previously bound event listeners on form elements will be removed
+            detect_hedging($('#trading_purpose'), $('.hedge'));
+        }
     };
 
     const onLoad = function() {

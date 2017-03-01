@@ -1,26 +1,21 @@
-const ApplicationsUI   = require('./authorised_apps.ui').ApplicationsUI;
-const ApplicationsData = require('./authorised_apps.data').ApplicationsData;
+const ApplicationsUI   = require('./authorised_apps.ui');
+const ApplicationsData = require('./authorised_apps.data');
 
-const Applications = (function() {
+const ApplicationsInit = (() => {
     'use strict';
 
-    const responseHandler = function(response) {
-        if (response.error && response.error.message) {
-            return ApplicationsUI.displayError(response.error.message);
-        }
-        const apps = response.oauth_apps.map(ApplicationsData.parse);
-        return ApplicationsUI.update(apps);
-    };
-
-    const init = function() {
+    const init = () => {
         ApplicationsUI.init();
-        BinarySocket.init({
-            onmessage: ApplicationsData.calls(responseHandler),
+        BinarySocket.send({ oauth_apps: 1 }).then((response) => {
+            if (response.error) {
+                ApplicationsUI.displayError(response.error.message);
+            } else {
+                ApplicationsUI.update(response.oauth_apps.map(ApplicationsData.parse));
+            }
         });
-        ApplicationsData.list();
     };
 
-    const clean = function() {
+    const clean = () => {
         ApplicationsUI.clean();
     };
 
@@ -30,6 +25,4 @@ const Applications = (function() {
     };
 })();
 
-module.exports = {
-    Applications: Applications,
-};
+module.exports = ApplicationsInit;
