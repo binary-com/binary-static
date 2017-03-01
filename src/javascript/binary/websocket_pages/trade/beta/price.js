@@ -229,13 +229,11 @@ const Price_Beta = (function() {
                 $('.payout_wrapper:visible').hide();
             }
 
-            BinarySocket.wait('get_account_status').then((response) => {
-                if (data.longcode && window.innerWidth > 500 && !/unwelcome/.test(response.get_account_status.status)) {
-                    description.setAttribute('data-balloon', data.longcode);
-                } else {
-                    description.removeAttribute('data-balloon');
-                }
-            });
+            if (data.longcode && window.innerWidth > 500) {
+                description.setAttribute('data-balloon', data.longcode);
+            } else {
+                description.removeAttribute('data-balloon');
+            }
         };
 
         if (details.error) {

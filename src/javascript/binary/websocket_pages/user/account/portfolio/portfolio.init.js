@@ -76,12 +76,7 @@ const PortfolioWS = (function() {
         if (Client.get('balance') > 0 || Client.get('is_virtual')) {
             $if_balance_zero.addClass(hidden_class);
         } else {
-            BinarySocket.wait('get_account_status').then((response) => {
-                if (/(unwelcome|cashier_locked)/.test(response.get_account_status.status)) {
-                    $if_balance_zero.removeAttr('href').addClass('button-disabled');
-                }
-                $if_balance_zero.removeClass(hidden_class);
-            });
+            $if_balance_zero.removeClass(hidden_class);
         }
     };
 

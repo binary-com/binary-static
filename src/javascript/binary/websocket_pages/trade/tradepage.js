@@ -1,7 +1,6 @@
 const TradingAnalysis      = require('./analysis').TradingAnalysis;
 const addEventListenerForm = require('./common').addEventListenerForm;
 const chartFrameCleanup    = require('./common').chartFrameCleanup;
-const checkPurchaseButton  = require('./common').checkPurchaseButton;
 const showFormOverlay      = require('./common').showFormOverlay;
 const showPriceOverlay     = require('./common').showPriceOverlay;
 const displayCurrencies    = require('./currency').displayCurrencies;
@@ -70,7 +69,6 @@ const TradePage = (function() {
         $('#tab_last_digit').find('a').text(localize('Last Digit Stats'));
 
         ViewPopupWS.viewButtonOnClick('#contract_confirmation_container');
-        checkPurchaseButton();
     };
 
     const reload = function() {

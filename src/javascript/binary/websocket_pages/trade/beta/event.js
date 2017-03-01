@@ -321,29 +321,27 @@ const TradingEvents_Beta = (function () {
          * attach event to purchase buttons to buy the current contract
          */
         $('.purchase_button').on('click dblclick', function () {
-            BinarySocket.wait('get_account_status').then((response) => {
-                if (!/unwelcome/.test(response.get_account_status.status) && !isVisible(document.getElementById('confirmation_message_container'))) {
-                    const id = this.getAttribute('data-purchase-id'),
-                        askPrice = this.getAttribute('data-ask-price');
+            if (!isVisible(document.getElementById('confirmation_message_container'))) {
+                const id = this.getAttribute('data-purchase-id'),
+                    askPrice = this.getAttribute('data-ask-price');
 
-                    const params = { buy: id, price: askPrice, passthrough: {} };
-                    Object.keys(this.attributes).forEach(function(attr) {
-                        if (attr && this.attributes[attr] && this.attributes[attr].name &&
-                                !/data\-balloon/.test(this.attributes[attr].name)) { // do not send tooltip data
-                            const m = this.attributes[attr].name.match(/data\-(.+)/);
+                const params = { buy: id, price: askPrice, passthrough: {} };
+                Object.keys(this.attributes).forEach(function(attr) {
+                    if (attr && this.attributes[attr] && this.attributes[attr].name &&
+                            !/data\-balloon/.test(this.attributes[attr].name)) { // do not send tooltip data
+                        const m = this.attributes[attr].name.match(/data\-(.+)/);
 
-                            if (m && m[1] && m[1] !== 'purchase-id' && m[1] !== 'passthrough') {
-                                params.passthrough[m[1]] = this.attributes[attr].value;
-                            }
+                        if (m && m[1] && m[1] !== 'purchase-id' && m[1] !== 'passthrough') {
+                            params.passthrough[m[1]] = this.attributes[attr].value;
                         }
-                    }, this);
-                    if (id && askPrice) {
-                        BinarySocket.send(params);
-                        Price_Beta.incrFormId();
-                        Price_Beta.processForgetProposals_Beta();
                     }
+                }, this);
+                if (id && askPrice) {
+                    BinarySocket.send(params);
+                    Price_Beta.incrFormId();
+                    Price_Beta.processForgetProposals_Beta();
                 }
-            });
+            }
         });
 
         /*

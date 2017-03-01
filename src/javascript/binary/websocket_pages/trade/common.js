@@ -925,21 +925,6 @@ function timeIsValid($element) {
     return true;
 }
 
-// disable purchase button if client is unwelcome
-const checkPurchaseButton = () => {
-    BinarySocket.wait('get_account_status').then((response) => {
-        if (/unwelcome/.test(response.get_account_status.status)) {
-            const purchase_button = $('.purchase_button');
-            if (purchase_button.length > 0 && !purchase_button.parent().hasClass('button-disabled')) {
-                $.each(purchase_button, function() {
-                    $(this).off('click dblclick').removeAttr('data-balloon').parent()
-                        .addClass('button-disabled');
-                });
-            }
-        }
-    });
-};
-
 module.exports = {
     displayUnderlyings             : displayUnderlyings,
     generateUnderlyingOptions      : generateUnderlyingOptions,
@@ -977,5 +962,4 @@ module.exports = {
     displayTooltip_Beta            : displayTooltip_Beta,
     label_value                    : label_value,
     timeIsValid                    : timeIsValid,
-    checkPurchaseButton            : checkPurchaseButton,
 };
