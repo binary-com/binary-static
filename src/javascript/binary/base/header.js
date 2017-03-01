@@ -195,6 +195,13 @@ const Header = (function() {
                 const get_account_status = response.get_account_status;
                 const status = get_account_status.status;
 
+                const riskAssessment = () => {
+                    if (get_account_status.risk_classification === 'high') {
+                        return !objectNotEmpty(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
+                    }
+                    return false;
+                };
+
                 const messages = {
                     authenticate: () => localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.',
                             ['<a href="' + url_for('user/authenticatews') + '">', '</a>']),
@@ -208,21 +215,20 @@ const Header = (function() {
                         ['<a href="mailto:support@binary.com">', '</a>']),
                 };
 
-                const riskAssessment = () => {
-                    if (get_account_status.risk_classification === 'high') {
-                        return !objectNotEmpty(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
-                    }
-                    return false;
+                const validations = {
+                    authenticate: () => /(authenticated|age_verification)/.test(status) && !japanese_client(),
+                    risk        : () => riskAssessment(),
+                    tax         : () => Client.should_complete_tax(),
+                    tnc         : () => Client.should_accept_tnc(),
+                    unwelcome   : () => /(unwelcome|(cashier|withdrawal)_locked)/.test(status),
                 };
 
-                const has_status = (regex => !regex.test(status));
-
                 const check_statuses = [
-                    { validation: Client.should_accept_tnc,                                    message: messages.tnc },
-                    { validation: riskAssessment,                                              message: messages.risk },
-                    { validation: Client.should_complete_tax,                                  message: messages.tax },
-                    { validation: () => has_status(/(authenticated|age_verification)/),        message: messages.authenticate },
-                    { validation: () => has_status(/(unwelcome|(cashier|withdrawal)_locked)/), message: messages.unwelcome },
+                    { validation: validations.tnc,          message: messages.tnc },
+                    { validation: validations.risk,         message: messages.risk },
+                    { validation: validations.tax,          message: messages.tax },
+                    { validation: validations.authenticate, message: messages.authenticate },
+                    { validation: validations.unwelcome,    message: messages.unwelcome },
                 ];
 
                 BinarySocket.wait('website_status', 'get_settings', 'get_financial_assessment').then(() => {
