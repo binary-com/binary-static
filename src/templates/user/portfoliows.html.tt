@@ -12,7 +12,7 @@
             <span class="loading" id="portfolio-balance"></span>
 
             <!-- If the account balance is zero we show the following button, otherwise we remove it -->
-            <span id="if-balance-zero" class="invisible by_client_type client_real">
+            <span id="if-balance-zero" class="invisible">
                 <a href="[% request.url_for('cashier/forwardws#deposit') %]" class="button nowrap ja-hide">
                     <span>[% l('Make a Deposit') %]</span>
                 </a>

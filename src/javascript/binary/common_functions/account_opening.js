@@ -165,7 +165,7 @@ const commonValidations = () => {
         { selector: '#address_line_1',     validations: ['req', 'general'] },
         { selector: '#address_line_2',     validations: ['general'] },
         { selector: '#address_city',       validations: ['req', 'letter_symbol'] },
-        { selector: '#address_state',      validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'], request_field: 'address_state' },
+        { selector: '#address_state',      validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'] },
         { selector: '#address_postcode',   validations: ['postcode'] },
         { selector: '#phone',              validations: ['req', 'phone', ['min', { min: 6, max: 35 }]] },
         { selector: '#secret_question',    validations: ['req'] },
