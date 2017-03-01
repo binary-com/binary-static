@@ -289,7 +289,7 @@ const BinarySocketClass = function() {
                         }
                         sendBufferedSends();
                     }
-                } else if (type === 'balance') {
+                } else if ((type === 'balance') && (error_code !== 'RateLimit')) {
                     ViewBalanceUI.updateBalances(response);
                 } else if (type === 'time') {
                     Clock.time_counter(response);
