@@ -34,7 +34,7 @@ function getSocketURL() {
             });
         }
 
-        server_url = (/staging\.binary\.com/i.test(window.location.hostname) ? 'www2' :
+        server_url = (/staging\.binary\.com/i.test(window.location.hostname) ? 'blue' :
                 (isReal  ? (randomPercent < toGreenPercent.real       ? 'green' : 'blue') :
                  loginid ? (randomPercent < toGreenPercent.virtual    ? 'green' : 'blue') :
                            (randomPercent < toGreenPercent.logged_out ? 'green' : 'blue'))
