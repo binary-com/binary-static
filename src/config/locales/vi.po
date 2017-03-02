@@ -142,8 +142,10 @@ msgstr "%1 có nhiều cơ hội nghề nghiệp tuyệt vời cho các Chuyên 
 msgid "%1 has thousands of clients taking a variety of positions on the financial markets at any one time, and earns a small margin on these trades."
 msgstr "%1 có hàng ngàn khách hàng đang nắm giữ nhiều vị trí khác nhau trên thị trường tài chính, và kiếm được lợi nhuận trên những giao dịch này."
 
-msgid "%1 has updated its  <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
-msgstr "%1 vừa cập nhật  <a class=\"pjaxload\" href=\"%2\">Điều khoản & Điều kiện</a>. Bằng cách nhấn vào OK, bạn xác nhận rằng bạn đã đọc và chấp nhận bản cập nhật <a class=\"pjaxload\" href=\"%2\">Điều khoản và Điều kiện</a>."
+#, fuzzy
+#| msgid "%1 has updated its <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
+msgid "%1 has updated its <a href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a href=\"%2\">Terms & Conditions</a>."
+msgstr "%1 vừa cập nhật <a class=\"pjaxload\" href=\"%2\">Điều khoản & Điều kiện</a>. Bằng cách nhấn vào OK, bạn xác nhận rằng bạn đã đọc và chấp nhận bản cập nhật <a class=\"pjaxload\" href=\"%2\">Điều khoản và Điều kiện</a>."
 
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr "%1 đạt 1 triệu người dùng, chạm mốc lịch sử. Công ty tiếp tục phát triển vững vàng và ngày càng khẳng định vị trí của mình với vai trò dẫn đầu trong ngành."
@@ -207,7 +209,9 @@ msgstr "%1 đang tìm kiếm những nhà quản lý Chi nhánh có thể tạo 
 msgid "%1 offers a range of common deposit and withdrawal methods, from credit and debit cards to bank wires, e-cash and e-wallets."
 msgstr "%1 cung cấp nhiều phương thức rút tiền và gửi tiền phổ biến, từ thẻ tín dụng, thẻ ghi nợ, tới chuyển khoản ngân hàng, thẻ điện tử và ví điện tử."
 
-msgid "%1 offers a virtual-money account so you can get the hang of trading binaries. Why not <a class='pjaxload' href='%2'>open a free $10k fully-functional virtual-money account</a>, and start learning how to trade."
+#, fuzzy
+#| msgid "%1 offers a virtual-money account so you can get the hang of trading binaries. Why not <a class='pjaxload' href='%2'>open a free $10k fully-functional virtual-money account</a>, and start learning how to trade."
+msgid "%1 offers a virtual-money account so you can get the hang of trading binaries. Why not <a href='%2'>open a free $10k fully-functional virtual-money account</a>, and start learning how to trade."
 msgstr "%1 đề nghị cung cấp 1 tài khoản tiền áo để bạn có thể hiểu rõ các giao dịch nhị phân.Tại sao không <a class='pjaxload' href='%2'>mở một tài khoản ảo với đầy đủ chức năng và đã có sẵn $10k</a>, và bắt đầu học cách giao dịch."
 
 msgid "%1 offers five main types of trades that will help you execute your market view or strategy:"
@@ -486,9 +490,6 @@ msgstr "Giới hạn doanh thu 7 ngày"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< Quay lại Mô Tả Công Việc"
-
-msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
-msgstr "<a class='pjaxload' href='mailto:%1'> liên hệ với chúng tôi</a>"
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1\"> trở về trang giao dịch</a>"
@@ -943,12 +944,12 @@ msgstr "Số dư tài khoản: "
 
 #, fuzzy
 #| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgid "Account needs age verification, please contact <a href=\"%1\">customer support</a> for more information."
 msgstr "Tiền gửi bị khóa, xin vui lòng <a class=\"pjaxload\" href=\"%1\"> liên hệ với chúng tôi</a> để biết thêm thông tin."
 
 #, fuzzy
 #| msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgid "Account not activated, please contact <a href=\"%1\">customer support</a> for more information."
 msgstr "Tiền gửi bị khóa, xin vui lòng <a class=\"pjaxload\" href=\"%1\"> liên hệ với chúng tôi</a> để biết thêm thông tin."
 
 #, fuzzy
@@ -1234,7 +1235,9 @@ msgstr "Các ứng dụng"
 msgid "Apply a meticulous eye for detail in proofreading the content that appears on the company's website, blog, social media outlets, and marketing materials."
 msgstr "Sử dụng đôi mắt cẩn thận, tỉ mỉ để phát hiện lỗi và sửa nội dung thử nghiệm trên trang web, blog, phương tiện truyền thông xã hội và tài liệu tiếp thị của công ty."
 
-msgid "Apply to become a %1 <a class=\"pjaxload\" href=\"%2\">payment agent</a>."
+#, fuzzy
+#| msgid "Apply to become a %1 <a class=\"pjaxload\" href=\"%2\">payment agent</a>."
+msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
 msgstr "Đăng ký để trở thành %1 <a class=\"pjaxload\" href=\"%2\">đại lý thanh toán</a>."
 
 msgid "Apply to become a Payment Agent"
@@ -3132,7 +3135,7 @@ msgstr "Thông tin Tài chính"
 
 #, fuzzy
 #| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgid "Financial Risk approval is required. Please contact <a href=\"%1\">customer support</a> for more information."
 msgstr "Không thể rút tiền, vui lòng liên lạc với chúng tôi <a class=\"pjaxload\" href=\"%1\"></a> để có thêm thông tin."
 
 msgid "Financial asset"
@@ -3723,7 +3726,9 @@ msgstr "Nếu bạn giữ cho bất kỳ phiên nào hoạt đông qua đêm, đ
 msgid "If you meet our basic requirements, we'll send you a talent test."
 msgstr "Nếu bạn đạt yêu cầu cơ bản của chúng tôi, chúng tôi sẽ gửi cho bạn một bài kiểm tra đánh giá kỹ năng."
 
-msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
+#, fuzzy
+#| msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
+msgid "If you need assistance feel free to contact our <a href=\"%1\">Customer Support</a>."
 msgstr "Nếu bạn cần trợ giúp, vui lòng liên hệ với đội ngũ hỗ trợ khách hàng <a class=\"pjaxload\" href=\"%1\"></a>của chúng tôi."
 
 #, fuzzy
@@ -3832,7 +3837,9 @@ msgstr "Nếu bạn muốn khiếu nại liên quan đến dịch vụ của c
 msgid "If you're a broker we'd like to work with you. You will be introducing your clients to a unique and innovative product - the %1 trading platform."
 msgstr "Nếu bạn là nhà môi giới, chúng tôi muốn làm việc với bạn. Bạn sẽ giới thiệu cho khách hàng của mình sản phẩm độc đáo và sáng tạo này- sàn giao dịch %1."
 
-msgid "If you're an individual trader, you'll appreciate the simplicity, flexibility, and limited risk of binary trading. With %1's low minimum stakes, you'll soon learn how to trade with skill and confidence. And if you have any questions, you're free to access <a class='pjaxload' href='%2'>our helpful support desk</a>."
+#, fuzzy
+#| msgid "If you're an individual trader, you'll appreciate the simplicity, flexibility, and limited risk of binary trading. With %1's low minimum stakes, you'll soon learn how to trade with skill and confidence. And if you have any questions, you're free to access <a class='pjaxload' href='%2'>our helpful support desk</a>."
+msgid "If you're an individual trader, you'll appreciate the simplicity, flexibility, and limited risk of binary trading. With %1's low minimum stakes, you'll soon learn how to trade with skill and confidence. And if you have any questions, you're free to access <a href='%2'>our helpful support desk</a>."
 msgstr "Nếu bạn là người giao dịch cá thể, bạn sẽ đánh giá cao tính đơn giản, linh hoạt và hạn chế rủi ro của giao dịch nhị phân. Với điểm thấp tối thiểu của %1, bạn sẽ sớm biết giao dịch khéo léo và tự tin. Và nếu bạn có thêm bất cứ câu hỏi nào, hãy truy cập vào <a class='pjaxload' href='%2'>đội ngũ hỗ trợ hữu ích của chúng tôi</a>."
 
 msgid "If you're looking to build a career, and not a resume, talk to us, %1. We're one of the IT world's most vibrant and progressive workplaces."
@@ -5355,9 +5362,6 @@ msgstr "Ngày của năm mới"
 msgid "New password"
 msgstr "Mật khẩu mới"
 
-msgid "New password is same as old password."
-msgstr "Mật khẩu mới giống mật khẩu cũ."
-
 msgid "New token created."
 msgstr "Token mới đã được tạo."
 
@@ -5672,6 +5676,11 @@ msgstr "Others"
 msgid "Our Company"
 msgstr "Công ty của chúng tôi"
 
+#, fuzzy
+#| msgid "The Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. Your commission will be credited to your affiliate account within fifteen days after the close of a calendar month."
+msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
+msgstr "Chương trình Liên kết đã cung cấp việc thanh toán đúng giờ, mỗi giờ, từ lúc chương trình chính thức của chúng tôi ra mắt vào Tháng 3 năm 2014. Hoa hồng sẽ được Công ty Binary ghi có vào tài khoản liên kết của bạn trong vòng 15 ngày của tháng sau."
+
 msgid "Our Order Execution Policy (the \"Policy\") sets out the overview and approach of how Binary.com executes orders on behalf of our clients."
 msgstr "Chính sách thực thi lệnh của chúng tôi (\"chính sách\") đặt ra các tổng quan và phương pháp mà Binary.com dùng để tiếp cận thực hiện các lệnh thay mặt cho khách hàng của chúng tôi."
 
@@ -5687,7 +5696,9 @@ msgstr "Chúng tôi cam kết cung cấp cho bạn 'sự thực hiện tô�
 msgid "Our company continues to thrive and obtains a license in the Isle of Man to better service our UK clients."
 msgstr "Công ty chúng tôi tiếp tục lớn mạnh và giành được giấy phép ở đảo Man để cung cấp dịch vụ tốt hơn cho các khách hàng Anh."
 
-msgid "Our costs and charges for depositing and withdrawing money are set out <a href=\"%1\" class=\"pjaxload\">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability."
+#, fuzzy
+#| msgid "Our costs and charges for depositing and withdrawing money are set out <a href=\"%1\" class=\"pjaxload\">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability."
+msgid "Our costs and charges for depositing and withdrawing money are set out <a href=\"%1\">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability."
 msgstr "Phí và lệ phí rút và gửi tiền được thiết lập <a href=\"%1\" class=\"pjaxload\">ở đây</a>. Vui lòng nhớ rằng tất cả các chi phí và lệ phí đều được tính cho bạn vì chúng có ảnh hưởng tới lợi nhuận của bạn."
 
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
@@ -5925,6 +5936,11 @@ msgid "Please %1 to view this page"
 msgstr "VII lòng %1 để xem trang này"
 
 #, fuzzy
+#| msgid "Please %1 to view this page"
+msgid "Please <a href=\"%1\">log in</a> to view this page."
+msgstr "VII lòng %1 để xem trang này"
+
+#, fuzzy
 #| msgid "You must accept the terms and conditions to open an account."
 msgid "Please accept the terms and conditions."
 msgstr "Bạn phải chấp nhận các điều khoản và điều kiện để mở tài khoản."
@@ -5985,9 +6001,6 @@ msgstr "Vui lòng nhập ngày với định dạng YYYY-MM-DD HH:mm (giờ 
 msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "Vui lòng nhập ngày với định dạng YYYY-MM-DD."
 
-msgid "Please enter your current password."
-msgstr "Vui lòng nhập mật khẩu hiện tại của bạn."
-
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "Vui lòng điền tên Đăng nhập vá Số tiền bạn muốn chuyển cho Khách hàng của mình trong bản mẫu dưới đây:"
 
@@ -6023,6 +6036,9 @@ msgstr "Vui lòng tham khảo dự thảo tiền hoa hồng ở dưới đây
 
 msgid "Please remember at all times that trading binary options can be an exciting activity, but we have a moral duty to remind you of the risks you may run. Options trading can become a real addiction, as can any other activity pushed to its limits. We kindly ask you to engage in a careful self-analysis to check if you are at risk. To avoid the danger of such an addiction, it is important that you follow some basic principles and guidelines."
 msgstr "Vui lòng nhớ rằng giao dịch hợp đồng quyền chọn nhị phân có thể là một hoạt động thú vị vào bất cứ lúc nào, nhưng chúng tôi có trách nhiệm nhắc bạn rủi ro mà bạn có thể gặp phải. Giao dịch quyền chọn có thể bị nghiện, như những hoạt động khác muốn cố gắng để đạt được tới giới hạn. Chúng tôi muốn bạn tự phân tích cẩn thận để kiểm tra xem liệu bạn có đang gặp rủi ro hay không. Để tránh nguy hại của việc gây nghiện này, quan trọng là bạn nên tuân theo một số nguyên tắc và hướng dẫn cơ bản."
+
+msgid "Please see our <a href=%1>terms and conditions</a> for details of payout qualifications."
+msgstr ""
 
 msgid "Please select"
 msgstr "Vui lòng chọn"
@@ -6550,10 +6566,14 @@ msgstr "Khách hàng Bán lẻ"
 msgid "Return"
 msgstr "Lợi nhuận"
 
-msgid "Returns above 100% on simple <a href='%1' class='pjaxload'>rise/fall</a> contracts."
+#, fuzzy
+#| msgid "Returns above 100% on simple <a href='%1' class='pjaxload'>rise/fall</a> contracts."
+msgid "Returns above 100% on simple <a href='%1'>rise/fall</a> contracts."
 msgstr "Doanh thu trên 100% dựa trên hợp đồng <a href='%1' class='pjaxload'>tăng/giảm</a> đơn giản."
 
-msgid "Returns above 1000% on <a href='%1' class='pjaxload'>higher/lower</a> and <a href='%2' class='pjaxload'>touch/no-touch</a> trades."
+#, fuzzy
+#| msgid "Returns above 1000% on <a href='%1' class='pjaxload'>higher/lower</a> and <a href='%2' class='pjaxload'>touch/no-touch</a> trades."
+msgid "Returns above 1000% on <a href='%1'>higher/lower</a> and <a href='%2'>touch/no-touch</a> trades."
 msgstr "Doanh thu trên 1000% dựa trên <a href='%1' class='pjaxload'>giao dịch</a> cao hơn/thấp hơn và <a href='%2' class='pjaxload'>chạm/không chạm</a> ."
 
 msgid "Review suspicious account transactions"
@@ -7556,14 +7576,14 @@ msgstr "Hoa hồng bạn sẽ tính tiền Khách hàng qua tiền rút v
 msgid "The company does not guarantee the ability to sell a contract prior to its expiration time."
 msgstr "Công ty không bảo đảm có thể bán bán hợp đồng trước thời hạn."
 
-msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
+#, fuzzy
+#| msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
+msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1'>here.</a>"
 msgstr "Công ty có nhiều phương thức gửi tiền, mỗi một phương thức đều định thời gian để gửi, một số phương thức thì không dành cho việc rút tiền. Chi tiết đầy đủ về phương thức gửi tiền hoặc rút tiền bao gồm cả thời gian định giá có sẵn ở <a href='%1' class='pjaxload'>đây.</a>"
 
 #, fuzzy
 #| msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
-msgid ""
-"The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer\n"
-"                funds at the level: <strong>medium protection</strong>."
+msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
 msgstr "Công ty giữ tiền khách hàng trong tài khoản ngân hàng tách biệt với tài khoản ngân hàng vận hành, trong trường hợp phá sản, nó sẽ không thuộc tài sản của Công ty. Điều này đáp ứng các yêu cầu của Ủy ban Cờ bạc để cách ly các tiền của khách hàng ở cấp độ: <strong>bảo vệ trung bình</strong>."
 
 #, fuzzy
@@ -7601,8 +7621,10 @@ msgstr "Khoảng thời gian là độ dài của giao dịch được mua 
 msgid "The easiest way to get started in the financial markets"
 msgstr "Cách dễ nhất để bắt đầu trong thị trường tài chính"
 
-msgid "The email address provided is already in use. If you forgot your password, please try our <a class=\"pjaxload\" href=\"%1\">password recovery tool</a> or contact our customer service."
-msgstr ""
+#, fuzzy
+#| msgid "Your provided email address is already in use by another Login ID. According to our terms and conditions, you may only register once through our site. If you have forgotten the password of your existing account, please <a href=\"%1\">try our password recovery tool</a> or contact customer service."
+msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
+msgstr "Địa chỉ email bạn cung cấp đã được sử dụng bởi Tên Đăng nhập khác. Theo điều kiện và điều khoản của chúng tôi, bạn chỉ có thể đăng ký một lần trên trang của chúng tôi. Nếu bạn quên mật khẩu của tài khoản đã có, vui lòng <a href=\"%21\">thử công cụ phục hồi mật khẩu của chúng tôi</a> hoặc liên hệ với đội ngũ chăm sóc khách hàng."
 
 msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
 msgstr "Giá nhập vào của hợp đồng vị thế mua là 1001, là giá giao ngay nhập vào + một nửa giá chênh lệch. Tại giá đi ra, giá giao ngay là 1100 và vì vậy mức giá thoát ra cho hợp đồng vị thế mua là 1099, là giá giao ngay thoát ra - một nửa giá chênh lệch."
@@ -7829,7 +7851,9 @@ msgstr "Có lỗi trung cập vào máy chủ khi mua."
 msgid "There was a problem accessing the server."
 msgstr "Có lỗi khi truy cập máy chủ."
 
-msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
+#, fuzzy
+#| msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
+msgid "There was a problem validating your personal details. Please update your %1 <a href=\"%2\">here</a>."
 msgstr "Xảy ra lỗi phê chuẩn thông tin cá nhân chi tiết của bạn. Vui lòng cập nhật %1 của bạn <a class=\"pjaxload\" href=\"%2\"> tại đây</a>."
 
 msgid "There was an error"
@@ -8203,7 +8227,9 @@ msgstr "Giới hạn Giao dịch và giới hạn Rút tiền"
 msgid "Trading binary options is relatively easy, and you can purchase a trade in only three simple steps."
 msgstr "Giao dịch nhị phân rất dễ, và chỉ yêu cầu 3 bước đơn giản:"
 
-msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class=\"ja-hide\">Read about <a href=\"%1\" class=\"pjaxload\">Responsible Trading</a>.</span>"
+#, fuzzy
+#| msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class=\"ja-hide\">Read about <a href=\"%1\" class=\"pjaxload\">Responsible Trading</a>.</span>"
+msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class=\"ja-hide\">Read about <a href=\"%1\">Responsible Trading</a>.</span>"
 msgstr "Giao dịch quyền chọn nhị phân có thể không thích hợp cho tất cả mọi người, vì vậy vui lòng bảo đảo rằng bạn đã hiểu hoàn toàn về rủi ro có liên quan. Thất thoát của bạn có thể vượt quá số tiền gửi ban đầu và bạn sẽ không được sở hữu hay có bất kì tiền lãi nào trong tài sản cơ sở. Liên quan tới quyền chọn nhị phân, là sản phẩm cá cược, hãy nhớ rằng chơi cá cược có thể bị nghiện - vui lòng chơi một cách có trách nhiệm. <span class=\"ja-hide\">Đọc về <a href=\"%1\" class=\"pjaxload\">Giao dịch có Trách nhiệm</a>.</span>"
 
 msgid "Trading forex and contracts for differences carries a high level of risk and %1 does not monitor the open positions of your account on your behalf. It is your responsibility to monitor your Open Positions and understand the exposure of your Open Positions whilst ensuring that your exposure commensurate with your risk appetite. Due to the cost associated with overnight open positions, you should consider investing in the market of the instrument in which you ordinarily transact in instead of investing in a CFD."
@@ -9173,7 +9199,9 @@ msgstr "Bạn đã được cảnh báo về rủi ro bổ sung sau đây:"
 msgid "You are willing and financially able to sustain a total loss of funds (which may exceed your initial deposit) resulting from a Transaction;"
 msgstr ""
 
-msgid "You can <a class='pjaxload' href='%1'>open an account</a>, deposit funds and begin trading within minutes."
+#, fuzzy
+#| msgid "You can <a class='pjaxload' href='%1'>open an account</a>, deposit funds and begin trading within minutes."
+msgid "You can <a href='%1'>open an account</a>, deposit funds and begin trading within minutes."
 msgstr "Ban có thể <a class='pjaxload' href='%1'>mở một tài khoản</a>, gửi tiền và bắt đầu giao dịch trong vòng vài phút."
 
 msgid "You can even build your own online trading sites, apps, and bots with our <a href=\"https://developers.binary.com\" target=\"_blank\">API and developer tools</a>."
@@ -9302,7 +9330,7 @@ msgstr "Bạn có thể rút số tiền thưởng khi vốn luân chuyển củ
 
 #, fuzzy
 #| msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
-msgid "You must complete the knowledge test to activate this account. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
+msgid "You must complete the knowledge test to activate this account. Please contact <a href=\"%1\">customer support</a> for more information."
 msgstr "Tài khoản của bạn không được chứng thực đầy đủ. Vui lòng tuy cập trang <a class=\"pjaxload\" href=\"%1\">xác thực</a> để biết thêm thông tin."
 
 msgid "You must comply with these Terms in order to use the %1 API."
@@ -9474,7 +9502,9 @@ msgstr "Tài khoản của bạn hiện đang bị khóa. Chỉ tính năng rút
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Tài khoản của bạn được xác thực đầy đủ và mức giới hạn rút tiền của bạn đã được nâng lên."
 
-msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
+#, fuzzy
+#| msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
+msgid "Your account is fully authenticated. You can view your <a href=\"%1\">trading limits here</a>."
 msgstr "Tài khoản của bạn được xác thực hoàn toàn. Bạn có thể xem <a class=\"pjaxload\" href=\"%1\">hạn mức giao dịch của bạn ở đây</a>."
 
 #, fuzzy
@@ -9498,9 +9528,6 @@ msgstr "Hồ sơ đăng kí của bạn sẽ được xem xét bởi phòng th�
 
 msgid "Your breach of any of %1's rights;"
 msgstr "Sự vi phạm của bạn đối với bất kỳ quyền nào của %1;"
-
-msgid "Your cashier is locked as per your request - to unlock it, please click <a class=\"pjaxload\" href=\"%1\">here</a>."
-msgstr "Quỹ đã bị khóa theo yêu cầu của bạn - để mở khóa, vui lòng nhấn <a class=\"pjaxload\" href=\"%1\">vào đây </a>."
 
 #, fuzzy
 #| msgid "Your cashier is locked as per your request - to unlock it, please click <a class=\"pjaxload\" href=\"%1\">here</a>."
@@ -9559,7 +9586,9 @@ msgstr "Giới hạn phiên giao dịch của bạn sẽ kết thúc trong %1 gi
 msgid "Your settings have been updated successfully."
 msgstr "Thiết lập của bạn đã được cập nhật thành công."
 
-msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
+#, fuzzy
+#| msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
+msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
 msgstr "Chuỗi xác nhận của bạn đã hết hiệu lực. Xin vui lòng nhấp chuột vào <a class=\"pjaxload\" href=\"%1\">đây</a> để khởi động lại quá trình xác minh."
 
 msgid "Your trading statistics since %1."
@@ -9721,6 +9750,9 @@ msgstr "khoảng thời gian có sẵn tối thiểu"
 msgid "mins"
 msgstr ""
 
+msgid "minute"
+msgstr "phút"
+
 msgid "minutes"
 msgstr "phút"
 
@@ -9756,6 +9788,9 @@ msgstr "giai đoạn"
 
 msgid "points"
 msgstr "điểm"
+
+msgid "second"
+msgstr "giây"
 
 msgid "seconds"
 msgstr "giây"
@@ -9899,6 +9934,11 @@ msgstr "{JAPAN ONLY}A Currency Binary Option is one where there is a target for 
 msgid "{JAPAN ONLY}A Currency Option confers the right to sell one currency in exchange for another currency as the underlying asset. For example, the right to sell Yen and buy Dollars is known as a Yen Put / Dollar Call Option, or just Yen Put for short; and the opposite right to buy Yen and sell Dollar is called a Yen Call / Dollar Put Option, or just Yen Call for short."
 msgstr "{JAPAN ONLY}A Currency Option confers the right to sell one currency in exchange for another currency as the underlying asset. For example, the right to sell Yen and buy Dollars is known as a Yen Put / Dollar Call Option, or just Yen Put for short; and the opposite right to buy Yen and sell Dollar is called a Yen Call / Dollar Put Option, or just Yen Call for short."
 
+#, fuzzy
+#| msgid "A True Partnership"
+msgid "{JAPAN ONLY}A True Partnership"
+msgstr "Sự hợp tác đúng nghĩa"
+
 msgid "{JAPAN ONLY}A binary call option buyer will benefit from a correct prediction that the asset price will decline to below the strike price by the judgment time."
 msgstr "{JAPAN ONLY}A binary call option buyer will benefit from a correct prediction that the asset price will decline to below the strike price by the judgment time."
 
@@ -9933,6 +9973,11 @@ msgstr "Một thành viên hội đồng quản trị của một công ty tùy 
 msgid "{JAPAN ONLY}A bought or sold binary option may be closed-out before exercise time by selling or buying-back the option, or alternatively by cancelling."
 msgstr "{JAPAN ONLY}A bought or sold binary option may be closed-out before exercise time by selling or buying-back the option, or alternatively by cancelling."
 
+#, fuzzy
+#| msgid "A dedicated affiliate team to provide you with the best service possible"
+msgid "{JAPAN ONLY}A dedicated affiliate team to provide you with the best service possible"
+msgstr "Một nhóm liên kết chuyên nghiệp sẽ cung cấp cho bạn dịch vụ tốt nhất có thể"
+
 msgid "{JAPAN ONLY}A modified version of the Black-Scholes model is widely used to calculate the theoretical prices of binary options."
 msgstr "{JAPAN ONLY}A modified version of the Black-Scholes model is widely used to calculate the theoretical prices of binary options."
 
@@ -9962,6 +10007,11 @@ msgstr "{JAPAN ONLY}Knowledge Test"
 msgid "{JAPAN ONLY}Activate your account by confirming your authorisation code which we will post to your registered address."
 msgstr "{JAPAN ONLY}Activate your account by confirming your authorisation code which we will post to your registered address."
 
+#, fuzzy
+#| msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
+msgid "{JAPAN ONLY}After we complete mandatory regulatory checks on your website, you will be approved as an affiliate, and provided with everything necessary for you to start right away."
+msgstr "Khi được chấp thuận là một chi nhánh, bạn sẽ được cung cấp những thứ cần thiết để bắt đầu ngay."
+
 msgid "{JAPAN ONLY}Although customers and brokers will set limits on customers trading losses, even if those losses are exceeded, it is the customer's responsibility to close the position and so mandatory loss-cuts will not be executed by the broker company."
 msgstr "{JAPAN ONLY}Although customers and brokers will set limits on customers trading losses, even if those losses are exceeded, it is the customer's responsibility to close the position and so mandatory loss-cuts will not be executed by the broker company."
 
@@ -9975,6 +10025,14 @@ msgstr "{JAPAN ONLY}An option price is the sum of the intrinsic-value and the ti
 #| msgid "Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
 msgid "{JAPAN ONLY}Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
 msgstr "Bất kỳ công ty mà thực chất thuộc sở hữu hoặc kiểm soát bởi một người nào đó được mô tả trong các danh mục 1) tới 4)"
+
+msgid "{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?"
+msgstr ""
+
+#, fuzzy
+#| msgid "Are your site visitors interested in:"
+msgid "{JAPAN ONLY}Are your site visitors interested in:"
+msgstr "Khách đến thăm trang của bạn có hứng thú với:"
 
 msgid "{JAPAN ONLY}As the exercise deadline approaches, the price of an in-the-money binary option will move towards the payout amount."
 msgstr "{JAPAN ONLY}As the exercise deadline approaches, the price of an in-the-money binary option will move towards the payout amount."
@@ -9995,12 +10053,22 @@ msgid "{JAPAN ONLY}Association of join"
 msgstr "{JAPAN ONLY}Association of join"
 
 #, fuzzy
+#| msgid "Award-winning, patented financial trading platform"
+msgid "{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan"
+msgstr "Giao diện giao dịch tài chính có bằng sáng chế và nhận được nhiều giải thưởng"
+
+#, fuzzy
 #| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}Bank"
 msgstr "{JAPAN ONLY}day"
 
 msgid "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 msgstr "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
+
+#, fuzzy
+#| msgid "Best Tracking with \"Forever Cookies\""
+msgid "{JAPAN ONLY}Best Tracking with \"Forever Cookies\""
+msgstr "Theo dõi tốt nhất với \"Cookie mãi mãi\""
 
 msgid "{JAPAN ONLY}Binary K. K."
 msgstr "{JAPAN ONLY}Binary K. K."
@@ -10086,8 +10154,21 @@ msgstr "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
 msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 msgstr "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 
+#, fuzzy
+#| msgid "Discovering an easy, low-risk, flexible and, award-winning platform?"
+msgid "{JAPAN ONLY}Discovering an easy to use, limited-risk, award-winning platform?"
+msgstr "Bạn muốn tìm hiểu sàn giao dịch dễ dàng, rủ ro thấp, linh hoạt và dễ có thưởng này?"
+
 msgid "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
 msgstr "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
+
+#, fuzzy
+#| msgid "Do you own a newsletter or a mailing list?"
+msgid "{JAPAN ONLY}Do you publish a newsletter or manage a mailing list?"
+msgstr "Bạn sở hữu thư thông tin hay danh sách hòm thư?"
+
+msgid "{JAPAN ONLY}Do you run a website or publish an FX blog?"
+msgstr ""
 
 msgid "{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account."
 msgstr "{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account."
@@ -10099,6 +10180,16 @@ msgstr "{JAPAN ONLY}Download"
 #| msgid "{JAPAN ONLY}Download"
 msgid "{JAPAN ONLY}Download our latest report here"
 msgstr "{JAPAN ONLY}Download"
+
+#, fuzzy
+#| msgid "Earn money by becoming an Affiliate. You will receive commission on each account through your referrals."
+msgid "{JAPAN ONLY}Earn money by becoming an Affiliate. You will receive commission on each account through your referrals."
+msgstr "Kiếm tiền bằng cách trở thành một Hội viên. Bạn sẽ nhận được tiền hoa hồng trên mỗi tài khoản mà bạn giới thiệu."
+
+#, fuzzy
+#| msgid "Earning a second income in their spare time?"
+msgid "{JAPAN ONLY}Earning a second income in their spare time?"
+msgstr "Kiếm nguồn thu nhập thứ hai trong thời gian rảnh rỗi?"
 
 msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
 msgstr "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
@@ -10200,6 +10291,11 @@ msgid "{JAPAN ONLY}For full details of the documents we can accept please downlo
 msgstr "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 
 #, fuzzy
+#| msgid "Foreign PEP Declaration"
+msgid "{JAPAN ONLY}Foreign Exchange markets"
+msgstr "Khai báo người bị ảnh hưởng chính trị ngoại quốc"
+
+#, fuzzy
 #| msgid "Foreign Head of State"
 msgid "{JAPAN ONLY}Foreign Head of State"
 msgstr "Nguyên thủ quốc gia"
@@ -10211,6 +10307,17 @@ msgstr "Khai báo người bị ảnh hưởng chính trị ngoại quốc"
 
 msgid "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
 msgstr "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
+
+#, fuzzy
+#| msgid "Generous Commission Structure"
+msgid "{JAPAN ONLY}Generous Commission Structure"
+msgstr "Cấu trúc Tiền hoa hồng lớn"
+
+msgid "{JAPAN ONLY}Great pay-outs. Earn &yen;20,000 on every qualifying referral"
+msgstr ""
+
+msgid "{JAPAN ONLY}High quality promotional materials with online reporting tools"
+msgstr ""
 
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
 msgstr "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
@@ -10270,6 +10377,9 @@ msgstr "{JAPAN ONLY}If you buy a currency binary put option at a price of 500 ye
 #| msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:%1'>Customer Support</a>."
 msgstr "Để thay đổi tên, ngày sinh, nơi cư trú, hoặc email, vui lòng liên hệ với <a href=\"%1\">Bộ phận Hỗ trợ Khách hàng</a>."
+
+msgid "{JAPAN ONLY}If you introduce our website to potential clients, you will earn as soon as one of them opens a real account with %1 and begins trading. "
+msgstr ""
 
 #, fuzzy
 #| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
@@ -10417,8 +10527,18 @@ msgstr "{JAPAN ONLY}Knowledge test list item 4"
 msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "{JAPAN ONLY}Knowledge test list item 5"
 
+#, fuzzy
+#| msgid "Learning to trade online?"
+msgid "{JAPAN ONLY}Learning to trade online?"
+msgstr "Học cách giao dịch trực tuyến?"
+
 msgid "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 msgstr "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
+
+#, fuzzy
+#| msgid "Long-term partnership with the leading financial trading service"
+msgid "{JAPAN ONLY}Long-term partnership with an establish international financial trading service"
+msgstr "Đối tác lâu dài với dịch vụ giao dịch tài chính hàng đầu"
 
 msgid "{JAPAN ONLY}Main business"
 msgstr "{JAPAN ONLY}Main business"
@@ -10434,6 +10554,11 @@ msgstr "{JAPAN ONLY}No space between last name and first name"
 
 msgid "{JAPAN ONLY}November 7, 2014"
 msgstr "{JAPAN ONLY}November 7, 2014"
+
+#, fuzzy
+#| msgid "On-time Payments Every Time"
+msgid "{JAPAN ONLY}On-time Payments Every Time"
+msgstr "Thanh toán đúng giờ Mọi lúc"
 
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
@@ -10482,7 +10607,9 @@ msgstr ""
 msgid "{JAPAN ONLY}Please allow up to 5 business days for the funds to be credited to your designated bank account."
 msgstr ""
 
-msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
+#, fuzzy
+#| msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
+msgid "{JAPAN ONLY}Please click <a href=\"#identification-documents\">here</a> for further information."
 msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\"> 1here</a> 2 for further information."
 
 msgid "{JAPAN ONLY}Please complete the following questions."
@@ -10533,6 +10660,11 @@ msgstr "{JAPAN ONLY}Pre-Contract Documents"
 msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 msgstr "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Goes Outside"
+msgid "{JAPAN ONLY}Professional service"
+msgstr "{JAPAN ONLY}Goes Outside"
+
 msgid "{JAPAN ONLY}Purchase, Settlement & Resale"
 msgstr "{JAPAN ONLY}Purchase, Settlement & Resale"
 
@@ -10540,6 +10672,11 @@ msgstr "{JAPAN ONLY}Purchase, Settlement & Resale"
 #| msgid "{JAPAN ONLY}FX Rate"
 msgid "{JAPAN ONLY}Rakuten Bank"
 msgstr "{JAPAN ONLY}FX Rate"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Registration"
+msgid "{JAPAN ONLY}Register"
+msgstr "{JAPAN ONLY}Registration"
 
 msgid "{JAPAN ONLY}Registration"
 msgstr "{JAPAN ONLY}Registration"
@@ -10594,6 +10731,16 @@ msgstr "{JAPAN ONLY}Pre-Contract Documents"
 
 msgid "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
 msgstr "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Higher"
+msgid "{JAPAN ONLY}Sign me up"
+msgstr "{JAPAN ONLY}Higher"
+
+#, fuzzy
+#| msgid "So what are you waiting for? Join us as an affiliate today."
+msgid "{JAPAN ONLY}So, what are you waiting for? Please join us as an affiliate today."
+msgstr "Vậy bạn đang mong chờ điều gì? Hãy tham gia với chúng tôi để trở thành liên kết ngay hôm nay."
 
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
@@ -10722,6 +10869,9 @@ msgstr "Chúng tôi không thể chấp thuận các đơn yêu cầu từ bất
 msgid "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 msgstr "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 
+msgid "{JAPAN ONLY}We offer an informative and entertaining way to advertise online; including text ads, customer landing pages and invitations to promotional and educational events for your site visitors."
+msgstr ""
+
 msgid "{JAPAN ONLY}We offer real time prices calculated from the same rates that bank and securities companies use."
 msgstr "{JAPAN ONLY}We offer real time prices calculated from the same rates that bank and securities companies use."
 
@@ -10740,6 +10890,11 @@ msgstr "{JAPAN ONLY}We will pass on any possible price improvements for orders i
 msgid "{JAPAN ONLY}We will process your request and transfer the funds to your designated bank account within 5 business days."
 msgstr ""
 
+#, fuzzy
+#| msgid "We will provide you with all the tools you need to turn your traffic into a lucrative revenue stream"
+msgid "{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream"
+msgstr "Chúng tôi sẽ cung cấp cho bạn tất cả các công cụ bạn cần để biến hệ thống của bạn thành một nguồn thu nhập hấp dẫn"
+
 msgid "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying."
 msgstr "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying."
 
@@ -10749,10 +10904,17 @@ msgstr "{JAPAN ONLY}When buying a vanilla put option, the break-even price at th
 msgid "{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time."
 msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time."
 
+#, fuzzy
+#| msgid "Why become an Affiliate?"
+msgid "{JAPAN ONLY}Why become an Affiliate?"
+msgstr "Tai sao lại trở thành một Chi nhánh?"
+
 msgid "{JAPAN ONLY}Win Loss Ratio"
 msgstr "{JAPAN ONLY}Win Loss Ratio"
 
-msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+#, fuzzy
+#| msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 
 msgid "{JAPAN ONLY}You can protect your account value further by setting other limits to encourage trading discipline"
@@ -10779,6 +10941,14 @@ msgstr "{JAPAN ONLY}You set your own personal daily loss limit"
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
+#, fuzzy
+#| msgid "You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
+msgid "{JAPAN ONLY}You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
+msgstr "Bạn sẽ được cung cấp tất cả các công cụ để biến hệ thống của bạn thành một nguồn thu nhập hấp dẫn"
+
+msgid "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then opens and trades a real money account."
+msgstr ""
+
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 msgstr ""
 
@@ -10786,6 +10956,11 @@ msgstr ""
 #| msgid "{JAPAN ONLY}hours"
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}hours"
+
+#, fuzzy
+#| msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
+msgid "{JAPAN ONLY}Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
+msgstr "ID của bạn sẽ được lưu giữ trong cookie và được nhận diện mọi lúc khi bạn nhấp chuột vào đường dẫn liên kết của mình và truy cập vào %1 và lúc đó, mở một tài khoản với chúng tôi."
 
 msgid "{JAPAN ONLY}Your funds are safe"
 msgstr "{JAPAN ONLY}Your funds are safe"
@@ -10916,8 +11091,20 @@ msgstr "Giới hạn Tài khoản"
 msgid "Account Details"
 msgstr "Chi tiết Tài khoản"
 
-#~ msgid "%1 has updated its <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
-#~ msgstr "%1 vừa cập nhật <a class=\"pjaxload\" href=\"%2\">Điều khoản & Điều kiện</a>. Bằng cách nhấn vào OK, bạn xác nhận rằng bạn đã đọc và chấp nhận bản cập nhật <a class=\"pjaxload\" href=\"%2\">Điều khoản và Điều kiện</a>."
+#~ msgid "%1 has updated its  <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
+#~ msgstr "%1 vừa cập nhật  <a class=\"pjaxload\" href=\"%2\">Điều khoản & Điều kiện</a>. Bằng cách nhấn vào OK, bạn xác nhận rằng bạn đã đọc và chấp nhận bản cập nhật <a class=\"pjaxload\" href=\"%2\">Điều khoản và Điều kiện</a>."
+
+#~ msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
+#~ msgstr "<a class='pjaxload' href='mailto:%1'> liên hệ với chúng tôi</a>"
+
+#~ msgid "New password is same as old password."
+#~ msgstr "Mật khẩu mới giống mật khẩu cũ."
+
+#~ msgid "Please enter your current password."
+#~ msgstr "Vui lòng nhập mật khẩu hiện tại của bạn."
+
+#~ msgid "Your cashier is locked as per your request - to unlock it, please click <a class=\"pjaxload\" href=\"%1\">here</a>."
+#~ msgstr "Quỹ đã bị khóa theo yêu cầu của bạn - để mở khóa, vui lòng nhấn <a class=\"pjaxload\" href=\"%1\">vào đây </a>."
 
 #~ msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 #~ msgstr "Bản scan hóa đơn điện nước hoặc bản sao kê ngân hàng (không quá 3 tháng)."
@@ -10958,9 +11145,6 @@ msgstr "Chi tiết Tài khoản"
 #~| msgid "Upgrade to a Financial Account"
 #~ msgid "To create an MT5 Financial Account please:"
 #~ msgstr "Nâng cấp lên Tài khoản Tài chính"
-
-#~ msgid "Your provided email address is already in use by another Login ID. According to our terms and conditions, you may only register once through our site. If you have forgotten the password of your existing account, please <a href=\"%1\">try our password recovery tool</a> or contact customer service."
-#~ msgstr "Địa chỉ email bạn cung cấp đã được sử dụng bởi Tên Đăng nhập khác. Theo điều kiện và điều khoản của chúng tôi, bạn chỉ có thể đăng ký một lần trên trang của chúng tôi. Nếu bạn quên mật khẩu của tài khoản đã có, vui lòng <a href=\"%21\">thử công cụ phục hồi mật khẩu của chúng tôi</a> hoặc liên hệ với đội ngũ chăm sóc khách hàng."
 
 #~ msgid "Prospectus"
 #~ msgstr "Bản cáo bạch"
@@ -11016,12 +11200,6 @@ msgstr "Chi tiết Tài khoản"
 
 #~ msgid "{JAPAN ONLY}Ends Outside"
 #~ msgstr "{JAPAN ONLY}Ends Outside"
-
-#~ msgid "{JAPAN ONLY}Goes Outside"
-#~ msgstr "{JAPAN ONLY}Goes Outside"
-
-#~ msgid "{JAPAN ONLY}Higher"
-#~ msgstr "{JAPAN ONLY}Higher"
 
 #~ msgid "{JAPAN ONLY}Lower"
 #~ msgstr "{JAPAN ONLY}Lower"
@@ -11493,12 +11671,6 @@ msgstr "Chi tiết Tài khoản"
 
 #~ msgid "m"
 #~ msgstr "m"
-
-#~ msgid "minute"
-#~ msgstr "phút"
-
-#~ msgid "second"
-#~ msgstr "giây"
 
 #~ msgid "ticks"
 #~ msgstr "giây"
