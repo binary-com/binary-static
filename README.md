@@ -25,16 +25,20 @@ cd scripts
 sudo carton install
 ```
 
-Note :- 
-You need to have the latest node & npm versions 
-The perl scipt compilation fails in some perl versions. The version that this project works with is Perl 5.18.2
+#### Note: 
+You need to have the latest `node` & `npm` versions 
 
-In Mac systems the safest way to install an old version of perl without downgrading the system's perl version is: 
-1) curl -L https://install.perlbrew.pl | bash
-2) source ~/perl5/perlbrew/etc/bashrc
-3) perlbrew init
-4) perlbrew install 5.18.2
-5) perlbrew switch perl-5.18.2
+Make sure to use `Perl 5.18.2`
+
+In Mac systems, the safest way to install an old version of Perl is: 
+
+```
+curl -L https://install.perlbrew.pl | bash
+source ~/perl5/perlbrew/etc/bashrc
+perlbrew init
+perlbrew install 5.18.2
+perlbrew switch perl-5.18.2
+```
 
 
 How to work with this project
