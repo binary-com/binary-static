@@ -20,7 +20,7 @@ function checkClientsCountry() {
 
 function limitLanguage(lang) {
     if (getLanguage() !== lang) {
-        window.location.href = URLForLanguage(lang);
+        window.location.href = URLForLanguage(lang); // need to redirect not using pjax
     }
     if (document.getElementById('select_language')) {
         $('.languages').remove();

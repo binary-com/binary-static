@@ -1,8 +1,9 @@
-const CharityPage = (function() {
+const Charity = (function() {
     const timeout = 5000;
     let gallery,
         images,
         interval = null;
+
     const onLoad = function() {
         const switchPicture = function() {
             images = gallery.find('img');
@@ -13,18 +14,18 @@ const CharityPage = (function() {
         gallery = $('.gallery');
         interval = window.setInterval(switchPicture, timeout);
     };
+
     const onUnload = function() {
         if (interval) {
             window.clearInterval(interval);
             interval = null;
         }
     };
+
     return {
         onLoad  : onLoad,
         onUnload: onUnload,
     };
 })();
 
-module.exports = {
-    CharityPage: CharityPage,
-};
+module.exports = Charity;

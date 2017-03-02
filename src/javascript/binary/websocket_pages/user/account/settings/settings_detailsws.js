@@ -28,7 +28,6 @@ const SettingsDetailsWS = (function() {
         isJP = residence === 'jp';
         if (isJP && !isVirtual) {
             $('#fieldset_email_consent').removeClass('invisible');
-            detect_hedging($('#trading_purpose'), $('.hedge'));
         }
         showHideTaxMessage();
     };
@@ -143,7 +142,7 @@ const SettingsDetailsWS = (function() {
                 { selector: '#address_line_1',     validations: ['req', 'general'] },
                 { selector: '#address_line_2',     validations: ['general'] },
                 { selector: '#address_city',       validations: ['req', 'letter_symbol'] },
-                { selector: 'input#address_state', validations: ['letter_symbol'] },
+                { selector: '#address_state',      validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'] },
                 { selector: '#address_postcode',   validations: ['postcode', ['length', { min: 0, max: 20 }]] },
                 { selector: '#phone',              validations: ['phone', ['length', { min: 6, max: 35 }]] },
 
@@ -238,6 +237,11 @@ const SettingsDetailsWS = (function() {
         }
         $field.val(get_settings_data.address_state);
         FormManager.init(formID, getValidations(get_settings_data));
+        if (isJP && !isVirtual) {
+            // detect_hedging needs to be called after FormManager.init
+            // or all previously bound event listeners on form elements will be removed
+            detect_hedging($('#trading_purpose'), $('.hedge'));
+        }
     };
 
     const onLoad = function() {
@@ -247,7 +251,7 @@ const SettingsDetailsWS = (function() {
         editable_fields = {};
         get_settings_data = {};
 
-        BinarySocket.wait('authorize', 'get_account_status', 'get_settings').then(() => {
+        BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();
             get_settings_data = State.get(['response', 'get_settings', 'get_settings']);
             getDetailsResponse(get_settings_data);
@@ -276,6 +280,4 @@ const SettingsDetailsWS = (function() {
     };
 })();
 
-module.exports = {
-    SettingsDetailsWS: SettingsDetailsWS,
-};
+module.exports = SettingsDetailsWS;

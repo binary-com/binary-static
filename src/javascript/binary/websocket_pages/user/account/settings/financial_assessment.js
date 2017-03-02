@@ -1,7 +1,6 @@
-const Client             = require('../../../../base/client').Client;
+const BinaryPjax         = require('../../../../base/binary_pjax');
 const localize           = require('../../../../base/localize').localize;
 const State              = require('../../../../base/storage').State;
-const url_for            = require('../../../../base/url').url_for;
 const showLoadingImage   = require('../../../../base/utility').showLoadingImage;
 const Content            = require('../../../../common_functions/content').Content;
 const japanese_client    = require('../../../../common_functions/country_base').japanese_client;
@@ -19,9 +18,8 @@ const FinancialAssessment = (() => {
 
     const onLoad = () => {
         if (japanese_client()) {
-            window.location.href = url_for('user/settingsws');
+            BinaryPjax.load('user/settingsws');
         }
-        if (checkIsVirtual()) return;
 
         Content.populate();
         $(form_selector).on('submit', (event) => {
@@ -100,17 +98,6 @@ const FinancialAssessment = (() => {
         if (show_form) {
             $(form_selector).removeClass(hidden_class);
         }
-    };
-
-    const checkIsVirtual = () => {
-        if (Client.get('is_virtual')) {
-            hideLoadingImg();
-            $(form_selector).addClass(hidden_class);
-            $('#msg_main').addClass('notice-msg center-text').removeClass(hidden_class).text(Content.localize().featureNotRelevantToVirtual);
-            hideLoadingImg(false);
-            return true;
-        }
-        return false;
     };
 
     const showFormMessage = (msg, isSuccess) => {

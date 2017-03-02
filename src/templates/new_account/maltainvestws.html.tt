@@ -207,7 +207,7 @@
                         <p>[% l('By clicking <strong>Accept</strong> below and proceeding with the Account Opening you should note that you may be exposing yourself to risks (which may be significant, including the risk of loss of the entire sum invested) that you may not have the knowledge and experience to properly assess or mitigate.') %]</p>
                         <p class="center-text">
                             <button class="button" type="submit">[% l('Accept') %]</button>
-                            <a class="button pjaxload" href="[% request.url_for('trading') %]"><span>[% l('Decline') %]</span></a>
+                            <a class="button" href="[% request.url_for('trading') %]"><span>[% l('Decline') %]</span></a>
                         </p>
                     </div>
                 </fieldset>
