@@ -22,7 +22,8 @@ const PortfolioInit = (() => {
         is_initialized,
         is_first_response;
 
-    const init = () => {
+    const onLoad = () => {
+        ViewPopupWS.viewButtonOnClick('#portfolio-table');
         hidden_class = 'invisible';
         updateBalance();
 
@@ -215,11 +216,6 @@ const PortfolioInit = (() => {
         }
     };
 
-    const onLoad = () => {
-        PortfolioInit.init();
-        ViewPopupWS.viewButtonOnClick('#portfolio-table');
-    };
-
     const onUnload = () => {
         if (!State.get('is_beta_trading') && !State.get('is_mb_trading')) {
             BinarySocket.send({ forget_all: 'proposal_open_contract' });
@@ -231,7 +227,6 @@ const PortfolioInit = (() => {
     };
 
     return {
-        init                      : init,
         updateBalance             : updateBalance,
         updatePortfolio           : updatePortfolio,
         updateIndicative          : updateIndicative,

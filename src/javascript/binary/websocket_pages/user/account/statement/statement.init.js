@@ -134,12 +134,6 @@ const StatementInit = (() => {
         StatementUI.clearTableContent();
     };
 
-    const initSocket = () => {
-        BinarySocket.send({ oauth_apps: 1 }).then((response) => {
-            addTooltip(StatementUI.setOauthApps(buildOauthApps(response.oauth_apps)));
-        });
-    };
-
     const initPage = () => {
         batch_size = 200;
         chunk_size = batch_size / 2;
@@ -148,8 +142,13 @@ const StatementInit = (() => {
         current_batch = [];
         transactions_received = 0;
         transactions_consumed = 0;
-        initSocket();
+
         Content.populate();
+        BinarySocket.send({ oauth_apps: 1 }).then((response) => {
+            addTooltip(StatementUI.setOauthApps(buildOauthApps(response.oauth_apps)));
+            $('.barspinner').addClass('hidden');
+        });
+
         getNextBatchStatement();
         loadStatementChunkWhenScroll();
     };

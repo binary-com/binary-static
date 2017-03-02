@@ -1,4 +1,3 @@
-const showLoadingImage = require('../../base/utility').showLoadingImage;
 const url_for_static   = require('../../base/url').url_for_static;
 const Content          = require('../../common_functions/content').Content;
 const Cookies          = require('../../../lib/js-cookie');
@@ -6,13 +5,14 @@ const Cookies          = require('../../../lib/js-cookie');
 const PaymentAgentList = (() => {
     'use strict';
 
-    let hidden_class,
-        ddl_countries_id,
-        $pa_list_container,
-        residence,
-        agent_template;
+    let $pa_list_container,
+        $agent_template,
+        ddl_countries_id;
 
-    const init = () => {
+    const hidden_class = 'hidden';
+
+    const onLoad = () => {
+        Content.populate();
         $(() => {
             $('#accordion').accordion({
                 heightStyle: 'content',
@@ -21,12 +21,11 @@ const PaymentAgentList = (() => {
             });
         });
 
-        hidden_class       = 'hidden';
         ddl_countries_id   = '#target_country';
         $pa_list_container = $('#pa_list');
-        agent_template     = $pa_list_container.find('#accordion').html();
+        $agent_template    = $pa_list_container.find('#accordion').html();
 
-        residence = Cookies.get('residence');
+        let residence = Cookies.get('residence');
         if (!residence || residence.length === 0) {
             residence = '00'; // just to get a list of payment agent Countries
         }
@@ -37,18 +36,13 @@ const PaymentAgentList = (() => {
     const sendRequest = (country, is_list) => {
         BinarySocket.send({
             paymentagent_list: country || $(ddl_countries_id).val(),
-            passthrough      : is_list ? { countries_list: '1' } : {},
         }).then((response) => {
-            responseHandler(response);
+            if (is_list) {
+                populateCountriesList(response);
+            } else {
+                populateAgentsList(response.paymentagent_list.list);
+            }
         });
-    };
-
-    const responseHandler = (response) => {
-        if (response.echo_req.passthrough && response.echo_req.passthrough.countries_list === '1') {
-            populateCountriesList(response);
-        } else {
-            populateAgentsList(response.paymentagent_list.list);
-        }
     };
 
     // --------------------------
@@ -72,6 +66,8 @@ const PaymentAgentList = (() => {
                 found = true;
             }
             insertListOption($ddl_countries, country[1], country[0]);
+            $('#target_country').removeClass(hidden_class);
+            $('.barspinner').addClass(hidden_class);
         });
 
         if (found) {
@@ -99,8 +95,6 @@ const PaymentAgentList = (() => {
             return;
         }
 
-        showLoadingImage($pa_list_container);
-
         const $accordion = $('<div/>', { id: 'accordion' });
 
         list.map((agent) => {
@@ -115,7 +109,7 @@ const PaymentAgentList = (() => {
             }
 
             $accordion.append(
-                agent_template
+                $agent_template
                     .replace(/%name/g, agent.name)
                     .replace(/%summary/g, agent.summary)
                     .replace(/%deposit_commission/g, agent.deposit_commission)
@@ -137,18 +131,12 @@ const PaymentAgentList = (() => {
     };
 
     const showEmptyListMsg = () => {
+        $('.barspinner').addClass(hidden_class);
         $('#no_paymentagent').removeClass(hidden_class);
     };
 
-    const onLoad = () => {
-        Content.populate();
-        init();
-    };
-
     return {
-        init           : init,
-        responseHandler: responseHandler,
-        onLoad         : onLoad,
+        onLoad: onLoad,
     };
 })();
 
