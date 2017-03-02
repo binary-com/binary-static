@@ -1,6 +1,6 @@
 const Client   = require('../../../base/client').Client;
-const Content  = require('../../../common_functions/content').Content;
 const localize = require('../../../base/localize').localize;
+const Content  = require('../../../common_functions/content').Content;
 
 const TopUpVirtual = (() => {
     'use strict';

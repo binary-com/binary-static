@@ -1,15 +1,15 @@
+const ProfitTable         = require('../profit_table');
+const Client              = require('../../../../base/client').Client;
+const localize            = require('../../../../base/localize').localize;
+const toJapanTimeIfNeeded = require('../../../../base/clock').Clock.toJapanTimeIfNeeded;
 const addComma            = require('../../../../common_functions/string_util').addComma;
 const Button              = require('../../../../common_functions/attach_dom/button').Button;
-const Client              = require('../../../../base/client').Client;
 const Content             = require('../../../../common_functions/content').Content;
 const elementTextContent  = require('../../../../common_functions/common_functions').elementTextContent;
 const format_money        = require('../../../../common_functions/currency_to_symbol').format_money;
 const japanese_client     = require('../../../../common_functions/country_base').japanese_client;
-const localize            = require('../../../../base/localize').localize;
-const ProfitTable         = require('../profit_table');
 const showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
 const Table               = require('../../../../common_functions/attach_dom/table').Table;
-const toJapanTimeIfNeeded = require('../../../../base/clock').Clock.toJapanTimeIfNeeded;
 
 const ProfitTableUI = (() => {
     'use strict';

@@ -1,13 +1,13 @@
-const Button              = require('../../../../common_functions/attach_dom/button').Button;
+const Statement           = require('../statement');
 const Client              = require('../../../../base/client').Client;
-const Content             = require('../../../../common_functions/content').Content;
 const downloadCSV         = require('../../../../base/utility').downloadCSV;
+const localize            = require('../../../../base/localize').localize;
+const toJapanTimeIfNeeded = require('../../../../base/clock').Clock.toJapanTimeIfNeeded;
+const Button              = require('../../../../common_functions/attach_dom/button').Button;
+const Content             = require('../../../../common_functions/content').Content;
 const japanese_client     = require('../../../../common_functions/country_base').japanese_client;
 const showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
-const Statement           = require('../statement');
-const localize            = require('../../../../base/localize').localize;
 const Table               = require('../../../../common_functions/attach_dom/table').Table;
-const toJapanTimeIfNeeded = require('../../../../base/clock').Clock.toJapanTimeIfNeeded;
 
 const StatementUI = (() => {
     'use strict';

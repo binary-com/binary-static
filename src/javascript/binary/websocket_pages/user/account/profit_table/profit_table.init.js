@@ -1,10 +1,10 @@
+const ProfitTableUI        = require('./profit_table.ui');
+const ViewPopupWS          = require('../../view_popup/view_popupws');
+const localize             = require('../../../../base/localize').localize;
+const showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
 const addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;
 const buildOauthApps       = require('../../../../common_functions/get_app_details').buildOauthApps;
 const Content              = require('../../../../common_functions/content').Content;
-const localize             = require('../../../../base/localize').localize;
-const showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
-const ProfitTableUI        = require('./profit_table.ui');
-const ViewPopupWS          = require('../../view_popup/view_popupws');
 
 const ProfitTable = (() => {
     let batch_size,

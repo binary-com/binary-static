@@ -1,7 +1,7 @@
-const Content          = require('../../common_functions/content').Content;
-const Cookies          = require('../../../lib/js-cookie');
 const showLoadingImage = require('../../base/utility').showLoadingImage;
 const url_for_static   = require('../../base/url').url_for_static;
+const Content          = require('../../common_functions/content').Content;
+const Cookies          = require('../../../lib/js-cookie');
 
 const PaymentAgentList = (() => {
     'use strict';

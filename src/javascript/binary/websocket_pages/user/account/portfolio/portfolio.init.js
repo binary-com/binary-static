@@ -1,16 +1,16 @@
-const addTooltip          = require('../../../../common_functions/get_app_details').addTooltip;
-const buildOauthApps      = require('../../../../common_functions/get_app_details').buildOauthApps;
-const Client              = require('../../../../base/client').Client;
-const format_money        = require('../../../../common_functions/currency_to_symbol').format_money;
-const localize            = require('../../../../base/localize').localize;
-const japanese_client     = require('../../../../common_functions/country_base').japanese_client;
 const Portfolio           = require('../portfolio');
+const ViewPopupWS         = require('../../view_popup/view_popupws');
+const Client              = require('../../../../base/client').Client;
+const localize            = require('../../../../base/localize').localize;
 const State               = require('../../../../base/storage').State;
 const showLoadingImage    = require('../../../../base/utility').showLoadingImage;
-const showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
 const toJapanTimeIfNeeded = require('../../../../base/clock').Clock.toJapanTimeIfNeeded;
 const url                 = require('../../../../base/url').url;
-const ViewPopupWS         = require('../../view_popup/view_popupws');
+const addTooltip          = require('../../../../common_functions/get_app_details').addTooltip;
+const buildOauthApps      = require('../../../../common_functions/get_app_details').buildOauthApps;
+const format_money        = require('../../../../common_functions/currency_to_symbol').format_money;
+const japanese_client     = require('../../../../common_functions/country_base').japanese_client;
+const showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
 
 const PortfolioInit = (() => {
     'use strict';

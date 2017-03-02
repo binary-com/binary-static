@@ -1,9 +1,9 @@
-const addComma            = require('../../../common_functions/string_util').addComma;
-const Client              = require('../../../base/client').Client;
-const format_money        = require('../../../common_functions/currency_to_symbol').format_money;
 const moment              = require('moment');
+const Client              = require('../../../base/client').Client;
 const localize            = require('../../../base/localize').localize;
 const toJapanTimeIfNeeded = require('../../../base/clock').Clock.toJapanTimeIfNeeded;
+const addComma            = require('../../../common_functions/string_util').addComma;
+const format_money        = require('../../../common_functions/currency_to_symbol').format_money;
 const toTitleCase         = require('../../../common_functions/string_util').toTitleCase;
 
 const Statement = (function() {

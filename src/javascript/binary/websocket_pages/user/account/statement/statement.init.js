@@ -1,16 +1,16 @@
+const moment               = require('moment');
+const StatementUI          = require('./statement.ui');
+const ViewPopupWS          = require('../../view_popup/view_popupws');
+const getLanguage          = require('../../../../base/language').getLanguage;
+const localize             = require('../../../../base/localize').localize;
+const showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
 const addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;
 const buildOauthApps       = require('../../../../common_functions/get_app_details').buildOauthApps;
 const Content              = require('../../../../common_functions/content').Content;
-const DatePicker           = require('../../../../components/date_picker').DatePicker;
 const dateValueChanged     = require('../../../../common_functions/common_functions').dateValueChanged;
-const getLanguage          = require('../../../../base/language').getLanguage;
 const japanese_client      = require('../../../../common_functions/country_base').japanese_client;
-const localize             = require('../../../../base/localize').localize;
-const moment               = require('moment');
-const showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
-const StatementUI          = require('./statement.ui');
 const toISOFormat          = require('../../../../common_functions/string_util').toISOFormat;
-const ViewPopupWS          = require('../../view_popup/view_popupws');
+const DatePicker           = require('../../../../components/date_picker').DatePicker;
 
 const StatementInit = (() => {
     'use strict';
