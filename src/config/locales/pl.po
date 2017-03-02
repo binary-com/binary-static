@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-01 21:14+0000\n"
+"PO-Revision-Date: 2017-03-02 10:15+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>"
+"\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.12-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -123,10 +125,11 @@ msgstr "%1 oferuje ciekawe stanowiska dla specjalistów ds. obsługi klienta."
 msgid "%1 has thousands of clients taking a variety of positions on the financial markets at any one time, and earns a small margin on these trades."
 msgstr "%1 ma tysiące klientów, zawierających transakcje na rynkach finansowych o dowolnej porze. Zarobek %1 stanowi jedynie niewielka marża pobierana od zawieranych zakładów."
 
-#, fuzzy
-#| msgid "%1 has updated its <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
 msgid "%1 has updated its <a href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a href=\"%2\">Terms & Conditions</a>."
-msgstr "Firma %1 zaktualizowała swój <a class=\"pjaxload\" href=\"%2\">Regulamin</a>. Kliknięcie OK oznacza, że zapoznałeś/aś się z zaktualizowanym <a class=\"pjaxload\" href=\"%2\">Regulaminem</a> i wyrażasz zgodę na jego postanowienia."
+msgstr ""
+"Firma %1 zaktualizowała swój <a href=\"%2\">Regulamin</a>. Kliknięcie OK "
+"oznacza, że zapoznałeś/aś się z zaktualizowanym <a href=\"%2\""
+">Regulaminem</a> i wyrażasz zgodę na jego postanowienia."
 
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr "%1 ma już milion użytkowników, co jest rekordem w historii naszej działalności. Nieprzerwany szybki rozwój naszej firmy potwierdza naszą pozycję lidera na rynku."
@@ -188,10 +191,12 @@ msgstr "%1 zatrudni managera ds. programu partnerskiego, którego zadaniem będz
 msgid "%1 offers a range of common deposit and withdrawal methods, from credit and debit cards to bank wires, e-cash and e-wallets."
 msgstr "%1 oferuje pełną gamę metod wpłaty i wypłaty środków, w tym wypłatę za pomocą kart kredytowych i kart debetowych, poprzez przelewy bankowe oraz przy użyciu e-gotówki lub e-portfela."
 
-#, fuzzy
-#| msgid "%1 offers a virtual-money account so you can get the hang of trading binaries. Why not <a class='pjaxload' href='%2'>open a free $10k fully-functional virtual-money account</a>, and start learning how to trade."
 msgid "%1 offers a virtual-money account so you can get the hang of trading binaries. Why not <a href='%2'>open a free $10k fully-functional virtual-money account</a>, and start learning how to trade."
-msgstr "%1 ma w ofercie konto z wirtualnymi pieniędzmi, dzięki któremu możesz przećwiczyć handel opcjami binarnymi. Warto <a class='pjaxload' href='%2'>otworzyć w pełni funkcjonalne wirtualne konto z kwotą 10 tys. $</a> i zacząć naukę handlowania."
+msgstr ""
+"%1 ma w ofercie konto z wirtualnymi pieniędzmi, dzięki któremu możesz "
+"przećwiczyć handel opcjami binarnymi. Warto <a href='%2'>otworzyć w pełni "
+"funkcjonalne wirtualne konto z kwotą 10 tys. $</a> i zacząć naukę "
+"handlowania."
 
 msgid "%1 offers five main types of trades that will help you execute your market view or strategy:"
 msgstr "%1 oferuje pięć głównych rodzajów zakładów, które pomogą Ci zrozumieć rynek i wprowadzić w życie Twoją strategię:"
@@ -836,15 +841,16 @@ msgstr "Saldo konta:"
 msgid "Account balance: "
 msgstr "Saldo konta: "
 
-#, fuzzy
-#| msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgid "Account needs age verification, please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "W przypadku tego konta wymagana jest weryfikacja wieku, proszę skontaktować się z <a class=\"pjaxload\" href=\"%1\">działem obsługi klienta</a>, aby uzyskać więcej informacji."
+msgstr ""
+"W przypadku tego konta wymagana jest weryfikacja wieku, proszę skontaktować "
+"się z <a href=\"%1\">działem obsługi klienta</a>, aby uzyskać więcej "
+"informacji."
 
-#, fuzzy
-#| msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgid "Account not activated, please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "Konto nie zostało aktywowane, proszę skontaktować się z <a class=\"pjaxload\" href=\"%1\">działem obsługi klienta</a>, aby uzyskać więcej informacji."
+msgstr ""
+"Konto nie zostało aktywowane, proszę skontaktować się z <a href=\"%1\">"
+"działem obsługi klienta</a>, aby uzyskać więcej informacji."
 
 msgid "Account type"
 msgstr "Rodzaj konta"
@@ -1113,10 +1119,8 @@ msgstr "Aplikacje"
 msgid "Apply a meticulous eye for detail in proofreading the content that appears on the company's website, blog, social media outlets, and marketing materials."
 msgstr "Zwracanie uwagi na szczegóły podczas dokładnego sprawdzania treści pojawiających się na stronie internetowej firmy, na blogach, w mediach społecznościowych i materiałach marketingowych."
 
-#, fuzzy
-#| msgid "Apply to become a %1 <a class=\"pjaxload\" href=\"%2\">payment agent</a>."
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
-msgstr "Złóż wniosek, aby zostać <a class=\"pjaxload\" href=\"%2\">pośrednikiem płatności %1</a>."
+msgstr "Złóż wniosek, aby zostać <a href=\"%2\">pośrednikiem płatności %1</a>."
 
 msgid "Apply to become a Payment Agent"
 msgstr "Złóż wniosek, aby zostać pośrednikiem płatności"
@@ -2903,10 +2907,10 @@ msgstr "Financial Asset"
 msgid "Financial Information"
 msgstr "Informacje finansowe"
 
-#, fuzzy
-#| msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgid "Financial Risk approval is required. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "Wymagane jest zatwierdzenie dot. ryzyka finansowego. Proszę skontaktować się z <a class=\"pjaxload\" href=\"%1\">działem obsługi klienta</a>, aby uzyskać więcej informacji."
+msgstr ""
+"Wymagane jest zatwierdzenie dot. ryzyka finansowego. Proszę skontaktować się "
+"z <a href=\"%1\">działem obsługi klienta</a>, aby uzyskać więcej informacji."
 
 msgid "Financial asset"
 msgstr "Aktywa finansowe"
@@ -3454,10 +3458,10 @@ msgstr ""
 msgid "If you meet our basic requirements, we'll send you a talent test."
 msgstr "Jeśli spełniasz podstawowe wymagania, prześlemy Ci test kompetencji."
 
-#, fuzzy
-#| msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
 msgid "If you need assistance feel free to contact our <a href=\"%1\">Customer Support</a>."
-msgstr "Jeśli potrzebujesz pomocy, skontaktuj się z naszym <a class=\"pjaxload\" href=\"%1\">działem obsługi klienta</a>."
+msgstr ""
+"Jeśli potrzebujesz pomocy, skontaktuj się z naszym <a href=\"%1\">działem "
+"obsługi klienta</a>."
 
 msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
 msgstr "Jeśli wcześniej pobrano MetaTrader 5 bezpośrednio ze strony MetaTrader, należy wybrać „%1” z listy dostępnych brokerów."
@@ -3563,10 +3567,13 @@ msgstr "Jeśli chcą Państwo złożyć skargę dotyczącą naszych usług, pros
 msgid "If you're a broker we'd like to work with you. You will be introducing your clients to a unique and innovative product - the %1 trading platform."
 msgstr "Jeżeli jesteś brokerem, chcielibyśmy nawiązać z Tobą współpracę. Będziesz przedstawiał swoim klientom nasz unikatowy i innowacyjny produkt – platformę handlową %1."
 
-#, fuzzy
-#| msgid "If you're an individual trader, you'll appreciate the simplicity, flexibility, and limited risk of binary trading. With %1's low minimum stakes, you'll soon learn how to trade with skill and confidence. And if you have any questions, you're free to access <a class='pjaxload' href='%2'>our helpful support desk</a>."
 msgid "If you're an individual trader, you'll appreciate the simplicity, flexibility, and limited risk of binary trading. With %1's low minimum stakes, you'll soon learn how to trade with skill and confidence. And if you have any questions, you're free to access <a href='%2'>our helpful support desk</a>."
-msgstr "Jeśli jesteś nieprofesjonalnym graczem, na pewno docenisz prostotę, elastyczność i ograniczone ryzyko handlu opcjami binarnymi. Dzięki niskim stawkom minimalnym dostępnym na %1 szybko nauczysz się, jak sprawnie i pewnie handlować. Jeśli masz pytania, zawsze możesz skontaktować się z naszym <a class='pjaxload' href='%2'>zespołem wsparcia</a>."
+msgstr ""
+"Jeśli jesteś nieprofesjonalnym graczem, na pewno docenisz prostotę, "
+"elastyczność i ograniczone ryzyko handlu opcjami binarnymi. Dzięki niskim "
+"stawkom minimalnym dostępnym na %1 szybko nauczysz się, jak sprawnie i "
+"pewnie handlować. Jeśli masz pytania, zawsze możesz skontaktować się z "
+"naszym <a href='%2'>zespołem wsparcia</a>."
 
 msgid "If you're looking to build a career, and not a resume, talk to us, %1. We're one of the IT world's most vibrant and progressive workplaces."
 msgstr "Jeśli zależy Ci na rozwoju kariery, a nie na wyglądzie CV, odezwij się do %1. Jesteśmy jednym z najbardziej aktywnych i innowacyjnych pracodawców w branży IT na świecie."
@@ -5316,10 +5323,12 @@ msgstr "Nasze zaangażowanie w zapewnieniu Ci „najkorzystniejszej realizacji�
 msgid "Our company continues to thrive and obtains a license in the Isle of Man to better service our UK clients."
 msgstr "Nasz firma rozwija się i zdobywa licencję na Wyspie Man, aby jeszcze lepiej służyć klientom z Wielkiej Brytanii."
 
-#, fuzzy
-#| msgid "Our costs and charges for depositing and withdrawing money are set out <a href=\"%1\" class=\"pjaxload\">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability."
 msgid "Our costs and charges for depositing and withdrawing money are set out <a href=\"%1\">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability."
-msgstr "Pobierane przez nas opłaty za wpłaty i wypłaty środków pieniężnych są określone <a href=\"%1\" class=\"pjaxload\">tutaj</a>. Prosimy o zapoznanie się z wszystkimi kosztami i opłatami, które mają zastosowanie w Twoim przypadku, gdyż będą one miały wpływ na Twoją rentowność."
+msgstr ""
+"Pobierane przez nas opłaty za wpłaty i wypłaty środków pieniężnych są "
+"określone <a href=\"%1\">tutaj</a>. Prosimy o zapoznanie się z wszystkimi "
+"kosztami i opłatami, które mają zastosowanie w Twoim przypadku, gdyż będą "
+"one miały wpływ na Twoją rentowność."
 
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "Nasi klienci ewidentnie nas lubią. W połowie 2014 r. %1 ma ponad 100 mln. transakcji historycznych i ponad 130 tys. nowych transakcji dziennie."
@@ -5537,10 +5546,8 @@ msgstr "Platformy"
 msgid "Please %1 to view this page"
 msgstr "Zaloguj się, aby wyświetlić tę stronę"
 
-#, fuzzy
-#| msgid "Please %1 to view this page"
 msgid "Please <a href=\"%1\">log in</a> to view this page."
-msgstr "Zaloguj się, aby wyświetlić tę stronę"
+msgstr "<a href=\"%1\">Zaloguj się</a>, aby wyświetlić tę stronę."
 
 msgid "Please accept the terms and conditions."
 msgstr "Proszę zaakceptować regulamin."
@@ -6115,15 +6122,15 @@ msgstr "Klienci detaliczni"
 msgid "Return"
 msgstr "Zwrot"
 
-#, fuzzy
-#| msgid "Returns above 100% on simple <a href='%1' class='pjaxload'>rise/fall</a> contracts."
 msgid "Returns above 100% on simple <a href='%1'>rise/fall</a> contracts."
-msgstr "Zwroty powyżej 100% w przypadku prostych kontraktów <a href='%1' class='pjaxload'>wzrost/spadek</a>."
+msgstr ""
+"Zwroty powyżej 100% w przypadku prostych kontraktów <a "
+"href='%1'>wzrost/spadek</a>."
 
-#, fuzzy
-#| msgid "Returns above 1000% on <a href='%1' class='pjaxload'>higher/lower</a> and <a href='%2' class='pjaxload'>touch/no-touch</a> trades."
 msgid "Returns above 1000% on <a href='%1'>higher/lower</a> and <a href='%2'>touch/no-touch</a> trades."
-msgstr "Zyski przekraczające 1000% w przypadku zakładów <a href='%1' class='pjaxload'>wyższe/niższe</a> oraz <a href='%2' class='pjaxload'>osiągnie/nie osiągnie</a>."
+msgstr ""
+"Zyski przekraczające 1000% w przypadku zakładów <a "
+"href='%1'>wyższe/niższe</a> oraz <a href='%2'>osiągnie/nie osiągnie</a>."
 
 msgid "Review suspicious account transactions"
 msgstr "Zobacz podejrzane transakcje na Twoim koncie"
@@ -7079,19 +7086,20 @@ msgstr "Wysokość prowizji, jaką chcesz pobierać od Klientów za wpłaty i wy
 msgid "The company does not guarantee the ability to sell a contract prior to its expiration time."
 msgstr "Firma nie gwarantuje możliwości sprzedaży kontraktu przed upływem jego daty wygaśnięcia."
 
-#, fuzzy
-#| msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1'>here.</a>"
-msgstr "Firma oferuje różne metody wpłaty środków. Każda z nich posiada własne godziny dla wpłat i wypłaty mogą nie być dostępne w niektórych z nich. Wszystkie szczegóły dotyczące dostępnych metod dokonywania wpłat i wypłat, w tym godziny rozliczeń są dostępne <a href='%1' class='pjaxload'>tutaj.</a>"
+msgstr ""
+"Firma oferuje różne metody wpłaty środków. Każda z nich posiada własne "
+"godziny dla wpłat i wypłaty mogą nie być dostępne w niektórych z nich. "
+"Wszystkie szczegóły dotyczące dostępnych metod dokonywania wpłat i wypłat, w "
+"tym godziny rozliczeń są dostępne <a href='%1'>tutaj.</a>"
 
-#, fuzzy
-#| msgid ""
-#| "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer\n"
-#| "                funds at the level: <strong>medium protection</strong>."
 msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
 msgstr ""
-"Firma przechowuje środki klientów na innych rachunkach bankowych niż rachunek operacyjny. W przypadku niewypłacalności firmy rachunki te nie będą stanowiły jej aktywów. Tym samym spełnione zostają wymagania instytucji Gambling Commission dotyczące oddzielenia funduszy klientów\n"
-"                na następującym poziomie: <strong>średnia ochrona</strong>."
+"Firma przechowuje środki klientów na innych rachunkach bankowych niż "
+"rachunek operacyjny. W przypadku niewypłacalności firmy rachunki te nie będą "
+"stanowiły jej aktywów. Tym samym spełnione zostają wymagania instytucji "
+"Gambling Commission dotyczące oddzielenia funduszy klientów na następującym "
+"poziomie: <strong>średnia ochrona</strong>."
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency."
 msgstr "Firma przechowuje środki klientów na innych rachunkach bankowych niż rachunek operacyjny Podjęto również działania, aby zapewnić, że aktywa zgromadzone na kontach klientów zostaną zwrócone klientom w przypadku niewypłacalności firmy."
@@ -7338,10 +7346,10 @@ msgstr "Wystąpił błąd podczas uzyskiwania dostępu do serwera w trakcie zaku
 msgid "There was a problem accessing the server."
 msgstr "Wystąpił błąd podczas uzyskiwania dostępu do serwera."
 
-#, fuzzy
-#| msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
 msgid "There was a problem validating your personal details. Please update your %1 <a href=\"%2\">here</a>."
-msgstr "Nie udało nam się zweryfikować Twoich danych osobowych. Zaktualizuj <a class=\"pjaxload\" href=\"%2\">tutaj</a>."
+msgstr ""
+"Nie udało nam się zweryfikować Twoich danych osobowych. Zaktualizuj <a href="
+"\"%2\">tutaj</a>."
 
 msgid "There was an error"
 msgstr "Wystąpił błąd"
