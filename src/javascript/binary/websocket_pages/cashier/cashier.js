@@ -25,8 +25,8 @@ const Cashier = (function() {
                 BinaryPjax(default_redirect_url());
                 return;
             }
-            showContent();
         }
+        showContent();
     };
 
     return {

@@ -19,6 +19,7 @@ sub all_pages {
         ['regulation',                 'legal/regulation',             'default',    'Regulation'],
         ['styles',                     'home/styles',                  'full_width', 'Styles'],
         ['affiliate/signup',           'affiliates/signup',            'default',    'Affiliate',            'ja'],
+        ['affiliate/signup-jp',        'japan/affiliates/signup',      'default',    'Affiliate',            'NOT-ja,en'],
         ['user/browser-support',       'misc/logintrouble',            'default',    'Login trouble'],
         ['endpoint',                   'misc/endpoint',                'default',    'Endpoint'],
         ['legal/us_patents',           'legal/us_patents',             'default',    'US Patents',           'ja'],
