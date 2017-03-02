@@ -17,7 +17,7 @@ const WhyUs              = require('../static_pages/why_us');
 const AccountTransferWS          = require('../websocket_pages/cashier/account_transferws');
 const Cashier                    = require('../websocket_pages/cashier/cashier');
 const DepositWithdraw            = require('../websocket_pages/cashier/deposit_withdraw');
-const PaymentAgentListWS         = require('../websocket_pages/cashier/payment_agent_listws');
+const PaymentAgentList           = require('../websocket_pages/cashier/payment_agent_list');
 const PaymentAgentWithdrawWS     = require('../websocket_pages/cashier/payment_agent_withdrawws');
 const MBTradePage                = require('../websocket_pages/mb_trade/mb_tradepage');
 const AssetIndexUI               = require('../websocket_pages/resources/asset_index/asset_indexws.ui');
@@ -39,7 +39,7 @@ const Settings                   = require('../websocket_pages/user/account/sett
 const SelfExclusionWS            = require('../websocket_pages/user/account/settings/self_exclusion');
 const SettingsDetailsWS          = require('../websocket_pages/user/account/settings/settings_detailsws');
 const StatementWS                = require('../websocket_pages/user/account/statement/statement.init');
-const TopUpVirtualWS             = require('../websocket_pages/user/account/top_up_virtualws');
+const TopUpVirtual               = require('../websocket_pages/user/account/top_up_virtual');
 const LostPassword               = require('../websocket_pages/user/lost_password');
 const MetaTrader                 = require('../websocket_pages/user/metatrader/metatrader');
 const FinancialAccOpening        = require('../websocket_pages/user/new_account/financial_acc_opening');
@@ -80,7 +80,7 @@ const pages_config = {
     market_timesws           : { module: MarketTimesUI },
     metatrader               : { module: MetaTrader,                 is_authenticated: true },
     multi_barriers_trading   : { module: MBTradePage },
-    payment_agent_listws     : { module: PaymentAgentListWS },
+    payment_agent_listws     : { module: PaymentAgentList },
     payment_methods          : { module: Cashier.PaymentMethods },
     platforms                : { module: Platforms },
     portfoliows              : { module: PortfolioWS,                is_authenticated: true },
@@ -94,7 +94,7 @@ const pages_config = {
     signup                   : { module: StaticPages.AffiliateSignup },
     statementws              : { module: StatementWS,                is_authenticated: true },
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
-    top_up_virtualws         : { module: TopUpVirtualWS,             is_authenticated: true, only_virtual: true },
+    top_up_virtualws         : { module: TopUpVirtual,              is_authenticated: true, only_virtual: true },
     trading                  : { module: TradePage },
     trading_beta             : { module: TradePage_Beta },
     transferws               : { module: PaymentAgentTransferSocket, is_authenticated: true, only_real: true },

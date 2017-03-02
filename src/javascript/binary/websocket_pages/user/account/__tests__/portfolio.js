@@ -1,5 +1,5 @@
 const expect    = require('chai').expect;
-const portfolio = require('../portfolio').Portfolio;
+const portfolio = require('../portfolio');
 const ws        = require('ws');
 const LiveApi   = require('binary-live-api').LiveApi;
 

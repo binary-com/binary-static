@@ -1,20 +1,19 @@
-const showLoadingImage = require('../../base/utility').showLoadingImage;
-const Cookies          = require('../../../lib/js-cookie');
 const Content          = require('../../common_functions/content').Content;
+const Cookies          = require('../../../lib/js-cookie');
+const showLoadingImage = require('../../base/utility').showLoadingImage;
 const url_for_static   = require('../../base/url').url_for_static;
 
-const PaymentAgentListWS = (function() {
+const PaymentAgentList = (() => {
     'use strict';
 
-    let hiddenClass,
-        ddlCountriesID,
-        $paListContainer,
+    let hidden_class,
+        ddl_countries_id,
+        $pa_list_container,
         residence,
-        agentTemplate;
+        agent_template;
 
-
-    const init = function() {
-        $(function() {
+    const init = () => {
+        $(() => {
             $('#accordion').accordion({
                 heightStyle: 'content',
                 collapsible: true,
@@ -22,10 +21,10 @@ const PaymentAgentListWS = (function() {
             });
         });
 
-        hiddenClass = 'hidden';
-        ddlCountriesID = '#target_country';
-        $paListContainer = $('#pa_list');
-        agentTemplate = $paListContainer.find('#accordion').html();
+        hidden_class       = 'hidden';
+        ddl_countries_id   = '#target_country';
+        $pa_list_container = $('#pa_list');
+        agent_template     = $pa_list_container.find('#accordion').html();
 
         residence = Cookies.get('residence');
         if (!residence || residence.length === 0) {
@@ -35,14 +34,16 @@ const PaymentAgentListWS = (function() {
         sendRequest(residence, true);
     };
 
-    const sendRequest = function(country, isList) {
+    const sendRequest = (country, is_list) => {
         BinarySocket.send({
-            paymentagent_list: country || $(ddlCountriesID).val(),
-            passthrough      : isList ? { countries_list: '1' } : {},
+            paymentagent_list: country || $(ddl_countries_id).val(),
+            passthrough      : is_list ? { countries_list: '1' } : {},
+        }).then((response) => {
+            responseHandler(response);
         });
     };
 
-    const responseHandler = function(response) {
+    const responseHandler = (response) => {
         if (response.echo_req.passthrough && response.echo_req.passthrough.countries_list === '1') {
             populateCountriesList(response);
         } else {
@@ -53,60 +54,60 @@ const PaymentAgentListWS = (function() {
     // --------------------------
     // ----- Countries List -----
     // --------------------------
-    const populateCountriesList = function(response) {
-        const $ddlCountries = $(ddlCountriesID);
-        $ddlCountries.empty();
+    const populateCountriesList = (response) => {
+        const $ddl_countries = $(ddl_countries_id);
+        $ddl_countries.empty();
 
-        const cList = response.paymentagent_list.available_countries;
-        if (cList.length === 0) {
-            $ddlCountries.parent().addClass(hiddenClass);
+        const countries = response.paymentagent_list.available_countries;
+        if (countries.length === 0) {
+            $ddl_countries.parent().addClass(hidden_class);
             showEmptyListMsg();
             return;
         }
 
-        const requestedCountry = response.echo_req.paymentagent_list;
+        const requested_country = response.echo_req.paymentagent_list;
         let found = false;
-        cList.map(function(country) {
-            if (country === requestedCountry) {
+        countries.map((country) => {
+            if (country === requested_country) {
                 found = true;
             }
-            insertListOption($ddlCountries, country[1], country[0]);
+            insertListOption($ddl_countries, country[1], country[0]);
         });
 
         if (found) {
-            $ddlCountries.val(requestedCountry);
+            $ddl_countries.val(requested_country);
             populateAgentsList(response.paymentagent_list.list);
         } else {
             sendRequest();
         }
 
-        $ddlCountries.change(function() {
+        $ddl_countries.change(() => {
             sendRequest();
         });
     };
 
-    const insertListOption = function($ddlObject, itemText, itemValue) {
-        $ddlObject.append($('<option/>', { value: itemValue, text: itemText }));
+    const insertListOption = ($ddl_object, item_text, item_value) => {
+        $ddl_object.append($('<option/>', { value: item_value, text: item_text }));
     };
 
     // -----------------------
     // ----- Agents List -----
     // -----------------------
-    const populateAgentsList = function(list) {
+    const populateAgentsList = (list) => {
         if (!list || list.length === 0) {
             showEmptyListMsg();
             return;
         }
 
-        showLoadingImage($paListContainer);
+        showLoadingImage($pa_list_container);
 
         const $accordion = $('<div/>', { id: 'accordion' });
 
-        list.map(function(agent) {
+        list.map((agent) => {
             let supported_banks = '';
             if (agent.supported_banks && agent.supported_banks.length > 0) {
                 const banks = agent.supported_banks.split(',');
-                banks.map(function(bank) {
+                banks.map((bank) => {
                     supported_banks += bank.length === 0 ?
                         '' :
                         '<img src="' + url_for_static('images/pages/payment_agent/banks/' + bank.toLowerCase() + '.png') + '" alt="' + bank + '" title="' + bank + '" />';
@@ -114,7 +115,7 @@ const PaymentAgentListWS = (function() {
             }
 
             $accordion.append(
-                agentTemplate
+                agent_template
                     .replace(/%name/g, agent.name)
                     .replace(/%summary/g, agent.summary)
                     .replace(/%deposit_commission/g, agent.deposit_commission)
@@ -126,7 +127,7 @@ const PaymentAgentListWS = (function() {
                     .replace(/%supported_banks/g, supported_banks));
         });
 
-        $paListContainer.empty().append($accordion);
+        $pa_list_container.empty().append($accordion);
 
         $('#accordion').accordion({
             heightStyle: 'content',
@@ -135,21 +136,11 @@ const PaymentAgentListWS = (function() {
         });
     };
 
-    const showEmptyListMsg = function() {
-        $('#no_paymentagent').removeClass(hiddenClass);
+    const showEmptyListMsg = () => {
+        $('#no_paymentagent').removeClass(hidden_class);
     };
 
-    const onLoad = function() {
-        BinarySocket.init({
-            onmessage: function(msg) {
-                const response = JSON.parse(msg.data);
-                if (response) {
-                    if (response.msg_type === 'paymentagent_list') {
-                        responseHandler(response);
-                    }
-                }
-            },
-        });
+    const onLoad = () => {
         Content.populate();
         init();
     };
@@ -161,4 +152,4 @@ const PaymentAgentListWS = (function() {
     };
 })();
 
-module.exports = PaymentAgentListWS;
+module.exports = PaymentAgentList;
