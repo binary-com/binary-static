@@ -216,8 +216,8 @@ const Header = (function() {
                         ['<a href="' + url_for('user/settings/detailsws') + '">', '</a>']),
                     tnc: () => localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',
                         ['<a href="' + url_for('user/tnc_approvalws') + '">', '</a>']),
-                    unwelcome: () => localize('Your account is restricted - kindly [_1]contact customer support[_2] for assistance.',
-                        ['<a href="mailto:support@binary.com">', '</a>']),
+                    unwelcome: () => localize('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',
+                        ['<a href="' + url_for('contact') + '">', '</a>']),
                 };
 
                 const validations = {
