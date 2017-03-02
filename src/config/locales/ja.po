@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-02 02:19+0000\n"
+"PO-Revision-Date: 2017-03-02 06:24+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -1706,10 +1706,8 @@ msgstr "API エンドポイントの変更"
 msgid "Change Password"
 msgstr "パスワード変更"
 
-#, fuzzy
-#| msgid "in aggregate over the lifetime of your account."
 msgid "Change the Stop Out Level in relation to your account."
-msgstr "ロスカットのレベルを変更する"
+msgstr "ロスカットレベルを変更する"
 
 msgid "Change the margin rate in relation to both Open Positions and new orders;"
 msgstr ""
@@ -1854,8 +1852,6 @@ msgstr "Binary (IOM) Ltdでご登録されたお客様は、ADR法人の裁定�
 msgid "Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the MFSA's Consumer Complaints Manager. Details on making a complaint with the MFSA's Consumer Complaints Manager as well as their contact details can be found here: %1. Complaints to the MFSA's Consumer Complaints Manager should always be made in writing."
 msgstr "Binary Investments (Europe) Ltdに登録いただいたお客さまは、未解決のやりとりをMFSA消費者苦情管理まで問題を提起していただくことが可能です。MFSA消費者苦情管理のお問い合わせ同様、苦情の申し立てについての情報は%1からご確認いただけます。MSFA消費者苦情管理への申し立ては、常に文書での提出をお願い致します。"
 
-#, fuzzy
-#| msgid "Clients registered with Binary (C.R.) S.A. can raise their unresolved disputes with management by submitting an email to complaints@binary.com."
 msgid "Clients registered with any Group company, and in particular with Binary (V) Ltd. or Binary (C.R.). S.A., can raise their unresolved disputes with management by submitting an email to <a href='mailto:%1'>%1</a>."
 msgstr "Binary (C.R.) S.A.にご口座を開設されたお客さまは、 complaints@binary.comまでご連絡頂くことで当社のマネージメントに苦情を申し立てることができます。"
 
@@ -2682,8 +2678,6 @@ msgstr "推定純資産"
 msgid "Ethics Code"
 msgstr "倫理コード"
 
-#, fuzzy
-#| msgid "Euro 50 Index"
 msgid "Euro 50 Cash Index"
 msgstr "ユーロ50インデックス"
 
@@ -2930,10 +2924,8 @@ msgstr "金融資産"
 msgid "Financial Information"
 msgstr "金融情報"
 
-#, fuzzy
-#| msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgid "Financial Risk approval is required. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "金融リスクの商品が必要です。詳細については<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
+msgstr "金融リスクの商品が必要です。詳細については<a href=\"%1\">カスタマーサポート</a>までお問い合わせください。"
 
 msgid "Financial asset"
 msgstr "金融資産"
@@ -3034,10 +3026,8 @@ msgstr "外国為替、ボラティリティインデックス"
 msgid "Fr"
 msgstr "金"
 
-#, fuzzy
-#| msgid "French Index"
 msgid "France 40 Cash Index"
-msgstr "French Index"
+msgstr "フランス 40インデックス"
 
 msgid "Fraud and Money Laundering"
 msgstr "詐欺行為、及び資金洗浄について"
@@ -3072,15 +3062,11 @@ msgstr "金曜日"
 msgid "Front-End (Javascript) Development"
 msgstr "フロントエンド（Javascript）開発"
 
-#, fuzzy
-#| msgid "Account Transfer"
 msgid "Fund Transfers"
 msgstr "口座振替"
 
-#, fuzzy
-#| msgid "Real Account"
 msgid "Funding of Real Account"
-msgstr "リアル口座番号"
+msgstr "リアル口座へ振替"
 
 msgid "Further Instructions"
 msgstr "詳細説明"
@@ -3094,8 +3080,6 @@ msgstr "また、当社ではそのような状況、またはその他状況下
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgstr "また、いかなる誤動作、アクセス不能、不適切な装置の使用による%1 API使用への悪条件、またはインターネットサービスプロバイダーとインターネットネットワークの飽和、及びその他の理由が原因での障害において当社は一切の責任を負いません。"
 
-#, fuzzy
-#| msgid "Margin FX"
 msgid "G. Margin"
 msgstr "外国為替証拠金取引"
 
@@ -3143,10 +3127,8 @@ msgstr "クライアントの取引動向をまとめた定期報告書または
 msgid "Generous Commission Structure"
 msgstr "優れた報酬体系"
 
-#, fuzzy
-#| msgid "German OTC Index"
 msgid "German 30 Cash Index"
-msgstr "ドイツ 店頭インデックス"
+msgstr "ドイツ 30インデックス"
 
 msgid "Germany"
 msgstr "ドイツ"
@@ -3220,15 +3202,11 @@ msgstr "最大で３５％までをレベニューシェアとして還元"
 msgid "Group History"
 msgstr "グループの沿革"
 
-#, fuzzy
-#| msgid "Monitoring and review of this Policy"
 msgid "H. Monitoring and Review"
-msgstr "本ポリシーのモニターと閲覧"
+msgstr "H. 本ポリシーのモニターとレビュー"
 
-#, fuzzy
-#| msgid "Regulatory Information"
 msgid "H. Regulatory Provisions"
-msgstr "監督機関の情報"
+msgstr "H. 監督機関の提供"
 
 msgid "Hands-on test automation experience a plus"
 msgstr "実践的なテスト自動化の経験があると好ましい"
@@ -3317,10 +3295,8 @@ msgstr ""
 msgid "How soon can I start trading?"
 msgstr "口座開設の所要時間は？"
 
-#, fuzzy
-#| msgid "How to trade the random markets?"
 msgid "How to read the table above"
-msgstr "ランダムマーケットの取引方法"
+msgstr "上記テーブルの読み方"
 
 msgid "How to trade binary options?"
 msgstr "バイナリーオプション取引方法"
@@ -3375,10 +3351,8 @@ msgstr "本取引により想定される損失額（中途売却または解約
 msgid "I'm new to binaries, where do I start?"
 msgstr "バイナリー取引未経験者です。どうしたら取引を開始できますか？"
 
-#, fuzzy
-#| msgid "Quote"
 msgid "I. Quotes"
-msgstr "引用"
+msgstr "I. 引用"
 
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
 msgstr ""
@@ -3485,10 +3459,8 @@ msgstr ""
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr "当社の<a target='_blank' href='%1'>オープンソースコード</a>で脆弱性を発見されましたら、お気軽にGitHubでプルリクエストをしてください。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
 msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
-msgstr "詳細につきまして、カスタマーサポート<a href='mailto:%1'>%1</a>までご連絡ください"
+msgstr "詳細につきまして、カスタマーサポート<a href=\"mailto:%1\">%1</a>までご連絡ください"
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr ""
@@ -3505,13 +3477,9 @@ msgstr ""
 msgid "If you meet our basic requirements, we'll send you a talent test."
 msgstr "当社の基本的な要求基準に見合う場合は、テストのご連絡をいたします。"
 
-#, fuzzy
-#| msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
 msgid "If you need assistance feel free to contact our <a href=\"%1\">Customer Support</a>."
-msgstr "ご不明な点がございましたら、<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までお気軽にお問い合わせ下さい。"
+msgstr "ご不明な点がございましたら、<a href=\"%1\">カスタマーサポート</a>までお気軽にお問い合わせ下さい。"
 
-#, fuzzy
-#| msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
 msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
 msgstr "MetaTrader 5をMetaTraderのサイトから既に直接ダウンロードされている場合は、利用できるブローカーのリストから“%1”をご選択ください。"
 
@@ -3608,18 +3576,14 @@ msgstr "決済サービスエージェントに関する詳細をご希望の場
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
 msgstr "当サービスに苦情を申し立てられたい場合、当社に苦情の詳細をご提供ください。お客さまのお問い合せ内容を調査のうえ、回答させていただきます。通常、最終的な回答は全詳細を受け取り次第、1〜2周間以内に（最大でおよそ2ヶ月以内）に提供させていただきます。"
 
-#, fuzzy
-#| msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
 msgid "If you would like to file a complaint with regards to the margin trading service described in this Agreement, kindly contact us by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
 msgstr "当サービスに苦情を申し立てられたい場合、当社に苦情の詳細をご提供ください。お客さまのお問い合せ内容を調査のうえ、回答させていただきます。通常、最終的な回答は全詳細を受け取り次第、1〜2周間以内に（最大でおよそ2ヶ月以内）に提供させていただきます。"
 
 msgid "If you're a broker we'd like to work with you. You will be introducing your clients to a unique and innovative product - the %1 trading platform."
 msgstr "ブローカーの方でしたら、是非ご協力させてください。%1取引プラットフォームの独特で革新的な商品をご紹介いたけます。"
 
-#, fuzzy
-#| msgid "If you're an individual trader, you'll appreciate the simplicity, flexibility, and limited risk of binary trading. With %1's low minimum stakes, you'll soon learn how to trade with skill and confidence. And if you have any questions, you're free to access <a class='pjaxload' href='%2'>our helpful support desk</a>."
 msgid "If you're an individual trader, you'll appreciate the simplicity, flexibility, and limited risk of binary trading. With %1's low minimum stakes, you'll soon learn how to trade with skill and confidence. And if you have any questions, you're free to access <a href='%2'>our helpful support desk</a>."
-msgstr "個人投資家の方はバイナリーオプション取引の簡潔性、柔軟性、そして限定されたリスクにメリットを見い出されることでしょう。当社では少額取引も提供しておりますので、お気軽に取引スキルの向上にチャレンジいただけます。ご不明な点がございましたら<a class='pjaxload' href='%2'>カスタマーサポート</a>までお気軽にお問い合わせください。"
+msgstr "個人投資家の方はバイナリーオプション取引の簡潔性、柔軟性、そして限定されたリスクにメリットを見い出されることでしょう。当社では少額取引も提供しておりますので、お気軽に取引スキルの向上にチャレンジいただけます。ご不明な点がございましたら<a href='%2'>カスタマーサポート</a>までお気軽にお問い合わせください。"
 
 msgid "If you're looking to build a career, and not a resume, talk to us, %1. We're one of the IT world's most vibrant and progressive workplaces."
 msgstr "キャリア構築を真剣にお考えの場合は、%1までご連絡下さい。当社はIT業界で最も活気があり、進歩的な職場環境を提供しています。"
@@ -3656,10 +3620,8 @@ msgstr "雰囲気の良い職場でやりがいを持って働いていただけ
 msgid "Imagine a workplace where your individuality, creativity and sense of adventure are valued and rewarded."
 msgstr "当社では、従業員の個性、創造性、そして挑戦する姿勢が重んじられ、評価されます。"
 
-#, fuzzy
-#| msgid "Instant"
 msgid "Important"
-msgstr "即刻"
+msgstr "重要"
 
 msgid "Important notes on our swap rates (overnight funding)"
 msgstr ""
