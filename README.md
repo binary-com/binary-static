@@ -26,15 +26,15 @@ sudo carton install
 ```
 
 Note :- 
-You need to have the latest node npm versions 
-The perl scipt compilation fails in some perl versions. The one with it works is Perl 5.18.2
+You need to have the latest node & npm versions 
+The perl scipt compilation fails in some perl versions. The version that this project works with is Perl 5.18.2
 
-In Mac systems the safest way to install perl old version withouh downgrading the system's perl version 
+In Mac systems the safest way to install an old version of perl without downgrading the system's perl version is: 
 1) curl -L https://install.perlbrew.pl | bash
 2) source ~/perl5/perlbrew/etc/bashrc
 3) perlbrew init
-4) perlbrew install 5.12.3
-5) perlbrew switch perl-5.12.3
+4) perlbrew install 5.18.2
+5) perlbrew switch perl-5.18.2
 
 
 How to work with this project
