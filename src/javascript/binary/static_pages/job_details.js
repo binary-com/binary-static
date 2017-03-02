@@ -9,7 +9,7 @@ const JobDetails = (function() {
 
     const showSelectedDiv = function() {
         if ($('.job-details').find('#title').text() === '') {
-            init();
+            onLoad();
         } else {
             $('.sections div').hide();
             $('.sections div[id=' + dept + '-' + url.location.hash.substring(1) + ']').show();
@@ -40,7 +40,7 @@ const JobDetails = (function() {
         return true;
     };
 
-    const init = function() {
+    const onLoad = function() {
         dept = url.params_hash().dept;
         depts = ['Information_Technology', 'Quality_Assurance', 'Quantitative_Analysis', 'Marketing', 'Accounting', 'Compliance', 'Customer_Support', 'Human_Resources', 'Administrator', 'Internal_Audit'];
         sections = ['section-one', 'section-two', 'section-three', 'section-four', 'section-five', 'section-six', 'section-seven', 'section-eight'];
@@ -70,6 +70,7 @@ const JobDetails = (function() {
             showSelectedDiv();
             $('#back-button').attr('href', url_for('open-positions') + '#' + dept);
         }
+        addEventListeners();
     };
 
     const addEventListeners = function() {
@@ -86,20 +87,16 @@ const JobDetails = (function() {
         });
     };
 
-    const removeEventListeners = function() {
+    const onUnload = function() {
         $(window).off('hashchange');
     };
 
     return {
+        onLoad         : onLoad,
+        onUnload       : onUnload,
         showSelectedDiv: showSelectedDiv,
         check_url      : check_url,
-        init           : init,
-
-        addEventListeners   : addEventListeners,
-        removeEventListeners: removeEventListeners,
     };
 })();
 
-module.exports = {
-    JobDetails: JobDetails,
-};
+module.exports = JobDetails;

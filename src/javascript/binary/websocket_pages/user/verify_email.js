@@ -1,8 +1,9 @@
+const BinaryPjax      = require('../../base/binary_pjax');
+const localize        = require('../../base/localize').localize;
+const url_for         = require('../../base/url').url_for;
 const Content         = require('../../common_functions/content').Content;
 const ValidateV2      = require('../../common_functions/validation_v2').ValidateV2;
-const url_for         = require('../../base/url').url_for;
 const bind_validation = require('../../validator').bind_validation;
-const localize        = require('../../base/localize').localize;
 
 const VerifyEmail = function() {
     Content.populate();
@@ -20,7 +21,7 @@ const VerifyEmail = function() {
         const type = response.msg_type;
         const error = response.error;
         if (type === 'verify_email' && !error) {
-            window.location.href = url_for('new_account/virtualws');
+            BinaryPjax.load('new_account/virtualws');
             return;
         }
         if (!error || !error.message) return;

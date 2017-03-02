@@ -79,6 +79,13 @@ function getPropertyValue(obj, keys) {
     return obj ? cloneObject(obj[keys[0]]) : undefined;
 }
 
+function handleHash() {
+    const hash = window.location.hash;
+    if (hash) {
+        $(`a[href="${hash}"]`).click();
+    }
+}
+
 module.exports = {
     showLoadingImage  : showLoadingImage,
     get_highest_zindex: get_highest_zindex,
@@ -86,4 +93,5 @@ module.exports = {
     template          : template,
     objectNotEmpty    : objectNotEmpty,
     getPropertyValue  : getPropertyValue,
+    handleHash        : handleHash,
 };

@@ -65,7 +65,7 @@ const Defaults = (function() {
     };
 
     const updateURL = function() {
-        const updated_url = window.location.pathname + '?' + url.params_hash_to_string(params);
+        const updated_url = window.location.origin + window.location.pathname + '?' + url.params_hash_to_string(params);
         window.history.replaceState({ url: updated_url }, null, updated_url);
     };
 

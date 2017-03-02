@@ -5,7 +5,7 @@ const getLanguage    = require('../base/language').getLanguage;
 const url_for_static = require('../base/url').url_for_static;
 
 const Contact = (function() {
-    const init = function() {
+    const onLoad = function() {
         $('#faq_url').attr('href', 'https://binary.desk.com/customer/' + getLanguage() + '/portal/articles');
         display_cs_contacts();
         show_live_chat_icon();
@@ -105,10 +105,8 @@ const Contact = (function() {
     };
 
     return {
-        init: init,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    Contact: Contact,
-};
+module.exports = Contact;

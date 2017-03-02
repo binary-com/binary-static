@@ -2,7 +2,7 @@ const getAppId     = require('../../config').getAppId;
 const getSocketURL = require('../../config').getSocketURL;
 
 const Endpoint = (function() {
-    const init = function() {
+    const onLoad = function() {
         $('#server_url').val(getSocketURL().split('/')[2]);
         $('#app_id').val(getAppId());
 
@@ -25,10 +25,8 @@ const Endpoint = (function() {
     };
 
     return {
-        init: init,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    Endpoint: Endpoint,
-};
+module.exports = Endpoint;

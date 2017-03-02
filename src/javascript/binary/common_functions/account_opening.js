@@ -1,16 +1,16 @@
 const generateBirthDate    = require('./attach_dom/birth_date_picker');
+const BinaryPjax           = require('../base/binary_pjax');
 const localize             = require('../base/localize').localize;
 const Client               = require('../base/client').Client;
 const State                = require('../base/storage').State;
-const url_for              = require('../base/url').url_for;
 const appendTextValueChild = require('../common_functions/common_functions').appendTextValueChild;
 const FormManager          = require('../common_functions/form_manager');
 const Cookies              = require('../../lib/js-cookie');
 require('select2');
 
 const redirectCookie = function() {
-    if (!Client.get('is_virtual') || Client.get('has_real')) {
-        window.location.href = url_for('trading');
+    if (Client.get('has_real')) {
+        BinaryPjax.load('trading');
         return true;
     }
     return false;
@@ -25,11 +25,11 @@ const redirectAccount = function() {
         if (!State.get('is_financial_opening') &&
             ((!isVirtual && Client.can_upgrade_gaming_to_financial(landing_company)) ||
             Client.can_upgrade_virtual_to_financial(landing_company))) {
-            window.location.href = url_for('new_account/maltainvestws');
+            BinaryPjax.load('new_account/maltainvestws');
             return false;
         }
         if (!State.get('is_japan_opening') && isVirtual && Client.can_upgrade_virtual_to_japan(landing_company)) {
-            window.location.href = url_for('new_account/japanws');
+            BinaryPjax.load('new_account/japanws');
             return false;
         }
         return true;
@@ -165,7 +165,7 @@ const commonValidations = () => {
         { selector: '#address_line_1',     validations: ['req', 'general'] },
         { selector: '#address_line_2',     validations: ['general'] },
         { selector: '#address_city',       validations: ['req', 'letter_symbol'] },
-        { selector: '#address_state',      validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'], request_field: 'address_state' },
+        { selector: '#address_state',      validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'] },
         { selector: '#address_postcode',   validations: ['postcode'] },
         { selector: '#phone',              validations: ['req', 'phone', ['min', { min: 6, max: 35 }]] },
         { selector: '#secret_question',    validations: ['req'] },

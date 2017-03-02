@@ -1,10 +1,11 @@
 const showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
+const localize             = require('../../../../base/localize').localize;
+const Content              = require('../../../../common_functions/content').Content;
 const addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;
 const buildOauthApps       = require('../../../../common_functions/get_app_details').buildOauthApps;
-const Content              = require('../../../../common_functions/content').Content;
 const ProfitTableUI        = require('./profit_table.ui').ProfitTableUI;
 const ProfitTableData      = require('./profit_table.data').ProfitTableData;
-const localize = require('../../../../base/localize').localize;
+const ViewPopupWS          = require('../../view_popup/view_popupws');
 
 const ProfitTableWS = (function() {
     let batchSize,
@@ -23,7 +24,7 @@ const ProfitTableWS = (function() {
         return transactionsConsumed === transactionsReceived;
     };
 
-    const initTable = function() {
+    const onUnload = function() {
         currentBatch = [];
         transactionsConsumed = 0;
         transactionsReceived = 0;
@@ -124,7 +125,7 @@ const ProfitTableWS = (function() {
         BinarySocket.send({ oauth_apps: 1 });
     };
 
-    const init = function() {
+    const onLoad = function() {
         batchSize = 100;
         chunkSize = batchSize / 2;
         transactionsReceived = 0;
@@ -136,15 +137,14 @@ const ProfitTableWS = (function() {
         Content.populate();
         getNextBatchTransactions();
         onScrollLoad();
+        ViewPopupWS.viewButtonOnClick('#profit-table-ws-container');
     };
 
     return {
         profitTableHandler: profitTableHandler,
-        init              : init,
-        clean             : initTable,
+        onLoad            : onLoad,
+        onUnload          : onUnload,
     };
 })();
 
-module.exports = {
-    ProfitTableWS: ProfitTableWS,
-};
+module.exports = ProfitTableWS;

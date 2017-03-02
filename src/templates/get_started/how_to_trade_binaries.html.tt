@@ -75,7 +75,7 @@
     </div>
 
     <div class="subsection last hidden">
-        <a class="by_client_type client_logged_out" name="dont-just-read-about-it-section"></a>
+        <a class="client_logged_out invisible" name="dont-just-read-about-it-section"></a>
 
         <h2>[% l("Interested? Why not try a virtual account") %]</h2>
         <p>[% l("Test-run [_1], and sharpen your trading skills, with a no-risk, no-commitment, virtual account.", website_name) %]</p>
@@ -92,8 +92,8 @@
             <div class="gr-4"><p class="center-text"><strong>[% l("Make your trade") %]</strong></p></div>
         </div>
 
-        <div class="gr-padding-10 center-text by_client_type client_logged_out">
-            <a class="button pjaxload" href="[% request.url_for('/') %]">
+        <div class="gr-padding-10 center-text client_logged_out invisible">
+            <a class="button" href="[% request.url_for('/') %]">
                 <span>[% l("Try it now") %]</span>
             </a>
             <p>[% l("No risk, \$10K virtual money account") %]</p>
