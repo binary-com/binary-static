@@ -17,12 +17,12 @@ const Cashier = (function() {
     const checkLocked = function() {
         if (!Client.is_logged_in()) return;
         BinarySocket.wait('authorize', 'website_status').then(() => {
-            if (Client.get('is_virtual')) return;
             if (japanese_client() && !japanese_residence()) {
                 BinaryPjax(default_redirect_url());
                 return;
             }
             checkTopUpWithdraw();
+            if (Client.get('is_virtual')) return;
             BinarySocket.wait('get_account_status').then(() => {
                 if (Client.status_detected('cashier_locked')) {
                     lock('deposit, .withdraw');
@@ -45,6 +45,7 @@ const Cashier = (function() {
                     (currency === 'JPY' && balance > 100000)) {
                     disableButton('#VRT_topup_link');
                 }
+                Client.activate_by_client_type();
             } else if (!currency || +balance === 0) {
                 lock('withdraw');
             }
