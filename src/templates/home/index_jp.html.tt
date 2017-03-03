@@ -2,7 +2,8 @@
     <div class="container gr-padding-30">
         <h1 class="center-text gr-padding-10">[% l("First-Class FX Binary Options Trading Platform") %]</h1>
         <h3 class="center-text gr-padding-10">[% l("Offering the widest available range of currencies, option types and trading periods on a fast intuitve, proprietary trading.") %]</h3>
-        <form id="verify-email-form">
+
+        <form id="frm_verify_email">
             <div class="gr-row gr-row-align-center">
                 <div class="signup-box gr-7 gr-10-p gr-12-m gr-no-gutter">
                     <div class="gr-row gr-padding-30">
@@ -10,7 +11,7 @@
                             <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]" />
                         </div>
                         <div class="gr-4 gr-8-m gr-centered">
-                            <button id="btn-verify-email" type="submit">[% l('Get started') %]</button>
+                            <button id="btn_verify_email" type="submit">[% l('Get started') %]</button>
                         </div>
                         <span class="gr-12 gr-padding-10 error-msg hint color-white center-text" id="signup_error" style="display:none"></span>
                     </div>

@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="section">
-            <a id="complaints"></a>
+            <a id="complaints-disputes"></a>
             <div class="section-content">
                 <div id="section-6">[% INCLUDE legal/tac_sections/complaints.html.tt %]</div>
             </div>
@@ -66,31 +66,31 @@
         <div class="sidebar">
             <ul id="sidebar-nav">
                 <li class="selected" id="sidebar-link-section-1">
-                    <a href="#tac">[% l("Terms and Conditions") %]</a>
+                    <a href="?section=tac">[% l("Terms and Conditions") %]</a>
                 </li>
                 <li id="sidebar-link-section-2">
-                    <a href="#trading-rules">[% l("Trading Rules") %]</a>
+                    <a href="?section=trading-rules">[% l("Trading Rules") %]</a>
                 </li>
                 <li id="sidebar-link-section-3">
-                    <a href="#deposit-bonus">[% l("Deposit Bonus") %]</a>
+                    <a href="?section=deposit-bonus">[% l("Deposit Bonus") %]</a>
                 </li>
                 <li id="sidebar-link-section-4">
-                    <a href="#affiliate">[% l("Affiliate Program") %]</a>
+                    <a href="?section=affiliate">[% l("Affiliate Program") %]</a>
                 </li>
                 <li id="sidebar-link-section-5">
-                    <a href="#api">[% l("API") %]</a>
+                    <a href="?section=api">[% l("API") %]</a>
                 </li>
                 <li id="sidebar-link-section-6">
-                    <a href="#complaints">[% l("Complaints and Disputes") %]</a>
+                    <a href="?section=complaints-disputes">[% l("Complaints and Disputes") %]</a>
                 </li>
                 <li id="sidebar-link-section-7">
-                    <a href="#conflicts-policy">[% l("Conflicts Policy") %]</a>
+                    <a href="?section=conflicts-policy">[% l("Conflicts Policy") %]</a>
                 </li>
                 <li id="sidebar-link-section-8">
-                    <a href="#biel">[% l("BIEL Terms") %]</a>
+                    <a href="?section=biel">[% l("BIEL Terms") %]</a>
                 </li>
                 <li id="sidebar-link-section-9" class="tnc_accept invisible">
-                    <a href="#accept">[% l("Accept Terms and Conditions") %]</a>
+                    <a href="?section=accept">[% l("Accept Terms and Conditions") %]</a>
                 </li>
             </ul>
         </div>

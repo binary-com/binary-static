@@ -23,7 +23,7 @@ const ResetPassword = (function () {
                 errMsg = localize(response.error.message);
                 $form_error.find('a').addClass(hidden_class);
             } else { // special handling as backend return inconsistent format
-                errMsg = localize(resetErrorTemplate, [error_code === 'InputValidationFailed' ? localize('Token has expired.') : localize(response.error.message)]);
+                errMsg = localize(resetErrorTemplate, [error_code === 'InputValidationFailed' ? localize('There was some invalid character in an input field.') : localize(response.error.message)]);
             }
 
             $('#form_error_msg').text(errMsg);
