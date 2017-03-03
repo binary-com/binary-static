@@ -1,186 +1,222 @@
-const toJapanTimeIfNeeded = require('../../binary/base/clock').Clock.toJapanTimeIfNeeded;
-const KnowledgeTestUI     = require('./knowledge_test.ui').KnowledgeTestUI;
-const KnowledgeTestData   = require('./knowledge_test.data').KnowledgeTestData;
+const KnowledgeTestUI     = require('./knowledge_test.ui');
 const BinaryPjax          = require('../../binary/base/binary_pjax');
 const Client              = require('../../binary/base/client').Client;
+const toJapanTimeIfNeeded = require('../../binary/base/clock').Clock.toJapanTimeIfNeeded;
 const Header              = require('../../binary/base/header').Header;
 const localize            = require('../../binary/base/localize').localize;
 
-const KnowledgeTest = (function() {
+const KnowledgeTest = (() => {
     'use strict';
 
-    const hiddenClass = 'invisible';
+    const hidden_class = 'invisible';
 
     const submitted = {};
-    let submitCompleted = false;
-    let randomPicks = [];
-    const randomPicksObj = {};
-    let resultScore = 0;
+    let submit_completed = false;
+    let random_picks = [];
+    const obj_random_picks = {};
+    let result_score = 0;
 
-    const passMsg = '{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly.';
-    const failMsg = '{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours.';
+    const msg_pass = '{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly.';
+    const msg_fail = '{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours.';
 
-    const questionAnswerHandler = function(ev) {
-        const selected = ev.target.value;
-        const qid = ev.target.name;
-        submitted[qid] = selected === '1';
-    };
+    const questionAnswerHandler = (ev => (submitted[ev.target.name] = +ev.target.value === 1));
 
-    const submitHandler = function() {
-        if (submitCompleted) {
-            return;
-        }
-        const answeredQid = Object.keys(submitted).map(function(k) { return +k; });
-        if (answeredQid.length !== 20) {
+    const submitHandler = () => {
+        if (submit_completed) return;
+
+        const answered_qid = Object.keys(submitted).map(function(k) { return +k; });
+        if (answered_qid.length !== 20) {
             $('#knowledge-test-instructions').addClass('invisible');
             $('#knowledge-test-msg')
                 .addClass('notice-msg')
                 .text(localize('You need to finish all 20 questions.'));
 
-            const unAnswered = randomPicks.reduce((a, b) => a.concat(b))
-                                        .find(q => answeredQid.indexOf(q.id) === -1).id;
+            const unanswered = random_picks.reduce((a, b) => a.concat(b))
+                                        .find(q => answered_qid.indexOf(q.id) === -1).id;
 
-            $.scrollTo('a[name="' + unAnswered + '"]', 500, { offset: -10 });
+            $.scrollTo('a[name="' + unanswered + '"]', 500, { offset: -10 });
             return;
         }
 
         // compute score
         const questions = [];
-        Object.keys(submitted).forEach(function (k) {
-            const questionInfo = randomPicksObj[k],
-                score = submitted[k] === questionInfo.correct_answer ? 1 : 0;
-            resultScore += score;
-            questionInfo.answer = submitted[k];
+        Object.keys(submitted).forEach((k) => {
+            const question_info = obj_random_picks[k];
+            const score = submitted[k] === question_info.correct_answer ? 1 : 0;
+            result_score += score;
+            question_info.answer = submitted[k];
             questions.push({
-                category: questionInfo.category,
-                id      : questionInfo.id,
-                question: questionInfo.question,
-                answer  : questionInfo.answer ? 1 : 0,
+                category: question_info.category,
+                id      : question_info.id,
+                question: question_info.question,
+                answer  : question_info.answer ? 1 : 0,
                 pass    : score,
             });
         });
-        KnowledgeTestData.sendResult(questions, resultScore);
-        submitCompleted = true;
+        sendResult(questions);
+        submit_completed = true;
     };
 
-    const showQuestionsTable = function() {
-        for (let j = 0; j < randomPicks.length; j++) {
-            const table = KnowledgeTestUI.createQuestionTable(randomPicks[j]);
+    const showQuestionsTable = () => {
+        for (let j = 0; j < random_picks.length; j++) {
+            const table = KnowledgeTestUI.createQuestionTable(random_picks[j]);
             $('#section' + (j + 1) + '-question').append(table);
         }
 
         const $questions = $('#knowledge-test-questions');
         $questions.find('input[type=radio]').click(questionAnswerHandler);
         $('#knowledge-test-submit').click(submitHandler);
-        $questions.removeClass(hiddenClass);
+        $questions.removeClass(hidden_class);
         $('#knowledge-test-msg').text(localize('{JAPAN ONLY}Please complete the following questions.'));
         $('#knowledge-test-instructions').removeClass('invisible');
     };
 
-    const showResult = function(score, time) {
+    const showResult = (score, time) => {
         $('#knowledge-test-instructions').addClass('invisible');
         $('#knowledge-test-header').text(localize('{JAPAN ONLY}Knowledge Test Result'));
         let msg;
         if (score >= 14) {
-            msg = passMsg;
+            msg = msg_pass;
             Client.set('jp_status', 'jp_activation_pending');
             Header.upgrade_message_visibility();
         } else {
-            msg = failMsg;
+            msg = msg_fail;
         }
         $('#knowledge-test-msg').text(localize(msg));
 
-        const $resultTable = KnowledgeTestUI.createResultUI(score, time);
+        const $result_table = KnowledgeTestUI.createResultUI(score, time);
 
-        $('#knowledge-test-container').append($resultTable);
-        $('#knowledge-test-questions').addClass(hiddenClass);
+        $('#knowledge-test-container').append($result_table);
+        $('#knowledge-test-questions').addClass(hidden_class);
     };
 
-    const showMsgOnly = function(msg) {
-        $('#knowledge-test-questions').addClass(hiddenClass);
+    const showMsgOnly = (msg) => {
+        $('#knowledge-test-questions').addClass(hidden_class);
         $('#knowledge-test-msg').text(localize(msg));
         $('#knowledge-test-instructions').addClass('invisible');
     };
 
-    const showDisallowedMsg = function(jpStatus) {
-        const msgTemplate =
-            '{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until [_1]. Last test taken at [_2].';
-
-        const msg = localize(msgTemplate, [
+    const showDisallowedMsg = jpStatus =>
+        (showMsgOnly(localize('{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until [_1]. Last test taken at [_2].', [
             toJapanTimeIfNeeded(jpStatus.next_test_epoch),
             toJapanTimeIfNeeded(jpStatus.last_test_epoch),
-        ]);
+        ])));
 
-        showMsgOnly(msg);
-    };
+    const showCompletedMsg = () =>
+        (showMsgOnly("{JAPAN ONLY}Dear customer, you've already completed the knowledge test, please proceed to next step."));
 
-    const showCompletedMsg = function() {
-        const msg = "{JAPAN ONLY}Dear customer, you've already completed the knowledge test, please proceed to next step.";
-        showMsgOnly(msg);
-    };
-
-    const populateQuestions = function() {
-        randomPicks = KnowledgeTestData.randomPick20();
-        randomPicks.reduce((a, b) => a.concat(b))
-                   .forEach((question) => { randomPicksObj[question.id] = question; });
+    const populateQuestions = () => {
+        random_picks = randomPick20();
+        random_picks.reduce((a, b) => a.concat(b))
+           .forEach((question) => { obj_random_picks[question.id] = question; });
 
         showQuestionsTable();
     };
 
-    const onLoad = function() {
-        BinarySocket.init({
-            onmessage: function(msg) {
-                const response = JSON.parse(msg.data);
-                const type = response.msg_type;
-                const passthrough = response.echo_req.passthrough && response.echo_req.passthrough.key;
+    const onLoad = () => {
+        BinarySocket.wait('get_settings').then((response) => {
+            const jp_status = response.get_settings.jp_account_status;
 
-                if (type === 'get_settings' && passthrough === 'knowledgetest') {
-                    const jpStatus = response.get_settings.jp_account_status;
+            if (!jp_status) {
+                BinaryPjax.load('/');
+                return;
+            }
 
-                    if (!jpStatus) {
-                        BinaryPjax.load('/');
-                        return;
-                    }
-
-                    switch (jpStatus.status) {
-                        case 'jp_knowledge_test_pending': populateQuestions();
-                            break;
-                        case 'jp_knowledge_test_fail': {
-                            if (Date.now() >= (jpStatus.next_test_epoch * 1000)) {
-                                // show Knowledge Test cannot be taken
-                                populateQuestions();
-                            } else {
-                                showDisallowedMsg(jpStatus);
-                            }
-                            break;
-                        }
-                        case 'jp_activation_pending':
-                            showCompletedMsg();
-                            break;
-                        default: {
-                            console.warn('Unexpected jp status');
-                            BinaryPjax.load('/');
-                        }
-                    }
-                } else if (type === 'jp_knowledge_test') {
-                    if (!response.error) {
-                        showResult(resultScore, response.jp_knowledge_test.test_taken_epoch * 1000);
-                        $('html, body').animate({ scrollTop: 0 }, 'slow');
-
-                        $('#knowledgetest-link').addClass(hiddenClass);     // hide it anyway
-                    } else if (response.error.code === 'TestUnavailableNow') {
-                        showMsgOnly('{JAPAN ONLY}The test is unavailable now, test can only be taken again on next business day with respect of most recent test.');
+            switch (jp_status.status) {
+                case 'jp_knowledge_test_pending': populateQuestions();
+                    break;
+                case 'jp_knowledge_test_fail': {
+                    if (Date.now() >= (jp_status.next_test_epoch * 1000)) {
+                        // show Knowledge Test cannot be taken
+                        populateQuestions();
                     } else {
-                        $('#form-msg').html(response.error.message).removeClass(hiddenClass);
-                        submitCompleted = false;
+                        showDisallowedMsg(jp_status);
                     }
+                    break;
                 }
-            },
+                case 'jp_activation_pending':
+                    showCompletedMsg();
+                    break;
+                default: {
+                    console.warn('Unexpected jp status');
+                    BinaryPjax.load('/');
+                }
+            }
         });
-
-        BinarySocket.send({ get_settings: 1, passthrough: { key: 'knowledgetest' } }, true);
     };
 
+    const answers = {
+        /* eslint-disable */
+        1: false,  2: true,   3: true,   4: true,   5: true,   6: true,   7: true,   8: true,   9: false,  10: true,
+        11: false, 12: true,  13: false, 14: true,  15: true,  16: true,  17: false, 18: true,  19: true,   20: true,
+        21: true,  22: false, 23: true,  24: false, 25: false, 26: true,  27: true,  28: true,  29: true,   30: true,
+        31: false, 32: true,  33: false, 34: true,  35: false, 36: true,  37: true,  38: false, 39: true,   40: false,
+        41: false, 42: true,  43: true,  44: true,  45: true,  46: true,  47: true,  48: false, 49: false,  50: true,
+        51: false, 52: true,  53: true,  54: false, 55: true,  56: true,  57: true,  58: true,  59: true,   60: true,
+        61: true,  62: false, 63: true,  64: true,  65: true,  66: false, 67: true,  68: true,  69: true,   70: true,
+        71: true,  72: true,  73: true,  74: false, 75: false, 76: true,  77: false, 78: true,  79: true,   80: true,
+        81: true,  82: true,  83: true,  84: true,  85: true,  86: true,  87: true,  88: false, 89: true,   90: true,
+        91: true,  92: true,  93: true,  94: true,  95: false, 96: true,  97: true,  98: false, 99: true,  100: true,
+        /* eslint-enable */
+    };
+
+    const randomPick4 = function(obj_questions) {
+        const availables = Object.keys(obj_questions);
+
+        const random_picks_four = [];
+        for (let i = 0; i < 4; i++) {
+            const random_index = Math.floor(Math.random() * 100) % availables.length;
+            random_picks_four.push(obj_questions[availables[random_index]]);
+            availables.splice(random_index, 1);
+        }
+
+        return random_picks_four;
+    };
+
+    const randomPick20 = () => {
+        const questions = {};
+        // retrieve questions text from html
+        $('#data-questions').find('> div').each(function() { // sections
+            const category = +$(this).attr('data-section-id');
+            questions['section' + category] = [];
+
+            $(this).find('> div').each(function() { // questions
+                const question_id = +$(this).attr('data-question-id');
+                questions['section' + category].push({
+                    category          : category,
+                    id                : question_id,
+                    question          : $(this).attr('data-question-en'),
+                    question_localized: $(this).text(),
+                    correct_answer    : answers[question_id],
+                });
+            });
+        });
+
+        const picked_questions = [];
+        Object.keys(questions).forEach(section => picked_questions.push(randomPick4(questions[section])));
+        return picked_questions;
+    };
+
+    const sendResult = function(questions) {
+        BinarySocket.send({
+            jp_knowledge_test: 1,
+            score            : result_score,
+            status           : result_score >= 14 ? 'pass' : 'fail',
+            questions        : questions,
+        }).then((response) => {
+            if (!response.error) {
+                showResult(result_score, response.jp_knowledge_test.test_taken_epoch * 1000);
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+
+                $('#knowledgetest-link').addClass(hidden_class);     // hide it anyway
+            } else if (response.error.code === 'TestUnavailableNow') {
+                showMsgOnly('{JAPAN ONLY}The test is unavailable now, test can only be taken again on next business day with respect of most recent test.');
+            } else {
+                $('#form-msg').html(response.error.message).removeClass(hidden_class);
+                submit_completed = false;
+            }
+        });
+    };
     return {
         onLoad: onLoad,
     };
