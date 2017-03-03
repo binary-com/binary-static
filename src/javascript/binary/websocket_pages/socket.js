@@ -326,10 +326,6 @@ const BinarySocketClass = function() {
                     GTM.event_handler(response.get_settings);
                     Client.set('tnc_status', response.get_settings.client_tnc_status || '-');
                     if (!localStorage.getItem('risk_classification')) Client.check_tnc();
-                    const jpStatus = response.get_settings.jp_account_status;
-                    if (jpStatus) {
-                        Client.set('jp_status', jpStatus.status);
-                    }
                     if (response.get_settings.is_authenticated_payment_agent) {
                         Client.set('is_authenticated_payment_agent', true);
                         $('#topMenuPaymentAgent').removeClass('invisible');

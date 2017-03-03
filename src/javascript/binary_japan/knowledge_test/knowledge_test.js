@@ -1,6 +1,5 @@
 const KnowledgeTestUI     = require('./knowledge_test.ui');
 const BinaryPjax          = require('../../binary/base/binary_pjax');
-const Client              = require('../../binary/base/client').Client;
 const toJapanTimeIfNeeded = require('../../binary/base/clock').Clock.toJapanTimeIfNeeded;
 const Header              = require('../../binary/base/header').Header;
 const localize            = require('../../binary/base/localize').localize;
@@ -74,14 +73,7 @@ const KnowledgeTest = (() => {
     const showResult = (score, time) => {
         $('#knowledge-test-instructions').addClass('invisible');
         $('#knowledge-test-header').text(localize('{JAPAN ONLY}Knowledge Test Result'));
-        let msg;
-        if (score >= 14) {
-            msg = msg_pass;
-            Client.set('jp_status', 'jp_activation_pending');
-            Header.upgrade_message_visibility();
-        } else {
-            msg = msg_fail;
-        }
+        const msg = score >= 14 ? msg_pass : msg_fail;
         $('#knowledge-test-msg').text(localize(msg));
 
         const $result_table = KnowledgeTestUI.createResultUI(score, time);
@@ -114,7 +106,7 @@ const KnowledgeTest = (() => {
     };
 
     const onLoad = () => {
-        BinarySocket.wait('get_settings').then((response) => {
+        BinarySocket.send({ get_settings: 1 }, true).then((response) => {
             const jp_status = response.get_settings.jp_account_status;
 
             if (!jp_status) {
@@ -207,8 +199,9 @@ const KnowledgeTest = (() => {
             if (!response.error) {
                 showResult(result_score, response.jp_knowledge_test.test_taken_epoch * 1000);
                 $('html, body').animate({ scrollTop: 0 }, 'slow');
-
-                $('#knowledgetest-link').addClass(hidden_class);     // hide it anyway
+                BinarySocket.send({ get_settings: 1 }, true).then(() => {
+                    Header.upgrade_message_visibility();
+                });
             } else if (response.error.code === 'TestUnavailableNow') {
                 showMsgOnly('{JAPAN ONLY}The test is unavailable now, test can only be taken again on next business day with respect of most recent test.');
             } else {
