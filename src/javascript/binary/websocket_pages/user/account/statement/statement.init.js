@@ -143,12 +143,11 @@ const StatementInit = (() => {
         transactions_received = 0;
         transactions_consumed = 0;
 
-        Content.populate();
         BinarySocket.send({ oauth_apps: 1 }).then((response) => {
             addTooltip(StatementUI.setOauthApps(buildOauthApps(response.oauth_apps)));
             $('.barspinner').addClass('hidden');
         });
-
+        Content.populate();
         getNextBatchStatement();
         loadStatementChunkWhenScroll();
     };

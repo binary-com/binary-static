@@ -6,7 +6,7 @@ const addTooltip           = require('../../../../common_functions/get_app_detai
 const buildOauthApps       = require('../../../../common_functions/get_app_details').buildOauthApps;
 const Content              = require('../../../../common_functions/content').Content;
 
-const ProfitTable = (() => {
+const ProfitTableInit = (() => {
     let batch_size,
         chunk_size,
         transactions_received,
@@ -79,13 +79,9 @@ const ProfitTable = (() => {
                 return Math.floor((totalHidable * percentage) / 100);
             };
 
-            const pFromTop = $(document).scrollTop();
+            const p_from_top = $(document).scrollTop();
 
-            if (!tableExist()) {
-                return;
-            }
-
-            if (pFromTop < hidableHeight(50)) {
+            if (!tableExist() || p_from_top < hidableHeight(50)) {
                 return;
             }
 
@@ -106,15 +102,9 @@ const ProfitTable = (() => {
         if (opts) $.extend(true, req, opts);
 
         BinarySocket.send(req).then((response) => {
-            ProfitTable.profitTableHandler(response);
+            ProfitTableInit.profitTableHandler(response);
             showLocalTimeOnHover('td.buy-date,td.sell-date');
             $('.barspinner').addClass('hidden');
-        });
-    };
-
-    const initSocket = () => {
-        BinarySocket.send({ oauth_apps: 1 }).then((response) => {
-            addTooltip(ProfitTableUI.setOauthApps(buildOauthApps(response)));
         });
     };
 
@@ -126,7 +116,10 @@ const ProfitTable = (() => {
         no_more_data = false;
         pending = false;
         current_batch = [];
-        initSocket();
+
+        BinarySocket.send({ oauth_apps: 1 }).then((response) => {
+            addTooltip(ProfitTableUI.setOauthApps(buildOauthApps(response)));
+        });
         Content.populate();
         getNextBatchTransactions();
         onScrollLoad();
@@ -140,4 +133,4 @@ const ProfitTable = (() => {
     };
 })();
 
-module.exports = ProfitTable;
+module.exports = ProfitTableInit;
