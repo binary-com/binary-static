@@ -43,7 +43,7 @@ const StatementInit = (() => {
             req.date_from = 0;
         }
         BinarySocket.send(req).then((response) => {
-            StatementInit.statementHandler(response);
+            statementHandler(response);
         });
     };
 
@@ -81,7 +81,7 @@ const StatementInit = (() => {
             StatementUI.updateStatementTable(getNextChunkStatement());
 
             // Show a message when the table is empty
-            if ((transactions_received === 0) && (current_batch.length === 0)) {
+            if (transactions_received === 0 && current_batch.length === 0) {
                 $('#statement-table').find('tbody')
                     .append($('<tr/>', { class: 'flex-tr' })
                         .append($('<td/>', { colspan: 7 })

@@ -5,20 +5,19 @@ const Content  = require('../../../common_functions/content').Content;
 const TopUpVirtual = (() => {
     'use strict';
 
-    let $views,
-        view_ids;
+    let $views;
 
-    const hidden_class = 'hidden';
+    const view_ids = {
+            error  : '#viewError',
+            success: '#viewSuccess',
+        },
+        hidden_class = 'hidden';
 
     const onLoad = () => {
         Content.populate();
 
         $views = $('#topup_virtual .viewItem');
         $views.addClass(hidden_class);
-        view_ids = {
-            error  : '#viewError',
-            success: '#viewSuccess',
-        };
 
         BinarySocket.send({ topup_virtual: '1' }).then((response) => {
             if (response.error) {

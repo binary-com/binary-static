@@ -12,10 +12,11 @@ const Table               = require('../../../../common_functions/attach_dom/tab
 const StatementUI = (() => {
     'use strict';
 
-    const table_id = 'statement-table',
-        columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];
     let all_data = [],
         oauth_apps = {};
+
+    const table_id = 'statement-table',
+        columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];
 
     const createEmptyStatementTable = () => {
         const header = [

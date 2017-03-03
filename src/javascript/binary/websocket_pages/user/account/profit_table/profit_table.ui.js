@@ -14,10 +14,11 @@ const Table               = require('../../../../common_functions/attach_dom/tab
 const ProfitTableUI = (() => {
     'use strict';
 
-    const profit_table_id = 'profit-table',
-        cols = ['buy-date', 'ref', 'payout', 'contract', 'buy-price', 'sell-date', 'sell-price', 'pl', 'details'];
     let oauth_apps = {},
         currency;
+
+    const profit_table_id = 'profit-table',
+        cols = ['buy-date', 'ref', 'payout', 'contract', 'buy-price', 'sell-date', 'sell-price', 'pl', 'details'];
 
     const createEmptyTable = () => {
         const header = [
