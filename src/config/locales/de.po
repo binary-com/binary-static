@@ -3,15 +3,16 @@ msgstr ""
 "Project-Id-Version: German (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-02 18:54+0000\n"
+"PO-Revision-Date: 2017-03-03 15:54+0000\n"
 "Last-Translator: Karin Graf <karin_graf@hotmail.com>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>"
+"\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.12-dev\n"
+"X-Generator: Weblate 2.12\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "„%1 API“ bedeutet von %1 selbst entwickelte Programmroutinen, Protokolle, Werkzeuge und Mittel, die von %1 erstellt und gepflegt werden, die es Ihnen ermöglichen, eine genehmigte Anwendung zu verwenden, um sich in die %1 Handelsplattform zu integrieren."
@@ -116,7 +117,10 @@ msgid "%1 has several exceptional career opportunities for Customer Service Prof
 msgstr "%1 hat mehrere außergewöhnliche Karrieremöglichkeiten für Kundendienst Profis."
 
 msgid "%1 has thousands of clients taking a variety of positions on the financial markets at any one time, and earns a small margin on these trades."
-msgstr "%1 hat mehrere tausend Kunden, die jederzeit eine Vielzahl von Positionen an den Finanzmärkten nutzen und erhält für diese Geschäfte nur eine geringe Marge."
+msgstr ""
+"%1 hat mehrere tausend Kunden, die jederzeit eine Vielzahl von Positionen an "
+"den Finanzmärkten nutzen und erhält für diese Geschäfte nur einen geringen "
+"Margin."
 
 msgid "%1 has updated its <a href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a href=\"%2\">Terms & Conditions</a>."
 msgstr "%1 hat seine <a href=\"%2\">Allgemeinen Geschäftsbedinungen</a> aktualisiert. Wenn Sie auf OK klicken, bestätigen Sie, dass Sie die aktualisierten <a href=\"%2\">Allgemeinen Geschäftsbedingungen</a> zur Kenntnis genommen haben und ihnen zustimmen."
@@ -805,7 +809,7 @@ msgid "Account Equity - Your Account Equity refers to the sum of your Account Ba
 msgstr "Kapitalkonto - Ihr Kapitalkonto bezieht sich auf die Summe Ihres Kontostandes und das Netto des unrealisierten Gewinns und Verlusts."
 
 msgid "Account Free Margin - Your Account Equity minus your Total Margin."
-msgstr "Freies Margen-Konto - Ihr Kapitalkonto minus der gesamten Marge."
+msgstr "Freies Margin-Konto - Ihr Kapitalkonto minus des gesamten Margins."
 
 msgid "Account Management and Tracking"
 msgstr "Kontoverwaltung und Verlauf"
@@ -970,7 +974,16 @@ msgid "All opinions, news, research, analysis, prices or other information conta
 msgstr "Alle Meinungen, Nachrichten, Recherchen, Analysen, Kurse oder andere Informationen, die diese Website enthält, werden als allgemeine Marktkommentare zur Verfügung gestellt und stellen keine Anlageberatung dar. %1 übernimmt keine Haftung für Verluste oder Schäden, insbesondere für entgangenene Gewinne, die unmittelbar oder mittelbar aus der Verwendung dieser Angaben oder im Vertrauen auf diese entstehen."
 
 msgid "All products traded on margin carry a high degree of risk and can result in losses as well as profits that exceed your initial deposit. The margin trading service described in this Agreement is not suitable for everyone. You acknowledge that the margin trading service described in this Agreement is designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us."
-msgstr "Alle Produkte die auf Marge gehandelt werden, tragen einen hohen Grad an Risiko und können zu Verlusten, so wie zu Gewinnen führen, die Ihre Ersteinzahlung übersteigen. Die Marge-Handelsdienstleistung, die in dieser Vereinbarung beschrieben ist, ist nicht für jeden geeignet. Sie bestätigen, dass die Marge-Handelsdienstleistung, die in dieser Vereinbarung beschrieben ist, für Kunden entworfen wurde, die in den Transaktionsarten, die in dieser Vereinbarung beschrieben sind, sachkundig und erfahren sind und dass Sie die damit verbundenen Risiken vollständig verstehen, bevor Sie diese Vereinbarung mit uns eingehen."
+msgstr ""
+"Alle Produkte die auf Margin gehandelt werden, tragen einen hohen Grad an "
+"Risiko und können zu Verlusten, so wie zu Gewinnen führen, die Ihre "
+"Ersteinzahlung übersteigen. Die Margin-Handelsdienstleistung, die in dieser "
+"Vereinbarung beschrieben ist, ist nicht für jeden geeignet. Sie bestätigen, "
+"dass die Margin-Handelsdienstleistung, die in dieser Vereinbarung "
+"beschrieben ist, für Kunden entworfen wurde, die in den Transaktionsarten, "
+"die in dieser Vereinbarung beschrieben sind, sachkundig und erfahren sind "
+"und dass Sie die damit verbundenen Risiken vollständig verstehen, bevor Sie "
+"diese Vereinbarung mit uns eingehen."
 
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "Alle Zeitangaben sind in GMT (Greenwich-Zeit)."
@@ -2974,9 +2987,21 @@ msgstr "Devisenhandel"
 
 msgid "Forex and contract for differences transactions involve a high degree of risk and are speculative because they allow you to speculate on the short term movements of the price of the underlying financial instruments. You should not enter into forex and/or contracts for differences transactions unless you are able to sustain losses that exceed your deposited funds. It is important for you to understand that in order to realise any value from your open positions, you would have to enter into a corresponding transaction to close your open positions and you may find it difficult or impossible to do so under certain market conditions."
 msgstr ""
+"Forex und Kontrakte für Differenzbeträge-Transaktionen involvieren einen "
+"hohen Grad an Risiko und sind spekulativ, da sie Ihnen erlauben auf "
+"kurzfristige Bewegungen des Kurses der zugrundeliegenden Instrumente zu "
+"spekulieren. Sie sollten keine Forex und/oder Kontrakte für Differenzbeträge-"
+"Transaktionen eingehen, es sei denn, Sie können Verluste, die Ihre "
+"eingezahlten Gelder überschreiten, tragen. Es ist wichtig, dass Sie "
+"verstehen, dass Sie, um einen Wert von Ihren offenen Positionen realisieren "
+"zu können, eine entsprechende Transaktion eingehen müssten, um Ihre offenen "
+"Positionen zu schließen und Sie könnten es schwierig oder unmöglich finden, "
+"dies unter gewissen Marktbedingungen zu tun."
 
 msgid "Forex and contracts for differences are high risk and speculative"
-msgstr "Forex und Kontrakte für Differenzen haben ein hohes Risiko und sind spekulativ"
+msgstr ""
+"Forex und Kontrakte für Differenzbeträge haben ein hohes Risiko und sind "
+"spekulativ"
 
 msgid "Forex trading experience"
 msgstr "Devisenhandelserfahrung"
@@ -3048,7 +3073,7 @@ msgid "Furthermore, the Company disclaims all liability for any malfunctioning, 
 msgstr "Darüber hinaus lehnt das Unternehmen jegliche Haftung für die Fehlfunktion, die Unmöglichkeit des Zugriffs oder schlechte Verwendungsbedingungen des %1 API wegen ungeeignter Ausstattung, Störungen, die von Internetanbietern verursacht sind, der Überlastung des Internetnetzwerks und jeglichem weiteren Grund ab."
 
 msgid "G. Margin"
-msgstr "G. Marge"
+msgstr "G. Margin"
 
 msgid "G. Order Handling"
 msgstr "G. Order Abwicklung"
@@ -3124,6 +3149,14 @@ msgstr "Gib mir mehr Geld!"
 
 msgid "Given our role as margin trading service provider as described in this Agreement, we seek to avoid undue market influence to the extent consistent with your trading needs and our risk management policies and procedures. By continuing to use the margin trading service described in this Agreement, you acknowledge that you are aware of the potential conflict of interest disclosed that may arise and cannot be completely eliminated, and you consent us to act notwithstanding such potential conflict of interests."
 msgstr ""
+"In unserer Rolle als Margin-Handelsdienstleister, wie in dieser Vereinbarung "
+"beschrieben, versuchen wir unrechtmäßige Markteinflüsse in einem Maß mit "
+"Ihren Handelsbedürfnissen und unseren Risikomanagementrichtlinien und "
+"Verfahren übereinzustimmen. In dem Sie fortfahren den in dieser Vereinbarung "
+"beschriebenen Margin-Handelsdienst zu verwenden, bestätigen Sie, dass Sie "
+"sich dem potentiellen veröffentlichten Interessenkonflikt bewusst sind, der "
+"entstehen und nicht vollkommen eliminiert werden kann, und Sie stimmen uns "
+"zu, ungeachtet eines solchen Interessenkonflikts, zu agieren."
 
 msgid "Global Customer Service Representatives"
 msgstr "Globale Kundendienstmitarbeiter"
@@ -3198,7 +3231,7 @@ msgid "High conversions and customer value"
 msgstr "Hohe Konversion und Kundenwert"
 
 msgid "High frequency (2 ticks per second)"
-msgstr ""
+msgstr "Hohe Frequenz (2 Ticks pro Sekunde)"
 
 msgid "Higher"
 msgstr "Höher"
@@ -3243,10 +3276,10 @@ msgid "How do I know how much I have earned?"
 msgstr "Wie erfahre ich, wie viel ich verdient habe?"
 
 msgid "How do we calculate interest fees for long positions?"
-msgstr ""
+msgstr "Wie berechnen wir Zinsgebühren für lange Positionen?"
 
 msgid "How do we calculate interest fees for short positions?"
-msgstr ""
+msgstr "Wie berechnen wir Zinsgebühren für kurze Positionen?"
 
 msgid "How does %1 make money?"
 msgstr "Wie verdient %1 Geld?"
@@ -3255,7 +3288,7 @@ msgid "How does it work?"
 msgstr "Wie funktioniert es?"
 
 msgid "How is margin calculated?"
-msgstr ""
+msgstr "Wie wird Margin berechnet?"
 
 msgid "How soon can I start trading?"
 msgstr "Wie schnell kann ich mit dem Handel beginnen?"
@@ -3318,7 +3351,7 @@ msgid "I. Quotes"
 msgstr "I. Notierungen"
 
 msgid "I.e. (20010 - 20000) x 1 x 1 = USD 10"
-msgstr ""
+msgstr "D.h. (20 010 - 20 000) x 1 x 1 = 10 USD"
 
 msgid "IP Address"
 msgstr "IP-Adresse"
@@ -3337,6 +3370,10 @@ msgstr "Ideen"
 
 msgid "If a closing Transaction in the same market is entered into but with a higher number of lots, the original Open Position will be closed and a new Open Position will be entered into for the number of lots by which the new Transaction exceeds the Open Position."
 msgstr ""
+"Wenn eine Schlusstransaktion mit einer höheren Anzahl an Posten im selben "
+"Markt eingegangen wird, wird die ursprüngliche Offene Position geschlossen "
+"und eine neue Offene Position für die Anzahl an Posten, zu welcher die neue "
+"Transaktion die Offene Position übersteigt, wird eingegangen."
 
 msgid "If a customer holds a long position and the prediction goes wrong as of the judgment time, the invested principal amount will become zero value."
 msgstr "Wenn ein Kunde eine lange Postion hält und sich die Vorhersage während der Entscheidungszeit als falsch herausstellt, dann wird die investierte Kapitalsumme zum Nullwert."
@@ -3361,6 +3398,10 @@ msgstr "Falls eine Klausel dieser Vereinbarung für ungültig erachtet wird oder
 
 msgid "If any provision of this Agreement shall be held invalid or unenforceable by a court or regulatory body of competent jurisdiction, the remainder of this Agreement shall remain in full force and effect."
 msgstr ""
+"Für den Fall, dass eine Regelung dieser Vereinbarung von einem Gericht oder "
+"einer Regulierungsbehörde zuständiger Gerichtsbarkeit als ungültig oder "
+"undurchsetzbar befunden wird, soll der Rest dieser Vereinbarung in voller "
+"Kraft und Wirkung bleiben."
 
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
 msgstr "Wenn das Unternehmen (in seinem eigenen Ermessen) nicht damit zu frieden ist, dass ein Kunde diese Bedingungen erfüllt, oder wenn ein Kunde einer angemessenen Forderung des Unternehmens nach Informationen nicht nachkommt, kann das Unternehmen das Kundenkonto stornieren und jegliche Gelder die darin angesammelt sind, einbehalten."
@@ -3379,6 +3420,10 @@ msgstr "Wenn diese Vereinbarung aus irgendeinem Grund gekündigt wird, müssen S
 
 msgid "If we determine that a force majeure event exists, the Company shall promptly give notice thereof to the client. Subsequently, we may, at our absolute discretion, take one or more of the following steps:"
 msgstr ""
+"Sofern wir feststellen, das ein Ereignis höherer Gewalt existiert, soll das "
+"Unternehmen den Kunden unverzüglich davon informieren. Anschließend können "
+"wir, zu unserer absoluten Diskretion, einen oder mehrere der folgenden "
+"Schritte unternehmen:"
 
 msgid "If we're happy with your results, we'll contact you for an interview and then do background and reference checks."
 msgstr "Wenn wir mit Ihren Ergebnissen zufrieden sind, werden wir uns mit Ihnen wegen eines Vorstellungsgesprächs in Verbindung setzen und danach Hintergrund- und Empfehlungsprüfungen vornehmen."
@@ -3388,6 +3433,8 @@ msgstr "Wenn Sie ein Geschäftspartner von %1 sind, müssen Sie die Allgemeinen 
 
 msgid "If you are an individual, you are over 18 years old and you have full capacity to enter into this Agreement;"
 msgstr ""
+"Sofern Sie eine Einzelperson sind, Sie über 18 Jahre alt sind und Sie die "
+"volle Kapazität besitzen in diese Vereinbarung einzuwilligen;"
 
 msgid "If you are developing on our API on behalf of a company or other entity, you represent and warrant that you have full legal authority to register an Application on behalf of that entity and bind it to these Terms. If you are not authorized, you may not accept these Terms or register an Application for someone else."
 msgstr "Wenn Sie unser API im Auftrag eines Unternehmens oder einer anderen Rechtspersönlichkeit zur Entwicklung vewenden, gewährleisten Sie, dass Sie die vollständige rechtliche Vollmacht haben, eine Anwendung im Auftrag dieser Rechtspersönlichkeit anzumelden und jene an diese Bedingungen zu binden. Wenn Sie nicht bevollmächtigt sind, dürfen Sie diese Bedingungen nicht für Dritte akzeptieren oder eine Anwendung für andere anmelden."
@@ -3403,15 +3450,25 @@ msgstr "Wenn Sie es sind, würden wir gerne von Ihnen hören."
 
 msgid "If you buy <strong>1 Volume of Volatility 100 Index</strong> at a <strong>price of US&#36 20,000</strong> and a <strong>margin rate of 0.01(1%)</strong>, the margin required to purchase that one lot will be calculated as follows:"
 msgstr ""
+"Wenn Sie <strong>1 Volumen des Volatilität 100 Index</strong> zu einem  "
+"<strong>Preis von 20 000 US&#36</strong> und mit einer <strong>Zinnspanne "
+"von 0,01(1%)</strong>kaufen, wird das Margin, das benötigt wird, um diesen "
+"einen Posten zu kaufen, wie folgend berechnet:"
 
 msgid "If you buy <strong>one lot of the EUR/USD</strong> symbol with a <strong>contract size of 100,000</strong> and <strong>leverage of 100:1</strong>, the margin required to purchase that one lot will be calculated as follows:"
 msgstr ""
+"Wenn Sie <strong>einen Posten des EUR/USD</strong> Symbols mit einer <strong>"
+"Kontraktgröße von 100 000</strong> und <strong> einem Leverage von "
+"100:1</strong>kaufen, wird das Margin, das benötigt wird, um diesen einen "
+"Posten zu kaufen, wie folgend berechnet:"
 
 msgid "If you choose to enter into a Contract with us, it is important that you remain aware of the risks involved, that you have adequate investment resources to bear such risks and that you monitor your positions carefully."
 msgstr "Wenn Sie bei uns einen Kontrakt eingehen möchten, müssen Sie sich über die damit verbundenen Risiken klar sein, über ausreichende Anlagemittel verfügen, um solche Risiken tragen zu können und Ihre Positionen sorgfältig überwachen."
 
 msgid "If you do not intend to utilise the leverage feature, please set the leverage ratio to 1:1."
 msgstr ""
+"Wenn Sie vom Leverage-Feature nicht Gebrauch machen möchten, setzten Sie die "
+"Leverage-Ratio bitte zu 1:1."
 
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
 msgstr "Wenn Sie innerhalb der nächsten Minuten keine E-Mail erhalten sollten, sehen Sie bitte in Ihrem Werbemail/Spamordner nach."
@@ -3540,7 +3597,14 @@ msgid "If you would like to file a complaint with regards to our service, kindly
 msgstr "Setzen Sie sich bitte mit uns unter Angabe aller entsprechenen Einzelheiten zu Ihrer Beschwerde in Verbindung, wenn Sie eine Beschwerde über unseren Service vorbringen möchten. Wir werden Ihrer Anfrage nachgehen und Ihre Anfrage beantworten. Normalerweise werden wir innerhalb von 1-2 Wochen (längstens innerhalb von 2 Monaten) nach Erhalt der entsprechenden Einzelheiten eine abschließende Antwort geben."
 
 msgid "If you would like to file a complaint with regards to the margin trading service described in this Agreement, kindly contact us by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
-msgstr "Wenn Sie eine Beschwerde hinsichtlich dem Margenhandelsservice, der in dieser Vereinbarung beschrieben ist, vorbringen möchten, kontaktieren Sie uns bitte unter Angabe der relevanten Einzelheiten im Bezug auf Ihre Beschwerde. Wir werden Ihrer Anfrage nachgehen und Ihre Anfrage beantworten. Normalerweise werden wir innerhalb von ein bis zwei Wochen (längstens innerhalb von zwei Monaten) nach dem Erhalt der entsprechenden Einzelheiten eine abschließende Antwort geben."
+msgstr ""
+"Wenn Sie eine Beschwerde hinsichtlich dem Margin-Handelsservice, der in "
+"dieser Vereinbarung beschrieben ist, vorbringen möchten, kontaktieren Sie "
+"uns bitte unter Angabe der relevanten Einzelheiten im Bezug auf Ihre "
+"Beschwerde. Wir werden Ihrer Anfrage nachgehen und Ihre Anfrage beantworten. "
+"Normalerweise werden wir innerhalb von ein bis zwei Wochen (längstens "
+"innerhalb von zwei Monaten) nach dem Erhalt der entsprechenden Einzelheiten "
+"eine abschließende Antwort geben."
 
 msgid "If you're a broker we'd like to work with you. You will be introducing your clients to a unique and innovative product - the %1 trading platform."
 msgstr "Wenn Sie ein Makler sind, würden wir gerne mit Ihnen zusammen arbeiten. Wir beiten Ihren Kunden ein einzigartiges und innovatives Produkt - die %1 Handelsplattform."
@@ -4671,25 +4735,25 @@ msgid "March"
 msgstr "März"
 
 msgid "Margin"
-msgstr "Marge"
+msgstr "Margin"
 
 msgid "Margin - The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover our exposure as a counterparty to your contract."
 msgstr ""
 
 msgid "Margin FX"
-msgstr "Margen FX"
+msgstr "Margin FX"
 
 msgid "Margin Level - Ratio of Account Equity to Total Margin, expressed as a percentage."
 msgstr ""
 
 msgid "Margin Payment"
-msgstr "Margen Zahlung"
+msgstr "Margin Zahlung"
 
 msgid "Margin Payments are due immediately and shall be received in full by us."
 msgstr ""
 
 msgid "Margin Policy"
-msgstr "Margen Richtlinie"
+msgstr "Margin Richtlinie"
 
 msgid "Margin Requirement and Calculation"
 msgstr ""
