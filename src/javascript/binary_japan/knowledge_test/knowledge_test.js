@@ -96,10 +96,10 @@ const KnowledgeTest = (() => {
         $('#knowledge-test-instructions').addClass('invisible');
     };
 
-    const showDisallowedMsg = jpStatus =>
+    const showDisallowedMsg = jp_status =>
         (showMsgOnly(localize('{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until [_1]. Last test taken at [_2].', [
-            toJapanTimeIfNeeded(jpStatus.next_test_epoch),
-            toJapanTimeIfNeeded(jpStatus.last_test_epoch),
+            toJapanTimeIfNeeded(jp_status.next_test_epoch),
+            toJapanTimeIfNeeded(jp_status.last_test_epoch),
         ])));
 
     const showCompletedMsg = () =>
