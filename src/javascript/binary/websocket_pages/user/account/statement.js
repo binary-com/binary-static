@@ -6,10 +6,10 @@ const addComma            = require('../../../common_functions/string_util').add
 const format_money        = require('../../../common_functions/currency_to_symbol').format_money;
 const toTitleCase         = require('../../../common_functions/string_util').toTitleCase;
 
-const Statement = (function() {
+const Statement = (() => {
     'use strict';
 
-    const getStatementData = function(statement, currency, jp_client) {
+    const getStatementData = (statement, currency, jp_client) => {
         const date_obj = new Date(statement.transaction_time * 1000),
             moment_obj = moment.utc(date_obj),
             date_str   = moment_obj.format('YYYY-MM-DD'),
@@ -31,9 +31,9 @@ const Statement = (function() {
         };
     };
 
-    const generateCSV = function(all_data, jp_client) {
+    const generateCSV = (all_data, jp_client) => {
         const columns  = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'],
-            header     = ['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit'].map(function(str) { return localize(str); }),
+            header     = ['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit'].map(str => (localize(str))),
             currency = Client.get('currency');
         header.push(localize('Balance') + (jp_client || !currency ? '' : ' (' + currency + ')'));
         const sep = ',';

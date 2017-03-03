@@ -159,7 +159,7 @@ const StatementInit = (() => {
         datepicker_inst.show({ maxDate: 0 });
         $(jump_to).val(localize('Today'))
                  .attr('data-value', toISOFormat(moment()))
-                 .change(() => {
+                 .change(function() {
                      if (!dateValueChanged(this, 'date')) {
                          return false;
                      }
