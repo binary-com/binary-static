@@ -22,7 +22,22 @@ sudo npm install -g grunt-cli
 curl -L https://cpanmin.us | sudo perl - App::cpanminus
 sudo cpanm Carton
 cd scripts
-carton install
+sudo carton install
+```
+
+#### Note: 
+You need to have the latest `node` & `npm` versions 
+
+Make sure to use `Perl 5.18.2`
+
+In Mac systems, the safest way to install an old version of Perl is: 
+
+```
+curl -L https://install.perlbrew.pl | bash
+source ~/perl5/perlbrew/etc/bashrc
+perlbrew init
+perlbrew install 5.18.2
+perlbrew switch perl-5.18.2
 ```
 
 
