@@ -4,7 +4,7 @@
 
     <p class="notice-msg center-text invisible" id="error-msg"></p>
 
-    <div id="portfolio-loading"></div>
+    <div class="loading">[% INCLUDE global/loading.html.tt %]</div>
 
     <div id="portfolio-content" class="invisible">
         <div class="gr-parent gr-padding-10">

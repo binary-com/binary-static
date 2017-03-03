@@ -48,6 +48,7 @@ const PortfolioInit = (() => {
             BinarySocket.send({ oauth_apps: 1 }).then((response) => {
                 PortfolioInit.updateOAuthApps(response);
             });
+            $('.barspinner').addClass('hidden');
         }
         is_initialized = true;
 
