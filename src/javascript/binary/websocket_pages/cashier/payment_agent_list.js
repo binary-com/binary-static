@@ -6,10 +6,10 @@ const PaymentAgentList = (() => {
     'use strict';
 
     let $pa_list_container,
-        $agent_template,
-        ddl_countries_id;
+        $agent_template;
 
-    const hidden_class = 'hidden';
+    const ddl_countries_id = '#target_country',
+        hidden_class = 'hidden';
 
     const onLoad = () => {
         Content.populate();
@@ -21,7 +21,6 @@ const PaymentAgentList = (() => {
             });
         });
 
-        ddl_countries_id   = '#target_country';
         $pa_list_container = $('#pa_list');
         $agent_template    = $pa_list_container.find('#accordion').html();
 
