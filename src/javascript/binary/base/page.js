@@ -13,7 +13,6 @@ const Menu              = require('./menu').Menu;
 const Contents          = require('./contents').Contents;
 const TrafficSource     = require('../common_functions/traffic_source').TrafficSource;
 const checkLanguage     = require('../common_functions/country_base').checkLanguage;
-const ViewBalance       = require('../websocket_pages/user/viewbalance/viewbalance.init').ViewBalance;
 const Cookies           = require('../../lib/js-cookie');
 const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check.init').RealityCheck;
 const RealityCheckData  = require('../websocket_pages/user/reality_check/reality_check.data').RealityCheckData;
@@ -41,9 +40,7 @@ Page.prototype = {
                 BinarySocket.send({ reality_check: 1 });
             }
         }
-        if (Client.is_logged_in()) {
-            ViewBalance.init();
-        } else {
+        if (!Client.is_logged_in()) {
             LocalStore.set('reality_check.ack', 0);
         }
         setCookieLanguage();

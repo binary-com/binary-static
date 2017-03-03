@@ -20,9 +20,7 @@ const Login                     = require('../base/login').Login;
 const LocalStore                = require('../base/storage').LocalStore;
 const State                     = require('../base/storage').State;
 const getPropertyValue          = require('../base/utility').getPropertyValue;
-const create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
 const getLoginToken             = require('../common_functions/common_functions').getLoginToken;
-const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
 const SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
 const getAppId                  = require('../../config').getAppId;
 const getSocketURL              = require('../../config').getSocketURL;
@@ -334,16 +332,6 @@ const BinarySocketClass = function() {
                         $('#topMenuPaymentAgent').removeClass('invisible');
                     }
                     Client.set('first_name', response.get_settings.first_name);
-                } else if (type === 'website_status') {
-                    if (!response.error) {
-                        create_language_drop_down(response.website_status.supported_languages);
-                        if (response.website_status.clients_country) {
-                            localStorage.setItem('clients_country', response.website_status.clients_country);
-                            if (!Login.is_login_pages()) {
-                                checkClientsCountry();
-                            }
-                        }
-                    }
                 } else if (type === 'reality_check') {
                     RealityCheck.realityCheckWSHandler(response);
                 }
