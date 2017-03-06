@@ -50,7 +50,7 @@ const ResetPassword              = require('../websocket_pages/user/reset_passwo
 const TNCApproval                = require('../websocket_pages/user/tnc_approval');
 
 const CashierJP     = require('../../binary_japan/cashier');
-const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test.init');
+const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test');
 
 const pages_config = {
     account_transferws       : { module: AccountTransferWS,          is_authenticated: true, only_real: true },
