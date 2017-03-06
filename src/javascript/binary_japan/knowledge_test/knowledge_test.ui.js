@@ -94,14 +94,9 @@ const KnowledgeTestUI = (() => {
         return $result_table;
     };
 
-    const createAlreadyCompleteDiv = () => ($('<div></div>').text(localize("{JAPAN ONLY}Dear customer, you've already completed the knowledge test, please proceed to next step.")));
-
     return {
-        createTrueFalseBox      : createTrueFalseBox,
-        createQuestionRow       : createQuestionRow,
-        createQuestionTable     : createQuestionTable,
-        createResultUI          : createResultUI,
-        createAlreadyCompleteDiv: createAlreadyCompleteDiv,
+        createQuestionTable: createQuestionTable,
+        createResultUI     : createResultUI,
     };
 })();
 

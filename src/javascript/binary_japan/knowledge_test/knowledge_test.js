@@ -3,6 +3,7 @@ const BinaryPjax          = require('../../binary/base/binary_pjax');
 const toJapanTimeIfNeeded = require('../../binary/base/clock').Clock.toJapanTimeIfNeeded;
 const Header              = require('../../binary/base/header').Header;
 const localize            = require('../../binary/base/localize').localize;
+const url_for             = require('../../binary/base/url').url_for;
 
 const KnowledgeTest = (() => {
     'use strict';
@@ -18,7 +19,7 @@ const KnowledgeTest = (() => {
     const msg_pass = '{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly.';
     const msg_fail = '{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours.';
 
-    const questionAnswerHandler = (ev => (submitted[ev.target.name] = +ev.target.value === 1));
+    const questionAnswerHandler = (ev) => { submitted[ev.target.name] = +ev.target.value === 1; };
 
     const submitHandler = () => {
         if (submit_completed) return;
@@ -94,9 +95,6 @@ const KnowledgeTest = (() => {
             toJapanTimeIfNeeded(jp_status.last_test_epoch),
         ])));
 
-    const showCompletedMsg = () =>
-        (showMsgOnly("{JAPAN ONLY}Dear customer, you've already completed the knowledge test, please proceed to next step."));
-
     const populateQuestions = () => {
         random_picks = randomPick20();
         random_picks.reduce((a, b) => a.concat(b))
@@ -106,6 +104,7 @@ const KnowledgeTest = (() => {
     };
 
     const onLoad = () => {
+        // need to send get_settings because client status needs to be checked against latest available data
         BinarySocket.send({ get_settings: 1 }, true).then((response) => {
             const jp_status = response.get_settings.jp_account_status;
 
@@ -114,8 +113,12 @@ const KnowledgeTest = (() => {
                 return;
             }
 
+            // show knowledge test link in header after updated get_settings call
+            Header.upgrade_message_visibility();
+
             switch (jp_status.status) {
-                case 'jp_knowledge_test_pending': populateQuestions();
+                case 'jp_knowledge_test_pending':
+                    populateQuestions();
                     break;
                 case 'jp_knowledge_test_fail': {
                     if (Date.now() >= (jp_status.next_test_epoch * 1000)) {
@@ -126,12 +129,8 @@ const KnowledgeTest = (() => {
                     }
                     break;
                 }
-                case 'jp_activation_pending':
-                    showCompletedMsg();
-                    break;
                 default: {
-                    console.warn('Unexpected jp status');
-                    BinaryPjax.load('/');
+                    window.location.href = url_for('/'); // needs to be loaded without pjax
                 }
             }
         });
@@ -139,7 +138,7 @@ const KnowledgeTest = (() => {
 
     const answers = {
         /* eslint-disable */
-        1: false,  2: true,   3: true,   4: true,   5: true,   6: true,   7: true,   8: true,   9: false,  10: true,
+        1: false,  2: true,   3: true,   4: true,   5: true,   6: true,   7: true,   8: true,   9: false,   10: true,
         11: false, 12: true,  13: false, 14: true,  15: true,  16: true,  17: false, 18: true,  19: true,   20: true,
         21: true,  22: false, 23: true,  24: false, 25: false, 26: true,  27: true,  28: true,  29: true,   30: true,
         31: false, 32: true,  33: false, 34: true,  35: false, 36: true,  37: true,  38: false, 39: true,   40: false,
