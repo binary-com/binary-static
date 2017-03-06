@@ -49,7 +49,7 @@ const PaymentAgentTransfer = (function() {
 
         FormManager.init(form_id, [
             { selector: '#client_id', validations: ['req', ['regular', { regex: /^\w+\d+$/, message: 'Please enter a valid Login ID.' }]], request_field: 'transfer_to' },
-            { selector: '#amount',    validations: ['req', ['number', { min: 10, max: 2000 }]] },
+            { selector: '#amount',    validations: ['req', ['number', { type: 'float', decimals: '1, 2', min: 10, max: 2000 }]] },
 
             { request_field: 'dry_run', value: 1 },
         ].concat(common_request_fields));
