@@ -70,11 +70,11 @@ const FormManager = (function() {
             evt.preventDefault();
             const $btn_submit = forms[form_selector].$btn_submit;
             if (Validation.validate(form_selector)) {
-                $btn_submit.attr('disabled', 'disabled');
                 const req = $.extend(obj_request, getFormData(form_selector));
                 if (typeof fnc_additional_check === 'function' && !fnc_additional_check(req)) {
                     return;
                 }
+                $btn_submit.attr('disabled', 'disabled');
                 BinarySocket.send(req).then((response) => {
                     if (typeof fnc_response_handler === 'function') {
                         setTimeout(() => { $btn_submit.removeAttr('disabled'); }, 1000);
