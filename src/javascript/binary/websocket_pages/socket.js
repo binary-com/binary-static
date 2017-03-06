@@ -327,7 +327,6 @@ const BinarySocketClass = function() {
                     Client.set('tnc_status', response.get_settings.client_tnc_status || '-');
                     if (!localStorage.getItem('risk_classification')) Client.check_tnc();
                     if (response.get_settings.is_authenticated_payment_agent) {
-                        Client.set('is_authenticated_payment_agent', true);
                         $('#topMenuPaymentAgent').removeClass('invisible');
                     }
                     Client.set('first_name', response.get_settings.first_name);
