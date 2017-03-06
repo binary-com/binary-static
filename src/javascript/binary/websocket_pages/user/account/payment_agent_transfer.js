@@ -10,8 +10,7 @@ const PaymentAgentTransfer = (function() {
     let balance,
         is_authenticated_payment_agent,
         common_request_fields,
-        amount,
-        client_id;
+        $insufficient_balance;
 
     const onLoad = function() {
         Content.populate();
@@ -31,6 +30,7 @@ const PaymentAgentTransfer = (function() {
         const $no_bal_err = $('#no_balance_error');
         const currency = Client.get('currency');
         balance = State.get(['response', 'balance', 'balance', 'balance']);
+        $insufficient_balance = $('#insufficient_balance');
 
         if (!currency || +balance === 0) {
             $('#pa_transfer_loading').remove();
@@ -55,18 +55,22 @@ const PaymentAgentTransfer = (function() {
         ].concat(common_request_fields));
 
         FormManager.handleSubmit(form_id, {}, responseHandler, additionalCheck);
+
+        $('#amount').on('input change', function() {
+            checkBalance($(this).val());
+        });
     };
 
-    const additionalCheck = (req) => {
-        const bal = +balance;
-        amount = +req.amount;
-        if (amount > bal) {
-            $('#insufficient-balance-error').removeClass(hiddenClass);
+    const checkBalance = (amount) => {
+        if (+amount > +balance) {
+            $insufficient_balance.removeClass(hiddenClass);
             return false;
         }
-        client_id = req.transfer_to;
+        $insufficient_balance.addClass(hiddenClass);
         return true;
     };
+
+    const additionalCheck = req => checkBalance(req.amount);
 
     const setFormVisibility = function(is_visible) {
         if (is_visible) {
@@ -99,25 +103,25 @@ const PaymentAgentTransfer = (function() {
         if (response.paymentagent_transfer === 2) {
             PaymentAgentTransferUI.hideFirstForm();
             PaymentAgentTransferUI.showConfirmation();
-            PaymentAgentTransferUI
-                .updateConfirmView(response.client_to_full_name, req.transfer_to, req.amount, req.currency);
-            initConfirm();
+            PaymentAgentTransferUI.updateConfirmView(response.client_to_full_name, req.transfer_to.toUpperCase(),
+                req.amount, req.currency);
+            initConfirm(req);
             return;
         }
 
         if (response.paymentagent_transfer === 1) {
             PaymentAgentTransferUI.hideFirstForm();
             PaymentAgentTransferUI.showDone();
-            PaymentAgentTransferUI.updateDoneView(Client.get('loginid'), req.transfer_to, req.amount, req.currency);
+            PaymentAgentTransferUI.updateDoneView(Client.get('loginid'), req.transfer_to.toUpperCase(), req.amount, req.currency);
         }
     };
 
-    const initConfirm = () => {
+    const initConfirm = (req) => {
         const confirm_form_id = '#frm_confirm_transfer';
 
         FormManager.init(confirm_form_id, [
-            { request_field: 'transfer_to', value: client_id },
-            { request_field: 'amount',      value: amount },
+            { request_field: 'transfer_to', value: req.transfer_to },
+            { request_field: 'amount',      value: req.amount },
         ].concat(common_request_fields));
 
         FormManager.handleSubmit(confirm_form_id, {}, responseHandler);

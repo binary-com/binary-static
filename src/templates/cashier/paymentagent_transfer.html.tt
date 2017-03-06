@@ -85,7 +85,7 @@
                 <label for="amount">[% l('Amount') %]</label>
             </div>
             <div class="gr-8">
-                <input type="number" name="amount" id="amount" min="10" max="2000"/>
+                <input type="number" name="amount" id="amount" min="10" max="2000" step="any"/>
                 <p class="hint">[% l('Min:') %] 10 [% l('Max:') %] 2000</p>
             </div>
         </div>
@@ -94,7 +94,7 @@
     <div class="gr-row gr-padding-10">
         <div class="gr-4"></div>
         <div class="gr-8">
-            <p id="insufficient-balance-error" class="errorfield invisible gr-padding-10">[% l('Insufficient balance') %]</p>
+            <p id="insufficient_balance" class="errorfield invisible gr-padding-10">[% l('Insufficient balance') %]</p>
             <p id="form_error" class="errorfield invisible gr-padding-10"></p>
             <button class="button" type="submit">[% l('Submit') %]</button>
         </div>
