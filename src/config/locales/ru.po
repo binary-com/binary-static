@@ -9,14 +9,12 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-03-05 23:34+0000\n"
 "Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
-"Language-Team: Russian "
-"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.12\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -629,18 +627,13 @@ msgid "<strong>Touch/No Touch</strong> - Predict the market touching or not touc
 msgstr "<strong>Касание/Нет касания</strong> – сделайте прогноз, коснется ли рынок выбранного барьера."
 
 msgid "<strong>Trade according to your preferred strategy</strong> - Trade based on \"gut feel\" or rely on technical and fundamental analysis"
-msgstr ""
-"<strong>Придерживайтесь выбранной стратегии</strong> – доверяйте своему "
-"чутью или пользуйтесь данными технического и фундаментального анализа"
+msgstr "<strong>Придерживайтесь выбранной стратегии</strong> – доверяйте своему чутью или пользуйтесь данными технического и фундаментального анализа"
 
 msgid "<strong>Transparent risk and potential reward</strong> - Know how much you will win or lose before you purchase the contract"
 msgstr "<strong>Понятный риск и прозрачная прибыль</strong> – заранее знайте размер потенциальной прибыли или потерь ещё до покупки контракта"
 
 msgid "<strong>Two-way pricing</strong> - Receive quotes for a trade and counter-trade, so you always get unbiased, transparent rates from %1"
-msgstr ""
-"<strong>Оценка контракта в двух направлениях</strong> – получите котировку "
-"для контракта и встречного контракта, чтобы всегда знать точные и прозрачные "
-"цены от %1"
+msgstr "<strong>Оценка контракта в двух направлениях</strong> – получите котировку для контракта и встречного контракта, чтобы всегда знать точные и прозрачные цены от %1"
 
 msgid "<ul><li> Go to the <strong>More actions</strong> menu and select <strong>Settings</strong>. </li><li> Under <strong>Advanced Settings</strong>, click on the <strong>View advanced settings</strong> button. </li><li> Under the <strong>Cookies</strong> section, select the \"<strong>Don't block cookies</strong>\" option. </li><li> Click anywhere outside the menu to save and close. </li></ul>"
 msgstr "<ul><li> Зайдите в меню <strong>Дополнительные действия</strong> и выберите <strong>Настройки</strong>. </li><li> В разделе <strong>Дополнительно</strong> нажмите кнопку <strong>Просмотреть расширенные настройки</strong>. </li><li>  В разделе <strong>Cookies</strong> выберите опцию \"<strong>Не блокировать cookies</strong>\". </li><li> Кликните за пределами меню, чтобы сохранить настройки и закрыть меню. </li></ul>"
@@ -985,10 +978,7 @@ msgid "All credit card details are submitted directly to the Visa/Mastercard net
 msgstr "Все данные о картах отправляются напрямую в систему Visa/Mastercard, используя новейшие технологии шифрования данных SSL, согласно политике банков."
 
 msgid "All credit card details are submitted directly to the Visa/Mastercard network using the latest SSL encryption technology, in accordance with bank policies;"
-msgstr ""
-"Все данные кредитных карт отправляются напрямую сети Visa/Mastercard, "
-"используя новейшую технологию шифрования на базе протокола SSL (Secure "
-"Sockets Layer), согласно политике банка;"
+msgstr "Все данные кредитных карт отправляются напрямую сети Visa/Mastercard, используя новейшую технологию шифрования на базе протокола SSL (Secure Sockets Layer), согласно политике банка;"
 
 msgid "All funds transferred from your Binary Options Real Account to your Real Account must be made by you."
 msgstr "Любые перечисления средств с Реального счёта Binary (для торговли бинарными опционами) на Ваш текущий Реальный счёт должны производиться Вами."
@@ -1929,9 +1919,7 @@ msgid "Commodities"
 msgstr "Сырьевые товары"
 
 msgid "Commodities - Major commodities such as gold and oil"
-msgstr ""
-"Сырьевые рынки – торгуйте основными сырьевыми товарами, такими как золото и "
-"нефть."
+msgstr "Сырьевые рынки – торгуйте основными сырьевыми товарами, такими как золото и нефть."
 
 msgid "Commodities are resources that are grown or extracted from the ground, such as silver, gold and oil. On %1, they are priced in US dollars."
 msgstr "Сырье – это материалы, которые растут или добываются из недр земли, как серебро, золото и нефть. На %1 они оцениваются в американских долларах."
@@ -3948,9 +3936,7 @@ msgid "It is understood that Binary Group companies, as trading counterparty, ha
 msgstr "Подразумевается, что, будучи торговым контрагентом, группа компаний Binary Group может иметь интерес, связи или договоренности, которые имеют существенное отношение к любому контракту, выполненному от Вашего имени. Настоящим Вы соглашаетесь с тем, что любое лицо, имеющее такой интерес, вправе сохранить любую полученную выгоду или прибыль и таким образом не является обязанным отчитываться перед Вами только по причине возникновения такого конфликта."
 
 msgid "It is your responsibility to keep your password and login ID confidential. You agree that you will not disclose your password and login ID to any other person;"
-msgstr ""
-"Вы обязуетесь сохранять конфиденциальность Вашего логина и пароля. Настоящим "
-"Вы соглашаетесь не разглашать Ваш пароль и логин любому другому лицу;"
+msgstr "Вы обязуетесь сохранять конфиденциальность Вашего логина и пароля. Настоящим Вы соглашаетесь не разглашать Ваш пароль и логин любому другому лицу;"
 
 msgid "It will be released to your account upon approval."
 msgstr "Бонус будет внесен на Ваш счет после одобрения."
@@ -5443,9 +5429,7 @@ msgid "Our information security policies are based on industry best practices in
 msgstr "Наша политика в области безопасности и защиты данных входит в число лучших в индустрии."
 
 msgid "Our information security policies are based on industry best practices in access control and business continuity; and"
-msgstr ""
-"Наша политика безопасности и защиты данных является одной из лучших в "
-"индустрии в отношении контроля доступа и непрерывности бизнес-процессов;"
+msgstr "Наша политика безопасности и защиты данных является одной из лучших в индустрии в отношении контроля доступа и непрерывности бизнес-процессов;"
 
 #, fuzzy
 #| msgid "Other Obligations"
@@ -9093,11 +9077,7 @@ msgid "Your Property"
 msgstr "Ваша собственность"
 
 msgid "Your Real Account password and login ID are unique and passwords are hashed so that not even Binary.com staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it;"
-msgstr ""
-"Пароль и логин Вашего Реального счёта являются уникальными, а пароли "
-"проходят процесс хэширования, чтобы даже персонал Binary.com не смог их "
-"прочитать. В этой связи мы не можем восстановить Ваш пароль и вышлем на Ваш "
-"электронный адрес новый пароль, если Вы не можете вспомнить старый;"
+msgstr "Пароль и логин Вашего Реального счёта являются уникальными, а пароли проходят процесс хэширования, чтобы даже персонал Binary.com не смог их прочитать. В этой связи мы не можем восстановить Ваш пароль и вышлем на Ваш электронный адрес новый пароль, если Вы не можете вспомнить старый;"
 
 msgid "Your Real Account shall be funded by transferring funds from your Binary Options Real Account, subject to the availability and sufficiency of funds in your Binary Options Real Account. No fund transfers shall be made to any other account in the name of any third party."
 msgstr "Реальный счёт можно пополнить путём перечисления средств с Вашего Реального счёта Binary для торговли бинарными опционами, при условии наличия на нём достаточного количества средств. Перевод средств на любой другой счёт или счёт третьей стороны категорически запрещён."
