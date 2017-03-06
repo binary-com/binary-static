@@ -8,7 +8,10 @@ const FormManager = (function() {
     const initForm = (form_selector, fields) => {
         const $form = $(`${form_selector}:visible`);
         if ($form.length && Array.isArray(fields) && fields.length) {
-            forms[form_selector] = { fields: fields };
+            forms[form_selector] = {
+                fields     : fields,
+                $btn_submit: $form.find('button[type="submit"]'),
+            };
             fields.forEach((field) => {
                 if (field.selector) {
                     field.$ = $form.find(field.selector);
@@ -65,13 +68,16 @@ const FormManager = (function() {
     const handleSubmit = (form_selector, obj_request, fnc_response_handler, fnc_additional_check) => {
         $(form_selector).off('submit').on('submit', function(evt) {
             evt.preventDefault();
+            const $btn_submit = forms[form_selector].$btn_submit;
             if (Validation.validate(form_selector)) {
+                $btn_submit.attr('disabled', 'disabled');
                 const req = $.extend(obj_request, getFormData(form_selector));
                 if (typeof fnc_additional_check === 'function' && !fnc_additional_check(req)) {
                     return;
                 }
                 BinarySocket.send(req).then((response) => {
                     if (typeof fnc_response_handler === 'function') {
+                        setTimeout(() => { $btn_submit.removeAttr('disabled'); }, 1000);
                         fnc_response_handler(response);
                     }
                 });
