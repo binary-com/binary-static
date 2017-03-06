@@ -209,7 +209,7 @@ const Header = (function() {
 
                 const messages = {
                     authenticate: () => localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.',
-                            ['<a href="' + url_for('user/authenticate') + '">', '</a>']),
+                        ['<a href="' + url_for('user/authenticate') + '">', '</a>']),
                     risk: () => localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',
                         ['<a href="' + url_for('user/settings/assessmentws') + '">', '</a>']),
                     tax: () => localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',
