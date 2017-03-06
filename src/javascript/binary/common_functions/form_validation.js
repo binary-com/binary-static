@@ -82,6 +82,10 @@ const Validation = (function() {
         if (!(options.type === 'float' ? /^\d+(\.\d+)?$/ : /^\d+$/).test(value) || !$.isNumeric(value)) {
             is_ok = false;
             message = localize('Should be a valid number');
+        } else if (options.type === 'float' && options.decimals &&
+            !(new RegExp('^\\d+(\\.\\d{' + options.decimals.replace(/ /g, '') + '})?$').test(value))) {
+            is_ok = false;
+            message = localize('Only [_1] decimal points are allowed.', [options.decimals]);
         } else if (options.min && +value < +options.min) {
             is_ok = false;
             message = localize('Should be more than [_1]', [options.min]);

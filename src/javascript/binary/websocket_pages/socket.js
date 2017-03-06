@@ -331,7 +331,6 @@ const BinarySocketClass = function() {
                         Client.set('jp_status', jpStatus.status);
                     }
                     if (response.get_settings.is_authenticated_payment_agent) {
-                        Client.set('is_authenticated_payment_agent', true);
                         $('#topMenuPaymentAgent').removeClass('invisible');
                     }
                     Client.set('first_name', response.get_settings.first_name);

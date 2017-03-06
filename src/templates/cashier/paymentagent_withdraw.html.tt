@@ -19,14 +19,14 @@
             </p>
         </div>
 
-        <div id="viewConfirm" class="viewItem hidden">
+        <form id="viewConfirm" class="viewItem hidden">
             <p>[% l('Please confirm the transaction details in order to complete the transfer:') %]</p>
 
             <p>[% l('Transfer to') %]: <span id="lblAgentName"></span><br />[% l('Amount') %]: <span id="lblCurrency"></span> <span id="lblAmount"></span></p>
 
             <a class="button" id="btnBack" href="javascript:;"><span class="button">[% l('Back') %]</span></a>
-            <a class="button" id="btnConfirm" href="javascript:;"><span class="button">[% l('Confirm') %]</span></a>
-        </div>
+            <button class="button" type="submit">[% l('Confirm') %]</button>
+        </form>
 
         <div id="viewForm" class="viewItem hidden">
             <p>[% l('Please provide us with the following information, after retrieving the verification token from your email:') %]</p>
@@ -35,10 +35,10 @@
 
                   <div class="gr-padding-10 gr-row clear">
                       <div class="gr-4 form_label">
-                          <label for="verification-code">[% l('Verification Token') %]</label>
+                          <label for="verification_code">[% l('Verification Token') %]</label>
                       </div>
                       <div class="gr-8">
-                          <input type="text" id="verification-code" maxlength="48" autocomplete="off" />
+                          <input type="text" id="verification_code" maxlength="48" autocomplete="off" />
                           <div class="hint">[% l('Please check your email for the value of this token') %]</div>
                       </div>
                   </div>
@@ -92,14 +92,14 @@
             <div id="paymentagent_withdrawal_notes">
                 <div>[% l('Notes:') %]</div>
                 <ul>
-                    <li>[% l('[_1] does not charge any transfer fees.', request.website.display_name) %]</li>
+                    <li>[% l('[_1] does not charge any transfer fees.', website_name) %]</li>
                     <li>[% l('In the \'Further Instructions\' field please specify the payment method and account number to which the Agent will send the funds to.') +%] [%+ l('Please make sure that you first agree with the Agent on the terms of payment before submitting your request.') %]</li>
                     <li>[% l('Once you click the \'Submit\' button the funds will be withdrawn from your account and will be sent to the Payment Agent you have chosen.') %]</li>
                     <li>[% l('The Agent will send you the withdrawal amount (minus the commission) via your preferred payment method.') %]</li>
                 </ul>
             </div>
 
-            <p class="comment">[% l('<strong>IMPORTANT DISCLAIMER</strong> - [_1] is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by [_1]. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. [_1] shall not in any circumstance be held responsible for transactions made between customers and Payment Agents.', request.website.display_name) %]</p>
+            <p class="comment">[% l('<strong>IMPORTANT DISCLAIMER</strong> - [_1] is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by [_1]. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. [_1] shall not in any circumstance be held responsible for transactions made between customers and Payment Agents.', website_name) %]</p>
         </div>
 
     </div>
