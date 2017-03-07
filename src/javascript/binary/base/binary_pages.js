@@ -18,7 +18,7 @@ const AccountTransferWS          = require('../websocket_pages/cashier/account_t
 const Cashier                    = require('../websocket_pages/cashier/cashier');
 const DepositWithdraw            = require('../websocket_pages/cashier/deposit_withdraw');
 const PaymentAgentList           = require('../websocket_pages/cashier/payment_agent_list');
-const PaymentAgentWithdrawWS     = require('../websocket_pages/cashier/payment_agent_withdrawws');
+const PaymentAgentWithdraw       = require('../websocket_pages/cashier/payment_agent_withdraw');
 const MBTradePage                = require('../websocket_pages/mb_trade/mb_tradepage');
 const AssetIndexUI               = require('../websocket_pages/resources/asset_index/asset_indexws.ui');
 const MarketTimesUI              = require('../websocket_pages/resources/market_times/market_timesws.ui');
@@ -26,7 +26,7 @@ const TradePage_Beta             = require('../websocket_pages/trade/beta/tradep
 const TradePage                  = require('../websocket_pages/trade/tradepage');
 const Authenticate               = require('../websocket_pages/user/account/authenticate');
 const ChangePassword             = require('../websocket_pages/user/account/change_password');
-const PaymentAgentTransferSocket = require('../websocket_pages/user/account/payment_agent_transfer');
+const PaymentAgentTransfer       = require('../websocket_pages/user/account/payment_agent_transfer');
 const Portfolio                  = require('../websocket_pages/user/account/portfolio/portfolio.init');
 const ProfitTable                = require('../websocket_pages/user/account/profit_table/profit_table.init');
 const APITokenWS                 = require('../websocket_pages/user/account/settings/api_token');
@@ -50,7 +50,7 @@ const ResetPassword              = require('../websocket_pages/user/reset_passwo
 const TNCApproval                = require('../websocket_pages/user/tnc_approval');
 
 const CashierJP     = require('../../binary_japan/cashier');
-const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test.init');
+const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test');
 
 const pages_config = {
     account_transferws       : { module: AccountTransferWS,          is_authenticated: true, only_real: true },
@@ -97,9 +97,9 @@ const pages_config = {
     top_up_virtualws         : { module: TopUpVirtual,              is_authenticated: true, only_virtual: true },
     trading                  : { module: TradePage },
     trading_beta             : { module: TradePage_Beta },
-    transferws               : { module: PaymentAgentTransferSocket, is_authenticated: true, only_real: true },
+    transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
-    withdrawws               : { module: PaymentAgentWithdrawWS,     is_authenticated: true, only_real: true },
+    withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'get-started'            : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },
