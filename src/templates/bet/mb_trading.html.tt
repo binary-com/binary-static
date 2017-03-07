@@ -30,7 +30,7 @@
                     <div class="gr-6 gr-12-m gr-no-gutter-left padding-right-five">
                         <div class="select-box">
                             <div class="padding-10">
-                                <div class="select-heading">[% l('Expiry Time (Duration)') %]</div>
+                                <div class="select-heading">[% l('Expiry Time') %]<span class="all-hide ja-show"> [% l('(Duration)') %]</span></div>
                                 <select class="select" id="period"></select>
                             </div>
                         </div>
