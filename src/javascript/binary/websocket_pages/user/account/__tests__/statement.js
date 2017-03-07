@@ -1,5 +1,5 @@
 const expect    = require('chai').expect;
-const statement = require('../statement').Statement;
+const statement = require('../statement');
 const ws        = require('ws');
 const LiveApi   = require('binary-live-api').LiveApi;
 
