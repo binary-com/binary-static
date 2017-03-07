@@ -67,11 +67,13 @@ const MBContract = (function() {
             date_expiry = trading_period.split('_')[1];
             duration = trading_period.split('_')[2];
         }
-        const text_value = moment.utc(date_expiry * 1000)
+        let text_value = moment.utc(date_expiry * 1000)
                             .utcOffset(japanese_client() ? '+09:00' : '+00:00')
                             .locale(getLanguage().toLowerCase())
-                            .format('MMM Do, HH:mm')
-                            .replace(/08:59/, '09:00«') + ' (' + durationText(duration.replace('0d', '1d')) + ')';
+                            .format('MMM Do, HH:mm');
+        if (japanese_client()) {
+            text_value = text_value.replace(/08:59/, '09:00«') + ' (' + durationText(duration.replace('0d', '1d')) + ')';
+        }
         return text_value.toString();
     };
 
