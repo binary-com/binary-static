@@ -65,9 +65,9 @@ const PaymentAgentList = (() => {
                 found = true;
             }
             insertListOption($ddl_countries, country[1], country[0]);
-            $('#target_country').removeClass(hidden_class);
-            $('.barspinner').addClass(hidden_class);
         });
+        $('#target_country').removeClass(hidden_class);
+        $('.barspinner').addClass(hidden_class);
 
         if (found) {
             $ddl_countries.val(requested_country);
