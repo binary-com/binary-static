@@ -27,7 +27,7 @@ const Validation = (function() {
                 field.$ = $form.find(field.selector);
                 if (!field.$.length || !field.validations) return;
 
-                field.type = getFieldType(field.$);
+                field.type = getFieldType($(field.$[0])); // also handles multiple results
                 field.form = form_selector;
                 if (field.msg_element) {
                     field.$error = $form.find(field.msg_element);

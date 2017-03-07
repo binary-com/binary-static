@@ -101,7 +101,7 @@ sub all_pages {
         ['user/reset_passwordws',            'user/reset_password',                  'default',    'Password Reset'],
         ['user/reality_check_frequencyws',   'user/reality_check_frequencyws',       'default',    'Reality Check'],
         ['user/reality_check_summaryws',     'user/reality_check_summaryws',         'default',    'Reality Check'],
-        ['user/security/api_tokenws',        'user/security/api_tokenws',            'default',    'API Token',               'ja'],
+        ['user/security/api_tokenws',        'user/security/api_token',              'default',    'API Token',               'ja'],
         ['user/security/authorised_appsws',  'user/security/authorised_appsws',      'default',    'Authorised Applications', 'ja'],
         ['user/security/cashier_passwordws', 'user/security/cashier_password',       'default',    'Cashier Password'],
         ['user/security/change_passwordws',  'user/security/change_password',        'default',    'Change Password'],

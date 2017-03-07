@@ -29,7 +29,7 @@ const ChangePassword             = require('../websocket_pages/user/account/chan
 const PaymentAgentTransfer       = require('../websocket_pages/user/account/payment_agent_transfer');
 const Portfolio                  = require('../websocket_pages/user/account/portfolio/portfolio.init');
 const ProfitTable                = require('../websocket_pages/user/account/profit_table/profit_table.init');
-const APITokenWS                 = require('../websocket_pages/user/account/settings/api_token');
+const APIToken                   = require('../websocket_pages/user/account/settings/api_token');
 const AuthorisedApps             = require('../websocket_pages/user/account/settings/authorised_apps');
 const CashierPassword            = require('../websocket_pages/user/account/settings/cashier_password');
 const FinancialAssessment        = require('../websocket_pages/user/account/settings/financial_assessment');
@@ -54,7 +54,7 @@ const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test'
 
 const pages_config = {
     account_transferws       : { module: AccountTransferWS,          is_authenticated: true, only_real: true },
-    api_tokenws              : { module: APITokenWS,                 is_authenticated: true },
+    api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
     asset_indexws            : { module: AssetIndexUI },
     authenticatews           : { module: Authenticate,               is_authenticated: true, only_real: true },

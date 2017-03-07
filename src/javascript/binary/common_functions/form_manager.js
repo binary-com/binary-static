@@ -47,7 +47,7 @@ const FormManager = (function() {
                     // if label, take the text
                     // if checkbox, take checked value
                     // otherwise take the value
-                    value = current_field.value ? current_field.value :
+                    value = current_field.value ? (typeof current_field.value === 'function' ? current_field.value() : current_field.value) :
                         $selector.attr('data-value') || (/lbl_/.test(key) ? (current_field.value || $selector.text()) :
                             $selector.is(':checkbox') ? ($selector.is(':checked') ? 1 : 0) :
                                 Array.isArray(val) ? val.join(',') : (val || ''));
