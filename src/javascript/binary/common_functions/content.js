@@ -59,7 +59,6 @@ const Content = (function() {
             textApost                      : 'apostrophe',
             textPassword                   : 'password',
             textPasswordsNotMatching       : 'The two passwords that you entered do not match.',
-            textClickHereToRestart         : 'Your token has expired. Please click <a href="[_1]">here</a> to restart the verification process.',
             featureNotRelevantToVirtual    : 'This feature is not relevant to virtual-money accounts.',
         };
 

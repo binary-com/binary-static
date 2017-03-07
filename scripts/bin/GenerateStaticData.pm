@@ -235,7 +235,8 @@ sub _texts {
         push @texts, localize('Invalid amount, minimum is');
         push @texts, localize('Invalid amount, maximum is');
         push @texts, localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.');
-        push @texts, localize('Only 2 decimal points are allowed.');
+        push @texts, localize('Only [_1] decimal points are allowed.');
+        push @texts, localize('Your token has expired. Please click [_1]here[_2] to restart the verification process.');
         #strings for api_tokenws page
         push @texts, localize('New token created.');
         push @texts, localize('The maximum number of tokens ([_1]) has been reached.');

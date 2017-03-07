@@ -19,6 +19,7 @@ sub all_pages {
         ['regulation',                 'legal/regulation',             'default',    'Regulation'],
         ['styles',                     'home/styles',                  'full_width', 'Styles'],
         ['affiliate/signup',           'affiliates/signup',            'default',    'Affiliate',            'ja'],
+        ['affiliate/signup-jp',        'japan/affiliates/signup',      'default',    'Affiliate',            'NOT-ja,en'],
         ['user/browser-support',       'misc/logintrouble',            'default',    'Login trouble'],
         ['endpoint',                   'misc/endpoint',                'default',    'Endpoint'],
         ['legal/us_patents',           'legal/us_patents',             'default',    'US Patents',           'ja'],
@@ -71,8 +72,8 @@ sub all_pages {
         ['cashier/top_up_virtualws',     'user/top_up_virtualws',                     'default', 'Give Me More Money!'],
         ['cashier/withdraw-jp',          'japan/cashier/withdraw',                    'default', 'Withdraw',        'NOT-ja,en'],
 
-        ['paymentagent/transferws',      'cashier/paymentagent_transferws',           'default', 'Payment Agent Transfer'],
-        ['paymentagent/withdrawws',      'cashier/paymentagent_withdrawws',           'default', 'Payment Agent Withdrawal'],
+        ['paymentagent/transferws',      'cashier/paymentagent_transfer',             'default', 'Payment Agent Transfer'],
+        ['paymentagent/withdrawws',      'cashier/paymentagent_withdraw',             'default', 'Payment Agent Withdrawal'],
 
         ['multi_barriers_trading', 'bet/mb_trading',  'default', 'Trusted by traders since 2000'],
         ['trading',                'bet/static',      'default', 'Trusted by traders since 2000'],
