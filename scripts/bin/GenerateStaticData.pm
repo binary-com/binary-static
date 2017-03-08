@@ -325,7 +325,7 @@ sub _texts {
         push @texts, localize('Processing your request...');
         push @texts, localize('Please check the above form for pending errors.');
         #strings for multi_barriers_trading page
-        push @texts, localize('[_1] [_2] payout if [_3] is strictly higher or equal than Barrier at close  on [_4].');
+        push @texts, localize('[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] is strictly lower than Barrier at close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] does not touch Barrier through close on [_4].');
         push @texts, localize('[_1] [_2] payout if [_3] touches Barrier through close on [_4].');

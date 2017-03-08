@@ -281,7 +281,7 @@ const MBContract = (function() {
                 opposite   : 'PUT',
                 order      : 0,
                 name       : 'Higher',
-                description: '[_1] [_2] payout if [_3] is strictly higher or equal than Barrier at close  on [_4].',
+                description: '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
             },
             PUT: {
                 opposite   : 'CALLE',
