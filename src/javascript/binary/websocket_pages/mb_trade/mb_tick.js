@@ -91,7 +91,7 @@ const MBTick = (function() {
                 maxSpotColor      : '#f00000',
                 highlightSpotColor: '#ffff00',
                 highlightLineColor: '#000000',
-                spotRadius        : 1.25,
+                spotRadius        : 2,
                 width             : 200,
                 height            : 25,
             };
