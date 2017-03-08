@@ -3,9 +3,10 @@ msgstr ""
 "Project-Id-Version: German (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-07 18:09+0000\n"
+"PO-Revision-Date: 2017-03-08 19:26+0000\n"
 "Last-Translator: Karin Graf <karin_graf@hotmail.com>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>"
+"\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,45 +32,44 @@ msgstr "\"Drittanbieter\" bezeichnet das/die Dritte(n) (nicht verbunden(e)(en)) 
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 wurden Ihrem virtuellen Geldkonto %3 gutgeschrieben"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
 msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
-msgstr "%1 %2 Auszahlung, wenn %3 nicht den Ausübungskurs durch das Schließen auf %4 erreicht."
+msgstr ""
+"%1 %2 Auszahlung, wenn %3 die Schwelle nicht durch das Schließen auf %4 "
+"erreicht."
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgid "%1 %2 payout if %3 ends on or between low and high values of Barrier at close on %4."
-msgstr "%1 %2 Auszahlung,  wenn %3 auf, oder zwischen niedrigen und hohen Werten  vom Ausübungskurs zum Schluss auf %4 endet."
+msgstr ""
+"%1 %2 Auszahlung, wenn %3 auf, oder zwischen niedrigen und hohen Werten der "
+"Schwelle, zum Schluss auf %4 endet."
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgid "%1 %2 payout if %3 ends outside low and high values of Barrier at close on %4."
-msgstr "%1 %2 Auszahlung,  wenn %3 außerhalb der niedrigen und hohen Werte des Ausübungskurses zum Schluss auf %4 endet."
+msgstr ""
+"%1 %2 Auszahlung, wenn %3 außerhalb der niedrigen und hohen Werte der "
+"Schwelle zum Schluss auf %4 endet."
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 goes outside of low and high values of Barrier through close on %4."
-msgstr "%1 %2 Auszahlung, wenn %3 außerhalb der niedrigen und hohen Werte des Ausübungskurses zum Schluss auf %4 geht."
+msgstr ""
+"%1 %2 Auszahlung, wenn %3 außerhalb der niedrigen und hohen Werte der "
+"Schwelle zum Schluss auf %4 geht."
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 msgid "%1 %2 payout if %3 is strictly higher than or equal to Barrier at close on %4."
-msgstr "%1 %2 Auszahlung, wenn %3 ausdrücklich höher oder gleich ist, als der Ausübungskurs zum Schluss auf %4."
+msgstr ""
+"%1 %2 Auszahlung, wenn %3 ausdrücklich höher als oder gleich mit (der), die "
+"Schwelle zum Schluss auf %4 ist."
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
 msgid "%1 %2 payout if %3 is strictly lower than Barrier at close on %4."
-msgstr "%1 %2 Auszahlung, wenn %3 ausdrücklich niedriger als der Ausübungskurs zum Schluss auf %4 ist."
+msgstr ""
+"%1 %2 Auszahlung, wenn %3 ausdrücklich niedriger als die Schwelle zum "
+"Schluss auf %4 ist."
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 stays between low and high values of Barrier through close on %4."
-msgstr "%1 %2 Auszahlung, wenn %3 zwischen den niedrigen und hohen Werten des Ausübungskurses durch den Schluss auf %4 bleibt."
+msgstr ""
+"%1 %2 Auszahlung, wenn %3 zwischen den niedrigen und hohen Werten der "
+"Schwelle durch den Schluss auf %4 bleibt."
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
 msgid "%1 %2 payout if %3 touches Barrier through close on %4."
-msgstr "%1 %2 Auszahlung, wenn %3 den Ausübungskurs durch den Schluss auf %4 berührt."
+msgstr ""
+"%1 %2 Auszahlung, wenn %3 die Schwelle durch den Schluss auf %4 berührt."
 
 msgid "%1 (Toll Free)"
 msgstr "%1 (Gebührenfrei)"
@@ -344,10 +344,8 @@ msgstr "Auszeichung als 'Beste Fixed-Odds Firma 2012' durch die Global Banking a
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "'Finanzwettenanbieter des Jahres' Auszeichung durch die eGaming Review"
 
-#, fuzzy
-#| msgid "Duration"
 msgid "(Duration)"
-msgstr "Laufzeit"
+msgstr "(Laufzeit)"
 
 msgid "(One) Touch trades"
 msgstr "(Einmalige) Zielkontrakte"
@@ -667,7 +665,11 @@ msgid "A Stays Between trade pays out if the market stays between (does not touc
 msgstr "Ein Bleibt-Zwischen-Kontrakt wird ausgezahlt, wenn der Kurs in der Zeitspanne, die vom Händler ausgewählt wurde, zwischen dem oberen UND unteren Schwellenwert bleibt (diesen aber nicht erreicht). Ein Übersteigt-Kontrakt wird ausgezahlt, wenn der Kurs während der vom Händler ausgewählten Zeitspanne ENTWEDER den oberen oder unteren Schwellenwert über- bzw. untersteigt."
 
 msgid "A Transaction is opened by either executing a \"Buy\" or \"Sell\" Order based on a specified number of lots (volume) that constitute the underlying instrument of the relevant market."
-msgstr "Eine Transaktion wird entweder durch ausführen einer \"Buy\" oder \"Sell\" Order, die auf einer spezifischen Anzahl an Posten (Volumen), die das zugrundeliegende Instrument des relevanten Marktes darstellen, basiert, eröffnet."
+msgstr ""
+"Eine Transaktion wird entweder durch ausführen einer \"Buy\" oder \"Sell\" "
+"Order, die auf einer spezifischen Anzahl an Lots (Volumen), die das "
+"zugrundeliegende Instrument des relevanten Marktes darstellen, basiert, "
+"eröffnet."
 
 msgid "A True Partnership"
 msgstr "Eine echte Partnerschaft"
@@ -1027,10 +1029,17 @@ msgid "An Ends Between trade pays out if the market exit price is strictly highe
 msgstr "Ein Endet-Zwischen Kontrakt wird ausgezahlt, wenn der Kurs zum Vertragsende grundsätzlich höher als die niedrige Kursschwelle UND grundsätzlich niedriger als die hohe Kursschwelle ist. Eine Endet-Oberhalb Binäre Option wird ausgezahlt, wenn der Kurs zum Ende des Kontrakts ENTWEDER grundsätzlich höher als die hohe Kursschwelle oder grundsätzlich niedriger als die niedrige Kursschwelle ist."
 
 msgid "An Open Position may be closed by placing an opposite Order, that is an Order to sell (to close a Long Position) or to buy (to close a Short Position) in the same market for the same specified number of lots (volume)."
-msgstr "Eine Offene Position kann geschlossen werden, indem eine Gegen-Order platziert wird, die entweder eine Order zu verkaufen (um eine lange Position zu schließen) oder zu kaufen (um eine kurze Position zu schließen), im selben Markt, für die gleiche bestimmte Anzahl an Posten (Volumen), ist."
+msgstr ""
+"Eine Offene Position kann geschlossen werden, indem eine Gegen-Order "
+"platziert wird, die entweder eine Order zu verkaufen (um eine lange Position "
+"zu schließen) oder zu kaufen (um eine kurze Position zu schließen), im "
+"selben Markt, für die gleiche bestimmte Anzahl an Lots (Volumen), ist."
 
 msgid "An Open Position may be partially closed by entering into an opposite Transaction in the same Market but for a smaller number of lots (volume) as the Open Position."
-msgstr "Eine offene Position kann zum Teil geschlossen werden, indem Sie in eine entgegengesetzte Transaktion im selben Markt, aber für einen geringere Anzahl an Posten (Volumen) als die Offene Position, einsteigen."
+msgstr ""
+"Eine offene Position kann zum Teil geschlossen werden, indem Sie in eine "
+"entgegengesetzte Transaktion im selben Markt, aber für einen geringere "
+"Anzahl an Lots (Volumen) als die Offene Position, einsteigen."
 
 msgid "An additional password can be used to restrict access to the cashier."
 msgstr "Es darf ein zusätzliches Passwort verwendet werden, um den Zugang zum Kassensabschnitt zu beschränken."
@@ -3360,7 +3369,11 @@ msgid "Ideas"
 msgstr "Ideen"
 
 msgid "If a closing Transaction in the same market is entered into but with a higher number of lots, the original Open Position will be closed and a new Open Position will be entered into for the number of lots by which the new Transaction exceeds the Open Position."
-msgstr "Wenn eine Schlusstransaktion mit einer höheren Anzahl an Posten im selben Markt eingegangen wird, wird die ursprüngliche Offene Position geschlossen und eine neue Offene Position für die Anzahl an Posten, zu welcher die neue Transaktion die Offene Position übersteigt, wird eingegangen."
+msgstr ""
+"Wenn eine Schlusstransaktion mit einer höheren Anzahl an Lots im selben "
+"Markt eingegangen wird, wird die ursprüngliche Offene Position geschlossen "
+"und eine neue Offene Position für die Anzahl an Lots, zu welcher die neue "
+"Transaktion die Offene Position übersteigt, wird eingegangen."
 
 msgid "If a customer holds a long position and the prediction goes wrong as of the judgment time, the invested principal amount will become zero value."
 msgstr "Wenn ein Kunde eine lange Postion hält und sich die Vorhersage während der Entscheidungszeit als falsch herausstellt, dann wird die investierte Kapitalsumme zum Nullwert."
@@ -3426,10 +3439,18 @@ msgid "If you are, we'd love to hear from you."
 msgstr "Wenn Sie es sind, würden wir gerne von Ihnen hören."
 
 msgid "If you buy <strong>1 Volume of Volatility 100 Index</strong> at a <strong>price of US&#36 20,000</strong> and a <strong>margin rate of 0.01(1%)</strong>, the margin required to purchase that one lot will be calculated as follows:"
-msgstr "Wenn Sie <strong>1 Volumen des Volatilität 100 Index</strong> zu einem  <strong>Preis von 20 000 US&#36</strong> und mit einer <strong>Zinnspanne von 0,01(1%)</strong>kaufen, wird das Margin, das benötigt wird, um diesen einen Posten zu kaufen, wie folgend berechnet:"
+msgstr ""
+"Wenn Sie <strong>1 Volumen des Volatilität 100 Index</strong> zu einem  "
+"<strong>Preis von 20 000 US&#36</strong> und mit einer <strong>Zinnspanne "
+"von 0,01(1%)</strong>kaufen, wird das Margin, das benötigt wird, um diesen "
+"ein Lot zu kaufen, wie folgend berechnet:"
 
 msgid "If you buy <strong>one lot of the EUR/USD</strong> symbol with a <strong>contract size of 100,000</strong> and <strong>leverage of 100:1</strong>, the margin required to purchase that one lot will be calculated as follows:"
-msgstr "Wenn Sie <strong>einen Posten des EUR/USD</strong> Symbols mit einer <strong>Kontraktgröße von 100 000</strong> und <strong> einem Leverage von 100:1</strong>kaufen, wird das Margin, das benötigt wird, um diesen einen Posten zu kaufen, wie folgend berechnet:"
+msgstr ""
+"Wenn Sie <strong>ein Lot des EUR/USD</strong> Symbols mit einer <strong>"
+"Kontraktgröße von 100 000</strong> und <strong> einem Leverage von "
+"100:1</strong>kaufen, wird das Margin, das benötigt wird, um dieses eine Lot "
+"zu kaufen, wie folgend berechnet:"
 
 msgid "If you choose to enter into a Contract with us, it is important that you remain aware of the risks involved, that you have adequate investment resources to bear such risks and that you monitor your positions carefully."
 msgstr "Wenn Sie bei uns einen Kontrakt eingehen möchten, müssen Sie sich über die damit verbundenen Risiken klar sein, über ausreichende Anlagemittel verfügen, um solche Risiken tragen zu können und Ihre Positionen sorgfältig überwachen."
@@ -4488,10 +4509,24 @@ msgid "Less than 6 months"
 msgstr "Less than 6 months"
 
 msgid "Let's say the points adjustment for a long position on the EUR/USD symbol is -5.64. This would require an overnight fee of 5.64 points for one lot of open position in EUR/USD, where the size of one lot is 100,000 units. The points will then be converted into the deposit currency (which is the euro in this example). As a result, you will incur an interest fee of EUR5.64 for keeping the position open overnight."
-msgstr "Nehmen wir an, dass die Punktanpassung für eine lange Position auf dem EUR/USD Symbol -5,64 ist. Dies würde eine Overnight Gebühr von 5,64 Punkten für einen Posten einer offenen Position in EUR/USD verlangen, wobei die Größe des Posten 100 000 Einheiten ist. Die Punkte werden anschließend in die Einzahlungswährung (die in diesem Beispiel Euro beträgt) umgerechnet. Daher wird für Sie eine Zinsgebühr von 5,64 EUR anfallen, um die Position über Nacht offen zu halten."
+msgstr ""
+"Nehmen wir an, dass die Punktanpassung für eine lange Position auf dem EUR/"
+"USD Symbol -5,64 ist. Dies würde eine Overnight Gebühr von 5,64 Punkten für "
+"ein Lot einer offenen Position in EUR/USD verlangen, wobei die Größe des "
+"Lots 100 000 Einheiten ist. Die Punkte werden anschließend in die "
+"Einzahlungswährung (die in diesem Beispiel Euro beträgt) umgerechnet. Daher "
+"wird für Sie eine Zinsgebühr von 5,64 EUR anfallen, um die Position über "
+"Nacht offen zu halten."
 
 msgid "Let's say the points adjustment for a short position on the EUR/USD symbol is 1.64. This would result in an overnight credit of 1.64 points for one lot of open position in EUR/USD where the size of one lot is 100,000 units. The points will then be converted into the deposit currency (which is the euro in this example). As a result, you will be credited with EUR1.64 for keeping the position open overnight."
-msgstr "Nehmen wir an, dass die Punktanpassung für eine kurze Position auf dem EUR/USD Symbol 1,64 ist. Daraus würde sich eine Overnight Gutschrift von 1,64 Punkten für eine offene Position in EUR/USD ergeben, wobei die Größe eines Posten 100 000 Einheiten ist. Die Punkte werden anschließend in die Einzahlungswährung (die in diesem Beispiel Euro beträgt) umgerechnet. Dadurch werden Ihnen, für die Offenhaltung der Position über Nacht, 1,64 EUR gutgeschrieben."
+msgstr ""
+"Nehmen wir an, dass die Punktanpassung für eine kurze Position auf dem EUR/"
+"USD Symbol 1,64 ist. Daraus würde sich eine Overnight Gutschrift von 1,64 "
+"Punkten für ein Lot offener Positionen in EUR/USD ergeben, wobei die Größe "
+"eines Lots 100 000 Einheiten ist. Die Punkte werden anschließend in die "
+"Einzahlungswährung (die in diesem Beispiel Euro beträgt) umgerechnet. "
+"Dadurch werden Ihnen, für die Offenhaltung der Position über Nacht, 1,64 EUR "
+"gutgeschrieben."
 
 msgid "Level of Education"
 msgstr "Ausbildungsgrad"
@@ -5177,10 +5212,8 @@ msgstr "Online Devisenwechsler"
 msgid "Only %1 are allowed."
 msgstr "Es sind nur %1 erlaubt."
 
-#, fuzzy
-#| msgid "Only 2 decimal points are allowed."
 msgid "Only %1 decimal points are allowed."
-msgstr "Es sind nur 2 Dezimalstellen erlaubt."
+msgstr "Es sind nur %1 Dezimalstellen erlaubt."
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgstr "Nur fünf Jahre nach der Gründung erhalten wir diese bedeutende Auszeichnung für unsere Online Trading Dienstleistungen. Die Auszeichnung erkennt das zuverlässige, schnelle und sichere Online Trading für Einsteiger und Trading Experten an. Bis jetzt hat unsere Website über 15 Millionen Trades durchgeführt."
@@ -5539,10 +5572,8 @@ msgstr "Plattformen"
 msgid "Please %1 to view this page"
 msgstr "Bitte %1, um diese Seite anzuzeigen"
 
-#, fuzzy
-#| msgid "Please deposit before transfer to client."
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
-msgstr "Bitte einzahlen, bevor Sie an den Kunden überweisen."
+msgstr "Bitte <a href=\"%1\">einzahlen</a>, bevor Sie an den Kunden überweisen."
 
 msgid "Please <a href=\"%1\">log in</a> to view this page."
 msgstr "Bitte <a href=\"%1\">melden Sie sich an</a>, um diese Seite anzuzeigen."
@@ -6403,7 +6434,7 @@ msgid "Since we exclusively deal on own account in Financial Products this means
 msgstr "Da wir Finanzprodukte ausschließlich auf eigene Rechnung handeln, bedeutet dies, dass wir als Ausführungsplatz handeln und dementsprechend alle mit uns eingegangenen Transaktionen außerhalb eines überwachten Markts (Aktienbörse) oder einer multilateralen Handelseinrichtung ausgeführt werden."
 
 msgid "Size - the size of your order determined by the volume (number of lots)."
-msgstr "Größe - die Größe Ihrer Order vom Volumen (Anzahl der Posten) bestimmt."
+msgstr "Größe - die Größe Ihrer Order vom Volumen (Anzahl der Lot) bestimmt."
 
 msgid "Skill in the application of object-oriented programming languages (C++, Perl and Java) coupled with the ability to produce high quality code"
 msgstr "Kenntnis in der Anwendung von objektorientierten Programmiersprachen (C++, Perl und Java), gepaart mit der Fähigkeit, qualitativ hochwertigen Code zu generieren"
@@ -6830,9 +6861,21 @@ msgstr "Das Unternehmen garantiert nicht, dass das von ihm zur Verfügung gestel
 
 msgid "The Company does not make any warranty, express or implied, that any pricing or other information provided through the MT5 Trading Platform or otherwise is correct. Furthermore, if a quote (bid or offer price) error occurs due to a system malfunction (whether or not it's a third party or a proprietary system), the Company will not be liable for any resulting losses that have incurred."
 msgstr ""
+"Das Unternehmen gibt keine Gewährleistung, ausdrücklich oder implizit, dass "
+"die Preispolitik oder andere Informationen, die durch die MT5 "
+"Handelsplattform angegeben werden, korrekt sind. Weiters, falls ein "
+"Notierungsfehler (Geld- oder Briefkurs) auf Grund eines Systemfehlers (ob es "
+"ein System Dritter oder ein geschütztes System ist, oder nicht) auftritt, "
+"ist das Unternehmen für jegliche daraus resultierenden Verluste, die Sie "
+"erlitten haben, nicht haftbar."
 
 msgid "The Company does not offer any credit facilities or arrangement to its clients in normal trading circumstances. You acknowledge and agree that you will not be dealing with us on credit, regardless of the amount of your Account Balance and Transactions entered into with us."
 msgstr ""
+"Das Unternehmen bietet, unter normalen Handelsumständen, keine "
+"Kreditmöglichkeiten oder Vereinbarungen mit seinen Kunden an. Sie erkennen "
+"an und stimmen zu, dass Sie mit uns nicht auf Kredit handeln werden, "
+"ungeachtet dem Betrag Ihres Kontostandes und der Transaktionen die Sie mit "
+"uns eingegangen sind."
 
 msgid "The Company does not provide a market amongst or between Clients for investments, securities, derivatives or speculations. Each financial contract purchased by a Client via this site is an individual agreement between that Client and the Company and is not a security, nor is it transferable, negotiable or assignable to or with any third party."
 msgstr "Das Unternehmen stellt unter oder zwischen den Kunden keinen Markt für Investments, Wertpapiere, Derivate oder Spekulationen zur Verfügung. Jeder Finanzvertrag, der von einem Kunden über diese Seite erworben wird, ist eine individuelle Vereinbarung zwischen dem Kunden und dem Unternehmen. Er stellt kein Wertpapier dar und ist nicht an Dritte übertragbar, verhandelbar oder abtretbar."
@@ -6911,6 +6954,11 @@ msgstr "Das Unternehmen übernimmt keinerlei Haftung für Order, Anlageentscheid
 
 msgid "The Company shall not be in breach of its obligation under this Agreement and shall not be held liable for any failure of or delay in performing its obligations under this Agreement if such failure or delay is the result of the occurrence of a Force Majeure Event."
 msgstr ""
+"Das Unternehmen soll seine Verpflichtung unter dieser Vereinbarung nicht "
+"verletzen und soll für jeglichen Ausfall oder Verzug in der Ausführung "
+"seiner Verpflichtungen unter dieser Vereinbarung nicht haftbar sein, wenn "
+"solch ein Ausfall oder Verzug das Ergebnis eines Ereignisses höherer Gewalt "
+"ist."
 
 msgid "The Company shall not be liable to you in contract, or otherwise (including liability for negligence) for any loss, whether direct or indirect, of the Affiliate's business, revenue or profits, anticipated savings, or wasted expenditure, corruption, or destruction of data or for any indirect or consequential loss whatsoever."
 msgstr "Das Unternehmen haftet Ihnen gegenüber weder vertraglich noch anderweitig (einschließlich Haftung wegen Fahrlässigkeit) für direkte oder indirekte Verluste des Geschäftspartnerunternehmens, für Umsatz oder Gewinne, erwartete Einsparungen oder unnötige Ausgaben, Beschädigung oder Vernichtung von Daten oder für andere indirekte oder Folgeschäden."
@@ -6923,6 +6971,18 @@ msgstr "Das Unternehmen muss Ihnen Kontoauszüge mit Angaben über die vorhanden
 
 msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing your Transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by us or the prime brokers to yourselves. You acknowledge and agree that such data is proprietary to us and any such provider, and you will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. You represent and warrant that you will only use such data for purposes of facilitating your entry into Transactions with us on your Real Account in accordance with this Agreement and not for any other purpose. This clause does not apply to Volatility Indices."
 msgstr ""
+"Das Unternehmen bezieht seine Marktdaten von Prime Brokern, die als "
+"Liquiditätsanbieter agieren, und führt somit Ihre Transaktionen durch ein "
+"Pool an angesammelter Liquidität von führenden Banken aus. Die "
+"Dienstleistungen, die vom Unternehmen angeboten werden, beinhalten keine "
+"materielle Lieferung von Fremdwährung durch uns, oder die Prime Broker, zu "
+"Ihnen. Sie erkennen an und stimmen zu, dass solche Daten von uns und solch "
+"einem Anbieter geschützt sind, und dass Sie solche Daten nicht an Dritte im "
+"Ganzen oder zum Teil weiterleiten, umverteilen, veröffentlichen, offenlegen, "
+"oder anzeigen werden. Sie vertreten und garantieren, dass Sie solche Daten "
+"nur zur Erleichterung Ihres Eintritts in eine Transaktion mit uns auf Ihrem "
+"echten Konto, im Zusammenhang mit dieser Vereinbarung, und nicht zu anderen "
+"Zwecken verwenden werden. Diese Klausel gilt nicht für Volatilität Indizes."
 
 msgid "The Company will not be liable in any way to any persons in the event of force majeure, or for the act of any Government or legal authority or for the failure of or damage or destruction to, its computer systems, data or records or any part thereof, or for delays, losses, errors or omissions resulting from the failure or mismanagement of any telecommunications or computer equipment or software. The Company shall not be responsible for any damages or losses deemed or alleged to have resulted from or been caused by this site or its content. This includes any client's use or misuse of its content, the inability of any client to connect with or use the site, delay in operations or transmission, failure of communication lines, or any errors or omissions in content."
 msgstr "Im Fall von Höherer Gewalt oder beim Eingreifen von Regierungen oder Behörden, haftet das Unternehmen gegenüber anderen Personen nicht für den Verlust oder die Schäden oder die Zerstörung ihrer Computersysteme, Daten oder Aufzeichnungen oder deren Teile, oder für Verzögerungen, Verluste, Fehler oder Unterlassungen, die sich aus dem Ausfall oder dem falschen Einsatz von Telekommunikations- oder Computerausstattungen oder der Software ergeben. Das Unternehmen haftet nicht für Schäden oder Verluste, die sich angeblich von, oder durch die Verwendung unserer Seite und ihrem Inhalt ergeben. Dies umfasst die Anwendung oder den Missbrauch durch Kunden, die Unmöglichkeit eines Kunden, sich auf der Seite einzuloggen, Verzögerungen in der Bedienung oder Übertragung, Ausfall der Verbindung oder jegliche andere Störungen oder fehlender Inhalt."
@@ -6956,6 +7016,10 @@ msgstr "Der erste Tick"
 
 msgid "The Forex is typically traded in <i>lots</i>. One standard <i>lots</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>."
 msgstr ""
+"Der Forex wird normalerweise in <i>Lot</i>gehandelt. Ein standardmäßiges "
+"<i>Lot</i> entspricht 100 000 Einheiten. Jedes Mal, wenn Sie eine Position "
+"auf einem Währungssymbol öffnen, können Sie mit einer Mindest-Transaktion "
+"von <i>0,01 Lot</i>beginnen."
 
 msgid "The GBP Index is a weighted Index, measuring the British Pound's value against a basket of 5 global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%."
 msgstr "Der GBP-Index ist ein gewichteter Index, der den Wert des Britischen Pfunds gegenüber einem Korb von 5 Weltwährungen (USD, EUR, AUD, JPY, CAD), von denen jede mit 20 % berücksichtigt ist, ermittelt."
@@ -6965,9 +7029,17 @@ msgstr "Das Margin Level Ihres echten Kontos erreicht, oder fällt unter das Sto
 
 msgid "The Margin Requirement is a percentage of the value of the Open Positions and will continue to fluctuate in accordance with the value of the Open Positions throughout the duration of the relevant contracts (the \"Contract Value\")."
 msgstr ""
+"Die Margin-Anforderung ist ein Prozentsatz des Wertes einer offenen Position "
+"und wird fortfahren, im Zusammenhang mit dem Wert der offenen Position "
+"während der Laufzeit der relevanten Kontrakte (der \"Kontraktwert\"), zu "
+"schwanken."
 
 msgid "The Margin Requirements can increase / decrease based on the aggregated size of your Open Position determined by the volume (number of lots), contract size (value per point in the original currency of the contract), market price and margin rate."
 msgstr ""
+"Die Margin-Anforderungen können auf der kumulierten Größe Ihrer offenen "
+"Positionen basierend, durch Volumen (Anzahl der Lot), Kontraktgröße (Wert je "
+"Punkt in der ursprünglichen Währung des Kontrakts), Börsenkurs und "
+"Zinsspanne bestimmt, steigen/fallen."
 
 msgid "The Payment Agent facility is currently not available in your country."
 msgstr "In Ihrem Land ist derzeit kein Zahlungsagent vorhanden."
@@ -6977,21 +7049,31 @@ msgstr "Der Pillar 3 Offenlegungsbericht von Binary Investments (Europe) Limited
 
 msgid "The Policy is supplemented by Appendix A which provide further details to our considerations as they are related to differing asset classes. The accompanying Appendix A should be read in conjunction with this Policy."
 msgstr ""
+"Die Richtlinie ist durch Anhang A, der weitere Details zu unseren Erwägungen "
+"im Verhältnis zu den unterschiedlichen Anlageklassen angibt, ergänzt. Der "
+"zugehörige Anhang A sollte in Verbindung mit dieser Richtlinie gelesen "
+"werden."
 
 msgid "The Program"
 msgstr "Das Programm"
 
 msgid "The STP account provides you with the tightest spreads and connects you directly to the market."
 msgstr ""
+"Das STP Konto bietet Ihnen die engsten Spannen an und verbindet Sie direkt "
+"mit dem Markt."
 
 msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children –– who are at their most vulnerable age –– with an education which will prepare them for the future."
 msgstr "Das Shelter Community Learning Centre 3 ist eine Gemeindeschule für Flüchtlingskinder aus Myanmar, die mit ihren Familien auf eine Einbürgerung in ein drittes Land warten. Die Schule ist darauf ausgerichtet, diesen Kindern - die in ihrem schutzbedürftigsten Alter sind - eine Ausbildung anzubieten, die sie auf die Zukunft vorbereiten wird."
 
 msgid "The Standard account is suitable for a wide range of traders, both new and experienced."
 msgstr ""
+"Das Standard Konto passt für ein breites Spektrum an Händlern, Neue un "
+"Erfahrene."
 
 msgid "The Stop Out Level applicable to your Real Account may differ from the default Stop Out Level published on our website."
 msgstr ""
+"Das Stop Out Level, das für Ihr echtes Konto gilt, kann vom vorgegebenen "
+"Stop Out Level, das auf unserer Website veröffentlicht ist, abweichen."
 
 msgid "The USD Index is a weighted Index, measuring the US Dollar's value against a basket of 5 global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%."
 msgstr "Der USD-Index ist ein gewichteter Index, der den Wert des US-Dollars gegenüber einem Korb aus 5 Weltwährungen (EUR, GBP, JPY, CAD, AUD), jede mit 20 % berücksichtigt, ermittelt."
@@ -7001,6 +7083,8 @@ msgstr "Der Volatilität 100 Index ist doppelt so volatil wie der Volatilität 5
 
 msgid "The Volatility account allows you to profit by speculating on the rise or fall of an instrument."
 msgstr ""
+"Das Volatilität Konto erlaubt Ihnen Gewinn zu machen, indem Sie auf das "
+"Steigen und Fallen eines Instruments spekulieren."
 
 msgid "The ability to acquire knowledge of compliance matters in a multitude of international jurisdictions"
 msgstr "Die Fähigkeit, sich Wissen über Compliance-Angelegenheiten in einer Vielzahl von Ländern anzueignen"
@@ -7103,9 +7187,19 @@ msgstr "The customer agrees they understand each the following statements regard
 
 msgid "The cut-off time for performing Roll-overs and booking of the Roll-over Credit/Debit."
 msgstr ""
+"Der Annahmeschluss für Leistung erbringende Roll-over und für die Anmeldung "
+"von Roll-over Gutschriften/Lastschriften."
 
 msgid "The default Stop Out Level applicable to your Account is published on our website. However, the default Stop Out Level is subject to alteration at our absolute discretion. Any changes to the Stop Out Level will take effect immediately. We will endeavour to notify you of an alteration to the default Stop Out Level by publishing the revised default Stop Out Level on our website. It is your responsibility to check our website regularly and remain informed about the default Stop Out Level."
 msgstr ""
+"Das vorgegebene Stop Out Level, das für Ihr Konto gilt, ist auf unserer "
+"Website veröffentlicht. Jedoch, unterliegt das vorgegebene Stop Out Level "
+"Änderungen nach unserem eigenen Ermessen. Alle Änderungen am Stop Out Level "
+"treten unverzüglich in Kraft. Wir werden uns bemühen, Sie von einer Änderung "
+"eines vorgegebenen Stop Out Levels zu informieren, indem wir das "
+"überarbeitete Stop Out Level auf unserer Website veröffentlichen. Es liegt "
+"in Ihrer Verantwortung, die Website regelmäßig zu überprüfen und über das "
+"vorgegebene Stop Out Level informiert zu bleiben."
 
 msgid "The duration is the length of a purchased trade (see 'contract period')."
 msgstr "Die Laufzeit ist die Länge eines gekauften Kontrakts (siehe \"Kontraktperiode\")."
@@ -7130,15 +7224,25 @@ msgstr "Der Einstiegskurs ist der Startpreis eines von einem Händler gekauften 
 
 msgid "The execution venues are assessed, on a regular basis, whether the they provide for the best possible result for our clients."
 msgstr ""
+"Die Ausführungsplätze werden regelmäßig beurteilt, damit sie das "
+"bestmögliche Ergebnis für unsere Kunden erbringen."
 
 msgid "The execution, delivery and performance of this Agreement and each Transaction will not violate any law, ordinance, charter, by-law or rule applicable to you or the jurisdiction in which you are resident."
 msgstr ""
+"Die Ausführung, Lieferung und Leistung dieser Vereinbarung und jeder "
+"Transaktion wird gegen kein Gesetz, keine Verordnung, keine Satzung, keine "
+"Durchführungsbestimmung oder Regelung, die für Sie, oder die Gerichtsbarkeit "
+"in der Sie ansässig sind, gilt, verstoßen."
 
 msgid "The expiry price is the price of the underlying when the contract expires."
 msgstr "Der Schlusskurs ist der Kurs des Basiskurs zum Ablauf des Kontrakts."
 
 msgid "The factor listed above are not listed in order of priority. Ordinarily, price will merit a high relative importance in obtaining the best possible result for you. However, the relative importance of the listed factors above may change in accordance with:"
 msgstr ""
+"Die oben angeführten Faktoren sind nicht nach ihrer Priorität gelistet. In "
+"der Regel wird der Kurs, um das bestmögliche Ergebnis für Sie zu erreichen, "
+"eine relativ hohe Wichtigkeit verdienen. Jedoch kann sich die relative "
+"Wichtigkeit der oben gelisteten Faktoren in Übereinstimmung mit: ändern"
 
 msgid "The filtering algorithm may for example be similar to the \"Bollinger Bands\" volatility system - i.e., short-term volatility bands are determined around the present market value, and ticks that are manifestly outside of such bands are removed."
 msgstr "Der Filter-Algorithmus kann beispielsweise dem Volatilitätssystem der \"Bollinger Bänder\" ähneln - d.h. kurzfristige Volatilitätsbänder werden um den aktuellen Marktwert bestimmt und Ticks, die deutlich außerhalb solcher Bänder liegen, werden entfernt."
@@ -7160,24 +7264,44 @@ msgstr "Der erste Tick ist der erste Tick, nach dem der Kontrakt von unseren Ser
 
 msgid "The hours of closure of the market (for e.g., the hours over the weekend during which trading of certain transactions are not possible);"
 msgstr ""
+"Die Zeiten des Marktschlusses (für z.B. die Zeiten über das Wochenende, "
+"während der das Handeln mancher Transaktionen nicht möglich ist);"
 
 msgid "The information provided during the sign-up process warranted by yourself to be true and correct is determined by the Company to be false or incorrect during the term of this Agreement;"
 msgstr "Die Informationen, die Sie während des Anmeldeprozess selbst als wahr und richtig garantiert haben, wurden vom Unternehmen während der Laufzeit des Vertrages als falsch oder unrichtig festgestellt;"
 
 msgid "The instruments available on the electronic trading platform (including their availability for trading);"
 msgstr ""
+"Die Instrumente, die auf der elektronischen Handelsplattform vorhanden sind ("
+"einschließlich ihrer Verfügbarkeit zum Handel);"
 
 msgid "The interest adjustment is calculated in points, meaning we will convert the relevant interbank lending rates to points in the base currency."
 msgstr ""
+"Die Zinsanpassung ist in Punkten berechnet, was bedeutet, dass wir die "
+"relevanten Interbank Kreditzinsen in Punkte der Basiswährung umwandeln "
+"werden."
 
 msgid "The interest adjustment is calculated in points, meaning we will convert the relevant market rates to points in the base instrument."
 msgstr ""
+"Die Zinsanpassung ist in Punkten berechnet, was bedeutet, dass wir die "
+"relevanten Marktdaten in Punkte der Basisinstrumente umwandeln werden."
 
 msgid "The level of protection offered and due to each client depends on the category to which each client is assigned. Retail Clients benefit from the highest degree of protection."
 msgstr "Das jedem Kunden angebotene und geschuldete Schutzniveau hängt von der Kategorie ab, der der Kunde zugeordnet ist. Einzelhandelskunden wird der höchste Schutzgrad eingeräumt."
 
 msgid "The leverage ratio refers to the number of times your margin (the amount set aside from your account balance to open and maintain a transaction) can be \"leveraged\" to enter into a Transaction. The denominator of the leverage ratio is always 1. A 50:1 leverage is equivalent to a 2% margin requirement (1 divided by 50 = 2%). The leverage ratio that we/you establish will determine the amount of margin required. As leverage is inversely proportional to margin, the lower the leverage you set for your Account, the higher the margin required to be set aside from your account balance (your margin requirement)."
 msgstr ""
+"Das Leverage-Verhältnis bezeichnet die Anzahl der Male, zu denen Ihr Margin ("
+"der Betrag, der von Ihrem Kontostand beiseite gesetzt wird, um eine "
+"Transaktion zu öffnen und aufrecht zu erhalten) wirksam eingesetzt werden "
+"kann (\"leveraged\"), um eine Transaktion einzugehen. Der Nenner des "
+"Leverage-Verhältnises ist immer 1. Eine 50:1 Leverage gleicht einer 2% "
+"Margin-Anforderung (1 geteilt durch 50 = 2%). Das Leverage-Verhältnis, das "
+"wir/Sie bestimmen, wird den Betrag des erforderlichen Margins festlegen. Da "
+"Leverage umgekehrt proportional zu Margin ist, gilt, das umso niedriger die "
+"Leverage, die Sie für Ihr Konto festlegen, ist, umso höher ist das "
+"angeforderte Margin, das von Ihrem Kontostand beiseite gesetzt wird (Ihre "
+"Margin-Anforderung)."
 
 msgid "The loss of USD 306 is the difference between the exit and entry level multiplied by the amount per point."
 msgstr "Der Verlust von 306 USD ist der Unterschied zwischen der Einstiegs- und Ausstiegshöhe, multipliziert mit dem Betrag je Punkt."
@@ -7186,13 +7310,19 @@ msgid "The main password of account number %1 has been changed."
 msgstr "Das Hauptpasswort für die Kontonummer %1 wurde geändert."
 
 msgid "The margin for our CFDs are calculated as follows:"
-msgstr ""
+msgstr "Das Margin für unsere CDFs wird wie folgend berechnet:"
 
 msgid "The margin for our Forex symbols is calculated as follows:"
-msgstr ""
+msgstr "Das Margin für unsere Forex-Symbole wird wie folgend berechnet:"
 
 msgid "The margin trading services described in this Agreement are conducted over the counter. This means that the market in one or more of the instruments which you ordinarily transact with us, though quoted on an exchange, are not traded on an exchange when transacted through the electronic trading platform as described in this Agreement."
 msgstr ""
+"Die Margin-Handelsdienste, die in dieser Vereinbarung beschrieben sind, "
+"werden im Freiverkehr durchgeführt. Das bedeutet, dass der Markt in einem "
+"oder mehreren dieser Instrumente, die Sie normalerweise mit uns abschließen, "
+"obwohl nach der Börse notiert, nicht auf einer Börse gehandelt werden, wenn "
+"sie - wie in dieser Vereinbarung beschrieben - durch die elektronische "
+"Handelsplattform abgeschlossen werden."
 
 msgid "The market exit price is the price in effect at the end of the contract period."
 msgstr "Der Schlusskurs ist der Kurs, der zum Ablauf der Kontraktlaufzeit gilt."
@@ -7208,9 +7338,16 @@ msgstr "Die Höchstzahl an Token (%1) wurde erreicht."
 
 msgid "The minimum spread (which is comprised of the market spread and our spread) published on our website is subject to alteration, at our absolute discretion. You acknowledge that whilst we endeavour to maintain a competitive spread, both market spread and our spread may widen significantly in some circumstances and such figures will be determined by us at our reasonable discretion."
 msgstr ""
+"Der Mindest-Spread (der sich aus dem Markt-Spread und unserem Spread "
+"zusammensetzt), der auf unserer Website veröffentlicht ist, kann nach "
+"unserem eigenen Ermessen verändert werden. Sie erkennen an, dass während wir "
+"bemüht sind, einen wettbewerbsfähigen Spread zu erhalten, sich beide, der "
+"Markt-Spread und unser Spread unter manchen Umständen erheblich ausweiten "
+"können, und dass solche Werte von uns, nach unserem vernünftigen Ermessen, "
+"bestimmt werden."
 
 msgid "The minimum, incremental and maximum transaction amount;"
-msgstr ""
+msgstr "Der mindeste, inkrementelle und maximale Transaktionsbetrag;"
 
 msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
 msgstr "Die von Ihnen gewünschte Seite konnte nicht gefunden werden. Sie ist entweder nicht mehr vorhanden oder die Adresse ist falsch. Bitte achten Sie auch Schreibfehler."
@@ -7223,6 +7360,20 @@ msgstr "Die Auszahlung ist der Betrag, der an einen Optionshändler gezahlt wird
 
 msgid "The personal information that we collect and hold is treated as confidential. Confidential information will not be used for any purpose other than in connection with the provision of margin trading service described in this Agreement. Confidential information will only be disclosed as and when required by law. We may also disclose such personal information to: (i) other companies within the Binary Group of companies; (ii) any such third parties a we see fit to assist us in servicing your Real Account; (iii) regulatory authorities upon their reasonable request; (iv) any such third parties as we see fit to assist us in enforcing our legal or contractual rights against you including but not limited to legal advisors; (v) third parties as we see fit to investigate or prevent fraud or other illegal activities."
 msgstr ""
+"Die persönlichen Informationen, die wir sammeln und halten, werden "
+"vertraulich behandelt. Vertrauliche Informationen werden zu keinen anderen "
+"Zwecken als in Zusammenhang mit der Provision des Margin-Handelsdienstes, "
+"wie in dieser Vereinbarung beschrieben, verwendet. Vertrauliche "
+"Informationen werden nur offengelegt, wo und wann sie vom Gesetz "
+"erforderlich sind. Wir können solche persönlichen Informationen auch an: (i) "
+"andere Unternehmen innerhalb der Binary Group von Unternehmern; (ii) alle "
+"solchen Dritten, die wir als angemessen befinden, uns mit der Instandhaltung "
+"Ihres echten Kontos zu unterstützen; (iii) Regulierungsbehörden auf deren "
+"angemessenen Antrag; (iv) alle solchen Dritten, die wir als angemessen "
+"befinden, uns bei der Durchführung gesetzlicher und vertraglicher Rechte "
+"gegen Sie, einschließlich, aber nicht begrenzt auf Rechtsberater, zu "
+"unterstützen; (v) Dritte, die wir als angemessen befinden, Betrug und andere "
+"illegale Aktivitäten zu ermitteln und zu verhindern; mitteilen."
 
 msgid "The personal information that we obtain about you assists us in servicing your account. We know you may be concerned about what we do with this information, and with financial information about your account. The following outlines our privacy practices."
 msgstr "Die von Ihnen übermittelten personenbezogenen Daten, helfen uns dabei, Ihr Konto zu verwalten. Wir sind uns bewusst, dass Sie sich über den Umgang mit diesen Daten und den finanziellen Informationen über Ihr Konto Sorgen machen. Nachfolgend werden unsere Datenschutzrichtlinien erläutert."
@@ -7238,9 +7389,18 @@ msgstr "Der Gewinn von 294 USD ist die Differenz zwischen der Ausstiegs- und Ein
 
 msgid "The provision of the margin trading service described in this Agreement utilises a third party system acquired via a non-exclusive, non-transferable, non-sublicensable, terminable licence from the third party system provider/licensor (the \"MT5 Trading Platform\"). You acknowledge that we reserve the right to change the third party system provider/licensor during the course of proving the margin trading service described in this Agreement to you."
 msgstr ""
+"Die Bereitstellung des Margin-Handelsdienstes, wie in dieser Vereinbarung "
+"beschrieben, verwendet ein System Dritter, das via einer nicht-exklusiven, "
+"nicht übertragbaren, nicht unterlizensierbaren, kündbaren Lizenz vom dritten "
+"Systemanbieter/Lizenzgeber (die \"MT5 Handelsplattform) erworben wurde. Sie "
+"erkennen an, dass wir uns das Recht vorbehalten, dritte Systemanbieter/"
+"Lizenzgeber im Verlauf eines Angebots des Margin-Handelsdienstes an Sie, wie "
+"in dieser Vereinbarung beschrieben, zu ändern."
 
 msgid "The provision of the margin trading services described in this Agreement is not available in the European Union."
 msgstr ""
+"Die Bereitstellung des Margin-Handelsdienstes, wie in dieser Vereinbarung "
+"beschrieben, ist in der europäischen Union nicht erhältlich."
 
 msgid "The required minimum deposit has been made by the client AND"
 msgstr "Die erforderliche Mindesteinzahlung ist vom Kunden erfolgt UND"
@@ -7268,6 +7428,7 @@ msgstr "Stop Loss und Stop Profit sind garantiert. Der Verlust oder Gewinn ist j
 
 msgid "The swap rate will depend on the direction of the position you take:"
 msgstr ""
+"Der Swapsatz hängt von der Richtung der Position, die Sie einnehmen, ab:"
 
 msgid "The system fills orders on a first-in-first out basis, i.e. based on the sequence of the order received, and this is beyond our control. As a result, you may find it difficult or impossible to close a position at the intended price stipulated in your Stop Order during certain market conditions. The placement of Stop Order by you, though useful as a risk management tool, will not necessarily limit your losses to your intended amounts, in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders and there is uncertainty about your possible exit price. In short, a Stop Order is not guaranteed because it cannot operate whatever the market circumstances are."
 msgstr "Das System erfüllt Order auf einer first-in-first out Basis, d.h. auf der Reihenfolge, in der die Order erhalten wurde, basierend; und dies befindet sich außerhalb unserer Kontrolle. Dadurch könnten Sie es schwierig oder unmöglich finden, eine Position zum vorgesehenen Kurs, der in Ihrer Stop Order festgelegt wurde, während bestimmter Marktkonditionen zu schließen. Eine von Ihnen platzierte Stop Order wird, obwohl sie ein hilfreiches Risikomanagement-Tool sein kann, Ihre Verluste, im Fall von hohen volatilen Handelskonditionen, nicht notwendigerweise auf von Ihnen festgelegte Beträge begrenzen, da Marktkonditionen es unmöglich machen können, solche Order auszuführen, und Ihr realisierbarer Kurs zum Vertragsende ungewiss ist. Kurz, eine Stop Order ist nicht gewährleistet, da sie nicht in allen Marktumständen operieren kann."
@@ -7277,6 +7438,8 @@ msgstr "Der Ausdruck \"das Unternehmen\" bezeichnet entweder Binary (IOM) Ltd., 
 
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or 'Binary.com' shall denote Binary (V) Ltd."
 msgstr ""
+"Der Begriff \"wir\", \"uns\", \"unser\", \"unsere\", \"das Unternehmen\", "
+"oder \"Binary.com\" soll Binary (V) Ltd bezeichnen."
 
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or 'Binary.com' shall denote either Binary (V) Ltd. or Binary (C.R.) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
 msgstr "Der Begriff \"wir\", \"uns\", \"unser\", \"unsere\", \"das Unternehmen\", oder \"Binary.com\" soll entweder Binary (V) Ltd. oder Binary (CR) S.A. bezeichnen, was von dem jeweiligen Land abhängig ist, in dem das Kundenkonto gemäß dem Kontoeröffnungsverfahren der Website besteht."
@@ -7315,7 +7478,7 @@ msgid "There are two ways to trade Asians:"
 msgstr "Es gibt zwei Möglichkeiten, Asiaten zu handeln:"
 
 msgid "There is any amount outstanding from you to us; and/or"
-msgstr ""
+msgstr "Von Ihnen ist ein Betrag an uns ausständig; und/oder"
 
 msgid "There was a problem accessing the server during purchase."
 msgstr "Während des Kaufs ist ein Problem beim Zugriff auf den Server aufgetreten."
@@ -7385,6 +7548,12 @@ msgstr "Dieser Vertrag gilt für Ihre Verwendung unseres API, es sei denn, Sie h
 
 msgid "This Agreement is supplied to you in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. We will not be made responsible for any damage or loss caused by an error, inaccuracy, misunderstanding or misspelling with regards to the translations."
 msgstr ""
+"Diese Vereinbarung wird Ihnen auf Englisch bereitgestellt. Im Fall eines "
+"Unterschiedes zwischen der englischen Version und einer übersetzten Version "
+"dieses Dokuments, soll die englische Version maßgeblich sein. Wir können für "
+"keinen Schaden oder Verlust verantwortlich gemacht werden, der durch einen "
+"Fehler, eine Ungenauigkeit, ein Missverständnis oder einen "
+"Rechtschreibfehler im Bezug auf die Übersetzungen, verursacht wird."
 
 msgid "This Agreement may be terminated forthwith by either party on written notice to the other party if the other party is in material breach of the terms of the Agreement and, in the event of a breach capable of being remedied, fails to remedy the breach within 15 days of receipt of notice in writing of such breach."
 msgstr "Dieser Vertrag kann von jeder Vertragspartei durch schriftliche Mitteilung an die andere Partei gekündigt werden, wenn die andere Partei auf grobe Weise gegen die Vertragsbedingungen verstoßen hat und der Verstoß nicht innerhalb von 15 Tagen nach Aufforderung abgestellt wurde."
@@ -7400,6 +7569,9 @@ msgstr "Dieses Dokument"
 
 msgid "This Policy applies to retail and professional clients of Binary.com dealing in financial products offered by Binary.com."
 msgstr ""
+"Diese Richtlinie gilt für Einzelhandels- und professionelle Kunden von "
+"Binary.com, die mit finanziellen Produkten, die von Binary.com angeboten "
+"werden, handeln."
 
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 msgstr ""
@@ -7466,6 +7638,8 @@ msgstr "Diese Werbeaktion steht nur neuen Kunden zur Verfügung. Bereits vorhand
 
 msgid "This section on Force Majeure Events does not apply to Volatility Indices."
 msgstr ""
+"Dieser Abschnitt von Ereignissen höherer Gewalt gilt nicht für Volatilität "
+"Indizes."
 
 msgid "This symbol is not active. Please try another symbol."
 msgstr "Dieses Zeichen ist nicht aktiv. Bitte versuchen Sie ein anderes Zeichen."
@@ -7532,15 +7706,25 @@ msgstr "Um Cookies zuzulassen, befolgen Sie die nachfolgenden Anweisungen für d
 
 msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 100% forced liquidation level for Forex."
 msgstr ""
+"Um mehr zu erfahren, lesen Sie unsere <a href=\"%1\">Margin Richtlinie</a>, "
+"die unser 100% erzwungenes Liquidationslevel für Forex näher erläutert."
 
 msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
 msgstr ""
+"Um mehr zu erfahren, lesen Sie unsere <a href=\"%1\">Margin Richtlinie</a>, "
+"die unser 50% erzwungenes Liquidationslevel für Volatilität Indizes näher "
+"erläutert."
 
 msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our margin requirements."
 msgstr ""
+"Um mehr zu erfahren, lesen Sie unsere <a href=\"%1\">Margin Richtlinie</a>, "
+"die unsere Margin-Anforderungen näher erläutert."
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with Binary.com. A Real Account cannot be opened in the absence of a Binary Options Real Account."
 msgstr ""
+"Um ein echtes Konto zu eröffnen, müssen Sie ein authentifiziertes echtes "
+"Binäre Optionen Konto mit Binary.com haben. Ein echtes Konto kann nicht "
+"mangels eines echten Binären Optionen Kontos eröffnet werden."
 
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 msgstr "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
@@ -7574,6 +7758,8 @@ msgstr "Gesamtkosten"
 
 msgid "Total Margin - The aggregate of all Margin Requirements in your Real Account."
 msgstr ""
+"Total Margin - Die Ansammlung aller Margin-Anforderungen in Ihrem echten "
+"Konto."
 
 msgid "Total Net Revenue Per Month"
 msgstr "Gesamtnettoumsatz pro Monat"
@@ -7685,6 +7871,8 @@ msgstr "Tätigen Sie Geschäfte in"
 
 msgid "Transaction - a contract entered into by you pursuant to this Agreement."
 msgstr ""
+"Transaktion - ein Kontrakt, den Sie gemäß dieser Vereinbarung eingegangen "
+"sind."
 
 msgid "Transaction performed by %1 (App ID: %2)"
 msgstr "Überweisung durchgeführt von %1 (App ID: %2)"
@@ -7868,6 +8056,8 @@ msgstr ""
 
 msgid "Upon opening a Transaction, the sum due and payable by you to us are deducted from your Account Balance."
 msgstr ""
+"Auf Eröffnung einer Transaktion, wird die fällige Summe, die von Ihnen an "
+"uns zu zahlen ist, von Ihrem Kontostand abgezogen."
 
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr "Nach dem Ablauf oder der Kündigung dieses Vertrags, aus welchem Grund auch immer, enden alle Ihnen durch diesen Vertrag eingeräumten Rechte und Lizenzen, einschließlich der Verwendung des %1 API, mit sofortiger Wirkung. Sie stimmen zu, die weitere Verwendung des %1 API einzustellen. Die Beendigung dieses Vertrags darf nicht als Verzicht einer Verfolgung eines Vertragsbruchs und nicht als Entlassung aus Ihrer Haftung für die Verletzung von Pflichten aus diesem Vertrag interpretiert werden. Das Unternehmen ist für keinerlei Schäden, die einzig und alleine aus der Beendigung des Vertrags, gemäß seiner Klauseln, haftbar."
@@ -8931,10 +9121,10 @@ msgstr "Das Limit Ihrer Sitzungsdauer endet in %1 Sekunden."
 msgid "Your settings have been updated successfully."
 msgstr "Ihre Einstellungen wurden erfolgreich aktualisiert."
 
-#, fuzzy
-#| msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
 msgid "Your token has expired. Please click %1here%2 to restart the verification process."
-msgstr "Ihr Token ist abgelaufen. Bitte klicken Sie <a href=\"%1\">hier</a>, um den Verfikationsprozess zu wiederholen."
+msgstr ""
+"Ihr Token ist abgelaufen. Bitte klicken Sie %1hier%2, um den "
+"Verfikationsprozess zu wiederholen."
 
 msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
 msgstr "Ihr Token ist abgelaufen. Bitte klicken Sie <a href=\"%1\">hier</a>, um den Verfikationsprozess zu wiederholen."
