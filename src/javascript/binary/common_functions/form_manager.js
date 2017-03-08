@@ -84,21 +84,21 @@ const FormManager = (function() {
         can_submit = true;
     };
 
-    const handleSubmit = (form_selector, obj_request, fnc_response_handler, fnc_additional_check) => {
-        $(form_selector).off('submit').on('submit', function(evt) {
+    const handleSubmit = (options) => {
+        $(options.form_selector).off('submit').on('submit', function(evt) {
             evt.preventDefault();
             if (!can_submit) return;
-            const $btn_submit = forms[form_selector].$btn_submit;
-            if (Validation.validate(form_selector)) {
-                const req = $.extend(obj_request, getFormData(form_selector));
-                if (typeof fnc_additional_check === 'function' && !fnc_additional_check(req)) {
+            const $btn_submit = forms[options.form_selector].$btn_submit;
+            if (Validation.validate(options.form_selector)) {
+                const req = $.extend(options.obj_request || {}, getFormData(options.form_selector));
+                if (typeof options.fnc_additional_check === 'function' && !options.fnc_additional_check(req)) {
                     return;
                 }
                 disableButton($btn_submit);
                 BinarySocket.send(req).then((response) => {
-                    if (typeof fnc_response_handler === 'function') {
-                        enableButton($btn_submit);
-                        fnc_response_handler(response);
+                    if (typeof options.fnc_response_handler === 'function') {
+                        if (options.enable_button || 'error' in response) enableButton($btn_submit);
+                        options.fnc_response_handler(response);
                     }
                 });
             }

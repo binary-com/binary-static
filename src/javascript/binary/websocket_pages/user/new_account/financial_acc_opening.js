@@ -77,9 +77,17 @@ const FinancialAccOpening = (function() {
     const bindValidation = () => {
         const obj_req = { new_account_maltainvest: 1 };
 
-        FormManager.handleSubmit(formID, $.extend(obj_req, { accept_risk: 0 }), handleResponse);
+        FormManager.handleSubmit({
+            form_selector       : formID,
+            obj_request         : $.extend(obj_req, { accept_risk: 0 }),
+            fnc_response_handler: handleResponse,
+        });
 
-        FormManager.handleSubmit('#financial-risk', $.extend(obj_req, { accept_risk: 1 }), handleResponse);
+        FormManager.handleSubmit({
+            form_selector       : '#financial-risk',
+            obj_request         : $.extend(obj_req, { accept_risk: 1 }),
+            fnc_response_handler: handleResponse,
+        });
     };
 
     const handleResponse = (response) => {

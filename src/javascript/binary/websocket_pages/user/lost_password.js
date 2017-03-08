@@ -19,7 +19,10 @@ const LostPassword = (function() {
             { selector: '#email', validations: ['req', 'email'], request_field: 'verify_email' },
             { request_field: 'type', value: 'reset_password' },
         ]);
-        FormManager.handleSubmit(form_id, {}, responseHandler);
+        FormManager.handleSubmit({
+            form_selector       : form_id,
+            fnc_response_handler: responseHandler,
+        });
     };
 
     return {
