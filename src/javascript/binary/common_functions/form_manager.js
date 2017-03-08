@@ -5,6 +5,7 @@ const FormManager = (function() {
     'use strict';
 
     const forms = {};
+    let can_submit = true;
 
     const initForm = (form_selector, fields) => {
         const $form = $(`${form_selector}:visible`);
@@ -73,17 +74,20 @@ const FormManager = (function() {
             showLoadingImage($btn, 'white');
             $btn.append($btn_text);
         }
+        can_submit = false;
     };
 
     const enableButton = ($btn) => {
         if ($btn.length && $btn.find('.barspinner').length) {
             $btn.removeAttr('disabled').html($btn.find('span').text());
         }
+        can_submit = true;
     };
 
     const handleSubmit = (form_selector, obj_request, fnc_response_handler, fnc_additional_check) => {
         $(form_selector).off('submit').on('submit', function(evt) {
             evt.preventDefault();
+            if (!can_submit) return;
             const $btn_submit = forms[form_selector].$btn_submit;
             if (Validation.validate(form_selector)) {
                 const req = $.extend(obj_request, getFormData(form_selector));
