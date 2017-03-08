@@ -1,4 +1,5 @@
-const Validation = require('./form_validation');
+const Validation       = require('./form_validation');
+const showLoadingImage = require('../base/utility').showLoadingImage;
 
 const FormManager = (function() {
     'use strict';
@@ -65,6 +66,21 @@ const FormManager = (function() {
         return data;
     };
 
+    const disableButton = ($btn) => {
+        if ($btn.length && !$btn.find('.barspinner').length) {
+            $btn.attr('disabled', 'disabled');
+            const $btn_text = $('<span/>', { text: $btn.text(), class: 'invisible' });
+            showLoadingImage($btn, 'white');
+            $btn.append($btn_text);
+        }
+    };
+
+    const enableButton = ($btn) => {
+        if ($btn.length && $btn.find('.barspinner').length) {
+            $btn.removeAttr('disabled').html($btn.find('span').text());
+        }
+    };
+
     const handleSubmit = (form_selector, obj_request, fnc_response_handler, fnc_additional_check) => {
         $(form_selector).off('submit').on('submit', function(evt) {
             evt.preventDefault();
@@ -74,10 +90,10 @@ const FormManager = (function() {
                 if (typeof fnc_additional_check === 'function' && !fnc_additional_check(req)) {
                     return;
                 }
-                $btn_submit.attr('disabled', 'disabled');
+                disableButton($btn_submit);
                 BinarySocket.send(req).then((response) => {
                     if (typeof fnc_response_handler === 'function') {
-                        setTimeout(() => { $btn_submit.removeAttr('disabled'); }, 1000);
+                        enableButton($btn_submit);
                         fnc_response_handler(response);
                     }
                 });
