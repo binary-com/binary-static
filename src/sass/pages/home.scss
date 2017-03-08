@@ -87,6 +87,17 @@
 }
 
 .home-jp-content {
+    #banner {
+        background: url('../images/pages/home-jp/banner.png') 0 0/cover no-repeat;
+        opacity: 0.3;
+        z-index: -1;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+    .relative {
+        position: relative;
+    }
     .xquote {
         position: relative;
         margin-top: 25%;
@@ -123,6 +134,12 @@
         }
         .mena {
             width: 32%;
+        }
+    }
+    .home-jp-content {
+        .gr-padding-30 {
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
     }
 }

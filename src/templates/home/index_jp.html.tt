@@ -1,36 +1,39 @@
-<div id="banner">
+<div class="relative">
+    <div id="banner"></div>
     <div class="container gr-padding-30">
-        <h1 class="center-text gr-padding-10">[% l("First-Class FX Binary Options Trading Platform") %]</h1>
-        <h3 class="center-text gr-padding-10">[% l("Offering the widest available range of currencies, option types and trading periods on a fast intuitve, proprietary trading.") %]</h3>
+        <div class="gr-padding-30">
+            <h1 class="center-text gr-padding-20">[% l("First-Class FX Binary Options Trading Platform") %]</h1>
+            <h3 class="center-text gr-padding-20 gr-child">[% l("Offering the widest available range of currencies, option types and trading periods on a fast intuitve, proprietary trading.") %]</h3>
 
-        <form id="frm_verify_email">
-            <div class="gr-row gr-row-align-center">
-                <div class="signup-box gr-7 gr-10-p gr-12-m gr-no-gutter">
-                    <div class="gr-row gr-padding-30">
-                        <div class="gr-8 gr-10-m gr-centered">
-                            <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]" />
+            <form id="frm_verify_email">
+                <div class="gr-row gr-row-align-center">
+                    <div class="signup-box gr-7 gr-10-p gr-12-m gr-no-gutter">
+                        <div class="gr-row gr-padding-30">
+                            <div class="gr-8 gr-10-m gr-centered">
+                                <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]" />
+                            </div>
+                            <div class="gr-4 gr-8-m gr-centered">
+                                <button id="btn_verify_email" type="submit">[% l('Get started') %]</button>
+                            </div>
+                            <span class="gr-12 gr-padding-10 error-msg hint color-white center-text" id="signup_error" style="display:none"></span>
                         </div>
-                        <div class="gr-4 gr-8-m gr-centered">
-                            <button id="btn_verify_email" type="submit">[% l('Get started') %]</button>
-                        </div>
-                        <span class="gr-12 gr-padding-10 error-msg hint color-white center-text" id="signup_error" style="display:none"></span>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 
-<div class="container gr-padding-10">
+<div class="container gr-padding-10 gr-child">
     <div class="gr-row">
         <div class="gr-6 gr-12-p gr-12-m">
-            <div class="gr-7 gr-8-m gr-centered gr-padding-10">
+            <div class="gr-7 gr-8-m gr-centered gr-padding-30 gr-child">
                 <div>
                     <a href="http://www.ffaj.or.jp/en/memberlist/list.html#k_sakimono_senmon" target="_blank">
                         <img class="responsive" src="[% request.url_for('images/pages/regulation/binarykk-logo.gif') %]">
                     </a>
                 </div>
-                <div class="gr-padding-30">
+                <div class="gr-padding-30 gr-child">
                     <h3>[% l('Licensed in Japan') %]</h3>
                     <p>[% l('Binary KK is a Type 1 Financial instruments Business License and is regulated by the FFAJ') %]</p>
                 </div>
@@ -38,13 +41,13 @@
         </div>
 
         <div class="gr-6 gr-12-p gr-12-m">
-            <div class="gr-7 gr-8-m gr-centered gr-padding-10">
-                <div>
+            <div class="gr-7 gr-8-m gr-centered gr-padding-30 gr-child">
+                <div class="gr-8 gr-no-gutter">
                     <a href="http://www.ffaj.or.jp/en/memberlist/list.html#k_sakimono_senmon" target="_blank">
                         <img class="responsive" src="[% request.url_for('images/pages/regulation/fsa-logo.png') %]">
                     </a>
                 </div>
-                <div class="gr-padding-30">
+                <div class="gr-padding-20 gr-child">
                     <h3>[% l('Protected Funds') %]</h3>
                     <p>[% l('All customer funds are segregated and held with JFS Trust Bank') %]</p>
                 </div>
