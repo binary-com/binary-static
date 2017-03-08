@@ -30,28 +30,44 @@ msgstr "「第三方供應商」指通過使用%1的API提供可用功能和作�
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr " %1 %2已記入您的虛擬資金帳戶 %3"
 
-msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
+msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
 msgstr "%4閉市時如果%3未觸及履約價格，可獲取%1 %2的賠付額。"
 
-msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+msgid "%1 %2 payout if %3 ends on or between low and high values of Barrier at close on %4."
 msgstr "%4閉市時如果%3平倉價相等於或介於履約價格最低和最高價位間，可獲取%1 %2 賠付額。"
 
-msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+msgid "%1 %2 payout if %3 ends outside low and high values of Barrier at close on %4."
 msgstr "%4閉市時如果%3平倉價在履約價格最低和最高價位範圍外，可獲取%1 %2 賠付額。"
 
-msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+msgid "%1 %2 payout if %3 goes outside of low and high values of Barrier through close on %4."
 msgstr "%4閉市時如果%3價在履約價格最低和最高價位範圍外，可獲取%1 %2 賠付額。"
 
-msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+msgid "%1 %2 payout if %3 is strictly higher than or equal to Barrier at close on %4."
 msgstr "%4閉市時如果%3嚴格高於或相等於履約價格，可獲取%1 %2 賠付額。"
 
-msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+msgid "%1 %2 payout if %3 is strictly lower than Barrier at close on %4."
 msgstr "%4閉市時如果%3嚴格低於履約價格，可獲取%1 %2 賠付額。"
 
-msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+msgid "%1 %2 payout if %3 stays between low and high values of Barrier through close on %4."
 msgstr "%4閉市時如果%3在履約價格最低和最高價位範圍內，可獲取%1 %2 賠付額。"
 
-msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
+msgid "%1 %2 payout if %3 touches Barrier through close on %4."
 msgstr "%4閉市時如果%3觸及履約價格，可獲取%1 %2 賠付額。"
 
 msgid "%1 (Toll Free)"
@@ -326,6 +342,11 @@ msgstr "《Global Banking and Finance Review》頒發的「2012年最佳固定�
 
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "《 eGaming Review》頒發的「年度最佳金融投注運作商」獎項"
+
+#, fuzzy
+#| msgid "Duration"
+msgid "(Duration)"
+msgstr "期限"
 
 msgid "(One) Touch trades"
 msgstr "一觸即付交易"
@@ -2788,6 +2809,9 @@ msgstr "有國際環境工作經驗"
 msgid "Expertise in cloud solutions"
 msgstr "有云計算解決方案專門知識"
 
+msgid "Expiry Time"
+msgstr "到期時間"
+
 msgid "Expiry price"
 msgstr "到期價格"
 
@@ -5149,7 +5173,9 @@ msgstr "線上貨幣兌換"
 msgid "Only %1 are allowed."
 msgstr "只允許 %1 。"
 
-msgid "Only 2 decimal points are allowed."
+#, fuzzy
+#| msgid "Only 2 decimal points are allowed."
+msgid "Only %1 decimal points are allowed."
 msgstr "只允許小數點后兩位。"
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
@@ -5509,6 +5535,11 @@ msgstr "平台"
 msgid "Please %1 to view this page"
 msgstr "要查看此頁面，請 %1 t"
 
+#, fuzzy
+#| msgid "Please deposit before transfer to client."
+msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
+msgstr "給客戶轉帳前請先存款。"
+
 msgid "Please <a href=\"%1\">log in</a> to view this page."
 msgstr "要查看此頁面，請先<a href=\"%1\">登入</a>。"
 
@@ -5536,9 +5567,6 @@ msgstr "請確認交易詳細資料以完成轉帳："
 msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgstr "無論您有什麼想法，請傳送郵件至<a href='mailto:%1'>%1</a>與我們聯繫。我們十分樂意聽取您的意見反應並且提供協助。請隨時與我們分享您的意見和建議。"
 
-msgid "Please deposit before transfer to client."
-msgstr "給客戶轉帳前請先存款。"
-
 msgid "Please enter a number between %1."
 msgstr "請輸入%1之間的數字。"
 
@@ -5550,9 +5578,6 @@ msgstr "請輸入大於0之數字"
 
 msgid "Please enter a number."
 msgstr "請輸入號碼。"
-
-msgid "Please enter a valid amount."
-msgstr "請輸入有效金額。"
 
 msgid "Please enter an integer value"
 msgstr "請輸入整數"
@@ -7618,9 +7643,6 @@ msgstr "Trading Experience"
 msgid "Trading Limits"
 msgstr "交易限制"
 
-msgid "Trading Period"
-msgstr "交易期限"
-
 msgid "Trading Platforms"
 msgstr "交易平台"
 
@@ -8898,6 +8920,11 @@ msgstr "交易期持續時間限制將於%1秒內結束。"
 
 msgid "Your settings have been updated successfully."
 msgstr "您的設定已成功更新。"
+
+#, fuzzy
+#| msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
+msgid "Your token has expired. Please click %1here%2 to restart the verification process."
+msgstr "您的權杖已過期。請點選<a href=\"%1\">此處</a>重啟驗證程序。"
 
 msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
 msgstr "您的權杖已過期。請點選<a href=\"%1\">此處</a>重啟驗證程序。"
@@ -10227,6 +10254,12 @@ msgstr "帳戶限額"
 
 msgid "Account Details"
 msgstr "帳戶詳細資料"
+
+#~ msgid "Please enter a valid amount."
+#~ msgstr "請輸入有效金額。"
+
+#~ msgid "Trading Period"
+#~ msgstr "交易期限"
 
 #~ msgid "%1 has updated its  <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
 #~ msgstr "%1已經更新了其<a class=\"pjaxload\" href=\"%2\">條款和條件</a>。通過點選OK按鈕，您確定已經閱讀和接受此更新<a class=\"pjaxload\" href=\"%2\">條款和條件</a>。"
@@ -15309,9 +15342,6 @@ msgstr "帳戶詳細資料"
 
 #~ msgid "Expiry Spot"
 #~ msgstr "到期現價"
-
-#~ msgid "Expiry Time"
-#~ msgstr "到期時間"
 
 #~ msgid "Indicative Price"
 #~ msgstr "指示價格"
