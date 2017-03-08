@@ -129,7 +129,7 @@
     <div class="gr-12 gr-padding-10 table-body ja-hide invisible" id="account-transfer-section">
         <div class="gr-row">
             <div class="gr-2 gr-4-m">
-                <a href="[% request.url_for('/account/account_transferws') %]" id="account_transfer">
+                <a href="[% request.url_for('/cashier/account_transfer') %]" id="account_transfer">
                     <img class="responsive charting-page-icon" id="acc_transfer_icon" src="[% request.url_for('images/pages/cashier/account-transfer.svg') %]" />
                 </a>
             </div>
@@ -138,7 +138,7 @@
             </div>
             <div class="gr-5 gr-12-m">
                 <div class="gr-padding-10 gr-parent">
-                    <a class="toggle button client_real invisible" href="[% request.url_for('/account/account_transferws') %]">
+                    <a class="toggle button client_real invisible" href="[% request.url_for('/cashier/account_transfer') %]">
                         <span class="withdraw">[% l('Transfer') %]</span>
                     </a>
                 </div>
