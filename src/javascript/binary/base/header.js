@@ -6,6 +6,7 @@ const Login                     = require('./login').Login;
 const State                     = require('./storage').State;
 const url_for                   = require('./url').url_for;
 const objectNotEmpty            = require('./utility').objectNotEmpty;
+const createLanguageDropDown    = require('../common_functions/attach_dom/language_dropdown');
 const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
 const japanese_client           = require('../common_functions/country_base').japanese_client;
 const MetaTrader                = require('../websocket_pages/user/metatrader/metatrader');
@@ -14,6 +15,7 @@ const Header = (function() {
     const on_load = function() {
         show_or_hide_login_form();
         logout_handler();
+        createLanguageDropDown();
         if (!Login.is_login_pages()) {
             checkClientsCountry();
         }
@@ -195,58 +197,74 @@ const Header = (function() {
 
     const displayAccountStatus = () => {
         BinarySocket.wait('authorize').then(() => {
-            if (Client.get('is_virtual')) return;
-            BinarySocket.wait('get_account_status').then((response) => {
-                const get_account_status = response.get_account_status;
-                const status = get_account_status.status;
+            let get_account_status,
+                status;
 
-                const riskAssessment = () => {
-                    if (get_account_status.risk_classification === 'high') {
-                        return !objectNotEmpty(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
+            const riskAssessment = () => {
+                if (get_account_status.risk_classification === 'high') {
+                    return !objectNotEmpty(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
+                }
+                return false;
+            };
+
+            const messages = {
+                authenticate: () => localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.',
+                    ['<a href="' + url_for('user/authenticate') + '">', '</a>']),
+                residence: () => localize('Please set [_1]country of residence[_2] before upgrading to a real-money account.',
+                    ['<a href="' + url_for('user/settings/detailsws') + '">', '</a>']),
+                risk: () => localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',
+                    ['<a href="' + url_for('user/settings/assessmentws') + '">', '</a>']),
+                tax: () => localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',
+                    ['<a href="' + url_for('user/settings/detailsws') + '">', '</a>']),
+                tnc: () => localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',
+                    ['<a href="' + url_for('user/tnc_approvalws') + '">', '</a>']),
+                unwelcome: () => localize('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',
+                    ['<a href="' + url_for('contact') + '">', '</a>']),
+            };
+
+            const validations = {
+                authenticate: () => (!/authenticated/.test(status) || !/age_verification/.test(status)) && !japanese_client(),
+                residence   : () => !Client.get('residence'),
+                risk        : () => riskAssessment(),
+                tax         : () => Client.should_complete_tax(),
+                tnc         : () => Client.should_accept_tnc(),
+                unwelcome   : () => /(unwelcome|(cashier|withdrawal)_locked)/.test(status),
+            };
+
+            // real account checks
+            const check_statuses_real = [
+                { validation: validations.tnc,          message: messages.tnc },
+                { validation: validations.risk,         message: messages.risk },
+                { validation: validations.tax,          message: messages.tax },
+                { validation: validations.authenticate, message: messages.authenticate },
+                { validation: validations.unwelcome,    message: messages.unwelcome },
+            ];
+
+            // virtual checks
+            const check_statuses_virtual = [
+                { validation: validations.residence, message: messages.residence },
+            ];
+
+            const check_status = (check_statuses) => {
+                const notified = check_statuses.some((object) => {
+                    if (object.validation()) {
+                        displayNotification(object.message());
+                        return true;
                     }
                     return false;
-                };
-
-                const messages = {
-                    authenticate: () => localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.',
-                        ['<a href="' + url_for('user/authenticate') + '">', '</a>']),
-                    risk: () => localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',
-                        ['<a href="' + url_for('user/settings/assessmentws') + '">', '</a>']),
-                    tax: () => localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',
-                        ['<a href="' + url_for('user/settings/detailsws') + '">', '</a>']),
-                    tnc: () => localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',
-                        ['<a href="' + url_for('user/tnc_approvalws') + '">', '</a>']),
-                    unwelcome: () => localize('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',
-                        ['<a href="' + url_for('contact') + '">', '</a>']),
-                };
-
-                const validations = {
-                    authenticate: () => (!/authenticated/.test(status) || !/age_verification/.test(status)) && !japanese_client(),
-                    risk        : () => riskAssessment(),
-                    tax         : () => Client.should_complete_tax(),
-                    tnc         : () => Client.should_accept_tnc(),
-                    unwelcome   : () => /(unwelcome|(cashier|withdrawal)_locked)/.test(status),
-                };
-
-                const check_statuses = [
-                    { validation: validations.tnc,          message: messages.tnc },
-                    { validation: validations.risk,         message: messages.risk },
-                    { validation: validations.tax,          message: messages.tax },
-                    { validation: validations.authenticate, message: messages.authenticate },
-                    { validation: validations.unwelcome,    message: messages.unwelcome },
-                ];
-
-                BinarySocket.wait('website_status', 'get_settings', 'get_financial_assessment').then(() => {
-                    const notified = check_statuses.some((object) => {
-                        if (object.validation()) {
-                            displayNotification(object.message());
-                            return true;
-                        }
-                        return false;
-                    });
-                    if (!notified) hideNotification();
                 });
-            });
+                if (!notified) hideNotification();
+            };
+
+            if (Client.get('is_virtual')) {
+                check_status(check_statuses_virtual);
+            } else {
+                BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'get_financial_assessment').then(() => {
+                    get_account_status = State.get(['response', 'get_account_status', 'get_account_status']) || {};
+                    status = get_account_status.status;
+                    check_status(check_statuses_real);
+                });
+            }
         });
     };
 

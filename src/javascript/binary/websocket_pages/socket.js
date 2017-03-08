@@ -319,8 +319,6 @@ const BinarySocketClass = function() {
                             Client.set_cookie('residence', country_code);
                             send({ landing_company: country_code });
                         }
-                    } else if (country_code === null && response.get_settings.country === null) {
-                        Header.upgrade_message_visibility();
                     }
                     GTM.event_handler(response.get_settings);
                     if (response.get_settings.is_authenticated_payment_agent) {

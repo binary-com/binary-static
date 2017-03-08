@@ -2,7 +2,6 @@ const localize             = require('../../../../base/localize').localize;
 const Client               = require('../../../../base/client').Client;
 const Header               = require('../../../../base/header').Header;
 const State                = require('../../../../base/storage').State;
-const Content              = require('../../../../common_functions/content').Content;
 const detect_hedging       = require('../../../../common_functions/common_functions').detect_hedging;
 const appendTextValueChild = require('../../../../common_functions/common_functions').appendTextValueChild;
 const FormManager          = require('../../../../common_functions/form_manager');
@@ -12,61 +11,58 @@ require('select2');
 const SettingsDetailsWS = (function() {
     'use strict';
 
-    const formID = '#frmPersonalDetails';
-    const RealAccElements = '.RealAcc';
-    let isInitialized,
-        editable_fields,
-        isJP,
-        isVirtual,
+    const form_id = '#frmPersonalDetails';
+    const real_acc_elements = '.RealAcc';
+    const hidden_class = 'invisible';
+    let editable_fields,
+        is_jp,
+        is_virtual,
         residence,
         tax_residence_values,
         place_of_birth_value,
-        get_settings_data = {};
+        get_settings_data;
 
-    const init = function() {
-        isVirtual = Client.get('is_virtual');
+    const init = () => {
+        editable_fields = {};
+        get_settings_data = {};
+        is_virtual = Client.get('is_virtual');
         residence = Client.get('residence');
-        isJP = residence === 'jp';
-        if (isJP && !isVirtual) {
-            $('#fieldset_email_consent').removeClass('invisible');
+        is_jp = residence === 'jp';
+        if (is_jp && !is_virtual) {
+            $('#fieldset_email_consent').removeClass(hidden_class);
         }
         showHideTaxMessage();
     };
 
     const showHideTaxMessage = () => {
         if (Client.should_complete_tax()) {
-            $('#tax_information_notice').removeClass('invisible');
+            $('#tax_information_notice').removeClass(hidden_class);
         } else {
-            $('#tax_information_notice').addClass('invisible');
+            $('#tax_information_notice').addClass(hidden_class);
         }
     };
 
-    const getDetailsResponse = function(data) {
+    const getDetailsResponse = (data) => {
         const get_settings = $.extend({}, data);
         get_settings.date_of_birth = get_settings.date_of_birth ? moment.utc(new Date(get_settings.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
-        get_settings.name = isJP ? get_settings.last_name : (get_settings.salutation || '') + ' ' + (get_settings.first_name || '') + ' ' + (get_settings.last_name || '');
+        get_settings.name = is_jp ? get_settings.last_name : (get_settings.salutation || '') + ' ' + (get_settings.first_name || '') + ' ' + (get_settings.last_name || '');
 
         displayGetSettingsData(get_settings);
 
-        if (Client.get('is_virtual')) { // Virtual Account
-            $(RealAccElements).remove();
-            $(formID).removeClass('hidden');
-            return;
-        }
-        // Real Account
-        // Generate states list
-        if (isJP) {
-            const jpData = get_settings.jp_settings;
-            displayGetSettingsData(jpData);
-            if (jpData.hedge_asset !== null && jpData.hedge_asset_amount !== null) {
-                $('.hedge').removeClass('invisible');
+        if (is_virtual) {
+            $(real_acc_elements).remove();
+        } else if (is_jp) {
+            const jp_settings = get_settings.jp_settings;
+            displayGetSettingsData(jp_settings);
+            if (jp_settings.hedge_asset !== null && jp_settings.hedge_asset_amount !== null) {
+                $('.hedge').removeClass(hidden_class);
             }
             $('.JpAcc').removeClass('invisible hidden');
         } else {
-            $(RealAccElements).removeClass('hidden');
+            $(real_acc_elements).removeClass('hidden');
         }
-        $(formID).removeClass('hidden');
-        FormManager.handleSubmit(formID, { set_settings: 1 }, setDetailsResponse, additionalCheck);
+        $(form_id).removeClass('hidden');
+        FormManager.handleSubmit(form_id, { set_settings: 1 }, setDetailsResponse, additionalCheck);
     };
 
     const displayGetSettingsData = (data, populate = true) => {
@@ -87,41 +83,46 @@ const SettingsDetailsWS = (function() {
             has_key = $key.length > 0;
             has_lbl_key = $lbl_key.length > 0;
             // prioritise labels for japan account
-            $key = has_key && has_lbl_key ? (isJP ? $lbl_key : $key) : (has_key ? $key : $lbl_key);
+            $key = has_key && has_lbl_key ? (is_jp ? $lbl_key : $key) : (has_key ? $key : $lbl_key);
             if ($key.length > 0) {
-                data_key = data[key] || '';
+                data_key = data[key] === null ? '' : data[key];
                 editable_fields[key] = data_key;
                 if (populate) {
                     if ($key.is(':checkbox')) {
                         $key.prop('checked', !!data_key);
                     } else if (/(SELECT|INPUT)/.test($key.prop('nodeName'))) {
                         $key.val(data_key.split(',')).trigger('change');
-                    } else {
+                    } else if (key !== 'country') {
                         $key.text(data_key ? localize(data_key) : '-');
                     }
                 }
             }
         });
+        if (data.country) {
+            $('#residence').replaceWith($('<label/>').append($('<strong/>', { id: 'lbl_country' })));
+            $('#lbl_country').text(data.country);
+            if (is_virtual) $('#btn_update').addClass(hidden_class);
+        }
     };
 
     const additionalCheck = (data) => {
-        if (!isChanged(data)) {
+        if (!isChanged(data) && (!data.jp_settings || !isChanged(data.jp_settings))) {
             showFormMessage('You did not change anything.', false);
             return false;
         }
         return true;
     };
 
-    const isChanged = data => (
-        Object.keys(editable_fields).some(key => (
-            (key in data && editable_fields[key] !== data[key]) ||
-            (data.jp_settings && key in data.jp_settings && editable_fields[key] !== data.jp_settings[key])
-        ))
-    );
+    const isChanged = (data) => {
+        const compare_data = $.extend({}, data);
+        return Object.keys(compare_data).some(key => (
+            key !== 'set_settings' && key !== 'jp_settings' && editable_fields[key] !== compare_data[key]
+        ));
+    };
 
     const getValidations = (data) => {
         let validations;
-        if (isJP) {
+        if (is_jp) {
             validations = [
                 { request_field: 'address_line_1',   value: data.address_line_1 },
                 { request_field: 'address_line_2',   value: data.address_line_2 },
@@ -135,9 +136,11 @@ const SettingsDetailsWS = (function() {
                 { selector: '#hedge_asset_amount', validations: ['req', 'number'], parent_node: 'jp_settings' },
                 { selector: '#hedge_asset',        validations: ['req'], parent_node: 'jp_settings' },
             ];
-            $(formID).find('select').each(function () {
+            $(form_id).find('select').each(function () {
                 validations.push({ selector: `#${$(this).attr('id')}`, validations: ['req'], parent_node: 'jp_settings' });
             });
+        } else if (is_virtual) {
+            validations = [{ selector: '#residence', validations: ['req'] }];
         } else {
             validations = [
                 { selector: '#address_line_1',     validations: ['req', 'general'] },
@@ -160,7 +163,7 @@ const SettingsDetailsWS = (function() {
         return validations;
     };
 
-    const setDetailsResponse = function(response) {
+    const setDetailsResponse = (response) => {
         // allow user to resubmit the form on error.
         const is_error = response.set_settings !== 1;
         if (!is_error) {
@@ -179,22 +182,29 @@ const SettingsDetailsWS = (function() {
             'Your settings have been updated successfully.', !is_error);
     };
 
-    const showFormMessage = function(msg, isSuccess) {
+    const showFormMessage = (msg, is_success) => {
         $('#formMessage')
-            .attr('class', isSuccess ? 'success-msg' : 'errorfield')
-            .html(isSuccess ? '<ul class="checked"><li>' + localize(msg) + '</li></ul>' : localize(msg))
+            .attr('class', is_success ? 'success-msg' : 'errorfield')
+            .html(is_success ? '<ul class="checked"><li>' + localize(msg) + '</li></ul>' : localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);
     };
 
-    const populateResidence = function(response) {
+    const populateResidence = (response) => {
         const residence_list = response.residence_list;
         const obj_residence_el = {
             place_of_birth: document.getElementById('place_of_birth'),
             tax_residence : document.getElementById('tax_residence'),
         };
-        if (obj_residence_el.place_of_birth.childElementCount !== 0) return;
+        if (!residence) {
+            $('#lbl_country').parent().replaceWith($('<select/>', { id: 'residence' }));
+            obj_residence_el.residence = document.getElementById('residence');
+            appendTextValueChild(obj_residence_el.residence, localize('Please select a value'), '');
+            initFormManager();
+        }
+        if ((obj_residence_el.place_of_birth && obj_residence_el.place_of_birth.childElementCount !== 0) ||
+            (obj_residence_el.residence && obj_residence_el.residence.childElementCount !== 1)) return;
         let text,
             value;
         if (residence_list.length > 0) {
@@ -202,26 +212,28 @@ const SettingsDetailsWS = (function() {
                 const current_residence = residence_list[j];
                 text = current_residence.text;
                 value = current_residence.value;
-                appendIfExist(obj_residence_el, text, value);
+                appendIfExist(obj_residence_el, text, value, current_residence.disabled ? 'disabled' : undefined);
             }
             $('#tax_residence').select2()
                 .val(tax_residence_values).trigger('change')
-                .removeClass('invisible');
-            obj_residence_el.place_of_birth.value = place_of_birth_value || residence;
+                .removeClass(hidden_class);
+            if (obj_residence_el.place_of_birth) {
+                obj_residence_el.place_of_birth.value = place_of_birth_value || residence;
+            }
         }
     };
 
-    const appendIfExist = (object_el, text, value) => {
+    const appendIfExist = (object_el, text, value, disabled) => {
         let object_el_key;
         Object.keys(object_el).forEach(function(key) {
             object_el_key = object_el[key];
             if (object_el_key) {
-                appendTextValueChild(object_el_key, text, value);
+                appendTextValueChild(object_el_key, text, value, disabled && key === 'residence' ? disabled : undefined);
             }
         });
     };
 
-    const populateStates = function(response) {
+    const populateStates = (response) => {
         const address_state = '#address_state';
         let $field = $(address_state);
         const states = response.states_list;
@@ -238,47 +250,37 @@ const SettingsDetailsWS = (function() {
             $field = $(address_state);
         }
         $field.val(get_settings_data.address_state);
-        FormManager.init(formID, getValidations(get_settings_data));
-        if (isJP && !isVirtual) {
+        initFormManager();
+        if (is_jp && !is_virtual) {
             // detect_hedging needs to be called after FormManager.init
             // or all previously bound event listeners on form elements will be removed
             detect_hedging($('#trading_purpose'), $('.hedge'));
         }
     };
 
-    const onLoad = function() {
-        if (isInitialized) return;
-        isInitialized = true;
-        Content.populate();
-        editable_fields = {};
-        get_settings_data = {};
+    const initFormManager = () => { FormManager.init(form_id, getValidations(get_settings_data)); };
 
+    const onLoad = () => {
         BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();
             get_settings_data = State.get(['response', 'get_settings', 'get_settings']);
             getDetailsResponse(get_settings_data);
-            if (!isVirtual) {
-                if (!isJP) {
-                    BinarySocket.send({ residence_list: 1 }).then((response) => {
-                        populateResidence(response);
-                    });
+            if (!is_virtual || !residence) {
+                $('#btn_update').removeClass(hidden_class);
+                if (!is_jp) {
+                    BinarySocket.send({ residence_list: 1 }).then(response => populateResidence(response));
                 }
                 if (residence) {
-                    BinarySocket.send({ states_list: residence }).then((response) => {
-                        populateStates(response);
-                    });
+                    BinarySocket.send({ states_list: residence }).then(response => populateStates(response));
                 }
+            } else {
+                $('#btn_update').addClass(hidden_class);
             }
         });
     };
 
-    const onUnload = () => {
-        isInitialized = false;
-    };
-
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad: onLoad,
     };
 })();
 
