@@ -323,10 +323,6 @@ const BinarySocketClass = function() {
                         Header.upgrade_message_visibility();
                     }
                     GTM.event_handler(response.get_settings);
-                    const jpStatus = response.get_settings.jp_account_status;
-                    if (jpStatus) {
-                        Client.set('jp_status', jpStatus.status);
-                    }
                     if (response.get_settings.is_authenticated_payment_agent) {
                         $('#topMenuPaymentAgent').removeClass('invisible');
                     }
