@@ -5,7 +5,6 @@ const FormManager = (function() {
     'use strict';
 
     const forms = {};
-    let can_submit = true;
 
     const initForm = (form_selector, fields) => {
         const $form = $(`${form_selector}:visible`);
@@ -13,6 +12,7 @@ const FormManager = (function() {
             forms[form_selector] = {
                 fields     : fields,
                 $btn_submit: $form.find('button[type="submit"]'),
+                can_submit : true,
             };
             fields.forEach((field) => {
                 if (field.selector) {
@@ -74,30 +74,34 @@ const FormManager = (function() {
             showLoadingImage($btn, 'white');
             $btn.append($btn_text);
         }
-        can_submit = false;
     };
 
     const enableButton = ($btn) => {
         if ($btn.length && $btn.find('.barspinner').length) {
             $btn.removeAttr('disabled').html($btn.find('span').text());
         }
-        can_submit = true;
     };
 
     const handleSubmit = (options) => {
         $(options.form_selector).off('submit').on('submit', function(evt) {
             evt.preventDefault();
+            const form = forms[options.form_selector];
+            const $btn_submit = form.$btn_submit;
+            const can_submit = form.can_submit;
             if (!can_submit) return;
-            const $btn_submit = forms[options.form_selector].$btn_submit;
             if (Validation.validate(options.form_selector)) {
                 const req = $.extend(options.obj_request || {}, getFormData(options.form_selector));
                 if (typeof options.fnc_additional_check === 'function' && !options.fnc_additional_check(req)) {
                     return;
                 }
                 disableButton($btn_submit);
+                form.can_submit = false;
                 BinarySocket.send(req).then((response) => {
                     if (typeof options.fnc_response_handler === 'function') {
-                        if (options.enable_button || 'error' in response) enableButton($btn_submit);
+                        if (options.enable_button || 'error' in response) {
+                            enableButton($btn_submit);
+                            form.can_submit = true;
+                        }
                         options.fnc_response_handler(response);
                     }
                 });
