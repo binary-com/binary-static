@@ -1,5 +1,5 @@
 const expect      = require('chai').expect;
-const profitTable = require('../profit_table').ProfitTable;
+const profitTable = require('../profit_table');
 const ws          = require('ws');
 const LiveApi     = require('binary-live-api').LiveApi;
 
