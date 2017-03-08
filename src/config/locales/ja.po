@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-06 02:40+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"PO-Revision-Date: 2017-03-08 03:13+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -197,6 +198,12 @@ msgstr "%1では、それぞれのターゲット市場または戦略の実行�
 
 msgid "%1 offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk). Client orders are typically hedged when the total transaction volume exceeds a predefined threshold of risk tolerance level. For both execution models, %1 acts as the contractual counterparty to the transactions that you enter into with us, as opposed to entering into a contractual counterparty with a central clearing house as would be the case with exchange traded financial instruments. As such, counterparty risk exists. Counterparty risk refers to the risk of loss for clients resulting from the fact that the counterparty to the forex and/or contracts for differences transaction that you entered into may default on its obligations prior to the final settlement of the transaction's cash flow."
 msgstr ""
+"%1ではハイブリッドモデルを利用した外国為替取引を提供しています。例えば、自身の口座（Dealing Desk）と当社のLP制度（No Dealing D"
+"esk）の双方を用いて顧客の注文を部分的にヘッジしています。取引量の合計がリスク許容レベルの予め定めた値を超えると、顧客注文は通常ヘッジされます。双方の執"
+"行モデルに関して、%1は取引所で取引されている金融商品のように中央手形交換所と取引を締結するのではなく、顧客が当社と取引を開始するにあたり当社は取引相手と"
+"なります。従って、取引相手になることはリスクが存在します。取引相手のリスクとして、取引のキャッシュフローの最終決済前に不履行となる可能性のある異なる外国為"
+"替及び/またはトレードの取引相手になるということから生じる\n"
+"顧客の損失リスクを指します。"
 
 msgid "%1 offers new ways to trade"
 msgstr "新たなトレードの提供を開始"
@@ -564,7 +571,7 @@ msgid "<strong>Instant access</strong> - Open an account and start trading in mi
 msgstr "<strong>インスタントアクセス</strong> - 数分で口座を開設。すぐに取引を始められます。"
 
 msgid "<strong>Long positions</strong>: We charge a 2% fee on top of interbank lending rates."
-msgstr ""
+msgstr "<strong>ロングポジション</strong>:インターバンクの貸出金利の2%の手数料を課します。"
 
 msgid "<strong>Long positions</strong>: We charge a 2% fee on top of market rates."
 msgstr "長期間の取引期間をご指定して頂いたトレードは、最新の市場価格で売ることができる場合があります。"
@@ -603,7 +610,7 @@ msgid "<strong>Sharp, benchmarked prices</strong> - Benefit from the same rates 
 msgstr "<strong>ベンチマーク価格</strong>：インターバンク取引と同じリターン率から利益を得ることができます。当社の価格はインターバンクオプション市場のベンチマークを用いています。"
 
 msgid "<strong>Short positions</strong>: We charge a 2% fee on top of interbank lending rates."
-msgstr ""
+msgstr "<strong>ショートポジション</strong>: インターバンクの貸出金利の2%の手数料を課します。"
 
 msgid "<strong>Short positions</strong>: We charge a 2% fee on top of market rates."
 msgstr "<strong>手数料:</strong> トランザクション処理に手数料が請求されます。"
@@ -657,7 +664,7 @@ msgid "A Stays Between trade pays out if the market stays between (does not touc
 msgstr "レンジトレードにおける「STAY-IN」トレードは、取引期間中常に上限バリア、及び下限バリアの間に価格が留まれば条件が満たされたと判定され、上下どちらかのバリア値にタッチした瞬間に条件が満たされないと判定されます。「BREAK-OUT」では取引期間以内に一度でも上限バリア、または下限バリアにタッチすれば条件が満たされたと判定されます。"
 
 msgid "A Transaction is opened by either executing a \"Buy\" or \"Sell\" Order based on a specified number of lots (volume) that constitute the underlying instrument of the relevant market."
-msgstr ""
+msgstr "関連する市場の原資産商品を特定のロット数（数量）「購入」または「売却」注文を実行することで取引が開始されます。"
 
 msgid "A True Partnership"
 msgstr "最高のサポート体制を提供"
@@ -813,7 +820,7 @@ msgid "Account Closure"
 msgstr "口座解約"
 
 msgid "Account Equity - Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss."
-msgstr ""
+msgstr "有効証拠金 - 口座残高と含み益、含み損の合計をいいます。"
 
 msgid "Account Free Margin - Your Account Equity minus your Total Margin."
 msgstr ""
@@ -858,10 +865,10 @@ msgid "Accounts And Payments Executive"
 msgstr "顧客・支払担当者"
 
 msgid "Accounts with debit balance (i.e. credit exposure to %1)"
-msgstr ""
+msgstr "借越残高がある口座（例：%1への与信額）"
 
 msgid "Accounts with debit balances are required to settle the full amount immediately by making a payment to us."
-msgstr ""
+msgstr "借越残高がある口座は直ちに全額を当社へ支払う必要があります。"
 
 msgid "Accuracy of Information"
 msgstr "情報の精度"
@@ -968,10 +975,12 @@ msgid "All credit card details are submitted directly to the Visa/Mastercard net
 msgstr "クレジットカードの詳細情報は全て、金融機関の規定に合致する最新のSSLの暗号技術を採用しているVisa/Mastercardのネットワークに直接送信されます。"
 
 msgid "All funds transferred from your Binary Options Real Account to your Real Account must be made by you."
-msgstr ""
+msgstr "バイナリーオプションのリアル口座からご自身のリアル口座への全資金の送金は、必ずご自身で行うようにしてください。"
 
 msgid "All intellectual property rights in the MT5 Trading Platform are owned by the Licensor and shall remain the exclusive property of the Licensor. Nothing in this Agreement intends to transfer any such rights or to vest any such rights in you."
 msgstr ""
+"MT5取引プラットフォームでの全知的財産権はライセンサーが所有し、ライセンサーの独占的財産でなければいけません。本契約では、そのような権利を譲渡することは"
+"意図していません。"
 
 msgid "All market conditions and durations"
 msgstr "どんな市場状況でもトレード戦略を実行可能"
@@ -984,6 +993,9 @@ msgstr "当社サイトに掲載されているご意見、ニュース、リサ
 
 msgid "All products traded on margin carry a high degree of risk and can result in losses as well as profits that exceed your initial deposit. The margin trading service described in this Agreement is not suitable for everyone. You acknowledge that the margin trading service described in this Agreement is designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us."
 msgstr ""
+"証拠金取引の全商品には高いリスクがつき、結果として初期投資額を超える損失が発生する可能性があります。本契約に記載されている証拠金取引サービスは、全ての方に"
+"適しているわけではありません。本契約に記載されている証拠金取引は、本契約に表記されている取引タイプに関する知識と経験がある方へ提供しており、本契約を締結す"
+"る前に関連するリスクを十分にご理解いただく必要があります。"
 
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "当社サイトの時間表示は全て、GMT（グリニッジ標準時）に基づきます。"
@@ -995,7 +1007,7 @@ msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr "クライアントへ%1では直接利用できないEウォレットの使用を許可する。"
 
 msgid "Alter the normal trading times for the affected market;"
-msgstr ""
+msgstr "影響を受ける市場の通常取引時間を変更します；"
 
 msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available <a href='http://ec.europa.eu/odr' target='_blank'>here</a>."
 msgstr "また、Binary (IOM) LtdおよびBinary (ヨーロッパ) Ltdにご登録されているお客さまは、IBASへ紛争内容をご提出される代わりに、欧州委員会のオンライン紛争解決（ODR）プラットフォームを<a href='http://ec.europa.eu/odr' target='_blank'>こちら</a>からご利用いただけます。"
@@ -1020,9 +1032,11 @@ msgstr "「END-IN」トレードは、トレードの終値が最小値に設定
 
 msgid "An Open Position may be closed by placing an opposite Order, that is an Order to sell (to close a Long Position) or to buy (to close a Short Position) in the same market for the same specified number of lots (volume)."
 msgstr ""
+"オープンポジションは逆のポジションの注文を実行することで閉じることができる場合もあります。これは、同じ市場で全く同じロット数（数量）を売却（ロングポジショ"
+"ンを閉じるため）または購入（ショートポジションを閉じるため）することを意味します。"
 
 msgid "An Open Position may be partially closed by entering into an opposite Transaction in the same Market but for a smaller number of lots (volume) as the Open Position."
-msgstr ""
+msgstr "逆の取引を同じ市場でオープンポジション少ないロット数（数量）で行うことで、オープンポジションを部分的に閉じることができます。"
 
 msgid "An additional password can be used to restrict access to the cashier."
 msgstr "入出金へのアクセスを制限するために、追加パスワードを使用することができます。"
@@ -1067,7 +1081,7 @@ msgid "Any"
 msgstr "任意"
 
 msgid "Any Transaction opened by you must be within any credit or position limit in effect with respect to the Real Account or any Transactions."
-msgstr ""
+msgstr "お客さまが開始された取引は、リアル口座またはその他決済に影響がないようクレジットまたはポジションの制限を超えないようにしてください。"
 
 msgid "Any changes in our privacy policy or security statement will be posted onto this website. In the event of material changes that directly affect the economic use of your personal information, we will request your prior authorisation in writing before effecting such change on your account."
 msgstr "個人情報のお取り扱いなどに関する変更点は全て当社サイトに掲載されます。お客さまの個人情報の経済的利用へ直接影響を与えるような変更が発生し得る場合は、当社はお客さまのご口座にそのような影響が発生する前に書面での事前認証を求めます。"
@@ -1085,16 +1099,17 @@ msgid "Any information given on these pages and/or emails or newsletters sent by
 msgstr "当社サイトの全てのページ、メール、ニュースレターなどに掲載された情報は全て、金融または投資の助言を意図しているものではなく、当社はこの点においていかなる責任も負わず、当サイトに掲載されている情報の精度、網羅性に対する責任も負いません。"
 
 msgid "Any information which you provide or have provided to us in respect of your financial position, domicile or other matters is accurate and not misleading in any material respect."
-msgstr ""
+msgstr "お客さまによって提供された財務情報、所在地、その他の事項は正確なものであり、誤解を招くような内容であってはいけません。"
 
 msgid "Any notice given or made under this Agreement to the Company shall be by email to %1. The Company shall send you any notices given or made under this Agreement to the email address supplied on your application form or such other email address as notified by you to the Company."
 msgstr "本契約に基いて当社宛に作成された、いかなる通知及びお問い合わせは、affiliates@binary.comまで送信してください。また、当社が本契約の下作成した通知は、申請時にご登録いただいたメールアドレスか、当社へご提示いただいたその他のメールアドレスへ送信致します。"
 
 msgid "Any other consideration relevant to the execution of the transaction."
-msgstr ""
+msgstr "トレードの実行に関する考慮事項"
 
 msgid "Any realised profits and interest charges that are denominated in a currency that's different from your Base Currency will be automatically converted to your Base Currency before being debited / credited to your Real Account. The conversion will be performed at commercially reasonable rates."
 msgstr ""
+"ベース通貨とは異なる通貨で通貨建てされた利益及び利息は、リアル口座へ入金される前にベース通貨へと自動で変換されます。正当な変換率で自動的に変換されます。"
 
 msgid "Any third party claims arising out of, or relating to, your use of, or inability to use, the %1 API."
 msgstr "%1 API外で生じた内容、関連内容、ご利用方法、活用性に関してサードパーティーに責任はありません。"
@@ -1106,7 +1121,7 @@ msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "当社へのトラフィックの成長または増加に貢献が見込める方"
 
 msgid "Appendix - Product Specific Policies"
-msgstr ""
+msgstr "付録 - 商品仕様ポリシー"
 
 msgid "Applications"
 msgstr "アプリケーション"
@@ -1370,6 +1385,8 @@ msgstr "獲得会員を確実にフォローするCookie（クッキー）設定
 
 msgid "Best execution is the requirement to take all sufficient steps to obtain, when executing orders, the best possible result for you taking into account price, costs, speed, likelihood of execution and settlement, size, nature or any other consideration relevant (hereinafter referred to as the \"execution factors\") to the execution of the order."
 msgstr ""
+"最良執行とは注文実行、決済、数量、性質、その他の関連事項（以下「実行要因」という。）を踏まえながら、注文実行の際に価格、費用、スピードを考慮した最良の結果"
+"を導けるよう全てのステップをきちんと踏む必要があります。"
 
 msgid "BetOnMarkets goes live"
 msgstr "BetOnMarkets（オンライントレードサイト）を公開"
@@ -1486,7 +1503,7 @@ msgid "Binary Options Basics"
 msgstr "バイナリー取引の基礎"
 
 msgid "Binary Options Real Account - Your real money account opened with Binary.com which you use to trade binary options with Binary.com."
-msgstr ""
+msgstr "バイナリーオプションリアル口座 - お客さまの口座はBinary.comでバイナリーオプション取引を行うために開設されました。"
 
 msgid "Binary Shop"
 msgstr "バイナリーショップ"
@@ -1559,18 +1576,21 @@ msgstr "コスタリカではBinay.com (バイナリードットコム)をご利
 
 msgid "Binary.com offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk)."
 msgstr ""
+"Binary.comではハイブリッドモデルを利用した外国為替取引を提供しています。例えば、自身の口座（Dealing Desk）と当社のLP制度（No "
+"Dealing Desk）の双方を用いて顧客の注文を部分的にヘッジしています。"
 
 msgid "Binary.com open-source projects"
 msgstr "Binary.com (バイナリードットコム)オープンソース・プロジェクト"
 
 msgid "Binary.com owes you a duty of best execution when executing orders on your behalf, i.e., when you are placing a legitimate reliance on us to safeguard your interest in relation to the execution of your order."
-msgstr ""
+msgstr "Binary.comにはお客さまに代わって注文を執行する際、最良執行を行う義務があります。"
 
 msgid "Binary.com provides you best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by:"
 msgstr ""
+"Binary.comは受注を管理する際に、スマート集計メソッドを活用して最良執行を提供しています。スマート集計メソッドは以下の内容から動作します。"
 
 msgid "Binary.com shall act, at times, as a principal and at other times as an agent on your behalf, for all Transactions entered into, by you."
-msgstr ""
+msgstr "Binary.comはお客さまが開始した全取引に関して、時にはお客さまの代理人として、また時には当事者として振る舞います。"
 
 msgid "Binary.com's CPAN contributions"
 msgstr "Binary.com (バイナリードットコム)のCPANへの貢献"
@@ -1624,7 +1644,7 @@ msgid "By indicating your acceptance of these terms and conditions and continuin
 msgstr "アフィリエイトプログラムにご参加頂くにあたり、本規約を熟読し理解されることは重要です。本規約への同意の表明、及びアフィリエイトプログラムへの申請行為は、下記の本規約に同意されたものとみなします。万が一、本規約に同意できない場合は、アフィリエイトプログラムへの参加は見合わせて下さい。アフィリエイト会員には、当アフィリエイトプログラムにて会員獲得を目指すウェブサイトの管理者として行動して頂きます。"
 
 msgid "By opening a Real Account with Binary.com, you represent, warrant and undertake that:"
-msgstr ""
+msgstr "Binary.comでリアル口座を開設することで、以下の内容を代表者として保証し、請け負うこととなります。"
 
 msgid "By registering a software application, website, or product you create or a service you offer (an \"Application\"), you acknowledge that you have read and understood and agree to be bound by these terms."
 msgstr "ソフトウェアアプリケーション、ウェブサイト、お客さまが作成された製品または提供されたサービス（アプリケーション）を登録することで、これら条項に拘束されることに同意されたとみなします。"
@@ -1641,7 +1661,7 @@ msgstr ""
 "Googleにお客様の%1ログインID(例： VRTC1234, CR1234, MF1234, など)をキャプチャすることを許可するものです。個人情報などを除いた、GoogleによってリンクされるBinary.comのログインIDまたはその他データなどは、GoogleアナリティクスユーザーID機能を有効にすることで、Googleに共有または開示されます。"
 
 msgid "C. Definition of Best Execution"
-msgstr ""
+msgstr "C. 最良執行の定義"
 
 msgid "C. Provision of Services"
 msgstr "C. サービス提供"
@@ -1651,6 +1671,8 @@ msgstr "1ポイント＝CAD 1"
 
 msgid "CFD (Contract for Difference): CFD is an instrument that allows you to profit by speculating on the rise or fall of an instrument. The profit/loss is estimated as a function of the difference in the buy/sell prices of the underlying instrument."
 msgstr ""
+"CFD（差金決済取引）：CFDとは金融商品の上昇または下降の推測から利益を得られる金融商品のことをいいます。利益/損失は原資産商品の購入/売却価格の差額と"
+"して推定されます。"
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "ウェブサイトを持っていなくても、アフィリエイトプログラムに参加することはできますか？"
@@ -1710,7 +1732,7 @@ msgid "Change the Stop Out Level in relation to your account."
 msgstr "ロスカットレベルを変更する"
 
 msgid "Change the margin rate in relation to both Open Positions and new orders;"
-msgstr ""
+msgstr "オプションポジションと新しい注文に関する証拠金率の変更"
 
 msgid "Change the password used for deposits and withdrawals."
 msgstr "入出金に用いるパスワードを変更"
@@ -1870,7 +1892,7 @@ msgid "Clients' Money"
 msgstr "お客さまマネー"
 
 msgid "Close all or any of your Open Positions at a closing level that is reasonably available;"
-msgstr ""
+msgstr "判定レベルでオープンポジションの全てをあるいは一部を閉じることは、合理的に可能です。"
 
 msgid "Closed"
 msgstr "終了"
@@ -1891,7 +1913,7 @@ msgid "Closing an Account"
 msgstr "口座閉鎖"
 
 msgid "Closing or part-closing all or any of your Open Positions based on the prevailing prices available in the relevant markets;"
-msgstr ""
+msgstr "関連市場で利用できる実勢価格に基づいたオープンポジションの全てまたは一部を閉じる"
 
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
 msgstr "ウェブサイトの機能とパフォーマンスを向上させる革新的な方法を特定するために、ITグループのメンバーと共同で作業を行います"
@@ -2041,10 +2063,10 @@ msgid "Contract Sold"
 msgstr "売却"
 
 msgid "Contract Specifications (CFD) - Cash Indices"
-msgstr ""
+msgstr "トレード詳細（CFD）- 現金インデックス"
 
 msgid "Contract Specifications (CFD) - Volatility Indices"
-msgstr ""
+msgstr "トレード詳細（CFD）- ボラティリティインデックス"
 
 msgid "Contract Specifications - Forex"
 msgstr "トレード仕様 - 外国為替"
@@ -2125,7 +2147,7 @@ msgid "Corporate Action"
 msgstr "企業活動"
 
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
-msgstr ""
+msgstr "費用 - 注文実行の費用は主にスプレッドです。例: 当社の付け値と当社の提案価格の差額"
 
 msgid "Costs and Charges"
 msgstr "コストと料金"
@@ -2221,7 +2243,7 @@ msgid "Cyberjaya Office"
 msgstr "サイバージャヤ（マレーシア）"
 
 msgid "D. Capacity"
-msgstr ""
+msgstr "D. 権利能力"
 
 msgid "D. Client Instructions"
 msgstr "D. クライアント操作手順"
@@ -2291,6 +2313,8 @@ msgstr "効果的なキャンペーンの実施に必要な迅速な試行と行
 
 msgid "Depending on the level of risk that we are exposed to acting as your counterparty, we largely act in a principal capacity of your trades. As such, the execution venue will usually be Binary.com. However, we may transmit your order to third party liquidity providers, in which case we will determine the execution venue ourselves on the basis described above."
 msgstr ""
+"お客さまの取引相手として行動する上でのリスクレベルに応じて、当社は当事者としてお客さまのお取引の権利能力を行使します。そのため、取引執行場はBinaru."
+"comで行われます。しかし、当社は上記に基いて取引執行場として当社が決定するサードパーティーのLPにお客さまの取引を移す場合があります。"
 
 msgid "Depending on the quality of the data feeds received from our feed providers, our servers might apply a tick filtering algorithm. The purpose of this filtering algorithm is to strip the feed of stray ticks. Stray ticks are ticks that manifestly fall outside of the current trading range of the market; such ticks are often due to communication delays with the exchanges or banks that provide quotes, human error, or database problems at any point between the originator of the quote and our servers."
 msgstr "フィードプロバイダ先から受信したデータフィードによって、Tickフィルタリングアルゴリズムが当サーバーに適用される場合があります。データフィードをStray Tickを価格情報から除去する目的でこのフィルタリング・アルゴリズムを採用しています。Stray Tickとは、明らかに市場での取引範囲から外れてしまった価格のことです。Stray Tickは、金融機関が提供する価格に関する配信遅延、人的ミス、または元受業者の価格と当社のサーバとデータベースの不整合に起因します。"
@@ -2512,7 +2536,7 @@ msgid "Each binary option is a prediction on the future movement of an underlyin
 msgstr "バイナリーオプションは、原資産の将来の値動きを予測する取引です。"
 
 msgid "Each of the following event constitutes an \"Event of Default\":"
-msgstr ""
+msgstr "以下の各イベントは「規定のイベント」として構成します。"
 
 msgid "Each option transaction has a specified expiry time and date, known as the judgment time."
 msgstr "本取引が期日のある取引であること。（契約締結前交付書面「店頭バイナリーオプション取引のリスク等重要事項について」-2参照）"
@@ -2522,6 +2546,8 @@ msgstr "本契約に関わる当事者は、契約の締結、本契約で譲渡
 
 msgid "Each time you open a position on a Volatility Index symbol, you can start with a minimum volume transaction of 0.01 (trade size), which translates to USD 0.01 per point movement of the index."
 msgstr ""
+"ボラティリティインデックスのシンボルのポジションをオープンにする度に、0.01（取引数量）の最小取引量で始めることができます。"
+"インデックスの1ポイントにつきUSD 0.01 に変換されます。"
 
 msgid "Each trade comes with a pre-determined payout that you will see after adjusting each parameter. You’ll win the payout if your prediction is correct. If not, you will only lose your initial stake."
 msgstr "各トレードにおいて事前にペイアウト金額が確定しています。条件が満たされるとこの金額をお受け取りいただけます。条件が満たされなかった場合は、購入金額を失うことになります。"
