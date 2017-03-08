@@ -340,7 +340,7 @@ const MBContract = (function() {
             const contract_type = c.contract_type,
                 template = getTemplate(contract_type),
                 $wrapper = $($desc_wrappers[template.order]);
-            $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(localize(template.name));
+            $wrapper.find('.contract-type').attr('class', `contract-type ${contract_type}${template.order ? ' negative-color' : ''}`).text(localize(template.name));
             $wrapper.find('.descr').html(localize(template.description, [currency, payout, display_name, date_expiry]));
         });
     };

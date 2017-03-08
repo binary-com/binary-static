@@ -145,7 +145,7 @@
             line-height: 1.4em;
         }
     }
-    .details-heading {
+    .contract-type {
         padding: 45px 16px 0;
         margin-bottom: 0;
         background-repeat: no-repeat;
@@ -154,30 +154,6 @@
         text-align: center;
         align-self: flex-start;
         white-space: nowrap;
-        &.CALLE {
-            background-image: url('https://www.binary.com/images/pages/trade/rise_1.png');
-        }
-        &.PUT {
-            background-image: url('https://www.binary.com/images/pages/trade/fall_1.png');
-        }
-        &.ONETOUCH {
-            background-image: url('https://www.binary.com/images/pages/trade/touch_1.png');
-        }
-        &.NOTOUCH {
-            background-image: url('https://www.binary.com/images/pages/trade/no-touch_1.png');
-        }
-        &.EXPIRYRANGEE {
-            background-image: url('https://www.binary.com/images/pages/trade/ends-between_1.png');
-        }
-        &.EXPIRYMISS {
-            background-image: url('https://www.binary.com/images/pages/trade/ends-outside_1.png');
-        }
-        &.RANGE {
-            background-image: url('https://www.binary.com/images/pages/trade/stay-in-between_1.png');
-        }
-        &.UPORDOWN {
-            background-image: url('https://www.binary.com/images/pages/trade/stay-out_1.png');
-        }
     }
     .select {
         margin-right: 10px;
