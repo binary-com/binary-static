@@ -37,42 +37,42 @@ msgstr "%1 %2 vừa được cộng thêm vào tài khoản tiền Ảo %3 củ
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
-msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
+msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+msgid "%1 %2 payout if %3 ends on or between low and high values of Barrier at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
-msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+msgid "%1 %2 payout if %3 ends outside low and high values of Barrier at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
-msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+msgid "%1 %2 payout if %3 goes outside of low and high values of Barrier through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+msgid "%1 %2 payout if %3 is strictly higher than or equal to Barrier at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+msgid "%1 %2 payout if %3 is strictly lower than Barrier at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+msgid "%1 %2 payout if %3 stays between low and high values of Barrier through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
-msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
+msgid "%1 %2 payout if %3 touches Barrier through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 
 #, fuzzy
@@ -389,6 +389,11 @@ msgstr "Giải thưởng 'Công ty cung cấp Tỷ lệ cược Cố định T�
 
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "Giải thưởng 'Nhà điều hành Cá cược Tài chính của năm' được trao bởi tạp chí Cá cược điện tử"
+
+#, fuzzy
+#| msgid "Duration"
+msgid "(Duration)"
+msgstr "Khoảng thời gian"
 
 msgid "(One) Touch trades"
 msgstr "(Một) giao dịch Chạm"
@@ -3030,6 +3035,9 @@ msgstr "Có kinh nghiệm làm việc trong một môi trường quốc tế"
 msgid "Expertise in cloud solutions"
 msgstr "Có chuyên môn về giải pháp điện toán đám mây"
 
+msgid "Expiry Time"
+msgstr "Thời gian hết hạn"
+
 msgid "Expiry price"
 msgstr "Giá hết hạn"
 
@@ -5535,7 +5543,9 @@ msgstr "Các nhà giao dịch tiền tệ trực tuyến"
 msgid "Only %1 are allowed."
 msgstr "Chỉ có %1 được cho phép."
 
-msgid "Only 2 decimal points are allowed."
+#, fuzzy
+#| msgid "Only 2 decimal points are allowed."
+msgid "Only %1 decimal points are allowed."
 msgstr "Chỉ cho phép 2 số thập phân sau dấu phẩy."
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
@@ -5936,6 +5946,11 @@ msgid "Please %1 to view this page"
 msgstr "VII lòng %1 để xem trang này"
 
 #, fuzzy
+#| msgid "Please deposit before transfer to client."
+msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
+msgstr "Vui lòng nạp tiền vào trước khi chuyển tới khách hàng."
+
+#, fuzzy
 #| msgid "Please %1 to view this page"
 msgid "Please <a href=\"%1\">log in</a> to view this page."
 msgstr "VII lòng %1 để xem trang này"
@@ -5970,9 +5985,6 @@ msgstr "Xin vui lòng xác nhận chi tiết giao dịch để hoàn thà
 msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgstr "Vui lòng liên hệ với chúng tôi bất cứ điều gì bạn muốn tại <a href=\"mailto:%1\">%1</a>. Chúng tôi luôn lắng nghe và sẵn sàng hỗ trợ bạn. Vì thế, đừng ngần ngại hãy chia sẻ ý kiến và yêu cầu của bạn với chúng tôi."
 
-msgid "Please deposit before transfer to client."
-msgstr "Vui lòng nạp tiền vào trước khi chuyển tới khách hàng."
-
 msgid "Please enter a number between %1."
 msgstr "Vui lòng nhập một số giữa %1."
 
@@ -5984,9 +5996,6 @@ msgstr "Vui lòng nhập một số lớn hơn 0"
 
 msgid "Please enter a number."
 msgstr "Vui lòng nhập vào một số."
-
-msgid "Please enter a valid amount."
-msgstr "Vui lòng nhập số tiền hợp lệ."
 
 msgid "Please enter an integer value"
 msgstr "Vui lòng nhập giá trị số nguyên"
@@ -8205,11 +8214,6 @@ msgstr "Trading Experience"
 msgid "Trading Limits"
 msgstr "Giới hạn Giao dịch"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Trading Period"
-msgid "Trading Period"
-msgstr "{JAPAN ONLY}Trading Period"
-
 msgid "Trading Platforms"
 msgstr "Sàn giao dịch"
 
@@ -9585,6 +9589,11 @@ msgstr "Giới hạn phiên giao dịch của bạn sẽ kết thúc trong %1 gi
 #| msgid "Your settings have been updated successfully."
 msgid "Your settings have been updated successfully."
 msgstr "Thiết lập của bạn đã được cập nhật thành công."
+
+#, fuzzy
+#| msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
+msgid "Your token has expired. Please click %1here%2 to restart the verification process."
+msgstr "Chuỗi xác nhận của bạn đã hết hiệu lực. Xin vui lòng nhấp chuột vào <a class=\"pjaxload\" href=\"%1\">đây</a> để khởi động lại quá trình xác minh."
 
 #, fuzzy
 #| msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
@@ -11090,6 +11099,14 @@ msgstr "Giới hạn Tài khoản"
 
 msgid "Account Details"
 msgstr "Chi tiết Tài khoản"
+
+#~ msgid "Please enter a valid amount."
+#~ msgstr "Vui lòng nhập số tiền hợp lệ."
+
+#, fuzzy
+#~| msgid "{JAPAN ONLY}Trading Period"
+#~ msgid "Trading Period"
+#~ msgstr "{JAPAN ONLY}Trading Period"
 
 #~ msgid "%1 has updated its  <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
 #~ msgstr "%1 vừa cập nhật  <a class=\"pjaxload\" href=\"%2\">Điều khoản & Điều kiện</a>. Bằng cách nhấn vào OK, bạn xác nhận rằng bạn đã đọc và chấp nhận bản cập nhật <a class=\"pjaxload\" href=\"%2\">Điều khoản và Điều kiện</a>."
@@ -15913,9 +15930,6 @@ msgstr "Chi tiết Tài khoản"
 
 #~ msgid "Expiry Spot"
 #~ msgstr "Giá giao ngay hết hạn"
-
-#~ msgid "Expiry Time"
-#~ msgstr "Thời gian hết hạn"
 
 #~ msgid "Indicative Price"
 #~ msgstr "Giá Chỉ thị"
