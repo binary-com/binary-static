@@ -8,9 +8,10 @@ const FormManager = (() => {
 
     const initForm = (form_selector, fields) => {
         const $form = $(`${form_selector}:visible`);
+        const $btn = $form.find('button[type="submit"]');
         if ($form.length) {
             forms[form_selector] = {
-                $btn_submit: $form.find('button[type="submit"]'),
+                $btn_submit: $btn,
                 can_submit : true,
             };
             if (Array.isArray(fields) && fields.length) {
@@ -26,6 +27,8 @@ const FormManager = (() => {
                 });
             }
         }
+        // handle firefox
+        $btn.removeAttr('disabled');
         Validation.init(form_selector, fields);
     };
 
@@ -49,7 +52,7 @@ const FormManager = (() => {
                     // if label, take the text
                     // if checkbox, take checked value
                     // otherwise take the value
-                    value = field.value ? field.value :
+                    value = field.value ? (typeof field.value === 'function' ? field.value() : field.value) :
                         $selector.attr('data-value') || (/lbl_/.test(key) ? (field.value || $selector.text()) :
                             $selector.is(':checkbox') ? ($selector.is(':checked') ? 1 : 0) :
                                 Array.isArray(val) ? val.join(',') : (val || ''));
