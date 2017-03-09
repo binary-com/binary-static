@@ -3,7 +3,7 @@ const BinaryPjax           = require('../base/binary_pjax');
 const localize             = require('../base/localize').localize;
 const Client               = require('../base/client').Client;
 const State                = require('../base/storage').State;
-const appendTextValueChild = require('../common_functions/common_functions').appendTextValueChild;
+const makeOption           = require('../common_functions/common_functions').makeOption;
 const FormManager          = require('../common_functions/form_manager');
 const Cookies              = require('../../lib/js-cookie');
 require('select2');
@@ -48,45 +48,40 @@ const getResidence = () => {
 
 const handleResidenceList = (residence_list) => {
     const obj_residence_el = {
-        residence     : document.getElementById('residence'),
-        place_of_birth: document.getElementById('place_of_birth'),
-        tax_residence : document.getElementById('tax_residence'),
+        residence     : $('#residence'),
+        place_of_birth: $('#place_of_birth'),
+        tax_residence : $('#tax_residence'),
     };
-    Object.keys(obj_residence_el).forEach(function (key) {
-        if (obj_residence_el[key] === null || obj_residence_el[key].childElementCount !== 0) {
-            delete obj_residence_el[key];
-        }
-    });
-    if (obj_residence_el.length === 0) return;
     const phoneElement   = document.getElementById('phone');
     const residenceValue = Client.get('residence');
-    let text,
-        value;
     if (residence_list.length > 0) {
-        for (let j = 0; j < residence_list.length; j++) {
-            const residence = residence_list[j];
-            text = residence.text;
-            value = residence.value;
-            appendIfExist(obj_residence_el, text, value, residence.disabled ? 'disabled' : undefined);
-
-            if (residenceValue !== 'jp' && phoneElement && phoneElement.value === '' && residence.phone_idd && residenceValue === residence.value) {
-                phoneElement.value = '+' + residence.phone_idd;
+        const $options_with_disabled = $('<div/>');
+        residence_list.forEach((res) => {
+            $options_with_disabled.append(makeOption(res.text, res.value, res.disabled));
+            if (residenceValue !== 'jp' && phoneElement && phoneElement.value === '' && res.phone_idd && residenceValue === res.value) {
+                phoneElement.value = '+' + res.phone_idd;
             }
-        }
+        });
+
+        const $options = $('<div/>');
+        residence_list.forEach((res) => {
+            $options.append(makeOption(res.text, res.value));
+        });
+
+        Object.keys(obj_residence_el).forEach((el) => {
+            obj_residence_el[el].html(el === 'residence' ? $options_with_disabled.html() : $options.html());
+        });
+
         if (obj_residence_el.tax_residence) {
             setTimeout(() => {
-                $('#tax_residence').select2()
+                obj_residence_el.tax_residence.select2()
                     .val(residenceValue).trigger('change')
                     .removeClass('invisible');
             }, 1500);
         }
         if (residenceValue) {
-            if (obj_residence_el.residence) {
-                obj_residence_el.residence.value = residenceValue;
-            }
-            if (obj_residence_el.place_of_birth) {
-                obj_residence_el.place_of_birth.value = residenceValue || '';
-            }
+            obj_residence_el.residence.val(residenceValue);
+            obj_residence_el.place_of_birth.val(residenceValue || '');
         } else {
             BinarySocket.wait('website_status').then(data => handleWebsiteStatus(data.website_status));
         }
@@ -133,16 +128,6 @@ const handleState = (states_list, formID, getValidations) => {
 
         if (formID && typeof getValidations === 'function') {
             FormManager.init(formID, getValidations());
-        }
-    });
-};
-
-const appendIfExist = (object_el, text, value, disabled) => {
-    let object_el_key;
-    Object.keys(object_el).forEach(function(key) {
-        object_el_key = object_el[key];
-        if (object_el_key) {
-            appendTextValueChild(object_el_key, text, value, disabled && key === 'residence' ? disabled : undefined);
         }
     });
 };

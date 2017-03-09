@@ -3,7 +3,7 @@ const Client               = require('../../../../base/client').Client;
 const State                = require('../../../../base/storage').State;
 const Content              = require('../../../../common_functions/content').Content;
 const detect_hedging       = require('../../../../common_functions/common_functions').detect_hedging;
-const appendTextValueChild = require('../../../../common_functions/common_functions').appendTextValueChild;
+const makeOption           = require('../../../../common_functions/common_functions').makeOption;
 const FormManager          = require('../../../../common_functions/form_manager');
 const moment               = require('moment');
 require('select2');
@@ -195,36 +195,25 @@ const SettingsDetailsWS = (function() {
     const populateResidence = function(response) {
         const residence_list = response.residence_list;
         const obj_residence_el = {
-            place_of_birth: document.getElementById('place_of_birth'),
-            tax_residence : document.getElementById('tax_residence'),
+            place_of_birth: $('#place_of_birth'),
+            tax_residence : $('#tax_residence'),
         };
-        if (obj_residence_el.place_of_birth.childElementCount !== 0) return;
-        let text,
-            value;
+        if (obj_residence_el.place_of_birth.contents().length !== 0) return;
         if (residence_list.length > 0) {
-            for (let j = 0; j < residence_list.length; j++) {
-                const current_residence = residence_list[j];
-                text = current_residence.text;
-                value = current_residence.value;
-                appendIfExist(obj_residence_el, text, value);
-            }
+            const $options = $('<div/>');
+            residence_list.forEach((res) => {
+                $options.append(makeOption(res.text, res.value));
+            });
+            Object.keys(obj_residence_el).forEach((el) => {
+                obj_residence_el[el].html($options.html());
+            });
             setTimeout(() => {
                 $('#tax_residence').select2()
                     .val(tax_residence_values).trigger('change')
                     .removeClass('invisible');
             }, 1500);
-            obj_residence_el.place_of_birth.value = place_of_birth_value || residence;
+            obj_residence_el.place_of_birth.val(place_of_birth_value || residence);
         }
-    };
-
-    const appendIfExist = (object_el, text, value) => {
-        let object_el_key;
-        Object.keys(object_el).forEach(function(key) {
-            object_el_key = object_el[key];
-            if (object_el_key) {
-                appendTextValueChild(object_el_key, text, value);
-            }
-        });
     };
 
     const populateStates = function(response) {
