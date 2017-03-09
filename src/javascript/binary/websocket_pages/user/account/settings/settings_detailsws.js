@@ -202,7 +202,7 @@ const SettingsDetailsWS = (function() {
                 $options.append(makeOption(res.text, res.value));
             });
             $place_of_birth.html($options.html());
-            $tax_residence.html($options.html()).promise.done(() => {
+            $tax_residence.html($options.html()).promise().done(() => {
                 setTimeout(() => {
                     $tax_residence.select2()
                         .val(tax_residence_values).trigger('change')
