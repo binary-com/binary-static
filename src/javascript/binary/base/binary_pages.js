@@ -17,8 +17,8 @@ const WhyUs              = require('../static_pages/why_us');
 const AccountTransferWS          = require('../websocket_pages/cashier/account_transferws');
 const Cashier                    = require('../websocket_pages/cashier/cashier');
 const DepositWithdraw            = require('../websocket_pages/cashier/deposit_withdraw');
-const PaymentAgentListWS         = require('../websocket_pages/cashier/payment_agent_listws');
-const PaymentAgentWithdrawWS     = require('../websocket_pages/cashier/payment_agent_withdrawws');
+const PaymentAgentList           = require('../websocket_pages/cashier/payment_agent_list');
+const PaymentAgentWithdraw       = require('../websocket_pages/cashier/payment_agent_withdraw');
 const MBTradePage                = require('../websocket_pages/mb_trade/mb_tradepage');
 const AssetIndexUI               = require('../websocket_pages/resources/asset_index/asset_indexws.ui');
 const MarketTimesUI              = require('../websocket_pages/resources/market_times/market_timesws.ui');
@@ -26,9 +26,9 @@ const TradePage_Beta             = require('../websocket_pages/trade/beta/tradep
 const TradePage                  = require('../websocket_pages/trade/tradepage');
 const Authenticate               = require('../websocket_pages/user/account/authenticate');
 const ChangePassword             = require('../websocket_pages/user/account/change_password');
-const PaymentAgentTransferSocket = require('../websocket_pages/user/account/payment_agent_transfer');
-const PortfolioWS                = require('../websocket_pages/user/account/portfolio/portfolio.init');
-const ProfitTableWS              = require('../websocket_pages/user/account/profit_table/profit_table.init');
+const PaymentAgentTransfer       = require('../websocket_pages/user/account/payment_agent_transfer');
+const Portfolio                  = require('../websocket_pages/user/account/portfolio/portfolio.init');
+const ProfitTable                = require('../websocket_pages/user/account/profit_table/profit_table.init');
 const APITokenWS                 = require('../websocket_pages/user/account/settings/api_token');
 const AuthorisedApps             = require('../websocket_pages/user/account/settings/authorised_apps');
 const CashierPassword            = require('../websocket_pages/user/account/settings/cashier_password');
@@ -38,8 +38,8 @@ const Limits                     = require('../websocket_pages/user/account/sett
 const Settings                   = require('../websocket_pages/user/account/settings');
 const SelfExclusionWS            = require('../websocket_pages/user/account/settings/self_exclusion');
 const SettingsDetailsWS          = require('../websocket_pages/user/account/settings/settings_detailsws');
-const StatementWS                = require('../websocket_pages/user/account/statement/statement.init');
-const TopUpVirtualWS             = require('../websocket_pages/user/account/top_up_virtualws');
+const Statement                  = require('../websocket_pages/user/account/statement/statement.init');
+const TopUpVirtual               = require('../websocket_pages/user/account/top_up_virtual');
 const LostPassword               = require('../websocket_pages/user/lost_password');
 const MetaTrader                 = require('../websocket_pages/user/metatrader/metatrader');
 const FinancialAccOpening        = require('../websocket_pages/user/new_account/financial_acc_opening');
@@ -50,7 +50,7 @@ const ResetPassword              = require('../websocket_pages/user/reset_passwo
 const TNCApproval                = require('../websocket_pages/user/tnc_approval');
 
 const CashierJP     = require('../../binary_japan/cashier');
-const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test.init');
+const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test');
 
 const pages_config = {
     account_transferws       : { module: AccountTransferWS,          is_authenticated: true, only_real: true },
@@ -80,11 +80,11 @@ const pages_config = {
     market_timesws           : { module: MarketTimesUI },
     metatrader               : { module: MetaTrader,                 is_authenticated: true },
     multi_barriers_trading   : { module: MBTradePage },
-    payment_agent_listws     : { module: PaymentAgentListWS },
+    payment_agent_listws     : { module: PaymentAgentList },
     payment_methods          : { module: Cashier.PaymentMethods },
     platforms                : { module: Platforms },
-    portfoliows              : { module: PortfolioWS,                is_authenticated: true },
-    profit_tablews           : { module: ProfitTableWS,              is_authenticated: true },
+    portfoliows              : { module: Portfolio,                is_authenticated: true },
+    profit_tablews           : { module: ProfitTable,              is_authenticated: true },
     realws                   : { module: RealAccOpening,             is_authenticated: true, only_virtual: true },
     regulation               : { module: Regulation },
     reset_passwordws         : { module: ResetPassword,              not_authenticated: true },
@@ -92,14 +92,14 @@ const pages_config = {
     self_exclusionws         : { module: SelfExclusionWS,            is_authenticated: true, only_real: true },
     settingsws               : { module: Settings,                   is_authenticated: true },
     signup                   : { module: StaticPages.AffiliateSignup },
-    statementws              : { module: StatementWS,                is_authenticated: true },
+    statementws              : { module: Statement,                is_authenticated: true },
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
-    top_up_virtualws         : { module: TopUpVirtualWS,             is_authenticated: true, only_virtual: true },
+    top_up_virtualws         : { module: TopUpVirtual,              is_authenticated: true, only_virtual: true },
     trading                  : { module: TradePage },
     trading_beta             : { module: TradePage_Beta },
-    transferws               : { module: PaymentAgentTransferSocket, is_authenticated: true, only_real: true },
+    transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
-    withdrawws               : { module: PaymentAgentWithdrawWS,     is_authenticated: true, only_real: true },
+    withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'get-started'            : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },

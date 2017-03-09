@@ -21,8 +21,11 @@ const Home = (() => {
                 { selector: '#email', validations: ['req', 'email'], request_field: 'verify_email' },
                 { request_field: 'type', value: 'account_opening' },
             ]);
-
-            FormManager.handleSubmit(form_id, {}, handler, checkCountry);
+            FormManager.handleSubmit({
+                form_selector       : form_id,
+                fnc_response_handler: handler,
+                fnc_additional_check: checkCountry,
+            });
         });
     };
 
