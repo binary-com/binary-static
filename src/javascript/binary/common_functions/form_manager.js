@@ -32,7 +32,7 @@ const FormManager = (() => {
     const getFormData = (form_selector) => {
         const data = {};
         const fields = forms[form_selector].fields;
-        if (!fields) return;
+        if (!fields) return data;
         let key,
             $selector,
             val,
