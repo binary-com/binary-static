@@ -12,9 +12,13 @@ const RealAccOpening = (function() {
         if (Client.get('residence')) {
             if (AccountOpening.redirectAccount()) return;
 
-            const formID = '#frm_real';
-            AccountOpening.populateForm(formID, AccountOpening.commonValidations);
-            FormManager.handleSubmit(formID, { new_account_real: 1 }, handleResponse);
+            const form_id = '#frm_real';
+            AccountOpening.populateForm(form_id, AccountOpening.commonValidations);
+            FormManager.handleSubmit({
+                form_selector       : form_id,
+                obj_request         : { new_account_real: 1 },
+                fnc_response_handler: handleResponse,
+            });
         }
     };
 

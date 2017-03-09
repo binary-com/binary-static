@@ -2,6 +2,7 @@ const MBContract         = require('./mb_contract').MBContract;
 const MBDefaults         = require('./mb_defaults').MBDefaults;
 const MBNotifications    = require('./mb_notifications').MBNotifications;
 const objectNotEmpty     = require('../../base/utility').objectNotEmpty;
+const getPropertyValue   = require('../../base/utility').getPropertyValue;
 const localize           = require('../../base/localize').localize;
 const Client             = require('../../base/client').Client;
 const japanese_client    = require('../../common_functions/country_base').japanese_client;
@@ -136,7 +137,8 @@ const MBPrice = (function() {
 
     const getAskPrice = function(proposal) {
         return (proposal.error || +proposal.proposal.ask_price === 0) ?
-            proposal.echo_req.amount : proposal.proposal.ask_price;
+            (getPropertyValue(proposal, ['error', 'details', 'display_value']) || proposal.echo_req.amount) : // In case of RateLimit error, there is no display_value, so we display the request amount
+            proposal.proposal.ask_price;
     };
 
     const getMovementDirection = function(prev, current) {

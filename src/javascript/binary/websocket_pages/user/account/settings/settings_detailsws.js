@@ -62,7 +62,13 @@ const SettingsDetailsWS = (function() {
             $(real_acc_elements).removeClass('hidden');
         }
         $(form_id).removeClass('hidden');
-        FormManager.handleSubmit(form_id, { set_settings: 1 }, setDetailsResponse, additionalCheck);
+        FormManager.handleSubmit({
+            form_selector       : form_id,
+            obj_request         : { set_settings: 1 },
+            fnc_response_handler: setDetailsResponse,
+            fnc_additional_check: additionalCheck,
+            enable_button       : true,
+        });
     };
 
     const displayGetSettingsData = (data, populate = true) => {

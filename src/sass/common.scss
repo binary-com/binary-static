@@ -265,6 +265,11 @@ input[type=checkbox] {
     margin-bottom: 30px;
 }
 
+button .barspinner.white {
+    height: 13px;
+    margin: 3px auto;
+}
+
 #msg_notification {
     font-size: $FONT_SIZE_S;
     padding: 3px 0;
