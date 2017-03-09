@@ -1,4 +1,5 @@
-const Validation = require('./form_validation');
+const Validation       = require('./form_validation');
+const showLoadingImage = require('../base/utility').showLoadingImage;
 
 const FormManager = (function() {
     'use strict';
@@ -8,7 +9,11 @@ const FormManager = (function() {
     const initForm = (form_selector, fields) => {
         const $form = $(`${form_selector}:visible`);
         if ($form.length && Array.isArray(fields) && fields.length) {
-            forms[form_selector] = { fields: fields };
+            forms[form_selector] = {
+                fields     : fields,
+                $btn_submit: $form.find('button[type="submit"]'),
+                can_submit : true,
+            };
             fields.forEach((field) => {
                 if (field.selector) {
                     field.$ = $form.find(field.selector);
@@ -62,17 +67,42 @@ const FormManager = (function() {
         return data;
     };
 
-    const handleSubmit = (form_selector, obj_request, fnc_response_handler, fnc_additional_check) => {
-        $(form_selector).off('submit').on('submit', function(evt) {
+    const disableButton = ($btn) => {
+        if ($btn.length && !$btn.find('.barspinner').length) {
+            $btn.attr('disabled', 'disabled');
+            const $btn_text = $('<span/>', { text: $btn.text(), class: 'invisible' });
+            showLoadingImage($btn, 'white');
+            $btn.append($btn_text);
+        }
+    };
+
+    const enableButton = ($btn) => {
+        if ($btn.length && $btn.find('.barspinner').length) {
+            $btn.removeAttr('disabled').html($btn.find('span').text());
+        }
+    };
+
+    const handleSubmit = (options) => {
+        $(options.form_selector).off('submit').on('submit', function(evt) {
             evt.preventDefault();
-            if (Validation.validate(form_selector)) {
-                const req = $.extend(obj_request, getFormData(form_selector));
-                if (typeof fnc_additional_check === 'function' && !fnc_additional_check(req)) {
+            const form = forms[options.form_selector];
+            const $btn_submit = form.$btn_submit;
+            const can_submit = form.can_submit;
+            if (!can_submit) return;
+            if (Validation.validate(options.form_selector)) {
+                const req = $.extend(options.obj_request || {}, getFormData(options.form_selector));
+                if (typeof options.fnc_additional_check === 'function' && !options.fnc_additional_check(req)) {
                     return;
                 }
+                disableButton($btn_submit);
+                form.can_submit = false;
                 BinarySocket.send(req).then((response) => {
-                    if (typeof fnc_response_handler === 'function') {
-                        fnc_response_handler(response);
+                    if (typeof options.fnc_response_handler === 'function') {
+                        if (options.enable_button || 'error' in response) {
+                            enableButton($btn_submit);
+                            form.can_submit = true;
+                        }
+                        options.fnc_response_handler(response);
                     }
                 });
             }
