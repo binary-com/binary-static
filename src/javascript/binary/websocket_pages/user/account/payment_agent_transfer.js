@@ -54,7 +54,11 @@ const PaymentAgentTransfer = (function() {
             { request_field: 'dry_run', value: 1 },
         ].concat(common_request_fields));
 
-        FormManager.handleSubmit(form_id, {}, responseHandler, additionalCheck);
+        FormManager.handleSubmit({
+            form_selector       : form_id,
+            fnc_response_handler: responseHandler,
+            fnc_additional_check: additionalCheck,
+        });
 
         $('#amount').on('input change', function() {
             checkBalance($(this).val());
@@ -124,7 +128,10 @@ const PaymentAgentTransfer = (function() {
             { request_field: 'amount',      value: req.amount },
         ].concat(common_request_fields));
 
-        FormManager.handleSubmit(confirm_form_id, {}, responseHandler);
+        FormManager.handleSubmit({
+            form_selector       : confirm_form_id,
+            fnc_response_handler: responseHandler,
+        });
 
         $('#back_transfer').off('click').click(function() {
             PaymentAgentTransferUI.showForm();

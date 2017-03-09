@@ -65,7 +65,13 @@ const SettingsDetailsWS = (function() {
             $(RealAccElements).removeClass('hidden');
         }
         $(formID).removeClass('hidden');
-        FormManager.handleSubmit(formID, { set_settings: 1 }, setDetailsResponse, additionalCheck);
+        FormManager.handleSubmit({
+            form_selector       : formID,
+            obj_request         : { set_settings: 1 },
+            fnc_response_handler: setDetailsResponse,
+            fnc_additional_check: additionalCheck,
+            enable_button       : true,
+        });
     };
 
     const displayGetSettingsData = (data, populate = true) => {
