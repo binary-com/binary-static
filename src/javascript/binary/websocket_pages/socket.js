@@ -4,25 +4,19 @@ const Login                     = require('../base/login').Login;
 const objectNotEmpty            = require('../base/utility').objectNotEmpty;
 const getPropertyValue          = require('../base/utility').getPropertyValue;
 const getLoginToken             = require('../common_functions/common_functions').getLoginToken;
-const displayAcctSettings       = require('../common_functions/account_opening').displayAcctSettings;
 const SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
-const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
-const Cashier                   = require('./cashier/cashier').Cashier;
-const CashierJP                 = require('../../binary_japan/cashier').CashierJP;
-const PaymentAgentWithdrawWS    = require('./cashier/payment_agent_withdrawws').PaymentAgentWithdrawWS;
 const create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
-const TNCApproval               = require('./user/tnc_approval').TNCApproval;
-const ViewPopupWS               = require('./user/view_popup/view_popupws').ViewPopupWS;
+const ViewPopupWS               = require('./user/view_popup/view_popupws');
 const ViewBalanceUI             = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
 const Cookies                   = require('../../lib/js-cookie');
 const State                     = require('../base/storage').State;
 const Highchart                 = require('./trade/charts/highchartws').Highchart;
 const WSTickDisplay             = require('./trade/tick_trade').WSTickDisplay;
-const TradePage                 = require('./trade/tradepage').TradePage;
+const TradePage                 = require('./trade/tradepage');
 const Notifications             = require('./trade/notifications').Notifications;
-const TradePage_Beta            = require('./trade/beta/tradepage').TradePage_Beta;
+const TradePage_Beta            = require('./trade/beta/tradepage');
 const reloadPage                = require('./trade/common').reloadPage;
-const MBTradePage               = require('./mb_trade/mb_tradepage').MBTradePage;
+const MBTradePage               = require('./mb_trade/mb_tradepage');
 const RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
 const RealityCheckData          = require('./user/reality_check/reality_check.data').RealityCheckData;
 const localize         = require('../base/localize').localize;
@@ -257,8 +251,8 @@ const BinarySocketClass = function() {
                 const type = response.msg_type;
 
                 // store in State
-                if (!response.echo_req.subscribe) {
-                    State.set(['response', type], response);
+                if (!response.echo_req.subscribe || type === 'balance') {
+                    State.set(['response', type], $.extend({}, response));
                 }
                 // resolve the send promise
                 const this_req_id = response.req_id;
@@ -289,9 +283,6 @@ const BinarySocketClass = function() {
                         Client.send_logout_request(true);
                     } else if (dispatch_to !== 'cashier_password') {
                         authorized = true;
-                        if (typeof events.onauth === 'function') {
-                            events.onauth();
-                        }
                         if (!Login.is_login_pages()) {
                             Client.response_authorize(response);
                             send({ balance: 1, subscribe: 1 });
@@ -299,9 +290,6 @@ const BinarySocketClass = function() {
                             send({ get_account_status: 1 });
                             if (Cookies.get('residence')) send({ landing_company: Cookies.get('residence') });
                             if (!Client.get('is_virtual')) send({ get_self_exclusion: 1 });
-                            if (/tnc_approvalws/.test(window.location.pathname)) {
-                                TNCApproval.showTNC();
-                            }
                         }
                         sendBufferedSends();
                     }
@@ -313,12 +301,10 @@ const BinarySocketClass = function() {
                     RealityCheckData.clear();
                     Client.do_logout(response);
                 } else if (type === 'landing_company') {
-                    const landing_company = response.landing_company;
-                    Client.landing_company(landing_company);
-                    Header.topbar_message_visibility(landing_company);
+                    Header.upgrade_message_visibility();
                     if (response.error) return;
                     // Header.metatrader_menu_item_visibility(response); // to be uncommented once MetaTrader launched
-                    const company = Client.get_client_landing_company();
+                    const company = Client.current_landing_company();
                     if (company) {
                         Client.set('default_currency', company.legal_default_currency);
                         const has_reality_check = company.has_reality_check;
@@ -340,75 +326,47 @@ const BinarySocketClass = function() {
                             send({ landing_company: country_code });
                         }
                     } else if (country_code === null && response.get_settings.country === null) {
-                        Header.topbar_message_visibility('show_residence');
-                    }
-                    if (/realws|maltainvestws|japanws/.test(window.location.href)) {
-                        displayAcctSettings(response);
+                        Header.upgrade_message_visibility();
                     }
                     GTM.event_handler(response.get_settings);
                     Client.set('tnc_status', response.get_settings.client_tnc_status || '-');
                     if (!localStorage.getItem('risk_classification')) Client.check_tnc();
-                    const jpStatus = response.get_settings.jp_account_status;
-                    if (jpStatus) {
-                        Client.set('jp_status', jpStatus.status);
-                    }
                     if (response.get_settings.is_authenticated_payment_agent) {
-                        Client.set('is_authenticated_payment_agent', true);
                         $('#topMenuPaymentAgent').removeClass('invisible');
                     }
                     Client.set('first_name', response.get_settings.first_name);
-                    CashierJP.set_name_id();
-                    CashierJP.set_email_id();
                 } else if (type === 'website_status') {
                     if (!response.error) {
                         create_language_drop_down(response.website_status.supported_languages);
                         LocalStore.set('website.tnc_version', response.website_status.terms_conditions_version);
                         if (!localStorage.getItem('risk_classification')) Client.check_tnc();
-                        if (response.website_status.clients_country) {
-                            localStorage.setItem('clients_country', response.website_status.clients_country);
-                            if (!Login.is_login_pages()) {
-                                checkClientsCountry();
-                            }
-                        }
                     }
                 } else if (type === 'reality_check') {
                     RealityCheck.realityCheckWSHandler(response);
                 } else if (type === 'get_account_status' && response.get_account_status) {
-                    if (response.get_account_status.risk_classification === 'high' && qualify_for_risk_classification()) {
+                    if (response.get_account_status.risk_classification === 'high') {
+                        localStorage.setItem('risk_classification', 'high');
                         send({ get_financial_assessment: 1 });
                     } else {
                         localStorage.removeItem('risk_classification');
                         Client.check_tnc();
                     }
-                    localStorage.setItem('risk_classification.response', response.get_account_status.risk_classification);
                     const status = response.get_account_status.status;
                     sessionStorage.setItem('client_status', status);
-                    if (/has_password/.test(status)) {
-                        Client.set('has_password', 1);
-                    }
                     if (/crs_tin_information/.test(status)) {
                         Client.set('has_tax_information', 1);
                     } else if (Client.should_redirect_tax()) {
                         return;
                     }
                     page.show_authenticate_message();
-
-                    if (dispatch_to === 'ForwardWS') {
-                        BinarySocket.send({ cashier_password: '1' });
-                    } else if (dispatch_to === 'Cashier') {
-                        Cashier.check_locked();
-                    } else if (dispatch_to === 'PaymentAgentWithdrawWS') {
-                        PaymentAgentWithdrawWS.lock_withdrawal(Client.status_detected('withdrawal_locked, cashier_locked', 'any') ? 'locked' : 'unlocked');
-                    }
                 } else if (type === 'get_financial_assessment' && !response.error) {
                     if (!objectNotEmpty(response.get_financial_assessment)) {
-                        if (qualify_for_risk_classification() && localStorage.getItem('risk_classification.response') === 'high') {
+                        if (qualify_for_risk_classification() && State.get(['response', 'get_account_status', 'get_account_status', 'risk_classification']) === 'high') {
                             localStorage.setItem('risk_classification', 'high');
                             check_risk_classification();
                         }
                     } else if ((localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval')) && localStorage.getItem('risk_classification') !== 'high') {
                         localStorage.removeItem('risk_classification');
-                        localStorage.removeItem('risk_classification.response');
                         Client.check_tnc();
                     }
                 }

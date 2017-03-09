@@ -1,8 +1,8 @@
-const AssetIndexUI                    = require('../../resources/asset_index/asset_indexws.ui').AssetIndexUI;
-const MarketTimesUI                   = require('../../resources/market_times/market_timesws.ui').MarketTimesUI;
+const AssetIndexUI                    = require('../../resources/asset_index/asset_indexws.ui');
+const MarketTimesUI                   = require('../../resources/market_times/market_timesws.ui');
 const japanese_client                 = require('../../../common_functions/country_base').japanese_client;
 const DigitInfoWS_Beta                = require('./charts/digit_infows').DigitInfoWS_Beta;
-const PortfolioWS                     = require('../../user/account/portfolio/portfolio.init').PortfolioWS;
+const PortfolioWS                     = require('../../user/account/portfolio/portfolio.init');
 const State                           = require('../../../base/storage').State;
 const getLanguage                     = require('../../../base/language').getLanguage;
 const Url                             = require('../../../base/url').Url;
@@ -101,11 +101,11 @@ const TradingAnalysis_Beta = (function() {
                 break;
             }
             case 'tab_asset_index':
-                AssetIndexUI.init({ framed: true });
+                AssetIndexUI.onLoad({ framed: true });
                 $('#tab_asset').find('index-content').find('h1').hide();
                 break;
             case 'tab_trading_times':
-                MarketTimesUI.init({ framed: true });
+                MarketTimesUI.onLoad({ framed: true });
                 $('#tab_trading').find('times-content').find('h1').hide();
                 break;
             default: {

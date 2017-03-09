@@ -5,8 +5,7 @@
         [% l('Please complete the tax information before proceeding.') %]
     </p>
 
-    <form class="form form gr-padding-10 hidden" id="frmPersonalDetails">
-
+    <form class="form gr-padding-10 hidden" id="frmPersonalDetails">
         <fieldset>
             <legend>[% l('Details') %]</legend>
 
@@ -40,6 +39,17 @@
                     <span id="inputheading">
                         <strong id="lbl_date_of_birth"></strong>
                     </span>
+                </div>
+            </div>
+
+            <div class="hidden RealAcc">
+                <div class="gr-padding-10 gr-row clear">
+                    <div class="gr-4 form_label">
+                        <label for="place_of_birth">[% l('Place of birth') %]</label>
+                    </div>
+                    <div class="gr-8">
+                        <select name="place_of_birth" id="place_of_birth" class="form_input"></select>
+                    </div>
                 </div>
             </div>
 
@@ -90,15 +100,6 @@
 
             <div class="gr-padding-10 gr-row clear">
                 <div class="gr-4 form_label">
-                    <label for="place_of_birth">[% l('Place of birth') %]</label>
-                </div>
-                <div class="gr-8">
-                    <select name="place_of_birth" id="place_of_birth" class="form_input"></select>
-                </div>
-            </div>
-
-            <div class="gr-padding-10 gr-row clear">
-                <div class="gr-4 form_label">
                     <label for="tax_residence">[% l('Tax residence') %]</label>
                 </div>
                 <div class="gr-8">
@@ -111,7 +112,7 @@
                     <label for="tax_identification_number">[% l('Tax identification number') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input type="text" class="text form_input" id="tax_identification_number" name="tax_identification_number" maxlength="20"/>
+                    <input type="text" class="text" id="tax_identification_number" name="tax_identification_number" maxlength="20"/>
                 </div>
             </div>
         </fieldset>
@@ -124,7 +125,7 @@
                     <label for="address_line_1">[% l('First line of home address') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input name='address_line_1' type="text" id="address_line_1" class="form_input" maxlength="70" />
+                    <input name='address_line_1' type="text" id="address_line_1" maxlength="70" />
                 </div>
             </div>
 
@@ -133,7 +134,7 @@
                     <label for="address_line_2">[% l('Second line of home address') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input name='address_line_2' type="text" id="address_line_2" class="form_input" maxlength="70" />
+                    <input name='address_line_2' type="text" id="address_line_2" maxlength="70" />
                 </div>
             </div>
 
@@ -142,7 +143,7 @@
                     <label for="address_city">[% l('Town/City') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input name='address_city' type="text" id="address_city" class="form_input" maxlength="35" />
+                    <input name='address_city' type="text" id="address_city" maxlength="35" />
                 </div>
             </div>
 
@@ -151,7 +152,7 @@
                     <label for="address_state">[% l('State/Province') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select name='address_state' id="address_state" class="form_input"></select>
+                    <select name='address_state' id="address_state"></select>
                 </div>
             </div>
 
@@ -160,7 +161,7 @@
                     <label for="address_postcode">[% l('Postal Code / ZIP') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input name='address_postcode' type="text" id="address_postcode" class="form_input" maxlength="20" />
+                    <input name='address_postcode' type="text" id="address_postcode" maxlength="20" />
                 </div>
             </div>
 
@@ -169,7 +170,7 @@
                     <label for="phone">[% l('Telephone') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input name='phone' type="text" id="phone" class="form_input" maxlength="35" />
+                    <input name='phone' type="text" id="phone" maxlength="35" />
                 </div>
             </div>
         </fieldset>
@@ -444,7 +445,7 @@
                     <label for="email_consent">[% l('Receive news and special offers') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input type="checkbox" id="email_consent" class="form_input"/>
+                    <input type="checkbox" id="email_consent" />
                 </div>
             </div>
         </fieldset>
@@ -459,13 +460,10 @@
             <div class="gr-row gr-padding-10">
                 <div class="gr-4"></div>
                 <div class="gr-8">
-                    <span class="button">
-                        <button class="button">[% l('Update') %]</button>
-                    </span>
+                    <button class="button" type="submit">[% l('Update') %]</button>
                 </div>
             </div>
         </fieldset>
-
     </form>
 
     <p class="required hidden RealAcc JpAcc rowCustomerSupport"><em class="required_asterisk">**</em> [% l('To change your name, date of birth, country of residence, or email, please contact <a href="[_1]">Customer Support</a>.', request.url_for('contact')) %]</p>

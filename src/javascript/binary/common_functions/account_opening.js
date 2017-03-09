@@ -1,208 +1,137 @@
-const generateBirthDate    = require('./attach_dom/birth_date_dropdown').generateBirthDate;
-const objectNotEmpty       = require('../base/utility').objectNotEmpty;
+const generateBirthDate    = require('./attach_dom/birth_date_picker');
+const BinaryPjax           = require('../base/binary_pjax');
 const localize             = require('../base/localize').localize;
 const Client               = require('../base/client').Client;
-const url_for              = require('../base/url').url_for;
-const Validate             = require('../common_functions/validation').Validate;
-const Content              = require('../common_functions/content').Content;
-const japanese_client      = require('../common_functions/country_base').japanese_client;
+const State                = require('../base/storage').State;
 const appendTextValueChild = require('../common_functions/common_functions').appendTextValueChild;
+const FormManager          = require('../common_functions/form_manager');
 const Cookies              = require('../../lib/js-cookie');
-const moment               = require('moment');
-const elementInnerHtml     = require('../common_functions/common_functions').elementInnerHtml;
 require('select2');
 
-const displayAcctSettings = function(response) {
-    const country = response.get_settings.country_code;
-    if (country && country !== null) {
-        $('#real-form').show();
-        Client.set('residence', country);
-        generateBirthDate();
-        generateState();
-        if (/maltainvestws/.test(window.location.pathname)) {
-            const settings = response.get_settings;
-            const inputs = document.getElementsByClassName('input-disabled');
-            let element;
-            Object.keys(settings).forEach((key) => {
-                element = document.getElementById(key);
-                if (element) {
-                    element.value = settings[key];
-                }
-            });
-            if (settings.date_of_birth) {
-                const date = moment.utc(settings.date_of_birth * 1000);
-                document.getElementById('dobdd').value = date.format('DD').replace(/^0/, '');
-                document.getElementById('dobmm').value = date.format('MM');
-                document.getElementById('dobyy').value = date.format('YYYY');
-                window.state = settings.address_state;
-                toggleDisabled(inputs, true);
-            } else {
-                toggleDisabled(inputs, false);
-            }
-        }
-    } else if (document.getElementById('move-residence-here') && $('#residence-form').is(':hidden')) {
-        show_residence_form();
+const redirectCookie = function() {
+    if (Client.get('has_real')) {
+        BinaryPjax.load('trading');
+        return true;
     }
+    return false;
 };
 
-const toggleDisabled = (inputs, status) => {
-    for (let i = 0; i < inputs.length; i++) {
-        inputs[i].disabled = status;
-    }
-};
+const redirectAccount = function() {
+    BinarySocket.wait('landing_company').then((response) => {
+        const isVirtual = Client.get('is_virtual');
+        const landing_company = response.landing_company;
 
-const show_residence_form = function() {
-    const residenceForm = $('#residence-form');
-    const $residence = $('#residence');
-    $residence.insertAfter('#move-residence-here');
-    $('#error_residence').insertAfter('#residence');
-    $residence.removeAttr('disabled');
-    residenceForm.show();
-    residenceForm.submit(function(evt) {
-        evt.preventDefault();
-        const residence_value = $residence.val();
-        if (Validate.fieldNotEmpty(residence_value, document.getElementById('error_residence'))) {
-            Client.set_cookie('residence', residence_value);
-            Client.set('residence', residence_value);
-            BinarySocket.send({ set_settings: 1, residence: residence_value });
+        // redirect client to correct account opening page if needed
+        if (!State.get('is_financial_opening') &&
+            ((!isVirtual && Client.can_upgrade_gaming_to_financial(landing_company)) ||
+            Client.can_upgrade_virtual_to_financial(landing_company))) {
+            BinaryPjax.load('new_account/maltainvestws');
+            return false;
         }
+        if (!State.get('is_japan_opening') && isVirtual && Client.can_upgrade_virtual_to_japan(landing_company)) {
+            BinaryPjax.load('new_account/japanws');
+            return false;
+        }
+        return true;
     });
 };
 
-const generateState = function() {
-    const state = document.getElementById('address_state');
-    if (state.length !== 0) return;
-    appendTextValueChild(state, localize('Please select'), '');
-    if (Client.get('residence') !== '') {
-        BinarySocket.send({ states_list: Client.get('residence') });
+const populateForm = (formID, getValidations) => {
+    getResidence();
+    BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, formID, getValidations));
+    generateBirthDate();
+};
+
+const getResidence = () => {
+    BinarySocket.send({ residence_list: 1 }).then(response => handleResidenceList(response.residence_list));
+};
+
+const handleResidenceList = (residence_list) => {
+    const obj_residence_el = {
+        residence     : document.getElementById('residence'),
+        place_of_birth: document.getElementById('place_of_birth'),
+        tax_residence : document.getElementById('tax_residence'),
+    };
+    Object.keys(obj_residence_el).forEach(function (key) {
+        if (obj_residence_el[key] === null || obj_residence_el[key].childElementCount !== 0) {
+            delete obj_residence_el[key];
+        }
+    });
+    if (obj_residence_el.length === 0) return;
+    const phoneElement   = document.getElementById('phone');
+    const residenceValue = Client.get('residence');
+    let text,
+        value;
+    if (residence_list.length > 0) {
+        for (let j = 0; j < residence_list.length; j++) {
+            const residence = residence_list[j];
+            text = residence.text;
+            value = residence.value;
+            appendIfExist(obj_residence_el, text, value, residence.disabled ? 'disabled' : undefined);
+
+            if (residenceValue !== 'jp' && phoneElement && phoneElement.value === '' && residence.phone_idd && residenceValue === residence.value) {
+                phoneElement.value = '+' + residence.phone_idd;
+            }
+        }
+        if (obj_residence_el.tax_residence) {
+            $('#tax_residence').select2()
+                .val(residenceValue).trigger('change')
+                .removeClass('invisible');
+        }
+        if (residenceValue) {
+            if (obj_residence_el.residence) {
+                obj_residence_el.residence.value = residenceValue;
+            }
+            if (obj_residence_el.place_of_birth) {
+                obj_residence_el.place_of_birth.value = residenceValue || '';
+            }
+        } else {
+            BinarySocket.wait('website_status').then(data => handleWebsiteStatus(data.website_status));
+        }
     }
 };
 
-const handleResidence = function() {
-    generateBirthDate();
-    BinarySocket.init({
-        onmessage: function(msg) {
-            const response = JSON.parse(msg.data),
-                type = response.msg_type,
-                $residence = $('#residence');
-            if (type === 'set_settings') {
-                const errorElement = document.getElementById('error_residence');
-                if (response.hasOwnProperty('error')) {
-                    if (response.error.message) {
-                        elementInnerHtml(errorElement, response.error.message);
-                        errorElement.setAttribute('style', 'display:block');
-                    }
-                } else {
-                    errorElement.setAttribute('style', 'display:none');
-                    BinarySocket.send({ landing_company: Client.get('residence') });
-                }
-            } else if (type === 'landing_company') {
-                Cookies.set('residence', Client.get('residence'), { domain: '.' + document.domain.split('.').slice(-2).join('.'), path: '/' });
-                if (((Client.can_upgrade_gaming_to_financial(response.landing_company) && !Client.get('is_virtual')) || Client.can_upgrade_virtual_to_financial(response.landing_company)) && !/maltainvestws/.test(window.location.href)) {
-                    window.location.href = url_for('new_account/maltainvestws');
-                } else if (Client.can_upgrade_virtual_to_japan(response.landing_company) && Client.get('is_virtual') && !/japanws/.test(window.location.href)) {
-                    window.location.href = url_for('new_account/japanws');
-                } else if (!$('#real-form').is(':visible')) {
-                    BinarySocket.send({ residence_list: 1 });
-                    $('#residence-form').hide();
-                    $residence.insertAfter('#move-residence-back');
-                    $('#error_residence').insertAfter('#residence');
-                    $residence.attr('disabled', 'disabled');
-                    generateState();
-                    $('#real-form').show();
-                }
-            } else if (type === 'states_list') {
-                let $address_state = $('#address_state');
-                const states = response.states_list;
+const handleWebsiteStatus = (website_status) => {
+    if (!website_status) return;
+    const clients_country = website_status.clients_country;
+    if (!clients_country) return;
+    const $residence = $('#residence');
 
-                $address_state.empty();
+    // set residence value to client's country, detected by IP address from back-end
+    const $clients_country = $residence.find('option[value="' + clients_country + '"]');
+    if (!$clients_country.attr('disabled')) {
+        $clients_country.prop('selected', true);
+    }
+    $residence.removeClass('invisible');
+};
 
-                if (states && states.length > 0) {
-                    states.forEach(function(state) {
-                        $address_state.append($('<option/>', { value: state.value, text: state.text }));
-                    });
-                } else {
-                    $address_state.replaceWith($('<input/>', { id: 'address_state', name: 'address_state', type: 'text', maxlength: '35', class: 'form_input' }));
-                    $address_state = $('#address_state');
-                }
-                $address_state.parent().parent().show();
-                if (window.state) {
-                    $address_state.val(window.state);
-                }
-            } else if (type === 'residence_list') {
-                const obj_residence_el = {
-                    residence     : document.getElementById('residence'),
-                    place_of_birth: document.getElementById('place_of_birth'),
-                    tax_residence : document.getElementById('tax_residence'),
-                };
-                Object.keys(obj_residence_el).forEach(function (key) {
-                    if (obj_residence_el[key] === null || obj_residence_el[key].childElementCount !== 0) {
-                        delete obj_residence_el[key];
-                    }
-                });
-                if (obj_residence_el.length === 0) return;
-                const phoneElement   = document.getElementById('phone'),
-                    residenceValue = Client.get('residence'),
-                    residence_list = response.residence_list;
-                let text,
-                    value;
-                if (residence_list.length > 0) {
-                    for (let j = 0; j < residence_list.length; j++) {
-                        const residence = residence_list[j];
-                        text = residence.text;
-                        value = residence.value;
-                        appendIfExist(obj_residence_el, text, value, residence.disabled ? 'disabled' : undefined);
+const handleState = (states_list, formID, getValidations) => {
+    BinarySocket.wait('get_settings').then((response) => {
+        let $address_state = $('#address_state');
 
-                        if (residenceValue !== 'jp' && phoneElement && phoneElement.value === '' && residence.phone_idd && residenceValue === residence.value) {
-                            phoneElement.value = '+' + residence.phone_idd;
-                        }
-                    }
-                    if (obj_residence_el.tax_residence) {
-                        $('#tax_residence').select2()
-                            .removeClass('invisible');
-                    }
-                    if (residenceValue) {
-                        if (obj_residence_el.residence) {
-                            obj_residence_el.residence.value = residenceValue;
-                        }
-                        if (obj_residence_el.place_of_birth) {
-                            obj_residence_el.place_of_birth.value = residenceValue || '';
-                        }
-                    }
-                    if (document.getElementById('virtual-form')) {
-                        BinarySocket.send({ website_status: 1 });
-                    }
-                }
-            } else if (type === 'website_status') {
-                const status  = response.website_status;
-                if (status && status.clients_country) {
-                    const clientCountry = $residence.find('option[value="' + status.clients_country + '"]');
-                    if (!clientCountry.attr('disabled')) {
-                        clientCountry.prop('selected', true);
-                    }
-                    const email_consent_parent = $('#email_consent').parent().parent();
-                    if (status.clients_country === 'jp' || japanese_client()) {
-                        if (!document.getElementById('japan-label')) $residence.parent().append('<label id="japan-label">' + localize('Japan') + '</label>');
-                        email_consent_parent.removeClass('invisible');
-                    } else {
-                        $residence.removeClass('invisible')
-                            .on('change', function() {
-                                if ($(this).val() === 'jp') {
-                                    email_consent_parent.removeClass('invisible');
-                                } else {
-                                    email_consent_parent.addClass('invisible');
-                                }
-                            });
-                    }
-                }
-            } else if (type === 'get_financial_assessment' && objectNotEmpty(response.get_financial_assessment)) {
-                const keys = Object.keys(response.get_financial_assessment);
-                keys.forEach(function(key) {
-                    const val = response.get_financial_assessment[key];
-                    $('#' + key).val(val);
-                });
+        $address_state.empty();
+
+        const client_state = response.get_settings.address_state;
+
+        if (states_list && states_list.length > 0) {
+            states_list.forEach(function(state) {
+                $address_state.append($('<option/>', { value: state.value, text: state.text }));
+            });
+            if (client_state) {
+                $address_state.val(client_state);
             }
-        },
+        } else {
+            $address_state.replaceWith($('<input/>', { id: 'address_state', name: 'address_state', type: 'text', maxlength: '35' }));
+            $address_state = $('#address_state');
+            if (client_state) {
+                $address_state.text(client_state);
+            }
+        }
+        $address_state.parent().parent().show();
+
+        if (formID && typeof getValidations === 'function') {
+            FormManager.init(formID, getValidations());
+        }
     });
 };
 
@@ -216,62 +145,67 @@ const appendIfExist = (object_el, text, value, disabled) => {
     });
 };
 
-const populateObjects = () => {
-    const elementObj = {};
-    const errorObj = {};
-    const all_ids = $('.form_input');
-    for (let i = 0; i < all_ids.length; i++) {
-        const id = all_ids[i].getAttribute('id');
-        let error_id = 'error_' + id;
-        elementObj[id] = document.getElementById(id);
-        // all date of birth fields share one error message element
-        if (/dob(mm|yy)/.test(id)) {
-            error_id = 'error_dobdd';
-        }
-        errorObj[id] = document.getElementById(error_id);
+const handleNewAccount = function(response, message_type) {
+    if (response.error) {
+        const errorMessage = response.error.message;
+        $('#submit-message').empty();
+        $('#client_message').find('.notice-msg').text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : errorMessage).end()
+            .removeClass('invisible');
+    } else {
+        Client.process_new_account(Client.get('email'), response[message_type].client_id, response[message_type].oauth_token, false);
     }
-    return {
-        elementObj: elementObj,
-        errorObj  : errorObj,
-    };
 };
 
-const hideAllErrors = (errorObj, errorEl) => {
-    window.accountErrorCounter = 0;
-    if (errorEl) {
-        errorEl.innerHTML = '';
-        errorEl.parentNode.parentNode.parentNode.hide();
+const commonValidations = () => {
+    const req = [
+        { selector: '#salutation',         validations: ['req'] },
+        { selector: '#first_name',         validations: ['req', ['length', { min: 2, max: 30 }], 'letter_symbol'] },
+        { selector: '#last_name',          validations: ['req', ['length', { min: 2, max: 30 }], 'letter_symbol'] },
+        { selector: '#date_of_birth',      validations: ['req'] },
+        { selector: '#address_line_1',     validations: ['req', 'general'] },
+        { selector: '#address_line_2',     validations: ['general'] },
+        { selector: '#address_city',       validations: ['req', 'letter_symbol'] },
+        { selector: '#address_state',      validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'] },
+        { selector: '#address_postcode',   validations: ['postcode'] },
+        { selector: '#phone',              validations: ['req', 'phone', ['min', { min: 6, max: 35 }]] },
+        { selector: '#secret_question',    validations: ['req'] },
+        { selector: '#secret_answer',      validations: ['req', 'letter_symbol', ['min', { min: 4, max: 50 }]] },
+        { selector: '#tnc',                validations: [['req', { message: localize('Please accept the terms and conditions.') }]], exclude_request: 1 },
+
+        { request_field: 'residence', value: Client.get('residence') },
+    ];
+
+    if (Cookies.get('affiliate_tracking')) {
+        req.push({ request_field: 'affiliate_token', value: Cookies.getJSON('affiliate_tracking').t });
     }
-    Object.keys(errorObj).forEach(function (key) {
-        if (errorObj[key] && errorObj[key].offsetParent !== null) {
-            errorObj[key].setAttribute('style', 'display:none');
-        }
-    });
+
+    return req;
 };
 
-const checkRequiredInputs = (elementObj, errorObj, optional_fields) => {
-    Object.keys(elementObj).forEach(function (key) {
-        if (elementObj[key].offsetParent !== null && optional_fields.indexOf(key) < 0) {
-            if (/^$/.test((elementObj[key].value).trim()) && elementObj[key].type !== 'checkbox') {
-                errorObj[key].innerHTML = Content.errorMessage('req');
-                Validate.displayErrorMessage(errorObj[key]);
-                window.accountErrorCounter++;
+const selectCheckboxValidation = (formID) => {
+    const validations = [];
+    let validation,
+        id;
+    $(formID).find('select, input[type=checkbox]').each(function () {
+        id = $(this).attr('id');
+        if (id !== 'tnc') {
+            validation = { selector: `#${id}`, validations: ['req'] };
+            if (id === 'not_pep') {
+                validation.exclude_request = 1;
             }
-            if (elementObj[key].type === 'checkbox' && !elementObj[key].checked) {
-                const param = { field_type: 'checkbox' };
-                if (key === 'tnc') param.for = 'tnc';
-                errorObj[key].innerHTML = Content.errorMessage('req', param);
-                Validate.displayErrorMessage(errorObj[key]);
-                window.accountErrorCounter++;
-            }
+            validations.push(validation);
         }
     });
+    return validations;
 };
 
 module.exports = {
-    displayAcctSettings: displayAcctSettings,
-    handleResidence    : handleResidence,
-    populateObjects    : populateObjects,
-    hideAllErrors      : hideAllErrors,
-    checkRequiredInputs: checkRequiredInputs,
+    redirectAccount : redirectAccount,
+    populateForm    : populateForm,
+    getResidence    : getResidence,
+    redirectCookie  : redirectCookie,
+    handleNewAccount: handleNewAccount,
+
+    commonValidations       : commonValidations,
+    selectCheckboxValidation: selectCheckboxValidation,
 };

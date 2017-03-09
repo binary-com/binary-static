@@ -1,48 +1,31 @@
 const japanese_client = require('../../../common_functions/country_base').japanese_client;
 const Client          = require('../../../base/client').Client;
 
-const SettingsWS = (function() {
+const Settings = (function() {
     'use strict';
 
-    const init = function() {
-        const classHidden = 'invisible',
-            classReal   = '.real';
-
-        if (!Client.get('is_virtual')) {
-            // control-class is a fake class, only used to counteract ja-hide class
-            $(classReal).not((japanese_client() ? '.ja-hide' : '.control-class')).removeClass(classHidden);
-        } else {
-            $(classReal).addClass(classHidden);
-        }
-
-        if (Client.get('has_password')) {
-            $('#change_password').removeClass(classHidden);
-        }
-
-        $('#settingsContainer').removeClass(classHidden);
-    };
-
     const onLoad = function() {
-        if (!Client.get('values_set')) {
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    const response = JSON.parse(msg.data);
-                    if (response && response.msg_type === 'authorize') {
-                        SettingsWS.init();
-                    }
-                },
-            });
-        } else {
-            SettingsWS.init();
-        }
+        BinarySocket.wait('get_account_status').then((response) => {
+            const class_hidden = 'invisible';
+            const class_real   = '.real';
+
+            if (Client.get('is_virtual')) {
+                $(class_real).addClass(class_hidden);
+            } else {
+                $(class_real).not((japanese_client() ? '.ja-hide' : '')).removeClass(class_hidden);
+            }
+
+            if (/has_password/.test(response.get_account_status.status)) {
+                $('#change_password').removeClass(class_hidden);
+            }
+
+            $('#settings_container').removeClass(class_hidden);
+        });
     };
 
     return {
-        init  : init,
         onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    SettingsWS: SettingsWS,
-};
+module.exports = Settings;

@@ -25,7 +25,7 @@ const Validation = (function() {
             forms[form_selector] = { fields: fields, $form: $form };
             fields.forEach((field) => {
                 field.$ = $form.find(field.selector);
-                if (!field.$.length) return;
+                if (!field.$.length || !field.validations) return;
 
                 field.type = getFieldType(field.$);
                 field.form = form_selector;
@@ -64,6 +64,7 @@ const Validation = (function() {
     const validGeneral      = value => !/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|]+/.test(value);
     const validPostCode     = value => /^[a-zA-Z\d-]*$/.test(value);
     const validPhone        = value => /^\+?[0-9\s]*$/.test(value);
+    const validRegular      = (value, options) => options.regex.test(value);
     const validEmailToken   = value => value.trim().length === 48;
 
     const validCompare  = (value, options) => value === $(options.to).val();
@@ -81,6 +82,10 @@ const Validation = (function() {
         if (!(options.type === 'float' ? /^\d+(\.\d+)?$/ : /^\d+$/).test(value) || !$.isNumeric(value)) {
             is_ok = false;
             message = localize('Should be a valid number');
+        } else if (options.type === 'float' && options.decimals &&
+            !(new RegExp('^\\d+(\\.\\d{' + options.decimals.replace(/ /g, '') + '})?$').test(value))) {
+            is_ok = false;
+            message = localize('Only [_1] decimal points are allowed.', [options.decimals]);
         } else if (options.min && +value < +options.min) {
             is_ok = false;
             message = localize('Should be more than [_1]', [options.min]);
@@ -107,6 +112,7 @@ const Validation = (function() {
         min          : { func: validMin,          message: 'Minimum of [_1] characters required.' },
         length       : { func: validLength,       message: 'You should enter [_1] characters.' },
         number       : { func: validNumber,       message: '' },
+        regular      : { func: validRegular,      message: '' },
     };
 
     const pass_length = { min: 6, max: 25 };
@@ -115,7 +121,7 @@ const Validation = (function() {
     // ----- Validate -----
     // --------------------
     const checkField = (field) => {
-        if (!field.$.is(':visible')) return true;
+        if (!field.$.is(':visible') || !field.validations) return true;
         let all_is_ok = true,
             message;
 

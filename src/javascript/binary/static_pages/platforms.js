@@ -2,7 +2,8 @@ const url = require('../base/url').url;
 
 const Platforms = (function () {
     let sections = [];
-    const init = function() {
+
+    const onLoad = function() {
         sections = ['more-tools', 'trading-platforms'];
         const sidebarListItem = $('.sidebar-nav li');
         sidebarListItem.click(function() {
@@ -17,6 +18,7 @@ const Platforms = (function () {
         $('.inner').scroll(checkScroll);
         setHeights();
     };
+
     const setHeights = function() {
         $('.inner tr').each(function() {
             const $td = $(this).find('td:first');
@@ -26,6 +28,7 @@ const Platforms = (function () {
             }
         });
     };
+
     const checkScroll = function() {
         const $elem = $('.inner'),
             $fadeL = $('.fade-to-left'),
@@ -36,6 +39,7 @@ const Platforms = (function () {
         $fadeL.css('opacity', newScrollLeft === 0 ? '0' : '100');
         $fadeR.css('opacity', scrollWidth === newScrollLeft + width ? '0' : '100');
     };
+
     const checkWidth = function() {
         if ($('.sidebar-left').is(':visible')) {
             showSelectedDiv();
@@ -44,12 +48,14 @@ const Platforms = (function () {
         }
         $('.inner th').hide().fadeIn(1); // force to refresh in order to maintain correct positions
     };
+
     const get_hash = function() {
         return (
             url.location.hash && $.inArray(url.location.hash.substring(1), sections) !== -1 ?
             url.location.hash : '#trading-platforms'
         );
     };
+
     const showSelectedDiv = function() {
         const $sections_with_hash = $('.sections[id="' + get_hash().substring(1) + '"]');
         if ($sections_with_hash.is(':visible') &&
@@ -58,16 +64,16 @@ const Platforms = (function () {
         $sections_with_hash.removeClass('invisible');
         $('.sidebar-nav a[href="' + get_hash() + '"]').parent().addClass('selected');
     };
-    const unload = function() {
+
+    const onUnload = function() {
         $(window).off('resize');
         $(window).off('hashchange');
     };
+
     return {
-        init  : init,
-        unload: unload,
+        onLoad  : onLoad,
+        onUnload: onUnload,
     };
 })();
 
-module.exports = {
-    Platforms: Platforms,
-};
+module.exports = Platforms;

@@ -18,7 +18,6 @@ const RiskClassification = (function() {
 
     const cleanup = function () {
         localStorage.removeItem('risk_classification');
-        localStorage.removeItem('risk_classification.response');
         $('#risk_classification').remove();
         Client.check_tnc();
     };

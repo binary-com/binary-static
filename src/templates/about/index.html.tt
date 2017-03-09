@@ -27,7 +27,7 @@
                         <div class="gr-6 gr-12-m">
                             <div class="gr-row">
                                 <div class="gr-6 center-text border-right-top">
-                                    <a class="pjaxload" href="[% request.url_for('/group-history') %]">
+                                    <a href="[% request.url_for('/group-history') %]">
                                         <img class="gr-7 gr-centered" src="[% request.url_for('images/pages/about/founded.svg') %]"/>
                                     </a>
                                     <p>[% l("<a href='[_1]'>Founded</a> October 1999", request.url_for("/group-history")) %]</p>
@@ -41,7 +41,7 @@
                         <div class="gr-6 gr-12-m">
                             <div class="gr-row">
                             <div class="gr-6 center-text border-right-top">
-                                <a class="pjaxload" href="[% request.url_for('/careers') %]">
+                                <a href="[% request.url_for('/careers') %]">
                                     <img class="gr-7 gr-centered" src="[% request.url_for('images/pages/about/staff.svg') %]"/>
                                 </a>
                                 <p>[% l("Over 90 <a href='[_1]'>staff</a> and contractors worldwide", request.url_for("/careers")) %]</p>
@@ -61,7 +61,7 @@
                                 <p>[% l("Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7") %]</p>
                             </div>
                             <div class="gr-6 center-text border-right-bottom gr-padding-30">
-                                <a class="pjaxload" href="[% request.url_for('/contact') %]">
+                                <a href="[% request.url_for('/contact') %]">
                                     <img class="gr-7 gr-centered" src="[% request.url_for('images/pages/about/locations.svg') %]"/>
                                 </a>
                                 <p>[% l("<a href='[_1]'>Offices</a> in Malta, Malaysia and Japan", request.url_for("/contact")) %]</p>

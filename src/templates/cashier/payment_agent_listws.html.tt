@@ -11,9 +11,11 @@
         <li>[% l("Send your funds to the payment agent. The deposited funds, less the agent's commission, will show up in your account.") %]</li>
     </ol>
 
+
     <p>
         [% l('Show payment agents for:') %]
-        <select id="target_country"></select>
+        <select id="target_country" class="hidden"></select>
+        <div class="loading">[% INCLUDE global/loading.html.tt %]</div>
     </p>
 
     <div id="pa_list">
@@ -61,10 +63,10 @@
         </div>
     </div>
 
-    <p id="no_paymentagent" class="error-msg hidden">[% l('Payment agent is unavailable in your country.') %]</p>
+    <p id="no_paymentagent" class="notice-msg center-text hidden">[% l('Payment agent is unavailable in your country.') %]</p>
 
     <p>
-        [% l('Apply to become a [_1] <a class="pjaxload" href="[_2]">payment agent</a>.', website_name, request.url_for('/payment-agent')) %]
+        [% l('Apply to become a [_1] <a href="[_2]">payment agent</a>.', website_name, request.url_for('/payment-agent')) %]
     </p>
     <p class="comment">
         [% l("<strong>IMPORTANT DISCLAIMER</strong> - [_1] is not affiliated with any of the payment agents listed above. Each payment agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by [_1]. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of payment agents before sending them any money. [_1] shall not in any circumstance be held responsible for transactions made between customers and payment agents.", website_name) %]

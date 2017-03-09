@@ -11,15 +11,20 @@ const Scroll = (function() {
         if (elm_selector.length) {
             // grab the initial top offset of the navigation
             const selector = elm_selector.find('.sidebar');
-            const width = selector.width();
-            const sticky_navigation_offset_top = selector.offset().top;
             const container = elm_selector.find('.sidebar-container');
+            let width = selector.width();
+            let sticky_navigation_offset_top = selector.offset().top;
 
             // With thanks:
             // http://www.backslash.gr/content/blog/webdevelopment/6-navigation-menu-that-stays-on-top-with-jquery
 
             // our function that decides weather the navigation bar should have "fixed" css position or not.
             const sticky_navigation = function() {
+                if (!selector.is(':visible')) return;
+                if (!width) {
+                    width = selector.width();
+                    sticky_navigation_offset_top = selector.offset().top;
+                }
                 const scroll_top = $(window).scrollTop(); // our current vertical position from the top
 
                 // if we've scrolled more than the navigation, change its position to fixed to stick to top,
@@ -39,6 +44,7 @@ const Scroll = (function() {
             const sidebar_nav = selector.find('#sidebar-nav');
             const length = elm_selector.find('.section').length;
             $(window).on('scroll', function() {
+                if (!sidebar_nav.is(':visible')) return;
                 // and run it again every time you scroll
                 sticky_navigation();
 
@@ -49,7 +55,7 @@ const Scroll = (function() {
                     if (($(window).scrollTop() === 0 || isOffsetTop) && section.css('display') !== 'none') { // ignore hidden elements
                         sidebar_nav.find('li').removeClass('selected');
 
-                        if ($(window).scrollTop() === 0) {
+                        if ($(window).scrollTop() === 0 || sidebar_nav.width() === 0) {
                             // We're at the top of the screen, so highlight first nav item
                             sidebar_nav.find('li:first-child').addClass('selected');
                         } else if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
@@ -84,6 +90,4 @@ const Scroll = (function() {
     };
 })();
 
-module.exports = {
-    Scroll: Scroll,
-};
+module.exports = Scroll;

@@ -1,5 +1,4 @@
 const localize = require('../../base/localize').localize;
-const Client   = require('../../base/client').Client;
 
 const AccountTransferWS = (function() {
     'use strict';
@@ -12,10 +11,6 @@ const AccountTransferWS = (function() {
         account_bal;
 
     const init = function() {
-        if (Client.redirect_if_is_virtual()) {
-            return;
-        }
-
         $form = $('#account_transfer');
         account_bal = 0;
 
@@ -94,9 +89,7 @@ const AccountTransferWS = (function() {
 
     const apiResponse = function(response) {
         const type = response.msg_type;
-        if (type === 'authorize') {
-            init();
-        } else if (type === 'transfer_between_accounts' || (type === 'error' && 'transfer_between_accounts' in response.echo_req)) {
+        if (type === 'transfer_between_accounts' || (type === 'error' && 'transfer_between_accounts' in response.echo_req)) {
             responseMessage(response);
         } else if (type === 'payout_currencies' || (type === 'error' && 'payout_currencies' in response.echo_req)) {
             responseMessage(response);
@@ -241,23 +234,17 @@ const AccountTransferWS = (function() {
             onmessage: function(msg) {
                 const response = JSON.parse(msg.data);
                 if (response) {
-                    AccountTransferWS.apiResponse(response);
+                    apiResponse(response);
                 }
             },
         });
-
-        if (Client.get('is_virtual')) {
-            AccountTransferWS.init();
-        }
+        init();
     };
 
     return {
-        init       : init,
-        apiResponse: apiResponse,
-        onLoad     : onLoad,
+        init  : init,
+        onLoad: onLoad,
     };
 })();
 
-module.exports = {
-    AccountTransferWS: AccountTransferWS,
-};
+module.exports = AccountTransferWS;

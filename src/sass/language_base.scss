@@ -88,6 +88,11 @@ body.JA {
             width: 100% !important;
         }
     }
+    #mb_trading .payout-input {
+        .hint, span, label {
+            font-size: 10px;
+        }
+    }
 }
 /*Vietnamese Language */
 body.VI {
@@ -96,7 +101,10 @@ body.VI {
         padding: 0 8px !important;
     }
     #trading_socket_container #contract_form_name_nav {
-        font-size: 80%;
+        font-size: 90%;
+        > li a.tm-a {
+            font-size: 65%;
+        }
     }
     #trading_socket_container_beta #contract_symbol_container {
         font-size: 90%;
@@ -118,7 +126,10 @@ body.FR {
         text-transform: initial !important;
     }
     #trading_socket_container #contract_form_name_nav {
-        font-size: 80%;
+        font-size: 90%;
+        > li a.tm-a {
+            font-size: 70%;
+        }
     }
     #header .account-type {
         font-size: 85%;
@@ -186,12 +197,15 @@ body.ES {
 }
 
 body.RU {
-    #verify-email-form button {
+    #frm_verify_email button {
         font-size: 80%;
     }
     #trading_socket_container {
         #contract_form_name_nav {
-            font-size: 80%;
+            font-size: 90%;
+            > li a.tm-a {
+                font-size: 70%;
+            }
         }
         .contract_heading {
             font-size: 95%;
@@ -228,6 +242,12 @@ body.PT, body.RU {
 }
 
 body.DE {
+    #trading_socket_container #contract_form_name_nav {
+        font-size: 90%;
+        > li a.tm-a {
+            font-size: 75%;
+        }
+    }
     .app-store-badge {
         background-image: url('../images/pages/applications/appstore_de.svg');
     }
@@ -255,6 +275,12 @@ body.ZH_CN {
 }
 
 body.ZH_TW {
+    #trading_socket_container #contract_form_name_nav {
+        font-size: 90%;
+        > li a.tm-a {
+            font-size: 90%;
+        }
+    }
     .app-store-badge {
         background-image: url('../images/pages/applications/appstore_zh_tw.svg');
     }

@@ -1,5 +1,3 @@
-// import OneSignal from '../../lib/onesignal';
-
 const Login             = require('./login').Login;
 const template          = require('./utility').template;
 const LocalStore        = require('./storage').LocalStore;
@@ -16,13 +14,11 @@ const Menu              = require('./menu').Menu;
 const Contents          = require('./contents').Contents;
 const TrafficSource     = require('../common_functions/traffic_source').TrafficSource;
 const checkLanguage     = require('../common_functions/country_base').checkLanguage;
-const ViewBalance       = require('../websocket_pages/user/viewbalance/viewbalance.init').ViewBalance;
 const Cookies           = require('../../lib/js-cookie');
 const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check.init').RealityCheck;
 const RealityCheckData  = require('../websocket_pages/user/reality_check/reality_check.data').RealityCheckData;
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
-require('../../lib/mmenu/jquery.mmenu.min.all.js');
 
 const Page = function() {
     State.set('is_loaded_by_pjax', false);
@@ -50,9 +46,7 @@ Page.prototype = {
                 BinarySocket.send({ reality_check: 1 });
             }
         }
-        if (Client.is_logged_in()) {
-            ViewBalance.init();
-        } else {
+        if (!Client.is_logged_in()) {
             LocalStore.set('reality_check.ack', 0);
         }
         setCookieLanguage();
@@ -65,7 +59,7 @@ Page.prototype = {
         this.endpoint_notification();
         BinarySocket.init();
         this.show_notification_outdated_browser();
-        // OneSignal.checkSubscription();
+        Menu.make_mobile_menu();
     },
     on_unload: function() {
         Menu.on_unload();
@@ -162,13 +156,16 @@ Page.prototype = {
         }
     },
     general_authentication_message: function() {
-        const span = $('<span/>', { html: template(localize('To authenticate your account, kindly email the following to [_1]:', ['<a href="mailto:support@binary.com">support@binary.com</a>'])) });
-        const ul   = $('<ul/>',   { class: 'checked' });
-        const li1  = $('<li/>',   { text: localize('A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date.') });
-        const li2  = $('<li/>',   { text: localize('A scanned copy of a utility bill or bank statement (no more than 3 months old)') });
-        return span.append(ul.append(li1, li2));
+        const div = $('<div/>', { text: localize('Please send us the following documents in order to verify your identity and authenticate your account:') });
+        const ul  = $('<ul/>',  { class: 'checked' });
+        const li1 = $('<li/>',  { text: localize('Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth.') });
+        const li2 = $('<li/>',  { text: localize('Proof of address - A scanned copy of a utility bill or bank statement that\'s not more than three months old.') });
+        const p   = $('<p/>',   { html: localize('If you have any questions, kindly contact our Customer Support team at <a href="mailto:[_1]">[_1]</a>.', ['support@binary.com']) });
+        return div.append(ul.append(li1, li2)).append(p);
     },
     show_notification_outdated_browser: function() {
+        const src = '//browser-update.org/update.min.js';
+        if ($(`script[src*="${src}"]`).length) return;
         window.$buoop = {
             vs : { i: 11, f: -4, o: -4, s: 9, c: -4 },
             api: 4,
@@ -176,7 +173,7 @@ Page.prototype = {
             url: 'https://whatbrowser.org/',
         };
         $(document).ready(function() {
-            $('body').append($('<script/>', { src: '//browser-update.org/update.min.js' }));
+            $('body').append($('<script/>', { src: src }));
         });
     },
 };

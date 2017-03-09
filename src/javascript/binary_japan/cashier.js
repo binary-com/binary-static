@@ -1,51 +1,30 @@
-const localize             = require('../binary/base/localize').localize;
+const BinaryPjax           = require('../binary/base/binary_pjax');
 const Client               = require('../binary/base/client').Client;
+const localize             = require('../binary/base/localize').localize;
 const default_redirect_url = require('../binary/base/url').default_redirect_url;
 const Content              = require('../binary/common_functions/content').Content;
 const japanese_client      = require('../binary/common_functions/country_base').japanese_client;
 const japanese_residence   = require('../binary/common_functions/country_base').japanese_residence;
 
 const CashierJP = (function() {
-    function init(action) {
+    'use strict';
+
+    const onLoad = (action) => {
         Content.populate();
-        if (Client.get('values_set')) {
-            if (japanese_client() && !japanese_residence()) window.location.href = default_redirect_url();
-            const $container = $('#japan_cashier_container');
-            if (Client.get('is_virtual')) {
-                $container.addClass('center-text notice-msg').removeClass('invisible')
-                .text(Content.localize().featureNotRelevantToVirtual);
-                return;
-            }
+        if (japanese_client() && !japanese_residence()) BinaryPjax.load(default_redirect_url());
+        const $container = $('#japan_cashier_container');
+        BinarySocket.wait('get_settings').then(() => {
             $container.removeClass('invisible');
             if (action === 'deposit') {
-                set_name_id();
+                $('#name_id').text((Client.get('loginid') || 'JP12345') + ' ' + (Client.get('first_name') || 'Joe Bloggs'));
             } else if (action === 'withdraw') {
-                set_email_id();
-                Content.populate();
+                $('#id123-control22598118').val(Client.get('loginid'));
+                $('#id123-control22598060').val(Client.get('email'));
             }
-        } else {
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    const response = JSON.parse(msg.data);
-                    if (response && response.msg_type === 'authorize') {
-                        CashierJP.init(action);
-                    }
-                },
-            });
-        }
-    }
-    function set_name_id() {
-        if (/deposit-jp/.test(window.location.pathname)) {
-            $('#name_id').text((Client.get('loginid') || 'JP12345') + ' ' + (Client.get('first_name') || 'Joe Bloggs'));
-        }
-    }
-    function set_email_id() {
-        if (/withdraw-jp/.test(window.location.pathname)) {
-            $('#id123-control22598118').val(Client.get('loginid'));
-            $('#id123-control22598060').val(Client.get('email'));
-        }
-    }
-    function error_handler() {
+        });
+    };
+
+    const errorHandler = () => {
         $('.error-msg').remove();
         const $id = $('#id123-control22598145');
         const withdrawal_amount = $id.val();
@@ -57,15 +36,13 @@ const CashierJP = (function() {
             return false;
         }
         return true;
-    }
+    };
+
     return {
-        init         : init,
-        set_name_id  : set_name_id,
-        set_email_id : set_email_id,
-        error_handler: error_handler,
+        errorHandler: errorHandler,
+        Deposit     : { onLoad: () => { onLoad('deposit'); } },
+        Withdraw    : { onLoad: () => { onLoad('withdraw'); } },
     };
 })();
 
-module.exports = {
-    CashierJP: CashierJP,
-};
+module.exports = CashierJP;

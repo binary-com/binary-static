@@ -1,34 +1,35 @@
+const moment                         = require('moment');
 const TradingAnalysis_Beta           = require('./analysis').TradingAnalysis_Beta;
 const Barriers_Beta                  = require('./barriers').Barriers_Beta;
 const Contract_Beta                  = require('./contract').Contract_Beta;
 const Durations_Beta                 = require('./duration').Durations_Beta;
 const Price_Beta                     = require('./price').Price_Beta;
-const processMarket_Beta             = require('./process').processMarket_Beta;
+const onDurationUnitChange           = require('./process').onDurationUnitChange;
+const onExpiryTypeChange             = require('./process').onExpiryTypeChange;
 const processContractForm_Beta       = require('./process').processContractForm_Beta;
 const processForgetTicks_Beta        = require('./process').processForgetTicks_Beta;
-const onExpiryTypeChange             = require('./process').onExpiryTypeChange;
-const onDurationUnitChange           = require('./process').onDurationUnitChange;
+const processMarket_Beta             = require('./process').processMarket_Beta;
 const Defaults                       = require('../defaults').Defaults;
 const Tick                           = require('../tick').Tick;
-const onlyNumericOnKeypress          = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
-const moment                         = require('moment');
 const setFormPlaceholderContent_Beta = require('../set_values').setFormPlaceholderContent_Beta;
-const showPriceOverlay               = require('../common').showPriceOverlay;
-const showFormOverlay                = require('../common').showFormOverlay;
-const toggleActiveCatMenuElement     = require('../common').toggleActiveCatMenuElement;
-const debounce                       = require('../common').debounce;
-const submitForm                     = require('../common').submitForm;
-const updateWarmChart                = require('../common').updateWarmChart;
-const reloadPage                     = require('../common').reloadPage;
 const chartFrameSource               = require('../common').chartFrameSource;
+const debounce                       = require('../common').debounce;
 const displayTooltip_Beta            = require('../common').displayTooltip_Beta;
+const reloadPage                     = require('../common').reloadPage;
+const showFormOverlay                = require('../common').showFormOverlay;
+const showPriceOverlay               = require('../common').showPriceOverlay;
+const submitForm                     = require('../common').submitForm;
+const toggleActiveCatMenuElement     = require('../common').toggleActiveCatMenuElement;
 const timeIsValid                    = require('../common').timeIsValid;
+const updateWarmChart                = require('../common').updateWarmChart;
 const getStartDateNode               = require('../common_independent').getStartDateNode;
-const isVisible                      = require('../../../common_functions/common_functions').isVisible;
 const dateValueChanged               = require('../../../common_functions/common_functions').dateValueChanged;
-const TimePicker                     = require('../../../components/time_picker').TimePicker;
-const Client                         = require('../../../base/client').Client;
 const elementTextContent             = require('../../../common_functions/common_functions').elementTextContent;
+const isVisible                      = require('../../../common_functions/common_functions').isVisible;
+const onlyNumericOnKeypress          = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
+const TimePicker                     = require('../../../components/time_picker').TimePicker;
+const BinaryPjax                     = require('../../../base/binary_pjax');
+const Client                         = require('../../../base/client').Client;
 
 /*
  * TradingEvents object contains all the event handler const required = function for
@@ -482,7 +483,7 @@ const TradingEvents_Beta = (function () {
         const tip = document.getElementById('symbol_tip');
         if (init_logo) {
             tip.addEventListener('click', debounce(function (e) {
-                window.location.href = e.target.getAttribute('target');
+                BinaryPjax.load(e.target.getAttribute('target'));
             }));
         }
     };

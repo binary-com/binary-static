@@ -8,7 +8,7 @@
         <p>
           [% l("When you start trading with Binary.com, you'll be directed to the trading screen, where you set your trading parameters, and choose what you want to trade, how and when.") %]
         </p>
-        <a class="pjaxload button ja-hide" href="[% request.url_for('trading') %]">
+        <a class="button ja-hide" href="[% request.url_for('trading') %]">
           <img class="responsive ja-hide" id="new-trader-icon" src="[% request.url_for('images/pages/tour/trade-tutorial_1.svg') %]"/>
         </a>
         <img class="responsive hidden ja-show" id="new-trader-icon" src="[% request.url_for('images/pages/tour/tour-jp.svg') %]"/>
@@ -27,12 +27,12 @@
       </div>
       <div class="gr-row">
           <div class="gr-6 gr-12-m ja-hide">
-            <a class="pjaxload button" href="[% request.url_for('trading') %]">
+            <a class="button" href="[% request.url_for('trading') %]">
               <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/tour/2-way-pricing_live.svg') %]"/>
             </a>
           </div>
           <div class="gr-6 gr-12-m ja-hide">
-            <a class="pjaxload button" href="[% request.url_for('trading') %]">
+            <a class="button" href="[% request.url_for('trading') %]">
               <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/tour/2-way-pricing_opposite.svg') %]"/>
             </a>
           </div>
@@ -70,7 +70,7 @@
         <h1>
           [% l("Bank your way") %]
         </h1>
-        <a class="pjaxload button" href="[% request.url_for('cashier/payment_methods') %]">
+        <a class="button" href="[% request.url_for('cashier/payment_methods') %]">
           <span>
             [% l("View payment methods") %]
           </span>
@@ -78,7 +78,7 @@
         <p>
           [% l("Trade with ease with [_1]'s wide range of deposit and withdrawal methods. Your funds will be segregated and held in secure and licensed financial institutions.", website_name) %]
         </p>
-        <a class="pjaxload button" href="[% request.url_for('/cashier/payment_methods') %]">
+        <a class="button" href="[% request.url_for('/cashier/payment_methods') %]">
           <img class="responsive" src="[% request.url_for('images/pages/tour/tour-flexible-banking.png') %]"/>
         </a>
       </div>
@@ -94,7 +94,7 @@
           [% l("Stay informed. [_1] offers daily market reports and market research, as well as frequent trading webinars.", website_name) %]
         </p>
         <span id="edu-research-tool"></span>
-        <a class="pjaxload button" href="[% request.url_for('/resources') %]">
+        <a class="button" href="[% request.url_for('/resources') %]">
           <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/tour/tour-tools-education.svg') %]"/>
         </a>
       </div>
@@ -111,7 +111,7 @@
         </p>
       </div>
       <div class="gr-4 gr-8-m gr-centered ja-hide">
-        <a class="pjaxload button" href="[% request.url_for('contact') %]">
+        <a class="button" href="[% request.url_for('contact') %]">
           <img class="responsive" src="[% request.url_for('images/pages/tour/tour-customer-support.png') %]"/>
         </a>
       </div>

@@ -13,7 +13,7 @@ const MetaTrader = (function() {
     let has_financial_company,
         has_gaming_company;
 
-    const init = () => {
+    const onLoad = () => {
         BinarySocket.wait('landing_company').then((response) => {
             if (isEligible(response)) {
                 updateEnabledStatus('gaming', has_gaming_company);
@@ -136,7 +136,7 @@ const MetaTrader = (function() {
     };
 
     return {
-        init      : init,
+        onLoad    : onLoad,
         isEligible: isEligible,
     };
 })();

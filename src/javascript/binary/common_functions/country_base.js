@@ -3,8 +3,9 @@ const getLanguage    = require('../base/language').getLanguage;
 const URLForLanguage = require('../base/language').URLForLanguage;
 
 function checkClientsCountry() {
-    const clients_country = localStorage.getItem('clients_country');
-    if (clients_country) {
+    BinarySocket.wait('website_status').then((response) => {
+        if (response.error) return;
+        const clients_country = response.website_status.clients_country;
         if (clients_country === 'jp') {
             limitLanguage('JA');
         } else if (clients_country === 'id') {
@@ -12,15 +13,12 @@ function checkClientsCountry() {
         } else {
             $('.languages').show();
         }
-    } else {
-        BinarySocket.init();
-        BinarySocket.send({ website_status: '1' });
-    }
+    });
 }
 
 function limitLanguage(lang) {
     if (getLanguage() !== lang) {
-        window.location.href = URLForLanguage(lang);
+        window.location.href = URLForLanguage(lang); // need to redirect not using pjax
     }
     if (document.getElementById('select_language')) {
         $('.languages').remove();
@@ -36,7 +34,7 @@ function limitLanguage(lang) {
 function japanese_client() {
     // handle for test case
     if (typeof window === 'undefined') return false;
-    return (getLanguage() === 'JA' || japanese_residence() || localStorage.getItem('clients_country') === 'jp');
+    return getLanguage() === 'JA' || japanese_residence();
 }
 
 function japanese_residence() {

@@ -1,19 +1,19 @@
-const Content         = require('../../../../common_functions/content').Content;
-const japanese_client = require('../../../../common_functions/country_base').japanese_client;
-const url_for         = require('../../../../base/url').url_for;
-const Applications    = require('./authorised_apps/authorised_apps.init').Applications;
+const BinaryPjax       = require('../../../../base/binary_pjax');
+const Content          = require('../../../../common_functions/content').Content;
+const japanese_client  = require('../../../../common_functions/country_base').japanese_client;
+const ApplicationsInit = require('./authorised_apps/authorised_apps.init');
 
-const AuthorisedApps = (function() {
-    const onLoad = function() {
+const AuthorisedApps = (() => {
+    const onLoad = () => {
         if (japanese_client()) {
-            window.location.href = url_for('user/settingsws');
+            BinaryPjax.load('user/settingsws');
         }
         Content.populate();
-        Applications.init();
+        ApplicationsInit.init();
     };
 
-    const onUnload = function() {
-        Applications.clean();
+    const onUnload = () => {
+        ApplicationsInit.clean();
     };
 
     return {
@@ -22,6 +22,4 @@ const AuthorisedApps = (function() {
     };
 })();
 
-module.exports = {
-    AuthorisedApps: AuthorisedApps,
-};
+module.exports = AuthorisedApps;
