@@ -56,7 +56,7 @@
                 </fieldset>
 
                 <fieldset class="center-text" id="formlayout">
-                    <button class="button" id="btn_submit" type="submit">[% l('Create New Account') %]</button>
+                    <button class="button" type="submit">[% l('Create New Account') %]</button>
                     <p class="errorfield invisible" id="error-account-opening"></p>
                 </fieldset>
             </form>
