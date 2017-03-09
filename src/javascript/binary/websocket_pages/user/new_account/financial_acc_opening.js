@@ -65,7 +65,11 @@ const FinancialAccOpening = (function() {
             });
         });
 
-        bindValidation();
+        FormManager.handleSubmit({
+            form_selector       : formID,
+            obj_request         : { new_account_maltainvest: 1, accept_risk: 0 },
+            fnc_response_handler: handleResponse,
+        });
     };
 
     const getValidations = () => (
@@ -74,26 +78,21 @@ const FinancialAccOpening = (function() {
         ])
     );
 
-    const bindValidation = () => {
-        const obj_req = { new_account_maltainvest: 1 };
-
-        FormManager.handleSubmit({
-            form_selector       : formID,
-            obj_request         : $.extend(obj_req, { accept_risk: 0 }),
-            fnc_response_handler: handleResponse,
-        });
-
-        FormManager.handleSubmit({
-            form_selector       : '#financial-risk',
-            obj_request         : $.extend(obj_req, { accept_risk: 1 }),
-            fnc_response_handler: handleResponse,
-        });
-    };
-
     const handleResponse = (response) => {
         if ('error' in response && response.error.code === 'show risk disclaimer') {
             $('#financial-form').addClass('hidden');
             $('#financial-risk').removeClass('hidden');
+
+            const form_id = '#financial-risk';
+            FormManager.init(form_id, []);
+
+            const echo_req = $.extend({}, response.echo_req);
+            echo_req.accept_risk = 1;
+            FormManager.handleSubmit({
+                form_selector       : form_id,
+                obj_request         : echo_req,
+                fnc_response_handler: handleResponse,
+            });
         } else {
             AccountOpening.handleNewAccount(response, response.msg_type);
         }
