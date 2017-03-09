@@ -13,7 +13,7 @@ const FinancialAccOpening = (function() {
 
     const onLoad = function() {
         State.set('is_financial_opening', 1);
-        if (Client.get('has_financial')) {
+        if (Client.get('has_financial') || !Client.get('residence')) {
             BinaryPjax.load('trading');
             return;
         } else if (Client.get('has_gaming')) {

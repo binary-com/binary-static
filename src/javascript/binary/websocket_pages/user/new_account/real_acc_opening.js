@@ -1,3 +1,4 @@
+const BinaryPjax     = require('../../../base/binary_pjax');
 const Client         = require('../../../base/client').Client;
 const AccountOpening = require('../../../common_functions/account_opening');
 const FormManager    = require('../../../common_functions/form_manager');
@@ -19,6 +20,8 @@ const RealAccOpening = (function() {
                 obj_request         : { new_account_real: 1 },
                 fnc_response_handler: handleResponse,
             });
+        } else {
+            BinaryPjax.load('trading');
         }
     };
 
