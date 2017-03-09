@@ -277,17 +277,17 @@ const MBContract = (function() {
 
     const getTemplate = function(contract_type) {
         const templates = {
-            CALLE: {
-                opposite   : 'PUT',
-                order      : 0,
-                name       : 'Higher',
-                description: '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
-            },
             PUT: {
                 opposite   : 'CALLE',
-                order      : 1,
+                order      : 0,
                 name       : 'Lower',
                 description: '[_1] [_2] payout if [_3] is strictly lower than Barrier at close on [_4].',
+            },
+            CALLE: {
+                opposite   : 'PUT',
+                order      : 1,
+                name       : 'Higher',
+                description: '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
             },
             ONETOUCH: {
                 opposite   : 'NOTOUCH',

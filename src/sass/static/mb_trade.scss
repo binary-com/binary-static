@@ -296,6 +296,18 @@
     }
 }
 
-#trading_bottom_content #tab_portfolio-content {
-    overflow-x: auto;
+.mb-trading-wrapper #trading_bottom_content {
+    #tab_portfolio-content {
+        overflow-x: auto;
+    }
+    #tab_explanation-content #winning_higherlower {
+        display: flex;
+        flex-direction: column;
+        p {
+            margin-top: 0;
+            &:first-child {
+                order: 2;
+            }
+        }
+    }
 }
