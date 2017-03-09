@@ -74,9 +74,11 @@ const handleResidenceList = (residence_list) => {
             }
         }
         if (obj_residence_el.tax_residence) {
-            $('#tax_residence').select2()
-                .val(residenceValue).trigger('change')
-                .removeClass('invisible');
+            setTimeout(() => {
+                $('#tax_residence').select2()
+                    .val(residenceValue).trigger('change')
+                    .removeClass('invisible');
+            }, 1500);
         }
         if (residenceValue) {
             if (obj_residence_el.residence) {

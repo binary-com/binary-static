@@ -208,9 +208,11 @@ const SettingsDetailsWS = (function() {
                 value = current_residence.value;
                 appendIfExist(obj_residence_el, text, value);
             }
-            $('#tax_residence').select2()
-                .val(tax_residence_values).trigger('change')
-                .removeClass('invisible');
+            setTimeout(() => {
+                $('#tax_residence').select2()
+                    .val(tax_residence_values).trigger('change')
+                    .removeClass('invisible');
+            }, 1500);
             obj_residence_el.place_of_birth.value = place_of_birth_value || residence;
         }
     };
