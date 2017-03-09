@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-08 08:44+0000\n"
+"PO-Revision-Date: 2017-03-09 04:05+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,43 +38,27 @@ msgstr "「サードパーティプロバイダー」とは%1 APIを使用して
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2をデモ口座%3に付与されました"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
 msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
 msgstr "%3のNO-TOUCHは、取引期間(%4)が終了するまでにバリア価格に達しないと予測"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgid "%1 %2 payout if %3 ends on or between low and high values of Barrier at close on %4."
 msgstr "%3のEND-INは、判定時刻(%4)の時点で上限バリア未満かつ下限バリア以上であると予測"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgid "%1 %2 payout if %3 ends outside low and high values of Barrier at close on %4."
 msgstr "%3のEND-OUTは、判定時刻(%4)の時点で上限バリア以上もしくは下限バリア未満であるとを予測"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 goes outside of low and high values of Barrier through close on %4."
 msgstr "%3のBREAK-OUTは、取引期間中(%4)に上限バリア以上もしくは下限バリア以下になると予測"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 msgid "%1 %2 payout if %3 is strictly higher than or equal to Barrier at close on %4."
 msgstr "%3のラダーHIGHは、判定時刻(%4)の時点でバリア価格以上であると予測"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
 msgid "%1 %2 payout if %3 is strictly lower than Barrier at close on %4."
 msgstr "%3のラダーLOWは、判定時刻(%4)の時点でバリア価格未満であると予測"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 stays between low and high values of Barrier through close on %4."
 msgstr "%3のSTAY-INは取引期間中(%4)に上限バリア未満かつ下限バリア超過を維持すると予測"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
 msgid "%1 %2 payout if %3 touches Barrier through close on %4."
 msgstr "%3のTOUCHは、取引期間(%4)が終了するまでバリア価格に達すると予測"
 
@@ -356,8 +341,6 @@ msgstr "”Global Banking” 、及び”Finance Review”から「2012年度最
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "eGaming Reviewから「最優秀取引業者」を受賞"
 
-#, fuzzy
-#| msgid "Duration"
 msgid "(Duration)"
 msgstr "取引期間"
 
@@ -2556,7 +2539,7 @@ msgid "Earn commissions by introducing new customers to %1."
 msgstr "%1に新しい顧客を紹介して、コミッションを受け取りましょう。"
 
 msgid "Earn money by becoming an Affiliate. You will receive commission on each account through your referrals."
-msgstr "当社のアフィリエイトプログラムでは、報酬プランに基づいて報酬金額をアフィリエイト会員にお支払します。"
+msgstr "当社のアフィリエイトプログラムでは、報酬プランに基づいて報酬金額をアフィリエイト会員様にお支払します。"
 
 msgid "Earn money for any verifiable errors that you find."
 msgstr "検出できるエラーを見つけてお金を受け取りましょう"
@@ -5238,10 +5221,8 @@ msgstr "オンライン通貨両替"
 msgid "Only %1 are allowed."
 msgstr "%1のみご利用いただけます。"
 
-#, fuzzy
-#| msgid "Only 2 decimal points are allowed."
 msgid "Only %1 decimal points are allowed."
-msgstr "小数点以下2桁のみご利用いただけます。"
+msgstr "小数点以下%1桁のみご利用いただけます。"
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgstr "サービス開始からわずか5年にて、当社のオンライントレードサービスに対しこのような主要な賞を受賞。この賞では、BetOnMarkets.com’が信頼できる迅速で安全なオンライントレードの機会をトレード初心者をはじめ、上級者にも提供していることが評価され、この時点で当社の口座数は1,500万以上となりました。"
@@ -5604,8 +5585,6 @@ msgstr "プラットフォーム"
 msgid "Please %1 to view this page"
 msgstr "現在、ログアウトの状態です。ご利用頂くためには再度%1が必要です。"
 
-#, fuzzy
-#| msgid "Please deposit before transfer to client."
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "お客さまへ送金される前にご入金をしてください。"
 
@@ -6116,10 +6095,10 @@ msgid "Relevant work experience in a related field (financial services preferred
 msgstr "関連分野（金融サービスが好ましい）での実務経験"
 
 msgid "Remaining Time"
-msgstr "残り時間"
+msgstr "満期までの残り時間"
 
 msgid "Remaining time"
-msgstr "残り時間"
+msgstr "満期までの残り時間"
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
 msgstr "口座で保有可能な口座残高の限度額を示します。限度額を超えた場合は出金手続きをお願いいたします。"
@@ -7832,7 +7811,9 @@ msgid "Trading binary options is relatively easy, and you can purchase a trade i
 msgstr "バイナリーオプションは比較的分かりやすく、たった3つのステップでトレードの購入が可能です！"
 
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class=\"ja-hide\">Read about <a href=\"%1\">Responsible Trading</a>.</span>"
-msgstr "【商号】Binary株式会社　金融商品取引業者　関東財務局長（金商）第2949号【加入協会】一般社団法人金融先物取引業協会"
+msgstr ""
+"【商号】Binary株式会社　金融商品取引業者　関東財務局長（金商）第2949号【加入協会】一般社団法人金融先物取引業協会 Copyright (c) "
+"2017 Binary K.K. All Rights Reserved."
 
 msgid "Trading forex and contracts for differences carries a high level of risk and %1 does not monitor the open positions of your account on your behalf. It is your responsibility to monitor your Open Positions and understand the exposure of your Open Positions whilst ensuring that your exposure commensurate with your risk appetite. Due to the cost associated with overnight open positions, you should consider investing in the market of the instrument in which you ordinarily transact in instead of investing in a CFD."
 msgstr ""
@@ -9130,10 +9111,8 @@ msgstr "お客様の取引継続時間制限は%1秒後に終了します。"
 msgid "Your settings have been updated successfully."
 msgstr "設定は正しく更新されました。"
 
-#, fuzzy
-#| msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
 msgid "Your token has expired. Please click %1here%2 to restart the verification process."
-msgstr "ワンタイムパスワードの有効期限が切れています。再度、<a href=\"%1\">「最初からやり直し」</a> をクリックしてワンタイムパスワードを発行して下さい。"
+msgstr "ワンタイムパスワードの有効期限が切れています。再度、%1「最初からやり直し」%2 をクリックしてワンタイムパスワードを発行して下さい。"
 
 msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
 msgstr "ワンタイムパスワードの有効期限が切れています。再度、<a href=\"%1\">「最初からやり直し」</a> をクリックしてワンタイムパスワードを発行して下さい。"
@@ -9512,7 +9491,7 @@ msgid "{JAPAN ONLY}A bought or sold binary option may be closed-out before exerc
 msgstr "購入したバイナリーオプションは、判定時刻より前に反対売買（又は解約）により決済することができます。"
 
 msgid "{JAPAN ONLY}A dedicated affiliate team to provide you with the best service possible"
-msgstr "当社は、アフィリエイト会員による広告活動をサポートを提供します"
+msgstr "当社は、アフィリエイト会員様による広告活動をサポートを提供します"
 
 msgid "{JAPAN ONLY}A modified version of the Black-Scholes model is widely used to calculate the theoretical prices of binary options."
 msgstr "バイナリーオプションの理論価格を算出する際には、ブラック・ショールズを修正した計算モデルが一般的に用いられています。"
@@ -9686,7 +9665,7 @@ msgid "{JAPAN ONLY}Download our latest report here"
 msgstr "最新のレポートをダウンロード"
 
 msgid "{JAPAN ONLY}Earn money by becoming an Affiliate. You will receive commission on each account through your referrals."
-msgstr "当社のアフィリエイトプログラムでは、報酬プランに基づいて報酬金額をアフィリエイト会員にお支払します。"
+msgstr "当社のアフィリエイトプログラムでは、報酬プランに基づいて報酬金額をアフィリエイト会員様にお支払します。"
 
 msgid "{JAPAN ONLY}Earning a second income in their spare time?"
 msgstr "バイナリーオプション取引をしたい"
@@ -9794,7 +9773,7 @@ msgid "{JAPAN ONLY}Generous Commission Structure"
 msgstr "報酬プランについて"
 
 msgid "{JAPAN ONLY}Great pay-outs. Earn &yen;20,000 on every qualifying referral"
-msgstr "アフィリエイト報酬として1人あたりの獲得会員につき20,000円支払います"
+msgstr "アフィリエイト報酬として1人あたりの獲得会員様につき20,000円支払います"
 
 msgid "{JAPAN ONLY}High quality promotional materials with online reporting tools"
 msgstr "アフィリエイト会員は、オンラインレポート機能で広告活動を把握できます"
@@ -9857,7 +9836,7 @@ msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please
 msgstr "出金依頼の取り消し、または出金に関するご質問等ありましたら、<a href=\"mailto:%1\">カスタマーサポート</a>までご連絡ください。"
 
 msgid "{JAPAN ONLY}If you introduce our website to potential clients, you will earn as soon as one of them opens a real account with %1 and begins trading. "
-msgstr "獲得会員が当社で口座開設を完了後、報酬プランの条件を満たした場合のみ報酬額が支払われます。 "
+msgstr "獲得会員様が当社で口座開設を完了後、報酬プランの条件を満たした場合のみ報酬額が支払われます。 "
 
 msgid "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
 msgstr "詳細につきまして、カスタマーサポート<a href='mailto:%1'>%1</a>までご連絡ください"
@@ -9990,7 +9969,7 @@ msgid "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade
 msgstr "リアルタイムで保有ポジションの損益とチャート分析"
 
 msgid "{JAPAN ONLY}Long-term partnership with an establish international financial trading service"
-msgstr "海外で15年以上、バイナリー取引を提供しているBinaryグループと長期的なパートナーシップを締結できる"
+msgstr "海外で15年以上、バイナリー取引を提供しているBinaryグループと長期的な相互関係を構築できます"
 
 msgid "{JAPAN ONLY}Main business"
 msgstr "主な業務"
@@ -10300,7 +10279,7 @@ msgid "{JAPAN ONLY}We offer a full range of binary option types including ladder
 msgstr "ラダー、タッチ、レンジと複数の種類のバイナリーオプションを提供いたします"
 
 msgid "{JAPAN ONLY}We offer an informative and entertaining way to advertise online; including text ads, customer landing pages and invitations to promotional and educational events for your site visitors."
-msgstr "当社は、アフィリエイト会員に広告素材（バナー、テキスト）を提供します。"
+msgstr "当社は、アフィリエイト会員様に広告素材（バナー、テキスト）を提供します。"
 
 msgid "{JAPAN ONLY}We offer real time prices calculated from the same rates that bank and securities companies use."
 msgstr "インターバンクのオプション市場と同様に、リアルタイムの価格を提供します"
@@ -10321,7 +10300,7 @@ msgid "{JAPAN ONLY}We will process your request and transfer the funds to your d
 msgstr "支払処理は出金依頼日、または出金承認日から最大5営業日をかかります。"
 
 msgid "{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream"
-msgstr "当社は、アフィリエイト会員が広告活動を効果的にできますよう必要なツールを提供させていただきます"
+msgstr "当社は、アフィリエイト会員様が広告活動を効果的にできますよう必要なツールを提供させていただきます"
 
 msgid "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying."
 msgstr "コールオプションの買いの損益分岐点は、バリア価格に原資産１単位当たりのオプション料を加算した価格となります。"
@@ -10366,10 +10345,12 @@ msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to t
 msgstr "バイナリーオプション取引は、購入金額を超える損失が生じる可能性はありませんが、損失を限定するためのロスカットはありません。権利が消滅した場合、購入金額全額が損失となります。"
 
 msgid "{JAPAN ONLY}You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
-msgstr "当社は、アフィリエイト会員が広告活動を効果的にできますよう必要なツールを提供させていただきます"
+msgstr "当社は、アフィリエイト会員様が広告活動を効果的にできますよう必要なツールを提供させていただきます"
 
 msgid "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then opens and trades a real money account."
-msgstr "獲得会員がアフィリエイト会員のサイトを通じて口座開設して、報酬プランの条件を満たした場合、1人あたりの獲得会員につき20,000円をお支払いたします。詳しくは、アフィリエイトプログラムの利用規約の報酬の支払いをご確認ください。"
+msgstr ""
+"アフィリエイト会員様のサイトを通じて獲得会員様が当社にてリアル口座を開設した上、報酬プランの条件を満たした場合、1人あたりの獲得会員様につき20,000円"
+"をお支払いたします。詳しくは、アフィリエイトプログラムの利用規約の報酬の支払いをご確認ください。"
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 msgstr "リアル口座開設は完了致しました。使用するには再度ログインが必要となります。"
@@ -10378,7 +10359,8 @@ msgid "{JAPAN ONLY}Your Funds"
 msgstr "信託により区分管理"
 
 msgid "{JAPAN ONLY}Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
-msgstr "Cookie(クッキー)にアフィリエイトIDが登録されており、獲得会員がアフィリエイトサイトをクリックされるたびに認識され、%1に伝わります。"
+msgstr ""
+"Cookie(クッキー)にアフィリエイトIDが登録されており、獲得会員様がアフィリエイトサイトをクリックされるたびに認識され、%1に伝わります。"
 
 msgid "{JAPAN ONLY}Your funds are safe"
 msgstr "信託により区分管理"
