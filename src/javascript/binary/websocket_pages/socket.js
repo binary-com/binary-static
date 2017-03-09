@@ -267,7 +267,7 @@ const BinarySocketClass = function() {
                 waiting_list.resolve(response);
 
                 const error_code = getPropertyValue(response, ['error', 'code']);
-                if (type === 'site_status') {
+                if (type === 'broadcast_notifications') {
                     is_available = /^up$/i.test(response.site_status);
                     $('#site-status-message').css('display', is_available ? 'none' : 'block').find('.message').html(response.message);
                 } else if (type === 'authorize') {
