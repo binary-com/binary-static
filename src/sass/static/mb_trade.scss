@@ -49,6 +49,9 @@
         .price-row:nth-child(odd) {
             background: $COLOR_LIGHT_GRAY;
         }
+        &:nth-child(odd) .price-rows .price-button {
+            background: $COLOR_RED;
+        }
     }
     .base-value {
         font-size: 9px;
@@ -88,7 +91,7 @@
         color: $COLOR_WHITE;
         text-align: center;
         line-height: 100%;
-        background: $COLOR_GREEN;
+        background: $COLOR_LIGHT_BLUE;
         border-radius: 3px;
         padding: 10px 0;
         cursor: pointer;
@@ -113,14 +116,15 @@
             right: 3px;
         }
         &:hover {
-            background-color: $COLOR_DARK_GREEN;
+            opacity: 0.8;
         }
     }
     .inactive {
         color: $COLOR_GRAY;
-        &.price-button {
+        &.price-button, &:hover {
             color: $COLOR_WHITE;
-            background: $COLOR_GRAY;
+            background: $COLOR_GRAY !important;
+            opacity: 1;
             cursor: default;
             overflow: visible;
         }
@@ -141,7 +145,7 @@
             line-height: 1.4em;
         }
     }
-    .details-heading {
+    .contract-type {
         padding: 45px 16px 0;
         margin-bottom: 0;
         background-repeat: no-repeat;
@@ -150,30 +154,6 @@
         text-align: center;
         align-self: flex-start;
         white-space: nowrap;
-        &.CALLE {
-            background-image: url('https://www.binary.com/images/pages/trade/rise_1.png');
-        }
-        &.PUT {
-            background-image: url('https://www.binary.com/images/pages/trade/fall_1.png');
-        }
-        &.ONETOUCH {
-            background-image: url('https://www.binary.com/images/pages/trade/touch_1.png');
-        }
-        &.NOTOUCH {
-            background-image: url('https://www.binary.com/images/pages/trade/no-touch_1.png');
-        }
-        &.EXPIRYRANGEE {
-            background-image: url('https://www.binary.com/images/pages/trade/ends-between_1.png');
-        }
-        &.EXPIRYMISS {
-            background-image: url('https://www.binary.com/images/pages/trade/ends-outside_1.png');
-        }
-        &.RANGE {
-            background-image: url('https://www.binary.com/images/pages/trade/stay-in-between_1.png');
-        }
-        &.UPORDOWN {
-            background-image: url('https://www.binary.com/images/pages/trade/stay-out_1.png');
-        }
     }
     .select {
         margin-right: 10px;
@@ -228,9 +208,6 @@
                 padding-right: 0;
                 margin-left: 5px;
                 line-height: 16px;
-            }
-            .hint, span, label {
-                font-size: 10px;
             }
             select#currency {
                 margin: 6px 0;
@@ -319,6 +296,18 @@
     }
 }
 
-#trading_bottom_content #tab_portfolio-content {
-    overflow-x: auto;
+.mb-trading-wrapper #trading_bottom_content {
+    #tab_portfolio-content {
+        overflow-x: auto;
+    }
+    #tab_explanation-content #winning_higherlower {
+        display: flex;
+        flex-direction: column;
+        p {
+            margin-top: 0;
+            &:first-child {
+                order: 2;
+            }
+        }
+    }
 }

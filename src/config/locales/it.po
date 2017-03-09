@@ -32,42 +32,42 @@ msgstr "%1 %2 sono stati accreditati sul tuo Account di moneta virtuale %3"
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
-msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
+msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+msgid "%1 %2 payout if %3 ends on or between low and high values of Barrier at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+msgid "%1 %2 payout if %3 ends outside low and high values of Barrier at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+msgid "%1 %2 payout if %3 goes outside of low and high values of Barrier through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+msgid "%1 %2 payout if %3 is strictly higher than or equal to Barrier at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+msgid "%1 %2 payout if %3 is strictly lower than Barrier at close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+msgid "%1 %2 payout if %3 stays between low and high values of Barrier through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
-msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
+msgid "%1 %2 payout if %3 touches Barrier through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 
 msgid "%1 (Toll Free)"
@@ -368,6 +368,11 @@ msgstr "Premio come 'Migliore società di probabilità fisse del 2012' da parte 
 
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "Premio come 'Operatore di scommesse finanziarie dell'anno' da parte di eGaming Review"
+
+#, fuzzy
+#| msgid "Duration"
+msgid "(Duration)"
+msgstr "Durata"
 
 msgid "(One) Touch trades"
 msgstr "Trade (One) Touch"
@@ -2992,6 +2997,9 @@ msgstr "Esperienza di lavoro in un ambiente internazionale"
 msgid "Expertise in cloud solutions"
 msgstr "Competenza in soluzioni cloud"
 
+msgid "Expiry Time"
+msgstr "Orario di scadenza"
+
 msgid "Expiry price"
 msgstr "Prezzo di scadenza"
 
@@ -5473,7 +5481,9 @@ msgstr "Convertitori di valuta online"
 msgid "Only %1 are allowed."
 msgstr "Sono consentiti solo %1."
 
-msgid "Only 2 decimal points are allowed."
+#, fuzzy
+#| msgid "Only 2 decimal points are allowed."
+msgid "Only %1 decimal points are allowed."
 msgstr "Sono consentite solo 2 cifre decimali."
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
@@ -5856,6 +5866,11 @@ msgid "Please %1 to view this page"
 msgstr "%1 per visualizzare questa pagina"
 
 #, fuzzy
+#| msgid "Please deposit before transfer to client."
+msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
+msgstr "Deposita prima di trasferire al cliente."
+
+#, fuzzy
 #| msgid "Please %1 to view this page"
 msgid "Please <a href=\"%1\">log in</a> to view this page."
 msgstr "%1 per visualizzare questa pagina"
@@ -5886,9 +5901,6 @@ msgstr "Per completare il trasferimento, conferma i dettagli della transazione:"
 msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgstr "Per qualsiasi richiesta, contattaci su <a href='mailto:%1'>%1</a>. Saremo lieti di aiutarti. Condividi liberamente con noi le tue idee e i tuoi suggerimenti."
 
-msgid "Please deposit before transfer to client."
-msgstr "Deposita prima di trasferire al cliente."
-
 msgid "Please enter a number between %1."
 msgstr "Inserisci un numero compreso tra %1."
 
@@ -5900,9 +5912,6 @@ msgstr "Inserisci un numero maggiore di 0"
 
 msgid "Please enter a number."
 msgstr "Inserisci un numero."
-
-msgid "Please enter a valid amount."
-msgstr "Inserisci un importo valido."
 
 msgid "Please enter an integer value"
 msgstr "Inserisci un numero intero"
@@ -8050,9 +8059,6 @@ msgstr "Trading Experience"
 msgid "Trading Limits"
 msgstr "Limiti del trading"
 
-msgid "Trading Period"
-msgstr "Periodo di trading"
-
 msgid "Trading Platforms"
 msgstr "Piattaforme di trading"
 
@@ -9366,6 +9372,11 @@ msgstr "Il limite di durata della tua sessione terminerà tra %1 secondi."
 #| msgid "Your changes have been updated successfully."
 msgid "Your settings have been updated successfully."
 msgstr "Le tue modifiche sono state aggiornate con successo."
+
+#, fuzzy
+#| msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
+msgid "Your token has expired. Please click %1here%2 to restart the verification process."
+msgstr "Il tuo token è scaduto. Clicca <a class=\"pjaxload\" href=\"%1\">qui</a> per riavviare la procedura di verifica."
 
 #, fuzzy
 #| msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
@@ -10759,6 +10770,12 @@ msgstr "Limiti dell'account"
 
 msgid "Account Details"
 msgstr "Dettagli dell'account"
+
+#~ msgid "Please enter a valid amount."
+#~ msgstr "Inserisci un importo valido."
+
+#~ msgid "Trading Period"
+#~ msgstr "Periodo di trading"
 
 #~ msgid "%1 has updated its  <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
 #~ msgstr "%1 ha aggiornato i suoi <a class=\"pjaxload\" href=\"%2\">Termini e condizioni</a>. Cliccando su OK, confermi di aver letto e accettato i <a class=\"pjaxload\" href=\"%2\">Termini e condizioni</a> aggiornati."
@@ -15548,9 +15565,6 @@ msgstr "Dettagli dell'account"
 
 #~ msgid "Expiry Spot"
 #~ msgstr "Punto di scadenza"
-
-#~ msgid "Expiry Time"
-#~ msgstr "Orario di scadenza"
 
 #~ msgid "Indicative Price"
 #~ msgstr "Prezzo indicativo"

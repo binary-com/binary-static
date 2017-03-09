@@ -5,8 +5,7 @@
         [% l('Please complete the tax information before proceeding.') %]
     </p>
 
-    <form class="form form gr-padding-10 hidden" id="frmPersonalDetails">
-
+    <form class="form gr-padding-10 hidden" id="frmPersonalDetails">
         <fieldset>
             <legend>[% l('Details') %]</legend>
 
@@ -461,13 +460,10 @@
             <div class="gr-row gr-padding-10">
                 <div class="gr-4"></div>
                 <div class="gr-8">
-                    <span class="button">
-                        <button class="button">[% l('Update') %]</button>
-                    </span>
+                    <button class="button" type="submit">[% l('Update') %]</button>
                 </div>
             </div>
         </fieldset>
-
     </form>
 
     <p class="required hidden RealAcc JpAcc rowCustomerSupport"><em class="required_asterisk">**</em> [% l('To change your name, date of birth, country of residence, or email, please contact <a href="[_1]">Customer Support</a>.', request.url_for('contact')) %]</p>

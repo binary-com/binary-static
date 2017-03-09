@@ -88,6 +88,11 @@ body.JA {
             width: 100% !important;
         }
     }
+    #mb_trading .payout-input {
+        .hint, span, label {
+            font-size: 10px;
+        }
+    }
 }
 /*Vietnamese Language */
 body.VI {

@@ -504,7 +504,7 @@
                 </fieldset>
 
                 <fieldset class="center-text" id="formlayout">
-                    <button class="button" id="btn_submit" type="submit">[% l('Open Account') %]</button>
+                    <button class="button" type="submit">[% l('Open Account') %]</button>
                     <p id="submit-message"></p>
                 </fieldset>
             </form>

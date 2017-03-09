@@ -49,7 +49,11 @@ const PaymentAgentWithdraw = (() => {
                 { request_field: 'dry_run',               value: 1 },
             ]);
 
-            FormManager.handleSubmit(form_id, {}, withdrawResponse, setAgentName);
+            FormManager.handleSubmit({
+                form_selector       : form_id,
+                fnc_response_handler: withdrawResponse,
+                fnc_additional_check: setAgentName,
+            });
         } else {
             showPageError(localize('The Payment Agent facility is currently not available in your country.'));
         }
@@ -81,7 +85,10 @@ const PaymentAgentWithdraw = (() => {
                     { request_field: 'paymentagent_withdraw', value: 1 },
                 ]);
 
-                FormManager.handleSubmit(view_ids.confirm, {}, withdrawResponse);
+                FormManager.handleSubmit({
+                    form_selector       : view_ids.confirm,
+                    fnc_response_handler: withdrawResponse,
+                });
 
                 $(view_ids.confirm + ' #btnBack').click(() => {
                     setActiveView(view_ids.form);

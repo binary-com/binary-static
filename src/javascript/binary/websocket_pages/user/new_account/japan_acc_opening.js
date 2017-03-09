@@ -32,12 +32,16 @@ const JapanAccOpening = (function() {
                 { selector: '#daily_loss_limit',   validations: ['req', 'number'] },
                 { selector: '#hedge_asset_amount', validations: ['req', 'number'] },
 
-                { request_field: 'residence', value: Client.get('residence') },
+                { request_field: 'residence',         value: Client.get('residence') },
+                { request_field: 'new_account_japan', value: 1 },
             ].concat(AccountOpening.selectCheckboxValidation(formID)));
 
             detect_hedging($('#trading_purpose'), $('.hedging-assets'));
 
-            FormManager.handleSubmit(formID, { new_account_japan: 1 }, handleResponse);
+            FormManager.handleSubmit({
+                form_selector       : formID,
+                fnc_response_handler: handleResponse,
+            });
         });
     };
 

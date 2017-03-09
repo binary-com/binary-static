@@ -55,9 +55,14 @@ const ResetPassword = (function () {
             { selector: '#new_password',      validations: ['req', 'password'] },
             { selector: '#repeat_password',   validations: ['req', ['compare', { to: '#new_password' }]], exclude_request: 1 },
             { selector: '#date_of_birth',     validations: ['req'] },
+
+            { request_field: 'reset_password', value: 1 },
         ]);
 
-        FormManager.handleSubmit(form_id, { reset_password: 1 }, responseHandler);
+        FormManager.handleSubmit({
+            form_selector       : form_id,
+            fnc_response_handler: responseHandler,
+        });
     };
 
     return {

@@ -21,7 +21,11 @@ const RealAccOpening = (function() {
     };
 
     const bindValidation = () => {
-        FormManager.handleSubmit(formID, { new_account_real: 1 }, handleResponse);
+        FormManager.handleSubmit({
+            form_selector       : formID,
+            obj_request         : { new_account_real: 1 },
+            fnc_response_handler: handleResponse,
+        });
     };
 
     const handleResponse = response => (AccountOpening.handleNewAccount(response, response.msg_type));

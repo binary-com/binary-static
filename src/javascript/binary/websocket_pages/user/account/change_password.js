@@ -11,8 +11,13 @@ const ChangePassword = (function() {
             { selector: '#old_password',    validations: ['req', ['length', { min: 6, max: 25 }]] },
             { selector: '#new_password',    validations: ['req', 'password', ['not_equal', { to: '#old_password', name1: 'Current password', name2: 'New password' }]] },
             { selector: '#repeat_password', validations: ['req', ['compare', { to: '#new_password' }]], exclude_request: 1 },
+
+            { request_field: 'change_password', value: 1 },
         ]);
-        FormManager.handleSubmit(form_id, { change_password: 1 }, handler);
+        FormManager.handleSubmit({
+            form_selector       : form_id,
+            fnc_response_handler: handler,
+        });
     };
 
     const handler = function(response) {

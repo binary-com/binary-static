@@ -20,7 +20,10 @@ const VirtualAccOpening = (function() {
             bindValidation();
         }
 
-        FormManager.handleSubmit(form, { new_account_virtual: 1 }, handleNewAccount);
+        FormManager.handleSubmit({
+            form_selector       : form,
+            fnc_response_handler: handleNewAccount,
+        });
     };
 
     const bindValidation = () => {
@@ -34,7 +37,8 @@ const VirtualAccOpening = (function() {
 
             { selector: '#residence' },
             { request_field: 'email_consent' },
-            { request_field: 'utm_source', value: TrafficSource.getSource(utm_data) },
+            { request_field: 'utm_source',          value: TrafficSource.getSource(utm_data) },
+            { request_field: 'new_account_virtual', value: 1 },
         ];
 
         if (utm_data.utm_medium)   req.push({ request_field: 'utm_medium', value: utm_data.utm_medium });

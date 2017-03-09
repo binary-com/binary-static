@@ -80,9 +80,7 @@
 
                     <div class="gr-padding-10">
                         <div class="gr-8 gr-centered center-text">
-                            <span class="button">
-                                <button class="button">[% l('Submit') %]</button>
-                            </span>
+                            <button class="button" type="submit">[% l('Submit') %]</button>
                         </div>
                     </div>
 

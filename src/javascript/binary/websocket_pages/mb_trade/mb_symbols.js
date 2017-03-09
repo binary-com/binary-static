@@ -1,6 +1,7 @@
 const ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbols;
 const BinaryPjax    = require('../../base/binary_pjax');
 const Client        = require('../../base/client').Client;
+const getLanguage   = require('../../base/language').getLanguage;
 const State         = require('../../base/storage').State;
 
 /*
@@ -40,21 +41,25 @@ const MBSymbols = (function () {
     };
 
     const getSymbols = function (update) {
-        const landing_company_obj = State.get(['response', 'landing_company', 'landing_company']);
-        const allowed_markets     = Client.current_landing_company().legal_allowed_markets;
-        if (Client.is_logged_in() && allowed_markets && allowed_markets.indexOf('forex') === -1) {
-            BinaryPjax.load('trading');
-            return;
-        }
-        const req = {
-            active_symbols: 'brief',
-            product_type  : 'multi_barrier',
-        };
-        if (landing_company_obj) {
-            req.landing_company = landing_company_obj.financial_company ? landing_company_obj.financial_company.shortcode : 'japan';
-        }
-        BinarySocket.send(req);
-        need_page_update = update;
+        BinarySocket.wait('website_status').then((website_status) => {
+            const landing_company_obj = State.get(['response', 'landing_company', 'landing_company']);
+            const allowed_markets     = Client.current_landing_company().legal_allowed_markets;
+            if (Client.is_logged_in() && allowed_markets && allowed_markets.indexOf('forex') === -1) {
+                BinaryPjax.load('trading');
+                return;
+            }
+            const req = {
+                active_symbols: 'brief',
+                product_type  : 'multi_barrier',
+            };
+            if (landing_company_obj) {
+                req.landing_company = landing_company_obj.financial_company ? landing_company_obj.financial_company.shortcode : 'japan';
+            } else if (website_status.website_status.clients_country === 'jp' || getLanguage() === 'JA') {
+                req.landing_company = 'japan';
+            }
+            BinarySocket.send(req);
+            need_page_update = update;
+        });
     };
 
     return {
