@@ -1,3 +1,4 @@
+const Client      = require('../../base/client').Client;
 const localize    = require('../../base/localize').localize;
 const FormManager = require('../../common_functions/form_manager');
 
@@ -32,6 +33,12 @@ const AccountTransfer = (() => {
                 }));
             }
         });
+
+        // show client's login id on top
+        const $client_option = $transfer.find('option[data-from="' + Client.get('loginid') + '"]');
+        if ($client_option.length !== 0) {
+            $client_option.insertBefore($transfer.find('option:eq(0)')).attr('selected', 'selected');
+        }
 
         if (from_loginid) {
             showForm($form);
