@@ -194,25 +194,22 @@ const SettingsDetailsWS = (function() {
 
     const populateResidence = function(response) {
         const residence_list = response.residence_list;
-        const obj_residence_el = {
-            place_of_birth: $('#place_of_birth'),
-            tax_residence : $('#tax_residence'),
-        };
-        if (obj_residence_el.place_of_birth.contents().length !== 0) return;
+        const $place_of_birth = $('#place_of_birth');
+        const $tax_residence  = $('#tax_residence');
         if (residence_list.length > 0) {
             const $options = $('<div/>');
             residence_list.forEach((res) => {
                 $options.append(makeOption(res.text, res.value));
             });
-            Object.keys(obj_residence_el).forEach((el) => {
-                obj_residence_el[el].html($options.html());
+            $place_of_birth.html($options.html());
+            $tax_residence.html($options.html()).promise.done(() => {
+                setTimeout(() => {
+                    $tax_residence.select2()
+                        .val(tax_residence_values).trigger('change')
+                        .removeClass('invisible');
+                }, 500);
             });
-            setTimeout(() => {
-                $('#tax_residence').select2()
-                    .val(tax_residence_values).trigger('change')
-                    .removeClass('invisible');
-            }, 1500);
-            obj_residence_el.place_of_birth.val(place_of_birth_value || residence);
+            $place_of_birth.val(place_of_birth_value || residence);
         }
     };
 

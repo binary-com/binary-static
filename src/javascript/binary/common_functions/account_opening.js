@@ -47,11 +47,9 @@ const getResidence = () => {
 };
 
 const handleResidenceList = (residence_list) => {
-    const obj_residence_el = {
-        residence     : $('#residence'),
-        place_of_birth: $('#place_of_birth'),
-        tax_residence : $('#tax_residence'),
-    };
+    const $residence      = $('#residence');
+    const $place_of_birth = $('#place_of_birth');
+    const $tax_residence  = $('#tax_residence');
     const phoneElement   = document.getElementById('phone');
     const residenceValue = Client.get('residence');
     if (residence_list.length > 0) {
@@ -68,20 +66,19 @@ const handleResidenceList = (residence_list) => {
             $options.append(makeOption(res.text, res.value));
         });
 
-        Object.keys(obj_residence_el).forEach((el) => {
-            obj_residence_el[el].html(el === 'residence' ? $options_with_disabled.html() : $options.html());
-        });
-
-        if (obj_residence_el.tax_residence) {
+        $residence.html($options_with_disabled.html());
+        $place_of_birth.html($options.html());
+        $tax_residence.html($options.html()).promise().done(() => {
             setTimeout(() => {
-                obj_residence_el.tax_residence.select2()
+                $tax_residence.select2()
                     .val(residenceValue).trigger('change')
                     .removeClass('invisible');
-            }, 1500);
-        }
+            }, 500);
+        });
+
         if (residenceValue) {
-            obj_residence_el.residence.val(residenceValue);
-            obj_residence_el.place_of_birth.val(residenceValue || '');
+            $residence.val(residenceValue);
+            $place_of_birth.val(residenceValue || '');
         } else {
             BinarySocket.wait('website_status').then(data => handleWebsiteStatus(data.website_status));
         }
