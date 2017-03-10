@@ -520,6 +520,9 @@ sub _texts {
         push @texts, localize('Create Account');
         push @texts, localize('Change Password');
 
+        # strings for account_transfer
+        push @texts, localize('from [_1] to [_2]');
+
         # strings for header notification
         push @texts, localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.');
         push @texts, localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.');

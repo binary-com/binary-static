@@ -3,7 +3,7 @@ const Client               = require('../../../../base/client').Client;
 const Header               = require('../../../../base/header').Header;
 const State                = require('../../../../base/storage').State;
 const detect_hedging       = require('../../../../common_functions/common_functions').detect_hedging;
-const appendTextValueChild = require('../../../../common_functions/common_functions').appendTextValueChild;
+const makeOption           = require('../../../../common_functions/common_functions').makeOption;
 const FormManager          = require('../../../../common_functions/form_manager');
 const moment               = require('moment');
 require('select2');
@@ -199,47 +199,35 @@ const SettingsDetailsWS = (function() {
 
     const populateResidence = (response) => {
         const residence_list = response.residence_list;
-        const obj_residence_el = {
-            place_of_birth: document.getElementById('place_of_birth'),
-            tax_residence : document.getElementById('tax_residence'),
-        };
-        if (!residence) {
-            $('#lbl_country').parent().replaceWith($('<select/>', { id: 'residence' }));
-            obj_residence_el.residence = document.getElementById('residence');
-            appendTextValueChild(obj_residence_el.residence, localize('Please select a value'), '');
-            initFormManager();
-        }
-        if ((obj_residence_el.place_of_birth && obj_residence_el.place_of_birth.childElementCount !== 0) ||
-            (obj_residence_el.residence && obj_residence_el.residence.childElementCount !== 1)) return;
-        let text,
-            value;
+        const $place_of_birth = $('#place_of_birth');
+        const $tax_residence  = $('#tax_residence');
         if (residence_list.length > 0) {
-            for (let j = 0; j < residence_list.length; j++) {
-                const current_residence = residence_list[j];
-                text = current_residence.text;
-                value = current_residence.value;
-                appendIfExist(obj_residence_el, text, value, current_residence.disabled ? 'disabled' : undefined);
-            }
-            $('#tax_residence').select2()
-                .val(tax_residence_values).trigger('change')
-                .removeClass(hidden_class);
-            if (obj_residence_el.place_of_birth) {
-                obj_residence_el.place_of_birth.value = place_of_birth_value || residence;
+            const $options = $('<div/>');
+            residence_list.forEach((res) => {
+                $options.append(makeOption(res.text, res.value));
+            });
+
+            if (residence) {
+                $place_of_birth.html($options.html());
+                $tax_residence.html($options.html()).promise().done(() => {
+                    setTimeout(() => {
+                        $tax_residence.select2()
+                            .val(tax_residence_values).trigger('change')
+                            .removeClass('invisible');
+                    }, 500);
+                });
+                $place_of_birth.val(place_of_birth_value || residence);
+            } else {
+                $('#lbl_country').parent().replaceWith($('<select/>', { id: 'residence' }));
+                const $residence = $('#residence');
+                $options.prepend($('<option/>', { text: localize('Please select a value'), value: '' }));
+                $residence.html($options.html());
+                initFormManager();
             }
         }
     };
 
-    const appendIfExist = (object_el, text, value, disabled) => {
-        let object_el_key;
-        Object.keys(object_el).forEach(function(key) {
-            object_el_key = object_el[key];
-            if (object_el_key) {
-                appendTextValueChild(object_el_key, text, value, disabled && key === 'residence' ? disabled : undefined);
-            }
-        });
-    };
-
-    const populateStates = (response) => {
+    const populateStates = function(response) {
         const address_state = '#address_state';
         let $field = $(address_state);
         const states = response.states_list;
