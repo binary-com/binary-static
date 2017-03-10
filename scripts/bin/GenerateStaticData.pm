@@ -235,7 +235,8 @@ sub _texts {
         push @texts, localize('Invalid amount, minimum is');
         push @texts, localize('Invalid amount, maximum is');
         push @texts, localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.');
-        push @texts, localize('Only 2 decimal points are allowed.');
+        push @texts, localize('Only [_1] decimal points are allowed.');
+        push @texts, localize('Your token has expired. Please click [_1]here[_2] to restart the verification process.');
         #strings for api_tokenws page
         push @texts, localize('New token created.');
         push @texts, localize('The maximum number of tokens ([_1]) has been reached.');
@@ -324,14 +325,14 @@ sub _texts {
         push @texts, localize('Processing your request...');
         push @texts, localize('Please check the above form for pending errors.');
         #strings for multi_barriers_trading page
-        push @texts, localize('[_1] [_2] payout if [_3] is strictly higher or equal than Exercise price at close  on [_4].');
-        push @texts, localize('[_1] [_2] payout if [_3] is strictly lower than Exercise price at close on [_4].');
-        push @texts, localize('[_1] [_2] payout if [_3] does not touch Exercise price through close on [_4].');
-        push @texts, localize('[_1] [_2] payout if [_3] touches Exercise price through close on [_4].');
-        push @texts, localize('[_1] [_2] payout if [_3] ends on or between low and high values of Exercise price at close on [_4].');
-        push @texts, localize('[_1] [_2] payout if [_3] ends outside low and high values of Exercise price at close on [_4].');
-        push @texts, localize('[_1] [_2] payout if [_3] stays between low and high values of Exercise price through close on [_4].');
-        push @texts, localize('[_1] [_2] payout if [_3] goes outside of low and high values of Exercise price through close on [_4].');
+        push @texts, localize('[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].');
+        push @texts, localize('[_1] [_2] payout if [_3] is strictly lower than Barrier at close on [_4].');
+        push @texts, localize('[_1] [_2] payout if [_3] does not touch Barrier through close on [_4].');
+        push @texts, localize('[_1] [_2] payout if [_3] touches Barrier through close on [_4].');
+        push @texts, localize('[_1] [_2] payout if [_3] ends on or between low and high values of Barrier at close on [_4].');
+        push @texts, localize('[_1] [_2] payout if [_3] ends outside low and high values of Barrier at close on [_4].');
+        push @texts, localize('[_1] [_2] payout if [_3] stays between low and high values of Barrier through close on [_4].');
+        push @texts, localize('[_1] [_2] payout if [_3] goes outside of low and high values of Barrier through close on [_4].');
         push @texts, localize('hour');
         push @texts, localize('mins');
         push @texts, localize('minute');
@@ -489,7 +490,7 @@ sub _texts {
         # strings from back-end
         push @texts, localize('There was a problem accessing the server.');
         push @texts, localize('There was a problem accessing the server during purchase.');
-        
+
         # strings for form_validation
         push @texts, localize('Should be a valid number');
         push @texts, localize('Should be more than [_1]');
@@ -522,6 +523,9 @@ sub _texts {
         push @texts, localize('Real Volatility');
         push @texts, localize('Create Account');
         push @texts, localize('Change Password');
+
+        # strings for account_transfer
+        push @texts, localize('from [_1] to [_2]');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";

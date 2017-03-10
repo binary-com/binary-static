@@ -5,15 +5,15 @@
                 <div class="gr-padding-30">
                     <h1 class="dark center-text gr-padding-10">[% l("The <strong>Premier Platform</strong> for Binary Options Trading") %]</h1>
                     <p class="center-text gr-padding-10">[% l("Trade <strong>24/7</strong>, even on weekends.") %]</p>
-                    <form id="verify-email-form">
+                    <form id="frm_verify_email">
                         <div class="gr-row gr-row-align-center">
-                            <div class=" signup-box gr-8 gr-10-p gr-12-m gr-no-gutter secondary-bg-color">
+                            <div class="signup-box gr-8 gr-10-p gr-12-m gr-no-gutter secondary-bg-color">
                                 <div class="gr-row gr-padding-10">
                                     <div class="gr-7 gr-10-m gr-centered">
                                         <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]" />
                                     </div>
                                     <div class="gr-5 gr-8-m gr-centered">
-                                        <button class="primary-bg-color" id="btn-verify-email" type="submit">[% l('Create Free Account') %]</button>
+                                        <button class="primary-bg-color" id="btn_verify_email" type="submit">[% l('Create Free Account') %]</button>
                                     </div>
                                     <span class="gr-12 gr-padding-10 error-msg hint color-white center-text" id="signup_error" style="display:none"></span>
                                 </div>

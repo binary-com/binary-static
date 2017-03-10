@@ -61,9 +61,7 @@ sub all_pages {
         ['metatrader/download',                'metatrader/download',                'default',    'Start Trading with MetaTrader 5'],
         ['metatrader/margin-policy',           'metatrader/margin_policy',           'full_width', 'MetaTrader Margin Policy'],
 
-        ## ws
-        ['account/account_transferws',   'cashier/account_transferws',                'default', 'Account Transfer'],
-
+        ['cashier/account_transfer',     'cashier/account_transfer',                  'default', 'Account Transfer'],
         ['cashier/deposit-jp',           'japan/cashier/deposit',                     'default', 'Deposit',         'NOT-ja,en'],
         ['cashier/epg_forwardws',        'cashier/deposit_withdraw',                  'default', 'Cashier'],
         ['cashier/forwardws',            'cashier/deposit_withdraw',                  'default', 'Cashier',         'ja'],
@@ -72,8 +70,8 @@ sub all_pages {
         ['cashier/top_up_virtualws',     'user/top_up_virtualws',                     'default', 'Give Me More Money!'],
         ['cashier/withdraw-jp',          'japan/cashier/withdraw',                    'default', 'Withdraw',        'NOT-ja,en'],
 
-        ['paymentagent/transferws',      'cashier/paymentagent_transferws',           'default', 'Payment Agent Transfer'],
-        ['paymentagent/withdrawws',      'cashier/paymentagent_withdrawws',           'default', 'Payment Agent Withdrawal'],
+        ['paymentagent/transferws',      'cashier/paymentagent_transfer',             'default', 'Payment Agent Transfer'],
+        ['paymentagent/withdrawws',      'cashier/paymentagent_withdraw',             'default', 'Payment Agent Withdrawal'],
 
         ['multi_barriers_trading', 'bet/mb_trading',  'default', 'Trusted by traders since 2000'],
         ['trading',                'bet/static',      'default', 'Trusted by traders since 2000'],

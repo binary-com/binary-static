@@ -22,8 +22,8 @@ const JapanAccOpening = (function() {
                 { selector: '#first_name',         validations: ['req', 'letter_symbol'] },
                 { selector: '#last_name',          validations: ['req', 'letter_symbol'] },
                 { selector: '#date_of_birth',      validations: ['req'] },
-                { selector: '#address_line_1',     validations: ['req', 'general'] },
-                { selector: '#address_line_2',     validations: ['general'] },
+                { selector: '#address_line_1',     validations: ['req', 'address'] },
+                { selector: '#address_line_2',     validations: ['address'] },
                 { selector: '#address_city',       validations: ['req', 'letter_symbol'] },
                 { selector: '#address_state',      validations: ['req'] },
                 { selector: '#address_postcode',   validations: ['req', ['regular', { regex: /^\d{3}-\d{4}$/, message: 'Please follow the pattern 3 numbers, a dash, followed by 4 numbers.' }]] },
@@ -32,12 +32,16 @@ const JapanAccOpening = (function() {
                 { selector: '#daily_loss_limit',   validations: ['req', 'number'] },
                 { selector: '#hedge_asset_amount', validations: ['req', 'number'] },
 
-                { request_field: 'residence', value: Client.get('residence') },
+                { request_field: 'residence',         value: Client.get('residence') },
+                { request_field: 'new_account_japan', value: 1 },
             ].concat(AccountOpening.selectCheckboxValidation(formID)));
 
             detect_hedging($('#trading_purpose'), $('.hedging-assets'));
 
-            FormManager.handleSubmit(formID, { new_account_japan: 1 }, handleResponse);
+            FormManager.handleSubmit({
+                form_selector       : formID,
+                fnc_response_handler: handleResponse,
+            });
         });
     };
 

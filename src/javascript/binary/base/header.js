@@ -102,7 +102,7 @@ const Header = (function() {
     };
 
     const upgrade_message_visibility = function() {
-        BinarySocket.wait('authorize', 'landing_company').then(() => {
+        BinarySocket.wait('authorize', 'landing_company', 'get_settings').then(() => {
             const landing_company = State.get(['response', 'landing_company', 'landing_company']);
             const loginid_array = Client.get('loginid_array');
 
@@ -131,7 +131,7 @@ const Header = (function() {
                     .find('> span').removeClass(hiddenClass).end()
                     .find('a')
                     .addClass(hiddenClass);
-                const jp_account_status = Client.get('jp_status');
+                const jp_account_status = (State.get(['response', 'get_settings', 'get_settings', 'jp_account_status']) || {}).status;
                 if (jp_account_status && show_upgrade_msg) {
                     if (/jp_knowledge_test_(pending|fail)/.test(jp_account_status)) { // do not show upgrade for user that filled up form
                         show_upgrade('/new_account/knowledge_testws', '{JAPAN ONLY}Take knowledge test');

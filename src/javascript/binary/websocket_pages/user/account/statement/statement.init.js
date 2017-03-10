@@ -1,18 +1,18 @@
+const moment               = require('moment');
+const StatementUI          = require('./statement.ui');
+const ViewPopupWS          = require('../../view_popup/view_popupws');
+const getLanguage          = require('../../../../base/language').getLanguage;
+const localize             = require('../../../../base/localize').localize;
 const showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
-const StatementUI          = require('./statement.ui').StatementUI;
 const addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;
 const buildOauthApps       = require('../../../../common_functions/get_app_details').buildOauthApps;
 const Content              = require('../../../../common_functions/content').Content;
-const japanese_client      = require('../../../../common_functions/country_base').japanese_client;
-const moment               = require('moment');
-const DatePicker           = require('../../../../components/date_picker').DatePicker;
-const toISOFormat          = require('../../../../common_functions/string_util').toISOFormat;
 const dateValueChanged     = require('../../../../common_functions/common_functions').dateValueChanged;
-const ViewPopupWS          = require('../../view_popup/view_popupws');
-const localize    = require('../../../../base/localize').localize;
-const getLanguage = require('../../../../base/language').getLanguage;
+const japanese_client      = require('../../../../common_functions/country_base').japanese_client;
+const toISOFormat          = require('../../../../common_functions/string_util').toISOFormat;
+const DatePicker           = require('../../../../components/date_picker').DatePicker;
 
-const StatementWS = (function() {
+const StatementInit = (() => {
     'use strict';
 
     // Batch refer to number of data get from ws service per request
@@ -20,49 +20,47 @@ const StatementWS = (function() {
     // receive means receive from ws service
     // consume means consume by UI and displayed to page
 
-    let batchSize,
-        chunkSize,
-        noMoreData,
+    let batch_size,
+        chunk_size,
+        no_more_data,
         pending,
-        currentBatch,
-        transactionsReceived,
-        transactionsConsumed;
+        current_batch,
+        transactions_received,
+        transactions_consumed;
 
-    const tableExist = function() {
-        return document.getElementById('statement-table');
-    };
+    const tableExist = () => (document.getElementById('statement-table'));
 
-    const finishedConsumed = function() {
-        return transactionsConsumed === transactionsReceived;
-    };
+    const finishedConsumed = () => (transactions_consumed === transactions_received);
 
-    const getStatement = function(opts) {
+    const getStatement = (opts) => {
         const req = { statement: 1, description: 1 };
-        if (opts) {
-            $.extend(true, req, opts);
-        }
-        const jumpToVal = $('#jump-to').attr('data-value');
-        if (jumpToVal && jumpToVal !== '') {
-            req.date_to = moment.utc(jumpToVal).unix() + ((japanese_client() ? 15 : 24) * (60 * 60));
+
+        if (opts) $.extend(true, req, opts);
+
+        const jump_to_val = $('#jump-to').attr('data-value');
+        if (jump_to_val && jump_to_val !== '') {
+            req.date_to = moment.utc(jump_to_val).unix() + ((japanese_client() ? 15 : 24) * (60 * 60));
             req.date_from = 0;
         }
-        BinarySocket.send(req);
+        BinarySocket.send(req).then((response) => {
+            statementHandler(response);
+        });
     };
 
-    const getNextBatchStatement = function() {
-        getStatement({ offset: transactionsReceived, limit: batchSize });
+    const getNextBatchStatement = () => {
+        getStatement({ offset: transactions_received, limit: batch_size });
         pending = true;
     };
 
-    const getNextChunkStatement = function() {
-        const chunk = currentBatch.splice(0, chunkSize);
-        transactionsConsumed += chunk.length;
-        $('#rows_count').text(transactionsConsumed);
+    const getNextChunkStatement = () => {
+        const chunk = current_batch.splice(0, chunk_size);
+        transactions_consumed += chunk.length;
+        $('#rows_count').text(transactions_consumed);
         return chunk;
     };
 
-    const statementHandler = function(response) {
-        if (response.hasOwnProperty('error')) {
+    const statementHandler = (response) => {
+        if (response.error) {
             StatementUI.errorMessage(response.error.message);
             return;
         }
@@ -70,11 +68,11 @@ const StatementWS = (function() {
         pending = false;
 
         const statement = response.statement;
-        currentBatch = statement.transactions;
-        transactionsReceived += currentBatch.length;
+        current_batch = statement.transactions;
+        transactions_received += current_batch.length;
 
-        if (currentBatch.length < batchSize) {
-            noMoreData = true;
+        if (current_batch.length < batch_size) {
+            no_more_data = true;
         }
 
         if (!tableExist()) {
@@ -83,7 +81,7 @@ const StatementWS = (function() {
             StatementUI.updateStatementTable(getNextChunkStatement());
 
             // Show a message when the table is empty
-            if ((transactionsReceived === 0) && (currentBatch.length === 0)) {
+            if (transactions_received === 0 && current_batch.length === 0) {
                 $('#statement-table').find('tbody')
                     .append($('<tr/>', { class: 'flex-tr' })
                         .append($('<td/>', { colspan: 7 })
@@ -95,92 +93,71 @@ const StatementWS = (function() {
                     $('#download_csv').removeClass('invisible')
                                       .find('a')
                                       .unbind('click')
-                                      .click(function() { StatementUI.exportCSV(); });
+                                      .click(() => { StatementUI.exportCSV(); });
                 }
             }
         }
         showLocalTimeOnHover('td.date');
     };
 
-    const loadStatementChunkWhenScroll = function() {
-        $(document).scroll(function() {
-            const hidableHeight = function(percentage) {
-                const totalHidable = $(document).height() - $(window).height();
-                return Math.floor((totalHidable * percentage) / 100);
+    const loadStatementChunkWhenScroll = () => {
+        $(document).scroll(() => {
+            const hidableHeight = (percentage) => {
+                const total_hideable = $(document).height() - $(window).height();
+                return Math.floor((total_hideable * percentage) / 100);
             };
 
-            const pFromTop = $(document).scrollTop();
+            const p_from_top = $(document).scrollTop();
 
-            if (!tableExist()) {
-                return;
-            }
+            if (!tableExist() || p_from_top < hidableHeight(70)) return;
 
-            if (pFromTop < hidableHeight(70)) {
-                return;
-            }
-
-            if (finishedConsumed() && !noMoreData && !pending) {
+            if (finishedConsumed() && !no_more_data && !pending) {
                 getNextBatchStatement();
                 return;
             }
 
-            if (!finishedConsumed()) {
-                StatementUI.updateStatementTable(getNextChunkStatement());
-            }
+            if (!finishedConsumed()) StatementUI.updateStatementTable(getNextChunkStatement());
         });
     };
 
-    const onUnload = function() {
+    const onUnload = () => {
         pending = false;
-        noMoreData = false;
+        no_more_data = false;
 
-        currentBatch = [];
+        current_batch = [];
 
-        transactionsReceived = 0;
-        transactionsConsumed = 0;
+        transactions_received = 0;
+        transactions_consumed = 0;
 
         StatementUI.errorMessage(null);
 
         StatementUI.clearTableContent();
     };
 
-    const initSocket = function() {
-        BinarySocket.init({
-            onmessage: function(msg) {
-                const response = JSON.parse(msg.data);
-                if (response) {
-                    const type = response.msg_type;
-                    if (type === 'statement') {
-                        StatementWS.statementHandler(response);
-                    } else if (type === 'oauth_apps') {
-                        addTooltip(StatementUI.setOauthApps(buildOauthApps(response.oauth_apps)));
-                    }
-                }
-            },
-        });
-        BinarySocket.send({ oauth_apps: 1 });
-    };
-
-    const initPage = function() {
-        batchSize = 200;
-        chunkSize = batchSize / 2;
-        noMoreData = false;
+    const initPage = () => {
+        batch_size = 200;
+        chunk_size = batch_size / 2;
+        no_more_data = false;
         pending = false;            // serve as a lock to prevent ws request is sequential
-        currentBatch = [];
-        transactionsReceived = 0;
-        transactionsConsumed = 0;
-        initSocket();
+        current_batch = [];
+        transactions_received = 0;
+        transactions_consumed = 0;
+
+        BinarySocket.send({ oauth_apps: 1 }).then((response) => {
+            addTooltip(StatementUI.setOauthApps(buildOauthApps(response.oauth_apps)));
+            $('.barspinner').addClass('hidden');
+        });
         Content.populate();
         getNextBatchStatement();
         loadStatementChunkWhenScroll();
     };
 
-    const attachDatePicker = function() {
-        const jumpTo = '#jump-to',
-            datePickerInst = new DatePicker(jumpTo);
-        datePickerInst.hide();
-        datePickerInst.show({ maxDate: 0 });
-        $(jumpTo).val(localize('Today'))
+    const attachDatePicker = () => {
+        const jump_to = '#jump-to',
+            datepicker_inst = new DatePicker(jump_to);
+        datepicker_inst.hide();
+        datepicker_inst.show({ maxDate: 0 });
+        $(jump_to).val(localize('Today'))
                  .attr('data-value', toISOFormat(moment()))
                  .change(function() {
                      if (!dateValueChanged(this, 'date')) {
@@ -193,7 +170,7 @@ const StatementWS = (function() {
                  });
     };
 
-    const onLoad = function() {
+    const onLoad = () => {
         initPage();
         attachDatePicker();
         ViewPopupWS.viewButtonOnClick('#statement-ws-container');
@@ -207,4 +184,4 @@ const StatementWS = (function() {
     };
 })();
 
-module.exports = StatementWS;
+module.exports = StatementInit;

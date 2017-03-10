@@ -23,7 +23,7 @@ const ResetPassword = (function () {
                 errMsg = localize(response.error.message);
                 $form_error.find('a').addClass(hidden_class);
             } else { // special handling as backend return inconsistent format
-                errMsg = localize(resetErrorTemplate, [error_code === 'InputValidationFailed' ? localize('Token has expired.') : localize(response.error.message)]);
+                errMsg = localize(resetErrorTemplate, [error_code === 'InputValidationFailed' ? localize('There was some invalid character in an input field.') : localize(response.error.message)]);
             }
 
             $('#form_error_msg').text(errMsg);
@@ -55,9 +55,14 @@ const ResetPassword = (function () {
             { selector: '#new_password',      validations: ['req', 'password'] },
             { selector: '#repeat_password',   validations: ['req', ['compare', { to: '#new_password' }]], exclude_request: 1 },
             { selector: '#date_of_birth',     validations: ['req'] },
+
+            { request_field: 'reset_password', value: 1 },
         ]);
 
-        FormManager.handleSubmit(form_id, { reset_password: 1 }, responseHandler);
+        FormManager.handleSubmit({
+            form_selector       : form_id,
+            fnc_response_handler: responseHandler,
+        });
     };
 
     return {
