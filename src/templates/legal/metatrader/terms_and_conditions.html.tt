@@ -57,7 +57,7 @@
                 <li>[% l("Funding of Real Account") %]
                     <ol>
                         <li>[% l("Your Real Account shall be funded by transferring funds from your Binary Options Real Account, subject to the availability and sufficiency of funds in your Binary Options Real Account. No fund transfers shall be made to any other account in the name of any third party.") %]</li>
-                        <li>[% l("All fund transferred from your Binary Options Real Account to your Real Account must be made by you.") %]</li>
+                        <li>[% l("All fund transfers from your Binary Options Real Account to your Real Account must be made by you.") %]</li>
                         <li>[% l("You acknowledge and accept that your Real Account will be maintained in one currency, which is the same currency maintained in your Binary Options Real Account.") %]</li>
                         <li>[% l("There will be no charges for fund transfers from your Binary Options Real Account to your Real Account.") %]</li>
                     </ol>
@@ -122,7 +122,7 @@
             <ol>
                 <li>[% l("You acknowledge that it is your responsibility to understand the features, characteristics, terms and conditions of an Order and the implications of executing an Order before you place an Order with us.") %]</li>
                 <li>[% l("Subject to network latency, we endeavour to execute your Order within a reasonable time from the time you triggered the Order, at the Price nearest to your specified Price. We do not guarantee that a Transaction will be opened/closed following an Order being triggered by you at your specified Price.") %]</li>
-                <li>[% l("We endeavour to open or close the Transaction to which your Order relates at the price reasonably available to us, acting in accordance with our duty of best execution. Best execution means that we must take all sufficient steps to obtain, when executing orders, the best possible result for you taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the order.") %]</li>
+                <li>[% l("We endeavour to open or close the Transaction to which your Order relates at the price reasonably available to us, acting in accordance with our duty of best execution. Best execution means that we must take all sufficient steps to obtain, when executing orders, the best possible result for you, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the order.") %]</li>
                 <li>[% l("Our Prices are determined by reference to the price of the underlying instrument which is quoted on external exchanges or dealing facilities that we select at our discretion. Our IT infrastructure and price aggregator system facilitates the reception of quotes from shortlisted prime brokers who act as liquidity providers for us and the delivery of the quotes, derived with reference against relevant benchmark and markets, to you. You acknowledge that our Prices may differ from the bid and offer prices made available by external exchanges or dealing facilities and we are not liable for any losses that you incur arising from such differences. This clause does not apply to Volatility Indices.") %]</li>
             </ol>
         </li>
@@ -135,7 +135,7 @@
                 <li>[% l("You may not cancel or amend the level of your Stop and Limit Order prior to the closing of your Transaction once the level has been reached.") %]</li>
                 <li>[% l("You acknowledge that a Stop or Limit Order placed on your Open Position, when executed, would be capable of closing or partly closing your Transaction. You also acknowledge that it is your responsibility to cancel the Stop or Limit Order that you placed on your Open Positions if you do not want the Stop or Limit Order to remain valid. If you close your original Transaction and fail to cancel the Stop or Limit Order, we shall be entitled, at our absolute discretion, to treat the Stop or Limit Order as an instruction to enter into a new Transaction for you if and when our quote reaches or goes beyond the level of the Stop or Limit Order.") %]</li>
                 <li>[% l("You acknowledge that we reserve the right to establish a minimum and maximum transaction size which may be subject to alteration and that we will only execute Orders that fall within the range of the minimum and maximum transaction size.") %]</li>
-                <li>[% l("We may, at our absolute discretion, disregard your Order if an Event takes place resulting in no longer being reasonable for us to act on your Order after indicating an acceptance of your Order.") %]</li>
+                <li>[% l("We may, at our absolute discretion, disregard your Order if an Event takes place resulting in it no longer being reasonable for us to act on your Order after indicating an acceptance of your Order.") %]</li>
             </ol>
         </li>
     </ol>
@@ -165,7 +165,7 @@
         </li>
         <li>[% l("Margin Payment") %]
             <ol>
-                <li>[% l("You may make Margin Payments by transferring funds from your Binary Options Real Account to your Real Account. In the event that there are insufficient funds in your Binary Options Real Account to fund your Real Account, you may, make Margin Payments by funding your Binary Options Real Account and transferring the funds from your Binary Options Real Account to your Real Account.") %]</li>
+                <li>[% l("You may make Margin Payments by transferring funds from your Binary Options Real Account to your Real Account. In the event that there are insufficient funds in your Binary Options Real Account to fund your Real Account, you may make Margin Payments by funding your Binary Options Real Account and transferring the funds from your Binary Options Real Account to your Real Account.") %]</li>
                 <li>[% l("Margin Payments are due immediately and shall be received in full by us.") %]</li>
             </ol>
         </li>
@@ -294,7 +294,7 @@
     </ol>
     <h2>[% l("N. Force Majeure Events") %]</h2>
     <ol>
-        <li>[% l("A force majeure event, if and when determined, means, (i) the Company, by reason of force majeure or act of state, is prevented from or hindered or delayed in delivering or receiving, or is impossible to deliver or receive, any quotation of the bid and offer price of a market in one or more of the instruments which we ordinarily deal in Transactions; (ii) an excessive movement in the market of the instrument or our reasonable anticipation of the potential occurrence of market disruption.") %]</li>
+        <li>[% l("A force majeure event, if and when determined, means, (i) the Company, by reason of force majeure or act of state, is prevented from, or hindered or delayed, in delivering or receiving, or is impossible to deliver or receive, any quotation of the bid and offer price of a market in one or more of the instruments which we ordinarily deal in Transactions; (ii) an excessive movement in the market of the instrument or our reasonable anticipation of the potential occurrence of market disruption.") %]</li>
         <li>[% l("If we determine that a force majeure event exists, the Company shall promptly give notice thereof to the client. Subsequently, we may, at our absolute discretion, take one or more of the following steps:") %]
             <ol>
                 <li>[% l("Suspend the trading of the affected instrument;") %]</li>
