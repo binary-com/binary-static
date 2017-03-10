@@ -149,12 +149,12 @@ const SettingsDetailsWS = (function() {
             validations = [{ selector: '#residence', validations: ['req'] }];
         } else {
             validations = [
-                { selector: '#address_line_1',     validations: ['req', 'general'] },
-                { selector: '#address_line_2',     validations: ['general'] },
+                { selector: '#address_line_1',     validations: ['req', 'address'] },
+                { selector: '#address_line_2',     validations: ['address'] },
                 { selector: '#address_city',       validations: ['req', 'letter_symbol'] },
                 { selector: '#address_state',      validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'] },
                 { selector: '#address_postcode',   validations: ['postcode', ['length', { min: 0, max: 20 }]] },
-                { selector: '#phone',              validations: ['phone', ['length', { min: 6, max: 35 }]] },
+                { selector: '#phone',              validations: ['req', 'phone', ['length', { min: 6, max: 35 }]] },
 
                 { selector: '#place_of_birth', validations: Client.is_financial() ? ['req'] : '' },
                 { selector: '#tax_residence',  validations: Client.is_financial() ? ['req'] : '' },
