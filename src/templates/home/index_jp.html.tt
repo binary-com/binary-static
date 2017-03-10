@@ -3,7 +3,7 @@
     <div class="container gr-padding-30">
         <div class="gr-padding-30">
             <h1 class="center-text gr-padding-20">[% l("First-Class FX Binary Options Trading Platform") %]</h1>
-            <h3 class="center-text gr-padding-20 gr-child">[% l("Offering the widest available range of currencies, option types and trading periods on a fast intuitve, proprietary trading.") %]</h3>
+            <h3 class="center-text gr-padding-20 gr-child">[% l("Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform.") %]</h3>
 
             <form id="frm_verify_email">
                 <div class="gr-row gr-row-align-center">
@@ -29,13 +29,13 @@
         <div class="gr-6 gr-12-p gr-12-m">
             <div class="gr-7 gr-8-m gr-centered gr-padding-30 gr-child">
                 <div>
-                    <a href="http://www.ffaj.or.jp/en/memberlist/list.html#k_sakimono_senmon" target="_blank">
-                        <img class="responsive" src="[% request.url_for('images/pages/regulation/binarykk-logo.gif') %]">
+                    <a href="http://www.ffaj.or.jp/index.html" target="_blank">
+                        <img class="gr-8 gr-no-gutter" src="[% request.url_for('images/pages/regulation/binarykk-logo.gif') %]">
                     </a>
                 </div>
-                <div class="gr-padding-30 gr-child">
+                <div class="gr-padding-20 gr-child">
                     <h3>[% l('Licensed in Japan') %]</h3>
-                    <p>[% l('Binary KK is a Type 1 Financial instruments Business License and is regulated by the FFAJ') %]</p>
+                    <p>[% l('Binary KK is a licensed Type 1 Financial Instruments Business, regulated by the KLFB, and a member of the FFAJ.') %]</p>
                 </div>
             </div>
         </div>
@@ -43,13 +43,13 @@
         <div class="gr-6 gr-12-p gr-12-m">
             <div class="gr-7 gr-8-m gr-centered gr-padding-30 gr-child">
                 <div class="gr-8 gr-no-gutter">
-                    <a href="http://www.ffaj.or.jp/en/memberlist/list.html#k_sakimono_senmon" target="_blank">
-                        <img class="responsive" src="[% request.url_for('images/pages/regulation/fsa-logo.png') %]">
+                    <a href="http://www.fsa.go.jp/index.html" target="_blank">
+                        <img class="responsive" src="[% request.url_for('images/pages/home-jp/JSF.png') %]">
                     </a>
                 </div>
                 <div class="gr-padding-20 gr-child">
-                    <h3>[% l('Protected Funds') %]</h3>
-                    <p>[% l('All customer funds are segregated and held with JFS Trust Bank') %]</p>
+                    <h3>[% l('Segregated Funds') %]</h3>
+                    <p>[% l('All customer funds are segregated and held with JSF Trust Bank.') %]</p>
                 </div>
             </div>
         </div>
