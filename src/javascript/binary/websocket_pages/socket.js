@@ -275,7 +275,7 @@ const BinarySocketClass = function() {
                         }
                         LocalStore.set('reality_check.ack', 0);
                         Client.send_logout_request(isActiveTab);
-                    } else if (response.authorize.loginid !== Client.get('loginid')) {
+                    } else if (response.authorize.loginid !== Cookies.get('loginid')) {
                         Client.send_logout_request(true);
                     } else if (dispatch_to !== 'cashier_password') {
                         authorized = true;
