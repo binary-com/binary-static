@@ -32,6 +32,14 @@
                         <li id="ethics-liability" class="tm-li-2"><a href="#ethics-liability" class="tm-a-2">[% l('Exclusion of Liability') %]</a></li>
                     </ul>
                 </li>
+
+                <li id="affiliates" class="tm-li">
+                    <span class="menu-wrap-a">
+                        <span class="menu-wrap-b">
+                            <a href="#affiliates" class="tm-a first">[% l('Affiliates Program') %]</a>
+                        </span>
+                    </span>
+                </li>
             </ul>
         </div>
     </div>
@@ -49,6 +57,8 @@
             <div id="ethics-antisocial-content" class="toggle-content invisible">[% INCLUDE japan/legal/antisocial_forces.html.tt %]</div>
             <div id="ethics-solicitation-content" class="toggle-content invisible">[% INCLUDE japan/legal/solicitation.html.tt %]</div>
             <div id="ethics-liability-content" class="toggle-content invisible">[% INCLUDE japan/legal/liability_exclusion.html.tt %]</div>
+
+            <div id="affiliates-content" class="toggle-content invisible">[% INCLUDE japan/legal/affiliates.html.tt %]</div>
         </div>
     </div>
 </div>
