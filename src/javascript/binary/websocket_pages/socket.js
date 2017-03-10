@@ -269,7 +269,7 @@ const BinarySocketClass = function() {
                         }
                         LocalStore.set('reality_check.ack', 0);
                         Client.send_logout_request(isActiveTab);
-                    } else if (response.authorize.loginid !== Client.get('loginid')) {
+                    } else if (response.authorize.loginid !== Cookies.get('loginid')) {
                         Client.send_logout_request(true);
                     } else if (dispatch_to !== 'cashier_password') {
                         authorized = true;
@@ -278,7 +278,11 @@ const BinarySocketClass = function() {
                             send({ balance: 1, subscribe: 1 });
                             send({ get_settings: 1 });
                             send({ get_account_status: 1 });
-                            if (Cookies.get('residence')) send({ landing_company: Cookies.get('residence') });
+                            const residence = response.authorize.country || Cookies.get('residence');
+                            if (residence) {
+                                Client.set('residence', residence);
+                                send({ landing_company: residence });
+                            }
                             if (!Client.get('is_virtual')) {
                                 send({ get_self_exclusion: 1 });
                                 // TODO: remove this when back-end adds it as a status to get_account_status
