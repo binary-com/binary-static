@@ -2,15 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-03 08:37+0000\n"
+"PO-Revision-Date: 2017-03-11 01:28+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
+"Language-Team: Chinese (Traditional) "
+"<https://hosted.weblate.org/projects/binary/static/zh_Hant/>\n"
 "Language: zh_tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.12-dev\n"
+"X-Generator: Weblate 2.12\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」是由%1建立和維護的編程例程、議定書、工具和資源集。您可通過%1交易平台使用已經註冊的應用程式介面。"
@@ -30,45 +31,29 @@ msgstr "「第三方供應商」指通過使用%1的API提供可用功能和作�
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr " %1 %2已記入您的虛擬資金帳戶 %3"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
 msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
-msgstr "%4閉市時如果%3未觸及履約價格，可獲取%1 %2的賠付額。"
+msgstr "%4閉市時如果%3未觸及障礙價格，可獲取%1 %2的賠付額。"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgid "%1 %2 payout if %3 ends on or between low and high values of Barrier at close on %4."
-msgstr "%4閉市時如果%3平倉價相等於或介於履約價格最低和最高價位間，可獲取%1 %2 賠付額。"
+msgstr "%4閉市時如果%3平倉價相等於或介於障礙價格最低和最高價位間，可獲取%1 %2 賠付額。"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgid "%1 %2 payout if %3 ends outside low and high values of Barrier at close on %4."
-msgstr "%4閉市時如果%3平倉價在履約價格最低和最高價位範圍外，可獲取%1 %2 賠付額。"
+msgstr "%4閉市時如果%3平倉價在障礙價格最低和最高價位範圍外，可獲取%1 %2 賠付額。"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 goes outside of low and high values of Barrier through close on %4."
-msgstr "%4閉市時如果%3價在履約價格最低和最高價位範圍外，可獲取%1 %2 賠付額。"
+msgstr "%4閉市時如果%3價在障礙價格最低和最高價位範圍外，可獲取%1 %2 賠付額。"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 msgid "%1 %2 payout if %3 is strictly higher than or equal to Barrier at close on %4."
-msgstr "%4閉市時如果%3嚴格高於或相等於履約價格，可獲取%1 %2 賠付額。"
+msgstr "%4閉市時如果%3嚴格高於或相等於障礙價格，可獲取%1 %2 賠付額。"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
 msgid "%1 %2 payout if %3 is strictly lower than Barrier at close on %4."
-msgstr "%4閉市時如果%3嚴格低於履約價格，可獲取%1 %2 賠付額。"
+msgstr "%4閉市時如果%3嚴格低於障礙價格，可獲取%1 %2 賠付額。"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 stays between low and high values of Barrier through close on %4."
-msgstr "%4閉市時如果%3在履約價格最低和最高價位範圍內，可獲取%1 %2 賠付額。"
+msgstr "%4閉市時如果%3在障礙價格最低和最高價位範圍內，可獲取%1 %2 賠付額。"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
 msgid "%1 %2 payout if %3 touches Barrier through close on %4."
-msgstr "%4閉市時如果%3觸及履約價格，可獲取%1 %2 賠付額。"
+msgstr "%4閉市時如果%3觸及障礙價格，可獲取%1 %2 賠付額。"
 
 msgid "%1 (Toll Free)"
 msgstr "%1(免費電話)"
@@ -343,10 +328,8 @@ msgstr "《Global Banking and Finance Review》頒發的「2012年最佳固定�
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "《 eGaming Review》頒發的「年度最佳金融投注運作商」獎項"
 
-#, fuzzy
-#| msgid "Duration"
 msgid "(Duration)"
-msgstr "期限"
+msgstr "(期限)"
 
 msgid "(One) Touch trades"
 msgstr "一觸即付交易"
@@ -5173,10 +5156,8 @@ msgstr "線上貨幣兌換"
 msgid "Only %1 are allowed."
 msgstr "只允許 %1 。"
 
-#, fuzzy
-#| msgid "Only 2 decimal points are allowed."
 msgid "Only %1 decimal points are allowed."
-msgstr "只允許小數點后兩位。"
+msgstr "只允許小數點后%位。"
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgstr "成立後僅五年，我們的線上交易服務即斬獲這一重要獎項。該獎項旨在表彰 BetOnMarkets.com 向交易新手和資深交易者提供可靠、快速和安全的網上交易。此時，我們網站的交易數量已超過1500萬筆。"
@@ -5535,10 +5516,8 @@ msgstr "平台"
 msgid "Please %1 to view this page"
 msgstr "要查看此頁面，請 %1 t"
 
-#, fuzzy
-#| msgid "Please deposit before transfer to client."
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
-msgstr "給客戶轉帳前請先存款。"
+msgstr "給客戶轉帳前請先<a href=\"%1\">存款</a>。"
 
 msgid "Please <a href=\"%1\">log in</a> to view this page."
 msgstr "要查看此頁面，請先<a href=\"%1\">登入</a>。"
@@ -8921,10 +8900,8 @@ msgstr "交易期持續時間限制將於%1秒內結束。"
 msgid "Your settings have been updated successfully."
 msgstr "您的設定已成功更新。"
 
-#, fuzzy
-#| msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
 msgid "Your token has expired. Please click %1here%2 to restart the verification process."
-msgstr "您的權杖已過期。請點選<a href=\"%1\">此處</a>重啟驗證程序。"
+msgstr "您的權杖已過期。請點選%1此處%2重啟驗證程序。"
 
 msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
 msgstr "您的權杖已過期。請點選<a href=\"%1\">此處</a>重啟驗證程序。"
