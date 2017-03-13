@@ -35,28 +35,44 @@ msgstr "\"Сторонний поставщик (Сторонние постав
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 было зачислено на Ваш Демо-счет %3"
 
-msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
+msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
 msgstr "Получите выплату %1 %2, если %3 не коснётся заданного ценового барьера на момент закрытия %4."
 
-msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+msgid "%1 %2 payout if %3 ends on or between low and high values of Barrier at close on %4."
 msgstr "Получите выплату %1 %2, если %3 завершит контракт на или между верхним или нижним ценовым барьером на момент закрытия %4."
 
-msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
+msgid "%1 %2 payout if %3 ends outside low and high values of Barrier at close on %4."
 msgstr "Получите выплату %1 %2, если %3 завершит торговлю вне верхнего и нижнего ценового барьера на момент закрытия %4."
 
-msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
+msgid "%1 %2 payout if %3 goes outside of low and high values of Barrier through close on %4."
 msgstr "Получите выплату %1 %2, если %3 выйдет за пределы верхнего и нижнего ценового барьера на момент закрытия %4."
 
-msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+msgid "%1 %2 payout if %3 is strictly higher than or equal to Barrier at close on %4."
 msgstr "Получите выплату %1 %2, если %3 будет находиться строго выше или на заданном ценовом барьере на момент окончания %4."
 
-msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+msgid "%1 %2 payout if %3 is strictly lower than Barrier at close on %4."
 msgstr "Получите выплату %1 %2, если %3 будет находиться строго ниже заданной цены на момент закрытия %4."
 
-msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+msgid "%1 %2 payout if %3 stays between low and high values of Barrier through close on %4."
 msgstr "Получите выплату %1 %2, если %3 останется между заданным верхним и нижним барьером на момент закрытия %4."
 
-msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
+msgid "%1 %2 payout if %3 touches Barrier through close on %4."
 msgstr "Получите выплату %1 %2, если %3 коснётся заданной цены к моменту закрытия %4."
 
 msgid "%1 (Toll Free)"
@@ -339,6 +355,11 @@ msgstr "Награда “Лучшая компания по опционам с
 
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "Награда “Оператор года по финансовому беттингу“ от eGaming Review"
+
+#, fuzzy
+#| msgid "Duration"
+msgid "(Duration)"
+msgstr "Длительность"
 
 msgid "(One) Touch trades"
 msgstr "Контракты Касание"
@@ -2850,6 +2871,9 @@ msgstr "Опыт работы в интернациональной среде"
 msgid "Expertise in cloud solutions"
 msgstr "Опыт работы с облачными решениями"
 
+msgid "Expiry Time"
+msgstr "Время окончания"
+
 msgid "Expiry price"
 msgstr "Цена при окончании"
 
@@ -5252,7 +5276,9 @@ msgstr "Обменные пункты онлайн"
 msgid "Only %1 are allowed."
 msgstr "Разрешены только %1 и латинские буквы."
 
-msgid "Only 2 decimal points are allowed."
+#, fuzzy
+#| msgid "Only 2 decimal points are allowed."
+msgid "Only %1 decimal points are allowed."
 msgstr "Разрешены лишь 2 десятичные."
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
@@ -5633,6 +5659,11 @@ msgid "Please %1 to view this page"
 msgstr "Пожалуйста, %1, чтобы просмотреть данную страницу"
 
 #, fuzzy
+#| msgid "Please deposit before transfer to client."
+msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
+msgstr "Пожалуйста, пополните счёт перед переводом клиенту."
+
+#, fuzzy
 #| msgid "Please %1 to view this page"
 msgid "Please <a href=\"%1\">log in</a> to view this page."
 msgstr "Пожалуйста, %1, чтобы просмотреть данную страницу"
@@ -5665,9 +5696,6 @@ msgstr "Просим подтвердить данные транзакции д
 msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgstr "Пожалуйста, свяжитесь с нами и выразите своё мнение <a href='mailto:%1'>%1</a>. Мы будем рады услышать Ваши комментарии и помочь Вам. Не стесняйтесь делиться своими идеями и предложениями."
 
-msgid "Please deposit before transfer to client."
-msgstr "Пожалуйста, пополните счёт перед переводом клиенту."
-
 msgid "Please enter a number between %1."
 msgstr "Пожалуйста, введите цифру между %1."
 
@@ -5679,9 +5707,6 @@ msgstr "Пожалуйста, введите цифру выше 0"
 
 msgid "Please enter a number."
 msgstr "Пожалуйста, введите число."
-
-msgid "Please enter a valid amount."
-msgstr "Пожалуйста, введите правильную сумму."
 
 msgid "Please enter an integer value"
 msgstr "Пожалуйста, введите целое число"
@@ -7855,9 +7880,6 @@ msgstr "Trading Experience"
 msgid "Trading Limits"
 msgstr "Торговые лимиты"
 
-msgid "Trading Period"
-msgstr "Период контракта"
-
 msgid "Trading Platforms"
 msgstr "Торговые платформы"
 
@@ -9169,6 +9191,11 @@ msgstr "Ограничение на длительность сессии зак
 
 msgid "Your settings have been updated successfully."
 msgstr "Ваши настройки обновлены успешно."
+
+#, fuzzy
+#| msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
+msgid "Your token has expired. Please click %1here%2 to restart the verification process."
+msgstr "Срок действия Вашего ключа истёк. Пожалуйста, нажмите <a class=\"pjaxload\" href=\"%1\">здесь,</a> чтобы повторно запустить процесс проверки."
 
 #, fuzzy
 #| msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
@@ -10554,6 +10581,12 @@ msgstr "Лимиты счета"
 
 msgid "Account Details"
 msgstr "Информация о счете"
+
+#~ msgid "Please enter a valid amount."
+#~ msgstr "Пожалуйста, введите правильную сумму."
+
+#~ msgid "Trading Period"
+#~ msgstr "Период контракта"
 
 #~ msgid "%1 has updated its  <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
 #~ msgstr "%1 обновил <a class=\"pjaxload\" href=\"%2\">Правила и Условия</a>. Нажав OK, Вы подтвердите, что ознакомились и согласились с новыми <a class=\"pjaxload\" href=\"%2\">Правилами и условиями</a>."
@@ -15664,9 +15697,6 @@ msgstr "Информация о счете"
 
 #~ msgid "Expiry Spot"
 #~ msgstr "Котировка окончания"
-
-#~ msgid "Expiry Time"
-#~ msgstr "Время окончания"
 
 #~ msgid "Indicative Price"
 #~ msgstr "Временная цена"
