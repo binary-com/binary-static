@@ -143,13 +143,13 @@ const handleNewAccount = function(response, message_type) {
 const commonValidations = () => {
     const req = [
         { selector: '#salutation',         validations: ['req'] },
-        { selector: '#first_name',         validations: ['req', ['length', { min: 2, max: 30 }], 'letter_symbol'] },
-        { selector: '#last_name',          validations: ['req', ['length', { min: 2, max: 30 }], 'letter_symbol'] },
+        { selector: '#first_name',         validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
+        { selector: '#last_name',          validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
         { selector: '#date_of_birth',      validations: ['req'] },
         { selector: '#address_line_1',     validations: ['req', 'address', ['length', { min: 1, max: 70 }]] },
         { selector: '#address_line_2',     validations: ['address', ['length', { min: 0, max: 70 }]] },
-        { selector: '#address_city',       validations: ['req', ['length', { min: 1, max: 35 }], 'letter_symbol'] },
-        { selector: '#address_state',      validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : [['length', { min: 0, max: 35 }], 'general'] },
+        { selector: '#address_city',       validations: ['req', 'letter_symbol', ['length', { min: 1, max: 35 }]] },
+        { selector: '#address_state',      validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['general', ['length', { min: 0, max: 35 }]] },
         { selector: '#address_postcode',   validations: ['postcode', ['length', { min: 0, max: 20 }]] },
         { selector: '#phone',              validations: ['req', 'phone', ['length', { min: 6, max: 35 }]] },
         { selector: '#secret_question',    validations: ['req'] },
