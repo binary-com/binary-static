@@ -1,9 +1,5 @@
-const expect       = require('chai').expect;
 const market_times = require('../market_timesws');
-const ws           = require('ws');
-const LiveApi      = require('binary-live-api').LiveApi;
-
-const api = new LiveApi({ websocket: ws });
+const { api, expect } = require('../../../common_functions/tests');
 
 describe('Trading Times', function() {
     let trading_times_res,
