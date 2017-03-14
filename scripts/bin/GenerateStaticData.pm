@@ -524,6 +524,9 @@ sub _texts {
         push @texts, localize('Create Account');
         push @texts, localize('Change Password');
 
+        # strings for account_transfer
+        push @texts, localize('from [_1] to [_2]');
+
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
     }
