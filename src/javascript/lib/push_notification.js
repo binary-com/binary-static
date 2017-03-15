@@ -9,6 +9,8 @@ const BinaryPushwoosh = (() => {
     let initialised = false;
 
     const init = () => {
+        if (!/^(www|staging)\.binary\.com$/.test(window.location.hostname)) return;
+        
         if (!initialised) {
             pw.push(['init', {
                 logLevel                : 'none', // or debug
