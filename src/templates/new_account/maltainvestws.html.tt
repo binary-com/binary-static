@@ -61,8 +61,7 @@
                             <label for="residence">[% l('Country of residence') %]</label>
                         </div>
                         <div class="gr-8">
-                            <span id="move-residence-back"></span>
-                            <select name="residence" id="residence" disabled="disabled"></select>
+                            <label id="lbl_residence"></label>
                         </div>
                     </div>
                 </fieldset>

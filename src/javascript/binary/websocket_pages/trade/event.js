@@ -25,7 +25,6 @@ const setFormPlaceholderContent  = require('./set_values').setFormPlaceholderCon
 const getStartDateNode           = require('./common_independent').getStartDateNode;
 const Tick                       = require('./tick').Tick;
 const BinaryPjax                 = require('../../base/binary_pjax');
-const Client                     = require('../../base/client').Client;
 const dateValueChanged           = require('../../common_functions/common_functions').dateValueChanged;
 const elementTextContent         = require('../../common_functions/common_functions').elementTextContent;
 const isVisible                  = require('../../common_functions/common_functions').isVisible;
@@ -321,7 +320,7 @@ const TradingEvents = (function () {
          * attach event to purchase buttons to buy the current contract
          */
         $('.purchase_button').on('click dblclick', function () {
-            if (!Client.status_detected('unwelcome') && !isVisible(document.getElementById('confirmation_message_container'))) {
+            if (!isVisible(document.getElementById('confirmation_message_container'))) {
                 const id = this.getAttribute('data-purchase-id'),
                     askPrice = this.getAttribute('data-ask-price');
 
