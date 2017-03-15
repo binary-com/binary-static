@@ -13,7 +13,8 @@ use BS qw/all_languages/;
 my @langs = map { lc $_ } all_languages();
 my @urls = (
     # path (without .html)    , changefreq, priority, exclude languages
-    ['home'                   , 'monthly', '1.00'],
+    ['home'                   , 'monthly', '1.00' , 'ja'],
+    ['home-jp'                , 'monthly', '1.00' , 'NOT-ja'],
     ['why-us'                 , 'monthly', '0.80' , 'ja'],
     ['why-us-jp'              , 'monthly', '0.80' , 'NOT-ja'],
     ['tour'                   , 'monthly', '0.80' , 'ja'],

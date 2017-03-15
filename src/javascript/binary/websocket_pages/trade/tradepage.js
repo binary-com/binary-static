@@ -12,12 +12,12 @@ const Price                = require('./price').Price;
 const forgetTradingStreams = require('./process').forgetTradingStreams;
 const Symbols              = require('./symbols').Symbols;
 const ViewPopupWS          = require('../user/view_popup/view_popupws');
-const Content              = require('../../common_functions/content').Content;
-const japanese_client      = require('../../common_functions/country_base').japanese_client;
-const Guide                = require('../../common_functions/guide').Guide;
 const BinaryPjax           = require('../../base/binary_pjax');
 const localize             = require('../../base/localize').localize;
 const State                = require('../../base/storage').State;
+const Content              = require('../../common_functions/content').Content;
+const japanese_client      = require('../../common_functions/country_base').japanese_client;
+const Guide                = require('../../common_functions/guide').Guide;
 
 const TradePage = (function() {
     let events_initialized = 0;

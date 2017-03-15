@@ -29,7 +29,6 @@ const isVisible                      = require('../../../common_functions/common
 const onlyNumericOnKeypress          = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
 const TimePicker                     = require('../../../components/time_picker').TimePicker;
 const BinaryPjax                     = require('../../../base/binary_pjax');
-const Client                         = require('../../../base/client').Client;
 
 /*
  * TradingEvents object contains all the event handler const required = function for
@@ -322,7 +321,7 @@ const TradingEvents_Beta = (function () {
          * attach event to purchase buttons to buy the current contract
          */
         $('.purchase_button').on('click dblclick', function () {
-            if (!Client.status_detected('unwelcome') && !isVisible(document.getElementById('confirmation_message_container'))) {
+            if (!isVisible(document.getElementById('confirmation_message_container'))) {
                 const id = this.getAttribute('data-purchase-id'),
                     askPrice = this.getAttribute('data-ask-price');
 

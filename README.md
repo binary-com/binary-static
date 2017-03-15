@@ -94,6 +94,13 @@ There are times that you're working on various branches at the same time, and yo
 - `grunt dev --branch=branchname`
 This will deploy your changes to a sub-folder named: `br_branchname` and it can be browsed at: https://YOUR_GITHUB_USERNAME.github.io/binary-static/br_branchname/
 
+### Preview on your local machine
+- To preview your changes locally, run `sudo grunt serve`
+- It will watch for js/css changes and rebuild on every change you make.
+- To test changes made to templates, you need to re-compile them:
+  - `grunt shell:compile_dev` to re-compile all templates.
+  - `grunt shell:compile_dev --path=about-us` to re-compile only template(s) which serve about-us path in URL.
+
 
 ## Release to Production
 

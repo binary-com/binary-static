@@ -15,7 +15,6 @@
     </div>
 
     <form class="invisible" id="frm_assessment">
-        <h1 id="heading_risk" class="invisible">[% l("Financial Assessment") %]</h1>
         <p class="invisible" id="high_risk_classification">[% l("Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed.") %]</p>
 
         [% INCLUDE global/financial_form.html.tt %]

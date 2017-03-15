@@ -1,0 +1,16 @@
+<h1>[% l('Authentication') %]</h1>
+<div id="authentication-message">
+    <p id="fully_authenticated" class="invisible">
+        [% l('Your account is fully authenticated. You can view your <a href="[_1]">trading limits here</a>.', request.url_for('/user/security/limitsws')) %]
+    </p>
+
+    <p id="needs_age_verification" class="invisible">
+        [% l('Account needs age verification, please contact <a href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]
+    </p>
+
+    <div id="not_authenticated" class="invisible">
+        [% INCLUDE user/common/authenticate_message.html.tt %]
+    </div>
+
+    <p class="center-text notice-msg invisible" id="error_message"></p>
+</div>

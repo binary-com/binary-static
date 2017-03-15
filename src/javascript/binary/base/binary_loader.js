@@ -43,8 +43,6 @@ const BinaryLoader = (function() {
         } else if (/\/get-started\//i.test(window.location.pathname)) {
             loadHandler(pages_config['get-started']);
         }
-
-        BinarySocket.wait('get_settings', 'get_account_status').then(() => { Client.check_tnc(); });
     };
 
     const errorMessages = {

@@ -77,9 +77,6 @@ const PortfolioWS = (function() {
             $if_balance_zero.addClass(hidden_class);
         } else {
             $if_balance_zero.removeClass(hidden_class);
-            if (Client.status_detected('unwelcome, cashier_locked', 'any')) {
-                $if_balance_zero.removeAttr('href').addClass('button-disabled');
-            }
         }
     };
 

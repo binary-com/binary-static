@@ -18,6 +18,7 @@
             <span id="knowledge_test_error">[% l('You must complete the knowledge test to activate this account. Please contact <a href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]</span>
             <span id="activation_error">[% l('Account not activated, please contact <a href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]</span>
             <span id="age_error">[% l('Account needs age verification, please contact <a href="[_1]">customer support</a> for more information.', request.url_for('/contact')) %]</span>
+            <span id="tnc_error">[% l('Please <a href="[_1]">accept the updated Terms and Conditions</a>.', request.url_for('user/tnc_approvalws')) %]</span>
             <span id="custom_error">[% l('Sorry, an error occurred while processing your request.') %]</span>
         </p>
     </div>

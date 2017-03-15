@@ -1,9 +1,5 @@
-const expect      = require('chai').expect;
 const profitTable = require('../profit_table');
-const ws          = require('ws');
-const LiveApi     = require('binary-live-api').LiveApi;
-
-const api = new LiveApi({ websocket: ws });
+const { api, expect } = require('../../../../common_functions/tests');
 
 describe('Profit Table', function() {
     let profit_table;

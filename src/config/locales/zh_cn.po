@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-03 08:31+0000\n"
+"PO-Revision-Date: 2017-03-11 01:28+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/binary/static/zh_Hans/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.12-dev\n"
+"X-Generator: Weblate 2.12\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -32,45 +32,29 @@ msgstr "\"第三方供应商\"指通过使用%1的API提供可用功能和作用
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 已记入您的虚拟资金账户%3"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
 msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
-msgstr "%4闭市时如果%3未触及履约价格，可获取%1 %2的赔付额。"
+msgstr "%4闭市时如果%3未触及障碍价格，可获取%1 %2的赔付额。"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgid "%1 %2 payout if %3 ends on or between low and high values of Barrier at close on %4."
-msgstr "%4闭市时如果%3平仓价相等于或介于履约价格最低和最高价位间，可获取%1 %2 赔付额。"
+msgstr "%4闭市时如果%3平仓价相等于或介于障碍价格最低和最高价位间，可获取%1 %2 赔付额。"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
 msgid "%1 %2 payout if %3 ends outside low and high values of Barrier at close on %4."
-msgstr "%4闭市时如果%3平仓价在履约价格最低和最高价位范围外，可获取%1 %2 赔付额。"
+msgstr "%4闭市时如果%3平仓价在障碍价格最低和最高价位范围外，可获取%1 %2 赔付额。"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 goes outside of low and high values of Barrier through close on %4."
-msgstr "%4闭市时如果%3价在履约价格最低和最高价位范围外，可获取%1 %2 赔付额。"
+msgstr "%4闭市时如果%3价在障碍价格最低和最高价位范围外，可获取%1 %2 赔付额。"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 msgid "%1 %2 payout if %3 is strictly higher than or equal to Barrier at close on %4."
-msgstr "%4闭市时如果%3严格高于或相等于履约价格，可获取%1 %2 赔付额。"
+msgstr "%4闭市时如果%3严格高于或相等于障碍价格，可获取%1 %2 赔付额。"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
 msgid "%1 %2 payout if %3 is strictly lower than Barrier at close on %4."
-msgstr "%4闭市时如果%3严格低于履约价格，可获取%1 %2 赔付额。"
+msgstr "%4闭市时如果%3严格低于障碍价格，可获取%1 %2 赔付额。"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 stays between low and high values of Barrier through close on %4."
-msgstr "%4闭市时如果%3在履约价格最低和最高价位范围内，可获取%1 %2 赔付额。"
+msgstr "%4闭市时如果%3在障碍价格最低和最高价位范围内，可获取%1 %2 赔付额。"
 
-#, fuzzy
-#| msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
 msgid "%1 %2 payout if %3 touches Barrier through close on %4."
-msgstr "%4闭市时如果%3触及履约价格，可获取%1 %2 赔付额。"
+msgstr "%4闭市时如果%3触及障碍价格，可获取%1 %2 赔付额。"
 
 msgid "%1 (Toll Free)"
 msgstr "%1(免费电话)"
@@ -345,10 +329,8 @@ msgstr "《Global Banking and Finance Review》颁发的“2012年最佳固定�
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "《 eGaming Review》颁发的“年度最佳金融投注运营商”奖项"
 
-#, fuzzy
-#| msgid "Duration"
 msgid "(Duration)"
-msgstr "期限"
+msgstr "（期限）"
 
 msgid "(One) Touch trades"
 msgstr "一触即付交易"
@@ -705,6 +687,11 @@ msgstr "对企业法律合规性有充分的了解和浓厚的兴趣"
 msgid "A higher figure (higher to you) representing our offer price and a lower figure (lower to you) representing our bid price for each Transaction shall be quoted to you upon your request. The difference between our bid and our offer price will comprise of the market spread (where there is market for the underlying instrument) and our spread (being our charge to you)."
 msgstr "每笔交易的报价将根据您的要求为您提供，包括代表我们报价的较高数字（对您来说比较高），以及代表我们出价的较低价格（对您来说较低）。我们的出价和报价之间的差额将包括市场价差（当有标的工具市场时）和我们的价差（我们向您收的费用）。"
 
+#, fuzzy
+#| msgid "{Japan Only}Binary option specialist for over 15 years "
+msgid "A leading innovator of Binary Options trading for over 15 Years"
+msgstr "{Japan Only}Binary option specialist for over 15 years "
+
 msgid "A list of payment methods you will accept from Clients"
 msgstr "您可接受的客户付款方式列表"
 
@@ -948,6 +935,11 @@ msgstr "联盟经理"
 msgid "Affiliate Program"
 msgstr "联盟计划"
 
+#, fuzzy
+#| msgid "Affiliate Program"
+msgid "Affiliates Program"
+msgstr "联盟计划"
+
 msgid "Agreement Restrictions"
 msgstr "协议限制"
 
@@ -974,6 +966,9 @@ msgstr "所有信用卡信息都按照银行政策，使用最新 SSL 加密技�
 
 msgid "All credit card details are submitted directly to the Visa/Mastercard network using the latest SSL encryption technology, in accordance with bank policies;"
 msgstr "所有信用卡信息都按照银行政策，使用最新 SSL 加密技术直接提交至 Visa/Mastercard 网络。"
+
+msgid "All customer funds are segregated and held with JSF Trust Bank."
+msgstr ""
 
 msgid "All funds transferred from your Binary Options Real Account to your Real Account must be made by you."
 msgstr "所有将资金从二元期权真实账户转移到您真实账户的操作必须由您亲自执行。"
@@ -1121,6 +1116,11 @@ msgstr "应用程序"
 
 msgid "Apply a meticulous eye for detail in proofreading the content that appears on the company's website, blog, social media outlets, and marketing materials."
 msgstr "非常注重细节，对公司网站、博客、社交媒体和营销材料内容进行校对和更正。"
+
+#, fuzzy
+#| msgid "I have a Real Money Account"
+msgid "Apply for a Real Money Account"
+msgstr "我有真实资金账户"
 
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
 msgstr "申请成为 %1 <a href=\"%2\">支付代理</a>。"
@@ -1466,6 +1466,9 @@ msgstr "Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 1
 
 msgid "Binary KK granted Japan license"
 msgstr "Binary KK 被授予日本牌照"
+
+msgid "Binary KK is a licensed Type 1 Financial Instruments Business, regulated by the KLFB, and a member of the FFAJ."
+msgstr ""
 
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
@@ -2294,6 +2297,11 @@ msgstr "存款"
 msgid "Deposit Bonus"
 msgstr "存款奖金"
 
+#, fuzzy
+#| msgid "Depositing and withdrawing funds"
+msgid "Deposit funds and begin trading"
+msgstr "存款及取款"
+
 msgid "Deposit into"
 msgstr "存款到"
 
@@ -2576,6 +2584,9 @@ msgstr "电子邮件"
 msgid "Email address"
 msgstr "电子邮件地址"
 
+msgid "Email us your Identity Documents"
+msgstr ""
+
 msgid "Email: "
 msgstr "电子邮件: "
 
@@ -2849,6 +2860,9 @@ msgstr "六、订单"
 msgid "FAQ"
 msgstr "常见问题"
 
+msgid "FX Bloggers, Mentors & Gurus"
+msgstr ""
+
 msgid "FX Rate"
 msgstr "外汇兑换率"
 
@@ -2938,6 +2952,11 @@ msgstr "首先，设定您的头寸参数..."
 
 msgid "First, you need to set the parameters of your trade. Here's what you need to consider."
 msgstr "首先，您要设置交易参数。请考虑以下因素。"
+
+#, fuzzy
+#| msgid "Premier binary options trading platform"
+msgid "First-Class FX Binary Options Trading Platform"
+msgstr "首选二元期权交易平台"
 
 msgid "First-class client service."
 msgstr "一流的客户服务。"
@@ -3134,6 +3153,9 @@ msgstr "获取10,000.00美元"
 msgid "Get more virtual money"
 msgstr "获取更多虚拟资金"
 
+msgid "Get started"
+msgstr "开始交易"
+
 msgid "Get your price"
 msgstr "获取报价"
 
@@ -3283,6 +3305,11 @@ msgstr "保证金如何计算？"
 
 msgid "How soon can I start trading?"
 msgstr "我需要多久才能开始交易？"
+
+#, fuzzy
+#| msgid "How to trade?"
+msgid "How to begin"
+msgstr "如何交易"
 
 msgid "How to read the table above"
 msgstr "如何读取上面的表"
@@ -4355,6 +4382,14 @@ msgstr "Japan website Risk For Binary Option Trading Paragraph 2"
 msgid "Japan website Terms and Conditions Paragraph 1"
 msgstr "Japan website Terms and Conditions Paragraph 1"
 
+#, fuzzy
+#| msgid "Open now"
+msgid "Join now"
+msgstr "立即开户"
+
+msgid "Join our affiliate program to earn income by leveraging your hard-earned network of contact"
+msgstr ""
+
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "加入我们卓越、才华洋溢的专业人才团队。与我们共同合作加强并促进一个15年来在二元期权交易行业中最受认可的高科技平台。"
 
@@ -4525,6 +4560,11 @@ msgstr "拥有牌照并受监管"
 
 msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan"
 msgstr "由马耳他、英国、马恩岛、爱尔兰和日本相关机构授予牌照和监管"
+
+#, fuzzy
+#| msgid "Licensed and regulated"
+msgid "Licensed in Japan"
+msgstr "拥有牌照并受监管"
 
 msgid "Licensed, trusted, and secure"
 msgstr "有牌照、备受信赖、及安全"
@@ -5134,6 +5174,9 @@ msgstr "十月"
 msgid "October"
 msgstr "十月"
 
+msgid "Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform."
+msgstr ""
+
 msgid "Office worker"
 msgstr "办公室员工"
 
@@ -5179,10 +5222,8 @@ msgstr "在线货币兑换"
 msgid "Only %1 are allowed."
 msgstr "只允许 %1 。"
 
-#, fuzzy
-#| msgid "Only 2 decimal points are allowed."
 msgid "Only %1 decimal points are allowed."
-msgstr "只允许 2 个小数位。"
+msgstr "只允许 % 个小数位。"
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgstr "成立后仅五年，我们的在线交易服务即斩获这一重要奖项。该奖项旨在表彰 BetOnMarkets.com 向交易新手和资深交易者提供可靠、快速和安全的网上交易。此时，我们网站的交易数量已超过1500万笔。"
@@ -5222,6 +5263,11 @@ msgstr "空缺"
 
 msgid "Open Source"
 msgstr "开源"
+
+#, fuzzy
+#| msgid "Open demo account"
+msgid "Open a Demo Account"
+msgstr "开设模拟帐户"
 
 msgid "Open a Financial Account"
 msgstr "开设金融账户"
@@ -5430,6 +5476,11 @@ msgstr "成为我们的合作伙伴"
 msgid "Partners"
 msgstr "合作伙伴"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Knowledge Test"
+msgid "Pass our Knowledge Test"
+msgstr "{JAPAN ONLY}Knowledge Test"
+
 msgid "Password"
 msgstr "密码"
 
@@ -5541,10 +5592,8 @@ msgstr "平台"
 msgid "Please %1 to view this page"
 msgstr "要查看此页面请%1"
 
-#, fuzzy
-#| msgid "Please deposit before transfer to client."
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
-msgstr "给客户转账前请先存款。"
+msgstr "给客户转账前请先<a href=\"%1\">存款</a>。"
 
 msgid "Please <a href=\"%1\">log in</a> to view this page."
 msgstr "要查看此页面请先<a href=\"%1\">登录</a>。"
@@ -5978,6 +6027,9 @@ msgstr "真实情况检查时间间隔："
 msgid "Receive news and special offers"
 msgstr "收取新消息和特别优惠"
 
+msgid "Receive your activation code by secure"
+msgstr ""
+
 msgid "Ref."
 msgstr "参考"
 
@@ -6251,6 +6303,9 @@ msgstr "安全隐私"
 msgid "Security testing opportunities"
 msgstr "安全测试机会"
 
+msgid "Segregated Funds"
+msgstr ""
+
 msgid "Select market"
 msgstr "选择市场"
 
@@ -6502,6 +6557,11 @@ msgstr "开始时间："
 
 msgid "Start learning"
 msgstr "开始学习"
+
+#, fuzzy
+#| msgid "Start"
+msgid "Start now"
+msgstr "生效"
 
 msgid "Start time"
 msgstr "开始时间"
@@ -7036,8 +7096,10 @@ msgstr "能够使用测试驱动开发技术写出高质量、自记录代码"
 msgid "The above personal data that we collect will be held by us and processed for any purpose as may be allowed by law or required by any law. We may also transfer such personal data to any company within the Binary Group of companies, any of our business associates or payment providers, whether in or outside of the EEA including in countries which might not offer an equivalent level of protection of personal data."
 msgstr "对于上述的个人数据，我们将在法律法规允许的范围内进行持有或处理。我们可能将个人信息转移给 Binary 集团的公司、我们的业务伙伴或资金提供者，不论其是否位于 EEA 区域，包括一些没有达到相同个人数据保护水平的国家。"
 
-msgid "The account transfer is unavailable. Please"
-msgstr "账户不可转账。请"
+#, fuzzy
+#| msgid "The account transfer is unavailable. Please deposit to your account."
+msgid "The account transfer is unavailable. Please %1deposit%2 to your account."
+msgstr "账户不可转账。请将资金存入您的账户。"
 
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr "联盟项目让您通过推荐客户到网站而获利。有能力给网站带来新客户的联盟会员可以一起分享成长和成功。"
@@ -7630,6 +7692,9 @@ msgstr "在简单、人性化的全球性金融市场在线平台进行交易。
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "根据您的风险承受能力进行交易。切勿借钱交易。"
 
+msgid "Trade the world’s major currencies with a wide range options and trading periods. More than any other Japan broker!"
+msgstr ""
+
 msgid "Trade type"
 msgstr "交易类型"
 
@@ -7749,6 +7814,11 @@ msgstr "体验Webtrader"
 
 msgid "Try it now"
 msgstr "立即体验"
+
+#, fuzzy
+#| msgid "Try TradingView"
+msgid "Try our trading page"
+msgstr "体验TradingView"
 
 msgid "Tu"
 msgstr "星期二"
@@ -8933,10 +9003,8 @@ msgstr "交易期持续时间限制将于%1秒内结束。"
 msgid "Your settings have been updated successfully."
 msgstr "您的设置已成功更新。"
 
-#, fuzzy
-#| msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
 msgid "Your token has expired. Please click %1here%2 to restart the verification process."
-msgstr "您的令牌已过期。请点击<a href=\"%1\">此处</a>重启验证程序。"
+msgstr "您的令牌已过期。请点击%1此处%2重启验证程序。"
 
 msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
 msgstr "您的令牌已过期。请点击<a href=\"%1\">此处</a>重启验证程序。"
@@ -9034,9 +9102,6 @@ msgstr "天"
 msgid "days"
 msgstr "天"
 
-msgid "deposit"
-msgstr "存款"
-
 msgid "details"
 msgstr "详情"
 
@@ -9045,6 +9110,11 @@ msgstr "例如blue.binaryws.com"
 
 msgid "email address"
 msgstr "电子邮件地址"
+
+#, fuzzy
+#| msgid "%1 to %2"
+msgid "from %1 to %2"
+msgstr "%1 到 %2"
 
 msgid "h"
 msgstr "小时"
@@ -9179,9 +9249,6 @@ msgstr "人性化平台，各级别交易者皆可使用。"
 msgid "the specific instructions that we receive from you;"
 msgstr "您所提供的特定指令；"
 
-msgid "to your account."
-msgstr "入您的账户。"
-
 msgid "today"
 msgstr "今天"
 
@@ -9229,6 +9296,370 @@ msgstr "您已经完整阅读此法律条款及条件页面，并理解您将在
 
 msgid "you have sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and have done so without relying on any information contained in this site."
 msgstr "您拥有足够的金融交易经验和知识，能够评估经由本网站购买金融合约的收益与风险，并且不依赖于本网站中包含的任何信息作出购买决定。"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 2"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 1 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 10 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 10 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 10 Title"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 11 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 11 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 11 Title"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Title"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 10"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 6"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 7"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 8"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 9"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 4"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 6"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Title"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 3"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 4"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 10"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 6"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 7"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 8"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 9"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 6"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 7"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 3"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 2"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 7 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 6"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point A"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point B"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 2(1)"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 2(2)"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 2(3)"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 8"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 9"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 6"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 3"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section Version Update"
+msgstr ""
+
+#, fuzzy
+#| msgid "%1 Affiliate Program Terms and Conditions"
+msgid "{JAPAN ONLY} Affiliate Program Terms & Conditions"
+msgstr "%1 联盟计划的条款和条件"
 
 msgid "{JAPAN ONLY}#1 Sales Division"
 msgstr "{JAPAN ONLY}#1 Sales Division"
@@ -10160,33 +10591,6 @@ msgstr "{JAPAN ONLY}Your investments are immediately reflected in your account b
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "{Japan Only} Download Terms and Conditions Document file"
 
-msgid "{Japan Only}Binary option specialist for over 15 years "
-msgstr "{Japan Only}Binary option specialist for over 15 years "
-
-msgid "{Japan Only}Fully licenced in Japan"
-msgstr "{Japan Only}Fully licenced in Japan"
-
-msgid "{Japan Only}Live chart tools"
-msgstr "{Japan Only}Live chart tools"
-
-msgid "{Japan Only}Payout from 1 to 10"
-msgstr "{Japan Only}Payout from 1 to 10"
-
-msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
-msgstr "{Japan Only}Segregated Customer Account Balances are 100% Safe"
-
-msgid "{Japan Only}Trade all binary option types"
-msgstr "{Japan Only}Trade all binary option types"
-
-msgid "{Japan Only}Trade the major currencies"
-msgstr "{Japan Only}Trade the major currencies"
-
-msgid "{Japan Only}Two-way pricing"
-msgstr "{Japan Only}Two-way pricing"
-
-msgid "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
-msgstr "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
-
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "可交易外汇、指数、大宗商品及智能指数的二元期权在线交易平台"
 
@@ -10267,6 +10671,39 @@ msgstr "账户限额"
 
 msgid "Account Details"
 msgstr "账户详情"
+
+#~ msgid "The account transfer is unavailable. Please"
+#~ msgstr "账户不可转账。请"
+
+#~ msgid "deposit"
+#~ msgstr "存款"
+
+#~ msgid "to your account."
+#~ msgstr "入您的账户。"
+
+#~ msgid "{Japan Only}Fully licenced in Japan"
+#~ msgstr "{Japan Only}Fully licenced in Japan"
+
+#~ msgid "{Japan Only}Live chart tools"
+#~ msgstr "{Japan Only}Live chart tools"
+
+#~ msgid "{Japan Only}Payout from 1 to 10"
+#~ msgstr "{Japan Only}Payout from 1 to 10"
+
+#~ msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
+#~ msgstr "{Japan Only}Segregated Customer Account Balances are 100% Safe"
+
+#~ msgid "{Japan Only}Trade all binary option types"
+#~ msgstr "{Japan Only}Trade all binary option types"
+
+#~ msgid "{Japan Only}Trade the major currencies"
+#~ msgstr "{Japan Only}Trade the major currencies"
+
+#~ msgid "{Japan Only}Two-way pricing"
+#~ msgstr "{Japan Only}Two-way pricing"
+
+#~ msgid "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
+#~ msgstr "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
 
 #~ msgid "Please enter a valid amount."
 #~ msgstr "请输入有效金额。"
@@ -11720,9 +12157,6 @@ msgstr "账户详情"
 #~ msgid "Either you left the cashier idle for a while or we were not able to log you in properly."
 #~ msgstr "您已选择让收银台休眠一段时间，或者我们无法使您正确登录。"
 
-#~ msgid "Get started"
-#~ msgstr "开始交易"
-
 #~ msgid "Page not found"
 #~ msgstr "无法找到页面"
 
@@ -12953,9 +13387,6 @@ msgstr "账户详情"
 
 #~ msgid "The account transfer is unavailable for your account: %1."
 #~ msgstr "您的账户不可转账：%1。"
-
-#~ msgid "The account transfer is unavailable. Please deposit to your account."
-#~ msgstr "账户不可转账。请将资金存入您的账户。"
 
 #~ msgid "The application sent an invalid request."
 #~ msgstr "应用程序发送的请求无效。"
@@ -18659,9 +19090,6 @@ msgstr "账户详情"
 #~ msgid "Open a Free account"
 #~ msgstr "开立免费账户"
 
-#~ msgid "Open now"
-#~ msgstr "立即开户"
-
 #~ msgid "Open virtual account"
 #~ msgstr "开设虚拟账户"
 
@@ -20279,9 +20707,6 @@ msgstr "账户详情"
 #~ msgid "Sorry, an error occured with this trade."
 #~ msgstr "对不起，此交易出错了。"
 
-#~ msgid "Start"
-#~ msgstr "生效"
-
 #~ msgid "Tick time"
 #~ msgstr "跳动时间"
 
@@ -20560,9 +20985,6 @@ msgstr "账户详情"
 
 #~ msgid "Novice or expert, learn about the advantages here."
 #~ msgstr "新手或交易老手，在此处学习二元期权交易的优势。"
-
-#~ msgid "Open demo account"
-#~ msgstr "开设模拟帐户"
 
 #~ msgid "Over a decade of proven reliability and security"
 #~ msgstr "历经十多年验证的可靠性及安全性"
@@ -22506,9 +22928,6 @@ msgstr "账户详情"
 #~ msgid "How to place a Touch/No Touch trade"
 #~ msgstr "如何进行触及/不触及类型交易"
 
-#~ msgid "How to trade?"
-#~ msgstr "如何交易"
-
 #~ msgid "How to use the Portfolio, Profit Table & Statement"
 #~ msgstr "如何使用投资组合，利润表及报表"
 
@@ -23504,9 +23923,6 @@ msgstr "账户详情"
 
 #~ msgid "%1 news feed"
 #~ msgstr "%1 新闻递送"
-
-#~ msgid "%1 to %2"
-#~ msgstr "%1 到 %2"
 
 #~ msgid "%1 withdrawals are processed automatically."
 #~ msgstr "%1提款自动处理。"

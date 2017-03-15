@@ -1,9 +1,6 @@
-const expect    = require('chai').expect;
 const portfolio = require('../portfolio').Portfolio;
-const ws        = require('ws');
-const LiveApi   = require('binary-live-api').LiveApi;
+const { api, expect } = require('../../../../common_functions/tests');
 
-const api = new LiveApi({ websocket: ws });
 const portfolio_mock_data = {
     symbol        : 'frxAUDJPY',
     shortcode     : 'CALL_FRXAUDJPY_10_1467352741_1467388741_S0P_0',

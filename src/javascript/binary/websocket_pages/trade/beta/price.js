@@ -13,7 +13,6 @@ const getStartDateNode           = require('../common_independent').getStartDate
 const Defaults                   = require('../defaults').Defaults;
 const isVisible                  = require('../../../common_functions/common_functions').isVisible;
 const localize                   = require('../../../base/localize').localize;
-const Client                     = require('../../../base/client').Client;
 const elementTextContent         = require('../../../common_functions/common_functions').elementTextContent;
 
 /*
@@ -230,7 +229,7 @@ const Price_Beta = (function() {
                 $('.payout_wrapper:visible').hide();
             }
 
-            if (data.longcode && window.innerWidth > 500 && !Client.status_detected('unwelcome')) {
+            if (data.longcode && window.innerWidth > 500) {
                 description.setAttribute('data-balloon', data.longcode);
             } else {
                 description.removeAttribute('data-balloon');

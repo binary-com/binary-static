@@ -79,14 +79,16 @@ const MBPrice = (function() {
             });
         }
 
-        is_unwelcome = Client.status_detected('unwelcome');
-        if (is_unwelcome) {
-            MBNotifications.show({
-                text       : localize('Sorry, your account is not authorised for any further contract purchases.'),
-                uid        : 'UNWELCOME',
-                dismissible: false,
-            });
-        }
+        BinarySocket.wait('get_account_status').then((response) => {
+            is_unwelcome = /unwelcome/.test(response.get_account_status.status);
+            if (is_unwelcome) {
+                MBNotifications.show({
+                    text       : localize('Sorry, your account is not authorised for any further contract purchases.'),
+                    uid        : 'UNWELCOME',
+                    dismissible: false,
+                });
+            }
+        });
 
         barriers.forEach(function(barrier) {
             Object.keys(contract_types).forEach(function(contract_type) {

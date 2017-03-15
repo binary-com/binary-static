@@ -1,4 +1,4 @@
-.home-content {
+.home-content, .home-jp-content {
     #banner {
         background: url('../images/pages/home/banner-background_1.png') 0 0/100% 108% no-repeat;
     }
@@ -86,6 +86,47 @@
     }
 }
 
+.home-jp-content {
+    #banner {
+        background: url('../images/pages/home-jp/banner.png') 0 0/cover no-repeat;
+        opacity: 0.3;
+        z-index: -1;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+    .relative {
+        position: relative;
+    }
+    .xquote {
+        position: relative;
+        margin-top: 25%;
+        p {
+            font-style: normal;
+        }
+    }
+    .small-image {
+        width: 8%;
+        height: 8%;
+    }
+    .medium-image {
+        width: 14%;
+        height: 14%;
+        margin-right: 1em;
+    }
+    .align-center {
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home-jp-content {
+        .xquote {
+            margin-top: auto;
+        }
+    }
+}
+
 @media screen and (max-width: 480px) {
     .home-content {
         .small-image {
@@ -93,6 +134,12 @@
         }
         .mena {
             width: 32%;
+        }
+    }
+    .home-jp-content {
+        .gr-padding-30 {
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
     }
 }
