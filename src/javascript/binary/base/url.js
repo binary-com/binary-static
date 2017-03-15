@@ -92,7 +92,7 @@ const url_for = function(path, params) {
     if (typeof window !== 'undefined') {
         url  = window.location.href;
     }
-    return url.substring(0, url.indexOf('/' + lang + '/') + lang.length + 2) + (path || 'home') + '.html' + (params ? '?' + params : '');
+    return url.substring(0, url.indexOf('/' + lang + '/') + lang.length + 2) + (path || ('home' + (lang === 'ja' ? '-jp' : ''))) + '.html' + (params ? '?' + params : '');
 };
 
 const url_for_static = function(path) {

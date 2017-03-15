@@ -45,7 +45,7 @@
                 return conLang;
             }
             function redirect() {
-                window.location.href = (lang || 'en').toLowerCase() + '/' + (getCookieItem('loginid') ? 'trading' : 'home') +
+                window.location.href = (lang || 'en').toLowerCase() + '/' + (getCookieItem('loginid') ? 'trading' : 'home' + (lang === 'ja' ? '-jp' : '')) +
                     '.html' + window.location.search;
             }
             function isDelayedRedirect() {
