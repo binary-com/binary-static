@@ -40,7 +40,7 @@ const LoggedInHandler = (function() {
         // redirect back
         let set_default = true;
         if (redirect_url) {
-            const do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home'];
+            const do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home', 'home-jp'];
             const reg = new RegExp(do_not_redirect.join('|'), 'i');
             if (!reg.test(redirect_url) && url_for('') !== redirect_url) {
                 set_default = false;
