@@ -10,8 +10,8 @@ const Home = (() => {
     let clients_country;
 
     const onLoad = () => {
-        if (getLanguage() === 'ja') {
-            window.location.href = url_for('home-jp');
+        if (getLanguage() === 'JA' && !/home-jp/.test(window.location.pathname)) {
+            BinaryPjax.load('home-jp');
             return;
         }
         BinarySocket.wait('website_status').then((response) => {
