@@ -16,6 +16,7 @@ const checkLanguage     = require('../common_functions/country_base').checkLangu
 const Cookies           = require('../../lib/js-cookie');
 const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check.init').RealityCheck;
 const RealityCheckData  = require('../websocket_pages/user/reality_check/reality_check.data').RealityCheckData;
+const PushNotification  = require('../../lib/push_notification');
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
 
@@ -24,6 +25,7 @@ const Page = function() {
     Client.init();
     this.url = new Url();
     Menu.init(this.url);
+    PushNotification.init();
 };
 
 Page.prototype = {
