@@ -1,4 +1,5 @@
 const Validation       = require('./form_validation');
+const objectNotEmpty   = require('../base/utility').objectNotEmpty;
 const showLoadingImage = require('../base/utility').showLoadingImage;
 
 const FormManager = (() => {
@@ -88,11 +89,25 @@ const FormManager = (() => {
     };
 
     const handleSubmit = (options) => {
+        let form,
+            $btn_submit,
+            can_submit;
+
+        const onSuccess = (response = {}) => {
+            if (typeof options.fnc_response_handler === 'function') {
+                if (options.enable_button || 'error' in response) {
+                    enableButton($btn_submit);
+                    form.can_submit = true;
+                }
+                options.fnc_response_handler(response);
+            }
+        };
+
         $(options.form_selector).off('submit').on('submit', (evt) => {
             evt.preventDefault();
-            const form = forms[options.form_selector];
-            const $btn_submit = form.$btn_submit;
-            const can_submit = form.can_submit;
+            form = forms[options.form_selector];
+            $btn_submit = form.$btn_submit;
+            can_submit = form.can_submit;
             if (!can_submit) return;
             if (Validation.validate(options.form_selector)) {
                 const req = $.extend({}, options.obj_request, getFormData(options.form_selector));
@@ -101,15 +116,13 @@ const FormManager = (() => {
                 }
                 disableButton($btn_submit);
                 form.can_submit = false;
-                BinarySocket.send(req).then((response) => {
-                    if (typeof options.fnc_response_handler === 'function') {
-                        if (options.enable_button || 'error' in response) {
-                            enableButton($btn_submit);
-                            form.can_submit = true;
-                        }
-                        options.fnc_response_handler(response);
-                    }
-                });
+                if (objectNotEmpty(req)) {
+                    BinarySocket.send(req).then((response) => {
+                        onSuccess(response);
+                    });
+                } else {
+                    onSuccess();
+                }
             }
         });
     };

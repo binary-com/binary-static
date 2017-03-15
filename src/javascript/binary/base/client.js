@@ -1,3 +1,4 @@
+const moment               = require('moment');
 const BinaryPjax           = require('./binary_pjax');
 const CookieStorage        = require('./storage').CookieStorage;
 const LocalStore           = require('./storage').LocalStore;
@@ -5,8 +6,8 @@ const State                = require('./storage').State;
 const default_redirect_url = require('./url').default_redirect_url;
 const getLoginToken        = require('../common_functions/common_functions').getLoginToken;
 const japanese_client      = require('../common_functions/country_base').japanese_client;
+const RealityCheckData     = require('../websocket_pages/user/reality_check/reality_check.data');
 const Cookies              = require('../../lib/js-cookie');
-const moment               = require('moment');
 
 const Client = (function () {
     const client_object = {};
@@ -179,6 +180,7 @@ const Client = (function () {
         // set local storage
         localStorage.setItem('GTM_newaccount', '1');
         localStorage.setItem('active_loginid', client_loginid);
+        RealityCheckData.clear();
         window.location.href = default_redirect_url(); // need to redirect not using pjax
     };
 
@@ -237,7 +239,7 @@ const Client = (function () {
 
     const do_logout = function(response) {
         if (response.logout !== 1) return;
-        Client.clear_storage_values();
+        clear_storage_values();
         LocalStore.remove('client.tokens');
         const cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence'];
         const domains = [
