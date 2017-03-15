@@ -1,10 +1,6 @@
-const expect = require('chai').expect;
+const deep = require('deep-diff'); // eslint-disable-line import/no-extraneous-dependencies
 const activeSymbols = require('../active_symbols').ActiveSymbols;
-const ws = require('ws');
-const LiveApi = require('binary-live-api').LiveApi;
-const deep = require('deep-diff');
-
-const api = new LiveApi({ websocket: ws });
+const { api, expect } = require('../../common_functions/tests');
 
 /*
     There is a market called forex, which has a submarket called major_pairs, which has a symbol called frxEURUSD
