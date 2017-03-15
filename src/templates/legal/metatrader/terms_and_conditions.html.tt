@@ -110,11 +110,6 @@
                 <li>[% l("If you wish to withdraw funds from your Real Account and close your Real Account, you may notify us by contacting our helpdesk at <a href='mailto:[_1]'>[_1]</a>. Your Real Account may be closed if you do not have any Open Positions and all amounts due to us have been settled.", "support@binary.com") %]</li>
             </ol>
         </li>
-        <!-- <li>[% l("Base Currency") %]
-                    <ol>
-                        <li>[% l("Any realised profits and interest charges that are denominated in a currency that's different from your Base Currency will be automatically converted to your Base Currency before being debited / credited to your Real Account. The conversion will be performed at commercially reasonable rates.") %]</li>
-                    </ol>
-                </li> -->
     </ol>
     <h2>[% l("F. Orders") %]</h2>
     <ol>
@@ -354,8 +349,7 @@
         </li>
         <li>[% l("Account Equity &mdash; Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss.") %]</li>
         <li>[% l("Account Free Margin &mdash; Your Account Equity minus your Total Margin.") %]</li>
-        <!-- <li>[% l("Base Currency - The currency in which your Transaction was entered into.") %]</li> -->
-        <li>[% l("Binary Options Real Account &mdash; Your real money account opened with Binary.com which you use to trade binary options with Binary.com.") %]</li>
+       <li>[% l("Binary Options Real Account &mdash; Your real money account opened with Binary.com which you use to trade binary options with Binary.com.") %]</li>
         <li>[% l("Event &mdash; Event examples include circumstances whereby the type of Transaction to which your Order is related to ceased to be offered, or a Corporate Event or the insolvency of a Company whose shares represent are related to the subject matter of the Order, and others.") %]</li>
         <li>[% l("Limit/Limit Price &mdash; The price specified in your Limit Order.") %]</li>
         <li>[% l("Limit Order &mdash; An instruction to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price.") %]</li>
@@ -373,5 +367,4 @@
         <li>[% l("Total Margin &mdash; The aggregate of all Margin Requirements in your Real Account.") %]</li>
         <li>[% l("Transaction &mdash; A contract entered into by you pursuant to this Agreement.") %]</li>
     </ol>
-    <!-- </ol> -->
 </div>
