@@ -7,6 +7,7 @@ sub all_pages {
     return (
         # url pathname,                template file path,             layout,       title,                  exclude languages
         ['home',                       'home/index',                   'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
+        ['home-jp',                    'home/index_jp',                'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
         ['404',                        'static/404',                   'full_width', '404'],
         ['why-us',                     'static/why_us',                'full_width', 'Why Us',               'ja'],
         ['why-us-jp',                  'static/why_us_jp',             'full_width', 'Why Us',               'NOT-ja,en'],
@@ -61,9 +62,7 @@ sub all_pages {
         ['metatrader/download',                'metatrader/download',                'default',    'Start Trading with MetaTrader 5'],
         ['metatrader/margin-policy',           'metatrader/margin_policy',           'full_width', 'MetaTrader Margin Policy'],
 
-        ## ws
-        ['account/account_transferws',   'cashier/account_transferws',                'default', 'Account Transfer'],
-
+        ['cashier/account_transfer',     'cashier/account_transfer',                  'default', 'Account Transfer'],
         ['cashier/deposit-jp',           'japan/cashier/deposit',                     'default', 'Deposit',         'NOT-ja,en'],
         ['cashier/epg_forwardws',        'cashier/deposit_withdraw',                  'default', 'Cashier'],
         ['cashier/forwardws',            'cashier/deposit_withdraw',                  'default', 'Cashier',         'ja'],
@@ -89,7 +88,7 @@ sub all_pages {
         ['resources/asset_indexws',  'resources/asset_indexws',   'default', 'Asset Index', 'ja'],
         ['resources/market_timesws', 'resources/market_timesws',  'default', 'Trading Times'],
 
-        ['user/authenticatews',              'user/authenticatews',                  'default',    'Authenticate',            'ja'],
+        ['user/authenticate',                'user/authenticate',                    'default',    'Authenticate',            'ja'],
         ['user/lost_passwordws',             'user/lost_password',                   'default',    'Password Reset'],
         ['user/metatrader',                  'user/metatrader',                      'full_width', 'MetaTrader account management'],
         ['user/portfoliows',                 'user/portfoliows',                     'default',    'Portfolio'],

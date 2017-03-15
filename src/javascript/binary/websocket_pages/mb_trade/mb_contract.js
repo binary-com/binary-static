@@ -54,6 +54,9 @@ const MBContract = (function() {
         Object.keys(durationMap).forEach(function(key) {
             dur = dur.replace(key, localize(durationMap[key] + (+dur[0] === 1 || /h/.test(key) ? '' : 's')));
         });
+        if (!japanese_client()) {
+            dur = dur.replace(/(\d+)([a-z]+)/ig, '$1 $2 ').trim();
+        }
         return dur;
     };
 
@@ -67,11 +70,13 @@ const MBContract = (function() {
             date_expiry = trading_period.split('_')[1];
             duration = trading_period.split('_')[2];
         }
-        const text_value = moment.utc(date_expiry * 1000)
+        let text_value = moment.utc(date_expiry * 1000)
                             .utcOffset(japanese_client() ? '+09:00' : '+00:00')
                             .locale(getLanguage().toLowerCase())
-                            .format('MMM Do, HH:mm')
-                            .replace(/08:59/, '09:00«') + ' (' + durationText(duration.replace('0d', '1d')) + ')';
+                            .format('MMM Do, HH:mm');
+        if (japanese_client()) {
+            text_value = text_value.replace(/08:59/, '09:00«') + ' (' + durationText(duration.replace('0d', '1d')) + ')';
+        }
         return text_value.toString();
     };
 
@@ -195,7 +200,7 @@ const MBContract = (function() {
         };
         Object.keys(all_durations).forEach(function(key) {
             if (all_durations[key]) {
-                remainingTimeString.push(all_durations[key] + localize((key + (+all_durations[key] === 1 ? '' : 's'))));
+                remainingTimeString.push(all_durations[key] + (japanese_client() ? '' : ' ') + localize((key + (+all_durations[key] === 1 ? '' : 's'))));
             }
         });
         elementInnerHtml(remainingTimeElement, remainingTimeString.join(' '));
@@ -272,53 +277,53 @@ const MBContract = (function() {
 
     const getTemplate = function(contract_type) {
         const templates = {
-            CALLE: {
-                opposite   : 'PUT',
-                order      : 0,
-                name       : 'Higher',
-                description: '[_1] [_2] payout if [_3] is strictly higher or equal than Exercise price at close  on [_4].',
-            },
             PUT: {
                 opposite   : 'CALLE',
-                order      : 1,
+                order      : 0,
                 name       : 'Lower',
-                description: '[_1] [_2] payout if [_3] is strictly lower than Exercise price at close on [_4].',
+                description: '[_1] [_2] payout if [_3] is strictly lower than Barrier at close on [_4].',
+            },
+            CALLE: {
+                opposite   : 'PUT',
+                order      : 1,
+                name       : 'Higher',
+                description: '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
             },
             ONETOUCH: {
                 opposite   : 'NOTOUCH',
                 order      : 0,
                 name       : 'Touches',
-                description: '[_1] [_2] payout if [_3] touches Exercise price through close on [_4].',
+                description: '[_1] [_2] payout if [_3] touches Barrier through close on [_4].',
             },
             NOTOUCH: {
                 opposite   : 'ONETOUCH',
                 order      : 1,
                 name       : 'Does Not Touch',
-                description: '[_1] [_2] payout if [_3] does not touch Exercise price through close on [_4].',
+                description: '[_1] [_2] payout if [_3] does not touch Barrier through close on [_4].',
             },
             EXPIRYRANGEE: {
                 opposite   : 'EXPIRYMISS',
                 order      : 0,
                 name       : 'Ends Between',
-                description: '[_1] [_2] payout if [_3] ends on or between low and high values of Exercise price at close on [_4].',
+                description: '[_1] [_2] payout if [_3] ends on or between low and high values of Barrier at close on [_4].',
             },
             EXPIRYMISS: {
                 opposite   : 'EXPIRYRANGEE',
                 order      : 1,
                 name       : 'Ends Outside',
-                description: '[_1] [_2] payout if [_3] ends outside low and high values of Exercise price at close on [_4].',
+                description: '[_1] [_2] payout if [_3] ends outside low and high values of Barrier at close on [_4].',
             },
             RANGE: {
                 opposite   : 'UPORDOWN',
                 order      : 0,
                 name       : 'Stays Between',
-                description: '[_1] [_2] payout if [_3] stays between low and high values of Exercise price through close on [_4].',
+                description: '[_1] [_2] payout if [_3] stays between low and high values of Barrier through close on [_4].',
             },
             UPORDOWN: {
                 opposite   : 'RANGE',
                 order      : 1,
                 name       : 'Goes Outside',
-                description: '[_1] [_2] payout if [_3] goes outside of low and high values of Exercise price through close on [_4].',
+                description: '[_1] [_2] payout if [_3] goes outside of low and high values of Barrier through close on [_4].',
             },
         };
         return contract_type ? templates[contract_type] : templates;
@@ -335,7 +340,7 @@ const MBContract = (function() {
             const contract_type = c.contract_type,
                 template = getTemplate(contract_type),
                 $wrapper = $($desc_wrappers[template.order]);
-            $wrapper.find('.details-heading').attr('class', 'details-heading ' + contract_type).text(localize(template.name));
+            $wrapper.find('.contract-type').attr('class', `contract-type ${contract_type}${template.order ? ' negative-color' : ''}`).text(localize(template.name));
             $wrapper.find('.descr').html(localize(template.description, [currency, payout, display_name, date_expiry]));
         });
     };

@@ -13,7 +13,7 @@ const FinancialAccOpening = (function() {
 
     const onLoad = function() {
         State.set('is_financial_opening', 1);
-        if (Client.get('has_financial')) {
+        if (Client.get('has_financial') || !Client.get('residence')) {
             BinaryPjax.load('trading');
             return;
         } else if (Client.get('has_gaming')) {
@@ -65,7 +65,11 @@ const FinancialAccOpening = (function() {
             });
         });
 
-        bindValidation();
+        FormManager.handleSubmit({
+            form_selector       : formID,
+            obj_request         : { new_account_maltainvest: 1, accept_risk: 0 },
+            fnc_response_handler: handleResponse,
+        });
     };
 
     const getValidations = () => (
@@ -74,18 +78,21 @@ const FinancialAccOpening = (function() {
         ])
     );
 
-    const bindValidation = () => {
-        const obj_req = { new_account_maltainvest: 1 };
-
-        FormManager.handleSubmit(formID, $.extend(obj_req, { accept_risk: 0 }), handleResponse);
-
-        FormManager.handleSubmit('#financial-risk', $.extend(obj_req, { accept_risk: 1 }), handleResponse);
-    };
-
     const handleResponse = (response) => {
         if ('error' in response && response.error.code === 'show risk disclaimer') {
             $('#financial-form').addClass('hidden');
             $('#financial-risk').removeClass('hidden');
+
+            const form_id = '#financial-risk';
+            FormManager.init(form_id, []);
+
+            const echo_req = $.extend({}, response.echo_req);
+            echo_req.accept_risk = 1;
+            FormManager.handleSubmit({
+                form_selector       : form_id,
+                obj_request         : echo_req,
+                fnc_response_handler: handleResponse,
+            });
         } else {
             AccountOpening.handleNewAccount(response, response.msg_type);
         }

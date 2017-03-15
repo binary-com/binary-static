@@ -1,22 +1,22 @@
 const moment = require('moment');
 
-const ProfitTable = (function() {
+const ProfitTable = (() => {
     'use strict';
 
-    const getProfitTabletData = function(transaction) {
-        const buyMoment  = moment.utc(transaction.purchase_time * 1000),
-            sellMoment = moment.utc(transaction.sell_time * 1000),
-            buyPrice  = parseFloat(transaction.buy_price).toFixed(2),
-            sellPrice = parseFloat(transaction.sell_price).toFixed(2);
+    const getProfitTabletData = (transaction) => {
+        const buy_moment = moment.utc(transaction.purchase_time * 1000),
+            sell_moment  = moment.utc(transaction.sell_time * 1000),
+            buy_price    = parseFloat(transaction.buy_price).toFixed(2),
+            sell_price   = parseFloat(transaction.sell_price).toFixed(2);
 
         return {
-            buyDate  : buyMoment.format('YYYY-MM-DD') + '\n' + buyMoment.format('HH:mm:ss') + ' GMT',
+            buyDate  : buy_moment.format('YYYY-MM-DD') + '\n' + buy_moment.format('HH:mm:ss') + ' GMT',
             ref      : transaction.transaction_id,
             payout   : parseFloat(transaction.payout).toFixed(2),
-            buyPrice : buyPrice,
-            sellDate : sellMoment.format('YYYY-MM-DD') + '\n' + sellMoment.format('HH:mm:ss') + ' GMT',
-            sellPrice: sellPrice,
-            pl       : Number(sellPrice - buyPrice).toFixed(2),
+            buyPrice : buy_price,
+            sellDate : sell_moment.format('YYYY-MM-DD') + '\n' + sell_moment.format('HH:mm:ss') + ' GMT',
+            sellPrice: sell_price,
+            pl       : Number(sell_price - buy_price).toFixed(2),
             desc     : transaction.longcode,
             id       : transaction.contract_id,
             app_id   : transaction.app_id,
@@ -28,6 +28,4 @@ const ProfitTable = (function() {
     };
 })();
 
-module.exports = {
-    ProfitTable: ProfitTable,
-};
+module.exports = ProfitTable;

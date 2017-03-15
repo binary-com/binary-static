@@ -11,9 +11,11 @@
         <li>[% l("Send your funds to the payment agent. The deposited funds, less the agent's commission, will show up in your account.") %]</li>
     </ol>
 
+
     <p>
         [% l('Show payment agents for:') %]
-        <select id="target_country"></select>
+        <select id="target_country" class="hidden"></select>
+        <div class="loading">[% INCLUDE global/loading.html.tt %]</div>
     </p>
 
     <div id="pa_list">
@@ -61,7 +63,7 @@
         </div>
     </div>
 
-    <p id="no_paymentagent" class="error-msg hidden">[% l('Payment agent is unavailable in your country.') %]</p>
+    <p id="no_paymentagent" class="notice-msg center-text hidden">[% l('Payment agent is unavailable in your country.') %]</p>
 
     <p>
         [% l('Apply to become a [_1] <a href="[_2]">payment agent</a>.', website_name, request.url_for('/payment-agent')) %]

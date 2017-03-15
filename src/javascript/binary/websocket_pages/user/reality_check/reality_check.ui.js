@@ -2,7 +2,6 @@ const Client                    = require('../../../base/client').Client;
 const showLocalTimeOnHover      = require('../../../base/clock').Clock.showLocalTimeOnHover;
 const localize                  = require('../../../base/localize').localize;
 const url_for                   = require('../../../base/url').url_for;
-const check_risk_classification = require('../../../common_functions/check_risk_classification').check_risk_classification;
 const Content                   = require('../../../common_functions/content').Content;
 const onlyNumericOnKeypress     = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
 const RealityCheckData          = require('./reality_check.data').RealityCheckData;
@@ -113,7 +112,6 @@ const RealityCheckUI = (function() {
         RealityCheckData.set('ack', 1);
         RealityCheckUI.closePopUp();
         startSummaryTimer();
-        check_risk_classification();
     };
 
     const onStatementClick = function() {

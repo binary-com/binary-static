@@ -45,19 +45,23 @@ const appendTextValueChild = function(element, text, value, disabled, el_class) 
         }
     }
     if (!element) return;
+    element.appendChild(makeOption(text, value, disabled, el_class));
+};
+
+const makeOption = (text, value, disabled, el_class) => {
     const option = document.createElement('option');
     option.text = text;
     // setting null value helps with detecting required error
     // on 'Please select' options
     // that have no value of their own
     option.value = value || '';
-    if (disabled === 'disabled') {
+    if (disabled && disabled.toLowerCase() === 'disabled') {
         option.setAttribute('disabled', 'disabled');
     }
     if (el_class) {
         option.className = el_class;
     }
-    element.appendChild(option);
+    return option;
 };
 
 const isValidDate = function(day, month, year) {
@@ -136,6 +140,7 @@ module.exports = {
     detect_hedging        : detect_hedging,
     jqueryuiTabsToDropdown: jqueryuiTabsToDropdown,
     appendTextValueChild  : appendTextValueChild,
+    makeOption            : makeOption,
     isValidDate           : isValidDate,
     isVisible             : isVisible,
     checkInput            : checkInput,

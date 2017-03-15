@@ -2,7 +2,7 @@ const Client                = require('../../../base/client').Client;
 const localize              = require('../../../base/localize').localize;
 const url_for               = require('../../../base/url').url_for;
 const template              = require('../../../base/utility').template;
-const getResidence          = require('../../../common_functions/account_opening').getResidence;
+const makeOption            = require('../../../common_functions/common_functions').makeOption;
 const japanese_client       = require('../../../common_functions/country_base').japanese_client;
 const FormManager           = require('../../../common_functions/form_manager');
 const TrafficSource         = require('../../../common_functions/traffic_source').TrafficSource;
@@ -15,12 +15,45 @@ const VirtualAccOpening = (function() {
         if (japanese_client()) {
             handleJPForm();
         } else {
-            getResidence();
+            BinarySocket.send({ residence_list: 1 }).then(response => handleResidenceList(response.residence_list));
             $('#residence').removeClass('invisible');
             bindValidation();
         }
 
-        FormManager.handleSubmit(form, { new_account_virtual: 1 }, handleNewAccount);
+        FormManager.handleSubmit({
+            form_selector       : form,
+            fnc_response_handler: handleNewAccount,
+        });
+    };
+
+    const handleResidenceList = (residence_list) => {
+        if (residence_list.length > 0) {
+            const $residence      = $('#residence');
+            const residence_value = Client.get('residence') || '';
+
+            const $options_with_disabled = $('<div/>');
+            residence_list.forEach((res) => {
+                $options_with_disabled.append(makeOption(res.text, res.value, res.disabled));
+            });
+            $residence.html($options_with_disabled.html());
+
+            if (!residence_value) {
+                BinarySocket.wait('website_status').then(data => handleWebsiteStatus(data.website_status));
+            }
+        }
+    };
+
+    const handleWebsiteStatus = (website_status) => {
+        const clients_country = (website_status || {}).clients_country;
+        if (!clients_country) return;
+        const $residence = $('#residence');
+
+        // set residence value to client's country, detected by IP address from back-end
+        const $clients_country = $residence.find('option[value="' + clients_country + '"]');
+        if (!$clients_country.attr('disabled')) {
+            $clients_country.prop('selected', true);
+        }
+        $residence.removeClass('invisible');
     };
 
     const bindValidation = () => {
@@ -34,7 +67,8 @@ const VirtualAccOpening = (function() {
 
             { selector: '#residence' },
             { request_field: 'email_consent' },
-            { request_field: 'utm_source', value: TrafficSource.getSource(utm_data) },
+            { request_field: 'utm_source',          value: TrafficSource.getSource(utm_data) },
+            { request_field: 'new_account_virtual', value: 1 },
         ];
 
         if (utm_data.utm_medium)   req.push({ request_field: 'utm_medium', value: utm_data.utm_medium });

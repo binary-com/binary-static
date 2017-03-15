@@ -49,7 +49,11 @@ const PaymentAgentWithdraw = (() => {
                 { request_field: 'dry_run',               value: 1 },
             ]);
 
-            FormManager.handleSubmit(form_id, {}, withdrawResponse, setAgentName);
+            FormManager.handleSubmit({
+                form_selector       : form_id,
+                fnc_response_handler: withdrawResponse,
+                fnc_additional_check: setAgentName,
+            });
         } else {
             showPageError(localize('The Payment Agent facility is currently not available in your country.'));
         }
@@ -81,7 +85,10 @@ const PaymentAgentWithdraw = (() => {
                     { request_field: 'paymentagent_withdraw', value: 1 },
                 ]);
 
-                FormManager.handleSubmit(view_ids.confirm, {}, withdrawResponse);
+                FormManager.handleSubmit({
+                    form_selector       : view_ids.confirm,
+                    fnc_response_handler: withdrawResponse,
+                });
 
                 $(view_ids.confirm + ' #btnBack').click(() => {
                     setActiveView(view_ids.form);
@@ -138,11 +145,11 @@ const PaymentAgentWithdraw = (() => {
     };
 
     const onLoad = () => {
-        BinarySocket.wait('get_account_status').then(() => {
+        BinarySocket.wait('get_account_status').then((data) => {
             $views = $('#paymentagent_withdrawal').find('.viewItem');
             $views.addClass(hidden_class);
 
-            if (Client.status_detected('withdrawal_locked, cashier_locked', 'any')) {
+            if (/(withdrawal|cashier)_locked/.test(data.get_account_status.status)) {
                 showPageError('', 'withdrawal-locked-error');
             } else {
                 BinarySocket.send({ paymentagent_list: Cookies.get('residence') })
