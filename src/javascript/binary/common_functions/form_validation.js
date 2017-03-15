@@ -21,31 +21,35 @@ const Validation = (function() {
 
     const initForm = (form_selector, fields) => {
         const $form = $(`${form_selector}:visible`);
-        if ($form.length && Array.isArray(fields) && fields.length) {
-            forms[form_selector] = { fields: fields, $form: $form };
-            fields.forEach((field) => {
-                field.$ = $form.find(field.selector);
-                if (!field.$.length || !field.validations) return;
+        if ($form.length) {
+            forms[form_selector] = { $form: $form };
+            if (Array.isArray(fields) && fields.length) {
+                forms[form_selector].fields = fields;
 
-                field.type = getFieldType(field.$);
-                field.form = form_selector;
-                if (field.msg_element) {
-                    field.$error = $form.find(field.msg_element);
-                } else {
-                    const $parent = field.$.parent();
-                    if ($parent.find(`div.${error_class}`).length === 0) {
-                        $parent.append($('<div/>', { class: `${error_class} ${hidden_class}` }));
+                fields.forEach((field) => {
+                    field.$ = $form.find(field.selector);
+                    if (!field.$.length || !field.validations) return;
+
+                    field.type = getFieldType(field.$);
+                    field.form = form_selector;
+                    if (field.msg_element) {
+                        field.$error = $form.find(field.msg_element);
+                    } else {
+                        const $parent = field.$.parent();
+                        if ($parent.find(`div.${error_class}`).length === 0) {
+                            $parent.append($('<div/>', { class: `${error_class} ${hidden_class}` }));
+                        }
+                        field.$error = $parent.find(`.${error_class}`);
                     }
-                    field.$error = $parent.find(`.${error_class}`);
-                }
 
-                const event = events_map[field.type];
-                if (event) {
-                    field.$.unbind(event).on(event, () => {
-                        checkField(field);
-                    });
-                }
-            });
+                    const event = events_map[field.type];
+                    if (event) {
+                        field.$.unbind(event).on(event, () => {
+                            checkField(field);
+                        });
+                    }
+                });
+            }
         }
     };
 
@@ -61,7 +65,8 @@ const Validation = (function() {
     const validEmail        = value => /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(value);
     const validPassword     = value => /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+/.test(value);
     const validLetterSymbol = value => !/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test(value);
-    const validGeneral      = value => !/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|]+/.test(value);
+    const validGeneral      = value => !/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><|]+/.test(value);
+    const validAddress      = value => !/[`~!#$%^&*)(_=+\[}{\]\\";:\?><|]+/.test(value);
     const validPostCode     = value => /^[a-zA-Z\d-]*$/.test(value);
     const validPhone        = value => /^\+?[0-9\s]*$/.test(value);
     const validRegular      = (value, options) => options.regex.test(value);
@@ -82,6 +87,10 @@ const Validation = (function() {
         if (!(options.type === 'float' ? /^\d+(\.\d+)?$/ : /^\d+$/).test(value) || !$.isNumeric(value)) {
             is_ok = false;
             message = localize('Should be a valid number');
+        } else if (options.type === 'float' && options.decimals &&
+            !(new RegExp('^\\d+(\\.\\d{' + options.decimals.replace(/ /g, '') + '})?$').test(value))) {
+            is_ok = false;
+            message = localize('Only [_1] decimal points are allowed.', [options.decimals]);
         } else if (options.min && +value < +options.min) {
             is_ok = false;
             message = localize('Should be more than [_1]', [options.min]);
@@ -99,6 +108,7 @@ const Validation = (function() {
         email        : { func: validEmail,        message: 'Invalid email address' },
         password     : { func: validPassword,     message: 'Password should have lower and uppercase letters with numbers.' },
         general      : { func: validGeneral,      message: 'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.' },
+        address      : { func: validAddress,      message: 'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.' },
         letter_symbol: { func: validLetterSymbol, message: 'Only letters, space, hyphen, period, and apostrophe are allowed.' },
         postcode     : { func: validPostCode,     message: 'Only letters, numbers, and hyphen are allowed.' },
         phone        : { func: validPhone,        message: 'Only numbers and spaces are allowed.' },
@@ -178,6 +188,7 @@ const Validation = (function() {
 
     const validate = (form_selector) => {
         const form = forms[form_selector];
+        if (!form.fields) return true;
         form.is_ok = true;
         form.fields.forEach((field) => {
             if (!checkField(field)) {

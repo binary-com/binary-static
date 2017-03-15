@@ -1,254 +1,144 @@
 <div id="banner">
-    <div class="container">
-        <div class="gr-row">
-            <div class="gr-12">
-                <div class="gr-padding-30">
-                    <h1 class="dark center-text gr-padding-10">[% l("The <strong>Premier Platform</strong> for Binary Options Trading") %]</h1>
-                    <p class="center-text gr-padding-10">[% l("Trade <strong>24/7</strong>, even on weekends.") %]</p>
-                    <form id="verify-email-form">
-                        <div class="gr-row gr-row-align-center">
-                            <div class=" signup-box gr-8 gr-10-p gr-12-m gr-no-gutter secondary-bg-color">
-                                <div class="gr-row gr-padding-10">
-                                    <div class="gr-7 gr-10-m gr-centered">
-                                        <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]" />
-                                    </div>
-                                    <div class="gr-5 gr-8-m gr-centered">
-                                        <button class="primary-bg-color" id="btn-verify-email" type="submit">[% l('Create Free Account') %]</button>
-                                    </div>
-                                    <span class="gr-12 gr-padding-10 error-msg hint color-white center-text" id="signup_error" style="display:none"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="ja-hide">
-    <div class="container">
-        <div class="gr-12 gr-parent">
-            <h2 class="center-text gr-padding-10">
-                [% l("The easiest way to get started in the financial markets") %]
-            </h2>
-            <p class="center-text">
-                [% l("Trade in the world's financial markets in a simple, user-friendly platform.") %]
-            </p>
-            <div class="gr-row gr-row-align-middle">
-                <div class="gr-7 gr-12-m gr-parent">
-                    <img class="responsive" src="[% request.url_for('images/pages/tour/trade-tutorial_1.svg') %]"/>
-                </div>
-                <div class="gr-5 gr-12-m gr-parent">
-                    <ul>
-                        <li>[% l("<strong>All markets:</strong> currencies, stocks, indices, and commodities.") %]</li>
-                        <li>[% l("<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out.") %]</li>
-                        <li>[% l("<strong>All durations:</strong> from 10 seconds to 365 days.") %]</li>
-                        <li>[% l("<strong>All payouts:</strong> from \$1 to \$50,000.") %]</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="container gr-padding-30">
+        <h1 class="dark center-text gr-padding-10">[% l("The <strong>Premier Platform</strong> for Binary Options Trading") %]</h1>
+        <p class="center-text gr-padding-10">[% l("Trade <strong>24/7</strong>, even on weekends.") %]</p>
 
-    <div class="gr-padding-10 fill-bg-color">
-        <div class="container">
-            <div class="gr-12 gr-padding-20">
-                <h2 class="center-text">
-                    [% l("Why choose us") %]
-                </h2>
-                <div class="gr-12 center-text">
-                    <p>
-                        [% l("[_1] is the award-winning industry pioneer in online options trading.", website_name) %]
-                    </p>
-                    <div class="gr-padding-10">
-                        <img class="small-image" src="[% request.url_for('images/pages/home/awards-t2w.png') %]"/>
-                        <img class="small-image" src="[% request.url_for('images/pages/why-us/why-us-GBAF-award-2012.svg') %]"/>
-                        <img class="small-image" src="[% request.url_for('images/pages/home/awards-egr.png') %]"/>
-                        <img class="mena" src="[% request.url_for('images/pages/home/awards-mena.png') %]"/>
-                    </div>
-                    <div>
-                        <ul>
-                            <span class="gr-12">
-                                <span class="gr-row gr-row-align-center">
-                                    <span class="gr-11">
-                                        <span class="gr-row">
-                                            <li class="xlist1">
-                                                <h3>
-                                                    [% l("Sharp prices") %]
-                                                </h3>
-                                            </li>
-                                            <li class="xlist3">
-                                                <h3>
-                                                    [% l("Trade your way") %]
-                                                </h3>
-                                            </li>
-                                            <li class="xlist2">
-                                                <h3>
-                                                    [% l("Licensed and regulated") %]
-                                                </h3>
-                                            </li>
-                                        </span>
-                                    </span>
-                                </span>
-                            </span>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="gr-12 gr-padding-30">
-            <h2 class="center-text">
-                [% l("[_1] academy", website_name) %]
-            </h2>
-            <div class="gr-12 gr-6-p center-text gr-centered">
-                <p>[% l("Improve your trading skills with our free educational & training resources.") %]</p>
-            </div>
+        <form id="frm_verify_email">
             <div class="gr-row gr-row-align-center">
-                <div class="gr-3 gr-12-m gr-6-p">
-                    <img class="responsive" src="[% request.url_for('images/pages/home/academy-icon.svg') %]"/>
-                </div>
-                <div class="gr-4 gr-12-m gr-6-p">
-                    <ul class="checked">
-                        <li>
-                            [% l("Free webinars") %]
-                        </li>
-                        <li>
-                            [% l("Free daily market report") %]
-                        </li>
-                        <li>
-                            [% l("Free E-books") %]
-                        </li>
-                        <li>
-                            [% l("Free trading charts") %]
-                        </li>
-                    </ul>
+                <div class="signup-box gr-8 gr-10-p gr-12-m gr-no-gutter secondary-bg-color">
+                    <div class="gr-row gr-padding-10">
+                        <div class="gr-7 gr-10-m gr-centered">
+                            <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]" />
+                        </div>
+                        <div class="gr-5 gr-8-m gr-centered">
+                            <button class="primary-bg-color" id="btn_verify_email" type="submit">[% l('Create Free Account') %]</button>
+                        </div>
+                        <span class="gr-12 gr-padding-10 error-msg hint color-white center-text" id="signup_error" style="display:none"></span>
+                    </div>
                 </div>
             </div>
-            <div class="gr-12 gr-6-p gr-centered">
-                <div class="gr-row gr-row-align-center gr-padding-10">
-                    <a class="button" href="https://academy.binary.com" target="_blank">
-                        <span>
-                            [% l("Start learning") %]
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="separator-line border-bottom"></div>
-        </div>
+        </form>
     </div>
+</div>
 
-    <div class="container">
-        <div class="gr-12 gr-padding-30 gr-parent">
-            <h2 class="center-text">
-                [% l("What our clients are saying") %]
-            </h2>
-            <div class="gr-row">
-                <div class="gr-6 gr-12-m gr-6-p">
-                    <div class="xquote fill-bg-color">
-                        <p>[% l("&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;") %]</p>
-                    </div>
-                    <div class="xbubble-left"></div>
-                    <div class="xquoter-left">
-                        <p>[% l("Joshua Cavallaro <span> Markets And You Trader</span>") %]</p>
-                    </div>
-                </div>
-                <div class="gr-6 gr-12-m gr-6-p">
-                    <div class="xquote fill-bg-color">
-                        <p>[% l("&#8220;[_1] is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;", website_name) %]</p>
-                    </div>
-                    <div class="xbubble-right"></div>
-                    <div class="xquoter-right">
-                        <p>[% l("Andrei Asavei <span>Top Binary Options Brokers</span>") %]</p>
-                    </div>
-                </div>
+<div class="container">
+    <div class="gr-parent">
+        <h2 class="center-text gr-padding-10">[% l("The easiest way to get started in the financial markets") %]</h2>
+        <p class="center-text">[% l("Trade in the world's financial markets in a simple, user-friendly platform.") %]</p>
+
+        <div class="gr-row gr-row-align-middle">
+            <div class="gr-7 gr-12-m gr-parent">
+                <img class="responsive" src="[% request.url_for('images/pages/tour/trade-tutorial_1.svg') %]"/>
             </div>
-            <div class="separator-line border-bottom"></div>
-        </div>
-    </div>
 
-    <div class="container">
-        <div class="gr-12 gr-padding-30 gr-parent">
-            <h2 class="center-text">
-                [% l("Payment methods") %]
-            </h2>
-            <div class="gr-12">
-                <a href="[% request.url_for('/cashier/payment_methods') %]">
-                    <div class="gr-row gr-row-align-center">
-                        <div id="visa"></div>
-                        <div id="mastercard"></div>
-                        <div id="int_bank_wire"></div>
-                        <div id="local_bank_transfer"></div>
-                        <div id="western_union"></div>
-                        <div id="citadel"></div>
-                        <div id="neteller"></div>
-                        <div id="okpay"></div>
-                        <div id="fastpay"></div>
-                        <div id="perfect_money"></div>
-                        <div id="moneybrokers"></div>
-                    </div>
-                </a>
-                <p class="center-text">
-                    [% l("Hundreds of deposit and withdrawal options.") %]
-                </p>
+            <div class="gr-5 gr-12-m gr-parent">
+                <ul>
+                    <li>[% l("<strong>All markets:</strong> currencies, stocks, indices, and commodities.") %]</li>
+                    <li>[% l("<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out.") %]</li>
+                    <li>[% l("<strong>All durations:</strong> from 10 seconds to 365 days.") %]</li>
+                    <li>[% l("<strong>All payouts:</strong> from \$1 to \$50,000.") %]</li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
-<div class="all-hide ja-show">
-    <div class="container">
-        <div class="gr-row">
-            <div class="gr-12 gr-parent">
-                <h2 class="center-text gr-padding-10">
-                    [% l("The easiest way to get started in the financial markets") %]
-                </h2>
-                <p class="center-text">
-                    [% l("Trade in the world's financial markets in a simple, user-friendly platform.") %]
-                </p>
+
+<div class="gr-padding-10 fill-bg-color">
+    <div class="container gr-padding-20">
+        <h2 class="center-text">[% l("Why choose us") %]</h2>
+        <div class="center-text">
+            <p>[% l("[_1] is the award-winning industry pioneer in online options trading.", website_name) %]</p>
+
+            <div class="gr-padding-10">
+                <img class="small-image" src="[% request.url_for('images/pages/home/awards-t2w.png') %]"/>
+                <img class="small-image" src="[% request.url_for('images/pages/why-us/why-us-GBAF-award-2012.svg') %]"/>
+                <img class="small-image" src="[% request.url_for('images/pages/home/awards-egr.png') %]"/>
+                <img class="mena" src="[% request.url_for('images/pages/home/awards-mena.png') %]"/>
             </div>
-            <div class="gr-9 gr-parent gr-centered">
-                <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/trade_form.png') %]"/>
-            </div>
+
+            <ul class="gr-row gr-row-align-center">
+                <li class="xlist1"><h3>[% l("Sharp prices") %]</h3></li>
+                <li class="xlist3"><h3>[% l("Trade your way") %]</h3></li>
+                <li class="xlist2"><h3>[% l("Licensed and regulated") %]</h3></li>
+            </ul>
         </div>
     </div>
-    <div class="gr-padding-30">
-        <div class="container">
-            <div class="gr-row">
-                <div class="gr-12">
-                    <h2 class="center-text">[% l("Why choose us") %]</h2>
-                    <p class="center-text">
-                        [% l("{Japan Only}Worldwide award-winning pioneer in FX binary options trading") %]
-                    </p>
-                    <div class="gr-padding-10 center-text">
-                        <img class="small-image" src="[% request.url_for('images/pages/home/awards-t2w.png') %]"/>
-                        <img class="small-image" src="[% request.url_for('images/pages/why-us/why-us-GBAF-award-2012.svg') %]"/>
-                        <img class="small-image" src="[% request.url_for('images/pages/home/awards-egr.png') %]"/>
-                        <img class="mena" src="[% request.url_for('images/pages/home/awards-mena.png') %]"/>
-                    </div>
-                </div>
+</div>
+
+<div class="container gr-padding-30">
+    <h2 class="center-text">[% l("[_1] academy", website_name) %]</h2>
+
+    <div class="gr-12 gr-6-p center-text gr-centered">
+        <p>[% l("Improve your trading skills with our free educational & training resources.") %]</p>
+    </div>
+
+    <div class="gr-row gr-row-align-center">
+        <div class="gr-3 gr-12-m gr-6-p"><img class="responsive" src="[% request.url_for('images/pages/home/academy-icon.svg') %]"/></div>
+        <div class="gr-4 gr-12-m gr-6-p">
+            <ul class="checked">
+                <li>[% l("Free webinars") %]</li>
+                <li>[% l("Free daily market report") %]</li>
+                <li>[% l("Free E-books") %]</li>
+                <li>[% l("Free trading charts") %]</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="gr-12 gr-6-p gr-centered">
+        <div class="gr-row gr-row-align-center gr-padding-10">
+            <a class="button" href="https://academy.binary.com" target="_blank">
+                <span>[% l("Start learning") %]</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="separator-line border-bottom"></div>
+</div>
+
+<div class="container gr-padding-30 gr-parent">
+    <h2 class="center-text">[% l("What our clients are saying") %]</h2>
+
+    <div class="gr-row">
+        <div class="gr-6 gr-12-m gr-6-p">
+            <div class="xquote fill-bg-color">
+                <p>[% l("&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;") %]</p>
             </div>
-            <div class="gr-row">
-              <div class="gr-1"></div>
-                <div class="gr-5">
-                    <ul class="checked">
-                        <li>[% l("{Japan Only}Trade the major currencies") %]</li>
-                        <li>[% l("{Japan Only}Trade all binary option types") %]</li>
-                        <li>[% l("{Japan Only}Payout from 1 to 10") %]</li>
-                        <li>[% l("{Japan Only}Two-way pricing") %]</li>
-                    </ul>
-                </div>
-                <div class="gr-5">
-                    <ul class="checked">
-                        <li>[% l("{Japan Only}Live chart tools") %]</li>
-                        <li>[% l("{Japan Only}Fully licenced in Japan") %]</li>
-                        <li>[% l("{Japan Only}Binary option specialist for over 15 years ") %]</li>
-                        <li>[% l("{Japan Only}Segregated Customer Account Balances are 100% Safe") %]</li>
-                    </ul>
-                </div>
-                <div class="gr-1"></div>
+            <div class="xbubble-left"></div>
+            <div class="xquoter-left"><p>[% l("Joshua Cavallaro <span> Markets And You Trader</span>") %]</p></div>
+        </div>
+        <div class="gr-6 gr-12-m gr-6-p">
+            <div class="xquote fill-bg-color">
+                <p>[% l("&#8220;[_1] is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;", website_name) %]</p>
             </div>
+            <div class="xbubble-right"></div>
+            <div class="xquoter-right"><p>[% l("Andrei Asavei <span>Top Binary Options Brokers</span>") %]</p></div>
+        </div>
+    </div>
+
+    <div class="separator-line border-bottom"></div>
+</div>
+
+<div class="container">
+    <div class="gr-12 gr-padding-30 gr-parent">
+        <h2 class="center-text">[% l("Payment methods") %]</h2>
+
+        <div class="gr-12">
+            <a href="[% request.url_for('/cashier/payment_methods') %]">
+                <div class="gr-row gr-row-align-center">
+                    <div id="visa"></div>
+                    <div id="mastercard"></div>
+                    <div id="int_bank_wire"></div>
+                    <div id="local_bank_transfer"></div>
+                    <div id="western_union"></div>
+                    <div id="citadel"></div>
+                    <div id="neteller"></div>
+                    <div id="okpay"></div>
+                    <div id="fastpay"></div>
+                    <div id="perfect_money"></div>
+                    <div id="moneybrokers"></div>
+                </div>
+            </a>
+            <p class="center-text">[% l("Hundreds of deposit and withdrawal options.") %]</p>
         </div>
     </div>
 </div>

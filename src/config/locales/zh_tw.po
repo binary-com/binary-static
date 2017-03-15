@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-28 07:45+0000\n"
+"PO-Revision-Date: 2017-03-11 01:28+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
+"Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/binary/static/zh_Hant/>\n"
 "Language: zh_tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.12-dev\n"
+"X-Generator: Weblate 2.12\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」是由%1建立和維護的編程例程、議定書、工具和資源集。您可通過%1交易平台使用已經註冊的應用程式介面。"
@@ -30,29 +30,29 @@ msgstr "「第三方供應商」指通過使用%1的API提供可用功能和作�
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr " %1 %2已記入您的虛擬資金帳戶 %3"
 
-msgid "%1 %2 payout if %3 does not touch Exercise price through close on %4."
-msgstr "%4閉市時如果%3未觸及履約價格，可獲取%1 %2的賠付額。"
+msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
+msgstr "%4閉市時如果%3未觸及障礙價格，可獲取%1 %2的賠付額。"
 
-msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-msgstr "%4閉市時如果%3平倉價相等於或介於履約價格最低和最高價位間，可獲取%1 %2 賠付額。"
+msgid "%1 %2 payout if %3 ends on or between low and high values of Barrier at close on %4."
+msgstr "%4閉市時如果%3平倉價相等於或介於障礙價格最低和最高價位間，可獲取%1 %2 賠付額。"
 
-msgid "%1 %2 payout if %3 ends outside low and high values of Exercise price at close on %4."
-msgstr "%4閉市時如果%3平倉價在履約價格最低和最高價位範圍外，可獲取%1 %2 賠付額。"
+msgid "%1 %2 payout if %3 ends outside low and high values of Barrier at close on %4."
+msgstr "%4閉市時如果%3平倉價在障礙價格最低和最高價位範圍外，可獲取%1 %2 賠付額。"
 
-msgid "%1 %2 payout if %3 goes outside of low and high values of Exercise price through close on %4."
-msgstr "%4閉市時如果%3價在履約價格最低和最高價位範圍外，可獲取%1 %2 賠付額。"
+msgid "%1 %2 payout if %3 goes outside of low and high values of Barrier through close on %4."
+msgstr "%4閉市時如果%3價在障礙價格最低和最高價位範圍外，可獲取%1 %2 賠付額。"
 
-msgid "%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-msgstr "%4閉市時如果%3嚴格高於或相等於履約價格，可獲取%1 %2 賠付額。"
+msgid "%1 %2 payout if %3 is strictly higher than or equal to Barrier at close on %4."
+msgstr "%4閉市時如果%3嚴格高於或相等於障礙價格，可獲取%1 %2 賠付額。"
 
-msgid "%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-msgstr "%4閉市時如果%3嚴格低於履約價格，可獲取%1 %2 賠付額。"
+msgid "%1 %2 payout if %3 is strictly lower than Barrier at close on %4."
+msgstr "%4閉市時如果%3嚴格低於障礙價格，可獲取%1 %2 賠付額。"
 
-msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-msgstr "%4閉市時如果%3在履約價格最低和最高價位範圍內，可獲取%1 %2 賠付額。"
+msgid "%1 %2 payout if %3 stays between low and high values of Barrier through close on %4."
+msgstr "%4閉市時如果%3在障礙價格最低和最高價位範圍內，可獲取%1 %2 賠付額。"
 
-msgid "%1 %2 payout if %3 touches Exercise price through close on %4."
-msgstr "%4閉市時如果%3觸及履約價格，可獲取%1 %2 賠付額。"
+msgid "%1 %2 payout if %3 touches Barrier through close on %4."
+msgstr "%4閉市時如果%3觸及障礙價格，可獲取%1 %2 賠付額。"
 
 msgid "%1 (Toll Free)"
 msgstr "%1(免費電話)"
@@ -117,10 +117,8 @@ msgstr "%1有幾個客服職位空缺，是難得的工作機會。"
 msgid "%1 has thousands of clients taking a variety of positions on the financial markets at any one time, and earns a small margin on these trades."
 msgstr "%1 在任一時間內均有數千名客戶交易各類金融產品，該平台在這些交易中僅賺取極低的利潤率。"
 
-#, fuzzy
-#| msgid "%1 has updated its  <a target=\"_blank\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a target=\"_blank\" href=\"%2\">Terms & Conditions</a>."
 msgid "%1 has updated its <a href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a href=\"%2\">Terms & Conditions</a>."
-msgstr "%1已經更新了其 <a target=\"_blank\" href=\"%2\">條款和條件</a>。通過點選OK按鈕，您確定已經閱讀和接受此更新 <a target=\"_blank\" href=\"%2\">條款和條件</a>。"
+msgstr "%1已經更新了其 <a href=\"%2\">條款和條件</a>。通過點選OK按鈕，您確定已經閱讀和接受此更新 <a href=\"%2\">條款和條件</a>。"
 
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr "%1 建立歷史性里程碑，今已擁有百萬使用者。本公司繼續快速成長，這項成就再次證實我們在同業中的領先地位。"
@@ -182,10 +180,8 @@ msgstr "%1 誠聘聯盟經理，在全世界各關鍵區域促進快速增長和
 msgid "%1 offers a range of common deposit and withdrawal methods, from credit and debit cards to bank wires, e-cash and e-wallets."
 msgstr "%1 提供各種常見的存提款方式，包括信用卡和轉帳卡、銀行電匯、電子現金及電子錢包等。"
 
-#, fuzzy
-#| msgid "%1 offers a virtual-money account so you can get the hang of trading binaries. Why not <a class='pjaxload' href='%2'>open a free $10k fully-functional virtual-money account</a>, and start learning how to trade."
 msgid "%1 offers a virtual-money account so you can get the hang of trading binaries. Why not <a href='%2'>open a free $10k fully-functional virtual-money account</a>, and start learning how to trade."
-msgstr "%2 提供虛擬資金帳戶，以便投資者掌握二元期權交易的技巧。何不<a class='pjaxload' href='%2'>免費開立一個1萬美元功能齊全的虛擬資金帳戶</a>，並開始學習如何交易呢。"
+msgstr "%2 提供虛擬資金帳戶，以便投資者掌握二元期權交易的技巧。何不<a href='%2'>免費開立一個1萬美元功能齊全的虛擬資金帳戶</a>，並開始學習如何交易呢。"
 
 msgid "%1 offers five main types of trades that will help you execute your market view or strategy:"
 msgstr "%1 提供五種可幫助您執行市場觀點或策略的交易："
@@ -330,6 +326,9 @@ msgstr "《Global Banking and Finance Review》頒發的「2012年最佳固定�
 
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "《 eGaming Review》頒發的「年度最佳金融投注運作商」獎項"
+
+msgid "(Duration)"
+msgstr "(期限)"
 
 msgid "(One) Touch trades"
 msgstr "一觸即付交易"
@@ -686,6 +685,11 @@ msgstr "對企業法律合規性非常了解，並具濃厚興趣"
 msgid "A higher figure (higher to you) representing our offer price and a lower figure (lower to you) representing our bid price for each Transaction shall be quoted to you upon your request. The difference between our bid and our offer price will comprise of the market spread (where there is market for the underlying instrument) and our spread (being our charge to you)."
 msgstr "每筆交易的報價將根據您的要求為您提供，包括代表我們報價的較高數字（對您來說比較高），以及代表我們出價的較低價格（對您來說較低）。我們的出價和報價之間的差額將包括市場價差（當有標的工具市場時）和我們的價差（我們向您收的費用）。"
 
+#, fuzzy
+#| msgid "{Japan Only}Binary option specialist for over 15 years "
+msgid "A leading innovator of Binary Options trading for over 15 Years"
+msgstr "{Japan Only}Binary option specialist for over 15 years "
+
 msgid "A list of payment methods you will accept from Clients"
 msgstr "您可接受之客戶付款方式列表"
 
@@ -830,15 +834,11 @@ msgstr "帳戶餘額："
 msgid "Account balance: "
 msgstr "帳戶餘額： "
 
-#, fuzzy
-#| msgid "Account needs age verification, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgid "Account needs age verification, please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "帳戶需要通過年齡驗證。欲知詳細資訊，請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
+msgstr "帳戶需要通過年齡驗證。欲知詳細資訊，請聯繫<a href=\"%1\">客服部</a>。"
 
-#, fuzzy
-#| msgid "Account not activated, please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgid "Account not activated, please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "帳戶未啟動。欲知詳細資訊，請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
+msgstr "帳戶未啟動。欲知詳細資訊，請聯繫<a href=\"%1\">客服部</a>。"
 
 msgid "Account type"
 msgstr "帳戶類型"
@@ -933,6 +933,11 @@ msgstr "聯盟經理"
 msgid "Affiliate Program"
 msgstr "聯盟計劃"
 
+#, fuzzy
+#| msgid "Affiliate Program"
+msgid "Affiliates Program"
+msgstr "聯盟計劃"
+
 msgid "Agreement Restrictions"
 msgstr "協議限制"
 
@@ -959,6 +964,9 @@ msgstr "所有信用卡資料都按照銀行政策，使用最新 SSL 加密技�
 
 msgid "All credit card details are submitted directly to the Visa/Mastercard network using the latest SSL encryption technology, in accordance with bank policies;"
 msgstr "所有信用卡資料都按照銀行政策，使用最新 SSL 加密技術直接送出至 Visa/Mastercard 網路。"
+
+msgid "All customer funds are segregated and held with JSF Trust Bank."
+msgstr ""
 
 msgid "All funds transferred from your Binary Options Real Account to your Real Account must be made by you."
 msgstr "所有將資金從二元期權真實帳戶轉移到您真實帳戶的操作必須由您親自執行。"
@@ -1108,9 +1116,12 @@ msgid "Apply a meticulous eye for detail in proofreading the content that appear
 msgstr "非常注重細節，對公司網站、部落格、社交媒體網站和行銷材料內容進行校對和更正工作。"
 
 #, fuzzy
-#| msgid "Apply to become a %1 <a class=\"pjaxload\" href=\"%2\">payment agent</a>."
+#| msgid "I have a Real Money Account"
+msgid "Apply for a Real Money Account"
+msgstr "我有真實資金帳戶"
+
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
-msgstr "申請成為 %1 <a class=\"pjaxload\" href=\"%2\">支付代理</a>。"
+msgstr "申請成為 %1 <a href=\"%2\">支付代理</a>。"
 
 msgid "Apply to become a Payment Agent"
 msgstr "申請成為付款代理"
@@ -1453,6 +1464,9 @@ msgstr "Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 1
 
 msgid "Binary KK granted Japan license"
 msgstr "Binary KK 被授予日本執照"
+
+msgid "Binary KK is a licensed Type 1 Financial Instruments Business, regulated by the KLFB, and a member of the FFAJ."
+msgstr ""
 
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
@@ -2279,6 +2293,11 @@ msgstr "存款"
 msgid "Deposit Bonus"
 msgstr "存款獎金"
 
+#, fuzzy
+#| msgid "Depositing and withdrawing funds"
+msgid "Deposit funds and begin trading"
+msgstr "存款及取款"
+
 msgid "Deposit into"
 msgstr "存款到"
 
@@ -2561,6 +2580,9 @@ msgstr "電子郵件"
 msgid "Email address"
 msgstr "電子郵件地址"
 
+msgid "Email us your Identity Documents"
+msgstr ""
+
 msgid "Email: "
 msgstr "電子郵件: "
 
@@ -2798,6 +2820,9 @@ msgstr "有國際環境工作經驗"
 msgid "Expertise in cloud solutions"
 msgstr "有云計算解決方案專門知識"
 
+msgid "Expiry Time"
+msgstr "到期時間"
+
 msgid "Expiry price"
 msgstr "到期價格"
 
@@ -2830,6 +2855,9 @@ msgstr "六、訂單"
 
 msgid "FAQ"
 msgstr "常見問題集"
+
+msgid "FX Bloggers, Mentors & Gurus"
+msgstr ""
 
 msgid "FX Rate"
 msgstr "外匯兌換率"
@@ -2897,10 +2925,8 @@ msgstr "Financial Asset"
 msgid "Financial Information"
 msgstr "金融資訊"
 
-#, fuzzy
-#| msgid "Financial Risk approval is required. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgid "Financial Risk approval is required. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "需要通過金融風險批准。欲知詳細資訊，請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
+msgstr "需要通過金融風險批准。欲知詳細資訊，請聯繫<a href=\"%1\">客服部</a>。"
 
 msgid "Financial asset"
 msgstr "金融資產"
@@ -2922,6 +2948,11 @@ msgstr "首先，設定您的頭寸參數..."
 
 msgid "First, you need to set the parameters of your trade. Here's what you need to consider."
 msgstr "您需首先設定交易參數。您需要考慮以下因素。"
+
+#, fuzzy
+#| msgid "Premier binary options trading platform"
+msgid "First-Class FX Binary Options Trading Platform"
+msgstr "首選二元期權交易平台"
 
 msgid "First-class client service."
 msgstr "一流的客戶服務。"
@@ -3118,6 +3149,9 @@ msgstr "獲取10,000.00美元"
 msgid "Get more virtual money"
 msgstr "獲取更多虛擬資金"
 
+msgid "Get started"
+msgstr "開始交易"
+
 msgid "Get your price"
 msgstr "獲取報價"
 
@@ -3267,6 +3301,11 @@ msgstr "保證金如何計算？"
 
 msgid "How soon can I start trading?"
 msgstr "我需要多久才能開始交易？"
+
+#, fuzzy
+#| msgid "Go to web terminal"
+msgid "How to begin"
+msgstr "轉到 web 終端"
 
 msgid "How to read the table above"
 msgstr "如何讀取上面的表"
@@ -3448,10 +3487,8 @@ msgstr "如果您持倉過夜，系統將對您的帳戶收取持倉成本隔夜
 msgid "If you meet our basic requirements, we'll send you a talent test."
 msgstr "如果您符合我們的基本要求，我們會向您發送一份人材測試。"
 
-#, fuzzy
-#| msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
 msgid "If you need assistance feel free to contact our <a href=\"%1\">Customer Support</a>."
-msgstr "如果您需要幫助，請聯繫我們的<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
+msgstr "如果您需要幫助，請聯繫我們的<a href=\"%1\">客服部</a>。"
 
 msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
 msgstr "如果您以前曾經直接從 MetaTrader 網站下載 MetaTrader 5 ，請在可用的經紀商清單選擇「%1」。"
@@ -3555,10 +3592,8 @@ msgstr "如果您想投訴關於此協定所述的保證金交易服務，請與
 msgid "If you're a broker we'd like to work with you. You will be introducing your clients to a unique and innovative product - the %1 trading platform."
 msgstr "如您是代理人，我們願意跟您合作。您將給您客戶推薦獨特和創新的產品-%1交易平台。"
 
-#, fuzzy
-#| msgid "If you're an individual trader, you'll appreciate the simplicity, flexibility, and limited risk of binary trading. With %1's low minimum stakes, you'll soon learn how to trade with skill and confidence. And if you have any questions, you're free to access <a class='pjaxload' href='%2'>our helpful support desk</a>."
 msgid "If you're an individual trader, you'll appreciate the simplicity, flexibility, and limited risk of binary trading. With %1's low minimum stakes, you'll soon learn how to trade with skill and confidence. And if you have any questions, you're free to access <a href='%2'>our helpful support desk</a>."
-msgstr "如您是個人交易者，您肯定會認同二元期權交易的簡易、彈性化和低風險。 %1 的最低投注金額門檻極低，您將很快學會如何熟練自信地進行交易。如有任何疑問，您可隨時聯繫<a class='pjaxload' href='%2'>我們熱心的支援人員</a>。"
+msgstr "如您是個人交易者，您肯定會認同二元期權交易的簡易、彈性化和低風險。 %1 的最低投注金額門檻極低，您將很快學會如何熟練自信地進行交易。如有任何疑問，您可隨時聯繫<a href='%2'>我們熱心的支援人員</a>。"
 
 msgid "If you're looking to build a career, and not a resume, talk to us, %1. We're one of the IT world's most vibrant and progressive workplaces."
 msgstr "如果您想成就一番事業，而不是找一份工作，歡迎聯繫我們%1。我們是IT領域最具活力、最開明的工作場所之一。"
@@ -4343,6 +4378,12 @@ msgstr "Japan website Risk For Binary Option Trading Paragraph 2"
 msgid "Japan website Terms and Conditions Paragraph 1"
 msgstr "Japan website Terms and Conditions Paragraph 1"
 
+msgid "Join now"
+msgstr ""
+
+msgid "Join our affiliate program to earn income by leveraging your hard-earned network of contact"
+msgstr ""
+
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "加入我們卓越、才華洋溢的專業人才團隊。 與我們共同合作加強並促進一個15年來在二元期權交易行業中最受認可的高科技平台。"
 
@@ -4513,6 +4554,11 @@ msgstr "擁有牌照並受監管"
 
 msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan"
 msgstr "由馬爾他、英國、曼島、愛爾蘭和日本相關機構授予執照和監管"
+
+#, fuzzy
+#| msgid "Licensed and regulated"
+msgid "Licensed in Japan"
+msgstr "擁有牌照並受監管"
 
 msgid "Licensed, trusted, and secure"
 msgstr "有牌照、備受信賴、及安全"
@@ -5120,6 +5166,9 @@ msgstr "十月"
 msgid "October"
 msgstr "十月"
 
+msgid "Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform."
+msgstr ""
+
 msgid "Office worker"
 msgstr "辦公室員工"
 
@@ -5165,8 +5214,8 @@ msgstr "線上貨幣兌換"
 msgid "Only %1 are allowed."
 msgstr "只允許 %1 。"
 
-msgid "Only 2 decimal points are allowed."
-msgstr "只允許小數點后兩位。"
+msgid "Only %1 decimal points are allowed."
+msgstr "只允許小數點后%位。"
 
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgstr "成立後僅五年，我們的線上交易服務即斬獲這一重要獎項。該獎項旨在表彰 BetOnMarkets.com 向交易新手和資深交易者提供可靠、快速和安全的網上交易。此時，我們網站的交易數量已超過1500萬筆。"
@@ -5206,6 +5255,11 @@ msgstr "空缺"
 
 msgid "Open Source"
 msgstr "開源"
+
+#, fuzzy
+#| msgid "Open an Account"
+msgid "Open a Demo Account"
+msgstr "開設帳戶"
 
 msgid "Open a Financial Account"
 msgstr "開設金融帳戶"
@@ -5288,10 +5342,8 @@ msgstr "Others"
 msgid "Our Company"
 msgstr "我們公司"
 
-#, fuzzy
-#| msgid "The Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. Your commission will be credited to your affiliate account within fifteen days after the close of a calendar month."
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
-msgstr "聯盟計劃自2004年3月正式啟動以來一直及時足額支付款項。您的聯盟佣金將在日曆月結束後十五天內計入您的聯盟會員帳戶。"
+msgstr "我們的國際聯盟計劃自2004年3月正式啟動以來一直及時足額支付款項。在日本，您的聯盟佣金將在您介紹的客戶符合資格條件的日曆月結束後三十天內計入您的聯盟會員帳戶。"
 
 msgid "Our Order Execution Policy (the \"Policy\") sets out the overview and approach of how Binary.com executes orders on behalf of our clients."
 msgstr "我們的訂單執行政策 （簡稱「政策」） 設定關於Binary.com 代替客戶執行訂單的概述和方法。"
@@ -5308,10 +5360,8 @@ msgstr "我們承諾為您提供「最佳執行方案」，並不表示我們在
 msgid "Our company continues to thrive and obtains a license in the Isle of Man to better service our UK clients."
 msgstr "我們公司繼續茁壯成長，並在曼島獲得執照，可以為我們的英國客戶提供更好的服務。"
 
-#, fuzzy
-#| msgid "Our costs and charges for depositing and withdrawing money are set out <a href=\"%1\" class=\"pjaxload\">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability."
 msgid "Our costs and charges for depositing and withdrawing money are set out <a href=\"%1\">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability."
-msgstr "我們的存款和提款成本與費用詳細請參考<a href=\"%1\" class=\"pjaxload\">此處</a>。請先了解所有跟您有關的成本和費用，因為這些將會影響您的收益。"
+msgstr "我們的存款和提款成本與費用詳細請參考<a href=\"%1\">此處</a>。請先了解所有跟您有關的成本和費用，因為這些將會影響您的收益。"
 
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "毋庸置疑，我們深受客戶喜愛。 2014年中旬，%1的歷史交易數量和每日新交易數量分別超過1億筆和13萬筆。"
@@ -5417,6 +5467,11 @@ msgstr "成為我們的合作夥伴"
 
 msgid "Partners"
 msgstr "合作夥伴"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Knowledge Test"
+msgid "Pass our Knowledge Test"
+msgstr "{JAPAN ONLY}Knowledge Test"
 
 msgid "Password"
 msgstr "密碼"
@@ -5529,10 +5584,11 @@ msgstr "平台"
 msgid "Please %1 to view this page"
 msgstr "要查看此頁面，請 %1 t"
 
-#, fuzzy
-#| msgid "Please %1 to view this page"
+msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
+msgstr "給客戶轉帳前請先<a href=\"%1\">存款</a>。"
+
 msgid "Please <a href=\"%1\">log in</a> to view this page."
-msgstr "要查看此頁面，請 %1 t"
+msgstr "要查看此頁面，請先<a href=\"%1\">登入</a>。"
 
 msgid "Please accept the terms and conditions."
 msgstr "請接受條款和條件。"
@@ -5558,9 +5614,6 @@ msgstr "請確認交易詳細資料以完成轉帳："
 msgid "Please contact us with whatever is on your mind at <a href='mailto:%1'>%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgstr "無論您有什麼想法，請傳送郵件至<a href='mailto:%1'>%1</a>與我們聯繫。我們十分樂意聽取您的意見反應並且提供協助。請隨時與我們分享您的意見和建議。"
 
-msgid "Please deposit before transfer to client."
-msgstr "給客戶轉帳前請先存款。"
-
 msgid "Please enter a number between %1."
 msgstr "請輸入%1之間的數字。"
 
@@ -5572,9 +5625,6 @@ msgstr "請輸入大於0之數字"
 
 msgid "Please enter a number."
 msgstr "請輸入號碼。"
-
-msgid "Please enter a valid amount."
-msgstr "請輸入有效金額。"
 
 msgid "Please enter an integer value"
 msgstr "請輸入整數"
@@ -5622,7 +5672,7 @@ msgid "Please remember at all times that trading binary options can be an exciti
 msgstr "請記住，二元期權交易不論在什麼時候都會是一項令人興奮的活動，但出於道義，我們有責任提醒您可能會遇到的風險。像其它追求極限的活動一樣，期權交易可能會使人上癮。我們懇請您參與認真的自我剖析，評估自身是否已經上癮。為了避免上癮，請您遵循一些基本的原則和指導方針，這是很重要的。"
 
 msgid "Please see our <a href=%1>terms and conditions</a> for details of payout qualifications."
-msgstr ""
+msgstr "想知道賠付資格的詳細資訊，請參閱我們的<a href=%1>條款和條件</a>。"
 
 msgid "Please select"
 msgstr "請選擇"
@@ -5969,6 +6019,9 @@ msgstr "真實情況檢查時間間隔:"
 msgid "Receive news and special offers"
 msgstr "收取新消息和特別優惠"
 
+msgid "Receive your activation code by secure"
+msgstr ""
+
 msgid "Ref."
 msgstr "參考"
 
@@ -6107,15 +6160,11 @@ msgstr "零售客戶"
 msgid "Return"
 msgstr "回報"
 
-#, fuzzy
-#| msgid "Returns above 100% on simple <a href='%1' class='pjaxload'>rise/fall</a> contracts."
 msgid "Returns above 100% on simple <a href='%1'>rise/fall</a> contracts."
-msgstr "簡單 <a href='%1' class='pjaxload'> 上漲/下跌</a> 合約的回報率高於100%。"
+msgstr "簡單 <a href='%1'> 上漲/下跌</a> 合約的回報率高於100%。"
 
-#, fuzzy
-#| msgid "Returns above 1000% on <a href='%1' class='pjaxload'>higher/lower</a> and <a href='%2' class='pjaxload'>touch/no-touch</a> trades."
 msgid "Returns above 1000% on <a href='%1'>higher/lower</a> and <a href='%2'>touch/no-touch</a> trades."
-msgstr "<a href='%1' class='pjaxload'>「高於/低於」</a> 以及 <a href='%2' class='pjaxload'>「觸及/未觸及」</a> 交易的回報率高於1000%。"
+msgstr "<a href='%1'>「高於/低於」</a> 以及 <a href='%2'>「觸及/未觸及」</a> 交易的回報率高於1000%。"
 
 msgid "Review suspicious account transactions"
 msgstr "審核可疑的帳戶交易"
@@ -6245,6 +6294,9 @@ msgstr "安全隱私"
 
 msgid "Security testing opportunities"
 msgstr "安全測試機會"
+
+msgid "Segregated Funds"
+msgstr ""
 
 msgid "Select market"
 msgstr "選擇市場"
@@ -6497,6 +6549,11 @@ msgstr "開始時間:"
 
 msgid "Start learning"
 msgstr "開始學習"
+
+#, fuzzy
+#| msgid "Start from:"
+msgid "Start now"
+msgstr "開始時間:"
 
 msgid "Start time"
 msgstr "開始時間"
@@ -7029,8 +7086,10 @@ msgstr "能夠使用測試驅動開發技術寫出高品質、自記錄代碼"
 msgid "The above personal data that we collect will be held by us and processed for any purpose as may be allowed by law or required by any law. We may also transfer such personal data to any company within the Binary Group of companies, any of our business associates or payment providers, whether in or outside of the EEA including in countries which might not offer an equivalent level of protection of personal data."
 msgstr "對於以上收集的個人資料，我們將根據法律允許或規定目的持有或處理。我們可能會將相關個人資料轉移給Binary 集團的公司、我們的業務夥伴或資金提供者，不論其是否位於EEA區域，包括一些可能沒有提供相等個人資料保護水平的國家。"
 
-msgid "The account transfer is unavailable. Please"
-msgstr "帳戶不可轉帳。請"
+#, fuzzy
+#| msgid "The account transfer is unavailable. Please deposit to your account."
+msgid "The account transfer is unavailable. Please %1deposit%2 to your account."
+msgstr "帳戶不可轉帳。請將資金存入您的帳戶。"
 
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr "聯盟方案讓您通過推薦客戶到網站而獲利。有能力給網站帶來新客戶的聯盟會員可一起共享增長和成功。"
@@ -7071,19 +7130,11 @@ msgstr "您要向客戶收取的充值提款佣金"
 msgid "The company does not guarantee the ability to sell a contract prior to its expiration time."
 msgstr "公司不保證在合約到期之前您一定能賣出該合約。"
 
-#, fuzzy
-#| msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1'>here.</a>"
-msgstr "本公司有多種存款方式可採用，每一種方式都有其不同的存款時序，其中一些可能不讓提款。有關各種可用的存款和提款方式以及可用的結算期等詳細資訊，請檢視<a href='%1' class='pjaxload'>此處。</a>"
+msgstr "本公司有多種存款方式可採用，每一種方式都有其不同的存款時序，其中一些可能不讓提款。有關各種可用的存款和提款方式以及可用的結算期等詳細資訊，請檢視<a href='%1'>此處。</a>"
 
-#, fuzzy
-#| msgid ""
-#| "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer\n"
-#| "                funds at the level: <strong>medium protection</strong>."
 msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
-msgstr ""
-"公司把客戶資金存在獨立的銀行帳戶，與操作帳戶分開，因此如果公司破產，客戶資金不會成為公司資產的一部分。這符合客戶\n"
-"                 資金獨立分離帳戶管理的博彩委員會要求，即為：<strong>中等級別保護</strong>。"
+msgstr "公司把客戶資金存在獨立的銀行帳戶，與操作帳戶分開，因此如果公司破產，客戶資金不會成為公司資產的一部分。這符合客戶資金獨立分離帳戶管理的博彩委員會要求，即為：<strong>中等級別保護</strong>。"
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency."
 msgstr "公司把客戶資金存在獨立的銀行帳戶，與操作帳戶分開，並已經安排如果公司破產，確保客戶帳戶資金將分配給客戶。"
@@ -7118,10 +7169,8 @@ msgstr "期限是所買入交易的時間週期（參考「合約期限」）。
 msgid "The easiest way to get started in the financial markets"
 msgstr "參與金融市場最簡便的方法"
 
-#, fuzzy
-#| msgid "The email address provided is already in use. If you forgot your password, please try our <a class=\"pjaxload\" href=\"%1\">password recovery tool</a> or contact our customer service."
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
-msgstr "所提供的電子郵件地址已經在使用。如果忘了密碼，請嘗試使用我們的<a class=\"pjaxload\" href=\"%1\">密碼恢復工具</a>或聯繫客服部。"
+msgstr "所提供的電子郵件地址已經在使用。如果忘了密碼，請嘗試使用我們的<a href=\"%1\">密碼恢復工具</a>或聯繫客服部。"
 
 msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
 msgstr "長倉合約的進場價位為1001，即進場現價 + 一半價差。退出時，現價為 1100，因此長倉合約的退市價位為 1099，即退場現價 - 一半價差。"
@@ -7330,10 +7379,8 @@ msgstr "買入時伺服器存取出了問題。"
 msgid "There was a problem accessing the server."
 msgstr "伺服器存取出了問題。"
 
-#, fuzzy
-#| msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
 msgid "There was a problem validating your personal details. Please update your %1 <a href=\"%2\">here</a>."
-msgstr "您的個人資料驗證出了問題。請<a class=\"pjaxload\" href=\"%2\">在此</a>更新您的%1。"
+msgstr "您的個人資料驗證出了問題。請<a href=\"%2\">在此</a>更新您的%1。"
 
 msgid "There was an error"
 msgstr "出現錯誤"
@@ -7635,6 +7682,9 @@ msgstr "在簡單、方便的全球性金融市場線上平台進行交易。"
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "根據您的風險承受能力進行交易。切勿借錢交易。"
 
+msgid "Trade the world’s major currencies with a wide range options and trading periods. More than any other Japan broker!"
+msgstr ""
+
 msgid "Trade type"
 msgstr "交易類型"
 
@@ -7656,9 +7706,6 @@ msgstr "Trading Experience"
 msgid "Trading Limits"
 msgstr "交易限制"
 
-msgid "Trading Period"
-msgstr "交易期限"
-
 msgid "Trading Platforms"
 msgstr "交易平台"
 
@@ -7674,10 +7721,8 @@ msgstr "交易和取款限額"
 msgid "Trading binary options is relatively easy, and you can purchase a trade in only three simple steps."
 msgstr "二元期權交易非常簡單，僅需執行三個簡單的步驟即可購入交易。"
 
-#, fuzzy
-#| msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class=\"ja-hide\">Read about <a href=\"%1\" class=\"pjaxload\">Responsible Trading</a>.</span>"
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class=\"ja-hide\">Read about <a href=\"%1\">Responsible Trading</a>.</span>"
-msgstr "二元期權交易不一定適合每一個人。因此，請確保您完全明白有關的風險。您的虧損可能會超越起始資金存款，而您並不擁有或占有任何標的資產。對於進行博彩產品交易之二元期權，請務必要記住博彩活動可能會上癮，請在玩時提醒自己要承擔責任。<span class=\"ja-hide\">請查閱<a href=\"%1\" class=\"pjaxload\">負責任交易</a>。</span>"
+msgstr "二元期權交易不一定適合每一個人。因此，請確保您完全明白有關的風險。您的虧損可能會超越起始資金存款，而您並不擁有或占有任何標的資產。對於進行博彩產品交易之二元期權，請務必要記住博彩活動可能會上癮，請在玩時提醒自己要承擔責任。<span class=\"ja-hide\">請查閱<a href=\"%1\">負責任交易</a>。</span>"
 
 msgid "Trading forex and contracts for differences carries a high level of risk and %1 does not monitor the open positions of your account on your behalf. It is your responsibility to monitor your Open Positions and understand the exposure of your Open Positions whilst ensuring that your exposure commensurate with your risk appetite. Due to the cost associated with overnight open positions, you should consider investing in the market of the instrument in which you ordinarily transact in instead of investing in a CFD."
 msgstr "外匯和差價合約交易有很高的風險，%1不會代表您監控您帳戶上的未平倉頭寸。監控未平倉頭寸和理解未平倉頭寸所牽涉的風險，同時確保此牽涉風險與您的風險偏好相符是您的責任。由於隔夜未平倉頭寸具相關費用，您應該考慮在您平常進行的工具投資市場中交易，而不是在差價合約市場中投資。"
@@ -7759,6 +7804,11 @@ msgstr "體驗Webtrader"
 
 msgid "Try it now"
 msgstr "立即嘗試"
+
+#, fuzzy
+#| msgid "Try TradingView"
+msgid "Try our trading page"
+msgstr "體驗TradingView"
 
 msgid "Tu"
 msgstr "星期二"
@@ -8588,10 +8638,8 @@ msgstr "我們向您提出警告，請注意以下額外風險："
 msgid "You are willing and financially able to sustain a total loss of funds (which may exceed your initial deposit) resulting from a Transaction;"
 msgstr "您願意和經濟上能夠承擔交易所造成的所有資金虧損（可能會超越起始資金存款）;"
 
-#, fuzzy
-#| msgid "You can <a class='pjaxload' href='%1'>open an account</a>, deposit funds and begin trading within minutes."
 msgid "You can <a href='%1'>open an account</a>, deposit funds and begin trading within minutes."
-msgstr "僅需數分鐘，您就可以<a class='pjaxload' href='%1'>完成開戶</a>，入金並開始交易。"
+msgstr "僅需數分鐘，您就可以<a href='%1'>完成開戶</a>，入金並開始交易。"
 
 msgid "You can even build your own online trading sites, apps, and bots with our <a href=\"https://developers.binary.com\" target=\"_blank\">API and developer tools</a>."
 msgstr "您甚至還可以使用我們的<a href=\"https://developers.binary.com\" target=\"_blank\">應用程式開發介面和開發工具</a>製作自己的線上交易網站、應用程式和建設-運營-移交程式。"
@@ -8707,10 +8755,8 @@ msgstr "您可以隨時終止本協議，但須預先給公司最少7天書面�
 msgid "You may withdraw the bonus amount once you have exceeded an account turnover of 25 times the bonus amount value."
 msgstr "一旦您帳戶的交易額超過獎勵金額的25倍，您就可以從帳戶中取出獎金。"
 
-#, fuzzy
-#| msgid "You must complete the knowledge test to activate this account. Please contact <a class=\"pjaxload\" href=\"%1\">customer support</a> for more information."
 msgid "You must complete the knowledge test to activate this account. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr "要啟動此帳戶，您必須完成知識測試。欲知詳情請聯繫<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
+msgstr "要啟動此帳戶，您必須完成知識測試。欲知詳情請聯繫<a href=\"%1\">客服部</a>。"
 
 msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "要使用%1 API，您必須遵守這些條款。"
@@ -8871,10 +8917,8 @@ msgstr "您的帳戶已被暫時禁用。現僅允許取款。欲知詳情，請
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "您的帳戶已經得到完全驗證，且您的取款限額已經取消。"
 
-#, fuzzy
-#| msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgid "Your account is fully authenticated. You can view your <a href=\"%1\">trading limits here</a>."
-msgstr "您的帳戶已經得到完全驗證，您可在此檢視您的<a  class=\"pjaxload\" href=\"%1\"> 交易限額</a>。"
+msgstr "您的帳戶已經得到完全驗證，您可在此檢視您的<a  href=\"%1\"> 交易限額</a>。"
 
 msgid "Your account is not fully authenticated."
 msgstr "您的帳戶未完成身份驗證。"
@@ -8945,10 +8989,11 @@ msgstr "交易期持續時間限制將於%1秒內結束。"
 msgid "Your settings have been updated successfully."
 msgstr "您的設定已成功更新。"
 
-#, fuzzy
-#| msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
+msgid "Your token has expired. Please click %1here%2 to restart the verification process."
+msgstr "您的權杖已過期。請點選%1此處%2重啟驗證程序。"
+
 msgid "Your token has expired. Please click <a href=\"%1\">here</a> to restart the verification process."
-msgstr "您的權杖已過期。請點選<a class=\"pjaxload\" href=\"%1\">此處</a>重啟驗證程序。"
+msgstr "您的權杖已過期。請點選<a href=\"%1\">此處</a>重啟驗證程序。"
 
 msgid "Your trading statistics since %1."
 msgstr "您自 %1 至今的交易統計。"
@@ -9043,9 +9088,6 @@ msgstr "天"
 msgid "days"
 msgstr "天"
 
-msgid "deposit"
-msgstr "存款"
-
 msgid "details"
 msgstr "詳細資料"
 
@@ -9054,6 +9096,9 @@ msgstr "例如blue.binaryws.com"
 
 msgid "email address"
 msgstr "電子郵件地址"
+
+msgid "from %1 to %2"
+msgstr ""
 
 msgid "h"
 msgstr "小時"
@@ -9187,9 +9232,6 @@ msgstr "人性化平台，各等級交易者皆可使用。"
 msgid "the specific instructions that we receive from you;"
 msgstr "您所提供的特定指令；"
 
-msgid "to your account."
-msgstr "入您的帳戶。"
-
 msgid "today"
 msgstr "今天"
 
@@ -9238,6 +9280,370 @@ msgstr "您已經完整閱讀此法律條款及條件頁面，並明白您將在
 msgid "you have sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and have done so without relying on any information contained in this site."
 msgstr "您擁有足夠的金融交易經驗和知識，有能力評估經由本網站購買金融合約的收益與風險，並且不依賴於本網站包含的任何資訊作出購買決定。"
 
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 2"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 1 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 10 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 10 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 10 Title"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 11 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 11 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 11 Title"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Title"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 10"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 6"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 7"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 8"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 9"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 4"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 6"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Title"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 3"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 4"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 10"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 6"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 7"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 8"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 9"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 6"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 7"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 3"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 2"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 7 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 6"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point A"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point B"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 2(1)"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 2(2)"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 2(3)"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 8"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 9"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 3"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 4"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 5"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 6"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 1"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 2"
+msgstr ""
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 3"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Title"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+msgid "{JAPAN ONLY} Affiliate Program T&C Section Version Update"
+msgstr ""
+
+#, fuzzy
+#| msgid "%1 Affiliate Program Terms and Conditions"
+msgid "{JAPAN ONLY} Affiliate Program Terms & Conditions"
+msgstr "%1 聯盟計劃的條款和條件"
+
 msgid "{JAPAN ONLY}#1 Sales Division"
 msgstr "{JAPAN ONLY}#1 Sales Division"
 
@@ -9271,10 +9677,8 @@ msgstr "{JAPAN ONLY}A Currency Binary Option is one where there is a target for 
 msgid "{JAPAN ONLY}A Currency Option confers the right to sell one currency in exchange for another currency as the underlying asset. For example, the right to sell Yen and buy Dollars is known as a Yen Put / Dollar Call Option, or just Yen Put for short; and the opposite right to buy Yen and sell Dollar is called a Yen Call / Dollar Put Option, or just Yen Call for short."
 msgstr "{JAPAN ONLY}A Currency Option confers the right to sell one currency in exchange for another currency as the underlying asset. For example, the right to sell Yen and buy Dollars is known as a Yen Put / Dollar Call Option, or just Yen Put for short; and the opposite right to buy Yen and sell Dollar is called a Yen Call / Dollar Put Option, or just Yen Call for short."
 
-#, fuzzy
-#| msgid "A True Partnership"
 msgid "{JAPAN ONLY}A True Partnership"
-msgstr "真正的合作夥伴"
+msgstr "{JAPAN ONLY}A True Partnership"
 
 msgid "{JAPAN ONLY}A binary call option buyer will benefit from a correct prediction that the asset price will decline to below the strike price by the judgment time."
 msgstr "{JAPAN ONLY}A binary call option buyer will benefit from a correct prediction that the asset price will decline to below the strike price by the judgment time."
@@ -9306,10 +9710,8 @@ msgstr "{JAPAN ONLY}A board member of a company subject to resolution or approva
 msgid "{JAPAN ONLY}A bought or sold binary option may be closed-out before exercise time by selling or buying-back the option, or alternatively by cancelling."
 msgstr "{JAPAN ONLY}A bought or sold binary option may be closed-out before exercise time by selling or buying-back the option, or alternatively by cancelling."
 
-#, fuzzy
-#| msgid "A dedicated affiliate team to provide you with the best service possible"
 msgid "{JAPAN ONLY}A dedicated affiliate team to provide you with the best service possible"
-msgstr "專門的聯盟團隊為您提供最佳服務"
+msgstr "{JAPAN ONLY}A dedicated affiliate team to provide you with the best service possible"
 
 msgid "{JAPAN ONLY}A modified version of the Black-Scholes model is widely used to calculate the theoretical prices of binary options."
 msgstr "{JAPAN ONLY}A modified version of the Black-Scholes model is widely used to calculate the theoretical prices of binary options."
@@ -9332,10 +9734,8 @@ msgstr "{JAPAN ONLY}Acknowledgment"
 msgid "{JAPAN ONLY}Activate your account by confirming your authorisation code which we will post to your registered address."
 msgstr "{JAPAN ONLY}Activate your account by confirming your authorisation code which we will post to your registered address."
 
-#, fuzzy
-#| msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
 msgid "{JAPAN ONLY}After we complete mandatory regulatory checks on your website, you will be approved as an affiliate, and provided with everything necessary for you to start right away."
-msgstr "當您獲准成為聯盟會員時，您會立刻收到開始活動所需的資料。"
+msgstr "{JAPAN ONLY}After we complete mandatory regulatory checks on your website, you will be approved as an affiliate, and provided with everything necessary for you to start right away."
 
 msgid "{JAPAN ONLY}Although customers and brokers will set limits on customers trading losses, even if those losses are exceeded, it is the customer's responsibility to close the position and so mandatory loss-cuts will not be executed by the broker company."
 msgstr "{JAPAN ONLY}Although customers and brokers will set limits on customers trading losses, even if those losses are exceeded, it is the customer's responsibility to close the position and so mandatory loss-cuts will not be executed by the broker company."
@@ -9350,12 +9750,10 @@ msgid "{JAPAN ONLY}Any corporation which is substantially owned or controlled by
 msgstr "{JAPAN ONLY}Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
 
 msgid "{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?"
-msgstr ""
+msgstr "{JAPAN ONLY}Are you an Investment professional or conduct financial markets training?"
 
-#, fuzzy
-#| msgid "Are your site visitors interested in:"
 msgid "{JAPAN ONLY}Are your site visitors interested in:"
-msgstr "您的網站訪問者是否有興趣："
+msgstr "{JAPAN ONLY}Are your site visitors interested in:"
 
 msgid "{JAPAN ONLY}As the exercise deadline approaches, the price of an in-the-money binary option will move towards the payout amount."
 msgstr "{JAPAN ONLY}As the exercise deadline approaches, the price of an in-the-money binary option will move towards the payout amount."
@@ -9375,10 +9773,8 @@ msgstr "{JAPAN ONLY}As well as our Japanese financial licence, we also operate i
 msgid "{JAPAN ONLY}Association of join"
 msgstr "{JAPAN ONLY}Association of join"
 
-#, fuzzy
-#| msgid "Award-winning, patented financial trading platform"
 msgid "{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan"
-msgstr "屢獲大獎、受專利保護的金融交易平台"
+msgstr "{JAPAN ONLY}Award-winning, internationally patented financial trading platform, newly introduced to Japan"
 
 msgid "{JAPAN ONLY}Bank"
 msgstr "{JAPAN ONLY}Bank"
@@ -9386,10 +9782,8 @@ msgstr "{JAPAN ONLY}Bank"
 msgid "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 msgstr "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 
-#, fuzzy
-#| msgid "Best Tracking with \"Forever Cookies\""
 msgid "{JAPAN ONLY}Best Tracking with \"Forever Cookies\""
-msgstr "通過「永久性 Cookie」實現最佳追蹤"
+msgstr "{JAPAN ONLY}Best Tracking with \"Forever Cookies\""
 
 msgid "{JAPAN ONLY}Binary K. K."
 msgstr "{JAPAN ONLY}Binary K. K."
@@ -9463,21 +9857,17 @@ msgstr "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
 msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 msgstr "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 
-#, fuzzy
-#| msgid "Discovering an easy, low-risk, flexible and, award-winning platform?"
 msgid "{JAPAN ONLY}Discovering an easy to use, limited-risk, award-winning platform?"
-msgstr "探索簡單易用、低風險、彈性化和屢獲大獎的平台?"
+msgstr "{JAPAN ONLY}Discovering an easy to use, limited-risk, award-winning platform?"
 
 msgid "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
 msgstr "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
 
-#, fuzzy
-#| msgid "Do you own a newsletter or a mailing list?"
 msgid "{JAPAN ONLY}Do you publish a newsletter or manage a mailing list?"
-msgstr "您是否擁有新聞稿或郵寄清單?"
+msgstr "{JAPAN ONLY}Do you publish a newsletter or manage a mailing list?"
 
 msgid "{JAPAN ONLY}Do you run a website or publish an FX blog?"
-msgstr ""
+msgstr "{JAPAN ONLY}Do you run a website or publish an FX blog?"
 
 msgid "{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account."
 msgstr "{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account."
@@ -9488,15 +9878,11 @@ msgstr "{JAPAN ONLY}Download"
 msgid "{JAPAN ONLY}Download our latest report here"
 msgstr "{JAPAN ONLY}Download our latest report here"
 
-#, fuzzy
-#| msgid "Earn money by becoming an Affiliate. You will receive commission on each account through your referrals."
 msgid "{JAPAN ONLY}Earn money by becoming an Affiliate. You will receive commission on each account through your referrals."
-msgstr "成為聯盟會員，賺取外快。您將通過您所引薦的每個帳戶收取佣金。"
+msgstr "{JAPAN ONLY}Earn money by becoming an Affiliate. You will receive commission on each account through your referrals."
 
-#, fuzzy
-#| msgid "Earning a second income in their spare time?"
 msgid "{JAPAN ONLY}Earning a second income in their spare time?"
-msgstr "在空閒時間賺取第二收入?"
+msgstr "{JAPAN ONLY}Earning a second income in their spare time?"
 
 msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
 msgstr "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
@@ -9585,10 +9971,8 @@ msgstr "{JAPAN ONLY}For both call and put options, if the underlying asset price
 msgid "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 msgstr "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Foreign PEP Declaration"
 msgid "{JAPAN ONLY}Foreign Exchange markets"
-msgstr "{JAPAN ONLY}Foreign PEP Declaration"
+msgstr "{JAPAN ONLY}Foreign Exchange markets"
 
 msgid "{JAPAN ONLY}Foreign Head of State"
 msgstr "{JAPAN ONLY}Foreign Head of State"
@@ -9599,16 +9983,14 @@ msgstr "{JAPAN ONLY}Foreign PEP Declaration"
 msgid "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
 msgstr "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
 
-#, fuzzy
-#| msgid "Generous Commission Structure"
 msgid "{JAPAN ONLY}Generous Commission Structure"
-msgstr "優厚的佣金結構"
+msgstr "{JAPAN ONLY}Generous Commission Structure"
 
 msgid "{JAPAN ONLY}Great pay-outs. Earn &yen;20,000 on every qualifying referral"
-msgstr ""
+msgstr "{JAPAN ONLY}Great pay-outs. Earn &yen;20,000 on every qualifying referral"
 
 msgid "{JAPAN ONLY}High quality promotional materials with online reporting tools"
-msgstr ""
+msgstr "{JAPAN ONLY}High quality promotional materials with online reporting tools"
 
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
 msgstr "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
@@ -9668,7 +10050,7 @@ msgid "{JAPAN ONLY}If you have any queries or wish to cancel the request, please
 msgstr "{JAPAN ONLY}If you have any queries or wish to cancel the request, please contact <a href='mailto:%1'>Customer Support</a>."
 
 msgid "{JAPAN ONLY}If you introduce our website to potential clients, you will earn as soon as one of them opens a real account with %1 and begins trading. "
-msgstr ""
+msgstr "{JAPAN ONLY}If you introduce our website to potential clients, you will earn as soon as one of them opens a real account with %1 and begins trading. "
 
 msgid "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
 msgstr "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
@@ -9790,18 +10172,14 @@ msgstr "{JAPAN ONLY}Knowledge test list item 4"
 msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "{JAPAN ONLY}Knowledge test list item 5"
 
-#, fuzzy
-#| msgid "Learning to trade online?"
 msgid "{JAPAN ONLY}Learning to trade online?"
-msgstr "想了解線上交易?"
+msgstr "{JAPAN ONLY}Learning to trade online?"
 
 msgid "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 msgstr "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 
-#, fuzzy
-#| msgid "Long-term partnership with the leading financial trading service"
 msgid "{JAPAN ONLY}Long-term partnership with an establish international financial trading service"
-msgstr "與一流金融交易服務商保持長期合作關係"
+msgstr "{JAPAN ONLY}Long-term partnership with an establish international financial trading service"
 
 msgid "{JAPAN ONLY}Main business"
 msgstr "{JAPAN ONLY}Main business"
@@ -9818,10 +10196,8 @@ msgstr "{JAPAN ONLY}No space between last name and first name"
 msgid "{JAPAN ONLY}November 7, 2014"
 msgstr "{JAPAN ONLY}November 7, 2014"
 
-#, fuzzy
-#| msgid "On-time Payments Every Time"
 msgid "{JAPAN ONLY}On-time Payments Every Time"
-msgstr "付款及時"
+msgstr "{JAPAN ONLY}On-time Payments Every Time"
 
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
@@ -9868,10 +10244,8 @@ msgstr "{JAPAN ONLY}Please allow up to 3 business days for the funds to be credi
 msgid "{JAPAN ONLY}Please allow up to 5 business days for the funds to be credited to your designated bank account."
 msgstr "{JAPAN ONLY}Please allow up to 5 business days for the funds to be credited to your designated bank account."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
 msgid "{JAPAN ONLY}Please click <a href=\"#identification-documents\">here</a> for further information."
-msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
+msgstr "{JAPAN ONLY}Please click <a href=\"#identification-documents\">here</a> for further information."
 
 msgid "{JAPAN ONLY}Please complete the following questions."
 msgstr "{JAPAN ONLY}Please complete the following questions."
@@ -9921,10 +10295,8 @@ msgstr "{JAPAN ONLY}Pre-Contract Documents"
 msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 msgstr "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Goes Outside"
 msgid "{JAPAN ONLY}Professional service"
-msgstr "{JAPAN ONLY}Goes Outside"
+msgstr "{JAPAN ONLY}Professional service"
 
 msgid "{JAPAN ONLY}Purchase, Settlement & Resale"
 msgstr "{JAPAN ONLY}Purchase, Settlement & Resale"
@@ -9932,10 +10304,8 @@ msgstr "{JAPAN ONLY}Purchase, Settlement & Resale"
 msgid "{JAPAN ONLY}Rakuten Bank"
 msgstr "{JAPAN ONLY}Rakuten Bank"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Register"
-msgstr "{JAPAN ONLY}Registration"
+msgstr "{JAPAN ONLY}Register"
 
 msgid "{JAPAN ONLY}Registration"
 msgstr "{JAPAN ONLY}Registration"
@@ -9985,15 +10355,11 @@ msgstr "{JAPAN ONLY}Service Announcements"
 msgid "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
 msgstr "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Higher"
 msgid "{JAPAN ONLY}Sign me up"
-msgstr "{JAPAN ONLY}Higher"
+msgstr "{JAPAN ONLY}Sign me up"
 
-#, fuzzy
-#| msgid "So what are you waiting for? Join us as an affiliate today."
 msgid "{JAPAN ONLY}So, what are you waiting for? Please join us as an affiliate today."
-msgstr "因此，您為何還遲疑不決?請即刻加入成為聯盟會員吧。"
+msgstr "{JAPAN ONLY}So, what are you waiting for? Please join us as an affiliate today."
 
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
@@ -10119,7 +10485,7 @@ msgid "{JAPAN ONLY}We offer a full range of binary option types including ladder
 msgstr "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 
 msgid "{JAPAN ONLY}We offer an informative and entertaining way to advertise online; including text ads, customer landing pages and invitations to promotional and educational events for your site visitors."
-msgstr ""
+msgstr "{JAPAN ONLY}We offer an informative and entertaining way to advertise online; including text ads, customer landing pages and invitations to promotional and educational events for your site visitors."
 
 msgid "{JAPAN ONLY}We offer real time prices calculated from the same rates that bank and securities companies use."
 msgstr "{JAPAN ONLY}We offer real time prices calculated from the same rates that bank and securities companies use."
@@ -10139,10 +10505,8 @@ msgstr "{JAPAN ONLY}We will pass on any possible price improvements for orders i
 msgid "{JAPAN ONLY}We will process your request and transfer the funds to your designated bank account within 5 business days."
 msgstr "{JAPAN ONLY}We will process your request and transfer the funds to your designated bank account within 5 business days."
 
-#, fuzzy
-#| msgid "We will provide you with all the tools you need to turn your traffic into a lucrative revenue stream"
 msgid "{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream"
-msgstr "我們將向您提供所有必要的工具，將您的流量轉化為可觀的收入"
+msgstr "{JAPAN ONLY}We will provide you with all the tools you need to turn your traffic into a revenue stream"
 
 msgid "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying."
 msgstr "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying."
@@ -10153,18 +10517,14 @@ msgstr "{JAPAN ONLY}When buying a vanilla put option, the break-even price at th
 msgid "{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time."
 msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time."
 
-#, fuzzy
-#| msgid "Why become an Affiliate?"
 msgid "{JAPAN ONLY}Why become an Affiliate?"
-msgstr "為什麼要成為聯盟會員？"
+msgstr "{JAPAN ONLY}Why become an Affiliate?"
 
 msgid "{JAPAN ONLY}Win Loss Ratio"
 msgstr "{JAPAN ONLY}Win Loss Ratio"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
-msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 
 msgid "{JAPAN ONLY}You can protect your account value further by setting other limits to encourage trading discipline"
 msgstr "{JAPAN ONLY}You can protect your account value further by setting other limits to encourage trading discipline"
@@ -10190,13 +10550,11 @@ msgstr "{JAPAN ONLY}You set your own personal daily loss limit"
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 msgstr "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 
-#, fuzzy
-#| msgid "You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 msgid "{JAPAN ONLY}You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
-msgstr "我們將向您提供所有工具，將您的流量轉化為可觀的收入"
+msgstr "{JAPAN ONLY}You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
 
 msgid "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then opens and trades a real money account."
-msgstr ""
+msgstr "{JAPAN ONLY}You will earn &yen;20,000 commission on for each client whom you introduced to our trading platform, and who then opens and trades a real money account."
 
 msgid "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
 msgstr "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account."
@@ -10204,10 +10562,8 @@ msgstr "{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Acce
 msgid "{JAPAN ONLY}Your Funds"
 msgstr "{JAPAN ONLY}Your Funds"
 
-#, fuzzy
-#| msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgid "{JAPAN ONLY}Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
-msgstr "您的 ID 將存入 cookie，每次有潛在客戶在您的聯盟連結上點選並在 %1 著陸，從而開立我們的帳戶，即會被識別出來。"
+msgstr "{JAPAN ONLY}Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 
 msgid "{JAPAN ONLY}Your funds are safe"
 msgstr "{JAPAN ONLY}Your funds are safe"
@@ -10217,33 +10573,6 @@ msgstr "{JAPAN ONLY}Your investments are immediately reflected in your account b
 
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "{Japan Only} Download Terms and Conditions Document file"
-
-msgid "{Japan Only}Binary option specialist for over 15 years "
-msgstr "{Japan Only}Binary option specialist for over 15 years "
-
-msgid "{Japan Only}Fully licenced in Japan"
-msgstr "{Japan Only}Fully licenced in Japan"
-
-msgid "{Japan Only}Live chart tools"
-msgstr "{Japan Only}Live chart tools"
-
-msgid "{Japan Only}Payout from 1 to 10"
-msgstr "{Japan Only}Payout from 1 to 10"
-
-msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
-msgstr "{Japan Only}Segregated Customer Account Balances are 100% Safe"
-
-msgid "{Japan Only}Trade all binary option types"
-msgstr "{Japan Only}Trade all binary option types"
-
-msgid "{Japan Only}Trade the major currencies"
-msgstr "{Japan Only}Trade the major currencies"
-
-msgid "{Japan Only}Two-way pricing"
-msgstr "{Japan Only}Two-way pricing"
-
-msgid "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
-msgstr "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
 
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "可交易外匯、指數、商品及智慧指數的二元期權線上交易平台"
@@ -10325,6 +10654,45 @@ msgstr "帳戶限額"
 
 msgid "Account Details"
 msgstr "帳戶詳細資料"
+
+#~ msgid "The account transfer is unavailable. Please"
+#~ msgstr "帳戶不可轉帳。請"
+
+#~ msgid "deposit"
+#~ msgstr "存款"
+
+#~ msgid "to your account."
+#~ msgstr "入您的帳戶。"
+
+#~ msgid "{Japan Only}Fully licenced in Japan"
+#~ msgstr "{Japan Only}Fully licenced in Japan"
+
+#~ msgid "{Japan Only}Live chart tools"
+#~ msgstr "{Japan Only}Live chart tools"
+
+#~ msgid "{Japan Only}Payout from 1 to 10"
+#~ msgstr "{Japan Only}Payout from 1 to 10"
+
+#~ msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
+#~ msgstr "{Japan Only}Segregated Customer Account Balances are 100% Safe"
+
+#~ msgid "{Japan Only}Trade all binary option types"
+#~ msgstr "{Japan Only}Trade all binary option types"
+
+#~ msgid "{Japan Only}Trade the major currencies"
+#~ msgstr "{Japan Only}Trade the major currencies"
+
+#~ msgid "{Japan Only}Two-way pricing"
+#~ msgstr "{Japan Only}Two-way pricing"
+
+#~ msgid "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
+#~ msgstr "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
+
+#~ msgid "Please enter a valid amount."
+#~ msgstr "請輸入有效金額。"
+
+#~ msgid "Trading Period"
+#~ msgstr "交易期限"
 
 #~ msgid "%1 has updated its  <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
 #~ msgstr "%1已經更新了其<a class=\"pjaxload\" href=\"%2\">條款和條件</a>。通過點選OK按鈕，您確定已經閱讀和接受此更新<a class=\"pjaxload\" href=\"%2\">條款和條件</a>。"
@@ -10484,9 +10852,6 @@ msgstr "帳戶詳細資料"
 
 #~ msgid "GBP_100"
 #~ msgstr "GBP_100"
-
-#~ msgid "Go to web terminal"
-#~ msgstr "轉到 web 終端"
 
 #~ msgid "HF Volatility 10 Index"
 #~ msgstr "HF 波動率 10 指數"
@@ -11758,9 +12123,6 @@ msgstr "帳戶詳細資料"
 #~ msgid "Either you left the cashier idle for a while or we were not able to log you in properly."
 #~ msgstr "要麼是您選擇讓收銀台閒置一段時間，要麼就是我們無法讓您正確登入。"
 
-#~ msgid "Get started"
-#~ msgstr "開始交易"
-
 #~ msgid "Page not found"
 #~ msgstr "無法找到頁面"
 
@@ -12574,9 +12936,6 @@ msgstr "帳戶詳細資料"
 #~ msgid "Number of ticks must be between %1 and %2"
 #~ msgstr "跳動點數目須在%1 與 %2之間"
 
-#~ msgid "Open an Account"
-#~ msgstr "開設帳戶"
-
 #~ msgid "Opens late (at %1)"
 #~ msgstr "開盤延遲（至%1）"
 
@@ -12981,9 +13340,6 @@ msgstr "帳戶詳細資料"
 
 #~ msgid "The account transfer is unavailable for your account: %1."
 #~ msgstr "您的帳戶不可轉帳：%1。"
-
-#~ msgid "The account transfer is unavailable. Please deposit to your account."
-#~ msgstr "帳戶不可轉帳。請將資金存入您的帳戶。"
 
 #~ msgid "The application sent an invalid request."
 #~ msgstr "應用程式發送的請求無效。"
@@ -15407,9 +15763,6 @@ msgstr "帳戶詳細資料"
 
 #~ msgid "Expiry Spot"
 #~ msgstr "到期現價"
-
-#~ msgid "Expiry Time"
-#~ msgstr "到期時間"
 
 #~ msgid "Indicative Price"
 #~ msgstr "指示價格"
