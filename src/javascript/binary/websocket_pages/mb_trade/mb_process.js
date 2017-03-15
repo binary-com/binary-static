@@ -209,34 +209,40 @@ const MBProcess = (function() {
         const available_contracts = MBContract.getCurrentContracts(),
             durations = MBDefaults.get('period').split('_');
         const req = {
-            proposal   : 1,
-            subscribe  : 1,
-            basis      : 'payout',
-            amount     : japanese_client() ? (parseInt(MBDefaults.get('payout')) || 1) * 1000 : MBDefaults.get('payout'),
-            currency   : MBContract.getCurrency(),
-            symbol     : MBDefaults.get('underlying'),
-            req_id     : MBPrice.getReqId(),
-            date_expiry: durations[1],
+            proposal_array: 1,
+            subscribe     : 1,
+            basis         : 'payout',
+            amount        : japanese_client() ? (parseInt(MBDefaults.get('payout')) || 1) * 1000 : MBDefaults.get('payout'),
+            currency      : MBContract.getCurrency(),
+            symbol        : MBDefaults.get('underlying'),
+            req_id        : MBPrice.getReqId(),
+            date_expiry   : durations[1],
 
             trading_period_start: durations[0],
         };
         let barriers_array,
             all_expired = true;
         for (let i = 0; i < available_contracts.length; i++) {
+            req.barriers = [];
             req.contract_type = available_contracts[i].contract_type;
             barriers_array = available_contracts[i].available_barriers;
             for (let j = 0; j < barriers_array.length; j++) {
+                const barrier_item = {};
                 if (+available_contracts[i].barriers === 2) {
-                    req.barrier  = barriers_array[j][1];
-                    req.barrier2 = barriers_array[j][0];
+                    barrier_item.barrier  = barriers_array[j][1];
+                    barrier_item.barrier2 = barriers_array[j][0];
                 } else {
-                    req.barrier = barriers_array[j];
+                    barrier_item.barrier = barriers_array[j];
                 }
-                if (!barrierHasExpired(available_contracts[i].expired_barriers, req.barrier, req.barrier2)) {
+                if (!barrierHasExpired(available_contracts[i].expired_barriers,
+                        barrier_item.barrier, barrier_item.barrier2)) {
                     all_expired = false;
-                    MBPrice.addPriceObj(req);
-                    BinarySocket.send(req);
+                    req.barriers.push(barrier_item);
                 }
+            }
+            if (req.barriers.length) {
+                MBPrice.addPriceObj(req);
+                BinarySocket.send(req);
             }
         }
         if (all_expired) {
