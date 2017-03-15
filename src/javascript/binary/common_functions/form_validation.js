@@ -57,7 +57,7 @@ const Validation = (function() {
     // ----- Validation Methods -----
     // ------------------------------
     const validRequired = (value, options, field) => {
-        if (value.length) return true;
+        if (value.trim().length) return true;
         // else
         validators_map.req.message = field.type === 'checkbox' ? 'Please select the checkbox.' : 'This field is required.';
         return false;
