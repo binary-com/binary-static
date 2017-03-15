@@ -68,7 +68,7 @@ sub all_pages {
         ['cashier/forwardws',            'cashier/deposit_withdraw',                  'default', 'Cashier',         'ja'],
         ['cashier/payment_agent_listws', 'cashier/payment_agent_listws',              'default', 'Payment Agent Deposit'],
         ['cashier/submit-withdraw-jp',   'japan/cashier/submit',                      'default', 'Acknowledgement', 'NOT-ja,en'],
-        ['cashier/top_up_virtualws',     'user/top_up_virtualws',                     'default', 'Give Me More Money!'],
+        ['cashier/top_up_virtualws',     'user/top_up_virtual',                       'default', 'Give Me More Money!'],
         ['cashier/withdraw-jp',          'japan/cashier/withdraw',                    'default', 'Withdraw',        'NOT-ja,en'],
 
         ['paymentagent/transferws',      'cashier/paymentagent_transfer',             'default', 'Payment Agent Transfer'],
@@ -88,7 +88,7 @@ sub all_pages {
         ['resources/asset_indexws',  'resources/asset_indexws',   'default', 'Asset Index', 'ja'],
         ['resources/market_timesws', 'resources/market_timesws',  'default', 'Trading Times'],
 
-        ['user/authenticatews',              'user/authenticatews',                  'default',    'Authenticate',            'ja'],
+        ['user/authenticate',                'user/authenticate',                    'default',    'Authenticate',            'ja'],
         ['user/lost_passwordws',             'user/lost_password',                   'default',    'Password Reset'],
         ['user/metatrader',                  'user/metatrader',                      'full_width', 'MetaTrader account management'],
         ['user/portfoliows',                 'user/portfoliows',                     'default',    'Portfolio'],
