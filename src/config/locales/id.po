@@ -5597,6 +5597,20 @@ msgstr "Berbagai Platform"
 msgid "Please %1 to view this page"
 msgstr "Silahkan %1 untuk melihat halaman ini"
 
+msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+#, fuzzy
+#| msgid "Please accept the terms and conditions."
+msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
+msgstr "Silahkan terima syarat dan ketentuan."
+
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "Silahkan <a href=\"%1\">mendeposit</a> sebelum mentransfer kepada klien."
 
@@ -5617,6 +5631,11 @@ msgstr "Silahkan periksa email Anda untuk memperoleh token diperlukan untuk mere
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "Silahkan pilih mata uang mana yang ingin Anda depositkan."
+
+#, fuzzy
+#| msgid "Please complete the following financial assessment form before continuing."
+msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
+msgstr "Lengkapi formulir penilaian keuangan berikut sebelum melanjutkan."
 
 msgid "Please complete the tax information before proceeding."
 msgstr "Mohon lengkapi informasi pajak sebelum melanjutkan."
@@ -5704,9 +5723,6 @@ msgstr "Silakan pilih minimal satu scope"
 
 msgid "Please select the checkbox."
 msgstr "Silakan pilih kotak centang."
-
-msgid "Please select your country of residence"
-msgstr "Silakan pilih negara domisili Anda"
 
 msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
 msgstr "Silahkan kirim dokumen-dokumen berikut untuk memverifikasi identitas Anda dan mengotentikasi akun Anda:"
@@ -8939,6 +8955,11 @@ msgstr "Akun Anda telah terbukti. Anda dapat melihat <a href=\"%1\">batasan trad
 msgid "Your account is not fully authenticated."
 msgstr "Akun Anda belum diverifikasi sepenuhnya."
 
+#, fuzzy
+#| msgid "Your cashier section is disabled at the moment. Please contact <a href=\"%1\">Customer Support</a> for assistance."
+msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
+msgstr "Bagian kasir anda dibatalkan untuk sementara. Silahkan hubungi <a href=\"%1\">Customer Support</a> untuk bantuan selanjutnya."
+
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Akun Anda tidak boleh digunakan sebagai fasilitas perbankan dan deposito hanya boleh dilakukan dengan tujuan untuk menggunakan dana untuk membeli kontrak. Perusahaan ini bukan lembaga keuangan, Klien tidak akan menerima bunga deposito. Jika Anda melakukan deposit berulang dan penarikan tanpa melakukan pembelian kontrak maka kami berhak untuk mengembalikan saldo dana pada akun Anda tanpa pemberitahuan termasuk biaya transfer sebelum melakukan penutupan akun."
 
@@ -10673,6 +10694,9 @@ msgstr "Batasan rekening"
 msgid "Account Details"
 msgstr "Keterangan Akun"
 
+#~ msgid "Please select your country of residence"
+#~ msgstr "Silakan pilih negara domisili Anda"
+
 #~ msgid "The account transfer is unavailable. Please"
 #~ msgstr "Transfer antar akun tidak tersedia. Silahkan"
 
@@ -11346,9 +11370,6 @@ msgstr "Keterangan Akun"
 
 #~ msgid "Benefits of Binary Trading"
 #~ msgstr "Berbagai Manfaat Trading Binary"
-
-#~ msgid "Please complete the following financial assessment form before continuing."
-#~ msgstr "Lengkapi formulir penilaian keuangan berikut sebelum melanjutkan."
 
 #~ msgid "Your details have been updated."
 #~ msgstr "Rincian Anda telah diperbarui."
@@ -20520,9 +20541,6 @@ msgstr "Keterangan Akun"
 
 #~ msgid "This contract is not on offer at this time due to current market conditions."
 #~ msgstr "Untuk saat ini kontrak yang anda pilih tidak tersedia berhubung kondisi market."
-
-#~ msgid "Your cashier section is disabled at the moment. Please contact <a href=\"%1\">Customer Support</a> for assistance."
-#~ msgstr "Bagian kasir anda dibatalkan untuk sementara. Silahkan hubungi <a href=\"%1\">Customer Support</a> untuk bantuan selanjutnya."
 
 #~ msgid "Your withdrawal cannot be processed as the amount exceeds your withdrawal limit. Please <a href=\"%1\">authenticate your account</a> to have such withdrawal limits increased."
 #~ msgstr "Penarikan anda tidak dapat kami proses berhubung melebihi batasan yang dibenarkan. Silahkan <a href=\"%1\">buktikan account </a> untuk meningkatkan batasan penarikan anda."

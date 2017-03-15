@@ -6012,6 +6012,20 @@ msgstr "Các sàn giao dịch"
 msgid "Please %1 to view this page"
 msgstr "VII lòng %1 để xem trang này"
 
+msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+#, fuzzy
+#| msgid "You must accept the terms and conditions to open an account."
+msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
+msgstr "Bạn phải chấp nhận các điều khoản và điều kiện để mở tài khoản."
+
 #, fuzzy
 #| msgid "Please deposit before transfer to client."
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
@@ -6038,6 +6052,11 @@ msgstr "Vui lòng kiểm tra email của bạn để tìm lại token được 
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "Xin vui lòng chọn đồng tiền mà bạn muốn giao dịch."
+
+#, fuzzy
+#| msgid "Please complete the following financial assessment form before continuing."
+msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
+msgstr "Vui lòng hoàn tất mẫu đánh giá tài chính dưới đây trước khi tiếp tục."
 
 #, fuzzy
 #| msgid "Please confirm the trade on your statement before proceeding."
@@ -6139,9 +6158,6 @@ msgstr "Vui lòng chọn một ngày hợp lệ"
 #| msgid "Please select a valid date"
 msgid "Please select the checkbox."
 msgstr "Vui lòng chọn một ngày hợp lệ"
-
-msgid "Please select your country of residence"
-msgstr "Vui lòng chọn tên quốc gia cư trú của bạn"
 
 #, fuzzy
 #| msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
@@ -9604,6 +9620,9 @@ msgstr "Tài khoản của bạn được xác thực hoàn toàn. Bạn co�
 msgid "Your account is not fully authenticated."
 msgstr "Khách hàng chưa hoàn toàn được xác thực."
 
+msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
+msgstr ""
+
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Tài khoản của bạn không nên được sử dụng như một thiết bị ngân hàng và bạn chỉ nên gửi tiền với mục đích sử dụng nó để đặt hợp đồng. Công ty không phải là tổ chức tài chính, Khách hàng cũng không nhận được lãi suất từ tiền gửi. Nếu bạn gửi tiền và rút tiền nhiều lần mà không đặt hợp đồng tương xứng, chúng tôi có quyền thu hồi tài khoản của bạn, mà không cần thông báo trước, bất kỳ khoản phí ngân hàng nào chúng tôi sẽ thu của bạn trước khi đóng tài khoản."
 
@@ -11522,6 +11541,9 @@ msgstr "Giới hạn Tài khoản"
 msgid "Account Details"
 msgstr "Chi tiết Tài khoản"
 
+#~ msgid "Please select your country of residence"
+#~ msgstr "Vui lòng chọn tên quốc gia cư trú của bạn"
+
 #~ msgid "The account transfer is unavailable. Please"
 #~ msgstr "Chuyển khoản ngân hàng không khả dụng. Xin thông cảm"
 
@@ -12198,9 +12220,6 @@ msgstr "Chi tiết Tài khoản"
 
 #~ msgid "Benefits of Binary Trading"
 #~ msgstr "Lợi ích của Giao Dịch Nhị Phân"
-
-#~ msgid "Please complete the following financial assessment form before continuing."
-#~ msgstr "Vui lòng hoàn tất mẫu đánh giá tài chính dưới đây trước khi tiếp tục."
 
 #~ msgid "Your details have been updated."
 #~ msgstr "Thông tin chi tiết của bạn đã được cập nhật."

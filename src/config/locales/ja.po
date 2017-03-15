@@ -5635,6 +5635,20 @@ msgstr "プラットフォーム"
 msgid "Please %1 to view this page"
 msgstr "現在、ログアウトの状態です。ご利用頂くためには再度%1が必要です。"
 
+msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+#, fuzzy
+#| msgid "Please accept the terms and conditions."
+msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
+msgstr "利用規約に同意していただく必要があります。"
+
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "お客さまへ送金される前にご入金をしてください。"
 
@@ -5655,6 +5669,11 @@ msgstr "パスワードの再設定にはワンタイムパスワードが必要
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "日本円にてお手続きできます"
+
+#, fuzzy
+#| msgid "Please complete the following financial assessment form before continuing."
+msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
+msgstr "続行される前に下記財務評価書にご記入をお願いします。"
 
 msgid "Please complete the tax information before proceeding."
 msgstr "続行する前に、税務情報を入力してください。"
@@ -5742,9 +5761,6 @@ msgstr "範囲を1つ以上選択してください"
 
 msgid "Please select the checkbox."
 msgstr "チェックボックスを選択してください"
-
-msgid "Please select your country of residence"
-msgstr "居住国を選択して下さい"
 
 msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
 msgstr "お客さまの個人情報を確認してアカウント認証を行うために、次の書類を当社までご送付ください。"
@@ -9102,6 +9118,11 @@ msgstr "お客様のご口座はアップグレード済みです。トレード
 msgid "Your account is not fully authenticated."
 msgstr "お客様の口座認証はまだ完了していません。"
 
+#, fuzzy
+#| msgid "Your cashier section is disabled at the moment. Please contact <a href=\"%1\">Customer Support</a> for assistance."
+msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
+msgstr "お客様のキャッシャーは現在ご利用制限が掛っております。<a href=\"%1\">カスタマーサポート</a>までご連絡下さい。"
+
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr ""
 "（期限の利益を喪失した場合等における本取引の反対売買）\n"
@@ -10875,6 +10896,9 @@ msgstr "ご利用制限額"
 msgid "Account Details"
 msgstr "ご口座の詳細情報"
 
+#~ msgid "Please select your country of residence"
+#~ msgstr "居住国を選択して下さい"
+
 #~ msgid "The account transfer is unavailable. Please"
 #~ msgstr "口座振替はご利用いただけません。"
 
@@ -11529,9 +11553,6 @@ msgstr "ご口座の詳細情報"
 
 #~ msgid "Benefits of Binary Trading"
 #~ msgstr "バイナリー取引のメリット"
-
-#~ msgid "Please complete the following financial assessment form before continuing."
-#~ msgstr "続行される前に下記財務評価書にご記入をお願いします。"
 
 #~ msgid "Your details have been updated."
 #~ msgstr "お客さまの詳細が更新されました。"
@@ -20347,9 +20368,6 @@ msgstr "ご口座の詳細情報"
 
 #~ msgid "This contract is not on offer at this time due to current market conditions."
 #~ msgstr "現在、このトレードは最近の市場の都合につき提供されていません。"
-
-#~ msgid "Your cashier section is disabled at the moment. Please contact <a href=\"%1\">Customer Support</a> for assistance."
-#~ msgstr "お客様のキャッシャーは現在ご利用制限が掛っております。<a href=\"%1\">カスタマーサポート</a>までご連絡下さい。"
 
 #~ msgid "Your withdrawal cannot be processed as the amount exceeds your withdrawal limit. Please <a href=\"%1\">authenticate your account</a> to have such withdrawal limits increased."
 #~ msgstr "今回のご出金リクエストは、お客様のご出金上限金額を上回るため承ることができません。<a href=\"%1\">ご口座のアップグレードを完了</a>して頂くことで、ご出金リクエストを承らさせて頂きます。"
