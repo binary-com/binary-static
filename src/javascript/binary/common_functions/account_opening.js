@@ -18,17 +18,17 @@ const redirectCookie = function() {
 
 const redirectAccount = function() {
     BinarySocket.wait('landing_company').then((response) => {
-        const isVirtual = Client.get('is_virtual');
+        const is_virtual = Client.get('is_virtual');
         const landing_company = response.landing_company;
 
         // redirect client to correct account opening page if needed
         if (!State.get('is_financial_opening') &&
-            ((!isVirtual && Client.can_upgrade_gaming_to_financial(landing_company)) ||
+            ((!is_virtual && Client.can_upgrade_gaming_to_financial(landing_company)) ||
             Client.can_upgrade_virtual_to_financial(landing_company))) {
             BinaryPjax.load('new_account/maltainvestws');
             return false;
         }
-        if (!State.get('is_japan_opening') && isVirtual && Client.can_upgrade_virtual_to_japan(landing_company)) {
+        if (!State.get('is_japan_opening') && is_virtual && Client.can_upgrade_virtual_to_japan(landing_company)) {
             BinaryPjax.load('new_account/japanws');
             return false;
         }
@@ -36,9 +36,9 @@ const redirectAccount = function() {
     });
 };
 
-const populateForm = (formID, getValidations) => {
+const populateForm = (form_id, getValidations) => {
     getResidence();
-    BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, formID, getValidations));
+    BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
     generateBirthDate();
 };
 
@@ -47,59 +47,38 @@ const getResidence = () => {
 };
 
 const handleResidenceList = (residence_list) => {
-    const $residence      = $('#residence');
-    const $place_of_birth = $('#place_of_birth');
-    const $tax_residence  = $('#tax_residence');
-    const phoneElement   = document.getElementById('phone');
-    const residenceValue = Client.get('residence');
     if (residence_list.length > 0) {
-        const $options_with_disabled = $('<div/>');
-        residence_list.forEach((res) => {
-            $options_with_disabled.append(makeOption(res.text, res.value, res.disabled));
-            if (residenceValue !== 'jp' && phoneElement && phoneElement.value === '' && res.phone_idd && residenceValue === res.value) {
-                phoneElement.value = '+' + res.phone_idd;
-            }
-        });
+        const $place_of_birth = $('#place_of_birth');
+        const $tax_residence  = $('#tax_residence');
+        const $phone          = $('#phone');
+        const residence_value = Client.get('residence') || '';
+        let residence_text = '';
 
         const $options = $('<div/>');
         residence_list.forEach((res) => {
             $options.append(makeOption(res.text, res.value));
+
+            if (residence_value === res.value) {
+                residence_text = res.text;
+                if (residence_value !== 'jp' && res.phone_idd) {
+                    $phone.val('+' + res.phone_idd);
+                }
+            }
         });
 
-        $residence.html($options_with_disabled.html());
-        $place_of_birth.html($options.html());
+        $('#lbl_residence').html($('<strong/>', { text: residence_text }));
+        $place_of_birth.html($options.html()).val(residence_value);
         $tax_residence.html($options.html()).promise().done(() => {
             setTimeout(() => {
                 $tax_residence.select2()
-                    .val(residenceValue).trigger('change')
+                    .val(residence_value).trigger('change')
                     .removeClass('invisible');
             }, 500);
         });
-
-        if (residenceValue) {
-            $residence.val(residenceValue);
-            $place_of_birth.val(residenceValue || '');
-        } else {
-            BinarySocket.wait('website_status').then(data => handleWebsiteStatus(data.website_status));
-        }
     }
 };
 
-const handleWebsiteStatus = (website_status) => {
-    if (!website_status) return;
-    const clients_country = website_status.clients_country;
-    if (!clients_country) return;
-    const $residence = $('#residence');
-
-    // set residence value to client's country, detected by IP address from back-end
-    const $clients_country = $residence.find('option[value="' + clients_country + '"]');
-    if (!$clients_country.attr('disabled')) {
-        $clients_country.prop('selected', true);
-    }
-    $residence.removeClass('invisible');
-};
-
-const handleState = (states_list, formID, getValidations) => {
+const handleState = (states_list, form_id, getValidations) => {
     BinarySocket.wait('get_settings').then((response) => {
         let $address_state = $('#address_state');
 
@@ -123,8 +102,8 @@ const handleState = (states_list, formID, getValidations) => {
         }
         $address_state.parent().parent().show();
 
-        if (formID && typeof getValidations === 'function') {
-            FormManager.init(formID, getValidations());
+        if (form_id && typeof getValidations === 'function') {
+            FormManager.init(form_id, getValidations());
         }
     });
 };
@@ -166,11 +145,11 @@ const commonValidations = () => {
     return req;
 };
 
-const selectCheckboxValidation = (formID) => {
+const selectCheckboxValidation = (form_id) => {
     const validations = [];
     let validation,
         id;
-    $(formID).find('select, input[type=checkbox]').each(function () {
+    $(form_id).find('select, input[type=checkbox]').each(function () {
         id = $(this).attr('id');
         if (id !== 'tnc') {
             validation = { selector: `#${id}`, validations: ['req'] };
@@ -186,7 +165,6 @@ const selectCheckboxValidation = (formID) => {
 module.exports = {
     redirectAccount : redirectAccount,
     populateForm    : populateForm,
-    getResidence    : getResidence,
     redirectCookie  : redirectCookie,
     handleNewAccount: handleNewAccount,
 
