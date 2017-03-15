@@ -1,4 +1,5 @@
 const BinaryPjax      = require('../base/binary_pjax');
+const getLanguage     = require('../base/language').getLanguage;
 const localize        = require('../base/localize').localize;
 const url_for         = require('../base/url').url_for;
 const FormManager     = require('../common_functions/form_manager');
@@ -9,6 +10,10 @@ const Home = (() => {
     let clients_country;
 
     const onLoad = () => {
+        if (getLanguage() === 'ja') {
+            window.location.href = url_for('home-jp');
+            return;
+        }
         BinarySocket.wait('website_status').then((response) => {
             clients_country = response.website_status.clients_country;
             const form_id = '#frm_verify_email';
