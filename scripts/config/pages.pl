@@ -88,7 +88,7 @@ sub all_pages {
         ['resources/asset_indexws',  'resources/asset_indexws',   'default', 'Asset Index', 'ja'],
         ['resources/market_timesws', 'resources/market_timesws',  'default', 'Trading Times'],
 
-        ['user/authenticatews',              'user/authenticatews',                  'default',    'Authenticate',            'ja'],
+        ['user/authenticate',                'user/authenticate',                    'default',    'Authenticate',            'ja'],
         ['user/lost_passwordws',             'user/lost_password',                   'default',    'Password Reset'],
         ['user/metatrader',                  'user/metatrader',                      'full_width', 'MetaTrader account management'],
         ['user/portfoliows',                 'user/portfoliows',                     'default',    'Portfolio'],

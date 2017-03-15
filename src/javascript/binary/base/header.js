@@ -5,7 +5,8 @@ const localize                  = require('./localize').localize;
 const Login                     = require('./login').Login;
 const State                     = require('./storage').State;
 const url_for                   = require('./url').url_for;
-const check_risk_classification = require('../common_functions/check_risk_classification').check_risk_classification;
+const objectNotEmpty            = require('./utility').objectNotEmpty;
+const createLanguageDropDown    = require('../common_functions/attach_dom/language_dropdown');
 const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
 const japanese_client           = require('../common_functions/country_base').japanese_client;
 const MetaTrader                = require('../websocket_pages/user/metatrader/metatrader');
@@ -14,12 +15,13 @@ const Header = (function() {
     const on_load = function() {
         show_or_hide_login_form();
         logout_handler();
-        check_risk_classification();
+        createLanguageDropDown();
         if (!Login.is_login_pages()) {
             checkClientsCountry();
         }
         if (Client.is_logged_in()) {
             $('ul#menu-top').addClass('smaller-font');
+            displayAccountStatus();
         }
 
         $('#logo').off('click').on('click', function() {
@@ -90,7 +92,6 @@ const Header = (function() {
         // cleaning the previous values
         Client.clear_storage_values();
         sessionStorage.setItem('active_tab', '1');
-        sessionStorage.removeItem('client_status');
         // set cookies: loginid, login
         Client.set_cookie('loginid', loginid);
         Client.set_cookie('login',   token);
@@ -183,11 +184,96 @@ const Header = (function() {
         });
     };
 
+    const displayNotification = (message) => {
+        const $msg_notification = $('#msg_notification');
+        $msg_notification.html(message);
+        if ($msg_notification.is(':hidden')) $msg_notification.slideDown(500);
+    };
+
+    const hideNotification = () => {
+        const $msg_notification = $('#msg_notification');
+        if ($msg_notification.is(':visible')) $msg_notification.slideUp(500, () => { $msg_notification.html(''); });
+    };
+
+    const displayAccountStatus = () => {
+        BinarySocket.wait('authorize').then(() => {
+            let get_account_status,
+                status;
+
+            const riskAssessment = () => {
+                if (get_account_status.risk_classification === 'high') {
+                    return !objectNotEmpty(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
+                }
+                return false;
+            };
+
+            const messages = {
+                authenticate: () => localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.',
+                    ['<a href="' + url_for('user/authenticate') + '">', '</a>']),
+                residence: () => localize('Please set [_1]country of residence[_2] before upgrading to a real-money account.',
+                    ['<a href="' + url_for('user/settings/detailsws') + '">', '</a>']),
+                risk: () => localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',
+                    ['<a href="' + url_for('user/settings/assessmentws') + '">', '</a>']),
+                tax: () => localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',
+                    ['<a href="' + url_for('user/settings/detailsws') + '">', '</a>']),
+                tnc: () => localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',
+                    ['<a href="' + url_for('user/tnc_approvalws') + '">', '</a>']),
+                unwelcome: () => localize('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',
+                    ['<a href="' + url_for('contact') + '">', '</a>']),
+            };
+
+            const validations = {
+                authenticate: () => (!/authenticated/.test(status) || !/age_verification/.test(status)) && !japanese_client(),
+                residence   : () => !Client.get('residence'),
+                risk        : () => riskAssessment(),
+                tax         : () => Client.should_complete_tax(),
+                tnc         : () => Client.should_accept_tnc(),
+                unwelcome   : () => /(unwelcome|(cashier|withdrawal)_locked)/.test(status),
+            };
+
+            // real account checks
+            const check_statuses_real = [
+                { validation: validations.tnc,          message: messages.tnc },
+                { validation: validations.risk,         message: messages.risk },
+                { validation: validations.tax,          message: messages.tax },
+                { validation: validations.authenticate, message: messages.authenticate },
+                { validation: validations.unwelcome,    message: messages.unwelcome },
+            ];
+
+            // virtual checks
+            const check_statuses_virtual = [
+                { validation: validations.residence, message: messages.residence },
+            ];
+
+            const check_status = (check_statuses) => {
+                const notified = check_statuses.some((object) => {
+                    if (object.validation()) {
+                        displayNotification(object.message());
+                        return true;
+                    }
+                    return false;
+                });
+                if (!notified) hideNotification();
+            };
+
+            if (Client.get('is_virtual')) {
+                check_status(check_statuses_virtual);
+            } else {
+                BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'get_financial_assessment').then(() => {
+                    get_account_status = State.get(['response', 'get_account_status', 'get_account_status']) || {};
+                    status = get_account_status.status;
+                    check_status(check_statuses_real);
+                });
+            }
+        });
+    };
+
     return {
         on_load: on_load,
 
         upgrade_message_visibility     : upgrade_message_visibility,
         metatrader_menu_item_visibility: metatrader_menu_item_visibility,
+        displayAccountStatus           : displayAccountStatus,
     };
 })();
 
