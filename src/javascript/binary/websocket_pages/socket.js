@@ -1,35 +1,30 @@
-const getSocketURL              = require('../../config').getSocketURL;
-const getAppId                  = require('../../config').getAppId;
+const MBTradePage               = require('./mb_trade/mb_tradepage');
+const TradePage_Beta            = require('./trade/beta/tradepage');
+const Highchart                 = require('./trade/charts/highchartws').Highchart;
+const reloadPage                = require('./trade/common').reloadPage;
+const Notifications             = require('./trade/notifications').Notifications;
+const WSTickDisplay             = require('./trade/tick_trade').WSTickDisplay;
+const TradePage                 = require('./trade/tradepage');
+const RealityCheckData          = require('./user/reality_check/reality_check.data').RealityCheckData;
+const RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
+const ViewPopupWS               = require('./user/view_popup/view_popupws');
+const ViewBalanceUI             = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
+const Client                    = require('../base/client').Client;
+const validate_loginid          = require('../base/client').validate_loginid;
+const Clock                     = require('../base/clock').Clock;
+const GTM                       = require('../base/gtm').GTM;
+const Header                    = require('../base/header').Header;
+const getLanguage               = require('../base/language').getLanguage;
+const localize                  = require('../base/localize').localize;
 const Login                     = require('../base/login').Login;
-const objectNotEmpty            = require('../base/utility').objectNotEmpty;
+const LocalStore                = require('../base/storage').LocalStore;
+const State                     = require('../base/storage').State;
 const getPropertyValue          = require('../base/utility').getPropertyValue;
 const getLoginToken             = require('../common_functions/common_functions').getLoginToken;
 const SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
-const create_language_drop_down = require('../common_functions/attach_dom/language_dropdown').create_language_drop_down;
-const ViewPopupWS               = require('./user/view_popup/view_popupws');
-const ViewBalanceUI             = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
+const getAppId                  = require('../../config').getAppId;
+const getSocketURL              = require('../../config').getSocketURL;
 const Cookies                   = require('../../lib/js-cookie');
-const State                     = require('../base/storage').State;
-const Highchart                 = require('./trade/charts/highchartws').Highchart;
-const WSTickDisplay             = require('./trade/tick_trade').WSTickDisplay;
-const TradePage                 = require('./trade/tradepage');
-const Notifications             = require('./trade/notifications').Notifications;
-const TradePage_Beta            = require('./trade/beta/tradepage');
-const reloadPage                = require('./trade/common').reloadPage;
-const MBTradePage               = require('./mb_trade/mb_tradepage');
-const RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
-const RealityCheckData          = require('./user/reality_check/reality_check.data').RealityCheckData;
-const localize         = require('../base/localize').localize;
-const getLanguage      = require('../base/language').getLanguage;
-const validate_loginid = require('../base/client').validate_loginid;
-const GTM        = require('../base/gtm').GTM;
-const Clock      = require('../base/clock').Clock;
-const Header     = require('../base/header').Header;
-const LocalStore = require('../base/storage').LocalStore;
-const Client     = require('../base/client').Client;
-const page       = require('../base/page').page;
-const check_risk_classification       = require('../common_functions/check_risk_classification').check_risk_classification;
-const qualify_for_risk_classification = require('../common_functions/check_risk_classification').qualify_for_risk_classification;
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
@@ -288,8 +283,16 @@ const BinarySocketClass = function() {
                             send({ balance: 1, subscribe: 1 });
                             send({ get_settings: 1 });
                             send({ get_account_status: 1 });
-                            if (Cookies.get('residence')) send({ landing_company: Cookies.get('residence') });
-                            if (!Client.get('is_virtual')) send({ get_self_exclusion: 1 });
+                            const residence = response.authorize.country || Cookies.get('residence');
+                            if (residence) {
+                                Client.set('residence', residence);
+                                send({ landing_company: residence });
+                            }
+                            if (!Client.get('is_virtual')) {
+                                send({ get_self_exclusion: 1 });
+                                // TODO: remove this when back-end adds it as a status to get_account_status
+                                send({ get_financial_assessment: 1 });
+                            }
                         }
                         sendBufferedSends();
                     }
@@ -325,50 +328,14 @@ const BinarySocketClass = function() {
                             Client.set_cookie('residence', country_code);
                             send({ landing_company: country_code });
                         }
-                    } else if (country_code === null && response.get_settings.country === null) {
-                        Header.upgrade_message_visibility();
                     }
                     GTM.event_handler(response.get_settings);
-                    Client.set('tnc_status', response.get_settings.client_tnc_status || '-');
-                    if (!localStorage.getItem('risk_classification')) Client.check_tnc();
                     if (response.get_settings.is_authenticated_payment_agent) {
                         $('#topMenuPaymentAgent').removeClass('invisible');
                     }
                     Client.set('first_name', response.get_settings.first_name);
-                } else if (type === 'website_status') {
-                    if (!response.error) {
-                        create_language_drop_down(response.website_status.supported_languages);
-                        LocalStore.set('website.tnc_version', response.website_status.terms_conditions_version);
-                        if (!localStorage.getItem('risk_classification')) Client.check_tnc();
-                    }
                 } else if (type === 'reality_check') {
                     RealityCheck.realityCheckWSHandler(response);
-                } else if (type === 'get_account_status' && response.get_account_status) {
-                    if (response.get_account_status.risk_classification === 'high') {
-                        localStorage.setItem('risk_classification', 'high');
-                        send({ get_financial_assessment: 1 });
-                    } else {
-                        localStorage.removeItem('risk_classification');
-                        Client.check_tnc();
-                    }
-                    const status = response.get_account_status.status;
-                    sessionStorage.setItem('client_status', status);
-                    if (/crs_tin_information/.test(status)) {
-                        Client.set('has_tax_information', 1);
-                    } else if (Client.should_redirect_tax()) {
-                        return;
-                    }
-                    page.show_authenticate_message();
-                } else if (type === 'get_financial_assessment' && !response.error) {
-                    if (!objectNotEmpty(response.get_financial_assessment)) {
-                        if (qualify_for_risk_classification() && State.get(['response', 'get_account_status', 'get_account_status', 'risk_classification']) === 'high') {
-                            localStorage.setItem('risk_classification', 'high');
-                            check_risk_classification();
-                        }
-                    } else if ((localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval')) && localStorage.getItem('risk_classification') !== 'high') {
-                        localStorage.removeItem('risk_classification');
-                        Client.check_tnc();
-                    }
                 }
 
                 switch (error_code) {
