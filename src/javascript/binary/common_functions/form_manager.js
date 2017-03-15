@@ -8,9 +8,10 @@ const FormManager = (() => {
 
     const initForm = (form_selector, fields) => {
         const $form = $(`${form_selector}:visible`);
+        const $btn = $form.find('button[type="submit"]');
         if ($form.length) {
             forms[form_selector] = {
-                $btn_submit: $form.find('button[type="submit"]'),
+                $btn_submit: $btn,
                 can_submit : true,
             };
             if (Array.isArray(fields) && fields.length) {
@@ -26,6 +27,8 @@ const FormManager = (() => {
                 });
             }
         }
+        // handle firefox
+        $btn.removeAttr('disabled');
         Validation.init(form_selector, fields);
     };
 

@@ -14,7 +14,7 @@ const StaticPages        = require('../static_pages/static_pages');
 const TermsAndConditions = require('../static_pages/tnc');
 const WhyUs              = require('../static_pages/why_us');
 
-const AccountTransferWS          = require('../websocket_pages/cashier/account_transferws');
+const AccountTransfer            = require('../websocket_pages/cashier/account_transfer');
 const Cashier                    = require('../websocket_pages/cashier/cashier');
 const DepositWithdraw            = require('../websocket_pages/cashier/deposit_withdraw');
 const PaymentAgentList           = require('../websocket_pages/cashier/payment_agent_list');
@@ -53,7 +53,7 @@ const CashierJP     = require('../../binary_japan/cashier');
 const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test');
 
 const pages_config = {
-    account_transferws       : { module: AccountTransferWS,          is_authenticated: true, only_real: true },
+    account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true },
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
     asset_indexws            : { module: AssetIndexUI },
@@ -103,6 +103,7 @@ const pages_config = {
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'get-started'            : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },
+    'home-jp'                : { module: Home,                       not_authenticated: true },
     'job-details'            : { module: JobDetails },
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
