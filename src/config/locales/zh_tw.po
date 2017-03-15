@@ -5584,6 +5584,20 @@ msgstr "平台"
 msgid "Please %1 to view this page"
 msgstr "要查看此頁面，請 %1 t"
 
+msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+#, fuzzy
+#| msgid "Please accept the terms and conditions."
+msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
+msgstr "請接受條款和條件。"
+
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "給客戶轉帳前請先<a href=\"%1\">存款</a>。"
 
@@ -5604,6 +5618,11 @@ msgstr "請檢查您的電郵領取重設密碼所需的權杖編號。"
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "請選擇您想要交易的外匯。"
+
+#, fuzzy
+#| msgid "Please complete the following financial assessment form before continuing."
+msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
+msgstr "繼續操作前請填寫以下財務評估表格。"
 
 msgid "Please complete the tax information before proceeding."
 msgstr "繼續操作前，請填寫完整稅務資訊。"
@@ -5691,9 +5710,6 @@ msgstr "請選擇至少一個範圍"
 
 msgid "Please select the checkbox."
 msgstr "請選擇核取方塊。"
-
-msgid "Please select your country of residence"
-msgstr "請選擇您的居住國"
 
 msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
 msgstr "為證明您的身份及驗證您的帳號，請將以下文件傳送給我們:"
@@ -8923,6 +8939,9 @@ msgstr "您的帳戶已經得到完全驗證，您可在此檢視您的<a  href=
 msgid "Your account is not fully authenticated."
 msgstr "您的帳戶未完成身份驗證。"
 
+msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
+msgstr ""
+
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "您的帳戶不應該被用來作為銀行信貸，而存款應該被視為只用以進行交易的資金。本公司不是金融機構，客戶存款將不會有利息。如果您重覆進行存款和取款，卻沒有進行相稱的交易，在關閉帳戶之前，我們保留在不事先通知的情況下把我們所承擔的任何銀行費用轉到您帳戶的權利。"
 
@@ -10655,6 +10674,9 @@ msgstr "帳戶限額"
 msgid "Account Details"
 msgstr "帳戶詳細資料"
 
+#~ msgid "Please select your country of residence"
+#~ msgstr "請選擇您的居住國"
+
 #~ msgid "The account transfer is unavailable. Please"
 #~ msgstr "帳戶不可轉帳。請"
 
@@ -11515,9 +11537,6 @@ msgstr "帳戶詳細資料"
 
 #~ msgid "Benefits of Binary Trading"
 #~ msgstr "二元期權交易的優點"
-
-#~ msgid "Please complete the following financial assessment form before continuing."
-#~ msgstr "繼續操作前請填寫以下財務評估表格。"
 
 #~ msgid "Your details have been updated."
 #~ msgstr "您的個人資訊已成功更新。"

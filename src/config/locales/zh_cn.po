@@ -5592,6 +5592,20 @@ msgstr "平台"
 msgid "Please %1 to view this page"
 msgstr "要查看此页面请%1"
 
+msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+#, fuzzy
+#| msgid "Please accept the terms and conditions."
+msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
+msgstr "请接受条款和条件。"
+
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "给客户转账前请先<a href=\"%1\">存款</a>。"
 
@@ -5612,6 +5626,11 @@ msgstr "请检查您的电邮领取重设密码所须的令牌号。"
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "请选择您想要交易的货币。"
+
+#, fuzzy
+#| msgid "Please complete the following financial assessment form before continuing."
+msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
+msgstr "继续操作前请填写以下财务评估表格。"
 
 msgid "Please complete the tax information before proceeding."
 msgstr "继续执行之前，请填写完整税务信息。"
@@ -5699,9 +5718,6 @@ msgstr "请选择至少一个范围"
 
 msgid "Please select the checkbox."
 msgstr "请选择复选框。"
-
-msgid "Please select your country of residence"
-msgstr "请选择您的居住国"
 
 msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
 msgstr "为证明您的身份和验证您的账号，请将以下文件发送给我们︰"
@@ -8937,6 +8953,11 @@ msgstr "您的账户已经得到完全验证，且您可在此查看您的<a hre
 msgid "Your account is not fully authenticated."
 msgstr "您的账户未完成身份验证。"
 
+#, fuzzy
+#| msgid "Your cashier section is disabled at the moment. Please contact <a href=\"%1\">Customer Support</a> for assistance."
+msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
+msgstr "你的出纳目前禁用。请联系 <a href=\"[%1\">客户支持</a> 获得帮助."
+
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "您的账户不应被用作银行信贷，其中的存款只应视为交易资金。本公司并不是金融机构，客户存款不会有利息。如果您重复进行存、取款，却没有进行相应的交易，在关闭账户之前，我们保留权利在不事先通知的情况下把相关银行费用转加到您的账户。"
 
@@ -10672,6 +10693,9 @@ msgstr "账户限额"
 msgid "Account Details"
 msgstr "账户详情"
 
+#~ msgid "Please select your country of residence"
+#~ msgstr "请选择您的居住国"
+
 #~ msgid "The account transfer is unavailable. Please"
 #~ msgstr "账户不可转账。请"
 
@@ -11541,9 +11565,6 @@ msgstr "账户详情"
 
 #~ msgid "Benefits of Binary Trading"
 #~ msgstr "二元交易的优点"
-
-#~ msgid "Please complete the following financial assessment form before continuing."
-#~ msgstr "继续操作前请填写以下财务评估表格。"
 
 #~ msgid "Your details have been updated."
 #~ msgstr "您的个人信息已成功更新。"
@@ -20651,9 +20672,6 @@ msgstr "账户详情"
 
 #~ msgid "This contract is not on offer at this time due to current market conditions."
 #~ msgstr "根据现在市场条件，该合约此时尚未提供。"
-
-#~ msgid "Your cashier section is disabled at the moment. Please contact <a href=\"%1\">Customer Support</a> for assistance."
-#~ msgstr "你的出纳目前禁用。请联系 <a href=\"[%1\">客户支持</a> 获得帮助."
 
 #~ msgid "Your withdrawal cannot be processed as the amount exceeds your withdrawal limit. Please <a href=\"%1\">authenticate your account</a> to have such withdrawal limits increased."
 #~ msgstr "您不能进行提款某因为金额超过最大提款金额。请<a href=\"%1\">验证您的账户</a>提高您的提款限额。"

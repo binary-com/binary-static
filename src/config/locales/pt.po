@@ -5982,6 +5982,20 @@ msgstr "Plataformas"
 msgid "Please %1 to view this page"
 msgstr "Por favor %1 para ver esta página"
 
+msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+#, fuzzy
+#| msgid "You must accept the terms and conditions to open an account."
+msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
+msgstr "Tem de aceitar os termos e condições para abrir uma conta."
+
 #, fuzzy
 #| msgid "Please deposit before transfer to client."
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
@@ -6008,6 +6022,11 @@ msgstr "Verifique o seu e-mail para obter o token necessário para a redefiniç�
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "Escolha a moeda com que pretende negociar."
+
+#, fuzzy
+#| msgid "Please complete the following financial assessment form before continuing."
+msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
+msgstr "Por favor, preencha o seguinte formulário de avaliação financeira antes de continuar."
 
 #, fuzzy
 #| msgid "Please confirm the trade on your statement before proceeding."
@@ -6103,9 +6122,6 @@ msgstr "Selecione pelo menos um escopo"
 #| msgid "Please select at least one scope"
 msgid "Please select the checkbox."
 msgstr "Selecione pelo menos um escopo"
-
-msgid "Please select your country of residence"
-msgstr "Selecione o seu país de residência"
 
 #, fuzzy
 #| msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
@@ -9551,6 +9567,11 @@ msgstr "A sua conta está totalmente autenticada. Pode consultar os seus <a clas
 msgid "Your account is not fully authenticated."
 msgstr "Cliente não está totalmente autenticado."
 
+#, fuzzy
+#| msgid "Your cashier section is disabled at the moment. Please contact <a href=\"%1\">Customer Support</a> for assistance."
+msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
+msgstr "A sua seção do caixa está desativada neste momento. Contate por favor o <a href=\"%1\">Atendimento ao Cliente</a> para receber assistência."
+
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "A sua conta não deve ser usada como um recurso bancário e os depósitos só devem ser feitos tendo em vista a utilização de fundos para celebrar contratos. A Empresa não é uma instituição financeira. Os clientes não receberão juros sobre depósitos. Caso você faça depósitos e retiradas repetidas, sem celebrar contratos correspondentes, nós reservamos o direito de lhe cobrar na sua conta, sem aviso prévio, quaisquer encargos bancários que tenhamos incorridos antes da conta ser encerrada."
 
@@ -11361,6 +11382,9 @@ msgstr "Limites da Conta"
 msgid "Account Details"
 msgstr "Detalhes da Conta"
 
+#~ msgid "Please select your country of residence"
+#~ msgstr "Selecione o seu país de residência"
+
 #~ msgid "The account transfer is unavailable. Please"
 #~ msgstr "A transferência de conta está indisponível. Por favor"
 
@@ -12031,9 +12055,6 @@ msgstr "Detalhes da Conta"
 
 #~ msgid "Benefits of Binary Trading"
 #~ msgstr "Benefícios das Negociações de Binárias"
-
-#~ msgid "Please complete the following financial assessment form before continuing."
-#~ msgstr "Por favor, preencha o seguinte formulário de avaliação financeira antes de continuar."
 
 #~ msgid "Your details have been updated."
 #~ msgstr "As suas informações foram atualizadas."
@@ -20869,9 +20890,6 @@ msgstr "Detalhes da Conta"
 
 #~ msgid "This contract is not on offer at this time due to current market conditions."
 #~ msgstr "Este contrato não está em oferta de momento devido às atuais condições do mercado."
-
-#~ msgid "Your cashier section is disabled at the moment. Please contact <a href=\"%1\">Customer Support</a> for assistance."
-#~ msgstr "A sua seção do caixa está desativada neste momento. Contate por favor o <a href=\"%1\">Atendimento ao Cliente</a> para receber assistência."
 
 #~ msgid "Your withdrawal cannot be processed as the amount exceeds your withdrawal limit. Please <a href=\"%1\">authenticate your account</a> to have such withdrawal limits increased."
 #~ msgstr "A sua retirada não pode ser processada porque a quantia excede o seu limite de transferência. Por favor <a href=\"%1\">autentique a sua conta</a> para mandar aumentar esses limites de retirada."

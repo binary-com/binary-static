@@ -5604,6 +5604,20 @@ msgstr "แพลตฟอร์ม"
 msgid "Please %1 to view this page"
 msgstr "โปรด %1 เพื่อเรียกดูหน้านี้"
 
+msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+#, fuzzy
+#| msgid "Please accept the terms and conditions."
+msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
+msgstr "โปรดยอมรับข้อตกลงและเงื่อนไข"
+
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "โปรด <a href=\"%1\">ฝากเงิน</a> ก่อนทำการโอนให้ลูกค้า"
 
@@ -5624,6 +5638,11 @@ msgstr "โปรดตรวจสอบอีเมล์ของท่าน
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "โปรดระบุสกุลเงินที่ท่านต้องการ"
+
+#, fuzzy
+#| msgid "Please complete the following financial assessment form before continuing."
+msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
+msgstr "โปรดบันทึกผลการประเมินทางการเงินของท่านในแบบฟอร์มต่อไปนี้ ก่อนการดำเนินการต่อไป"
 
 msgid "Please complete the tax information before proceeding."
 msgstr "โปรดบันทึกข้อมูลภาษีของท่านก่อนการดำเนินการต่อไป"
@@ -5711,9 +5730,6 @@ msgstr "โปรดระบุค่าอย่างน้อยหนึ่
 
 msgid "Please select the checkbox."
 msgstr "โปรดระบุค่าจากตัวเลือก"
-
-msgid "Please select your country of residence"
-msgstr "โปรดระบุประเทศที่พำนักของท่าน"
 
 msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
 msgstr "โปรดส่งเอกสารต่อไปนี้มาให้เราเพื่อตรวจสอบตัวตนและยืนยันบัญชีของท่าน:"
@@ -8952,6 +8968,9 @@ msgstr "บัญชีของท่านได้รับการยืน
 msgid "Your account is not fully authenticated."
 msgstr "บัญชีของท่านยังไม่ได้ยืนยันตัวตนอย่างสมบูรณ์"
 
+msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
+msgstr ""
+
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "บัญชีของท่านไม่ควรใช้สำหรับการอำนวยความสะดวกในการฝากเงิน และการฝากเงินควรดำเนินการเมื่อท่านต้องการลงเงินในสัญญา บริษัทฯ ไม่ได้ประพฤติเยี่ยงสถาบันการเงิน ลูกค้าจะไม่ได้รับดอกเบี้ยจากการฝากเงิน ในการดำเนินการของท่านไม่ว่าจะฝากเงินหรือถอนเงินปราศจากสัญญาที่มีสัดส่วนเงินที่พอดีกัน ทางบริษัทฯ ขอสงวนสิทธิ์ในการดำเนินการกับบัญชีของท่าน โดยไม่ต้องแจ้งให้ทราบล่วงหน้า รวมถึงค่าธรรมเนียมต่างๆ ของธนาคารที่เกิดขึ้นก่อนการปิดบัญชี"
 
@@ -10684,6 +10703,9 @@ msgstr "วงเงินในบัญชี"
 msgid "Account Details"
 msgstr "รายละเอียดบัญชี"
 
+#~ msgid "Please select your country of residence"
+#~ msgstr "โปรดระบุประเทศที่พำนักของท่าน"
+
 #~ msgid "The account transfer is unavailable. Please"
 #~ msgstr "โปรดทราบ การโอนบัญชีไม่สามารถทำได้"
 
@@ -11330,9 +11352,6 @@ msgstr "รายละเอียดบัญชี"
 
 #~ msgid "Benefits of Binary Trading"
 #~ msgstr "ประโยชน์ต่างๆ ของการซื้อขายไบนารี"
-
-#~ msgid "Please complete the following financial assessment form before continuing."
-#~ msgstr "โปรดบันทึกผลการประเมินทางการเงินของท่านในแบบฟอร์มต่อไปนี้ ก่อนการดำเนินการต่อไป"
 
 #~ msgid "Your details have been updated."
 #~ msgstr "รายละเอียดของท่านได้รับการปรับปรุงเรียบร้อยแล้ว"

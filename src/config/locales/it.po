@@ -5930,6 +5930,20 @@ msgstr "Piattaforme"
 msgid "Please %1 to view this page"
 msgstr "%1 per visualizzare questa pagina"
 
+msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
+msgstr ""
+
+#, fuzzy
+#| msgid "Please accept the terms and conditions."
+msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
+msgstr "Accetta i termini e le condizioni."
+
 #, fuzzy
 #| msgid "Please deposit before transfer to client."
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
@@ -5954,6 +5968,11 @@ msgstr "Verifica il tuo indirizzo e-mail per ottenere il token necessario per ri
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "Scegli in quale valuta desideri operare."
+
+#, fuzzy
+#| msgid "Please complete the following financial assessment form before continuing."
+msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
+msgstr "Prima di continuare, completa il seguente modulo di valutazione finanziaria."
 
 #, fuzzy
 #| msgid "Please confirm the trade on your statement before proceeding."
@@ -6045,9 +6064,6 @@ msgstr "Seleziona almeno uno scopo"
 #| msgid "Please select at least one scope"
 msgid "Please select the checkbox."
 msgstr "Seleziona almeno uno scopo"
-
-msgid "Please select your country of residence"
-msgstr "Seleziona il tuo paese di residenza"
 
 #, fuzzy
 #| msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
@@ -9389,6 +9405,9 @@ msgstr "Il tuo account è stato pienamente convalidato. Puoi vedere i tuoi <a cl
 msgid "Your account is not fully authenticated."
 msgstr "Il tuo account non è pienamente autenticato."
 
+msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
+msgstr ""
+
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Il tuo account non dovrebbe avere una funzione bancaria e i depositi dovrebbero essere effettuati solo con l'obiettivo di utilizzare i fondi per piazzare dei contratti. La Società non è un istituto finanziario, i Clienti non riceveranno interessi sui depositi. Nel caso in cui vengano ripetutamente effettuati depositi e prelievi senza l'esecuzione di relativi contratti, prima della chiusura del conto, ci riserviamo il diritto di applicare sui tuoi account, senza alcun preavviso, qualsiasi onere bancario da noi sostenuto."
 
@@ -11191,6 +11210,9 @@ msgstr "Limiti dell'account"
 msgid "Account Details"
 msgstr "Dettagli dell'account"
 
+#~ msgid "Please select your country of residence"
+#~ msgstr "Seleziona il tuo paese di residenza"
+
 #~ msgid "The account transfer is unavailable. Please"
 #~ msgstr "Il trasferimento dell'account non è disponibile. Si prega"
 
@@ -11848,9 +11870,6 @@ msgstr "Dettagli dell'account"
 
 #~ msgid "Benefits of Binary Trading"
 #~ msgstr "I vantaggi del trading binario"
-
-#~ msgid "Please complete the following financial assessment form before continuing."
-#~ msgstr "Prima di continuare, completa il seguente modulo di valutazione finanziaria."
 
 #~ msgid "Your details have been updated."
 #~ msgstr "I tuoi dettagli sono stati aggiornati."
