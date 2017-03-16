@@ -1,5 +1,5 @@
 const showLoadingImage    = require('../../../../base/utility').showLoadingImage;
-const toJapanTimeIfNeeded = require('../../../../base/clock').Clock.toJapanTimeIfNeeded;
+const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
 const format_money        = require('../../../../common_functions/currency_to_symbol').format_money;
 const buildOauthApps      = require('../../../../common_functions/get_app_details').buildOauthApps;
 const addTooltip          = require('../../../../common_functions/get_app_details').addTooltip;
@@ -9,7 +9,7 @@ const Portfolio           = require('../portfolio').Portfolio;
 const ViewPopupWS         = require('../../view_popup/view_popupws');
 const State               = require('../../../../base/storage').State;
 const localize = require('../../../../base/localize').localize;
-const Client   = require('../../../../base/client').Client;
+const Client   = require('../../../../base/client');
 const url      = require('../../../../base/url').url;
 
 const PortfolioWS = (function() {

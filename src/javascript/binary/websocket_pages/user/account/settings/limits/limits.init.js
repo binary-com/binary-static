@@ -3,7 +3,7 @@ const Content  = require('../../../../../common_functions/content').Content;
 const addComma = require('../../../../../common_functions/string_util').addComma;
 const LimitsUI = require('./limits.ui');
 const localize = require('../../../../../base/localize').localize;
-const Client   = require('../../../../../base/client').Client;
+const Client   = require('../../../../../base/client');
 const elementTextContent  = require('../../../../../common_functions/common_functions').elementTextContent;
 const elementInnerHtml    = require('../../../../../common_functions/common_functions').elementInnerHtml;
 

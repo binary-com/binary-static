@@ -9,14 +9,13 @@ const RealityCheckData          = require('./user/reality_check/reality_check.da
 const RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
 const ViewPopupWS               = require('./user/view_popup/view_popupws');
 const ViewBalanceUI             = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
-const Client                    = require('../base/client').Client;
-const validate_loginid          = require('../base/client').validate_loginid;
-const Clock                     = require('../base/clock').Clock;
-const GTM                       = require('../base/gtm').GTM;
-const Header                    = require('../base/header').Header;
+const Client                    = require('../base/client');
+const Clock                     = require('../base/clock');
+const GTM                       = require('../base/gtm');
+const Header                    = require('../base/header');
 const getLanguage               = require('../base/language').getLanguage;
 const localize                  = require('../base/localize').localize;
-const Login                     = require('../base/login').Login;
+const Login                     = require('../base/login');
 const LocalStore                = require('../base/storage').LocalStore;
 const State                     = require('../base/storage').State;
 const getPropertyValue          = require('../base/utility').getPropertyValue;
@@ -114,7 +113,7 @@ const BinarySocketClass = function() {
         msg_types.forEach((msg_type) => {
             const last_response = State.get(['response', msg_type]);
             if (!last_response) {
-                if (msg_type !== 'authorize' || Client.is_logged_in()) {
+                if (msg_type !== 'authorize' || Client.isLoggedIn()) {
                     waiting_list.add(msg_type, promise_obj);
                     is_resolved = false;
                 }
@@ -212,11 +211,11 @@ const BinarySocketClass = function() {
             }
 
             if (isReady()) {
-                if (!Login.is_login_pages()) {
-                    validate_loginid();
+                if (!Login.isLoginPages()) {
+                    Client.validateLoginid();
                     binarySocket.send(JSON.stringify({ website_status: 1 }));
                 }
-                if (!Clock.getClockStarted()) Clock.start_clock_ws();
+                Clock.startClock();
             }
         };
 
@@ -268,13 +267,13 @@ const BinarySocketClass = function() {
                             window.alert(response.error.message);
                         }
                         LocalStore.set('reality_check.ack', 0);
-                        Client.send_logout_request(isActiveTab);
+                        Client.sendLogoutRequest(isActiveTab);
                     } else if (response.authorize.loginid !== Cookies.get('loginid')) {
-                        Client.send_logout_request(true);
+                        Client.sendLogoutRequest(true);
                     } else if (dispatch_to !== 'cashier_password') {
                         authorized = true;
-                        if (!Login.is_login_pages()) {
-                            Client.response_authorize(response);
+                        if (!Login.isLoginPages()) {
+                            Client.responseAuthorize(response);
                             send({ balance: 1, subscribe: 1 });
                             send({ get_settings: 1 });
                             send({ get_account_status: 1 });
@@ -293,16 +292,14 @@ const BinarySocketClass = function() {
                     }
                 } else if (type === 'balance') {
                     ViewBalanceUI.updateBalances(response);
-                } else if (type === 'time') {
-                    Clock.time_counter(response);
                 } else if (type === 'logout') {
                     RealityCheckData.clear();
-                    Client.do_logout(response);
+                    Client.doLogout(response);
                 } else if (type === 'landing_company') {
-                    Header.upgrade_message_visibility();
+                    Header.upgradeMessageVisibility();
                     if (response.error) return;
-                    // Header.metatrader_menu_item_visibility(response); // to be uncommented once MetaTrader launched
-                    const company = Client.current_landing_company();
+                    // Header.metatraderMenuItemVisibility(response); // to be uncommented once MetaTrader launched
+                    const company = Client.currentLandingCompany();
                     if (company) {
                         Client.set('default_currency', company.legal_default_currency);
                         const has_reality_check = company.has_reality_check;
@@ -320,11 +317,11 @@ const BinarySocketClass = function() {
                     if (country_code) {
                         Client.set('residence', country_code);
                         if (!Cookies.get('residence')) {
-                            Client.set_cookie('residence', country_code);
+                            Client.setCookie('residence', country_code);
                             send({ landing_company: country_code });
                         }
                     }
-                    GTM.event_handler(response.get_settings);
+                    GTM.eventHandler(response.get_settings);
                     if (response.get_settings.is_authenticated_payment_agent) {
                         $('#topMenuPaymentAgent').removeClass('invisible');
                     }
@@ -343,7 +340,7 @@ const BinarySocketClass = function() {
                         break;
                     case 'InvalidToken':
                         if (!/^(reset_password|new_account_virtual|paymentagent_withdraw|cashier)$/.test(type)) {
-                            Client.send_logout_request();
+                            Client.sendLogoutRequest();
                         }
                         break;
                     case 'InvalidAppID':

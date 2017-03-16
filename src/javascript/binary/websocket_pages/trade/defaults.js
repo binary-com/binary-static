@@ -31,7 +31,7 @@ const Defaults = (function() {
     const setDefault = function(key, value) {
         if (!key) return;
         value = value || '';
-        if (!objectNotEmpty(params)) params = url.params_hash();
+        if (!objectNotEmpty(params)) params = url.paramsHash();
         if (params[key] !== value) {
             params[key] = value;
             // to increase speed, do not set values when form is still loading
@@ -43,7 +43,7 @@ const Defaults = (function() {
     };
 
     const removeDefault = function() {
-        if (!objectNotEmpty(params)) params = url.params_hash();
+        if (!objectNotEmpty(params)) params = url.paramsHash();
         let isUpdated = false;
         for (let i = 0; i < arguments.length; i++) {
             if (params.hasOwnProperty(arguments[i])) {
@@ -65,7 +65,7 @@ const Defaults = (function() {
     };
 
     const updateURL = function() {
-        const updated_url = window.location.origin + window.location.pathname + '?' + url.params_hash_to_string(params);
+        const updated_url = window.location.origin + window.location.pathname + '?' + url.paramsHashToString(params);
         window.history.replaceState({ url: updated_url }, null, updated_url);
     };
 

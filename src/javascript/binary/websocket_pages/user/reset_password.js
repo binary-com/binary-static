@@ -1,6 +1,5 @@
-const Client            = require('../../base/client').Client;
 const localize          = require('../../base/localize').localize;
-const Login             = require('../../base/login').Login;
+const Login             = require('../../base/login');
 const generateBirthDate = require('../../common_functions/attach_dom/birth_date_picker');
 const FormManager       = require('../../common_functions/form_manager');
 
@@ -31,14 +30,12 @@ const ResetPassword = (function () {
         } else {
             $('#msg_reset_password').text(localize('Your password has been successfully reset. Please log into your account using your new password.'));
             setTimeout(function () {
-                Login.redirect_to_login();
+                Login.redirectToLogin();
             }, 5000);
         }
     };
 
     const onLoad = function() {
-        if (Client.redirect_if_login()) return;
-
         generateBirthDate();
 
         $('#have_real_account').off('click').on('click', function() {

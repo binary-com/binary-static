@@ -4,9 +4,9 @@ const State                      = require('../../base/storage').State;
 const getLanguage                = require('../../base/language').getLanguage;
 const toggleActiveNavMenuElement = require('./common').toggleActiveNavMenuElement;
 const showHighchart              = require('./common').showHighchart;
-const Url            = require('../../base/url').Url;
-const url_for        = require('../../base/url').url_for;
-const url_for_static = require('../../base/url').url_for_static;
+const Url                        = require('../../base/url').Url;
+const urlFor                     = require('../../base/url').urlFor;
+const urlForStatic               = require('../../base/url').urlForStatic;
 const elementInnerHtml           = require('../../common_functions/common_functions').elementInnerHtml;
 
 /*
@@ -33,7 +33,7 @@ const TradingAnalysis = (function() {
         if (formName === 'callput') {
             formName = 'higherlower';
         }
-        $('#tab_explanation').find('a').attr('href',  url_for('trade/bet_explanation', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
+        $('#tab_explanation').find('a').attr('href',  urlFor('trade/bet_explanation', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
         if (formName === 'digits' || formName === 'overunder' || formName === 'evenodd') {
             $('#tab_last_digit').removeClass('invisible');
         } else {
@@ -161,7 +161,7 @@ const TradingAnalysis = (function() {
      * handle the display of proper explanation based on parameters
      */
     const showExplanation = function(href) {
-        const options = new Url(href).params_hash();
+        const options = new Url(href).paramsHash();
         const form_name    = options.form_name || 'risefall',
             show_image   = options.show_image   ? options.show_image   > 0 : true,
             show_winning = options.show_winning ? options.show_winning > 0 : true,
@@ -217,7 +217,7 @@ const TradingAnalysis = (function() {
         };
 
         if (show_image && images.hasOwnProperty(form_name)) {
-            const image_path = url_for_static('images/pages/trade-explanation/' + (getLanguage() === 'JA' ? 'ja/' : ''));
+            const image_path = urlForStatic('images/pages/trade-explanation/' + (getLanguage() === 'JA' ? 'ja/' : ''));
             $Container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $Container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
             $Container.find('#explanation_image').removeClass(hidden_class);

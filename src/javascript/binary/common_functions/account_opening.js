@@ -1,7 +1,7 @@
 const generateBirthDate    = require('./attach_dom/birth_date_picker');
 const BinaryPjax           = require('../base/binary_pjax');
 const localize             = require('../base/localize').localize;
-const Client               = require('../base/client').Client;
+const Client               = require('../base/client');
 const State                = require('../base/storage').State;
 const makeOption           = require('../common_functions/common_functions').makeOption;
 const FormManager          = require('../common_functions/form_manager');
@@ -23,12 +23,12 @@ const redirectAccount = function() {
 
         // redirect client to correct account opening page if needed
         if (!State.get('is_financial_opening') &&
-            ((!is_virtual && Client.can_upgrade_gaming_to_financial(landing_company)) ||
-            Client.can_upgrade_virtual_to_financial(landing_company))) {
+            ((!is_virtual && Client.canUpgradeGamingToFinancial(landing_company)) ||
+            Client.canUpgradeVirtualToFinancial(landing_company))) {
             BinaryPjax.load('new_account/maltainvestws');
             return false;
         }
-        if (!State.get('is_japan_opening') && is_virtual && Client.can_upgrade_virtual_to_japan(landing_company)) {
+        if (!State.get('is_japan_opening') && is_virtual && Client.canUpgradeVirtualToJapan(landing_company)) {
             BinaryPjax.load('new_account/japanws');
             return false;
         }
@@ -115,7 +115,7 @@ const handleNewAccount = function(response, message_type) {
         $('#client_message').find('.notice-msg').text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : errorMessage).end()
             .removeClass('invisible');
     } else {
-        Client.process_new_account(Client.get('email'), response[message_type].client_id, response[message_type].oauth_token, false);
+        Client.processNewAccount(Client.get('email'), response[message_type].client_id, response[message_type].oauth_token, false);
     }
 };
 

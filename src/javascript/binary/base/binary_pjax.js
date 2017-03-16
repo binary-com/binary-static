@@ -1,6 +1,6 @@
 const getLanguage = require('./language').getLanguage;
 const State       = require('./storage').State;
-const url_for     = require('./url').url_for;
+const urlFor      = require('./url').urlFor;
 
 const BinaryPjax = (function() {
     'use strict';
@@ -95,7 +95,7 @@ const BinaryPjax = (function() {
         State.set('is_loaded_by_pjax', true);
 
         if (!/^http/i.test(url)) {
-            url = url_for(url);
+            url = urlFor(url);
         }
         const cached_content = cacheGet(url);
         if (cached_content) {

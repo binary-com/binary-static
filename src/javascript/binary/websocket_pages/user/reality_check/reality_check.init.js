@@ -1,6 +1,6 @@
 const RealityCheckUI   = require('./reality_check.ui').RealityCheckUI;
 const RealityCheckData = require('./reality_check.data').RealityCheckData;
-const Client           = require('../../../base/client').Client;
+const Client           = require('../../../base/client');
 
 const RealityCheck = (function() {
     'use strict';

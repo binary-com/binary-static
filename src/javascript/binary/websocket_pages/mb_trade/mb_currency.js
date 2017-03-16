@@ -2,7 +2,7 @@ const format_currency = require('../../common_functions/currency_to_symbol').for
 const MBDefaults = require('./mb_defaults').MBDefaults;
 const japanese_client = require('../../common_functions/country_base').japanese_client;
 const State  = require('../../base/storage').State;
-const Client = require('../../base/client').Client;
+const Client = require('../../base/client');
 
 /*
  * Handles currency display

@@ -1,8 +1,8 @@
-const BinaryPjax      = require('../base/binary_pjax');
-const getLanguage     = require('../base/language').getLanguage;
-const localize        = require('../base/localize').localize;
-const url_for         = require('../base/url').url_for;
-const FormManager     = require('../common_functions/form_manager');
+const BinaryPjax  = require('../base/binary_pjax');
+const getLanguage = require('../base/language').getLanguage;
+const localize    = require('../base/localize').localize;
+const urlFor      = require('../base/url').urlFor;
+const FormManager = require('../common_functions/form_manager');
 
 const Home = (() => {
     'use strict';
@@ -39,7 +39,7 @@ const Home = (() => {
             return true;
         }
         $('#frm_verify_email').find('div')
-            .html($('<p/>', { class: 'notice-msg center-text', html: localize('Sorry, account signup is not available in your country. Please contact <a href="[_1]">customer support</a> for more information.', [url_for('contact')]) }));
+            .html($('<p/>', { class: 'notice-msg center-text', html: localize('Sorry, account signup is not available in your country. Please contact <a href="[_1]">customer support</a> for more information.', [urlFor('contact')]) }));
         return false;
     };
 

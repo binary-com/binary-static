@@ -1,6 +1,6 @@
-const Client         = require('../binary/base/client').Client;
+const Client         = require('../binary/base/client');
 const getLanguage    = require('../binary/base/language').getLanguage;
-const url_for_static = require('../binary/base/url').url_for_static;
+const urlForStatic   = require('../binary/base/url').urlForStatic;
 const Pushwoosh      = require('web-push-notifications').Pushwoosh;
 
 const BinaryPushwoosh = (() => {
@@ -18,7 +18,7 @@ const BinaryPushwoosh = (() => {
                 safariWebsitePushID     : 'web.com.binary',
                 defaultNotificationTitle: 'Binary.com',
                 defaultNotificationImage: 'https://style.binary.com/images/logo/logomark.png',
-                serviceWorkerUrl        : url_for_static('/') + 'pushwoosh-service-worker-light.js',
+                serviceWorkerUrl        : urlForStatic('/') + 'pushwoosh-service-worker-light.js',
             }]);
             initialised = true;
             sendTags();

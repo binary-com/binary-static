@@ -1,7 +1,7 @@
 const CookieStorage = require('../base/storage').CookieStorage;
 const Url           = require('../base/url').Url;
 const url           = require('../base/url').url;
-const Client        = require('../base/client').Client;
+const Client        = require('../base/client');
 
 /*
  * Handles utm parameters/referrer to use on signup
@@ -44,13 +44,13 @@ const TrafficSource = (function() {
     };
 
     const setData = function() {
-        if (Client.is_logged_in()) {
+        if (Client.isLoggedIn()) {
             clearData();
             return;
         }
 
         const current_values = getData(),
-            params = url.params_hash(),
+            params = url.paramsHash(),
             param_keys = ['utm_source', 'utm_medium', 'utm_campaign'];
 
         if (params.utm_source) { // url params can be stored only if utm_source is available
@@ -62,7 +62,7 @@ const TrafficSource = (function() {
         }
 
         // Store gclid
-        if (params.gclid && !Client.is_logged_in()) {
+        if (params.gclid && !Client.isLoggedIn()) {
             Client.set('gclid', params.gclid);
         }
 

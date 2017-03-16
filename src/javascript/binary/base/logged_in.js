@@ -1,15 +1,15 @@
-const objectNotEmpty = require('./utility').objectNotEmpty;
-const Cookies        = require('../../lib/js-cookie');
-const getLanguage    = require('./language').getLanguage;
-const GTM     = require('./gtm').GTM;
-const Client  = require('./client').Client;
-const url_for = require('./url').url_for;
-const default_redirect_url = require('./url').default_redirect_url;
+const Client             = require('./client');
+const GTM                = require('./gtm');
+const getLanguage        = require('./language').getLanguage;
+const defaultRedirectUrl = require('./url').defaultRedirectUrl;
+const urlFor             = require('./url').urlFor;
+const objectNotEmpty     = require('./utility').objectNotEmpty;
+const Cookies            = require('../../lib/js-cookie');
 
-const LoggedInHandler = (function() {
+const LoggedInHandler = (() => {
     'use strict';
 
-    const onLoad = function() {
+    const onLoad = () => {
         parent.window.is_logging_in = 1; // this flag is used in base.js to prevent auto-reloading this page
         let redirect_url;
         try {
@@ -24,13 +24,13 @@ const LoggedInHandler = (function() {
                 });
                 loginid = loginids[0];
                 // set cookies
-                Client.set_cookie('loginid',      loginid);
-                Client.set_cookie('loginid_list', loginid_list);
+                Client.setCookie('loginid',      loginid);
+                Client.setCookie('loginid_list', loginid_list);
             }
-            Client.set_cookie('login', tokens[loginid]);
+            Client.setCookie('login', tokens[loginid]);
 
             // set flags
-            GTM.set_login_flag();
+            GTM.setLoginFlag();
 
             // redirect url
             redirect_url = sessionStorage.getItem('redirect_url');
@@ -42,12 +42,12 @@ const LoggedInHandler = (function() {
         if (redirect_url) {
             const do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home', 'home-jp'];
             const reg = new RegExp(do_not_redirect.join('|'), 'i');
-            if (!reg.test(redirect_url) && url_for('') !== redirect_url) {
+            if (!reg.test(redirect_url) && urlFor('') !== redirect_url) {
                 set_default = false;
             }
         }
         if (set_default) {
-            redirect_url = default_redirect_url();
+            redirect_url = defaultRedirectUrl();
             const lang_cookie = Cookies.get('language'),
                 language = getLanguage();
             if (lang_cookie && lang_cookie !== language) {
@@ -58,7 +58,7 @@ const LoggedInHandler = (function() {
         window.location.href = redirect_url; // need to redirect not using pjax
     };
 
-    const storeTokens = function() {
+    const storeTokens = () => {
         // Parse hash for loginids and tokens returned by OAuth
         const hash = (/acct1/i.test(window.location.hash) ? window.location.hash : window.location.search).substr(1).split('&'); // to maintain compatibility till backend change released
         const tokens = {};
@@ -75,10 +75,9 @@ const LoggedInHandler = (function() {
         return tokens;
     };
 
-    const getHashValue = function(source, key) {
-        const match = new RegExp('^' + key);
-        return source && source.length > 0 ? (match.test(source.split('=')[0]) ? source.split('=')[1] : '') : '';
-    };
+    const getHashValue = (source, key) => (
+        source && source.length > 0 ? (new RegExp('^' + key).test(source.split('=')[0]) ? source.split('=')[1] : '') : ''
+    );
 
     return {
         onLoad: onLoad,

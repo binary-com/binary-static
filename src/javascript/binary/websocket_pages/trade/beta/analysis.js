@@ -6,9 +6,9 @@ const PortfolioWS                     = require('../../user/account/portfolio/po
 const State                           = require('../../../base/storage').State;
 const getLanguage                     = require('../../../base/language').getLanguage;
 const Url                             = require('../../../base/url').Url;
-const url_for                         = require('../../../base/url').url_for;
-const url_for_static                  = require('../../../base/url').url_for_static;
-const Client                          = require('../../../base/client').Client;
+const urlFor                          = require('../../../base/url').urlFor;
+const urlForStatic                    = require('../../../base/url').urlForStatic;
+const Client                          = require('../../../base/client');
 const showHighchart                   = require('../common').showHighchart;
 const toggleActiveNavMenuElement_Beta = require('../common').toggleActiveNavMenuElement_Beta;
 const elementInnerHtml                = require('../../../common_functions/common_functions').elementInnerHtml;
@@ -34,7 +34,7 @@ const TradingAnalysis_Beta = (function() {
         if (formName === 'matchdiff') {
             formName = 'digits';
         }
-        $('#tab_explanation').find('a').attr('href',  url_for('trade/bet_explanation_beta', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
+        $('#tab_explanation').find('a').attr('href',  urlFor('trade/bet_explanation_beta', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
         if (formName === 'digits' || formName === 'overunder' || formName === 'evenodd') {
             $('#tab_last_digit').removeClass('invisible');
         } else {
@@ -51,7 +51,7 @@ const TradingAnalysis_Beta = (function() {
     const bindAnalysisTabEvent = function() {
         'use strict';
 
-        if (Client.is_logged_in()) {
+        if (Client.isLoggedIn()) {
             $('#tab_portfolio').removeClass('invisible');
         }
         if (!japanese_client()) {
@@ -169,7 +169,7 @@ const TradingAnalysis_Beta = (function() {
      * handle the display of proper explanation based on parameters
      */
     const showExplanation = function(href) {
-        const options = new Url(href).params_hash();
+        const options = new Url(href).paramsHash();
         const form_name    = options.form_name || 'risefall',
             show_image   = options.show_image   ? options.show_image   > 0 : true,
             show_winning = options.show_winning ? options.show_winning > 0 : true,
@@ -225,7 +225,7 @@ const TradingAnalysis_Beta = (function() {
         };
 
         if (show_image && images.hasOwnProperty(form_name)) {
-            const image_path = url_for_static('images/pages/trade-explanation/' + (getLanguage() === 'JA' ? 'ja/' : ''));
+            const image_path = urlForStatic('images/pages/trade-explanation/' + (getLanguage() === 'JA' ? 'ja/' : ''));
             $Container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $Container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
             $Container.find('#explanation_image').removeClass(hidden_class);

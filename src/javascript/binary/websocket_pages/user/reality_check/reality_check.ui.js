@@ -1,18 +1,18 @@
-const Client                    = require('../../../base/client').Client;
-const showLocalTimeOnHover      = require('../../../base/clock').Clock.showLocalTimeOnHover;
-const localize                  = require('../../../base/localize').localize;
-const url_for                   = require('../../../base/url').url_for;
-const Content                   = require('../../../common_functions/content').Content;
-const onlyNumericOnKeypress     = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
-const RealityCheckData          = require('./reality_check.data').RealityCheckData;
+const Client                = require('../../../base/client');
+const showLocalTimeOnHover  = require('../../../base/clock').showLocalTimeOnHover;
+const localize              = require('../../../base/localize').localize;
+const urlFor                = require('../../../base/url').urlFor;
+const Content               = require('../../../common_functions/content').Content;
+const onlyNumericOnKeypress = require('../../../common_functions/event_handler').onlyNumericOnKeypress;
+const RealityCheckData      = require('./reality_check.data').RealityCheckData;
 require('../../../../lib/polyfills/array.includes');
 require('../../../../lib/polyfills/string.includes');
 
 const RealityCheckUI = (function() {
     'use strict';
 
-    const frequency_url = url_for('user/reality_check_frequencyws'),
-        summary_url = url_for('user/reality_check_summaryws'),
+    const frequency_url = urlFor('user/reality_check_frequencyws'),
+        summary_url = urlFor('user/reality_check_summaryws'),
         hiddenClass = 'invisible';
     let loginTime, // milliseconds
         getAccountStatus;
@@ -120,7 +120,7 @@ const RealityCheckUI = (function() {
     };
 
     const onStatementClick = function() {
-        const win = window.open(url_for('user/statementws') + '#no-reality-check', '_blank');
+        const win = window.open(urlFor('user/statementws') + '#no-reality-check', '_blank');
         if (win) {
             win.focus();
         }
