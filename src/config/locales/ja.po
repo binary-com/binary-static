@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-15 07:27+0000\n"
-"Last-Translator: Masanari Higashiyama <higashiyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2017-03-16 03:32+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -5645,8 +5645,6 @@ msgstr ""
 msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
 msgstr ""
 
-#, fuzzy
-#| msgid "Please accept the terms and conditions."
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "利用規約に同意していただく必要があります。"
 
@@ -7167,8 +7165,6 @@ msgstr "テスト駆動開発の技術を使用して高品質な自己文書化
 msgid "The above personal data that we collect will be held by us and processed for any purpose as may be allowed by law or required by any law. We may also transfer such personal data to any company within the Binary Group of companies, any of our business associates or payment providers, whether in or outside of the EEA including in countries which might not offer an equivalent level of protection of personal data."
 msgstr "当社が収集する上記の個人情報は当社にて保管し、法律、または任意の法律の求めに応じて利用される場合があります。これらの個人情報を当社グループ内、またはビジネスパートナー、支払提供者などの同レベルの個人情報保護を提供していない国を含むEEA内外で共有する場合があります。"
 
-#, fuzzy
-#| msgid "The account transfer is unavailable. Please deposit to your account."
 msgid "The account transfer is unavailable. Please %1deposit%2 to your account."
 msgstr "口座振替はご利用いただけません。お客さまの口座へご入金ください。"
 
@@ -9120,10 +9116,8 @@ msgstr "お客様のご口座はアップグレード済みです。トレード
 msgid "Your account is not fully authenticated."
 msgstr "お客様の口座認証はまだ完了していません。"
 
-#, fuzzy
-#| msgid "Your cashier section is disabled at the moment. Please contact <a href=\"%1\">Customer Support</a> for assistance."
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
-msgstr "お客様のキャッシャーは現在ご利用制限が掛っております。<a href=\"%1\">カスタマーサポート</a>までご連絡下さい。"
+msgstr "お客さまの口座は、現在ご利用制限が掛っております。<a href=\"%1\">カスタマーサポート</a>までご連絡下さい。"
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr ""
@@ -9508,367 +9502,537 @@ msgstr "当社サービスを通じて金融トレードを購入するメリッ
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 1"
 msgstr ""
+"（1）本約款は、当社のアフィリエイトプログラムへの参加を申請する際、及び当プログラ \n"
+"　ムへの参加が許可された際にBinary株式会社（以下「当社」といいます。）と利用者（本 \n"
+"　プログラム申請者：以下「アフィリエイト会員」といいます。）との間に適用される取り \n"
+"　決めです。本約款に基づく当社とアフィリエイト会員の間の契約関係を「本契約」といい \n"
+"　ます。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 2"
 msgstr ""
+"（2）当社は本契約のどの条項に対しても随時、変更を施す権利を有します。変更が施され \n"
+"　る場合は、ご登録済みのメールアドレスへ実施日の７日前に事前通達を行いますが、定期 \n"
+"　的な本契約の内容確認はアフィリエイト会員の義務です。変更が施される前に当プログ \n"
+"　ラムにご参加された方に対しても、変更点は適用されます。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 1 Title"
-msgstr "第3章：概要"
+msgstr "1. 本文書について"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 10 Paragraph 1"
 msgstr ""
+"（1）当社はBinary.comウェブサイトにおいてサービスの中断やエラーが全く起こらない\n"
+"　サービスの提供を保証していない。また、そのようなサービスのエラーや中断によって生\n"
+"　じた事象に対する責任を当社は負いません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 10 Paragraph 2"
 msgstr ""
+"（2）当社は原則として「現状有姿 (as is)」、「提供されているまま (as available)」ウェブサイ\n"
+"　トを提供し、ハッカーまたは当社の管理外で発生したその他有害なコンポーネントなど\n"
+"　の第三者の干渉が当サイトには無いこと、エラーは発生しないこと、エラーは必ず修正さ\n"
+"　れるということを保証しているわけではありません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 10 Title"
 msgstr ""
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 11 Paragraph 1"
 msgstr ""
+"（1）アフィリエイト会員はあらゆる損失、要求、苦情、損害賠償、費用（該当する場合、\n"
+"　重大な損失、利益の損失、法的対応の費用やそれにまつわる付加価値税）など要求に応じ\n"
+"　た賠償を行う必要があり、本契約の下、アフィリエイト会員の義務または保証の違反、不\n"
+"　履行、非遵守の結果直接的または間接的に被った若しくは発生した負債を当社に求める\n"
+"　ことはできません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 11 Paragraph 2"
 msgstr ""
+"（2）当社は、直接的または間接的なアフィリエイト会員のビジネスの損失、収益または利\n"
+"　益の損失、予想される貯蓄の損失、若しくは無駄な支出、データの破損、そしていかなる\n"
+"　間接的損失に対して、一切の責任を負わないものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 11 Title"
 msgstr ""
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 1"
 msgstr ""
+"当事者のいずれかが本契約の違反行為をした場合、本契約は書面での通知を以て直ち\n"
+"　に解除されるものとする。また、救済される可能性のある違反行為に対し、そのような違\n"
+"　反行為に対する通告文書を受け取ってから15日以内に改善されない場合は、本契約は解\n"
+"　除されます。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 2"
 msgstr ""
+"当事者の一方が資産の全体または一部に管財人、検査者、管理者が当てられていたり、\n"
+"　管轄地域での登録が削除されたり、または他方当事者を巻き込んだ注文が発生した場合、\n"
+"　（注文と結果において、支払い能力のある法人と結果的に得た法人が別でないかぎり、こ\n"
+"　の契約に基いて本契約に拘束される）書面による通知で速やかに本契約を解除する場合\n"
+"　があります。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 3"
 msgstr ""
+"いずれの当事者も、他方当事者への１週間の書面の通知を以て本契約を終了させるこ\n"
+"　とができます。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 1"
-msgstr ""
+msgstr "以下の場合を対象とします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 2"
 msgstr ""
+"①当社が、紛争処理解決機関が関与する可能性がある苦情を受けた場合、または当社がア\n"
+"　　フィリエイト会員が関係法令、規程、諸規則等に違反していると判断した場合、または、\n"
+"　　アフィリエイト会員が運用する業務が裁判に関連しそうな場合"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 3"
 msgstr ""
+"②アフィリエイト会員が、契約期間中に当社に提供した情報が、当社が真実でない、不\n"
+"　　正確なものであると判断した場合"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 4"
 msgstr ""
+"③アフィリエイト会員が、規制当局の権限下にある関係法令、規程、諸規則等で求められ\n"
+"　　るライセンス、承認が取得されていない場合"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 5"
 msgstr ""
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 5"
-msgstr ""
+msgstr "（5）本契約の解除は、終了日またはそれ以前に生じうるいかなる当事者の権利に損害を与えることはないものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Title"
 msgstr ""
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1"
 msgstr ""
+"（1）当社は、アフィリエイト会員が以下の各号に該当する者（以下「反社会的勢力」とい\n"
+"　う。）であることが判明した場合には、何らの催告を要せず、本契約を解除することがで\n"
+"　きるものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 1"
-msgstr ""
+msgstr "①暴力団"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 10"
-msgstr ""
+msgstr "その他前各号に準ずる者"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 2"
-msgstr ""
+msgstr "②暴力団員"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 3"
-msgstr ""
+msgstr "③暴力団員でなくなった時から5年を経過しない者"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 4"
-msgstr ""
+msgstr "④暴力団準構成員"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 5"
-msgstr ""
+msgstr "⑤暴力団関係企業"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 6"
-msgstr ""
+msgstr "⑥総会屋等"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 7"
-msgstr ""
+msgstr "⑦社会運動等標ぼうゴロ"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 8"
-msgstr ""
+msgstr "⑧政治活動等標ぼうゴロ"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 9"
-msgstr ""
+msgstr "⑨特殊知能暴力集団"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2"
 msgstr ""
+"（2）当社は、アフィリエイト会員が反社会的勢力と以下の各号の一にでも該当する関係を\n"
+"　有することが判明した場合には、何らの催告を要せず、本契約を解除することができるも\n"
+"　のとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 1"
-msgstr ""
+msgstr "①反社会的勢力が経営を支配していると認められるとき"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 2"
-msgstr ""
+msgstr "②反社会的勢力が経営に実質的に関与していると認められるとき"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 3"
 msgstr ""
+"③自己、自社もしくは第三者の不正な利益を図り、または第三者に損害を加えるなど、\n"
+"　　反社会的勢力を利用していると認められるとき"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 4"
 msgstr ""
+"④反社会的勢力に対して資金等を提供し、または便宜を供与するなどの関与をしている\n"
+"　　と認められるとき"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 5"
 msgstr ""
+"⑤その他役員等または経営に実質的に関与している者が、反社会的勢力と社会的に非難\n"
+"　　されるべき関係を有しているとき"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3"
 msgstr ""
+"（3）当社は、アフィリエイト会員が自らまたは第三者を利用して以下の各号の一にでも該\n"
+"　当する行為をした場合には、何らの催告を要せず、本契約を解除することができるものと\n"
+"　します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 1"
-msgstr ""
+msgstr "①暴力的な要求行為"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 2"
-msgstr ""
+msgstr "②法的な責任を超えた不当な要求行為"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 3"
-msgstr ""
+msgstr "③取引に関して、脅迫的な言動をし、または暴力を用いる行為"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 4"
 msgstr ""
+"④風説を流布し、偽計または威力を用いて当社の信用を毀損し、または当社の業務を妨害\n"
+"　　する行為"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 5"
-msgstr ""
+msgstr "⑤その他各前号に準ずる行為"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 4"
 msgstr ""
+"（4）アフィリエイト会員が本条各項の規定に違反した場合には、アフィリエイト会員に損\n"
+"　害が生じても当社は何らこれを賠償ないし補償することは要せず、また、かかる解除によ\n"
+"　り当社に損害が生じたときは、アフィリエイト会員はその損害を賠償するものとします。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Title"
-msgstr "第3章：概要"
+msgstr "13. 反社会的勢力等の排除"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 1"
 msgstr ""
+"（1）本契約は、各条項に対して当事者間で合意するものであり、それ以前の当事者間の合\n"
+"　意及び理解に取って代わるものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 2"
 msgstr ""
+"（2）他方の当事者への本契約に関する遅延、怠慢などを強要する行為は、本契約に基づい\n"
+"　て、権利の放棄または当該当事者の権利に何らかの形で損害を与えるものと判断します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 3"
 msgstr ""
+"（3）本契約の全体または一部の条項が無効、若しくは法的強制力がないと判断された場合、\n"
+"　その不履行条項（またはその一部）は本契約から削除されたものとみなされ、残りの条項\n"
+"　は引き続き完全に有効かつ強制可能であるものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 4"
 msgstr ""
+"（4）本契約に基いて当社宛に作成された、いかなる通知及びお問い合わせは、\n"
+"　affiliates@binary.comまで送信してください。また、当社が本契約の下作成した通知は、\n"
+"　申請時にご登録いただいたメールアドレスか、当社へご提示いただいたその他のメール\n"
+"　アドレスへ送信致します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 5"
 msgstr ""
+"（5）本約款に基づく当社との契約で生じた、または関連して生じる紛争、論争、請求は当\n"
+"　社が指定した紛争解決機関に持ち込まれ、最終的な判断が決定されます。紛争解決手続き\n"
+"　で使用される言語は日本語です。紛争解決機関の裁定による結果を、その地域を管轄する\n"
+"　裁判所に提出することができます。紛争解決にかかる費用は貴殿が負担するものとしま\n"
+"　す。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 6"
 msgstr ""
+"当社との間に生じた本契約に関する訴訟については、東京地方裁判所をまたは東京簡易\n"
+"　裁判所を第一審の専属管轄裁判所とします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Title"
 msgstr ""
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 1"
 msgstr ""
+"（1）アフィリエイトプログラムにご参加頂くにあたり、本約款を熟読し理解されることは \n"
+"　重要です。本約款への同意の表明、及びアフィリエイトプログラムへの申請行為は、下記 \n"
+"　の本約款に同意されたものとみなします。万が一、本約款に同意できない場合は、アフィ \n"
+"　リエイトプログラムへの参加は見合わせて下さい。アフィリエイト会員には、当アフィリ \n"
+"　エイトプログラムにて会員獲得を目指すウェブサイトの管理者として行動して頂きます。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 2"
 msgstr ""
+"（2）当社は、当プログラムへの参加許可を与える権限を有します。故に、当プログラムへ \n"
+"　の参加の可否に関する当社の決定は、最終的かつ絶対的なものになります。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 3"
-msgstr ""
+msgstr "（3）申請の可否は、当社よりメールにお知らせいたします。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Title"
-msgstr "第3章：概要"
+msgstr "2. 契約の締結"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 1"
 msgstr ""
+"（1）日本で適用される法律、ルール、規制（広告、データ保護、プライバシーに関する法 \n"
+"　令、ルール、規制を含むが、これに限定されない）を遵守します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 2"
 msgstr ""
+"（2）獲得会員に提示するBinary.comの取引履歴及び実績に誤りがなく正確な内容である \n"
+"　ことを確認して下さい。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 3"
 msgstr ""
+"（3）アフィリエイト活動は、専門的且つ適切な態度で実施するようにしてください。アフ \n"
+"　ィリエイト会員は、獲得会員との信頼と誠意に基づく良好な関係を築くことが必要とさ \n"
+"　れます。獲得会員に対し、販売行為や口約束を強要する行為は禁じられています。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 4"
 msgstr ""
+"（4） 業務上知り得た情報もしくは機密事項、未公開情報を第三者、他社へ漏洩してはなり \n"
+"　ません。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Title"
-msgstr "第3章：概要"
+msgstr "3. アフィリエイト会員の義務"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 1"
 msgstr ""
+"（1）アフィリエイト会員は、獲得会員に入金及び取引への融資や貸出金をいかなる形式に \n"
+"　おいても奨励してはいけません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 10"
 msgstr ""
+"10）上記の規定のいずれかに違反したアフィリエイト会員を当社が把握した場合、当社は\n"
+"　本契約または適用される法律の下、その他の権利若しくは利用できる救済策に加えて、本\n"
+"　契約に締結した該当アフィリエイト会員をすぐに契約解除する権利を有します。その場\n"
+"　合、アフィリエイト会員は全ての権利を放棄し、当社またはBinaryグループ会社の取締\n"
+"　役、役員、株主、従業員に対する補償を行うものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 2"
 msgstr ""
+"（2）アフィリエイト会員はマーケティング、公告、プロモーションのいかなる活動におい \n"
+"　て20歳未満を対象としてはいけません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 3"
 msgstr ""
+"（3）獲得会員の資金または第三者の資金を、Binary.comの自身の口座で保有若しくは共有\n"
+"　してはいけません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 4"
-msgstr ""
+msgstr "（4）高圧的な販売戦術や口約束を用いてはいけません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 5"
 msgstr ""
+"(5）アフィリエイト会員は、獲得会員の取引実績や利益よりも自身のアフィリエイト報酬\n"
+"　を増やす目的で獲得会員に対して入金や取引を強要することは禁じられています。常に\n"
+"　獲得会員の利益を優先した行動を行うことが義務となっています。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 6"
-msgstr ""
+msgstr "（6）獲得会員に代わって取引してはいけません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 7"
 msgstr ""
+"（7）検索エンジン、ポータル、スポンサーの公告サービス、その他検索サイト、アフィリ\n"
+"　エイトサービスでの使用を目的とした、「Binary.com」という単語、またはそれに関連す\n"
+"　るその他バリエーションを含んだ当社のトレードマーク、若しくはトレード名が認識で\n"
+"　きるキーワードの購入や登録を行ってはいけません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 8"
 msgstr ""
+"（8）アフィリエイト会員の近しい立場の親族または制御できる人を獲得会員にすることは\n"
+"　できません。また、アフィリエイト会員はアフィリエイト報酬や当社からのいかなる報酬\n"
+"　もそのような親族や友人と共有することはできません。近しい立場の親族とは、配偶者、\n"
+"　両親、子、兄弟姉妹と定義します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 9"
 msgstr ""
+"（9）日本における規制当局の権限の下、マーケティング、広告、プロモーション活動に関\n"
+"　して適用される法律、規則、規制、服務規程を侵害するようなマーケティング、広告、プ\n"
+"　ロモーション活動の展開または実施をしてはいけません。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Title"
-msgstr "第3章：概要"
+msgstr "4. 制限事項"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 1"
 msgstr ""
+"（1）当社とアフィリエイターは別個の契約者であり、本約款は両者間にパートナーシップ、\n"
+"　ジョイントベンチャー、エージェンシー、フランチャイズ、営業担当者、雇用契約が一切\n"
+"　生じないことを明記する。アフィリエイターは、これに異議を唱えないものとします。ま\n"
+"　た、ウェブサイトに当該事項に矛盾する内容を記載しないものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 2"
 msgstr ""
+"（3）当社はアフィリエイト会員に販促材料としてアフィリエイトIDを含むリンクを提供\n"
+"　します。それらのリンクは適宜当社にて修正される場合があります。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 3"
 msgstr ""
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 4"
 msgstr ""
+"（4）獲得会員がプロモーションサイトのリンク、またはアフィリエイトIDを通じて\n"
+"　Binay.comへアクセスし、会員登録、または当社でトレードを行う度に、アフィリエイト\n"
+"　会員の紹介に由来するものか確実にお調べ致します。しかし、獲得会員の紹介先を当社が\n"
+"　特定できない場合、当社が責任を負うことはありません。適切にタグ付けされた獲得会員\n"
+"　のみ、各アフィリエイト会員に割り当てられます。全てのリンクに適切なタグが付いてい\n"
+"　ることを確認するのはアフィリエイト会員の責任となります。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 5"
 msgstr ""
+"（5）当社には、当社や当社のグループ企業を通じて報酬に関する取り決めも含め、本契約\n"
+"　書に記載されている権利、及び義務を遂行する権利を有します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 6"
 msgstr ""
+"（6）当社は、アフィリエイター会員が本約款もしくは関係法令に違反していると疑いが生\n"
+"　じた場合、報酬の支払いを無効化、遅延、差し控える権利を有します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 7"
 msgstr ""
+"（7）当社は、報酬システムを変更する裁量権を有する。変更時には、アリフィエイト会員\n"
+"　に通知するよう努めます。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Title"
-msgstr "第3章：概要"
+msgstr "5. 当社の義務"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 1"
 msgstr ""
+"（1）Binary.comの所有権とコンテンツは当社に属し、約款を承諾している間はどのような\n"
+"　手段であれアフィリエイト会員に譲与されることはありません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 2"
 msgstr ""
+"（2）アフィリエイト会員は、自身が保有するプロモーションサイトの所有権とコンテンツ\n"
+"　に責任を持つ義務が生じます。プロモーションサイトの開発、運用、維持、そしてサイト\n"
+"　上に存在する全てのデータに対して責任が生じます。アフィリエイト会員は、それらに関\n"
+"　する請求、損害賠償、費用（訴訟費用など）を当社に対して求めないことを確約すること\n"
+"　とします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 3"
 msgstr ""
+"（3）獲得会員が当社に口座を開設した場合、獲得会員の氏名、取引情報、その他データの\n"
+"　所有権を当社が引き受けます。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Title"
-msgstr "第3章：概要"
+msgstr "6. 所有権"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 1"
 msgstr ""
+"（1）スパム行為が検出された場合は、アフィリエイト口座の調査が実施され、アフィリエ\n"
+"　イト口座内の資金の支払いも保留とします。アフィリエイト会員は、Binary.comがスパ\n"
+"　ム行為への対策費用を負担する立場であり、そしてその対策費用と同額の額がアフィリ\n"
+"　エイト会員の口座から差し引かれることを十分に理解していただく必要があります。対\n"
+"　策費用の総額は、誠意に基づく平等な価格であり、法的に回収されます。これらの条件を\n"
+"　Binary.comのアフィリエイト会員に登録された時点で公平かつ妥当であると承諾された\n"
+"　ものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 2"
 msgstr ""
+"（2）万が一、スパム行為への対策費用がアフィリエイト会員のアフィリエイト口座から回\n"
+"　収できない場合、当社は別途回収方法を調査する権利を有します。例として、対策費用を\n"
+"　全て回収できるまでアフィリエイト口座に発生した報酬を差し引くなどという方法が適\n"
+"　用されます。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 7 Title"
-msgstr "第3章：概要"
+msgstr "7. スパム行為への対処"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 1"
 msgstr ""
+"（1）契約期間中は、下記に記述されている報酬プランに基づいた報酬金額をアフィリエイ\n"
+"　ト会員に支払います。アフィリエイト報酬は誠実な会員獲得行為にのみ支払われ、重複口\n"
+"　座の保有または不誠実な行動が検知されたアフィリエイト会員に対しては、当社の判断\n"
+"　で支払いを停止する権利を有します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 2"
-msgstr ""
+msgstr "報酬プラン"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 3"
-msgstr ""
+msgstr "アフィリエイト報酬金額:20,000円"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 4"
-msgstr ""
+msgstr "支払対象期間、対象データ:カレンダー末日までの当該月の報酬データ"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 5"
-msgstr ""
+msgstr "条件:下記①〜③すべての条件を獲得会員が満たすこと"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 6"
-msgstr ""
+msgstr "①初回入金額:¥10,000円以上"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7"
-msgstr ""
+msgstr "②最小取引数量:獲得会員が下記A〜Cのいずれかの最小取引数量を満たすこと"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point A"
-msgstr ""
+msgstr "A:初回入金額が¥10,000 - ¥20,000の場合、入金金額の5倍相当の取引数量"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point B"
-msgstr ""
+msgstr "B:初回入金金額が¥20,001 - ¥50,000の場合、入金金額の3倍相当の取引数量"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C"
-msgstr ""
+msgstr "C:初回入金金額が¥50,001以上の場合、入金金額と同額の取引数量"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 1"
-msgstr ""
+msgstr "最小取引数量条件"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 2(1)"
-msgstr ""
+msgstr "例:初回入金¥10,000の場合、最小取引数量は(初回入金¥10,000✕5)¥50,000"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 2(2)"
-msgstr ""
+msgstr "初回入金¥30,000の場合、最小取引数量は(初回入金¥30,000✕3)¥90,000"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 2(3)"
-msgstr ""
+msgstr "初回入金¥50,001の場合、最小取引数量は(初回入金金額分)となります"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 8"
-msgstr ""
+msgstr "③出金額の制限:口座残高は初回入金額以上を維持すること"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 9"
-msgstr ""
+msgstr "※出金額の制限の有効期間は、②の条件を満たす当該月まで有効"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 2"
 msgstr ""
+"（2）当社は獲得会員から得られた、未決済分データも含むアフィリエイト報酬に関する詳\n"
+"　細データを当社のウェブサイトにて提供します。この詳細データは毎日更新されます。カ\n"
+"　レンダー末日に該当月の報酬データを算出します。（該当月以前の持ち越しデータが存在\n"
+"　すればそれも加味します。）該当月の報酬がマイナスの値を記録した場合は、翌月にその\n"
+"　マイナス分が持ち越されます。マイナス分を上回るアフィリエイト報酬が発生した際に\n"
+"　アフィリエイト報酬を受け取れるようになります。尚、当社はマイナス分を０として扱\n"
+"　い、翌月以降に持ち越さない場合があります。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 3"
 msgstr ""
+"（3）前月のアフィリエイト報酬は翌月15日頃に、当社とアフィリエイト会員間で合意され\n"
+"　ている支払い方法で支払います。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 4"
 msgstr ""
+"（4）アフィリエイト報酬算出の際にエラーが発生した場合は、当社は常にそのような誤っ\n"
+"　た計算値を修正し、過払いとなった金額を回収する権利を有し、回収し終わるまでアフィ\n"
+"　リエイト報酬から引き落とし続けることとします。尚、場合によっては当社がアフィリエ\n"
+"　イト会員の口座に当社が提供したプロモーション資金の利益共有を停止する権利も当社\n"
+"　は有することとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 5"
 msgstr ""
+"（5）アフィリエイト会員が携わった全ての取引、すなわち獲得会員から発生するアフィリ\n"
+"　エイト報酬はアフィリエイトプログラムに参加されている限り、無期限でアフィリエイ\n"
+"　ト会員の報酬となります。当社は２年間請求のなかった報酬をキャンセルする権利を有\n"
+"　します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 6"
 msgstr ""
+"（6）アフィリエイト会員は獲得会員にアフィリエイト報酬を還元することはできません。\n"
+"　そのような行為を行った場合は即座にアフィリエイト口座を停止します。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Title"
-msgstr "第3章：概要"
+msgstr "8. 報酬の支払い"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 1"
 msgstr ""
+"（1）本契約に関わる当事者は、契約の締結、本契約で譲渡される権利とライセンスの受諾、\n"
+"　本契約に基づいた義務を履行するのに必要な全ての権利、権限、権原を契約期間中に有\n"
+"　し、維持することを保証するものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 2"
 msgstr ""
+"（2）アフィリト会員は、事業を営んでいる管轄地域の規制当局の権限に基づく関係法令、\n"
+"　規程、諸規則の範囲内で必要なライセンス、承認を得たことを表明、保証し、確約するも\n"
+"　のとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 3"
 msgstr ""
+"（3）アフィリエイト会員は、ウェブサイト上に名誉毀損、性的描写、違法、有害、脅迫、\n"
+"　猥褻、いやがらせ、人種差別その他の差別的、暴力的、政治的な事項を記載、リンクを貼\n"
+"　らないものとし、また第三者の権利を侵害していないことを保証するものとします。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Title"
-msgstr "第3章：概要"
+msgstr "9. 保証"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section Version Update"
-msgstr ""
+msgstr "制定：平成29年2月24日"
 
-#, fuzzy
-#| msgid "%1 Affiliate Program Terms and Conditions"
 msgid "{JAPAN ONLY} Affiliate Program Terms & Conditions"
-msgstr "当社アフィリエイトプログラム・利用規約"
+msgstr "アフィリエイトプログラム利用規約"
 
 msgid "{JAPAN ONLY}#1 Sales Division"
 msgstr "第一営業支店"
