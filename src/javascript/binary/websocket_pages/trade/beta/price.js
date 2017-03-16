@@ -99,7 +99,7 @@ const Price_Beta = (function() {
                 }
             }
 
-            proposal.date_expiry = moment.utc(endDate2 + ' ' + endTime2).unix();
+            proposal.date_expiry = moment.utc(endDate2 + ' ' + (endTime2 || '23:59:59')).unix();
             // For stopping tick trade behaviour
             proposal.duration_unit = 'm';
         }
