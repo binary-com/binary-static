@@ -84,7 +84,7 @@ DatePicker.prototype = {
                 new_date = new Date();
                 new_date.setDate(today.getDate() + Number(options[date]));
             }
-            config[date] = new_date || date;
+            config[date] = new_date || options[date];
         };
 
         if (options.minDate) {
