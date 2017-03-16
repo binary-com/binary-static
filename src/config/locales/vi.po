@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: I 18N\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-13 11:30+0000\n"
-"Last-Translator: Ashkan Nemati <ashkan@regentmarkets.com>\n"
-"Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
+"PO-Revision-Date: 2017-03-16 10:29+0000\n"
+"Last-Translator: Pham Minh Hieu <hphamv7@gmail.com>\n"
+"Language-Team: Vietnamese "
+"<https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,50 +36,42 @@ msgstr "\"Bên thứ ba Cung cấp Dịch vụ\" có nghĩa là bên thứ ba (k
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 vừa được cộng thêm vào tài khoản tiền Ảo %3 của bạn"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
 msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
+msgstr "%1 %2 payout if %3 does not touch Barrier through close on %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
 msgid "%1 %2 payout if %3 ends on or between low and high values of Barrier at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
+msgstr ""
+"%1 %2 payout if %3 ends on or between low and high values of Barrier at "
+"close on %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
 msgid "%1 %2 payout if %3 ends outside low and high values of Barrier at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+msgstr ""
+"%1 %2 payout if %3 ends outside low and high values of Barrier at close on "
+"%4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 goes outside of low and high values of Barrier through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
+msgstr ""
+"%1 %2 payout if %3 goes outside of low and high values of Barrier through "
+"close on %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
 msgid "%1 %2 payout if %3 is strictly higher than or equal to Barrier at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
+msgstr ""
+"%1 %2 payout if %3 is strictly higher than or equal to Barrier at close on "
+"%4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
 msgid "%1 %2 payout if %3 is strictly lower than Barrier at close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
+msgstr "%1 %2 payout if %3 is strictly lower than Barrier at close on %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
 msgid "%1 %2 payout if %3 stays between low and high values of Barrier through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
+msgstr ""
+"%1 %2 payout if %3 stays between low and high values of Barrier through "
+"close on %4."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 msgid "%1 %2 payout if %3 touches Barrier through close on %4."
-msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
+msgstr "%1 %2 payout if %3 touches Barrier through close on %4."
 
-#, fuzzy
-#| msgid "== Toll Free =="
 msgid "%1 (Toll Free)"
-msgstr "== Điện thoại miễn phí =="
+msgstr "%1 (Toll Free)"
 
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "Điều kiện và Điều khoản của chương trình hợp tác %1"
@@ -113,10 +106,8 @@ msgstr "Logo %1 và logo bò/gấu là nhãn hiệu đã được đăng ký."
 msgid "%1 continues to innovate and grow"
 msgstr "%1 tiếp tục lớn mạnh và đổi mới"
 
-#, fuzzy
-#| msgid "Deposit is done. Transaction ID:"
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
-msgstr "Gửi tiền đã được hoàn tất. Số ID giao dịch:"
+msgstr "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
 
 msgid "%1 does not charge any transfer fees."
 msgstr "%1 không tính bất kì phí chuyển tiền nào."
@@ -142,10 +133,11 @@ msgstr "%1 có nhiều cơ hội nghề nghiệp tuyệt vời cho các Chuyên 
 msgid "%1 has thousands of clients taking a variety of positions on the financial markets at any one time, and earns a small margin on these trades."
 msgstr "%1 có hàng ngàn khách hàng đang nắm giữ nhiều vị trí khác nhau trên thị trường tài chính, và kiếm được lợi nhuận trên những giao dịch này."
 
-#, fuzzy
-#| msgid "%1 has updated its <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
 msgid "%1 has updated its <a href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a href=\"%2\">Terms & Conditions</a>."
-msgstr "%1 vừa cập nhật <a class=\"pjaxload\" href=\"%2\">Điều khoản & Điều kiện</a>. Bằng cách nhấn vào OK, bạn xác nhận rằng bạn đã đọc và chấp nhận bản cập nhật <a class=\"pjaxload\" href=\"%2\">Điều khoản và Điều kiện</a>."
+msgstr ""
+"%1 vừa cập nhật <a href=\"%2\">Điều khoản & Điều kiện</a>. Bằng cách nhấn "
+"vào OK, bạn xác nhận rằng bạn đã đọc và chấp nhận bản cập nhật <a href=\"%2\""
+">Điều khoản và Điều kiện</a>."
 
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr "%1 đạt 1 triệu người dùng, chạm mốc lịch sử. Công ty tiếp tục phát triển vững vàng và ngày càng khẳng định vị trí của mình với vai trò dẫn đầu trong ngành."
@@ -153,10 +145,11 @@ msgstr "%1 đạt 1 triệu người dùng, chạm mốc lịch sử. Công ty
 msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr "%1 đã giới thiệu một <a href='%2' target='_blank' class='ja-hide'> công cụ lập trình giao dịch tự động</a> <span class='all-hide ja-show'> công cụ lập trình giao dịch tự động</span>, cho phép khách hàng phát triển các rô-bốt giao dịch tự động của riêng họ chỉ đơn giản \"kéo và thả\"."
 
-#, fuzzy
-#| msgid "%1 is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
 msgid "%1 is a dynamic and flexible workplace. As well as our offices, we have employees who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
-msgstr "%1 là một nơi rất linh hoạt. Cũng như các văn phòng, chúng tôi có đội ngũ nhân viên lựa chọn làm việc tại nhà trên toàn thế giới. Nếu điều này thích hợp với bạn, chúng tôi rất sẵn lòng."
+msgstr ""
+"%1 là một nơi rất linh hoạt. Cũng như các văn phòng, chúng tôi có đội ngũ "
+"nhân viên lựa chọn làm việc tại nhà trên toàn thế giới. Nếu điều này thích "
+"hợp với bạn, chúng tôi rất sẵn lòng."
 
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
 msgstr "%1 luôn tìm kiếm các chuyên gia có kinh nghiệm để bổ sung vào đội ngũ quản trị, kỹ thuật, và quản lý. Để hỗ trợ cho việc tăng trưởng liên tục, chúng tôi đã và đang phát triển một số cơ hội nghề nghiệp thú vị trong các lĩnh vực sau:"
@@ -209,10 +202,11 @@ msgstr "%1 đang tìm kiếm những nhà quản lý Chi nhánh có thể tạo 
 msgid "%1 offers a range of common deposit and withdrawal methods, from credit and debit cards to bank wires, e-cash and e-wallets."
 msgstr "%1 cung cấp nhiều phương thức rút tiền và gửi tiền phổ biến, từ thẻ tín dụng, thẻ ghi nợ, tới chuyển khoản ngân hàng, thẻ điện tử và ví điện tử."
 
-#, fuzzy
-#| msgid "%1 offers a virtual-money account so you can get the hang of trading binaries. Why not <a class='pjaxload' href='%2'>open a free $10k fully-functional virtual-money account</a>, and start learning how to trade."
 msgid "%1 offers a virtual-money account so you can get the hang of trading binaries. Why not <a href='%2'>open a free $10k fully-functional virtual-money account</a>, and start learning how to trade."
-msgstr "%1 đề nghị cung cấp 1 tài khoản tiền áo để bạn có thể hiểu rõ các giao dịch nhị phân.Tại sao không <a class='pjaxload' href='%2'>mở một tài khoản ảo với đầy đủ chức năng và đã có sẵn $10k</a>, và bắt đầu học cách giao dịch."
+msgstr ""
+"%1 đề nghị cung cấp 1 tài khoản tiền áo để bạn có thể hiểu rõ các giao dịch "
+"nhị phân.Tại sao không <a  href='%2'>mở một tài khoản ảo với đầy đủ chức "
+"năng và đã có sẵn $10k</a>, và bắt đầu học cách giao dịch."
 
 msgid "%1 offers five main types of trades that will help you execute your market view or strategy:"
 msgstr "%1 cung cấp cho năm loại chính trong giao dịch sẽ giúp bạn thực hiện tầm nhìn thị trường hoặc chiến lược:"
@@ -226,10 +220,8 @@ msgstr "%1 cung cấp nhiều cách thức giao dịch mới"
 msgid "%1 offers the world's financial markets in a simple, user-friendly platform."
 msgstr "%1 cung cấp giao diện thị trường tài chính thế giới đơn giản, thân thiện và dễ sử dụng."
 
-#, fuzzy
-#| msgid "%1 offers five ways to trade your chosen asset:"
 msgid "%1 offers you four ways to trade a particular asset:"
-msgstr "%1 cung cấp 5 cách để  giao dịch tài sản mà bạn đã chọn:"
+msgstr "%1 cung cấp 4 cách để giao dịch tài sản mà bạn đã chọn:"
 
 msgid "%1 opens an office in the QSentral office building in central Kuala Lumpur to further expand its IT development team."
 msgstr "%1 mở một văn phòng tại tòa nhà văn phòng QSentral ở trung tâm Kuala Lumpur để mở rộng thêm đội ngũ phát triển CNTT của mình."
@@ -258,26 +250,30 @@ msgstr "%1 đang tìm kiếm một nhà Điều hành phương tiện truyền t
 msgid "%1 seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world."
 msgstr "%1 đang tìm kiếm một người viết lời quảng cáo sắc sảo để mang đến những nội dung thật thu hút khách hàng tiềm năng và những khách hàng hiện tại trên khắp thế giới."
 
-#, fuzzy
-#| msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgid "%1 supports %2 which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
-msgstr "%1 hỗ trợ <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'> Responsible Gambling Trust</a> (RGT) chính là tổ chức từ thiện hàng đầu tại Anh với nhiệm vụ hạn chế những thiệt hại từ việc cá cược. RGT gây quỹ cho giáo dục, dịch vụ chữa trị và dự phòng, nghiên cứu hội đồng nhằm giúp mọi người hiểu thêm về thiệt hại do cá cược. Tổ chức này còn cung cấp dịch vụ hỗ trợ cá cược cấp quốc gia nhằm đưa ra những lời khuyên bảo mật và ủng hộ tinh thần cho những người cần giúp đỡ khi gặp rắc rối từ việc cá cược."
+msgstr ""
+"% 1 hỗ trợ% 2 là tổ chức từ thiện hàng đầu tại Anh cam kết giảm thiểu các "
+"tác hại liên quan đến cờ bạc. Các quỹ từ thiện hỗ trợ giáo dục, phòng ngừa "
+"và điều trị các dịch vụ và hoa hồng nghiên cứu để giúp mọi người hiểu thêm "
+"về tác hại liên quan đến cờ bạc. Nó cũng cung cấp một đường dây an toàn cờ "
+"bạc quốc gia để cung cấp lời khuyên bảo mật và hỗ trợ tinh thần cho những "
+"người tìm kiếm sự giúp đỡ về cờ bạc của họ."
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "%1 đoạt giải nhất với giải thưởng cho \"Nhà điều hành cá cược tài chính\" tại lễ trao giải thưởng uy tín 2015 EGR Operator Awards được tổ chức ở Luân Đôn."
 
-#, fuzzy
-#| msgid "Withdrawal is done. Transaction ID:"
 msgid "%1 withdrawal from account number %2 to %3 is done. Transaction ID: %4"
-msgstr "Rút tiền thành công. Số ID giao dịch:"
+msgstr "% 1 rút khỏi số tài khoản% 2 đến% 3 được thực hiện. ID giao dịch:% 4"
 
 msgid "%1 would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions."
 msgstr "%1 muốn hợp tác với các đại lý thanh toán tiềm năng trên toàn thế giới để chúng tôi có thể cung cấp những dịch vụ thanh toán nội địa cho những khách hàng đang sống tại nơi tương ứng."
 
-#, fuzzy
-#| msgid "%1's Continuous Indices are the Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 25%, 50%, 75% and 100%."
 msgid "%1's Continuous Indices are the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75% and 100%."
-msgstr "Các Chỉ số Liên tiếp của %1 chính là Chỉ số Độ dao động 25, Chỉ số Độ dao động 50, Chỉ số Độ dao động 75 và Chỉ số Độ dao động 100. Những chỉ số này mô phỏng thị trường tương đương với mức độ thay đổi cố định của 25%, 50%, 75% và 100%."
+msgstr ""
+"Các chỉ số liên tục% 1 là chỉ số Độ biến động 10, Độ bất ổn 25, Khả năng "
+"biến động 50, Khả năng biến động 75 và Chỉ số biến động 100. Các chỉ số này "
+"tương ứng với các thị trường mô phỏng với các biến động không đổi là 10%, 25%"
+", 50%, 75% và 100%."
 
 msgid "%1's IT Operations Group is responsible for the design, development and operation of the company's high-traffic networks. Its responsibilities include hardware and software deployment, up-time and reliability testing, incident response reporting, network security, intrusion detection, and load balancing."
 msgstr "Nhóm IT Hỗ trợ của %1 chịu trách nhiệm thiết kế, phát triển và quản lý hoạt động của lưu lượng truy cập mạng của công ty. Trách nhiệm của họ bao gồm sự triển khai phần cứng và phần mềm, lên lịch và các thử nghiệm tin cậy hay phản ứng và báo cáo khi gặp sự cố, an ninh mạng, phát hiện xâm nhập, và cân bằng tải."
@@ -294,14 +290,12 @@ msgstr "Nhóm Phân Tích Định Lượng của %1 có trách nhiệm định g
 msgid "%1's Smart FX are smart markets that measure the value of a currency against a basket of major currencies."
 msgstr "Smart FX của %1 là thị trường thông minh đo lường giá trị của một đồng tiền so với những đồng tiền lớn khác."
 
-#, fuzzy
-#| msgid ""
-#| "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much\n"
-#| "                    less investment than would be required in the live market."
 msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
 msgstr ""
-"Hợp đồng Chênh lệch của %1 được sinh ra từ hợp đồng phát sinh, giá trị của hàng hóa có liên quan trực tiếp đến biến động của thị trường. Khách hàng, người đang ở vị thế \"Mua\" trên thị trường đang tăng (và những người đang giữ vị thế \"Bán\"  của thị trường giảm) thu lợi nhuận từ những biến động này\n"
-"                     với khoản đầu tư ít hơn được yêu cầu trên thị trường thực tế."
+"Hợp đồng Spread% 1 là hợp đồng phái sinh đòn bẩy, giá trị được gắn liền với "
+"các biến động của thị trường. Khách hàng \"Dài\" là một thị trường tăng cao ("
+"và những người 'Ngắn' một thị trường giảm) thu được lợi nhuận từ những hoạt "
+"động này với đầu tư ít hơn nhiều so với nhu cầu thị trường sống."
 
 #, fuzzy
 #| msgid ""
