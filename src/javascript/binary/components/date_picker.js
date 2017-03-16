@@ -87,7 +87,7 @@ DatePicker.prototype = {
             config[date] = new_date || options[date];
         };
 
-        if (options.minDate) {
+        if (options.minDate !== undefined) {
             if (options.minDate === 'today') {
                 config.minDate = today;
             } else {
@@ -95,7 +95,7 @@ DatePicker.prototype = {
             }
         }
 
-        if (options.maxDate) {
+        if (options.maxDate !== undefined) {
             set_date('maxDate');
         }
 
@@ -153,10 +153,10 @@ DatePicker.prototype = {
                 $selector.attr('data-readonly', 'readonly')
                          .removeAttr('readonly');
             }
-            if (config.minDate) {
+            if (config.minDate !== undefined) {
                 $selector.attr('min', that.getDate(config.minDate));
             }
-            if (config.maxDate) {
+            if (config.maxDate !== undefined) {
                 $selector.attr('max', that.getDate(config.maxDate));
             }
         } else if (
