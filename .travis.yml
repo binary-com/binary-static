@@ -11,9 +11,9 @@ install: npm install
 before_script:
    - gem install travis
 script:
-   - curl -LO https://raw.github.com/bijan2007/binary-static/master/trigger.sh
+  # - curl -LO https://raw.github.com/bijan2007/binary-static/master/trigger.sh
    - chmod +x trigger.sh
-   - curl -LO https://raw.github.com/bijan2007/binary-static/master/get-build-status.sh
+  # - curl -LO https://raw.github.com/bijan2007/binary-static/master/get-build-status.sh
    - chmod +x get-build-status.sh
    - ./trigger.sh binary-com binary-static-ci master $TRAVIS_ACCESS_TOKEN
    - ./get-build-status.sh binary-com binary-static-ci $TRAVIS_ACCESS_TOKEN
