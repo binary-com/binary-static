@@ -9,7 +9,6 @@ const japanese_client           = require('../../common_functions/country_base')
 const displayUnderlyings        = require('../trade/common').displayUnderlyings;
 const generateUnderlyingOptions = require('../trade/common').generateUnderlyingOptions;
 const showFormOverlay           = require('../trade/common').showFormOverlay;
-const processForgetTicks        = require('../trade/process').processForgetTicks;
 const localize                  = require('../../base/localize').localize;
 const Client                    = require('../../base/client').Client;
 
@@ -190,16 +189,6 @@ const MBProcess = (function() {
         }
     };
 
-    const processForgetProposals = function() {
-        'use strict';
-
-        MBPrice.showPriceOverlay();
-        BinarySocket.send({
-            forget_all: 'proposal',
-        });
-        MBPrice.cleanup();
-    };
-
     const processPriceRequest = function() {
         'use strict';
 
@@ -300,6 +289,25 @@ const MBProcess = (function() {
         });
     };
 
+    const processForgetProposals = function() {
+        MBPrice.showPriceOverlay();
+        BinarySocket.send({
+            forget_all: 'proposal_array',
+        });
+        MBPrice.cleanup();
+    };
+
+    const processForgetTicks = function() {
+        BinarySocket.send({
+            forget_all: 'ticks',
+        });
+    };
+
+    const forgetTradingStreams = function() {
+        processForgetProposals();
+        processForgetTicks();
+    };
+
     const containsArray = function(array, val) {
         const hash = {};
         for (let i = 0; i < array.length; i++) {
@@ -315,7 +323,9 @@ const MBProcess = (function() {
         processContract        : processContract,
         processPriceRequest    : processPriceRequest,
         processProposal        : processProposal,
-        onUnload               : function() { clearSymbolTimeout(); MBSymbols.clearData(); },
+        processForgetTicks     : processForgetTicks,
+        forgetTradingStreams   : forgetTradingStreams,
+        onUnload               : function() { clearSymbolTimeout(); MBSymbols.clearData(); forgetTradingStreams(); },
     };
 })();
 

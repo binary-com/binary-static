@@ -10,7 +10,6 @@ const State  = require('../../base/storage').State;
 const GTM    = require('../../base/gtm').GTM;
 const Client = require('../../base/client').Client;
 const processTradingTimes  = require('../trade/process').processTradingTimes;
-const forgetTradingStreams = require('../trade/process').forgetTradingStreams;
 
 /*
  * This Message object process the response from server and fire
@@ -22,7 +21,7 @@ const MBMessage = (function () {
     const process = function (msg) {
         const response = JSON.parse(msg.data);
         if (!State.get('is_mb_trading')) {
-            forgetTradingStreams();
+            MBProcess.forgetTradingStreams();
             return;
         }
         if (response) {

@@ -6,7 +6,6 @@ const MBTick          = require('./mb_tick').MBTick;
 const TradingAnalysis = require('../trade/analysis').TradingAnalysis;
 const japanese_client = require('../../common_functions/country_base').japanese_client;
 const debounce        = require('../trade/common').debounce;
-const processForgetTicks = require('../trade/process').processForgetTicks;
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -44,7 +43,7 @@ const MBTradingEvents = (function () {
                     MBContract.getContracts(underlying);
 
                     // forget the old tick id i.e. close the old tick stream
-                    processForgetTicks();
+                    MBProcess.processForgetTicks();
                     // get ticks for current underlying
                     MBTick.request(underlying);
                     MBContract.displayDescriptions();
