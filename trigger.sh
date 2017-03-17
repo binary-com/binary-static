@@ -8,6 +8,7 @@ TOKEN=$4
 MESSAGE=$5
 
 # fetch trigger-travis script and make executable
+curl -LO https://raw.github.com/bijan2007/binary-static/master/trigger-travis.sh
 chmod +x trigger-travis.sh
 
 # trigger build if above conditions hold
