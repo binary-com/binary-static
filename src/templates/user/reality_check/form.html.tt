@@ -5,7 +5,7 @@
     </div>
     <div class="center-text gr-centered" id="reality_check_nav">
         <button class="button" type="submit">[% l("Continue Trading") %]</button>
-        <button class="button-secondary" id="statement">[% l("View Statement") %]</button>
-        <button class="button-secondary" id="logout">[% l("Log out") %]</button>
+        <a class="button-secondary" id="statement" href="javascript:;"><span>[% l("View Statement") %]</span></a>
+        <a class="button-secondary" id="logout" href="javascript:;"><span>[% l("Log out") %]</span></a>
     </div>
 </form>

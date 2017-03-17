@@ -1,7 +1,7 @@
-const RealityCheckData     = require('./reality_check.data');
-const showLocalTimeOnHover = require('../../../base/clock').Clock.showLocalTimeOnHover;
-const url_for              = require('../../../base/url').url_for;
-const FormManager          = require('../../../common_functions/form_manager');
+const RealityCheckData      = require('./reality_check.data');
+const showLocalTimeOnHover  = require('../../../base/clock').Clock.showLocalTimeOnHover;
+const url_for               = require('../../../base/url').url_for;
+const FormManager           = require('../../../common_functions/form_manager');
 require('../../../../lib/polyfills/array.includes');
 require('../../../../lib/polyfills/string.includes');
 
@@ -62,9 +62,19 @@ const RealityCheckUI = (() => {
         showLocalTimeOnHover('#start_time, #login_time, #current_time');
     };
 
+    const handleKeypress = (ev) => {
+        const char = String.fromCharCode(ev.which);
+        if ((!/[0-9]/.test(char) && [8, 37, 39].indexOf(ev.keyCode) < 0) ||
+            /['%]/.test(char)) { // similarity to arrows key code in some browsers
+            ev.returnValue = false;
+            ev.preventDefault();
+        }
+    };
+
     const bindValidation = () => {
+        $(form.num_reality_duration).off('keypress').on('keypress', handleKeypress);
         FormManager.init(form.selector, [
-            { selector: form.num_reality_duration, validations: ['req', ['number', { min: 10, max: 120 }]], exclude_request: 1 },
+            { selector: form.num_reality_duration, validations: ['req', ['number', { min: 10, max: 120 }]], exclude_request: 1, no_scroll: 1 },
         ]);
         FormManager.handleSubmit({
             form_selector       : form.selector,
@@ -112,14 +122,11 @@ const RealityCheckUI = (() => {
     };
 
     const getSummaryAsync = () => {
-        BinarySocket.send({ reality_check: 1 }).then((response) => {
-            if (RealityCheckUI.shouldShowPopup()) {
-                RealityCheckData.set('delay_reality_check', 0);
+        if (RealityCheckUI.shouldShowPopup()) {
+            BinarySocket.send({ reality_check: 1 }).then((response) => {
                 getAjax(RealityCheckData.summaryData(response.reality_check));
-            } else {
-                RealityCheckData.set('delay_reality_check', 1);
-            }
-        });
+            });
+        }
     };
 
     return {
