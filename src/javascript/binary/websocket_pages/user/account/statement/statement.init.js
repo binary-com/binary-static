@@ -153,21 +153,21 @@ const StatementInit = (() => {
     };
 
     const attachDatePicker = () => {
-        const jump_to = '#jump-to',
-            datepicker_inst = new DatePicker(jump_to);
+        const jump_to = '#jump-to';
+        $(jump_to).attr('data-value', toISOFormat(moment()))
+             .change(function() {
+                 if (!dateValueChanged(this, 'date')) {
+                     return false;
+                 }
+                 $('.table-container').remove();
+                 StatementUI.clearTableContent();
+                 initPage();
+                 return true;
+             });
+        const datepicker_inst = new DatePicker(jump_to);
         datepicker_inst.hide();
         datepicker_inst.show({ maxDate: 0 });
-        $(jump_to).val(localize('Today'))
-                 .attr('data-value', toISOFormat(moment()))
-                 .change(function() {
-                     if (!dateValueChanged(this, 'date')) {
-                         return false;
-                     }
-                     $('.table-container').remove();
-                     StatementUI.clearTableContent();
-                     initPage();
-                     return true;
-                 });
+        if ($(jump_to).attr('data-picker') !== 'native') $(jump_to).val(localize('Today'));
     };
 
     const onLoad = () => {
