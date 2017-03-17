@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-17 00:48+0000\n"
-"Last-Translator: Masanari Higashiyama <higashiyama@regentmarkets.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"PO-Revision-Date: 2017-03-17 05:57+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -817,16 +818,12 @@ msgstr "個人データのアクセス"
 msgid "Access to your personal data is strictly prohibited with the exception of key personnel of the Company and only as needed in the performance of their duties."
 msgstr "お客さまの個人データへのアクセスは、当社の主要な担当者のみ職務執行に必要な場合に限り可能とし、それ以外の者は厳しく禁止されています。"
 
-#, fuzzy
-#| msgid "Account Balance - Your account balance represents:"
 msgid "Account Balance &mdash; Your account balance represents:"
 msgstr "口座残高 - 現在の口座残高："
 
 msgid "Account Closure"
 msgstr "口座解約"
 
-#, fuzzy
-#| msgid "Account Equity - Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss."
 msgid "Account Equity &mdash; Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss."
 msgstr "有効証拠金 - 口座残高と含み益、含み損の合計をいいます。"
 
@@ -988,8 +985,6 @@ msgstr "クレジットカードの詳細情報は全て、金融機関の規定
 msgid "All customer funds are segregated and held with JSF Trust Bank."
 msgstr "お客様の預託金は全額、日証金信託銀行にて区分管理しています"
 
-#, fuzzy
-#| msgid "All funds transferred from your Binary Options Real Account to your Real Account must be made by you."
 msgid "All fund transfers from your Binary Options Real Account to your Real Account must be made by you."
 msgstr "バイナリーオプションのリアル口座からご自身のリアル口座への全資金の送金は、必ずご自身で行うようにしてください。"
 
@@ -1005,10 +1000,11 @@ msgstr "営業時間外のためご利用になれません。"
 msgid "All opinions, news, research, analysis, prices or other information contained on this website are provided as general market commentary and do not constitute investment advice. %1 will not accept liability for any loss or damage, including but without limitation to, any loss of profit that may arise directly or indirectly from use of or reliance on such information."
 msgstr "当社サイトに掲載されているご意見、ニュース、リサーチ、分析、価格などの情報は、一般的な市場に関するコメントであり、投資に関する助言ではありません。％1ではそのような情報の使用または依存から直接または間接的に生じる可能性がある利益の損失、損害についての責任を一切負いません。"
 
-#, fuzzy
-#| msgid "All products traded on margin carry a high degree of risk and can result in losses as well as profits that exceed your initial deposit. The margin trading service described in this Agreement is not suitable for everyone. You acknowledge that the margin trading service described in this Agreement is designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us."
 msgid "All products traded on margin carry a high degree of risk and can result in losses as well as profits that exceed your initial deposit. The margin trading services described in this Agreement is not suitable for everyone. You acknowledge that the margin trading services described in this Agreement is designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us."
-msgstr "証拠金取引の全商品には高いリスクがつき、結果として初期投資額を超える損失が発生する可能性があります。本契約に記載されている証拠金取引サービスは、全ての方に適しているわけではありません。本契約に記載されている証拠金取引は、本契約に表記されている取引タイプに関する知識と経験がある方へ提供しており、本契約を締結する前に関連するリスクを十分にご理解いただく必要があります。"
+msgstr ""
+"証拠金取引の全商品には高いリスクがつき、結果として初期投資額を超える損失が発生する可能性があります。本契約に記載されている証拠金取引サービスは、全ての方に"
+"適しているわけではありません。本契約に記載されている証拠金取引は、本契約に表記されている取引タイプに関する知識と経験がある方へ提供しており、本契約を締結す"
+"る前に関連するリスクを十分にご理解いただく必要があります。"
 
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "当社サイトの時間表示は全て、GMT（グリニッジ標準時）に基づきます。"
@@ -1510,10 +1506,8 @@ msgstr "バイナリーオプション"
 msgid "Binary Options Basics"
 msgstr "バイナリー取引の基礎"
 
-#, fuzzy
-#| msgid "Binary Options Real Account - Your real money account opened with Binary.com which you use to trade binary options with Binary.com."
 msgid "Binary Options Real Account &mdash; Your real money account opened with Binary.com which you use to trade binary options with Binary.com."
-msgstr "バイナリーオプションリアル口座 - お客さまの口座はBinary.comでバイナリーオプション取引を行うために開設されました。"
+msgstr "バイナリーオプションリアル口座 - お客さまの口座はバイナリーオプション取引を行うために開設されました。"
 
 msgid "Binary Shop"
 msgstr "バイナリーショップ"
@@ -1879,10 +1873,10 @@ msgstr "Binary (IOM) Ltdでご登録されたお客様は、ADR法人の裁定�
 msgid "Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the MFSA's Consumer Complaints Manager. Details on making a complaint with the MFSA's Consumer Complaints Manager as well as their contact details can be found here: %1. Complaints to the MFSA's Consumer Complaints Manager should always be made in writing."
 msgstr "Binary Investments (Europe) Ltdに登録いただいたお客さまは、未解決のやりとりをMFSA消費者苦情管理まで問題を提起していただくことが可能です。MFSA消費者苦情管理のお問い合わせ同様、苦情の申し立てについての情報は%1からご確認いただけます。MSFA消費者苦情管理への申し立ては、常に文書での提出をお願い致します。"
 
-#, fuzzy
-#| msgid "Clients registered with any Group company, and in particular with Binary (V) Ltd. or Binary (C.R.). S.A., can raise their unresolved disputes with management by submitting an email to <a href='mailto:%1'>%1</a>."
 msgid "Clients registered with any Binary Group company, and in particular with Binary (V) Ltd. or Binary (C.R.). S.A., can raise their unresolved disputes with management by submitting an email to <a href='mailto:%1'>%1</a>."
-msgstr "Binary (C.R.) S.A.にご口座を開設されたお客さまは、 complaints@binary.comまでご連絡頂くことで当社のマネージメントに苦情を申し立てることができます。"
+msgstr ""
+"Binary (C.R.) S.A.にご口座を開設されたお客さまは、 "
+"complaints@binary.comまでご連絡頂くことで当社のマネージメントに苦情を申し立てることができます。"
 
 msgid "Clients shall not hold or pool third party funds into their own account held with the Company."
 msgstr ""
@@ -1919,10 +1913,8 @@ msgstr "トレードを閉じる"
 msgid "Closing an Account"
 msgstr "口座閉鎖"
 
-#, fuzzy
-#| msgid "Closing or part-closing all or any of your Open Positions based on the prevailing prices available in the relevant markets;"
 msgid "Closing or part-closing all, or any, of your Open Positions based on the prevailing prices available in the relevant markets;"
-msgstr "関連市場で利用できる実勢価格に基づいたオープンポジションの全てまたは一部を閉じる"
+msgstr "関連市場で利用できる実勢価格に基づいたオープンポジションの全てまたは一部を決済する"
 
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
 msgstr "ウェブサイトの機能とパフォーマンスを向上させる革新的な方法を特定するために、ITグループのメンバーと共同で作業を行います"
@@ -3621,10 +3613,10 @@ msgstr "決済サービスエージェントに関する詳細をご希望の場
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
 msgstr "当サービスに苦情を申し立てられたい場合、当社に苦情の詳細をご提供ください。お客さまのお問い合せ内容を調査のうえ、回答させていただきます。通常、最終的な回答は全詳細を受け取り次第、1〜2周間以内に（最大でおよそ2ヶ月以内）に提供させていただきます。"
 
-#, fuzzy
-#| msgid "If you would like to file a complaint with regards to the margin trading service described in this Agreement, kindly contact us by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
 msgid "If you would like to file a complaint with regards to the margin trading services described in this Agreement, kindly contact us by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
-msgstr "当サービスに苦情を申し立てられたい場合、当社に苦情の詳細をご提供ください。お客さまのお問い合せ内容を調査のうえ、回答させていただきます。通常、最終的な回答は全詳細を受け取り次第、1〜2周間以内に（最大でおよそ2ヶ月以内）に提供させていただきます。"
+msgstr ""
+"当サービスに苦情を申し立てられたい場合、当社に苦情の詳細をご提供ください。お客さまのお問い合せ内容を調査のうえ、回答させていただきます。通常、最終的な回答"
+"は全詳細を受け取り次第、1〜2周間以内に（最大でおよそ2ヶ月以内）に提供させていただきます。"
 
 msgid "If you're a broker we'd like to work with you. You will be introducing your clients to a unique and innovative product - the %1 trading platform."
 msgstr "ブローカーの方でしたら、是非ご協力させてください。%1取引プラットフォームの独特で革新的な商品をご紹介いたけます。"
@@ -3776,10 +3768,8 @@ msgstr "END-IN/END-OUT：上下にバリアを設定した価格内に留まる�
 msgid "In/Out trades"
 msgstr "レンジ トレード"
 
-#, fuzzy
-#| msgid "Inactive / Dormant Accounts"
 msgid "Inactive/Dormant Accounts"
-msgstr "非アクティブ / 休眠口座"
+msgstr "インアクティブ / 休眠口座"
 
 msgid "Income Source"
 msgstr "収入源"
@@ -5680,10 +5670,8 @@ msgstr "パスワードの再設定にはワンタイムパスワードが必要
 msgid "Please choose which currency you would like to transact in."
 msgstr "日本円にてお手続きできます"
 
-#, fuzzy
-#| msgid "Please complete the following financial assessment form before continuing."
 msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
-msgstr "続行される前に下記財務評価書にご記入をお願いします。"
+msgstr "取引上限と出金限度額を引き上げるには下記財務評価書にご記入をお願いします。"
 
 msgid "Please complete the tax information before proceeding."
 msgstr "続行する前に、税務情報を入力してください。"
@@ -6068,10 +6056,8 @@ msgstr "よくあるご質問事項に対する回答はこちらから"
 msgid "Real Account"
 msgstr "リアル口座番号"
 
-#, fuzzy
-#| msgid "Binary Options Real Account - Your real money account opened with Binary.com which you use to trade binary options with Binary.com."
 msgid "Real Account &mdash; Your real money account opened with Binary.com's MT5 Trading Platform licensed from MetaQuotes Software Corporation."
-msgstr "バイナリーオプションリアル口座 - お客さまの口座はBinary.comでバイナリーオプション取引を行うために開設されました。"
+msgstr "リアル口座 - お客さまの口座は外国為替証拠金取引を行うために開設されました。"
 
 msgid "Real Cent"
 msgstr "リアルセント"
@@ -8151,10 +8137,8 @@ msgstr "メインパスワード（確認用）"
 msgid "Verify new password"
 msgstr "新しいパスワード（確認用）"
 
-#, fuzzy
-#| msgid "Version 43. Last modified 2016-11-09."
 msgid "Version 4. Last modified 2016-12-30."
-msgstr "第43版・最終編集日：2016年11月9日"
+msgstr "第43版・最終編集日：2016年12月30日"
 
 msgid "Version 43. Last modified 2016-11-09."
 msgstr "第43版・最終編集日：2016年11月9日"
@@ -8329,10 +8313,10 @@ msgstr "通常は口座開設に際し各種証明書の郵送を求めること
 msgid "We employ an extensive team of writers, designers, market analysts and programmers, who are particularly dedicated to producing accessible, educational and sales material for our affiliates. We go way beyond banners to offer an informative and entertaining way on how to advertise online; including text ads, customer landing pages and promotions, free content as also gifts for your site visitors."
 msgstr "アフィリエイトへ参加しやすい製品、教養、セールス商品を特に専門としているライター、デザイナー、マーケット分析、プログラマーが当社に在籍しています。オンライン広告の掲載方法に関して有益で魅力的な方法を提供するために、バナーのみならず、サイト訪問者に向けた文字広告、ランディングページ、プロモーション材料、フリーコンテンツ、そして特別キャンペーンなどを提供します。"
 
-#, fuzzy
-#| msgid "Best execution is the requirement to take all sufficient steps to obtain, when executing orders, the best possible result for you taking into account price, costs, speed, likelihood of execution and settlement, size, nature or any other consideration relevant (hereinafter referred to as the \"execution factors\") to the execution of the order."
 msgid "We endeavour to open or close the Transaction to which your Order relates at the price reasonably available to us, acting in accordance with our duty of best execution. Best execution means that we must take all sufficient steps to obtain, when executing orders, the best possible result for you, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the order."
-msgstr "最良執行とは注文実行、決済、数量、性質、その他の関連事項（以下「実行要因」という。）を踏まえながら、注文実行の際に価格、費用、スピードを考慮した最良の結果を導けるよう全てのステップをきちんと踏む必要があります。"
+msgstr ""
+"最良執行とは注文実行、決済、数量、性質、その他の関連事項（以下「実行要因」という。）を踏まえながら、注文実行の際に価格、費用、スピードを考慮した最良の結果"
+"を導けるよう全てのステップをきちんと踏む必要があります。"
 
 msgid "We have a general duty to conduct our business with you honestly, fairly, and professionally and to act in your best interests when opening and closing Binary Options trades with you."
 msgstr "当社はお客さまと誠実に、公正に、専門的にビジネスを行い、お客さまとのバイナリーオプション取引をオープンまたはクローズする際の最良の金利で行使するための一般的義務があります。"
@@ -8400,10 +8384,15 @@ msgstr "当社は適用される法律、規則、規制の下で定期的に確
 msgid "We reserve the right to refuse your request to open a Real Account for any reason, and any Real Account may be closed at our discretion at any time."
 msgstr ""
 
-#, fuzzy
-#| msgid "We reserve the right to void or amend the contractual terms of any Transactions that we reasonably believe are entered into at prices that do not reflect fair market prices or that are entered into at an abnormally low level of risk due to an obvious or palpable error (a Manifest Error). In deciding whether an error is a Manifest Error, we may take into account any relevant information including, the state of the underlying market at the time of the error and any error within, or lack of clarity of, any information source or pronouncement. You have a duty to report to us any such problems, errors or suspected system inadequacies that you may experience and may not abuse of or arbitrage such system problems or errors for profit. We will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between you and us in connection with the Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms and conditions of this Agreement. You further acknowledge and agree that we will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused or alleged to be caused by or in connection with a Manifest Error."
 msgid "We reserve the right to void or amend the contractual terms of any Transactions that we reasonably believe are entered into at prices that do not reflect fair market prices or that are entered into at an abnormally low level of risk due to an obvious or palpable error (a “Manifest Error”). In deciding whether an error is a Manifest Error, we may take into account any relevant information, including the state of the underlying market at the time of the error and any error within, or lack of clarity of, any information source or pronouncement. You have a duty to report to us any such problems, errors, or suspected system inadequacies that you may experience and may not abuse or arbitrage such system problems or errors for profit. We will endeavour to resolve any such difficulties in the shortest time possible."
-msgstr "当社は公正な市場価格が反映されていない、または明白で認知できるエラー（マニフェストエラー）にり著しく低レベルのリスクでのトレードが提供された場合、若しくはバグや当社サイト・ソフトウェアの故障という状況下での売買は全て、事情を説明した事前通達と共に制限または無効にする権利を弊社は有します。エラーがマニフェストエラーであるかどうか判断する際に、当社はエラー発生時の状況またはエラーに関連する情報を含む口座を確認する場合があります。お客さまは、経験したエラー又は疑わしいシステムの不備を当社に報告する義務があり、システムの問題またはエラーなどを利益のために乱用したり、インサイダー情報を用いて当社のサイトと取引をすることを禁止します。当社は早急に問題を解決するよう努めます。明らかに誤りのあるトレード条件への改正は、合理的且つ公正でなければいけません。明らかに誤りのあるトレードでの当社とお客さま間の金銭の交換は、本契約の条件で作成された改正に応じて、受取者は返却しなければいけません。マニフェストエラーに関するまたはそれが原因によるいかなる損害、費用に関して、直接的、間接的に関わらず当社が責任を負うことはありません。"
+msgstr ""
+"当社は公正な市場価格が反映されていない、または明白で認知できるエラー（マニフェストエラー）にり著しく低レベルのリスクでのトレードが提供された場合、若しくは"
+"バグや当社サイト・ソフトウェアの故障という状況下での売買は全て、事情を説明した事前通達と共に制限または無効にする権利を弊社は有します。エラーがマニフェスト"
+"エラーであるかどうか判断する際に、当社はエラー発生時の状況またはエラーに関連する情報を含む口座を確認する場合があります。お客さまは、経験したエラー又は疑わ"
+"しいシステムの不備を当社に報告する義務があり、システムの問題またはエラーなどを利益のために乱用したり、インサイダー情報を用いて当社のサイトと取引をすること"
+"を禁止します。当社は早急に問題を解決するよう努めます。明らかに誤りのあるトレード条件への改正は、合理的且つ公正でなければいけません。明らかに誤りのあるトレ"
+"ードでの当社とお客さま間の金銭の交換は、本契約の条件で作成された改正に応じて、受取者は返却しなければいけません。マニフェストエラーに関するまたはそれが原因"
+"によるいかなる損害、費用に関して、直接的、間接的に関わらず当社が責任を負うことはありません。"
 
 msgid "We segregate all client funds and hold them in secure and licensed financial institutions, according to the conditions of our trading licenses."
 msgstr "皆様の資金は日証金信託銀行の顧客区分管理信託口にて、当社の固有財産とは区分して管理されます。"
@@ -8414,10 +8403,10 @@ msgstr "皆様の資金は日証金信託銀行の顧客区分管理信託口に
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues."
 msgstr "当社では、お客さまのご口座への不正アクセスを防止する目的で身分証明の認証サービスとリアルタイムでの詐欺的行為の検出を行います。また詐欺的行為のサインを検出する目的でご口座のお取引を監視し、詐欺的行為の調査のために情報収集エージェンシーや法的機関と恊働します。"
 
-#, fuzzy
-#| msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues."
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and low-enforcement agencies to address fraud issues."
-msgstr "当社では、お客さまのご口座への不正アクセスを防止する目的で身分証明の認証サービスとリアルタイムでの詐欺的行為の検出を行います。また詐欺的行為のサインを検出する目的でご口座のお取引を監視し、詐欺的行為の調査のために情報収集エージェンシーや法的機関と恊働します。"
+msgstr ""
+"当社では、お客さまのご口座への不正アクセスを防止する目的で身分証明の認証サービスとリアルタイムでの詐欺的行為の検出を行います。また詐欺的行為のサインを検出"
+"する目的でご口座のお取引を監視し、詐欺的行為の調査のために情報収集エージェンシーや法的機関と恊働します。"
 
 msgid "We will act on any instructions given, or appearing to be given by you and received by us in relation to the margin trading services provided through the MT5 Trading Platform, as deemed instructed by you. However, it is not our obligation to act on any instructions deemed instructed by you, and we are not obligated to give you any reasons for declining to do so. Instructions received by us from you are deemed final and will not be revocable. It is your responsibility to ensure the genuineness and accuracy of the instructions given by you to us."
 msgstr ""
