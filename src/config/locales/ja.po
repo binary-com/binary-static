@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-17 05:57+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2017-03-19 12:27+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -828,7 +828,7 @@ msgid "Account Equity &mdash; Your Account Equity refers to the sum of your Acco
 msgstr "有効証拠金 - 口座残高と含み益、含み損の合計をいいます。"
 
 msgid "Account Free Margin &mdash; Your Account Equity minus your Total Margin."
-msgstr ""
+msgstr "マージン口座 &mdash; 有効証拠金はお客さまの総利益から差し引かれます。"
 
 msgid "Account Management and Tracking"
 msgstr "ご口座管理とデータ照合"
@@ -8412,7 +8412,7 @@ msgid "We will act on any instructions given, or appearing to be given by you an
 msgstr ""
 
 msgid "We will continue to close open positions until your margin level becomes higher than the stop out level."
-msgstr ""
+msgstr "マージンレベルがロスカットレベルを超えるまでオープンポジションをクローズします。"
 
 msgid "We will hold you responsible for all your obligations under this Agreement in our course of providing the margin trading service described in this Agreement to you, even if you notify us that you are acting as the agent of an identified principal."
 msgstr ""
@@ -8496,10 +8496,10 @@ msgid "What our clients are saying"
 msgstr "お客さまの声"
 
 msgid "What's a margin call and how do we apply it?"
-msgstr ""
+msgstr "マージンコールとは何ですか？適用方法は？"
 
 msgid "What's a stop out level and how do we apply it?"
-msgstr ""
+msgstr "ロスカットレベルとは何ですか？適用方法は？"
 
 msgid "When the Affiliate's referred clients open an account with any member of the Binary group, we assume ownership of the database of names and contact information and any other data of the Affiliates' referred clients."
 msgstr "獲得会員がBinaryグループの口座を開設した場合、獲得会員の氏名、トレード情報、その他データの所有権を当社が引き受けます。"
@@ -8824,7 +8824,7 @@ msgid "You are not resident in a restricted country such as Afghanistan; Bosnia 
 msgstr ""
 
 msgid "You are over 18 years of age;"
-msgstr ""
+msgstr "わたしは18歳以上です"
 
 msgid "You are responsible for managing your tax and legal affairs including making any regulatory filings and payments and complying with applicable laws and regulations. We do not provide any regulatory, tax or legal advice. If you are in any doubt as to the tax treatment or liabilities of Investment Products or Gambling Products available through %1, you may wish to seek independent advice."
 msgstr "税金管理と必要提出生類の作成、支払、適用される法律および規制の遵守はお客さまの責任です。当社ではいかなる規制、税務、法律のアドバイスをしておりません。税務上の取り扱いや投資商品または賭博商品への負債について疑問がある場合は、他から独立したアドバイスを求めることができます。"
@@ -8979,7 +8979,7 @@ msgid "You or your employees' or agents' acts or omissions, including yours or t
 msgstr "あなた、あなたの従業員、代理人による本規約の違反または申し立てを含む行為又は不作為；"
 
 msgid "You promise that:"
-msgstr ""
+msgstr "お客さまは以下を保証するものとします。"
 
 msgid "You represent and warrant to the Company that, excluding the Content, you have the right to use, reproduce, transmit, copy, publicly display, publicly perform, and distribute your Application, and that use or promotion of your Application will not violate the rights of any third party (e.g., copyright, patent, trademark, privacy, publicity or other proprietary right of any person or entity), or any applicable regulation or law, and the laws of any country in which your Application is made available."
 msgstr "コンテンツを除くあなたのアプリケーションに対する使用、再現、送信、コピー、公共での表示、公共での実行、配布に関する権利があなたにあること、及びアプリケーションの使用またはプロモーションはサードパーティの権利（例：著作権、特許権、商標権、プライバシーの権利、個人または法人のパブリシティー権または財産権）または適用できる規制、法律、アプリケーションが利用できる国の法律を侵害しないことを当社を代表し、保証します。"
@@ -9093,7 +9093,7 @@ msgid "Your Application is Being Processed."
 msgstr "お客さまの口座開設申込書類の処理中です。"
 
 msgid "Your Binary Options Real Account with Binary.com has to be authenticated within five days from your Real Account opening date to keep your Real Account active."
-msgstr ""
+msgstr "Binary.comで開設されたリアル口座は、開設日より5日以内に認証いただく必要があります。"
 
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "あなたのクライアントに送金が処理されたことをお知らせする通知メールが届きます。"
@@ -9259,7 +9259,7 @@ msgid "a limit on the losses you may incur within a specified period of time;"
 msgstr "特定の期間内での損失の範囲"
 
 msgid "a) The venue at which your order will be executed;"
-msgstr ""
+msgstr "a) 注文執行場"
 
 msgid "and"
 msgstr "かつ"
@@ -9297,13 +9297,13 @@ msgid "apostrophe"
 msgstr "アポストロフィ"
 
 msgid "b) The price at which your order will be executed;"
-msgstr ""
+msgstr "b) 実行されるオーダーの価格"
 
 msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading"
 msgstr "バイナリードットコム,バイナリーオプション,外国為替,fx"
 
 msgid "c) The time at which your order will be executed; and"
-msgstr ""
+msgstr "c) オーダーの実行時間"
 
 msgid "comma"
 msgstr "読点"
@@ -9312,7 +9312,7 @@ msgid "consolidating liquidity from several providers into a single stream of bl
 msgstr ""
 
 msgid "d) The timeframe or duration of the contract as defined by your order execution."
-msgstr ""
+msgstr "d) お客さまご自身で実行されたトレードのタイムフレームまたは取引期間"
 
 msgid "day"
 msgstr "日"
@@ -9330,7 +9330,7 @@ msgid "email address"
 msgstr "メールアドレス"
 
 msgid "from %1 to %2"
-msgstr ""
+msgstr "%1から%2まで"
 
 msgid "h"
 msgstr "時間"
@@ -9441,16 +9441,16 @@ msgid "the %1 affiliate program is competitive and adaptive to your unique requi
 msgstr "%1アフィリエイトプログラムは、競争力があり、お客さまの要件に適用したものとなっています。"
 
 msgid "the characteristics of financial instruments that are the subject of that order;"
-msgstr ""
+msgstr "注文対象となる金融商品の特性"
 
 msgid "the characteristics of the client;"
-msgstr ""
+msgstr "お客さまの特性"
 
 msgid "the characteristics of the execution venues to which that order can be directed."
-msgstr ""
+msgstr "直接注文ができる執行会場の特性"
 
 msgid "the characteristics of the order;"
-msgstr ""
+msgstr "注文の特性"
 
 msgid "the market conditions of the financial instruments that your orders are related to, which includes the need for timely execution, availability of price improvement, liquidity of the market, size of your order, and the potential impact on total consideration."
 msgstr ""
@@ -9462,7 +9462,7 @@ msgid "the platform is user friendly and accessible to all levels of traders."
 msgstr "当プラットフォームは全レベルのトレーダーがご利用いただける、ユーザーが使用しやすいものとなっています。"
 
 msgid "the specific instructions that we receive from you;"
-msgstr ""
+msgstr "お客さまよりいただいた具体的なご指示"
 
 msgid "today"
 msgstr "本日"
@@ -11053,7 +11053,7 @@ msgid "Payment Agent Transfer"
 msgstr "決済サービスでのご送金"
 
 msgid "Trusted by traders since 2000"
-msgstr ""
+msgstr "2000年からトレーダーの皆様に信頼をいただいております"
 
 msgid "Authenticate"
 msgstr "口座アップグレード"
