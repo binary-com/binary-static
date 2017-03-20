@@ -81,7 +81,9 @@ const FinancialAccOpening = (function() {
     const handleResponse = (response) => {
         if ('error' in response && response.error.code === 'show risk disclaimer') {
             $('#financial-form').addClass('hidden');
-            $('#financial-risk').removeClass('hidden');
+            const $financial_risk = $('#financial-risk');
+            $financial_risk.removeClass('hidden');
+            $.scrollTo($financial_risk, 500, { offset: -10 });
 
             const form_id = '#financial-risk';
             FormManager.init(form_id, []);

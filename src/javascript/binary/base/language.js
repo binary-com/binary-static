@@ -35,7 +35,7 @@ const Language = (() => {
     };
 
     let current_lang = null;
-    const getLanguage = () => (current_lang = current_lang || (languageFromUrl() || Cookies.get('language') || 'EN').toUpperCase());
+    const getLanguage = () => (current_lang = (current_lang || (languageFromUrl() || Cookies.get('language') || 'EN').toUpperCase()));
 
     const urlForLanguage = lang => window.location.href.replace(new RegExp('\/' + getLanguage() + '\/', 'i'), '/' + lang.trim().toLowerCase() + '/');
 

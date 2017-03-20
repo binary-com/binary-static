@@ -4,8 +4,7 @@ const japanese_client = require('../common_functions/country_base').japanese_cli
 const Url = (() => {
     'use strict';
 
-    let location_url,
-        param_hash;
+    let location_url;
 
     const init = (url) => {
         location_url = url ? getLocation(url) : window ? window.location : '';
@@ -15,12 +14,11 @@ const Url = (() => {
 
     const reset = () => {
         location_url = window ? window.location : location_url;
-        param_hash = undefined;
     };
 
-    const params = () => {
+    const params = (href) => {
         const arr_params = [];
-        const parsed = location_url.search.substr(1).split('&');
+        const parsed = (href ? new URL(href) : location_url).search.substr(1).split('&');
         let p_l = parsed.length;
         while (p_l--) {
             const param = parsed[p_l].split('=');
@@ -30,18 +28,14 @@ const Url = (() => {
     };
 
     const paramsHash = (href) => {
-        if (href) init(href);
-        if (!param_hash || (param_hash && Object.keys(param_hash).length === 0)) {
-            param_hash = {};
-            const arr_params = params();
-            let param = arr_params.length;
-            while (param--) {
-                if (arr_params[param][0]) {
-                    param_hash[arr_params[param][0]] = arr_params[param][1];
-                }
+        const param_hash = {};
+        const arr_params = params(href);
+        let param = arr_params.length;
+        while (param--) {
+            if (arr_params[param][0]) {
+                param_hash[arr_params[param][0]] = arr_params[param][1];
             }
         }
-        if (href) init();
         return param_hash;
     };
 

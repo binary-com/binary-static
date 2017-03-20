@@ -168,7 +168,7 @@ const TradingAnalysis_Beta = (function() {
      */
     const showExplanation = function(href) {
         const options = Url.paramsHash(href);
-        const form_name    = options.formname || 'risefall';
+        const form_name    = options.form_name || 'risefall';
         const show_image   = options.show_image   ? options.show_image   > 0 : true;
         const show_winning = options.show_winning ? options.show_winning > 0 : true;
         const show_explain = true;
