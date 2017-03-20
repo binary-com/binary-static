@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-20 12:26+0000\n"
-"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
+"PO-Revision-Date: 2017-03-20 23:29+0000\n"
+"Last-Translator: Mark Tanser <mark@regentmarkets.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -555,7 +555,7 @@ msgid "<strong>Flexible</strong> - Choose from over one million possible trade v
 msgstr "<strong>柔軟な取引</strong> - いつでも多種多様な取引をご選択できます。ご希望の戦略に応じて取引をカスタマイズ"
 
 msgid "<strong>Higher/Lower</strong> - Predict the market ending higher or lower than a price target."
-msgstr "<strong>HIGH/LOW</strong>：設定価格より終了時の価格が上がるか、下がるかを予測してください。"
+msgstr "<strong>LOW/HIGH</strong>：設定価格より終了時の価格が上がるか、下がるかを予測してください。"
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>重要な免責事項</strong> -%1は、上記の決済サービスとは提携していません。各決済サービスは、独立したサービスプロバイダーとして動作し、%1による承認、保証またはその他の許可がなされていません。お客さまは危険を承知で自信の責任をもって決済サービスに処断します。送金をされる前に、決済サービス会社の資格情報を確認されることをお勧めいたします。%1はいかなる状況下においても、お客さまと決済サービス会社の間で生じた処理への責任は負いません。"
@@ -3268,19 +3268,19 @@ msgid "Higher"
 msgstr "HIGH"
 
 msgid "Higher/Lower"
-msgstr "ラダーHIGH/ラダーLOW"
+msgstr "ラダーLOW/ラダーHIGH"
 
 msgid "Higher/Lower - Predict if the market will end higher or lower than a target price"
-msgstr "HIGH/LOW：設定価格より終了時の価格が上がるか、下がるかを予測します"
+msgstr "LOW/HIGH：設定価格より終了時の価格が上がるか、下がるかを予測します"
 
 msgid "Higher/Lower contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "ご不明な点等ありましたら、カスタマーサポートまでご連絡ください。"
 
 msgid "Higher/Lower trades"
-msgstr "HIGH/LOW・トレード"
+msgstr "LOW/HIGH・トレード"
 
 msgid "Higher/Lower – Predict that the market will end higher or lower than a price target"
-msgstr "HIGH/LOW：設定価格より終了時の価格が上がるか、下がるかを予測します"
+msgstr "LOW/HIGH：設定価格より終了時の価格が上がるか、下がるかを予測します"
 
 msgid "Hone your security testing skills."
 msgstr "セキュリティテストスキルを磨きましょう"
