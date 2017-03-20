@@ -9,14 +9,12 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-03-20 01:11+0000\n"
 "Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
-"Language-Team: Russian "
-"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.12\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -114,8 +112,7 @@ msgid "%1 continues to innovate and grow"
 msgstr "%1 продолжает расти и развиваться"
 
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
-msgstr ""
-"Вы успешно перевели средства %1 со счёта %2 на счёт %3. Номер транзакции: %4"
+msgstr "Вы успешно перевели средства %1 со счёта %2 на счёт %3. Номер транзакции: %4"
 
 msgid "%1 does not charge any transfer fees."
 msgstr "%1 не берет комиссий за перевод."
@@ -142,9 +139,7 @@ msgid "%1 has thousands of clients taking a variety of positions on the financia
 msgstr "На %1 тысячи клиентов приобретают самые различные контракты в любое время. %1 зарабатывает на этих контрактах минимальную ценовую маржу."
 
 msgid "%1 has updated its <a href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a href=\"%2\">Terms & Conditions</a>."
-msgstr ""
-"%1 обновил <a href=\"%2\">Правила и условия</a>. Нажав OK, Вы подтвердите, "
-"что прочитали и принимаете новые <a href=\"%2\">Правила и условия</a>."
+msgstr "%1 обновил <a href=\"%2\">Правила и условия</a>. Нажав OK, Вы подтвердите, что прочитали и принимаете новые <a href=\"%2\">Правила и условия</a>."
 
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr "Число пользователей %1 достигло 1 миллиона, что является историческим рубежом. Компания продолжает расти в геометрической прогрессии и подтверждает позицию лидера в данной индустрии."
@@ -207,10 +202,7 @@ msgid "%1 offers a range of common deposit and withdrawal methods, from credit a
 msgstr "%1 предлагает широкий выбор способов пополнения и вывода средств, от кредитных карт и банковского перевода до электронных кошельков и валют."
 
 msgid "%1 offers a virtual-money account so you can get the hang of trading binaries. Why not <a href='%2'>open a free $10k fully-functional virtual-money account</a>, and start learning how to trade."
-msgstr ""
-"%1 предлагает демо-счета, на которых Вы можете научиться торговать бинарными "
-"опционами. Откройте <a href='%2'>бесплатный демо-счёт с 10 000 виртуальных "
-"денег</a> и научитесь работе на рынках."
+msgstr "%1 предлагает демо-счета, на которых Вы можете научиться торговать бинарными опционами. Откройте <a href='%2'>бесплатный демо-счёт с 10 000 виртуальных денег</a> и научитесь работе на рынках."
 
 msgid "%1 offers five main types of trades that will help you execute your market view or strategy:"
 msgstr "%1 предоставляет пять основных видов контрактов, которые позволят Вам опробовать свои торговые стратегии:"
@@ -285,12 +277,7 @@ msgid "%1's Smart FX are smart markets that measure the value of a currency agai
 msgstr "Индексы Smart FX от %1 – это \"умные\" рынки, которые измеряют стоимость валюты по отношению к группе основных валют."
 
 msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
-msgstr ""
-"Контракты со спредами от %1 представляют собой производные контракты с "
-"кредитным рычагом, стоимость которых напрямую зависит от динамики основного "
-"рынка. Клиенты, открывающие “длинные позиции” на растущем рынке (и “короткие "
-"позиции” на снижающемся рынке), получают прибыль от данных движений, внося "
-"гораздо меньшие инвестиции, чем на живом рынке."
+msgstr "Контракты со спредами от %1 представляют собой производные контракты с кредитным рычагом, стоимость которых напрямую зависит от динамики основного рынка. Клиенты, открывающие “длинные позиции” на растущем рынке (и “короткие позиции” на снижающемся рынке), получают прибыль от данных движений, внося гораздо меньшие инвестиции, чем на живом рынке."
 
 msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
 msgstr "Контракты со спредами от %1 требуют наличия функции ‘стоп-лосс’, ограничивающей максимальные потери, которые может понести клиент. Сумма, необходимая для активации функции ‘стоп-лосс’, послужит в качестве депозита и не может быть использована для дальнейшей торговли, пока не будет закрыт контракт со спредом. Контракты со спредом закрываются тогда, когда они будут проданы клиентом или по достижении уровней ‘стоп-лосс’ и 'стоп-профит'."
@@ -540,10 +527,7 @@ msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays i
 msgstr "<strong>При любых условиях рынка</strong> – вверх/вниз, касание/нет касания, внутри/вне."
 
 msgid "<strong>All markets and conditions</strong> - Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets"
-msgstr ""
-"<strong>Любые рынки при любых условиях</strong> – торгуйте валютами, "
-"индексами, сырьевыми товарами и другими активами в условиях снижающихся или "
-"растущих, волатильных или неподвижных рынков"
+msgstr "<strong>Любые рынки при любых условиях</strong> – торгуйте валютами, индексами, сырьевыми товарами и другими активами в условиях снижающихся или растущих, волатильных или неподвижных рынков"
 
 msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
 msgstr "<strong>На всех рынках:</strong> валютные пары, акции, индексы и сырьевые материалы."
@@ -593,19 +577,13 @@ msgid "<strong>In/Out</strong> - Predict the market staying inside or going outs
 msgstr "<strong>Внутри/Вне</strong> – попытайтесь предсказать, останется ли рынок внутри двух ценовых барьеров или выйдет за их пределы."
 
 msgid "<strong>Instant access</strong> - Open an account and start trading in minutes. Deposits and withdrawals are also available 24/7"
-msgstr ""
-"<strong>Мгновенный доступ</strong> – откройте счёт и начните торговлю за "
-"считанные минуты; пополняйте счёт и выводите средства 24/7"
+msgstr "<strong>Мгновенный доступ</strong> – откройте счёт и начните торговлю за считанные минуты; пополняйте счёт и выводите средства 24/7"
 
 msgid "<strong>Long positions</strong>: We charge a 2% fee on top of interbank lending rates."
-msgstr ""
-"<strong>Длинные позиции</strong>: помимо ставки межбанковского кредитования, "
-"мы взимаем комиссию в размере 2%."
+msgstr "<strong>Длинные позиции</strong>: помимо ставки межбанковского кредитования, мы взимаем комиссию в размере 2%."
 
 msgid "<strong>Long positions</strong>: We charge a 2% fee on top of market rates."
-msgstr ""
-"<strong>Длинные позиции</strong>: помимо рыночного курса, мы взимаем "
-"комиссию в размере 2%."
+msgstr "<strong>Длинные позиции</strong>: помимо рыночного курса, мы взимаем комиссию в размере 2%."
 
 msgid "<strong>Long-term partnership:</strong> Your partnership with %1 could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide."
 msgstr "<strong>Долгосрочное партнерство:</strong> Ваше партнерство с %1 может стать способом БЕСПЛАТНОГО продвижения Ваших продуктов или услуг более миллиону наших зарегистрированных клиентов по всему миру."
@@ -636,9 +614,7 @@ msgid "<strong>Rise/Fall</strong> - Predict the market rising or falling from it
 msgstr "<strong>Повышение/Падение</strong> – сделайте прогноз, упадет или поднимется рынок относительно текущего уровня."
 
 msgid "<strong>Scalable</strong> - Earn the same proportional return on stakes of all values"
-msgstr ""
-"<strong>Масштабируемость</strong> – получайте выигрыш, пропорциональный "
-"Вашей ставке"
+msgstr "<strong>Масштабируемость</strong> – получайте выигрыш, пропорциональный Вашей ставке"
 
 msgid "<strong>Security and privacy</strong> - Trade confidently, knowing that your personal data, transactions, and funds are always secure"
 msgstr "<strong>Безопасность и конфиденциальность</strong> – торгуйте с полной уверенностью, что Ваши личные данные, информация о контрактах и средствах находятся под надёжной защитой"
@@ -647,19 +623,13 @@ msgid "<strong>Sharp, benchmarked prices</strong> - Benefit from the same rates 
 msgstr "<strong>Точные цены</strong> – торгуйте по тем же курсам, которыми пользуются трейдеры на межбанковском рынке. Мы ежедневно корректируем котировки согласно межбанковскому рынку валютных контрактов."
 
 msgid "<strong>Short positions</strong>: We charge a 2% fee on top of interbank lending rates."
-msgstr ""
-"<strong>Короткие позиции</strong>: помимо ставки межбанковского "
-"кредитования, мы взимаем комиссию в размере 2%."
+msgstr "<strong>Короткие позиции</strong>: помимо ставки межбанковского кредитования, мы взимаем комиссию в размере 2%."
 
 msgid "<strong>Short positions</strong>: We charge a 2% fee on top of market rates."
-msgstr ""
-"<strong>Короткие позиции</strong>: помимо рыночного курса, мы взимаем "
-"комиссию в размере 2%."
+msgstr "<strong>Короткие позиции</strong>: помимо рыночного курса, мы взимаем комиссию в размере 2%."
 
 msgid "<strong>Short to long-term durations</strong> - Choose timeframes from 10 seconds to 365 days"
-msgstr ""
-"<strong>От краткосрочных до долгосрочных сделок</strong> – выбирайте любую "
-"продолжительность контрактов: от 10 секунд до 365 дней"
+msgstr "<strong>От краткосрочных до долгосрочных сделок</strong> – выбирайте любую продолжительность контрактов: от 10 секунд до 365 дней"
 
 msgid "<strong>Simple and intuitive</strong> - Enjoy a trading platform that’s easy to navigate and use"
 msgstr "<strong>Просто и удобно</strong> – воспользуйтесь простой и интуитивно понятной платформой"
@@ -762,12 +732,7 @@ msgid "A native speaker with strong command of the English language, in both ora
 msgstr "Носитель языка с отличным знанием английского (в письменной и устной форме)"
 
 msgid "A panel featuring industry leaders awards BetOnMarkets.com 'Financial Betting Operator of the Year' over two other finalists. It's a major victory for our brand and further recognition of our world-beating service. Ten years on, and going from strength to strength."
-msgstr ""
-"Жюри с участием лидеров в данной индустрии награждает BetOnMarkets.com "
-"премией в номинации ‘Financial Betting Operator of the Year’ (финансовый "
-"оператор года по беттингу), предпочтя нас двум другим финалистам. Это "
-"большая победа для нашего бренда и важный знак признания нашего сервиса. "
-"Десять лет спустя мы не останавливаемся на достигнутом."
+msgstr "Жюри с участием лидеров в данной индустрии награждает BetOnMarkets.com премией в номинации ‘Financial Betting Operator of the Year’ (финансовый оператор года по беттингу), предпочтя нас двум другим финалистам. Это большая победа для нашего бренда и важный знак признания нашего сервиса. Десять лет спустя мы не останавливаемся на достигнутом."
 
 msgid "A preference and passion for Linux and open-source platforms"
 msgstr "Знание и заинтересованность в Linux, а также в платформах с открытым исходным кодом"
@@ -913,14 +878,10 @@ msgid "Account balance: "
 msgstr "Баланс счета: "
 
 msgid "Account needs age verification, please contact <a href=\"%1\">customer support</a> for more information."
-msgstr ""
-"Необходима проверка возраста. Пожалуйста, свяжитесь с отделом <a href=\"%1\">"
-"поддержки клиентов</a> для получения дополнительной информации."
+msgstr "Необходима проверка возраста. Пожалуйста, свяжитесь с отделом <a href=\"%1\">поддержки клиентов</a> для получения дополнительной информации."
 
 msgid "Account not activated, please contact <a href=\"%1\">customer support</a> for more information."
-msgstr ""
-"Счёт не активирован. Пожалуйста, свяжитесь с отделом <a href=\"%1\">"
-"поддержки клиентов</a> для получения дополнительной информации."
+msgstr "Счёт не активирован. Пожалуйста, свяжитесь с отделом <a href=\"%1\">поддержки клиентов</a> для получения дополнительной информации."
 
 msgid "Account type"
 msgstr "Тип счёта"
@@ -1103,12 +1064,7 @@ msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "Диплом о дополнительном специальном/высшем образовании, окончании ВУЗа или получении степени бакалавра"
 
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
-msgstr ""
-"Контракт \"Закончится внутри\" приносит прибыль, если выходная цена рынка "
-"будет строго выше, чем нижний ценовой барьер И строго ниже, чем верхний "
-"ценовой барьер. Контракт \"Закончится вне\" приносит прибыль, если выходная "
-"цена рынка ЛИБО строго выше, чем верхний ценовой барьер, ЛИБО строго ниже, "
-"чем нижний ценовой барьер."
+msgstr "Контракт \"Закончится внутри\" приносит прибыль, если выходная цена рынка будет строго выше, чем нижний ценовой барьер И строго ниже, чем верхний ценовой барьер. Контракт \"Закончится вне\" приносит прибыль, если выходная цена рынка ЛИБО строго выше, чем верхний ценовой барьер, ЛИБО строго ниже, чем нижний ценовой барьер."
 
 msgid "An Open Position may be closed by placing an opposite Order, that is an Order to sell (to close a Long Position) or to buy (to close a Short Position) in the same market for the same specified number of lots (volume)."
 msgstr "Открытую позицию можно закрыть путём размещения противоположного ордера – ордера на продажу (чтобы закрыть длинную позицию) или ордера на покупку (чтобы закрыть короткую позицию) на том же активе и для того же количества лотов (объёма)."
@@ -1212,8 +1168,7 @@ msgid "Apply for a Real Money Account"
 msgstr "У меня уже есть реальный счёт"
 
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
-msgstr ""
-"%1: Подайте заявку на получение статуса <a href=\"%2\">платежного агента</a>."
+msgstr "%1: Подайте заявку на получение статуса <a href=\"%2\">платежного агента</a>."
 
 msgid "Apply to become a Payment Agent"
 msgstr "Подайте заявку и станьте Платежным Агентом"
@@ -1548,13 +1503,7 @@ msgid "Binary K.K."
 msgstr "Binary K.K."
 
 msgid "Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590)."
-msgstr ""
-"Binary K.K. расположена по адресу 3F Hiroo Miyata Building, 1-9-16 Hiroo, "
-"Shibuya-ku, Tokyo 150-0012. Компания лицензирована и регулируется "
-"Управлением по финансовому регулированию Японии (KLFB) в качестве "
-"Организации в сфере финансовых инструментов 1-го типа (лицензия номер 2949), "
-"а также является членом Ассоциации финансовых фьючерсов Японии (членский "
-"номер 1590)."
+msgstr "Binary K.K. расположена по адресу 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Компания лицензирована и регулируется Управлением по финансовому регулированию Японии (KLFB) в качестве Организации в сфере финансовых инструментов 1-го типа (лицензия номер 2949), а также является членом Ассоциации финансовых фьючерсов Японии (членский номер 1590)."
 
 msgid "Binary KK granted Japan license"
 msgstr "Binary KK получил японскую лицензию"
@@ -1631,11 +1580,7 @@ msgid "Binary's Japanese subsidiary Binary KK opens an office in Tokyo and start
 msgstr "Binary KK – дочерняя компания Binary в Японии – открыла офис в Токио и начала процесс получения соответствующих лицензий."
 
 msgid "Binary's Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority."
-msgstr ""
-"Мальтийская дочерняя компания Binary под названием Binary Investments "
-"(Europe) Ltd. получает лицензию на инвестиционные услуги категории 3 от "
-"Мальтийского управления финансовых услуг (Malta Financial Services "
-"Authority)."
+msgstr "Мальтийская дочерняя компания Binary под названием Binary Investments (Europe) Ltd. получает лицензию на инвестиционные услуги категории 3 от Мальтийского управления финансовых услуг (Malta Financial Services Authority)."
 
 msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
 msgstr "В среднем, платформа Binary проводит 15 <a href='http://binarycom.statuspage.io/' target='_blank'>транзакций</a> в секунду, 24/7"
@@ -1751,11 +1696,7 @@ msgid "CAD 1 per point"
 msgstr "CAD 1 за пункт"
 
 msgid "CFD (Contract for Difference): CFD is an instrument that allows you to profit by speculating on the rise or fall of an instrument. The profit/loss is estimated as a function of the difference in the buy/sell prices of the underlying instrument."
-msgstr ""
-"CFD (контракты на разницу): CFD – это инструмент, позволяющий получать "
-"прибыль, делая ставки на рост или снижение рыночной цены определённого "
-"актива. Прибыль/убыток рассчитывается на основе разницы между ценой покупки/"
-"продажи данного актива."
+msgstr "CFD (контракты на разницу): CFD – это инструмент, позволяющий получать прибыль, делая ставки на рост или снижение рыночной цены определённого актива. Прибыль/убыток рассчитывается на основе разницы между ценой покупки/продажи данного актива."
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "Могу ли я стать партнером, если у меня нет собственного сайта?"
@@ -1860,9 +1801,7 @@ msgid "Choose a password"
 msgstr "Выберите пароль"
 
 msgid "Choose a payout and our system will calculate the stake required to purchase the contract."
-msgstr ""
-"Выберите выплату, и наша система рассчитает ставку, необходимую для покупки "
-"контракта."
+msgstr "Выберите выплату, и наша система рассчитает ставку, необходимую для покупки контракта."
 
 msgid "Choose a payout from $1 to $50,000."
 msgstr "Выберите выплату от $1 до $50,000."
@@ -1871,18 +1810,10 @@ msgid "Choose from five types of markets and their respective assets:"
 msgstr "Выберите один из пяти видов рынка и укажите нужный актив:"
 
 msgid "Choose the Touch/No Touch trade if you want to predict the market touching or not touching a target any time during the contract period."
-msgstr ""
-"Выберите \"Касание/Нет касания\", если Вы хотите сделать прогноз, коснётся "
-"ли рынок выбранного барьера в любой момент в течение продолжительности "
-"контракта."
+msgstr "Выберите \"Касание/Нет касания\", если Вы хотите сделать прогноз, коснётся ли рынок выбранного барьера в любой момент в течение продолжительности контракта."
 
 msgid "Choose the asset you wish to trade, such as gold, oil, stocks, or currency pairs. The value of a binary option is derived from the price of the underlying asset. One advantage of trading binary options is that you are not buying or selling the actual asset, only a contract that determines how that asset performs."
-msgstr ""
-"Выберите нужный актив: золото, нефть, акции или валютные пары. Цена "
-"бинарного опциона будет определяться ценой базового актива. Основное "
-"преимущество торговли бинарными опционами заключается в том, что Вы не "
-"покупаете и не продаёте настоящие рыночные активы. Вы лишь заключаете "
-"контракт, предсказывающий движение актива."
+msgstr "Выберите нужный актив: золото, нефть, акции или валютные пары. Цена бинарного опциона будет определяться ценой базового актива. Основное преимущество торговли бинарными опционами заключается в том, что Вы не покупаете и не продаёте настоящие рыночные активы. Вы лишь заключаете контракт, предсказывающий движение актива."
 
 msgid "Choose the payment method you'd like to use."
 msgstr "Выберите способ оплаты, которым Вы хотели бы воспользоваться."
@@ -2493,9 +2424,7 @@ msgid "Digits"
 msgstr "Цифровые"
 
 msgid "Digits let you predict the last decimal digit of the spot price. There are three types of Digits trades:"
-msgstr ""
-"Цифровые контракты позволяют предсказать последнюю десятичную спот-"
-"котировки. Выделяют три типа цифровых контрактов:"
+msgstr "Цифровые контракты позволяют предсказать последнюю десятичную спот-котировки. Выделяют три типа цифровых контрактов:"
 
 msgid "Director"
 msgstr "Director"
@@ -2629,9 +2558,7 @@ msgid "Each binary option contract runs for a set time - with %1 you can choose 
 msgstr "Каждый бинарный опцион имеет определенную длительность – на %1 вы можете выбрать период от 10 секунд до 365 дней."
 
 msgid "Each binary option is a prediction on the future movement of an underlying market."
-msgstr ""
-"Каждый бинарный опцион является прогнозом будущего движения конкретного "
-"актива."
+msgstr "Каждый бинарный опцион является прогнозом будущего движения конкретного актива."
 
 msgid "Each of the following event constitutes an \"Event of Default\":"
 msgstr "Каждая из нижеперечисленных ситуаций является \"случаем невыполнения обязательств\":"
@@ -2643,10 +2570,7 @@ msgid "Each party to this Agreement represents and warrants to the other that it
 msgstr "Каждая из сторон Соглашения гарантирует другой стороне, что во время действия Соглашения будет поддерживать право и полномочия состоять в данном Соглашении, предоставлять другой стороне все права и лицензии, оговоренные в данном Соглашении, а также соблюдать все свои обязательства."
 
 msgid "Each time you open a position on a Volatility Index symbol, you can start with a minimum volume transaction of 0.01 (trade size), which translates to USD 0.01 per point movement of the index."
-msgstr ""
-"Каждый раз, когда Вы открываете контракт на индексах волатильности, Вы "
-"можете заключить сделку на минимальную сумму: 0.01 (от размера контракта), "
-"что означает USD 0.01 за каждый пункт, на который продвинется индекс."
+msgstr "Каждый раз, когда Вы открываете контракт на индексах волатильности, Вы можете заключить сделку на минимальную сумму: 0.01 (от размера контракта), что означает USD 0.01 за каждый пункт, на который продвинется индекс."
 
 #, fuzzy
 #| msgid "Each binary trade is for a pre-determined payout amount. You win the payout if your prediction is correct."
@@ -2743,15 +2667,10 @@ msgid "Ends In/Out"
 msgstr "Закончится Внутри/Вне"
 
 msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr ""
-"Цена покупки контрактов Закончится Внутри/Вне будет возмещена трейдеру, если "
-"разница между временем начала и окончания контракта составляет менее двух "
-"тиков."
+msgstr "Цена покупки контрактов Закончится Внутри/Вне будет возмещена трейдеру, если разница между временем начала и окончания контракта составляет менее двух тиков."
 
 msgid "Ends In/Out – Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr ""
-"Закончится внутри/вне – укажите, останется рынок внутри или вне выбранных "
-"барьеров на момент окончания контракта"
+msgstr "Закончится внутри/вне – укажите, останется рынок внутри или вне выбранных барьеров на момент окончания контракта"
 
 #, fuzzy
 #| msgid "ends outside"
@@ -2828,9 +2747,7 @@ msgid "Even/Odd"
 msgstr "Чётное/Нечётное"
 
 msgid "Even/Odd - Predict that the last digit is even or odd after the last tick"
-msgstr ""
-"Чётное/нечётное – предскажите, будет ли последняя десятичная после "
-"последнего тика чётным или нечётным числом"
+msgstr "Чётное/нечётное – предскажите, будет ли последняя десятичная после последнего тика чётным или нечётным числом"
 
 msgid "Even/Odd contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "Цена покупки контрактов Чётное/Нечётное будет возмещена, если контракт не истечёт в течение 5 минут."
@@ -3072,9 +2989,7 @@ msgid "Financial Information"
 msgstr "Финансовая информация"
 
 msgid "Financial Risk approval is required. Please contact <a href=\"%1\">customer support</a> for more information."
-msgstr ""
-"Необходимо подтверждение финансового риска. Пожалуйста, свяжитесь с отделом <"
-"a href=\"%1\">поддержки клиентов</a> для получения дополнительной информации."
+msgstr "Необходимо подтверждение финансового риска. Пожалуйста, свяжитесь с отделом <a href=\"%1\">поддержки клиентов</a> для получения дополнительной информации."
 
 msgid "Financial asset"
 msgstr "Финансовый актив"
@@ -3130,19 +3045,10 @@ msgid "For e-cash methods or local currencies not supported by %1."
 msgstr "Для методов электронной оплаты или местных валют, не поддерживаемых %1."
 
 msgid "For example, the CFDs on US 30 Cash Index offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 Cash Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
-msgstr ""
-"Например, контракты на разницу на индексе US 30 Cash Index предоставляют USD "
-"1 за один пункт контракта. Если Вы приобретаете объём контракта в размере "
-"1.0 на US 30 Cash Index по текущей цене USD 20,000 и позже продаёте его по "
-"цене бид USD 20,010, Ваша чистая прибыль будет рассчитана следующим образом:"
+msgstr "Например, контракты на разницу на индексе US 30 Cash Index предоставляют USD 1 за один пункт контракта. Если Вы приобретаете объём контракта в размере 1.0 на US 30 Cash Index по текущей цене USD 20,000 и позже продаёте его по цене бид USD 20,010, Ваша чистая прибыль будет рассчитана следующим образом:"
 
 msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
-msgstr ""
-"Например, контракты на разницу на Индексах волатильности предоставляют USD 1 "
-"за один пункт контракта. Если Вы приобретёте контракт в объёме 1.0 на "
-"Индексе волатильности 100 по текущей цене USD 20,000 и позже продадите его "
-"по цене бид USD 20,010, Ваша чистая прибыль будет рассчитана следующим "
-"образом:"
+msgstr "Например, контракты на разницу на Индексах волатильности предоставляют USD 1 за один пункт контракта. Если Вы приобретёте контракт в объёме 1.0 на Индексе волатильности 100 по текущей цене USD 20,000 и позже продадите его по цене бид USD 20,010, Ваша чистая прибыль будет рассчитана следующим образом:"
 
 msgid "For features and trading illustration of Spot FX offered by Binary.com, refer to the Product Disclosure Statement. This policy is an appendix to the overarching Binary.com Order Execution Policy and should be read in conjunction with the overarching Binary.com Order Execution Policy."
 msgstr "Подробную характеристику и примеры торговли контрактами на спот Forex, предлагаемыми на Binary.com, можно найти на странице Заявления об ограничении ответственности в отношении отдельных продуктов. Данная политика является приложением к основной Политике исполнения ордеров Binary.com и должна рассматриваться в совокупности с ней."
@@ -3253,11 +3159,7 @@ msgid "GMT"
 msgstr "GMT"
 
 msgid "GMT stands for Greenwich Mean Time, the official time used in the UK during winter. In summer, the UK changes to British Summer Time, which is GMT + 1 hour. All times on the %1 site use GMT all year round."
-msgstr ""
-"GMT – время по Гринвичу или Greenwich Mean Time – это официальное время, "
-"используемое в зимний период в Великобритании. Летом время в Великобритании "
-"меняется на британское летнее время, которое составляет GMT +1 час. Всё "
-"время на сайте %1 всегда указывается в GMT."
+msgstr "GMT – время по Гринвичу или Greenwich Mean Time – это официальное время, используемое в зимний период в Великобритании. Летом время в Великобритании меняется на британское летнее время, которое составляет GMT +1 час. Всё время на сайте %1 всегда указывается в GMT."
 
 msgid "GamCare"
 msgstr "GamCare"
@@ -3615,18 +3517,10 @@ msgid "If you are, we'd love to hear from you."
 msgstr "Если да, то мы будем рады познакомиться!"
 
 msgid "If you buy <strong>1 Volume of Volatility 100 Index</strong> at a <strong>price of US&#36 20,000</strong> and a <strong>margin rate of 0.01(1%)</strong>, the margin required to purchase that one lot will be calculated as follows:"
-msgstr ""
-"Если Вы покупаете <strong>1 объём Индекса волатильности 100</strong> по "
-"<strong>цене US&#36 20 000</strong> и при <strong>марже в размере "
-"0.01(1%)</strong>, маржа для покупки данного лота рассчитывается следующим "
-"образом:"
+msgstr "Если Вы покупаете <strong>1 объём Индекса волатильности 100</strong> по <strong>цене US&#36 20 000</strong> и при <strong>марже в размере 0.01(1%)</strong>, маржа для покупки данного лота рассчитывается следующим образом:"
 
 msgid "If you buy <strong>one lot of the EUR/USD</strong> symbol with a <strong>contract size of 100,000</strong> and <strong>leverage of 100:1</strong>, the margin required to purchase that one lot will be calculated as follows:"
-msgstr ""
-"Если Вы покупаете <strong>один лот EUR/USD</strong> при <strong>размере "
-"контракта 100,000</strong> и с <strong>кредитным рычагом в размере "
-"100:1</strong>, маржа для покупки данного лота будет рассчитана следующим "
-"образом:"
+msgstr "Если Вы покупаете <strong>один лот EUR/USD</strong> при <strong>размере контракта 100,000</strong> и с <strong>кредитным рычагом в размере 100:1</strong>, маржа для покупки данного лота будет рассчитана следующим образом:"
 
 msgid "If you choose to enter into a Contract with us, it is important that you remain aware of the risks involved, that you have adequate investment resources to bear such risks and that you monitor your positions carefully."
 msgstr "Если Вы заключаете договор с нами, важно, чтобы Вы были в курсе возможных рисков, обладали адекватными инвестиционными ресурсами для покрытия таких возможных рисков и тщательно контролировали свои позиции."
@@ -3646,9 +3540,7 @@ msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-
 msgstr "Если Вы обнаружите какие-либо уязвимости в нашем <a target='_blank' href='%1'>проекте с открытым кодом</a>, пожалуйста, отправьте на GitHub отчёт со списком улучшений."
 
 msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
-msgstr ""
-"В случае возникновения вопросов, пожалуйста, свяжитесь со службой поддержки "
-"клиентов по адресу <a href=\"mailto:%1\">%1</a>."
+msgstr "В случае возникновения вопросов, пожалуйста, свяжитесь со службой поддержки клиентов по адресу <a href=\"mailto:%1\">%1</a>."
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr "Если Вы открыли несколько позиций на одном и том же активе, любая закрывающая позиция, размещённая на том же активе, закроет открытые позиции в хронологическом порядке (в порядке открытия)."
@@ -3660,19 +3552,13 @@ msgid "If you introduce our website to potential clients, you will eventually st
 msgstr "Если Вы приведете на сайт потенциальных клиентов, то начнете зарабатывать пассивный доход, как только один из них откроет реальный счет на %1. Вы будете продолжать получать прибыль, пока клиент использует наши услуги. Проще говоря, Вы будете зарабатывать комиссии при минимальном вложении усилий."
 
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open. This adjustment is based on interbank lending rates, on top of a 2% fee."
-msgstr ""
-"Если Вы хотите перенести открытые позиции на следующий день, на Вашем "
-"торговом счету будет произведена корректировка процентов с вычетом стоимости "
-"поддержания Вашей открытой позиции. Данная корректировка состоит из ставки "
-"межбанковского кредитования и комиссии в размере 2%."
+msgstr "Если Вы хотите перенести открытые позиции на следующий день, на Вашем торговом счету будет произведена корректировка процентов с вычетом стоимости поддержания Вашей открытой позиции. Данная корректировка состоит из ставки межбанковского кредитования и комиссии в размере 2%."
 
 msgid "If you meet our basic requirements, we'll send you a talent test."
 msgstr "Если вы соответствуете нашим основным требованиям, мы вышлем Вам тест на способности."
 
 msgid "If you need assistance feel free to contact our <a href=\"%1\">Customer Support</a>."
-msgstr ""
-"Если Вам нужна помощь, пожалуйста, обратитесь в <a href=\"%1\">службу "
-"поддержки</a>."
+msgstr "Если Вам нужна помощь, пожалуйста, обратитесь в <a href=\"%1\">службу поддержки</a>."
 
 msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
 msgstr "Если Вы ранее загружали платформу MetaTrader 5 напрямую с сайта MetaTrader, пожалуйста, выберите \"%1\" из списка доступных брокеров."
@@ -3759,11 +3645,7 @@ msgid "If you want to profit from this high demand product then your best option
 msgstr "Если вы хотите начать получать прибыль от этого популярного продукта, лучшим вариантом будет сотрудничество с лидером рынка. %1 преуспевает в этом бизнесе уже более 15 лет."
 
 msgid "If you wanted to purchase <strong>100 units</strong> of a particular asset trading at <strong>US&#36; 50 per unit</strong> through a traditional broker, it would cost you <strong>US&#36; 5,000</strong> for this transaction."
-msgstr ""
-"Если Вы хотите приобрести через обычного брокера <strong>100 единиц</strong> "
-"определённого актива, торгующегося по цене <strong>US&#36; 50 за "
-"единицу</strong>, данный контракт обойдётся Вам в <strong>US&#36; "
-"5,000</strong>."
+msgstr "Если Вы хотите приобрести через обычного брокера <strong>100 единиц</strong> определённого актива, торгующегося по цене <strong>US&#36; 50 за единицу</strong>, данный контракт обойдётся Вам в <strong>US&#36; 5,000</strong>."
 
 msgid "If you wish to withdraw funds from your Real Account and close your Real Account, you may notify us by contacting our helpdesk at <a href='mailto:%1'>%1</a>. Your Real Account may be closed if you do not have any Open Positions and all amounts due to us have been settled."
 msgstr "Если Вы хотите вывести средства с Реального счёта и закрыть его, Вы должны уведомить нас, связавшись с нашим отделом поддержки клиентов по следующему адресу: <a href='mailto:%1'>%1</a>. Ваш реальный счёт может быть закрыт, если на нём нет открытых позиций, а вcе причитающиеся нам суммы были выплачены."
@@ -3783,23 +3665,13 @@ msgid "If you're a broker we'd like to work with you. You will be introducing yo
 msgstr "Если Вы брокер, мы хотели бы работать с Вами. Вы получите возможность знакомить своих клиентов с уникальным и оригинальным продуктом – торговой платформой %1."
 
 msgid "If you're an individual trader, you'll appreciate the simplicity, flexibility, and limited risk of binary trading. With %1's low minimum stakes, you'll soon learn how to trade with skill and confidence. And if you have any questions, you're free to access <a href='%2'>our helpful support desk</a>."
-msgstr ""
-"Если Вы являетесь частным лицом, Вам понравится простота, гибкость и "
-"ограниченный риск торговли бинарными опционами на нашей платформе. %1 "
-"предлагает минимальные ставки, благодаря которым Вы быстро сможете научиться "
-"работе и обретёте уверенность. Если у Вас возникли вопросы, обратитесь в "
-"нашу <a href='%2'>службу поддержки</a>."
+msgstr "Если Вы являетесь частным лицом, Вам понравится простота, гибкость и ограниченный риск торговли бинарными опционами на нашей платформе. %1 предлагает минимальные ставки, благодаря которым Вы быстро сможете научиться работе и обретёте уверенность. Если у Вас возникли вопросы, обратитесь в нашу <a href='%2'>службу поддержки</a>."
 
 msgid "If you're looking to build a career, and not a resume, talk to us, %1. We're one of the IT world's most vibrant and progressive workplaces."
 msgstr "Если Вы хотите сделать карьеру, а не дополнить резюме опытом работы, свяжитесь с %1. Мы предлагаем одно из самых интересных и прогрессивных рабочих мест в мире информационных технологий."
 
 msgid "If your account is placed under margin call for an extended period of time, it will reach the stop out level where it's unable to sustain an open position. This will lead to your pending orders being deleted, and open positions being forcibly closed (also known as forced liquidation)."
-msgstr ""
-"Если Вы на протяжении длительного периода времени получаете запросы на "
-"увеличение маржи, Ваш счёт достигнет уровня принудительного закрытия (уровня "
-"стоп-аут), на котором невозможно сохранить открытую позицию. В результате "
-"все Ваши текущие ордеры будут удалены, а открытые позиции будут "
-"принудительно закрыты (ликвидированы)."
+msgstr "Если Вы на протяжении длительного периода времени получаете запросы на увеличение маржи, Ваш счёт достигнет уровня принудительного закрытия (уровня стоп-аут), на котором невозможно сохранить открытую позицию. В результате все Ваши текущие ордеры будут удалены, а открытые позиции будут принудительно закрыты (ликвидированы)."
 
 msgid "If your complaint relates to an outcome of a Transaction and remains unresolved, it will turn into a dispute. Should you be unsatisfied with our response, you can choose to escalate your complaint to an alternative dispute resolution entity."
 msgstr "Если Ваша жалоба относится с исходу контракта и остаётся неразрешенной, она перерастает в диспут. Если Вы не удовлетворены нашим ответом, у Вас есть возможность передать жалобу альтернативному органу по разрешению споров."
@@ -3808,14 +3680,10 @@ msgid "If your complaint relates to an outcome of a trade or a transaction and r
 msgstr "Если Ваша жалоба касается исхода контракта или транзакции и остается нерешенной, она перерастает в иск. Если Вы не удовлетворены нашим ответом, то можете довести свою жалобу до сведения регулирующего органа или альтернативного органа по разрешению споров."
 
 msgid "If your margin level is still under the stop out level, we will close an open position with the largest loss."
-msgstr ""
-"Если уровень маржи на Вашем счету по-прежнему ниже уровня стоп-аут, мы "
-"закроем позицию с наибольшим уровнем убытка."
+msgstr "Если уровень маржи на Вашем счету по-прежнему ниже уровня стоп-аут, мы закроем позицию с наибольшим уровнем убытка."
 
 msgid "If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted."
-msgstr ""
-"Если уровень маржи на Вашем счету по-прежнему ниже уровня стоп-аут, будет "
-"удалён следующий ордер. Ордеры без маржевых требований не будут затронуты."
+msgstr "Если уровень маржи на Вашем счету по-прежнему ниже уровня стоп-аут, будет удалён следующий ордер. Ордеры без маржевых требований не будут затронуты."
 
 msgid "If:"
 msgstr "В случае, если:"
@@ -3833,8 +3701,7 @@ msgid "Important"
 msgstr "Важная информация"
 
 msgid "Important notes on our swap rates (overnight funding)"
-msgstr ""
-"Важные примечания к нашему курсу своп (перенос позиции на следующий день)"
+msgstr "Важные примечания к нашему курсу своп (перенос позиции на следующий день)"
 
 msgid "Improve Binary.com's front-end content"
 msgstr "Улучшение контента сайта Binary.com"
@@ -3941,9 +3808,7 @@ msgid "In/Out (ends between/outside and stays between/goes outside)"
 msgstr "Внутри/Вне (закончится между/вне и останется между/выйдет за пределы)"
 
 msgid "In/Out - Predict if the market will stay between or outside two target prices"
-msgstr ""
-"Внутри/Вне – сделайте прогноз, останется ли цена внутри или вне заданных "
-"целевых уровней"
+msgstr "Внутри/Вне – сделайте прогноз, останется ли цена внутри или вне заданных целевых уровней"
 
 msgid "In/Out trades"
 msgstr "Контракты Внутри/Вне"
@@ -3975,8 +3840,7 @@ msgid "Indices"
 msgstr "Индексы"
 
 msgid "Indices - All major worldwide stock indices sourced from the over-the-counter market"
-msgstr ""
-"Индексы – все крупнейшие мировые индексы, получаемые через внебиржевой рынок"
+msgstr "Индексы – все крупнейшие мировые индексы, получаемые через внебиржевой рынок"
 
 msgid "Indices trading experience"
 msgstr "Опыт торговли индексами"
@@ -4626,21 +4490,13 @@ msgid "Key facts"
 msgstr "Основные факты"
 
 msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
-msgstr ""
-"Прекрасные пляжи, острова и горы находятся на расстоянии небольшого "
-"перелёта. На Мальте Вы сможете наслаждаться красотами Средиземноморья, "
-"находясь между континентальной Европой и Северной Африкой. В Малайзии же Вы "
-"окажетесь в самом сердце Азии."
+msgstr "Прекрасные пляжи, острова и горы находятся на расстоянии небольшого перелёта. На Мальте Вы сможете наслаждаться красотами Средиземноморья, находясь между континентальной Европой и Северной Африкой. В Малайзии же Вы окажетесь в самом сердце Азии."
 
 msgid "Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account."
-msgstr ""
-"Пожалуйста, укажите Ваш точный адрес.<br>Данная информация необходима нам "
-"для проверки Вашей личности при открытии реального счёта."
+msgstr "Пожалуйста, укажите Ваш точный адрес.<br>Данная информация необходима нам для проверки Вашей личности при открытии реального счёта."
 
 msgid "Kindly send us these documents within 5 days to keep your MT5 account active."
-msgstr ""
-"Пожалуйста, отправьте нам данные документы в течение 5 дней, чтобы Ваш счёт "
-"MT5 остался активным."
+msgstr "Пожалуйста, отправьте нам данные документы в течение 5 дней, чтобы Ваш счёт MT5 остался активным."
 
 msgid "Know what you stand to win or lose"
 msgstr "Заранее знайте возможную прибыль и убыток"
@@ -4736,22 +4592,10 @@ msgid "Less than 6 months"
 msgstr "Less than 6 months"
 
 msgid "Let's say the points adjustment for a long position on the EUR/USD symbol is -5.64. This would require an overnight fee of 5.64 points for one lot of open position in EUR/USD, where the size of one lot is 100,000 units. The points will then be converted into the deposit currency (which is the euro in this example). As a result, you will incur an interest fee of EUR5.64 for keeping the position open overnight."
-msgstr ""
-"Предположим, что корректировка пунктов на длинной позиции на паре EUR/USD "
-"составляет -5.64. Это означает, что за поддержание одного лота открытой "
-"позиции на паре EUR/USD требуется комиссия в размере 5.64 пункта, где размер "
-"одного лота составляет 100 000 единиц. Затем пункты будут переведены в "
-"валюту счёта (в данном примере, это евро). В результате, Ваша комиссия за "
-"поддержание открытой позиции на ночь составит EUR5.64."
+msgstr "Предположим, что корректировка пунктов на длинной позиции на паре EUR/USD составляет -5.64. Это означает, что за поддержание одного лота открытой позиции на паре EUR/USD требуется комиссия в размере 5.64 пункта, где размер одного лота составляет 100 000 единиц. Затем пункты будут переведены в валюту счёта (в данном примере, это евро). В результате, Ваша комиссия за поддержание открытой позиции на ночь составит EUR5.64."
 
 msgid "Let's say the points adjustment for a short position on the EUR/USD symbol is 1.64. This would result in an overnight credit of 1.64 points for one lot of open position in EUR/USD where the size of one lot is 100,000 units. The points will then be converted into the deposit currency (which is the euro in this example). As a result, you will be credited with EUR1.64 for keeping the position open overnight."
-msgstr ""
-"Предположим, что корректировка пунктов на короткой позиции на паре EUR/USD "
-"составляет 1.64. Это означает, что за поддержание одного лота открытой "
-"позиции на паре EUR/USD требуется кредит в размере 1.64 пункта, где размер "
-"одного лота составляет 100 000 единиц. Затем пункты будут переведены в "
-"валюту счёта (в данном примере, это евро). В результате, Ваша комиссия за "
-"поддержание открытой позиции на ночь составит EUR1.64."
+msgstr "Предположим, что корректировка пунктов на короткой позиции на паре EUR/USD составляет 1.64. Это означает, что за поддержание одного лота открытой позиции на паре EUR/USD требуется кредит в размере 1.64 пункта, где размер одного лота составляет 100 000 единиц. Затем пункты будут переведены в валюту счёта (в данном примере, это евро). В результате, Ваша комиссия за поддержание открытой позиции на ночь составит EUR1.64."
 
 msgid "Level of Education"
 msgstr "Уровень образования"
@@ -4763,11 +4607,7 @@ msgid "Leverage can be used to generate returns that are of multiple times highe
 msgstr "Кредитный рычаг можно использовать для получения прибыли, которая во много раз превышает сумму, которая будет заблокирована на Вашем счету для открытия и поддержания контракта (Ваша маржа). Тем не менее, инвестиции с возможностью получения более высокой прибыли предполагают более высокий риск. Это означает, что если цена движется не в Вашу пользу, Ваши потери во много раз превысят сумму, заблокированную на Вашем счету для открытия и поддержания контракта (Вашу маржу)."
 
 msgid "Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr ""
-"Кредитный рычаг показывает, каким капиталом Вы можете управлять, в "
-"зависимости от размера Вашего первоначального взноса на счёт. Например, "
-"кредитный рычаг в размере 100:1 позволит Вам контролировать до USD 100 000, "
-"имея на счету всего USD 1 000."
+msgstr "Кредитный рычаг показывает, каким капиталом Вы можете управлять, в зависимости от размера Вашего первоначального взноса на счёт. Например, кредитный рычаг в размере 100:1 позволит Вам контролировать до USD 100 000, имея на счету всего USD 1 000."
 
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "Использование информационных инструментов и каналов с целью нахождения, привлечения и обращения потенциальных клиентов, а также партнёров"
@@ -4882,10 +4722,7 @@ msgid "Long-term partnership with the leading financial trading service"
 msgstr "Долгосрочное партнерство с ведущей платформой финансового беттинга"
 
 msgid "Looking for a new and exciting career in a country that's modern, diverse and tolerant? Binary.com is one of the world's most progressive companies, with offices in Asia and Europe."
-msgstr ""
-"Хотите найти новую и интересную работу в современной и толерантной стране? "
-"Binary.com – одна из самых прогрессивных мировых компаний, офисы которой "
-"находятся в Азии и Европе."
+msgstr "Хотите найти новую и интересную работу в современной и толерантной стране? Binary.com – одна из самых прогрессивных мировых компаний, офисы которой находятся в Азии и Европе."
 
 msgid "Loss"
 msgstr "Потери"
@@ -5004,23 +4841,13 @@ msgid "Margin Requirements can increase/decrease based on the aggregated size of
 msgstr "Маржевые требования могут расти / снижаться, в зависимости от совокупной стоимости Ваших открытых позиций, которая определяется объёмом (количеством лотов), размером контракта (ценой за каждый пункт оригинальной валюты контракта), рыночной ценой и размером маржи."
 
 msgid "Margin allows you to trade on leverage, giving you the same level of market exposure using much less capital."
-msgstr ""
-"Маржа позволяет торговать с использованием кредитного рычага, предоставляя "
-"Вам ту же позицию на рынке за меньшие деньги."
+msgstr "Маржа позволяет торговать с использованием кредитного рычага, предоставляя Вам ту же позицию на рынке за меньшие деньги."
 
 msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 0.2% margin will allow you to control up to USD 500,000 using only USD 1,000 of your own money as deposit."
-msgstr ""
-"Маржа демонстрирует, какой размер капитала Вы можете контролировать, в "
-"зависимости от размера Вашей первоначальной инвестиции. Например, маржа в "
-"размере 0.2% позволит Вам контролировать сумму до USD 500,000, внеся на счёт "
-"всего USD 1,000."
+msgstr "Маржа демонстрирует, какой размер капитала Вы можете контролировать, в зависимости от размера Вашей первоначальной инвестиции. Например, маржа в размере 0.2% позволит Вам контролировать сумму до USD 500,000, внеся на счёт всего USD 1,000."
 
 msgid "Margin indicates how much investment you can control based on your initial capital. For example, a 1% margin will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
-msgstr ""
-"Маржа демонстрирует, какой размер капитала Вы можете контролировать, в "
-"зависимости от суммы Вашей первоначальной инвестиции. Например, маржа в "
-"размере 1% позволит Вам контролировать сумму до USD 100,000, внеся на счёт "
-"всего USD 1,000."
+msgstr "Маржа демонстрирует, какой размер капитала Вы можете контролировать, в зависимости от суммы Вашей первоначальной инвестиции. Например, маржа в размере 1% позволит Вам контролировать сумму до USD 100,000, внеся на счёт всего USD 1,000."
 
 msgid "Market Opinions"
 msgstr "Информация о рынках"
@@ -5059,9 +4886,7 @@ msgid "Matches/Differs"
 msgstr "Совпадение/Отличие"
 
 msgid "Matches/Differs - Predict that the last digit will match or not match"
-msgstr ""
-"Совпадение/отличие – проверьте, совпадёт ли последняя десятичная цены с "
-"Вашим прогнозом"
+msgstr "Совпадение/отличие – проверьте, совпадёт ли последняя десятичная цены с Вашим прогнозом"
 
 msgid "Max:"
 msgstr "Макс.:"
@@ -5425,9 +5250,7 @@ msgid "OTC Indices and Stocks"
 msgstr "Внебиржевые индексы и акции"
 
 msgid "OTC stocks - Blue-chip stock contracts sourced from the over-the-counter market"
-msgstr ""
-"Внебиржевыне акции – контракты на голубых фишках, получаемые с внебиржевого "
-"рынка"
+msgstr "Внебиржевыне акции – контракты на голубых фишках, получаемые с внебиржевого рынка"
 
 msgid "Occupation"
 msgstr "Вид деятельности"
@@ -5474,9 +5297,7 @@ msgid "Once you click the 'Submit' button, the funds will be withdrawn from your
 msgstr "Когда Вы нажмете кнопку 'Подтвердить', средства будет сняты с Вашего счета и перечислены на счет клиента."
 
 msgid "Once your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:"
-msgstr ""
-"Как только Ваш счёт достигнет уровня принудительной ликвидации, Ваши ордеры "
-"и текущие позиции будут принудительно закрыты в следующей последовательности:"
+msgstr "Как только Ваш счёт достигнет уровня принудительной ликвидации, Ваши ордеры и текущие позиции будут принудительно закрыты в следующей последовательности:"
 
 msgid "One simple platform"
 msgstr "Одна простая платформа"
@@ -5505,9 +5326,7 @@ msgid "Only letters, numbers, space, hyphen, period, and apostrophe are allowed.
 msgstr "Разрешены только буквы, цифры, пробелы, дефис, точки и апостроф."
 
 msgid "Only letters, space, hyphen, period, and apostrophe are allowed."
-msgstr ""
-"Допускаются только буквы латинского алфавита, пробелы, дефисы, точки или "
-"апострофы."
+msgstr "Допускаются только буквы латинского алфавита, пробелы, дефисы, точки или апострофы."
 
 msgid "Only numbers and spaces are allowed."
 msgstr "Разрешены только цифры и пробелы."
@@ -5629,12 +5448,7 @@ msgid "Our Company"
 msgstr "Наша компания"
 
 msgid "Our International Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. In Japan, your commission will be credited to your affiliate account within thirty days after the close of a calendar month in which your referrals have met the qualifying conditions."
-msgstr ""
-"Комиссия в рамках нашей международной Патрнёрской программы выплачивается "
-"своевременно и без исключений с момента запуска программы в марте 2004 года. "
-"Комиссия партнёров из Японии будет внесена на их партнерские счета в течение "
-"30 дней после закрытия календарного месяца, на протяжении которого "
-"направленные ими клиенты соблюдали условия программы."
+msgstr "Комиссия в рамках нашей международной Патрнёрской программы выплачивается своевременно и без исключений с момента запуска программы в марте 2004 года. Комиссия партнёров из Японии будет внесена на их партнерские счета в течение 30 дней после закрытия календарного месяца, на протяжении которого направленные ими клиенты соблюдали условия программы."
 
 msgid "Our Order Execution Policy (the \"Policy\") sets out the overview and approach of how Binary.com executes orders on behalf of our clients."
 msgstr "Наша Политика исполнения ордеров (далее именуемая \"Политика\") представляет собой общие сведения и подход Binary.com к исполнению ордеров от имени наших клиентов."
@@ -5651,9 +5465,7 @@ msgid "Our commitment to provide you with 'best execution' does not mean that we
 msgstr "Наше обязательство предоставления Вам \"лучшего исполнения\" не означает, что мы связаны с Вами какими-либо фидуциарными обязанностями сверх определенных нормативных обязательств, возложенных на нас или фигурирующих в контракте между нами."
 
 msgid "Our company continues to thrive and obtains a license in the Isle of Man to better service our UK clients."
-msgstr ""
-"Наша компания продолжает процветать и получает лицензию на Острове Мэн, "
-"чтобы предлагать лучшее обслуживание нашим клиентам из Великобритании."
+msgstr "Наша компания продолжает процветать и получает лицензию на Острове Мэн, чтобы предлагать лучшее обслуживание нашим клиентам из Великобритании."
 
 #, fuzzy
 #| msgid "Our costs and charges for depositing and withdrawing money are set out <a href=\"%1\" class=\"pjaxload\">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability."
@@ -5949,9 +5761,6 @@ msgstr "Пожалуйста, введите цифру между %1."
 
 msgid "Please enter a number between 0 and %1"
 msgstr "Пожалуйста, введите цифру от 0 до %1"
-
-msgid "Please enter a number greater than 0"
-msgstr "Пожалуйста, введите цифру выше 0"
 
 msgid "Please enter a number."
 msgstr "Пожалуйста, введите число."
@@ -6365,9 +6174,6 @@ msgstr "Живые цены в настоящем времени, стандар
 
 msgid "Reality Check"
 msgstr "Проверка реальности"
-
-msgid "Reality Check Interval:"
-msgstr "Интервал для проверки реальности:"
 
 msgid "Receive news and special offers"
 msgstr "Получайте новости и спец. предложения"
@@ -11267,6 +11073,12 @@ msgstr "Лимиты счета"
 
 msgid "Account Details"
 msgstr "Информация о счете"
+
+#~ msgid "Please enter a number greater than 0"
+#~ msgstr "Пожалуйста, введите цифру выше 0"
+
+#~ msgid "Reality Check Interval:"
+#~ msgstr "Интервал для проверки реальности:"
 
 #~ msgid "Any realised profits and interest charges that are denominated in a currency that's different from your Base Currency will be automatically converted to your Base Currency before being debited / credited to your Real Account. The conversion will be performed at commercially reasonable rates."
 #~ msgstr "Любая полученная прибыль и проценты, начисленные в валюте, отличной от основной валюты Вашего счёта, будут автоматически переведены в основную валюту Вашего счёта до снятия / начисления на Ваш реальный счёт. Перевод валют будет выполнен по коммерчески приемлемому курсу."
