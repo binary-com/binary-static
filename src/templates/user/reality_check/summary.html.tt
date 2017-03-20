@@ -1,0 +1,39 @@
+[% BLOCK rc_row %]
+    <div class="gr-row gr-padding-10">
+        <div class="gr-3 gr-6-m"><label>[% string %]</label></div>
+        <div class="gr-9 gr-6-m"><label id="[% id %]"></label></div>
+    </div>
+[% END %]
+
+[% WRAPPER user/reality_check/wrapper.html.tt %]
+    [% INCLUDE rc_row string = l('Login time:') id = 'login_time' %]
+    [% INCLUDE rc_row string = l('Current time:') id = 'current_time' %]
+    [% INCLUDE rc_row string = l('Session duration:') id = 'session_duration' %]
+
+    <p id="start_time"></p>
+
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>[% l("Login ID") %]</th>
+                <th>[% l("Currency") %]</th>
+                <th>[% l("Turnover") %]</th>
+                <th>[% l("Profit / Loss") %]</th>
+                <th>[% l("Contracts bought") %]</th>
+                <th>[% l("Contracts sold") %]</th>
+                <th>[% l("Open contracts") %]</th>
+                <th>[% l("Potential profit") %]</th>
+            </tr>
+            <tr>
+                <td id="loginid"></td>
+                <td id="rc_currency"></td>
+                <td id="turnover"></td>
+                <td id="profit_loss"></td>
+                <td id="bought"></td>
+                <td id="sold"></td>
+                <td id="open"></td>
+                <td id="potential"></td>
+            </tr>
+        </table>
+    </div>
+[% END %]
