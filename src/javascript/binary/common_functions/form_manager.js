@@ -40,7 +40,8 @@ const FormManager = (() => {
         let key,
             $selector,
             val,
-            value;
+            value,
+            native;
 
         fields.forEach((field) => {
             if (!field.exclude_request) {
@@ -48,15 +49,16 @@ const FormManager = (() => {
                 if ($selector.is(':visible') || field.value) {
                     val = $selector.val();
                     key = field.request_field || field.selector;
+                    native = $selector.attr('data-picker') === 'native';
 
                     // prioritise data-value
                     // if label, take the text
                     // if checkbox, take checked value
                     // otherwise take the value
                     value = field.value ? (typeof field.value === 'function' ? field.value() : field.value) :
-                        $selector.attr('data-value') || (/lbl_/.test(key) ? (field.value || $selector.text()) :
+                        native ? val : ($selector.attr('data-value') || (/lbl_/.test(key) ? (field.value || $selector.text()) :
                             $selector.is(':checkbox') ? ($selector.is(':checked') ? 1 : 0) :
-                                Array.isArray(val) ? val.join(',') : (val || ''));
+                                Array.isArray(val) ? val.join(',') : (val || '')));
 
                     key = key.replace(/lbl_|#|\./g, '');
                     if (field.parent_node) {

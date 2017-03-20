@@ -36,6 +36,8 @@ const BinaryPushwoosh = (() => {
                     });
                 }
                 return null;
+            }).catch(e => {
+                return; // do nothing
             });
         });
     };

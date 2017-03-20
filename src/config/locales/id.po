@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-09 04:12+0000\n"
+"PO-Revision-Date: 2017-03-16 06:29+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -687,16 +687,19 @@ msgstr "Derivatif adalah sebuah instrumen keuangan dimana nilainya ditentukan ol
 msgid "A detail orientation with the ability to detect patterns"
 msgstr "Orientasi rinci dan kemampuan untuk mendeteksi pola"
 
+#, fuzzy
+#| msgid "Force majeure event, if and when determined, means, (i) the Company, by reason of force majeure or act of state, is prevented from or hindered or delayed in delivering or receiving, or is impossible to deliver or receive, any quotation of the bid and offer price of a market in one or more of the instruments which we ordinarily deal in Transactions; (ii) an excessive movement in the market of the instrument or our reasonable anticipation of the potential occurrence of market disruption."
+msgid "A force majeure event, if and when determined, means, (i) the Company, by reason of force majeure or act of state, is prevented from, or hindered or delayed, in delivering or receiving, or is impossible to deliver or receive, any quotation of the bid and offer price of a market in one or more of the instruments which we ordinarily deal in Transactions; (ii) an excessive movement in the market of the instrument or our reasonable anticipation of the potential occurrence of market disruption."
+msgstr "Keadaan memaksa, jika dan ketika terjadi, berarti (i) Perusahaan, dengan alasan mendesak atau berdasarkan akta yang berlaku, dicegah dari atau terhalang atau tertunda dalam mengirim atau menerima atau mustahil untuk mengirim atau menerima penawaran harga bid dan offer pasar pada satu atau lebih instrumen yang ditransaksikan sebelumnya; (ii) pergerakan besar pada pasar pada instrumen atau antisipasi wajar kami pada potensi yang terjadi pada gangguan pasar."
+
 msgid "A full understanding of, and a keen interest in, corporate legal compliance"
 msgstr "Benar benar memahami dan memiliki ketertarikan pada kepatuhan hukum perusahaan"
 
 msgid "A higher figure (higher to you) representing our offer price and a lower figure (lower to you) representing our bid price for each Transaction shall be quoted to you upon your request. The difference between our bid and our offer price will comprise of the market spread (where there is market for the underlying instrument) and our spread (being our charge to you)."
 msgstr "Nilai lebih tinggi (lebih tinggi bagi Anda) mewakili harga offer kami dan nilai lebih rendah (lebih rendah bagi Anda) mewakili harga bid kami bagi setiap transaksi yang akan ditampilkan pada Anda sesuai dengan permintaan. Selisih harga bid dan offer akan menekan spread pasar (dimana tersedia pasar bagi instrumen dasar) dan spread kami (yang dibebankan pada Anda)."
 
-#, fuzzy
-#| msgid "{Japan Only}Binary option specialist for over 15 years "
 msgid "A leading innovator of Binary Options trading for over 15 Years"
-msgstr "{Japan Only}Binary option specialist for over 15 years "
+msgstr "Inovator terkemuka trading Opsi Binary selama lebih dari 15 tahun"
 
 msgid "A list of payment methods you will accept from Clients"
 msgstr "Daftar jenis metode pembayaran yang akan Anda sediakan"
@@ -809,16 +812,22 @@ msgstr "Akses ke Data Pribadi"
 msgid "Access to your personal data is strictly prohibited with the exception of key personnel of the Company and only as needed in the performance of their duties."
 msgstr "Akses kedalam data pribadi Anda adalah sangat terbatas kecuali kepada petugas utama Perusahaan yang memerlukan data tersebut dalam menjalankan tugas mereka."
 
-msgid "Account Balance - Your account balance represents:"
+#, fuzzy
+#| msgid "Account Balance - Your account balance represents:"
+msgid "Account Balance &mdash; Your account balance represents:"
 msgstr "Saldo akun Anda - saldo akun Anda merupakan:"
 
 msgid "Account Closure"
 msgstr "Penutupan Akun"
 
-msgid "Account Equity - Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss."
+#, fuzzy
+#| msgid "Account Equity - Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss."
+msgid "Account Equity &mdash; Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss."
 msgstr "Ekuitas Akun - Ekuitas akun Anda adalah jumlah saldo dan laba bersih yang belum direalisasi sebagai untung dan rugi."
 
-msgid "Account Free Margin - Your Account Equity minus your Total Margin."
+#, fuzzy
+#| msgid "Account Free Margin - Your Account Equity minus your Total Margin."
+msgid "Account Free Margin &mdash; Your Account Equity minus your Total Margin."
 msgstr "Akun Bebas Margin - Ekuitas Akun Anda dikurangi total Margin Anda."
 
 msgid "Account Management and Tracking"
@@ -941,8 +950,6 @@ msgstr "Manajer Afiliasi"
 msgid "Affiliate Program"
 msgstr "Program Afiliasi"
 
-#, fuzzy
-#| msgid "Affiliate Program"
 msgid "Affiliates Program"
 msgstr "Program Afiliasi"
 
@@ -974,9 +981,11 @@ msgid "All credit card details are submitted directly to the Visa/Mastercard net
 msgstr "Semua rincian kartu kredit diserahkan langsung ke dalam jaringan Visa/Mastercard menggunakan teknologi enkripsi SSL terbaru, sesuai dengan kebijakan bank;"
 
 msgid "All customer funds are segregated and held with JSF Trust Bank."
-msgstr ""
+msgstr "Semua dana nasabah disimpan secara terpisah pada bank JSF Trust."
 
-msgid "All funds transferred from your Binary Options Real Account to your Real Account must be made by you."
+#, fuzzy
+#| msgid "All funds transferred from your Binary Options Real Account to your Real Account must be made by you."
+msgid "All fund transfers from your Binary Options Real Account to your Real Account must be made by you."
 msgstr "Semua dana yang di transfer dari Akun Riil Opsi Binary ke dalam Akun Riil harus Anda yang melakukannya."
 
 msgid "All intellectual property rights in the MT5 Trading Platform are owned by the Licensor and shall remain the exclusive property of the Licensor. Nothing in this Agreement intends to transfer any such rights or to vest any such rights in you."
@@ -991,7 +1000,9 @@ msgstr "Semua pasar ditutup saat ini. Coba kembali nanti."
 msgid "All opinions, news, research, analysis, prices or other information contained on this website are provided as general market commentary and do not constitute investment advice. %1 will not accept liability for any loss or damage, including but without limitation to, any loss of profit that may arise directly or indirectly from use of or reliance on such information."
 msgstr "Semua opini, berita, penelitian, analisis, harga atau informasi lain yang terkandung dalam situs ini disediakan sebagai komentar umum dan tidak merupakan nasihat investasi. %1 tidak akan bertanggung jawab bagi setiap kerugian atau kerusakan, termasuk dan tidak terbatas pada, kerugian apapun yang mungkin timbul secara langsung ataupun tidak langsung dari penggunaan atau kepercayaan pada informasi tersebut."
 
-msgid "All products traded on margin carry a high degree of risk and can result in losses as well as profits that exceed your initial deposit. The margin trading service described in this Agreement is not suitable for everyone. You acknowledge that the margin trading service described in this Agreement is designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us."
+#, fuzzy
+#| msgid "All products traded on margin carry a high degree of risk and can result in losses as well as profits that exceed your initial deposit. The margin trading service described in this Agreement is not suitable for everyone. You acknowledge that the margin trading service described in this Agreement is designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us."
+msgid "All products traded on margin carry a high degree of risk and can result in losses as well as profits that exceed your initial deposit. The margin trading services described in this Agreement is not suitable for everyone. You acknowledge that the margin trading services described in this Agreement is designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us."
 msgstr "Semua produk yang diperdagangkan pada margin memiliki tingkat resiko tinggi yang dapat mengakibatkan kerugian serta keuntungan yang melebihi deposit Anda. Layanan trading margin yang dijelaskan pada Perjanjian ini tidaklah cocok untuk semua orang. Anda telah memahami bahwa layanan trading margin yang dijelaskan pada Perjanjian ini khusus diciptaan untuk klien yang memiliki pengetahuan dan pengalaman dalam berbagai jenis transaksi seperti yang dijelaskan dalam Perjanjian ini dan Anda sepenuhnya memahami risiko yang terkait sebelum masuk kedalam Perjanjian bersama kami."
 
 msgid "All times are in GMT (Greenwich Mean Time)."
@@ -1078,6 +1089,9 @@ msgstr "Apapun"
 msgid "Any Transaction opened by you must be within any credit or position limit in effect with respect to the Real Account or any Transactions."
 msgstr "Setiap transaksi yang berjalan harus berkisar dalam batas kredit atau batas posisi pada Akun Riil atau transaksi lainnya."
 
+msgid "Any amendments to the contractual terms of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between you and us in connection with the Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms and conditions of this Agreement."
+msgstr ""
+
 msgid "Any changes in our privacy policy or security statement will be posted onto this website. In the event of material changes that directly affect the economic use of your personal information, we will request your prior authorisation in writing before effecting such change on your account."
 msgstr "Setiap perubahan dalam kebijakan privasi atau pernyataan keamanan kami akan diposting di website ini. Jika terdapat perubahan materi yang berhubungan dengan informasi pribadi Anda maka kami akan meminta pembuktian secara tertulis sebelum melakukan perubahan pada akun Anda."
 
@@ -1102,9 +1116,6 @@ msgstr "Setiap pemberitahuan yang diberikan atau dibuat berdasarkan Perjanjian k
 msgid "Any other consideration relevant to the execution of the transaction."
 msgstr "Pertimbangan lainnya berkaitan dengan pelaksanaan transaksi."
 
-msgid "Any realised profits and interest charges that are denominated in a currency that's different from your Base Currency will be automatically converted to your Base Currency before being debited / credited to your Real Account. The conversion will be performed at commercially reasonable rates."
-msgstr "Setiap keuntungan yang disadari dan bunga yang dibebankan adalah dalam mata uang yang berbeda dengan Mata Uang Dasar akan secara otomatis dikonversikan kedalam Mata Uang Dasar pilihan Anda sebelum didebit/kreditkan kedalam Akun Riil. Konversi adalah berdasarkan nilai tukar komersial yang wajar."
-
 msgid "Any third party claims arising out of, or relating to, your use of, or inability to use, the %1 API."
 msgstr "Tuntutan apapun dari pihak ketiga yang timbul dari, atau terkait dengan, penggunaan, atau ketidakmampuan untuk menggunakan API %1."
 
@@ -1123,10 +1134,8 @@ msgstr "Aplikasi"
 msgid "Apply a meticulous eye for detail in proofreading the content that appears on the company's website, blog, social media outlets, and marketing materials."
 msgstr "Cermat dan detail, mengoreksi dan memperbaiki konten yang muncul di website perusahaan, blog, media sosial dan materi pemasaran."
 
-#, fuzzy
-#| msgid "I have a Real Money Account"
 msgid "Apply for a Real Money Account"
-msgstr "Saya memiliki Akun Uang Riil"
+msgstr "Mendaftar Akun Uang Riil"
 
 msgid "Apply to become a %1 <a href=\"%2\">payment agent</a>."
 msgstr "Khusus untuk exchanger, ajukan pendaftaran sebagai <a href=\"%2\">agen pembayaran</a> %1."
@@ -1350,12 +1359,6 @@ msgstr "Barrier offset"
 msgid "Barrier(s)"
 msgstr "Batas"
 
-msgid "Base Currency"
-msgstr "Mata Uang Dasar"
-
-msgid "Base Currency - The currency in which your Transaction was entered into."
-msgstr "Mata Uang Dasar - Mata uang di mana transaksi Anda dioperasikan."
-
 msgid "Basic Platforms"
 msgstr "Platform Dasar"
 
@@ -1474,7 +1477,7 @@ msgid "Binary KK granted Japan license"
 msgstr "Binary KK telah menerima lisensi Jepang"
 
 msgid "Binary KK is a licensed Type 1 Financial Instruments Business, regulated by the KLFB, and a member of the FFAJ."
-msgstr ""
+msgstr "Binary KK berlisensi dengan Instrumen Bisnis Keuangan Jenis 1, diatur oleh KLFB dan member dari FFAJ."
 
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Jepang"
@@ -1494,7 +1497,9 @@ msgstr "Opsi Binary"
 msgid "Binary Options Basics"
 msgstr "Opsi Binary Dasar"
 
-msgid "Binary Options Real Account - Your real money account opened with Binary.com which you use to trade binary options with Binary.com."
+#, fuzzy
+#| msgid "Binary Options Real Account - Your real money account opened with Binary.com which you use to trade binary options with Binary.com."
+msgid "Binary Options Real Account &mdash; Your real money account opened with Binary.com which you use to trade binary options with Binary.com."
 msgstr "Akun Riil Opsi Binary - Akun uang riil yang terdaftar pada Binary.com yang akan Anda gunakan untuk bertrading opsi binary pada Binary.com."
 
 msgid "Binary Shop"
@@ -1851,7 +1856,9 @@ msgstr " "
 msgid "Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the MFSA's Consumer Complaints Manager. Details on making a complaint with the MFSA's Consumer Complaints Manager as well as their contact details can be found here: %1. Complaints to the MFSA's Consumer Complaints Manager should always be made in writing."
 msgstr " "
 
-msgid "Clients registered with any Group company, and in particular with Binary (V) Ltd. or Binary (C.R.). S.A., can raise their unresolved disputes with management by submitting an email to <a href='mailto:%1'>%1</a>."
+#, fuzzy
+#| msgid "Clients registered with any Group company, and in particular with Binary (V) Ltd. or Binary (C.R.). S.A., can raise their unresolved disputes with management by submitting an email to <a href='mailto:%1'>%1</a>."
+msgid "Clients registered with any Binary Group company, and in particular with Binary (V) Ltd. or Binary (C.R.). S.A., can raise their unresolved disputes with management by submitting an email to <a href='mailto:%1'>%1</a>."
 msgstr "Klien yang terdaftar pada Grup perusahaanp, dan khususnya dengan Binary (V) Ltd. atau Binary (C.R.). S.A., dapat melanjutkan sengketa yang belum terselesaikan dengan manajemen dengan mengirimkan email ke <a href='mailto:%1'>%1</a>."
 
 msgid "Clients shall not hold or pool third party funds into their own account held with the Company."
@@ -1887,7 +1894,9 @@ msgstr "Penutupan Transaksi"
 msgid "Closing an Account"
 msgstr "Penutupan Akun"
 
-msgid "Closing or part-closing all or any of your Open Positions based on the prevailing prices available in the relevant markets;"
+#, fuzzy
+#| msgid "Closing or part-closing all or any of your Open Positions based on the prevailing prices available in the relevant markets;"
+msgid "Closing or part-closing all, or any, of your Open Positions based on the prevailing prices available in the relevant markets;"
 msgstr "Tutup atau tutup sebagian dari semua Posisi Berjalan berdasarkan harga yang tersedia pada pasar yang relevan;"
 
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
@@ -2301,10 +2310,8 @@ msgstr "Deposit"
 msgid "Deposit Bonus"
 msgstr "Bonus Deposit"
 
-#, fuzzy
-#| msgid "Depositing and withdrawing funds"
 msgid "Deposit funds and begin trading"
-msgstr "Penyetoran dan penarikan dana"
+msgstr "Mendeposit dana dan mulai bertrading"
 
 msgid "Deposit into"
 msgstr "Deposit kedalam"
@@ -2589,7 +2596,7 @@ msgid "Email address"
 msgstr "Alamat email"
 
 msgid "Email us your Identity Documents"
-msgstr ""
+msgstr "Email kami Dokumen Identitas Anda"
 
 msgid "Email: "
 msgstr "Email: "
@@ -2699,7 +2706,9 @@ msgstr "Even/Odd - Menganalisa angka terakhir adalah genap atau ganjil setelah t
 msgid "Even/Odd contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "Kontrak Even/Odd akan memperoleh pengembalian harga beli jika kontrak tidak berakhir dalam waktu 5 menit."
 
-msgid "Event - Event examples include circumstances whereby the type of Transaction to which your Order is related to ceased to be offered, or a Corporate Event or the insolvency of a Company whose shares represent are related to the subject matter of the Order, and others."
+#, fuzzy
+#| msgid "Event - Event examples include circumstances whereby the type of Transaction to which your Order is related to ceased to be offered, or a Corporate Event or the insolvency of a Company whose shares represent are related to the subject matter of the Order, and others."
+msgid "Event &mdash; Event examples include circumstances whereby the type of Transaction to which your Order is related to ceased to be offered, or a Corporate Event or the insolvency of a Company whose shares represent are related to the subject matter of the Order, and others."
 msgstr "Acara - Contoh acara termasuk situasi dimana jenis Transaksi yang akan berakibat pada Order Anda, atau Acara Perusahaan atau kebangkrutan dari perusahaan yang sahamnya terkait dengan masalah Order, dan lain-lain."
 
 msgid "Everyone"
@@ -2865,7 +2874,7 @@ msgid "FAQ"
 msgstr "Pertanyaan Umum"
 
 msgid "FX Bloggers, Mentors & Gurus"
-msgstr ""
+msgstr "FX Blogger, Mentor & Guru"
 
 msgid "FX Rate"
 msgstr "Harga FX"
@@ -2957,10 +2966,8 @@ msgstr "Pertama, tentukan posisi Anda..."
 msgid "First, you need to set the parameters of your trade. Here's what you need to consider."
 msgstr "Pertama, Anda perlu menentukan parameter kontrak. Berikut adalah hal yang perlu Anda pertimbangkan."
 
-#, fuzzy
-#| msgid "Premier binary options trading platform"
 msgid "First-Class FX Binary Options Trading Platform"
-msgstr "Trading platform opsi binary pertama"
+msgstr "Platform Trading FX Opsi Binary Kelas Utama"
 
 msgid "First-class client service."
 msgstr "Pelayanan pelanggan kelas satu."
@@ -3009,9 +3016,6 @@ msgstr "Untuk kontrak panjang, entry level adalah spot ditambah separuh spread d
 
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "Tiga kali berturut-turut, BetOnMarkets.com dinobatkan sebagai 'Penyedia Trading Financial Fixed-Odds Terbaik' oleh Shares Magazine UK."
-
-msgid "Force majeure event, if and when determined, means, (i) the Company, by reason of force majeure or act of state, is prevented from or hindered or delayed in delivering or receiving, or is impossible to deliver or receive, any quotation of the bid and offer price of a market in one or more of the instruments which we ordinarily deal in Transactions; (ii) an excessive movement in the market of the instrument or our reasonable anticipation of the potential occurrence of market disruption."
-msgstr "Keadaan memaksa, jika dan ketika terjadi, berarti (i) Perusahaan, dengan alasan mendesak atau berdasarkan akta yang berlaku, dicegah dari atau terhalang atau tertunda dalam mengirim atau menerima atau mustahil untuk mengirim atau menerima penawaran harga bid dan offer pasar pada satu atau lebih instrumen yang ditransaksikan sebelumnya; (ii) pergerakan besar pada pasar pada instrumen atau antisipasi wajar kami pada potensi yang terjadi pada gangguan pasar."
 
 msgid "Foreign currency deposit"
 msgstr "Deposito valuta asing"
@@ -3172,7 +3176,9 @@ msgstr "Langkah memulai"
 msgid "Give Me More Money!"
 msgstr "Berikan saya uang lebih banyak lagi!"
 
-msgid "Given our role as margin trading service provider as described in this Agreement, we seek to avoid undue market influence to the extent consistent with your trading needs and our risk management policies and procedures. By continuing to use the margin trading service described in this Agreement, you acknowledge that you are aware of the potential conflict of interest disclosed that may arise and cannot be completely eliminated, and you consent us to act notwithstanding such potential conflict of interests."
+#, fuzzy
+#| msgid "Given our role as margin trading service provider as described in this Agreement, we seek to avoid undue market influence to the extent consistent with your trading needs and our risk management policies and procedures. By continuing to use the margin trading service described in this Agreement, you acknowledge that you are aware of the potential conflict of interest disclosed that may arise and cannot be completely eliminated, and you consent us to act notwithstanding such potential conflict of interests."
+msgid "Given our role as a margin trading service provider as described in this Agreement, we seek to avoid undue market influence to the extent consistent with your trading needs and our risk management policies and procedures. By continuing to use the margin trading services described in this Agreement, you acknowledge that you are aware of the potential conflict of interest disclosed that may arise and cannot be completely eliminated, and you consent us to act notwithstanding such potential conflict of interests."
 msgstr "Mengingat peran kami sebagai penyedia layanan margin trading seperti yang dijelaskan dalam Perjanjian ini, kami berusaha untuk menghindari pengaruh pasar yang tidak semestinya sepanjang sesuai dengan kebutuhan trading Anda dan kebijakan manajemen risiko dan prosedur. Dengan terus menggunakan layanan margin trading yang dijelaskan dalam Perjanjian ini, Anda mengakui bahwa Anda menyadari potensi konflik kepentingan diungkapkan yang mungkin timbul dan tidak dapat sepenuhnya dihilangkan, dan Anda menyetujui kami untuk mengambil tindakan meskipun terjadi potensi konfik kepentingan."
 
 msgid "Global Customer Service Representatives"
@@ -3310,10 +3316,8 @@ msgstr "Bagaimana cara menghitung margin?"
 msgid "How soon can I start trading?"
 msgstr "Seberapa cepat saya bisa memulai trading?"
 
-#, fuzzy
-#| msgid "How to trade?"
 msgid "How to begin"
-msgstr "Bagaimana cara bertrading?"
+msgstr "Bagaimana memulainya"
 
 msgid "How to read the table above"
 msgstr "Bagaimana cara membaca tabel di atas"
@@ -3471,7 +3475,9 @@ msgstr "Jika Anda tidak berniat untuk memanfaatkan fitur leverage, silahkan set 
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
 msgstr "Jika Anda tidak menerima e-mail beberapa menit yang akan datang, silakan periksa bagian junk/spam email Anda."
 
-msgid "If you fail to immediately make full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
+#, fuzzy
+#| msgid "If you fail to immediately make full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
+msgid "If you fail to immediately make a full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
 msgstr "Jika Anda gagal membuat pelunasan dari jumlah yang ditentukan pada Perjanjian ini, kami berhak untuk mengenakan bunga dari jumlah tersebut. Jumlah bunga akan dikenakan dalam hitungan harian dari tanggal jatuh tempo sehingga pelunasan diterima penuh pada bank yang telah kami tentukan, dan akan dibayar berdasarkan permintaan."
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
@@ -3594,7 +3600,9 @@ msgstr "Jika Anda ingin informasi lebih lanjut mengenai Agen Pembayaran, silahka
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
 msgstr "Jika Anda ingin mengajukan keluhan berkaitan dengan layanan kami, silakan hubungi kami dengan memberikan rincian yang relevan berkaitan dengan keluhan Anda. Kami akan menyelidiki dan akan memberi jawaban kepada keluhan Anda tersebut. Kami biasanya akan memberikan keputusan dalam tempo 1-2 minggu (paling lambat 2 bulan) setelah laporan detail kami terima."
 
-msgid "If you would like to file a complaint with regards to the margin trading service described in this Agreement, kindly contact us by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
+#, fuzzy
+#| msgid "If you would like to file a complaint with regards to the margin trading service described in this Agreement, kindly contact us by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
+msgid "If you would like to file a complaint with regards to the margin trading services described in this Agreement, kindly contact us by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
 msgstr "Jika Anda ingin mengajukan keluhan mengenai layanan trading margin yang disebutkan dalam Perjanjian ini, silahkan hubungi kami dengan menyediakan informasi lengkap. Kami akan menginvestigasi dan akan menginformasikan lebih lanjut mengenai masalah Anda. Kami biasanya akan memberikan tanggapan akhir dalam satu atau dua minggu (paling lambat satu bulan) sejak keterangan diterima."
 
 msgid "If you're a broker we'd like to work with you. You will be introducing your clients to a unique and innovative product - the %1 trading platform."
@@ -3605,9 +3613,6 @@ msgstr "Jika Anda adalah trader individual, Anda akan menyukai kesederhanaan, fl
 
 msgid "If you're looking to build a career, and not a resume, talk to us, %1. We're one of the IT world's most vibrant and progressive workplaces."
 msgstr "Jika Anda mencari tempat untuk membangun karir dan bukan hanya sekedar membuat lamaran kerja, hubungi kami di %1. Kami adalah salah satu perusahaan IT tempat bekerja paling dinamis dan progresif."
-
-msgid "If your Binary Options Real Account with Binary.com is not authenticated, access to create the Real Account shall not be granted until your Binary Options Real Account with Binary.com is authenticated."
-msgstr "Jika Akun Riil Opsi Binary Anda pada Binary.com belum terbukti, maka akses untuk mendaftar Akun Riil tidak dapat dilakukan hingga Akun Opsi Binary Anda pada Binary.com terbukti."
 
 msgid "If your account is placed under margin call for an extended period of time, it will reach the stop out level where it's unable to sustain an open position. This will lead to your pending orders being deleted, and open positions being forcibly closed (also known as forced liquidation)."
 msgstr "Jika akun Anda ditempatkan di bawah margin call untuk jangka waktu tertentu, hal tersebut akan mencapai level stop out di mana hal tersebut tidak dapat mempertahankan posisi berjalan. Hal ini akan menyebabkan pending order Anda terhapus, dan posisi berjalan akan ditutup secara paksa (juga dikenal sebagai likuidasi paksa)."
@@ -3672,7 +3677,9 @@ msgstr "Untuk bertrading OTC opsi binary, pelanggan perlu memiliki pengetahuan a
 msgid "In classic Silicon Valley style, Hong Kong based hedge fund manager and entrepreneur, Jean-Yves Sireau, starts Regent Markets in his Hong Kong bedroom. He develops the systems, methods and algorithms for implementing a fixed-odds financial betting system. Jean-Yves's vision is to create a market in the simplest of all derivatives contracts - the fixed-odds bet - and to offer ordinary investors the chance to make small bets. Until his innovation, binary options are normally only traded in large quantities."
 msgstr "Dengan gaya klasik Silicon Valley, seorang manager pengelola dana berjiwa pengusaha bernama Jean-Yves Sireau memulai Regent Markets dari kamar tidurnya di Hong Kong. Beliau membangun sistem, metode dan algoritma untuk mengimplementasikannya pada sistem trading financial fixed-odds. Visi Jean-Yves adalah untuk menciptakan pasar pada kontrak derivatif sederhana - trading fixed-odds - dan menawarkan kesempatan bagi investor umum untuk membeli kontrak berukuran kecil. Hingga inovasi beliau, opsi binary biasanya hanya ditradingkan dalam jumlah besar."
 
-msgid "In connection with this Agreement and all Transactions contemplated by this Agreement, you agree to execute and deliver such additional documents and instruments and to perform such additional acts as may be necessary or appropriate to effectuate, carry out and perform all of the terms, provisions and conditions of this Agreement. You shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law or rule applicable to you or the jurisdiction in which you are resident."
+#, fuzzy
+#| msgid "In connection with this Agreement and all Transactions contemplated by this Agreement, you agree to execute and deliver such additional documents and instruments and to perform such additional acts as may be necessary or appropriate to effectuate, carry out and perform all of the terms, provisions and conditions of this Agreement. You shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law or rule applicable to you or the jurisdiction in which you are resident."
+msgid "In connection with this Agreement and all Transactions contemplated by this Agreement, you agree to execute and deliver such additional documents and instruments, and to perform such additional acts as may be necessary or appropriate to effectuate, carry out, and perform all of the terms, provisions, and conditions of this Agreement. You shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident."
 msgstr "Sehubungan dengan Perjanjian ini dan semua Transaksi yang disebutkan pada Perjanjian ini, Anda bersetuju untuk mengeksekusi dan mengirimkan dokumentasi tambahab dan instrumen serta untuk melakukan tindakan tambahan yang mungkin diperlukan atau sesuai untuk penyelenggaraan, melaksanakan dan melakukan semua persyaratan, ketentuan serta aturan Perjanjian ini. Anda akan bekerja sama sepenuhnya dengan penyelidikan oleh otoritas regulasi dan segera memberikan otoritas pengawas dengan informasi dan catatan yang mungkin diminta sesuai dengan hukum, peraturan, piagam, oleh-hukum atau aturan yang berlaku untuk Anda atau yurisdiksi pada tempat domisili Anda."
 
 msgid "In executing orders on your behalf, Binary.com takes into consideration the following to achieve the best possible result for you:"
@@ -3750,7 +3757,9 @@ msgstr "In/Out - Menganalisa pasar akan tetap berada diantara atau diluar dua ha
 msgid "In/Out trades"
 msgstr "Kontrak In/Out"
 
-msgid "Inactive / Dormant Accounts"
+#, fuzzy
+#| msgid "Inactive / Dormant Accounts"
+msgid "Inactive/Dormant Accounts"
 msgstr "Akun Tidak Aktif / Dormant"
 
 msgid "Income Source"
@@ -4386,13 +4395,11 @@ msgstr "Japan website Risk For Binary Option Trading Paragraph 2"
 msgid "Japan website Terms and Conditions Paragraph 1"
 msgstr "Japan website Terms and Conditions Paragraph 1"
 
-#, fuzzy
-#| msgid "Open now"
 msgid "Join now"
-msgstr "Daftar sekarang"
+msgstr "Bergabung sekarang"
 
 msgid "Join our affiliate program to earn income by leveraging your hard-earned network of contact"
-msgstr ""
+msgstr "Bergabung dalam program afiliasi kami untuk memperoleh penghasilan dengan memanfaatkan network Anda"
 
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Bergabung dengan tim kami yang memiliki masa depan cerah, profesional berbakat. Bekerja secara kolaboratif dengan kami untuk meningkatkan dan mempromosikan platform teknologi tinggi yang telah menjadi salah satu yang paling dikenal pada industri trading opsi binary selama lebih dari 15 tahun."
@@ -4565,10 +4572,8 @@ msgstr "Berlisensi dan diatur"
 msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan"
 msgstr "Berlisensi dan diatur di Malta, Inggris, Isle of Man, Irlandia dan Jepang"
 
-#, fuzzy
-#| msgid "Licensed and regulated"
 msgid "Licensed in Japan"
-msgstr "Berlisensi dan diatur"
+msgstr "Berlisensi di Jepang"
 
 msgid "Licensed, trusted, and secure"
 msgstr "Berlisensi, dipercaya, dan aman"
@@ -4582,11 +4587,15 @@ msgstr "Kemungkinan pelaksanaan dan penyelesaian - kedalaman likuiditas pasar ya
 msgid "Limit"
 msgstr "Batas"
 
-msgid "Limit / Limit Price - The price specified in your Limit Order."
-msgstr "Batas / Batas Harga - Harga tertentu pada Limit Order Anda."
-
-msgid "Limit Order - an instruction to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price."
+#, fuzzy
+#| msgid "Limit Order - an instruction to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price."
+msgid "Limit Order &mdash; An instruction to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price."
 msgstr "Limit Order - instruksi untuk membuka atau menutup transaksi jika dan ketika penawaran harga menjadi lebih menguntungkan bagi Anda dibandingkan dengan harga saat ini."
+
+#, fuzzy
+#| msgid "Limit / Limit Price - The price specified in your Limit Order."
+msgid "Limit/Limit Price &mdash; The price specified in your Limit Order."
+msgstr "Batas / Batas Harga - Harga tertentu pada Limit Order Anda."
 
 msgid "Limitations on Liability"
 msgstr "Pembatasan Kewajiban"
@@ -4741,13 +4750,17 @@ msgstr "Maret"
 msgid "Margin"
 msgstr "Margin"
 
-msgid "Margin - The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover our exposure as a counterparty to your contract."
+#, fuzzy
+#| msgid "Margin - The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover our exposure as a counterparty to your contract."
+msgid "Margin &mdash; The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover our exposure as a counterparty to your contract."
 msgstr "Margin - Jumlah yang disisihkan dari Saldo Akun Anda untuk membuka dan memelihara Transaksi, untuk menutupi risiko kami sebagai pihak pengelola kontrak Anda."
 
 msgid "Margin FX"
 msgstr "Margin FX"
 
-msgid "Margin Level - Ratio of Account Equity to Total Margin, expressed as a percentage."
+#, fuzzy
+#| msgid "Margin Level - Ratio of Account Equity to Total Margin, expressed as a percentage."
+msgid "Margin Level &mdash; Ratio of Account Equity to Total Margin, expressed as a percentage."
 msgstr "Level Margin - Rasio dari Akun Ekuitas pada Total Margin, dinyatakan dalam persen."
 
 msgid "Margin Payment"
@@ -4761,6 +4774,11 @@ msgstr "Kebijakan Margin"
 
 msgid "Margin Requirement and Calculation"
 msgstr "Persyaratan Margin dan Perhitungan"
+
+#, fuzzy
+#| msgid "The Margin Requirements can increase / decrease based on the aggregated size of your Open Position determined by the volume (number of lots), contract size (value per point in the original currency of the contract), market price and margin rate."
+msgid "Margin Requirements can increase/decrease based on the aggregated size of your Open Position determined by the volume (number of lots), contract size (value per point in the original currency of the contract), market price, and margin rate."
+msgstr "Persyaratan Margin dapat meningkat/menurun berdasarkan jumlah ukuran Posisi Berjalan dalam jumlah volume (jumlah lot), ukuran kontrak (nilai per poin pada mata uang original kontrak), harga pasar dan harga margin."
 
 msgid "Margin allows you to trade on leverage, giving you the same level of market exposure using much less capital."
 msgstr "Margin memungkinkan Anda untuk bertrading leverage, memberikan Anda tingkat eksposur yang sama dengan modal kecil."
@@ -5016,7 +5034,9 @@ msgstr "Perlu informasi lebih lanjut?"
 msgid "Need to Monitor Positions"
 msgstr "Perlu Memantau Kontrak"
 
-msgid "Neither the Company nor any its directors, officers, managers, employees, or agents shall be liable for any loss, damage or debt to you arising directly or indirectly out of or in connection with this Agreement. You agree to indemnify the Company and its directors, officers, managers, employees, or agents harmless from and against any and all liabilities, losses, damages, costs and expenses (including reasonable attorney's fees) incurred arising out of your failure to comply with any and all of its obligations set forth in this Agreement and/or the Company's enforcement against you of any and all of its rights under this Agreement."
+#, fuzzy
+#| msgid "Neither the Company nor any its directors, officers, managers, employees, or agents shall be liable for any loss, damage or debt to you arising directly or indirectly out of or in connection with this Agreement. You agree to indemnify the Company and its directors, officers, managers, employees, or agents harmless from and against any and all liabilities, losses, damages, costs and expenses (including reasonable attorney's fees) incurred arising out of your failure to comply with any and all of its obligations set forth in this Agreement and/or the Company's enforcement against you of any and all of its rights under this Agreement."
+msgid "Neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable for any loss, damage or debt to you arising directly or indirectly out of, or in connection with this Agreement. You agree to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses (including reasonable attorney's fees) incurred arising out of your failure to comply with any and all of your obligations set forth in this Agreement and/or the Company's enforcement against you of any and all of its rights under this Agreement."
 msgstr "Baik itu Perusahaan atau direktur, pegawai, manajer, pekerja atau agen dapat bertanggung jawab atas kerugian, kerusakan atau hutang yang Anda hasilkan baik secara langsung atau tidak langsung berhubungan dengan Perjanjian ini. Anda bersetuju untuk menghindarkan Perusahaan beserta direktur, pegawai, manajer, pekerja atau agen dari gugatan kewajiban, kerugian, kerusakan, biaya dan pengeluaran (termasuk biaya pengacara yang wajar) yang dihasilkan dari kegagalan Anda untuk mematuhi setiap dan semua kewajibannya yang diatur dalam Perjanjian ini dan/atau desakan Perusahaan bagi setiap dan semua hak berdasarkan Perjanjian ini."
 
 msgid "Neither you, your direct relatives, or any persons you control are eligible to become clients, and you shall not be entitled to any share of net revenue or any other remuneration from the Company in relation to such relatives, friends, or controlled persons."
@@ -5059,7 +5079,9 @@ msgstr "Token baru dibuat."
 msgid "Next"
 msgstr "Lanjutkan"
 
-msgid "Next Available Price - Earliest price reasonably available and quoted by Binary.com when our Price quotation reaches or goes beyond the level of your Stop Order."
+#, fuzzy
+#| msgid "Next Available Price - Earliest price reasonably available and quoted by Binary.com when our Price quotation reaches or goes beyond the level of your Stop Order."
+msgid "Next Available Price &mdash; Earliest price reasonably available and quoted by Binary.com when our Price quotation reaches or goes beyond the level of your Stop Order."
 msgstr "Harga Yang Tersedia Berikutnya - Harga awal yang tersedia dan ditawarkan oleh Binary.com ketika Harga penawaran tercapai atau keluar melampaui tingkat Stop Order Anda."
 
 msgid "Next-Gen"
@@ -5180,7 +5202,7 @@ msgid "October"
 msgstr "Oktober"
 
 msgid "Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform."
-msgstr ""
+msgstr "Menawarkan jangkauan terluas pada mata uang, jenis opsi dan periode trading pada platform trading cepat, milik sendiri."
 
 msgid "Office worker"
 msgstr "Office worker"
@@ -5191,7 +5213,9 @@ msgstr "Kata sandi lama salah."
 msgid "On the basis of the information provided in relation to your knowledge and experience, we consider that the investments available via this website are not appropriate for you."
 msgstr "Berdasarkan informasi yang diberikan berkaitan dengan pengetahuan dan pengalaman, kami menganggap bahwa investasi yang tersedia melalui website ini tidak sesuai untuk Anda."
 
-msgid "On the occurrence of an Event of Default, we may exercise our rights under this clause by, at any time and without prior notice:"
+#, fuzzy
+#| msgid "On the occurrence of an Event of Default, we may exercise our rights under this clause by, at any time and without prior notice:"
+msgid "On the occurrence of an Event of Default, we may exercise our rights under this clause, at any time and without prior notice:"
 msgstr "Jika terjadi Wanprestasi, kami dapat menggunakan hak kami di bawah klausul ini dengan, setiap saat dan tanpa pemberitahuan sebelumnya:"
 
 msgid "On-time Payments Every Time"
@@ -5260,7 +5284,9 @@ msgstr "Awal"
 msgid "Open Account"
 msgstr "Daftar Akun"
 
-msgid "Open Position - the position in a market made by reference to an Underlying Instrument created by opening a Transaction as a result of placing an Order to the extent that such position has not been closed in whole or in part under this Agreement."
+#, fuzzy
+#| msgid "Open Position - the position in a market made by reference to an Underlying Instrument created by opening a Transaction as a result of placing an Order to the extent that such position has not been closed in whole or in part under this Agreement."
+msgid "Open Position &mdash; The position in a market made by reference to an Underlying Instrument created by opening a Transaction as a result of placing an Order to the extent that such position has not been closed in whole or in part under this Agreement."
 msgstr "Posisi Berjalan - posisi pada pasar yang dibuat berdasarkan referensi Instrumen Dasar dengan membuka Transaksi dengan membeli Order dimana posisi tersebut belum terselesaikan secara keseluruhan atau sebagian di bawah Perjanjian ini."
 
 msgid "Open Positions"
@@ -5269,10 +5295,8 @@ msgstr "Lowongan Pekerjaan"
 msgid "Open Source"
 msgstr "Open Source"
 
-#, fuzzy
-#| msgid "Open demo account"
 msgid "Open a Demo Account"
-msgstr "Daftar akun demo"
+msgstr "Mendaftar Akun Demo"
 
 msgid "Open a Financial Account"
 msgstr "Daftar Akun Finansial"
@@ -5313,17 +5337,21 @@ msgstr "Jenis Opsi"
 msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
 msgstr "Trading opsi dapat menyebabkan ketagihan, sebagaimana kegiatan lain yang dilakukan di luar batas. Untuk menghidari bahaya ketagihan tersebut, kami menyediakan pengecekan yang memberikan ringkasan trading Anda secara teratur."
 
-msgid "Order - an execution instruction given by you to us in relation to a Market Order, Stop Order, Limit Order, and etc."
+#, fuzzy
+#| msgid "Order - an execution instruction given by you to us in relation to a Market Order, Stop Order, Limit Order, and etc."
+msgid "Order &mdash; An execution instruction given by you to us in relation to a Market Order, Stop Order, Limit Order, and etc."
 msgstr "Order - sebuah eksekusi yang Anda berikan kepada kami untuk sebuah Market Order, Stop Order, Limit Order dan lainnya."
 
 msgid "Order Execution"
 msgstr "Eksekusi Order"
 
-msgid "Order Execution / Cancellation / Modification"
-msgstr "Eksekusi Order / Pembatalan / Modifikasi"
-
 msgid "Order Execution Policy"
 msgstr "Kebijakan Eksekusi Order"
+
+#, fuzzy
+#| msgid "Order Execution / Cancellation / Modification"
+msgid "Order Execution/Cancellation/Modification"
+msgstr "Eksekusi Order / Pembatalan / Modifikasi"
 
 msgid "Original Barrier"
 msgstr "Batasan Asli"
@@ -5364,7 +5392,9 @@ msgstr "Kebijakan Eksekusi Order (\"Kebijakan\") menetapkan ikhtisar dan pendeka
 msgid "Our Policy"
 msgstr "Kebijakan Kami"
 
-msgid "Our Prices are determined by reference to the price of the underlying instrument which is quoted on external exchanges or dealing facilities that we select at our discretion. Our IT infrastructure and price aggregator system facilitates the reception of quotes from shortlisted prime brokers who act as liquidity providers for us and the delivery of the quotes, derived with reference against relevant benchmark and markets, to you. You acknowledge that our Prices may differ from the bid and offer prices made available by external exchanges or dealing facilities and we are not liable for any losses that you incur arising from such differences. Refer to our Product Disclosure Statement for our pricing methodology and factors. This clause does not apply to Volatility Indices."
+#, fuzzy
+#| msgid "Our Prices are determined by reference to the price of the underlying instrument which is quoted on external exchanges or dealing facilities that we select at our discretion. Our IT infrastructure and price aggregator system facilitates the reception of quotes from shortlisted prime brokers who act as liquidity providers for us and the delivery of the quotes, derived with reference against relevant benchmark and markets, to you. You acknowledge that our Prices may differ from the bid and offer prices made available by external exchanges or dealing facilities and we are not liable for any losses that you incur arising from such differences. Refer to our Product Disclosure Statement for our pricing methodology and factors. This clause does not apply to Volatility Indices."
+msgid "Our Prices are determined by reference to the price of the underlying instrument which is quoted on external exchanges or dealing facilities that we select at our discretion. Our IT infrastructure and price aggregator system facilitates the reception of quotes from shortlisted prime brokers who act as liquidity providers for us and the delivery of the quotes, derived with reference against relevant benchmark and markets, to you. You acknowledge that our Prices may differ from the bid and offer prices made available by external exchanges or dealing facilities and we are not liable for any losses that you incur arising from such differences. This clause does not apply to Volatility Indices."
 msgstr "Harga Kami ditentukan dengan mengacu pada harga instrumen dasar yang dikutip dari bursa eksternal atau fasilitas dealing yang kami pilih sendiri. Sistem infrastruktur IT dan harga aggregator yang kami miliki memfasilitasi penerimaan kutipan harga dari broker utama terpilih yang berperan sebagai penyedia likuiditas untuk kami dan mengirimkan kutipan, dengan mengacu kepada patokan pasar yang relevan, untuk Anda. Anda mengetahui bahwa Harga kami mungkin sedikit berbeda dengan harga bid dan offer yang disediakan pada bursa atau fasilitas dealing eksternal dan kami tidak bertanggung jawab atas kerugian yang timbul dari perbedaan tersebut. Silahkan lihat Pernyataan Pengungkapan Produk mengenail metodologi harga dan berbagai faktor yang kami tawarkan. Klausul ini tidak berlaku pada Indeks Volatilitas."
 
 msgid "Our commitment to provide you with 'best execution' does not mean that we owe you any fiduciary responsibilities over and above the specific regulatory obligations placed upon us or as may be otherwise contracted between us."
@@ -5481,10 +5511,8 @@ msgstr "Bermitra Bersama Kami"
 msgid "Partners"
 msgstr "Mitra"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Knowledge Test"
 msgid "Pass our Knowledge Test"
-msgstr "{JAPAN ONLY}Knowledge Test"
+msgstr "Lulus pada Tes Pengetahuan kami"
 
 msgid "Password"
 msgstr "Kata Sandi"
@@ -5597,6 +5625,18 @@ msgstr "Berbagai Platform"
 msgid "Please %1 to view this page"
 msgstr "Silahkan %1 untuk melihat halaman ini"
 
+msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
+msgstr "Silahkan %1setujui Syarat dan Ketentuan terbaru%2 untuk meningkatkan batasan penarikan dan trading Anda."
+
+msgid "Please %1authenticate your account%2 to lift your withdrawal and trading limits."
+msgstr "Silahkan %1otentikasi akun Anda%2 untuk meningkatkan batasan penarikan dan trading."
+
+msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
+msgstr "Silahkan %1lengkapi profil akun Anda%2 untuk meningkatkan batasan penarikan dan trading."
+
+msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
+msgstr "Silahkan <a href=\"%1\">setujui Syarat dan Ketentuan terbaru</a>."
+
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "Silahkan <a href=\"%1\">mendeposit</a> sebelum mentransfer kepada klien."
 
@@ -5617,6 +5657,9 @@ msgstr "Silahkan periksa email Anda untuk memperoleh token diperlukan untuk mere
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "Silahkan pilih mata uang mana yang ingin Anda depositkan."
+
+msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
+msgstr "Silahkan lengkapi %1formulir penilaian finansial%2 untuk meningkatkan batasan penarikan dan trading Anda."
 
 msgid "Please complete the tax information before proceeding."
 msgstr "Mohon lengkapi informasi pajak sebelum melanjutkan."
@@ -5704,9 +5747,6 @@ msgstr "Silakan pilih minimal satu scope"
 
 msgid "Please select the checkbox."
 msgstr "Silakan pilih kotak centang."
-
-msgid "Please select your country of residence"
-msgstr "Silakan pilih negara domisili Anda"
 
 msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
 msgstr "Silahkan kirim dokumen-dokumen berikut untuk memverifikasi identitas Anda dan mengotentikasi akun Anda:"
@@ -5816,7 +5856,9 @@ msgstr "Harga"
 msgid "Price - the price at which the transaction in relation to your order is executed at."
 msgstr "Harga - harga di mana transaksi dalam kaitannya dengan pembelian pesanan Anda."
 
-msgid "Price/ Prices - Bid and Offer Price/ Prices."
+#, fuzzy
+#| msgid "Price/ Prices - Bid and Offer Price/ Prices."
+msgid "Price/Prices &mdash; Bid and Offer Price/Prices."
 msgstr "Harga/ Berbagai Harga - Bid dan Harga/ Berbagai Harga Offer."
 
 msgid "Primary"
@@ -5831,7 +5873,9 @@ msgstr "Berpengetahuan dan pengalaman pada pengembangan IT"
 msgid "Prior knowledge and experience with the financial industry"
 msgstr "Berpengetahuan dan berpengalaman pada industri jasa keuangan"
 
-msgid "Prior to placing an Order which results in opening a Transaction or increasing an existing Open Position, you acknowledge that it is your responsibility to ensure that your Account Free Margin is sufficient to cover the Margin required in relation to the open Transaction (the \"Margin Requirement\"), and to continuously meet the Margin Requirement."
+#, fuzzy
+#| msgid "Prior to placing an Order which results in opening a Transaction or increasing an existing Open Position, you acknowledge that it is your responsibility to ensure that your Account Free Margin is sufficient to cover the Margin required in relation to the open Transaction (the \"Margin Requirement\"), and to continuously meet the Margin Requirement."
+msgid "Prior to placing an Order which results in opening a Transaction or increasing an existing Open Position, you acknowledge that it is your responsibility to ensure that your Account's Free Margin is sufficient to cover the Margin required in relation to the open Transaction (the \"Margin Requirement\"), and to continuously meet the Margin Requirement."
 msgstr "Sebelum membuka Order dengan membeli Transaksi atau menambah Posisi Berjalan, Anda mengetahui bahwa merupakan kewajiban Anda untuk memastikan Margin Akun Anda mencukupi untuk menutup Margin yang diperlukan dalam pembukaan Transaksi (\"Kebutuhan Margin\"), dan untuk terus memenuhi Kebutuhan Margin."
 
 msgid "Privacy & Security"
@@ -6002,7 +6046,9 @@ msgstr "Baca berbagai jawaban dari pertanyaan umum."
 msgid "Real Account"
 msgstr "Akun Riil"
 
-msgid "Real Account - Your real money account opened with Binary.com's MT5 Trading Platform licensed from MetaQuotes Software Corporation."
+#, fuzzy
+#| msgid "Real Account - Your real money account opened with Binary.com's MT5 Trading Platform licensed from MetaQuotes Software Corporation."
+msgid "Real Account &mdash; Your real money account opened with Binary.com's MT5 Trading Platform licensed from MetaQuotes Software Corporation."
 msgstr "Akun Riil - Akun Uang Riil Anda pada Platform Trading MT5 Binary.com dilisensi oleh MetaQuotes Software Corporation."
 
 msgid "Real Cent"
@@ -6033,7 +6079,7 @@ msgid "Receive news and special offers"
 msgstr "Menerima berita dan penawaran khusus"
 
 msgid "Receive your activation code by secure"
-msgstr ""
+msgstr "Menerima kode aktivasi Anda dengan aman"
 
 msgid "Ref."
 msgstr "Ref."
@@ -6239,10 +6285,14 @@ msgstr "Risks for binary option trading"
 msgid "Risks of Investment Products"
 msgstr "Risiko Produk Investasi"
 
-msgid "Roll-over - In the event that the Company does not receive Orders from you to close an Open Position by the close of a Business Day, the Company will roll-over the said Open Position to the following day being a Business Day."
+#, fuzzy
+#| msgid "Roll-over - In the event that the Company does not receive Orders from you to close an Open Position by the close of a Business Day, the Company will roll-over the said Open Position to the following day being a Business Day."
+msgid "Roll-over &mdash; In the event that the Company does not receive Orders from you to close an Open Position by the close of a Business Day, the Company will roll-over the said Open Position to the following day being a Business Day."
 msgstr "Roll-over - Situasi dimana perusahaan tidak menerima permintaan Anda untuk menutup Posisi Berjalan pada akhir Trading, perusahaan akan melakukan posisi roll-over pada posisi bersangkutan ke hari berikutnya."
 
-msgid "Roll-over Credit/Debit - Accounts with Open Positions concerned by the Roll-over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit which is determined by the Company at its sole discretion."
+#, fuzzy
+#| msgid "Roll-over Credit/Debit - Accounts with Open Positions concerned by the Roll-over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit which is determined by the Company at its sole discretion."
+msgid "Roll-over Credit/Debit &mdash; Accounts with Open Positions concerned by the Roll-over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit which is determined by the Company at its sole discretion."
 msgstr "Roll-over Kredit/Debit - Akun dengan Posisi Berjalan dengan Roll-over akan dikreditkan atau didebit dengan jumlah yang telah ditentukan oleh Perusahaan atas kebijakannya sendiri."
 
 msgid "Run daily payments reports and report suspected fraud"
@@ -6309,7 +6359,7 @@ msgid "Security testing opportunities"
 msgstr "Kesempatan menguji keamanan"
 
 msgid "Segregated Funds"
-msgstr ""
+msgstr "Dana Terpisah"
 
 msgid "Select market"
 msgstr "Pilih pasar"
@@ -6563,10 +6613,8 @@ msgstr "Mulai dari:"
 msgid "Start learning"
 msgstr "Mulai Belajar"
 
-#, fuzzy
-#| msgid "Start"
 msgid "Start now"
-msgstr "Mulai"
+msgstr "Mulai sekarang"
 
 msgid "Start time"
 msgstr "Waktu mulai"
@@ -6629,13 +6677,17 @@ msgstr "Frekuensi trading saham"
 msgid "Stop Loss Level"
 msgstr "Tingkat Stop Loss"
 
-msgid "Stop Order / Stop Loss Order - an instruction to execute a Transaction to close an Open Position when the Price reaches your specified Price."
+#, fuzzy
+#| msgid "Stop Order / Stop Loss Order - an instruction to execute a Transaction to close an Open Position when the Price reaches your specified Price."
+msgid "Stop Order/Stop Loss Order &mdash; An instruction to execute a Transaction to close an Open Position when the Price reaches your specified Price."
 msgstr "Stop Order / Stop Loss Order - instruksi untuk mengeksekusi Transaksi untuk menutup Posisi Berjalan ketika Harga menyentuh spesifikasi Harga Anda."
 
 msgid "Stop Out Level"
 msgstr "Level Stop Out"
 
-msgid "Stop Out Level - the Margin Level at or below which your Open Positions may be forcefully with or without your prior consent."
+#, fuzzy
+#| msgid "Stop Out Level - the Margin Level at or below which your Open Positions may be forcefully with or without your prior consent."
+msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
 msgstr "Level Stop Out - Posisi pada atau dibawah Level Margin dimana Posisi Berjalan Anda mungkin terpaksa dengan atau tanpa persetujuan Anda."
 
 msgid "Stop Profit Level"
@@ -6695,7 +6747,9 @@ msgstr "Tunduk pada instruksi khusus yang dapat Anda berikan, ketika menjalankan
 msgid "Subject to network latency, we endeavour to execute your Order within a reasonable time from the time you triggered the Order, at the Price nearest to your specified Price. We do not guarantee that a Transaction will be opened/closed following an Order being triggered by you at your specified Price."
 msgstr "Tergantung pada kecepatan network,  kami berusaha untuk mengeksekusi Order Anda dalam waktu yang wajar sejak Anda mengklik Order, pada Harga yang terdekat dengan Harga yang telah ditentukan. Kami tidak menjamin transaksi akan dibuka/ditutup serta merta pada Harga yang ditentukan."
 
-msgid "Subject to the availability and sufficiency of funds in your Real Account, you may withdraw your funds from Real Account to your Binary Options Real Account."
+#, fuzzy
+#| msgid "Subject to the availability and sufficiency of funds in your Real Account, you may withdraw your funds from Real Account to your Binary Options Real Account."
+msgid "Subject to the availability and sufficiency of funds in your Real Account, you may withdraw your funds from your Real Account to your Binary Options Real Account."
 msgstr "Tergantung pada sisa saldo pada Akun Rill Anda, Anda dapat menarik dana dari Akun Riil ke dalam Akun Riil Opsi Binary Anda."
 
 msgid "Submit"
@@ -6737,7 +6791,9 @@ msgstr "Membantu Grup dalam perekrutan dan manajemen bakat yang diperlukan"
 msgid "Suspend the trading of the affected instrument;"
 msgstr "Menangguhkan trading pada instrumen terlibat;"
 
-msgid "Suspending your Real Account and refusing to execute any Orders to enter into further Transactions with you. Whilst your Real Account is suspended, you will be able to place Orders to close your Open Positions but you will not be able to place Orders which would create Open Positions."
+#, fuzzy
+#| msgid "Suspending your Real Account and refusing to execute any Orders to enter into further Transactions with you. Whilst your Real Account is suspended, you will be able to place Orders to close your Open Positions but you will not be able to place Orders which would create Open Positions."
+msgid "Suspending your Real Account and refusing to execute any Orders to enter into further Transactions with you. Whilst your Real Account is suspended, you will be able to place Orders to close your Open Positions, but you will not be able to place Orders which would create Open Positions."
 msgstr "Menangguhkan Akun Riil Anda dan menolak untuk mengeksekusi setiap Order lebih lanjut dengan Anda. Sementara Akun Riil Anda dibatalkan, Anda dapat menutup posisi kontrak yang sedang berjalan, namun Anda tidak akan dapat menempatkan Order baru."
 
 msgid "Symbol"
@@ -6886,7 +6942,9 @@ msgstr "Agen akan mengirimkan jumlah penarikan (dikurangi komisi) melalui metode
 msgid "The Average"
 msgstr "Rata rata"
 
-msgid "The Binary.com website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2016 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2016 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at <a href='mailto:%1'>%1</a>. Binary.com and the bull/bear logo are registered trademarks."
+#, fuzzy
+#| msgid "The Binary.com website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2016 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2016 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at <a href='mailto:%1'>%1</a>. Binary.com and the bull/bear logo are registered trademarks."
+msgid "The Binary.com website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2017 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2017 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. If you have any questions about these terms or would like information about licensing materials from Binary Ltd., please contact us at <a href='mailto:%1'>%1</a>. Binary.com and the bull/bear logo are registered trademarks."
 msgstr "Website Binary.com dilindungi oleh beberapa hak cipta tertentu. Semua materi yang ditampilkan pada situs (tidak terbatas pada semua artikel, teks, gambar, logo, kompilasi, sistem, kode dan desain) adalah merupakan Hak Cipta Grup Perusahaan Binary 1999-2016. Materi tersebut dapat disalin dan didistribusikan secara terbatas untuk tujuan non-komersial saja, asalkan setiap bahan yang disalin tetap utuh dan memastikan pemberitahuan jelas sebagai berikut: \"Hak Cipta Binary Ltd 1999-2016.\" Bahan-bahan tersebut tidak dapat disalin atau disebarkan untuk tujuan komersial atau kompensasi dalam bentuk apapun tanpa izin tertulis dari anggota Grup Binary. Jika Anda memiliki pertanyaan tentang hal ini atau memerlukan informasi tentang lisensi bahan dari Binary Ltd, silahkan hubungi kami di <a href='mailto:%1'> 1% 1 </a> 2. Binary.com dan logo Binary adalah merek dagang terdaftar."
 
 msgid "The Binary.com website's static content (CSS, Javascript) is available as the <a target='_blank' href='%1'>binary-static</a> open-source project on github. Would you like to re-skin the Binary.com website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
@@ -7036,9 +7094,6 @@ msgstr "Level Margin Akun Riil Anda mencapai atau jatuh di bawah Level Stop Out;
 msgid "The Margin Requirement is a percentage of the value of the Open Positions and will continue to fluctuate in accordance with the value of the Open Positions throughout the duration of the relevant contracts (the \"Contract Value\")."
 msgstr "Persyaratan Margin adalah persentase dari nilai Posisi Berjalan dan akan terus berfluktuasi sesuai dengan nilai Posisi Berjalan sepanjang durasi kontrak yang bersangkutan (yaitu \"Nilai Kontrak\")."
 
-msgid "The Margin Requirements can increase / decrease based on the aggregated size of your Open Position determined by the volume (number of lots), contract size (value per point in the original currency of the contract), market price and margin rate."
-msgstr "Persyaratan Margin dapat meningkat/menurun berdasarkan jumlah ukuran Posisi Berjalan dalam jumlah volume (jumlah lot), ukuran kontrak (nilai per poin pada mata uang original kontrak), harga pasar dan harga margin."
-
 msgid "The Payment Agent facility is currently not available in your country."
 msgstr "Fasilitas Agen Pembayaran tidak tersedia pada negara anda."
 
@@ -7102,10 +7157,8 @@ msgstr "Mampu menulis dengan kualitas tinggi, mendokumentasikan kode sendiri, me
 msgid "The above personal data that we collect will be held by us and processed for any purpose as may be allowed by law or required by any law. We may also transfer such personal data to any company within the Binary Group of companies, any of our business associates or payment providers, whether in or outside of the EEA including in countries which might not offer an equivalent level of protection of personal data."
 msgstr "Data pribadi diatas yang kami kumpulkan akan diselenggarakan oleh kami dan diproses untuk tujuan apapun yang mungkin diizinkan oleh hukum atau diwajibkan oleh hukum apapun. Kami juga dapat mentransfer data pribadi tersebut untuk setiap perusahaan dalam Binary Grup perusahaan, salah satu rekan bisnis kami atau penyedia pembayaran, baik di dalam maupun di luar EEA termasuk di negara-negara yang mungkin tidak menawarkan tingkat setara dengan perlindungan data pribadi."
 
-#, fuzzy
-#| msgid "The account transfer is unavailable. Please deposit to your account."
 msgid "The account transfer is unavailable. Please %1deposit%2 to your account."
-msgstr "Transfer antar akun tidak tersedia. Silahkan deposit ke akun Anda."
+msgstr "Transfer antar akun tidak tersedia. Silahkan %1deposit%2 ke dalam akun Anda."
 
 msgid "The affiliate program enables you to benefit from referring clients to the site. Growth and success is shared with affiliates who have the ability to bring new Clients to the site."
 msgstr "Program afiliasi memberi Anda manfaat dengan memperkenalkan klien kepada situs. Perkembangan dan sukses akan dibagikan kepada afiliasi yang memiliki kemampuan untuk membawa klien baru kedalam situs."
@@ -7203,7 +7256,9 @@ msgstr "Harga spot masuk adalah harga awal kontrak yang dibeli oleh trader."
 msgid "The execution venues are assessed, on a regular basis, whether the they provide for the best possible result for our clients."
 msgstr "Tempat-tempat eksekusi adalah dinilai, secara berkala, apakah mereka menyediakan hasil terbaik bagi Klien kami."
 
-msgid "The execution, delivery and performance of this Agreement and each Transaction will not violate any law, ordinance, charter, by-law or rule applicable to you or the jurisdiction in which you are resident."
+#, fuzzy
+#| msgid "The execution, delivery and performance of this Agreement and each Transaction will not violate any law, ordinance, charter, by-law or rule applicable to you or the jurisdiction in which you are resident."
+msgid "The execution, delivery, and performance of this Agreement and each Transaction will not violate any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident."
 msgstr "Eksekusi, pengiriman dan pelaksanaan Perjanjian ini dan setiap transaksi tidak akan melanggar hukum, peraturan, piagam, oleh-hukum atau aturan yang berlaku bagi Anda atau yurisdiksi di mana Anda berdomisili."
 
 msgid "The expiry price is the price of the underlying when the contract expires."
@@ -7293,7 +7348,9 @@ msgstr "Paten berarti Regent Markets diakui sebagai perintis trading binary. Pat
 msgid "The payout is the amount paid to an options trader if their prediction is correct."
 msgstr "Hasil adalah jumlah yang dibayarkan pada opsi trader jika analisa tepat."
 
-msgid "The personal information that we collect and hold is treated as confidential. Confidential information will not be used for any purpose other than in connection with the provision of margin trading service described in this Agreement. Confidential information will only be disclosed as and when required by law. We may also disclose such personal information to: (i) other companies within the Binary Group of companies; (ii) any such third parties a we see fit to assist us in servicing your Real Account; (iii) regulatory authorities upon their reasonable request; (iv) any such third parties as we see fit to assist us in enforcing our legal or contractual rights against you including but not limited to legal advisors; (v) third parties as we see fit to investigate or prevent fraud or other illegal activities."
+#, fuzzy
+#| msgid "The personal information that we collect and hold is treated as confidential. Confidential information will not be used for any purpose other than in connection with the provision of margin trading service described in this Agreement. Confidential information will only be disclosed as and when required by law. We may also disclose such personal information to: (i) other companies within the Binary Group of companies; (ii) any such third parties a we see fit to assist us in servicing your Real Account; (iii) regulatory authorities upon their reasonable request; (iv) any such third parties as we see fit to assist us in enforcing our legal or contractual rights against you including but not limited to legal advisors; (v) third parties as we see fit to investigate or prevent fraud or other illegal activities."
+msgid "The personal information that we collect and hold is treated as confidential. Confidential information will not be used for any purpose other than in connection with the provision of the margin trading services described in this Agreement. Confidential information will only be disclosed as and when required by law. We may also disclose such personal information to: (i) other companies within the Binary Group of companies; (ii) any such third parties as we see fit to assist us in servicing your Real Account; (iii) regulatory authorities upon their reasonable request; (iv) any such third parties as we see fit to assist us in enforcing our legal or contractual rights against you, including, but not limited, to legal advisors; (v) third parties as we see fit to investigate or prevent fraud or other illegal activities."
 msgstr "Informasi pribadi yang kami kumpulkan adalah bersifat rahasia. Informasi rahasia tersebut tidak akan digunakan untuk tujuan apapun selain berhubungan dengan penyediaan layanan trading margin yang telah dijelaskan dalam Perjanjian ini. Informasi rahasia tersebut hanya akan disampaikan jika diperlukan oleh pihak berwenang. Kami juga dapat menyampaikan informasi pribadi tersebut kepada: (i) perusahaan lain dalam Grup perusahaan Binary; (ii) pihak ketiga yang membantu kami dalam melayani Akun Riil Anda; (iii) pihak berwenang atas permintaan; (iv) pihak ketiga sebagai penegak hukum atau penasehat hukum; (v) pihak ketiga dalam hal penyelidikan berhubung kasus penipuan atau kegiatan ilegal lainnya."
 
 msgid "The personal information that we obtain about you assists us in servicing your account. We know you may be concerned about what we do with this information, and with financial information about your account. The following outlines our privacy practices."
@@ -7308,11 +7365,13 @@ msgstr "Keuntungan adalah selisih antara harga beli (modal) dengan hasil pada ko
 msgid "The profit of USD 294 is the difference between the exit and entry level multiplied by the amount per point."
 msgstr "Keuntungan sebesar 294 adalah perbedaan tingkat keluar dan masuk dikalikan dengan jumlah per poin."
 
-msgid "The provision of the margin trading service described in this Agreement utilises a third party system acquired via a non-exclusive, non-transferable, non-sublicensable, terminable licence from the third party system provider/licensor (the \"MT5 Trading Platform\"). You acknowledge that we reserve the right to change the third party system provider/licensor during the course of proving the margin trading service described in this Agreement to you."
-msgstr "Penyediaan layanan trading margin yang dijelaskan dalam Perjanjian ini menggunakan sistem pihak ketiga secara tidak eksklusif, tidak dapat dipindahtangankan, lisensi dapat dihentikan sewaktu waktu dari penyedia pihak ke ketiga/pemberi lisensi (\"Platform Trading MT5\"). Anda mengakui bahwa kami berhak untuk merubah penggunaan penyedia sistem yaitu pihak ketiga/pemberi lisensi selama layanan trading margin yang dijelaskan dalam Perjanjian ini untuk Anda."
-
 msgid "The provision of the margin trading services described in this Agreement is not available in the European Union."
 msgstr "Penyediaan jasa rading margin yang dijelaskan dalam Perjanjian ini tidak tersedia di Uni Eropa."
+
+#, fuzzy
+#| msgid "The provision of the margin trading service described in this Agreement utilises a third party system acquired via a non-exclusive, non-transferable, non-sublicensable, terminable licence from the third party system provider/licensor (the \"MT5 Trading Platform\"). You acknowledge that we reserve the right to change the third party system provider/licensor during the course of proving the margin trading service described in this Agreement to you."
+msgid "The provision of the margin trading services described in this Agreement utilises a third-party system acquired via a non-exclusive, non-transferable, non-sublicensable, terminable licence from the third-party system provider/licensor (the \"MT5 Trading Platform\"). You acknowledge that we reserve the right to change the third-party system provider/licensor during the course of providing the margin trading services described in this Agreement to you."
+msgstr "Penyediaan layanan trading margin yang dijelaskan dalam Perjanjian ini menggunakan sistem pihak ketiga secara tidak eksklusif, tidak dapat dipindahtangankan, lisensi dapat dihentikan sewaktu waktu dari penyedia pihak ke ketiga/pemberi lisensi (\"Platform Trading MT5\"). Anda mengakui bahwa kami berhak untuk merubah penggunaan penyedia sistem yaitu pihak ketiga/pemberi lisensi selama layanan trading margin yang dijelaskan dalam Perjanjian ini untuk Anda."
 
 msgid "The required minimum deposit has been made by the client AND"
 msgstr "Syarat minimal deposit telah dilakukan oleh Pelanggan DAN"
@@ -7644,7 +7703,9 @@ msgstr "Total"
 msgid "Total Cost"
 msgstr "Total Biaya"
 
-msgid "Total Margin - The aggregate of all Margin Requirements in your Real Account."
+#, fuzzy
+#| msgid "Total Margin - The aggregate of all Margin Requirements in your Real Account."
+msgid "Total Margin &mdash; The aggregate of all Margin Requirements in your Real Account."
 msgstr "Total Margin - Total jumlah semua Persyaratan Margin pada Akun Riil Anda."
 
 msgid "Total Net Revenue Per Month"
@@ -7699,7 +7760,7 @@ msgid "Trade only with money you can afford to lose. Do not trade with borrowed 
 msgstr "Bertradinglah menggunakan dana yang anda mampu. Jangan bertrading menggunakan dana pinjaman."
 
 msgid "Trade the world’s major currencies with a wide range options and trading periods. More than any other Japan broker!"
-msgstr ""
+msgstr "Bertrading mata uang utama dunia dengan berbagai pilihan opsi dan periode trading. Melebihi broker lainnya di Jepang!"
 
 msgid "Trade type"
 msgstr "Jenis kontrak"
@@ -7758,7 +7819,9 @@ msgstr "TradingView untuk Binary.com"
 msgid "Transact in"
 msgstr "Bertransaksi di"
 
-msgid "Transaction - a contract entered into by you pursuant to this Agreement."
+#, fuzzy
+#| msgid "Transaction - a contract entered into by you pursuant to this Agreement."
+msgid "Transaction &mdash; A contract entered into by you pursuant to this Agreement."
 msgstr "Transaksi - kontrak yang Anda beli berdasarkan Perjanjian ini."
 
 msgid "Transaction performed by %1 (App ID: %2)"
@@ -7821,10 +7884,8 @@ msgstr "Coba Webtrader"
 msgid "Try it now"
 msgstr "Coba sekarang"
 
-#, fuzzy
-#| msgid "Try TradingView"
 msgid "Try our trading page"
-msgstr "Coba TradingView"
+msgstr "Coba halaman trading kami"
 
 msgid "Tu"
 msgstr "Kam"
@@ -7991,8 +8052,10 @@ msgstr "Verifikasi kata sandi utama"
 msgid "Verify new password"
 msgstr "Verifikasi kata sandi baru"
 
-msgid "Version 3"
-msgstr "Versi 3"
+#, fuzzy
+#| msgid "Version 43. Last modified 2016-11-09."
+msgid "Version 4. Last modified 2016-12-30."
+msgstr "Versi 43. Diperbarui terakhir pada 09-11-2016."
 
 msgid "Version 43. Last modified 2016-11-09."
 msgstr "Versi 43. Diperbarui terakhir pada 09-11-2016."
@@ -8147,7 +8210,9 @@ msgstr "Pada dasarnya kami tidak memerlukan dokumen pada saat pendaftaran kecual
 msgid "We employ an extensive team of writers, designers, market analysts and programmers, who are particularly dedicated to producing accessible, educational and sales material for our affiliates. We go way beyond banners to offer an informative and entertaining way on how to advertise online; including text ads, customer landing pages and promotions, free content as also gifts for your site visitors."
 msgstr "Kami mempekerjakan tim ekstensif terdiri dari penulis, desainer, analis pasar dan programmer yang didedikasikan khusus untuk memproduksi materi pendidikan dan penjualan khusus bagi afiliasi kami. Kami memiliki berbagai pilihan banner, iklan teks, halaman tujuan pelanggan dan promosi, konten gratis dan bonus bagi pengunjung situs Anda."
 
-msgid "We endeavour to open or close the Transaction to which your Order relates at the price reasonably available to us, acting in accordance with our duty of best execution. Best execution means that we must take all sufficient steps to obtain, when executing orders, the best possible result for you taking into account price, costs, speed, likelihood of execution and settlement, size, nature or any other consideration relevant to the execution of the order."
+#, fuzzy
+#| msgid "We endeavour to open or close the Transaction to which your Order relates at the price reasonably available to us, acting in accordance with our duty of best execution. Best execution means that we must take all sufficient steps to obtain, when executing orders, the best possible result for you taking into account price, costs, speed, likelihood of execution and settlement, size, nature or any other consideration relevant to the execution of the order."
+msgid "We endeavour to open or close the Transaction to which your Order relates at the price reasonably available to us, acting in accordance with our duty of best execution. Best execution means that we must take all sufficient steps to obtain, when executing orders, the best possible result for you, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the order."
 msgstr "Kami berusaha untuk membuka atau menutup Transaksi Order Anda pada harga yang wajar, bertindak sesuai dengan tugas kami untuk memberi eksekusi terbaik. Eksekusi terbaik dimana kami harus mengambil beberapa langkah yang diperlukan untuk mengeksekusi order dengan hasil yang terbaik berdasarkan harga, biaya, kecepatan, kemungkinan eksekusi dan penyelesaian, ukuran, sifat atau pertimbangan lain yang relevan dalam pengeksekusian order."
 
 msgid "We have a general duty to conduct our business with you honestly, fairly, and professionally and to act in your best interests when opening and closing Binary Options trades with you."
@@ -8180,7 +8245,9 @@ msgstr "Kami mungkin akan merilis versi berikutnya dari API %1 dan mengharuskan 
 msgid "We may, at our absolute discretion, accept a Stop Order or a Limit Order from you. We may enable other types of Orders (for example, a trailing stop order) for your execution at any point in time."
 msgstr "Kami mungkin, dengan kebijaksanaan mutlak, menerima Stop Order atau Limit Order dari Anda. Kami mungkin akan menyediakan Order lain (sebagai contoh, trailing stop order) untuk eksekusi Anda setiap waktu."
 
-msgid "We may, at our absolute discretion, disregard your Order if an Event takes place resulting it to be no longer reasonable for us to act on your Order after indicating an acceptance of your Order."
+#, fuzzy
+#| msgid "We may, at our absolute discretion, disregard your Order if an Event takes place resulting it to be no longer reasonable for us to act on your Order after indicating an acceptance of your Order."
+msgid "We may, at our absolute discretion, disregard your Order if an Event takes place resulting in it no longer being reasonable for us to act on your Order after indicating an acceptance of your Order."
 msgstr "Kami mungkin, dengan kebijaksanaan mutlak, menolak Order Anda jika terjadi Sesuatu yang menyebabkan order tersebut tidak wajar bagi kami untuk memproses Order Anda setelah Order tersebut diterima."
 
 msgid "We may, however, withhold your withdrawal request from your Real Account to your Binary Options Real Account, in whole or in part, if:"
@@ -8216,7 +8283,9 @@ msgstr "Kami berhak menolak permohonan referral Anda untuk mendaftar akun (atau 
 msgid "We reserve the right to refuse your request to open a Real Account for any reason, and any Real Account may be closed at our discretion at any time."
 msgstr "Kami berhak untuk menolak permintaan Anda untuk mendaftar Akun Riil dengan alasan apapun, dan setiap Akun Riil dapat ditutup dengan kebijaksanaan kami setiap saat."
 
-msgid "We reserve the right to void or amend the contractual terms of any Transactions that we reasonably believe are entered into at prices that do not reflect fair market prices or that are entered into at an abnormally low level of risk due to an obvious or palpable error (a Manifest Error). In deciding whether an error is a Manifest Error, we may take into account any relevant information including, the state of the underlying market at the time of the error and any error within, or lack of clarity of, any information source or pronouncement. You have a duty to report to us any such problems, errors or suspected system inadequacies that you may experience and may not abuse of or arbitrage such system problems or errors for profit. We will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between you and us in connection with the Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms and conditions of this Agreement. You further acknowledge and agree that we will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused or alleged to be caused by or in connection with a Manifest Error."
+#, fuzzy
+#| msgid "We reserve the right to void or amend the contractual terms of any Transactions that we reasonably believe are entered into at prices that do not reflect fair market prices or that are entered into at an abnormally low level of risk due to an obvious or palpable error (a Manifest Error). In deciding whether an error is a Manifest Error, we may take into account any relevant information including, the state of the underlying market at the time of the error and any error within, or lack of clarity of, any information source or pronouncement. You have a duty to report to us any such problems, errors or suspected system inadequacies that you may experience and may not abuse of or arbitrage such system problems or errors for profit. We will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between you and us in connection with the Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms and conditions of this Agreement. You further acknowledge and agree that we will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused or alleged to be caused by or in connection with a Manifest Error."
+msgid "We reserve the right to void or amend the contractual terms of any Transactions that we reasonably believe are entered into at prices that do not reflect fair market prices or that are entered into at an abnormally low level of risk due to an obvious or palpable error (a “Manifest Error”). In deciding whether an error is a Manifest Error, we may take into account any relevant information, including the state of the underlying market at the time of the error and any error within, or lack of clarity of, any information source or pronouncement. You have a duty to report to us any such problems, errors, or suspected system inadequacies that you may experience and may not abuse or arbitrage such system problems or errors for profit. We will endeavour to resolve any such difficulties in the shortest time possible."
 msgstr "Kami berhak untuk membatalkan atau mengubah syarat-syarat kontrak transaksi yang kami yakini tidak mencerminkan harga pasar yang adil atau transaksi yang dibeli berdasarkan level risiko rendah berhubung kesalahan nyata (Manifest Error). Dalam menentukan apakah kesalahan kesalahan nyata, kita mungkin mempertimbangkan informasi terkait termasuk, keadaan pasar acuannya pada saat kesalahan dan kesalahan dalam, atau kurangnya kejelasan, atau sumber informasi pengumuman. Anda memiliki kewajiban untuk melaporkan kepada kami seperti apa masalah, kesalahan atau kekurangan sistem yang Anda alami dan tidak menyalahgunakan atau memanfaatkan masalah sistem atau kesalahan untuk keuntungan pribadi. Kami akan berusaha untuk menyelesaikan kesulitan-kesulitan seperti itu dalam waktu sesingkat mungkin. Setiap perubahan atas syarat-syarat kontrak berhubung kesalahan error akan dipertimbangkan dengan wajar dan adil. Dana yang dipertukarkan antara Anda dan kami berkaitan dengan kontrak yang mengalami error akan dikembalikan kepada penerima sesuai dengan perubahan yang dibuat berdasarkan syarat dan ketentuan Perjanjian ini. Anda lebih lanjut mengakui dan setuju bahwa kami tidak bertanggung jawab secara langsung atau tidak di atas kerugian, pengeluaran atau kerusakan yang disebabkan atau diduga disebabkan oleh atau berhubungan dengan error tersebut."
 
 msgid "We segregate all client funds and hold them in secure and licensed financial institutions, according to the conditions of our trading licenses."
@@ -8228,10 +8297,14 @@ msgstr "Kami memisahkan dana Anda dan menyimpannya pada lembaga-lembaga keuangan
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues."
 msgstr "Kami menggunakan pembuktian identitas dan mendeteksi tindakan penyalahgunaan secara langsung untuk membantu kami menjaga keamanan akun Anda dari akses yang tidak dibenarkan. Kami juga selalu memantau aktifitas penyalahgunaan dan bekerjasama dengan pihak berwajib untuk mengatasi masalah penipuan."
 
-msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorized access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and low-enforcement agencies to address fraud issues."
-msgstr "Kami menggunakan layanan verifikasi identitas dan langkah-langkah yang mendeteksi aktifitas penipuan setiap waktu yang membantu melindungi akun Anda dari akses yang tidak diinginkan. Kami juga memantau aktivitas akun yang memiliki tanda-tanda aktifitas yang mungkin mengindikasikan penipuan dan bekerjasama dengan agensi penagihan dan lembaga penegak hukum dalam mengatasi masalah penipuan."
+#, fuzzy
+#| msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues."
+msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and low-enforcement agencies to address fraud issues."
+msgstr "Kami menggunakan pembuktian identitas dan mendeteksi tindakan penyalahgunaan secara langsung untuk membantu kami menjaga keamanan akun Anda dari akses yang tidak dibenarkan. Kami juga selalu memantau aktifitas penyalahgunaan dan bekerjasama dengan pihak berwajib untuk mengatasi masalah penipuan."
 
-msgid "We will act on any instructions given or appearing to be given by you and received by us in relation to the margin trading service provided through the MT5 Trading Platform, as deemed instructed by you. However, it is not our obligation to act on any instructions deemed instructed by you, and we are not obligated to give you any reasons for declining to do so. Instructions received by us from you are deemed final and will not be revocable. It is your responsibility to ensure the genuineness and accuracy of the instructions given by you to us."
+#, fuzzy
+#| msgid "We will act on any instructions given or appearing to be given by you and received by us in relation to the margin trading service provided through the MT5 Trading Platform, as deemed instructed by you. However, it is not our obligation to act on any instructions deemed instructed by you, and we are not obligated to give you any reasons for declining to do so. Instructions received by us from you are deemed final and will not be revocable. It is your responsibility to ensure the genuineness and accuracy of the instructions given by you to us."
+msgid "We will act on any instructions given, or appearing to be given by you and received by us in relation to the margin trading services provided through the MT5 Trading Platform, as deemed instructed by you. However, it is not our obligation to act on any instructions deemed instructed by you, and we are not obligated to give you any reasons for declining to do so. Instructions received by us from you are deemed final and will not be revocable. It is your responsibility to ensure the genuineness and accuracy of the instructions given by you to us."
 msgstr "Kami akan bertindak berdasarkan instruksi apapun yang kami terima dari Anda dan yang kami terima berdasarkan layanan trading margin yang disediakan oleh Platform Trading MT5 sesuai dengan perintah Anda. Namun demikian, kami tidak wajib untuk menjalankan semua instruksi yang Anda berikan, dan kami juga tidak wajib untuk menginformasikan alasan penolakan instruksi tersebut. Instruksi yang kami terima merupakan instruksi final dan tidak dapat dirubah. Merupakan tanggungjawab Anda untuk memastikan kemurnian dan keakurasian instruksi yang Anda berikan."
 
 msgid "We will continue to close open positions until your margin level becomes higher than the stop out level."
@@ -8516,10 +8589,14 @@ msgstr "Penarikan untuk akun Anda tidak dapat dilanjutkan untuk saat ini. Silahk
 msgid "Withdrawal of Funds from Real Account"
 msgstr "Penarikan dana dari Akun Riil"
 
-msgid "Withdrawal of funds from Real Account must be made in the same currency maintained in your Binary Options Real Account."
+#, fuzzy
+#| msgid "Withdrawal of funds from Real Account must be made in the same currency maintained in your Binary Options Real Account."
+msgid "Withdrawal of funds from your Real Account must be made in the same currency maintained in your Binary Options Real Account."
 msgstr "Penarikan dana dari Akun Riil harus menggunakan mata uang yang sama pada Akun Riil Opsi Binary Anda."
 
-msgid "Without prejudice to any other terms of this Agreement, neither the Company nor any its directors, officers, managers, employees, or agents shall not be liable to you in relation to any loss that you incurred whether directly or indirectly by any cause beyond our control, including but not limited to, any delay or defect in or failure of the whole or any part of the MT5 Trading Platform or any systems or network links."
+#, fuzzy
+#| msgid "Without prejudice to any other terms of this Agreement, neither the Company nor any its directors, officers, managers, employees, or agents shall not be liable to you in relation to any loss that you incurred whether directly or indirectly by any cause beyond our control, including but not limited to, any delay or defect in or failure of the whole or any part of the MT5 Trading Platform or any systems or network links."
+msgid "Without prejudice to any other terms of this Agreement, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to you in relation to any loss that you incurred whether directly or indirectly by any cause beyond our control, including, but not limited to, any delay or defect in or failure of the whole or any part of the MT5 Trading Platform or any systems or network links."
 msgstr "Tanpa berprasangka pada syarat lain yang disebutkan dalam Perjanjian ini, baik itu Perusahaan atau Direkturnya, pegawai, manajer, atau agen lain bertanggungjawab kepada Anda pada setiap kerugian yang dihasilkan baik secara langsung atau tidak yang terjadi diluar kekuasaan, termasuk dan tidak terbatas kepada penundaan atau kerusakan atau kegagalan pada semua atau sebagian dari Platform Trading MT5 atau sistem manapun atau link jaringan."
 
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
@@ -8558,7 +8635,9 @@ msgstr "Tahun"
 msgid "Yes. Please email us at <a href=\"mailto:%1\">%1</a> for further assistance."
 msgstr "Iya. Silahkan email kami di <a href=\"mailto:%1\">%1</a> untuk bantuan selanjutnya."
 
-msgid "You acknowledge and accept that a Transaction may be subject to market rules laid down in by-laws, rules, provisions, customs and practices of an exchange, a market, a clearing house, a body or any other organisation involved in the execution, clearing, and/or settlement of said Transaction. Should any such organisation take decisions or measures which affect a Transaction or an Open Position, the Company shall be entitled to take any action (including closing any Open Position of the client) which it, at its sole discretion, considers reasonable. This clause does not apply to Volatility Indices."
+#, fuzzy
+#| msgid "You acknowledge and accept that a Transaction may be subject to market rules laid down in by-laws, rules, provisions, customs and practices of an exchange, a market, a clearing house, a body or any other organisation involved in the execution, clearing, and/or settlement of said Transaction. Should any such organisation take decisions or measures which affect a Transaction or an Open Position, the Company shall be entitled to take any action (including closing any Open Position of the client) which it, at its sole discretion, considers reasonable. This clause does not apply to Volatility Indices."
+msgid "You acknowledge and accept that a Transaction may be subject to market rules laid down in by-laws, rules, provisions, customs, and practices of an exchange, a market, a clearing house, a body or any other organisation involved in the execution, clearing, and/or settlement of said Transaction. Should any such organisation take decisions or measures which affect a Transaction or an Open Position, the Company shall be entitled to take any action (including closing any Open Position of the client) which it, at its sole discretion, considers reasonable. This clause does not apply to Volatility Indices."
 msgstr "Anda mengetahui dan menerima Transaksi mungkin akan tergantung kepada peraturan pasar yang ditetapkan oleh hukum, peraturan, ketentuan, adat istiadat dan praktek pertukaran, pasar, rumah kliring, perbadanan atau organisasi lain yang terlibat dalam pelaksanaan, kliring, dan/atau penyelesaian Transaksi yang disebutkan. Jika organisasi yang disebutkan diatas mengambil keputusan yang mempengaruhi Transaksi atau Posisi Berjalan, maka Perusahaan dapat mengambil tindakan (termasuk menutup Posisi Berjalan klien) dengan keputusan sendiri, yang dianganggap wajar. Klausul ini tidak berlaku pada Indeks Volatilitas."
 
 msgid "You acknowledge and accept that your Real Account will be maintained in one currency, which is the same currency maintained in your Binary Options Real Account."
@@ -8570,7 +8649,9 @@ msgstr "Anda mengakui dan setuju bahwa Perusahaan dapat, sewaktu-waktu tanpa pem
 msgid "You acknowledge and agree that you are solely and exclusively responsible for the control, operation and security of transactions and communications made through its access to or use of the %1 API. You acknowledge that there are risks associated with utilizing an internet-based deal execution trading system including, but not limited to, the failure of hardware, software, and internet connections. You acknowledge that the Company does not control signal power, its reception or routing via the internet, configuration of your equipment or reliability of its connection, and the Company shall not be responsible for any communication failures, disruptions, errors, distortions or delays you may experience when trading via the internet using the %1 API."
 msgstr "Anda mengetahui dan setuju bahwa Anda sepenuhnya bertanggung jawab atas kontrol, operasi dan keamanan transaksi dan komunikasi yang dilakukan melalui akses ke atau penggunaan API %1. Anda mengetahui bahwa terdapat risiko yang terkait dengan memanfaatkan sistem kesepakatan trading eksekusi berbasis internet termasuk, namun tidak terbatas pada, kegagalan dari perangkat keras, perangkat lunak, dan koneksi internet. Anda mengetahui bahwa Perusahaan tidak mengontrol kekuatan sinyal, penerimaan atau routing melalui internet, konfigurasi peralatan Anda atau keandalan koneksi, dan Perusahaan tidak bertanggung jawab atas kegagalan komunikasi, gangguan, kesalahan, distorsi atau keterlambatan yang mungkin akan Anda alami saat bertrading menggunakan API %1."
 
-msgid "You acknowledge that a Stop or Limit Order placed on your Open Position, when executed, would be capable of closing or partly closing such Transaction. You also acknowledge that it is your responsibility to cancel the Stop or Limit Order that you placed on your Open Positions if you do not want the Stop or Limit Order to remain valid. If you close your original Transaction and fail to cancel the Stop or Limit Order, we shall be entitled, at our absolute discretion, to treat the Stop or Limit Order as an instruction to enter into a new Transaction for you if and when our quote reaches or goes beyond the level of the Stop or Limit Order."
+#, fuzzy
+#| msgid "You acknowledge that a Stop or Limit Order placed on your Open Position, when executed, would be capable of closing or partly closing such Transaction. You also acknowledge that it is your responsibility to cancel the Stop or Limit Order that you placed on your Open Positions if you do not want the Stop or Limit Order to remain valid. If you close your original Transaction and fail to cancel the Stop or Limit Order, we shall be entitled, at our absolute discretion, to treat the Stop or Limit Order as an instruction to enter into a new Transaction for you if and when our quote reaches or goes beyond the level of the Stop or Limit Order."
+msgid "You acknowledge that a Stop or Limit Order placed on your Open Position, when executed, would be capable of closing or partly closing your Transaction. You also acknowledge that it is your responsibility to cancel the Stop or Limit Order that you placed on your Open Positions if you do not want the Stop or Limit Order to remain valid. If you close your original Transaction and fail to cancel the Stop or Limit Order, we shall be entitled, at our absolute discretion, to treat the Stop or Limit Order as an instruction to enter into a new Transaction for you if and when our quote reaches or goes beyond the level of the Stop or Limit Order."
 msgstr "Anda mengetahui bahwa Stop atau Limit Order dipasangkan pada Posisi Berjalan Anda, ketika dieksekusi, akan mampu menutup sebagian atau menutup semua Transaksi tersebut. Anda juga mengetahui bahwa merupakan tanggungjawab Anda untuk membatalkan Stop atau Limit Order yang Anda pasangkan pada Posisi Berjalan Anda jika Anda tidak ingin Stop atau Limit Order tersebut terus berjalan. Jika Anda menutup Transaksi awal Anda dan gagal untuk membatalkan Stop atau Limit Order, kami berhak dengan keputusan sendiri untuk menangani Stop atau Limit Order sebagai instruksi membeli Transaksi baru untuk Anda jika dan ketika kutipan kami mencapai atau melampaui level Stop atau Limit Order."
 
 msgid "You acknowledge that it is your responsibility to monitor your Account Balance and Margin Requirement and we are not under any obligation to keep you informed (i.e., to make a Margin Call)."
@@ -8597,7 +8678,9 @@ msgstr "Anda mengakui bahwa, dalam perjalanan urusan Ketentuan ini, Anda dapat m
 msgid "You acknowledge, understand, represent and warrant that you are aware of the functional limitations of the MT5 Trading Platform (for example, Wine, which is not a fully stable application, as disclosed by the MT5 Trading Platform Licensor on their website). We have no obligation and bear no responsibility for transmissions (including, but not limited to, Orders) that are inaccurate or not received by us, due to the functional limitations of the MT5 Trading Platform."
 msgstr "Anda mengakui, memahami, menyatakan dan menjamin bahwa Anda menyadari keterbatasan fungsional dari Platform Trading MT5 (misalnya Wine, yang bukan sepenuhnya stabil, seperti yang diungkapkan juga oleh Lisensi Platform Trading MT5 pada website mereka). Kami tidak memiliki kewajiban dan tidak bertanggung jawab pada transmisi (termasuk, namun tidak terbatas pada, Order) yang tidak akurat atau yang tidak dapat kami proses berhubung keterbatasan fungsional dari Platform Trading MT5."
 
-msgid "You act in breach of any warranty or representation made under this Agreement or any representation or warranty made by you under this Agreement and/or any information provided to us in connection with this Agreement is or becomes untrue or misleading;"
+#, fuzzy
+#| msgid "You act in breach of any warranty or representation made under this Agreement or any representation or warranty made by you under this Agreement and/or any information provided to us in connection with this Agreement is or becomes untrue or misleading;"
+msgid "You act in breach of any warranty or representation made under this Agreement, and/or if any information provided to us in connection with this Agreement is, or becomes, untrue or misleading;"
 msgstr "Anda melanggar jaminan atau perwakilan yang dibuat dibawah Perjanjian ini atau perwakilan atau jaminan apapun yang Anda buat dibawah Perjanjian ini dan/atau informasi yang telah disediakan kepada kami dalam hubungannya dengan Perjanjian ini menjadi tidak benar atau menyesatkan;"
 
 msgid "You agree that by developing on the %1 API, you are entering into a legally binding agreement with the Company."
@@ -8621,7 +8704,9 @@ msgstr "Anda dan Perusahaan merupakan kontraktor bebas dan tidak terdapat dalam 
 msgid "You and your Application must also comply with the following, which are hereby incorporated by reference:"
 msgstr "Anda dan Aplikasi Anda harus memenuhi hal berikut, yang digabungkan dengan referensi:"
 
-msgid "You are acting for your sole benefit and not for or on behalf of any other person;"
+#, fuzzy
+#| msgid "You are acting for your sole benefit and not for or on behalf of any other person;"
+msgid "You are acting for your sole benefit, and not for, or on behalf of any other person;"
 msgstr "Anda bertindak untuk kepentingan Anda sendiri dan bukan untuk atau atas nama orang lain;"
 
 msgid "You are advised that the Binary Options offered by %1 are not traded under the rules of any recognised, designated or regulated exchange. Consequently, engaging in Binary Options trading may expose you to substantially greater risks than investments which are so traded."
@@ -8639,11 +8724,13 @@ msgstr "Anda tidak diizinkan untuk menyimpan Konten (seperti data feed)."
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "Anda tidak berhak atas kompensasi atau penggantian dalam bentuk apapun dari Perusahaan dalam keadaan apapun."
 
-msgid "You are not resident in a restricted country such as the USA, Japan, Hong Kong, Costa Rica, Malaysia, Malta, Iran, North Korea, Jersey, Iraq, or such other restricted country as the Company may decide from time to time at its sole discretion;"
+#, fuzzy
+#| msgid "You are not resident in a restricted country such as the USA, Japan, Hong Kong, Costa Rica, Malaysia, Malta, Iran, North Korea, Jersey, Iraq, or such other restricted country as the Company may decide from time to time at its sole discretion;"
+msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Guyana; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr "Anda bukan penduduk negara terbatas seperti AS, Jepang, Hong Kong, Costa Rica, Malaysia, Malta, Iran, Korea Utara, Jersey, Iraq atau negara lain dimana Perusahaan mungkin melakukan pembatasan sewaktu waktu dengan kebijaksanaan sendiri;"
 
-msgid "You are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
-msgstr "Anda berumur lebih dari 18 tahun, kecuali jika Anda adalah penduduk Estonia maka Anda harus berumur lebih dari 21 tahun;"
+msgid "You are over 18 years of age;"
+msgstr ""
 
 msgid "You are responsible for managing your tax and legal affairs including making any regulatory filings and payments and complying with applicable laws and regulations. We do not provide any regulatory, tax or legal advice. If you are in any doubt as to the tax treatment or liabilities of Investment Products or Gambling Products available through %1, you may wish to seek independent advice."
 msgstr "Anda bertanggung jawab untuk mengelola pajak dan urusan hukum termasuk membuat setiap pengajuan peraturan dan pembayaran dan mematuhi undang-undang dan peraturan yang berlaku. Kami tidak memberikan peraturan, pajak atau nasihat hukum. Jika Anda masih ragu tentang kewajiban atau pajak yang terlibat pada Produk Investasi atau Produk Gaming yang tersedia  di %1, Anda mungkin perlu mencari saran independen."
@@ -8672,7 +8759,9 @@ msgstr "Anda berkesempatan untuk menutup kontrak sebelum berakhir untuk menguran
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
 msgstr "Anda dapat menggunakan agen pembayaran untuk mendeposit dan menarik dana menggunakan transfer bank lokal atau e-cash yang tidak disediakan oleh %1. Sangat mudah."
 
-msgid "You consent us to record your telephone conversation between you and us. All instructions receive by telephone will be binding as if received in writing. Recorded telephone conversations between you and us shall be and remain our sole property. You will accept recorded telephone conversations between you and us as conclusive evidence of instructions or conversations so recorded and we may deliver copies of transcripts of such recordings to any court, regulatory or governmental authority without seeking prior consent from you."
+#, fuzzy
+#| msgid "You consent us to record your telephone conversation between you and us. All instructions receive by telephone will be binding as if received in writing. Recorded telephone conversations between you and us shall be and remain our sole property. You will accept recorded telephone conversations between you and us as conclusive evidence of instructions or conversations so recorded and we may deliver copies of transcripts of such recordings to any court, regulatory or governmental authority without seeking prior consent from you."
+msgid "You consent to us recording any telephone conversation between you and us. All instructions receive by telephone will be binding as if received in writing. Recorded telephone conversations between you and us shall be, and remain, our sole property. You will accept recorded telephone conversations between you and us as conclusive evidence of instructions or conversations so recorded and we may deliver copies of transcripts of such recordings to any court, regulatory, or governmental authority without seeking prior consent from you."
 msgstr "Anda bersetuju dengan perekaman perbicaraan melalu telpon antara Anda dan kami. Semua instruksi yang kami terima melalui telpon akan mengikat seakan diterima secara tertulis. Rekaman perbicaraan antara Anda dan kami adalah harus dan akan menjadi hak milik kami. Anda akan menerima rekaman perbicaraan melalui telpion antara Anda dan kami sebagai bukti nyata atau instruksi atau percakapan yang direkam dan kami mungkin akan mengirim salinan transkrip rekaman tersebut ke pengadilan, peraturan atau otoritas pemerintah tanpa memerlukan persetujuan dari Anda."
 
 msgid "You did not change anything."
@@ -8681,7 +8770,12 @@ msgstr "Anda tidak melakukan perubahan."
 msgid "You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading."
 msgstr "Anda tidak harus melakukan deposit setelah mendaftar, namun anda perlu mendeposit untuk memulai trading."
 
-msgid "You have all necessary authority, powers, consents, licences and authorisations and have taken all necessary actions to enable you to enter into and perform this Agreement and such Transactions lawfully;"
+msgid "You further acknowledge and agree that we will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused, or alleged to be caused by, or in connection with a Manifest Error."
+msgstr ""
+
+#, fuzzy
+#| msgid "You have all necessary authority, powers, consents, licences and authorisations and have taken all necessary actions to enable you to enter into and perform this Agreement and such Transactions lawfully;"
+msgid "You have all necessary authority, powers, consents, licences and authorisations and have taken all necessary actions to enable you to enter into, and perform this Agreement and such Transactions lawfully;"
 msgstr "Anda memiliki semua otoritas, kekuatan, persetujuan, ijin dan otorisasi serta telah mengambil segala tindakan yang diperlukan untuk mengakses dan melakukan Perjanjian ini dan transaksi tersebut adalah sah;"
 
 msgid "You have already withdrawn %1 %2."
@@ -8747,7 +8841,9 @@ msgstr "Anda dapat mengembangkan Aplikasi dengan menggunakan API %1 segera setel
 msgid "You may earn up to 35% commission on the net revenue generated by clients whom you introduce to our trading platform."
 msgstr "Anda dapat memperoleh komisi hingga 35% dari pendapatan bersih yang dihasilkan oleh klien yang Anda perkenalkan pada platform trading kami."
 
-msgid "You may make Margin Payments by transferring funds from your Binary Options Real Account to your Real Account. In the event that there are insufficient funds in your Binary Options Real Account to fund your Real Account, you may, make Margin Payments by funding your Binary Options Real Account and transferring the funds from your Binary Options Real Account to your Real Account."
+#, fuzzy
+#| msgid "You may make Margin Payments by transferring funds from your Binary Options Real Account to your Real Account. In the event that there are insufficient funds in your Binary Options Real Account to fund your Real Account, you may, make Margin Payments by funding your Binary Options Real Account and transferring the funds from your Binary Options Real Account to your Real Account."
+msgid "You may make Margin Payments by transferring funds from your Binary Options Real Account to your Real Account. In the event that there are insufficient funds in your Binary Options Real Account to fund your Real Account, you may make Margin Payments by funding your Binary Options Real Account and transferring the funds from your Binary Options Real Account to your Real Account."
 msgstr "Anda dapat membuat Pembayaran Margin dengan mentransfer dana dari Akun Riil Opsi Binary Anda ke Akun Riil. Jika saldo tidak mencukupi pada Akun Riil Opsi Binaru Anda untuk mendanai Akun Riil, Anda dapat membuat Pembayaran Margin dengan mendanai Akun Riil Opsi Binary Anda dan mentransfer dana dari Akun Riil Opsi Binary kedalam Akun Riil Anda."
 
 msgid "You may not assign rights granted in this Agreement without the Company's prior written approval."
@@ -8849,7 +8945,9 @@ msgstr "Anda harus memasukkan %1 karakter."
 msgid "You should enter between %1 characters."
 msgstr "Anda harus memasukkan antara %1 karakter."
 
-msgid "You should not sign up to receive the margin trading service described in this Agreement unless you understand their nature and the associated risks."
+#, fuzzy
+#| msgid "You should not sign up to receive the margin trading service described in this Agreement unless you understand their nature and the associated risks."
+msgid "You should not sign up to receive the margin trading services described in this Agreement unless you understand their nature and the associated risks."
 msgstr "Anda tidak harus mendaftar untuk bertrading layanan margin seperti yang dijelaskan dalam Perjanjian ini kecuali jika Anda sudah memahami sifat dan risiko yang terlibat."
 
 msgid "You should not trade or invest in Binary Options unless you know and understand the features risks involved and you may lose all the money invested."
@@ -8861,7 +8959,9 @@ msgstr "Anda perlu mengingat bahwa kewajiban kami untuk menyediakan eksekusi ter
 msgid "You should read these ST&Cs carefully as well as the Summary Order Execution Policy and Summary Conflicts Policy, the applicable Contract Details together with the Risk Disclosure Notice and any other documents that we have supplied or in the future do supply to you."
 msgstr "Anda perlu membaca Ketentuan Lanjutan secara berhati hati termasuk Ringkasan Kebijakan Orde Eksekusi dan Ringkasan Konflik Kebijakan, Keterangan Kontrak yang berlaku bersamaan dengan Pemberitahuan Penyingkapan Risiko dan dokumen lain yang kami terima atau yang akan kami terima."
 
-msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial markets indices (forex, stocks, commodities) are financial instruments."
+#, fuzzy
+#| msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial markets indices (forex, stocks, commodities) are financial instruments."
+msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments."
 msgstr "Anda mengerti bahwa produk tersebut adalah berdasarkan angka acak yang dihasilkan (\"Indeks Volatilitas\") yang bukan merupakan produk berdasarkan indeks pasar finansial seperti (forex, saham dan komoditas) yang merupakan instrumen finansial."
 
 msgid "You will be automatically logged out after such time."
@@ -8879,13 +8979,19 @@ msgstr "Anda akan dikenakan suku bunga swap jika posisi berjalan melewati waktu 
 msgid "You will provide us with any information that we may reasonably require to fully satisfy the demand or the requirements of the applicable government authority, upon our request."
 msgstr "Anda akan memberikan informasi apapun yang kami perlukan dalam memenuhi atau berdasarkan permintaan atau persyaratan yang diminta oleh pihak berwajib, atas permintaan kami."
 
-msgid "You will take all reasonable steps to comply with any law, ordinance, charter, by-law or rule applicable to you or the jurisdiction in which you are resident;"
+#, fuzzy
+#| msgid "You will take all reasonable steps to comply with any law, ordinance, charter, by-law or rule applicable to you or the jurisdiction in which you are resident;"
+msgid "You will take all reasonable steps to comply with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident;"
 msgstr "Anda akan mematuhi undang-undang, tata cara, piagam, oleh-hukum atau aturan yang berlaku untuk Anda atau yurisdiksi di mana Anda tinggal;"
 
-msgid "You will use the margin trading service described in this Agreement in good faith and you will not use any software, algorithm, or any trading strategy to manipulate or take unfair advantage of the way our bid and offer prices are quoted. You shall observe the standard of behavior reasonably expected of persons in your position and not take any step which would cause us to fail to observe the standard of behavior reasonably expected of persons in our position."
+#, fuzzy
+#| msgid "You will use the margin trading service described in this Agreement in good faith and you will not use any software, algorithm, or any trading strategy to manipulate or take unfair advantage of the way our bid and offer prices are quoted. You shall observe the standard of behavior reasonably expected of persons in your position and not take any step which would cause us to fail to observe the standard of behavior reasonably expected of persons in our position."
+msgid "You will use the margin trading services described in this Agreement in good faith and you will not use any software, algorithm, or any trading strategy to manipulate or take unfair advantage of the way our bid and offer prices are quoted. You shall observe the standard of behaviour reasonably expected of persons in your position and not take any step which would cause us to fail to observe the standard of behaviour reasonably expected of persons in our position."
 msgstr "Anda akan menggunakan layanan trading margin seperti yang sudah dijelaskan dalam Perjanjian ini dengan itikad baik dan Anda tidak akan menggunakan perangkat lunak, algoritma, atau strategi trading untuk memanipulasi atau mengambil keuntungan yang tidak adil dari harga bid dan offer yang kami tawarkan. Anda perlu melakukan pengamatan tingkah laku yang diharapkan dari orang dalam posisi Anda dan tidak mengambil langkah apapun yang dapat mengakibatkan kegagalan dalam mengamati tingkah laku standar dari pihak yang berada pada posisi kami."
 
-msgid "You will, at all times, obtain and comply, and do all that is necessary to maintain in full force and effect, all authority, powers, consents, licences and authorities referred to in this clause;"
+#, fuzzy
+#| msgid "You will, at all times, obtain and comply, and do all that is necessary to maintain in full force and effect, all authority, powers, consents, licences and authorities referred to in this clause;"
+msgid "You will, at all times, obtain and comply, and do all that is necessary to maintain in full force and effect, all authority, powers, consents, licences, and authorities referred to in this clause;"
 msgstr "Anda akan, setiap saat, mendapatkan dan mematuhi, dan melakukan semua yang diperlukan untuk mempertahankan kekuatan penuh dan efek, semua otoritas, kekuasaan, persetujuan, lisensi dan pihak berwenang sebagaimana dimaksud dalam ayat ini;"
 
 msgid "You win the payout if the market price does not end in the digit you have selected."
@@ -8905,6 +9011,11 @@ msgstr "Batas penarikan %1 hari Anda saat ini adalah %2 %3 (atau setara dengan m
 
 msgid "Your Application is Being Processed."
 msgstr "Permohonan Anda Sudah Terproses."
+
+#, fuzzy
+#| msgid "If your Binary Options Real Account with Binary.com is not authenticated, access to create the Real Account shall not be granted until your Binary Options Real Account with Binary.com is authenticated."
+msgid "Your Binary Options Real Account with Binary.com has to be authenticated within five days from your Real Account opening date to keep your Real Account active."
+msgstr "Jika Akun Riil Opsi Binary Anda pada Binary.com belum terbukti, maka akses untuk mendaftar Akun Riil tidak dapat dilakukan hingga Akun Opsi Binary Anda pada Binary.com terbukti."
 
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "Klien Anda akan menerima e-mail pemberitahuan bahwa transfer mereka telah diproses."
@@ -8939,6 +9050,9 @@ msgstr "Akun Anda telah terbukti. Anda dapat melihat <a href=\"%1\">batasan trad
 msgid "Your account is not fully authenticated."
 msgstr "Akun Anda belum diverifikasi sepenuhnya."
 
+msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
+msgstr "Akun Anda memiliki akses terbatas. Silahkan %1hubungi customer support%2 untuk bantuan."
+
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Akun Anda tidak boleh digunakan sebagai fasilitas perbankan dan deposito hanya boleh dilakukan dengan tujuan untuk menggunakan dana untuk membeli kontrak. Perusahaan ini bukan lembaga keuangan, Klien tidak akan menerima bunga deposito. Jika Anda melakukan deposit berulang dan penarikan tanpa melakukan pembelian kontrak maka kami berhak untuk mengembalikan saldo dana pada akun Anda tanpa pemberitahuan termasuk biaya transfer sebelum melakukan penutupan akun."
 
@@ -8972,7 +9086,9 @@ msgstr "Klien Anda akan menyukai platform trading %1 karena kami menawarkan peng
 msgid "Your death, your incapacity, become of unsound mind or your inability to pay your debts as they fall due, or is bankrupt or insolvent, as defined under any bankruptcy or insolvency law applicable to you, if you are an individual;"
 msgstr "Kematian Anda, ketidakmampuan Anda, menjadi tidak waras atau ketidakmampuan Anda untuk membayar hutang Anda saat jatuh tempo, atau bangkrut atau pailit, sebagaimana didefinisikan dalam setiap kebangkrutan atau kepailitan hukum yang berlaku untuk Anda, jika Anda adalah seorang individu;"
 
-msgid "Your debts are not settled as and when they fall due;"
+#, fuzzy
+#| msgid "Your debts are not settled as and when they fall due;"
+msgid "Your debts are not settled as, and when, they fall due;"
 msgstr "hutang Anda tidak terselesaikan dan ketika jatuh tempo;"
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
@@ -9026,7 +9142,9 @@ msgstr "Penggunaan API %1 menyebabkan kerusakan pada platform trading %1, maka %
 msgid "Your use of the %1 API will not confer to you any title, ownership interest or intellectual property rights that otherwise belongs to the Company. Our trading platform is protected under patent and our website, including its content, is protected by copyright laws, and will remain our exclusive property, as applicable."
 msgstr "Penggunaan Anda atas API %1 tidak akan berunding untuk Anda gelar apapun, kepemilikan atau hak kekayaan intelektual yang lain milik Perusahaan. platform trading kami dilindungi di bawah paten dan website kami, termasuk isinya, dilindungi oleh undang-undang hak cipta, dan akan tetap menjadi milik eksklusif kami, sebagaimana berlaku."
 
-msgid "Your use of the MT5 Trading Platform, whether accessed through or downloaded from our website or a third party website, is governed by the terms of use provided by the MT5 Trading Platform Licensor to you. In the event of any conflict between the content of this Agreement and the agreement between you and the MT5 Trading Platform Licensor, the terms of this Agreement shall prevail. It is your responsibility to ensure that the information technology that you use is compatible with the required information technology to support the MT5 Trading Platform."
+#, fuzzy
+#| msgid "Your use of the MT5 Trading Platform, whether accessed through or downloaded from our website or a third party website, is governed by the terms of use provided by the MT5 Trading Platform Licensor to you. In the event of any conflict between the content of this Agreement and the agreement between you and the MT5 Trading Platform Licensor, the terms of this Agreement shall prevail. It is your responsibility to ensure that the information technology that you use is compatible with the required information technology to support the MT5 Trading Platform."
+msgid "Your use of the MT5 Trading Platform, whether accessed through or downloaded from our website or a third-party website, is governed by the terms of use provided by the MT5 Trading Platform Licensor to you. In the event of any conflict between the content of this Agreement and the agreement between you and the MT5 Trading Platform Licensor, the terms of this Agreement shall prevail. It is your responsibility to ensure that the information technology that you use is compatible with the required information technology to support the MT5 Trading Platform."
 msgstr "Apakah dengan pengaksesan langsung atau mendownload dari website kami atau website pihak ketiga, penggunaan Platform Trading MT5 tetap diatur oleh ketentuan penggunaan yang disediakan oleh Lisensi Platform Trading MT5 untuk Anda. Jika terjadi perselisihan antara Perjanjian ini dan perjanjian antara Anda dengan pemberi Lisensi Platform Trading MT5, ketentuan pada Perjanjian ini akan berlaku. Merupakan tanggungjawab Anda untuk memastikan informasi teknologi yang Anda gunakan cocok dengan informasi teknologi untuk mensupport Platform Trading MT5."
 
 msgid "Your violation of any applicable law, rule or regulation;"
@@ -9113,10 +9231,8 @@ msgstr "contoh blue.binaryws.com"
 msgid "email address"
 msgstr "alamat email"
 
-#, fuzzy
-#| msgid "%1 to %2"
 msgid "from %1 to %2"
-msgstr "%1 ke %2"
+msgstr "dari %1 ke %2"
 
 msgid "h"
 msgstr "j"
@@ -9299,368 +9415,346 @@ msgid "you have sufficient experience and knowledge in matters of financial trad
 msgstr "Anda memiliki pengalaman yang cukup dan pengetahuan dalam hal trading finansial dan mampu mengevaluasi manfaat dan risiko memperoleh kontrak trading finansial melalui situs ini dan melakukannya tanpa bergantung pada informasi yang terkandung dalam situs ini."
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 2"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 1 Title"
-msgstr "{JAPAN ONLY}Section 3: Outline"
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 1 Title"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 10 Paragraph 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 10 Paragraph 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 10 Paragraph 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 10 Paragraph 2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 10 Title"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 10 Title"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 11 Paragraph 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 11 Paragraph 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 11 Paragraph 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 11 Paragraph 2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 11 Title"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 11 Title"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 3"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 3"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 3"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 3"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 4"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 4"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 5"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 5"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 5"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 5"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Title"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 12 Title"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 10"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 10"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 3"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 3"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 4"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 4"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 5"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 5"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 6"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 6"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 7"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 7"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 8"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 8"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 9"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 9"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 3"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 3"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 4"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 4"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 5"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 5"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 3"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 3"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 4"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 4"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 5"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 5"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 4"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 4"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Title"
-msgstr "{JAPAN ONLY}Section 3: Outline"
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 13 Title"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 3"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 3"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 4"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 4"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 5"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 5"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 6"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 6"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Title"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 14 Title"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 3"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 3"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Title"
-msgstr "{JAPAN ONLY}Section 3: Outline"
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 2 Title"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 3"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 3"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 4"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 4"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Title"
-msgstr "{JAPAN ONLY}Section 3: Outline"
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 3 Title"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 10"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 10"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 3"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 3"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 4"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 4"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 5"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 5"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 6"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 6"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 7"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 7"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 8"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 8"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 9"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 9"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Title"
-msgstr "{JAPAN ONLY}Section 3: Outline"
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 4 Title"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 3"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 3"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 4"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 4"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 5"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 5"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 6"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 6"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 7"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 7"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Title"
-msgstr "{JAPAN ONLY}Section 3: Outline"
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 5 Title"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 3"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 3"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Title"
-msgstr "{JAPAN ONLY}Section 3: Outline"
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 6 Title"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 2"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 7 Title"
-msgstr "{JAPAN ONLY}Section 3: Outline"
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 7 Title"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 3"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 3"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 4"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 4"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 5"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 5"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 6"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 6"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point A"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point A"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point B"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point B"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 2(1)"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 2(1)"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 2(2)"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 2(2)"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 2(3)"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 7 Point C Sub 2(3)"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 8"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 8"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 9"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 9"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 3"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 3"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 4"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 4"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 5"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 5"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 6"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 6"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Title"
-msgstr "{JAPAN ONLY}Section 3: Outline"
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 8 Title"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 1"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 1"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 2"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 2"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 3"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 3"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Title"
-msgstr "{JAPAN ONLY}Section 3: Outline"
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section 9 Title"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section Version Update"
-msgstr ""
+msgstr "{JAPAN ONLY} Affiliate Program T&C Section Version Update"
 
-#, fuzzy
-#| msgid "%1 Affiliate Program Terms and Conditions"
 msgid "{JAPAN ONLY} Affiliate Program Terms & Conditions"
-msgstr "Syarat dan Ketentuan Program Affiliasi %1"
+msgstr "{JAPAN ONLY} Affiliate Program Terms & Conditions"
 
 msgid "{JAPAN ONLY}#1 Sales Division"
 msgstr "{JAPAN ONLY}#1 Sales Division"
@@ -10673,6 +10767,27 @@ msgstr "Batasan rekening"
 msgid "Account Details"
 msgstr "Keterangan Akun"
 
+#~ msgid "Any realised profits and interest charges that are denominated in a currency that's different from your Base Currency will be automatically converted to your Base Currency before being debited / credited to your Real Account. The conversion will be performed at commercially reasonable rates."
+#~ msgstr "Setiap keuntungan yang disadari dan bunga yang dibebankan adalah dalam mata uang yang berbeda dengan Mata Uang Dasar akan secara otomatis dikonversikan kedalam Mata Uang Dasar pilihan Anda sebelum didebit/kreditkan kedalam Akun Riil. Konversi adalah berdasarkan nilai tukar komersial yang wajar."
+
+#~ msgid "Base Currency"
+#~ msgstr "Mata Uang Dasar"
+
+#~ msgid "Base Currency - The currency in which your Transaction was entered into."
+#~ msgstr "Mata Uang Dasar - Mata uang di mana transaksi Anda dioperasikan."
+
+#~ msgid "Version 3"
+#~ msgstr "Versi 3"
+
+#~ msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorized access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and low-enforcement agencies to address fraud issues."
+#~ msgstr "Kami menggunakan layanan verifikasi identitas dan langkah-langkah yang mendeteksi aktifitas penipuan setiap waktu yang membantu melindungi akun Anda dari akses yang tidak diinginkan. Kami juga memantau aktivitas akun yang memiliki tanda-tanda aktifitas yang mungkin mengindikasikan penipuan dan bekerjasama dengan agensi penagihan dan lembaga penegak hukum dalam mengatasi masalah penipuan."
+
+#~ msgid "You are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
+#~ msgstr "Anda berumur lebih dari 18 tahun, kecuali jika Anda adalah penduduk Estonia maka Anda harus berumur lebih dari 21 tahun;"
+
+#~ msgid "Please select your country of residence"
+#~ msgstr "Silakan pilih negara domisili Anda"
+
 #~ msgid "The account transfer is unavailable. Please"
 #~ msgstr "Transfer antar akun tidak tersedia. Silahkan"
 
@@ -11346,9 +11461,6 @@ msgstr "Keterangan Akun"
 
 #~ msgid "Benefits of Binary Trading"
 #~ msgstr "Berbagai Manfaat Trading Binary"
-
-#~ msgid "Please complete the following financial assessment form before continuing."
-#~ msgstr "Lengkapi formulir penilaian keuangan berikut sebelum melanjutkan."
 
 #~ msgid "Your details have been updated."
 #~ msgstr "Rincian Anda telah diperbarui."
@@ -20520,9 +20632,6 @@ msgstr "Keterangan Akun"
 
 #~ msgid "This contract is not on offer at this time due to current market conditions."
 #~ msgstr "Untuk saat ini kontrak yang anda pilih tidak tersedia berhubung kondisi market."
-
-#~ msgid "Your cashier section is disabled at the moment. Please contact <a href=\"%1\">Customer Support</a> for assistance."
-#~ msgstr "Bagian kasir anda dibatalkan untuk sementara. Silahkan hubungi <a href=\"%1\">Customer Support</a> untuk bantuan selanjutnya."
 
 #~ msgid "Your withdrawal cannot be processed as the amount exceeds your withdrawal limit. Please <a href=\"%1\">authenticate your account</a> to have such withdrawal limits increased."
 #~ msgstr "Penarikan anda tidak dapat kami proses berhubung melebihi batasan yang dibenarkan. Silahkan <a href=\"%1\">buktikan account </a> untuk meningkatkan batasan penarikan anda."
