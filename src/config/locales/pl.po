@@ -5669,9 +5669,6 @@ msgstr "Proszę wpisać liczbę z przedziału %1."
 msgid "Please enter a number between 0 and %1"
 msgstr "Proszę wpisać liczbę od 0 do %1"
 
-msgid "Please enter a number greater than 0"
-msgstr "Proszę wpisać liczbę większą niż 0"
-
 msgid "Please enter a number."
 msgstr "Proszę podać liczbę."
 
@@ -6064,9 +6061,6 @@ msgstr "Ceny uaktualniane w czasie rzeczywistym w oparciu o rynki opcji międzyb
 
 msgid "Reality Check"
 msgstr "Bieżąca kontrola konta"
-
-msgid "Reality Check Interval:"
-msgstr "Odstęp czasu pomiędzy bieżącymi kontrolami konta:"
 
 msgid "Receive news and special offers"
 msgstr "Otrzymuj najnowsze informacje i specjalne oferty"
@@ -10710,6 +10704,12 @@ msgstr "Limity na koncie"
 
 msgid "Account Details"
 msgstr "Dane konta"
+
+#~ msgid "Please enter a number greater than 0"
+#~ msgstr "Proszę wpisać liczbę większą niż 0"
+
+#~ msgid "Reality Check Interval:"
+#~ msgstr "Odstęp czasu pomiędzy bieżącymi kontrolami konta:"
 
 #~ msgid "Any realised profits and interest charges that are denominated in a currency that's different from your Base Currency will be automatically converted to your Base Currency before being debited / credited to your Real Account. The conversion will be performed at commercially reasonable rates."
 #~ msgstr "Wszelkie zrealizowane zyski i kwoty odsetek zdenominowane w walucie innej niż Twoja waluta bazowa, przed ich zaksięgowaniem po stronie winien/ma na Twoim prawdziwym koncie, zostaną przewalutowane na Twoją walutę bazową. Przewalutowanie zostanie dokonane po kursie uzasadnionym rynkowo."

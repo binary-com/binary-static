@@ -5922,9 +5922,6 @@ msgstr "Veuillez saisir un chiffre entre %1."
 msgid "Please enter a number between 0 and %1"
 msgstr "Veuillez saisir un chiffre entre 0 et %1."
 
-msgid "Please enter a number greater than 0"
-msgstr "Veuillez saisir un chiffre supérieur à 0"
-
 msgid "Please enter a number."
 msgstr "Veuillez saisir un chiffre."
 
@@ -6347,9 +6344,6 @@ msgstr "Cours en temps réel, référencés sur les marchés d'options du secteu
 
 msgid "Reality Check"
 msgstr "Avertissement de connexion prolongée"
-
-msgid "Reality Check Interval:"
-msgstr "Périodicité de l'avertissement de connexion prolongée :"
 
 msgid "Receive news and special offers"
 msgstr "Recevez des bulletins d'information et des offres spéciales"
@@ -11271,6 +11265,12 @@ msgstr "Limites du Compte"
 
 msgid "Account Details"
 msgstr "Informations du compte"
+
+#~ msgid "Please enter a number greater than 0"
+#~ msgstr "Veuillez saisir un chiffre supérieur à 0"
+
+#~ msgid "Reality Check Interval:"
+#~ msgstr "Périodicité de l'avertissement de connexion prolongée :"
 
 #, fuzzy
 #~| msgid "Bad currency"
