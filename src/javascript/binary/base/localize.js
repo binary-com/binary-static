@@ -29,12 +29,9 @@ const Localize = (() => {
     );
 
     return {
-        localizeForLang: localizeForLang,
-        localize       : localize,
+        forLang : localizeForLang,
+        localize: localize,
     };
 })();
 
-module.exports = {
-    localize       : Localize.localize,
-    localizeForLang: Localize.localizeForLang,
-};
+module.exports = Localize;

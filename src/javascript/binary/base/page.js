@@ -1,10 +1,9 @@
 const Client            = require('./client');
 const Contents          = require('./contents');
 const Header            = require('./header');
-const getLanguage       = require('./language').getLanguage;
-const setCookieLanguage = require('./language').setCookieLanguage;
+const Language          = require('./language');
+const Localize          = require('./localize');
 const localize          = require('./localize').localize;
-const localizeForLang   = require('./localize').localizeForLang;
 const Login             = require('./login');
 const Menu              = require('./menu');
 const LocalStore        = require('./storage').LocalStore;
@@ -13,8 +12,7 @@ const Url               = require('./url').Url;
 const urlFor            = require('./url').urlFor;
 const checkLanguage     = require('../common_functions/country_base').checkLanguage;
 const TrafficSource     = require('../common_functions/traffic_source').TrafficSource;
-const RealityCheckData  = require('../websocket_pages/user/reality_check/reality_check.data').RealityCheckData;
-const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check.init').RealityCheck;
+const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check');
 const Cookies           = require('../../lib/js-cookie');
 const PushNotification  = require('../../lib/push_notification');
 require('../../lib/polyfills/array.includes');
@@ -75,23 +73,16 @@ const Page = (() => {
     const onLoad = () => {
         if (State.get('is_loaded_by_pjax')) {
             url.reset();
-            if (RealityCheckData.get('delay_reality_init')) {
-                RealityCheck.init();
-            } else if (RealityCheckData.get('delay_reality_check')) {
-                BinarySocket.send({ reality_check: 1 });
-            }
         } else {
             init();
         }
         Menu.init();
-        localizeForLang(getLanguage());
+        Localize.forLang(Language.get());
         Header.onLoad();
         recordAffiliateExposure();
         Contents.onLoad();
-        if (!Client.isLoggedIn()) {
-            LocalStore.set('reality_check.ack', 0);
-        }
-        setCookieLanguage();
+        Language.setCookie();
+        RealityCheck.onLoad();
         if (sessionStorage.getItem('showLoginPage')) {
             sessionStorage.removeItem('showLoginPage');
             Login.redirectToLogin();
@@ -162,7 +153,7 @@ const Page = (() => {
         window.$buoop = {
             vs : { i: 11, f: -4, o: -4, s: 9, c: -4 },
             api: 4,
-            l  : getLanguage().toLowerCase(),
+            l  : Language.get().toLowerCase(),
             url: 'https://whatbrowser.org/',
         };
         $(document).ready(function() {

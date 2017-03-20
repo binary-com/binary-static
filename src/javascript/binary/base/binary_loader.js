@@ -6,7 +6,6 @@ const localize           = require('./localize').localize;
 const Login              = require('./login');
 const Page               = require('./page');
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
-const url                = require('./url').url;
 
 const BinaryLoader = (function() {
     'use strict';
@@ -34,7 +33,6 @@ const BinaryLoader = (function() {
     };
 
     const afterContentChange = (e, content) => {
-        url.reset();
         Page.onLoad();
         GTM.pushDataLayer();
         const this_page = content.getAttribute('data-page');

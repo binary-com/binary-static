@@ -1,7 +1,7 @@
 const DigitInfoWS                = require('./charts/digit_infows').DigitInfoWS;
 const JapanPortfolio             = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
 const State                      = require('../../base/storage').State;
-const getLanguage                = require('../../base/language').getLanguage;
+const Language                   = require('../../base/language');
 const toggleActiveNavMenuElement = require('./common').toggleActiveNavMenuElement;
 const showHighchart              = require('./common').showHighchart;
 const Url                        = require('../../base/url').Url;
@@ -217,7 +217,7 @@ const TradingAnalysis = (function() {
         };
 
         if (show_image && images.hasOwnProperty(form_name)) {
-            const image_path = urlForStatic('images/pages/trade-explanation/' + (getLanguage() === 'JA' ? 'ja/' : ''));
+            const image_path = urlForStatic('images/pages/trade-explanation/' + (Language.get() === 'JA' ? 'ja/' : ''));
             $Container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $Container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
             $Container.find('#explanation_image').removeClass(hidden_class);

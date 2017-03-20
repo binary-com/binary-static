@@ -1,12 +1,12 @@
 const email_rot13    = require('../common_functions/common_functions').email_rot13;
 const loadCSS        = require('../../lib/loadCSS').loadCSS;
 const loadJS         = require('../../lib/loadJS').loadJS;
-const getLanguage    = require('../base/language').getLanguage;
+const Language       = require('../base/language');
 const urlForStatic   = require('../base/url').urlForStatic;
 
 const Contact = (function() {
     const onLoad = function() {
-        $('#faq_url').attr('href', 'https://binary.desk.com/customer/' + getLanguage() + '/portal/articles');
+        $('#faq_url').attr('href', 'https://binary.desk.com/customer/' + Language.get() + '/portal/articles');
         display_cs_contacts();
         show_live_chat_icon();
     };

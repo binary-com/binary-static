@@ -1,7 +1,6 @@
 const Client          = require('../../../base/client');
 const localize        = require('../../../base/localize').localize;
 const urlFor          = require('../../../base/url').urlFor;
-const template        = require('../../../base/utility').template;
 const makeOption      = require('../../../common_functions/common_functions').makeOption;
 const japanese_client = require('../../../common_functions/country_base').japanese_client;
 const FormManager     = require('../../../common_functions/form_manager');
@@ -124,12 +123,7 @@ const VirtualAccOpening = (function() {
 
     const showFormError = (message, url) => {
         $('.notice-message').remove();
-        const $form = $('#virtual-form');
-        $form.html($('<p/>', {
-            html: template(
-                localize(message),
-                [urlFor(url)]),
-        }));
+        $('#virtual-form').html($('<p/>', { html: localize(message, [urlFor(url)]) }));
     };
 
     const showError = (message) => {

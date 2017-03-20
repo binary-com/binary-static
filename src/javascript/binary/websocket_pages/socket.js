@@ -1,29 +1,26 @@
-const MBTradePage               = require('./mb_trade/mb_tradepage');
-const TradePage_Beta            = require('./trade/beta/tradepage');
-const Highchart                 = require('./trade/charts/highchartws').Highchart;
-const reloadPage                = require('./trade/common').reloadPage;
-const Notifications             = require('./trade/notifications').Notifications;
-const WSTickDisplay             = require('./trade/tick_trade').WSTickDisplay;
-const TradePage                 = require('./trade/tradepage');
-const RealityCheckData          = require('./user/reality_check/reality_check.data').RealityCheckData;
-const RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
-const ViewPopupWS               = require('./user/view_popup/view_popupws');
-const ViewBalanceUI             = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
-const Client                    = require('../base/client');
-const Clock                     = require('../base/clock');
-const GTM                       = require('../base/gtm');
-const Header                    = require('../base/header');
-const getLanguage               = require('../base/language').getLanguage;
-const localize                  = require('../base/localize').localize;
-const Login                     = require('../base/login');
-const LocalStore                = require('../base/storage').LocalStore;
-const State                     = require('../base/storage').State;
-const getPropertyValue          = require('../base/utility').getPropertyValue;
-const getLoginToken             = require('../common_functions/common_functions').getLoginToken;
-const SessionDurationLimit      = require('../common_functions/session_duration_limit').SessionDurationLimit;
-const getAppId                  = require('../../config').getAppId;
-const getSocketURL              = require('../../config').getSocketURL;
-const Cookies                   = require('../../lib/js-cookie');
+const MBTradePage          = require('./mb_trade/mb_tradepage');
+const TradePage_Beta       = require('./trade/beta/tradepage');
+const Highchart            = require('./trade/charts/highchartws').Highchart;
+const reloadPage           = require('./trade/common').reloadPage;
+const Notifications        = require('./trade/notifications').Notifications;
+const WSTickDisplay        = require('./trade/tick_trade').WSTickDisplay;
+const TradePage            = require('./trade/tradepage');
+const ViewPopupWS          = require('./user/view_popup/view_popupws');
+const ViewBalanceUI        = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
+const Client               = require('../base/client');
+const Clock                = require('../base/clock');
+const GTM                  = require('../base/gtm');
+const Header               = require('../base/header');
+const Language             = require('../base/language');
+const localize             = require('../base/localize').localize;
+const Login                = require('../base/login');
+const State                = require('../base/storage').State;
+const getPropertyValue     = require('../base/utility').getPropertyValue;
+const getLoginToken        = require('../common_functions/common_functions').getLoginToken;
+const SessionDurationLimit = require('../common_functions/session_duration_limit').SessionDurationLimit;
+const getAppId             = require('../../config').getAppId;
+const getSocketURL         = require('../../config').getSocketURL;
+const Cookies              = require('../../lib/js-cookie');
 
 /*
  * It provides a abstraction layer over native javascript Websocket.
@@ -50,7 +47,7 @@ const BinarySocketClass = function() {
         wrongAppId = 0;
 
     const timeouts  = {};
-    const socketUrl = getSocketURL() + '?app_id=' + getAppId() + '&l=' + getLanguage();
+    const socketUrl = getSocketURL() + '?app_id=' + getAppId() + '&l=' + Language.get();
     const promises  = {};
     const no_duplicate_requests = [
         'authorize',
@@ -266,7 +263,6 @@ const BinarySocketClass = function() {
                             sessionStorage.removeItem('active_tab');
                             window.alert(response.error.message);
                         }
-                        LocalStore.set('reality_check.ack', 0);
                         Client.sendLogoutRequest(isActiveTab);
                     } else if (response.authorize.loginid !== Cookies.get('loginid')) {
                         Client.sendLogoutRequest(true);
@@ -277,6 +273,7 @@ const BinarySocketClass = function() {
                             send({ balance: 1, subscribe: 1 });
                             send({ get_settings: 1 });
                             send({ get_account_status: 1 });
+                            send({ payout_currencies: 1 });
                             const residence = response.authorize.country || Cookies.get('residence');
                             if (residence) {
                                 Client.set('residence', residence);
@@ -293,7 +290,6 @@ const BinarySocketClass = function() {
                 } else if (type === 'balance') {
                     ViewBalanceUI.updateBalances(response);
                 } else if (type === 'logout') {
-                    RealityCheckData.clear();
                     Client.doLogout(response);
                 } else if (type === 'landing_company') {
                     Header.upgradeMessageVisibility();
@@ -302,11 +298,6 @@ const BinarySocketClass = function() {
                     const company = Client.currentLandingCompany();
                     if (company) {
                         Client.set('default_currency', company.legal_default_currency);
-                        const has_reality_check = company.has_reality_check;
-                        if (has_reality_check) {
-                            Client.set('has_reality_check', has_reality_check);
-                            RealityCheck.init();
-                        }
                     }
                 } else if (type === 'get_self_exclusion') {
                     SessionDurationLimit.exclusionResponseHandler(response);
@@ -315,9 +306,9 @@ const BinarySocketClass = function() {
                 } else if (type === 'get_settings' && response.get_settings) {
                     const country_code = response.get_settings.country_code;
                     if (country_code) {
-                        Client.set('residence', country_code);
                         if (!Cookies.get('residence')) {
                             Client.setCookie('residence', country_code);
+                            Client.set('residence', country_code);
                             send({ landing_company: country_code });
                         }
                     }
@@ -326,8 +317,6 @@ const BinarySocketClass = function() {
                         $('#topMenuPaymentAgent').removeClass('invisible');
                     }
                     Client.set('first_name', response.get_settings.first_name);
-                } else if (type === 'reality_check') {
-                    RealityCheck.realityCheckWSHandler(response);
                 }
 
                 switch (error_code) {

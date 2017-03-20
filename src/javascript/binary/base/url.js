@@ -1,4 +1,4 @@
-const getLanguage     = require('./language').getLanguage;
+const Language        = require('./language');
 const japanese_client = require('../common_functions/country_base').japanese_client;
 
 const Url = function(url) {
@@ -24,22 +24,6 @@ Url.prototype = {
             this.reset();
         }
     },
-    isIn: function(url) {
-        if (this.pathMatches(url)) {
-            const this_params = this.params();
-            let param_count = this_params.length,
-                match_count = 0;
-            while (param_count--) {
-                if (url.param(this_params[param_count][0]) === this_params[param_count][1]) {
-                    match_count++;
-                }
-            }
-            if (match_count === this_params.length) {
-                return true;
-            }
-        }
-        return false;
-    },
     paramsHash: function() {
         if (!this.param_hash || (this.param_hash && Object.keys(this.param_hash).length === 0)) {
             this.param_hash = {};
@@ -64,7 +48,6 @@ Url.prototype = {
         return params;
     },
     param             : function(name) { return this.paramsHash()[name]; },
-    pathMatches       : function(url)  { return new RegExp('^\/?' + this.location.pathname + '$').test(url.location.pathname); },
     paramsHashToString: params        => Object.keys(params).map(function(key) { return key + '=' + params[key]; }).join('&'),
 };
 
@@ -74,7 +57,7 @@ const urlFor = (path, params) => {
     } else if (path.length > 0 && path[0] === '/') {
         path = path.substr(1);
     }
-    const lang = getLanguage().toLowerCase();
+    const lang = Language.get().toLowerCase();
     let url = '';
     if (typeof window !== 'undefined') {
         url  = window.location.href;

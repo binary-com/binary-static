@@ -4,7 +4,7 @@ const Notifications      = require('./notifications').Notifications;
 const Symbols            = require('./symbols').Symbols;
 const Tick               = require('./tick').Tick;
 const Client             = require('../../base/client');
-const getLanguage        = require('../../base/language').getLanguage;
+const Language           = require('../../base/language');
 const localize           = require('../../base/localize').localize;
 const urlFor             = require('../../base/url').urlFor;
 const objectNotEmpty     = require('../../base/utility').objectNotEmpty;
@@ -809,7 +809,7 @@ function chartFrameSource() {
 
 function setChartSource() {
     const ja = japanese_client();
-    document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + getLanguage().toLowerCase() +
+    document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + Language.get().toLowerCase() +
   '&hideOverlay=' + (ja ? 'true' : 'false') + '&hideShare=' + (ja ? 'true' : 'false') + '&timezone=GMT+' + (ja ? '9' : '0') +
   '&hideFooter=' + (ja ? 'true' : 'false');
 }

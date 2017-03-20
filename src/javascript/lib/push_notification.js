@@ -1,5 +1,5 @@
 const Client         = require('../binary/base/client');
-const getLanguage    = require('../binary/base/language').getLanguage;
+const Language       = require('../binary/base/language');
 const urlForStatic   = require('../binary/base/url').urlForStatic;
 const Pushwoosh      = require('web-push-notifications').Pushwoosh;
 
@@ -32,7 +32,7 @@ const BinaryPushwoosh = (() => {
                     // send login id and site language
                     return api.setTags({
                         'Login ID'     : Client.get('loginid'),
-                        'Site Language': getLanguage(),
+                        'Site Language': Language.get(),
                     });
                 }
                 return null;

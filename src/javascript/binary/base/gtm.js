@@ -1,11 +1,11 @@
-const moment      = require('moment');
-const Client      = require('./client');
-const getLanguage = require('./language').getLanguage;
-const Login       = require('./login');
-const State       = require('./storage').State;
-const isVisible   = require('../common_functions/common_functions').isVisible;
-const getAppId    = require('../../config').getAppId;
-const Cookies     = require('../../lib/js-cookie');
+const moment    = require('moment');
+const Client    = require('./client');
+const Language  = require('./language');
+const Login     = require('./login');
+const State     = require('./storage').State;
+const isVisible = require('../common_functions/common_functions').isVisible;
+const getAppId  = require('../../config').getAppId;
+const Cookies   = require('../../lib/js-cookie');
 
 const GTM = (() => {
     'use strict';
@@ -14,7 +14,7 @@ const GTM = (() => {
 
     const gtmDataLayerInfo = (data) => {
         const data_layer_info = {
-            language : getLanguage(),
+            language : Language.get(),
             pageTitle: pageTitle(),
             pjax     : State.get('is_loaded_by_pjax'),
             url      : document.URL,
@@ -51,7 +51,7 @@ const GTM = (() => {
 
     const eventHandler = (get_settings) => {
         if (!isGtmApplicable()) return;
-        const is_login       = localStorage.getItem('GTM_login')      === '1';
+        const is_login       = localStorage.getItem('GTM_login')       === '1';
         const is_new_account = localStorage.getItem('GTM_new_account') === '1';
         if (!is_login && !is_new_account) return;
 

@@ -1,13 +1,13 @@
-const objectNotEmpty  = require('../../base/utility').objectNotEmpty;
-const localize        = require('../../base/localize').localize;
-const getLanguage     = require('../../base/language').getLanguage;
-const Client          = require('../../base/client');
-const format_currency = require('../../common_functions/currency_to_symbol').format_currency;
-const japanese_client = require('../../common_functions/country_base').japanese_client;
-const MBDefaults      = require('./mb_defaults').MBDefaults;
-const MBSymbols       = require('./mb_symbols').MBSymbols;
-const moment          = require('moment');
+const moment           = require('moment');
+const MBDefaults       = require('./mb_defaults').MBDefaults;
+const MBSymbols        = require('./mb_symbols').MBSymbols;
+const Client           = require('../../base/client');
+const Language         = require('../../base/language');
+const localize         = require('../../base/localize').localize;
+const objectNotEmpty   = require('../../base/utility').objectNotEmpty;
 const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
+const japanese_client  = require('../../common_functions/country_base').japanese_client;
+const format_currency  = require('../../common_functions/currency_to_symbol').format_currency;
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -72,7 +72,7 @@ const MBContract = (function() {
         }
         let text_value = moment.utc(date_expiry * 1000)
                             .utcOffset(japanese_client() ? '+09:00' : '+00:00')
-                            .locale(getLanguage().toLowerCase())
+                            .locale(Language.get().toLowerCase())
                             .format('MMM Do, HH:mm');
         if (japanese_client()) {
             text_value = text_value.replace(/08:59/, '09:00«') + ' (' + durationText(duration.replace('0d', '1d')) + ')';

@@ -1,17 +1,17 @@
+const DigitInfoWS_Beta                = require('./charts/digit_infows').DigitInfoWS_Beta;
+const showHighchart                   = require('../common').showHighchart;
+const toggleActiveNavMenuElement_Beta = require('../common').toggleActiveNavMenuElement_Beta;
 const AssetIndexUI                    = require('../../resources/asset_index/asset_indexws.ui');
 const MarketTimesUI                   = require('../../resources/market_times/market_timesws.ui');
-const japanese_client                 = require('../../../common_functions/country_base').japanese_client;
-const DigitInfoWS_Beta                = require('./charts/digit_infows').DigitInfoWS_Beta;
 const PortfolioWS                     = require('../../user/account/portfolio/portfolio.init');
+const Client                          = require('../../../base/client');
+const Language                        = require('../../../base/language');
 const State                           = require('../../../base/storage').State;
-const getLanguage                     = require('../../../base/language').getLanguage;
 const Url                             = require('../../../base/url').Url;
 const urlFor                          = require('../../../base/url').urlFor;
 const urlForStatic                    = require('../../../base/url').urlForStatic;
-const Client                          = require('../../../base/client');
-const showHighchart                   = require('../common').showHighchart;
-const toggleActiveNavMenuElement_Beta = require('../common').toggleActiveNavMenuElement_Beta;
 const elementInnerHtml                = require('../../../common_functions/common_functions').elementInnerHtml;
+const japanese_client                 = require('../../../common_functions/country_base').japanese_client;
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -225,7 +225,7 @@ const TradingAnalysis_Beta = (function() {
         };
 
         if (show_image && images.hasOwnProperty(form_name)) {
-            const image_path = urlForStatic('images/pages/trade-explanation/' + (getLanguage() === 'JA' ? 'ja/' : ''));
+            const image_path = urlForStatic('images/pages/trade-explanation/' + (Language.get() === 'JA' ? 'ja/' : ''));
             $Container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $Container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
             $Container.find('#explanation_image').removeClass(hidden_class);

@@ -24,7 +24,7 @@ const Language = (() => {
     const setCookieLanguage = (lang, set_anyway) => {
         if (!Cookies.get('language') || set_anyway) {
             const cookie = new CookieStorage('language');
-            cookie.write(lang || language());
+            cookie.write(lang || getLanguage());
         }
     };
 
@@ -35,33 +35,28 @@ const Language = (() => {
     };
 
     let current_lang = null;
-    const language = () => (current_lang = current_lang || (languageFromUrl() || Cookies.get('language') || 'EN').toUpperCase());
+    const getLanguage = () => (current_lang = current_lang || (languageFromUrl() || Cookies.get('language') || 'EN').toUpperCase());
 
-    const urlForLanguage = lang => window.location.href.replace(new RegExp('\/' + language() + '\/', 'i'), '/' + lang.trim().toLowerCase() + '/');
+    const urlForLanguage = lang => window.location.href.replace(new RegExp('\/' + getLanguage() + '\/', 'i'), '/' + lang.trim().toLowerCase() + '/');
 
     const onChangeLanguage = () => {
+        let $this;
         $('#select_language').find('li').on('click', function() {
-            const lang = $(this).attr('class');
-            if (language() === lang) return;
-            $('#display_language').find('.language').text($(this).text());
+            $this = $(this);
+            const lang = $this.attr('class');
+            if (getLanguage() === lang) return;
+            $('#display_language').find('.language').text($this.text());
             setCookieLanguage(lang, true);
             document.location = urlForLanguage(lang);
         });
     };
 
     return {
-        getAll           : () => allLanguages,
-        setCookieLanguage: setCookieLanguage,
-        get              : language,
-        urlForLanguage   : urlForLanguage,
-        onChangeLanguage : onChangeLanguage,
+        getAll   : () => allLanguages,
+        setCookie: setCookieLanguage,
+        get      : getLanguage,
+        onChange : onChangeLanguage,
     };
 })();
 
-module.exports = {
-    getAllLanguages  : Language.getAll,
-    getLanguage      : Language.get,
-    setCookieLanguage: Language.setCookieLanguage,
-    URLForLanguage   : Language.urlForLanguage,
-    onChangeLanguage : Language.onChangeLanguage,
-};
+module.exports = Language;

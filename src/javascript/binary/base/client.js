@@ -5,6 +5,7 @@ const State              = require('./storage').State;
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const getLoginToken      = require('../common_functions/common_functions').getLoginToken;
 const japanese_client    = require('../common_functions/country_base').japanese_client;
+const RealityCheckData   = require('../websocket_pages/user/reality_check/reality_check.data');
 const Cookies            = require('../../lib/js-cookie');
 
 const Client = (() => {
@@ -82,41 +83,6 @@ const Client = (() => {
         return value;
     };
 
-    const check_values = function(origin) {
-        let is_ok = true;
-
-        // currencies
-        if (!get('currencies')) {
-            BinarySocket.send({
-                payout_currencies: 1,
-                passthrough      : {
-                    handler: 'client',
-                    origin : origin || '',
-                },
-            });
-            is_ok = false;
-        }
-
-        if (isLoggedIn()) {
-            if (
-                !get('is_virtual') &&
-                Cookies.get('residence') &&
-                !get('has_reality_check')
-            ) {
-                BinarySocket.send({
-                    landing_company: Cookies.get('residence'),
-                    passthrough    : {
-                        handler: 'client',
-                        origin : origin || '',
-                    },
-                });
-                is_ok = false;
-            }
-        }
-
-        return is_ok;
-    };
-
     const responseAuthorize = (response) => {
         const authorize = response.authorize;
         if (!Cookies.get('email')) {
@@ -128,7 +94,6 @@ const Client = (() => {
         set('landing_company_name', authorize.landing_company_name);
         set('landing_company_fullname', authorize.landing_company_fullname);
         set('currency', authorize.currency);
-        check_values();
     };
 
     const shouldAcceptTnc = () => {
@@ -196,6 +161,7 @@ const Client = (() => {
         // set local storage
         localStorage.setItem('GTM_new_account', '1');
         localStorage.setItem('active_loginid', client_loginid);
+        RealityCheckData.clear();
         window.location.href = defaultRedirectUrl(); // need to redirect not using pjax
     };
 
@@ -254,7 +220,6 @@ const Client = (() => {
         if (response.logout !== 1) return;
         clear();
         LocalStore.remove('client.tokens');
-        LocalStore.set('reality_check.ack', 0);
         const cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence'];
         const domains = [
             '.' + document.domain.split('.').slice(-2).join('.'),
@@ -318,8 +283,6 @@ const Client = (() => {
         hasGamingFinancialEnabled   : hasGamingFinancialEnabled,
         activateByClientType        : activateByClientType,
         currentLandingCompany       : currentLandingCompany,
-
-
     };
 })();
 
