@@ -56,6 +56,7 @@ const Language = (() => {
         setCookie: setCookieLanguage,
         get      : getLanguage,
         onChange : onChangeLanguage,
+        urlFor   : urlForLanguage,
     };
 })();
 

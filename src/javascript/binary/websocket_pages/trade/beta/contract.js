@@ -1,5 +1,5 @@
 const getFormNameBarrierCategory = require('../common').getFormNameBarrierCategory;
-const Language                   = require('../../../base/language');
+const getLanguage                = require('../../../base/language').get;
 const localize                   = require('../../../base/localize').localize;
 const objectNotEmpty             = require('../../../base/utility').objectNotEmpty;
 const Content                    = require('../../../common_functions/content').Content;
@@ -157,7 +157,7 @@ const Contract_Beta = (function() {
                     tradeContractForms[contractCategory] = localize(currentObj.contract_category_display);
                     if (contractCategory === 'digits') {
                         tradeContractForms.matchdiff = Content.localize().textFormMatchesDiffers;
-                        if (Language.get() !== 'ID') {
+                        if (getLanguage() !== 'ID') {
                             tradeContractForms.evenodd = Content.localize().textFormEvenOdd;
                             tradeContractForms.overunder = Content.localize().textFormOverUnder;
                         }

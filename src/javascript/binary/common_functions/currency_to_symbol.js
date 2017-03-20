@@ -1,13 +1,13 @@
 const japanese_client = require('./country_base').japanese_client;
 const addComma        = require('./string_util').addComma;
-const Language        = require('../base/language');
+const getLanguage     = require('../base/language').get;
 
 function format_money(currencyValue, amount) {
     let money;
     if (amount) amount = String(amount).replace(/,/g, '');
     if (typeof Intl !== 'undefined' && currencyValue && currencyValue !== '' && amount && amount !== '') {
         const options = { style: 'currency', currency: currencyValue },
-            language = typeof window !== 'undefined' ? Language.get().toLowerCase() : 'en';
+            language = typeof window !== 'undefined' ? getLanguage().toLowerCase() : 'en';
         money = new Intl.NumberFormat(language.replace('_', '-'), options).format(amount);
     } else {
         let updatedAmount,

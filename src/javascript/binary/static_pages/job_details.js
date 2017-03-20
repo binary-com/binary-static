@@ -1,6 +1,6 @@
 const localize = require('../base/localize').localize;
 const urlFor   = require('../base/url').urlFor;
-const url      = require('../base/url').url;
+const urlParam = require('../base/url').param;
 
 const JobDetails = (function() {
     let dept,
@@ -43,7 +43,7 @@ const JobDetails = (function() {
     };
 
     const onLoad = function() {
-        dept = url.param('dept');
+        dept = urlParam('dept');
         depts = ['Information_Technology', 'Quality_Assurance', 'Quantitative_Analysis', 'Marketing', 'Accounting', 'Compliance', 'Customer_Support', 'Human_Resources', 'Administrator', 'Internal_Audit'];
         sections = ['section-one', 'section-two', 'section-three', 'section-four', 'section-five', 'section-six', 'section-seven', 'section-eight'];
         if (check_url()) {

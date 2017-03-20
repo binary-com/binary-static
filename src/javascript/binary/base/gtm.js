@@ -1,11 +1,11 @@
-const moment    = require('moment');
-const Client    = require('./client');
-const Language  = require('./language');
-const Login     = require('./login');
-const State     = require('./storage').State;
-const isVisible = require('../common_functions/common_functions').isVisible;
-const getAppId  = require('../../config').getAppId;
-const Cookies   = require('../../lib/js-cookie');
+const moment      = require('moment');
+const Client      = require('./client');
+const getLanguage = require('./language').get;
+const Login       = require('./login');
+const State       = require('./storage').State;
+const isVisible   = require('../common_functions/common_functions').isVisible;
+const getAppId    = require('../../config').getAppId;
+const Cookies     = require('../../lib/js-cookie');
 
 const GTM = (() => {
     'use strict';
@@ -14,7 +14,7 @@ const GTM = (() => {
 
     const gtmDataLayerInfo = (data) => {
         const data_layer_info = {
-            language : Language.get(),
+            language : getLanguage(),
             pageTitle: pageTitle(),
             pjax     : State.get('is_loaded_by_pjax'),
             url      : document.URL,

@@ -1,7 +1,7 @@
 const ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbols;
 const BinaryPjax    = require('../../base/binary_pjax');
 const Client        = require('../../base/client');
-const Language      = require('../../base/language');
+const getLanguage   = require('../../base/language').get;
 const State         = require('../../base/storage').State;
 
 /*
@@ -54,7 +54,7 @@ const MBSymbols = (function () {
             };
             if (landing_company_obj) {
                 req.landing_company = landing_company_obj.financial_company ? landing_company_obj.financial_company.shortcode : 'japan';
-            } else if (website_status.website_status.clients_country === 'jp' || Language.get() === 'JA') {
+            } else if (website_status.website_status.clients_country === 'jp' || getLanguage() === 'JA') {
                 req.landing_company = 'japan';
             }
             BinarySocket.send(req);

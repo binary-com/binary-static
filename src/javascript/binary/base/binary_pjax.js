@@ -1,6 +1,6 @@
-const Language = require('./language');
-const State    = require('./storage').State;
-const urlFor   = require('./url').urlFor;
+const getLanguage = require('./language').get;
+const State       = require('./storage').State;
+const urlFor      = require('./url').urlFor;
 
 const BinaryPjax = (function() {
     'use strict';
@@ -109,7 +109,7 @@ const BinaryPjax = (function() {
      * Load url from server
      */
     const load = (url, replace) => {
-        const lang = Language.get();
+        const lang = getLanguage();
         const options = $.extend(true, {}, $.ajaxSettings, defaults, {
             url: url.replace(new RegExp(`\/${lang}\/`, 'i'), `/${lang.toLowerCase()}/pjax/`) });
 

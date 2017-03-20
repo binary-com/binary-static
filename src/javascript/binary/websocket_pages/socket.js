@@ -11,7 +11,7 @@ const Client               = require('../base/client');
 const Clock                = require('../base/clock');
 const GTM                  = require('../base/gtm');
 const Header               = require('../base/header');
-const Language             = require('../base/language');
+const getLanguage          = require('../base/language').get;
 const localize             = require('../base/localize').localize;
 const Login                = require('../base/login');
 const State                = require('../base/storage').State;
@@ -47,7 +47,7 @@ const BinarySocketClass = function() {
         wrongAppId = 0;
 
     const timeouts  = {};
-    const socketUrl = getSocketURL() + '?app_id=' + getAppId() + '&l=' + Language.get();
+    const socketUrl = getSocketURL() + '?app_id=' + getAppId() + '&l=' + getLanguage();
     const promises  = {};
     const no_duplicate_requests = [
         'authorize',

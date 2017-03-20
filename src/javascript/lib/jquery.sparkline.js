@@ -861,7 +861,7 @@
                 id: 'jqstooltip',
                 'class': tooltipClassname
             }).appendTo(this.container);
-            // account for the container's local_location
+            // account for the container's location
             offset = this.tooltip.offset();
             this.offsetLeft = offset.left;
             this.offsetTop = offset.top;

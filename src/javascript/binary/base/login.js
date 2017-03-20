@@ -1,6 +1,6 @@
-const Client   = require('./client');
-const Language = require('./language');
-const getAppId = require('../../config').getAppId;
+const Client      = require('./client');
+const getLanguage = require('./language').get;
+const getAppId    = require('../../config').getAppId;
 
 const Login = (() => {
     'use strict';
@@ -18,9 +18,10 @@ const Login = (() => {
 
     const loginUrl = () => {
         const server_url = localStorage.getItem('config.server_url');
+        const language = getLanguage();
         return ((server_url && /qa/.test(server_url)) ?
-            'https://www.' + server_url.split('.')[1] + '.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + Language.get() :
-            'https://oauth.binary.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + Language.get()
+            'https://www.' + server_url.split('.')[1] + '.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + language :
+            'https://oauth.binary.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + language
         );
     };
 

@@ -1,6 +1,6 @@
 const objectNotEmpty = require('../../base/utility').objectNotEmpty;
 const isVisible      = require('../../common_functions/common_functions').isVisible;
-const url            = require('../../base/url').url;
+const Url            = require('../../base/url');
 
 /*
  * Handles trading page default values
@@ -17,7 +17,7 @@ const Defaults = (function() {
 
     let params = {};
     const getDefault = function(key) {
-        const pValue = params[key] || url.param(key),
+        const pValue = params[key] || Url.param(key),
             sValue = sessionStorage.getItem(key);
         if (pValue && (!sValue || pValue !== sValue)) {
             sessionStorage.setItem(key, pValue);
@@ -31,7 +31,7 @@ const Defaults = (function() {
     const setDefault = function(key, value) {
         if (!key) return;
         value = value || '';
-        if (!objectNotEmpty(params)) params = url.paramsHash();
+        if (!objectNotEmpty(params)) params = Url.paramsHash();
         if (params[key] !== value) {
             params[key] = value;
             // to increase speed, do not set values when form is still loading
@@ -43,7 +43,7 @@ const Defaults = (function() {
     };
 
     const removeDefault = function() {
-        if (!objectNotEmpty(params)) params = url.paramsHash();
+        if (!objectNotEmpty(params)) params = Url.paramsHash();
         let isUpdated = false;
         for (let i = 0; i < arguments.length; i++) {
             if (params.hasOwnProperty(arguments[i])) {
@@ -65,7 +65,7 @@ const Defaults = (function() {
     };
 
     const updateURL = function() {
-        const updated_url = window.location.origin + window.location.pathname + '?' + url.paramsHashToString(params);
+        const updated_url = window.location.origin + window.location.pathname + '?' + Url.paramsHashToString(params);
         window.history.replaceState({ url: updated_url }, null, updated_url);
     };
 

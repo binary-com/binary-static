@@ -1,5 +1,5 @@
 const BinaryPjax  = require('../base/binary_pjax');
-const Language    = require('../base/language');
+const getLanguage = require('../base/language').get;
 const localize    = require('../base/localize').localize;
 const urlFor      = require('../base/url').urlFor;
 const FormManager = require('../common_functions/form_manager');
@@ -10,7 +10,7 @@ const Home = (() => {
     let clients_country;
 
     const onLoad = () => {
-        if (Language.get() === 'JA' && !/home-jp/.test(window.location.pathname)) {
+        if (getLanguage() === 'JA' && !/home-jp/.test(window.location.pathname)) {
             BinaryPjax.load('home-jp');
             return;
         }

@@ -1,6 +1,5 @@
 const CookieStorage = require('../base/storage').CookieStorage;
-const Url           = require('../base/url').Url;
-const url           = require('../base/url').url;
+const Url           = require('../base/url');
 const Client        = require('../base/client');
 
 /*
@@ -50,7 +49,7 @@ const TrafficSource = (function() {
         }
 
         const current_values = getData(),
-            params = url.paramsHash(),
+            params = Url.paramsHash(),
             param_keys = ['utm_source', 'utm_medium', 'utm_campaign'];
 
         if (params.utm_source) { // url params can be stored only if utm_source is available
@@ -73,7 +72,7 @@ const TrafficSource = (function() {
             referrer = doc_ref;
         }
         if (referrer && !current_values.referrer && !params.utm_source && !current_values.utm_source) {
-            cookie.set('referrer', (new Url(referrer)).location.hostname);
+            cookie.set('referrer', (Url.getLocation(referrer)).hostname);
         }
     };
 

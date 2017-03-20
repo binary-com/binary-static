@@ -4,7 +4,7 @@ const Client              = require('../../../../base/client');
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
 const localize            = require('../../../../base/localize').localize;
 const State               = require('../../../../base/storage').State;
-const url                 = require('../../../../base/url').url;
+const urlParam            = require('../../../../base/url').param;
 const showLoadingImage    = require('../../../../base/utility').showLoadingImage;
 const japanese_client     = require('../../../../common_functions/country_base').japanese_client;
 const format_money        = require('../../../../common_functions/currency_to_symbol').format_money;
@@ -40,7 +40,7 @@ const PortfolioWS = (function() {
         is_initialized = true;
 
         // Display ViewPopup according to contract_id in query string
-        const contract_id = url.param('contract_id');
+        const contract_id = urlParam('contract_id');
         if (contract_id) {
             ViewPopupWS.init($('<div />', { contract_id: contract_id }).get(0));
         }

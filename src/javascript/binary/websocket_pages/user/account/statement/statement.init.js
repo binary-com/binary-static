@@ -1,7 +1,7 @@
 const moment               = require('moment');
 const StatementUI          = require('./statement.ui');
 const ViewPopupWS          = require('../../view_popup/view_popupws');
-const Language             = require('../../../../base/language');
+const getLanguage          = require('../../../../base/language').get;
 const localize             = require('../../../../base/localize').localize;
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;
@@ -89,7 +89,7 @@ const StatementInit = (() => {
             } else {
                 $('#jump-to').parent().parent().parent()
                              .removeClass('invisible');
-                if (Language.get() === 'JA') {
+                if (getLanguage() === 'JA') {
                     $('#download_csv').removeClass('invisible')
                                       .find('a')
                                       .unbind('click')

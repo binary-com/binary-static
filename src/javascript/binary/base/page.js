@@ -8,8 +8,7 @@ const Login             = require('./login');
 const Menu              = require('./menu');
 const LocalStore        = require('./storage').LocalStore;
 const State             = require('./storage').State;
-const Url               = require('./url').Url;
-const urlFor            = require('./url').urlFor;
+const Url               = require('./url');
 const checkLanguage     = require('../common_functions/country_base').checkLanguage;
 const TrafficSource     = require('../common_functions/traffic_source').TrafficSource;
 const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check');
@@ -21,12 +20,10 @@ require('../../lib/polyfills/string.includes');
 const Page = (() => {
     'use strict';
 
-    let url;
-
     const init = () => {
         State.set('is_loaded_by_pjax', false);
         Client.init();
-        url = new Url();
+        Url.init();
         PushNotification.init();
         onDocumentReady();
     };
@@ -72,7 +69,7 @@ const Page = (() => {
 
     const onLoad = () => {
         if (State.get('is_loaded_by_pjax')) {
-            url.reset();
+            Url.reset();
         } else {
             init();
         }
@@ -101,12 +98,12 @@ const Page = (() => {
     };
 
     const recordAffiliateExposure = () => {
-        const token = url.param('t');
+        const token = Url.param('t');
         if (!token || token.length !== 32) {
             return false;
         }
         const token_length = token.length;
-        const is_subsidiary = /\w{1}/.test(url.param('s'));
+        const is_subsidiary = /\w{1}/.test(Url.param('s'));
 
         const cookie_token = Cookies.getJSON('affiliate_tracking');
         if (cookie_token) {
@@ -139,9 +136,9 @@ const Page = (() => {
         const server = localStorage.getItem('config.server_url');
         if (server && server.length > 0) {
             const message = (/www\.binary\.com/i.test(window.location.hostname) ? '' :
-                        localize('This is a staging server - For testing purposes only') + ' - ') +
-                    localize('The server <a href="[_1]">endpoint</a> is: [_2]', [urlFor('endpoint'), server]),
-                $end_note = $('#end-note');
+                localize('This is a staging server - For testing purposes only') + ' - ') +
+                localize('The server <a href="[_1]">endpoint</a> is: [_2]', [Url.urlFor('endpoint'), server]);
+            const $end_note = $('#end-note');
             $end_note.html(message).removeClass('invisible');
             $('#footer').css('padding-bottom', $end_note.height());
         }

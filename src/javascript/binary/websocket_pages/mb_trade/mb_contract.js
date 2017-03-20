@@ -2,7 +2,7 @@ const moment           = require('moment');
 const MBDefaults       = require('./mb_defaults').MBDefaults;
 const MBSymbols        = require('./mb_symbols').MBSymbols;
 const Client           = require('../../base/client');
-const Language         = require('../../base/language');
+const getLanguage      = require('../../base/language').get;
 const localize         = require('../../base/localize').localize;
 const objectNotEmpty   = require('../../base/utility').objectNotEmpty;
 const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
@@ -72,7 +72,7 @@ const MBContract = (function() {
         }
         let text_value = moment.utc(date_expiry * 1000)
                             .utcOffset(japanese_client() ? '+09:00' : '+00:00')
-                            .locale(Language.get().toLowerCase())
+                            .locale(getLanguage().toLowerCase())
                             .format('MMM Do, HH:mm');
         if (japanese_client()) {
             text_value = text_value.replace(/08:59/, '09:00«') + ' (' + durationText(duration.replace('0d', '1d')) + ')';
