@@ -151,19 +151,21 @@ $(document).ready(function () {
     });
 
     // Scroll to top
-    $(window).scroll(function () {
+    let is_displaying = false;
+    const $scrollup = $('#scrollup');
+    $(document).scroll(function () {
         if ($(this).scrollTop() > 100) {
-            $('.scrollup').fadeIn();
-        } else {
-            $('.scrollup').fadeOut();
+            if (is_displaying) return;
+            $scrollup.fadeIn();
+            is_displaying = true;
+        } else if (is_displaying) {
+            $scrollup.fadeOut();
+            is_displaying = false;
         }
     });
 
-    $('.scrollup').click(function () {
-        $('html, body').animate({
-            scrollTop: 0,
-        }, 200);
-        return false;
+    $scrollup.click(function () {
+        $.scrollTo(0, 500);
     });
 
     LocalStore.set('active_loginid', match);
