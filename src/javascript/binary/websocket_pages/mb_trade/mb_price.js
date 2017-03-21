@@ -101,7 +101,7 @@ const MBPrice = (function() {
         barriers.forEach(function(barrier) {
             Object.keys(contract_types).forEach(function(contract_type) {
                 $($tables[+contract_types[contract_type].order])
-                    .append(makePriceRow(getValues(prices[barrier][contract_type])));
+                    .append(makePriceRow(getValues(prices[barrier][contract_type], contract_type)));
             });
         });
 
@@ -119,19 +119,18 @@ const MBPrice = (function() {
 
             const contract_info     = contract_types[contract_type];
             const contract_info_opp = contract_types[contract_info.opposite];
-            const values     = getValues(proposal);
-            const values_opp = getValues(prices[barrier][contract_info.opposite]);
+            const values     = getValues(proposal, contract_type);
+            const values_opp = getValues(prices[barrier][contract_info.opposite], contract_type);
 
             elementInnerHtml(price_rows[+contract_info.order],     makePriceRow(values,     true));
             elementInnerHtml(price_rows[+contract_info_opp.order], makePriceRow(values_opp, true));
         });
     };
 
-    const getValues = function(proposal) {
-        const barrier     = makeBarrier(proposal),
-            payout        = proposal.echo_req.amount,
-            contract_type = proposal.echo_req.contract_type,
-            proposal_opp  = prices[barrier][contract_types[contract_type].opposite];
+    const getValues = function(proposal, contract_type) {
+        const barrier    = makeBarrier(proposal),
+            payout       = proposal.echo_req.amount,
+            proposal_opp = prices[barrier][contract_types[contract_type].opposite];
         return {
             contract_type      : contract_type,
             barrier            : barrier,
@@ -218,7 +217,7 @@ const MBPrice = (function() {
                 amount               : proposal.echo_req.amount,
                 barrier              : proposal.barrier,
                 basis                : 'payout',
-                contract_type        : proposal.echo_req.contract_type,
+                contract_type        : contract_type,
                 currency             : MBContract.getCurrency(),
                 symbol               : proposal.echo_req.symbol,
                 date_expiry          : proposal.echo_req.date_expiry,
