@@ -192,7 +192,7 @@ const Validation = (function() {
         form.is_ok = true;
         form.fields.forEach((field) => {
             if (!checkField(field)) {
-                if (form.is_ok) { // first error
+                if (form.is_ok && !field.no_scroll) { // first error
                     $.scrollTo(field.$, 500, { offset: -10 });
                 }
                 form.is_ok = false;

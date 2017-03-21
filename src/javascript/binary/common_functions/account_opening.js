@@ -60,7 +60,7 @@ const handleResidenceList = (residence_list) => {
 
             if (residence_value === res.value) {
                 residence_text = res.text;
-                if (residence_value !== 'jp' && res.phone_idd) {
+                if (residence_value !== 'jp' && res.phone_idd && !$phone.val()) {
                     $phone.val('+' + res.phone_idd);
                 }
             }

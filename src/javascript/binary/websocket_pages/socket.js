@@ -5,8 +5,6 @@ const reloadPage                = require('./trade/common').reloadPage;
 const Notifications             = require('./trade/notifications').Notifications;
 const WSTickDisplay             = require('./trade/tick_trade').WSTickDisplay;
 const TradePage                 = require('./trade/tradepage');
-const RealityCheckData          = require('./user/reality_check/reality_check.data').RealityCheckData;
-const RealityCheck              = require('./user/reality_check/reality_check.init').RealityCheck;
 const ViewPopupWS               = require('./user/view_popup/view_popupws');
 const ViewBalanceUI             = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
 const Client                    = require('../base/client').Client;
@@ -17,7 +15,6 @@ const Header                    = require('../base/header').Header;
 const getLanguage               = require('../base/language').getLanguage;
 const localize                  = require('../base/localize').localize;
 const Login                     = require('../base/login').Login;
-const LocalStore                = require('../base/storage').LocalStore;
 const State                     = require('../base/storage').State;
 const getPropertyValue          = require('../base/utility').getPropertyValue;
 const getLoginToken             = require('../common_functions/common_functions').getLoginToken;
@@ -267,7 +264,6 @@ const BinarySocketClass = function() {
                             sessionStorage.removeItem('active_tab');
                             window.alert(response.error.message);
                         }
-                        LocalStore.set('reality_check.ack', 0);
                         Client.send_logout_request(isActiveTab);
                     } else if (response.authorize.loginid !== Cookies.get('loginid')) {
                         Client.send_logout_request(true);
@@ -278,6 +274,7 @@ const BinarySocketClass = function() {
                             send({ balance: 1, subscribe: 1 });
                             send({ get_settings: 1 });
                             send({ get_account_status: 1 });
+                            send({ payout_currencies: 1 });
                             const residence = response.authorize.country || Cookies.get('residence');
                             if (residence) {
                                 Client.set('residence', residence);
@@ -296,7 +293,6 @@ const BinarySocketClass = function() {
                 } else if (type === 'time') {
                     Clock.time_counter(response);
                 } else if (type === 'logout') {
-                    RealityCheckData.clear();
                     Client.do_logout(response);
                 } else if (type === 'landing_company') {
                     Header.upgrade_message_visibility();
@@ -305,11 +301,6 @@ const BinarySocketClass = function() {
                     const company = Client.current_landing_company();
                     if (company) {
                         Client.set('default_currency', company.legal_default_currency);
-                        const has_reality_check = company.has_reality_check;
-                        if (has_reality_check) {
-                            Client.set('has_reality_check', has_reality_check);
-                            RealityCheck.init();
-                        }
                     }
                 } else if (type === 'get_self_exclusion') {
                     SessionDurationLimit.exclusionResponseHandler(response);
@@ -318,8 +309,8 @@ const BinarySocketClass = function() {
                 } else if (type === 'get_settings' && response.get_settings) {
                     const country_code = response.get_settings.country_code;
                     if (country_code) {
-                        Client.set('residence', country_code);
                         if (!Cookies.get('residence')) {
+                            Client.set('residence', country_code);
                             Client.set_cookie('residence', country_code);
                             send({ landing_company: country_code });
                         }
@@ -329,8 +320,6 @@ const BinarySocketClass = function() {
                         $('#topMenuPaymentAgent').removeClass('invisible');
                     }
                     Client.set('first_name', response.get_settings.first_name);
-                } else if (type === 'reality_check') {
-                    RealityCheck.realityCheckWSHandler(response);
                 }
 
                 switch (error_code) {
