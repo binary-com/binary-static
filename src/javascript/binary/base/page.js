@@ -149,6 +149,23 @@ $(document).ready(function () {
             // no default
         }
     });
+
+    // Scroll to top
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+    });
+
+    $('.scrollup').click(function () {
+        $('html, body').animate({
+            scrollTop: 0,
+        }, 200);
+        return false;
+    });
+
     LocalStore.set('active_loginid', match);
 });
 

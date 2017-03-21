@@ -276,3 +276,14 @@ button .barspinner.white {
     line-height: 20px;
     display: none;
 }
+
+.scrollup {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    display: none;
+    // background: url('') no-repeat; /* Todo: replace background with scroll to top icon */
+    background-color: $COLOR_GRAY;
+}

@@ -11,6 +11,7 @@
             [% INCLUDE global/title.html.tt %]
             <div id="content_class">[% current_route %]-content</div>
         </div>
+        <a href="#" class="scrollup"></a>
         [% IF !full_width %]
         <div class="container">
         [% END %]
