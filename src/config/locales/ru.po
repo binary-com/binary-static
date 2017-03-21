@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-20 01:11+0000\n"
+"PO-Revision-Date: 2017-03-20 05:00+0000\n"
 "Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
@@ -588,10 +588,8 @@ msgstr "<strong>Длинные позиции</strong>: помимо рыноч�
 msgid "<strong>Long-term partnership:</strong> Your partnership with %1 could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide."
 msgstr "<strong>Долгосрочное партнерство:</strong> Ваше партнерство с %1 может стать способом БЕСПЛАТНОГО продвижения Ваших продуктов или услуг более миллиону наших зарегистрированных клиентов по всему миру."
 
-#, fuzzy
-#| msgid "<strong>Low minimum stakes</strong> - start trading with as little as $5."
 msgid "<strong>Low minimum stakes</strong> - Deposit as little as USD 5 to start trading"
-msgstr "<strong>Низкие ставки</strong> – начните торговлю с депозитом от $5."
+msgstr "<strong>Низкий первоначальный депозит</strong> – начните торговлю, внеся на счёт всего $5"
 
 msgid "<strong>Other Risks</strong>: There are other risks that relate to trading investment products and trading foreign currencies that cannot be described in detail in this document. Generally, however, securities, options and currency transactions involve exposure to a combination of the following risk factors: market risk, credit risk, settlement risk, liquidity risk, operational risk and legal risk. For example, there can be serious market disruptions if economic or political or other unforeseen events locally or overseas affect the market. In addition to these types of risk there may be other factors such as accounting and tax treatment issues that you should consider."
 msgstr "<strong>Другие риски</strong>: Есть и другие риски, связанные с торговлей на инвестиционных продуктах и иностранной валюте, которые не могут быть подробно описаны в этом документе. В целом, однако, ценные бумаги, опционы и валютные операции подвержены воздействию сочетания следующих факторов риска: рыночный риск, кредитный риск, риск урегулирования, риск ликвидности, операционный риск и правовой риск. Например, могут возникнуть серьезные перебои с рыночными данными, если какие-либо экономические, политические или другие непредвиденные события локально или за рубежом влияют на рынок. В дополнение к этим видам риска могут добавляться и другие факторы, такие как вопросы бухгалтерского и налогового толка, которые Вы должны иметь в виду."
@@ -821,10 +819,8 @@ msgstr "Академия"
 msgid "Accept"
 msgstr "Принять"
 
-#, fuzzy
-#| msgid "Terms and Conditions"
 msgid "Accept Terms and Conditions"
-msgstr "Правила и условия"
+msgstr "Принять Правила и условия"
 
 msgid "Accept local bank wires"
 msgstr "Принимают местные банковские переводы"
@@ -1660,10 +1656,8 @@ msgstr "Цена покупки"
 msgid "By clicking <strong>Accept</strong> below and proceeding with the Account Opening you should note that you may be exposing yourself to risks (which may be significant, including the risk of loss of the entire sum invested) that you may not have the knowledge and experience to properly assess or mitigate."
 msgstr "Обратите внимание, что, нажимая на кнопку внизу <strong>Согласен</strong> и переходя к открытию счета, Вы можете подвергать себя различным рискам (которые иногда могут быть значительными, включая риск потери всей инвестированной суммы), для оценки и смягчения которых у Вас может не быть достаточных знаний или опыта."
 
-#, fuzzy
-#| msgid "%1 has updated its %2. By clicking OK, you confirm that you have read and accepted the updated %2."
 msgid "By clicking OK, you confirm that you have read and accepted Terms & Conditions."
-msgstr "%1 обновил %2. Нажав OK, Вы подтвердите, что прочитали и приняли новые %2."
+msgstr "Нажав OK, Вы подтвердите, что прочитали и приняли Правила и условия."
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
 msgstr "По умолчанию, система умного распределения поступающих ордеров гарантирует, что в верхней части стакана котировок всегда находится лучшая цена бид и цена предложения, предоставленные конкурирующими поставщиками ликвидности. Тем не менее, при определённом уровне рыночной ликвидности данное положение может измениться и наиболее важным фактором станет сама возможность исполнения."
@@ -2572,10 +2566,8 @@ msgstr "Каждая из сторон Соглашения гарантируе
 msgid "Each time you open a position on a Volatility Index symbol, you can start with a minimum volume transaction of 0.01 (trade size), which translates to USD 0.01 per point movement of the index."
 msgstr "Каждый раз, когда Вы открываете контракт на индексах волатильности, Вы можете заключить сделку на минимальную сумму: 0.01 (от размера контракта), что означает USD 0.01 за каждый пункт, на который продвинется индекс."
 
-#, fuzzy
-#| msgid "Each binary trade is for a pre-determined payout amount. You win the payout if your prediction is correct."
 msgid "Each trade comes with a pre-determined payout that you will see after adjusting each parameter. You’ll win the payout if your prediction is correct. If not, you will only lose your initial stake."
-msgstr "Каждый бинарный опцион служит для получения заранее оговоренной прибыли. Вы получите выигрыш в случае правильности Вашего прогноза."
+msgstr "Каждый контракт предлагает заранее оговоренную прибыль, которая появится после указания всех параметров. Вы получите прибыль в случае правильности Вашего прогноза. Если прогноз окажется неправильным, Вы потеряете лишь сумму инвестиции."
 
 msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
 msgstr "Получите денежное вознаграждение за достоверные сведения об обнаружении любых уязвимостей нашей системы; размер вознаграждения за сообщение о существенных уязвимостях системы безопасности составляет до USD 1 000."
@@ -3353,10 +3345,8 @@ msgstr "Как я могу узнать, сколько я заработал/а
 msgid "How do we calculate interest fees for long positions?"
 msgstr "Как мы рассчитываем проценты на длинных позициях?"
 
-#, fuzzy
-#| msgid " How do we calculate interest fees for short positions?"
 msgid "How do we calculate interest fees for short positions?"
-msgstr " Как мы рассчитываем проценты на коротких позициях?"
+msgstr "Как мы рассчитываем комиссии на коротких позициях?"
 
 msgid "How does %1 make money?"
 msgstr "На чем зарабатывает %1?"
