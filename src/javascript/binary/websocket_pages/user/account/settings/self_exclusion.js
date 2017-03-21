@@ -63,7 +63,7 @@ const SelfExclusionWS = (function() {
         // 5 years
         const datePickerDate = new DatePicker('#' + dateID);
         datePickerDate.show({
-            minDate: moment().add(moment.duration(6, 'months')).toDate(),
+            minDate: moment().add(6, 'months').add(1, 'day').toDate(),
             maxDate: 5 * 365,
         });
         $('#' + timeDateID + ', #' + dateID).change(function() {
