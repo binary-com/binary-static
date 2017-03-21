@@ -37,10 +37,12 @@ const MBPrice = (function() {
             if (!prices[barrier]) {
                 prices[barrier] = {};
             }
-            prices[barrier][req.contract_type] = {};
-            if (!contract_types[req.contract_type]) {
-                contract_types[req.contract_type] = MBContract.getTemplate(req.contract_type);
-            }
+            req.contract_type.forEach((c_type) => {
+                prices[barrier][c_type] = {};
+                if (!contract_types[c_type]) {
+                    contract_types[c_type] = MBContract.getTemplate(c_type);
+                }
+            });
         });
     };
 
@@ -50,28 +52,29 @@ const MBPrice = (function() {
     };
 
     const display = function(response) {
-        const contract_type = response.echo_req.contract_type;
-        response.proposal_array.proposals.forEach(function(proposal) {
-            const barrier = makeBarrier(proposal);
-            const prev_proposal = $.extend({}, prices[barrier][contract_type]);
-            prices[barrier][contract_type] = $.extend({ echo_req: response.echo_req }, proposal);
+        Object.keys(response.proposal_array.proposals).forEach(function(contract_type) {
+            response.proposal_array.proposals[contract_type].forEach(function(proposal) {
+                const barrier                  = makeBarrier(proposal);
+                const prev_proposal            = $.extend({}, prices[barrier][contract_type]);
+                prices[barrier][contract_type] = $.extend({ echo_req: response.echo_req }, proposal);
 
-            if (!objectNotEmpty(prev_proposal)) {
-                res_count++;
-            }
+                if (!objectNotEmpty(prev_proposal)) {
+                    res_count++;
+                }
 
-            // update previous ask_price to use in price movement
-            if (objectNotEmpty(prev_proposal) && !prev_proposal.error) {
-                prices[barrier][contract_type].prev_price = prev_proposal.ask_price;
+                // update previous ask_price to use in price movement
+                if (objectNotEmpty(prev_proposal) && !prev_proposal.error) {
+                    prices[barrier][contract_type].prev_price = prev_proposal.ask_price;
+                }
+            });
+
+            // populate table if all proposals received
+            if (!is_displayed && res_count === Object.keys(prices).length * 2) {
+                populateTable();
+            } else {
+                updatePrice(contract_type);
             }
         });
-
-        // populate table if all proposals received
-        if (!is_displayed && res_count === Object.keys(prices).length * 2) {
-            populateTable();
-        } else {
-            updatePrice(contract_type);
-        }
     };
 
     const populateTable = function() {

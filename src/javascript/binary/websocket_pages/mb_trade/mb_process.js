@@ -197,6 +197,7 @@ const MBProcess = (function() {
         MBPrice.showPriceOverlay();
         const available_contracts = MBContract.getCurrentContracts(),
             durations = MBDefaults.get('period').split('_');
+
         const req = {
             proposal_array: 1,
             subscribe     : 1,
@@ -206,34 +207,39 @@ const MBProcess = (function() {
             symbol        : MBDefaults.get('underlying'),
             req_id        : MBPrice.getReqId(),
             date_expiry   : durations[1],
+            contract_type : [],
+            barriers      : [],
 
             trading_period_start: durations[0],
         };
-        let barriers_array,
-            all_expired = true;
-        for (let i = 0; i < available_contracts.length; i++) {
-            req.barriers = [];
-            req.contract_type = available_contracts[i].contract_type;
-            barriers_array = available_contracts[i].available_barriers;
-            for (let j = 0; j < barriers_array.length; j++) {
-                const barrier_item = {};
-                if (+available_contracts[i].barriers === 2) {
-                    barrier_item.barrier  = barriers_array[j][1];
-                    barrier_item.barrier2 = barriers_array[j][0];
-                } else {
-                    barrier_item.barrier = barriers_array[j];
-                }
-                if (!barrierHasExpired(available_contracts[i].expired_barriers,
-                        barrier_item.barrier, barrier_item.barrier2)) {
-                    all_expired = false;
-                    req.barriers.push(barrier_item);
-                }
+
+        // contract_type
+        available_contracts.forEach(c => req.contract_type.push(c.contract_type));
+
+        // barriers
+        let all_expired = true;
+        const contract = available_contracts[0];
+        contract.available_barriers.forEach((barrier) => {
+            const barrier_item = {};
+            if (+contract.barriers === 2) {
+                barrier_item.barrier  = barrier[1];
+                barrier_item.barrier2 = barrier[0];
+            } else {
+                barrier_item.barrier = barrier;
             }
-            if (req.barriers.length) {
-                MBPrice.addPriceObj(req);
-                BinarySocket.send(req);
+            if (!barrierHasExpired(contract.expired_barriers, barrier_item.barrier, barrier_item.barrier2)) {
+                all_expired = false;
+                req.barriers.push(barrier_item);
             }
+        });
+
+        // send request
+        if (req.barriers.length) {
+            MBPrice.addPriceObj(req);
+            BinarySocket.send(req);
         }
+
+        // all barriers expired
         if (all_expired) {
             MBNotifications.show({ text: localize('All barriers in this trading window are expired') + '.', uid: 'ALL_EXPIRED' });
             MBPrice.hidePriceOverlay();
@@ -248,7 +254,6 @@ const MBProcess = (function() {
         const req_id = MBPrice.getReqId();
         if (response.req_id === req_id) {
             MBPrice.display(response);
-            // MBPrice.hidePriceOverlay();
         }
     };
 
