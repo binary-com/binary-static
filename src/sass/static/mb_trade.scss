@@ -163,10 +163,10 @@
     }
     #spot-dyn {
         &.down {
-            background-image: svg-icon('down', $COLOR_RED);
+            background-image: svg-icon('down', $COLOR_LIGHT_BLUE);
         }
         &.up {
-            background-image: svg-icon('up', $COLOR_GREEN);
+            background-image: svg-icon('up', $COLOR_RED);
         }
         &.still {
             background-image: svg-icon('circle', $COLOR_GRAY_SHADE);
