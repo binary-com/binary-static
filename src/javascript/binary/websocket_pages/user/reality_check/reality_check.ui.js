@@ -1,6 +1,6 @@
 const RealityCheckData      = require('./reality_check.data');
-const showLocalTimeOnHover  = require('../../../base/clock').Clock.showLocalTimeOnHover;
-const url_for               = require('../../../base/url').url_for;
+const showLocalTimeOnHover  = require('../../../base/clock').showLocalTimeOnHover;
+const urlFor               = require('../../../base/url').urlFor;
 const FormManager           = require('../../../common_functions/form_manager');
 require('../../../../lib/polyfills/array.includes');
 require('../../../../lib/polyfills/string.includes');
@@ -8,8 +8,8 @@ require('../../../../lib/polyfills/string.includes');
 const RealityCheckUI = (() => {
     'use strict';
 
-    const summary_url = url_for('user/reality_check_summary');
-    const frequency_url = url_for('user/reality_check_frequency');
+    const summary_url = urlFor('user/reality_check_summary');
+    const frequency_url = urlFor('user/reality_check_frequency');
     const form = {
         selector            : '#frm_reality_check',
         num_reality_duration: '#num_reality_duration',
@@ -91,7 +91,7 @@ const RealityCheckUI = (() => {
     };
 
     const onStatementClick = () => {
-        const win = window.open(url_for('user/statementws') + '#no-reality-check', '_blank');
+        const win = window.open(urlFor('user/statementws') + '#no-reality-check', '_blank');
         if (win) {
             win.focus();
         }

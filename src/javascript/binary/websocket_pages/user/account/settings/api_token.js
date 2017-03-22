@@ -1,5 +1,5 @@
 const BinaryPjax           = require('../../../../base/binary_pjax');
-const showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
+const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const localize             = require('../../../../base/localize').localize;
 const FlexTableUI          = require('../../../../common_functions/attach_dom/flextable').FlexTableUI;
 const Content              = require('../../../../common_functions/content').Content;

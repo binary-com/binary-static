@@ -1,5 +1,5 @@
 const BinaryPjax         = require('../../../../base/binary_pjax');
-const Header             = require('../../../../base/header').Header;
+const Header             = require('../../../../base/header');
 const localize           = require('../../../../base/localize').localize;
 const State              = require('../../../../base/storage').State;
 const showLoadingImage   = require('../../../../base/utility').showLoadingImage;

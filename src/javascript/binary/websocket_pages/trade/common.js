@@ -1,20 +1,20 @@
-const Moment              = require('moment');
-const Defaults            = require('./defaults').Defaults;
-const Notifications       = require('./notifications').Notifications;
-const Symbols             = require('./symbols').Symbols;
-const Tick                = require('./tick').Tick;
-const Client              = require('../../base/client').Client;
-const getLanguage         = require('../../base/language').getLanguage;
-const localize            = require('../../base/localize').localize;
-const url_for             = require('../../base/url').url_for;
-const objectNotEmpty      = require('../../base/utility').objectNotEmpty;
-const Content             = require('../../common_functions/content').Content;
-const japanese_client     = require('../../common_functions/country_base').japanese_client;
-const format_money        = require('../../common_functions/currency_to_symbol').format_money;
-const addComma            = require('../../common_functions/string_util').addComma;
-const toISOFormat         = require('../../common_functions/string_util').toISOFormat;
-const elementInnerHtml    = require('../../common_functions/common_functions').elementInnerHtml;
-const elementTextContent  = require('../../common_functions/common_functions').elementTextContent;
+const Moment             = require('moment');
+const Defaults           = require('./defaults').Defaults;
+const Notifications      = require('./notifications').Notifications;
+const Symbols            = require('./symbols').Symbols;
+const Tick               = require('./tick').Tick;
+const Client             = require('../../base/client');
+const getLanguage        = require('../../base/language').get;
+const localize           = require('../../base/localize').localize;
+const urlFor             = require('../../base/url').urlFor;
+const objectNotEmpty     = require('../../base/utility').objectNotEmpty;
+const Content            = require('../../common_functions/content').Content;
+const japanese_client    = require('../../common_functions/country_base').japanese_client;
+const format_money       = require('../../common_functions/currency_to_symbol').format_money;
+const addComma           = require('../../common_functions/string_util').addComma;
+const toISOFormat        = require('../../common_functions/string_util').toISOFormat;
+const elementInnerHtml   = require('../../common_functions/common_functions').elementInnerHtml;
+const elementTextContent = require('../../common_functions/common_functions').elementTextContent;
 
 /*
  * This contains common functions we need for processing the response
@@ -676,7 +676,7 @@ function displayTooltip(market, symbol) {
     if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
         if (guide) guide.hide();
         tip.show();
-        tip.setAttribute('target', url_for('/get-started/volidx-markets'));
+        tip.setAttribute('target', urlFor('/get-started/volidx-markets'));
         app.show();
         appstore.show();
     } else {
@@ -687,17 +687,17 @@ function displayTooltip(market, symbol) {
     }
     if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/stock/) || markets.match(/stocks/)) {
         tip.show();
-        tip.setAttribute('target', url_for('/get-started/otc-indices-stocks'));
+        tip.setAttribute('target', urlFor('/get-started/otc-indices-stocks'));
     }
     if (market.match(/^random_index/) || symbol.match(/^R_/)) {
-        tip.setAttribute('target', url_for('/get-started/volidx-markets', '#volidx-indices'));
+        tip.setAttribute('target', urlFor('/get-started/volidx-markets', '#volidx-indices'));
     }
     if (market.match(/^random_daily/) || symbol.match(/^RDB/) || symbol.match(/^RDMO/) || symbol.match(/^RDS/)) {
-        tip.setAttribute('target', url_for('/get-started/volidx-markets', '#volidx-quotidians'));
+        tip.setAttribute('target', urlFor('/get-started/volidx-markets', '#volidx-quotidians'));
     }
     if (market.match(/^smart_fx/) || symbol.match(/^WLD/)) {
         tip.show();
-        tip.setAttribute('target', url_for('/get-started/smart-indices', '#world-fx-indices'));
+        tip.setAttribute('target', urlFor('/get-started/smart-indices', '#world-fx-indices'));
     }
 }
 
@@ -862,23 +862,23 @@ function displayTooltip_Beta(market, symbol) {
     if (!market || !symbol) return;
     if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)) {
         tip.show();
-        tip.setAttribute('target', url_for('/get-started/volidx-markets'));
+        tip.setAttribute('target', urlFor('/get-started/volidx-markets'));
     } else {
         tip.hide();
     }
     if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/stock/) || markets.match(/stocks/)) {
         tip.show();
-        tip.setAttribute('target', url_for('/get-started/otc-indices-stocks'));
+        tip.setAttribute('target', urlFor('/get-started/otc-indices-stocks'));
     }
     if (market.match(/^random_index/) || symbol.match(/^R_/)) {
-        tip.setAttribute('target', url_for('/get-started/volidx-markets', '#volidx-indices'));
+        tip.setAttribute('target', urlFor('/get-started/volidx-markets', '#volidx-indices'));
     }
     if (market.match(/^random_daily/) || symbol.match(/^RDB/) || symbol.match(/^RDMO/) || symbol.match(/^RDS/)) {
-        tip.setAttribute('target', url_for('/get-started/volidx-markets', '#volidx-quotidians'));
+        tip.setAttribute('target', urlFor('/get-started/volidx-markets', '#volidx-quotidians'));
     }
     if (market.match(/^smart_fx/) || symbol.match(/^WLD/)) {
         tip.show();
-        tip.setAttribute('target', url_for('/get-started/smart-indices', '#world-fx-indices'));
+        tip.setAttribute('target', urlFor('/get-started/smart-indices', '#world-fx-indices'));
     }
 }
 

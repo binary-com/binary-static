@@ -1,6 +1,6 @@
 const moment     = require('moment');
+const localize   = require('../../../base/localize').localize;
 const LocalStore = require('../../../base/storage').LocalStore;
-const template   = require('../../../base/utility').template;
 
 const RealityCheckData = (() => {
     'use strict';
@@ -23,7 +23,7 @@ const RealityCheckData = (() => {
         const current_time = moment.utc();
 
         const session_duration = moment.duration(current_time.diff(start_time));
-        const duration_string = template('[_1] days [_2] hours [_3] minutes', [
+        const duration_string = localize('[_1] days [_2] hours [_3] minutes', [
             session_duration.get('days'),
             session_duration.get('hours'),
             session_duration.get('minutes'),
@@ -32,7 +32,7 @@ const RealityCheckData = (() => {
         const turnover = +(data.buy_amount) + (+(data.sell_amount));
         const profit_loss = +(data.sell_amount) - (+(data.buy_amount));
 
-        const start_time_string = template('Your trading statistics since [_1].', [start_time.format('YYYY-MM-DD HH:mm:ss') + ' GMT']);
+        const start_time_string = localize('Your trading statistics since [_1].', [start_time.format('YYYY-MM-DD HH:mm:ss') + ' GMT']);
         return {
             start_time_string: start_time_string,
             login_time       : start_time.format('YYYY-MM-DD HH:mm:ss') + ' GMT',

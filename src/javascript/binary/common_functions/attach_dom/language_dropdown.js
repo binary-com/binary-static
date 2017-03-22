@@ -1,6 +1,4 @@
-const getLanguage      = require('../../base/language').getLanguage;
-const getAllLanguages  = require('../../base/language').getAllLanguages;
-const onChangeLanguage = require('../../base/language').onChangeLanguage;
+const Language = require('../../base/language');
 
 let $languages,
     languageCode,
@@ -17,7 +15,7 @@ function createLanguageDropDown() {
             return (a === 'EN' || a < b) ? -1 : 1;
         });
         const displayLanguage = 'ul#display_language';
-        languageCode = getLanguage();
+        languageCode = Language.get();
         languageText = map_code_to_language(languageCode);
         add_display_language(displayLanguage);
         add_display_language(selectLanguage);
@@ -25,7 +23,7 @@ function createLanguageDropDown() {
             $selectLanguage.append('<li class="' + languages[i] + '">' + map_code_to_language(languages[i]) + '</li>');
         }
         $selectLanguage.find('li.' + languageCode + ':eq(1)').addClass('invisible');
-        onChangeLanguage();
+        Language.onChange();
         $languages.removeClass('invisible');
     });
 }
@@ -38,7 +36,7 @@ function add_display_language(id) {
 }
 
 function map_code_to_language(code) {
-    const map = getAllLanguages();
+    const map = Language.getAll();
     return map[code];
 }
 

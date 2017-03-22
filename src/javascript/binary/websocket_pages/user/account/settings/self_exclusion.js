@@ -1,5 +1,5 @@
 const moment           = require('moment');
-const Client           = require('../../../../base/client').Client;
+const Client           = require('../../../../base/client');
 const localize         = require('../../../../base/localize').localize;
 const dateValueChanged = require('../../../../common_functions/common_functions').dateValueChanged;
 const Content          = require('../../../../common_functions/content').Content;
@@ -39,7 +39,7 @@ const SelfExclusion = (function() {
         BinarySocket.send({ get_self_exclusion: 1 }).then((response) => {
             if (response.error) {
                 if (response.error.code === 'ClientSelfExclusion') {
-                    Client.send_logout_request();
+                    Client.sendLogoutRequest();
                 }
                 if (response.error.message) {
                     $('#msg_error').html(response.error.message).removeClass(hidden_class);
