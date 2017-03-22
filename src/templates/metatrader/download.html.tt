@@ -56,7 +56,7 @@
                     </div>
                 </div>
             </div>
-            <div class="gr-4 gr-12-m gr-12-p gr-padding-10">
+            <div class="gr-4 gr-12-m gr-12-p gr-padding-10 gr-order-first-p gr-order-first-m">
                 <img class="gr-3 gr-2-p gr-2-m gr-no-gutter" src="[% request.url_for('images/pages/metatrader/icons/mobile.svg') %]" />
                 <div class="gr-padding-30 gr-child">
                     <h3>[% l('For Mobile') %]</h3>
