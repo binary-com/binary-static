@@ -1,9 +1,9 @@
-const BinaryPjax           = require('../../base/binary_pjax');
-const Client               = require('../../base/client').Client;
-const Header               = require('../../base/header').Header;
-const default_redirect_url = require('../../base/url').default_redirect_url;
-const url_for              = require('../../base/url').url_for;
-const template             = require('../../base/utility').template;
+const BinaryPjax         = require('../../base/binary_pjax');
+const Client             = require('../../base/client');
+const Header             = require('../../base/header');
+const defaultRedirectUrl = require('../../base/url').defaultRedirectUrl;
+const urlFor             = require('../../base/url').urlFor;
+const template           = require('../../base/utility').template;
 
 const TNCApproval = (function() {
     'use strict';
@@ -22,7 +22,7 @@ const TNCApproval = (function() {
         const $tnc_msg   = $container.find('#tnc_message');
         $tnc_msg.html(template($tnc_msg.html(), [
             landing_company,
-            url_for(Client.get('residence') === 'jp' ? 'terms-and-conditions-jp' : 'terms-and-conditions'),
+            urlFor(Client.get('residence') === 'jp' ? 'terms-and-conditions-jp' : 'terms-and-conditions'),
         ]));
         $container.find('#tnc_loading').remove();
         $container.find('#tnc_approval').removeClass(hidden_class);
@@ -30,7 +30,7 @@ const TNCApproval = (function() {
 
     const requiresTNCApproval = ($btn, funcDisplay, onSuccess, redirect_anyway) => {
         BinarySocket.wait('website_status', 'get_settings').then(() => {
-            if (!Client.should_accept_tnc()) {
+            if (!Client.shouldAcceptTnc()) {
                 redirectBack(redirect_anyway);
                 return;
             }
@@ -60,7 +60,7 @@ const TNCApproval = (function() {
     const redirectBack = function(redirect_anyway) {
         if (redirect_anyway) {
             setTimeout(() => {
-                BinaryPjax.load(default_redirect_url());
+                BinaryPjax.load(defaultRedirectUrl());
             }, 500);
         }
     };

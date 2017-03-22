@@ -1,6 +1,6 @@
 const Defaults        = require('./defaults').Defaults;
 const format_currency = require('../../common_functions/currency_to_symbol').format_currency;
-const Client          = require('../../base/client').Client;
+const Client          = require('../../base/client');
 
 /*
  * Handles currency display

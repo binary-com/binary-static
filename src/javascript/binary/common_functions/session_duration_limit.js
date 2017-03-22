@@ -1,6 +1,6 @@
 const moment   = require('moment');
 const localize = require('../base/localize').localize;
-const Client   = require('../base/client').Client;
+const Client   = require('../base/client');
 
 const SessionDurationLimit = (function() {
     'use strict';
@@ -24,7 +24,7 @@ const SessionDurationLimit = (function() {
 
         const setTimeOut = function() {
             window.TimeOut_SessionLimitWarning = setTimeout(displayWarning, remained - warning);
-            window.TimeOut_SessionLimitLogout  = setTimeout(Client.send_logout_request, remained);
+            window.TimeOut_SessionLimitLogout  = setTimeout(Client.sendLogoutRequest, remained);
         };
 
         // limit of setTimeout is this number

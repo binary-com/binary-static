@@ -1,5 +1,5 @@
 const BinaryPjax  = require('../../../base/binary_pjax');
-const Client      = require('../../../base/client').Client;
+const Client      = require('../../../base/client');
 const localize    = require('../../../base/localize').localize;
 const FormManager = require('../../../common_functions/form_manager');
 
@@ -27,7 +27,7 @@ const ChangePassword = (function() {
             $(form_id).addClass('hidden');
             $('#msg_success').removeClass('invisible');
             setTimeout(function() {
-                Client.send_logout_request(true);
+                Client.sendLogoutRequest(true);
             }, 5000);
         }
     };

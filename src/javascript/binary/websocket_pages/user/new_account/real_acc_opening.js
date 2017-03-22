@@ -1,5 +1,5 @@
 const BinaryPjax     = require('../../../base/binary_pjax');
-const Client         = require('../../../base/client').Client;
+const Client         = require('../../../base/client');
 const AccountOpening = require('../../../common_functions/account_opening');
 const FormManager    = require('../../../common_functions/form_manager');
 

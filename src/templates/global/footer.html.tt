@@ -15,6 +15,9 @@
                                 <li>
                                     <a href="[% request.url_for('about-us') %]">[% l('About Us') %]</a>
                                 </li>
+                                <li class="gr-hide gr-show-m">
+                                    <a href="[% request.url_for('contact') %]">[% l("Contact Us") %]</a>
+                                </li>
                                 <li class="id-hide ar-hide">
                                     <a href="[% request.url_for('/regulation') %]">[% l('Regulatory Information') %]</a>
                                 </li>

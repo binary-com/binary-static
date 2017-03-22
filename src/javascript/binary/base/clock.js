@@ -1,37 +1,36 @@
 const moment          = require('moment');
 const japanese_client = require('../common_functions/country_base').japanese_client;
 
-const Clock = (function () {
-    let clock_started = false;
+const Clock = (() => {
+    'use strict';
 
-    const showLocalTimeOnHover = function(s) {
+    let clock_started = false,
+        client_time,
+        timeout;
+
+    const showLocalTimeOnHover = (s) => {
         if (japanese_client()) return;
         $(s || '.date').each(function(idx, ele) {
-            const gmtTimeStr = ele.textContent.replace('\n', ' ');
-            const localTime  = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss').local();
-            if (!localTime.isValid()) {
-                return;
+            const gmt_time_str = ele.textContent.replace('\n', ' ');
+            const local_time  = moment.utc(gmt_time_str, 'YYYY-MM-DD HH:mm:ss').local();
+            if (local_time.isValid()) {
+                $(ele).attr('data-balloon', local_time.format('YYYY-MM-DD HH:mm:ss Z'));
             }
-
-            const localTimeStr = localTime.format('YYYY-MM-DD HH:mm:ss Z');
-            $(ele).attr('data-balloon', localTimeStr);
         });
     };
 
-    const toJapanTimeIfNeeded = function(gmtTimeStr, showTimeZone, longcode, hideSeconds) {
+    const toJapanTimeIfNeeded = (gmt_time_str, show_time_zone, longcode, hide_seconds) => {
         let match;
         if (longcode && longcode !== '') {
             match = longcode.match(/((?:\d{4}-\d{2}-\d{2})\s?(\d{2}:\d{2}:\d{2})?(?:\sGMT)?)/);
             if (!match) return longcode;
         }
 
-        const jp_client = japanese_client();
         let time;
-
-        if (typeof gmtTimeStr === 'number') {
-            time = moment.utc(gmtTimeStr * 1000);
-        } else if (gmtTimeStr) {
-            time = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss');
+        if (typeof gmt_time_str === 'number') {
+            time = moment.utc(gmt_time_str * 1000);
+        } else if (gmt_time_str) {
+            time = moment.utc(gmt_time_str, 'YYYY-MM-DD HH:mm:ss');
         } else {
             time = moment.utc(match[0], 'YYYY-MM-DD HH:mm:ss');
         }
@@ -40,57 +39,55 @@ const Clock = (function () {
             return null;
         }
 
-        const timeStr = time.utcOffset(jp_client ? '+09:00' : '+00:00').format((hideSeconds ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD HH:mm:ss') + (showTimeZone && showTimeZone !== '' ? jp_client ? ' zZ' : ' Z' : ''));
+        const jp_client = japanese_client();
+        const time_str = time.utcOffset(jp_client ? '+09:00' : '+00:00').format((hide_seconds ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD HH:mm:ss') + (show_time_zone && show_time_zone !== '' ? jp_client ? ' zZ' : ' Z' : ''));
 
-        return (longcode ? longcode.replace(match[0], timeStr) : timeStr);
+        return (longcode ? longcode.replace(match[0], time_str) : time_str);
     };
 
-    const start_clock_ws = function() {
-        const getTime = function() {
-            clock_started = true;
-            BinarySocket.send({ time: 1, passthrough: { client_time: moment().valueOf() } });
-        };
-        setInterval(getTime, 30000);
-        getTime();
+    const startClock = () => {
+        if (!clock_started) {
+            const getTime = () => {
+                clock_started = true;
+                client_time = moment().valueOf();
+                BinarySocket.send({ time: 1 }).then((response) => { timeCounter(response); });
+            };
+            setInterval(getTime, 30000);
+            getTime();
+        }
     };
 
-    const time_counter = function(response) {
-        if (isNaN(response.echo_req.passthrough.client_time) || response.error) {
-            start_clock_ws();
+    const timeCounter = (response) => {
+        if (isNaN(client_time) || response.error) {
+            startClock();
             return;
         }
-        clearTimeout(window.HeaderTimeUpdateTimeOutRef);
-        const $clock = $('#gmt-clock'),
-            start_timestamp = response.time,
-            pass = response.echo_req.passthrough.client_time;
+        clearTimeout(timeout);
+        const $clock = $('#gmt-clock');
+        const start_timestamp = response.time;
 
-        const client_time_at_response = moment().valueOf(),
-            server_time_at_response = ((start_timestamp * 1000) + (client_time_at_response - pass));
-        const update_time = function() {
-            window.time = moment((server_time_at_response + moment().valueOf()) -
-                client_time_at_response).utc();
-            const timeStr = window.time.format('YYYY-MM-DD HH:mm') + ' GMT';
+        const client_time_at_response = moment().valueOf();
+        const server_time_at_response = ((start_timestamp * 1000) + (client_time_at_response - client_time));
+
+        const updateTime = () => {
+            window.time = moment((server_time_at_response + moment().valueOf()) - client_time_at_response).utc();
+            const time_str = window.time.format('YYYY-MM-DD HH:mm') + ' GMT';
             if (japanese_client()) {
-                $clock.html(toJapanTimeIfNeeded(timeStr, 1, '', 1));
+                $clock.html(toJapanTimeIfNeeded(time_str, 1, '', 1));
             } else {
-                $clock.html(timeStr);
+                $clock.html(time_str);
                 showLocalTimeOnHover('#gmt-clock');
             }
-            window.HeaderTimeUpdateTimeOutRef = setTimeout(update_time, 1000);
+            timeout = setTimeout(updateTime, 1000);
         };
-        update_time();
+        updateTime();
     };
 
     return {
-        start_clock_ws : start_clock_ws,
-        time_counter   : time_counter,
-        getClockStarted: function () { return clock_started; },
-
+        startClock          : startClock,
         showLocalTimeOnHover: showLocalTimeOnHover,
         toJapanTimeIfNeeded : toJapanTimeIfNeeded,
     };
 })();
 
-module.exports = {
-    Clock: Clock,
-};
+module.exports = Clock;

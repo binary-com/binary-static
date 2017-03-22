@@ -1,5 +1,5 @@
 const PaymentAgentTransferUI = require('./payment_agent_transfer/payment_agent_transfer.ui');
-const Client                 = require('../../../base/client').Client;
+const Client                 = require('../../../base/client');
 const State                  = require('../../../base/storage').State;
 const Content                = require('../../../common_functions/content').Content;
 const FormManager            = require('../../../common_functions/form_manager');

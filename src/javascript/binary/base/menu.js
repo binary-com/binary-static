@@ -1,76 +1,74 @@
-const Url    = require('./url').Url;
-const Client = require('./client').Client;
+const Client = require('./client');
 require('../../lib/mmenu/jquery.mmenu.min.all.js');
 
-const Menu = (function() {
-    let page_url;
+const Menu = (() => {
+    'use strict';
 
-    const init = function (url) {
-        page_url = url;
-        $(page_url).on('change', function() { activate(); });
-    };
+    let $main_menu;
 
-    const activate = function() {
+    const init = () => {
+        $main_menu = $('#main-menu');
+
         $('#menu-top').find('li').removeClass('active');
-        hide_main_menu();
+        hideMainMenu();
 
-        const active = active_menu_top();
-        if (active) {
-            active.addClass('active');
-        }
+        const active = activeMenuTop();
+        if (active) active.addClass('active');
 
-        if (Client.is_logged_in() || /\/(cashier|resources|trading|trading_beta|multi_barriers_trading)/i.test(window.location.pathname)) {
-            show_main_menu();
+        if (Client.isLoggedIn() || /\/(cashier|resources|trading|trading_beta|multi_barriers_trading)/i.test(window.location.pathname)) {
+            showMainMenu();
         }
     };
 
-    const show_main_menu = function() {
-        $('#main-menu').removeClass('hidden');
-        activate_main_menu();
+    const showMainMenu = () => {
+        $main_menu.removeClass('hidden');
+        activateMainMenu();
     };
 
-    const hide_main_menu = function() {
-        $('#main-menu').addClass('hidden');
+    const hideMainMenu = () => {
+        $main_menu.addClass('hidden');
     };
 
-    const activate_main_menu = function() {
+    const activateMainMenu = () => {
         // First unset everything.
-        const $main_menu = $('#main-menu');
-        $main_menu.find('li.item').removeClass('active hover');
-        $main_menu.find('li.sub_item a').removeClass('a-active');
+        $main_menu
+            .find('li.item')
+            .removeClass('active hover')
+            .end()
+            .find('li.sub_item a')
+            .removeClass('a-active');
 
-        const active = active_main_menu();
-        if (active.subitem) {
-            active.subitem.addClass('a-active');
+        const active = activeMainMenu();
+        const active_item = active.item;
+        const active_subitem = active.subitem;
+        if (active_subitem) {
+            active_subitem.addClass('a-active');
         }
 
-        if (active.item) {
-            active.item.addClass('active');
-            active.item.addClass('hover');
+        if (active_item) {
+            active_item.addClass('active hover');
+            onMouseHover(active_item);
         }
-
-        on_mouse_hover(active.item);
     };
 
-    const on_unload = function() {
-        $('#main-menu').find('.item').unbind().end()
-                       .unbind();
+    const onUnload = () => { $main_menu.unbind().find('.item').unbind(); };
+
+    const removeHover = () => { $main_menu.find('li.item').removeClass('hover'); };
+
+    const onMouseHover = (active_item) => {
+        $main_menu
+            .on('mouseleave', () => {
+                removeHover();
+                if (active_item) active_item.addClass('hover');
+            })
+            .find('.item')
+            .on('mouseenter', function() {
+                removeHover();
+                $(this).addClass('hover');
+            });
     };
 
-    const on_mouse_hover = function(active_item) {
-        const $main_menu = $('#main-menu');
-        $main_menu.find('.item').on('mouseenter', function() {
-            $('#main-menu').find('li.item').removeClass('hover');
-            $(this).addClass('hover');
-        });
-
-        $main_menu.on('mouseleave', function() {
-            $main_menu.find('li.item').removeClass('hover');
-            if (active_item) active_item.addClass('hover');
-        });
-    };
-
-    const active_menu_top = function() {
+    const activeMenuTop = () => {
         let active = '';
         const path = window.location.pathname;
         $('#menu-top').find('li a').each(function() {
@@ -78,64 +76,45 @@ const Menu = (function() {
                 active = $(this).closest('li');
             }
         });
-
         return active;
     };
 
-    const active_main_menu = function() {
-        let new_url = page_url;
-        if (/cashier/i.test(new_url.location.href) && !(/cashier_password/.test(new_url.location.href))) {
-            new_url = new Url($('#topMenuCashier').find('a').attr('href'));
+    const activeMainMenu = () => {
+        let pathname = window.location.pathname;
+        if (/cashier/i.test(pathname) && !(/(cashier_password|payment_methods)/.test(pathname))) {
+            pathname = $('#topMenuCashier').find('a').attr('href');
         }
-
-        let item = '',
-            subitem = '';
-        const $main_menu = $('#main-menu');
+        let $item,
+            $subitem;
         // Is something selected in main items list
-        $main_menu.find('.items a').each(function () {
-            const url = new Url($(this).attr('href'));
-            if (url.is_in(new_url)) {
-                item = $(this).closest('.item');
-            }
-        });
-
-        $main_menu.find('.sub_items a').each(function() {
-            const link_href = $(this).attr('href');
-            if (link_href) {
-                const url = new Url(link_href);
-                if (url.is_in(new_url)) {
-                    item = $(this).closest('.item');
-                    subitem = $(this);
-                }
-            }
-        });
-
-        return { item: item, subitem: subitem };
+        $item = $main_menu.find('a[href*="' + pathname + '"]');
+        const $parent = $item.closest('li');
+        if ($parent.hasClass('sub_item')) {
+            $subitem = $item;
+            $item = $subitem.closest('.item');
+        } else {
+            $item = $parent;
+        }
+        return { item: $item, subitem: $subitem };
     };
 
-    const make_mobile_menu = function () {
+    const makeMobileMenu = () => {
         if ($('#mobile-menu-container').is(':visible')) {
             $('#mobile-menu').mmenu({
                 position       : 'right',
                 zposition      : 'front',
                 slidingSubmenus: false,
                 searchfield    : true,
-                onClick        : {
-                    close: true,
-                },
-            }, {
-                selectedClass: 'active',
-            });
+                onClick        : { close: true },
+            }, { selectedClass: 'active' });
         }
     };
 
     return {
-        init            : init,
-        on_unload       : on_unload,
-        make_mobile_menu: make_mobile_menu,
+        init          : init,
+        onUnload      : onUnload,
+        makeMobileMenu: makeMobileMenu,
     };
 })();
 
-module.exports = {
-    Menu: Menu,
-};
+module.exports = Menu;

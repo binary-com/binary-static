@@ -4,7 +4,7 @@ const MBNotifications    = require('./mb_notifications').MBNotifications;
 const objectNotEmpty     = require('../../base/utility').objectNotEmpty;
 const getPropertyValue   = require('../../base/utility').getPropertyValue;
 const localize           = require('../../base/localize').localize;
-const Client             = require('../../base/client').Client;
+const Client             = require('../../base/client');
 const japanese_client    = require('../../common_functions/country_base').japanese_client;
 const addComma           = require('../../common_functions/string_util').addComma;
 const elementInnerHtml   = require('../../common_functions/common_functions').elementInnerHtml;
@@ -173,7 +173,7 @@ const MBPrice = (function() {
 
     const processBuy = function(barrier, contract_type) {
         if (!barrier || !contract_type) return;
-        if (!Client.is_logged_in()) {
+        if (!Client.isLoggedIn()) {
             MBNotifications.show({ text: localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true });
             return;
         }

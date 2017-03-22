@@ -1,5 +1,5 @@
 const BinaryPjax        = require('../../../base/binary_pjax');
-const Client            = require('../../../base/client').Client;
+const Client            = require('../../../base/client');
 const State             = require('../../../base/storage').State;
 const AccountOpening    = require('../../../common_functions/account_opening');
 const detect_hedging    = require('../../../common_functions/common_functions').detect_hedging;

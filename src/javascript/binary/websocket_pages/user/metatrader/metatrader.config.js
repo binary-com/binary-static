@@ -1,6 +1,6 @@
-const Client         = require('../../../base/client').Client;
+const Client         = require('../../../base/client');
 const localize       = require('../../../base/localize').localize;
-const url_for        = require('../../../base/url').url_for;
+const urlFor         = require('../../../base/url').urlFor;
 const objectNotEmpty = require('../../../base/utility').objectNotEmpty;
 const formatMoney    = require('../../../common_functions/currency_to_symbol').format_money;
 
@@ -41,7 +41,7 @@ const MetaTraderConfig = (function() {
                     } else if (types_info[acc_type].account_type === 'financial') {
                         BinarySocket.send({ get_financial_assessment: 1 }).then((response_financial) => {
                             resolve(!objectNotEmpty(response_financial.get_financial_assessment) ?
-                                $('#msg_assessment').find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${url_for('user/metatrader')}')`).end()
+                                $('#msg_assessment').find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}')`).end()
                                     .html() : '');
                         });
                     } else {
@@ -86,7 +86,7 @@ const MetaTraderConfig = (function() {
                     BinarySocket.send({ cashier_password: 1 }).then((response) => {
                         if (!response.error && response.cashier_password === 1) {
                             resolve(localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.', [
-                                url_for('user/security/cashier_passwordws')]));
+                                urlFor('user/security/cashier_passwordws')]));
                         } else {
                             resolve();
                         }

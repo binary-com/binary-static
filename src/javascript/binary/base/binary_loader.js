@@ -1,12 +1,11 @@
-const BinaryPjax           = require('./binary_pjax');
-const pages_config         = require('./binary_pages');
-const Client               = require('./client').Client;
-const GTM                  = require('./gtm').GTM;
-const localize             = require('./localize').localize;
-const Login                = require('./login').Login;
-const page                 = require('./page').page;
-const default_redirect_url = require('./url').default_redirect_url;
-const url                  = require('./url').url;
+const BinaryPjax         = require('./binary_pjax');
+const pages_config       = require('./binary_pages');
+const Client             = require('./client');
+const GTM                = require('./gtm');
+const localize           = require('./localize').localize;
+const Login              = require('./login');
+const Page               = require('./page');
+const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 
 const BinaryLoader = (function() {
     'use strict';
@@ -25,7 +24,7 @@ const BinaryLoader = (function() {
 
     const beforeContentChange = () => {
         if (active_script) {
-            page.on_unload();
+            Page.onUnload();
             if (typeof active_script.onUnload === 'function') {
                 active_script.onUnload();
             }
@@ -34,9 +33,8 @@ const BinaryLoader = (function() {
     };
 
     const afterContentChange = (e, content) => {
-        url.reset();
-        page.on_load();
-        GTM.push_data_layer();
+        Page.onLoad();
+        GTM.pushDataLayer();
         const this_page = content.getAttribute('data-page');
         if (this_page in pages_config) {
             loadHandler(pages_config[this_page]);
@@ -46,7 +44,7 @@ const BinaryLoader = (function() {
     };
 
     const errorMessages = {
-        login       : () => localize('Please <a href="[_1]">log in</a> to view this page.', [Login.login_url()]),
+        login       : () => localize('Please <a href="[_1]">log in</a> to view this page.', [Login.loginUrl()]),
         only_virtual: 'Sorry, this feature is available to virtual accounts only.',
         only_real   : 'This feature is not relevant to virtual-money accounts.',
     };
@@ -54,7 +52,7 @@ const BinaryLoader = (function() {
     const loadHandler = (config) => {
         active_script = config.module;
         if (config.is_authenticated) {
-            if (!Client.is_logged_in()) {
+            if (!Client.isLoggedIn()) {
                 displayMessage(errorMessages.login());
             } else {
                 BinarySocket.wait('authorize')
@@ -70,8 +68,8 @@ const BinaryLoader = (function() {
                         }
                     });
             }
-        } else if (config.not_authenticated && Client.is_logged_in()) {
-            BinaryPjax.load(default_redirect_url(), true);
+        } else if (config.not_authenticated && Client.isLoggedIn()) {
+            BinaryPjax.load(defaultRedirectUrl(), true);
         } else {
             active_script.onLoad();
         }

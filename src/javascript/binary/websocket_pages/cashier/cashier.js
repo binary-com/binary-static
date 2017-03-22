@@ -1,10 +1,10 @@
-const BinaryPjax           = require('../../base/binary_pjax');
-const Client               = require('../../base/client').Client;
-const Header               = require('../../base/header').Header;
-const default_redirect_url = require('../../base/url').default_redirect_url;
-const url_for              = require('../../base/url').url_for;
-const japanese_client      = require('../../common_functions/country_base').japanese_client;
-const japanese_residence   = require('../../common_functions/country_base').japanese_residence;
+const BinaryPjax         = require('../../base/binary_pjax');
+const Client             = require('../../base/client');
+const Header             = require('../../base/header');
+const defaultRedirectUrl = require('../../base/url').defaultRedirectUrl;
+const urlFor             = require('../../base/url').urlFor;
+const japanese_client    = require('../../common_functions/country_base').japanese_client;
+const japanese_residence = require('../../common_functions/country_base').japanese_residence;
 
 const Cashier = (function() {
     'use strict';
@@ -13,7 +13,7 @@ const Cashier = (function() {
     const hidden_class = 'invisible';
 
     const showContent = () => {
-        Client.activate_by_client_type();
+        Client.activateByClientType();
     };
 
     const displayTopUpButton = () => {
@@ -26,7 +26,7 @@ const Cashier = (function() {
             const classes = ['toggle', 'button-disabled'];
             const new_el = { class: $a.attr('class').replace(classes[+can_topup], classes[1 - +can_topup]), html: $a.html(), id: $a.attr('id') };
             if (can_topup) {
-                href = href || url_for('/cashier/top_up_virtualws');
+                href = href || urlFor('/cashier/top_up_virtualws');
                 new_el.href = href;
             }
             $a.replaceWith($('<a/>', new_el));
@@ -36,11 +36,11 @@ const Cashier = (function() {
 
     const onLoad = function() {
         if (japanese_client() && !japanese_residence()) {
-            BinaryPjax(default_redirect_url());
+            BinaryPjax(defaultRedirectUrl());
         }
-        if (Client.is_logged_in()) {
+        if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize').then(() => {
-                Header.upgrade_message_visibility(); // To handle the upgrade buttons visibility
+                Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
                 const is_virtual = Client.get('is_virtual');
                 if (is_virtual) {
                     displayTopUpButton();
@@ -48,7 +48,7 @@ const Cashier = (function() {
                 if (is_virtual || /CR/.test(Client.get('loginid'))) {
                     $('#payment-agent-section').removeClass(hidden_class);
                 }
-                if (Client.has_gaming_financial_enabled()) {
+                if (Client.hasGamingFinancialEnabled()) {
                     $('#account-transfer-section').removeClass(hidden_class);
                 }
             });

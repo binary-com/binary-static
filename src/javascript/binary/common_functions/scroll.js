@@ -1,5 +1,3 @@
-const url = require('../base/url').url;
-
 const Scroll = (function() {
     const sidebar_scroll = function(elm_selector) {
         elm_selector.on('click', '#sidebar-nav li', function() {
@@ -71,15 +69,13 @@ const Scroll = (function() {
     };
 
     const goToHashSection = function() {
-        if (url.location.hash !== '') {
-            $('a[href="' + url.location.hash + '"]').click();
-        }
+        const hash = window.location.hash;
+        if (hash) $('a[href="' + hash + '"]').click();
     };
 
     const scrollToHashSection = function() {
-        if (url.location.hash) {
-            $.scrollTo($(url.location.hash));
-        }
+        const hash = window.location.hash;
+        if (hash) $.scrollTo($(hash));
     };
 
     return {

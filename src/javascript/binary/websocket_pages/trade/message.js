@@ -14,8 +14,8 @@ const PortfolioWS   = require('../user/account/portfolio/portfolio.init');
 const ProfitTableWS = require('../user/account/profit_table/profit_table.init');
 const StatementWS   = require('../user/account/statement/statement.init');
 const State         = require('../../base/storage').State;
-const GTM           = require('../../base/gtm').GTM;
-const Client        = require('../../base/client').Client;
+const GTM           = require('../../base/gtm');
+const Client        = require('../../base/client');
 
 /*
  * This Message object process the response from server and fire
@@ -46,7 +46,7 @@ const Message = (function () {
                 processProposal(response);
             } else if (type === 'buy') {
                 Purchase.display(response);
-                GTM.push_purchase_data(response);
+                GTM.pushPurchaseData(response);
             } else if (type === 'tick') {
                 processTick(response);
             } else if (type === 'history') {

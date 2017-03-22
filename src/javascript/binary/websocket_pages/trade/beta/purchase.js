@@ -9,7 +9,7 @@ const addComma                  = require('../../../common_functions/string_util
 const isVisible                 = require('../../../common_functions/common_functions').isVisible;
 const updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
 const label_value               = require('../common').label_value;
-const Client                    = require('../../../base/client').Client;
+const Client                    = require('../../../base/client');
 const elementTextContent        = require('../../../common_functions/common_functions').elementTextContent;
 const elementInnerHtml          = require('../../../common_functions/common_functions').elementInnerHtml;
 

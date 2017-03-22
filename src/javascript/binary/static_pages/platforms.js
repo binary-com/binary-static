@@ -1,5 +1,3 @@
-const url = require('../base/url').url;
-
 const Platforms = (function () {
     let sections = [];
 
@@ -50,10 +48,8 @@ const Platforms = (function () {
     };
 
     const get_hash = function() {
-        return (
-            url.location.hash && $.inArray(url.location.hash.substring(1), sections) !== -1 ?
-            url.location.hash : '#trading-platforms'
-        );
+        const hash = window.location.hash;
+        return hash && $.inArray(hash.substring(1), sections) !== -1 ? hash : '#trading-platforms';
     };
 
     const showSelectedDiv = function() {

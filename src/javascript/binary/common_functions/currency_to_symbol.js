@@ -1,6 +1,6 @@
 const japanese_client = require('./country_base').japanese_client;
 const addComma        = require('./string_util').addComma;
-const getLanguage     = require('../base/language').getLanguage;
+const getLanguage     = require('../base/language').get;
 
 function format_money(currencyValue, amount) {
     let money;

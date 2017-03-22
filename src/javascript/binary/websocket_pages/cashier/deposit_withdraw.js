@@ -1,4 +1,4 @@
-const Client               = require('../../base/client').Client;
+const Client               = require('../../base/client');
 const localize             = require('../../base/localize').localize;
 const template             = require('../../base/utility').template;
 const appendTextValueChild = require('../../common_functions/common_functions').appendTextValueChild;

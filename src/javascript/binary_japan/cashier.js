@@ -1,17 +1,17 @@
-const BinaryPjax           = require('../binary/base/binary_pjax');
-const Client               = require('../binary/base/client').Client;
-const localize             = require('../binary/base/localize').localize;
-const default_redirect_url = require('../binary/base/url').default_redirect_url;
-const Content              = require('../binary/common_functions/content').Content;
-const japanese_client      = require('../binary/common_functions/country_base').japanese_client;
-const japanese_residence   = require('../binary/common_functions/country_base').japanese_residence;
+const BinaryPjax         = require('../binary/base/binary_pjax');
+const Client             = require('../binary/base/client');
+const localize           = require('../binary/base/localize').localize;
+const defaultRedirectUrl = require('../binary/base/url').defaultRedirectUrl;
+const Content            = require('../binary/common_functions/content').Content;
+const japanese_client    = require('../binary/common_functions/country_base').japanese_client;
+const japanese_residence = require('../binary/common_functions/country_base').japanese_residence;
 
 const CashierJP = (function() {
     'use strict';
 
     const onLoad = (action) => {
         Content.populate();
-        if (japanese_client() && !japanese_residence()) BinaryPjax.load(default_redirect_url());
+        if (japanese_client() && !japanese_residence()) BinaryPjax.load(defaultRedirectUrl());
         const $container = $('#japan_cashier_container');
         BinarySocket.wait('get_settings').then(() => {
             $container.removeClass('invisible');

@@ -1,8 +1,8 @@
 const email_rot13    = require('../common_functions/common_functions').email_rot13;
 const loadCSS        = require('../../lib/loadCSS').loadCSS;
 const loadJS         = require('../../lib/loadJS').loadJS;
-const getLanguage    = require('../base/language').getLanguage;
-const url_for_static = require('../base/url').url_for_static;
+const getLanguage    = require('../base/language').get;
+const urlForStatic   = require('../base/url').urlForStatic;
 
 const Contact = (function() {
     const onLoad = function() {
@@ -82,7 +82,7 @@ const Contact = (function() {
         if (len > 0) {
             let timer = null;
             const updateIcon =  function () {
-                const image_url = url_for_static('images/pages/contact/chat-icon.svg');
+                const image_url = urlForStatic('images/pages/contact/chat-icon.svg');
                 const desk_widget = $('.a-desk-widget');
                 const image_str = desk_widget.css('background-image');
                 if (image_str) {

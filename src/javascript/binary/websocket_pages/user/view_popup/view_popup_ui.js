@@ -1,4 +1,4 @@
-const get_highest_zindex = require('../../../base/utility').get_highest_zindex;
+const getHighestZIndex = require('../../../base/utility').getHighestZIndex;
 
 const ViewPopupUI = (function() {
     return {
@@ -90,7 +90,7 @@ const ViewPopupUI = (function() {
                 $('.inpage_popup_content', con).html(data);
             }
             const body = $(document.body);
-            con.css('position', 'fixed').css('z-index', get_highest_zindex() + 100);
+            con.css('position', 'fixed').css('z-index', getHighestZIndex() + 100);
             body.append(con);
             con.show();
             // $('html').addClass('no-scroll');

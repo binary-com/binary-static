@@ -1,7 +1,7 @@
 <div class="container">
     <div class="gr-row gr-parent static_full border-bottom gr-padding-30">
         <div class="gr-2 gr-hide-m ja-hide">
-            <img class="responsive" src="[% request.url_for('images/pages/contact/contact-us-icon.svg') %]"/>
+            <img class="responsive" src="[% request.url_for('images/pages/contact/contact-icon.svg') %]"/>
         </div>
         <div class="gr-10 gr-12-m gr-padding-10 gr-parent">
             <h1>

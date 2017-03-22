@@ -1,8 +1,8 @@
+const getFormNameBarrierCategory = require('./common').getFormNameBarrierCategory;
+const getLanguage                = require('../../base/language').get;
+const localize                   = require('../../base/localize').localize;
 const objectNotEmpty             = require('../../base/utility').objectNotEmpty;
 const Content                    = require('../../common_functions/content').Content;
-const getFormNameBarrierCategory = require('./common').getFormNameBarrierCategory;
-const localize    = require('../../base/localize').localize;
-const getLanguage = require('../../base/language').getLanguage;
 
 /*
  * Contract object mocks the trading form we have on our website
