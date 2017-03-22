@@ -115,8 +115,7 @@ const SelfExclusion = (function() {
                     ['custom', { func: value => !value.length || moment(new Date(value)).isAfter(moment().add(6, 'months')), message: 'Exclude time cannot be less than 6 months.' }],
                     ['custom', { func: value => !value.length || moment(new Date(value)).isBefore(moment().add(5, 'years')), message: 'Exclude time cannot be for more than 5 years.' }],
                 ],
-            },
-        );
+            });
 
         FormManager.init(form_id, validations);
         FormManager.handleSubmit({
