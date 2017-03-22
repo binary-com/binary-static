@@ -137,11 +137,11 @@ const Header = (() => {
                         $upgrade_msg.removeClass(hidden_class);
                         if (jp_account_status === 'jp_activation_pending') {
                             if ($('.activation-message').length === 0) {
-                                $('#virtual-text').append(` ${$('<div/>', { class: 'activation-message', text: localize('Your Application is Being Processed.') })}`);
+                                $('#virtual-text').append($('<div/>', { class: 'activation-message', text: ` ${localize('Your Application is Being Processed.')}` }));
                             }
                         } else if (jp_account_status === 'activated') {
                             if ($('.activated-message').length === 0) {
-                                $('#virtual-text').append(` ${$('<div/>', { class: 'activated-message', text: localize('{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.') })}`);
+                                $('#virtual-text').append($('<div/>', { class: 'activated-message', text: ` ${localize('{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.')}` }));
                             }
                         }
                     }
