@@ -6,7 +6,7 @@ use warnings;
 sub all_pages {
     return (
         # url pathname,                template file path,             layout,       title,                  exclude languages
-        ['home',                       'home/index',                   'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'ja'],
+        ['home',                       'home/index',                   'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
         ['home-jp',                    'home/index_jp',                'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices', 'NOT-ja,en'],
         ['404',                        'static/404',                   'full_width', '404'],
         ['why-us',                     'static/why_us',                'full_width', 'Why Us',               'ja'],
@@ -68,7 +68,7 @@ sub all_pages {
         ['cashier/forwardws',            'cashier/deposit_withdraw',                  'default', 'Cashier',         'ja'],
         ['cashier/payment_agent_listws', 'cashier/payment_agent_listws',              'default', 'Payment Agent Deposit'],
         ['cashier/submit-withdraw-jp',   'japan/cashier/submit',                      'default', 'Acknowledgement', 'NOT-ja,en'],
-        ['cashier/top_up_virtualws',     'user/top_up_virtualws',                     'default', 'Give Me More Money!'],
+        ['cashier/top_up_virtualws',     'user/top_up_virtual',                       'default', 'Give Me More Money!'],
         ['cashier/withdraw-jp',          'japan/cashier/withdraw',                    'default', 'Withdraw',        'NOT-ja,en'],
 
         ['paymentagent/transferws',      'cashier/paymentagent_transfer',             'default', 'Payment Agent Transfer'],
@@ -88,7 +88,7 @@ sub all_pages {
         ['resources/asset_indexws',  'resources/asset_indexws',   'default', 'Asset Index', 'ja'],
         ['resources/market_timesws', 'resources/market_timesws',  'default', 'Trading Times'],
 
-        ['user/authenticatews',              'user/authenticatews',                  'default',    'Authenticate',            'ja'],
+        ['user/authenticate',                'user/authenticate',                    'default',    'Authenticate',            'ja'],
         ['user/lost_passwordws',             'user/lost_password',                   'default',    'Password Reset'],
         ['user/metatrader',                  'user/metatrader',                      'full_width', 'MetaTrader account management'],
         ['user/portfoliows',                 'user/portfoliows',                     'default',    'Portfolio'],
@@ -98,15 +98,15 @@ sub all_pages {
         ['user/statementws',                 'user/statementws',                     'default',    'Statement'],
         ['user/tnc_approvalws',              'legal/tnc_approvalws',                 'default',    'Terms and Conditions Approval'],
         ['user/reset_passwordws',            'user/reset_password',                  'default',    'Password Reset'],
-        ['user/reality_check_frequencyws',   'user/reality_check_frequencyws',       'default',    'Reality Check'],
-        ['user/reality_check_summaryws',     'user/reality_check_summaryws',         'default',    'Reality Check'],
+        ['user/reality_check_frequency',     'user/reality_check/frequency',         'default',    'Reality Check'],
+        ['user/reality_check_summary',       'user/reality_check/summary',           'default',    'Reality Check'],
         ['user/security/api_tokenws',        'user/security/api_token',              'default',    'API Token',               'ja'],
         ['user/security/authorised_appsws',  'user/security/authorised_appsws',      'default',    'Authorised Applications', 'ja'],
         ['user/security/cashier_passwordws', 'user/security/cashier_password',       'default',    'Cashier Password'],
         ['user/security/change_passwordws',  'user/security/change_password',        'default',    'Change Password'],
         ['user/security/iphistoryws',        'user/security/iphistory',              'default',    'Login History',           'ja'],
         ['user/security/limitsws',           'user/security/limitsws',               'default',    'Account Limits'],
-        ['user/security/self_exclusionws',   'user/security/self_exclusion',         'default',    'Account Details'],
+        ['user/security/self_exclusionws',   'user/security/self_exclusion',         'default',    'Self Exclusion'],
         ['user/settings/assessmentws',       'user/settings/financial_assessmentws', 'default',    'Financial Assessment',    'ja'],
         ['user/settings/detailsws',          'user/settings/detailsws',              'default',    'Personal Details'],
 

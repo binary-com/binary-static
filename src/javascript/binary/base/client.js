@@ -1,13 +1,13 @@
+const moment               = require('moment');
 const BinaryPjax           = require('./binary_pjax');
 const CookieStorage        = require('./storage').CookieStorage;
 const LocalStore           = require('./storage').LocalStore;
 const State                = require('./storage').State;
 const default_redirect_url = require('./url').default_redirect_url;
-const url_for              = require('./url').url_for;
 const getLoginToken        = require('../common_functions/common_functions').getLoginToken;
 const japanese_client      = require('../common_functions/country_base').japanese_client;
+const RealityCheckData     = require('../websocket_pages/user/reality_check/reality_check.data');
 const Cookies              = require('../../lib/js-cookie');
-const moment               = require('moment');
 
 const Client = (function () {
     const client_object = {};
@@ -102,46 +102,6 @@ const Client = (function () {
         return value;
     };
 
-    const check_values = function(origin) {
-        let is_ok = true;
-
-        // currencies
-        if (!get('currencies')) {
-            BinarySocket.send({
-                payout_currencies: 1,
-                passthrough      : {
-                    handler: 'client',
-                    origin : origin || '',
-                },
-            });
-            is_ok = false;
-        }
-
-        if (is_logged_in()) {
-            if (
-                !get('is_virtual') &&
-                Cookies.get('residence') &&
-                !get('has_reality_check')
-            ) {
-                BinarySocket.send({
-                    landing_company: Cookies.get('residence'),
-                    passthrough    : {
-                        handler: 'client',
-                        origin : origin || '',
-                    },
-                });
-                is_ok = false;
-            }
-        }
-
-        // website TNC version
-        if (!LocalStore.get('website.tnc_version')) {
-            BinarySocket.send({ website_status: 1 });
-        }
-
-        return is_ok;
-    };
-
     const response_authorize = function(response) {
         const authorize = response.authorize;
         if (!Cookies.get('email')) {
@@ -153,29 +113,13 @@ const Client = (function () {
         set('landing_company_name', authorize.landing_company_name);
         set('landing_company_fullname', authorize.landing_company_fullname);
         set('currency', authorize.currency);
-        check_values();
     };
 
-    const tnc_pages = () => /(user\/tnc_approvalws|terms-and-conditions)/i.test(window.location.href);
-
-    const check_tnc = function() {
-        if (tnc_pages() ||
-            get('is_virtual') ||
-            sessionStorage.getItem('check_tnc') !== 'check') {
-            return;
-        }
-        const client_tnc_status   = get('tnc_status'),
-            website_tnc_version = LocalStore.get('website.tnc_version');
-        if (client_tnc_status && website_tnc_version && client_tnc_status !== website_tnc_version) {
-            sessionStorage.setItem('tnc_redirect', window.location.href);
-            BinaryPjax.load('user/tnc_approvalws');
-        }
-    };
-
-    const set_check_tnc = function () {
-        sessionStorage.setItem('check_tnc', 'check');
-        localStorage.removeItem('client.tnc_status');
-        localStorage.removeItem('website.tnc_version');
+    const should_accept_tnc = () => {
+        if (get('is_virtual')) return false;
+        const website_tnc_version = State.get(['response', 'website_status', 'website_status', 'terms_conditions_version']);
+        const client_tnc_status = State.get(['response', 'get_settings', 'get_settings', 'client_tnc_status']);
+        return client_tnc_status && website_tnc_version && client_tnc_status !== website_tnc_version;
     };
 
     const clear_storage_values = function() {
@@ -189,7 +133,6 @@ const Client = (function () {
         if (/no-reality-check/.test(hash)) {
             window.location.hash = hash.replace('no-reality-check', '');
         }
-        set_check_tnc();
         sessionStorage.setItem('currencies', '');
     };
 
@@ -237,6 +180,7 @@ const Client = (function () {
         // set local storage
         localStorage.setItem('GTM_newaccount', '1');
         localStorage.setItem('active_loginid', client_loginid);
+        RealityCheckData.clear();
         window.location.href = default_redirect_url(); // need to redirect not using pjax
     };
 
@@ -295,10 +239,8 @@ const Client = (function () {
 
     const do_logout = function(response) {
         if (response.logout !== 1) return;
-        Client.clear_storage_values();
+        clear_storage_values();
         LocalStore.remove('client.tokens');
-        LocalStore.set('reality_check.ack', 0);
-        sessionStorage.removeItem('client_status');
         const cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence'];
         const domains = [
             '.' + document.domain.split('.').slice(-2).join('.'),
@@ -321,28 +263,7 @@ const Client = (function () {
                 Cookies.remove(c, { path: parent_path });
             }
         });
-        localStorage.removeItem('risk_classification');
-        localStorage.removeItem('risk_classification.response');
         window.location.reload();
-    };
-
-    // type can take one or more params, separated by comma
-    // e.g. one param = 'authenticated', two params = 'unwelcome, authenticated'
-    // match_type can be `any` `all`, by default is `any`
-    // should be passed when more than one param in type.
-    // `any` will return true if any of the params in type are found in client status
-    // `all` will return true if all of the params in type are found in client status
-    const status_detected = function(type, match_type) {
-        let client_status = sessionStorage.getItem('client_status');
-        if (!client_status || client_status.length === 0) return false;
-        const require_auth = /\,/.test(type) ? type.split(/, */) : [type];
-        client_status = client_status.split(',');
-        match_type = match_type && match_type === 'all' ? 'all' : 'any';
-        for (let i = 0; i < require_auth.length; i++) {
-            if (match_type === 'any' && (client_status.indexOf(require_auth[i]) > -1)) return true;
-            if (match_type === 'all' && (client_status.indexOf(require_auth[i]) < 0)) return false;
-        }
-        return (match_type !== 'any');
     };
 
     const current_landing_company = function() {
@@ -358,15 +279,7 @@ const Client = (function () {
 
     const is_financial = () => (client_object.loginid_array.find(obj => (obj.id === get('loginid'))) || {}).financial;
 
-    const should_complete_tax = () => is_financial() && !get('has_tax_information');
-
-    const should_redirect_tax = () => {
-        if (should_complete_tax() && !/user\/settings\/detailsws/.test(window.location.pathname) && !tnc_pages()) {
-            window.location.href = url_for('user/settings/detailsws');
-            return true;
-        }
-        return false;
-    };
+    const should_complete_tax = () => is_financial() && !/crs_tin_information/.test((State.get(['response', 'get_account_status', 'get_account_status']) || {}).status);
 
     return {
         init                  : init,
@@ -376,8 +289,7 @@ const Client = (function () {
         set                   : set,
         get                   : get,
         response_authorize    : response_authorize,
-        check_tnc             : check_tnc,
-        set_check_tnc         : set_check_tnc,
+        should_accept_tnc     : should_accept_tnc,
         clear_storage_values  : clear_storage_values,
         get_token             : get_token,
         add_token             : add_token,
@@ -393,10 +305,8 @@ const Client = (function () {
 
         send_logout_request: send_logout_request,
         do_logout          : do_logout,
-        status_detected    : status_detected,
         is_financial       : is_financial,
         should_complete_tax: should_complete_tax,
-        should_redirect_tax: should_redirect_tax,
 
         current_landing_company: current_landing_company,
     };

@@ -293,10 +293,6 @@ sub _texts {
         push @texts, localize('Sell');
         push @texts, localize('Buy');
         #strings for authenticate page
-        push @texts, localize('Please send us the following documents in order to verify your identity and authenticate your account:');
-        push @texts, localize('Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth.');
-        push @texts, localize('Proof of address - A scanned copy of a utility bill or bank statement that\'s not more than three months old.');
-        push @texts, localize('If you have any questions, kindly contact our Customer Support team at <a href="mailto:[_1]">[_1]</a>.');
         push @texts, localize('This feature is not relevant to virtual-money accounts.');
         push @texts, localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].');
         push @texts, localize('Deposits and withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.');
@@ -527,6 +523,13 @@ sub _texts {
 
         # strings for account_transfer
         push @texts, localize('from [_1] to [_2]');
+
+        # strings for header notification
+        push @texts, localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.');
+        push @texts, localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.');
+        push @texts, localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.');
+        push @texts, localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.');
+        push @texts, localize('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";

@@ -78,14 +78,25 @@ DatePicker.prototype = {
 
         config = $.extend(config, options);
 
-        if (options.minDate === 'today') {
-            config.minDate = today;
+        const set_date = (date) => {
+            let new_date;
+            if (typeof options[date] === 'number') {
+                new_date = new Date();
+                new_date.setDate(today.getDate() + Number(options[date]));
+            }
+            config[date] = new_date || options[date];
+        };
+
+        if (options.minDate !== undefined) {
+            if (options.minDate === 'today') {
+                config.minDate = today;
+            } else {
+                set_date('minDate');
+            }
         }
 
-        if (options.maxDate) {
-            const next_year = new Date();
-            next_year.setDate(today.getDate() + Number(options.maxDate));
-            config.maxDate = next_year;
+        if (options.maxDate !== undefined) {
+            set_date('maxDate');
         }
 
         const that = this;
@@ -142,10 +153,10 @@ DatePicker.prototype = {
                 $selector.attr('data-readonly', 'readonly')
                          .removeAttr('readonly');
             }
-            if (config.minDate) {
+            if (config.minDate !== undefined) {
                 $selector.attr('min', that.getDate(config.minDate));
             }
-            if (config.maxDate) {
+            if (config.maxDate !== undefined) {
                 $selector.attr('max', that.getDate(config.maxDate));
             }
         } else if (

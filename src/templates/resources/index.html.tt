@@ -4,7 +4,7 @@
   <div class="gr-3 gr-8-m gr-parent ja-hide">
     <div class="gr-8 gr-padding-10">
       <a href="[% request.url_for('/resources/asset_indexws') %]" id="asset-index">
-        <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/resources/asset-index.svg') %]"/>
+        <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/resources/asset-index-icon.svg') %]"/>
       </a>
     </div>
     <div class="gr-12">
@@ -17,7 +17,7 @@
   <div class="gr-3 gr-8-m gr-parent">
     <div class="gr-8 gr-padding-10">
       <a href="[% request.url_for('/resources/market_timesws') %]" id="trading-times">
-        <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/resources/trading-times.svg') %]"/>
+        <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/resources/trading-times-icon.svg') %]"/>
       </a>
     </div>
     <div class="gr-12">
