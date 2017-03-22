@@ -44,13 +44,13 @@
                 <div class="gr-row">
                     <div class="gr-6 center-text gr-padding-10">
                         <img class="gr-5 gr-8-m gr-padding-30 gr-centered" src="[% request.url_for('images/pages/metatrader/icons/apple.svg') %]" />
-                        <a href="https://download.mql5.com/cdn/mobile/mt5/ios?server=ChampionGroup-Server" target="_blank">
+                        <a href="https://download.mql5.com/cdn/mobile/mt5/ios?server=Binary.com-Server" target="_blank">
                             <span class="app-store-badge"></span>
                         </a>
                     </div>
                     <div class="gr-6 center-text-m gr-padding-10">
                         <img class="gr-5 gr-8-m gr-centered-m gr-padding-30" src="[% request.url_for('images/pages/metatrader/icons/android.svg') %]" />
-                        <a href="https://download.mql5.com/cdn/mobile/mt5/android?server=ChampionGroup-Server" target="_blank">
+                        <a href="https://download.mql5.com/cdn/mobile/mt5/android?server=Binary.com-Server" target="_blank">
                             <span class="google-play-badge"></span>
                         </a>
                     </div>
@@ -87,7 +87,7 @@
                     <img class="gr-2" src="[% request.url_for('images/pages/metatrader/icons/safari.svg') %]" />
                 </div>
                 <div class="center-text">
-                    <a class="button" href="https://trade.mql5.com/trade?servers=ChampionGroup-Server&trade_server=ChampionGroup-Server&demo_server=ChampionGroup-Server&startup_mode=open_demo&lang=en" target="_blank">
+                    <a class="button" href="https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server" target="_blank">
                         <span>[% l('Download') %]</span>
                     </a>
                 </div>
