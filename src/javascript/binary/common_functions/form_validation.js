@@ -1,4 +1,5 @@
-const localize = require('../base/localize').localize;
+const localize              = require('../base/localize').localize;
+const compareBigUnsignedInt = require('../common_functions/string_util').compareBigUnsignedInt;
 
 const Validation = (function() {
     'use strict';
@@ -81,6 +82,10 @@ const Validation = (function() {
     );
 
     const validNumber = (value, options) => {
+        if (options.allow_empty && value.length === 0) {
+            return true;
+        }
+
         let is_ok = true,
             message = '';
 
@@ -91,10 +96,13 @@ const Validation = (function() {
             !(new RegExp('^\\d+(\\.\\d{' + options.decimals.replace(/ /g, '') + '})?$').test(value))) {
             is_ok = false;
             message = localize('Only [_1] decimal points are allowed.', [options.decimals]);
-        } else if (options.min && +value < +options.min) {
+        } else if ('min' in options && 'max' in options && (+value < +options.min || compareBigUnsignedInt(value, options.max) === 1)) {
+            is_ok = false;
+            message = localize('Should be between [_1] and [_2]', [options.min, options.max]);
+        } else if ('min' in options && +value < +options.min) {
             is_ok = false;
             message = localize('Should be more than [_1]', [options.min]);
-        } else if (options.max && +value > +options.max) {
+        } else if ('max' in options && compareBigUnsignedInt(value, options.max) === 1) {
             is_ok = false;
             message = localize('Should be less than [_1]', [options.max]);
         }
@@ -147,7 +155,7 @@ const Validation = (function() {
                 type = 'length';
                 options = pass_length;
             } else {
-                const validator = validators_map[type].func;
+                const validator = (type === 'custom' ? options.func : validators_map[type].func);
                 field.is_ok = validator(getFieldValue(field), options, field);
             }
 
@@ -170,6 +178,10 @@ const Validation = (function() {
             showError(field, message);
         } else {
             clearError(field);
+        }
+
+        if (field.re_check_field) {
+            checkField(forms[field.form].fields.find(fld => fld.selector === field.re_check_field));
         }
 
         return all_is_ok;
