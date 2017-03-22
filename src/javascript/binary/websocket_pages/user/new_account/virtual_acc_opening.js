@@ -32,7 +32,7 @@ const VirtualAccOpening = (function() {
 
         const req = [
             { selector: '#verification_code', validations: ['req', 'email_token'] },
-            { selector: '#client_password',   validations: ['req', 'password'] },
+            { selector: '#client_password',   validations: ['req', 'password'], re_check_field: '#repeat_password' },
             { selector: '#repeat_password',   validations: ['req', ['compare', { to: '#client_password' }]], exclude_request: 1 },
 
             { selector: '#residence' },
