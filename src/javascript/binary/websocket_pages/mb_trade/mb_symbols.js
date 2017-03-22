@@ -1,7 +1,7 @@
 const ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbols;
 const BinaryPjax    = require('../../base/binary_pjax');
-const Client        = require('../../base/client').Client;
-const getLanguage   = require('../../base/language').getLanguage;
+const Client        = require('../../base/client');
+const getLanguage   = require('../../base/language').get;
 const State         = require('../../base/storage').State;
 
 /*
@@ -43,8 +43,8 @@ const MBSymbols = (function () {
     const getSymbols = function (update) {
         BinarySocket.wait('website_status').then((website_status) => {
             const landing_company_obj = State.get(['response', 'landing_company', 'landing_company']);
-            const allowed_markets     = Client.current_landing_company().legal_allowed_markets;
-            if (Client.is_logged_in() && allowed_markets && allowed_markets.indexOf('forex') === -1) {
+            const allowed_markets     = Client.currentLandingCompany().legal_allowed_markets;
+            if (Client.isLoggedIn() && allowed_markets && allowed_markets.indexOf('forex') === -1) {
                 BinaryPjax.load('trading');
                 return;
             }

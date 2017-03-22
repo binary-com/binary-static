@@ -1,4 +1,4 @@
-const Client   = require('../../../base/client').Client;
+const Client   = require('../../../base/client');
 const localize = require('../../../base/localize').localize;
 const Content  = require('../../../common_functions/content').Content;
 
