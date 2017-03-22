@@ -263,7 +263,9 @@ const BinarySocketClass = function() {
 
                 const error_code = getPropertyValue(response, ['error', 'code']);
                 if (type === 'broadcast_notifications') {
-                    is_available = /^up$/i.test(response.site_status);
+                    const is_available_now = /^up$/i.test(response.site_status);
+                    if (!is_available && is_available_now) window.location.reload();
+                    is_available = is_available_now;
                     $('#site-status-message').css('display', is_available ? 'none' : 'block').find('.message').html(response.message);
                 } else if (type === 'authorize') {
                     if (response.error) {
