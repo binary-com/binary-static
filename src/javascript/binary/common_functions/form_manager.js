@@ -57,14 +57,16 @@ const FormManager = (() => {
                             $selector.is(':checkbox') ? ($selector.is(':checked') ? 1 : 0) :
                                 Array.isArray(val) ? val.join(',') : (val || ''));
 
-                    key = key.replace(/lbl_|#|\./g, '');
-                    if (field.parent_node) {
-                        if (!data[field.parent_node]) {
-                            data[field.parent_node] = {};
+                    if (!(field.exclude_if_empty && val.length === 0)) {
+                        key = key.replace(/lbl_|#|\./g, '');
+                        if (field.parent_node) {
+                            if (!data[field.parent_node]) {
+                                data[field.parent_node] = {};
+                            }
+                            data[field.parent_node][key] = value;
+                        } else {
+                            data[key] = value;
                         }
-                        data[field.parent_node][key] = value;
-                    } else {
-                        data[key] = value;
                     }
                 }
             }
