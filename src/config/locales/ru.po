@@ -9,14 +9,12 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-03-21 08:01+0000\n"
 "Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
-"Language-Team: Russian "
-"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.12\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -38,9 +36,7 @@ msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 было зачислено на Ваш Демо-счет %3"
 
 msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
-msgstr ""
-"Получите выплату %1 %2, если %3 не коснётся заданного барьера на момент "
-"закрытия %4."
+msgstr "Получите выплату %1 %2, если %3 не коснётся заданного барьера на момент закрытия %4."
 
 #, fuzzy
 #| msgid "%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
@@ -63,9 +59,7 @@ msgid "%1 %2 payout if %3 is strictly higher than or equal to Barrier at close o
 msgstr "Получите выплату %1 %2, если %3 будет находиться строго выше или на заданном ценовом барьере на момент окончания %4."
 
 msgid "%1 %2 payout if %3 is strictly lower than Barrier at close on %4."
-msgstr ""
-"Получите выплату %1 %2, если %3 будет находиться строго ниже заданного "
-"ценового барьера на момент закрытия %4."
+msgstr "Получите выплату %1 %2, если %3 будет находиться строго ниже заданного ценового барьера на момент закрытия %4."
 
 #, fuzzy
 #| msgid "%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
@@ -73,9 +67,7 @@ msgid "%1 %2 payout if %3 stays between low and high values of Barrier through c
 msgstr "Получите выплату %1 %2, если %3 останется между заданным верхним и нижним барьером на момент закрытия %4."
 
 msgid "%1 %2 payout if %3 touches Barrier through close on %4."
-msgstr ""
-"Получите выплату %1 %2, если %3 коснётся заданного барьера к моменту "
-"закрытия %4."
+msgstr "Получите выплату %1 %2, если %3 коснётся заданного барьера к моменту закрытия %4."
 
 msgid "%1 (Toll Free)"
 msgstr "%1 (Бесплатно)"
@@ -563,9 +555,7 @@ msgid "<strong>Flexible</strong> - Choose from over one million possible trade v
 msgstr "<strong>Гибкость</strong> – выберите один из миллиона доступных контрактов и задайте настройки согласно Вашей стратегии"
 
 msgid "<strong>Higher/Lower</strong> - Predict the market ending higher or lower than a price target."
-msgstr ""
-"<strong>Выше/Ниже</strong> – сделайте прогноз, будет рынок выше или ниже "
-"заданного ценового барьера."
+msgstr "<strong>Выше/Ниже</strong> – сделайте прогноз, будет рынок выше или ниже заданного ценового барьера."
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>ВАЖНАЯ ИНФОРМАЦИЯ</strong> – %1 не является представителем никакого из указанных Платежных агентов. Каждый Платежный агент функционирует как независимый предприниматель, а %1 не поддерживает, не выполняет поручительства и не гарантирует надежности любого из Платежных агентов. КЛИЕНТЫ ПОЛЬЗУЮТСЯ УСЛУГАМИ ПЛАТЕЖНЫХ АГЕНТОВ НА СВОЙ СТРАХ И РИСК. Мы рекомендуем клиентам заранее проверить информацию о Платежных агентах, прежде чем высылать им денежные средства. %1 не несет никакой ответственности за транзакции между Клиентом и Платежным агентом."
@@ -719,9 +709,7 @@ msgid "A higher figure (higher to you) representing our offer price and a lower 
 msgstr "Верхняя цифра (по отношению к Вам) представляет нашу цену предложения, а нижняя цифра (по отношению к Вам) указывает нашу цену бид для каждого контракта и должна быть показана Вам по запросу. Разницу между нашей ценой бид и ценой предложения составляет рыночный спред (рыночная цена данного актива) и наш спред (наша комиссия)."
 
 msgid "A leading innovator of Binary Options trading for over 15 Years"
-msgstr ""
-"Признанный новатор в области торговли бинарными опционами, сохраняющий "
-"ведущую позицию на протяжении более 15 лет"
+msgstr "Признанный новатор в области торговли бинарными опционами, сохраняющий ведущую позицию на протяжении более 15 лет"
 
 msgid "A list of payment methods you will accept from Clients"
 msgstr "Список методов оплаты, которые Вы будете принимать от Клиентов"
@@ -841,9 +829,7 @@ msgid "Account Closure"
 msgstr "Закрытие счета"
 
 msgid "Account Equity &mdash; Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss."
-msgstr ""
-"Остаток на счету &mdash; остаток средств на Вашем счету обозначает сумму "
-"Вашего баланса счёта и чистую сумму нереализованной прибыли и убытков."
+msgstr "Остаток на счету &mdash; остаток средств на Вашем счету обозначает сумму Вашего баланса счёта и чистую сумму нереализованной прибыли и убытков."
 
 msgid "Account Free Margin &mdash; Your Account Equity minus your Total Margin."
 msgstr "Свободная маржа на счету &mdash; остаток на счету минус общая маржа."
@@ -1002,9 +988,7 @@ msgid "All customer funds are segregated and held with JSF Trust Bank."
 msgstr "Средства клиентов отделены и находятся в банке JSF Trust Bank."
 
 msgid "All fund transfers from your Binary Options Real Account to your Real Account must be made by you."
-msgstr ""
-"Любое перечисление средств с Реального счёта Binary (для торговли бинарными "
-"опционами) на Ваш текущий Реальный счёт должно производиться Вами."
+msgstr "Любое перечисление средств с Реального счёта Binary (для торговли бинарными опционами) на Ваш текущий Реальный счёт должно производиться Вами."
 
 msgid "All intellectual property rights in the MT5 Trading Platform are owned by the Licensor and shall remain the exclusive property of the Licensor. Nothing in this Agreement intends to transfer any such rights or to vest any such rights in you."
 msgstr "Все права на интеллектуальную собственность и Торговую платформу MT5 принадлежат лицензиару и остаются его исключительной собственностью. Никакие положения данного Соглашения не предполагают передачи Вам данного права или полномочий."
@@ -1108,12 +1092,7 @@ msgid "Any Transaction opened by you must be within any credit or position limit
 msgstr "Любой открываемый Вами контракт должен соответствовать лимитам на кредит и позицию, установленным для конкретного реального счёта или любых контрактов."
 
 msgid "Any amendments to the contractual terms of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between you and us in connection with the Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms and conditions of this Agreement."
-msgstr ""
-"Любые изменения условий контрактов с явными ошибками должны быть честными и "
-"оправданными. Средства, обмениваемые между нами и Вами в рамках контрактов с "
-"явными допущенными ошибками должны быть возвращены получателю согласно "
-"изменениям, внесённым в условия заключения контрактов в рамках данного "
-"Соглашения."
+msgstr "Любые изменения условий контрактов с явными ошибками должны быть честными и оправданными. Средства, обмениваемые между нами и Вами в рамках контрактов с явными допущенными ошибками должны быть возвращены получателю согласно изменениям, внесённым в условия заключения контрактов в рамках данного Соглашения."
 
 msgid "Any changes in our privacy policy or security statement will be posted onto this website. In the event of material changes that directly affect the economic use of your personal information, we will request your prior authorisation in writing before effecting such change on your account."
 msgstr "Информация о любых изменениях в правилах защиты информации будет размещена на этом сайте. В случае изменений, которые могут повлиять на использование ваших персональных данных, мы предварительно запросим ваше разрешение в письменном виде прежде, чем вводить эти изменения."
@@ -1502,10 +1481,7 @@ msgid "Binary KK granted Japan license"
 msgstr "Binary KK получил японскую лицензию"
 
 msgid "Binary KK is a licensed Type 1 Financial Instruments Business, regulated by the KLFB, and a member of the FFAJ."
-msgstr ""
-"Компания Binary KK лицензированный поставщик финансовых услуг Первого типа, "
-"регулируемый Управлением по финансовому регулированию Японии, а также "
-"являющийся участником Ассоциации финансовых фьючерсов Японии."
+msgstr "Компания Binary KK лицензированный поставщик финансовых услуг Первого типа, регулируемый Управлением по финансовому регулированию Японии, а также являющийся участником Ассоциации финансовых фьючерсов Японии."
 
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
@@ -1885,11 +1861,7 @@ msgid "Clients registered with Binary Investments (Europe) Ltd can raise their u
 msgstr "Клиенты, зарегистрированные на Binary Investments (Europe) Ltd, могут донести нерешенные споры до внимания менеджера по жалобам клиентов в MFSA (Consumer Complaints Manager). Подробности о подаче жалобы менеджеру по жалобам клиентов в MFSA и контактные данные можно найти здесь: %1. Жалобы менеджеру по жалобам клиентов в MFSA должны обязательно подаваться в письменном виде."
 
 msgid "Clients registered with any Binary Group company, and in particular with Binary (V) Ltd. or Binary (C.R.). S.A., can raise their unresolved disputes with management by submitting an email to <a href='mailto:%1'>%1</a>."
-msgstr ""
-"Клиенты, зарегистрированные в любой компании, входящей в нашу группу Binary "
-"Group, а также в Binary (V) Ltd. и Binary (C.R.). S.A., могут возобновить "
-"свои неразрешенные споры с менеджерами, отправив нам письмо по адресу <a "
-"href='mailto:%1'>%1</a>."
+msgstr "Клиенты, зарегистрированные в любой компании, входящей в нашу группу Binary Group, а также в Binary (V) Ltd. и Binary (C.R.). S.A., могут возобновить свои неразрешенные споры с менеджерами, отправив нам письмо по адресу <a href='mailto:%1'>%1</a>."
 
 msgid "Clients shall not hold or pool third party funds into their own account held with the Company."
 msgstr "Клиенты не могут принимать от одного или нескольких лиц средства на свой счет в Компании для управления ими."
@@ -2629,7 +2601,6 @@ msgstr "Email"
 msgid "Email address"
 msgstr "Эл. адрес"
 
-#, fuzzy
 msgid "Email us your Identity Documents"
 msgstr ""
 
@@ -2746,11 +2717,7 @@ msgid "Even/Odd contracts will be refunded at the purchase price if the contract
 msgstr "Цена покупки контрактов Чётное/Нечётное будет возмещена, если контракт не истечёт в течение 5 минут."
 
 msgid "Event &mdash; Event examples include circumstances whereby the type of Transaction to which your Order is related to ceased to be offered, or a Corporate Event or the insolvency of a Company whose shares represent are related to the subject matter of the Order, and others."
-msgstr ""
-"Обстоятельства &mdash; обстоятельства могут включать события, ввиду которых "
-"перестанет предлагаться тип контракта, к которому относится Ваш ордер, а "
-"также корпоративные мероприятия или неплатежеспособность Компании (акции "
-"которой являются объектом ордера) и другие ситуации."
+msgstr "Обстоятельства &mdash; обстоятельства могут включать события, ввиду которых перестанет предлагаться тип контракта, к которому относится Ваш ордер, а также корпоративные мероприятия или неплатежеспособность Компании (акции которой являются объектом ордера) и другие ситуации."
 
 msgid "Everyone"
 msgstr "Каждый"
@@ -4444,9 +4411,7 @@ msgid "Join now"
 msgstr "Присоединиться"
 
 msgid "Join our affiliate program to earn income by leveraging your hard-earned network of contact"
-msgstr ""
-"Присоединяйтесь к нашей партнёрской программе и получайте прибыль от своей "
-"сети контактов"
+msgstr "Присоединяйтесь к нашей партнёрской программе и получайте прибыль от своей сети контактов"
 
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Присоединяйтесь к нашей команде ярких и талантливых специалистов. Работайте вместе с нами над улучшением и продвижением нашей высокотехнологичной платформы, ставшей одной из самых популярных платформ в индустрии торговли бинарными опционами на протяжении более 15 лет."
@@ -4635,10 +4600,7 @@ msgid "Limit"
 msgstr "Лимит"
 
 msgid "Limit Order &mdash; An instruction to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price."
-msgstr ""
-"Лимитный ордер &mdash; инструкция открыть или закрыть контракт, если/когда "
-"цена котировки будет более благоприятна для Вас, по сравнению с текущей "
-"ценой."
+msgstr "Лимитный ордер &mdash; инструкция открыть или закрыть контракт, если/когда цена котировки будет более благоприятна для Вас, по сравнению с текущей ценой."
 
 msgid "Limit/Limit Price &mdash; The price specified in your Limit Order."
 msgstr "Лимит / лимитная цена &mdash; цена, указанная в Вашем лимитном ордере."
@@ -4799,18 +4761,13 @@ msgid "Margin"
 msgstr "Маржа"
 
 msgid "Margin &mdash; The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover our exposure as a counterparty to your contract."
-msgstr ""
-"Маржа &mdash; сумма от баланса Вашего счёта, заблокированная нами с целью "
-"открытия и поддержания контракта, чтобы компенсировать наш риск в качестве "
-"контрагента по Вашему контракту."
+msgstr "Маржа &mdash; сумма от баланса Вашего счёта, заблокированная нами с целью открытия и поддержания контракта, чтобы компенсировать наш риск в качестве контрагента по Вашему контракту."
 
 msgid "Margin FX"
 msgstr "Margin FX"
 
 msgid "Margin Level &mdash; Ratio of Account Equity to Total Margin, expressed as a percentage."
-msgstr ""
-"Уровень маржи &mdash; соотношение остатка на счету с общей маржей, "
-"выраженное в процентах."
+msgstr "Уровень маржи &mdash; соотношение остатка на счету с общей маржей, выраженное в процентах."
 
 msgid "Margin Payment"
 msgstr "Выплата маржи"
@@ -4825,11 +4782,7 @@ msgid "Margin Requirement and Calculation"
 msgstr "Маржевые требования и их расчёт"
 
 msgid "Margin Requirements can increase/decrease based on the aggregated size of your Open Position determined by the volume (number of lots), contract size (value per point in the original currency of the contract), market price, and margin rate."
-msgstr ""
-"Маржевые требования могут расти/снижаться, в зависимости от совокупной "
-"стоимости Ваших открытых позиций, которая определяется объёмом (количеством "
-"лотов), размером контракта (ценой за каждый пункт оригинальной валюты "
-"контракта), рыночной ценой и размером маржи."
+msgstr "Маржевые требования могут расти/снижаться, в зависимости от совокупной стоимости Ваших открытых позиций, которая определяется объёмом (количеством лотов), размером контракта (ценой за каждый пункт оригинальной валюты контракта), рыночной ценой и размером маржи."
 
 msgid "Margin allows you to trade on leverage, giving you the same level of market exposure using much less capital."
 msgstr "Маржа позволяет торговать с использованием кредитного рычага, предоставляя Вам ту же позицию на рынке за меньшие деньги."
@@ -5131,10 +5084,7 @@ msgid "Next"
 msgstr "Далее"
 
 msgid "Next Available Price &mdash; Earliest price reasonably available and quoted by Binary.com when our Price quotation reaches or goes beyond the level of your Stop Order."
-msgstr ""
-"Следующая доступная цена &mdash; самая ранняя цена, которая доступна и "
-"предоставлена Binary.com, когда наша котировка достигает или выходит за "
-"пределы Вашего уровня стоп-ордера."
+msgstr "Следующая доступная цена &mdash; самая ранняя цена, которая доступна и предоставлена Binary.com, когда наша котировка достигает или выходит за пределы Вашего уровня стоп-ордера."
 
 msgid "Next-Gen"
 msgstr "Next-Gen"
@@ -5254,9 +5204,7 @@ msgid "October"
 msgstr "Октябрь"
 
 msgid "Offering the widest available range of currencies, option types and trading periods on a fast intuitive, proprietary trading platform."
-msgstr ""
-"К Вашим услугам самый большой выбор валют, видов опционов и сроков "
-"контрактов на быстрой, простой и инновационной торговой платформе."
+msgstr "К Вашим услугам самый большой выбор валют, видов опционов и сроков контрактов на быстрой, простой и инновационной торговой платформе."
 
 msgid "Office worker"
 msgstr "Office worker"
@@ -5268,10 +5216,7 @@ msgid "On the basis of the information provided in relation to your knowledge an
 msgstr "На основе информации, предоставленной в отношении Ваших знаний и опыта, мы считаем, что инвестиции, доступные через этот сайт, не подходят для Вас."
 
 msgid "On the occurrence of an Event of Default, we may exercise our rights under this clause, at any time and without prior notice:"
-msgstr ""
-"В случае невыполнения обязательств мы можем в любое время и без отправки Вам "
-"предварительного уведомления воспользоваться своими правами, установленными "
-"в рамках данного положения:"
+msgstr "В случае невыполнения обязательств мы можем в любое время и без отправки Вам предварительного уведомления воспользоваться своими правами, установленными в рамках данного положения:"
 
 msgid "On-time Payments Every Time"
 msgstr "Всегда своевременная выплата"
@@ -5340,10 +5285,7 @@ msgid "Open Account"
 msgstr "Открыть счет"
 
 msgid "Open Position &mdash; The position in a market made by reference to an Underlying Instrument created by opening a Transaction as a result of placing an Order to the extent that such position has not been closed in whole or in part under this Agreement."
-msgstr ""
-"Открытая позиция &mdash; позиция на рынке со ссылкой на базовый инструмент, "
-"созданная в результате открытия контракта путём размещения ордера и не "
-"закрытая (в целом или частично) в рамках данного Соглашения."
+msgstr "Открытая позиция &mdash; позиция на рынке со ссылкой на базовый инструмент, созданная в результате открытия контракта путём размещения ордера и не закрытая (в целом или частично) в рамках данного Соглашения."
 
 msgid "Open Positions"
 msgstr "Открытые позиции"
