@@ -363,6 +363,8 @@ sub _texts {
         push @texts, localize('Successful');
         push @texts, localize('Failed');
         push @texts, localize('Your account has no Login/Logout activity.');
+        push @texts, localize('login');
+        push @texts, localize('logout');
         #strings for reality_check
         push @texts, localize('Please enter a number between [_1].');
         push @texts, localize('Your trading statistics since [_1].');
@@ -404,6 +406,8 @@ sub _texts {
         push @texts, localize('Administrative Executive');
         push @texts, localize('Internal Audit');
         push @texts, localize('Internal Auditor');
+        push @texts, localize('Marketing Project Coordinator');
+        push @texts, localize('Affiliates Manager');
         #strings for view popup ws
         push @texts, localize('Start Time');
         push @texts, localize('Entry Spot');
@@ -470,6 +474,10 @@ sub _texts {
         push @texts, localize('Revoke access');
         push @texts, localize('Are you sure that you want to permanently revoke access to application');
         push @texts, localize('Transaction performed by [_1] (App ID: [_2])');
+        push @texts, localize('admin');
+        push @texts, localize('read');
+        push @texts, localize('trade');
+        push @texts, localize('payments');
         # Strings for lost_passwordws
         push @texts, localize('[_1] Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support.');
         push @texts, localize('Your password has been successfully reset. Please log into your account using your new password.');
