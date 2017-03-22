@@ -18,8 +18,6 @@ const SettingsDetailsWS = (function() {
         is_jp,
         is_virtual,
         residence,
-        tax_residence_values,
-        place_of_birth_value,
         get_settings_data;
 
     const init = () => {
@@ -72,12 +70,6 @@ const SettingsDetailsWS = (function() {
     };
 
     const displayGetSettingsData = (data, populate = true) => {
-        if (data.tax_residence) {
-            tax_residence_values = data.tax_residence.split(',');
-        }
-        if (data.place_of_birth) {
-            place_of_birth_value = data.place_of_birth;
-        }
         let $key,
             $lbl_key,
             data_key,
@@ -212,11 +204,11 @@ const SettingsDetailsWS = (function() {
                 $tax_residence.html($options.html()).promise().done(() => {
                     setTimeout(() => {
                         $tax_residence.select2()
-                            .val(tax_residence_values).trigger('change')
+                            .val(get_settings_data.tax_residence.split(',')).trigger('change')
                             .removeClass('invisible');
                     }, 500);
                 });
-                $place_of_birth.val(place_of_birth_value || residence);
+                $place_of_birth.val(get_settings_data.place_of_birth || residence);
             } else {
                 $('#lbl_country').parent().replaceWith($('<select/>', { id: 'residence' }));
                 const $residence = $('#residence');
