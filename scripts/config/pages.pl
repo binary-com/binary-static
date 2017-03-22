@@ -106,7 +106,7 @@ sub all_pages {
         ['user/security/change_passwordws',  'user/security/change_password',        'default',    'Change Password'],
         ['user/security/iphistoryws',        'user/security/iphistory',              'default',    'Login History',           'ja'],
         ['user/security/limitsws',           'user/security/limitsws',               'default',    'Account Limits'],
-        ['user/security/self_exclusionws',   'user/security/self_exclusionws',       'default',    'Account Details'],
+        ['user/security/self_exclusionws',   'user/security/self_exclusion',         'default',    'Account Details'],
         ['user/settings/assessmentws',       'user/settings/financial_assessmentws', 'default',    'Financial Assessment',    'ja'],
         ['user/settings/detailsws',          'user/settings/detailsws',              'default',    'Personal Details'],
 

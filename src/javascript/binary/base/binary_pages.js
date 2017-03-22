@@ -36,7 +36,7 @@ const FinancialAssessment        = require('../websocket_pages/user/account/sett
 const IPHistory                  = require('../websocket_pages/user/account/settings/iphistory');
 const Limits                     = require('../websocket_pages/user/account/settings/limits');
 const Settings                   = require('../websocket_pages/user/account/settings');
-const SelfExclusionWS            = require('../websocket_pages/user/account/settings/self_exclusion');
+const SelfExclusion              = require('../websocket_pages/user/account/settings/self_exclusion');
 const SettingsDetailsWS          = require('../websocket_pages/user/account/settings/settings_detailsws');
 const Statement                  = require('../websocket_pages/user/account/statement/statement.init');
 const TopUpVirtual               = require('../websocket_pages/user/account/top_up_virtual');
@@ -89,7 +89,7 @@ const pages_config = {
     regulation               : { module: Regulation },
     reset_passwordws         : { module: ResetPassword,              not_authenticated: true },
     securityws               : { module: Settings,                   is_authenticated: true },
-    self_exclusionws         : { module: SelfExclusionWS,            is_authenticated: true, only_real: true },
+    self_exclusionws         : { module: SelfExclusion,              is_authenticated: true, only_real: true },
     settingsws               : { module: Settings,                   is_authenticated: true },
     signup                   : { module: StaticPages.AffiliateSignup },
     statementws              : { module: Statement,                is_authenticated: true },
