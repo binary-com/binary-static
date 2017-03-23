@@ -1,12 +1,11 @@
-const Client                = require('../../../base/client').Client;
-const localize              = require('../../../base/localize').localize;
-const url_for               = require('../../../base/url').url_for;
-const template              = require('../../../base/utility').template;
-const getResidence          = require('../../../common_functions/account_opening').getResidence;
-const japanese_client       = require('../../../common_functions/country_base').japanese_client;
-const FormManager           = require('../../../common_functions/form_manager');
-const TrafficSource         = require('../../../common_functions/traffic_source').TrafficSource;
-const Cookies               = require('../../../../lib/js-cookie');
+const Client          = require('../../../base/client');
+const localize        = require('../../../base/localize').localize;
+const urlFor          = require('../../../base/url').urlFor;
+const makeOption      = require('../../../common_functions/common_functions').makeOption;
+const japanese_client = require('../../../common_functions/country_base').japanese_client;
+const FormManager     = require('../../../common_functions/form_manager');
+const TrafficSource   = require('../../../common_functions/traffic_source').TrafficSource;
+const Cookies         = require('../../../../lib/js-cookie');
 
 const VirtualAccOpening = (function() {
     const form = '#virtual-form';
@@ -15,7 +14,7 @@ const VirtualAccOpening = (function() {
         if (japanese_client()) {
             handleJPForm();
         } else {
-            getResidence();
+            BinarySocket.send({ residence_list: 1 }).then(response => handleResidenceList(response.residence_list));
             $('#residence').removeClass('invisible');
             bindValidation();
         }
@@ -24,6 +23,36 @@ const VirtualAccOpening = (function() {
             form_selector       : form,
             fnc_response_handler: handleNewAccount,
         });
+    };
+
+    const handleResidenceList = (residence_list) => {
+        if (residence_list.length > 0) {
+            const $residence      = $('#residence');
+            const residence_value = Client.get('residence') || '';
+
+            const $options_with_disabled = $('<div/>');
+            residence_list.forEach((res) => {
+                $options_with_disabled.append(makeOption(res.text, res.value, res.disabled));
+            });
+            $residence.html($options_with_disabled.html());
+
+            if (!residence_value) {
+                BinarySocket.wait('website_status').then(data => handleWebsiteStatus(data.website_status));
+            }
+        }
+    };
+
+    const handleWebsiteStatus = (website_status) => {
+        const clients_country = (website_status || {}).clients_country;
+        if (!clients_country) return;
+        const $residence = $('#residence');
+
+        // set residence value to client's country, detected by IP address from back-end
+        const $clients_country = $residence.find('option[value="' + clients_country + '"]');
+        if (!$clients_country.attr('disabled')) {
+            $clients_country.prop('selected', true);
+        }
+        $residence.removeClass('invisible');
     };
 
     const bindValidation = () => {
@@ -66,8 +95,8 @@ const VirtualAccOpening = (function() {
         const error = response.error;
         if (!error) {
             const new_account = response.new_account_virtual;
-            Client.set_cookie('residence', response.echo_req.residence);
-            return Client.process_new_account(
+            Client.setCookie('residence', response.echo_req.residence);
+            return Client.processNewAccount(
                 new_account.email,
                 new_account.client_id,
                 new_account.oauth_token,
@@ -94,12 +123,7 @@ const VirtualAccOpening = (function() {
 
     const showFormError = (message, url) => {
         $('.notice-message').remove();
-        const $form = $('#virtual-form');
-        $form.html($('<p/>', {
-            html: template(
-                localize(message),
-                [url_for(url)]),
-        }));
+        $('#virtual-form').html($('<p/>', { html: localize(message, [urlFor(url)]) }));
     };
 
     const showError = (message) => {

@@ -57,7 +57,7 @@ const Validation = (function() {
     // ----- Validation Methods -----
     // ------------------------------
     const validRequired = (value, options, field) => {
-        if (value.length) return true;
+        if ((typeof value === 'string' ? value.trim() : value).length) return true;
         // else
         validators_map.req.message = field.type === 'checkbox' ? 'Please select the checkbox.' : 'This field is required.';
         return false;
@@ -67,10 +67,10 @@ const Validation = (function() {
     const validLetterSymbol = value => !/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test(value);
     const validGeneral      = value => !/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><|]+/.test(value);
     const validAddress      = value => !/[`~!#$%^&*)(_=+\[}{\]\\";:\?><|]+/.test(value);
-    const validPostCode     = value => /^[a-zA-Z\d-]*$/.test(value);
+    const validPostCode     = value => /^[a-zA-Z\d-\s]*$/.test(value);
     const validPhone        = value => /^\+?[0-9\s]*$/.test(value);
     const validRegular      = (value, options) => options.regex.test(value);
-    const validEmailToken   = value => value.trim().length === 48;
+    const validEmailToken   = value => value.trim().length === 8;
 
     const validCompare  = (value, options) => value === $(options.to).val();
     const validNotEqual = (value, options) => value !== $(options.to).val();
@@ -110,7 +110,7 @@ const Validation = (function() {
         general      : { func: validGeneral,      message: 'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.' },
         address      : { func: validAddress,      message: 'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.' },
         letter_symbol: { func: validLetterSymbol, message: 'Only letters, space, hyphen, period, and apostrophe are allowed.' },
-        postcode     : { func: validPostCode,     message: 'Only letters, numbers, and hyphen are allowed.' },
+        postcode     : { func: validPostCode,     message: 'Only letters, numbers, space, and hyphen are allowed.' },
         phone        : { func: validPhone,        message: 'Only numbers and spaces are allowed.' },
         email_token  : { func: validEmailToken,   message: 'Please submit a valid verification token.' },
         compare      : { func: validCompare,      message: 'The two passwords that you entered do not match.' },
@@ -192,7 +192,7 @@ const Validation = (function() {
         form.is_ok = true;
         form.fields.forEach((field) => {
             if (!checkField(field)) {
-                if (form.is_ok) { // first error
+                if (form.is_ok && !field.no_scroll) { // first error
                     $.scrollTo(field.$, 500, { offset: -10 });
                 }
                 form.is_ok = false;

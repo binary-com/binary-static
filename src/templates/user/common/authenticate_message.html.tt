@@ -1,5 +1,5 @@
 <p>[% l('Please send us the following documents in order to verify your identity and authenticate your account:') %]</p>
-<ul class="bullet">
+<ul class="checked">
     <li>[% l('Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth.') %]</li>
     <li>[% l('Proof of address - A scanned copy of a utility bill or bank statement that\'s not more than three months old.') %]</li>
 </ul>

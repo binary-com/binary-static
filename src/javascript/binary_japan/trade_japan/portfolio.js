@@ -1,5 +1,5 @@
 const State  = require('../../binary/base/storage').State;
-const Client = require('../../binary/base/client').Client;
+const Client = require('../../binary/base/client');
 const PortfolioWS = require('../../binary/websocket_pages/user/account/portfolio/portfolio.init');
 
 const JapanPortfolio = (function() {
@@ -30,7 +30,7 @@ const JapanPortfolio = (function() {
     }
 
     function isActive() {
-        return !!(Client.is_logged_in() && isTradePage());
+        return !!(Client.isLoggedIn() && isTradePage());
     }
 
     function hide() {

@@ -1,10 +1,11 @@
 const BinaryPjax         = require('../../../../base/binary_pjax');
+const Header             = require('../../../../base/header');
 const localize           = require('../../../../base/localize').localize;
 const State              = require('../../../../base/storage').State;
 const showLoadingImage   = require('../../../../base/utility').showLoadingImage;
+const objectNotEmpty     = require('../../../../base/utility').objectNotEmpty;
 const Content            = require('../../../../common_functions/content').Content;
 const japanese_client    = require('../../../../common_functions/country_base').japanese_client;
-const RiskClassification = require('../../../../common_functions/risk_classification').RiskClassification;
 const Validation         = require('../../../../common_functions/form_validation');
 
 const FinancialAssessment = (() => {
@@ -27,7 +28,7 @@ const FinancialAssessment = (() => {
             submitForm();
         });
 
-        BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
+        BinarySocket.wait('get_financial_assessment').then((response) => {
             handleForm(response);
         });
     };
@@ -38,9 +39,18 @@ const FinancialAssessment = (() => {
         }
         hideLoadingImg(true);
 
-        financial_assessment = response.get_financial_assessment;
-        Object.keys(response.get_financial_assessment).forEach((key) => {
-            const val = response.get_financial_assessment[key];
+        financial_assessment = $.extend({}, response.get_financial_assessment);
+
+        if (!objectNotEmpty(financial_assessment)) {
+            BinarySocket.wait('get_account_status').then((data) => {
+                if (data.get_account_status.risk_classification === 'high') {
+                    $('#high_risk_classification').removeClass('invisible');
+                }
+            });
+        }
+
+        Object.keys(financial_assessment).forEach((key) => {
+            const val = financial_assessment[key];
             $(`#${key}`).val(val);
         });
 
@@ -84,8 +94,9 @@ const FinancialAssessment = (() => {
                     showFormMessage('Sorry, an error occurred while processing your request.', false);
                 } else {
                     showFormMessage('Your changes have been updated successfully.', true);
-                    RiskClassification.cleanup();
-                    BinarySocket.send({ get_financial_assessment: 1 }, true);
+                    BinarySocket.send({ get_financial_assessment: 1 }).then(() => {
+                        Header.displayAccountStatus();
+                    });
                 }
             });
         } else {
