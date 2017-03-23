@@ -2,7 +2,7 @@ const getPropertyValue = require('./utility').getPropertyValue;
 const objectNotEmpty   = require('./utility').objectNotEmpty;
 const Cookies          = require('../../lib/js-cookie');
 
-const isStorageSupported = function(storage) {
+const isStorageSupported = (storage) => {
     if (typeof storage === 'undefined') {
         return false;
     }
@@ -30,12 +30,8 @@ Store.prototype = {
             this.storage.setItem(key, value);
         }
     },
-    remove: function(key) {
-        this.storage.removeItem(key);
-    },
-    clear: function() {
-        this.storage.clear();
-    },
+    remove: function(key) { this.storage.removeItem(key); },
+    clear : function()    { this.storage.clear(); },
 };
 
 const InScriptStore = function(object) {
@@ -55,16 +51,16 @@ InScriptStore.prototype = {
             obj[key[0]] = value;
         }
     },
-    remove: function(key)        { delete this.store[key]; },
-    clear : function()           { this.store = {}; },
-    has   : function(key)        { return this.get(key) !== undefined; },
-    keys  : function()           { return Object.keys(this.store); },
+    remove: function(key) { delete this.store[key]; },
+    clear : function()    { this.store = {}; },
+    has   : function(key) { return this.get(key) !== undefined; },
+    keys  : function()    { return Object.keys(this.store); },
 };
 
 const State = new InScriptStore();
 State.set('response', {});
 
-const CookieStorage = function (cookie_name, cookie_domain) {
+const CookieStorage = function(cookie_name, cookie_domain) {
     this.initialized = false;
     this.cookie_name = cookie_name;
     const hostname = window.location.hostname;
@@ -84,9 +80,9 @@ CookieStorage.prototype = {
         }
         this.initialized = true;
     },
-    write: function(value, expireDate, isSecure) {
+    write: function(val, expireDate, isSecure) {
         if (!this.initialized) this.read();
-        this.value = value;
+        this.value = val;
         if (expireDate) this.expires = expireDate;
         Cookies.set(this.cookie_name, this.value, {
             expires: this.expires,
@@ -99,9 +95,9 @@ CookieStorage.prototype = {
         if (!this.initialized) this.read();
         return this.value[key];
     },
-    set: function(key, value) {
+    set: function(key, val) {
         if (!this.initialized) this.read();
-        this.value[key] = value;
+        this.value[key] = val;
         Cookies.set(this.cookie_name, this.value, {
             expires: new Date(this.expires),
             path   : this.path,
@@ -118,24 +114,21 @@ CookieStorage.prototype = {
 
 let SessionStore,
     LocalStore;
-if (typeof window !== 'undefined' && isStorageSupported(window.localStorage)) {
-    LocalStore = new Store(window.localStorage);
+
+if (typeof window !== 'undefined') {
+    if (isStorageSupported(window.localStorage)) {
+        LocalStore = new Store(window.localStorage);
+    }
+    if (isStorageSupported(window.sessionStorage)) {
+        SessionStore = new Store(window.sessionStorage);
+    }
 }
 
-if (typeof window !== 'undefined' && isStorageSupported(window.sessionStorage)) {
-    if (!LocalStore) {
-        LocalStore = new Store(window.sessionStorage);
-    }
-    SessionStore = new Store(window.sessionStorage);
+if (!LocalStore) {
+    LocalStore = new InScriptStore();
 }
-
-if (!SessionStore || !LocalStore) {
-    if (!LocalStore) {
-        LocalStore = new InScriptStore();
-    }
-    if (!SessionStore) {
-        SessionStore = new InScriptStore();
-    }
+if (!SessionStore) {
+    SessionStore = new InScriptStore();
 }
 
 module.exports = {

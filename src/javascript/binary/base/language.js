@@ -1,81 +1,63 @@
-const Cookies = require('../../lib/js-cookie');
 const CookieStorage = require('./storage').CookieStorage;
+const Cookies       = require('../../lib/js-cookie');
 
-const Language = (function () {
-    const all_languages = function() {
-        return {
-            EN   : 'English',
-            DE   : 'Deutsch',
-            ES   : 'Español',
-            FR   : 'Français',
-            ID   : 'Indonesia',
-            IT   : 'Italiano',
-            JA   : '日本語',
-            PL   : 'Polish',
-            PT   : 'Português',
-            RU   : 'Русский',
-            TH   : 'Thai',
-            VI   : 'Tiếng Việt',
-            ZH_CN: '简体中文',
-            ZH_TW: '繁體中文',
-        };
+const Language = (() => {
+    'use strict';
+
+    const allLanguages = {
+        EN   : 'English',
+        DE   : 'Deutsch',
+        ES   : 'Español',
+        FR   : 'Français',
+        ID   : 'Indonesia',
+        IT   : 'Italiano',
+        JA   : '日本語',
+        PL   : 'Polish',
+        PT   : 'Português',
+        RU   : 'Русский',
+        TH   : 'Thai',
+        VI   : 'Tiếng Việt',
+        ZH_CN: '简体中文',
+        ZH_TW: '繁體中文',
     };
 
-    const set_cookie_language = function () {
-        if (!Cookies.get('language')) {
+    const setCookieLanguage = (lang, set_anyway) => {
+        if (!Cookies.get('language') || set_anyway) {
             const cookie = new CookieStorage('language');
-            cookie.write(language());
+            cookie.write(lang || getLanguage());
         }
     };
 
-    const language_from_url = function() {
-        const regex = new RegExp('^(' + Object.keys(all_languages()).join('|') + ')$', 'i');
-        const langs = window.location.href.split('/').slice(3);
-        for (let i = 0; i < langs.length; i++) {
-            const lang = langs[i];
-            if (regex.test(lang)) return lang;
-        }
-        return '';
+    const languageFromUrl = () => {
+        const regex = new RegExp('^(' + Object.keys(allLanguages).join('|') + ')$', 'i');
+        const url_params = window.location.href.split('/').slice(3);
+        return (url_params.find(lang => regex.test(lang)) || '');
     };
 
     let current_lang = null;
-    const language = function() {
-        let lang = current_lang;
-        if (!lang) {
-            lang = (language_from_url() || Cookies.get('language') || 'EN').toUpperCase();
-            current_lang = lang;
-        }
-        return lang;
-    };
+    const getLanguage = () => (current_lang = (current_lang || (languageFromUrl() || Cookies.get('language') || 'EN').toUpperCase()));
 
-    const url_for_language = function(lang) {
-        return window.location.href.replace(new RegExp('\/' + language() + '\/', 'i'), '/' + lang.trim().toLowerCase() + '/');
-    };
+    const urlForLanguage = lang => window.location.href.replace(new RegExp('\/' + getLanguage() + '\/', 'i'), '/' + lang.trim().toLowerCase() + '/');
 
-    const on_change_language = function() {
+    const onChangeLanguage = () => {
+        let $this;
         $('#select_language').find('li').on('click', function() {
-            const lang = $(this).attr('class');
-            if (language() === lang) return;
-            $('#display_language').find('.language').text($(this).text());
-            const cookie = new CookieStorage('language');
-            cookie.write(lang);
-            document.location = url_for_language(lang);
+            $this = $(this);
+            const lang = $this.attr('class');
+            if (getLanguage() === lang) return;
+            $('#display_language').find('.language').text($this.text());
+            setCookieLanguage(lang, true);
+            document.location = urlForLanguage(lang);
         });
     };
 
     return {
-        all_languages      : all_languages,
-        set_cookie_language: set_cookie_language,
-        language           : language,
-        url_for_language   : url_for_language,
-        on_change_language : on_change_language,
+        getAll   : () => allLanguages,
+        setCookie: setCookieLanguage,
+        get      : getLanguage,
+        onChange : onChangeLanguage,
+        urlFor   : urlForLanguage,
     };
 })();
 
-module.exports = {
-    getAllLanguages  : Language.all_languages,
-    getLanguage      : Language.language,
-    setCookieLanguage: Language.set_cookie_language,
-    URLForLanguage   : Language.url_for_language,
-    onChangeLanguage : Language.on_change_language,
-};
+module.exports = Language;

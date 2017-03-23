@@ -1,5 +1,5 @@
 const showLoadingImage     = require('../../../../../base/utility').showLoadingImage;
-const showLocalTimeOnHover = require('../../../../../base/clock').Clock.showLocalTimeOnHover;
+const showLocalTimeOnHover = require('../../../../../base/clock').showLocalTimeOnHover;
 const localize             = require('../../../../../base/localize').localize;
 const Button      = require('../../../../../common_functions/attach_dom/button').Button;
 const FlexTableUI = require('../../../../../common_functions/attach_dom/flextable').FlexTableUI;
