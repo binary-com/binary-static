@@ -30,10 +30,16 @@ function padLeft(text, len, char) {
 }
 
 function compareBigUnsignedInt(a, b) {
+    a = numberToString(a);
+    b = numberToString(b);
     const max_length = Math.max(a.length, b.length);
     a = padLeft(a, max_length, '0');
     b = padLeft(b, max_length, '0');
     return a > b ? 1 : (a < b ? -1 : 0); // lexicographical comparison
+}
+
+function numberToString(n) {
+    return (typeof n === 'number' ? String(n) : n);
 }
 
 module.exports = {
