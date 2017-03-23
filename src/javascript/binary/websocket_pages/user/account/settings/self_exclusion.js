@@ -150,8 +150,8 @@ const SelfExclusion = (function() {
     };
 
     const additionalCheck = (data) => {
-        const is_changed = Object.keys(data).some(key => (
-            key !== 'set_self_exclusion' && (!(key in self_exclusion_data) || self_exclusion_data[key] !== data[key])
+        const is_changed = Object.keys(data).some(key => ( // using != in next line since response types is inconsistent
+            key !== 'set_self_exclusion' && (!(key in self_exclusion_data) || self_exclusion_data[key] != data[key]) // eslint-disable-line eqeqeq
         ));
         if (!is_changed) {
             showFormMessage('You did not change anything.', false);
