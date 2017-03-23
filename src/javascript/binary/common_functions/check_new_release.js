@@ -1,4 +1,4 @@
-const url_for_static = require('../base/url').url_for_static;
+const urlForStatic   = require('../base/url').urlForStatic;
 const moment         = require('moment');
 
 const check_new_release = function() { // calling this method is handled by GTM tags
@@ -16,7 +16,7 @@ const check_new_release = function() { // calling this method is handled by GTM 
             }
         }
     };
-    xhttp.open('GET', url_for_static() + 'version?' + Math.random().toString(36).slice(2), true);
+    xhttp.open('GET', urlForStatic() + 'version?' + Math.random().toString(36).slice(2), true);
     xhttp.send();
 };
 

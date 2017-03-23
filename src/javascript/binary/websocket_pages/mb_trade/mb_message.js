@@ -7,8 +7,8 @@ const MBSymbols           = require('./mb_symbols').MBSymbols;
 const MBTick              = require('./mb_tick').MBTick;
 const PortfolioWS = require('../user/account/portfolio/portfolio.init');
 const State  = require('../../base/storage').State;
-const GTM    = require('../../base/gtm').GTM;
-const Client = require('../../base/client').Client;
+const GTM    = require('../../base/gtm');
+const Client = require('../../base/client');
 const processTradingTimes  = require('../trade/process').processTradingTimes;
 
 /*
@@ -40,7 +40,7 @@ const MBMessage = (function () {
                 MBProcess.processProposal(response);
             } else if (type === 'buy') {
                 MBPurchase.display(response);
-                GTM.push_purchase_data(response);
+                GTM.pushPurchaseData(response);
             } else if (type === 'tick') {
                 MBProcess.processTick(response);
             } else if (type === 'history') {
