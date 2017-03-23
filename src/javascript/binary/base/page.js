@@ -10,6 +10,7 @@ const LocalStore        = require('./storage').LocalStore;
 const State             = require('./storage').State;
 const Url               = require('./url');
 const checkLanguage     = require('../common_functions/country_base').checkLanguage;
+const scrollToTop       = require('../common_functions/scroll').scrollToTop;
 const TrafficSource     = require('../common_functions/traffic_source').TrafficSource;
 const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check');
 const Cookies           = require('../../lib/js-cookie');
@@ -63,24 +64,7 @@ const Page = (() => {
                     // no default
                 }
             });
-
-            // Scroll to top
-            let is_displaying = false;
-            const $scrollup = $('#scrollup');
-            $(document).scroll(function () {
-                if ($(this).scrollTop() > 100) {
-                    if (is_displaying) return;
-                    $scrollup.fadeIn();
-                    is_displaying = true;
-                } else if (is_displaying) {
-                    $scrollup.fadeOut();
-                    is_displaying = false;
-                }
-            });
-
-            $scrollup.click(function () {
-                $.scrollTo(0, 500);
-            });
+            scrollToTop();
             LocalStore.set('active_loginid', match);
         });
     };
