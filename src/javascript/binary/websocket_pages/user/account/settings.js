@@ -1,5 +1,5 @@
 const japanese_client = require('../../../common_functions/country_base').japanese_client;
-const Client          = require('../../../base/client').Client;
+const Client          = require('../../../base/client');
 
 const Settings = (function() {
     'use strict';

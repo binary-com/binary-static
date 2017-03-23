@@ -1,6 +1,5 @@
-const Cookies        = require('../../lib/js-cookie');
-const getLanguage    = require('../base/language').getLanguage;
-const URLForLanguage = require('../base/language').URLForLanguage;
+const Cookies  = require('../../lib/js-cookie');
+const Language = require('../base/language');
 
 function checkClientsCountry() {
     BinarySocket.wait('website_status').then((response) => {
@@ -17,8 +16,8 @@ function checkClientsCountry() {
 }
 
 function limitLanguage(lang) {
-    if (getLanguage() !== lang) {
-        window.location.href = URLForLanguage(lang); // need to redirect not using pjax
+    if (Language.get() !== lang) {
+        window.location.href = Language.urlFor(lang); // need to redirect not using pjax
     }
     if (document.getElementById('select_language')) {
         $('.languages').remove();
@@ -34,7 +33,7 @@ function limitLanguage(lang) {
 function japanese_client() {
     // handle for test case
     if (typeof window === 'undefined') return false;
-    return getLanguage() === 'JA' || japanese_residence();
+    return Language.get() === 'JA' || japanese_residence();
 }
 
 function japanese_residence() {
@@ -42,7 +41,7 @@ function japanese_residence() {
 }
 
 function checkLanguage() {
-    if (getLanguage() === 'ID') {
+    if (Language.get() === 'ID') {
         const regex = new RegExp('id');
         const $academyLink = $('.academy a');
         const academyHREF = $academyLink.attr('href');

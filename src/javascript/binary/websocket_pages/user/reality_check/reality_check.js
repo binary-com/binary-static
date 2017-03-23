@@ -1,6 +1,6 @@
 const RealityCheckData = require('./reality_check.data');
 const RealityCheckUI   = require('./reality_check.ui');
-const Client           = require('../../../base/client').Client;
+const Client           = require('../../../base/client');
 
 const RealityCheck = (() => {
     'use strict';
@@ -17,7 +17,7 @@ const RealityCheck = (() => {
     const onLoad = () => {
         if (RealityCheckUI.shouldShowPopup()) {
             BinarySocket.wait('landing_company').then(() => {
-                if ((Client.current_landing_company() || {}).has_reality_check) {
+                if ((Client.currentLandingCompany() || {}).has_reality_check) {
                     RealityCheckUI.setLoginTime(Client.get('session_start') * 1000);
                     window.addEventListener('storage', storageHandler, false);
 

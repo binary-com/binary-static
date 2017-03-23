@@ -1,7 +1,6 @@
-const Symbols     = require('../symbols').Symbols;
-const template    = require('../../../base/utility').template;
-const localize    = require('../../../base/localize').localize;
-const Highcharts  = require('highcharts');
+const Highcharts       = require('highcharts');
+const Symbols          = require('../symbols').Symbols;
+const localize         = require('../../../base/localize').localize;
 const elementInnerHtml = require('../../../common_functions/common_functions').elementInnerHtml;
 
 require('highcharts/modules/exporting')(Highcharts);
@@ -169,7 +168,7 @@ DigitInfoWS.prototype = {
 
         const get_title = function() {
             return {
-                text: template($('#last_digit_title').html(), [spots.length, $('[name=underlying] option:selected').text()]),
+                text: localize($('#last_digit_title').html(), [spots.length, $('[name=underlying] option:selected').text()]),
             };
         };
 
