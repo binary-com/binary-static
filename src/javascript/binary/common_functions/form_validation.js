@@ -47,6 +47,11 @@ const Validation = (function() {
                     if (event) {
                         field.$.unbind(event).on(event, () => {
                             checkField(field);
+                            if (field.re_check_field) {
+                                checkField(forms[form_selector].fields.find(fld => (
+                                    fld.selector === field.re_check_field
+                                )));
+                            }
                         });
                     }
                 });
@@ -178,10 +183,6 @@ const Validation = (function() {
             showError(field, message);
         } else {
             clearError(field);
-        }
-
-        if (field.re_check_field) {
-            checkField(forms[field.form].fields.find(fld => fld.selector === field.re_check_field));
         }
 
         return all_is_ok;

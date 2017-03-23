@@ -92,28 +92,33 @@ const SelfExclusion = (function() {
             {
                 selector        : timeout_date_id,
                 request_field   : 'timeout_until',
+                re_check_field  : timeout_time_id,
                 exclude_if_empty: 1,
-                value           : () => ($(timeout_date_id).attr('data-value') ? moment(($(timeout_date_id).attr('data-value') + ' ' + $(timeout_time_id).val()).trim()).valueOf() / 1000 : ''),
+                value           : () => ($(timeout_date_id).val() ? moment((dateFormat(timeout_date_id) + ' ' + $(timeout_time_id).val()).trim()).valueOf() / 1000 : ''),
                 validations     : [
                     ['custom', { func: () => ($(timeout_time_id).val() ? $(timeout_date_id).val().length : true), message: 'This field is required.' }],
                     ['custom', { func: validDate, message: 'Please select a valid date.' }],
-                    ['custom', { func: value => !value.length || moment(new Date(value)).isBefore(moment().add(6, 'weeks')), message: 'Time out cannot be more than 6 weeks.' }],
+                    ['custom', { func: value => !value.length || toMoment(value).isAfter(moment().subtract(1, 'days'), 'day'), message: 'Time out must be after today.' }],
+                    ['custom', { func: value => !value.length || toMoment(value).isBefore(moment().add(6, 'weeks')),           message: 'Time out cannot be more than 6 weeks.' }],
                 ],
             },
             {
                 selector       : timeout_time_id,
                 exclude_request: 1,
                 re_check_field : timeout_date_id,
-                validations    : [['custom', { func: validTime, message: 'Please select a valid time.' }]],
+                validations    : [
+                    ['custom', { func: () => ($(timeout_date_id).val() && toMoment($(timeout_date_id).val()).isSame(moment(), 'day') ? $(timeout_time_id).val().length : true), message: 'This field is required.' }],
+                    ['custom', { func: validTime, message: 'Please select a valid time.' }],
+                ],
             },
             {
                 selector        : exclude_until_id,
                 exclude_if_empty: 1,
-                value           : () => $(exclude_until_id).attr('data-value'),
+                value           : () => dateFormat(exclude_until_id),
                 validations     : [
                     ['custom', { func: validDate, message: 'Please select a valid date.' }],
-                    ['custom', { func: value => !value.length || moment(new Date(value)).isAfter(moment().add(6, 'months')), message: 'Exclude time cannot be less than 6 months.' }],
-                    ['custom', { func: value => !value.length || moment(new Date(value)).isBefore(moment().add(5, 'years')), message: 'Exclude time cannot be for more than 5 years.' }],
+                    ['custom', { func: value => !value.length || toMoment(value).isAfter(moment().add(6, 'months')), message: 'Exclude time cannot be less than 6 months.' }],
+                    ['custom', { func: value => !value.length || toMoment(value).isBefore(moment().add(5, 'years')), message: 'Exclude time cannot be for more than 5 years.' }],
                 ],
             });
 
@@ -129,6 +134,9 @@ const SelfExclusion = (function() {
     const validSessionDuration = value => (+value <= moment.duration(6, 'weeks').as('minutes'));
     const validDate            = value => !value.length || moment(new Date(value), 'YYYY-MM-DD', true).isValid();
     const validTime            = value => !value.length || moment(value,           'HH:mm',      true).isValid();
+
+    const toMoment   = value  => moment(new Date(value));
+    const dateFormat = elm_id => ($(elm_id).val() ? toMoment($(elm_id).val()).format('YYYY-MM-DD') : '');
 
     const initDatePicker = function() {
         // timeout_until
