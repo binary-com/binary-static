@@ -1,89 +1,64 @@
-const BinaryPjax           = require('../../base/binary_pjax');
-const Client               = require('../../base/client').Client;
-const Header               = require('../../base/header').Header;
-const default_redirect_url = require('../../base/url').default_redirect_url;
-const japanese_client      = require('../../common_functions/country_base').japanese_client;
-const japanese_residence   = require('../../common_functions/country_base').japanese_residence;
+const BinaryPjax         = require('../../base/binary_pjax');
+const Client             = require('../../base/client');
+const Header             = require('../../base/header');
+const defaultRedirectUrl = require('../../base/url').defaultRedirectUrl;
+const urlFor             = require('../../base/url').urlFor;
+const japanese_client    = require('../../common_functions/country_base').japanese_client;
+const japanese_residence = require('../../common_functions/country_base').japanese_residence;
 
 const Cashier = (function() {
     'use strict';
 
-    const lock = function(lock_type) {
-        $.each($('.' + lock_type), function() {
-            disableButton($(this).parent());
-        });
+    let href = '';
+    const hidden_class = 'invisible';
+
+    const showContent = () => {
+        Client.activateByClientType();
     };
 
-    const checkLocked = function() {
-        if (!Client.is_logged_in()) return;
-        BinarySocket.wait('authorize', 'website_status').then(() => {
-            if (japanese_client() && !japanese_residence()) {
-                BinaryPjax(default_redirect_url());
-                return;
+    const displayTopUpButton = () => {
+        BinarySocket.wait('balance').then((response) => {
+            const currency = response.balance.currency;
+            const balance = +response.balance.balance;
+            const can_topup = (currency !== 'JPY' && balance <= 1000) || (currency === 'JPY' && balance <= 100000);
+            const top_up_id = '#VRT_topup_link';
+            const $a = $(top_up_id);
+            const classes = ['toggle', 'button-disabled'];
+            const new_el = { class: $a.attr('class').replace(classes[+can_topup], classes[1 - +can_topup]), html: $a.html(), id: $a.attr('id') };
+            if (can_topup) {
+                href = href || urlFor('/cashier/top_up_virtualws');
+                new_el.href = href;
             }
-            checkTopUpWithdraw();
-            if (Client.get('is_virtual')) return;
-            BinarySocket.wait('get_account_status').then(() => {
-                if (Client.status_detected('cashier_locked')) {
-                    lock('deposit, .withdraw');
-                } else if (Client.status_detected('withdrawal_locked')) {
-                    lock('withdraw');
-                } else if (Client.status_detected('unwelcome')) {
-                    lock('deposit');
-                }
-                Client.activate_by_client_type();
-            });
+            $a.replaceWith($('<a/>', new_el));
+            $(top_up_id).parent().removeClass(hidden_class);
         });
-    };
-
-    const checkTopUpWithdraw = function() {
-        BinarySocket.wait('balance').then(() => {
-            const currency = Client.get('currency');
-            const balance = Client.get('balance');
-            if (Client.get('is_virtual')) {
-                if ((currency !== 'JPY' && balance > 1000) ||
-                    (currency === 'JPY' && balance > 100000)) {
-                    disableButton('#VRT_topup_link');
-                }
-                Client.activate_by_client_type();
-            } else if (!currency || +balance === 0) {
-                lock('withdraw');
-            }
-        });
-    };
-
-    const disableButton = function(el_to_replace) {
-        const $a = $(el_to_replace);
-        if ($a.length === 0) return;
-
-        // use replaceWith, to disable previously caught pjax event
-        const new_element = { class: $a.attr('class').replace('toggle', 'button-disabled'), html: $a.html() };
-
-        const id = $a.attr('id');
-        if (id) {
-            new_element.id = id;
-        }
-
-        $a.replaceWith($('<a/>', new_element));
     };
 
     const onLoad = function() {
-        if (Client.is_logged_in()) {
-            checkLocked();
-            Header.upgrade_message_visibility(); // To handle the upgrade buttons visibility
-            if (Client.get('is_virtual') || /CR/.test(Client.get('loginid'))) {
-                $('#payment-agent-section').removeClass('invisible');
-            }
-            if (Client.has_gaming_financial_enabled()) {
-                $('#account-transfer-section').removeClass('invisible');
-            }
+        if (japanese_client() && !japanese_residence()) {
+            BinaryPjax(defaultRedirectUrl());
         }
+        if (Client.isLoggedIn()) {
+            BinarySocket.wait('authorize').then(() => {
+                Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
+                const is_virtual = Client.get('is_virtual');
+                if (is_virtual) {
+                    displayTopUpButton();
+                }
+                if (is_virtual || /CR/.test(Client.get('loginid'))) {
+                    $('#payment-agent-section').removeClass(hidden_class);
+                }
+                if (Client.hasGamingFinancialEnabled()) {
+                    $('#account-transfer-section').removeClass(hidden_class);
+                }
+            });
+        }
+        showContent();
     };
 
     return {
-        checkLocked   : checkLocked,
         onLoad        : onLoad,
-        PaymentMethods: { onLoad: () => { checkLocked(); } },
+        PaymentMethods: { onLoad: () => { showContent(); } },
     };
 })();
 

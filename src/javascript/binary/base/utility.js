@@ -2,10 +2,11 @@
  * Write loading image to a container for ajax request
  *
  * @param container: a jQuery object
+ * @param theme: dark or white
  */
-function showLoadingImage(container, theme = 'dark') {
+const showLoadingImage = (container, theme = 'dark') => {
     container.empty().append(`<div class="barspinner ${theme}"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div>`);
-}
+};
 
 /**
  * Returns the highest z-index in the page.
@@ -16,7 +17,7 @@ function showLoadingImage(container, theme = 'dark') {
  * @param selector: a jquery style selector for target elements
  * @return int|null
  */
-function get_highest_zindex(selector) {
+const getHighestZIndex = (selector) => {
     if (!selector) {
         selector = 'div,p,area,nav,section,header,canvas,aside,span';
     }
@@ -32,9 +33,9 @@ function get_highest_zindex(selector) {
     $(selector).each(_store_zindex);
 
     return all.length ? Math.max(...all) : null;
-}
+};
 
-function downloadCSV(csvContents, filename) {
+const downloadCSV = (csvContents, filename) => {
     filename = filename || 'data.csv';
     if (navigator.msSaveBlob) { // IE 10+
         navigator.msSaveBlob(new Blob([csvContents], { type: 'text/csv;charset=utf-8;' }), filename);
@@ -48,50 +49,44 @@ function downloadCSV(csvContents, filename) {
         downloadLink.click();
         document.body.removeChild(downloadLink);
     }
-}
+};
 
-function template(string, content) {
-    return string.replace(/\[_(\d+)\]/g, function(s, index) {
-        return content[(+index) - 1];
-    });
-}
+const template = (string, content) => string.replace(/\[_(\d+)]/g, (s, index) => content[(+index) - 1]);
 
-function objectNotEmpty(obj) {
+const objectNotEmpty = (obj) => {
     let isEmpty = true;
     if (obj && obj instanceof Object) {
-        Object.keys(obj).forEach(function(key) {
+        Object.keys(obj).forEach((key) => {
             if (obj.hasOwnProperty(key)) isEmpty = false;
         });
     }
     return !isEmpty;
-}
+};
 
-function cloneObject(obj) {
-    return objectNotEmpty(obj) ? $.extend({}, obj) : obj;
-}
+const cloneObject = obj => (objectNotEmpty(obj) ? $.extend({}, obj) : obj);
 
-function getPropertyValue(obj, keys) {
+const getPropertyValue = (obj, keys) => {
     if (!Array.isArray(keys)) keys = [keys];
     if (objectNotEmpty(obj) && keys[0] in obj && keys && keys.length > 1) {
         return getPropertyValue(obj[keys[0]], keys.slice(1));
     }
     // else return clone of object to avoid overwriting data
     return obj ? cloneObject(obj[keys[0]]) : undefined;
-}
+};
 
-function handleHash() {
+const handleHash = () => {
     const hash = window.location.hash;
     if (hash) {
         $(`a[href="${hash}"]`).click();
     }
-}
+};
 
 module.exports = {
-    showLoadingImage  : showLoadingImage,
-    get_highest_zindex: get_highest_zindex,
-    downloadCSV       : downloadCSV,
-    template          : template,
-    objectNotEmpty    : objectNotEmpty,
-    getPropertyValue  : getPropertyValue,
-    handleHash        : handleHash,
+    showLoadingImage: showLoadingImage,
+    getHighestZIndex: getHighestZIndex,
+    downloadCSV     : downloadCSV,
+    template        : template,
+    objectNotEmpty  : objectNotEmpty,
+    getPropertyValue: getPropertyValue,
+    handleHash      : handleHash,
 };

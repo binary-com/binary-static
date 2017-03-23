@@ -1,6 +1,5 @@
-const Client               = require('../../base/client').Client;
+const Client               = require('../../base/client');
 const localize             = require('../../base/localize').localize;
-const BinaryPjax           = require('../../base/binary_pjax');
 const template             = require('../../base/utility').template;
 const appendTextValueChild = require('../../common_functions/common_functions').appendTextValueChild;
 const FormManager          = require('../../common_functions/form_manager');
@@ -11,6 +10,7 @@ const DepositWithdraw = (function() {
     let cashier_type;
     const container = '#deposit_withdraw';
     const hidden_class = 'invisible';
+    let verification_code;
 
     const init = function(cashier_password) {
         if (cashier_password) {
@@ -18,20 +18,21 @@ const DepositWithdraw = (function() {
             sessionStorage.setItem('cashier_lock_redirect', window.location.href);
             return;
         }
-        if (cashier_type === 'withdraw') {
-            initWithdrawForm();
-        } else if (cashier_type === 'deposit' && Client.get('currency')) {
-            getCashierURL();
-        } else {
+        if (!Client.get('currency')) {
             showCurrency();
+        } else {
+            initDepositWithdraw();
         }
     };
 
-    const commonResponseHandler = (response) => {
-        if ('error' in response) {
+    const initDepositWithdraw = (response) => {
+        if (response && response.error) {
             showError('custom_error', response.error.message);
-        } else {
+        } else if (cashier_type === 'deposit') {
             getCashierURL();
+        } else if (cashier_type === 'withdraw') {
+            hideAll('#messages');
+            initWithdrawForm();
         }
     };
 
@@ -68,7 +69,7 @@ const DepositWithdraw = (function() {
         FormManager.init(currency_form_id, [{ selector: '#select_currency', request_field: 'set_account_currency' }]);
         FormManager.handleSubmit({
             form_selector       : currency_form_id,
-            fnc_response_handler: commonResponseHandler,
+            fnc_response_handler: initDepositWithdraw,
         });
     };
 
@@ -84,14 +85,17 @@ const DepositWithdraw = (function() {
         }
     };
 
-    const populateReq = function() {
+    const populateReq = function(send_verification) {
         const req = { cashier: cashier_type };
+        const verification_code_val = $('#verification_code').val();
+        if (verification_code_val) verification_code = verification_code_val;
+        if (send_verification && verification_code) req.verification_code = verification_code;
         if (/epg/.test(window.location.pathname)) req.provider = 'epg';
         return req;
     };
 
     const getCashierURL = function() {
-        BinarySocket.send(populateReq()).then(response => handleCashierResponse(response));
+        BinarySocket.send(populateReq(1)).then(response => handleCashierResponse(response));
     };
 
     const hideAll = function(option) {
@@ -133,6 +137,14 @@ const DepositWithdraw = (function() {
         showMessage(msgID);
     };
 
+    const ukgcResponseHandler = (response) => {
+        if ('error' in response) {
+            showError('custom_error', response.error.message);
+        } else {
+            getCashierURL();
+        }
+    };
+
     const initUKGC = () => {
         const ukgc_form_id = '#frm_ukgc';
         $(ukgc_form_id).removeClass(hidden_class);
@@ -142,7 +154,7 @@ const DepositWithdraw = (function() {
         ]);
         FormManager.handleSubmit({
             form_selector       : ukgc_form_id,
-            fnc_response_handler: commonResponseHandler,
+            fnc_response_handler: ukgcResponseHandler,
         });
     };
 
@@ -152,7 +164,7 @@ const DepositWithdraw = (function() {
         if (error) {
             switch (error.code) {
                 case 'ASK_TNC_APPROVAL':
-                    BinaryPjax.load('user/tnc_approvalws');
+                    showError('tnc_error');
                     break;
                 case 'ASK_FIX_DETAILS':
                     showPersonalDetailsError(error.details);
@@ -186,17 +198,11 @@ const DepositWithdraw = (function() {
 
     const onLoad = function() {
         getCashierType();
-        BinarySocket.wait('get_account_status').then(() => {
-            const can_deposit = cashier_type === 'deposit' && !Client.status_detected('cashier_locked, unwelcome', 'any');
-            const can_withdraw = cashier_type === 'withdraw' && !Client.status_detected('cashier_locked, withdrawal_locked', 'any');
-            if (can_deposit || can_withdraw) {
-                BinarySocket.send({ cashier_password: 1 }).then((response) => {
-                    if ('error' in response) {
-                        showError('custom_error', response.error.message);
-                    } else {
-                        init(response.cashier_password);
-                    }
-                });
+        BinarySocket.send({ cashier_password: 1 }).then((data) => {
+            if ('error' in data) {
+                showError('custom_error', data.error.message);
+            } else {
+                init(data.cashier_password);
             }
         });
     };

@@ -10,7 +10,7 @@ const TimePicker       = require('../../../../components/time_picker').TimePicke
 const DatePicker       = require('../../../../components/date_picker').DatePicker;
 const dateValueChanged = require('../../../../common_functions/common_functions').dateValueChanged;
 const localize         = require('../../../../base/localize').localize;
-const Client           = require('../../../../base/client').Client;
+const Client           = require('../../../../base/client');
 
 const SelfExclusionWS = (function() {
     'use strict';
@@ -35,7 +35,7 @@ const SelfExclusionWS = (function() {
     const getResponse = function(response) {
         if (response.error) {
             if (response.error.code === 'ClientSelfExclusion') {
-                Client.send_logout_request();
+                Client.sendLogoutRequest();
             }
             if (response.error.message) {
                 showPageError(response.error.message, true);
@@ -63,7 +63,7 @@ const SelfExclusionWS = (function() {
         // 5 years
         const datePickerDate = new DatePicker('#' + dateID);
         datePickerDate.show({
-            minDate: moment().add(moment.duration(6, 'months')).toDate(),
+            minDate: moment().add(6, 'months').add(1, 'day').toDate(),
             maxDate: 5 * 365,
         });
         $('#' + timeDateID + ', #' + dateID).change(function() {

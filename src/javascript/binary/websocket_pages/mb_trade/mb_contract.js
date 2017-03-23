@@ -1,13 +1,13 @@
-const objectNotEmpty  = require('../../base/utility').objectNotEmpty;
-const localize        = require('../../base/localize').localize;
-const getLanguage     = require('../../base/language').getLanguage;
-const Client          = require('../../base/client').Client;
-const format_currency = require('../../common_functions/currency_to_symbol').format_currency;
-const japanese_client = require('../../common_functions/country_base').japanese_client;
-const MBDefaults      = require('./mb_defaults').MBDefaults;
-const MBSymbols       = require('./mb_symbols').MBSymbols;
-const moment          = require('moment');
+const moment           = require('moment');
+const MBDefaults       = require('./mb_defaults').MBDefaults;
+const MBSymbols        = require('./mb_symbols').MBSymbols;
+const Client           = require('../../base/client');
+const getLanguage      = require('../../base/language').get;
+const localize         = require('../../base/localize').localize;
+const objectNotEmpty   = require('../../base/utility').objectNotEmpty;
 const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
+const japanese_client  = require('../../common_functions/country_base').japanese_client;
+const format_currency  = require('../../common_functions/currency_to_symbol').format_currency;
 
 /*
  * Contract object mocks the trading form we have on our website

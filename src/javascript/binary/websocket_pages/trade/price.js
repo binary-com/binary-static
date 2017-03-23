@@ -13,7 +13,6 @@ const Contract                   = require('./contract').Contract;
 const Defaults                   = require('./defaults').Defaults;
 const isVisible                  = require('../../common_functions/common_functions').isVisible;
 const localize                   = require('../../base/localize').localize;
-const Client                     = require('../../base/client').Client;
 const elementTextContent         = require('../../common_functions/common_functions').elementTextContent;
 
 /*
@@ -100,7 +99,7 @@ const Price = (function() {
                 }
             }
 
-            proposal.date_expiry = moment.utc(endDate2 + ' ' + endTime2).unix();
+            proposal.date_expiry = moment.utc(endDate2 + ' ' + (endTime2 || '23:59:59')).unix();
             // For stopping tick trade behaviour
             proposal.duration_unit = 'm';
         }
@@ -230,7 +229,7 @@ const Price = (function() {
                 $('.payout_wrapper:visible').hide();
             }
 
-            if (data.longcode && window.innerWidth > 500 && !Client.status_detected('unwelcome')) {
+            if (data.longcode && window.innerWidth > 500) {
                 description.setAttribute('data-balloon', data.longcode);
             } else {
                 description.removeAttribute('data-balloon');

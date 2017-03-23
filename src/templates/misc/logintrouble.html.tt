@@ -17,7 +17,7 @@
         </div>
 
         <div class="gr-6 gr-12-m">
-            <a id="firefox" target="_blank" href="http://www.mozilla.com/en-US/firefox/firefox.html" class="li-boxes-content-icon">Binary (IOM) Ltd</a>
+            <a id="firefox" target="_blank" href="https://www.mozilla.org/en-US/firefox/new/" class="li-boxes-content-icon">Binary (IOM) Ltd</a>
             <div class="li-2-boxes-content li-boxes-content-extra-height">
                 <h2>Mozilla Firefox 47+</h2>
                 [% l('<ul><li><strong> Open menu</strong> and select <strong>Preferences</strong>.</li><li>Click on the <strong>Privacy</strong> tab.</li><li>Set "<strong>Firefox will</strong>" to "<strong>Remember history</strong>".</li><li>Click on the <strong>OK</strong> button to save your settings.</li></ul>') %]
