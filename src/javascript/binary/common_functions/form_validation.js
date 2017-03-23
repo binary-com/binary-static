@@ -1,6 +1,6 @@
 const localize = require('../base/localize').localize;
 
-const Validation = (function() {
+const Validation = (() => {
     'use strict';
 
     const forms = {};

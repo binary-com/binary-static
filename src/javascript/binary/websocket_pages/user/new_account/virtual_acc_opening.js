@@ -1,17 +1,17 @@
-const Client          = require('../../../base/client');
-const localize        = require('../../../base/localize').localize;
-const urlFor          = require('../../../base/url').urlFor;
-const makeOption      = require('../../../common_functions/common_functions').makeOption;
-const japanese_client = require('../../../common_functions/country_base').japanese_client;
-const FormManager     = require('../../../common_functions/form_manager');
-const TrafficSource   = require('../../../common_functions/traffic_source').TrafficSource;
-const Cookies         = require('../../../../lib/js-cookie');
+const Client        = require('../../../base/client');
+const localize      = require('../../../base/localize').localize;
+const urlFor        = require('../../../base/url').urlFor;
+const makeOption    = require('../../../common_functions/common_functions').makeOption;
+const jpClient      = require('../../../common_functions/country_base').jpClient;
+const FormManager   = require('../../../common_functions/form_manager');
+const TrafficSource = require('../../../common_functions/traffic_source');
+const Cookies       = require('../../../../lib/js-cookie');
 
 const VirtualAccOpening = (function() {
     const form = '#virtual-form';
 
     const onLoad = function() {
-        if (japanese_client()) {
+        if (jpClient()) {
             handleJPForm();
         } else {
             BinarySocket.send({ residence_list: 1 }).then(response => handleResidenceList(response.residence_list));

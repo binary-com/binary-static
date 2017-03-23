@@ -2,9 +2,8 @@ const BinaryPjax           = require('../../../../base/binary_pjax');
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const localize             = require('../../../../base/localize').localize;
 const showLoadingImage     = require('../../../../base/utility').showLoadingImage;
-const FlexTableUI          = require('../../../../common_functions/attach_dom/flextable').FlexTableUI;
-const Content              = require('../../../../common_functions/content').Content;
-const japanese_client      = require('../../../../common_functions/country_base').japanese_client;
+const FlexTableUI          = require('../../../../common_functions/attach_dom/flextable');
+const jpClient             = require('../../../../common_functions/country_base').jpClient;
 const ValidateV2           = require('../../../../common_functions/validation_v2').ValidateV2;
 const customError          = require('../../../../validator').customError;
 const bind_validation      = require('../../../../validator').bind_validation;
@@ -28,12 +27,11 @@ const APITokenWS = (function() {
     const showTable = show(tableContainer);
 
     const onLoad = function() {
-        if (japanese_client()) {
+        if (jpClient()) {
             BinaryPjax.load('user/settingsws');
             return;
         }
 
-        Content.populate();
         BinarySocket.init({
             onmessage: function(msg) {
                 const response = JSON.parse(msg.data);
@@ -64,8 +62,8 @@ const APITokenWS = (function() {
 
     const getSchema = function() {
         const V2 = ValidateV2;
-        const letters = Content.localize().textLetters;
-        const numbers = Content.localize().textNumbers;
+        const letters = localize('letters');
+        const numbers = localize('numbers');
         return {
             scopes: [
                 function(v) { return dv.ok(v || []); },
@@ -132,7 +130,7 @@ const APITokenWS = (function() {
 
         const headers = ['Name', 'Token', 'Scopes', 'Last Used', 'Action'];
         const columns = ['name', 'token', 'scopes', 'last-used', 'action'];
-        new FlexTableUI({
+        FlexTableUI.init({
             id       : 'tokens_table',
             container: tableContainer,
             header   : headers.map(function(s) { return localize(s); }),

@@ -1,6 +1,6 @@
+const localize  = require('../base/localize').localize;
 const EnjoyHint = require('../../lib/guide.enjoyhint');
 const Cookies   = require('../../lib/js-cookie');
-const localize  = require('../base/localize').localize;
 
 /*
  *  This is developed to simplify the usage of enjoyhint (https://github.com/xbsoftware/enjoyhint)
@@ -11,13 +11,13 @@ const localize  = require('../base/localize').localize;
  *  3. Add the script data to getScript() method
  */
 
-const Guide = (function() {
+const Guide = (() => {
     let opt,
         cookieName,
         btnNext,
         btnFinish;
 
-    const init = function(options) {
+    const init = (options) => {
         opt = {
             script        : '',      // the script name in scripts
             autoStart     : false,   // false: start by button click
@@ -56,7 +56,7 @@ const Guide = (function() {
     /*
      *  do not show the guide button if its close (X) has been clicked before
      */
-    const isDisabled = function() {
+    const isDisabled = () => {
         const disabled = Cookies.get(cookieName);
         return !!disabled && $.inArray(opt.script, disabled.split(',')) >= 0;
     };
@@ -64,7 +64,7 @@ const Guide = (function() {
     /*
      *  handle the guide button appearance using a cookie for all scripts
      */
-    const setDisabled = function() {
+    const setDisabled = () => {
         if (!isDisabled()) {
             const disabled = Cookies.get(cookieName);
             Cookies.set(cookieName, (!disabled ? opt.script : disabled + ',' + opt.script));
@@ -74,7 +74,7 @@ const Guide = (function() {
     /*
      *  generate the button's html
      */
-    const makeButton = function() {
+    const makeButton = () => {
         if ($(opt.guideBtnID).children().length > 0) {
             return;
         }
@@ -91,8 +91,8 @@ const Guide = (function() {
     /*
      *  both buttons' click event
      */
-    const setEvents = function() {
-        $(opt.guideBtnID + ' strong').click(function() {
+    const setEvents = () => {
+        $(opt.guideBtnID + ' strong').click(() => {
             const enjoyhint_instance = new EnjoyHint({});
             enjoyhint_instance.setScript(getScript(opt.script));
             enjoyhint_instance.runScript();
@@ -103,7 +103,7 @@ const Guide = (function() {
         }
 
         // Hide button
-        $(opt.guideBtnID + ' span.close').click(function() {
+        $(opt.guideBtnID + ' span.close').click(() => {
             setDisabled();
             $(opt.guideBtnID).remove();
         });
@@ -112,7 +112,7 @@ const Guide = (function() {
     /*
      *  each page's script
      */
-    const getScript = function(scriptName) {
+    const getScript = (scriptName) => {
         if (scriptName !== 'trading') {
             return null;
         }
@@ -161,6 +161,4 @@ const Guide = (function() {
     };
 })();
 
-module.exports = {
-    Guide: Guide,
-};
+module.exports = Guide;

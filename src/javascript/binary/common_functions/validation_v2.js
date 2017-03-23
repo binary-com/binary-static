@@ -1,7 +1,7 @@
 const template = require('../base/utility').template;
 const moment   = require('moment');
 const dv       = require('../../lib/validation');
-const Content  = require('./content').Content;
+const Content  = require('./content');
 const localize = require('../base/localize').localize;
 
 const ValidateV2 = (function() {
@@ -22,10 +22,6 @@ const ValidateV2 = (function() {
 
     const local = function(value) {
         return { unwrap: function() { return localize(value); } };
-    };
-
-    const localKey = function(value) {
-        return { unwrap: function() { return Content.localize()[value]; } };
     };
 
     const msg = function() {
@@ -85,7 +81,7 @@ const ValidateV2 = (function() {
 
     password.len     = check(validPasswordLength, msg('range', '6-25'));
     password.allowed = check(validPasswordChars,  local('Password should have lower and uppercase letters with numbers.'));
-    password.symbols = check(noSymbolsInPassword, msg('valid', localKey('textPassword')));
+    password.symbols = check(noSymbolsInPassword, msg('valid', local('password')));
 
     const regex = function(regexp, allowed) {
         return function(str) {

@@ -1,6 +1,5 @@
-const urlForStatic     = require('../../base/url').urlForStatic;
-const Content          = require('../../common_functions/content').Content;
-const Cookies          = require('../../../lib/js-cookie');
+const urlForStatic = require('../../base/url').urlForStatic;
+const Cookies      = require('../../../lib/js-cookie');
 
 const PaymentAgentList = (() => {
     'use strict';
@@ -12,7 +11,6 @@ const PaymentAgentList = (() => {
         hidden_class = 'hidden';
 
     const onLoad = () => {
-        Content.populate();
         $(() => {
             $('#accordion').accordion({
                 heightStyle: 'content',

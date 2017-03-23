@@ -1,4 +1,4 @@
-const Content  = require('./content').Content;
+const Content  = require('./content');
 const localize = require('../base/localize').localize;
 const elementTextContent = require('../common_functions/common_functions').elementTextContent;
 const elementInnerHtml = require('../common_functions/common_functions').elementInnerHtml;
@@ -94,7 +94,7 @@ const Validate = (function() {
 
     const passwordMatching = function(password, rPassword, rError) {
         if (password !== rPassword) {
-            elementTextContent(rError, Content.localize().textPasswordsNotMatching);
+            elementTextContent(rError, localize('The two passwords that you entered do not match.'));
             displayErrorMessage(rError);
             return errorCounter++;
         }
@@ -119,7 +119,7 @@ const Validate = (function() {
 
     const isPasswordValid = function(password, error) {
         if (!/^[!-~]+$/.test(password)) {
-            handleError(error, Content.errorMessage('valid', Content.localize().textPassword));
+            handleError(error, Content.errorMessage('valid', localize('password')));
             return errorCounter++;
         }
         return true;

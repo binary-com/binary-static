@@ -10,7 +10,7 @@ const LocalStore        = require('./storage').LocalStore;
 const State             = require('./storage').State;
 const Url               = require('./url');
 const checkLanguage     = require('../common_functions/country_base').checkLanguage;
-const TrafficSource     = require('../common_functions/traffic_source').TrafficSource;
+const TrafficSource     = require('../common_functions/traffic_source');
 const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check');
 const Cookies           = require('../../lib/js-cookie');
 const PushNotification  = require('../../lib/push_notification');
@@ -72,24 +72,24 @@ const Page = (() => {
             Url.reset();
         } else {
             init();
+            Localize.forLang(Language.get());
+            checkLanguage();
+            Header.onLoad();
+            Language.setCookie();
+            Menu.makeMobileMenu();
+            recordAffiliateExposure();
+            endpointNotification();
+            showNotificationOutdatedBrowser();
         }
         Menu.init();
-        Localize.forLang(Language.get());
-        Header.onLoad();
-        recordAffiliateExposure();
         Contents.onLoad();
-        Language.setCookie();
         RealityCheck.onLoad();
         if (sessionStorage.getItem('showLoginPage')) {
             sessionStorage.removeItem('showLoginPage');
             Login.redirectToLogin();
         }
-        checkLanguage();
         TrafficSource.setData();
-        endpointNotification();
         BinarySocket.init();
-        showNotificationOutdatedBrowser();
-        Menu.makeMobileMenu();
     };
 
     const onUnload = () => {

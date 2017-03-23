@@ -1,4 +1,4 @@
-const ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbols;
+const ActiveSymbols = require('../../common_functions/active_symbols');
 
 /*
  * Symbols object parses the active_symbols json that we get from socket.send({active_symbols: 'brief'}

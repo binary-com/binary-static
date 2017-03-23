@@ -1,59 +1,67 @@
-const Table = require('./table').Table;
+const Table = require('./table');
 
-const FlexTableUI = function(config) {
-    this.config = config;
-    this.id = config.id;
-    const $tableContainer = Table.createFlexTable(
-        [],
-        this.getMetadata(),
-        config.header,
-        config.footer);
-    // Table.appendTablebody expects the table to already
-    // exist in the DOM, so we need to append first
-    $tableContainer.appendTo(config.container);
-    this.extend(config.data);
-};
+const FlexTableUI = (() => {
+    'use strict';
 
-FlexTableUI.prototype = {
-    getMetadata: function() {
-        return {
-            id        : this.config.id,
-            tableClass: this.config.class,
-            cols      : this.config.cols,
-        };
-    },
+    let config;
 
-    extend: function(data) {
-        const cols = this.config.cols;
-        const formatter = this.config.formatter;
-        const style = this.config.style;
-        Table.appendTableBody(this.id, data, function(datum) {
+    const init = (conf) => {
+        config = conf;
+        const $tableContainer = Table.createFlexTable(
+            [],
+            getMetadata(),
+            config.header,
+            config.footer);
+        // Table.appendTablebody expects the table to already
+        // exist in the DOM, so we need to append first
+        $tableContainer.appendTo(config.container);
+        extend(config.data);
+    };
+
+    const getMetadata = () => (
+        {
+            id        : config.id,
+            tableClass: config.class,
+            cols      : config.cols,
+        }
+    );
+
+    const extend = (data) => {
+        const cols = config.cols;
+        const formatter = config.formatter;
+        const style = config.style;
+        Table.appendTableBody(config.id, data, (datum) => {
             const $row = Table.createFlexTableRow(formatter(datum), cols, 'data');
             if (style) {
                 style($row, datum);
             }
             return $row[0];
         });
-    },
+    };
 
-    displayError: function(message, colspan) {
+    const displayError = (message, colspan) => {
         const $tr = $('<tr/>', { class: 'flex-tr' });
         const $td = $('<td/>', { colspan: colspan });
         const $p  = $('<p/>', { class: 'notice-msg center-text', text: message });
-        return $('#' + this.id + ' tbody').append($tr.append($td.append($p)));
-    },
+        return $('#' + config.id + ' tbody').append($tr.append($td.append($p)));
+    };
 
-    replace: function(data) {
-        Table.clearTableBody(this.id);
-        this.extend(data);
-    },
+    const replace = (data) => {
+        Table.clearTableBody(config.id);
+        extend(data);
+    };
 
-    clear: function() {
-        this.replace([]);
-        $('#' + this.id + '> tfoot').hide();
-    },
-};
+    const clear = () => {
+        replace([]);
+        $('#' + config.id + '> tfoot').hide();
+    };
 
-module.exports = {
-    FlexTableUI: FlexTableUI,
-};
+    return {
+        init        : init,
+        displayError: displayError,
+        replace     : replace,
+        clear       : clear,
+    };
+})();
+
+module.exports = FlexTableUI;

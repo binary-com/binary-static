@@ -1,8 +1,8 @@
-const email_rot13    = require('../common_functions/common_functions').email_rot13;
-const loadCSS        = require('../../lib/loadCSS').loadCSS;
-const loadJS         = require('../../lib/loadJS').loadJS;
-const getLanguage    = require('../base/language').get;
-const urlForStatic   = require('../base/url').urlForStatic;
+const emailRot13   = require('../common_functions/common_functions').emailRot13;
+const loadCSS      = require('../../lib/loadCSS').loadCSS;
+const loadJS       = require('../../lib/loadJS').loadJS;
+const getLanguage  = require('../base/language').get;
+const urlForStatic = require('../base/url').urlForStatic;
 
 const Contact = (function() {
     const onLoad = function() {
@@ -16,7 +16,7 @@ const Contact = (function() {
             const val = $(this).val().split(',');
             $('#display_cs_telephone').html(val[0] + (val.length > 1 ? '<br />' + val[1] : ''));
         });
-        $('#cs_contact_eaddress').html(email_rot13('<n uers=\"znvygb:fhccbeg@ovanel.pbz\" ery=\"absbyybj\">fhccbeg@ovanel.pbz</n>'));
+        $('#cs_contact_eaddress').html(emailRot13('<n uers=\"znvygb:fhccbeg@ovanel.pbz\" ery=\"absbyybj\">fhccbeg@ovanel.pbz</n>'));
     };
 
     const show_live_chat_icon = function() {

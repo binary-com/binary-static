@@ -1,6 +1,6 @@
 // TODO: to be remove after webpack finalized
-const exportAllFunctions = function(obj) {
-    Object.keys(obj).forEach(function (key) {
+const exportAllFunctions = (obj) => {
+    Object.keys(obj).forEach((key) => {
         window[key] = obj[key];
     });
 };

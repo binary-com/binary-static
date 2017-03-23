@@ -10,7 +10,7 @@ const TermsAndConditions = (function() {
             $('#btn_accept'),
             () => { $('.tnc_accept').removeClass('invisible'); },
             () => { $('#tnc_accept').html(localize('Your settings have been updated successfully.')); });
-        Scroll.sidebar_scroll($('.tac-binary'));
+        Scroll.sidebarScroll($('.tac-binary'));
         tabListener();
 
         const year = document.getElementsByClassName('currentYear');

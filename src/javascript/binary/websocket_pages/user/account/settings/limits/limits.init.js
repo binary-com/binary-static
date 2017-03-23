@@ -3,7 +3,6 @@ const Client             = require('../../../../../base/client');
 const localize           = require('../../../../../base/localize').localize;
 const elementInnerHtml   = require('../../../../../common_functions/common_functions').elementInnerHtml;
 const elementTextContent = require('../../../../../common_functions/common_functions').elementTextContent;
-const Content            = require('../../../../../common_functions/content').Content;
 const addComma           = require('../../../../../common_functions/string_util').addComma;
 
 const LimitsInit = (() => {
@@ -51,7 +50,6 @@ const LimitsInit = (() => {
     };
 
     const limitsError = (error) => {
-        Content.populate();
         document.getElementById('withdrawal-title').setAttribute('style', 'display:none');
         document.getElementById('limits-title').setAttribute('style', 'display:none');
         const errorElement = document.getElementsByClassName('notice-msg')[0];

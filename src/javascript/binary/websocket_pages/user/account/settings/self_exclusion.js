@@ -1,5 +1,4 @@
 const showLoadingImage = require('../../../../base/utility').showLoadingImage;
-const Content          = require('../../../../common_functions/content').Content;
 const ValidateV2       = require('../../../../common_functions/validation_v2').ValidateV2;
 const ValidationUI     = require('../../../../validator').ValidationUI;
 const validate_object  = require('../../../../validator').validate_object;
@@ -135,7 +134,6 @@ const SelfExclusionWS = (function() {
     };
 
     const onLoad = function() {
-        Content.populate();
         BinarySocket.init({
             onmessage: function(msg) {
                 const response = JSON.parse(msg.data);
