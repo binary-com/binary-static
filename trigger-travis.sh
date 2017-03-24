@@ -49,5 +49,5 @@ fi
 
 sleep 1m
 
-#The 15s sleep is to allow Travis to trigger the dependent build:
+#The 1m sleep is to allow Travis to trigger the dependent build:
 echo "Waiting for the dependent build to start..."
