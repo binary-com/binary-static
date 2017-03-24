@@ -84,8 +84,10 @@ const ApplicationsUI = (() => {
 
     const clean = () => {
         $(container_selector + ' .error-msg').text('');
-        flex_table.clear();
-        flex_table = null;
+        if (flex_table) {
+            flex_table.clear();
+            flex_table = null;
+        }
     };
 
     return {
