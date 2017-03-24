@@ -1,3 +1,5 @@
+const Client = require('../../../base/client');
+
 const Authenticate = (() => {
     const onLoad = () => {
         BinarySocket.send({ get_account_status: 1 }).then((response) => {
@@ -10,7 +12,11 @@ const Authenticate = (() => {
                 if (authenticated && age_verified) {
                     $('#fully_authenticated').removeClass('invisible');
                 } else if (!authenticated) {
-                    $('#not_authenticated').removeClass('invisible');
+                    if (Client.isFinancial()) {
+                        $('#not_authenticated_financial').removeClass('invisible');
+                    } else {
+                        $('#not_authenticated').removeClass('invisible');
+                    }
                 } else if (!age_verified) {
                     $('#needs_age_verification').removeClass('invisible');
                 }
