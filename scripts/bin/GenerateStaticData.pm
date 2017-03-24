@@ -365,7 +365,6 @@ sub _texts {
         push @texts, localize('Successful');
         push @texts, localize('Failed');
         push @texts, localize('Your account has no Login/Logout activity.');
-        push @texts, localize('login');
         push @texts, localize('logout');
         #strings for reality_check
         push @texts, localize('Please enter a number between [_1].');
@@ -479,7 +478,6 @@ sub _texts {
         push @texts, localize('Transaction performed by [_1] (App ID: [_2])');
         push @texts, localize('Admin');
         push @texts, localize('Read');
-        push @texts, localize('Trade');
         push @texts, localize('Payments');
         # Strings for lost_passwordws
         push @texts, localize('[_1] Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support.');
