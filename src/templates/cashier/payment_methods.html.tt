@@ -37,7 +37,7 @@
         </div>
 
        <div class="gr-3 gr-hide-m">
-            [% l('Processing Time') %]
+            [% l('Processing Time') %]*
         </div>
     </div>
 
@@ -450,5 +450,8 @@
        <div class="gr-3 gr-hide-m">
             [% l('Deposit: Instant') %]
         </div>
+    </div>
+    <div class="gr-padding-10">
+        <p class="hint">*[% l('All your withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service.') %]</p>
     </div>
 </div>
