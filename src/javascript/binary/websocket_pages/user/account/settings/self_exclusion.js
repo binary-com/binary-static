@@ -94,7 +94,7 @@ const SelfExclusion = (function() {
                 request_field   : 'timeout_until',
                 re_check_field  : timeout_time_id,
                 exclude_if_empty: 1,
-                value           : () => ($(timeout_date_id).val() ? moment((dateFormat(timeout_date_id) + ' ' + $(timeout_time_id).val()).trim()).valueOf() / 1000 : ''),
+                value           : getTimeout,
                 validations     : [
                     ['custom', { func: () => ($(timeout_time_id).val() ? $(timeout_date_id).val().length : true), message: 'This field is required.' }],
                     ['custom', { func: validDate, message: 'Please select a valid date.' }],
@@ -108,6 +108,7 @@ const SelfExclusion = (function() {
                 re_check_field : timeout_date_id,
                 validations    : [
                     ['custom', { func: () => ($(timeout_date_id).val() && toMoment($(timeout_date_id).val()).isSame(moment(), 'day') ? $(timeout_time_id).val().length : true), message: 'This field is required.' }],
+                    ['custom', { func: value => !value.length || !$(timeout_date_id).val() || (getTimeout() > moment().valueOf() / 1000), message: 'Time out cannot be in the past.' }],
                     ['custom', { func: validTime, message: 'Please select a valid time.' }],
                 ],
             },
@@ -137,6 +138,7 @@ const SelfExclusion = (function() {
 
     const toMoment   = value  => moment(new Date(value));
     const dateFormat = elm_id => ($(elm_id).val() ? toMoment($(elm_id).val()).format('YYYY-MM-DD') : '');
+    const getTimeout = () => ($(timeout_date_id).val() ? moment((dateFormat(timeout_date_id) + ' ' + $(timeout_time_id).val()).trim()).valueOf() / 1000 : '');
 
     const initDatePicker = function() {
         // timeout_until

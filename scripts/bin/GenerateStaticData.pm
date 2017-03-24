@@ -270,6 +270,7 @@ sub _texts {
         push @texts, localize('You did not change anything.');
         push @texts, localize('Please select a valid date.');
         push @texts, localize('Please select a valid time.');
+        push @texts, localize('Time out cannot be in the past.');
         push @texts, localize('Time out must be after today.');
         push @texts, localize('Time out cannot be more than 6 weeks.');
         push @texts, localize('Exclude time cannot be less than 6 months.');
