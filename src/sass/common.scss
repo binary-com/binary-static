@@ -118,7 +118,7 @@ label {
 
 .form-row {
     padding: 10px 0;
-    label {
+    div:first-child label {
         display: block;
         text-align: right;
     }

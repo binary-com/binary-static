@@ -200,11 +200,12 @@ const SettingsDetailsWS = (function() {
             });
 
             if (residence) {
+                const tax_residence = get_settings_data.tax_residence;
                 $place_of_birth.html($options.html());
                 $tax_residence.html($options.html()).promise().done(() => {
                     setTimeout(() => {
                         $tax_residence.select2()
-                            .val(get_settings_data.tax_residence.split(',')).trigger('change')
+                            .val(tax_residence ? tax_residence.split(',') : '').trigger('change')
                             .removeClass('invisible');
                     }, 500);
                 });
