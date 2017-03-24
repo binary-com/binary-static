@@ -65,7 +65,7 @@
         </div>
 
         <div class="gr-3 gr-hide-m">
-                [% l('Deposit: [_1] working days', 5)%]<br>
+                [% l('Deposit: [_1] working day', 1)%]<br>
                 [% l('Withdraw: [_1] working day', 1) %]
         </div>
     </div>
@@ -89,7 +89,7 @@
         </div>
 
         <div class="gr-3 gr-hide-m">
-                [% l('Deposit: [_1] working days', 5)%]<br>
+                [% l('Deposit: [_1] working day', 1)%]<br>
                 [% l('Withdraw: [_1] working day', 1) %]
         </div>
     </div>
@@ -113,7 +113,7 @@
         </div>
 
         <div class="gr-3 gr-hide-m">
-                [% l('Deposit: [_1] working days', 1)%]<br>
+                [% l('Deposit: [_1] working day', 1)%]<br>
                 [% l('Withdraw: [_1] working day', 1) %]
         </div>
     </div>
@@ -137,7 +137,7 @@
         </div>
 
         <div class="gr-3 gr-hide-m">
-            [% l('Deposit: [_1] working days', 5)%]<br>
+            [% l('Deposit: [_1] working day', 1)%]<br>
             [% l('Withdraw: [_1] working day', 1) %]
         </div>
     </div>
@@ -452,6 +452,6 @@
         </div>
     </div>
     <div class="gr-padding-10">
-        <p class="hint">*[% l('All your withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service.') %]</p>
+        <p class="hint">*[% l('All your deposits and withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service.') %]</p>
     </div>
 </div>
