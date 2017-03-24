@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-24 09:13+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2017-03-24 21:45+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -99,7 +99,7 @@ msgid "%1 continues to innovate and grow"
 msgstr "日々進化、成長への歩みを止めません"
 
 msgid "%1 days %2 hours %3 minutes"
-msgstr ""
+msgstr "%1日 %2時間 %3分"
 
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
 msgstr "%2から口座番号%3への入金が完了しました。取引参照ID：%4"
@@ -2779,7 +2779,7 @@ msgid "Execute your trade in seconds."
 msgstr "約定にかかる時間はほんの数秒。"
 
 msgid "Execution model and counterparty risk"
-msgstr ""
+msgstr "実行モデルとカウンターパーティリスク"
 
 msgid "Exercise exceptional client relationship management skills to prevent fraudulent activities in payments processing and business transactions."
 msgstr "支払処理やビジネス取引における不正行為を防止するために、例外的な顧客関係管理のスキルを行使する。"
@@ -2994,16 +2994,14 @@ msgstr "法律および規約に従う"
 msgid "Follow up on rejected deposits"
 msgstr "拒否された入金のフォローアップ"
 
-#, fuzzy
-#| msgid "Browser"
 msgid "For Browser"
-msgstr "ブラウザ"
+msgstr "ブラウザ用"
 
 msgid "For Desktop"
-msgstr ""
+msgstr "デスクトップ用"
 
 msgid "For Mobile"
-msgstr ""
+msgstr "モバイル用"
 
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "セキュリティチェックのため、メールをご確認いただきワンタイムパスワードを取得してください。"
@@ -3019,6 +3017,8 @@ msgstr "例えば、ボラティリティインデックスでCFD取引は１ポ
 
 msgid "For features and trading illustration of Spot FX offered by Binary.com, refer to the Product Disclosure Statement. This policy is an appendix to the overarching Binary.com Order Execution Policy and should be read in conjunction with the overarching Binary.com Order Execution Policy."
 msgstr ""
+"Binary.comが提供するスポットFXの機能及び取引の解説は、商品開示文書をご参照ください。このポリシーはBinary.com注文執行ポリシーの付録文"
+"書であり、Binary.com注文執行ポリシーと合せて熟読ください。"
 
 msgid "For forex quotes the closing times are defined by the Company as shown in the Market Opening Times section of the website. In the event of any dispute regarding market or settlement values, the decision of the Company shall be final and binding. Clients should note that certain markets (such as stocks and stock indices) are not open throughout the day and that trading may not be available when the markets are closed."
 msgstr "当社は外国為替市場の市場終了時刻は当社サイト内の「トレード対応時間」の表示内容を採用します。市場価格、及び決定価格に関する苦情の申し立てに対しては、当社の決定が最終的かつ決定的なものになります。お客さまは、特定の市場（個別株式や株式指数）は一日中開場していない場合もあり、市場が閉場している場合は取引が不可能である可能性も留意して頂く必要があります。"
@@ -3040,6 +3040,9 @@ msgstr "外国為替"
 
 msgid "Forex and contract for differences transactions involve a high degree of risk and are speculative because they allow you to speculate on the short term movements of the price of the underlying financial instruments. You should not enter into forex and/or contracts for differences transactions unless you are able to sustain losses that exceed your deposited funds. It is important for you to understand that in order to realise any value from your open positions, you would have to enter into a corresponding transaction to close your open positions and you may find it difficult or impossible to do so under certain market conditions."
 msgstr ""
+"外国為替取引と差金決済取引は、原資産金融商品の短期間の価格変動を推測することになるので、高い危険性を含みます。口座資金を超えないよう損失額を維持できない限"
+"り、外国為替取引及び/または差金決済取引を行べきではありません。オープンポジショから得られるまたは失う値を理解しておくことは大切です。オープンポジションを"
+"閉じるために常に意識をして対応して頂き、特定の市場状況において難しいまたは不可能な事象を把握していくことが必要となります。"
 
 msgid "Forex and contracts for differences are high risk and speculative"
 msgstr "外国為替と差額取引の違いは高リスクと投機性にあります"
@@ -3452,7 +3455,7 @@ msgid "If this Agreement is terminated for any reason, you must permanently dele
 msgstr "政府機関によって課せられた法律や義務に違反した場合を除き、いかなる理由で本契約が終了した場合、すべてのコンテンツを完全に削除していただく必要があります。"
 
 msgid "If we determine that a force majeure event exists, the Company shall promptly give notice thereof to the client. Subsequently, we may, at our absolute discretion, take one or more of the following steps:"
-msgstr ""
+msgstr "当社が不可抗力事由があると判断した場合、即座にお客さまへ通知を致します。その後、絶対的な裁量で次の手順を何点か行う場合があります。"
 
 msgid "If we're happy with your results, we'll contact you for an interview and then do background and reference checks."
 msgstr "テストに合格した場合は、面接、バックグラウンド、及びレファレンスチェックを行います。"
@@ -3480,6 +3483,8 @@ msgstr "<strong>US&#36 20,000</strong>で<strong> Volatility 100 Indexを数量1
 
 msgid "If you buy <strong>one lot of the EUR/USD</strong> symbol with a <strong>contract size of 100,000</strong> and <strong>leverage of 100:1</strong>, the margin required to purchase that one lot will be calculated as follows:"
 msgstr ""
+"<strong>トレードサイズ100,000</strong>で<strong>EUR/USDシンボルを1ロット</strong><strong>レバレッ"
+"ジ100:1</strong>で購入した場合、1ロット購入に必要なマージンは、以下のように算出されます。"
 
 msgid "If you choose to enter into a Contract with us, it is important that you remain aware of the risks involved, that you have adequate investment resources to bear such risks and that you monitor your positions carefully."
 msgstr "当社との契約をご締結いただく場合、そのようなリスクを負うのに十分な投資資産をお持ちであること、また自身のポジションを慎重にモニターできるかといった起こりうるリスクに注意し続けられることが重要です。"
@@ -3603,6 +3608,8 @@ msgstr ""
 
 msgid "If you wish to withdraw funds from your Real Account and close your Real Account, you may notify us by contacting our helpdesk at <a href='mailto:%1'>%1</a>. Your Real Account may be closed if you do not have any Open Positions and all amounts due to us have been settled."
 msgstr ""
+"リアル口座からの資金出金後、リアル口座の閉鎖をされた場合は、ヘルプデスク<a href='mailto:%1'>%1</a>までご連絡ください。オープン中"
+"のポジションがなく、資金が口座に無いことを確認後、お客さまのリアル口座は閉鎖されます。"
 
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
 msgstr "決済サービスエージェントに関する詳細をご希望の場合は、<a href='mailto:%1'>%1</a>までご連絡ください"
