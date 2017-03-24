@@ -38,7 +38,7 @@ const checkLanguage = () => {
         const academy_href = $academy_link.attr('href');
         const regex = /id/;
         if (!regex.test(academy_href)) {
-            $academy_link.attr('href', academy_href + '/id/');
+            $academy_link.attr('href', academy_href + regex);
         }
     }
     if (jpClient()) {

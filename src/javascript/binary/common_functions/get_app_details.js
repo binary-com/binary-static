@@ -21,9 +21,7 @@ const addAppIdName = (app_id, app_name) => (
 );
 
 const showTooltip = (app_id, oauth_app_id) => (
-    app_id ?
-        ` class="${app_id}" data-balloon="${(oauth_app_id ? addAppIdName(app_id, oauth_app_id) : (app_id ? addAppIdName(app_id) : ''))}"`
-        : ''
+    app_id ? ` class="${app_id}" data-balloon="${addAppIdName(app_id, oauth_app_id)}"` : ''
 );
 
 module.exports = {

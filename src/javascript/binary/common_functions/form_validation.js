@@ -1,4 +1,5 @@
-const localize = require('../base/localize').localize;
+const localize              = require('../base/localize').localize;
+const compareBigUnsignedInt = require('../common_functions/string_util').compareBigUnsignedInt;
 
 const Validation = (() => {
     'use strict';
@@ -30,7 +31,7 @@ const Validation = (() => {
                     field.$ = $form.find(field.selector);
                     if (!field.$.length || !field.validations) return;
 
-                    field.type = getFieldType(field.$);
+                    field.type = getFieldType($(field.$[0])); // also handles multiple results
                     field.form = form_selector;
                     if (field.msg_element) {
                         field.$error = $form.find(field.msg_element);
@@ -46,6 +47,11 @@ const Validation = (() => {
                     if (event) {
                         field.$.unbind(event).on(event, () => {
                             checkField(field);
+                            if (field.re_check_field) {
+                                checkField(forms[form_selector].fields.find(fld => (
+                                    fld.selector === field.re_check_field
+                                )));
+                            }
                         });
                     }
                 });
@@ -81,6 +87,10 @@ const Validation = (() => {
     );
 
     const validNumber = (value, options) => {
+        if (options.allow_empty && value.length === 0) {
+            return true;
+        }
+
         let is_ok = true,
             message = '';
 
@@ -91,10 +101,13 @@ const Validation = (() => {
             !(new RegExp('^\\d+(\\.\\d{' + options.decimals.replace(/ /g, '') + '})?$').test(value))) {
             is_ok = false;
             message = localize('Only [_1] decimal points are allowed.', [options.decimals]);
-        } else if (options.min && +value < +options.min) {
+        } else if ('min' in options && 'max' in options && (+value < +options.min || compareBigUnsignedInt(value, options.max) === 1)) {
+            is_ok = false;
+            message = localize('Should be between [_1] and [_2]', [options.min, options.max]);
+        } else if ('min' in options && +value < +options.min) {
             is_ok = false;
             message = localize('Should be more than [_1]', [options.min]);
-        } else if (options.max && +value > +options.max) {
+        } else if ('max' in options && compareBigUnsignedInt(value, options.max) === 1) {
             is_ok = false;
             message = localize('Should be less than [_1]', [options.max]);
         }
@@ -147,7 +160,7 @@ const Validation = (() => {
                 type = 'length';
                 options = pass_length;
             } else {
-                const validator = validators_map[type].func;
+                const validator = (type === 'custom' ? options.func : validators_map[type].func);
                 field.is_ok = validator(getFieldValue(field), options, field);
             }
 

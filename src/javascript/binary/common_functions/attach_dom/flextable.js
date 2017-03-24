@@ -47,13 +47,17 @@ const FlexTableUI = (() => {
     };
 
     const replace = (data) => {
-        Table.clearTableBody(config.id);
-        extend(data);
+        if (config) {
+            Table.clearTableBody(config.id);
+            extend(data);
+        }
     };
 
     const clear = () => {
-        replace([]);
-        $('#' + config.id + '> tfoot').hide();
+        if (config) {
+            replace([]);
+            $('#' + config.id + '> tfoot').hide();
+        }
     };
 
     return {
