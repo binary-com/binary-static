@@ -477,10 +477,10 @@ sub _texts {
         push @texts, localize('Revoke access');
         push @texts, localize('Are you sure that you want to permanently revoke access to application');
         push @texts, localize('Transaction performed by [_1] (App ID: [_2])');
-        push @texts, localize('admin');
-        push @texts, localize('read');
-        push @texts, localize('trade');
-        push @texts, localize('payments');
+        push @texts, localize('Admin');
+        push @texts, localize('Read');
+        push @texts, localize('Trade');
+        push @texts, localize('Payments');
         # Strings for lost_passwordws
         push @texts, localize('[_1] Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support.');
         push @texts, localize('Your password has been successfully reset. Please log into your account using your new password.');
