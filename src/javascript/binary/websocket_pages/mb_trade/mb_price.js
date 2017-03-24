@@ -120,7 +120,7 @@ const MBPrice = (function() {
             const contract_info     = contract_types[contract_type];
             const contract_info_opp = contract_types[contract_info.opposite];
             const values     = getValues(proposal, contract_type);
-            const values_opp = getValues(prices[barrier][contract_info.opposite], contract_type);
+            const values_opp = getValues(prices[barrier][contract_info.opposite], contract_info.opposite);
 
             elementInnerHtml(price_rows[+contract_info.order],     makePriceRow(values,     true));
             elementInnerHtml(price_rows[+contract_info_opp.order], makePriceRow(values_opp, true));
