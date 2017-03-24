@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-24 03:10+0000\n"
+"PO-Revision-Date: 2017-03-24 09:13+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -5730,15 +5731,11 @@ msgstr "選択して下さい"
 msgid "Please select a payment agent"
 msgstr "決済サービスを選択してください。"
 
-#, fuzzy
-#| msgid "Please select a valid date"
 msgid "Please select a valid date."
 msgstr "有効な日付を選択してください"
 
-#, fuzzy
-#| msgid "Please select a valid date"
 msgid "Please select a valid time."
-msgstr "有効な日付を選択してください"
+msgstr "有効な時間を選択してください"
 
 msgid "Please select a value"
 msgstr "値を選択してください。"
@@ -6469,8 +6466,6 @@ msgstr "アフィリエイト報酬を得ているアフィリエイト会員が
 msgid "Should be a valid number"
 msgstr "有効な数字を入力してください"
 
-#, fuzzy
-#| msgid "Stake must be between %1 and %2."
 msgid "Should be between %1 and %2"
 msgstr "投資は、%1から%2の間である必要があります。"
 
@@ -7709,20 +7704,14 @@ msgstr "日時"
 msgid "Time is in the wrong format."
 msgstr "開始時間に間違った値になっております"
 
-#, fuzzy
-#| msgid "Expiry time cannot be in the past."
 msgid "Time out cannot be in the past."
 msgstr "終了時間を過去の時間に設定することはできません。"
 
-#, fuzzy
-#| msgid "Session duration limit cannot be more than 6 weeks."
 msgid "Time out cannot be more than 6 weeks."
-msgstr "セッション期間制限は7週間以上に設定できません。"
+msgstr "終了時間を6週間以上先には設定できません。"
 
-#, fuzzy
-#| msgid "Exclude time must be after today."
 msgid "Time out must be after today."
-msgstr "制限時間は明日以降として設定して下さい。"
+msgstr "終了時間は明日以降として設定して下さい。"
 
 msgid "Time out until"
 msgstr "xxxまで利用禁止"
@@ -8511,8 +8500,6 @@ msgstr "お客さまと契約を締結する際、お客さまから頂いた特
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr "満足のいく価格が表示されたら、すぐに取引を実行してください。当社独自のプラットフォームでは、市場との差やズレに関してご心配いただく必要ありません。一番重要なことは、追加料金が発生しない点です。利益を守り、損失を最小限に抑えるために、トレードによっては取引期間が終了する前にトレードを売却することも可能です。"
 
-#, fuzzy
-#| msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
 msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
 msgstr "\"Ok\"をクリックすると、選択した日付までこのサイトでのトレードができなくなります。"
 
@@ -9550,9 +9537,8 @@ msgstr "以下の場合を対象とします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 3"
 msgstr ""
-"①当社が、紛争処理解決機関が関与する可能性がある苦情を受けた場合、または当社がア\n"
-"　　フィリエイト会員が関係法令、規程、諸規則等に違反していると判断した場合、または、\n"
-"　　アフィリエイト会員が運用する業務が裁判に関連しそうな場合"
+"①当社が、紛争処理解決機関が関与する可能性がある苦情を受けた場合、または当社がアフィリエイト会員が関係法令、規程、諸規則等に違反していると判断した場合、ま"
+"たは、アフィリエイト会員が運用する業務が裁判に関連しそうな場合"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 4 Line 4"
 msgstr "②アフィリエイト会員が、契約期間中に当社に提供した情報が、当社が真実でない、不正確なものであると判断した場合"
@@ -9568,9 +9554,8 @@ msgstr "契約の解除"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1"
 msgstr ""
-"（1）当社は、アフィリエイト会員が以下の各号に該当する者（以下「反社会的勢力」とい\n"
-"　う。）であることが判明した場合には、何らの催告を要せず、本契約を解除することがで\n"
-"　きるものとします。"
+"（1）当社は、アフィリエイト会員が以下の各号に該当する者（以下「反社会的勢力」という。）であることが判明した場合には、何らの催告を要せず、本契約を解除する"
+"ことができるものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 1 Sub 1"
 msgstr "①暴力団"
@@ -9604,9 +9589,8 @@ msgstr "⑨特殊知能暴力集団"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2"
 msgstr ""
-"（2）当社は、アフィリエイト会員が反社会的勢力と以下の各号の一にでも該当する関係を\n"
-"　有することが判明した場合には、何らの催告を要せず、本契約を解除することができるも\n"
-"　のとします。"
+"（2）当社は、アフィリエイト会員が反社会的勢力と以下の各号の一にでも該当する関係を有することが判明した場合には、何らの催告を要せず、本契約を解除することが"
+"できるものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 1"
 msgstr "①反社会的勢力が経営を支配していると認められるとき"
@@ -9615,25 +9599,18 @@ msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 2"
 msgstr "②反社会的勢力が経営に実質的に関与していると認められるとき"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 3"
-msgstr ""
-"③自己、自社もしくは第三者の不正な利益を図り、または第三者に損害を加えるなど、\n"
-"　　反社会的勢力を利用していると認められるとき"
+msgstr "③自己、自社もしくは第三者の不正な利益を図り、または第三者に損害を加えるなど、反社会的勢力を利用していると認められるとき"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 4"
-msgstr ""
-"④反社会的勢力に対して資金等を提供し、または便宜を供与するなどの関与をしている\n"
-"　　と認められるとき"
+msgstr "④反社会的勢力に対して資金等を提供し、または便宜を供与するなどの関与をしていると認められるとき"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 2 Sub 5"
-msgstr ""
-"⑤その他役員等または経営に実質的に関与している者が、反社会的勢力と社会的に非難\n"
-"　　されるべき関係を有しているとき"
+msgstr "⑤その他役員等または経営に実質的に関与している者が、反社会的勢力と社会的に非難されるべき関係を有しているとき"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3"
 msgstr ""
-"（3）当社は、アフィリエイト会員が自らまたは第三者を利用して以下の各号の一にでも該\n"
-"　当する行為をした場合には、何らの催告を要せず、本契約を解除することができるものと\n"
-"　します。"
+"（3）当社は、アフィリエイト会員が自らまたは第三者を利用して以下の各号の一にでも該当する行為をした場合には、何らの催告を要せず、本契約を解除することができ"
+"るものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 1"
 msgstr "①暴力的な要求行為"
@@ -9645,52 +9622,42 @@ msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 3"
 msgstr "③取引に関して、脅迫的な言動をし、または暴力を用いる行為"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 4"
-msgstr ""
-"④風説を流布し、偽計または威力を用いて当社の信用を毀損し、または当社の業務を妨害\n"
-"　　する行為"
+msgstr "④風説を流布し、偽計または威力を用いて当社の信用を毀損し、または当社の業務を妨害する行為"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 3 Sub 5"
 msgstr "⑤その他各前号に準ずる行為"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Paragraph 4"
 msgstr ""
-"（4）アフィリエイト会員が本条各項の規定に違反した場合には、アフィリエイト会員に損\n"
-"　害が生じても当社は何らこれを賠償ないし補償することは要せず、また、かかる解除によ\n"
-"　り当社に損害が生じたときは、アフィリエイト会員はその損害を賠償するものとします。"
+"（4）アフィリエイト会員が本条各項の規定に違反した場合には、アフィリエイト会員に損害が生じても当社は何らこれを賠償ないし補償することは要せず、また、かかる"
+"解除により当社に損害が生じたときは、アフィリエイト会員はその損害を賠償するものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 13 Title"
 msgstr "反社会的勢力等の排除"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 1"
-msgstr ""
-"（1）本契約は、各条項に対して当事者間で合意するものであり、それ以前の当事者間の合\n"
-"　意及び理解に取って代わるものとします。"
+msgstr "（1）本契約は、各条項に対して当事者間で合意するものであり、それ以前の当事者間の合意及び理解に取って代わるものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 2"
 msgstr ""
-"（2）他方の当事者への本契約に関する遅延、怠慢などを強要する行為は、本契約に基づい\n"
-"　て、権利の放棄または当該当事者の権利に何らかの形で損害を与えるものと判断します。"
+"（2）他方の当事者への本契約に関する遅延、怠慢などを強要する行為は、本契約に基づいて、権利の放棄または当該当事者の権利に何らかの形で損害を与えるものと判断"
+"します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 3"
 msgstr ""
-"（3）本契約の全体または一部の条項が無効、若しくは法的強制力がないと判断された場合、\n"
-"　その不履行条項（またはその一部）は本契約から削除されたものとみなされ、残りの条項\n"
-"　は引き続き完全に有効かつ強制可能であるものとします。"
+"（3）本契約の全体または一部の条項が無効、若しくは法的強制力がないと判断された場合、その不履行条項（またはその一部）は本契約から削除されたものとみなされ、"
+"残りの条項は引き続き完全に有効かつ強制可能であるものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 4"
 msgstr ""
-"（4）本契約に基いて当社宛に作成された、いかなる通知及びお問い合わせは、\n"
-"　affiliates@binary.comまで送信してください。また、当社が本契約の下作成した通知は、\n"
-"　申請時にご登録いただいたメールアドレスか、当社へご提示いただいたその他のメール\n"
-"　アドレスへ送信致します。"
+"（4）本契約に基いて当社宛に作成された、いかなる通知及びお問い合わせは、affiliates@binary.comまで送信してください。また、当社が本契約"
+"の下作成した通知は、申請時にご登録いただいたメールアドレスか、当社へご提示いただいたその他のメールアドレスへ送信致します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 5"
 msgstr ""
-"（5）本約款に基づく当社との契約で生じた、または関連して生じる紛争、論争、請求は当\n"
-"　社が指定した紛争解決機関に持ち込まれ、最終的な判断が決定されます。紛争解決手続き\n"
-"　で使用される言語は日本語です。紛争解決機関の裁定による結果を、その地域を管轄する\n"
-"　裁判所に提出することができます。紛争解決にかかる費用は貴殿が負担するものとしま\n"
-"　す。"
+"（5）本約款に基づく当社との契約で生じた、または関連して生じる紛争、論争、請求は当社が指定した紛争解決機関に持ち込まれ、最終的な判断が決定されます。紛争解"
+"決手続きで使用される言語は日本語です。紛争解決機関の裁定による結果を、その地域を管轄する裁判所に提出することができます。紛争解決にかかる費用は貴殿が負担す"
+"るものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Paragraph 6"
 msgstr ""
@@ -10902,7 +10869,7 @@ msgid "Payment Agent Transfer"
 msgstr "決済サービスでのご送金"
 
 msgid "Trusted by traders since 2000"
-msgstr "2000年からトレーダーの皆様に信頼をいただいております"
+msgstr "Trusted by traders since 2000"
 
 msgid "Authenticate"
 msgstr "口座アップグレード"
