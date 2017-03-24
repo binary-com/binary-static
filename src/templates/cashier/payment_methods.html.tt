@@ -66,7 +66,7 @@
 
         <div class="gr-3 gr-hide-m">
                 [% l('Deposit: [_1] working days', 5)%]<br>
-                [% l('Withdraw: [_1] working days', 5) %]
+                [% l('Withdraw: [_1] working day', 1) %]
         </div>
     </div>
 
@@ -90,7 +90,7 @@
 
         <div class="gr-3 gr-hide-m">
                 [% l('Deposit: [_1] working days', 5)%]<br>
-                [% l('Withdraw: [_1] working days', 5) %]
+                [% l('Withdraw: [_1] working day', 1) %]
         </div>
     </div>
 
@@ -114,7 +114,7 @@
 
         <div class="gr-3 gr-hide-m">
                 [% l('Deposit: [_1] working days', 1)%]<br>
-                [% l('Withdraw: [_1] working days', 2) %]
+                [% l('Withdraw: [_1] working day', 1) %]
         </div>
     </div>
 
@@ -138,7 +138,7 @@
 
         <div class="gr-3 gr-hide-m">
             [% l('Deposit: [_1] working days', 5)%]<br>
-            [% l('Withdraw: [_1] working days', 5) %]
+            [% l('Withdraw: [_1] working day', 1) %]
         </div>
     </div>
 
@@ -166,7 +166,7 @@
         </div>
 
         <div class="gr-3 gr-hide-m">
-                [% l('Deposit: Instant') %]<br>[% l('Withdraw: [_1] working days', 3) %]
+                [% l('Deposit: Instant') %]<br>[% l('Withdraw: [_1] working day', 1) %]
         </div>
     </div>
 
@@ -190,7 +190,7 @@
 
         <div class="gr-3 gr-hide-m">
             [% l('Deposit: Instant')%]<br>
-            [% l('Withdraw: [_1] working days', 3) %]
+            [% l('Withdraw: [_1] working day', 1) %]
         </div>
     </div>
 
