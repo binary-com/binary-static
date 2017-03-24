@@ -1,6 +1,6 @@
 const localize             = require('../../../../base/localize').localize;
-const Client               = require('../../../../base/client').Client;
-const Header               = require('../../../../base/header').Header;
+const Client               = require('../../../../base/client');
+const Header               = require('../../../../base/header');
 const State                = require('../../../../base/storage').State;
 const detect_hedging       = require('../../../../common_functions/common_functions').detect_hedging;
 const makeOption           = require('../../../../common_functions/common_functions').makeOption;
@@ -33,7 +33,7 @@ const SettingsDetailsWS = (function() {
     };
 
     const showHideTaxMessage = () => {
-        if (Client.should_complete_tax()) {
+        if (Client.shouldCompleteTax()) {
             $('#tax_information_notice').removeClass(hidden_class);
         } else {
             $('#tax_information_notice').addClass(hidden_class);
@@ -148,11 +148,11 @@ const SettingsDetailsWS = (function() {
                 { selector: '#address_postcode',   validations: ['postcode', ['length', { min: 0, max: 20 }]] },
                 { selector: '#phone',              validations: ['req', 'phone', ['length', { min: 6, max: 35 }]] },
 
-                { selector: '#place_of_birth', validations: Client.is_financial() ? ['req'] : '' },
-                { selector: '#tax_residence',  validations: Client.is_financial() ? ['req'] : '' },
+                { selector: '#place_of_birth', validations: Client.isFinancial() ? ['req'] : '' },
+                { selector: '#tax_residence',  validations: Client.isFinancial() ? ['req'] : '' },
             ];
             const tax_id_validation = { selector: '#tax_identification_number',  validations: ['postcode', ['length', { min: 0, max: 20 }]] };
-            if (Client.is_financial()) {
+            if (Client.isFinancial()) {
                 tax_id_validation.validations[1][1].min = 1;
                 tax_id_validation.validations.unshift('req');
             }
@@ -200,11 +200,12 @@ const SettingsDetailsWS = (function() {
             });
 
             if (residence) {
+                const tax_residence = get_settings_data.tax_residence;
                 $place_of_birth.html($options.html());
                 $tax_residence.html($options.html()).promise().done(() => {
                     setTimeout(() => {
                         $tax_residence.select2()
-                            .val(get_settings_data.tax_residence.split(',')).trigger('change')
+                            .val(tax_residence ? tax_residence.split(',') : '').trigger('change')
                             .removeClass('invisible');
                     }, 500);
                 });

@@ -11,7 +11,7 @@ const generateUnderlyingOptions = require('../trade/common').generateUnderlyingO
 const showFormOverlay           = require('../trade/common').showFormOverlay;
 const processForgetTicks        = require('../trade/process').processForgetTicks;
 const localize                  = require('../../base/localize').localize;
-const Client                    = require('../../base/client').Client;
+const Client                    = require('../../base/client');
 
 const MBProcess = (function() {
     let market_status = '',
@@ -31,7 +31,7 @@ const MBProcess = (function() {
         // populate the Symbols object
         MBSymbols.details(data);
 
-        const is_show_all  = Client.is_logged_in() && !japanese_client();
+        const is_show_all  = Client.isLoggedIn() && !japanese_client();
         const symbols_list = is_show_all ? MBSymbols.getAllSymbols() : MBSymbols.underlyings().major_pairs;
         const update_page  = MBSymbols.need_page_update();
         let symbol = MBDefaults.get('underlying');
