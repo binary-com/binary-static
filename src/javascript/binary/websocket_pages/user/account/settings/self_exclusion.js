@@ -169,7 +169,7 @@ const SelfExclusion = (function() {
 
         let is_confirmed = true;
         if ('timeout_until' in data || 'exclude_until' in data) {
-            is_confirmed = window.confirm(localize('When you click "Ok" you will be excluded from trading on the site until the selected date.'));
+            is_confirmed = window.confirm(localize('When you click "OK" you will be excluded from trading on the site until the selected date.'));
         }
 
         return is_changed && is_confirmed;

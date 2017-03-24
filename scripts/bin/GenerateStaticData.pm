@@ -275,7 +275,7 @@ sub _texts {
         push @texts, localize('Time out cannot be more than 6 weeks.');
         push @texts, localize('Exclude time cannot be less than 6 months.');
         push @texts, localize('Exclude time cannot be for more than 5 years.');
-        push @texts, localize('When you click "Ok" you will be excluded from trading on the site until the selected date.');
+        push @texts, localize('When you click "OK" you will be excluded from trading on the site until the selected date.');
         #strings for change_passwordws
         push @texts, localize('Old password is wrong.');
         #strings for portfolio
