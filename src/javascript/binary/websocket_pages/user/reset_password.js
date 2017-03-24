@@ -49,7 +49,7 @@ const ResetPassword = (function () {
         const form_id = '#frm_reset_password';
         FormManager.init(form_id, [
             { selector: '#verification_code', validations: ['req', 'email_token'] },
-            { selector: '#new_password',      validations: ['req', 'password'] },
+            { selector: '#new_password',      validations: ['req', 'password'], re_check_field: '#repeat_password' },
             { selector: '#repeat_password',   validations: ['req', ['compare', { to: '#new_password' }]], exclude_request: 1 },
             { selector: '#date_of_birth',     validations: ['req'] },
 

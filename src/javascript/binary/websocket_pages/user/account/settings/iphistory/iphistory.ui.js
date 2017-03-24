@@ -61,8 +61,10 @@ const IPHistoryUI = (() => {
 
     const clean = () => {
         $(container_selector + ' .error-msg').text('');
-        flex_table.clear();
-        flex_table = null;
+        if (flex_table) {
+            flex_table.clear();
+            flex_table = null;
+        }
     };
 
     const displayError = (error) => {

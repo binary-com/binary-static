@@ -1,3 +1,4 @@
+const moment               = require('moment');
 const displayPriceMovement = require('./common_independent').displayPriceMovement;
 const countDecimalPlaces   = require('./common_independent').countDecimalPlaces;
 const isVisible            = require('../../common_functions/common_functions').isVisible;
@@ -88,7 +89,9 @@ const Tick = (function() {
             lowBarrierElement = document.getElementById('barrier_low');
         let value;
 
-        if (unit && (!isVisible(unit) || unit.value !== 'd') && currentTick && !isNaN(currentTick)) {
+        const end_time = document.getElementById('expiry_date');
+        if (unit && (!isVisible(unit) || unit.value !== 'd') && currentTick && !isNaN(currentTick) &&
+            (end_time && (!isVisible(end_time) || moment(end_time.getAttribute('data-value')).isBefore(moment().add(1, 'day'), 'day')))) {
             const decimalPlaces = countDecimalPlaces(currentTick);
             if (indicativeBarrierTooltip && isVisible(indicativeBarrierTooltip)) {
                 const barrierValue = isNaN(parseFloat(barrierElement.value)) ? 0 : parseFloat(barrierElement.value);
