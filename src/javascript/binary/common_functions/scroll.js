@@ -70,9 +70,29 @@ const Scroll = (() => {
         }
     };
 
+    const scrollToTop = function() {
+        let is_displaying = false;
+        const $scrollup = $('#scrollup');
+        $(document).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                if (is_displaying) return;
+                $scrollup.fadeIn();
+                is_displaying = true;
+            } else if (is_displaying) {
+                $scrollup.fadeOut();
+                is_displaying = false;
+            }
+        });
+
+        $scrollup.click(function () {
+            $.scrollTo(0, 500);
+        });
+    };
+
     return {
         sidebarScroll  : sidebarScroll,
         offScroll      : () => { $(window).off('scroll'); },
+        scrollToTop    : scrollToTop,
         goToHashSection: () => {
             const hash = window.location.hash;
             if (hash) $('a[href="' + hash + '"]').click();

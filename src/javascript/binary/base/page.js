@@ -10,6 +10,7 @@ const LocalStore        = require('./storage').LocalStore;
 const State             = require('./storage').State;
 const Url               = require('./url');
 const checkLanguage     = require('../common_functions/country_base').checkLanguage;
+const scrollToTop       = require('../common_functions/scroll').scrollToTop;
 const TrafficSource     = require('../common_functions/traffic_source');
 const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check');
 const Cookies           = require('../../lib/js-cookie');
@@ -63,6 +64,7 @@ const Page = (() => {
                     // no default
                 }
             });
+            scrollToTop();
             LocalStore.set('active_loginid', match);
         });
     };
