@@ -345,6 +345,7 @@ const Durations = (function() {
             setNow(); // start time
             date_start.setAttribute('disabled', 'disabled');
             expiry_time.hide();
+            Barriers.display();
             processTradingTimesRequest(end_date_iso);
         } else {
             date_start.removeAttribute('disabled');
@@ -356,10 +357,9 @@ const Durations = (function() {
             Durations.setTime(expiry_time.value);
             Defaults.set('expiry_time', Defaults.get('expiry_time') || expiry_time.value);
             expiry_time.show();
+            Barriers.display();
             Price.processPriceRequest();
         }
-
-        Barriers.display();
     };
 
     const processTradingTimesRequest = function(date) {
