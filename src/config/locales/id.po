@@ -95,6 +95,9 @@ msgstr "%1 dan logo bull/bear adalah merek dagang terdaftar."
 msgid "%1 continues to innovate and grow"
 msgstr "%1 terus berinovasi dan tumbuh"
 
+msgid "%1 days %2 hours %3 minutes"
+msgstr ""
+
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
 msgstr "%1 deposit dari %2 ke dalam akun %3 telah berhasil. ID Transaksi: %4"
 
@@ -401,8 +404,8 @@ msgstr "30-50 juta JPY"
 msgid "30-day limit on losses"
 msgstr "Batas kerugian dalam 30 hari"
 
-msgid "30-day turnover limit "
-msgstr "Batas omset 30-hari "
+msgid "30-day turnover limit"
+msgstr "Batas pembelian kontrak dalam 30 hari"
 
 msgid "4. Choose your Stake and Potential Return"
 msgstr "4. Pilih Modal dan Potensi Laba Anda"
@@ -1794,9 +1797,6 @@ msgstr "Pegawai"
 msgid "Click here to retry"
 msgstr "Klik disini untuk mencoba lagi"
 
-msgid "Click the button below to download MetaTrader."
-msgstr "Klik tombol di bawah untuk men-download MetaTrader."
-
 msgid "Client Money"
 msgstr "Uang Klien"
 
@@ -2433,14 +2433,11 @@ msgstr "Akun Dormant dan Tidak Aktif"
 msgid "Down - Predict that the market will end lower than the average price"
 msgstr "Down - Menganalisa pasar akan berakhir lebih rendah dari harga rata-rata"
 
+msgid "Download"
+msgstr "Download"
+
 msgid "Download CSV"
 msgstr "Download CSV"
-
-msgid "Download MetaTrader for Windows"
-msgstr "Download MetaTrader untuk Windows"
-
-msgid "Download for MacOS"
-msgstr "Download untuk MacOS"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Mendorong pertumbuhan yang cepat dan pengembangan usaha, untuk mendukung penjualan perusahaan dan tujuan pemasaran"
@@ -2736,9 +2733,6 @@ msgstr "Waktu pengecualian tidak dapat melebihi 5 tahun."
 msgid "Exclude time cannot be less than 6 months."
 msgstr "Waktu pengecualian tidak boleh kurang dari 6 bulan."
 
-msgid "Exclude time must be after today."
-msgstr "Waktu pengecualian harus setelah hari ini."
-
 msgid "Exclusion of Liability"
 msgstr "Exclusion of Liability"
 
@@ -2969,6 +2963,17 @@ msgstr "Ikuti Hukum dan Syarat ini"
 
 msgid "Follow up on rejected deposits"
 msgstr "Menindaklanjuti deposito tertolak"
+
+#, fuzzy
+#| msgid "Browser"
+msgid "For Browser"
+msgstr "Browser"
+
+msgid "For Desktop"
+msgstr ""
+
+msgid "For Mobile"
+msgstr ""
 
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "Untuk keamanan tambahan, cek email Anda untuk mengambil token verifikasi."
@@ -3479,9 +3484,6 @@ msgstr "Jika Anda memenuhi syarat utama kami, kami akan mengirimkan tes kemahira
 
 msgid "If you need assistance feel free to contact our <a href=\"%1\">Customer Support</a>."
 msgstr "Jika Anda membutuhkan bantuan jangan ragu untuk menghubungi <a href=\"%1\">Customer Support</a> kami."
-
-msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
-msgstr "Jika Anda sudah pernah mendownload MetaTrader 5 langsung dari website MetaTrader sebelumnya, silahkan pilih \"%1\" dari daftar broker yang tersedia."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Pilih \"Asian Turun\", untuk memperoleh hasil jika <strong>tik terakhir</strong> <strong>lebih rendah</strong> dari <strong>jumlah rata rata</strong> tik."
@@ -4581,9 +4583,6 @@ msgstr "Link ke dan mengarahkan pelanggan kami kedalam Aplikasi Anda."
 msgid "Links"
 msgstr "Berbagai Link"
 
-msgid "Linux Instructions"
-msgstr "Instruksi Linux"
-
 msgid "Live chat:"
 msgstr "Komunikasi langsung:"
 
@@ -4592,9 +4591,6 @@ msgstr "Kunci Kasir"
 
 msgid "Log in"
 msgstr "Masuk"
-
-msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "Masuk kedalam applikasi menggunakan nomer akun MetaTrader dan kata sandi akun MetaTrader Anda."
 
 msgid "Log out"
 msgstr "Keluar"
@@ -5619,9 +5615,6 @@ msgstr "Silahkan hubungi kami kapan saja di <a href='mailto:%1'>%1</a>. Kami den
 msgid "Please enter a number between %1."
 msgstr "Silakan masukkan nomor antara %1."
 
-msgid "Please enter a number between 0 and %1"
-msgstr "Silakan masukkan nomor antara 0 dan %1"
-
 msgid "Please enter a number."
 msgstr "Masukkan angka."
 
@@ -5679,7 +5672,14 @@ msgstr "Tolong pilih"
 msgid "Please select a payment agent"
 msgstr "Silahkan pilih agen pembayaran"
 
-msgid "Please select a valid date"
+#, fuzzy
+#| msgid "Please select a valid date"
+msgid "Please select a valid date."
+msgstr "Silahkan pilih tanggal"
+
+#, fuzzy
+#| msgid "Please select a valid date"
+msgid "Please select a valid time."
 msgstr "Silahkan pilih tanggal"
 
 msgid "Please select a value"
@@ -6228,9 +6228,6 @@ msgstr "Roll-over Kredit/Debit &mdash; Akun dengan Posisi Berjalan dengan Roll-o
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "Membuat laporan pembayaran harian dan laporan dugaan penipuan"
 
-msgid "Run the installation file and follow the instructions."
-msgstr "Jalankan file instalasi dan ikuti petunjuk."
-
 msgid "Russia"
 msgstr "Rusia"
 
@@ -6407,6 +6404,11 @@ msgstr "Jika terdapat klien yang melakukan penuntutan kembali transaksi yang tel
 
 msgid "Should be a valid number"
 msgstr "Harus angka yang berlaku"
+
+#, fuzzy
+#| msgid "Stake must be between %1 and %2."
+msgid "Should be between %1 and %2"
+msgstr "Modal harus antara %1 dan %2."
 
 msgid "Should be less than %1"
 msgstr "Harus kurang dari %1"
@@ -7548,6 +7550,21 @@ msgstr "Waktu"
 msgid "Time is in the wrong format."
 msgstr "Waktu dalam format salah."
 
+#, fuzzy
+#| msgid "Expiry time cannot be in the past."
+msgid "Time out cannot be in the past."
+msgstr "Waktu berakhir tidak bisa di masa lalu."
+
+#, fuzzy
+#| msgid "Session duration limit cannot be more than 6 weeks."
+msgid "Time out cannot be more than 6 weeks."
+msgstr "Batas durasi sesi tidak dapat lebih dari 6 minggu."
+
+#, fuzzy
+#| msgid "Exclude time must be after today."
+msgid "Time out must be after today."
+msgstr "Waktu pengecualian harus setelah hari ini."
+
 msgid "Time out until"
 msgstr "Time out hingga"
 
@@ -8313,7 +8330,9 @@ msgstr "Ketika kami memberikan Kontrak, kami akan mengambil semua tanggung jawab
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr "Bila Anda puas dengan harga yang Anda terima, eksekusi trading Anda segera. Dengan platform kami yang unik, Anda tidak akan harus bersaing dengan 'slippages' atau gaping pasar. Dan yang terpenting, tidak ada biaya tersembunyi. Anda juga dapat menjual kembali setiap kontrak jangka panjang setiap saat sebelum kontrak tersebut berakhir untuk melindungi keuntungan yang telah Anda dapatkan atau untuk mengurangi risiko kerugian Anda."
 
-msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
+#, fuzzy
+#| msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
+msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
 msgstr "Setelah mengklik \"Ok\" Anda akan dikecualikan dari trading hingga tanggal yang dipilih."
 
 msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
@@ -10626,8 +10645,35 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 msgid "Account Limits"
 msgstr "Batasan rekening"
 
-msgid "Account Details"
-msgstr "Keterangan Akun"
+#~ msgid "30-day turnover limit "
+#~ msgstr "Batas omset 30-hari "
+
+#~ msgid "Click the button below to download MetaTrader."
+#~ msgstr "Klik tombol di bawah untuk men-download MetaTrader."
+
+#~ msgid "Download MetaTrader for Windows"
+#~ msgstr "Download MetaTrader untuk Windows"
+
+#~ msgid "Download for MacOS"
+#~ msgstr "Download untuk MacOS"
+
+#~ msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
+#~ msgstr "Jika Anda sudah pernah mendownload MetaTrader 5 langsung dari website MetaTrader sebelumnya, silahkan pilih \"%1\" dari daftar broker yang tersedia."
+
+#~ msgid "Linux Instructions"
+#~ msgstr "Instruksi Linux"
+
+#~ msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
+#~ msgstr "Masuk kedalam applikasi menggunakan nomer akun MetaTrader dan kata sandi akun MetaTrader Anda."
+
+#~ msgid "Please enter a number between 0 and %1"
+#~ msgstr "Silakan masukkan nomor antara 0 dan %1"
+
+#~ msgid "Run the installation file and follow the instructions."
+#~ msgstr "Jalankan file instalasi dan ikuti petunjuk."
+
+#~ msgid "Account Details"
+#~ msgstr "Keterangan Akun"
 
 #~ msgid "Please enter a number greater than 0"
 #~ msgstr "Masukkan nomor lebih besar dari 0"
@@ -11979,9 +12025,6 @@ msgstr "Keterangan Akun"
 #~ msgid "(delayed)"
 #~ msgstr "(tertunda)"
 
-#~ msgid "30-day turnover limit"
-#~ msgstr "Batas pembelian kontrak dalam 30 hari"
-
 #~ msgid "7-Day limit on losses is currently set to <strong>%1 %2</strong>"
 #~ msgstr "Batas 7-Hari kerugian saat ini adalah <strong>%1 %2</strong>"
 
@@ -12484,9 +12527,6 @@ msgstr "Keterangan Akun"
 
 #~ msgid "Expiry time cannot be equal to start time."
 #~ msgstr "Waktu akhir tidak bisa sama dengan waktu mulai."
-
-#~ msgid "Expiry time cannot be in the past."
-#~ msgstr "Waktu berakhir tidak bisa di masa lalu."
 
 #~ msgid "Exponential Moving Average"
 #~ msgstr "Pergerakan Rata-Rata Eksponensial"
@@ -16699,9 +16739,6 @@ msgstr "Keterangan Akun"
 #~ msgid " has been credited to your Virtual money account"
 #~ msgstr " telah dikreditkan kedalam akun uang virtual Anda"
 
-#~ msgid "Stake must be between %1 and %2."
-#~ msgstr "Modal harus antara %1 dan %2."
-
 #~ msgid "Trades on Forex with duration less than 2 minutes are temporarily disabled until %1"
 #~ msgstr "Trading Forex dengan durasi kurang dari 2 menit untuk sementara dinonaktifkan sampai %1"
 
@@ -17690,9 +17727,6 @@ msgstr "Keterangan Akun"
 
 #~ msgid "Click <a href=\"%1\" target=\"_blank\">here</a> to try the beta-release of the application. Kindly report issues found to <a href=\"mailto:%2\">%2</a>."
 #~ msgstr "Klik <a href=\"%1\" target=\"_blank\">disini</a>untuk mencoba aplikasi beta-rilis. Mohon laporkan masalah yang ditemukan ke <a href=\"mailto:%2\">%2</a>."
-
-#~ msgid "Download"
-#~ msgstr "Download"
 
 #~ msgid ""
 #~ "Download the Binary.com charting application with an extensive range of Indicators, Price Bands, Overlays, and your own customizable Workspace\n"

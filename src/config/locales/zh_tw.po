@@ -4,8 +4,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-03-23 02:20+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Traditional) "
-"<https://hosted.weblate.org/projects/binary/static/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/binary/static/zh_Hant/>\n"
 "Language: zh_tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -90,6 +89,9 @@ msgstr "%1和牛/熊標誌是註冊商標。"
 
 msgid "%1 continues to innovate and grow"
 msgstr "%1不斷創新、日漸成長"
+
+msgid "%1 days %2 hours %3 minutes"
+msgstr ""
 
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
 msgstr "已完成從%2至帳號%3的%1存款。交易編號: %4"
@@ -182,9 +184,7 @@ msgid "%1 offers a range of common deposit and withdrawal methods, from credit a
 msgstr "%1 提供各種常見的存提款方式，包括信用卡和轉帳卡、銀行電匯、電子現金及電子錢包等。"
 
 msgid "%1 offers a virtual-money account so you can get the hang of trading binaries. Why not <a href='%2'>open a free $10k fully-functional virtual-money account</a>, and start learning how to trade."
-msgstr ""
-"%1 提供虛擬資金帳戶，以便投資者掌握二元期權交易的技巧。何不<a "
-"href='%2'>免費開立一個1萬美元功能齊全的虛擬資金帳戶</a>，並開始學習如何交易呢。"
+msgstr "%1 提供虛擬資金帳戶，以便投資者掌握二元期權交易的技巧。何不<a href='%2'>免費開立一個1萬美元功能齊全的虛擬資金帳戶</a>，並開始學習如何交易呢。"
 
 msgid "%1 offers five main types of trades that will help you execute your market view or strategy:"
 msgstr "%1 提供五種可幫助您執行市場觀點或策略的交易："
@@ -396,8 +396,8 @@ msgstr "30-50 million JPY"
 msgid "30-day limit on losses"
 msgstr "30天期損失限額"
 
-msgid "30-day turnover limit "
-msgstr "30天期交易限額 "
+msgid "30-day turnover limit"
+msgstr "30天期交易限額"
 
 msgid "4. Choose your Stake and Potential Return"
 msgstr "4. 選擇您的投注額與潛在回報率"
@@ -1789,9 +1789,6 @@ msgstr "辦事員"
 msgid "Click here to retry"
 msgstr "點選此處重試"
 
-msgid "Click the button below to download MetaTrader."
-msgstr "點擊以下按鈕下載MetaTrader。"
-
 msgid "Client Money"
 msgstr "客戶資金"
 
@@ -2428,14 +2425,13 @@ msgstr "休眠和非使用中帳戶"
 msgid "Down - Predict that the market will end lower than the average price"
 msgstr "下跌 - 預測收盤市場價格低於平均價格"
 
-msgid "Download CSV"
+#, fuzzy
+#| msgid "Download CSV"
+msgid "Download"
 msgstr "下載CSV"
 
-msgid "Download MetaTrader for Windows"
-msgstr "下載Windows版MetaTrader"
-
-msgid "Download for MacOS"
-msgstr "MacOS版MetaTrader下載"
+msgid "Download CSV"
+msgstr "下載CSV"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "推動快速增長和業務發展，以支援公司的銷售和市場行銷目標"
@@ -2731,9 +2727,6 @@ msgstr "禁止時間不能超過5年。"
 msgid "Exclude time cannot be less than 6 months."
 msgstr "禁止時間不能少於6個月。"
 
-msgid "Exclude time must be after today."
-msgstr "禁止時間必須在今日之後。"
-
 msgid "Exclusion of Liability"
 msgstr "Exclusion of Liability"
 
@@ -2964,6 +2957,17 @@ msgstr "遵守法律和以下條款"
 
 msgid "Follow up on rejected deposits"
 msgstr "被拒絕存款的跟進"
+
+#, fuzzy
+#| msgid "Browser"
+msgid "For Browser"
+msgstr "瀏覽"
+
+msgid "For Desktop"
+msgstr ""
+
+msgid "For Mobile"
+msgstr ""
 
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "為提高安全保障，請檢視郵件並提取驗證權杖。"
@@ -3474,9 +3478,6 @@ msgstr "如果您符合我們的基本要求，我們會向您發送一份人材
 
 msgid "If you need assistance feel free to contact our <a href=\"%1\">Customer Support</a>."
 msgstr "如果您需要幫助，請聯繫我們的<a href=\"%1\">客服部</a>。"
-
-msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
-msgstr "如果您以前曾經直接從 MetaTrader 網站下載 MetaTrader 5 ，請在可用的經紀商清單選擇「%1」。"
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "如果您選擇「亞洲下跌」期權，<strong>當</strong><strong>最新價格</strong>低於<strong>平均</strong>價格時，您將獲得賠付。"
@@ -4576,9 +4577,6 @@ msgstr "將我們客戶與您的應用程式相連接。"
 msgid "Links"
 msgstr "連結"
 
-msgid "Linux Instructions"
-msgstr "Linux指示"
-
 msgid "Live chat:"
 msgstr "即時聊天："
 
@@ -4587,9 +4585,6 @@ msgstr "鎖定收銀台"
 
 msgid "Log in"
 msgstr "登入"
-
-msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "使用MetaTrader帳號以及MetaTrader帳戶密碼登入應用程式。"
 
 msgid "Log out"
 msgstr "登出"
@@ -5611,9 +5606,6 @@ msgstr "無論您有什麼想法，請傳送郵件至<a href='mailto:%1'>%1</a>�
 msgid "Please enter a number between %1."
 msgstr "請輸入%1之間的數字。"
 
-msgid "Please enter a number between 0 and %1"
-msgstr "請輸入0和%1之間的數字"
-
 msgid "Please enter a number."
 msgstr "請輸入號碼。"
 
@@ -5671,7 +5663,14 @@ msgstr "請選擇"
 msgid "Please select a payment agent"
 msgstr "請選擇付款代理"
 
-msgid "Please select a valid date"
+#, fuzzy
+#| msgid "Please select a valid date"
+msgid "Please select a valid date."
+msgstr "請選擇有效日期"
+
+#, fuzzy
+#| msgid "Please select a valid date"
+msgid "Please select a valid time."
 msgstr "請選擇有效日期"
 
 msgid "Please select a value"
@@ -6220,9 +6219,6 @@ msgstr "隔夜利息借/貸費 &mdash; 與未平倉頭寸隔夜利息有關的�
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "日常付款報告和涉嫌欺詐報告的運作"
 
-msgid "Run the installation file and follow the instructions."
-msgstr "運行安裝檔案並按照指示操作。"
-
 msgid "Russia"
 msgstr "俄國"
 
@@ -6399,6 +6395,11 @@ msgstr "如果您的任何客戶拒付佣金，公司保留從當月應付您的
 
 msgid "Should be a valid number"
 msgstr "必須是有效號碼"
+
+#, fuzzy
+#| msgid "Stake must be between %1 and %2."
+msgid "Should be between %1 and %2"
+msgstr "投注須在%1 與 %2之間。"
 
 msgid "Should be less than %1"
 msgstr "必須大於%1"
@@ -7537,6 +7538,21 @@ msgstr "時間"
 msgid "Time is in the wrong format."
 msgstr "時間格式錯誤。"
 
+#, fuzzy
+#| msgid "Expiry time cannot be in the past."
+msgid "Time out cannot be in the past."
+msgstr "到期時間不可為過去式。"
+
+#, fuzzy
+#| msgid "Session duration limit cannot be more than 6 weeks."
+msgid "Time out cannot be more than 6 weeks."
+msgstr "交易期持續時間限制不能大於6週。"
+
+#, fuzzy
+#| msgid "Exclude time must be after today."
+msgid "Time out must be after today."
+msgstr "禁止時間必須在今日之後。"
+
 msgid "Time out until"
 msgstr "時間已過。下次開啟時間為"
 
@@ -8302,7 +8318,9 @@ msgstr "當我們與您訂立合約時，我們會採取負責任的行動，遵
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr "當您對收到的價格感到滿意時請立刻執行交易。通過我們的獨特平台，您不會遇到滑價或跳空市場。更重要的是，不會有任何隱藏費用。您也可在任何長期合約到期前隨時售出，以保護您的賺取利潤或將虧損降至最低額。"
 
-msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
+#, fuzzy
+#| msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
+msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
 msgstr "當您點選「Ok」後，您將被禁止在此網站交易，直到選定期限結束為止。"
 
 msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
@@ -10615,8 +10633,35 @@ msgstr "條款和條件審批"
 msgid "Account Limits"
 msgstr "帳戶限額"
 
-msgid "Account Details"
-msgstr "帳戶詳細資料"
+#~ msgid "30-day turnover limit "
+#~ msgstr "30天期交易限額 "
+
+#~ msgid "Click the button below to download MetaTrader."
+#~ msgstr "點擊以下按鈕下載MetaTrader。"
+
+#~ msgid "Download MetaTrader for Windows"
+#~ msgstr "下載Windows版MetaTrader"
+
+#~ msgid "Download for MacOS"
+#~ msgstr "MacOS版MetaTrader下載"
+
+#~ msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
+#~ msgstr "如果您以前曾經直接從 MetaTrader 網站下載 MetaTrader 5 ，請在可用的經紀商清單選擇「%1」。"
+
+#~ msgid "Linux Instructions"
+#~ msgstr "Linux指示"
+
+#~ msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
+#~ msgstr "使用MetaTrader帳號以及MetaTrader帳戶密碼登入應用程式。"
+
+#~ msgid "Please enter a number between 0 and %1"
+#~ msgstr "請輸入0和%1之間的數字"
+
+#~ msgid "Run the installation file and follow the instructions."
+#~ msgstr "運行安裝檔案並按照指示操作。"
+
+#~ msgid "Account Details"
+#~ msgstr "帳戶詳細資料"
 
 #~ msgid "Please enter a number greater than 0"
 #~ msgstr "請輸入大於0之數字"
@@ -12161,9 +12206,6 @@ msgstr "帳戶詳細資料"
 #~ msgid "(delayed)"
 #~ msgstr "（延時）"
 
-#~ msgid "30-day turnover limit"
-#~ msgstr "30天期交易限額"
-
 #~ msgid "7-Day limit on losses is currently set to <strong>%1 %2</strong>"
 #~ msgstr "7天期損失限額目前設定為<strong>%1 %2</strong>"
 
@@ -12667,9 +12709,6 @@ msgstr "帳戶詳細資料"
 
 #~ msgid "Expiry time cannot be equal to start time."
 #~ msgstr "到期時間不可與開始時間相同。"
-
-#~ msgid "Expiry time cannot be in the past."
-#~ msgstr "到期時間不可為過去式。"
 
 #~ msgid "Exponential Moving Average"
 #~ msgstr "指數移動平均線"
@@ -16874,9 +16913,6 @@ msgstr "帳戶詳細資料"
 
 #~ msgid " has been credited to your Virtual money account"
 #~ msgstr " 已記入您的虛擬資金帳戶"
-
-#~ msgid "Stake must be between %1 and %2."
-#~ msgstr "投注須在%1 與 %2之間。"
 
 #~ msgid "Trades on Forex with duration less than 2 minutes are temporarily disabled until %1"
 #~ msgstr "直到 %1 為止，持續時間少於2分鐘的外匯交易暫時停止"
