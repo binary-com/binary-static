@@ -3,9 +3,10 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-23 02:19+0000\n"
+"PO-Revision-Date: 2017-03-24 06:10+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/binary/static/zh_Hans/>\n"
+"Language-Team: Chinese (Simplified) "
+"<https://hosted.weblate.org/projects/binary/static/zh_Hans/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -93,7 +94,7 @@ msgid "%1 continues to innovate and grow"
 msgstr "%1 不断创新、日渐成长"
 
 msgid "%1 days %2 hours %3 minutes"
-msgstr ""
+msgstr "%1 天 %2 小时 %3 分钟"
 
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
 msgstr "已完成从%2至账号%3的%1存款。交易编号: %4"
@@ -2960,16 +2961,14 @@ msgstr "遵守法律和以下条款"
 msgid "Follow up on rejected deposits"
 msgstr "跟进被拒绝的存款"
 
-#, fuzzy
-#| msgid "Browser"
 msgid "For Browser"
-msgstr "浏览器"
+msgstr "浏览器专用"
 
 msgid "For Desktop"
-msgstr ""
+msgstr "台式计算机专用"
 
 msgid "For Mobile"
-msgstr ""
+msgstr "手机专用"
 
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "为提高安全保障，请查看邮件并提取验证令牌。"
@@ -5667,15 +5666,11 @@ msgstr "请选择"
 msgid "Please select a payment agent"
 msgstr "请选择支付代理"
 
-#, fuzzy
-#| msgid "Please select a valid date"
 msgid "Please select a valid date."
-msgstr "请选择ั有效日期"
+msgstr "请选择ั有效日期。"
 
-#, fuzzy
-#| msgid "Please select a valid date"
 msgid "Please select a valid time."
-msgstr "请选择ั有效日期"
+msgstr "请选择ั有效时间。"
 
 msgid "Please select a value"
 msgstr "请选择一个数值"
@@ -6400,10 +6395,8 @@ msgstr "如果您的客户拒付佣金，公司保留从当月应向您支付的
 msgid "Should be a valid number"
 msgstr "必须是有效号码"
 
-#, fuzzy
-#| msgid "Stake must be between %1 and %2."
 msgid "Should be between %1 and %2"
-msgstr "投注额须在%1 与 %2之间。"
+msgstr "须在%1 与 %2之间"
 
 msgid "Should be less than %1"
 msgstr "必须少于%1"
@@ -7544,20 +7537,14 @@ msgstr "时间"
 msgid "Time is in the wrong format."
 msgstr "时间格式错误。"
 
-#, fuzzy
-#| msgid "Expiry time cannot be in the past."
 msgid "Time out cannot be in the past."
 msgstr "到期时间不可为过去式。"
 
-#, fuzzy
-#| msgid "Session duration limit cannot be more than 6 weeks."
 msgid "Time out cannot be more than 6 weeks."
-msgstr "交易期持续时间限制不能大于 6周。"
+msgstr "到期时间不能大于 6周。"
 
-#, fuzzy
-#| msgid "Exclude time must be after today."
 msgid "Time out must be after today."
-msgstr "禁止时间必须在今日之后。"
+msgstr "到期时间必须在今日之后。"
 
 msgid "Time out until"
 msgstr "时间已过。下次开启时间为"
@@ -8324,10 +8311,8 @@ msgstr "当我们与您订立合约时，我们会采取负责任的行动，通
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr "当您对收到的价格感到满意时请立刻执行交易。通过我们的独特平台，您不会遇到滑价或跳空市场。更重要的是，不会有任何隐藏费用。您也可在任何长期合约到期前随时售出，以保护您的赚取利润或将亏损降至最低额。"
 
-#, fuzzy
-#| msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
 msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
-msgstr "当您点选“Ok”后，您将被禁止在此网站交易，直到选定期限结束为止。"
+msgstr "当您点选“OK”后，您将被禁止在此网站交易，直到选定期限结束为止。"
 
 msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
 msgstr "一旦获准成为联盟会员，您会立刻收到开始交易所需的全部资料。"
