@@ -107,6 +107,9 @@ msgstr "%1 e o logotipo do touro e urso são marcas comerciais registradas."
 msgid "%1 continues to innovate and grow"
 msgstr "A %1 continua a inovar e crescer"
 
+msgid "%1 days %2 hours %3 minutes"
+msgstr ""
+
 #, fuzzy
 #| msgid "Deposit is done. Transaction ID:"
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
@@ -450,8 +453,8 @@ msgstr "30-50 million JPY"
 msgid "30-day limit on losses"
 msgstr "Limite de 30 dias nas perdas"
 
-msgid "30-day turnover limit "
-msgstr "Limite de 30 dias no volume de negócios "
+msgid "30-day turnover limit"
+msgstr "Limite de 30 dias no volume de negócios"
 
 msgid "4. Choose your Stake and Potential Return"
 msgstr "4. Escolha a sua aposta e o seu retorno potencial"
@@ -1966,9 +1969,6 @@ msgstr ""
 msgid "Click here to retry"
 msgstr "Clique aqui para tentar novamente"
 
-msgid "Click the button below to download MetaTrader."
-msgstr "Clique no botão abaixo para baixar a MetaTrader."
-
 #, fuzzy
 #| msgid "Clients' Money"
 msgid "Client Money"
@@ -2639,16 +2639,11 @@ msgstr "Contas inativas"
 msgid "Down - Predict that the market will end lower than the average price"
 msgstr "Lucro proveniente do mercado que finaliza mais alto ou mais baixo do que um preço alvo"
 
+msgid "Download"
+msgstr "Transferir"
+
 msgid "Download CSV"
 msgstr "Baixar CSV"
-
-msgid "Download MetaTrader for Windows"
-msgstr "Baixar MetaTrader para Windows"
-
-#, fuzzy
-#| msgid "Download for Mac"
-msgid "Download for MacOS"
-msgstr "Baixe para Mac"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Impulsionar o crescimento rápido e o desenvolvimento de negócios para auxiliar os objetivos de vendas e marketing da empresa"
@@ -2960,9 +2955,6 @@ msgstr "O tempo de exclusão não pode ser superior a 5 anos."
 msgid "Exclude time cannot be less than 6 months."
 msgstr "O tempo de exclusão não pode ser inferior a seis meses."
 
-msgid "Exclude time must be after today."
-msgstr "A hora da exclusão tem que ser depois de hoje."
-
 msgid "Exclusion of Liability"
 msgstr "Exclusion of Liability"
 
@@ -3203,6 +3195,17 @@ msgstr "Siga a lei e estes termos"
 
 msgid "Follow up on rejected deposits"
 msgstr "Acompanhar a rejeição de depósitos"
+
+#, fuzzy
+#| msgid "Browser"
+msgid "For Browser"
+msgstr "Navegador"
+
+msgid "For Desktop"
+msgstr ""
+
+msgid "For Mobile"
+msgstr ""
 
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "Para proporcionar maior segurança, verifique a sua caixa de entrada para obter o token de verificação."
@@ -3759,11 +3762,6 @@ msgstr "Se você preencher os nossos requisitos básicos, lhe enviaremos um test
 #| msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
 msgid "If you need assistance feel free to contact our <a href=\"%1\">Customer Support</a>."
 msgstr "Caso você necessite assistência, contate o nosso <a class=\"pjaxload\" href=\"%1\">Apoio ao Cliente</a>."
-
-#, fuzzy
-#| msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
-msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
-msgstr "Se você baixou anteriormente a MetaTrader 5 diretamente do site da MetaTrader 5, selecione então \"%1\" da lista de corretoras disponíveis."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Se selecionar \"Asiático Em Queda\", você ganha o pagamento se o <strong>último tique-taque</strong> for <strong>inferior</strong> à <strong>média</strong> dos tique-taques."
@@ -4911,9 +4909,6 @@ msgstr "Fazer ligação e direcionar os nossos clientes para o seu aplicativo."
 msgid "Links"
 msgstr "Links"
 
-msgid "Linux Instructions"
-msgstr "Instruções Linux"
-
 msgid "Live chat:"
 msgstr "Chat ao vivo:"
 
@@ -4922,9 +4917,6 @@ msgstr "Bloquear Caixa"
 
 msgid "Log in"
 msgstr "Conectar-se"
-
-msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "Conecte-se ao aplicativo usando o seu número de conta MetaTrader e a senha da sua conta MetaTrader."
 
 msgid "Log out"
 msgstr "Sair"
@@ -6040,9 +6032,6 @@ msgstr "Contate-nos para expor as suas questões, quaisquer que sejam, através 
 msgid "Please enter a number between %1."
 msgstr "Digite um número entre %1."
 
-msgid "Please enter a number between 0 and %1"
-msgstr "Digite um número entre 0 e %1"
-
 msgid "Please enter a number."
 msgstr "Insira um número."
 
@@ -6104,7 +6093,14 @@ msgstr "Selecione"
 msgid "Please select a payment agent"
 msgstr "Selecione um agente de pagamentos"
 
-msgid "Please select a valid date"
+#, fuzzy
+#| msgid "Please select a valid date"
+msgid "Please select a valid date."
+msgstr "Selecione uma data válida"
+
+#, fuzzy
+#| msgid "Please select a valid date"
+msgid "Please select a valid time."
 msgstr "Selecione uma data válida"
 
 msgid "Please select a value"
@@ -6695,9 +6691,6 @@ msgstr ""
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "Executar relatórios diários de pagamentos e relatar suspeitas de fraude"
 
-msgid "Run the installation file and follow the instructions."
-msgstr "Execute o arquivo de instalação e siga as instruções."
-
 msgid "Russia"
 msgstr "Rússia"
 
@@ -6882,6 +6875,11 @@ msgstr "Se algum cliente, em nome de quem você esteja a receber comissões, pro
 #| msgid "Please enter a valid name."
 msgid "Should be a valid number"
 msgstr "Insira um nome válido."
+
+#, fuzzy
+#| msgid "Stake must be between %1 and %2."
+msgid "Should be between %1 and %2"
+msgstr "A aposta deve ser entre %1 e %2."
 
 #, fuzzy
 #| msgid "Stake must be less than payout."
@@ -8092,6 +8090,21 @@ msgstr "Tempo"
 msgid "Time is in the wrong format."
 msgstr "A hora de início é no futuro."
 
+#, fuzzy
+#| msgid "Expiry time cannot be in the past."
+msgid "Time out cannot be in the past."
+msgstr "A hora de vencimento não pode ser no passado."
+
+#, fuzzy
+#| msgid "Session duration limit cannot be more than 6 weeks."
+msgid "Time out cannot be more than 6 weeks."
+msgstr "O limite de duração de sessões não pode ser superior a 6 semanas."
+
+#, fuzzy
+#| msgid "Exclude time must be after today."
+msgid "Time out must be after today."
+msgstr "A hora da exclusão tem que ser depois de hoje."
+
 msgid "Time out until"
 msgstr "Intervalo de tempo até"
 
@@ -8927,7 +8940,9 @@ msgstr "Quando nós celebramos contratos com você, tomamos todas as medidas raz
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr ""
 
-msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
+#, fuzzy
+#| msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
+msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
 msgstr "Quando você clicar em \"Ok\", você será excluído das negociações no site até a data escolhida."
 
 msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
@@ -11372,8 +11387,39 @@ msgstr "Aprovação dos termos e condições"
 msgid "Account Limits"
 msgstr "Limites da Conta"
 
-msgid "Account Details"
-msgstr "Detalhes da Conta"
+#~ msgid "30-day turnover limit "
+#~ msgstr "Limite de 30 dias no volume de negócios "
+
+#~ msgid "Click the button below to download MetaTrader."
+#~ msgstr "Clique no botão abaixo para baixar a MetaTrader."
+
+#~ msgid "Download MetaTrader for Windows"
+#~ msgstr "Baixar MetaTrader para Windows"
+
+#, fuzzy
+#~| msgid "Download for Mac"
+#~ msgid "Download for MacOS"
+#~ msgstr "Baixe para Mac"
+
+#, fuzzy
+#~| msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
+#~ msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
+#~ msgstr "Se você baixou anteriormente a MetaTrader 5 diretamente do site da MetaTrader 5, selecione então \"%1\" da lista de corretoras disponíveis."
+
+#~ msgid "Linux Instructions"
+#~ msgstr "Instruções Linux"
+
+#~ msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
+#~ msgstr "Conecte-se ao aplicativo usando o seu número de conta MetaTrader e a senha da sua conta MetaTrader."
+
+#~ msgid "Please enter a number between 0 and %1"
+#~ msgstr "Digite um número entre 0 e %1"
+
+#~ msgid "Run the installation file and follow the instructions."
+#~ msgstr "Execute o arquivo de instalação e siga as instruções."
+
+#~ msgid "Account Details"
+#~ msgstr "Detalhes da Conta"
 
 #~ msgid "Please enter a number greater than 0"
 #~ msgstr "Digite um número superior a 0"
@@ -12706,9 +12752,6 @@ msgstr "Detalhes da Conta"
 #~ msgid "(delayed)"
 #~ msgstr "(atrasado)"
 
-#~ msgid "30-day turnover limit"
-#~ msgstr "Limite de 30 dias no volume de negócios"
-
 #~ msgid "7-Day limit on losses is currently set to <strong>%1 %2</strong>"
 #~ msgstr "O limite semanal (7 dias) de perdas encontra-se atualmente definido para <strong>%1 %2</strong>"
 
@@ -13211,9 +13254,6 @@ msgstr "Detalhes da Conta"
 
 #~ msgid "Expiry time cannot be equal to start time."
 #~ msgstr "A hora de expiração não pode ser igual à hora de início."
-
-#~ msgid "Expiry time cannot be in the past."
-#~ msgstr "A hora de vencimento não pode ser no passado."
 
 #~ msgid "Exponential Moving Average"
 #~ msgstr "Média Móvel Exponencial"
@@ -17386,9 +17426,6 @@ msgstr "Detalhes da Conta"
 #~ msgid " has been credited to your Virtual money account"
 #~ msgstr " foram creditados na sua conta de dinheiro Virtual"
 
-#~ msgid "Stake must be between %1 and %2."
-#~ msgstr "A aposta deve ser entre %1 e %2."
-
 #~ msgid "Trades on Forex with duration less than 2 minutes are temporarily disabled until %1"
 #~ msgstr "Negociações sobre Forex com duração inferior a 2 minutos estão temporariamente desativadas até %1"
 
@@ -18164,9 +18201,6 @@ msgstr "Detalhes da Conta"
 
 #~ msgid "Click <a href=\"%1\" target=\"_blank\">here</a> to try the beta-release of the application. Kindly report issues found to <a href=\"mailto:%2\">%2</a>."
 #~ msgstr "Clique <a href=\"%1\" target=\"_blank\">aqui</a> para experimentar a versão beta do aplicativo. Por favor, informe os problemas encontrados pelo <a href=\"mailto:%2\">%2</a>."
-
-#~ msgid "Download"
-#~ msgstr "Transferir"
 
 #~ msgid ""
 #~ "Download the Binary.com charting application with an extensive range of Indicators, Price Bands, Overlays, and your own customizable Workspace\n"

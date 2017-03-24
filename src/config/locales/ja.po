@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-03-24 03:10+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -97,6 +96,9 @@ msgstr "当社の社名とブル/ベアのロゴは、登録商標です。"
 
 msgid "%1 continues to innovate and grow"
 msgstr "日々進化、成長への歩みを止めません"
+
+msgid "%1 days %2 hours %3 minutes"
+msgstr ""
 
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
 msgstr "%2から口座番号%3への入金が完了しました。取引参照ID：%4"
@@ -407,8 +409,8 @@ msgstr "3,000〜5,000万円"
 msgid "30-day limit on losses"
 msgstr "30日間の損失制限"
 
-msgid "30-day turnover limit "
-msgstr "30日の取引限度額 "
+msgid "30-day turnover limit"
+msgstr "30日の取引数量限度額"
 
 msgid "4. Choose your Stake and Potential Return"
 msgstr "4. 購入価格と予想利益を選択"
@@ -1001,10 +1003,7 @@ msgid "All opinions, news, research, analysis, prices or other information conta
 msgstr "当社サイトに掲載されているご意見、ニュース、リサーチ、分析、価格などの情報は、一般的な市場に関するコメントであり、投資に関する助言ではありません。％1ではそのような情報の使用または依存から直接または間接的に生じる可能性がある利益の損失、損害についての責任を一切負いません。"
 
 msgid "All products traded on margin carry a high degree of risk and can result in losses as well as profits that exceed your initial deposit. The margin trading services described in this Agreement is not suitable for everyone. You acknowledge that the margin trading services described in this Agreement is designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us."
-msgstr ""
-"証拠金取引の全商品には高いリスクがつき、結果として初期投資額を超える損失が発生する可能性があります。本契約に記載されている信用取引サービスは、全ての方に適"
-"しているわけではありません。本契約に記載されている信用取引は、本契約に表記されている取引タイプに関する知識と経験がある方へ提供しており、本契約を締結する前"
-"に関連するリスクを十分にご理解いただく必要があります。"
+msgstr "証拠金取引の全商品には高いリスクがつき、結果として初期投資額を超える損失が発生する可能性があります。本契約に記載されている信用取引サービスは、全ての方に適しているわけではありません。本契約に記載されている信用取引は、本契約に表記されている取引タイプに関する知識と経験がある方へ提供しており、本契約を締結する前に関連するリスクを十分にご理解いただく必要があります。"
 
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "当社サイトの時間表示は全て、GMT（グリニッジ標準時）に基づきます。"
@@ -1819,9 +1818,6 @@ msgstr "事務"
 msgid "Click here to retry"
 msgstr "再試行するにはこちらをクリックしてください"
 
-msgid "Click the button below to download MetaTrader."
-msgstr "MetaTraderをダウンロードするには下のボタンをクリックしてください。"
-
 msgid "Client Money"
 msgstr "お客さまマネー"
 
@@ -2466,14 +2462,11 @@ msgstr "口座維持手数料について"
 msgid "Down - Predict that the market will end lower than the average price"
 msgstr "ラダーLOW：市場価格が平均価格より値下がりすると予測します"
 
+msgid "Download"
+msgstr "ダウンロード"
+
 msgid "Download CSV"
 msgstr "CSVファイルでダウンロード"
-
-msgid "Download MetaTrader for Windows"
-msgstr "Windows版のMetaTraderをダウンロード"
-
-msgid "Download for MacOS"
-msgstr "MacOSにダウンロード"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "セールス及びマーケティング目標をサポートする急速な成長と事業開発の推進"
@@ -2769,9 +2762,6 @@ msgstr "6年以上の除外期間は設定することはできません。"
 msgid "Exclude time cannot be less than 6 months."
 msgstr "5ヶ月以下の除外時間を設定することはできません。"
 
-msgid "Exclude time must be after today."
-msgstr "制限時間は明日以降として設定して下さい。"
-
 msgid "Exclusion of Liability"
 msgstr "免責事項"
 
@@ -3003,6 +2993,17 @@ msgstr "法律および規約に従う"
 msgid "Follow up on rejected deposits"
 msgstr "拒否された入金のフォローアップ"
 
+#, fuzzy
+#| msgid "Browser"
+msgid "For Browser"
+msgstr "ブラウザ"
+
+msgid "For Desktop"
+msgstr ""
+
+msgid "For Mobile"
+msgstr ""
+
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "セキュリティチェックのため、メールをご確認いただきワンタイムパスワードを取得してください。"
 
@@ -3010,14 +3011,10 @@ msgid "For e-cash methods or local currencies not supported by %1."
 msgstr "eキャッシュの手段または現地通貨が%1では対応していません。"
 
 msgid "For example, the CFDs on US 30 Cash Index offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 Cash Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
-msgstr ""
-"例えば、US 30現金インデックスでのCFD取引は１ポイントUSD 1としてトレードを提供しています。現行価格USD 20,000のUS "
-"30現金インデックスを1.0の数量で購入し、その後USD 20,010の価格で売却した場合、純利益は以下のように算出されます。"
+msgstr "例えば、US 30現金インデックスでのCFD取引は１ポイントUSD 1としてトレードを提供しています。現行価格USD 20,000のUS 30現金インデックスを1.0の数量で購入し、その後USD 20,010の価格で売却した場合、純利益は以下のように算出されます。"
 
 msgid "For example, the CFDs on Volatility Indices offer a USD 1 per point contract. If you buy a Volume 1.0 contract for the Volatility 100 Index with current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
-msgstr ""
-"例えば、ボラティリティインデックスでCFD取引は１ポイントUSD 1としてトレードを提供しています。現行価格USD "
-"20,000のボラティリティインデックス100を1.0の数量で購入し、その後USD 20,010の価格で売却した場合、純利益は以下のように算出されます。"
+msgstr "例えば、ボラティリティインデックスでCFD取引は１ポイントUSD 1としてトレードを提供しています。現行価格USD 20,000のボラティリティインデックス100を1.0の数量で購入し、その後USD 20,010の価格で売却した場合、純利益は以下のように算出されます。"
 
 msgid "For features and trading illustration of Spot FX offered by Binary.com, refer to the Product Disclosure Statement. This policy is an appendix to the overarching Binary.com Order Execution Policy and should be read in conjunction with the overarching Binary.com Order Execution Policy."
 msgstr ""
@@ -3478,9 +3475,7 @@ msgid "If you are, we'd love to hear from you."
 msgstr "皆様からのご応募をお待ちしております。"
 
 msgid "If you buy <strong>1 Volume of Volatility 100 Index</strong> at a <strong>price of US&#36 20,000</strong> and a <strong>margin rate of 0.01(1%)</strong>, the margin required to purchase that one lot will be calculated as follows:"
-msgstr ""
-"<strong>US&#36 20,000</strong>で<strong> Volatility 100 Indexを数量1</strong>購入し、"
-"このトレードのマージン要件が数量1で<strong>マージン率が0.01(1%)</strong>の場合、以下のように算出されます。"
+msgstr "<strong>US&#36 20,000</strong>で<strong> Volatility 100 Indexを数量1</strong>購入し、このトレードのマージン要件が数量1で<strong>マージン率が0.01(1%)</strong>の場合、以下のように算出されます。"
 
 msgid "If you buy <strong>one lot of the EUR/USD</strong> symbol with a <strong>contract size of 100,000</strong> and <strong>leverage of 100:1</strong>, the margin required to purchase that one lot will be calculated as follows:"
 msgstr ""
@@ -3520,9 +3515,6 @@ msgstr "当社の基本的な要求基準に見合う場合は、テストのご
 
 msgid "If you need assistance feel free to contact our <a href=\"%1\">Customer Support</a>."
 msgstr "ご不明な点がございましたら、<a href=\"%1\">カスタマーサポート</a>までお気軽にお問い合わせ下さい。"
-
-msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
-msgstr "MetaTrader 5をMetaTraderのサイトから既に直接ダウンロードされている場合は、利用できるブローカーのリストから“%1”をご選択ください。"
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "「Asianダウン」を選択された場合、<strong>最後のtick</strong>がtickの<strong>平均</strong>よりも<strong>低い</strong>とペイアウトを獲得いただけます。"
@@ -3642,8 +3634,7 @@ msgid "If your margin level is still under the stop out level, we will close an 
 msgstr "マージンレベルが未だストップアウトベル未満である場合、損失が一番大きいオープンポジションをクローズします。"
 
 msgid "If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted."
-msgstr ""
-"マージンレベルが未だストップアウトレベル未満である場合、次の注文は削除されます。しかし、マージン要件なしの注文に関しては削除されることはありません。"
+msgstr "マージンレベルが未だストップアウトレベル未満である場合、次の注文は削除されます。しかし、マージン要件なしの注文に関しては削除されることはありません。"
 
 msgid "If:"
 msgstr "以下の場合を対象とする："
@@ -4643,9 +4634,6 @@ msgstr "当顧客をアプリケーションへ導くリンク付をしてくだ
 msgid "Links"
 msgstr "サイト内のリンクについて"
 
-msgid "Linux Instructions"
-msgstr "Linux操作手順"
-
 msgid "Live chat:"
 msgstr "ライブチャット："
 
@@ -4654,9 +4642,6 @@ msgstr "入出金をロック"
 
 msgid "Log in"
 msgstr "ログイン"
-
-msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "MetaTraderのアカウント番号とパスワードでアプリケーションにログインをしてください。"
 
 msgid "Log out"
 msgstr "ログアウト"
@@ -5431,9 +5416,7 @@ msgid "Our data feed may at times differ slightly from other data feeds found on
 msgstr "当社が提供するデータフィードと他社がインターネット上で提供しているデータフィードには若干の違いが見受けられる場合があります。また、それらの他の機関のデータの間でも違いが見受けられる場合もあります。このような相違点が生じる理由を下記に記します。"
 
 msgid "Our determination of the relative importance of the execution factors may differ from yours during certain circumstances, acting in your interest in accordance with our obligation of best execution."
-msgstr ""
-"実行要因の相対的重要性に関する当社の決定は、最良執行義務に従いお客さまの利益のために行動しますが、特定の状況下においてお客さまの考慮するものとは異なる場合"
-"があります。"
+msgstr "実行要因の相対的重要性に関する当社の決定は、最良執行義務に従いお客さまの利益のために行動しますが、特定の状況下においてお客さまの考慮するものとは異なる場合があります。"
 
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr "当社の競合相手であったBetsForTraders社の顧客を獲得し、組織として成長していきます。"
@@ -5690,9 +5673,6 @@ msgstr "ご不明な点がございましたら、<a href='mailto:%1'>%1</a>ま�
 msgid "Please enter a number between %1."
 msgstr "%1の間の数字を入力してください。"
 
-msgid "Please enter a number between 0 and %1"
-msgstr "0から%1の数字を入力してください"
-
 msgid "Please enter a number."
 msgstr "数字をご入力ください。"
 
@@ -5750,7 +5730,14 @@ msgstr "選択して下さい"
 msgid "Please select a payment agent"
 msgstr "決済サービスを選択してください。"
 
-msgid "Please select a valid date"
+#, fuzzy
+#| msgid "Please select a valid date"
+msgid "Please select a valid date."
+msgstr "有効な日付を選択してください"
+
+#, fuzzy
+#| msgid "Please select a valid date"
+msgid "Please select a valid time."
 msgstr "有効な日付を選択してください"
 
 msgid "Please select a value"
@@ -5796,8 +5783,7 @@ msgid "Positions that are still open on Friday at market close will be charged t
 msgstr "金曜日の市場閉鎖時点でまだオープン中のポジションは、週末に3倍のスワップレートが口座に課されます。これは全外国為替ブローカーの標準方法です。"
 
 msgid "Positions that are still open on Wednesday at 23:59:59 GMT will be charged three times the swap rate to account for weekends, a standard practice for all Forex brokers."
-msgstr ""
-"水曜日の23:59:59 GMTにまだオープン中のポジションは、週末に3倍のスワップレートが口座に課されます。これは全外国為替ブローカーの標準方法です。"
+msgstr "水曜日の23:59:59 GMTにまだオープン中のポジションは、週末に3倍のスワップレートが口座に課されます。これは全外国為替ブローカーの標準方法です。"
 
 msgid "Postal Code / ZIP"
 msgstr "郵便番号"
@@ -6306,9 +6292,6 @@ msgstr ""
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "日々の支払と詐欺の疑いがある行為の報告チェック"
 
-msgid "Run the installation file and follow the instructions."
-msgstr "インストールファイルを実行して、指示に従ってください。"
-
 msgid "Russia"
 msgstr "ロシア"
 
@@ -6485,6 +6468,11 @@ msgstr "アフィリエイト報酬を得ているアフィリエイト会員が
 
 msgid "Should be a valid number"
 msgstr "有効な数字を入力してください"
+
+#, fuzzy
+#| msgid "Stake must be between %1 and %2."
+msgid "Should be between %1 and %2"
+msgstr "投資は、%1から%2の間である必要があります。"
 
 msgid "Should be less than %1"
 msgstr "%1より低い必要があります。"
@@ -7253,12 +7241,7 @@ msgid "The company reserves the right to cancel/prohibit the use of this promoti
 msgstr "当社はいつでもこのボーナスキャンペーンをキャンセルまたは禁止する権利を有します。"
 
 msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client's account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
-msgstr ""
-"当社は12ヶ月以上のお取引履歴のない全クライアントの口座に6ヶ月毎にUSD/EUR/AUD/GBP "
-"25までの休止状態口座手数料を請求する権利を留保しています。クライアントの口座がBinary (Europe) "
-"Ltdとの間に開設されたものであり、口座に30ヶ月の期間取引がなされていない、クライアントが位置になく、接続できない場合、当社はマルタギャンブル監督機関（"
-"Malta Gaming Authority）に口座の残高を送金しなければいけません。クライアントはアクティブ状態にない口座、閉鎖された口座、あるいはブロ"
-"ックされた口座から資金を取り戻すには当社ヘルプデスクまでお問い合わせいただく必要があります。"
+msgstr "当社は12ヶ月以上のお取引履歴のない全クライアントの口座に6ヶ月毎にUSD/EUR/AUD/GBP 25までの休止状態口座手数料を請求する権利を留保しています。クライアントの口座がBinary (Europe) Ltdとの間に開設されたものであり、口座に30ヶ月の期間取引がなされていない、クライアントが位置になく、接続できない場合、当社はマルタギャンブル監督機関（Malta Gaming Authority）に口座の残高を送金しなければいけません。クライアントはアクティブ状態にない口座、閉鎖された口座、あるいはブロックされた口座から資金を取り戻すには当社ヘルプデスクまでお問い合わせいただく必要があります。"
 
 msgid "The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions. %1 has taken reasonable measures to ensure the accuracy of the information on the website, however, we do not guarantee its accuracy and will not accept liability for any loss or damage which may arise directly or indirectly from the content or your inability to access the website, for any delay in or failure of the transmission or the receipt of any instruction or notification sent through this website."
 msgstr "当サイトのコンテンツは予告なしに変更される場合があり、トレーダー個人の判断に基づくお取引をサポートする唯一の目的で提供しています。%1では、ウェブサイトを介して送信される指示と通知の送受信の遅延、または失敗に起因するコンテンツまたはお客さまのウェブサイトへの不適切なアクセスから直接的、間接的に生じる可能性がある損失またはダメージの責任を負いません。その正確性を保証するこはできませんが、ウェブサイト上の情報精度を確証する適切な措置をとっています。"
@@ -7726,6 +7709,21 @@ msgstr "日時"
 msgid "Time is in the wrong format."
 msgstr "開始時間に間違った値になっております"
 
+#, fuzzy
+#| msgid "Expiry time cannot be in the past."
+msgid "Time out cannot be in the past."
+msgstr "終了時間を過去の時間に設定することはできません。"
+
+#, fuzzy
+#| msgid "Session duration limit cannot be more than 6 weeks."
+msgid "Time out cannot be more than 6 weeks."
+msgstr "セッション期間制限は7週間以上に設定できません。"
+
+#, fuzzy
+#| msgid "Exclude time must be after today."
+msgid "Time out must be after today."
+msgstr "制限時間は明日以降として設定して下さい。"
+
 msgid "Time out until"
 msgstr "xxxまで利用禁止"
 
@@ -7757,17 +7755,13 @@ msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further exp
 msgstr "詳細については、外国為替の100%強制ロスカットレベルが記載されている<a href=\"%1\">マージンポリシー</a>をご確認ください。"
 
 msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our 50% forced liquidation level for Volatility Indices."
-msgstr ""
-"詳細については、ボラティリティインデックスの50%強制ロスカットレベルが記載されている<a href=\"%1\""
-">マージンポリシー</a>をご確認ください。"
+msgstr "詳細については、ボラティリティインデックスの50%強制ロスカットレベルが記載されている<a href=\"%1\">マージンポリシー</a>をご確認ください。"
 
 msgid "To learn more, read our <a href=\"%1\">Margin Policy</a> that further explains our margin requirements."
 msgstr "詳細はマージンの要件が記載されている当社の<a href=\"%1\">マージンポリシー</a>をご確認ください。"
 
 msgid "To open a Real Account, you must have an authenticated Binary Options Real Account with Binary.com. A Real Account cannot be opened in the absence of a Binary Options Real Account."
-msgstr ""
-"リアル口座を開設するには、Binary.comにてバイナリーオプションリアル口座の認証を完了して頂く必要があります。バイナリーオプションリアル口座のご登録"
-"なしではこちらのリアル口座をご利用いただくことはできません。"
+msgstr "リアル口座を開設するには、Binary.comにてバイナリーオプションリアル口座の認証を完了して頂く必要があります。バイナリーオプションリアル口座のご登録なしではこちらのリアル口座をご利用いただくことはできません。"
 
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
 msgstr "お客さまが当社とバイナリーオプション取引口座を開設にあたり、取引の仕組みやリスクを十分に理解いただく必要があります。下記事項につき、ご理解、同意いただけましたら、チェックをお願いいたします。"
@@ -8517,7 +8511,9 @@ msgstr "お客さまと契約を締結する際、お客さまから頂いた特
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr "満足のいく価格が表示されたら、すぐに取引を実行してください。当社独自のプラットフォームでは、市場との差やズレに関してご心配いただく必要ありません。一番重要なことは、追加料金が発生しない点です。利益を守り、損失を最小限に抑えるために、トレードによっては取引期間が終了する前にトレードを売却することも可能です。"
 
-msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
+#, fuzzy
+#| msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
+msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
 msgstr "\"Ok\"をクリックすると、選択した日付までこのサイトでのトレードができなくなります。"
 
 msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
@@ -9511,57 +9507,37 @@ msgid "you have sufficient experience and knowledge in matters of financial trad
 msgstr "当社サービスを通じて金融トレードを購入するメリットとリスクを評価でき、かつ当社サイトに掲載されている情報に依存せずに金融トレードを行ったことのあるような金融トレードにおける十分な経験と知識があります。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 1"
-msgstr ""
-"（1）本約款は、当社のアフィリエイトプログラムへの参加を申請する際、及び当プログラムへの参加が許可された際にBinary株式会社（以下「当社」といいます。"
-"）と利用者（本プログラム申請者：以下「アフィリエイト会員」といいます。）との間に適用される取り決めです。本約款に基づく当社とアフィリエイト会員の間の契約関"
-"係を「本契約」といいます。"
+msgstr "（1）本約款は、当社のアフィリエイトプログラムへの参加を申請する際、及び当プログラムへの参加が許可された際にBinary株式会社（以下「当社」といいます。）と利用者（本プログラム申請者：以下「アフィリエイト会員」といいます。）との間に適用される取り決めです。本約款に基づく当社とアフィリエイト会員の間の契約関係を「本契約」といいます。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 2"
-msgstr ""
-"（2）当社は本契約のどの条項に対しても随時、変更を施す権利を有します。変更が施される場合は、ご登録済みのメールアドレスへ実施日の７日前に事前通達を行います"
-"が、定期的な本契約の内容確認はアフィリエイト会員の義務です。変更が施される前に当プログラムにご参加された方に対しても、変更点は適用されます。"
+msgstr "（2）当社は本契約のどの条項に対しても随時、変更を施す権利を有します。変更が施される場合は、ご登録済みのメールアドレスへ実施日の７日前に事前通達を行いますが、定期的な本契約の内容確認はアフィリエイト会員の義務です。変更が施される前に当プログラムにご参加された方に対しても、変更点は適用されます。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 1 Title"
 msgstr "本文書について"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 10 Paragraph 1"
-msgstr ""
-"（1）当社はBinary.comウェブサイトにおいてサービスの中断やエラーが全く起こらないサービスの提供を保証していない。また、そのようなサービスのエラー"
-"や中断によって生じた事象に対する責任を当社は負いません。"
+msgstr "（1）当社はBinary.comウェブサイトにおいてサービスの中断やエラーが全く起こらないサービスの提供を保証していない。また、そのようなサービスのエラーや中断によって生じた事象に対する責任を当社は負いません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 10 Paragraph 2"
-msgstr ""
-"（2）当社は原則として「現状有姿 (as is)」、「提供されているまま (as available)」ウェブサイトを提供し、ハッカーまたは当社の管理外で"
-"発生したその他有害なコンポーネントなどの第三者の干渉が当サイトには無いこと、エラーは発生しないこと、エラーは必ず修正されるということを保証しているわけでは"
-"ありません。"
+msgstr "（2）当社は原則として「現状有姿 (as is)」、「提供されているまま (as available)」ウェブサイトを提供し、ハッカーまたは当社の管理外で発生したその他有害なコンポーネントなどの第三者の干渉が当サイトには無いこと、エラーは発生しないこと、エラーは必ず修正されるということを保証しているわけではありません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 10 Title"
 msgstr "免責事項"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 11 Paragraph 1"
-msgstr ""
-"（1）アフィリエイト会員はあらゆる損失、要求、苦情、損害賠償、費用（該当する場合、重大な損失、利益の損失、法的対応の費用やそれにまつわる付加価値税）など要"
-"求に応じた賠償を行う必要があり、本契約の下、アフィリエイト会員の義務または保証の違反、不履行、非遵守の結果直接的または間接的に被った若しくは発生した負債を"
-"当社に求めることはできません。"
+msgstr "（1）アフィリエイト会員はあらゆる損失、要求、苦情、損害賠償、費用（該当する場合、重大な損失、利益の損失、法的対応の費用やそれにまつわる付加価値税）など要求に応じた賠償を行う必要があり、本契約の下、アフィリエイト会員の義務または保証の違反、不履行、非遵守の結果直接的または間接的に被った若しくは発生した負債を当社に求めることはできません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 11 Paragraph 2"
-msgstr ""
-"（2）当社は、直接的または間接的なアフィリエイト会員のビジネスの損失、収益または利益の損失、予想される貯蓄の損失、若しくは無駄な支出、データの破損、そして"
-"いかなる間接的損失に対して、一切の責任を負わないものとします。"
+msgstr "（2）当社は、直接的または間接的なアフィリエイト会員のビジネスの損失、収益または利益の損失、予想される貯蓄の損失、若しくは無駄な支出、データの破損、そしていかなる間接的損失に対して、一切の責任を負わないものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 11 Title"
 msgstr "賠償責任"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 1"
-msgstr ""
-"（1）当事者のいずれかが本契約の違反行為をした場合、本契約は書面での通知を以て直ちに解除されるものとする。また、救済される可能性のある違反行為に対し、その"
-"ような違反行為に対する通告文書を受け取ってから15日以内に改善されない場合は、本契約は解除されます。"
+msgstr "（1）当事者のいずれかが本契約の違反行為をした場合、本契約は書面での通知を以て直ちに解除されるものとする。また、救済される可能性のある違反行為に対し、そのような違反行為に対する通告文書を受け取ってから15日以内に改善されない場合は、本契約は解除されます。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 2"
-msgstr ""
-"（2）当事者の一方が資産の全体または一部に管財人、検査者、管理者が当てられていたり、管轄地域での登録が削除されたり、または他方当事者を巻き込んだ注文が発生"
-"した場合、（注文と結果において、支払い能力のある法人と結果的に得た法人が別でないかぎり、この契約に基いて本契約に拘束される）書面による通知で速やかに本契約"
-"を解除する場合があります。"
+msgstr "（2）当事者の一方が資産の全体または一部に管財人、検査者、管理者が当てられていたり、管轄地域での登録が削除されたり、または他方当事者を巻き込んだ注文が発生した場合、（注文と結果において、支払い能力のある法人と結果的に得た法人が別でないかぎり、この契約に基いて本契約に拘束される）書面による通知で速やかに本契約を解除する場合があります。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 12 Paragraph 3"
 msgstr "（3）いずれの当事者も、他方当事者への１週間の書面の通知を以て本契約を終了させることができます。"
@@ -9725,14 +9701,10 @@ msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Title"
 msgstr "総則"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 1"
-msgstr ""
-"（1）アフィリエイトプログラムにご参加頂くにあたり、本約款を熟読し理解されることは重要です。本約款への同意の表明、及びアフィリエイトプログラムへの申請行為"
-"は、下記の本約款に同意されたものとみなします。万が一、本約款に同意できない場合は、アフィリエイトプログラムへの参加は見合わせて下さい。アフィリエイト会員に"
-"は、当アフィリエイトプログラムにて会員獲得を目指すウェブサイトの管理者として行動して頂きます。"
+msgstr "（1）アフィリエイトプログラムにご参加頂くにあたり、本約款を熟読し理解されることは重要です。本約款への同意の表明、及びアフィリエイトプログラムへの申請行為は、下記の本約款に同意されたものとみなします。万が一、本約款に同意できない場合は、アフィリエイトプログラムへの参加は見合わせて下さい。アフィリエイト会員には、当アフィリエイトプログラムにて会員獲得を目指すウェブサイトの管理者として行動して頂きます。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 2"
-msgstr ""
-"（2）当社は、当プログラムへの参加許可を与える権限を有します。故に、当プログラムへの参加の可否に関する当社の決定は、最終的かつ絶対的なものになります。"
+msgstr "（2）当社は、当プログラムへの参加許可を与える権限を有します。故に、当プログラムへの参加の可否に関する当社の決定は、最終的かつ絶対的なものになります。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 3"
 msgstr "（3）申請の可否は、当社よりメールにお知らせいたします。"
@@ -9747,9 +9719,7 @@ msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 2"
 msgstr "（2）獲得会員に提示するBinary.comの取引履歴及び実績に誤りがなく正確な内容であることを確認して下さい。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 3"
-msgstr ""
-"（3）アフィリエイト活動は、専門的且つ適切な態度で実施するようにしてください。アフィリエイト会員は、獲得会員との信頼と誠意に基づく良好な関係を築くことが必"
-"要とされます。獲得会員に対し、販売行為や口約束を強要する行為は禁じられています。"
+msgstr "（3）アフィリエイト活動は、専門的且つ適切な態度で実施するようにしてください。アフィリエイト会員は、獲得会員との信頼と誠意に基づく良好な関係を築くことが必要とされます。獲得会員に対し、販売行為や口約束を強要する行為は禁じられています。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 3 Paragraph 4"
 msgstr "（4） 業務上知り得た情報もしくは機密事項、未公開情報を第三者、他社へ漏洩してはなりません。"
@@ -9761,10 +9731,7 @@ msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 1"
 msgstr "（1）アフィリエイト会員は、獲得会員に入金及び取引への融資や貸出金をいかなる形式においても奨励してはいけません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 10"
-msgstr ""
-"10）上記の規定のいずれかに違反したアフィリエイト会員を当社が把握した場合、当社は本契約または適用される法律の下、その他の権利若しくは利用できる救済策に加"
-"えて、本契約に締結した該当アフィリエイト会員をすぐに契約解除する権利を有します。その場合、アフィリエイト会員は全ての権利を放棄し、当社またはBinaryグ"
-"ループ会社の取締役、役員、株主、従業員に対する補償を行うものとします。"
+msgstr "10）上記の規定のいずれかに違反したアフィリエイト会員を当社が把握した場合、当社は本契約または適用される法律の下、その他の権利若しくは利用できる救済策に加えて、本契約に締結した該当アフィリエイト会員をすぐに契約解除する権利を有します。その場合、アフィリエイト会員は全ての権利を放棄し、当社またはBinaryグループ会社の取締役、役員、株主、従業員に対する補償を行うものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 2"
 msgstr "（2）アフィリエイト会員はマーケティング、公告、プロモーションのいかなる活動において20歳未満を対象としてはいけません。"
@@ -9776,58 +9743,42 @@ msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 4"
 msgstr "（4）高圧的な販売戦術や口約束を用いてはいけません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 5"
-msgstr ""
-"(5）アフィリエイト会員は、獲得会員の取引実績や利益よりも自身のアフィリエイト報酬を増やす目的で獲得会員に対して入金や取引を強要することは禁じられています"
-"。常に獲得会員の利益を優先した行動を行うことが義務となっています。"
+msgstr "(5）アフィリエイト会員は、獲得会員の取引実績や利益よりも自身のアフィリエイト報酬を増やす目的で獲得会員に対して入金や取引を強要することは禁じられています。常に獲得会員の利益を優先した行動を行うことが義務となっています。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 6"
 msgstr "（6）獲得会員に代わって取引してはいけません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 7"
 msgstr ""
-"（7）検索エンジン、ポータル、スポンサーの公告サービス、その他検索サイト、アフィリエイトサービスでの使用を目的とした、「Binary.com」という単語、"
-"またはそれに関連するその他バリエーションを含んだ当社のトレードマーク、若しくはトレード名が認識で\n"
+"（7）検索エンジン、ポータル、スポンサーの公告サービス、その他検索サイト、アフィリエイトサービスでの使用を目的とした、「Binary.com」という単語、またはそれに関連するその他バリエーションを含んだ当社のトレードマーク、若しくはトレード名が認識で\n"
 "きるキーワードの購入や登録を行ってはいけません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 8"
-msgstr ""
-"（8）アフィリエイト会員の近しい立場の親族または制御できる人を獲得会員にすることはできません。また、アフィリエイト会員はアフィリエイト報酬や当社からのいか"
-"なる報酬もそのような親族や友人と共有することはできません。近しい立場の親族とは、配偶者、両親、子、兄弟姉妹と定義します。"
+msgstr "（8）アフィリエイト会員の近しい立場の親族または制御できる人を獲得会員にすることはできません。また、アフィリエイト会員はアフィリエイト報酬や当社からのいかなる報酬もそのような親族や友人と共有することはできません。近しい立場の親族とは、配偶者、両親、子、兄弟姉妹と定義します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Paragraph 9"
-msgstr ""
-"（9）日本における規制当局の権限の下、マーケティング、広告、プロモーション活動に関して適用される法律、規則、規制、服務規程を侵害するようなマーケティング、"
-"広告、プロモーション活動の展開または実施をしてはいけません。"
+msgstr "（9）日本における規制当局の権限の下、マーケティング、広告、プロモーション活動に関して適用される法律、規則、規制、服務規程を侵害するようなマーケティング、広告、プロモーション活動の展開または実施をしてはいけません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 4 Title"
 msgstr "制限事項"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 1"
-msgstr ""
-"（1）当社とアフィリエイターは別個の契約者であり、本約款は両者間にパートナーシップ、ジョイントベンチャー、エージェンシー、フランチャイズ、営業担当者、雇用"
-"契約が一切生じないことを明記する。アフィリエイターは、これに異議を唱えないものとします。また、ウェブサイトに当該事項に矛盾する内容を記載しないものとします"
-"。"
+msgstr "（1）当社とアフィリエイターは別個の契約者であり、本約款は両者間にパートナーシップ、ジョイントベンチャー、エージェンシー、フランチャイズ、営業担当者、雇用契約が一切生じないことを明記する。アフィリエイターは、これに異議を唱えないものとします。また、ウェブサイトに当該事項に矛盾する内容を記載しないものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 2"
-msgstr ""
-"（2）当社は、アフィリエイターが紹介した顧客が口座開設を希望する際、関係法令、規程、諸規則等に照らし顧客が必要とされる条件を満たしていなかった場合、口座開"
-"設を拒む権利を有します。"
+msgstr "（2）当社は、アフィリエイターが紹介した顧客が口座開設を希望する際、関係法令、規程、諸規則等に照らし顧客が必要とされる条件を満たしていなかった場合、口座開設を拒む権利を有します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 3"
 msgstr "（3）当社はアフィリエイト会員に販促材料としてアフィリエイトIDを含むリンクを提供します。それらのリンクは適宜当社にて修正される場合があります。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 4"
-msgstr ""
-"（4）獲得会員がプロモーションサイトのリンク、またはアフィリエイトIDを通じてBinay.comへアクセスし、会員登録、または当社でトレードを行う度に、ア"
-"フィリエイト会員の紹介に由来するものか確実にお調べ致します。しかし、獲得会員の紹介先を当社が特定できない場合、当社が責任を負うことはありません。適切にタグ"
-"付けされた獲得会員のみ、各アフィリエイト会員に割り当てられます。全てのリンクに適切なタグが付いていることを確認するのはアフィリエイト会員の責任となります。"
+msgstr "（4）獲得会員がプロモーションサイトのリンク、またはアフィリエイトIDを通じてBinay.comへアクセスし、会員登録、または当社でトレードを行う度に、アフィリエイト会員の紹介に由来するものか確実にお調べ致します。しかし、獲得会員の紹介先を当社が特定できない場合、当社が責任を負うことはありません。適切にタグ付けされた獲得会員のみ、各アフィリエイト会員に割り当てられます。全てのリンクに適切なタグが付いていることを確認するのはアフィリエイト会員の責任となります。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 5"
 msgstr "（5）当社には、当社や当社のグループ企業を通じて報酬に関する取り決めも含め、本契約書に記載されている権利、及び義務を遂行する権利を有します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 6"
-msgstr ""
-"（6）当社は、アフィリエイター会員が本約款もしくは関係法令に違反していると疑いが生じた場合、報酬の支払いを無効化、遅延、差し控える権利を有します。"
+msgstr "（6）当社は、アフィリエイター会員が本約款もしくは関係法令に違反していると疑いが生じた場合、報酬の支払いを無効化、遅延、差し控える権利を有します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Paragraph 7"
 msgstr "（7）当社は、報酬システムを変更する裁量権を有する。変更時には、アリフィエイト会員に通知するよう努めます。"
@@ -9836,14 +9787,10 @@ msgid "{JAPAN ONLY} Affiliate Program T&C Section 5 Title"
 msgstr "当社の義務"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 1"
-msgstr ""
-"（1）Binary.comの所有権とコンテンツは当社に属し、約款を承諾している間はどのような手段であれアフィリエイト会員に譲与されることはありません。"
+msgstr "（1）Binary.comの所有権とコンテンツは当社に属し、約款を承諾している間はどのような手段であれアフィリエイト会員に譲与されることはありません。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 2"
-msgstr ""
-"（2）アフィリエイト会員は、自身が保有するプロモーションサイトの所有権とコンテンツに責任を持つ義務が生じます。プロモーションサイトの開発、運用、維持、そし"
-"てサイト上に存在する全てのデータに対して責任が生じます。アフィリエイト会員は、それらに関する請求、損害賠償、費用（訴訟費用など）を当社に対して求めないこと"
-"を確約することとします。"
+msgstr "（2）アフィリエイト会員は、自身が保有するプロモーションサイトの所有権とコンテンツに責任を持つ義務が生じます。プロモーションサイトの開発、運用、維持、そしてサイト上に存在する全てのデータに対して責任が生じます。アフィリエイト会員は、それらに関する請求、損害賠償、費用（訴訟費用など）を当社に対して求めないことを確約することとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Paragraph 3"
 msgstr "（3）獲得会員が当社に口座を開設した場合、獲得会員の氏名、取引情報、その他データの所有権を当社が引き受けます。"
@@ -9852,24 +9799,16 @@ msgid "{JAPAN ONLY} Affiliate Program T&C Section 6 Title"
 msgstr "所有権"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 1"
-msgstr ""
-"（1）スパム行為が検出された場合は、アフィリエイト口座の調査が実施され、アフィリエイト口座内の資金の支払いも保留とします。アフィリエイト会員は、Binar"
-"y.comがスパム行為への対策費用を負担する立場であり、そしてその対策費用と同額の額がアフィリエイト会員の口座から差し引かれることを十分に理解していただく"
-"必要があります。対策費用の総額は、誠意に基づく平等な価格であり、法的に回収されます。これらの条件をBinary.comのアフィリエイト会員に登録された時点"
-"で公平かつ妥当であると承諾されたものとします。"
+msgstr "（1）スパム行為が検出された場合は、アフィリエイト口座の調査が実施され、アフィリエイト口座内の資金の支払いも保留とします。アフィリエイト会員は、Binary.comがスパム行為への対策費用を負担する立場であり、そしてその対策費用と同額の額がアフィリエイト会員の口座から差し引かれることを十分に理解していただく必要があります。対策費用の総額は、誠意に基づく平等な価格であり、法的に回収されます。これらの条件をBinary.comのアフィリエイト会員に登録された時点で公平かつ妥当であると承諾されたものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 7 Paragraph 2"
-msgstr ""
-"（2）万が一、スパム行為への対策費用がアフィリエイト会員のアフィリエイト口座から回収できない場合、当社は別途回収方法を調査する権利を有します。例として、対"
-"策費用を全て回収できるまでアフィリエイト口座に発生した報酬を差し引くなどという方法が適用されます。"
+msgstr "（2）万が一、スパム行為への対策費用がアフィリエイト会員のアフィリエイト口座から回収できない場合、当社は別途回収方法を調査する権利を有します。例として、対策費用を全て回収できるまでアフィリエイト口座に発生した報酬を差し引くなどという方法が適用されます。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 7 Title"
 msgstr "スパム行為への対処"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 1"
-msgstr ""
-"（1）契約期間中は、下記に記述されている報酬プランに基づいた報酬金額をアフィリエイト会員に支払います。アフィリエイト報酬は誠実な会員獲得行為にのみ支払われ"
-"、重複口座の保有または不誠実な行動が検知されたアフィリエイト会員に対しては、当社の判断で支払いを停止する権利を有します。"
+msgstr "（1）契約期間中は、下記に記述されている報酬プランに基づいた報酬金額をアフィリエイト会員に支払います。アフィリエイト報酬は誠実な会員獲得行為にのみ支払われ、重複口座の保有または不誠実な行動が検知されたアフィリエイト会員に対しては、当社の判断で支払いを停止する権利を有します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 2"
 msgstr "報酬プラン"
@@ -9917,47 +9856,31 @@ msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 1 Line 9"
 msgstr "※出金額の制限の有効期間は、②の条件を満たす当該月まで有効"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 2"
-msgstr ""
-"（2）当社は獲得会員から得られた、未決済分データも含むアフィリエイト報酬に関する詳細データを当社のウェブサイトにて提供します。この詳細データは毎日更新され"
-"ます。カレンダー末日に該当月の報酬データを算出します。（該当月以前の持ち越しデータが存在すればそれも加味します。）該当月の報酬がマイナスの値を記録した場合"
-"は、翌月にそのマイナス分が持ち越されます。マイナス分を上回るアフィリエイト報酬が発生した際にアフィリエイト報酬を受け取れるようになります。尚、当社はマイナ"
-"ス分を０として扱い、翌月以降に持ち越さない場合があります。"
+msgstr "（2）当社は獲得会員から得られた、未決済分データも含むアフィリエイト報酬に関する詳細データを当社のウェブサイトにて提供します。この詳細データは毎日更新されます。カレンダー末日に該当月の報酬データを算出します。（該当月以前の持ち越しデータが存在すればそれも加味します。）該当月の報酬がマイナスの値を記録した場合は、翌月にそのマイナス分が持ち越されます。マイナス分を上回るアフィリエイト報酬が発生した際にアフィリエイト報酬を受け取れるようになります。尚、当社はマイナス分を０として扱い、翌月以降に持ち越さない場合があります。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 3"
 msgstr "（3）前月のアフィリエイト報酬は翌月15日頃に、当社とアフィリエイト会員間で合意されている支払い方法で支払います。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 4"
-msgstr ""
-"（4）アフィリエイト報酬算出の際にエラーが発生した場合は、当社は常にそのような誤った計算値を修正し、過払いとなった金額を回収する権利を有し、回収し終わるま"
-"でアフィリエイト報酬から引き落とし続けることとします。尚、場合によっては当社がアフィリエイト会員の口座に当社が提供したプロモーション資金の利益共有を停止す"
-"る権利も当社は有することとします。"
+msgstr "（4）アフィリエイト報酬算出の際にエラーが発生した場合は、当社は常にそのような誤った計算値を修正し、過払いとなった金額を回収する権利を有し、回収し終わるまでアフィリエイト報酬から引き落とし続けることとします。尚、場合によっては当社がアフィリエイト会員の口座に当社が提供したプロモーション資金の利益共有を停止する権利も当社は有することとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 5"
-msgstr ""
-"（5）アフィリエイト会員が携わった全ての取引、すなわち獲得会員から発生するアフィリエイト報酬はアフィリエイトプログラムに参加されている限り、無期限でアフィ"
-"リエイト会員の報酬となります。当社は２年間請求のなかった報酬をキャンセルする権利を有します。"
+msgstr "（5）アフィリエイト会員が携わった全ての取引、すなわち獲得会員から発生するアフィリエイト報酬はアフィリエイトプログラムに参加されている限り、無期限でアフィリエイト会員の報酬となります。当社は２年間請求のなかった報酬をキャンセルする権利を有します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Paragraph 6"
-msgstr ""
-"（6）アフィリエイト会員は獲得会員にアフィリエイト報酬を還元することはできません。そのような行為を行った場合は即座にアフィリエイト口座を停止します。"
+msgstr "（6）アフィリエイト会員は獲得会員にアフィリエイト報酬を還元することはできません。そのような行為を行った場合は即座にアフィリエイト口座を停止します。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 8 Title"
 msgstr "報酬の支払い"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 1"
-msgstr ""
-"（1）本契約に関わる当事者は、契約の締結、本契約で譲渡される権利とライセンスの受諾、本契約に基づいた義務を履行するのに必要な全ての権利、権限、権原を契約期"
-"間中に有し、維持することを保証するものとします。"
+msgstr "（1）本契約に関わる当事者は、契約の締結、本契約で譲渡される権利とライセンスの受諾、本契約に基づいた義務を履行するのに必要な全ての権利、権限、権原を契約期間中に有し、維持することを保証するものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 2"
-msgstr ""
-"（2）アフィリト会員は、事業を営んでいる管轄地域の規制当局の権限に基づく関係法令、規程、諸規則の範囲内で必要なライセンス、承認を得たことを表明、保証し、確"
-"約するものとします。"
+msgstr "（2）アフィリト会員は、事業を営んでいる管轄地域の規制当局の権限に基づく関係法令、規程、諸規則の範囲内で必要なライセンス、承認を得たことを表明、保証し、確約するものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Paragraph 3"
-msgstr ""
-"（3）アフィリエイト会員は、ウェブサイト上に名誉毀損、性的描写、違法、有害、脅迫、猥褻、いやがらせ、人種差別その他の差別的、暴力的、政治的な事項を記載、リ"
-"ンクを貼らないものとし、また第三者の権利を侵害していないことを保証するものとします。"
+msgstr "（3）アフィリエイト会員は、ウェブサイト上に名誉毀損、性的描写、違法、有害、脅迫、猥褻、いやがらせ、人種差別その他の差別的、暴力的、政治的な事項を記載、リンクを貼らないものとし、また第三者の権利を侵害していないことを保証するものとします。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 9 Title"
 msgstr "保証"
@@ -10993,8 +10916,35 @@ msgstr "利用規約の承認"
 msgid "Account Limits"
 msgstr "ご利用制限額"
 
-msgid "Account Details"
-msgstr "ご口座の詳細情報"
+#~ msgid "30-day turnover limit "
+#~ msgstr "30日の取引限度額 "
+
+#~ msgid "Click the button below to download MetaTrader."
+#~ msgstr "MetaTraderをダウンロードするには下のボタンをクリックしてください。"
+
+#~ msgid "Download MetaTrader for Windows"
+#~ msgstr "Windows版のMetaTraderをダウンロード"
+
+#~ msgid "Download for MacOS"
+#~ msgstr "MacOSにダウンロード"
+
+#~ msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
+#~ msgstr "MetaTrader 5をMetaTraderのサイトから既に直接ダウンロードされている場合は、利用できるブローカーのリストから“%1”をご選択ください。"
+
+#~ msgid "Linux Instructions"
+#~ msgstr "Linux操作手順"
+
+#~ msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
+#~ msgstr "MetaTraderのアカウント番号とパスワードでアプリケーションにログインをしてください。"
+
+#~ msgid "Please enter a number between 0 and %1"
+#~ msgstr "0から%1の数字を入力してください"
+
+#~ msgid "Run the installation file and follow the instructions."
+#~ msgstr "インストールファイルを実行して、指示に従ってください。"
+
+#~ msgid "Account Details"
+#~ msgstr "ご口座の詳細情報"
 
 #~ msgid "Please enter a number greater than 0"
 #~ msgstr "0より大きい数字を入力してください。"
@@ -12294,9 +12244,6 @@ msgstr "ご口座の詳細情報"
 #~ msgid "(delayed)"
 #~ msgstr "(遅延)"
 
-#~ msgid "30-day turnover limit"
-#~ msgstr "30日の取引数量限度額"
-
 #~ msgid "7-Day limit on losses is currently set to <strong>%1 %2</strong>"
 #~ msgstr "7日間の損失制限は、現在 <strong>%1 %2</strong>に設定されています。"
 
@@ -12826,9 +12773,6 @@ msgstr "ご口座の詳細情報"
 
 #~ msgid "Expiry time cannot be equal to start time."
 #~ msgstr "終了時間を開始時間と同じ時間に設定することはできません。"
-
-#~ msgid "Expiry time cannot be in the past."
-#~ msgstr "終了時間を過去の時間に設定することはできません。"
 
 #~ msgid "Exponential Moving Average"
 #~ msgstr "指数移動平均線"
@@ -16998,9 +16942,6 @@ msgstr "ご口座の詳細情報"
 #~ msgid " has been credited to your Virtual money account"
 #~ msgstr " xxxがデモ口座に付与されました"
 
-#~ msgid "Stake must be between %1 and %2."
-#~ msgstr "投資は、%1から%2の間である必要があります。"
-
 #~ msgid "Trades on Forex with duration less than 2 minutes are temporarily disabled until %1"
 #~ msgstr "2分未満の為替取引は%1まで一時的に無効になります。"
 
@@ -17796,9 +17737,6 @@ msgstr "ご口座の詳細情報"
 
 #~ msgid "Click <a href=\"%1\" target=\"_blank\">here</a> to try the beta-release of the application. Kindly report issues found to <a href=\"mailto:%2\">%2</a>."
 #~ msgstr "こちらを<a href=\"%1\" target=\"_blank\">クリック</a>し、ベータ版のアプリケーションをお試しください。ご不明な点は、<a href=\"mailto:%2\">%2</a>までお知らせください。"
-
-#~ msgid "Download"
-#~ msgstr "ダウンロード"
 
 #~ msgid ""
 #~ "Download the Binary.com charting application with an extensive range of Indicators, Price Bands, Overlays, and your own customizable Workspace\n"
