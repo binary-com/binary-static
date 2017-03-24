@@ -78,11 +78,31 @@ const Scroll = (function() {
         if (hash) $.scrollTo($(hash));
     };
 
+    const scrollToTop = function() {
+        let is_displaying = false;
+        const $scrollup = $('#scrollup');
+        $(document).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                if (is_displaying) return;
+                $scrollup.fadeIn();
+                is_displaying = true;
+            } else if (is_displaying) {
+                $scrollup.fadeOut();
+                is_displaying = false;
+            }
+        });
+
+        $scrollup.click(function () {
+            $.scrollTo(0, 500);
+        });
+    };
+
     return {
         sidebar_scroll     : sidebar_scroll,
         offScroll          : function() { $(window).off('scroll'); },
         goToHashSection    : goToHashSection,
         scrollToHashSection: scrollToHashSection,
+        scrollToTop        : scrollToTop,
     };
 })();
 

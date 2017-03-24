@@ -276,3 +276,14 @@ button .barspinner.white {
     line-height: 20px;
     display: none;
 }
+
+#scrollup {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background: url('../images/common/scrollup_icon.svg') no-repeat;
+    z-index: 999;
+}
