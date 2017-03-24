@@ -291,10 +291,10 @@ sub _texts {
         push @texts, localize('Your account has no trading activity.');
         push @texts, localize('Today');
         push @texts, localize('Details');
-        push @texts, localize('Virtual money credit to account');
         # back-end string for statement page
         push @texts, localize('Sell');
         push @texts, localize('Buy');
+        push @texts, localize('Virtual money credit to account');
         #strings for authenticate page
         push @texts, localize('This feature is not relevant to virtual-money accounts.');
         push @texts, localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].');
