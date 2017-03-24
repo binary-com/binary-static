@@ -1,21 +1,20 @@
-const Login             = require('./login').Login;
-const LocalStore        = require('./storage').LocalStore;
-const State             = require('./storage').State;
-const localizeForLang   = require('./localize').localizeForLang;
-const localize          = require('./localize').localize;
+const Client            = require('./client').Client;
+const Contents          = require('./contents').Contents;
+const Header            = require('./header').Header;
 const getLanguage       = require('./language').getLanguage;
 const setCookieLanguage = require('./language').setCookieLanguage;
+const localize          = require('./localize').localize;
+const localizeForLang   = require('./localize').localizeForLang;
+const Login             = require('./login').Login;
+const Menu              = require('./menu').Menu;
+const LocalStore        = require('./storage').LocalStore;
+const State             = require('./storage').State;
 const Url               = require('./url').Url;
 const url_for           = require('./url').url_for;
-const Client            = require('./client').Client;
-const Header            = require('./header').Header;
-const Menu              = require('./menu').Menu;
-const Contents          = require('./contents').Contents;
-const TrafficSource     = require('../common_functions/traffic_source').TrafficSource;
 const checkLanguage     = require('../common_functions/country_base').checkLanguage;
+const TrafficSource     = require('../common_functions/traffic_source').TrafficSource;
+const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check');
 const Cookies           = require('../../lib/js-cookie');
-const RealityCheck      = require('../websocket_pages/user/reality_check/reality_check.init').RealityCheck;
-const RealityCheckData  = require('../websocket_pages/user/reality_check/reality_check.data').RealityCheckData;
 const PushNotification  = require('../../lib/push_notification');
 require('../../lib/polyfills/array.includes');
 require('../../lib/polyfills/string.includes');
@@ -35,17 +34,8 @@ Page.prototype = {
         Header.on_load();
         this.record_affiliate_exposure();
         Contents.on_load();
-        if (State.get('is_loaded_by_pjax')) {
-            if (RealityCheckData.get('delay_reality_init')) {
-                RealityCheck.init();
-            } else if (RealityCheckData.get('delay_reality_check')) {
-                BinarySocket.send({ reality_check: 1 });
-            }
-        }
-        if (!Client.is_logged_in()) {
-            LocalStore.set('reality_check.ack', 0);
-        }
         setCookieLanguage();
+        RealityCheck.onLoad();
         if (sessionStorage.getItem('showLoginPage')) {
             sessionStorage.removeItem('showLoginPage');
             Login.redirect_to_login();

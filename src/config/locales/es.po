@@ -6130,9 +6130,6 @@ msgstr "Por favor, introduzca un número entre %1."
 msgid "Please enter a number between 0 and %1"
 msgstr "Ingrese un valor entre 0 y %1"
 
-msgid "Please enter a number greater than 0"
-msgstr "Por favor ingrese un valor mayor a 0"
-
 msgid "Please enter a number."
 msgstr "Por favor introduzca un número."
 
@@ -6563,9 +6560,6 @@ msgstr "Precios en tiempo real, cotejados con mercados de opciones interbancaria
 
 msgid "Reality Check"
 msgstr "Verificación de la realidad"
-
-msgid "Reality Check Interval:"
-msgstr "Intervalo de la verificación de la realidad:"
 
 msgid "Receive news and special offers"
 msgstr ""
@@ -11639,6 +11633,12 @@ msgstr "Límites de la cuenta"
 
 msgid "Account Details"
 msgstr "Detalles de la cuenta"
+
+#~ msgid "Please enter a number greater than 0"
+#~ msgstr "Por favor ingrese un valor mayor a 0"
+
+#~ msgid "Reality Check Interval:"
+#~ msgstr "Intervalo de la verificación de la realidad:"
 
 #, fuzzy
 #~| msgid "Bad currency"
