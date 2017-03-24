@@ -1,10 +1,11 @@
-const Scroll     = require('../common_functions/scroll');
-const handleHash = require('../base/utility').handleHash;
 const GetStarted = require('./get_started');
+const handleHash = require('../base/utility').handleHash;
+const Scroll     = require('../common_functions/scroll');
 
 module.exports = {
     OpenPositions: {
-        onLoad: () => { Scroll.scrollToHashSection(); },
+        onLoad  : () => { Scroll.scrollToHashSection(); },
+        onUnload: () => { Scroll.offScroll(); },
     },
     VolidxMarkets: {
         onLoad  : () => { Scroll.goToHashSection(); GetStarted.onLoad(); },

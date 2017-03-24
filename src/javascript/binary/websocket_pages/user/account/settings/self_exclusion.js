@@ -4,8 +4,8 @@ const localize         = require('../../../../base/localize').localize;
 const dateValueChanged = require('../../../../common_functions/common_functions').dateValueChanged;
 const Content          = require('../../../../common_functions/content').Content;
 const FormManager      = require('../../../../common_functions/form_manager');
-const DatePicker       = require('../../../../components/date_picker').DatePicker;
-const TimePicker       = require('../../../../components/time_picker').TimePicker;
+const DatePicker       = require('../../../../components/date_picker');
+const TimePicker       = require('../../../../components/time_picker');
 
 const SelfExclusion = (function() {
     'use strict';
@@ -142,16 +142,18 @@ const SelfExclusion = (function() {
 
     const initDatePicker = function() {
         // timeout_until
-        new TimePicker(timeout_time_id).show();
-        new DatePicker(timeout_date_id).show({
-            minDate: 'today',
-            maxDate: 6 * 7, // 6 weeks
+        TimePicker.init({ selector: timeout_time_id });
+        DatePicker.init({
+            selector: timeout_date_id,
+            minDate : 0,
+            maxDate : 6 * 7, // 6 weeks
         });
 
         // exclude_until
-        new DatePicker(exclude_until_id).show({
-            minDate: moment().add(6, 'months').add(1, 'day').toDate(),
-            maxDate: 5 * 365, // 5 years
+        DatePicker.init({
+            selector: exclude_until_id,
+            minDate : moment().add(6, 'months').add(1, 'day').toDate(),
+            maxDate : 5 * 365, // 5 years
         });
 
         $(`${timeout_date_id}, ${exclude_until_id}`).change(function() {

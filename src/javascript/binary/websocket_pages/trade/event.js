@@ -29,7 +29,7 @@ const dateValueChanged           = require('../../common_functions/common_functi
 const elementTextContent         = require('../../common_functions/common_functions').elementTextContent;
 const isVisible                  = require('../../common_functions/common_functions').isVisible;
 const onlyNumericOnKeypress      = require('../../common_functions/event_handler').onlyNumericOnKeypress;
-const TimePicker                 = require('../../components/time_picker').TimePicker;
+const TimePicker                 = require('../../components/time_picker');
 
 /*
  * TradingEvents object contains all the event handler const required = function for
@@ -487,12 +487,13 @@ const TradingEvents = (function () {
     };
 
     const attachTimePicker = function() {
-        const timePickerInst = new TimePicker('#expiry_time');
         const date_start = document.getElementById('date_start').value;
         const now = !date_start || date_start === 'now';
         const current_moment = now ? (window.time ? window.time : moment.utc()) : parseInt(date_start) * 1000;
-        timePickerInst.hide();
-        timePickerInst.show(current_moment);
+        TimePicker.init({
+            selector: '#expiry_time',
+            minTime : current_moment,
+        });
     };
 
     return {

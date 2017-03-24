@@ -10,7 +10,7 @@ const Content              = require('../../../../common_functions/content').Con
 const dateValueChanged     = require('../../../../common_functions/common_functions').dateValueChanged;
 const japanese_client      = require('../../../../common_functions/country_base').japanese_client;
 const toISOFormat          = require('../../../../common_functions/string_util').toISOFormat;
-const DatePicker           = require('../../../../components/date_picker').DatePicker;
+const DatePicker           = require('../../../../components/date_picker');
 
 const StatementInit = (() => {
     'use strict';
@@ -130,7 +130,6 @@ const StatementInit = (() => {
         transactions_consumed = 0;
 
         StatementUI.errorMessage(null);
-
         StatementUI.clearTableContent();
     };
 
@@ -164,9 +163,10 @@ const StatementInit = (() => {
                  initPage();
                  return true;
              });
-        const datepicker_inst = new DatePicker(jump_to);
-        datepicker_inst.hide();
-        datepicker_inst.show({ maxDate: 0 });
+        DatePicker.init({
+            selector: jump_to,
+            maxDate : 0,
+        });
         if ($(jump_to).attr('data-picker') !== 'native') $(jump_to).val(localize('Today'));
     };
 

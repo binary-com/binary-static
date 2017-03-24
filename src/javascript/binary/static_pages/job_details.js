@@ -1,103 +1,64 @@
-const localize = require('../base/localize').localize;
-const urlFor   = require('../base/url').urlFor;
 const urlParam = require('../base/url').param;
+const urlFor   = require('../base/url').urlFor;
 
-const JobDetails = (function() {
-    let dept,
-        depts,
-        sections;
+const JobDetails = (() => {
+    'use strict';
 
-    const showSelectedDiv = function() {
-        if ($('.job-details').find('#title').text() === '') {
-            onLoad();
+    const hidden_class = 'invisible';
+
+    let dept;
+
+    let $sections_div,
+        dept_class,
+        $senior_perl_message,
+        $sidebar,
+        $sidebar_dept;
+
+    const showSelectedDiv = () => {
+        const section = window.location.hash;
+        $sections_div.addClass(hidden_class).find(`${section}`).removeClass(hidden_class);
+        if (dept === 'Information_Technology' && /senior_perl_developer/.test(section)) {
+            $senior_perl_message.removeClass(hidden_class);
         } else {
-            const hash_substring = window.location.hash.substring(1);
-            $('.sections div').hide();
-            $('.sections div[id=' + dept + '-' + hash_substring + ']').show();
-            $('.title-sections').html($('.sidebar li[class="selected"]').text());
-            if (dept === 'Information_Technology' && hash_substring === 'section-three') {
-                $('.senior_perl_message').removeClass('invisible');
-            } else if (!$('.senior_perl_message').hasClass('invisible')) {
-                $('.senior_perl_message').addClass('invisible');
-            }
+            $senior_perl_message.addClass(hidden_class);
         }
     };
 
-    const check_url = function() {
-        let replace_dept,
-            replace_section;
-        if (!dept || $.inArray(dept, depts) === -1) {
-            replace_dept = '?dept=Information_Technology';
-        }
-        const hash = window.location.hash;
-        if (!hash || $.inArray(hash.substring(1), sections) === -1) {
-            replace_section = '#section-one';
-        }
-        if (replace_dept || replace_section) {
-            window.location = replace_dept && replace_section ? urlFor('open-positions/job-details') + replace_dept + replace_section :
-                              replace_dept ? urlFor('open-positions/job-details') + replace_dept + hash :
-                              urlFor('open-positions/job-details') + '?dept=' + dept + replace_section;
-            return false;
-        }
-        return true;
-    };
-
-    const onLoad = function() {
+    const onLoad = () => {
         dept = urlParam('dept');
-        depts = ['Information_Technology', 'Quality_Assurance', 'Quantitative_Analysis', 'Marketing', 'Accounting', 'Compliance', 'Customer_Support', 'Human_Resources', 'Administrator', 'Internal_Audit'];
-        sections = ['section-one', 'section-two', 'section-three', 'section-four', 'section-five', 'section-six', 'section-seven', 'section-eight'];
-        if (check_url()) {
-            $('.job-details').find('#title').html(localize(dept.replace(/_/g, ' ')));
-            const deptImage = $('.dept-image'),
-                sourceImage = deptImage.attr('src').replace('Information_Technology', dept);
-            deptImage.attr('src', sourceImage)
-                     .show();
-            const deptContent = $('#content-' + dept + ' div'),
-                $sidebar_nav = $('#sidebar-nav');
-            let section;
-            $sidebar_nav.find('li').slice(deptContent.length).hide();
-            for (let i = 0; i < deptContent.length; i++) {
-                section = $('#' + dept + '-' + sections[i]);
-                section.insertAfter('.sections div:last-child');
-                if (section.attr('class')) {
-                    $sidebar_nav.find('a[href="#' + sections[i] + '"]').html(localize(section.attr('class').replace(/_/g, ' ')));
-                }
-            }
-            const $sidebar = $('.sidebar');
-            $sidebar.show();
-            if ($sidebar.find('li:visible').length === 1) {
-                $sidebar.hide();
-            }
-            $('#' + window.location.hash.substring(9)).addClass('selected');
-            showSelectedDiv();
-            $('#back-button').attr('href', urlFor('open-positions') + '#' + dept);
+        if (!$sections_div) {
+            $sections_div = $('.sections > div > div');
+            dept_class = `.${dept}`;
+            $sidebar = $('.sidebar');
+            $sidebar_dept = $sidebar.filter(dept_class);
+            $senior_perl_message = $('.senior_perl_message');
         }
+        $sidebar_dept.removeClass(hidden_class);
+        $(dept_class).removeClass(hidden_class);
+        showSelectedDiv();
+        $('#back-button').attr('href', `${urlFor('open-positions')}#${dept}`);
         addEventListeners();
     };
 
-    const addEventListeners = function() {
-        const sidebarListItem = $('#sidebar-nav').find('li');
-        sidebarListItem.click(function() {
-            sidebarListItem.removeClass('selected');
+    const addEventListeners = () => {
+        const $sidebar_list_item = $sidebar_dept.find('#sidebar-nav li');
+        $sidebar_list_item.click(function() {
+            $sidebar_list_item.removeClass('selected');
             $(this).addClass('selected');
         });
 
-        $(window).on('hashchange', function() {
-            if (JobDetails.check_url()) {
-                JobDetails.showSelectedDiv();
-            }
+        $(window).on('hashchange', () => {
+            showSelectedDiv();
         });
     };
 
-    const onUnload = function() {
+    const onUnload = () => {
         $(window).off('hashchange');
     };
 
     return {
-        onLoad         : onLoad,
-        onUnload       : onUnload,
-        showSelectedDiv: showSelectedDiv,
-        check_url      : check_url,
+        onLoad  : onLoad,
+        onUnload: onUnload,
     };
 })();
 

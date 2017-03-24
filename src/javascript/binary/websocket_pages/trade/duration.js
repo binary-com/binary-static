@@ -11,7 +11,7 @@ const selectOption     = require('./common').selectOption;
 const timeIsValid      = require('./common').timeIsValid;
 const showPriceOverlay = require('./common').showPriceOverlay;
 const getTradingTimes  = require('./common_independent').getTradingTimes;
-const DatePicker       = require('../../components/date_picker').DatePicker;
+const DatePicker       = require('../../components/date_picker');
 const toReadableFormat = require('../../common_functions/string_util').toReadableFormat;
 const toISOFormat      = require('../../common_functions/string_util').toISOFormat;
 const elementTextContent  = require('../../common_functions/common_functions').elementTextContent;
@@ -236,19 +236,18 @@ const Durations = (function() {
         Defaults.set('duration_units', unit.value);
 
         // jquery for datepicker
-        const amountElement = $('#duration_amount'),
-            datePickerDur = new DatePicker('#duration_amount', 'diff'),
-            datePickDate = new DatePicker('#expiry_date');
+        const amountElement = $('#duration_amount');
+        const duration_id = '#duration_amount';
+        const expiry_id = '#expiry_date';
         if (unit.value === 'd') {
             const tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
-            datePickerDur.show({
-                minDate   : tomorrow,
-                maxDate   : 364,
-                additional: {
-                    setValue: 'attr',
-                    native  : 0,
-                },
+            DatePicker.init({
+                selector: duration_id,
+                type    : 'diff',
+                minDate : 1,
+                maxDate : 364,
+                native  : false,
             });
             amountElement.change(function(value) {
                 let dayDiff;
@@ -264,14 +263,14 @@ const Durations = (function() {
                 amountElement.val(dayDiff);
             });
         } else {
-            datePickerDur.hide();
+            DatePicker.hide(duration_id);
         }
 
         if ($('#expiry_date').is(':visible')) {
-            datePickDate.hide();
-            datePickDate.show({
-                minDate: 'today',
-                maxDate: 364,
+            DatePicker.init({
+                selector: expiry_id,
+                minDate : 0,
+                maxDate : 364,
             });
         }
 

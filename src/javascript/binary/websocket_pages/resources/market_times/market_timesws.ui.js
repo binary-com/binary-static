@@ -10,7 +10,7 @@ const Content                = require('../../../common_functions/content').Cont
 const japanese_client        = require('../../../common_functions/country_base').japanese_client;
 const toISOFormat            = require('../../../common_functions/string_util').toISOFormat;
 const toReadableFormat       = require('../../../common_functions/string_util').toReadableFormat;
-const DatePicker             = require('../../../components/date_picker').DatePicker;
+const DatePicker             = require('../../../components/date_picker');
 
 const MarketTimesUI = (() => {
     'use strict';
@@ -39,12 +39,12 @@ const MarketTimesUI = (() => {
         }
 
         const date = moment.utc();
-        $date.val(toReadableFormat(date))
-             .attr('data-value', toISOFormat(date));
-        const datePickerInst = new DatePicker('#trading-date');
-        datePickerInst.show({
-            minDate: 'today',
-            maxDate: 364,
+        $date.val(toReadableFormat(date)).attr('data-value', toISOFormat(date));
+        const trading_date = '#trading-date';
+        DatePicker.init({
+            selector: trading_date,
+            minDate : 0,
+            maxDate : 364,
         });
         $date.change(function() {
             if (!dateValueChanged(this, 'date')) {

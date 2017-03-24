@@ -3,8 +3,10 @@ const urlParam    = require('../base/url').param;
 const Scroll      = require('../common_functions/scroll');
 const TNCApproval = require('../websocket_pages/user/tnc_approval');
 
-const TermsAndConditions = (function() {
-    const onLoad = function() {
+const TermsAndConditions = (() => {
+    'use strict';
+
+    const onLoad = () => {
         handleActiveTab();
         TNCApproval.requiresTNCApproval(
             $('#btn_accept'),
@@ -19,7 +21,7 @@ const TermsAndConditions = (function() {
         }
     };
 
-    const handleActiveTab = function() {
+    const handleActiveTab = () => {
         const hash    = window.location.hash || '#legal';
         const menu    = '.tab-menu-wrap';
         const content = '.tab-content-wrapper';
@@ -58,15 +60,16 @@ const TermsAndConditions = (function() {
             .removeClass(hidden_class);
 
         const section = urlParam('section');
+        const $content = $('#content');
         if (section) {
-            const $section = $(`#content a#${section}`);
+            const $section = $content.find(`a#${section}`);
             if ($section.length) setTimeout(() => { $.scrollTo($section, 0, { offset: -10 }); }, 500);
         } else if (window.location.hash) {
-            setTimeout(() => { $.scrollTo($('#content .tab-menu'), 0, { offset: -10 }); }, 500);
+            setTimeout(() => { $.scrollTo($content.find('.tab-menu'), 0, { offset: -10 }); }, 500);
         }
     };
 
-    const onUnload = function() {
+    const onUnload = () => {
         Scroll.offScroll();
     };
 
