@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: I 18N\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-18 18:17+0000\n"
+"PO-Revision-Date: 2017-03-25 09:08+0000\n"
 "Last-Translator: Pham Minh Hieu <hphamv7@gmail.com>\n"
-"Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
+"Language-Team: Vietnamese "
+"<https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -96,7 +97,7 @@ msgid "%1 continues to innovate and grow"
 msgstr "%1 tiếp tục lớn mạnh và đổi mới"
 
 msgid "%1 days %2 hours %3 minutes"
-msgstr ""
+msgstr "%1 ngày %2 giờ %3 phút"
 
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
 msgstr "tiền gửi %1 từ %2 đến tài khoản số %3 được thực hiện. Giao dịch ID: %4"
@@ -2429,10 +2430,8 @@ msgstr "Tài khoản không hoạt động"
 msgid "Down - Predict that the market will end lower than the average price"
 msgstr "Giảm - Dự đoán rằng thị trường sẽ kết thúc thấp hơn giá trung bình"
 
-#, fuzzy
-#| msgid "Download CSV"
 msgid "Download"
-msgstr "Tải xuồng CSV"
+msgstr "Tải xuồng"
 
 msgid "Download CSV"
 msgstr "Tải xuồng CSV"
@@ -2962,16 +2961,14 @@ msgstr "Hãy thực hiện theo Luật và những Điều khoản Sau đây"
 msgid "Follow up on rejected deposits"
 msgstr "Theo dõi các khoản tiền gửi bị từ chối"
 
-#, fuzzy
-#| msgid "Browser"
 msgid "For Browser"
-msgstr "Duyệt tìm"
+msgstr "Cho trình duyệt"
 
 msgid "For Desktop"
-msgstr ""
+msgstr "Cho máy tính để bàn"
 
 msgid "For Mobile"
-msgstr ""
+msgstr "Cho điện thoại"
 
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "Để tăng cường độ bảo mật. vui lòng kiểm tra hòm thư của bạn để nhận cuỗi xác nhận."
@@ -5667,15 +5664,11 @@ msgstr "Vui lòng chọn"
 msgid "Please select a payment agent"
 msgstr "Vui lòng chọn một đại lý thanh toán"
 
-#, fuzzy
-#| msgid "Please select a valid date"
 msgid "Please select a valid date."
-msgstr "Vui lòng chọn một ngày hợp lệ"
+msgstr "Vui lòng chọn một ngày hợp lệ."
 
-#, fuzzy
-#| msgid "Please select a valid date"
 msgid "Please select a valid time."
-msgstr "Vui lòng chọn một ngày hợp lệ"
+msgstr "Vui lòng chọn một thời gian hợp lệ."
 
 msgid "Please select a value"
 msgstr "Vui lòng chọn một giá trị"
@@ -6400,10 +6393,8 @@ msgstr "Nếu khách hàng nào nhận được giao dịch đòi bồi 
 msgid "Should be a valid number"
 msgstr "Nên là một số hợp lệ"
 
-#, fuzzy
-#| msgid "Stake must be between %1 and %2."
 msgid "Should be between %1 and %2"
-msgstr "Tiền cọc cần phải ở giữa %1 và %2."
+msgstr "Nên ở giữa %1 và %2"
 
 msgid "Should be less than %1"
 msgstr "Nên là ít hơn so với %1"
@@ -7542,20 +7533,14 @@ msgstr "Thời gian"
 msgid "Time is in the wrong format."
 msgstr "Thời gian ở sai định dạng."
 
-#, fuzzy
-#| msgid "Expiry time cannot be in the past."
 msgid "Time out cannot be in the past."
-msgstr "Thời gian hết hạn không thể ở quá khứ."
+msgstr "Thời hạn kết thúc không thể tồn tại trong quá khứ."
 
-#, fuzzy
-#| msgid "Session duration limit cannot be more than 6 weeks."
 msgid "Time out cannot be more than 6 weeks."
-msgstr "Giới hạn thời hạn phiên không thể nhiều hơn 6 tuần."
+msgstr "Thời hạn kết thúc không thể lớn hơn 6 tuần."
 
-#, fuzzy
-#| msgid "Exclude time must be after today."
 msgid "Time out must be after today."
-msgstr "Thời gian loại trừ cần phải sau ngày hôm nay."
+msgstr "Thời hạn kết thúc phải sau hôm nay."
 
 msgid "Time out until"
 msgstr "Tạm ngưng cho đến khi"
@@ -8322,10 +8307,10 @@ msgstr "Khi chúng tôi thống nhất ký kết hợp đồng với bạn, chú
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr "Khi bạn đang hài lòng với mức giá mà bạn nhận được, thực hiện giao dịch của bạn ngay lập tức. Với nền tảng duy nhất của chúng tôi, bạn sẽ không phải tranh chấp với các thị trường trượt và hổng. Và quan trọng nhất, không có phí ẩn. Bạn cũng có thể bán lại bất kỳ giao dịch dài hạn tại bất kỳ thời điểm nào trước khi hết hạn để bảo vệ lợi nhuận bạn kiếm được hoặc giảm thiểu thiệt hại của bạn."
 
-#, fuzzy
-#| msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
 msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
-msgstr "Khi bạn nhấp vào \"OK\" bạn sẽ bị loại bỏ khỏi giao dịch trên trang web tới ngày được chọn."
+msgstr ""
+"Khi bạn nhấp vào \"OK\" bạn sẽ bị loại bỏ khỏi giao dịch trên "
+"trang web tới ngày được chọn."
 
 msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
 msgstr "Khi được chấp thuận là một chi nhánh, bạn sẽ được cung cấp những thứ cần thiết để bắt đầu ngay."
