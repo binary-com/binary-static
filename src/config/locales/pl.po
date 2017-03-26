@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-23 23:32+0000\n"
+"PO-Revision-Date: 2017-03-26 08:36+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>"
+"\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.12\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -97,7 +99,7 @@ msgid "%1 continues to innovate and grow"
 msgstr "%1 stawia na innowacyjność i rozwój"
 
 msgid "%1 days %2 hours %3 minutes"
-msgstr ""
+msgstr "%1 dni %2 godz. %3 min"
 
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
 msgstr "Dokonano wpłaty %1 na konto o numerze %3. Identyfikator transakcji: %4"
@@ -2962,16 +2964,14 @@ msgstr "Przestrzeganie prawa i niniejszego regulaminu"
 msgid "Follow up on rejected deposits"
 msgstr "Sprawdzanie niezrealizowanych wpłat środków"
 
-#, fuzzy
-#| msgid "Browser"
 msgid "For Browser"
-msgstr "Przeglądarka"
+msgstr "Dla przeglądarki"
 
 msgid "For Desktop"
-msgstr ""
+msgstr "Na komputery stacjonarne"
 
 msgid "For Mobile"
-msgstr ""
+msgstr "Na urządzenia mobilne"
 
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "Ze względów bezpieczeństwa token weryfikujący został wysłany na Twój adres e-mail. Sprawdź swoją skrzynkę odbiorczą."
@@ -4648,7 +4648,7 @@ msgid "Lower"
 msgstr "Niższe"
 
 msgid "M. Manifest Error"
-msgstr "M. Oczywisty błąd"
+msgstr "M. Ewidentny błąd"
 
 msgid "MENA FFXPO Award"
 msgstr "Nagroda MENA FFXPO"
@@ -5667,15 +5667,11 @@ msgstr "Wybierz"
 msgid "Please select a payment agent"
 msgstr "Proszę wybrać pośrednika płatności"
 
-#, fuzzy
-#| msgid "Please select a valid date"
 msgid "Please select a valid date."
-msgstr "Proszę wybrać poprawną datę"
+msgstr "Proszę wybrać poprawną datę."
 
-#, fuzzy
-#| msgid "Please select a valid date"
 msgid "Please select a valid time."
-msgstr "Proszę wybrać poprawną datę"
+msgstr "Proszę wybrać poprawny czas."
 
 msgid "Please select a value"
 msgstr "Proszę wybrać wartość"
@@ -6931,7 +6927,30 @@ msgid "The Company reserves the right in its sole discretion to refuse and/or ca
 msgstr "Firma zastrzega sobie prawo do odmowy i/lub anulowania usługi, a także obciążenia użytkowników opłatami za wpłatę bądź wypłatę, z jakichkolwiek powodów, w tym między innymi:"
 
 msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between oneself and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot). You further acknowledge and agree that the Company will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused or alleged to be caused by or in connection with a Manifest Error."
-msgstr "Firma zastrzega sobie prawo do ograniczenia czynności handlowych klienta oraz anulowania lub unieważnienia transakcji lub zmiany wszelkich warunków zawartego kontraktu (w tym m.in. pozycji wejściowej i wyjściowej) w przypadku gdy kontrakty finansowe są nabywane lub sprzedawane po cenach, które nie odzwierciedlają uczciwych cen rynkowych, lub gdy są nabywane lub sprzedawane przy wyjątkowo niskim poziomie ryzyka z powodu niewykrytego błędu programowania lub niewykrytych błędów czy usterek w naszym oprogramowaniu, opóźnień w wycenie lub dostępie do źródeł danych, błędów w źródłach danych, nieprawidłowego kwotowania, błędnych parametrów wyceny, oczywistych błędów w wycenie lub innych oczywistych błędów („ewidentne błędy”). Klienci mają obowiązek zgłaszania Firmie wszelkich tego typu problemów, błędów lub podejrzanych nieprawidłowości w systemie, których doświadczają, i nie mogą nadużywać problemów systemowych w celu uzyskania zysku. Firma dołoży wszelkich starań w celu rozwiązania tych problemów w możliwie najkrótszym czasie. Wszelkie zmiany warunków (w tym m.in. pozycji wejściowej i wyjściowej) w przypadku ewidentnie nieprawidłowych kontraktów muszą być uzasadnione i sprawiedliwe. Środki pieniężne wymienione pomiędzy klientem a Firmą w rezultacie ewidentnie nieprawidłowych kontraktów zostaną zwrócone odbiorcy po dokonaniu zmian warunków kontraktu (w tym m.in. pozycji wejściowej i wyjściowej). Klient przyjmuje do wiadomości, że Firma nie ponosi odpowiedzialności, bezpośredniej ani pośredniej, za jakiekolwiek straty, wydatki, szkody spowodowane lub domniemanie spowodowane przez ewidentne błędu lub w związku z nimi, i zgadza się z tym."
+msgstr ""
+"Firma zastrzega sobie prawo do ograniczenia czynności handlowych klienta "
+"oraz anulowania lub unieważnienia transakcji lub zmiany wszelkich warunków "
+"zawartego kontraktu (w tym m.in. pozycji wejściowej i wyjściowej) w "
+"przypadku gdy kontrakty finansowe są nabywane lub sprzedawane po cenach, "
+"które nie odzwierciedlają uczciwych cen rynkowych, lub gdy są nabywane lub "
+"sprzedawane przy wyjątkowo niskim poziomie ryzyka z powodu niewykrytego "
+"błędu programowania lub niewykrytych błędów czy usterek w naszym "
+"oprogramowaniu, opóźnień w wycenie lub dostępie do źródeł danych, błędów w "
+"źródłach danych, nieprawidłowego kwotowania, błędnych parametrów wyceny, "
+"oczywistych błędów w wycenie lub innych oczywistych błędów („ewidentne "
+"błędy”). Klienci mają obowiązek zgłaszania Firmie wszelkich tego typu "
+"problemów, błędów lub podejrzanych nieprawidłowości w systemie, których "
+"doświadczają, i nie mogą nadużywać problemów systemowych w celu uzyskania "
+"zysku. Firma dołoży wszelkich starań w celu rozwiązania tych problemów w "
+"możliwie najkrótszym czasie. Wszelkie zmiany warunków (w tym m.in. pozycji "
+"wejściowej i wyjściowej) w przypadku ewidentnie nieprawidłowych kontraktów "
+"muszą być uzasadnione i sprawiedliwe. Środki pieniężne wymienione pomiędzy "
+"klientem a Firmą w rezultacie ewidentnie nieprawidłowych kontraktów zostaną "
+"zwrócone odbiorcy po dokonaniu zmian warunków kontraktu (w tym m.in. pozycji "
+"wejściowej i wyjściowej). Klient przyjmuje do wiadomości, że Firma nie "
+"ponosi odpowiedzialności, bezpośredniej ani pośredniej, za jakiekolwiek "
+"straty, wydatki, szkody spowodowane lub domniemanie spowodowane przez "
+"wystąpienie ewidentnego błędu lub w związku z nim, i zgadza się z tym."
 
 msgid "The Company reserves the right to change any part of this Agreement at any time. We will endeavour to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate program after we have posted the changes will constitute binding acceptance of such changes."
 msgstr "Firma zastrzega sobie prawo do zmiany dowolnego fragmentu niniejszej Umowy w dowolnym momencie. Firma dołoży wszelkich starań, aby powiadomić partnerów o wprowadzeniu zmian niniejszej Umowy, jednak obowiązkiem Partnera jest regularne sprawdzanie niniejszego regulaminu. Uczestnictwo w programie partnerskim po wprowadzeniu przez nas zmian będzie oznaczało wiążącą akceptację takich zmian."
@@ -8544,6 +8563,9 @@ msgstr "Tak. Napisz do nas: <a href=\"mailto:%1\">%1</a>, aby uzyskać pomoc."
 
 msgid "You acknowledge and accept that a Transaction may be subject to market rules laid down in by-laws, rules, provisions, customs, and practices of an exchange, a market, a clearing house, a body or any other organisation involved in the execution, clearing, and/or settlement of said Transaction. Should any such organisation take decisions or measures which affect a Transaction or an Open Position, the Company shall be entitled to take any action (including closing any Open Position of the client) which it, at its sole discretion, considers reasonable. This clause does not apply to Volatility Indices."
 msgstr ""
+"Przyjmujesz do wiadomości i akceptujesz, że transakcja może podlegać zasadom "
+"rynkowym określonym w regulaminach, zasadach, przepisach, w tym przepisach "
+"celnych oraz"
 
 msgid "You acknowledge and accept that your Real Account will be maintained in one currency, which is the same currency maintained in your Binary Options Real Account."
 msgstr "Przyjmujesz do wiadomości i akceptujesz, że Twoje Prawdziwe konto będzie prowadzone w jednej walucie, która jest tą samą walutą, w której prowadzone jest Twoje Prawdziwe konto do opcji binarnych."
@@ -8562,18 +8584,33 @@ msgstr "Przyjmujesz do wiadomości, że monitorowanie stanu środków na koncie 
 
 msgid "You acknowledge that it is your responsibility to understand the features, characteristics, terms and conditions of an Order and the implications of executing an Order before you place an Order with us."
 msgstr ""
+"Przyjmujesz do wiadomości, że zrozumienie funkcji, cech i warunków zlecenia "
+"i konsekwencji realizacji zlecenia przed jego złożeniem należy do Twoich "
+"obowiązków."
 
 msgid "You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company's own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the latter, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company."
 msgstr ""
 
 msgid "You acknowledge that we may use, store, or otherwise process personal information provided by you in connection with the provision of margin trading services described in this Agreement. You consent to the processing and transmittal of your personal information for the purposes of performing the contract and administering the relationship between you and us."
 msgstr ""
+"Przyjmujesz do wiadomości, że możemy przechowywać lub w inny sposób "
+"przetwarzać dostarczone przez Ciebie dane osobowe w związku ze świadczeniem "
+"usług handlowania na kredyt opisanych w niniejszej Umowie. Wyrażasz zgodę na "
+"przetwarzanie i przekazywanie Twoich danych osobowych w celach związanych z "
+"realizacją kontraktu i utrzymywaniem relacji między nami."
 
 msgid "You acknowledge that we reserve the right to establish a minimum and maximum transaction size which may be subject to alteration and that we will only execute Orders that fall within the range of the minimum and maximum transaction size."
 msgstr ""
+"Przyjmujesz do wiadomości, że zastrzegamy sobie prawo do ustanawiania "
+"minimalnego i maksymalnego rozmiaru transakcji, który może być poddawany "
+"zmianom, oraz że będziemy realizować wyłącznie zlecenia, które mieszczą się "
+"w wyznaczonym przedziale minimalnego i maksymalnego rozmiaru transakcji."
 
 msgid "You acknowledge that we reserve the right to void or close out one or more of your Transactions if we observe any breaches of warranty given under this Agreement."
 msgstr ""
+"Przyjmujesz do wiadomości, że zastrzegamy sobie prawo do unieważnienia lub "
+"zamknięcia dowolnej Twojej transakcji, jeśli dostrzeżemy jakiekolwiek "
+"naruszenia zapewnienia udzielonego zgodnie z niniejszą umową."
 
 msgid "You acknowledge that, in the course of dealing under these Terms, you may obtain confidential information relating to the Company and its parent, subsidiaries, affiliates or other third party. Such confidential information shall belong solely to the Company."
 msgstr "Użytkownik przyjmuje do wiadomości, że w okresie obowiązywania niniejszej Umowy, może uzyskać dostęp do poufnych informacji dotyczących Firmy oraz jej spółki matki, jej spółek zależnych oraz innych stron trzecich. Takie poufne informacje należą wyłącznie do Firmy."
@@ -8583,6 +8620,9 @@ msgstr ""
 
 msgid "You act in breach of any warranty or representation made under this Agreement, and/or if any information provided to us in connection with this Agreement is, or becomes, untrue or misleading;"
 msgstr ""
+"Działasz w sposób naruszający dowolne zapewnienie lub oświadczenie złożone "
+"na mocy niniejszej Umowy i/lub gdy jakakolwiek informacja dostarczona nam w "
+"związku z niniejszą umową jest lub stanie się nieprawdziwa lub myląca;"
 
 msgid "You agree that by developing on the %1 API, you are entering into a legally binding agreement with the Company."
 msgstr "Użytkownik zgadza się, że korzystając z API %1 w celach programistycznych zawiera z Firmą wiążącą prawnie umowę."
@@ -8607,6 +8647,8 @@ msgstr "Użytkownik musi przestrzegać następujących postanowień, które stan
 
 msgid "You are acting for your sole benefit, and not for, or on behalf of any other person;"
 msgstr ""
+"Działasz w swoim własnym interesie, a nie dla lub w imieniu jakiejkolwiek "
+"innej osoby;"
 
 msgid "You are advised that the Binary Options offered by %1 are not traded under the rules of any recognised, designated or regulated exchange. Consequently, engaging in Binary Options trading may expose you to substantially greater risks than investments which are so traded."
 msgstr "Informujemy, że handel opcji binarnych oferowanych przez %1 nie jest prowadzony w oparciu o zasady żadnej ze znanych, oficjalnych i regulowanych giełd. W wyniku tego, handlowanie Opcjami binarnymi może wiązać się z narażeniem na znacznie większe ryzyko niż w przypadku inwestycji, które są prowadzone w oparciu o takie zasady."
@@ -8625,9 +8667,15 @@ msgstr "W żadnym wypadku Użytkownik nie jest upoważniony do otrzymania od Fir
 
 msgid "You are not resident in a restricted country such as Afghanistan; Bosnia and Herzegovina; Costa Rica; any European Union country; Guyana; Lao PDR; Syria; Uganda; Vanuatu; Yemen; USA; Japan; Hong Kong; Costa Rica; Malaysia; Malta; Iran; North Korea; Jersey; Iraq; or any other restricted country as the Company may decide from time to time at its sole discretion;"
 msgstr ""
+"Nie jesteś mieszkańcem lub mieszkanką kraju z ograniczonym dostępem, czyli "
+"Afganistanu, Bośni i Hercegowiny, Kostaryki, jakiegokolwiek kraju Unii "
+"Europejskiej, Gujany, Laosu, Syrii, Ugandy, Republiki Vanuatu, Jemenu, "
+"Stanów Zjednoczonych, Japonii, Hongkongu, Malezji, Malty, Iranu, Korei "
+"Północnej, Jersey, Iraku ani jakiegokolwiek innego kraju, który Firma "
+"zakwalifikuje za kraj z ograniczonym dostępem według własnego uznania;"
 
 msgid "You are over 18 years of age;"
-msgstr ""
+msgstr "Masz ukończone 18 lat;"
 
 msgid "You are responsible for managing your tax and legal affairs including making any regulatory filings and payments and complying with applicable laws and regulations. We do not provide any regulatory, tax or legal advice. If you are in any doubt as to the tax treatment or liabilities of Investment Products or Gambling Products available through %1, you may wish to seek independent advice."
 msgstr "Klient jest odpowiedzialny za zarządzanie swoimi sprawami prawnymi i podatkowymi, w tym za składanie odpowiednich oświadczeń i za stosowanie się do odpowiedniego prawa i odpowiednich przepisów. Nie zapewniamy żadnych porad regulacyjnych, podatkowych czy prawnych. Jeśli masz jakiekolwiek wątpliwości dotyczące opodatkowania Produktów inwestycyjnych lub Produktów hazardowych dostępnych poprzez %1 lub związanych z nimi zobowiązań, możesz skorzystać z porad niezależnych ekspertów."
@@ -8637,6 +8685,9 @@ msgstr "Ostrzegamy przed następującymi dodatkowymi ryzykami:"
 
 msgid "You are willing and financially able to sustain a total loss of funds (which may exceed your initial deposit) resulting from a Transaction;"
 msgstr ""
+"Jesteś skłonny/skłonna ponieść całkowitą stratę środków (wysokość której "
+"może przekroczyć wysokość początkowego depozytu) w wyniku zawarcia "
+"transakcji i Twoja sytuacja finansowa na to pozwala;"
 
 msgid "You can <a href='%1'>open an account</a>, deposit funds and begin trading within minutes."
 msgstr "Możesz <a href='%1'>otworzyć konto</a>, wpłacić środki i zacząć handlować w ciągu paru minut."
@@ -8667,9 +8718,15 @@ msgstr "Nie musisz wpłacać pieniędzy, aby otworzyć konto, jednak musisz wpł
 
 msgid "You further acknowledge and agree that we will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused, or alleged to be caused by, or in connection with a Manifest Error."
 msgstr ""
+"Ponadto potwierdzasz i akceptujesz, że nie jesteśmy odpowiedzialni, "
+"bezpośrednio ani pośrednio, za żadne straty, wydatki lub szkody spowodowane "
+"lub uznane za spowodowane w związku z wystąpieniem ewidentnego błędu."
 
 msgid "You have all necessary authority, powers, consents, licences and authorisations and have taken all necessary actions to enable you to enter into, and perform this Agreement and such Transactions lawfully;"
 msgstr ""
+"Posiadasz wszelkie niezbędne uprawnienia, uprawomocnienia, zezwolenia, "
+"licencje i pozwolenia, i podjęte zostały wszelkie niezbędne działania, aby "
+"umożliwić legalne zawarcie i wykonanie niniejszej Umowy i takich Transakcji;"
 
 msgid "You have already withdrawn %1 %2."
 msgstr "Właśnie dokonano wypłaty %2 %1."
@@ -8682,6 +8739,10 @@ msgstr "Już wypłaciłeś/aś ekwiwalent %2 %1."
 
 msgid "You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a Real Account with us;"
 msgstr ""
+"Przed złożeniem wniosku o otwarcie przez nas Prawdziwego konta dokładnie "
+"przeczytałeś/-aś i zrozumiałeś/-aś: (i) Oświadczenie dot. ujawnienia ryzyka, "
+"(ii) Politykę dot. realizacji zlecenia, (iii) warunki stanowiące załącznik "
+"do niniejszej Umowy;"
 
 msgid "You have not granted access to any applications."
 msgstr "Nie przyznano Ci dostępu do żadnej aplikacji."
@@ -8708,16 +8769,24 @@ msgid "You have to register and get App ID before you can use different OAuth se
 msgstr "Musisz zarejestrować aplikację i uzyskać identyfikator App ID zanim możliwe będzie korzystanie z innego serwera OAuth w celach autoryzacyjnych. Aby uzyskać więcej informacji na temat OAuth , odwiedź: https://developers.binary.com/."
 
 msgid "You have unrealised losses on your Real Account; and/or"
-msgstr ""
+msgstr "Na swoim Prawdziwym koncie posiadasz niezrealizowane straty; i/lub"
 
 msgid "You hereby agree that you will not participate in any illegal, deceptive, misleading or unethical practices including, but not limited to, disparagement of the MT5 Trading Platform or other practices which may be detrimental to the MT5 Trading Platform, Licensor or the public interest."
 msgstr ""
+"Niniejszym zapewniasz, że nie będziesz uczestniczyć w jakichkolwiek "
+"nielegalnych, wprowadzających w błąd, mylących lub nieetycznych praktykach, "
+"w tym m.in. dyskredytowaniu platformy handlowej MT5 lub w innych praktykach, "
+"które mogą być szkodliwe dla platformy handlowej MT5, Licencjodawcy lub "
+"interesu publicznego."
 
 msgid "You irrevocably, non-exclusively license to the Company rights to use your Contributions; and"
 msgstr "Użytkownik przyznaje Firmie nieodwołalne i niewyłączne prawo do korzystania z jego Wkładów; oraz"
 
 msgid "You make the following representations and warranties to us at the time you enter into this Agreement, and agree that such representations and warranties are deemed repeated each time you open or close a Transaction:"
 msgstr ""
+"W momencie zawarcia niniejszej Umowy składasz następujące oświadczenia i "
+"zapewnienia i zgadzasz się, by te oświadczenia i zapewnienia były uznawane "
+"za powtórzone za każdym razem, gdy otwierasz lub zamykasz Transakcję:"
 
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
 msgstr "Możliwe jest zapisywanie Treści w pamięci podręcznej do 24 godzin od wysłania żądania dla Treści za pośrednictwem API %1."
@@ -8780,7 +8849,7 @@ msgid "You or your employees' or agents' acts or omissions, including yours or t
 msgstr "Czyny lub zaniechania Użytkownika, jego pracowników lub przedstawicieli, w tym naruszenie lub domniemane naruszenie niniejszych Warunków przez Użytkownika, jego pracowników lub przedstawicieli;"
 
 msgid "You promise that:"
-msgstr ""
+msgstr "Zobowiązujesz się, że:"
 
 msgid "You represent and warrant to the Company that, excluding the Content, you have the right to use, reproduce, transmit, copy, publicly display, publicly perform, and distribute your Application, and that use or promotion of your Application will not violate the rights of any third party (e.g., copyright, patent, trademark, privacy, publicity or other proprietary right of any person or entity), or any applicable regulation or law, and the laws of any country in which your Application is made available."
 msgstr "Użytkownik oświadcza i zapewnia Firmę, że ma prawo do korzystania, odtwarzania, kopiowania, upubliczniania i rozpowszechniania swojej Aplikacji, wyłączając Treści, i że takie korzystanie z Aplikacji lub jej promocja nie narusza praw jakiejkolwiek strony trzeciej (np. praw autorskich, patentów, znaków towarowych, praw prywatności i wizerunku oraz innych praw dotyczących własności jakiejkolwiek osoby lub jakiegokolwiek podmiotu) lub jakichkolwiek przepisów prawnych i regulacji obowiązujących w jakimkolwiek kraju, w którym dostępna jest Aplikacja."
@@ -8850,6 +8919,9 @@ msgstr "Należy dokładnie zapoznać się z niniejszymi DW, jak również ze Str
 
 msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments."
 msgstr ""
+"Rozumiesz, że produkty oparte na generatorze losowych liczb („Wskaźniki "
+"zmienności”) są produktami hazardowymi, a produkty oparte na wskaźnikach "
+"rynków finansowych (forex, akcje, towary) są instrumentami finansowymi."
 
 msgid "You will be automatically logged out after such time."
 msgstr "Zostaniesz automatycznie wylogowany po tym czasie."
@@ -8859,15 +8931,22 @@ msgstr "Zapewnimy Ci wszystkie narzędzia, dzięki którym zamienisz ruch na swo
 
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
 msgstr ""
+"Jeśli utrzymasz pozycję otwartą po godzinie 23:59:59 GMT, będą miały "
+"zastosowanie stawki swapowe."
 
 msgid "You will be subjected to swap rates if you keep a position open past the market close."
 msgstr ""
+"Jeśli utrzymasz pozycję otwartą po zamknięciu rynku, będą miały zastosowanie "
+"stawki swapowe."
 
 msgid "You will provide us with any information that we may reasonably require to fully satisfy the demand or the requirements of the applicable government authority, upon our request."
 msgstr "Na nasze wezwanie podasz nam wszelkie informacje, które w rozsądnym zakresie mogą być wymagane w celu sprostania wszelkim żądaniom odpowiednich instytucji rządowych."
 
 msgid "You will take all reasonable steps to comply with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident;"
 msgstr ""
+"Podejmiesz odpowiednie kroki, aby zapewnić przestrzeganie prawa, ordynacji, "
+"statusów, uchwał i wszelkich przepisów mających zastosowanie w odniesieniu "
+"do Ciebie bądź Twojej jurysdykcji;"
 
 msgid "You will use the margin trading services described in this Agreement in good faith and you will not use any software, algorithm, or any trading strategy to manipulate or take unfair advantage of the way our bid and offer prices are quoted. You shall observe the standard of behaviour reasonably expected of persons in your position and not take any step which would cause us to fail to observe the standard of behaviour reasonably expected of persons in our position."
 msgstr ""
@@ -8910,6 +8989,10 @@ msgstr "Twoje hasło i login do Prawdziwego konta są unikalne, dodatkowo hasła
 
 msgid "Your Real Account shall be funded by transferring funds from your Binary Options Real Account, subject to the availability and sufficiency of funds in your Binary Options Real Account. No fund transfers shall be made to any other account in the name of any third party."
 msgstr ""
+"Twoje Prawdziwe konto będzie zasilane poprzez przelewy środków z Twojego "
+"Prawdziwego konta do opcji binarnych w zależności od dostępności "
+"wystarczających środków na tym koncie. Żadne inne przelewy środków na "
+"jakiekolwiek inne konto należące do osoby trzeciej nie będą wykonywane."
 
 msgid "Your account has no Login/Logout activity."
 msgstr "Na Twoim koncie nie odnotowano żadnej aktywności związanej z logowaniem/wylogowywaniem."
@@ -8964,9 +9047,13 @@ msgstr "Twoim klientom z pewnością spodoba się platforma handlowa %1, gdyż o
 
 msgid "Your death, your incapacity, become of unsound mind or your inability to pay your debts as they fall due, or is bankrupt or insolvent, as defined under any bankruptcy or insolvency law applicable to you, if you are an individual;"
 msgstr ""
+"Twoja śmierć, utrata zdolności do czynności prawnych, choroba umysłowa lub "
+"niezdolność do spłaty swoich długów, gdy staną się wymagalne, bankructwo lub "
+"niewypłacalność w rozumieniu jakiegokolwiek prawa dot. upadłości i "
+"niewypłacalności, któremu podlegasz, będąc osobą fizyczną;"
 
 msgid "Your debts are not settled as, and when, they fall due;"
-msgstr ""
+msgstr "Twoje długi nie zostały uregulowane w terminie ich wymagalności;"
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
 msgstr ""
@@ -9087,6 +9174,8 @@ msgstr "przecinek"
 
 msgid "consolidating liquidity from several providers into a single stream of blended feed; and"
 msgstr ""
+"konsolidowanie płynności od kilku dostawców płynności w formie jednego "
+"źródła; oraz"
 
 msgid "d) The timeframe or duration of the contract as defined by your order execution."
 msgstr "d) Okres trwania kontraktu określony z zleceniu realizacji."
@@ -9126,6 +9215,9 @@ msgstr "iOS, Android"
 
 msgid "intelligently routing incoming orders to different types of execution modes based on configurations and algorithms established using best execution factors."
 msgstr ""
+"inteligentne przekierowywanie wpływających zleceń o różnym rodzaju metody "
+"realizacji w oparciu o konfiguracje i algorytmy ustanowione przy "
+"wykorzystaniu czynników najkorzystniejszej realizacji."
 
 msgid "is required. Current spread"
 msgstr "jest wymagany. Obecny spread"
