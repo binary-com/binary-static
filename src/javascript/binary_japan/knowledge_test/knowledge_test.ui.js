@@ -40,9 +40,14 @@ const KnowledgeTestUI = (() => {
 
     const createQuestionRow = (question_no, question, show_answer) => {
         const $question_row = $('<tr></tr>', { id: question_no, class: 'question' });
-        const $question_data = $('<td></td>').attr('data-balloon', localize('{JAPAN ONLY}TIP_[_1]', [question.id])).text(localize(question.question_localized));
-        const $question_link = $('<a></a>', { name: question.id });
-        $question_data.prepend($question_link);
+        const $question_data = $('<td></td>').text(localize(question.question_localized));
+        const $question_link = $('<a></a>', {
+            name          : question.id,
+            class         : 'no-underline',
+            'data-balloon': localize('{JAPAN ONLY}TIP_[_1]', [question.id]),
+        });
+        const $question_icon = $('<img>', { src: '/images/common/question_1.png' });
+        $question_data.append($question_link.append($question_icon));
 
         const true_false = createTrueFalseBox(question, show_answer);
 
