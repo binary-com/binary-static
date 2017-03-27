@@ -95,6 +95,9 @@ msgstr "%1 และโลโก้กระทิง/หมี นั้นเ�
 msgid "%1 continues to innovate and grow"
 msgstr "%1 เติบโตและสร้างสรรค์สิ่งใหม่ๆ อย่างต่อเนื่อง"
 
+msgid "%1 days %2 hours %3 minutes"
+msgstr ""
+
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
 msgstr "%1 ได้ฝากเงินจาก %2 ไปยังเลขที่บัญชี %3 เรียบร้อยแล้ว หมายเลขอ้างอิงธุรกรรม: %4"
 
@@ -402,8 +405,8 @@ msgstr "30-50 ล้านเยน"
 msgid "30-day limit on losses"
 msgstr "วงเงินของส่วนขาดทุนใน 30 วัน"
 
-msgid "30-day turnover limit "
-msgstr "วงเงินซื้อขาย 30 วัน "
+msgid "30-day turnover limit"
+msgstr "วงเงินซื้อขาย 30 วัน"
 
 msgid "4. Choose your Stake and Potential Return"
 msgstr "4. เลือกการวางเงินและผลกำไรที่ต้องการ"
@@ -950,6 +953,11 @@ msgstr "ผู้จัดการส่วนพันธมิตร"
 
 msgid "Affiliate Program"
 msgstr "โปรแกรมพันธมิตร"
+
+#, fuzzy
+#| msgid "Affiliate Manager"
+msgid "Affiliates Manager"
+msgstr "ผู้จัดการส่วนพันธมิตร"
 
 msgid "Affiliates Program"
 msgstr "โปรแกรมพันธมิตร"
@@ -1807,9 +1815,6 @@ msgstr "เสมียน"
 msgid "Click here to retry"
 msgstr "คลิกที่นี่เพื่อลองใหม่"
 
-msgid "Click the button below to download MetaTrader."
-msgstr "คลิกปุ่มด้านล่างเพื่อดาวน์โหลด MetaTrader"
-
 msgid "Client Money"
 msgstr "เงินของลูกค้า"
 
@@ -2447,14 +2452,13 @@ msgstr "บัญชีไม่เคลื่อนไหว และ บั�
 msgid "Down - Predict that the market will end lower than the average price"
 msgstr "Down - พยากรณ์ว่า ตลาดจะสิ้นสุด ต่ำกว่า ราคาเป้าหมาย"
 
-msgid "Download CSV"
+#, fuzzy
+#| msgid "Download CSV"
+msgid "Download"
 msgstr "ดาวน์โหลด CSV"
 
-msgid "Download MetaTrader for Windows"
-msgstr "ดาวน์โหลด MetaTrader สำหรับระบบปฏิบัติการ Windows"
-
-msgid "Download for MacOS"
-msgstr "ดาวน์โหลดสำหรับ MacOS"
+msgid "Download CSV"
+msgstr "ดาวน์โหลด CSV"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "ทำให้องค์กรเติบโตอย่างรวดเร็วและพัฒนาธุรกิจ เพื่อสนับสนุนเป้าหมายทางการขายและการตลาดขององค์กร"
@@ -2751,9 +2755,6 @@ msgstr "เวลาพักไม่เกิน 5 ปี"
 msgid "Exclude time cannot be less than 6 months."
 msgstr "เวลาพักไม่น้อยกว่า 6 เดือน"
 
-msgid "Exclude time must be after today."
-msgstr "เวลาพักต้องเริ่มพรุ่งนี้"
-
 msgid "Exclusion of Liability"
 msgstr "ไม่รวมความรับผิดในมูลหนี้"
 
@@ -2986,6 +2987,17 @@ msgstr "ปฏิบัติตามกฎและข้อตกลงเห
 
 msgid "Follow up on rejected deposits"
 msgstr "ติดตามการฝากเงินที่ถูกปฏิเสธ"
+
+#, fuzzy
+#| msgid "Browser"
+msgid "For Browser"
+msgstr "เบราเซอร์"
+
+msgid "For Desktop"
+msgstr ""
+
+msgid "For Mobile"
+msgstr ""
 
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "โปรดตรวจสอบอีเมล์ของท่านเพื่อรับโทเค่นในการยืนยันตัวตน และความปลอดภัย"
@@ -3497,9 +3509,6 @@ msgstr "หากท่านมีคุณสมบัติพื้นฐา
 
 msgid "If you need assistance feel free to contact our <a href=\"%1\">Customer Support</a>."
 msgstr "หากท่านต้องการความช่วยเหลือ โปรดติดต่อ <a href=\"%1\">แผนกบริการลูกค้า</a>ของเรา"
-
-msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
-msgstr "หากท่านใช้การดาวน์โหลด MetaTrader 5 โดยตรงจากเว็บไซต์ของ MetaTrader ก่อนหน้านี้ โปรดเลือก “%1” จากรายชื่อโบรกเกอร์"
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "หากท่านเลือก \"Asian Fall\" ท่านจะได้รับชำระเงินเมื่อ <strong>ช่วงราคาสุดท้าย</strong> มีค่า <strong>ต่ำ</strong> กว่า <strong>ค่าเฉลี่ย</strong> ของช่วงราคา"
@@ -4604,9 +4613,6 @@ msgstr "ต่อเชื่อมโดยตรงกับลูกค้า
 msgid "Links"
 msgstr "ลิงค์"
 
-msgid "Linux Instructions"
-msgstr "วิธีการใช้ลินุกซ์"
-
 msgid "Live chat:"
 msgstr "ไลฟ์แชต:"
 
@@ -4615,9 +4621,6 @@ msgstr "Lock Cashier"
 
 msgid "Log in"
 msgstr "เข้าสู่ระบบ"
-
-msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "เข้าสู่ระบบบัญชี MetaTrader โดยใช้เลขที่บัญชีของท่าน และรหัสผ่าน MetaTrader ของท่าน"
 
 msgid "Log out"
 msgstr "ออกจากระบบ"
@@ -5656,9 +5659,6 @@ msgstr "โปรดให้เราได้รับฟังทุกข้
 msgid "Please enter a number between %1."
 msgstr "โปรดป้อนตัวเลขระหว่าง %1"
 
-msgid "Please enter a number between 0 and %1"
-msgstr "โปรดป้อนตัวเลขระหว่าง 0 และ %1"
-
 msgid "Please enter a number."
 msgstr "โปรดป้อนตัวเลข"
 
@@ -5716,7 +5716,14 @@ msgstr "โปรดระบุ"
 msgid "Please select a payment agent"
 msgstr "โปรดระบุตัวแทนรับชำระเงิน"
 
-msgid "Please select a valid date"
+#, fuzzy
+#| msgid "Please select a valid date"
+msgid "Please select a valid date."
+msgstr "โปรดระบุวันที่ที่ถูกต้อง"
+
+#, fuzzy
+#| msgid "Please select a valid date"
+msgid "Please select a valid time."
 msgstr "โปรดระบุวันที่ที่ถูกต้อง"
 
 msgid "Please select a value"
@@ -6269,9 +6276,6 @@ msgstr ""
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "จัดทำรายงานการชำระเงินประจำวันและรายงานผู้มีพฤติการณ์ฉ้อโกง"
 
-msgid "Run the installation file and follow the instructions."
-msgstr "รันไฟล์เพื่อการติดตั้งและปฏิบัติตามคำแนะนำ"
-
 msgid "Russia"
 msgstr "รัสเซีย"
 
@@ -6448,6 +6452,11 @@ msgstr "สำหรับลูกค้าที่ได้รับผลต
 
 msgid "Should be a valid number"
 msgstr "ควรเป็นตัวเลขที่ถูกต้อง"
+
+#, fuzzy
+#| msgid "Buy price must be between %1 and %2."
+msgid "Should be between %1 and %2"
+msgstr "ราคาซื้อต้องมีค่าระหว่าง %1 และ %2"
 
 msgid "Should be less than %1"
 msgstr "ควรมีค่าน้อยกว่า %1"
@@ -7594,6 +7603,21 @@ msgstr "เวลา"
 msgid "Time is in the wrong format."
 msgstr "เวลาอยู่ในรูปแบบที่ไม่ถูกต้อง"
 
+#, fuzzy
+#| msgid "Expiry time cannot be in the past."
+msgid "Time out cannot be in the past."
+msgstr "เวลาที่หมดอายุไม่สามารถเป็นเวลาในอดีต"
+
+#, fuzzy
+#| msgid "Session duration limit cannot be more than 6 weeks."
+msgid "Time out cannot be more than 6 weeks."
+msgstr "รอบระยะเวลาการซื้อขายไม่สามารถมากกว่า 6 สัปดาห์"
+
+#, fuzzy
+#| msgid "Exclude time must be after today."
+msgid "Time out must be after today."
+msgstr "เวลาพักต้องเริ่มพรุ่งนี้"
+
 msgid "Time out until"
 msgstr "หมดเวลากระทั่ง"
 
@@ -7833,6 +7857,11 @@ msgstr "ทดลองใช้ ไบนารีออปชั่น"
 msgid "Try MetaTrader 5"
 msgstr "ทดลองใช้ MetaTrader"
 
+#, fuzzy
+#| msgid "Binary Next-Gen"
+msgid "Try Next-Gen"
+msgstr "ไบนารี เน็กซ์ เจน (Binary Next-Gen)"
+
 msgid "Try TradingView"
 msgstr "ทดลองใช้ TradingView"
 
@@ -8063,6 +8092,9 @@ msgstr "ดูวงเงินการซื้อขายและวงเ
 
 msgid "Virtual Account"
 msgstr "บัญชีทดลองใช้"
+
+msgid "Virtual money credit to account"
+msgstr "เครดิตเงินเสมือนไปยังบัญชี"
 
 msgid "Volatility Index Markets"
 msgstr "ตลาดดัชนีความผันผวน"
@@ -8365,7 +8397,9 @@ msgstr "เมื่อพวกเราดำเนินการสัญญ
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr ""
 
-msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
+#, fuzzy
+#| msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
+msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
 msgstr "เมื่อท่านเลือก \"Ok\" ท่านจะถูกพักจากระบบซื้อขายกระทั่งวันที่ที่ท่านระบุ"
 
 msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
@@ -9185,6 +9219,11 @@ msgstr "ตัวอักษร"
 
 msgid "login"
 msgstr "เข้าสู่ระบบ"
+
+#, fuzzy
+#| msgid "Logout"
+msgid "logout"
+msgstr "ออกจากระบบ"
 
 msgid "max: 100,000"
 msgstr "ค่าสูงสุด: 100,000"
@@ -10683,8 +10722,35 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 msgid "Account Limits"
 msgstr "วงเงินในบัญชี"
 
-msgid "Account Details"
-msgstr "รายละเอียดบัญชี"
+#~ msgid "30-day turnover limit "
+#~ msgstr "วงเงินซื้อขาย 30 วัน "
+
+#~ msgid "Click the button below to download MetaTrader."
+#~ msgstr "คลิกปุ่มด้านล่างเพื่อดาวน์โหลด MetaTrader"
+
+#~ msgid "Download MetaTrader for Windows"
+#~ msgstr "ดาวน์โหลด MetaTrader สำหรับระบบปฏิบัติการ Windows"
+
+#~ msgid "Download for MacOS"
+#~ msgstr "ดาวน์โหลดสำหรับ MacOS"
+
+#~ msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
+#~ msgstr "หากท่านใช้การดาวน์โหลด MetaTrader 5 โดยตรงจากเว็บไซต์ของ MetaTrader ก่อนหน้านี้ โปรดเลือก “%1” จากรายชื่อโบรกเกอร์"
+
+#~ msgid "Linux Instructions"
+#~ msgstr "วิธีการใช้ลินุกซ์"
+
+#~ msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
+#~ msgstr "เข้าสู่ระบบบัญชี MetaTrader โดยใช้เลขที่บัญชีของท่าน และรหัสผ่าน MetaTrader ของท่าน"
+
+#~ msgid "Please enter a number between 0 and %1"
+#~ msgstr "โปรดป้อนตัวเลขระหว่าง 0 และ %1"
+
+#~ msgid "Run the installation file and follow the instructions."
+#~ msgstr "รันไฟล์เพื่อการติดตั้งและปฏิบัติตามคำแนะนำ"
+
+#~ msgid "Account Details"
+#~ msgstr "รายละเอียดบัญชี"
 
 #~ msgid "Please enter a number greater than 0"
 #~ msgstr "โปรดป้อนตัวเลขมากกว่า 0"
@@ -11360,9 +11426,6 @@ msgstr "รายละเอียดบัญชี"
 #~ msgid "Your details have been updated."
 #~ msgstr "รายละเอียดของท่านได้รับการปรับปรุงเรียบร้อยแล้ว"
 
-#~ msgid "Logout"
-#~ msgstr "ออกจากระบบ"
-
 #~ msgid "not available"
 #~ msgstr "ไม่มีอยู่"
 
@@ -11449,9 +11512,6 @@ msgstr "รายละเอียดบัญชี"
 
 #~ msgid "Select Country"
 #~ msgstr "บันทึก ประเทศ"
-
-#~ msgid "Virtual money credit to account"
-#~ msgstr "เครดิตเงินเสมือนไปยังบัญชี"
 
 #~ msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
 #~ msgstr "มาดูว่าเราคิด และ ทำงานกันอย่างไร  อ่าน <a href='https://blog.binary.com/' target='_blank'>บล็อกของเรา</a> เพื่อศึกษาเรื่องราวและแนวคิดที่เป็นแรงบันดาลใจของเรา"
@@ -11954,9 +12014,6 @@ msgstr "รายละเอียดบัญชี"
 
 #~ msgid "(delayed)"
 #~ msgstr "(ดีเลย์)"
-
-#~ msgid "30-day turnover limit"
-#~ msgstr "วงเงินซื้อขาย 30 วัน"
 
 #~ msgid "7-Day limit on losses is currently set to <strong>%1 %2</strong>"
 #~ msgstr "วงเงิน 7 วัน ส่วนขาดทุนปัจจุบัน คือ <strong>%1 %2</strong>"
@@ -12466,9 +12523,6 @@ msgstr "รายละเอียดบัญชี"
 
 #~ msgid "Expiry time cannot be equal to start time."
 #~ msgstr "เวลาที่หมดอายุไม่สามารถเป็นเวลาเดียวกับเวลาเริ่มต้น"
-
-#~ msgid "Expiry time cannot be in the past."
-#~ msgstr "เวลาที่หมดอายุไม่สามารถเป็นเวลาในอดีต"
 
 #~ msgid "Exponential Moving Average"
 #~ msgstr "Exponential Moving Average"
@@ -15279,9 +15333,6 @@ msgstr "รายละเอียดบัญชี"
 #~| msgid "Qantas Airways Limited"
 #~ msgid "Qantas Airways"
 #~ msgstr "Qantas Airways"
-
-#~ msgid "Buy price must be between %1 and %2."
-#~ msgstr "ราคาซื้อต้องมีค่าระหว่าง %1 และ %2"
 
 #~ msgid "Wall Street Index"
 #~ msgstr "ดัชนีวอลล์สตรีท"
