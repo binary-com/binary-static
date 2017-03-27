@@ -1,9 +1,10 @@
 const showLoadingImage     = require('../../../../../base/utility').showLoadingImage;
 const showLocalTimeOnHover = require('../../../../../base/clock').showLocalTimeOnHover;
 const localize             = require('../../../../../base/localize').localize;
-const Button      = require('../../../../../common_functions/attach_dom/button').Button;
-const FlexTableUI = require('../../../../../common_functions/attach_dom/flextable').FlexTableUI;
-const ApplicationsData = require('./authorised_apps.data');
+const Button               = require('../../../../../common_functions/attach_dom/button').Button;
+const FlexTableUI          = require('../../../../../common_functions/attach_dom/flextable').FlexTableUI;
+const toTitleCase          = require('../../../../../common_functions/string_util').toTitleCase;
+const ApplicationsData     = require('./authorised_apps.data');
 
 const ApplicationsUI = (() => {
     'use strict';
@@ -18,9 +19,10 @@ const ApplicationsUI = (() => {
 
     const formatApp = (app) => {
         const last_used = app.last_used ? app.last_used.format('YYYY-MM-DD HH:mm:ss') : localize('Never');
+        const scopes = app.scopes.map(scope => localize(toTitleCase(scope))).join(', ');
         return [
             app.name,
-            app.scopes.join(', '),
+            scopes,
             last_used,
             '', // for the "Revoke App" button
         ];
