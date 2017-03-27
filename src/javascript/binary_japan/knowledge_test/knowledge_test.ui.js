@@ -40,7 +40,8 @@ const KnowledgeTestUI = (() => {
 
     const createQuestionRow = (question_no, question, show_answer) => {
         const $question_row = $('<tr></tr>', { id: question_no, class: 'question' });
-        const $question_data = $('<td></td>').text(localize(question.question_localized));
+        const attr = '{JAPAN ONLY}TIP_' + question.id;
+        const $question_data = $('<td></td>').attr('data-balloon', attr).text(localize(question.question_localized));
         const $question_link = $('<a></a>', { name: question.id });
         $question_data.prepend($question_link);
 
