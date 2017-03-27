@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-03-25 09:08+0000\n"
 "Last-Translator: Pham Minh Hieu <hphamv7@gmail.com>\n"
-"Language-Team: Vietnamese "
-"<https://hosted.weblate.org/projects/binary/static/vi/>\n"
+"Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -941,6 +940,11 @@ msgstr "Quản lý Chi nhánh"
 
 msgid "Affiliate Program"
 msgstr "Chương trình Liên kết"
+
+#, fuzzy
+#| msgid "Affiliate Manager"
+msgid "Affiliates Manager"
+msgstr "Quản lý Chi nhánh"
 
 msgid "Affiliates Program"
 msgstr "Các chương trình Liên kết"
@@ -7779,6 +7783,11 @@ msgstr "Thử bot Binary"
 msgid "Try MetaTrader 5"
 msgstr "Thử MetaTrader 5"
 
+#, fuzzy
+#| msgid "Binary Next-Gen"
+msgid "Try Next-Gen"
+msgstr "Thế hệ mới Binary"
+
 msgid "Try TradingView"
 msgstr "Thử TradingView"
 
@@ -8009,6 +8018,9 @@ msgstr "Xem Giới hạn Giao dich và giới hạn Rút tiền."
 
 msgid "Virtual Account"
 msgstr "Tài khoản Ảo"
+
+msgid "Virtual money credit to account"
+msgstr "Tín dụng tiền ảo cho tài khoản"
 
 msgid "Volatility Index Markets"
 msgstr "Chỉ số Biến động của Thị trường"
@@ -8308,9 +8320,7 @@ msgid "When you are satisfied with the price that you receive, execute your trad
 msgstr "Khi bạn đang hài lòng với mức giá mà bạn nhận được, thực hiện giao dịch của bạn ngay lập tức. Với nền tảng duy nhất của chúng tôi, bạn sẽ không phải tranh chấp với các thị trường trượt và hổng. Và quan trọng nhất, không có phí ẩn. Bạn cũng có thể bán lại bất kỳ giao dịch dài hạn tại bất kỳ thời điểm nào trước khi hết hạn để bảo vệ lợi nhuận bạn kiếm được hoặc giảm thiểu thiệt hại của bạn."
 
 msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
-msgstr ""
-"Khi bạn nhấp vào \"OK\" bạn sẽ bị loại bỏ khỏi giao dịch trên "
-"trang web tới ngày được chọn."
+msgstr "Khi bạn nhấp vào \"OK\" bạn sẽ bị loại bỏ khỏi giao dịch trên trang web tới ngày được chọn."
 
 msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
 msgstr "Khi được chấp thuận là một chi nhánh, bạn sẽ được cung cấp những thứ cần thiết để bắt đầu ngay."
@@ -9126,6 +9136,11 @@ msgstr "các ký tự"
 
 msgid "login"
 msgstr "đăng nhập"
+
+#, fuzzy
+#| msgid "Logout"
+msgid "logout"
+msgstr "Đăng xuất"
 
 msgid "max: 100,000"
 msgstr "tối đa: 100.000"
@@ -11369,9 +11384,6 @@ msgstr "Giới hạn Tài khoản"
 #~ msgid "Your details have been updated."
 #~ msgstr "Thông tin chi tiết của bạn đã được cập nhật."
 
-#~ msgid "Logout"
-#~ msgstr "Đăng xuất"
-
 #~ msgid "not available"
 #~ msgstr "không có sẵn"
 
@@ -11470,9 +11482,6 @@ msgstr "Giới hạn Tài khoản"
 
 #~ msgid "Select Country"
 #~ msgstr "Chọn Quốc gia"
-
-#~ msgid "Virtual money credit to account"
-#~ msgstr "Tín dụng tiền ảo cho tài khoản"
 
 #~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
 #~ msgstr "Thắng từ 1- tới 1000% từ số tiền vốn của bạn nếu bạn đúng. Hãy làm tăng lợi nhuận bằng cách chọn "
