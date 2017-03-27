@@ -1,13 +1,20 @@
 <div class="center-text">
     [% INCLUDE global/loading.html.tt %]
 </div>
-<div class="mb-trading-wrapper invisible">
-    <div id="mb_trading">
+<div id="mb-trading-wrapper" class="gr-centered invisible">
+    <div class="gr-row">
+    <div class="gr-7">
+        <p class="error-msg" id="chart-error"></p>
+        <div id="trade_live_chart">
+            <iframe src="" width="100%" height="630" id="chart_frame" style="overflow-y: hidden;" scrolling="no"></iframe>
+        </div>
+    </div>
+    <div id="mb_trading" class="gr-5">
         <div id="notifications_wrapper"></div>
-        <section class="japan-form gr-row">
-            <div class="gr-6 gr-12-m gr-12-p gr-no-gutter-right">
+        <section class="trade-form gr-row">
+            <div class="gr-6 gr-12-m gr-12-p gr-no-gutter">
                 <div class="gr-row">
-                    <div class="gr-6 gr-12-m gr-no-gutter-left padding-right-five">
+                    <div class="gr-6 gr-12-m gr-no-gutter padding-right-five">
                         <div class="select-box">
                             <div class="padding-10">
                                 <div class="select-heading">[% l('FX Rate') %]</div>
@@ -15,7 +22,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="gr-6 gr-12-m gr-no-gutter-left padding-right-five">
+                    <div class="gr-6 gr-12-m gr-no-gutter padding-right-five">
                         <div class="select-box">
                             <div class="padding-10">
                                 <div class="select-heading">[% l('Option Type') %]</div>
@@ -25,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="gr-6 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m gr-no-gutter-right-p gr-no-gutter-right-m">
+            <div class="gr-6 gr-12-m gr-12-p gr-no-gutter gr-gutter-left-p gr-gutter-left-m gr-no-gutter-right-p gr-no-gutter-right-m">
                 <div class="gr-row">
                     <div class="gr-6 gr-12-m gr-no-gutter-left padding-right-five">
                         <div class="select-box">
@@ -52,7 +59,7 @@
                     </div>
                 </div>
             </div>
-            <div class="gr-12">
+            <div class="gr-12 invisible">
                 <div class="gr-row space-between">
                     <div class="gr-grow gr-12-m">
                         <div class="gr-row spot">
@@ -76,43 +83,42 @@
             </div>
         </section>
 
-        <div class="japan-table gr-row">
+        <div class="price-table gr-row">
             <div id="disable-overlay" class="invisible"></div>
-            <div class="prices-wrapper gr-6 gr-12-m gr-12-p padding-right-five">
-                <div class="descr-wrapper">
-                    <div class="fill-bg-color row flex-box cols">
-                        <h1 class="contract-type"></h1>
-                        <div class="descr"></div>
+            <div class="prices-wrapper gr-padding-10 gr-12">
+                <div class="gr-row fill-bg-color">
+                    <div class="gr-2"></div>
+                    <div class="gr-5 descr-wrapper">
+                        <h1 class="contract-type" data-balloon-length="large"></h1>
+                    </div>
+                    <div class="gr-5 descr-wrapper">
+                        <h1 class="contract-type negative-color" data-balloon-length="large"></h1>
                     </div>
                 </div>
-                <div class="gr-12">
-                    <div class="gr-row heading">
-                        <div class="gr-4 barrier">[% l('Barrier') %]</div>
-                        <div class="gr-4 buy-price">[% l('Buy Price') %]</div>
-                        <div class="gr-4 sell-price">[% l('Sell Price') %]</div>
-                    </div>
-                    <div class="price-rows"></div>
+                <div class="gr-row heading">
+                    <div class="gr-2 barrier">[% l('Barrier') %]</div>
+                    <div class="gr-3 buy-price">[% l('Buy Price') %]</div>
+                    <div class="gr-2 sell-price">[% l('Sell Price') %]</div>
+                    <div class="gr-3 buy-price">[% l('Buy Price') %]</div>
+                    <div class="gr-2 sell-price">[% l('Sell Price') %]</div>
                 </div>
-            </div>
-            <div class="prices-wrapper gr-6 gr-12-m gr-12-p gr-no-gutter-left padding-right-ten gr-gutter-left-p gr-gutter-left-m">
-                <div class="descr-wrapper">
-                    <div class="fill-bg-color row flex-box cols">
-                        <h1 class="contract-type negative-color"></h1>
-                        <div class="descr"></div>
-                    </div>
-                </div>
-                <div class="gr-12">
-                    <div class="gr-row heading">
-                        <div class="gr-4 barrier">[% l('Barrier') %]</div>
-                        <div class="gr-4 buy-price">[% l('Buy Price') %]</div>
-                        <div class="gr-4 sell-price">[% l('Sell Price') %]</div>
-                    </div>
-                    <div class="price-rows"></div>
-                </div>
+                <div class="price-rows"></div>
             </div>
             <div id="loading-overlay" class="invisible"></div>
         </div>
     </div>
-    [% INCLUDE bet/analysis.html.tt %]
+    </div>
+
+    [% INCLUDE bet/analysis.html.tt no_graph=1 %]
     <div id="open_positions_container">[% INCLUDE user/portfoliows.html.tt %]</div>
+
+    <div id="templates" class="invisible">
+        <div class="gr-row price-row">
+            <div class="gr-2 barrier"></div>
+            <div class="gr-3 buy-price"></div>
+            <div class="gr-2 sell-price"></div>
+            <div class="gr-3 buy-price"></div>
+            <div class="gr-2 sell-price"></div>
+        </div>
+    </div>
 </div>

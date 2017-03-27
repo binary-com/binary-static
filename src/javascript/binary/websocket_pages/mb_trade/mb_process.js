@@ -9,6 +9,7 @@ const japanese_client           = require('../../common_functions/country_base')
 const displayUnderlyings        = require('../trade/common').displayUnderlyings;
 const generateUnderlyingOptions = require('../trade/common').generateUnderlyingOptions;
 const showFormOverlay           = require('../trade/common').showFormOverlay;
+const showHighchart             = require('../trade/common').showHighchart;
 const processForgetTicks        = require('../trade/process').processForgetTicks;
 const localize                  = require('../../base/localize').localize;
 const Client                    = require('../../base/client');
@@ -39,6 +40,8 @@ const MBProcess = (function() {
         if (update_page && (!symbol || !symbols_list[symbol])) {
             symbol = undefined;
             MBDefaults.remove('underlying');
+        } else {
+            showHighchart();
         }
         // check if all symbols are inactive
         let is_market_closed = true;
@@ -80,13 +83,13 @@ const MBProcess = (function() {
     };
 
     const handleMarketClosed = function() {
-        $('.japan-form, .japan-table, #trading_bottom_content').addClass('invisible');
+        $('.trade-form, .price-table, #trading_bottom_content').addClass('invisible');
         MBNotifications.show({ text: localize('Market is closed. Please try again later.'), uid: 'MARKET_CLOSED' });
         symbols_timeout = setTimeout(function() { MBSymbols.getSymbols(1); }, 30000);
     };
 
     const handleMarketOpen = function() {
-        $('.japan-form, .japan-table, #trading_bottom_content').removeClass('invisible');
+        $('.trade-form, .price-table, #trading_bottom_content').removeClass('invisible');
         MBNotifications.hide('MARKET_CLOSED');
     };
 

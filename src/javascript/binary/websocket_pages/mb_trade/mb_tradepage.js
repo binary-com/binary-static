@@ -12,7 +12,7 @@ const MBProcess           = require('./mb_process').MBProcess;
 const MBNotifications     = require('./mb_notifications').MBNotifications;
 const MBPrice             = require('./mb_price').MBPrice;
 const chartFrameCleanup   = require('../trade/common').chartFrameCleanup;
-const localize = require('../../base/localize').localize;
+const localize            = require('../../base/localize').localize;
 
 const MBTradePage = (function() {
     let events_initialized = 0;

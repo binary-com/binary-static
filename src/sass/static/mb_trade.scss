@@ -1,312 +1,311 @@
-#mb_trading {
-    font-family: $FONT-STACK;
-    font-size: 14px;
-    .flex-box {
-        display: flex;
-        &.rows {
-            flex-direction: column;
-        }
-        &.cols {
-            flex-direction: row;
-        }
-        @media screen and (max-width: 620px) {
-            &.japan-table {
+#mb-trading-wrapper {
+    max-width: 1200px;
+    #mb_trading {
+        font-family: $FONT-STACK;
+        font-size: 14px;
+        .flex-box {
+            display: flex;
+            &.rows {
                 flex-direction: column;
             }
-        }
-    }
-    .japan-table {
-        align-items: stretch;
-        position: relative;
-        #disable-overlay {
-            position: absolute;
-            top: 84px;
-            left: 10px;
-            z-index: 1;
-            width: calc(100% - 20px);
-            height: calc(100% - 84px);
-            background-color: rgba(242, 242, 242, 0.5);
-        }
-        #loading-overlay {
-            width: 100%;
-            background: $COLOR_WHITE url('../images/common/hourglass_1.gif') center 20px no-repeat;
-        }
-    }
-    .prices-wrapper {
-        .price-row, .heading {
-            .buy-price, .sell-price, .barrier {
-                flex-grow: 2;
-                white-space: nowrap;
-                line-height: 35px;
-                min-height: 35px;
-                padding: 3px 0;
-                text-align: center;
+            &.cols {
+                flex-direction: row;
+            }
+            @media screen and (max-width: 620px) {
+                &.price-table {
+                    flex-direction: column;
+                }
             }
         }
-        .heading .sell-price {
-            padding-right: 20px;
-        }
-        .price-row:nth-child(odd) {
-            background: $COLOR_LIGHT_GRAY;
-        }
-        &:nth-child(odd) .price-rows .price-button {
-            background: $COLOR_RED;
-        }
-    }
-    .base-value {
-        font-size: 9px;
-    }
-    .dynamics {
-        display: inline-block;
-        width: 10px;
-        height: 15px;
-        margin-right: 5px;
-        background-repeat: no-repeat;
-        vertical-align: middle;
-    }
-    .price-wrapper {
-        .dynamics {
-            &.up {
-                background-image: svg-icon('up', $COLOR_BLACK);
+        .price-table {
+            align-items: stretch;
+            position: relative;
+            #disable-overlay {
+                position: absolute;
+                top: 84px;
+                left: 10px;
+                z-index: 1;
+                width: calc(100% - 20px);
+                height: calc(100% - 84px);
+                background-color: rgba(242, 242, 242, 0.5);
             }
-            &.down {
-                background-image: svg-icon('down', $COLOR_BLACK);
+            #loading-overlay {
+                width: 100%;
+                background: $COLOR_WHITE url('../images/common/hourglass_1.gif') center 20px no-repeat;
             }
         }
-        &.inactive .dynamics {
-            &.up {
-                background-image: svg-icon('up', $COLOR_GRAY);
+        .prices-wrapper {
+            .price-row, .heading {
+                .buy-price, .sell-price, .barrier {
+                    flex-grow: 2;
+                    white-space: nowrap;
+                    line-height: 35px;
+                    min-height: 35px;
+                    padding: 3px 0;
+                    text-align: center;
+                }
             }
-            &.down {
-                background-image: svg-icon('down', $COLOR_GRAY);
+            .price-row .buy-price:nth-child(4) .price-button {
+                background: $COLOR_RED;
+            }
+            .heading .sell-price {
+                padding-right: 20px;
+            }
+            .price-row:nth-child(odd) {
+                background: $COLOR_LIGHT_GRAY;
             }
         }
         .base-value {
-            display: inline-block;
-            margin-left: 5px;
+            font-size: 9px;
         }
-    }
-    .price-button {
-        width: 120px;
-        color: $COLOR_WHITE;
-        text-align: center;
-        line-height: 100%;
-        background: $COLOR_LIGHT_BLUE;
-        border-radius: 3px;
-        padding: 10px 0;
-        cursor: pointer;
-        font-size: 14px;
-        border: 0;
-        min-height: 34px;
-        position: relative;
-        .value-wrapper {
-            margin-left: -15px;
+        .dynamics {
+            display: inline-block;
+            width: 10px;
+            height: 15px;
+            margin-right: 5px;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+        }
+        .price-wrapper {
             .dynamics {
                 &.up {
-                    background-image: svg-icon('up', $COLOR_WHITE);
+                    background-image: svg-icon('up', $COLOR_BLACK);
                 }
                 &.down {
-                    background-image: svg-icon('down', $COLOR_WHITE);
+                    background-image: svg-icon('down', $COLOR_BLACK);
                 }
             }
-        }
-        .base-value {
-            position: absolute;
-            bottom: 1px;
-            right: 3px;
-        }
-        &:hover {
-            opacity: 0.8;
-        }
-    }
-    .inactive {
-        color: $COLOR_GRAY;
-        &.price-button, &:hover {
-            color: $COLOR_WHITE;
-            background: $COLOR_GRAY !important;
-            opacity: 1;
-            cursor: default;
-            overflow: visible;
-        }
-    }
-    .heading {
-        font-weight: bold;
-    }
-    .descr-wrapper {
-        & > div {
-            min-height: 64px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-        .descr {
-            padding: 0 16px 0 0;
-            font-size: 14px;
-            max-width: 420px;
-            line-height: 1.4em;
-        }
-    }
-    .contract-type {
-        padding: 45px 16px 0;
-        margin-bottom: 0;
-        background-repeat: no-repeat;
-        background-position: top center;
-        font-size: 18px;
-        text-align: center;
-        align-self: flex-start;
-        white-space: nowrap;
-    }
-    .select {
-        margin-right: 10px;
-        margin-bottom: 10px;
-        height: 30px;
-        line-height: 30px;
-    }
-    #spot-dyn {
-        &.down {
-            background-image: svg-icon('down', $COLOR_LIGHT_BLUE);
-        }
-        &.up {
-            background-image: svg-icon('up', $COLOR_RED);
-        }
-        &.still {
-            background-image: svg-icon('circle', $COLOR_GRAY_SHADE);
-        }
-    }
-    .padding-10 {
-        padding: 10px 10px 0;
-    }
-    .padding-right-five {
-        padding-right: 5px;
-    }
-    .padding-right-ten {
-        padding-right: 10px;
-    }
-    .no-padding-right {
-        padding-right: 0;
-    }
-    .select-box {
-        float: left;
-        background: $COLOR_LIGHT_GRAY;
-        border-radius: 3px;
-        width: 100%;
-        .select, .payout-select {
-            width: 100%;
-            margin-top: 5px;
-            padding: 2px 3px;
-            border: 1px solid $COLOR_LIGHT_GRAY;
-            background: $COLOR_WHITE;
-            border-radius: 3px;
-            &:focus {
-                outline: none;
+            &.inactive .dynamics {
+                &.up {
+                    background-image: svg-icon('up', $COLOR_GRAY);
+                }
+                &.down {
+                    background-image: svg-icon('down', $COLOR_GRAY);
+                }
             }
-        }
-        .payout-input {
-            position: relative;
-            white-space: nowrap;
-            .hint {
-                padding: 4px;
-                padding-right: 0;
+            .base-value {
+                display: inline-block;
                 margin-left: 5px;
-                line-height: 16px;
-            }
-            select#currency {
-                margin: 6px 0;
-                width: 50%;
             }
         }
-        .payout-select {
-            display: inline;
-            height: 24px;
-            line-height: 24px;
-            text-align: right;
-            margin: 6px 0 9px;
+        .price-button {
+            width: 100px;
+            color: $COLOR_WHITE;
+            text-align: center;
+            line-height: 100%;
+            background: $COLOR_LIGHT_BLUE;
+            border-radius: 3px;
+            padding: 10px 0;
+            cursor: pointer;
+            font-size: 14px;
+            border: 0;
+            min-height: 34px;
+            position: relative;
+            .value-wrapper {
+                margin-left: -15px;
+                .dynamics {
+                    &.up {
+                        background-image: svg-icon('up', $COLOR_WHITE);
+                    }
+                    &.down {
+                        background-image: svg-icon('down', $COLOR_WHITE);
+                    }
+                }
+            }
+            .base-value {
+                position: absolute;
+                bottom: 1px;
+                right: 3px;
+            }
+            &:hover {
+                opacity: 0.8;
+            }
         }
-        span + #payout {
-            width: 30px;
+        .inactive {
+            color: $COLOR_GRAY;
+            &.price-button, &:hover {
+                color: $COLOR_WHITE;
+                background: $COLOR_GRAY !important;
+                opacity: 1;
+                cursor: default;
+                overflow: visible;
+            }
         }
-        select + #payout {
-            width: 45%;
+        .heading {
+            font-weight: bold;
         }
-        .payout-mult {
-            font-size: 15px;
+        .descr-wrapper {
+            padding: 10px;
+            .contract-type {
+                padding-left: 45px;
+                margin-bottom: 0;
+                background-repeat: no-repeat;
+                background-position: left;
+                font-size: 18px;
+                align-self: flex-start;
+                white-space: nowrap;
+                line-height: 36px;
+                border-bottom: none;
+            }
+            .descr {
+                padding: 0 16px 0 0;
+                font-size: 14px;
+                max-width: 420px;
+                line-height: 1.4em;
+            }
         }
-    }
-    .float-left {
-        float: left;
-    }
-    .space-between {
-        justify-content: space-between;
-        margin: 8px 0;
-        .gr-grow {
-            padding: 0;
-        }
-        .gr-adapt {
-            padding: 0 0 0 10px;
-        }
-    }
-    .spot div {
-        white-space: nowrap;
-        display: block;
-        &.spot-value {
+        .select {
+            margin-right: 10px;
+            margin-bottom: 10px;
+            height: 30px;
             line-height: 30px;
-            * {
-                vertical-align: middle;
+        }
+        #spot-dyn {
+            &.down {
+                background-image: svg-icon('down', $COLOR_LIGHT_BLUE);
+            }
+            &.up {
+                background-image: svg-icon('up', $COLOR_RED);
+            }
+            &.still {
+                background-image: svg-icon('circle', $COLOR_GRAY_SHADE);
             }
         }
-        #trading_worm_chart {
-            display: inline-block;
-            margin-top: 3px;
+        .padding-10 {
+            padding: 10px 10px 0;
         }
-    }
-    .countdown-timer {
-        padding: 5px 0 5px 5px;
-        border-radius: 3px;
-        white-space: nowrap;
-        line-height: 22px;
-        &.alert {
-            background: rgba(251, 228, 215, 0.7);
+        .padding-right-five {
             padding-right: 5px;
-            margin-right: 0;
         }
-    }
-    @media screen and (max-width: 768px) {
-        .gr-12-p {
-            padding-bottom: 10px;
-        }
-        .padding-right-five, .no-padding-right {
+        .padding-right-ten {
             padding-right: 10px;
         }
-    }
-    @media screen and (max-width: 480px) {
-        .japan-form .gr-row > div:first-child {
-            padding-bottom: 10px;
+        .no-padding-right {
+            padding-right: 0;
         }
-        .japan-table .price-row {
-            .barrier, .price-button .value-wrapper, .sell-price {
-                font-size: 0.9em;
+        .select-box {
+            float: left;
+            background: $COLOR_LIGHT_GRAY;
+            border-radius: 3px;
+            width: 100%;
+            .select, .payout-select {
+                width: 100%;
+                margin-top: 5px;
+                padding: 2px 3px;
+                border: 1px solid $COLOR_LIGHT_GRAY;
+                background: $COLOR_WHITE;
+                border-radius: 3px;
+                &:focus {
+                    outline: none;
+                }
             }
-            .price-button {
-                width: 80%;
-                margin-left: 15px;
-                .base-value {
-                    bottom: 0;
+            .payout-input {
+                position: relative;
+                white-space: nowrap;
+                .hint {
+                    padding: 4px;
+                    padding-right: 0;
+                    margin-left: 5px;
+                    line-height: 16px;
+                }
+                select#currency {
+                    margin: 6px 0;
+                    width: 50%;
+                }
+            }
+            .payout-select {
+                display: inline;
+                height: 24px;
+                line-height: 24px;
+                text-align: right;
+                margin: 6px 0 9px;
+            }
+            span + #payout {
+                width: 30px;
+            }
+            select + #payout {
+                width: 45%;
+            }
+            .payout-mult {
+                font-size: 15px;
+            }
+        }
+        .float-left {
+            float: left;
+        }
+        .space-between {
+            justify-content: space-between;
+            margin: 8px 0;
+            .gr-grow {
+                padding: 0;
+            }
+            .gr-adapt {
+                padding: 0 0 0 10px;
+            }
+        }
+        .spot div {
+            white-space: nowrap;
+            display: block;
+            &.spot-value {
+                line-height: 30px;
+                * {
+                    vertical-align: middle;
+                }
+            }
+            #trading_worm_chart {
+                display: inline-block;
+                margin-top: 3px;
+            }
+        }
+        .countdown-timer {
+            padding: 5px 0 5px 5px;
+            border-radius: 3px;
+            white-space: nowrap;
+            line-height: 22px;
+            &.alert {
+                background: rgba(251, 228, 215, 0.7);
+                padding-right: 5px;
+                margin-right: 0;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .gr-12-p {
+                padding-bottom: 10px;
+            }
+            .padding-right-five, .no-padding-right {
+                padding-right: 10px;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .trade-form .gr-row > div:first-child {
+                padding-bottom: 10px;
+            }
+            .price-table .price-row {
+                .barrier, .price-button .value-wrapper, .sell-price {
+                    font-size: 0.9em;
+                }
+                .price-button {
+                    width: 80%;
+                    margin-left: 15px;
+                    .base-value {
+                        bottom: 0;
+                    }
                 }
             }
         }
     }
-}
-
-.mb-trading-wrapper #trading_bottom_content {
-    #tab_portfolio-content {
-        overflow-x: auto;
-    }
-    #tab_explanation-content #winning_higherlower {
-        display: flex;
-        flex-direction: column;
-        p {
-            margin-top: 0;
-            &:first-child {
-                order: 2;
+    #trading_bottom_content {
+        #tab_portfolio-content {
+            overflow-x: auto;
+        }
+        #tab_explanation-content #winning_higherlower {
+            display: flex;
+            flex-direction: column;
+            p {
+                margin-top: 0;
+                &:first-child {
+                    order: 2;
+                }
             }
         }
     }

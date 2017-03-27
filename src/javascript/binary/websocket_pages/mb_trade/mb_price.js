@@ -1,5 +1,4 @@
 const MBContract         = require('./mb_contract').MBContract;
-const MBDefaults         = require('./mb_defaults').MBDefaults;
 const MBNotifications    = require('./mb_notifications').MBNotifications;
 const objectNotEmpty     = require('../../base/utility').objectNotEmpty;
 const getPropertyValue   = require('../../base/utility').getPropertyValue;
@@ -7,7 +6,6 @@ const localize           = require('../../base/localize').localize;
 const Client             = require('../../base/client');
 const japanese_client    = require('../../common_functions/country_base').japanese_client;
 const addComma           = require('../../common_functions/string_util').addComma;
-const elementInnerHtml   = require('../../common_functions/common_functions').elementInnerHtml;
 
 /*
  * Price object handles all the functions we need to display prices
@@ -22,6 +20,8 @@ const MBPrice = (function() {
     'use strict';
 
     const price_selector = '.prices-wrapper .price-rows';
+    const is_japan       = japanese_client();
+
     let prices         = {},
         contract_types = {},
         barriers       = [],
@@ -29,7 +29,8 @@ const MBPrice = (function() {
         res_count      = 0,
         is_displayed   = false,
         is_unwelcome   = false,
-        $tables;
+        $rows          = {},
+        $table;
 
     const addPriceObj = function(req) {
         const barrier = makeBarrier(req);
@@ -64,20 +65,27 @@ const MBPrice = (function() {
         // populate table if all proposals received
         if (!is_displayed && res_count === Object.keys(prices).length * 2) {
             populateTable();
-        } else {
+        } else if ($rows[barrier]) {
             updatePrice(prices[barrier][contract_type]);
         }
     };
 
     const populateTable = function() {
-        if (!$tables) {
-            $tables = $(price_selector);
+        if (!$table) {
+            $table = $(price_selector);
         }
         if (!barriers.length) {
             barriers = Object.keys(prices).sort(function(a, b) {
                 return +b.split('_')[0] - (+a.split('_')[0]);
             });
         }
+
+        const $price_row = $('#templates .price-row');
+        barriers.forEach((barrier) => {
+            $rows[barrier] = $price_row.clone().attr('data-barrier', barrier);
+            $rows[barrier].find('.barrier').html(barrier.split('_').join('<br />'));
+            $table.append($rows[barrier]);
+        });
 
         BinarySocket.wait('get_account_status').then((response) => {
             is_unwelcome = /unwelcome/.test(response.get_account_status.status);
@@ -92,8 +100,8 @@ const MBPrice = (function() {
 
         barriers.forEach(function(barrier) {
             Object.keys(contract_types).forEach(function(contract_type) {
-                $($tables[+contract_types[contract_type].order])
-                    .append(makePriceRow(getValues(prices[barrier][contract_type])));
+                $($table[+contract_types[contract_type].order])
+                    .append(updatePriceRow(getValues(prices[barrier][contract_type])));
             });
         });
 
@@ -103,19 +111,11 @@ const MBPrice = (function() {
     };
 
     const updatePrice = function(proposal) {
-        const barrier    = makeBarrier(proposal.echo_req);
-        const price_rows = document.querySelectorAll(price_selector + ' div[data-barrier="' + barrier + '"]');
+        const barrier = makeBarrier(proposal.echo_req);
+        const contract_type_opp = contract_types[proposal.echo_req.contract_type].opposite;
 
-        if (!price_rows.length) return;
-
-        const contract_type     = proposal.echo_req.contract_type;
-        const contract_info     = contract_types[contract_type];
-        const contract_info_opp = contract_types[contract_info.opposite];
-        const values     = getValues(proposal);
-        const values_opp = getValues(prices[barrier][contract_info.opposite]);
-
-        elementInnerHtml(price_rows[+contract_info.order],     makePriceRow(values,     true));
-        elementInnerHtml(price_rows[+contract_info_opp.order], makePriceRow(values_opp, true));
+        updatePriceRow(getValues(proposal));
+        updatePriceRow(getValues(prices[barrier][contract_type_opp]));
     };
 
     const getValues = function(proposal) {
@@ -124,6 +124,7 @@ const MBPrice = (function() {
             contract_type = proposal.echo_req.contract_type,
             proposal_opp  = prices[barrier][contract_types[contract_type].opposite];
         return {
+            payout             : payout / 1000,
             contract_type      : contract_type,
             barrier            : barrier,
             is_active          : !proposal.error && proposal.proposal.ask_price && !is_unwelcome,
@@ -145,30 +146,26 @@ const MBPrice = (function() {
         return current > prev ? 'up' : current < prev ? 'down' : '';
     };
 
-    const makePriceRow = function(values, is_update) {
-        const payout   = MBDefaults.get('payout'),
-            is_japan = japanese_client();
-        return (is_update ? '' : '<div data-barrier="' + values.barrier + '" class="gr-row price-row">') +
-                '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
-                '<div class="gr-4 buy-price">' +
-                    '<button class="price-button' + (values.is_active ? '' : ' inactive') + '"' +
-                        (values.is_active ? ' onclick="return HandleClick(\'MBPrice\', \'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
-                        (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' +
-                            '<span class="value-wrapper">' +
-                                '<span class="dynamics ' + (values.ask_price_movement || '') + '"></span>' +
-                                formatPrice(values.ask_price) +
-                            '</span>' +
-                            (is_japan ? '<span class="base-value">(' + formatPrice(values.ask_price / payout) + ')</span>' : '') +
-                    '</button>' +
-                '</div>' +
-                '<div class="gr-4 sell-price">' +
-                    '<span class="price-wrapper' + (!values.sell_price ? ' inactive' : '') + '">' +
-                        '<span class="dynamics ' + (values.sell_price_movement || '') + '"></span>' +
-                        formatPrice(values.sell_price) +
-                        (is_japan ? '<span class="base-value">(' + formatPrice(values.sell_price / payout) + ')</span>' : '') +
-                    '</span>' +
-                '</div>' +
-            (is_update ? '' : '</div>');
+    const updatePriceRow = function(values) {
+        const $buy = $('<button class="price-button' + (values.is_active ? '' : ' inactive') + '"' +
+            (values.is_active ? ' onclick="return HandleClick(\'MBPrice\', \'' + values.barrier + '\', \'' + values.contract_type + '\')"' : '') +
+            (values.message ? ' data-balloon="' + values.message + '"' : '') + '>' +
+                '<span class="value-wrapper">' +
+                    '<span class="dynamics ' + (values.ask_price_movement || '') + '"></span>' +
+                    formatPrice(values.ask_price) +
+                '</span>' +
+                (is_japan ? '<span class="base-value">(' + formatPrice(values.ask_price / values.payout) + ')</span>' : '') +
+            '</button>');
+        const $sell = '<span class="price-wrapper' + (!values.sell_price ? ' inactive' : '') + '">' +
+                '<span class="dynamics ' + (values.sell_price_movement || '') + '"></span>' +
+                formatPrice(values.sell_price) +
+                (is_japan ? '<span class="base-value">(' + formatPrice(values.sell_price / values.payout) + ')</span>' : '') +
+            '</span>';
+
+        const $row = $rows[values.barrier];
+        const order = contract_types[values.contract_type].order;
+        $row.find(`.buy-price:eq(${order})`).html($buy);
+        $row.find(`.sell-price:eq(${order})`).html($sell);
     };
 
     const processBuy = function(barrier, contract_type) {
@@ -191,6 +188,7 @@ const MBPrice = (function() {
         barriers       = [];
         res_count      = 0;
         is_displayed   = false;
+        $rows          = {};
         // display loading
         if ($(price_selector).html()) {
             $('#loading-overlay').height($(price_selector).height()).removeClass('invisible');
@@ -244,7 +242,7 @@ const MBPrice = (function() {
         getReqId        : function() { return req_id; },
         increaseReqId   : function() { req_id++; cleanup(); },
         getPrices       : function() { return prices; },
-        onUnload        : function() { cleanup(); req_id = 0; $tables = undefined; },
+        onUnload        : function() { cleanup(); req_id = 0; $table = undefined; },
     };
 })();
 

@@ -331,7 +331,7 @@ const MBContract = (function() {
 
     const displayDescriptions = function() {
         const contracts = getCurrentContracts(),
-            $desc_wrappers = $('.prices-wrapper'),
+            $desc_wrappers = $('.descr-wrapper'),
             currency = (format_currency(Client.get('currency')) || format_currency(document.getElementById('currency').value) || '¥'),
             payout = Number(MBDefaults.get('payout') * (japanese_client() ? 1000 : 1)).toLocaleString(),
             display_name = MBSymbols.getName(MBDefaults.get('underlying')),
@@ -340,8 +340,9 @@ const MBContract = (function() {
             const contract_type = c.contract_type,
                 template = getTemplate(contract_type),
                 $wrapper = $($desc_wrappers[template.order]);
-            $wrapper.find('.contract-type').attr('class', `contract-type ${contract_type}${template.order ? ' negative-color' : ''}`).text(localize(template.name));
-            $wrapper.find('.descr').html(localize(template.description, [currency, payout, display_name, date_expiry]));
+            $wrapper.find('.contract-type')
+                .attr('class', `contract-type ${contract_type}${template.order ? ' negative-color' : ''}`).text(localize(template.name))
+                .attr('data-balloon', localize(template.description, [currency, payout, display_name, date_expiry]));
         });
     };
 

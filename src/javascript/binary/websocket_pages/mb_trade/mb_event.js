@@ -128,7 +128,7 @@ const MBTradingEvents = (function () {
                 }
 
                 const $payoutElement = $('#payout');
-                const $tableElement = $('.japan-table');
+                const $tableElement = $('.price-table');
                 if (!validatePayout(payout)) {
                     $payoutElement.addClass('error-field');
                     $tableElement.addClass('invisible');

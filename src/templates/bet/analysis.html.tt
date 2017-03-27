@@ -6,9 +6,11 @@
           <li id="tab_portfolio" class="tm-li invisible first">
             <a href="#tab_portfolio" class="tm-a first"></a>
           </li>
+          [% IF not no_graph %]
           <li id="tab_graph" class="tm-li first">
             <a href="#tab_graph" class="tm-a first"></a>
           </li>
+          [% END %]
           <li id="tab_explanation" class="tm-li active">
             <a href="" class="tm-a"></a>
           </li>
@@ -24,6 +26,7 @@
     <div class="tab-content">
       <div class="tab-content-wrapper" id="bet_bottom_content">
         <div id="tab_portfolio-content" class="toggle-content invisible "></div>
+        [% IF not no_graph %]
         <div id="tab_graph-content" class="toggle-content invisible">
           <p class="error-msg" id="chart-error"></p>
           <div id="trade_live_chart">
@@ -36,6 +39,7 @@
             </table>
           </div>
         </div>
+        [% END %]
         <div id="tab_explanation-content" class="toggle-content selectedTab"></div>
         <div id="tab_last_digit-content" class="toggle-content invisible "></div>
         <div id="tab_japan_info-content" class="toggle-content invisible "></div>

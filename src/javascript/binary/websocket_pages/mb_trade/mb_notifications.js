@@ -58,7 +58,7 @@ const MBNotifications = (function() {
 
     const hideSpinnerShowTrading = function() {
         $('.barspinner').addClass('invisible');
-        $('.mb-trading-wrapper').removeClass('invisible');
+        $('#mb-trading-wrapper').removeClass('invisible');
     };
 
     return {
