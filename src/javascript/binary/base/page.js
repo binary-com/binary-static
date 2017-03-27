@@ -75,7 +75,6 @@ const Page = (() => {
         } else {
             init();
             Localize.forLang(Language.get());
-            checkLanguage();
             Header.onLoad();
             Language.setCookie();
             Menu.makeMobileMenu();
@@ -90,6 +89,7 @@ const Page = (() => {
             sessionStorage.removeItem('showLoginPage');
             Login.redirectToLogin();
         }
+        checkLanguage();
         TrafficSource.setData();
         BinarySocket.init();
     };
