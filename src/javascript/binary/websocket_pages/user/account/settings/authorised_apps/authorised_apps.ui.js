@@ -3,6 +3,7 @@ const showLocalTimeOnHover = require('../../../../../base/clock').showLocalTimeO
 const localize             = require('../../../../../base/localize').localize;
 const showLoadingImage     = require('../../../../../base/utility').showLoadingImage;
 const FlexTableUI          = require('../../../../../common_functions/attach_dom/flextable');
+const toTitleCase          = require('../../../../../common_functions/string_util').toTitleCase;
 
 const ApplicationsUI = (() => {
     'use strict';
@@ -16,9 +17,10 @@ const ApplicationsUI = (() => {
 
     const formatApp = (app) => {
         const last_used = app.last_used ? app.last_used.format('YYYY-MM-DD HH:mm:ss') : localize('Never');
+        const scopes = app.scopes.map(scope => localize(toTitleCase(scope))).join(', ');
         return [
             app.name,
-            app.scopes.join(', '),
+            scopes,
             last_used,
             '', // for the "Revoke App" button
         ];

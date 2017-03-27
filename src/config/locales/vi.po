@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: I 18N\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-18 18:17+0000\n"
+"PO-Revision-Date: 2017-03-25 09:08+0000\n"
 "Last-Translator: Pham Minh Hieu <hphamv7@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
@@ -94,6 +94,9 @@ msgstr "Logo %1 và logo bò/gấu là nhãn hiệu đã được đăng ký."
 
 msgid "%1 continues to innovate and grow"
 msgstr "%1 tiếp tục lớn mạnh và đổi mới"
+
+msgid "%1 days %2 hours %3 minutes"
+msgstr "%1 ngày %2 giờ %3 phút"
 
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
 msgstr "tiền gửi %1 từ %2 đến tài khoản số %3 được thực hiện. Giao dịch ID: %4"
@@ -398,8 +401,8 @@ msgstr "30-50 million JPY"
 msgid "30-day limit on losses"
 msgstr "Giới hạn 30 ngày thua lỗ"
 
-msgid "30-day turnover limit "
-msgstr "Giới hạn doanh thu 30 ngày "
+msgid "30-day turnover limit"
+msgstr "Giới hạn doanh thu 30 ngày"
 
 msgid "4. Choose your Stake and Potential Return"
 msgstr "4. chọn cổ phần của bạn và tiềm năng trở lại"
@@ -937,6 +940,11 @@ msgstr "Quản lý Chi nhánh"
 
 msgid "Affiliate Program"
 msgstr "Chương trình Liên kết"
+
+#, fuzzy
+#| msgid "Affiliate Manager"
+msgid "Affiliates Manager"
+msgstr "Quản lý Chi nhánh"
 
 msgid "Affiliates Program"
 msgstr "Các chương trình Liên kết"
@@ -1790,9 +1798,6 @@ msgstr "Thư ký"
 msgid "Click here to retry"
 msgstr "Vui lòng nhấp vào đây để thử lại"
 
-msgid "Click the button below to download MetaTrader."
-msgstr "Nhấp vào nút bên dưới để tải về MetaTrader."
-
 msgid "Client Money"
 msgstr "Tiền của khách hàng"
 
@@ -2429,14 +2434,11 @@ msgstr "Tài khoản không hoạt động"
 msgid "Down - Predict that the market will end lower than the average price"
 msgstr "Giảm - Dự đoán rằng thị trường sẽ kết thúc thấp hơn giá trung bình"
 
+msgid "Download"
+msgstr "Tải xuồng"
+
 msgid "Download CSV"
 msgstr "Tải xuồng CSV"
-
-msgid "Download MetaTrader for Windows"
-msgstr "Tải về MetaTrader cho Windows"
-
-msgid "Download for MacOS"
-msgstr "Tải xuống cho MacOS"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Tạo sự tăng trưởng nhanh chóng và phát triển kinh doanh để hỗ trợ các mục tiêu bán hàng và tiếp thị của công ty"
@@ -2732,9 +2734,6 @@ msgstr "Thời gian loại trừ không thể nhiều hơn 5 năm."
 msgid "Exclude time cannot be less than 6 months."
 msgstr "Thời gian loại trừ không thể ít hơn 6 tháng."
 
-msgid "Exclude time must be after today."
-msgstr "Thời gian loại trừ cần phải sau ngày hôm nay."
-
 msgid "Exclusion of Liability"
 msgstr "Exclusion of Liability"
 
@@ -2965,6 +2964,15 @@ msgstr "Hãy thực hiện theo Luật và những Điều khoản Sau đây"
 
 msgid "Follow up on rejected deposits"
 msgstr "Theo dõi các khoản tiền gửi bị từ chối"
+
+msgid "For Browser"
+msgstr "Cho trình duyệt"
+
+msgid "For Desktop"
+msgstr "Cho máy tính để bàn"
+
+msgid "For Mobile"
+msgstr "Cho điện thoại"
 
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "Để tăng cường độ bảo mật. vui lòng kiểm tra hòm thư của bạn để nhận cuỗi xác nhận."
@@ -3475,9 +3483,6 @@ msgstr "Nếu bạn đạt yêu cầu cơ bản của chúng tôi, chúng tôi s
 
 msgid "If you need assistance feel free to contact our <a href=\"%1\">Customer Support</a>."
 msgstr "Nếu bạn cần trợ giúp, vui lòng liên hệ với đội ngũ hỗ trợ khách hàng <a href=\"%1\"></a>của chúng tôi."
-
-msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
-msgstr "Nếu bạn đã tải về MetaTrader 5 trực tiếp từ trang web của MetaTrader, hãy chọn \"%1\" từ danh sách các công ty môi giới có sẵn."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Nếu bạn chọn \"Châu Á Giảm\", bạn sẽ giành chiến thắng nếu <strong> giá ở giây cuối cùng </strong> là <strong>thấp hơn</strong> so với <strong>trung bình</strong> của giá trong suốt giao dịch."
@@ -4577,9 +4582,6 @@ msgstr "Liên kết tới và trực tiếp khách hàng tới ứng dụng củ
 msgid "Links"
 msgstr "Các liên kết"
 
-msgid "Linux Instructions"
-msgstr "Hướng dẫn Linux"
-
 msgid "Live chat:"
 msgstr "Tương tác trực tuyến:"
 
@@ -4588,9 +4590,6 @@ msgstr "Khóa quầy Thu ngân"
 
 msgid "Log in"
 msgstr "Đăng nhập"
-
-msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "Đăng nhập vào các ứng dụng bằng cách sử dụng số tài khoản MetaTrader và mật khẩu tài khoản MetaTrader."
 
 msgid "Log out"
 msgstr "Đăng xuất"
@@ -5612,9 +5611,6 @@ msgstr "Xin vui lòng liên hệ với chúng tôi với bất cứ điều gì 
 msgid "Please enter a number between %1."
 msgstr "Vui lòng nhập một số giữa %1."
 
-msgid "Please enter a number between 0 and %1"
-msgstr "Vui lòng nhập một số giữa 0 và %1"
-
 msgid "Please enter a number."
 msgstr "Vui lòng nhập vào một số."
 
@@ -5672,8 +5668,11 @@ msgstr "Vui lòng chọn"
 msgid "Please select a payment agent"
 msgstr "Vui lòng chọn một đại lý thanh toán"
 
-msgid "Please select a valid date"
-msgstr "Vui lòng chọn một ngày hợp lệ"
+msgid "Please select a valid date."
+msgstr "Vui lòng chọn một ngày hợp lệ."
+
+msgid "Please select a valid time."
+msgstr "Vui lòng chọn một thời gian hợp lệ."
 
 msgid "Please select a value"
 msgstr "Vui lòng chọn một giá trị"
@@ -6221,9 +6220,6 @@ msgstr "Cuộn về tín dụng/ghi nợ &mdash; tài khoản với tất cả c
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "Chạy các báo cáo thanh toán hàng ngày và báo cáo nghi ngờ gian lận"
 
-msgid "Run the installation file and follow the instructions."
-msgstr "Chạy file cài đặt và làm theo các hướng dẫn."
-
 msgid "Russia"
 msgstr "Nga"
 
@@ -6400,6 +6396,9 @@ msgstr "Nếu khách hàng nào nhận được giao dịch đòi bồi 
 
 msgid "Should be a valid number"
 msgstr "Nên là một số hợp lệ"
+
+msgid "Should be between %1 and %2"
+msgstr "Nên ở giữa %1 và %2"
 
 msgid "Should be less than %1"
 msgstr "Nên là ít hơn so với %1"
@@ -7538,6 +7537,15 @@ msgstr "Thời gian"
 msgid "Time is in the wrong format."
 msgstr "Thời gian ở sai định dạng."
 
+msgid "Time out cannot be in the past."
+msgstr "Thời hạn kết thúc không thể tồn tại trong quá khứ."
+
+msgid "Time out cannot be more than 6 weeks."
+msgstr "Thời hạn kết thúc không thể lớn hơn 6 tuần."
+
+msgid "Time out must be after today."
+msgstr "Thời hạn kết thúc phải sau hôm nay."
+
 msgid "Time out until"
 msgstr "Tạm ngưng cho đến khi"
 
@@ -7775,6 +7783,11 @@ msgstr "Thử bot Binary"
 msgid "Try MetaTrader 5"
 msgstr "Thử MetaTrader 5"
 
+#, fuzzy
+#| msgid "Binary Next-Gen"
+msgid "Try Next-Gen"
+msgstr "Thế hệ mới Binary"
+
 msgid "Try TradingView"
 msgstr "Thử TradingView"
 
@@ -8005,6 +8018,9 @@ msgstr "Xem Giới hạn Giao dich và giới hạn Rút tiền."
 
 msgid "Virtual Account"
 msgstr "Tài khoản Ảo"
+
+msgid "Virtual money credit to account"
+msgstr "Tín dụng tiền ảo cho tài khoản"
 
 msgid "Volatility Index Markets"
 msgstr "Chỉ số Biến động của Thị trường"
@@ -8303,7 +8319,7 @@ msgstr "Khi chúng tôi thống nhất ký kết hợp đồng với bạn, chú
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr "Khi bạn đang hài lòng với mức giá mà bạn nhận được, thực hiện giao dịch của bạn ngay lập tức. Với nền tảng duy nhất của chúng tôi, bạn sẽ không phải tranh chấp với các thị trường trượt và hổng. Và quan trọng nhất, không có phí ẩn. Bạn cũng có thể bán lại bất kỳ giao dịch dài hạn tại bất kỳ thời điểm nào trước khi hết hạn để bảo vệ lợi nhuận bạn kiếm được hoặc giảm thiểu thiệt hại của bạn."
 
-msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
+msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
 msgstr "Khi bạn nhấp vào \"OK\" bạn sẽ bị loại bỏ khỏi giao dịch trên trang web tới ngày được chọn."
 
 msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
@@ -9120,6 +9136,11 @@ msgstr "các ký tự"
 
 msgid "login"
 msgstr "đăng nhập"
+
+#, fuzzy
+#| msgid "Logout"
+msgid "logout"
+msgstr "Đăng xuất"
 
 msgid "max: 100,000"
 msgstr "tối đa: 100.000"
@@ -10618,8 +10639,35 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 msgid "Account Limits"
 msgstr "Giới hạn Tài khoản"
 
-msgid "Account Details"
-msgstr "Chi tiết Tài khoản"
+#~ msgid "30-day turnover limit "
+#~ msgstr "Giới hạn doanh thu 30 ngày "
+
+#~ msgid "Click the button below to download MetaTrader."
+#~ msgstr "Nhấp vào nút bên dưới để tải về MetaTrader."
+
+#~ msgid "Download MetaTrader for Windows"
+#~ msgstr "Tải về MetaTrader cho Windows"
+
+#~ msgid "Download for MacOS"
+#~ msgstr "Tải xuống cho MacOS"
+
+#~ msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
+#~ msgstr "Nếu bạn đã tải về MetaTrader 5 trực tiếp từ trang web của MetaTrader, hãy chọn \"%1\" từ danh sách các công ty môi giới có sẵn."
+
+#~ msgid "Linux Instructions"
+#~ msgstr "Hướng dẫn Linux"
+
+#~ msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
+#~ msgstr "Đăng nhập vào các ứng dụng bằng cách sử dụng số tài khoản MetaTrader và mật khẩu tài khoản MetaTrader."
+
+#~ msgid "Please enter a number between 0 and %1"
+#~ msgstr "Vui lòng nhập một số giữa 0 và %1"
+
+#~ msgid "Run the installation file and follow the instructions."
+#~ msgstr "Chạy file cài đặt và làm theo các hướng dẫn."
+
+#~ msgid "Account Details"
+#~ msgstr "Chi tiết Tài khoản"
 
 #~ msgid "Please enter a number greater than 0"
 #~ msgstr "Vui lòng nhập một số lớn hơn 0"
@@ -11336,9 +11384,6 @@ msgstr "Chi tiết Tài khoản"
 #~ msgid "Your details have been updated."
 #~ msgstr "Thông tin chi tiết của bạn đã được cập nhật."
 
-#~ msgid "Logout"
-#~ msgstr "Đăng xuất"
-
 #~ msgid "not available"
 #~ msgstr "không có sẵn"
 
@@ -11437,9 +11482,6 @@ msgstr "Chi tiết Tài khoản"
 
 #~ msgid "Select Country"
 #~ msgstr "Chọn Quốc gia"
-
-#~ msgid "Virtual money credit to account"
-#~ msgstr "Tín dụng tiền ảo cho tài khoản"
 
 #~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
 #~ msgstr "Thắng từ 1- tới 1000% từ số tiền vốn của bạn nếu bạn đúng. Hãy làm tăng lợi nhuận bằng cách chọn "
@@ -11963,9 +12005,6 @@ msgstr "Chi tiết Tài khoản"
 #~ msgid "(delayed)"
 #~ msgstr "(đã hoãn)"
 
-#~ msgid "30-day turnover limit"
-#~ msgstr "Giới hạn doanh thu 30 ngày"
-
 #~ msgid "7-Day limit on losses is currently set to <strong>%1 %2</strong>"
 #~ msgstr "Giới hạn thua lỗ 7 ngày đang được thiết lập tới <strong>%1 %2</strong>"
 
@@ -12469,9 +12508,6 @@ msgstr "Chi tiết Tài khoản"
 
 #~ msgid "Expiry time cannot be equal to start time."
 #~ msgstr "Thời điểm hết hạn không thể bằng với thời điểm bắt đầu."
-
-#~ msgid "Expiry time cannot be in the past."
-#~ msgstr "Thời gian hết hạn không thể ở quá khứ."
 
 #~ msgid "Exponential Moving Average"
 #~ msgstr "Bình quân biến động theo cấp số nhân"
@@ -16663,9 +16699,6 @@ msgstr "Chi tiết Tài khoản"
 
 #~ msgid " has been credited to your Virtual money account"
 #~ msgstr " vừa được cộng thêm vào tài khoản tiền ảo của bạn"
-
-#~ msgid "Stake must be between %1 and %2."
-#~ msgstr "Tiền cọc cần phải ở giữa %1 và %2."
 
 #~ msgid "Trades on Forex with duration less than 2 minutes are temporarily disabled until %1"
 #~ msgstr "Giao dịch trên Forex với khoảng thời gian ít hơn 2 phút tạm thời bị vô hiệu hóa cho đến khi %1"

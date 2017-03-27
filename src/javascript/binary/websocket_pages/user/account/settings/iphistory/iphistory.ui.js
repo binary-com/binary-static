@@ -17,6 +17,7 @@ const IPHistoryUI = (() => {
     const formatRow = (data) => {
         const timestamp = moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n') + ' GMT';
         const status    = localize(data.success ? 'Successful' : 'Failed');
+        const action    = localize(data.action);
         const browser   = data.browser;
         let browser_string = browser ?
             browser.name + ' v' + browser.version :
@@ -27,7 +28,7 @@ const IPHistoryUI = (() => {
         }
         return [
             timestamp,
-            data.action,
+            action,
             browser_string,
             data.ip_addr,
             status,
