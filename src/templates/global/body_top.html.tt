@@ -5,6 +5,7 @@
     [% INCLUDE global/mobile_menu.html.tt %]
     [% INCLUDE global/gtm.html.tt %]
     <!-- FlushHead -->
+    <a href="javascript:;" id="scrollup"></a>
 [% END %]
     <div id="content"[% IF current_route +%] class="[% current_route %]-content"[% END %]>
         <div id="page_info" style="display:none;">
