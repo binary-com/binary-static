@@ -1,5 +1,6 @@
-const moment   = require('moment');
-const localize = require('../../binary/base/localize').localize;
+const moment       = require('moment');
+const localize     = require('../../binary/base/localize').localize;
+const urlForStatic = require('../../binary/base/url').urlForStatic;
 
 const KnowledgeTestUI = (() => {
     'use strict';
@@ -46,7 +47,7 @@ const KnowledgeTestUI = (() => {
             class         : 'no-underline',
             'data-balloon': localize('{JAPAN ONLY}TIP_[_1]', [question.id]),
         });
-        const $question_icon = $('<img>', { src: '/images/common/question_1.png' });
+        const $question_icon = $('<img>', { src: urlForStatic('/') + '/images/common/question_1.png' });
         $question_data.append($question_link.append($question_icon));
 
         const true_false = createTrueFalseBox(question, show_answer);
