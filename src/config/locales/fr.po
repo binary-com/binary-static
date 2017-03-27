@@ -3,15 +3,16 @@ msgstr ""
 "Project-Id-Version: French (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-24 14:47+0000\n"
+"PO-Revision-Date: 2017-03-27 14:06+0000\n"
 "Last-Translator: Chloe Chevreton <chloe-che@hotmail.fr>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/binary/static/fr/>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/binary/static/fr/>"
+"\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.12\n"
+"X-Generator: Weblate 2.13-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "« L'API %1 » désigne l'ensemble des produits propriétaires de %1, notamment les routines, protocoles, outils et ressources de programmation créés et mis en service par %1, vous permettant d'utiliser une Application enregistrée pour communiquer avec la plateforme de trading %1."
@@ -938,8 +939,6 @@ msgstr "Responsable de l'affiliation [H/F]"
 msgid "Affiliate Program"
 msgstr "Programme d'affiliation"
 
-#, fuzzy
-#| msgid "Affiliate Manager"
 msgid "Affiliates Manager"
 msgstr "Responsable de l'affiliation [H/F]"
 
@@ -3687,9 +3686,17 @@ msgstr "Au Royaume-Uni et sur l'île de Man, nos clients gèrent leurs opératio
 
 msgid "In the case of a Limit Order, you acknowledge that we will endeavour to open/close a Transaction at a level that is the same or better than the Limit you specified, subject to the availability of the Limit Price. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you."
 msgstr ""
+"Dans le cadre d'un ordre à cours limité, vous reconnaissez que nous nous "
+"efforcerons d'ouvrir/fermer une transaction à un niveau correspondant à la "
+"limite que vous avez spécifiée ou à un meilleur cours, en fonction de la "
+"disponibilité du prix limite. Vous reconnaissez qu'au moment de l'exécution "
+"de l'ordre, votre prix d'achat/vente est susceptible de fluctuer et de "
+"devenir moins favorable pour vous."
 
 msgid "In the case of a Stop Order, you acknowledge that we will endeavour to open/close a Transaction at the Next Available Price."
 msgstr ""
+"Dans le cadre d'un ordre stop, vous reconnaissez que nous nous efforcerons "
+"d'ouvrir/fermer une transaction au prochain prix disponible."
 
 msgid "In the case of single stock and stock index prices, the final closing price as reported by the relevant official Exchange shall apply for all settlements (this final settlement price may, at times, be reported by the relevant Exchange 30-90 minutes after the official closing time of the market, and may differ from the latest tick price that occurred at the closing time)."
 msgstr "Dans le cas d'une action individuelle et un indice d'actions, le prix à la clôture comme communiqué par la Bourse officielle appropriée sera appliqué pour tous les règlements (ce prix de règlements final peut, de temps en temps, être émis par la Bourse correspondante 30-90 minutes après l'heure de fermeture officielle du marché, et peut différer du dernier prix d'intervalle produit à l'heure de fermeture)."
@@ -3705,6 +3712,11 @@ msgstr "Dans l'éventualité de toute divergence entre le contenu du présent do
 
 msgid "In the event of your failing to make a Margin Payment, we may, at our absolute discretion, allow your Open Positions to remain open and allow you to place new Orders to open a Transaction. You acknowledge that, upon allowing your Open Positions to remain open, you may incur further losses."
 msgstr ""
+"Dans l'éventualité d'une absence de paiement de marge de votre part, nous "
+"pouvons, à notre entière discrétion, vous autoriser à maintenir vos "
+"positions ouvertes et à placer de nouveaux ordres pour ouvrir une "
+"transaction. Vous reconnaissez que le maintien de vos positions ouvertes "
+"peut vous exposer à des pertes supplémentaires."
 
 msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this Program. The Affiliate hereby irrevocably waives its rights to, and shall indemnify the Company and any member of the Binary group of companies for, any claim or demand made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, employees or against the %1 website in respect of such action taken by the Company."
 msgstr "Dans l'éventualité de tout manquement aux dispositions listées ci-dessus de la part d'un Affilié et dont la Société aurait connaissance, la Société, en plus de tout autres droit ou recours applicables en vertu de cet Accord, se réserve le droit de bloquer immédiatement l'accès de l'Affilié à ce programme. Par le présent Accord, l'Affilié renonce à ces droits quant à, et tient la Société et tout membre des sociétés Binary Group indemne de, toute réclamation ou demande formulée à l'encontre des sociétés Binary Group ou de leurs directeurs, responsables, actionnaires ou employés, ou à l'encontre du site Web %1, concernant une telle mesure prise par la Société."
@@ -3735,6 +3747,8 @@ msgstr "Source de Revenu"
 
 msgid "Increase your HackerOne reputation to build up credibility and profile visibility."
 msgstr ""
+"Développez votre réputation sur HackerOne pour renforcer votre crédibilité "
+"et donner davantage de visibilité à votre profil."
 
 msgid "Indemnification"
 msgstr "Exonération de responsabilité"
@@ -3753,6 +3767,8 @@ msgstr "Indices"
 
 msgid "Indices - All major worldwide stock indices sourced from the over-the-counter market"
 msgstr ""
+"Indices : Tous les principaux indices boursiers internationaux issus du "
+"marché de gré à gré"
 
 msgid "Indices trading experience"
 msgstr "Expérience du trading sur indices"
@@ -3845,7 +3861,7 @@ msgid "Investor password"
 msgstr "Mot de passe investisseur"
 
 msgid "Investor password (read-only access)"
-msgstr ""
+msgstr "Mot de passe investisseur (accès en lecture seule)"
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "Vous interviendrez dans l'évaluation de la conformité réglementaire et la gestion du risque. Vous collaborerez avec le directeur du service d'audit interne en vue d'améliorer les procédures de la société."
@@ -3863,7 +3879,7 @@ msgid "Isle of Man"
 msgstr "Île de Man"
 
 msgid "It is a condition of using the website that:"
-msgstr ""
+msgstr "L'utilisation du site Web est soumise aux conditions suivantes :"
 
 msgid "It is important that you monitor all of your positions closely. It is your responsibility to monitor your positions and during the period that you have any open Contracts, you should always have the ability to access your Accounts."
 msgstr "Il est important que vous contrôliez toutes vos positions de près. C'est votre responsabilité de vérifier vos positions durant la période où vous avez des Contrats ouverts, vous devez toujours pouvoir accéder à vos Contrats."
@@ -3885,6 +3901,9 @@ msgstr "Il est entendu que les sociétés du groupe Binary Group Services, agiss
 
 msgid "It is your responsibility to keep your password and login ID confidential. You agree that you will not disclose your password and login ID to any other person;"
 msgstr ""
+"Vous êtes responsable de la confidentialité de votre mot de passe et de "
+"votre identifiant de connexion. Vous vous engagez à ne pas divulger votre "
+"mot de passe et votre identifiant de connexion à toute autre personne ;"
 
 msgid "It will be released to your account upon approval."
 msgstr "Le bonus sera crédité sur votre compte après approbation."
@@ -4368,6 +4387,8 @@ msgstr "Nous rejoindre maintenant"
 
 msgid "Join our affiliate program to earn income by leveraging your hard-earned network of contact"
 msgstr ""
+"Rejoignez notre programme d'affiliation pour générer des revenus en "
+"exploitant votre solide réseau de contacts"
 
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Rejoignez notre équipe de professionnels talentueux et motivés. Collaborez avec nous afin d'améliorer et de promouvoir une plateforme de pointe figurant parmi les plus reconnues du marché des options binaires depuis plus de 15 ans."
@@ -4391,7 +4412,7 @@ msgid "June"
 msgstr "juin"
 
 msgid "K. Electronic Trading Platform and Transactions"
-msgstr ""
+msgstr "K. Plateforme de trading électronique et transactions"
 
 msgid "Keep track of your authorised applications."
 msgstr "Consultez la liste de vos applications autorisées."
@@ -4404,12 +4425,16 @@ msgstr "À seulement quelques heures d'avion de votre lieu de travail, vous trou
 
 msgid "Kindly provide your complete address.<br>This will be used to authenticate your identity when you open a real account."
 msgstr ""
+"Veuillez fournir votre adresse complète. Elle sera utilisée pour "
+"authentifier votre identité lorsque vous ouvrirez un compte réel."
 
 msgid "Kindly send us these documents within 5 days to keep your MT5 account active."
 msgstr ""
+"Veuillez envoyer ces documents sous cinq jours pour maintenir votre compte "
+"MT5 actif."
 
 msgid "Know what you stand to win or lose"
-msgstr ""
+msgstr "Vous savez ce que vous pouvez gagner ou perdre"
 
 msgid "Knowledge and experience in the financial services industry"
 msgstr "Compétences et expérience dans le secteur des services financiers"
@@ -4433,7 +4458,7 @@ msgid "Kuala Lumpur Office"
 msgstr "Antenne de Kuala Lumpur"
 
 msgid "L. Event of Default"
-msgstr ""
+msgstr "L. Évènement de défaut"
 
 msgid "Languages"
 msgstr "Langues"
@@ -4503,9 +4528,23 @@ msgstr "Moins de 6 mois"
 
 msgid "Let's say the points adjustment for a long position on the EUR/USD symbol is -5.64. This would require an overnight fee of 5.64 points for one lot of open position in EUR/USD, where the size of one lot is 100,000 units. The points will then be converted into the deposit currency (which is the euro in this example). As a result, you will incur an interest fee of EUR5.64 for keeping the position open overnight."
 msgstr ""
+"Prenons l'exemple d'une position longue pour laquelle le différentiel en "
+"points est de -5,64. Des frais de reconduction overnight de 5,64 points sont "
+"requis pour un lot de positions ouvertes en EUR/USD, avec une taille de lot "
+"de 100 000 unités. Les points seront ensuite convertis dans la devise de "
+"dépôt (dans cet exemple il s'agit de l'euro). Par conséquent, les frais "
+"d'intérêt vous permettant de maintenir votre position ouverte d'un jour sur "
+"l'autre seront de 5,64 EUR."
 
 msgid "Let's say the points adjustment for a short position on the EUR/USD symbol is 1.64. This would result in an overnight credit of 1.64 points for one lot of open position in EUR/USD where the size of one lot is 100,000 units. The points will then be converted into the deposit currency (which is the euro in this example). As a result, you will be credited with EUR1.64 for keeping the position open overnight."
 msgstr ""
+"Prenons l'exemple d'une position courte sur l'EUR/USD pour laquelle le "
+"différentiel en points est de 1,64. Ceci engendre un crédit overnight de "
+"1,64 points pour un lot de positions ouvertes en EUR/USD, avec une taille de "
+"lot de 100 000 unités. Les points seront ensuite convertis dans la devise de "
+"dépôt (dans cet exemple il s'agit de l'euro). Par conséquent, vous serez "
+"crédités de 1,64 EUR en maintenant votre positions ouverte d'un jour sur "
+"l'autre."
 
 msgid "Level of Education"
 msgstr "Niveau de formation"
@@ -4515,15 +4554,36 @@ msgstr "Effet de levier"
 
 msgid "Leverage can be used to generate returns that are of multiple times higher than the amount set aside from your account balance to open and maintain a transaction (your margin). However, investments that have the potential to deliver greater investment returns carry higher levels of risk. This means that if the price movement is against your favour, you will suffer losses that are of multiple times higher than the amount set aside from your account balance to open and maintain a transaction (your margin)."
 msgstr ""
+"L'effet de levier peut être utilisé pour générer des retours correspondant à "
+"des multiples du montant bloqué sur votre solde de compte pour ouvrir et "
+"maintenir une transaction (votre marge). Cependant, les investissements "
+"susceptibles de générer les retours les plus importants impliquent également "
+"un niveau de risque plus élevé. En effet, si la fluctuation des cours ne "
+"vous est pas favorable, vous vous exposerez à des pertes correspondant à des "
+"multiples du montant bloqué sur votre solde de compte pour ouvrir et "
+"maintenir une transaction (votre marge)."
 
 msgid "Leverage indicates how much capital you can control based on your initial deposit. For example, a 100:1 leverage will allow you to control up to USD 100,000 using only USD 1,000 of your own money as deposit."
 msgstr ""
+"L'effet de levier indique la somme de capitaux que vous pouvez contrôler en "
+"fonction de votre dépôt initial. Par exemple, un effet de levier de 100:1 "
+"vous permettra de contrôler jusqu'à 100 000 USD en n'utilisant que 1000 USD "
+"de vos fonds en dépôt."
 
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "Exploiter différents outils et canaux sociaux pour identifier, capter et convertir de nouveaux clients et partenaires potentiels"
 
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that you would be able to enter into a trade position that is of 50 times higher than your margin. When you invest in a leveraged product, your profit or loss is based on the leveraged position, i.e., the increased/amplified value of your trade determined based on the leverage ratio you set for your account."
 msgstr ""
+"Dans le contexte des opérations sur marge, l'effet de levier désigne "
+"l'utilisation de la marge pour augmenter/amplifier la valeur d'une "
+"transaction. L'effet de levier est exprimé sous forme de ratio. Par exemple, "
+"un effet de levier de 50:1 signifie que vous avez la possibilité d'ouvrir "
+"une position 50 fois plus volumineuse que votre marge. Lorsque vous "
+"investissez dans un produit soumis à l'effet de levier, votre profit est "
+"basé sur la position à laquelle s'applique l'effet de levier, c'est-à-dire "
+"la valeur augmentée/amplifiée de votre transaction, calculée en fonction de "
+"l'effet de levier que vous avez défini pour votre compte."
 
 msgid "Leverage:"
 msgstr "Effet de levier :"
@@ -4535,22 +4595,24 @@ msgid "Liaise with banks and payment providers"
 msgstr "Liaison avec les banques et les prestataires de services de paiement"
 
 msgid "Licensed and regulated"
-msgstr ""
+msgstr "Société autorisée et réglementée"
 
 msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan"
 msgstr "Autorisée et réglementée à Malte, au Royaume-Uni, à l'île de Man, en Irlande et au Japon"
 
 msgid "Licensed in Japan"
-msgstr ""
+msgstr "Autorisée sous licence au Japon"
 
 msgid "Licensed, trusted, and secure"
-msgstr ""
+msgstr "Autorisée sous licence, fiable et sûre"
 
 msgid "Life-long career interest in the Accounting field"
 msgstr "Carrière dans le secteur de la comptabilité"
 
 msgid "Likelihood of execution and settlement - the depth of liquidity of the market in which your order is related to."
 msgstr ""
+"Probabilité d'exécution et de règlement : le degré de liquidité du marché "
+"auquel votre ordre est ié."
 
 msgid "Limit"
 msgstr "Limite"
