@@ -294,6 +294,7 @@ sub _texts {
         # back-end string for statement page
         push @texts, localize('Sell');
         push @texts, localize('Buy');
+        push @texts, localize('Virtual money credit to account');
         #strings for authenticate page
         push @texts, localize('This feature is not relevant to virtual-money accounts.');
         push @texts, localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].');
@@ -365,6 +366,7 @@ sub _texts {
         push @texts, localize('Successful');
         push @texts, localize('Failed');
         push @texts, localize('Your account has no Login/Logout activity.');
+        push @texts, localize('logout');
         #strings for reality_check
         push @texts, localize('Please enter a number between [_1].');
         push @texts, localize('[_1] days [_2] hours [_3] minutes');
@@ -407,6 +409,8 @@ sub _texts {
         push @texts, localize('Administrative Executive');
         push @texts, localize('Internal Audit');
         push @texts, localize('Internal Auditor');
+        push @texts, localize('Marketing Project Coordinator');
+        push @texts, localize('Affiliates Manager');
         #strings for view popup ws
         push @texts, localize('Start Time');
         push @texts, localize('Entry Spot');
@@ -473,6 +477,9 @@ sub _texts {
         push @texts, localize('Revoke access');
         push @texts, localize('Are you sure that you want to permanently revoke access to application');
         push @texts, localize('Transaction performed by [_1] (App ID: [_2])');
+        push @texts, localize('Admin');
+        push @texts, localize('Read');
+        push @texts, localize('Payments');
         # Strings for lost_passwordws
         push @texts, localize('[_1] Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support.');
         push @texts, localize('Your password has been successfully reset. Please log into your account using your new password.');

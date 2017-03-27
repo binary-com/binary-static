@@ -115,11 +115,11 @@ const APIToken = (() => {
 
     const formatToken = function(token) {
         const last_used = (token.last_used ? token.last_used + ' GMT' : localize('Never Used'));
-        const scopes = token.scopes.map(toTitleCase);
+        const scopes = token.scopes.map(scope => localize(toTitleCase(scope))).join(', ');
         return [
             token.display_name,
             token.token,
-            scopes.join(', '),
+            scopes,
             last_used,
             '',  // btn_delete
         ];
