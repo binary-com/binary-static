@@ -954,6 +954,11 @@ msgstr "ผู้จัดการส่วนพันธมิตร"
 msgid "Affiliate Program"
 msgstr "โปรแกรมพันธมิตร"
 
+#, fuzzy
+#| msgid "Affiliate Manager"
+msgid "Affiliates Manager"
+msgstr "ผู้จัดการส่วนพันธมิตร"
+
 msgid "Affiliates Program"
 msgstr "โปรแกรมพันธมิตร"
 
@@ -7852,6 +7857,11 @@ msgstr "ทดลองใช้ ไบนารีออปชั่น"
 msgid "Try MetaTrader 5"
 msgstr "ทดลองใช้ MetaTrader"
 
+#, fuzzy
+#| msgid "Binary Next-Gen"
+msgid "Try Next-Gen"
+msgstr "ไบนารี เน็กซ์ เจน (Binary Next-Gen)"
+
 msgid "Try TradingView"
 msgstr "ทดลองใช้ TradingView"
 
@@ -8082,6 +8092,9 @@ msgstr "ดูวงเงินการซื้อขายและวงเ
 
 msgid "Virtual Account"
 msgstr "บัญชีทดลองใช้"
+
+msgid "Virtual money credit to account"
+msgstr "เครดิตเงินเสมือนไปยังบัญชี"
 
 msgid "Volatility Index Markets"
 msgstr "ตลาดดัชนีความผันผวน"
@@ -9206,6 +9219,11 @@ msgstr "ตัวอักษร"
 
 msgid "login"
 msgstr "เข้าสู่ระบบ"
+
+#, fuzzy
+#| msgid "Logout"
+msgid "logout"
+msgstr "ออกจากระบบ"
 
 msgid "max: 100,000"
 msgstr "ค่าสูงสุด: 100,000"
@@ -11408,9 +11426,6 @@ msgstr "วงเงินในบัญชี"
 #~ msgid "Your details have been updated."
 #~ msgstr "รายละเอียดของท่านได้รับการปรับปรุงเรียบร้อยแล้ว"
 
-#~ msgid "Logout"
-#~ msgstr "ออกจากระบบ"
-
 #~ msgid "not available"
 #~ msgstr "ไม่มีอยู่"
 
@@ -11497,9 +11512,6 @@ msgstr "วงเงินในบัญชี"
 
 #~ msgid "Select Country"
 #~ msgstr "บันทึก ประเทศ"
-
-#~ msgid "Virtual money credit to account"
-#~ msgstr "เครดิตเงินเสมือนไปยังบัญชี"
 
 #~ msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
 #~ msgstr "มาดูว่าเราคิด และ ทำงานกันอย่างไร  อ่าน <a href='https://blog.binary.com/' target='_blank'>บล็อกของเรา</a> เพื่อศึกษาเรื่องราวและแนวคิดที่เป็นแรงบันดาลใจของเรา"

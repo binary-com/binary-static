@@ -4,8 +4,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-03-24 06:10+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Traditional) "
-"<https://hosted.weblate.org/projects/binary/static/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/binary/static/zh_Hant/>\n"
 "Language: zh_tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -937,6 +936,11 @@ msgstr "聯盟經理"
 
 msgid "Affiliate Program"
 msgstr "聯盟計劃"
+
+#, fuzzy
+#| msgid "Affiliate Manager"
+msgid "Affiliates Manager"
+msgstr "聯盟經理"
 
 msgid "Affiliates Program"
 msgstr "聯盟計劃"
@@ -7775,6 +7779,11 @@ msgstr "試試Binary Bot"
 msgid "Try MetaTrader 5"
 msgstr "體驗 MetaTrader 5"
 
+#, fuzzy
+#| msgid "Binary Next-Gen"
+msgid "Try Next-Gen"
+msgstr "Binary 下一代"
+
 msgid "Try TradingView"
 msgstr "體驗TradingView"
 
@@ -8005,6 +8014,9 @@ msgstr "檢視您的交易和取款限額。"
 
 msgid "Virtual Account"
 msgstr "虛擬帳戶"
+
+msgid "Virtual money credit to account"
+msgstr "虛擬資金存入帳戶"
 
 msgid "Volatility Index Markets"
 msgstr "波動率指數市場"
@@ -9118,6 +9130,11 @@ msgstr "字母"
 
 msgid "login"
 msgstr "登入"
+
+#, fuzzy
+#| msgid "Logout"
+msgid "logout"
+msgstr "登出"
 
 msgid "max: 100,000"
 msgstr "最大: 100,000"
@@ -11537,9 +11554,6 @@ msgstr "帳戶限額"
 #~ msgid "Your details have been updated."
 #~ msgstr "您的個人資訊已成功更新。"
 
-#~ msgid "Logout"
-#~ msgstr "登出"
-
 #~ msgid "not available"
 #~ msgstr "不可使用"
 
@@ -11626,9 +11640,6 @@ msgstr "帳戶限額"
 
 #~ msgid "Select Country"
 #~ msgstr "選擇國家"
-
-#~ msgid "Virtual money credit to account"
-#~ msgstr "虛擬資金存入帳戶"
 
 #~ msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
 #~ msgstr "了解更多關於我們的想法和運作方式詳情。參閱<a href='https://blog.binary.com/' target='_blank'>我們的部落格</a>，以便了解我們的概念來源和背景故事。"
