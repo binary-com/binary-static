@@ -29,14 +29,14 @@ const ChangePassword             = require('../websocket_pages/user/account/chan
 const PaymentAgentTransfer       = require('../websocket_pages/user/account/payment_agent_transfer');
 const Portfolio                  = require('../websocket_pages/user/account/portfolio/portfolio.init');
 const ProfitTable                = require('../websocket_pages/user/account/profit_table/profit_table.init');
-const APITokenWS                 = require('../websocket_pages/user/account/settings/api_token');
+const APIToken                   = require('../websocket_pages/user/account/settings/api_token');
 const AuthorisedApps             = require('../websocket_pages/user/account/settings/authorised_apps');
 const CashierPassword            = require('../websocket_pages/user/account/settings/cashier_password');
 const FinancialAssessment        = require('../websocket_pages/user/account/settings/financial_assessment');
 const IPHistory                  = require('../websocket_pages/user/account/settings/iphistory');
 const Limits                     = require('../websocket_pages/user/account/settings/limits');
 const Settings                   = require('../websocket_pages/user/account/settings');
-const SelfExclusionWS            = require('../websocket_pages/user/account/settings/self_exclusion');
+const SelfExclusion              = require('../websocket_pages/user/account/settings/self_exclusion');
 const SettingsDetailsWS          = require('../websocket_pages/user/account/settings/settings_detailsws');
 const Statement                  = require('../websocket_pages/user/account/statement/statement.init');
 const TopUpVirtual               = require('../websocket_pages/user/account/top_up_virtual');
@@ -54,7 +54,7 @@ const KnowledgeTest = require('../../binary_japan/knowledge_test/knowledge_test'
 
 const pages_config = {
     account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true },
-    api_tokenws              : { module: APITokenWS,                 is_authenticated: true },
+    api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
     asset_indexws            : { module: AssetIndexUI },
     authenticate             : { module: Authenticate,               is_authenticated: true, only_real: true },
@@ -89,7 +89,7 @@ const pages_config = {
     regulation               : { module: Regulation },
     reset_passwordws         : { module: ResetPassword,              not_authenticated: true },
     securityws               : { module: Settings,                   is_authenticated: true },
-    self_exclusionws         : { module: SelfExclusionWS,            is_authenticated: true, only_real: true },
+    self_exclusionws         : { module: SelfExclusion,              is_authenticated: true, only_real: true },
     settingsws               : { module: Settings,                   is_authenticated: true },
     signup                   : { module: StaticPages.AffiliateSignup },
     statementws              : { module: Statement,                  is_authenticated: true },
@@ -100,6 +100,7 @@ const pages_config = {
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
+    'careers-for-americans'  : { module: Careers },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'get-started'            : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },
