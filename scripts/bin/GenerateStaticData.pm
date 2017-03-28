@@ -243,6 +243,7 @@ sub _texts {
         push @texts, localize('Name');
         push @texts, localize('Token');
         push @texts, localize('Last Used');
+        push @texts, localize('Scopes');
         push @texts, localize('Never Used');
         push @texts, localize('Delete');
         push @texts, localize('Are you sure that you want to permanently delete token');
@@ -410,7 +411,7 @@ sub _texts {
         push @texts, localize('Internal Audit');
         push @texts, localize('Internal Auditor');
         push @texts, localize('Marketing Project Coordinator');
-        push @texts, localize('Affiliates Manager');
+        push @texts, localize('Affiliate Manager');
         #strings for view popup ws
         push @texts, localize('Start Time');
         push @texts, localize('Entry Spot');
