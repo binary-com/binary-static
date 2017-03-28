@@ -3,85 +3,64 @@
 </div>
 <div id="mb-trading-wrapper" class="gr-centered invisible">
     <div class="gr-row">
-    <div class="gr-7">
+
+    <div class="gr-7 gr-12-m gr-12-p gr-order-2-m gr-order-2-p">
         <p class="error-msg" id="chart-error"></p>
         <div id="trade_live_chart">
             <iframe src="" width="100%" height="630" id="chart_frame" style="overflow-y: hidden;" scrolling="no"></iframe>
         </div>
     </div>
-    <div id="mb_trading" class="gr-5">
+
+    <div id="mb_trading" class="gr-5 gr-12-m gr-12-p">
+
         <div id="notifications_wrapper"></div>
-        <section class="trade-form gr-row">
-            <div class="gr-6 gr-12-m gr-12-p gr-no-gutter">
-                <div class="gr-row">
-                    <div class="gr-6 gr-12-m gr-no-gutter padding-right-five">
-                        <div class="select-box">
-                            <div class="padding-10">
-                                <div class="select-heading">[% l('FX Rate') %]</div>
-                                <select class="select" id="underlying"></select>
-                            </div>
-                        </div>
+
+        <div id="trade_form" class="gr-row">
+            <div id="underlying" class="gr-3 gr-no-gutter">
+                <div class="current"></div>
+                <div class="list invisible"></div>
+            </div>
+            <div id="category" class="gr-3 gr-no-gutter">
+                <div class="current"></div>
+                <div class="list invisible"></div>
+            </div>
+            <div id="period" class="gr-3 gr-no-gutter">
+                <div class="current"></div>
+                <div class="list invisible"></div>
+            </div>
+            <div id="payout" class="gr-3 gr-no-gutter">
+                <div class="current"></div>
+                <div class="list invisible">
+                    <div class="plus" value="+1">+1</div>
+                    <div class="plus" value="+5">+5</div>
+                    <div class="plus" value="+10">+10</div>
+                    <div class="minus" value="-10">-10</div>
+                    <div class="minus" value="-5">-5</div>
+                    <div class="minus" value="-1">-1</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gr-row space-between">
+            <div class="gr-grow gr-12-m">
+                <div class="gr-row spot invisible">
+                    <div class="gr-adapt spot-value">
+                        <span>[% l('Spot') %]:</span>
+                        <span id="spot"></span>
+                        <span id="spot-dyn"></span>
                     </div>
-                    <div class="gr-6 gr-12-m gr-no-gutter padding-right-five">
-                        <div class="select-box">
-                            <div class="padding-10">
-                                <div class="select-heading">[% l('Option Type') %]</div>
-                                <select class="select" id="category"></select>
-                            </div>
-                        </div>
+                    <div class="gr-adapt">
+                        <span id="trading_worm_chart"></span>
                     </div>
                 </div>
             </div>
-            <div class="gr-6 gr-12-m gr-12-p gr-no-gutter gr-gutter-left-p gr-gutter-left-m gr-no-gutter-right-p gr-no-gutter-right-m">
-                <div class="gr-row">
-                    <div class="gr-6 gr-12-m gr-no-gutter-left padding-right-five">
-                        <div class="select-box">
-                            <div class="padding-10">
-                                <div class="select-heading">[% l('Expiry Time') %]<span class="all-hide ja-show"> [% l('(Duration)') %]</span></div>
-                                <select class="select" id="period"></select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gr-6 gr-12-m gr-no-gutter-left no-padding-right">
-                        <div class="select-box">
-                            <div class="padding-10">
-                                <div class="select-heading">[% l('Payout Amount') %]</div>
-                                <div class="payout-input">
-                                    <div class="float-left">
-                                        <select class="select" id="currency"></select>
-                                        <input type="text" class="payout-select select" id="payout" maxlength="10">
-                                        <label class="payout-mult all-hide ja-show" for="payout">[% l(',000') %]</label>
-                                    </div>
-                                    <div class="float-left hint all-hide ja-show">[% l('min: 1,000') %]<br>[% l('max: 100,000') %]</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="gr-adapt gr-12-m">
+                <div class="countdown-timer align-end">
+                    <span id="remaining-time-label"></span>
+                    <span id="remaining-time">...</span>
                 </div>
             </div>
-            <div class="gr-12 invisible">
-                <div class="gr-row space-between">
-                    <div class="gr-grow gr-12-m">
-                        <div class="gr-row spot">
-                            <div class="gr-adapt spot-value">
-                                <span>[% l('Spot') %]:</span>
-                                <span id="spot"></span>
-                                <span id="spot-dyn"></span>
-                            </div>
-                            <div class="gr-adapt">
-                                <span id="trading_worm_chart"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gr-adapt gr-12-m">
-                        <div class="countdown-timer align-end">
-                            <span id="remaining-time-label"></span>
-                            <span id="remaining-time">...</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
 
         <div class="price-table gr-row">
             <div id="disable-overlay" class="invisible"></div>

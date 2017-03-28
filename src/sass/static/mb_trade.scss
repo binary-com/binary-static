@@ -2,7 +2,79 @@
     max-width: 1200px;
     #mb_trading {
         font-size: 14px;
+        #trade_form {
+            margin-bottom: 10px;
+            > div {
+                border: 3px solid $COLOR_LIGHT_GRAY;
+                text-align: center;
+                &:nth-child(4) {
+                    border-right: 3px solid $COLOR_LIGHT_GRAY;
+                }
+                border-right: none;
+                position: relative;
+                height: 130px;
+                .current {
+                    height: 115px;
+                }
+                .current, .list > div {
+                    padding: 5px;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $COLOR_LIGHT_GRAY;
+                    }
+                }
+                .list {
+                    position: absolute;
+                    z-index: 2;
+                    width: 100%;
+                    background-color: $COLOR_WHITE;
+                    > div {
+                        border: 1px solid $COLOR_LIGHT_GRAY;
+                    }
+                }
+            }
+            #category {
+                .contract-type {
+                    display: inline-block;
+                    width: calc(50% - 5px);
+                    padding-top: 40px;
+                    margin-top: 30px;
+                    background-position: center top;
+                    background-repeat: no-repeat;
+                    vertical-align: top;
+                }
+            }
+            #period {
+                .start, .end {
+                    line-height: 25px;
+                }
+                .duration {
+                    line-height: 65px;
+                    font-size: $FONT_SIZE_XL;
+                    font-weight: bold;
+                }
+            }
+            #payout {
+                .current {
+                    line-height: 115px;
+                    font-size: $FONT_SIZE_XXL;
+                    font-weight: bold;
+                }
+                .list > div {
+                    line-height: 50px;
+                    font-size: $FONT_SIZE_XL;
+                    font-weight: bold;
+                }
+                .plus {
+                    color: $COLOR_LIGHT_BLUE;
+                }
+                .minus {
+                    color: $COLOR_ORANGE;
+                }
+            }
+        }
         .price-table {
+            position: relative;
             .descr-wrapper {
                 padding: 10px;
                 .contract-type {
@@ -36,6 +108,11 @@
                         padding: 3px 0;
                         text-align: center;
                     }
+                }
+                .price-row .barrier {
+                    line-height: 18px;
+                    display: flex;
+                    align-self: center;
                 }
                 .heading {
                     font-weight: bold;
@@ -124,76 +201,6 @@
                 }
             }
         }
-        .trade-form {
-            .select {
-                margin-right: 10px;
-                margin-bottom: 10px;
-                height: 30px;
-                line-height: 30px;
-            }
-            .select-box {
-                float: left;
-                background: $COLOR_LIGHT_GRAY;
-                border-radius: 3px;
-                width: 100%;
-                .select, .payout-select {
-                    width: 100%;
-                    margin-top: 5px;
-                    padding: 2px 3px;
-                    border: 1px solid $COLOR_LIGHT_GRAY;
-                    background: $COLOR_WHITE;
-                    border-radius: 3px;
-                    &:focus {
-                        outline: none;
-                    }
-                }
-                .payout-input {
-                    position: relative;
-                    white-space: nowrap;
-                    .hint {
-                        padding: 4px;
-                        padding-right: 0;
-                        margin-left: 5px;
-                        line-height: 16px;
-                    }
-                    select#currency {
-                        margin: 6px 0;
-                        width: 50%;
-                    }
-                }
-                .payout-select {
-                    display: inline;
-                    height: 24px;
-                    line-height: 24px;
-                    text-align: right;
-                    margin: 6px 0 9px;
-                }
-                span + #payout {
-                    width: 30px;
-                }
-                select + #payout {
-                    width: 45%;
-                }
-                .payout-mult {
-                    font-size: 15px;
-                }
-            }
-        }
-        .padding-10 {
-            padding: 10px 10px 0;
-        }
-        .padding-right-five {
-            padding-right: 5px;
-        }
-        .padding-right-ten {
-            padding-right: 10px;
-        }
-        .no-padding-right {
-            padding-right: 0;
-        }
-        .float-left {
-            float: left;
-        }
         .space-between {
             justify-content: space-between;
             margin: 8px 0;
@@ -239,6 +246,21 @@
                 padding-right: 5px;
                 margin-right: 0;
             }
+        }
+        .padding-10 {
+            padding: 10px 10px 0;
+        }
+        .padding-right-five {
+            padding-right: 5px;
+        }
+        .padding-right-ten {
+            padding-right: 10px;
+        }
+        .no-padding-right {
+            padding-right: 0;
+        }
+        .float-left {
+            float: left;
         }
         @media screen and (max-width: 768px) {
             .gr-12-p {

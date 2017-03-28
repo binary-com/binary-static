@@ -6,13 +6,12 @@ const MBSymbols                 = require('./mb_symbols').MBSymbols;
 const MBTick                    = require('./mb_tick').MBTick;
 const TradingAnalysis           = require('../trade/analysis').TradingAnalysis;
 const japanese_client           = require('../../common_functions/country_base').japanese_client;
-const displayUnderlyings        = require('../trade/common').displayUnderlyings;
-const generateUnderlyingOptions = require('../trade/common').generateUnderlyingOptions;
 const showFormOverlay           = require('../trade/common').showFormOverlay;
 const showHighchart             = require('../trade/common').showHighchart;
 const processForgetTicks        = require('../trade/process').processForgetTicks;
 const localize                  = require('../../base/localize').localize;
 const Client                    = require('../../base/client');
+const urlForStatic              = require('../../base/url').urlForStatic;
 
 const MBProcess = (function() {
     let market_status = '',
@@ -55,8 +54,7 @@ const MBProcess = (function() {
             handleMarketClosed();
         } else {
             handleMarketOpen();
-            if (is_show_all) populateUnderlyingGroups(symbol);
-            else displayUnderlyings('underlying', symbols_list, symbol);
+            populateUnderlyings(symbol);
 
             if (symbol && !symbols_list[symbol].is_active) {
                 MBNotifications.show({ text: localize('This symbol is not active. Please try another symbol.'), uid: 'SYMBOL_INACTIVE' });
@@ -66,20 +64,26 @@ const MBProcess = (function() {
         }
     };
 
-    const populateUnderlyingGroups = function(selected) {
+    const populateUnderlyings = function(selected) {
         const $underlyings = $('#underlying');
-        const allSymbols = MBSymbols.underlyings();
-        const markets    = MBSymbols.markets();
+        const all_symbols = MBSymbols.getAllSymbols();
 
-        $underlyings.empty();
+        const $list = $underlyings.find('.list');
+        $list.empty();
 
-        Object.keys(markets)
-            .sort((a, b) => markets[a].name.localeCompare(markets[b].name))
-            .forEach((market) => {
-                $underlyings.append(
-                    $('<optgroup/>', { label: markets[market].name })
-                        .append($(generateUnderlyingOptions(allSymbols[market], selected))));
-            });
+        Object.keys(all_symbols).forEach((symbol, idx) => {
+            if (all_symbols[symbol].is_active) {
+                const is_current = (!selected && idx === 0) || symbol === selected;
+                const $current = $('<div/>', {
+                    value: symbol,
+                    html : `<img src="${urlForStatic(`/images/pages/mb_trading/${symbol.toLowerCase()}.svg`)}" />`,
+                });
+                $list.append($current);
+                if (is_current) {
+                    $underlyings.attr('value', symbol).find('> .current').html($current.clone());
+                }
+            }
+        });
     };
 
     const handleMarketClosed = function() {
@@ -103,15 +107,7 @@ const MBProcess = (function() {
     const processMarketUnderlying = function() {
         'use strict';
 
-        const underlyingElement = document.getElementById('underlying');
-        if (!underlyingElement) {
-            return;
-        }
-
-        if (underlyingElement.selectedIndex < 0) {
-            underlyingElement.selectedIndex = 0;
-        }
-        const underlying = underlyingElement.value;
+        const underlying = $('#underlying').attr('value');
         MBDefaults.set('underlying', underlying);
 
         showFormOverlay();
