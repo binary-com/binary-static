@@ -47,7 +47,7 @@ const KnowledgeTestUI = (() => {
             class         : 'no-underline',
             'data-balloon': question.tooltip,
         });
-        const $question_icon = $('<img>', { src: urlForStatic('/') + '/images/common/question_1.png' });
+        const $question_icon = $('<img>', { src: urlForStatic('/images/common/question_1.png') });
         $question_data.append($question_link.append($question_icon));
 
         const true_false = createTrueFalseBox(question, show_answer);
