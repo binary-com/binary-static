@@ -84,12 +84,18 @@ const Page = (() => {
         }
         Menu.init();
         Contents.onLoad();
-        RealityCheck.onLoad();
         if (sessionStorage.getItem('showLoginPage')) {
             sessionStorage.removeItem('showLoginPage');
             Login.redirectToLogin();
         }
-        checkLanguage();
+        if (Client.isLoggedIn()) {
+            BinarySocket.wait('authorize').then(() => {
+                checkLanguage();
+                RealityCheck.onLoad();
+            });
+        } else {
+            checkLanguage();
+        }
         TrafficSource.setData();
         BinarySocket.init();
     };

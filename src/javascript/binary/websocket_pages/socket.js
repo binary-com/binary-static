@@ -53,6 +53,7 @@ const BinarySocketClass = function() {
         'authorize',
         'get_settings',
         'residence_list',
+        'landing_company',
     ];
     const waiting_list = {
         items: {},
@@ -177,6 +178,14 @@ const BinarySocketClass = function() {
         return promise_obj.promise;
     };
 
+    const setResidence = (residence) => {
+        if (residence && !Cookies.get('residence')) {
+            Client.setCookie('residence', residence);
+            Client.set('residence', residence);
+            send({ landing_company: residence });
+        }
+    };
+
     const init = function (es) {
         if (wrongAppId === getAppId()) {
             return;
@@ -274,11 +283,7 @@ const BinarySocketClass = function() {
                             send({ get_settings: 1 });
                             send({ get_account_status: 1 });
                             send({ payout_currencies: 1 });
-                            const residence = response.authorize.country || Cookies.get('residence');
-                            if (residence) {
-                                Client.set('residence', residence);
-                                send({ landing_company: residence });
-                            }
+                            setResidence(response.authorize.country || Cookies.get('residence'));
                             if (!Client.get('is_virtual')) {
                                 send({ get_self_exclusion: 1 });
                                 // TODO: remove this when back-end adds it as a status to get_account_status
@@ -304,14 +309,7 @@ const BinarySocketClass = function() {
                 } else if (type === 'payout_currencies') {
                     Client.set('currencies', response.payout_currencies.join(','));
                 } else if (type === 'get_settings' && response.get_settings) {
-                    const country_code = response.get_settings.country_code;
-                    if (country_code) {
-                        if (!Cookies.get('residence')) {
-                            Client.setCookie('residence', country_code);
-                            Client.set('residence', country_code);
-                            send({ landing_company: country_code });
-                        }
-                    }
+                    setResidence(response.get_settings.country_code);
                     GTM.eventHandler(response.get_settings);
                     if (response.get_settings.is_authenticated_payment_agent) {
                         $('#topMenuPaymentAgent').removeClass('invisible');
