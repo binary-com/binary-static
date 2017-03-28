@@ -30,7 +30,7 @@
     <div class="gr-parent static_full">
         <div class="gr-row">
             <div class="gr-3 gr-padding-10 gr-hide-m gr-hide-p">
-                <div class="gr-12 center-text">
+                <div class="gr-12 center-text" id="image">
                     [% INCLUDE invisible_image class = "information_technology" %]
                     [% INCLUDE invisible_image class = "quality_assurance" %]
                     [% INCLUDE invisible_image class = "quantitative_analysis" %]

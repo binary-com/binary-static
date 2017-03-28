@@ -1,7 +1,6 @@
 const Tick                      = require('../tick').Tick;
 const ViewPopupUI               = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
 const moment                    = require('moment');
-const Content                   = require('../../../common_functions/content').Content;
 const isVisible                 = require('../../../common_functions/common_functions').isVisible;
 const addComma                  = require('../../../common_functions/string_util').addComma;
 const updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
@@ -283,7 +282,7 @@ const TickDisplay_Beta = (function() {
             }
             const barrier = document.getElementById('contract_purchase_barrier');
             if ($self.contract_barrier && barrier) {
-                label_value(barrier, Content.localize().textBarrier,
+                label_value(barrier, localize('Barrier'),
                     addComma($self.contract_barrier, $self.display_decimals), true);
             }
         },

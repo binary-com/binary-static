@@ -1,6 +1,6 @@
 const moment           = require('moment');
 const localize         = require('../base/localize').localize;
-const objectNotEmpty   = require('../base/utility').objectNotEmpty;
+const isEmptyObject    = require('../base/utility').isEmptyObject;
 const checkInput       = require('../common_functions/common_functions').checkInput;
 const toReadableFormat = require('../common_functions/string_util').toReadableFormat;
 
@@ -14,7 +14,7 @@ const DatePicker = (() => {
         hide(options.selector);
         date_pickers[options.selector] = {};
 
-        if (!objectNotEmpty(localizations)) {
+        if (isEmptyObject(localizations)) {
             localizations = {
                 monthNames     : localize(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']),
                 monthNamesShort: localize(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']),

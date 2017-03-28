@@ -1,8 +1,7 @@
 const showLocalTimeOnHover = require('../../../base/clock').showLocalTimeOnHover;
 const toJapanTimeIfNeeded  = require('../../../base/clock').toJapanTimeIfNeeded;
-const objectNotEmpty       = require('../../../base/utility').objectNotEmpty;
-const format_money         = require('../../../common_functions/currency_to_symbol').format_money;
-// const japanese_client      = require('../../../common_functions/country_base').japanese_client;
+const isEmptyObject        = require('../../../base/utility').isEmptyObject;
+const formatMoney          = require('../../../common_functions/currency_to_symbol').formatMoney;
 const MBPrice              = require('../../mb_trade/mb_price').MBPrice;
 const ViewPopupUI          = require('./view_popup_ui').ViewPopupUI;
 const moment               = require('moment');
@@ -63,7 +62,7 @@ const ViewPopupWS = (function() {
     };
 
     const responseContract = function(response) {
-        if (!response.proposal_open_contract || !objectNotEmpty(response.proposal_open_contract)) {
+        if (!response.proposal_open_contract || isEmptyObject(response.proposal_open_contract)) {
             showErrorPopup(response);
             return;
         }
@@ -189,8 +188,8 @@ const ViewPopupWS = (function() {
 
         containerSetText('trade_details_start_date',     toJapanTimeIfNeeded(epochToDateTime(contract.date_start)));
         if (document.getElementById('trade_details_end_date')) containerSetText('trade_details_end_date', toJapanTimeIfNeeded(epochToDateTime(contract.date_expiry)));
-        containerSetText('trade_details_payout',         format_money(contract.currency, contract.payout));
-        containerSetText('trade_details_purchase_price', format_money(contract.currency, contract.buy_price));
+        containerSetText('trade_details_payout',         formatMoney(contract.currency, contract.payout));
+        containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
 
         normalUpdateTimers();
         normalUpdate();
@@ -234,18 +233,16 @@ const ViewPopupWS = (function() {
         }
 
         containerSetText('trade_details_ref_id',           contract.transaction_ids.buy + (contract.transaction_ids.sell ? ' - ' + contract.transaction_ids.sell : ''));
-        containerSetText('trade_details_indicative_price', indicative_price ? format_money(contract.currency, indicative_price) : '-');
+        containerSetText('trade_details_indicative_price', indicative_price ? formatMoney(contract.currency, indicative_price) : '-');
 
         let profit_loss,
             percentage;
-        // const jp_client;
 
         if (finalPrice) {
             profit_loss = finalPrice - contract.buy_price;
             percentage = ((profit_loss * 100) / contract.buy_price).toFixed(2);
-            // jp_client = japanese_client();
             containerSetText('trade_details_profit_loss',
-                format_money(contract.currency, profit_loss) + '<span>(' + (percentage > 0 ? '+' : '') + percentage + '%)</span>', { class: (profit_loss >= 0 ? 'profit' : 'loss') });
+                formatMoney(contract.currency, profit_loss) + '<span>(' + (percentage > 0 ? '+' : '') + percentage + '%)</span>', { class: (profit_loss >= 0 ? 'profit' : 'loss') });
         } else {
             containerSetText('trade_details_profit_loss', '-', { class: 'loss' });
         }
@@ -645,7 +642,7 @@ const ViewPopupWS = (function() {
                 responseSellExpired();
                 break;
             case 'get_corporate_actions':
-                if (objectNotEmpty(response.get_corporate_actions)) {
+                if (!isEmptyObject(response.get_corporate_actions)) {
                     corporateActionEvent = true;
                     containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporateActionEvent ? '* ' + localize('This contract was affected by a Corporate Action event.') : '&nbsp;');
                     populateCorporateAction(response);

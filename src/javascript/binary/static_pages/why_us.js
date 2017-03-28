@@ -5,7 +5,7 @@ const WhyUs = (() => {
     'use strict';
 
     const onLoad = () => {
-        Scroll.sidebar_scroll($('.why-us'));
+        Scroll.sidebarScroll($('.why-us'));
         Client.activateByClientType();
     };
 

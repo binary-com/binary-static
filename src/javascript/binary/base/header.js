@@ -1,15 +1,14 @@
-const BinaryPjax                = require('./binary_pjax');
-const Client                    = require('./client');
-const GTM                       = require('./gtm');
-const localize                  = require('./localize').localize;
-const Login                     = require('./login');
-const State                     = require('./storage').State;
-const urlFor                    = require('./url').urlFor;
-const objectNotEmpty            = require('./utility').objectNotEmpty;
-const createLanguageDropDown    = require('../common_functions/attach_dom/language_dropdown');
-const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
-const japanese_client           = require('../common_functions/country_base').japanese_client;
-const MetaTrader                = require('../websocket_pages/user/metatrader/metatrader');
+const BinaryPjax          = require('./binary_pjax');
+const Client              = require('./client');
+const GTM                 = require('./gtm');
+const localize            = require('./localize').localize;
+const Login               = require('./login');
+const State               = require('./storage').State;
+const urlFor              = require('./url').urlFor;
+const isEmptyObject       = require('./utility').isEmptyObject;
+const checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
+const jpClient            = require('../common_functions/country_base').jpClient;
+const MetaTrader          = require('../websocket_pages/user/metatrader/metatrader');
 
 const Header = (() => {
     'use strict';
@@ -17,7 +16,6 @@ const Header = (() => {
     const onLoad = () => {
         showOrHideLoginForm();
         bindClick();
-        createLanguageDropDown();
         if (!Login.isLoginPages()) {
             checkClientsCountry();
         }
@@ -29,7 +27,7 @@ const Header = (() => {
 
     const bindClick = () => {
         $('#logo').off('click').on('click', () => {
-            BinaryPjax.load(urlFor(Client.isLoggedIn() ? (japanese_client() ? 'multi_barriers_trading' : 'trading') : ''));
+            BinaryPjax.load(urlFor(Client.isLoggedIn() ? (jpClient() ? 'multi_barriers_trading' : 'trading') : ''));
         });
         $('#btn_login').off('click').on('click', (e) => {
             e.preventDefault();
@@ -191,7 +189,7 @@ const Header = (() => {
 
             const riskAssessment = () => {
                 if (get_account_status.risk_classification === 'high') {
-                    return !objectNotEmpty(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
+                    return isEmptyObject(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
                 }
                 return false;
             };
@@ -212,7 +210,7 @@ const Header = (() => {
             };
 
             const validations = {
-                authenticate: () => (!/authenticated/.test(status) || !/age_verification/.test(status)) && !japanese_client(),
+                authenticate: () => (!/authenticated/.test(status) || !/age_verification/.test(status)) && !jpClient(),
                 residence   : () => !Client.get('residence'),
                 risk        : () => riskAssessment(),
                 tax         : () => Client.shouldCompleteTax(),

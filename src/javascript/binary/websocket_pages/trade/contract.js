@@ -1,8 +1,7 @@
 const getFormNameBarrierCategory = require('./common').getFormNameBarrierCategory;
 const getLanguage                = require('../../base/language').get;
 const localize                   = require('../../base/localize').localize;
-const objectNotEmpty             = require('../../base/utility').objectNotEmpty;
-const Content                    = require('../../common_functions/content').Content;
+const isEmptyObject              = require('../../base/utility').isEmptyObject;
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -149,31 +148,31 @@ const Contract = (function() {
             if (contractCategory && !tradeContractForms.hasOwnProperty(contractCategory)) {
                 if (contractCategory === 'callput') {
                     if (currentObj.barrier_category === 'euro_atm') {
-                        tradeContractForms.risefall = Content.localize().textFormRiseFall;
+                        tradeContractForms.risefall = localize('Rise/Fall');
                     } else {
-                        tradeContractForms.higherlower = Content.localize().textFormHigherLower;
+                        tradeContractForms.higherlower = localize('Higher/Lower');
                     }
                 } else {
                     tradeContractForms[contractCategory] = localize(currentObj.contract_category_display);
                     if (contractCategory === 'digits') {
-                        tradeContractForms.matchdiff = Content.localize().textFormMatchesDiffers;
+                        tradeContractForms.matchdiff = localize('Matches/Differs');
                         if (getLanguage() !== 'ID') {
-                            tradeContractForms.evenodd = Content.localize().textFormEvenOdd;
-                            tradeContractForms.overunder = Content.localize().textFormOverUnder;
+                            tradeContractForms.evenodd = localize('Even/Odd');
+                            tradeContractForms.overunder = localize('Over/Under');
                         }
                     }
                 }
             }
         });
 
-        if (!objectNotEmpty(tradeContractForms)) return null;
+        if (isEmptyObject(tradeContractForms)) return null;
 
         if (tradeContractForms.risefall || tradeContractForms.higherlower) {
-            tradeContractForms.updown = Content.localize().textFormUpDown;
+            tradeContractForms.updown = localize('Up/Down');
         }
 
         if (tradeContractForms.endsinout || tradeContractForms.staysinout) {
-            tradeContractForms.inout = Content.localize().textFormInOut;
+            tradeContractForms.inout = localize('In/Out');
         }
 
         return tradeContractForms;

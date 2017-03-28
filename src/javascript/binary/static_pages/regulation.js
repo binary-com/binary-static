@@ -13,11 +13,9 @@ const Regulation = (() => {
         const coords = [];
         const $map_area = $('#planetmap').find('area');
         const $selector = $('img[usemap="#planetmap"]');
-        if (coords.length === 0) {
-            $map_area.each(function() {
-                coords.push($(this).attr('coords'));
-            });
-        }
+        $map_area.each(function() {
+            coords.push($(this).attr('coords'));
+        });
         const relocateLinks = () => {
             $map_area.each(function(index) {
                 let c = '';

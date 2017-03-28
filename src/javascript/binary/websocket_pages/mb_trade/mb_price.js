@@ -1,11 +1,11 @@
 const MBContract         = require('./mb_contract').MBContract;
 const MBDefaults         = require('./mb_defaults').MBDefaults;
 const MBNotifications    = require('./mb_notifications').MBNotifications;
-const objectNotEmpty     = require('../../base/utility').objectNotEmpty;
+const isEmptyObject      = require('../../base/utility').isEmptyObject;
 const getPropertyValue   = require('../../base/utility').getPropertyValue;
 const localize           = require('../../base/localize').localize;
 const Client             = require('../../base/client');
-const japanese_client    = require('../../common_functions/country_base').japanese_client;
+const jpClient           = require('../../common_functions/country_base').jpClient;
 const addComma           = require('../../common_functions/string_util').addComma;
 const elementInnerHtml   = require('../../common_functions/common_functions').elementInnerHtml;
 
@@ -51,13 +51,13 @@ const MBPrice = (function() {
         const contract_type = response.echo_req.contract_type;
         const prev_proposal = $.extend({}, prices[barrier][contract_type]);
 
-        if (!objectNotEmpty(prev_proposal)) {
+        if (isEmptyObject(prev_proposal)) {
             res_count++;
         }
 
         prices[barrier][contract_type] = response;
         // update previous ask_price to use in price movement
-        if (objectNotEmpty(prev_proposal) && !prev_proposal.error) {
+        if (!isEmptyObject(prev_proposal) && !prev_proposal.error) {
             prices[barrier][contract_type].prev_price = prev_proposal.proposal.ask_price;
         }
 
@@ -147,7 +147,7 @@ const MBPrice = (function() {
 
     const makePriceRow = function(values, is_update) {
         const payout   = MBDefaults.get('payout'),
-            is_japan = japanese_client();
+            is_japan = jpClient();
         return (is_update ? '' : '<div data-barrier="' + values.barrier + '" class="gr-row price-row">') +
                 '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
                 '<div class="gr-4 buy-price">' +
@@ -182,7 +182,7 @@ const MBPrice = (function() {
     };
 
     const formatPrice = function(price) {
-        return addComma(price, japanese_client() ? '0' : 2);
+        return addComma(price, jpClient() ? '0' : 2);
     };
 
     const cleanup = function() {

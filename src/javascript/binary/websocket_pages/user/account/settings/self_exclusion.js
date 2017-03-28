@@ -2,7 +2,6 @@ const moment           = require('moment');
 const Client           = require('../../../../base/client');
 const localize         = require('../../../../base/localize').localize;
 const dateValueChanged = require('../../../../common_functions/common_functions').dateValueChanged;
-const Content          = require('../../../../common_functions/content').Content;
 const FormManager      = require('../../../../common_functions/form_manager');
 const DatePicker       = require('../../../../components/date_picker');
 const TimePicker       = require('../../../../components/time_picker');
@@ -22,8 +21,6 @@ const SelfExclusion = (function() {
     const hidden_class     = 'invisible';
 
     const onLoad = function() {
-        Content.populate();
-
         $form = $(form_id);
 
         fields = {};

@@ -18,30 +18,30 @@ const Platforms = (() => {
 
         checkWidth();
         $(window).resize(checkWidth);
-        $('.inner').scroll(checkScroll);
-        setHeights();
+        // $('.inner').scroll(checkScroll);
+        // setHeights();
     };
 
-    const setHeights = () => {
-        let $this;
-        $('.inner tr').each(function() {
-            $this = $(this);
-            const $td = $this.find('td:first');
-            const $th = $this.find('th');
-            if ($th.height() > $td.height()) {
-                $this.find('td').height($th.height());
-            }
-        });
-    };
+    // const setHeights = () => {
+    //     let $this;
+    //     $('.inner tr').each(function() {
+    //         $this = $(this);
+    //         const $td = $this.find('td:first');
+    //         const $th = $this.find('th');
+    //         if ($th.height() > $td.height()) {
+    //             $this.find('td').height($th.height());
+    //         }
+    //     });
+    // };
 
-    const checkScroll = () => {
-        const $elem = $('.inner');
-        const $fade_left = $('.fade-to-left');
-        const $fade_right = $('.fade-to-right');
-        const new_scroll_left = $elem.scrollLeft();
-        $fade_left.css('opacity', new_scroll_left === 0 ? '0' : '100');
-        $fade_right.css('opacity', $elem.get(0).scrollWidth === new_scroll_left + $elem.width() ? '0' : '100');
-    };
+    // const checkScroll = () => {
+    //     const $elem = $('.inner');
+    //     const $fade_left = $('.fade-to-left');
+    //     const $fade_right = $('.fade-to-right');
+    //     const new_scroll_left = $elem.scrollLeft();
+    //     $fade_left.css('opacity', new_scroll_left === 0 ? '0' : '100');
+    //     $fade_right.css('opacity', $elem.get(0).scrollWidth === new_scroll_left + $elem.width() ? '0' : '100');
+    // };
 
     const checkWidth = () => {
         if ($('.sidebar-left').is(':visible')) {
@@ -49,7 +49,7 @@ const Platforms = (() => {
         } else {
             $('.sections').removeClass('invisible');
         }
-        $('.inner th').hide().fadeIn(1); // force to refresh in order to maintain correct positions
+        // $('.inner th').hide().fadeIn(1); // force to refresh in order to maintain correct positions
     };
 
     const getHash = () => {

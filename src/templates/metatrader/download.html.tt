@@ -8,7 +8,7 @@
                 <img class="gr-3 gr-2-p gr-2-m gr-no-gutter" src="[% request.url_for('images/pages/metatrader/icons/desktop.svg') %]" />
                 <div class="gr-padding-30 gr-child">
                     <h3>[% l('For Desktop') %]</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>[% l('Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders.') %]</p>
                 </div>
             </div>
             <div class="gr-8 gr-12-m gr-12-p">
@@ -60,7 +60,7 @@
                 <img class="gr-3 gr-2-p gr-2-m gr-no-gutter" src="[% request.url_for('images/pages/metatrader/icons/mobile.svg') %]" />
                 <div class="gr-padding-30 gr-child">
                     <h3>[% l('For Mobile') %]</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>[% l('Access the markets anytime, anywhere using native apps for your iOS or Android devices.') %]</p>
                 </div>
             </div>
         </div>
@@ -74,7 +74,7 @@
                 <img class="gr-3 gr-2-p gr-2-m gr-no-gutter" src="[% request.url_for('images/pages/metatrader/icons/browser.svg') %]" />
                 <div class="gr-padding-30 gr-child">
                     <h3>[% l('For Browser') %]</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>[% l('Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required.') %]</p>
                 </div>
             </div>
             <div class="gr-8 gr-12-m gr-12-p gr-padding-10">

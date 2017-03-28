@@ -1,6 +1,6 @@
-const objectNotEmpty = require('../base/utility').objectNotEmpty;
+const isEmptyObject = require('../base/utility').isEmptyObject;
 
-const ActiveSymbols = (function () {
+const ActiveSymbols = (() => {
     'use strict';
 
     const groupBy = function(xs, key) {
@@ -27,7 +27,7 @@ const ActiveSymbols = (function () {
         submarkets: {},
         symbols   : {},
         getMarkets: function(symbols) {
-            if (objectNotEmpty(this.markets)) {
+            if (!isEmptyObject(this.markets)) {
                 return clone(this.markets);
             }
 
@@ -51,7 +51,7 @@ const ActiveSymbols = (function () {
             this.submarkets = {};
         },
         getSubmarketsForMarket: function(symbols, market) {
-            if (objectNotEmpty(market.submarkets)) {
+            if (!isEmptyObject(market.submarkets)) {
                 return clone(market.submarkets);
             }
             market.submarkets = {};
@@ -70,7 +70,7 @@ const ActiveSymbols = (function () {
             return clone(market.submarkets);
         },
         getSymbolsForSubmarket: function(symbols, submarket) {
-            if (!objectNotEmpty(submarket.symbols)) {
+            if (isEmptyObject(submarket.symbols)) {
                 submarket.symbols = {};
                 symbols.forEach(function(symbol) {
                     submarket.symbols[symbol.symbol] = {
@@ -86,7 +86,7 @@ const ActiveSymbols = (function () {
             return clone(submarket.symbols);
         },
         getSubmarkets: function(active_symbols) {
-            if (!objectNotEmpty(this.submarkets)) {
+            if (isEmptyObject(this.submarkets)) {
                 const markets = this.getMarkets(active_symbols);
                 const that = this;
                 Object.keys(markets).forEach(function(key) {
@@ -98,7 +98,7 @@ const ActiveSymbols = (function () {
             return clone(this.submarkets);
         },
         getSymbols: function(active_symbols) {
-            if (!objectNotEmpty(this.symbols)) {
+            if (isEmptyObject(this.symbols)) {
                 const submarkets = this.getSubmarkets(active_symbols);
                 const that = this;
                 Object.keys(submarkets).forEach(function(key) {
@@ -141,6 +141,4 @@ const ActiveSymbols = (function () {
     };
 })();
 
-module.exports = {
-    ActiveSymbols: ActiveSymbols,
-};
+module.exports = ActiveSymbols;
