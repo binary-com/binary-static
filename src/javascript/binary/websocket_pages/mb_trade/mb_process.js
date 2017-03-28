@@ -5,7 +5,7 @@ const MBPrice                   = require('./mb_price').MBPrice;
 const MBSymbols                 = require('./mb_symbols').MBSymbols;
 const MBTick                    = require('./mb_tick').MBTick;
 const TradingAnalysis           = require('../trade/analysis').TradingAnalysis;
-const japanese_client           = require('../../common_functions/country_base').japanese_client;
+const jpClient                  = require('../../common_functions/country_base').jpClient;
 const displayUnderlyings        = require('../trade/common').displayUnderlyings;
 const generateUnderlyingOptions = require('../trade/common').generateUnderlyingOptions;
 const showFormOverlay           = require('../trade/common').showFormOverlay;
@@ -30,7 +30,7 @@ const MBProcess = (function() {
         // populate the Symbols object
         MBSymbols.details(data);
 
-        const is_show_all  = Client.isLoggedIn() && !japanese_client();
+        const is_show_all  = Client.isLoggedIn() && !jpClient();
         const symbols_list = is_show_all ? MBSymbols.getAllSymbols() : MBSymbols.underlyings().major_pairs;
         const update_page  = MBSymbols.need_page_update();
         let symbol = MBDefaults.get('underlying');
@@ -202,7 +202,7 @@ const MBProcess = (function() {
             proposal_array: 1,
             subscribe     : 1,
             basis         : 'payout',
-            amount        : japanese_client() ? (parseInt(MBDefaults.get('payout')) || 1) * 1000 : MBDefaults.get('payout'),
+            amount        : jpClient() ? (parseInt(MBDefaults.get('payout')) || 1) * 1000 : MBDefaults.get('payout'),
             currency      : MBContract.getCurrency(),
             symbol        : MBDefaults.get('underlying'),
             req_id        : MBPrice.getReqId(),

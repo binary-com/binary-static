@@ -1,11 +1,11 @@
-const MBContract      = require('./mb_contract').MBContract;
-const MBDefaults      = require('./mb_defaults').MBDefaults;
-const MBNotifications = require('./mb_notifications').MBNotifications;
-const MBProcess       = require('./mb_process').MBProcess;
-const MBTick          = require('./mb_tick').MBTick;
-const TradingAnalysis = require('../trade/analysis').TradingAnalysis;
-const japanese_client = require('../../common_functions/country_base').japanese_client;
-const debounce        = require('../trade/common').debounce;
+const MBContract         = require('./mb_contract').MBContract;
+const MBDefaults         = require('./mb_defaults').MBDefaults;
+const MBNotifications    = require('./mb_notifications').MBNotifications;
+const MBProcess          = require('./mb_process').MBProcess;
+const MBTick             = require('./mb_tick').MBTick;
+const TradingAnalysis    = require('../trade/analysis').TradingAnalysis;
+const jpClient           = require('../../common_functions/country_base').jpClient;
+const debounce           = require('../trade/common').debounce;
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -84,7 +84,7 @@ const MBTradingEvents = (function () {
             const result = payoutElement.value.substring(0, ev.target.selectionStart) + char +
                 payoutElement.value.substring(ev.target.selectionEnd);
 
-            if ((japanese_client() && char === '.') || result[0] === '0' || !validatePayout(+result)) {
+            if ((jpClient() && char === '.') || result[0] === '0' || !validatePayout(+result)) {
                 isOK = false;
             }
 
@@ -99,7 +99,7 @@ const MBTradingEvents = (function () {
             const contract = MBContract.getCurrentContracts();
             const maxAmount = (Array.isArray(contract) && contract[0].expiry_type !== 'intraday') ? 20000 : 5000;
             if (!payoutAmount || isNaN(payoutAmount) ||
-                (japanese_client() && (payoutAmount < 1 || payoutAmount > 100)) ||
+                (jpClient() && (payoutAmount < 1 || payoutAmount > 100)) ||
                 (payoutAmount <= 0 || payoutAmount > maxAmount)) {
                 isOK = false;
             }
@@ -110,7 +110,7 @@ const MBTradingEvents = (function () {
         const payoutElement = document.getElementById('payout');
         if (payoutElement) {
             if (!payoutElement.value) {
-                const payout_def = MBDefaults.get('payout') || (japanese_client() ? 1 : 10);
+                const payout_def = MBDefaults.get('payout') || (jpClient() ? 1 : 10);
                 payoutElement.value = payout_def;
                 MBDefaults.set('payout', payout_def);
             }
@@ -118,7 +118,7 @@ const MBTradingEvents = (function () {
             payoutElement.addEventListener('input', debounce(function(e) {
                 let payout = e.target.value;
 
-                if (!japanese_client()) {
+                if (!jpClient()) {
                     payout = payout.replace(/[^0-9.]/g, '');
                     if (isStandardFloat(payout)) {
                         payout = parseFloat(payout).toFixed(2);

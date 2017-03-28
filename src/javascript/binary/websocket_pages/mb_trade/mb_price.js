@@ -5,7 +5,7 @@ const objectNotEmpty     = require('../../base/utility').objectNotEmpty;
 const getPropertyValue   = require('../../base/utility').getPropertyValue;
 const localize           = require('../../base/localize').localize;
 const Client             = require('../../base/client');
-const japanese_client    = require('../../common_functions/country_base').japanese_client;
+const jpClient           = require('../../common_functions/country_base').jpClient;
 const addComma           = require('../../common_functions/string_util').addComma;
 const elementInnerHtml   = require('../../common_functions/common_functions').elementInnerHtml;
 
@@ -155,7 +155,7 @@ const MBPrice = (function() {
 
     const makePriceRow = function(values, is_update) {
         const payout   = MBDefaults.get('payout'),
-            is_japan = japanese_client();
+            is_japan = jpClient();
         return (is_update ? '' : '<div data-barrier="' + values.barrier + '" class="gr-row price-row">') +
                 '<div class="gr-4 barrier">' + values.barrier.split('_').join(' ... ') + '</div>' +
                 '<div class="gr-4 buy-price">' +
@@ -190,7 +190,7 @@ const MBPrice = (function() {
     };
 
     const formatPrice = function(price) {
-        return addComma(price, japanese_client() ? '0' : 2);
+        return addComma(price, jpClient() ? '0' : 2);
     };
 
     const cleanup = function() {

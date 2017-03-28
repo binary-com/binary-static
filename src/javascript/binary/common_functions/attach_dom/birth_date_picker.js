@@ -1,9 +1,9 @@
-const DatePicker       = require('../../components/date_picker').DatePicker;
-const toISOFormat      = require('../string_util').toISOFormat;
-const dateValueChanged = require('../common_functions').dateValueChanged;
 const moment           = require('moment');
+const dateValueChanged = require('../common_functions').dateValueChanged;
+const toISOFormat      = require('../string_util').toISOFormat;
+const DatePicker       = require('../../components/date_picker').DatePicker;
 
-function generateBirthDate() {
+const generateBirthDate = () => {
     const date_of_birth = '#date_of_birth';
     const datePickerInst = new DatePicker(date_of_birth);
     datePickerInst.hide();
@@ -18,6 +18,6 @@ function generateBirthDate() {
             return dateValueChanged(this, 'date');
         })
         .val('');
-}
+};
 
 module.exports = generateBirthDate;

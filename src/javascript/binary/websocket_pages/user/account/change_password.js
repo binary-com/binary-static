@@ -9,7 +9,7 @@ const ChangePassword = (function() {
     const init = function() {
         FormManager.init(form_id, [
             { selector: '#old_password',    validations: ['req', ['length', { min: 6, max: 25 }]] },
-            { selector: '#new_password',    validations: ['req', 'password', ['not_equal', { to: '#old_password', name1: 'Current password', name2: 'New password' }]] },
+            { selector: '#new_password',    validations: ['req', 'password', ['not_equal', { to: '#old_password', name1: 'Current password', name2: 'New password' }]], re_check_field: '#repeat_password' },
             { selector: '#repeat_password', validations: ['req', ['compare', { to: '#new_password' }]], exclude_request: 1 },
 
             { request_field: 'change_password', value: 1 },
