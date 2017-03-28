@@ -317,7 +317,6 @@ sub _texts {
         push @texts, localize("{JAPAN ONLY}Dear customer, you've already completed the knowledge test, please proceed to next step.");
         push @texts, localize('{JAPAN ONLY}Please complete the following questions.');
         push @texts, localize('{JAPAN ONLY}The test is unavailable now, test can only be taken again on next business day with respect of most recent test.');
-        push @texts, localize('{JAPAN ONLY}TIP_[_1]');
         push @texts, localize('You need to finish all 20 questions.');
         push @texts, localize('Weekday');
         push @texts, localize('Your Application is Being Processed.');
