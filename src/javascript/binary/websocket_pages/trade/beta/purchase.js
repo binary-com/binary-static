@@ -2,8 +2,8 @@ const Contract_Beta             = require('./contract').Contract_Beta;
 const WSTickDisplay_Beta        = require('./tick_trade').WSTickDisplay_Beta;
 const Symbols                   = require('../symbols').Symbols;
 const Tick                      = require('../tick').Tick;
-const Content                   = require('../../../common_functions/content').Content;
-const format_money              = require('../../../common_functions/currency_to_symbol').format_money;
+const localize                  = require('../../../base/localize').localize;
+const formatMoney               = require('../../../common_functions/currency_to_symbol').formatMoney;
 const toTitleCase               = require('../../../common_functions/string_util').toTitleCase;
 const addComma                  = require('../../../common_functions/string_util').addComma;
 const isVisible                 = require('../../../common_functions/common_functions').isVisible;
@@ -78,11 +78,11 @@ const Purchase_Beta = (function () {
                 $('#contract_purchase_profit_list').removeClass('gr-6').addClass('gr-4');
                 $('#contract_purchase_description_section').removeClass('gr-6').addClass('gr-8');
             }
-            elementTextContent(heading, Content.localize().textContractConfirmationHeading);
+            elementTextContent(heading, localize('Contract Confirmation'));
             elementTextContent(descr, receipt.longcode);
             if (barrier_element) label_value(barrier_element, '', '', true);
             [].forEach.call(document.getElementsByClassName('contract_purchase_reference'), function(ref) {
-                elementTextContent(ref, Content.localize().textRef + ' ' + receipt.transaction_id);
+                elementTextContent(ref, localize('Ref.') + ' ' + receipt.transaction_id);
             });
 
             let payout_value,
@@ -100,15 +100,15 @@ const Purchase_Beta = (function () {
             spots.hide();
 
             if (is_spread) {
-                label_value(payout, Content.localize().textStopLoss,       receipt.stop_loss_level,   true);
-                label_value(cost,   Content.localize().textAmountPerPoint, receipt.amount_per_point);
-                label_value(profit, Content.localize().textStopProfit,     receipt.stop_profit_level, true);
+                label_value(payout, localize('Stop-loss'),        receipt.stop_loss_level,   true);
+                label_value(cost,   localize('Amount per point'), receipt.amount_per_point);
+                label_value(profit, localize('Stop-profit'),      receipt.stop_profit_level, true);
             } else {
-                label_value(payout, Content.localize().textPayout, addComma(payout_value));
-                label_value(cost,   Content.localize().textStake,  addComma(cost_value));
+                label_value(payout, localize('Payout'), addComma(payout_value));
+                label_value(cost,   localize('Stake'),  addComma(cost_value));
             }
 
-            elementTextContent(balance, Content.localize().textContractConfirmationBalance + ' ' + format_money(Client.get('currency'), receipt.balance_after));
+            elementTextContent(balance, localize('Account balance:') + ' ' + formatMoney(Client.get('currency'), receipt.balance_after));
 
             if (show_chart) {
                 chart.show();
@@ -242,7 +242,7 @@ const Purchase_Beta = (function () {
             if (isVisible(container) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time) {
                 tick_number++;
 
-                elementTextContent(tick_elem, Content.localize().textTickResultLabel + ' ' + tick_number);
+                elementTextContent(tick_elem, localize('Tick') + ' ' + tick_number);
                 elementInnerHtml(spot_elem, tick_d.quote.replace(/\d$/, replace));
 
                 const this_digit_elem = document.getElementById('tick_digit_' + tick_number);
@@ -257,11 +257,11 @@ const Purchase_Beta = (function () {
                     if (is_win(last_digit)) {
                         final_price = $('#contract_purchase_payout_value').attr('value');
                         pnl = $('#contract_purchase_cost_value').attr('value');
-                        contract_status = Content.localize().textContractStatusWon;
+                        contract_status = localize('This contract won');
                     } else {
                         final_price = 0;
                         pnl = -$('#contract_purchase_cost_value').attr('value');
-                        contract_status = Content.localize().textContractStatusLost;
+                        contract_status = localize('This contract lost');
                     }
 
                     updatePurchaseStatus_Beta(final_price, pnl, contract_status);

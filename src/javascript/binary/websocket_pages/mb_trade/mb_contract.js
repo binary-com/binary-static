@@ -6,8 +6,8 @@ const getLanguage      = require('../../base/language').get;
 const localize         = require('../../base/localize').localize;
 const objectNotEmpty   = require('../../base/utility').objectNotEmpty;
 const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
-const japanese_client  = require('../../common_functions/country_base').japanese_client;
-const format_currency  = require('../../common_functions/currency_to_symbol').format_currency;
+const jpClient         = require('../../common_functions/country_base').jpClient;
+const formatCurrency   = require('../../common_functions/currency_to_symbol').formatCurrency;
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -58,10 +58,10 @@ const MBContract = (function() {
 
         const toDate = (date) => {
             let text_value = moment.utc(date * 1000)
-                .utcOffset(japanese_client() ? '+09:00' : '+00:00')
+                .utcOffset(jpClient() ? '+09:00' : '+00:00')
                 .locale(getLanguage().toLowerCase())
                 .format('MMM Do, HH:mm');
-            if (japanese_client()) {
+            if (jpClient()) {
                 text_value = text_value.replace(/08:59/, '09:00«');
             }
             return text_value;
@@ -182,7 +182,7 @@ const MBContract = (function() {
         };
         Object.keys(all_durations).forEach(function(key) {
             if (all_durations[key]) {
-                remainingTimeString.push(all_durations[key] + (japanese_client() ? '' : ' ') + localize((key + (+all_durations[key] === 1 ? '' : 's'))));
+                remainingTimeString.push(all_durations[key] + (jpClient() ? '' : ' ') + localize((key + (+all_durations[key] === 1 ? '' : 's'))));
             }
         });
         elementInnerHtml(remainingTimeElement, remainingTimeString.join(' '));
@@ -307,8 +307,8 @@ const MBContract = (function() {
         const contracts = getCurrentContracts();
         if (!contracts.length) return;
         const $desc_wrappers = $('.descr-wrapper'),
-            currency = (format_currency(Client.get('currency')) || format_currency(document.getElementById('currency').value) || '¥'),
-            payout = Number(MBDefaults.get('payout') * (japanese_client() ? 1000 : 1)).toLocaleString(),
+            currency = (formatCurrency(Client.get('currency')) || formatCurrency(document.getElementById('currency').value) || '¥'),
+            payout = Number(MBDefaults.get('payout') * (jpClient() ? 1000 : 1)).toLocaleString(),
             display_name = MBSymbols.getName(MBDefaults.get('underlying')),
             date_expiry = periodText(contracts[0].trading_period).end.replace(/\s\(.*\)/, '');
         contracts.forEach(function(c) {

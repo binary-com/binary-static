@@ -1,18 +1,18 @@
-const japanese_client = require('./country_base').japanese_client;
-const addComma        = require('./string_util').addComma;
-const getLanguage     = require('../base/language').get;
+const jpClient    = require('./country_base').jpClient;
+const addComma    = require('./string_util').addComma;
+const getLanguage = require('../base/language').get;
 
-function format_money(currencyValue, amount) {
+const formatMoney = (currency_value, amount) => {
     let money;
     if (amount) amount = String(amount).replace(/,/g, '');
-    if (typeof Intl !== 'undefined' && currencyValue && currencyValue !== '' && amount && amount !== '') {
-        const options = { style: 'currency', currency: currencyValue },
-            language = typeof window !== 'undefined' ? getLanguage().toLowerCase() : 'en';
+    if (typeof Intl !== 'undefined' && currency_value && amount) {
+        const options = { style: 'currency', currency: currency_value };
+        const language = typeof window !== 'undefined' ? getLanguage().toLowerCase() : 'en';
         money = new Intl.NumberFormat(language.replace('_', '-'), options).format(amount);
     } else {
         let updatedAmount,
             sign = '';
-        if (japanese_client()) {
+        if (jpClient()) {
             updatedAmount = parseInt(amount);
             if (Number(updatedAmount) < 0) {
                 sign = '-';
@@ -21,24 +21,17 @@ function format_money(currencyValue, amount) {
             updatedAmount = parseFloat(amount).toFixed(2);
         }
         updatedAmount = addComma(updatedAmount);
-        const symbol = format_money.map[currencyValue];
-        if (symbol === undefined) {
-            money = currencyValue + ' ' + updatedAmount;
-        } else {
-            money = sign + symbol + updatedAmount;
-        }
+        const symbol = mapCurrency[currency_value];
+
+        money = symbol ? sign + symbol + updatedAmount : currency_value + ' ' + updatedAmount;
     }
     return money;
-}
-
-function format_currency(currency) {
-    return format_money.map[currency];
-}
+};
 
 // Taken with modifications from:
 //    https://github.com/bengourley/currency-symbol-map/blob/master/map.js
 // When we need to handle more currencies please look there.
-format_money.map = {
+const mapCurrency = {
     USD: '$',
     GBP: '£',
     AUD: 'A$',
@@ -47,6 +40,6 @@ format_money.map = {
 };
 
 module.exports = {
-    format_money   : format_money,
-    format_currency: format_currency,
+    formatMoney   : formatMoney,
+    formatCurrency: currency => mapCurrency[currency],
 };

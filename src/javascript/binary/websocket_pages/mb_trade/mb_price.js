@@ -4,7 +4,7 @@ const objectNotEmpty     = require('../../base/utility').objectNotEmpty;
 const getPropertyValue   = require('../../base/utility').getPropertyValue;
 const localize           = require('../../base/localize').localize;
 const Client             = require('../../base/client');
-const japanese_client    = require('../../common_functions/country_base').japanese_client;
+const jpClient           = require('../../common_functions/country_base').jpClient;
 const addComma           = require('../../common_functions/string_util').addComma;
 
 /*
@@ -20,7 +20,7 @@ const MBPrice = (function() {
     'use strict';
 
     const price_selector = '.prices-wrapper .price-rows';
-    const is_japan       = japanese_client();
+    const is_japan       = jpClient();
 
     let prices         = {},
         contract_types = {},
@@ -179,7 +179,7 @@ const MBPrice = (function() {
     };
 
     const formatPrice = function(price) {
-        return addComma(price, japanese_client() ? '0' : 2);
+        return addComma(price, jpClient() ? '0' : 2);
     };
 
     const cleanup = function() {

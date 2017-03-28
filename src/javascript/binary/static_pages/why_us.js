@@ -3,7 +3,7 @@ const Client = require('../base/client');
 
 const WhyUs = (function() {
     const onLoad = function() {
-        Scroll.sidebar_scroll($('.why-us'));
+        Scroll.sidebarScroll($('.why-us'));
         Client.activateByClientType();
     };
 
