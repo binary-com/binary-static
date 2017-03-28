@@ -1,6 +1,5 @@
 const BinaryPjax  = require('../../../../base/binary_pjax');
 const localize    = require('../../../../base/localize').localize;
-const Content     = require('../../../../common_functions/content').Content;
 const FormManager = require('../../../../common_functions/form_manager');
 
 const CashierPassword = (function() {
@@ -12,7 +11,6 @@ const CashierPassword = (function() {
     const hidden_class = 'invisible';
 
     const onLoad = function() {
-        Content.populate();
         $form = $(form_id);
 
         BinarySocket.wait('authorize').then(() => {

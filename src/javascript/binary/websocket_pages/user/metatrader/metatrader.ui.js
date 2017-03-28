@@ -1,5 +1,5 @@
 const showLoadingImage = require('../../../base/utility').showLoadingImage;
-const formatMoney      = require('../../../common_functions/currency_to_symbol').format_money;
+const formatMoney      = require('../../../common_functions/currency_to_symbol').formatMoney;
 const Validation       = require('../../../common_functions/form_validation');
 const MetaTraderConfig = require('./metatrader.config');
 
