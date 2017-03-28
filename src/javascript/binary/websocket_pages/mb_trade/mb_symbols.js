@@ -1,4 +1,4 @@
-const ActiveSymbols = require('../../common_functions/active_symbols').ActiveSymbols;
+const ActiveSymbols = require('../../common_functions/active_symbols');
 const BinaryPjax    = require('../../base/binary_pjax');
 const Client        = require('../../base/client');
 const getLanguage   = require('../../base/language').get;

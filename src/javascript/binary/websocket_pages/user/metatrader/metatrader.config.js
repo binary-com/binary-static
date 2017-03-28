@@ -2,7 +2,7 @@ const Client         = require('../../../base/client');
 const localize       = require('../../../base/localize').localize;
 const urlFor         = require('../../../base/url').urlFor;
 const objectNotEmpty = require('../../../base/utility').objectNotEmpty;
-const formatMoney    = require('../../../common_functions/currency_to_symbol').format_money;
+const formatMoney    = require('../../../common_functions/currency_to_symbol').formatMoney;
 
 const MetaTraderConfig = (function() {
     'use strict';
