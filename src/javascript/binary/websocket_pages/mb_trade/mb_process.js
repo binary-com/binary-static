@@ -3,7 +3,6 @@ const MBDefaults                = require('./mb_defaults').MBDefaults;
 const MBNotifications           = require('./mb_notifications').MBNotifications;
 const MBPrice                   = require('./mb_price').MBPrice;
 const MBSymbols                 = require('./mb_symbols').MBSymbols;
-const MBTick                    = require('./mb_tick').MBTick;
 const TradingAnalysis           = require('../trade/analysis').TradingAnalysis;
 const japanese_client           = require('../../common_functions/country_base').japanese_client;
 const showFormOverlay           = require('../trade/common').showFormOverlay;
@@ -114,34 +113,10 @@ const MBProcess = (function() {
 
         // forget the old tick id i.e. close the old tick stream
         processForgetTicks();
-        // get ticks for current underlying
-        MBTick.request(underlying);
-
-        MBTick.clean();
-
-        MBTick.updateWarmChart();
 
         BinarySocket.clearTimeouts();
 
         MBContract.getContracts(underlying);
-    };
-
-    /*
-     * Function to process ticks stream
-     */
-    const processTick = function(tick) {
-        'use strict';
-
-        if (tick.hasOwnProperty('error')) {
-            MBNotifications.show({ text: tick.error.message, uid: 'TICK_ERROR' });
-            return;
-        }
-        const symbol = MBDefaults.get('underlying');
-        if (tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)) {
-            MBTick.details(tick);
-            MBTick.display();
-            MBTick.updateWarmChart();
-        }
     };
 
     /*
@@ -304,7 +279,6 @@ const MBProcess = (function() {
     return {
         processActiveSymbols   : processActiveSymbols,
         processMarketUnderlying: processMarketUnderlying,
-        processTick            : processTick,
         processContract        : processContract,
         processPriceRequest    : processPriceRequest,
         processProposal        : processProposal,

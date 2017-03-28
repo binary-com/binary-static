@@ -201,43 +201,8 @@
                 }
             }
         }
-        .space-between {
-            justify-content: space-between;
-            margin: 8px 0;
-            .gr-grow {
-                padding: 0;
-            }
-            .gr-adapt {
-                padding: 0 0 0 10px;
-            }
-        }
-        .spot div {
-            white-space: nowrap;
-            display: block;
-            &.spot-value {
-                line-height: 30px;
-                * {
-                    vertical-align: middle;
-                }
-                #spot-dyn {
-                    &.down {
-                        background-image: svg-icon('down', $COLOR_LIGHT_BLUE);
-                    }
-                    &.up {
-                        background-image: svg-icon('up', $COLOR_RED);
-                    }
-                    &.still {
-                        background-image: svg-icon('circle', $COLOR_GRAY_SHADE);
-                    }
-                }
-            }
-            #trading_worm_chart {
-                display: inline-block;
-                margin-top: 3px;
-            }
-        }
         .countdown-timer {
-            padding: 5px 0 5px 5px;
+            padding: 0;
             border-radius: 3px;
             white-space: nowrap;
             line-height: 22px;

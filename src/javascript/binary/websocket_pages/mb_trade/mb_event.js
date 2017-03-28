@@ -2,11 +2,10 @@ const MBContract      = require('./mb_contract').MBContract;
 const MBDefaults      = require('./mb_defaults').MBDefaults;
 const MBNotifications = require('./mb_notifications').MBNotifications;
 const MBProcess       = require('./mb_process').MBProcess;
-const MBTick          = require('./mb_tick').MBTick;
+const debounce        = require('../trade/common').debounce;
+const showHighchart   = require('../trade/common').showHighchart;
 const TradingAnalysis = require('../trade/analysis').TradingAnalysis;
 const japanese_client = require('../../common_functions/country_base').japanese_client;
-const debounce        = require('../trade/common').debounce;
-const processForgetTicks = require('../trade/process').processForgetTicks;
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -48,17 +47,10 @@ const MBTradingEvents = (function () {
                 MBDefaults.set('underlying', underlying);
                 MBNotifications.hide('SYMBOL_INACTIVE');
 
-                MBTick.clean();
-
-                MBTick.updateWarmChart();
-
                 MBContract.getContracts(underlying);
-
-                // forget the old tick id i.e. close the old tick stream
-                processForgetTicks();
-                // get ticks for current underlying
-                MBTick.request(underlying);
                 MBContract.displayDescriptions();
+
+                showHighchart();
             });
         }
 

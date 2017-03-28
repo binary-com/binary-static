@@ -41,24 +41,10 @@
             </div>
         </div>
 
-        <div class="gr-row space-between">
-            <div class="gr-grow gr-12-m">
-                <div class="gr-row spot invisible">
-                    <div class="gr-adapt spot-value">
-                        <span>[% l('Spot') %]:</span>
-                        <span id="spot"></span>
-                        <span id="spot-dyn"></span>
-                    </div>
-                    <div class="gr-adapt">
-                        <span id="trading_worm_chart"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="gr-adapt gr-12-m">
-                <div class="countdown-timer align-end">
-                    <span id="remaining-time-label"></span>
-                    <span id="remaining-time">...</span>
-                </div>
+        <div class="gr-row">
+            <div class="gr-12 countdown-timer align-end">
+                <span id="remaining-time-label"></span>
+                <span id="remaining-time">...</span>
             </div>
         </div>
 
