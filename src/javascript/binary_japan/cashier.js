@@ -27,7 +27,7 @@ const CashierJP = (function() {
         const $id = $('#id123-control22598145');
         const withdrawal_amount = $id.val();
         if (!/^([1-9][0-9]{0,5}|1000000)$/.test(withdrawal_amount)) {
-            $id.parent().append('<p class="error-msg">' + localize('Please enter a number between [_1].'), ['¥1 - ¥1,000,000'] + '</p>');
+            $id.parent().append('<p class="error-msg">' + localize('Please enter a number between [_1].', ['¥1 - ¥1,000,000']) + '</p>');
             return false;
         } else if (parseInt(Client.get('balance')) < withdrawal_amount) {
             $id.parent().append('<p class="error-msg">' + localize('Insufficient balance.') + '</p>');
