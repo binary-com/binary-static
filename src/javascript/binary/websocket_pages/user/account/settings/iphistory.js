@@ -1,14 +1,12 @@
-const IPHistoryInit   = require('./iphistory/iphistory.init');
-const BinaryPjax      = require('../../../../base/binary_pjax');
-const Content         = require('../../../../common_functions/content').Content;
-const japanese_client = require('../../../../common_functions/country_base').japanese_client;
+const IPHistoryInit = require('./iphistory/iphistory.init');
+const BinaryPjax    = require('../../../../base/binary_pjax');
+const jpClient      = require('../../../../common_functions/country_base').jpClient;
 
 const IPHistory = (() => {
     const onLoad = () => {
-        if (japanese_client()) {
+        if (jpClient()) {
             BinaryPjax.load('user/settingsws');
         }
-        Content.populate();
         IPHistoryInit.init();
     };
 

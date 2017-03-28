@@ -1,11 +1,11 @@
-const localize             = require('../../../../base/localize').localize;
-const Client               = require('../../../../base/client');
-const Header               = require('../../../../base/header');
-const State                = require('../../../../base/storage').State;
-const detect_hedging       = require('../../../../common_functions/common_functions').detect_hedging;
-const makeOption           = require('../../../../common_functions/common_functions').makeOption;
-const FormManager          = require('../../../../common_functions/form_manager');
-const moment               = require('moment');
+const localize      = require('../../../../base/localize').localize;
+const Client        = require('../../../../base/client');
+const Header        = require('../../../../base/header');
+const State         = require('../../../../base/storage').State;
+const detectHedging = require('../../../../common_functions/common_functions').detectHedging;
+const makeOption    = require('../../../../common_functions/common_functions').makeOption;
+const FormManager   = require('../../../../common_functions/form_manager');
+const moment        = require('moment');
 require('select2');
 
 const SettingsDetailsWS = (function() {
@@ -239,9 +239,9 @@ const SettingsDetailsWS = (function() {
         $field.val(get_settings_data.address_state);
         initFormManager();
         if (is_jp && !is_virtual) {
-            // detect_hedging needs to be called after FormManager.init
+            // detect hedging needs to be called after FormManager.init
             // or all previously bound event listeners on form elements will be removed
-            detect_hedging($('#trading_purpose'), $('.hedge'));
+            detectHedging($('#trading_purpose'), $('.hedge'));
         }
     };
 

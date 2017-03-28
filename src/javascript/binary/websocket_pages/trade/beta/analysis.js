@@ -9,7 +9,7 @@ const getLanguage                     = require('../../../base/language').get;
 const State                           = require('../../../base/storage').State;
 const Url                             = require('../../../base/url');
 const elementInnerHtml                = require('../../../common_functions/common_functions').elementInnerHtml;
-const japanese_client                 = require('../../../common_functions/country_base').japanese_client;
+const jpClient                        = require('../../../common_functions/country_base').jpClient;
 
 /*
  * This file contains the code related to loading of trading page bottom analysis
@@ -52,7 +52,7 @@ const TradingAnalysis_Beta = (function() {
         if (Client.isLoggedIn()) {
             $('#tab_portfolio').removeClass('invisible');
         }
-        if (!japanese_client()) {
+        if (!jpClient()) {
             $('#tab_asset_index').removeClass('invisible');
             $('#tab_trading_times').removeClass('invisible');
         }

@@ -1,6 +1,6 @@
 const objectNotEmpty = require('../base/utility').objectNotEmpty;
 
-const ActiveSymbols = (function () {
+const ActiveSymbols = (() => {
     'use strict';
 
     const groupBy = function(xs, key) {
@@ -141,6 +141,4 @@ const ActiveSymbols = (function () {
     };
 })();
 
-module.exports = {
-    ActiveSymbols: ActiveSymbols,
-};
+module.exports = ActiveSymbols;

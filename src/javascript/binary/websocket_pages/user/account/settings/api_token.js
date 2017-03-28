@@ -1,9 +1,8 @@
 const BinaryPjax           = require('../../../../base/binary_pjax');
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const localize             = require('../../../../base/localize').localize;
-const FlexTableUI          = require('../../../../common_functions/attach_dom/flextable').FlexTableUI;
-const Content              = require('../../../../common_functions/content').Content;
-const japanese_client      = require('../../../../common_functions/country_base').japanese_client;
+const FlexTableUI          = require('../../../../common_functions/attach_dom/flextable');
+const jpClient             = require('../../../../common_functions/country_base').jpClient;
 const FormManager          = require('../../../../common_functions/form_manager');
 const toTitleCase          = require('../../../../common_functions/string_util').toTitleCase;
 
@@ -19,19 +18,17 @@ const APIToken = (() => {
         $form;
 
     const onLoad = function() {
-        if (japanese_client()) {
+        if (jpClient()) {
             BinaryPjax.load('user/settingsws');
             return;
         }
-
-        Content.populate();
 
         $table_container = $('#tokens_list');
         $form = $(form_id);
 
         BinarySocket.send({ api_token: 1 }).then(populateTokensList);
 
-        const regex_msg  = Content.errorMessage('reg', [Content.localize().textLetters, Content.localize().textNumbers, Content.localize().textSpace, '_']);
+        const regex_msg = localize('Only [_1] are allowed.', [['letters', 'numbers', 'space', '_'].join(', ')]);
         FormManager.init(form_id, [
             { selector: '#txt_name',           request_field: 'new_token',        validations: ['req', ['regular', { regex: /^[\w\s]+$/, message: regex_msg }], ['length', { min: 2, max: 32 }]] },
             { selector: '[id*="chk_scopes_"]', request_field: 'new_token_scopes', validations: [['req', { message: localize('Please select at least one scope') }]], value: getScopes },
@@ -81,7 +78,7 @@ const APIToken = (() => {
         $table_container.removeClass(hidden_class).empty();
 
         const headers = ['Name', 'Token', 'Scopes', 'Last Used', 'Action'];
-        new FlexTableUI({
+        FlexTableUI.init({
             id       : 'tokens_table',
             container: $table_container,
             header   : headers.map(localize),
