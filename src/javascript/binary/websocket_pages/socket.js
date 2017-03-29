@@ -201,7 +201,6 @@ const BinarySocketClass = function() {
         }
 
         binarySocket.onopen = function () {
-            send({ broadcast_notifications: 1 });
             const apiToken = getLoginToken();
             if (apiToken && !authorized && localStorage.getItem('client.tokens')) {
                 binarySocket.send(JSON.stringify({ authorize: apiToken }));
@@ -216,7 +215,7 @@ const BinarySocketClass = function() {
             if (isReady()) {
                 if (!Login.is_login_pages()) {
                     validate_loginid();
-                    binarySocket.send(JSON.stringify({ website_status: 1 }));
+                    binarySocket.send(JSON.stringify({ website_status: 1, subscribe: 1 }));
                 }
                 if (!Clock.getClockStarted()) Clock.start_clock_ws();
             }
@@ -246,7 +245,7 @@ const BinarySocketClass = function() {
                 const type = response.msg_type;
 
                 // store in State
-                if (!response.echo_req.subscribe || type === 'balance') {
+                if (!response.echo_req.subscribe || '(balance|website_status)'.test(type)) {
                     State.set(['response', type], $.extend({}, response));
                 }
                 // resolve the send promise
@@ -262,7 +261,7 @@ const BinarySocketClass = function() {
                 waiting_list.resolve(response);
 
                 const error_code = getPropertyValue(response, ['error', 'code']);
-                if (type === 'broadcast_notifications') {
+                if (type === 'website_status') {
                     const is_available_now = /^up$/i.test(response.site_status);
                     if (!is_available && is_available_now) window.location.reload();
                     is_available = is_available_now;
