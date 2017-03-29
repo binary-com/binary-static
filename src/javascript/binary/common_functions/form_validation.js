@@ -1,7 +1,7 @@
 const localize              = require('../base/localize').localize;
 const compareBigUnsignedInt = require('../common_functions/string_util').compareBigUnsignedInt;
 
-const Validation = (function() {
+const Validation = (() => {
     'use strict';
 
     const forms = {};

@@ -3,8 +3,8 @@ const Client             = require('../../base/client');
 const Header             = require('../../base/header');
 const defaultRedirectUrl = require('../../base/url').defaultRedirectUrl;
 const urlFor             = require('../../base/url').urlFor;
-const japanese_client    = require('../../common_functions/country_base').japanese_client;
-const japanese_residence = require('../../common_functions/country_base').japanese_residence;
+const jpClient           = require('../../common_functions/country_base').jpClient;
+const jpResidence        = require('../../common_functions/country_base').jpResidence;
 
 const Cashier = (function() {
     'use strict';
@@ -35,7 +35,7 @@ const Cashier = (function() {
     };
 
     const onLoad = function() {
-        if (japanese_client() && !japanese_residence()) {
+        if (jpClient() && !jpResidence()) {
             BinaryPjax(defaultRedirectUrl());
         }
         if (Client.isLoggedIn()) {
