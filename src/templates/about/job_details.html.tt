@@ -13,13 +13,11 @@
 [% BLOCK sidebar %]
     <div class="sidebar invisible [% class %]">
         <ul id="sidebar-nav">
-            [% content %]
+            [% FOREACH sidebar_item IN sidebar_items %]
+                <li><a href="#[% sidebar_item.href %]">[% sidebar_item.string %]</a></li>
+            [% END %]
         </ul>
     </div>
-[% END %]
-
-[% BLOCK sidebar_item %]
-    <li><a href="#[% href %]">[% string %]</a></li>
 [% END %]
 
 [% BLOCK invisible_image %]
@@ -57,28 +55,34 @@
                     </div>
                 </div>
                 <div class="gr-12 gr-padding-10 sidebar-container">
-                    [% WRAPPER sidebar class = "information_technology" %]
-                        [% INCLUDE sidebar_item href = "devops_manager"            string = l('DevOps Manager') %]
-                        [% INCLUDE sidebar_item href = "senior_frontend_developer" string = l('Senior Front-End Developer') %]
-                        [% INCLUDE sidebar_item href = "senior_perl_developer"     string = l('Senior Perl Developer') %]
+                    [% WRAPPER sidebar class = "information_technology"
+                        sidebar_items = [
+                                { href => 'devops_manager',            string => l('DevOps Manager') }
+                                { href => 'senior_frontend_developer', string => l('Senior Front-End Developer') }
+                                { href => 'senior_perl_developer',     string => l('Senior Perl Developer') }] %]
                     [% END %]
-                    [% WRAPPER sidebar class = "quantitative_analysis" %]
-                        [% INCLUDE sidebar_item href = "quantitative_developer" string = l('Quantitative Developer') %]
-                        [% INCLUDE sidebar_item href = "quantitative_analyst"   string = l('Quantitative Analyst') %]
+
+                    [% WRAPPER sidebar class = "quantitative_analysis"
+                        sidebar_items = [
+                                { href => 'quantitative_developer', string => l('Quantitative Developer') }
+                                { href => 'quantitative_analyst',   string => l('Quantitative Analyst') } ] %]
                     [% END %]
-                    [% WRAPPER sidebar class = "marketing" %]
-                        [% INCLUDE sidebar_item href = "marketing_project_coordinator" string = l('Marketing Project Coordinator') %]
-                        [% INCLUDE sidebar_item href = "social_media_executive"        string = l('Social Media Executive') %]
-                        [% INCLUDE sidebar_item href = "affiliate_manager"             string = l('Affiliate Manager') %]
-                        [% INCLUDE sidebar_item href = "graphic_designers"             string = l('Graphic Designers') %]
-                        [% INCLUDE sidebar_item href = "marketing_executives"          string = l('Marketing Executives') %]
-                        [% INCLUDE sidebar_item href = "copywriter"                    string = l('Copywriter') %]
-                        [% INCLUDE sidebar_item href = "translator"                    string = l('Translator') %]
-                        [% INCLUDE sidebar_item href = "proofreader"                   string = l('Proofreader') %]
+
+                    [% WRAPPER sidebar class = "marketing"
+                        sidebar_items = [
+                                { href => 'marketing_project_coordinator', string => l('Marketing Project Coordinator') }
+                                { href => 'social_media_executive',        string => l('Social Media Executive') }
+                                { href => 'affiliate_manager',             string => l('Affiliate Manager') }
+                                { href => 'graphic_designers',             string => l('Graphic Designers') }
+                                { href => 'marketing_executives',          string => l('Marketing Executives') }
+                                { href => 'copywriter',                    string => l('Copywriter') }
+                                { href => 'translator',                    string => l('Translator') }
+                                { href => 'proofreader',                   string => l('Proofreader') } ] %]
                     [% END %]
-                    [% WRAPPER sidebar class = "compliance" %]
-                        [% INCLUDE sidebar_item href = "compliance_executive" string = l('Compliance Executive') %]
-                        [% INCLUDE sidebar_item href = "anti_fraud_officer"   string = l('Anti-Fraud Officer') %]
+                    [% WRAPPER sidebar class = "compliance"
+                        sidebar_items = [
+                                { href => 'compliance_executive', string => 'Compliance Executive' }
+                                { href => 'anti_fraud_officer',   string => 'Anti-Fraud Officer' } ] %]
                     [% END %]
                 </div>
             </div>

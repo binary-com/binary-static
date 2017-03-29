@@ -110,8 +110,6 @@ const Header = (() => {
             const $upgrade_msg = $('.upgrademessage');
             const hidden_class  = 'invisible';
 
-            const hideUpgrade = () => { $upgrade_msg.addClass(hidden_class); };
-
             const showUpgrade = (url, msg) => {
                 $upgrade_msg.removeClass(hidden_class)
                     .find('a').removeClass(hidden_class)
@@ -153,7 +151,7 @@ const Header = (() => {
                         showUpgrade('new_account/realws', 'Upgrade to a Real Account');
                     }
                 } else {
-                    hideUpgrade();
+                    $upgrade_msg.find('a').addClass(hidden_class).html('');
                 }
             } else {
                 let show_financial = false;
@@ -165,7 +163,7 @@ const Header = (() => {
                     $('#virtual-text').parent().addClass('invisible');
                     showUpgrade('new_account/maltainvestws', 'Open a Financial Account');
                 } else {
-                    hideUpgrade();
+                    $upgrade_msg.addClass(hidden_class);
                 }
             }
         });

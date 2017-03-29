@@ -38,9 +38,8 @@ const MarketTimesUI = (() => {
 
         const date = moment.utc();
         $date.val(toReadableFormat(date)).attr('data-value', toISOFormat(date));
-        const trading_date = '#trading-date';
         DatePicker.init({
-            selector: trading_date,
+            selector: '#trading-date',
             minDate : 0,
             maxDate : 364,
         });

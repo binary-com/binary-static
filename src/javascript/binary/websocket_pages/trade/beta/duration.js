@@ -235,7 +235,6 @@ const Durations_Beta = (function() {
         // jquery for datepicker
         const amountElement = $('#duration_amount');
         const duration_id = '#duration_amount';
-        const expiry_id = '#expiry_date';
         if (unit.value === 'd') {
             DatePicker.init({
                 selector: duration_id,
@@ -263,7 +262,7 @@ const Durations_Beta = (function() {
 
         if ($('#expiry_date').is(':visible')) {
             DatePicker.init({
-                selector: expiry_id,
+                selector: '#expiry_date',
                 minDate : 0,
                 maxDate : 364,
             });

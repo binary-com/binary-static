@@ -40,7 +40,7 @@ const MetaTraderConfig = (function() {
                         resolve(needsRealMessage());
                     } else if (types_info[acc_type].account_type === 'financial') {
                         BinarySocket.send({ get_financial_assessment: 1 }).then((response_financial) => {
-                            resolve(!isEmptyObject(response_financial.get_financial_assessment) ?
+                            resolve(isEmptyObject(response_financial.get_financial_assessment) ?
                                 $('#msg_assessment').find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}')`).end()
                                     .html() : '');
                         });

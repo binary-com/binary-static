@@ -3,6 +3,7 @@ const localize         = require('../base/localize').localize;
 const isEmptyObject    = require('../base/utility').isEmptyObject;
 const checkInput       = require('../common_functions/common_functions').checkInput;
 const toReadableFormat = require('../common_functions/string_util').toReadableFormat;
+const padLeft          = require('../common_functions/string_util').padLeft;
 
 const DatePicker = (() => {
     'use strict';
@@ -39,7 +40,7 @@ const DatePicker = (() => {
                 $this = $(this);
                 e.preventDefault();
                 e.stopPropagation();
-                if (date_picker.config_data.type !== 'diff') {
+                if (date_picker.config_data.type === 'date') {
                     $this.datepicker('setDate', $this.val());
                 }
                 $this.datepicker('hide');
@@ -58,7 +59,7 @@ const DatePicker = (() => {
     const config = (options) => {
         const selector = options.selector;
 
-        let obj_config = {
+        const obj_config = {
             dateFormat : 'dd M, yy',
             changeMonth: true,
             changeYear : true,
@@ -70,7 +71,7 @@ const DatePicker = (() => {
             obj_config[localization] = localizations[localization];
         });
 
-        obj_config = $.extend(obj_config, options);
+        $.extend(obj_config, options);
 
         const setDate = (date) => {
             obj_config[date] = typeof options[date] === 'number' ? moment().add(Number(options[date]), 'day').toDate() : options[date];
@@ -108,7 +109,7 @@ const DatePicker = (() => {
         checkWidth(selector);
     };
 
-    const formatDate = (date, add) => ('0' + (date + (add || 0))).slice(-2);
+    const formatDate = (date, add) => padLeft(date + (add || 0), 2, '0');
 
     const toDate = date => [date.getFullYear(), formatDate(date.getMonth(), 1), formatDate(date.getDate())].join('-');
 
