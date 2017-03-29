@@ -1,9 +1,9 @@
 const moment              = require('moment');
-const Client              = require('../../../base/client').Client;
+const Client              = require('../../../base/client');
 const localize            = require('../../../base/localize').localize;
-const toJapanTimeIfNeeded = require('../../../base/clock').Clock.toJapanTimeIfNeeded;
+const toJapanTimeIfNeeded = require('../../../base/clock').toJapanTimeIfNeeded;
 const addComma            = require('../../../common_functions/string_util').addComma;
-const format_money        = require('../../../common_functions/currency_to_symbol').format_money;
+const formatMoney         = require('../../../common_functions/currency_to_symbol').formatMoney;
 const toTitleCase         = require('../../../common_functions/string_util').toTitleCase;
 
 const Statement = (() => {
@@ -21,10 +21,10 @@ const Statement = (() => {
         return {
             date   : jp_client ? toJapanTimeIfNeeded(statement.transaction_time) : date_str + '\n' + time_str,
             ref    : statement.transaction_id,
-            payout : isNaN(payout) ? '-' : (jp_client ? format_money(currency, payout) : payout.toFixed(2)),
+            payout : isNaN(payout) ? '-' : (jp_client ? formatMoney(currency, payout) : payout.toFixed(2)),
             action : toTitleCase(statement.action_type),
-            amount : isNaN(amount) ? '-' : (jp_client ? format_money(currency, amount) : addComma(amount)),
-            balance: isNaN(balance) ? '-' : (jp_client ? format_money(currency, balance) : addComma(balance)),
+            amount : isNaN(amount) ? '-' : (jp_client ? formatMoney(currency, amount) : addComma(amount)),
+            balance: isNaN(balance) ? '-' : (jp_client ? formatMoney(currency, balance) : addComma(balance)),
             desc   : statement.longcode.replace(/\n/g, '<br />'),
             id     : statement.contract_id,
             app_id : statement.app_id,

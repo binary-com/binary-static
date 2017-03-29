@@ -1,9 +1,9 @@
 const KnowledgeTestUI     = require('./knowledge_test.ui');
 const BinaryPjax          = require('../../binary/base/binary_pjax');
-const toJapanTimeIfNeeded = require('../../binary/base/clock').Clock.toJapanTimeIfNeeded;
-const Header              = require('../../binary/base/header').Header;
+const toJapanTimeIfNeeded = require('../../binary/base/clock').toJapanTimeIfNeeded;
+const Header              = require('../../binary/base/header');
 const localize            = require('../../binary/base/localize').localize;
-const url_for             = require('../../binary/base/url').url_for;
+const urlFor              = require('../../binary/base/url').urlFor;
 
 const KnowledgeTest = (() => {
     'use strict';
@@ -114,7 +114,7 @@ const KnowledgeTest = (() => {
             }
 
             // show knowledge test link in header after updated get_settings call
-            Header.upgrade_message_visibility();
+            Header.upgradeMessageVisibility();
 
             switch (jp_status.status) {
                 case 'jp_knowledge_test_pending':
@@ -130,7 +130,7 @@ const KnowledgeTest = (() => {
                     break;
                 }
                 default: {
-                    window.location.href = url_for('/'); // needs to be loaded without pjax
+                    window.location.href = urlFor('/'); // needs to be loaded without pjax
                 }
             }
         });
@@ -179,6 +179,7 @@ const KnowledgeTest = (() => {
                     question          : $(this).attr('data-question-en'),
                     question_localized: $(this).text(),
                     correct_answer    : answers[question_id],
+                    tooltip           : $(this).attr('data-tip'),
                 });
             });
         });
@@ -199,7 +200,7 @@ const KnowledgeTest = (() => {
                 showResult(result_score, response.jp_knowledge_test.test_taken_epoch * 1000);
                 $('html, body').animate({ scrollTop: 0 }, 'slow');
                 BinarySocket.send({ get_settings: 1 }, true).then(() => {
-                    Header.upgrade_message_visibility();
+                    Header.upgradeMessageVisibility();
                 });
             } else if (response.error.code === 'TestUnavailableNow') {
                 showMsgOnly('{JAPAN ONLY}The test is unavailable now, test can only be taken again on next business day with respect of most recent test.');

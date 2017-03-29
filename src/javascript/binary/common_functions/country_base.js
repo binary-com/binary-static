@@ -1,73 +1,63 @@
-const Cookies        = require('../../lib/js-cookie');
-const getLanguage    = require('../base/language').getLanguage;
-const URLForLanguage = require('../base/language').URLForLanguage;
+const Language               = require('../base/language');
+const createLanguageDropDown = require('../common_functions/attach_dom/language_dropdown');
+const Cookies                = require('../../lib/js-cookie');
 
-function checkClientsCountry() {
+const checkClientsCountry = () => {
     BinarySocket.wait('website_status').then((response) => {
         if (response.error) return;
-        const clients_country = response.website_status.clients_country;
+        const website_status = response.website_status;
+        const clients_country = website_status.clients_country;
         if (clients_country === 'jp') {
             limitLanguage('JA');
         } else if (clients_country === 'id') {
             limitLanguage('ID');
         } else {
-            $('.languages').show();
+            createLanguageDropDown(website_status);
         }
     });
-}
+};
 
-function limitLanguage(lang) {
-    if (getLanguage() !== lang) {
-        window.location.href = URLForLanguage(lang); // need to redirect not using pjax
+const limitLanguage = (lang) => {
+    if (Language.get() !== lang) {
+        window.location.href = Language.urlFor(lang); // need to redirect not using pjax
     }
     if (document.getElementById('select_language')) {
         $('.languages').remove();
-        $('#gmt-clock')
-            .removeClass('gr-5 gr-6-m')
-            .addClass('gr-6 gr-12-m');
-        $('#contact-us')
-            .removeClass('gr-2')
-            .addClass('gr-6');
+        $('#gmt-clock').addClass('gr-6 gr-12-m').removeClass('gr-5 gr-6-m');
+        $('#contact-us').addClass('gr-6').removeClass('gr-2');
     }
-}
+};
 
-function japanese_client() {
-    // handle for test case
-    if (typeof window === 'undefined') return false;
-    return getLanguage() === 'JA' || japanese_residence();
-}
+const jpClient = () => (typeof window === 'undefined' ? false : (Language.get() === 'JA' || jpResidence()));
 
-function japanese_residence() {
-    return (Cookies.get('residence') === 'jp');
-}
+const jpResidence = () => Cookies.get('residence') === 'jp';
 
-function checkLanguage() {
-    if (getLanguage() === 'ID') {
-        const regex = new RegExp('id');
-        const $academyLink = $('.academy a');
-        const academyHREF = $academyLink.attr('href');
-        if (!regex.test(academyHREF)) {
-            $academyLink.attr('href', academyHREF + '/id/');
+const checkLanguage = () => {
+    if (Language.get() === 'ID') {
+        const $academy_link = $('.academy a');
+        const academy_href = $academy_link.attr('href');
+        const regex = /id/;
+        if (!regex.test(academy_href)) {
+            $academy_link.attr('href', academy_href + regex);
         }
     }
-    if (japanese_client()) {
+    if (jpClient()) {
         const visible = 'visibility: visible;';
         $('.ja-hide').addClass('invisible');
         $('.ja-show').attr('style', 'display: inline !important;' + visible);
         $('.ja-show-block').attr('style', 'display: block !important;' + visible);
         $('.ja-show-inline-block').attr('style', 'display: inline-block !important;' + visible);
         $('.ja-no-padding').attr('style', 'padding-top: 0; padding-bottom: 0;');
-        $('#regulatory-text').removeClass('gr-9 gr-7-p')
-                             .addClass('gr-12 gr-12-p');
-        if (!japanese_residence()) {
+        $('#regulatory-text').addClass('gr-12 gr-12-p').removeClass('gr-9 gr-7-p');
+        if (!jpResidence()) {
             $('#topMenuCashier').hide();
         }
     }
-}
+};
 
 module.exports = {
     checkClientsCountry: checkClientsCountry,
-    japanese_client    : japanese_client,
-    japanese_residence : japanese_residence,
+    jpClient           : jpClient,
+    jpResidence        : jpResidence,
     checkLanguage      : checkLanguage,
 };

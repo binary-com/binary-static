@@ -1,13 +1,13 @@
-const toJapanTimeIfNeeded = require('../../../base/clock').Clock.toJapanTimeIfNeeded;
-const format_money        = require('../../../common_functions/currency_to_symbol').format_money;
-const japanese_client     = require('../../../common_functions/country_base').japanese_client;
+const toJapanTimeIfNeeded = require('../../../base/clock').toJapanTimeIfNeeded;
+const formatMoney         = require('../../../common_functions/currency_to_symbol').formatMoney;
+const jpClient            = require('../../../common_functions/country_base').jpClient;
 
 const Portfolio = (function() {
     'use strict';
 
     const getBalance = function(balance, currency) {
         balance = parseFloat(balance);
-        return currency ? format_money(currency, balance) : balance;
+        return currency ? formatMoney(currency, balance) : balance;
     };
 
     const getPortfolioData = function(c) {
@@ -16,7 +16,7 @@ const Portfolio = (function() {
             contract_id   : c.contract_id,
             payout        : parseFloat(c.payout).toFixed(2),
             longcode      : typeof module !== 'undefined' ?
-                c.longcode : (japanese_client() ?
+                c.longcode : (jpClient() ?
                     toJapanTimeIfNeeded(undefined, undefined, c.longcode) : c.longcode),
             currency : c.currency,
             buy_price: c.buy_price,

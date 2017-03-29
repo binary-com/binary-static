@@ -1,18 +1,17 @@
-const MBContract          = require('./mb_contract').MBContract;
-const MBDisplayCurrencies = require('./mb_currency').MBDisplayCurrencies;
-const MBTradingEvents     = require('./mb_event').MBTradingEvents;
-const MBMessage           = require('./mb_message').MBMessage;
-const MBSymbols           = require('./mb_symbols').MBSymbols;
-const TradingAnalysis     = require('../trade/analysis').TradingAnalysis;
+const MBContract           = require('./mb_contract').MBContract;
+const MBDisplayCurrencies  = require('./mb_currency').MBDisplayCurrencies;
+const MBTradingEvents      = require('./mb_event').MBTradingEvents;
+const MBMessage            = require('./mb_message').MBMessage;
+const MBNotifications      = require('./mb_notifications').MBNotifications;
+const MBPrice              = require('./mb_price').MBPrice;
+const MBProcess            = require('./mb_process').MBProcess;
+const MBSymbols            = require('./mb_symbols').MBSymbols;
+const TradingAnalysis      = require('../trade/analysis').TradingAnalysis;
+const chartFrameCleanup    = require('../trade/common').chartFrameCleanup;
 const forgetTradingStreams = require('../trade/process').forgetTradingStreams;
-const JapanPortfolio      = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
-const State               = require('../../base/storage').State;
-const Content             = require('../../common_functions/content').Content;
-const MBProcess           = require('./mb_process').MBProcess;
-const MBNotifications     = require('./mb_notifications').MBNotifications;
-const MBPrice             = require('./mb_price').MBPrice;
-const chartFrameCleanup   = require('../trade/common').chartFrameCleanup;
-const localize = require('../../base/localize').localize;
+const localize             = require('../../base/localize').localize;
+const State                = require('../../base/storage').State;
+const JapanPortfolio       = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
 
 const MBTradePage = (function() {
     let events_initialized = 0;
@@ -36,7 +35,6 @@ const MBTradePage = (function() {
             events_initialized = 1;
             MBTradingEvents.init();
         }
-        Content.populate();
 
         if (sessionStorage.getItem('currencies')) {
             MBDisplayCurrencies('', false);

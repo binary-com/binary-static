@@ -1,7 +1,6 @@
+const Client        = require('../base/client');
 const CookieStorage = require('../base/storage').CookieStorage;
-const Url           = require('../base/url').Url;
-const url           = require('../base/url').url;
-const Client        = require('../base/client').Client;
+const Url           = require('../base/url');
 
 /*
  * Handles utm parameters/referrer to use on signup
@@ -13,48 +12,47 @@ const Client        = require('../base/client').Client;
  *
  */
 
-const TrafficSource = (function() {
+const TrafficSource = (() => {
     'use strict';
 
     let cookie;
-    const expire_months = 3;
 
-    const initCookie = function() {
+    const initCookie = () => {
         if (!cookie) {
             cookie = new CookieStorage('utm_data');
             cookie.read();
             // expiration date is used when writing cookie
             const now = new Date();
-            cookie.expires = now.setMonth(now.getMonth() + expire_months);
+            cookie.expires = now.setMonth(now.getMonth() + 3);
         }
     };
 
-    const getData = function() {
+    const getData = () => {
         initCookie();
         const data = cookie.value;
-        Object.keys(data).map(function(key) {
+        Object.keys(data).map((key) => {
             data[key] = (data[key] || '').replace(/[^a-zA-Z0-9\s\-\.\_]/gi, '').substring(0, 100);
         });
         return data;
     };
 
-    const getSource = function(utm_data) {
+    const getSource = (utm_data) => {
         if (!utm_data) utm_data = getData();
         return utm_data.utm_source || utm_data.referrer || 'direct'; // in order of precedence
     };
 
-    const setData = function() {
-        if (Client.is_logged_in()) {
+    const setData = () => {
+        if (Client.isLoggedIn()) {
             clearData();
             return;
         }
 
         const current_values = getData(),
-            params = url.params_hash(),
+            params = Url.paramsHash(),
             param_keys = ['utm_source', 'utm_medium', 'utm_campaign'];
 
         if (params.utm_source) { // url params can be stored only if utm_source is available
-            param_keys.map(function(key) {
+            param_keys.map((key) => {
                 if (params[key] && !current_values[key]) {
                     cookie.set(key, params[key]);
                 }
@@ -62,7 +60,7 @@ const TrafficSource = (function() {
         }
 
         // Store gclid
-        if (params.gclid && !Client.is_logged_in()) {
+        if (params.gclid && !Client.isLoggedIn()) {
             Client.set('gclid', params.gclid);
         }
 
@@ -73,11 +71,11 @@ const TrafficSource = (function() {
             referrer = doc_ref;
         }
         if (referrer && !current_values.referrer && !params.utm_source && !current_values.utm_source) {
-            cookie.set('referrer', (new Url(referrer)).location.hostname);
+            cookie.set('referrer', (Url.getLocation(referrer)).hostname);
         }
     };
 
-    const clearData = function() {
+    const clearData = () => {
         initCookie();
         cookie.remove();
     };
@@ -90,6 +88,4 @@ const TrafficSource = (function() {
     };
 })();
 
-module.exports = {
-    TrafficSource: TrafficSource,
-};
+module.exports = TrafficSource;

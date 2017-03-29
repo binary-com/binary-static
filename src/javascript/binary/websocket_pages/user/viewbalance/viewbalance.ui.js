@@ -1,7 +1,7 @@
-const format_money          = require('../../../common_functions/currency_to_symbol').format_money;
+const formatMoney           = require('../../../common_functions/currency_to_symbol').formatMoney;
 const PortfolioWS           = require('../account/portfolio/portfolio.init');
 const updateContractBalance = require('../../trade/common').updateContractBalance;
-const Client                = require('../../../base/client').Client;
+const Client                = require('../../../base/client');
 
 const ViewBalanceUI = (function() {
     const updateBalances = function(response) {
@@ -16,7 +16,7 @@ const ViewBalanceUI = (function() {
         if (!currency) {
             return;
         }
-        const view = format_money(currency, balance);
+        const view = formatMoney(currency, balance);
         updateContractBalance(balance);
         $('.topMenuBalance').text(view)
             .css('visibility', 'visible');

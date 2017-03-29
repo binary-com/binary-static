@@ -1,11 +1,10 @@
-const japanese_client = require('../../../common_functions/country_base').japanese_client;
-const MBContract      = require('../../mb_trade/mb_contract').MBContract;
-const ViewPopupUI     = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
-const State           = require('../../../base/storage').State;
-const localize        = require('../../../base/localize').localize;
-const template        = require('../../../base/utility').template;
-const HighchartUI     = require('./highchart_ui').HighchartUI;
-const Highcharts      = require('highcharts/highstock');
+const jpClient    = require('../../../common_functions/country_base').jpClient;
+const MBContract  = require('../../mb_trade/mb_contract').MBContract;
+const ViewPopupUI = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
+const State       = require('../../../base/storage').State;
+const localize    = require('../../../base/localize').localize;
+const HighchartUI = require('./highchart_ui').HighchartUI;
+const Highcharts  = require('highcharts/highstock');
 require('highcharts/modules/exporting')(Highcharts);
 
 const Highchart = (function() {
@@ -116,7 +115,7 @@ const Highchart = (function() {
         const el = document.getElementById('analysis_live_chart');
         if (!el) return null;
 
-        const JPClient = japanese_client();
+        const JPClient = jpClient();
         HighchartUI.set_labels(is_chart_delayed);
         HighchartUI.set_chart_options({
             height    : el.parentElement.offsetHeight,
@@ -331,10 +330,10 @@ const Highchart = (function() {
                 high_barrier = contract.high_barrier,
                 low_barrier = contract.low_barrier;
             if (barrier) {
-                addPlotLine({ id: 'barrier',      value: barrier * 1,      label: template(localize('Barrier ([_1])'), [barrier]),           dashStyle: 'Dot' }, 'y');
+                addPlotLine({ id: 'barrier',      value: barrier * 1,      label: localize('Barrier ([_1])', [barrier]),           dashStyle: 'Dot' }, 'y');
             } else if (high_barrier && low_barrier) {
-                addPlotLine({ id: 'high_barrier', value: high_barrier * 1, label: template(localize('High Barrier ([_1])'), [high_barrier]), dashStyle: 'Dot' }, 'y');
-                addPlotLine({ id: 'low_barrier',  value: low_barrier * 1,  label: template(localize('Low Barrier ([_1])'), [low_barrier]),   dashStyle: 'Dot' }, 'y');
+                addPlotLine({ id: 'high_barrier', value: high_barrier * 1, label: localize('High Barrier ([_1])', [high_barrier]), dashStyle: 'Dot' }, 'y');
+                addPlotLine({ id: 'low_barrier',  value: low_barrier * 1,  label: localize('Low Barrier ([_1])', [low_barrier]),   dashStyle: 'Dot' }, 'y');
             }
         }
     };

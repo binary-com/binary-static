@@ -1,53 +1,23 @@
-const localize = require('./localize').localize;
-const Client   = require('./client').Client;
-const Login    = require('./login').Login;
+const Client = require('./client');
 
-const Contents = (function() {
-    const on_load = function() {
-        Client.activate_by_client_type('#header');
-        update_content_class();
-        init_draggable();
-    };
+const Contents = (() => {
+    'use strict';
 
-    const on_unload = function() {
-        const $unbind_later = $('.unbind_later');
-        if ($unbind_later.length > 0) {
-            $unbind_later.off();
-        }
-    };
-
-    const update_content_class = function() {
+    const onLoad = () => {
+        Client.activateByClientType('#header');
         // This is required for our css to work.
-        $('#content').removeClass()
-                     .addClass($('#content_class').text());
+        $('#content').removeClass().addClass($('#content_class').text());
     };
 
-    const init_draggable = function() {
-        $('.draggable').draggable();
-    };
-
-    const show_login_if_logout = function(shouldReplacePageContents) {
-        const client_is_logged_in = Client.is_logged_in();
-        if (!client_is_logged_in && shouldReplacePageContents) {
-            $('#content').find(' > .container').addClass('center-text')
-                .html($('<p/>', {
-                    class: 'notice-msg',
-                    html : localize('Please [_1] to view this page',
-                        ['<a class="login_link" href="javascript:;">' + localize('login') + '</a>']),
-                }));
-            $('.login_link').click(function() { Login.redirect_to_login(); });
-        }
-        return !client_is_logged_in;
+    const onUnload = () => {
+        // TODO: remove unbind_later class and off() at needed pages
+        $('.unbind_later').off();
     };
 
     return {
-        on_load  : on_load,
-        on_unload: on_unload,
-
-        show_login_if_logout: show_login_if_logout,
+        onLoad  : onLoad,
+        onUnload: onUnload,
     };
 })();
 
-module.exports = {
-    Contents: Contents,
-};
+module.exports = Contents;

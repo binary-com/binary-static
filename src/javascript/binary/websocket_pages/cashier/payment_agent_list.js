@@ -1,6 +1,5 @@
-const url_for_static   = require('../../base/url').url_for_static;
-const Content          = require('../../common_functions/content').Content;
-const Cookies          = require('../../../lib/js-cookie');
+const urlForStatic = require('../../base/url').urlForStatic;
+const Cookies      = require('../../../lib/js-cookie');
 
 const PaymentAgentList = (() => {
     'use strict';
@@ -12,7 +11,6 @@ const PaymentAgentList = (() => {
         hidden_class = 'hidden';
 
     const onLoad = () => {
-        Content.populate();
         $(() => {
             $('#accordion').accordion({
                 heightStyle: 'content',
@@ -103,7 +101,7 @@ const PaymentAgentList = (() => {
                 banks.map((bank) => {
                     supported_banks += bank.length === 0 ?
                         '' :
-                        '<img src="' + url_for_static('images/pages/payment_agent/banks/' + bank.toLowerCase() + '.png') + '" alt="' + bank + '" title="' + bank + '" />';
+                        '<img src="' + urlForStatic('images/pages/payment_agent/banks/' + bank.toLowerCase() + '.png') + '" alt="' + bank + '" title="' + bank + '" />';
                 });
             }
 

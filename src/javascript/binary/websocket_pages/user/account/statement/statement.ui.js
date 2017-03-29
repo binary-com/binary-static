@@ -1,13 +1,11 @@
 const Statement           = require('../statement');
-const Client              = require('../../../../base/client').Client;
+const Client              = require('../../../../base/client');
 const downloadCSV         = require('../../../../base/utility').downloadCSV;
 const localize            = require('../../../../base/localize').localize;
-const toJapanTimeIfNeeded = require('../../../../base/clock').Clock.toJapanTimeIfNeeded;
-const Button              = require('../../../../common_functions/attach_dom/button').Button;
-const Content             = require('../../../../common_functions/content').Content;
-const japanese_client     = require('../../../../common_functions/country_base').japanese_client;
+const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
+const jpClient            = require('../../../../common_functions/country_base').jpClient;
 const showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
-const Table               = require('../../../../common_functions/attach_dom/table').Table;
+const Table               = require('../../../../common_functions/attach_dom/table');
 
 const StatementUI = (() => {
     'use strict';
@@ -20,17 +18,17 @@ const StatementUI = (() => {
 
     const createEmptyStatementTable = () => {
         const header = [
-            Content.localize().textDate,
-            Content.localize().textRef,
+            localize('Date'),
+            localize('Ref.'),
             localize('Potential Payout'),
             localize('Action'),
             localize('Description'),
             localize('Credit/Debit'),
             localize('Balance'),
-            Content.localize().textDetails,
+            localize('Details'),
         ];
 
-        const jp_client = japanese_client(),
+        const jp_client = jpClient(),
             currency = Client.get('currency');
 
         header[6] += (jp_client || !currency ? '' : ' (' + currency + ')');
@@ -50,7 +48,7 @@ const StatementUI = (() => {
     };
 
     const createStatementRow = (transaction) => {
-        const statement_data = Statement.getStatementData(transaction, Client.get('currency'), japanese_client());
+        const statement_data = Statement.getStatementData(transaction, Client.get('currency'), jpClient());
         all_data.push($.extend({}, statement_data, {
             action: localize(statement_data.action),
             desc  : localize(statement_data.desc),
@@ -74,13 +72,8 @@ const StatementUI = (() => {
 
         // create view button and append
         if (statement_data.action === 'Sell' || statement_data.action === 'Buy') {
-            const $view_button_span = Button.createBinaryStyledButton();
-            const $view_button = $view_button_span.children('.button').first();
-            $view_button.text(localize('View'));
-            $view_button.addClass('open_contract_detailsws');
-            $view_button.attr('contract_id', statement_data.id);
-
-            $statement_row.children('.desc,.details').append($view_button_span);
+            const $view_button = $('<button/>', { class: 'button open_contract_detailsws', text: localize('View'), contract_id: statement_data.id });
+            $statement_row.children('.desc,.details').append($view_button);
         }
 
         return $statement_row[0];        // return DOM instead of jquery object
@@ -101,7 +94,7 @@ const StatementUI = (() => {
 
     const exportCSV = () => {
         downloadCSV(
-            Statement.generateCSV(all_data, japanese_client()),
+            Statement.generateCSV(all_data, jpClient()),
             'Statement_' + Client.get('loginid') + '_latest' + $('#rows_count').text() + '_' +
                 toJapanTimeIfNeeded(window.time).replace(/\s/g, '_').replace(/:/g, '') + '.csv');
     };

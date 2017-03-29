@@ -1,4 +1,5 @@
 const Validation       = require('./form_validation');
+const objectNotEmpty   = require('../base/utility').objectNotEmpty;
 const showLoadingImage = require('../base/utility').showLoadingImage;
 
 const FormManager = (() => {
@@ -39,7 +40,8 @@ const FormManager = (() => {
         let key,
             $selector,
             val,
-            value;
+            value,
+            native;
 
         fields.forEach((field) => {
             if (!field.exclude_request) {
@@ -47,24 +49,27 @@ const FormManager = (() => {
                 if ($selector.is(':visible') || field.value) {
                     val = $selector.val();
                     key = field.request_field || field.selector;
+                    native = $selector.attr('data-picker') === 'native';
 
                     // prioritise data-value
                     // if label, take the text
                     // if checkbox, take checked value
                     // otherwise take the value
                     value = field.value ? (typeof field.value === 'function' ? field.value() : field.value) :
-                        $selector.attr('data-value') || (/lbl_/.test(key) ? (field.value || $selector.text()) :
+                        native ? val : ($selector.attr('data-value') || (/lbl_/.test(key) ? (field.value || $selector.text()) :
                             $selector.is(':checkbox') ? ($selector.is(':checked') ? 1 : 0) :
-                                Array.isArray(val) ? val.join(',') : (val || ''));
+                                Array.isArray(val) ? val.join(',') : (val || '')));
 
-                    key = key.replace(/lbl_|#|\./g, '');
-                    if (field.parent_node) {
-                        if (!data[field.parent_node]) {
-                            data[field.parent_node] = {};
+                    if (!(field.exclude_if_empty && val.length === 0)) {
+                        key = key.replace(/lbl_|#|\./g, '');
+                        if (field.parent_node) {
+                            if (!data[field.parent_node]) {
+                                data[field.parent_node] = {};
+                            }
+                            data[field.parent_node][key] = value;
+                        } else {
+                            data[key] = value;
                         }
-                        data[field.parent_node][key] = value;
-                    } else {
-                        data[key] = value;
                     }
                 }
             }
@@ -88,11 +93,25 @@ const FormManager = (() => {
     };
 
     const handleSubmit = (options) => {
+        let form,
+            $btn_submit,
+            can_submit;
+
+        const onSuccess = (response = {}) => {
+            if (typeof options.fnc_response_handler === 'function') {
+                if (options.enable_button || 'error' in response) {
+                    enableButton($btn_submit);
+                    form.can_submit = true;
+                }
+                options.fnc_response_handler(response);
+            }
+        };
+
         $(options.form_selector).off('submit').on('submit', (evt) => {
             evt.preventDefault();
-            const form = forms[options.form_selector];
-            const $btn_submit = form.$btn_submit;
-            const can_submit = form.can_submit;
+            form = forms[options.form_selector];
+            $btn_submit = form.$btn_submit;
+            can_submit = form.can_submit;
             if (!can_submit) return;
             if (Validation.validate(options.form_selector)) {
                 const req = $.extend({}, options.obj_request, getFormData(options.form_selector));
@@ -101,15 +120,13 @@ const FormManager = (() => {
                 }
                 disableButton($btn_submit);
                 form.can_submit = false;
-                BinarySocket.send(req).then((response) => {
-                    if (typeof options.fnc_response_handler === 'function') {
-                        if (options.enable_button || 'error' in response) {
-                            enableButton($btn_submit);
-                            form.can_submit = true;
-                        }
-                        options.fnc_response_handler(response);
-                    }
-                });
+                if (objectNotEmpty(req)) {
+                    BinarySocket.send(req).then((response) => {
+                        onSuccess(response);
+                    });
+                } else {
+                    onSuccess();
+                }
             }
         });
     };

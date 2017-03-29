@@ -1,6 +1,5 @@
 const getStartDateNode           = require('./common_independent').getStartDateNode;
-const Content                    = require('../../common_functions/content').Content;
-const format_money               = require('../../common_functions/currency_to_symbol').format_money;
+const formatMoney                = require('../../common_functions/currency_to_symbol').formatMoney;
 const moment                     = require('moment');
 const contractTypeDisplayMapping = require('./common').contractTypeDisplayMapping;
 const resetPriceMovement         = require('./common').resetPriceMovement;
@@ -99,7 +98,7 @@ const Price = (function() {
                 }
             }
 
-            proposal.date_expiry = moment.utc(endDate2 + ' ' + endTime2).unix();
+            proposal.date_expiry = moment.utc(endDate2 + ' ' + (endTime2 || '23:59:59')).unix();
             // For stopping tick trade behaviour
             proposal.duration_unit = 'm';
         }
@@ -196,9 +195,9 @@ const Price = (function() {
             h4.setAttribute('class', 'contract_heading ' + type);
             if (is_spread) {
                 if (position === 'top') {
-                    elementTextContent(h4, Content.localize().textSpreadTypeLong);
+                    elementTextContent(h4, localize('Long'));
                 } else {
-                    elementTextContent(h4, Content.localize().textSpreadTypeShort);
+                    elementTextContent(h4, localize('Short'));
                 }
             } else {
                 elementTextContent(h4, display_text);
@@ -214,7 +213,7 @@ const Price = (function() {
                 } else {
                     $('.stake:hidden').show();
                     elementTextContent(stake, localize('Stake') + ': ');
-                    elementTextContent(amount, format_money((currency.value || currency.getAttribute('value')), data.display_value));
+                    elementTextContent(amount, formatMoney((currency.value || currency.getAttribute('value')), data.display_value));
                 }
                 $('.stake_wrapper:hidden').show();
             } else {
@@ -223,7 +222,7 @@ const Price = (function() {
 
             if (data.payout) {
                 elementTextContent(payout, (is_spread ? localize('Payout/point') : localize('Payout')) + ': ');
-                elementTextContent(payoutAmount, format_money((currency.value || currency.getAttribute('value')), data.payout));
+                elementTextContent(payoutAmount, formatMoney((currency.value || currency.getAttribute('value')), data.payout));
                 $('.payout_wrapper:hidden').show();
             } else {
                 $('.payout_wrapper:visible').hide();

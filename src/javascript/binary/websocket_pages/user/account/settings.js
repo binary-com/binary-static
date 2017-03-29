@@ -1,5 +1,5 @@
-const japanese_client = require('../../../common_functions/country_base').japanese_client;
-const Client          = require('../../../base/client').Client;
+const Client   = require('../../../base/client');
+const jpClient = require('../../../common_functions/country_base').jpClient;
 
 const Settings = (function() {
     'use strict';
@@ -12,7 +12,7 @@ const Settings = (function() {
             if (Client.get('is_virtual')) {
                 $(class_real).addClass(class_hidden);
             } else {
-                $(class_real).not((japanese_client() ? '.ja-hide' : '')).removeClass(class_hidden);
+                $(class_real).not((jpClient() ? '.ja-hide' : '')).removeClass(class_hidden);
             }
 
             if (/has_password/.test(response.get_account_status.status)) {

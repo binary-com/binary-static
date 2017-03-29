@@ -1,13 +1,13 @@
-const Client          = require('../base/client').Client;
-const BinaryPjax      = require('../base/binary_pjax');
-const japanese_client = require('../common_functions/country_base').japanese_client;
+const Client     = require('../base/client');
+const BinaryPjax = require('../base/binary_pjax');
+const jpClient   = require('../common_functions/country_base').jpClient;
 
 const GetStartedJP = (function() {
     const onLoad = function() {
-        if (!japanese_client()) {
+        if (!jpClient()) {
             BinaryPjax.load('get-started');
         }
-        Client.activate_by_client_type();
+        Client.activateByClientType();
         const showSelectedTab = function() {
             const updatedTab = window.location.hash;
             $('.contents div').hide();

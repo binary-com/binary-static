@@ -2,8 +2,8 @@ const Barriers         = require('./barriers').Barriers;
 const Contract         = require('./contract').Contract;
 const Defaults         = require('./defaults').Defaults;
 const Price            = require('./price').Price;
-const Content          = require('../../common_functions/content').Content;
 const moment           = require('moment');
+const localize         = require('../../base/localize').localize;
 const State            = require('../../base/storage').State;
 const isVisible        = require('../../common_functions/common_functions').isVisible;
 const durationOrder    = require('./common').durationOrder;
@@ -193,11 +193,11 @@ const Durations = (function() {
 
     const durationTextValueMappings = function(str) {
         const mapping = {
-            s: Content.localize().textDurationSeconds,
-            m: Content.localize().textDurationMinutes,
-            h: Content.localize().textDurationHours,
-            d: Content.localize().textDurationDays,
-            t: Content.localize().textDurationTicks,
+            s: localize('seconds'),
+            m: localize('minutes'),
+            h: localize('hours'),
+            d: localize('days'),
+            t: localize('ticks'),
         };
 
         const arry = str ? str.toString().match(/[a-zA-Z]+|[0-9]+/g) : [],
@@ -309,7 +309,7 @@ const Durations = (function() {
         }
 
         let option = document.createElement('option'),
-            content = document.createTextNode(Content.localize().textDuration);
+            content = document.createTextNode(localize('Duration'));
 
         option.setAttribute('value', 'duration');
         if (current_selected === 'duration') {
@@ -320,7 +320,7 @@ const Durations = (function() {
 
         if (has_end_date) {
             option = document.createElement('option');
-            content = document.createTextNode(Content.localize().textEndTime);
+            content = document.createTextNode(localize('End Time'));
             option.setAttribute('value', 'endtime');
             if (current_selected === 'endtime') {
                 option.setAttribute('selected', 'selected');
@@ -345,6 +345,7 @@ const Durations = (function() {
             setNow(); // start time
             date_start.setAttribute('disabled', 'disabled');
             expiry_time.hide();
+            Barriers.display();
             processTradingTimesRequest(end_date_iso);
         } else {
             date_start.removeAttribute('disabled');
@@ -356,10 +357,9 @@ const Durations = (function() {
             Durations.setTime(expiry_time.value);
             Defaults.set('expiry_time', Defaults.get('expiry_time') || expiry_time.value);
             expiry_time.show();
+            Barriers.display();
             Price.processPriceRequest();
         }
-
-        Barriers.display();
     };
 
     const processTradingTimesRequest = function(date) {

@@ -1,7 +1,7 @@
-const Table    = require('../../../../../common_functions/attach_dom/table').Table;
+const Table    = require('../../../../../common_functions/attach_dom/table');
 const addComma = require('../../../../../common_functions/string_util').addComma;
 const localize = require('../../../../../base/localize').localize;
-const Client   = require('../../../../../base/client').Client;
+const Client   = require('../../../../../base/client');
 const elementTextContent  = require('../../../../../common_functions/common_functions').elementTextContent;
 
 const LimitsUI = (() => {

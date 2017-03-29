@@ -1,16 +1,14 @@
-const showLoadingImage    = require('../../../../base/utility').showLoadingImage;
-const toJapanTimeIfNeeded = require('../../../../base/clock').Clock.toJapanTimeIfNeeded;
-const format_money        = require('../../../../common_functions/currency_to_symbol').format_money;
-const buildOauthApps      = require('../../../../common_functions/get_app_details').buildOauthApps;
-const addTooltip          = require('../../../../common_functions/get_app_details').addTooltip;
-const showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
-const japanese_client     = require('../../../../common_functions/country_base').japanese_client;
 const Portfolio           = require('../portfolio').Portfolio;
 const ViewPopupWS         = require('../../view_popup/view_popupws');
+const Client              = require('../../../../base/client');
+const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
+const localize            = require('../../../../base/localize').localize;
 const State               = require('../../../../base/storage').State;
-const localize = require('../../../../base/localize').localize;
-const Client   = require('../../../../base/client').Client;
-const url      = require('../../../../base/url').url;
+const urlParam            = require('../../../../base/url').param;
+const showLoadingImage    = require('../../../../base/utility').showLoadingImage;
+const jpClient            = require('../../../../common_functions/country_base').jpClient;
+const formatMoney         = require('../../../../common_functions/currency_to_symbol').formatMoney;
+const GetAppDetails       = require('../../../../common_functions/get_app_details');
 
 const PortfolioWS = (function() {
     'use strict';
@@ -42,7 +40,7 @@ const PortfolioWS = (function() {
         is_initialized = true;
 
         // Display ViewPopup according to contract_id in query string
-        const contract_id = url.param('contract_id');
+        const contract_id = urlParam('contract_id');
         if (contract_id) {
             ViewPopupWS.init($('<div />', { contract_id: contract_id }).get(0));
         }
@@ -51,15 +49,15 @@ const PortfolioWS = (function() {
     const createPortfolioRow = function(data, is_first) {
         const longCode = typeof module !== 'undefined' ?
             data.longcode :
-            (japanese_client() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode);
+            (jpClient() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode);
 
         const new_class = is_first ? '' : 'new';
         $('#portfolio-body').prepend(
             $('<tr class="tr-first ' + new_class + ' ' + data.contract_id + '" id="' + data.contract_id + '">' +
-                '<td class="ref"><span' + showTooltip(data.app_id, oauth_apps[data.app_id]) + ' data-balloon-pos="right">' + data.transaction_id + '</span></td>' +
-                '<td class="payout"><strong>' + format_money(data.currency, data.payout) + '</strong></td>' +
+                '<td class="ref"><span' + GetAppDetails.showTooltip(data.app_id, oauth_apps[data.app_id]) + ' data-balloon-pos="right">' + data.transaction_id + '</span></td>' +
+                '<td class="payout"><strong>' + formatMoney(data.currency, data.payout) + '</strong></td>' +
                 '<td class="details">' + longCode + '</td>' +
-                '<td class="purchase"><strong>' + format_money(data.currency, data.buy_price) + '</strong></td>' +
+                '<td class="purchase"><strong>' + formatMoney(data.currency, data.buy_price) + '</strong></td>' +
                 '<td class="indicative"><strong class="indicative_price">--.--</strong></td>' +
                 '<td class="button"><button class="button open_contract_detailsws nowrap" contract_id="' + data.contract_id + '">' + localize('View') + '</button></td>' +
                 '</tr>' +
@@ -164,15 +162,15 @@ const PortfolioWS = (function() {
                 status_class = values[proposal.contract_id].indicative < old_indicative ? ' price_moved_down' : (values[proposal.contract_id].indicative > old_indicative ? ' price_moved_up' : '');
                 $td.removeClass('no_resale');
             }
-            $td.html('<strong class="indicative_price' + status_class + '"">' + format_money(proposal.currency, values[proposal.contract_id].indicative) + '</strong>' + no_resale_html);
+            $td.html('<strong class="indicative_price' + status_class + '"">' + formatMoney(proposal.currency, values[proposal.contract_id].indicative) + '</strong>' + no_resale_html);
         }
 
         updateFooter();
     };
 
     const updateOAuthApps = function(response) {
-        oauth_apps = buildOauthApps(response.oauth_apps);
-        addTooltip(oauth_apps);
+        oauth_apps = GetAppDetails.buildOauthApps(response);
+        GetAppDetails.addTooltip(oauth_apps);
     };
 
     const removeContract = function(contract_id) {
@@ -192,8 +190,8 @@ const PortfolioWS = (function() {
     };
 
     const updateFooter = function() {
-        $('#cost-of-open-positions').text(format_money(currency, Portfolio.getSumPurchase(values)));
-        $('#value-of-open-positions').text(format_money(currency, Portfolio.getIndicativeSum(values)));
+        $('#cost-of-open-positions').text(formatMoney(currency, Portfolio.getSumPurchase(values)));
+        $('#value-of-open-positions').text(formatMoney(currency, Portfolio.getIndicativeSum(values)));
     };
 
     const errorMessage = function(msg) {

@@ -1,14 +1,13 @@
 const moment               = require('moment');
 const StatementUI          = require('./statement.ui');
 const ViewPopupWS          = require('../../view_popup/view_popupws');
-const getLanguage          = require('../../../../base/language').getLanguage;
+const getLanguage          = require('../../../../base/language').get;
 const localize             = require('../../../../base/localize').localize;
-const showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
+const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;
 const buildOauthApps       = require('../../../../common_functions/get_app_details').buildOauthApps;
-const Content              = require('../../../../common_functions/content').Content;
 const dateValueChanged     = require('../../../../common_functions/common_functions').dateValueChanged;
-const japanese_client      = require('../../../../common_functions/country_base').japanese_client;
+const jpClient             = require('../../../../common_functions/country_base').jpClient;
 const toISOFormat          = require('../../../../common_functions/string_util').toISOFormat;
 const DatePicker           = require('../../../../components/date_picker').DatePicker;
 
@@ -39,7 +38,7 @@ const StatementInit = (() => {
 
         const jump_to_val = $('#jump-to').attr('data-value');
         if (jump_to_val && jump_to_val !== '') {
-            req.date_to = moment.utc(jump_to_val).unix() + ((japanese_client() ? 15 : 24) * (60 * 60));
+            req.date_to = moment.utc(jump_to_val).unix() + ((jpClient() ? 15 : 24) * (60 * 60));
             req.date_from = 0;
         }
         BinarySocket.send(req).then((response) => {
@@ -144,30 +143,29 @@ const StatementInit = (() => {
         transactions_consumed = 0;
 
         BinarySocket.send({ oauth_apps: 1 }).then((response) => {
-            addTooltip(StatementUI.setOauthApps(buildOauthApps(response.oauth_apps)));
+            addTooltip(StatementUI.setOauthApps(buildOauthApps(response)));
             $('.barspinner').addClass('hidden');
         });
-        Content.populate();
         getNextBatchStatement();
         loadStatementChunkWhenScroll();
     };
 
     const attachDatePicker = () => {
-        const jump_to = '#jump-to',
-            datepicker_inst = new DatePicker(jump_to);
+        const jump_to = '#jump-to';
+        $(jump_to).attr('data-value', toISOFormat(moment()))
+             .change(function() {
+                 if (!dateValueChanged(this, 'date')) {
+                     return false;
+                 }
+                 $('.table-container').remove();
+                 StatementUI.clearTableContent();
+                 initPage();
+                 return true;
+             });
+        const datepicker_inst = new DatePicker(jump_to);
         datepicker_inst.hide();
         datepicker_inst.show({ maxDate: 0 });
-        $(jump_to).val(localize('Today'))
-                 .attr('data-value', toISOFormat(moment()))
-                 .change(function() {
-                     if (!dateValueChanged(this, 'date')) {
-                         return false;
-                     }
-                     $('.table-container').remove();
-                     StatementUI.clearTableContent();
-                     initPage();
-                     return true;
-                 });
+        if ($(jump_to).attr('data-picker') !== 'native') $(jump_to).val(localize('Today'));
     };
 
     const onLoad = () => {

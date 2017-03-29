@@ -1,56 +1,97 @@
 <div class="static_full">
-    <h1>[% l("Start Trading with MetaTrader 5") %]</h1>
+    <h1 class="center-text">[% l('Start Trading with MetaTrader 5') %]</h1>
+    <h3 class="center-text">[% l('Trade with a powerful interface known as the global industry standard.') %]</h3>
 
-    <div class="gr-row">
-        <div class="gr-6 gr-12-m">
-            <ol>
-                <li>[% l('Click the button below to download MetaTrader.') %]</li>
-                <li>[% l('Run the installation file and follow the instructions.') %]</li>
-                <li>[% l('Log into the application using your MetaTrader account number and your MetaTrader account password.') %]</li>
-            </ol>
-            <p class="hint">[% l('If you previously downloaded MetaTrader 5 directly from MetaTrader\'s website, please select "[_1]" from the list of available brokers.', brand_name) %]</p>
-        </div>
-        <div class="gr-6 gr-hide-m">
-            <img class="responsive" src="[% request.url_for('images/pages/metatrader/mt5-pc.svg') %]" alt=""/>
-        </div>
-    </div>
-
-    <div class="gr-row">
-        <div class="gr-6 gr-12-m">
-            <a class="button full-width" href="[% request.url_for('/download/binarycom_mt5_setup.exe') %]">
-                <span>[% l('Download MetaTrader for Windows') %]</span>
-            </a>
-        </div>
-    </div>
-
-    <div class="gr-row">
-        <div class="gr-6 gr-12-m gr-parent">
-            <div class="gr-row">
-                <div class="gr-6 gr-no-gutter-right">
-                    <a class="button button-secondary" href="https://s3.amazonaws.com/binary-mt5/binary-mt5.dmg" download>
-                        <span>[% l('Download for MacOS') %]</span>
-                    </a>
+    <div class="gr-padding-20">
+        <div class="gr-row">
+            <div class="gr-4 gr-12-m gr-12-p gr-padding-10">
+                <img class="gr-3 gr-2-p gr-2-m gr-no-gutter" src="[% request.url_for('images/pages/metatrader/icons/desktop.svg') %]" />
+                <div class="gr-padding-30 gr-child">
+                    <h3>[% l('For Desktop') %]</h3>
+                    <p>[% l('Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders.') %]</p>
                 </div>
-                <div class="gr-6 align-end">
-                    <a class="button button-secondary" href="https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux" target="_blank">
-                        <span>[% l('Linux Instructions') %]</span>
-                    </a>
+            </div>
+            <div class="gr-8 gr-12-m gr-12-p">
+                <div class="gr-row">
+                    <div class="gr-4 gr-6-m center-text gr-padding-10">
+                        <img class="gr-8 gr-padding-30 gr-centered" src="[% request.url_for('images/pages/metatrader/icons/window.svg') %]" />
+                        <a class="button" href="[% request.url_for('/download/binarycom_mt5_setup.exe') %]">
+                            <span>[% l('Download') %]</span>
+                        </a>
+                    </div>
+                    <div class="gr-4 gr-6-m center-text gr-padding-10">
+                        <img class="gr-8 gr-padding-30 gr-centered" src="[% request.url_for('images/pages/metatrader/icons/osx.svg') %]" />
+                        <a class="button" href="https://s3.amazonaws.com/binary-mt5/binary-mt5.dmg" download>
+                            <span>[% l('Download') %]</span>
+                        </a>
+                    </div>
+                    <div class="gr-4 gr-6-m center-text gr-padding-10">
+                        <img class="gr-8 gr-padding-30 gr-centered" src="[% request.url_for('images/pages/metatrader/icons/linux.svg') %]" />
+                        <a class="button" href="https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux" target="_blank">
+                            <span>[% l('Download') %]</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="gr-6 gr-12-m">
-            <div class="gr-row">
-                <div class="gr-6 gr-no-gutter-right align-end">
-                    <a href="https://download.mql5.com/cdn/mobile/mt5/ios?server=Binary.com-Server" target="_blank">
-                        <span class="app-store-badge"></span>
+    </div>
+
+    <div class="separator-line border-bottom"></div>
+
+    <div class="gr-padding-20">
+        <div class="gr-row">
+            <div class="gr-8 gr-12-m gr-12-p">
+                <div class="gr-row">
+                    <div class="gr-6 center-text gr-padding-10">
+                        <img class="gr-5 gr-8-m gr-padding-30 gr-centered" src="[% request.url_for('images/pages/metatrader/icons/apple.svg') %]" />
+                        <a href="https://download.mql5.com/cdn/mobile/mt5/ios?server=Binary.com-Server" target="_blank">
+                            <span class="app-store-badge"></span>
+                        </a>
+                    </div>
+                    <div class="gr-6 center-text-m gr-padding-10">
+                        <img class="gr-5 gr-8-m gr-centered-m gr-padding-30" src="[% request.url_for('images/pages/metatrader/icons/android.svg') %]" />
+                        <a href="https://download.mql5.com/cdn/mobile/mt5/android?server=Binary.com-Server" target="_blank">
+                            <span class="google-play-badge"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="gr-4 gr-12-m gr-12-p gr-padding-10 gr-order-first-p gr-order-first-m">
+                <img class="gr-3 gr-2-p gr-2-m gr-no-gutter" src="[% request.url_for('images/pages/metatrader/icons/mobile.svg') %]" />
+                <div class="gr-padding-30 gr-child">
+                    <h3>[% l('For Mobile') %]</h3>
+                    <p>[% l('Access the markets anytime, anywhere using native apps for your iOS or Android devices.') %]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="separator-line border-bottom"></div>
+
+    <div class="gr-padding-20">
+        <div class="gr-row">
+            <div class="gr-4 gr-12-m gr-12-p gr-padding-10">
+                <img class="gr-3 gr-2-p gr-2-m gr-no-gutter" src="[% request.url_for('images/pages/metatrader/icons/browser.svg') %]" />
+                <div class="gr-padding-30 gr-child">
+                    <h3>[% l('For Browser') %]</h3>
+                    <p>[% l('Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required.') %]</p>
+                </div>
+            </div>
+            <div class="gr-8 gr-12-m gr-12-p gr-padding-10">
+                <div class="gr-row">
+                    <div class="gr-1"></div>
+                    <img class="gr-2" src="[% request.url_for('images/pages/metatrader/icons/chrome.svg') %]" />
+                    <img class="gr-2" src="[% request.url_for('images/pages/metatrader/icons/edge.svg') %]" />
+                    <img class="gr-2" src="[% request.url_for('images/pages/metatrader/icons/firefox.svg') %]" />
+                    <img class="gr-2" src="[% request.url_for('images/pages/metatrader/icons/opera.svg') %]" />
+                    <img class="gr-2" src="[% request.url_for('images/pages/metatrader/icons/safari.svg') %]" />
+                </div>
+                <div class="center-text">
+                    <a class="button" href="https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server" target="_blank">
+                        <span>[% l('Download') %]</span>
                     </a>
                 </div>
-                <div class="gr-6">
-                    <a href="https://download.mql5.com/cdn/mobile/mt5/android?server=Binary.com-Server" target="_blank">
-                        <span class="google-play-badge"></span>
-                    </a>
-                </div>
-           </div>
+            </div>
         </div>
     </div>
 </div>

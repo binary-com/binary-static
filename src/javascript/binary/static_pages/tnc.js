@@ -1,5 +1,5 @@
 const localize    = require('../base/localize').localize;
-const url         = require('../base/url').url;
+const urlParam    = require('../base/url').param;
 const Scroll      = require('../common_functions/scroll');
 const TNCApproval = require('../websocket_pages/user/tnc_approval');
 
@@ -10,7 +10,7 @@ const TermsAndConditions = (function() {
             $('#btn_accept'),
             () => { $('.tnc_accept').removeClass('invisible'); },
             () => { $('#tnc_accept').html(localize('Your settings have been updated successfully.')); });
-        Scroll.sidebar_scroll($('.tac-binary'));
+        Scroll.sidebarScroll($('.tac-binary'));
         tabListener();
 
         const year = document.getElementsByClassName('currentYear');
@@ -57,7 +57,7 @@ const TermsAndConditions = (function() {
             .find(content_to_show)
             .removeClass(hidden_class);
 
-        const section = url.param('section');
+        const section = urlParam('section');
         if (section) {
             const $section = $(`#content a#${section}`);
             if ($section.length) setTimeout(() => { $.scrollTo($section, 0, { offset: -10 }); }, 500);

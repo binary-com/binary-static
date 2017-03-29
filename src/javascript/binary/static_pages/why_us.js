@@ -1,10 +1,10 @@
 const Scroll = require('../common_functions/scroll');
-const Client = require('../base/client').Client;
+const Client = require('../base/client');
 
 const WhyUs = (function() {
     const onLoad = function() {
-        Scroll.sidebar_scroll($('.why-us'));
-        Client.activate_by_client_type();
+        Scroll.sidebarScroll($('.why-us'));
+        Client.activateByClientType();
     };
 
     const onUnload = function() {

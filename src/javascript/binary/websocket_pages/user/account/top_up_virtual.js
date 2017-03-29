@@ -1,6 +1,5 @@
-const Client   = require('../../../base/client').Client;
+const Client   = require('../../../base/client');
 const localize = require('../../../base/localize').localize;
-const Content  = require('../../../common_functions/content').Content;
 
 const TopUpVirtual = (() => {
     'use strict';
@@ -14,8 +13,6 @@ const TopUpVirtual = (() => {
         hidden_class = 'hidden';
 
     const onLoad = () => {
-        Content.populate();
-
         $views = $('#topup_virtual .viewItem');
         $views.addClass(hidden_class);
 

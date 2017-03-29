@@ -1,5 +1,5 @@
-const showLocalTimeOnHover = require('../../../../../base/clock').Clock.showLocalTimeOnHover;
-const FlexTableUI = require('../../../../../common_functions/attach_dom/flextable').FlexTableUI;
+const showLocalTimeOnHover = require('../../../../../base/clock').showLocalTimeOnHover;
+const FlexTableUI = require('../../../../../common_functions/attach_dom/flextable');
 const moment      = require('moment');
 const localize    = require('../../../../../base/localize').localize;
 
@@ -8,7 +8,6 @@ const IPHistoryUI = (() => {
 
     const container_selector = '#login_history-ws-container';
     const no_messages_error  = 'Your account has no Login/Logout activity.';
-    let flex_table;
 
     const init = () => {
         const $title = $('#login_history-title').children().first();
@@ -18,6 +17,7 @@ const IPHistoryUI = (() => {
     const formatRow = (data) => {
         const timestamp = moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n') + ' GMT';
         const status    = localize(data.success ? 'Successful' : 'Failed');
+        const action    = localize(data.action);
         const browser   = data.browser;
         let browser_string = browser ?
             browser.name + ' v' + browser.version :
@@ -28,7 +28,7 @@ const IPHistoryUI = (() => {
         }
         return [
             timestamp,
-            data.action,
+            action,
             browser_string,
             data.ip_addr,
             status,
@@ -36,12 +36,9 @@ const IPHistoryUI = (() => {
     };
 
     const update = (history) => {
-        if (flex_table) {
-            return flex_table.replace(history);
-        }
         const headers = ['Date and Time', 'Action', 'Browser', 'IP Address', 'Status'];
         const columns = ['timestamp', 'action', 'browser', 'ip', 'status'];
-        flex_table = new FlexTableUI({
+        FlexTableUI.init({
             id       : 'login-history-table',
             container: container_selector,
             header   : headers.map(function(s) { return localize(s); }),
@@ -53,15 +50,14 @@ const IPHistoryUI = (() => {
             },
         });
         if (!history.length) {
-            return flex_table.displayError(localize(no_messages_error), 6);
+            return FlexTableUI.displayError(localize(no_messages_error), 6);
         }
         return showLocalTimeOnHover('td.timestamp');
     };
 
     const clean = () => {
         $(container_selector + ' .error-msg').text('');
-        flex_table.clear();
-        flex_table = null;
+        FlexTableUI.clear();
     };
 
     const displayError = (error) => {

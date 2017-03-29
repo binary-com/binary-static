@@ -1,10 +1,9 @@
 const ProfitTableUI        = require('./profit_table.ui');
 const ViewPopupWS          = require('../../view_popup/view_popupws');
 const localize             = require('../../../../base/localize').localize;
-const showLocalTimeOnHover = require('../../../../base/clock').Clock.showLocalTimeOnHover;
+const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;
 const buildOauthApps       = require('../../../../common_functions/get_app_details').buildOauthApps;
-const Content              = require('../../../../common_functions/content').Content;
 
 const ProfitTableInit = (() => {
     let batch_size,
@@ -120,7 +119,6 @@ const ProfitTableInit = (() => {
         BinarySocket.send({ oauth_apps: 1 }).then((response) => {
             addTooltip(ProfitTableUI.setOauthApps(buildOauthApps(response)));
         });
-        Content.populate();
         getNextBatchTransactions();
         onScrollLoad();
         ViewPopupWS.viewButtonOnClick('#profit-table-ws-container');

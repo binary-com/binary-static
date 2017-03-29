@@ -1,9 +1,9 @@
-const BinaryPjax        = require('../../../base/binary_pjax');
-const Client            = require('../../../base/client').Client;
-const State             = require('../../../base/storage').State;
-const AccountOpening    = require('../../../common_functions/account_opening');
-const detect_hedging    = require('../../../common_functions/common_functions').detect_hedging;
-const FormManager       = require('../../../common_functions/form_manager');
+const BinaryPjax     = require('../../../base/binary_pjax');
+const Client         = require('../../../base/client');
+const State          = require('../../../base/storage').State;
+const AccountOpening = require('../../../common_functions/account_opening');
+const detectHedging  = require('../../../common_functions/common_functions').detectHedging;
+const FormManager    = require('../../../common_functions/form_manager');
 
 const JapanAccOpening = (function() {
     const onLoad = function() {
@@ -36,7 +36,7 @@ const JapanAccOpening = (function() {
                 { request_field: 'new_account_japan', value: 1 },
             ].concat(AccountOpening.selectCheckboxValidation(formID)));
 
-            detect_hedging($('#trading_purpose'), $('.hedging-assets'));
+            detectHedging($('#trading_purpose'), $('.hedging-assets'));
 
             FormManager.handleSubmit({
                 form_selector       : formID,

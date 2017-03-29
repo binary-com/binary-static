@@ -1,7 +1,7 @@
-const url = require('../base/url').url;
+const Scroll = (() => {
+    'use strict';
 
-const Scroll = (function() {
-    const sidebar_scroll = function(elm_selector) {
+    const sidebarScroll = (elm_selector) => {
         elm_selector.on('click', '#sidebar-nav li', function() {
             const clicked_li = $(this);
             $.scrollTo($('.section:eq(' + clicked_li.index() + ')'), 500);
@@ -19,7 +19,7 @@ const Scroll = (function() {
             // http://www.backslash.gr/content/blog/webdevelopment/6-navigation-menu-that-stays-on-top-with-jquery
 
             // our function that decides weather the navigation bar should have "fixed" css position or not.
-            const sticky_navigation = function() {
+            const sticky_navigation = () => {
                 if (!selector.is(':visible')) return;
                 if (!width) {
                     width = selector.width();
@@ -70,23 +70,37 @@ const Scroll = (function() {
         }
     };
 
-    const goToHashSection = function() {
-        if (url.location.hash !== '') {
-            $('a[href="' + url.location.hash + '"]').click();
-        }
-    };
+    const scrollToTop = function() {
+        let is_displaying = false;
+        const $scrollup = $('#scrollup');
+        $(document).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                if (is_displaying) return;
+                $scrollup.fadeIn();
+                is_displaying = true;
+            } else if (is_displaying) {
+                $scrollup.fadeOut();
+                is_displaying = false;
+            }
+        });
 
-    const scrollToHashSection = function() {
-        if (url.location.hash) {
-            $.scrollTo($(url.location.hash));
-        }
+        $scrollup.click(function () {
+            $.scrollTo(0, 500);
+        });
     };
 
     return {
-        sidebar_scroll     : sidebar_scroll,
-        offScroll          : function() { $(window).off('scroll'); },
-        goToHashSection    : goToHashSection,
-        scrollToHashSection: scrollToHashSection,
+        sidebarScroll  : sidebarScroll,
+        offScroll      : () => { $(window).off('scroll'); },
+        scrollToTop    : scrollToTop,
+        goToHashSection: () => {
+            const hash = window.location.hash;
+            if (hash) $('a[href="' + hash + '"]').click();
+        },
+        scrollToHashSection: () => {
+            const hash = window.location.hash;
+            if (hash) $.scrollTo($(hash));
+        },
     };
 })();
 

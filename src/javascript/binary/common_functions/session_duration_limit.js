@@ -1,42 +1,45 @@
 const moment   = require('moment');
+const Client   = require('../base/client');
 const localize = require('../base/localize').localize;
-const Client   = require('../base/client').Client;
 
-const SessionDurationLimit = (function() {
+const SessionDurationLimit = (() => {
     'use strict';
 
-    let warning;
+    let warning,
+        timeout_before,
+        timeout,
+        timeout_logout;
 
-    const init = function() {
-        clearTimeout(window.TimeOut_SessionLimitWarningBefore);
-        clearTimeout(window.TimeOut_SessionLimitWarning);
-        clearTimeout(window.TimeOut_SessionLimitLogout);
+    const init = () => {
+        clearTimeout(timeout_before);
+        clearTimeout(timeout);
+        clearTimeout(timeout_logout);
         $('#session_limit').remove();
 
         warning = 10 * 1000; // milliseconds before limit to display the warning message
 
-        const limit     = Client.get('session_duration_limit') * 1,
-            now       = moment().unix(),
-            start     = Client.get('session_start') * 1,
-            mathLimit = Math.pow(2, 31) - 1;
+        const limit     = Client.get('session_duration_limit') * 1;
+        const now       = moment().unix();
+        const start     = Client.get('session_start') * 1;
+        const mathLimit = Math.pow(2, 31) - 1;
         let remained  = ((limit + start) - now) * 1000;
         if (remained < 0) remained = warning;
 
-        const setTimeOut = function() {
-            window.TimeOut_SessionLimitWarning = setTimeout(displayWarning, remained - warning);
-            window.TimeOut_SessionLimitLogout  = setTimeout(Client.send_logout_request, remained);
+        const setTimeOut = () => {
+            timeout = setTimeout(displayWarning, remained - warning);
+            timeout_logout = setTimeout(Client.sendLogoutRequest, remained);
         };
 
         // limit of setTimeout is this number
         if (remained > mathLimit) {
             remained %= mathLimit;
-            window.TimeOut_SessionLimitWarningBefore = setTimeout(init, remained);
+            timeout_before = setTimeout(init, remained);
         } else {
             setTimeOut();
         }
     };
 
-    const exclusionResponseHandler = function(response) {
+    const exclusionResponseHandler = (response) => {
         if (response.hasOwnProperty('error') || !response.hasOwnProperty('get_self_exclusion')) {
             return;
         }
@@ -50,13 +53,7 @@ const SessionDurationLimit = (function() {
         init();
     };
 
-    /* const realityStorageEventHandler = function(e) {
-     if (e.key === 'client.session_start' || e.key === 'client.session_duration_limit') {
-     init();
-     }
-     };*/
-
-    const displayWarning = function() {
+    const displayWarning = () => {
         $('body').append(
             $("<div id='session_limit' class='lightbox'><div><div><div class='limit_message'>" +
                 localize('Your session duration limit will end in [_1] seconds.', [warning / 1000]) +
@@ -69,6 +66,4 @@ const SessionDurationLimit = (function() {
     };
 })();
 
-module.exports = {
-    SessionDurationLimit: SessionDurationLimit,
-};
+module.exports = SessionDurationLimit;
