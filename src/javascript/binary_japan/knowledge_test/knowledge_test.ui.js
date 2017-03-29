@@ -43,11 +43,11 @@ const KnowledgeTestUI = (() => {
         const $question_row = $('<tr></tr>', { id: question_no, class: 'question' });
         const $question_data = $('<td></td>').text(localize(question.question_localized));
         const $question_link = $('<a></a>', {
-            name          : question.id,
-            class         : 'no-underline',
-            'data-balloon': question.tooltip,
+            name : question.id,
+            class: 'no-underline',
+            // 'data-balloon': question.tooltip, // TODO: uncomment when translation is ready
         });
-        const $question_icon = $('<img>', { src: urlForStatic('/images/common/question_1.png') });
+        const $question_icon = $('<img>', { src: urlForStatic('/images/common/question_1.png'), class: 'invisible' });
         $question_data.append($question_link.append($question_icon));
 
         const true_false = createTrueFalseBox(question, show_answer);
