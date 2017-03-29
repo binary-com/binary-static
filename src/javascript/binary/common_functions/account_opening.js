@@ -73,9 +73,11 @@ const AccountOpening = (() => {
             $place_of_birth.html($options.html()).val(residence_value);
             $tax_residence.html($options.html()).promise().done(() => {
                 setTimeout(() => {
-                    $tax_residence.select2()
-                        .val(residence_value).trigger('change')
-                        .removeClass('invisible');
+                    $tax_residence.select2();
+                    if (!$tax_residence.val()) {
+                        $tax_residence.val(residence_value).trigger('change');
+                    }
+                    $tax_residence.removeClass('invisible');
                 }, 500);
             });
         }

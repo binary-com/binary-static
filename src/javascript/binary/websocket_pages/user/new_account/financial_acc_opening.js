@@ -19,6 +19,7 @@ const FinancialAccOpening = (function() {
         } else if (Client.get('has_gaming')) {
             $('.security').hide();
         }
+        $('#tax_residence').select2();
 
         BinarySocket.wait('landing_company').then((response) => {
             const landing_company = response.landing_company;
@@ -61,7 +62,9 @@ const FinancialAccOpening = (function() {
                 } else if (key === 'tax_residence' && value) {
                     value = value.split(',');
                 }
-                if (value) $element.val(value).trigger('change');
+                if (value) {
+                    $element.val(value).trigger('change');
+                }
             });
         });
 
