@@ -3,7 +3,7 @@ const Contract_Beta    = require('./contract').Contract_Beta;
 const Price_Beta       = require('./price').Price_Beta;
 const Defaults         = require('../defaults').Defaults;
 const moment           = require('moment');
-const Content          = require('../../../common_functions/content').Content;
+const localize         = require('../../../base/localize').localize;
 const State            = require('../../../base/storage').State;
 const isVisible        = require('../../../common_functions/common_functions').isVisible;
 const durationOrder    = require('../common').durationOrder;
@@ -190,11 +190,11 @@ const Durations_Beta = (function() {
 
     const durationTextValueMappings = function(str) {
         const mapping = {
-            s: Content.localize().textDurationSeconds,
-            m: Content.localize().textDurationMinutes,
-            h: Content.localize().textDurationHours,
-            d: Content.localize().textDurationDays,
-            t: Content.localize().textDurationTicks,
+            s: localize('seconds'),
+            m: localize('minutes'),
+            h: localize('hours'),
+            d: localize('days'),
+            t: localize('ticks'),
         };
 
         const arry = str ? str.toString().match(/[a-zA-Z]+|[0-9]+/g) : [],
@@ -306,7 +306,7 @@ const Durations_Beta = (function() {
         }
 
         let option = document.createElement('option'),
-            content = document.createTextNode(Content.localize().textDuration);
+            content = document.createTextNode(localize('Duration'));
 
         option.setAttribute('value', 'duration');
         if (current_selected === 'duration') {
@@ -317,7 +317,7 @@ const Durations_Beta = (function() {
 
         if (has_end_date) {
             option = document.createElement('option');
-            content = document.createTextNode(Content.localize().textEndTime);
+            content = document.createTextNode(localize('End Time'));
             option.setAttribute('value', 'endtime');
             if (current_selected === 'endtime') {
                 option.setAttribute('selected', 'selected');

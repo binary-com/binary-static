@@ -1,12 +1,11 @@
-const BinaryPjax         = require('../../../../base/binary_pjax');
-const Header             = require('../../../../base/header');
-const localize           = require('../../../../base/localize').localize;
-const State              = require('../../../../base/storage').State;
-const showLoadingImage   = require('../../../../base/utility').showLoadingImage;
-const objectNotEmpty     = require('../../../../base/utility').objectNotEmpty;
-const Content            = require('../../../../common_functions/content').Content;
-const japanese_client    = require('../../../../common_functions/country_base').japanese_client;
-const Validation         = require('../../../../common_functions/form_validation');
+const BinaryPjax       = require('../../../../base/binary_pjax');
+const Header           = require('../../../../base/header');
+const localize         = require('../../../../base/localize').localize;
+const State            = require('../../../../base/storage').State;
+const objectNotEmpty   = require('../../../../base/utility').objectNotEmpty;
+const showLoadingImage = require('../../../../base/utility').showLoadingImage;
+const jpClient         = require('../../../../common_functions/country_base').jpClient;
+const Validation       = require('../../../../common_functions/form_validation');
 
 const FinancialAssessment = (() => {
     'use strict';
@@ -18,11 +17,10 @@ const FinancialAssessment = (() => {
     const hidden_class  = 'invisible';
 
     const onLoad = () => {
-        if (japanese_client()) {
+        if (jpClient()) {
             BinaryPjax.load('user/settingsws');
         }
 
-        Content.populate();
         $(form_selector).on('submit', (event) => {
             event.preventDefault();
             submitForm();

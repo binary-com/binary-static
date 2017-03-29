@@ -3,13 +3,11 @@ const Client              = require('../../../../base/client');
 const localize            = require('../../../../base/localize').localize;
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
 const addComma            = require('../../../../common_functions/string_util').addComma;
-const Button              = require('../../../../common_functions/attach_dom/button').Button;
-const Content             = require('../../../../common_functions/content').Content;
 const elementTextContent  = require('../../../../common_functions/common_functions').elementTextContent;
-const format_money        = require('../../../../common_functions/currency_to_symbol').format_money;
-const japanese_client     = require('../../../../common_functions/country_base').japanese_client;
+const formatMoney         = require('../../../../common_functions/currency_to_symbol').formatMoney;
+const jpClient            = require('../../../../common_functions/country_base').jpClient;
 const showTooltip         = require('../../../../common_functions/get_app_details').showTooltip;
-const Table               = require('../../../../common_functions/attach_dom/table').Table;
+const Table               = require('../../../../common_functions/attach_dom/table');
 
 const ProfitTableUI = (() => {
     'use strict';
@@ -22,18 +20,18 @@ const ProfitTableUI = (() => {
 
     const createEmptyTable = () => {
         const header = [
-            Content.localize().textDate,
-            Content.localize().textRef,
+            localize('Date'),
+            localize('Ref.'),
             localize('Potential Payout'),
             localize('Contract'),
             localize('Purchase Price'),
             localize('Sale Date'),
             localize('Sale Price'),
             localize('Profit/Loss'),
-            Content.localize().textDetails,
+            localize('Details'),
         ];
 
-        const jp_client = japanese_client();
+        const jp_client = jpClient();
         currency = Client.get('currency');
 
         header[7] += (jp_client ? '' : (currency ? ' (' + currency + ')' : ''));
@@ -71,10 +69,10 @@ const ProfitTableUI = (() => {
         }, 0);
 
         const total = acc_total + current_total,
-            jp_client = japanese_client(),
+            jp_client = jpClient(),
             sub_total_type = (total >= 0) ? 'profit' : 'loss';
 
-        $('#pl-day-total').find(' > .pl').text(jp_client ? format_money(currency, total) : addComma(Number(total).toFixed(2)))
+        $('#pl-day-total').find(' > .pl').text(jp_client ? formatMoney(currency, total) : addComma(Number(total).toFixed(2)))
             .removeClass('profit loss')
             .addClass(sub_total_type);
     };
@@ -83,9 +81,9 @@ const ProfitTableUI = (() => {
         const profit_table_data = ProfitTable.getProfitTabletData(transaction);
         const pl_type = (profit_table_data.pl >= 0) ? 'profit' : 'loss';
 
-        const jp_client = japanese_client();
+        const jp_client = jpClient();
 
-        const data = [jp_client ? toJapanTimeIfNeeded(transaction.purchase_time) : profit_table_data.buyDate, '<span' + showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', jp_client ? format_money(currency, profit_table_data.payout) : profit_table_data.payout, '', jp_client ? format_money(currency, profit_table_data.buyPrice) : profit_table_data.buyPrice, (jp_client ? toJapanTimeIfNeeded(transaction.sell_time) : profit_table_data.sellDate), jp_client ? format_money(currency, profit_table_data.sellPrice) : profit_table_data.sellPrice, jp_client ? format_money(currency, profit_table_data.pl) : profit_table_data.pl, ''];
+        const data = [jp_client ? toJapanTimeIfNeeded(transaction.purchase_time) : profit_table_data.buyDate, '<span' + showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', jp_client ? formatMoney(currency, profit_table_data.payout) : profit_table_data.payout, '', jp_client ? formatMoney(currency, profit_table_data.buyPrice) : profit_table_data.buyPrice, (jp_client ? toJapanTimeIfNeeded(transaction.sell_time) : profit_table_data.sellDate), jp_client ? formatMoney(currency, profit_table_data.sellPrice) : profit_table_data.sellPrice, jp_client ? formatMoney(currency, profit_table_data.pl) : profit_table_data.pl, ''];
         const $row = Table.createFlexTableRow(data, cols, 'data');
 
         $row.children('.pl').addClass(pl_type);
@@ -98,13 +96,8 @@ const ProfitTableUI = (() => {
         });
 
         // create view button and append
-        const $view_button_span = Button.createBinaryStyledButton();
-        const $view_button = $view_button_span.children('.button').first();
-        $view_button.text(localize('View'));
-        $view_button.addClass('open_contract_detailsws');
-        $view_button.attr('contract_id', profit_table_data.id);
-
-        $row.children('.contract,.details').append($view_button_span);
+        const $view_button = $('<button/>', { class: 'button open_contract_detailsws', text: localize('View'), contract_id: profit_table_data.id });
+        $row.children('.contract,.details').append($view_button);
 
         return $row[0];
     };

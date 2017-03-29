@@ -1,5 +1,5 @@
-const moment          = require('moment');
-const japanese_client = require('../common_functions/country_base').japanese_client;
+const moment   = require('moment');
+const jpClient = require('../common_functions/country_base').jpClient;
 
 const Clock = (() => {
     'use strict';
@@ -9,7 +9,7 @@ const Clock = (() => {
         timeout;
 
     const showLocalTimeOnHover = (s) => {
-        if (japanese_client()) return;
+        if (jpClient()) return;
         $(s || '.date').each(function(idx, ele) {
             const gmt_time_str = ele.textContent.replace('\n', ' ');
             const local_time  = moment.utc(gmt_time_str, 'YYYY-MM-DD HH:mm:ss').local();
@@ -39,7 +39,7 @@ const Clock = (() => {
             return null;
         }
 
-        const jp_client = japanese_client();
+        const jp_client = jpClient();
         const time_str = time.utcOffset(jp_client ? '+09:00' : '+00:00').format((hide_seconds ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD HH:mm:ss') + (show_time_zone && show_time_zone !== '' ? jp_client ? ' zZ' : ' Z' : ''));
 
         return (longcode ? longcode.replace(match[0], time_str) : time_str);
@@ -72,7 +72,7 @@ const Clock = (() => {
         const updateTime = () => {
             window.time = moment((server_time_at_response + moment().valueOf()) - client_time_at_response).utc();
             const time_str = window.time.format('YYYY-MM-DD HH:mm') + ' GMT';
-            if (japanese_client()) {
+            if (jpClient()) {
                 $clock.html(toJapanTimeIfNeeded(time_str, 1, '', 1));
             } else {
                 $clock.html(time_str);

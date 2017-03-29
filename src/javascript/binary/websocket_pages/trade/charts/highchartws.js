@@ -1,10 +1,10 @@
-const japanese_client = require('../../../common_functions/country_base').japanese_client;
-const MBContract      = require('../../mb_trade/mb_contract').MBContract;
-const ViewPopupUI     = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
-const State           = require('../../../base/storage').State;
-const localize        = require('../../../base/localize').localize;
-const HighchartUI     = require('./highchart_ui').HighchartUI;
-const Highcharts      = require('highcharts/highstock');
+const jpClient    = require('../../../common_functions/country_base').jpClient;
+const MBContract  = require('../../mb_trade/mb_contract').MBContract;
+const ViewPopupUI = require('../../user/view_popup/view_popup_ui').ViewPopupUI;
+const State       = require('../../../base/storage').State;
+const localize    = require('../../../base/localize').localize;
+const HighchartUI = require('./highchart_ui').HighchartUI;
+const Highcharts  = require('highcharts/highstock');
 require('highcharts/modules/exporting')(Highcharts);
 
 const Highchart = (function() {
@@ -115,7 +115,7 @@ const Highchart = (function() {
         const el = document.getElementById('analysis_live_chart');
         if (!el) return null;
 
-        const JPClient = japanese_client();
+        const JPClient = jpClient();
         HighchartUI.set_labels(is_chart_delayed);
         HighchartUI.set_chart_options({
             height    : el.parentElement.offsetHeight,

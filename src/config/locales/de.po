@@ -91,6 +91,9 @@ msgstr "%1 und das Bulle/Bär Logo sind eingetragene Warenzeichen."
 msgid "%1 continues to innovate and grow"
 msgstr "%1 führt weiter Neuerungen ein und wächst"
 
+msgid "%1 days %2 hours %3 minutes"
+msgstr ""
+
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
 msgstr "%1 Einzahlung von %2 zu Kontonummer %3 ist erledigt. Überweisungs-ID: %4"
 
@@ -394,8 +397,8 @@ msgstr "30-50 million JPY"
 msgid "30-day limit on losses"
 msgstr "30-Tage Limit für Verluste"
 
-msgid "30-day turnover limit "
-msgstr "30 Tage Umsatzlimit "
+msgid "30-day turnover limit"
+msgstr "30-Tage Umsatzlimit"
 
 msgid "4. Choose your Stake and Potential Return"
 msgstr "4. Wählen Sie Ihren Einsatz und potentielle Rendite"
@@ -797,6 +800,9 @@ msgstr "Annahme von nationalen Banküberweisungen"
 
 msgid "Acceptance"
 msgstr "Akzeptanz"
+
+msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
+msgstr ""
 
 msgid "Access to Personal Data"
 msgstr "Zugang zu personenbezogenen Daten"
@@ -1788,9 +1794,6 @@ msgstr "Beamte"
 msgid "Click here to retry"
 msgstr "Hier klicken, um es erneut zu versuchen"
 
-msgid "Click the button below to download MetaTrader."
-msgstr "Klicken Sie auf die nachfolgende Schaltfläche, um MetaTrader herunterzuladen."
-
 msgid "Client Money"
 msgstr "Kundengelder"
 
@@ -2429,14 +2432,14 @@ msgstr "Umsatzlose und inaktive Konten"
 msgid "Down - Predict that the market will end lower than the average price"
 msgstr "Abwärts - Sagen Sie voraus, dass der Kurs niedriger als der Durchschnittskurs endet"
 
+msgid "Download"
+msgstr "Herunterladen"
+
 msgid "Download CSV"
 msgstr "CSV herunterladen"
 
-msgid "Download MetaTrader for Windows"
-msgstr "MetaTrader für Windows herunterladen"
-
-msgid "Download for MacOS"
-msgstr "Herunterladen für MacOS"
+msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
+msgstr ""
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Das rasche Wachstum und die Geschäftsentwicklung vorantreiben, um die Verkaufs- und Werbeziele des Unternehmens zu unterstützen"
@@ -2732,9 +2735,6 @@ msgstr "Die Ausschlusszeit darf nicht länger als 5 Jahre sein."
 msgid "Exclude time cannot be less than 6 months."
 msgstr "Die Ausschlusszeit darf nicht kürzer als 6 Monate sein."
 
-msgid "Exclude time must be after today."
-msgstr "Die Ausschlusszeit muss nach dem heutigen Tag beginnen."
-
 msgid "Exclusion of Liability"
 msgstr "Haftungsausschluss"
 
@@ -2965,6 +2965,17 @@ msgstr "Einhaltung von Gesetzen und diesen Bedingungen"
 
 msgid "Follow up on rejected deposits"
 msgstr "Nachbearbeitung von abgelehnten Einzahlungen"
+
+#, fuzzy
+#| msgid "Browser"
+msgid "For Browser"
+msgstr "Browser"
+
+msgid "For Desktop"
+msgstr ""
+
+msgid "For Mobile"
+msgstr ""
 
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "Bitte sehen Sie zur zusätzlichen Sicherheit bei Ihren E-Mails nach, um den Verfikationstoken abzurufen."
@@ -3475,9 +3486,6 @@ msgstr "Wenn Sie unseren Grundanfoderungen entsprechen, werden wir Ihnen einen T
 
 msgid "If you need assistance feel free to contact our <a href=\"%1\">Customer Support</a>."
 msgstr "Sollten Sie Hilfe benötigen, können Sie sich gerne mit unserer <a href=\"%1\">Kundenbetreuung</a> in Verbindung setzen."
-
-msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
-msgstr "Wenn Sie MetaTrader 5 schon zuvor von der MetaTrader Website heruntergeladen haben, wählen Sie in der Liste der vorhandenen Broker bitte \"%1\" aus."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Wenn Sie „Asiatischer Fall\" auswählen, erhalten Sie eine Auszahlung, wenn der <strong>letzte Tick</strong> <strong>niedriger</strong> als der <strong>Durchschnitt</strong> der Ticks ist."
@@ -4577,9 +4585,6 @@ msgstr "Verlinken und leiten Sie unsere Kunden zu Ihrer Anwendung."
 msgid "Links"
 msgstr "Links"
 
-msgid "Linux Instructions"
-msgstr "Linux Anweisungen"
-
 msgid "Live chat:"
 msgstr "Live-Chat:"
 
@@ -4588,9 +4593,6 @@ msgstr "Kasse blockieren"
 
 msgid "Log in"
 msgstr "Log-in"
-
-msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "Verwenden Sie Ihre MetaTrader Kontonummer und Ihr MetaTrade Passwort, um sich für die Anwendung anzumelden."
 
 msgid "Log out"
 msgstr "Abmelden"
@@ -5612,9 +5614,6 @@ msgstr "Setzen Sie sich bitte mit uns unter <a href='mailto:%1'>%1</a> in Verbin
 msgid "Please enter a number between %1."
 msgstr "Bitte geben Sie eine Zahl zwischen %1 ein."
 
-msgid "Please enter a number between 0 and %1"
-msgstr "Bitte geben Sie eine Zahl zwischen 0 und %1 ein"
-
 msgid "Please enter a number."
 msgstr "Bitte geben Sie eine Zahl ein."
 
@@ -5672,7 +5671,14 @@ msgstr "Bitte wählen Sie"
 msgid "Please select a payment agent"
 msgstr "Bitte wählen Sie einen Zahlungsagent aus"
 
-msgid "Please select a valid date"
+#, fuzzy
+#| msgid "Please select a valid date"
+msgid "Please select a valid date."
+msgstr "Bitte wählen Sie ein gültiges Datum aus"
+
+#, fuzzy
+#| msgid "Please select a valid date"
+msgid "Please select a valid time."
 msgstr "Bitte wählen Sie ein gültiges Datum aus"
 
 msgid "Please select a value"
@@ -6221,9 +6227,6 @@ msgstr "Roll-over Gutschrift/Lastschrift &mdash; Konten mit offenen Positionen, 
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "Erstellung täglicher Zahlungsberichte und Meldung von vermutetem Betrug"
 
-msgid "Run the installation file and follow the instructions."
-msgstr "Rufen Sie die Installationsdatei auf und befolgen Sie die Anweisungen."
-
 msgid "Russia"
 msgstr "Russland"
 
@@ -6244,6 +6247,11 @@ msgstr "Samstag"
 
 msgid "Scope and Intent"
 msgstr "Geltungsbereich und Absicht"
+
+#, fuzzy
+#| msgid "B. Scope"
+msgid "Scopes"
+msgstr "B. Geltungsbereich"
 
 msgid "Score"
 msgstr "Score"
@@ -6400,6 +6408,11 @@ msgstr "Sollte ein Kunde, für den Sie Provisionen erhalten, eine Rückbuchung v
 
 msgid "Should be a valid number"
 msgstr "Sollte eine gültige Zahl sein"
+
+#, fuzzy
+#| msgid "Stake must be between %1 and %2."
+msgid "Should be between %1 and %2"
+msgstr "Der Einsatz muss zwischen %1 und %2 betragen."
 
 msgid "Should be less than %1"
 msgstr "Sollte kleiner als %1 sein"
@@ -7538,6 +7551,21 @@ msgstr "Zeit"
 msgid "Time is in the wrong format."
 msgstr "Die Zeit ist im falschen Format."
 
+#, fuzzy
+#| msgid "Expiry time cannot be in the past."
+msgid "Time out cannot be in the past."
+msgstr "Die Ablaufzeit darf nicht in der Vergangenheit sein."
+
+#, fuzzy
+#| msgid "Session duration limit cannot be more than 6 weeks."
+msgid "Time out cannot be more than 6 weeks."
+msgstr "Die Sitzungsdauer kann nicht mehr als 6 Wochen betragen."
+
+#, fuzzy
+#| msgid "Exclude time must be after today."
+msgid "Time out must be after today."
+msgstr "Die Ausschlusszeit muss nach dem heutigen Tag beginnen."
+
 msgid "Time out until"
 msgstr "Timeout bis"
 
@@ -7775,6 +7803,11 @@ msgstr "Testen Sie Binary Bot"
 msgid "Try MetaTrader 5"
 msgstr "Testen Sie MetaTrader 5"
 
+#, fuzzy
+#| msgid "Binary Next-Gen"
+msgid "Try Next-Gen"
+msgstr "Binary Next-Gen"
+
 msgid "Try TradingView"
 msgstr "Testen Sie TradingAnsicht (TradingView)"
 
@@ -7928,6 +7961,9 @@ msgstr "Verwendung von Geld/Briefkursen: Wenn der Markt illiquide ist, kann der 
 msgid "Use the opportunity provided by our website to practice for free with our virtual money account facility. This will enable you to get used to the functionalities and rules of the website."
 msgstr "Nutzen Sie die Möglichkeit, die unsere Website bietet und üben Sie kostenlos mit unserem virtuellen Geldkonto. Dies gibt Ihnen die Möglichkeit, sich mit den Funktionen und Regeln dieser Website vertraut zu machen."
 
+msgid "Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required."
+msgstr ""
+
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr "Verwendung, Vorstellung und Anzeige Ihrer Anwendung und ihres Inhalts zum Zwecke des Marketing, der Vorführung und der Zurverfügungstellung Ihrer Anwendung für unsere Kunden, und    "
 
@@ -8005,6 +8041,9 @@ msgstr "Anzeige Ihrer Handels- und Auszahlungslimits."
 
 msgid "Virtual Account"
 msgstr "Virtuelles Konto"
+
+msgid "Virtual money credit to account"
+msgstr "Virtuelles Geldguthaben zum Konto"
 
 msgid "Volatility Index Markets"
 msgstr "Volatilität Index Märkte"
@@ -8303,7 +8342,9 @@ msgstr "Wenn wir einen Kontrakt mit Ihnen eingehen, untenehmen wir alle geeignet
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr "Wenn Sie mit dem Kurs, den Sie erhalten, zufrieden sind, führen Sie Ihr Geschäft umgehend durch. Mit unserer einzigartigen Plattform, müssen Sie sich nicht mit \"Slippage\" oder Absatzmärkten zufrieden geben. Und am Wichtigsten, es gibt keine versteckten Gebühren. Sie können ebenfalls jegliche Langzeit-Geschäfte zu jeder Zeit bevor sie ablaufen zurückverkaufen, um den Gewinn, den Sie möglicher Weise verdient haben zu schützen, oder um Ihre Verluste zu minimieren."
 
-msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
+#, fuzzy
+#| msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
+msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
 msgstr "Wenn Sie auf 'Ok' klicken, werden Sie bis zum ausgewählten Datum vom Handel auf dieser Site ausgeschlossen."
 
 msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
@@ -9124,6 +9165,11 @@ msgstr "Buchstaben"
 
 msgid "login"
 msgstr "Login"
+
+#, fuzzy
+#| msgid "Logout"
+msgid "logout"
+msgstr "Abmelden"
 
 msgid "max: 100,000"
 msgstr "Max: 100.000"
@@ -10622,8 +10668,40 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 msgid "Account Limits"
 msgstr "Kontolimits"
 
-msgid "Account Details"
-msgstr "Kontoangaben"
+#, fuzzy
+#~| msgid "Affiliate Manager"
+#~ msgid "Affiliates Manager"
+#~ msgstr "Geschäftspartner Manager"
+
+#~ msgid "30-day turnover limit "
+#~ msgstr "30 Tage Umsatzlimit "
+
+#~ msgid "Click the button below to download MetaTrader."
+#~ msgstr "Klicken Sie auf die nachfolgende Schaltfläche, um MetaTrader herunterzuladen."
+
+#~ msgid "Download MetaTrader for Windows"
+#~ msgstr "MetaTrader für Windows herunterladen"
+
+#~ msgid "Download for MacOS"
+#~ msgstr "Herunterladen für MacOS"
+
+#~ msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
+#~ msgstr "Wenn Sie MetaTrader 5 schon zuvor von der MetaTrader Website heruntergeladen haben, wählen Sie in der Liste der vorhandenen Broker bitte \"%1\" aus."
+
+#~ msgid "Linux Instructions"
+#~ msgstr "Linux Anweisungen"
+
+#~ msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
+#~ msgstr "Verwenden Sie Ihre MetaTrader Kontonummer und Ihr MetaTrade Passwort, um sich für die Anwendung anzumelden."
+
+#~ msgid "Please enter a number between 0 and %1"
+#~ msgstr "Bitte geben Sie eine Zahl zwischen 0 und %1 ein"
+
+#~ msgid "Run the installation file and follow the instructions."
+#~ msgstr "Rufen Sie die Installationsdatei auf und befolgen Sie die Anweisungen."
+
+#~ msgid "Account Details"
+#~ msgstr "Kontoangaben"
 
 #~ msgid "Please enter a number greater than 0"
 #~ msgstr "Bitte geben Sie eine Zahl größer als 0 ein"
@@ -11312,9 +11390,6 @@ msgstr "Kontoangaben"
 #~ msgid "Your details have been updated."
 #~ msgstr "Ihre Angaben wurden aktualisiert."
 
-#~ msgid "Logout"
-#~ msgstr "Abmelden"
-
 #~ msgid "not available"
 #~ msgstr "nicht vorhanden"
 
@@ -11395,9 +11470,6 @@ msgstr "Kontoangaben"
 
 #~ msgid "Select Country"
 #~ msgstr "Land auswählen"
-
-#~ msgid "Virtual money credit to account"
-#~ msgstr "Virtuelles Geldguthaben zum Konto"
 
 #~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing "
 #~ msgstr "Gewinnen Sie 10-1000 % auf Ihren Einsatz, wenn Sie richtig liegen. Erhöhen Sie Ihre Gewinne mit der Auswahl von "
@@ -11853,9 +11925,6 @@ msgstr "Kontoangaben"
 
 #~ msgid "(delayed)"
 #~ msgstr "(verzögert)"
-
-#~ msgid "30-day turnover limit"
-#~ msgstr "30-Tage Umsatzlimit"
 
 #~ msgid "7-Day limit on losses is currently set to <strong>%1 %2</strong>"
 #~ msgstr "Das 7-Tage Limit für Verluste ist derzeit auf <strong>%2 %1</strong> festgelegt"
@@ -12359,9 +12428,6 @@ msgstr "Kontoangaben"
 
 #~ msgid "Expiry time cannot be equal to start time."
 #~ msgstr "Die Ablaufzeit darf nicht gleich der Startzeit sein."
-
-#~ msgid "Expiry time cannot be in the past."
-#~ msgstr "Die Ablaufzeit darf nicht in der Vergangenheit sein."
 
 #~ msgid "Exponential Moving Average"
 #~ msgstr "Exponentiell gleitender Mittelwert"
@@ -16620,9 +16686,6 @@ msgstr "Kontoangaben"
 #~ msgid " has been credited to your Virtual money account"
 #~ msgstr " wurde Ihrem virtuellen Geldkonto gutgeschrieben"
 
-#~ msgid "Stake must be between %1 and %2."
-#~ msgstr "Der Einsatz muss zwischen %1 und %2 betragen."
-
 #~ msgid "Trades on Forex with duration less than 2 minutes are temporarily disabled until %1"
 #~ msgstr "Bis zum %1 sind Wärhungskontrakte mit einer Laufzeit von weniger als zwei Minuten vorübergehend deaktiviert."
 
@@ -17429,9 +17492,6 @@ msgstr "Kontoangaben"
 
 #~ msgid "Click <a href=\"%1\" target=\"_blank\">here</a> to try the beta-release of the application. Kindly report issues found to <a href=\"mailto:%2\">%2</a>."
 #~ msgstr "Klicken Sie <a href=\"%1\" target=\"_blank\">hier</a>, um die Beta-Version der Anwendung auszuprobieren. Sollten Probleme auftreten, können Sie sie uns diese unter <a href=\"mailto:%2\">%2</a>mitteilen."
-
-#~ msgid "Download"
-#~ msgstr "Herunterladen"
 
 #~ msgid ""
 #~ "Download the Binary.com charting application with an extensive range of Indicators, Price Bands, Overlays, and your own customizable Workspace\n"

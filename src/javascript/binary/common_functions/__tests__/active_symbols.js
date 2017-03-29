@@ -1,5 +1,5 @@
 const deep = require('deep-diff'); // eslint-disable-line import/no-extraneous-dependencies
-const activeSymbols = require('../active_symbols').ActiveSymbols;
+const activeSymbols = require('../active_symbols');
 const { api, expect } = require('../../common_functions/tests');
 
 /*

@@ -1,7 +1,6 @@
 const PaymentAgentTransferUI = require('./payment_agent_transfer/payment_agent_transfer.ui');
 const Client                 = require('../../../base/client');
 const State                  = require('../../../base/storage').State;
-const Content                = require('../../../common_functions/content').Content;
 const FormManager            = require('../../../common_functions/form_manager');
 
 const PaymentAgentTransfer = (function() {
@@ -13,7 +12,6 @@ const PaymentAgentTransfer = (function() {
         $insufficient_balance;
 
     const onLoad = function() {
-        Content.populate();
         PaymentAgentTransferUI.initValues();
         BinarySocket.wait('get_settings', 'balance').then(() => {
             is_authenticated_payment_agent = State.get(['response', 'get_settings', 'get_settings', 'is_authenticated_payment_agent']);

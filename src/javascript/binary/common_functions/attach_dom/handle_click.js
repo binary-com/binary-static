@@ -1,7 +1,7 @@
-const CashierJP = require('../../../binary_japan/cashier');
 const MBPrice   = require('../../websocket_pages/mb_trade/mb_price').MBPrice;
+const CashierJP = require('../../../binary_japan/cashier');
 
-const HandleClick = function (param, ...values) {
+const HandleClick = (param, ...values) => {
     switch (param) {
         case 'CashierJP':
             return CashierJP.errorHandler();

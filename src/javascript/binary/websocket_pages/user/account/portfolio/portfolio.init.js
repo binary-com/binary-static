@@ -6,8 +6,8 @@ const localize            = require('../../../../base/localize').localize;
 const State               = require('../../../../base/storage').State;
 const urlParam            = require('../../../../base/url').param;
 const showLoadingImage    = require('../../../../base/utility').showLoadingImage;
-const japanese_client     = require('../../../../common_functions/country_base').japanese_client;
-const format_money        = require('../../../../common_functions/currency_to_symbol').format_money;
+const jpClient            = require('../../../../common_functions/country_base').jpClient;
+const formatMoney         = require('../../../../common_functions/currency_to_symbol').formatMoney;
 const GetAppDetails       = require('../../../../common_functions/get_app_details');
 
 const PortfolioWS = (function() {
@@ -49,15 +49,15 @@ const PortfolioWS = (function() {
     const createPortfolioRow = function(data, is_first) {
         const longCode = typeof module !== 'undefined' ?
             data.longcode :
-            (japanese_client() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode);
+            (jpClient() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode);
 
         const new_class = is_first ? '' : 'new';
         $('#portfolio-body').prepend(
             $('<tr class="tr-first ' + new_class + ' ' + data.contract_id + '" id="' + data.contract_id + '">' +
                 '<td class="ref"><span' + GetAppDetails.showTooltip(data.app_id, oauth_apps[data.app_id]) + ' data-balloon-pos="right">' + data.transaction_id + '</span></td>' +
-                '<td class="payout"><strong>' + format_money(data.currency, data.payout) + '</strong></td>' +
+                '<td class="payout"><strong>' + formatMoney(data.currency, data.payout) + '</strong></td>' +
                 '<td class="details">' + longCode + '</td>' +
-                '<td class="purchase"><strong>' + format_money(data.currency, data.buy_price) + '</strong></td>' +
+                '<td class="purchase"><strong>' + formatMoney(data.currency, data.buy_price) + '</strong></td>' +
                 '<td class="indicative"><strong class="indicative_price">--.--</strong></td>' +
                 '<td class="button"><button class="button open_contract_detailsws nowrap" contract_id="' + data.contract_id + '">' + localize('View') + '</button></td>' +
                 '</tr>' +
@@ -162,14 +162,14 @@ const PortfolioWS = (function() {
                 status_class = values[proposal.contract_id].indicative < old_indicative ? ' price_moved_down' : (values[proposal.contract_id].indicative > old_indicative ? ' price_moved_up' : '');
                 $td.removeClass('no_resale');
             }
-            $td.html('<strong class="indicative_price' + status_class + '"">' + format_money(proposal.currency, values[proposal.contract_id].indicative) + '</strong>' + no_resale_html);
+            $td.html('<strong class="indicative_price' + status_class + '"">' + formatMoney(proposal.currency, values[proposal.contract_id].indicative) + '</strong>' + no_resale_html);
         }
 
         updateFooter();
     };
 
     const updateOAuthApps = function(response) {
-        oauth_apps = GetAppDetails.buildOauthApps(response.oauth_apps);
+        oauth_apps = GetAppDetails.buildOauthApps(response);
         GetAppDetails.addTooltip(oauth_apps);
     };
 
@@ -190,8 +190,8 @@ const PortfolioWS = (function() {
     };
 
     const updateFooter = function() {
-        $('#cost-of-open-positions').text(format_money(currency, Portfolio.getSumPurchase(values)));
-        $('#value-of-open-positions').text(format_money(currency, Portfolio.getIndicativeSum(values)));
+        $('#cost-of-open-positions').text(formatMoney(currency, Portfolio.getSumPurchase(values)));
+        $('#value-of-open-positions').text(formatMoney(currency, Portfolio.getIndicativeSum(values)));
     };
 
     const errorMessage = function(msg) {

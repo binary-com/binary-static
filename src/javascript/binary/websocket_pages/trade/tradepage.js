@@ -15,16 +15,15 @@ const ViewPopupWS          = require('../user/view_popup/view_popupws');
 const BinaryPjax           = require('../../base/binary_pjax');
 const localize             = require('../../base/localize').localize;
 const State                = require('../../base/storage').State;
-const Content              = require('../../common_functions/content').Content;
-const japanese_client      = require('../../common_functions/country_base').japanese_client;
-const Guide                = require('../../common_functions/guide').Guide;
+const jpClient             = require('../../common_functions/country_base').jpClient;
+const Guide                = require('../../common_functions/guide');
 
 const TradePage = (function() {
     let events_initialized = 0;
     State.remove('is_trading');
 
     const onLoad = function() {
-        if (japanese_client()) {
+        if (jpClient()) {
             BinaryPjax.load('multi_barriers_trading');
             return;
         }
@@ -45,7 +44,6 @@ const TradePage = (function() {
             events_initialized = 1;
             TradingEvents.init();
         }
-        Content.populate();
 
         if (sessionStorage.getItem('currencies')) {
             displayCurrencies();

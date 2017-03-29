@@ -1,43 +1,26 @@
 const Language = require('../../base/language');
 
-let $languages,
-    languageCode,
-    languageText;
+const createLanguageDropDown = (website_status) => {
+    const $languages = $('.languages');
+    const select_language_id = '#select_language';
+    const current_language = Language.get();
 
-function createLanguageDropDown() {
-    BinarySocket.wait('website_status').then((response) => {
-        const languages = response.website_status.supported_languages;
-        $languages = $('.languages');
-        const selectLanguage = 'ul#select_language',
-            $selectLanguage = $languages.find(selectLanguage);
-        if ($languages.length === 0 || $selectLanguage.find('li span.language').text() !== '') return;
-        languages.sort(function(a, b) {
-            return (a === 'EN' || a < b) ? -1 : 1;
-        });
-        const displayLanguage = 'ul#display_language';
-        languageCode = Language.get();
-        languageText = map_code_to_language(languageCode);
-        add_display_language(displayLanguage);
-        add_display_language(selectLanguage);
-        for (let i = 0; i < languages.length; i++) {
-            $selectLanguage.append('<li class="' + languages[i] + '">' + map_code_to_language(languages[i]) + '</li>');
-        }
-        $selectLanguage.find('li.' + languageCode + ':eq(1)').addClass('invisible');
-        Language.onChange();
-        $languages.removeClass('invisible');
+    $languages.find(`#display_language li, ${select_language_id} li`)
+        .addClass(current_language)
+        .find('span.language')
+        .text(mapCodeToLanguage(current_language));
+
+    const languages = website_status.supported_languages.sort((a, b) => ((a === 'EN' || a < b) ? -1 : 1));
+    const $select_language = $languages.find(select_language_id);
+    languages.forEach((language) => {
+        $select_language.append($('<li/>', { class: language, text: mapCodeToLanguage(language) }));
     });
-}
 
-function add_display_language(id) {
-    $languages.find(id + ' li')
-              .addClass(languageCode)
-              .find('span.language')
-              .text(languageText);
-}
+    $select_language.find(`.${current_language}:eq(1)`).addClass('invisible');
+    Language.onChange();
+    $languages.removeClass('invisible');
+};
 
-function map_code_to_language(code) {
-    const map = Language.getAll();
-    return map[code];
-}
+const mapCodeToLanguage = code => Language.getAll()[code];
 
 module.exports = createLanguageDropDown;

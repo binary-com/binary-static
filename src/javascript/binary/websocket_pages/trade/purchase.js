@@ -2,7 +2,6 @@ const Contract              = require('./contract').Contract;
 const Symbols               = require('./symbols').Symbols;
 const Tick                  = require('./tick').Tick;
 const WSTickDisplay         = require('./tick_trade').WSTickDisplay;
-const Content               = require('../../common_functions/content').Content;
 const isVisible             = require('../../common_functions/common_functions').isVisible;
 const updatePurchaseStatus  = require('./common').updatePurchaseStatus;
 const updateContractBalance = require('./common').updateContractBalance;
@@ -59,7 +58,7 @@ const Purchase = (function () {
             message_container.show();
             confirmation_error.hide();
 
-            elementTextContent(heading, Content.localize().textContractConfirmationHeading);
+            elementTextContent(heading, localize('Contract Confirmation'));
             elementTextContent(descr, receipt.longcode);
             if (barrier_element) barrier_element.textContent = '';
             elementTextContent(reference, localize('Your transaction reference is') + ' ' + receipt.transaction_id);
@@ -77,12 +76,12 @@ const Purchase = (function () {
             const profit_value = Math.round((payout_value - cost_value) * 100) / 100;
 
             if (sessionStorage.getItem('formname') === 'spreads') {
-                elementInnerHtml(payout, Content.localize().textStopLoss + ' <p>' + receipt.stop_loss_level + '</p>');
-                elementInnerHtml(cost, Content.localize().textAmountPerPoint + ' <p>' + receipt.amount_per_point + '</p>');
-                elementInnerHtml(profit, Content.localize().textStopProfit + ' <p>' + receipt.stop_profit_level + '</p>');
+                elementInnerHtml(payout, localize('Stop-loss')        + ' <p>' + receipt.stop_loss_level   + '</p>');
+                elementInnerHtml(cost,   localize('Amount per point') + ' <p>' + receipt.amount_per_point  + '</p>');
+                elementInnerHtml(profit, localize('Stop-profit')      + ' <p>' + receipt.stop_profit_level + '</p>');
             } else {
                 elementInnerHtml(payout, localize('Potential Payout') + ' <p>' + payout_value + '</p>');
-                elementInnerHtml(cost, localize('Total Cost') + ' <p>' + cost_value + '</p>');
+                elementInnerHtml(cost,   localize('Total Cost')       + ' <p>' + cost_value   + '</p>');
                 elementInnerHtml(profit, localize('Potential Profit') + ' <p>' + profit_value + '</p>');
             }
 
@@ -189,7 +188,7 @@ const Purchase = (function () {
 
                 const el1 = document.createElement('div');
                 el1.classList.add('col');
-                elementTextContent(el1, Content.localize().textTickResultLabel + ' ' + (spots.getElementsByClassName('row').length + 1));
+                elementTextContent(el1, localize('Tick') + ' ' + (spots.getElementsByClassName('row').length + 1));
                 fragment.appendChild(el1);
 
                 const el2 = document.createElement('div');
@@ -228,12 +227,12 @@ const Purchase = (function () {
                         spots.className = 'won';
                         final_price = $('#contract_purchase_payout').find('p').text();
                         pnl = $('#contract_purchase_cost').find('p').text();
-                        contract_status = Content.localize().textContractStatusWon;
+                        contract_status = localize('This contract won');
                     } else {
                         spots.className = 'lost';
                         final_price = 0;
                         pnl = -$('#contract_purchase_cost').find('p').text();
-                        contract_status = Content.localize().textContractStatusLost;
+                        contract_status = localize('This contract lost');
                     }
 
                     updatePurchaseStatus(final_price, pnl, contract_status);

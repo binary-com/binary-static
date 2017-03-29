@@ -32,11 +32,11 @@
     #sell_popup_container {
         max-height: 100%;
     }
-    input, select {
+    input:not([type='checkbox']), select {
         width: 80%;
     }
     .center-text-m {
-        &, label {
+        &, div:first-child label {
             text-align: center;
         }
     }

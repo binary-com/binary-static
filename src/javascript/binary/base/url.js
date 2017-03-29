@@ -1,5 +1,5 @@
-const getLanguage     = require('./language').get;
-const japanese_client = require('../common_functions/country_base').japanese_client;
+const getLanguage = require('./language').get;
+const jpClient    = require('../common_functions/country_base').jpClient;
 
 const Url = (() => {
     'use strict';
@@ -83,7 +83,7 @@ const Url = (() => {
         return staticHost + path;
     };
 
-    const defaultRedirectUrl = () => urlFor(japanese_client() ? 'multi_barriers_trading' : 'trading');
+    const defaultRedirectUrl = () => urlFor(jpClient() ? 'multi_barriers_trading' : 'trading');
 
     return {
         init      : init,

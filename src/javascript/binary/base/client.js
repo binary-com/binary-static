@@ -4,7 +4,7 @@ const LocalStore         = require('./storage').LocalStore;
 const State              = require('./storage').State;
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const getLoginToken      = require('../common_functions/common_functions').getLoginToken;
-const japanese_client    = require('../common_functions/country_base').japanese_client;
+const jpClient           = require('../common_functions/country_base').jpClient;
 const RealityCheckData   = require('../websocket_pages/user/reality_check/reality_check.data');
 const Cookies            = require('../../lib/js-cookie');
 
@@ -199,7 +199,7 @@ const Client = (() => {
                     $(section).find('.client_virtual').removeClass('invisible');
                     $('#topbar').addClass('secondary-bg-color').removeClass('primary-color-dark');
                 } else {
-                    $(section).find('.client_real').not((japanese_client() ? '.ja-hide' : '')).removeClass('invisible');
+                    $(section).find('.client_real').not((jpClient() ? '.ja-hide' : '')).removeClass('invisible');
                     $('#topbar').addClass('primary-color-dark').removeClass('secondary-bg-color');
                 }
             });

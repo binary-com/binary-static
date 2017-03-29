@@ -8,9 +8,8 @@ const getLanguage        = require('../../base/language').get;
 const localize           = require('../../base/localize').localize;
 const urlFor             = require('../../base/url').urlFor;
 const objectNotEmpty     = require('../../base/utility').objectNotEmpty;
-const Content            = require('../../common_functions/content').Content;
-const japanese_client    = require('../../common_functions/country_base').japanese_client;
-const format_money       = require('../../common_functions/currency_to_symbol').format_money;
+const jpClient           = require('../../common_functions/country_base').jpClient;
+const formatMoney        = require('../../common_functions/currency_to_symbol').formatMoney;
 const addComma           = require('../../common_functions/string_util').addComma;
 const toISOFormat        = require('../../common_functions/string_util').toISOFormat;
 const elementInnerHtml   = require('../../common_functions/common_functions').elementInnerHtml;
@@ -487,7 +486,7 @@ function displayCommentPrice(node, currency, type, payout) {
     if (node && type && payout) {
         const profit = payout - type,
             return_percent = (profit / type) * 100,
-            comment = localize('Net profit') + ': ' + format_money(currency, profit) + ' | ' + localize('Return') + ' ' + return_percent.toFixed(1) + '%';
+            comment = localize('Net profit') + ': ' + formatMoney(currency, profit) + ' | ' + localize('Return') + ' ' + return_percent.toFixed(1) + '%';
 
         if (isNaN(profit) || isNaN(return_percent)) {
             node.hide();
@@ -518,7 +517,7 @@ function displayCommentSpreads(node, currency, point) {
             } else {
                 displayAmount = parseFloat(stopLoss);
             }
-            elementTextContent(node, localize('Deposit of') + ' ' + format_money(currency, displayAmount) + ' ' + localize('is required. Current spread') + ': ' + point + ' ' + localize('points'));
+            elementTextContent(node, localize('Deposit of') + ' ' + formatMoney(currency, displayAmount) + ' ' + localize('is required. Current spread') + ': ' + point + ' ' + localize('points'));
         }
     }
 }
@@ -727,16 +726,15 @@ function updatePurchaseStatus(final_price, pnl, contract_status) {
     $payout.html(localize('Buy price') + '<p>' + addComma(Math.abs(pnl)) + '</p>');
     $cost.html(localize('Final price') + '<p>' + addComma(final_price) + '</p>');
     if (!final_price) {
-        $profit.html(Content.localize().textLoss + '<p>' + addComma(pnl) + '</p>');
+        $profit.html(localize('Loss') + '<p>' + addComma(pnl) + '</p>');
     } else {
-        $profit.html(Content.localize().textProfit + '<p>' + addComma(Math.round((final_price - pnl) * 100) / 100) + '</p>');
+        $profit.html(localize('Profit') + '<p>' + addComma(Math.round((final_price - pnl) * 100) / 100) + '</p>');
         updateContractBalance(Client.get('balance'));
     }
 }
 
 function updateContractBalance(balance) {
-    $('#contract_purchase_balance').text(
-        Content.localize().textContractConfirmationBalance + ' ' + format_money(Client.get('currency'), balance));
+    $('#contract_purchase_balance').text(localize('Account balance:') + ' ' + formatMoney(Client.get('currency'), balance));
 }
 
 function updateWarmChart() {
@@ -775,8 +773,6 @@ function reloadPage() {
 }
 
 function showHighchart() {
-    Content.populate();
-
     if (window.chartAllowed) {
         chartFrameSource();
     } else {
@@ -808,7 +804,7 @@ function chartFrameSource() {
 }
 
 function setChartSource() {
-    const ja = japanese_client();
+    const ja = jpClient();
     document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + getLanguage().toLowerCase() +
   '&hideOverlay=' + (ja ? 'true' : 'false') + '&hideShare=' + (ja ? 'true' : 'false') + '&timezone=GMT+' + (ja ? '9' : '0') +
   '&hideFooter=' + (ja ? 'true' : 'false');
@@ -845,12 +841,12 @@ function updatePurchaseStatus_Beta(final_price, pnl, contract_status) {
         cost    = document.getElementById('contract_purchase_cost'),
         profit  = document.getElementById('contract_purchase_profit');
 
-    label_value(cost, Content.localize().textStake, addComma(Math.abs(pnl)));
-    label_value(payout, Content.localize().textPayout, addComma(final_price));
+    label_value(cost, localize('Stake'), addComma(Math.abs(pnl)));
+    label_value(payout, localize('Payout'), addComma(final_price));
 
     const isWin = (final_price > 0);
     $('#contract_purchase_profit_value').attr('class', (isWin ? 'profit' : 'loss'));
-    label_value(profit, isWin ? Content.localize().textProfit : Content.localize().textLoss,
+    label_value(profit, isWin ? localize('Profit') : localize('Loss'),
         addComma(isWin ? Math.round((final_price - pnl) * 100) / 100 : -Math.abs(pnl)));
 }
 
@@ -886,7 +882,7 @@ function label_value(label_elem, label, value, no_currency) {
     const currency = Client.get('currency');
     elementInnerHtml(label_elem, label);
     const value_elem = document.getElementById(label_elem.id + '_value');
-    elementInnerHtml(value_elem, no_currency ? value : format_money(currency, value));
+    elementInnerHtml(value_elem, no_currency ? value : formatMoney(currency, value));
     value_elem.setAttribute('value', String(value).replace(/,/g, ''));
 }
 

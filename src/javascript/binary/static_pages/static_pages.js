@@ -11,11 +11,11 @@ module.exports = {
         onUnload: () => { Scroll.offScroll(); },
     },
     OpenSourceProjects: {
-        onLoad  : () => { Scroll.sidebar_scroll($('.open-source-projects')); },
+        onLoad  : () => { Scroll.sidebarScroll($('.open-source-projects')); },
         onUnload: () => { Scroll.offScroll(); },
     },
     PaymentAgent: {
-        onLoad  : () => { Scroll.sidebar_scroll($('.payment-agent')); },
+        onLoad  : () => { Scroll.sidebarScroll($('.payment-agent')); },
         onUnload: () => { Scroll.offScroll(); },
     },
     AffiliateSignup: {

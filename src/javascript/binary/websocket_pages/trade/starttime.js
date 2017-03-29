@@ -1,10 +1,10 @@
-const Contract  = require('./contract').Contract;
-const Defaults  = require('./defaults').Defaults;
-const Durations = require('./duration').Durations;
+const Contract         = require('./contract').Contract;
+const Defaults         = require('./defaults').Defaults;
+const Durations        = require('./duration').Durations;
 const getStartDateNode = require('./common_independent').getStartDateNode;
-const moment = require('moment');
-const Content = require('../../common_functions/content').Content;
-const State = require('../../base/storage').State;
+const moment           = require('moment');
+const localize         = require('../../base/localize').localize;
+const State            = require('../../base/storage').State;
 
 /*
  * Handles start time display
@@ -48,7 +48,7 @@ const StartDates = (function() {
 
             if (startDates.has_spot) {
                 option = document.createElement('option');
-                content = document.createTextNode(Content.localize().textNow);
+                content = document.createTextNode(localize('Now'));
                 option.setAttribute('value', 'now');
                 $('#date_start').removeClass('light-yellow-background');
                 option.appendChild(content);

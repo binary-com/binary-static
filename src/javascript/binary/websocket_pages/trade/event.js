@@ -28,7 +28,7 @@ const BinaryPjax                 = require('../../base/binary_pjax');
 const dateValueChanged           = require('../../common_functions/common_functions').dateValueChanged;
 const elementTextContent         = require('../../common_functions/common_functions').elementTextContent;
 const isVisible                  = require('../../common_functions/common_functions').isVisible;
-const onlyNumericOnKeypress      = require('../../common_functions/event_handler').onlyNumericOnKeypress;
+const onlyNumericOnKeypress      = require('../../common_functions/event_handler');
 const TimePicker                 = require('../../components/time_picker').TimePicker;
 
 /*

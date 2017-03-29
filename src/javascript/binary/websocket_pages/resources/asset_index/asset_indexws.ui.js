@@ -2,10 +2,9 @@ const AssetIndex             = require('../asset_indexws');
 const BinaryPjax             = require('../../../base/binary_pjax');
 const State                  = require('../../../base/storage').State;
 const showLoadingImage       = require('../../../base/utility').showLoadingImage;
-const Table                  = require('../../../common_functions/attach_dom/table').Table;
+const Table                  = require('../../../common_functions/attach_dom/table');
 const jqueryuiTabsToDropdown = require('../../../common_functions/common_functions').jqueryuiTabsToDropdown;
-const Content                = require('../../../common_functions/content').Content;
-const japanese_client        = require('../../../common_functions/country_base').japanese_client;
+const jpClient               = require('../../../common_functions/country_base').jpClient;
 
 const AssetIndexUI = (() => {
     'use strict';
@@ -19,7 +18,7 @@ const AssetIndexUI = (() => {
         is_framed;
 
     const onLoad = function(config) {
-        if (japanese_client()) {
+        if (jpClient()) {
             if (!State.get('is_beta_trading')) {
                 BinaryPjax.load('resources');
             }
@@ -32,7 +31,6 @@ const AssetIndexUI = (() => {
 
         if ($container.contents().length) return;
 
-        Content.populate();
         showLoadingImage($container);
 
         is_framed = (config && config.framed);
