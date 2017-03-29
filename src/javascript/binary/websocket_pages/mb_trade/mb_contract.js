@@ -307,7 +307,7 @@ const MBContract = (function() {
         const contracts = getCurrentContracts();
         if (!contracts.length) return;
         const $desc_wrappers = $('.descr-wrapper'),
-            currency = (formatCurrency(Client.get('currency')) || formatCurrency(document.getElementById('currency').value) || '¥'),
+            currency = formatCurrency(getCurrency()),
             payout = Number(MBDefaults.get('payout') * (jpClient() ? 1000 : 1)).toLocaleString(),
             display_name = MBSymbols.getName(MBDefaults.get('underlying')),
             date_expiry = periodText(contracts[0].trading_period).end.replace(/\s\(.*\)/, '');
@@ -322,7 +322,7 @@ const MBContract = (function() {
     };
 
     const getCurrency = function() {
-        return (Client.get('currency') || document.getElementById('currency').value || 'JPY');
+        return (Client.get('currency') || $('#currency').attr('value') || 'JPY');
     };
 
     return {

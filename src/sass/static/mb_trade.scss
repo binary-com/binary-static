@@ -54,6 +54,15 @@
                     font-weight: bold;
                 }
             }
+            #currency {
+                position: absolute;
+                width: 100%;
+                z-index: -1;
+                .current {
+                    height: 25px;
+                    line-height: 25px;
+                }
+            }
             #payout {
                 .current {
                     line-height: 115px;

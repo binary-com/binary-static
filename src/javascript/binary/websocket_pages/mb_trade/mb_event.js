@@ -66,7 +66,7 @@ const MBTradingEvents = (function () {
             });
         }
 
-        const $period = $('#period');
+        const $period = $form.find('#period');
         if ($period.length) {
             $period.on('click', '.list > div', function() {
                 const period = $(this).attr('value');
@@ -92,7 +92,7 @@ const MBTradingEvents = (function () {
             return isOK;
         };
 
-        const $payout = $('#payout');
+        const $payout = $form.find('#payout');
         if ($payout.length) {
             if (!$payout.attr('value')) {
                 const payout_def = MBDefaults.get('payout') || (jpClient() ? 1 : 10);
@@ -100,7 +100,7 @@ const MBTradingEvents = (function () {
                 MBDefaults.set('payout', payout_def);
                 $payout.attr('value', payout_def).find('.current').html(payout_def);
             }
-            $payout.on('click', '.list > div', debounce(function() {
+            $payout.on('click', '> .list > div', debounce(function() {
                 const payout = +MBDefaults.get('payout');
                 const new_payout = payout + parseInt($(this).attr('value'));
 
@@ -114,9 +114,12 @@ const MBTradingEvents = (function () {
             }));
         }
 
-        const currencyElement = document.getElementById('currency');
-        if (currencyElement) {
-            currencyElement.addEventListener('change', function() {
+        const $currency = $form.find('#currency');
+        if ($currency.length) {
+            $currency.on('click', '.list > div', function() {
+                const currency = $(this).attr('value');
+                $currency.attr('value', currency).find('> .current').html($(this).clone());
+                MBDefaults.set('currency', currency);
                 MBProcess.processPriceRequest();
                 MBContract.displayDescriptions();
             });

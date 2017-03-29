@@ -28,15 +28,21 @@
                 <div class="current"></div>
                 <div class="list invisible"></div>
             </div>
-            <div id="payout" class="gr-3 gr-no-gutter">
-                <div class="current"></div>
-                <div class="list invisible">
-                    <div class="plus" value="+1">+1</div>
-                    <div class="plus" value="+5">+5</div>
-                    <div class="plus" value="+10">+10</div>
-                    <div class="minus" value="-10">-10</div>
-                    <div class="minus" value="-5">-5</div>
-                    <div class="minus" value="-1">-1</div>
+            <div class="gr-3 gr-no-gutter">
+                <div id="currency">
+                    <div class="current"></div>
+                    <div class="list invisible"></div>
+                </div>
+                <div id="payout">
+                    <div class="current"></div>
+                    <div class="list invisible">
+                        <div class="plus" value="+1">+1</div>
+                        <div class="plus" value="+5">+5</div>
+                        <div class="plus" value="+10">+10</div>
+                        <div class="minus" value="-10">-10</div>
+                        <div class="minus" value="-5">-5</div>
+                        <div class="minus" value="-1">-1</div>
+                    </div>
                 </div>
             </div>
         </div>

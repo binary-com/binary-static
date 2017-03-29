@@ -38,9 +38,8 @@ const MBProcess = (function() {
         if (update_page && (!symbol || !symbols_list[symbol])) {
             symbol = undefined;
             MBDefaults.remove('underlying');
-        } else {
-            showHighchart();
         }
+
         // check if all symbols are inactive
         let is_market_closed = true;
         Object.keys(symbols_list).forEach(function(s) {
@@ -61,6 +60,8 @@ const MBProcess = (function() {
                 MBProcess.processMarketUnderlying();
             }
         }
+
+        showHighchart();
     };
 
     const populateUnderlyings = function(selected) {
@@ -73,10 +74,11 @@ const MBProcess = (function() {
         Object.keys(all_symbols).forEach((symbol, idx) => {
             if (all_symbols[symbol].is_active) {
                 const is_current = (!selected && idx === 0) || symbol === selected;
-                const $current = $('<div/>', {
-                    value: symbol,
-                    html : `<img src="${urlForStatic(`/images/pages/mb_trading/${symbol.toLowerCase()}.svg`)}" />`,
-                });
+                const $current = $('<div/>', { value: symbol })
+                    .append($('<img/>', {
+                        src: urlForStatic(`/images/pages/mb_trading/${symbol.toLowerCase()}.svg`),
+                        alt: all_symbols[symbol].display,
+                    }));
                 $list.append($current);
                 if (is_current) {
                     $underlyings.attr('value', symbol).find('> .current').html($current.clone());

@@ -34,7 +34,7 @@ const MBMessage = (function () {
                 MBProcess.processContract(response);
             } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && (!response.echo_req.hasOwnProperty('passthrough') || !response.echo_req.passthrough.hasOwnProperty('handler'))) {
                 Client.set('currencies', response.payout_currencies.join(','));
-                MBDisplayCurrencies('', false);
+                MBDisplayCurrencies();
                 MBSymbols.getSymbols(1);
             } else if (type === 'proposal') {
                 MBProcess.processProposal(response);

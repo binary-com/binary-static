@@ -3,6 +3,7 @@ const Defaults           = require('./defaults').Defaults;
 const Notifications      = require('./notifications').Notifications;
 const Symbols            = require('./symbols').Symbols;
 const Tick               = require('./tick').Tick;
+const MBDefaults         = require('../mb_trade/mb_defaults').MBDefaults;
 const Client             = require('../../base/client');
 const getLanguage        = require('../../base/language').get;
 const localize           = require('../../base/localize').localize;
@@ -797,7 +798,7 @@ function chartFrameCleanup() {
 function chartFrameSource() {
     if ((sessionStorage.getItem('old_underlying') !== sessionStorage.getItem('underlying') || /^(|about:blank)$/.test($('#chart_frame').attr('src')))) {
         chartFrameCleanup();
-        const underlying = State.get('is_mb_trading') ? document.getElementById('underlying').getAttribute('value') : document.getElementById('underlying').value;
+        const underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : document.getElementById('underlying').value;
         setChartSource(underlying);
         sessionStorage.setItem('old_underlying', underlying);
     }
