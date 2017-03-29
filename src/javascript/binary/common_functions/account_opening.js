@@ -83,7 +83,10 @@ const AccountOpening = (() => {
         }
     };
 
-    const getTaxResidence = () => (State.get(['response', 'get_settings', 'get_settings'] || {}).tax_residence || '').split(',');
+    const getTaxResidence = () => {
+        const tax_residence = State.get(['response', 'get_settings', 'get_settings'] || {}).tax_residence;
+        return (tax_residence ? tax_residence.split(',') : '');
+    };
 
     const handleState = (states_list, form_id, getValidations) => {
         const address_state_id = '#address_state';
