@@ -71,15 +71,19 @@ const AccountOpening = (() => {
 
             $('#lbl_residence').html($('<strong/>', { text: residence_text }));
             $place_of_birth.html($options.html()).val(residence_value);
-            $tax_residence.html($options.html()).promise().done(() => {
-                setTimeout(() => {
-                    $tax_residence.select2()
-                        .val(residence_value).trigger('change')
-                        .removeClass('invisible');
-                }, 500);
-            });
+            if ($tax_residence) {
+                $tax_residence.html($options.html()).promise().done(() => {
+                    setTimeout(() => {
+                        $tax_residence.select2()
+                            .val(getTaxResidence() || residence_value).trigger('change')
+                            .removeClass('invisible');
+                    }, 500);
+                });
+            }
         }
     };
+
+    const getTaxResidence = () => (State.get(['response', 'get_settings', 'get_settings'] || {}).tax_residence || '').split(',');
 
     const handleState = (states_list, form_id, getValidations) => {
         const address_state_id = '#address_state';
