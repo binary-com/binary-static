@@ -1,10 +1,10 @@
-const Client          = require('../base/client');
-const BinaryPjax      = require('../base/binary_pjax');
-const japanese_client = require('../common_functions/country_base').japanese_client;
+const Client     = require('../base/client');
+const BinaryPjax = require('../base/binary_pjax');
+const jpClient   = require('../common_functions/country_base').jpClient;
 
 const GetStartedJP = (function() {
     const onLoad = function() {
-        if (!japanese_client()) {
+        if (!jpClient()) {
             BinaryPjax.load('get-started');
         }
         Client.activateByClientType();
