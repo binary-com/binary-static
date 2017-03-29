@@ -45,7 +45,7 @@ const KnowledgeTestUI = (() => {
         const $question_link = $('<a></a>', {
             name : question.id,
             class: 'no-underline',
-            // 'data-balloon': question.tooltip, // TODO: uncomment when translation is ready
+            // 'data-balloon': question.tooltip,
         });
         const $question_icon = $('<img>', { src: urlForStatic('/images/common/question_1.png'), class: 'invisible' });
         $question_data.append($question_link.append($question_icon));
