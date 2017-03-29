@@ -179,7 +179,7 @@ const BinarySocketClass = function() {
     };
 
     const setResidence = (residence) => {
-        if (residence && !Cookies.get('residence')) {
+        if (residence) {
             Client.setCookie('residence', residence);
             Client.set('residence', residence);
             send({ landing_company: residence });
