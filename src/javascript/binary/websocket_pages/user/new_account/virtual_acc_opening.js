@@ -65,7 +65,7 @@ const VirtualAccOpening = (function() {
             { selector: '#repeat_password',   validations: ['req', ['compare', { to: '#client_password' }]], exclude_request: 1 },
 
             { selector: '#residence' },
-            { request_field: 'email_consent' },
+            { selector: '#email_consent' },
             { request_field: 'utm_source',          value: TrafficSource.getSource(utm_data) },
             { request_field: 'new_account_virtual', value: 1 },
         ];
