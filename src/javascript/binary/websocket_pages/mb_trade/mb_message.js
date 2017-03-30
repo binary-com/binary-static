@@ -5,7 +5,7 @@ const MBProcess           = require('./mb_process').MBProcess;
 const MBPurchase          = require('./mb_purchase').MBPurchase;
 const MBSymbols           = require('./mb_symbols').MBSymbols;
 const MBTick              = require('./mb_tick').MBTick;
-const PortfolioWS = require('../user/account/portfolio/portfolio.init');
+const PortfolioInit = require('../user/account/portfolio/portfolio.init');
 const State  = require('../../base/storage').State;
 const GTM    = require('../../base/gtm');
 const Client = require('../../base/client');
@@ -49,11 +49,11 @@ const MBMessage = (function () {
             } else if (type === 'trading_times') {
                 processTradingTimes(response);
             } else if (type === 'portfolio') {
-                PortfolioWS.updatePortfolio(response);
+                PortfolioInit.updatePortfolio(response);
             } else if (type === 'proposal_open_contract') {
-                PortfolioWS.updateIndicative(response);
+                PortfolioInit.updateIndicative(response);
             } else if (type === 'transaction') {
-                PortfolioWS.transactionResponseHandler(response);
+                PortfolioInit.transactionResponseHandler(response);
             }
         }
     };

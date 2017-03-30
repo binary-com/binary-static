@@ -8,7 +8,7 @@ const FormManager   = require('../../../../common_functions/form_manager');
 const moment        = require('moment');
 require('select2');
 
-const SettingsDetailsWS = (function() {
+const PersonalDetails = (function() {
     'use strict';
 
     const form_id = '#frmPersonalDetails';
@@ -271,4 +271,4 @@ const SettingsDetailsWS = (function() {
     };
 })();
 
-module.exports = SettingsDetailsWS;
+module.exports = PersonalDetails;

@@ -10,12 +10,12 @@ const forgetTradingStreams = require('./process').forgetTradingStreams;
 const processTick          = require('./process').processTick;
 const processProposal      = require('./process').processProposal;
 const processTradingTimes  = require('./process').processTradingTimes;
-const PortfolioWS   = require('../user/account/portfolio/portfolio.init');
-const ProfitTableWS = require('../user/account/profit_table/profit_table.init');
-const StatementWS   = require('../user/account/statement/statement.init');
-const State         = require('../../base/storage').State;
-const GTM           = require('../../base/gtm');
-const Client        = require('../../base/client');
+const PortfolioInit   = require('../user/account/portfolio/portfolio.init');
+const ProfitTableInit = require('../user/account/profit_table/profit_table.init');
+const StatementInit   = require('../user/account/statement/statement.init');
+const State           = require('../../base/storage').State;
+const GTM             = require('../../base/gtm');
+const Client          = require('../../base/client');
 
 /*
  * This Message object process the response from server and fire
@@ -59,17 +59,17 @@ const Message = (function () {
             } else if (type === 'trading_times') {
                 processTradingTimes(response);
             } else if (type === 'statement') {
-                StatementWS.statementHandler(response);
+                StatementInit.statementHandler(response);
             } else if (type === 'profit_table') {
-                ProfitTableWS.profitTableHandler(response);
+                ProfitTableInit.profitTableHandler(response);
             } else if (type === 'error') {
                 $('.error-msg').text(response.error.message);
             } else if (type === 'portfolio') {
-                PortfolioWS.updatePortfolio(response);
+                PortfolioInit.updatePortfolio(response);
             } else if (type === 'proposal_open_contract') {
-                PortfolioWS.updateIndicative(response);
+                PortfolioInit.updateIndicative(response);
             } else if (type === 'transaction') {
-                PortfolioWS.transactionResponseHandler(response);
+                PortfolioInit.transactionResponseHandler(response);
             }
         } else {
             console.log('some error occured');

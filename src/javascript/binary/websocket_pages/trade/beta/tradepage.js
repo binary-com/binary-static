@@ -11,8 +11,8 @@ const displayCurrencies         = require('../currency').displayCurrencies;
 const Defaults                  = require('../defaults').Defaults;
 const Notifications             = require('../notifications').Notifications;
 const Symbols                   = require('../symbols').Symbols;
-const PortfolioWS               = require('../../user/account/portfolio/portfolio.init');
-const ViewPopupWS               = require('../../user/view_popup/view_popupws');
+const PortfolioInit             = require('../../user/account/portfolio/portfolio.init');
+const ViewPopup                 = require('../../user/view_popup/view_popup');
 const BinaryPjax                = require('../../../base/binary_pjax');
 const State                     = require('../../../base/storage').State;
 const jpClient                  = require('../../../common_functions/country_base').jpClient;
@@ -68,7 +68,7 @@ const TradePage_Beta = (function() {
         });
         TradingAnalysis_Beta.bindAnalysisTabEvent();
 
-        ViewPopupWS.viewButtonOnClick('#contract_confirmation_container');
+        ViewPopup.viewButtonOnClick('#contract_confirmation_container');
     };
 
     const adjustAnalysisColumnHeight = function() {
@@ -185,7 +185,7 @@ const TradePage_Beta = (function() {
         forgetTradingStreams_Beta();
         BinarySocket.clear();
         Defaults.clear();
-        PortfolioWS.onUnload();
+        PortfolioInit.onUnload();
         chartFrameCleanup();
     };
 

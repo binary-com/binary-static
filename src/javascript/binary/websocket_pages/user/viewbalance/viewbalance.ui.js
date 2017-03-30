@@ -1,5 +1,5 @@
 const formatMoney           = require('../../../common_functions/currency_to_symbol').formatMoney;
-const PortfolioWS           = require('../account/portfolio/portfolio.init');
+const PortfolioInit         = require('../account/portfolio/portfolio.init');
 const updateContractBalance = require('../../trade/common').updateContractBalance;
 const Client                = require('../../../base/client');
 
@@ -11,7 +11,7 @@ const ViewBalanceUI = (function() {
         }
         const balance = response.balance.balance;
         Client.set('balance', balance);
-        PortfolioWS.updateBalance();
+        PortfolioInit.updateBalance();
         const currency = response.balance.currency;
         if (!currency) {
             return;

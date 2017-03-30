@@ -10,11 +10,11 @@ const displayCurrencies = require('../currency').displayCurrencies;
 const Notifications     = require('../notifications').Notifications;
 const Symbols           = require('../symbols').Symbols;
 const Tick              = require('../tick').Tick;
-const AssetIndexUI  = require('../../resources/asset_index/asset_indexws.ui');
-const MarketTimesUI = require('../../resources/market_times/market_timesws.ui');
-const PortfolioWS   = require('../../user/account/portfolio/portfolio.init');
-const ProfitTableWS = require('../../user/account/profit_table/profit_table.init');
-const StatementWS   = require('../../user/account/statement/statement.init');
+const AssetIndexUI    = require('../../resources/asset_index/asset_index.ui');
+const TradingTimesUI  = require('../../resources/trading_times/trading_times.ui');
+const PortfolioInit   = require('../../user/account/portfolio/portfolio.init');
+const ProfitTableInit = require('../../user/account/profit_table/profit_table.init');
+const StatementInit   = require('../../user/account/statement/statement.init');
 const State  = require('../../../base/storage').State;
 const GTM    = require('../../../base/gtm');
 const Client = require('../../../base/client');
@@ -37,7 +37,7 @@ const Message_Beta = (function () {
             if (type === 'active_symbols') {
                 processActiveSymbols_Beta(response);
                 AssetIndexUI.setActiveSymbols(response);
-                MarketTimesUI.setActiveSymbols(response);
+                TradingTimesUI.setActiveSymbols(response);
             } else if (type === 'contracts_for') {
                 Notifications.hide('CONNECTION_ERROR');
                 processContract_Beta(response);
@@ -64,21 +64,21 @@ const Message_Beta = (function () {
                 AssetIndexUI.setAssetIndex(response);
             } else if (type === 'trading_times') {
                 processTradingTimes_Beta(response);
-                MarketTimesUI.setTradingTimes(response);
+                TradingTimesUI.setTradingTimes(response);
             } else if (type === 'statement') {
-                StatementWS.statementHandler(response);
+                StatementInit.statementHandler(response);
             } else if (type === 'profit_table') {
-                ProfitTableWS.profitTableHandler(response);
+                ProfitTableInit.profitTableHandler(response);
             } else if (type === 'error') {
                 $('.error-msg').text(response.error.message);
             } else if (type === 'portfolio') {
-                PortfolioWS.updatePortfolio(response);
+                PortfolioInit.updatePortfolio(response);
             } else if (type === 'proposal_open_contract') {
-                PortfolioWS.updateIndicative(response);
+                PortfolioInit.updateIndicative(response);
             } else if (type === 'transaction') {
-                PortfolioWS.transactionResponseHandler(response);
+                PortfolioInit.transactionResponseHandler(response);
             } else if (type === 'oauth_apps') {
-                PortfolioWS.updateOAuthApps(response);
+                PortfolioInit.updateOAuthApps(response);
             }
         } else {
             console.log('some error occured');

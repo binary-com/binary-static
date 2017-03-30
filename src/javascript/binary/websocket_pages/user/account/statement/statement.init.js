@@ -1,6 +1,6 @@
 const moment               = require('moment');
 const StatementUI          = require('./statement.ui');
-const ViewPopupWS          = require('../../view_popup/view_popupws');
+const ViewPopup            = require('../../view_popup/view_popup');
 const getLanguage          = require('../../../../base/language').get;
 const localize             = require('../../../../base/localize').localize;
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
@@ -75,7 +75,7 @@ const StatementInit = (() => {
         }
 
         if (!tableExist()) {
-            StatementUI.createEmptyStatementTable().appendTo('#statement-ws-container');
+            StatementUI.createEmptyStatementTable().appendTo('#statement-container');
             $('.act, .credit').addClass('nowrap');
             StatementUI.updateStatementTable(getNextChunkStatement());
 
@@ -171,7 +171,7 @@ const StatementInit = (() => {
     const onLoad = () => {
         initPage();
         attachDatePicker();
-        ViewPopupWS.viewButtonOnClick('#statement-ws-container');
+        ViewPopup.viewButtonOnClick('#statement-container');
     };
 
     return {

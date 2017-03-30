@@ -11,7 +11,7 @@ const Notifications        = require('./notifications').Notifications;
 const Price                = require('./price').Price;
 const forgetTradingStreams = require('./process').forgetTradingStreams;
 const Symbols              = require('./symbols').Symbols;
-const ViewPopupWS          = require('../user/view_popup/view_popupws');
+const ViewPopup            = require('../user/view_popup/view_popup');
 const BinaryPjax           = require('../../base/binary_pjax');
 const localize             = require('../../base/localize').localize;
 const State                = require('../../base/storage').State;
@@ -66,7 +66,7 @@ const TradePage = (function() {
         $('#tab_explanation').find('a').text(localize('Explanation'));
         $('#tab_last_digit').find('a').text(localize('Last Digit Stats'));
 
-        ViewPopupWS.viewButtonOnClick('#contract_confirmation_container');
+        ViewPopup.viewButtonOnClick('#contract_confirmation_container');
     };
 
     const reload = function() {
