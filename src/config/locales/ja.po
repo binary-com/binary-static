@@ -7,15 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-24 21:45+0000\n"
+"PO-Revision-Date: 2017-03-30 01:38+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.12\n"
+"X-Generator: Weblate 2.13-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」とは%1の取引プラットフォームとのインターフェースとして登録されたアプリケーションを使用できるよう、%1によって作成・管理されているプログラムのルーチン、プロトコル、ツール、リソースの独自のセットのことをいいます。"
@@ -3635,10 +3636,11 @@ msgid "If your complaint relates to an outcome of a trade or a transaction and r
 msgstr "取引や商法の結果に関するご不満があったり、何か未解決のままである場合、それは論争になってしまうかもしれません。当社の回答に満足いただけない場合は、お客さまの苦情を監督機関に申し立てをするか、裁判外紛争解決をご選択いただけます。"
 
 msgid "If your margin level is still under the stop out level, we will close an open position with the largest loss."
-msgstr "マージンレベルが未だストップアウトベル未満である場合、損失が一番大きいオープンポジションをクローズします。"
+msgstr "マージンレベルが未だロスカットレベル未満である場合、損失が一番大きいオープンポジションをクローズします。"
 
 msgid "If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted."
-msgstr "マージンレベルが未だストップアウトレベル未満である場合、次の注文は削除されます。しかし、マージン要件なしの注文に関しては削除されることはありません。"
+msgstr ""
+"マージンレベルが未だロスカットレベル未満である場合、次の注文は削除されます。しかし、マージン要件なしの注文に関しては削除されることはありません。"
 
 msgid "If:"
 msgstr "以下の場合を対象とする："
@@ -6310,10 +6312,8 @@ msgstr "土"
 msgid "Scope and Intent"
 msgstr "対象範囲と意図"
 
-#, fuzzy
-#| msgid "B. Scope"
 msgid "Scopes"
-msgstr "B. 範囲"
+msgstr "範囲"
 
 msgid "Score"
 msgstr "スコア"
@@ -6679,7 +6679,7 @@ msgid "Stop Out Level"
 msgstr "ロスカットレベル"
 
 msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
-msgstr "ストップアウトレベル &mdash; オープンポジションがマージンレベル以下である際に、同意の上または同意なしに強制的に行われることがあります"
+msgstr "ロスカットレベル &mdash; オープンポジションがマージンレベル以下である際に、同意の上または同意なしに強制的に行われることがあります"
 
 msgid "Stop Profit Level"
 msgstr "利益ストップレベル"
@@ -7355,7 +7355,7 @@ msgid "The margin for our CFDs are calculated as follows:"
 msgstr ""
 
 msgid "The margin for our Forex symbols is calculated as follows:"
-msgstr ""
+msgstr "外国為替通貨シンボルのマージンは以下のように算出されます。"
 
 msgid "The margin trading services described in this Agreement are conducted over the counter. This means that the market in one or more of the instruments which you ordinarily transact with us, though quoted on an exchange, are not traded on an exchange when transacted through the electronic trading platform as described in this Agreement."
 msgstr ""
@@ -7957,10 +7957,8 @@ msgstr "Binary Botを試す"
 msgid "Try MetaTrader 5"
 msgstr "MetaTrader 5を試す"
 
-#, fuzzy
-#| msgid "Binary Next-Gen"
 msgid "Try Next-Gen"
-msgstr "Binary Next-Gen"
+msgstr "Next-Genをお試す"
 
 msgid "Try TradingView"
 msgstr "TradingViewを試す"
@@ -8904,7 +8902,7 @@ msgstr ""
 "https://developers.binary.com/"
 
 msgid "You have unrealised losses on your Real Account; and/or"
-msgstr ""
+msgstr "リアル口座に含み損があります"
 
 msgid "You hereby agree that you will not participate in any illegal, deceptive, misleading or unethical practices including, but not limited to, disparagement of the MT5 Trading Platform or other practices which may be detrimental to the MT5 Trading Platform, Licensor or the public interest."
 msgstr ""
@@ -9030,7 +9028,7 @@ msgid "You should enter %1 characters."
 msgstr "%1文字でご入力ください"
 
 msgid "You should not sign up to receive the margin trading services described in this Agreement unless you understand their nature and the associated risks."
-msgstr ""
+msgstr "マージン取引の性質及び関連するリスクを十分に理解されていない限り、本契約に記載されているマージン取引サービスの開始に登録しないでください。"
 
 msgid "You should not trade or invest in Binary Options unless you know and understand the features risks involved and you may lose all the money invested."
 msgstr "関連する将来のリスクまたは投資した資金が全て損失する可能性があるということをご理解いただかない限り、バイナリーオプションでお取引、ご投資されるべきではありません。"
@@ -9043,6 +9041,8 @@ msgstr "リスク開示通知と当社が提供する、または将来お客さ
 
 msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments."
 msgstr ""
+"乱数ジェネレーター（ボラティリティ・インデックス）に基づいた商品は金融市場インデックス（外国為替、株式、コモディティ）に基づく商品が金融商品であるのと同じ"
+"ように、賭博商品であることを十分にご理解ください。"
 
 msgid "You will be automatically logged out after such time."
 msgstr "設定時間を過ぎると自動的にログアウトします。（例）　10分の場合、10と記入して下さい。(半角)"
@@ -9051,10 +9051,10 @@ msgid "You will be provided with all the tools, to turn your traffic into a lucr
 msgstr "サイト訪問数を収入に転化するツールを提供"
 
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
-msgstr ""
+msgstr "23:59:59 GMT以降にポジションをオープンのままにされますと、スワップレートの対象となりますのでご注意ください。"
 
 msgid "You will be subjected to swap rates if you keep a position open past the market close."
-msgstr ""
+msgstr "市場閉鎖後もポジションをオープンのままにされますと、スワップレートの対象となりますのでご注意ください。"
 
 msgid "You will provide us with any information that we may reasonably require to fully satisfy the demand or the requirements of the applicable government authority, upon our request."
 msgstr ""
@@ -9350,8 +9350,6 @@ msgstr "文字"
 msgid "login"
 msgstr "ログイン"
 
-#, fuzzy
-#| msgid "Logout"
 msgid "logout"
 msgstr "ログアウト"
 
