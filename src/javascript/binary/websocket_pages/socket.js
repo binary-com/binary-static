@@ -39,7 +39,6 @@ const BinarySocketClass = function() {
 
     let binarySocket,
         bufferedSends = [],
-        manualClosed = false,
         events = {},
         authorized = false,
         req_number = 0,
@@ -195,7 +194,6 @@ const BinarySocketClass = function() {
         }
         if (typeof es === 'object') {
             bufferedSends = [];
-            manualClosed = false;
             events = es;
             clearTimeouts();
         }
@@ -347,7 +345,7 @@ const BinarySocketClass = function() {
             authorized = false;
             clearTimeouts();
 
-            if (!manualClosed && wrongAppId !== getAppId()) {
+            if (wrongAppId !== getAppId()) {
                 const toCall = State.get('is_trading')      ? TradePage.onDisconnect      :
                                State.get('is_beta_trading') ? TradePage_Beta.onDisconnect :
                                State.get('is_mb_trading')   ? MBTradePage.onDisconnect    : '';
@@ -370,18 +368,8 @@ const BinarySocketClass = function() {
         };
     };
 
-    const close = function () {
-        manualClosed = true;
-        bufferedSends = [];
-        events = {};
-        if (binarySocket) {
-            binarySocket.close();
-        }
-    };
-
     const clear = function() {
         bufferedSends = [];
-        manualClosed = false;
         events = {};
     };
 
@@ -389,7 +377,6 @@ const BinarySocketClass = function() {
         init         : init,
         wait         : wait,
         send         : send,
-        close        : close,
         socket       : function () { return binarySocket; },
         clear        : clear,
         clearTimeouts: clearTimeouts,
