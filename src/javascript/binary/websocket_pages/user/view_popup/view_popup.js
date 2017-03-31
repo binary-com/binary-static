@@ -6,11 +6,11 @@ const MBPrice              = require('../../mb_trade/mb_price').MBPrice;
 const ViewPopupUI          = require('./view_popup_ui').ViewPopupUI;
 const moment               = require('moment');
 const State                = require('../../../base/storage').State;
-const Highchart            = require('../../trade/charts/highchartws').Highchart;
-const WSTickDisplay        = require('../../trade/tick_trade').WSTickDisplay;
+const Highchart            = require('../../trade/charts/highchart');
+const TickDisplay          = require('../../trade/tick_trade');
 const localize = require('../../../base/localize').localize;
 
-const ViewPopupWS = (function() {
+const ViewPopup = (function() {
     'use strict';
 
     let contractID,
@@ -77,7 +77,7 @@ const ViewPopupWS = (function() {
 
         if (contract && contractType) {
             if (!document.getElementById(wrapperID)) return;
-            ViewPopupWS[contractType + 'Update']();
+            ViewPopup[contractType + 'Update']();
             return;
         }
 
@@ -274,7 +274,7 @@ const ViewPopupWS = (function() {
                 }
             }
         } else if (contract.tick_count && !chartUpdated) {
-            WSTickDisplay.updateChart('', contract);
+            TickDisplay.updateChart('', contract);
             chartUpdated = true;
         }
 
@@ -617,7 +617,7 @@ const ViewPopupWS = (function() {
         if (!req.hasOwnProperty('passthrough')) {
             req.passthrough = {};
         }
-        req.passthrough.dispatch_to = 'ViewPopupWS';
+        req.passthrough.dispatch_to = 'ViewPopup';
         BinarySocket.send(req);
     };
 
@@ -660,7 +660,7 @@ const ViewPopupWS = (function() {
     };
 
     const viewButtonOnClick = function (container_selector) {
-        $(container_selector).on('click', '.open_contract_detailsws', function (e) {
+        $(container_selector).on('click', '.open_contract_details', function (e) {
             e.preventDefault();
             init(this);
         });
@@ -675,4 +675,4 @@ const ViewPopupWS = (function() {
     };
 })();
 
-module.exports = ViewPopupWS;
+module.exports = ViewPopup;

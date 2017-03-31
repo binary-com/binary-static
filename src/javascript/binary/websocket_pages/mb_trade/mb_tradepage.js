@@ -20,9 +20,6 @@ const MBTradePage = (function() {
 
     const onLoad = function() {
         State.set('is_mb_trading', true);
-        if (Client.get('currencies')) {
-            MBDisplayCurrencies();
-        }
         BinarySocket.init({
             onmessage: function(msg) {
                 MBMessage.process(msg);
@@ -41,7 +38,11 @@ const MBTradePage = (function() {
             MBDisplayCurrencies();
             MBSymbols.getSymbols(1);
         } else {
-            BinarySocket.send({ payout_currencies: 1 });
+            BinarySocket.send({ payout_currencies: 1 }).then((response) => {
+                Client.set('currencies', response.payout_currencies.join(','));
+                MBDisplayCurrencies();
+                MBSymbols.getSymbols(1);
+            });
         }
 
         TradingAnalysis.bindAnalysisTabEvent();

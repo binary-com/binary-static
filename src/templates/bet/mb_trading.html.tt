@@ -81,7 +81,7 @@
     </div>
 
     [% INCLUDE bet/analysis.html.tt no_graph=1 %]
-    <div id="open_positions_container">[% INCLUDE user/portfoliows.html.tt %]</div>
+    <div id="open_positions_container">[% INCLUDE user/portfolio.html.tt %]</div>
 
     <div id="templates" class="invisible">
         <div class="gr-row price-row">

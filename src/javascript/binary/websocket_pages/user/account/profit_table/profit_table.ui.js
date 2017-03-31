@@ -96,7 +96,7 @@ const ProfitTableUI = (() => {
         });
 
         // create view button and append
-        const $view_button = $('<button/>', { class: 'button open_contract_detailsws', text: localize('View'), contract_id: profit_table_data.id });
+        const $view_button = $('<button/>', { class: 'button open_contract_details', text: localize('View'), contract_id: profit_table_data.id });
         $row.children('.contract,.details').append($view_button);
 
         return $row[0];
@@ -113,7 +113,7 @@ const ProfitTableUI = (() => {
     };
 
     const errorMessage = (msg) => {
-        const $err = $('#profit-table-ws-container').find('#error-msg');
+        const $err = $('#profit-table-container').find('#error-msg');
         if (msg) {
             $err.removeClass('invisible').text(msg);
         } else {
