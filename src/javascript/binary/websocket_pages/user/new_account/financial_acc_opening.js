@@ -58,10 +58,8 @@ const FinancialAccOpening = (function() {
                     value = moment_val.format('DD MMM, YYYY');
                     $element.attr('data-value', toISOFormat(moment_val));
                     $('.input-disabled').attr('disabled', 'disabled');
-                } else if (key === 'tax_residence' && value) {
-                    value = value.split(',');
                 }
-                if (value) $element.val(value).trigger('change');
+                if (value) $element.val(value);
             });
         });
 
