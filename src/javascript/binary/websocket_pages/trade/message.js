@@ -9,8 +9,6 @@ const processTick          = require('./process').processTick;
 const processProposal      = require('./process').processProposal;
 const processTradingTimes  = require('./process').processTradingTimes;
 const PortfolioWS   = require('../user/account/portfolio/portfolio.init');
-const ProfitTableWS = require('../user/account/profit_table/profit_table.init');
-const StatementWS   = require('../user/account/statement/statement.init');
 const State         = require('../../base/storage').State;
 const GTM           = require('../../base/gtm');
 
@@ -51,10 +49,6 @@ const Message = (function () {
                 }
             } else if (type === 'trading_times') {
                 processTradingTimes(response);
-            } else if (type === 'statement') {
-                StatementWS.statementHandler(response);
-            } else if (type === 'profit_table') {
-                ProfitTableWS.profitTableHandler(response);
             } else if (type === 'error') {
                 $('.error-msg').text(response.error.message);
             } else if (type === 'portfolio') {

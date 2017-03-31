@@ -11,8 +11,6 @@ const Tick              = require('../tick').Tick;
 const AssetIndexUI  = require('../../resources/asset_index/asset_indexws.ui');
 const MarketTimesUI = require('../../resources/market_times/market_timesws.ui');
 const PortfolioWS   = require('../../user/account/portfolio/portfolio.init');
-const ProfitTableWS = require('../../user/account/profit_table/profit_table.init');
-const StatementWS   = require('../../user/account/statement/statement.init');
 const State  = require('../../../base/storage').State;
 const GTM    = require('../../../base/gtm');
 
@@ -58,10 +56,6 @@ const Message_Beta = (function () {
             } else if (type === 'trading_times') {
                 processTradingTimes_Beta(response);
                 MarketTimesUI.setTradingTimes(response);
-            } else if (type === 'statement') {
-                StatementWS.statementHandler(response);
-            } else if (type === 'profit_table') {
-                ProfitTableWS.profitTableHandler(response);
             } else if (type === 'error') {
                 $('.error-msg').text(response.error.message);
             } else if (type === 'portfolio') {
