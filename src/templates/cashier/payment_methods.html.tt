@@ -34,12 +34,11 @@
                 <h3>[% title %]</h3>
             </div>
         </div>
+        [% INCLUDE row is_header=1 method=l('Method') currencies=l('Currencies') deposit=l('Min-Max Deposit') withdrawal=l('Min-Max Withdrawal') time=l('Processing Time') %]
     [% END %]
 
 
     <div id="payment_methods">
-    [% INCLUDE row is_header=1 method=l('Method') currencies=l('Currencies') deposit=l('Min-Max Deposit') withdrawal=l('Min-Max Withdrawal') time=l('Processing Time') %]
-
     [% INCLUDE section title=l('Bank wire/Money transfer') %]
     [% INCLUDE row id='int_bank_wire'       currencies='USD GBP EUR AUD' deposit='25 - 100,000' withdrawal='25 - 100,000' time=[l('Deposit: [_1] working day', 1), l('Withdraw: [_1] working day', 1)] %]
     [% INCLUDE row id='local_bank_transfer' currencies='USD GBP EUR AUD' deposit='25 - 50,000'  withdrawal='25 - 10,000'  time=[l('Deposit: [_1] working day', 1), l('Withdraw: [_1] working day', 1)] %]
