@@ -114,7 +114,6 @@ const Client = (() => {
         if (/no-reality-check/.test(hash)) {
             window.location.hash = hash.replace('no-reality-check', '');
         }
-        sessionStorage.setItem('currencies', '');
     };
 
     const getToken = (client_loginid) => {

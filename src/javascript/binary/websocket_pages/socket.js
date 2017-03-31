@@ -39,7 +39,6 @@ const BinarySocketClass = function() {
 
     let binarySocket,
         bufferedSends = [],
-        manualClosed = false,
         events = {},
         authorized = false,
         req_number = 0,
@@ -54,7 +53,9 @@ const BinarySocketClass = function() {
         'get_settings',
         'residence_list',
         'landing_company',
+        'payout_currencies',
     ];
+    let sent_requests = [];
     const waiting_list = {
         items: {},
         add  : (msg_type, promise_obj) => {
@@ -125,16 +126,24 @@ const BinarySocketClass = function() {
         return promise_obj.promise;
     };
 
-    const send = function(data, force_send) {
+    const send = function(data, force_send, msg_type) {
         const promise_obj = new PromiseClass();
 
-        if (!force_send) {
-            const msg_type = no_duplicate_requests.find(c => c in data);
+        msg_type = msg_type || no_duplicate_requests.find(c => c in data);
+        if (!force_send && msg_type) {
             const last_response = State.get(['response', msg_type]);
             if (last_response) {
                 promise_obj.resolve(last_response);
                 return promise_obj.promise;
+            } else if (sent_requests.indexOf(msg_type) >= 0) {
+                return wait(msg_type).then((response) => {
+                    promise_obj.resolve(response);
+                    return promise_obj.promise;
+                });
             }
+        }
+        if (msg_type) {
+            sent_requests.push(msg_type);
         }
 
         if (!data.req_id) {
@@ -195,7 +204,6 @@ const BinarySocketClass = function() {
         }
         if (typeof es === 'object') {
             bufferedSends = [];
-            manualClosed = false;
             events = es;
             clearTimeouts();
         }
@@ -345,9 +353,10 @@ const BinarySocketClass = function() {
 
         binarySocket.onclose = function () {
             authorized = false;
+            sent_requests = [];
             clearTimeouts();
 
-            if (!manualClosed && wrongAppId !== getAppId()) {
+            if (wrongAppId !== getAppId()) {
                 const toCall = State.get('is_trading')      ? TradePage.onDisconnect      :
                                State.get('is_beta_trading') ? TradePage_Beta.onDisconnect :
                                State.get('is_mb_trading')   ? MBTradePage.onDisconnect    : '';
@@ -370,18 +379,8 @@ const BinarySocketClass = function() {
         };
     };
 
-    const close = function () {
-        manualClosed = true;
-        bufferedSends = [];
-        events = {};
-        if (binarySocket) {
-            binarySocket.close();
-        }
-    };
-
     const clear = function() {
         bufferedSends = [];
-        manualClosed = false;
         events = {};
     };
 
@@ -389,7 +388,6 @@ const BinarySocketClass = function() {
         init         : init,
         wait         : wait,
         send         : send,
-        close        : close,
         socket       : function () { return binarySocket; },
         clear        : clear,
         clearTimeouts: clearTimeouts,
