@@ -14,10 +14,10 @@ const Symbols                   = require('../symbols').Symbols;
 const PortfolioWS               = require('../../user/account/portfolio/portfolio.init');
 const ViewPopupWS               = require('../../user/view_popup/view_popupws');
 const BinaryPjax                = require('../../../base/binary_pjax');
+const Client                    = require('../../../base/client');
 const State                     = require('../../../base/storage').State;
-const Content                   = require('../../../common_functions/content').Content;
-const japanese_client           = require('../../../common_functions/country_base').japanese_client;
-const Guide                     = require('../../../common_functions/guide').Guide;
+const jpClient                  = require('../../../common_functions/country_base').jpClient;
+const Guide                     = require('../../../common_functions/guide');
 const ResizeSensor              = require('../../../../lib/resize-sensor');
 
 const TradePage_Beta = (function() {
@@ -25,13 +25,13 @@ const TradePage_Beta = (function() {
     State.remove('is_beta_trading');
 
     const onLoad = function() {
-        const is_japanese_client = japanese_client();
-        if (is_japanese_client) {
+        const is_jp_client = jpClient();
+        if (is_jp_client) {
             BinaryPjax.load('multi_barriers_trading');
             return;
         }
         State.set('is_beta_trading', true);
-        if (sessionStorage.getItem('currencies')) {
+        if (Client.get('currencies')) {
             displayCurrencies();
         }
         BinarySocket.init({
@@ -47,9 +47,8 @@ const TradePage_Beta = (function() {
             events_initialized = 1;
             TradingEvents_Beta.init();
         }
-        Content.populate();
 
-        if (sessionStorage.getItem('currencies')) {
+        if (Client.get('currencies')) {
             displayCurrencies();
             Symbols.getSymbols(1);
         } else {
@@ -58,7 +57,7 @@ const TradePage_Beta = (function() {
 
         if (document.getElementById('websocket_form')) {
             addEventListenerForm();
-            if (!is_japanese_client) {
+            if (!is_jp_client) {
                 new ResizeSensor($('.col-left .content-tab-container, #contract_prices_container'), adjustAnalysisColumnHeight);
                 new ResizeSensor($('.col-right'), moreTabsHandler);
             }

@@ -1,15 +1,14 @@
-const BinaryPjax                = require('./binary_pjax');
-const Client                    = require('./client');
-const GTM                       = require('./gtm');
-const localize                  = require('./localize').localize;
-const Login                     = require('./login');
-const State                     = require('./storage').State;
-const urlFor                    = require('./url').urlFor;
-const objectNotEmpty            = require('./utility').objectNotEmpty;
-const createLanguageDropDown    = require('../common_functions/attach_dom/language_dropdown');
-const checkClientsCountry       = require('../common_functions/country_base').checkClientsCountry;
-const japanese_client           = require('../common_functions/country_base').japanese_client;
-const MetaTrader                = require('../websocket_pages/user/metatrader/metatrader');
+const BinaryPjax          = require('./binary_pjax');
+const Client              = require('./client');
+const GTM                 = require('./gtm');
+const localize            = require('./localize').localize;
+const Login               = require('./login');
+const State               = require('./storage').State;
+const urlFor              = require('./url').urlFor;
+const objectNotEmpty      = require('./utility').objectNotEmpty;
+const checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
+const jpClient            = require('../common_functions/country_base').jpClient;
+const MetaTrader          = require('../websocket_pages/user/metatrader/metatrader');
 
 const Header = (() => {
     'use strict';
@@ -17,7 +16,6 @@ const Header = (() => {
     const onLoad = () => {
         showOrHideLoginForm();
         bindClick();
-        createLanguageDropDown();
         if (!Login.isLoginPages()) {
             checkClientsCountry();
         }
@@ -29,7 +27,7 @@ const Header = (() => {
 
     const bindClick = () => {
         $('#logo').off('click').on('click', () => {
-            BinaryPjax.load(urlFor(Client.isLoggedIn() ? (japanese_client() ? 'multi_barriers_trading' : 'trading') : ''));
+            BinaryPjax.load(urlFor(Client.isLoggedIn() ? (jpClient() ? 'multi_barriers_trading' : 'trading') : ''));
         });
         $('#btn_login').off('click').on('click', (e) => {
             e.preventDefault();
@@ -112,8 +110,6 @@ const Header = (() => {
             const $upgrade_msg = $('.upgrademessage');
             const hidden_class  = 'invisible';
 
-            const hideUpgrade = () => { $upgrade_msg.addClass(hidden_class); };
-
             const showUpgrade = (url, msg) => {
                 $upgrade_msg.removeClass(hidden_class)
                     .find('a').removeClass(hidden_class)
@@ -155,7 +151,7 @@ const Header = (() => {
                         showUpgrade('new_account/realws', 'Upgrade to a Real Account');
                     }
                 } else {
-                    hideUpgrade();
+                    $upgrade_msg.find('a').addClass(hidden_class).html('');
                 }
             } else {
                 let show_financial = false;
@@ -167,7 +163,7 @@ const Header = (() => {
                     $('#virtual-text').parent().addClass('invisible');
                     showUpgrade('new_account/maltainvestws', 'Open a Financial Account');
                 } else {
-                    hideUpgrade();
+                    $upgrade_msg.addClass(hidden_class);
                 }
             }
         });
@@ -212,7 +208,7 @@ const Header = (() => {
             };
 
             const validations = {
-                authenticate: () => (!/authenticated/.test(status) || !/age_verification/.test(status)) && !japanese_client(),
+                authenticate: () => (!/authenticated/.test(status) || !/age_verification/.test(status)) && !jpClient(),
                 residence   : () => !Client.get('residence'),
                 risk        : () => riskAssessment(),
                 tax         : () => Client.shouldCompleteTax(),

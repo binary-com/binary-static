@@ -186,22 +186,16 @@ sub _texts {
         push @texts, localize('This field is required.');
         push @texts, localize('Please select the checkbox.');
         push @texts, localize('Please accept the terms and conditions.');
-        push @texts, localize('You should enter between [_1] characters.');
         push @texts, localize('Only [_1] are allowed.');
         push @texts, localize('letters');
         push @texts, localize('numbers');
         push @texts, localize('space');
-        push @texts, localize('period');
-        push @texts, localize('comma');
         push @texts, localize('Sorry, an error occurred while processing your account.');
         push @texts, localize('Your changes have been updated successfully.');
         push @texts, localize('Your settings have been updated successfully.');
         #strings for home and virtualws page
         push @texts, localize('verification token');
-        push @texts, localize('Please submit a valid [_1].');
         push @texts, localize('email address');
-        push @texts, localize('password');
-        push @texts, localize('The two passwords that you entered do not match.');
         push @texts, localize('Your token has expired. Please click <a href="[_1]">here</a> to restart the verification process.');
         push @texts, localize('The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.');
         push @texts, localize('Password should have lower and uppercase letters with numbers.');
@@ -210,8 +204,6 @@ sub _texts {
         push @texts, localize('login');
         push @texts, localize('Your session duration limit will end in [_1] seconds.');
         #strings for realws page
-        push @texts, localize('hyphen');
-        push @texts, localize('apostrophe');
         push @texts, localize('Please input a valid date');
         push @texts, localize('Please select');
         push @texts, localize('Minimum of [_1] characters required.');
@@ -243,6 +235,7 @@ sub _texts {
         push @texts, localize('Name');
         push @texts, localize('Token');
         push @texts, localize('Last Used');
+        push @texts, localize('Scopes');
         push @texts, localize('Never Used');
         push @texts, localize('Delete');
         push @texts, localize('Are you sure that you want to permanently delete token');
@@ -266,14 +259,16 @@ sub _texts {
         push @texts, localize('weeks');
         push @texts, localize('Your changes have been updated.');
         push @texts, localize('Please enter an integer value');
-        push @texts, localize('Please enter a number between 0 and [_1]');
         push @texts, localize('Session duration limit cannot be more than 6 weeks.');
         push @texts, localize('You did not change anything.');
-        push @texts, localize('Please select a valid date');
-        push @texts, localize('Exclude time must be after today.');
+        push @texts, localize('Please select a valid date.');
+        push @texts, localize('Please select a valid time.');
+        push @texts, localize('Time out cannot be in the past.');
+        push @texts, localize('Time out must be after today.');
+        push @texts, localize('Time out cannot be more than 6 weeks.');
         push @texts, localize('Exclude time cannot be less than 6 months.');
         push @texts, localize('Exclude time cannot be for more than 5 years.');
-        push @texts, localize('When you click "Ok" you will be excluded from trading on the site until the selected date.');
+        push @texts, localize('When you click "OK" you will be excluded from trading on the site until the selected date.');
         #strings for change_passwordws
         push @texts, localize('Old password is wrong.');
         #strings for portfolio
@@ -292,6 +287,7 @@ sub _texts {
         # back-end string for statement page
         push @texts, localize('Sell');
         push @texts, localize('Buy');
+        push @texts, localize('Virtual money credit to account');
         #strings for authenticate page
         push @texts, localize('This feature is not relevant to virtual-money accounts.');
         push @texts, localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].');
@@ -363,6 +359,7 @@ sub _texts {
         push @texts, localize('Successful');
         push @texts, localize('Failed');
         push @texts, localize('Your account has no Login/Logout activity.');
+        push @texts, localize('logout');
         #strings for reality_check
         push @texts, localize('Please enter a number between [_1].');
         push @texts, localize('[_1] days [_2] hours [_3] minutes');
@@ -405,6 +402,8 @@ sub _texts {
         push @texts, localize('Administrative Executive');
         push @texts, localize('Internal Audit');
         push @texts, localize('Internal Auditor');
+        push @texts, localize('Marketing Project Coordinator');
+        push @texts, localize('Affiliate Manager');
         #strings for view popup ws
         push @texts, localize('Start Time');
         push @texts, localize('Entry Spot');
@@ -471,6 +470,9 @@ sub _texts {
         push @texts, localize('Revoke access');
         push @texts, localize('Are you sure that you want to permanently revoke access to application');
         push @texts, localize('Transaction performed by [_1] (App ID: [_2])');
+        push @texts, localize('Admin');
+        push @texts, localize('Read');
+        push @texts, localize('Payments');
         # Strings for lost_passwordws
         push @texts, localize('[_1] Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support.');
         push @texts, localize('Your password has been successfully reset. Please log into your account using your new password.');
@@ -492,6 +494,7 @@ sub _texts {
         push @texts, localize('Should be a valid number');
         push @texts, localize('Should be more than [_1]');
         push @texts, localize('Should be less than [_1]');
+        push @texts, localize('Should be between [_1] and [_2]');
         push @texts, localize('Only letters, numbers, space, hyphen, period, and apostrophe are allowed.');
         push @texts, localize('Only letters, space, hyphen, period, and apostrophe are allowed.');
         push @texts, localize('Only letters, numbers, and hyphen are allowed.');

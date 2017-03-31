@@ -17,7 +17,7 @@ const Login                = require('../base/login');
 const State                = require('../base/storage').State;
 const getPropertyValue     = require('../base/utility').getPropertyValue;
 const getLoginToken        = require('../common_functions/common_functions').getLoginToken;
-const SessionDurationLimit = require('../common_functions/session_duration_limit').SessionDurationLimit;
+const SessionDurationLimit = require('../common_functions/session_duration_limit');
 const getAppId             = require('../../config').getAppId;
 const getSocketURL         = require('../../config').getSocketURL;
 const Cookies              = require('../../lib/js-cookie');
@@ -39,7 +39,6 @@ const BinarySocketClass = function() {
 
     let binarySocket,
         bufferedSends = [],
-        manualClosed = false,
         events = {},
         authorized = false,
         req_number = 0,
@@ -53,7 +52,10 @@ const BinarySocketClass = function() {
         'authorize',
         'get_settings',
         'residence_list',
+        'landing_company',
+        'payout_currencies',
     ];
+    let sent_requests = [];
     const waiting_list = {
         items: {},
         add  : (msg_type, promise_obj) => {
@@ -124,16 +126,24 @@ const BinarySocketClass = function() {
         return promise_obj.promise;
     };
 
-    const send = function(data, force_send) {
+    const send = function(data, force_send, msg_type) {
         const promise_obj = new PromiseClass();
 
-        if (!force_send) {
-            const msg_type = no_duplicate_requests.find(c => c in data);
+        msg_type = msg_type || no_duplicate_requests.find(c => c in data);
+        if (!force_send && msg_type) {
             const last_response = State.get(['response', msg_type]);
             if (last_response) {
                 promise_obj.resolve(last_response);
                 return promise_obj.promise;
+            } else if (sent_requests.indexOf(msg_type) >= 0) {
+                return wait(msg_type).then((response) => {
+                    promise_obj.resolve(response);
+                    return promise_obj.promise;
+                });
             }
+        }
+        if (msg_type) {
+            sent_requests.push(msg_type);
         }
 
         if (!data.req_id) {
@@ -177,6 +187,14 @@ const BinarySocketClass = function() {
         return promise_obj.promise;
     };
 
+    const setResidence = (residence) => {
+        if (residence) {
+            Client.setCookie('residence', residence);
+            Client.set('residence', residence);
+            send({ landing_company: residence });
+        }
+    };
+
     const init = function (es) {
         if (wrongAppId === getAppId()) {
             return;
@@ -186,7 +204,6 @@ const BinarySocketClass = function() {
         }
         if (typeof es === 'object') {
             bufferedSends = [];
-            manualClosed = false;
             events = es;
             clearTimeouts();
         }
@@ -240,7 +257,7 @@ const BinarySocketClass = function() {
                 const type = response.msg_type;
 
                 // store in State
-                if (!response.echo_req.subscribe || type === 'balance') {
+                if (!getPropertyValue(response, ['echo_req', 'subscribe']) || type === 'balance') {
                     State.set(['response', type], $.extend({}, response));
                 }
                 // resolve the send promise
@@ -274,11 +291,7 @@ const BinarySocketClass = function() {
                             send({ get_settings: 1 });
                             send({ get_account_status: 1 });
                             send({ payout_currencies: 1 });
-                            const residence = response.authorize.country || Cookies.get('residence');
-                            if (residence) {
-                                Client.set('residence', residence);
-                                send({ landing_company: residence });
-                            }
+                            setResidence(response.authorize.country || Cookies.get('residence'));
                             if (!Client.get('is_virtual')) {
                                 send({ get_self_exclusion: 1 });
                                 // TODO: remove this when back-end adds it as a status to get_account_status
@@ -304,14 +317,7 @@ const BinarySocketClass = function() {
                 } else if (type === 'payout_currencies') {
                     Client.set('currencies', response.payout_currencies.join(','));
                 } else if (type === 'get_settings' && response.get_settings) {
-                    const country_code = response.get_settings.country_code;
-                    if (country_code) {
-                        if (!Cookies.get('residence')) {
-                            Client.setCookie('residence', country_code);
-                            Client.set('residence', country_code);
-                            send({ landing_company: country_code });
-                        }
-                    }
+                    setResidence(response.get_settings.country_code);
                     GTM.eventHandler(response.get_settings);
                     if (response.get_settings.is_authenticated_payment_agent) {
                         $('#topMenuPaymentAgent').removeClass('invisible');
@@ -347,9 +353,10 @@ const BinarySocketClass = function() {
 
         binarySocket.onclose = function () {
             authorized = false;
+            sent_requests = [];
             clearTimeouts();
 
-            if (!manualClosed && wrongAppId !== getAppId()) {
+            if (wrongAppId !== getAppId()) {
                 const toCall = State.get('is_trading')      ? TradePage.onDisconnect      :
                                State.get('is_beta_trading') ? TradePage_Beta.onDisconnect :
                                State.get('is_mb_trading')   ? MBTradePage.onDisconnect    : '';
@@ -372,18 +379,8 @@ const BinarySocketClass = function() {
         };
     };
 
-    const close = function () {
-        manualClosed = true;
-        bufferedSends = [];
-        events = {};
-        if (binarySocket) {
-            binarySocket.close();
-        }
-    };
-
     const clear = function() {
         bufferedSends = [];
-        manualClosed = false;
         events = {};
     };
 
@@ -391,7 +388,6 @@ const BinarySocketClass = function() {
         init         : init,
         wait         : wait,
         send         : send,
-        close        : close,
         socket       : function () { return binarySocket; },
         clear        : clear,
         clearTimeouts: clearTimeouts,

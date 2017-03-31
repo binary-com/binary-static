@@ -2,7 +2,7 @@ const Client         = require('../../../base/client');
 const localize       = require('../../../base/localize').localize;
 const urlFor         = require('../../../base/url').urlFor;
 const objectNotEmpty = require('../../../base/utility').objectNotEmpty;
-const formatMoney    = require('../../../common_functions/currency_to_symbol').format_money;
+const formatMoney    = require('../../../common_functions/currency_to_symbol').formatMoney;
 
 const MetaTraderConfig = (function() {
     'use strict';
@@ -206,7 +206,7 @@ const MetaTraderConfig = (function() {
         ],
         password_change: [
             { selector: fields.password_change.txt_old_password.id,    validations: ['req'] },
-            { selector: fields.password_change.txt_new_password.id,    validations: ['req', 'password', ['not_equal', { to: fields.password_change.txt_old_password.id, name1: 'Current password', name2: 'New password' }]] },
+            { selector: fields.password_change.txt_new_password.id,    validations: ['req', 'password', ['not_equal', { to: fields.password_change.txt_old_password.id, name1: 'Current password', name2: 'New password' }]], re_check_field: fields.password_change.txt_re_new_password.id },
             { selector: fields.password_change.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_change.txt_new_password.id }]] },
         ],
         deposit: [

@@ -1,4 +1,4 @@
-const Table = (function() {
+const Table = (() => {
     'use strict';
 
     /**
@@ -12,8 +12,8 @@ const Table = (function() {
      * @param {String[]} [footer] string to be used as footer, to have empty footer, use an empty element in array
      * eg. ["", "halo", ""] will have 3 elements in footer, 2 of them being empty
      */
-    const createFlexTable = function(body, metadata, header, footer) {
-        const $tableContainer = $('<div></div>', { class: 'table-container' });
+    const createFlexTable = (body, metadata, header, footer) => {
+        const $table_container = $('<div></div>', { class: 'table-container' });
         const $table = $('<table></table>', { class: metadata.tableClass || '', id: metadata.id });
         const $body = createFlexTableTopGroup(body, metadata.cols, 'body');
 
@@ -29,9 +29,9 @@ const Table = (function() {
             $footer.appendTo($table);
         }
 
-        $table.appendTo($tableContainer);
+        $table.appendTo($table_container);
 
-        return $tableContainer;
+        return $table_container;
     };
 
     /**
@@ -40,8 +40,8 @@ const Table = (function() {
      * @param {String[]} metadata cols name
      * @param {'header'|'footer'|'body'} opt optional arg, specifies type of element to create. default to header
      */
-    const createFlexTableTopGroup = function(data, metadata, opt) {
-        const $outer = (function() {
+    const createFlexTableTopGroup = (data, metadata, opt) => {
+        const $outer = (() => {
             switch (opt) {
                 case 'body':
                     return $('<tbody></tbody>');
@@ -67,7 +67,7 @@ const Table = (function() {
      * @param {String[]} metadata cols name
      * @param {'header'|'data'} opt optional, default to "header"
      */
-    const createFlexTableRow = function(data, metadata, opt) {
+    const createFlexTableRow = (data, metadata, opt) => {
         if (data.length !== metadata.length) {
             throw new Error('metadata and data does not match');
         }
@@ -86,7 +86,7 @@ const Table = (function() {
         return $tr;
     };
 
-    const clearTableBody = function(id) {
+    const clearTableBody = (id) => {
         const tbody = document.querySelector('#' + id + '>tbody');
         while (tbody && tbody.firstElementChild) {
             tbody.removeChild(tbody.firstElementChild);
@@ -99,11 +99,11 @@ const Table = (function() {
      * @param {Object[]} data array of data to be transform to row
      * @param {Function} rowGenerator takes in one arg, and convert it into row to be append to table body
      */
-    const appendTableBody = function(id, data, rowGenerator) {
+    const appendTableBody = (id, data, rowGenerator) => {
         const tbody = document.querySelector('#' + id + '>tbody');
         if (!tbody) return;
         const docFrag = document.createDocumentFragment();
-        data.map(function(ele) {
+        data.map((ele) => {
             const row = rowGenerator(ele);
             docFrag.appendChild(row);
         });
@@ -119,6 +119,4 @@ const Table = (function() {
     };
 })();
 
-module.exports = {
-    Table: Table,
-};
+module.exports = Table;

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-22 03:58+0000\n"
+"PO-Revision-Date: 2017-03-24 06:10+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/binary/static/zh_Hant/>\n"
 "Language: zh_tw\n"
@@ -89,6 +89,9 @@ msgstr "%1和牛/熊標誌是註冊商標。"
 
 msgid "%1 continues to innovate and grow"
 msgstr "%1不斷創新、日漸成長"
+
+msgid "%1 days %2 hours %3 minutes"
+msgstr "%1 天 %2 小時 %3 分鐘"
 
 msgid "%1 deposit from %2 to account number %3 is done. Transaction ID: %4"
 msgstr "已完成從%2至帳號%3的%1存款。交易編號: %4"
@@ -181,7 +184,7 @@ msgid "%1 offers a range of common deposit and withdrawal methods, from credit a
 msgstr "%1 提供各種常見的存提款方式，包括信用卡和轉帳卡、銀行電匯、電子現金及電子錢包等。"
 
 msgid "%1 offers a virtual-money account so you can get the hang of trading binaries. Why not <a href='%2'>open a free $10k fully-functional virtual-money account</a>, and start learning how to trade."
-msgstr "%2 提供虛擬資金帳戶，以便投資者掌握二元期權交易的技巧。何不<a href='%2'>免費開立一個1萬美元功能齊全的虛擬資金帳戶</a>，並開始學習如何交易呢。"
+msgstr "%1 提供虛擬資金帳戶，以便投資者掌握二元期權交易的技巧。何不<a href='%2'>免費開立一個1萬美元功能齊全的虛擬資金帳戶</a>，並開始學習如何交易呢。"
 
 msgid "%1 offers five main types of trades that will help you execute your market view or strategy:"
 msgstr "%1 提供五種可幫助您執行市場觀點或策略的交易："
@@ -393,8 +396,8 @@ msgstr "30-50 million JPY"
 msgid "30-day limit on losses"
 msgstr "30天期損失限額"
 
-msgid "30-day turnover limit "
-msgstr "30天期交易限額 "
+msgid "30-day turnover limit"
+msgstr "30天期交易限額"
 
 msgid "4. Choose your Stake and Potential Return"
 msgstr "4. 選擇您的投注額與潛在回報率"
@@ -795,6 +798,9 @@ msgstr "接受本地銀行電匯"
 
 msgid "Acceptance"
 msgstr "接受"
+
+msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
+msgstr ""
 
 msgid "Access to Personal Data"
 msgstr "個人資料存取"
@@ -1786,9 +1792,6 @@ msgstr "辦事員"
 msgid "Click here to retry"
 msgstr "點選此處重試"
 
-msgid "Click the button below to download MetaTrader."
-msgstr "點擊以下按鈕下載MetaTrader。"
-
 msgid "Client Money"
 msgstr "客戶資金"
 
@@ -2425,14 +2428,14 @@ msgstr "休眠和非使用中帳戶"
 msgid "Down - Predict that the market will end lower than the average price"
 msgstr "下跌 - 預測收盤市場價格低於平均價格"
 
+msgid "Download"
+msgstr "下載"
+
 msgid "Download CSV"
 msgstr "下載CSV"
 
-msgid "Download MetaTrader for Windows"
-msgstr "下載Windows版MetaTrader"
-
-msgid "Download for MacOS"
-msgstr "MacOS版MetaTrader下載"
+msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
+msgstr ""
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "推動快速增長和業務發展，以支援公司的銷售和市場行銷目標"
@@ -2728,9 +2731,6 @@ msgstr "禁止時間不能超過5年。"
 msgid "Exclude time cannot be less than 6 months."
 msgstr "禁止時間不能少於6個月。"
 
-msgid "Exclude time must be after today."
-msgstr "禁止時間必須在今日之後。"
-
 msgid "Exclusion of Liability"
 msgstr "Exclusion of Liability"
 
@@ -2961,6 +2961,15 @@ msgstr "遵守法律和以下條款"
 
 msgid "Follow up on rejected deposits"
 msgstr "被拒絕存款的跟進"
+
+msgid "For Browser"
+msgstr "用於瀏覽器"
+
+msgid "For Desktop"
+msgstr "用於桌上型電腦"
+
+msgid "For Mobile"
+msgstr "用於手機"
 
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "為提高安全保障，請檢視郵件並提取驗證權杖。"
@@ -3471,9 +3480,6 @@ msgstr "如果您符合我們的基本要求，我們會向您發送一份人材
 
 msgid "If you need assistance feel free to contact our <a href=\"%1\">Customer Support</a>."
 msgstr "如果您需要幫助，請聯繫我們的<a href=\"%1\">客服部</a>。"
-
-msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
-msgstr "如果您以前曾經直接從 MetaTrader 網站下載 MetaTrader 5 ，請在可用的經紀商清單選擇「%1」。"
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "如果您選擇「亞洲下跌」期權，<strong>當</strong><strong>最新價格</strong>低於<strong>平均</strong>價格時，您將獲得賠付。"
@@ -4573,9 +4579,6 @@ msgstr "將我們客戶與您的應用程式相連接。"
 msgid "Links"
 msgstr "連結"
 
-msgid "Linux Instructions"
-msgstr "Linux指示"
-
 msgid "Live chat:"
 msgstr "即時聊天："
 
@@ -4584,9 +4587,6 @@ msgstr "鎖定收銀台"
 
 msgid "Log in"
 msgstr "登入"
-
-msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "使用MetaTrader帳號以及MetaTrader帳戶密碼登入應用程式。"
 
 msgid "Log out"
 msgstr "登出"
@@ -5608,9 +5608,6 @@ msgstr "無論您有什麼想法，請傳送郵件至<a href='mailto:%1'>%1</a>�
 msgid "Please enter a number between %1."
 msgstr "請輸入%1之間的數字。"
 
-msgid "Please enter a number between 0 and %1"
-msgstr "請輸入0和%1之間的數字"
-
 msgid "Please enter a number."
 msgstr "請輸入號碼。"
 
@@ -5668,8 +5665,11 @@ msgstr "請選擇"
 msgid "Please select a payment agent"
 msgstr "請選擇付款代理"
 
-msgid "Please select a valid date"
-msgstr "請選擇有效日期"
+msgid "Please select a valid date."
+msgstr "請選擇有效日期。"
+
+msgid "Please select a valid time."
+msgstr "請選擇有效時間。"
 
 msgid "Please select a value"
 msgstr "請選擇一個數值"
@@ -5685,9 +5685,6 @@ msgstr "為證明您的身份及驗證您的帳號，請將以下文件傳送給
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "請指定您的優選實況調查間隔時間分鐘數"
-
-msgid "Please submit a valid %1."
-msgstr "請提交有效的 %1。"
 
 msgid "Please submit a valid verification token."
 msgstr "請提交有效的驗證權杖。"
@@ -6217,9 +6214,6 @@ msgstr "隔夜利息借/貸費 &mdash; 與未平倉頭寸隔夜利息有關的�
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "日常付款報告和涉嫌欺詐報告的運作"
 
-msgid "Run the installation file and follow the instructions."
-msgstr "運行安裝檔案並按照指示操作。"
-
 msgid "Russia"
 msgstr "俄國"
 
@@ -6240,6 +6234,11 @@ msgstr "星期六"
 
 msgid "Scope and Intent"
 msgstr "範圍和目的"
+
+#, fuzzy
+#| msgid "B. Scope"
+msgid "Scopes"
+msgstr "二、範圍"
 
 msgid "Score"
 msgstr "Score"
@@ -6396,6 +6395,9 @@ msgstr "如果您的任何客戶拒付佣金，公司保留從當月應付您的
 
 msgid "Should be a valid number"
 msgstr "必須是有效號碼"
+
+msgid "Should be between %1 and %2"
+msgstr "須在%1 與 %2之間"
 
 msgid "Should be less than %1"
 msgstr "必須大於%1"
@@ -7534,6 +7536,15 @@ msgstr "時間"
 msgid "Time is in the wrong format."
 msgstr "時間格式錯誤。"
 
+msgid "Time out cannot be in the past."
+msgstr "到期時間不可為過去式。"
+
+msgid "Time out cannot be more than 6 weeks."
+msgstr "到期時間不能大於6週。"
+
+msgid "Time out must be after today."
+msgstr "到期時間必須在今日之後。"
+
 msgid "Time out until"
 msgstr "時間已過。下次開啟時間為"
 
@@ -7771,6 +7782,11 @@ msgstr "試試Binary Bot"
 msgid "Try MetaTrader 5"
 msgstr "體驗 MetaTrader 5"
 
+#, fuzzy
+#| msgid "Binary Next-Gen"
+msgid "Try Next-Gen"
+msgstr "Binary 下一代"
+
 msgid "Try TradingView"
 msgstr "體驗TradingView"
 
@@ -7924,6 +7940,9 @@ msgstr "買入/賣出價格的使用：當市場無流動性時，資料源可�
 msgid "Use the opportunity provided by our website to practice for free with our virtual money account facility. This will enable you to get used to the functionalities and rules of the website."
 msgstr "利用我們網站提供的機會，可以免費通過虛擬帳戶進行交易嘗試，同時熟悉本網站的各種功能和規則。"
 
+msgid "Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required."
+msgstr ""
+
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr "使用、執行，並顯示您的應用程式及其內容作為行銷、展示用途，並將您的應用程式提供給我們客戶使用。和    "
 
@@ -8001,6 +8020,9 @@ msgstr "檢視您的交易和取款限額。"
 
 msgid "Virtual Account"
 msgstr "虛擬帳戶"
+
+msgid "Virtual money credit to account"
+msgstr "虛擬資金存入帳戶"
 
 msgid "Volatility Index Markets"
 msgstr "波動率指數市場"
@@ -8299,8 +8321,8 @@ msgstr "當我們與您訂立合約時，我們會採取負責任的行動，遵
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, you won’t have to contend with ‘slippages’ or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time before they expire to protect the profit you may have earned or to minimise your losses."
 msgstr "當您對收到的價格感到滿意時請立刻執行交易。通過我們的獨特平台，您不會遇到滑價或跳空市場。更重要的是，不會有任何隱藏費用。您也可在任何長期合約到期前隨時售出，以保護您的賺取利潤或將虧損降至最低額。"
 
-msgid "When you click \"Ok\" you will be excluded from trading on the site until the selected date."
-msgstr "當您點選「Ok」後，您將被禁止在此網站交易，直到選定期限結束為止。"
+msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
+msgstr "當您點選「OK」後，您將被禁止在此網站交易，直到選定期限結束為止。"
 
 msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
 msgstr "當您獲准成為聯盟會員時，您會立刻收到開始活動所需的資料。"
@@ -8806,9 +8828,6 @@ msgstr "您不可對任何年齡不滿 18 歲者進行市場行銷、廣告和�
 msgid "You should enter %1 characters."
 msgstr "您必須輸入%1個字元。"
 
-msgid "You should enter between %1 characters."
-msgstr "您最多只能輸入 %1 個字元。"
-
 msgid "You should not sign up to receive the margin trading services described in this Agreement unless you understand their nature and the associated risks."
 msgstr "除非您了解本協定所述的保證金交易服務的性質和相關風險， 您不會註冊接受此服務。"
 
@@ -9043,9 +9062,6 @@ msgstr "由於該人士在本網站的活動導致本公司遭受任何金錢、
 msgid "any restriction to its Clients from purchasing any contracts during certain hours."
 msgstr "對客戶在某段時間內買入任何合約的限制。"
 
-msgid "apostrophe"
-msgstr "單引號"
-
 msgid "b) The price at which your order will be executed;"
 msgstr "b）您的訂單執行價格;"
 
@@ -9054,9 +9070,6 @@ msgstr "二元期權、外匯、外匯交易、線上交易、金融交易、二
 
 msgid "c) The time at which your order will be executed; and"
 msgstr "c）您的訂單執行時間;"
-
-msgid "comma"
-msgstr "逗號"
 
 msgid "consolidating liquidity from several providers into a single stream of blended feed; and"
 msgstr "將數個供應商集合成單股混合輸入，以加強流動性; 和"
@@ -9091,9 +9104,6 @@ msgstr "小時"
 msgid "hours"
 msgstr "小時"
 
-msgid "hyphen"
-msgstr "連字號"
-
 msgid "iOS, Android"
 msgstr "iOS、Android"
 
@@ -9114,6 +9124,11 @@ msgstr "字母"
 
 msgid "login"
 msgstr "登入"
+
+#, fuzzy
+#| msgid "Logout"
+msgid "logout"
+msgstr "登出"
 
 msgid "max: 100,000"
 msgstr "最大: 100,000"
@@ -9159,12 +9174,6 @@ msgstr "網站的。"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "所有合約準確結算時間的頁面。其他網站可能會有不同的慣例（比如一些網站採用紐約時間4點或倫敦時間5點）。由於不同的收盤時間慣例，在本網站顯示的開盤、高、低或收盤價可能跟其他網站不一致。"
-
-msgid "password"
-msgstr "密碼"
-
-msgid "period"
-msgstr "週期"
 
 msgid "points"
 msgstr "點"
@@ -10327,6 +10336,506 @@ msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 h
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "{JAPAN ONLY}Summary of Specifications"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_1"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_10"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY},000"
+msgid "{JAPAN ONLY}TIP_100"
+msgstr "{JAPAN ONLY},000"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_11"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_12"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_13"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_14"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_15"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_16"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_17"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_18"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_19"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_2"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_20"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_21"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_22"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_23"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_24"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_25"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_26"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_27"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_28"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_29"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_3"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY},000"
+msgid "{JAPAN ONLY}TIP_30"
+msgstr "{JAPAN ONLY},000"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_31"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_32"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_33"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_34"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_35"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_36"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_37"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_38"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_39"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_4"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY},000"
+msgid "{JAPAN ONLY}TIP_40"
+msgstr "{JAPAN ONLY},000"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_41"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_42"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_43"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_44"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_45"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}7546677"
+msgid "{JAPAN ONLY}TIP_46"
+msgstr "{JAPAN ONLY}7546677"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}7546677"
+msgid "{JAPAN ONLY}TIP_47"
+msgstr "{JAPAN ONLY}7546677"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_48"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_49"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_5"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_50"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_51"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_52"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_53"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_54"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_55"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_56"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_57"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_58"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_59"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_6"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY},000"
+msgid "{JAPAN ONLY}TIP_60"
+msgstr "{JAPAN ONLY},000"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_61"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_62"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_63"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_64"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_65"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}7546677"
+msgid "{JAPAN ONLY}TIP_66"
+msgstr "{JAPAN ONLY}7546677"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}7546677"
+msgid "{JAPAN ONLY}TIP_67"
+msgstr "{JAPAN ONLY}7546677"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_68"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_69"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_7"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY},000"
+msgid "{JAPAN ONLY}TIP_70"
+msgstr "{JAPAN ONLY},000"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_71"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_72"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_73"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}7546677"
+msgid "{JAPAN ONLY}TIP_74"
+msgstr "{JAPAN ONLY}7546677"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_75"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}7546677"
+msgid "{JAPAN ONLY}TIP_76"
+msgstr "{JAPAN ONLY}7546677"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}7546677"
+msgid "{JAPAN ONLY}TIP_77"
+msgstr "{JAPAN ONLY}7546677"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_78"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_79"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_8"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY},000"
+msgid "{JAPAN ONLY}TIP_80"
+msgstr "{JAPAN ONLY},000"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_81"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_82"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_83"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_84"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_85"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_86"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_87"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_88"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_89"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_9"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY},000"
+msgid "{JAPAN ONLY}TIP_90"
+msgstr "{JAPAN ONLY},000"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_91"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_92"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_93"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_94"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_95"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_96"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_97"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_98"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_99"
+msgstr "{JAPAN ONLY}¥"
+
 msgid "{JAPAN ONLY}Take knowledge test"
 msgstr "{JAPAN ONLY}Take knowledge test"
 
@@ -10612,8 +11121,61 @@ msgstr "條款和條件審批"
 msgid "Account Limits"
 msgstr "帳戶限額"
 
-msgid "Account Details"
-msgstr "帳戶詳細資料"
+#~ msgid "Please submit a valid %1."
+#~ msgstr "請提交有效的 %1。"
+
+#~ msgid "You should enter between %1 characters."
+#~ msgstr "您最多只能輸入 %1 個字元。"
+
+#~ msgid "apostrophe"
+#~ msgstr "單引號"
+
+#~ msgid "comma"
+#~ msgstr "逗號"
+
+#~ msgid "hyphen"
+#~ msgstr "連字號"
+
+#~ msgid "password"
+#~ msgstr "密碼"
+
+#~ msgid "period"
+#~ msgstr "週期"
+
+#, fuzzy
+#~| msgid "Affiliate Manager"
+#~ msgid "Affiliates Manager"
+#~ msgstr "聯盟經理"
+
+#~ msgid "30-day turnover limit "
+#~ msgstr "30天期交易限額 "
+
+#~ msgid "Click the button below to download MetaTrader."
+#~ msgstr "點擊以下按鈕下載MetaTrader。"
+
+#~ msgid "Download MetaTrader for Windows"
+#~ msgstr "下載Windows版MetaTrader"
+
+#~ msgid "Download for MacOS"
+#~ msgstr "MacOS版MetaTrader下載"
+
+#~ msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader's website, please select \"%1\" from the list of available brokers."
+#~ msgstr "如果您以前曾經直接從 MetaTrader 網站下載 MetaTrader 5 ，請在可用的經紀商清單選擇「%1」。"
+
+#~ msgid "Linux Instructions"
+#~ msgstr "Linux指示"
+
+#~ msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
+#~ msgstr "使用MetaTrader帳號以及MetaTrader帳戶密碼登入應用程式。"
+
+#~ msgid "Please enter a number between 0 and %1"
+#~ msgstr "請輸入0和%1之間的數字"
+
+#~ msgid "Run the installation file and follow the instructions."
+#~ msgstr "運行安裝檔案並按照指示操作。"
+
+#~ msgid "Account Details"
+#~ msgstr "帳戶詳細資料"
 
 #~ msgid "Please enter a number greater than 0"
 #~ msgstr "請輸入大於0之數字"
@@ -11455,9 +12017,6 @@ msgstr "帳戶詳細資料"
 #~ msgid "ticks"
 #~ msgstr "跳動點"
 
-#~ msgid "{JAPAN ONLY},000"
-#~ msgstr "{JAPAN ONLY},000"
-
 #~ msgid "{JAPAN ONLY}END-IN/END-OUT"
 #~ msgstr "{JAPAN ONLY}END-IN/END-OUT"
 
@@ -11497,17 +12056,11 @@ msgstr "帳戶詳細資料"
 #~ msgid "{JAPAN ONLY}Trading Period"
 #~ msgstr "{JAPAN ONLY}Trading Guide"
 
-#~ msgid "{JAPAN ONLY}¥"
-#~ msgstr "{JAPAN ONLY}¥"
-
 #~ msgid "Benefits of Binary Trading"
 #~ msgstr "二元期權交易的優點"
 
 #~ msgid "Your details have been updated."
 #~ msgstr "您的個人資訊已成功更新。"
-
-#~ msgid "Logout"
-#~ msgstr "登出"
 
 #~ msgid "not available"
 #~ msgstr "不可使用"
@@ -11595,9 +12148,6 @@ msgstr "帳戶詳細資料"
 
 #~ msgid "Select Country"
 #~ msgstr "選擇國家"
-
-#~ msgid "Virtual money credit to account"
-#~ msgstr "虛擬資金存入帳戶"
 
 #~ msgid "Learn more about how we think and how we work. Read <a href='https://blog.binary.com/' target='_blank'>our blog</a> for the stories and ideas that inspire us."
 #~ msgstr "了解更多關於我們的想法和運作方式詳情。參閱<a href='https://blog.binary.com/' target='_blank'>我們的部落格</a>，以便了解我們的概念來源和背景故事。"
@@ -12158,9 +12708,6 @@ msgstr "帳戶詳細資料"
 #~ msgid "(delayed)"
 #~ msgstr "（延時）"
 
-#~ msgid "30-day turnover limit"
-#~ msgstr "30天期交易限額"
-
 #~ msgid "7-Day limit on losses is currently set to <strong>%1 %2</strong>"
 #~ msgstr "7天期損失限額目前設定為<strong>%1 %2</strong>"
 
@@ -12664,9 +13211,6 @@ msgstr "帳戶詳細資料"
 
 #~ msgid "Expiry time cannot be equal to start time."
 #~ msgstr "到期時間不可與開始時間相同。"
-
-#~ msgid "Expiry time cannot be in the past."
-#~ msgstr "到期時間不可為過去式。"
 
 #~ msgid "Exponential Moving Average"
 #~ msgstr "指數移動平均線"
@@ -16871,9 +17415,6 @@ msgstr "帳戶詳細資料"
 
 #~ msgid " has been credited to your Virtual money account"
 #~ msgstr " 已記入您的虛擬資金帳戶"
-
-#~ msgid "Stake must be between %1 and %2."
-#~ msgstr "投注須在%1 與 %2之間。"
 
 #~ msgid "Trades on Forex with duration less than 2 minutes are temporarily disabled until %1"
 #~ msgstr "直到 %1 為止，持續時間少於2分鐘的外匯交易暫時停止"

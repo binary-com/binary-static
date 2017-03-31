@@ -3,11 +3,10 @@ const MarketTimes            = require('../market_timesws');
 const State                  = require('../../../base/storage').State;
 const showLoadingImage       = require('../../../base/utility').showLoadingImage;
 const localize               = require('../../../base/localize').localize;
-const Table                  = require('../../../common_functions/attach_dom/table').Table;
+const Table                  = require('../../../common_functions/attach_dom/table');
 const dateValueChanged       = require('../../../common_functions/common_functions').dateValueChanged;
 const jqueryuiTabsToDropdown = require('../../../common_functions/common_functions').jqueryuiTabsToDropdown;
-const Content                = require('../../../common_functions/content').Content;
-const japanese_client        = require('../../../common_functions/country_base').japanese_client;
+const jpClient               = require('../../../common_functions/country_base').jpClient;
 const toISOFormat            = require('../../../common_functions/string_util').toISOFormat;
 const toReadableFormat       = require('../../../common_functions/string_util').toReadableFormat;
 const DatePicker             = require('../../../components/date_picker').DatePicker;
@@ -30,7 +29,6 @@ const MarketTimesUI = (() => {
 
         if ($container.contents().length) return;
 
-        Content.populate();
         showLoadingImage($container);
 
         is_framed = (config && config.framed);
@@ -65,7 +63,7 @@ const MarketTimesUI = (() => {
 
         $('#errorMsg').addClass('hidden');
 
-        const is_japan_trading = japanese_client();
+        const is_japan_trading = jpClient();
 
         const markets = trading_times.markets;
 
@@ -190,7 +188,7 @@ const MarketTimesUI = (() => {
         if (State.get('is_beta_trading')) return;
 
         const req = { active_symbols: 'brief' };
-        if (japanese_client()) {
+        if (jpClient()) {
             req.landing_company = 'japan';
         }
         if (should_request_active_symbols) {
