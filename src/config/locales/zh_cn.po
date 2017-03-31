@@ -5692,9 +5692,6 @@ msgstr "为证明您的身份和验证您的账号，请将以下文件发送给
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "请指定您的优选实况调查间隔时间分钟数"
 
-msgid "Please submit a valid %1."
-msgstr "请提交有效的 %1。"
-
 msgid "Please submit a valid verification token."
 msgstr "请提交有效的验证令牌。"
 
@@ -8843,9 +8840,6 @@ msgstr "您不可对任何年龄不满 18 岁者进行市场营销、广告和�
 msgid "You should enter %1 characters."
 msgstr "您必须输入%1个字符。"
 
-msgid "You should enter between %1 characters."
-msgstr "您最多只能输入 %1  个字符。"
-
 msgid "You should not sign up to receive the margin trading services described in this Agreement unless you understand their nature and the associated risks."
 msgstr "除非您了解本协议所述的保证金交易服务的性质和相关风险， 您不会注册接受此服务。"
 
@@ -9080,9 +9074,6 @@ msgstr "由于此人在本网站的活动，导致本公司遭受任何金钱、
 msgid "any restriction to its Clients from purchasing any contracts during certain hours."
 msgstr "对客户在特定时段买入合约的限制。"
 
-msgid "apostrophe"
-msgstr "撇号"
-
 msgid "b) The price at which your order will be executed;"
 msgstr "b）您的订单执行价格;"
 
@@ -9091,9 +9082,6 @@ msgstr "二元期权、外汇、外汇交易、在线交易、金融交易、二
 
 msgid "c) The time at which your order will be executed; and"
 msgstr "c) 您的订单执行时间;"
-
-msgid "comma"
-msgstr "逗号"
 
 msgid "consolidating liquidity from several providers into a single stream of blended feed; and"
 msgstr "将数个供应商集合成单股混合输入，以加强流动性; 和"
@@ -9127,9 +9115,6 @@ msgstr "小时"
 
 msgid "hours"
 msgstr "小时"
-
-msgid "hyphen"
-msgstr "连字符"
 
 msgid "iOS, Android"
 msgstr "iOS、Android"
@@ -9202,12 +9187,6 @@ msgstr "网站的。"
 # 交易 = Trades
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "包含所有合约精确结算时间的页面。其他网站可能有不同的惯例（比如一些网站采用纽约时间4点或伦敦时间5点），因此，本网站上显示的开盘、高、低或收盘价可能与其他网站不一致。"
-
-msgid "password"
-msgstr "密码"
-
-msgid "period"
-msgstr "周期"
 
 msgid "points"
 msgstr "点"
@@ -10370,6 +10349,506 @@ msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 h
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "{JAPAN ONLY}Summary of Specifications"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_1"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_10"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY},000"
+msgid "{JAPAN ONLY}TIP_100"
+msgstr "{JAPAN ONLY},000"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_11"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_12"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_13"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_14"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_15"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_16"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_17"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_18"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_19"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_2"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_20"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_21"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_22"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_23"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_24"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_25"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_26"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_27"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_28"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_29"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_3"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY},000"
+msgid "{JAPAN ONLY}TIP_30"
+msgstr "{JAPAN ONLY},000"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_31"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_32"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_33"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_34"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_35"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_36"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_37"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_38"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_39"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_4"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY},000"
+msgid "{JAPAN ONLY}TIP_40"
+msgstr "{JAPAN ONLY},000"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_41"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_42"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_43"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_44"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_45"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}7546677"
+msgid "{JAPAN ONLY}TIP_46"
+msgstr "{JAPAN ONLY}7546677"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}7546677"
+msgid "{JAPAN ONLY}TIP_47"
+msgstr "{JAPAN ONLY}7546677"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_48"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_49"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_5"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_50"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_51"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_52"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_53"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_54"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_55"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_56"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_57"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_58"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_59"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_6"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY},000"
+msgid "{JAPAN ONLY}TIP_60"
+msgstr "{JAPAN ONLY},000"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_61"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_62"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_63"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_64"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_65"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}7546677"
+msgid "{JAPAN ONLY}TIP_66"
+msgstr "{JAPAN ONLY}7546677"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}7546677"
+msgid "{JAPAN ONLY}TIP_67"
+msgstr "{JAPAN ONLY}7546677"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_68"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_69"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_7"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY},000"
+msgid "{JAPAN ONLY}TIP_70"
+msgstr "{JAPAN ONLY},000"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_71"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_72"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_73"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}7546677"
+msgid "{JAPAN ONLY}TIP_74"
+msgstr "{JAPAN ONLY}7546677"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_75"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}7546677"
+msgid "{JAPAN ONLY}TIP_76"
+msgstr "{JAPAN ONLY}7546677"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}7546677"
+msgid "{JAPAN ONLY}TIP_77"
+msgstr "{JAPAN ONLY}7546677"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_78"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_79"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_8"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY},000"
+msgid "{JAPAN ONLY}TIP_80"
+msgstr "{JAPAN ONLY},000"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_81"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_82"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_83"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_84"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_85"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_86"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_87"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_88"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_89"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_9"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY},000"
+msgid "{JAPAN ONLY}TIP_90"
+msgstr "{JAPAN ONLY},000"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_91"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_92"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_93"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_94"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}251"
+msgid "{JAPAN ONLY}TIP_95"
+msgstr "{JAPAN ONLY}251"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_96"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_97"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_98"
+msgstr "{JAPAN ONLY}¥"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}¥"
+msgid "{JAPAN ONLY}TIP_99"
+msgstr "{JAPAN ONLY}¥"
+
 msgid "{JAPAN ONLY}Take knowledge test"
 msgstr "{JAPAN ONLY}Take knowledge test"
 
@@ -10654,6 +11133,27 @@ msgstr "条款和条件审批"
 
 msgid "Account Limits"
 msgstr "账户限额"
+
+#~ msgid "Please submit a valid %1."
+#~ msgstr "请提交有效的 %1。"
+
+#~ msgid "You should enter between %1 characters."
+#~ msgstr "您最多只能输入 %1  个字符。"
+
+#~ msgid "apostrophe"
+#~ msgstr "撇号"
+
+#~ msgid "comma"
+#~ msgstr "逗号"
+
+#~ msgid "hyphen"
+#~ msgstr "连字符"
+
+#~ msgid "password"
+#~ msgstr "密码"
+
+#~ msgid "period"
+#~ msgstr "周期"
 
 #, fuzzy
 #~| msgid "Affiliate Manager"
@@ -11539,9 +12039,6 @@ msgstr "账户限额"
 #~ msgid "ticks"
 #~ msgstr "跳动点"
 
-#~ msgid "{JAPAN ONLY},000"
-#~ msgstr "{JAPAN ONLY},000"
-
 #~ msgid "{JAPAN ONLY}END-IN/END-OUT"
 #~ msgstr "{JAPAN ONLY}END-IN/END-OUT"
 
@@ -11580,9 +12077,6 @@ msgstr "账户限额"
 
 #~ msgid "{JAPAN ONLY}Trading Period"
 #~ msgstr "{JAPAN ONLY}Trading Period"
-
-#~ msgid "{JAPAN ONLY}¥"
-#~ msgstr "{JAPAN ONLY}¥"
 
 #~ msgid "Benefits of Binary Trading"
 #~ msgstr "二元交易的优点"

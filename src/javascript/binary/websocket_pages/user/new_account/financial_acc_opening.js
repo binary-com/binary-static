@@ -2,7 +2,7 @@ const BinaryPjax         = require('../../../base/binary_pjax');
 const Client             = require('../../../base/client');
 const State              = require('../../../base/storage').State;
 const defaultRedirectUrl = require('../../../base/url').defaultRedirectUrl;
-const objectNotEmpty     = require('../../../base/utility').objectNotEmpty;
+const isEmptyObject      = require('../../../base/utility').isEmptyObject;
 const AccountOpening     = require('../../../common_functions/account_opening');
 const FormManager        = require('../../../common_functions/form_manager');
 const toISOFormat        = require('../../../common_functions/string_util').toISOFormat;
@@ -37,7 +37,7 @@ const FinancialAccOpening = (function() {
         AccountOpening.populateForm(formID, getValidations);
 
         BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
-            if (objectNotEmpty(response.get_financial_assessment)) {
+            if (!isEmptyObject(response.get_financial_assessment)) {
                 const keys = Object.keys(response.get_financial_assessment);
                 keys.forEach(function(key) {
                     const val = response.get_financial_assessment[key];
@@ -58,10 +58,8 @@ const FinancialAccOpening = (function() {
                     value = moment_val.format('DD MMM, YYYY');
                     $element.attr('data-value', toISOFormat(moment_val));
                     $('.input-disabled').attr('disabled', 'disabled');
-                } else if (key === 'tax_residence' && value) {
-                    value = value.split(',');
                 }
-                if (value) $element.val(value).trigger('change');
+                if (value) $element.val(value);
             });
         });
 

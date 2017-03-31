@@ -1,5 +1,6 @@
-const moment   = require('moment');
-const localize = require('../../binary/base/localize').localize;
+const moment       = require('moment');
+const localize     = require('../../binary/base/localize').localize;
+const urlForStatic = require('../../binary/base/url').urlForStatic;
 
 const KnowledgeTestUI = (() => {
     'use strict';
@@ -41,8 +42,13 @@ const KnowledgeTestUI = (() => {
     const createQuestionRow = (question_no, question, show_answer) => {
         const $question_row = $('<tr></tr>', { id: question_no, class: 'question' });
         const $question_data = $('<td></td>').text(localize(question.question_localized));
-        const $question_link = $('<a></a>', { name: question.id });
-        $question_data.prepend($question_link);
+        const $question_link = $('<a></a>', {
+            name : question.id,
+            class: 'no-underline',
+            // 'data-balloon': question.tooltip,
+        });
+        const $question_icon = $('<img>', { src: urlForStatic('/images/common/question_1.png'), class: 'invisible' });
+        $question_data.append($question_link.append($question_icon));
 
         const true_false = createTrueFalseBox(question, show_answer);
 

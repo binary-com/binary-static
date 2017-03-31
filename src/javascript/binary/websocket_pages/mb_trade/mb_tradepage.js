@@ -8,6 +8,7 @@ const MBProcess            = require('./mb_process').MBProcess;
 const MBSymbols            = require('./mb_symbols').MBSymbols;
 const TradingAnalysis      = require('../trade/analysis').TradingAnalysis;
 const chartFrameCleanup    = require('../trade/common').chartFrameCleanup;
+const Client               = require('../../base/client');
 const localize             = require('../../base/localize').localize;
 const State                = require('../../base/storage').State;
 const JapanPortfolio       = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
@@ -18,7 +19,7 @@ const MBTradePage = (function() {
 
     const onLoad = function() {
         State.set('is_mb_trading', true);
-        if (sessionStorage.getItem('currencies')) {
+        if (Client.get('currencies')) {
             MBDisplayCurrencies('', false);
         }
         BinarySocket.init({
@@ -35,7 +36,7 @@ const MBTradePage = (function() {
             MBTradingEvents.init();
         }
 
-        if (sessionStorage.getItem('currencies')) {
+        if (Client.get('currencies')) {
             MBDisplayCurrencies('', false);
             MBSymbols.getSymbols(1);
         } else {

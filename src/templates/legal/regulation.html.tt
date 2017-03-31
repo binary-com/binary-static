@@ -70,7 +70,7 @@
                             <area shape="rect" coords="34.50,505.59,147.99,537.30" href="[% request.url_for('download/regulation/Italy.pdf') %]" alt="Italy" target="_blank">
                             <area shape="rect" coords="292.95,556.05,438.12,587.76" href="[% request.url_for('download/regulation/Austria.pdf') %]" alt="Austria" target="_blank">
                             <area shape="rect" coords="498.57,665.88,643.74,697.59" href="[% request.url_for('download/regulation/Slovenia.pdf') %]" alt="Slovenia" target="_blank">
-                            <area shape="rect" coords="532.14,629.79,677.31,661.50" href="http://www.hanfa.hr/EN/nav/232/notifications-from-eu-member-states---tk.html" alt="Croatia" target="_blank">
+                            <area shape="rect" coords="532.14,629.79,677.31,661.50" href="http://www.hanfa.hr/capital-market/registers/notifications-from-eu-member-states" alt="Croatia" target="_blank">
                             <area shape="rect" coords="754.83,540.21,900.00,571.92" href="[% request.url_for('download/regulation/Greece.pdf') %]" alt="Greece" target="_blank">
                             <area shape="rect" coords="754.83,419.19,900.00,450.90" href="[% request.url_for('download/regulation/Romania.pdf') %]" alt="Romania" target="_blank">
                             <area shape="rect" coords="754.83,369.57,900.00,401.28" href="[% request.url_for('download/regulation/Slovakia.pdf') %]" alt="Slovakia" target="_blank">
