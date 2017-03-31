@@ -8,7 +8,7 @@ const Highcharts           = require('highcharts');
 require('highcharts/modules/exporting')(Highcharts);
 const elementInnerHtml     = require('../../common_functions/common_functions').elementInnerHtml;
 
-const TickDisplay = (function() {
+const TickDisplayClass = (function() {
     return {
         initialize: function(data) {
             const $self = this;
@@ -259,24 +259,24 @@ const TickDisplay = (function() {
     };
 })();
 
-const WSTickDisplay = Object.create(TickDisplay);
-WSTickDisplay.plot = function() {
+const TickDisplay = Object.create(TickDisplayClass);
+TickDisplay.plot = function() {
     const $self = this;
     $self.contract_start_moment = moment($self.contract_start_ms).utc();
     $self.counter = 0;
     $self.applicable_ticks = [];
 };
-WSTickDisplay.update_ui = function(final_price, pnl, contract_status) {
+TickDisplay.update_ui = function(final_price, pnl, contract_status) {
     updatePurchaseStatus(final_price, final_price - pnl, contract_status);
 };
-WSTickDisplay.socketSend = function(req) {
+TickDisplay.socketSend = function(req) {
     if (!req.hasOwnProperty('passthrough')) {
         req.passthrough = {};
     }
-    req.passthrough.dispatch_to = 'ViewTickDisplayWS';
+    req.passthrough.dispatch_to = 'ViewTickDisplay';
     BinarySocket.send(req);
 };
-WSTickDisplay.dispatch = function(data) {
+TickDisplay.dispatch = function(data) {
     const $self = this;
     const chart = document.getElementById('tick_chart');
 
@@ -285,7 +285,7 @@ WSTickDisplay.dispatch = function(data) {
     }
 
     if (window.subscribe && data.tick && document.getElementById('sell_content_wrapper')) {
-        if (data.echo_req.hasOwnProperty('passthrough') && data.echo_req.passthrough.dispatch_to === 'ViewChartWS') return;
+        if (data.echo_req.hasOwnProperty('passthrough') && data.echo_req.passthrough.dispatch_to === 'ViewChart') return;
         window.responseID = data.tick.id;
         ViewPopupUI.storeSubscriptionID(window.responseID);
     }
@@ -305,7 +305,7 @@ WSTickDisplay.dispatch = function(data) {
             }
         }
         if (!window.tick_init || window.tick_init === '') {
-            WSTickDisplay.initialize({
+            TickDisplay.initialize({
                 symbol              : window.tick_underlying,
                 number_of_ticks     : window.tick_count,
                 contract_category   : ((/asian/i).test(window.tick_shortcode) ? 'asian' : (/digit/i).test(window.tick_shortcode) ? 'digits' : 'callput'),
@@ -316,7 +316,7 @@ WSTickDisplay.dispatch = function(data) {
                 display_decimals    : display_decimals,
                 show_contract_result: 0,
             });
-            WSTickDisplay.spots_list = {};
+            TickDisplay.spots_list = {};
             window.tick_init = 'initialized';
         }
     }
@@ -368,7 +368,7 @@ WSTickDisplay.dispatch = function(data) {
         }
     }
 };
-WSTickDisplay.updateChart = function(data, contract) {
+TickDisplay.updateChart = function(data, contract) {
     window.subscribe = 'false';
     if (contract) {
         window.tick_underlying = contract.underlying;
@@ -390,12 +390,10 @@ WSTickDisplay.updateChart = function(data, contract) {
         } else {
             request.end = contract.date_expiry;
         }
-        WSTickDisplay.socketSend(request);
+        TickDisplay.socketSend(request);
     } else {
-        WSTickDisplay.dispatch(data);
+        TickDisplay.dispatch(data);
     }
 };
 
-module.exports = {
-    WSTickDisplay: WSTickDisplay,
-};
+module.exports = TickDisplay;

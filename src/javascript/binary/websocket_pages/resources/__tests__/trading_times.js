@@ -1,4 +1,4 @@
-const market_times = require('../market_timesws');
+const trading_times = require('../trading_times');
 const { api, expect } = require('../../../common_functions/tests');
 
 describe('Trading Times', function() {
@@ -17,7 +17,7 @@ describe('Trading Times', function() {
     });
 
     it('Should have all functions that are being tested', function() {
-        expect(market_times).to.have.all.of.keys(['getSubmarketInfo', 'getSymbolInfo']);
+        expect(trading_times).to.have.all.of.keys(['getSubmarketInfo', 'getSymbolInfo']);
     });
 
     it('Should trading_times and getSubmarketInfo() have all expected data', function() {
@@ -38,7 +38,7 @@ describe('Trading Times', function() {
                 expect(submarket).to.have.property('symbols')
                     .that.is.an('array');
 
-                const submarket_info = market_times.getSubmarketInfo(active_symbols_res, submarket.name);
+                const submarket_info = trading_times.getSubmarketInfo(active_symbols_res, submarket.name);
                 expect(submarket_info).to.be.an('array');
                 submarket_info.forEach(function(info) {
                     expect(info).to.be.an('object')
