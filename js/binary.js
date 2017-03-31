@@ -46,7 +46,6 @@
 
 	'use strict';
 	
-	// TODO: to be remove after webpack finalized
 	var exportAllFunctions = function exportAllFunctions(obj) {
 	    Object.keys(obj).forEach(function (key) {
 	        window[key] = obj[key];
@@ -58,21 +57,21 @@
 	__webpack_require__(2);
 	__webpack_require__(299);
 	
-	// needs refactoring
+	// TODO: refactor and remove global status of socket
 	exportAllFunctions(__webpack_require__(301));
 	
 	// created for handling global onclick
-	exportAllFunctions(__webpack_require__(518));
+	exportAllFunctions(__webpack_require__(512));
 	// used by gtm to update page after a new release
-	exportAllFunctions(__webpack_require__(520));
+	exportAllFunctions(__webpack_require__(514));
 	
-	__webpack_require__(521);
-	__webpack_require__(522);
-	__webpack_require__(523);
+	__webpack_require__(515);
+	__webpack_require__(516);
+	__webpack_require__(517);
 	
-	__webpack_require__(524);
+	__webpack_require__(518);
 	
-	var BinaryLoader = __webpack_require__(525);
+	var BinaryLoader = __webpack_require__(519);
 	
 	$(window).on('load', BinaryLoader.init);
 
@@ -18356,24 +18355,24 @@
 	
 	var MBTradePage = __webpack_require__(302);
 	var TradePage_Beta = __webpack_require__(476);
-	var Highchart = __webpack_require__(451).Highchart;
+	var Highchart = __webpack_require__(451);
 	var reloadPage = __webpack_require__(457).reloadPage;
 	var Notifications = __webpack_require__(459).Notifications;
-	var WSTickDisplay = __webpack_require__(454).WSTickDisplay;
-	var TradePage = __webpack_require__(508);
-	var ViewPopupWS = __webpack_require__(449);
-	var ViewBalanceUI = __webpack_require__(511).ViewBalanceUI;
+	var TickDisplay = __webpack_require__(454);
+	var TradePage = __webpack_require__(502);
+	var ViewPopup = __webpack_require__(449);
+	var ViewBalanceUI = __webpack_require__(505).ViewBalanceUI;
 	var Client = __webpack_require__(427);
 	var Clock = __webpack_require__(448);
 	var GTM = __webpack_require__(473);
-	var Header = __webpack_require__(512);
+	var Header = __webpack_require__(506);
 	var getLanguage = __webpack_require__(421).get;
 	var localize = __webpack_require__(430).localize;
 	var Login = __webpack_require__(474);
 	var State = __webpack_require__(422).State;
 	var getPropertyValue = __webpack_require__(417).getPropertyValue;
 	var getLoginToken = __webpack_require__(428).getLoginToken;
-	var SessionDurationLimit = __webpack_require__(517);
+	var SessionDurationLimit = __webpack_require__(511);
 	var getAppId = __webpack_require__(475).getAppId;
 	var getSocketURL = __webpack_require__(475).getSocketURL;
 	var Cookies = __webpack_require__(423);
@@ -18602,12 +18601,12 @@
 	                        delete timeouts[this_req_number];
 	                    } else {
 	                        switch (dispatch_to) {
-	                            case 'ViewPopupWS':
-	                                ViewPopupWS.dispatch(response);break;
-	                            case 'ViewChartWS':
+	                            case 'ViewPopup':
+	                                ViewPopup.dispatch(response);break;
+	                            case 'ViewChart':
 	                                Highchart.dispatch(response);break;
-	                            case 'ViewTickDisplayWS':
-	                                WSTickDisplay.dispatch(response);break;
+	                            case 'ViewTickDisplay':
+	                                TickDisplay.dispatch(response);break;
 	                            // no default
 	                        }
 	                    }
@@ -18800,9 +18799,6 @@
 	
 	    var onLoad = function onLoad() {
 	        State.set('is_mb_trading', true);
-	        if (Client.get('currencies')) {
-	            MBDisplayCurrencies('', false);
-	        }
 	        BinarySocket.init({
 	            onmessage: function onmessage(msg) {
 	                MBMessage.process(msg);
@@ -18821,7 +18817,11 @@
 	            MBDisplayCurrencies('', false);
 	            MBSymbols.getSymbols(1);
 	        } else {
-	            BinarySocket.send({ payout_currencies: 1 });
+	            BinarySocket.send({ payout_currencies: 1 }).then(function (response) {
+	                Client.set('currencies', response.payout_currencies.join(','));
+	                MBDisplayCurrencies('', false);
+	                MBSymbols.getSymbols(1);
+	            });
 	        }
 	
 	        TradingAnalysis.bindAnalysisTabEvent();
@@ -18879,7 +18879,7 @@
 	var Client = __webpack_require__(427);
 	var getLanguage = __webpack_require__(421).get;
 	var localize = __webpack_require__(430).localize;
-	var objectNotEmpty = __webpack_require__(417).objectNotEmpty;
+	var isEmptyObject = __webpack_require__(417).isEmptyObject;
 	var elementInnerHtml = __webpack_require__(428).elementInnerHtml;
 	var jpClient = __webpack_require__(425).jpClient;
 	var formatCurrency = __webpack_require__(432).formatCurrency;
@@ -18973,7 +18973,7 @@
 	    };
 	
 	    var populatePeriods = function populatePeriods(rebuild) {
-	        if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return;
+	        if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
 	        var trading_period = void 0,
 	            start_end = void 0;
 	        var trading_period_array = [],
@@ -19089,7 +19089,7 @@
 	    };
 	
 	    var populateOptions = function populateOptions(rebuild) {
-	        if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return;
+	        if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
 	        var category = void 0;
 	        var contracts_array = [],
 	            available_contracts = contracts_for_response.contracts_for.available,
@@ -19129,7 +19129,7 @@
 	    };
 	
 	    var getCurrentContracts = function getCurrentContracts() {
-	        if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return [];
+	        if (!contracts_for_response || isEmptyObject(contracts_for_response)) return [];
 	        var contracts = [],
 	            category = MBDefaults.get('category'),
 	            periods = MBDefaults.get('period').split('_');
@@ -34168,7 +34168,7 @@
 
 	'use strict';
 	
-	var objectNotEmpty = __webpack_require__(417).objectNotEmpty;
+	var isEmptyObject = __webpack_require__(417).isEmptyObject;
 	
 	/*
 	 * Handles trading page default values
@@ -34189,7 +34189,7 @@
 	    };
 	
 	    var loadParams = function loadParams() {
-	        if (!objectNotEmpty(params)) params = JSON.parse(localStorage.getItem('mb_trading')) || {};
+	        if (isEmptyObject(params)) params = JSON.parse(localStorage.getItem('mb_trading')) || {};
 	    };
 	
 	    var saveParams = function saveParams() {
@@ -34303,23 +34303,23 @@
 	    });
 	};
 	
-	var objectNotEmpty = function objectNotEmpty(obj) {
+	var isEmptyObject = function isEmptyObject(obj) {
 	    var isEmpty = true;
 	    if (obj && obj instanceof Object) {
 	        Object.keys(obj).forEach(function (key) {
 	            if (obj.hasOwnProperty(key)) isEmpty = false;
 	        });
 	    }
-	    return !isEmpty;
+	    return isEmpty;
 	};
 	
 	var cloneObject = function cloneObject(obj) {
-	    return objectNotEmpty(obj) ? $.extend({}, obj) : obj;
+	    return !isEmptyObject(obj) ? $.extend({}, obj) : obj;
 	};
 	
 	var getPropertyValue = function getPropertyValue(obj, keys) {
 	    if (!Array.isArray(keys)) keys = [keys];
-	    if (objectNotEmpty(obj) && keys[0] in obj && keys && keys.length > 1) {
+	    if (!isEmptyObject(obj) && keys[0] in obj && keys && keys.length > 1) {
 	        return getPropertyValue(obj[keys[0]], keys.slice(1));
 	    }
 	    // else return clone of object to avoid overwriting data
@@ -34338,7 +34338,7 @@
 	    getHighestZIndex: getHighestZIndex,
 	    downloadCSV: downloadCSV,
 	    template: template,
-	    objectNotEmpty: objectNotEmpty,
+	    isEmptyObject: isEmptyObject,
 	    getPropertyValue: getPropertyValue,
 	    handleHash: handleHash
 	};
@@ -34447,7 +34447,7 @@
 
 	'use strict';
 	
-	var objectNotEmpty = __webpack_require__(417).objectNotEmpty;
+	var isEmptyObject = __webpack_require__(417).isEmptyObject;
 	
 	var ActiveSymbols = function () {
 	    'use strict';
@@ -34476,7 +34476,7 @@
 	        submarkets: {},
 	        symbols: {},
 	        getMarkets: function getMarkets(symbols) {
-	            if (objectNotEmpty(this.markets)) {
+	            if (!isEmptyObject(this.markets)) {
 	                return clone(this.markets);
 	            }
 	
@@ -34500,7 +34500,7 @@
 	            this.submarkets = {};
 	        },
 	        getSubmarketsForMarket: function getSubmarketsForMarket(symbols, market) {
-	            if (objectNotEmpty(market.submarkets)) {
+	            if (!isEmptyObject(market.submarkets)) {
 	                return clone(market.submarkets);
 	            }
 	            market.submarkets = {};
@@ -34519,7 +34519,7 @@
 	            return clone(market.submarkets);
 	        },
 	        getSymbolsForSubmarket: function getSymbolsForSubmarket(symbols, submarket) {
-	            if (!objectNotEmpty(submarket.symbols)) {
+	            if (isEmptyObject(submarket.symbols)) {
 	                submarket.symbols = {};
 	                symbols.forEach(function (symbol) {
 	                    submarket.symbols[symbol.symbol] = {
@@ -34537,7 +34537,7 @@
 	        getSubmarkets: function getSubmarkets(active_symbols) {
 	            var _this = this;
 	
-	            if (!objectNotEmpty(this.submarkets)) {
+	            if (isEmptyObject(this.submarkets)) {
 	                (function () {
 	                    var markets = _this.getMarkets(active_symbols);
 	                    var that = _this;
@@ -34553,7 +34553,7 @@
 	        getSymbols: function getSymbols(active_symbols) {
 	            var _this2 = this;
 	
-	            if (!objectNotEmpty(this.symbols)) {
+	            if (isEmptyObject(this.symbols)) {
 	                (function () {
 	                    var submarkets = _this2.getSubmarkets(active_symbols);
 	                    var that = _this2;
@@ -34881,7 +34881,7 @@
 	'use strict';
 	
 	var getPropertyValue = __webpack_require__(417).getPropertyValue;
-	var objectNotEmpty = __webpack_require__(417).objectNotEmpty;
+	var isEmptyObject = __webpack_require__(417).isEmptyObject;
 	var Cookies = __webpack_require__(423);
 	
 	var isStorageSupported = function isStorageSupported(storage) {
@@ -34933,7 +34933,7 @@
 	
 	        if (!Array.isArray(key)) key = [key];
 	        if (key.length > 1) {
-	            if (!(key[0] in obj) || !objectNotEmpty(obj[key[0]])) obj[key[0]] = {};
+	            if (!(key[0] in obj) || isEmptyObject(obj[key[0]])) obj[key[0]] = {};
 	            this.set(key.slice(1), value, obj[key[0]]);
 	        } else {
 	            obj[key[0]] = value;
@@ -36775,7 +36775,7 @@
 	var MBContract = __webpack_require__(303).MBContract;
 	var MBDefaults = __webpack_require__(416).MBDefaults;
 	var MBNotifications = __webpack_require__(436).MBNotifications;
-	var objectNotEmpty = __webpack_require__(417).objectNotEmpty;
+	var isEmptyObject = __webpack_require__(417).isEmptyObject;
 	var getPropertyValue = __webpack_require__(417).getPropertyValue;
 	var localize = __webpack_require__(430).localize;
 	var Client = __webpack_require__(427);
@@ -36825,13 +36825,13 @@
 	        var contract_type = response.echo_req.contract_type;
 	        var prev_proposal = $.extend({}, prices[barrier][contract_type]);
 	
-	        if (!objectNotEmpty(prev_proposal)) {
+	        if (isEmptyObject(prev_proposal)) {
 	            res_count++;
 	        }
 	
 	        prices[barrier][contract_type] = response;
 	        // update previous ask_price to use in price movement
-	        if (objectNotEmpty(prev_proposal) && !prev_proposal.error) {
+	        if (!isEmptyObject(prev_proposal) && !prev_proposal.error) {
 	            prices[barrier][contract_type].prev_price = prev_proposal.proposal.ask_price;
 	        }
 	
@@ -37196,7 +37196,7 @@
 
 	'use strict';
 	
-	var DigitInfoWS = __webpack_require__(441).DigitInfoWS;
+	var DigitInfo = __webpack_require__(441);
 	var JapanPortfolio = __webpack_require__(445).JapanPortfolio;
 	var State = __webpack_require__(422).State;
 	var getLanguage = __webpack_require__(421).get;
@@ -37218,7 +37218,7 @@
 	 */
 	
 	var TradingAnalysis = function () {
-	    var trading_digit_info = new DigitInfoWS();
+	    var trading_digit_info = new DigitInfo();
 	
 	    var requestTradeAnalysis = function requestTradeAnalysis() {
 	        var formName = State.get('is_mb_trading') ? $('#category').val() : $('#contract_form_name_nav').find('.a-active').attr('id');
@@ -37445,7 +37445,7 @@
 	
 	__webpack_require__(444)(Highcharts);
 	
-	var DigitInfoWS = function DigitInfoWS() {
+	var DigitInfo = function DigitInfo() {
 	    this.chart_config = {
 	        chart: {
 	            renderTo: 'last_digit_histo',
@@ -37532,7 +37532,7 @@
 	    this.prev_max_index = -1;
 	};
 	
-	DigitInfoWS.prototype = {
+	DigitInfo.prototype = {
 	    add_content: function add_content(underlying) {
 	        var domain = document.domain.split('.').slice(-2).join('.');
 	        var underlyings = [];
@@ -37696,9 +37696,7 @@
 	    }
 	};
 	
-	module.exports = {
-	    DigitInfoWS: DigitInfoWS
-	};
+	module.exports = DigitInfo;
 
 /***/ },
 /* 442 */
@@ -38203,7 +38201,7 @@
 	
 	var State = __webpack_require__(422).State;
 	var Client = __webpack_require__(427);
-	var PortfolioWS = __webpack_require__(446);
+	var PortfolioInit = __webpack_require__(446);
 	
 	var JapanPortfolio = function () {
 	    var $portfolio = void 0,
@@ -38225,7 +38223,7 @@
 	
 	    function show() {
 	        if (isTradePage() && !isPortfolioActive) {
-	            PortfolioWS.onLoad();
+	            PortfolioInit.onLoad();
 	            isPortfolioActive = true;
 	        }
 	    }
@@ -38236,7 +38234,7 @@
 	
 	    function hide() {
 	        if (isTradePage() && isPortfolioActive) {
-	            PortfolioWS.onUnload();
+	            PortfolioInit.onUnload();
 	            isPortfolioActive = false;
 	            $portfolio = undefined;
 	        }
@@ -38265,7 +38263,7 @@
 	'use strict';
 	
 	var Portfolio = __webpack_require__(447).Portfolio;
-	var ViewPopupWS = __webpack_require__(449);
+	var ViewPopup = __webpack_require__(449);
 	var Client = __webpack_require__(427);
 	var toJapanTimeIfNeeded = __webpack_require__(448).toJapanTimeIfNeeded;
 	var localize = __webpack_require__(430).localize;
@@ -38276,7 +38274,7 @@
 	var formatMoney = __webpack_require__(432).formatMoney;
 	var GetAppDetails = __webpack_require__(460);
 	
-	var PortfolioWS = function () {
+	var PortfolioInit = function () {
 	    'use strict';
 	
 	    var values = void 0,
@@ -38308,7 +38306,7 @@
 	        // Display ViewPopup according to contract_id in query string
 	        var contract_id = urlParam('contract_id');
 	        if (contract_id) {
-	            ViewPopupWS.init($('<div />', { contract_id: contract_id }).get(0));
+	            ViewPopup.init($('<div />', { contract_id: contract_id }).get(0));
 	        }
 	    };
 	
@@ -38316,7 +38314,7 @@
 	        var longCode =  true ? data.longcode : jpClient() ? toJapanTimeIfNeeded(undefined, undefined, data.longcode) : data.longcode;
 	
 	        var new_class = is_first ? '' : 'new';
-	        $('#portfolio-body').prepend($('<tr class="tr-first ' + new_class + ' ' + data.contract_id + '" id="' + data.contract_id + '">' + '<td class="ref"><span' + GetAppDetails.showTooltip(data.app_id, oauth_apps[data.app_id]) + ' data-balloon-pos="right">' + data.transaction_id + '</span></td>' + '<td class="payout"><strong>' + formatMoney(data.currency, data.payout) + '</strong></td>' + '<td class="details">' + longCode + '</td>' + '<td class="purchase"><strong>' + formatMoney(data.currency, data.buy_price) + '</strong></td>' + '<td class="indicative"><strong class="indicative_price">--.--</strong></td>' + '<td class="button"><button class="button open_contract_detailsws nowrap" contract_id="' + data.contract_id + '">' + localize('View') + '</button></td>' + '</tr>' + '<tr class="tr-desc ' + new_class + ' ' + data.contract_id + '">' + '<td colspan="6">' + longCode + '</td>' + '</tr>'));
+	        $('#portfolio-body').prepend($('<tr class="tr-first ' + new_class + ' ' + data.contract_id + '" id="' + data.contract_id + '">' + '<td class="ref"><span' + GetAppDetails.showTooltip(data.app_id, oauth_apps[data.app_id]) + ' data-balloon-pos="right">' + data.transaction_id + '</span></td>' + '<td class="payout"><strong>' + formatMoney(data.currency, data.payout) + '</strong></td>' + '<td class="details">' + longCode + '</td>' + '<td class="purchase"><strong>' + formatMoney(data.currency, data.buy_price) + '</strong></td>' + '<td class="indicative"><strong class="indicative_price">--.--</strong></td>' + '<td class="button"><button class="button open_contract_details nowrap" contract_id="' + data.contract_id + '">' + localize('View') + '</button></td>' + '</tr>' + '<tr class="tr-desc ' + new_class + ' ' + data.contract_id + '">' + '<td colspan="6">' + longCode + '</td>' + '</tr>'));
 	    };
 	
 	    var updateBalance = function updateBalance() {
@@ -38464,25 +38462,25 @@
 	
 	                    switch (msg_type) {
 	                        case 'portfolio':
-	                            PortfolioWS.updatePortfolio(response);
+	                            PortfolioInit.updatePortfolio(response);
 	                            break;
 	                        case 'transaction':
-	                            PortfolioWS.transactionResponseHandler(response);
+	                            PortfolioInit.transactionResponseHandler(response);
 	                            break;
 	                        case 'proposal_open_contract':
-	                            PortfolioWS.updateIndicative(response);
+	                            PortfolioInit.updateIndicative(response);
 	                            break;
 	                        case 'oauth_apps':
-	                            PortfolioWS.updateOAuthApps(response);
+	                            PortfolioInit.updateOAuthApps(response);
 	                            break;
 	                        default:
-	                        // msg_type is not what PortfolioWS handles, so ignore it.
+	                        // msg_type is not what PortfolioInit handles, so ignore it.
 	                    }
 	                }
 	            });
 	        }
-	        PortfolioWS.init();
-	        ViewPopupWS.viewButtonOnClick('#portfolio-table');
+	        PortfolioInit.init();
+	        ViewPopup.viewButtonOnClick('#portfolio-table');
 	    };
 	
 	    var onUnload = function onUnload() {
@@ -38505,7 +38503,7 @@
 	    };
 	}();
 	
-	module.exports = PortfolioWS;
+	module.exports = PortfolioInit;
 
 /***/ },
 /* 447 */
@@ -38688,17 +38686,17 @@
 	
 	var showLocalTimeOnHover = __webpack_require__(448).showLocalTimeOnHover;
 	var toJapanTimeIfNeeded = __webpack_require__(448).toJapanTimeIfNeeded;
-	var objectNotEmpty = __webpack_require__(417).objectNotEmpty;
+	var isEmptyObject = __webpack_require__(417).isEmptyObject;
 	var formatMoney = __webpack_require__(432).formatMoney;
 	var MBPrice = __webpack_require__(438).MBPrice;
 	var ViewPopupUI = __webpack_require__(450).ViewPopupUI;
 	var moment = __webpack_require__(304);
 	var State = __webpack_require__(422).State;
-	var Highchart = __webpack_require__(451).Highchart;
-	var WSTickDisplay = __webpack_require__(454).WSTickDisplay;
+	var Highchart = __webpack_require__(451);
+	var TickDisplay = __webpack_require__(454);
 	var localize = __webpack_require__(430).localize;
 	
-	var ViewPopupWS = function () {
+	var ViewPopup = function () {
 	    'use strict';
 	
 	    var contractID = void 0,
@@ -38750,7 +38748,7 @@
 	    };
 	
 	    var responseContract = function responseContract(response) {
-	        if (!response.proposal_open_contract || !objectNotEmpty(response.proposal_open_contract)) {
+	        if (!response.proposal_open_contract || isEmptyObject(response.proposal_open_contract)) {
 	            showErrorPopup(response);
 	            return;
 	        }
@@ -38765,7 +38763,7 @@
 	
 	        if (contract && contractType) {
 	            if (!document.getElementById(wrapperID)) return;
-	            ViewPopupWS[contractType + 'Update']();
+	            ViewPopup[contractType + 'Update']();
 	            return;
 	        }
 	
@@ -38943,7 +38941,7 @@
 	                }
 	            }
 	        } else if (contract.tick_count && !chartUpdated) {
-	            WSTickDisplay.updateChart('', contract);
+	            TickDisplay.updateChart('', contract);
 	            chartUpdated = true;
 	        }
 	
@@ -39239,7 +39237,7 @@
 	        if (!req.hasOwnProperty('passthrough')) {
 	            req.passthrough = {};
 	        }
-	        req.passthrough.dispatch_to = 'ViewPopupWS';
+	        req.passthrough.dispatch_to = 'ViewPopup';
 	        BinarySocket.send(req);
 	    };
 	
@@ -39264,7 +39262,7 @@
 	                responseSellExpired();
 	                break;
 	            case 'get_corporate_actions':
-	                if (objectNotEmpty(response.get_corporate_actions)) {
+	                if (!isEmptyObject(response.get_corporate_actions)) {
 	                    corporateActionEvent = true;
 	                    containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporateActionEvent ? '* ' + localize('This contract was affected by a Corporate Action event.') : '&nbsp;');
 	                    populateCorporateAction(response);
@@ -39282,7 +39280,7 @@
 	    };
 	
 	    var viewButtonOnClick = function viewButtonOnClick(container_selector) {
-	        $(container_selector).on('click', '.open_contract_detailsws', function (e) {
+	        $(container_selector).on('click', '.open_contract_details', function (e) {
 	            e.preventDefault();
 	            init(this);
 	        });
@@ -39297,7 +39295,7 @@
 	    };
 	}();
 	
-	module.exports = ViewPopupWS;
+	module.exports = ViewPopup;
 
 /***/ },
 /* 450 */
@@ -39324,7 +39322,7 @@
 	            if (!this._container) {
 	                (function () {
 	                    var that = _this;
-	                    var con = $('<div class="inpage_popup_container inpage_popup_container_ws" id="sell_popup_container"><a class="close"></a><div class="inpage_popup_content"></div></div>');
+	                    var con = $('<div class="inpage_popup_container" id="sell_popup_container"><a class="close"></a><div class="inpage_popup_content"></div></div>');
 	                    con.hide();
 	                    var _on_close = function _on_close() {
 	                        that.cleanup(true);
@@ -39385,7 +39383,7 @@
 	            $('html').removeClass('no-scroll');
 	        },
 	        disable_button: function disable_button(button) {
-	            $('.open_contract_detailsws[disabled]').each(function () {
+	            $('.open_contract_details[disabled]').each(function () {
 	                ViewPopupUI.enable_button($(this));
 	            });
 	            button.attr('disabled', 'disabled');
@@ -39648,7 +39646,7 @@
 	            req.passthrough = {};
 	        }
 	        // send dispatch_to to help socket.js forward the correct response back to here
-	        req.passthrough.dispatch_to = 'ViewChartWS';
+	        req.passthrough.dispatch_to = 'ViewChart';
 	        BinarySocket.send(req);
 	    };
 	
@@ -40045,9 +40043,7 @@
 	    };
 	}();
 	
-	module.exports = {
-	    Highchart: Highchart
-	};
+	module.exports = Highchart;
 
 /***/ },
 /* 452 */
@@ -40752,7 +40748,7 @@
 	__webpack_require__(444)(Highcharts);
 	var elementInnerHtml = __webpack_require__(428).elementInnerHtml;
 	
-	var TickDisplay = function () {
+	var TickDisplayClass = function () {
 	    return {
 	        initialize: function initialize(data) {
 	            var $self = this;
@@ -41003,24 +40999,24 @@
 	    };
 	}();
 	
-	var WSTickDisplay = Object.create(TickDisplay);
-	WSTickDisplay.plot = function () {
+	var TickDisplay = Object.create(TickDisplayClass);
+	TickDisplay.plot = function () {
 	    var $self = this;
 	    $self.contract_start_moment = moment($self.contract_start_ms).utc();
 	    $self.counter = 0;
 	    $self.applicable_ticks = [];
 	};
-	WSTickDisplay.update_ui = function (final_price, pnl, contract_status) {
+	TickDisplay.update_ui = function (final_price, pnl, contract_status) {
 	    updatePurchaseStatus(final_price, final_price - pnl, contract_status);
 	};
-	WSTickDisplay.socketSend = function (req) {
+	TickDisplay.socketSend = function (req) {
 	    if (!req.hasOwnProperty('passthrough')) {
 	        req.passthrough = {};
 	    }
-	    req.passthrough.dispatch_to = 'ViewTickDisplayWS';
+	    req.passthrough.dispatch_to = 'ViewTickDisplay';
 	    BinarySocket.send(req);
 	};
-	WSTickDisplay.dispatch = function (data) {
+	TickDisplay.dispatch = function (data) {
 	    var $self = this;
 	    var chart = document.getElementById('tick_chart');
 	
@@ -41029,7 +41025,7 @@
 	    }
 	
 	    if (window.subscribe && data.tick && document.getElementById('sell_content_wrapper')) {
-	        if (data.echo_req.hasOwnProperty('passthrough') && data.echo_req.passthrough.dispatch_to === 'ViewChartWS') return;
+	        if (data.echo_req.hasOwnProperty('passthrough') && data.echo_req.passthrough.dispatch_to === 'ViewChart') return;
 	        window.responseID = data.tick.id;
 	        ViewPopupUI.storeSubscriptionID(window.responseID);
 	    }
@@ -41049,7 +41045,7 @@
 	            }
 	        }
 	        if (!window.tick_init || window.tick_init === '') {
-	            WSTickDisplay.initialize({
+	            TickDisplay.initialize({
 	                symbol: window.tick_underlying,
 	                number_of_ticks: window.tick_count,
 	                contract_category: /asian/i.test(window.tick_shortcode) ? 'asian' : /digit/i.test(window.tick_shortcode) ? 'digits' : 'callput',
@@ -41060,7 +41056,7 @@
 	                display_decimals: display_decimals,
 	                show_contract_result: 0
 	            });
-	            WSTickDisplay.spots_list = {};
+	            TickDisplay.spots_list = {};
 	            window.tick_init = 'initialized';
 	        }
 	    }
@@ -41112,7 +41108,7 @@
 	        }
 	    }
 	};
-	WSTickDisplay.updateChart = function (data, contract) {
+	TickDisplay.updateChart = function (data, contract) {
 	    window.subscribe = 'false';
 	    if (contract) {
 	        window.tick_underlying = contract.underlying;
@@ -41134,15 +41130,13 @@
 	        } else {
 	            request.end = contract.date_expiry;
 	        }
-	        WSTickDisplay.socketSend(request);
+	        TickDisplay.socketSend(request);
 	    } else {
-	        WSTickDisplay.dispatch(data);
+	        TickDisplay.dispatch(data);
 	    }
 	};
 	
-	module.exports = {
-	    WSTickDisplay: WSTickDisplay
-	};
+	module.exports = TickDisplay;
 
 /***/ },
 /* 455 */
@@ -41421,7 +41415,7 @@
 	var getLanguage = __webpack_require__(421).get;
 	var localize = __webpack_require__(430).localize;
 	var urlFor = __webpack_require__(424).urlFor;
-	var objectNotEmpty = __webpack_require__(417).objectNotEmpty;
+	var isEmptyObject = __webpack_require__(417).isEmptyObject;
 	var jpClient = __webpack_require__(425).jpClient;
 	var formatMoney = __webpack_require__(432).formatMoney;
 	var addComma = __webpack_require__(433).addComma;
@@ -41585,7 +41579,7 @@
 	        option.appendChild(content);
 	        fragment.appendChild(option);
 	
-	        if (elements[key].submarkets && objectNotEmpty(elements[key].submarkets)) {
+	        if (elements[key].submarkets && !isEmptyObject(elements[key].submarkets)) {
 	            var keys2 = Object.keys(elements[key].submarkets).sort(marketSort);
 	            for (var j = 0; j < keys2.length; j++) {
 	                var key2 = keys2[j];
@@ -41635,7 +41629,7 @@
 	        target.removeChild(target.firstChild);
 	    }
 	
-	    if (objectNotEmpty(elements)) {
+	    if (!isEmptyObject(elements)) {
 	        target.appendChild(generateUnderlyingOptions(elements, selected));
 	    }
 	}
@@ -42358,7 +42352,7 @@
 
 	'use strict';
 	
-	var objectNotEmpty = __webpack_require__(417).objectNotEmpty;
+	var isEmptyObject = __webpack_require__(417).isEmptyObject;
 	var isVisible = __webpack_require__(428).isVisible;
 	var Url = __webpack_require__(424);
 	
@@ -42391,7 +42385,7 @@
 	    var setDefault = function setDefault(key, value) {
 	        if (!key) return;
 	        value = value || '';
-	        if (!objectNotEmpty(params)) params = Url.paramsHash();
+	        if (isEmptyObject(params)) params = Url.paramsHash();
 	        if (params[key] !== value) {
 	            params[key] = value;
 	            // to increase speed, do not set values when form is still loading
@@ -42403,7 +42397,7 @@
 	    };
 	
 	    var removeDefault = function removeDefault() {
-	        if (!objectNotEmpty(params)) params = Url.paramsHash();
+	        if (isEmptyObject(params)) params = Url.paramsHash();
 	        var isUpdated = false;
 	        for (var i = 0; i < arguments.length; i++) {
 	            if (params.hasOwnProperty(arguments[i])) {
@@ -42571,7 +42565,7 @@
 	var StartDates = __webpack_require__(468).StartDates;
 	var Symbols = __webpack_require__(443).Symbols;
 	var Tick = __webpack_require__(455).Tick;
-	var WSTickDisplay = __webpack_require__(454).WSTickDisplay;
+	var TickDisplay = __webpack_require__(454);
 	var State = __webpack_require__(422).State;
 	var displayUnderlyings = __webpack_require__(457).displayUnderlyings;
 	var hidePriceOverlay = __webpack_require__(457).hidePriceOverlay;
@@ -42860,7 +42854,7 @@
 	        if (digit_info && tick.tick) {
 	            digit_info.update_chart(tick);
 	        }
-	        WSTickDisplay.updateChart(tick);
+	        TickDisplay.updateChart(tick);
 	        Purchase.update_spot_list();
 	        if (!Barriers.isBarrierUpdated()) {
 	            Barriers.display();
@@ -43152,7 +43146,7 @@
 	var getFormNameBarrierCategory = __webpack_require__(457).getFormNameBarrierCategory;
 	var getLanguage = __webpack_require__(421).get;
 	var localize = __webpack_require__(430).localize;
-	var objectNotEmpty = __webpack_require__(417).objectNotEmpty;
+	var isEmptyObject = __webpack_require__(417).isEmptyObject;
 	
 	/*
 	 * Contract object mocks the trading form we have on our website
@@ -43316,7 +43310,7 @@
 	            }
 	        });
 	
-	        if (!objectNotEmpty(tradeContractForms)) return null;
+	        if (isEmptyObject(tradeContractForms)) return null;
 	
 	        if (tradeContractForms.risefall || tradeContractForms.higherlower) {
 	            tradeContractForms.updown = localize('Up/Down');
@@ -43389,7 +43383,7 @@
 	var timeIsValid = __webpack_require__(457).timeIsValid;
 	var showPriceOverlay = __webpack_require__(457).showPriceOverlay;
 	var getTradingTimes = __webpack_require__(456).getTradingTimes;
-	var DatePicker = __webpack_require__(466).DatePicker;
+	var DatePicker = __webpack_require__(466);
 	var toReadableFormat = __webpack_require__(433).toReadableFormat;
 	var toISOFormat = __webpack_require__(433).toISOFormat;
 	var elementTextContent = __webpack_require__(428).elementTextContent;
@@ -43612,19 +43606,17 @@
 	        Defaults.set('duration_units', unit.value);
 	
 	        // jquery for datepicker
-	        var amountElement = $('#duration_amount'),
-	            datePickerDur = new DatePicker('#duration_amount', 'diff'),
-	            datePickDate = new DatePicker('#expiry_date');
+	        var amountElement = $('#duration_amount');
+	        var duration_id = '#duration_amount';
 	        if (unit.value === 'd') {
 	            var tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
 	            tomorrow.setDate(tomorrow.getDate() + 1);
-	            datePickerDur.show({
-	                minDate: tomorrow,
+	            DatePicker.init({
+	                selector: duration_id,
+	                type: 'diff',
+	                minDate: 1,
 	                maxDate: 364,
-	                additional: {
-	                    setValue: 'attr',
-	                    native: 0
-	                }
+	                native: false
 	            });
 	            amountElement.change(function (value) {
 	                var dayDiff = void 0;
@@ -43640,13 +43632,13 @@
 	                amountElement.val(dayDiff);
 	            });
 	        } else {
-	            datePickerDur.hide();
+	            DatePicker.hide(duration_id);
 	        }
 	
 	        if ($('#expiry_date').is(':visible')) {
-	            datePickDate.hide();
-	            datePickDate.show({
-	                minDate: 'today',
+	            DatePicker.init({
+	                selector: '#expiry_date',
+	                minDate: 0,
 	                maxDate: 364
 	            });
 	        }
@@ -44191,177 +44183,161 @@
 	'use strict';
 	
 	var moment = __webpack_require__(304);
+	var localize = __webpack_require__(430).localize;
+	var isEmptyObject = __webpack_require__(417).isEmptyObject;
 	var checkInput = __webpack_require__(428).checkInput;
 	var toReadableFormat = __webpack_require__(433).toReadableFormat;
-	var localize = __webpack_require__(430).localize;
+	var padLeft = __webpack_require__(433).padLeft;
 	
-	var DatePicker = function DatePicker(component_selector, select_type) {
-	    this.component_selector = component_selector;
-	    this.select_type = typeof select_type === 'undefined' ? 'date' : select_type;
+	var DatePicker = function () {
+	    'use strict';
 	
-	    this.localizations = {};
-	    this.localizations.monthNames = localize(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']);
+	    var date_pickers = {};
+	    var localizations = {};
 	
-	    this.localizations.monthNamesShort = localize(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
+	    var init = function init(options) {
+	        hide(options.selector);
+	        date_pickers[options.selector] = {};
 	
-	    this.localizations.dayNames = localize(['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']);
-	
-	    this.localizations.dayNamesMin = localize(['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']);
-	
-	    this.localizations.nextText = localize('Next');
-	    this.localizations.prevText = localize('Previous');
-	};
-	
-	DatePicker.prototype = {
-	    show: function show(options) {
-	        this.checkWidth(this.config(options), this.component_selector, this);
-	        var that = this;
-	        $(window).resize(function () {
-	            that.checkWidth(that.config_data, that.component_selector, that);
-	        });
-	    },
-	    hide: function hide() {
-	        if ($(this.component_selector + '.hasDatepicker').length > 0) {
-	            $(this.component_selector).datepicker('destroy').removeAttr('data-picker');
+	        if (isEmptyObject(localizations)) {
+	            localizations = {
+	                monthNames: localize(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']),
+	                monthNamesShort: localize(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']),
+	                dayNames: localize(['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']),
+	                dayNamesMin: localize(['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']),
+	                nextText: localize('Next'),
+	                prevText: localize('Previous')
+	            };
 	        }
-	        $(this.component_selector).off('keydown');
-	    },
-	    create: function create(config) {
-	        var that = this;
-	        $(this.component_selector).keydown(function (e) {
+	
+	        config(options);
+	        $(window).resize(function () {
+	            checkWidth(options.selector);
+	        });
+	    };
+	
+	    var hide = function hide(selector) {
+	        $(selector).datepicker('destroy').removeAttr('data-picker').off('keydown');
+	    };
+	
+	    var create = function create(selector) {
+	        var $this = void 0;
+	        var date_picker = date_pickers[selector];
+	        $(selector).keydown(function (e) {
 	            if (e.which === 13) {
+	                $this = $(this);
 	                e.preventDefault();
 	                e.stopPropagation();
-	                if (that.select_type === 'date') {
-	                    $(this).datepicker('setDate', $(this).val());
+	                if (date_picker.config_data.type === 'date') {
+	                    $this.datepicker('setDate', $this.val());
 	                }
-	                $(this).datepicker('hide');
-	                $(this).blur();
-	                $(that).trigger('enter_pressed');
+	                $this.datepicker('hide');
+	                $this.blur();
 	                return false;
 	            }
 	            return true;
-	        }).datepicker(config);
+	        }).datepicker(date_picker.config_data);
 	
 	        // Not possible to tell datepicker where to put it's
 	        // trigger calendar icon on the page, so we remove it
 	        // from the DOM and use our own one.
 	        $('button.ui-datepicker-trigger').remove();
-	    },
-	    config: function config(options) {
-	        var today = new Date();
+	    };
 	
-	        if (options.additional) {
-	            this.setValue = options.additional.setValue;
-	            this.noNative = !options.additional.native;
-	            delete options.additional;
-	        }
+	    var config = function config(options) {
+	        var selector = options.selector;
 	
-	        var config = {
+	        var obj_config = {
 	            dateFormat: 'dd M, yy',
-	            monthNames: this.localizations.monthNames,
-	            monthNamesShort: this.localizations.monthNamesShort,
-	            dayNames: this.localizations.dayNames,
-	            dayNamesMin: this.localizations.dayNamesMin,
-	            nextText: this.localizations.nextText,
-	            prevText: this.localizations.prevText,
 	            changeMonth: true,
-	            changeYear: true
-	        };
+	            changeYear: true,
+	            native: true, // custom variable to handle showing of native datepicker for field; true by default
+	            type: 'date' };
 	
-	        config = $.extend(config, options);
+	        Object.keys(localizations).forEach(function (localization) {
+	            obj_config[localization] = localizations[localization];
+	        });
 	
-	        var set_date = function set_date(date) {
-	            var new_date = void 0;
-	            if (typeof options[date] === 'number') {
-	                new_date = new Date();
-	                new_date.setDate(today.getDate() + Number(options[date]));
-	            }
-	            config[date] = new_date || options[date];
+	        $.extend(obj_config, options);
+	
+	        var setDate = function setDate(date) {
+	            obj_config[date] = typeof options[date] === 'number' ? moment().add(Number(options[date]), 'day').toDate() : options[date];
 	        };
 	
 	        if (options.minDate !== undefined) {
-	            if (options.minDate === 'today') {
-	                config.minDate = today;
-	            } else {
-	                set_date('minDate');
-	            }
+	            setDate('minDate');
 	        }
 	
 	        if (options.maxDate !== undefined) {
-	            set_date('maxDate');
+	            setDate('maxDate');
 	        }
 	
-	        var that = this;
-	        config.onSelect = function (date_text) {
-	            var day = date_text.split(' ')[0],
-	                month = ('0' + (Number($('.ui-datepicker-month').val()) + 1)).slice(-2),
-	                year = $('.ui-datepicker-year').val(),
-	                date = [year, month, day].join('-'),
-	                oldValue = $(this).attr('data-value');
+	        var $this = void 0;
+	        obj_config.onSelect = function (date_text) {
+	            var year = $('.ui-datepicker-year').val();
+	            var month = formatDate(Number($('.ui-datepicker-month').val()), 1);
+	            var day = date_text.split(' ')[0];
+	            var date = [year, month, day].join('-');
+	            $this = $(this);
+	            var old_value = $this.attr('data-value');
+	            var this_selector = '#' + $this.attr('id');
 	
-	            $(this).attr('data-value', date);
-	            if (that.select_type === 'diff') {
-	                var today_utc = moment.utc();
-	                var selected_date = moment.utc(date + ' 23:59:59');
-	                var duration = selected_date.diff(today_utc, 'days');
-	                $(this).val(duration);
-	                if (oldValue && oldValue === date) return false;
-	                $(that.component_selector).trigger('change', [duration]);
-	            } else if (that.select_type === 'date') {
-	                if (that.setValue === 'attr') {
-	                    $(this).val('');
-	                } else {
-	                    $(this).val(date_text);
-	                }
-	                if (oldValue && oldValue === date) return false;
-	                $(that.component_selector).trigger('change', [date_text]);
-	            }
+	            $this.attr('data-value', date);
+	
+	            var duration = date_pickers[selector].config_data.type === 'diff' ? moment.utc(date + ' 23:59:59').diff(moment.utc(), 'days') : null;
+	            $this.val(duration || date_text);
+	            if (old_value === date) return false;
+	            $(this_selector).trigger('change', [duration || date_text]);
 	            return true;
 	        };
 	
-	        this.config_data = config;
+	        date_pickers[selector].config_data = $.extend({}, obj_config);
 	
-	        return config;
-	    },
-	    getDate: function getDate(date) {
-	        var year = date.getFullYear(),
-	            month = ('0' + (date.getMonth() + 1)).slice(-2),
-	            day = ('0' + date.getDate()).slice(-2);
-	        return year + '-' + month + '-' + day;
-	    },
-	    checkWidth: function checkWidth(config, component_selector, that) {
-	        var $selector = $(component_selector);
-	        if ($(window).width() < 770 && that.noNative) {
-	            that.hide($selector);
-	            $selector.attr('type', 'number');
-	        } else if ($(window).width() < 770 && checkInput('date', 'not-a-date') && $selector.attr('data-picker') !== 'native' && !that.noNative) {
-	            that.hide($selector);
-	            $selector.attr({ type: 'date', 'data-picker': 'native' }).val($selector.attr('data-value'));
-	            if ($selector.attr('readonly')) {
-	                $selector.attr('data-readonly', 'readonly').removeAttr('readonly');
+	        checkWidth(selector);
+	    };
+	
+	    var formatDate = function formatDate(date, add) {
+	        return padLeft(date + (add || 0), 2, '0');
+	    };
+	
+	    var toDate = function toDate(date) {
+	        return [date.getFullYear(), formatDate(date.getMonth(), 1), formatDate(date.getDate())].join('-');
+	    };
+	
+	    var checkWidth = function checkWidth(selector) {
+	        var $selector = $(selector);
+	        var date_picker_conf = date_pickers[selector].config_data;
+	        if ($(window).width() < 770) {
+	            if (!date_picker_conf.native) {
+	                hide(selector);
+	                $selector.attr('type', 'number');
+	                return;
 	            }
-	            if (config.minDate !== undefined) {
-	                $selector.attr('min', that.getDate(config.minDate));
+	            if (checkInput('date', 'not-a-date') && $selector.attr('data-picker') !== 'native') {
+	                hide(selector);
+	                $selector.attr({ type: 'date', 'data-picker': 'native' }).val($selector.attr('data-value'));
+	                if ($selector.attr('readonly')) $selector.attr('data-readonly', 'readonly').removeAttr('readonly');
+	                if (date_picker_conf.minDate !== undefined) $selector.attr('min', toDate(date_picker_conf.minDate));
+	                if (date_picker_conf.maxDate !== undefined) $selector.attr('max', toDate(date_picker_conf.maxDate));
+	                return;
 	            }
-	            if (config.maxDate !== undefined) {
-	                $selector.attr('max', that.getDate(config.maxDate));
-	            }
-	        } else if ($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery' || $(window).width() < 770 && !checkInput('date', 'not-a-date')) {
-	            var value = $selector.attr('data-value'),
-	                format_value = value && that.select_type === 'date' ? toReadableFormat(moment(value)) : $selector.val();
-	            $selector.attr({ type: 'text', 'data-picker': 'jquery' }).removeAttr('min').removeAttr('max').val(format_value);
-	            if ($selector.attr('data-readonly')) {
-	                $selector.attr('readonly', 'readonly').removeAttr('data-readonly');
-	            }
-	            that.create(config);
 	        }
-	    }
-	};
+	        if ($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery' || $(window).width() < 770 && !checkInput('date', 'not-a-date')) {
+	            var value = $selector.attr('data-value') || $selector.val();
+	            var format_value = value && date_picker_conf.type !== 'diff' ? toReadableFormat(moment(value)) : $selector.val();
+	            $selector.attr({ type: 'text', 'data-picker': 'jquery', 'data-value': value }).removeAttr('min max').val(format_value);
+	            if ($selector.attr('data-readonly')) $selector.attr('readonly', 'readonly').removeAttr('data-readonly');
+	            create(selector);
+	        }
+	    };
 	
-	module.exports = {
-	    DatePicker: DatePicker
-	};
+	    return {
+	        init: init,
+	        hide: hide
+	    };
+	}();
+	
+	module.exports = DatePicker;
 
 /***/ },
 /* 467 */
@@ -44372,7 +44348,7 @@
 	var Contract = __webpack_require__(463).Contract;
 	var Symbols = __webpack_require__(443).Symbols;
 	var Tick = __webpack_require__(455).Tick;
-	var WSTickDisplay = __webpack_require__(454).WSTickDisplay;
+	var TickDisplay = __webpack_require__(454);
 	var isVisible = __webpack_require__(428).isVisible;
 	var updatePurchaseStatus = __webpack_require__(457).updatePurchaseStatus;
 	var updateContractBalance = __webpack_require__(457).updateContractBalance;
@@ -44476,10 +44452,10 @@
 	                elementTextContent(button, localize('View'));
 	                button.setAttribute('contract_id', receipt.contract_id);
 	                button.show();
-	                $('.open_contract_detailsws').attr('contract_id', receipt.contract_id).removeClass('invisible');
+	                $('.open_contract_details').attr('contract_id', receipt.contract_id).removeClass('invisible');
 	            } else {
 	                button.hide();
-	                $('.open_contract_detailsws').addClass('invisible');
+	                $('.open_contract_details').addClass('invisible');
 	            }
 	        }
 	
@@ -44509,7 +44485,7 @@
 	                barrier = passthrough.barrier;
 	            }
 	
-	            WSTickDisplay.initialize({
+	            TickDisplay.initialize({
 	                symbol: passthrough.symbol,
 	                barrier: barrier,
 	                number_of_ticks: passthrough.duration,
@@ -44524,7 +44500,7 @@
 	                show_contract_result: 1,
 	                width: $('#confirmation_message').width()
 	            });
-	            WSTickDisplay.spots_list = {};
+	            TickDisplay.spots_list = {};
 	        }
 	    };
 	
@@ -44802,7 +44778,7 @@
 	var getFormNameBarrierCategory = __webpack_require__(457).getFormNameBarrierCategory;
 	var getLanguage = __webpack_require__(421).get;
 	var localize = __webpack_require__(430).localize;
-	var objectNotEmpty = __webpack_require__(417).objectNotEmpty;
+	var isEmptyObject = __webpack_require__(417).isEmptyObject;
 	
 	/*
 	 * Contract object mocks the trading form we have on our website
@@ -44965,7 +44941,7 @@
 	            }
 	        });
 	
-	        if (!objectNotEmpty(tradeContractForms)) return null;
+	        if (isEmptyObject(tradeContractForms)) return null;
 	
 	        if (tradeContractForms.risefall || tradeContractForms.higherlower) {
 	            tradeContractForms.updown = localize('Up/Down');
@@ -45026,16 +45002,13 @@
 	'use strict';
 	
 	var MBContract = __webpack_require__(303).MBContract;
-	var MBDisplayCurrencies = __webpack_require__(434).MBDisplayCurrencies;
 	var MBNotifications = __webpack_require__(436).MBNotifications;
 	var MBProcess = __webpack_require__(437).MBProcess;
 	var MBPurchase = __webpack_require__(472).MBPurchase;
-	var MBSymbols = __webpack_require__(418).MBSymbols;
 	var MBTick = __webpack_require__(439).MBTick;
-	var PortfolioWS = __webpack_require__(446);
+	var PortfolioInit = __webpack_require__(446);
 	var State = __webpack_require__(422).State;
 	var GTM = __webpack_require__(473);
-	var Client = __webpack_require__(427);
 	var processTradingTimes = __webpack_require__(461).processTradingTimes;
 	var forgetTradingStreams = __webpack_require__(461).forgetTradingStreams;
 	
@@ -45060,10 +45033,6 @@
 	                MBNotifications.hide('CONNECTION_ERROR');
 	                MBContract.setContractsResponse(response);
 	                MBProcess.processContract(response);
-	            } else if (type === 'payout_currencies') {
-	                Client.set('currencies', response.payout_currencies.join(','));
-	                MBDisplayCurrencies('', false);
-	                MBSymbols.getSymbols(1);
 	            } else if (type === 'proposal') {
 	                MBProcess.processProposal(response);
 	            } else if (type === 'buy') {
@@ -45076,11 +45045,11 @@
 	            } else if (type === 'trading_times') {
 	                processTradingTimes(response);
 	            } else if (type === 'portfolio') {
-	                PortfolioWS.updatePortfolio(response);
+	                PortfolioInit.updatePortfolio(response);
 	            } else if (type === 'proposal_open_contract') {
-	                PortfolioWS.updateIndicative(response);
+	                PortfolioInit.updateIndicative(response);
 	            } else if (type === 'transaction') {
-	                PortfolioWS.transactionResponseHandler(response);
+	                PortfolioInit.transactionResponseHandler(response);
 	            }
 	        }
 	    };
@@ -45102,7 +45071,7 @@
 	
 	var MBNotifications = __webpack_require__(436).MBNotifications;
 	var MBPrice = __webpack_require__(438).MBPrice;
-	var ViewPopupWS = __webpack_require__(449);
+	var ViewPopup = __webpack_require__(449);
 	
 	/*
 	 * Purchase object that handles all the functions related to
@@ -45118,7 +45087,7 @@
 	            MBNotifications.show({ text: response.error.message, uid: 'BUY_ERROR', dismissible: true });
 	        } else {
 	            MBNotifications.hide('BUY_ERROR');
-	            ViewPopupWS.init($('<div />', { contract_id: response.buy.contract_id }).get(0));
+	            ViewPopup.init($('<div />', { contract_id: response.buy.contract_id }).get(0));
 	        }
 	    };
 	
@@ -45409,14 +45378,14 @@
 	var Defaults = __webpack_require__(458).Defaults;
 	var Notifications = __webpack_require__(459).Notifications;
 	var Symbols = __webpack_require__(443).Symbols;
-	var PortfolioWS = __webpack_require__(446);
-	var ViewPopupWS = __webpack_require__(449);
+	var PortfolioInit = __webpack_require__(446);
+	var ViewPopup = __webpack_require__(449);
 	var BinaryPjax = __webpack_require__(420);
 	var Client = __webpack_require__(427);
 	var State = __webpack_require__(422).State;
 	var jpClient = __webpack_require__(425).jpClient;
-	var Guide = __webpack_require__(502);
-	var ResizeSensor = __webpack_require__(507);
+	var Guide = __webpack_require__(496);
+	var ResizeSensor = __webpack_require__(501);
 	
 	var TradePage_Beta = function () {
 	    var events_initialized = 0;
@@ -45429,9 +45398,6 @@
 	            return;
 	        }
 	        State.set('is_beta_trading', true);
-	        if (Client.get('currencies')) {
-	            displayCurrencies();
-	        }
 	        BinarySocket.init({
 	            onmessage: function onmessage(msg) {
 	                Message_Beta.process(msg);
@@ -45450,7 +45416,11 @@
 	            displayCurrencies();
 	            Symbols.getSymbols(1);
 	        } else {
-	            BinarySocket.send({ payout_currencies: 1 });
+	            BinarySocket.send({ payout_currencies: 1 }).then(function (response) {
+	                Client.set('currencies', response.payout_currencies.join(','));
+	                displayCurrencies();
+	                Symbols.getSymbols(1);
+	            });
 	        }
 	
 	        if (document.getElementById('websocket_form')) {
@@ -45467,7 +45437,7 @@
 	        });
 	        TradingAnalysis_Beta.bindAnalysisTabEvent();
 	
-	        ViewPopupWS.viewButtonOnClick('#contract_confirmation_container');
+	        ViewPopup.viewButtonOnClick('#contract_confirmation_container');
 	    };
 	
 	    var adjustAnalysisColumnHeight = function adjustAnalysisColumnHeight() {
@@ -45588,7 +45558,7 @@
 	        forgetTradingStreams_Beta();
 	        BinarySocket.clear();
 	        Defaults.clear();
-	        PortfolioWS.onUnload();
+	        PortfolioInit.onUnload();
 	        chartFrameCleanup();
 	    };
 	
@@ -45615,12 +45585,12 @@
 
 	'use strict';
 	
-	var DigitInfoWS_Beta = __webpack_require__(478).DigitInfoWS_Beta;
+	var DigitInfo_Beta = __webpack_require__(478);
 	var showHighchart = __webpack_require__(457).showHighchart;
 	var toggleActiveNavMenuElement_Beta = __webpack_require__(457).toggleActiveNavMenuElement_Beta;
 	var AssetIndexUI = __webpack_require__(479);
-	var MarketTimesUI = __webpack_require__(482);
-	var PortfolioWS = __webpack_require__(446);
+	var TradingTimesUI = __webpack_require__(482);
+	var PortfolioInit = __webpack_require__(446);
 	var Client = __webpack_require__(427);
 	var getLanguage = __webpack_require__(421).get;
 	var State = __webpack_require__(422).State;
@@ -45641,7 +45611,7 @@
 	 */
 	
 	var TradingAnalysis_Beta = function () {
-	    var trading_digit_info = new DigitInfoWS_Beta();
+	    var trading_digit_info = new DigitInfo_Beta();
 	
 	    var requestTradeAnalysis = function requestTradeAnalysis() {
 	        var formName = State.get('is_mb_trading') ? $('#category').val() : $('#contract_form_name_nav').find('.a-active').attr('id');
@@ -45706,7 +45676,7 @@
 	                showHighchart();
 	                break;
 	            case 'tab_portfolio':
-	                PortfolioWS.onLoad();
+	                PortfolioInit.onLoad();
 	                break;
 	            case 'tab_last_digit':
 	                {
@@ -45720,7 +45690,7 @@
 	                $('#tab_asset').find('index-content').find('h1').hide();
 	                break;
 	            case 'tab_trading_times':
-	                MarketTimesUI.onLoad({ framed: true });
+	                TradingTimesUI.onLoad({ framed: true });
 	                $('#tab_trading').find('times-content').find('h1').hide();
 	                break;
 	            default:
@@ -45877,7 +45847,7 @@
 	
 	__webpack_require__(444)(Highcharts);
 	
-	var DigitInfoWS_Beta = function DigitInfoWS_Beta() {
+	var DigitInfo_Beta = function DigitInfo_Beta() {
 	    this.chart_config = {
 	        chart: {
 	            renderTo: 'last_digit_histo',
@@ -45967,7 +45937,7 @@
 	    this.prev_max_index = -1;
 	};
 	
-	DigitInfoWS_Beta.prototype = {
+	DigitInfo_Beta.prototype = {
 	    add_content: function add_content(underlying) {
 	        var domain = document.domain.split('.').slice(-2).join('.'),
 	            symbols = Symbols.getAllSymbols();
@@ -46130,9 +46100,7 @@
 	    }
 	};
 	
-	module.exports = {
-	    DigitInfoWS_Beta: DigitInfoWS_Beta
-	};
+	module.exports = DigitInfo_Beta;
 
 /***/ },
 /* 479 */
@@ -46517,7 +46485,7 @@
 	'use strict';
 	
 	var moment = __webpack_require__(304);
-	var MarketTimes = __webpack_require__(483);
+	var TradingTimes = __webpack_require__(483);
 	var State = __webpack_require__(422).State;
 	var showLoadingImage = __webpack_require__(417).showLoadingImage;
 	var localize = __webpack_require__(430).localize;
@@ -46527,9 +46495,9 @@
 	var jpClient = __webpack_require__(425).jpClient;
 	var toISOFormat = __webpack_require__(433).toISOFormat;
 	var toReadableFormat = __webpack_require__(433).toReadableFormat;
-	var DatePicker = __webpack_require__(466).DatePicker;
+	var DatePicker = __webpack_require__(466);
 	
-	var MarketTimesUI = function () {
+	var TradingTimesUI = function () {
 	    'use strict';
 	
 	    var $date = void 0,
@@ -46556,9 +46524,9 @@
 	
 	        var date = moment.utc();
 	        $date.val(toReadableFormat(date)).attr('data-value', toISOFormat(date));
-	        var datePickerInst = new DatePicker('#trading-date');
-	        datePickerInst.show({
-	            minDate: 'today',
+	        DatePicker.init({
+	            selector: '#trading-date',
+	            minDate: 0,
 	            maxDate: 364
 	        });
 	        $date.change(function () {
@@ -46623,7 +46591,7 @@
 	            should_populate = true;
 	            // display only "Major Pairs" for Japan
 	            if (is_japan_trading) {
-	                var submarket_info = MarketTimes.getSubmarketInfo(active_symbols, submarkets[s].name);
+	                var submarket_info = TradingTimes.getSubmarketInfo(active_symbols, submarkets[s].name);
 	                if (submarket_info.length === 0 || submarket_info[0].submarket !== 'major_pairs') {
 	                    should_populate = false;
 	                }
@@ -46639,7 +46607,7 @@
 	                // symbols of this submarket
 	                var symbols = submarkets[s].symbols;
 	                for (var sy = 0; sy < symbols.length; sy++) {
-	                    if (Object.keys(MarketTimes.getSymbolInfo(symbols[sy].symbol, active_symbols)).length !== 0) {
+	                    if (Object.keys(TradingTimes.getSymbolInfo(symbols[sy].symbol, active_symbols)).length !== 0) {
 	                        $submarket_table.find('tbody').append(createSubmarketTableRow(market.name, submarkets[s].name, symbols[sy]));
 	                    }
 	                }
@@ -46696,11 +46664,11 @@
 	        }
 	        if (should_request_active_symbols) {
 	            BinarySocket.send(req).then(function (response) {
-	                MarketTimesUI.setActiveSymbols(response);
+	                TradingTimesUI.setActiveSymbols(response);
 	            });
 	        }
 	        BinarySocket.send({ trading_times: date || 'today' }).then(function (response) {
-	            MarketTimesUI.setTradingTimes(response);
+	            TradingTimesUI.setTradingTimes(response);
 	        });
 	    };
 	
@@ -46717,7 +46685,7 @@
 	    };
 	}();
 	
-	module.exports = MarketTimesUI;
+	module.exports = TradingTimesUI;
 
 /***/ },
 /* 483 */
@@ -46725,7 +46693,7 @@
 
 	'use strict';
 	
-	var MarketTimes = function () {
+	var TradingTimes = function () {
 	    'use strict';
 	
 	    var getSubmarketInfo = function getSubmarketInfo(active_symbols, submarket_display_name) {
@@ -46746,7 +46714,7 @@
 	    };
 	}();
 	
-	module.exports = MarketTimes;
+	module.exports = TradingTimes;
 
 /***/ },
 /* 484 */
@@ -46783,7 +46751,7 @@
 	var elementTextContent = __webpack_require__(428).elementTextContent;
 	var isVisible = __webpack_require__(428).isVisible;
 	var onlyNumericOnKeypress = __webpack_require__(492);
-	var TimePicker = __webpack_require__(493).TimePicker;
+	var TimePicker = __webpack_require__(493);
 	var BinaryPjax = __webpack_require__(420);
 	
 	/*
@@ -47245,12 +47213,13 @@
 	    };
 	
 	    var attachTimePicker = function attachTimePicker() {
-	        var timePickerInst = new TimePicker('#expiry_time');
 	        var date_start = document.getElementById('date_start').value;
 	        var now = !date_start || date_start === 'now';
 	        var current_moment = now ? window.time ? window.time : moment.utc() : parseInt(date_start) * 1000;
-	        timePickerInst.hide();
-	        timePickerInst.show(current_moment);
+	        TimePicker.init({
+	            selector: '#expiry_time',
+	            minTime: current_moment
+	        });
 	    };
 	
 	    return {
@@ -47457,7 +47426,7 @@
 	var selectOption = __webpack_require__(457).selectOption;
 	var timeIsValid = __webpack_require__(457).timeIsValid;
 	var showPriceOverlay = __webpack_require__(457).showPriceOverlay;
-	var DatePicker = __webpack_require__(466).DatePicker;
+	var DatePicker = __webpack_require__(466);
 	var toReadableFormat = __webpack_require__(433).toReadableFormat;
 	var toISOFormat = __webpack_require__(433).toISOFormat;
 	var elementTextContent = __webpack_require__(428).elementTextContent;
@@ -47679,19 +47648,15 @@
 	        Defaults.set('duration_units', unit.value);
 	
 	        // jquery for datepicker
-	        var amountElement = $('#duration_amount'),
-	            datePickerDur = new DatePicker('#duration_amount', 'diff'),
-	            datePickDate = new DatePicker('#expiry_date');
+	        var amountElement = $('#duration_amount');
+	        var duration_id = '#duration_amount';
 	        if (unit.value === 'd') {
-	            var tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
-	            tomorrow.setDate(tomorrow.getDate() + 1);
-	            datePickerDur.show({
-	                minDate: tomorrow,
+	            DatePicker.init({
+	                selector: duration_id,
+	                type: 'diff',
+	                minDate: 1,
 	                maxDate: 364,
-	                additional: {
-	                    setValue: 'attr',
-	                    native: 0
-	                }
+	                native: false
 	            });
 	            amountElement.change(function (value) {
 	                var dayDiff = void 0;
@@ -47707,13 +47672,13 @@
 	                amountElement.val(dayDiff);
 	            });
 	        } else {
-	            datePickerDur.hide();
+	            DatePicker.hide(duration_id);
 	        }
 	
 	        if ($('#expiry_date').is(':visible')) {
-	            datePickDate.hide();
-	            datePickDate.show({
-	                minDate: 'today',
+	            DatePicker.init({
+	                selector: '#expiry_date',
+	                minDate: 0,
 	                maxDate: 364
 	            });
 	        }
@@ -48266,7 +48231,7 @@
 	var Price_Beta = __webpack_require__(487).Price_Beta;
 	var Purchase_Beta = __webpack_require__(489).Purchase_Beta;
 	var StartDates_Beta = __webpack_require__(491).StartDates_Beta;
-	var WSTickDisplay_Beta = __webpack_require__(490).WSTickDisplay_Beta;
+	var TickDisplay_Beta = __webpack_require__(490);
 	var Defaults = __webpack_require__(458).Defaults;
 	var Symbols = __webpack_require__(443).Symbols;
 	var Tick = __webpack_require__(455).Tick;
@@ -48563,7 +48528,7 @@
 	        if (digit_info && tick.tick) {
 	            digit_info.update_chart(tick);
 	        }
-	        WSTickDisplay_Beta.updateChart(tick);
+	        TickDisplay_Beta.updateChart(tick);
 	        Purchase_Beta.update_spot_list();
 	        if (!Barriers_Beta.isBarrierUpdated()) {
 	            Barriers_Beta.display();
@@ -48660,7 +48625,7 @@
 	'use strict';
 	
 	var Contract_Beta = __webpack_require__(470).Contract_Beta;
-	var WSTickDisplay_Beta = __webpack_require__(490).WSTickDisplay_Beta;
+	var TickDisplay_Beta = __webpack_require__(490);
 	var Symbols = __webpack_require__(443).Symbols;
 	var Tick = __webpack_require__(455).Tick;
 	var localize = __webpack_require__(430).localize;
@@ -48785,11 +48750,11 @@
 	                button.setAttribute('contract_id', receipt.contract_id);
 	                descr.show();
 	                button.show();
-	                $('#confirmation_message').find('.open_contract_detailsws').attr('contract_id', receipt.contract_id).removeClass('invisible');
+	                $('#confirmation_message').find('.open_contract_details').attr('contract_id', receipt.contract_id).removeClass('invisible');
 	            } else {
 	                descr.hide();
 	                button.hide();
-	                $('#confirmation_message').find('.open_contract_detailsws').addClass('invisible');
+	                $('#confirmation_message').find('.open_contract_details').addClass('invisible');
 	            }
 	        }
 	
@@ -48819,7 +48784,7 @@
 	                barrier = passthrough.barrier;
 	            }
 	
-	            WSTickDisplay_Beta.initialize({
+	            TickDisplay_Beta.initialize({
 	                symbol: passthrough.symbol,
 	                barrier: barrier,
 	                number_of_ticks: passthrough.duration,
@@ -48835,7 +48800,7 @@
 	                width: $('#tick_chart').width(),
 	                is_trading_page: true
 	            });
-	            WSTickDisplay_Beta.spots_list = {};
+	            TickDisplay_Beta.spots_list = {};
 	        }
 	    };
 	
@@ -48960,7 +48925,7 @@
 	var Highcharts = __webpack_require__(442);
 	__webpack_require__(444)(Highcharts);
 	
-	var TickDisplay_Beta = function () {
+	var TickDisplayClass_Beta = function () {
 	    return {
 	        initialize: function initialize(data) {
 	            var $self = this;
@@ -49284,24 +49249,24 @@
 	    };
 	}();
 	
-	var WSTickDisplay_Beta = Object.create(TickDisplay_Beta);
-	WSTickDisplay_Beta.plot = function () {
+	var TickDisplay_Beta = Object.create(TickDisplayClass_Beta);
+	TickDisplay_Beta.plot = function () {
 	    var $self = this;
 	    $self.contract_start_moment = moment($self.contract_start_ms).utc();
 	    $self.counter = 0;
 	    $self.applicable_ticks = [];
 	};
-	WSTickDisplay_Beta.update_ui = function (final_price, pnl, contract_status) {
+	TickDisplay_Beta.update_ui = function (final_price, pnl, contract_status) {
 	    updatePurchaseStatus_Beta(final_price, final_price - pnl, contract_status);
 	};
-	WSTickDisplay_Beta.socketSend = function (req) {
+	TickDisplay_Beta.socketSend = function (req) {
 	    if (!req.hasOwnProperty('passthrough')) {
 	        req.passthrough = {};
 	    }
-	    req.passthrough.dispatch_to = 'ViewTickDisplayWS';
+	    req.passthrough.dispatch_to = 'ViewTickDisplay';
 	    BinarySocket.send(req);
 	};
-	WSTickDisplay_Beta.dispatch = function (data) {
+	TickDisplay_Beta.dispatch = function (data) {
 	    var $self = this;
 	    var chart = document.getElementById('tick_chart');
 	
@@ -49310,7 +49275,7 @@
 	    }
 	
 	    if (window.subscribe && data.tick && document.getElementById('sell_content_wrapper')) {
-	        if (data.echo_req.hasOwnProperty('passthrough') && data.echo_req.passthrough.dispatch_to === 'ViewChartWS') return;
+	        if (data.echo_req.hasOwnProperty('passthrough') && data.echo_req.passthrough.dispatch_to === 'ViewChart') return;
 	        window.responseID = data.tick.id;
 	        ViewPopupUI.storeSubscriptionID(window.responseID);
 	    }
@@ -49330,7 +49295,7 @@
 	            }
 	        }
 	        if (!window.tick_init || window.tick_init === '') {
-	            WSTickDisplay_Beta.initialize({
+	            TickDisplay_Beta.initialize({
 	                symbol: window.tick_underlying,
 	                number_of_ticks: window.tick_count,
 	                contract_category: /asian/i.test(window.tick_shortcode) ? 'asian' : /digit/i.test(window.tick_shortcode) ? 'digits' : 'callput',
@@ -49342,7 +49307,7 @@
 	                contract_sentiment: window.contract_type === 'CALL' || window.contract_type === 'ASIANU' ? 'up' : 'down',
 	                show_contract_result: 0
 	            });
-	            WSTickDisplay_Beta.spots_list = {};
+	            TickDisplay_Beta.spots_list = {};
 	            window.tick_init = 'initialized';
 	        }
 	    }
@@ -49412,7 +49377,7 @@
 	        }
 	    }
 	};
-	WSTickDisplay_Beta.updateChart = function (data, contract) {
+	TickDisplay_Beta.updateChart = function (data, contract) {
 	    window.subscribe = 'false';
 	    if (contract) {
 	        window.tick_underlying = contract.underlying;
@@ -49435,9 +49400,9 @@
 	        } else {
 	            request.end = contract.date_expiry;
 	        }
-	        WSTickDisplay_Beta.socketSend(request);
+	        TickDisplay_Beta.socketSend(request);
 	    } else {
-	        WSTickDisplay_Beta.dispatch(data);
+	        TickDisplay_Beta.dispatch(data);
 	    }
 	};
 	
@@ -49464,9 +49429,7 @@
 	    }
 	});
 	
-	module.exports = {
-	    WSTickDisplay_Beta: WSTickDisplay_Beta
-	};
+	module.exports = TickDisplay_Beta;
 
 /***/ },
 /* 491 */
@@ -49619,144 +49582,140 @@
 	'use strict';
 	
 	var moment = __webpack_require__(304);
-	var checkInput = __webpack_require__(428).checkInput;
 	var localize = __webpack_require__(430).localize;
+	var checkInput = __webpack_require__(428).checkInput;
 	
-	var TimePicker = function TimePicker(component_selector) {
-	    this.component_selector = component_selector;
-	};
+	var TimePicker = function () {
+	    'use strict';
 	
-	TimePicker.prototype = {
-	    show: function show(min_time, max_time) {
-	        this.checkWidth(this.config(min_time, max_time), this.component_selector, this);
-	        var that = this;
+	    var time_pickers = {};
+	
+	    var init = function init(options) {
+	        hide(options.selector);
+	        time_pickers[options.selector] = {};
+	
+	        config(options);
 	        $(window).resize(function () {
-	            that.checkWidth(that.config_data, that.component_selector, that);
+	            checkWidth(options.selector);
 	        });
-	    },
-	    hide: function hide() {
-	        if ($(this.component_selector + '.hasTimepicker').length > 0) {
-	            $(this.component_selector).timepicker('destroy').removeAttr('data-picker');
-	        }
-	        $(this.component_selector).off('keydown');
-	    },
-	    create: function create(config) {
-	        var that = this;
-	        $(this.component_selector).keydown(function (e) {
+	    };
+	
+	    var hide = function hide(selector) {
+	        $(selector).timepicker('destroy').removeAttr('data-picker').off('keydown');
+	    };
+	
+	    var create = function create(selector) {
+	        var $this = void 0;
+	        $(selector).keydown(function (e) {
 	            if (e.which === 13) {
+	                $this = $(this);
 	                e.preventDefault();
 	                e.stopPropagation();
-	                $(this).timepicker('setTime', $(this).val());
-	                $(this).timepicker('hide');
-	                $(this).blur();
-	                $(that).trigger('enter_pressed');
+	                $this.timepicker('setTime', $this.val());
+	                $this.timepicker('hide');
+	                $this.blur();
 	                return false;
 	            }
 	            return true;
-	        }).timepicker(config);
-	    },
-	    time_now: function time_now() {
-	        return moment.utc(window.time);
-	    },
-	    config: function config(min_time, max_time) {
-	        var that = this;
-	        var time_now = this.time_now();
+	        }).timepicker(time_pickers[selector].config_data);
+	    };
 	
-	        var config = {
+	    var timeNow = function timeNow() {
+	        return moment.utc(window.time);
+	    };
+	
+	    var config = function config(options) {
+	        var time_now = timeNow();
+	
+	        var obj_config = {
 	            hourText: localize('Hour'),
 	            minuteText: localize('Minute'),
 	            amPmText: localize(['AM', 'PM'])
 	        };
-	        if (min_time) {
-	            min_time = min_time === 'now' ? time_now : moment.utc(min_time);
-	            if (min_time.isBefore(time_now)) {
-	                min_time = time_now;
+	
+	        if (options.minTime) {
+	            options.minTime = options.minTime === 'now' ? time_now : moment.utc(options.minTime);
+	            if (options.minTime.isBefore(time_now)) {
+	                options.minTime = time_now;
 	            }
-	            config.minTime = { hour: parseInt(min_time.hour()), minute: parseInt(min_time.minute()) };
-	        }
-	        if (max_time) {
-	            max_time = moment.utc(max_time);
-	            config.maxTime = { hour: parseInt(max_time.hour()), minute: parseInt(max_time.minute()) };
+	            obj_config.minTime = { hour: parseInt(options.minTime.hour()), minute: parseInt(options.minTime.minute()) };
 	        }
 	
-	        config.onSelect = function (time) {
-	            var oldValue = $(that.component_selector).attr('data-value');
+	        if (options.maxTime) {
+	            options.maxTime = moment.utc(options.maxTime);
+	            obj_config.maxTime = { hour: parseInt(options.maxTime.hour()), minute: parseInt(options.maxTime.minute()) };
+	        }
+	
+	        var $this = void 0;
+	        obj_config.onSelect = function (time) {
+	            $this = $(this);
+	            var this_selector = '#' + $this.attr('id');
+	            var old_value = $(this_selector).attr('data-value');
+	
+	            if (old_value && old_value === time) return false;
+	
+	            var new_time = void 0;
 	            if (!time.match(/^(:?[0-3]\d):(:?[0-5]\d):(:?[0-5]\d)$/)) {
-	                time_now = that.time_now();
+	                time_now = timeNow();
 	                var invalid = time.match(/([a-z0-9]*):([a-z0-9]*):?([a-z0-9]*)?/);
 	                var hour = time_now.format('hh'),
 	                    minute = time_now.format('mm'),
 	                    second = time_now.format('ss');
 	
-	                if (typeof invalid[1] !== 'undefined' && isFinite(invalid[1])) {
-	                    hour = parseInt(invalid[1]);
-	                    if (hour < 10) {
-	                        hour = '0' + hour;
-	                    }
-	                }
-	                if (typeof invalid[2] !== 'undefined' && isFinite(invalid[2])) {
-	                    minute = parseInt(invalid[2]);
-	                    if (parseInt(minute) < 10) {
-	                        minute = '0' + minute;
-	                    }
-	                }
-	                if (typeof invalid[3] !== 'undefined' && isFinite(invalid[3])) {
-	                    second = parseInt(invalid[3]);
-	                    if (second < 10) {
-	                        second = '0' + minute;
-	                    }
-	                }
+	                if (typeof invalid[1] !== 'undefined' && isFinite(invalid[1])) hour = formatTime(invalid[1]);
+	                if (typeof invalid[2] !== 'undefined' && isFinite(invalid[2])) minute = formatTime(invalid[2]);
+	                if (typeof invalid[3] !== 'undefined' && isFinite(invalid[3])) second = formatTime(invalid[3]);
 	
-	                var new_time = moment(time_now.format('YYYY-MM-DD') + ' ' + hour + ':' + minute + ':' + second).format('HH:mm');
+	                new_time = moment(time_now.format('YYYY-MM-DD') + ' ' + [hour, minute, second].join(':')).format('HH:mm');
 	
-	                if (oldValue && oldValue === new_time) return false;
-	
-	                $(this).val(new_time);
-	                $(this).attr('data-value', new_time);
-	                $(that.component_selector).trigger('change', [new_time]);
-	            } else {
-	                if (oldValue && oldValue === time) return false;
-	                $(this).attr('data-value', time);
-	                $(that.component_selector).trigger('change', [time]);
+	                if (old_value && old_value === new_time) return false;
+	                $this.val(new_time);
 	            }
+	            $this.attr('data-value', new_time || time);
+	            $(this_selector).trigger('change', [new_time || time]);
 	            return true;
 	        };
 	
-	        this.config_data = config;
+	        time_pickers[options.selector].config_data = obj_config;
 	
-	        return config;
-	    },
-	    getTime: function getTime(time) {
-	        var hour = ('0' + time.hour).slice(-2),
-	            minute = ('0' + time.minute).slice(-2),
-	            second = '00';
-	        return [hour, minute, second].join(':');
-	    },
-	    checkWidth: function checkWidth(config, component_selector, that) {
-	        var $selector = $(that.component_selector);
+	        checkWidth(options.selector);
+	    };
+	
+	    var formatTime = function formatTime(time) {
+	        return ('0' + time).slice(-2);
+	    };
+	
+	    var toTime = function toTime(time) {
+	        return [formatTime(time.hour), formatTime(time.minute), '00'].join(':');
+	    };
+	
+	    var checkWidth = function checkWidth(selector) {
+	        var $selector = $(selector);
+	        var time_picker_conf = time_pickers[selector].config_data;
 	        if ($(window).width() < 770 && checkInput('time', 'not-a-time') && $selector.attr('data-picker') !== 'native') {
-	            that.hide($selector);
+	            hide(selector);
 	            $selector.attr({ type: 'time', 'data-picker': 'native' });
-	            var minTime = config.minTime;
-	            if (minTime) {
-	                $selector.attr('min', that.getTime(minTime));
-	            }
-	            var maxTime = config.maxTime;
-	            if (maxTime) {
-	                $selector.attr('max', that.getTime(maxTime));
-	            }
-	        } else if ($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery' || $(window).width() < 770 && !checkInput('time', 'not-a-time')) {
-	            $selector.attr({ type: 'text', 'data-picker': 'jquery' });
-	            $selector.removeAttr('min');
-	            $selector.removeAttr('max');
-	            that.create(config);
-	        }
-	    }
-	};
 	
-	module.exports = {
-	    TimePicker: TimePicker
-	};
+	            var minTime = time_picker_conf.minTime;
+	            if (minTime) $selector.attr('min', toTime(minTime));
+	
+	            var maxTime = time_picker_conf.maxTime;
+	            if (maxTime) $selector.attr('max', toTime(maxTime));
+	            return;
+	        }
+	        if ($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery' || $(window).width() < 770 && !checkInput('time', 'not-a-time')) {
+	            $selector.attr({ type: 'text', 'data-picker': 'jquery' });
+	            $selector.removeAttr('min max');
+	            create(selector);
+	        }
+	    };
+	
+	    return {
+	        init: init
+	    };
+	}();
+	
+	module.exports = TimePicker;
 
 /***/ },
 /* 494 */
@@ -49772,18 +49731,13 @@
 	var processTick_Beta = __webpack_require__(488).processTick_Beta;
 	var processProposal_Beta = __webpack_require__(488).processProposal_Beta;
 	var processTradingTimes_Beta = __webpack_require__(488).processTradingTimes_Beta;
-	var displayCurrencies = __webpack_require__(495).displayCurrencies;
 	var Notifications = __webpack_require__(459).Notifications;
-	var Symbols = __webpack_require__(443).Symbols;
 	var Tick = __webpack_require__(455).Tick;
 	var AssetIndexUI = __webpack_require__(479);
-	var MarketTimesUI = __webpack_require__(482);
-	var PortfolioWS = __webpack_require__(446);
-	var ProfitTableWS = __webpack_require__(496);
-	var StatementWS = __webpack_require__(499);
+	var TradingTimesUI = __webpack_require__(482);
+	var PortfolioInit = __webpack_require__(446);
 	var State = __webpack_require__(422).State;
 	var GTM = __webpack_require__(473);
-	var Client = __webpack_require__(427);
 	
 	/*
 	 * This Message object process the response from server and fire
@@ -49803,15 +49757,11 @@
 	            if (type === 'active_symbols') {
 	                processActiveSymbols_Beta(response);
 	                AssetIndexUI.setActiveSymbols(response);
-	                MarketTimesUI.setActiveSymbols(response);
+	                TradingTimesUI.setActiveSymbols(response);
 	            } else if (type === 'contracts_for') {
 	                Notifications.hide('CONNECTION_ERROR');
 	                processContract_Beta(response);
 	                window.contracts_for = response;
-	            } else if (type === 'payout_currencies') {
-	                Client.set('currencies', response.payout_currencies.join(','));
-	                displayCurrencies();
-	                Symbols.getSymbols(1);
 	            } else if (type === 'proposal') {
 	                processProposal_Beta(response);
 	            } else if (type === 'buy') {
@@ -49830,21 +49780,17 @@
 	                AssetIndexUI.setAssetIndex(response);
 	            } else if (type === 'trading_times') {
 	                processTradingTimes_Beta(response);
-	                MarketTimesUI.setTradingTimes(response);
-	            } else if (type === 'statement') {
-	                StatementWS.statementHandler(response);
-	            } else if (type === 'profit_table') {
-	                ProfitTableWS.profitTableHandler(response);
+	                TradingTimesUI.setTradingTimes(response);
 	            } else if (type === 'error') {
 	                $('.error-msg').text(response.error.message);
 	            } else if (type === 'portfolio') {
-	                PortfolioWS.updatePortfolio(response);
+	                PortfolioInit.updatePortfolio(response);
 	            } else if (type === 'proposal_open_contract') {
-	                PortfolioWS.updateIndicative(response);
+	                PortfolioInit.updateIndicative(response);
 	            } else if (type === 'transaction') {
-	                PortfolioWS.transactionResponseHandler(response);
+	                PortfolioInit.transactionResponseHandler(response);
 	            } else if (type === 'oauth_apps') {
-	                PortfolioWS.updateOAuthApps(response);
+	                PortfolioInit.updateOAuthApps(response);
 	            }
 	        } else {
 	            console.log('some error occured');
@@ -49920,671 +49866,8 @@
 
 	'use strict';
 	
-	var ProfitTableUI = __webpack_require__(497);
-	var ViewPopupWS = __webpack_require__(449);
 	var localize = __webpack_require__(430).localize;
-	var showLocalTimeOnHover = __webpack_require__(448).showLocalTimeOnHover;
-	var addTooltip = __webpack_require__(460).addTooltip;
-	var buildOauthApps = __webpack_require__(460).buildOauthApps;
-	
-	var ProfitTableInit = function () {
-	    var batch_size = void 0,
-	        chunk_size = void 0,
-	        transactions_received = void 0,
-	        transaction_consumed = void 0,
-	        no_more_data = void 0,
-	        pending = void 0,
-	        current_batch = void 0;
-	
-	    var tableExist = function tableExist() {
-	        return document.getElementById('profit-table');
-	    };
-	
-	    var finishedConsumed = function finishedConsumed() {
-	        return transaction_consumed === transactions_received;
-	    };
-	
-	    var onUnload = function onUnload() {
-	        current_batch = [];
-	        transaction_consumed = 0;
-	        transactions_received = 0;
-	        pending = false;
-	
-	        ProfitTableUI.errorMessage(null);
-	
-	        if (tableExist()) {
-	            ProfitTableUI.cleanTableContent();
-	        }
-	    };
-	
-	    var getNextBatchTransactions = function getNextBatchTransactions() {
-	        getProfitTable({ offset: transactions_received, limit: batch_size });
-	        pending = true;
-	    };
-	
-	    var getNextChunk = function getNextChunk() {
-	        var chunk = current_batch.splice(0, chunk_size);
-	        transaction_consumed += chunk.length;
-	        return chunk;
-	    };
-	
-	    var profitTableHandler = function profitTableHandler(response) {
-	        if (response.error) {
-	            ProfitTableUI.errorMessage(response.error.message);
-	            return;
-	        }
-	
-	        pending = false;
-	        var profit_table = response.profit_table;
-	        current_batch = profit_table.transactions;
-	        transactions_received += current_batch.length;
-	
-	        if (current_batch.length < batch_size) {
-	            no_more_data = true;
-	        }
-	
-	        if (!tableExist()) {
-	            ProfitTableUI.createEmptyTable().appendTo('#profit-table-ws-container');
-	            ProfitTableUI.updateProfitTable(getNextChunk());
-	
-	            // Show a message when the table is empty
-	            if (transactions_received === 0 && current_batch.length === 0) {
-	                $('#profit-table').find('tbody').append($('<tr/>', { class: 'flex-tr' }).append($('<td/>', { colspan: 8 }).append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
-	            }
-	        }
-	    };
-	
-	    var onScrollLoad = function onScrollLoad() {
-	        $(document).scroll(function () {
-	            var hidableHeight = function hidableHeight(percentage) {
-	                var totalHidable = $(document).height() - $(window).height();
-	                return Math.floor(totalHidable * percentage / 100);
-	            };
-	
-	            var p_from_top = $(document).scrollTop();
-	
-	            if (!tableExist() || p_from_top < hidableHeight(50)) {
-	                return;
-	            }
-	
-	            if (finishedConsumed() && !no_more_data && !pending) {
-	                getNextBatchTransactions();
-	                return;
-	            }
-	
-	            if (!finishedConsumed()) {
-	                ProfitTableUI.updateProfitTable(getNextChunk());
-	            }
-	        });
-	    };
-	
-	    var getProfitTable = function getProfitTable(opts) {
-	        var req = { profit_table: 1, description: 1 };
-	
-	        if (opts) $.extend(true, req, opts);
-	
-	        BinarySocket.send(req).then(function (response) {
-	            profitTableHandler(response);
-	            showLocalTimeOnHover('td.buy-date,td.sell-date');
-	            $('.barspinner').addClass('hidden');
-	        });
-	    };
-	
-	    var onLoad = function onLoad() {
-	        batch_size = 100;
-	        chunk_size = batch_size / 2;
-	        transactions_received = 0;
-	        transaction_consumed = 0;
-	        no_more_data = false;
-	        pending = false;
-	        current_batch = [];
-	
-	        BinarySocket.send({ oauth_apps: 1 }).then(function (response) {
-	            addTooltip(ProfitTableUI.setOauthApps(buildOauthApps(response)));
-	        });
-	        getNextBatchTransactions();
-	        onScrollLoad();
-	        ViewPopupWS.viewButtonOnClick('#profit-table-ws-container');
-	    };
-	
-	    return {
-	        profitTableHandler: profitTableHandler,
-	        onLoad: onLoad,
-	        onUnload: onUnload
-	    };
-	}();
-	
-	module.exports = ProfitTableInit;
-
-/***/ },
-/* 497 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var ProfitTable = __webpack_require__(498);
-	var Client = __webpack_require__(427);
-	var localize = __webpack_require__(430).localize;
-	var toJapanTimeIfNeeded = __webpack_require__(448).toJapanTimeIfNeeded;
-	var addComma = __webpack_require__(433).addComma;
-	var elementTextContent = __webpack_require__(428).elementTextContent;
-	var formatMoney = __webpack_require__(432).formatMoney;
-	var jpClient = __webpack_require__(425).jpClient;
-	var showTooltip = __webpack_require__(460).showTooltip;
-	var Table = __webpack_require__(481);
-	
-	var ProfitTableUI = function () {
-	    'use strict';
-	
-	    var oauth_apps = {},
-	        currency = void 0;
-	
-	    var profit_table_id = 'profit-table',
-	        cols = ['buy-date', 'ref', 'payout', 'contract', 'buy-price', 'sell-date', 'sell-price', 'pl', 'details'];
-	
-	    var createEmptyTable = function createEmptyTable() {
-	        var header = [localize('Date'), localize('Ref.'), localize('Potential Payout'), localize('Contract'), localize('Purchase Price'), localize('Sale Date'), localize('Sale Price'), localize('Profit/Loss'), localize('Details')];
-	
-	        var jp_client = jpClient();
-	        currency = Client.get('currency');
-	
-	        header[7] += jp_client ? '' : currency ? ' (' + currency + ')' : '';
-	
-	        var footer = [localize('Total Profit/Loss'), '', '', '', '', '', '', '', ''];
-	
-	        var data = [];
-	        var metadata = {
-	            cols: cols,
-	            id: profit_table_id
-	        };
-	        var $table_container = Table.createFlexTable(data, metadata, header, footer);
-	
-	        $table_container.children('table').children('tfoot').children('tr').attr('id', 'pl-day-total');
-	
-	        return $table_container;
-	    };
-	
-	    var updateFooter = function updateFooter(transactions) {
-	        var acc_total = elementTextContent(document.querySelector('#pl-day-total > .pl'));
-	        acc_total = parseFloat(acc_total.replace(/,/g, ''));
-	        if (!acc_total || isNaN(acc_total)) {
-	            acc_total = 0;
-	        }
-	
-	        var current_total = transactions.reduce(function (previous, current) {
-	            var buy_price = Number(parseFloat(current.buy_price));
-	            var sell_price = Number(parseFloat(current.sell_price));
-	            var pl = sell_price - buy_price;
-	            return previous + pl;
-	        }, 0);
-	
-	        var total = acc_total + current_total,
-	            jp_client = jpClient(),
-	            sub_total_type = total >= 0 ? 'profit' : 'loss';
-	
-	        $('#pl-day-total').find(' > .pl').text(jp_client ? formatMoney(currency, total) : addComma(Number(total).toFixed(2))).removeClass('profit loss').addClass(sub_total_type);
-	    };
-	
-	    var createProfitTableRow = function createProfitTableRow(transaction) {
-	        var profit_table_data = ProfitTable.getProfitTabletData(transaction);
-	        var pl_type = profit_table_data.pl >= 0 ? 'profit' : 'loss';
-	
-	        var jp_client = jpClient();
-	
-	        var data = [jp_client ? toJapanTimeIfNeeded(transaction.purchase_time) : profit_table_data.buyDate, '<span' + showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', jp_client ? formatMoney(currency, profit_table_data.payout) : profit_table_data.payout, '', jp_client ? formatMoney(currency, profit_table_data.buyPrice) : profit_table_data.buyPrice, jp_client ? toJapanTimeIfNeeded(transaction.sell_time) : profit_table_data.sellDate, jp_client ? formatMoney(currency, profit_table_data.sellPrice) : profit_table_data.sellPrice, jp_client ? formatMoney(currency, profit_table_data.pl) : profit_table_data.pl, ''];
-	        var $row = Table.createFlexTableRow(data, cols, 'data');
-	
-	        $row.children('.pl').addClass(pl_type);
-	        $row.children('.contract').html(profit_table_data.desc + '<br>');
-	        $row.children('.buy-date').each(function () {
-	            $(this).wrapInner('<div class="new-width"></div>');
-	        });
-	        $row.children('.sell-date').each(function () {
-	            $(this).wrapInner('<div class="new-width"></div>');
-	        });
-	
-	        // create view button and append
-	        var $view_button = $('<button/>', { class: 'button open_contract_detailsws', text: localize('View'), contract_id: profit_table_data.id });
-	        $row.children('.contract,.details').append($view_button);
-	
-	        return $row[0];
-	    };
-	
-	    var updateProfitTable = function updateProfitTable(transactions) {
-	        Table.appendTableBody(profit_table_id, transactions, createProfitTableRow);
-	        updateFooter(transactions);
-	    };
-	
-	    var clearTableContent = function clearTableContent() {
-	        Table.clearTableBody(profit_table_id);
-	        $('#' + profit_table_id + '>tfoot').hide();
-	    };
-	
-	    var errorMessage = function errorMessage(msg) {
-	        var $err = $('#profit-table-ws-container').find('#error-msg');
-	        if (msg) {
-	            $err.removeClass('invisible').text(msg);
-	        } else {
-	            $err.addClass('invisible').text('');
-	        }
-	    };
-	
-	    return {
-	        createEmptyTable: createEmptyTable,
-	        updateProfitTable: updateProfitTable,
-	        cleanTableContent: clearTableContent,
-	        errorMessage: errorMessage,
-	        setOauthApps: function setOauthApps(values) {
-	            return oauth_apps = values;
-	        }
-	    };
-	}();
-	
-	module.exports = ProfitTableUI;
-
-/***/ },
-/* 498 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var moment = __webpack_require__(304);
-	
-	var ProfitTable = function () {
-	    'use strict';
-	
-	    var getProfitTabletData = function getProfitTabletData(transaction) {
-	        var buy_moment = moment.utc(transaction.purchase_time * 1000),
-	            sell_moment = moment.utc(transaction.sell_time * 1000),
-	            buy_price = parseFloat(transaction.buy_price).toFixed(2),
-	            sell_price = parseFloat(transaction.sell_price).toFixed(2);
-	
-	        return {
-	            buyDate: buy_moment.format('YYYY-MM-DD') + '\n' + buy_moment.format('HH:mm:ss') + ' GMT',
-	            ref: transaction.transaction_id,
-	            payout: parseFloat(transaction.payout).toFixed(2),
-	            buyPrice: buy_price,
-	            sellDate: sell_moment.format('YYYY-MM-DD') + '\n' + sell_moment.format('HH:mm:ss') + ' GMT',
-	            sellPrice: sell_price,
-	            pl: Number(sell_price - buy_price).toFixed(2),
-	            desc: transaction.longcode,
-	            id: transaction.contract_id,
-	            app_id: transaction.app_id
-	        };
-	    };
-	
-	    return {
-	        getProfitTabletData: getProfitTabletData
-	    };
-	}();
-	
-	module.exports = ProfitTable;
-
-/***/ },
-/* 499 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var moment = __webpack_require__(304);
-	var StatementUI = __webpack_require__(500);
-	var ViewPopupWS = __webpack_require__(449);
-	var getLanguage = __webpack_require__(421).get;
-	var localize = __webpack_require__(430).localize;
-	var showLocalTimeOnHover = __webpack_require__(448).showLocalTimeOnHover;
-	var addTooltip = __webpack_require__(460).addTooltip;
-	var buildOauthApps = __webpack_require__(460).buildOauthApps;
-	var dateValueChanged = __webpack_require__(428).dateValueChanged;
-	var jpClient = __webpack_require__(425).jpClient;
-	var toISOFormat = __webpack_require__(433).toISOFormat;
-	var DatePicker = __webpack_require__(466).DatePicker;
-	
-	var StatementInit = function () {
-	    'use strict';
-	
-	    // Batch refer to number of data get from ws service per request
-	    // chunk refer to number of data populate to ui for each append
-	    // receive means receive from ws service
-	    // consume means consume by UI and displayed to page
-	
-	    var batch_size = void 0,
-	        chunk_size = void 0,
-	        no_more_data = void 0,
-	        pending = void 0,
-	        current_batch = void 0,
-	        transactions_received = void 0,
-	        transactions_consumed = void 0;
-	
-	    var tableExist = function tableExist() {
-	        return document.getElementById('statement-table');
-	    };
-	
-	    var finishedConsumed = function finishedConsumed() {
-	        return transactions_consumed === transactions_received;
-	    };
-	
-	    var getStatement = function getStatement(opts) {
-	        var req = { statement: 1, description: 1 };
-	
-	        if (opts) $.extend(true, req, opts);
-	
-	        var jump_to_val = $('#jump-to').attr('data-value');
-	        if (jump_to_val && jump_to_val !== '') {
-	            req.date_to = moment.utc(jump_to_val).unix() + (jpClient() ? 15 : 24) * (60 * 60);
-	            req.date_from = 0;
-	        }
-	        BinarySocket.send(req).then(function (response) {
-	            statementHandler(response);
-	        });
-	    };
-	
-	    var getNextBatchStatement = function getNextBatchStatement() {
-	        getStatement({ offset: transactions_received, limit: batch_size });
-	        pending = true;
-	    };
-	
-	    var getNextChunkStatement = function getNextChunkStatement() {
-	        var chunk = current_batch.splice(0, chunk_size);
-	        transactions_consumed += chunk.length;
-	        $('#rows_count').text(transactions_consumed);
-	        return chunk;
-	    };
-	
-	    var statementHandler = function statementHandler(response) {
-	        if (response.error) {
-	            StatementUI.errorMessage(response.error.message);
-	            return;
-	        }
-	
-	        pending = false;
-	
-	        var statement = response.statement;
-	        current_batch = statement.transactions;
-	        transactions_received += current_batch.length;
-	
-	        if (current_batch.length < batch_size) {
-	            no_more_data = true;
-	        }
-	
-	        if (!tableExist()) {
-	            StatementUI.createEmptyStatementTable().appendTo('#statement-ws-container');
-	            $('.act, .credit').addClass('nowrap');
-	            StatementUI.updateStatementTable(getNextChunkStatement());
-	
-	            // Show a message when the table is empty
-	            if (transactions_received === 0 && current_batch.length === 0) {
-	                $('#statement-table').find('tbody').append($('<tr/>', { class: 'flex-tr' }).append($('<td/>', { colspan: 7 }).append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
-	            } else {
-	                $('#jump-to').parent().parent().parent().removeClass('invisible');
-	                if (getLanguage() === 'JA') {
-	                    $('#download_csv').removeClass('invisible').find('a').unbind('click').click(function () {
-	                        StatementUI.exportCSV();
-	                    });
-	                }
-	            }
-	        }
-	        showLocalTimeOnHover('td.date');
-	    };
-	
-	    var loadStatementChunkWhenScroll = function loadStatementChunkWhenScroll() {
-	        $(document).scroll(function () {
-	            var hidableHeight = function hidableHeight(percentage) {
-	                var total_hideable = $(document).height() - $(window).height();
-	                return Math.floor(total_hideable * percentage / 100);
-	            };
-	
-	            var p_from_top = $(document).scrollTop();
-	
-	            if (!tableExist() || p_from_top < hidableHeight(70)) return;
-	
-	            if (finishedConsumed() && !no_more_data && !pending) {
-	                getNextBatchStatement();
-	                return;
-	            }
-	
-	            if (!finishedConsumed()) StatementUI.updateStatementTable(getNextChunkStatement());
-	        });
-	    };
-	
-	    var onUnload = function onUnload() {
-	        pending = false;
-	        no_more_data = false;
-	
-	        current_batch = [];
-	
-	        transactions_received = 0;
-	        transactions_consumed = 0;
-	
-	        StatementUI.errorMessage(null);
-	
-	        StatementUI.clearTableContent();
-	    };
-	
-	    var initPage = function initPage() {
-	        batch_size = 200;
-	        chunk_size = batch_size / 2;
-	        no_more_data = false;
-	        pending = false; // serve as a lock to prevent ws request is sequential
-	        current_batch = [];
-	        transactions_received = 0;
-	        transactions_consumed = 0;
-	
-	        BinarySocket.send({ oauth_apps: 1 }).then(function (response) {
-	            addTooltip(StatementUI.setOauthApps(buildOauthApps(response)));
-	            $('.barspinner').addClass('hidden');
-	        });
-	        getNextBatchStatement();
-	        loadStatementChunkWhenScroll();
-	    };
-	
-	    var attachDatePicker = function attachDatePicker() {
-	        var jump_to = '#jump-to';
-	        $(jump_to).attr('data-value', toISOFormat(moment())).change(function () {
-	            if (!dateValueChanged(this, 'date')) {
-	                return false;
-	            }
-	            $('.table-container').remove();
-	            StatementUI.clearTableContent();
-	            initPage();
-	            return true;
-	        });
-	        var datepicker_inst = new DatePicker(jump_to);
-	        datepicker_inst.hide();
-	        datepicker_inst.show({ maxDate: 0 });
-	        if ($(jump_to).attr('data-picker') !== 'native') $(jump_to).val(localize('Today'));
-	    };
-	
-	    var onLoad = function onLoad() {
-	        initPage();
-	        attachDatePicker();
-	        ViewPopupWS.viewButtonOnClick('#statement-ws-container');
-	    };
-	
-	    return {
-	        init: initPage,
-	        statementHandler: statementHandler,
-	        onLoad: onLoad,
-	        onUnload: onUnload
-	    };
-	}();
-	
-	module.exports = StatementInit;
-
-/***/ },
-/* 500 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var Statement = __webpack_require__(501);
-	var Client = __webpack_require__(427);
-	var downloadCSV = __webpack_require__(417).downloadCSV;
-	var localize = __webpack_require__(430).localize;
-	var toJapanTimeIfNeeded = __webpack_require__(448).toJapanTimeIfNeeded;
-	var jpClient = __webpack_require__(425).jpClient;
-	var showTooltip = __webpack_require__(460).showTooltip;
-	var Table = __webpack_require__(481);
-	
-	var StatementUI = function () {
-	    'use strict';
-	
-	    var all_data = [],
-	        oauth_apps = {};
-	
-	    var table_id = 'statement-table',
-	        columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];
-	
-	    var createEmptyStatementTable = function createEmptyStatementTable() {
-	        var header = [localize('Date'), localize('Ref.'), localize('Potential Payout'), localize('Action'), localize('Description'), localize('Credit/Debit'), localize('Balance'), localize('Details')];
-	
-	        var jp_client = jpClient(),
-	            currency = Client.get('currency');
-	
-	        header[6] += jp_client || !currency ? '' : ' (' + currency + ')';
-	
-	        var metadata = {
-	            id: table_id,
-	            cols: columns
-	        };
-	        var data = [];
-	        return Table.createFlexTable(data, metadata, header);
-	    };
-	
-	    var clearTableContent = function clearTableContent() {
-	        Table.clearTableBody(table_id);
-	        all_data = [];
-	        $('#' + table_id + '>tfoot').hide();
-	    };
-	
-	    var createStatementRow = function createStatementRow(transaction) {
-	        var statement_data = Statement.getStatementData(transaction, Client.get('currency'), jpClient());
-	        all_data.push($.extend({}, statement_data, {
-	            action: localize(statement_data.action),
-	            desc: localize(statement_data.desc)
-	        }));
-	        var credit_debit_type = parseFloat(transaction.amount) >= 0 ? 'profit' : 'loss';
-	
-	        var $statement_row = Table.createFlexTableRow([statement_data.date, '<span' + showTooltip(statement_data.app_id, oauth_apps[statement_data.app_id]) + '>' + statement_data.ref + '</span>', statement_data.payout, localize(statement_data.action), '', statement_data.amount, statement_data.balance, ''], columns, 'data');
-	
-	        $statement_row.children('.credit').addClass(credit_debit_type);
-	        $statement_row.children('.date').addClass('pre');
-	        $statement_row.children('.desc').html(localize(statement_data.desc) + '<br>');
-	
-	        // create view button and append
-	        if (statement_data.action === 'Sell' || statement_data.action === 'Buy') {
-	            var $view_button = $('<button/>', { class: 'button open_contract_detailsws', text: localize('View'), contract_id: statement_data.id });
-	            $statement_row.children('.desc,.details').append($view_button);
-	        }
-	
-	        return $statement_row[0]; // return DOM instead of jquery object
-	    };
-	
-	    var updateStatementTable = function updateStatementTable(transactions) {
-	        Table.appendTableBody(table_id, transactions, createStatementRow);
-	    };
-	
-	    var errorMessage = function errorMessage(msg) {
-	        var $err = $('#statement-ws-container').find('#error-msg');
-	        if (msg) {
-	            $err.removeClass('invisible').text(msg);
-	        } else {
-	            $err.addClass('invisible').text('');
-	        }
-	    };
-	
-	    var exportCSV = function exportCSV() {
-	        downloadCSV(Statement.generateCSV(all_data, jpClient()), 'Statement_' + Client.get('loginid') + '_latest' + $('#rows_count').text() + '_' + toJapanTimeIfNeeded(window.time).replace(/\s/g, '_').replace(/:/g, '') + '.csv');
-	    };
-	
-	    return {
-	        clearTableContent: clearTableContent,
-	        createEmptyStatementTable: createEmptyStatementTable,
-	        updateStatementTable: updateStatementTable,
-	        errorMessage: errorMessage,
-	        exportCSV: exportCSV,
-	        setOauthApps: function setOauthApps(values) {
-	            return oauth_apps = values;
-	        }
-	    };
-	}();
-	
-	module.exports = StatementUI;
-
-/***/ },
-/* 501 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var moment = __webpack_require__(304);
-	var Client = __webpack_require__(427);
-	var localize = __webpack_require__(430).localize;
-	var toJapanTimeIfNeeded = __webpack_require__(448).toJapanTimeIfNeeded;
-	var addComma = __webpack_require__(433).addComma;
-	var formatMoney = __webpack_require__(432).formatMoney;
-	var toTitleCase = __webpack_require__(433).toTitleCase;
-	
-	var Statement = function () {
-	    'use strict';
-	
-	    var getStatementData = function getStatementData(statement, currency, jp_client) {
-	        var date_obj = new Date(statement.transaction_time * 1000),
-	            moment_obj = moment.utc(date_obj),
-	            date_str = moment_obj.format('YYYY-MM-DD'),
-	            time_str = moment_obj.format('HH:mm:ss') + ' GMT',
-	            payout = parseFloat(statement.payout),
-	            amount = parseFloat(statement.amount),
-	            balance = parseFloat(statement.balance_after);
-	
-	        return {
-	            date: jp_client ? toJapanTimeIfNeeded(statement.transaction_time) : date_str + '\n' + time_str,
-	            ref: statement.transaction_id,
-	            payout: isNaN(payout) ? '-' : jp_client ? formatMoney(currency, payout) : payout.toFixed(2),
-	            action: toTitleCase(statement.action_type),
-	            amount: isNaN(amount) ? '-' : jp_client ? formatMoney(currency, amount) : addComma(amount),
-	            balance: isNaN(balance) ? '-' : jp_client ? formatMoney(currency, balance) : addComma(balance),
-	            desc: statement.longcode.replace(/\n/g, '<br />'),
-	            id: statement.contract_id,
-	            app_id: statement.app_id
-	        };
-	    };
-	
-	    var generateCSV = function generateCSV(all_data, jp_client) {
-	        var columns = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'],
-	            header = ['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit'].map(function (str) {
-	            return localize(str);
-	        }),
-	            currency = Client.get('currency');
-	        header.push(localize('Balance') + (jp_client || !currency ? '' : ' (' + currency + ')'));
-	        var sep = ',';
-	        var csv = [header.join(sep)];
-	        if (all_data && all_data.length > 0) {
-	            csv = csv.concat(all_data.map(function (data) {
-	                return columns.map(function (key) {
-	                    // eslint-disable-next-line no-control-regex
-	                    return data[key] ? data[key].replace(new RegExp(sep, 'g'), '').replace(new RegExp('\n|<br />', 'g'), ' ') : '';
-	                }).join(sep);
-	            }));
-	        }
-	        return csv.join('\r\n');
-	    };
-	
-	    return {
-	        getStatementData: getStatementData,
-	        generateCSV: generateCSV
-	    };
-	}();
-	
-	module.exports = Statement;
-
-/***/ },
-/* 502 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var localize = __webpack_require__(430).localize;
-	var EnjoyHint = __webpack_require__(503);
+	var EnjoyHint = __webpack_require__(497);
 	var Cookies = __webpack_require__(423);
 	
 	/*
@@ -50733,7 +50016,7 @@
 	module.exports = Guide;
 
 /***/ },
-/* 503 */
+/* 497 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50744,7 +50027,7 @@
 	// (+ some custom changes for binary.com)
 	
 	var $ = __webpack_require__(1);
-	var Kinetic = __webpack_require__(504);
+	var Kinetic = __webpack_require__(498);
 	
 	module.exports = function (_options) {
 	    var that = this;
@@ -51728,7 +51011,7 @@
 	};
 
 /***/ },
-/* 504 */
+/* 498 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {
@@ -52334,8 +51617,8 @@
 	            // Node. Does not work with strict CommonJS, but
 	            // only CommonJS-like enviroments that support module.exports,
 	            // like Node.
-	            var Canvas = __webpack_require__(505);
-	            var jsdom = __webpack_require__(506).jsdom;
+	            var Canvas = __webpack_require__(499);
+	            var jsdom = __webpack_require__(500).jsdom;
 	
 	            Kinetic.document = jsdom('<!DOCTYPE html><html><head></head><body></body></html>');
 	            Kinetic.window = Kinetic.document.createWindow();
@@ -66873,19 +66156,19 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 505 */
+/* 499 */
 /***/ function(module, exports) {
 
 	/* (ignored) */
 
 /***/ },
-/* 506 */
+/* 500 */
 /***/ function(module, exports) {
 
 	/* (ignored) */
 
 /***/ },
-/* 507 */
+/* 501 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;"use strict";
@@ -67102,7 +66385,7 @@
 	});
 
 /***/ },
-/* 508 */
+/* 502 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -67114,19 +66397,19 @@
 	var showPriceOverlay = __webpack_require__(457).showPriceOverlay;
 	var displayCurrencies = __webpack_require__(495).displayCurrencies;
 	var Defaults = __webpack_require__(458).Defaults;
-	var TradingEvents = __webpack_require__(509).TradingEvents;
-	var Message = __webpack_require__(510).Message;
+	var TradingEvents = __webpack_require__(503).TradingEvents;
+	var Message = __webpack_require__(504).Message;
 	var Notifications = __webpack_require__(459).Notifications;
 	var Price = __webpack_require__(465).Price;
 	var forgetTradingStreams = __webpack_require__(461).forgetTradingStreams;
 	var Symbols = __webpack_require__(443).Symbols;
-	var ViewPopupWS = __webpack_require__(449);
+	var ViewPopup = __webpack_require__(449);
 	var BinaryPjax = __webpack_require__(420);
 	var Client = __webpack_require__(427);
 	var localize = __webpack_require__(430).localize;
 	var State = __webpack_require__(422).State;
 	var jpClient = __webpack_require__(425).jpClient;
-	var Guide = __webpack_require__(502);
+	var Guide = __webpack_require__(496);
 	
 	var TradePage = function () {
 	    var events_initialized = 0;
@@ -67138,9 +66421,6 @@
 	            return;
 	        }
 	        State.set('is_trading', true);
-	        if (Client.get('currencies')) {
-	            displayCurrencies();
-	        }
 	        BinarySocket.init({
 	            onmessage: function onmessage(msg) {
 	                Message.process(msg);
@@ -67159,7 +66439,11 @@
 	            displayCurrencies();
 	            Symbols.getSymbols(1);
 	        } else {
-	            BinarySocket.send({ payout_currencies: 1 });
+	            BinarySocket.send({ payout_currencies: 1 }).then(function (response) {
+	                Client.set('currencies', response.payout_currencies.join(','));
+	                displayCurrencies();
+	                Symbols.getSymbols(1);
+	            });
 	        }
 	
 	        if (document.getElementById('websocket_form')) {
@@ -67176,7 +66460,7 @@
 	        $('#tab_explanation').find('a').text(localize('Explanation'));
 	        $('#tab_last_digit').find('a').text(localize('Last Digit Stats'));
 	
-	        ViewPopupWS.viewButtonOnClick('#contract_confirmation_container');
+	        ViewPopup.viewButtonOnClick('#contract_confirmation_container');
 	    };
 	
 	    var reload = function reload() {
@@ -67211,7 +66495,7 @@
 	module.exports = TradePage;
 
 /***/ },
-/* 509 */
+/* 503 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -67247,7 +66531,7 @@
 	var elementTextContent = __webpack_require__(428).elementTextContent;
 	var isVisible = __webpack_require__(428).isVisible;
 	var onlyNumericOnKeypress = __webpack_require__(492);
-	var TimePicker = __webpack_require__(493).TimePicker;
+	var TimePicker = __webpack_require__(493);
 	
 	/*
 	 * TradingEvents object contains all the event handler const required = function for
@@ -67706,12 +66990,13 @@
 	    };
 	
 	    var attachTimePicker = function attachTimePicker() {
-	        var timePickerInst = new TimePicker('#expiry_time');
 	        var date_start = document.getElementById('date_start').value;
 	        var now = !date_start || date_start === 'now';
 	        var current_moment = now ? window.time ? window.time : moment.utc() : parseInt(date_start) * 1000;
-	        timePickerInst.hide();
-	        timePickerInst.show(current_moment);
+	        TimePicker.init({
+	            selector: '#expiry_time',
+	            minTime: current_moment
+	        });
 	    };
 	
 	    return {
@@ -67724,16 +67009,14 @@
 	};
 
 /***/ },
-/* 510 */
+/* 504 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var TradingAnalysis = __webpack_require__(440).TradingAnalysis;
-	var displayCurrencies = __webpack_require__(495).displayCurrencies;
 	var Notifications = __webpack_require__(459).Notifications;
 	var Purchase = __webpack_require__(467).Purchase;
-	var Symbols = __webpack_require__(443).Symbols;
 	var Tick = __webpack_require__(455).Tick;
 	var processActiveSymbols = __webpack_require__(461).processActiveSymbols;
 	var processContract = __webpack_require__(461).processContract;
@@ -67741,12 +67024,9 @@
 	var processTick = __webpack_require__(461).processTick;
 	var processProposal = __webpack_require__(461).processProposal;
 	var processTradingTimes = __webpack_require__(461).processTradingTimes;
-	var PortfolioWS = __webpack_require__(446);
-	var ProfitTableWS = __webpack_require__(496);
-	var StatementWS = __webpack_require__(499);
+	var PortfolioInit = __webpack_require__(446);
 	var State = __webpack_require__(422).State;
 	var GTM = __webpack_require__(473);
-	var Client = __webpack_require__(427);
 	
 	/*
 	 * This Message object process the response from server and fire
@@ -67769,10 +67049,6 @@
 	                Notifications.hide('CONNECTION_ERROR');
 	                processContract(response);
 	                window.contracts_for = response;
-	            } else if (type === 'payout_currencies') {
-	                Client.set('currencies', response.payout_currencies.join(','));
-	                displayCurrencies();
-	                Symbols.getSymbols(1);
 	            } else if (type === 'proposal') {
 	                processProposal(response);
 	            } else if (type === 'buy') {
@@ -67789,18 +67065,14 @@
 	                }
 	            } else if (type === 'trading_times') {
 	                processTradingTimes(response);
-	            } else if (type === 'statement') {
-	                StatementWS.statementHandler(response);
-	            } else if (type === 'profit_table') {
-	                ProfitTableWS.profitTableHandler(response);
 	            } else if (type === 'error') {
 	                $('.error-msg').text(response.error.message);
 	            } else if (type === 'portfolio') {
-	                PortfolioWS.updatePortfolio(response);
+	                PortfolioInit.updatePortfolio(response);
 	            } else if (type === 'proposal_open_contract') {
-	                PortfolioWS.updateIndicative(response);
+	                PortfolioInit.updateIndicative(response);
 	            } else if (type === 'transaction') {
-	                PortfolioWS.transactionResponseHandler(response);
+	                PortfolioInit.transactionResponseHandler(response);
 	            }
 	        } else {
 	            console.log('some error occured');
@@ -67817,13 +67089,13 @@
 	};
 
 /***/ },
-/* 511 */
+/* 505 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var formatMoney = __webpack_require__(432).formatMoney;
-	var PortfolioWS = __webpack_require__(446);
+	var PortfolioInit = __webpack_require__(446);
 	var updateContractBalance = __webpack_require__(457).updateContractBalance;
 	var Client = __webpack_require__(427);
 	
@@ -67835,7 +67107,7 @@
 	        }
 	        var balance = response.balance.balance;
 	        Client.set('balance', balance);
-	        PortfolioWS.updateBalance();
+	        PortfolioInit.updateBalance();
 	        var currency = response.balance.currency;
 	        if (!currency) {
 	            return;
@@ -67855,7 +67127,7 @@
 	};
 
 /***/ },
-/* 512 */
+/* 506 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -67867,10 +67139,10 @@
 	var Login = __webpack_require__(474);
 	var State = __webpack_require__(422).State;
 	var urlFor = __webpack_require__(424).urlFor;
-	var objectNotEmpty = __webpack_require__(417).objectNotEmpty;
+	var isEmptyObject = __webpack_require__(417).isEmptyObject;
 	var checkClientsCountry = __webpack_require__(425).checkClientsCountry;
 	var jpClient = __webpack_require__(425).jpClient;
-	var MetaTrader = __webpack_require__(513);
+	var MetaTrader = __webpack_require__(507);
 	
 	var Header = function () {
 	    'use strict';
@@ -68045,7 +67317,7 @@
 	
 	            var riskAssessment = function riskAssessment() {
 	                if (get_account_status.risk_classification === 'high') {
-	                    return !objectNotEmpty(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
+	                    return isEmptyObject(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
 	                }
 	                return false;
 	            };
@@ -68134,15 +67406,15 @@
 	module.exports = Header;
 
 /***/ },
-/* 513 */
+/* 507 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var localize = __webpack_require__(430).localize;
-	var Validation = __webpack_require__(514);
-	var MetaTraderConfig = __webpack_require__(515);
-	var MetaTraderUI = __webpack_require__(516);
+	var Validation = __webpack_require__(508);
+	var MetaTraderConfig = __webpack_require__(509);
+	var MetaTraderUI = __webpack_require__(510);
 	
 	var MetaTrader = function () {
 	    'use strict';
@@ -68284,7 +67556,7 @@
 	module.exports = MetaTrader;
 
 /***/ },
-/* 514 */
+/* 508 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -68547,7 +67819,7 @@
 	module.exports = Validation;
 
 /***/ },
-/* 515 */
+/* 509 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -68555,7 +67827,7 @@
 	var Client = __webpack_require__(427);
 	var localize = __webpack_require__(430).localize;
 	var urlFor = __webpack_require__(424).urlFor;
-	var objectNotEmpty = __webpack_require__(417).objectNotEmpty;
+	var isEmptyObject = __webpack_require__(417).isEmptyObject;
 	var formatMoney = __webpack_require__(432).formatMoney;
 	
 	var MetaTraderConfig = function () {
@@ -68600,7 +67872,7 @@
 	                        resolve(needsRealMessage());
 	                    } else if (types_info[acc_type].account_type === 'financial') {
 	                        BinarySocket.send({ get_financial_assessment: 1 }).then(function (response_financial) {
-	                            resolve(!objectNotEmpty(response_financial.get_financial_assessment) ? $('#msg_assessment').find('a').attr('onclick', 'localStorage.setItem(\'financial_assessment_redirect\', \'' + urlFor('user/metatrader') + '\')').end().html() : '');
+	                            resolve(isEmptyObject(response_financial.get_financial_assessment) ? $('#msg_assessment').find('a').attr('onclick', 'localStorage.setItem(\'financial_assessment_redirect\', \'' + urlFor('user/metatrader') + '\')').end().html() : '');
 	                        });
 	                    } else {
 	                        resolve();
@@ -68774,15 +68046,15 @@
 	module.exports = MetaTraderConfig;
 
 /***/ },
-/* 516 */
+/* 510 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var showLoadingImage = __webpack_require__(417).showLoadingImage;
 	var formatMoney = __webpack_require__(432).formatMoney;
-	var Validation = __webpack_require__(514);
-	var MetaTraderConfig = __webpack_require__(515);
+	var Validation = __webpack_require__(508);
+	var MetaTraderConfig = __webpack_require__(509);
 	
 	var MetaTraderUI = function () {
 	    'use strict';
@@ -68967,7 +68239,7 @@
 	module.exports = MetaTraderUI;
 
 /***/ },
-/* 517 */
+/* 511 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -69042,13 +68314,13 @@
 	module.exports = SessionDurationLimit;
 
 /***/ },
-/* 518 */
+/* 512 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var MBPrice = __webpack_require__(438).MBPrice;
-	var CashierJP = __webpack_require__(519);
+	var CashierJP = __webpack_require__(513);
 	
 	var HandleClick = function HandleClick(param) {
 	    for (var _len = arguments.length, values = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -69072,7 +68344,7 @@
 	};
 
 /***/ },
-/* 519 */
+/* 513 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -69129,7 +68401,7 @@
 	module.exports = CashierJP;
 
 /***/ },
-/* 520 */
+/* 514 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -69162,7 +68434,7 @@
 	};
 
 /***/ },
-/* 521 */
+/* 515 */
 /***/ function(module, exports) {
 
 	/** @license
@@ -69709,7 +68981,7 @@
 
 
 /***/ },
-/* 522 */
+/* 516 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -72811,7 +72083,7 @@
 	})(document, Math);
 
 /***/ },
-/* 523 */
+/* 517 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -73027,7 +72299,7 @@
 
 
 /***/ },
-/* 524 */
+/* 518 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -73061,8 +72333,10 @@
 	        }
 	
 	        payload.network = payload.network.filter(function (item) {
-	            // ignore random errors from Intercom
-	            return !(item.statusCode === 403 && payload.message.indexOf('intercom') > -1);
+	            return (
+	                // ignore random errors from Intercom
+	                !(item.statusCode === 403 && payload.message.indexOf('intercom') > -1)
+	            );
 	        });
 	
 	        return true;
@@ -73073,18 +72347,18 @@
 	if (typeof trackJs !== 'undefined') trackJs.configure(window._trackJs);
 
 /***/ },
-/* 525 */
+/* 519 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var BinaryPjax = __webpack_require__(420);
-	var pages_config = __webpack_require__(526);
+	var pages_config = __webpack_require__(520);
 	var Client = __webpack_require__(427);
 	var GTM = __webpack_require__(473);
 	var localize = __webpack_require__(430).localize;
 	var Login = __webpack_require__(474);
-	var Page = __webpack_require__(586);
+	var Page = __webpack_require__(585);
 	var defaultRedirectUrl = __webpack_require__(424).defaultRedirectUrl;
 	
 	var BinaryLoader = function () {
@@ -73169,64 +72443,63 @@
 	module.exports = BinaryLoader;
 
 /***/ },
-/* 526 */
+/* 520 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var LoggedInHandler = __webpack_require__(527);
+	var LoggedInHandler = __webpack_require__(521);
 	
-	var Careers = __webpack_require__(528);
-	var Charity = __webpack_require__(529);
-	var Contact = __webpack_require__(530);
-	var Endpoint = __webpack_require__(533);
-	var Home = __webpack_require__(534);
-	var GetStarted = __webpack_require__(536);
-	var GetStartedJP = __webpack_require__(538);
-	var JobDetails = __webpack_require__(539);
-	var Platforms = __webpack_require__(540);
-	var Regulation = __webpack_require__(541);
-	var StaticPages = __webpack_require__(542);
-	var TermsAndConditions = __webpack_require__(543);
-	var WhyUs = __webpack_require__(545);
+	var Charity = __webpack_require__(522);
+	var Contact = __webpack_require__(523);
+	var Endpoint = __webpack_require__(526);
+	var Home = __webpack_require__(527);
+	var GetStarted = __webpack_require__(529);
+	var GetStartedJP = __webpack_require__(530);
+	var JobDetails = __webpack_require__(531);
+	var Platforms = __webpack_require__(532);
+	var Regulation = __webpack_require__(533);
+	var StaticPages = __webpack_require__(534);
+	var TermsAndConditions = __webpack_require__(536);
+	var WhyUs = __webpack_require__(538);
 	
-	var AccountTransfer = __webpack_require__(546);
-	var Cashier = __webpack_require__(547);
-	var DepositWithdraw = __webpack_require__(548);
-	var PaymentAgentList = __webpack_require__(549);
-	var PaymentAgentWithdraw = __webpack_require__(550);
+	var AccountTransfer = __webpack_require__(539);
+	var Cashier = __webpack_require__(540);
+	var DepositWithdraw = __webpack_require__(541);
+	var PaymentAgentList = __webpack_require__(542);
+	var PaymentAgentWithdraw = __webpack_require__(543);
 	var MBTradePage = __webpack_require__(302);
 	var AssetIndexUI = __webpack_require__(479);
-	var MarketTimesUI = __webpack_require__(482);
+	var TradingTimesUI = __webpack_require__(482);
 	var TradePage_Beta = __webpack_require__(476);
-	var TradePage = __webpack_require__(508);
-	var Authenticate = __webpack_require__(551);
-	var ChangePassword = __webpack_require__(552);
-	var PaymentAgentTransfer = __webpack_require__(553);
+	var TradePage = __webpack_require__(502);
+	var Authenticate = __webpack_require__(544);
+	var ChangePassword = __webpack_require__(545);
+	var PaymentAgentTransfer = __webpack_require__(546);
 	var Portfolio = __webpack_require__(446);
-	var ProfitTable = __webpack_require__(496);
-	var APIToken = __webpack_require__(555);
-	var AuthorisedApps = __webpack_require__(557);
-	var CashierPassword = __webpack_require__(561);
-	var FinancialAssessment = __webpack_require__(562);
-	var IPHistory = __webpack_require__(563);
-	var Limits = __webpack_require__(567);
-	var Settings = __webpack_require__(570);
-	var SelfExclusion = __webpack_require__(571);
-	var SettingsDetailsWS = __webpack_require__(572);
-	var Statement = __webpack_require__(499);
-	var TopUpVirtual = __webpack_require__(574);
-	var LostPassword = __webpack_require__(575);
-	var MetaTrader = __webpack_require__(513);
-	var FinancialAccOpening = __webpack_require__(576);
-	var JapanAccOpening = __webpack_require__(579);
-	var RealAccOpening = __webpack_require__(580);
-	var VirtualAccOpening = __webpack_require__(581);
-	var ResetPassword = __webpack_require__(583);
-	var TNCApproval = __webpack_require__(544);
+	var ProfitTable = __webpack_require__(548);
+	var APIToken = __webpack_require__(551);
+	var AuthorisedApps = __webpack_require__(553);
+	var CashierPassword = __webpack_require__(557);
+	var FinancialAssessment = __webpack_require__(558);
+	var IPHistory = __webpack_require__(559);
+	var Limits = __webpack_require__(563);
+	var Settings = __webpack_require__(566);
+	var SelfExclusion = __webpack_require__(567);
+	var PersonalDetails = __webpack_require__(568);
+	var Statement = __webpack_require__(570);
+	var TopUpVirtual = __webpack_require__(573);
+	var LostPassword = __webpack_require__(574);
+	var MetaTrader = __webpack_require__(507);
+	var FinancialAccOpening = __webpack_require__(575);
+	var JapanAccOpening = __webpack_require__(578);
+	var RealAccOpening = __webpack_require__(579);
+	var VirtualAccOpening = __webpack_require__(580);
+	var ResetPassword = __webpack_require__(582);
+	var TNCApproval = __webpack_require__(537);
 	
-	var CashierJP = __webpack_require__(519);
-	var KnowledgeTest = __webpack_require__(584);
+	var CashierJP = __webpack_require__(513);
+	var KnowledgeTest = __webpack_require__(583);
 	
 	var pages_config = {
 	    account_transfer: { module: AccountTransfer, is_authenticated: true, only_real: true },
@@ -73235,13 +72508,12 @@
 	    asset_indexws: { module: AssetIndexUI },
 	    authenticate: { module: Authenticate, is_authenticated: true, only_real: true },
 	    authorised_appsws: { module: AuthorisedApps, is_authenticated: true },
-	    careers: { module: Careers },
 	    cashier: { module: Cashier },
 	    cashier_passwordws: { module: CashierPassword, is_authenticated: true, only_real: true },
 	    change_passwordws: { module: ChangePassword, is_authenticated: true },
 	    charity: { module: Charity },
 	    contact: { module: Contact },
-	    detailsws: { module: SettingsDetailsWS, is_authenticated: true },
+	    detailsws: { module: PersonalDetails, is_authenticated: true },
 	    endpoint: { module: Endpoint },
 	    epg_forwardws: { module: DepositWithdraw, is_authenticated: true, only_real: true },
 	    forwardws: { module: DepositWithdraw, is_authenticated: true, only_real: true },
@@ -73253,7 +72525,7 @@
 	    logged_inws: { module: LoggedInHandler },
 	    lost_passwordws: { module: LostPassword, not_authenticated: true },
 	    maltainvestws: { module: FinancialAccOpening, is_authenticated: true },
-	    market_timesws: { module: MarketTimesUI },
+	    market_timesws: { module: TradingTimesUI },
 	    metatrader: { module: MetaTrader, is_authenticated: true },
 	    multi_barriers_trading: { module: MBTradePage },
 	    payment_agent_listws: { module: PaymentAgentList },
@@ -73276,7 +72548,6 @@
 	    transferws: { module: PaymentAgentTransfer, is_authenticated: true, only_real: true },
 	    virtualws: { module: VirtualAccOpening, not_authenticated: true },
 	    withdrawws: { module: PaymentAgentWithdraw, is_authenticated: true, only_real: true },
-	    'careers-for-americans': { module: Careers },
 	    'deposit-jp': { module: CashierJP.Deposit, is_authenticated: true, only_real: true },
 	    'get-started': { module: GetStarted },
 	    'get-started-jp': { module: GetStartedJP },
@@ -73296,7 +72567,7 @@
 	module.exports = pages_config;
 
 /***/ },
-/* 527 */
+/* 521 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -73306,7 +72577,7 @@
 	var getLanguage = __webpack_require__(421).get;
 	var defaultRedirectUrl = __webpack_require__(424).defaultRedirectUrl;
 	var urlFor = __webpack_require__(424).urlFor;
-	var objectNotEmpty = __webpack_require__(417).objectNotEmpty;
+	var isEmptyObject = __webpack_require__(417).isEmptyObject;
 	var Cookies = __webpack_require__(423);
 	
 	var LoggedInHandler = function () {
@@ -73377,7 +72648,7 @@
 	                tokens[loginid] = token;
 	            }
 	        }
-	        if (objectNotEmpty(tokens)) {
+	        if (!isEmptyObject(tokens)) {
 	            Client.set('tokens', JSON.stringify(tokens));
 	        }
 	        return tokens;
@@ -73395,45 +72666,26 @@
 	module.exports = LoggedInHandler;
 
 /***/ },
-/* 528 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var emailRot13 = __webpack_require__(428).emailRot13;
-	
-	var Careers = function () {
-	    var onLoad = function onLoad() {
-	        $('#hr_contact_eaddress').html(emailRot13('<n uers=\"znvygb:ue@ovanel.pbz\" ery=\"absbyybj\">ue@ovanel.pbz</n>'));
-	    };
-	    return {
-	        onLoad: onLoad
-	    };
-	}();
-	
-	module.exports = Careers;
-
-/***/ },
-/* 529 */
+/* 522 */
 /***/ function(module, exports) {
 
 	'use strict';
 	
 	var Charity = function () {
-	    var timeout = 5000;
-	    var gallery = void 0,
-	        images = void 0,
-	        interval = null;
+	    'use strict';
+	
+	    var interval = null;
 	
 	    var onLoad = function onLoad() {
+	        var $gallery = $('.gallery');
+	        var images = void 0;
 	        var switchPicture = function switchPicture() {
-	            images = gallery.find('img');
+	            images = $gallery.find('img');
 	            if (images.length > 1) {
-	                images.eq(images.length - 1).prependTo(gallery);
+	                images.eq(images.length - 1).prependTo($gallery);
 	            }
 	        };
-	        gallery = $('.gallery');
-	        interval = window.setInterval(switchPicture, timeout);
+	        interval = window.setInterval(switchPicture, 5000);
 	    };
 	
 	    var onUnload = function onUnload() {
@@ -73452,33 +72704,33 @@
 	module.exports = Charity;
 
 /***/ },
-/* 530 */
+/* 523 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var emailRot13 = __webpack_require__(428).emailRot13;
-	var loadCSS = __webpack_require__(531).loadCSS;
-	var loadJS = __webpack_require__(532).loadJS;
 	var getLanguage = __webpack_require__(421).get;
 	var urlForStatic = __webpack_require__(424).urlForStatic;
+	var loadCSS = __webpack_require__(524).loadCSS;
+	var loadJS = __webpack_require__(525).loadJS;
 	
 	var Contact = function () {
+	    'use strict';
+	
 	    var onLoad = function onLoad() {
 	        $('#faq_url').attr('href', 'https://binary.desk.com/customer/' + getLanguage() + '/portal/articles');
-	        display_cs_contacts();
-	        show_live_chat_icon();
+	        displayCsContacts();
+	        showLiveChatIcon();
 	    };
 	
-	    var display_cs_contacts = function display_cs_contacts() {
+	    var displayCsContacts = function displayCsContacts() {
 	        $('.contact-content').on('change', '#cs_telephone_number', function () {
 	            var val = $(this).val().split(',');
 	            $('#display_cs_telephone').html(val[0] + (val.length > 1 ? '<br />' + val[1] : ''));
 	        });
-	        $('#cs_contact_eaddress').html(emailRot13('<n uers=\"znvygb:fhccbeg@ovanel.pbz\" ery=\"absbyybj\">fhccbeg@ovanel.pbz</n>'));
 	    };
 	
-	    var show_live_chat_icon = function show_live_chat_icon() {
+	    var showLiveChatIcon = function showLiveChatIcon() {
 	        if (typeof DESK === 'undefined') {
 	            loadCSS('https://d3jyn100am7dxp.cloudfront.net/assets/widget_embed_191.cssgz?1367387331');
 	            loadJS('https://d3jyn100am7dxp.cloudfront.net/assets/widget_embed_libraries_191.jsgz?1367387332');
@@ -73486,14 +72738,14 @@
 	
 	        var desk_load = setInterval(function () {
 	            if (typeof DESK !== 'undefined') {
-	                render_desk_widget();
-	                change_chat_icon();
+	                renderDeskWidget();
+	                changeChatIcon();
 	                clearInterval(desk_load);
 	            }
 	        }, 80);
 	    };
 	
-	    var render_desk_widget = function render_desk_widget() {
+	    var renderDeskWidget = function renderDeskWidget() {
 	        new DESK.Widget({
 	            version: 1,
 	            site: 'binary.desk.com',
@@ -73535,14 +72787,13 @@
 	        }).render();
 	    };
 	
-	    var change_chat_icon = function change_chat_icon() {
+	    var changeChatIcon = function changeChatIcon() {
 	        // desk.com change icon - crude way
-	        var len = $('#live-chat-icon').length;
-	        if (len > 0) {
+	        if ($('#live-chat-icon').length > 0) {
 	            (function () {
 	                var timer = null;
+	                var image_url = urlForStatic('images/pages/contact/chat-icon.svg');
 	                var updateIcon = function updateIcon() {
-	                    var image_url = urlForStatic('images/pages/contact/chat-icon.svg');
 	                    var desk_widget = $('.a-desk-widget');
 	                    var image_str = desk_widget.css('background-image');
 	                    if (image_str) {
@@ -73573,7 +72824,7 @@
 	module.exports = Contact;
 
 /***/ },
-/* 531 */
+/* 524 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -73613,7 +72864,7 @@
 	};
 
 /***/ },
-/* 532 */
+/* 525 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -73634,7 +72885,7 @@
 	};
 
 /***/ },
-/* 533 */
+/* 526 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -73643,17 +72894,19 @@
 	var getSocketURL = __webpack_require__(475).getSocketURL;
 	
 	var Endpoint = function () {
+	    'use strict';
+	
 	    var onLoad = function onLoad() {
-	        $('#server_url').val(getSocketURL().split('/')[2]);
-	        $('#app_id').val(getAppId());
+	        var $server_url = $('#server_url');
+	        var $app_id = $('#app_id');
+	        $server_url.val(getSocketURL().split('/')[2]);
+	        $app_id.val(getAppId());
 	
 	        $('#frm_endpoint').on('submit', function (e) {
 	            e.preventDefault();
-	            var server_url = ($('#server_url').val() || '').trim().toLowerCase().replace(/[><()\"\']/g, ''),
-	                app_id = ($('#app_id').val() || '').trim();
-	            if (server_url) {
-	                localStorage.setItem('config.server_url', server_url);
-	            }
+	            var server_url = $server_url.val().trim().toLowerCase();
+	            var app_id = $app_id.val().trim();
+	            if (server_url) localStorage.setItem('config.server_url', server_url);
 	            if (app_id && !isNaN(app_id)) localStorage.setItem('config.app_id', parseInt(app_id));
 	            window.location.reload();
 	        });
@@ -73673,7 +72926,7 @@
 	module.exports = Endpoint;
 
 /***/ },
-/* 534 */
+/* 527 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -73682,7 +72935,7 @@
 	var getLanguage = __webpack_require__(421).get;
 	var localize = __webpack_require__(430).localize;
 	var urlFor = __webpack_require__(424).urlFor;
-	var FormManager = __webpack_require__(535);
+	var FormManager = __webpack_require__(528);
 	
 	var Home = function () {
 	    'use strict';
@@ -73736,13 +72989,13 @@
 	module.exports = Home;
 
 /***/ },
-/* 535 */
+/* 528 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Validation = __webpack_require__(514);
-	var objectNotEmpty = __webpack_require__(417).objectNotEmpty;
+	var Validation = __webpack_require__(508);
+	var isEmptyObject = __webpack_require__(417).isEmptyObject;
 	var showLoadingImage = __webpack_require__(417).showLoadingImage;
 	
 	var FormManager = function () {
@@ -73862,12 +73115,12 @@
 	                }
 	                disableButton($btn_submit);
 	                form.can_submit = false;
-	                if (objectNotEmpty(req)) {
+	                if (isEmptyObject(req)) {
+	                    onSuccess();
+	                } else {
 	                    BinarySocket.send(req).then(function (response) {
 	                        onSuccess(response);
 	                    });
-	                } else {
-	                    onSuccess();
 	                }
 	            }
 	        });
@@ -73882,80 +73135,136 @@
 	module.exports = FormManager;
 
 /***/ },
-/* 536 */
+/* 529 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var Client = __webpack_require__(427);
-	var Scroll = __webpack_require__(537);
 	
 	var GetStarted = function () {
-	    var select_nav_element = function select_nav_element() {
-	        var $navLink = $('.nav li a');
-	        var $navList = $('.nav li');
-	        $navList.removeClass('selected');
-	        for (var i = 0; i < $navLink.length; i++) {
-	            if ($navLink[i].href.match(window.location.pathname)) {
-	                document.getElementsByClassName('nav')[0].getElementsByTagName('li')[i].setAttribute('class', 'selected');
-	                break;
-	            }
+	    'use strict';
+	
+	    var selectNavElement = function selectNavElement() {
+	        $('.nav li').removeClass('selected').find('a[href="' + window.location.pathname + '"]').parent('li').addClass('selected');
+	    };
+	
+	    var updateActiveSubsection = function updateActiveSubsection($nav, $to_show) {
+	        $('.subsection').addClass('hidden');
+	        $to_show.removeClass('hidden');
+	        var $nav_back = $nav.find('.back');
+	        var $nav_next = $nav.find('.next');
+	
+	        if ($to_show.hasClass('first')) {
+	            $nav_back.addClass('button-disabled');
+	            $nav_next.removeClass('button-disabled');
+	        } else if ($to_show.hasClass('last')) {
+	            $nav_back.removeClass('button-disabled');
+	            $nav_next.addClass('button-disabled');
+	        } else {
+	            $nav_back.removeClass('button-disabled');
+	            $nav_next.removeClass('button-disabled');
 	        }
+	
+	        var new_hash = $to_show.find('a[name]').attr('name').slice(0, -8);
+	        if (window.location.hash !== '#' + new_hash) {
+	            window.location.hash = new_hash;
+	        }
+	
+	        return false;
 	    };
 	
 	    var onLoad = function onLoad() {
 	        Client.activateByClientType();
 	
-	        var update_active_subsection = function update_active_subsection(to_show) {
-	            var subsection = $('.subsection');
-	            subsection.addClass('hidden');
-	            to_show.removeClass('hidden');
-	            var nav_back = $('.subsection-navigation .back');
-	            var nav_next = $('.subsection-navigation .next');
+	        var $nav = $('.get-started').find('.subsection-navigation');
 	
-	            if (to_show.hasClass('first')) {
-	                nav_back.addClass('button-disabled');
-	                nav_next.removeClass('button-disabled');
-	            } else if (to_show.hasClass('last')) {
-	                nav_back.removeClass('button-disabled');
-	                nav_next.addClass('button-disabled');
-	            } else {
-	                nav_back.removeClass('button-disabled');
-	                nav_next.removeClass('button-disabled');
-	            }
-	
-	            var new_hash = to_show.find('a[name]').attr('name').slice(0, -8);
-	            if (window.location.hash !== '#' + new_hash) {
-	                window.location.hash = new_hash;
-	            }
-	
-	            return false;
-	        };
-	
-	        var to_show = void 0,
-	            fragment = void 0;
-	        var nav = $('.get-started').find('.subsection-navigation');
-	
-	        if (nav.length) {
-	            nav.on('click', 'a', function () {
-	                var button = $(this);
-	                if (button.hasClass('button-disabled')) {
+	        if ($nav.length) {
+	            $nav.on('click', 'a', function () {
+	                var $button = $(this);
+	                if ($button.hasClass('button-disabled')) {
 	                    return false;
 	                }
-	                var now_showing = $('.subsection:not(.hidden)');
-	                var show = button.hasClass('next') ? now_showing.next('.subsection') : now_showing.prev('.subsection');
-	                return update_active_subsection(show);
+	                var $now_showing = $('.subsection:not(.hidden)');
+	                var $to_show = $button.hasClass('next') ? $now_showing.next('.subsection') : $now_showing.prev('.subsection');
+	                return updateActiveSubsection($nav, $to_show);
 	            });
 	
-	            fragment = location.href.split('#')[1];
-	            to_show = fragment ? $('a[name=' + fragment + '-section]').parent('.subsection') : $('.subsection.first');
-	            update_active_subsection(to_show);
+	            var fragment = location.href.split('#')[1];
+	            var $to_show = fragment ? $('a[name=' + fragment + '-section]').parent('.subsection') : $('.subsection.first');
+	            updateActiveSubsection($nav, $to_show);
 	        }
-	        select_nav_element();
+	        selectNavElement();
+	    };
+	
+	    return {
+	        onLoad: onLoad
+	    };
+	}();
+	
+	module.exports = GetStarted;
+
+/***/ },
+/* 530 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var Client = __webpack_require__(427);
+	var BinaryPjax = __webpack_require__(420);
+	var jpClient = __webpack_require__(425).jpClient;
+	
+	var GetStartedJP = function () {
+	    'use strict';
+	
+	    var $contents = void 0,
+	        $sidebar_left_li = void 0,
+	        $index = void 0;
+	
+	    var showSelectedTab = function showSelectedTab() {
+	        var updated_tab = window.location.hash;
+	        $contents.find('div').hide();
+	        $sidebar_left_li.removeClass('selected');
+	        if (updated_tab) {
+	            $index.hide();
+	            $contents.find('div[id=content-' + updated_tab.slice(1, updated_tab.length) + ']').show().find('div').show();
+	            $sidebar_left_li.filter('.' + updated_tab.slice(1, updated_tab.length)).addClass('selected');
+	            $contents.show();
+	        } else {
+	            $contents.hide();
+	            $index.show();
+	        }
+	    };
+	
+	    var onLoad = function onLoad() {
+	        if (!jpClient()) {
+	            BinaryPjax.load('get-started');
+	        }
+	
+	        Client.activateByClientType();
+	        $contents = $('.contents');
+	        $sidebar_left_li = $('.sidebar-left ul li');
+	        $index = $('#index');
+	
+	        var tab = window.location.hash;
+	        if (tab && tab !== '') {
+	            $index.hide();
+	            $('.sidebar-left ul li.' + tab.slice(1, tab.length)).addClass('selected');
+	            showSelectedTab();
+	        }
+	
+	        $(window).on('hashchange', function () {
+	            showSelectedTab();
+	        });
+	
+	        $sidebar_left_li.click(function () {
+	            $('.sidebar-left ul li').removeClass('selected');
+	            $(this).addClass('selected');
+	        });
 	    };
 	
 	    var onUnload = function onUnload() {
-	        Scroll.offScroll();
+	        $(window).off('hashchange');
 	    };
 	
 	    return {
@@ -73964,10 +73273,264 @@
 	    };
 	}();
 	
-	module.exports = GetStarted;
+	module.exports = GetStartedJP;
 
 /***/ },
-/* 537 */
+/* 531 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var urlParam = __webpack_require__(424).param;
+	var urlFor = __webpack_require__(424).urlFor;
+	
+	var JobDetails = function () {
+	    'use strict';
+	
+	    var hidden_class = 'invisible';
+	
+	    var dept = void 0;
+	
+	    var $sections_div = void 0,
+	        dept_class = void 0,
+	        $senior_perl_message = void 0,
+	        $sidebar = void 0,
+	        $sidebar_dept = void 0;
+	
+	    var showSelectedDiv = function showSelectedDiv() {
+	        var section = window.location.hash;
+	        $sections_div.addClass(hidden_class).filter(section).removeClass(hidden_class);
+	        if (dept === 'Information_Technology' && /senior_perl_developer/.test(section)) {
+	            $senior_perl_message.removeClass(hidden_class);
+	        } else {
+	            $senior_perl_message.addClass(hidden_class);
+	        }
+	    };
+	
+	    var onLoad = function onLoad() {
+	        dept = urlParam('dept');
+	        dept_class = '.' + dept;
+	        $sidebar = $('.sidebar');
+	        $sidebar_dept = $sidebar.filter(dept_class);
+	        $sections_div = $('.sections > div > div');
+	        $senior_perl_message = $('.senior_perl_message');
+	        // hide all first (to handle pjaxload)
+	        $sidebar.addClass(hidden_class);
+	        $('#title').find('h1').addClass(hidden_class);
+	        $('#image').find('img').addClass(hidden_class);
+	        // show section
+	        $(dept_class).removeClass(hidden_class);
+	        $sidebar_dept.removeClass(hidden_class).find('a[href="' + window.location.hash + '"]').parent('li').addClass('selected');
+	        showSelectedDiv();
+	        $('#back-button').attr('href', urlFor('open-positions') + '#' + dept);
+	        addEventListeners();
+	    };
+	
+	    var addEventListeners = function addEventListeners() {
+	        var $sidebar_list_item = $sidebar_dept.find('#sidebar-nav li');
+	        $sidebar_list_item.click(function () {
+	            $sidebar_list_item.removeClass('selected');
+	            $(this).addClass('selected');
+	        });
+	
+	        $(window).on('hashchange', function () {
+	            showSelectedDiv();
+	        });
+	    };
+	
+	    var onUnload = function onUnload() {
+	        $(window).off('hashchange');
+	    };
+	
+	    return {
+	        onLoad: onLoad,
+	        onUnload: onUnload
+	    };
+	}();
+	
+	module.exports = JobDetails;
+
+/***/ },
+/* 532 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	var Platforms = function () {
+	    'use strict';
+	
+	    var sections = [];
+	
+	    var onLoad = function onLoad() {
+	        sections = ['more-tools', 'trading-platforms'];
+	
+	        var sidebar_list_item = $('.sidebar-nav li');
+	        sidebar_list_item.click(function () {
+	            sidebar_list_item.removeClass('selected');
+	            $(this).addClass('selected');
+	        });
+	
+	        $(window).on('hashchange', function () {
+	            showSelectedDiv();
+	        });
+	
+	        checkWidth();
+	        $(window).resize(checkWidth);
+	        // $('.inner').scroll(checkScroll);
+	        // setHeights();
+	    };
+	
+	    // const setHeights = () => {
+	    //     let $this;
+	    //     $('.inner tr').each(function() {
+	    //         $this = $(this);
+	    //         const $td = $this.find('td:first');
+	    //         const $th = $this.find('th');
+	    //         if ($th.height() > $td.height()) {
+	    //             $this.find('td').height($th.height());
+	    //         }
+	    //     });
+	    // };
+	
+	    // const checkScroll = () => {
+	    //     const $elem = $('.inner');
+	    //     const $fade_left = $('.fade-to-left');
+	    //     const $fade_right = $('.fade-to-right');
+	    //     const new_scroll_left = $elem.scrollLeft();
+	    //     $fade_left.css('opacity', new_scroll_left === 0 ? '0' : '100');
+	    //     $fade_right.css('opacity', $elem.get(0).scrollWidth === new_scroll_left + $elem.width() ? '0' : '100');
+	    // };
+	
+	    var checkWidth = function checkWidth() {
+	        if ($('.sidebar-left').is(':visible')) {
+	            showSelectedDiv();
+	        } else {
+	            $('.sections').removeClass('invisible');
+	        }
+	        // $('.inner th').hide().fadeIn(1); // force to refresh in order to maintain correct positions
+	    };
+	
+	    var getHash = function getHash() {
+	        var hash = window.location.hash;
+	        return hash && $.inArray(hash.substring(1), sections) !== -1 ? hash : '#trading-platforms';
+	    };
+	
+	    var showSelectedDiv = function showSelectedDiv() {
+	        var $sections_with_hash = $('.sections[id="' + getHash().substring(1) + '"]');
+	        if ($sections_with_hash.is(':visible') && $('.sections:visible').length === 1) {
+	            return;
+	        }
+	        $('.sections').addClass('invisible');
+	        $sections_with_hash.removeClass('invisible');
+	        $('.sidebar-nav a[href="' + getHash() + '"]').parent().addClass('selected');
+	    };
+	
+	    var onUnload = function onUnload() {
+	        $(window).off('resize hashchange');
+	    };
+	
+	    return {
+	        onLoad: onLoad,
+	        onUnload: onUnload
+	    };
+	}();
+	
+	module.exports = Platforms;
+
+/***/ },
+/* 533 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	var Regulation = function () {
+	    'use strict';
+	
+	    var onLoad = function onLoad() {
+	        $(function () {
+	            $('#accordion').accordion({
+	                heightStyle: 'content',
+	                collapsible: true,
+	                active: 0
+	            });
+	        });
+	
+	        var coords = [];
+	        var $map_area = $('#planetmap').find('area');
+	        var $selector = $('img[usemap="#planetmap"]');
+	        $map_area.each(function () {
+	            coords.push($(this).attr('coords'));
+	        });
+	        var relocateLinks = function relocateLinks() {
+	            $map_area.each(function (index) {
+	                var c = '';
+	                var new_width = $selector[0].getBoundingClientRect().width.toFixed(2);
+	                coords[index].split(',').map(function (v) {
+	                    c += (c ? ',' : '') + (v * new_width / 900).toFixed(2);
+	                });
+	                $(this).attr('coords', c);
+	            });
+	        };
+	        $(document).ready(relocateLinks);
+	        $(window).resize(relocateLinks);
+	    };
+	
+	    return {
+	        onLoad: onLoad
+	    };
+	}();
+	
+	module.exports = Regulation;
+
+/***/ },
+/* 534 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var GetStarted = __webpack_require__(529);
+	var handleHash = __webpack_require__(417).handleHash;
+	var Scroll = __webpack_require__(535);
+	
+	module.exports = {
+	    OpenPositions: {
+	        onLoad: function onLoad() {
+	            Scroll.scrollToHashSection();
+	        }
+	    },
+	    VolidxMarkets: {
+	        onLoad: function onLoad() {
+	            Scroll.goToHashSection();GetStarted.onLoad();
+	        },
+	        onUnload: function onUnload() {
+	            Scroll.offScroll();
+	        }
+	    },
+	    OpenSourceProjects: {
+	        onLoad: function onLoad() {
+	            Scroll.sidebarScroll($('.open-source-projects'));
+	        },
+	        onUnload: function onUnload() {
+	            Scroll.offScroll();
+	        }
+	    },
+	    PaymentAgent: {
+	        onLoad: function onLoad() {
+	            Scroll.sidebarScroll($('.payment-agent'));
+	        },
+	        onUnload: function onUnload() {
+	            Scroll.offScroll();
+	        }
+	    },
+	    AffiliateSignup: {
+	        onLoad: function onLoad() {
+	            tabListener();handleHash();
+	        }
+	    }
+	};
+
+/***/ },
+/* 535 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -74086,357 +73649,19 @@
 	module.exports = Scroll;
 
 /***/ },
-/* 538 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var Client = __webpack_require__(427);
-	var BinaryPjax = __webpack_require__(420);
-	var jpClient = __webpack_require__(425).jpClient;
-	
-	var GetStartedJP = function () {
-	    var onLoad = function onLoad() {
-	        if (!jpClient()) {
-	            BinaryPjax.load('get-started');
-	        }
-	        Client.activateByClientType();
-	        var showSelectedTab = function showSelectedTab() {
-	            var updatedTab = window.location.hash;
-	            $('.contents div').hide();
-	            if (updatedTab && updatedTab !== '') {
-	                $('#index').hide();
-	                $('.contents div[id=content-' + updatedTab.slice(1, updatedTab.length) + ']').show();
-	                $('.contents div[id=content-' + updatedTab.slice(1, updatedTab.length) + '] div').show();
-	                $('.sidebar-left ul li').removeClass('selected');
-	                $('.sidebar-left ul li.' + updatedTab.slice(1, updatedTab.length)).addClass('selected');
-	                $('.contents').show();
-	            } else {
-	                $('.contents').hide();
-	                $('.sidebar-left ul li').removeClass('selected');
-	                $('#index').show();
-	            }
-	        };
-	        var tab = window.location.hash;
-	        if (tab && tab !== '') {
-	            $('#index').hide();
-	            $('.sidebar-left ul li.' + tab.slice(1, tab.length)).addClass('selected');
-	            showSelectedTab();
-	        }
-	        $(window).on('hashchange', function () {
-	            showSelectedTab();
-	        });
-	        $('.sidebar-left ul li').click(function () {
-	            $('.sidebar-left ul li').removeClass('selected');
-	            $(this).addClass('selected');
-	        });
-	    };
-	
-	    var onUnload = function onUnload() {
-	        $(window).off('hashchange');
-	    };
-	
-	    return {
-	        onLoad: onLoad,
-	        onUnload: onUnload
-	    };
-	}();
-	
-	module.exports = GetStartedJP;
-
-/***/ },
-/* 539 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var localize = __webpack_require__(430).localize;
-	var urlFor = __webpack_require__(424).urlFor;
-	var urlParam = __webpack_require__(424).param;
-	
-	var JobDetails = function () {
-	    var dept = void 0,
-	        depts = void 0,
-	        sections = void 0;
-	
-	    var showSelectedDiv = function showSelectedDiv() {
-	        if ($('.job-details').find('#title').text() === '') {
-	            onLoad();
-	        } else {
-	            var hash_substring = window.location.hash.substring(1);
-	            $('.sections div').hide();
-	            $('.sections div[id=' + dept + '-' + hash_substring + ']').show();
-	            $('.title-sections').html($('.sidebar li[class="selected"]').text());
-	            if (dept === 'Information_Technology' && hash_substring === 'section-three') {
-	                $('.senior_perl_message').removeClass('invisible');
-	            } else if (!$('.senior_perl_message').hasClass('invisible')) {
-	                $('.senior_perl_message').addClass('invisible');
-	            }
-	        }
-	    };
-	
-	    var check_url = function check_url() {
-	        var replace_dept = void 0,
-	            replace_section = void 0;
-	        if (!dept || $.inArray(dept, depts) === -1) {
-	            replace_dept = '?dept=Information_Technology';
-	        }
-	        var hash = window.location.hash;
-	        if (!hash || $.inArray(hash.substring(1), sections) === -1) {
-	            replace_section = '#section-one';
-	        }
-	        if (replace_dept || replace_section) {
-	            window.location = replace_dept && replace_section ? urlFor('open-positions/job-details') + replace_dept + replace_section : replace_dept ? urlFor('open-positions/job-details') + replace_dept + hash : urlFor('open-positions/job-details') + '?dept=' + dept + replace_section;
-	            return false;
-	        }
-	        return true;
-	    };
-	
-	    var onLoad = function onLoad() {
-	        dept = urlParam('dept');
-	        depts = ['Information_Technology', 'Quality_Assurance', 'Quantitative_Analysis', 'Marketing', 'Accounting', 'Compliance', 'Customer_Support', 'Human_Resources', 'Administrator', 'Internal_Audit'];
-	        sections = ['section-one', 'section-two', 'section-three', 'section-four', 'section-five', 'section-six', 'section-seven', 'section-eight'];
-	        if (check_url()) {
-	            $('.job-details').find('#title').html(localize(dept.replace(/_/g, ' ')));
-	            var deptImage = $('.dept-image'),
-	                sourceImage = deptImage.attr('src').replace('Information_Technology', dept);
-	            deptImage.attr('src', sourceImage).show();
-	            var deptContent = $('#content-' + dept + ' div'),
-	                $sidebar_nav = $('#sidebar-nav');
-	            var section = void 0;
-	            $sidebar_nav.find('li').slice(deptContent.length).hide();
-	            for (var i = 0; i < deptContent.length; i++) {
-	                section = $('#' + dept + '-' + sections[i]);
-	                section.insertAfter('.sections div:last-child');
-	                if (section.attr('class')) {
-	                    $sidebar_nav.find('a[href="#' + sections[i] + '"]').html(localize(section.attr('class').replace(/_/g, ' ')));
-	                }
-	            }
-	            var $sidebar = $('.sidebar');
-	            $sidebar.show();
-	            if ($sidebar.find('li:visible').length === 1) {
-	                $sidebar.hide();
-	            }
-	            $('#' + window.location.hash.substring(9)).addClass('selected');
-	            showSelectedDiv();
-	            $('#back-button').attr('href', urlFor('open-positions') + '#' + dept);
-	        }
-	        addEventListeners();
-	    };
-	
-	    var addEventListeners = function addEventListeners() {
-	        var sidebarListItem = $('#sidebar-nav').find('li');
-	        sidebarListItem.click(function () {
-	            sidebarListItem.removeClass('selected');
-	            $(this).addClass('selected');
-	        });
-	
-	        $(window).on('hashchange', function () {
-	            if (JobDetails.check_url()) {
-	                JobDetails.showSelectedDiv();
-	            }
-	        });
-	    };
-	
-	    var onUnload = function onUnload() {
-	        $(window).off('hashchange');
-	    };
-	
-	    return {
-	        onLoad: onLoad,
-	        onUnload: onUnload,
-	        showSelectedDiv: showSelectedDiv,
-	        check_url: check_url
-	    };
-	}();
-	
-	module.exports = JobDetails;
-
-/***/ },
-/* 540 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	var Platforms = function () {
-	    var sections = [];
-	
-	    var onLoad = function onLoad() {
-	        sections = ['more-tools', 'trading-platforms'];
-	        var sidebarListItem = $('.sidebar-nav li');
-	        sidebarListItem.click(function () {
-	            sidebarListItem.removeClass('selected');
-	            $(this).addClass('selected');
-	        });
-	        $(window).on('hashchange', function () {
-	            showSelectedDiv();
-	        });
-	        checkWidth();
-	        $(window).resize(checkWidth);
-	        $('.inner').scroll(checkScroll);
-	        setHeights();
-	    };
-	
-	    var setHeights = function setHeights() {
-	        $('.inner tr').each(function () {
-	            var $td = $(this).find('td:first');
-	            var $th = $(this).find('th');
-	            if ($th.height() > $td.height()) {
-	                $(this).find('td').height($th.height());
-	            }
-	        });
-	    };
-	
-	    var checkScroll = function checkScroll() {
-	        var $elem = $('.inner'),
-	            $fadeL = $('.fade-to-left'),
-	            $fadeR = $('.fade-to-right');
-	        var newScrollLeft = $elem.scrollLeft(),
-	            width = $elem.width(),
-	            scrollWidth = $elem.get(0).scrollWidth;
-	        $fadeL.css('opacity', newScrollLeft === 0 ? '0' : '100');
-	        $fadeR.css('opacity', scrollWidth === newScrollLeft + width ? '0' : '100');
-	    };
-	
-	    var checkWidth = function checkWidth() {
-	        if ($('.sidebar-left').is(':visible')) {
-	            showSelectedDiv();
-	        } else {
-	            $('.sections').removeClass('invisible');
-	        }
-	        $('.inner th').hide().fadeIn(1); // force to refresh in order to maintain correct positions
-	    };
-	
-	    var get_hash = function get_hash() {
-	        var hash = window.location.hash;
-	        return hash && $.inArray(hash.substring(1), sections) !== -1 ? hash : '#trading-platforms';
-	    };
-	
-	    var showSelectedDiv = function showSelectedDiv() {
-	        var $sections_with_hash = $('.sections[id="' + get_hash().substring(1) + '"]');
-	        if ($sections_with_hash.is(':visible') && $('.sections:visible').length === 1) return;
-	        $('.sections').addClass('invisible');
-	        $sections_with_hash.removeClass('invisible');
-	        $('.sidebar-nav a[href="' + get_hash() + '"]').parent().addClass('selected');
-	    };
-	
-	    var onUnload = function onUnload() {
-	        $(window).off('resize');
-	        $(window).off('hashchange');
-	    };
-	
-	    return {
-	        onLoad: onLoad,
-	        onUnload: onUnload
-	    };
-	}();
-	
-	module.exports = Platforms;
-
-/***/ },
-/* 541 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	var Regulation = function () {
-	    var onLoad = function onLoad() {
-	        $(function () {
-	            $('#accordion').accordion({
-	                heightStyle: 'content',
-	                collapsible: true,
-	                active: 0
-	            });
-	        });
-	
-	        var coords = [],
-	            $map_area = $('#planetmap').find('area'),
-	            $selector = $('img[usemap="#planetmap"]');
-	        if (coords.length === 0) {
-	            $map_area.each(function () {
-	                coords.push($(this).attr('coords'));
-	            });
-	        }
-	        function relocate_links() {
-	            $map_area.each(function (index) {
-	                var c = '';
-	                var new_width = $selector[0].getBoundingClientRect().width.toFixed(2);
-	                coords[index].split(',').map(function (v) {
-	                    c += (c ? ',' : '') + (v * new_width / 900).toFixed(2);
-	                });
-	                $(this).attr('coords', c);
-	            });
-	        }
-	        $(document).ready(relocate_links);
-	        $(window).resize(relocate_links);
-	    };
-	
-	    return {
-	        onLoad: onLoad
-	    };
-	}();
-	
-	module.exports = Regulation;
-
-/***/ },
-/* 542 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var Scroll = __webpack_require__(537);
-	var handleHash = __webpack_require__(417).handleHash;
-	var GetStarted = __webpack_require__(536);
-	
-	module.exports = {
-	    OpenPositions: {
-	        onLoad: function onLoad() {
-	            Scroll.scrollToHashSection();
-	        }
-	    },
-	    VolidxMarkets: {
-	        onLoad: function onLoad() {
-	            Scroll.goToHashSection();GetStarted.onLoad();
-	        },
-	        onUnload: function onUnload() {
-	            Scroll.offScroll();
-	        }
-	    },
-	    OpenSourceProjects: {
-	        onLoad: function onLoad() {
-	            Scroll.sidebarScroll($('.open-source-projects'));
-	        },
-	        onUnload: function onUnload() {
-	            Scroll.offScroll();
-	        }
-	    },
-	    PaymentAgent: {
-	        onLoad: function onLoad() {
-	            Scroll.sidebarScroll($('.payment-agent'));
-	        },
-	        onUnload: function onUnload() {
-	            Scroll.offScroll();
-	        }
-	    },
-	    AffiliateSignup: {
-	        onLoad: function onLoad() {
-	            tabListener();handleHash();
-	        }
-	    }
-	};
-
-/***/ },
-/* 543 */
+/* 536 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var localize = __webpack_require__(430).localize;
 	var urlParam = __webpack_require__(424).param;
-	var Scroll = __webpack_require__(537);
-	var TNCApproval = __webpack_require__(544);
+	var Scroll = __webpack_require__(535);
+	var TNCApproval = __webpack_require__(537);
 	
 	var TermsAndConditions = function () {
+	    'use strict';
+	
 	    var onLoad = function onLoad() {
 	        handleActiveTab();
 	        TNCApproval.requiresTNCApproval($('#btn_accept'), function () {
@@ -74447,10 +73672,7 @@
 	        Scroll.sidebarScroll($('.tac-binary'));
 	        tabListener();
 	
-	        var year = document.getElementsByClassName('currentYear');
-	        for (var i = 0; i < year.length; i++) {
-	            year[i].innerHTML = new Date().getFullYear();
-	        }
+	        $('.currentYear').text(new Date().getFullYear());
 	    };
 	
 	    var handleActiveTab = function handleActiveTab() {
@@ -74478,16 +73700,17 @@
 	        $(content).find('> div').addClass(hidden_class).end().find(content_to_show).removeClass(hidden_class);
 	
 	        var section = urlParam('section');
+	        var $content = $('#content');
 	        if (section) {
 	            (function () {
-	                var $section = $('#content a#' + section);
+	                var $section = $content.find('a#' + section);
 	                if ($section.length) setTimeout(function () {
 	                    $.scrollTo($section, 0, { offset: -10 });
 	                }, 500);
 	            })();
 	        } else if (window.location.hash) {
 	            setTimeout(function () {
-	                $.scrollTo($('#content .tab-menu'), 0, { offset: -10 });
+	                $.scrollTo($content.find('.tab-menu'), 0, { offset: -10 });
 	            }, 500);
 	        }
 	    };
@@ -74505,14 +73728,14 @@
 	module.exports = TermsAndConditions;
 
 /***/ },
-/* 544 */
+/* 537 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var BinaryPjax = __webpack_require__(420);
 	var Client = __webpack_require__(427);
-	var Header = __webpack_require__(512);
+	var Header = __webpack_require__(506);
 	var defaultRedirectUrl = __webpack_require__(424).defaultRedirectUrl;
 	var urlFor = __webpack_require__(424).urlFor;
 	var template = __webpack_require__(417).template;
@@ -74583,15 +73806,17 @@
 	module.exports = TNCApproval;
 
 /***/ },
-/* 545 */
+/* 538 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Scroll = __webpack_require__(537);
 	var Client = __webpack_require__(427);
+	var Scroll = __webpack_require__(535);
 	
 	var WhyUs = function () {
+	    'use strict';
+	
 	    var onLoad = function onLoad() {
 	        Scroll.sidebarScroll($('.why-us'));
 	        Client.activateByClientType();
@@ -74610,14 +73835,14 @@
 	module.exports = WhyUs;
 
 /***/ },
-/* 546 */
+/* 539 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var Client = __webpack_require__(427);
 	var localize = __webpack_require__(430).localize;
-	var FormManager = __webpack_require__(535);
+	var FormManager = __webpack_require__(528);
 	
 	var AccountTransfer = function () {
 	    'use strict';
@@ -74735,14 +73960,14 @@
 	module.exports = AccountTransfer;
 
 /***/ },
-/* 547 */
+/* 540 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var BinaryPjax = __webpack_require__(420);
 	var Client = __webpack_require__(427);
-	var Header = __webpack_require__(512);
+	var Header = __webpack_require__(506);
 	var defaultRedirectUrl = __webpack_require__(424).defaultRedirectUrl;
 	var urlFor = __webpack_require__(424).urlFor;
 	var jpClient = __webpack_require__(425).jpClient;
@@ -74809,7 +74034,7 @@
 	module.exports = Cashier;
 
 /***/ },
-/* 548 */
+/* 541 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -74818,7 +74043,7 @@
 	var localize = __webpack_require__(430).localize;
 	var template = __webpack_require__(417).template;
 	var appendTextValueChild = __webpack_require__(428).appendTextValueChild;
-	var FormManager = __webpack_require__(535);
+	var FormManager = __webpack_require__(528);
 	
 	var DepositWithdraw = function () {
 	    'use strict';
@@ -75030,7 +74255,7 @@
 	module.exports = DepositWithdraw;
 
 /***/ },
-/* 549 */
+/* 542 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75165,14 +74390,14 @@
 	module.exports = PaymentAgentList;
 
 /***/ },
-/* 550 */
+/* 543 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var Client = __webpack_require__(427);
 	var localize = __webpack_require__(430).localize;
-	var FormManager = __webpack_require__(535);
+	var FormManager = __webpack_require__(528);
 	var Cookies = __webpack_require__(423);
 	
 	var PaymentAgentWithdraw = function () {
@@ -75320,7 +74545,7 @@
 	module.exports = PaymentAgentWithdraw;
 
 /***/ },
-/* 551 */
+/* 544 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -75353,7 +74578,7 @@
 	module.exports = Authenticate;
 
 /***/ },
-/* 552 */
+/* 545 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75361,7 +74586,7 @@
 	var BinaryPjax = __webpack_require__(420);
 	var Client = __webpack_require__(427);
 	var localize = __webpack_require__(430).localize;
-	var FormManager = __webpack_require__(535);
+	var FormManager = __webpack_require__(528);
 	
 	var ChangePassword = function () {
 	    var form_id = '#frm_change_password';
@@ -75404,15 +74629,15 @@
 	module.exports = ChangePassword;
 
 /***/ },
-/* 553 */
+/* 546 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var PaymentAgentTransferUI = __webpack_require__(554);
+	var PaymentAgentTransferUI = __webpack_require__(547);
 	var Client = __webpack_require__(427);
 	var State = __webpack_require__(422).State;
-	var FormManager = __webpack_require__(535);
+	var FormManager = __webpack_require__(528);
 	
 	var PaymentAgentTransfer = function () {
 	    var hiddenClass = 'invisible';
@@ -75549,7 +74774,7 @@
 	module.exports = PaymentAgentTransfer;
 
 /***/ },
-/* 554 */
+/* 547 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75649,7 +74874,313 @@
 	module.exports = PaymentAgentTransferUI;
 
 /***/ },
-/* 555 */
+/* 548 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var ProfitTableUI = __webpack_require__(549);
+	var ViewPopup = __webpack_require__(449);
+	var localize = __webpack_require__(430).localize;
+	var showLocalTimeOnHover = __webpack_require__(448).showLocalTimeOnHover;
+	var addTooltip = __webpack_require__(460).addTooltip;
+	var buildOauthApps = __webpack_require__(460).buildOauthApps;
+	
+	var ProfitTableInit = function () {
+	    var batch_size = void 0,
+	        chunk_size = void 0,
+	        transactions_received = void 0,
+	        transaction_consumed = void 0,
+	        no_more_data = void 0,
+	        pending = void 0,
+	        current_batch = void 0;
+	
+	    var tableExist = function tableExist() {
+	        return document.getElementById('profit-table');
+	    };
+	
+	    var finishedConsumed = function finishedConsumed() {
+	        return transaction_consumed === transactions_received;
+	    };
+	
+	    var onUnload = function onUnload() {
+	        current_batch = [];
+	        transaction_consumed = 0;
+	        transactions_received = 0;
+	        pending = false;
+	
+	        ProfitTableUI.errorMessage(null);
+	
+	        if (tableExist()) {
+	            ProfitTableUI.cleanTableContent();
+	        }
+	    };
+	
+	    var getNextBatchTransactions = function getNextBatchTransactions() {
+	        getProfitTable({ offset: transactions_received, limit: batch_size });
+	        pending = true;
+	    };
+	
+	    var getNextChunk = function getNextChunk() {
+	        var chunk = current_batch.splice(0, chunk_size);
+	        transaction_consumed += chunk.length;
+	        return chunk;
+	    };
+	
+	    var profitTableHandler = function profitTableHandler(response) {
+	        if (response.error) {
+	            ProfitTableUI.errorMessage(response.error.message);
+	            return;
+	        }
+	
+	        pending = false;
+	        var profit_table = response.profit_table;
+	        current_batch = profit_table.transactions;
+	        transactions_received += current_batch.length;
+	
+	        if (current_batch.length < batch_size) {
+	            no_more_data = true;
+	        }
+	
+	        if (!tableExist()) {
+	            ProfitTableUI.createEmptyTable().appendTo('#profit-table-container');
+	            ProfitTableUI.updateProfitTable(getNextChunk());
+	
+	            // Show a message when the table is empty
+	            if (transactions_received === 0 && current_batch.length === 0) {
+	                $('#profit-table').find('tbody').append($('<tr/>', { class: 'flex-tr' }).append($('<td/>', { colspan: 8 }).append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
+	            }
+	        }
+	    };
+	
+	    var onScrollLoad = function onScrollLoad() {
+	        $(document).scroll(function () {
+	            var hidableHeight = function hidableHeight(percentage) {
+	                var totalHidable = $(document).height() - $(window).height();
+	                return Math.floor(totalHidable * percentage / 100);
+	            };
+	
+	            var p_from_top = $(document).scrollTop();
+	
+	            if (!tableExist() || p_from_top < hidableHeight(50)) {
+	                return;
+	            }
+	
+	            if (finishedConsumed() && !no_more_data && !pending) {
+	                getNextBatchTransactions();
+	                return;
+	            }
+	
+	            if (!finishedConsumed()) {
+	                ProfitTableUI.updateProfitTable(getNextChunk());
+	            }
+	        });
+	    };
+	
+	    var getProfitTable = function getProfitTable(opts) {
+	        var req = { profit_table: 1, description: 1 };
+	
+	        if (opts) $.extend(true, req, opts);
+	
+	        BinarySocket.send(req).then(function (response) {
+	            profitTableHandler(response);
+	            showLocalTimeOnHover('td.buy-date,td.sell-date');
+	            $('.barspinner').addClass('hidden');
+	        });
+	    };
+	
+	    var onLoad = function onLoad() {
+	        batch_size = 100;
+	        chunk_size = batch_size / 2;
+	        transactions_received = 0;
+	        transaction_consumed = 0;
+	        no_more_data = false;
+	        pending = false;
+	        current_batch = [];
+	
+	        BinarySocket.send({ oauth_apps: 1 }).then(function (response) {
+	            addTooltip(ProfitTableUI.setOauthApps(buildOauthApps(response)));
+	        });
+	        getNextBatchTransactions();
+	        onScrollLoad();
+	        ViewPopup.viewButtonOnClick('#profit-table-container');
+	    };
+	
+	    return {
+	        profitTableHandler: profitTableHandler,
+	        onLoad: onLoad,
+	        onUnload: onUnload
+	    };
+	}();
+	
+	module.exports = ProfitTableInit;
+
+/***/ },
+/* 549 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var ProfitTable = __webpack_require__(550);
+	var Client = __webpack_require__(427);
+	var localize = __webpack_require__(430).localize;
+	var toJapanTimeIfNeeded = __webpack_require__(448).toJapanTimeIfNeeded;
+	var addComma = __webpack_require__(433).addComma;
+	var elementTextContent = __webpack_require__(428).elementTextContent;
+	var formatMoney = __webpack_require__(432).formatMoney;
+	var jpClient = __webpack_require__(425).jpClient;
+	var showTooltip = __webpack_require__(460).showTooltip;
+	var Table = __webpack_require__(481);
+	
+	var ProfitTableUI = function () {
+	    'use strict';
+	
+	    var oauth_apps = {},
+	        currency = void 0;
+	
+	    var profit_table_id = 'profit-table',
+	        cols = ['buy-date', 'ref', 'payout', 'contract', 'buy-price', 'sell-date', 'sell-price', 'pl', 'details'];
+	
+	    var createEmptyTable = function createEmptyTable() {
+	        var header = [localize('Date'), localize('Ref.'), localize('Potential Payout'), localize('Contract'), localize('Purchase Price'), localize('Sale Date'), localize('Sale Price'), localize('Profit/Loss'), localize('Details')];
+	
+	        var jp_client = jpClient();
+	        currency = Client.get('currency');
+	
+	        header[7] += jp_client ? '' : currency ? ' (' + currency + ')' : '';
+	
+	        var footer = [localize('Total Profit/Loss'), '', '', '', '', '', '', '', ''];
+	
+	        var data = [];
+	        var metadata = {
+	            cols: cols,
+	            id: profit_table_id
+	        };
+	        var $table_container = Table.createFlexTable(data, metadata, header, footer);
+	
+	        $table_container.children('table').children('tfoot').children('tr').attr('id', 'pl-day-total');
+	
+	        return $table_container;
+	    };
+	
+	    var updateFooter = function updateFooter(transactions) {
+	        var acc_total = elementTextContent(document.querySelector('#pl-day-total > .pl'));
+	        acc_total = parseFloat(acc_total.replace(/,/g, ''));
+	        if (!acc_total || isNaN(acc_total)) {
+	            acc_total = 0;
+	        }
+	
+	        var current_total = transactions.reduce(function (previous, current) {
+	            var buy_price = Number(parseFloat(current.buy_price));
+	            var sell_price = Number(parseFloat(current.sell_price));
+	            var pl = sell_price - buy_price;
+	            return previous + pl;
+	        }, 0);
+	
+	        var total = acc_total + current_total,
+	            jp_client = jpClient(),
+	            sub_total_type = total >= 0 ? 'profit' : 'loss';
+	
+	        $('#pl-day-total').find(' > .pl').text(jp_client ? formatMoney(currency, total) : addComma(Number(total).toFixed(2))).removeClass('profit loss').addClass(sub_total_type);
+	    };
+	
+	    var createProfitTableRow = function createProfitTableRow(transaction) {
+	        var profit_table_data = ProfitTable.getProfitTabletData(transaction);
+	        var pl_type = profit_table_data.pl >= 0 ? 'profit' : 'loss';
+	
+	        var jp_client = jpClient();
+	
+	        var data = [jp_client ? toJapanTimeIfNeeded(transaction.purchase_time) : profit_table_data.buyDate, '<span' + showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', jp_client ? formatMoney(currency, profit_table_data.payout) : profit_table_data.payout, '', jp_client ? formatMoney(currency, profit_table_data.buyPrice) : profit_table_data.buyPrice, jp_client ? toJapanTimeIfNeeded(transaction.sell_time) : profit_table_data.sellDate, jp_client ? formatMoney(currency, profit_table_data.sellPrice) : profit_table_data.sellPrice, jp_client ? formatMoney(currency, profit_table_data.pl) : profit_table_data.pl, ''];
+	        var $row = Table.createFlexTableRow(data, cols, 'data');
+	
+	        $row.children('.pl').addClass(pl_type);
+	        $row.children('.contract').html(profit_table_data.desc + '<br>');
+	        $row.children('.buy-date').each(function () {
+	            $(this).wrapInner('<div class="new-width"></div>');
+	        });
+	        $row.children('.sell-date').each(function () {
+	            $(this).wrapInner('<div class="new-width"></div>');
+	        });
+	
+	        // create view button and append
+	        var $view_button = $('<button/>', { class: 'button open_contract_details', text: localize('View'), contract_id: profit_table_data.id });
+	        $row.children('.contract,.details').append($view_button);
+	
+	        return $row[0];
+	    };
+	
+	    var updateProfitTable = function updateProfitTable(transactions) {
+	        Table.appendTableBody(profit_table_id, transactions, createProfitTableRow);
+	        updateFooter(transactions);
+	    };
+	
+	    var clearTableContent = function clearTableContent() {
+	        Table.clearTableBody(profit_table_id);
+	        $('#' + profit_table_id + '>tfoot').hide();
+	    };
+	
+	    var errorMessage = function errorMessage(msg) {
+	        var $err = $('#profit-table-container').find('#error-msg');
+	        if (msg) {
+	            $err.removeClass('invisible').text(msg);
+	        } else {
+	            $err.addClass('invisible').text('');
+	        }
+	    };
+	
+	    return {
+	        createEmptyTable: createEmptyTable,
+	        updateProfitTable: updateProfitTable,
+	        cleanTableContent: clearTableContent,
+	        errorMessage: errorMessage,
+	        setOauthApps: function setOauthApps(values) {
+	            return oauth_apps = values;
+	        }
+	    };
+	}();
+	
+	module.exports = ProfitTableUI;
+
+/***/ },
+/* 550 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var moment = __webpack_require__(304);
+	
+	var ProfitTable = function () {
+	    'use strict';
+	
+	    var getProfitTabletData = function getProfitTabletData(transaction) {
+	        var buy_moment = moment.utc(transaction.purchase_time * 1000),
+	            sell_moment = moment.utc(transaction.sell_time * 1000),
+	            buy_price = parseFloat(transaction.buy_price).toFixed(2),
+	            sell_price = parseFloat(transaction.sell_price).toFixed(2);
+	
+	        return {
+	            buyDate: buy_moment.format('YYYY-MM-DD') + '\n' + buy_moment.format('HH:mm:ss') + ' GMT',
+	            ref: transaction.transaction_id,
+	            payout: parseFloat(transaction.payout).toFixed(2),
+	            buyPrice: buy_price,
+	            sellDate: sell_moment.format('YYYY-MM-DD') + '\n' + sell_moment.format('HH:mm:ss') + ' GMT',
+	            sellPrice: sell_price,
+	            pl: Number(sell_price - buy_price).toFixed(2),
+	            desc: transaction.longcode,
+	            id: transaction.contract_id,
+	            app_id: transaction.app_id
+	        };
+	    };
+	
+	    return {
+	        getProfitTabletData: getProfitTabletData
+	    };
+	}();
+	
+	module.exports = ProfitTable;
+
+/***/ },
+/* 551 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75657,9 +75188,9 @@
 	var BinaryPjax = __webpack_require__(420);
 	var showLocalTimeOnHover = __webpack_require__(448).showLocalTimeOnHover;
 	var localize = __webpack_require__(430).localize;
-	var FlexTableUI = __webpack_require__(556);
+	var FlexTableUI = __webpack_require__(552);
 	var jpClient = __webpack_require__(425).jpClient;
-	var FormManager = __webpack_require__(535);
+	var FormManager = __webpack_require__(528);
 	var toTitleCase = __webpack_require__(433).toTitleCase;
 	
 	var APIToken = function () {
@@ -75808,7 +75339,7 @@
 	module.exports = APIToken;
 
 /***/ },
-/* 556 */
+/* 552 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75882,12 +75413,12 @@
 	module.exports = FlexTableUI;
 
 /***/ },
-/* 557 */
+/* 553 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var ApplicationsInit = __webpack_require__(558);
+	var ApplicationsInit = __webpack_require__(554);
 	var BinaryPjax = __webpack_require__(420);
 	var jpClient = __webpack_require__(425).jpClient;
 	
@@ -75912,13 +75443,13 @@
 	module.exports = AuthorisedApps;
 
 /***/ },
-/* 558 */
+/* 554 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var ApplicationsUI = __webpack_require__(559);
-	var ApplicationsData = __webpack_require__(560);
+	var ApplicationsUI = __webpack_require__(555);
+	var ApplicationsData = __webpack_require__(556);
 	
 	var ApplicationsInit = function () {
 	    'use strict';
@@ -75947,22 +75478,22 @@
 	module.exports = ApplicationsInit;
 
 /***/ },
-/* 559 */
+/* 555 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var ApplicationsData = __webpack_require__(560);
+	var ApplicationsData = __webpack_require__(556);
 	var showLocalTimeOnHover = __webpack_require__(448).showLocalTimeOnHover;
 	var localize = __webpack_require__(430).localize;
 	var showLoadingImage = __webpack_require__(417).showLoadingImage;
-	var FlexTableUI = __webpack_require__(556);
+	var FlexTableUI = __webpack_require__(552);
 	var toTitleCase = __webpack_require__(433).toTitleCase;
 	
 	var ApplicationsUI = function () {
 	    'use strict';
 	
-	    var container_selector = '#applications-ws-container';
+	    var container_selector = '#applications-container';
 	    var messages = {
 	        no_apps: 'You have not granted access to any applications.',
 	        revoke_confirm: 'Are you sure that you want to permanently revoke access to application',
@@ -76048,7 +75579,7 @@
 	module.exports = ApplicationsUI;
 
 /***/ },
-/* 560 */
+/* 556 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -76076,14 +75607,14 @@
 	module.exports = ApplicationsData;
 
 /***/ },
-/* 561 */
+/* 557 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var BinaryPjax = __webpack_require__(420);
 	var localize = __webpack_require__(430).localize;
-	var FormManager = __webpack_require__(535);
+	var FormManager = __webpack_require__(528);
 	
 	var CashierPassword = function () {
 	    'use strict';
@@ -76168,7 +75699,7 @@
 	module.exports = CashierPassword;
 
 /***/ },
-/* 562 */
+/* 558 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -76176,13 +75707,13 @@
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 	
 	var BinaryPjax = __webpack_require__(420);
-	var Header = __webpack_require__(512);
+	var Header = __webpack_require__(506);
 	var localize = __webpack_require__(430).localize;
 	var State = __webpack_require__(422).State;
-	var objectNotEmpty = __webpack_require__(417).objectNotEmpty;
+	var isEmptyObject = __webpack_require__(417).isEmptyObject;
 	var showLoadingImage = __webpack_require__(417).showLoadingImage;
 	var jpClient = __webpack_require__(425).jpClient;
-	var Validation = __webpack_require__(514);
+	var Validation = __webpack_require__(508);
 	
 	var FinancialAssessment = function () {
 	    'use strict';
@@ -76216,7 +75747,7 @@
 	
 	        financial_assessment = $.extend({}, response.get_financial_assessment);
 	
-	        if (!objectNotEmpty(financial_assessment)) {
+	        if (isEmptyObject(financial_assessment)) {
 	            BinarySocket.wait('get_account_status').then(function (data) {
 	                if (data.get_account_status.risk_classification === 'high') {
 	                    $('#high_risk_classification').removeClass('invisible');
@@ -76324,12 +75855,12 @@
 	module.exports = FinancialAssessment;
 
 /***/ },
-/* 563 */
+/* 559 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var IPHistoryInit = __webpack_require__(564);
+	var IPHistoryInit = __webpack_require__(560);
 	var BinaryPjax = __webpack_require__(420);
 	var jpClient = __webpack_require__(425).jpClient;
 	
@@ -76354,13 +75885,13 @@
 	module.exports = IPHistory;
 
 /***/ },
-/* 564 */
+/* 560 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var IPHistoryUI = __webpack_require__(565);
-	var IPHistoryData = __webpack_require__(566);
+	var IPHistoryUI = __webpack_require__(561);
+	var IPHistoryData = __webpack_require__(562);
 	
 	var IPHistoryInit = function () {
 	    'use strict';
@@ -76397,20 +75928,20 @@
 	module.exports = IPHistoryInit;
 
 /***/ },
-/* 565 */
+/* 561 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var showLocalTimeOnHover = __webpack_require__(448).showLocalTimeOnHover;
-	var FlexTableUI = __webpack_require__(556);
+	var FlexTableUI = __webpack_require__(552);
 	var moment = __webpack_require__(304);
 	var localize = __webpack_require__(430).localize;
 	
 	var IPHistoryUI = function () {
 	    'use strict';
 	
-	    var container_selector = '#login_history-ws-container';
+	    var container_selector = '#login-history-container';
 	    var no_messages_error = 'Your account has no Login/Logout activity.';
 	
 	    var init = function init() {
@@ -76473,7 +76004,7 @@
 	module.exports = IPHistoryUI;
 
 /***/ },
-/* 566 */
+/* 562 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -76520,12 +76051,12 @@
 	module.exports = IPHistoryData;
 
 /***/ },
-/* 567 */
+/* 563 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var LimitsInit = __webpack_require__(568);
+	var LimitsInit = __webpack_require__(564);
 	
 	var Limits = function () {
 	    var onLoad = function onLoad() {
@@ -76551,12 +76082,12 @@
 	module.exports = Limits;
 
 /***/ },
-/* 568 */
+/* 564 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var LimitsUI = __webpack_require__(569);
+	var LimitsUI = __webpack_require__(565);
 	var Client = __webpack_require__(427);
 	var localize = __webpack_require__(430).localize;
 	var elementInnerHtml = __webpack_require__(428).elementInnerHtml;
@@ -76636,7 +76167,7 @@
 	module.exports = LimitsInit;
 
 /***/ },
-/* 569 */
+/* 565 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -76709,7 +76240,7 @@
 	module.exports = LimitsUI;
 
 /***/ },
-/* 570 */
+/* 566 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -76747,7 +76278,7 @@
 	module.exports = Settings;
 
 /***/ },
-/* 571 */
+/* 567 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -76756,9 +76287,9 @@
 	var Client = __webpack_require__(427);
 	var localize = __webpack_require__(430).localize;
 	var dateValueChanged = __webpack_require__(428).dateValueChanged;
-	var FormManager = __webpack_require__(535);
-	var DatePicker = __webpack_require__(466).DatePicker;
-	var TimePicker = __webpack_require__(493).TimePicker;
+	var FormManager = __webpack_require__(528);
+	var DatePicker = __webpack_require__(466);
+	var TimePicker = __webpack_require__(493);
 	
 	var SelfExclusion = function () {
 	    'use strict';
@@ -76905,13 +76436,15 @@
 	
 	    var initDatePicker = function initDatePicker() {
 	        // timeout_until
-	        new TimePicker(timeout_time_id).show();
-	        new DatePicker(timeout_date_id).show({
-	            minDate: 'today',
+	        TimePicker.init({ selector: timeout_time_id });
+	        DatePicker.init({
+	            selector: timeout_date_id,
+	            minDate: 0,
 	            maxDate: 6 * 7 });
 	
 	        // exclude_until
-	        new DatePicker(exclude_until_id).show({
+	        DatePicker.init({
+	            selector: exclude_until_id,
 	            minDate: moment().add(6, 'months').add(1, 'day').toDate(),
 	            maxDate: 5 * 365 });
 	
@@ -76967,22 +76500,22 @@
 	module.exports = SelfExclusion;
 
 /***/ },
-/* 572 */
+/* 568 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var localize = __webpack_require__(430).localize;
 	var Client = __webpack_require__(427);
-	var Header = __webpack_require__(512);
+	var Header = __webpack_require__(506);
 	var State = __webpack_require__(422).State;
 	var detectHedging = __webpack_require__(428).detectHedging;
 	var makeOption = __webpack_require__(428).makeOption;
-	var FormManager = __webpack_require__(535);
+	var FormManager = __webpack_require__(528);
 	var moment = __webpack_require__(304);
-	__webpack_require__(573);
+	__webpack_require__(569);
 	
-	var SettingsDetailsWS = function () {
+	var PersonalDetails = function () {
 	    'use strict';
 	
 	    var form_id = '#frmPersonalDetails';
@@ -77226,10 +76759,10 @@
 	    };
 	}();
 	
-	module.exports = SettingsDetailsWS;
+	module.exports = PersonalDetails;
 
 /***/ },
-/* 573 */
+/* 569 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var require;var require;var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -82960,7 +82493,364 @@
 
 
 /***/ },
-/* 574 */
+/* 570 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var moment = __webpack_require__(304);
+	var StatementUI = __webpack_require__(571);
+	var ViewPopup = __webpack_require__(449);
+	var getLanguage = __webpack_require__(421).get;
+	var localize = __webpack_require__(430).localize;
+	var showLocalTimeOnHover = __webpack_require__(448).showLocalTimeOnHover;
+	var addTooltip = __webpack_require__(460).addTooltip;
+	var buildOauthApps = __webpack_require__(460).buildOauthApps;
+	var dateValueChanged = __webpack_require__(428).dateValueChanged;
+	var jpClient = __webpack_require__(425).jpClient;
+	var toISOFormat = __webpack_require__(433).toISOFormat;
+	var DatePicker = __webpack_require__(466);
+	
+	var StatementInit = function () {
+	    'use strict';
+	
+	    // Batch refer to number of data get from ws service per request
+	    // chunk refer to number of data populate to ui for each append
+	    // receive means receive from ws service
+	    // consume means consume by UI and displayed to page
+	
+	    var batch_size = void 0,
+	        chunk_size = void 0,
+	        no_more_data = void 0,
+	        pending = void 0,
+	        current_batch = void 0,
+	        transactions_received = void 0,
+	        transactions_consumed = void 0;
+	
+	    var tableExist = function tableExist() {
+	        return document.getElementById('statement-table');
+	    };
+	
+	    var finishedConsumed = function finishedConsumed() {
+	        return transactions_consumed === transactions_received;
+	    };
+	
+	    var getStatement = function getStatement(opts) {
+	        var req = { statement: 1, description: 1 };
+	
+	        if (opts) $.extend(true, req, opts);
+	
+	        var jump_to_val = $('#jump-to').attr('data-value');
+	        if (jump_to_val && jump_to_val !== '') {
+	            req.date_to = moment.utc(jump_to_val).unix() + (jpClient() ? 15 : 24) * (60 * 60);
+	            req.date_from = 0;
+	        }
+	        BinarySocket.send(req).then(function (response) {
+	            statementHandler(response);
+	        });
+	    };
+	
+	    var getNextBatchStatement = function getNextBatchStatement() {
+	        getStatement({ offset: transactions_received, limit: batch_size });
+	        pending = true;
+	    };
+	
+	    var getNextChunkStatement = function getNextChunkStatement() {
+	        var chunk = current_batch.splice(0, chunk_size);
+	        transactions_consumed += chunk.length;
+	        $('#rows_count').text(transactions_consumed);
+	        return chunk;
+	    };
+	
+	    var statementHandler = function statementHandler(response) {
+	        if (response.error) {
+	            StatementUI.errorMessage(response.error.message);
+	            return;
+	        }
+	
+	        pending = false;
+	
+	        var statement = response.statement;
+	        current_batch = statement.transactions;
+	        transactions_received += current_batch.length;
+	
+	        if (current_batch.length < batch_size) {
+	            no_more_data = true;
+	        }
+	
+	        if (!tableExist()) {
+	            StatementUI.createEmptyStatementTable().appendTo('#statement-container');
+	            $('.act, .credit').addClass('nowrap');
+	            StatementUI.updateStatementTable(getNextChunkStatement());
+	
+	            // Show a message when the table is empty
+	            if (transactions_received === 0 && current_batch.length === 0) {
+	                $('#statement-table').find('tbody').append($('<tr/>', { class: 'flex-tr' }).append($('<td/>', { colspan: 7 }).append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
+	            } else {
+	                $('#jump-to').parent().parent().parent().removeClass('invisible');
+	                if (getLanguage() === 'JA') {
+	                    $('#download_csv').removeClass('invisible').find('a').unbind('click').click(function () {
+	                        StatementUI.exportCSV();
+	                    });
+	                }
+	            }
+	        }
+	        showLocalTimeOnHover('td.date');
+	    };
+	
+	    var loadStatementChunkWhenScroll = function loadStatementChunkWhenScroll() {
+	        $(document).scroll(function () {
+	            var hidableHeight = function hidableHeight(percentage) {
+	                var total_hideable = $(document).height() - $(window).height();
+	                return Math.floor(total_hideable * percentage / 100);
+	            };
+	
+	            var p_from_top = $(document).scrollTop();
+	
+	            if (!tableExist() || p_from_top < hidableHeight(70)) return;
+	
+	            if (finishedConsumed() && !no_more_data && !pending) {
+	                getNextBatchStatement();
+	                return;
+	            }
+	
+	            if (!finishedConsumed()) StatementUI.updateStatementTable(getNextChunkStatement());
+	        });
+	    };
+	
+	    var onUnload = function onUnload() {
+	        pending = false;
+	        no_more_data = false;
+	
+	        current_batch = [];
+	
+	        transactions_received = 0;
+	        transactions_consumed = 0;
+	
+	        StatementUI.errorMessage(null);
+	        StatementUI.clearTableContent();
+	    };
+	
+	    var initPage = function initPage() {
+	        batch_size = 200;
+	        chunk_size = batch_size / 2;
+	        no_more_data = false;
+	        pending = false; // serve as a lock to prevent ws request is sequential
+	        current_batch = [];
+	        transactions_received = 0;
+	        transactions_consumed = 0;
+	
+	        BinarySocket.send({ oauth_apps: 1 }).then(function (response) {
+	            addTooltip(StatementUI.setOauthApps(buildOauthApps(response)));
+	            $('.barspinner').addClass('hidden');
+	        });
+	        getNextBatchStatement();
+	        loadStatementChunkWhenScroll();
+	    };
+	
+	    var attachDatePicker = function attachDatePicker() {
+	        var jump_to = '#jump-to';
+	        $(jump_to).attr('data-value', toISOFormat(moment())).change(function () {
+	            if (!dateValueChanged(this, 'date')) {
+	                return false;
+	            }
+	            $('.table-container').remove();
+	            StatementUI.clearTableContent();
+	            initPage();
+	            return true;
+	        });
+	        DatePicker.init({
+	            selector: jump_to,
+	            maxDate: 0
+	        });
+	        if ($(jump_to).attr('data-picker') !== 'native') $(jump_to).val(localize('Today'));
+	    };
+	
+	    var onLoad = function onLoad() {
+	        initPage();
+	        attachDatePicker();
+	        ViewPopup.viewButtonOnClick('#statement-container');
+	    };
+	
+	    return {
+	        init: initPage,
+	        statementHandler: statementHandler,
+	        onLoad: onLoad,
+	        onUnload: onUnload
+	    };
+	}();
+	
+	module.exports = StatementInit;
+
+/***/ },
+/* 571 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var Statement = __webpack_require__(572);
+	var Client = __webpack_require__(427);
+	var downloadCSV = __webpack_require__(417).downloadCSV;
+	var localize = __webpack_require__(430).localize;
+	var toJapanTimeIfNeeded = __webpack_require__(448).toJapanTimeIfNeeded;
+	var jpClient = __webpack_require__(425).jpClient;
+	var showTooltip = __webpack_require__(460).showTooltip;
+	var Table = __webpack_require__(481);
+	
+	var StatementUI = function () {
+	    'use strict';
+	
+	    var all_data = [],
+	        oauth_apps = {};
+	
+	    var table_id = 'statement-table',
+	        columns = ['date', 'ref', 'payout', 'act', 'desc', 'credit', 'bal', 'details'];
+	
+	    var createEmptyStatementTable = function createEmptyStatementTable() {
+	        var header = [localize('Date'), localize('Ref.'), localize('Potential Payout'), localize('Action'), localize('Description'), localize('Credit/Debit'), localize('Balance'), localize('Details')];
+	
+	        var jp_client = jpClient(),
+	            currency = Client.get('currency');
+	
+	        header[6] += jp_client || !currency ? '' : ' (' + currency + ')';
+	
+	        var metadata = {
+	            id: table_id,
+	            cols: columns
+	        };
+	        var data = [];
+	        return Table.createFlexTable(data, metadata, header);
+	    };
+	
+	    var clearTableContent = function clearTableContent() {
+	        Table.clearTableBody(table_id);
+	        all_data = [];
+	        $('#' + table_id + '>tfoot').hide();
+	    };
+	
+	    var createStatementRow = function createStatementRow(transaction) {
+	        var statement_data = Statement.getStatementData(transaction, Client.get('currency'), jpClient());
+	        all_data.push($.extend({}, statement_data, {
+	            action: localize(statement_data.action),
+	            desc: localize(statement_data.desc)
+	        }));
+	        var credit_debit_type = parseFloat(transaction.amount) >= 0 ? 'profit' : 'loss';
+	
+	        var $statement_row = Table.createFlexTableRow([statement_data.date, '<span' + showTooltip(statement_data.app_id, oauth_apps[statement_data.app_id]) + '>' + statement_data.ref + '</span>', statement_data.payout, localize(statement_data.action), '', statement_data.amount, statement_data.balance, ''], columns, 'data');
+	
+	        $statement_row.children('.credit').addClass(credit_debit_type);
+	        $statement_row.children('.date').addClass('pre');
+	        $statement_row.children('.desc').html(localize(statement_data.desc) + '<br>');
+	
+	        // create view button and append
+	        if (statement_data.action === 'Sell' || statement_data.action === 'Buy') {
+	            var $view_button = $('<button/>', { class: 'button open_contract_details', text: localize('View'), contract_id: statement_data.id });
+	            $statement_row.children('.desc,.details').append($view_button);
+	        }
+	
+	        return $statement_row[0]; // return DOM instead of jquery object
+	    };
+	
+	    var updateStatementTable = function updateStatementTable(transactions) {
+	        Table.appendTableBody(table_id, transactions, createStatementRow);
+	    };
+	
+	    var errorMessage = function errorMessage(msg) {
+	        var $err = $('#statement-container').find('#error-msg');
+	        if (msg) {
+	            $err.removeClass('invisible').text(msg);
+	        } else {
+	            $err.addClass('invisible').text('');
+	        }
+	    };
+	
+	    var exportCSV = function exportCSV() {
+	        downloadCSV(Statement.generateCSV(all_data, jpClient()), 'Statement_' + Client.get('loginid') + '_latest' + $('#rows_count').text() + '_' + toJapanTimeIfNeeded(window.time).replace(/\s/g, '_').replace(/:/g, '') + '.csv');
+	    };
+	
+	    return {
+	        clearTableContent: clearTableContent,
+	        createEmptyStatementTable: createEmptyStatementTable,
+	        updateStatementTable: updateStatementTable,
+	        errorMessage: errorMessage,
+	        exportCSV: exportCSV,
+	        setOauthApps: function setOauthApps(values) {
+	            return oauth_apps = values;
+	        }
+	    };
+	}();
+	
+	module.exports = StatementUI;
+
+/***/ },
+/* 572 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var moment = __webpack_require__(304);
+	var Client = __webpack_require__(427);
+	var localize = __webpack_require__(430).localize;
+	var toJapanTimeIfNeeded = __webpack_require__(448).toJapanTimeIfNeeded;
+	var addComma = __webpack_require__(433).addComma;
+	var formatMoney = __webpack_require__(432).formatMoney;
+	var toTitleCase = __webpack_require__(433).toTitleCase;
+	
+	var Statement = function () {
+	    'use strict';
+	
+	    var getStatementData = function getStatementData(statement, currency, jp_client) {
+	        var date_obj = new Date(statement.transaction_time * 1000),
+	            moment_obj = moment.utc(date_obj),
+	            date_str = moment_obj.format('YYYY-MM-DD'),
+	            time_str = moment_obj.format('HH:mm:ss') + ' GMT',
+	            payout = parseFloat(statement.payout),
+	            amount = parseFloat(statement.amount),
+	            balance = parseFloat(statement.balance_after);
+	
+	        return {
+	            date: jp_client ? toJapanTimeIfNeeded(statement.transaction_time) : date_str + '\n' + time_str,
+	            ref: statement.transaction_id,
+	            payout: isNaN(payout) ? '-' : jp_client ? formatMoney(currency, payout) : payout.toFixed(2),
+	            action: toTitleCase(statement.action_type),
+	            amount: isNaN(amount) ? '-' : jp_client ? formatMoney(currency, amount) : addComma(amount),
+	            balance: isNaN(balance) ? '-' : jp_client ? formatMoney(currency, balance) : addComma(balance),
+	            desc: statement.longcode.replace(/\n/g, '<br />'),
+	            id: statement.contract_id,
+	            app_id: statement.app_id
+	        };
+	    };
+	
+	    var generateCSV = function generateCSV(all_data, jp_client) {
+	        var columns = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'],
+	            header = ['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit'].map(function (str) {
+	            return localize(str);
+	        }),
+	            currency = Client.get('currency');
+	        header.push(localize('Balance') + (jp_client || !currency ? '' : ' (' + currency + ')'));
+	        var sep = ',';
+	        var csv = [header.join(sep)];
+	        if (all_data && all_data.length > 0) {
+	            csv = csv.concat(all_data.map(function (data) {
+	                return columns.map(function (key) {
+	                    // eslint-disable-next-line no-control-regex
+	                    return data[key] ? data[key].replace(new RegExp(sep, 'g'), '').replace(new RegExp('\n|<br />', 'g'), ' ') : '';
+	                }).join(sep);
+	            }));
+	        }
+	        return csv.join('\r\n');
+	    };
+	
+	    return {
+	        getStatementData: getStatementData,
+	        generateCSV: generateCSV
+	    };
+	}();
+	
+	module.exports = Statement;
+
+/***/ },
+/* 573 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -83012,14 +82902,14 @@
 	module.exports = TopUpVirtual;
 
 /***/ },
-/* 575 */
+/* 574 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var BinaryPjax = __webpack_require__(420);
 	var localize = __webpack_require__(430).localize;
-	var FormManager = __webpack_require__(535);
+	var FormManager = __webpack_require__(528);
 	
 	var LostPassword = function () {
 	    'use strict';
@@ -83049,7 +82939,7 @@
 	module.exports = LostPassword;
 
 /***/ },
-/* 576 */
+/* 575 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -83058,9 +82948,9 @@
 	var Client = __webpack_require__(427);
 	var State = __webpack_require__(422).State;
 	var defaultRedirectUrl = __webpack_require__(424).defaultRedirectUrl;
-	var objectNotEmpty = __webpack_require__(417).objectNotEmpty;
-	var AccountOpening = __webpack_require__(577);
-	var FormManager = __webpack_require__(535);
+	var isEmptyObject = __webpack_require__(417).isEmptyObject;
+	var AccountOpening = __webpack_require__(576);
+	var FormManager = __webpack_require__(528);
 	var toISOFormat = __webpack_require__(433).toISOFormat;
 	var moment = __webpack_require__(304);
 	
@@ -83093,7 +82983,7 @@
 	        AccountOpening.populateForm(formID, getValidations);
 	
 	        BinarySocket.send({ get_financial_assessment: 1 }).then(function (response) {
-	            if (objectNotEmpty(response.get_financial_assessment)) {
+	            if (!isEmptyObject(response.get_financial_assessment)) {
 	                var keys = Object.keys(response.get_financial_assessment);
 	                keys.forEach(function (key) {
 	                    var val = response.get_financial_assessment[key];
@@ -83165,20 +83055,20 @@
 	module.exports = FinancialAccOpening;
 
 /***/ },
-/* 577 */
+/* 576 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var generateBirthDate = __webpack_require__(578);
+	var generateBirthDate = __webpack_require__(577);
 	var BinaryPjax = __webpack_require__(420);
 	var Client = __webpack_require__(427);
 	var localize = __webpack_require__(430).localize;
 	var State = __webpack_require__(422).State;
 	var makeOption = __webpack_require__(428).makeOption;
-	var FormManager = __webpack_require__(535);
+	var FormManager = __webpack_require__(528);
 	var Cookies = __webpack_require__(423);
-	__webpack_require__(573);
+	__webpack_require__(569);
 	
 	var AccountOpening = function () {
 	    'use strict';
@@ -83344,7 +83234,7 @@
 	module.exports = AccountOpening;
 
 /***/ },
-/* 578 */
+/* 577 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -83352,13 +83242,12 @@
 	var moment = __webpack_require__(304);
 	var dateValueChanged = __webpack_require__(428).dateValueChanged;
 	var toISOFormat = __webpack_require__(433).toISOFormat;
-	var DatePicker = __webpack_require__(466).DatePicker;
+	var DatePicker = __webpack_require__(466);
 	
 	var generateBirthDate = function generateBirthDate() {
 	    var date_of_birth = '#date_of_birth';
-	    var datePickerInst = new DatePicker(date_of_birth);
-	    datePickerInst.hide();
-	    datePickerInst.show({
+	    DatePicker.init({
+	        selector: date_of_birth,
 	        minDate: -100 * 365,
 	        maxDate: -18 * 365 - 5,
 	        yearRange: '-100:-18'
@@ -83371,7 +83260,7 @@
 	module.exports = generateBirthDate;
 
 /***/ },
-/* 579 */
+/* 578 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -83379,9 +83268,9 @@
 	var BinaryPjax = __webpack_require__(420);
 	var Client = __webpack_require__(427);
 	var State = __webpack_require__(422).State;
-	var AccountOpening = __webpack_require__(577);
+	var AccountOpening = __webpack_require__(576);
 	var detectHedging = __webpack_require__(428).detectHedging;
-	var FormManager = __webpack_require__(535);
+	var FormManager = __webpack_require__(528);
 	
 	var JapanAccOpening = function () {
 	    var onLoad = function onLoad() {
@@ -83429,15 +83318,15 @@
 	module.exports = JapanAccOpening;
 
 /***/ },
-/* 580 */
+/* 579 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var BinaryPjax = __webpack_require__(420);
 	var Client = __webpack_require__(427);
-	var AccountOpening = __webpack_require__(577);
-	var FormManager = __webpack_require__(535);
+	var AccountOpening = __webpack_require__(576);
+	var FormManager = __webpack_require__(528);
 	
 	var RealAccOpening = function () {
 	    'use strict';
@@ -83472,7 +83361,7 @@
 	module.exports = RealAccOpening;
 
 /***/ },
-/* 581 */
+/* 580 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -83482,8 +83371,8 @@
 	var urlFor = __webpack_require__(424).urlFor;
 	var makeOption = __webpack_require__(428).makeOption;
 	var jpClient = __webpack_require__(425).jpClient;
-	var FormManager = __webpack_require__(535);
-	var TrafficSource = __webpack_require__(582);
+	var FormManager = __webpack_require__(528);
+	var TrafficSource = __webpack_require__(581);
 	var Cookies = __webpack_require__(423);
 	
 	var VirtualAccOpening = function () {
@@ -83614,7 +83503,7 @@
 	module.exports = VirtualAccOpening;
 
 /***/ },
-/* 582 */
+/* 581 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -83713,15 +83602,15 @@
 	module.exports = TrafficSource;
 
 /***/ },
-/* 583 */
+/* 582 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var localize = __webpack_require__(430).localize;
 	var Login = __webpack_require__(474);
-	var generateBirthDate = __webpack_require__(578);
-	var FormManager = __webpack_require__(535);
+	var generateBirthDate = __webpack_require__(577);
+	var FormManager = __webpack_require__(528);
 	
 	var ResetPassword = function () {
 	    'use strict';
@@ -83784,15 +83673,15 @@
 	module.exports = ResetPassword;
 
 /***/ },
-/* 584 */
+/* 583 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var KnowledgeTestUI = __webpack_require__(585);
+	var KnowledgeTestUI = __webpack_require__(584);
 	var BinaryPjax = __webpack_require__(420);
 	var toJapanTimeIfNeeded = __webpack_require__(448).toJapanTimeIfNeeded;
-	var Header = __webpack_require__(512);
+	var Header = __webpack_require__(506);
 	var localize = __webpack_require__(430).localize;
 	var urlFor = __webpack_require__(424).urlFor;
 	
@@ -84020,7 +83909,7 @@
 	module.exports = KnowledgeTest;
 
 /***/ },
-/* 585 */
+/* 584 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -84126,30 +84015,30 @@
 	module.exports = KnowledgeTestUI;
 
 /***/ },
-/* 586 */
+/* 585 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var Client = __webpack_require__(427);
-	var Contents = __webpack_require__(587);
-	var Header = __webpack_require__(512);
+	var Contents = __webpack_require__(586);
+	var Header = __webpack_require__(506);
 	var Language = __webpack_require__(421);
 	var Localize = __webpack_require__(430);
 	var localize = __webpack_require__(430).localize;
 	var Login = __webpack_require__(474);
-	var Menu = __webpack_require__(588);
+	var Menu = __webpack_require__(587);
 	var LocalStore = __webpack_require__(422).LocalStore;
 	var State = __webpack_require__(422).State;
 	var Url = __webpack_require__(424);
 	var checkLanguage = __webpack_require__(425).checkLanguage;
-	var scrollToTop = __webpack_require__(537).scrollToTop;
-	var TrafficSource = __webpack_require__(582);
-	var RealityCheck = __webpack_require__(590);
+	var scrollToTop = __webpack_require__(535).scrollToTop;
+	var TrafficSource = __webpack_require__(581);
+	var RealityCheck = __webpack_require__(589);
 	var Cookies = __webpack_require__(423);
-	var PushNotification = __webpack_require__(594);
+	var PushNotification = __webpack_require__(593);
+	__webpack_require__(591);
 	__webpack_require__(592);
-	__webpack_require__(593);
 	
 	var Page = function () {
 	    'use strict';
@@ -84308,7 +84197,7 @@
 	module.exports = Page;
 
 /***/ },
-/* 587 */
+/* 586 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -84338,13 +84227,13 @@
 	module.exports = Contents;
 
 /***/ },
-/* 588 */
+/* 587 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var Client = __webpack_require__(427);
-	__webpack_require__(589);
+	__webpack_require__(588);
 	
 	var Menu = function () {
 	    'use strict';
@@ -84461,7 +84350,7 @@
 	module.exports = Menu;
 
 /***/ },
-/* 589 */
+/* 588 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -84888,13 +84777,13 @@
 	}(jQuery);
 
 /***/ },
-/* 590 */
+/* 589 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var RealityCheckData = __webpack_require__(429);
-	var RealityCheckUI = __webpack_require__(591);
+	var RealityCheckUI = __webpack_require__(590);
 	var Client = __webpack_require__(427);
 	
 	var RealityCheck = function () {
@@ -84937,7 +84826,7 @@
 	module.exports = RealityCheck;
 
 /***/ },
-/* 591 */
+/* 590 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -84945,9 +84834,9 @@
 	var RealityCheckData = __webpack_require__(429);
 	var showLocalTimeOnHover = __webpack_require__(448).showLocalTimeOnHover;
 	var urlFor = __webpack_require__(424).urlFor;
-	var FormManager = __webpack_require__(535);
+	var FormManager = __webpack_require__(528);
+	__webpack_require__(591);
 	__webpack_require__(592);
-	__webpack_require__(593);
 	
 	var RealityCheckUI = function () {
 	    'use strict';
@@ -85086,7 +84975,7 @@
 	module.exports = RealityCheckUI;
 
 /***/ },
-/* 592 */
+/* 591 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -85123,7 +85012,7 @@
 	}
 
 /***/ },
-/* 593 */
+/* 592 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -85138,7 +85027,7 @@
 	}
 
 /***/ },
-/* 594 */
+/* 593 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -85146,7 +85035,7 @@
 	var Client = __webpack_require__(427);
 	var getLanguage = __webpack_require__(421).get;
 	var urlForStatic = __webpack_require__(424).urlForStatic;
-	var Pushwoosh = __webpack_require__(595).Pushwoosh;
+	var Pushwoosh = __webpack_require__(594).Pushwoosh;
 	
 	var BinaryPushwoosh = function () {
 	    var pw = new Pushwoosh();
@@ -85195,14 +85084,14 @@
 	module.exports = BinaryPushwoosh;
 
 /***/ },
-/* 595 */
+/* 594 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _Global = __webpack_require__(596);
+	var _Global = __webpack_require__(595);
 	
 	Object.defineProperty(exports, 'Pushwoosh', {
 	  enumerable: true,
@@ -85214,23 +85103,23 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 596 */
+/* 595 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _storage = __webpack_require__(597),
-	    _functions = __webpack_require__(598),
-	    _Logger = __webpack_require__(599),
+	var _storage = __webpack_require__(596),
+	    _functions = __webpack_require__(597),
+	    _Logger = __webpack_require__(598),
 	    _Logger2 = _interopRequireDefault(_Logger),
-	    _SafariInit = __webpack_require__(600),
+	    _SafariInit = __webpack_require__(599),
 	    _SafariInit2 = _interopRequireDefault(_SafariInit),
-	    _WorkerInit = __webpack_require__(607),
+	    _WorkerInit = __webpack_require__(606),
 	    _WorkerInit2 = _interopRequireDefault(_WorkerInit),
-	    _API = __webpack_require__(605),
-	    _constants = __webpack_require__(606);
+	    _API = __webpack_require__(604),
+	    _constants = __webpack_require__(605);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -85457,7 +85346,7 @@
 	exports.default = PushwooshGlobal;
 
 /***/ },
-/* 597 */
+/* 596 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -85555,7 +85444,7 @@
 	var keyValue = exports.keyValue = createKeyValue('keyValue');
 
 /***/ },
-/* 598 */
+/* 597 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -85685,7 +85574,7 @@
 	}
 
 /***/ },
-/* 599 */
+/* 598 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -85738,23 +85627,23 @@
 	exports.default = Logger;
 
 /***/ },
-/* 600 */
+/* 599 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _BaseInit2 = __webpack_require__(601),
+	var _BaseInit2 = __webpack_require__(600),
 	    _BaseInit3 = _interopRequireDefault(_BaseInit2),
-	    _createDoApiXHR = __webpack_require__(603),
+	    _createDoApiXHR = __webpack_require__(602),
 	    _createDoApiXHR2 = _interopRequireDefault(_createDoApiXHR),
-	    _API = __webpack_require__(605),
+	    _API = __webpack_require__(604),
 	    _API2 = _interopRequireDefault(_API),
-	    _PushwooshError = __webpack_require__(604),
+	    _PushwooshError = __webpack_require__(603),
 	    _PushwooshError2 = _interopRequireDefault(_PushwooshError),
-	    _functions = __webpack_require__(598),
-	    _constants = __webpack_require__(606);
+	    _functions = __webpack_require__(597),
+	    _constants = __webpack_require__(605);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -85888,14 +85777,14 @@
 	exports.default = PushwooshSafari;
 
 /***/ },
-/* 601 */
+/* 600 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _eventemitter = __webpack_require__(602),
+	var _eventemitter = __webpack_require__(601),
 	    _eventemitter2 = _interopRequireDefault(_eventemitter);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -85918,7 +85807,7 @@
 	exports.default = BaseInit;
 
 /***/ },
-/* 602 */
+/* 601 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -86213,7 +86102,7 @@
 
 
 /***/ },
-/* 603 */
+/* 602 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -86221,7 +86110,7 @@
 	exports.__esModule = true;
 	exports.default = createDoApiXHR;
 	
-	var _PushwooshError = __webpack_require__(604),
+	var _PushwooshError = __webpack_require__(603),
 	    _PushwooshError2 = _interopRequireDefault(_PushwooshError);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -86273,7 +86162,7 @@
 	}
 
 /***/ },
-/* 604 */
+/* 603 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -86308,7 +86197,7 @@
 	exports.default = PushwooshError;
 
 /***/ },
-/* 605 */
+/* 604 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -86319,7 +86208,7 @@
 	
 	exports.createErrorAPI = createErrorAPI;
 	
-	var _functions = __webpack_require__(598);
+	var _functions = __webpack_require__(597);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -86411,7 +86300,7 @@
 	exports.default = PushwooshAPI;
 
 /***/ },
-/* 606 */
+/* 605 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -86438,24 +86327,24 @@
 	var keyLastSentAppOpen = exports.keyLastSentAppOpen = 'pushwooshLastSentAppOpen';
 
 /***/ },
-/* 607 */
+/* 606 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _storage = __webpack_require__(597),
-	    _BaseInit2 = __webpack_require__(601),
+	var _storage = __webpack_require__(596),
+	    _BaseInit2 = __webpack_require__(600),
 	    _BaseInit3 = _interopRequireDefault(_BaseInit2),
-	    _createDoApiXHR = __webpack_require__(603),
+	    _createDoApiXHR = __webpack_require__(602),
 	    _createDoApiXHR2 = _interopRequireDefault(_createDoApiXHR),
-	    _API = __webpack_require__(605),
+	    _API = __webpack_require__(604),
 	    _API2 = _interopRequireDefault(_API),
-	    _PushwooshError = __webpack_require__(604),
+	    _PushwooshError = __webpack_require__(603),
 	    _PushwooshError2 = _interopRequireDefault(_PushwooshError),
-	    _functions = __webpack_require__(598),
-	    _constants = __webpack_require__(606);
+	    _functions = __webpack_require__(597),
+	    _constants = __webpack_require__(605);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	

@@ -1257,24 +1257,24 @@ a.close:hover {
   line-height: 25px;
 }
 
-.inpage_popup_container_ws {
+.inpage_popup_container {
   border: 2px solid #2a3052;
   border-top: 1px solid #fff;
   background-color: #fff;
 }
-.inpage_popup_container_ws .inpage_popup_content_box {
+.inpage_popup_container .inpage_popup_content_box {
   border: 0;
 }
-.inpage_popup_container_ws .inpage_popup_content_box #contract_win_status {
+.inpage_popup_container .inpage_popup_content_box #contract_win_status {
   line-height: 30px;
 }
-.inpage_popup_container_ws .inpage_popup_content_box #contract_win_status.won {
+.inpage_popup_container .inpage_popup_content_box #contract_win_status.won {
   background-color: rgba(46, 136, 54, 0.2);
 }
-.inpage_popup_container_ws .inpage_popup_content_box #contract_win_status.lost {
+.inpage_popup_container .inpage_popup_content_box #contract_win_status.lost {
   background-color: rgba(204, 0, 0, 0.1);
 }
-.inpage_popup_container_ws .inpage_popup_content_box .popup_bet_desc {
+.inpage_popup_container .inpage_popup_content_box .popup_bet_desc {
   border: 0;
   padding: 5px;
   line-height: 20px;
@@ -1282,62 +1282,62 @@ a.close:hover {
   color: #fff;
   padding-right: 30px;
 }
-.inpage_popup_container_ws .inpage_popup_content_box td {
+.inpage_popup_container .inpage_popup_content_box td {
   padding-left: 6%;
   text-align: left;
 }
-.inpage_popup_container_ws .inpage_popup_content_box #sell_content_wrapper {
+.inpage_popup_container .inpage_popup_content_box #sell_content_wrapper {
   max-height: calc(100vh - 35px);
   overflow: auto;
   overflow-x: hidden;
   -ms-overflow-x: hidden;
 }
-.inpage_popup_container_ws .inpage_popup_content_box #sell_content_wrapper #sell_details_chart_wrapper {
+.inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_chart_wrapper {
   border-right: 1px solid #44484c;
   margin-right: -1px;
   padding: 0;
 }
-.inpage_popup_container_ws .inpage_popup_content_box #sell_content_wrapper #sell_details_chart_wrapper .chart-notice {
+.inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_chart_wrapper .chart-notice {
   margin: 0;
 }
-.inpage_popup_container_ws .inpage_popup_content_box #sell_content_wrapper #sell_details_chart_wrapper .highcharts-container {
+.inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_chart_wrapper .highcharts-container {
   direction: ltr;
 }
-.inpage_popup_container_ws .inpage_popup_content_box #sell_content_wrapper #sell_details_table {
+.inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table {
   padding: 0;
   border-left: 1px solid #44484c;
 }
-.inpage_popup_container_ws .inpage_popup_content_box #sell_content_wrapper #sell_details_table th {
+.inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table th {
   line-height: 24px;
   border-bottom: #c2c2c2;
   cursor: pointer;
 }
-.inpage_popup_container_ws .inpage_popup_content_box #sell_content_wrapper #sell_details_table td, .inpage_popup_container_ws .inpage_popup_content_box #sell_content_wrapper #sell_details_table td[data-balloon] {
+.inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table td, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table td[data-balloon] {
   border-bottom: 1px solid #f2f2f2;
   vertical-align: middle;
 }
-.inpage_popup_container_ws .inpage_popup_content_box #sell_content_wrapper #sell_details_table #trade_details_profit_loss {
+.inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #trade_details_profit_loss {
   font-weight: bold;
 }
-.inpage_popup_container_ws .inpage_popup_content_box #sell_content_wrapper #sell_details_table #trade_details_profit_loss span {
+.inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #trade_details_profit_loss span {
   font-size: 10px;
   padding-left: 7px;
   font-weight: normal;
 }
-.inpage_popup_container_ws .inpage_popup_content_box #sell_content_wrapper #sell_details_table .last_cell {
+.inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .last_cell {
   border-bottom: 0;
   min-height: 20px;
   padding: 5px 15px;
   text-align: center;
 }
-.inpage_popup_container_ws .inpage_popup_content_box #sell_content_wrapper #sell_details_table #trade_details_message {
+.inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #trade_details_message {
   font-style: italic;
 }
-.inpage_popup_container_ws .inpage_popup_content_box #sell_content_wrapper #sell_details_table #contract_sell_message {
+.inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #contract_sell_message {
   font-size: 0.9em;
   line-height: 20px;
 }
-.inpage_popup_container_ws .inpage_popup_content_box #sell_content_wrapper #sell_details_table #sell_at_market_wrapper .note {
+.inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #sell_at_market_wrapper .note {
   line-height: 18px;
   margin-bottom: 10px;
   font-size: 12px;
@@ -1690,16 +1690,21 @@ table .loss, table .lower {
   border-bottom: 3px solid #f2f2f2;
 }
 
-/* stylelint-disable selector-list-comma-newline-after, selector-list-comma-space-after */
-#int_bank_wire, #local_bank_transfer, #western_union, #citadel, #visa,
-#mastercard, #cuo-credit-card, #moneybrokers, #neteller, #moneta,
-#webmoney, #qiwi, #icbc, #fastpay, #perfect_money, #yandex, #paysafecard, #okpay {
+#payment_methods h3 {
+  margin: 20px 0 0;
+}
+#payment_methods .payment-logo {
   width: 72px;
   height: 57px;
-  background-image: url("../images/pages/cashier/payment_methods_sprite_1.png");
+  background-image: url("../images/pages/cashier/payment_methods_sprite.png");
+}
+#payment_methods div {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
 }
 
-/* stylelint-enable selector-list-comma-newline-after, selector-list-comma-space-after */
 #int_bank_wire {
   background-position: -7px -9px;
 }
@@ -1724,7 +1729,7 @@ table .loss, table .lower {
   background-position: -421px -11px;
 }
 
-#cuo-credit-card {
+#cuo_credit_card {
   background-position: -108px -214px;
 }
 
@@ -1770,6 +1775,10 @@ table .loss, table .lower {
 
 #okpay {
   background-position: -285px -426px;
+}
+
+#bitcoin {
+  background-position: -12px -499px;
 }
 
 .forwardws-content iframe {
@@ -2211,24 +2220,24 @@ ol.start {
     font-size: 80% !important;
   }
 }
-#applications-ws-container table td, #applications-ws-container table th {
+#applications-container table td, #applications-container table th {
   text-align: center !important;
   vertical-align: middle !important;
   line-height: 30px;
 }
-#applications-ws-container table td .button, #applications-ws-container table th .button {
+#applications-container table td .button, #applications-container table th .button {
   margin: 3px 0;
 }
 
 @media screen and (max-width: 480px) {
-  #applications-ws-container table td, #applications-ws-container table th {
+  #applications-container table td, #applications-container table th {
     font-size: 80%;
   }
-  #applications-ws-container table button {
+  #applications-container table button {
     font-size: 80%;
     padding: 10px 15px;
   }
-  #applications-ws-container .errorfield {
+  #applications-container .errorfield {
     font-size: 80% !important;
   }
 }
@@ -4974,10 +4983,10 @@ fieldset .error-msg {
 /*
  * DO NOT ADD ANY COMMON STYLING BELOW THIS. ALL OTHER STYLING GO ABOVE THIS
  */
-#statement-ws-container #download_csv {
+#statement-container #download_csv {
   line-height: 28px;
 }
-#statement-ws-container .desc {
+#statement-container .desc {
   -webkit-flex: 2 1 100px;
       -ms-flex: 2 1 100px;
           flex: 2 1 100px;
@@ -4985,19 +4994,19 @@ fieldset .error-msg {
   word-break: break-word;
   min-width: 130px;
 }
-#statement-ws-container .act {
+#statement-container .act {
   -webkit-flex: 0.8 1 35px;
       -ms-flex: 0.8 1 35px;
           flex: 0.8 1 35px;
 }
-#statement-ws-container label[for='date-picker'] {
+#statement-container label[for='date-picker'] {
   left: 30%;
 }
-#statement-ws-container input {
+#statement-container input {
   max-width: 60%;
   margin-left: 10px;
 }
-#statement-ws-container .padding-left {
+#statement-container .padding-left {
   padding-left: 10px !important;
 }
 
@@ -5098,16 +5107,16 @@ iframe#chart_frame {
   border: none;
 }
 
-#profit-table-ws-container th {
+#profit-table-container th {
   padding-right: 8px;
 }
-#profit-table-ws-container td {
+#profit-table-container td {
   padding-right: 8px;
 }
-#profit-table-ws-container .pl {
+#profit-table-container .pl {
   text-align: right !important;
 }
-#profit-table-ws-container #pl-day-total .buy-date {
+#profit-table-container #pl-day-total .buy-date {
   -webkit-flex-grow: 6;
       -ms-flex-positive: 6;
           flex-grow: 6;
@@ -5115,24 +5124,24 @@ iframe#chart_frame {
       -ms-flex-negative: 6;
           flex-shrink: 6;
 }
-#profit-table-ws-container .contract {
+#profit-table-container .contract {
   -webkit-flex: 2 1 100px;
       -ms-flex: 2 1 100px;
           flex: 2 1 100px;
   padding-right: 20px;
   min-width: 150px;
 }
-#profit-table-ws-container .new-width {
+#profit-table-container .new-width {
   min-width: 100px;
 }
 
-#limits-ws-container .item img {
+#limits-container .item img {
   margin-left: 5px;
 }
-#limits-ws-container thead {
+#limits-container thead {
   text-align: left;
 }
-#limits-ws-container td {
+#limits-container td {
   padding: 3px 8px;
 }
 
@@ -5143,19 +5152,6 @@ iframe#chart_frame {
 
 button:disabled {
   opacity: 0.5;
-}
-
-#virtual-form input, #virtual-form select, #change-password input, #change-password select, .usersettingssecurityws-content input, .usersettingssecurityws-content select {
-  outline: none;
-}
-#virtual-form #tooltip-password, #change-password #tooltip-password, .usersettingssecurityws-content #tooltip-password {
-  text-decoration: none;
-}
-#virtual-form div.hint, #change-password div.hint, .usersettingssecurityws-content div.hint {
-  margin-top: 10px;
-}
-#virtual-form p.error-message-password, #change-password p.error-message-password, .usersettingssecurityws-content p.error-message-password {
-  margin: 0.5em 0;
 }
 
 .big-error-code {
