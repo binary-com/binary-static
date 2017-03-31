@@ -1,77 +1,65 @@
 const Client = require('../base/client');
-const Scroll = require('../common_functions/scroll');
 
-const GetStarted = (function() {
-    const select_nav_element = function() {
-        const $navLink = $('.nav li a');
-        const $navList = $('.nav li');
-        $navList.removeClass('selected');
-        for (let i = 0; i < $navLink.length; i++) {
-            if ($navLink[i].href.match(window.location.pathname)) {
-                document.getElementsByClassName('nav')[0].getElementsByTagName('li')[i].setAttribute('class', 'selected');
-                break;
-            }
-        }
+const GetStarted = (() => {
+    'use strict';
+
+    const selectNavElement = () => {
+        $('.nav li').removeClass('selected')
+            .find('a[href="' + window.location.pathname + '"]')
+            .parent('li')
+            .addClass('selected');
     };
 
-    const onLoad = function() {
+    const updateActiveSubsection = ($nav, $to_show) => {
+        $('.subsection').addClass('hidden');
+        $to_show.removeClass('hidden');
+        const $nav_back = $nav.find('.back');
+        const $nav_next = $nav.find('.next');
+
+        if ($to_show.hasClass('first')) {
+            $nav_back.addClass('button-disabled');
+            $nav_next.removeClass('button-disabled');
+        } else if ($to_show.hasClass('last')) {
+            $nav_back.removeClass('button-disabled');
+            $nav_next.addClass('button-disabled');
+        } else {
+            $nav_back.removeClass('button-disabled');
+            $nav_next.removeClass('button-disabled');
+        }
+
+        const new_hash = $to_show.find('a[name]').attr('name').slice(0, -8);
+        if (window.location.hash !== `#${new_hash}`) {
+            window.location.hash = new_hash;
+        }
+
+        return false;
+    };
+
+    const onLoad = () => {
         Client.activateByClientType();
 
-        const update_active_subsection = function(to_show) {
-            const subsection = $('.subsection');
-            subsection.addClass('hidden');
-            to_show.removeClass('hidden');
-            const nav_back = $('.subsection-navigation .back');
-            const nav_next = $('.subsection-navigation .next');
+        const $nav = $('.get-started').find('.subsection-navigation');
 
-            if (to_show.hasClass('first')) {
-                nav_back.addClass('button-disabled');
-                nav_next.removeClass('button-disabled');
-            } else if (to_show.hasClass('last')) {
-                nav_back.removeClass('button-disabled');
-                nav_next.addClass('button-disabled');
-            } else {
-                nav_back.removeClass('button-disabled');
-                nav_next.removeClass('button-disabled');
-            }
-
-            const new_hash = to_show.find('a[name]').attr('name').slice(0, -8);
-            if (window.location.hash !== `#${new_hash}`) {
-                window.location.hash = new_hash;
-            }
-
-            return false;
-        };
-
-        let to_show,
-            fragment;
-        const nav = $('.get-started').find('.subsection-navigation');
-
-        if (nav.length) {
-            nav.on('click', 'a', function() {
-                const button = $(this);
-                if (button.hasClass('button-disabled')) {
+        if ($nav.length) {
+            $nav.on('click', 'a', function() {
+                const $button = $(this);
+                if ($button.hasClass('button-disabled')) {
                     return false;
                 }
-                const now_showing = $('.subsection:not(.hidden)');
-                const show = button.hasClass('next') ? now_showing.next('.subsection') : now_showing.prev('.subsection');
-                return update_active_subsection(show);
+                const $now_showing = $('.subsection:not(.hidden)');
+                const $to_show = $button.hasClass('next') ? $now_showing.next('.subsection') : $now_showing.prev('.subsection');
+                return updateActiveSubsection($nav, $to_show);
             });
 
-            fragment = (location.href.split('#'))[1];
-            to_show = fragment ? $('a[name=' + fragment + '-section]').parent('.subsection') : $('.subsection.first');
-            update_active_subsection(to_show);
+            const fragment = (location.href.split('#'))[1];
+            const $to_show = fragment ? $('a[name=' + fragment + '-section]').parent('.subsection') : $('.subsection.first');
+            updateActiveSubsection($nav, $to_show);
         }
-        select_nav_element();
-    };
-
-    const onUnload = function() {
-        Scroll.offScroll();
+        selectNavElement();
     };
 
     return {
-        onLoad  : onLoad,
-        onUnload: onUnload,
+        onLoad: onLoad,
     };
 })();
 

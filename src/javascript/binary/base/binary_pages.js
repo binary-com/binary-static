@@ -1,6 +1,5 @@
 const LoggedInHandler = require('./logged_in');
 
-const Careers            = require('../static_pages/careers');
 const Charity            = require('../static_pages/charity');
 const Contact            = require('../static_pages/contact');
 const Endpoint           = require('../static_pages/endpoint');
@@ -59,7 +58,6 @@ const pages_config = {
     asset_indexws            : { module: AssetIndexUI },
     authenticate             : { module: Authenticate,               is_authenticated: true, only_real: true },
     authorised_appsws        : { module: AuthorisedApps,             is_authenticated: true },
-    careers                  : { module: Careers },
     cashier                  : { module: Cashier },
     cashier_passwordws       : { module: CashierPassword,            is_authenticated: true, only_real: true },
     change_passwordws        : { module: ChangePassword,             is_authenticated: true },
@@ -100,7 +98,6 @@ const pages_config = {
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
-    'careers-for-americans'  : { module: Careers },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'get-started'            : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },
