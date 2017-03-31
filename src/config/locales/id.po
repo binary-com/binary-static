@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-03-30 04:37+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
-"Language-Team: Indonesian "
-"<https://hosted.weblate.org/projects/binary/static/id/>\n"
+"Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -809,9 +808,7 @@ msgid "Acceptance"
 msgstr "Penerimaan"
 
 msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
-msgstr ""
-"Akses pasar kapan saja, dimana saja menggunakan aplikasi iOS atau peralatan "
-"Android."
+msgstr "Akses pasar kapan saja, dimana saja menggunakan aplikasi iOS atau peralatan Android."
 
 msgid "Access to Personal Data"
 msgstr "Akses ke Data Pribadi"
@@ -1004,6 +1001,9 @@ msgstr "Semua produk yang diperdagangkan pada margin memiliki tingkat resiko tin
 
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "Seluruh waktu yang digunakan adalah dalam GMT (Greenwich Mean Time)."
+
+msgid "All your deposits and withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
+msgstr ""
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "Memberi Klien untuk mendeposit dengan jumlah lebih rendah (mata uang lokal)"
@@ -2313,9 +2313,6 @@ msgstr "Deposit atau penarikan melalui bank-wire, kartu kredit atau wallet e-cas
 msgid "Deposit: %1 working day"
 msgstr "Deposit: %1 hari kerja"
 
-msgid "Deposit: %1 working days"
-msgstr "Deposit: %1 hari kerja"
-
 msgid "Deposit: Instant"
 msgstr "Deposit: Langsung"
 
@@ -2446,9 +2443,7 @@ msgid "Download CSV"
 msgstr "Download CSV"
 
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
-msgstr ""
-"Download MT5 pada desktop atau laptop Anda untuk mengakses peralatan canggih "
-"dan fasilitas yang dinikmati oleh jutaan trader."
+msgstr "Download MT5 pada desktop atau laptop Anda untuk mengakses peralatan canggih dan fasilitas yang dinikmati oleh jutaan trader."
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Mendorong pertumbuhan yang cepat dan pengembangan usaha, untuk mendukung penjualan perusahaan dan tujuan pemasaran"
@@ -3191,6 +3186,9 @@ msgstr "Ikuti pemimpin"
 msgid "Goes Outside"
 msgstr "Goes Outside"
 
+msgid "Got questions? %1Contact us%2 for help."
+msgstr ""
+
 msgid "Governing Laws and Jurisdiction"
 msgstr "Pemerintahan Hukum dan Yurisdiksi"
 
@@ -3465,18 +3463,13 @@ msgid "If you do not intend to utilise the leverage feature, please set the leve
 msgstr "Jika Anda tidak berniat untuk memanfaatkan fitur leverage, silahkan set rasio leverage 1:1."
 
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
-msgstr ""
-"Jika Anda tidak menerima e-mail beberapa menit yang akan datang, silakan "
-"periksa bagian junk/spam."
+msgstr "Jika Anda tidak menerima e-mail beberapa menit yang akan datang, silakan periksa bagian junk/spam."
 
 msgid "If you fail to immediately make a full settlement of the sum due to us in accordance with this Agreement, we reserve the right to accrue interest on the sums due from you to us in respect of any Transaction that you fail to pay on the relevant due date. Interest will accrue on a daily basis from the relevant due date until the date on which payment is received in full at the bank's official base rate for short term funds determined by us, and will be payable on demand."
 msgstr "Jika Anda gagal membuat sebuah pelunasan dari jumlah yang ditentukan pada Perjanjian ini, kami berhak untuk mengenakan bunga dari jumlah tersebut. Jumlah bunga akan dikenakan dalam hitungan harian dari tanggal jatuh tempo sehingga pelunasan diterima penuh pada bank yang telah kami tentukan, dan akan dibayar berdasarkan permintaan."
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr "Jika Anda menemukan kerentanan pada <a target='_blank' href='%1'>kode open-source kami</a>, silahkan ajukan permohonan pada GitHub."
-
-msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
-msgstr "Jika Anda memiliki pertanyaan, silakan hubungi tim Customer Support kami di <a href=\"mailto:%1\">%1</a>."
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr "Jika Anda membeli lebih dari satu Posisi Berjalan pada pasar yang sama, setiap penutupan transaksi yang Anda tempatkan pada pasar yang sama akan menutup Posisi Berjalan dalam urutan kronologis di mana Posisi Berjalan yang dibeli lebih dahulu dan diikuti dengan posisi selanjutnya."
@@ -5698,7 +5691,9 @@ msgstr "Silakan pilih minimal satu scope"
 msgid "Please select the checkbox."
 msgstr "Silakan pilih kotak centang."
 
-msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+#, fuzzy
+#| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
 msgstr "Silahkan kirim dokumen-dokumen berikut untuk memverifikasi identitas Anda dan mengotentikasi akun Anda:"
 
 msgid "Please specify your preferred reality-check interval in minutes"
@@ -6620,7 +6615,9 @@ msgstr "Stop Order/Stop Loss Order &mdash; instruksi untuk mengeksekusi Transaks
 msgid "Stop Out Level"
 msgstr "Level Stop Out"
 
-msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
+#, fuzzy
+#| msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
+msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr "Level Stop Out &mdash; Posisi pada atau dibawah Level Margin dimana Posisi Berjalan Anda mungkin terpaksa dengan atau tanpa persetujuan Anda."
 
 msgid "Stop Profit Level"
@@ -7958,9 +7955,7 @@ msgid "Use the opportunity provided by our website to practice for free with our
 msgstr "Manfaatkan kesempatan untuk bertrading gratis menggunakan fasilitas akun virtual yang kami tawarkan. Hal ini dapat membantu anda di dalam memahami fasilitas dan aturan yang tersedia."
 
 msgid "Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required."
-msgstr ""
-"Gunakan platform web dari sistem Windows, MacOS, atau Linux – tanpa "
-"memerlukan download atau instalasi."
+msgstr "Gunakan platform web dari sistem Windows, MacOS, atau Linux – tanpa memerlukan download atau instalasi."
 
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr "Gunakan, lakukan dan tampilkan aplikasi dan konten untuk tujuan pemasaran, menunjukkan, dan membuat aplikasi Anda tersedia bagi klien kami dan    "
@@ -8341,9 +8336,7 @@ msgid "When you are satisfied with the price that you receive, execute your trad
 msgstr "Bila Anda puas dengan harga yang Anda terima, eksekusi trading Anda segera. Dengan platform kami yang unik, Anda tidak akan harus bersaing dengan 'slippages' atau gaping pasar. Dan yang terpenting, tidak ada biaya tersembunyi. Anda juga dapat menjual kembali setiap kontrak jangka panjang setiap saat sebelum kontrak tersebut berakhir untuk melindungi keuntungan yang telah Anda dapatkan atau untuk mengurangi risiko kerugian Anda."
 
 msgid "When you click \"OK\" you will be excluded from trading on the site until the selected date."
-msgstr ""
-"Setelah mengklik \"OK\" Anda akan dikecualikan dari trading hingga tanggal "
-"yang dipilih."
+msgstr "Setelah mengklik \"OK\" Anda akan dikecualikan dari trading hingga tanggal yang dipilih."
 
 msgid "When you get approved as an affiliate, you will be provided with everything necessary for you to start right away."
 msgstr "Setelah Anda disetujui sebagai afiliasi, Anda akan diberikan semua hal yang diperlukan untuk memulai dengan segera."
@@ -8499,9 +8492,6 @@ msgid "Withdraw from"
 msgstr "Pencairan dari"
 
 msgid "Withdraw: %1 working day"
-msgstr "Penarikan: %1 hari kerja"
-
-msgid "Withdraw: %1 working days"
 msgstr "Penarikan: %1 hari kerja"
 
 msgid "Withdraw: Not applicable"
@@ -10939,6 +10929,15 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 msgid "Account Limits"
 msgstr "Batasan rekening"
+
+#~ msgid "Deposit: %1 working days"
+#~ msgstr "Deposit: %1 hari kerja"
+
+#~ msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
+#~ msgstr "Jika Anda memiliki pertanyaan, silakan hubungi tim Customer Support kami di <a href=\"mailto:%1\">%1</a>."
+
+#~ msgid "Withdraw: %1 working days"
+#~ msgstr "Penarikan: %1 hari kerja"
 
 #~ msgid "Please submit a valid %1."
 #~ msgstr "Silakan kirim %1 yang berlaku."

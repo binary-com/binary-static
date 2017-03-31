@@ -996,6 +996,9 @@ msgstr "保证金交易的所有产品有很高的风险，可能导致亏损，
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "所有时间均采用 格林威治标准时间（GMT）。"
 
+msgid "All your deposits and withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
+msgstr ""
+
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "允许客户以较少金额（通过本地货币）充值"
 
@@ -2306,9 +2309,6 @@ msgstr "通过银行电汇、信用卡或电子现金钱包向您的账户存款
 msgid "Deposit: %1 working day"
 msgstr "存款：%1工作日内"
 
-msgid "Deposit: %1 working days"
-msgstr "存款：%1个工作日内"
-
 msgid "Deposit: Instant"
 msgstr "存款：实时"
 
@@ -3182,6 +3182,9 @@ msgstr "选择行业领军企业"
 msgid "Goes Outside"
 msgstr "处于区间之外"
 
+msgid "Got questions? %1Contact us%2 for help."
+msgstr ""
+
 msgid "Governing Laws and Jurisdiction"
 msgstr "适用法律和司法管辖权"
 
@@ -3463,9 +3466,6 @@ msgstr "如果您无法按照本协议规定立即将拖欠我们的款项全额
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr "如您在我们的<a target='_blank' href='%1'>开源代码</a>中发现任何漏洞， 请立刻在GitHub提交引入请求。"
-
-msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
-msgstr "如有任何疑问，请前往<a href=\"mailto:%1\">%1</a>联系我们的客服团队。"
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr "如果您已在同一市场持有多个未平仓头寸，您在同一市场完成任何平仓交易将使其他未平仓头寸按创建时间先进先出顺序平仓。"
@@ -5686,7 +5686,9 @@ msgstr "请选择至少一个范围"
 msgid "Please select the checkbox."
 msgstr "请选择复选框。"
 
-msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+#, fuzzy
+#| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
 msgstr "为证明您的身份和验证您的账号，请将以下文件发送给我们︰"
 
 msgid "Please specify your preferred reality-check interval in minutes"
@@ -6611,7 +6613,9 @@ msgstr "止损单 &mdash; 当价格达到您指定的水平时对持仓头寸执
 msgid "Stop Out Level"
 msgstr "强制平仓水平"
 
-msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
+#, fuzzy
+#| msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
+msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr "强制平仓水平 &mdash; 保证金处于或低于此指定水平时您的持仓头寸可以在经过您同意或未经您事先同意的情况下强制平仓。"
 
 msgid "Stop Profit Level"
@@ -8488,9 +8492,6 @@ msgid "Withdraw from"
 msgstr "提款从"
 
 msgid "Withdraw: %1 working day"
-msgstr "取款：%1 个工作日"
-
-msgid "Withdraw: %1 working days"
 msgstr "取款：%1 个工作日"
 
 msgid "Withdraw: Not applicable"
@@ -11133,6 +11134,15 @@ msgstr "条款和条件审批"
 
 msgid "Account Limits"
 msgstr "账户限额"
+
+#~ msgid "Deposit: %1 working days"
+#~ msgstr "存款：%1个工作日内"
+
+#~ msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
+#~ msgstr "如有任何疑问，请前往<a href=\"mailto:%1\">%1</a>联系我们的客服团队。"
+
+#~ msgid "Withdraw: %1 working days"
+#~ msgstr "取款：%1 个工作日"
 
 #~ msgid "Please submit a valid %1."
 #~ msgstr "请提交有效的 %1。"

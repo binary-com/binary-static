@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-03-30 13:19+0000\n"
 "Last-Translator: Karin Graf <karin_graf@hotmail.com>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>"
-"\n"
+"Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -996,6 +995,9 @@ msgstr "Alle Produkte die auf Margin gehandelt werden, tragen einen hohen Grad a
 
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "Alle Zeitangaben sind in GMT (Greenwich-Zeit)."
+
+msgid "All your deposits and withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
+msgstr ""
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "Den Kunden ermöglichen, kleinere Beträge (in Landeswährung) einzuzahlen"
@@ -2307,9 +2309,6 @@ msgstr "Ein- oder Auszahlung von oder auf Ihr Konto über Banküberweisung, Kred
 msgid "Deposit: %1 working day"
 msgstr "Einzahlung: %1 Werktag"
 
-msgid "Deposit: %1 working days"
-msgstr "Einzahlung: %1 Werktage"
-
 msgid "Deposit: Instant"
 msgstr "Einzahlung: Sofort"
 
@@ -3183,6 +3182,9 @@ msgstr "Mit dem Marktführer gehen"
 msgid "Goes Outside"
 msgstr "Geht Außerhalb"
 
+msgid "Got questions? %1Contact us%2 for help."
+msgstr ""
+
 msgid "Governing Laws and Jurisdiction"
 msgstr "Geltendes Recht und Gerichtsbarkeit"
 
@@ -3464,9 +3466,6 @@ msgstr "Wenn Sie nicht im Stande sind, uns die anfallende Summe, in Übereinstim
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr "Senden Sie eine Pull-Anforderung auf GitHub, wenn Sie irgendwelche Schwachstellen in unserem <a target='_blank' href='%1'>Open-Source Code</a> finden."
-
-msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
-msgstr "Wenn Sie Fragen haben, kontaktieren Sie bitte unser Kundenbetreuungsteam unter <a href=\"mailto:%1\">%1</a>."
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr "Wenn Sie mehr als eine offene Position im selben Markt eingegangen sind, wird eine schließende Transaktion, die Sie im selben Markt platzieren, die offenen Positionen in der chronologischen Reihenfolge, in der die offenen Positionen erstellt wurden, schließen."
@@ -5685,7 +5684,9 @@ msgstr "Bitte wählen Sie zumindest einen Bereich aus"
 msgid "Please select the checkbox."
 msgstr "Bitte wählen Sie das Kontrollkästchen."
 
-msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+#, fuzzy
+#| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
 msgstr "Um Ihr Konto zu authentifizieren und um Ihre Identität zu überprüfen, übersenden Sie uns bitte die folgenden Dokumente:"
 
 msgid "Please specify your preferred reality-check interval in minutes"
@@ -6606,7 +6607,9 @@ msgstr "Stop Order/Stop Loss Order &mdash; Eine Anweisung eine Transaktion auszu
 msgid "Stop Out Level"
 msgstr "Stop Out Höhe"
 
-msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
+#, fuzzy
+#| msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
+msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr "Stop Out Level &mdash; Das Margin Level zu dem, oder unter dem, Ihre offenen Positionen nachdrücklich mit oder ohne Ihre vorherige Zustimmung sein können."
 
 msgid "Stop Profit Level"
@@ -8480,9 +8483,6 @@ msgstr "Abheben von"
 
 msgid "Withdraw: %1 working day"
 msgstr "Auszahlung: %1 Werktag"
-
-msgid "Withdraw: %1 working days"
-msgstr "Auszahlung: %1 Werktage"
 
 msgid "Withdraw: Not applicable"
 msgstr "Auszahlung: Nicht anwendbar"
@@ -10925,6 +10925,15 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 
 msgid "Account Limits"
 msgstr "Kontolimits"
+
+#~ msgid "Deposit: %1 working days"
+#~ msgstr "Einzahlung: %1 Werktage"
+
+#~ msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
+#~ msgstr "Wenn Sie Fragen haben, kontaktieren Sie bitte unser Kundenbetreuungsteam unter <a href=\"mailto:%1\">%1</a>."
+
+#~ msgid "Withdraw: %1 working days"
+#~ msgstr "Auszahlung: %1 Werktage"
 
 #~ msgid "Please submit a valid %1."
 #~ msgstr "Bitte übermitteln Sie eine gültige %1."
