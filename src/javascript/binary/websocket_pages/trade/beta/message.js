@@ -42,7 +42,7 @@ const Message_Beta = (function () {
                 Notifications.hide('CONNECTION_ERROR');
                 processContract_Beta(response);
                 window.contracts_for = response;
-            } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && (!response.echo_req.hasOwnProperty('passthrough') || !response.echo_req.passthrough.hasOwnProperty('handler'))) {
+            } else if (type === 'payout_currencies') {
                 Client.set('currencies', response.payout_currencies.join(','));
                 displayCurrencies();
                 Symbols.getSymbols(1);
