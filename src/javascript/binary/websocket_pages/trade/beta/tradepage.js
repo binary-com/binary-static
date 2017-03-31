@@ -31,9 +31,6 @@ const TradePage_Beta = (function() {
             return;
         }
         State.set('is_beta_trading', true);
-        if (Client.get('currencies')) {
-            displayCurrencies();
-        }
         BinarySocket.init({
             onmessage: function(msg) {
                 Message_Beta.process(msg);
@@ -52,7 +49,11 @@ const TradePage_Beta = (function() {
             displayCurrencies();
             Symbols.getSymbols(1);
         } else {
-            BinarySocket.send({ payout_currencies: 1 });
+            BinarySocket.send({ payout_currencies: 1 }).then((response) => {
+                Client.set('currencies', response.payout_currencies.join(','));
+                displayCurrencies();
+                Symbols.getSymbols(1);
+            });
         }
 
         if (document.getElementById('websocket_form')) {

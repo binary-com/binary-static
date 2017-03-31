@@ -1,8 +1,6 @@
 const TradingAnalysis   = require('./analysis').TradingAnalysis;
-const displayCurrencies = require('./currency').displayCurrencies;
 const Notifications     = require('./notifications').Notifications;
 const Purchase          = require('./purchase').Purchase;
-const Symbols           = require('./symbols').Symbols;
 const Tick              = require('./tick').Tick;
 const processActiveSymbols = require('./process').processActiveSymbols;
 const processContract      = require('./process').processContract;
@@ -10,12 +8,9 @@ const forgetTradingStreams = require('./process').forgetTradingStreams;
 const processTick          = require('./process').processTick;
 const processProposal      = require('./process').processProposal;
 const processTradingTimes  = require('./process').processTradingTimes;
-const PortfolioInit   = require('../user/account/portfolio/portfolio.init');
-const ProfitTableInit = require('../user/account/profit_table/profit_table.init');
-const StatementInit   = require('../user/account/statement/statement.init');
-const State           = require('../../base/storage').State;
-const GTM             = require('../../base/gtm');
-const Client          = require('../../base/client');
+const PortfolioInit = require('../user/account/portfolio/portfolio.init');
+const State         = require('../../base/storage').State;
+const GTM           = require('../../base/gtm');
 
 /*
  * This Message object process the response from server and fire
@@ -38,10 +33,6 @@ const Message = (function () {
                 Notifications.hide('CONNECTION_ERROR');
                 processContract(response);
                 window.contracts_for = response;
-            } else if (type === 'payout_currencies') {
-                Client.set('currencies', response.payout_currencies.join(','));
-                displayCurrencies();
-                Symbols.getSymbols(1);
             } else if (type === 'proposal') {
                 processProposal(response);
             } else if (type === 'buy') {
@@ -58,10 +49,6 @@ const Message = (function () {
                 }
             } else if (type === 'trading_times') {
                 processTradingTimes(response);
-            } else if (type === 'statement') {
-                StatementInit.statementHandler(response);
-            } else if (type === 'profit_table') {
-                ProfitTableInit.profitTableHandler(response);
             } else if (type === 'error') {
                 $('.error-msg').text(response.error.message);
             } else if (type === 'portfolio') {
