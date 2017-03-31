@@ -9,7 +9,7 @@ const jqueryuiTabsToDropdown = require('../../../common_functions/common_functio
 const jpClient               = require('../../../common_functions/country_base').jpClient;
 const toISOFormat            = require('../../../common_functions/string_util').toISOFormat;
 const toReadableFormat       = require('../../../common_functions/string_util').toReadableFormat;
-const DatePicker             = require('../../../components/date_picker').DatePicker;
+const DatePicker             = require('../../../components/date_picker');
 
 const TradingTimesUI = (() => {
     'use strict';
@@ -37,12 +37,11 @@ const TradingTimesUI = (() => {
         }
 
         const date = moment.utc();
-        $date.val(toReadableFormat(date))
-             .attr('data-value', toISOFormat(date));
-        const datePickerInst = new DatePicker('#trading-date');
-        datePickerInst.show({
-            minDate: 'today',
-            maxDate: 364,
+        $date.val(toReadableFormat(date)).attr('data-value', toISOFormat(date));
+        DatePicker.init({
+            selector: '#trading-date',
+            minDate : 0,
+            maxDate : 364,
         });
         $date.change(function() {
             if (!dateValueChanged(this, 'date')) {

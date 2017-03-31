@@ -1,5 +1,5 @@
 const Validation       = require('./form_validation');
-const objectNotEmpty   = require('../base/utility').objectNotEmpty;
+const isEmptyObject    = require('../base/utility').isEmptyObject;
 const showLoadingImage = require('../base/utility').showLoadingImage;
 
 const FormManager = (() => {
@@ -120,12 +120,12 @@ const FormManager = (() => {
                 }
                 disableButton($btn_submit);
                 form.can_submit = false;
-                if (objectNotEmpty(req)) {
+                if (isEmptyObject(req)) {
+                    onSuccess();
+                } else {
                     BinarySocket.send(req).then((response) => {
                         onSuccess(response);
                     });
-                } else {
-                    onSuccess();
                 }
             }
         });

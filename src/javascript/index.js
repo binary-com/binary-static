@@ -1,4 +1,3 @@
-// TODO: to be remove after webpack finalized
 const exportAllFunctions = (obj) => {
     Object.keys(obj).forEach((key) => {
         window[key] = obj[key];
@@ -10,7 +9,7 @@ window.$ = window.jQuery = require('jquery');
 require('babel-polyfill');
 require('promise-polyfill');
 
-// needs refactoring
+// TODO: refactor and remove global status of socket
 exportAllFunctions(require('./binary/websocket_pages/socket'));
 
 // created for handling global onclick
