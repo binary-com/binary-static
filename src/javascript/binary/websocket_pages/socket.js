@@ -1,11 +1,11 @@
 const MBTradePage          = require('./mb_trade/mb_tradepage');
 const TradePage_Beta       = require('./trade/beta/tradepage');
-const Highchart            = require('./trade/charts/highchartws').Highchart;
+const Highchart            = require('./trade/charts/highchart');
 const reloadPage           = require('./trade/common').reloadPage;
 const Notifications        = require('./trade/notifications').Notifications;
-const WSTickDisplay        = require('./trade/tick_trade').WSTickDisplay;
+const TickDisplay          = require('./trade/tick_trade');
 const TradePage            = require('./trade/tradepage');
-const ViewPopupWS          = require('./user/view_popup/view_popupws');
+const ViewPopup            = require('./user/view_popup/view_popup');
 const ViewBalanceUI        = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
 const Client               = require('../base/client');
 const Clock                = require('../base/clock');
@@ -246,9 +246,9 @@ const BinarySocketClass = function() {
                         delete timeouts[this_req_number];
                     } else {
                         switch (dispatch_to) {
-                            case 'ViewPopupWS':       ViewPopupWS.dispatch(response); break;
-                            case 'ViewChartWS':       Highchart.dispatch(response);   break;
-                            case 'ViewTickDisplayWS': WSTickDisplay.dispatch(response); break;
+                            case 'ViewPopup':       ViewPopup.dispatch(response);   break;
+                            case 'ViewChart':       Highchart.dispatch(response);   break;
+                            case 'ViewTickDisplay': TickDisplay.dispatch(response); break;
                             // no default
                         }
                     }

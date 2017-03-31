@@ -1,9 +1,9 @@
-const DigitInfoWS_Beta                = require('./charts/digit_infows').DigitInfoWS_Beta;
+const DigitInfo_Beta                  = require('./charts/digit_info');
 const showHighchart                   = require('../common').showHighchart;
 const toggleActiveNavMenuElement_Beta = require('../common').toggleActiveNavMenuElement_Beta;
-const AssetIndexUI                    = require('../../resources/asset_index/asset_indexws.ui');
-const MarketTimesUI                   = require('../../resources/market_times/market_timesws.ui');
-const PortfolioWS                     = require('../../user/account/portfolio/portfolio.init');
+const AssetIndexUI                    = require('../../resources/asset_index/asset_index.ui');
+const TradingTimesUI                  = require('../../resources/trading_times/trading_times.ui');
+const PortfolioInit                   = require('../../user/account/portfolio/portfolio.init');
 const Client                          = require('../../../base/client');
 const getLanguage                     = require('../../../base/language').get;
 const State                           = require('../../../base/storage').State;
@@ -24,7 +24,7 @@ const jpClient                        = require('../../../common_functions/count
  */
 
 const TradingAnalysis_Beta = (function() {
-    const trading_digit_info = new DigitInfoWS_Beta();
+    const trading_digit_info = new DigitInfo_Beta();
 
     const requestTradeAnalysis = function() {
         let formName = State.get('is_mb_trading') ? $('#category').val() :
@@ -90,7 +90,7 @@ const TradingAnalysis_Beta = (function() {
                 showHighchart();
                 break;
             case 'tab_portfolio':
-                PortfolioWS.onLoad();
+                PortfolioInit.onLoad();
                 break;
             case 'tab_last_digit': {
                 const underlying = $('[name=underlying] option:selected').val() || $('#underlying').find('option:selected').val();
@@ -103,7 +103,7 @@ const TradingAnalysis_Beta = (function() {
                 $('#tab_asset').find('index-content').find('h1').hide();
                 break;
             case 'tab_trading_times':
-                MarketTimesUI.onLoad({ framed: true });
+                TradingTimesUI.onLoad({ framed: true });
                 $('#tab_trading').find('times-content').find('h1').hide();
                 break;
             default: {

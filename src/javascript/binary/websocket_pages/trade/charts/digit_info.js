@@ -5,7 +5,7 @@ const elementInnerHtml = require('../../../common_functions/common_functions').e
 
 require('highcharts/modules/exporting')(Highcharts);
 
-const DigitInfoWS = function() {
+const DigitInfo = function() {
     this.chart_config = {
         chart: {
             renderTo           : 'last_digit_histo',
@@ -93,7 +93,7 @@ const DigitInfoWS = function() {
     this.prev_max_index = -1;
 };
 
-DigitInfoWS.prototype = {
+DigitInfo.prototype = {
     add_content: function(underlying) {
         const domain = document.domain.split('.').slice(-2).join('.');
         let underlyings = [];
@@ -263,6 +263,4 @@ DigitInfoWS.prototype = {
     },
 };
 
-module.exports = {
-    DigitInfoWS: DigitInfoWS,
-};
+module.exports = DigitInfo;

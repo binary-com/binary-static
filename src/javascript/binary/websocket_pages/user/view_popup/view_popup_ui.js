@@ -14,7 +14,7 @@ const ViewPopupUI = (function() {
             }
             if (!this._container) {
                 const that = this;
-                const con = $('<div class="inpage_popup_container inpage_popup_container_ws" id="sell_popup_container"><a class="close"></a><div class="inpage_popup_content"></div></div>');
+                const con = $('<div class="inpage_popup_container" id="sell_popup_container"><a class="close"></a><div class="inpage_popup_content"></div></div>');
                 con.hide();
                 const _on_close = function() {
                     that.cleanup(true);
@@ -70,7 +70,7 @@ const ViewPopupUI = (function() {
             $('html').removeClass('no-scroll');
         },
         disable_button: function(button) {
-            $('.open_contract_detailsws[disabled]').each(function() {
+            $('.open_contract_details[disabled]').each(function() {
                 ViewPopupUI.enable_button($(this));
             });
             button.attr('disabled', 'disabled');

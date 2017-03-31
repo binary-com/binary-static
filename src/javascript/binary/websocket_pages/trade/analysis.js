@@ -1,4 +1,4 @@
-const DigitInfoWS                = require('./charts/digit_infows').DigitInfoWS;
+const DigitInfo                  = require('./charts/digit_info');
 const JapanPortfolio             = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
 const State                      = require('../../base/storage').State;
 const getLanguage                = require('../../base/language').get;
@@ -20,7 +20,7 @@ const elementInnerHtml           = require('../../common_functions/common_functi
  */
 
 const TradingAnalysis = (function() {
-    const trading_digit_info = new DigitInfoWS();
+    const trading_digit_info = new DigitInfo();
 
     const requestTradeAnalysis = function() {
         let formName = State.get('is_mb_trading') ? $('#category').val() :
