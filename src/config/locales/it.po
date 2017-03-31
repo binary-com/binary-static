@@ -4,8 +4,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-03-29 17:05+0000\n"
 "Last-Translator: Annalisa <ligiu@me.com>\n"
-"Language-Team: Italian "
-"<https://hosted.weblate.org/projects/binary/static/it/>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/binary/static/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1038,6 +1037,9 @@ msgstr ""
 
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "Tutti gli orari sono espressi in GMT (Greenwich Mean Time)."
+
+msgid "All your deposits and withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
+msgstr ""
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "Consentono ai Clienti di effettuare depositi con importi inferiori (tramite valuta locale)"
@@ -2425,9 +2427,6 @@ msgstr "Deposita o preleva dal tuo account tramite bonifico bancario, carta di c
 msgid "Deposit: %1 working day"
 msgstr "Deposito: %1 giorno lavorativo"
 
-msgid "Deposit: %1 working days"
-msgstr "Deposito: %1 giorni lavorativi"
-
 msgid "Deposit: Instant"
 msgstr "Deposito: istantaneo"
 
@@ -3347,6 +3346,9 @@ msgstr "Scegli il leader"
 msgid "Goes Outside"
 msgstr "esce fuori"
 
+msgid "Got questions? %1Contact us%2 for help."
+msgstr ""
+
 msgid "Governing Laws and Jurisdiction"
 msgstr "Legge applicabile e Giurisdizione"
 
@@ -3648,11 +3650,6 @@ msgstr ""
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr ""
-
-#, fuzzy
-#| msgid "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
-msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
-msgstr "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr ""
@@ -5991,7 +5988,7 @@ msgstr "Seleziona almeno uno scopo"
 
 #, fuzzy
 #| msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
-msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
 msgstr "Per convalidare il tuo account, ti chiediamo gentilmente di inviare quanto segue tramite email all'indirizzo <a href=\"mailto:%1\">%1</a>"
 
 msgid "Please specify your preferred reality-check interval in minutes"
@@ -6946,7 +6943,7 @@ msgstr ""
 msgid "Stop Out Level"
 msgstr "Livello dello Stop Out"
 
-msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
+msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr ""
 
 msgid "Stop Profit Level"
@@ -8886,9 +8883,6 @@ msgstr "Preleva da"
 
 msgid "Withdraw: %1 working day"
 msgstr "Prelievo: %1 giorno lavorativo"
-
-msgid "Withdraw: %1 working days"
-msgstr "Prelievo: %1 giorni lavorativi"
 
 msgid "Withdraw: Not applicable"
 msgstr "Prelievo: non applicabile"
@@ -11617,6 +11611,17 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 msgid "Account Limits"
 msgstr "Limiti dell'account"
+
+#~ msgid "Deposit: %1 working days"
+#~ msgstr "Deposito: %1 giorni lavorativi"
+
+#, fuzzy
+#~| msgid "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
+#~ msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
+#~ msgstr "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
+
+#~ msgid "Withdraw: %1 working days"
+#~ msgstr "Prelievo: %1 giorni lavorativi"
 
 #~ msgid "Please submit a valid %1."
 #~ msgstr "Invia un %1 valido."

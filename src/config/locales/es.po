@@ -1133,6 +1133,9 @@ msgstr ""
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "Todos los horarios en el sitio web corresponden a GMT (Greenwich Mean Time)."
 
+msgid "All your deposits and withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
+msgstr ""
+
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "Permitir que los clientes depositen cantidades menores (en la moneda local)"
 
@@ -2561,9 +2564,6 @@ msgstr "Depositar a o retirar dinero de su cuenta a través de transferencia ban
 msgid "Deposit: %1 working day"
 msgstr "Depósito: %1 día(s) laborable(s)"
 
-msgid "Deposit: %1 working days"
-msgstr "Depósito: %1 días laborales"
-
 msgid "Deposit: Instant"
 msgstr "Depósito: instantáneo"
 
@@ -3495,6 +3495,9 @@ msgstr "Siga al líder"
 msgid "Goes Outside"
 msgstr "sale fuera"
 
+msgid "Got questions? %1Contact us%2 for help."
+msgstr ""
+
 msgid "Governing Laws and Jurisdiction"
 msgstr "Leyes aplicables y jurisdicción"
 
@@ -3800,11 +3803,6 @@ msgstr ""
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr ""
-
-#, fuzzy
-#| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
-msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
-msgstr "Si desea más información sobre cómo convertirse en un Agente de Pago, por favor contáctenos en <a href='mailto:%1'>%1</a>"
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr ""
@@ -6213,7 +6211,7 @@ msgstr "Seleccione una fecha válida"
 
 #, fuzzy
 #| msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
-msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
 msgstr "Para autenticar por completo su cuenta, envíe lo siguiente por correo electrónico a <a href=\"mailto:%1\">%1</a>"
 
 msgid "Please specify your preferred reality-check interval in minutes"
@@ -7224,7 +7222,7 @@ msgstr ""
 msgid "Stop Out Level"
 msgstr "Nivel de stop profit"
 
-msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
+msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr ""
 
 msgid "Stop Profit Level"
@@ -9272,9 +9270,6 @@ msgstr "Retirar de"
 
 msgid "Withdraw: %1 working day"
 msgstr "Retirar: %1 día(s) laborable(s)"
-
-msgid "Withdraw: %1 working days"
-msgstr "Retirar: %1 días laborales"
 
 msgid "Withdraw: Not applicable"
 msgstr "Retirar: No disponible"
@@ -12153,6 +12148,17 @@ msgstr "Acuerdo con los términos y condiciones"
 
 msgid "Account Limits"
 msgstr "Límites de la cuenta"
+
+#~ msgid "Deposit: %1 working days"
+#~ msgstr "Depósito: %1 días laborales"
+
+#, fuzzy
+#~| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
+#~ msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
+#~ msgstr "Si desea más información sobre cómo convertirse en un Agente de Pago, por favor contáctenos en <a href='mailto:%1'>%1</a>"
+
+#~ msgid "Withdraw: %1 working days"
+#~ msgstr "Retirar: %1 días laborales"
 
 #~ msgid "Please submit a valid %1."
 #~ msgstr "Por favor ingrese un valor válido de %1."

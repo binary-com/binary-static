@@ -998,6 +998,9 @@ msgstr "Tất cả các sản phẩm được giao dịch bên lề mang một m
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "Thời gian đều tính theo GMT (Giờ trung bình tại Greenwich)."
 
+msgid "All your deposits and withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
+msgstr ""
+
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "Cho phép Khách hàng gửi tiền với số lượng ít hơn (bằng tiền nội tệ)"
 
@@ -2306,9 +2309,6 @@ msgstr "Gửi hay rút tiền qua tài khoản của bạn bằng điện chuy
 msgid "Deposit: %1 working day"
 msgstr "Gửi tiền: %1 ngày làm việc"
 
-msgid "Deposit: %1 working days"
-msgstr "Gửi tiền: %1 ngày làm việc"
-
 msgid "Deposit: Instant"
 msgstr "Gửi tiền: tức thì"
 
@@ -3182,6 +3182,9 @@ msgstr "Đi cùng với nhóm trưởng"
 msgid "Goes Outside"
 msgstr "Đi ra ngoài"
 
+msgid "Got questions? %1Contact us%2 for help."
+msgstr ""
+
 msgid "Governing Laws and Jurisdiction"
 msgstr "Quy định và Quyền hạn chủ đạo"
 
@@ -3463,9 +3466,6 @@ msgstr "Nếu bạn thất bại trong việc ngay lập tức làm cho việc g
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr "Nếu bạn tìm thấy bất kỳ lỗ hổng trong <a target='_blank' href='%1'> mã nguồn mở</a> của chúng tôi, vui lòng gửi một yêu cầu trên GitHub."
-
-msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
-msgstr "Nếu bạn có bất kỳ câu hỏi, vui lòng liên hệ với nhóm hỗ trợ khách hàng của chúng tôi tại <a href=\"mailto:%1\"> %1</a>."
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr "Nếu bạn đã tham gia vào nhiều hơn một phiên tăng giá trong cùng một thị trường, bất kỳ phiên giao dịch đóng nào bạn đặt vào trong cùng một thị trường sẽ đóng lại phiên tăng giá theo thứ tự mà trong đó phiên tăng giá đã được tạo ra đầu tiên trong lần đầu tiên xuất hiện."
@@ -5684,7 +5684,9 @@ msgstr "Vui lòng chọn ít nhất một phạm vi"
 msgid "Please select the checkbox."
 msgstr "Vui lòng chọn hộp tích."
 
-msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+#, fuzzy
+#| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
 msgstr "Xin vui lòng gửi cho chúng tôi các tài liệu sau đây để xác minh danh tính của bạn và xác thực tài khoản của bạn:"
 
 msgid "Please specify your preferred reality-check interval in minutes"
@@ -6607,7 +6609,9 @@ msgstr "Lệnh dừng / Lệnh dừng thiệt hại &mdash; một hướng dẫn
 msgid "Stop Out Level"
 msgstr "Mức dừng"
 
-msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
+#, fuzzy
+#| msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
+msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr "Mức độ dừng &mdash; Mức lề ở hoặc thấp hơn mà phiên mở của bạn có thể mạnh mẽ có hoặc không có sự đồng ý trước của bạn."
 
 msgid "Stop Profit Level"
@@ -8483,9 +8487,6 @@ msgstr "Rút tiền từ"
 
 msgid "Withdraw: %1 working day"
 msgstr "Rút tiền:%1 ngày làm việc"
-
-msgid "Withdraw: %1 working days"
-msgstr "Rút tiền: %1 ngày làm việc"
 
 msgid "Withdraw: Not applicable"
 msgstr "Rút tiền: Không áp dụng"
@@ -11126,6 +11127,15 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 msgid "Account Limits"
 msgstr "Giới hạn Tài khoản"
+
+#~ msgid "Deposit: %1 working days"
+#~ msgstr "Gửi tiền: %1 ngày làm việc"
+
+#~ msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
+#~ msgstr "Nếu bạn có bất kỳ câu hỏi, vui lòng liên hệ với nhóm hỗ trợ khách hàng của chúng tôi tại <a href=\"mailto:%1\"> %1</a>."
+
+#~ msgid "Withdraw: %1 working days"
+#~ msgstr "Rút tiền: %1 ngày làm việc"
 
 #~ msgid "Please submit a valid %1."
 #~ msgstr "Vui lòng nhập một tài khoản %1 hợp lệ."

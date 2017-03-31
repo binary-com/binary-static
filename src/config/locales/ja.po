@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-03-30 01:38+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1011,6 +1010,9 @@ msgstr "証拠金取引の全商品には高いリスクがつき、結果とし
 
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "当社サイトの時間表示は全て、GMT（グリニッジ標準時）に基づきます。"
+
+msgid "All your deposits and withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
+msgstr ""
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "クライアントへ低い金額（現地通貨）での入金を許可する"
@@ -2340,9 +2342,6 @@ msgstr "銀行振込によりお客さまの口座に入出金を行います"
 msgid "Deposit: %1 working day"
 msgstr "ご入金: %1営業日"
 
-msgid "Deposit: %1 working days"
-msgstr "ご入金: %1営業日"
-
 msgid "Deposit: Instant"
 msgstr "ご入金：即時"
 
@@ -3216,6 +3215,9 @@ msgstr "バイナリーオプション取引業界のフロント・ランナー
 msgid "Goes Outside"
 msgstr "BREAK-OUT"
 
+msgid "Got questions? %1Contact us%2 for help."
+msgstr ""
+
 msgid "Governing Laws and Jurisdiction"
 msgstr "準拠法と裁判管轄権"
 
@@ -3500,9 +3502,6 @@ msgstr ""
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr "当社の<a target='_blank' href='%1'>オープンソースコード</a>で脆弱性を発見されましたら、お気軽にGitHubでプルリクエストをしてください。"
 
-msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
-msgstr "詳細につきまして、カスタマーサポート<a href=\"mailto:%1\">%1</a>までご連絡ください"
-
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr ""
 
@@ -3639,8 +3638,7 @@ msgid "If your margin level is still under the stop out level, we will close an 
 msgstr "マージンレベルが未だロスカットレベル未満である場合、損失が一番大きいオープンポジションをクローズします。"
 
 msgid "If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted."
-msgstr ""
-"マージンレベルが未だロスカットレベル未満である場合、次の注文は削除されます。しかし、マージン要件なしの注文に関しては削除されることはありません。"
+msgstr "マージンレベルが未だロスカットレベル未満である場合、次の注文は削除されます。しかし、マージン要件なしの注文に関しては削除されることはありません。"
 
 msgid "If:"
 msgstr "以下の場合を対象とする："
@@ -5751,7 +5749,9 @@ msgstr "範囲を1つ以上選択してください"
 msgid "Please select the checkbox."
 msgstr "チェックボックスを選択してください"
 
-msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+#, fuzzy
+#| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
 msgstr "お客さまの個人情報を確認してアカウント認証を行うために、次の書類を当社までご送付ください。"
 
 msgid "Please specify your preferred reality-check interval in minutes"
@@ -6678,7 +6678,9 @@ msgstr ""
 msgid "Stop Out Level"
 msgstr "ロスカットレベル"
 
-msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
+#, fuzzy
+#| msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
+msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr "ロスカットレベル &mdash; オープンポジションがマージンレベル以下である際に、同意の上または同意なしに強制的に行われることがあります"
 
 msgid "Stop Profit Level"
@@ -8677,9 +8679,6 @@ msgstr "XXXからご出金"
 msgid "Withdraw: %1 working day"
 msgstr "ご出金: %1営業日"
 
-msgid "Withdraw: %1 working days"
-msgstr "ご出金: %1営業日"
-
 msgid "Withdraw: Not applicable"
 msgstr "ご出金：未対応"
 
@@ -9040,9 +9039,7 @@ msgid "You should read these ST&Cs carefully as well as the Summary Order Execut
 msgstr "リスク開示通知と当社が提供する、または将来お客さまに適用させていただくその他文書と共に適用される、契約の詳細にあたるオーダー実行ポリシーの概要と利益相反ポリシーの概要同様にこれらST&Cs（特別条件と事業条件）も熟読ください。"
 
 msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments."
-msgstr ""
-"乱数ジェネレーター（ボラティリティ・インデックス）に基づいた商品は金融市場インデックス（外国為替、株式、コモディティ）に基づく商品が金融商品であるのと同じ"
-"ように、賭博商品であることを十分にご理解ください。"
+msgstr "乱数ジェネレーター（ボラティリティ・インデックス）に基づいた商品は金融市場インデックス（外国為替、株式、コモディティ）に基づく商品が金融商品であるのと同じように、賭博商品であることを十分にご理解ください。"
 
 msgid "You will be automatically logged out after such time."
 msgstr "設定時間を過ぎると自動的にログアウトします。（例）　10分の場合、10と記入して下さい。(半角)"
@@ -11364,6 +11361,15 @@ msgstr "利用規約の承認"
 
 msgid "Account Limits"
 msgstr "ご利用制限額"
+
+#~ msgid "Deposit: %1 working days"
+#~ msgstr "ご入金: %1営業日"
+
+#~ msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
+#~ msgstr "詳細につきまして、カスタマーサポート<a href=\"mailto:%1\">%1</a>までご連絡ください"
+
+#~ msgid "Withdraw: %1 working days"
+#~ msgstr "ご出金: %1営業日"
 
 #~ msgid "Please submit a valid %1."
 #~ msgstr "Eメールアドレスを入力ください"
