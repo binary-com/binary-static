@@ -13,6 +13,7 @@ const forgetTradingStreams = require('./process').forgetTradingStreams;
 const Symbols              = require('./symbols').Symbols;
 const ViewPopup            = require('../user/view_popup/view_popup');
 const BinaryPjax           = require('../../base/binary_pjax');
+const Client               = require('../../base/client');
 const localize             = require('../../base/localize').localize;
 const State                = require('../../base/storage').State;
 const jpClient             = require('../../common_functions/country_base').jpClient;
@@ -28,7 +29,7 @@ const TradePage = (function() {
             return;
         }
         State.set('is_trading', true);
-        if (sessionStorage.getItem('currencies')) {
+        if (Client.get('currencies')) {
             displayCurrencies();
         }
         BinarySocket.init({
@@ -45,7 +46,7 @@ const TradePage = (function() {
             TradingEvents.init();
         }
 
-        if (sessionStorage.getItem('currencies')) {
+        if (Client.get('currencies')) {
             displayCurrencies();
             Symbols.getSymbols(1);
         } else {
