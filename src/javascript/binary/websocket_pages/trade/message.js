@@ -1,8 +1,6 @@
 const TradingAnalysis   = require('./analysis').TradingAnalysis;
-const displayCurrencies = require('./currency').displayCurrencies;
 const Notifications     = require('./notifications').Notifications;
 const Purchase          = require('./purchase').Purchase;
-const Symbols           = require('./symbols').Symbols;
 const Tick              = require('./tick').Tick;
 const processActiveSymbols = require('./process').processActiveSymbols;
 const processContract      = require('./process').processContract;
@@ -15,7 +13,6 @@ const ProfitTableWS = require('../user/account/profit_table/profit_table.init');
 const StatementWS   = require('../user/account/statement/statement.init');
 const State         = require('../../base/storage').State;
 const GTM           = require('../../base/gtm');
-const Client        = require('../../base/client');
 
 /*
  * This Message object process the response from server and fire
@@ -38,10 +35,6 @@ const Message = (function () {
                 Notifications.hide('CONNECTION_ERROR');
                 processContract(response);
                 window.contracts_for = response;
-            } else if (type === 'payout_currencies') {
-                Client.set('currencies', response.payout_currencies.join(','));
-                displayCurrencies();
-                Symbols.getSymbols(1);
             } else if (type === 'proposal') {
                 processProposal(response);
             } else if (type === 'buy') {

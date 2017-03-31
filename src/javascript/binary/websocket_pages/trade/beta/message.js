@@ -6,9 +6,7 @@ const forgetTradingStreams_Beta = require('./process').forgetTradingStreams_Beta
 const processTick_Beta          = require('./process').processTick_Beta;
 const processProposal_Beta      = require('./process').processProposal_Beta;
 const processTradingTimes_Beta  = require('./process').processTradingTimes_Beta;
-const displayCurrencies = require('../currency').displayCurrencies;
 const Notifications     = require('../notifications').Notifications;
-const Symbols           = require('../symbols').Symbols;
 const Tick              = require('../tick').Tick;
 const AssetIndexUI  = require('../../resources/asset_index/asset_indexws.ui');
 const MarketTimesUI = require('../../resources/market_times/market_timesws.ui');
@@ -17,7 +15,6 @@ const ProfitTableWS = require('../../user/account/profit_table/profit_table.init
 const StatementWS   = require('../../user/account/statement/statement.init');
 const State  = require('../../../base/storage').State;
 const GTM    = require('../../../base/gtm');
-const Client = require('../../../base/client');
 
 /*
  * This Message object process the response from server and fire
@@ -42,10 +39,6 @@ const Message_Beta = (function () {
                 Notifications.hide('CONNECTION_ERROR');
                 processContract_Beta(response);
                 window.contracts_for = response;
-            } else if (type === 'payout_currencies') {
-                Client.set('currencies', response.payout_currencies.join(','));
-                displayCurrencies();
-                Symbols.getSymbols(1);
             } else if (type === 'proposal') {
                 processProposal_Beta(response);
             } else if (type === 'buy') {
