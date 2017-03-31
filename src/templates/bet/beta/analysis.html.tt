@@ -39,7 +39,7 @@
             <div id="tab_last_digit-content" class="toggle-content invisible"></div>
             <div id="tab_japan_info-content" class="toggle-content invisible"></div>
             <div id="tab_asset_index-content" class="toggle-content invisible">[% INCLUDE resources/asset_index.html.tt %]</div>
-            <div id="tab_trading_times-content" class="toggle-content invisible">[% INCLUDE resources/market_times.html.tt %]</div>
+            <div id="tab_trading_times-content" class="toggle-content invisible">[% INCLUDE resources/trading_times.html.tt %]</div>
         </div>
     </div>
 </div>
