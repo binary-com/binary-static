@@ -8,7 +8,7 @@ const forgetTradingStreams = require('./process').forgetTradingStreams;
 const processTick          = require('./process').processTick;
 const processProposal      = require('./process').processProposal;
 const processTradingTimes  = require('./process').processTradingTimes;
-const PortfolioWS   = require('../user/account/portfolio/portfolio.init');
+const PortfolioInit = require('../user/account/portfolio/portfolio.init');
 const State         = require('../../base/storage').State;
 const GTM           = require('../../base/gtm');
 
@@ -52,11 +52,11 @@ const Message = (function () {
             } else if (type === 'error') {
                 $('.error-msg').text(response.error.message);
             } else if (type === 'portfolio') {
-                PortfolioWS.updatePortfolio(response);
+                PortfolioInit.updatePortfolio(response);
             } else if (type === 'proposal_open_contract') {
-                PortfolioWS.updateIndicative(response);
+                PortfolioInit.updateIndicative(response);
             } else if (type === 'transaction') {
-                PortfolioWS.transactionResponseHandler(response);
+                PortfolioInit.transactionResponseHandler(response);
             }
         } else {
             console.log('some error occured');

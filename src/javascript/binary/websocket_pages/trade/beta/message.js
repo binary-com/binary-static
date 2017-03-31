@@ -8,9 +8,9 @@ const processProposal_Beta      = require('./process').processProposal_Beta;
 const processTradingTimes_Beta  = require('./process').processTradingTimes_Beta;
 const Notifications     = require('../notifications').Notifications;
 const Tick              = require('../tick').Tick;
-const AssetIndexUI  = require('../../resources/asset_index/asset_indexws.ui');
-const MarketTimesUI = require('../../resources/market_times/market_timesws.ui');
-const PortfolioWS   = require('../../user/account/portfolio/portfolio.init');
+const AssetIndexUI   = require('../../resources/asset_index/asset_index.ui');
+const TradingTimesUI = require('../../resources/trading_times/trading_times.ui');
+const PortfolioInit  = require('../../user/account/portfolio/portfolio.init');
 const State  = require('../../../base/storage').State;
 const GTM    = require('../../../base/gtm');
 
@@ -32,7 +32,7 @@ const Message_Beta = (function () {
             if (type === 'active_symbols') {
                 processActiveSymbols_Beta(response);
                 AssetIndexUI.setActiveSymbols(response);
-                MarketTimesUI.setActiveSymbols(response);
+                TradingTimesUI.setActiveSymbols(response);
             } else if (type === 'contracts_for') {
                 Notifications.hide('CONNECTION_ERROR');
                 processContract_Beta(response);
@@ -55,17 +55,17 @@ const Message_Beta = (function () {
                 AssetIndexUI.setAssetIndex(response);
             } else if (type === 'trading_times') {
                 processTradingTimes_Beta(response);
-                MarketTimesUI.setTradingTimes(response);
+                TradingTimesUI.setTradingTimes(response);
             } else if (type === 'error') {
                 $('.error-msg').text(response.error.message);
             } else if (type === 'portfolio') {
-                PortfolioWS.updatePortfolio(response);
+                PortfolioInit.updatePortfolio(response);
             } else if (type === 'proposal_open_contract') {
-                PortfolioWS.updateIndicative(response);
+                PortfolioInit.updateIndicative(response);
             } else if (type === 'transaction') {
-                PortfolioWS.transactionResponseHandler(response);
+                PortfolioInit.transactionResponseHandler(response);
             } else if (type === 'oauth_apps') {
-                PortfolioWS.updateOAuthApps(response);
+                PortfolioInit.updateOAuthApps(response);
             }
         } else {
             console.log('some error occured');
