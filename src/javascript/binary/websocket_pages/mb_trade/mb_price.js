@@ -1,7 +1,7 @@
 const MBContract         = require('./mb_contract').MBContract;
 const MBDefaults         = require('./mb_defaults').MBDefaults;
 const MBNotifications    = require('./mb_notifications').MBNotifications;
-const objectNotEmpty     = require('../../base/utility').objectNotEmpty;
+const isEmptyObject      = require('../../base/utility').isEmptyObject;
 const getPropertyValue   = require('../../base/utility').getPropertyValue;
 const localize           = require('../../base/localize').localize;
 const Client             = require('../../base/client');
@@ -51,13 +51,13 @@ const MBPrice = (function() {
         const contract_type = response.echo_req.contract_type;
         const prev_proposal = $.extend({}, prices[barrier][contract_type]);
 
-        if (!objectNotEmpty(prev_proposal)) {
+        if (isEmptyObject(prev_proposal)) {
             res_count++;
         }
 
         prices[barrier][contract_type] = response;
         // update previous ask_price to use in price movement
-        if (objectNotEmpty(prev_proposal) && !prev_proposal.error) {
+        if (!isEmptyObject(prev_proposal) && !prev_proposal.error) {
             prices[barrier][contract_type].prev_price = prev_proposal.proposal.ask_price;
         }
 
