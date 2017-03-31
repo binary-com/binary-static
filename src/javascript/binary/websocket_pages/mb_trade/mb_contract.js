@@ -4,7 +4,7 @@ const MBSymbols        = require('./mb_symbols').MBSymbols;
 const Client           = require('../../base/client');
 const getLanguage      = require('../../base/language').get;
 const localize         = require('../../base/localize').localize;
-const objectNotEmpty   = require('../../base/utility').objectNotEmpty;
+const isEmptyObject    = require('../../base/utility').isEmptyObject;
 const elementInnerHtml = require('../../common_functions/common_functions').elementInnerHtml;
 const jpClient         = require('../../common_functions/country_base').jpClient;
 const formatCurrency   = require('../../common_functions/currency_to_symbol').formatCurrency;
@@ -74,7 +74,7 @@ const MBContract = (function() {
     };
 
     const populatePeriods = function(rebuild) {
-        if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return;
+        if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
         let trading_period,
             start_end;
         const trading_period_array = [],
@@ -199,7 +199,7 @@ const MBContract = (function() {
     };
 
     const populateOptions = function(rebuild) {
-        if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return;
+        if (!contracts_for_response || isEmptyObject(contracts_for_response)) return;
         const available_contracts = contracts_for_response.contracts_for.available,
             $category = $('#category');
         const categories = [
@@ -235,7 +235,7 @@ const MBContract = (function() {
     };
 
     const getCurrentContracts = function() {
-        if (!contracts_for_response || !objectNotEmpty(contracts_for_response)) return [];
+        if (!contracts_for_response || isEmptyObject(contracts_for_response)) return [];
         const contracts = [],
             category  = MBDefaults.get('category'),
             periods   = MBDefaults.get('period').split('_');
