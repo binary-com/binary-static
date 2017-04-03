@@ -195,8 +195,10 @@ const PersonalDetails = (function() {
         const $tax_residence  = $('#tax_residence');
         if (residence_list.length > 0) {
             const $options = $('<div/>');
+            const $options_with_disabled = $('<div/>');
             residence_list.forEach((res) => {
                 $options.append(makeOption(res.text, res.value));
+                $options_with_disabled.append(makeOption(res.text, res.value, res.disabled));
             });
 
             if (residence) {
@@ -213,8 +215,8 @@ const PersonalDetails = (function() {
             } else {
                 $('#lbl_country').parent().replaceWith($('<select/>', { id: 'residence' }));
                 const $residence = $('#residence');
-                $options.prepend($('<option/>', { text: localize('Please select a value'), value: '' }));
-                $residence.html($options.html());
+                $options_with_disabled.prepend($('<option/>', { text: localize('Please select a value'), value: '' }));
+                $residence.html($options_with_disabled.html());
                 initFormManager();
             }
         }
