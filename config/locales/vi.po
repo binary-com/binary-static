@@ -533,9 +533,6 @@ msgstr "<strong>Sẵn có 24/7</strong> -Giao dịch khi bạn muốn. %1 là s�
 msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
 msgstr "<strong>Hoa hồng:</strong> Bạn sẽ tính tiền hoa hồng để xử lý các giao dịch."
 
-msgid "<strong>Duties and Responsibilities:</strong>"
-msgstr "<strong>Nhiệm vụ và Trách nhiệm:</strong>"
-
 msgid "<strong>Exchange Rate Risk</strong>: Exchange rates between foreign currencies can change rapidly due to a wide range of economic, political and other conditions, exposing you to risk of exchange rate losses in addition to the inherent risk of loss from trading the underlying investment product. If you deposit funds in a currency to trade Contracts denominated in a different currency, your gains or losses on the underlying investment therefore may be affected by changes in the exchange rate between the currencies."
 msgstr "<strong>Rủi ro Tỉ giá Hối đoái</strong>: Tỉ giá hối đoái giữa đồng ngoại tệ có thể thay đổi nhanh do hàng loạt các điều kiện như kinh tế, chính trị, và các điều kiện khác, tiết lộ cho bạn thất thoát từ rủi ro tỉ giá hối đoái và cùng với đó là thất thoát từ rủi ro của việc giao dịch đầu tư vào tài sản cơ sở. Nếu bạn gửi tiền bằng một loại đồng tiền khác với loại đồng tiền đã được chỉ định để giao dịch Hợp đồng, bạn sẽ lãi hoặc lỗ trong việc đầu tư tài sản cơ sở do sự thay đổi về tỉ giá hối đoái giữa các đồng tiền."
 
@@ -578,14 +575,8 @@ msgstr "<strong>Rủi ro Khác</strong>: Có những rủi ro khác liên qu
 msgid "<strong>Patented technology</strong> - Trade with the industry pioneer and holder of a patented pricing technology"
 msgstr "<strong>Cấp bằng sáng chế công nghệ</strong> - giao dịch với các nhà tiên phong của ngành công nghiệp và chủ sở hữu của một công nghệ cấp bằng sáng chế giá"
 
-msgid "<strong>Preferences:</strong>"
-msgstr "<strong>Sở thích:</strong>"
-
 msgid "<strong>Protect your profits</strong> - Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
 msgstr "<strong>Bảo vệ lợi nhuận của bạn</strong> - bán các hợp đồng dài hạn trước khi hết thời hạn để bảo vệ bất kỳ lợi nhuận bạn có thể đã thực hiện hoặc để giảm thiểu thiệt hại của bạn"
-
-msgid "<strong>Requirements:</strong>"
-msgstr "<strong>Yêu Cầu Công Việc:</strong>"
 
 msgid "<strong>Rise/Fall</strong> - Predict the market rising or falling from its current level."
 msgstr "<strong>Tăng/Giảm</strong> - dự đoán thị trường sẽ tăng hay giảm tính từ mức hiện tại."
@@ -997,6 +988,9 @@ msgstr "Tất cả các sản phẩm được giao dịch bên lề mang một m
 
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "Thời gian đều tính theo GMT (Giờ trung bình tại Greenwich)."
+
+msgid "All your deposits and withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
+msgstr ""
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "Cho phép Khách hàng gửi tiền với số lượng ít hơn (bằng tiền nội tệ)"
@@ -2117,9 +2111,6 @@ msgstr "Chi phí - các chi phí thực thi lệnh của bạn, bao gồm chuy�
 msgid "Costs and Charges"
 msgstr "Chi phí và Lệ phí"
 
-msgid "Country Manager"
-msgstr "Giám Đốc Khu Vực"
-
 msgid "Country of Residence"
 msgstr "Quốc gia cư trú"
 
@@ -2306,9 +2297,6 @@ msgstr "Gửi hay rút tiền qua tài khoản của bạn bằng điện chuy
 msgid "Deposit: %1 working day"
 msgstr "Gửi tiền: %1 ngày làm việc"
 
-msgid "Deposit: %1 working days"
-msgstr "Gửi tiền: %1 ngày làm việc"
-
 msgid "Deposit: Instant"
 msgstr "Gửi tiền: tức thì"
 
@@ -2461,6 +2449,11 @@ msgstr "Trong quá trình ứng tuyển, chúng tôi có thể yêu cầ
 
 msgid "During the term of this Agreement, you grant us a royalty-free, non-exclusive, worldwide, irrevocable right, under all of your intellectual property rights, to:"
 msgstr "Theo điều khoản của Thỏa thuận này, bạn cho phép chúng tôi có quyền tự do đặc quyền, không loại trừ, trên phạm vi toàn thế giới,không thể hủy ngang, dựa theo quyền sở hữu trí tuệ, để:"
+
+#, fuzzy
+#| msgid "<strong>Duties and Responsibilities:</strong>"
+msgid "Duties and Responsibilities:"
+msgstr "<strong>Nhiệm vụ và Trách nhiệm:</strong>"
 
 msgid "E-cash"
 msgstr "Thẻ điện tử"
@@ -3182,6 +3175,9 @@ msgstr "Đi cùng với nhóm trưởng"
 msgid "Goes Outside"
 msgstr "Đi ra ngoài"
 
+msgid "Got questions? %1Contact us%2 for help."
+msgstr ""
+
 msgid "Governing Laws and Jurisdiction"
 msgstr "Quy định và Quyền hạn chủ đạo"
 
@@ -3463,9 +3459,6 @@ msgstr "Nếu bạn thất bại trong việc ngay lập tức làm cho việc g
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr "Nếu bạn tìm thấy bất kỳ lỗ hổng trong <a target='_blank' href='%1'> mã nguồn mở</a> của chúng tôi, vui lòng gửi một yêu cầu trên GitHub."
-
-msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
-msgstr "Nếu bạn có bất kỳ câu hỏi, vui lòng liên hệ với nhóm hỗ trợ khách hàng của chúng tôi tại <a href=\"mailto:%1\"> %1</a>."
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr "Nếu bạn đã tham gia vào nhiều hơn một phiên tăng giá trong cùng một thị trường, bất kỳ phiên giao dịch đóng nào bạn đặt vào trong cùng một thị trường sẽ đóng lại phiên tăng giá theo thứ tự mà trong đó phiên tăng giá đã được tạo ra đầu tiên trong lần đầu tiên xuất hiện."
@@ -4772,9 +4765,6 @@ msgstr "Chuyên Viên Marketing"
 msgid "Marketing Project Coordinator"
 msgstr "Điều phối viên dự án Marketing"
 
-msgid "Marketing Project Manager"
-msgstr "Trưởng Phòng Dự Án Marketing"
-
 msgid "Marketing and Promotion"
 msgstr "Tiếp thị và Khuyến mãi"
 
@@ -5684,7 +5674,9 @@ msgstr "Vui lòng chọn ít nhất một phạm vi"
 msgid "Please select the checkbox."
 msgstr "Vui lòng chọn hộp tích."
 
-msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+#, fuzzy
+#| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
 msgstr "Xin vui lòng gửi cho chúng tôi các tài liệu sau đây để xác minh danh tính của bạn và xác thực tài khoản của bạn:"
 
 msgid "Please specify your preferred reality-check interval in minutes"
@@ -5751,6 +5743,11 @@ msgid "Predict the direction<br />and purchase"
 msgstr "Dự đoán khuynh hướng<br />và trả giá"
 
 msgid "Preferences"
+msgstr "Tài khoản tham khảo"
+
+#, fuzzy
+#| msgid "Preferences"
+msgid "Preferences:"
 msgstr "Tài khoản tham khảo"
 
 msgid "Premier binary options trading platform"
@@ -6091,6 +6088,9 @@ msgstr "Hãy trình bày số hợp đồng xuất sắc tối đa có
 
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Hiển thị số lượng hợp đồng tối đa bạn có thể mua trong ngày giao dịch."
+
+msgid "Requirements:"
+msgstr "Yêu cầu:"
 
 msgid "Resale not offered"
 msgstr "Bán lại không được cho phép"
@@ -6607,7 +6607,9 @@ msgstr "Lệnh dừng / Lệnh dừng thiệt hại &mdash; một hướng dẫn
 msgid "Stop Out Level"
 msgstr "Mức dừng"
 
-msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
+#, fuzzy
+#| msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
+msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr "Mức độ dừng &mdash; Mức lề ở hoặc thấp hơn mà phiên mở của bạn có thể mạnh mẽ có hoặc không có sự đồng ý trước của bạn."
 
 msgid "Stop Profit Level"
@@ -7558,7 +7560,9 @@ msgstr "Thời gian đang thay đổi. Chúng tôi tăng tiền thưởng v
 msgid "Title"
 msgstr "Quý Danh"
 
-msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
+#, fuzzy
+#| msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
+msgid "To apply, please submit your CV and a cover letter to %1."
 msgstr "Để ứng tuyển, vui lòng gửi CV và thư xin việc của bạn tới <span id='hr_contact_eaddress'></span>."
 
 msgid "To be considered for this mission critical leadership role, you'll need to demonstrate a passion for open source technologies and a desire to test your talents in a dynamic and challenging work environment."
@@ -8483,9 +8487,6 @@ msgstr "Rút tiền từ"
 
 msgid "Withdraw: %1 working day"
 msgstr "Rút tiền:%1 ngày làm việc"
-
-msgid "Withdraw: %1 working days"
-msgstr "Rút tiền: %1 ngày làm việc"
 
 msgid "Withdraw: Not applicable"
 msgstr "Rút tiền: Không áp dụng"
@@ -11126,6 +11127,27 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 msgid "Account Limits"
 msgstr "Giới hạn Tài khoản"
+
+#~ msgid "<strong>Preferences:</strong>"
+#~ msgstr "<strong>Sở thích:</strong>"
+
+#~ msgid "<strong>Requirements:</strong>"
+#~ msgstr "<strong>Yêu Cầu Công Việc:</strong>"
+
+#~ msgid "Country Manager"
+#~ msgstr "Giám Đốc Khu Vực"
+
+#~ msgid "Marketing Project Manager"
+#~ msgstr "Trưởng Phòng Dự Án Marketing"
+
+#~ msgid "Deposit: %1 working days"
+#~ msgstr "Gửi tiền: %1 ngày làm việc"
+
+#~ msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
+#~ msgstr "Nếu bạn có bất kỳ câu hỏi, vui lòng liên hệ với nhóm hỗ trợ khách hàng của chúng tôi tại <a href=\"mailto:%1\"> %1</a>."
+
+#~ msgid "Withdraw: %1 working days"
+#~ msgstr "Rút tiền: %1 ngày làm việc"
 
 #~ msgid "Please submit a valid %1."
 #~ msgstr "Vui lòng nhập một tài khoản %1 hợp lệ."
@@ -17608,9 +17630,6 @@ msgstr "Giới hạn Tài khoản"
 
 #~ msgid "Requirements"
 #~ msgstr "Yêu cầu"
-
-#~ msgid "Requirements:"
-#~ msgstr "Yêu cầu:"
 
 #~ msgid "Standard expiry"
 #~ msgstr "Hết hạn chuẩn"

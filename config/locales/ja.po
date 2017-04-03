@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-24 21:45+0000\n"
+"PO-Revision-Date: 2017-04-03 04:30+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.12\n"
+"X-Generator: Weblate 2.13-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」とは%1の取引プラットフォームとのインターフェースとして登録されたアプリケーションを使用できるよう、%1によって作成・管理されているプログラムのルーチン、プロトコル、ツール、リソースの独自のセットのことをいいます。"
@@ -544,9 +544,6 @@ msgstr "<strong>お好きな時間にお取引</strong> - 平日24時間お取�
 msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
 msgstr "<strong>手数料:</strong> トランザクション処理に手数料が請求されます。"
 
-msgid "<strong>Duties and Responsibilities:</strong>"
-msgstr "<strong>職務及び責務：</strong>"
-
 msgid "<strong>Exchange Rate Risk</strong>: Exchange rates between foreign currencies can change rapidly due to a wide range of economic, political and other conditions, exposing you to risk of exchange rate losses in addition to the inherent risk of loss from trading the underlying investment product. If you deposit funds in a currency to trade Contracts denominated in a different currency, your gains or losses on the underlying investment therefore may be affected by changes in the exchange rate between the currencies."
 msgstr "<strong>為替リスク</strong>: 基本投資商品の取引の損失による固有のリスクに加えて、為替レート損失のリスクを受ける経済的、政治的、またはその他の条件によって、外国通貨間の為替レートは急速に変化します。そのため、異なる通貨建ての契約を取引するために通貨で資金を入金される場合は、通貨間の為替レートの変動によって原資産の損益に影響する可能性があります。"
 
@@ -589,14 +586,8 @@ msgstr "<strong>その他のリスク</strong>: この文書には詳細に説�
 msgid "<strong>Patented technology</strong> - Trade with the industry pioneer and holder of a patented pricing technology"
 msgstr "<strong>特許技術</strong> - 業界のパイオニアであり、特許取得済みの価格テクノロジーを採用している当社で取引しましょう"
 
-msgid "<strong>Preferences:</strong>"
-msgstr "<strong>設定：</strong>"
-
 msgid "<strong>Protect your profits</strong> - Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
 msgstr "<strong>あなたの利益を守ります</strong> - 予想利益を守り、損失を最小限に抑えるために、判定時刻を迎える前に長期トレードを売却することができます。"
-
-msgid "<strong>Requirements:</strong>"
-msgstr "<strong>要件：</strong>"
 
 msgid "<strong>Rise/Fall</strong> - Predict the market rising or falling from its current level."
 msgstr "<strong>ラダー</strong>：権利行使価格より上か、下かを予測してください。"
@@ -1010,6 +1001,9 @@ msgstr "証拠金取引の全商品には高いリスクがつき、結果とし
 
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "当社サイトの時間表示は全て、GMT（グリニッジ標準時）に基づきます。"
+
+msgid "All your deposits and withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
+msgstr ""
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "クライアントへ低い金額（現地通貨）での入金を許可する"
@@ -2150,9 +2144,6 @@ msgstr "費用 - 注文実行の費用は主にスプレッドです。例: 当�
 msgid "Costs and Charges"
 msgstr "コストと料金"
 
-msgid "Country Manager"
-msgstr "カントリーマネージャー"
-
 msgid "Country of Residence"
 msgstr "居住国"
 
@@ -2339,9 +2330,6 @@ msgstr "銀行振込によりお客さまの口座に入出金を行います"
 msgid "Deposit: %1 working day"
 msgstr "ご入金: %1営業日"
 
-msgid "Deposit: %1 working days"
-msgstr "ご入金: %1営業日"
-
 msgid "Deposit: Instant"
 msgstr "ご入金：即時"
 
@@ -2494,6 +2482,11 @@ msgstr "当社の申請プロセスにおいて、お客さまの身元や、投
 
 msgid "During the term of this Agreement, you grant us a royalty-free, non-exclusive, worldwide, irrevocable right, under all of your intellectual property rights, to:"
 msgstr "本契約期間中に、あなたの全知的財産権に基いて、ロイヤリティフリー・非独占・世界規模・取消不可であるこの権利を当社に譲渡されることになります。"
+
+#, fuzzy
+#| msgid "<strong>Duties and Responsibilities:</strong>"
+msgid "Duties and Responsibilities:"
+msgstr "<strong>職務及び責務：</strong>"
 
 msgid "E-cash"
 msgstr "eキャッシュ"
@@ -3215,6 +3208,9 @@ msgstr "バイナリーオプション取引業界のフロント・ランナー
 msgid "Goes Outside"
 msgstr "BREAK-OUT"
 
+msgid "Got questions? %1Contact us%2 for help."
+msgstr ""
+
 msgid "Governing Laws and Jurisdiction"
 msgstr "準拠法と裁判管轄権"
 
@@ -3499,9 +3495,6 @@ msgstr ""
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr "当社の<a target='_blank' href='%1'>オープンソースコード</a>で脆弱性を発見されましたら、お気軽にGitHubでプルリクエストをしてください。"
 
-msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
-msgstr "詳細につきまして、カスタマーサポート<a href=\"mailto:%1\">%1</a>までご連絡ください"
-
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr ""
 
@@ -3635,10 +3628,10 @@ msgid "If your complaint relates to an outcome of a trade or a transaction and r
 msgstr "取引や商法の結果に関するご不満があったり、何か未解決のままである場合、それは論争になってしまうかもしれません。当社の回答に満足いただけない場合は、お客さまの苦情を監督機関に申し立てをするか、裁判外紛争解決をご選択いただけます。"
 
 msgid "If your margin level is still under the stop out level, we will close an open position with the largest loss."
-msgstr "マージンレベルが未だストップアウトベル未満である場合、損失が一番大きいオープンポジションをクローズします。"
+msgstr "マージンレベルが未だロスカットレベル未満である場合、損失が一番大きいオープンポジションをクローズします。"
 
 msgid "If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted."
-msgstr "マージンレベルが未だストップアウトレベル未満である場合、次の注文は削除されます。しかし、マージン要件なしの注文に関しては削除されることはありません。"
+msgstr "マージンレベルが未だロスカットレベル未満である場合、次の注文は削除されます。しかし、マージン要件なしの注文に関しては削除されることはありません。"
 
 msgid "If:"
 msgstr "以下の場合を対象とする："
@@ -4827,9 +4820,6 @@ msgstr "マーケティング担当役員"
 msgid "Marketing Project Coordinator"
 msgstr "マーケティングプロジェクトコーディネーター"
 
-msgid "Marketing Project Manager"
-msgstr "マーケティングプロジェクトマネージャー"
-
 msgid "Marketing and Promotion"
 msgstr "マーケティング＆プロモーション"
 
@@ -5749,7 +5739,7 @@ msgstr "範囲を1つ以上選択してください"
 msgid "Please select the checkbox."
 msgstr "チェックボックスを選択してください"
 
-msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
 msgstr "お客さまの個人情報を確認してアカウント認証を行うために、次の書類を当社までご送付ください。"
 
 msgid "Please specify your preferred reality-check interval in minutes"
@@ -5816,6 +5806,11 @@ msgid "Predict the direction<br />and purchase"
 msgstr "方向性<br />を予測して購入"
 
 msgid "Preferences"
+msgstr "設定"
+
+#, fuzzy
+#| msgid "Preferences"
+msgid "Preferences:"
 msgstr "設定"
 
 msgid "Premier binary options trading platform"
@@ -6159,6 +6154,9 @@ msgstr "最大保有ポジションの総数を示し、各行を１件分のオ
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "購入可能な１日あたりのトレードの総額を示します。"
 
+msgid "Requirements:"
+msgstr "必須項目："
+
 msgid "Resale not offered"
 msgstr "満期までの2分は売却取引不可"
 
@@ -6310,10 +6308,8 @@ msgstr "土"
 msgid "Scope and Intent"
 msgstr "対象範囲と意図"
 
-#, fuzzy
-#| msgid "B. Scope"
 msgid "Scopes"
-msgstr "B. 範囲"
+msgstr "範囲"
 
 msgid "Score"
 msgstr "スコア"
@@ -6678,8 +6674,8 @@ msgstr ""
 msgid "Stop Out Level"
 msgstr "ロスカットレベル"
 
-msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
-msgstr "ストップアウトレベル &mdash; オープンポジションがマージンレベル以下である際に、同意の上または同意なしに強制的に行われることがあります"
+msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
+msgstr "ロスカットレベル &mdash; オープンポジションがマージンレベル以下である際に、同意の上または同意なしに強制的に行われることがあります"
 
 msgid "Stop Profit Level"
 msgstr "利益ストップレベル"
@@ -7355,7 +7351,7 @@ msgid "The margin for our CFDs are calculated as follows:"
 msgstr ""
 
 msgid "The margin for our Forex symbols is calculated as follows:"
-msgstr ""
+msgstr "外国為替通貨シンボルのマージンは以下のように算出されます。"
 
 msgid "The margin trading services described in this Agreement are conducted over the counter. This means that the market in one or more of the instruments which you ordinarily transact with us, though quoted on an exchange, are not traded on an exchange when transacted through the electronic trading platform as described in this Agreement."
 msgstr ""
@@ -7727,7 +7723,9 @@ msgstr "時代のニーズを汲み、ペイアウト金額を増大させるこ
 msgid "Title"
 msgstr "敬称"
 
-msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
+#, fuzzy
+#| msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
+msgid "To apply, please submit your CV and a cover letter to %1."
 msgstr "お申し込みいただく際は、履歴書とカバーレターを<span id='hr_contact_eaddress'></span>へご送付ください。"
 
 msgid "To be considered for this mission critical leadership role, you'll need to demonstrate a passion for open source technologies and a desire to test your talents in a dynamic and challenging work environment."
@@ -7957,10 +7955,8 @@ msgstr "Binary Botを試す"
 msgid "Try MetaTrader 5"
 msgstr "MetaTrader 5を試す"
 
-#, fuzzy
-#| msgid "Binary Next-Gen"
 msgid "Try Next-Gen"
-msgstr "Binary Next-Gen"
+msgstr "Next-Genを試す"
 
 msgid "Try TradingView"
 msgstr "TradingViewを試す"
@@ -8679,9 +8675,6 @@ msgstr "XXXからご出金"
 msgid "Withdraw: %1 working day"
 msgstr "ご出金: %1営業日"
 
-msgid "Withdraw: %1 working days"
-msgstr "ご出金: %1営業日"
-
 msgid "Withdraw: Not applicable"
 msgstr "ご出金：未対応"
 
@@ -8904,7 +8897,7 @@ msgstr ""
 "https://developers.binary.com/"
 
 msgid "You have unrealised losses on your Real Account; and/or"
-msgstr ""
+msgstr "リアル口座に含み損があります"
 
 msgid "You hereby agree that you will not participate in any illegal, deceptive, misleading or unethical practices including, but not limited to, disparagement of the MT5 Trading Platform or other practices which may be detrimental to the MT5 Trading Platform, Licensor or the public interest."
 msgstr ""
@@ -9030,7 +9023,7 @@ msgid "You should enter %1 characters."
 msgstr "%1文字でご入力ください"
 
 msgid "You should not sign up to receive the margin trading services described in this Agreement unless you understand their nature and the associated risks."
-msgstr ""
+msgstr "マージン取引の性質及び関連するリスクを十分に理解されていない限り、本契約に記載されているマージン取引サービスの開始に登録しないでください。"
 
 msgid "You should not trade or invest in Binary Options unless you know and understand the features risks involved and you may lose all the money invested."
 msgstr "関連する将来のリスクまたは投資した資金が全て損失する可能性があるということをご理解いただかない限り、バイナリーオプションでお取引、ご投資されるべきではありません。"
@@ -9042,7 +9035,7 @@ msgid "You should read these ST&Cs carefully as well as the Summary Order Execut
 msgstr "リスク開示通知と当社が提供する、または将来お客さまに適用させていただくその他文書と共に適用される、契約の詳細にあたるオーダー実行ポリシーの概要と利益相反ポリシーの概要同様にこれらST&Cs（特別条件と事業条件）も熟読ください。"
 
 msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments."
-msgstr ""
+msgstr "乱数ジェネレーター（ボラティリティ・インデックス）に基づいた商品は金融市場インデックス（外国為替、株式、コモディティ）に基づく商品が金融商品であるのと同じように、賭博商品であることを十分にご理解ください。"
 
 msgid "You will be automatically logged out after such time."
 msgstr "設定時間を過ぎると自動的にログアウトします。（例）　10分の場合、10と記入して下さい。(半角)"
@@ -9051,10 +9044,10 @@ msgid "You will be provided with all the tools, to turn your traffic into a lucr
 msgstr "サイト訪問数を収入に転化するツールを提供"
 
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
-msgstr ""
+msgstr "23:59:59 GMT以降にポジションをオープンのままにされますと、スワップレートの対象となりますのでご注意ください。"
 
 msgid "You will be subjected to swap rates if you keep a position open past the market close."
-msgstr ""
+msgstr "市場閉鎖後もポジションをオープンのままにされますと、スワップレートの対象となりますのでご注意ください。"
 
 msgid "You will provide us with any information that we may reasonably require to fully satisfy the demand or the requirements of the applicable government authority, upon our request."
 msgstr ""
@@ -9350,8 +9343,6 @@ msgstr "文字"
 msgid "login"
 msgstr "ログイン"
 
-#, fuzzy
-#| msgid "Logout"
 msgid "logout"
 msgstr "ログアウト"
 
@@ -9652,7 +9643,7 @@ msgid "{JAPAN ONLY} Affiliate Program T&C Section 14 Title"
 msgstr "総則"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 1"
-msgstr "（1）アフィリエイトプログラムにご参加頂くにあたり、本約款を熟読し理解されることは重要です。本約款への同意の表明、及びアフィリエイトプログラムへの申請行為は、下記の本約款に同意されたものとみなします。万が一、本約款に同意できない場合は、アフィリエイトプログラムへの参加は見合わせて下さい。アフィリエイト会員には、当アフィリエイトプログラムにて会員獲得を目指すウェブサイトの管理者として行動して頂きます。"
+msgstr "（1）アフィリエイトプログラムにご参加頂くにあたり、本約款を熟読し理解されることは重要です。本約款への同意の表明、及びアフィリエイトプログラムへの申請行為は、下記の本約款及び「アフィリエイト広告に関するガイドライン」に同意されたものとみなします。万が一、本約款及び「アフィリエイト広告に関するガイドライン」に同意されたものとみなします。万が一、本約款に同意できない場合は、アフィリエイトプログラムへの参加は見合わせて下さい。アフィリエイト会員には、当アフィリエイトプログラムにて会員獲得を目指すウェブサイトの管理者として行動して頂きます。"
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 2 Paragraph 2"
 msgstr "（2）当社は、当プログラムへの参加許可を与える権限を有します。故に、当プログラムへの参加の可否に関する当社の決定は、最終的かつ絶対的なものになります。"
@@ -11366,6 +11357,27 @@ msgstr "利用規約の承認"
 
 msgid "Account Limits"
 msgstr "ご利用制限額"
+
+#~ msgid "<strong>Preferences:</strong>"
+#~ msgstr "<strong>設定：</strong>"
+
+#~ msgid "<strong>Requirements:</strong>"
+#~ msgstr "<strong>要件：</strong>"
+
+#~ msgid "Country Manager"
+#~ msgstr "カントリーマネージャー"
+
+#~ msgid "Marketing Project Manager"
+#~ msgstr "マーケティングプロジェクトマネージャー"
+
+#~ msgid "Deposit: %1 working days"
+#~ msgstr "ご入金: %1営業日"
+
+#~ msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
+#~ msgstr "詳細につきまして、カスタマーサポート<a href=\"mailto:%1\">%1</a>までご連絡ください"
+
+#~ msgid "Withdraw: %1 working days"
+#~ msgstr "ご出金: %1営業日"
 
 #~ msgid "Please submit a valid %1."
 #~ msgstr "Eメールアドレスを入力ください"
@@ -17658,9 +17670,6 @@ msgstr "ご利用制限額"
 
 #~ msgid "Requirements"
 #~ msgstr "必須項目"
-
-#~ msgid "Requirements:"
-#~ msgstr "必須項目："
 
 #~ msgid "Standard expiry"
 #~ msgstr "その他期間"

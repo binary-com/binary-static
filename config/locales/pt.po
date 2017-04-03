@@ -591,9 +591,6 @@ msgstr "<strong>Negocie quando você quiser</strong> - negocie 24/7, inclusive n
 msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
 msgstr "<strong>Comissões:</strong> Você irá cobrar uma comissão para processar as transações."
 
-msgid "<strong>Duties and Responsibilities:</strong>"
-msgstr "<strong>Funções e responsabilidades:</strong>"
-
 msgid "<strong>Exchange Rate Risk</strong>: Exchange rates between foreign currencies can change rapidly due to a wide range of economic, political and other conditions, exposing you to risk of exchange rate losses in addition to the inherent risk of loss from trading the underlying investment product. If you deposit funds in a currency to trade Contracts denominated in a different currency, your gains or losses on the underlying investment therefore may be affected by changes in the exchange rate between the currencies."
 msgstr "<strong>Risco de taxa de câmbio</strong>: As taxas de câmbio entre moedas estrangeiras podem mudar rapidamente devido a uma ampla variedade de condições econômicas, políticas e outras, expondo você ao risco de perdas cambiais, além do risco de perda inerente de negociar o produto de investimento subjacente. Se você depositar fundos numa determinada moeda para negociar contratos expressos em moeda diferente, os seus ganhos ou as suas perdas no investimento subjacente podem, desse modo, ser afetados por alterações na taxa de câmbio entre as duas moedas."
 
@@ -648,14 +645,8 @@ msgstr "<strong>Outros riscos</strong>: Existem outros riscos relacionados com a
 msgid "<strong>Patented technology</strong> - Trade with the industry pioneer and holder of a patented pricing technology"
 msgstr "<strong>Tecnologia patenteada</strong> - a %1 é a pioneira desta indústria e possui uma tecnologia de preços patenteada."
 
-msgid "<strong>Preferences:</strong>"
-msgstr "<strong>Preferências:</strong>"
-
 msgid "<strong>Protect your profits</strong> - Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
 msgstr "<strong>Proteja os seus lucros</strong> - Venda os seus contratos de longo prazo antes da expiração para proteger quaisquer lucros que possa ter realizado ou para minimizar as suas perdas"
-
-msgid "<strong>Requirements:</strong>"
-msgstr "<strong>Requisitos:</strong>"
 
 #, fuzzy
 #| msgid "<strong>Rise/Fall</strong> - predict if the market will rise or fall from its current level."
@@ -1123,6 +1114,9 @@ msgstr ""
 
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "Todos os horários estão de acordo com o fuso horário GMT (Greenwich Mean Time)."
+
+msgid "All your deposits and withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
+msgstr ""
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "Permite que clientes depositem valores mais baixos (através da moeda local)"
@@ -2311,9 +2305,6 @@ msgstr ""
 msgid "Costs and Charges"
 msgstr "Custos e encargos"
 
-msgid "Country Manager"
-msgstr "Gestor de País"
-
 msgid "Country of Residence"
 msgstr "País de Residência"
 
@@ -2512,9 +2503,6 @@ msgstr "Deposite ou retire dinheiro para a sua conta através de transferência 
 msgid "Deposit: %1 working day"
 msgstr "Depósito: %1 dia útil"
 
-msgid "Deposit: %1 working days"
-msgstr "Depósito: %1 dias úteis"
-
 msgid "Deposit: Instant"
 msgstr "Depósito: Instantâneo"
 
@@ -2671,6 +2659,11 @@ msgstr "Durante o nosso processo de inscrição, podemos pedir informações sob
 
 msgid "During the term of this Agreement, you grant us a royalty-free, non-exclusive, worldwide, irrevocable right, under all of your intellectual property rights, to:"
 msgstr "Durante a vigência do presente acordo, você concede-nos um direito livre de royalties, não exclusivo, em âmbito mundial, irrevogável, sob todos os seus direitos de propriedade intelectual, para:"
+
+#, fuzzy
+#| msgid "<strong>Duties and Responsibilities:</strong>"
+msgid "Duties and Responsibilities:"
+msgstr "<strong>Funções e responsabilidades:</strong>"
 
 msgid "E-cash"
 msgstr "Dinheiro eletrônico"
@@ -3438,6 +3431,9 @@ msgstr "Siga o líder"
 msgid "Goes Outside"
 msgstr "sai fora"
 
+msgid "Got questions? %1Contact us%2 for help."
+msgstr ""
+
 msgid "Governing Laws and Jurisdiction"
 msgstr "Leis Aplicáveis e Jurisdição"
 
@@ -3743,11 +3739,6 @@ msgstr ""
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr "Caso você descubra quaisquer vulnerabilidades no nosso <a target='_blank' href='%1'>código fonte aberto</a>, não hesite em enviar uma solicitação pull no GitHub."
-
-#, fuzzy
-#| msgid "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
-msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
-msgstr "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr ""
@@ -5122,9 +5113,6 @@ msgstr "Executivos de marketing"
 msgid "Marketing Project Coordinator"
 msgstr "Coordenador de projetos de marketing"
 
-msgid "Marketing Project Manager"
-msgstr "Gestor de projetos de marketing"
-
 msgid "Marketing and Promotion"
 msgstr "Marketing e Promoção"
 
@@ -6122,7 +6110,7 @@ msgstr "Selecione pelo menos um escopo"
 
 #, fuzzy
 #| msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
-msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
 msgstr "Para autenticar a sua conta, envie um e-mail para <a href=\"mailto:%1\">%1</a>"
 
 msgid "Please specify your preferred reality-check interval in minutes"
@@ -6193,6 +6181,11 @@ msgid "Predict the direction<br />and purchase"
 msgstr "Preveja a direção<br />e compre"
 
 msgid "Preferences"
+msgstr "Preferências"
+
+#, fuzzy
+#| msgid "Preferences"
+msgid "Preferences:"
 msgstr "Preferências"
 
 msgid "Premier binary options trading platform"
@@ -6555,6 +6548,9 @@ msgstr "Representa o número máximo de contratos pendentes no seu portfólio. C
 
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Representa o volume máximo de contratos que pode comprar em qualquer dia de negociações."
+
+msgid "Requirements:"
+msgstr "Requisitos:"
 
 msgid "Resale not offered"
 msgstr "A revenda não está disponivel"
@@ -7111,7 +7107,7 @@ msgstr ""
 msgid "Stop Out Level"
 msgstr "Nível do limite de ganhos"
 
-msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
+msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr ""
 
 msgid "Stop Profit Level"
@@ -8122,7 +8118,9 @@ msgstr "Os tempos estão mudando. Nós aumentamos os pagamentos para que os noss
 msgid "Title"
 msgstr "Título"
 
-msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
+#, fuzzy
+#| msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
+msgid "To apply, please submit your CV and a cover letter to %1."
 msgstr "Para se candidatar, por favor envie o seu currículo e carta de apresentação para <span id='hr_contact_eaddress'></span>."
 
 msgid "To be considered for this mission critical leadership role, you'll need to demonstrate a passion for open source technologies and a desire to test your talents in a dynamic and challenging work environment."
@@ -9123,9 +9121,6 @@ msgstr "Retirar fundos de"
 
 msgid "Withdraw: %1 working day"
 msgstr "Retirada: %1 dia útil"
-
-msgid "Withdraw: %1 working days"
-msgstr "Retirada: %1 dias úteis"
 
 msgid "Withdraw: Not applicable"
 msgstr "Retirada: Não aplicável"
@@ -11892,6 +11887,29 @@ msgstr "Aprovação dos termos e condições"
 
 msgid "Account Limits"
 msgstr "Limites da Conta"
+
+#~ msgid "<strong>Preferences:</strong>"
+#~ msgstr "<strong>Preferências:</strong>"
+
+#~ msgid "<strong>Requirements:</strong>"
+#~ msgstr "<strong>Requisitos:</strong>"
+
+#~ msgid "Country Manager"
+#~ msgstr "Gestor de País"
+
+#~ msgid "Marketing Project Manager"
+#~ msgstr "Gestor de projetos de marketing"
+
+#~ msgid "Deposit: %1 working days"
+#~ msgstr "Depósito: %1 dias úteis"
+
+#, fuzzy
+#~| msgid "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
+#~ msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
+#~ msgstr "{JAPAN ONLY}If you need more information then please contact Customer Support at <a href='mailto:%1'>%1</a>)."
+
+#~ msgid "Withdraw: %1 working days"
+#~ msgstr "Retirada: %1 dias úteis"
 
 #~ msgid "Please submit a valid %1."
 #~ msgstr "Insira um %1 válido."
@@ -18173,9 +18191,6 @@ msgstr "Limites da Conta"
 
 #~ msgid "Requirements"
 #~ msgstr "Requisitos"
-
-#~ msgid "Requirements:"
-#~ msgstr "Requisitos:"
 
 #~ msgid "Standard expiry"
 #~ msgstr "Expiração padrão"
