@@ -600,9 +600,6 @@ msgstr "<strong>Comercie cuando usted quiera</strong> - comercie las 24 horas de
 msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
 msgstr "<strong>Commisiones:</strong> Cobrará una comisión por procesar las transacciones."
 
-msgid "<strong>Duties and Responsibilities:</strong>"
-msgstr "<strong>Obligaciones y responsabilidades:</strong>"
-
 msgid "<strong>Exchange Rate Risk</strong>: Exchange rates between foreign currencies can change rapidly due to a wide range of economic, political and other conditions, exposing you to risk of exchange rate losses in addition to the inherent risk of loss from trading the underlying investment product. If you deposit funds in a currency to trade Contracts denominated in a different currency, your gains or losses on the underlying investment therefore may be affected by changes in the exchange rate between the currencies."
 msgstr "<strong>Riesgo de tipo de cambio</strong>: Los tipos de cambio entre las monedas extranjeras pueden cambiar rápidamente debido a una amplia gama de condiciones económicas, políticas y otras, exponiéndole al riesgo de pérdidas por el tipo de cambio, además del riesgo inherente de pérdida al operar con un producto de inversión subyacente. Si usted deposita fondos en una moneda para comprar contratos en otra moneda, sus ganancias o pérdidas en la inversión subyacente, por tanto, pueden verse afectadas por los cambios en el tipo de cambio entre las monedas."
 
@@ -657,14 +654,8 @@ msgstr "<strong>Otros riesgoss</strong>: Existen otros riesgos que se relacionan
 msgid "<strong>Patented technology</strong> - Trade with the industry pioneer and holder of a patented pricing technology"
 msgstr "<strong>Tecnología patentada</strong> - %1 es el pionero en la industria y tiene una tecnología de valorización de contratos patentada."
 
-msgid "<strong>Preferences:</strong>"
-msgstr "<strong>Preferencias:</strong>"
-
 msgid "<strong>Protect your profits</strong> - Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
 msgstr ""
-
-msgid "<strong>Requirements:</strong>"
-msgstr "<strong>Requisitos:</strong>"
 
 #, fuzzy
 #| msgid "<strong>Rise/Fall</strong> - predict if the market will rise or fall from its current level."
@@ -2363,9 +2354,6 @@ msgstr ""
 msgid "Costs and Charges"
 msgstr "Costos y gastos"
 
-msgid "Country Manager"
-msgstr "Gerente de país"
-
 msgid "Country of Residence"
 msgstr "País de residencia"
 
@@ -2720,6 +2708,11 @@ msgstr "Durante el proceso de aplicación, podemos pedirle información acerca d
 
 msgid "During the term of this Agreement, you grant us a royalty-free, non-exclusive, worldwide, irrevocable right, under all of your intellectual property rights, to:"
 msgstr "Durante la vigencia de este Acuerdo, usted nos concede un derecho libre de regalías, no exclusivo, mundial e irrevocable, bajo todos sus derechos de propiedad intelectual, para:"
+
+#, fuzzy
+#| msgid "<strong>Duties and Responsibilities:</strong>"
+msgid "Duties and Responsibilities:"
+msgstr "<strong>Obligaciones y responsabilidades:</strong>"
 
 msgid "E-cash"
 msgstr "E-cash"
@@ -5189,9 +5182,6 @@ msgstr "Ejecutivo de Marketing"
 msgid "Marketing Project Coordinator"
 msgstr "Coordinador de Proyectos de Marketing"
 
-msgid "Marketing Project Manager"
-msgstr "Director de proyectos de marketing"
-
 msgid "Marketing and Promotion"
 msgstr "Marketing y promoción"
 
@@ -6287,6 +6277,11 @@ msgid "Preferences"
 msgstr "ID de Referencia"
 
 #, fuzzy
+#| msgid "Reference ID"
+msgid "Preferences:"
+msgstr "ID de Referencia"
+
+#, fuzzy
 #| msgid "it is the leading binary option trading platform."
 msgid "Premier binary options trading platform"
 msgstr "es la plataforma principal de operaciones con opciones binarias."
@@ -6656,6 +6651,9 @@ msgstr "Representa el número máximo de contratos pendientes en su cartera. Cad
 
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Representa el volumen máximo de contratos que puede comprar en un día de comercialización determinado."
+
+msgid "Requirements:"
+msgstr "Requerimientos:"
 
 #, fuzzy
 #| msgid "This trade is not offered."
@@ -8237,7 +8235,9 @@ msgstr "Los tiempos están cambiando. Aumentamos los pagos para que nuestros cli
 msgid "Title"
 msgstr "Título"
 
-msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
+#, fuzzy
+#| msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
+msgid "To apply, please submit your CV and a cover letter to %1."
 msgstr "Para presentar su candidatura, por favor envíe su currículum y una carta de presentación a  <span id='hr_contact_eaddress'></span>."
 
 msgid "To be considered for this mission critical leadership role, you'll need to demonstrate a passion for open source technologies and a desire to test your talents in a dynamic and challenging work environment."
@@ -12148,6 +12148,18 @@ msgstr "Acuerdo con los términos y condiciones"
 
 msgid "Account Limits"
 msgstr "Límites de la cuenta"
+
+#~ msgid "<strong>Preferences:</strong>"
+#~ msgstr "<strong>Preferencias:</strong>"
+
+#~ msgid "<strong>Requirements:</strong>"
+#~ msgstr "<strong>Requisitos:</strong>"
+
+#~ msgid "Country Manager"
+#~ msgstr "Gerente de país"
+
+#~ msgid "Marketing Project Manager"
+#~ msgstr "Director de proyectos de marketing"
 
 #~ msgid "Deposit: %1 working days"
 #~ msgstr "Depósito: %1 días laborales"
@@ -18580,9 +18592,6 @@ msgstr "Límites de la cuenta"
 
 #~ msgid "Requirements"
 #~ msgstr "Requerimientos"
-
-#~ msgid "Requirements:"
-#~ msgstr "Requerimientos:"
 
 #~ msgid "Standard expiry"
 #~ msgstr "Caducidad estándar"

@@ -4,8 +4,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-04-03 02:37+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Traditional) "
-"<https://hosted.weblate.org/projects/binary/static/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/binary/static/zh_Hant/>\n"
 "Language: zh_tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -530,9 +529,6 @@ msgstr "<strong>隨時交易</strong> - %1 全天候均可進行交易（包括�
 msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
 msgstr "<strong>佣金:</strong> 您將可收取交易處理的佣金費。"
 
-msgid "<strong>Duties and Responsibilities:</strong>"
-msgstr "<strong>職責:</strong>"
-
 msgid "<strong>Exchange Rate Risk</strong>: Exchange rates between foreign currencies can change rapidly due to a wide range of economic, political and other conditions, exposing you to risk of exchange rate losses in addition to the inherent risk of loss from trading the underlying investment product. If you deposit funds in a currency to trade Contracts denominated in a different currency, your gains or losses on the underlying investment therefore may be affected by changes in the exchange rate between the currencies."
 msgstr "<strong>兌換率風險</strong>:外匯兌換率可能會因為很多經濟、政治及其它因素而快速改變。您在進行標的投資產品交易時，除了隱藏性損失風險之外，還可能面臨兌換率損失風險。如果您以某一種貨幣存入資金，但以另一種貨幣進行合同交易計價，您的標的投資收益或損失可能會受到兩種貨幣間的兌換率變動的影響。"
 
@@ -575,14 +571,8 @@ msgstr "<strong>其它風險</strong>: 關於投資產品交易和外匯交易�
 msgid "<strong>Patented technology</strong> - Trade with the industry pioneer and holder of a patented pricing technology"
 msgstr "<strong>專利技術</strong> - 通過擁有受專利保護的報價技術的業內領先企業進行交易"
 
-msgid "<strong>Preferences:</strong>"
-msgstr "<strong>偏好設定:</strong>"
-
 msgid "<strong>Protect your profits</strong> - Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
 msgstr "<strong>盈利保護</strong> - 長期合約到期前售出交易，以保護您的盈利或將虧損降至最低"
-
-msgid "<strong>Requirements:</strong>"
-msgstr "<strong>需求:</strong>"
 
 msgid "<strong>Rise/Fall</strong> - Predict the market rising or falling from its current level."
 msgstr "<strong>上漲/下跌</strong> - 預測市場價格是否會從目前水平上漲或下跌。"
@@ -2117,9 +2107,6 @@ msgstr "費用 - 您的訂單執行費用主要由價差，即我們的標價和
 msgid "Costs and Charges"
 msgstr "成本和費用"
 
-msgid "Country Manager"
-msgstr "區域經理"
-
 msgid "Country of Residence"
 msgstr "居住國"
 
@@ -2458,6 +2445,11 @@ msgstr "在我們的申請過程中，我們可能會向您索取關於您的背
 
 msgid "During the term of this Agreement, you grant us a royalty-free, non-exclusive, worldwide, irrevocable right, under all of your intellectual property rights, to:"
 msgstr "本協議有效期內，您將您所擁有的所有知識產權免版稅、非獨占、世界範圍、不可撤銷的權利授予我們："
+
+#, fuzzy
+#| msgid "<strong>Duties and Responsibilities:</strong>"
+msgid "Duties and Responsibilities:"
+msgstr "<strong>職責:</strong>"
 
 msgid "E-cash"
 msgstr "電子現金"
@@ -4769,9 +4761,6 @@ msgstr "市場行銷專員"
 msgid "Marketing Project Coordinator"
 msgstr "市場行銷項目協調員"
 
-msgid "Marketing Project Manager"
-msgstr "市場行銷項目經理"
-
 msgid "Marketing and Promotion"
 msgstr "營銷推廣"
 
@@ -5750,6 +5739,11 @@ msgstr "預測價格走向<br />並購入"
 msgid "Preferences"
 msgstr "偏好"
 
+#, fuzzy
+#| msgid "Preferences"
+msgid "Preferences:"
+msgstr "偏好"
+
 msgid "Premier binary options trading platform"
 msgstr "首選二元期權交易平台"
 
@@ -6088,6 +6082,9 @@ msgstr "表示您的投資組合中未平倉合約的最大數量。您投資組
 
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "表示任一指定交易日您可以買入的最大合約數量。"
+
+msgid "Requirements:"
+msgstr "要求:"
 
 msgid "Resale not offered"
 msgstr "不提供轉售"
@@ -7553,7 +7550,9 @@ msgstr "時代在變。我們增加了賠付金額，以便我們的客戶從盈
 msgid "Title"
 msgstr "職稱"
 
-msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
+#, fuzzy
+#| msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
+msgid "To apply, please submit your CV and a cover letter to %1."
 msgstr "如有意申請，請將您的履歷和求職信傳到<span id='hr_contact_eaddress'></span>。"
 
 msgid "To be considered for this mission critical leadership role, you'll need to demonstrate a passion for open source technologies and a desire to test your talents in a dynamic and challenging work environment."
@@ -10912,6 +10911,18 @@ msgstr "條款和條件審批"
 
 msgid "Account Limits"
 msgstr "帳戶限額"
+
+#~ msgid "<strong>Preferences:</strong>"
+#~ msgstr "<strong>偏好設定:</strong>"
+
+#~ msgid "<strong>Requirements:</strong>"
+#~ msgstr "<strong>需求:</strong>"
+
+#~ msgid "Country Manager"
+#~ msgstr "區域經理"
+
+#~ msgid "Marketing Project Manager"
+#~ msgstr "市場行銷項目經理"
 
 #~ msgid "Deposit: %1 working days"
 #~ msgstr "存款：%1個工作日內"
@@ -17454,9 +17465,6 @@ msgstr "帳戶限額"
 
 #~ msgid "Requirements"
 #~ msgstr "要求"
-
-#~ msgid "Requirements:"
-#~ msgstr "要求:"
 
 #~ msgid "Standard expiry"
 #~ msgstr "標準到期"
