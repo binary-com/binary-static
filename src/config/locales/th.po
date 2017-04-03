@@ -538,9 +538,6 @@ msgstr "<strong>ซื้อขายเมื่อท่านต้องก�
 msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
 msgstr "<strong>ผลตอบแทน:</strong> ท่านจะเสียค่าธรรมเนียมเพื่อดำเนินการธุรกรรมต่างๆ"
 
-msgid "<strong>Duties and Responsibilities:</strong>"
-msgstr "<strong>หน้าที่และความรับผิดชอบ:</strong>"
-
 msgid "<strong>Exchange Rate Risk</strong>: Exchange rates between foreign currencies can change rapidly due to a wide range of economic, political and other conditions, exposing you to risk of exchange rate losses in addition to the inherent risk of loss from trading the underlying investment product. If you deposit funds in a currency to trade Contracts denominated in a different currency, your gains or losses on the underlying investment therefore may be affected by changes in the exchange rate between the currencies."
 msgstr "<strong>ความเสี่ยงของอัตราแลกเปลี่ยน</strong>: อัตราแลกเปลี่ยนระหว่างสกุลเงินต่างประเทศมีการเปลี่ยนแปลงค่อนข้างเร็ว โดยปัจจัยต่างๆ เช่น เศรษฐกิจ การเมือง และเงื่อนไขอื่นๆ ดังนั้นท่านจึงมีโอกาสที่จะได้รับความเสี่ยงที่จะขาดทุนอันเกิดจากการซื้อขายผลิตภัณฑ์การลงทุนต่างๆ หากท่านฝากเงินด้วยสกุลเงินหนึ่งเพื่อซื้อขายสัญญาในสกุลเงินอื่นๆ ท่านอาจจะได้กำไรหรือขาดทุนจากการลงทุนนั้นๆ เมื่อมีการเปลี่ยนแปลงของอัตราแลกเปลี่ยนใดๆ"
 
@@ -583,14 +580,8 @@ msgstr "<strong>ความเสี่ยงอื่นๆ</strong>: ยั�
 msgid "<strong>Patented technology</strong> - Trade with the industry pioneer and holder of a patented pricing technology"
 msgstr "<strong>สิทธิบัตรทางเทคโนโลยี</strong> - ซื้อขายกับผู้บุกเบิกตลาดและเป็นผู้ดำเนินการโดยใช้สิทธิบัตรเทคโนโลยีการเปิดเผยราคา"
 
-msgid "<strong>Preferences:</strong>"
-msgstr "<strong>การตั้งค่า:</strong>"
-
 msgid "<strong>Protect your profits</strong> - Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
 msgstr "<strong>คุ้มครองกำไรของท่าน</strong> - ขายสัญญาระยะยาวของท่านก่อนการหมดอายุเพื่อล็อคกำไรให้ท่าน และย่อมูลค่าปวขาดทุนของท่าน"
-
-msgid "<strong>Requirements:</strong>"
-msgstr "<strong>ข้อกำหนดความต้องการ:</strong>"
 
 msgid "<strong>Rise/Fall</strong> - Predict the market rising or falling from its current level."
 msgstr "<strong>Rise/Fall</strong> - พยากรณ์ว่า ตลาดจะขึ้น หรือ จะร่วงจากระดับดัชนีปัจจุบัน"
@@ -2138,9 +2129,6 @@ msgstr "Costs -"
 msgid "Costs and Charges"
 msgstr "ค่าใช้จ่ายและค่าธรรมเนียม"
 
-msgid "Country Manager"
-msgstr "ผู้จัดการระดับประเทศ"
-
 msgid "Country of Residence"
 msgstr "ประเทศที่พำนัก"
 
@@ -2481,6 +2469,11 @@ msgstr "ในระหว่างกระบวนการสมัครข
 
 msgid "During the term of this Agreement, you grant us a royalty-free, non-exclusive, worldwide, irrevocable right, under all of your intellectual property rights, to:"
 msgstr "ในส่วนข้อตกลงเหล่านี้ ท่านอนุญาตให้เราปลอดลิขสิทธิ์ ไม่มีขอบเขต ครอบคลุมทั่วโลก สิทธิ์ที่ไม่อาจเพิกถอนได้ ภายใต้สิทธิทรัพย์สินทางปัญญา เพื่อ:"
+
+#, fuzzy
+#| msgid "<strong>Duties and Responsibilities:</strong>"
+msgid "Duties and Responsibilities:"
+msgstr "<strong>หน้าที่และความรับผิดชอบ:</strong>"
 
 msgid "E-cash"
 msgstr "เงินสดอิเล็กทรอนิกส์"
@@ -4805,9 +4798,6 @@ msgstr "เจ้าหน้าที่การตลาด"
 msgid "Marketing Project Coordinator"
 msgstr "ผู้ประสานงานโครงการการตลาด"
 
-msgid "Marketing Project Manager"
-msgstr "ผู้จัดการโครงการการตลาด"
-
 msgid "Marketing and Promotion"
 msgstr "การตลาดและการส่งเสริมการตลาด"
 
@@ -5807,6 +5797,11 @@ msgstr "พยากรณ์ทิศทาง<br />และซื้อ"
 msgid "Preferences"
 msgstr "ค่าที่ต้องการ"
 
+#, fuzzy
+#| msgid "Preferences"
+msgid "Preferences:"
+msgstr "ค่าที่ต้องการ"
+
 msgid "Premier binary options trading platform"
 msgstr "แพลตฟอร์มซื้อขายไบนารีออปชั่นชั้นนำ"
 
@@ -6149,6 +6144,11 @@ msgstr "แสดงจำนวนสัญญามากที่สุดท
 
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "แสดงถึงจำนวนมากที่สุดของสัญญาที่ท่านซื้อ"
+
+#, fuzzy
+#| msgid "<strong>Requirements:</strong>"
+msgid "Requirements:"
+msgstr "<strong>ข้อกำหนดความต้องการ:</strong>"
 
 msgid "Resale not offered"
 msgstr "การขายสัญญาไม่ได้ถูกนำเสนอ"
@@ -7632,7 +7632,9 @@ msgstr "เวลาเปลี่ยนแปรไป เราเพิ่�
 msgid "Title"
 msgstr "คำนำหน้าชื่อ"
 
-msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
+#, fuzzy
+#| msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
+msgid "To apply, please submit your CV and a cover letter to %1."
 msgstr "หากประสงค์จะสมัคร โปรดส่งประวัติย่อของท่าน และจดหมายแนะนำตัวมาที่ <span id='hr_contact_eaddress'></span>"
 
 msgid "To be considered for this mission critical leadership role, you'll need to demonstrate a passion for open source technologies and a desire to test your talents in a dynamic and challenging work environment."
@@ -11208,6 +11210,15 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 msgid "Account Limits"
 msgstr "วงเงินในบัญชี"
+
+#~ msgid "<strong>Preferences:</strong>"
+#~ msgstr "<strong>การตั้งค่า:</strong>"
+
+#~ msgid "Country Manager"
+#~ msgstr "ผู้จัดการระดับประเทศ"
+
+#~ msgid "Marketing Project Manager"
+#~ msgstr "ผู้จัดการโครงการการตลาด"
 
 #~ msgid "Deposit: %1 working days"
 #~ msgstr "ฝากเงิน: %1 วันทำการ"
