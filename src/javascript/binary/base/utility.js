@@ -53,21 +53,21 @@ const downloadCSV = (csvContents, filename) => {
 
 const template = (string, content) => string.replace(/\[_(\d+)]/g, (s, index) => content[(+index) - 1]);
 
-const objectNotEmpty = (obj) => {
+const isEmptyObject = (obj) => {
     let isEmpty = true;
     if (obj && obj instanceof Object) {
         Object.keys(obj).forEach((key) => {
             if (obj.hasOwnProperty(key)) isEmpty = false;
         });
     }
-    return !isEmpty;
+    return isEmpty;
 };
 
-const cloneObject = obj => (objectNotEmpty(obj) ? $.extend({}, obj) : obj);
+const cloneObject = obj => (!isEmptyObject(obj) ? $.extend({}, obj) : obj);
 
 const getPropertyValue = (obj, keys) => {
     if (!Array.isArray(keys)) keys = [keys];
-    if (objectNotEmpty(obj) && keys[0] in obj && keys && keys.length > 1) {
+    if (!isEmptyObject(obj) && keys[0] in obj && keys && keys.length > 1) {
         return getPropertyValue(obj[keys[0]], keys.slice(1));
     }
     // else return clone of object to avoid overwriting data
@@ -86,7 +86,7 @@ module.exports = {
     getHighestZIndex: getHighestZIndex,
     downloadCSV     : downloadCSV,
     template        : template,
-    objectNotEmpty  : objectNotEmpty,
+    isEmptyObject   : isEmptyObject,
     getPropertyValue: getPropertyValue,
     handleHash      : handleHash,
 };

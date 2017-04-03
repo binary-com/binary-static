@@ -1,4 +1,4 @@
-const MarketTimes = (() => {
+const TradingTimes = (() => {
     'use strict';
 
     const getSubmarketInfo = (active_symbols, submarket_display_name) =>
@@ -13,4 +13,4 @@ const MarketTimes = (() => {
     };
 })();
 
-module.exports = MarketTimes;
+module.exports = TradingTimes;

@@ -5,7 +5,7 @@ const localize            = require('./localize').localize;
 const Login               = require('./login');
 const State               = require('./storage').State;
 const urlFor              = require('./url').urlFor;
-const objectNotEmpty      = require('./utility').objectNotEmpty;
+const isEmptyObject       = require('./utility').isEmptyObject;
 const checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
 const jpClient            = require('../common_functions/country_base').jpClient;
 const MetaTrader          = require('../websocket_pages/user/metatrader/metatrader');
@@ -187,7 +187,7 @@ const Header = (() => {
 
             const riskAssessment = () => {
                 if (get_account_status.risk_classification === 'high') {
-                    return !objectNotEmpty(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
+                    return isEmptyObject(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
                 }
                 return false;
             };

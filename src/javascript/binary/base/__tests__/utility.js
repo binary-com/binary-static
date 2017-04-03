@@ -13,18 +13,18 @@ describe('template', function() {
     });
 });
 
-describe('objectNotEmpty', function() {
+describe('isEmptyObject', function() {
     it('returns true for empty objects', function() {
-        expect(utility.objectNotEmpty({})).to.eq(false);
-        expect(utility.objectNotEmpty({ notEmpty: true })).to.eq(true);
+        expect(utility.isEmptyObject({})).to.eq(true);
+        expect(utility.isEmptyObject({ notEmpty: true })).to.eq(false);
     });
 
     it('returns false for non objects', function() {
-        expect(utility.objectNotEmpty(1)).to.eq(false);
-        expect(utility.objectNotEmpty(undefined)).to.eq(false);
-        expect(utility.objectNotEmpty(null)).to.eq(false);
-        expect(utility.objectNotEmpty(false)).to.eq(false);
-        expect(utility.objectNotEmpty(true)).to.eq(false);
-        expect(utility.objectNotEmpty('')).to.eq(false);
+        expect(utility.isEmptyObject(1)).to.eq(true);
+        expect(utility.isEmptyObject(undefined)).to.eq(true);
+        expect(utility.isEmptyObject(null)).to.eq(true);
+        expect(utility.isEmptyObject(false)).to.eq(true);
+        expect(utility.isEmptyObject(true)).to.eq(true);
+        expect(utility.isEmptyObject('')).to.eq(true);
     });
 });

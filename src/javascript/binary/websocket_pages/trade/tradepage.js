@@ -11,7 +11,7 @@ const Notifications        = require('./notifications').Notifications;
 const Price                = require('./price').Price;
 const forgetTradingStreams = require('./process').forgetTradingStreams;
 const Symbols              = require('./symbols').Symbols;
-const ViewPopupWS          = require('../user/view_popup/view_popupws');
+const ViewPopup            = require('../user/view_popup/view_popup');
 const BinaryPjax           = require('../../base/binary_pjax');
 const Client               = require('../../base/client');
 const localize             = require('../../base/localize').localize;
@@ -29,9 +29,6 @@ const TradePage = (function() {
             return;
         }
         State.set('is_trading', true);
-        if (Client.get('currencies')) {
-            displayCurrencies();
-        }
         BinarySocket.init({
             onmessage: function(msg) {
                 Message.process(msg);
@@ -50,7 +47,11 @@ const TradePage = (function() {
             displayCurrencies();
             Symbols.getSymbols(1);
         } else {
-            BinarySocket.send({ payout_currencies: 1 });
+            BinarySocket.send({ payout_currencies: 1 }).then((response) => {
+                Client.set('currencies', response.payout_currencies.join(','));
+                displayCurrencies();
+                Symbols.getSymbols(1);
+            });
         }
 
         if (document.getElementById('websocket_form')) {
@@ -67,7 +68,7 @@ const TradePage = (function() {
         $('#tab_explanation').find('a').text(localize('Explanation'));
         $('#tab_last_digit').find('a').text(localize('Last Digit Stats'));
 
-        ViewPopupWS.viewButtonOnClick('#contract_confirmation_container');
+        ViewPopup.viewButtonOnClick('#contract_confirmation_container');
     };
 
     const reload = function() {

@@ -1,7 +1,7 @@
 const Contract              = require('./contract').Contract;
 const Symbols               = require('./symbols').Symbols;
 const Tick                  = require('./tick').Tick;
-const WSTickDisplay         = require('./tick_trade').WSTickDisplay;
+const TickDisplay           = require('./tick_trade');
 const isVisible             = require('../../common_functions/common_functions').isVisible;
 const updatePurchaseStatus  = require('./common').updatePurchaseStatus;
 const updateContractBalance = require('./common').updateContractBalance;
@@ -105,10 +105,10 @@ const Purchase = (function () {
                 elementTextContent(button, localize('View'));
                 button.setAttribute('contract_id', receipt.contract_id);
                 button.show();
-                $('.open_contract_detailsws').attr('contract_id', receipt.contract_id).removeClass('invisible');
+                $('.open_contract_details').attr('contract_id', receipt.contract_id).removeClass('invisible');
             } else {
                 button.hide();
-                $('.open_contract_detailsws').addClass('invisible');
+                $('.open_contract_details').addClass('invisible');
             }
         }
 
@@ -138,7 +138,7 @@ const Purchase = (function () {
                 barrier = passthrough.barrier;
             }
 
-            WSTickDisplay.initialize({
+            TickDisplay.initialize({
                 symbol              : passthrough.symbol,
                 barrier             : barrier,
                 number_of_ticks     : passthrough.duration,
@@ -153,7 +153,7 @@ const Purchase = (function () {
                 show_contract_result: 1,
                 width               : $('#confirmation_message').width(),
             });
-            WSTickDisplay.spots_list = {};
+            TickDisplay.spots_list = {};
         }
     };
 

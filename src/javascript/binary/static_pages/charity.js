@@ -1,21 +1,21 @@
-const Charity = (function() {
-    const timeout = 5000;
-    let gallery,
-        images,
-        interval = null;
+const Charity = (() => {
+    'use strict';
 
-    const onLoad = function() {
-        const switchPicture = function() {
-            images = gallery.find('img');
+    let interval = null;
+
+    const onLoad = () => {
+        const $gallery = $('.gallery');
+        let images;
+        const switchPicture = () => {
+            images = $gallery.find('img');
             if (images.length > 1) {
-                images.eq(images.length - 1).prependTo(gallery);
+                images.eq(images.length - 1).prependTo($gallery);
             }
         };
-        gallery = $('.gallery');
-        interval = window.setInterval(switchPicture, timeout);
+        interval = window.setInterval(switchPicture, 5000);
     };
 
-    const onUnload = function() {
+    const onUnload = () => {
         if (interval) {
             window.clearInterval(interval);
             interval = null;
