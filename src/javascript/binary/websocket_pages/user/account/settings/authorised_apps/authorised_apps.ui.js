@@ -8,7 +8,7 @@ const toTitleCase          = require('../../../../../common_functions/string_uti
 const ApplicationsUI = (() => {
     'use strict';
 
-    const container_selector = '#applications-ws-container';
+    const container_selector = '#applications-container';
     const messages = {
         no_apps       : 'You have not granted access to any applications.',
         revoke_confirm: 'Are you sure that you want to permanently revoke access to application',

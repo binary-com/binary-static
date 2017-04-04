@@ -179,6 +179,7 @@ const KnowledgeTest = (() => {
                     question          : $(this).attr('data-question-en'),
                     question_localized: $(this).text(),
                     correct_answer    : answers[question_id],
+                    tooltip           : $(this).attr('data-tip'),
                 });
             });
         });

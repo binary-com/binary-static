@@ -152,7 +152,7 @@ const Highchart = (function() {
             req.passthrough = {};
         }
         // send dispatch_to to help socket.js forward the correct response back to here
-        req.passthrough.dispatch_to = 'ViewChartWS';
+        req.passthrough.dispatch_to = 'ViewChart';
         BinarySocket.send(req);
     };
 
@@ -572,6 +572,4 @@ const Highchart = (function() {
     };
 })();
 
-module.exports = {
-    Highchart: Highchart,
-};
+module.exports = Highchart;

@@ -5,7 +5,7 @@ const Durations_Beta                 = require('./duration').Durations_Beta;
 const Price_Beta                     = require('./price').Price_Beta;
 const Purchase_Beta                  = require('./purchase').Purchase_Beta;
 const StartDates_Beta                = require('./starttime').StartDates_Beta;
-const WSTickDisplay_Beta             = require('./tick_trade').WSTickDisplay_Beta;
+const TickDisplay_Beta               = require('./tick_trade');
 const Defaults                       = require('../defaults').Defaults;
 const Symbols                        = require('../symbols').Symbols;
 const Tick                           = require('../tick').Tick;
@@ -306,7 +306,7 @@ function processTick_Beta(tick) {
         if (digit_info && tick.tick) {
             digit_info.update_chart(tick);
         }
-        WSTickDisplay_Beta.updateChart(tick);
+        TickDisplay_Beta.updateChart(tick);
         Purchase_Beta.update_spot_list();
         if (!Barriers_Beta.isBarrierUpdated()) {
             Barriers_Beta.display();

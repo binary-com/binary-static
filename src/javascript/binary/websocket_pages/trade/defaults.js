@@ -1,6 +1,6 @@
-const objectNotEmpty = require('../../base/utility').objectNotEmpty;
-const isVisible      = require('../../common_functions/common_functions').isVisible;
-const Url            = require('../../base/url');
+const isEmptyObject = require('../../base/utility').isEmptyObject;
+const isVisible     = require('../../common_functions/common_functions').isVisible;
+const Url           = require('../../base/url');
 
 /*
  * Handles trading page default values
@@ -31,7 +31,7 @@ const Defaults = (function() {
     const setDefault = function(key, value) {
         if (!key) return;
         value = value || '';
-        if (!objectNotEmpty(params)) params = Url.paramsHash();
+        if (isEmptyObject(params)) params = Url.paramsHash();
         if (params[key] !== value) {
             params[key] = value;
             // to increase speed, do not set values when form is still loading
@@ -43,7 +43,7 @@ const Defaults = (function() {
     };
 
     const removeDefault = function() {
-        if (!objectNotEmpty(params)) params = Url.paramsHash();
+        if (isEmptyObject(params)) params = Url.paramsHash();
         let isUpdated = false;
         for (let i = 0; i < arguments.length; i++) {
             if (params.hasOwnProperty(arguments[i])) {

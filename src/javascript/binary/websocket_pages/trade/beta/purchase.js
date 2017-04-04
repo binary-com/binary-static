@@ -1,5 +1,5 @@
 const Contract_Beta             = require('./contract').Contract_Beta;
-const WSTickDisplay_Beta        = require('./tick_trade').WSTickDisplay_Beta;
+const TickDisplay_Beta          = require('./tick_trade');
 const Symbols                   = require('../symbols').Symbols;
 const Tick                      = require('../tick').Tick;
 const localize                  = require('../../../base/localize').localize;
@@ -123,11 +123,11 @@ const Purchase_Beta = (function () {
                 button.setAttribute('contract_id', receipt.contract_id);
                 descr.show();
                 button.show();
-                $('#confirmation_message').find('.open_contract_detailsws').attr('contract_id', receipt.contract_id).removeClass('invisible');
+                $('#confirmation_message').find('.open_contract_details').attr('contract_id', receipt.contract_id).removeClass('invisible');
             } else {
                 descr.hide();
                 button.hide();
-                $('#confirmation_message').find('.open_contract_detailsws').addClass('invisible');
+                $('#confirmation_message').find('.open_contract_details').addClass('invisible');
             }
         }
 
@@ -157,7 +157,7 @@ const Purchase_Beta = (function () {
                 barrier = passthrough.barrier;
             }
 
-            WSTickDisplay_Beta.initialize({
+            TickDisplay_Beta.initialize({
                 symbol              : passthrough.symbol,
                 barrier             : barrier,
                 number_of_ticks     : passthrough.duration,
@@ -173,7 +173,7 @@ const Purchase_Beta = (function () {
                 width               : $('#tick_chart').width(),
                 is_trading_page     : true,
             });
-            WSTickDisplay_Beta.spots_list = {};
+            TickDisplay_Beta.spots_list = {};
         }
     };
 

@@ -72,7 +72,7 @@ const StatementUI = (() => {
 
         // create view button and append
         if (statement_data.action === 'Sell' || statement_data.action === 'Buy') {
-            const $view_button = $('<button/>', { class: 'button open_contract_detailsws', text: localize('View'), contract_id: statement_data.id });
+            const $view_button = $('<button/>', { class: 'button open_contract_details', text: localize('View'), contract_id: statement_data.id });
             $statement_row.children('.desc,.details').append($view_button);
         }
 
@@ -84,7 +84,7 @@ const StatementUI = (() => {
     };
 
     const errorMessage = (msg) => {
-        const $err = $('#statement-ws-container').find('#error-msg');
+        const $err = $('#statement-container').find('#error-msg');
         if (msg) {
             $err.removeClass('invisible').text(msg);
         } else {

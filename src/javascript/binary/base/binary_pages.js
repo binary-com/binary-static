@@ -1,6 +1,5 @@
 const LoggedInHandler = require('./logged_in');
 
-const Careers            = require('../static_pages/careers');
 const Charity            = require('../static_pages/charity');
 const Contact            = require('../static_pages/contact');
 const Endpoint           = require('../static_pages/endpoint');
@@ -20,8 +19,8 @@ const DepositWithdraw            = require('../websocket_pages/cashier/deposit_w
 const PaymentAgentList           = require('../websocket_pages/cashier/payment_agent_list');
 const PaymentAgentWithdraw       = require('../websocket_pages/cashier/payment_agent_withdraw');
 const MBTradePage                = require('../websocket_pages/mb_trade/mb_tradepage');
-const AssetIndexUI               = require('../websocket_pages/resources/asset_index/asset_indexws.ui');
-const MarketTimesUI              = require('../websocket_pages/resources/market_times/market_timesws.ui');
+const AssetIndexUI               = require('../websocket_pages/resources/asset_index/asset_index.ui');
+const TradingTimesUI             = require('../websocket_pages/resources/trading_times/trading_times.ui');
 const TradePage_Beta             = require('../websocket_pages/trade/beta/tradepage');
 const TradePage                  = require('../websocket_pages/trade/tradepage');
 const Authenticate               = require('../websocket_pages/user/account/authenticate');
@@ -37,7 +36,7 @@ const IPHistory                  = require('../websocket_pages/user/account/sett
 const Limits                     = require('../websocket_pages/user/account/settings/limits');
 const Settings                   = require('../websocket_pages/user/account/settings');
 const SelfExclusion              = require('../websocket_pages/user/account/settings/self_exclusion');
-const SettingsDetailsWS          = require('../websocket_pages/user/account/settings/settings_detailsws');
+const PersonalDetails            = require('../websocket_pages/user/account/settings/personal_details');
 const Statement                  = require('../websocket_pages/user/account/statement/statement.init');
 const TopUpVirtual               = require('../websocket_pages/user/account/top_up_virtual');
 const LostPassword               = require('../websocket_pages/user/lost_password');
@@ -59,13 +58,12 @@ const pages_config = {
     asset_indexws            : { module: AssetIndexUI },
     authenticate             : { module: Authenticate,               is_authenticated: true, only_real: true },
     authorised_appsws        : { module: AuthorisedApps,             is_authenticated: true },
-    careers                  : { module: Careers },
     cashier                  : { module: Cashier },
     cashier_passwordws       : { module: CashierPassword,            is_authenticated: true, only_real: true },
     change_passwordws        : { module: ChangePassword,             is_authenticated: true },
     charity                  : { module: Charity },
     contact                  : { module: Contact },
-    detailsws                : { module: SettingsDetailsWS,          is_authenticated: true },
+    detailsws                : { module: PersonalDetails,            is_authenticated: true },
     endpoint                 : { module: Endpoint },
     epg_forwardws            : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
     forwardws                : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
@@ -77,7 +75,7 @@ const pages_config = {
     logged_inws              : { module: LoggedInHandler },
     lost_passwordws          : { module: LostPassword,               not_authenticated: true },
     maltainvestws            : { module: FinancialAccOpening,        is_authenticated: true },
-    market_timesws           : { module: MarketTimesUI },
+    market_timesws           : { module: TradingTimesUI },
     metatrader               : { module: MetaTrader,                 is_authenticated: true },
     multi_barriers_trading   : { module: MBTradePage },
     payment_agent_listws     : { module: PaymentAgentList },
@@ -100,7 +98,6 @@ const pages_config = {
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
-    'careers-for-americans'  : { module: Careers },
     'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'get-started'            : { module: GetStarted },
     'get-started-jp'         : { module: GetStartedJP },

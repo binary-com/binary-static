@@ -1,7 +1,7 @@
 const getFormNameBarrierCategory = require('./common').getFormNameBarrierCategory;
 const getLanguage                = require('../../base/language').get;
 const localize                   = require('../../base/localize').localize;
-const objectNotEmpty             = require('../../base/utility').objectNotEmpty;
+const isEmptyObject              = require('../../base/utility').isEmptyObject;
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -165,7 +165,7 @@ const Contract = (function() {
             }
         });
 
-        if (!objectNotEmpty(tradeContractForms)) return null;
+        if (isEmptyObject(tradeContractForms)) return null;
 
         if (tradeContractForms.risefall || tradeContractForms.higherlower) {
             tradeContractForms.updown = localize('Up/Down');

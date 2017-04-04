@@ -1,6 +1,6 @@
 const State  = require('../../binary/base/storage').State;
 const Client = require('../../binary/base/client');
-const PortfolioWS = require('../../binary/websocket_pages/user/account/portfolio/portfolio.init');
+const PortfolioInit = require('../../binary/websocket_pages/user/account/portfolio/portfolio.init');
 
 const JapanPortfolio = (function() {
     let $portfolio,
@@ -24,7 +24,7 @@ const JapanPortfolio = (function() {
 
     function show() {
         if (isTradePage() && !isPortfolioActive) {
-            PortfolioWS.onLoad();
+            PortfolioInit.onLoad();
             isPortfolioActive = true;
         }
     }
@@ -35,7 +35,7 @@ const JapanPortfolio = (function() {
 
     function hide() {
         if (isTradePage() && isPortfolioActive) {
-            PortfolioWS.onUnload();
+            PortfolioInit.onUnload();
             isPortfolioActive = false;
             $portfolio = undefined;
         }

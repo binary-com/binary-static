@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-03-24 06:10+0000\n"
+"PO-Revision-Date: 2017-04-03 02:37+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/binary/static/zh_Hant/>\n"
 "Language: zh_tw\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.12\n"
+"X-Generator: Weblate 2.13-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」是由%1建立和維護的編程例程、議定書、工具和資源集。您可通過%1交易平台使用已經註冊的應用程式介面。"
@@ -529,9 +529,6 @@ msgstr "<strong>隨時交易</strong> - %1 全天候均可進行交易（包括�
 msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
 msgstr "<strong>佣金:</strong> 您將可收取交易處理的佣金費。"
 
-msgid "<strong>Duties and Responsibilities:</strong>"
-msgstr "<strong>職責:</strong>"
-
 msgid "<strong>Exchange Rate Risk</strong>: Exchange rates between foreign currencies can change rapidly due to a wide range of economic, political and other conditions, exposing you to risk of exchange rate losses in addition to the inherent risk of loss from trading the underlying investment product. If you deposit funds in a currency to trade Contracts denominated in a different currency, your gains or losses on the underlying investment therefore may be affected by changes in the exchange rate between the currencies."
 msgstr "<strong>兌換率風險</strong>:外匯兌換率可能會因為很多經濟、政治及其它因素而快速改變。您在進行標的投資產品交易時，除了隱藏性損失風險之外，還可能面臨兌換率損失風險。如果您以某一種貨幣存入資金，但以另一種貨幣進行合同交易計價，您的標的投資收益或損失可能會受到兩種貨幣間的兌換率變動的影響。"
 
@@ -574,14 +571,8 @@ msgstr "<strong>其它風險</strong>: 關於投資產品交易和外匯交易�
 msgid "<strong>Patented technology</strong> - Trade with the industry pioneer and holder of a patented pricing technology"
 msgstr "<strong>專利技術</strong> - 通過擁有受專利保護的報價技術的業內領先企業進行交易"
 
-msgid "<strong>Preferences:</strong>"
-msgstr "<strong>偏好設定:</strong>"
-
 msgid "<strong>Protect your profits</strong> - Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses"
 msgstr "<strong>盈利保護</strong> - 長期合約到期前售出交易，以保護您的盈利或將虧損降至最低"
-
-msgid "<strong>Requirements:</strong>"
-msgstr "<strong>需求:</strong>"
 
 msgid "<strong>Rise/Fall</strong> - Predict the market rising or falling from its current level."
 msgstr "<strong>上漲/下跌</strong> - 預測市場價格是否會從目前水平上漲或下跌。"
@@ -800,7 +791,7 @@ msgid "Acceptance"
 msgstr "接受"
 
 msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
-msgstr ""
+msgstr "隨時隨地在iOS或Android裝置上使用原設應用程式存取市場。"
 
 msgid "Access to Personal Data"
 msgstr "個人資料存取"
@@ -993,6 +984,9 @@ msgstr "保證金交易的所有產品有很高的風險，可能導致虧損，
 
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "所有時間均採用格林威治標準時間（GMT）。"
+
+msgid "All your deposits and withdrawals are processed by Binary.com within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
+msgstr "Binary.com將於24小時內處理您的所有存取款。但您的銀行或匯款服務商可能需要額外的處理時間。"
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "允許客戶以較少金額（通過本地貨幣）充值"
@@ -2113,9 +2107,6 @@ msgstr "費用 - 您的訂單執行費用主要由價差，即我們的標價和
 msgid "Costs and Charges"
 msgstr "成本和費用"
 
-msgid "Country Manager"
-msgstr "區域經理"
-
 msgid "Country of Residence"
 msgstr "居住國"
 
@@ -2302,9 +2293,6 @@ msgstr "通過銀行電匯、信用卡或電子現金錢包存款進入您的帳
 msgid "Deposit: %1 working day"
 msgstr "存款：%1工作日內"
 
-msgid "Deposit: %1 working days"
-msgstr "存款：%1個工作日內"
-
 msgid "Deposit: Instant"
 msgstr "存款：即時"
 
@@ -2435,7 +2423,7 @@ msgid "Download CSV"
 msgstr "下載CSV"
 
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
-msgstr ""
+msgstr "MT5是強大的多功能交易工具，備受百萬多名交易員的愛載，請下載到桌上型電腦或膝上型電腦上使用。"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "推動快速增長和業務發展，以支援公司的銷售和市場行銷目標"
@@ -2457,6 +2445,11 @@ msgstr "在我們的申請過程中，我們可能會向您索取關於您的背
 
 msgid "During the term of this Agreement, you grant us a royalty-free, non-exclusive, worldwide, irrevocable right, under all of your intellectual property rights, to:"
 msgstr "本協議有效期內，您將您所擁有的所有知識產權免版稅、非獨占、世界範圍、不可撤銷的權利授予我們："
+
+#, fuzzy
+#| msgid "<strong>Duties and Responsibilities:</strong>"
+msgid "Duties and Responsibilities:"
+msgstr "<strong>職責:</strong>"
 
 msgid "E-cash"
 msgstr "電子現金"
@@ -3178,6 +3171,9 @@ msgstr "選擇行業領軍企業"
 msgid "Goes Outside"
 msgstr "處於區間之外"
 
+msgid "Got questions? %1Contact us%2 for help."
+msgstr "有疑問? %1聯繫我們%2求助。"
+
 msgid "Governing Laws and Jurisdiction"
 msgstr "適用法律和司法管轄權"
 
@@ -3459,9 +3455,6 @@ msgstr "如果您無法按照本協定規定立即將拖欠我們的款項全額
 
 msgid "If you find any vulnerabilities in our <a target='_blank' href='%1'>open-source code</a>, feel free to submit a pull request on GitHub."
 msgstr "如您在我們的<a target='_blank' href='%1'>開源代碼</a>中發現任何漏洞，請立刻在GitHub提交引入請求。"
-
-msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
-msgstr "如有任何疑問，請前往<a href=\"mailto:%1\">%1</a>聯繫我們的客服團隊。"
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr "如果您已在同一市場持有多個未平倉頭寸，您在同一市場完成任何平倉交易將使其他未平倉頭寸按建立時間先進先出順序平倉。"
@@ -4768,9 +4761,6 @@ msgstr "市場行銷專員"
 msgid "Marketing Project Coordinator"
 msgstr "市場行銷項目協調員"
 
-msgid "Marketing Project Manager"
-msgstr "市場行銷項目經理"
-
 msgid "Marketing and Promotion"
 msgstr "營銷推廣"
 
@@ -5680,14 +5670,11 @@ msgstr "請選擇至少一個範圍"
 msgid "Please select the checkbox."
 msgstr "請選擇核取方塊。"
 
-msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
-msgstr "為證明您的身份及驗證您的帳號，請將以下文件傳送給我們:"
+msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
+msgstr "為證明您的身份及驗證您的帳號，請將以下文件傳送到%1 :"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "請指定您的優選實況調查間隔時間分鐘數"
-
-msgid "Please submit a valid %1."
-msgstr "請提交有效的 %1。"
 
 msgid "Please submit a valid verification token."
 msgstr "請提交有效的驗證權杖。"
@@ -5750,6 +5737,11 @@ msgid "Predict the direction<br />and purchase"
 msgstr "預測價格走向<br />並購入"
 
 msgid "Preferences"
+msgstr "偏好"
+
+#, fuzzy
+#| msgid "Preferences"
+msgid "Preferences:"
 msgstr "偏好"
 
 msgid "Premier binary options trading platform"
@@ -6091,6 +6083,9 @@ msgstr "表示您的投資組合中未平倉合約的最大數量。您投資組
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "表示任一指定交易日您可以買入的最大合約數量。"
 
+msgid "Requirements:"
+msgstr "要求:"
+
 msgid "Resale not offered"
 msgstr "不提供轉售"
 
@@ -6238,10 +6233,8 @@ msgstr "星期六"
 msgid "Scope and Intent"
 msgstr "範圍和目的"
 
-#, fuzzy
-#| msgid "B. Scope"
 msgid "Scopes"
-msgstr "二、範圍"
+msgstr "範圍"
 
 msgid "Score"
 msgstr "Score"
@@ -6606,7 +6599,7 @@ msgstr "止損單 &mdash; 當價格達到您指定的基準時對持倉頭寸執
 msgid "Stop Out Level"
 msgstr "強制平倉層次"
 
-msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully with or without your prior consent."
+msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr "強制平倉層次 &mdash; 保證金處於或低於此層次時您的持倉頭寸可以在經過您同意或未經您事先同意的情況下強制平倉。"
 
 msgid "Stop Profit Level"
@@ -7557,7 +7550,9 @@ msgstr "時代在變。我們增加了賠付金額，以便我們的客戶從盈
 msgid "Title"
 msgstr "職稱"
 
-msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
+#, fuzzy
+#| msgid "To apply, please submit your CV and a cover letter to <span id='hr_contact_eaddress'></span>."
+msgid "To apply, please submit your CV and a cover letter to %1."
 msgstr "如有意申請，請將您的履歷和求職信傳到<span id='hr_contact_eaddress'></span>。"
 
 msgid "To be considered for this mission critical leadership role, you'll need to demonstrate a passion for open source technologies and a desire to test your talents in a dynamic and challenging work environment."
@@ -7785,10 +7780,8 @@ msgstr "試試Binary Bot"
 msgid "Try MetaTrader 5"
 msgstr "體驗 MetaTrader 5"
 
-#, fuzzy
-#| msgid "Binary Next-Gen"
 msgid "Try Next-Gen"
-msgstr "Binary 下一代"
+msgstr "試用下一代"
 
 msgid "Try TradingView"
 msgstr "體驗TradingView"
@@ -7944,7 +7937,7 @@ msgid "Use the opportunity provided by our website to practice for free with our
 msgstr "利用我們網站提供的機會，可以免費通過虛擬帳戶進行交易嘗試，同時熟悉本網站的各種功能和規則。"
 
 msgid "Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required."
-msgstr ""
+msgstr "網絡平台可在Windows、MacOS、或 Linux 操作系統上使用，不需下載或安裝。"
 
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr "使用、執行，並顯示您的應用程式及其內容作為行銷、展示用途，並將您的應用程式提供給我們客戶使用。和    "
@@ -8483,9 +8476,6 @@ msgstr "取款從"
 msgid "Withdraw: %1 working day"
 msgstr "取款：%1 個工作日"
 
-msgid "Withdraw: %1 working days"
-msgstr "取款：%1 個工作日"
-
 msgid "Withdraw: Not applicable"
 msgstr "取款：不適用"
 
@@ -8831,9 +8821,6 @@ msgstr "您不可對任何年齡不滿 18 歲者進行市場行銷、廣告和�
 msgid "You should enter %1 characters."
 msgstr "您必須輸入%1個字元。"
 
-msgid "You should enter between %1 characters."
-msgstr "您最多只能輸入 %1 個字元。"
-
 msgid "You should not sign up to receive the margin trading services described in this Agreement unless you understand their nature and the associated risks."
 msgstr "除非您了解本協定所述的保證金交易服務的性質和相關風險， 您不會註冊接受此服務。"
 
@@ -9068,9 +9055,6 @@ msgstr "由於該人士在本網站的活動導致本公司遭受任何金錢、
 msgid "any restriction to its Clients from purchasing any contracts during certain hours."
 msgstr "對客戶在某段時間內買入任何合約的限制。"
 
-msgid "apostrophe"
-msgstr "單引號"
-
 msgid "b) The price at which your order will be executed;"
 msgstr "b）您的訂單執行價格;"
 
@@ -9079,9 +9063,6 @@ msgstr "二元期權、外匯、外匯交易、線上交易、金融交易、二
 
 msgid "c) The time at which your order will be executed; and"
 msgstr "c）您的訂單執行時間;"
-
-msgid "comma"
-msgstr "逗號"
 
 msgid "consolidating liquidity from several providers into a single stream of blended feed; and"
 msgstr "將數個供應商集合成單股混合輸入，以加強流動性; 和"
@@ -9116,9 +9097,6 @@ msgstr "小時"
 msgid "hours"
 msgstr "小時"
 
-msgid "hyphen"
-msgstr "連字號"
-
 msgid "iOS, Android"
 msgstr "iOS、Android"
 
@@ -9140,8 +9118,6 @@ msgstr "字母"
 msgid "login"
 msgstr "登入"
 
-#, fuzzy
-#| msgid "Logout"
 msgid "logout"
 msgstr "登出"
 
@@ -9189,12 +9165,6 @@ msgstr "網站的。"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "所有合約準確結算時間的頁面。其他網站可能會有不同的慣例（比如一些網站採用紐約時間4點或倫敦時間5點）。由於不同的收盤時間慣例，在本網站顯示的開盤、高、低或收盤價可能跟其他網站不一致。"
-
-msgid "password"
-msgstr "密碼"
-
-msgid "period"
-msgstr "週期"
 
 msgid "points"
 msgstr "點"
@@ -10357,6 +10327,306 @@ msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 h
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "{JAPAN ONLY}Summary of Specifications"
 
+msgid "{JAPAN ONLY}TIP_1"
+msgstr "{JAPAN ONLY}TIP_1"
+
+msgid "{JAPAN ONLY}TIP_10"
+msgstr "{JAPAN ONLY}TIP_10"
+
+msgid "{JAPAN ONLY}TIP_100"
+msgstr "{JAPAN ONLY}TIP_100"
+
+msgid "{JAPAN ONLY}TIP_11"
+msgstr "{JAPAN ONLY}TIP_11"
+
+msgid "{JAPAN ONLY}TIP_12"
+msgstr "{JAPAN ONLY}TIP_12"
+
+msgid "{JAPAN ONLY}TIP_13"
+msgstr "{JAPAN ONLY}TIP_13"
+
+msgid "{JAPAN ONLY}TIP_14"
+msgstr "{JAPAN ONLY}TIP_14"
+
+msgid "{JAPAN ONLY}TIP_15"
+msgstr "{JAPAN ONLY}TIP_15"
+
+msgid "{JAPAN ONLY}TIP_16"
+msgstr "{JAPAN ONLY}TIP_16"
+
+msgid "{JAPAN ONLY}TIP_17"
+msgstr "{JAPAN ONLY}TIP_17"
+
+msgid "{JAPAN ONLY}TIP_18"
+msgstr "{JAPAN ONLY}TIP_18"
+
+msgid "{JAPAN ONLY}TIP_19"
+msgstr "{JAPAN ONLY}TIP_19"
+
+msgid "{JAPAN ONLY}TIP_2"
+msgstr "{JAPAN ONLY}TIP_2"
+
+msgid "{JAPAN ONLY}TIP_20"
+msgstr "{JAPAN ONLY}TIP_20"
+
+msgid "{JAPAN ONLY}TIP_21"
+msgstr "{JAPAN ONLY}TIP_21"
+
+msgid "{JAPAN ONLY}TIP_22"
+msgstr "{JAPAN ONLY}TIP_22"
+
+msgid "{JAPAN ONLY}TIP_23"
+msgstr "{JAPAN ONLY}TIP_23"
+
+msgid "{JAPAN ONLY}TIP_24"
+msgstr "{JAPAN ONLY}TIP_24"
+
+msgid "{JAPAN ONLY}TIP_25"
+msgstr "{JAPAN ONLY}TIP_25"
+
+msgid "{JAPAN ONLY}TIP_26"
+msgstr "{JAPAN ONLY}TIP_26"
+
+msgid "{JAPAN ONLY}TIP_27"
+msgstr "{JAPAN ONLY}TIP_27"
+
+msgid "{JAPAN ONLY}TIP_28"
+msgstr "{JAPAN ONLY}TIP_28"
+
+msgid "{JAPAN ONLY}TIP_29"
+msgstr "{JAPAN ONLY}TIP_29"
+
+msgid "{JAPAN ONLY}TIP_3"
+msgstr "{JAPAN ONLY}TIP_3"
+
+msgid "{JAPAN ONLY}TIP_30"
+msgstr "{JAPAN ONLY}TIP_30"
+
+msgid "{JAPAN ONLY}TIP_31"
+msgstr "{JAPAN ONLY}TIP_31"
+
+msgid "{JAPAN ONLY}TIP_32"
+msgstr "{JAPAN ONLY}TIP_32"
+
+msgid "{JAPAN ONLY}TIP_33"
+msgstr "{JAPAN ONLY}TIP_33"
+
+msgid "{JAPAN ONLY}TIP_34"
+msgstr "{JAPAN ONLY}TIP_34"
+
+msgid "{JAPAN ONLY}TIP_35"
+msgstr "{JAPAN ONLY}TIP_35"
+
+msgid "{JAPAN ONLY}TIP_36"
+msgstr "{JAPAN ONLY}TIP_36"
+
+msgid "{JAPAN ONLY}TIP_37"
+msgstr "{JAPAN ONLY}TIP_37"
+
+msgid "{JAPAN ONLY}TIP_38"
+msgstr "{JAPAN ONLY}TIP_38"
+
+msgid "{JAPAN ONLY}TIP_39"
+msgstr "{JAPAN ONLY}TIP_39"
+
+msgid "{JAPAN ONLY}TIP_4"
+msgstr "{JAPAN ONLY}TIP_4"
+
+msgid "{JAPAN ONLY}TIP_40"
+msgstr "{JAPAN ONLY}TIP_40"
+
+msgid "{JAPAN ONLY}TIP_41"
+msgstr "{JAPAN ONLY}TIP_41"
+
+msgid "{JAPAN ONLY}TIP_42"
+msgstr "{JAPAN ONLY}TIP_42"
+
+msgid "{JAPAN ONLY}TIP_43"
+msgstr "{JAPAN ONLY}TIP_43"
+
+msgid "{JAPAN ONLY}TIP_44"
+msgstr "{JAPAN ONLY}TIP_44"
+
+msgid "{JAPAN ONLY}TIP_45"
+msgstr "{JAPAN ONLY}TIP_45"
+
+msgid "{JAPAN ONLY}TIP_46"
+msgstr "{JAPAN ONLY}TIP_46"
+
+msgid "{JAPAN ONLY}TIP_47"
+msgstr "{JAPAN ONLY}TIP_47"
+
+msgid "{JAPAN ONLY}TIP_48"
+msgstr "{JAPAN ONLY}TIP_48"
+
+msgid "{JAPAN ONLY}TIP_49"
+msgstr "{JAPAN ONLY}TIP_49"
+
+msgid "{JAPAN ONLY}TIP_5"
+msgstr "{JAPAN ONLY}TIP_5"
+
+msgid "{JAPAN ONLY}TIP_50"
+msgstr "{JAPAN ONLY}TIP_50"
+
+msgid "{JAPAN ONLY}TIP_51"
+msgstr "{JAPAN ONLY}TIP_51"
+
+msgid "{JAPAN ONLY}TIP_52"
+msgstr "{JAPAN ONLY}TIP_52"
+
+msgid "{JAPAN ONLY}TIP_53"
+msgstr "{JAPAN ONLY}TIP_53"
+
+msgid "{JAPAN ONLY}TIP_54"
+msgstr "{JAPAN ONLY}TIP_54"
+
+msgid "{JAPAN ONLY}TIP_55"
+msgstr "{JAPAN ONLY}TIP_55"
+
+msgid "{JAPAN ONLY}TIP_56"
+msgstr "{JAPAN ONLY}TIP_56"
+
+msgid "{JAPAN ONLY}TIP_57"
+msgstr "{JAPAN ONLY}TIP_57"
+
+msgid "{JAPAN ONLY}TIP_58"
+msgstr "{JAPAN ONLY}TIP_58"
+
+msgid "{JAPAN ONLY}TIP_59"
+msgstr "{JAPAN ONLY}TIP_59"
+
+msgid "{JAPAN ONLY}TIP_6"
+msgstr "{JAPAN ONLY}TIP_6"
+
+msgid "{JAPAN ONLY}TIP_60"
+msgstr "{JAPAN ONLY}TIP_60"
+
+msgid "{JAPAN ONLY}TIP_61"
+msgstr "{JAPAN ONLY}TIP_61"
+
+msgid "{JAPAN ONLY}TIP_62"
+msgstr "{JAPAN ONLY}TIP_62"
+
+msgid "{JAPAN ONLY}TIP_63"
+msgstr "{JAPAN ONLY}TIP_63"
+
+msgid "{JAPAN ONLY}TIP_64"
+msgstr "{JAPAN ONLY}TIP_64"
+
+msgid "{JAPAN ONLY}TIP_65"
+msgstr "{JAPAN ONLY}TIP_65"
+
+msgid "{JAPAN ONLY}TIP_66"
+msgstr "{JAPAN ONLY}TIP_66"
+
+msgid "{JAPAN ONLY}TIP_67"
+msgstr "{JAPAN ONLY}TIP_67"
+
+msgid "{JAPAN ONLY}TIP_68"
+msgstr "{JAPAN ONLY}TIP_68"
+
+msgid "{JAPAN ONLY}TIP_69"
+msgstr "{JAPAN ONLY}TIP_69"
+
+msgid "{JAPAN ONLY}TIP_7"
+msgstr "{JAPAN ONLY}TIP_7"
+
+msgid "{JAPAN ONLY}TIP_70"
+msgstr "{JAPAN ONLY}TIP_70"
+
+msgid "{JAPAN ONLY}TIP_71"
+msgstr "{JAPAN ONLY}TIP_71"
+
+msgid "{JAPAN ONLY}TIP_72"
+msgstr "{JAPAN ONLY}TIP_72"
+
+msgid "{JAPAN ONLY}TIP_73"
+msgstr "{JAPAN ONLY}TIP_73"
+
+msgid "{JAPAN ONLY}TIP_74"
+msgstr "{JAPAN ONLY}TIP_74"
+
+msgid "{JAPAN ONLY}TIP_75"
+msgstr "{JAPAN ONLY}TIP_75"
+
+msgid "{JAPAN ONLY}TIP_76"
+msgstr "{JAPAN ONLY}TIP_76"
+
+msgid "{JAPAN ONLY}TIP_77"
+msgstr "{JAPAN ONLY}TIP_77"
+
+msgid "{JAPAN ONLY}TIP_78"
+msgstr "{JAPAN ONLY}TIP_78"
+
+msgid "{JAPAN ONLY}TIP_79"
+msgstr "{JAPAN ONLY}TIP_79"
+
+msgid "{JAPAN ONLY}TIP_8"
+msgstr "{JAPAN ONLY}TIP_8"
+
+msgid "{JAPAN ONLY}TIP_80"
+msgstr "{JAPAN ONLY}TIP_80"
+
+msgid "{JAPAN ONLY}TIP_81"
+msgstr "{JAPAN ONLY}TIP_81"
+
+msgid "{JAPAN ONLY}TIP_82"
+msgstr "{JAPAN ONLY}TIP_82"
+
+msgid "{JAPAN ONLY}TIP_83"
+msgstr "{JAPAN ONLY}TIP_83"
+
+msgid "{JAPAN ONLY}TIP_84"
+msgstr "{JAPAN ONLY}TIP_84"
+
+msgid "{JAPAN ONLY}TIP_85"
+msgstr "{JAPAN ONLY}TIP_85"
+
+msgid "{JAPAN ONLY}TIP_86"
+msgstr "{JAPAN ONLY}TIP_86"
+
+msgid "{JAPAN ONLY}TIP_87"
+msgstr "{JAPAN ONLY}TIP_87"
+
+msgid "{JAPAN ONLY}TIP_88"
+msgstr "{JAPAN ONLY}TIP_88"
+
+msgid "{JAPAN ONLY}TIP_89"
+msgstr "{JAPAN ONLY}TIP_89"
+
+msgid "{JAPAN ONLY}TIP_9"
+msgstr "{JAPAN ONLY}TIP_9"
+
+msgid "{JAPAN ONLY}TIP_90"
+msgstr "{JAPAN ONLY}TIP_90"
+
+msgid "{JAPAN ONLY}TIP_91"
+msgstr "{JAPAN ONLY}TIP_91"
+
+msgid "{JAPAN ONLY}TIP_92"
+msgstr "{JAPAN ONLY}TIP_92"
+
+msgid "{JAPAN ONLY}TIP_93"
+msgstr "{JAPAN ONLY}TIP_93"
+
+msgid "{JAPAN ONLY}TIP_94"
+msgstr "{JAPAN ONLY}TIP_94"
+
+msgid "{JAPAN ONLY}TIP_95"
+msgstr "{JAPAN ONLY}TIP_95"
+
+msgid "{JAPAN ONLY}TIP_96"
+msgstr "{JAPAN ONLY}TIP_96"
+
+msgid "{JAPAN ONLY}TIP_97"
+msgstr "{JAPAN ONLY}TIP_97"
+
+msgid "{JAPAN ONLY}TIP_98"
+msgstr "{JAPAN ONLY}TIP_98"
+
+msgid "{JAPAN ONLY}TIP_99"
+msgstr "{JAPAN ONLY}TIP_99"
+
 msgid "{JAPAN ONLY}Take knowledge test"
 msgstr "{JAPAN ONLY}Take knowledge test"
 
@@ -10641,6 +10911,48 @@ msgstr "條款和條件審批"
 
 msgid "Account Limits"
 msgstr "帳戶限額"
+
+#~ msgid "<strong>Preferences:</strong>"
+#~ msgstr "<strong>偏好設定:</strong>"
+
+#~ msgid "<strong>Requirements:</strong>"
+#~ msgstr "<strong>需求:</strong>"
+
+#~ msgid "Country Manager"
+#~ msgstr "區域經理"
+
+#~ msgid "Marketing Project Manager"
+#~ msgstr "市場行銷項目經理"
+
+#~ msgid "Deposit: %1 working days"
+#~ msgstr "存款：%1個工作日內"
+
+#~ msgid "If you have any questions, kindly contact our Customer Support team at <a href=\"mailto:%1\">%1</a>."
+#~ msgstr "如有任何疑問，請前往<a href=\"mailto:%1\">%1</a>聯繫我們的客服團隊。"
+
+#~ msgid "Withdraw: %1 working days"
+#~ msgstr "取款：%1 個工作日"
+
+#~ msgid "Please submit a valid %1."
+#~ msgstr "請提交有效的 %1。"
+
+#~ msgid "You should enter between %1 characters."
+#~ msgstr "您最多只能輸入 %1 個字元。"
+
+#~ msgid "apostrophe"
+#~ msgstr "單引號"
+
+#~ msgid "comma"
+#~ msgstr "逗號"
+
+#~ msgid "hyphen"
+#~ msgstr "連字號"
+
+#~ msgid "password"
+#~ msgstr "密碼"
+
+#~ msgid "period"
+#~ msgstr "週期"
 
 #, fuzzy
 #~| msgid "Affiliate Manager"
@@ -11517,9 +11829,6 @@ msgstr "帳戶限額"
 #~ msgid "ticks"
 #~ msgstr "跳動點"
 
-#~ msgid "{JAPAN ONLY},000"
-#~ msgstr "{JAPAN ONLY},000"
-
 #~ msgid "{JAPAN ONLY}END-IN/END-OUT"
 #~ msgstr "{JAPAN ONLY}END-IN/END-OUT"
 
@@ -11558,9 +11867,6 @@ msgstr "帳戶限額"
 
 #~ msgid "{JAPAN ONLY}Trading Period"
 #~ msgstr "{JAPAN ONLY}Trading Guide"
-
-#~ msgid "{JAPAN ONLY}¥"
-#~ msgstr "{JAPAN ONLY}¥"
 
 #~ msgid "Benefits of Binary Trading"
 #~ msgstr "二元期權交易的優點"
@@ -17159,9 +17465,6 @@ msgstr "帳戶限額"
 
 #~ msgid "Requirements"
 #~ msgstr "要求"
-
-#~ msgid "Requirements:"
-#~ msgstr "要求:"
 
 #~ msgid "Standard expiry"
 #~ msgstr "標準到期"

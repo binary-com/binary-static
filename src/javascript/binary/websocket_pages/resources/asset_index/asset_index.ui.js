@@ -1,4 +1,4 @@
-const AssetIndex             = require('../asset_indexws');
+const AssetIndex             = require('../asset_index');
 const BinaryPjax             = require('../../../base/binary_pjax');
 const State                  = require('../../../base/storage').State;
 const showLoadingImage       = require('../../../base/utility').showLoadingImage;

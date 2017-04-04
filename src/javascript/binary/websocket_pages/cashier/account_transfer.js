@@ -12,6 +12,11 @@ const AccountTransfer = (() => {
         $transfer;
 
     const populateAccounts = (response) => {
+        if (response.error) {
+            $('#error_message').find('p').text(response.error.message).end()
+                .removeClass(hidden_class);
+            return;
+        }
         accounts = response.accounts;
         const $form = $(form_id);
         $transfer = $form.find('#transfer');

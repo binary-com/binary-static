@@ -1,4 +1,4 @@
-#applications-ws-container {
+#applications-container {
     table {
         td, th {
             text-align: center !important;
@@ -12,7 +12,7 @@
 }
 
 @media screen and (max-width: 480px) {
-    #applications-ws-container {
+    #applications-container {
         table td, table th {
             font-size: 80%;
         }

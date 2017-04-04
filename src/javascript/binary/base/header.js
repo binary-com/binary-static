@@ -5,7 +5,7 @@ const localize            = require('./localize').localize;
 const Login               = require('./login');
 const State               = require('./storage').State;
 const urlFor              = require('./url').urlFor;
-const objectNotEmpty      = require('./utility').objectNotEmpty;
+const isEmptyObject       = require('./utility').isEmptyObject;
 const checkClientsCountry = require('../common_functions/country_base').checkClientsCountry;
 const jpClient            = require('../common_functions/country_base').jpClient;
 const MetaTrader          = require('../websocket_pages/user/metatrader/metatrader');
@@ -110,8 +110,6 @@ const Header = (() => {
             const $upgrade_msg = $('.upgrademessage');
             const hidden_class  = 'invisible';
 
-            const hideUpgrade = () => { $upgrade_msg.addClass(hidden_class); };
-
             const showUpgrade = (url, msg) => {
                 $upgrade_msg.removeClass(hidden_class)
                     .find('a').removeClass(hidden_class)
@@ -153,7 +151,7 @@ const Header = (() => {
                         showUpgrade('new_account/realws', 'Upgrade to a Real Account');
                     }
                 } else {
-                    hideUpgrade();
+                    $upgrade_msg.find('a').addClass(hidden_class).html('');
                 }
             } else {
                 let show_financial = false;
@@ -165,7 +163,7 @@ const Header = (() => {
                     $('#virtual-text').parent().addClass('invisible');
                     showUpgrade('new_account/maltainvestws', 'Open a Financial Account');
                 } else {
-                    hideUpgrade();
+                    $upgrade_msg.addClass(hidden_class);
                 }
             }
         });
@@ -189,7 +187,7 @@ const Header = (() => {
 
             const riskAssessment = () => {
                 if (get_account_status.risk_classification === 'high') {
-                    return !objectNotEmpty(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
+                    return isEmptyObject(State.get(['response', 'get_financial_assessment', 'get_financial_assessment']));
                 }
                 return false;
             };

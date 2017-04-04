@@ -8,7 +8,7 @@ const Purchase                  = require('./purchase').Purchase;
 const StartDates                = require('./starttime').StartDates;
 const Symbols                   = require('./symbols').Symbols;
 const Tick                      = require('./tick').Tick;
-const WSTickDisplay             = require('./tick_trade').WSTickDisplay;
+const TickDisplay               = require('./tick_trade');
 const State                     = require('../../base/storage').State;
 const displayUnderlyings        = require('./common').displayUnderlyings;
 const hidePriceOverlay          = require('./common').hidePriceOverlay;
@@ -301,7 +301,7 @@ function processTick(tick) {
         if (digit_info && tick.tick) {
             digit_info.update_chart(tick);
         }
-        WSTickDisplay.updateChart(tick);
+        TickDisplay.updateChart(tick);
         Purchase.update_spot_list();
         if (!Barriers.isBarrierUpdated()) {
             Barriers.display();

@@ -1,6 +1,6 @@
 window._trackJs = {
-    onError: function(payload) {
-        const itemExistInList = function(item, list) {
+    onError: (payload) => {
+        const itemExistInList = (item, list) => {
             for (let i = 0; i < list.length; i++) {
                 if (item.indexOf(list[i]) > -1) {
                     return true;
@@ -27,10 +27,10 @@ window._trackJs = {
             return false;
         }
 
-        payload.network = payload.network.filter(function(item) {
+        payload.network = payload.network.filter(item => (
             // ignore random errors from Intercom
-            return !(item.statusCode === 403 && payload.message.indexOf('intercom') > -1);
-        });
+            !(item.statusCode === 403 && payload.message.indexOf('intercom') > -1)
+        ));
 
         return true;
     },

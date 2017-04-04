@@ -229,7 +229,7 @@
                                             </div>
                                             <div class="gr-8 gr-12-m gr-no-gutter" id="contract_purchase_description_section">
                                                 <div id="contract_purchase_descr"></div>
-                                                <button id="contract_purchase_button" class="button open_contract_detailsws">[% l('View Details') %]</button>
+                                                <button id="contract_purchase_button" class="button open_contract_details">[% l('View Details') %]</button>
                                                 <div id="contract_purchase_spots">
                                                     <div id="current_tick_number"></div>
                                                     <div id="current_tick_spot"></div>

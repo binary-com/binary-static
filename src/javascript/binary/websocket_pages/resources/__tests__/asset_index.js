@@ -1,4 +1,4 @@
-const asset_index = require('../asset_indexws');
+const asset_index = require('../asset_index');
 const { api, expect } = require('../../../common_functions/tests');
 
 describe('Asset Index', function() {

@@ -1,4 +1,4 @@
-const objectNotEmpty = require('../../base/utility').objectNotEmpty;
+const isEmptyObject = require('../../base/utility').isEmptyObject;
 
 /*
  * Handles trading page default values
@@ -19,7 +19,7 @@ const MBDefaults = (function() {
     };
 
     const loadParams = function() {
-        if (!objectNotEmpty(params)) params = JSON.parse(localStorage.getItem('mb_trading')) || {};
+        if (isEmptyObject(params)) params = JSON.parse(localStorage.getItem('mb_trading')) || {};
     };
 
     const saveParams = function() {

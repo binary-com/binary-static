@@ -7,7 +7,7 @@ const Client             = require('../../base/client');
 const getLanguage        = require('../../base/language').get;
 const localize           = require('../../base/localize').localize;
 const urlFor             = require('../../base/url').urlFor;
-const objectNotEmpty     = require('../../base/utility').objectNotEmpty;
+const isEmptyObject      = require('../../base/utility').isEmptyObject;
 const jpClient           = require('../../common_functions/country_base').jpClient;
 const formatMoney        = require('../../common_functions/currency_to_symbol').formatMoney;
 const addComma           = require('../../common_functions/string_util').addComma;
@@ -172,7 +172,7 @@ function displayMarkets(id, elements, selected) {
         option.appendChild(content);
         fragment.appendChild(option);
 
-        if (elements[key].submarkets && objectNotEmpty(elements[key].submarkets)) {
+        if (elements[key].submarkets && !isEmptyObject(elements[key].submarkets)) {
             const keys2 = Object.keys(elements[key].submarkets).sort(marketSort);
             for (let j = 0; j < keys2.length; j++) {
                 const key2 = keys2[j];
@@ -221,7 +221,7 @@ function displayUnderlyings(id, elements, selected) {
         target.removeChild(target.firstChild);
     }
 
-    if (objectNotEmpty(elements)) {
+    if (!isEmptyObject(elements)) {
         target.appendChild(generateUnderlyingOptions(elements, selected));
     }
 }

@@ -1,5 +1,5 @@
 const Portfolio           = require('../portfolio').Portfolio;
-const ViewPopupWS         = require('../../view_popup/view_popupws');
+const ViewPopup           = require('../../view_popup/view_popup');
 const Client              = require('../../../../base/client');
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
 const localize            = require('../../../../base/localize').localize;
@@ -10,7 +10,7 @@ const jpClient            = require('../../../../common_functions/country_base')
 const formatMoney         = require('../../../../common_functions/currency_to_symbol').formatMoney;
 const GetAppDetails       = require('../../../../common_functions/get_app_details');
 
-const PortfolioWS = (function() {
+const PortfolioInit = (function() {
     'use strict';
 
     let values,
@@ -42,7 +42,7 @@ const PortfolioWS = (function() {
         // Display ViewPopup according to contract_id in query string
         const contract_id = urlParam('contract_id');
         if (contract_id) {
-            ViewPopupWS.init($('<div />', { contract_id: contract_id }).get(0));
+            ViewPopup.init($('<div />', { contract_id: contract_id }).get(0));
         }
     };
 
@@ -59,7 +59,7 @@ const PortfolioWS = (function() {
                 '<td class="details">' + longCode + '</td>' +
                 '<td class="purchase"><strong>' + formatMoney(data.currency, data.buy_price) + '</strong></td>' +
                 '<td class="indicative"><strong class="indicative_price">--.--</strong></td>' +
-                '<td class="button"><button class="button open_contract_detailsws nowrap" contract_id="' + data.contract_id + '">' + localize('View') + '</button></td>' +
+                '<td class="button"><button class="button open_contract_details nowrap" contract_id="' + data.contract_id + '">' + localize('View') + '</button></td>' +
                 '</tr>' +
                 '<tr class="tr-desc ' + new_class + ' ' + data.contract_id + '">' +
                 '<td colspan="6">' + longCode + '</td>' +
@@ -212,25 +212,25 @@ const PortfolioWS = (function() {
 
                     switch (msg_type) {
                         case 'portfolio':
-                            PortfolioWS.updatePortfolio(response);
+                            PortfolioInit.updatePortfolio(response);
                             break;
                         case 'transaction':
-                            PortfolioWS.transactionResponseHandler(response);
+                            PortfolioInit.transactionResponseHandler(response);
                             break;
                         case 'proposal_open_contract':
-                            PortfolioWS.updateIndicative(response);
+                            PortfolioInit.updateIndicative(response);
                             break;
                         case 'oauth_apps':
-                            PortfolioWS.updateOAuthApps(response);
+                            PortfolioInit.updateOAuthApps(response);
                             break;
                         default:
-                            // msg_type is not what PortfolioWS handles, so ignore it.
+                            // msg_type is not what PortfolioInit handles, so ignore it.
                     }
                 },
             });
         }
-        PortfolioWS.init();
-        ViewPopupWS.viewButtonOnClick('#portfolio-table');
+        PortfolioInit.init();
+        ViewPopup.viewButtonOnClick('#portfolio-table');
     };
 
     const onUnload = function() {
@@ -253,4 +253,4 @@ const PortfolioWS = (function() {
     };
 })();
 
-module.exports = PortfolioWS;
+module.exports = PortfolioInit;

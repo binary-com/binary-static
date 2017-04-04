@@ -9,7 +9,7 @@ const localize                  = require('../../../base/localize').localize;
 const Highcharts                = require('highcharts');
 require('highcharts/modules/exporting')(Highcharts);
 
-const TickDisplay_Beta = (function() {
+const TickDisplayClass_Beta = (function() {
     return {
         initialize: function(data) {
             const $self = this;
@@ -338,24 +338,24 @@ const TickDisplay_Beta = (function() {
     };
 })();
 
-const WSTickDisplay_Beta = Object.create(TickDisplay_Beta);
-WSTickDisplay_Beta.plot = function() {
+const TickDisplay_Beta = Object.create(TickDisplayClass_Beta);
+TickDisplay_Beta.plot = function() {
     const $self = this;
     $self.contract_start_moment = moment($self.contract_start_ms).utc();
     $self.counter = 0;
     $self.applicable_ticks = [];
 };
-WSTickDisplay_Beta.update_ui = function(final_price, pnl, contract_status) {
+TickDisplay_Beta.update_ui = function(final_price, pnl, contract_status) {
     updatePurchaseStatus_Beta(final_price, final_price - pnl, contract_status);
 };
-WSTickDisplay_Beta.socketSend = function(req) {
+TickDisplay_Beta.socketSend = function(req) {
     if (!req.hasOwnProperty('passthrough')) {
         req.passthrough = {};
     }
-    req.passthrough.dispatch_to = 'ViewTickDisplayWS';
+    req.passthrough.dispatch_to = 'ViewTickDisplay';
     BinarySocket.send(req);
 };
-WSTickDisplay_Beta.dispatch = function(data) {
+TickDisplay_Beta.dispatch = function(data) {
     const $self = this;
     const chart = document.getElementById('tick_chart');
 
@@ -364,7 +364,7 @@ WSTickDisplay_Beta.dispatch = function(data) {
     }
 
     if (window.subscribe && data.tick && document.getElementById('sell_content_wrapper')) {
-        if (data.echo_req.hasOwnProperty('passthrough') && data.echo_req.passthrough.dispatch_to === 'ViewChartWS') return;
+        if (data.echo_req.hasOwnProperty('passthrough') && data.echo_req.passthrough.dispatch_to === 'ViewChart') return;
         window.responseID = data.tick.id;
         ViewPopupUI.storeSubscriptionID(window.responseID);
     }
@@ -384,7 +384,7 @@ WSTickDisplay_Beta.dispatch = function(data) {
             }
         }
         if (!window.tick_init || window.tick_init === '') {
-            WSTickDisplay_Beta.initialize({
+            TickDisplay_Beta.initialize({
                 symbol              : window.tick_underlying,
                 number_of_ticks     : window.tick_count,
                 contract_category   : ((/asian/i).test(window.tick_shortcode) ? 'asian' : (/digit/i).test(window.tick_shortcode) ? 'digits' : 'callput'),
@@ -396,7 +396,7 @@ WSTickDisplay_Beta.dispatch = function(data) {
                 contract_sentiment  : window.contract_type === 'CALL' || window.contract_type === 'ASIANU' ? 'up' : 'down',
                 show_contract_result: 0,
             });
-            WSTickDisplay_Beta.spots_list = {};
+            TickDisplay_Beta.spots_list = {};
             window.tick_init = 'initialized';
         }
     }
@@ -466,7 +466,7 @@ WSTickDisplay_Beta.dispatch = function(data) {
         }
     }
 };
-WSTickDisplay_Beta.updateChart = function(data, contract) {
+TickDisplay_Beta.updateChart = function(data, contract) {
     window.subscribe = 'false';
     if (contract) {
         window.tick_underlying = contract.underlying;
@@ -489,9 +489,9 @@ WSTickDisplay_Beta.updateChart = function(data, contract) {
         } else {
             request.end = contract.date_expiry;
         }
-        WSTickDisplay_Beta.socketSend(request);
+        TickDisplay_Beta.socketSend(request);
     } else {
-        WSTickDisplay_Beta.dispatch(data);
+        TickDisplay_Beta.dispatch(data);
     }
 };
 
@@ -518,6 +518,4 @@ Highcharts.wrap(Highcharts.Tooltip.prototype, 'refresh', function (proceed) {
     }
 });
 
-module.exports = {
-    WSTickDisplay_Beta: WSTickDisplay_Beta,
-};
+module.exports = TickDisplay_Beta;

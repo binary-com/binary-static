@@ -3,7 +3,7 @@ const GTM                = require('./gtm');
 const getLanguage        = require('./language').get;
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 const urlFor             = require('./url').urlFor;
-const objectNotEmpty     = require('./utility').objectNotEmpty;
+const isEmptyObject      = require('./utility').isEmptyObject;
 const Cookies            = require('../../lib/js-cookie');
 
 const LoggedInHandler = (() => {
@@ -69,7 +69,7 @@ const LoggedInHandler = (() => {
                 tokens[loginid] = token;
             }
         }
-        if (objectNotEmpty(tokens)) {
+        if (!isEmptyObject(tokens)) {
             Client.set('tokens', JSON.stringify(tokens));
         }
         return tokens;

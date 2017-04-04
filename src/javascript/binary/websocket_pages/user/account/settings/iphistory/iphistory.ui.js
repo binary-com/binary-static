@@ -6,7 +6,7 @@ const localize    = require('../../../../../base/localize').localize;
 const IPHistoryUI = (() => {
     'use strict';
 
-    const container_selector = '#login_history-ws-container';
+    const container_selector = '#login-history-container';
     const no_messages_error  = 'Your account has no Login/Logout activity.';
 
     const init = () => {

@@ -1,5 +1,5 @@
 const ProfitTableUI        = require('./profit_table.ui');
-const ViewPopupWS          = require('../../view_popup/view_popupws');
+const ViewPopup            = require('../../view_popup/view_popup');
 const localize             = require('../../../../base/localize').localize;
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const addTooltip           = require('../../../../common_functions/get_app_details').addTooltip;
@@ -58,7 +58,7 @@ const ProfitTableInit = (() => {
         }
 
         if (!tableExist()) {
-            ProfitTableUI.createEmptyTable().appendTo('#profit-table-ws-container');
+            ProfitTableUI.createEmptyTable().appendTo('#profit-table-container');
             ProfitTableUI.updateProfitTable(getNextChunk());
 
             // Show a message when the table is empty
@@ -121,7 +121,7 @@ const ProfitTableInit = (() => {
         });
         getNextBatchTransactions();
         onScrollLoad();
-        ViewPopupWS.viewButtonOnClick('#profit-table-ws-container');
+        ViewPopup.viewButtonOnClick('#profit-table-container');
     };
 
     return {

@@ -4,18 +4,16 @@
             <img class="responsive" src="[% request.url_for('images/pages/contact/contact-icon.svg') %]"/>
         </div>
         <div class="gr-10 gr-12-m gr-padding-10 gr-parent">
-            <h1>
-                [% l("Contact us") %]
-            </h1>
+            <h1>[% l("Contact us") %]</h1>
             <div class="gr-row">
                 <div class="gr-6 gr-12-t gr-12-p gr-12-m">
                     <div class="gr-padding-10 hidden ja-show-block gr-parent">
                         [% l("JAPAN ONLY CONTACT TEXT") %]
                     </div>
                     <div class="gr-padding-10 ja-hide gr-parent">
-                        <span class="no-para-margin gr-row">
+                        <div class="no-para-margin gr-row">
                             <div class="gr-4 center-align">
-                                <label>[% l("Telephone:") %]</label>
+                                <label for="cs_telephone_number">[% l("Telephone:") %]</label>
                             </div>
                             <div class="gr-7 gr-no-gutter">
                                 <select id="cs_telephone_number">
@@ -45,7 +43,7 @@
                                     </option>
                                 </select>
                             </div>
-                        </span>
+                        </div>
                         <span class="gr-8 gr-prefix-4 gr-12-t gr-12-p gr-padding-10 gr-12-m" id="display_cs_telephone">
                             [% "+44 (0) 1666 800042" %]
                             <br />
@@ -61,17 +59,13 @@
                     <div class="gr-padding-10 gr-parent">
                         <span class="gr-row">
                             <label class="gr-4">[% l("Email: ") %]</label>
-                            <label class="gr-7" id="cs_contact_eaddress"></label>
+                            <label class="gr-7">[% "<a href='mailto:%' rel='nofollow'>%</a>" | replace('%', 'support@binary.com') %]</label>
                         </span>
                     </div>
                     <div class="gr-padding-10">
                         <div class="gr-row gr-parent ja-hide" id="live-chat-container">
-                            <label class="gr-4 center-align">
-                                [% l("Live chat:") %]
-                            </label>
-                            <div class="gr-8">
-                                <span id="live-chat-icon"></span>
-                            </div>
+                            <label class="gr-4 center-align">[% l("Live chat:") %]</label>
+                            <div class="gr-8"><span id="live-chat-icon"></span></div>
                         </div>
                     </div>
                 </div>
@@ -80,9 +74,7 @@
     </div>
     <div class="gr-padding-30">
         <div class="gr-padding-20 center-text gr-parent">
-            <h1>
-                [% l("Company addresses") %]
-            </h1>
+            <h1>[% l("Company addresses") %]</h1>
         </div>
         <div class="gr-row">
             <div class="gr-4 gr-12-p gr-12-m">
