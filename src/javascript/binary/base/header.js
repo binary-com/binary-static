@@ -183,7 +183,8 @@ const Header = (() => {
     const displayAccountStatus = () => {
         BinarySocket.wait('authorize').then(() => {
             let get_account_status,
-                status;
+                status,
+                should_authenticate = false;
 
             const riskAssessment = () => {
                 if (get_account_status.risk_classification === 'high') {
@@ -194,23 +195,24 @@ const Header = (() => {
 
             const messages = {
                 authenticate: () => localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.',
-                    ['<a href="' + urlFor('user/authenticate') + '">', '</a>']),
-                financial_limit: () => localize('Please set [_1]self exclusion[_2] 30-day turnover limit.',
-                    ['<a href="' + urlFor('user/security/self_exclusionws') + '#max_30day_turnover">', '</a>']),
+                    [`<a href="${urlFor('user/authenticate')}">`, '</a>']),
+                financial_limit: () => localize('Please set [_1]Self Exclusion 30-day turnover limit[_2] to lift your deposit limits',
+                    [`<a href="${urlFor('user/security/self_exclusionws')}#max_30day_turnover">`, '</a>']),
                 residence: () => localize('Please set [_1]country of residence[_2] before upgrading to a real-money account.',
-                    ['<a href="' + urlFor('user/settings/detailsws') + '">', '</a>']),
+                    [`<a href="${urlFor('user/settings/detailsws')}">`, '</a>']),
                 risk: () => localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',
-                    ['<a href="' + urlFor('user/settings/assessmentws') + '">', '</a>']),
+                    [`<a href="${urlFor('user/settings/assessmentws')}">`, '</a>']),
                 tax: () => localize('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',
-                    ['<a href="' + urlFor('user/settings/detailsws') + '">', '</a>']),
+                    [`<a href="${urlFor('user/settings/detailsws')}">`, '</a>']),
                 tnc: () => localize('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',
-                    ['<a href="' + urlFor('user/tnc_approvalws') + '">', '</a>']),
+                    [`<a href="${urlFor('user/tnc_approvalws')}">`, '</a>']),
                 unwelcome: () => localize('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',
-                    ['<a href="' + urlFor('contact') + '">', '</a>']),
+                    [`<a href="${urlFor('contact')}">`, '</a>']),
             };
 
             const validations = {
-                authenticate   : () => (!/authenticated/.test(status) || !/age_verification/.test(status)) && !jpClient(),
+                authenticate: () =>
+                    (!/authenticated/.test(status) || !/age_verification/.test(status)) && !jpClient() && should_authenticate,
                 financial_limit: () => /ukrts_max_turnover_limit_not_set/.test(status),
                 residence      : () => !Client.get('residence'),
                 risk           : () => riskAssessment(),
@@ -248,10 +250,20 @@ const Header = (() => {
             if (Client.get('is_virtual')) {
                 checkStatus(check_statuses_virtual);
             } else {
-                BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'get_financial_assessment').then(() => {
+                BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'get_financial_assessment', 'balance').then(() => {
                     get_account_status = State.get(['response', 'get_account_status', 'get_account_status']) || {};
                     status = get_account_status.status;
-                    checkStatus(check_statuses_real);
+                    if (/costarica/.test(Client.get('landing_company_name')) && +Client.get('balance') < 200) {
+                        BinarySocket.send({ mt5_login_list: 1 }).then((response) => {
+                            if (response.mt5_login_list.length) {
+                                should_authenticate = true;
+                            }
+                            checkStatus(check_statuses_real);
+                        });
+                    } else {
+                        should_authenticate = true;
+                        checkStatus(check_statuses_real);
+                    }
                 });
             }
         });
