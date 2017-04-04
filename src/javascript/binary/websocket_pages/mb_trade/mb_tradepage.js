@@ -9,7 +9,6 @@ const MBSymbols            = require('./mb_symbols').MBSymbols;
 const TradingAnalysis      = require('../trade/analysis').TradingAnalysis;
 const chartFrameCleanup    = require('../trade/common').chartFrameCleanup;
 const forgetTradingStreams = require('../trade/process').forgetTradingStreams;
-const Client               = require('../../base/client');
 const localize             = require('../../base/localize').localize;
 const State                = require('../../base/storage').State;
 const JapanPortfolio       = require('../../../binary_japan/trade_japan/portfolio').JapanPortfolio;
@@ -34,16 +33,10 @@ const MBTradePage = (function() {
             MBTradingEvents.init();
         }
 
-        if (Client.get('currencies')) {
+        BinarySocket.send({ payout_currencies: 1 }).then(() => {
             MBDisplayCurrencies('', false);
             MBSymbols.getSymbols(1);
-        } else {
-            BinarySocket.send({ payout_currencies: 1 }).then((response) => {
-                Client.set('currencies', response.payout_currencies.join(','));
-                MBDisplayCurrencies('', false);
-                MBSymbols.getSymbols(1);
-            });
-        }
+        });
 
         TradingAnalysis.bindAnalysisTabEvent();
         $('#tab_portfolio').find('a').text(localize('Portfolio'));
