@@ -195,6 +195,8 @@ const Header = (() => {
             const messages = {
                 authenticate: () => localize('Please [_1]authenticate your account[_2] to lift your withdrawal and trading limits.',
                     ['<a href="' + urlFor('user/authenticate') + '">', '</a>']),
+                financial_limit: () => localize('Please set [_1]self exclusion[_2] 30-day turnover limit.',
+                    ['<a href="' + urlFor('user/security/self_exclusionws') + '#max_30day_turnover">', '</a>']),
                 residence: () => localize('Please set [_1]country of residence[_2] before upgrading to a real-money account.',
                     ['<a href="' + urlFor('user/settings/detailsws') + '">', '</a>']),
                 risk: () => localize('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',
@@ -208,21 +210,23 @@ const Header = (() => {
             };
 
             const validations = {
-                authenticate: () => (!/authenticated/.test(status) || !/age_verification/.test(status)) && !jpClient(),
-                residence   : () => !Client.get('residence'),
-                risk        : () => riskAssessment(),
-                tax         : () => Client.shouldCompleteTax(),
-                tnc         : () => Client.shouldAcceptTnc(),
-                unwelcome   : () => /(unwelcome|(cashier|withdrawal)_locked)/.test(status),
+                authenticate   : () => (!/authenticated/.test(status) || !/age_verification/.test(status)) && !jpClient(),
+                financial_limit: () => /ukrts_max_turnover_limit_not_set/.test(status),
+                residence      : () => !Client.get('residence'),
+                risk           : () => riskAssessment(),
+                tax            : () => Client.shouldCompleteTax(),
+                tnc            : () => Client.shouldAcceptTnc(),
+                unwelcome      : () => /(unwelcome|(cashier|withdrawal)_locked)/.test(status),
             };
 
             // real account checks
             const check_statuses_real = [
-                { validation: validations.tnc,          message: messages.tnc },
-                { validation: validations.risk,         message: messages.risk },
-                { validation: validations.tax,          message: messages.tax },
-                { validation: validations.authenticate, message: messages.authenticate },
-                { validation: validations.unwelcome,    message: messages.unwelcome },
+                { validation: validations.tnc,             message: messages.tnc },
+                { validation: validations.financial_limit, message: messages.financial_limit },
+                { validation: validations.risk,            message: messages.risk },
+                { validation: validations.tax,             message: messages.tax },
+                { validation: validations.authenticate,    message: messages.authenticate },
+                { validation: validations.unwelcome,       message: messages.unwelcome },
             ];
 
             // virtual checks
