@@ -18788,7 +18788,6 @@
 	var TradingAnalysis = __webpack_require__(440).TradingAnalysis;
 	var chartFrameCleanup = __webpack_require__(457).chartFrameCleanup;
 	var forgetTradingStreams = __webpack_require__(461).forgetTradingStreams;
-	var Client = __webpack_require__(427);
 	var localize = __webpack_require__(430).localize;
 	var State = __webpack_require__(422).State;
 	var JapanPortfolio = __webpack_require__(445).JapanPortfolio;
@@ -18813,16 +18812,10 @@
 	            MBTradingEvents.init();
 	        }
 	
-	        if (Client.get('currencies')) {
+	        BinarySocket.send({ payout_currencies: 1 }).then(function () {
 	            MBDisplayCurrencies('', false);
 	            MBSymbols.getSymbols(1);
-	        } else {
-	            BinarySocket.send({ payout_currencies: 1 }).then(function (response) {
-	                Client.set('currencies', response.payout_currencies.join(','));
-	                MBDisplayCurrencies('', false);
-	                MBSymbols.getSymbols(1);
-	            });
-	        }
+	        });
 	
 	        TradingAnalysis.bindAnalysisTabEvent();
 	        $('#tab_portfolio').find('a').text(localize('Portfolio'));
@@ -35521,8 +35514,8 @@
 	    var shouldAcceptTnc = function shouldAcceptTnc() {
 	        if (get('is_virtual')) return false;
 	        var website_tnc_version = State.get(['response', 'website_status', 'website_status', 'terms_conditions_version']);
-	        var client_tnc_status = State.get(['response', 'get_settings', 'get_settings', 'client_tnc_status']);
-	        return client_tnc_status && website_tnc_version && client_tnc_status !== website_tnc_version;
+	        var get_settings = State.get(['response', 'get_settings', 'get_settings']);
+	        return get_settings.hasOwnProperty('client_tnc_status') && get_settings.client_tnc_status !== website_tnc_version;
 	    };
 	
 	    var clear = function clear() {
@@ -45381,7 +45374,6 @@
 	var PortfolioInit = __webpack_require__(446);
 	var ViewPopup = __webpack_require__(449);
 	var BinaryPjax = __webpack_require__(420);
-	var Client = __webpack_require__(427);
 	var State = __webpack_require__(422).State;
 	var jpClient = __webpack_require__(425).jpClient;
 	var Guide = __webpack_require__(496);
@@ -45412,16 +45404,10 @@
 	            TradingEvents_Beta.init();
 	        }
 	
-	        if (Client.get('currencies')) {
+	        BinarySocket.send({ payout_currencies: 1 }).then(function () {
 	            displayCurrencies();
 	            Symbols.getSymbols(1);
-	        } else {
-	            BinarySocket.send({ payout_currencies: 1 }).then(function (response) {
-	                Client.set('currencies', response.payout_currencies.join(','));
-	                displayCurrencies();
-	                Symbols.getSymbols(1);
-	            });
-	        }
+	        });
 	
 	        if (document.getElementById('websocket_form')) {
 	            addEventListenerForm();
@@ -66405,7 +66391,6 @@
 	var Symbols = __webpack_require__(443).Symbols;
 	var ViewPopup = __webpack_require__(449);
 	var BinaryPjax = __webpack_require__(420);
-	var Client = __webpack_require__(427);
 	var localize = __webpack_require__(430).localize;
 	var State = __webpack_require__(422).State;
 	var jpClient = __webpack_require__(425).jpClient;
@@ -66435,16 +66420,10 @@
 	            TradingEvents.init();
 	        }
 	
-	        if (Client.get('currencies')) {
+	        BinarySocket.send({ payout_currencies: 1 }).then(function () {
 	            displayCurrencies();
 	            Symbols.getSymbols(1);
-	        } else {
-	            BinarySocket.send({ payout_currencies: 1 }).then(function (response) {
-	                Client.set('currencies', response.payout_currencies.join(','));
-	                displayCurrencies();
-	                Symbols.getSymbols(1);
-	            });
-	        }
+	        });
 	
 	        if (document.getElementById('websocket_form')) {
 	            addEventListenerForm();
@@ -67313,7 +67292,8 @@
 	    var displayAccountStatus = function displayAccountStatus() {
 	        BinarySocket.wait('authorize').then(function () {
 	            var get_account_status = void 0,
-	                status = void 0;
+	                status = void 0,
+	                should_authenticate = false;
 	
 	            var riskAssessment = function riskAssessment() {
 	                if (get_account_status.risk_classification === 'high') {
@@ -67345,7 +67325,7 @@
 	
 	            var validations = {
 	                authenticate: function authenticate() {
-	                    return (!/authenticated/.test(status) || !/age_verification/.test(status)) && !jpClient();
+	                    return (!/authenticated/.test(status) || !/age_verification/.test(status)) && !jpClient() && should_authenticate;
 	                },
 	                residence: function residence() {
 	                    return !Client.get('residence');
@@ -67385,10 +67365,20 @@
 	            if (Client.get('is_virtual')) {
 	                checkStatus(check_statuses_virtual);
 	            } else {
-	                BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'get_financial_assessment').then(function () {
+	                BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'get_financial_assessment', 'balance').then(function () {
 	                    get_account_status = State.get(['response', 'get_account_status', 'get_account_status']) || {};
 	                    status = get_account_status.status;
-	                    checkStatus(check_statuses_real);
+	                    if (/costarica/.test(Client.get('landing_company_name')) && +Client.get('balance') < 200) {
+	                        BinarySocket.send({ mt5_login_list: 1 }).then(function (response) {
+	                            if (response.mt5_login_list.length) {
+	                                should_authenticate = true;
+	                            }
+	                            checkStatus(check_statuses_real);
+	                        });
+	                    } else {
+	                        should_authenticate = true;
+	                        checkStatus(check_statuses_real);
+	                    }
 	                });
 	            }
 	        });
