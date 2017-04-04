@@ -8,10 +8,10 @@ const FormManager        = require('../../../common_functions/form_manager');
 const toISOFormat        = require('../../../common_functions/string_util').toISOFormat;
 const moment             = require('moment');
 
-const FinancialAccOpening = (function() {
+const FinancialAccOpening = (() => {
     const formID = '#financial-form';
 
-    const onLoad = function() {
+    const onLoad = () => {
         State.set('is_financial_opening', 1);
         if (Client.get('has_financial') || !Client.get('residence')) {
             BinaryPjax.load('trading');
@@ -39,7 +39,7 @@ const FinancialAccOpening = (function() {
         BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
             if (!isEmptyObject(response.get_financial_assessment)) {
                 const keys = Object.keys(response.get_financial_assessment);
-                keys.forEach(function(key) {
+                keys.forEach((key) => {
                     const val = response.get_financial_assessment[key];
                     $('#' + key).val(val);
                 });

@@ -1,31 +1,31 @@
-const MBContract         = require('./mb_contract').MBContract;
-const MBDefaults         = require('./mb_defaults').MBDefaults;
-const MBNotifications    = require('./mb_notifications').MBNotifications;
-const MBProcess          = require('./mb_process').MBProcess;
-const MBTick             = require('./mb_tick').MBTick;
-const TradingAnalysis    = require('../trade/analysis').TradingAnalysis;
+const MBContract         = require('./mb_contract');
+const MBDefaults         = require('./mb_defaults');
+const MBNotifications    = require('./mb_notifications');
+const MBProcess          = require('./mb_process');
+const MBTick             = require('./mb_tick');
+const TradingAnalysis    = require('../trade/analysis');
+const commonTrading      = require('../trade/common');
+const Process            = require('../trade/process');
 const jpClient           = require('../../common_functions/country_base').jpClient;
-const debounce           = require('../trade/common').debounce;
-const processForgetTicks = require('../trade/process').processForgetTicks;
 
 /*
- * TradingEvents object contains all the event handler function required for
+ * TradingEvents object contains all the event handlers required for
  * websocket trading page
  *
  * We need it as object so that we can call TradingEvent.init() only on trading
  * page for pjax to work else it will fire on all pages
  *
  */
-const MBTradingEvents = (function () {
+const MBTradingEvents = (() => {
     'use strict';
 
-    const initiate = function () {
+    const initiate = () => {
         /*
          * attach event to underlying change, event need to request new contract details and price
          */
-        const underlyingElement = document.getElementById('underlying');
-        if (underlyingElement) {
-            underlyingElement.addEventListener('change', function(e) {
+        const underlying_element = document.getElementById('underlying');
+        if (underlying_element) {
+            underlying_element.addEventListener('change', (e) => {
                 if (e.target) {
                     // chartFrameSource();
                     // showFormOverlay();
@@ -44,7 +44,7 @@ const MBTradingEvents = (function () {
                     MBContract.getContracts(underlying);
 
                     // forget the old tick id i.e. close the old tick stream
-                    processForgetTicks();
+                    Process.forgetTicks();
                     // get ticks for current underlying
                     MBTick.request(underlying);
                     MBContract.displayDescriptions();
@@ -52,9 +52,9 @@ const MBTradingEvents = (function () {
             });
         }
 
-        const categoryElement = document.getElementById('category');
-        if (categoryElement) {
-            categoryElement.addEventListener('change', function(e) {
+        const category_element = document.getElementById('category');
+        if (category_element) {
+            category_element.addEventListener('change', (e) => {
                 MBDefaults.set('category', e.target.value);
                 MBContract.populatePeriods('rebuild');
                 MBProcess.processPriceRequest();
@@ -62,9 +62,9 @@ const MBTradingEvents = (function () {
             });
         }
 
-        const periodElement = document.getElementById('period');
-        if (periodElement) {
-            periodElement.addEventListener('change', function(e) {
+        const period_element = document.getElementById('period');
+        if (period_element) {
+            period_element.addEventListener('change', (e) => {
                 MBDefaults.set('period', e.target.value);
                 MBProcess.processPriceRequest();
                 $('.countdown-timer').removeClass('alert');
@@ -73,50 +73,50 @@ const MBTradingEvents = (function () {
             });
         }
 
-        const payoutOnKeypress = function(ev) {
+        const payout_element = document.getElementById('payout');
+        const payoutOnKeypress = (ev) => {
             const key  = ev.keyCode,
                 char = String.fromCharCode(ev.which);
-            let isOK = true;
+            let is_ok = true;
             if ((char === '.' && ev.target.value.indexOf(char) >= 0) ||
                     (!/[0-9\.]/.test(char) && [8, 37, 39, 46].indexOf(key) < 0) || // delete, backspace, arrow keys
                     /['%]/.test(char)) { // similarity to arrows key code in some browsers
-                isOK = false;
+                is_ok = false;
             }
-            const result = payoutElement.value.substring(0, ev.target.selectionStart) + char +
-                payoutElement.value.substring(ev.target.selectionEnd);
+            const result = payout_element.value.substring(0, ev.target.selectionStart) + char +
+                payout_element.value.substring(ev.target.selectionEnd);
 
             if ((jpClient() && char === '.') || result[0] === '0' || !validatePayout(+result)) {
-                isOK = false;
+                is_ok = false;
             }
 
-            if (!isOK) {
+            if (!is_ok) {
                 ev.returnValue = false;
                 ev.preventDefault();
             }
         };
 
-        const validatePayout = function(payoutAmount) {
-            let isOK = true;
+        const validatePayout = (payout_amount) => {
+            let is_ok = true;
             const contract = MBContract.getCurrentContracts();
-            const maxAmount = (Array.isArray(contract) && contract[0].expiry_type !== 'intraday') ? 20000 : 5000;
-            if (!payoutAmount || isNaN(payoutAmount) ||
-                (jpClient() && (payoutAmount < 1 || payoutAmount > 100)) ||
-                (payoutAmount <= 0 || payoutAmount > maxAmount)) {
-                isOK = false;
+            const max_amount = (Array.isArray(contract) && contract[0].expiry_type !== 'intraday') ? 20000 : 5000;
+            if (!payout_amount || isNaN(payout_amount) ||
+                (jpClient() && (payout_amount < 1 || payout_amount > 100)) ||
+                (payout_amount <= 0 || payout_amount > max_amount)) {
+                is_ok = false;
             }
 
-            return isOK;
+            return is_ok;
         };
 
-        const payoutElement = document.getElementById('payout');
-        if (payoutElement) {
-            if (!payoutElement.value) {
+        if (payout_element) {
+            if (!payout_element.value) {
                 const payout_def = MBDefaults.get('payout') || (jpClient() ? 1 : 10);
-                payoutElement.value = payout_def;
+                payout_element.value = payout_def;
                 MBDefaults.set('payout', payout_def);
             }
-            payoutElement.addEventListener('keypress', payoutOnKeypress);
-            payoutElement.addEventListener('input', debounce(function(e) {
+            payout_element.addEventListener('keypress', payoutOnKeypress);
+            payout_element.addEventListener('input', commonTrading.debounce((e) => {
                 let payout = e.target.value;
 
                 if (!jpClient()) {
@@ -127,35 +127,35 @@ const MBTradingEvents = (function () {
                     e.target.value = payout;
                 }
 
-                const $payoutElement = $('#payout');
-                const $tableElement = $('.japan-table');
+                const $payout_element = $('#payout');
+                const $table_element = $('.japan-table');
                 if (!validatePayout(payout)) {
-                    $payoutElement.addClass('error-field');
-                    $tableElement.addClass('invisible');
+                    $payout_element.addClass('error-field');
+                    $table_element.addClass('invisible');
                     return false;
                 }
                 // else
-                $payoutElement.removeClass('error-field');
-                $tableElement.removeClass('invisible');
+                $payout_element.removeClass('error-field');
+                $table_element.removeClass('invisible');
 
                 MBDefaults.set('payout', payout);
                 MBProcess.processPriceRequest();
                 MBContract.displayDescriptions();
                 return true;
             }));
-            payoutElement.addEventListener('click', function() {
+            payout_element.addEventListener('click', function() {
                 this.select();
             });
         }
 
         // For verifying there are 2 digits after decimal
-        const isStandardFloat = (function(value) {
-            return (!isNaN(value) && value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length > 2);
-        });
+        const isStandardFloat = value => (
+            !isNaN(value) && value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length > 2
+        );
 
-        const currencyElement = document.getElementById('currency');
-        if (currencyElement) {
-            currencyElement.addEventListener('change', function() {
+        const currency_element = document.getElementById('currency');
+        if (currency_element) {
+            currency_element.addEventListener('change', () => {
                 MBProcess.processPriceRequest();
                 MBContract.displayDescriptions();
             });
@@ -167,6 +167,4 @@ const MBTradingEvents = (function () {
     };
 })();
 
-module.exports = {
-    MBTradingEvents: MBTradingEvents,
-};
+module.exports = MBTradingEvents;

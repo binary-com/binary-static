@@ -1,6 +1,6 @@
-const Defaults       = require('./defaults').Defaults;
-const formatCurrency = require('../../common_functions/currency_to_symbol').formatCurrency;
+const Defaults       = require('./defaults');
 const Client         = require('../../base/client');
+const formatCurrency = require('../../common_functions/currency_to_symbol').formatCurrency;
 
 /*
  * Handles currency display
@@ -8,7 +8,7 @@ const Client         = require('../../base/client');
  * It process 'socket.send({payout_currencies:1})` response
  * and display them
  */
-function displayCurrencies() {
+const displayCurrencies = () => {
     'use strict';
 
     const target = document.getElementById('currency'),
@@ -24,7 +24,7 @@ function displayCurrencies() {
     }
 
     if (currencies.length > 1) {
-        currencies.forEach(function (currency) {
+        currencies.forEach((currency) => {
             const option = document.createElement('option'),
                 content = document.createTextNode(currency);
 
@@ -43,8 +43,6 @@ function displayCurrencies() {
                                     formatCurrency(currencies[0]) + '</span>');
         Defaults.set('currency', currencies[0]);
     }
-}
-
-module.exports = {
-    displayCurrencies: displayCurrencies,
 };
+
+module.exports = displayCurrencies;

@@ -22,7 +22,7 @@ const getHighestZIndex = (selector) => {
         selector = 'div,p,area,nav,section,header,canvas,aside,span';
     }
     const all = [];
-    const _store_zindex = function () {
+    const _store_zindex = function() {
         if ($(this).is(':visible')) {
             const z = $(this).css('z-index');
             if (!isNaN(z)) {

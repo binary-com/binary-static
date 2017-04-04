@@ -74,7 +74,7 @@ const Client = (() => {
         return LocalStore.set('client.' + key, value);
     };
 
-    // use this function to get variables that have values
+    // get variables that have values
     const get = (key) => {
         let value = client_object[key] || LocalStore.get('client.' + key) || '';
         if (!Array.isArray(value) && (+value === 1 || +value === 0 || value === 'true' || value === 'false')) {

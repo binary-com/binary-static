@@ -2,7 +2,7 @@ const BinaryPjax  = require('../../../../base/binary_pjax');
 const localize    = require('../../../../base/localize').localize;
 const FormManager = require('../../../../common_functions/form_manager');
 
-const CashierPassword = (function() {
+const CashierPassword = (() => {
     'use strict';
 
     let $form,
@@ -10,7 +10,7 @@ const CashierPassword = (function() {
     const form_id = '#frm_cashier_password';
     const hidden_class = 'invisible';
 
-    const onLoad = function() {
+    const onLoad = () => {
         $form = $(form_id);
 
         BinarySocket.wait('authorize').then(() => {
@@ -18,13 +18,13 @@ const CashierPassword = (function() {
         });
     };
 
-    const updatePage = function(config) {
+    const updatePage = (config) => {
         $('legend').text(localize(config.legend));
         $('#lockInfo').text(localize(config.info));
         $form.find('button').html(localize(config.button));
     };
 
-    const init = function(response) {
+    const init = (response) => {
         const locked = response.cashier_password;
         if (locked) {
             updatePage({
@@ -54,7 +54,7 @@ const CashierPassword = (function() {
         });
     };
 
-    const handleResponse = function(response) {
+    const handleResponse = (response) => {
         const $form_error = $('#form_error');
         const $form_message = $('#form_message');
         $form_message.text('');
@@ -73,7 +73,7 @@ const CashierPassword = (function() {
         setTimeout(redirect, 2000);
     };
 
-    const redirect = function() {
+    const redirect = () => {
         if (redirect_url) {
             sessionStorage.removeItem('cashier_lock_redirect');
             BinaryPjax.load(redirect_url);

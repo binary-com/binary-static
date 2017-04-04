@@ -38,13 +38,13 @@ const Page = (() => {
         // page in all windows after switching loginid or after logout.
 
         // onLoad.queue does not work on the home page.
-        // jQuery's ready function works always.
-        $(document).ready(function () {
+        // jQuery's ready works always.
+        $(document).ready(() => {
             // Cookies is not always available.
             // So, fall back to a more basic solution.
             let match = document.cookie.match(/\bloginid=(\w+)/);
             match = match ? match[1] : '';
-            $(window).on('storage', function (jq_event) {
+            $(window).on('storage', (jq_event) => {
                 switch (jq_event.originalEvent.key) {
                     case 'active_loginid':
                         if (jq_event.originalEvent.newValue === match) return;
@@ -161,7 +161,7 @@ const Page = (() => {
             l  : Language.get().toLowerCase(),
             url: 'https://whatbrowser.org/',
         };
-        $(document).ready(function() {
+        $(document).ready(() => {
             $('body').append($('<script/>', { src: src }));
         });
     };

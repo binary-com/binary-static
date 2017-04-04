@@ -3,7 +3,7 @@ const Client                 = require('../../../base/client');
 const State                  = require('../../../base/storage').State;
 const FormManager            = require('../../../common_functions/form_manager');
 
-const PaymentAgentTransfer = (function() {
+const PaymentAgentTransfer = (() => {
     const hiddenClass = 'invisible';
 
     let balance,
@@ -11,7 +11,7 @@ const PaymentAgentTransfer = (function() {
         common_request_fields,
         $insufficient_balance;
 
-    const onLoad = function() {
+    const onLoad = () => {
         PaymentAgentTransferUI.initValues();
         BinarySocket.wait('get_settings', 'balance').then(() => {
             is_authenticated_payment_agent = State.get(['response', 'get_settings', 'get_settings', 'is_authenticated_payment_agent']);
@@ -23,7 +23,7 @@ const PaymentAgentTransfer = (function() {
         });
     };
 
-    const init = function() {
+    const init = () => {
         const form_id = '#frm_paymentagent_transfer';
         const $no_bal_err = $('#no_balance_error');
         const currency = Client.get('currency');
@@ -74,7 +74,7 @@ const PaymentAgentTransfer = (function() {
 
     const additionalCheck = req => checkBalance(req.amount);
 
-    const setFormVisibility = function(is_visible) {
+    const setFormVisibility = (is_visible) => {
         if (is_visible) {
             $('#pa_transfer_loading').remove();
             PaymentAgentTransferUI.showForm();
@@ -131,7 +131,7 @@ const PaymentAgentTransfer = (function() {
             fnc_response_handler: responseHandler,
         });
 
-        $('#back_transfer').off('click').click(function() {
+        $('#back_transfer').off('click').click(() => {
             PaymentAgentTransferUI.showForm();
             PaymentAgentTransferUI.showNotes();
             PaymentAgentTransferUI.hideConfirmation();

@@ -3,12 +3,12 @@ const Login             = require('../../base/login');
 const generateBirthDate = require('../../common_functions/attach_dom/birth_date_picker');
 const FormManager       = require('../../common_functions/form_manager');
 
-const ResetPassword = (function () {
+const ResetPassword = (() => {
     'use strict';
 
     const hidden_class = 'invisible';
 
-    const responseHandler = function(response) {
+    const responseHandler = (response) => {
         $('#container_reset_password').addClass(hidden_class);
         if (response.error) {
             const $form_error = $('#form_error');
@@ -29,13 +29,13 @@ const ResetPassword = (function () {
             $form_error.removeClass(hidden_class);
         } else {
             $('#msg_reset_password').text(localize('Your password has been successfully reset. Please log into your account using your new password.'));
-            setTimeout(function () {
+            setTimeout(() => {
                 Login.redirectToLogin();
             }, 5000);
         }
     };
 
-    const onLoad = function() {
+    const onLoad = () => {
         generateBirthDate();
 
         $('#have_real_account').off('click').on('click', function() {

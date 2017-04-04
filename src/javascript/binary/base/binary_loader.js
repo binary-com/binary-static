@@ -7,7 +7,7 @@ const Login              = require('./login');
 const Page               = require('./page');
 const defaultRedirectUrl = require('./url').defaultRedirectUrl;
 
-const BinaryLoader = (function() {
+const BinaryLoader = (() => {
     'use strict';
 
     let container,

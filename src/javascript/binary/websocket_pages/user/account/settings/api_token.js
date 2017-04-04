@@ -17,7 +17,7 @@ const APIToken = (() => {
     let $table_container,
         $form;
 
-    const onLoad = function() {
+    const onLoad = () => {
         if (jpClient()) {
             BinaryPjax.load('user/settingsws');
             return;
@@ -56,7 +56,7 @@ const APIToken = (() => {
     // -----------------------
     // ----- Tokens List -----
     // -----------------------
-    const populateTokensList = function(response) {
+    const populateTokensList = (response) => {
         if ('error' in response) {
             showErrorMessage(response.error.message);
             return;
@@ -85,7 +85,7 @@ const APIToken = (() => {
             cols     : headers.map(title => title.toLowerCase().replace(/\s/g, '-')),
             data     : tokens,
             formatter: formatToken,
-            style    : function($row, token) {
+            style    : ($row, token) => {
                 if (token.display_name === response.echo_req.new_token) {
                     $row.addClass('new');
                 }
@@ -96,10 +96,10 @@ const APIToken = (() => {
         showLocalTimeOnHover('td.last-used');
     };
 
-    const createDeleteButton = function($row, token) {
+    const createDeleteButton = ($row, token) => {
         const message = localize('Are you sure that you want to permanently delete token');
         const $button = $('<button/>', { class: 'button btn_delete', text: localize('Delete') });
-        $button.click(function(e) {
+        $button.click((e) => {
             e.preventDefault();
             e.stopPropagation();
             if (!window.confirm(`${message}: "${token.display_name}"?`)) {
@@ -110,7 +110,7 @@ const APIToken = (() => {
         $row.children('.action').html($button);
     };
 
-    const formatToken = function(token) {
+    const formatToken = (token) => {
         const last_used = (token.last_used ? token.last_used + ' GMT' : localize('Never Used'));
         const scopes = token.scopes.map(scope => localize(toTitleCase(scope))).join(', ');
         return [
@@ -122,7 +122,7 @@ const APIToken = (() => {
         ];
     };
 
-    const deleteToken = function(token) {
+    const deleteToken = (token) => {
         BinarySocket.send({
             api_token   : 1,
             delete_token: token,
@@ -140,14 +140,14 @@ const APIToken = (() => {
     // -----------------------------
     // ----- Message Functions -----
     // -----------------------------
-    const showErrorMessage = function(msg) {
+    const showErrorMessage = (msg) => {
         $('#token_message').removeClass(hidden_class)
             .find('p')
             .attr('class', error_class)
             .html(localize(msg));
     };
 
-    const showSubmitSuccess = function(msg) {
+    const showSubmitSuccess = (msg) => {
         $('#msg_form')
             .attr('class', 'success-msg')
             .html('<ul class="checked"><li>' + localize(msg) + '</li></ul>')
@@ -156,7 +156,7 @@ const APIToken = (() => {
             .fadeOut(1000);
     };
 
-    const clearMessages = function() {
+    const clearMessages = () => {
         $('#token_message').addClass(hidden_class);
     };
 

@@ -61,7 +61,7 @@ const ProfitTableUI = (() => {
             acc_total = 0;
         }
 
-        const current_total = transactions.reduce(function(previous, current) {
+        const current_total = transactions.reduce((previous, current) => {
             const buy_price  = Number(parseFloat(current.buy_price));
             const sell_price = Number(parseFloat(current.sell_price));
             const pl = sell_price - buy_price;
@@ -77,7 +77,7 @@ const ProfitTableUI = (() => {
             .addClass(sub_total_type);
     };
 
-    const createProfitTableRow = function(transaction) {
+    const createProfitTableRow = (transaction) => {
         const profit_table_data = ProfitTable.getProfitTabletData(transaction);
         const pl_type = (profit_table_data.pl >= 0) ? 'profit' : 'loss';
 
@@ -88,10 +88,7 @@ const ProfitTableUI = (() => {
 
         $row.children('.pl').addClass(pl_type);
         $row.children('.contract').html(profit_table_data.desc + '<br>');
-        $row.children('.buy-date').each(function() {
-            $(this).wrapInner('<div class="new-width"></div>');
-        });
-        $row.children('.sell-date').each(function() {
+        $row.children('.buy-date, .sell-date').each(function() {
             $(this).wrapInner('<div class="new-width"></div>');
         });
 
@@ -109,7 +106,7 @@ const ProfitTableUI = (() => {
 
     const clearTableContent = () => {
         Table.clearTableBody(profit_table_id);
-        $('#' + profit_table_id + '>tfoot').hide();
+        $(`#${profit_table_id}`).find('> tfoot').hide();
     };
 
     const errorMessage = (msg) => {

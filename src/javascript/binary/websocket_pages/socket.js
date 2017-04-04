@@ -1,12 +1,12 @@
 const MBTradePage          = require('./mb_trade/mb_tradepage');
 const TradePage_Beta       = require('./trade/beta/tradepage');
 const Highchart            = require('./trade/charts/highchart');
-const reloadPage           = require('./trade/common').reloadPage;
-const Notifications        = require('./trade/notifications').Notifications;
+const commonTrading        = require('./trade/common');
+const Notifications        = require('./trade/notifications');
 const TickDisplay          = require('./trade/tick_trade');
 const TradePage            = require('./trade/tradepage');
 const ViewPopup            = require('./user/view_popup/view_popup');
-const ViewBalanceUI        = require('./user/viewbalance/viewbalance.ui').ViewBalanceUI;
+const updateBalance        = require('./user/update_balance');
 const Client               = require('../base/client');
 const Clock                = require('../base/clock');
 const GTM                  = require('../base/gtm');
@@ -34,7 +34,7 @@ const Cookies              = require('../../lib/js-cookie');
  * `BinarySocket.init()` to initiate the connection
  * `BinarySocket.send({contracts_for : 1})` to send message to server
  */
-const BinarySocketClass = function() {
+const BinarySocketClass = () => {
     'use strict';
 
     let binarySocket,
@@ -85,22 +85,18 @@ const BinarySocketClass = function() {
         ),
     };
 
-    const clearTimeouts = function() {
-        Object.keys(timeouts).forEach(function(key) {
+    const clearTimeouts = () => {
+        Object.keys(timeouts).forEach((key) => {
             clearTimeout(timeouts[key]);
             delete timeouts[key];
         });
     };
 
-    const isReady = function () {
-        return binarySocket && binarySocket.readyState === 1;
-    };
+    const isReady = () => binarySocket && binarySocket.readyState === 1;
 
-    const isClose = function () {
-        return !binarySocket || binarySocket.readyState === 2 || binarySocket.readyState === 3;
-    };
+    const isClose = () => !binarySocket || binarySocket.readyState === 2 || binarySocket.readyState === 3;
 
-    const sendBufferedSends = function () {
+    const sendBufferedSends = () => {
         while (bufferedSends.length > 0) {
             binarySocket.send(JSON.stringify(bufferedSends.shift()));
         }
@@ -126,7 +122,7 @@ const BinarySocketClass = function() {
         return promise_obj.promise;
     };
 
-    const send = function(data, force_send, msg_type) {
+    const send = (data, force_send, msg_type) => {
         const promise_obj = new PromiseClass();
 
         msg_type = msg_type || no_duplicate_requests.find(c => c in data);
@@ -161,17 +157,17 @@ const BinarySocketClass = function() {
             // temporary check
             if ((data.contracts_for || data.proposal) && !data.passthrough.hasOwnProperty('dispatch_to') && !State.get('is_mb_trading')) {
                 data.passthrough.req_number = ++req_number;
-                timeouts[req_number] = setTimeout(function() {
+                timeouts[req_number] = setTimeout(() => {
                     if (typeof reloadPage === 'function' && data.contracts_for) {
                         window.alert("The server didn't respond to the request:\n\n" + JSON.stringify(data) + '\n\n');
-                        reloadPage();
+                        commonTrading.reloadPage();
                     } else {
                         $('.price_container').hide();
                     }
                 }, 60 * 1000);
             } else if (data.contracts_for && !data.passthrough.hasOwnProperty('dispatch_to') && State.get('is_mb_trading')) {
                 data.passthrough.req_number = ++req_number;
-                timeouts[req_number] = setTimeout(function() {
+                timeouts[req_number] = setTimeout(() => {
                     MBTradePage.onDisconnect();
                 }, 10 * 1000);
             }
@@ -195,7 +191,7 @@ const BinarySocketClass = function() {
         }
     };
 
-    const init = function (es) {
+    const init = (es) => {
         if (wrongAppId === getAppId()) {
             return;
         }
@@ -212,7 +208,7 @@ const BinarySocketClass = function() {
             binarySocket = new WebSocket(socketUrl);
         }
 
-        binarySocket.onopen = function () {
+        binarySocket.onopen = () => {
             const apiToken = getLoginToken();
             if (apiToken && !authorized && localStorage.getItem('client.tokens')) {
                 binarySocket.send(JSON.stringify({ authorize: apiToken }));
@@ -233,7 +229,7 @@ const BinarySocketClass = function() {
             }
         };
 
-        binarySocket.onmessage = function(msg) {
+        binarySocket.onmessage = (msg) => {
             const response = JSON.parse(msg.data);
             if (response) {
                 const passthrough = getPropertyValue(response, ['echo_req', 'passthrough']);
@@ -301,7 +297,7 @@ const BinarySocketClass = function() {
                         sendBufferedSends();
                     }
                 } else if (type === 'balance') {
-                    ViewBalanceUI.updateBalances(response);
+                    updateBalance(response);
                 } else if (type === 'logout') {
                     Client.doLogout(response);
                 } else if (type === 'landing_company') {
@@ -351,7 +347,7 @@ const BinarySocketClass = function() {
             }
         };
 
-        binarySocket.onclose = function () {
+        binarySocket.onclose = () => {
             authorized = false;
             sent_requests = [];
             clearTimeouts();
@@ -362,7 +358,7 @@ const BinarySocketClass = function() {
                                State.get('is_mb_trading')   ? MBTradePage.onDisconnect    : '';
                 if (toCall) {
                     Notifications.show({ text: localize('Connection error: Please check your internet connection.'), uid: 'CONNECTION_ERROR', dismissible: true });
-                    timeouts.error = setTimeout(function() {
+                    timeouts.error = setTimeout(() => {
                         toCall();
                     }, 10 * 1000);
                 } else {
@@ -374,12 +370,12 @@ const BinarySocketClass = function() {
             }
         };
 
-        binarySocket.onerror = function (error) {
+        binarySocket.onerror = (error) => {
             console.log('socket error', error);
         };
     };
 
-    const clear = function() {
+    const clear = () => {
         bufferedSends = [];
         events = {};
     };
@@ -388,7 +384,7 @@ const BinarySocketClass = function() {
         init         : init,
         wait         : wait,
         send         : send,
-        socket       : function () { return binarySocket; },
+        socket       : () => binarySocket,
         clear        : clear,
         clearTimeouts: clearTimeouts,
     };

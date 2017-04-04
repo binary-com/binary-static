@@ -1,29 +1,28 @@
-const Contract_Beta             = require('./contract').Contract_Beta;
-const TickDisplay_Beta          = require('./tick_trade');
-const Symbols                   = require('../symbols').Symbols;
-const Tick                      = require('../tick').Tick;
-const localize                  = require('../../../base/localize').localize;
-const formatMoney               = require('../../../common_functions/currency_to_symbol').formatMoney;
-const toTitleCase               = require('../../../common_functions/string_util').toTitleCase;
-const addComma                  = require('../../../common_functions/string_util').addComma;
-const isVisible                 = require('../../../common_functions/common_functions').isVisible;
-const updatePurchaseStatus_Beta = require('../common').updatePurchaseStatus_Beta;
-const label_value               = require('../common').label_value;
-const Client                    = require('../../../base/client');
-const elementTextContent        = require('../../../common_functions/common_functions').elementTextContent;
-const elementInnerHtml          = require('../../../common_functions/common_functions').elementInnerHtml;
+const Contract_Beta      = require('./contract');
+const TickDisplay_Beta   = require('./tick_trade');
+const commonTrading      = require('../common');
+const Symbols            = require('../symbols');
+const Tick               = require('../tick');
+const Client             = require('../../../base/client');
+const localize           = require('../../../base/localize').localize;
+const elementInnerHtml   = require('../../../common_functions/common_functions').elementInnerHtml;
+const elementTextContent = require('../../../common_functions/common_functions').elementTextContent;
+const isVisible          = require('../../../common_functions/common_functions').isVisible;
+const formatMoney        = require('../../../common_functions/currency_to_symbol').formatMoney;
+const addComma           = require('../../../common_functions/string_util').addComma;
+const toTitleCase        = require('../../../common_functions/string_util').toTitleCase;
 
 /*
  * Purchase object that handles all the functions related to
  * contract purchase response
  */
 
-const Purchase_Beta = (function () {
+const Purchase_Beta = (() => {
     'use strict';
 
     let purchase_data = {};
 
-    const display = function (details) {
+    const display = (details) => {
         purchase_data = details;
 
         const receipt = details.buy,
@@ -80,8 +79,8 @@ const Purchase_Beta = (function () {
             }
             elementTextContent(heading, localize('Contract Confirmation'));
             elementTextContent(descr, receipt.longcode);
-            if (barrier_element) label_value(barrier_element, '', '', true);
-            [].forEach.call(document.getElementsByClassName('contract_purchase_reference'), function(ref) {
+            if (barrier_element) commonTrading.labelValue(barrier_element, '', '', true);
+            [].forEach.call(document.getElementsByClassName('contract_purchase_reference'), (ref) => {
                 elementTextContent(ref, localize('Ref.') + ' ' + receipt.transaction_id);
             });
 
@@ -100,12 +99,12 @@ const Purchase_Beta = (function () {
             spots.hide();
 
             if (is_spread) {
-                label_value(payout, localize('Stop-loss'),        receipt.stop_loss_level,   true);
-                label_value(cost,   localize('Amount per point'), receipt.amount_per_point);
-                label_value(profit, localize('Stop-profit'),      receipt.stop_profit_level, true);
+                commonTrading.labelValue(payout, localize('Stop-loss'),        receipt.stop_loss_level,   true);
+                commonTrading.labelValue(cost,   localize('Amount per point'), receipt.amount_per_point);
+                commonTrading.labelValue(profit, localize('Stop-profit'),      receipt.stop_profit_level, true);
             } else {
-                label_value(payout, localize('Payout'), addComma(payout_value));
-                label_value(cost,   localize('Stake'),  addComma(cost_value));
+                commonTrading.labelValue(payout, localize('Payout'), addComma(payout_value));
+                commonTrading.labelValue(cost,   localize('Stake'),  addComma(cost_value));
             }
 
             elementTextContent(balance, localize('Account balance:') + ' ' + formatMoney(Client.get('currency'), receipt.balance_after));
@@ -115,7 +114,7 @@ const Purchase_Beta = (function () {
             }
 
             if (Contract_Beta.form() === 'digits') {
-                [].forEach.call(spots.childNodes, function(child) { elementInnerHtml(child, '&nbsp;'); });
+                [].forEach.call(spots.childNodes, (child) => { elementInnerHtml(child, '&nbsp;'); });
                 spots.show();
             }
 
@@ -157,7 +156,7 @@ const Purchase_Beta = (function () {
                 barrier = passthrough.barrier;
             }
 
-            TickDisplay_Beta.initialize({
+            TickDisplay_Beta.init({
                 symbol              : passthrough.symbol,
                 barrier             : barrier,
                 number_of_ticks     : passthrough.duration,
@@ -173,11 +172,11 @@ const Purchase_Beta = (function () {
                 width               : $('#tick_chart').width(),
                 is_trading_page     : true,
             });
-            TickDisplay_Beta.spots_list = {};
+            TickDisplay_Beta.resetSpots();
         }
     };
 
-    const update_spot_list = function() {
+    const updateSpotList = () => {
         if ($('#contract_purchase_spots:hidden').length) {
             return;
         }
@@ -214,11 +213,11 @@ const Purchase_Beta = (function () {
             list_elem.appendChild(fragment);
         }
 
-        const spots2 = Tick.spots(),
-            epoches = Object.keys(spots2).sort(function(a, b) { return a - b; });
+        const spots2 = Tick.spots();
+        const epoches = Object.keys(spots2).sort((a, b) => a - b);
         let tick_number = 0;
 
-        const is_win = function(last_digit) {
+        const is_win = (last_digit) => {
             const contract_type = purchase_data.echo_req.passthrough.contract_type,
                 barrier       = purchase_data.echo_req.passthrough.barrier;
             return ((contract_type === 'DIGITMATCH' && last_digit === barrier) ||
@@ -229,7 +228,7 @@ const Purchase_Beta = (function () {
                     (contract_type === 'DIGITUNDER' && last_digit < barrier));
         };
         let last_digit = null;
-        const replace = function(d) {
+        const replace = (d) => {
             last_digit = d;
             return '<span class="' + (is_win(d) ? 'profit' : 'loss') + '">' + d + '</span>';
         };
@@ -264,7 +263,7 @@ const Purchase_Beta = (function () {
                         contract_status = localize('This contract lost');
                     }
 
-                    updatePurchaseStatus_Beta(final_price, pnl, contract_status);
+                    commonTrading.updatePurchaseStatus_Beta(final_price, pnl, contract_status);
                 }
 
                 duration--;
@@ -276,11 +275,9 @@ const Purchase_Beta = (function () {
     };
 
     return {
-        display         : display,
-        update_spot_list: update_spot_list,
+        display       : display,
+        updateSpotList: updateSpotList,
     };
 })();
 
-module.exports = {
-    Purchase_Beta: Purchase_Beta,
-};
+module.exports = Purchase_Beta;

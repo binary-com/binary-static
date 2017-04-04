@@ -17,7 +17,7 @@ const AssetIndexUI = (() => {
         market_columns,
         is_framed;
 
-    const onLoad = function(config) {
+    const onLoad = (config) => {
         if (jpClient()) {
             if (!State.get('is_beta_trading')) {
                 BinaryPjax.load('resources');

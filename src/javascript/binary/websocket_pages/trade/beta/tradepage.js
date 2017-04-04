@@ -1,29 +1,28 @@
-const TradingAnalysis_Beta      = require('./analysis').TradingAnalysis_Beta;
-const TradingEvents_Beta        = require('./event').TradingEvents_Beta;
-const Message_Beta              = require('./message').Message_Beta;
-const Price_Beta                = require('./price').Price_Beta;
-const forgetTradingStreams_Beta = require('./process').forgetTradingStreams_Beta;
-const addEventListenerForm      = require('../common').addEventListenerForm;
-const chartFrameCleanup         = require('../common').chartFrameCleanup;
-const showFormOverlay           = require('../common').showFormOverlay;
-const showPriceOverlay          = require('../common').showPriceOverlay;
-const displayCurrencies         = require('../currency').displayCurrencies;
-const Defaults                  = require('../defaults').Defaults;
-const Notifications             = require('../notifications').Notifications;
-const Symbols                   = require('../symbols').Symbols;
-const PortfolioInit             = require('../../user/account/portfolio/portfolio.init');
-const ViewPopup                 = require('../../user/view_popup/view_popup');
-const BinaryPjax                = require('../../../base/binary_pjax');
-const State                     = require('../../../base/storage').State;
-const jpClient                  = require('../../../common_functions/country_base').jpClient;
-const Guide                     = require('../../../common_functions/guide');
-const ResizeSensor              = require('../../../../lib/resize-sensor');
+const TradingAnalysis_Beta = require('./analysis');
+const TradingEvents_Beta   = require('./event');
+const Message_Beta         = require('./message');
+const Price_Beta           = require('./price');
+const Process_Beta         = require('./process');
+const commonTrading        = require('../common');
+const displayCurrencies    = require('../currency');
+const Defaults             = require('../defaults');
+const Notifications        = require('../notifications');
+const Symbols              = require('../symbols');
+const PortfolioInit        = require('../../user/account/portfolio/portfolio.init');
+const ViewPopup            = require('../../user/view_popup/view_popup');
+const BinaryPjax           = require('../../../base/binary_pjax');
+const State                = require('../../../base/storage').State;
+const jpClient             = require('../../../common_functions/country_base').jpClient;
+const Guide                = require('../../../common_functions/guide');
+const ResizeSensor         = require('../../../../lib/resize-sensor');
 
-const TradePage_Beta = (function() {
+const TradePage_Beta = (() => {
+    'use strict';
+
     let events_initialized = 0;
     State.remove('is_beta_trading');
 
-    const onLoad = function() {
+    const onLoad = () => {
         const is_jp_client = jpClient();
         if (is_jp_client) {
             BinaryPjax.load('multi_barriers_trading');
@@ -31,10 +30,10 @@ const TradePage_Beta = (function() {
         }
         State.set('is_beta_trading', true);
         BinarySocket.init({
-            onmessage: function(msg) {
+            onmessage: (msg) => {
                 Message_Beta.process(msg);
             },
-            onopen: function() {
+            onopen: () => {
                 Notifications.hide('CONNECTION_ERROR');
             },
         });
@@ -50,7 +49,7 @@ const TradePage_Beta = (function() {
         });
 
         if (document.getElementById('websocket_form')) {
-            addEventListenerForm();
+            commonTrading.addEventListenerForm();
             if (!is_jp_client) {
                 new ResizeSensor($('.col-left .content-tab-container, #contract_prices_container'), adjustAnalysisColumnHeight);
                 new ResizeSensor($('.col-right'), moreTabsHandler);
@@ -66,128 +65,128 @@ const TradePage_Beta = (function() {
         ViewPopup.viewButtonOnClick('#contract_confirmation_container');
     };
 
-    const adjustAnalysisColumnHeight = function() {
-        let sumHeight = 0;
+    const adjustAnalysisColumnHeight = () => {
+        let sum_height = 0;
         if (window.innerWidth > 767) {
             $('.col-left').children().each(function() {
-                if ($(this).is(':visible')) sumHeight += $(this).outerHeight(true);
+                if ($(this).is(':visible')) sum_height += $(this).outerHeight(true);
             });
         } else {
-            sumHeight = 'auto';
+            sum_height = 'auto';
         }
-        $('#trading_analysis_content').height(sumHeight);
+        $('#trading_analysis_content').height(sum_height);
     };
 
-    const moreTabsHandler = function($ul) {
+    const moreTabsHandler = ($ul) => {
         if (!$ul) $ul = $('#analysis_tabs');
-        const seeMoreClass  = 'see-more',
-            moreTabsClass = 'more-tabs',
-            maxWidth      = $ul.outerWidth();
-        let totalWidth = 0;
+        const see_more_class  = 'see-more',
+            more_tabs_class = 'more-tabs',
+            max_width      = $ul.outerWidth();
+        let total_width = 0;
 
         // add seeMore tab
-        let $seeMore = $ul.find('li.' + seeMoreClass);
-        if ($seeMore.length === 0) {
-            $seeMore = $('<li class="tm-li ' + seeMoreClass + '"><a class="tm-a" href="javascript:;"><span class="caret-down"></span></a></li>');
-            $ul.append($seeMore);
+        let $see_more = $ul.find('li.' + see_more_class);
+        if ($see_more.length === 0) {
+            $see_more = $('<li class="tm-li ' + see_more_class + '"><a class="tm-a" href="javascript:;"><span class="caret-down"></span></a></li>');
+            $ul.append($see_more);
         }
-        $seeMore.removeClass('active');
+        $see_more.removeClass('active');
 
         // add moreTabs container
-        let $moreTabs = $ul.find('.' + moreTabsClass);
-        if ($moreTabs.length === 0) {
-            $moreTabs = $('<div class="' + moreTabsClass + '" />').appendTo($seeMore);
+        let $more_tabs = $ul.find('.' + more_tabs_class);
+        if ($more_tabs.length === 0) {
+            $more_tabs = $('<div class="' + more_tabs_class + '" />').appendTo($see_more);
         } else {
-            $moreTabs.find('>li').each(function(index, tab) {
-                $(tab).insertBefore($seeMore);
+            $more_tabs.find('>li').each((index, tab) => {
+                $(tab).insertBefore($see_more);
             });
         }
-        $moreTabs.css('top', $ul.find('li:visible').outerHeight() - 1).unbind('click').click(function() { hideDropDown('fast'); });
+        $more_tabs.css('top', $ul.find('li:visible').outerHeight() - 1).unbind('click').click(() => { hideDropDown('fast'); });
 
         // move additional tabs to moreTabs
-        const $visibleTabs = $ul.find('>li:visible');
-        $visibleTabs.each(function(index, tab) {
-            totalWidth += $(tab).outerWidth(true);
+        const $visible_tabs = $ul.find('>li:visible');
+        $visible_tabs.each((index, tab) => {
+            total_width += $(tab).outerWidth(true);
         });
-        let resultWidth = totalWidth;
-        while (resultWidth >= maxWidth) {
-            const $thisTab = $ul.find('>li:not(.' + seeMoreClass + '):visible').last();
-            resultWidth -= $thisTab.outerWidth(true);
-            $thisTab.prependTo($moreTabs);
+        let result_width = total_width;
+        while (result_width >= max_width) {
+            const $thisTab = $ul.find('>li:not(.' + see_more_class + '):visible').last();
+            result_width -= $thisTab.outerWidth(true);
+            $thisTab.prependTo($more_tabs);
         }
 
-        if ($moreTabs.children().length === 0) {
-            $seeMore.hide();
+        if ($more_tabs.children().length === 0) {
+            $see_more.hide();
             return;
         }
 
-        $seeMore.show();
-        if ($moreTabs.find('>li.active').length > 0) {
-            $seeMore.addClass('active');
+        $see_more.show();
+        if ($more_tabs.find('>li.active').length > 0) {
+            $see_more.addClass('active');
         }
 
         // drop down behaviour
-        const showDropDown = function() {
-            $moreTabs.slideDown();
-            if ($seeMore.find('.over').length === 0) {
-                $('<div/>', { class: 'over' }).insertBefore($seeMore.find('>a'));
-                $seeMore.find('.over').width($seeMore.width());
+        const showDropDown = () => {
+            $more_tabs.slideDown();
+            if ($see_more.find('.over').length === 0) {
+                $('<div/>', { class: 'over' }).insertBefore($see_more.find('>a'));
+                $see_more.find('.over').width($see_more.width());
             }
-            $seeMore.addClass('open');
+            $see_more.addClass('open');
         };
-        const hideDropDown = function(duration) {
-            $moreTabs.slideUp(duration || 400, function() {
-                $seeMore.removeClass('open');
+        const hideDropDown = (duration) => {
+            $more_tabs.slideUp(duration || 400, () => {
+                $see_more.removeClass('open');
             });
         };
         let timeout;
-        $seeMore.find('>a').unbind('click').on('click', function(e) {
+        $see_more.find('> a').unbind('click').on('click', (e) => {
             e.stopPropagation();
-            if ($moreTabs.is(':visible')) {
+            if ($more_tabs.is(':visible')) {
                 hideDropDown();
                 clearTimeout(timeout);
             } else {
                 clearTimeout(timeout);
                 showDropDown();
-                timeout = setTimeout(function() {
+                timeout = setTimeout(() => {
                     hideDropDown();
                     clearTimeout(timeout);
                 }, 3000);
             }
         });
-        $(document).unbind('click').on('click', function() { hideDropDown(); });
+        $(document).unbind('click').on('click', () => { hideDropDown(); });
 
-        $moreTabs.mouseenter(function() {
+        $more_tabs.mouseenter(() => {
             clearTimeout(timeout);
         });
 
-        $moreTabs.mouseleave(function() {
+        $more_tabs.mouseleave(() => {
             clearTimeout(timeout);
-            timeout = setTimeout(function() {
+            timeout = setTimeout(() => {
                 hideDropDown();
             }, 1000);
         });
     };
 
-    const reload = function() {
+    const reload = () => {
         sessionStorage.removeItem('underlying');
         window.location.reload();
     };
 
-    const onUnload = function() {
+    const onUnload = () => {
         State.remove('is_beta_trading');
         events_initialized = 0;
-        forgetTradingStreams_Beta();
+        Process_Beta.forgetTradingStreams_Beta();
         BinarySocket.clear();
         Defaults.clear();
         PortfolioInit.onUnload();
-        chartFrameCleanup();
+        commonTrading.chartFrameCleanup();
     };
 
-    const onDisconnect = function() {
-        showPriceOverlay();
-        showFormOverlay();
-        chartFrameCleanup();
+    const onDisconnect = () => {
+        commonTrading.showPriceOverlay();
+        commonTrading.showFormOverlay();
+        commonTrading.chartFrameCleanup();
         onLoad();
     };
 

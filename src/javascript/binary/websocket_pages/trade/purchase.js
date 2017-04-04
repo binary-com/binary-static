@@ -1,25 +1,24 @@
-const Contract              = require('./contract').Contract;
-const Symbols               = require('./symbols').Symbols;
-const Tick                  = require('./tick').Tick;
-const TickDisplay           = require('./tick_trade');
-const isVisible             = require('../../common_functions/common_functions').isVisible;
-const updatePurchaseStatus  = require('./common').updatePurchaseStatus;
-const updateContractBalance = require('./common').updateContractBalance;
-const elementTextContent    = require('../../common_functions/common_functions').elementTextContent;
-const elementInnerHtml      = require('../../common_functions/common_functions').elementInnerHtml;
-const localize              = require('../../base/localize').localize;
+const commonTrading      = require('./common');
+const Contract           = require('./contract');
+const Symbols            = require('./symbols');
+const Tick               = require('./tick');
+const TickDisplay        = require('./tick_trade');
+const localize           = require('../../base/localize').localize;
+const elementInnerHtml   = require('../../common_functions/common_functions').elementInnerHtml;
+const elementTextContent = require('../../common_functions/common_functions').elementTextContent;
+const isVisible          = require('../../common_functions/common_functions').isVisible;
 
 /*
  * Purchase object that handles all the functions related to
  * contract purchase response
  */
 
-const Purchase = (function () {
+const Purchase = (() => {
     'use strict';
 
     let purchase_data = {};
 
-    const display = function (details) {
+    const display = (details) => {
         purchase_data = details;
 
         const receipt = details.buy,
@@ -50,9 +49,9 @@ const Purchase = (function () {
             confirmation_error.show();
             elementInnerHtml(confirmation_error, error.message);
         } else {
-            const guideBtn = document.getElementById('guideBtn');
-            if (guideBtn) {
-                guideBtn.style.display = 'none';
+            const guide_btn = document.getElementById('guideBtn');
+            if (guide_btn) {
+                guide_btn.style.display = 'none';
             }
             container.style.display = 'table-row';
             message_container.show();
@@ -85,7 +84,7 @@ const Purchase = (function () {
                 elementInnerHtml(profit, localize('Potential Profit') + ' <p>' + profit_value + '</p>');
             }
 
-            updateContractBalance(receipt.balance_after);
+            commonTrading.updateContractBalance(receipt.balance_after);
 
             if (show_chart) {
                 chart.show();
@@ -157,7 +156,7 @@ const Purchase = (function () {
         }
     };
 
-    const update_spot_list = function() {
+    const updateSpotList = () => {
         if ($('#contract_purchase_spots:hidden').length) {
             return;
         }
@@ -171,11 +170,11 @@ const Purchase = (function () {
 
         const spots = document.getElementById('contract_purchase_spots');
         const spots2 = Tick.spots();
-        const epoches = Object.keys(spots2).sort(function(a, b) { return a - b; });
+        const epoches = Object.keys(spots2).sort((a, b) =>  a - b);
         if (spots) spots.textContent = '';
 
         let last_digit;
-        const replace = function(d) { last_digit = d; return '<b>' + d + '</b>'; };
+        const replace = (d) => { last_digit = d; return '<b>' + d + '</b>'; };
         for (let s = 0; s < epoches.length; s++) {
             const tick_d = {
                 epoch: epoches[s],
@@ -235,7 +234,7 @@ const Purchase = (function () {
                         contract_status = localize('This contract lost');
                     }
 
-                    updatePurchaseStatus(final_price, pnl, contract_status);
+                    commonTrading.updatePurchaseStatus(final_price, pnl, contract_status);
                 }
 
                 duration--;
@@ -247,11 +246,9 @@ const Purchase = (function () {
     };
 
     return {
-        display         : display,
-        update_spot_list: update_spot_list,
+        display       : display,
+        updateSpotList: updateSpotList,
     };
 })();
 
-module.exports = {
-    Purchase: Purchase,
-};
+module.exports = Purchase;

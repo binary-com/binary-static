@@ -1,8 +1,8 @@
-const Contract         = require('./contract').Contract;
-const Defaults         = require('./defaults').Defaults;
-const Durations        = require('./duration').Durations;
-const getStartDateNode = require('./common_independent').getStartDateNode;
 const moment           = require('moment');
+const getStartDateNode = require('./common_independent').getStartDateNode;
+const Contract         = require('./contract');
+const Defaults         = require('./defaults');
+const Durations        = require('./duration');
 const localize         = require('../../base/localize').localize;
 const State            = require('../../base/storage').State;
 
@@ -14,26 +14,18 @@ const State            = require('../../base/storage').State;
  * box
  */
 
-const StartDates = (function() {
+const StartDates = (() => {
     'use strict';
 
-    let hasNow = 0;
+    let has_now = 0;
     State.remove('is_start_dates_displayed');
 
-    const compareStartDate = function(a, b) {
-        if (a.date < b.date)            {
-            return -1;
-        }
-        if (a.date > b.date)            {
-            return 1;
-        }
-        return 0;
-    };
+    const compareStartDate = (a, b) => (a.date < b.date ? -1 : (a.date > b.date ? 1 : 0));
 
-    const displayStartDates = function() {
-        const startDates = Contract.startDates();
+    const displayStartDates = () => {
+        const start_dates = Contract.startDates();
 
-        if (startDates && startDates.list && startDates.list.length) {
+        if (start_dates && start_dates.list && start_dates.list.length) {
             const target = getStartDateNode(),
                 fragment =  document.createDocumentFragment(),
                 row = document.getElementById('date_start_row');
@@ -46,39 +38,39 @@ const StartDates = (function() {
                 target.removeChild(target.firstChild);
             }
 
-            if (startDates.has_spot) {
+            if (start_dates.has_spot) {
                 option = document.createElement('option');
                 content = document.createTextNode(localize('Now'));
                 option.setAttribute('value', 'now');
                 $('#date_start').removeClass('light-yellow-background');
                 option.appendChild(content);
                 fragment.appendChild(option);
-                hasNow = 1;
+                has_now = 1;
             } else {
-                hasNow = 0;
+                has_now = 0;
             }
 
-            startDates.list.sort(compareStartDate);
+            start_dates.list.sort(compareStartDate);
 
             let first;
-            startDates.list.forEach(function (start_date) {
+            start_dates.list.forEach((start_date) => {
                 let a = moment.unix(start_date.open).utc();
                 const b = moment.unix(start_date.close).utc();
 
-                const ROUNDING = 5 * 60 * 1000;
+                const rounding = 5 * 60 * 1000;
                 const start = moment.utc();
 
                 if (moment(start).isAfter(moment(a))) {
                     a = start;
                 }
 
-                a = moment(Math.ceil((+a) / ROUNDING) * ROUNDING).utc();
+                a = moment(Math.ceil((+a) / rounding) * rounding).utc();
 
                 while (a.isBefore(b)) {
                     if (a.unix() - start.unix() > 5 * 60) {
                         option = document.createElement('option');
                         option.setAttribute('value', a.utc().unix());
-                        if (typeof first === 'undefined' && !hasNow) {
+                        if (typeof first === 'undefined' && !has_now) {
                             first = a.utc().unix();
                         }
                         content = document.createTextNode(a.format('HH:mm ddd').replace(' ', ' GMT, '));
@@ -106,8 +98,8 @@ const StartDates = (function() {
 
     return {
         display: displayStartDates,
-        disable: function() { getStartDateNode().setAttribute('disabled', 'disabled'); },
-        enable : function() { getStartDateNode().removeAttribute('disabled'); },
+        disable: () => { getStartDateNode().setAttribute('disabled', 'disabled'); },
+        enable : () => { getStartDateNode().removeAttribute('disabled'); },
     };
 })();
 

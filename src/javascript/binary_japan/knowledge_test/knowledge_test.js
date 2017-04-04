@@ -24,7 +24,7 @@ const KnowledgeTest = (() => {
     const submitHandler = () => {
         if (submit_completed) return;
 
-        const answered_qid = Object.keys(submitted).map(function(k) { return +k; });
+        const answered_qid = Object.keys(submitted).map(k => +k);
         if (answered_qid.length !== 20) {
             $('#knowledge-test-instructions').addClass('invisible');
             $('#knowledge-test-msg')
@@ -151,7 +151,7 @@ const KnowledgeTest = (() => {
         /* eslint-enable */
     };
 
-    const randomPick4 = function(obj_questions) {
+    const randomPick4 = (obj_questions) => {
         const availables = Object.keys(obj_questions);
 
         const random_picks_four = [];
@@ -189,7 +189,7 @@ const KnowledgeTest = (() => {
         return picked_questions;
     };
 
-    const sendResult = function(questions) {
+    const sendResult = (questions) => {
         BinarySocket.send({
             jp_knowledge_test: 1,
             score            : result_score,
@@ -210,6 +210,7 @@ const KnowledgeTest = (() => {
             }
         });
     };
+
     return {
         onLoad: onLoad,
     };

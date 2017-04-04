@@ -5,8 +5,8 @@ const AccountOpening = require('../../../common_functions/account_opening');
 const detectHedging  = require('../../../common_functions/common_functions').detectHedging;
 const FormManager    = require('../../../common_functions/form_manager');
 
-const JapanAccOpening = (function() {
-    const onLoad = function() {
+const JapanAccOpening = (() => {
+    const onLoad = () => {
         if (AccountOpening.redirectCookie()) return;
         BinarySocket.wait('authorize').then(() => {
             if (Client.get('residence') !== 'jp') {

@@ -1,8 +1,8 @@
 const moment                 = require('moment');
 const TradingTimes           = require('../trading_times');
+const localize               = require('../../../base/localize').localize;
 const State                  = require('../../../base/storage').State;
 const showLoadingImage       = require('../../../base/utility').showLoadingImage;
-const localize               = require('../../../base/localize').localize;
 const Table                  = require('../../../common_functions/attach_dom/table');
 const dateValueChanged       = require('../../../common_functions/common_functions').dateValueChanged;
 const jqueryuiTabsToDropdown = require('../../../common_functions/common_functions').jqueryuiTabsToDropdown;
@@ -21,7 +21,7 @@ const TradingTimesUI = (() => {
         trading_times,
         is_framed;
 
-    const onLoad = function(config) {
+    const onLoad = (config) => {
         $date      = $('#trading-date');
         $container = $('#trading-times');
         columns    = ['Asset', 'Opens', 'Closes', 'Settles', 'UpcomingEvents'];

@@ -4,7 +4,7 @@ const template             = require('../../base/utility').template;
 const appendTextValueChild = require('../../common_functions/common_functions').appendTextValueChild;
 const FormManager          = require('../../common_functions/form_manager');
 
-const DepositWithdraw = (function() {
+const DepositWithdraw = (() => {
     'use strict';
 
     let cashier_type;
@@ -12,7 +12,7 @@ const DepositWithdraw = (function() {
     const hidden_class = 'invisible';
     let verification_code;
 
-    const init = function(cashier_password) {
+    const init = (cashier_password) => {
         if (cashier_password) {
             showMessage('cashier_locked_message');
             sessionStorage.setItem('cashier_lock_redirect', window.location.href);
@@ -36,7 +36,7 @@ const DepositWithdraw = (function() {
         }
     };
 
-    const initWithdrawForm = function() {
+    const initWithdrawForm = () => {
         BinarySocket.send({
             verify_email: Client.get('email'),
             type        : 'payment_withdraw',
@@ -58,9 +58,9 @@ const DepositWithdraw = (function() {
         });
     };
 
-    const showCurrency = function() {
+    const showCurrency = () => {
         const currencies = Client.get('currencies').split(',');
-        currencies.forEach(function(c) {
+        currencies.forEach((c) => {
             appendTextValueChild('select_currency', c, c);
         });
         showMessage('choose_currency_message');
@@ -73,7 +73,7 @@ const DepositWithdraw = (function() {
         });
     };
 
-    const getCashierType = function() {
+    const getCashierType = () => {
         const $heading = $(container).find('#heading');
         const hash_value = window.location.hash;
         if (/withdraw/.test(hash_value)) {
@@ -85,7 +85,7 @@ const DepositWithdraw = (function() {
         }
     };
 
-    const populateReq = function(send_verification) {
+    const populateReq = (send_verification) => {
         const req = { cashier: cashier_type };
         const verification_code_val = $('#verification_code').val();
         if (verification_code_val) verification_code = verification_code_val;
@@ -94,30 +94,30 @@ const DepositWithdraw = (function() {
         return req;
     };
 
-    const getCashierURL = function() {
+    const getCashierURL = () => {
         BinarySocket.send(populateReq(1)).then(response => handleCashierResponse(response));
     };
 
-    const hideAll = function(option) {
+    const hideAll = (option) => {
         $('#frm_withdraw, #frm_currency, #frm_ukgc, #errors').addClass(hidden_class);
         if (option) {
             $(option).addClass(hidden_class);
         }
     };
 
-    const showError = function(id, error) {
+    const showError = (id, error) => {
         hideAll();
         if (error) $(`#${id}`).text(error);
         showMessage(id, 'errors');
     };
 
-    const showMessage = function(id, parent = 'messages') {
+    const showMessage = (id, parent = 'messages') => {
         $(`#${id}`).siblings().addClass(hidden_class).end()
             .removeClass(hidden_class);
         $(container).find(`#${parent}`).removeClass(hidden_class);
     };
 
-    const showPersonalDetailsError = function(details) {
+    const showPersonalDetailsError = (details) => {
         const msgID = 'personal_details_message';
         let errorFields;
         if (details) {
@@ -196,7 +196,7 @@ const DepositWithdraw = (function() {
         }
     };
 
-    const onLoad = function() {
+    const onLoad = () => {
         getCashierType();
         BinarySocket.send({ cashier_password: 1 }).then((data) => {
             if ('error' in data) {

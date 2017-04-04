@@ -78,7 +78,7 @@ const KnowledgeTestUI = (() => {
 
         $table_container.append($header);
         let qr;
-        questions.forEach(function(question, question_no) {
+        questions.forEach((question, question_no) => {
             qr = createQuestionRow(question_no, question, show_answer);
             $table_container.append(qr);
         });

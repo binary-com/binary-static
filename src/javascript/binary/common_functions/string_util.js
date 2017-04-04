@@ -20,23 +20,21 @@ const toReadableFormat = (date) => {
     return date.format('DD MMM, YYYY');
 };
 
-function padLeft(text, len, char) {
+const padLeft = (text, len, char) => {
     text = String(text || '');
     return text.length >= len ? text : `${Array((len - text.length) + 1).join(char)}${text}`;
-}
+};
 
-function compareBigUnsignedInt(a, b) {
+const compareBigUnsignedInt = (a, b) => {
     a = numberToString(a);
     b = numberToString(b);
     const max_length = Math.max(a.length, b.length);
     a = padLeft(a, max_length, '0');
     b = padLeft(b, max_length, '0');
     return a > b ? 1 : (a < b ? -1 : 0); // lexicographical comparison
-}
+};
 
-function numberToString(n) {
-    return (typeof n === 'number' ? String(n) : n);
-}
+const numberToString = n => (typeof n === 'number' ? String(n) : n);
 
 module.exports = {
     toISOFormat     : toISOFormat,

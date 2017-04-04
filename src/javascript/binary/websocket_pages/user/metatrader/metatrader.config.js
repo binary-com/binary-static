@@ -4,7 +4,7 @@ const urlFor        = require('../../../base/url').urlFor;
 const isEmptyObject = require('../../../base/utility').isEmptyObject;
 const formatMoney   = require('../../../common_functions/currency_to_symbol').formatMoney;
 
-const MetaTraderConfig = (function() {
+const MetaTraderConfig = (() => {
     'use strict';
 
     const currency = 'USD';

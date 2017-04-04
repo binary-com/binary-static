@@ -54,8 +54,8 @@ const RealityCheckData = (() => {
         return LocalStore.set('client.reality_check.' + key, value);
     };
 
-    // use this function to get variables that have values
-    const get = function(key) {
+    // get variables that have values
+    const get = (key) => {
         let value = reality_object[key] || LocalStore.get('client.reality_check.' + key) || '';
         if (+value === 1 || +value === 0 || value === 'true' || value === 'false') {
             value = JSON.parse(value || false);
@@ -63,9 +63,9 @@ const RealityCheckData = (() => {
         return value;
     };
 
-    const clear_storage_values = function() {
+    const clear_storage_values = () => {
         // clear all reality check values from local storage
-        Object.keys(localStorage).forEach(function(c) {
+        Object.keys(localStorage).forEach((c) => {
             if (/^client\.reality_check\./.test(c)) {
                 LocalStore.set(c, '');
             }

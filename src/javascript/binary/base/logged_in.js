@@ -19,7 +19,7 @@ const LoggedInHandler = (() => {
             if (!loginid) { // redirected to another domain (e.g. github.io) so those cookie are not accessible here
                 const loginids = Object.keys(tokens);
                 let loginid_list = '';
-                loginids.map(function(id) {
+                loginids.map((id) => {
                     loginid_list += (loginid_list ? '+' : '') + id + ':' + (/^V/i.test(id) ? 'V' : 'R') + ':E'; // since there is not any data source to check, so assume all are enabled, disabled accounts will be handled on authorize
                 });
                 loginid = loginids[0];

@@ -39,13 +39,8 @@ const Statement = (() => {
         const sep = ',';
         let csv = [header.join(sep)];
         if (all_data && all_data.length > 0) {
-            csv = csv.concat(
-                all_data.map(function(data) {
-                    return columns.map(function(key) {
-                        // eslint-disable-next-line no-control-regex
-                        return (data[key] ? data[key].replace(new RegExp(sep, 'g'), '').replace(new RegExp('\n|<br />', 'g'), ' ') : '');
-                    }).join(sep);
-                }));
+            // eslint-disable-next-line no-control-regex
+            csv = csv.concat(all_data.map(data => columns.map(key => (data[key] ? data[key].replace(new RegExp(sep, 'g'), '').replace(new RegExp('\n|<br />', 'g'), ' ') : '')).join(sep)));
         }
         return csv.join('\r\n');
     };

@@ -2,7 +2,7 @@ const getLanguage = require('./language').get;
 const State       = require('./storage').State;
 const urlFor      = require('./url').urlFor;
 
-const BinaryPjax = (function() {
+const BinaryPjax = (() => {
     'use strict';
 
     let xhr;

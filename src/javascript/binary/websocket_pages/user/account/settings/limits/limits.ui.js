@@ -39,11 +39,11 @@ const LimitsUI = (() => {
 
         const market_specific = limits.market_specific;
         client_limits = $('#client-limits');
-        Object.keys(market_specific).forEach(function (key) {
+        Object.keys(market_specific).forEach((key) => {
             const object = market_specific[key];
             if (object.length && object.length > 0) {
                 appendRowTable(localize(key.charAt(0).toUpperCase() + key.slice(1)), '', 'auto', 'bold');
-                Object.keys(object).forEach(function (c) {
+                Object.keys(object).forEach((c) => {
                     if (Client.get('residence') !== 'jp' || /Major Pairs/.test(object[c].name)) {
                         appendRowTable(object[c].name, object[c].turnover_limit !== 'null' ? addComma(object[c].turnover_limit).split('.')[0] : 0, '25px', 'normal');
                     }

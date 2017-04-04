@@ -1,4 +1,4 @@
-const MBDefaults     = require('./mb_defaults').MBDefaults;
+const MBDefaults     = require('./mb_defaults');
 const Client         = require('../../base/client');
 const State          = require('../../base/storage').State;
 const jpClient       = require('../../common_functions/country_base').jpClient;
@@ -10,7 +10,7 @@ const formatCurrency = require('../../common_functions/currency_to_symbol').form
  * It process 'socket.send({payout_currencies:1})` response
  * and display them
  */
-function MBDisplayCurrencies(selected, showClass) {
+const MBDisplayCurrencies = (selected, showClass) => {
     'use strict';
 
     const target = document.getElementById('currency'),
@@ -26,7 +26,7 @@ function MBDisplayCurrencies(selected, showClass) {
     }
 
     if (currencies.length > 1 && !jpClient()) {
-        currencies.forEach(function (currency) {
+        currencies.forEach((currency) => {
             const option = document.createElement('option'),
                 content = document.createTextNode(currency);
 
@@ -49,8 +49,6 @@ function MBDisplayCurrencies(selected, showClass) {
         if ($('.payout-mult:visible').length === 0) $('#payout').width(40); // wider when there is free space
         MBDefaults.set('currency', currencies[0]);
     }
-}
-
-module.exports = {
-    MBDisplayCurrencies: MBDisplayCurrencies,
 };
+
+module.exports = MBDisplayCurrencies;

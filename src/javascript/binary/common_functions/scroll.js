@@ -18,7 +18,7 @@ const Scroll = (() => {
             // With thanks:
             // http://www.backslash.gr/content/blog/webdevelopment/6-navigation-menu-that-stays-on-top-with-jquery
 
-            // our function that decides weather the navigation bar should have "fixed" css position or not.
+            // decides weather the navigation bar should have "fixed" css position or not.
             const sticky_navigation = () => {
                 if (!selector.is(':visible')) return;
                 if (!width) {
@@ -38,12 +38,12 @@ const Scroll = (() => {
                 }
             };
 
-            // run our function on load
+            // run on load
             sticky_navigation();
 
             const sidebar_nav = selector.find('#sidebar-nav');
             const length = elm_selector.find('.section').length;
-            $(window).on('scroll', function() {
+            $(window).on('scroll', () => {
                 if (!sidebar_nav.is(':visible')) return;
                 // and run it again every time you scroll
                 sticky_navigation();
@@ -70,7 +70,7 @@ const Scroll = (() => {
         }
     };
 
-    const scrollToTop = function() {
+    const scrollToTop = () => {
         let is_displaying = false;
         const $scrollup = $('#scrollup');
         $(document).scroll(function () {
@@ -84,7 +84,7 @@ const Scroll = (() => {
             }
         });
 
-        $scrollup.click(function () {
+        $scrollup.click(() => {
             $.scrollTo(0, 500);
         });
     };
