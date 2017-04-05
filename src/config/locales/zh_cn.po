@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-04-05 03:43+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Simplified) "
-"<https://hosted.weblate.org/projects/binary/static/zh_Hans/>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/binary/static/zh_Hans/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1257,6 +1256,9 @@ msgstr "澳大利亚"
 
 msgid "Australia 200 Cash Index"
 msgstr "澳大利亚 200 现金指数"
+
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
+msgstr ""
 
 msgid "Authentication"
 msgstr "验证"
@@ -5675,9 +5677,6 @@ msgstr "请选择至少一个范围"
 msgid "Please select the checkbox."
 msgstr "请选择复选框。"
 
-msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
-msgstr "为证明您的身份和验证您的账号，请将以下文件发送到%1︰"
-
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "请指定您的优选实况调查间隔时间分钟数"
 
@@ -5861,7 +5860,9 @@ msgstr "利润/亏损（点）"
 msgid "Prohibited Trades"
 msgstr "违禁交易"
 
-msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+#, fuzzy
+#| msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
 msgstr "地址证明 - 水电煤账单或银行月结单扫描件（日期不得超过3个月）。"
 
 msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
@@ -10919,6 +10920,9 @@ msgstr "条款和条件审批"
 
 msgid "Account Limits"
 msgstr "账户限额"
+
+#~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
+#~ msgstr "为证明您的身份和验证您的账号，请将以下文件发送到%1︰"
 
 #~ msgid "<strong>Preferences:</strong>"
 #~ msgstr "<strong>首选项:</strong>"

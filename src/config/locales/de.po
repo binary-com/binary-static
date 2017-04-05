@@ -1257,6 +1257,9 @@ msgstr "Australien"
 msgid "Australia 200 Cash Index"
 msgstr "Australischer 200 Cash Index"
 
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
+msgstr ""
+
 msgid "Authentication"
 msgstr "Authentifizierung"
 
@@ -5672,9 +5675,6 @@ msgstr "Bitte wählen Sie zumindest einen Bereich aus"
 msgid "Please select the checkbox."
 msgstr "Bitte wählen Sie das Kontrollkästchen."
 
-msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
-msgstr "Um Ihr Konto zu authentifizieren und um Ihre Identität zu überprüfen, übersenden Sie bitte die folgenden Dokumente an %1:"
-
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Bitte geben Sie Ihren bevorzugten Reality-Check Intervall in Minuten an"
 
@@ -5858,7 +5858,9 @@ msgstr "Gewinn/Verlust (Punkte)"
 msgid "Prohibited Trades"
 msgstr "Untersagte Geschäfte"
 
-msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+#, fuzzy
+#| msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
 msgstr "Nachweis der Adresse - Eine gescannte Kopie einer Abrechnung öffentlicher Versorgungsbetriebe oder eines Bankkontoauszuges, die nicht älter als drei Monate ist."
 
 msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
@@ -10915,6 +10917,9 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 
 msgid "Account Limits"
 msgstr "Kontolimits"
+
+#~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
+#~ msgstr "Um Ihr Konto zu authentifizieren und um Ihre Identität zu überprüfen, übersenden Sie bitte die folgenden Dokumente an %1:"
 
 #~ msgid "<strong>Preferences:</strong>"
 #~ msgstr "<strong>Präferenzen:</strong>"

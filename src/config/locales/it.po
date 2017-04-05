@@ -1313,6 +1313,9 @@ msgstr "Australia"
 msgid "Australia 200 Cash Index"
 msgstr "Indice australiano OTC"
 
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
+msgstr ""
+
 msgid "Authentication"
 msgstr "Convalida"
 
@@ -5976,11 +5979,6 @@ msgstr "Seleziona almeno uno scopo"
 msgid "Please select the checkbox."
 msgstr "Seleziona almeno uno scopo"
 
-#, fuzzy
-#| msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
-msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
-msgstr "Per convalidare il tuo account, ti chiediamo gentilmente di inviare quanto segue tramite email all'indirizzo <a href=\"mailto:%1\">%1</a>"
-
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Specifica il tuo intervallo preferito di verifica della realtà in minuti"
 
@@ -6172,7 +6170,7 @@ msgstr "Trade proibiti"
 
 #, fuzzy
 #| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)"
-msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
 msgstr "Una copia scannerizzata di una bolletta o di un estratto conto (non antecedente i 3 mesi)"
 
 #, fuzzy
@@ -11295,6 +11293,11 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 msgid "Account Limits"
 msgstr "Limiti dell'account"
+
+#, fuzzy
+#~| msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
+#~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
+#~ msgstr "Per convalidare il tuo account, ti chiediamo gentilmente di inviare quanto segue tramite email all'indirizzo <a href=\"mailto:%1\">%1</a>"
 
 #~ msgid "<strong>Preferences:</strong>"
 #~ msgstr "<strong>Preferenze:</strong>"

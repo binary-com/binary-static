@@ -1261,6 +1261,9 @@ msgstr "Australia"
 msgid "Australia 200 Cash Index"
 msgstr "Australijski indeks gotówkowy Australia 200"
 
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
+msgstr ""
+
 msgid "Authentication"
 msgstr "Weryfikacja"
 
@@ -5674,9 +5677,6 @@ msgstr "Proszę wybrać przynajmniej jeden zakres"
 msgid "Please select the checkbox."
 msgstr "Proszę zaznaczyć pole wyboru."
 
-msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
-msgstr "Aby zweryfikować swoją tożsamość i uwierzytelnić konto, proszę przesłać do %1 dokumenty wymienione poniżej:"
-
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Proszę określić w minutach preferowany odstęp czasu pomiędzy kontrolami konta"
 
@@ -5860,7 +5860,9 @@ msgstr "Zysk/Strata (punkty)"
 msgid "Prohibited Trades"
 msgstr "Zakłady zabronione"
 
-msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+#, fuzzy
+#| msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
 msgstr "Potwierdzenie adresu – skan rachunku za media lub wyciągu bankowego z ostatnich 3 miesięcy."
 
 msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
@@ -10921,6 +10923,9 @@ msgstr "Akceptacja regulaminu"
 
 msgid "Account Limits"
 msgstr "Limity na koncie"
+
+#~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
+#~ msgstr "Aby zweryfikować swoją tożsamość i uwierzytelnić konto, proszę przesłać do %1 dokumenty wymienione poniżej:"
 
 #~ msgid "<strong>Preferences:</strong>"
 #~ msgstr "<strong>Preferencje:</strong>"
