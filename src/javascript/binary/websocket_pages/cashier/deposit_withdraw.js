@@ -187,6 +187,9 @@ const DepositWithdraw = (function() {
                 case 'ASK_AGE_VERIFICATION':
                     showError('age_error');
                     break;
+                case 'ASK_SELF_EXCLUSION_MAX_TURNOVER_SET':
+                    showError('limits_error');
+                    break;
                 default:
                     showError('custom_error', error.message);
             }
