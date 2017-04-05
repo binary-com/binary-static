@@ -1263,6 +1263,9 @@ msgstr "AUSTRALIA"
 msgid "Australia 200 Cash Index"
 msgstr "Indeks Tunai Australia 200"
 
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
+msgstr ""
+
 msgid "Authentication"
 msgstr "Pembuktian"
 
@@ -5679,9 +5682,6 @@ msgstr "Silakan pilih minimal satu scope"
 msgid "Please select the checkbox."
 msgstr "Silakan pilih kotak centang."
 
-msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
-msgstr "Silahkan kirim dokumen berikut ke %1 untuk memverifikasi identitas dan mengotentikasi akun Anda:"
-
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Silahkan tentukan interval cek-realitas pilihan Anda dalam menit"
 
@@ -5865,7 +5865,9 @@ msgstr "Untung/Rugi (poin)"
 msgid "Prohibited Trades"
 msgstr "Trading Terlarang"
 
-msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+#, fuzzy
+#| msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
 msgstr "Bukti alamat - Scan tagihan atau rekening koran tidak melebihi tiga bulan dari tanggal cetak."
 
 msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
@@ -10919,6 +10921,9 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 msgid "Account Limits"
 msgstr "Batasan rekening"
+
+#~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
+#~ msgstr "Silahkan kirim dokumen berikut ke %1 untuk memverifikasi identitas dan mengotentikasi akun Anda:"
 
 #~ msgid "<strong>Preferences:</strong>"
 #~ msgstr "<strong>Preferensi:</strong>"

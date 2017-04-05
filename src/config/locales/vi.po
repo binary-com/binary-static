@@ -1259,6 +1259,9 @@ msgstr "Úc"
 msgid "Australia 200 Cash Index"
 msgstr "Chỉ số tiền mặt úc 200"
 
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
+msgstr ""
+
 msgid "Authentication"
 msgstr "Xác thực"
 
@@ -5672,11 +5675,6 @@ msgstr "Vui lòng chọn ít nhất một phạm vi"
 msgid "Please select the checkbox."
 msgstr "Vui lòng chọn hộp tích."
 
-#, fuzzy
-#| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
-msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
-msgstr "Xin vui lòng gửi cho chúng tôi các tài liệu sau đây để xác minh danh tính của bạn và xác thực tài khoản của bạn:"
-
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Hãy chỉ rõ khoảng thời gian kiểm tra thực tế ưa thích của bạn vào biên bản"
 
@@ -5862,7 +5860,9 @@ msgstr "Lợi nhuận/Thua lỗ (điểm)"
 msgid "Prohibited Trades"
 msgstr "Các giao dịch bị cấm"
 
-msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+#, fuzzy
+#| msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
 msgstr "Bằng chứng địa chỉ - Một bản quét hóa đơn điện nước hoặc bản sao kê ngân hàng không quá 3 tháng gần đây nhất."
 
 msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
@@ -11125,6 +11125,11 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 msgid "Account Limits"
 msgstr "Giới hạn Tài khoản"
+
+#, fuzzy
+#~| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+#~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
+#~ msgstr "Xin vui lòng gửi cho chúng tôi các tài liệu sau đây để xác minh danh tính của bạn và xác thực tài khoản của bạn:"
 
 #~ msgid "<strong>Preferences:</strong>"
 #~ msgstr "<strong>Sở thích:</strong>"

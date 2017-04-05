@@ -1277,6 +1277,9 @@ msgstr "Австралия"
 msgid "Australia 200 Cash Index"
 msgstr "Australia 200 Cash Index"
 
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
+msgstr ""
+
 msgid "Authentication"
 msgstr "Авторизация"
 
@@ -5735,11 +5738,6 @@ msgstr "Пожалуйста, выберите минимум один пара�
 msgid "Please select the checkbox."
 msgstr "Пожалуйста, выберите нужный ответ."
 
-#, fuzzy
-#| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
-msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
-msgstr "Чтобы пройти проверку личности и процесс аутентификации счёта, пожалуйста, отправьте нам следующие документы:"
-
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Пожалуйста, укажите желаемый интервал для проверки реальности (в минутах)"
 
@@ -5927,7 +5925,9 @@ msgstr "Прибыль/убытки (пункты)"
 msgid "Prohibited Trades"
 msgstr "Запрещённые сделки"
 
-msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+#, fuzzy
+#| msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
 msgstr "Подтверждение адреса: отсканированный счёт за коммунальные услуги или выписка с Вашего банковского счёта (датированные не позднее, чем за 3 месяца до текущей даты)."
 
 msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
@@ -11292,6 +11292,11 @@ msgstr "Согласие с правилами и условиями"
 
 msgid "Account Limits"
 msgstr "Лимиты счета"
+
+#, fuzzy
+#~| msgid "Please send us the following documents in order to verify your identity and authenticate your account:"
+#~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
+#~ msgstr "Чтобы пройти проверку личности и процесс аутентификации счёта, пожалуйста, отправьте нам следующие документы:"
 
 #~ msgid "<strong>Preferences:</strong>"
 #~ msgstr "<strong>Пожелания:</strong>"

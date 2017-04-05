@@ -1399,6 +1399,9 @@ msgstr "Austrália"
 msgid "Australia 200 Cash Index"
 msgstr "índice OTC Australiano"
 
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
+msgstr ""
+
 msgid "Authentication"
 msgstr "Autenticação"
 
@@ -6108,11 +6111,6 @@ msgstr "Selecione pelo menos um escopo"
 msgid "Please select the checkbox."
 msgstr "Selecione pelo menos um escopo"
 
-#, fuzzy
-#| msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
-msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
-msgstr "Para autenticar a sua conta, envie um e-mail para <a href=\"mailto:%1\">%1</a>"
-
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Especifique o seu intervalo preferido para o balanço da realidade em minutos"
 
@@ -6308,7 +6306,7 @@ msgstr "Negociadores proibidos"
 
 #, fuzzy
 #| msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
-msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
 msgstr "Uma cópia digitalizada de uma conta de serviços públicos ou extrato de conta bancária (não deverão ter mais de três meses)."
 
 #, fuzzy
@@ -11887,6 +11885,11 @@ msgstr "Aprovação dos termos e condições"
 
 msgid "Account Limits"
 msgstr "Limites da Conta"
+
+#, fuzzy
+#~| msgid "To authenticate your account, kindly email the following to <a href=\"mailto:%1\">%1</a>"
+#~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
+#~ msgstr "Para autenticar a sua conta, envie um e-mail para <a href=\"mailto:%1\">%1</a>"
 
 #~ msgid "<strong>Preferences:</strong>"
 #~ msgstr "<strong>Preferências:</strong>"

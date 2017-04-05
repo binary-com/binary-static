@@ -1274,6 +1274,9 @@ msgstr "オーストラリア"
 msgid "Australia 200 Cash Index"
 msgstr "オーストラリア 200現物指数"
 
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
+msgstr ""
+
 msgid "Authentication"
 msgstr "ご口座アップグレード"
 
@@ -5739,9 +5742,6 @@ msgstr "範囲を1つ以上選択してください"
 msgid "Please select the checkbox."
 msgstr "チェックボックスを選択してください"
 
-msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
-msgstr "お客さまの個人情報を確認してアカウント認証を行うために、次の書類を当社までご送付ください。"
-
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "ご希望のリアリティチェック間隔を分単位で指定してください"
 
@@ -5927,7 +5927,9 @@ msgstr "損益（ポイント）"
 msgid "Prohibited Trades"
 msgstr "取引を禁止しています"
 
-msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+#, fuzzy
+#| msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
 msgstr "ご不明な点等ありましたら、カスタマーサポートまでご連絡ください"
 
 msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
@@ -11357,6 +11359,9 @@ msgstr "利用規約の承認"
 
 msgid "Account Limits"
 msgstr "ご利用制限額"
+
+#~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
+#~ msgstr "お客さまの個人情報を確認してアカウント認証を行うために、次の書類を当社までご送付ください。"
 
 #~ msgid "<strong>Preferences:</strong>"
 #~ msgstr "<strong>設定：</strong>"

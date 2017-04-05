@@ -1268,6 +1268,9 @@ msgstr "ออสเตรเลีย"
 msgid "Australia 200 Cash Index"
 msgstr "ดัชนีเงิน Australian 200"
 
+msgid "Authenticate your account now by verifying your identity and address. To proceed, simply send the following documents to %1:"
+msgstr ""
+
 msgid "Authentication"
 msgstr "การระบุตัวตน"
 
@@ -5696,9 +5699,6 @@ msgstr "โปรดระบุค่าอย่างน้อยหนึ่
 msgid "Please select the checkbox."
 msgstr "โปรดระบุค่าจากตัวเลือก"
 
-msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
-msgstr "โปรดส่งเอกสารต่อไปนี้มายัง %1 เพื่อตรวจสอบตัวตนและยืนยันบัญชีของท่าน:"
-
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "โปรดระบุช่วงเวลาการตรวจสอบสภาพความเป็นจริงที่ท่านต้องการเป็นหน่วยนาทีที่จะเกิดขึ้นจริงระหว่างการซื้อขาย"
 
@@ -5882,7 +5882,9 @@ msgstr "กำไร/ขาดทุน (จุด)"
 msgid "Prohibited Trades"
 msgstr "การซื้อขายต้องห้าม"
 
-msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+#, fuzzy
+#| msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old."
+msgid "Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old. Your proof of address must contain your name, address, date of issue, and the name of the issuing organisation."
 msgstr "การตรวจสอบที่อยู่  - สแกนสำเนาใบแจ้งหนี้รายการสาธารณูปโภค หรือ รายงานธุรกรรมการเงิน ฉบับล่าสุด ไม่นานกว่า 3 เดือน จำนวน 1 ฉบับ"
 
 msgid "Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth."
@@ -10952,6 +10954,9 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 msgid "Account Limits"
 msgstr "วงเงินในบัญชี"
+
+#~ msgid "Please send the following documents to %1 in order to verify your identity and authenticate your account:"
+#~ msgstr "โปรดส่งเอกสารต่อไปนี้มายัง %1 เพื่อตรวจสอบตัวตนและยืนยันบัญชีของท่าน:"
 
 #~ msgid "<strong>Preferences:</strong>"
 #~ msgstr "<strong>การตั้งค่า:</strong>"
